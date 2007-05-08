@@ -1,0 +1,114 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ManageIndicesForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ManageIndicesForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>415</width>
+            <height>404</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Manage Indicies</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>8</number>
+        </property>
+        <widget class="QFrame">
+            <property name="name">
+                <cstring>m_labelFrame</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+        </widget>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>m_autoDeleteOrphanedIndicesBox</cstring>
+            </property>
+            <property name="text">
+                <string>Automaticall&amp;y delete orphaned indices when BibleTime starts</string>
+            </property>
+            <property name="accel">
+                <string>Alt+Y</string>
+            </property>
+        </widget>
+        <widget class="KListView">
+            <property name="name">
+                <cstring>m_moduleList</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>m_createIndicesButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Create selected indices</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>m_deleteIndicesButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>De&amp;lete selected indices</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </vbox>
+</widget>
+<customwidgets>
+</customwidgets>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klistview.h</includehint>
+</includehints>
+</UI>

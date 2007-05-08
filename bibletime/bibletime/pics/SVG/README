@@ -1,0 +1,18 @@
+Crystal-like icons for Bibletime.
+
+I used sodipodi to create these icons, and gimp to touch them up (crop and resize).
+
+The icons are supposed to fit into Everaldo's Crystal icon theme nicely.
+
+I've used different colours for the different types of book icons, to
+make them more obvious when the icons are small.
+
+In the preferences dialog, the icon for the colours page should be the standard
+'colorize' icon which is in both kdeclassic and crystal. The bt_displayconfig icon
+should be used in on the toolbar where it is currently used.
+
+I've made 16, 22, 32 and 48 pixel versions of everything, but only
+an app icon at the 64 pixel size.
+
+(c) 2003 James Ots <code@jamesots.com>
+

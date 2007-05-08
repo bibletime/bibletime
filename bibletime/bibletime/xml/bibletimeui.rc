@@ -1,0 +1,70 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd"><kpartgui name="BibleTime" version="27">
+<MenuBar>
+ <Menu name="file" noMerge="1"><text>&amp;File</text>
+  <Action name="file_clear_queue_action"/>
+  <Action name="file_print"/>
+  <Separator/>
+  <Action name="file_quit"/>
+ </Menu>
+ <Menu name="search" noMerge="1"><Text>&amp;Search</Text>
+ <Action name="mainindex_searchdefaultbible_action"/>
+ <Action name="mainindex_search_action"/>
+ </Menu>
+ <Menu name="view" noMerge="1"><Text>&amp;View</Text>
+  <Action name="options_show_toolbar"/>
+  <Separator/>
+  <Action name="viewMainIndex_action"/>
+  <Action name="viewInfoDisplay_action"/>
+ </Menu>
+ <Menu name="settings" noMerge="1"><Text>Se&amp;ttings</Text>
+	 <Action name="options_configure_toolbars"/>
+	 <Separator/>
+	 <Action name="options_configure"/>
+	 <Separator/>
+	 <Action name="options_sword_setup"/>
+ </Menu>
+ <Menu name="window"><Text>&amp;Window</Text>
+  <Action name="windowSaveProfile_action"/>
+  <Action name="windowSaveToNewProfile_action"/>
+  <Action name="windowLoadProfile_action"/>
+	<Action name="windowDeleteProfile_action"/>
+  <Separator/>
+  <Action name="windowFullscreen_action"/>
+  <Separator/>
+  <Action name="windowArrangementMode_action"/>
+  <Action name="windowTileVertical_action"/>
+  <Action name="windowTileHorizontal_action"/>
+  <Action name="windowCascade_action"/>
+  <Separator/>
+  <Action name="windowCloseAll_action"/>
+  <Separator/>
+ </Menu>
+ <Menu name="help" noMerge="1"><Text>&amp;Help</Text>
+  <Action name="helpHandbook_action"/>
+  <Action name="helpHowTo_action"/>
+  <Separator/>
+  <Action name="help_whats_this"/>
+  <Action name="help_report_bug"/>
+  <Action name="helpDailyTip_action"/>
+  <Separator/>
+  <Action name="help_about_app"/>
+  <Action name="help_about_kde"/>
+ </Menu>
+</MenuBar>
+
+<ToolBar name="mainToolBar" fullWidth="true" noMerge="1" newLine="1">
+ <Action name="file_quit"/>
+ <Separator/>
+ <Action name="mainindex_search_action"/>
+ <Separator/>
+ <Action name="viewMainIndex_action"/>
+ <Action name="windowFullscreen_action"/>
+ <Separator/>
+ <Action name="windowLoadProfile_action"/>
+ <Action name="windowSaveToNewProfile_action"/>
+ <Separator/>
+ <Action name="windowArrangementMode_action"/>
+ <Separator/>
+ <Action name="help_whats_this"/>
+</ToolBar>
+</kpartgui>

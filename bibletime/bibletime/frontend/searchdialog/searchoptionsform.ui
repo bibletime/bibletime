@@ -1,0 +1,199 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>SearchOptionsForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>SearchOptionsForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>648</width>
+            <height>130</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>260</width>
+            <height>130</height>
+        </size>
+    </property>
+    <property name="baseSize">
+        <size>
+            <width>420</width>
+            <height>150</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Search Options</string>
+    </property>
+    <hbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>searchGroupBox</cstring>
+            </property>
+            <property name="margin">
+                <number>0</number>
+            </property>
+            <property name="title">
+                <string>Search parameters</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>6</number>
+                </property>
+                <property name="spacing">
+                    <number>3</number>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>m_searchTextLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>1</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>Search for:</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="0" column="2">
+                    <property name="name">
+                        <cstring>m_syntaxButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Help</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+H</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="2">
+                    <property name="name">
+                        <cstring>m_chooseModulesButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Choose</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="2">
+                    <property name="name">
+                        <cstring>m_chooseRangeButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Setup</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+S</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>m_searchScopeLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>1</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>Search scope:</string>
+                    </property>
+                </widget>
+                <widget class="KComboBox" row="2" column="1">
+                    <property name="name">
+                        <cstring>m_rangeChooserCombo</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                </widget>
+                <widget class="KHistoryCombo" row="0" column="1">
+                    <property name="name">
+                        <cstring>m_searchTextCombo</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="focusPolicy">
+                        <enum>WheelFocus</enum>
+                    </property>
+                    <property name="sizeLimit">
+                        <number>25</number>
+                    </property>
+                    <property name="insertionPolicy">
+                        <enum>AtBottom</enum>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>m_modulesLabel</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>1</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>Search in:</string>
+                    </property>
+                    <property name="textFormat">
+                        <enum>RichText</enum>
+                    </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter|AlignLeft</set>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </hbox>
+</widget>
+<customwidgets>
+</customwidgets>
+<layoutdefaults spacing="3" margin="0"/>
+<includehints>
+    <includehint>kcombobox.h</includehint>
+    <includehint>kcombobox.h</includehint>
+    <includehint>klineedit.h</includehint>
+</includehints>
+</UI>

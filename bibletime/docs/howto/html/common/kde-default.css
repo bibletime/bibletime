@@ -1,0 +1,174 @@
+/*
+    KDE-wide default CSS for HTML documentation (all media types).
+    Copyright (C) 2000 Frederik Fouvry
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    Send comments, suggestions, etc. to Frederik Fouvry 
+    <fouvry@sfs.nphil.uni-tuebingen.de>. */
+
+/*
+   Important note: these setting may be overridden by localised CSS.  Do not 
+   add here any localisation-sensitive style declarations.
+
+   Any updates should be validated, e.g. http://jigsaw.w3.org/css-validator/ */
+
+/* Note: "should be inherit" means that in a proper browser inherit should work.
+         Somehow Netscape manages to interpret "inherit" as bright green. 
+         Yuck.  */
+
+/* Make the main contents of the page not slide up under the top banner */
+
+/* #body_text { position: relative;
+            top: 100px; } */
+
+/* This is a horrible awful hack.. to once again fix the sliding
+navigation problem.  */
+
+body { padding-top: 100px; background-color:
+white; color: black;}
+
+/* Nice link colors for the main text, and bottom navigation */
+
+:link { color: rgb(170,0,0);
+        background-color: white; /* should be inherit */ }
+:visited { color: rgb(170,0,85);
+           background-color: white; /* should be inherit */ }
+:active { color: rgb(170,0,0);
+          background-color: white; /* should be inherit */ }
+
+/* Link colors for the top navigation */
+
+.left :link, .center :link, .right :link { color: rgb(255,255,255);
+        background-color: rgb(82,80,82); }
+
+.left :visited, .center :visited, .right :visited { color: rgb(186,182,186);
+        background-color: rgb(82,80,82); }
+
+/* Giving this a background color breaks things, and it's not necessary for 
+   either navigation or orientation.. so transparent */
+
+.center {color: rgb(255,255,255);
+         background-color: transparent; }
+
+
+:active {color: rgb(186,182,186); 
+         background-color: transparent; }
+
+/* A little bit of padding makes the tables for keybindings etc much easier to read */
+
+TABLE { padding: 5px; } 
+
+/* But no padding for navigation elements */
+
+.shadow, .headline, .bulb, .end  { padding: 0px; }
+
+/* tile the lines on the bottom image */
+
+.navfootertable { background: url("common/bottom1.png"); repeat-x ;
+                  } 
+
+TABLE.programlisting
+TABLE.screen { border-style: none;
+               background-color: rgb(224,224,224);
+               table-layout: auto; /* 100%? */
+               color: rgb(0,0,0); /* should be inherit */
+               }
+
+/* Same as previous block, but more general (previous is HTML only)
+   Not all browsers understand this yet.
+TABLE[class~=programlisting]
+TABLE[class~=screen] { border-style: none;
+                       background-color: rgb(224,224,224);
+                       table-layout: auto;
+                       color: inherit;
+                       }
+*/
+
+P { text-align: justify; }
+
+/* More specific settings */
+
+DIV.navbar P { text-align: right; }
+
+/* Temporary patch: browsers break on bad HTML */
+/* P, H1, H2, H3, H4, H5, TD, TH { font-family: Helvetica, Arial, sans-serif;
+    } */
+
+P, H1, H2, H3, H4, H5, TD, TH { font-family: sans-serif;
+    }
+
+
+
+/* Visual cues for GUI elements etc in the text */
+
+.guimenu, .guimenuitem, .guisubmenu { background-color: rgb(240,240,240);
+                                      color: rgb(0,0,0); /* should be inherit */
+                                    }
+
+.guilabel, .interface, .guibutton { background-color: rgb(240,240,240);
+                                    color: rgb(0,0,0); /* should be inherit */
+                                  }
+
+.shortcut { background-color: rgb(240,240,240);
+            color: rgb(0,0,0); /* should be inherit */
+            }
+
+.shortcut .keycap { background-color: rgb(240,240,240);
+                    color: rgb(0,0,0); /* should be inherit */
+                    }
+
+.question { font-weight: bolder; }
+
+.accel { background-color: rgb(240,240,240);
+         color: rgb(0,0,0); 
+         text-decoration: underline;
+         }
+
+.option, .command { background-color: rgb(255,255,255);
+                  color: rgb(0,96,160);
+                  font-weight: bold;
+                  }
+
+h1, h2, h3, h4, h5, h6 { color: rgb(82,80,82);
+                   }
+.arg, .parameter, .replaceable{ background-color: rgb(255,255,255);
+           color: rgb(0,128,64);
+           font-style: italic;
+           }
+
+DIV.mediaobject { /* float: right; */ 
+                                  /* might make it much nicer. although someone has to
+                                  understand the rules ;-)  You also don't want it to be
+                                  surrounded by text it doesn't refer to ...  But that
+                                  may be among others a question of writing style. */
+                  text-align: center; /* a bit of a hack: it should
+                                  position _images_ */
+                  }
+
+/* An idea that could be nice: a search engine looking for specific
+classes could display them in some conspicuous colour.  All that is
+needed is an on the fly generated style element/style sheet. */
+
+/* Only used in the hand-made HTML license texts */
+BODY.license { background-color: rgb(255,255,255);
+               text-align: justify; 
+               color: rgb(0,0,0);
+               }
+PRE.license { background-color: rgb(255,255,255);
+              font-family: monospace;
+              color: rgb(0,0,0);
+              }
+
