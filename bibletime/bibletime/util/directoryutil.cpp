@@ -13,14 +13,15 @@
 #include "directoryutil.h"
 
 //Qt includes
-#include <qdir.h>
+#include <QDir>
+#include <QFileInfoList>
 
 namespace util {
 
 namespace filesystem {
 
 void DirectoryUtil::removeRecursive(const QString& dir) {
-	qWarning("removeRecursive(%s)", dir.latin1());
+	//qWarning("removeRecursive(%s)", dir.latin1());
 	if (dir == QString::null)  {
 		return;
 	}
@@ -30,36 +31,33 @@ void DirectoryUtil::removeRecursive(const QString& dir) {
 		return;
 	}
 
-	QFileInfo *fi = 0;
+	QFileInfo fi;
 	
 	//remove all files in this dir
 	d.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks );
 
-	const QFileInfoList *fileList = d.entryInfoList();
-	QFileInfoListIterator it_file( *fileList );
-	while ( (fi = it_file.current()) != 0 ) {
-		++it_file;
+	const QFileInfoList fileList = d.entryInfoList();
+	QFileInfoList::const_iterator it_file;// = fileList.iterator()();
 
-		qDebug("Removing %s", fi->absFilePath().latin1() );
-		d.remove( fi->fileName() ) ;
+	for (it_file = fileList.begin(); it_file != fileList.end(); it_file++)
+	{
+		fi = (*it_file);
+		d.remove( fi.fileName() );
 	}
-
+	
 	//remove all subdirs recursively
 	d.setFilter( QDir::Dirs | QDir::NoSymLinks );
-	const QFileInfoList *dirList = d.entryInfoList();
-	QFileInfoListIterator it_dir( *dirList );
+	const QFileInfoList dirList = d.entryInfoList();
+	QFileInfoList::const_iterator it_dir;
 	
-	while ( (fi = it_dir.current()) != 0 ) {
-		++it_dir;
-
-		if ( !fi->isDir() || fi->fileName() == "." || fi->fileName() == ".." ) {
+	for (it_dir = dirList.begin(); it_dir != dirList.end(); it_dir++)
+	{
+		fi = (*it_dir);
+		if ( !fi.isDir() || fi.fileName() == "." || fi.fileName() == ".." ) {
 			continue;
 		}
-		
-		qDebug("Removing dir %s", fi->absFilePath().latin1() );
-		//d.remove( fi->fileName() ) ;
-
-		removeRecursive( fi->absFilePath() );
+		//qDebug("Removing dir %s", fi->absFilePath().latin1() );
+		removeRecursive( fi.absoluteFilePath() );
 	}
 
 	d.rmdir(dir);
@@ -68,39 +66,36 @@ void DirectoryUtil::removeRecursive(const QString& dir) {
 /** Returns the size of the directory including the size of all it's files and it's subdirs.
  */
 unsigned long DirectoryUtil::getDirSizeRecursive(const QString& dir) {
-	qWarning("Getting size for %s", dir.latin1());
+	//qWarning("Getting size for %s", dir.latin1());
 
 	QDir d(dir);
-	if (!d.exists()) {
-		return 0;
-	}
+	if (!d.exists()) return 0;	
 
 	d.setFilter(QDir::Files);
 	
 	unsigned long size = 0;
 	
-	const QFileInfoList* infoList = d.entryInfoList();
-	QFileInfoListIterator it(*infoList);
-	QFileInfo* info = 0;
-	while ((info = it.current()) != 0) {
-		++it;
-
-		size += info->size();
+	const QFileInfoList infoList = d.entryInfoList();
+	QFileInfoList::const_iterator it;
+	QFileInfo info;
+	
+	for (it = infoList.begin(); it != infoList.end(); it++)
+	{
+		info = (*it);
+		size += info.size();
 	}
 
 	d.setFilter(QDir::Dirs);
-	const QFileInfoList* dirInfoList = d.entryInfoList();
-	QFileInfoListIterator it_dir(*dirInfoList);
-	while ((info = it_dir.current()) != 0) {
-		++it_dir;
-		
-		if ( !info->isDir() || info->fileName() == "." || info->fileName() == ".." ) {
+	const QFileInfoList dirInfoList = d.entryInfoList();
+	QFileInfoList::const_iterator it_dir;
+	for (it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); it_dir++)
+	{
+		info = (*it_dir);
+		if ( !info.isDir() || info.fileName() == "." || info.fileName() == ".." ) {
 			continue;
 		}
-
-		size += getDirSizeRecursive( info->absFilePath() );
+		size += getDirSizeRecursive( info.absoluteFilePath() );
 	}
-	
 	return size;
 }
 

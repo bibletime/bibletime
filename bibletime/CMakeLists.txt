@@ -11,14 +11,12 @@ SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 SET(DEBUG true)
 
 SET(bibletime_SOURCES
-	bibletime/main.cpp
-)
-SET(bibletime_MOC_HEADERS 
+	bibletime/util/directoryutil.cpp
 )
 
-SET(libbackend_SOURCES
-)
 
+#SET(bibletime_MOC_HEADERS 
+#)
 #bibletime_MOC_SOURCES will contain a list of source files created by Qt's moc
 #QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOC_HEADERS})
 
@@ -43,16 +41,15 @@ INSTALL(TARGETS bibletime
 # Autoconfiguration section
 #
 
-#
-#Find and include QT4
-#
-SET(QT_DONT_USE_QTGUI true)
 IF (NOT QT4_FOUND)
 	MESSAGE(FATAL_ERROR "Qt 4 was not found on your system.")
 ENDIF (NOT QT4_FOUND)
+
 INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}
 	${QT_QTCORE_INCLUDE_DIR}
+	${QT_QTGUI_INCLUDE_DIR}
+	${KDE4_INCLUDE_DIR}
 )
 TARGET_LINK_LIBRARIES(bibletime
 #	Backend

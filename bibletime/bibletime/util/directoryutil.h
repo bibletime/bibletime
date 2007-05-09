@@ -12,7 +12,7 @@
 #ifndef UTIL_FILESDIRECTORYUTIL_H
 #define UTIL_FILESDIRECTORYUTIL_H
 
-#include <qstring.h>
+#include <QString>
 
 namespace util {
 
@@ -34,7 +34,7 @@ public:
 	 * for each of it at the same time in the deepest recursion.
 	 * For really deep dir tree this may lead to a stack overflow.
 	 */
-    static void removeRecursive(const QString& dir);
+	static void removeRecursive(const QString& dir);
 
 	/** Returns the size of the directory including the size of all it's files
 	 * and it's subdirs.
