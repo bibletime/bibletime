@@ -2,16 +2,17 @@ PROJECT(bibletime CXX C)
 
 cmake_minimum_required(VERSION 2.4.0)
 
-find_package(Qt4 REQUIRED) # find and setup Qt4 for this project
+find_package(Qt4 REQUIRED)  #find and setup Qt4 for this project
 find_package(KDE4 REQUIRED) #KDE4
 
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin) 
-SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
+SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
 
 SET(DEBUG true)
 
 SET(bibletime_SOURCES
 	bibletime/util/directoryutil.cpp
+	bibletime/backend/btstringmgr.cpp
 )
 
 
@@ -50,9 +51,11 @@ INCLUDE_DIRECTORIES(
 	${QT_QTCORE_INCLUDE_DIR}
 	${QT_QTGUI_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
+	/usr/include/sword
 )
 TARGET_LINK_LIBRARIES(bibletime
 #	Backend
 	QtCore
+	sword
 )
 

@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef BTSTRINGMGR_H
 #define BTSTRINGMGR_H
 
@@ -16,7 +14,7 @@
 #include <stringmgr.h>
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 using namespace sword;
 

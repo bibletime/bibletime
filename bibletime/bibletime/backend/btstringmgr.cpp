@@ -12,14 +12,11 @@
 
 #include "btstringmgr.h"
 
-//System includes
-#include <ctype.h>
-
 char* BTStringMgr::upperUTF8(char* text, unsigned int maxlen) const {
 	const int max = (maxlen>0) ? maxlen : strlen(text);
 
 	if (isUtf8(text)) {
-		strncpy(text, (const char*)QString::fromUtf8(text).upper().utf8(), max);
+		strncpy(text, (const char*)QString::fromUtf8(text).toUpper().toUtf8(), max);
 
 		return text;
 	}
