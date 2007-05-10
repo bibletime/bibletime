@@ -1,37 +1,25 @@
-/******************************************************************************
- *
- * $Id: bt_thmlplain.h,v 1.1 2007/03/14 21:32:47 joachim Exp $
- *
- * Copyright 1998 CrossWire Bible Society (http://www.crosswire.org)
- *	CrossWire Bible Society
- *	P. O. Box 2528
- *	Tempe, AZ  85280-2528
- *
- * This program is free software; you can redistribute it and/or modify it
- * under the terms of the GNU General Public License as published by the
- * Free Software Foundation version 2.
- *
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * General Public License for more details.
- *
- */
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef BT_THMLPLAIN_H
 #define BT_THMLPLAIN_H
 
+#include <swbuf.h>
 #include <swfilter.h>
-
-using namespace sword;
 
 namespace Filters {
 
-/** this filter converts ThML text to plain text
- */
-class BT_ThMLPlain : public SWFilter {
+	/** This filter converts ThML text to plain text
+	*/
+class BT_ThMLPlain : public sword::SWFilter {
 protected:
-	virtual char processText(SWBuf &text, const SWKey *key = 0, const SWModule *module = 0);
+	virtual char processText(sword::SWBuf &text, const sword::SWKey *key = 0, const sword::SWModule *module = 0);
 public:
 	BT_ThMLPlain();
 };

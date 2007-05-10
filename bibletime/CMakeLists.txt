@@ -13,6 +13,9 @@ SET(DEBUG true)
 SET(bibletime_SOURCES
 	bibletime/util/directoryutil.cpp
 	bibletime/backend/btstringmgr.cpp
+	bibletime/backend/bt_plainhtml.cpp
+	bibletime/backend/bt_thmlplain.cpp
+	bibletime/backend/osismorphsegmentation.cpp
 )
 
 

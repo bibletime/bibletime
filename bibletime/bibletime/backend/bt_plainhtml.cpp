@@ -7,36 +7,16 @@
 *
 **********/
 
-
-
-//BibleTime includes
-#include "cswordmoduleinfo.h"
-#include "cswordbackend.h"
-#include "util/cpointers.h"
-
 #include "bt_plainhtml.h"
 
-//system includes
-#include <stdlib.h>
-#include <stdio.h>
-
-//Sword includes
-#include <utilxml.h>
-
-//Qt includes
-#include <qregexp.h>
-#include <qstring.h>
-
-using namespace Filters;
-
-BT_PLAINHTML::BT_PLAINHTML() : sword::SWFilter() {
+Filters::BT_PLAINHTML::BT_PLAINHTML() : sword::SWFilter() {
 }
 
 /** No descriptions */
-char BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey * key, const sword::SWModule * module) {
+char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey * key, const sword::SWModule * module) {
 	int count = 0;
 
-	SWBuf orig = text;
+	sword::SWBuf orig = text;
 	const char *from = orig.c_str();
 	for (text = ""; *from; from++) 
 	{

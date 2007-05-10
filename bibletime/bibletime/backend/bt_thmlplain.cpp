@@ -1,3 +1,12 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 /******************************************************************************
  *
  * thmlplain -	SWFilter descendant to strip out all ThML tags or convert to
@@ -6,17 +15,10 @@
 
 #include "bt_thmlplain.h"
 
-#include <stdlib.h>
-#include <swbuf.h>
-
-using namespace sword;
-
-namespace Filters {
-
-BT_ThMLPlain::BT_ThMLPlain() {
+Filters::BT_ThMLPlain::BT_ThMLPlain() {
 }
 
-char BT_ThMLPlain::processText(SWBuf &text, const SWKey *key, const SWModule *module)
+char Filters::BT_ThMLPlain::processText(sword::SWBuf &text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/)
 {
 	char token[2048];
 	int tokpos = 0;
@@ -24,7 +26,7 @@ char BT_ThMLPlain::processText(SWBuf &text, const SWKey *key, const SWModule *mo
 	bool ampersand = false;
 
 	const char *from;
-	SWBuf orig = text;
+	sword::SWBuf orig = text;
 	from = orig.c_str();
 	for (text = ""; *from; from++)
 	{
@@ -217,5 +219,3 @@ char BT_ThMLPlain::processText(SWBuf &text, const SWKey *key, const SWModule *mo
 	return 0;
 }
 
-
-}
