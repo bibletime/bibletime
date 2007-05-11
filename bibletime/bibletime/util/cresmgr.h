@@ -7,14 +7,11 @@
 *
 **********/
 
-
-
 #ifndef CRESMGR_H
 #define CRESMGR_H
 
 //Qt includes
-#include <qstring.h>
-#include <qkeysequence.h>
+#include <QString>
 
 //KDE includes
 #include <kshortcut.h>

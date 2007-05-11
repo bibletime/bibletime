@@ -1,4 +1,4 @@
-PROJECT(bibletime CXX C)
+PROJECT(bibletime CXX)
 
 cmake_minimum_required(VERSION 2.4.0)
 
@@ -11,13 +11,15 @@ SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
 SET(DEBUG true)
 
 SET(bibletime_SOURCES
+#These files already compile cleanly
 	bibletime/util/directoryutil.cpp
 	bibletime/backend/btstringmgr.cpp
 	bibletime/backend/bt_plainhtml.cpp
 	bibletime/backend/bt_thmlplain.cpp
 	bibletime/backend/osismorphsegmentation.cpp
+	bibletime/util/cresmgr.cpp
+#Add files to be ported here
 )
-
 
 #SET(bibletime_MOC_HEADERS 
 #)
@@ -26,7 +28,6 @@ SET(bibletime_SOURCES
 
 #Add all source files to the binary
 #ADD_LIBRARY(Backend ${libbackend_SOURCES} )
-ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 #
 # Install locations
@@ -37,18 +38,6 @@ ELSE(DEBUG)
 	SET(CMAKE_INSTALL_PREFIX /usr/local)
 ENDIF(DEBUG)
 
-INSTALL(TARGETS bibletime
-	DESTINATION bin
-)
-
-#
-# Autoconfiguration section
-#
-
-IF (NOT QT4_FOUND)
-	MESSAGE(FATAL_ERROR "Qt 4 was not found on your system.")
-ENDIF (NOT QT4_FOUND)
-
 INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}
 	${QT_QTCORE_INCLUDE_DIR}
@@ -56,9 +45,22 @@ INCLUDE_DIRECTORIES(
 	${KDE4_INCLUDE_DIR}
 	/usr/include/sword
 )
+
+#This must come before the target definition!
+LINK_DIRECTORIES(
+	${KDE4_LIB_DIR}
+	${QT_LIBRARY_DIR}
+)
+
+ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
+
+INSTALL(TARGETS bibletime
+	DESTINATION bin
+)
+
 TARGET_LINK_LIBRARIES(bibletime
-#	Backend
+	kdeui
+	kdecore
 	QtCore
 	sword
 )
-

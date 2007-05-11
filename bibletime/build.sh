@@ -3,6 +3,6 @@
 
 if [ ! -d build ]; then mkdir build; fi
 cd build
-#VERBOSE=1 cmake ..
-cmake ..
+VERBOSE=1 cmake ..
+#cmake ..
 make
