@@ -7,9 +7,6 @@
 *
 **********/
 
-
-
-
 //own includes
 #include "cswordkey.h"
 #include "cswordmoduleinfo.h"
@@ -60,11 +57,10 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 		return QString::null;
 	}
 
-	using namespace sword;
-	SWKey* const k = dynamic_cast<SWKey*>(this);
+	sword::SWKey* const k = dynamic_cast<sword::SWKey*>(this);
 
 	if (k) {
-		VerseKey* vk_mod = dynamic_cast<VerseKey*>(m_module->module()->getKey());
+		sword::VerseKey* vk_mod = dynamic_cast<sword::VerseKey*>(m_module->module()->getKey());
 
 		if (vk_mod) {
 			vk_mod->Headings(1);

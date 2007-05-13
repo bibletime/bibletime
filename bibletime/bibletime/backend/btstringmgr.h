@@ -16,14 +16,12 @@
 //Qt includes
 #include <QString>
 
-using namespace sword;
-
 /** Unicode string manager implementation.
  * This is the StringManager implementation which works with QString.
  * @author The BibleTime developers
  */
 
-class BTStringMgr : public StringMgr {
+class BTStringMgr : public sword::StringMgr {
 
 public:
 	/** Converts the param to an upper case Utf8 string

@@ -30,8 +30,6 @@
 #include <localemgr.h>
 #include <utilstr.h>
 
-using namespace sword;
-
 namespace Rendering {
 
 	class CEntryDisplay;
