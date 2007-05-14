@@ -13,7 +13,7 @@ Filters::BT_PLAINHTML::BT_PLAINHTML() : sword::SWFilter() {
 }
 
 /** No descriptions */
-char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey * key, const sword::SWModule * module) {
+char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey* /*key*/, const sword::SWModule* /*module*/) {
 	int count = 0;
 
 	sword::SWBuf orig = text;

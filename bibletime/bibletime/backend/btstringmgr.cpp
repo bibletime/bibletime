@@ -34,7 +34,7 @@ char* BTStringMgr::upperUTF8(char* text, unsigned int maxlen) const {
 	return text;
 }
 
-char* BTStringMgr::upperLatin1(char* text, unsigned int max) const {
+char* BTStringMgr::upperLatin1(char* text, unsigned int /*max*/) const {
 	char* ret = text;
 
 	while (*text) {
