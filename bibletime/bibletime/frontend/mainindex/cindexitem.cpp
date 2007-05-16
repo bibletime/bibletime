@@ -36,7 +36,7 @@
 #include <qdragobject.h>
 #include <qstringlist.h>
 #include <qfile.h>
-#include <qstring.h>
+#include <QString>
 #include <qtextstream.h>
 
 //KDE includes

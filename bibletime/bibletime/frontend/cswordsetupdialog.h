@@ -17,7 +17,7 @@
 #include "btinstallmgr.h"
 
 //QT includes
-#include <qstring.h>
+#include <QString>
 #include <qmap.h>
 
 //KDE includes

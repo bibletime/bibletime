@@ -10,26 +10,20 @@
 
 
 //BibleTime includes
-#include "cswordmoduleinfo.h"
-#include "cswordbackend.h"
-#include "util/cpointers.h"
-
 #include "bt_gbfhtml.h"
 
-//sytsme includes
-#include <stdlib.h>
-#include <stdio.h>
+#include "cswordmoduleinfo.h"
+#include "cswordbackend.h"
+#include "../util/cpointers.h"
 
 //Sword includes
 #include <utilxml.h>
 
 //Qt includes
-#include <qregexp.h>
-#include <qstring.h>
+#include <QRegExp>
+#include <QString>
 
-using namespace Filters;
-
-BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
+Filters::BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
 
 	setEscapeStringCaseSensitive(true);
 	setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
@@ -82,7 +76,7 @@ BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
 }
 
 /** No descriptions */
-char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const sword::SWModule * module) {
+char Filters::BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const sword::SWModule * module) {
 	GBFHTML::processText(buf, key, module);
 
 	if (!module->isProcessEntryAttributes()) {
@@ -107,7 +101,7 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 
 	int lastMatchEnd = 0;
 
-	int pos = tag.search(t,0);
+	int pos = tag.indexIn(t,0);
 
 	if (pos == -1) { //no strong or morph code found in this text
 		return 1; //WARNING: Return already here
@@ -118,7 +112,7 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 		list.append(t.mid(lastMatchEnd, pos+tag.matchedLength()-lastMatchEnd));
 
 		lastMatchEnd = pos + tag.matchedLength();
-		pos = tag.search(t, pos + tag.matchedLength());
+		pos = tag.indexIn(t, pos + tag.matchedLength());
 	}
 
 	//append the trailing text to the list.
@@ -141,14 +135,14 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 		//If not, leave out the strongs info, because it can't be tight to a text
 		//Comparing the first char with < is not enough, because the tokenReplace is done already
 		//so there might be html tags already.
-		const bool textPresent = (e.stripWhiteSpace().remove(QRegExp("[.,;:]")).left(2) != "<W");
+		const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(2) != "<W");
 
 		if (!textPresent) {
 			result += (*it);
 			continue;
 		}
 
-		int pos = tag.search(e, 0); //try to find a strong number marker
+		int pos = tag.indexIn(e, 0); //try to find a strong number marker
 		bool insertedTag = false;
 		bool hasLemmaAttr = false;
 		bool hasMorphAttr = false;
@@ -200,7 +194,7 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 					//search the existing attribute start
 					QRegExp attrRegExp( isMorph ? "morph=\".+(?=\")" : "lemma=\".+(?=\")" );
 					attrRegExp.setMinimal(true);
-					const int foundPos = e.find(attrRegExp, tagAttributeStart);
+					const int foundPos = e.indexOf(attrRegExp, tagAttributeStart);
 
 					if (foundPos != -1) {
 						e.insert(foundPos + attrRegExp.matchedLength(), QString("|").append(value));
@@ -211,8 +205,7 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 					}
 				}
 				else { //attribute was not yet inserted
-					QString attr;
-					attr.setLatin1(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
+					QString attr = QString(isMorph ? "morph" : "lemma").append("=\"").append(value).append("\" ");
 
 					e.insert(tagAttributeStart, attr);
 					pos += attr.length();
@@ -225,20 +218,20 @@ char BT_GBFHTML::processText(sword::SWBuf& buf, const sword::SWKey * key, const 
 			}
 
 			insertedTag = true;
-			pos = tag.search(e, pos);
+			pos = tag.indexIn(e, pos);
 		}
 
 		result += e;
 	}
 
 	if (list.count()) {
-		buf = (const char*)result.utf8();
+		buf = (const char*)result.toUtf8().constData();
 	}
 
 	return 1;
 }
 
-bool BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
 	if (!substituteToken(buf, token)) {  //more than a simple replace
 		const unsigned int tokenLength = strlen(token);
 		unsigned long i;
@@ -272,7 +265,7 @@ bool BT_GBFHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicF
 			buf.append('/');
 			buf.append(myUserData->key->getShortText());
 			buf.append('/');
-			buf.append( QString::number(myUserData->swordFootnote++).latin1() );
+			buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() );
 			buf.append("\">*</span> ");
 
 			userData->suspendTextPassThru = true;

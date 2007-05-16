@@ -12,14 +12,14 @@
 #ifndef CBTCONFIG_H
 #define CBTCONFIG_H
 
-#include "backend/cswordbackend.h"
-#include "backend/clanguagemgr.h"
+#include "../backend/cswordbackend.h"
+#include "../backend/clanguagemgr.h"
 
 //Qt includes
-#include <qstring.h>
-#include <qfont.h>
-#include <qvaluelist.h>
-#include <qmap.h>
+#include <QString>
+#include <QFont>
+#include <QList>
+#include <QMap>
 
 //Forward declarations
 class KAccel;
@@ -121,7 +121,7 @@ public:
 		( const CBTConfig::bools );
 	static const int      get
 		( const CBTConfig::ints );
-	static const QValueList<int> get
+	static const QList<int> get
 		( const CBTConfig::intLists );
 	static const QStringList get
 		( const CBTConfig::stringLists );
@@ -135,7 +135,7 @@ public:
 	static const QString getDefault( const CBTConfig::modules );
 	static const bool getDefault( const CBTConfig::bools );
 	static const int getDefault( const CBTConfig::ints );
-	static const QValueList<int> getDefault( const CBTConfig::intLists );
+	static const QList<int> getDefault( const CBTConfig::intLists );
 	static const QStringList getDefault( const CBTConfig::stringLists );
 	static const CBTConfig::StringMap getDefault( const CBTConfig::stringMaps );
 	static const QFont& getDefault( const CLanguageMgr::Language* const );
@@ -151,7 +151,7 @@ public:
 	static void set
 		( const CBTConfig::ints,   const int value );
 	static void set
-		( const CBTConfig::intLists, const QValueList<int> value );
+		( const CBTConfig::intLists, const QList<int> value );
 	static void set
 		( const CBTConfig::stringLists, const QStringList value);
 	static void set

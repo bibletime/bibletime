@@ -24,7 +24,7 @@
 //Qt includes
 #include <qobject.h>
 #include <qptrlist.h>
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 
 namespace BookshelfManager {

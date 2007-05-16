@@ -20,7 +20,7 @@
 //Qt includes
 #include <qapplication.h>
 #include <qfontdatabase.h>
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 #include <qmap.h>
 

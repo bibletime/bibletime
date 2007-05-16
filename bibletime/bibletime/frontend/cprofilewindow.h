@@ -16,7 +16,7 @@
 #include "backend/cswordbackend.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qrect.h>
 #include <qstringlist.h>
 #include <qptrlist.h>

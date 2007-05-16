@@ -16,7 +16,7 @@
 
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 //forward declarations
 
 class CSwordModuleInfo;

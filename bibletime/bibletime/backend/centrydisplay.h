@@ -23,7 +23,7 @@
 #include <swdisp.h>
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 class CSwordModuleInfo;
 

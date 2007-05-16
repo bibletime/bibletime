@@ -17,7 +17,7 @@
 
 //Qt includes
 #include <qmap.h>
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 
 //KDE includes

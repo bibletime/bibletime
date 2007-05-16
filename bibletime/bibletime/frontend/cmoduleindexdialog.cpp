@@ -15,7 +15,7 @@
 #include "util/scoped_resource.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 //KDE includes
 #include <kapplication.h>

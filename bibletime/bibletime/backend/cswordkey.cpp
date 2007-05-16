@@ -26,7 +26,7 @@
 
 //Qt includes
 #include <qregexp.h>
-#include <qstring.h>
+#include <QString>
 
 CSwordKey::CSwordKey(CSwordModuleInfo* const module) : m_module(module) {}
 

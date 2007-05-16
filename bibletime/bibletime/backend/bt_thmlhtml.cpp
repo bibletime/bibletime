@@ -7,37 +7,25 @@
 *
 **********/
 
-
-
-
 //BibleTime includes
-#include "backend/bt_thmlhtml.h"
-#include "backend/clanguagemgr.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/creferencemanager.h"
-
-#include "frontend/cbtconfig.h"
-
-#include "util/cpointers.h"
-#include "util/scoped_resource.h"
-
-#include <iostream>
+#include "bt_thmlhtml.h"
+#include "clanguagemgr.h"
+#include "cswordmoduleinfo.h"
+#include "creferencemanager.h"
+#include "../frontend/cbtconfig.h"
+#include "../util/cpointers.h"
+#include "../util/scoped_resource.h"
 
 //Sword includes
 #include <swmodule.h>
 #include <utilxml.h>
-#include "versekey.h"
+#include <versekey.h>
 
 //Qt includes
-#include <qstring.h>
-#include <qregexp.h>
+#include <QString>
+#include <QRegExp>
 
-//System includes
-#include <stdlib.h>
-
-using namespace Filters;
-
-BT_ThMLHTML::BT_ThMLHTML() {
+Filters::BT_ThMLHTML::BT_ThMLHTML() {
 	setEscapeStringCaseSensitive(true);
 	setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
@@ -51,8 +39,8 @@ BT_ThMLHTML::BT_ThMLHTML() {
 	removeTokenSubstitute("/note");
 }
 
-char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const sword::SWModule* module) {
-	ThMLHTML::processText(buf, key, module);
+char Filters::BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const sword::SWModule* module) {
+	sword::ThMLHTML::processText(buf, key, module);
 
 	CSwordModuleInfo* m = CPointers::backend()->findModuleByName( module->Name() );
 
@@ -67,7 +55,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 
 	QStringList list;
 	int lastMatchEnd = 0;
-	int pos = tag.search(t,0);
+	int pos = tag.indexIn(t,0);
 
 	if (pos == -1) { //no strong or morph code found in this text
 		return 1; //WARNING: Return alread here
@@ -77,7 +65,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 		list.append(t.mid(lastMatchEnd, pos+tag.matchedLength()-lastMatchEnd));
 
 		lastMatchEnd = pos+tag.matchedLength();
-		pos = tag.search(t,pos+tag.matchedLength());
+		pos = tag.indexIn(t,pos+tag.matchedLength());
 	}
 
 	if (!t.right(t.length() - lastMatchEnd).isEmpty()) {
@@ -89,7 +77,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 	for (QStringList::iterator it = list.begin(); it != list.end(); ++it) {
 		QString e( *it );
 
-		const bool textPresent = (e.stripWhiteSpace().remove(QRegExp("[.,;:]")).left(1) != "<");
+		const bool textPresent = (e.trimmed().remove(QRegExp("[.,;:]")).left(1) != "<");
 
 		if (!textPresent) {
 			continue;
@@ -99,7 +87,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 		bool hasLemmaAttr = false;
 		bool hasMorphAttr = false;
 
-		int pos = tag.search(e, 0);
+		int pos = tag.indexIn(e, 0);
 		bool insertedTag = false;
 		QString value;
 		QString valueClass;
@@ -143,8 +131,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 				e.replace(pos, tag.matchedLength(), "</span>");
 				pos += 7;
 
-				QString rep;
-				rep.setLatin1("<span lemma=\"").append(value).append("\">");
+				QString rep = QString("<span lemma=\"").append(value).append("\">");
 				int startPos = 0;
 				QChar c = e[startPos];
 
@@ -166,7 +153,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 					//search the existing attribute start
 					QRegExp attrRegExp( isMorph ? "morph=\".+(?=\")" : "lemma=\".+(?=\")" );
 					attrRegExp.setMinimal(true);
-					const int foundAttrPos = e.find(attrRegExp, pos);
+					const int foundAttrPos = e.indexOf(attrRegExp, pos);
 
 					if (foundAttrPos != -1) {
 						e.insert(foundAttrPos + attrRegExp.matchedLength(), QString("|").append(value));
@@ -177,7 +164,7 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 					}
 				}
 				else { //attribute was not yet inserted
-					const int attrPos = e.find(QRegExp("morph=|lemma="), 0);
+					const int attrPos = e.indexOf(QRegExp("morph=|lemma="), 0);
 
 					if (attrPos >= 0) {
 						QString attr;
@@ -193,21 +180,21 @@ char BT_ThMLHTML::processText(sword::SWBuf& buf, const sword::SWKey* key, const 
 			}
 
 			insertedTag = true;
-			pos = tag.search(e, pos);
+			pos = tag.indexIn(e, pos);
 		}
 
 		result.append( e );
 	}
 
 	if (list.count()) {
-		buf = (const char*)result.utf8();
+		buf = (const char*)result.toUtf8();
 	}
 
 	return 1;
 }
 
 
-bool BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
 	if (!substituteToken(buf, token) && !substituteEscapeString(buf, token)) {
 		sword::XMLTag tag(token);
 		BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
@@ -241,7 +228,7 @@ bool BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 				buf.append('/');
 				buf.append(myUserData->key->getShortText());
 				buf.append('/');
-				buf.append( QString::number(myUserData->swordFootnote++).latin1() );
+				buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() );
 				buf.append("\">*</span> ");
 
 				myUserData->suspendTextPassThru = true;
@@ -278,7 +265,7 @@ bool BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 							//it's ok to split the reference, because to descriptive text is given
 							bool insertSemicolon = false;
 							buf.append("<span class=\"crossreference\">");
-							QStringList refs = QStringList::split(";", QString::fromUtf8(myUserData->lastTextNode.c_str()));
+							QStringList refs = QString::fromUtf8(myUserData->lastTextNode.c_str()).split(";");
 							QString oldRef; //the previous reference to use as a base for the next refs
 							for (QStringList::iterator it(refs.begin()); it != refs.end(); ++it) {
 
@@ -299,14 +286,14 @@ bool BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 										mod->name(),
 										completeRef,
 										CReferenceManager::typeFromModule(mod->type())
-									).utf8()
+									).toUtf8().constData()
 								);
 
 								buf.append("\" crossrefs=\"");
-								buf.append((const char*)completeRef.utf8());
+								buf.append((const char*)completeRef.toUtf8());
 								buf.append("\">");
 
-								buf.append((const char*)(*it).utf8());
+								buf.append((const char*)(*it).toUtf8());
 
 								buf.append("</a>");
 
@@ -344,10 +331,10 @@ bool BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
  								mod->name(),
  								completeRef,
  								CReferenceManager::typeFromModule(mod->type())
-							).utf8()
+							).toUtf8().constData()
 						);
 						buf.append("\" crossrefs=\"");
-						buf.append((const char*)completeRef.utf8());
+						buf.append((const char*)completeRef.toUtf8());
 						buf.append("\">");
 					}
 					else {

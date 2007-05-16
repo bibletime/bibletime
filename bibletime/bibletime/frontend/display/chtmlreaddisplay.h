@@ -17,7 +17,7 @@
 //#include "frontend/ctooltip.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qwidget.h>
 
 //KDE includes

@@ -13,7 +13,7 @@
 #define CREFSELECTDIALOG_H
 //Qt includes
 #include <qwidget.h>
-#include <qstring.h>
+#include <QString>
 class QLineEdit;
 
 //KDE includes

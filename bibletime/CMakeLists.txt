@@ -14,7 +14,11 @@ SET(bibletime_SOURCES
 #These files already compile cleanly
 	bibletime/util/directoryutil.cpp
 	bibletime/backend/btstringmgr.cpp
+	#backend filters
+	bibletime/backend/bt_gbfhtml.cpp
+	bibletime/backend/bt_osishtml.cpp
 	bibletime/backend/bt_plainhtml.cpp
+	bibletime/backend/bt_thmlhtml.cpp
 	bibletime/backend/bt_thmlplain.cpp
 	bibletime/backend/osismorphsegmentation.cpp
 	bibletime/util/cresmgr.cpp
@@ -42,6 +46,7 @@ INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}
 	${QT_QTCORE_INCLUDE_DIR}
 	${QT_QTGUI_INCLUDE_DIR}
+	${QT_QT3SUPPORT_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
 	/usr/include/sword
 )

@@ -18,7 +18,7 @@
 
 //Qt includes
 #include <qobject.h>
-#include <qstring.h>
+#include <QString>
 #include <qmap.h>
 
 

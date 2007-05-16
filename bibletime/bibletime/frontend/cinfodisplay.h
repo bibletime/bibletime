@@ -14,12 +14,12 @@
 #define CINFODISPLAY_H
 
 //Backend
-#include "backend/ctextrendering.h"
+#include "../backend/ctextrendering.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <qvaluelist.h>
-#include <qpair.h>
+#include <QWidget>
+#include <QHash>
+#include <QPair>
 
 //class forward declarations
 class CReadDisplay;
@@ -43,7 +43,7 @@ public:
 		};
 
 		typedef QPair<InfoType, QString> InfoData;
-		typedef QValueList<InfoData> ListInfoData;
+		typedef QList<InfoData> ListInfoData;
 
 		CInfoDisplay(QWidget *parent = 0, const char *name = 0);
 		virtual ~CInfoDisplay();

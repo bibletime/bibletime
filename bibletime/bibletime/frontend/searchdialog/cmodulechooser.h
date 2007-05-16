@@ -25,7 +25,7 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qstring.h>
+#include <QString>
 #include <qcanvas.h>
 #include <qdict.h>
 #include <qtooltip.h>

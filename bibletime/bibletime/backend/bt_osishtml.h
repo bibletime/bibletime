@@ -11,6 +11,7 @@
 #define BT_OSISHTML_H
 
 //Sword includes
+#include <swbuf.h>
 #include <osishtmlhref.h>
 
 namespace Filters {

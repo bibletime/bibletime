@@ -21,7 +21,7 @@
 #include <qframe.h>
 #include <qguardedptr.h>
 #include <qlabel.h>
-#include <qstring.h>
+#include <QString>
 #include <qmap.h>
 #include <qdict.h>
 #include <qmap.h>

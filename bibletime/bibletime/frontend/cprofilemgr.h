@@ -15,7 +15,7 @@
 #include "cprofile.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 namespace Profile {
 /** The manager for profiles.

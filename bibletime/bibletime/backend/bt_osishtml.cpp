@@ -7,38 +7,26 @@
 *
 **********/
 
-
-
 //BibleTime includes
-#include <stdlib.h>
 #include "bt_osishtml.h"
-#include "versekey.h"
-
 #include "clanguagemgr.h"
 #include "creferencemanager.h"
 #include "cswordmoduleinfo.h"
-#include "frontend/cbtconfig.h"
-#include "util/cpointers.h"
+#include "../frontend/cbtconfig.h"
+#include "../util/cpointers.h"
 
-#include <iostream>
-
-//Sword includes
+//Sword
 #include <swmodule.h>
 #include <swbuf.h>
 #include <utilxml.h>
 
-//KDE includes
+//Qt
+#include <QString>
+
+//KDE
 #include <klocale.h>
 
-//Qt includes
-#include <qstring.h>
-
-using sword::SWBuf;
-using sword::XMLTag;
-
-using namespace Filters;
-
-BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
+Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
 	setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
 
 	addTokenSubstitute("inscription", "<span class=\"inscription\">");
@@ -64,14 +52,14 @@ BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
 
 }
 
-bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
+bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData) {
 	// manually process if it wasn't a simple substitution
 
 	if (!substituteToken(buf, token)) {
 		BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
 		sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack
 
-		XMLTag tag(token);
+		sword::XMLTag tag(token);
 		//     qWarning("found %s", token);
 		const bool osisQToTick = ((!userData->module->getConfigEntry("OSISqToTick")) || (strcmp(userData->module->getConfigEntry("OSISqToTick"), "false")));
 
@@ -84,7 +72,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 			//handle intro
 
 			if ((!tag.isEmpty()) && (!tag.isEndTag())) { //start tag
-				SWBuf type( tag.getAttribute("type") );
+				sword::SWBuf type( tag.getAttribute("type") );
 
 				if (type == "introduction") {
 					buf.append("<div class=\"introduction\">");
@@ -105,8 +93,8 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 				const char *attrib;
 				const char *val;
 
-				XMLTag outTag("span");
-				SWBuf attrValue;
+				sword::XMLTag outTag("span");
+				sword::SWBuf attrValue;
 
 				if ((attrib = tag.getAttribute("xlit"))) {
 					val = strchr(attrib, ':');
@@ -237,7 +225,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 		// <note> tag
 		else if (!strcmp(tag.getName(), "note")) {
 			if (!tag.isEndTag()) { //start tag
-				const SWBuf type( tag.getAttribute("type") );
+				const sword::SWBuf type( tag.getAttribute("type") );
 
 				if (type == "crossReference") { //note containing cross references
 					myUserData->inCrossrefNote = true;
@@ -300,9 +288,9 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 					buf.append('/');
 					buf.append(myUserData->key->getShortText());
 					buf.append('/');
-					buf.append( QString::number(myUserData->swordFootnote++).latin1() ); //inefficient
+					buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() ); //inefficient
 
-					const SWBuf n = tag.getAttribute("n");
+					const sword::SWBuf n = tag.getAttribute("n");
 					
 					buf.append("\">");
 					buf.append( (n.length() > 0) ? n.c_str() : "*" );
@@ -324,7 +312,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 					buf.append(" <span class=\"alternative\" alternative=\"");
 					buf.append(myUserData->lastTextNode);
 					buf.append("\" title=\"");
-					buf.append((const char*)i18n("Alternative text").utf8());
+					buf.append((const char*)i18n("Alternative text").toUtf8().constData());
 					buf.append("\" />");
 				}
 
@@ -356,7 +344,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 					Q_ASSERT(mod);
 
 					//if the osisRef like "GerLut:key" contains a module, use that
-					int pos = ref.find(":");
+					int pos = ref.indexOf(":");
 
 					if ((pos >= 0) && ref.at(pos-1).isLetter() && ref.at(pos+1).isLetter()) {
 						QString newModuleName = ref.left(pos);
@@ -379,10 +367,10 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 							mod->name(),
 							CReferenceManager::parseVerseReference(hrefRef, options),
 							CReferenceManager::typeFromModule(mod->type())
-						).utf8()
+						).toUtf8().constData()
 					);
 					buf.append("\" crossrefs=\"");
-					buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).utf8()); //ref must contain the osisRef module marker if there was any
+					buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
 					buf.append("\">");
 				}
 			}
@@ -411,7 +399,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 
 		// <hi> highlighted text
 		else if (!strcmp(tag.getName(), "hi")) {
-			const SWBuf type = tag.getAttribute("type");
+			const sword::SWBuf type = tag.getAttribute("type");
 
 			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
 				if (type == "bold") {
@@ -446,7 +434,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 
 		//name
 		else if (!strcmp(tag.getName(), "name")) {
-			const SWBuf type = tag.getAttribute("type");
+			const sword::SWBuf type = tag.getAttribute("type");
 
 			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
 				if (type == "geographic") {
@@ -473,7 +461,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 			}
 		}
 		else if (!strcmp(tag.getName(), "transChange")) {
-			SWBuf type( tag.getAttribute("type") );
+			sword::SWBuf type( tag.getAttribute("type") );
 
 			if ( !type.length() ) {
 				type = tag.getAttribute("changeType");
@@ -482,7 +470,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
 				if (type == "added") {
 					buf.append("<span class=\"transchange\" title=\"");
-					buf.append((const char*)i18n("Added text").utf8());
+					buf.append(i18n("Added text").toUtf8().constData());
 					buf.append("\"><span class=\"added\">");
 				}
 				else if (type == "amplified") {
@@ -516,8 +504,8 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 
 		// <q> quote
 		else if (!strcmp(tag.getName(), "q")) {
-			SWBuf type = tag.getAttribute("type");
-			SWBuf who = tag.getAttribute("who");
+			sword::SWBuf type = tag.getAttribute("type");
+			sword::SWBuf who = tag.getAttribute("who");
 			const char *lev = tag.getAttribute("level");
 			int level = (lev) ? atoi(lev) : 1;
 
@@ -547,7 +535,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 		// abbr tag
 		else if (!strcmp(tag.getName(), "abbr")) {
 			if (!tag.isEndTag() && !tag.isEmpty()) {
-				const SWBuf expansion = tag.getAttribute("expansion");
+				const sword::SWBuf expansion = tag.getAttribute("expansion");
 
 				buf.append("<span class=\"abbreviation\" expansion=\"");
 				buf.append(expansion);
@@ -560,7 +548,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 
 		// <milestone> tag
 		else if (!strcmp(tag.getName(), "milestone")) {
-			const SWBuf type = tag.getAttribute("type");
+			const sword::SWBuf type = tag.getAttribute("type");
 
 			if ((type == "screen") || (type == "line")) {//line break
 				buf.append("<br/>");
@@ -568,7 +556,7 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 			}
 			else if (type == "x-p") { //e.g. occurs in the KJV2006 module
 				//buf.append("<br/>");
-				const SWBuf marker = tag.getAttribute("marker");
+				const sword::SWBuf marker = tag.getAttribute("marker");
 				if (marker.length() > 0) {
 					buf.append(marker);
 				}
@@ -578,11 +566,11 @@ bool BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, sword::Basic
 		else if (!strcmp(tag.getName(), "seg")) {
 			if (!tag.isEndTag() && !tag.isEmpty()) {
 
-				const SWBuf type = tag.getAttribute("type");
+				const sword::SWBuf type = tag.getAttribute("type");
 
 				if (type == "morph") {//line break
 					//This code is for WLC and MORPH (WHI)
-					XMLTag outTag("span");
+					sword::XMLTag outTag("span");
 					outTag.setAttribute("class", "morphSegmentation");
 					const char* attrValue;
 					//Transfer the values to the span

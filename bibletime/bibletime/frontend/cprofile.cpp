@@ -14,7 +14,7 @@
 //Qt includes
 #include <qdom.h>
 #include <qfile.h>
-#include <qstring.h>
+#include <QString>
 #include <qtextstream.h>
 #include <qregexp.h>
 

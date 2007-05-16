@@ -17,10 +17,10 @@
 //#include "centrydisplay.h"
 
 //Qt includes
-#include <qptrlist.h>
-#include <qmap.h>
-#include <qstring.h>
-#include <qstringlist.h>
+#include <Q3PtrList>
+#include <QMap>
+#include <QString>
+#include <QStringList>
 
 //Sword includes
 #include <swmgr.h>

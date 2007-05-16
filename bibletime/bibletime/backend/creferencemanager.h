@@ -13,7 +13,7 @@
 #define CREFERENCEMANAGER_H
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 #include "cswordmoduleinfo.h"
 

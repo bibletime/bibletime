@@ -20,7 +20,7 @@
 
 //Qt includes
 #include <qptrlist.h>
-#include <qstring.h>
+#include <QString>
 #include <qsignal.h>
 
 //System includes

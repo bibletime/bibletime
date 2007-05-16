@@ -17,7 +17,7 @@
 
 //Qt includes
 #include <qlineedit.h>
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 #include <qlistbox.h>
 #include <qtoolbutton.h>

@@ -17,7 +17,7 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qtooltip.h>
 
 //KDE includes

@@ -13,9 +13,9 @@
 #define CPOINTERS_H
 
 //BibleTime includes
-#include "backend/clanguagemgr.h"
+#include "../backend/clanguagemgr.h"
 
-#include "frontend/cinfodisplay.h"
+#include "../frontend/cinfodisplay.h"
 
 class CSwordBackend;
 class CLanguageMgr;

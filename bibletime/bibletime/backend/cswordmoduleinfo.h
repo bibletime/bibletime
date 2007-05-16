@@ -16,9 +16,9 @@
 #include "clanguagemgr.h"
 
 //Qt includes
-#include <qstring.h>
-#include <qvaluelist.h>
-#include <qsignal.h>
+#include <QString>
+#include <QList>
+#include <Q3Signal>
 
 //Sword includes
 #include <listkey.h>
@@ -338,12 +338,12 @@ private:
 
 	CSwordBackend* m_backend;
 
-	QSignal m_indexingFinished;
-	QSignal m_indexingProgress;
+	Q3Signal m_indexingFinished;
+	Q3Signal m_indexingProgress;
 };
 
 // typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;
-typedef QValueList<CSwordModuleInfo*> ListCSwordModuleInfo;
+typedef QList<CSwordModuleInfo*> ListCSwordModuleInfo;
 
 inline const CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
 	return CSwordModuleInfo::Unknown;
@@ -368,6 +368,6 @@ inline const bool CSwordModuleInfo::isWritable() const {
 	return false;
 }
 
-#include "util/cpointers.h"
+//#include "util/cpointers.h"
 
 #endif

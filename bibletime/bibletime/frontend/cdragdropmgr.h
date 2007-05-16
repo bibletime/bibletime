@@ -13,7 +13,7 @@
 #define CDRAGDROPMGR_H
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qcstring.h>
 #include <qdragobject.h>
 #include <qvaluelist.h>

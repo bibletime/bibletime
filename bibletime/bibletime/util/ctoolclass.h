@@ -10,7 +10,7 @@
 
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qpixmap.h>
 #include <qtextstream.h>
 

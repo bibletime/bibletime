@@ -18,7 +18,7 @@
 #include "cswordmoduleinfo.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 
 //Sword includes
 #include <swkey.h>

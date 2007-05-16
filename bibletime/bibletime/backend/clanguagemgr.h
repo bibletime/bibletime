@@ -13,11 +13,12 @@
 #define CLANGUAGEMGR_H
 
 //Qt includes
-#include <qstring.h>
-#include <qstringlist.h>
-#include <qvaluelist.h>
-#include <qmap.h>
-#include <qdict.h>
+#include <QString>
+#include <QStringList>
+#include <QList>
+#include <QMap>
+#include <Q3PtrList>
+#include <Q3Dict>
 
 /** Manages the anguages of BibleTime and provides functions to work with them.
   * @author The BibleTime team
@@ -82,10 +83,10 @@ public:
 		QStringList* m_altAbbrevs;
 	};
 
-	typedef QPtrList<CLanguageMgr::Language> LanguageList;
+	typedef Q3PtrList<CLanguageMgr::Language> LanguageList;
 
-	typedef QDict<Language> LangMap;
-	typedef QDictIterator<Language> LangMapIterator;
+	typedef Q3Dict<Language> LangMap;
+	typedef Q3DictIterator<Language> LangMapIterator;
 
 	/** Constructor.
 	*/
@@ -126,7 +127,7 @@ public:
 private:
 	void init();
 	inline const QStringList makeStringList(const QString& abbrevs) {
-		return QStringList::split( ";", abbrevs, false );
+		return abbrevs.split( ";", QString::KeepEmptyParts, Qt::CaseSensitive );
 	}
 
 	mutable LangMap m_langMap;

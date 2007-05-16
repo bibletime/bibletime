@@ -10,10 +10,9 @@
 #ifndef BT_THMLHTML_H
 #define BT_THMLHTML_H
 
+//Sword
 #include <swbuf.h>
 #include <thmlhtml.h>
-
-using sword::SWBuf;
 
 namespace Filters {
 
@@ -45,8 +44,8 @@ BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::ThM
 
 public:
 		BT_ThMLHTML ();
-		virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
-		virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule * = 0);
+		virtual bool handleToken(sword::SWBuf& buf, const char *token, sword::BasicFilterUserData *userData);
+		virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule* = 0);
 	};
 
 }

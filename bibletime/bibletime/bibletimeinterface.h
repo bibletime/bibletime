@@ -13,7 +13,7 @@
 #define BIBLETIME_INTERFACE_H
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 
 //KDE includes

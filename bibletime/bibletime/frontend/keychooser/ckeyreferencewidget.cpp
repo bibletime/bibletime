@@ -19,7 +19,7 @@
 
 //Qt includes
 #include <klineedit.h>
-#include <qstring.h>
+#include <QString>
 #include <qstringlist.h>
 #include <qevent.h>
 #include <qpixmap.h>

@@ -19,7 +19,7 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qptrlist.h>
 
 class ListKey;

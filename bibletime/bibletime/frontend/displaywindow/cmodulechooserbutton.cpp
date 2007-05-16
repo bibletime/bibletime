@@ -17,7 +17,7 @@
 #include "util/cresmgr.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qtooltip.h>
 #include <qdict.h>
 #include <qvaluelist.h>

@@ -19,7 +19,7 @@
 #include "cswordversekey.h"
 
 //Qt includes
-#include <qstring.h>
+#include <QString>
 #include <qregexp.h>
 
 namespace Rendering {
