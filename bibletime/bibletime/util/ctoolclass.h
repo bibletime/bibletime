@@ -12,8 +12,10 @@
 //Qt includes
 #include <QString>
 #include <QPixmap>
-#include <QTextStream>
+#include <Q3TextStream>
 #include <QTextCodec>
+//Added by qt3to4:
+#include <QLabel>
 
 class CSwordModuleInfo;
 class QLabel;

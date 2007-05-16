@@ -26,6 +26,8 @@
 
 //Qt includes
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QCloseEvent>
 
 //KDE includes
 #include <kmainwindow.h>

@@ -18,9 +18,12 @@
 
 //Qt includes
 #include <qworkspace.h>
-#include <qptrlist.h>
-#include <qstrlist.h>
+#include <q3ptrlist.h>
+#include <q3strlist.h>
 #include <qevent.h>
+//Added by qt3to4:
+#include <QResizeEvent>
+#include <QChildEvent>
 
 class KPopupMenu;
 class CSwordModuleInfo;
@@ -65,7 +68,7 @@ public:
 	* Forces an update of the currently chosen window arrangement.
 	*/
 	void triggerWindowUpdate();
-	QPtrList<QWidget> usableWindowList();
+	Q3PtrList<QWidget> usableWindowList();
 
 public slots:
 	/**

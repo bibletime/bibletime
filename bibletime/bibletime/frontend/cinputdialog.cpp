@@ -15,9 +15,12 @@
 //Qt includes
 #include <qwidget.h>
 #include <qlabel.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
+#include <Q3HBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -26,15 +29,15 @@
 CInputDialog::CInputDialog(const QString& caption, const QString& description, const QString& text, QWidget *parent, const char *name, const bool modal ) : KDialog(parent,name,modal) {
 	setPlainCaption(caption);
 
-	QVBoxLayout* topLayout = new QVBoxLayout(this, 5,5);
+	Q3VBoxLayout* topLayout = new Q3VBoxLayout(this, 5,5);
 
 	QLabel* l = new QLabel(description, this);
 	topLayout->addWidget(l);
 
 	topLayout->addSpacing(10);
 
-	m_editWidget = new QTextEdit(this, "edit widget");
-	m_editWidget->setWordWrap( QTextEdit::WidgetWidth );
+	m_editWidget = new Q3TextEdit(this, "edit widget");
+	m_editWidget->setWordWrap( Q3TextEdit::WidgetWidth );
 	m_editWidget->setText(text);
 	if (!text.isEmpty())
 		m_editWidget->selectAll();
@@ -44,7 +47,7 @@ CInputDialog::CInputDialog(const QString& caption, const QString& description, c
 	KSeparator* separator = new KSeparator(KSeparator::HLine, this);
 	topLayout->addWidget(separator);
 
-	QHBoxLayout* buttonLayout = new QHBoxLayout(topLayout);
+	Q3HBoxLayout* buttonLayout = new Q3HBoxLayout(topLayout);
 
 	buttonLayout->addStretch(2);
 

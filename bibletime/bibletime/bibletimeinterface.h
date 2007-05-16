@@ -15,6 +15,8 @@
 //Qt includes
 #include <QString>
 #include <qstringlist.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 //KDE includes
 #include <dcopobject.h>
@@ -33,7 +35,7 @@ class BibleTimeInterface : virtual public DCOPObject {
 	K_DCOP
 
 public:
-BibleTimeInterface(QCString id) : DCOPObject(id) {}
+BibleTimeInterface(Q3CString id) : DCOPObject(id) {}
 
 k_dcop:
 	/** Sync all open Bible windows to the key.

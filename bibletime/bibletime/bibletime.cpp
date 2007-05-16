@@ -56,9 +56,9 @@ using namespace Profile;
 BibleTime::BibleTime()
 : BibleTimeInterface("BibleTimeInterface"),
 #if KDE_VERSION >= 0x030200
-KMainWindow(KMainWindow::NoDCOPObject, 0,0, WType_TopLevel),
+KMainWindow(KMainWindow::NoDCOPObject, 0,0, Qt::WType_TopLevel),
 #else
-KMainWindow(0,0, WType_TopLevel),
+KMainWindow(0,0, Qt::WType_TopLevel),
 #endif
 m_windowActionCollection(0),
 m_initialized(false),
@@ -186,7 +186,7 @@ void BibleTime::readSettings() {
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
-	kapp->setOverrideCursor( waitCursor );
+	kapp->setOverrideCursor( Qt::waitCursor );
 
 	CDisplayWindow* displayWindow = CDisplayWindow::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {

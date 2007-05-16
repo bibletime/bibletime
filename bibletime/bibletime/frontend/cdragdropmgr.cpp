@@ -22,9 +22,11 @@
 //Qt includes
 #include <qevent.h>
 #include <qdom.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 CDragDropMgr::BTDrag::BTDrag( const QString& xml, QWidget* dragSource, const char* name)
-: QTextDrag(xml, dragSource, name) {}
+: Q3TextDrag(xml, dragSource, name) {}
 ;
 
 //static function to see whether we can decode tje given mime type
@@ -54,12 +56,12 @@ bool CDragDropMgr::BTDrag::decode(const QMimeSource* e, QString& str) {
 	return false;
 };
 
-bool CDragDropMgr::BTDrag::decode(const QMimeSource* e, QString& str, QCString& /*subtype*/) {
+bool CDragDropMgr::BTDrag::decode(const QMimeSource* e, QString& str, Q3CString& /*subtype*/) {
 	return decode(e, str);
 };
 
 QByteArray CDragDropMgr::BTDrag::encodedData( const char* /*type*/ ) const {
-	return QTextDrag::encodedData("text/plain"); //hack because QTextDrag only accepts text/plainand not our BibleTime/DND type
+	return Q3TextDrag::encodedData("text/plain"); //hack because QTextDrag only accepts text/plainand not our BibleTime/DND type
 };
 
 ///////////////////////////// new class //////////////////////
@@ -131,14 +133,14 @@ const bool CDragDropMgr::canDecode( const QMimeSource* const mime ) {
 	if (CDragDropMgr::BTDrag::canDecode(mime)) {
 		return true;
 	}
-	else if( QTextDrag::canDecode(mime) ) {
+	else if( Q3TextDrag::canDecode(mime) ) {
 		qWarning("QTextDrag can decode this mime!");
 		return true;
 	};
 	return false;
 };
 
-QDragObject* const CDragDropMgr::dragObject( CDragDropMgr::ItemList& items, QWidget* dragSource ) {
+Q3DragObject* const CDragDropMgr::dragObject( CDragDropMgr::ItemList& items, QWidget* dragSource ) {
 	if ( items.count() ) {
 		//process the items and set the data to the dragobject we return later
 		QDomDocument doc("DOC");
@@ -177,9 +179,9 @@ QDragObject* const CDragDropMgr::dragObject( CDragDropMgr::ItemList& items, QWid
 
 CDragDropMgr::ItemList CDragDropMgr::decode( const QMimeSource* const  src) {
 	//if the drag was started by another widget which doesn't use CDragDropMgr (a drag created by QTextDrag)
-	if (canDecode(src) && QTextDrag::canDecode(src)) { //if we can decode but it's a QTextDrag and not a BTDrag object
+	if (canDecode(src) && Q3TextDrag::canDecode(src)) { //if we can decode but it's a QTextDrag and not a BTDrag object
 		QString text;
-		QTextDrag::decode(src, text);
+		Q3TextDrag::decode(src, text);
 		//    qWarning(text.latin1());
 
 		CDragDropMgr::ItemList dndItems;

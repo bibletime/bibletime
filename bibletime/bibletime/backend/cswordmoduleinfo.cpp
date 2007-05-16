@@ -31,6 +31,10 @@
 #include <qdir.h>
 #include <qvariant.h>
 #include <qfileinfo.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <Q3CString>
+#include <Q3PtrList>
 
 //KDE includes
 #include <klocale.h>
@@ -282,7 +286,7 @@ void CSwordModuleInfo::buildIndex() {
     }
 
     //holds UTF-8 data and is faster than QString
-    QCString textBuffer;
+    Q3CString textBuffer;
 
     // we start with the first module entry, key is automatically updated
     // because key is a pointer to the modules key
@@ -386,7 +390,7 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
     // work around Swords thread insafety for Bibles and Commentaries
     util::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
     sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
-    QPtrList<VerseKey> list;
+    Q3PtrList<VerseKey> list;
     list.setAutoDelete( true ); // the list owns the objects
 
     const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
@@ -777,7 +781,7 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(i18n("About"))
             .arg(config(AboutInformation));
 
-    typedef QValueList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
+    typedef Q3ValueList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
 
     ListConfigEntry entries;
 

@@ -19,7 +19,7 @@
 #include <qlineedit.h>
 #include <QString>
 #include <qstringlist.h>
-#include <qlistbox.h>
+#include <q3listbox.h>
 #include <qtoolbutton.h>
 #include <qevent.h>
 #include <qlayout.h>
@@ -30,13 +30,15 @@
 #include <qtooltip.h>
 #include <qrect.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 const unsigned int WIDTH = 16;
 const unsigned int ARROW_HEIGHT = 12;
 const unsigned int MOVER_HEIGHT = 6;
 
 CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent, const char *name) : QWidget(parent,name) {
-	m_layout = new QVBoxLayout(this);
+	m_layout = new Q3VBoxLayout(this);
 	m_layout->setAlignment(Qt::AlignHCenter | Qt::AlignCenter);
 
 	//setAlignment(Qt::AlignHCenter | Qt::AlignCenter);

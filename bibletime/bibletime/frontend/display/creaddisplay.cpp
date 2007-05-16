@@ -29,7 +29,7 @@
 #include "util/scoped_resource.h"
 
 //Qt includes
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
 
 //KDE includes
 #include <klocale.h>

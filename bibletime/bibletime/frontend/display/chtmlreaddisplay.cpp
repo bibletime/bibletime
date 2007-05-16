@@ -29,10 +29,10 @@
 
 //Qt includes
 #include <qcursor.h>
-#include <qscrollview.h>
+#include <q3scrollview.h>
 #include <qwidget.h>
-#include <qdragobject.h>
-#include <qpopupmenu.h>
+#include <q3dragobject.h>
+#include <q3popupmenu.h>
 #include <qlayout.h>
 #include <qtimer.h>
 #endif
@@ -164,7 +164,7 @@ const bool CHTMLReadDisplay::hasSelection() {
 
 
 /** Reimplementation. */
-QScrollView* CHTMLReadDisplay::view() {
+Q3ScrollView* CHTMLReadDisplay::view() {
 	return KHTMLPart::view();
 }
 
@@ -277,14 +277,14 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 
 /** Reimplementation for our drag&drop system. Also needed for the mouse tracking */
 void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
-	if( e->qmouseEvent()->state() & LeftButton == LeftButton) { //left mouse button pressed
+	if( e->qmouseEvent()->state() & Qt::LeftButton == Qt::LeftButton) { //left mouse button pressed
 		const int delay = KGlobalSettings::dndEventDelay();
 		QPoint newPos = QPoint(e->x(), e->y());
 	
 		if ( (newPos.x() > m_dndData.startPos.x()+delay || newPos.x() < (m_dndData.startPos.x()-delay) ||
 				newPos.y() > m_dndData.startPos.y()+delay || newPos.y() < (m_dndData.startPos.y()-delay)) &&
 				!m_dndData.isDragging && m_dndData.mousePressed  ) {
-			QDragObject* d = 0;
+			Q3DragObject* d = 0;
 			if (!m_dndData.anchor.isEmpty() && (m_dndData.dragType == DNDData::Link) && !m_dndData.node.isNull() ) {
 				// create a new bookmark drag!
 				QString module = QString::null;
@@ -316,7 +316,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			}
 		}
 	}
-	else if (getMouseTracking() && !(e->qmouseEvent()->state() & Qt::ShiftButton == Qt::ShiftButton)) { 
+	else if (getMouseTracking() && !(e->qmouseEvent()->state() & Qt::ShiftModifier == Qt::ShiftModifier)) { 
 		//no mouse button pressed and tracking enabled
 		DOM::Node node = e->innerNode();
 		//if no link was under the mouse try to find a title attribute
@@ -324,7 +324,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			// we want to avoid processing the node again
 			// After some millisecs the new timer activates the Mag window update, see timerEvent()
 			// SHIFT key not pressed, so we start timer
-			if ( !(e->qmouseEvent()->state() & Qt::ShiftButton)) { 
+			if ( !(e->qmouseEvent()->state() & Qt::ShiftModifier)) { 
 				// QObject has simple timer
 				killTimer(m_magTimerId);
 				m_magTimerId = startTimer( CBTConfig::get(CBTConfig::magDelay) );
@@ -406,7 +406,7 @@ void CHTMLReadDisplayView::popupMenu( const QString& url, const QPoint& pos) {
 	if (!url.isEmpty()) {
 		m_display->setActiveAnchor(url);
 	}
-	if (QPopupMenu* popup = m_display->installedPopup()) {
+	if (Q3PopupMenu* popup = m_display->installedPopup()) {
 		popup->exec(pos);
 	}
 }

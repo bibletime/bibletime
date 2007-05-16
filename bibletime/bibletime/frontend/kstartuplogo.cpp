@@ -17,6 +17,8 @@
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qpixmap.h>
+//Added by qt3to4:
+#include <Q3Frame>
 
 //KDE includes
 #include <kapplication.h>
@@ -56,7 +58,7 @@ void KStartupLogo::setStatusMessage(const QString& message) {
 }
 
 KStartupLogo::KStartupLogo()
-: QWidget(0, "startuplogo", /*WStyle_Customize | WStyle_NoBorder*/ WStyle_NoBorder|WStyle_StaysOnTop|WX11BypassWM ) {
+: QWidget(0, "startuplogo", /*WStyle_Customize | WStyle_NoBorder*/ Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop|Qt::WX11BypassWM ) {
 
 	QPixmap pm;
 	if ( !pm.load(locate("BT_pic","startuplogo.png")) ) {
@@ -69,7 +71,7 @@ KStartupLogo::KStartupLogo()
 	textLabel = new QLabel(this);
 	textLabel->setGeometry(0,pm.height(),pm.width(),textLabel->sizeHint().height()+10);
 	textLabel->setBackgroundColor( QColor("#0d6de9") );
-	textLabel->setFrameStyle(QFrame::Panel | QFrame::Plain);
+	textLabel->setFrameStyle(Q3Frame::Panel | Q3Frame::Plain);
 	textLabel->setLineWidth(1);
 	textLabel->setScaledContents( true );
 

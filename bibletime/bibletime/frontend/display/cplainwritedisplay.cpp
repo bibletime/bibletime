@@ -22,8 +22,13 @@
 //KDE includes
 #include <kaction.h>
 #include <klocale.h>
+//Added by qt3to4:
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QDragMoveEvent>
+#include <Q3PopupMenu>
 
-CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
+CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : Q3TextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
 	setTextFormat(Qt::PlainText);
 	setAcceptDrops(true);
 	viewport()->setAcceptDrops(true);
@@ -36,7 +41,7 @@ CPlainWriteDisplay::~CPlainWriteDisplay() {}
 
 /** Reimplementation. */
 void CPlainWriteDisplay::selectAll() {
-	QTextEdit::selectAll(true);
+	Q3TextEdit::selectAll(true);
 }
 
 void CPlainWriteDisplay::setText( const QString& newText ) {
@@ -45,7 +50,7 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
 // 	text.replace("\n<br /><!-- BT newline -->\n", "\n");
 	text.replace("<br />", "\n"); //inserted by BT or the Qt textedit widget
 
-	QTextEdit::setText(text);
+	Q3TextEdit::setText(text);
 }
 
 const bool CPlainWriteDisplay::hasSelection() {
@@ -66,18 +71,18 @@ void CPlainWriteDisplay::print( const CDisplay::TextPart, CSwordBackend::Display
 
 /** Sets the current status of the edit widget. */
 void CPlainWriteDisplay::setModified( const bool modified ) {
-	QTextEdit::setModified(modified);
+	Q3TextEdit::setModified(modified);
 }
 
 /** Reimplementation. */
 const bool CPlainWriteDisplay::isModified() const {
-	return QTextEdit::isModified();
+	return Q3TextEdit::isModified();
 }
 
 
 /** Returns the text of this edit widget. */
 const QString CPlainWriteDisplay::plainText() {
-	QString ret = QTextEdit::text();
+	QString ret = Q3TextEdit::text();
 
 	//in plain text mode the text just contains newlines, convert them into <br/> before we return the text for display in a HTML widget
 	ret.replace("\n", "<br />");
@@ -86,12 +91,12 @@ const QString CPlainWriteDisplay::plainText() {
 }
 
 /** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-QPopupMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
+Q3PopupMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
 	return installedPopup();
 }
 
 /** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-QPopupMenu* CPlainWriteDisplay::createPopupMenu( ) {
+Q3PopupMenu* CPlainWriteDisplay::createPopupMenu( ) {
 	return installedPopup();
 }
 

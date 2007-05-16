@@ -29,23 +29,23 @@ public:
 		Number, String/*, BibleKey*/
 	};
 	
-    CSortListViewItem( QListViewItem* parent );
+    CSortListViewItem( Q3ListViewItem* parent );
 	
-	CSortListViewItem( QListView * parent, QListViewItem * after );
+	CSortListViewItem( Q3ListView * parent, Q3ListViewItem * after );
 	
-	CSortListViewItem( QListViewItem * parent, QListViewItem * after );
+	CSortListViewItem( Q3ListViewItem * parent, Q3ListViewItem * after );
 	
-	CSortListViewItem( QListView * parent, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
+	CSortListViewItem( Q3ListView * parent, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
 
-	CSortListViewItem( QListViewItem * parent, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
+	CSortListViewItem( Q3ListViewItem * parent, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
 
-	CSortListViewItem( QListView * parent, QListViewItem * after, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
+	CSortListViewItem( Q3ListView * parent, Q3ListViewItem * after, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
 
-	CSortListViewItem( QListViewItem * parent, QListViewItem * after, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
+	CSortListViewItem( Q3ListViewItem * parent, Q3ListViewItem * after, QString label1, QString label2 = QString::null, QString label3 = QString::null, QString label4 = QString::null, QString label5 = QString::null, QString label6 = QString::null, QString label7 = QString::null, QString label8 = QString::null );
 
 	virtual ~CSortListViewItem();
 	
-	virtual int compare( QListViewItem* i, int col, bool ascending ) const;
+	virtual int compare( Q3ListViewItem* i, int col, bool ascending ) const;
 
 	void setColumnSorting(int column, Type type);
 

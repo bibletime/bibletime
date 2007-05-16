@@ -17,11 +17,13 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
+//Added by qt3to4:
+#include <Q3PopupMenu>
 
 class CWriteWindow;
 
-class QPopupMenu;
+class Q3PopupMenu;
 
 class KToggleAction;
 class KFontAction;
@@ -56,7 +58,7 @@ protected:
 	/**
 	* Reimplementation to show a popup menu if the right mouse butoon was clicked.
 	*/
-	virtual QPopupMenu* createPopupMenu( const QPoint& pos );
+	virtual Q3PopupMenu* createPopupMenu( const QPoint& pos );
 
 protected slots:
 	void toggleBold();

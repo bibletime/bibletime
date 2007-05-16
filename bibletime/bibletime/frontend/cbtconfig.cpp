@@ -23,6 +23,8 @@
 #include <QString>
 #include <qstringlist.h>
 #include <qmap.h>
+//Added by qt3to4:
+#include <Q3ValueList>
 
 //KDE includes
 #include <kdeversion.h>
@@ -202,15 +204,15 @@ const QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 	return QString::null;
 }
 
-const QValueList<int> CBTConfig::getDefault( const CBTConfig::intLists ID) {
+const Q3ValueList<int> CBTConfig::getDefault( const CBTConfig::intLists ID) {
 	switch ( ID ) {
 		case leftPaneSplitterSizes: //fall through
 		case mainSplitterSizes: {
-			return QValueList<int>();
+			return Q3ValueList<int>();
 		}
 	}
 
-	return QValueList<int>();
+	return Q3ValueList<int>();
 }
 
 const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
@@ -341,7 +343,7 @@ const int CBTConfig::get
 	return config->readNumEntry(getKey(ID), getDefault(ID));
 }
 
-const QValueList<int> CBTConfig::get
+const Q3ValueList<int> CBTConfig::get
 	( const CBTConfig::intLists ID ) {
 	KConfig* config = CBTConfig::getConfig();
 	KConfigGroupSaver groupSaver(config, "intlists");
@@ -451,7 +453,7 @@ void CBTConfig::set
 }
 
 void CBTConfig::set
-	( const CBTConfig::intLists ID, const QValueList<int> value ) {
+	( const CBTConfig::intLists ID, const Q3ValueList<int> value ) {
 	KConfig* config = CBTConfig::getConfig();
 	KConfigGroupSaver groupSaver(config, "intlists");
 	config->writeEntry(getKey(ID), value);

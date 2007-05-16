@@ -26,8 +26,8 @@
 //Qt includes
 #include <qwidget.h>
 #include <QString>
-#include <qcanvas.h>
-#include <qdict.h>
+#include <q3canvas.h>
+#include <q3dict.h>
 #include <qtooltip.h>
 
 //KDE includes
@@ -41,9 +41,9 @@ namespace Search {
 class CModuleChooser : public KListView, public CPointers {
 	Q_OBJECT
 public:
-	class ModuleCheckBoxItem : virtual public QCheckListItem {
+	class ModuleCheckBoxItem : virtual public Q3CheckListItem {
 	public:
-		ModuleCheckBoxItem(QListViewItem* item, CSwordModuleInfo* module);
+		ModuleCheckBoxItem(Q3ListViewItem* item, CSwordModuleInfo* module);
 		~ModuleCheckBoxItem();
 		/**
 		* Returns the used module.

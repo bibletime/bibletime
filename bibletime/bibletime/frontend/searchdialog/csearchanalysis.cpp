@@ -21,20 +21,24 @@
 #include "util/ctoolclass.h"
 
 //Qt includes
-#include <qhbox.h>
-#include <qvbox.h>
-#include <qptrlist.h>
+#include <q3hbox.h>
+#include <q3vbox.h>
+#include <q3ptrlist.h>
 #include <qpainter.h>
 #include <qlayout.h>
 #include <qmap.h>
 #include <qlineedit.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
 #include <qlabel.h>
 #include <qsizepolicy.h>
 #include <qpushbutton.h>
-#include <qheader.h>
+#include <q3header.h>
 #include <qregexp.h>
 #include <qmessagebox.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <QResizeEvent>
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <kapplication.h>
@@ -80,7 +84,7 @@ CSearchAnalysisDialog::~CSearchAnalysisDialog() {}
 
 /** Initializes this dialog. */
 void CSearchAnalysisDialog::initView() {
-	QVBoxLayout* layout = new QVBoxLayout(plainPage(),0);
+	Q3VBoxLayout* layout = new Q3VBoxLayout(plainPage(),0);
 
 	QPushButton* button = new QPushButton(plainPage(), "button");
 	button->setIconSet(SmallIconSet("filesave"));
@@ -105,7 +109,7 @@ void CSearchAnalysisDialog::initConnections() {}
 /****************************/
 
 CSearchAnalysis::CSearchAnalysis(QObject *parent, const char *name )
-: QCanvas(parent,name) {
+: Q3Canvas(parent,name) {
 
 	m_scaleFactor = 0.0;
 	m_legend = 0;
@@ -118,7 +122,7 @@ CSearchAnalysis::CSearchAnalysis(QObject *parent, const char *name )
 
 CSearchAnalysis::~CSearchAnalysis() {}
 
-QDict<CSearchAnalysisItem>* CSearchAnalysis::getSearchAnalysisItemList() {
+Q3Dict<CSearchAnalysisItem>* CSearchAnalysis::getSearchAnalysisItemList() {
 	// Returns pointer to the search analysis items
 	return &m_canvasItemList;
 }
@@ -210,7 +214,7 @@ void CSearchAnalysis::setModules(ListCSwordModuleInfo modules) {
 void CSearchAnalysis::reset() {
 	m_scaleFactor = 0.0;
 
-	QDictIterator<CSearchAnalysisItem> it( m_canvasItemList ); // iterator for items
+	Q3DictIterator<CSearchAnalysisItem> it( m_canvasItemList ); // iterator for items
 	while ( it.current() ) {
 		it.current()->hide();
 		++it;
@@ -231,7 +235,7 @@ void CSearchAnalysis::reset() {
 void CSearchAnalysis::slotResized() {
 	m_scaleFactor = (double)( (double)(height()-UPPER_BORDER-LOWER_BORDER-BAR_LOWER_BORDER-(m_moduleList.count()-1)*BAR_DELTAY)
 							  /(double)m_maxCount);
-	QDictIterator<CSearchAnalysisItem> it( m_canvasItemList );
+	Q3DictIterator<CSearchAnalysisItem> it( m_canvasItemList );
 	while ( it.current() ) {
 		it.current()->setSize(BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-UPPER_BORDER-LOWER_BORDER);
 		it.current()->setY(UPPER_BORDER);
@@ -290,8 +294,8 @@ const unsigned int CSearchAnalysis::getCount( const QString book, CSwordModuleIn
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
-CSearchAnalysisItem::CSearchAnalysisItem(QCanvas *parent, const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
-: QCanvasRectangle(parent),
+CSearchAnalysisItem::CSearchAnalysisItem(Q3Canvas *parent, const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
+: Q3CanvasRectangle(parent),
 m_moduleList( modules ),
 m_scaleFactor(scaleFactor),
 m_bookName(bookname),
@@ -411,9 +415,9 @@ const QString CSearchAnalysisItem::getToolTip() {
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
-CSearchAnalysisView::CSearchAnalysisView(QCanvas* canvas, QWidget* parent)
-: QCanvasView(canvas, parent) {
-	setFocusPolicy(QWidget::WheelFocus);
+CSearchAnalysisView::CSearchAnalysisView(Q3Canvas* canvas, QWidget* parent)
+: Q3CanvasView(canvas, parent) {
+	setFocusPolicy(Qt::WheelFocus);
 	m_toolTip = new ToolTip(this);
 	resize(sizeHint());
 }
@@ -422,12 +426,12 @@ CSearchAnalysisView::CSearchAnalysisView(QCanvas* canvas, QWidget* parent)
 QSize CSearchAnalysisView::sizeHint() {
 	if ( parentWidget() )
 		return parentWidget()->sizeHint();
-	return QCanvasView::sizeHint();
+	return Q3CanvasView::sizeHint();
 }
 
 /** No descriptions */
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
-	QCanvasView::resizeEvent(e);
+	Q3CanvasView::resizeEvent(e);
 	canvas()->resize( canvas()->width(), viewport()->height() );
 }
 
@@ -460,7 +464,7 @@ void CSearchAnalysisView::ToolTip::maybeTip(const QPoint& p) {
 
 /** Returns the item at position p. If there no item at that point return 0. */
 CSearchAnalysisItem* CSearchAnalysisView::itemAt( const QPoint& p ) {
-	QCanvasItemList l = canvas()->collisions(p);
+	Q3CanvasItemList l = canvas()->collisions(p);
 	if (!l.count())
 		return 0;
 	return dynamic_cast<CSearchAnalysisItem*>(l.first());
@@ -469,8 +473,8 @@ CSearchAnalysisItem* CSearchAnalysisView::itemAt( const QPoint& p ) {
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
-CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QCanvas *parent, ListCSwordModuleInfo *list )
-: QCanvasRectangle(parent) {
+CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(Q3Canvas *parent, ListCSwordModuleInfo *list )
+: Q3CanvasRectangle(parent) {
 	m_moduleList = list;
 }
 
@@ -580,7 +584,7 @@ void CSearchAnalysis::saveAsHTML() {
 	text += QString("<center>") + i18n("Created by") + QString(" <a href=\"http://www.bibletime.info/\">BibleTime</a></center>");
 	text += QString("</body></html>");
 
-	CToolClass::savePlainFile(file, text, false, QTextStream::UnicodeUTF8);
+	CToolClass::savePlainFile(file, text, false, Q3TextStream::UnicodeUTF8);
 }
  
 	} //end of namespace Search::Analysis

@@ -20,6 +20,9 @@
 #include <qevent.h>
 #include <qapplication.h>
 #include <qcursor.h>
+//Added by qt3to4:
+#include <QMouseEvent>
+#include <QWheelEvent>
 
 CScrollButton::CScrollButton(QWidget *parent, const char *name ) : QToolButton(parent,name) {
 	setFocusPolicy(QWidget::WheelFocus);

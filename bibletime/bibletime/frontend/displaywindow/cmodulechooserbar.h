@@ -21,7 +21,9 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qhbox.h>
+#include <q3hbox.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 //KDE includes
 #include <ktoolbar.h>
@@ -70,7 +72,7 @@ private:
 	CSwordModuleInfo::ModuleType m_moduleType;
 	int m_idCounter;
 	int m_buttonLimit;
-	QPtrList<CModuleChooserButton> m_buttonList;
+	Q3PtrList<CModuleChooserButton> m_buttonList;
 
 signals: // Signals
 	void sigChanged();

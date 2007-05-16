@@ -20,6 +20,8 @@
 
 //Qt includes
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QEvent>
 
 //KDE includes
 #include <kaction.h>

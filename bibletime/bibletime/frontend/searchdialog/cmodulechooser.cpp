@@ -20,20 +20,23 @@
 #include "util/ctoolclass.h"
 
 //Qt includes
-#include <qhbox.h>
-#include <qvbox.h>
-#include <qptrlist.h>
+#include <q3hbox.h>
+#include <q3vbox.h>
+#include <q3ptrlist.h>
 #include <qpainter.h>
 #include <qlayout.h>
 #include <qmap.h>
 #include <qlineedit.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
 #include <qlabel.h>
 #include <qsizepolicy.h>
 #include <qpushbutton.h>
-#include <qheader.h>
+#include <q3header.h>
 #include <qregexp.h>
 #include <qmessagebox.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <Q3Frame>
 
 //KDE includes
 #include <kapplication.h>
@@ -48,7 +51,7 @@ namespace Search {
 /****************************/
 /****************************/
 
-CModuleChooser::ModuleCheckBoxItem::ModuleCheckBoxItem(QListViewItem* item, CSwordModuleInfo* module) : QCheckListItem(item, QString::null, QCheckListItem::CheckBox) {
+CModuleChooser::ModuleCheckBoxItem::ModuleCheckBoxItem(Q3ListViewItem* item, CSwordModuleInfo* module) : Q3CheckListItem(item, QString::null, Q3CheckListItem::CheckBox) {
 	m_module = module;
 	setText(0,m_module->name());
 };
@@ -77,7 +80,7 @@ void CModuleChooser::show() {
 	KListView::show();
 
 	//open module items
-	QListViewItemIterator it( this );
+	Q3ListViewItemIterator it( this );
 	for ( ; it.current(); ++it ) {
 		if ( ModuleCheckBoxItem* i = dynamic_cast<ModuleCheckBoxItem*>(it.current()) ) {
 			if (i->isOn()) {
@@ -193,9 +196,9 @@ void CModuleChooser::initTree() {
 		langs.sort();
 
 		//go through the list of languages and create subfolders for each language and the modules of the language
-		QListViewItem* typeFolder = 0;
+		Q3ListViewItem* typeFolder = 0;
 		if (modsForType.count()) {
-			typeFolder = new QListViewItem(this, typeFolder, typeFolderCaption);
+			typeFolder = new Q3ListViewItem(this, typeFolder, typeFolderCaption);
 		}
 		else {
 			if (incType) {
@@ -213,7 +216,7 @@ void CModuleChooser::initTree() {
 				language = (*it);
 			}
 
-			QListViewItem* langFolder = new QListViewItem(typeFolder,language);
+			Q3ListViewItem* langFolder = new Q3ListViewItem(typeFolder,language);
 			langFolder->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
 
 			//create the module items of this lang folder
@@ -237,7 +240,7 @@ void CModuleChooser::initTree() {
 /** Returns a list of selected modules. */
 ListCSwordModuleInfo CModuleChooser::modules() {
 	ListCSwordModuleInfo mods;
-	QListViewItemIterator it( this );
+	Q3ListViewItemIterator it( this );
 	for ( ; it.current(); ++it ) {
 		if ( ModuleCheckBoxItem* i = dynamic_cast<ModuleCheckBoxItem*>(it.current()) ) {
 			//add the module if the box is checked
@@ -253,7 +256,7 @@ ListCSwordModuleInfo CModuleChooser::modules() {
 /** Sets the list of modules and updates the state of the checkbox items. */
 void CModuleChooser::setModules( ListCSwordModuleInfo modules ) {
 	//  qWarning("CModuleChooser::setModules( ListCSwordModuleInfo modules )");
-	QListViewItemIterator it( this );
+	Q3ListViewItemIterator it( this );
 	for ( ; it.current(); ++it ) {
 		if ( ModuleCheckBoxItem* i = dynamic_cast<ModuleCheckBoxItem*>(it.current()) ) {
 			i->setOn(modules.contains(i->module())); //set the status for the module checkbox item
@@ -282,8 +285,8 @@ CModuleChooserDialog::~CModuleChooserDialog() {}
 void CModuleChooserDialog::initView() {
 	setButtonOKText(i18n("Use chosen work(s)"));
 
-	QFrame* page = plainPage();
-	QHBoxLayout* layout = new QHBoxLayout(page);
+	Q3Frame* page = plainPage();
+	Q3HBoxLayout* layout = new Q3HBoxLayout(page);
 	m_moduleChooser = new CModuleChooser(page);
 	m_moduleChooser->setMinimumSize(320,400);
 	layout->addWidget(m_moduleChooser);

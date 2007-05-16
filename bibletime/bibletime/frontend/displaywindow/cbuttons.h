@@ -17,7 +17,7 @@
 #include "backend/cswordmoduleinfo.h"
 
 //QT includes
-#include <qdict.h>
+#include <q3dict.h>
 
 //KDE includes
 #include <ktoolbarbutton.h>
@@ -89,7 +89,7 @@ protected:
 	CSwordBackend::FilterOptions m_available;
 	ListCSwordModuleInfo m_modules;
 
-	QDict<int> m_dict;
+	Q3Dict<int> m_dict;
 
 	KPopupMenu* m_popup;
 

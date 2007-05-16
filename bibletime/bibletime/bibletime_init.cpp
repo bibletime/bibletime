@@ -38,13 +38,13 @@
 #include <stdlib.h>
 
 //QT includes
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
 #include <qsplitter.h>
-#include <qguardedptr.h>
-#include <qlistview.h>
+#include <qpointer.h>
+#include <q3listview.h>
 #include <qlayout.h>
 #include <qlabel.h>
-#include <qvbox.h>
+#include <q3vbox.h>
 
 //KDE includes
 #include <kaboutdata.h>
@@ -81,7 +81,7 @@ void BibleTime::initView() {
 	m_leftPaneSplitter = new QSplitter(Qt::Vertical, m_mainSplitter);
 	m_leftPaneSplitter->setChildrenCollapsible(false);
 	
-	QVBox* vBox = new QVBox(m_leftPaneSplitter);
+	Q3VBox* vBox = new Q3VBox(m_leftPaneSplitter);
 	vBox->setMinimumSize(100, 100);
 	
 	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"), vBox );
@@ -485,7 +485,7 @@ void BibleTime::initActions() {
 /** Initializes the menubar of BibleTime. */
 void BibleTime::initMenubar() {
 	//get the window and edit menus using the actions and their properties
-	m_windowMenu = dynamic_cast<QPopupMenu*>(m_windowCloseAll_action->container(0));
+	m_windowMenu = dynamic_cast<Q3PopupMenu*>(m_windowCloseAll_action->container(0));
 }
 
 /** Initializes the SIGNAL / SLOT connections */

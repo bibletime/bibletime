@@ -30,8 +30,10 @@
 #include <math.h>
 
 //Qt includes
-#include <qwidgetlist.h>
+#include <qwidget.h>
 #include <qtimer.h>
+//Added by qt3to4:
+#include <QEvent>
 
 //KDE includes
 #include <kaccel.h>

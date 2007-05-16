@@ -24,8 +24,8 @@
 //Qt includes
 #include <qwidget.h>
 #include <QString>
-#include <qcanvas.h>
-#include <qdict.h>
+#include <q3canvas.h>
+#include <q3dict.h>
 #include <qtooltip.h>
 
 //KDE includes
@@ -39,7 +39,7 @@ class CSearchAnalysisLegendItem;
 class CSearchAnalysis;
 class CSearchAnalysisView; 
 
-class QTextEdit;
+class Q3TextEdit;
 
 namespace Search {
 	namespace Options {
@@ -53,7 +53,7 @@ public:
 protected: // Protected methods
 class RangeItem : public KListViewItem {
 public:
-		RangeItem(QListView*, QListViewItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
+		RangeItem(Q3ListView*, Q3ListViewItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
 		~RangeItem();
 		const QString& range();
 		const QString caption();
@@ -77,7 +77,7 @@ protected slots: // Protected slots
 	* Adds a new range to the list.
 	*/
 	void addNewRange();
-	void editRange(QListViewItem*);
+	void editRange(Q3ListViewItem*);
 	/**
 	* Parses the entered text and prints out the result in the list box below the edit area.
 	*/
@@ -95,7 +95,7 @@ private:
 	KListView* m_rangeList;
 	KListView* m_resultList;
 	QLineEdit* m_nameEdit;
-	QTextEdit* m_rangeEdit;
+	Q3TextEdit* m_rangeEdit;
 	QPushButton* m_newRangeButton;
 	QPushButton* m_deleteRangeButton;
 };

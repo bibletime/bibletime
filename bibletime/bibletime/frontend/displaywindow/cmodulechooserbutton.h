@@ -17,8 +17,10 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qdict.h>
+#include <q3dict.h>
 #include <qtoolbutton.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 //KDE includes
 #include <ktoolbarbutton.h>
@@ -61,7 +63,7 @@ private:
 	CSwordModuleInfo* m_module;
 
 	KPopupMenu* m_popup;
-	QPtrList<KPopupMenu> m_submenus;
+	Q3PtrList<KPopupMenu> m_submenus;
 
 	CModuleChooserBar* m_moduleChooserBar;
 

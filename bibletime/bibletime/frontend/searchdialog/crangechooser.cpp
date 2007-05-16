@@ -20,20 +20,22 @@
 #include "util/ctoolclass.h"
 
 //Qt includes
-#include <qhbox.h>
-#include <qvbox.h>
-#include <qptrlist.h>
+#include <q3hbox.h>
+#include <q3vbox.h>
+#include <q3ptrlist.h>
 #include <qpainter.h>
 #include <qlayout.h>
 #include <qmap.h>
 #include <qlineedit.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
 #include <qlabel.h>
 #include <qsizepolicy.h>
 #include <qpushbutton.h>
-#include <qheader.h>
+#include <q3header.h>
 #include <qregexp.h>
 #include <qmessagebox.h>
+//Added by qt3to4:
+#include <Q3GridLayout>
 
 //KDE includes
 #include <kapplication.h>
@@ -45,7 +47,7 @@ namespace Search {
 	namespace Options {
 
 /****************************/
-CRangeChooserDialog::RangeItem::RangeItem(QListView* view, QListViewItem* afterThis, const QString caption, const QString range) : KListViewItem(view, afterThis) {
+CRangeChooserDialog::RangeItem::RangeItem(Q3ListView* view, Q3ListViewItem* afterThis, const QString caption, const QString range) : KListViewItem(view, afterThis) {
 	setCaption(caption);
 	setRange(range);
 }
@@ -96,7 +98,7 @@ CRangeChooserDialog::~CRangeChooserDialog() {}
 void CRangeChooserDialog::initView() {
 	//  setButtonOKText(i18n(""));
 
-	QGridLayout* grid = new QGridLayout(plainPage(),6,5,0,3);
+	Q3GridLayout* grid = new Q3GridLayout(plainPage(),6,5,0,3);
 
 	m_rangeList = new KListView(plainPage());
 	m_rangeList->addColumn(i18n("Search range"));
@@ -124,7 +126,7 @@ void CRangeChooserDialog::initView() {
 
 	label = new QLabel(i18n("Edit current search range:"), plainPage());
 	label->setFixedSize(label->sizeHint());
-	m_rangeEdit = new QTextEdit(plainPage());
+	m_rangeEdit = new Q3TextEdit(plainPage());
 	m_rangeEdit->setTextFormat(Qt::PlainText);
 	grid->addMultiCellWidget(label,1,1,3,4);
 	grid->addMultiCellWidget(m_rangeEdit,2,2,3,4);
@@ -147,8 +149,8 @@ void CRangeChooserDialog::initView() {
 
 /** Initializes the connections of this widget. */
 void CRangeChooserDialog::initConnections() {
-	connect(m_rangeList, SIGNAL(selectionChanged(QListViewItem*)),
-			this, SLOT(editRange(QListViewItem*)));
+	connect(m_rangeList, SIGNAL(selectionChanged(Q3ListViewItem*)),
+			this, SLOT(editRange(Q3ListViewItem*)));
 
 	connect(m_rangeEdit, SIGNAL(textChanged()),
 			this, SLOT(parseRange()));
@@ -170,7 +172,7 @@ void CRangeChooserDialog::addNewRange() {
 }
 
 /** No descriptions */
-void CRangeChooserDialog::editRange(QListViewItem* item) {
+void CRangeChooserDialog::editRange(Q3ListViewItem* item) {
 	RangeItem* const range = dynamic_cast<RangeItem*>(item);
 
 	m_nameEdit->setEnabled( range ); //only if an item is selected enable the edit part
@@ -236,7 +238,7 @@ void CRangeChooserDialog::nameChanged(const QString& newCaption) {
 void CRangeChooserDialog::deleteCurrentRange() {
 	if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
 	   ) {
-		if (QListViewItem* selection = i->itemBelow() ? i->itemBelow() : i->itemAbove()) {
+		if (Q3ListViewItem* selection = i->itemBelow() ? i->itemBelow() : i->itemAbove()) {
 			m_rangeList->setSelected(selection, true);
 			m_rangeList->setCurrentItem(selection);
 		}
@@ -252,7 +254,7 @@ void CRangeChooserDialog::deleteCurrentRange() {
 void CRangeChooserDialog::slotOk() {
 	//save the new map of search scopes
 	CBTConfig::StringMap map;
-	QListViewItemIterator it( m_rangeList );
+	Q3ListViewItemIterator it( m_rangeList );
 	for (;it.current(); ++it) {
 		if ( RangeItem* i = dynamic_cast<RangeItem*>(it.current()) ) {
 			map[i->caption()] = i->range();

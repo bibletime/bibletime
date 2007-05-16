@@ -27,8 +27,8 @@
 //Qt includes
 #include <qwidget.h>
 #include <QString>
-#include <qcanvas.h>
-#include <qdict.h>
+#include <q3canvas.h>
+#include <q3dict.h>
 #include <qtooltip.h>
 
 //KDE includes
@@ -38,7 +38,7 @@
 //forward declarations
 
 class QLineEdit;
-class QTextEdit;
+class Q3TextEdit;
 
 namespace Search {
 /**

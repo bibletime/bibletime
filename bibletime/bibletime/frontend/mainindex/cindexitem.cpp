@@ -33,11 +33,15 @@
 #include <string.h>
 
 //Qt includes
-#include <qdragobject.h>
+#include <q3dragobject.h>
 #include <qstringlist.h>
 #include <qfile.h>
 #include <QString>
-#include <qtextstream.h>
+#include <q3textstream.h>
+//Added by qt3to4:
+#include <Q3ValueList>
+#include <Q3PtrList>
+#include <QDropEvent>
 
 //KDE includes
 #include <kconfig.h>
@@ -68,7 +72,7 @@ const QString CItemBase::toolTip() {
 
 /** Returns the used main index. */
 CMainIndex* CItemBase::listView() const {
-	return dynamic_cast<CMainIndex*>( QListViewItem::listView() );
+	return dynamic_cast<CMainIndex*>( Q3ListViewItem::listView() );
 }
 
 void CItemBase::init() {
@@ -183,7 +187,7 @@ bool CModuleItem::acceptDrop( const QMimeSource* src ) const {
 }
 
 /** No descriptions */
-void CModuleItem::dropped( QDropEvent* e, QListViewItem* /*after*/) {
+void CModuleItem::dropped( QDropEvent* e, Q3ListViewItem* /*after*/) {
 	/* Something was dropped on a module item
 	*
 	* 1. If the drop type is plain text open the searchdialog for this text and start the search
@@ -502,12 +506,12 @@ bool CFolderBase::acceptDrop(const QMimeSource*) const {
 	return false;
 }
 
-QPtrList<QListViewItem> CFolderBase::getChildList() {
-	QPtrList<QListViewItem> childs;
+Q3PtrList<Q3ListViewItem> CFolderBase::getChildList() {
+	Q3PtrList<Q3ListViewItem> childs;
 	if (!childCount()) //no childs available
 		return childs;
 
-	QListViewItem* i = firstChild();
+	Q3ListViewItem* i = firstChild();
 	while (i && (i->parent() == this)) {
 		CItemBase* item = dynamic_cast<CItemBase*>(i);
 		if (item) { //we found a valid item
@@ -515,8 +519,8 @@ QPtrList<QListViewItem> CFolderBase::getChildList() {
 
 			CFolderBase* folder = dynamic_cast<CFolderBase*>(i);
 			if (folder) {
-				QPtrList<QListViewItem> subChilds = folder->getChildList();
-				for (QListViewItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
+				Q3PtrList<Q3ListViewItem> subChilds = folder->getChildList();
+				for (Q3ListViewItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
 					childs.append(ci);
 				}
 			}
@@ -717,10 +721,10 @@ namespace Bookmarks {
 
 
 		QStringList groupList = config->readListEntry("Groups");
-		QValueList<int> parentList = config->readIntListEntry("Group parents");
+		Q3ValueList<int> parentList = config->readIntListEntry("Group parents");
 
 		QStringList::Iterator it_groups = groupList.begin();
-		QValueList<int>::Iterator it_parents = parentList.begin();
+		Q3ValueList<int>::Iterator it_parents = parentList.begin();
 
 		int parentIDCounter = 0;
 		while ( (it_groups != groupList.end()) && (it_parents != parentList.end()) ) {
@@ -980,7 +984,7 @@ bool CBookmarkFolder::acceptDrop(const QMimeSource * src) const {
 		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
 }
 
-void CBookmarkFolder::dropped(QDropEvent *e, QListViewItem* after) {
+void CBookmarkFolder::dropped(QDropEvent *e, Q3ListViewItem* after) {
 	if (acceptDrop(e)) {
 		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
 		CDragDropMgr::ItemList::Iterator it;
@@ -1029,7 +1033,7 @@ const bool CBookmarkFolder::saveBookmarks( const QString& filename, const bool& 
 		i = dynamic_cast<CItemBase*>( i->nextSibling() );
 	}
 
-	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextStream::UnicodeUTF8);
+	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, Q3TextStream::UnicodeUTF8);
 }
 
 const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
@@ -1079,9 +1083,9 @@ const bool CBookmarkFolder::loadBookmarks( const QString& filename ) {
 		return false;
 
 	QString xml;
-	if (file.open(IO_ReadOnly)) {
-		QTextStream t;
-		t.setEncoding(QTextStream::UnicodeUTF8); //set encoding before file is used for input!
+	if (file.open(QIODevice::ReadOnly)) {
+		Q3TextStream t;
+		t.setEncoding(Q3TextStream::UnicodeUTF8); //set encoding before file is used for input!
 		t.setDevice(&file);
 		xml = t.read();
 		file.close();
@@ -1137,7 +1141,7 @@ void CGlossaryFolder::initTree() {
 	//we have now all modules we want to have
 	if (language() == QString::fromLatin1("*")) { //create subfolders for each language
 		typedef std::pair<QString, QString> LanguagePair;
-		typedef QValueList<LanguagePair> LanguagePairList;
+		typedef Q3ValueList<LanguagePair> LanguagePairList;
 
 		LanguagePairList usedLangs;
 		//     for (CSwordModuleInfo* m = usedModules.first(); m; m = usedModules.next()) {

@@ -21,7 +21,7 @@
 
 //Qt includes
 #include <qclipboard.h>
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
 #include <qtimer.h>
 
 //KDE includes
@@ -204,12 +204,12 @@ CDisplayWindow* const CDisplay::parentWindow() const {
 }
 
 /** Installs the popup which should be opened when the right mouse button was pressed. */
-void CDisplay::installPopup( QPopupMenu* popup ) {
+void CDisplay::installPopup( Q3PopupMenu* popup ) {
 	m_popup = popup;
 }
 
 /** Returns the popup menu which was set by installPopupMenu() */
-QPopupMenu* const CDisplay::installedPopup() {
+Q3PopupMenu* const CDisplay::installedPopup() {
 	Q_ASSERT(m_popup);
 	return m_popup;
 }

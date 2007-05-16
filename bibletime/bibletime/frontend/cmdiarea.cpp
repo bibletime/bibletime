@@ -24,13 +24,17 @@
 #include <klocale.h>
 
 //QT includes
-#include <qobjectlist.h>
+#include <qobject.h>
 #include <qtimer.h>
 #include <qevent.h>
 #include <qtimer.h>
 #if QT_VERSION < 0x030200
 //We need this to close all windows with Qt < 3.2
-#include <qwidgetlist.h>
+#include <qwidget.h>
+//Added by qt3to4:
+#include <QResizeEvent>
+#include <QChildEvent>
+#include <Q3PtrList>
 #endif
 
 
@@ -154,7 +158,7 @@ void CMDIArea::myTileVertical() {
 		return;
 	}
 
-	QPtrList<QWidget> windows = usableWindowList();
+	Q3PtrList<QWidget> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
 		m_appCaption = windows.at(0)->caption();
@@ -172,7 +176,7 @@ void CMDIArea::myTileHorizontal() {
 		return;
 	}
 
-	QPtrList<QWidget> windows = usableWindowList();
+	Q3PtrList<QWidget> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
 		m_appCaption = windows.at(0)->caption();
@@ -214,7 +218,7 @@ void CMDIArea::myCascade() {
 		return;
 	}
 
-	QPtrList<QWidget> windows = usableWindowList();
+	Q3PtrList<QWidget> windows = usableWindowList();
 	if ( !windows.count() ) {
 		return;
 	}
@@ -281,8 +285,8 @@ void CMDIArea::emitWindowCaptionChanged() {
 /*!
     \fn CMDIArea::usableWindowsCount()
  */
-QPtrList<QWidget> CMDIArea::usableWindowList() {
-	QPtrList<QWidget> ret;
+Q3PtrList<QWidget> CMDIArea::usableWindowList() {
+	Q3PtrList<QWidget> ret;
 
 	QWidgetList windows = windowList();
 	for ( QWidget* w = windows.first(); w; w = windows.next() ) {

@@ -19,7 +19,7 @@
 #include <qlineedit.h>
 #include <QString>
 #include <qstringlist.h>
-#include <qlistbox.h>
+#include <q3listbox.h>
 #include <qtoolbutton.h>
 #include <qevent.h>
 #include <qlayout.h>
@@ -29,6 +29,10 @@
 #include <qapplication.h>
 #include <qtooltip.h>
 #include <qrect.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <QWheelEvent>
+#include <QFocusEvent>
 
 CKCComboBox::CKCComboBox(bool rw,QWidget* parent,const char* name)
 : QComboBox(rw,parent,name) {
@@ -190,7 +194,7 @@ void CKeyChooserWidget::init() {
 	m_comboBox->setInsertionPolicy(QComboBox::NoInsertion);
 	m_comboBox->setFocusPolicy(QWidget::WheelFocus);
 
-	m_mainLayout = new QHBoxLayout( this );
+	m_mainLayout = new Q3HBoxLayout( this );
 	m_mainLayout->addWidget(m_comboBox,5);
 
 	m_scroller = new CScrollerWidgetSet(this);

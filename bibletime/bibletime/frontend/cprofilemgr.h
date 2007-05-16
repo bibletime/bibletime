@@ -16,6 +16,8 @@
 
 //Qt includes
 #include <QString>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 namespace Profile {
 /** The manager for profiles.
@@ -34,7 +36,7 @@ public:
 	/**
 	* @return a list of available profiles
 	*/
-	const QPtrList<CProfile>& profiles();
+	const Q3PtrList<CProfile>& profiles();
 	/**
 	* Removes the profile from the list and from the directory containg the profile files.
 	*/
@@ -59,7 +61,7 @@ public:
 	void refresh();
 
 protected:
-	QPtrList<CProfile> m_profiles;
+	Q3PtrList<CProfile> m_profiles;
 	QString m_profilePath;
 	CProfile* m_startupProfile;
 };

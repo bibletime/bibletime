@@ -34,6 +34,8 @@
 #include <klocale.h>
 #include <kpopupmenu.h>
 #include <kdeversion.h>
+//Added by qt3to4:
+#include <Q3PopupMenu>
 // #include <kactionclasses.h>
 
 CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent, const char *name) : CReadWindow(moduleList, parent,name) {
@@ -280,7 +282,7 @@ void CLexiconReadWindow::saveAsPlain() {
 void CLexiconReadWindow::slotFillBackHistory() {
 	//  qWarning("fill back history");
 	QStringList keyList = keyChooser()->getPreviousKeys();
-	QPopupMenu* menu = m_actions.backInHistory->popupMenu();
+	Q3PopupMenu* menu = m_actions.backInHistory->popupMenu();
 	menu->clear();
 
 	QStringList::iterator it;
@@ -294,7 +296,7 @@ void CLexiconReadWindow::slotFillBackHistory() {
 void CLexiconReadWindow::slotFillForwardHistory() {
 	//  qWarning("fill forward history");
 	QStringList keyList = keyChooser()->getNextKeys();
-	QPopupMenu* menu = m_actions.forwardInHistory->popupMenu();
+	Q3PopupMenu* menu = m_actions.forwardInHistory->popupMenu();
 	menu->clear();
 
 	QStringList::iterator it;

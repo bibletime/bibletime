@@ -24,6 +24,8 @@
 #include <qevent.h>
 #include <qpixmap.h>
 #include <qapplication.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 #include <kcompletion.h>
 #include <kglobalsettings.h>
 #include <kcompletionbox.h>
@@ -85,7 +87,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	updatelock = false;
 	m_module = mod;
 
-	setFocusPolicy(QWidget::WheelFocus);
+	setFocusPolicy(Qt::WheelFocus);
 
 	// Erase button
 	KGuiItem erase_picture;
@@ -103,7 +105,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_chapterScroller = new CScrollerWidgetSet(this);
 	m_verseScroller = new CScrollerWidgetSet(this);
 
-	m_mainLayout = new QHBoxLayout( this );
+	m_mainLayout = new Q3HBoxLayout( this );
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
 	m_mainLayout->addWidget(m_textbox);

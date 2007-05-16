@@ -15,7 +15,7 @@
 #include "cprofilewindow.h"
 
 //Qt includes
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 namespace Profile {
 
@@ -31,7 +31,7 @@ public:
 	* Saves the profile to the file given in the constructor.
 	* @param windows The list of windows available in the profile.
 	*/
-	const bool save( QPtrList<CProfileWindow> windows );
+	const bool save( Q3PtrList<CProfileWindow> windows );
 	/**
 	* Saves the profile to the file given in the constructor.
 	*/
@@ -40,7 +40,7 @@ public:
 	* Loads the profile from the file given in the constructor.
 	* @return The list of profiled window which exist in the profile.
 	*/
-	QPtrList<CProfileWindow> load();
+	Q3PtrList<CProfileWindow> load();
 	/**
 	* Returns the name of this profile.
 	*/
@@ -89,7 +89,7 @@ private:
 	void loadBasics();
 	void saveBasics();
 
-	QPtrList<CProfileWindow> m_profileWindows;
+	Q3PtrList<CProfileWindow> m_profileWindows;
 	QString m_name;
 	QString m_filename;
 	bool m_fullscreen;

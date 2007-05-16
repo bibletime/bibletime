@@ -32,6 +32,8 @@
 #include <kaccel.h>
 #include <kstdaccel.h>
 #include <klocale.h>
+//Added by qt3to4:
+#include <QResizeEvent>
 
 using namespace Profile;
 

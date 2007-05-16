@@ -30,22 +30,29 @@
 #include <stdlib.h>
 
 //QT includes
-#include <qhbox.h>
+#include <q3hbox.h>
 #include <qlayout.h>
-#include <qvbox.h>
-#include <qdict.h>
+#include <q3vbox.h>
+#include <q3dict.h>
 #include <qcheckbox.h>
 #include <qcombobox.h>
-#include <qbuttongroup.h>
+#include <q3buttongroup.h>
 #include <qhbuttongroup.h>
 #include <qradiobutton.h>
 #include <qcolor.h>
 #include <qtooltip.h>
-#include <qwidgetstack.h>
+#include <q3widgetstack.h>
 
 #include <qstringlist.h>
 #include <qinputdialog.h>
 #include <qdir.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <QLabel>
+#include <Q3GridLayout>
+#include <Q3PtrList>
+#include <Q3Frame>
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <kapp.h>
@@ -135,8 +142,8 @@ const bool COptionsDialog::showPart( COptionsDialog::Parts /*ID*/ ) {
 
 /** Initializes the startup section of the OD. */
 void COptionsDialog::initDisplay() {
-	QFrame* page = addPage(i18n("Display"), QString::null, DesktopIcon(CResMgr::settings::startup::icon,32));
-	QVBoxLayout* layout = new QVBoxLayout(page);
+	Q3Frame* page = addPage(i18n("Display"), QString::null, DesktopIcon(CResMgr::settings::startup::icon,32));
+	Q3VBoxLayout* layout = new Q3VBoxLayout(page);
 	layout->setSpacing( 5 );
 
 	{//daily tips
@@ -173,7 +180,7 @@ void COptionsDialog::initDisplay() {
 
 	layout->addSpacing( 5 );
 
-	QHBoxLayout* hboxlayout = new QHBoxLayout();
+	Q3HBoxLayout* hboxlayout = new Q3HBoxLayout();
 
 	m_settings.displayStyle.styleChooser = new QComboBox( page ); //create first to enable buddy for label
 	connect( m_settings.displayStyle.styleChooser, SIGNAL( activated( int ) ),
@@ -211,8 +218,8 @@ void COptionsDialog::initDisplay() {
 
 /** Init fonts section. */
 void COptionsDialog::initLanguages() {
-	QFrame* page = addPage(i18n("Languages"), QString::null, DesktopIcon(CResMgr::settings::fonts::icon, 32));
-	QVBoxLayout* layout = new QVBoxLayout(page,5);
+	Q3Frame* page = addPage(i18n("Languages"), QString::null, DesktopIcon(CResMgr::settings::fonts::icon, 32));
+	Q3VBoxLayout* layout = new Q3VBoxLayout(page,5);
 	layout->setResizeMode( QLayout::Minimum );
 
 	{ //Sword locales
@@ -229,7 +236,7 @@ void COptionsDialog::initLanguages() {
 			(m_settings.fonts.swordLocaleCombo, CResMgr::settings::sword::general::language::tooltip);
 
 
-		QHBoxLayout* hBoxLayout = new QHBoxLayout();
+		Q3HBoxLayout* hBoxLayout = new Q3HBoxLayout();
 		hBoxLayout->addWidget(label);
 		hBoxLayout->addWidget(m_settings.fonts.swordLocaleCombo);
 		hBoxLayout->addStretch();
@@ -307,7 +314,7 @@ void COptionsDialog::initLanguages() {
 			)
 		);
 		layout->addSpacing(5);
-		QHBoxLayout* hLayout = new QHBoxLayout();
+		Q3HBoxLayout* hLayout = new Q3HBoxLayout();
 
 		m_settings.fonts.usage = new QComboBox(page);
 		QToolTip::add
@@ -358,14 +365,14 @@ void COptionsDialog::initLanguages() {
 
 /** Init accel key section. */
 void COptionsDialog::initAccelerators() {
-	QVBox* page = addVBoxPage(i18n("HotKeys"), QString::null, DesktopIcon(CResMgr::settings::keys::icon,32));
+	Q3VBox* page = addVBoxPage(i18n("HotKeys"), QString::null, DesktopIcon(CResMgr::settings::keys::icon,32));
 
 	CBTConfig::setupAccelSettings(
 		CBTConfig::application,
 		m_settings.keys.application.actionCollection
 	);
 
-	QHBox* hbox = new QHBox(page);
+	Q3HBox* hbox = new Q3HBox(page);
 	QLabel* label = new QLabel(i18n("Choose type:"), hbox);
 	m_settings.keys.typeChooser = new QComboBox(hbox);
 	connect(
@@ -380,7 +387,7 @@ void COptionsDialog::initAccelerators() {
 
 	page->setStretchFactor(hbox, 0);
 
-	m_settings.keys.keyChooserStack = new QWidgetStack(page);
+	m_settings.keys.keyChooserStack = new Q3WidgetStack(page);
 	Q_ASSERT(m_settings.keys.keyChooserStack);
 
 	page->setStretchFactor(m_settings.keys.keyChooserStack, 5);
@@ -455,13 +462,13 @@ void COptionsDialog::initAccelerators() {
 
 /** Init Sword section. */
 void COptionsDialog::initSword() {
-	QVBox* page = addVBoxPage(i18n("Desk"),QString::null, DesktopIcon(CResMgr::settings::sword::icon,32));
+	Q3VBox* page = addVBoxPage(i18n("Desk"),QString::null, DesktopIcon(CResMgr::settings::sword::icon,32));
 	KTabCtl* tabCtl = new KTabCtl(page);
 
 	{ //Standard works
-		QFrame* currentTab = new QFrame(tabCtl);
+		Q3Frame* currentTab = new Q3Frame(tabCtl);
 		tabCtl->addTab(currentTab, i18n("Standard works"));
-		QGridLayout* gridLayout = new QGridLayout(currentTab,10,2, 5,5); //the last row is for stretching available space
+		Q3GridLayout* gridLayout = new Q3GridLayout(currentTab,10,2, 5,5); //the last row is for stretching available space
 		gridLayout->setResizeMode(QLayout::Minimum);
 
 		gridLayout->addMultiCellWidget(
@@ -594,7 +601,7 @@ void COptionsDialog::initSword() {
 		}
 
 		//using two lists and one loop is better than six loops with almost the same code :)
-		QPtrList<QComboBox> comboList;
+		Q3PtrList<QComboBox> comboList;
 		comboList.setAutoDelete(false);//don't delete the combos accidentally
 		QStringList moduleList;
 
@@ -656,9 +663,9 @@ void COptionsDialog::initSword() {
 		}
 	}
 	{ // ---------- new tab: filters -------- //
-		QFrame* currentTab = new QFrame(tabCtl);
+		Q3Frame* currentTab = new Q3Frame(tabCtl);
 		tabCtl->addTab(currentTab, i18n("Text filters"));
-		QVBoxLayout* layout = new QVBoxLayout(currentTab,5);
+		Q3VBoxLayout* layout = new Q3VBoxLayout(currentTab,5);
 
 		layout->addWidget( CToolClass::explanationLabel(currentTab, i18n("Text filters"),
 						   i18n("Filters control the appearance of text. \
@@ -970,7 +977,7 @@ void COptionsDialog::updateStylePreview() {
 
 void COptionsDialog::slotKeyChooserTypeChanged(const QString& title) {
 	//delete all KKeyChoosers which may not share accels, because this class checks in all instances for key conflicts
-	typedef QPtrList<KKeyChooser> KeyChooserList;
+	typedef Q3PtrList<KKeyChooser> KeyChooserList;
 	KeyChooserList list;
 	list.append(m_settings.keys.bible.keyChooser);
 	list.append(m_settings.keys.commentary.keyChooser);
@@ -989,7 +996,7 @@ void COptionsDialog::slotKeyChooserTypeChanged(const QString& title) {
 	//but now a value can actually be zero, which would be
 	//indistinguishable from the end condition.
 	//Therefore, more complex logic is needed.
-	QPtrListIterator<KKeyChooser> it(list);
+	Q3PtrListIterator<KKeyChooser> it(list);
 	if (!it.isEmpty()){
 		while (!it.atLast()){
 			if (it.current()){

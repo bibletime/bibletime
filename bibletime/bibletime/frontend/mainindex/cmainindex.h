@@ -24,6 +24,11 @@
 #include <qwidget.h>
 #include <qtimer.h>
 #include <qtooltip.h>
+//Added by qt3to4:
+#include <QDropEvent>
+#include <QDragMoveEvent>
+#include <QDragLeaveEvent>
+#include <Q3PtrList>
 
 //KDE includes
 #include <kaction.h>
@@ -86,7 +91,7 @@ protected: // Protected methods
 	/**
 	* Reimplementation. Returns the drag object for the current selection.
 	*/
-	virtual QDragObject* dragObject();
+	virtual Q3DragObject* dragObject();
 	/**
 	* Reimplementation from KListView. Returns true if the drag is acceptable for the listview.
 	*/
@@ -107,7 +112,7 @@ protected: // Protected methods
 	 * Reimplementation.
 	 */
 	virtual void contentsDragLeaveEvent( QDragLeaveEvent* e );
-	QRect drawItemHighlighter(QPainter* painter, QListViewItem * item );
+	QRect drawItemHighlighter(QPainter* painter, Q3ListViewItem * item );
 	/** Read settings like open groups or scrollbar position and restore them
 	*/
 	void readSettings();
@@ -122,12 +127,12 @@ protected slots: // Protected slots
 	/**
 	* Is called when an item was clicked/double clicked.
 	*/
-	void slotExecuted( QListViewItem* );
-	void dropped( QDropEvent*, QListViewItem*, QListViewItem*);
+	void slotExecuted( Q3ListViewItem* );
+	void dropped( QDropEvent*, Q3ListViewItem*, Q3ListViewItem*);
 	/**
 	* Shows the context menu at the given position.
 	*/
-	void contextMenu(KListView*, QListViewItem*, const QPoint&);
+	void contextMenu(KListView*, Q3ListViewItem*, const QPoint&);
 	/**
 	* Adds a new subfolder to the current item.
 	*/
@@ -168,7 +173,7 @@ protected slots: // Protected slots
 	/**
 	* Is called when items should be moved.
 	*/
-	void moved( QPtrList<QListViewItem>& items, QPtrList<QListViewItem>& afterFirst, QPtrList<QListViewItem>& afterNow);
+	void moved( Q3PtrList<Q3ListViewItem>& items, Q3PtrList<Q3ListViewItem>& afterFirst, Q3PtrList<Q3ListViewItem>& afterNow);
 	/**
 	* Opens a plain text editor window to edit the modules content.
 	*/
@@ -182,7 +187,7 @@ private:
 	CSearchDialog* m_searchDialog;
 	ToolTip* m_toolTip;
 	bool m_itemsMovable;
-	QListViewItem* m_autoOpenFolder;
+	Q3ListViewItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
 
 	/**

@@ -27,8 +27,8 @@
 
 //Qt includes
 #include <qclipboard.h>
-#include <qptrlist.h>
-#include <qprogressdialog.h>
+#include <q3ptrlist.h>
+#include <q3progressdialog.h>
 
 //KDE includes
 #include <kprogress.h>
@@ -95,7 +95,7 @@ const bool CExportManager::saveKey(CSwordKey* key, const Format format, const bo
 	}
 
 	if (!progressWasCancelled()) {
-		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? QTextStream::UnicodeUTF8 : QTextStream::Locale);
+		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? Q3TextStream::UnicodeUTF8 : Q3TextStream::Locale);
 		closeProgressDialog();
 		return true;
 	}
@@ -143,14 +143,14 @@ const bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* m
 	const QString text = render->renderKeyTree(tree);
 
 	if (!progressWasCancelled()) {
-		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? QTextStream::UnicodeUTF8 : QTextStream::Locale);
+		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? Q3TextStream::UnicodeUTF8 : Q3TextStream::Locale);
 		closeProgressDialog();
 		return true;
 	}
 	return false;
 };
 
-const bool CExportManager::saveKeyList(QPtrList<CSwordKey>& list, const Format format, const bool addText ) {
+const bool CExportManager::saveKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText ) {
 	if (!list.count())
 		return false;
 
@@ -188,7 +188,7 @@ const bool CExportManager::saveKeyList(QPtrList<CSwordKey>& list, const Format f
 	const QString text = render->renderKeyTree(tree);
 
 	if (!progressWasCancelled()) {
-		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? QTextStream::UnicodeUTF8 : QTextStream::Locale);
+		CToolClass::savePlainFile(filename, text, false, (format==HTML) ? Q3TextStream::UnicodeUTF8 : Q3TextStream::Locale);
 		closeProgressDialog();
 		return true;
 	}
@@ -277,7 +277,7 @@ const bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* m
 };
 
 
-const bool CExportManager::copyKeyList(QPtrList<CSwordKey>& list, const Format format, const bool addText ) {
+const bool CExportManager::copyKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText ) {
 	if (!list.count())
 		return false;
 
@@ -492,7 +492,7 @@ const QString CExportManager::lineBreak(const Format format) {
 
 /** No descriptions */
 void CExportManager::setProgressRange( const int items ) {
-	if (QProgressDialog* dlg = progressDialog()) {
+	if (Q3ProgressDialog* dlg = progressDialog()) {
 		dlg->setTotalSteps(items);
 		dlg->setProgress(0);
 		dlg->setMinimumDuration(0);
@@ -503,13 +503,13 @@ void CExportManager::setProgressRange( const int items ) {
 }
 
 /** Creates the progress dialog with the correct settings. */
-QProgressDialog* const CExportManager::progressDialog() {
+Q3ProgressDialog* const CExportManager::progressDialog() {
 	if (!m_showProgress) {
 		return 0;
 	}
 	
 	if (!m_progressDialog) {
-		m_progressDialog = new QProgressDialog( m_caption, m_progressLabel, 1, 0, "progress", true );
+		m_progressDialog = new Q3ProgressDialog( m_caption, m_progressLabel, 1, 0, "progress", true );
 		m_progressDialog->setCaption("BibleTime");
 	}
 	
@@ -518,14 +518,14 @@ QProgressDialog* const CExportManager::progressDialog() {
 
 /** Increments the progress by one item. */
 void CExportManager::incProgress() {
-	if (QProgressDialog* dlg = progressDialog()) {
+	if (Q3ProgressDialog* dlg = progressDialog()) {
 		dlg->setProgress( dlg->progress() + 1 );
 	}
 }
 
 /** No descriptions */
 const bool CExportManager::progressWasCancelled() {
-	if (QProgressDialog* dlg = progressDialog()) {
+	if (Q3ProgressDialog* dlg = progressDialog()) {
 		return dlg->wasCancelled();
 	}
 	
@@ -534,7 +534,7 @@ const bool CExportManager::progressWasCancelled() {
 
 /** Closes the progress dialog immediatly. */
 void CExportManager::closeProgressDialog() {
-	if (QProgressDialog* dlg = progressDialog()) {
+	if (Q3ProgressDialog* dlg = progressDialog()) {
 		dlg->close();
 		dlg->reset();
 	}

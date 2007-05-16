@@ -23,13 +23,13 @@
 
 //Qt includes
 #include <qobject.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <QString>
 #include <qstringlist.h>
 
 namespace BookshelfManager {
 
-	typedef QPtrList<sword::InstallSource> InstallSourceList;
+	typedef Q3PtrList<sword::InstallSource> InstallSourceList;
 
 	/**Our own reimplementation to provide status bar updates.
 	  *@author The BibleTime team

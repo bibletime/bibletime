@@ -13,6 +13,8 @@
 #define CBIBLEKEYCHOOSER_H
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 #include "ckeychooser.h"
 
 #include "backend/cswordbiblemoduleinfo.h"
@@ -66,7 +68,7 @@ public slots:
 
 private:
 	CKeyReferenceWidget* w_ref;
-	QPtrList<CSwordBibleModuleInfo> m_modules;
+	Q3PtrList<CSwordBibleModuleInfo> m_modules;
 	CSwordVerseKey *m_key;
 };
 

@@ -18,12 +18,12 @@
 
 //QT includes
 #include <qwidget.h>
-#include <qframe.h>
-#include <qguardedptr.h>
+#include <q3frame.h>
+#include <qpointer.h>
 #include <qlabel.h>
 #include <QString>
 #include <qmap.h>
-#include <qdict.h>
+#include <q3dict.h>
 #include <qmap.h>
 
 //KDE includes
@@ -34,11 +34,11 @@
 #include <kapp.h>
 #include <klocale.h>
 
-class QHBox;
+class Q3HBox;
 class QCheckBox;
 class QComboBox;
 class QRadioButton;
-class QWidgetStack;
+class Q3WidgetStack;
 
 class KListBox;
 class KKeyChooser;
@@ -99,10 +99,10 @@ private:
 
 		struct KeySettings {
 			QComboBox* typeChooser;
-			QWidgetStack* keyChooserStack;
+			Q3WidgetStack* keyChooserStack;
 
 			struct WindowType {
-				QGuardedPtr<KKeyChooser> keyChooser;
+				QPointer<KKeyChooser> keyChooser;
 				KActionCollection* actionCollection;
 				QString title;
 

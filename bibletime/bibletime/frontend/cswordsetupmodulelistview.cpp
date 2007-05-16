@@ -47,7 +47,7 @@ namespace BookshelfManager {
          * @short Display a tooltip if we're over an item
          */
         virtual void maybeTip(const QPoint& pos) {
-            QListViewItem* i = m_parent->itemAt(pos);
+            Q3ListViewItem* i = m_parent->itemAt(pos);
             Q_ASSERT(i);
 
             const QRect rect = m_parent->itemRect(i);
@@ -72,7 +72,7 @@ namespace BookshelfManager {
         m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 
         addColumn(i18n("Name"));
-        setColumnWidthMode( 0, QListView::Maximum );
+        setColumnWidthMode( 0, Q3ListView::Maximum );
         setColumnWidth( 0, 200 ); //don`t get too broad
 
         addColumn(i18n("Status"));
@@ -90,7 +90,7 @@ namespace BookshelfManager {
         setAllColumnsShowFocus(true);
         setFullWidth(true);
         setRootIsDecorated(true);
-        setResizeMode(QListView::LastColumn);
+        setResizeMode(Q3ListView::LastColumn);
         setTooltipColumn(0);
 
         init();
@@ -104,20 +104,20 @@ namespace BookshelfManager {
 
     void CSwordSetupModuleListView::init() {
 #if QT_VERSION >= 0x030200
-        m_categoryBible = new QCheckListItem(this, i18n("Bibles"), QCheckListItem::CheckBoxController);
-        m_categoryCommentary = new QCheckListItem(this, i18n("Commentaries"), QCheckListItem::CheckBoxController);
-        m_categoryLexicon = new QCheckListItem(this, i18n("Lexicons"), QCheckListItem::CheckBoxController);
-        m_categoryBook = new QCheckListItem(this, i18n("Books"), QCheckListItem::CheckBoxController);
-        m_categoryDevotionals = new QCheckListItem(this, i18n("Daily Devotionals"), QCheckListItem::CheckBoxController);
-        m_categoryGlossaries = new QCheckListItem(this, i18n("Glossaries"), QCheckListItem::CheckBoxController);
+        m_categoryBible = new Q3CheckListItem(this, i18n("Bibles"), Q3CheckListItem::CheckBoxController);
+        m_categoryCommentary = new Q3CheckListItem(this, i18n("Commentaries"), Q3CheckListItem::CheckBoxController);
+        m_categoryLexicon = new Q3CheckListItem(this, i18n("Lexicons"), Q3CheckListItem::CheckBoxController);
+        m_categoryBook = new Q3CheckListItem(this, i18n("Books"), Q3CheckListItem::CheckBoxController);
+        m_categoryDevotionals = new Q3CheckListItem(this, i18n("Daily Devotionals"), Q3CheckListItem::CheckBoxController);
+        m_categoryGlossaries = new Q3CheckListItem(this, i18n("Glossaries"), Q3CheckListItem::CheckBoxController);
 #else
         //  Qt <= 3.1.x doesn't support the CheckBoxController!, remove the define as soon as we switch to the new Qt
-        m_categoryBible = new QCheckListItem(this, i18n("Bibles"), QCheckListItem::Controller);
-        m_categoryCommentary = new QCheckListItem(this, i18n("Commentaries"), QCheckListItem::Controller);
-        m_categoryLexicon = new QCheckListItem(this, i18n("Lexicons"), QCheckListItem::Controller);
-        m_categoryBook = new QCheckListItem(this, i18n("Books"), QCheckListItem::Controller);
-        m_categoryDevotionals = new QCheckListItem(this, i18n("Daily Devotionals"), QCheckListItem::Controller);
-        m_categoryGlossaries = new QCheckListItem(this, i18n("Glossaries"), QCheckListItem::Controller);
+        m_categoryBible = new Q3CheckListItem(this, i18n("Bibles"), Q3CheckListItem::Controller);
+        m_categoryCommentary = new Q3CheckListItem(this, i18n("Commentaries"), Q3CheckListItem::Controller);
+        m_categoryLexicon = new Q3CheckListItem(this, i18n("Lexicons"), Q3CheckListItem::Controller);
+        m_categoryBook = new Q3CheckListItem(this, i18n("Books"), Q3CheckListItem::Controller);
+        m_categoryDevotionals = new Q3CheckListItem(this, i18n("Daily Devotionals"), Q3CheckListItem::Controller);
+        m_categoryGlossaries = new Q3CheckListItem(this, i18n("Glossaries"), Q3CheckListItem::Controller);
 #endif
 
         m_categoryBible->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
@@ -135,8 +135,8 @@ namespace BookshelfManager {
         m_categoryGlossaries->setOpen(true);
 
         //   connect(this, SIGNAL(executed(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*)));
-        connect(this, SIGNAL(clicked(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*))); //items have to be clicked only once in double click mode
-        connect(this, SIGNAL(spacePressed(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*)));
+        connect(this, SIGNAL(clicked(Q3ListViewItem*)), SLOT(slotItemClicked(Q3ListViewItem*))); //items have to be clicked only once in double click mode
+        connect(this, SIGNAL(spacePressed(Q3ListViewItem*)), SLOT(slotItemClicked(Q3ListViewItem*)));
     }
 
     void CSwordSetupModuleListView::finish() {
@@ -155,13 +155,13 @@ namespace BookshelfManager {
     }
 
     void CSwordSetupModuleListView::clear() {
-        QListView::clear();
+        Q3ListView::clear();
         init();
     }
 
     void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString localVersion) {
 
-        QListViewItem* parent = 0;
+        Q3ListViewItem* parent = 0;
         switch ( module->type() ) {
         case CSwordModuleInfo::Bible:
             parent = m_categoryBible;
@@ -195,7 +195,7 @@ namespace BookshelfManager {
             langName = QString(module->module()->Lang());
         }
 
-        QListViewItem * langFolder = 0;
+        Q3ListViewItem * langFolder = 0;
         if (parent) {
             langFolder = parent->firstChild();
 
@@ -210,10 +210,10 @@ namespace BookshelfManager {
 
         if (!langFolder) { //not yet there
 #if QT_VERSION >= 0x030200
-            langFolder = new QCheckListItem(parent, langName, QCheckListItem::CheckBoxController);
+            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::CheckBoxController);
 #else
 
-            langFolder = new QCheckListItem(parent, langName, QCheckListItem::Controller);
+            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::Controller);
 #endif
 
             langFolder->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
@@ -222,11 +222,11 @@ namespace BookshelfManager {
 
         Q_ASSERT(langFolder);
 
-        QListViewItem* newItem = 0;
+        Q3ListViewItem* newItem = 0;
         if (langFolder) {
-            newItem = new QCheckListItem(langFolder, module->name(), QCheckListItem::CheckBox);
+            newItem = new Q3CheckListItem(langFolder, module->name(), Q3CheckListItem::CheckBox);
         } else { //shouldn't happen
-            newItem = new QCheckListItem(this, module->name(), QCheckListItem::CheckBox);
+            newItem = new Q3CheckListItem(this, module->name(), Q3CheckListItem::CheckBox);
         }
 
         newItem->setPixmap(0, CToolClass::getIconForModule(module));
@@ -247,10 +247,10 @@ namespace BookshelfManager {
     QStringList CSwordSetupModuleListView::selectedModules() {
         QStringList moduleList;
 
-        QListViewItemIterator list_it( this );
+        Q3ListViewItemIterator list_it( this );
         while ( list_it.current() ) {
-            QCheckListItem* i = dynamic_cast<QCheckListItem*>( list_it.current() );
-            if (i && i->isOn() && i->type() == QCheckListItem::CheckBox ) {
+            Q3CheckListItem* i = dynamic_cast<Q3CheckListItem*>( list_it.current() );
+            if (i && i->isOn() && i->type() == Q3CheckListItem::CheckBox ) {
                 moduleList << i->text(0);
             }
             ++list_it;
@@ -259,22 +259,22 @@ namespace BookshelfManager {
         return moduleList;
     }
 
-    void CSwordSetupModuleListView::slotItemClicked(QListViewItem*) {
+    void CSwordSetupModuleListView::slotItemClicked(Q3ListViewItem*) {
         emit selectedModulesChanged();
     }
 
-    bool CSwordSetupModuleListView::showTooltip(QListViewItem* i, const QPoint&, int) const {
-        QCheckListItem* checkItem = dynamic_cast<QCheckListItem*>( i );
+    bool CSwordSetupModuleListView::showTooltip(Q3ListViewItem* i, const QPoint&, int) const {
+        Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
         Q_ASSERT(checkItem);
 
-        return (checkItem && (checkItem->type() == QCheckListItem::CheckBox));
+        return (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox));
     }
 
-    QString CSwordSetupModuleListView::tooltip(QListViewItem* i, int /*column*/) const {
+    QString CSwordSetupModuleListView::tooltip(Q3ListViewItem* i, int /*column*/) const {
         QString ret;
-        QCheckListItem* checkItem = dynamic_cast<QCheckListItem*>( i );
+        Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
 
-        if (checkItem && (checkItem->type() == QCheckListItem::CheckBox)) {
+        if (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox)) {
             const QString moduleName = checkItem->text(0);
             CSwordModuleInfo* module = m_backend->findModuleByName(moduleName);
 

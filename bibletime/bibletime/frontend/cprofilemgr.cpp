@@ -14,7 +14,7 @@
 //Qt includes
 #include <qdir.h>
 #include <qfile.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 //KDE includes
 #include <kstandarddirs.h>
@@ -45,7 +45,7 @@ CProfileMgr::~CProfileMgr() {
 }
 
 /** Returns a list of available profiles. */
-const QPtrList<CProfile>& CProfileMgr::profiles() {
+const Q3PtrList<CProfile>& CProfileMgr::profiles() {
 	return m_profiles;
 }
 

@@ -14,6 +14,9 @@
 
 #include <qwidget.h>
 #include <qtoolbutton.h>
+//Added by qt3to4:
+#include <QWheelEvent>
+#include <QMouseEvent>
 
 class QMouseEvent;
 

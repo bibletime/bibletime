@@ -26,9 +26,13 @@
 //Qt includes
 #include <qwidget.h>
 #include <QString>
-#include <qcanvas.h>
-#include <qdict.h>
+#include <q3canvas.h>
+#include <q3dict.h>
 #include <qtooltip.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <QResizeEvent>
+#include <Q3MemArray>
 
 //KDE includes
 #include <kdialog.h>
@@ -36,7 +40,7 @@
 #include <klistview.h>
 
 
-class QTextEdit;
+class Q3TextEdit;
 
 namespace Search {
 	namespace Analysis {
@@ -50,7 +54,7 @@ class CSearchAnalysisView;
  * CSearchDialogAnaylsis shows the graphical analysis of the search result.
  * @author The BibleTime Team
  */
-class CSearchAnalysis : public QCanvas {
+class CSearchAnalysis : public Q3Canvas {
 	Q_OBJECT
 public:
 	CSearchAnalysis(QObject *parent=0, const char *name=0);
@@ -69,7 +73,7 @@ public:
 	/*
 	* This function returns a pointer to the list of AnalysisItems
 	*/
-	QDict<CSearchAnalysisItem>* getSearchAnalysisItemList();
+	Q3Dict<CSearchAnalysisItem>* getSearchAnalysisItemList();
 	void reset();
 
 protected slots: // Protected slots
@@ -88,7 +92,7 @@ private:
 	const unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
 	ListCSwordModuleInfo m_moduleList;
-	QDict<CSearchAnalysisItem> m_canvasItemList;
+	Q3Dict<CSearchAnalysisItem> m_canvasItemList;
 	QMap<CSwordModuleInfo*,unsigned int> m_lastPosList;
 	int m_maxCount;
 	double m_scaleFactor;
@@ -128,12 +132,12 @@ private:
 /** Paints the bars for one book for one or more modules
  *
  */
-class CSearchAnalysisItem : public QCanvasRectangle  {
+class CSearchAnalysisItem : public Q3CanvasRectangle  {
 public:
 	/**
 	* Standard constructor.
 	*/
-	CSearchAnalysisItem(QCanvas* parent, const int moduleCount, const QString& bookname, double *scaleFactor, ListCSwordModuleInfo* modules);
+	CSearchAnalysisItem(Q3Canvas* parent, const int moduleCount, const QString& bookname, double *scaleFactor, ListCSwordModuleInfo* modules);
 	virtual ~CSearchAnalysisItem();
 	/**
 	* Sets the resultcount of this item
@@ -160,14 +164,14 @@ private:
 	double *m_scaleFactor;
 	QString m_bookName;
 	int m_moduleCount;
-	QMemArray<int> m_resultCountArray;
+	Q3MemArray<int> m_resultCountArray;
 	QPixmap* m_bufferPixmap;
 };
 
-class CSearchAnalysisLegendItem : public QCanvasRectangle  {
+class CSearchAnalysisLegendItem : public Q3CanvasRectangle  {
 
 public:
-	CSearchAnalysisLegendItem(QCanvas* parent, ListCSwordModuleInfo* list );
+	CSearchAnalysisLegendItem(Q3Canvas* parent, ListCSwordModuleInfo* list );
 
 private:
 	virtual void draw (QPainter & painter);
@@ -176,13 +180,13 @@ private:
 
 //----------------------------------------------------------
 //----------------------------------------------------------
-class CSearchAnalysisView : public QCanvasView  {
+class CSearchAnalysisView : public Q3CanvasView  {
 	Q_OBJECT
 public:
 	/**
 	* Standard constructor
 	*/
-	CSearchAnalysisView(QCanvas* canvas, QWidget* parent);
+	CSearchAnalysisView(Q3Canvas* canvas, QWidget* parent);
 	/**
 	* Returns the sizeHint for this view
 	* We give back the size of the parent widgetas default.

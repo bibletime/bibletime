@@ -17,6 +17,8 @@
 
 //KDE includes
 #include <klistview.h>
+//Added by qt3to4:
+#include <QLabel>
 
 //forward declarations
 class QLabel;
@@ -50,7 +52,7 @@ protected: // Protected methods
 	*/
 	void initView();
 	void initConnections();
-	virtual QDragObject* dragObject();
+	virtual Q3DragObject* dragObject();
 
 public slots: // Public slots
 	void saveItems();
@@ -65,14 +67,14 @@ public slots: // Public slots
 	/**
 	* Reimplementation to show the popup menu.
 	*/
-	virtual void showPopup(KListView*, QListViewItem* i, const QPoint& point);
+	virtual void showPopup(KListView*, Q3ListViewItem* i, const QPoint& point);
 
 protected slots: // Protected slots
 	void printItems();
 	/**
 	* Is connected to the signal executed, which is emitted when a mew item was chosen.
 	*/
-	void executed(QListViewItem*);
+	void executed(Q3ListViewItem*);
 
 private:
 	struct {

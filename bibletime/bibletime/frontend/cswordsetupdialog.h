@@ -19,6 +19,9 @@
 //QT includes
 #include <QString>
 #include <qmap.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <Q3Frame>
 
 //KDE includes
 #include <kdialogbase.h>
@@ -26,11 +29,11 @@
 class QWidget;
 class QLabel;
 class QComboBox;
-class QWidgetStack;
+class Q3WidgetStack;
 class QButton;
 class QPushButton;
 class QLineEdit;
-class QListView;
+class Q3ListView;
 
 class KProgressDialog;
 
@@ -70,19 +73,19 @@ private:
 
 		const QString currentInstallSource();
 
-		QFrame* m_swordConfigPage;
-		QListView* m_swordPathListBox;
+		Q3Frame* m_swordConfigPage;
+		Q3ListView* m_swordPathListBox;
 		QPushButton* m_swordEditPathButton;
 		QPushButton* m_swordAddPathButton;
 		QPushButton* m_swordRemovePathButton;
 		QStringList m_swordPathList;
 		bool m_swordSetupChanged;
 
-		QFrame* m_removePage;
-		QFrame* m_manageIndiciesPage;
+		Q3Frame* m_removePage;
+		Q3Frame* m_manageIndiciesPage;
 
-		QFrame* m_installPage;
-		QWidgetStack* m_installWidgetStack;
+		Q3Frame* m_installPage;
+		Q3WidgetStack* m_installWidgetStack;
 
 		QString source;
 		QString target;

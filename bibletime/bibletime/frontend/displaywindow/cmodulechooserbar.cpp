@@ -13,6 +13,8 @@
 #include "cmodulechooserbutton.h"
 
 #include <qtimer.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 CModuleChooserBar::CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type, QWidget *parent, const char *name )
 : KToolBar(parent,name),
@@ -144,7 +146,7 @@ void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
     \fn CModuleChooserBar::updateMenuItems()
  */
 void CModuleChooserBar::updateMenuItems() {
-	QPtrList<CModuleChooserButton> buttons = m_buttonList ;
+	Q3PtrList<CModuleChooserButton> buttons = m_buttonList ;
 
 	for (buttons.first(); buttons.current(); buttons.next()) {
 		buttons.current()->updateMenuItems();

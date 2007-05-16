@@ -19,6 +19,9 @@
 
 //Qt includes
 #include <qdom.h>
+//Added by qt3to4:
+#include <QDropEvent>
+#include <Q3PtrList>
 
 //KDE includes
 #include <klistview.h>
@@ -126,7 +129,7 @@ protected:
 	};
 	/** Our extended version of the dropped method to include a item above the point we dropped the stuff.
 	*/
-	virtual void dropped( QDropEvent* /*e*/, QListViewItem* /*after*/) {}
+	virtual void dropped( QDropEvent* /*e*/, Q3ListViewItem* /*after*/) {}
 	;
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
@@ -159,7 +162,7 @@ protected: // Protected methods
 	* In this case open the searchdialog. In the case of a referebnce open the module at the given position.
 	*/
 	virtual bool acceptDrop( const QMimeSource* src ) const;
-	virtual void dropped( QDropEvent* e, QListViewItem* after );
+	virtual void dropped( QDropEvent* e, Q3ListViewItem* after );
 
 private:
 	CSwordModuleInfo* m_module;
@@ -243,7 +246,7 @@ public:
 	void rename();
 	virtual void newSubFolder();
 
-	QPtrList<QListViewItem> getChildList();
+	Q3PtrList<Q3ListViewItem> getChildList();
 
 protected:
 	/**
@@ -315,7 +318,7 @@ public:
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
 	virtual bool acceptDrop(const QMimeSource * src) const;
-	virtual void dropped(QDropEvent *e, QListViewItem* after);
+	virtual void dropped(QDropEvent *e, Q3ListViewItem* after);
 
 	/**
 	* Loads bookmarks from XML content

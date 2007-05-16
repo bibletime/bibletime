@@ -24,6 +24,8 @@
 #include <klocale.h>
 #include <kaction.h>
 #include <kpopupmenu.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 namespace Search {
 	namespace Result {
@@ -75,11 +77,11 @@ void CSearchResultView::initView() {
 void CSearchResultView::initConnections() {
 	//  connect(this, SIGNAL(executed(QListViewItem*)),
 	//   this, SLOT(executed(QListViewItem*)));
-	connect(this, SIGNAL(currentChanged(QListViewItem*)),
-			this, SLOT(executed(QListViewItem*)));
+	connect(this, SIGNAL(currentChanged(Q3ListViewItem*)),
+			this, SLOT(executed(Q3ListViewItem*)));
 
-	connect(this, SIGNAL(contextMenu(KListView*, QListViewItem*, const QPoint&)),
-			this, SLOT(showPopup(KListView*, QListViewItem*, const QPoint&)));
+	connect(this, SIGNAL(contextMenu(KListView*, Q3ListViewItem*, const QPoint&)),
+			this, SLOT(showPopup(KListView*, Q3ListViewItem*, const QPoint&)));
 }
 
 /** Setups the list with the given module. */
@@ -100,7 +102,7 @@ void CSearchResultView::setupTree(CSwordModuleInfo* m) {
 
 	setUpdatesEnabled(false);
 
-	QListViewItem* oldItem = 0;
+	Q3ListViewItem* oldItem = 0;
 	KListViewItem* item = 0;
 	for (int index = 0; index < count; index++) {
 		item = new KListViewItem(this, oldItem);
@@ -146,24 +148,24 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 }
 
 /** Is connected to the signal executed, which is emitted when a mew item was chosen. */
-void CSearchResultView::executed(QListViewItem* item) {
+void CSearchResultView::executed(Q3ListViewItem* item) {
 	//  Q_ASSERT(item);
 	//  qWarning("executed");
 	emit keySelected(item->text(0));
 }
 
 /** Reimplementation to show the popup menu. */
-void CSearchResultView::showPopup(KListView*, QListViewItem*, const QPoint& point) {
+void CSearchResultView::showPopup(KListView*, Q3ListViewItem*, const QPoint& point) {
 	m_popup->exec(point);
 }
 
 /** No descriptions */
 void CSearchResultView::printItems() {
-	QPtrList<QListViewItem> items = selectedItems();
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
 	CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
 
 	QStringList list;
-	for (QListViewItem* k = items.first(); k; k = items.next()) {
+	for (Q3ListViewItem* k = items.first(); k; k = items.next()) {
 		list.append( k->text(0) );
 	};
 	mgr.printKeyList( list, module(), CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() );
@@ -175,9 +177,9 @@ void CSearchResultView::saveItems() {
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
-	QPtrList<QListViewItem> items = selectedItems();
-	QPtrList<CSwordKey> keys;
-	for (QListViewItem* i = items.first(); i; i = items.next()) {
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	Q3PtrList<CSwordKey> keys;
+	for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
 		keys.append( k );
@@ -194,9 +196,9 @@ void CSearchResultView::saveItemsWithText() {
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
-	QPtrList<QListViewItem> items = selectedItems();
-	QPtrList<CSwordKey> keys;
-	for (QListViewItem* i = items.first(); i; i = items.next()) {
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	Q3PtrList<CSwordKey> keys;
+	for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
 		keys.append( k );
@@ -213,9 +215,9 @@ void CSearchResultView::copyItems() {
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
-	QPtrList<QListViewItem> items = selectedItems();
-	QPtrList<CSwordKey> keys;
-	for (QListViewItem* i = items.first(); i; i = items.next()) {
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	Q3PtrList<CSwordKey> keys;
+	for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
 		keys.append( k );
@@ -232,9 +234,9 @@ void CSearchResultView::copyItemsWithText() {
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
-	QPtrList<QListViewItem> items = selectedItems();
-	QPtrList<CSwordKey> keys;
-	for (QListViewItem* i = items.first(); i; i = items.next()) {
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	Q3PtrList<CSwordKey> keys;
+	for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
 		keys.append( k );
@@ -250,7 +252,7 @@ CSwordModuleInfo* const CSearchResultView::module() {
 	return m_module;
 }
 
-QDragObject* CSearchResultView::dragObject() {
+Q3DragObject* CSearchResultView::dragObject() {
 	//return a valid DragObject to make DnD possible!
 
 	/*
@@ -258,7 +260,7 @@ QDragObject* CSearchResultView::dragObject() {
 	*/
 	CDragDropMgr::ItemList dndItems;
 
-	QPtrList<QListViewItem> items = selectedItems();
+	Q3PtrList<Q3ListViewItem> items = selectedItems();
 	for (items.first(); items.current(); items.next()) {
 		dndItems.append( CDragDropMgr::Item(m_module->name(), items.current()->text(0), QString::null) ); //no description
 	};

@@ -26,7 +26,7 @@
 #include <qwidget.h>
 #include <qsize.h>
 #include <qmap.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <qstringlist.h>
 
 //KDE includes
@@ -82,14 +82,14 @@ protected: // Protected methods
 	virtual void adjustFont();
 
 protected slots: // Protected slots
-	void itemActivated( QListViewItem* item );
+	void itemActivated( Q3ListViewItem* item );
 
 private:
 class TreeItem : public KListViewItem {
 public:
-		TreeItem(QListViewItem* parent, QListViewItem* after, CSwordTreeKey* key, const QString keyName);
-		TreeItem(QListViewItem* parent, CSwordTreeKey* key, const QString keyName);
-		TreeItem(QListView* view,QListViewItem* after, CSwordTreeKey* key, const QString keyName);
+		TreeItem(Q3ListViewItem* parent, Q3ListViewItem* after, CSwordTreeKey* key, const QString keyName);
+		TreeItem(Q3ListViewItem* parent, CSwordTreeKey* key, const QString keyName);
+		TreeItem(Q3ListView* view,Q3ListViewItem* after, CSwordTreeKey* key, const QString keyName);
 		const QString& key() const;
 		void createChilds();
 		virtual void setOpen(bool);
@@ -104,7 +104,7 @@ private:
 		QString m_keyName;
 	};
 
-	QPtrList<CSwordBookModuleInfo> m_modules;
+	Q3PtrList<CSwordBookModuleInfo> m_modules;
 	CSwordTreeKey* m_key;
 	KListView* m_treeView;
 };

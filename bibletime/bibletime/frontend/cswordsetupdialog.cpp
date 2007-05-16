@@ -28,11 +28,16 @@
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qcombobox.h>
-#include <qwidgetstack.h>
+#include <q3widgetstack.h>
 #include <qfileinfo.h>
 #include <qpushbutton.h>
 #include <qlineedit.h>
-#include <qdict.h>
+#include <q3dict.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
+#include <Q3GridLayout>
+#include <Q3Frame>
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <kapplication.h>
@@ -72,10 +77,10 @@ namespace BookshelfManager {
 	}
 
 	void CSwordSetupDialog::initSwordConfig() {
-		QFrame* page = m_swordConfigPage = addPage(i18n("Bookshelf path(s)"), QString::null, SmallIcon("bt_swordconfig",32));
+		Q3Frame* page = m_swordConfigPage = addPage(i18n("Bookshelf path(s)"), QString::null, SmallIcon("bt_swordconfig",32));
 		page->setMinimumSize(500,400);
 
-		QGridLayout* layout = new QGridLayout(page, 6, 4);
+		Q3GridLayout* layout = new Q3GridLayout(page, 6, 4);
 		layout->setMargin(5);
 
 		layout->setSpacing(10);
@@ -93,7 +98,7 @@ namespace BookshelfManager {
 		QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is <b>%1</b>").arg(swordConfPath), page);
 		layout->addMultiCellWidget(confPathLabel, 1,1,0,3);
 
-		m_swordPathListBox = new QListView(page);
+		m_swordPathListBox = new Q3ListView(page);
 		//   m_swordPathListBox->setFullWidth(true);
 		m_swordPathListBox->addColumn(i18n("Path to bookshelf"));
 		connect(m_swordPathListBox, SIGNAL(selectionChanged()), this, SLOT(slot_swordPathSelected()));
@@ -120,13 +125,13 @@ namespace BookshelfManager {
 	void CSwordSetupDialog::initInstall() {
 		m_installPage = addPage(i18n("Install/Update works"), QString::null, SmallIcon("bt_bible",32));
 
-		QVBoxLayout* vboxlayout = new QVBoxLayout(m_installPage);
-		QHBoxLayout* hboxlayout = new QHBoxLayout();
+		Q3VBoxLayout* vboxlayout = new Q3VBoxLayout(m_installPage);
+		Q3HBoxLayout* hboxlayout = new Q3HBoxLayout();
 		hboxlayout->setAutoAdd( true );
 
 		vboxlayout->addLayout(hboxlayout);
 
-		m_installWidgetStack = new QWidgetStack(m_installPage);
+		m_installWidgetStack = new Q3WidgetStack(m_installPage);
 		hboxlayout->addWidget(m_installWidgetStack);
 
 		m_installSourcePage = new QWidget(0);
@@ -134,7 +139,7 @@ namespace BookshelfManager {
 
 		//  m_installSourcePage->setMinimumSize(500,400);
 
-		QGridLayout* layout = new QGridLayout(m_installSourcePage, 7, 3);
+		Q3GridLayout* layout = new Q3GridLayout(m_installSourcePage, 7, 3);
 		layout->setMargin(5);
 		layout->setSpacing(10);
 		layout->setRowStretch(6,5);
@@ -178,7 +183,7 @@ the module remote installation feature!</b>")
 		layout->addMultiCellWidget(m_targetLabel, 6,6,0,0,Qt::AlignTop);
 
 		//part beloew main layout with the back/next buttons
-		QHBoxLayout* myHBox = new QHBoxLayout();
+		Q3HBoxLayout* myHBox = new Q3HBoxLayout();
 		vboxlayout->addLayout(myHBox);
 
 		m_installBackButton = new QPushButton(i18n("Back"), m_installPage);
@@ -203,11 +208,11 @@ the module remote installation feature!</b>")
 	}
 
 	void CSwordSetupDialog::initRemove() {
-		QFrame* page = m_removePage = addPage(i18n("Remove works"), QString::null, SmallIcon("edittrash",32));
+		Q3Frame* page = m_removePage = addPage(i18n("Remove works"), QString::null, SmallIcon("edittrash",32));
 
 		page->setMinimumSize(500,400);
 
-		QGridLayout* layout = new QGridLayout(page, 4, 4);
+		Q3GridLayout* layout = new Q3GridLayout(page, 4, 4);
 		layout->setMargin(5);
 
 		layout->setSpacing(10);
@@ -238,11 +243,11 @@ the module remote installation feature!</b>")
 
 	void CSwordSetupDialog::initManageIndices()
 	{
-		QFrame* page = m_manageIndiciesPage = addPage(i18n("Manage search indicies"),
+		Q3Frame* page = m_manageIndiciesPage = addPage(i18n("Manage search indicies"),
 			QString::null, SmallIcon("filefind",32));
 
 		page->setMinimumSize(500,400);
-		QVBoxLayout* box = new QVBoxLayout(page, 4, 4);
+		Q3VBoxLayout* box = new Q3VBoxLayout(page, 4, 4);
 		CManageIndicesWidget* mi = new CManageIndicesWidget(page);
 		box->addWidget(mi);
 	}
@@ -256,9 +261,9 @@ the module remote installation feature!</b>")
 	void CSwordSetupDialog::writeSwordConfig() {
 		if (m_swordSetupChanged && m_swordPathListBox->childCount()) {
 			QStringList targets;
-			QListViewItemIterator it( m_swordPathListBox );
+			Q3ListViewItemIterator it( m_swordPathListBox );
 			while ( it.current() ) {
-				QListViewItem *item = it.current();
+				Q3ListViewItem *item = it.current();
 				if (!item->text(0).isEmpty()) {
 					targets << item->text(0);
 				}
@@ -330,7 +335,7 @@ the module remote installation feature!</b>")
 		//list = (m_targetCombo->count()) ? m_swordPathListBox : BTInstallMgr::Tool::LocalConfig::targetList();
 		if (m_targetCombo->count()) { //we already read in the list once, we have to use the Sword paths list items now because this list is newer
 			list.clear();
-			QListViewItemIterator it2( m_swordPathListBox );
+			Q3ListViewItemIterator it2( m_swordPathListBox );
 			while (it2.current()) {
 				list << it2.current()->text(0);
 
@@ -409,7 +414,7 @@ the module remote installation feature!</b>")
 
 		if ((KMessageBox::warningYesNo(0, message, i18n("Warning")) == KMessageBox::Yes)) {  //Yes was pressed.
 			sword::InstallMgr installMgr;
-			QDict<sword::SWMgr> mgrDict; //maps config paths to SWMgr objects
+			Q3Dict<sword::SWMgr> mgrDict; //maps config paths to SWMgr objects
 
 			for ( QStringList::Iterator it = moduleList.begin(); it != moduleList.end(); ++it ) {
 				if (CSwordModuleInfo* m = backend()->findModuleByName(*it)) { //module found?
@@ -604,7 +609,7 @@ the module remote installation feature!</b>")
 		if (!m_installModuleListPage) { //the widgets are not yet created
 			m_installModuleListPage = new QWidget(0);
 
-			QGridLayout* layout = new QGridLayout(m_installModuleListPage, 7, 2);
+			Q3GridLayout* layout = new Q3GridLayout(m_installModuleListPage, 7, 2);
 			layout->setMargin(5);
 			layout->setSpacing(10);
 
@@ -801,7 +806,7 @@ the module remote installation feature!</b>")
 	}
 
 	void CSwordSetupDialog::slot_swordEditClicked() {
-		if (QListViewItem* i = m_swordPathListBox->currentItem()) {
+		if (Q3ListViewItem* i = m_swordPathListBox->currentItem()) {
 			KURL url = KDirSelectDialog::selectDirectory(i->text(0), true);
 			if (url.isValid()) {
 				const QFileInfo fi( url.path() );
@@ -834,7 +839,7 @@ the module remote installation feature!</b>")
 					return;
 				}
 			}
-			(void)new QListViewItem(m_swordPathListBox, url.path());
+			(void)new Q3ListViewItem(m_swordPathListBox, url.path());
 			m_swordSetupChanged = true;
 			writeSwordConfig(); //to make sure other parts work with the new setting
 			populateInstallCombos();     //update target list bof on install page
@@ -843,7 +848,7 @@ the module remote installation feature!</b>")
 	}
 
 	void CSwordSetupDialog::slot_swordRemoveClicked() {
-		QListViewItem* i = m_swordPathListBox->currentItem();
+		Q3ListViewItem* i = m_swordPathListBox->currentItem();
 		if (i) {
 			delete i;
 
@@ -862,7 +867,7 @@ the module remote installation feature!</b>")
 			if ((*it).isEmpty()) {
 				continue;
 			}
-			new QListViewItem(m_swordPathListBox, *it);
+			new Q3ListViewItem(m_swordPathListBox, *it);
 		}
 		m_swordPathListBox->setCurrentItem( m_swordPathListBox->firstChild() );
 	}

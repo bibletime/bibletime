@@ -17,6 +17,8 @@
 
 //KDE includes
 #include <dcopclient.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 BibleTimeApp::BibleTimeApp() {
 	initDCOP();
@@ -40,7 +42,7 @@ void BibleTimeApp::initDCOP() {
 	Q_ASSERT(dcopOk);
 
 	if (dcopOk) {
-		const QCString appId = dcopClient()->registerAs(kapp->name(), false);
+		const Q3CString appId = dcopClient()->registerAs(kapp->name(), false);
 		//   dcopClient()->setDefaultObject("BibleTimeInterface");
 	}
 }

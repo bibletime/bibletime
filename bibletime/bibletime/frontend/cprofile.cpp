@@ -15,8 +15,10 @@
 #include <qdom.h>
 #include <qfile.h>
 #include <QString>
-#include <qtextstream.h>
+#include <q3textstream.h>
 #include <qregexp.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 //KDE includes
 #include <kstandarddirs.h>
@@ -53,15 +55,15 @@ CProfile::~CProfile() {
 }
 
 /** Loads the profile from the file given in the constructor. */
-QPtrList<CProfileWindow> CProfile::load() {
+Q3PtrList<CProfileWindow> CProfile::load() {
 	QFile file(m_filename);
 	if (!file.exists())
-		return QPtrList<CProfileWindow>();
+		return Q3PtrList<CProfileWindow>();
 
 	QDomDocument doc;
-	if (file.open(IO_ReadOnly)) {
-		QTextStream t( &file );
-		t.setEncoding(QTextStream::UnicodeUTF8);
+	if (file.open(QIODevice::ReadOnly)) {
+		Q3TextStream t( &file );
+		t.setEncoding(Q3TextStream::UnicodeUTF8);
 		doc.setContent(t.read());
 		file.close();
 	}
@@ -198,7 +200,7 @@ QPtrList<CProfileWindow> CProfile::load() {
 }
 
 /** Saves the profile to the file given in the constructor. */
-const bool CProfile::save(QPtrList<CProfileWindow> windows) {
+const bool CProfile::save(Q3PtrList<CProfileWindow> windows) {
 	/** Save the settings using a XML file
 	* Save the CProfileWindow objects using a XML file which name is in m_filename
 	*/
@@ -280,10 +282,10 @@ const bool CProfile::save(QPtrList<CProfileWindow> windows) {
 	}
 
 	QFile file(m_filename);
-	if ( file.open(IO_WriteOnly) ) {
+	if ( file.open(QIODevice::WriteOnly) ) {
 		ret = true;
-		QTextStream t( &file );
-		t.setEncoding(QTextStream::UnicodeUTF8);
+		Q3TextStream t( &file );
+		t.setEncoding(Q3TextStream::UnicodeUTF8);
 		t << doc.toString();
 		file.close();
 	}
@@ -312,7 +314,7 @@ const QString& CProfile::name() {
 void CProfile::init(const QString file) {
 	const QString oldFile = m_filename;
 	m_filename = file;
-	save(QPtrList<CProfileWindow>());
+	save(Q3PtrList<CProfileWindow>());
 	m_filename = oldFile;
 }
 
@@ -329,9 +331,9 @@ void CProfile::loadBasics() {
 		return;
 
 	QDomDocument doc;
-	if (file.open(IO_ReadOnly)) {
-		QTextStream t( &file );
-		t.setEncoding(QTextStream::UnicodeUTF8);
+	if (file.open(QIODevice::ReadOnly)) {
+		Q3TextStream t( &file );
+		t.setEncoding(Q3TextStream::UnicodeUTF8);
 		doc.setContent(t.read());
 		file.close();
 	}
@@ -346,9 +348,9 @@ void CProfile::saveBasics() {
 		return;
 
 	QDomDocument doc;
-	if (file.open(IO_ReadOnly)) {
-		QTextStream t(&file);
-		t.setEncoding(QTextStream::UnicodeUTF8);
+	if (file.open(QIODevice::ReadOnly)) {
+		Q3TextStream t(&file);
+		t.setEncoding(Q3TextStream::UnicodeUTF8);
 		doc.setContent(t.read());
 		file.close();
 	}
@@ -356,9 +358,9 @@ void CProfile::saveBasics() {
 	QDomElement document = doc.documentElement();
 	document.setAttribute("name", m_name);
 
-	if (file.open(IO_WriteOnly)) {
-		QTextStream t( &file );
-		t.setEncoding(QTextStream::UnicodeUTF8);
+	if (file.open(QIODevice::WriteOnly)) {
+		Q3TextStream t( &file );
+		t.setEncoding(Q3TextStream::UnicodeUTF8);
 		t << doc.toString();
 		file.close();
 	}

@@ -84,7 +84,7 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 			.append(name())
 		);
 
-		if ( f1.open( IO_ReadOnly ) ) {
+		if ( f1.open( QIODevice::ReadOnly ) ) {
 			QDataStream s( &f1 );
 			QString mod_ver, prog_ver;
 			s >> mod_ver;
@@ -157,7 +157,7 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 				QFile f2( QString(dir).append("/").append(name()) );
 
 
-				if (f2.open( IO_WriteOnly )) {
+				if (f2.open( QIODevice::WriteOnly )) {
 					QDataStream s( &f2 );
 					s << config(CSwordModuleInfo::ModuleVersion); //store module version
 					s << QString(CACHE_FORMAT); //store BT version -- format may change

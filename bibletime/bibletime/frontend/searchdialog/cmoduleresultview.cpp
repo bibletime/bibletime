@@ -87,10 +87,10 @@ void CModuleResultView::initView() {
 
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
-	connect(this, SIGNAL(currentChanged(QListViewItem*)),
-			this, SLOT(executed(QListViewItem*)));
-	connect(this, SIGNAL(contextMenu(KListView*, QListViewItem*, const QPoint&)),
-			this, SLOT(showPopup(KListView*, QListViewItem*, const QPoint&)));
+	connect(this, SIGNAL(currentChanged(Q3ListViewItem*)),
+			this, SLOT(executed(Q3ListViewItem*)));
+	connect(this, SIGNAL(contextMenu(KListView*, Q3ListViewItem*, const QPoint&)),
+			this, SLOT(showPopup(KListView*, Q3ListViewItem*, const QPoint&)));
 }
 
 /** Setups the tree using the given list of modules. */
@@ -150,7 +150,7 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 	executed(currentItem());
 }
 
-void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QListViewItem* parent,
+void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, Q3ListViewItem* parent,
                                             const QString& sNumber) {
 	QString lText;
 	util::CSortListViewItem* item = 0;
@@ -167,7 +167,7 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QListViewI
 
 
 /** Is executed when an item was selected in the list. */
-void CModuleResultView::executed( QListViewItem* i ) {
+void CModuleResultView::executed( Q3ListViewItem* i ) {
    QString itemText, lText;
 
 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
@@ -196,7 +196,7 @@ void CModuleResultView::executed( QListViewItem* i ) {
 CSwordModuleInfo* const CModuleResultView::activeModule() {
 	Q_ASSERT(currentItem());
 
-	QListViewItem* item = currentItem();
+	Q3ListViewItem* item = currentItem();
 	if (!item) {
 		return 0;
 	}
@@ -215,7 +215,7 @@ CSwordModuleInfo* const CModuleResultView::activeModule() {
 }
 
 /** No descriptions */
-void CModuleResultView::showPopup(KListView*, QListViewItem*, const QPoint& point) {
+void CModuleResultView::showPopup(KListView*, Q3ListViewItem*, const QPoint& point) {
 	//make sure that all entries have the correct status
 	m_popup->exec(point);
 }

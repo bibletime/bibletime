@@ -16,7 +16,7 @@
 
 #include <qwidget.h>
 
-class QCheckListItem;
+class Q3CheckListItem;
 
 namespace BookshelfManager {
 	
@@ -51,8 +51,8 @@ protected:
 	void populateModuleList();
 
 	// member variables
-	QCheckListItem* m_modsWithIndices;
-	QCheckListItem* m_modsWithoutIndices;
+	Q3CheckListItem* m_modsWithIndices;
+	Q3CheckListItem* m_modsWithoutIndices;
 	
 public slots:
 	/**

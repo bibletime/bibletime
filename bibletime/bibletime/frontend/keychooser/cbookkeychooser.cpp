@@ -17,6 +17,8 @@
 //Qt includes
 #include <qlayout.h>
 #include <qmap.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 QMap<QObject*, int> boxes;
 
@@ -131,7 +133,7 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 	//refresh the number of combos
 	if (refresh && m_modules.count() && m_key) {
 		if (!m_layout) {
-			m_layout = new QHBoxLayout(this);
+			m_layout = new Q3HBoxLayout(this);
 		}
 
 		//delete old widgets

@@ -18,7 +18,9 @@
 
 
 //Qt includes
-#include <qptrlist.h>
+#include <q3ptrlist.h>
+//Added by qt3to4:
+#include <Q3StrList>
 
 //KDE includes
 #include <klocale.h>
@@ -88,7 +90,7 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 		m_availableModulesCache.moduleCount = mods.count();
 
 		//collect the languages abbrevs of all modules
-		QStrList abbrevs;
+		Q3StrList abbrevs;
 		char *abbrev;
 
 		ListCSwordModuleInfo::iterator end_it = mods.end();

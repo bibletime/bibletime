@@ -20,12 +20,14 @@
 //Sword includes
 #include <versekey.h>
 #include <listkey.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {
 	qDebug("Syncing modules by type to key %s", key.latin1());
 
-	QPtrList<QWidget> windows = m_mdi->usableWindowList();
+	Q3PtrList<QWidget> windows = m_mdi->usableWindowList();
 	for (QWidget* w = windows.first(); w; w = windows.next()) {
 		CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w);
 		Q_ASSERT(d);

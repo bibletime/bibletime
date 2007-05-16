@@ -22,8 +22,10 @@
 
 //Qt includes
 #include <qcombobox.h>
-#include <qlistbox.h>
+#include <q3listbox.h>
 #include <qpushbutton.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -38,8 +40,8 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 		m_key = 0;
 		return;
 	}
-	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->setDirection( QBoxLayout::LeftToRight );
+	Q3HBoxLayout* layout = new Q3HBoxLayout(this);
+	layout->setDirection( Q3BoxLayout::LeftToRight );
 
 	w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
 	layout->addWidget(w_ref);

@@ -19,7 +19,7 @@
 #include <QString>
 #include <qrect.h>
 #include <qstringlist.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 namespace Profile {
 

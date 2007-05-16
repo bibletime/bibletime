@@ -25,6 +25,9 @@
 
 //KDE includes
 #include <kmainwindow.h>
+//Added by qt3to4:
+#include <Q3PtrList>
+#include <Q3PopupMenu>
 
 //forward: BT classes
 class CMDIArea;
@@ -44,8 +47,8 @@ class KActionMenu;
 class KActionCollection;
 
 //QT classes
-class QPopupMenu;
-class QProgressDialog;
+class Q3PopupMenu;
+class Q3ProgressDialog;
 class QSplitter;
 
 /**
@@ -347,8 +350,8 @@ protected slots:
 
 
 private:
-	QPopupMenu* m_windowMenu;
-	QPopupMenu* m_editMenu;
+	Q3PopupMenu* m_windowMenu;
+	Q3PopupMenu* m_editMenu;
 
 	/** VIEW menu actions */
 	KToggleAction* m_viewToolbar_action;
@@ -374,7 +377,7 @@ private:
 	KActionMenu* m_windowDeleteProfile_action;
 	KToggleAction* m_windowFullscreen_action;
 
-	QPtrList<KAction> m_windowOpenWindowsList;
+	Q3PtrList<KAction> m_windowOpenWindowsList;
 
 	KHelpMenu* m_helpMenu;
 
@@ -384,7 +387,7 @@ private:
 	* The list of installed SWORD modules
 	*/
 	ListCSwordModuleInfo* m_moduleList;
-	QProgressDialog* m_progress;
+	Q3ProgressDialog* m_progress;
 
 	Profile::CProfile* m_currentProfile;
 	QSplitter* m_mainSplitter;

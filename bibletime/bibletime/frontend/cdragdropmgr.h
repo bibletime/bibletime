@@ -14,9 +14,11 @@
 
 //Qt includes
 #include <QString>
-#include <qcstring.h>
-#include <qdragobject.h>
-#include <qvaluelist.h>
+#include <q3cstring.h>
+#include <q3dragobject.h>
+#include <q3valuelist.h>
+//Added by qt3to4:
+#include <QDropEvent>
 
 //forward declarations
 class QDropEvent;
@@ -99,7 +101,7 @@ private:
 	; //end of class CDragDropMgr::Item
 
 	//the item list we're using
-	typedef QValueList<Item> ItemList;
+	typedef Q3ValueList<Item> ItemList;
 
 	/** Return whether the drop should be accepted
 	* This functions tests whether the drop should be accepted or not. It returns true if the drop object
@@ -110,7 +112,7 @@ private:
 	* This function returns the drag object with the data which represents the items given as parameter
 	* If the list is invalid or empty we return NULL.
 	*/
-	static QDragObject* const dragObject( CDragDropMgr::ItemList& items, QWidget* dragSource );
+	static Q3DragObject* const dragObject( CDragDropMgr::ItemList& items, QWidget* dragSource );
 
 	/**
 	* Decodes the XML stuff we passed to the dragObject at creation time.
@@ -127,7 +129,7 @@ private:
 
 protected:
 	//The class which represents our XML drag object stuff
-class BTDrag : public QTextDrag {
+class BTDrag : public Q3TextDrag {
 public:
 		BTDrag( const QString& xml, QWidget* dragSource = 0, const char* name = 0);
 		//reimplemented static publoc function to provide functionality for BibleTime XML drags
@@ -144,7 +146,7 @@ protected:
 
 		//made protected because the BibleTime classes should not manage the DRag&Drop stuff themself
 		static bool decode(const QMimeSource* e, QString& str);
-		static bool decode(const QMimeSource* e, QString& str, QCString& subtype);
+		static bool decode(const QMimeSource* e, QString& str, Q3CString& subtype);
 	};
 
 	//protected constructor and destructor because we do not allow inheritance, functionality is provided by static functions

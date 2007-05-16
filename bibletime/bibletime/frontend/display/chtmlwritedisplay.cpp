@@ -16,7 +16,7 @@
 #include "util/cresmgr.h"
 
 //Qt includes
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
 #include <qtooltip.h>
 
 //KDE includes
@@ -45,11 +45,11 @@ void CHTMLWriteDisplay::setText( const QString& newText ) {
 	QString text = newText;
 // 	text.replace("\n<br/><!-- BT newline -->\n", "\n");
 
-	QTextEdit::setText(text);
+	Q3TextEdit::setText(text);
 }
 
 const QString CHTMLWriteDisplay::plainText() {
-	return QTextEdit::text();
+	return Q3TextEdit::text();
 };
 
 void CHTMLWriteDisplay::toggleBold() {
@@ -253,7 +253,7 @@ void CHTMLWriteDisplay::setupToolbar(KToolBar * bar, KActionCollection * actions
 }
 
 /** Reimplementation to show a popup menu if the right mouse butoon was clicked. */
-QPopupMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
+Q3PopupMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
 	if (!m_actions.selectAll) {
 		m_actions.selectAll = new KAction(i18n("Select all"), KShortcut(0), this, SLOT(selectAll()), this);
 	}

@@ -15,36 +15,36 @@
 
 namespace util {
 
-CSortListViewItem::CSortListViewItem(QListViewItem* parent) : KListViewItem(parent)
+CSortListViewItem::CSortListViewItem(Q3ListViewItem* parent) : KListViewItem(parent)
 {
 }
 
-CSortListViewItem::CSortListViewItem( QListView * parent, QListViewItem * after )
+CSortListViewItem::CSortListViewItem( Q3ListView * parent, Q3ListViewItem * after )
 	: KListViewItem ( parent, after )
 {
 }
 
-CSortListViewItem::CSortListViewItem( QListViewItem * parent, QListViewItem * after )
+CSortListViewItem::CSortListViewItem( Q3ListViewItem * parent, Q3ListViewItem * after )
 	: KListViewItem ( parent, after )
 {
 }
 	
-CSortListViewItem::CSortListViewItem( QListView * parent, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
+CSortListViewItem::CSortListViewItem( Q3ListView * parent, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
 	: KListViewItem( parent, label1, label2, label3, label4, label5, label6, label7, label8 )
 {
 }
 
-CSortListViewItem::CSortListViewItem( QListViewItem * parent, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
+CSortListViewItem::CSortListViewItem( Q3ListViewItem * parent, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
 	: KListViewItem ( parent, label1, label2, label3, label4, label5, label6, label7, label8 )
 {
 }
 
-CSortListViewItem::CSortListViewItem( QListView * parent, QListViewItem * after, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
+CSortListViewItem::CSortListViewItem( Q3ListView * parent, Q3ListViewItem * after, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
 	: KListViewItem ( parent, after, label1, label2, label3, label4, label5, label6, label7, label8 )
 {
 }
 
-CSortListViewItem::CSortListViewItem( QListViewItem * parent, QListViewItem * after, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
+CSortListViewItem::CSortListViewItem( Q3ListViewItem * parent, Q3ListViewItem * after, QString label1, QString label2, QString label3, QString label4, QString label5, QString label6, QString label7, QString label8 )
 	: KListViewItem ( parent, after, label1, label2, label3, label4, label5, label6, label7, label8 )
 {
 
@@ -54,7 +54,7 @@ CSortListViewItem::CSortListViewItem( QListViewItem * parent, QListViewItem * af
 CSortListViewItem::~CSortListViewItem() {
 }
 
-int CSortListViewItem::compare( QListViewItem* i, int col, bool ascending ) const {
+int CSortListViewItem::compare( Q3ListViewItem* i, int col, bool ascending ) const {
 	int ret = 0;
 
 	if ( !columnSorting.contains(col) ) {

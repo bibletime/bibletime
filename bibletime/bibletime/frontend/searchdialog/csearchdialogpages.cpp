@@ -33,6 +33,8 @@
 #include <qlabel.h>
 #include <qregexp.h>
 #include <qeventloop.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -167,7 +169,7 @@ CSearchResultPage::~CSearchResultPage() {}
 
 /** Initializes the view of this widget. */
 void CSearchResultPage::initView() {
-	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame, 0, 6, "frameLayout");
+	Q3VBoxLayout* frameLayout = new Q3VBoxLayout(m_displayFrame, 0, 6, "frameLayout");
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
 }

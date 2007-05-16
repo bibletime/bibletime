@@ -14,8 +14,10 @@
 
 #include "cdisplay.h"
 #include "backend/cswordbackend.h"
+//Added by qt3to4:
+#include <Q3PopupMenu>
 
-class QPopupMenu;
+class Q3PopupMenu;
 class QWidget;
 
 /**The base class for all read-only widgets like KHTMLView.

@@ -13,13 +13,16 @@
 #define CLEXICONKEYCHOOSER_H
 
 #include <qwidget.h>
+//Added by qt3to4:
+#include <Q3PtrList>
+#include <Q3HBoxLayout>
 #include "ckeychooser.h"
 #include "backend/cswordldkey.h"
 #include "backend/cswordmoduleinfo.h"
 #include "backend/cswordlexiconmoduleinfo.h"
 
 class CKeyChooserWidget;
-class QHBoxLayout;
+class Q3HBoxLayout;
 
 /**
  * This class implements the KeyChooser for lexicons
@@ -67,8 +70,8 @@ public slots:
 protected:
 	CKeyChooserWidget *m_widget;
 	CSwordLDKey* m_key;
-	QPtrList<CSwordLexiconModuleInfo> m_modules;
-	QHBoxLayout *m_layout;
+	Q3PtrList<CSwordLexiconModuleInfo> m_modules;
+	Q3HBoxLayout *m_layout;
 
 	virtual void adjustFont();
 

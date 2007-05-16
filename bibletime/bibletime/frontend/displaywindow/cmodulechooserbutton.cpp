@@ -19,8 +19,8 @@
 //Qt includes
 #include <QString>
 #include <qtooltip.h>
-#include <qdict.h>
-#include <qvaluelist.h>
+#include <q3dict.h>
+#include <q3valuelist.h>
 
 //KDE includes
 #include <klocale.h>
@@ -166,7 +166,7 @@ void CModuleChooserButton::populateMenu() {
 	setPopup(m_popup, true);
 
 	QStringList languages;
-	QDict<KPopupMenu> langdict;
+	Q3Dict<KPopupMenu> langdict;
 
 	//the modules list contains only the modules we can use, i.e. same type and same features
 	ListCSwordModuleInfo modules;

@@ -45,6 +45,8 @@
 #include <kdeversion.h>
 #include <kaccel.h>
 #include <klocale.h>
+//Added by qt3to4:
+#include <QCloseEvent>
 
 using namespace Profile;
 
@@ -78,9 +80,9 @@ CWriteWindow* CDisplayWindow::createWriteInstance(ListCSwordModuleInfo modules, 
 
 CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent, const char *name )
 #if KDE_VERSION >= 0x030200
-: KMainWindow(KMainWindow::NoDCOPObject, parent, name, WDestructiveClose),
+: KMainWindow(KMainWindow::NoDCOPObject, parent, name, Qt::WDestructiveClose),
 #else
-: KMainWindow(parent, name, WDestructiveClose),
+: KMainWindow(parent, name, Qt::WDestructiveClose),
 #endif
 m_mdi(parent),
 m_filterOptions(),

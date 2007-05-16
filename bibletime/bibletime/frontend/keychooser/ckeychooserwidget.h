@@ -15,6 +15,11 @@
 #include <qwidget.h>
 #include <qmap.h>
 #include <qstringlist.h>
+//Added by qt3to4:
+#include <QWheelEvent>
+#include <QEvent>
+#include <Q3HBoxLayout>
+#include <QMouseEvent>
 
 #include <kcombobox.h>
 #include "cscrollerwidgetset.h"
@@ -23,13 +28,13 @@
 class CLexiconKeyChooser;
 //class CMinMaxLayout;
 
-class QIconSet;
+class QIcon;
 //class QComboBox;
 class QStringList;
 class QPoint;
 class QMouseEvent;
 class QWheelEvent;
-class QHBoxLayout;
+class Q3HBoxLayout;
 
 /*
 * We use this class to conrtol the focus move in the combobox
@@ -172,7 +177,7 @@ private:
 	* Members should never be public!!
 	*/
 	CKCComboBox* m_comboBox;
-	QHBoxLayout *m_mainLayout;
+	Q3HBoxLayout *m_mainLayout;
 	CScrollerWidgetSet * m_scroller;
 };
 

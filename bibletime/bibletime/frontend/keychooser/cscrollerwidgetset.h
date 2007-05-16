@@ -17,6 +17,8 @@
 #include <qstringlist.h>
 #include <qlayout.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 #include <kcombobox.h>
 #include "cscrollbutton.h"
@@ -65,7 +67,7 @@ protected slots:
 	void slotScroller(int);
 
 private:
-	QVBoxLayout *m_layout;
+	Q3VBoxLayout *m_layout;
 
 };
 

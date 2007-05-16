@@ -24,20 +24,22 @@
 #include "util/ctoolclass.h"
 
 //Qt includes
-#include <qhbox.h>
-#include <qvbox.h>
-#include <qptrlist.h>
+#include <q3hbox.h>
+#include <q3vbox.h>
+#include <q3ptrlist.h>
 #include <qpainter.h>
 #include <qlayout.h>
 #include <qmap.h>
 #include <qlineedit.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
 #include <qlabel.h>
 #include <qsizepolicy.h>
 #include <qpushbutton.h>
-#include <qheader.h>
+#include <q3header.h>
 #include <qregexp.h>
 #include <qmessagebox.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <kapplication.h>
@@ -203,7 +205,7 @@ void CSearchDialog::setSearchText( const QString searchText ) {
 void CSearchDialog::initView() {
 	setButtonTip(User1, CResMgr::searchdialog::searchButton::tooltip);
 
-   QVBoxLayout *box = new QVBoxLayout( plainPage(), 0, spacingHint() );
+   Q3VBoxLayout *box = new Q3VBoxLayout( plainPage(), 0, spacingHint() );
 
    m_searchOptionsPage = new Options::CSearchOptionsPage(plainPage());
 	box->addWidget( m_searchOptionsPage );

@@ -19,9 +19,12 @@
 //QT includes
 #include <qlabel.h>
 #include <qfile.h>
-#include <qfiledialog.h>
-#include <qtextstream.h>
+#include <q3filedialog.h>
+#include <q3textstream.h>
 #include <qregexp.h>
+//Added by qt3to4:
+#include <QPixmap>
+#include <Q3Frame>
 
 //KDE includes
 #include <klocale.h>
@@ -68,7 +71,7 @@ QString CToolClass::textToHTML(const QString& text) {
 
 /** Creates the file filename and put text into the file.
  */
-bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, const QTextStream::Encoding& fileEncoding) {
+bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, const Q3TextStream::Encoding& fileEncoding) {
 	QFile saveFile(filename);
 	bool ret;
 
@@ -87,8 +90,8 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 		}
 	};
 
-	if ( saveFile.open(IO_ReadWrite) ) {
-		QTextStream textstream( &saveFile );
+	if ( saveFile.open(QIODevice::ReadWrite) ) {
+		Q3TextStream textstream( &saveFile );
 		textstream.setEncoding(fileEncoding);
 		textstream << text;
 		saveFile.close();
@@ -163,7 +166,7 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
 	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B><BR>%2").arg(heading).arg(text),parent );
 	label->setAutoResize(true);
 	label->setMargin(1);
-	label->setFrameStyle(QFrame::Box | QFrame::Plain);
+	label->setFrameStyle(Q3Frame::Box | Q3Frame::Plain);
 	return label;
 }
 

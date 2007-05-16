@@ -17,6 +17,8 @@
 
 #include <qwidget.h>
 #include <qlayout.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 #include <klineedit.h>
 #include <kcompletion.h>
@@ -75,7 +77,7 @@ protected slots: // Protected slots
 
 private:
     friend class CLexiconKeyChooser;
-    QHBoxLayout *m_mainLayout;
+    Q3HBoxLayout *m_mainLayout;
     CKeyReferenceLineEdit *m_textbox;
     CSwordVerseKey *m_key;
     CScrollerWidgetSet *m_bookScroller;

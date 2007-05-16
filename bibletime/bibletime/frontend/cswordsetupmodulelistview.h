@@ -39,11 +39,11 @@ public:
 	QStringList selectedModules();
 	void clear();
 
-	virtual QString tooltip(QListViewItem* i, int column) const;
-	virtual bool showTooltip(QListViewItem* i, const QPoint& pos, int column) const;
+	virtual QString tooltip(Q3ListViewItem* i, int column) const;
+	virtual bool showTooltip(Q3ListViewItem* i, const QPoint& pos, int column) const;
 
 protected slots:
-	void slotItemClicked(QListViewItem*);
+	void slotItemClicked(Q3ListViewItem*);
 
 private:
 	void init();
@@ -51,12 +51,12 @@ private:
 	CSwordBackend* m_backend;
 	bool m_is_remote;
 
-	QListViewItem* m_categoryBible;
-	QListViewItem* m_categoryCommentary;
-	QListViewItem* m_categoryLexicon;
-	QListViewItem* m_categoryBook;
-	QListViewItem* m_categoryDevotionals;
-	QListViewItem* m_categoryGlossaries;
+	Q3ListViewItem* m_categoryBible;
+	Q3ListViewItem* m_categoryCommentary;
+	Q3ListViewItem* m_categoryLexicon;
+	Q3ListViewItem* m_categoryBook;
+	Q3ListViewItem* m_categoryDevotionals;
+	Q3ListViewItem* m_categoryGlossaries;
 
 signals:
 	void selectedModulesChanged();

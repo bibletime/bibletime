@@ -21,6 +21,10 @@
 #include <qpushbutton.h>
 #include <qmessagebox.h>
 #include <qfileinfo.h>
+//Added by qt3to4:
+#include <Q3GridLayout>
+#include <Q3HBoxLayout>
+#include <Q3VBoxLayout>
 
 
 #include <klocale.h>
@@ -35,11 +39,11 @@ namespace BookshelfManager {
 	CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
 : QDialog() {
 
-		QVBoxLayout* mainLayout = new QVBoxLayout( this );
+		Q3VBoxLayout* mainLayout = new Q3VBoxLayout( this );
 		mainLayout->setMargin( 10 );
 		mainLayout->setSpacing( 5 );
 
-		QHBoxLayout *captionLayout = new QHBoxLayout( mainLayout );
+		Q3HBoxLayout *captionLayout = new Q3HBoxLayout( mainLayout );
 		QLabel *label = new QLabel( i18n("Caption"), this );
 		captionLayout->addWidget( label );
 
@@ -49,7 +53,7 @@ namespace BookshelfManager {
 
 		mainLayout->addSpacing( 10 );
 
-		QGridLayout* layout = new QGridLayout( mainLayout, 3, 3 );
+		Q3GridLayout* layout = new Q3GridLayout( mainLayout, 3, 3 );
 		layout->setSpacing( 5 );
 
 		label = new QLabel(i18n("Type"), this);
@@ -76,7 +80,7 @@ namespace BookshelfManager {
 
 		mainLayout->addSpacing( 10 );
 
-		QHBoxLayout* buttonLayout = new QHBoxLayout( mainLayout );
+		Q3HBoxLayout* buttonLayout = new Q3HBoxLayout( mainLayout );
 		buttonLayout->addStretch();
 		QPushButton* okButton = new QPushButton( i18n("Ok"), this);
 		QPushButton* discardButton = new QPushButton( i18n("Discard"), this);

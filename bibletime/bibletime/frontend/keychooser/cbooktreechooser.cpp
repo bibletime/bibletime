@@ -16,16 +16,18 @@
 
 //Qt includes
 #include <qlayout.h>
-#include <qheader.h>
-#include <qlistview.h>
+#include <q3header.h>
+#include <q3listview.h>
 #include <qcursor.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 //KDE includes
 #include <kapplication.h>
 
 ////////////
 
-CBookTreeChooser::TreeItem::TreeItem(QListViewItem* parent, QListViewItem* after, CSwordTreeKey* key, const QString keyName)
+CBookTreeChooser::TreeItem::TreeItem(Q3ListViewItem* parent, Q3ListViewItem* after, CSwordTreeKey* key, const QString keyName)
 : KListViewItem(parent, after),
 m_key(key),
 m_keyName(keyName) {
@@ -37,7 +39,7 @@ m_keyName(keyName) {
 	m_key->setOffset( offset );
 };
 
-CBookTreeChooser::TreeItem::TreeItem(QListViewItem* parent,CSwordTreeKey* key, const QString keyName)
+CBookTreeChooser::TreeItem::TreeItem(Q3ListViewItem* parent,CSwordTreeKey* key, const QString keyName)
 : KListViewItem(parent),
 m_key(key),
 m_keyName(keyName) {
@@ -49,7 +51,7 @@ m_keyName(keyName) {
 	m_key->setOffset( offset );
 };
 
-CBookTreeChooser::TreeItem::TreeItem(QListView* view, QListViewItem* after,CSwordTreeKey* key, const QString keyName)
+CBookTreeChooser::TreeItem::TreeItem(Q3ListView* view, Q3ListViewItem* after,CSwordTreeKey* key, const QString keyName)
 : KListViewItem(view,after),
 m_key(key),
 m_keyName(keyName) {
@@ -87,7 +89,7 @@ void CBookTreeChooser::TreeItem::createChilds() {
 	if (m_key->hasChildren()) {
 		m_key->firstChild(); //go to the first child
 
-		QListViewItem* oldItem = 0;
+		Q3ListViewItem* oldItem = 0;
 
 		do {
 			if (oldItem) {
@@ -129,7 +131,7 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 	}
 
 	//now setup the keychooser widgets
-	QHBoxLayout* layout = new QHBoxLayout(this);
+	Q3HBoxLayout* layout = new Q3HBoxLayout(this);
 
 	m_treeView = new KListView(this);
 	layout->addWidget(m_treeView);
@@ -138,7 +140,7 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 	m_treeView->setSorting(-1);
 	m_treeView->setRootIsDecorated(true);
 	m_treeView->setFullWidth(true);
-	connect(m_treeView, SIGNAL(executed(QListViewItem*)), SLOT(itemActivated(QListViewItem*)));
+	connect(m_treeView, SIGNAL(executed(Q3ListViewItem*)), SLOT(itemActivated(Q3ListViewItem*)));
 
 	setKey(key);
 	adjustFont();
@@ -169,7 +171,7 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	int index = 0;
 	QString currentSibling = siblings[index];
 
-	QListViewItem* child = m_treeView->firstChild();
+	Q3ListViewItem* child = m_treeView->firstChild();
 	while( child && index < count ) {
 		if (child->text(0) == currentSibling) { //found a parent of our item
 			//found right entry?
@@ -258,7 +260,7 @@ void CBookTreeChooser::refreshContent() {
 }
 
 /** No descriptions */
-void CBookTreeChooser::itemActivated( QListViewItem* item ) {
+void CBookTreeChooser::itemActivated( Q3ListViewItem* item ) {
 	TreeItem* i = dynamic_cast<TreeItem*>(item);
 	if (!i) {
 		return;
@@ -298,7 +300,7 @@ void CBookTreeChooser::setupTree() {
 	m_key->root();
 
 	if (m_key->hasChildren()) {
-		QListViewItem* item = 0;
+		Q3ListViewItem* item = 0;
 
 		m_key->firstChild();
 		do {

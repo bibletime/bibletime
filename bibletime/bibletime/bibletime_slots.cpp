@@ -35,11 +35,13 @@
 #include <errno.h>
 
 //QT includes
-#include <qprogressdialog.h>
-#include <qlistview.h>
-#include <qvaluelist.h>
+#include <q3progressdialog.h>
+#include <q3listview.h>
+#include <q3valuelist.h>
 #include <qclipboard.h>
 #include <qinputdialog.h>
+//Added by qt3to4:
+#include <Q3PtrList>
 
 //KDE includes
 #include <kaction.h>
@@ -98,7 +100,7 @@ void BibleTime::slotSettingsChanged() {
 								 (CBTConfig::language);
 	m_backend->booknameLanguage(language);
 
-	QListViewItemIterator it( m_mainIndex );
+	Q3ListViewItemIterator it( m_mainIndex );
 	CItemBase* item = 0;
 	for ( ; it.current(); ++it ) {
 		if ( (item = dynamic_cast<CItemBase*>(it.current())) ) {
@@ -172,12 +174,12 @@ void BibleTime::slotWindowMenuAboutToShow() {
 	}
 	
 #if QT_VERSION >= 0x030200
-	QPtrList<KAction>::iterator end = m_windowOpenWindowsList.end();
-	for (QPtrList<KAction>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
+	Q3PtrList<KAction>::iterator end = m_windowOpenWindowsList.end();
+	for (Q3PtrList<KAction>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
 		(*it)->unplugAll();
 	}
 #else
-	QPtrListIterator<KAction> it(m_windowOpenWindowsList);
+	Q3PtrListIterator<KAction> it(m_windowOpenWindowsList);
 	while (it.current() != 0){
 		it.current()->unplugAll();
 		++it;
@@ -424,7 +426,7 @@ void BibleTime::saveProfile(CProfile* profile) {
 	storeProfileSettings(profile);
 
 	QWidgetList windows = m_mdi->windowList();
-	QPtrList<CProfileWindow> profileWindows;
+	Q3PtrList<CProfileWindow> profileWindows;
 	for (QWidget* w = windows.first(); w; w = windows.next()) {
 		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w);
 		if (!displayWindow) {
@@ -462,7 +464,7 @@ void BibleTime::loadProfile(CProfile* p) {
 		return;
 	}
 
-	QPtrList<CProfileWindow> windows = p->load();
+	Q3PtrList<CProfileWindow> windows = p->load();
 	Q_ASSERT(windows.count());
 
 	//load mainwindow setttings
@@ -555,7 +557,7 @@ void BibleTime::refreshProfileMenus() {
 
 	//refresh the load, save and delete profile menus
 	m_profileMgr.refresh();
-	QPtrList<CProfile> profiles = m_profileMgr.profiles();
+	Q3PtrList<CProfile> profiles = m_profileMgr.profiles();
 
 	const bool enableActions = bool(profiles.count() != 0);
 	m_windowSaveProfile_action->setEnabled(enableActions);

@@ -22,8 +22,10 @@
 #include <qwidget.h>
 #include <qsize.h>
 #include <qmap.h>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <qstringlist.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 class CSwordKey;
 class CSwordBookModuleInfo;
@@ -33,7 +35,7 @@ namespace sword {
 	class TreeKeyIdx;
 }
 
-class QHBoxLayout;
+class Q3HBoxLayout;
 
 /** The keychooser implementation for books.
   * @author The BibleTime team
@@ -90,10 +92,10 @@ protected slots:
 	//  void previousEntry();
 
 private:
-	QPtrList<CKeyChooserWidget> m_chooserWidgets;
-	QPtrList<CSwordBookModuleInfo> m_modules;
+	Q3PtrList<CKeyChooserWidget> m_chooserWidgets;
+	Q3PtrList<CSwordBookModuleInfo> m_modules;
 	CSwordTreeKey *m_key;
-	QHBoxLayout* m_layout;
+	Q3HBoxLayout* m_layout;
 };
 
 #endif

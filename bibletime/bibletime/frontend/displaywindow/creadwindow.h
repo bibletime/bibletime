@@ -20,7 +20,9 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qpopupmenu.h>
+#include <q3popupmenu.h>
+//Added by qt3to4:
+#include <QResizeEvent>
 
 class KPopupMenu;
 

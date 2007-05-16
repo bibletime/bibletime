@@ -17,7 +17,12 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qtextedit.h>
+#include <q3textedit.h>
+//Added by qt3to4:
+#include <Q3PopupMenu>
+#include <QDragMoveEvent>
+#include <QDropEvent>
+#include <QDragEnterEvent>
 
 class CHTMLWriteDisplay;
 class KAction;
@@ -25,7 +30,7 @@ class KAction;
 /** The write display implementation for plain source code editing.
   * @author The BibleTime team
   */
-class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
+class CPlainWriteDisplay : public Q3TextEdit, public CWriteDisplay  {
 public:
 	/**
 	* Reimplementation.
@@ -71,11 +76,11 @@ protected:
 	/**
 	* Reimplementation from QTextEdit. Provides an popup menu for the given position.
 	*/
-	virtual QPopupMenu* createPopupMenu( const QPoint& pos );
+	virtual Q3PopupMenu* createPopupMenu( const QPoint& pos );
 	/**
 	* Reimplementation from QTextEdit. Provides an popup menu.
 	*/
-	virtual QPopupMenu* createPopupMenu();
+	virtual Q3PopupMenu* createPopupMenu();
 	/**
 	* Reimplementation to manage drops of our drag and drop objects.
 	*/

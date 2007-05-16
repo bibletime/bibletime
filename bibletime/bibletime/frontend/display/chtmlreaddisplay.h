@@ -19,6 +19,10 @@
 //Qt includes
 #include <QString>
 #include <qwidget.h>
+//Added by qt3to4:
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QTimerEvent>
 
 //KDE includes
 #include <khtml_part.h>
@@ -46,7 +50,7 @@ public:
 	/**
 	* Reimplementation.
 	*/
-	virtual QScrollView* view();
+	virtual Q3ScrollView* view();
 	virtual void selectAll();
 	virtual void moveToAnchor( const QString& anchor );
 

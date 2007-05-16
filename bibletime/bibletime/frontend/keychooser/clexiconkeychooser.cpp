@@ -26,7 +26,9 @@
 //Qt includes
 #include <qcombobox.h>
 #include <qlayout.h>
-#include <qlistbox.h>
+#include <q3listbox.h>
+//Added by qt3to4:
+#include <Q3HBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -38,7 +40,7 @@ m_key(dynamic_cast<CSwordLDKey*>(key)) {
 	setModules(modules, false);
 
 	//we use a layout because the key chooser should be resized to full size
-	m_layout = new QHBoxLayout(this, QBoxLayout::LeftToRight);
+	m_layout = new Q3HBoxLayout(this, Q3BoxLayout::LeftToRight);
 	m_layout->setResizeMode(QLayout::FreeResize);
 
 	m_widget = new CKeyChooserWidget(0, false, this);

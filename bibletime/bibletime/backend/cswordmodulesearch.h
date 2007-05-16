@@ -19,9 +19,9 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <QString>
-#include <qsignal.h>
+#include <q3signal.h>
 
 //System includes
 #include <pthread.h>
@@ -92,7 +92,7 @@ protected:
 	bool m_foundItems;
 
 private:
- 	QSignal m_finishedSig;
+ 	Q3Signal m_finishedSig;
 	static CSwordModuleSearch* searcher;
 };
 

@@ -25,12 +25,14 @@
 //Qt includes
 #include <qlabel.h>
 #include <qlayout.h>
-#include <qframe.h>
+#include <q3frame.h>
 #include <qpushbutton.h>
 #include <qdir.h>
-#include <qlistview.h>
+#include <q3listview.h>
 #include <qfileinfo.h>
 #include <qcheckbox.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -57,7 +59,7 @@ CManageIndicesWidget::~CManageIndicesWidget()
 void CManageIndicesWidget::initView()
 {
 	// Set description label
-	QVBoxLayout* box = new QVBoxLayout(m_labelFrame, 0, 0);
+	Q3VBoxLayout* box = new Q3VBoxLayout(m_labelFrame, 0, 0);
 	QLabel* mainLabel = CToolClass::explanationLabel(m_labelFrame,
 		i18n("Manage module search indices"),
 		i18n("You can use the list below to create and/or delete search indices for your installed works."));
@@ -87,27 +89,27 @@ void CManageIndicesWidget::populateModuleList() {
 	m_moduleList->clear();
 		
 	// populate installed modules
-	m_modsWithIndices = new QCheckListItem(m_moduleList, i18n("Modules with indices"),
-		QCheckListItem::CheckBoxController);
+	m_modsWithIndices = new Q3CheckListItem(m_moduleList, i18n("Modules with indices"),
+		Q3CheckListItem::CheckBoxController);
 	m_modsWithIndices->setOpen(true);
 
-	m_modsWithoutIndices = new QCheckListItem(m_moduleList, i18n("Modules without indices"),
-		QCheckListItem::CheckBoxController);
+	m_modsWithoutIndices = new Q3CheckListItem(m_moduleList, i18n("Modules without indices"),
+		Q3CheckListItem::CheckBoxController);
 	m_modsWithoutIndices->setOpen(true);
 
 	ListCSwordModuleInfo& modules = CPointers::backend()->moduleList();
 	ListCSwordModuleInfo::iterator end_it = modules.end();
 	for (ListCSwordModuleInfo::iterator it = modules.begin(); it != end_it; ++it) {
-		QCheckListItem* item = 0;
+		Q3CheckListItem* item = 0;
 		
 		if ((*it)->hasIndex()) {
-			item = new QCheckListItem(m_modsWithIndices, (*it)->name(),
-				QCheckListItem::CheckBox);
+			item = new Q3CheckListItem(m_modsWithIndices, (*it)->name(),
+				Q3CheckListItem::CheckBox);
 			item->setText(1, QString("%1 ").arg((*it)->indexSize() / 1024) + i18n("KiB"));
 		}
 		else {
-			item = new QCheckListItem(m_modsWithoutIndices, (*it)->name(),
-				QCheckListItem::CheckBox);
+			item = new Q3CheckListItem(m_modsWithoutIndices, (*it)->name(),
+				Q3CheckListItem::CheckBox);
 			item->setText(1, QString("0 ") + i18n("KiB"));
 		}
 	}
@@ -116,9 +118,9 @@ void CManageIndicesWidget::populateModuleList() {
 /** Creates indices for selected modules if no index currently exists */
 void CManageIndicesWidget::createIndices()
 {
-	QCheckListItem* top = m_modsWithoutIndices;
+	Q3CheckListItem* top = m_modsWithoutIndices;
 	bool indicesCreated = false;
-	QCheckListItem* item = (QCheckListItem*)top->firstChild();
+	Q3CheckListItem* item = (Q3CheckListItem*)top->firstChild();
 
 	ListCSwordModuleInfo moduleList;
 	while (item) {
@@ -132,7 +134,7 @@ void CManageIndicesWidget::createIndices()
 				indicesCreated = true;
 			}
 		}
-		item = (QCheckListItem*)item->nextSibling();
+		item = (Q3CheckListItem*)item->nextSibling();
 	}
 
 	//Shows the progress dialog
@@ -146,9 +148,9 @@ void CManageIndicesWidget::createIndices()
 void CManageIndicesWidget::deleteIndices()
 {
 	// delete installed module indices
-	QCheckListItem* top = m_modsWithIndices;
+	Q3CheckListItem* top = m_modsWithIndices;
 	bool indicesDeleted = false;
-	QCheckListItem* item = (QCheckListItem*)top->firstChild();
+	Q3CheckListItem* item = (Q3CheckListItem*)top->firstChild();
 	while (item) {
 		if (item->isOn()) {
 			CSwordModuleInfo* module =
@@ -158,7 +160,7 @@ void CManageIndicesWidget::deleteIndices()
 				indicesDeleted = true;
 			}
 		}
-		item = (QCheckListItem*)item->nextSibling();
+		item = (Q3CheckListItem*)item->nextSibling();
 	}
 
 	// repopulate the list if an action was taken

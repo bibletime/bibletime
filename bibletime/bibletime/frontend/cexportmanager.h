@@ -20,12 +20,12 @@
 
 //Qt includes
 #include <QString>
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 
 class ListKey;
 class CSwordKey;
 class CSwordModuleInfo;
-class QProgressDialog;
+class Q3ProgressDialog;
 
 /** Contains the functions to export text to disk, clipboard or printer.
   * @author The BibleTime team
@@ -43,11 +43,11 @@ public:
 
 	const bool saveKey(CSwordKey* key, const Format format, const bool addText);
 	const bool saveKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-	const bool saveKeyList(QPtrList<CSwordKey>& list, const Format format, const bool addText );
+	const bool saveKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText );
 
 	const bool copyKey(CSwordKey* key, const Format format, const bool addText);
 	const bool copyKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-	const bool copyKeyList(QPtrList<CSwordKey>& list, const Format format, const bool addText );
+	const bool copyKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText );
 
 	const bool printKey(CSwordKey* key, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
 	const bool printKey( CSwordModuleInfo* module, const QString& startKey, const QString& stopKey, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
@@ -76,12 +76,12 @@ private:
 	CSwordBackend::FilterOptions m_filterOptions;
 	CSwordBackend::DisplayOptions m_displayOptions;
 
-	QProgressDialog* m_progressDialog;
+	Q3ProgressDialog* m_progressDialog;
 
 	/**
 	* Creates the progress dialog with the correct settings.
 	*/
-	QProgressDialog* const progressDialog();
+	Q3ProgressDialog* const progressDialog();
 	/**
 	* Returns the CSS string used in HTML pages.
 	*/

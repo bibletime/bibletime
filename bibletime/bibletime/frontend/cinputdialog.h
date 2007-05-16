@@ -15,7 +15,7 @@
 //KDE includes
 #include <kdialog.h>
 
-class QTextEdit;
+class Q3TextEdit;
 class QWidget;
 
 /** This is a small input dialog with
@@ -37,7 +37,7 @@ public:
 	// ~CInputDialog();
 
 private:
-	QTextEdit* m_editWidget;
+	Q3TextEdit* m_editWidget;
 };
 
 #endif

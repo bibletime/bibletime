@@ -20,6 +20,8 @@
 #include <qobject.h>
 #include <QString>
 #include <qmap.h>
+//Added by qt3to4:
+#include <Q3PopupMenu>
 
 
 class CDisplayConnections;
@@ -31,7 +33,7 @@ class CReadDisplay;
 class CWriteDisplay;
 
 
-class QPopupMenu;
+class Q3PopupMenu;
 
 /** The base class for all display widgets.
   * @author The BibleTime team
@@ -101,11 +103,11 @@ public:
 	/**
 	* Installs the popup which should be opened when the right mouse button was pressed.
 	*/
-	void installPopup( QPopupMenu* popup );
+	void installPopup( Q3PopupMenu* popup );
 	/**
 	* Returns the popup menu which was set by installPopupMenu()
 	*/
-	QPopupMenu* const installedPopup();
+	Q3PopupMenu* const installedPopup();
 
 	virtual void zoomIn() {}
 	virtual void zoomOut() {}
@@ -137,7 +139,7 @@ protected:
 private:
 	CDisplayWindow* m_parentWindow;
 	CDisplayConnections* m_connections;
-	QPopupMenu* m_popup;
+	Q3PopupMenu* m_popup;
 };
 
 class CDisplayConnections : public QObject {

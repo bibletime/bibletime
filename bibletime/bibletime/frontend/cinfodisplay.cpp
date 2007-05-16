@@ -34,8 +34,10 @@
 //Qt includes
 #include <qlayout.h>
 #include <qlabel.h>
-#include <qscrollview.h>
+#include <q3scrollview.h>
 #include <qregexp.h>
+//Added by qt3to4:
+#include <Q3VBoxLayout>
 
 //KDE includes
 #include <klocale.h>
@@ -49,7 +51,7 @@ namespace InfoDisplay {
 
 	CInfoDisplay::CInfoDisplay(QWidget *parent, const char *name)
 : QWidget(parent, name) {
-		QVBoxLayout* layout = new QVBoxLayout(this);
+		Q3VBoxLayout* layout = new Q3VBoxLayout(this);
 		QLabel* headingLabel = new QLabel(i18n("Mag (\"shift\" to lock)"),this);
 		headingLabel->setMargin(5);
 

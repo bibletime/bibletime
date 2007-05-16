@@ -22,7 +22,10 @@
 
 //Qt includes
 #include <qwidget.h>
-#include <qvgroupbox.h>
+#include <q3vgroupbox.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <Q3ValueList>
 
 //KDE includes
 #include <klistview.h>
@@ -100,7 +103,7 @@ private:
 	QStringList keyNameList;
 };
 
-typedef QValueList<StrongsResult> StrongsResultList;
+typedef Q3ValueList<StrongsResult> StrongsResultList;
 
 /**
 * This class is used to keep track of the text strongs results.
