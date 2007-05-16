@@ -12,8 +12,6 @@ SET(DEBUG true)
 
 SET(bibletime_SOURCES
 #These files already compile cleanly
-	bibletime/util/directoryutil.cpp
-	bibletime/backend/btstringmgr.cpp
 	#backend filters
 	bibletime/backend/bt_gbfhtml.cpp
 	bibletime/backend/bt_osishtml.cpp
@@ -29,8 +27,24 @@ SET(bibletime_SOURCES
 	bibletime/backend/chtmlexportrendering.cpp
 	bibletime/backend/cplaintextexportrendering.cpp
 	bibletime/backend/ctextrendering.cpp
+	#backend
+	bibletime/backend/btstringmgr.cpp
+	bibletime/backend/cdisplaytemplatemgr.cpp
+	bibletime/backend/clanguagemgr.cpp
+	bibletime/backend/creferencemanager.cpp
+	bibletime/backend/cswordbackend.cpp
+	bibletime/backend/cswordbiblemoduleinfo.cpp
+	bibletime/backend/cswordbookmoduleinfo.cpp
+	bibletime/backend/cswordcommentarymoduleinfo.cpp
+	bibletime/backend/cswordkey.cpp
+	bibletime/backend/cswordldkey.cpp
+	bibletime/backend/cswordlexiconmoduleinfo.cpp
+	#bibletime/backend/cswordmoduleinfo.cpp
+	bibletime/backend/cswordtreekey.cpp
+	bibletime/backend/cswordversekey.cpp
 	#utilities
 	bibletime/util/cresmgr.cpp
+	bibletime/util/directoryutil.cpp
 #Add files to be ported here
 )
 
