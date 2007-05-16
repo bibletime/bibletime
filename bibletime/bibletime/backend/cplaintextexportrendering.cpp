@@ -1,23 +1,18 @@
-//
-// C++ Implementation: cplaintextexportrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 //Backend includes
 #include "cplaintextexportrendering.h"
 #include "cswordkey.h"
 
 //Util
-#include "util/scoped_resource.h"
-
-
+#include "../util/scoped_resource.h"
 
 namespace Rendering {
 

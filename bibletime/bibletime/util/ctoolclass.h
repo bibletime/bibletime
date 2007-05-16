@@ -6,18 +6,14 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
-
-
-//Qt includes
-#include <QString>
-#include <qpixmap.h>
-#include <qtextstream.h>
-
-
 #ifndef CTOOLCLASS_H
 #define CTOOLCLASS_H
 
+//Qt includes
+#include <QString>
+#include <QPixmap>
+#include <QTextStream>
+#include <QTextCodec>
 
 class CSwordModuleInfo;
 class QLabel;
@@ -56,7 +52,7 @@ public:
 	* @return True if saving was sucessful, otherwise false
 	* @author Joachim Ansorg
 	*/
-	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, const QTextStream::Encoding& fileEncoding = QTextStream::Locale);
+	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, const QTextCodec& fileEncoding = *QTextCodec::codecForLocale());
 	/**
 	* Returns the icon used for the module given as aparameter.
 	*/

@@ -1,16 +1,12 @@
-//
-// C++ Implementation: chtmlexportrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-//Backend
 #include "chtmlexportrendering.h"
 
 #include "cdisplaytemplatemgr.h"
@@ -19,11 +15,10 @@
 #include "cswordversekey.h"
 #include "cswordmoduleinfo.h"
 
-//Util
-#include "util/cpointers.h"
-#include "util/scoped_resource.h"
+#include "../util/cpointers.h"
+#include "../util/scoped_resource.h"
 
-//KDE includes
+//KDE
 #include <klocale.h>
 
 namespace Rendering {
@@ -39,8 +34,7 @@ namespace Rendering {
 		//  qDebug("CHTMLExportRendering::renderEntry");
 
 		if (i.hasAlternativeContent()) {
-			QString ret;
-			ret.setLatin1(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
+			QString ret = QString(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
 			ret.append(i.getAlternativeContent());
 
 			//   Q_ASSERT(i.hasChildItems());
@@ -112,18 +106,18 @@ namespace Rendering {
 			entry = QString::null;
 
 			if ((*mod_Itr)->language()->isValid()) {
-				langAttr.setLatin1("xml:lang=\"")
-				.append((*mod_Itr)->language()->abbrev())
-				.append("\" lang=\"")
-				.append((*mod_Itr)->language()->abbrev())
-				.append("\"");
+				langAttr = QString("xml:lang=\"")
+					.append((*mod_Itr)->language()->abbrev())
+					.append("\" lang=\"")
+					.append((*mod_Itr)->language()->abbrev())
+					.append("\"");
 			}
 			else {
-				langAttr.setLatin1("xml:lang=\"")
-				.append((*mod_Itr)->module()->Lang())
-				.append("\" lang=\"")
-				.append((*mod_Itr)->module()->Lang())
-				.append("\"");
+				langAttr = QString("xml:lang=\"")
+					.append((*mod_Itr)->module()->Lang())
+					.append("\" lang=\"")
+					.append((*mod_Itr)->module()->Lang())
+					.append("\"");
 			}
 
 			const QString key_renderedText = key->renderedText();
@@ -131,9 +125,9 @@ namespace Rendering {
 			//   qWarning(key_renderedText.latin1());
 
 			if (m_filterOptions.headings) {
-				AttributeValue::const_iterator it =
+				sword::AttributeValue::const_iterator it =
 					(*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();
-				const AttributeValue::const_iterator end =
+				const sword::AttributeValue::const_iterator end =
 					(*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].end();
 
 				for (; it != end; ++it) {
@@ -217,9 +211,10 @@ namespace Rendering {
 		settings.langAbbrev = ((modules.count() == 1) && lang->isValid())
 							  ? lang->abbrev()
 							  : "unknown";
-		settings.pageDirection = (modules.count() == 1)
-								 ? ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl")
-						 : QString::null;
+		if (modules.count() == 1)
+			settings.pageDirection = ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl");
+		else
+			settings.pageDirection = QString::null;
 
 		return tMgr->fillTemplate(i18n("Export"), text, settings);
 	}

@@ -1,33 +1,30 @@
-//
-// C++ Implementation: ctextrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #include "ctextrendering.h"
 
-//BibleTime includes
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cdisplaytemplatemgr.h"
-#include "backend/creferencemanager.h"
+//BibleTime
+#include "../backend/cswordkey.h"
+#include "../backend/cswordversekey.h"
+#include "../backend/cswordmoduleinfo.h"
+#include "../backend/cdisplaytemplatemgr.h"
+#include "../backend/creferencemanager.h"
+#include "../util/scoped_resource.h"
+#include "../util/ctoolclass.h"
 
-#include "util/scoped_resource.h"
-#include "util/ctoolclass.h"
-
-//Sword includes
+//Sword
 #include <swkey.h>
 
-//Qt includes
-#include <qregexp.h>
+//Qt
+#include <QRegExp>
 
-//KDE includes
+//KDE
 #include <klocale.h>
 #include <kurl.h>
 
@@ -134,7 +131,7 @@ m_alternativeContent( QString::null ) {
 		m_alternativeContent = startKey;
 	}
 	else {
-		sword::VerseKey vk(startKey.utf8(), stopKey.utf8());
+		sword::VerseKey vk(startKey.toUtf8().constData(), stopKey.toUtf8().constData());
 
 		if (vk.LowerBound().Book() != vk.UpperBound().Book()) {
 			m_alternativeContent = QString::fromUtf8(vk.getRangeText());

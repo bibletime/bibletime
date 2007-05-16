@@ -21,6 +21,15 @@ SET(bibletime_SOURCES
 	bibletime/backend/bt_thmlhtml.cpp
 	bibletime/backend/bt_thmlplain.cpp
 	bibletime/backend/osismorphsegmentation.cpp
+	#backend rendering
+	bibletime/backend/cbookdisplay.cpp
+	bibletime/backend/cchapterdisplay.cpp
+	bibletime/backend/cdisplayrendering.cpp
+	bibletime/backend/centrydisplay.cpp
+	bibletime/backend/chtmlexportrendering.cpp
+	bibletime/backend/cplaintextexportrendering.cpp
+	bibletime/backend/ctextrendering.cpp
+	#utilities
 	bibletime/util/cresmgr.cpp
 #Add files to be ported here
 )

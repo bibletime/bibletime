@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "centrydisplay.h"
 
@@ -19,13 +17,12 @@
 #include "cdisplaytemplatemgr.h"
 #include "cdisplayrendering.h"
 
-#include "frontend/cbtconfig.h"
-
-#include "util/scoped_resource.h"
+#include "../frontend/cbtconfig.h"
+#include "../util/scoped_resource.h"
 
 //Qt includes
-#include <qapplication.h>
-#include <qregexp.h>
+#include <QApplication>
+#include <QRegExp>
 
 using namespace Rendering;
 
@@ -42,7 +39,7 @@ const QString CEntryDisplay::text( const ListCSwordModuleInfo& modules, const QS
 
 	//in Bibles and Commentaries we need to check if 0:0 and X:0 contain something
 	if (module->type() == CSwordModuleInfo::Bible || module->type() == CSwordModuleInfo::Commentary) {
-		((VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+		((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
 		CSwordVerseKey k1(module);
 		k1.Headings(1);

@@ -1,14 +1,11 @@
-//
-// C++ Implementation: cchapterdisplay
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 //Backend
 #include "cchapterdisplay.h"
@@ -16,52 +13,47 @@
 #include "cswordversekey.h"
 #include "cswordbiblemoduleinfo.h"
 
+const QString Rendering::CChapterDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
+	Q_ASSERT( modules.count() >= 1 );
+	Q_ASSERT( !keyName.isEmpty() );
 
-namespace Rendering {
+	CSwordModuleInfo* module = modules.first();
 
-	const QString CChapterDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
-		Q_ASSERT( modules.count() >= 1 );
-		Q_ASSERT( !keyName.isEmpty() );
+	if (modules.count() == 1) module->module()->setSkipConsecutiveLinks( true ); //skip empty, linked verses
 
-		CSwordModuleInfo* module = modules.first();
+	CTextRendering::KeyTreeItem::Settings settings;
+	settings.keyRenderingFace =
+		displayOptions.verseNumbers
+		? CTextRendering::KeyTreeItem::Settings::SimpleKey
+		: CTextRendering::KeyTreeItem::Settings::NoKey;
 
-		if (modules.count() == 1) module->module()->setSkipConsecutiveLinks( true ); //skip empty, linked verses
+	QString startKey = keyName;
+	QString endKey = startKey;
 
-		CTextRendering::KeyTreeItem::Settings settings;
-		settings.keyRenderingFace =
-			displayOptions.verseNumbers
-			? CTextRendering::KeyTreeItem::Settings::SimpleKey
-			: CTextRendering::KeyTreeItem::Settings::NoKey;
+	//check whether there's an intro we have to include
+	Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
 
-		QString startKey = keyName;
-		QString endKey = startKey;
+	if (module->type() == CSwordModuleInfo::Bible) {
+		((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
-		//check whether there's an intro we have to include
-		Q_ASSERT((module->type() == CSwordModuleInfo::Bible));
+		CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module);
+		Q_ASSERT(bible);
 
-		if (module->type() == CSwordModuleInfo::Bible) {
-			((VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+		CSwordVerseKey k1(module);
+		k1.Headings(1);
+		k1.key(keyName);
 
-			CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module);
-			Q_ASSERT(bible);
+		if (k1.Chapter() == 1)	k1.Chapter(0); //Chapter 1, start with 0:0, otherwise X:0
+		
+		k1.Verse(0);
 
-			CSwordVerseKey k1(module);
-			k1.Headings(1);
-			k1.key(keyName);
-
-			if (k1.Chapter() == 1)	k1.Chapter(0); //Chapter 1, start with 0:0, otherwise X:0
-			
-			k1.Verse(0);
-
-			startKey = k1.key();
-			
-			if (k1.Chapter() == 0) k1.Chapter(1);
-			k1.Verse(bible->verseCount(k1.book(), k1.Chapter()));
-			endKey = k1.key();
-		}
-
-		CDisplayRendering render(displayOptions, filterOptions);
-		return render.renderKeyRange( startKey, endKey, modules, keyName, settings );
+		startKey = k1.key();
+		
+		if (k1.Chapter() == 0) k1.Chapter(1);
+		k1.Verse(bible->verseCount(k1.book(), k1.Chapter()));
+		endKey = k1.key();
 	}
 
-};
+	CDisplayRendering render(displayOptions, filterOptions);
+	return render.renderKeyRange( startKey, endKey, modules, keyName, settings );
+}

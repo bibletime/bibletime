@@ -1,27 +1,21 @@
-//
-// C++ Interface: ctextrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef CTEXTRENDERING_H
 #define CTEXTRENDERING_H
 
 //BT includes
 #include "cswordmoduleinfo.h"
-
 #include "../util/autoptrvector.h"
 
 //QT includes
 #include <QString>
-
-// class CSwordModuleInfo;
 
 class CSwordKey;
 
@@ -127,18 +121,12 @@ protected:
 };
 
 inline CTextRendering::KeyTree* const CTextRendering::KeyTreeItem::childList() const {
-	if (!m_childList) {
-		m_childList = new KeyTree();
-	}
-
+	if (!m_childList) m_childList = new KeyTree();
 	return m_childList;
 }
 
 inline const bool CTextRendering::KeyTreeItem::hasChildItems() const {
-	if (!m_childList) {
-		return false;
-	}
-
+	if (!m_childList) return false;
 	return !m_childList->isEmpty();
 }
 

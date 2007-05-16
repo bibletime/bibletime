@@ -7,22 +7,20 @@
 *
 **********/
 
-
-
 #ifndef CENTRYDISPLAY_H
 #define CENTRYDISPLAY_H
 
-//BibleTime includes
-#include "ctextrendering.h"
+//BibleTime
+//#include "ctextrendering.h"
 #include "cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
-#include "util/cpointers.h"
+#include "../util/cpointers.h"
 
-//Sword includes
+//Sword
 #include <swdisp.h>
 
-//Qt includes
+//Qt
 #include <QString>
 
 class CSwordModuleInfo;

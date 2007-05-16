@@ -1,26 +1,23 @@
-//
-// C++ Implementation: cdisplayrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-//Backend includes
 #include "cdisplayrendering.h"
 
 #include "cdisplaytemplatemgr.h"
 #include "creferencemanager.h"
 #include "cswordkey.h"
 #include "cswordversekey.h"
+#include "../util/cpointers.h"
 
-//Qt includes
+//Qt
 #include <QString>
-#include <qregexp.h>
+#include <QRegExp>
 
 namespace Rendering {
 
@@ -99,7 +96,7 @@ namespace Rendering {
 
 	const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 		QString ret = key;
-		ret = ret.stripWhiteSpace().remove(QRegExp("[^A-Za-z0-9]+"));
+		ret = ret.trimmed().remove(QRegExp("[^A-Za-z0-9]+"));
 		ret = ret.remove(QRegExp("^\\d+|"));
 
 		return ret;
@@ -148,16 +145,13 @@ namespace Rendering {
 
 		CDisplayTemplateMgr::Settings settings;
 		settings.modules = modules;
-		settings.langAbbrev = ((modules.count() == 1) && lang->isValid())
-							  ? lang->abbrev()
-							  : QString::null;
-		settings.pageDirection = (modules.count() == 1)
-								 ? ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl")
-						 : QString::null;
+		settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : QString::null;
+		
+		if (modules.count() == 1)
+			settings.pageDirection = (modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl";
+		else
+			settings.pageDirection = QString::null;
 
-		return tMgr->fillTemplate(CBTConfig::get
-									  (CBTConfig::displayStyle), oldText, settings);
-
-
+		return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), oldText, settings);
 	}
 }
