@@ -7,14 +7,11 @@
 *
 **********/
 
-
-
 #ifndef CSWORDBACKEND_H
 #define CSWORDBACKEND_H
 
 //BibleTime includes
 #include "cswordmoduleinfo.h"
-//#include "centrydisplay.h"
 
 //Qt includes
 #include <Q3PtrList>

@@ -7,36 +7,24 @@
 *
 **********/
 
-
-
-//BibleTime includes
 #include "cswordlexiconmoduleinfo.h"
-//#include "frontend/cbtconfig.h"
 
-//Qt includes
-#include <qfile.h>
-#include <qdatastream.h>
+//Qt
+#include <QFile>
+#include <QDataStream>
 
-//Sword includes
+//Sword
 #include <swmodule.h>
 
+//KDE
 #include <kglobal.h>
 #include <kstandarddirs.h>
 
 //STL includes
 #include <algorithm>
 
-//Change it once the format changed to make all
-//systems rebuild their caches
+//Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "2"
-
-// class myLocaleAwareCompare {
-// public:
-//  int operator() (const QString& s1, const QString& s2) {
-// //  qWarning("using own operator<()");
-//    return s1.localeAwareCompare(s2);
-//   }
-//  };
 
 CSwordLexiconModuleInfo::CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const backend ) : CSwordModuleInfo(module, backend) {
 	m_entryList = 0;
@@ -131,16 +119,13 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 			my_module->setSkipConsecutiveLinks(false);
 
 			if (m_entryList->count()) {
-				m_entryList->first().simplifyWhiteSpace();
+				m_entryList->first().simplified();
 
-				if (m_entryList->first().stripWhiteSpace().isEmpty()) {
-
-					m_entryList->remove
-					( m_entryList->begin() );
+				if (m_entryList->first().trimmed().isEmpty()) {
+					m_entryList->erase( m_entryList->begin() );
 				}
 
 				//now sort the list, this is necesssary because Sword doesn't do Unicode ordering
-
 				//     qWarning("sorting");
 				//      QStringList::iterator start(m_entryList->begin());
 				//      QStringList::iterator end(m_entryList->end());
@@ -165,8 +150,6 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 					f2.close();
 				}
 			}
-
-			// //     qWarning("Writing finished." );
 		}
 	}
 

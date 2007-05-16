@@ -7,17 +7,11 @@
 *
 **********/
 
-
-
 #ifndef CSWORDKEY_H
 #define CSWORDKEY_H
 
-//Own includes
-
-
-//Qt includes
+//Qt
 #include <QString>
-//forward declarations
 
 class CSwordModuleInfo;
 

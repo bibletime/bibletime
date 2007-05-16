@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CREFERENCEMANAGER_H
 #define CREFERENCEMANAGER_H
 

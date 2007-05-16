@@ -7,19 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CSWORDVERSEKEY_H
 #define CSWORDVERSEKEY_H
 
-//own includes
 #include "cswordkey.h"
 #include "cswordmoduleinfo.h"
 
-//Qt includes
+//Qt
 #include <QString>
 
-//Sword includes
+//Sword
 #include <versekey.h>
 
 /**

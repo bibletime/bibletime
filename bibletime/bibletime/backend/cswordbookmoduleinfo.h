@@ -7,15 +7,12 @@
 *
 **********/
 
-
-
 #ifndef CSWORDGENBOOKMODULEINFO_H
 #define CSWORDGENBOOKMODULEINFO_H
 
-//BibleTime includes
 #include "cswordmoduleinfo.h"
 
-//Sword includes
+//Sword
 #include <treekeyidx.h>
 
 /** Class for generic book support
@@ -29,7 +26,7 @@ public:
 	* @param module The module which belongs to this object
 	* @param backend The parent backend for this book module.
 	*/
-	CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const backend = CPointers::backend() );
+	CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const backend );
 	/** Copy constructor.
 	* Copy constructor to copy the passed parameter.
 	* @param module The module which should be copied.

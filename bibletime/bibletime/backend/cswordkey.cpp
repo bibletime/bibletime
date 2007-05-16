@@ -7,25 +7,24 @@
 *
 **********/
 
-//own includes
 #include "cswordkey.h"
-#include "cswordmoduleinfo.h"
 
+#include "cswordmoduleinfo.h"
 #include "cswordversekey.h"
 #include "cswordldkey.h"
 #include "cswordtreekey.h"
 
-#include "util/ctoolclass.h"
+#include "../util/ctoolclass.h"
 
-//Sword includes
+//Sword
 #include <swmodule.h>
 #include <swkey.h>
 #include <versekey.h>
 #include <treekey.h>
 #include <treekeyidx.h>
 
-//Qt includes
-#include <qregexp.h>
+//Qt
+#include <QRegExp>
 #include <QString>
 
 CSwordKey::CSwordKey(CSwordModuleInfo* const module) : m_module(module) {}
@@ -35,19 +34,14 @@ CSwordKey::CSwordKey(const CSwordKey& k) {
 }
 
 const QString CSwordKey::rawText() {
-	if (!m_module) {
-		return QString::null;
-	}
+	if (!m_module) return QString::null;
 
 	if (dynamic_cast<sword::SWKey*>(this)) {
-		m_module->module()->getKey()->setText( (const char*)key().utf8() );
+		m_module->module()->getKey()->setText( key().toUtf8().constData() );
 	}
 
-	if (key().isNull()) {
-		return QString::null;
-	}
+	if (key().isNull()) return QString::null;
 
-// 	qWarning("rawText: %s", m_module->module()->getRawEntry());
 	return QString::fromUtf8( m_module->module()->getRawEntry() );
 }
 
@@ -66,15 +60,15 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 			vk_mod->Headings(1);
 		}
 
-		m_module->module()->getKey()->setText( this->key().utf8() );
+		m_module->module()->getKey()->setText( this->key().toUtf8().constData() );
 
 		if (m_module->type() == CSwordModuleInfo::Lexicon) {
 			m_module->snap();
 			/* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
 			i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-			if ( strcasecmp(m_module->module()->getKey()->getText(), (const char*)key().utf8())
-					&& !strstr(m_module->module()->getKey()->getText(), (const char*)key().utf8())
+			if ( strcasecmp(m_module->module()->getKey()->getText(), key().toUtf8().constData())
+					&& !strstr(m_module->module()->getKey()->getText(), key().toUtf8().constData())
 			   ) {
 				qDebug("return an empty key for %s", m_module->module()->getKey()->getText());
 				return QString::null;
@@ -91,11 +85,11 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 			QString t(text);
 			QRegExp rx("(GREEK|HEBREW) for 0*([1-9]\\d*)");	// ignore 0's before number
 			int pos = 0;
-			while( (pos = rx.search(t, pos)) != -1 ) {
+			while( (pos = rx.indexIn(t, pos)) != -1 ) {
 				QString language = rx.cap(1);
 				QString langcode = QString(language.at(0));	// "G" or "H"
 				QString number = rx.cap(2);
-				QString paddednumber = number.rightJustify(5, '0');	// Form 00123
+				QString paddednumber = number.rightJustified(5, '0');	// Form 00123
 
 				text.replace(
 						QRegExp( QString(
@@ -119,7 +113,7 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 			for (unsigned int i = 0; i < length; ++i) {
 				c = text.at(i);
 
-				if (c.latin1()) { //normal latin1 character
+				if (c.toLatin1()) { //normal latin1 character
 					ret.append(c);
 				}
 				else {//unicode character, needs to be escaped
@@ -140,13 +134,10 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 }
 
 const QString CSwordKey::strippedText() {
-	if (!m_module) {
-		return QString::null;
-	}
+	if (!m_module) return QString::null;
 
-	if (/*sword::SWKey* k =*/ dynamic_cast<sword::SWKey*>(this)) {
-		//   m_module->module()->SetKey(k);
-		m_module->module()->getKey()->setText( (const char*)key().utf8() );
+	if (dynamic_cast<sword::SWKey*>(this)) {
+		m_module->module()->getKey()->setText( key().toUtf8().constData() );
 	}
 
 	return QString::fromUtf8( m_module->module()->StripText() );

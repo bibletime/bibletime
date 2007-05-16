@@ -16,12 +16,12 @@
 #include "cswordmoduleinfo.h"
 
 //BibleTime - utils
-#include "util/cpointers.h"
+#include "../util/cpointers.h"
 
 //Qt includes
-#include <q3ptrlist.h>
+#include <Q3PtrList>
 #include <QString>
-#include <q3signal.h>
+#include <Q3Signal>
 
 //System includes
 #include <pthread.h>

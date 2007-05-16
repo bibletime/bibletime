@@ -7,20 +7,14 @@
 *
 **********/
 
-
-
 #ifndef CSWORDBIBLEMODULEINFO_H
 #define CSWORDBIBLEMODULEINFO_H
 
-//own includes
 #include "cswordmoduleinfo.h"
 #include "cswordversekey.h"
 
-//Qt includes
+//Qt
 #include <qstringlist.h>
-
-//Sword includes
-
 
 /**
  * This is the CModuleInfo imlementation for Bible modules managed by Sword.
@@ -41,7 +35,7 @@ public:
 	/**
 	* The constructor of this class
 	*/
-	CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const = CPointers::backend()  );
+	CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const );
 	/** The copy constructor for this Bible module.
 	*/
 	CSwordBibleModuleInfo( const CSwordBibleModuleInfo& m );

@@ -7,16 +7,12 @@
 *
 **********/
 
-
-
 #ifndef CLANGUAGEMGR_H
 #define CLANGUAGEMGR_H
 
 //Qt includes
 #include <QString>
 #include <QStringList>
-#include <QList>
-#include <QMap>
 #include <Q3PtrList>
 #include <Q3Dict>
 

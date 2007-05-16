@@ -15,10 +15,10 @@
 #include "centrydisplay.h"
 #include "clanguagemgr.h"
 
-#include "util/scoped_resource.h"
-#include "util/directoryutil.h"
-#include "util/cpointers.h"
-#include "frontend/cbtconfig.h"
+#include "../util/scoped_resource.h"
+#include "../util/directoryutil.h"
+#include "../util/cpointers.h"
+#include "../frontend/cbtconfig.h"
 
 #include <sys/types.h>
 #include <unistd.h>
@@ -27,10 +27,10 @@
 #include <regex.h>
 
 //Qt includes
-#include <qregexp.h>
-#include <qdir.h>
-#include <qvariant.h>
-#include <qfileinfo.h>
+#include <QRegExp>
+#include <QDir>
+#include <QVariant>
+#include <QFileInfo>
 //Added by qt3to4:
 #include <Q3ValueList>
 #include <Q3CString>

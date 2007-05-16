@@ -7,17 +7,16 @@
 *
 **********/
 
-
-
 #include "creferencemanager.h"
 #include "cswordversekey.h"
 
 #include "../frontend/cbtconfig.h"
+#include "../util/cpointers.h"
 
-//QT includes
+//QT
 #include <qregexp.h>
 
-//stl includes
+//stl
 #include <algorithm>       // STL algorithms class library
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
@@ -27,39 +26,31 @@ const QString CReferenceManager::encodeHyperlink( const QString moduleName, cons
 	switch (type) {
 
 		case Bible:
-		ret.setLatin1("sword://Bible/");
-		break;
-
+			ret = QString("sword://Bible/");
+			break;
 		case Commentary:
-		ret.setLatin1("sword://Commentary/");
-		break;
-
+			ret = QString("sword://Commentary/");
+			break;
 		case Lexicon:
-		ret.setLatin1("sword://Lexicon/");
-		break;
-
+			ret = QString("sword://Lexicon/");
+			break;
 		case GenericBook:
-		ret.setLatin1("sword://Book/");
-		break;
-
+			ret = QString("sword://Book/");
+			break;
 		case MorphHebrew:
-		ret.setLatin1("morph://Hebrew/");
-		break;
-
+			ret = QString("morph://Hebrew/");
+			break;
 		case MorphGreek:
-		ret.setLatin1("morph://Greek/");
-		break;
-
+			ret = QString("morph://Greek/");
+			break;
 		case StrongsHebrew:
-		ret.setLatin1("strongs://Hebrew/");
-		break;
-
+			ret = QString("strongs://Hebrew/");
+			break;
 		case StrongsGreek:
-		ret.setLatin1("strongs://Greek/");
-		break;
-
+			ret = QString("strongs://Greek/");
+			break;
 		default:
-		break;
+			break;
 	}
 
 	if (!moduleName.isEmpty()) {
@@ -135,22 +126,22 @@ const bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString
 		ref = ref.left(ref.length()-1);
 
 	//find out which type we have by looking at the beginning (protocoll section of URL)
-	if (ref.left(8).lower() == "sword://") { //Bible, Commentary or Lexicon
+	if (ref.left(8).toLower() == "sword://") { //Bible, Commentary or Lexicon
 		ref = ref.mid(8);
 
-		if (ref.left(5).lower() == "bible") { //a bible hyperlink
+		if (ref.left(5).toLower() == "bible") { //a bible hyperlink
 			type = CReferenceManager::Bible;
 			ref = ref.mid(6); //inclusive trailing slash
 		}
-		else if (ref.left(10).lower() == "commentary") { // a Commentary hyperlink
+		else if (ref.left(10).toLower() == "commentary") { // a Commentary hyperlink
 			type = CReferenceManager::Commentary;
 			ref = ref.mid(11); //inclusive trailing slash
 		}
-		else if (ref.left(7).lower() == "lexicon") { // a Lexicon hyperlink
+		else if (ref.left(7).toLower() == "lexicon") { // a Lexicon hyperlink
 			type = CReferenceManager::Lexicon;
 			ref = ref.mid(8); //inclusive trailing slash
 		}
-		else if (ref.left(4).lower() == "book") { // a Book hyperlink
+		else if (ref.left(4).toLower() == "book") { // a Book hyperlink
 			type = CReferenceManager::GenericBook;
 			ref = ref.mid(5); //inclusive trailing slash
 		}
@@ -159,7 +150,7 @@ const bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString
 		if (ref.at(0) != '/' ) { //we have a module given
 
 			while (true) {
-				const int pos = ref.find("/");
+				const int pos = ref.indexOf("/");
 
 				if ((pos>0) && ref.at(pos-1) != '\\') { //found a slash which is not escaped
 					module = ref.mid(0,pos);
@@ -190,26 +181,26 @@ const bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString
 		//replace \/ escapes with /
 		key.replace(QRegExp("\\\\/"), "/");
 	}
-	else if (ref.left(8).lower() == "morph://" || ref.left(10).lower() == "strongs://") { //strongs or morph URL have the same format
+	else if (ref.left(8).toLower() == "morph://" || ref.left(10).toLower() == "strongs://") { //strongs or morph URL have the same format
 		enum PreType {IsMorph, IsStrongs};
 		PreType preType = IsMorph;
 
-		if (ref.left(8).lower() == "morph://") { //morph code hyperlink
+		if (ref.left(8).toLower() == "morph://") { //morph code hyperlink
 			ref = ref.mid(8);
 			preType = IsMorph;
 		}
-		else if (ref.left(10).lower() == "strongs://") {
+		else if (ref.left(10).toLower() == "strongs://") {
 			ref = ref.mid(10);
 			preType = IsStrongs;
 		}
 
 		//part up to next slash is the language
-		const int pos = ref.find("/");
+		const int pos = ref.indexOf("/");
 
 		if (pos>0) { //found
 			const QString language = ref.mid(0,pos);
 
-			if (language.lower() == "hebrew") {
+			if (language.toLower() == "hebrew") {
 				switch (preType) {
 
 					case IsMorph:
@@ -221,7 +212,7 @@ const bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString
 					break;
 				}
 			}
-			else if (language.lower() == "greek") {
+			else if (language.toLower() == "greek") {
 				switch (preType) {
 
 					case IsMorph:
@@ -253,7 +244,7 @@ const QString CReferenceManager::encodeReference(const QString &module, const QS
 }
 
 void CReferenceManager::decodeReference(QString &dragreference, QString &module, QString &reference) {
-	const int pos = dragreference.find(")");
+	const int pos = dragreference.indexOf(")");
 	const QString fallbackModule = dragreference.mid( 1, pos - 1);
 	dragreference = dragreference.mid(pos+1);
 
@@ -367,7 +358,7 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 	QString sourceLanguage = options.sourceLanguage;
 	QString destinationLanguage = options.destinationLanguage;
 
- 	StringList locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
+ 	sword::StringList locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
  	if (/*options.sourceLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage) == locales.end()) { //sourceLanguage not available
 		sourceLanguage = "en_US";
  	}
@@ -376,12 +367,11 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 		destinationLanguage = "en_US";
  	}
 
-
 	QString ret;
-	QStringList refList = QStringList::split(";", ref);
+	QStringList refList = ref.split(";");
 
 	CSwordVerseKey baseKey(0);
-	baseKey.setLocale( sourceLanguage.latin1() );
+	baseKey.setLocale( sourceLanguage.toUtf8().constData() );
 	baseKey.key( options.refBase ); //probably in the sourceLanguage
  	baseKey.setLocale( "en_US" ); //english works in all environments as base
 
@@ -390,15 +380,15 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 	const QString oldLocaleName = CPointers::backend()->booknameLanguage();
 	CPointers::backend()->booknameLanguage(sourceLanguage);
 
-	VerseKey dummy;
- 	dummy.setLocale( sourceLanguage.latin1() );
- 	Q_ASSERT( !strcmp(dummy.getLocale(), sourceLanguage.latin1()) );
+	sword::VerseKey dummy;
+ 	dummy.setLocale( sourceLanguage.toUtf8().constData() );
+ 	Q_ASSERT( !strcmp(dummy.getLocale(), sourceLanguage.toUtf8().constData()) );
 
 // 	qDebug("Parsing '%s' in '%s' using '%s' as base, source lang '%s', dest lang '%s'", ref.latin1(), options.refDestinationModule.latin1(), baseKey.key().latin1(), sourceLanguage.latin1(), destinationLanguage.latin1());
 
 	for (QStringList::iterator it = refList.begin(); it != refList.end(); it++) {
 		//The listkey may contain more than one item, because a ref lik "Gen 1:3,5" is parsed into two single refs
-		ListKey lk = dummy.ParseVerseList((const char*)(*it).utf8(), (const char*)baseKey.key().utf8(), true);
+		sword::ListKey lk = dummy.ParseVerseList((*it).toUtf8().constData(), baseKey.key().toUtf8().constData(), true);
 		Q_ASSERT(!dummy.Error());
 
 		Q_ASSERT(lk.Count());
@@ -408,18 +398,18 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 		}
 
 		for (int i = 0; i < lk.Count(); ++i) {
-			if (dynamic_cast<VerseKey*>(lk.getElement(i))) { // a range
-				VerseKey* k = dynamic_cast<VerseKey*>(lk.getElement(i));
+			if (dynamic_cast<sword::VerseKey*>(lk.getElement(i))) { // a range
+				sword::VerseKey* k = dynamic_cast<sword::VerseKey*>(lk.getElement(i));
 				Q_ASSERT(k);
- 				k->setLocale( destinationLanguage.latin1() );
+ 				k->setLocale( destinationLanguage.toUtf8().constData() );
 
 				ret.append( QString::fromUtf8(k->getRangeText()) ).append("; ");
 			}
 			else { // a single ref
-				VerseKey vk;
- 				vk.setLocale( sourceLanguage.latin1() );
+				sword::VerseKey vk;
+ 				vk.setLocale( sourceLanguage.toUtf8().constData() );
 				vk = lk.getElement(i)->getText();
-				vk.setLocale( destinationLanguage.latin1() );
+				vk.setLocale( destinationLanguage.toUtf8().constData() );
 
 				ret.append( QString::fromUtf8(vk.getText()) ).append("; ");
 			}
@@ -428,7 +418,5 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 	}
 
 	CPointers::backend()->booknameLanguage(oldLocaleName);
-// 	qDebug("    %s", ret.latin1());
-
 	return ret;
 }

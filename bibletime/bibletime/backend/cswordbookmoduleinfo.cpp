@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cswordbookmoduleinfo.h"
 #include "cswordtreekey.h"
@@ -16,11 +14,6 @@
 //Sword includes
 #include <treekeyidx.h>
 #include <treekey.h>
-
-#include <iostream>
-#include <string>
-using std::cout;
-using std::endl;
 
 CSwordBookModuleInfo::CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
 : CSwordModuleInfo(module, usedBackend),

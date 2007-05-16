@@ -1,44 +1,35 @@
-//
-// C++ Implementation: cdisplaytemplatemgr
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-//BibleTime includes
 #include "cdisplaytemplatemgr.h"
+
 #include "cswordmoduleinfo.h"
 #include "clanguagemgr.h"
+#include "../frontend/cbtconfig.h"
+#include "../util/cpointers.h"
 
-#include "frontend/cbtconfig.h"
+//Qt
+#include <QStringList>
+#include <QFile>
+#include <QFileInfo>
 
-#include "util/cpointers.h"
-
-#include "config.h"
-
-//Qt includes
-#include <qstringlist.h>
-#include <qfile.h>
-#include <qfileinfo.h>
-
-//KDE includes
+//KDE
 #include <klocale.h>
 #include <kstandarddirs.h>
-
-#include <iostream>
 
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
 	init();
 	loadUserTemplates();
 }
 
-CDisplayTemplateMgr::~CDisplayTemplateMgr() {}
-
+CDisplayTemplateMgr::~CDisplayTemplateMgr() {
+}
 
 /*!
     \fn CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& title, const QString& content )
@@ -56,20 +47,18 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 			switch (settings.modules.first()->type()) {
 
 				case CSwordModuleInfo::Bible:
-				displayTypeString = "bible";
-				break;
+					displayTypeString = "bible";
+					break;
 
 				case CSwordModuleInfo::GenericBook:
-				displayTypeString = "book";
-				break;
+					displayTypeString = "book";
+					break;
 
 				case CSwordModuleInfo::Commentary:
-
 				case CSwordModuleInfo::Lexicon:
-
 				default:
-				displayTypeString = "singleentry";
-				break;
+					displayTypeString = "singleentry";
+					break;
 			};
 		}
 		else { //use bible as default type if no modules are set
@@ -94,11 +83,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 			.append("</th>");
 		}
 
-		newContent.setLatin1("<table><tr>")
-		.append(header)
-		.append("</tr>")
-		.append(content)
-		.append("</table>");
+		newContent = QString("<table><tr>")
+			.append(header)
+			.append("</tr>")
+			.append(content)
+			.append("</table>");
 	}
 
 	QString langCSS;
@@ -151,16 +140,8 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	 		.replace("#LANG_CSS#", langCSS)
 	 		.replace("#PAGE_DIRECTION#", settings.pageDirection)
 	 		.replace("#CONTENT#", newContent);
- 	 //printf("%s\n\n", t.latin1());
 
 	return t;
-/*			QString(m_templateMap[ templateName ]) //don't change the map's content directly, use  a copy
-		   .replace("#TITLE#", settings.title)
-		   .replace("#LANG_ABBREV#", settings.langAbbrev.isEmpty() ? QString("en") : settings.langAbbrev)
-		   .replace("#DISPLAYTYPE#", displayTypeString)
-		   .replace("#LANG_CSS#", langCSS)
-		   .replace("#PAGE_DIRECTION#", settings.pageDirection)
-		   .replace("#CONTENT#", newContent);*/
 }
 
 
@@ -172,13 +153,13 @@ void CDisplayTemplateMgr::loadUserTemplates() {
 	QStringList files = KGlobal::dirs()->findAllResources("BT_DisplayTemplates");
 
 	for ( QStringList::iterator it( files.begin() ); it != files.end(); ++it) {
-		qDebug("Found user template %s", (*it).latin1());
+		//qDebug("Found user template %s", (*it).latin1());
 
 		QFile f( *it );
 		Q_ASSERT( f.exists() );
 
 		if (f.open( QIODevice::ReadOnly )) {
-			QString fileContent = Q3TextStream( &f ).read();
+			QString fileContent = QTextStream( &f ).readAll();
 
 			if (!fileContent.isEmpty()) {
 				m_templateMap[ QFileInfo(*it).fileName() + QString(" ") + i18n("(user template)")] = fileContent;
@@ -188,4 +169,5 @@ void CDisplayTemplateMgr::loadUserTemplates() {
 }
 
 //Include the HTML templates which were put into a cpp file by a Perl script
-#include "../display-templates/template-init.cpp"
+//TODO:REACTIVATE THIS
+//#include "../display-templates/template-init.cpp"

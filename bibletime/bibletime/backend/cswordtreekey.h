@@ -7,15 +7,13 @@
 *
 **********/
 
-
-
 #ifndef CSWORDTREEKEYIDX_H
 #define CSWORDTREEKEYIDX_H
 
-//BibleTime includes
+//BibleTime
 #include "cswordkey.h"
 
-//Sword includes
+//Sword
 #include <treekeyidx.h>
 
 class CSwordModuleInfo;

@@ -7,19 +7,15 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cswordbiblemoduleinfo.h"
 #include "cswordbackend.h"
 #include "cswordversekey.h"
 
-// #include "util/cpointers.h"
+//Qt
+#include <QFile>
 
-//Qt includes
-#include <qfile.h>
-
-//Sword includes
+//Sword
 #include <versekey.h>
 
 static sword::VerseKey staticKey;

@@ -7,29 +7,24 @@
 *
 **********/
 
-
-
 #ifndef CSWORDMODULEINFO_H
 #define CSWORDMODULEINFO_H
 
-//BibleTime includes
 #include "clanguagemgr.h"
 
-//Qt includes
+//Qt
 #include <QString>
 #include <QList>
 #include <Q3Signal>
 
-//Sword includes
+//Sword
 #include <listkey.h>
 #include <swsearchable.h>
 #include <swmodule.h>
 #include <swversion.h>
 #include <swdisp.h>
 
-
 class CSwordBackend;
-
 class CSwordKey;
 
 namespace Rendering {

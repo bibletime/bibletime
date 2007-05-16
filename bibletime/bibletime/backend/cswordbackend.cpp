@@ -7,10 +7,8 @@
 *
 **********/
 
-
-
-//BibleTime includes
 #include "cswordbackend.h"
+
 #include "centrydisplay.h"
 #include "cbookdisplay.h"
 #include "cchapterdisplay.h"
@@ -18,7 +16,6 @@
 #include "cswordcommentarymoduleinfo.h"
 #include "cswordlexiconmoduleinfo.h"
 #include "cswordbookmoduleinfo.h"
-
 #include "bt_thmlhtml.h"
 #include "bt_thmlplain.h"
 #include "bt_osishtml.h"
@@ -26,21 +23,19 @@
 #include "bt_plainhtml.h"
 #include "osismorphsegmentation.h"
 
-#include "frontend/cbtconfig.h"
+#include "../frontend/cbtconfig.h"
 
 #include <dirent.h>
-#include <unistd.h>
-#include <ctype.h>
 
-//Qt includes
-#include <qdir.h>
-#include <qfileinfo.h>
+//Qt
+#include <QDir>
+#include <QFileInfo>
 
-//KDE includes
+//KDE
 #include <klocale.h>
 #include <kstringhandler.h>
 
-//Sword includes
+//Sword
 #include <swdisp.h>
 #include <swfiltermgr.h>
 #include <encfiltmgr.h>
@@ -49,10 +44,7 @@
 #include <utilstr.h>
 #include <swfilter.h>
 
-using std::string;
-
 using namespace Filters;
-
 using namespace Rendering;
 
 CSwordBackend::CSwordBackend()
@@ -70,9 +62,9 @@ CSwordBackend::CSwordBackend()
 }
 
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
-: sword::SWMgr(!path.isEmpty() ? (const char*)path.local8Bit() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) // don't allow module renaming, because we load from a path
+: sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) // don't allow module renaming, because we load from a path
 {
-	qDebug("CSwordBackend::CSwordBackend for %s, using %s", path.latin1(), configPath);
+	//qDebug("CSwordBackend::CSwordBackend for %s, using %s", path.latin1(), configPath);
 	m_displays.entry = 0;
 	m_displays.chapter = 0;
 	m_displays.book = 0;
@@ -158,20 +150,16 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 
 	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		// for (m_moduleList.first(); m_moduleList.current(); m_moduleList.next()) {
 		m_moduleDescriptionMap.insert( (*it)->config(CSwordModuleInfo::Description), (*it)->name() );
 	}
 
 	//unlock modules if keys are present
-	//  ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		//  for (m_moduleList.first(); m_moduleList.current(); m_moduleList.next()) {
-
 		if ( (*it)->isEncrypted() ) {
-			const QString unlockKey = CBTConfig::getModuleEncryptionKey( (*it)->name() ).latin1();
+			const QString unlockKey = CBTConfig::getModuleEncryptionKey( (*it)->name() );
 
 			if (!unlockKey.isNull()) {
-				setCipherKey( (*it)->name().latin1(), unlockKey.latin1() );
+				setCipherKey( (*it)->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
 			}
 		}
 	}
@@ -236,13 +224,11 @@ const bool CSwordBackend::shutdownModules() {
 
 	while (it != end) {
 		CSwordModuleInfo* current = (*it);
-		it = m_moduleList.remove(it);
-
+		it = m_moduleList.erase(it);
 		delete current;
 	}
 
 	Q_ASSERT(m_moduleList.count() == 0);
-
 	//BT  mods are deleted now, delete Sword mods, too.
 	DeleteMods();
 
@@ -251,7 +237,7 @@ const bool CSwordBackend::shutdownModules() {
 
 /** Returns true if the given option is enabled. */
 const bool CSwordBackend::isOptionEnabled( const CSwordModuleInfo::FilterTypes type) {
-	return (getGlobalOption( optionName(type).latin1() ) == "On");
+	return (getGlobalOption( optionName(type).toUtf8().constData() ) == "On");
 }
 
 /** Sets the given options enabled or disabled depending on the second parameter. */
@@ -280,7 +266,7 @@ void CSwordBackend::setOption( const CSwordModuleInfo::FilterTypes type, const i
 	};
 
 	if (value.length())
-		setGlobalOption(optionName(type).latin1(), value.c_str());
+		setGlobalOption(optionName(type).toUtf8().constData(), value.c_str());
 }
 
 void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options) {
@@ -396,12 +382,12 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 
 		while ((ent = readdir(dir)) && !foundConfig) {
 			if ((strcmp(ent->d_name, ".")) && (strcmp(ent->d_name, ".."))) {
-				modFile.setLatin1(configPath);
-				modFile.append("/");
-				modFile.append( QString::fromLocal8Bit(ent->d_name) );
+				modFile = QString(configPath);
+					modFile.append("/");
+					modFile.append( QString::fromLocal8Bit(ent->d_name) );
 
-				moduleConfig = sword::SWConfig( (const char*)modFile.local8Bit() );
-				section = moduleConfig.Sections.find( (const char*)module.local8Bit() );
+				moduleConfig = sword::SWConfig( modFile.toLocal8Bit().constData() );
+				section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
 				foundConfig = ( section != moduleConfig.Sections.end() );
 			}
 		}
@@ -410,7 +396,7 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 	}
 	else { //try to read mods.conf
 		moduleConfig = sword::SWConfig("");//global config
-		section = config->Sections.find( (const char*)module.local8Bit() );
+		section = config->Sections.find( module.toLocal8Bit().constData() );
 		foundConfig = ( section != config->Sections.end() );
 
 		sword::ConfigEntMap::iterator entry;
@@ -426,7 +412,7 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 	if (!foundConfig && configType != 2) { //search in $HOME/.sword/
 		QString myPath(getenv("HOME"));
 		myPath.append("/.sword/mods.d");
-		dir = opendir(myPath.latin1());
+		dir = opendir(myPath.toUtf8().constData());
 
 		if (dir) {
 			rewinddir(dir);
@@ -436,8 +422,8 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 					modFile = myPath;
 					modFile.append('/');
 					modFile.append(ent->d_name);
-					moduleConfig = sword::SWConfig( (const char*)modFile.local8Bit() );
-					section = moduleConfig.Sections.find( (const char*)module.local8Bit() );
+					moduleConfig = sword::SWConfig( modFile.toLocal8Bit().constData() );
+					section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
 					foundConfig = ( section != moduleConfig.Sections.end() );
 				}
 			}
@@ -590,7 +576,7 @@ const QString CSwordBackend::configOptionName( const CSwordModuleInfo::FilterTyp
 
 const QString CSwordBackend::booknameLanguage( const QString& language ) {
 	if (!language.isEmpty()) {
-		sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName( language.latin1() );
+		sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName( language.toUtf8().constData() );
 
 		//refresh the locale of all Bible and commentary modules!
 		const ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
@@ -601,7 +587,7 @@ const QString CSwordBackend::booknameLanguage( const QString& language ) {
 		for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != end_it; ++it) {
 			if ( ((*it)->type() == CSwordModuleInfo::Bible) || ((*it)->type() == CSwordModuleInfo::Commentary) ) {
 				//Create a new key, it will get the default bookname language
-				((sword::VerseKey*)((*it)->module()->getKey()))->setLocale( newLocaleName.latin1() );
+				((sword::VerseKey*)((*it)->module()->getKey()))->setLocale( newLocaleName.toUtf8().constData() );
 			}
 		}
 
@@ -638,15 +624,9 @@ const QStringList CSwordBackend::swordDirList() {
 
 	if (!QFile(configPath).exists()) {
 		configPath = globalConfPath; //e.g. /etc/sword.conf, /usr/local/etc/sword.conf
-
-
 	}
 
-
-	QStringList configs = QStringList::split(":", configPath);
-
-	/*ToDo: Use the const iterator as soon as we switch to Qt > 3.1
-	  for (QStringList::const_iterator it = configs.constBegin(); it != configs.constEnd(); ++it) {*/
+	QStringList configs = configPath.split(":");
 
 	for (QStringList::const_iterator it = configs.begin(); it != configs.end(); ++it) {
 		if (!QFileInfo(*it).exists()) {
@@ -654,14 +634,10 @@ const QStringList CSwordBackend::swordDirList() {
 		}
 
 		//get all DataPath and AugmentPath entries from the config file and add them to the list
-		sword::SWConfig conf( (*it).latin1() );
-
+		sword::SWConfig conf( (*it).toUtf8().constData() );
 		ret << conf["Install"]["DataPath"].c_str();
-
 		sword::ConfigEntMap group = conf["Install"];
-
 		sword::ConfigEntMap::iterator start = group.equal_range("AugmentPath").first;
-
 		sword::ConfigEntMap::iterator end = group.equal_range("AugmentPath").second;
 
 		for (sword::ConfigEntMap::const_iterator it = start; it != end; ++it) {
@@ -679,8 +655,8 @@ const QStringList CSwordBackend::swordDirList() {
 void CSwordBackend::filterInit() {
 	//  qWarning("## INIT");
 
-	SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
-	optionFilters.insert(OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
+	sword::SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
+	optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
 	cleanupFilters.push_back(tmpFilter);
 	
 	//HACK: replace Sword's ThML strip filter with our own version

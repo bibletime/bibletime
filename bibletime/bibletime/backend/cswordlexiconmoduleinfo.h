@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CSWORDLEXICONMODULEINFO_H
 #define CSWORDLEXICONMODULEINFO_H
 
@@ -16,7 +14,7 @@
 #include "cswordmoduleinfo.h"
 
 //Qt includes
-#include <qstringlist.h>
+#include <QStringList>
 
 /**
  * The implementation of CModuleInfo for the Sword lexiccons and citionaries.
@@ -31,7 +29,7 @@ public:
 	* The standard constructor fot this object.
 	* A default constructor doesn't exist. Use this one.
 	*/
-	CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const = CPointers::backend() );
+	CSwordLexiconModuleInfo( sword::SWModule* module, CSwordBackend* const );
 	/**
 	* The copy constructor
 	*/

@@ -7,11 +7,7 @@
 *
 **********/
 
-
-
 #include "cswordcommentarymoduleinfo.h"
-
-#include <string>
 
 CSwordCommentaryModuleInfo::CSwordCommentaryModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend)
 : CSwordBibleModuleInfo(module, usedBackend) {}

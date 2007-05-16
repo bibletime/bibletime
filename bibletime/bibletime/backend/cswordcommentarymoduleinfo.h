@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CSWORDCOMMENTARYMODULEINFO_H
 #define CSWORDCOMMENTARYMODULEINFO_H
 
@@ -24,7 +22,7 @@
 class CSwordCommentaryModuleInfo : public CSwordBibleModuleInfo {
 
 public:
-	CSwordCommentaryModuleInfo( sword::SWModule* module, CSwordBackend* const = CPointers::backend() );
+	CSwordCommentaryModuleInfo( sword::SWModule* module, CSwordBackend* const );
 	~CSwordCommentaryModuleInfo();
 	/** Reimplementation to return the commentary type.
 	*/

@@ -7,22 +7,14 @@
 *
 **********/
 
-
-
 #include "clanguagemgr.h"
 
 #include "cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
-#include "util/cpointers.h"
+#include "../util/cpointers.h"
 
-
-//Qt includes
-#include <q3ptrlist.h>
-//Added by qt3to4:
-#include <Q3StrList>
-
-//KDE includes
+//KDE
 #include <klocale.h>
 
 //initialize static language list
@@ -90,22 +82,20 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 		m_availableModulesCache.moduleCount = mods.count();
 
 		//collect the languages abbrevs of all modules
-		Q3StrList abbrevs;
-		char *abbrev;
+		QStringList abbrevs;
+		QString abbrev;
 
 		ListCSwordModuleInfo::iterator end_it = mods.end();
 
 		for (ListCSwordModuleInfo::iterator it(mods.begin()); it != end_it; ++it) {
-			//   for (CSwordModuleInfo* m = mods.first(); m; m = mods.next()) {
 			abbrev = (*it)->module()->Lang();
-
-			if (abbrev && !abbrevs.contains(abbrev)) {
-				abbrevs.append( abbrev );
-			}
+			
+			if (!abbrevs.contains(abbrev)) abbrevs.append(abbrev);
 		};
 
 		//now create a map of available langs
-		for ( abbrev = abbrevs.first(); abbrev; abbrev = abbrevs.next() ) {
+		for ( QStringList::const_iterator it = abbrevs.begin(); it != abbrevs.end(); it++ ) {
+			abbrev = (*it);
 			const Language* const lang = languageForAbbrev(abbrev);
 
 			if (lang->isValid()) {
@@ -114,7 +104,6 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 			else { //invalid lang used by a modules, create a new language using the abbrev
 				Language* newLang = new Language(abbrev, abbrev, abbrev);
 				m_cleanupLangPtrs.append(newLang);
-
 				m_availableModulesCache.availableLanguages.insert( abbrev, newLang );
 			}
 		};

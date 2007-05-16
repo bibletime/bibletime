@@ -7,17 +7,14 @@
 *
 **********/
 
-
-
-//BibleTime includes
 #include "cswordversekey.h"
 #include "cswordbiblemoduleinfo.h"
 #include "cswordcommentarymoduleinfo.h"
 
-//Qt includes
-#include <qstringlist.h>
+//Qt
+#include <QStringList>
 
-//Sword includes
+//Sword
 #include <swmodule.h>
 #include <localemgr.h>
 
@@ -88,7 +85,7 @@ const QString CSwordVerseKey::book( const QString& newBook ) {
 
 		for (int testament = min; testament <= max && !finished; ++testament) {
 			for (int book = 0; book < BMAX[testament] && !finished; ++book) {
-				if ( !strcmp((const char*)newBook.utf8(), books[testament][book].name ) ) {
+				if ( !strcmp(newBook.toUtf8().constData(), books[testament][book].name ) ) {
 					Testament(testament+1);
 					Book(book+1);
 					finished = true;
@@ -111,7 +108,7 @@ const QString CSwordVerseKey::key() const {
 }
 
 const bool CSwordVerseKey::key( const QString& newKey ) {
-	return key( (const char*)newKey.utf8() );
+	return key( newKey.toUtf8().constData() );
 }
 
 const bool CSwordVerseKey::key( const char* newKey ) {
@@ -122,7 +119,7 @@ const bool CSwordVerseKey::key( const char* newKey ) {
 		CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module());
 
 		if ( bible ) {
-			VerseKey::operator = ((const char*)bible->lowerBound().key().utf8());
+			VerseKey::operator = (bible->lowerBound().key().toUtf8().constData());
 		}
 	}
 
@@ -166,7 +163,7 @@ const bool CSwordVerseKey::next( const JumpType type ) {
 				const bool useHeaders = (Verse() == 0);
 				const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
 				//don't use setKey(), that would create a new key without Headings set
-				m_module->module()->getKey()->setText( (const char*)key().utf8() );
+				m_module->module()->getKey()->setText( key().toUtf8().constData() );
 
 				(*(m_module->module()) )++;
 
@@ -179,7 +176,7 @@ const bool CSwordVerseKey::next( const JumpType type ) {
 				else {
 					//         Verse(Verse()+1);
 					//don't change the key, restore the module's position
-					m_module->module()->getKey()->setText( (const char*)key().utf8() );
+					m_module->module()->getKey()->setText( key().toUtf8().constData() );
 					ret = false;
 					break;
 				}
@@ -246,7 +243,7 @@ const bool CSwordVerseKey::previous( const JumpType type ) {
 				const bool useHeaders = (Verse() == 0);
 				const bool oldHeadingsStatus = ((VerseKey*)(m_module->module()->getKey()))->Headings( useHeaders );
 
-				m_module->module()->getKey()->setText( (const char*)key().utf8() );
+				m_module->module()->getKey()->setText( key().toUtf8().constData() );
 
 				const bool oldStatus = m_module->module()->getSkipConsecutiveLinks();
 				m_module->module()->setSkipConsecutiveLinks(true);
@@ -261,7 +258,7 @@ const bool CSwordVerseKey::previous( const JumpType type ) {
 				else {
 					ret = false;
 					//         Verse(Verse()-1);
-					m_module->module()->getKey()->setText( (const char*)key().utf8() ); //restore module's key
+					m_module->module()->getKey()->setText( key().toUtf8().constData() ); //restore module's key
 				}
 			}
 			else {

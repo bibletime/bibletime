@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cswordtreekey.h"
 #include "cswordbookmoduleinfo.h"
 
@@ -28,20 +26,7 @@ const QString CSwordTreeKey::key() const {
 }
 
 const bool CSwordTreeKey::key( const QString& newKey ) {
-	//   if (newKey.isEmpty()) {
-	//     root();
-	//   }
-	//   else {
-	//     TreeKeyIdx::operator = ((const char*)newKey.local8Bit());  //don't use Utf8! Doesn't work with umlauts!
-	//  }
-
-	return key( (const char*)newKey.local8Bit() );
-
-	//   if (Error()) {
-	//    root();
-	//   }
-	//
-	//   return !Error();
+	return key( newKey.toLocal8Bit().constData() );
 }
 
 const bool CSwordTreeKey::key( const char* newKey ) {
@@ -78,6 +63,6 @@ CSwordModuleInfo* const CSwordTreeKey::module( CSwordModuleInfo* const newModule
 
 /** Assignment operator. */
 CSwordTreeKey& CSwordTreeKey::operator = (const QString& keyname ) {
-			key(keyname);
-			return *this;
-		}
+	key(keyname);
+	return *this;
+}

@@ -7,19 +7,13 @@
 *
 **********/
 
-
-
-//BibleTime includes
 #include "cswordldkey.h"
 #include "cswordlexiconmoduleinfo.h"
-
-//Qt includes
 
 //Sword includes
 #include <swmodule.h>
 #include <swld.h>
 #include <utilstr.h>
-
 
 CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
 	if ((m_module = dynamic_cast<CSwordLexiconModuleInfo*>(module))) {
@@ -67,10 +61,8 @@ const bool CSwordLDKey::key( const QString& newKey ) {
 	/* if (!m_module->snap()) {
 	  qWarning("set %s got %s, error=1", newKey.latin1(), m_module->module()->KeyText());
 	 }*/
-
-
 	//  SWKey::operator = (m_module->module()->KeyText());
-	return key( (const char*)newKey.utf8() );
+	return key( newKey.toUtf8().constData() );
 }
 
 
