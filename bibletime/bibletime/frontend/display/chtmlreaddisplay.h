@@ -88,7 +88,8 @@ protected:
 	m_dndData;
 
 	QMap<NodeInfoType, QString> m_nodeInfo;
-		
+	int m_magTimerId;
+	
 private:
 	CHTMLReadDisplayView* m_view;
 	struct URLWorkaroundData {
