@@ -35,9 +35,6 @@
 #include <qpopupmenu.h>
 #include <qlayout.h>
 #include <qtimer.h>
-#if KDE_VERSION < 0x030300
-//We will need to show the error message.
-#include <qmessagebox.h>
 #endif
 
 //KDE includes
@@ -55,7 +52,8 @@ using namespace InfoDisplay;
 CHTMLReadDisplay::CHTMLReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
 : KHTMLPart((m_view = new CHTMLReadDisplayView(this, parentWidget ? parentWidget : readWindow)), readWindow ? readWindow : parentWidget),
 CReadDisplay(readWindow),
-m_currentAnchorCache(QString::null) {
+m_currentAnchorCache(QString::null),
+m_magTimerId(0) {
 	setDNDEnabled(false);
 	setJavaEnabled(false);
 	setJScriptEnabled(false);
@@ -328,8 +326,8 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			// SHIFT key not pressed, so we start timer
 			if ( !(e->qmouseEvent()->state() & Qt::ShiftButton)) { 
 				// QObject has simple timer
-				killTimers(); 
-				startTimer( CBTConfig::get(CBTConfig::magDelay) );
+				killTimer(m_magTimerId);
+				m_magTimerId = startTimer( CBTConfig::get(CBTConfig::magDelay) );
 			}
 	
 			m_previousEventNode = node;
@@ -341,7 +339,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 
 /** The Mag window update happens here if the mouse has not moved to another node after starting the timer.*/
 void CHTMLReadDisplay::timerEvent( QTimerEvent *e ) {
-	killTimers();
+	killTimer(m_magTimerId);
 	DOM::Node currentNode = nodeUnderMouse();
 	CInfoDisplay::ListInfoData infoList;
 	
