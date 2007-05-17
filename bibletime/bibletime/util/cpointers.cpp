@@ -7,17 +7,14 @@
 *
 **********/
 
-
-
 #include "cpointers.h"
 
 //BibleTime's backend
-#include "backend/cswordbackend.h"
-#include "backend/cdisplaytemplatemgr.h"
+#include "../backend/cswordbackend.h"
+#include "../backend/cdisplaytemplatemgr.h"
 
 //BibleTime's frontend
-#include "frontend/cprinter.h"
-
+#include "../frontend/cprinter.h"
 
 CPointers::PointerCache m_pointerCache;
 

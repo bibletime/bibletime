@@ -7,21 +7,18 @@
 *
 **********/
 
-
-
-//own includes
 #include "ctoolclass.h"
 
-#include "util/cresmgr.h"
-#include "backend/cswordbackend.h"
-#include "backend/cswordmoduleinfo.h"
+#include "../util/cresmgr.h"
+#include "../backend/cswordbackend.h"
+#include "../backend/cswordmoduleinfo.h"
 
-//QT includes
-#include <qlabel.h>
-#include <qfile.h>
-#include <q3filedialog.h>
-#include <q3textstream.h>
-#include <qregexp.h>
+//Qt
+#include <QLabel>
+#include <QFile>
+#include <QFileDialog>
+#include <QTextCodec>
+#include <QRegExp>
 //Added by qt3to4:
 #include <QPixmap>
 #include <Q3Frame>
@@ -36,13 +33,12 @@
 #include <kfiledialog.h>
 #include <kapplication.h>
 
-
 QString CToolClass::locatehtml(const QString &filename) {
-	QString path = locate("html", KGlobal::locale()->language() + '/' + filename);
+	QString path = KStandardDirs::locate("html", KGlobal::locale()->language() + '/' + filename);
 	if (path.isNull())
-		path = locate("html", "default/" + filename);
+		path = KStandardDirs::locate("html", "default/" + filename);
 	if (path.isNull())
-		path = locate("html", "en/" + filename);
+		path = KStandardDirs::locate("html", "en/" + filename);
 	return path;
 }
 
@@ -71,7 +67,7 @@ QString CToolClass::textToHTML(const QString& text) {
 
 /** Creates the file filename and put text into the file.
  */
-bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, const Q3TextStream::Encoding& fileEncoding) {
+bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec& fileCodec) {
 	QFile saveFile(filename);
 	bool ret;
 
@@ -91,8 +87,8 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 	};
 
 	if ( saveFile.open(QIODevice::ReadWrite) ) {
-		Q3TextStream textstream( &saveFile );
-		textstream.setEncoding(fileEncoding);
+		QTextStream textstream( &saveFile );
+		textstream.setCodec(&fileCodec);
 		textstream << text;
 		saveFile.close();
 		ret = true;
@@ -164,7 +160,7 @@ QPixmap CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
 
 QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
 	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B><BR>%2").arg(heading).arg(text),parent );
-	label->setAutoResize(true);
+//	label->setAutoResize(true);
 	label->setMargin(1);
 	label->setFrameStyle(Q3Frame::Box | Q3Frame::Plain);
 	return label;
@@ -172,10 +168,10 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
 
 /** No descriptions */
 bool CToolClass::inHTMLTag(int pos, QString & text) {
-	int i1=text.findRev("<",pos);
-	int i2=text.findRev(">",pos);
-	int i3=text.find(">",pos);
-	int i4=text.find("<",pos);
+	int i1=text.lastIndexOf("<",pos);
+	int i2=text.lastIndexOf(">",pos);
+	int i3=text.indexOf(">",pos);
+	int i4=text.indexOf("<",pos);
 
 
 	// if ((i1>0) && (i2==-1))  //we're in th first html tag

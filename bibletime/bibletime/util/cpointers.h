@@ -7,15 +7,11 @@
 *
 **********/
 
-
-
 #ifndef CPOINTERS_H
 #define CPOINTERS_H
 
 //BibleTime includes
 #include "../backend/clanguagemgr.h"
-
-#include "../frontend/cinfodisplay.h"
 
 class CSwordBackend;
 class CLanguageMgr;
@@ -26,8 +22,7 @@ namespace InfoDisplay {
 }
 
 /** Holds the pointers to important classes like modules, backend etc.
-  * @author The BibleTime team
-  */
+*/
 class CPointers {
 protected:
 	friend class BibleTime; //BibleTime may initialize this object

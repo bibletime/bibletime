@@ -9,13 +9,10 @@
 #ifndef CTOOLCLASS_H
 #define CTOOLCLASS_H
 
-//Qt includes
+//Qt
 #include <QString>
 #include <QPixmap>
-#include <Q3TextStream>
 #include <QTextCodec>
-//Added by qt3to4:
-#include <QLabel>
 
 class CSwordModuleInfo;
 class QLabel;
@@ -54,7 +51,7 @@ public:
 	* @return True if saving was sucessful, otherwise false
 	* @author Joachim Ansorg
 	*/
-	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, const QTextCodec& fileEncoding = *QTextCodec::codecForLocale());
+	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec& fileCodec = *QTextCodec::codecForLocale());
 	/**
 	* Returns the icon used for the module given as aparameter.
 	*/

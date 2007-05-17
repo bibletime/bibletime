@@ -11,12 +11,13 @@
 #define RENDERINGCBOOKDISPLAY_H
 
 #include "centrydisplay.h"
+#include "ctextrendering.h" 
+//TODO: It would be sufficient to forward declare CTextRendering and CTextRendering::KeyTree
+//but I don't know how :(
 
 class CSwordTreeKey;
 
 namespace Rendering {
-
-	class CTextRendering::KeyTree;
 
 	/**
 	* A CEntryDisplay implementation which works on tree-based GenBook modules

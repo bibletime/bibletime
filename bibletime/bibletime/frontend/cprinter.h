@@ -13,14 +13,14 @@
 #define CPRINTER_H
 
 //BibleTime backend
-#include "backend/cswordbackend.h"
-#include "backend/cdisplayrendering.h"
+#include "../backend/cswordbackend.h"
+#include "../backend/cdisplayrendering.h"
 
 //BibleTime frontend
-#include "frontend/cbtconfig.h"
+#include "../frontend/cbtconfig.h"
 
 //Qt includes
-#include <qobject.h>
+#include <QObject>
 
 class KHTMLPart;
 

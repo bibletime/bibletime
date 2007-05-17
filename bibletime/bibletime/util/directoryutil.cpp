@@ -1,14 +1,11 @@
-//
-// C++ Implementation: directoryutil
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2006
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #include "directoryutil.h"
 
@@ -32,7 +29,7 @@ void DirectoryUtil::removeRecursive(const QString dir) {
 	const QFileInfoList fileList = d.entryInfoList();
 	for (QFileInfoList::const_iterator it_file = fileList.begin(); it_file != fileList.end(); it_file++)
 	{
-		d.remove( (*it_file).fileName() );
+		d.remove( it_file->fileName() );
 	}
 	
 	//remove all subdirs recursively
@@ -40,10 +37,10 @@ void DirectoryUtil::removeRecursive(const QString dir) {
 	const QFileInfoList dirList = d.entryInfoList();
 	for (QFileInfoList::const_iterator it_dir = dirList.begin(); it_dir != dirList.end(); it_dir++)
 	{
-		if ( !(*it_dir).isDir() || (*it_dir).fileName() == "." || (*it_dir).fileName() == ".." ) {
+		if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
 			continue;
 		}
-		removeRecursive( (*it_dir).absoluteFilePath() );
+		removeRecursive( it_dir->absoluteFilePath() );
 	}
 	d.rmdir(dir);
 }
@@ -62,7 +59,7 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 	const QFileInfoList infoList = d.entryInfoList();
 	for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); it++)
 	{
-		size += (*it).size();
+		size += it->size();
 	}
 
 	//Then add the sizes of all subdirectories
@@ -70,10 +67,10 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 	const QFileInfoList dirInfoList = d.entryInfoList();
 	for (QFileInfoList::const_iterator it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); it_dir++)
 	{
-		if ( !(*it_dir).isDir() || (*it_dir).fileName() == "." || (*it_dir).fileName() == ".." ) {
+		if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
 			continue;
 		}
-		size += getDirSizeRecursive( (*it_dir).absoluteFilePath() );
+		size += getDirSizeRecursive( it_dir->absoluteFilePath() );
 	}
 	return size;
 }
