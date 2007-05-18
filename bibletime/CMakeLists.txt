@@ -11,6 +11,7 @@ find_package(KDE4 REQUIRED) 		#KDE4
 #custom includes
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CLucene REQUIRED)	#CLucene
+find_package(Sword REQUIRED)		#Sword
 ######################################################
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
@@ -85,9 +86,9 @@ INCLUDE_DIRECTORIES(
 	${QT_QTGUI_INCLUDE_DIR}
 	${QT_QT3SUPPORT_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
-	/usr/include/sword
 	${CLUCENE_INCLUDE_DIR} #CLucene headers
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h
+	${SWORD_INCLUDE_DIR}
 )
 
 #This must come before the target definition!
@@ -112,6 +113,6 @@ TARGET_LINK_LIBRARIES(bibletime
 	kdeui
 	kdecore
 	QtCore
-	sword
-	clucene
+	${CLUCENE_LIBRARY}
+	${SWORD_LIBRARY}
 )
