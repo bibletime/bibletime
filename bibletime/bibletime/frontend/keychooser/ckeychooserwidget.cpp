@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,10 +11,6 @@
 //BibleTime includes
 #include "ckeychooserwidget.h"
 #include "cscrollerwidgetset.h"
-
-//BibleTime frontend includes
-//#include "../cbtconfig.h"
-
 
 //Qt includes
 #include <QString>
@@ -38,7 +34,6 @@ bool CKCComboBox::eventFilter( QObject *o, QEvent *e ) {
 		QFocusEvent* f = static_cast<QFocusEvent*>(e);
 
 		if (o == lineEdit() && f->reason() == Qt::TabFocusReason) {
-			//int index = listBox()->index( listBox()->findItem(currentText()) );
 			int index = findText(currentText());
 			if (index == -1) {
 				index = 0;// return 0 if not found
