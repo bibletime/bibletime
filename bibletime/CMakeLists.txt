@@ -60,6 +60,8 @@ SET(bibletime_SOURCES
 	bibletime/util/cpointers.cpp
 	bibletime/util/ctoolclass.cpp
 	bibletime/util/directoryutil.cpp
+	#frontend/keychooser
+	bibletime/frontend/keychooser/ckeychooserwidget.cpp
 #Add files to be ported here
 )
 

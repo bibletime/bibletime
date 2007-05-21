@@ -12,30 +12,35 @@
 #ifndef CKEYCHOOSERWIDGET_H
 #define CKEYCHOOSERWIDGET_H
 
-#include <qwidget.h>
-#include <qmap.h>
-#include <qstringlist.h>
+//#include <qwidget.h>
+//#include <qmap.h>
+//#include <qstringlist.h>
 //Added by qt3to4:
-#include <QWheelEvent>
-#include <QEvent>
-#include <Q3HBoxLayout>
-#include <QMouseEvent>
+//#include <QWheelEvent>
+//#include <QEvent>
+//#include <Q3HBoxLayout>
+//#include <QMouseEvent>
 
-#include <kcombobox.h>
-#include "cscrollerwidgetset.h"
+//#include <kcombobox.h>
+//#include "cscrollerwidgetset.h"
 
-
-class CLexiconKeyChooser;
+#include <QString>
+#include <QStringList>
+#include <qcombobox.h>
 //class CMinMaxLayout;
 
-class QIcon;
+//class QIcon;
 //class QComboBox;
-class QStringList;
-class QPoint;
-class QMouseEvent;
+//class QPoint;
+//class QMouseEvent;
 class QWheelEvent;
-class Q3HBoxLayout;
+class QHBoxLayout;
+class QWidget;
+class QObject;
+class QEvent;
 
+class CLexiconKeyChooser;
+class CScrollerWidgetSet;
 /*
 * We use this class to conrtol the focus move in the combobox
 * This class is used in the key chooser widgets
@@ -44,7 +49,7 @@ class CKCComboBox : public QComboBox {
 	Q_OBJECT
 
 public:
-	CKCComboBox(bool rw, QWidget * parent=0, const char * name=0 );
+	CKCComboBox();
 	/**
 	* Returns the size this widget would like to have.
 	*/
@@ -80,11 +85,11 @@ public:
 	/**
 	* the constructor
 	*/
-	CKeyChooserWidget(QStringList *list=0, const bool useNextPrevSignals = false, QWidget *parent=0, const char *name=0);
+	CKeyChooserWidget(QStringList *list=0, const bool useNextPrevSignals = false, QWidget *parent=0 );
 	/**
 	* the constructor
 	*/
-	CKeyChooserWidget(int count=0, const bool useNextPrevSignals = false, QWidget *parent=0, const char *name=0);
+	CKeyChooserWidget(int count=0, const bool useNextPrevSignals = false, QWidget *parent=0 );
 	/**
 	* This function does clear the combobox, then fill in
 	* the StringList, set the ComboBox' current item to index
@@ -177,7 +182,7 @@ private:
 	* Members should never be public!!
 	*/
 	CKCComboBox* m_comboBox;
-	Q3HBoxLayout *m_mainLayout;
+	QHBoxLayout *m_mainLayout;
 	CScrollerWidgetSet * m_scroller;
 };
 
