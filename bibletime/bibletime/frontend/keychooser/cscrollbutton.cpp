@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,22 +11,22 @@
 
 #include "cscrollbutton.h"
 
-#include "frontend/cbtconfig.h"
+//#include "../cbtconfig.h"
 
 #include <stdlib.h>
 #include <math.h>
 
 //Qt includes
-#include <qevent.h>
-#include <qapplication.h>
-#include <qcursor.h>
-//Added by qt3to4:
+#include <QEvent>
+#include <QApplication>
+#include <QCursor>
+#include <QPoint>
 #include <QMouseEvent>
 #include <QWheelEvent>
 
-CScrollButton::CScrollButton(QWidget *parent, const char *name ) : QToolButton(parent,name) {
-	setFocusPolicy(QWidget::WheelFocus);
-	setCursor( splitVCursor );
+CScrollButton::CScrollButton(QWidget *parent) : QToolButton(parent) {
+	setFocusPolicy(Qt::WheelFocus);
+	setCursor(Qt::SplitVCursor );
 
 	m_isLocked = false;
 	connect(this, SIGNAL(pressed() ), SLOT(was_pressed() ));
@@ -38,7 +38,7 @@ const bool CScrollButton::isLocked( ) const {
 }
 
 void CScrollButton::was_pressed( ) {
-	QApplication::setOverrideCursor( BlankCursor );
+	QApplication::setOverrideCursor(Qt::BlankCursor);
 	m_isLocked = true;
 	lock_Point = get_lock_Point();
 

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,13 +12,14 @@
 #ifndef CSRCOLLBUTTON_H
 #define CSRCOLLBUTTON_H
 
-#include <qwidget.h>
-#include <qtoolbutton.h>
-//Added by qt3to4:
-#include <QWheelEvent>
-#include <QMouseEvent>
+
+#include <QToolButton>
+
 
 class QMouseEvent;
+class QWidget;
+class QMouseEvent;
+class QWheelEvent;
 
 /** This Class implements the direct chooser button used in the KeyChooser Widget
   * @author The BibleTime team
@@ -29,7 +30,7 @@ public:
 	/**
 	* The constructor
 	*/
-	CScrollButton(QWidget *parent=0, const char *name=0);
+	CScrollButton(QWidget *parent=0);
 	const bool isLocked() const;
 
 signals:
