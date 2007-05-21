@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,16 +12,15 @@
 #ifndef CSCROLLERWIDGETSET_H
 #define CSCROLLERWIDGETSET_H
 
-#include <qwidget.h>
-#include <qmap.h>
-#include <qstringlist.h>
-#include <qlayout.h>
-#include <qlayout.h>
-//Added by qt3to4:
-#include <Q3VBoxLayout>
 
-#include <kcombobox.h>
-#include "cscrollbutton.h"
+#include <QWidget>
+
+
+class QVBoxLayout;
+class QToolButton;
+class QString;
+
+class CScrollButton;
 
 /**
  * This class implements the Scroller Widget-set, which
@@ -35,7 +34,7 @@ public:
 	/**
 	* the constructor
 	*/
-	CScrollerWidgetSet(QWidget *parent=0, const char *name=0);
+	CScrollerWidgetSet(QWidget *parent=0);
 	/**
 	* Sets the tooltips for the given entries using the parameters as text.
 	*/
@@ -67,7 +66,7 @@ protected slots:
 	void slotScroller(int);
 
 private:
-	Q3VBoxLayout *m_layout;
+	QVBoxLayout *m_layout;
 
 };
 
