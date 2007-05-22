@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,24 +14,25 @@
 #include "ckeyreferencewidget.h"
 #include "cscrollbutton.h"
 
-#include "backend/cswordversekey.h"
-#include "backend/cswordbiblemoduleinfo.h"
-#include "backend/cswordmoduleinfo.h"
+#include "../../backend/cswordversekey.h"
+#include "../../backend/cswordbiblemoduleinfo.h"
+#include "../../backend/cswordmoduleinfo.h"
 
-#include "util/cresmgr.h"
+#include "../../util/cresmgr.h"
 
+#include <QHBoxLayout>
 //Qt includes
-#include <qcombobox.h>
-#include <q3listbox.h>
-#include <qpushbutton.h>
+//#include <qcombobox.h>
+//#include <q3listbox.h>
+//#include <qpushbutton.h>
 //Added by qt3to4:
-#include <Q3HBoxLayout>
+//#include <Q3HBoxLayout>
 
 //KDE includes
-#include <klocale.h>
+//#include <klocale.h>
 
-CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent, const char *name )
-: CKeyChooser(modules, key, parent, name),
+CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+: CKeyChooser(modules, key, parent),
 m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 	w_ref = 0;
 	setModules(modules, false);
@@ -40,8 +41,8 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 		m_key = 0;
 		return;
 	}
-	Q3HBoxLayout* layout = new Q3HBoxLayout(this);
-	layout->setDirection( Q3BoxLayout::LeftToRight );
+	QHBoxLayout* layout = new QHBoxLayout(this);
+	layout->setDirection( QBoxLayout::LeftToRight );
 
 	w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
 	layout->addWidget(w_ref);
@@ -73,7 +74,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
 	Q_ASSERT(m_key);
 	Q_ASSERT(key);
 
-	if (!isUpdatesEnabled())
+	if (!updatesEnabled())
 		return;
 
 	setUpdatesEnabled(false);

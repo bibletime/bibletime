@@ -13,7 +13,7 @@
 #define CKEYREFERENCEWIDGET_H
 
 #include "cscrollerwidgetset.h"
-#include "backend/cswordbiblemoduleinfo.h"
+#include "../../backend/cswordbiblemoduleinfo.h"
 
 #include <qwidget.h>
 #include <qlayout.h>
