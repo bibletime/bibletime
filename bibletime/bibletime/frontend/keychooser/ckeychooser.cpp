@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,17 +10,17 @@
 
 
 #include "ckeychooser.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbiblemoduleinfo.h"
-#include "backend/cswordcommentarymoduleinfo.h"
-#include "backend/cswordlexiconmoduleinfo.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../backend/cswordbiblemoduleinfo.h"
+#include "../../backend/cswordcommentarymoduleinfo.h"
+#include "../../backend/cswordlexiconmoduleinfo.h"
 
 #include "clexiconkeychooser.h"
 #include "cbiblekeychooser.h"
 #include "cbookkeychooser.h"
 
-CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent, const char *name )
-: QWidget(parent, name),
+CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
+: QWidget(parent),
 m_inHistoryFunction(false) {}
 
 CKeyChooser::~CKeyChooser() {}
@@ -66,7 +66,7 @@ void CKeyChooser::backInHistory(int count) {
 		//    qWarning("pop_front");
 
 		m_nextKeyHistoryList.prepend(*it);
-		it = m_prevKeyHistoryList.remove(it);
+		it = m_prevKeyHistoryList.erase(it);
 		--index;
 	}
 
@@ -97,7 +97,7 @@ void CKeyChooser::forwardInHistory(int count) {
 		//    qWarning("pop_front");
 
 		m_prevKeyHistoryList.prepend(*it);
-		it = m_nextKeyHistoryList.remove(it);
+		it = m_nextKeyHistoryList.erase(it);
 		--index;
 	}
 
@@ -142,8 +142,11 @@ const QStringList CKeyChooser::getNextKeys() const {
     \fn CKeyChooser::polish()
  */
 void CKeyChooser::polish() {
-	QWidget::polish();
-
+	//Changed to ensurePolished() in qt4, just to be cautious I save this
+	ensurePolished();
+}
+void CKeyChooser::ensurePolished() {
+	QWidget::ensurePolished();
 	//connect the history calls just before we show, we want an empty history
 	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }

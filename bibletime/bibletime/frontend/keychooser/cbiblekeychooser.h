@@ -17,7 +17,7 @@
 #include <Q3PtrList>
 #include "ckeychooser.h"
 
-#include "backend/cswordbiblemoduleinfo.h"
+#include "../../backend/cswordbiblemoduleinfo.h"
 
 class CKeyReferenceWidget;
 class CSwordVerseKey;

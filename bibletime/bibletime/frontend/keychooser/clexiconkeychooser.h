@@ -17,9 +17,9 @@
 #include <Q3PtrList>
 #include <Q3HBoxLayout>
 #include "ckeychooser.h"
-#include "backend/cswordldkey.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordlexiconmoduleinfo.h"
+#include "../../backend/cswordldkey.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../backend/cswordlexiconmoduleinfo.h"
 
 class CKeyChooserWidget;
 class Q3HBoxLayout;
