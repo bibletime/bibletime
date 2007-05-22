@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,16 +16,7 @@
 #include "ckeychooser.h"
 #include "ckeychooserwidget.h"
 
-//Sword includes
-
-//Qt includes
-#include <qwidget.h>
-#include <qsize.h>
-#include <qmap.h>
-#include <q3ptrlist.h>
-#include <qstringlist.h>
-//Added by qt3to4:
-#include <Q3HBoxLayout>
+#include <QList> 
 
 class CSwordKey;
 class CSwordBookModuleInfo;
@@ -35,7 +26,7 @@ namespace sword {
 	class TreeKeyIdx;
 }
 
-class Q3HBoxLayout;
+class QHBoxLayout;
 
 /** The keychooser implementation for books.
   * @author The BibleTime team
@@ -43,7 +34,7 @@ class Q3HBoxLayout;
 class CBookKeyChooser : public CKeyChooser  {
 	Q_OBJECT
 public:
-	CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0, const char *name=0);
+	CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
 	~CBookKeyChooser();
 	/**
 	* Refreshes the content.
@@ -54,7 +45,7 @@ public:
 	*/
 	virtual void setModules(const ListCSwordModuleInfo& modules, const bool refresh = false);
 	/**
-	* Returns the key of this kechooser.
+	* Returns the key of this keychooser
 	*/
 	virtual CSwordKey* const key();
 	/**
@@ -92,10 +83,10 @@ protected slots:
 	//  void previousEntry();
 
 private:
-	Q3PtrList<CKeyChooserWidget> m_chooserWidgets;
-	Q3PtrList<CSwordBookModuleInfo> m_modules;
+	QList<CKeyChooserWidget*> m_chooserWidgets;
+	QList<CSwordBookModuleInfo*> m_modules;
 	CSwordTreeKey *m_key;
-	Q3HBoxLayout* m_layout;
+	QHBoxLayout* m_layout;
 };
 
 #endif

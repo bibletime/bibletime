@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,20 +10,19 @@
 
 
 #include "cbookkeychooser.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordbookmoduleinfo.h"
-#include "frontend/cbtconfig.h"
+#include "../../backend/cswordtreekey.h"
+#include "../../backend/cswordbookmoduleinfo.h"
+#include "../cbtconfig.h"
 
 //Qt includes
-#include <qlayout.h>
-#include <qmap.h>
-//Added by qt3to4:
-#include <Q3HBoxLayout>
+#include <QWidget>
+#include <QHBoxLayout>
+#include <QList>
 
 QMap<QObject*, int> boxes;
 
-CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent, const char *name)
-: CKeyChooser(modules, key, parent,name), m_layout(0) {
+CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+: CKeyChooser(modules, key, parent), m_layout(0) {
 
 	setModules(modules, false);
 	m_key = dynamic_cast<CSwordTreeKey*>(key);
@@ -59,7 +58,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 
 	QStringList siblings;
 	if (m_key && !oldKey.isEmpty()) {
-		siblings = QStringList::split("/", oldKey, false);
+		siblings = oldKey.split('/', QString::SkipEmptyParts);
 	}
 
 	int depth = 0;
@@ -118,7 +117,9 @@ CSwordKey* const CBookKeyChooser::key() {
 
 /** Sets another module to this keychooser */
 void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
-	m_modules.clear();
+	//m_modules.clear(); // qt3 code... but shouldn't this be AutoDelete?
+	while (!m_modules.isEmpty())
+        	delete m_modules.takeFirst();
 
 	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
@@ -133,13 +134,16 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 	//refresh the number of combos
 	if (refresh && m_modules.count() && m_key) {
 		if (!m_layout) {
-			m_layout = new Q3HBoxLayout(this);
+			m_layout = new QHBoxLayout(this);
 		}
 
 		//delete old widgets
-		m_chooserWidgets.setAutoDelete(true);
-		m_chooserWidgets.clear();
-		m_chooserWidgets.setAutoDelete(false);
+		//qt3 code, QPtrList is now QList
+		//m_chooserWidgets.setAutoDelete(true);
+		//m_chooserWidgets.clear();
+		//m_chooserWidgets.setAutoDelete(false);
+		while (!m_chooserWidgets.isEmpty())
+	        	delete m_chooserWidgets.takeFirst();
 
 		for (int i = 0; i < m_modules.first()->depth(); ++i) {
 			// Create an empty keychooser, don't handle next/prev signals
@@ -159,7 +163,7 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 			int maxWidth = (int) ((float) totalWidth / (float) m_modules.first()->depth());
 
 			w->comboBox()->setMaximumWidth(maxWidth);
-			w->comboBox()->setCurrentItem(0);
+			w->comboBox()->setCurrentIndex(0);
 
 			connect(w, SIGNAL(changed(int)), SLOT(keyChooserChanged(int)));
 			connect(w, SIGNAL(focusOut(int)), SLOT(keyChooserChanged(int)));
@@ -196,10 +200,14 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 void CBookKeyChooser::adjustFont() {
 
 	//Make sure the entries are displayed correctly.
-	for ( CKeyChooserWidget* idx = m_chooserWidgets.first(); idx; idx = m_chooserWidgets.next() ) {
-		idx->comboBox()->setFont( CBTConfig::get
-									  ( m_modules.first()->language() ).second );
+	QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
+	while (it.hasNext()) {
+		it.next()->comboBox()->setFont( CBTConfig::get( m_modules.first()->language() ).second );
 	}
+	/* qt3 code
+	for ( CKeyChooserWidget* idx = m_chooserWidgets.first(); idx; idx = m_chooserWidgets.next() ) {
+		idx->comboBox()->setFont( CBTConfig::get( m_modules.first()->language() ).second );
+	}*/
 }
 
 /** Refreshes the content. */
@@ -218,7 +226,7 @@ void CBookKeyChooser::setupCombo(const QString key, const int depth, const int c
 	if ((depth == 0) && chooserWidget && chooserWidget->comboBox()->count()) { //has already items
 		//set now the right item
 		if (CKeyChooserWidget* chooserWidget = m_chooserWidgets.at(depth)) {
-			chooserWidget->setItem( chooserWidget->comboBox()->text(currentItem) );
+			chooserWidget->setItem( chooserWidget->comboBox()->currentText() );
 		}
 
 		m_key->setOffset(oldOffset);
