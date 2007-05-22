@@ -9,7 +9,6 @@
 
 
 
-//BibleTime includes
 #include "cbiblekeychooser.h"
 #include "ckeyreferencewidget.h"
 #include "cscrollbutton.h"
@@ -21,15 +20,7 @@
 #include "../../util/cresmgr.h"
 
 #include <QHBoxLayout>
-//Qt includes
-//#include <qcombobox.h>
-//#include <q3listbox.h>
-//#include <qpushbutton.h>
-//Added by qt3to4:
-//#include <Q3HBoxLayout>
 
-//KDE includes
-//#include <klocale.h>
 
 CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
 : CKeyChooser(modules, key, parent),

@@ -67,6 +67,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp
 	bibletime/frontend/keychooser/cbookkeychooser.cpp
+	bibletime/frontend/keychooser/clexiconkeychooser.cpp
 #Add files to be ported here
 )
 

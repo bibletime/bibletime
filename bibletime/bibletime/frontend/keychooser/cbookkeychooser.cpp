@@ -117,9 +117,9 @@ CSwordKey* const CBookKeyChooser::key() {
 
 /** Sets another module to this keychooser */
 void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
-	//m_modules.clear(); // qt3 code... but shouldn't this be AutoDelete?
+	//m_modules.clear(); // qt3 code... but should this be AutoDelete or not? See clexiconkeychooser.cpp
 	while (!m_modules.isEmpty())
-        	delete m_modules.takeFirst();
+        	m_modules.takeFirst();
 
 	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();

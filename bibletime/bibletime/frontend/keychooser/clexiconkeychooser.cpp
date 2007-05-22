@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,35 +13,29 @@
 #include "ckeychooserwidget.h"
 #include "cscrollbutton.h"
 
-#include "backend/cswordlexiconmoduleinfo.h"
-#include "frontend/cbtconfig.h"
-
-#include "util/cresmgr.h"
+#include "../../backend/cswordlexiconmoduleinfo.h"
+#include "../../backend/cswordldkey.h"
+#include "../cbtconfig.h"
+#include "../../util/cresmgr.h"
 
 //STL headers
 #include <algorithm>
 #include <iterator>
 #include <map>
 
-//Qt includes
-#include <qcombobox.h>
-#include <qlayout.h>
-#include <q3listbox.h>
-//Added by qt3to4:
-#include <Q3HBoxLayout>
+#include <QHBoxLayout>
 
-//KDE includes
-#include <klocale.h>
 
-CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent, const char *name )
-: CKeyChooser(modules, key, parent, name),
+CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+: CKeyChooser(modules, key, parent),
 m_key(dynamic_cast<CSwordLDKey*>(key)) {
 
 	setModules(modules, false);
 
 	//we use a layout because the key chooser should be resized to full size
-	m_layout = new Q3HBoxLayout(this, Q3BoxLayout::LeftToRight);
-	m_layout->setResizeMode(QLayout::FreeResize);
+	m_layout = new QHBoxLayout(this);
+	m_layout->setDirection(QBoxLayout::LeftToRight);
+	m_layout->setSizeConstraint(QLayout::SetNoConstraint);
 
 	m_widget = new CKeyChooserWidget(0, false, this);
 
@@ -77,8 +71,11 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
 
 	//  qWarning("setKey start");
 	QString newKey = m_key->key();
-	const int index = m_widget->comboBox()->listBox()->index(m_widget->comboBox()->listBox()->findItem( newKey ));
-	m_widget->comboBox()->setCurrentItem(index);
+	//very complicated code, qt3
+	//const int index = m_widget->comboBox()->listBox()->index(m_widget->comboBox()->listBox()->findItem( newKey ));
+	// I hope this new qt4 code works
+	const int index = m_widget->comboBox()->findText(newKey);
+	m_widget->comboBox()->setCurrentIndex(index);
 
 	//   qWarning("setKey end");
 	emit keyChanged( m_key );
@@ -86,7 +83,7 @@ void CLexiconKeyChooser::setKey(CSwordKey* key) {
 
 void CLexiconKeyChooser::activated(int index) {
 	//  qWarning("activated");
-	const QString text = m_widget->comboBox()->text(index);
+	const QString text = m_widget->comboBox()->itemText(index);
 
 	// To prevent from eternal loop, because activated() is emitted again
 	if (m_key && m_key->key() != text) {
@@ -110,8 +107,14 @@ void CLexiconKeyChooser::refreshContent() {
 		typedef std::multimap<unsigned int, QStringList*> EntryMap;
 		EntryMap entryMap;
 		QStringList* entries = 0;
-		for (m_modules.first(); m_modules.current(); m_modules.next()) {
+		//qt3 code
+		/*for (m_modules.first(); m_modules.current(); m_modules.next()) {
 			entries = m_modules.current()->entries();
+			entryMap.insert( std::make_pair(entries->count(), entries) );
+		}*/
+		QListIterator<CSwordLexiconModuleInfo*> mit(m_modules);
+		while (mit.hasNext()) {
+			entries = mit.next()->entries();
 			entryMap.insert( std::make_pair(entries->count(), entries) );
 		}
 
@@ -155,9 +158,12 @@ void CLexiconKeyChooser::adjustFont() {
 
 /** Sets the module and refreshes the combo boxes */
 void CLexiconKeyChooser::setModules( const ListCSwordModuleInfo& modules, const bool refresh ) {
-	Q_ASSERT(!m_modules.autoDelete());
-	m_modules.clear();
-	Q_ASSERT(!m_modules.autoDelete());
+	//qt3 code:
+	//Q_ASSERT(!m_modules.autoDelete());
+	//m_modules.clear();
+	//Q_ASSERT(!m_modules.autoDelete());
+	while (!m_modules.isEmpty())
+        	m_modules.takeFirst(); // not deleting the pointer
 
 	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();

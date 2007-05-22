@@ -12,9 +12,6 @@
 #ifndef CBIBLEKEYCHOOSER_H
 #define CBIBLEKEYCHOOSER_H
 
-//#include <qwidget.h>
-//Added by qt3to4:
-//#include <Q3PtrList>
 
 #include "ckeychooser.h"
 #include "../../backend/cswordbiblemoduleinfo.h"

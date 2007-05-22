@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,17 +12,17 @@
 #ifndef CLEXICONKEYCHOOSER_H
 #define CLEXICONKEYCHOOSER_H
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <Q3PtrList>
-#include <Q3HBoxLayout>
+
 #include "ckeychooser.h"
-#include "../../backend/cswordldkey.h"
 #include "../../backend/cswordmoduleinfo.h"
-#include "../../backend/cswordlexiconmoduleinfo.h"
+
 
 class CKeyChooserWidget;
-class Q3HBoxLayout;
+class CSwordLexiconModuleInfo;
+class CSwordLDKey;
+
+class QWidget;
+class QHBoxLayout;
 
 /**
  * This class implements the KeyChooser for lexicons
@@ -40,7 +40,7 @@ public:
 	*
 	* you should not need to use this, use @ref CKeyChooser::createInstance instead
 	*/
-	CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0, const char *name=0);
+	CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
 
 public slots:
 	/**
@@ -59,7 +59,7 @@ public slots:
 	**/
 	virtual void activated(int index);
 	/**
-	* Reimplementatuion.
+	* Reimplementation.
 	*/
 	virtual void refreshContent();
 	/**
@@ -70,8 +70,8 @@ public slots:
 protected:
 	CKeyChooserWidget *m_widget;
 	CSwordLDKey* m_key;
-	Q3PtrList<CSwordLexiconModuleInfo> m_modules;
-	Q3HBoxLayout *m_layout;
+	QList<CSwordLexiconModuleInfo*> m_modules;
+	QHBoxLayout *m_layout;
 
 	virtual void adjustFont();
 
