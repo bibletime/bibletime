@@ -1,4 +1,4 @@
-PROJECT(bibletime CXX)
+PROJECT(bibletime CXX C)
 
 cmake_minimum_required(VERSION 2.4.0)
 
