@@ -7,26 +7,23 @@
 *
 **********/
 
-
 //BibleTime includes
 #include "ckeyreferencewidget.h"
 #include "cscrollerwidgetset.h"
 
 //BibleTime frontend includes
-#include "frontend/cbtconfig.h"
-#include "backend/cswordversekey.h"
-#include "util/cresmgr.h"
+#include "../cbtconfig.h"
+#include "../../backend/cswordversekey.h"
+#include "../../util/cresmgr.h"
 
 //Qt includes
-#include <klineedit.h>
 #include <QString>
-#include <qstringlist.h>
-#include <qevent.h>
-#include <qpixmap.h>
-#include <qapplication.h>
-//Added by qt3to4:
-#include <Q3HBoxLayout>
-#include <kcompletion.h>
+#include <QStringList>
+#include <QEvent>
+#include <QPixmap>
+#include <QApplication>
+#include <QHBoxLayout>
+
 #include <kglobalsettings.h>
 #include <kcompletionbox.h>
 #include <klocale.h>
@@ -51,7 +48,7 @@ QString CKeyReferenceCompletion::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 /* To get popup working we have to rework KLineEdit too */
-CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char *name) : KLineEdit(parent,name) {
+CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char *name) : KLineEdit(parent) {
 }
 
 void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
@@ -82,7 +79,7 @@ void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char *name) : QWidget(parent,name) {
+CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char *name) : QWidget(parent) {
 
 	updatelock = false;
 	m_module = mod;
@@ -105,7 +102,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_chapterScroller = new CScrollerWidgetSet(this);
 	m_verseScroller = new CScrollerWidgetSet(this);
 
-	m_mainLayout = new Q3HBoxLayout( this );
+	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
 	m_mainLayout->addWidget(m_textbox);
