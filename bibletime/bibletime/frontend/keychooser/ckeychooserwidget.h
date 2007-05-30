@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CKEYCHOOSERWIDGET_H
 #define CKEYCHOOSERWIDGET_H
 

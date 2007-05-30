@@ -61,14 +61,15 @@ SET(bibletime_SOURCES
 	bibletime/util/ctoolclass.cpp
 	bibletime/util/directoryutil.cpp
 	#frontend/keychooser
-	bibletime/frontend/keychooser/ckeychooserwidget.cpp
-	bibletime/frontend/keychooser/cscrollerwidgetset.cpp
-	bibletime/frontend/keychooser/cscrollbutton.cpp
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp
 	bibletime/frontend/keychooser/cbookkeychooser.cpp
+	#bibletime/frontend/keychooser/cbooktreechooser.cpp
 	bibletime/frontend/keychooser/clexiconkeychooser.cpp
+	bibletime/frontend/keychooser/ckeychooserwidget.cpp
 	bibletime/frontend/keychooser/ckeyreferencewidget.cpp
+	bibletime/frontend/keychooser/cscrollerwidgetset.cpp
+	bibletime/frontend/keychooser/cscrollbutton.cpp
 #Add files to be ported here
 )
 
