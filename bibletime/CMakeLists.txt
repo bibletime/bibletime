@@ -5,9 +5,13 @@ cmake_minimum_required(VERSION 2.4.0)
 ######################################################
 # Find required packages
 #
-#System includes
 find_package(Qt4 REQUIRED)  		#Qt4
+#Workaround for KDE4 detection. Set ${CMAKE_INSTALL_PREFIX} to your KDE4 install dir.
+set(OLD_CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}) #backup
+set(CMAKE_INSTALL_PREFIX /usr/lib/kde4) #kde4 dir
 find_package(KDE4 REQUIRED) 		#KDE4
+set(CMAKE_INSTALL_PREFIX ${OLD_CMAKE_INSTALL_PREFIX}) #restore
+
 #custom includes
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CLucene REQUIRED)	#CLucene
