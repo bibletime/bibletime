@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,137 +10,40 @@
 
 
 #include "cbooktreechooser.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordbookmoduleinfo.h"
-#include "frontend/cbtconfig.h"
+#include "../../backend/cswordtreekey.h"
+#include "../../backend/cswordbookmoduleinfo.h"
+#include "../cbtconfig.h"
 
-//Qt includes
-#include <qlayout.h>
-#include <q3header.h>
-#include <q3listview.h>
-#include <qcursor.h>
-//Added by qt3to4:
-#include <Q3HBoxLayout>
 
-//KDE includes
+#include <QHBoxLayout>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QHeaderView>
+
 #include <kapplication.h>
 
-////////////
 
-CBookTreeChooser::TreeItem::TreeItem(Q3ListViewItem* parent, Q3ListViewItem* after, CSwordTreeKey* key, const QString keyName)
-: KListViewItem(parent, after),
-m_key(key),
-m_keyName(keyName) {
-	const unsigned long offset = m_key->getOffset();
-
-	m_key->key(m_keyName);
-	setText(0, QString(m_key->getLocalName()) );
-
-	m_key->setOffset( offset );
-};
-
-CBookTreeChooser::TreeItem::TreeItem(Q3ListViewItem* parent,CSwordTreeKey* key, const QString keyName)
-: KListViewItem(parent),
-m_key(key),
-m_keyName(keyName) {
-	const unsigned int offset = m_key->getOffset();
-
-	m_key->key(m_keyName);
-	setText(0, QString(m_key->getLocalName()) );
-
-	m_key->setOffset( offset );
-};
-
-CBookTreeChooser::TreeItem::TreeItem(Q3ListView* view, Q3ListViewItem* after,CSwordTreeKey* key, const QString keyName)
-: KListViewItem(view,after),
-m_key(key),
-m_keyName(keyName) {
-	const unsigned int offset = m_key->getOffset();
-
-	m_key->key(m_keyName);
-	setText(0, QString(m_key->getLocalName()) );
-
-	m_key->setOffset( offset );
-};
-
-const QString& CBookTreeChooser::TreeItem::key() const {
-	return m_keyName;
-};
-
-/** Initializes this item with the correct caption. */
-void CBookTreeChooser::TreeItem::setup() {
-	const unsigned int offset = m_key->getOffset();
-
-	m_key->key(m_keyName);
-	setExpandable(m_key->hasChildren());
-
-	m_key->setOffset( offset );
-
-	KListViewItem::setup();
-}
-
-void CBookTreeChooser::TreeItem::createChilds() {
-	//make sure that we don't change the status of the key!
-
-	const unsigned long offset = m_key->getOffset();
-
-	m_key->key(m_keyName);
-
-	if (m_key->hasChildren()) {
-		m_key->firstChild(); //go to the first child
-
-		Q3ListViewItem* oldItem = 0;
-
-		do {
-			if (oldItem) {
-				oldItem = new TreeItem(this, oldItem, m_key, m_key->key());
-			}
-			else {
-				oldItem = new TreeItem(this, m_key, m_key->key());
-			}
-
-			//    oldItem->setExpandable( m_key->hasChildren() );
-		}
-		while (m_key->nextSibling());
-	}
-
-	m_key->setOffset( offset ); //restore the old state
-}
-
-void CBookTreeChooser::TreeItem::setOpen(bool o) {
-	//setup the tree under this item
-	if ((!isOpen() && o) && childCount() == 0) {
-		listView()->viewport()->setCursor(WaitCursor);
-		createChilds();
-		listView()->viewport()->unsetCursor();
-	}
-
-	KListViewItem::setOpen(o);
-}
-
-//////////////////////////////////
-
-CBookTreeChooser::CBookTreeChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent, const char *name)
-: CKeyChooser(modules, key, parent,name),
+CBookTreeChooser::CBookTreeChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+: CKeyChooser(modules, key, parent),
 m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
+	
 	setModules(modules, false);
 
+	//if there is no module there is no key either
 	if (!modules.count()) {
 		m_modules.clear();
 		m_key = 0;
 	}
 
 	//now setup the keychooser widgets
-	Q3HBoxLayout* layout = new Q3HBoxLayout(this);
+	m_treeView = new QTreeWidget(this);
 
-	m_treeView = new KListView(this);
+	QHBoxLayout* layout = new QHBoxLayout(this);	
 	layout->addWidget(m_treeView);
-	m_treeView->addColumn("Tree");
 	m_treeView->header()->hide();
-	m_treeView->setSorting(-1);
-	m_treeView->setRootIsDecorated(true);
-	m_treeView->setFullWidth(true);
-	connect(m_treeView, SIGNAL(executed(Q3ListViewItem*)), SLOT(itemActivated(Q3ListViewItem*)));
+	
+	//when user selects the item whe must react
+	connect(m_treeView, SIGNAL(currentItemChanged ( QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(itemActivated(QTreeWidgetItem*)));
 
 	setKey(key);
 	adjustFont();
@@ -148,65 +51,47 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 
 CBookTreeChooser::~CBookTreeChooser() {}
 
-/** Sets a new key to this keychooser */
-void CBookTreeChooser::setKey(CSwordKey* key/*newKey*/) {
+/** Sets a new key to this keychooser. Inherited from ckeychooser. */
+void CBookTreeChooser::setKey(CSwordKey* key) {
 	setKey(key, false);
 }
 
-/** Sets a new key to this keychooser */
+/** Sets a new key to this keychooser. Inherited from ckeychooser. */
 void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	if (m_key != newKey ) {
 		m_key = dynamic_cast<CSwordTreeKey*>(newKey);
 	}
-
-	const QString key = m_key->key();
-
-	QStringList siblings;
-	if (m_key && !key.isEmpty()) {
-		siblings = QStringList::split("/",key,false);
+	
+	const QString key = m_key->key(); //key as text, path
+	
+	QList<QTreeWidgetItem*> itemlist = m_treeView->findItems(key,
+		(Qt::MatchRecursive | Qt::MatchWrap | Qt::MatchCaseSensitive | Qt::MatchFixedString),
+		1); //find the key text in items
+	//there should be at most one match, keys are unique
+	QTreeWidgetItem* matching_item = m_treeView->topLevelItem(0);
+	if (itemlist.count()) {
+		matching_item = itemlist[0];
 	}
 
-	//find the right listview item
-	const int count = siblings.count();
-	int index = 0;
-	QString currentSibling = siblings[index];
-
-	Q3ListViewItem* child = m_treeView->firstChild();
-	while( child && index < count ) {
-		if (child->text(0) == currentSibling) { //found a parent of our item
-			//found right entry?
-			TreeItem* i = dynamic_cast<TreeItem*>(child);
-			if (!i || i->key() == key) {
-				break;
-			}
-			i->setOpen(true); //automatically creates childs
-			child = i->firstChild();
-			currentSibling = siblings[++index];
-		}
-		else {
-			child = child->nextSibling();
-		}
-	}
-
-	m_treeView->setCurrentItem( child );
-	m_treeView->setSelected( child, true );
-	m_treeView->ensureItemVisible(child);
+	m_treeView->setCurrentItem( matching_item );
+	m_treeView->scrollToItem(matching_item);
 
 	if (emitSignal) {
 		emit keyChanged(m_key);
 	}
 }
 
-/** Returns the key of this kechooser. */
+/** Returns the key of this keychooser. Inherited from ckeychooser.*/
 CSwordKey* const CBookTreeChooser::key() {
 	return m_key;
 }
 
-/** Sets another module to this keychooser */
+/** Sets another module to this keychooser. Inherited from ckeychooser (therefore
+the list of modules instead of one). */
 void CBookTreeChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
+	
+	//Add given modules into private list
 	m_modules.clear();
-
-	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
 	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
 		if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(*it)) {
@@ -214,104 +99,84 @@ void CBookTreeChooser::setModules(const ListCSwordModuleInfo& modules, const boo
 		}
 	}
 
+	//if there exists a module and a key, setup the visible tree
 	if (refresh && m_modules.count() && m_key) {
-		const uint offset = m_key->getOffset();
+		const uint offset = m_key->getOffset(); //actually unnecessary, taken care of in setupTree
 		setupTree();
 		m_key->setOffset( offset );
 
-		/*  m_key->root();
-		  m_key->firstChild();
-		  setKey(m_key, true);*/
-
-		//  m_treeView->clear();
-		//
-		//    const QString oldKey = m_key->key();
-		//  m_key->root();
-		//  m_key->firstChild();
-		//  setupTree(0,0,m_key);
-		//
-		//    m_key->key(oldKey);
-		//
-		//  updateKey(m_key);
 		adjustFont(); //only when refresh is set.
 	}
 }
 
-/** No descriptions */
+/** From ckeychooser. */
 void CBookTreeChooser::adjustFont() {
 	//Make sure the entries are displayed correctly.
-	// if ( m_modules.first()->isUnicode() ){
-	m_treeView->setFont( CBTConfig::get
-							 (m_modules.first()->language()).second );
-	//  qWarning("Unicode Book detected");
-	// }
-	// else{
-	//  m_treeView->setFont( CBTConfig::get(CBTConfig::standard) );
-	//  qWarning("Standard Book detected");
-	// }
+	m_treeView->setFont( CBTConfig::get(m_modules.first()->language()).second );
+	
 }
 
 
-/** Refreshes the content. */
+/** Refreshes the content. Inherited from ckeychooser. */
 void CBookTreeChooser::refreshContent() {
 	if (m_key) {
 		updateKey( m_key ); //refresh with current key
 	}
 }
 
-/** No descriptions */
-void CBookTreeChooser::itemActivated( Q3ListViewItem* item ) {
-	TreeItem* i = dynamic_cast<TreeItem*>(item);
-	if (!i) {
-		return;
-	}
 
-	m_key->key( i->key() );
+/** Slot for signal when item is selected by user. */
+void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
+	
+	//set the key with text
+	m_key->key( (item->data(1, Qt::DisplayRole)).toByteArray().data() );
 
-	if (i->childCount() > 0 || i->isExpandable()) {
-		i->setOpen(true);
-	}
-
+	//tell possible listeners about the change
 	emit keyChanged(m_key);
 }
 
-/** No descriptions */
+/** Inherited from ckeychooser */
 void CBookTreeChooser::updateKey( CSwordKey* key ) {
 	setKey(key, false);
 }
 
-/** Reimplementationm to handle tree creation on show. */
+/** Reimplementation to handle tree creation on show. */
 void CBookTreeChooser::show() {
 	CKeyChooser::show();
 
-	if (!m_treeView->childCount()) {
-		KApplication::setOverrideCursor(WaitCursor);
-		setupTree(); //create the first level of the tree structure
+	if (!m_treeView->topLevelItemCount()) {
+		KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+		setupTree(); //create the tree structure
 		m_treeView->resize(m_treeView->sizeHint());
 		KApplication::restoreOverrideCursor();
 	}
 }
 
-/** Creates the first level of the tree structure. */
+/** Creates the tree structure in the view. */
 void CBookTreeChooser::setupTree() {
 	m_treeView->clear();
 
 	const unsigned long offset = m_key->getOffset();
+	
 	m_key->root();
+	addKeyChildren(m_key, m_treeView->invisibleRootItem());
 
-	if (m_key->hasChildren()) {
-		Q3ListViewItem* item = 0;
-
-		m_key->firstChild();
-		do {
-			//the TreeItem constructor doesn't change the state of the key
-			item = new TreeItem(m_treeView, item, m_key, m_key->key());
-		}
-		while (m_key->nextSibling());
-	}
-
-	/*   m_key->root();
-	   m_key->firstChild();*/
 	m_key->setOffset( offset );
 	setKey(m_key, false); //the module may have changed
+}
+
+/** Populates tree widget with items. */
+void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item) {
+	if (key->hasChildren()) {
+        	key->firstChild();
+		do { 
+			QStringList columns;
+			columns << key->getLocalName() << key->getText();
+			QTreeWidgetItem *i = new QTreeWidgetItem(item, columns, QTreeWidgetItem::Type);
+			i->setData(0, Qt::ToolTipRole, key->getLocalName());
+			int offset = key->getOffset();
+			addKeyChildren(key, i);
+			key->setOffset(offset);
+		} while (key->nextSibling());
+	}
 }
