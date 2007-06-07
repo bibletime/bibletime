@@ -116,7 +116,7 @@ ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-fexceptions" #Enable exception handling
+		COMPILE_FLAGS "-fexceptions -DQT3_SUPPORT" #Enable exception handling and support for QT3 compatibility classes
 )
 
 INSTALL(TARGETS bibletime

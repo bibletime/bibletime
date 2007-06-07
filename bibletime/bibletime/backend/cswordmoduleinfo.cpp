@@ -721,8 +721,8 @@ QString CSwordModuleInfo::aboutText() const {
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(i18n("Markup"))
-            .arg(!QString(m_module->getConfigEntry("SourceType")).isEmpty()? m_module->
-                 getConfigEntry("SourceType") : i18n("unknown"));
+            .arg(!QString(m_module->getConfigEntry("SourceType")).isEmpty()? QString(m_module->
+                 getConfigEntry("SourceType")) : i18n("unknown"));
 
     text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
             .arg(i18n("Location"))

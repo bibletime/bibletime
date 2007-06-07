@@ -359,11 +359,11 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 	QString destinationLanguage = options.destinationLanguage;
 
  	sword::StringList locales = sword::LocaleMgr::getSystemLocaleMgr()->getAvailableLocales();
- 	if (/*options.sourceLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage) == locales.end()) { //sourceLanguage not available
+ 	if (/*options.sourceLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage.utf8().constData()) == locales.end()) { //sourceLanguage not available
 		sourceLanguage = "en_US";
  	}
 
- 	if (/*options.destinationLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage) == locales.end()) { //destination not available
+ 	if (/*options.destinationLanguage == "en" ||*/ std::find(locales.begin(), locales.end(), sourceLanguage.utf8().constData()) == locales.end()) { //destination not available
 		destinationLanguage = "en_US";
  	}
 
