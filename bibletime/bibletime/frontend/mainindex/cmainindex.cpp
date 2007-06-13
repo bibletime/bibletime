@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,35 +13,35 @@
 #include "cmainindex.h"
 #include "cindexitem.h"
 
-#include "backend/creferencemanager.h"
-#include "backend/cswordmoduleinfo.h"
+#include "../../backend/creferencemanager.h"
+//#include "../../backend/cswordmoduleinfo.h"
 
-#include "frontend/searchdialog/csearchdialog.h"
-#include "frontend/cbtconfig.h"
-#include "frontend/cdragdropmgr.h"
-#include "frontend/cinfodisplay.h"
+#include "../searchdialog/csearchdialog.h"
+#include "../cbtconfig.h"
+//#include "../cdropmgr.h"
+#include "../cinfodisplay.h"
 
-#include "frontend/cprinter.h"
+#include "../cprinter.h"
 
-#include "util/cresmgr.h"
-#include "util/scoped_resource.h"
+#include "../../util/cresmgr.h"
+#include "../../util/scoped_resource.h"
 
 //Qt includes
-#include <q3header.h>
-#include <q3listview.h>
-#include <q3dragobject.h>
-#include <qinputdialog.h>
+//#include <q3header.h>
+//#include <q3listview.h>
+//#include <q3dragobject.h>
+#include <QInputDialog>
 #include <qregexp.h>
 //Added by qt3to4:
 #include <QDragLeaveEvent>
-#include <Q3PtrList>
+//#include <Q3PtrList>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 
 //KDE includes
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
 
@@ -82,7 +82,7 @@ void CMainIndex::ToolTip::maybeTip(const QPoint& p) {
 	}
 }
 
-CMainIndex::CMainIndex(QWidget *parent) : KListView(parent),
+CMainIndex::CMainIndex(QWidget *parent) : QTreeWidget(parent),
 m_searchDialog(0), m_toolTip(0), m_itemsMovable(false), m_autoOpenFolder(0), m_autoOpenTimer(this) {
 	initView();
 	initConnections();
@@ -148,7 +148,7 @@ void CMainIndex::initView() {
 	setSelectionModeExt(Extended);
 
 	//setup the popup menu
-	m_popup = new KPopupMenu(viewport());
+	m_popup = new KMenu(viewport());
 	m_popup->insertTitle(i18n("Bookshelf"));
 
 	m_actions.newFolder = new KAction(i18n("Create a new folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
@@ -195,18 +195,18 @@ void CMainIndex::initView() {
 
 /** Initialize the SIGNAL<->SLOT connections */
 void CMainIndex::initConnections() {
-	connect(this, SIGNAL(executed(Q3ListViewItem*)),
+	connect(this, SIGNAL(executed(QTreeWidgetItem*)),
 			SLOT(slotExecuted(Q3ListViewItem*)));
-	connect(this, SIGNAL(dropped(QDropEvent*, Q3ListViewItem*, Q3ListViewItem*)),
-			SLOT(dropped(QDropEvent*, Q3ListViewItem*, Q3ListViewItem*)));
-	connect(this, SIGNAL(contextMenu(KListView*, Q3ListViewItem*, const QPoint&)),
-			SLOT(contextMenu(KListView*, Q3ListViewItem*, const QPoint&)));
+	connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+			SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+	connect(this, SIGNAL(contextMenu(KListView*, QTreeWidgetItem*, const QPoint&)),
+			SLOT(contextMenu(KListView*, QTreeWidgetItem*, const QPoint&)));
 	connect(&m_autoOpenTimer, SIGNAL(timeout()),
 			this, SLOT(autoOpenTimeout()));
 }
 
 /** Is called when an item was clicked/double clicked. */
-void CMainIndex::slotExecuted( Q3ListViewItem* i ) {
+void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
 	CItemBase* ci = dynamic_cast<CItemBase*>(i);
 	if (!ci) {
 		return;
@@ -238,7 +238,7 @@ Q3DragObject* CMainIndex::dragObject() {
 
 	CDragDropMgr::ItemList dndItems;
 
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	for (items.first(); items.current(); items.next()) {
 		if (CItemBase* i = dynamic_cast<CItemBase*>(items.current())) {
 			//we can move this item!
@@ -277,7 +277,7 @@ void CMainIndex::initTree() {
 }
 
 /** No descriptions */
-void CMainIndex::dropped( QDropEvent* e, Q3ListViewItem* parent, Q3ListViewItem* after) {
+void CMainIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidgetItem* after) {
 	Q_ASSERT(after);
 	Q_ASSERT(parent);
 
@@ -346,9 +346,9 @@ void CMainIndex::dropped( QDropEvent* e, Q3ListViewItem* parent, Q3ListViewItem*
 	if (moveSelectedItems) {
 		//move all selected items after the afterItem
 		if (m_itemsMovable) {
-			Q3PtrList<Q3ListViewItem> items = selectedItems();
-			Q3ListViewItem* i = items.first();
-			Q3ListViewItem* after = afterItem;
+			QList<QTreeWidgetItem> items = selectedItems();
+			QTreeWidgetItem* i = items.first();
+			QTreeWdigetItem* after = afterItem;
 			while (i && afterItem) {
 				i->moveItem(after);
 				after = i;
@@ -359,7 +359,7 @@ void CMainIndex::dropped( QDropEvent* e, Q3ListViewItem* parent, Q3ListViewItem*
 	}
 
 	if (removeSelectedItems) {
-		Q3PtrList<Q3ListViewItem> items = selectedItems();
+		QList<QTreeWidgetItem> items = selectedItems();
 		items.setAutoDelete(true);
 		items.clear(); //delete the selected items we dragged
 	}
@@ -404,9 +404,9 @@ KAction* const CMainIndex::action( const CItemBase::MenuAction type ) const {
 }
 
 /** Shows the context menu at the given position. */
-void CMainIndex::contextMenu(KListView* /*list*/, Q3ListViewItem* i, const QPoint& p) {
+void CMainIndex::contextMenu(QTreeWidget* /*list*/, QTreeWidgetItem* i, const QPoint& p) {
 	//setup menu entries depending on current selection
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 
 	if (items.count() == 0) { 
 		//special handling for no selection
@@ -506,7 +506,7 @@ void CMainIndex::printBookmarks() {
 	CPrinter::KeyTreeItem::Settings settings;
 	settings.keyRenderingFace = CPrinter::KeyTreeItem::Settings::CompleteShort;
 
-	Q3PtrList<Q3ListViewItem> items;
+	QList<QTreeWidgetItem> items;
 	CBookmarkFolder* bf = dynamic_cast<CBookmarkFolder*>(currentItem());
 
 	if (bf) {
@@ -532,7 +532,7 @@ void CMainIndex::printBookmarks() {
 
 /** Deletes the selected entries. */
 void CMainIndex::deleteEntries() {
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	if (!items.count())
 		return;
 
@@ -552,7 +552,7 @@ void CMainIndex::deleteEntries() {
 
 /** Opens the searchdialog for the selected modules. */
 void CMainIndex::searchInModules() {
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	ListCSwordModuleInfo modules;
 	for (items.first(); items.current(); items.next()) {
 		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
@@ -596,7 +596,7 @@ void CMainIndex::aboutModule() {
 
 /** Reimplementation. Takes care of movable items. */
 void CMainIndex::startDrag() {
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	m_itemsMovable = true;
 
 	for (items.first(); items.current() && m_itemsMovable; items.next()) {
@@ -608,7 +608,7 @@ void CMainIndex::startDrag() {
 		}
 	}
 
-	KListView::startDrag();
+	QTreeWidget::startDrag();
 }
 
 /** Reimplementation to support the items dragEnter and dragLeave functions. */
@@ -632,7 +632,7 @@ void CMainIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
 		m_autoOpenFolder = 0;
 	}
 
-	KListView::contentsDragMoveEvent(event);
+	QTreeWidget::contentsDragMoveEvent(event);
 }
 
 QRect CMainIndex::drawItemHighlighter(QPainter* painter, Q3ListViewItem* item) {
@@ -642,7 +642,7 @@ QRect CMainIndex::drawItemHighlighter(QPainter* painter, Q3ListViewItem* item) {
 		return QRect();
 	}
 
-	return KListView::drawItemHighlighter(painter, item);
+	return QTreeWidget::drawItemHighlighter(painter, item);
 }
 
 
@@ -656,7 +656,7 @@ void CMainIndex::autoOpenTimeout() {
 /** No descriptions */
 void CMainIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
 	m_autoOpenTimer.stop();
-	KListView::contentsDragLeaveEvent(e);
+	QTreeWidget::contentsDragLeaveEvent(e);
 }
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
@@ -693,13 +693,13 @@ const bool CMainIndex::isMultiAction( const CItemBase::MenuAction type ) const {
 }
 
 /** Is called when items should be moved. */
-void CMainIndex::moved( Q3PtrList<Q3ListViewItem>& /*items*/, Q3PtrList<Q3ListViewItem>& /*afterFirst*/, Q3PtrList<Q3ListViewItem>& /*afterNow*/) {
+void CMainIndex::moved( QList<QTreeWidgetItem>& /*items*/, QList<QTreeWidgetItem>& /*afterFirst*/, QList<QTreeWidgetItem>& /*afterNow*/) {
 	qDebug("move items");
 }
 
 /** Opens an editor window to edit the modules content. */
 void CMainIndex::editModulePlain() {
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	ListCSwordModuleInfo modules;
 	for (items.first(); items.current(); items.next()) {
 		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
@@ -713,7 +713,7 @@ void CMainIndex::editModulePlain() {
 
 /** Opens an editor window to edit the modules content. */
 void CMainIndex::editModuleHTML() {
-	Q3PtrList<Q3ListViewItem> items = selectedItems();
+	QList<QTreeWidgetItem> items = selectedItems();
 	ListCSwordModuleInfo modules;
 	for (items.first(); items.current(); items.next()) {
 		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
@@ -740,7 +740,7 @@ void CMainIndex::saveBookmarks() {
 	//find the bookmark folder
 	CItemBase* i = 0;
 
-	Q3ListViewItemIterator it( this );
+	QTreeWidgetItemIterator it( this );
 	while ( it.current() ) {
 		i = dynamic_cast<CItemBase*>( it.current() );
 
@@ -768,7 +768,7 @@ void CMainIndex::readSettings() {
 	QStringList openGroups = CBTConfig::get(CBTConfig::bookshelfOpenGroups);
 	for (QStringList::Iterator it( openGroups.begin() ); it != openGroups.end(); ++it) {
 		QStringList path = QStringList::split("/", (*it)); //e.g. with items parent, child
-		Q3ListViewItem* item = firstChild(); //begin on the top for each item
+		QTreeWidgetItem* item = firstChild(); //begin on the top for each item
 		Q_ASSERT(item);
 		unsigned int index = 1;
 
@@ -804,7 +804,7 @@ void CMainIndex::readSettings() {
 
 	//restore the selected item
 	QStringList path = QStringList::split("/", CBTConfig::get(CBTConfig::bookshelfCurrentItem));
-	Q3ListViewItem* item = firstChild();
+	QTreeWidgetItem* item = firstChild();
 	Q_ASSERT(item);
 	unsigned int index = 1;
 	for (QStringList::iterator it( path.begin() ); it != path.end(); ++it) {
@@ -832,11 +832,11 @@ void CMainIndex::saveSettings() {
 	//save the complete names of all open groups to the settings file (e.g. Bibles/German/,Bookmarks/Jeuss Christ
 	QStringList openGroups;
 
-	Q3ListViewItemIterator it( this );
+	QTreeWidgetItemIterator it( this );
 	while ( it.current() ) {
 		if ( it.current()->isOpen() ) { //is a group and open
 			//it.current()'s full name needs to be added to the list
-			Q3ListViewItem* i = it.current();
+			QTreeWidgetItem* i = it.current();
 			QString fullName = i->text(0);
 			while (i->parent()) {
 				i = i->parent();
@@ -857,7 +857,7 @@ void CMainIndex::saveSettings() {
 // 		verticalScrollBar() ? verticalScrollBar()->value() : 0);
 
 	//save the currently selected item
-	Q3ListViewItem* item = currentItem();
+	QTreeWidgetItem* item = currentItem();
 	QString path;
 	while (item) {
 		path.prepend( item->text(0) + "/" );
@@ -868,7 +868,7 @@ void CMainIndex::saveSettings() {
 
 void CMainIndex::polish()
 {
-	KListView::polish();
+	QTreeWidget::polish();
 	initTree();
 	readSettings();
 }

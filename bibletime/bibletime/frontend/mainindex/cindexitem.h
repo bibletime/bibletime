@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,25 +13,26 @@
 #define CINDEXITEM_H
 
 //BibleTime includes
-#include "util/cpointers.h"
+#include "../../util/cpointers.h"
 
-#include "backend/cswordmoduleinfo.h"
+#include "../../backend/cswordmoduleinfo.h"
 
 //Qt includes
-#include <qdom.h>
+#include <QtXml/qdom.h>
 //Added by qt3to4:
 #include <QDropEvent>
-#include <Q3PtrList>
+#include <QList>
+#include <QTreeWidgetItem>
 
 //KDE includes
-#include <klistview.h>
+//#include <klistview.h>
 
 class KConfig;
 class CFolderBase;
 class CTreeFolder;
 class CMainIndex;
 
-class CItemBase : public KListViewItem/*, public CPointers */ {
+class CItemBase : public QTreeWidgetItem/*, public CPointers */ {
 public:
 	enum Type {
 		Unknown = 0,
@@ -129,7 +130,7 @@ protected:
 	};
 	/** Our extended version of the dropped method to include a item above the point we dropped the stuff.
 	*/
-	virtual void dropped( QDropEvent* /*e*/, Q3ListViewItem* /*after*/) {}
+	virtual void dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*after*/) {}
 	;
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
@@ -162,7 +163,7 @@ protected: // Protected methods
 	* In this case open the searchdialog. In the case of a referebnce open the module at the given position.
 	*/
 	virtual bool acceptDrop( const QMimeSource* src ) const;
-	virtual void dropped( QDropEvent* e, Q3ListViewItem* after );
+	virtual void dropped( QDropEvent* e, QTreeWidgetItem* after );
 
 private:
 	CSwordModuleInfo* m_module;
@@ -246,7 +247,7 @@ public:
 	void rename();
 	virtual void newSubFolder();
 
-	Q3PtrList<Q3ListViewItem> getChildList();
+	QList<QTreeWidgetItem> getChildList();
 
 protected:
 	/**
@@ -318,7 +319,7 @@ public:
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
 	virtual bool acceptDrop(const QMimeSource * src) const;
-	virtual void dropped(QDropEvent *e, Q3ListViewItem* after);
+	virtual void dropped(QDropEvent *e, QTreeWidgetItem* after);
 
 	/**
 	* Loads bookmarks from XML content

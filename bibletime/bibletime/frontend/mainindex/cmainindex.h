@@ -2,12 +2,10 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
-
 
 #ifndef CMAININDEX_H
 #define CMAININDEX_H
@@ -15,31 +13,39 @@
 //BibleTime includes
 #include "cindexitem.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../displaywindow/cdisplaywindow.h"
 
-#include "util/cpointers.h"
+#include "../../util/cpointers.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <qtimer.h>
-#include <qtooltip.h>
+#include <QTimer>
+#include <QToolTip>
+#include <QList>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 //Added by qt3to4:
-#include <QDropEvent>
-#include <QDragMoveEvent>
-#include <QDragLeaveEvent>
-#include <Q3PtrList>
+//#include <QDropEvent>
+//#include <QDragMoveEvent>
+//#include <QDragLeaveEvent>
+//#include <Q3PtrList>
 
 //KDE includes
 #include <kaction.h>
-#include <klistview.h>
 
 class CSearchDialog;
+class CMainIndex;
+class QWidget;
+class QDropEvent;
+class QDragMoveEvent;
+class QDragLeaveEvent;
+class QMimeData;
+class KActionMenu;
 
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
   */
-class CMainIndex : public KListView {
+class CMainIndex : public QTreeWidget {
 	Q_OBJECT
 
 	class ToolTip : public QToolTip {
@@ -91,7 +97,7 @@ protected: // Protected methods
 	/**
 	* Reimplementation. Returns the drag object for the current selection.
 	*/
-	virtual Q3DragObject* dragObject();
+	virtual QMimeData* dragObject();
 	/**
 	* Reimplementation from KListView. Returns true if the drag is acceptable for the listview.
 	*/
@@ -112,7 +118,7 @@ protected: // Protected methods
 	 * Reimplementation.
 	 */
 	virtual void contentsDragLeaveEvent( QDragLeaveEvent* e );
-	QRect drawItemHighlighter(QPainter* painter, Q3ListViewItem * item );
+	QRect drawItemHighlighter(QPainter* painter, QTreeWidgetItem * item );
 	/** Read settings like open groups or scrollbar position and restore them
 	*/
 	void readSettings();
@@ -127,12 +133,12 @@ protected slots: // Protected slots
 	/**
 	* Is called when an item was clicked/double clicked.
 	*/
-	void slotExecuted( Q3ListViewItem* );
-	void dropped( QDropEvent*, Q3ListViewItem*, Q3ListViewItem*);
+	void slotExecuted( QTreeWidgetItem* );
+	void dropped( QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*);
 	/**
 	* Shows the context menu at the given position.
 	*/
-	void contextMenu(KListView*, Q3ListViewItem*, const QPoint&);
+	void contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&);
 	/**
 	* Adds a new subfolder to the current item.
 	*/
@@ -173,7 +179,7 @@ protected slots: // Protected slots
 	/**
 	* Is called when items should be moved.
 	*/
-	void moved( Q3PtrList<Q3ListViewItem>& items, Q3PtrList<Q3ListViewItem>& afterFirst, Q3PtrList<Q3ListViewItem>& afterNow);
+	void moved( QList<QTreeWidgetItem>& items, QList<QTreeWidgetItem>& afterFirst, QList<QTreeWidgetItem>& afterNow);
 	/**
 	* Opens a plain text editor window to edit the modules content.
 	*/
@@ -187,7 +193,7 @@ private:
 	CSearchDialog* m_searchDialog;
 	ToolTip* m_toolTip;
 	bool m_itemsMovable;
-	Q3ListViewItem* m_autoOpenFolder;
+	QTreeWidgetItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
 
 	/**
