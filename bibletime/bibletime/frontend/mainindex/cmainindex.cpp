@@ -635,7 +635,7 @@ void CMainIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
 	QTreeWidget::contentsDragMoveEvent(event);
 }
 
-QRect CMainIndex::drawItemHighlighter(QPainter* painter, Q3ListViewItem* item) {
+QRect CMainIndex::drawItemHighlighter(QPainter* painter, QTreeWidgetItem* item) {
 	CBookmarkItem* bookmark = dynamic_cast<CBookmarkItem*>(item);
 	if (bookmark) { 
 		//no drops on bookmarks allowed, just moving items after it
@@ -699,10 +699,12 @@ void CMainIndex::moved( QList<QTreeWidgetItem>& /*items*/, QList<QTreeWidgetItem
 
 /** Opens an editor window to edit the modules content. */
 void CMainIndex::editModulePlain() {
-	QList<QTreeWidgetItem> items = selectedItems();
 	ListCSwordModuleInfo modules;
-	for (items.first(); items.current(); items.next()) {
-		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
+	QList<QTreeWidgetItem *> items = selectedItems();
+	QListIterator<QTreeWidgetItem *> it(items);
+	//loop through items
+	while(it.hasNext()) {
+		if (CModuleItem* i = dynamic_cast<CModuleItem*>(it.next())) {
 			modules.append(i->module());
 		}
 	}
@@ -713,10 +715,11 @@ void CMainIndex::editModulePlain() {
 
 /** Opens an editor window to edit the modules content. */
 void CMainIndex::editModuleHTML() {
-	QList<QTreeWidgetItem> items = selectedItems();
 	ListCSwordModuleInfo modules;
-	for (items.first(); items.current(); items.next()) {
-		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
+	QList<QTreeWidgetItem *> items = selectedItems();
+	QListIterator<QTreeWidgetItem *> it(items);
+	while(it.hasNext()) {
+		if (CModuleItem* i = dynamic_cast<CModuleItem*>(it.next())) {
 			modules.append(i->module());
 		}
 	}
