@@ -3,7 +3,7 @@
   <general>
     <author>The BibleTime team</author>
     <email>info@bibletime.info</email>
-    <projectmanagement>KDevAutoProject</projectmanagement>
+    <projectmanagement>KDevCustomProject</projectmanagement>
     <primarylanguage>C++</primarylanguage>
     <ignoreparts>
       <part>kdevfilegroups</part>
@@ -11,83 +11,60 @@
       <part>kdevdistpart</part>
     </ignoreparts>
     <version>1.6cvs</version>
-    <description/>
+    <description></description>
     <projectdirectory>.</projectdirectory>
     <absoluteprojectpath>false</absoluteprojectpath>
     <secondaryLanguages>
       <language>Perl</language>
     </secondaryLanguages>
-    <versioncontrol>kdevcvsservice</versioncontrol>
     <projectname>BibleTime</projectname>
-    <defaultencoding/>
+    <defaultencoding></defaultencoding>
+    <versioncontrol>kdevsubversion</versioncontrol>
   </general>
-  <kdevautoproject>
-    <general>
-      <activetarget>bibletime/bibletime</activetarget>
-      <useconfiguration>default</useconfiguration>
-    </general>
+  <kdevcustomproject>
     <run>
-      <mainprogram>/home/jansorg/Projekte/BibleTime/bibletime/bibletime/bibletime</mainprogram>
-      <programargs/>
-      <terminal>false</terminal>
-      <autocompile>true</autocompile>
-      <envvars/>
       <directoryradio>executable</directoryradio>
-      <customdirectory>/</customdirectory>
-      <globaldebugarguments/>
-      <globalcwd>/home/jansorg/Projekte/BibleTime/bibletime</globalcwd>
+      <mainprogram>./build/./build/./build</mainprogram>
+      <programargs></programargs>
+      <globaldebugarguments></globaldebugarguments>
+      <globalcwd>./build</globalcwd>
       <useglobalprogram>false</useglobalprogram>
+      <terminal>false</terminal>
+      <autocompile>false</autocompile>
       <autoinstall>false</autoinstall>
       <autokdesu>false</autokdesu>
+      <envvars/>
     </run>
-    <makeenvvars/>
-    <envvars/>
+    <build>
+      <buildtool>make</buildtool>
+      <builddir>./build</builddir>
+    </build>
     <make>
-      <abortonerror>true</abortonerror>
+      <abortonerror>false</abortonerror>
       <numberofjobs>1</numberofjobs>
-      <dontact>false</dontact>
-      <makebin/>
-      <envvars>
-        <envvar value="2.5" name="WANT_AUTOCONF" />
-        <envvar value="1" name="WANT_AUTOCONF_2_5" />
-        <envvar value="1.6" name="WANT_AUTOMAKE" />
-        <envvar value="1" name="WANT_AUTOMAKE_1_6" />
-      </envvars>
       <prio>0</prio>
-      <runmultiplejobs>false</runmultiplejobs>
+      <dontact>false</dontact>
+      <makebin></makebin>
+      <defaulttarget></defaulttarget>
+      <makeoptions></makeoptions>
+      <selectedenvironment>default</selectedenvironment>
+      <environments>
+        <default/>
+      </environments>
     </make>
-    <configurations>
-      <default>
-        <envvars/>
-        <configargs/>
-        <builddir/>
-        <topsourcedir/>
-        <cppflags/>
-        <ldflags/>
-        <ccompiler>kdevgccoptions</ccompiler>
-        <cxxcompiler>kdevgppoptions</cxxcompiler>
-        <f77compiler>kdevpgf77options</f77compiler>
-        <ccompilerbinary/>
-        <cxxcompilerbinary/>
-        <f77compilerbinary/>
-        <cflags/>
-        <cxxflags/>
-        <f77flags/>
-      </default>
-    </configurations>
-  </kdevautoproject>
+  </kdevcustomproject>
   <kdevdebugger>
     <general>
       <dbgshell>libtool</dbgshell>
       <programargs>--debug</programargs>
-      <gdbpath/>
+      <gdbpath></gdbpath>
       <breakonloadinglibs>true</breakonloadinglibs>
       <separatetty>false</separatetty>
       <floatingtoolbar>false</floatingtoolbar>
       <runappinappdirectory>true</runappinappdirectory>
-      <configGdbScript/>
-      <runShellScript/>
-      <runGdbScript/>
+      <configGdbScript></configGdbScript>
+      <runShellScript></runShellScript>
+      <runGdbScript></runGdbScript>
     </general>
     <display>
       <staticmembers>false</staticmembers>
@@ -180,7 +157,7 @@
     </codecompletion>
     <references/>
     <creategettersetter>
-      <prefixGet/>
+      <prefixGet></prefixGet>
       <prefixSet>set</prefixSet>
       <prefixVariable>m_,_</prefixVariable>
       <parameterName>theValue</parameterName>
@@ -193,8 +170,8 @@
       <root>/usr/share/qt3</root>
       <includestyle>3</includestyle>
       <designerintegration>ExternalDesigner</designerintegration>
-      <qmake>/usr/bin/qmake-qt3</qmake>
-      <designer>/usr/bin/designer-qt3</designer>
+      <qmake>/usr/bin/qmake</qmake>
+      <designer>/usr/bin/designer</designer>
       <designerpluginpaths/>
     </qt>
     <splitheadersource>
@@ -216,9 +193,9 @@
   </kdevfilecreate>
   <kdevdocumentation>
     <projectdoc>
-      <docsystem/>
-      <docurl/>
-      <usermanualurl/>
+      <docsystem></docsystem>
+      <docurl></docurl>
+      <usermanualurl></usermanualurl>
     </projectdoc>
   </kdevdocumentation>
   <kdevcvsservice>
@@ -229,8 +206,8 @@
     <revertoptions>-C</revertoptions>
   </kdevcvsservice>
   <ctagspart>
-    <customArguments/>
-    <customTagfilePath>/home/jansorg/Projekte/BibleTime/bibletime/tags</customTagfilePath>
+    <customArguments></customArguments>
+    <customTagfilePath>build/bibletimetagfile</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>
   <kdevvisualadvance>
