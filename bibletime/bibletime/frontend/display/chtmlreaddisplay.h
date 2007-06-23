@@ -50,7 +50,7 @@ public:
 	/**
 	* Reimplementation.
 	*/
-	virtual Q3ScrollView* view();
+	virtual QScrollArea* view();
 	virtual void selectAll();
 	virtual void moveToAnchor( const QString& anchor );
 

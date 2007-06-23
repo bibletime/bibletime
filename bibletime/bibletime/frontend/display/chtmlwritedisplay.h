@@ -16,19 +16,20 @@
 #include "cplainwritedisplay.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <q3textedit.h>
+//#include <qwidget.h>
+//#include <q3textedit.h>
+#include <QTextEdit>
 //Added by qt3to4:
-#include <Q3PopupMenu>
+#include <QMenu>
 
 class CWriteWindow;
 
-class Q3PopupMenu;
+class QMenu;
+class QWidget;
 
 class KToggleAction;
 class KFontAction;
 class KFontSizeAction;
-
 class KColorButton;
 
 /** The WYSIWYG implementation of the write display interface.
@@ -58,7 +59,7 @@ protected:
 	/**
 	* Reimplementation to show a popup menu if the right mouse butoon was clicked.
 	*/
-	virtual Q3PopupMenu* createPopupMenu( const QPoint& pos );
+	virtual QMenu* createPopupMenu( const QPoint& pos );
 
 protected slots:
 	void toggleBold();

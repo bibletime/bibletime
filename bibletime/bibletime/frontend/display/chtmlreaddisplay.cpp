@@ -164,7 +164,7 @@ const bool CHTMLReadDisplay::hasSelection() {
 
 
 /** Reimplementation. */
-Q3ScrollView* CHTMLReadDisplay::view() {
+QScrollArea* CHTMLReadDisplay::view() {
 	return KHTMLPart::view();
 }
 

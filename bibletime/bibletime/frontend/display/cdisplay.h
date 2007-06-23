@@ -13,16 +13,15 @@
 #define CDISPLAY_H
 
 //BibleTime includes
-#include "util/cpointers.h"
-#include "backend/cswordbackend.h"
+#include "../../util/cpointers.h"
+#include "../../backend/cswordbackend.h"
 
 //Qt includes
-#include <qobject.h>
 #include <QString>
-#include <qmap.h>
-//Added by qt3to4:
-#include <Q3PopupMenu>
+#include <QMap>
 
+//Added by qt3to4:
+//#include <Q3PopupMenu>
 
 class CDisplayConnections;
 class CReadWindow;
@@ -32,8 +31,7 @@ class CDisplayWindow;
 class CReadDisplay;
 class CWriteDisplay;
 
-
-class Q3PopupMenu;
+class QMenu;
 
 /** The base class for all display widgets.
   * @author The BibleTime team
@@ -103,11 +101,11 @@ public:
 	/**
 	* Installs the popup which should be opened when the right mouse button was pressed.
 	*/
-	void installPopup( Q3PopupMenu* popup );
+	void installPopup( QMenu* popup );
 	/**
 	* Returns the popup menu which was set by installPopupMenu()
 	*/
-	Q3PopupMenu* const installedPopup();
+	QMenu* const installedPopup();
 
 	virtual void zoomIn() {}
 	virtual void zoomOut() {}
@@ -139,7 +137,7 @@ protected:
 private:
 	CDisplayWindow* m_parentWindow;
 	CDisplayConnections* m_connections;
-	Q3PopupMenu* m_popup;
+	QMenu* m_popup;
 };
 
 class CDisplayConnections : public QObject {

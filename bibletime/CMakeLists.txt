@@ -74,6 +74,9 @@ SET(bibletime_SOURCES
 	bibletime/frontend/keychooser/ckeyreferencewidget.cpp
 	bibletime/frontend/keychooser/cscrollerwidgetset.cpp
 	bibletime/frontend/keychooser/cscrollbutton.cpp
+	#behaviour for display areas
+	bibletime/frontend/display/cdisplay.cpp
+
 #Add files to be ported here
 )
 
@@ -116,7 +119,7 @@ ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-fexceptions -DQT3_SUPPORT" #Enable exception handling and support for QT3 compatibility classes
+		COMPILE_FLAGS "-w -fexceptions " #Enable exception handling and support for QT3 compatibility classes
 )
 
 INSTALL(TARGETS bibletime

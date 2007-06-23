@@ -13,12 +13,9 @@
 #define CREADDISPLAY_H
 
 #include "cdisplay.h"
-#include "backend/cswordbackend.h"
-//Added by qt3to4:
-#include <Q3PopupMenu>
+#include "../../backend/cswordbackend.h"
 
-class Q3PopupMenu;
-class QWidget;
+//class QWidget;
 
 /**The base class for all read-only widgets like KHTMLView.
   *@author The BibleTime team

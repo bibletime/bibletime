@@ -14,15 +14,15 @@
 #include "cplainwritedisplay.h"
 #include "chtmlwritedisplay.h"
 
-#include "backend/creferencemanager.h"
+#include "../../backend/creferencemanager.h"
 
-#include "util/ctoolclass.h"
+#include "../../util/ctoolclass.h"
 
 
 //Qt includes
-#include <qclipboard.h>
-#include <q3popupmenu.h>
-#include <qtimer.h>
+#include <QClipboard>
+#include <QMenu>
+#include <QTimer>
 
 //KDE includes
 #include <kapplication.h>
@@ -158,7 +158,7 @@ const bool CDisplay::save( const CDisplay::TextType format, const CDisplay::Text
 		break;
 	};
 
-	const QString filename = KFileDialog::getSaveFileName(QString::null, filter, 0, i18n("Save document ..."));
+	const QString filename = KFileDialog::getSaveFileName(KUrl(), filter, 0, i18n("Save document ..."));
 
 	if (!filename.isEmpty()) {
 		CToolClass::savePlainFile(filename, content);
@@ -168,7 +168,7 @@ const bool CDisplay::save( const CDisplay::TextType format, const CDisplay::Text
 
 /** Emits the signal which used when a reference was clicked. */
 void CDisplay::emitReferenceClicked( const QString& reference ) {
-	qWarning("reference clicked %s", reference.latin1());
+	qWarning("reference clicked %s", reference.toLatin1());
 	QString module;
 	QString key;
 	CReferenceManager::Type type;
@@ -204,12 +204,12 @@ CDisplayWindow* const CDisplay::parentWindow() const {
 }
 
 /** Installs the popup which should be opened when the right mouse button was pressed. */
-void CDisplay::installPopup( Q3PopupMenu* popup ) {
+void CDisplay::installPopup( QMenu* popup ) {
 	m_popup = popup;
 }
 
 /** Returns the popup menu which was set by installPopupMenu() */
-Q3PopupMenu* const CDisplay::installedPopup() {
+QMenu* const CDisplay::installedPopup() {
 	Q_ASSERT(m_popup);
 	return m_popup;
 }
