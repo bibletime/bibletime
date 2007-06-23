@@ -17,11 +17,8 @@
 #include "../../backend/cswordbackend.h"
 
 //Qt includes
-#include <QString>
 #include <QMap>
 
-//Added by qt3to4:
-//#include <Q3PopupMenu>
 
 class CDisplayConnections;
 class CReadWindow;

@@ -76,6 +76,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/keychooser/cscrollbutton.cpp
 	#behaviour for display areas
 	bibletime/frontend/display/cdisplay.cpp
+	bibletime/frontend/display/creaddisplay.cpp
 
 #Add files to be ported here
 )

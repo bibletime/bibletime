@@ -13,16 +13,16 @@
 #define CDISPLAYWINDOW_H
 
 //BibleTime includes
-#include "util/cpointers.h"
+#include "../../util/cpointers.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordldkey.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../backend/cswordbackend.h"
+#include "../../backend/cswordkey.h"
+#include "../../backend/cswordversekey.h"
+#include "../../backend/cswordtreekey.h"
+#include "../../backend/cswordldkey.h"
 
-#include "frontend/cprofilewindow.h"
+#include "../cprofilewindow.h"
 
 //Qt includes
 #include <qwidget.h>
@@ -42,10 +42,11 @@ class CDisplaySettingsButton;
 class CDisplay;
 class CKeyChooser;
 class CModuleChooserBar;
-class CDisplaySettingsButton;
+
 class KAccel;
 class KToolBar;
 class KPopupMenu;
+class KActionCollection;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team

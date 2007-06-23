@@ -15,7 +15,7 @@
 #include "cdisplay.h"
 #include "../../backend/cswordbackend.h"
 
-//class QWidget;
+#include <QString>
 
 /**The base class for all read-only widgets like KHTMLView.
   *@author The BibleTime team

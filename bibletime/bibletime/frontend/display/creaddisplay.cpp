@@ -12,24 +12,22 @@
 //BibleTime includes
 #include "creaddisplay.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbiblemoduleinfo.h"
-#include "backend/cswordlexiconmoduleinfo.h"
-#include "backend/cswordbookmoduleinfo.h"
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordldkey.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../backend/cswordbiblemoduleinfo.h"
+#include "../../backend/cswordlexiconmoduleinfo.h"
+#include "../../backend/cswordbookmoduleinfo.h"
+#include "../../backend/cswordkey.h"
+#include "../../backend/cswordversekey.h"
+#include "../../backend/cswordtreekey.h"
+#include "../../backend/cswordldkey.h"
 
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/creadwindow.h"
+#include "../displaywindow/cdisplaywindow.h"
+#include "../displaywindow/creadwindow.h"
 
-#include "frontend/cexportmanager.h"
+#include "../cexportmanager.h"
 
-#include "util/scoped_resource.h"
+#include "../../util/scoped_resource.h"
 
-//Qt includes
-#include <q3popupmenu.h>
 
 //KDE includes
 #include <klocale.h>

@@ -15,16 +15,17 @@
 //BibleTime includes
 #include "cdisplaywindow.h"
 
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
+#include "../display/cdisplay.h"
+#include "../display/creaddisplay.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <q3popupmenu.h>
+#include <QMenu>
+
 //Added by qt3to4:
 #include <QResizeEvent>
 
 class KPopupMenu;
+class KActionCollection;
 
 /** The base class for all read-only display windows.
   * @author The BibleTime team
