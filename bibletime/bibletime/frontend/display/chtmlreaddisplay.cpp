@@ -11,34 +11,36 @@
 
 #include "chtmlreaddisplay.h"
 
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/creadwindow.h"
-#include "backend/creferencemanager.h"
-#include "backend/cswordkey.h"
+#include "../displaywindow/cdisplaywindow.h"
+#include "../displaywindow/creadwindow.h"
+#include "../../backend/creferencemanager.h"
+#include "../../backend/cswordkey.h"
 
-#include "frontend/cbtconfig.h"
-#include "frontend/cdragdropmgr.h"
-#include "frontend/cinfodisplay.h"
+#include "../cbtconfig.h"
+//#include "../cdragdropmgr.h"
+#include "../cdragdrop.h"
+#include "../cinfodisplay.h"
 
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
-#include "util/scoped_resource.h"
+#include "../../util/ctoolclass.h"
+#include "../../util/cpointers.h"
+#include "../../util/scoped_resource.h"
 
 //We will need to reference this in the Qt includes
 #include <kdeversion.h>
 
 //Qt includes
-#include <qcursor.h>
-#include <q3scrollview.h>
-#include <qwidget.h>
-#include <q3dragobject.h>
-#include <q3popupmenu.h>
-#include <qlayout.h>
-#include <qtimer.h>
-#endif
+#include <QCursor>
+#include <QScrollArea>
+//#include <q3dragobject.h>
+#include <QDrag>
+#include <QMenu>
+#include <QLayout>
+#include <QTimer>
+//#endif //?
 
 //KDE includes
 #include <kapplication.h>
+#include <ktoolinvocation.h>
 #include <khtmlview.h>
 #include <kglobalsettings.h>
 #include <khtml_events.h>
@@ -59,7 +61,7 @@ m_magTimerId(0) {
 	setJScriptEnabled(false);
 	setPluginsEnabled(false);
 
-	m_view->setDragAutoScroll(false);
+	//m_view->setDragAutoScroll(false); // TODO: doesn't exist in qt4; is needed?
 
 }
 
@@ -72,7 +74,7 @@ const QString CHTMLReadDisplay::text( const CDisplay::TextType format, const CDi
 				return document().toHTML();
 			}
 			else {
-				return htmlDocument().body().innerText().string().latin1();
+				return htmlDocument().body().innerText().string().toLatin1();
 			}
 		}
 
@@ -177,6 +179,7 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 	m_currentAnchorCache = anchor;
 
 	//This is an ugly hack to work around a KDE problem in KDE including 3.3.1 (no later versions tested so far)
+	//TODO for kde4 port: maybe we can remove this?
 	QTimer::singleShot(0, this, SLOT(slotGoToAnchor()));
 
 	// instead of:
@@ -186,7 +189,7 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args) {
 	KHTMLPart::urlSelected(url, button, state, _target, args);
 	m_urlWorkaroundData.doWorkaround = false;
-	//  qWarning("clicked: %s", url.latin1());
+	//  qWarning("clicked: %s", url.toLatin1());
 	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {
 		QString module;
 		QString key;
@@ -212,7 +215,7 @@ void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, c
 		moveToAnchor(url.mid(1));
 	}
 	else if (url.left(7) == "http://") { //open the bowser configured by kdeb
-		KApplication::kApplication()->invokeBrowser( url ); //ToDo: Not yet tested
+		KToolInvocation::invokeBrowser( url ); //TODO: Not yet tested
 	}
 }
 
@@ -277,14 +280,15 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 
 /** Reimplementation for our drag&drop system. Also needed for the mouse tracking */
 void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
-	if( e->qmouseEvent()->state() & Qt::LeftButton == Qt::LeftButton) { //left mouse button pressed
+	if( e->qmouseEvent()->buttons() & Qt::LeftButton == Qt::LeftButton) { //left mouse button pressed
 		const int delay = KGlobalSettings::dndEventDelay();
 		QPoint newPos = QPoint(e->x(), e->y());
 	
 		if ( (newPos.x() > m_dndData.startPos.x()+delay || newPos.x() < (m_dndData.startPos.x()-delay) ||
 				newPos.y() > m_dndData.startPos.y()+delay || newPos.y() < (m_dndData.startPos.y()-delay)) &&
 				!m_dndData.isDragging && m_dndData.mousePressed  ) {
-			Q3DragObject* d = 0;
+			//Q3DragObject* d = 0;
+			QDrag* d = 0;
 			if (!m_dndData.anchor.isEmpty() && (m_dndData.dragType == DNDData::Link) && !m_dndData.node.isNull() ) {
 				// create a new bookmark drag!
 				QString module = QString::null;
@@ -293,30 +297,37 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				if ( !CReferenceManager::decodeHyperlink(m_dndData.anchor.string(), module, key, type) )
 					return;
 	
-				CDragDropMgr::ItemList dndItems;
+				//CDragDropMgr::ItemList dndItems;
 				//no description!
-				dndItems.append( CDragDropMgr::Item(module, key, QString::null) ); 
-				d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
+				//dndItems.append( CDragDropMgr::Item(module, key, QString::null) ); 
+				//mimedata.append(module, key, QString::null);
+				//d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
+				d = new QDrag(KHTMLPart::view()->viewport());
+				BTMimeData* mimedata = new BTMimeData(module, key, QString::null);
+				d->setMimeData(mimedata);
 			}
-			else if ((m_dndData.dragType == DNDData::Text) && !m_dndData.selection.isEmpty()) {    
+			else if ((m_dndData.dragType == DNDData::Text) && !m_dndData.selection.isEmpty()) {
 				// create a new plain text drag!
-				CDragDropMgr::ItemList dndItems;
-				dndItems.append( CDragDropMgr::Item(m_dndData.selection) ); //no description!
-				d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
+				//CDragDropMgr::ItemList dndItems;
+				//dndItems.append( CDragDropMgr::Item(m_dndData.selection) ); //no description!
+				//d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
+				d = new QDrag(KHTMLPart::view()->viewport());
+				BTMimeData* mimedata = new BTMimeData(m_dndData.selection);
+				d->setMimeData(mimedata);
 			}
 	
 			if (d) {
 				m_dndData.isDragging = true;
 				m_dndData.mousePressed = false;
 	
-				//first make a virtual mouse click to end the selection, it it's in progress
-				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton);
+				//first make a virtual mouse click to end the selection, if it's in progress
+				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
 				KApplication::sendEvent(view()->viewport(), &e);
-				d->drag();
+				d->start();
 			}
 		}
 	}
-	else if (getMouseTracking() && !(e->qmouseEvent()->state() & Qt::ShiftModifier == Qt::ShiftModifier)) { 
+	else if (getMouseTracking() && !(e->qmouseEvent()->modifiers() & Qt::ShiftModifier == Qt::ShiftModifier)) { 
 		//no mouse button pressed and tracking enabled
 		DOM::Node node = e->innerNode();
 		//if no link was under the mouse try to find a title attribute
@@ -324,7 +335,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			// we want to avoid processing the node again
 			// After some millisecs the new timer activates the Mag window update, see timerEvent()
 			// SHIFT key not pressed, so we start timer
-			if ( !(e->qmouseEvent()->state() & Qt::ShiftModifier)) { 
+			if ( !(e->qmouseEvent()->modifiers() & Qt::ShiftModifier)) { 
 				// QObject has simple timer
 				killTimer(m_magTimerId);
 				m_magTimerId = startTimer( CBTConfig::get(CBTConfig::magDelay) );
@@ -344,7 +355,7 @@ void CHTMLReadDisplay::timerEvent( QTimerEvent *e ) {
 	CInfoDisplay::ListInfoData infoList;
 	
 	// Process the node under cursor if it is the same as at the start of the timer
-	if (!currentNode.isNull() && (currentNode != m_previousEventNode) && this->view()->hasMouse()) {
+	if (!currentNode.isNull() && (currentNode != m_previousEventNode) && this->view()->underMouse()) {
 		DOM::Node attr;
 		do {
 			if (!currentNode.isNull() && (currentNode.nodeType() == DOM::Node::ELEMENT_NODE) && currentNode.hasAttributes()) { //found right node
@@ -406,42 +417,51 @@ void CHTMLReadDisplayView::popupMenu( const QString& url, const QPoint& pos) {
 	if (!url.isEmpty()) {
 		m_display->setActiveAnchor(url);
 	}
-	if (Q3PopupMenu* popup = m_display->installedPopup()) {
+	if (QMenu* popup = m_display->installedPopup()) {
 		popup->exec(pos);
 	}
 }
 
-/** Reimplementation from QScrollView. Sets the right slots */
-void CHTMLReadDisplayView::polish() {
-	KHTMLView::polish();
-	connect( part(), SIGNAL(popupMenu(const QString&, const QPoint&)),
+/** Reimplementation from QScrollArea. Sets the right slots */
+bool CHTMLReadDisplayView::event(QEvent* e) {
+	//TODO: this MUST be tested (as other context menus and DnD system) when the app runs)
+	if (e->type() == QEvent::Polish) {
+		KHTMLView::event(e);
+		connect( part(), SIGNAL(popupMenu(const QString&, const QPoint&)),
 			this, SLOT(popupMenu(const QString&, const QPoint&)));
+	}
+	
 }
 
-/** Reimplementatiob from QScrollView. */
-void CHTMLReadDisplayView::contentsDropEvent( QDropEvent* e ) {
-	if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
-		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
-		CDragDropMgr::Item item = dndItems.first();
-		e->acceptAction();
-
-		m_display->connectionsProxy()->emitReferenceDropped(item.bookmarkKey());
+/** Reimplementation from QScrollArea. */
+void CHTMLReadDisplayView::dropEvent( QDropEvent* e ) {
+	//if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
+	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
+		//CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
+		//see docs for BTMimeData and QMimeData
+		BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+		
+		//TODO: acceptAction() is no more in qt4. This should be tested. See also dragEnterEvent.
+		e->acceptProposedAction();
+		//bookmarkkey: QString
+		m_display->connectionsProxy()->emitReferenceDropped(item.key());
 		return;
 	};
 
 	//don't accept the action!
-	e->acceptAction(false);
+	//e->acceptAction(false);
 	e->ignore();
 }
 
-/** Reimplementation from QScrollView. */
-void CHTMLReadDisplayView::contentsDragEnterEvent( QDragEnterEvent* e ) {
-	if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
-		e->acceptAction();
+/** Reimplementation from QScrollArea. */
+void CHTMLReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
+	//if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
+	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
+		e->acceptProposedAction();
 		return;
 	}
 	
-	e->acceptAction(false);
+	//e->acceptAction(false);
 	e->ignore();
 }
 
@@ -451,7 +471,7 @@ void CHTMLReadDisplayView::contentsDragEnterEvent( QDragEnterEvent* e ) {
 void CHTMLReadDisplay::slotGoToAnchor() {
 	if (!m_currentAnchorCache.isEmpty()) {
 		if (!gotoAnchor( m_currentAnchorCache ) ) {
-			qDebug("anchor %s not present!", m_currentAnchorCache.latin1());
+			qDebug("anchor %s not present!", m_currentAnchorCache.toLatin1());
 		}
 	}
 	m_currentAnchorCache = QString::null;
@@ -469,6 +489,7 @@ void CHTMLReadDisplay::openFindTextDialog() {
 #if KDE_VERSION >= 0x030300
 	findText();
 #else
+	//TODO: is this old?
 	QMessageBox::information(0, "Not Supported",
 	"This copy of BibleTime was built against a version of KDE older\n"
 	"than 3.3 (probably due to your distro), so this search feature\n"

@@ -17,8 +17,6 @@
 //#include "frontend/ctooltip.h"
 
 //Qt includes
-#include <QString>
-#include <qwidget.h>
 //Added by qt3to4:
 #include <QDragEnterEvent>
 #include <QDropEvent>
@@ -30,6 +28,8 @@
 #include <kparts/browserextension.h>
 
 class CHTMLReadDisplayView;
+
+class QWidget;
 
 /** The implementation for the HTML read display.
   * @author The BibleTime team
@@ -124,17 +124,17 @@ protected: // Protected methods
 
 	CHTMLReadDisplayView(CHTMLReadDisplay* display, QWidget* parent);
 	/**
-	* Reimplementation from QScrollView. Sets the right slots
+	* Reimplementation from QScrollArea. Sets the right slots
 	*/
-	virtual void polish();
+	virtual bool event(QEvent*);
 	/**
-	* Reimplementatiob from QScrollView.
+	* Reimplementation from QScrollArea.
 	*/
-	virtual void contentsDropEvent( QDropEvent* );
+	virtual void dropEvent( QDropEvent* );
 	/**
-	* Reimplementatiob from QScrollView.
+	* Reimplementatiob from QScrollArea.
 	*/
-	virtual void contentsDragEnterEvent( QDragEnterEvent* );
+	virtual void dragEnterEvent( QDragEnterEvent* );
 
 protected slots: // Protected slots
 	/**

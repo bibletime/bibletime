@@ -64,6 +64,8 @@ SET(bibletime_SOURCES
 	bibletime/util/cpointers.cpp
 	bibletime/util/ctoolclass.cpp
 	bibletime/util/directoryutil.cpp
+	#frontend
+	bibletime/frontend/cdragdrop.cpp
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp
@@ -77,6 +79,8 @@ SET(bibletime_SOURCES
 	#behaviour for display areas
 	bibletime/frontend/display/cdisplay.cpp
 	bibletime/frontend/display/creaddisplay.cpp
+	bibletime/frontend/display/chtmlreaddisplay.cpp
+	
 
 #Add files to be ported here
 )
