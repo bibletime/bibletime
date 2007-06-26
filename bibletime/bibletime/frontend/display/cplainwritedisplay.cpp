@@ -2,34 +2,33 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 
-
 #include "cplainwritedisplay.h"
 
-#include "frontend/cdragdropmgr.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include "../cdragdrop.h"
+#include "../displaywindow/cdisplaywindow.h"
+#include "../displaywindow/cwritewindow.h"
 
-#include "util/scoped_resource.h"
+#include "../../util/scoped_resource.h"
 
 //Qt includes
+#include <QDragEnterEvent>
+#include <QDropEvent>
+#include <QDragMoveEvent>
+#include <QMenu>
 
 //KDE includes
 #include <kaction.h>
 #include <klocale.h>
-//Added by qt3to4:
-#include <QDragEnterEvent>
-#include <QDropEvent>
-#include <QDragMoveEvent>
-#include <Q3PopupMenu>
 
-CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : Q3TextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
-	setTextFormat(Qt::PlainText);
+
+CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
+	setAcceptRichText(false);
 	setAcceptDrops(true);
 	viewport()->setAcceptDrops(true);
 
@@ -41,7 +40,7 @@ CPlainWriteDisplay::~CPlainWriteDisplay() {}
 
 /** Reimplementation. */
 void CPlainWriteDisplay::selectAll() {
-	Q3TextEdit::selectAll(true);
+	QTextEdit::selectAll();
 }
 
 void CPlainWriteDisplay::setText( const QString& newText ) {
@@ -50,11 +49,12 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
 // 	text.replace("\n<br /><!-- BT newline -->\n", "\n");
 	text.replace("<br />", "\n"); //inserted by BT or the Qt textedit widget
 
-	Q3TextEdit::setText(text);
+	QTextEdit::setText(text);
 }
 
 const bool CPlainWriteDisplay::hasSelection() {
-	return hasSelectedText();
+	//TODO: test this
+	return textCursor().hasSelection();
 }
 
 QWidget* CPlainWriteDisplay::view() {
@@ -71,18 +71,18 @@ void CPlainWriteDisplay::print( const CDisplay::TextPart, CSwordBackend::Display
 
 /** Sets the current status of the edit widget. */
 void CPlainWriteDisplay::setModified( const bool modified ) {
-	Q3TextEdit::setModified(modified);
+	document()->setModified(modified);
 }
 
 /** Reimplementation. */
 const bool CPlainWriteDisplay::isModified() const {
-	return Q3TextEdit::isModified();
+	return document()->isModified();
 }
 
 
 /** Returns the text of this edit widget. */
 const QString CPlainWriteDisplay::plainText() {
-	QString ret = Q3TextEdit::text();
+	QString ret = QTextEdit::toPlainText();
 
 	//in plain text mode the text just contains newlines, convert them into <br/> before we return the text for display in a HTML widget
 	ret.replace("\n", "<br />");
@@ -91,12 +91,12 @@ const QString CPlainWriteDisplay::plainText() {
 }
 
 /** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-Q3PopupMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
+QMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
 	return installedPopup();
 }
 
 /** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-Q3PopupMenu* CPlainWriteDisplay::createPopupMenu( ) {
+QMenu* CPlainWriteDisplay::createPopupMenu( ) {
 	return installedPopup();
 }
 
@@ -104,59 +104,57 @@ Q3PopupMenu* CPlainWriteDisplay::createPopupMenu( ) {
 void CPlainWriteDisplay::setupToolbar(KToolBar* /*bar*/, KActionCollection* /*actionCollection*/) {}
 
 /** Reimplementation to insert the text of a dragged reference into the edit view. */
-void CPlainWriteDisplay::contentsDragEnterEvent( QDragEnterEvent* e ) {
-	if (CDragDropMgr::canDecode(e)) {
-		e->accept(true);
+void CPlainWriteDisplay::dragEnterEvent( QDragEnterEvent* e ) {
+	//if (CDragDropMgr::canDecode(e)) {
+	if (e->mimeData()->hasFormat("BibleTime/Bookmark") || e->mimeData()->hasFormat("text/plain")) {
+		e->acceptProposedAction();
 	}
 	else {
-		e->accept(false);
+		//e->accept(false);
 		e->ignore();
 	}
 }
 
 /** Reimplementation to insert the text of a dragged reference into the edit view. */
-void CPlainWriteDisplay::contentsDragMoveEvent( QDragMoveEvent* e ) {
-	if (CDragDropMgr::canDecode(e)) {
-		placeCursor(e->pos());
+void CPlainWriteDisplay::dragMoveEvent( QDragMoveEvent* e ) {
+	if (e->mimeData()->hasFormat("BibleTime/Bookmark") || e->mimeData()->hasFormat("text/plain")) {
+		//placeCursor(e->pos());
+		setTextCursor(cursorForPosition(e->pos()));
 		ensureCursorVisible();
-		e->accept(true);
+		e->acceptProposedAction();
 	}
 	else {
-		e->accept(false);
+		//e->accept(false);
 		e->ignore();
 	}
 }
 
 /** Reimplementation to manage drops of our drag and drop objects. */
-void CPlainWriteDisplay::contentsDropEvent( QDropEvent* e ) {
-	if ( CDragDropMgr::canDecode(e) ) {
-		e->acceptAction();
+void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
 
-		CDragDropMgr::ItemList items = CDragDropMgr::decode(e);
-		CDragDropMgr::ItemList::iterator it;
+	const BTMimeData* mimedata = qobject_cast<const BTMimeData*>(e->mimeData());
+
+	if ( mimedata->hasFormat("BibleTime/Bookmark") ) {
+		e->acceptProposedAction();
+
+		BTMimeData::ItemList items = mimedata->bookmarks();
+		BTMimeData::ItemList::iterator it;
 		for (it = items.begin(); it != items.end(); ++it) {
-			switch ((*it).type()) {
-				case CDragDropMgr::Item::Bookmark: {
-					CSwordModuleInfo* module = backend()->findModuleByName((*it).bookmarkModule());
-					util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
-					key->key( (*it).bookmarkKey() );
+			
+			CSwordModuleInfo* module = backend()->findModuleByName((*it).module());
+			util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+			key->key( (*it).key() );
+			QString moduleText = key->strippedText();
 
-					QString moduleText = key->strippedText();
+			const QString text = QString::fromLatin1("%1\n(%2, %3)\n").arg(moduleText).arg((*it).key()).arg((*it).module());
 
-					const QString text = QString::fromLatin1("%1\n(%2, %3)\n").arg(moduleText).arg((*it).bookmarkKey()).arg((*it).bookmarkModule());
-
-					placeCursor( e->pos() );
-					insert( text );
-					break;
-				}
-				case CDragDropMgr::Item::Text: {
-					placeCursor( e->pos() );
-					insert( (*it).text() );
-					break;
-				}
-				default:
-				break;
-			}
+			setTextCursor(cursorForPosition(e->pos()));
+			textCursor().insertText( text );
 		}
+	}
+	else if ( mimedata->hasFormat("text/plain")) {
+		e->acceptProposedAction();
+		setTextCursor(cursorForPosition(e->pos()));
+		textCursor().insertText( mimedata->text() );
 	}
 }

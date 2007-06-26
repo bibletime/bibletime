@@ -81,6 +81,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/display/creaddisplay.cpp
 	bibletime/frontend/display/chtmlreaddisplay.cpp
 	bibletime/frontend/display/cwritedisplay.cpp
+	bibletime/frontend/display/cplainwritedisplay.cpp
 	
 
 #Add files to be ported here
