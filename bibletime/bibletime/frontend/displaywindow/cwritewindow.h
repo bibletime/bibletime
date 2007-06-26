@@ -13,7 +13,7 @@
 #define CWRITEWINDOW_H
 
 //BibleTime includes
-#include "frontend/display/cwritedisplay.h"
+#include "../display/cwritedisplay.h"
 #include "cdisplaywindow.h"
 
 //Qt includes

@@ -12,7 +12,7 @@
 //BibleTime includes
 #include "cwritedisplay.h"
 
-#include "frontend/displaywindow/cwritewindow.h"
+#include "../displaywindow/cwritewindow.h"
 
 //Qt includes
 #include <qwidget.h>
