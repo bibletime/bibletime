@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,12 +15,6 @@
 //BibleTime includes
 #include "cplainwritedisplay.h"
 
-//Qt includes
-//#include <qwidget.h>
-//#include <q3textedit.h>
-#include <QTextEdit>
-//Added by qt3to4:
-#include <QMenu>
 
 class CWriteWindow;
 
@@ -39,16 +33,17 @@ class CHTMLWriteDisplay : public CPlainWriteDisplay  {
 	Q_OBJECT
 public:
 	/**
-	* Sets the new text for this display widget.
+	* Sets the new text for this display widget. (CPlainWriteDisplay).
 	*/
 	virtual void setText( const QString& newText );
 	/**
-	* Returns the text of this edit widget.
+	* Returns the text of this edit widget. (CPlainWriteDisplay).
 	*/
 	virtual const QString plainText();
 
 	/**
 	* Creates the necessary action objects and puts them on the toolbar.
+	* (CPlainWriteDisplay)
 	*/
 	virtual void setupToolbar(KToolBar * bar, KActionCollection * actionCollection);
 
@@ -57,7 +52,8 @@ protected:
 	CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
 	~CHTMLWriteDisplay();
 	/**
-	* Reimplementation to show a popup menu if the right mouse butoon was clicked.
+	* Reimplementation to show a popup menu if the right mouse button was clicked.
+	* (CPlainWriteDisplay)
 	*/
 	virtual QMenu* createPopupMenu( const QPoint& pos );
 

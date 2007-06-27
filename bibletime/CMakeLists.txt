@@ -59,13 +59,16 @@ SET(bibletime_SOURCES
 	bibletime/backend/cswordldkey.cpp
 	bibletime/backend/cswordtreekey.cpp
 	bibletime/backend/cswordversekey.cpp
+	
 	#utilities
 	bibletime/util/cresmgr.cpp
 	bibletime/util/cpointers.cpp
 	bibletime/util/ctoolclass.cpp
 	bibletime/util/directoryutil.cpp
+	
 	#frontend
 	bibletime/frontend/cdragdrop.cpp
+	
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp
@@ -82,6 +85,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/display/chtmlreaddisplay.cpp
 	bibletime/frontend/display/cwritedisplay.cpp
 	bibletime/frontend/display/cplainwritedisplay.cpp
+	bibletime/frontend/display/chtmlwritedisplay.cpp
 	
 
 #Add files to be ported here

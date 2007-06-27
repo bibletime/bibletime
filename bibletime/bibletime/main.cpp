@@ -182,7 +182,7 @@ int main(int argc, char* argv[]) {
 	// Language codes iso639-1, iso639-2 and SIL language codes
 	aboutData.addCredit("SIL International", I18N_NOOP("Language codes and names"), "", "http://www.ethnologue.com/iso639");
 	//Patch for the mag delay (2007-03-22)
-	aboutData.addCredit("Eeli Kaikkonen",  I18N_NOOP("GUI improvements"),"eekaikko@mail.student.oulu.fi", "");
+	aboutData.addCredit("Eeli Kaikkonen",  I18N_NOOP("GUI improvements, KDE 4 port"),"eekaikko@mail.student.oulu.fi", "");
 	//Update the the Finnish GUI translation
 	aboutData.addCredit("Ilpo Kantonen",  I18N_NOOP("Finnish translation"),"", "");
 	//Smaller frontend enhancements
