@@ -346,20 +346,21 @@ void CMainIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidgetIte
 	if (moveSelectedItems) {
 		//move all selected items after the afterItem
 		if (m_itemsMovable) {
-			QList<QTreeWidgetItem> items = selectedItems();
-			QTreeWidgetItem* i = items.first();
-			QTreeWdigetItem* after = afterItem;
+			QList<QTreeWidgetItem *> items = selectedItems();
+			QListIterator<QTreeWidgetItem *> it(items);
+			QTreeWidgetItem* i = it.next();
+			QTreeWidgetItem* after = afterItem;
 			while (i && afterItem) {
 				i->moveItem(after);
 				after = i;
 
-				i = items.next();
+				i = it.next();
 			}
 		}
 	}
 
 	if (removeSelectedItems) {
-		QList<QTreeWidgetItem> items = selectedItems();
+		QList<QTreeWidgetItem *> items = selectedItems();
 		items.setAutoDelete(true);
 		items.clear(); //delete the selected items we dragged
 	}
@@ -406,7 +407,7 @@ KAction* const CMainIndex::action( const CItemBase::MenuAction type ) const {
 /** Shows the context menu at the given position. */
 void CMainIndex::contextMenu(QTreeWidget* /*list*/, QTreeWidgetItem* i, const QPoint& p) {
 	//setup menu entries depending on current selection
-	QList<QTreeWidgetItem> items = selectedItems();
+	QList<QTreeWidgetItem *> items = selectedItems();
 
 	if (items.count() == 0) { 
 		//special handling for no selection
@@ -435,8 +436,9 @@ void CMainIndex::contextMenu(QTreeWidget* /*list*/, QTreeWidgetItem* i, const QP
 		for (int index = CItemBase::ActionBegin; index <= CItemBase::ActionEnd; ++index) {
 			actionType = static_cast<CItemBase::MenuAction>(index);
 			bool enableAction = isMultiAction(actionType);
-			for (items.first(); items.current(); items.next()) {
-				CItemBase* i = dynamic_cast<CItemBase*>(items.current());
+			QListIterator<QTreeWidgetItem *> it(items);
+			while(it.hasNext()) {
+				CItemBase* i = dynamic_cast<CItemBase*>(it.next());
 				enableAction = enableAction && i->enableAction(actionType);
 			}
 			if (enableAction) {
@@ -506,7 +508,7 @@ void CMainIndex::printBookmarks() {
 	CPrinter::KeyTreeItem::Settings settings;
 	settings.keyRenderingFace = CPrinter::KeyTreeItem::Settings::CompleteShort;
 
-	QList<QTreeWidgetItem> items;
+	QList<QTreeWidgetItem *> items;
 	CBookmarkFolder* bf = dynamic_cast<CBookmarkFolder*>(currentItem());
 
 	if (bf) {
@@ -517,8 +519,9 @@ void CMainIndex::printBookmarks() {
 	}
 
 	//create a tree of keytreeitems using the bookmark hierarchy.
-	for (items.first(); items.current(); items.next()) {
-		CBookmarkItem* i = dynamic_cast<CBookmarkItem*>(items.current());
+	QListIterator<QTreeWidgetItem *> it(items)
+	while(it.hasNext()) {
+		CBookmarkItem* i = dynamic_cast<CBookmarkItem*>(it.next());
 		if (i) {
 			tree.append( new CPrinter::KeyTreeItem( i->key(), i->module(), settings ) );
 		}
@@ -532,7 +535,7 @@ void CMainIndex::printBookmarks() {
 
 /** Deletes the selected entries. */
 void CMainIndex::deleteEntries() {
-	QList<QTreeWidgetItem> items = selectedItems();
+	QList<QTreeWidgetItem *> items = selectedItems();
 	if (!items.count())
 		return;
 
@@ -541,8 +544,10 @@ void CMainIndex::deleteEntries() {
 	}
 
 	// We have to go backwards because otherwise deleting folders would delete their childs => crash before we delete those
-	for (items.last(); items.current(); items.prev()) {
-		if (CItemBase* i = dynamic_cast<CItemBase*>(items.current())) {
+	QListIterator<QTreeWidgetItem *> it(items);
+	it.toBack();
+	while(it.hasPrevious()) {
+		if (CItemBase* i = dynamic_cast<CItemBase*>(it.previous())) {
 			if (i->enableAction(CItemBase::DeleteEntries)) {
 				delete i;
 			}
@@ -552,10 +557,11 @@ void CMainIndex::deleteEntries() {
 
 /** Opens the searchdialog for the selected modules. */
 void CMainIndex::searchInModules() {
-	QList<QTreeWidgetItem> items = selectedItems();
+	QList<QTreeWidgetItem *> items = selectedItems();
+	QListIterator<QTreeWidgetItem *> it(items);
 	ListCSwordModuleInfo modules;
-	for (items.first(); items.current(); items.next()) {
-		if (CModuleItem* i = dynamic_cast<CModuleItem*>(items.current())) {
+	while(it.hasNext()) {
+		if (CModuleItem* i = dynamic_cast<CModuleItem*>(it.next())) {
 			if (i->module()) {
 				modules.append(i->module());
 			}
@@ -596,11 +602,12 @@ void CMainIndex::aboutModule() {
 
 /** Reimplementation. Takes care of movable items. */
 void CMainIndex::startDrag() {
-	QList<QTreeWidgetItem> items = selectedItems();
+	QList<QTreeWidgetItem *> items = selectedItems();
+	QListIterator<QTreeWidgetItem *> it(items);
 	m_itemsMovable = true;
-
-	for (items.first(); items.current() && m_itemsMovable; items.next()) {
-		if (CItemBase* i = dynamic_cast<CItemBase*>(items.current())) {
+	
+	while(it.hasNext() && m_itemsMovable) {
+		if (CItemBase* i = dynamic_cast<CItemBase*>(it.next())) {
 			m_itemsMovable = (m_itemsMovable && i->isMovable());
 		}
 		else {
