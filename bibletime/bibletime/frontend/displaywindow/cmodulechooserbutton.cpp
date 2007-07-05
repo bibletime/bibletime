@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,23 +12,26 @@
 #include "cmodulechooserbutton.h"
 #include "cmodulechooserbar.h"
 
-#include "backend/cswordbackend.h"
+#include "../../backend/cswordbackend.h"
 
-#include "util/cresmgr.h"
+#include "../../util/cresmgr.h"
 
 //Qt includes
 #include <QString>
-#include <qtooltip.h>
-#include <q3dict.h>
-#include <q3valuelist.h>
+#include <QToolTip>
+#include <QHash>
+#include <QToolButton>
 
 //KDE includes
 #include <klocale.h>
 #include <kglobal.h>
 #include <kiconloader.h>
+#include <kmenu.h>
 
-CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent, const char *name )
-: KToolBarButton(iconName(), id, parent, name),
+//TODO: test all (context)menu situations
+
+CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
+: QToolButton(parent),
 m_id(id), m_popup(0), m_moduleChooserBar(parent) {
 	m_moduleType = type;
 	m_module = useModule;
@@ -39,17 +42,18 @@ m_id(id), m_popup(0), m_moduleChooserBar(parent) {
 		m_hasModule = true;
 	}
 
-	setIcon( iconName() );
-	setPopupDelay(1);
+	setIcon( QIcon(iconName()) );
+	//setPopupDelay(1);
 
 	populateMenu();
 }
 
 CModuleChooserButton::~CModuleChooserButton() {
-	m_submenus.setAutoDelete(true); //delete all submenus
+	//m_submenus.setAutoDelete(true); //delete all submenus
+	while (!m_submenus.isEmpty()) {delete m_submenus.takeFirst();}
 	m_submenus.clear();
 
-	delete m_popup;
+	delete m_popup; //not necessary, because has "this" as parent?
 }
 
 /** Returns the icon used for the current status. */
@@ -81,11 +85,14 @@ const QString CModuleChooserButton::iconName() {
 }
 
 CSwordModuleInfo* CModuleChooserButton::module() {
-	for ( KPopupMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-		for (unsigned int i = 0; i < popup->count(); i++) {
-			if ( m_popup->isItemChecked(popup->idAt(i)) ) {
-				QString mod = popup->text(popup->idAt(i));
-				return backend()->findModuleByName( mod.left(mod.find(" ")) );
+	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	QListIterator<KMenu*> it(m_submenus);
+	while (it.hasNext()) {
+		KMenu* popup = it.next();
+		for (unsigned int i = 0; i < popup->actions().count(); i++) { //qt4:added "actions"
+			if ( m_popup->actions().at(i)->isChecked() ) { //idAt -> , isItemChecked -> QAction::isChecked
+				QString mod = popup->actions().at(i)->text(); //popup->text(popup->idAt(i)); //text -> 
+				return backend()->findModuleByName( mod.left(mod.indexOf(" ")) );
 			}
 		}
 
@@ -100,16 +107,20 @@ int CModuleChooserButton::getId() const {
 
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( int ID ) {
-	for ( KPopupMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-		for (unsigned int i = 0; i < popup->count(); i++) {
-			popup->setItemChecked(popup->idAt(i),false);
+	
+	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	QListIterator<KMenu*> it(m_submenus);
+	while (it.hasNext()) {
+		KMenu* popup = it.next();
+		for (unsigned int i = 0; i < popup->actions().count(); i++) {
+			popup->actions().at(i)->setChecked(false);//popup->setItemChecked(popup->idAt(i),false);
 		}
-		popup->setItemChecked(ID, true);
+		popup->actions().at(ID)->setChecked(true); //setItemChecked(ID, true);
 	}
 
-	m_popup->setItemChecked(m_noneId, false); //uncheck the "none" item
+	m_noneAction->setChecked(false);//m_popup->setItemChecked(m_noneId, false); //uncheck the "none" item
 
-	if (m_popup->text(ID) == i18n("NONE")) { // note: this is for m_popup, the toplevel!
+	if (m_popup->actions().at(ID)->text() == i18n("NONE")) { // note: this is for m_popup, the toplevel!
 		if (m_hasModule) {
 			emit sigRemoveButton(m_id);
 			return;
@@ -122,51 +133,47 @@ void CModuleChooserButton::moduleChosen( int ID ) {
 
 		m_hasModule = true;
 		m_module = module();
-		setIcon( iconName() );
+		setIcon( QIcon(iconName()) ); //TODO
 		emit sigChanged();
 
 		setText( i18n("Select a work") );
-		m_popup->changeTitle(m_titleId, i18n("Select a work"));
+		m_titleAction->setText(i18n("Select a work"));//m_popup->changeTitle(m_titleId, i18n("Select a work"));
 
-		QToolTip::remove
-			(this);
-		if (module()) {
-			QToolTip::add
-				(this, module()->name());
-		}
+		setToolTip(QString::null); //TODO: how to remove tooltip? Does this leave an empty tooltip box?
+		if (module()) {setToolTip(module()->name());}
 	}
 }
 
 /** No descriptions */
 void CModuleChooserButton::populateMenu() {
-	m_submenus.setAutoDelete(true); //delete all submenus
+	while (!m_submenus.isEmpty()) {delete m_submenus.takeFirst();}
 	m_submenus.clear();
 
 	delete m_popup;
 
 	//create a new, empty popup
-	m_popup = new KPopupMenu(this);
+	m_popup = new KMenu(this);
 
 	if (m_module) {
-		m_titleId = m_popup->insertTitle( i18n("Select a work") );
+		m_titleAction = m_popup->addTitle( i18n("Select a work") );
 	}
 	else {
-		m_titleId = m_popup->insertTitle( i18n("Select an additional work") );
+		m_titleAction = m_popup->addTitle( i18n("Select an additional work") );
 	}
 
-	m_popup->setCheckable(true);
+	//m_popup->setCheckable(true); not necessary anymore
 
-	m_noneId = m_popup->insertItem(i18n("NONE"));
+	m_noneAction = m_popup->addAction(i18n("NONE"));
 	if ( !m_module ) {
-		m_popup->setItemChecked(m_noneId, true);
+		m_noneAction->setChecked(true);
 	}
 
-	m_popup->insertSeparator();
+	m_popup->addSeparator();
 	connect(m_popup, SIGNAL(activated(int)), this, SLOT(moduleChosen(int)));
-	setPopup(m_popup, true);
+	setMenu(m_popup);
 
 	QStringList languages;
-	Q3Dict<KPopupMenu> langdict;
+	QHash<QString, KMenu*> langdict;
 
 	//the modules list contains only the modules we can use, i.e. same type and same features
 	ListCSwordModuleInfo modules;
@@ -197,11 +204,11 @@ void CModuleChooserButton::populateMenu() {
 			}
 		}
 
-		if (languages.find( lang ) == languages.end() ) { //this lang was not yet added
+		if (languages.contains(lang) ) { //this lang was not yet added
 			languages += lang;
 
-			KPopupMenu* menu = new KPopupMenu;
-			langdict.insert(lang, menu );
+			KMenu* menu = new KMenu;
+			langdict[lang] = menu;
 			m_submenus.append(menu);
 			connect(menu, SIGNAL(activated(int)), this, SLOT(moduleChosen(int)));
 		}
@@ -224,25 +231,20 @@ void CModuleChooserButton::populateMenu() {
 		QString name((*it)->name());
 		name.append(" ").append((*it)->isLocked() ? i18n("[locked]") : QString::null);
 
-		const int id = langdict[lang]->insertItem( name );
+		QAction* id = langdict[lang]->addAction( name );
 		if ( m_module && (*it)->name() == m_module->name()) {
-			langdict[lang]->setItemChecked(id, true);
+			id->setChecked(true);
 		}
 	}
 
 	languages.sort();
 	for ( QStringList::Iterator it = languages.begin(); it != languages.end(); ++it ) {
-		m_popup->insertItem( *it, langdict[*it]);
+		langdict[*it]->addTitle(*it);
+		m_popup->addMenu(langdict[*it]); //insertItem ->  QMenu::addMenu(QMenu)
 	}
 
-	if (module()) {
-		QToolTip::add
-			(this, module()->name());
-	}
-	else {
-		QToolTip::add
-			(this, i18n("No work selected"));
-	}
+	if (module()) { setToolTip(module()->name());}
+	else { setToolTip(i18n("No work selected"));}
 }
 
 
@@ -254,11 +256,13 @@ void CModuleChooserButton::updateMenuItems() {
 	CSwordModuleInfo* module = 0;
 	ListCSwordModuleInfo chosenModules = m_moduleChooserBar->getModuleList();
 
-	for ( KPopupMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-
-		for (unsigned int i = 0; i < popup->count(); i++) {
-			moduleName = popup->text(popup->idAt(i));
-			module = backend()->findModuleByName( moduleName.left(moduleName.findRev(" ")) );
+	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	QListIterator<KMenu*> it(m_submenus);
+	while (it.hasNext()) {
+		KMenu* popup = it.next();
+		for (unsigned int i = 0; i < popup->actions().count(); i++) {
+			moduleName = popup->actions().at(i)->text();
+			module = backend()->findModuleByName( moduleName.left(moduleName.lastIndexOf(" ")) );
 
  			Q_ASSERT(module);
 // 			if (!module) {
@@ -270,7 +274,7 @@ void CModuleChooserButton::updateMenuItems() {
 				alreadyChosen = alreadyChosen && (m_module->name() != moduleName);
 			}
 
-			popup->setItemEnabled(popup->idAt(i), !alreadyChosen); //grey it out, it was chosen already
+			popup->actions().at(i)->setEnabled(!alreadyChosen);// setItemEnabled(popup->idAt(i), !alreadyChosen); //grey it out, it was chosen already
 		}
 	}
 }

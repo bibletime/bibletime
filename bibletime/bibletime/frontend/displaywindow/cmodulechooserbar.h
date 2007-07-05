@@ -13,20 +13,21 @@
 #define CMODULECHOOSERBAR_H
 
 //BibleTime includes
-#include "cmodulechooserbutton.h"
+#include "../../backend/cswordmoduleinfo.h"
 
-#include "backend/cswordmoduleinfo.h"
-
-#include "util/cpointers.h"
+#include "../../util/cpointers.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <q3hbox.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QList>
 
 //KDE includes
 #include <ktoolbar.h>
+
+
+class CModuleChooserButton;
+
+class QWidget;
+
 
 /**
   * @author The BibleTime team
@@ -37,7 +38,7 @@ public:
 	/**
 	* Default constructor
 	*/
-	CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent=0, const char *name=0);
+	CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent=0);
 	/**
 	* Returns a list of selected modules.
 	*/
@@ -72,7 +73,7 @@ private:
 	CSwordModuleInfo::ModuleType m_moduleType;
 	int m_idCounter;
 	int m_buttonLimit;
-	Q3PtrList<CModuleChooserButton> m_buttonList;
+	QList<CModuleChooserButton*> m_buttonList;
 
 signals: // Signals
 	void sigChanged();

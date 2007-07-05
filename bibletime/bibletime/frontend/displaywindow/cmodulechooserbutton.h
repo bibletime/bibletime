@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,30 +13,26 @@
 #define CMODULECHOOSERBUTTON_H
 
 //BibleTime includes
-#include "backend/cswordmoduleinfo.h"
-#include "util/cpointers.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../util/cpointers.h"
 
 //Qt includes
-#include <q3dict.h>
-#include <qtoolbutton.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QToolButton>
+#include <QList>
 
-//KDE includes
-#include <ktoolbarbutton.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
 
-class KPopupMenu;
+//class KMenu;
 class CModuleChooserBar;
 
 /** The CModuleChooserButton displays a list of submenus sorted by language which contain the possible modules
   * which can be displayed together with the first one.
   * @author The BibleTime team
   */
-class CModuleChooserButton : public KToolBarButton, public CPointers  {
+class CModuleChooserButton : public QToolButton, public CPointers  {
 	Q_OBJECT
 public:
-	CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent, const char *name = 0 );
+	CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent);
 	~CModuleChooserButton();
 
 	CSwordModuleInfo* module();
@@ -57,13 +53,13 @@ private:
 
 	bool m_hasModule;
 	int m_id;
-	int m_noneId;
-	int m_titleId;
+	QAction* m_noneAction;
+	QAction* m_titleAction;
 	CSwordModuleInfo::ModuleType m_moduleType;
 	CSwordModuleInfo* m_module;
 
-	KPopupMenu* m_popup;
-	Q3PtrList<KPopupMenu> m_submenus;
+	KMenu* m_popup;
+	QList<KMenu*> m_submenus;
 
 	CModuleChooserBar* m_moduleChooserBar;
 
