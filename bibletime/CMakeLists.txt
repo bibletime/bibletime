@@ -86,10 +86,11 @@ SET(bibletime_SOURCES
 	bibletime/frontend/display/cwritedisplay.cpp
 	bibletime/frontend/display/cplainwritedisplay.cpp
 	bibletime/frontend/display/chtmlwritedisplay.cpp
-	#display windows
+	#display windows and their widgets
 	bibletime/frontend/displaywindow/cmodulechooserbutton.cpp
 	bibletime/frontend/displaywindow/cmodulechooserbar.cpp
-	
+	bibletime/frontend/displaywindow/cbuttons.cpp
+
 
 #Add files to be ported here
 )

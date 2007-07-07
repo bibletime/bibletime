@@ -43,7 +43,8 @@ m_id(id), m_popup(0), m_moduleChooserBar(parent) {
 	}
 
 	setIcon( QIcon(iconName()) );
-	//setPopupDelay(1);
+	//setPopupDelay(1); //see comment in cbuttons.cpp
+	setPopupMode(QToolButton::InstantPopup);
 
 	populateMenu();
 }
