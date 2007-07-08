@@ -53,8 +53,37 @@
 namespace Search {
 	namespace Result {
 
+StrongsResult::StrongsResult()
+{}
+
+StrongsResult::StrongsResult(const QString& text, const QString &keyName)
+	   : text(text)
+{
+	//keyNameList.clear();
+	keyNameList.append(keyName);
+}
+
+QString StrongsResult::keyText() const {
+	return text;
+}
+
+int StrongsResult::keyCount() const {
+	return keyNameList.count();
+}
+
+void StrongsResult::addKeyName(const QString& keyName) {
+	if (keyNameList.findIndex(keyName) == -1)
+		keyNameList.append(keyName);
+}
+
+QStringList* StrongsResult::getKeyList() {
+	return & keyNameList;
+}
+
+
+
 /********************************************
-************  StrongsResulClass *************
+************  StrongsResultClass *************
 ********************************************/
 void StrongsResultClass::initStrongsResults(void) {
 	using namespace Rendering;

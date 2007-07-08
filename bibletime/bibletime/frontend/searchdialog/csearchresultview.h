@@ -15,10 +15,10 @@
 //BibleTime includes
 #include "backend/cswordmoduleinfo.h"
 
-//KDE includes
-#include <klistview.h>
-//Added by qt3to4:
 #include <QLabel>
+#include <QTreeWidget>
+
+
 
 //forward declarations
 class QLabel;
@@ -35,10 +35,14 @@ class KPopupMenu;
 
 class CReadDisplay;
 
+//to be removed
+class Q3ListViewItem;
+class Q3DragObject;
+
 namespace Search {
 	namespace Result {
 
-class CSearchResultView  : public KListView {
+class CSearchResultView  : public QTreeWidget {
 	Q_OBJECT
 public:
 	CSearchResultView(QWidget* parent, const char* name = 0);
@@ -67,7 +71,7 @@ public slots: // Public slots
 	/**
 	* Reimplementation to show the popup menu.
 	*/
-	virtual void showPopup(KListView*, Q3ListViewItem* i, const QPoint& point);
+	virtual void showPopup(QTreeWidget*, Q3ListViewItem* i, const QPoint& point);
 
 protected slots: // Protected slots
 	void printItems();

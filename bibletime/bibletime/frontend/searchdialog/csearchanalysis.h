@@ -14,11 +14,11 @@
 
 //BibleTime includes
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
-#include "backend/cswordmodulesearch.h"
+#include "../../backend/cswordmoduleinfo.h"
+#include "../../backend/cswordbackend.h"
+#include "../../backend/cswordmodulesearch.h"
 
-#include "util/cpointers.h"
+#include "../../util/cpointers.h"
 
 //Sword includes
 
@@ -36,8 +36,8 @@
 
 //KDE includes
 #include <kdialog.h>
-#include <kdialogbase.h>
-#include <klistview.h>
+#include <kdialog.h>
+//#include <klistview.h>
 
 
 class Q3TextEdit;
@@ -103,7 +103,7 @@ public slots: // Public slots
 };
 
 
-class CSearchAnalysisDialog : public KDialogBase  {
+class CSearchAnalysisDialog : public KDialog  {
 	Q_OBJECT
 public:
 	CSearchAnalysisDialog(ListCSwordModuleInfo modules, QWidget* parentDialog);

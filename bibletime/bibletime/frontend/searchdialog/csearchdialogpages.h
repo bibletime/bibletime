@@ -17,8 +17,8 @@
 #include "backend/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
-#include "frontend/searchdialog/searchoptionsform.h" // uic generated
-#include "frontend/searchdialog/searchresultsform.h" // uic generated
+#include "ui_searchoptionsform.h" // uic generated
+#include "ui_searchresultsform.h" // uic generated
 
 //Qt includes
 #include <qwidget.h>
@@ -28,7 +28,7 @@
 #include <Q3ValueList>
 
 //KDE includes
-#include <klistview.h>
+//#include <klistview.h>
 
 //forward declarations
 class QLabel;
@@ -63,30 +63,13 @@ namespace Search {
 */
 class StrongsResult {
 public:
-   StrongsResult() /*: text(QString::null)*/ {
-	   	//keyNameList.clear();
-   }
-   
-   StrongsResult(const QString& text, const QString &keyName)
-	   : text(text)
-    {
-		//keyNameList.clear();
-		keyNameList.append(keyName);
-	}
+   StrongsResult();
+   StrongsResult(const QString& text, const QString &keyName);
 
-	QString keyText() const {
-		return text;
-	}
-	int keyCount() const {
-		return keyNameList.count();
-	}
-	void addKeyName(const QString& keyName) {
-		if (keyNameList.findIndex(keyName) == -1)
-			keyNameList.append(keyName);
-	}
-	QStringList* getKeyList() {
-		return & keyNameList;
-	}
+	QString keyText() const;
+	int keyCount() const;
+	void addKeyName(const QString& keyName);
+	QStringList* getKeyList();
 
 	/* ????
 	bool operator==(const StrongsResult &l, const StrongsResult &r)
@@ -152,7 +135,7 @@ private:
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
   */
-class CSearchResultPage : public SearchResultsForm {
+class CSearchResultPage : public QWidget, Ui::SearchResultsForm {
 	Q_OBJECT
 public:
 	CSearchResultPage(QWidget *parent=0, const char *name=0);
@@ -208,7 +191,7 @@ protected slots: // Protected slots
 	
 	namespace Options {
 		
-class CSearchOptionsPage : public SearchOptionsForm  {
+class CSearchOptionsPage : public QWidget, Ui::SearchOptionsForm  {
 	Q_OBJECT
 public:
 	CSearchOptionsPage(QWidget *parent=0, const char *name=0);

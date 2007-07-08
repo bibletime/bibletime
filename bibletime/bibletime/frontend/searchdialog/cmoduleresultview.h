@@ -17,11 +17,14 @@
 #include "csearchdialogpages.h"
 
 //Qt includes
+#include <QLabel>
+#include <QTreeWidget>
+
 
 //KDE includes
-#include <klistview.h>
-//Added by qt3to4:
-#include <QLabel>
+//#include <klistview.h>
+
+
 
 //forward declarations
 class QLabel;
@@ -34,14 +37,20 @@ class KActionMenu;
 class KAction;
 class KHistoryCombo;
 class KProgress;
-class KPopupMenu;
+class KMenu;
 
 class CReadDisplay;
+class StrongsResultClass;
+
+//to be removed
+class Q3ListViewItem;
+
+
 
 namespace Search {
 	namespace Result {
-		
-class CModuleResultView : public KListView {
+
+class CModuleResultView : public QTreeWidget {
 	Q_OBJECT
 public:
 	CModuleResultView(QWidget* parent, const char* name = 0);
@@ -72,7 +81,8 @@ protected slots: // Protected slots
 	/**
 	* Is executed when an item was selected in the list.
 	*/
-	void executed( Q3ListViewItem* );
+	//replace with QTreeWidget::itemActivated 
+	//void executed( Q3ListViewItem* );
 	/**
 	* Copies the whole search result with the text into the clipboard.
 	*/
@@ -84,7 +94,7 @@ protected slots: // Protected slots
 	/**
 	* This slot opens the popup menu at the given position
 	*/
-	void showPopup(KListView*, Q3ListViewItem*, const QPoint&);
+	void showPopup(QTreeWidget*, Q3ListViewItem*, const QPoint&);
 	/**
 	* Appends the whole search result to the printer queue.
 	*/
@@ -127,7 +137,8 @@ private:
 
 	} m_actions;
 	
-	KPopupMenu* m_popup;
+	KMenu* m_popup;
+	
 	StrongsResultClass* strongsResults;
 };
 

@@ -33,7 +33,6 @@
 
 //KDE includes
 #include <kdialog.h>
-#include <kdialogbase.h>
 
 //forward declarations
 
@@ -44,7 +43,7 @@ namespace Search {
 /**
   *@author The BibleTime team
   */
-class CSearchDialog : public KDialogBase  {
+class CSearchDialog : public KDialog  {
 	Q_OBJECT
 
 public:
