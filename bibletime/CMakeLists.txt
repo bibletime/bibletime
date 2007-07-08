@@ -90,9 +90,14 @@ SET(bibletime_SOURCES
 	bibletime/frontend/displaywindow/cmodulechooserbutton.cpp
 	bibletime/frontend/displaywindow/cmodulechooserbar.cpp
 	bibletime/frontend/displaywindow/cbuttons.cpp
-
+	#bibletime/frontend/displaywindow/cdisplaywindow.cpp
 
 #Add files to be ported here
+)
+
+kde4_add_ui_files(bibletime_SOURCES
+	bibletime/frontend/searchdialog/searchresultsform.ui
+	bibletime/frontend/searchdialog/searchoptionsform.ui
 )
 
 #SET(bibletime_MOC_HEADERS 
@@ -121,6 +126,8 @@ INCLUDE_DIRECTORIES(
 	${CLUCENE_INCLUDE_DIR} #CLucene headers
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h
 	${SWORD_INCLUDE_DIR}
+	${CMAKE_CURRENT_BINARY_DIR} # for .h files generated from .ui
+	${CMAKE_CURRENT_SOURCE_DIR}/bibletime # so that include paths like "frontend/..." work
 )
 
 #This must come before the target definition!
