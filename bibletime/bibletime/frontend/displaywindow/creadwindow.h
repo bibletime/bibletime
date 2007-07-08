@@ -15,8 +15,8 @@
 //BibleTime includes
 #include "cdisplaywindow.h"
 
-#include "../display/cdisplay.h"
-#include "../display/creaddisplay.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/display/creaddisplay.h"
 
 //Qt includes
 #include <QMenu>

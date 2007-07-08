@@ -20,11 +20,15 @@
 
 //KDE includes
 #include <kaction.h>
+#include <kactionmenu.h>
+
 
 class CSwordKey;
 class CSwordLDKey;
-//KDE
+
 class KToolBarPopupAction;
+
+
 
 /**
   *@author The BibleTime team

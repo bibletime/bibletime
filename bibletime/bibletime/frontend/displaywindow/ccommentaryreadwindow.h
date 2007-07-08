@@ -18,6 +18,11 @@
 //Qt includes
 #include <qwidget.h>
 
+
+class KToggleAction;
+
+
+
 /**
   *@author The BibleTime team
   */

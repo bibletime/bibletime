@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -24,42 +24,48 @@
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 
-#include "backend/cswordkey.h"
+#include "../../backend/cswordkey.h"
 
-#include "frontend/keychooser/ckeychooser.h"
+#include "../keychooser/ckeychooser.h"
 
-#include "frontend/display/cdisplay.h"
+#include "../display/cdisplay.h"
 
-#include "frontend/cmdiarea.h"
-#include "frontend/cprofilewindow.h"
-#include "frontend/cbtconfig.h"
+#include "../cmdiarea.h"
+#include "../cprofilewindow.h"
+#include "../cbtconfig.h"
 
-#include "frontend/searchdialog/csearchdialog.h"
+#include "../searchdialog/csearchdialog.h"
 
-#include "util/cresmgr.h"
+#include "../../util/cresmgr.h"
 
 
 //Qt includes
+#include <QWidget>
+#include <QCloseEvent>
+#include <QStringList>
 
 //KDE includes
 #include <kdeversion.h>
-#include <kaccel.h>
+//#include <kaccel.h>
 #include <klocale.h>
-//Added by qt3to4:
-#include <QCloseEvent>
+#include <kstandardaction.h>
+#include <kactioncollection.h>
+#include <ktoolbarpopupaction.h>
+#include <kmenu.h>
+#include <kxmlguiwindow.h>
 
 using namespace Profile;
 
-CReadWindow* CDisplayWindow::createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const char* name) {
+CReadWindow* CDisplayWindow::createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent) {
 	switch (modules.first()->type()) {
 		case CSwordModuleInfo::Bible:
-			return new CBibleReadWindow(modules, parent, name);
+			return new CBibleReadWindow(modules, parent);
 		case CSwordModuleInfo::Commentary:
-			return new CCommentaryReadWindow(modules, parent, name);
+			return new CCommentaryReadWindow(modules, parent);
 		case CSwordModuleInfo::Lexicon:
-			return new CLexiconReadWindow(modules, parent, name);
+			return new CLexiconReadWindow(modules, parent);
 		case CSwordModuleInfo::GenericBook:
-			return new CBookReadWindow(modules, parent, name);
+			return new CBookReadWindow(modules, parent);
 		default:
 			qWarning("unknown module type");
 		break;
@@ -68,22 +74,18 @@ CReadWindow* CDisplayWindow::createReadInstance(ListCSwordModuleInfo modules, CM
 }
 
 
-CWriteWindow* CDisplayWindow::createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type, const char* name) {
+CWriteWindow* CDisplayWindow::createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {
 	if (type == HTMLWindow) {
-		return new CHTMLWriteWindow(modules, parent, name);
+		return new CHTMLWriteWindow(modules, parent);
 	}
 	else {
-		return new CPlainWriteWindow(modules, parent, name);
+		return new CPlainWriteWindow(modules, parent);
 	}
 	return 0;
 }
 
-CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent, const char *name )
-#if KDE_VERSION >= 0x030200
-: KMainWindow(KMainWindow::NoDCOPObject, parent, name, Qt::WDestructiveClose),
-#else
-: KMainWindow(parent, name, Qt::WDestructiveClose),
-#endif
+CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
+: KXmlGuiWindow(parent),
 m_mdi(parent),
 m_filterOptions(),
 m_displayOptions(),
@@ -96,6 +98,7 @@ m_mainToolBar(0),
 m_popupMenu(0),
 m_displayWidget(0) {
 	setModules(modules);
+	KMainWindow::setAttribute(Qt::WA_DeleteOnClose);
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -132,31 +135,31 @@ ListCSwordModuleInfo CDisplayWindow::modules() {
 
 /** Set the window caption. */
 void CDisplayWindow::setCaption( const QString&  ) {
-	QWidget::setCaption( windowCaption() );
+	QWidget::setWindowTitle( windowCaption() );
 	m_mdi->emitWindowCaptionChanged();
 }
 
-void CDisplayWindow::insertKeyboardActions( KActionCollection* const a ) {
-	KStdAction::zoomIn(0, 0, a, "zoomIn"); //no slot
-	KStdAction::zoomOut(0, 0, a, "zoomOut"); //no slot
-	KStdAction::close(0, 0, a, "closeWindow"); //no slot
-	KStdAction::selectAll(0, 0, a, "selectAll");
-	KStdAction::copy(0, 0, a, "copySelectedText");
-	KStdAction::find(0, 0, a, "findText");
+void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
+	a->addAction(KStandardAction::ZoomIn, "zoomIn", 0, 0);
+	a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
+	a->addAction(KStandardAction::Close, "closeWindow", 0, 0);
+	a->addAction(KStandardAction::SelectAll, "selectAll", 0, 0);
+	a->addAction(KStandardAction::Copy, "copySelectedText", 0, 0);
+	a->addAction(KStandardAction::Find, "findText", 0, 0);
 
-	new KToolBarPopupAction(
-		i18n("Back in history"),
-		CResMgr::displaywindows::general::backInHistory::icon,
-		CResMgr::displaywindows::general::backInHistory::accel,
-		a,
-		CResMgr::displaywindows::general::backInHistory::actionName
-	);
-	new KToolBarPopupAction(
-		i18n("Forward in history"),
-		CResMgr::displaywindows::general::forwardInHistory::icon,
-		CResMgr::displaywindows::general::forwardInHistory::accel,
-		a, CResMgr::displaywindows::general::forwardInHistory::actionName
-	);
+	KToolBarPopupAction* action = new KToolBarPopupAction(
+				KIcon(CResMgr::displaywindows::general::backInHistory::icon),
+				i18n("Back in history"), a
+				);
+	action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
+	//is this really needed? //CResMgr::displaywindows::general::backInHistory::actionName
+
+	action = new KToolBarPopupAction(
+				KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
+				i18n("Forward in history"), a
+				);
+	action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
+	// see previous action //CResMgr::displaywindows::general::forwardInHistory::actionName
 }
 
 void CDisplayWindow::initActions() {
@@ -167,30 +170,30 @@ void CDisplayWindow::initActions() {
 				actionCollection(), CResMgr::displaywindows::general::search::actionName
 			   );
 
-	KStdAction::zoomIn(
+	KStandardAction::zoomIn(
 		displayWidget()->connectionsProxy(), SLOT(zoomIn()),
 		actionCollection(), "zoomIn"
 	);
-	KStdAction::zoomOut(
+	KStandardAction::zoomOut(
 		displayWidget()->connectionsProxy(), SLOT(zoomOut()),
 		actionCollection(), "zoomOut"
 	);
-	KStdAction::close(
+	KStandardAction::close(
 		this, SLOT(close()),
 		actionCollection(), "closeWindow"
 	);
 
-	KStdAction::selectAll(
+	KStandardAction::selectAll(
 		displayWidget()->connectionsProxy(), SLOT(selectAll()),
 		actionCollection(), "selectAll"
 	);
 
-	KStdAction::copy(
+	KStandardAction::copy(
 		displayWidget()->connectionsProxy(), SLOT(copySelection()),
 		actionCollection(), "copySelectedText"
 	);
 
-	KStdAction::find(
+	KStandardAction::find(
 		displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()),
 		actionCollection(), "findText"
 	);
@@ -451,10 +454,10 @@ void CDisplayWindow::updatePopupMenu() {}
 
 
 ///** Returns the installed popup menu. */
-KPopupMenu* const CDisplayWindow::popup() {
+KMenu* const CDisplayWindow::popup() {
 	// qWarning("CReadWindow::popup()");
 	if (!m_popupMenu) {
-		m_popupMenu = new KPopupMenu(this);
+		m_popupMenu = new KMenu(this);
 		connect(m_popupMenu, SIGNAL(aboutToShow()), this, SLOT(updatePopupMenu()));
 		if (displayWidget()) {
 			displayWidget()->installPopup(m_popupMenu);

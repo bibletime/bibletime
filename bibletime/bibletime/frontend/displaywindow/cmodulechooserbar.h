@@ -13,9 +13,9 @@
 #define CMODULECHOOSERBAR_H
 
 //BibleTime includes
-#include "../../backend/cswordmoduleinfo.h"
+#include "backend/cswordmoduleinfo.h"
 
-#include "../../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <QList>

@@ -13,8 +13,8 @@
 #define CMODULECHOOSERBUTTON_H
 
 //BibleTime includes
-#include "../../backend/cswordmoduleinfo.h"
-#include "../../util/cpointers.h"
+#include "backend/cswordmoduleinfo.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <QToolButton>

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,46 +13,44 @@
 #define CDISPLAYWINDOW_H
 
 //BibleTime includes
-#include "../../util/cpointers.h"
+#include "util/cpointers.h"
 
-#include "../../backend/cswordmoduleinfo.h"
-#include "../../backend/cswordbackend.h"
-#include "../../backend/cswordkey.h"
-#include "../../backend/cswordversekey.h"
-#include "../../backend/cswordtreekey.h"
-#include "../../backend/cswordldkey.h"
+#include "backend/cswordmoduleinfo.h"
+#include "backend/cswordbackend.h"
+#include "backend/cswordkey.h"
+#include "backend/cswordversekey.h"
+#include "backend/cswordtreekey.h"
+#include "backend/cswordldkey.h"
 
-#include "../cprofilewindow.h"
+#include "frontend/cprofilewindow.h"
 
 //Qt includes
-#include <qwidget.h>
-//Added by qt3to4:
+#include <QWidget>
 #include <QCloseEvent>
+#include <QStringList>
 
 //KDE includes
-#include <kmainwindow.h>
-
+//#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 
 //Forward declarations
 class CMDIArea;
 class CReadWindow;
 class CWriteWindow;
-class CMDIArea;
 class CDisplaySettingsButton;
 class CDisplay;
 class CKeyChooser;
 class CModuleChooserBar;
 
-class KAccel;
 class KToolBar;
-class KPopupMenu;
+class KMenu;
 class KActionCollection;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
   */
 
-class CDisplayWindow : public KMainWindow, public CPointers  {
+class CDisplayWindow : public KXmlGuiWindow, public CPointers  {
 	Q_OBJECT
 public:
 	enum WriteWindowType {
@@ -60,8 +58,8 @@ public:
 		PlainTextWindow = 2
 	};
 
-	static CReadWindow* createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const char* name = 0);
-	static CWriteWindow* createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const WriteWindowType type = HTMLWindow, const char* name = 0);
+	static CReadWindow* createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent);
+	static CWriteWindow* createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const WriteWindowType type = HTMLWindow);
 	/**
 	* Insert the keyboard accelerators of this window into the given KAccel object.
 	*/
@@ -197,7 +195,7 @@ protected:
 	friend class CMDIArea;
 	friend class CBibleReadWindow;
 
-	CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CDisplayWindow();
 	/**
 	* Initializes the intern keyboard actions.
@@ -238,7 +236,7 @@ protected:
 	/**
 	* Returns the installed popup menu.
 	*/
-	KPopupMenu* const popup();
+	KMenu* const popup();
 	virtual void closeEvent(QCloseEvent* e);
 
 protected slots:
@@ -271,7 +269,7 @@ private:
 	CModuleChooserBar* m_moduleChooserBar;
 	KToolBar* m_mainToolBar;
 	KToolBar* m_buttonsToolBar;
-	KPopupMenu* m_popupMenu;
+	KMenu* m_popupMenu;
 	CDisplay* m_displayWidget;
 };
 
