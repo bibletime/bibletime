@@ -90,7 +90,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/displaywindow/cmodulechooserbutton.cpp
 	bibletime/frontend/displaywindow/cmodulechooserbar.cpp
 	bibletime/frontend/displaywindow/cbuttons.cpp
-	#bibletime/frontend/displaywindow/cdisplaywindow.cpp
+	bibletime/frontend/displaywindow/cdisplaywindow.cpp
 
 #Add files to be ported here
 )

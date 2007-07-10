@@ -13,8 +13,8 @@
 #define CMDIAREA_H
 
 //BibleTime includes
-#include "util/cpointers.h"
-#include "backend/cswordmoduleinfo.h"
+#include "../util/cpointers.h"
+#include "../backend/cswordmoduleinfo.h"
 
 //Qt includes
 #include <qworkspace.h>

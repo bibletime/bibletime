@@ -163,41 +163,51 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 }
 
 void CDisplayWindow::initActions() {
-	new KAction(i18n("Search"),
+	/*kde/qt3:
+	new KAction(
+				i18n("Search"),
 				CResMgr::displaywindows::general::search::icon,
 				CResMgr::displaywindows::general::search::accel,
 				this, SLOT(slotSearchInModules()),
 				actionCollection(), CResMgr::displaywindows::general::search::actionName
 			   );
+	*/
+	KAction* kaction = new KAction(
+				KIcon(CResMgr::displaywindows::general::search::icon),
+				i18n("Search"),
+				actionCollection()
+				);
+	kaction->setShortcut(CResMgr::displaywindows::general::search::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
 
 	KStandardAction::zoomIn(
 		displayWidget()->connectionsProxy(), SLOT(zoomIn()),
-		actionCollection(), "zoomIn"
+		actionCollection()
 	);
 	KStandardAction::zoomOut(
 		displayWidget()->connectionsProxy(), SLOT(zoomOut()),
-		actionCollection(), "zoomOut"
+		actionCollection()
 	);
 	KStandardAction::close(
 		this, SLOT(close()),
-		actionCollection(), "closeWindow"
+		actionCollection()
 	);
 
 	KStandardAction::selectAll(
 		displayWidget()->connectionsProxy(), SLOT(selectAll()),
-		actionCollection(), "selectAll"
+		actionCollection()
 	);
 
 	KStandardAction::copy(
 		displayWidget()->connectionsProxy(), SLOT(copySelection()),
-		actionCollection(), "copySelectedText"
+		actionCollection()
 	);
 
 	KStandardAction::find(
 		displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()),
-		actionCollection(), "findText"
+		actionCollection()
 	);
-
+/* kde/qt3:
 	new KToolBarPopupAction(
 		i18n("Back in history"), CResMgr::displaywindows::general::backInHistory::icon, CResMgr::displaywindows::general::backInHistory::accel,
 		keyChooser(), SLOT( backInHistory() ),
@@ -209,28 +219,51 @@ void CDisplayWindow::initActions() {
 		keyChooser(), SLOT( forwardInHistory() ),
 		actionCollection(), CResMgr::displaywindows::general::forwardInHistory::actionName
 	);
+*/
+	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
+			KIcon(CResMgr::displaywindows::general::backInHistory::icon),
+			i18n("Back in history"),
+			actionCollection()
+			);
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory));
 
+	popupaction = new KToolBarPopupAction(
+			KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
+			i18n("Forward in history"),
+			actionCollection()
+			);
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory));
+	
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
 
 /** Is called when this window gets the focus or looses the focus. */
 void CDisplayWindow::windowActivated( const bool hasFocus ) {
-	if (accel()) {
-		accel()->setEnabled(hasFocus);
+	//kde/qt3:
+	//if (accel()) {
+	//	accel()->setEnabled(hasFocus);
+	//}
+	
+	//new:
+	if (actionCollection()) {
+		if (hasFocus) {
+			actionCollection()->setAssociatedWidget(this);
+		} else {
+			actionCollection()->removeAssociatedWidget(this);
+		}
 	}
 }
 
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload() {
 	//first make sure all used Sword modules are still present
-	for (QStringList::iterator it = m_modules.begin(); it != m_modules.end(); ++it) {
-		if (!backend()->findModuleByName(*it)) {
-			it = m_modules.remove(it);
-			if (it == m_modules.end()) {
-				break;
-			}
+	QMutableStringListIterator it(m_modules);
+	while (it.hasNext()) {
+		if (!backend()->findModuleByName(it.next())) {
+			it.remove();
 		}
 	}
+
 	if (m_modules.count() == 0){
 		close();
 		return;
@@ -356,8 +389,8 @@ const bool CDisplayWindow::init() {
 
 	setCaption(windowCaption());
 	//setup focus stuff.
-	setFocusPolicy(QWidget::ClickFocus);
-	parentWidget()->setFocusPolicy(QWidget::ClickFocus);
+	setFocusPolicy(Qt::ClickFocus);
+	parentWidget()->setFocusPolicy(Qt::ClickFocus);
 
 	initActions();
 	initToolbars();
