@@ -24,19 +24,19 @@
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 
-#include "../../backend/cswordkey.h"
+#include "backend/cswordkey.h"
 
-#include "../keychooser/ckeychooser.h"
+#include "frontend/keychooser/ckeychooser.h"
 
-#include "../display/cdisplay.h"
+#include "frontend/display/cdisplay.h"
 
-#include "../cmdiarea.h"
-#include "../cprofilewindow.h"
-#include "../cbtconfig.h"
+#include "frontend/cmdiarea.h"
+#include "frontend/cprofilewindow.h"
+#include "frontend/cbtconfig.h"
 
-#include "../searchdialog/csearchdialog.h"
+#include "frontend/searchdialog/csearchdialog.h"
 
-#include "../../util/cresmgr.h"
+#include "util/cresmgr.h"
 
 
 //Qt includes
@@ -149,17 +149,19 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 
 	KToolBarPopupAction* action = new KToolBarPopupAction(
 				KIcon(CResMgr::displaywindows::general::backInHistory::icon),
-				i18n("Back in history"), a
+				i18n("Back in history"),
+				a
 				);
 	action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
-	//is this really needed? //CResMgr::displaywindows::general::backInHistory::actionName
+	a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
 	action = new KToolBarPopupAction(
 				KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
-				i18n("Forward in history"), a
+				i18n("Forward in history"),
+				a
 				);
 	action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
-	// see previous action //CResMgr::displaywindows::general::forwardInHistory::actionName
+	a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
 }
 
 void CDisplayWindow::initActions() {
@@ -179,6 +181,7 @@ void CDisplayWindow::initActions() {
 				);
 	kaction->setShortcut(CResMgr::displaywindows::general::search::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
+	actionCollection()->addAction(CResMgr::displaywindows::general::search::actionName, kaction);
 
 	KStandardAction::zoomIn(
 		displayWidget()->connectionsProxy(), SLOT(zoomIn()),
@@ -192,17 +195,14 @@ void CDisplayWindow::initActions() {
 		this, SLOT(close()),
 		actionCollection()
 	);
-
 	KStandardAction::selectAll(
 		displayWidget()->connectionsProxy(), SLOT(selectAll()),
 		actionCollection()
 	);
-
 	KStandardAction::copy(
 		displayWidget()->connectionsProxy(), SLOT(copySelection()),
 		actionCollection()
 	);
-
 	KStandardAction::find(
 		displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()),
 		actionCollection()
@@ -226,14 +226,16 @@ void CDisplayWindow::initActions() {
 			actionCollection()
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory));
-
+	actionCollection()->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
+	
 	popupaction = new KToolBarPopupAction(
 			KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
 			i18n("Forward in history"),
 			actionCollection()
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory));
-	
+	actionCollection()->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
+
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
 
