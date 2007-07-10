@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,6 +10,7 @@
 
 
 #include "cplainwritewindow.h"
+#include "frontend/display/cwritedisplay.h"
 
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/cprofilewindow.h"
@@ -22,13 +23,17 @@
 
 //KDE includes
 #include <kaction.h>
-#include <kaccel.h>
+#include <kactioncollection.h>
+#include <ktoggleaction.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <ktoolbar.h>
 
 using namespace Profile;
 
-CPlainWriteWindow::CPlainWriteWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent, const char *name ) : CWriteWindow(moduleList, parent, name) {
+CPlainWriteWindow::CPlainWriteWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
+	: CWriteWindow(moduleList, parent)
+{
 	setKey( CSwordKey::createInstance(moduleList.first()) );
 }
 
@@ -42,65 +47,67 @@ void CPlainWriteWindow::initView() {
 	setCentralWidget( displayWidget()->view() );
 
 	setMainToolBar( new KToolBar(this) );
-	mainToolBar()->setFullSize(true);
-	addDockWindow(mainToolBar());
+	//mainToolBar()->setFullSize(true);
+	this->addToolBarBreak(); // to replace setFullSize of Qt3?
+	//TODO: Qt4 is different; I just remove the docking capability now
+	//addDockWindow(mainToolBar());
 
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
-	mainToolBar()->insertWidget(0,keyChooser()->sizeHint().width(),keyChooser());
-	mainToolBar()->setFullSize(false);
+	mainToolBar()->addWidget(keyChooser());
+	//mainToolBar()->setFullSize(false); //why?
 
 }
 
 void CPlainWriteWindow::initToolbars() {
-	m_actions.syncWindow = new KToggleAction(i18n("Sync with active Bible"),
-						   CResMgr::displaywindows::commentaryWindow::syncWindow::icon,
-						   CResMgr::displaywindows::commentaryWindow::syncWindow::accel,
-						   actionCollection(),
-						   CResMgr::displaywindows::commentaryWindow::syncWindow::actionName
-											);
+	m_actions.syncWindow = new KToggleAction(
+			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+			i18n("Sync with active Bible"),
+			actionCollection()
+			);
+	m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
 	m_actions.syncWindow->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);
-	m_actions.syncWindow->plug(mainToolBar());
+	mainToolBar()->addAction(m_actions.syncWindow);
 
 
-	m_actions.saveText = new KAction(i18n("Save text"),
-									 CResMgr::displaywindows::writeWindow::saveText::icon,
-									 CResMgr::displaywindows::writeWindow::saveText::accel,
-									 this, SLOT(saveCurrentText()),
-									 actionCollection(),
-									 CResMgr::displaywindows::writeWindow::saveText::actionName
-									);
+	m_actions.saveText = new KAction(
+			KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+			i18n("Save text"),
+			actionCollection()
+			);
+	m_actions.saveText->setShortcut(CResMgr::displaywindows::writeWindow::saveText::accel);
+	QObject::connect(m_actions.saveText, SIGNAL(triggered()), this, SLOT(saveCurrentText()));
 	m_actions.saveText->setToolTip( CResMgr::displaywindows::writeWindow::saveText::tooltip );
-	m_actions.saveText->plug(mainToolBar());
+	mainToolBar()->addAction(m_actions.saveText);
 
 
-	m_actions.deleteEntry = new KAction(i18n("Delete current entry"),
-										CResMgr::displaywindows::writeWindow::deleteEntry::icon,
-										CResMgr::displaywindows::writeWindow::deleteEntry::accel,
-										this, SLOT(deleteEntry()),
-										actionCollection(),
-										CResMgr::displaywindows::writeWindow::deleteEntry::actionName
-									   );
+	m_actions.deleteEntry = new KAction(
+			KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+			i18n("Delete current entry"),
+			actionCollection()
+			);
+	m_actions.deleteEntry->setShortcut(CResMgr::displaywindows::writeWindow::deleteEntry::accel);
+	QObject::connect(m_actions.deleteEntry, SIGNAL(triggered()), this, SLOT(deleteEntry()) );
 	m_actions.deleteEntry->setToolTip( CResMgr::displaywindows::writeWindow::deleteEntry::tooltip );
-	m_actions.deleteEntry->plug(mainToolBar());
+	mainToolBar()->addAction(m_actions.deleteEntry);
 
 
-	m_actions.restoreText = new KAction(i18n("Restore original text"),
-										CResMgr::displaywindows::writeWindow::restoreText::icon,
-										CResMgr::displaywindows::writeWindow::restoreText::accel,
-										this, SLOT(restoreText()),
-										actionCollection(),
-										CResMgr::displaywindows::writeWindow::restoreText::actionName
-									   );
+	m_actions.restoreText = new KAction(
+			KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+			i18n("Restore original text"),
+			actionCollection()
+			);
+	m_actions.restoreText->setShortcut(CResMgr::displaywindows::writeWindow::restoreText::accel);
+	QObject::connect(m_actions.restoreText, SIGNAL(triggered()), this, SLOT(restoreText()) );
 	m_actions.restoreText->setToolTip( CResMgr::displaywindows::writeWindow::restoreText::tooltip );
-	m_actions.restoreText->plug(mainToolBar());
+	mainToolBar()->addAction(m_actions.restoreText);
 }
 
 void CPlainWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
+	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
 			this, SLOT(lookup(CSwordKey*)));
 
-	connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),
+	QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),
 			this, SLOT(textChanged()) );
 }
 
@@ -120,10 +127,10 @@ void CPlainWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 	QString t = displayWidget()->plainText();
 	//since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
-	QRegExp re("(?:<html.*>.+<body.*>)", false); //remove headers, case insensitive
+	QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
 	re.setMinimal(true);
 	t.replace(re, "");
-	t.replace(QRegExp("</body></html>", false), "");//remove footer
+	t.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");//remove footer
 
 	const QString& oldKey = this->key()->key();
 	if( modules().first()->isWritable() ) {

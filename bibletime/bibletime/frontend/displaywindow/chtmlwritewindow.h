@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,10 +15,9 @@
 //BibleTime includes
 #include "cplainwritewindow.h"
 
-//Qt includes
-#include <qwidget.h>
 
 class KAction;
+class KToggleAction;
 
 /** The WYSIWYG implementation of the editor.
   * @author The BibleTime team
@@ -26,7 +25,7 @@ class KAction;
 class CHTMLWriteWindow : public CPlainWriteWindow  {
 	Q_OBJECT
 public:
-	CHTMLWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name = 0);
+	CHTMLWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CHTMLWriteWindow();
 
 	/**
