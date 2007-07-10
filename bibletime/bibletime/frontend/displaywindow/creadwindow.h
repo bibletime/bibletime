@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -18,14 +18,10 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 
-//Qt includes
-#include <QMenu>
 
-//Added by qt3to4:
-#include <QResizeEvent>
-
-class KPopupMenu;
 class KActionCollection;
+class QResizeEvent;
+
 
 /** The base class for all read-only display windows.
   * @author The BibleTime team
@@ -37,7 +33,7 @@ public:
 	//  static void insertKeyboardActions( KAccel* const a );
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

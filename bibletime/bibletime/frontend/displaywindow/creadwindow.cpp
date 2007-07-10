@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,29 +16,20 @@
 #include "backend/cdisplayrendering.h"
 #include "backend/cswordkey.h"
 
-#include "frontend/cbtconfig.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/cprofilewindow.h"
-#include "frontend/displaywindow/cmodulechooserbar.h"
-#include "frontend/keychooser/ckeychooser.h"
 #include "frontend/searchdialog/csearchdialog.h"
 
-#include "util/cresmgr.h"
 
-//KDE includes
-#include <kpopupmenu.h>
-#include <kaction.h>
-#include <kaccel.h>
-#include <kstdaccel.h>
-#include <klocale.h>
-//Added by qt3to4:
+#include <kactioncollection.h>
+
 #include <QResizeEvent>
 
 using namespace Profile;
 
-CReadWindow::CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name )
-: CDisplayWindow(modules,parent,name),
+CReadWindow::CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
+: CDisplayWindow(modules,parent),
 m_displayWidget(0) {
 
 	//   installEventFilter(this);
@@ -136,7 +127,7 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
 		}
 		settings->setKey( key()->key() );
 		if (vk) {
-			vk->setLocale(oldLang.latin1());
+			vk->setLocale(oldLang.toLatin1());
 		}
 	}
 
