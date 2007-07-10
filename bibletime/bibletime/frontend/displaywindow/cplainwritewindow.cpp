@@ -102,7 +102,7 @@ void CPlainWriteWindow::initToolbars() {
 	m_actions.restoreText->setShortcut(CResMgr::displaywindows::writeWindow::restoreText::accel);
 	QObject::connect(m_actions.restoreText, SIGNAL(triggered()), this, SLOT(restoreText()) );
 	m_actions.restoreText->setToolTip( CResMgr::displaywindows::writeWindow::restoreText::tooltip );
-	actionCollection()->addAction(CResMgr::displaywindows::displaywindows::restoreText::actionName, m_actions.restoreText);
+	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, m_actions.restoreText);
 	mainToolBar()->addAction(m_actions.restoreText);
 }
 
