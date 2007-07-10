@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,11 +13,15 @@
 #define CWRITEWINDOW_H
 
 //BibleTime includes
-#include "frontend/display/cwritedisplay.h"
+//#include "frontend/display/cwritedisplay.h"
 #include "cdisplaywindow.h"
 
-//Qt includes
-#include <qwidget.h>
+
+class CWriteDisplay;
+
+class KActionCollection;
+
+class QString;
 
 /**The base class for all write-only display windows.
   *@author The BibleTime team
@@ -28,7 +32,7 @@ class CWriteWindow : public CDisplayWindow  {
 public:
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CWriteWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

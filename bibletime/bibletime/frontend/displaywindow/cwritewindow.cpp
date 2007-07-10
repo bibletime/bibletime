@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,6 +15,7 @@
 
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/cprofilewindow.h"
+#include "frontend/display/cwritedisplay.h"
 
 //KDE includes
 #include <kmessagebox.h>
@@ -22,8 +23,8 @@
 
 using namespace Profile;
 
-CWriteWindow::CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name )
-: CDisplayWindow(modules, parent,name), m_writeDisplay(0) {}
+CWriteWindow::CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
+: CDisplayWindow(modules, parent), m_writeDisplay(0) {}
 
 CWriteWindow::~CWriteWindow() {}
 
@@ -42,7 +43,7 @@ void CWriteWindow::initConnections() {
 	//  qWarning("CWriteWindow::initConnections()");
 	Q_ASSERT(keyChooser());
 
-	connect(keyChooser(), SIGNAL(beforeKeyChange(const QString&)),
+	QObject::connect(keyChooser(), SIGNAL(beforeKeyChange(const QString&)),
 			this, SLOT(beforeKeyChange(const QString&))
 		   );
 };
@@ -74,7 +75,7 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 		}
 		settings->setKey( key()->key() );
 		if (vk) {
-			vk->setLocale(oldLang.latin1());
+			vk->setLocale(oldLang.toLatin1());
 		}
 	}
 
