@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,20 +15,17 @@
 //BibleTime includes
 #include "creadwindow.h"
 
-//Qt includes
-#include <qwidget.h>
 
 //KDE includes
-#include <kaction.h>
-#include <kactionmenu.h>
 
 
 class CSwordKey;
 class CSwordLDKey;
 
 class KToolBarPopupAction;
-
-
+class KActionCollection;
+class KAction;
+class KActionMenu;
 
 /**
   *@author The BibleTime team
@@ -37,7 +34,7 @@ class KToolBarPopupAction;
 class CLexiconReadWindow : public CReadWindow  {
 	Q_OBJECT
 public:
-	CLexiconReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CLexiconReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CLexiconReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

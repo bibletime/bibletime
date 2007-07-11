@@ -95,6 +95,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/displaywindow/cwritewindow.cpp
 	bibletime/frontend/displaywindow/cplainwritewindow.cpp
 	bibletime/frontend/displaywindow/chtmlwritewindow.cpp
+	bibletime/frontend/displaywindow/clexiconreadwindow.cpp
 
 
 #Add files to be ported here
