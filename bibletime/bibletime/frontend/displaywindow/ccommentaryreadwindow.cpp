@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -25,39 +25,45 @@
 
 //KDE includes
 #include <kaction.h>
-#include <kaccel.h>
+#include <kactioncollection.h>
+#include <ktoggleaction.h>
+//#include <kaccel.h>
 #include <klocale.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
+#include <ktoolbar.h>
 
 using namespace Profile;
 
-CCommentaryReadWindow::CCommentaryReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name) : CLexiconReadWindow(modules, parent,name) {}
+CCommentaryReadWindow::CCommentaryReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
 
 void CCommentaryReadWindow::insertKeyboardActions( KActionCollection* const a ) {
-	new KAction(
-		i18n("Next book"), CResMgr::displaywindows::bibleWindow::nextBook::accel,
-		a, "nextBook"
-	);
-	new KAction(
-		i18n("Previous book"), CResMgr::displaywindows::bibleWindow::previousBook::accel,
-		a, "previousBook"
-	);
-	new KAction(
-		i18n("Next chapter"), CResMgr::displaywindows::bibleWindow::nextChapter::accel,
-		a, "nextChapter"
-	);
-	new KAction(
-		i18n("Previous chapter"), CResMgr::displaywindows::bibleWindow::previousChapter::accel,
-		a, "previousChapter"
-	);
-	new KAction(
-		i18n("Next verse"), CResMgr::displaywindows::bibleWindow::nextVerse::accel,
-		a, "nextVerse"
-	);
-	new KAction(
-		i18n("Previous verse"), CResMgr::displaywindows::bibleWindow::previousVerse::accel,
-		a, "previousVerse"
-	);
+	
+	KAction* kaction;
+	
+	kaction = new KAction(i18n("Next book"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+	a->addAction("nextBook", kaction);
+	
+	kaction = new KAction(i18n("Previous book"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
+	a->addAction( "previousBook", kaction);
+	
+	kaction = new KAction(i18n("Next chapter"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+	a->addAction("nextChapter", kaction);
+	
+	kaction = new KAction(i18n("Previous chapter"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+	a->addAction("previousChapter", kaction);
+	
+	kaction = new KAction(i18n("Next verse"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+	a->addAction("nextVerse", kaction);
+	
+	kaction = new KAction(i18n("Previous verse"), a);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+	a->addAction("previousVerse", kaction);
+	
 }
 
 void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
@@ -75,14 +81,15 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 void CCommentaryReadWindow::initToolbars() {
 	CLexiconReadWindow::initToolbars();
 
-	m_syncButton = new KToggleAction(i18n("Sync with active Bible"),
-									 CResMgr::displaywindows::commentaryWindow::syncWindow::icon,
-									 CResMgr::displaywindows::commentaryWindow::syncWindow::accel,
-									 actionCollection(),
-									 CResMgr::displaywindows::commentaryWindow::syncWindow::actionName
-									);
-	m_syncButton->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);
-	m_syncButton->plug(buttonsToolBar());
+	m_syncButton = new KToggleAction(
+			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+			i18n("Sync with active Bible"),
+			actionCollection()
+			);
+	m_syncButton->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
+	m_syncButton->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);	
+	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_syncButton);
+	buttonsToolBar()->addAction(m_syncButton);
 }
 
 /** Reimplementation to handle the keychooser refresh. */
@@ -90,7 +97,7 @@ void CCommentaryReadWindow::reload() {
 	CLexiconReadWindow::reload();
 
 	//refresh the book lists
-	verseKey()->setLocale( backend()->booknameLanguage().latin1() );
+	verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
 	keyChooser()->refreshContent();
 }
 
@@ -103,46 +110,44 @@ CSwordVerseKey* CCommentaryReadWindow::verseKey() {
 
 void CCommentaryReadWindow::initActions() {
 	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
-	//cleanup, not a clean oo-solution
-	actionCollection()->action("nextEntry")->setEnabled(false);
-	actionCollection()->action("previousEntry")->setEnabled(false);
 
-	new KAction(
-		i18n("Next book"),
-		CResMgr::displaywindows::bibleWindow::nextBook::accel,
-		this, SLOT(nextBook()),
-		actionCollection(), "nextBook"
-	);
-	new KAction(
-		i18n("Previous book"),
-		CResMgr::displaywindows::bibleWindow::previousBook::accel,
-		this, SLOT(previousBook()),
-		actionCollection(), "previousBook"
-	);
-	new KAction(
-		i18n("Next chapter"),
-		CResMgr::displaywindows::bibleWindow::nextChapter::accel,
-		this, SLOT(nextChapter()),
-		actionCollection(), "nextChapter"
-	);
-	new KAction(
-		i18n("Previous chapter"),
-		CResMgr::displaywindows::bibleWindow::previousChapter::accel,
-		this, SLOT(previousChapter()),
-		actionCollection(), "previousChapter"
-	);
-	new KAction(
-		i18n("Next verse"),
-		CResMgr::displaywindows::bibleWindow::nextVerse::accel,
-		this, SLOT(nextVerse()),
-		actionCollection(), "nextVerse"
-	);
-	new KAction(
-		i18n("Previous verse"),
-		CResMgr::displaywindows::bibleWindow::previousVerse::accel,
-		this, SLOT(previousVerse()),
-		actionCollection(), "previousVerse"
-	);
+	KActionCollection* ac = actionCollection();
+
+	//cleanup, not a clean oo-solution
+	ac->action("nextEntry")->setEnabled(false);
+	ac->action("previousEntry")->setEnabled(false);
+
+	KAction* kaction;
+
+	kaction = new KAction(i18n("Next book"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
+	ac->addAction("nextBook", kaction);
+
+	kaction = new KAction(i18n("Previous book"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
+	ac->addAction("previousBook", kaction);
+
+	kaction = new KAction(i18n("Next chapter"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
+	ac->addAction("nextChapter", kaction);
+
+	kaction = new KAction(i18n("Previous chapter"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
+	ac->addAction("previousChapter", kaction);
+
+	kaction = new KAction(i18n("Next verse"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
+	ac->addAction("nextVerse", kaction);
+
+	kaction = new KAction(i18n("Previous verse"), ac);
+	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
+	ac->addAction("previousVerse", kaction);
 
 	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
 }
@@ -194,5 +199,7 @@ const bool CCommentaryReadWindow::syncAllowed() const {
 void CCommentaryReadWindow::setupPopupMenu() {
 	CLexiconReadWindow::setupPopupMenu();
 
-	popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), i18n("Commentary window"));
+	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), i18n("Commentary window"));
+	popup()->actions().at(0)->setText(i18n("Commentary window"));
+	popup()->actions().at(0)->setIcon(CToolClass::getIconForModule(modules().first()));
 }
