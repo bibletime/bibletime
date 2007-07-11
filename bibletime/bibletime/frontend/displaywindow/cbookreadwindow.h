@@ -14,9 +14,9 @@
 
 //BibleTime includes
 #include "clexiconreadwindow.h"
-#include "backend/cswordkey.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordversekey.h"
+//#include "backend/cswordkey.h"
+//#include "backend/cswordtreekey.h"
+//#include "backend/cswordversekey.h"
 
 class KToggleAction;
 class CBookTreeChooser;
@@ -29,7 +29,7 @@ class CBookReadWindow : public CLexiconReadWindow  {
 public:
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CBookReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CBookReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	
 	virtual ~CBookReadWindow();
 	/**
