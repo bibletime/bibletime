@@ -15,19 +15,28 @@
 //BibleTime includes
 #include "clexiconreadwindow.h"
 
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
+//#include "backend/cswordkey.h"
+//#include "backend/cswordversekey.h"
 
 //Qt includes
-#include <qwidget.h>
+//#include <qwidget.h>
 //Added by qt3to4:
-#include <QEvent>
+//#include <QEvent>
 
 //KDE includes
-#include <kaction.h>
+//#include <kaction.h>
 
 
 class CTransliterationButton;
+class CSwordKey;
+class CSwordVerseKey;
+
+class KActionCollection;
+class KAction;
+class KActionMenu;
+
+class QObject;
+class QEvent;
 
 /**The read display window for Bibles.
   *@author The BibleTime team
@@ -36,7 +45,7 @@ class CTransliterationButton;
 class CBibleReadWindow : public CLexiconReadWindow  {
 	Q_OBJECT
 public:
-	CBibleReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent, const char *name=0);
+	CBibleReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
 	virtual ~CBibleReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.
