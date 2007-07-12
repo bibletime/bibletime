@@ -4,11 +4,10 @@
 // Description:
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
+// Author: The BibleTime team <info@bibletime.info>, (C) 2004, 2007
 //
 // Copyright: See COPYING file that comes with this distribution
-//
-//
+
 
 #include "crossrefrendering.h"
 
@@ -20,8 +19,11 @@ namespace InfoDisplay {
 
 	/**
 	 */
-	CrossRefRendering::CrossRefRendering( CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
-: CHTMLExportRendering(Settings(), displayOptions, filterOptions) {}
+	CrossRefRendering::CrossRefRendering( CSwordBackend::DisplayOptions displayOptions,
+										  CSwordBackend::FilterOptions filterOptions
+										)
+		: CHTMLExportRendering(Settings(), displayOptions, filterOptions)
+	{}
 
 	const QString CrossRefRendering::finishText( const QString& text, KeyTree& ) {
 		//   qDebug("CrossRefRendering::finishText");

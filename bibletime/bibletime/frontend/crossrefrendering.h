@@ -4,11 +4,11 @@
 // Description:
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
+// Author: The BibleTime team <info@bibletime.info>, (C) 2004, 2007
 //
 // Copyright: See COPYING file that comes with this distribution
-//
-//
+
+
 #ifndef INFODISPLAYCROSSREFRENDERING_H
 #define INFODISPLAYCROSSREFRENDERING_H
 
@@ -17,7 +17,8 @@
 
 namespace InfoDisplay {
 
-class CrossRefRendering : public Rendering::CHTMLExportRendering {
+class CrossRefRendering : public Rendering::CHTMLExportRendering
+{
 protected:
 		friend class CInfoDisplay;
 
