@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,6 +15,8 @@
 #include "backend/cdisplaytemplatemgr.h"
 #include "backend/cswordversekey.h"
 
+#include "util/cpointers.h"
+
 //KDE includes
 #include <khtml_part.h>
 #include <khtmlview.h>
@@ -24,9 +26,11 @@
 namespace Printing {
 
 	CPrinter::CPrinter(QObject *, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
-:  QObject(0),
-	CDisplayRendering(displayOptions, filterOptions),
-	m_htmlPart(new KHTMLPart(0, 0, this)) {
+		:	QObject(0),
+			CDisplayRendering(displayOptions, filterOptions),
+			m_htmlPart(new KHTMLPart())
+	{
+		m_htmlPart->setParent(this);
 
 		//override the filteroptions set in the c-tor of CDisplayRendering
 		m_filterOptions.footnotes = false;
@@ -116,12 +120,21 @@ namespace Printing {
 		CDisplayTemplateMgr::Settings settings;
 		//settings.modules = modules;
 		settings.pageCSS_ID = "printer";
-		settings.langAbbrev = (lang && (modules.count() == 1) && lang->isValid())
+		settings.langAbbrev = ( lang && (modules.count() == 1) && lang->isValid() )
 							  ? lang->abbrev()
 							  : "unknown";
-		settings.pageDirection = (modules.count() == 1)
-				 ? ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl")
-				 : QString::null;
+
+		//the previous version gave compiler error for some strange reason
+		//(well, I don't like ?: anyway, let alone nested)
+		if (modules.count() != 1) {
+			settings.pageDirection = QString::null;
+		} else {
+			settings.pageDirection =
+				( modules.first()->textDirection() == CSwordModuleInfo::LeftToRight )
+				? "ltr"
+				: "rtl"
+				;
+		}
 
 		CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
 		return tMgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), text, settings);
