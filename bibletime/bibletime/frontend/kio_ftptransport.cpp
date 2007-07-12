@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -18,29 +18,37 @@
 #include <kfileitem.h>
 #include <kio/jobclasses.h>
 #include <kio/job.h>
+#include <kio/copyjob.h>
+#include <kjob.h>
+
+//Qt includes
+#include <QObject>
+#include <QMap>
 
 namespace BookshelfManager {
 	bool finishedDownload = false;
 
 	KIO_FTPTransport::KIO_FTPTransport(const char *host, sword::StatusReporter *statusReporter )
-: QObject(),
+		: QObject(),
 	sword::FTPTransport(host, statusReporter),
-	m_totalSize(-1) {}
+	m_totalSize(-1)
+	{}
 
 
 	KIO_FTPTransport::~KIO_FTPTransport() {}
 
-	char KIO_FTPTransport::getURL(const char *destPath, const char *sourceURL) {
+	char KIO_FTPTransport::getURL(const char *destPath, const char *sourceURL)
+	{
 		qWarning("FTP: Copy %s -> %s", sourceURL, destPath);
 
 		KIO::file_delete(
-			KURL(QString::fromLocal8Bit(destPath)),
+			KUrl(QString::fromLocal8Bit(destPath)),
 			false
 		);
 
 		KIO::Job* job = KIO::copy(
-							KURL(QString::fromLocal8Bit(sourceURL)),
-							KURL(QString::fromLocal8Bit(destPath)),
+							KUrl(QString::fromLocal8Bit(sourceURL)),
+							KUrl(QString::fromLocal8Bit(destPath)),
 							false
 						);
 
@@ -61,11 +69,11 @@ namespace BookshelfManager {
 		);
 
 		while (!finishedDownload) {
-			KApplication::kApplication()->processEvents(1);
+			KApplication::kApplication()->processEvents(); //qt4: no time! was 1ms
 			//   qWarning("FTP: Copy not yet finished");
 			if (term) {
 				if (job) {
-					job->kill(false); //kill emits the result signal
+					job->kill( KJob::EmitResult); //kill emits the result signal
 				}
 			}
 		}
@@ -124,7 +132,7 @@ namespace BookshelfManager {
 		m_listingCancelled = false;
 		KDirLister lister;
 		connect(&lister, SIGNAL(canceled()), SLOT(slotDirListingCanceled()));
-		lister.openURL(KURL(dirURL));
+		lister.openUrl(KUrl(dirURL));
 
 		while (!lister.isFinished() && !m_listingCancelled) {
 			if (term) {
@@ -132,7 +140,7 @@ namespace BookshelfManager {
 				break;
 			}
 
-			KApplication::kApplication()->processEvents(1);
+			KApplication::kApplication()->processEvents();
 		}
 
 
@@ -140,11 +148,11 @@ namespace BookshelfManager {
 			return ret;
 		}
 
-		KFileItemList items = lister.itemsForDir(KURL(dirURL));
+		KFileItemList items = lister.itemsForDir(KUrl(dirURL));
 		KFileItem* i = 0;
 		for ( i = items.first(); i; i = items.next() ) {
 			int length = i->name().length();
-			const char* t = i->name().latin1();
+			const char* t = i->name().toLatin1();
 
 			struct ftpparse s;
 			s.name = new char[length+1];//i->name().latin1();

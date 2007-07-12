@@ -1,14 +1,13 @@
-//
-// C++ Interface: %{MODULE}
-//
-// Description:
-//
-//
-// Author: %{AUTHOR} <%{EMAIL}>, (C) %{YEAR}
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2007 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+
 #ifndef INSTALLATIONMANAGERKIO_FTPTRANSPORT_H
 #define INSTALLATIONMANAGERKIO_FTPTRANSPORT_H
 
@@ -17,8 +16,8 @@
 #include <ftptrans.h>
 
 //Qt includes
-#include <qobject.h>
-#include <qmap.h>
+#include <QObject>
+#include <QMap>
 
 //KDE includes
 #include <kio/job.h>
