@@ -13,10 +13,11 @@
 #include "kstartuplogo.h"
 
 //Qt includes
-#include <qapplication.h>
-#include <qlabel.h>
-#include <qlayout.h>
-#include <qpixmap.h>
+#include <QApplication>
+#include <QLabel>
+#include <QLayout>
+#include <QPixmap>
+#include <QDesktopWidget>
 //Added by qt3to4:
 #include <Q3Frame>
 
@@ -58,19 +59,29 @@ void KStartupLogo::setStatusMessage(const QString& message) {
 }
 
 KStartupLogo::KStartupLogo()
-: QWidget(0, "startuplogo", /*WStyle_Customize | WStyle_NoBorder*/ Qt::WStyle_NoBorder|Qt::WStyle_StaysOnTop|Qt::WX11BypassWM ) {
+: QWidget(0, /*WStyle_Customize | WStyle_NoBorder*/
+			Qt::FramelessWindowHint|Qt::WindowStaysOnTopHint|Qt::X11BypassWindowManagerHint )
+{
 
 	QPixmap pm;
-	if ( !pm.load(locate("BT_pic","startuplogo.png")) ) {
+	if ( !pm.load( KStandardDirs::locate("BT_pic","startuplogo.png")) ) {
 		qWarning("Can't load startuplogo! Check your installation.");
 	}
 
-	setBackgroundPixmap(pm);
+	//setBackgroundPixmap(pm); //see qt3 support members of qwidget
+	QPalette bgPalette;
+ 	bgPalette.setBrush(this->backgroundRole(), QBrush(pm));
+ 	this->setPalette(bgPalette);
 
 	//Please not change the margin
 	textLabel = new QLabel(this);
 	textLabel->setGeometry(0,pm.height(),pm.width(),textLabel->sizeHint().height()+10);
-	textLabel->setBackgroundColor( QColor("#0d6de9") );
+	//textLabel->setBackgroundColor( QColor("#0d6de9") );
+	QPalette labelPalette;
+	labelPalette.setColor(textLabel->backgroundRole(), QColor("#0d6de9"));
+	textLabel->setPalette(labelPalette);
+
+
 	textLabel->setFrameStyle(Q3Frame::Panel | Q3Frame::Plain);
 	textLabel->setLineWidth(1);
 	textLabel->setScaledContents( true );
@@ -80,10 +91,10 @@ KStartupLogo::KStartupLogo()
 	textLabel->setFont( f );
 
 	QPalette p = palette();
-	p.setColor( QPalette::Inactive, QColorGroup::Text, Qt::white );
-	p.setColor( QPalette::Inactive, QColorGroup::Foreground, Qt::white );
-	p.setColor( QPalette::Normal, QColorGroup::Text, Qt::white );
-	p.setColor( QPalette::Normal, QColorGroup::Foreground, Qt::white );
+	p.setColor( QPalette::Inactive, QPalette::Text, Qt::white );
+	p.setColor( QPalette::Inactive, QPalette::Foreground, Qt::white );
+	p.setColor( QPalette::Normal, QPalette::Text, Qt::white );
+	p.setColor( QPalette::Normal, QPalette::Foreground, Qt::white );
 	setPalette( p );
 
 	setGeometry (
@@ -104,7 +115,7 @@ void KStartupLogo::setText(const QString text) {
 void KStartupLogo::raiseSplash() {
 	if (startupLogo) {
 		startupLogo->raise();
-		startupLogo->setActiveWindow();
+		startupLogo->activateWindow();
 		startupLogo->textLabel->show();
 	}
 }

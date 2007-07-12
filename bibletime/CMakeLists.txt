@@ -68,7 +68,9 @@ SET(bibletime_SOURCES
 	
 	#frontend
 	bibletime/frontend/cdragdrop.cpp
-	
+	#bibletime/frontend/kio_ftptransport.cpp
+	bibletime/frontend/kstartuplogo.cpp
+
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp

@@ -12,9 +12,8 @@
 #ifndef KSTARTUPLOGO_H
 #define KSTARTUPLOGO_H
 
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QLabel>
+#include <QWidget>
+
 
 //class forward declarations
 class QLabel;
