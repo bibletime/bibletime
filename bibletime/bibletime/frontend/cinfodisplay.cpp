@@ -4,7 +4,7 @@
 // Description:
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
+// Author: The BibleTime team <info@bibletime.info>, (C) 2004,2007
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -32,16 +32,16 @@
 #include <listkey.h>
 
 //Qt includes
-#include <qlayout.h>
-#include <qlabel.h>
-#include <q3scrollview.h>
-#include <qregexp.h>
-//Added by qt3to4:
-#include <Q3VBoxLayout>
+#include <QLayout>
+#include <QLabel>
+//#include <q3scrollview.h>
+#include <QRegExp>
+#include <QVBoxLayout>
 
 //KDE includes
 #include <klocale.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
+#include <kaction.h>
 
 
 using namespace Rendering;
@@ -49,15 +49,17 @@ using namespace sword;
 
 namespace InfoDisplay {
 
-	CInfoDisplay::CInfoDisplay(QWidget *parent, const char *name)
-: QWidget(parent, name) {
-		Q3VBoxLayout* layout = new Q3VBoxLayout(this);
+	CInfoDisplay::CInfoDisplay(QWidget *parent)
+		: QWidget(parent)
+	{
+		QVBoxLayout* layout = new QVBoxLayout(this);
 		QLabel* headingLabel = new QLabel(i18n("Mag (\"shift\" to lock)"),this);
 		headingLabel->setMargin(5);
 
 		m_htmlPart = CDisplay::createReadInstance(0, this);
 		m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
-		KStdAction::copy(m_htmlPart->connectionsProxy(), SLOT(copySelection()), 0, "copyMagSelection");
+		KAction* ka = KStandardAction::copy(0);
+		QObject::connect(ka, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
 
 		connect(
 			m_htmlPart->connectionsProxy(),
@@ -73,7 +75,7 @@ namespace InfoDisplay {
 	CInfoDisplay::~CInfoDisplay() {}
 
 	void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
-		qWarning("%s %s", mod_name.ascii(), key_text.ascii());
+		qWarning("%s %s", mod_name.toLatin1(), key_text.toLatin1());
 		CSwordModuleInfo* m = CPointers::backend()->findModuleByName(mod_name);
 		Q_ASSERT(m);
 		if (!m)
@@ -205,7 +207,7 @@ namespace InfoDisplay {
 		//a prefixed module gives the module to look into
 		QRegExp re("^[^ ]+:");
 		//  re.setMinimal(true);
-		int pos = re.search(data,0);
+		int pos = re.indexIn(data);
 		if (pos != -1) {
 			pos += re.matchedLength()-1;
 		}
@@ -229,7 +231,7 @@ namespace InfoDisplay {
 
 		if (module && (module->type() == CSwordModuleInfo::Bible)) {
 			VerseKey vk;
-			sword::ListKey refs = vk.ParseVerseList((const char*)data.mid((pos == -1) ? 0 : pos+1).utf8(), "Gen 1:1", true);
+			sword::ListKey refs = vk.ParseVerseList((const char*)data.mid((pos == -1) ? 0 : pos+1).toUtf8(), "Gen 1:1", true);
 
 			for (int i = 0; i < refs.Count(); ++i) {
 				SWKey* key = refs.getElement(i);
@@ -280,7 +282,7 @@ namespace InfoDisplay {
 	    \fn CInfoDisplay::decodeFootnote( const QString& data )
 	 */
 	const QString CInfoDisplay::decodeFootnote( const QString& data ) {
-		QStringList list = QStringList::split("/", data);
+		QStringList list = data.split("/");
 		Q_ASSERT(list.count() >= 3);
 		if (!list.count()) {
 			return QString::null;
@@ -301,14 +303,17 @@ namespace InfoDisplay {
 		util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 		key->key(keyname);
 		key->renderedText(); //force entryAttributes
-
-		const char* note = module->module()->getEntryAttributes()["Footnote"][swordFootnote.latin1()]["body"].c_str();
+		//TODO:
+		const char* note = module->module()->getEntryAttributes()
+["Footnote"]
+[swordFootnote.toLatin1()]
+["body"].c_str();
 
 		QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
 		text = QString::fromUtf8(module->module()->RenderText(
 									 module->isUnicode()
-									 ? (const char*)text.utf8()
-									 : (const char*)text.latin1()
+									 ? (const char*)text.toUtf8()
+									 : (const char*)text.toLatin1()
 								 ));
 
 		return QString("<div class=\"footnoteinfo\"><h3>%1</h3><p>%2</p></div>")
@@ -317,7 +322,7 @@ namespace InfoDisplay {
 	}
 
 	const QString CInfoDisplay::decodeStrongs( const QString& data ) {
-		QStringList strongs = QStringList::split("|", data);
+		QStringList strongs = data.split("|");
 		QString ret;
 
 		QStringList::const_iterator end = strongs.end();
@@ -349,7 +354,7 @@ namespace InfoDisplay {
 	}
 
 	const QString CInfoDisplay::decodeMorph( const QString& data ) {
-		QStringList morphs = QStringList::split("|", data);
+		QStringList morphs = data.split("|");
 		QString ret;
 
 		for (QStringList::iterator it = morphs.begin(); it != morphs.end(); ++it) {
@@ -358,7 +363,7 @@ namespace InfoDisplay {
 			QString value = "";
 			QString valueClass = "";
 
-			int valStart = (*it).find(':');
+			int valStart = (*it).indexOf(':');
 			if (valStart > -1) {
 				valueClass = (*it).mid(0, valStart);
 				module = CPointers::backend()->findModuleByName( valueClass );
@@ -374,7 +379,7 @@ namespace InfoDisplay {
 				// No need to check len, if at(1) is > len QChar::null is
 				// returned which is ok to .isDigit()
 				if (value.at(1).isDigit()) {
-					switch (value.at(0).latin1()) {
+					switch (value.at(0).toLatin1()) {
 						case 'G':
 						module = CBTConfig::get
 									 (CBTConfig::standardGreekMorphLexicon);
@@ -436,7 +441,7 @@ namespace InfoDisplay {
 
 		util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 		key->key( data );
-		if (key->key().upper() != data.upper()) { //key not present in the lexicon
+		if (key->key().toUpper() != data.toUpper()) { //key not present in the lexicon
 			return QString::null;
 		}
 

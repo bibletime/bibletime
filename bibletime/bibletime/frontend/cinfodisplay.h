@@ -4,7 +4,7 @@
 // Description:
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004
+// Author: The BibleTime team <info@bibletime.info>, (C) 2004,2007
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -45,7 +45,7 @@ public:
 		typedef QPair<InfoType, QString> InfoData;
 		typedef QList<InfoData> ListInfoData;
 
-		CInfoDisplay(QWidget *parent = 0, const char *name = 0);
+		CInfoDisplay(QWidget *parent = 0);
 		virtual ~CInfoDisplay();
 
 		void setInfo(const InfoType, const QString& data);
