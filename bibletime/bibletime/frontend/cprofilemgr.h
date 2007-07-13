@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,8 +16,7 @@
 
 //Qt includes
 #include <QString>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QList>
 
 namespace Profile {
 /** The manager for profiles.
@@ -36,17 +35,15 @@ public:
 	/**
 	* @return a list of available profiles
 	*/
-	const Q3PtrList<CProfile>& profiles();
+	const QList<CProfile*>& profiles();
 	/**
 	* Removes the profile from the list and from the directory containg the profile files.
 	*/
-	const bool remove
-		( CProfile* p );
+	const bool remove( CProfile* p );
 	/**
 	* Removes the profile from the list and from the directory containg the profile files.
 	*/
-	const bool remove
-		( const QString& );
+	const bool remove( const QString& );
 	/**
 	* Returns the profile with the desired name. If there's no such profile 0 is returned.
 	*/
@@ -61,7 +58,7 @@ public:
 	void refresh();
 
 protected:
-	Q3PtrList<CProfile> m_profiles;
+	QList<CProfile*> m_profiles;
 	QString m_profilePath;
 	CProfile* m_startupProfile;
 };

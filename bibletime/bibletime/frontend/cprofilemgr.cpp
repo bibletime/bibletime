@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,9 +12,9 @@
 #include "cprofilemgr.h"
 
 //Qt includes
-#include <qdir.h>
-#include <qfile.h>
-#include <q3ptrlist.h>
+#include <QDir>
+#include <QFile>
+#include <QList>
 
 //KDE includes
 #include <kstandarddirs.h>
@@ -22,13 +22,13 @@
 namespace Profile {
 
 CProfileMgr::CProfileMgr() : m_startupProfile(0) {
-	m_profiles.setAutoDelete(true);
+	//m_profiles.setAutoDelete(true);
 
 	KStandardDirs stdDirs;
 	m_profilePath = stdDirs.saveLocation("data", "bibletime/sessions/");
 
 	QDir d( m_profilePath );
-	QStringList files = d.entryList("*.xml");
+	QStringList files = d.entryList(QStringList("*.xml"));
 	for ( QStringList::Iterator it = files.begin(); it != files.end(); ++it ) {
 		if ((*it) != "_startup_.xml") {
 			m_profiles.append(new CProfile(m_profilePath + *it));
@@ -40,12 +40,13 @@ CProfileMgr::CProfileMgr() : m_startupProfile(0) {
 }
 
 CProfileMgr::~CProfileMgr() {
-	m_profiles.clear(); // autoDelete is enabled, so all profiles are deleted
+	qDeleteAll(m_profiles);
+	m_profiles.clear();
 	delete m_startupProfile;
 }
 
 /** Returns a list of available profiles. */
-const Q3PtrList<CProfile>& CProfileMgr::profiles() {
+const QList<CProfile*>& CProfileMgr::profiles() {
 	return m_profiles;
 }
 
@@ -59,24 +60,30 @@ CProfile* CProfileMgr::create( const QString name ) {
 
 /** Removes the profile from the list and from the directory containg the profile files. */
 const bool CProfileMgr::remove
-	( CProfile* p ) {
+	( CProfile* p )
+{
 	bool ret = false;
 	QFile f( p->filename() );
 	if (f.exists())
 		f.remove();
-	if(m_profiles.remove(p))
-		; //auto delete is enabled
+
+	int i = m_profiles.indexOf(p);
+	if (i != -1)
+		delete m_profiles.takeAt(i);
+	
 	ret = true;
 	return ret;
 }
 
 const bool CProfileMgr::remove
-	( const QString& profile) {
+	( const QString& profile)
+{
 	bool ret = false;
-	for (CProfile* p = m_profiles.first(); p; p = m_profiles.next()) {
+	QListIterator<CProfile*> it(m_profiles);
+	while (it.hasNext()) {
+		CProfile* p = it.next();
 		if (p->name() == profile) {
-			remove
-				(p);
+			remove(p);
 			ret =  true;
 		}
 	}
@@ -85,9 +92,11 @@ const bool CProfileMgr::remove
 
 /** Returns the profile with the desired name. If there's no such profile 0 is returned. */
 CProfile* CProfileMgr::profile(const QString& name) {
-	for (m_profiles.first(); m_profiles.current(); m_profiles.next()) {
-		if (m_profiles.current()->name() == name) {
-			return m_profiles.current();
+	QListIterator<CProfile*> it(m_profiles);
+	while (it.hasNext()) {
+		CProfile* p = it.next();
+		if (p && p->name() == name) {
+			return p;
 		}
 	}
 
@@ -105,9 +114,10 @@ CProfile* CProfileMgr::startupProfile() {
 
 /** Refreshes the profiles available on disk. Use this function to update the list of profiles after another instance of CProfileMgr created a new profile. */
 void CProfileMgr::refresh() {
+	qDeleteAll(m_profiles);
 	m_profiles.clear(); //delete all profiles
 	QDir d( m_profilePath );
-	QStringList files = d.entryList("*.xml");
+	QStringList files = d.entryList(QStringList("*.xml"));
 	for ( QStringList::Iterator it = files.begin(); it != files.end(); ++it ) {
 		CProfile p(m_profilePath + *it);
 		if (p.name() == "_startup_") { //new startup profile

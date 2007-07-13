@@ -18,22 +18,15 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qapplication.h>
-#include <qfontdatabase.h>
+#include <QApplication>
 #include <QString>
-#include <qstringlist.h>
-#include <qmap.h>
-//Added by qt3to4:
-#include <Q3ValueList>
+#include <QStringList>
+#include <QMap>
+#include <QList>
 
 //KDE includes
-#include <kdeversion.h>
 #include <kapplication.h>
-#if KDE_VERSION >= 0x030200
 #include <kactioncollection.h>
-#else
-#include <kaction.h>
-#endif
 #include <kconfig.h>
 #include <kcharsets.h>
 #include <kglobal.h>
