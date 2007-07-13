@@ -4,7 +4,7 @@
 // Description: 
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2006
+// Author: The BibleTime team <info@bibletime.info>, (C) 2006-2007
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -15,7 +15,7 @@
 #include "backend/cswordmoduleinfo.h"
 
 //Qt includes
-#include <qobject.h>
+#include <QObject>
 
 //forward declaration
 class KProgressDialog;

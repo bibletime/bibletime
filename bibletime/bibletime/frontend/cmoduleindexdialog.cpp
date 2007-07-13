@@ -4,7 +4,7 @@
 // Description: 
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 2006
+// Author: The BibleTime team <info@bibletime.info>, (C) 2006-2007
 //
 // Copyright: See COPYING file that comes with this distribution
 //
@@ -19,7 +19,7 @@
 
 //KDE includes
 #include <kapplication.h>
-#include <kprogress.h>
+#include <kprogressdialog.h>
 #include <klocale.h>
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
@@ -38,9 +38,9 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules ) 
 	}
 	
 	m_currentModuleIndex = 0;
-	progress = new KProgressDialog(0, "progressDialog", i18n("Preparing instant search"), QString::null, true);
+	progress = new KProgressDialog(0, i18n("Preparing instant search"), QString::null, Qt::Dialog);
 	progress->setAllowCancel(false);
-	progress->progressBar()->setTotalSteps( modules.count() * 100 );
+	progress->progressBar()->setRange(0, modules.count() * 100 );
 	progress->setMinimumDuration(0);
 // 	progress->show();
 // 	progress->raise();
@@ -50,8 +50,8 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules ) 
 		(*it)->connectIndexingFinished(this, SLOT(slotFinished()));
 		(*it)->connectIndexingProgress(this, SLOT(slotModuleProgress(int)));
 
-		progress->setLabel(i18n("Creating index for work %1").arg((*it)->name()));
-		qDebug("Building index for work %s", (*it)->name().latin1());
+		progress->setLabelText(i18n("Creating index for work %1").arg((*it)->name()));
+		qDebug("Building index for work %s", (*it)->name().toLatin1());
 		
 		(*it)->buildIndex();
 
@@ -86,13 +86,13 @@ void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modu
 void CModuleIndexDialog::slotModuleProgress( int percentage ) {
 //	qDebug("progress %d", percentage);
 	
-	progress->progressBar()->setProgress( m_currentModuleIndex * 100 + percentage );
-	KApplication::kApplication()->processEvents( 10 ); //10 ms only
+	progress->progressBar()->setValue( m_currentModuleIndex * 100 + percentage );
+	KApplication::kApplication()->processEvents(); //10 ms only; TODO: how about in qt4?
 }
 
 void CModuleIndexDialog::slotFinished( ) {
 	qDebug("indexing finished()");
 	
-	progress->progressBar()->setProgress( progress->progressBar()->totalSteps() );
-	KApplication::kApplication()->processEvents( 1 ); //1 ms only
+	progress->progressBar()->setValue( progress->progressBar()->maximum() - progress->progressBar()->minimum() );
+	KApplication::kApplication()->processEvents(); //1 ms only; TODO: how about in qt4?
 }
