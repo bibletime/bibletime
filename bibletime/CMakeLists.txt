@@ -71,6 +71,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/kstartuplogo.cpp
 	bibletime/frontend/crossrefrendering.cpp
 	bibletime/frontend/cprinter.cpp
+	bibletime/frontend/cbtconfig.cpp
 
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
