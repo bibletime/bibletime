@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -17,11 +17,9 @@
 #include "../backend/cswordmoduleinfo.h"
 
 //Qt includes
-#include <qworkspace.h>
-#include <q3ptrlist.h>
-#include <q3strlist.h>
-#include <qevent.h>
-//Added by qt3to4:
+#include <QWorkspace>
+#include <QList>
+#include <QEvent>
 #include <QResizeEvent>
 #include <QChildEvent>
 
@@ -46,7 +44,7 @@ public:
 		autoCascade,
 		Nothing
 	};
-	CMDIArea(QWidget *parent, const char *name = 0 );
+	CMDIArea(QWidget *parent);
 	/**
 	*/
 	void readSettings();
@@ -68,7 +66,7 @@ public:
 	* Forces an update of the currently chosen window arrangement.
 	*/
 	void triggerWindowUpdate();
-	Q3PtrList<QWidget> usableWindowList();
+	QList<QWidget*> usableWindowList();
 
 public slots:
 	/**

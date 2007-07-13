@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -16,30 +16,23 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 
-#include "config.h"
+//#include "config.h"
 
 //KDE includes
-#include <kpopupmenu.h>
+#include <kmenu.h>
 #include <kapplication.h>
 #include <klocale.h>
+#include <kdialog.h>
 
 //QT includes
-#include <qobject.h>
-#include <qtimer.h>
-#include <qevent.h>
-#include <qtimer.h>
-#if QT_VERSION < 0x030200
-//We need this to close all windows with Qt < 3.2
-#include <qwidget.h>
-//Added by qt3to4:
-#include <QResizeEvent>
-#include <QChildEvent>
-#include <Q3PtrList>
-#endif
+#include <QObject>
+#include <QTimer>
+#include <QEvent>
 
 
-CMDIArea::CMDIArea(QWidget *parent, const char *name )
-: QWorkspace(parent, name),
+
+CMDIArea::CMDIArea(QWidget *parent)
+: QWorkspace(parent),
 m_guiOption(Nothing),
 m_childEvent(false),
 m_appCaption(QString::null) {
@@ -51,7 +44,8 @@ m_appCaption(QString::null) {
 
 /** Initializes the view of the MDI area */
 void CMDIArea::initView() {
-	setPaletteBackgroundColor( parentWidget()->paletteBackgroundColor() ); //work around a KDE bug (IMHO was in KDE 2.x)
+	//TODO: test with kde4
+	//setPaletteBackgroundColor( parentWidget()->paletteBackgroundColor() ); //work around a KDE bug (IMHO was in KDE 2.x)
 }
 
 /** Initilizes the connectiosn to SIGNALS */
@@ -62,7 +56,7 @@ void CMDIArea::initConnections() {
 
 /** Called whan a client window was activated */
 void CMDIArea::slotClientActivated(QWidget* client) {
-	if (!client || !isUpdatesEnabled()) {
+	if (!client || !updatesEnabled()) {
 		return;
 	}
 
@@ -72,18 +66,20 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 		return;
 	}
 
-	QWidgetList windows = windowList();
-	for ( QWidget* w = windows.first(); w; w = windows.next() ) {
+	//QWidgetList windows = windowList();
+	QListIterator<QWidget*> it(windowList());
+	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
+	while (it.hasNext()) {
 		//Don't use!! It would disable accel enabling for the active window, see CDisplayWindow::windowActivated
 		/*    if (w == client)
 		    continue;
 		*/
 
-		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(w);
+		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(it.next());
 		window->windowActivated( (window == sp) ? true : false);
 	}
 
-	emit sigSetToplevelCaption( ( m_appCaption = client->caption().stripWhiteSpace() ) );
+	emit sigSetToplevelCaption( ( m_appCaption = client->windowTitle().trimmed() ) );
 }
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
@@ -98,12 +94,13 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 	if (!windowList().count()) {
 		m_appCaption = QString::null;
-		emit sigSetToplevelCaption( KApplication::kApplication()->makeStdCaption(m_appCaption) );
+		emit sigSetToplevelCaption( KDialog::makeStandardCaption(m_appCaption, this) );
 		emit sigLastPresenterClosed();
 	}
+	
 
-	if ((e->inserted() || e->removed()) ) {
-		if (e->inserted() && e->child() && e->child()->inherits("CDisplayWindow")) {
+	if ((e->added() || e->removed()) ) {
+		if (e->added() && e->child() && e->child()->inherits("CDisplayWindow")) {
 			e->child()->installEventFilter(this); //make sure we catch the events of the new window
 		}
 		else if (e->removed() && e->child() && e->child()->inherits("CDisplayWindow")) {
@@ -120,7 +117,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 void CMDIArea::resizeEvent(QResizeEvent* e) {
 	QWorkspace::resizeEvent(e);
 
-	if (isUpdatesEnabled()) {
+	if (updatesEnabled()) {
 		triggerWindowUpdate();
 	};
 }
@@ -154,14 +151,14 @@ void CMDIArea::setGUIOption( const MDIOption& newOption ) {
 
 /**  */
 void CMDIArea::myTileVertical() {
-	if (!isUpdatesEnabled() || !usableWindowList().count() ) {
+	if (!updatesEnabled() || !usableWindowList().count() ) {
 		return;
 	}
 
-	Q3PtrList<QWidget> windows = usableWindowList();
+	QList<QWidget*> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		m_appCaption = windows.at(0)->caption();
+		m_appCaption = windows.at(0)->windowTitle();
 		windows.at(0)->showMaximized();
 	}
 	else {
@@ -172,14 +169,14 @@ void CMDIArea::myTileVertical() {
 }
 
 void CMDIArea::myTileHorizontal() {
-	if (!isUpdatesEnabled() || !usableWindowList().count() ) {
+	if (!updatesEnabled() || !usableWindowList().count() ) {
 		return;
 	}
 
-	Q3PtrList<QWidget> windows = usableWindowList();
+	QList<QWidget*> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		m_appCaption = windows.at(0)->caption();
+		m_appCaption = windows.at(0)->windowTitle();
 		windows.at(0)/*->parentWidget()*/->showMaximized();
 	}
 	else {
@@ -196,10 +193,11 @@ void CMDIArea::myTileHorizontal() {
 		for ( int i = 0; i < int(windows.count()); ++i ) {
 			QWidget *window = windows.at(i);
 			window->parentWidget()->showNormal();
-			qApp->sendPostedEvents( 0, QEvent::ShowNormal );
+			//TODO: what this line did:
+			//qApp->sendPostedEvents( 0, QEvent::ShowNormal );
 
 			const int preferredHeight = window->minimumHeight() + window->parentWidget()->baseSize().height();
-			const int actHeight = QMAX(heightForEach, preferredHeight);
+			const int actHeight = qMax(heightForEach, preferredHeight);
 
 			window->parentWidget()->setGeometry( 0, y, width(), actHeight );
 			y += actHeight;
@@ -214,17 +212,17 @@ void CMDIArea::myTileHorizontal() {
 
 /**  */
 void CMDIArea::myCascade() {
-	if (!isUpdatesEnabled() || !usableWindowList().count() ) {
+	if (!updatesEnabled() || !usableWindowList().count() ) {
 		return;
 	}
 
-	Q3PtrList<QWidget> windows = usableWindowList();
+	QList<QWidget*> windows = usableWindowList();
 	if ( !windows.count() ) {
 		return;
 	}
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		m_appCaption = windows.at(0)->caption();
+		m_appCaption = windows.at(0)->windowTitle();
 		windows.at(0)->parentWidget()->showMaximized();
 	}
 	else {
@@ -264,7 +262,7 @@ void CMDIArea::myCascade() {
 
 		active->parentWidget()->setGeometry(x, y, windowWidth, windowHeight);
 		active->parentWidget()->raise();
-		active->setActiveWindow();
+		active->activateWindow();
 
 		blockSignals(false);
 	}
@@ -275,7 +273,7 @@ void CMDIArea::myCascade() {
  */
 void CMDIArea::emitWindowCaptionChanged() {
 	if (activeWindow()) {
-		m_appCaption = activeWindow()->caption();
+		m_appCaption = activeWindow()->windowTitle();
 	}
 
 	emit sigSetToplevelCaption(currentApplicationCaption());
@@ -285,11 +283,14 @@ void CMDIArea::emitWindowCaptionChanged() {
 /*!
     \fn CMDIArea::usableWindowsCount()
  */
-Q3PtrList<QWidget> CMDIArea::usableWindowList() {
-	Q3PtrList<QWidget> ret;
+QList<QWidget*> CMDIArea::usableWindowList() {
+	QList<QWidget*> ret;
 
-	QWidgetList windows = windowList();
-	for ( QWidget* w = windows.first(); w; w = windows.next() ) {
+	//QWidgetList windows = windowList();
+	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
+	QListIterator<QWidget*> it(windowList());
+	while (it.hasNext()) {	
+		QWidget* w = it.next();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
 			continue;
 		}
@@ -314,7 +315,8 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 			ret = false;
 		}
 		else if (!o->inherits("CDisplayWindow")){
-			qDebug("CMDIArea: bad mdi child classname: %s", o->className());
+			//qDebug("CMDIArea: bad mdi child classname: %s", o->className()); //"error: ‘class QObject’ has no member named ‘className’"
+
 			o->dumpObjectInfo();
 			o->dumpObjectTree();
 		}
@@ -343,7 +345,7 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 void CMDIArea::triggerWindowUpdate() {
 	qDebug("CMDIArea::triggerWindowUpfdate");
 
-	if (isUpdatesEnabled() && usableWindowList().count() ) {
+	if (updatesEnabled() && usableWindowList().count() ) {
 		switch (m_guiOption) {
 			case autoTileVertical:
 			QTimer::singleShot(0, this, SLOT(myTileVertical()));
