@@ -25,6 +25,9 @@ class QDropEvent;
 class QWidget;
 
 /** This class is the drag'n' drop manager for BibleTime.
+ *
+ * This d'n'd system is replaced with the new classes in cdragdrop.h/cpp. (cdragdropmgr will be deleted later.)
+ *
  * The dnd is managed by XML code, which defines the type of the drag/drop, the items and the action (moe, copy etc.).
  * It's possible to create the XML code by passing a list of keys etc.
  *

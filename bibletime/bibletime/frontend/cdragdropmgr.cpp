@@ -25,6 +25,10 @@
 //Added by qt3to4:
 #include <Q3CString>
 
+
+//This is the old old d'n'd system. Use cdragdrop instead.
+
+
 CDragDropMgr::BTDrag::BTDrag( const QString& xml, QWidget* dragSource, const char* name)
 : Q3TextDrag(xml, dragSource, name) {}
 ;
