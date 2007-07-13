@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -17,12 +17,13 @@
 //Qt includes
 #include <qfile.h>
 #include <qfileinfo.h>
+#include <QDir>
 
 //KDE includes
 #include <kapplication.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-#include <kprocess.h>
+#include <kprocess.h> //TODO: not in kde4 alpha1!!!
 
 //Sword includes
 #include <filemgr.h>
@@ -56,7 +57,7 @@ namespace BookshelfManager {
 		}
 
 		// Add local directory sources
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 		sword::SectionMap::iterator sourcesSection = config.Sections.find("Sources");
 		if (sourcesSection != config.Sections.end()) {
 			sword::ConfigEntMap::iterator sourceBegin = sourcesSection->second.lower_bound("DIRSource");
@@ -84,7 +85,7 @@ namespace BookshelfManager {
 		bool directAccess = false;
 
 		QFileInfo i(LocalConfig::swordConfigFilename());
-		QFileInfo dirInfo(i.dirPath(true));
+		QFileInfo dirInfo(i.absolutePath());
 
 		if ( i.exists() && i.isWritable() ) { //we can write to the file ourself
 			filename = LocalConfig::swordConfigFilename();
@@ -96,7 +97,7 @@ namespace BookshelfManager {
 		}
 
 		bool setDataPath = false;
-		SWConfig conf(filename.local8Bit());
+		SWConfig conf(filename.toLocal8Bit());
 		conf.Sections.clear();
 
 		for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
@@ -106,7 +107,7 @@ namespace BookshelfManager {
 				continue;
 			}
 			else {
-				conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.local8Bit()) );
+				conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.toLocal8Bit().data()) );
 
 				setDataPath = true;
 			}
@@ -124,12 +125,12 @@ namespace BookshelfManager {
 	sword::InstallSource BTInstallMgr::Tool::RemoteConfig::source( sword::InstallMgr* mgr, const QString& name ) {
 		Q_ASSERT(mgr);
 
-		InstallSourceMap::iterator source = mgr->sources.find(name.latin1());
+		InstallSourceMap::iterator source = mgr->sources.find(name.toLatin1().data());
 		if (source != mgr->sources.end()) {
 			return *(source->second);
 		}
 		else { //not found in Sword, may be a local DIR source
-			SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+			SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 			SectionMap::iterator sourcesSection = config.Sections.find("Sources");
 			if (sourcesSection != config.Sections.end()) {
 				ConfigEntMap::iterator sourceBegin =
@@ -139,7 +140,7 @@ namespace BookshelfManager {
 
 				while (sourceBegin != sourceEnd) {
 					InstallSource is("DIR", sourceBegin->second.c_str());
-					if (!strcmp(is.caption, name.latin1()) ) { //found local dir source
+					if (!strcmp(is.caption, name.toLatin1()) ) { //found local dir source
 						return is;
 					}
 
@@ -169,7 +170,7 @@ namespace BookshelfManager {
 			return;
 		}
 
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 		if (!strcmp(is->type, "FTP")) {
 			//make sure the path doesn't have a trailing slash, sword doesn't like it
 			if (is->directory[ is->directory.length()-1 ] == '/') {
@@ -185,7 +186,7 @@ namespace BookshelfManager {
 	}
 
 	void BTInstallMgr::Tool::RemoteConfig::initConfig() {
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 		config["General"]["PassiveFTP"] = "true";
 		config.Save();
 	}
@@ -206,7 +207,7 @@ namespace BookshelfManager {
 		Q_ASSERT(mgr);
 		Q_ASSERT(is);
 
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 
 		//this code can probably be shortened by using the stl remove_if functionality
 		std::pair< ConfigEntMap::iterator, ConfigEntMap::iterator > range =
@@ -229,7 +230,7 @@ namespace BookshelfManager {
 	}
 
 	void BTInstallMgr::Tool::RemoteConfig::resetRemoteSources() {
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 		config["Sources"].erase( //remove all FTP sources
 			config["Sources"].lower_bound("FTPSource"),
 			config["Sources"].upper_bound("FTPSource")
@@ -238,7 +239,7 @@ namespace BookshelfManager {
 	}
 
 	void BTInstallMgr::Tool::RemoteConfig::resetLocalSources() {
-		SWConfig config(Tool::RemoteConfig::configFilename().latin1());
+		SWConfig config(Tool::RemoteConfig::configFilename().toLatin1());
 		config["Sources"].erase( //remove all FTP sources
 			config["Sources"].lower_bound("DIRSource"),
 			config["Sources"].upper_bound("DIRSource")
@@ -270,7 +271,7 @@ namespace BookshelfManager {
 		return ret;
 	}
 
-BTInstallMgr::BTInstallMgr() : InstallMgr(Tool::RemoteConfig::configPath().latin1(), this) { //use this class also as status reporter
+BTInstallMgr::BTInstallMgr() : InstallMgr(Tool::RemoteConfig::configPath().toLatin1(), this) { //use this class also as status reporter
 	}
 
 	BTInstallMgr::~BTInstallMgr() {

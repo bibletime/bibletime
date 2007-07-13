@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,13 +23,13 @@
 
 //Qt includes
 #include <qobject.h>
-#include <q3ptrlist.h>
+#include <qlist.h>
 #include <QString>
 #include <qstringlist.h>
 
 namespace BookshelfManager {
 
-	typedef Q3PtrList<sword::InstallSource> InstallSourceList;
+	typedef QList<sword::InstallSource*> InstallSourceList;
 
 	/**Our own reimplementation to provide status bar updates.
 	  *@author The BibleTime team
@@ -85,7 +85,7 @@ protected:
 		virtual void statusUpdate(double dltotal, double dlnow);
 		virtual void preStatus(long totalBytes, long completedBytes, const char *message);
 
-		virtual FTPTransport *createFTPTransport(const char *host, StatusReporter *statusReporter);
+		virtual sword::FTPTransport *createFTPTransport(const char *host, StatusReporter *statusReporter);
 
 		long m_totalBytes;
 		long m_completedBytes;
