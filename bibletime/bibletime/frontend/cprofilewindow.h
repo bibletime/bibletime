@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -17,9 +17,9 @@
 
 //Qt includes
 #include <QString>
-#include <qrect.h>
-#include <qstringlist.h>
-#include <q3ptrlist.h>
+#include <QRect>
+#include <QStringList>
+//#include <QList>
 
 namespace Profile {
 

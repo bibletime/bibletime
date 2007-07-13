@@ -6,27 +6,46 @@
     <projectmanagement>KDevCustomProject</projectmanagement>
     <primarylanguage>C++</primarylanguage>
     <ignoreparts>
+      <part>kdevabbrev</part>
+      <part>kdevbookmarks</part>
+      <part>kdevclassview</part>
+      <part>kdevsnippet</part>
+      <part>kdevctags2</part>
+      <part>kdevdebugger</part>
+      <part>kdevdoxygen</part>
+      <part>kdevkonsoleview</part>
       <part>kdevfilegroups</part>
       <part>kdevfilelist</part>
+      <part>kdevfileview</part>
       <part>kdevdistpart</part>
+      <part>kdevopenwith</part>
+      <part>kdevquickopen</part>
+      <part>kdevregexptest</part>
+      <part>kdevreplace</part>
+      <part>kdevscripting</part>
+      <part>kdevfilter</part>
+      <part>kdevastyle</part>
+      <part>kdevtexttools</part>
+      <part>kdevtools</part>
+      <part>kdevvalgrind</part>
     </ignoreparts>
     <version>1.6cvs</version>
-    <description></description>
+    <description/>
     <projectdirectory>.</projectdirectory>
     <absoluteprojectpath>false</absoluteprojectpath>
     <secondaryLanguages>
       <language>Perl</language>
     </secondaryLanguages>
     <projectname>BibleTime</projectname>
-    <defaultencoding></defaultencoding>
+    <defaultencoding/>
     <versioncontrol>kdevsubversion</versioncontrol>
   </general>
   <kdevcustomproject>
     <run>
       <directoryradio>executable</directoryradio>
       <mainprogram>./build/./build/./build</mainprogram>
-      <programargs></programargs>
-      <globaldebugarguments></globaldebugarguments>
+      <programargs/>
+      <globaldebugarguments/>
       <globalcwd>./build</globalcwd>
       <useglobalprogram>false</useglobalprogram>
       <terminal>false</terminal>
@@ -44,27 +63,44 @@
       <numberofjobs>1</numberofjobs>
       <prio>0</prio>
       <dontact>false</dontact>
-      <makebin></makebin>
-      <defaulttarget></defaulttarget>
-      <makeoptions></makeoptions>
+      <makebin/>
+      <defaulttarget/>
+      <makeoptions/>
       <selectedenvironment>default</selectedenvironment>
       <environments>
         <default/>
       </environments>
     </make>
+    <filetypes>
+      <filetype>*.java</filetype>
+      <filetype>*.h</filetype>
+      <filetype>*.H</filetype>
+      <filetype>*.hh</filetype>
+      <filetype>*.hxx</filetype>
+      <filetype>*.hpp</filetype>
+      <filetype>*.c</filetype>
+      <filetype>*.C</filetype>
+      <filetype>*.cc</filetype>
+      <filetype>*.cpp</filetype>
+      <filetype>*.c++</filetype>
+      <filetype>*.cxx</filetype>
+      <filetype>Makefile</filetype>
+      <filetype>CMakeLists.txt</filetype>
+    </filetypes>
+    <blacklist/>
   </kdevcustomproject>
   <kdevdebugger>
     <general>
       <dbgshell>libtool</dbgshell>
       <programargs>--debug</programargs>
-      <gdbpath></gdbpath>
+      <gdbpath/>
       <breakonloadinglibs>true</breakonloadinglibs>
       <separatetty>false</separatetty>
       <floatingtoolbar>false</floatingtoolbar>
       <runappinappdirectory>true</runappinappdirectory>
-      <configGdbScript></configGdbScript>
-      <runShellScript></runShellScript>
-      <runGdbScript></runGdbScript>
+      <configGdbScript/>
+      <runShellScript/>
+      <runGdbScript/>
     </general>
     <display>
       <staticmembers>false</staticmembers>
@@ -154,10 +190,12 @@
       <usePermanentCaching>true</usePermanentCaching>
       <alwaysIncludeNamespaces>false</alwaysIncludeNamespaces>
       <includePaths>.;</includePaths>
+      <parseMissingHeadersExperimental>false</parseMissingHeadersExperimental>
+      <resolveIncludePathsUsingMakeExperimental>false</resolveIncludePathsUsingMakeExperimental>
     </codecompletion>
     <references/>
     <creategettersetter>
-      <prefixGet></prefixGet>
+      <prefixGet/>
       <prefixSet>set</prefixSet>
       <prefixVariable>m_,_</prefixVariable>
       <parameterName>theValue</parameterName>
@@ -182,10 +220,10 @@
   </kdevcppsupport>
   <kdevfilecreate>
     <filetypes>
-      <type icon="" ext="h" create="template" name="C++ Header template" >
+      <type icon="" ext="h" name="C++ Header template" create="template" >
         <descr>BibleTime C++ header template</descr>
       </type>
-      <type icon="source_cpp" ext="cpp" create="template" name="C++ source file" >
+      <type icon="source_cpp" ext="cpp" name="C++ source file" create="template" >
         <descr>BibleTime C++ source template</descr>
       </type>
     </filetypes>
@@ -193,9 +231,9 @@
   </kdevfilecreate>
   <kdevdocumentation>
     <projectdoc>
-      <docsystem></docsystem>
-      <docurl></docurl>
-      <usermanualurl></usermanualurl>
+      <docsystem/>
+      <docurl/>
+      <usermanualurl/>
     </projectdoc>
   </kdevdocumentation>
   <kdevcvsservice>
@@ -206,7 +244,7 @@
     <revertoptions>-C</revertoptions>
   </kdevcvsservice>
   <ctagspart>
-    <customArguments></customArguments>
+    <customArguments/>
     <customTagfilePath>build/bibletimetagfile</customTagfilePath>
     <activeTagsFiles/>
   </ctagspart>
