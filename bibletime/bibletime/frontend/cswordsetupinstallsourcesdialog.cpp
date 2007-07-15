@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,19 +14,18 @@
 #include "util/scoped_resource.h"
 
 //Qt includes
-#include <qlayout.h>
-#include <qlabel.h>
-#include <qcombobox.h>
-#include <qlineedit.h>
-#include <qpushbutton.h>
-#include <qmessagebox.h>
-#include <qfileinfo.h>
-//Added by qt3to4:
-#include <Q3GridLayout>
-#include <Q3HBoxLayout>
-#include <Q3VBoxLayout>
+#include <QLayout>
+#include <QLabel>
+#include <QComboBox>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QFileInfo>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
-
+//KDE includes
 #include <klocale.h>
 #include <kdirselectdialog.h>
 
@@ -39,11 +38,12 @@ namespace BookshelfManager {
 	CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
 : QDialog() {
 
-		Q3VBoxLayout* mainLayout = new Q3VBoxLayout( this );
+		QVBoxLayout* mainLayout = new QVBoxLayout( this );
 		mainLayout->setMargin( 10 );
 		mainLayout->setSpacing( 5 );
 
-		Q3HBoxLayout *captionLayout = new Q3HBoxLayout( mainLayout );
+		QHBoxLayout *captionLayout = new QHBoxLayout( this );
+		mainLayout->addLayout(captionLayout);
 		QLabel *label = new QLabel( i18n("Caption"), this );
 		captionLayout->addWidget( label );
 
@@ -53,7 +53,10 @@ namespace BookshelfManager {
 
 		mainLayout->addSpacing( 10 );
 
-		Q3GridLayout* layout = new Q3GridLayout( mainLayout, 3, 3 );
+		QGridLayout* layout = new QGridLayout( this );
+		layout->setSpacing(3);
+		layout->setMargin(3);
+		mainLayout->addLayout(layout);
 		layout->setSpacing( 5 );
 
 		label = new QLabel(i18n("Type"), this);
@@ -67,8 +70,8 @@ namespace BookshelfManager {
 
 		m_protocolCombo = new QComboBox( this );
 		layout->addWidget(m_protocolCombo, 1, 0);
-		m_protocolCombo->insertItem( PROTO_FTP  );
-		m_protocolCombo->insertItem( PROTO_FILE );
+		m_protocolCombo->addItem( PROTO_FTP  );
+		m_protocolCombo->addItem( PROTO_FILE );
 
 		m_serverEdit = new QLineEdit( this );
 		layout->addWidget( m_serverEdit, 1, 1 );
@@ -80,7 +83,8 @@ namespace BookshelfManager {
 
 		mainLayout->addSpacing( 10 );
 
-		Q3HBoxLayout* buttonLayout = new Q3HBoxLayout( mainLayout );
+		QHBoxLayout* buttonLayout = new QHBoxLayout( this );
+		mainLayout->addLayout(buttonLayout);
 		buttonLayout->addStretch();
 		QPushButton* okButton = new QPushButton( i18n("Ok"), this);
 		QPushButton* discardButton = new QPushButton( i18n("Discard"), this);
@@ -95,7 +99,7 @@ namespace BookshelfManager {
 	}
 	void CSwordSetupInstallSourcesDialog::slotOk() {
 		//run a few tests to validate the input first
-		if ( m_captionEdit->text().stripWhiteSpace().isEmpty() ) { //no caption
+		if ( m_captionEdit->text().trimmed().isEmpty() ) { //no caption
 			QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a caption."), QMessageBox::Retry);
 			return;
 		}
@@ -109,7 +113,7 @@ namespace BookshelfManager {
 		}
 
 		if ( m_protocolCombo->currentText() == PROTO_FTP &&
-				m_serverEdit->text().stripWhiteSpace().isEmpty() ) { //no server name
+				m_serverEdit->text().trimmed().isEmpty() ) { //no server name
 			QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a server name."), QMessageBox::Retry);
 			return;
 		}
@@ -138,7 +142,7 @@ namespace BookshelfManager {
 			m_serverLabel->hide();
 			m_serverEdit->hide();
 
-			KURL url = KDirSelectDialog::selectDirectory(QString::null, true);
+			KUrl url = KDirSelectDialog::selectDirectory(KUrl(QString::null), true);
 			if (url.isValid()) {
 				m_pathEdit->setText( url.path() );
 			}
@@ -154,19 +158,19 @@ namespace BookshelfManager {
 		if (dlg->exec() == QDialog::Accepted) {
 			if (dlg->m_protocolCombo->currentText() == PROTO_FTP) {
 				newSource.type = "FTP";
-				newSource.source = dlg->m_serverEdit->text().utf8();
+				newSource.source = dlg->m_serverEdit->text().toUtf8();
 
 				//a message to the user would be nice, but we're in message freeze right now (1.5.1)
 				if (dlg->m_serverEdit->text().right(1) == "/") { //remove a trailing slash
-					newSource.source  = dlg->m_serverEdit->text().mid(0, dlg->m_serverEdit->text().length()-1).utf8();
+					newSource.source  = dlg->m_serverEdit->text().mid(0, dlg->m_serverEdit->text().length()-1).toUtf8();
 				}
 			}
 			else {
 				newSource.type = "DIR";
 				newSource.source = "local";
 			}
-			newSource.caption = dlg->m_captionEdit->text().utf8();
-			newSource.directory = dlg->m_pathEdit->text().utf8();
+			newSource.caption = dlg->m_captionEdit->text().toUtf8();
+			newSource.directory = dlg->m_pathEdit->text().toUtf8();
 		}
 
 		return newSource;

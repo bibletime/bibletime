@@ -1,14 +1,25 @@
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2007 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
+
 #ifndef CSWORDSETUPINSTALLSOURCESDIALOG_H
 #define CSWORDSETUPINSTALLSOURCESDIALOG_H
 
 #include "btinstallmgr.h"
-#include <qdialog.h>
-//Added by qt3to4:
-#include <QLabel>
+
+#include <QDialog>
+
 
 class QLabel;
 class QComboBox;
 class QLineEdit;
+
 
 namespace BookshelfManager {
 
