@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,41 +13,48 @@
 #include "cinputdialog.h"
 
 //Qt includes
-#include <qwidget.h>
-#include <qlabel.h>
-#include <q3textedit.h>
-#include <qpushbutton.h>
-#include <qlayout.h>
+#include <QWidget>
+#include <QLabel>
+#include <QTextEdit>
+#include <QPushButton>
+//#include <QLayout>
 //Added by qt3to4:
-#include <Q3VBoxLayout>
-#include <Q3HBoxLayout>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 
 //KDE includes
 #include <klocale.h>
 #include <kseparator.h>
+#include <kdialog.h>
 
-CInputDialog::CInputDialog(const QString& caption, const QString& description, const QString& text, QWidget *parent, const char *name, const bool modal ) : KDialog(parent,name,modal) {
+CInputDialog::CInputDialog
+	(const QString& caption, const QString& description, const QString& text, QWidget *parent, Qt::WindowFlags wflags )
+	: KDialog(parent, wflags)
+{
 	setPlainCaption(caption);
 
-	Q3VBoxLayout* topLayout = new Q3VBoxLayout(this, 5,5);
+	QVBoxLayout* topLayout = new QVBoxLayout(this);
+	topLayout->setSpacing(5);
+	topLayout->setMargin(5);
 
 	QLabel* l = new QLabel(description, this);
 	topLayout->addWidget(l);
 
 	topLayout->addSpacing(10);
 
-	m_editWidget = new Q3TextEdit(this, "edit widget");
-	m_editWidget->setWordWrap( Q3TextEdit::WidgetWidth );
+	m_editWidget = new QTextEdit(this);
+	m_editWidget->setWordWrapMode( QTextOption::WordWrap );
 	m_editWidget->setText(text);
 	if (!text.isEmpty())
 		m_editWidget->selectAll();
 
 	topLayout->addWidget(m_editWidget);
 
-	KSeparator* separator = new KSeparator(KSeparator::HLine, this);
+	KSeparator* separator = new KSeparator(Qt::Horizontal, this);
 	topLayout->addWidget(separator);
 
-	Q3HBoxLayout* buttonLayout = new Q3HBoxLayout(topLayout);
+	QHBoxLayout* buttonLayout = new QHBoxLayout(this);
+	topLayout->addLayout(buttonLayout);
 
 	buttonLayout->addStretch(2);
 
@@ -75,12 +82,14 @@ CInputDialog::CInputDialog(const QString& caption, const QString& description, c
 
 /** Returns the text entered at the moment. */
 const QString CInputDialog::text() {
-	return m_editWidget->text();
+	return m_editWidget->toPlainText();
 }
 
 /** A static function to get some using CInputDialog. */
-const QString CInputDialog::getText( const QString& caption, const QString& description, const QString& text, bool* ok, QWidget* parent, bool modal) {
-	CInputDialog* dlg = new CInputDialog(caption, description, text, parent, "", modal);
+const QString CInputDialog::getText
+	( const QString& caption, const QString& description, const QString& text, bool* ok, QWidget* parent, Qt::WindowFlags wflags)
+{
+	CInputDialog* dlg = new CInputDialog(caption, description, text, parent, wflags);
 	QString ret = QString::null;
 
 	const bool isOk = (dlg->exec() == CInputDialog::Accepted);

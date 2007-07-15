@@ -76,6 +76,8 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cprofilewindow.cpp
 	bibletime/frontend/cmoduleindexdialog.cpp
 	bibletime/frontend/cmdiarea.cpp
+	bibletime/frontend/cinfodisplay.cpp
+	bibletime/frontend/cinputdialog.cpp
 
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
