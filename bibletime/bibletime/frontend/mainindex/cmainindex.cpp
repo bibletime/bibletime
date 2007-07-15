@@ -751,8 +751,8 @@ void CMainIndex::saveBookmarks() {
 	CItemBase* i = 0;
 
 	QTreeWidgetItemIterator it( this );
-	while ( it.current() ) {
-		i = dynamic_cast<CItemBase*>( it.current() );
+	while ( *it ) {
+		i = dynamic_cast<CItemBase*>( *it );
 
 		if (i && (i->type() == CItemBase::BookmarkFolder)) { 
 			//found the bookmark folder
@@ -777,8 +777,13 @@ void CMainIndex::readSettings() {
 	
 	QStringList openGroups = CBTConfig::get(CBTConfig::bookshelfOpenGroups);
 	for (QStringList::Iterator it( openGroups.begin() ); it != openGroups.end(); ++it) {
+		/*
+		For each item in openGroups, find the QTreeWidgetItem specified and open it.
+		Better way to do this?
+		*/
 		QStringList path = QStringList::split("/", (*it)); //e.g. with items parent, child
-		QTreeWidgetItem* item = firstChild(); //begin on the top for each item
+		QTreeWidgetItem* item = child(0); //get first child in this QTreeWidget
+				//orig: firstChild() begin on the top for each item
 		Q_ASSERT(item);
 		unsigned int index = 1;
 
@@ -786,6 +791,7 @@ void CMainIndex::readSettings() {
 			QString itemName = (*p_it).replace("\\/", "/");
 
 			while (item && (item->text(0) != itemName)) {
+				//loop through QTreeWidgetItems, looking for one with the same name as from openGroups
 				item = item->nextSibling();
 			}
 
@@ -843,10 +849,11 @@ void CMainIndex::saveSettings() {
 	QStringList openGroups;
 
 	QTreeWidgetItemIterator it( this );
-	while ( it.current() ) {
-		if ( it.current()->isOpen() ) { //is a group and open
+	while ( *it ) {
+		//porting: checking for a group (has children), and it's open: expanded?
+		if ( ((*it)->childCount() != 0) && ((*it)->isExpanded()) ) { //orig: (*it)->isOpen()is a group and open
 			//it.current()'s full name needs to be added to the list
-			QTreeWidgetItem* i = it.current();
+			QTreeWidgetItem* i = (*it);
 			QString fullName = i->text(0);
 			while (i->parent()) {
 				i = i->parent();
