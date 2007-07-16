@@ -80,6 +80,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cinputdialog.cpp
 	bibletime/frontend/cswordsetupinstallsourcesdialog.cpp
 	bibletime/frontend/cexportmanager.cpp
+	#bibletime/frontend/cmanageindiceswidget.cpp
 
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
@@ -118,6 +119,9 @@ SET(bibletime_SOURCES
 kde4_add_ui_files(bibletime_SOURCES
 	bibletime/frontend/searchdialog/searchresultsform.ui
 	bibletime/frontend/searchdialog/searchoptionsform.ui
+
+	bibletime/frontend/manageindicesform.ui
+
 )
 
 #SET(bibletime_MOC_HEADERS 
