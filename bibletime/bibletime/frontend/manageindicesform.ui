@@ -1,94 +1,111 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>ManageIndicesForm</class>
-  <widget class="QWidget" name="ManageIndicesForm" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>415</width>
-        <height>404</height>
-      </rect>
-    </property>
-    <property name="windowTitle" >
-      <string>Manage Indicies</string>
-    </property>
-    <layout class="QVBoxLayout" >
-      <property name="margin" >
-        <number>0</number>
+<ui version="4.0" >
+ <class>ManageIndicesForm</class>
+ <widget class="QWidget" name="ManageIndicesForm" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>415</width>
+    <height>404</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Manage Indicies</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="spacing" >
+    <number>8</number>
+   </property>
+   <property name="leftMargin" >
+    <number>0</number>
+   </property>
+   <property name="topMargin" >
+    <number>0</number>
+   </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="m_labelFrame" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="m_autoDeleteOrphanedIndicesBox" >
+     <property name="text" >
+      <string>Automaticall&amp;y delete orphaned indices when BibleTime starts</string>
+     </property>
+     <property name="shortcut" >
+      <string>Alt+Y</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="m_moduleList" >
+     <column>
+      <property name="text" >
+       <string>Module</string>
       </property>
-      <property name="spacing" >
-        <number>8</number>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Index Size</string>
       </property>
-      <item>
-        <widget class="QFrame" name="m_labelFrame" >
-          <property name="sizePolicy" >
-            <sizepolicy>
-              <hsizetype>7</hsizetype>
-              <vsizetype>5</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-            </sizepolicy>
-          </property>
-          <property name="frameShape" >
-            <enum>NoFrame</enum>
-          </property>
-          <property name="frameShadow" >
-            <enum>Plain</enum>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="QCheckBox" name="m_autoDeleteOrphanedIndicesBox" >
-          <property name="text" >
-            <string>Automaticall&amp;y delete orphaned indices when BibleTime starts</string>
-          </property>
-          <property name="shortcut" >
-            <string>Alt+Y</string>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="QTreeWidget" name="m_moduleList" />
-      </item>
-      <item>
-        <layout class="QHBoxLayout" >
-          <item>
-            <spacer name="spacer1" >
-              <property name="sizeHint" >
-                <size>
-                  <width>40</width>
-                  <height>20</height>
-                </size>
-              </property>
-              <property name="sizeType" >
-                <enum>Expanding</enum>
-              </property>
-              <property name="orientation" >
-                <enum>Horizontal</enum>
-              </property>
-            </spacer>
-          </item>
-          <item>
-            <widget class="QPushButton" name="m_createIndicesButton" >
-              <property name="text" >
-                <string>&amp;Create selected indices</string>
-              </property>
-            </widget>
-          </item>
-          <item>
-            <widget class="QPushButton" name="m_deleteIndicesButton" >
-              <property name="text" >
-                <string>De&amp;lete selected indices</string>
-              </property>
-            </widget>
-          </item>
-        </layout>
-      </item>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_createIndicesButton" >
+       <property name="text" >
+        <string>&amp;Create selected indices</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_deleteIndicesButton" >
+       <property name="text" >
+        <string>De&amp;lete selected indices</string>
+       </property>
+      </widget>
+     </item>
     </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
 </ui>

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,11 +12,10 @@
 #ifndef CMANAGEINDICESWIDGET_H
 #define CMANAGEINDICESWIDGET_H
 
-#include "frontend/manageindicesform.h"  // uic generated
+#include "ui_manageindicesform.h"  // uic generated
 
-#include <qwidget.h>
+#include <QWidget>
 
-class Q3CheckListItem;
 
 namespace BookshelfManager {
 	
@@ -25,7 +24,7 @@ namespace BookshelfManager {
 * Manager.  It allows for creation and deletion of search indicies for each
 * installed module.  It also allows for deletion of orphaned indices.
 */
-class CManageIndicesWidget : public ManageIndicesForm
+class CManageIndicesWidget : public QWidget, Ui_ManageIndicesForm
 {
 	Q_OBJECT
 	
@@ -33,7 +32,7 @@ public:
 	/**
 	* Constructor
 	*/
-	CManageIndicesWidget(QWidget* parent, const char* name = 0);
+	CManageIndicesWidget(QWidget* parent);
 
 	/** 
 	* Destructor
@@ -51,8 +50,8 @@ protected:
 	void populateModuleList();
 
 	// member variables
-	Q3CheckListItem* m_modsWithIndices;
-	Q3CheckListItem* m_modsWithoutIndices;
+	QTreeWidgetItem* m_modsWithIndices;
+	QTreeWidgetItem* m_modsWithoutIndices;
 	
 public slots:
 	/**
