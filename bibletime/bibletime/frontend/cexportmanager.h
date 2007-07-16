@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,19 +13,19 @@
 #define CEXPORTMANAGER_H
 
 //BibleTime includes
-#include "../backend/cswordbackend.h"
+#include "backend/cswordbackend.h"
 #include "cbtconfig.h"
 
-#include "../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <QString>
-#include <q3ptrlist.h>
+#include <QList>
 
 class ListKey;
 class CSwordKey;
 class CSwordModuleInfo;
-class Q3ProgressDialog;
+class QProgressDialog;
 
 /** Contains the functions to export text to disk, clipboard or printer.
   * @author The BibleTime team
@@ -43,11 +43,11 @@ public:
 
 	const bool saveKey(CSwordKey* key, const Format format, const bool addText);
 	const bool saveKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-	const bool saveKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText );
+	const bool saveKeyList(QList<CSwordKey*>& list, const Format format, const bool addText );
 
 	const bool copyKey(CSwordKey* key, const Format format, const bool addText);
 	const bool copyKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText);
-	const bool copyKeyList(Q3PtrList<CSwordKey>& list, const Format format, const bool addText );
+	const bool copyKeyList(QList<CSwordKey*>& list, const Format format, const bool addText );
 
 	const bool printKey(CSwordKey* key, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
 	const bool printKey( CSwordModuleInfo* module, const QString& startKey, const QString& stopKey, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
@@ -76,12 +76,12 @@ private:
 	CSwordBackend::FilterOptions m_filterOptions;
 	CSwordBackend::DisplayOptions m_displayOptions;
 
-	Q3ProgressDialog* m_progressDialog;
+	QProgressDialog* m_progressDialog;
 
 	/**
 	* Creates the progress dialog with the correct settings.
 	*/
-	Q3ProgressDialog* const progressDialog();
+	QProgressDialog* const progressDialog();
 	/**
 	* Returns the CSS string used in HTML pages.
 	*/
@@ -92,7 +92,7 @@ private:
 	inline void incProgress();
 	const bool progressWasCancelled();
 	/**
-	* Closes the progress dialog immediatly.
+	* Closes the progress dialog immediately.
 	*/
 	void closeProgressDialog();
 };
