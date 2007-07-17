@@ -303,11 +303,10 @@ namespace InfoDisplay {
 		util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 		key->key(keyname);
 		key->renderedText(); //force entryAttributes
-		//TODO:
-		const char* note = module->module()->getEntryAttributes()
-["Footnote"]
-[swordFootnote.toLatin1()]
-["body"].c_str();
+
+		const char* note =
+			module->module()->getEntryAttributes()
+				["Footnote"][swordFootnote.toLatin1().data()]["body"].c_str();
 
 		QString text = module->isUnicode() ? QString::fromUtf8(note) : QString(note);
 		text = QString::fromUtf8(module->module()->RenderText(
