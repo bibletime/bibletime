@@ -22,7 +22,7 @@
 #include "backend/cswordtreekey.h"
 #include "backend/cswordldkey.h"
 
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 
 //Qt includes
 #include <QWidget>

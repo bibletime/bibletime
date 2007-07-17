@@ -66,25 +66,31 @@ SET(bibletime_SOURCES
 	bibletime/util/ctoolclass.cpp
 	bibletime/util/directoryutil.cpp
 	
-	#frontend
+	# frontend top level
 	bibletime/frontend/cdragdrop.cpp
 	bibletime/frontend/kstartuplogo.cpp
 	bibletime/frontend/crossrefrendering.cpp
 	bibletime/frontend/cprinter.cpp
 	bibletime/frontend/cbtconfig.cpp
-	bibletime/frontend/cprofilemgr.cpp
-	bibletime/frontend/cprofilewindow.cpp
 	bibletime/frontend/cmoduleindexdialog.cpp
 	bibletime/frontend/cmdiarea.cpp
 	bibletime/frontend/cinfodisplay.cpp
 	bibletime/frontend/cinputdialog.cpp
-	bibletime/frontend/cswordsetupinstallsourcesdialog.cpp
 	bibletime/frontend/cexportmanager.cpp
-	bibletime/frontend/cmanageindiceswidget.cpp
-
+	
+	#Settings dialog (configuration)
 	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
 	bibletime/frontend/settingsdialogs/cswordsettings.cpp
 	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
+
+	#Bookshelf manager frontend
+	bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
+	bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
+	bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
+
+	#Profile manager frontend
+	bibletime/frontend/profile/cprofilemgr.cpp
+	bibletime/frontend/profile/cprofilewindow.cpp
 
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
@@ -96,6 +102,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/keychooser/ckeyreferencewidget.cpp
 	bibletime/frontend/keychooser/cscrollerwidgetset.cpp
 	bibletime/frontend/keychooser/cscrollbutton.cpp
+	
 	#behaviour for display areas
 	bibletime/frontend/display/cdisplay.cpp
 	bibletime/frontend/display/creaddisplay.cpp
@@ -103,6 +110,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/display/cwritedisplay.cpp
 	bibletime/frontend/display/cplainwritedisplay.cpp
 	bibletime/frontend/display/chtmlwritedisplay.cpp
+	
 	#display windows and their widgets
 	bibletime/frontend/displaywindow/cmodulechooserbutton.cpp
 	bibletime/frontend/displaywindow/cmodulechooserbar.cpp
@@ -124,7 +132,7 @@ kde4_add_ui_files(bibletime_SOURCES
 	bibletime/frontend/searchdialog/searchresultsform.ui
 	bibletime/frontend/searchdialog/searchoptionsform.ui
 
-	bibletime/frontend/manageindicesform.ui
+	bibletime/frontend/bookshelfmanager/manageindicesform.ui
 
 )
 

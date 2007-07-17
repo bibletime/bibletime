@@ -16,7 +16,7 @@
 #include "backend/cswordversekey.h"
 #include "backend/cswordbiblemoduleinfo.h"
 
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cmdiarea.h"

@@ -13,7 +13,7 @@
 #include "frontend/display/cwritedisplay.h"
 
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/cbtconfig.h"
 
 #include "util/cresmgr.h"

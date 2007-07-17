@@ -17,7 +17,7 @@
 
 #include "frontend/display/cdisplay.h"
 #include "frontend/keychooser/cbooktreechooser.h"
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/cbtconfig.h"
 
 #include "util/ctoolclass.h"

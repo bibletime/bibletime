@@ -14,7 +14,7 @@
 #include "backend/cswordmoduleinfo.h"
 
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/display/cwritedisplay.h"
 
 //KDE includes

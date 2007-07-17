@@ -18,7 +18,7 @@
 
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 
 

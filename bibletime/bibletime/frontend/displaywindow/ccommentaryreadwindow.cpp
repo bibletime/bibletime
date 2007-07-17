@@ -12,7 +12,7 @@
 //BibleTime includes
 #include "ccommentaryreadwindow.h"
 
-#include "frontend/cprofilewindow.h"
+#include "frontend/profile/cprofilewindow.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/display/cdisplay.h"
