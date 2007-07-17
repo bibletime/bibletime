@@ -60,13 +60,26 @@ using namespace sword;
 
 namespace BookshelfManager {
 
-	CSwordSetupDialog::CSwordSetupDialog(QWidget *parent, const char *name )
-: KDialogBase(IconList, i18n("Bookshelf Manager"), Ok, Ok, parent, name, true, true, QString::null, QString::null, QString::null),
-	m_removeModuleListView(0),
-	m_installModuleListPage(0),
-	m_installModuleListView(0),
-	m_progressDialog(0),
-	m_refreshedRemoteSources(false) {
+	CSwordSetupDialog::CSwordSetupDialog(QWidget *parent)
+		: KPageDialog(
+			IconList,
+			 i18n("Bookshelf Manager"),
+			 Ok,
+			 Ok,
+			 parent,
+			 name,
+			 true,
+			 true,
+			 QString::null,
+			 QString::null,
+			 QString::null
+		),
+		m_removeModuleListView(0),
+		m_installModuleListPage(0),
+		m_installModuleListView(0),
+		m_progressDialog(0),
+		m_refreshedRemoteSources(false)
+	{
 		setIconListAllVisible(true);
 		m_swordSetupChanged = false;
 

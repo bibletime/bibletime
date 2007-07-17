@@ -24,7 +24,7 @@
 #include <Q3Frame>
 
 //KDE includes
-#include <kdialogbase.h>
+#include <kpagedialog.h>
 
 class QWidget;
 class QLabel;
@@ -45,11 +45,11 @@ namespace BookshelfManager {
 	 * The Sword configuration dialog of BibleTime
 	  * @author The BibleTime Team
 	  */
-class CSwordSetupDialog : public KDialogBase, public CPointers  {
+class CSwordSetupDialog : public KPageDialog, public CPointers  {
 		Q_OBJECT
 
 public:
-		CSwordSetupDialog(QWidget *parent=0, const char *name=0);
+		CSwordSetupDialog(QWidget *parent=0);
 
 		enum Parts {
 			Sword,

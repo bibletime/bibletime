@@ -11,9 +11,8 @@
 
 #include "cmanageindiceswidget.h"
 
-#include "cmoduleindexdialog.h"
-
-#include "cbtconfig.h"
+#include "frontend/cmoduleindexdialog.h"
+#include "frontend/cbtconfig.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
