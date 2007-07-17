@@ -11,6 +11,10 @@
 
 #include "cprofilewindow.h"
 
+#include "backend/cswordmoduleinfo.h"
+#include "backend/cswordbackend.h"
+
+
 #include <QString>
 #include <QRect>
 #include <QStringList>
