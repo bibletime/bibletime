@@ -13,7 +13,7 @@
 #ifndef CCONFIGURATIONDIALOG_H
 #define CCONFIGURATIONDIALOG_H
 
-#include "util/cpointers.h"
+//#include "util/cpointers.h"
 
 #include <kpagedialog.h>
 
@@ -24,7 +24,7 @@ class KPageWidgetItem;
 class CDisplaySettingsPage;
 class CSwordSettingsPage;
 
-class CConfigurationDialog : public KPageDialog, public CPointers  {
+class CConfigurationDialog : public KPageDialog {
 	Q_OBJECT
 
 public:
