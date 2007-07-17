@@ -82,6 +82,10 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cexportmanager.cpp
 	bibletime/frontend/cmanageindiceswidget.cpp
 
+	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
+	bibletime/frontend/settingsdialogs/cswordsettings.cpp
+	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
+
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
 	bibletime/frontend/keychooser/cbiblekeychooser.cpp
