@@ -13,6 +13,7 @@
 #include "cconfigurationdialog.h"
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"
+#include "clanguagesettings.h"
 
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
@@ -52,6 +53,14 @@ CConfigurationDialog::CConfigurationDialog
 	swordPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::sword::icon,32)) );
 	addPage(swordPage);
 
+	// Add "Languages" (fonts) page
+	m_languagesPage = new CLanguageSettingsPage(this);
+	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagePage);
+	langPage->setHeader( i18n( "Languages" ) );
+	langPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::fonts::icon,32)) );
+	addPage(langPage);
+
+
 	setCurrentPage(displayPage);
 	
 }
@@ -59,7 +68,7 @@ CConfigurationDialog::CConfigurationDialog
 /** Called if the OK button was clicked */
 void CConfigurationDialog::slotOk() {
 	//saveAccelerators();
-	//saveLanguages();
+	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
 
@@ -70,7 +79,7 @@ void CConfigurationDialog::slotOk() {
 /** Called if the apply button was clicked*/
 void CConfigurationDialog::slotApply() {
 	//saveAccelerators();
-	//saveLanguages();
+	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
 

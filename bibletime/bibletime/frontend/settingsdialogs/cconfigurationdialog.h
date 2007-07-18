@@ -23,6 +23,8 @@ class KPageWidgetItem;
 
 class CDisplaySettingsPage;
 class CSwordSettingsPage;
+class CLanguageSettingsPage;
+
 
 class CConfigurationDialog : public KPageDialog {
 	Q_OBJECT
@@ -37,8 +39,8 @@ private:
 	KActionCollection* m_actionCollection;
 	CDisplaySettingsPage* m_displayPage;
 	CSwordSettingsPage* m_swordPage;
-	//KPageWidgetItem* m_acceleratorsPage;
-	//KPageWidgetItem* m_languagesPage;
+	//C* m_acceleratorsPage;
+	CLanguageSettingsPage* m_languagesPage;
 
 signals:
 	void signalSettingsChanged();
