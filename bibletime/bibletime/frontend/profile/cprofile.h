@@ -15,7 +15,7 @@
 #include "cprofilewindow.h"
 
 //Qt includes
-#include <q3ptrlist.h>
+#include <QList>
 
 namespace Profile {
 

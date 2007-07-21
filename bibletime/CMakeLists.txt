@@ -81,17 +81,18 @@ SET(bibletime_SOURCES
 	#Settings dialog (configuration)
 	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
 	bibletime/frontend/settingsdialogs/cswordsettings.cpp
-	bibletime/frontend/settingsdialogs/clanguagesettings.cpp
-	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
+	#bibletime/frontend/settingsdialogs/clanguagesettings.cpp
+	#bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
 	bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
 	bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-	bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
+	#bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
 
 	#Profile manager frontend
 	bibletime/frontend/profile/cprofilemgr.cpp
 	bibletime/frontend/profile/cprofilewindow.cpp
+	bibletime/frontend/profile/cprofile.cpp
 
 	#frontend keychooser widgets
 	bibletime/frontend/keychooser/ckeychooser.cpp
@@ -155,10 +156,7 @@ ELSE(DEBUG)
 ENDIF(DEBUG)
 
 INCLUDE_DIRECTORIES(
-	${QT_INCLUDE_DIR}
-	${QT_QTCORE_INCLUDE_DIR}
-	${QT_QTGUI_INCLUDE_DIR}
-	${QT_QT3SUPPORT_INCLUDE_DIR}
+	${QT_INCLUDE_DIR}	${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR} ${QT_QTXML_INCLUDE_DIR} ${QT_QT3SUPPORT_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
 	${CLUCENE_INCLUDE_DIR} #CLucene headers
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h
@@ -178,7 +176,7 @@ ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-w -fexceptions " #Enable exception handling and support for QT3 compatibility classes
+		COMPILE_FLAGS "-w -fexceptions " #Enable exception handling
 )
 
 INSTALL(TARGETS bibletime

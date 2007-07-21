@@ -7,18 +7,13 @@
 *
 **********/
 
-
-
 #include "cprofile.h"
 
 //Qt includes
-#include <qdom.h>
-#include <qfile.h>
+#include <QFile>
 #include <QString>
-#include <q3textstream.h>
-#include <qregexp.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QTextStream>
+#include <QDomDocument>
 
 //KDE includes
 #include <kstandarddirs.h>
@@ -62,9 +57,9 @@ Q3PtrList<CProfileWindow> CProfile::load() {
 
 	QDomDocument doc;
 	if (file.open(QIODevice::ReadOnly)) {
-		Q3TextStream t( &file );
-		t.setEncoding(Q3TextStream::UnicodeUTF8);
-		doc.setContent(t.read());
+		QTextStream t( &file );
+		t.setCodec("UTF-8");
+		doc.setContent(t.readAll());
 		file.close();
 	}
 
@@ -172,7 +167,7 @@ Q3PtrList<CProfileWindow> CProfile::load() {
 			if(!object.isNull()) {
 				if (object.hasAttribute("list")) {
 					const QString sep = object.hasAttribute("separator") ? object.attribute("separator") : "|";
-					QStringList modules = QStringList::split(sep, object.attribute("list"));
+					QStringList modules = object.attribute("list").split(sep);
 					p->setModules(modules);
 				}
 			}
@@ -284,8 +279,8 @@ const bool CProfile::save(Q3PtrList<CProfileWindow> windows) {
 	QFile file(m_filename);
 	if ( file.open(QIODevice::WriteOnly) ) {
 		ret = true;
-		Q3TextStream t( &file );
-		t.setEncoding(Q3TextStream::UnicodeUTF8);
+		QTextStream t( &file );
+		t.setCodec("UTF-8");
 		t << doc.toString();
 		file.close();
 	}
@@ -332,9 +327,9 @@ void CProfile::loadBasics() {
 
 	QDomDocument doc;
 	if (file.open(QIODevice::ReadOnly)) {
-		Q3TextStream t( &file );
-		t.setEncoding(Q3TextStream::UnicodeUTF8);
-		doc.setContent(t.read());
+		QTextStream t( &file );
+		t.setCodec("UTF-8");
+		doc.setContent(t.readAll());
 		file.close();
 	}
 	QDomElement document = doc.documentElement();
@@ -349,9 +344,9 @@ void CProfile::saveBasics() {
 
 	QDomDocument doc;
 	if (file.open(QIODevice::ReadOnly)) {
-		Q3TextStream t(&file);
-		t.setEncoding(Q3TextStream::UnicodeUTF8);
-		doc.setContent(t.read());
+		QTextStream t(&file);
+		t.setCodec("UTF-8");
+		doc.setContent(t.readAll());
 		file.close();
 	}
 
@@ -359,8 +354,8 @@ void CProfile::saveBasics() {
 	document.setAttribute("name", m_name);
 
 	if (file.open(QIODevice::WriteOnly)) {
-		Q3TextStream t( &file );
-		t.setEncoding(Q3TextStream::UnicodeUTF8);
+		QTextStream t( &file );
+		t.setCodec("UTF-8");
 		t << doc.toString();
 		file.close();
 	}
