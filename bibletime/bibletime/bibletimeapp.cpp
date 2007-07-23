@@ -16,13 +16,10 @@
 #include "util/cresmgr.h"
 
 //KDE includes
-#include <dcopclient.h>
-//Added by qt3to4:
-#include <Q3CString>
+//#include <dcopclient.h> #TODO: USE DBUS INSTEAD OF DCOP
 
 BibleTimeApp::BibleTimeApp() {
-	initDCOP();
-
+//	initDCOP();
 	CResMgr::init_i18n();
 }
 
@@ -37,12 +34,13 @@ BibleTimeApp::~BibleTimeApp() {
 	deleteBackend();
 }
 
+/*
 void BibleTimeApp::initDCOP() {
 	const bool dcopOk = dcopClient()->attach();
 	Q_ASSERT(dcopOk);
-
 	if (dcopOk) {
 		const Q3CString appId = dcopClient()->registerAs(kapp->name(), false);
 		//   dcopClient()->setDefaultObject("BibleTimeInterface");
 	}
 }
+*/

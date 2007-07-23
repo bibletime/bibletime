@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef BIBLETIMEAPP_H
 #define BIBLETIMEAPP_H
 
@@ -27,7 +25,7 @@ public:
 	virtual ~BibleTimeApp();
 
 protected:
-	void initDCOP();
+//	void initDCOP();
 };
 
 #endif
