@@ -25,6 +25,8 @@
 #include <QObject>
 #include <QMap>
 
+
+
 namespace BookshelfManager {
 	bool finishedDownload = false;
 
@@ -54,7 +56,7 @@ namespace BookshelfManager {
 
 		//make sure to wait as long as the job is working
 		finishedDownload = false;
-		const int progressID = job->progressId();
+		//const int progressID = job->progressId(); //no more progressId() in kde4
 		connect(
 			job, SIGNAL(result(KIO::Job*)),
 			this, SLOT(slotCopyResult(KIO::Job*))
@@ -80,12 +82,12 @@ namespace BookshelfManager {
 
 		statusReporter->statusUpdate(m_totalSize, m_totalSize); //completed
 
-		if (!m_copyResults.contains(progressID)) {
-			return 1; //Error
-		}
-		else if (m_copyResults[progressID] > 0) { //an error occurred
-			return 1; //an error occured
-		}
+		//if (!m_copyResults.contains(progressID)) {
+		//	return 1; //Error
+		//}
+		//else if (m_copyResults[progressID] > 0) { //an error occurred
+		//	return 1; //an error occured
+		//}
 		return 0;
 	}
 
@@ -97,7 +99,7 @@ namespace BookshelfManager {
 	}
 
 	void KIO_FTPTransport::slotCopyResult(KIO::Job *job) {
-		m_copyResults.insert(job->progressId(),job->error());
+		//m_copyResults.insert(job->progressId(),job->error());
 		finishedDownload = true;
 
 		if ( job->error() ) {}
@@ -149,8 +151,9 @@ namespace BookshelfManager {
 		}
 
 		KFileItemList items = lister.itemsForDir(KUrl(dirURL));
-		KFileItem* i = 0;
-		for ( i = items.first(); i; i = items.next() ) {
+		//KFileItem* i = items[0];
+		//for ( i = items.first(); i; i = items.next() ) {
+		foreach (KFileItem* i, items) { //qt foreach
 			int length = i->name().length();
 			const char* t = i->name().toLatin1();
 

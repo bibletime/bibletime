@@ -87,7 +87,7 @@ SET(bibletime_SOURCES
 	#Bookshelf manager frontend
 	bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
 	bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-	#bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
+	bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
 	bibletime/frontend/bookshelfmanager/btinstallmgr.cpp
 
 	#Profile manager frontend
