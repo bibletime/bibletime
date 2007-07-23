@@ -55,7 +55,7 @@ CConfigurationDialog::CConfigurationDialog
 
 	// Add "Languages" (fonts) page
 	m_languagesPage = new CLanguageSettingsPage(this);
-	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagePage);
+	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagesPage);
 	langPage->setHeader( i18n( "Languages" ) );
 	langPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::fonts::icon,32)) );
 	addPage(langPage);

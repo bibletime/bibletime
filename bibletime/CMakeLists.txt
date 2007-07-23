@@ -81,8 +81,8 @@ SET(bibletime_SOURCES
 	#Settings dialog (configuration)
 	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
 	bibletime/frontend/settingsdialogs/cswordsettings.cpp
-	#bibletime/frontend/settingsdialogs/clanguagesettings.cpp
-	#bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
+	bibletime/frontend/settingsdialogs/clanguagesettings.cpp
+	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
 	bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp

@@ -160,7 +160,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addLayout(hLayout);
 	//#warning TODO: remember the last selected font and jump there.
 
-	m_fontChooser = new KFontChooser(this, "fonts", false, QStringList(), true, 5);
+	m_fontChooser = new KFontChooser(this);
 	//TODO: Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not i18n()'ed!) language?
 	m_fontChooser->setSampleText(i18n("The quick brown fox jumps over the lazy dog."));
 	layout->addWidget(m_fontChooser);
@@ -230,7 +230,7 @@ void CLanguageSettingsPage::save()
 void CLanguageSettingsPage::newDisplayWindowFontSelected(const QFont &newFont) {
 	//belongs to the languages/fonts page
 	CBTConfig::FontSettingsPair oldSettings = m_fontMap[ m_usageCombo->currentText() ];
-	m_fontMap.replace( m_usageCombo->currentText(), CBTConfig::FontSettingsPair(oldSettings.first, newFont) );
+	m_fontMap.insert( m_usageCombo->currentText(), CBTConfig::FontSettingsPair(oldSettings.first, newFont) );
 }
 
 /** Called when the combobox contents is changed */
@@ -253,16 +253,9 @@ void CLanguageSettingsPage::useOwnFontClicked( bool isOn ) {
 	m_fontMap[ m_usageCombo->currentText() ].first = isOn;
 
 	if (isOn) { //show font icon
-		m_usageCombo->changeItem(
-			SmallIcon("fonts"),
-			m_usageCombo->currentText(),
-			m_usageCombo->currentIndex()
-		);
+		m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), SmallIcon("fonts") );
 	}
 	else {    //don't show
-		m_usageCombo->changeItem(
-			m_usageCombo->currentText(),
-			m_usageCombo->currentIndex()
-		);
+		m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); //TODO: should this change icon to empty?
 	}
 }
