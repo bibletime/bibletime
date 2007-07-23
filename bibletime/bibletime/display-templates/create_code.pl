@@ -1,14 +1,15 @@
 #!/usr/bin/perl
 
 use strict;
-use File::Compare;
-use File::Copy;
-use FindBin qw($RealBin);
+my $dir = $ARGV[0];
+
+print "\nrunning create-code.pl to update built-in templates......\n";
 
 my %names;
 
 sub read_names() {
-	open(IN, "< " . $RealBin . "/names.conf");
+	my $dir = shift;
+	open(IN, "< $dir/names.conf") || die "Cannot open $dir/names.conf";
 	
 	while (<IN>) {
 		my $line = $_;
@@ -45,35 +46,20 @@ sub extract_data {
 	}
 	close(INT);
 	
-	
 	print "Found $name\n" if ($name);
 	return ($name, $html);
 }
 
-my $dir = $RealBin;
-#print $dir."\n";
 
-&read_names;
+&read_names($dir);
 my $code = "";
-foreach my $f (@ARGV) {
+foreach my $f (glob("$dir/*tmpl")) {
 	my ($name, $html) = &extract_data( $f );
-	
-	if ($name) {
-		$code .= "\tm_templateMap[ i18n(\"$name\") ] = \"$html\";\n"
-	}
+	$code .= "\tm_templateMap[ i18n(\"$name\") ] = \"$html\";\n" if $name;
 }
 
-
-open(OUT, "> $RealBin/template-init.cpp-new");
+open(OUT, "> template-init.cpp");
 print OUT "void CDisplayTemplateMgr::init() {\n$code\n}\n";
 close(OUT);
 
-if (-e "$RealBin/template-init.cpp" && compare("$RealBin/template-init.cpp","$RealBin/template-init.cpp-new")) { #differ
-	move("$RealBin/template-init.cpp-new","$RealBin/template-init.cpp");
-}
-elsif (!-e "$RealBin/template-init.cpp") {
-	move ("$RealBin/template-init.cpp-new","$RealBin/template-init.cpp");
-}
-else { #make sure to remove the -new file
-	unlink("$RealBin/template-init.cpp-new");
-}
+print "create-code.pl finished.\n\n";

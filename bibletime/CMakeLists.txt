@@ -1,6 +1,7 @@
 PROJECT(bibletime CXX C)
 
 cmake_minimum_required(VERSION 2.4.0)
+SET(DEBUG true)
 
 ######################################################
 # Find required packages
@@ -18,10 +19,18 @@ find_package(CLucene REQUIRED)	#CLucene
 find_package(Sword REQUIRED)		#Sword
 ######################################################
 
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/lib)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/install/bin)
+SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/install/lib)
 
-SET(DEBUG true)
+
+#######################################################
+# run create-code.pl to create a .cpp file containing
+# the builtin templates
+ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/bibletime/display-templates/create_code.pl ${CMAKE_CURRENT_SOURCE_DIR}/bibletime/display-templates/
+                     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+                     VERBATIM)
+#######################################################
+
 
 SET(bibletime_SOURCES
 #
@@ -128,6 +137,9 @@ SET(bibletime_SOURCES
 	bibletime/frontend/displaywindow/cbiblereadwindow.cpp
 	bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp
 	bibletime/frontend/displaywindow/cbookreadwindow.cpp
+	
+	#toplevel files
+	bibletime/bibletimeapp.cpp
 
 #Add files to be ported here
 )
