@@ -24,7 +24,7 @@ class KPageWidgetItem;
 class CDisplaySettingsPage;
 class CSwordSettingsPage;
 class CLanguageSettingsPage;
-
+class CAcceleratorSettingsPage;
 
 class CConfigurationDialog : public KPageDialog {
 	Q_OBJECT
@@ -39,7 +39,7 @@ private:
 	KActionCollection* m_actionCollection;
 	CDisplaySettingsPage* m_displayPage;
 	CSwordSettingsPage* m_swordPage;
-	//C* m_acceleratorsPage;
+	CAcceleratorSettingsPage* m_acceleratorsPage;
 	CLanguageSettingsPage* m_languagesPage;
 
 signals:

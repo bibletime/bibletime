@@ -14,6 +14,8 @@
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"
 #include "clanguagesettings.h"
+#include "cacceleratorsettings.h"
+
 
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
@@ -59,6 +61,13 @@ CConfigurationDialog::CConfigurationDialog
 	langPage->setHeader( i18n( "Languages" ) );
 	langPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::fonts::icon,32)) );
 	addPage(langPage);
+
+	// Add "Keyboard" (accelerators) page
+	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
+	KPageWidgetItem* accelPage = new KPageWidgetItem(m_acceleratorsPage);
+	accelPage->setHeader( i18n( "HotKeys" ) );
+	accelPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::keys::icon,32)) );
+	addPage(accelPage);
 
 
 	setCurrentPage(displayPage);

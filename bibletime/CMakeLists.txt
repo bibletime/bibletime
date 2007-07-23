@@ -79,6 +79,7 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cexportmanager.cpp
 	
 	#Settings dialog (configuration)
+	bibletime/frontend/settingsdialogs/cacceleratorsettings.cpp
 	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
 	bibletime/frontend/settingsdialogs/cswordsettings.cpp
 	bibletime/frontend/settingsdialogs/clanguagesettings.cpp
