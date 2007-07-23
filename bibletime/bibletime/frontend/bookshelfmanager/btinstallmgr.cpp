@@ -39,12 +39,14 @@ using namespace sword;
 
 namespace BookshelfManager {
 
-	const QString BTInstallMgr::Tool::LocalConfig::swordConfigFilename() {
+	const QString BTInstallMgr::Tool::LocalConfig::swordConfigFilename()
+	{
 		//  Q_ASSERT( CPointers::backend()->sysconfig );
 		return QString::fromLatin1("%1/.sword/sword.conf").arg(getenv("HOME"));
 	}
 
-	QStringList BTInstallMgr::Tool::RemoteConfig::sourceList( sword::InstallMgr* mgr ) {
+	QStringList BTInstallMgr::Tool::RemoteConfig::sourceList( sword::InstallMgr* mgr )
+	{
 		//  qWarning("BTInstallMgr::Tool::sourceList( sword::InstallMgr* mgr )");
 		Q_ASSERT(mgr);
 		Q_ASSERT(mgr->installConf);
@@ -74,12 +76,14 @@ namespace BookshelfManager {
 		return names;
 	}
 
-	QStringList BTInstallMgr::Tool::LocalConfig::targetList() {
+	QStringList BTInstallMgr::Tool::LocalConfig::targetList()
+	{
 		QStringList names = CPointers::backend()->swordDirList();
 		return names;
 	}
 
-	void BTInstallMgr::Tool::LocalConfig::setTargetList( const QStringList& targets ) {
+	void BTInstallMgr::Tool::LocalConfig::setTargetList( const QStringList& targets )
+	{
 		//saves a new Sworc config using the provided target list
 		QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
 		bool directAccess = false;
@@ -118,7 +122,8 @@ namespace BookshelfManager {
 			KProcess *proc = new KProcess;
 			*proc << "kdesu";
 			*proc << QString::fromLatin1("-c") << QString("mv %1 %2").arg(filename).arg(LocalConfig::swordConfigFilename());
-			proc->start(KProcess::Block);
+			proc->start();
+			proc->waitForFinished();
 		}
 	}
 
