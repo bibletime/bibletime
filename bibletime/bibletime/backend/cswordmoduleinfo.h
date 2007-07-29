@@ -15,7 +15,6 @@
 //Qt
 #include <QString>
 #include <QList>
-#include <Q3Signal>
 
 //Sword
 #include <listkey.h>
@@ -41,7 +40,9 @@ namespace Rendering {
  * @version $Id: cswordmoduleinfo.h,v 1.83 2007/02/04 23:12:32 joachim Exp $
  */
 
-class CSwordModuleInfo {
+class CSwordModuleInfo: public QObject
+{
+	Q_OBJECT
 
 public:
 	/**
@@ -313,6 +314,10 @@ protected:
 	QString getSimpleConfigEntry(const QString& name) const;
 	QString getFormattedConfigEntry(const QString& name) const;
 
+signals:
+	void indexingFinished();
+	void indexingProgress(int);
+
 private:
 	sword::SWModule* m_module;
 	sword::ListKey m_searchResult;
@@ -333,8 +338,8 @@ private:
 
 	CSwordBackend* m_backend;
 
-	Q3Signal m_indexingFinished;
-	Q3Signal m_indexingProgress;
+	//Q3Signal m_indexingFinished;
+	//Q3Signal m_indexingProgress;
 };
 
 // typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;

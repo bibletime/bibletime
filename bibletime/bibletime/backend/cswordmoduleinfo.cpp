@@ -20,27 +20,28 @@
 #include "util/cpointers.h"
 #include "frontend/cbtconfig.h"
 
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <stddef.h>
 #include <dirent.h>
 #include <regex.h>
 
+
 //Qt includes
 #include <QRegExp>
 #include <QDir>
-#include <QVariant>
 #include <QFileInfo>
-//Added by qt3to4:
-#include <Q3ValueList>
-#include <Q3CString>
-#include <Q3PtrList>
+#include <QList>
+#include <QByteArray>
+
 
 //KDE includes
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
+
 
 //Sword includes
 #include <swbuf.h>
@@ -50,11 +51,13 @@
 #include <swconfig.h>
 #include <rtfhtml.h>
 
+
 //Lucence includes
 #include <CLucene.h>
 #include <CLucene/util/Reader.h>
 #include <CLucene/util/Misc.h>
 #include <CLucene/util/dirent.h>
+
 
 //Increment this, if the index format changes
 //Then indices on the user's systems will be rebuilt
@@ -271,8 +274,9 @@ void CSwordModuleInfo::buildIndex() {
 
     const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
-    m_indexingProgress.setValue( QVariant((int)0) );
-    m_indexingProgress.activate();
+    //m_indexingProgress.setValue( QVariant((int)0) );
+    //m_indexingProgress.activate();
+	emit indexingProgress(0);
 
     sword::SWKey* key = m_module->getKey();
     //VerseKey for bibles
@@ -285,8 +289,8 @@ void CSwordModuleInfo::buildIndex() {
         vk->Headings(1);
     }
 
-    //holds UTF-8 data and is faster than QString
-    Q3CString textBuffer;
+    //holds UTF-8 data and is faster than QString. Note: use QByteArray (qt4) instead of Q3CString.
+    QByteArray textBuffer;
 
     // we start with the first module entry, key is automatically updated
     // because key is a pointer to the modules key
@@ -354,12 +358,16 @@ void CSwordModuleInfo::buildIndex() {
         verseIndex = m_module->Index();
 
         if (verseIndex % 200 == 0) {
+			int indexingProgressValue;
             if (verseHighIndex == verseLowIndex) { //prevent division by zero
-                m_indexingProgress.setValue( QVariant(0) );
+                //m_indexingProgress.setValue( QVariant(0) );
+				indexingProgressValue = 0;
             } else {
-                m_indexingProgress.setValue( QVariant((int)((100*(verseIndex-verseLowIndex))/(verseHighIndex-verseLowIndex))) );
+                //m_indexingProgress.setValue( QVariant((int)((100*(verseIndex-verseLowIndex))/(verseHighIndex-verseLowIndex))) );
+				indexingProgressValue = (int)((100*(verseIndex-verseLowIndex)) / (verseHighIndex-verseLowIndex));
             }
-            m_indexingProgress.activate();
+            //m_indexingProgress.activate();
+			emit indexingProgress(indexingProgressValue);
         }
     }
 
@@ -390,8 +398,8 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
     // work around Swords thread insafety for Bibles and Commentaries
     util::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
     sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
-    Q3PtrList<sword::VerseKey> list;
-    list.setAutoDelete( true ); // the list owns the objects
+    QList<sword::VerseKey*> list;
+    //list.setAutoDelete( true ); // the list owns the objects
 
     const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
@@ -444,22 +452,27 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
         return false;
     }
 
+	qDeleteAll(list);
     list.clear();
 
     return (m_searchResult.Count() > 0);
 }
 
 void CSwordModuleInfo::connectIndexingFinished(QObject* receiver, const char* slot) {
-    m_indexingFinished.connect(receiver, slot);
+    //m_indexingFinished.connect(receiver, slot);
+	QObject::connect(this, SIGNAL(indexingFinished()), receiver, slot);
 }
 
 void CSwordModuleInfo::connectIndexingProgress(QObject* receiver, const char* slot) {
-    m_indexingProgress.connect(receiver, slot);
+    //m_indexingProgress.connect(receiver, slot);
+	QObject::connect(this, SIGNAL(indexingProgress(int)), receiver, slot);
 }
 
 void CSwordModuleInfo::disconnectIndexingSignals(QObject* receiver) {
-    m_indexingProgress.disconnect(receiver);
-    m_indexingFinished.disconnect(receiver);
+    //m_indexingProgress.disconnect(receiver);
+    //m_indexingFinished.disconnect(receiver);
+	QObject::disconnect(this, SIGNAL(indexingProgress(int)), receiver, 0);
+	QObject::disconnect(this, SIGNAL(indexingFinished()), receiver, 0);
 }
 
 /** Returns the last search result for this module. */
@@ -781,7 +794,7 @@ QString CSwordModuleInfo::aboutText() const {
             .arg(i18n("About"))
             .arg(config(AboutInformation));
 
-    typedef Q3ValueList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
+    typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
 
     ListConfigEntry entries;
 
