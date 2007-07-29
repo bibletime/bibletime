@@ -33,7 +33,8 @@ namespace BookshelfManager {
      * @short Tooltip for InstallationManager listviews
      * @author Joachim Ansorg
      */
-    class ToolTip : public QToolTip {
+    class ToolTip : public QToolTip
+	{
     public:
         /** Constructor which takes the listview to operate on.
           * @param listview We operate on this widget to request tooltips from it'd child items.
@@ -59,7 +60,8 @@ namespace BookshelfManager {
 
     protected:
         CSwordSetupModuleListView* m_parent;
-    };
+
+	}; //class ToolTip
 
     /** Listview specially made for the installation manager.
      * @short InstallationManager module listviews
@@ -70,7 +72,8 @@ namespace BookshelfManager {
         Q_ASSERT(installSource);
         new BookshelfManager::ToolTip(this);
         m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
-
+		
+		//columns: use setColumnCount; setHeaderLabels; columnWidth. WidthMode???; Alignment: item-level, not really needed; 
         addColumn(i18n("Name"));
         setColumnWidthMode( 0, Q3ListView::Maximum );
         setColumnWidth( 0, 200 ); //don`t get too broad
@@ -103,22 +106,14 @@ namespace BookshelfManager {
     }
 
     void CSwordSetupModuleListView::init() {
-#if QT_VERSION >= 0x030200
+
         m_categoryBible = new Q3CheckListItem(this, i18n("Bibles"), Q3CheckListItem::CheckBoxController);
         m_categoryCommentary = new Q3CheckListItem(this, i18n("Commentaries"), Q3CheckListItem::CheckBoxController);
         m_categoryLexicon = new Q3CheckListItem(this, i18n("Lexicons"), Q3CheckListItem::CheckBoxController);
         m_categoryBook = new Q3CheckListItem(this, i18n("Books"), Q3CheckListItem::CheckBoxController);
         m_categoryDevotionals = new Q3CheckListItem(this, i18n("Daily Devotionals"), Q3CheckListItem::CheckBoxController);
         m_categoryGlossaries = new Q3CheckListItem(this, i18n("Glossaries"), Q3CheckListItem::CheckBoxController);
-#else
-        //  Qt <= 3.1.x doesn't support the CheckBoxController!, remove the define as soon as we switch to the new Qt
-        m_categoryBible = new Q3CheckListItem(this, i18n("Bibles"), Q3CheckListItem::Controller);
-        m_categoryCommentary = new Q3CheckListItem(this, i18n("Commentaries"), Q3CheckListItem::Controller);
-        m_categoryLexicon = new Q3CheckListItem(this, i18n("Lexicons"), Q3CheckListItem::Controller);
-        m_categoryBook = new Q3CheckListItem(this, i18n("Books"), Q3CheckListItem::Controller);
-        m_categoryDevotionals = new Q3CheckListItem(this, i18n("Daily Devotionals"), Q3CheckListItem::Controller);
-        m_categoryGlossaries = new Q3CheckListItem(this, i18n("Glossaries"), Q3CheckListItem::Controller);
-#endif
+
 
         m_categoryBible->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
         m_categoryCommentary->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
@@ -127,6 +122,7 @@ namespace BookshelfManager {
         m_categoryDevotionals->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
         m_categoryGlossaries->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
 
+		//open is not necessary (and not good)
         m_categoryBible->setOpen(true);
         m_categoryCommentary->setOpen(true);
         m_categoryLexicon->setOpen(true);
@@ -209,12 +205,8 @@ namespace BookshelfManager {
         }
 
         if (!langFolder) { //not yet there
-#if QT_VERSION >= 0x030200
-            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::CheckBoxController);
-#else
 
-            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::Controller);
-#endif
+            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::CheckBoxController);
 
             langFolder->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
             langFolder->setOpen(false);
