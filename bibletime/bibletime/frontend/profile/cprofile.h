@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,7 +31,7 @@ public:
 	* Saves the profile to the file given in the constructor.
 	* @param windows The list of windows available in the profile.
 	*/
-	const bool save( Q3PtrList<CProfileWindow> windows );
+	const bool save( QList<CProfileWindow*> windows );
 	/**
 	* Saves the profile to the file given in the constructor.
 	*/
@@ -40,7 +40,7 @@ public:
 	* Loads the profile from the file given in the constructor.
 	* @return The list of profiled window which exist in the profile.
 	*/
-	Q3PtrList<CProfileWindow> load();
+	QList<CProfileWindow*> load();
 	/**
 	* Returns the name of this profile.
 	*/
@@ -89,7 +89,7 @@ private:
 	void loadBasics();
 	void saveBasics();
 
-	Q3PtrList<CProfileWindow> m_profileWindows;
+	QList<CProfileWindow*> m_profileWindows;
 	QString m_name;
 	QString m_filename;
 	bool m_fullscreen;

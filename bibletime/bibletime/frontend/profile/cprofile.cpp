@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -23,13 +23,14 @@
 
 namespace Profile {
 
-CProfile::CProfile( const QString& file, const QString& name ):
-m_name(name.isEmpty() ? i18n("unknown") : name),
-m_filename(file),
-m_fullscreen(false),
-m_geometry(10,20,640,480) {
+CProfile::CProfile( const QString& file, const QString& name )
+	: m_name(name.isEmpty() ? i18n("unknown") : name),
+	m_filename(file),
+	m_fullscreen(false),
+	m_geometry(10,20,640,480)
+{
 
-	m_profileWindows.setAutoDelete(true);
+	//m_profileWindows.setAutoDelete(true); //see dtor
 	if (!m_filename.isEmpty() && name.isEmpty()) {
 		loadBasics();
 	}
@@ -46,14 +47,15 @@ m_geometry(10,20,640,480) {
 }
 
 CProfile::~CProfile() {
-	m_profileWindows.clear();  //delete all CProfileWindows objects (autodelete is enabled)
+	qDeleteAll(m_profileWindows); //there's no autodelete feature in qt4
+	m_profileWindows.clear();  //delete all CProfileWindows objects
 }
 
 /** Loads the profile from the file given in the constructor. */
-Q3PtrList<CProfileWindow> CProfile::load() {
+QList<CProfileWindow*> CProfile::load() {
 	QFile file(m_filename);
 	if (!file.exists())
-		return Q3PtrList<CProfileWindow>();
+		return QList<CProfileWindow*>();
 
 	QDomDocument doc;
 	if (file.open(QIODevice::ReadOnly)) {
@@ -195,7 +197,7 @@ Q3PtrList<CProfileWindow> CProfile::load() {
 }
 
 /** Saves the profile to the file given in the constructor. */
-const bool CProfile::save(Q3PtrList<CProfileWindow> windows) {
+const bool CProfile::save(QList<CProfileWindow*> windows) {
 	/** Save the settings using a XML file
 	* Save the CProfileWindow objects using a XML file which name is in m_filename
 	*/
@@ -225,7 +227,8 @@ const bool CProfile::save(Q3PtrList<CProfileWindow> windows) {
 		content.appendChild(mainWindow);
 	}
 
-	for (CProfileWindow* p = windows.first(); p; p = windows.next()) {
+	//for (CProfileWindow* p = windows.first(); p; p = windows.next()) {
+	foreach(CProfileWindow* p, windows) {
 		QDomElement window;
 		switch (p->type()) {
 			case CSwordModuleInfo::Bible:
@@ -309,7 +312,7 @@ const QString& CProfile::name() {
 void CProfile::init(const QString file) {
 	const QString oldFile = m_filename;
 	m_filename = file;
-	save(Q3PtrList<CProfileWindow>());
+	save(QList<CProfileWindow*>());
 	m_filename = oldFile;
 }
 
