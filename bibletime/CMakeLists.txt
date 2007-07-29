@@ -69,6 +69,8 @@ SET(bibletime_SOURCES
 	bibletime/backend/cswordtreekey.cpp
 	bibletime/backend/cswordversekey.cpp
 	
+	bibletime/backend/cswordmodulesearch.cpp
+
 	#utilities
 	bibletime/util/cresmgr.cpp
 	bibletime/util/cpointers.cpp

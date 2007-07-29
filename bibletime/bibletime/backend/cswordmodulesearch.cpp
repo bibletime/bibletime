@@ -23,10 +23,11 @@
 
 CSwordModuleSearch* CSwordModuleSearch::searcher = 0;
 
-CSwordModuleSearch::CSwordModuleSearch() :
-m_searchedText(QString::null),
-m_searchOptions(0),
-m_foundItems(false){
+CSwordModuleSearch::CSwordModuleSearch()
+	: m_searchedText(QString::null),
+	m_searchOptions(0),
+	m_foundItems(false)
+{
 	searcher = this;
 }
 
@@ -57,7 +58,8 @@ const bool CSwordModuleSearch::startSearch() {
 
 	m_foundItems = foundItems;
 
-	m_finishedSig.activate();
+	//m_finishedSig.activate();
+	emit finished();
 	return true;
 }
 
@@ -98,12 +100,14 @@ const sword::ListKey& CSwordModuleSearch::searchScope() const {
 }
 
 void CSwordModuleSearch::connectFinished( QObject *receiver, const char *member ) {
-	m_finishedSig.connect(receiver, member);
+	//m_finishedSig.connect(receiver, member);
+	QObject::connect(this, SIGNAL(finished()), receiver, member);
 }
 
 /** Should be called when the search finished. */
 void CSwordModuleSearch::searchFinished() {
-	m_finishedSig.activate();
+	//m_finishedSig.activate();
+	emit finished();
 }
 
 const bool CSwordModuleSearch::modulesHaveIndices( const ListCSwordModuleInfo& modules )

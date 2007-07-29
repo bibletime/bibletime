@@ -19,9 +19,9 @@
 #include "util/cpointers.h"
 
 //Qt includes
-#include <Q3PtrList>
+#include <QObject>
 #include <QString>
-#include <Q3Signal>
+//#include <Q3Signal>
 
 //System includes
 #include <pthread.h>
@@ -37,7 +37,8 @@
   * @version $Id: cswordmodulesearch.h,v 1.34 2006/08/08 19:32:48 joachim Exp $
   */
 
-class CSwordModuleSearch: public CPointers {
+class CSwordModuleSearch: public CPointers, QObject {
+	Q_OBJECT
 
 public:
 	CSwordModuleSearch();
@@ -91,8 +92,12 @@ protected:
 
 	bool m_foundItems;
 
+signals:
+	void finished();
+
 private:
- 	Q3Signal m_finishedSig;
+ 	//Q3Signal m_finishedSig;
+	
 	static CSwordModuleSearch* searcher;
 };
 
