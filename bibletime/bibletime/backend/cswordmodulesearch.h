@@ -16,7 +16,7 @@
 #include "cswordmoduleinfo.h"
 
 //BibleTime - utils
-#include "../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <Q3PtrList>

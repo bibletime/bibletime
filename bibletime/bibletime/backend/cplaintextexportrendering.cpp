@@ -12,7 +12,7 @@
 #include "cswordkey.h"
 
 //Util
-#include "../util/scoped_resource.h"
+#include "util/scoped_resource.h"
 
 namespace Rendering {
 

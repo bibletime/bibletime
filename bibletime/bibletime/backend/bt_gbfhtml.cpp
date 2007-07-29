@@ -14,7 +14,7 @@
 
 #include "cswordmoduleinfo.h"
 #include "cswordbackend.h"
-#include "../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Sword includes
 #include <utilxml.h>

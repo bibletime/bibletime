@@ -14,7 +14,7 @@
 #include "cswordversekey.h"
 
 //Qt
-#include <qstringlist.h>
+#include <QStringList>
 
 /**
  * This is the CModuleInfo imlementation for Bible modules managed by Sword.

@@ -15,8 +15,8 @@
 #include "cswordversekey.h"
 #include "cswordmoduleinfo.h"
 
-#include "../util/cpointers.h"
-#include "../util/scoped_resource.h"
+#include "util/cpointers.h"
+#include "util/scoped_resource.h"
 
 //KDE
 #include <klocale.h>

@@ -10,13 +10,13 @@
 #include "ctextrendering.h"
 
 //BibleTime
-#include "../backend/cswordkey.h"
-#include "../backend/cswordversekey.h"
-#include "../backend/cswordmoduleinfo.h"
-#include "../backend/cdisplaytemplatemgr.h"
-#include "../backend/creferencemanager.h"
-#include "../util/scoped_resource.h"
-#include "../util/ctoolclass.h"
+#include "backend/cswordkey.h"
+#include "backend/cswordversekey.h"
+#include "backend/cswordmoduleinfo.h"
+#include "backend/cdisplaytemplatemgr.h"
+#include "backend/creferencemanager.h"
+#include "util/scoped_resource.h"
+#include "util/ctoolclass.h"
 
 //Sword
 #include <swkey.h>

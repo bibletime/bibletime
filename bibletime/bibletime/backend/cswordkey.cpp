@@ -14,7 +14,7 @@
 #include "cswordldkey.h"
 #include "cswordtreekey.h"
 
-#include "../util/ctoolclass.h"
+#include "util/ctoolclass.h"
 
 //Sword
 #include <swmodule.h>

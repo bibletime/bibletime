@@ -13,7 +13,7 @@
 #include "creferencemanager.h"
 #include "cswordkey.h"
 #include "cswordversekey.h"
-#include "../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Qt
 #include <QString>

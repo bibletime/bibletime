@@ -13,7 +13,7 @@
 #include "cswordbackend.h"
 #include "ctextrendering.h"
 
-#include "../frontend/cbtconfig.h"
+#include "frontend/cbtconfig.h"
 
 namespace Rendering {
 

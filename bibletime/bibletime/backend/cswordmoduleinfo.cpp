@@ -15,10 +15,10 @@
 #include "centrydisplay.h"
 #include "clanguagemgr.h"
 
-#include "../util/scoped_resource.h"
-#include "../util/directoryutil.h"
-#include "../util/cpointers.h"
-#include "../frontend/cbtconfig.h"
+#include "util/scoped_resource.h"
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "frontend/cbtconfig.h"
 
 #include <sys/types.h>
 #include <unistd.h>

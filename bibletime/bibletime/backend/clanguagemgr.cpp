@@ -12,7 +12,7 @@
 #include "cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
-#include "../util/cpointers.h"
+#include "util/cpointers.h"
 
 //KDE
 #include <klocale.h>
@@ -60,17 +60,19 @@ CLanguageMgr::Language::~Language() {
 /****************************************************/
 /******************** CLanguageMgr ******************/
 /****************************************************/
-CLanguageMgr::CLanguageMgr() : m_langMap(0) {
+CLanguageMgr::CLanguageMgr() : m_langMap() {
 	m_availableModulesCache.moduleCount = 0;
 
 	init();
 }
 
 CLanguageMgr::~CLanguageMgr() {
-	m_cleanupLangPtrs.setAutoDelete(true);
+	//m_cleanupLangPtrs.setAutoDelete(true);
+	qDeleteAll(m_cleanupLangPtrs);
 	m_cleanupLangPtrs.clear();
 
-	m_langList.setAutoDelete(true);
+	//m_langList.setAutoDelete(true);
+	qDeleteAll(m_langList);
 	m_langList.clear();
 }
 
@@ -113,7 +115,7 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 };
 
 const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QString& abbrev ) const {
-	Language* lang = m_langMap.find(abbrev);
+	const Language* const lang = *m_langMap.find(abbrev);
 
 	if (lang) {
 		return lang;
@@ -121,9 +123,9 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 
 	//try to search in the alternative abbrevs
 	//const LangMapIterator end = m_langMap.constEnd();
-	for ( LangMapIterator it( m_langMap ); it.current(); ++it ) {
-		if (it.current()->alternativeAbbrevs() && it.current()->alternativeAbbrevs()->contains(abbrev)) {
-			return it.current();
+	for ( LangMapIterator it = m_langMap.begin(); *it; ++it ) {
+		if ((*it)->alternativeAbbrevs() && (*it)->alternativeAbbrevs()->contains(abbrev)) {
+			return *it;
 		}
 	}
 
@@ -135,9 +137,9 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 };
 
 const CLanguageMgr::Language* const CLanguageMgr::languageForName( const QString& name ) const {
-	for ( LangMapIterator it( m_langMap ); it.current(); ++it ) {
-		if (it.current()->name() == name) {
-			return it.current();
+	for ( LangMapIterator it = m_langMap.begin(); *it; ++it ) {
+		if ((*it)->name() == name) {
+			return *it;
 		}
 	}
 
@@ -145,9 +147,9 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForName( const QString
 };
 
 const CLanguageMgr::Language* const CLanguageMgr::languageForTranslatedName( const QString& name ) const {
-	for ( LangMapIterator it( m_langMap ); it.current(); ++it ) {
-	if (it.current()->translatedName() == name) {
-			return it.current();
+	for ( LangMapIterator it = m_langMap.begin(); *it; ++it ) {
+	if ((*it)->translatedName() == name) {
+			return *it;
 		}
 	}
 
@@ -484,7 +486,8 @@ void CLanguageMgr::init() {
 
 	m_langList.append( new Language("zu"  , "Zulu"        , i18n("Zulu")) );
 
-	for ( Language* lang = m_langList.first(); lang; lang = m_langList.next() ) {
+	//for ( Language* lang = m_langList.first(); lang; lang = m_langList.next() ) {
+	foreach (Language* lang, m_langList) {
 		m_langMap.insert( lang->abbrev(), lang);
 	};
 };

@@ -16,9 +16,6 @@
 #define BT_GBFHTML_H
 
 //Sword includes
-//#include <swkey.h>
-//#include <swmodule.h>
-//#include <swbasicfilter.h>
 #include <gbfhtml.h>
 
 namespace Filters {

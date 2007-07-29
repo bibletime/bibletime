@@ -17,8 +17,8 @@
 #include "cdisplaytemplatemgr.h"
 #include "cdisplayrendering.h"
 
-#include "../frontend/cbtconfig.h"
-#include "../util/scoped_resource.h"
+#include "frontend/cbtconfig.h"
+#include "util/scoped_resource.h"
 
 //Qt includes
 #include <QApplication>

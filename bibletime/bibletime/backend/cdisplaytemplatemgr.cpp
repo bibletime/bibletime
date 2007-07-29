@@ -11,8 +11,8 @@
 
 #include "cswordmoduleinfo.h"
 #include "clanguagemgr.h"
-#include "../frontend/cbtconfig.h"
-#include "../util/cpointers.h"
+#include "frontend/cbtconfig.h"
+#include "util/cpointers.h"
 
 //Qt
 #include <QStringList>
@@ -93,8 +93,8 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	QString langCSS;
 	CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
 
-	for ( CLanguageMgr::LangMapIterator it( langMap ); it.current(); ++it ) {
-		const CLanguageMgr::Language* lang = it.current();
+	for ( CLanguageMgr::LangMapIterator it = langMap.begin(); *it; ++it ) {
+		const CLanguageMgr::Language* lang = *it;
 
 
 		//if (lang->isValid() && CBTConfig::get(lang).first) {
@@ -117,9 +117,9 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	}
 
 	//at first append the font standard settings for all languages without configured font
-	CLanguageMgr::LangMapIterator it( langMap );
+	CLanguageMgr::LangMapIterator it = langMap.begin();
 
-	const CLanguageMgr::Language* lang = it.current();
+	const CLanguageMgr::Language* lang = *it;
 
 	if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
 		const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param

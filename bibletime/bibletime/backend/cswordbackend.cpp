@@ -23,7 +23,7 @@
 #include "bt_plainhtml.h"
 #include "osismorphsegmentation.h"
 
-#include "../frontend/cbtconfig.h"
+#include "frontend/cbtconfig.h"
 
 #include <dirent.h>
 

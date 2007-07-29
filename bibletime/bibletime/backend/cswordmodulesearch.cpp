@@ -13,7 +13,7 @@
 #include "cswordmodulesearch.h"
 #include "cswordmoduleinfo.h"
 #include "cswordbackend.h"
-#include "../frontend/cbtconfig.h"
+#include "frontend/cbtconfig.h"
 
 //Sword includes
 #include <swmodule.h>

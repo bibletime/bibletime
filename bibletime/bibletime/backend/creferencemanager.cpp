@@ -10,11 +10,11 @@
 #include "creferencemanager.h"
 #include "cswordversekey.h"
 
-#include "../frontend/cbtconfig.h"
-#include "../util/cpointers.h"
+#include "frontend/cbtconfig.h"
+#include "util/cpointers.h"
 
 //QT
-#include <qregexp.h>
+#include <QRegExp>
 
 //stl
 #include <algorithm>       // STL algorithms class library

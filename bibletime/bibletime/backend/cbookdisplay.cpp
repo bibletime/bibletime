@@ -14,7 +14,7 @@
 #include "cswordtreekey.h"
 
 //Util
-#include "../util/scoped_resource.h"
+#include "util/scoped_resource.h"
 
 /** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
 const QString Rendering::CBookDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {

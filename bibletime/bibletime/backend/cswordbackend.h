@@ -14,7 +14,7 @@
 #include "cswordmoduleinfo.h"
 
 //Qt includes
-#include <Q3PtrList>
+//#include <QList>
 #include <QMap>
 #include <QString>
 #include <QStringList>

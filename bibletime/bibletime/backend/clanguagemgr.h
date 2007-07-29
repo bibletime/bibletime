@@ -13,8 +13,8 @@
 //Qt includes
 #include <QString>
 #include <QStringList>
-#include <Q3PtrList>
-#include <Q3Dict>
+#include <QList>
+#include <QHash>
 
 /** Manages the anguages of BibleTime and provides functions to work with them.
   * @author The BibleTime team
@@ -79,10 +79,10 @@ public:
 		QStringList* m_altAbbrevs;
 	};
 
-	typedef Q3PtrList<CLanguageMgr::Language> LanguageList;
+	typedef QList<CLanguageMgr::Language*> LanguageList;
 
-	typedef Q3Dict<Language> LangMap;
-	typedef Q3DictIterator<Language> LangMapIterator;
+	typedef QHash<QString, const Language*> LangMap;
+	typedef QHash<QString, const Language*>::iterator LangMapIterator;
 
 	/** Constructor.
 	*/

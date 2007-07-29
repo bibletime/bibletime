@@ -135,13 +135,13 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 
 	CLanguageMgr::LangMap langMap = languageMgr()->availableLanguages();
 
-	for ( CLanguageMgr::LangMapIterator it( langMap ); it.current(); ++it ) {
+	for ( CLanguageMgr::LangMapIterator it = langMap.begin() ; *it; ++it ) {
 		const QString name =
-			it.current()->translatedName().isEmpty()
-			? it.current()->abbrev()
-			: it.current()->translatedName();
+			(*it)->translatedName().isEmpty()
+			? (*it)->abbrev()
+			: (*it)->translatedName();
 
-		m_fontMap.insert(name, CBTConfig::get(it.current()) );
+		m_fontMap.insert(name, CBTConfig::get(*it) );
 	}
 
 	for( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {

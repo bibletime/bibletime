@@ -12,9 +12,9 @@
 #include "clanguagemgr.h"
 #include "cswordmoduleinfo.h"
 #include "creferencemanager.h"
-#include "../frontend/cbtconfig.h"
-#include "../util/cpointers.h"
-#include "../util/scoped_resource.h"
+#include "frontend/cbtconfig.h"
+#include "util/cpointers.h"
+#include "util/scoped_resource.h"
 
 //Sword includes
 #include <swmodule.h>
