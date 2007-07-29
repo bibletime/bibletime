@@ -16,8 +16,8 @@
 #include "bibletimeinterface.h"
 
 //Frontend includes
-#include "frontend/cprofilemgr.h"
-#include "frontend/cprofile.h"
+#include "frontend/profile/cprofilemgr.h"
+#include "frontend/profile/cprofile.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 //Backend includes
@@ -26,8 +26,8 @@
 //KDE includes
 #include <kmainwindow.h>
 //Added by qt3to4:
-#include <Q3PtrList>
-#include <Q3PopupMenu>
+#include <QList>
+//#include <QMenu>
 
 //forward: BT classes
 class CMDIArea;
@@ -41,13 +41,14 @@ namespace InfoDisplay {
 //KDE classes
 class KToggleAction;
 class KAccel;
-class KPopupMenu;
+//class KPopupMenu;
 class KAction;
 class KActionMenu;
 class KActionCollection;
+class KHelpMenu;
 
 //QT classes
-class Q3PopupMenu;
+class QMenu;
 class Q3ProgressDialog;
 class QSplitter;
 
@@ -350,8 +351,8 @@ protected slots:
 
 
 private:
-	Q3PopupMenu* m_windowMenu;
-	Q3PopupMenu* m_editMenu;
+	QMenu* m_windowMenu;
+	QMenu* m_editMenu;
 
 	/** VIEW menu actions */
 	KToggleAction* m_viewToolbar_action;
@@ -377,7 +378,7 @@ private:
 	KActionMenu* m_windowDeleteProfile_action;
 	KToggleAction* m_windowFullscreen_action;
 
-	Q3PtrList<KAction> m_windowOpenWindowsList;
+	QList<KAction*> m_windowOpenWindowsList;
 
 	KHelpMenu* m_helpMenu;
 

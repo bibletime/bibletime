@@ -20,7 +20,7 @@
 //own includes
 #include "bibletimeapp.h"
 #include "bibletime.h"
-#include "config.h"
+//#include "config.h"
 
 //util includes
 #include "util/scoped_resource.h"
@@ -39,7 +39,7 @@
 #include <kglobal.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
-#include <kinstance.h>
+//#include <kinstance.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 
@@ -243,7 +243,7 @@ int main(int argc, char* argv[]) {
 		showDebugMessages = true;
 	}
 
-	if (kapp->isRestored()) {
+	if (kapp->isSessionRestored()) {
 		//    qWarning("Restoring BibleTime");
 		RESTORE( BibleTime );
 	}
@@ -284,7 +284,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		// restore the workspace and process command line options
-		app.setMainWidget(bibletime_ptr);
+		//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
 		bibletime_ptr->show();
 		bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
 

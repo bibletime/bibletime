@@ -14,13 +14,13 @@
 
 //Qt includes
 #include <QString>
-#include <qstringlist.h>
+#include <QStringList>
 //Added by qt3to4:
-#include <Q3CString>
+//#include <Q3CString>
 
 //KDE includes
-#include <dcopobject.h>
-#include <kmainwindowiface.h>
+//#include <dcopobject.h>
+//#include <kmainwindowiface.h>
 
 /** DCOP interface definition for BibleTime.
 * This is the interface definition for BibleTime's DCOP client interface. The main window class "BibleTime"
@@ -30,14 +30,17 @@
 *
 * @author Joachim Ansorg
 */
-class BibleTimeInterface : virtual public DCOPObject {
+//class BibleTimeInterface : virtual public DCOPObject {
 	//This K_DCOP line is required so that the k_dcop: and void are processed.
-	K_DCOP
-
+	//K_DCOP
+class BibleTimeInterface
+{
 public:
-BibleTimeInterface(Q3CString id) : DCOPObject(id) {}
+BibleTimeInterface()
+// : DCOPObject(id) //Q3CString id
+{}
 
-k_dcop:
+//k_dcop:
 	/** Sync all open Bible windows to the key.
 	* @param key The key which is set to all Bible windows.
 	*/
