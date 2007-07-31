@@ -20,7 +20,7 @@
 //own includes
 #include "bibletimeapp.h"
 #include "bibletime.h"
-//#include "config.h"
+#include "config.h"
 
 //util includes
 #include "util/scoped_resource.h"
