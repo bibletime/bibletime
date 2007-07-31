@@ -13,10 +13,10 @@
 //BibleTime includes
 #include "cindexitem.h"
 
-#include "../../backend/cswordmoduleinfo.h"
-#include "../displaywindow/cdisplaywindow.h"
+#include "backend/cswordmoduleinfo.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
-#include "../../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <QTimer>
@@ -24,11 +24,6 @@
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-//Added by qt3to4:
-//#include <QDropEvent>
-//#include <QDragMoveEvent>
-//#include <QDragLeaveEvent>
-//#include <Q3PtrList>
 
 //KDE includes
 #include <kaction.h>
@@ -226,7 +221,7 @@ private:
 		KAction* aboutModule;
 	}
 	m_actions;
-	KPopupMenu* m_popup;
+	KMenu* m_popup;
 
 signals:
 	/**
