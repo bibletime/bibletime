@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -37,41 +37,34 @@
 
 
 //Qt includes
-#include <qsplitter.h>
+#include <QSplitter>
 
 //KDE includes
-#include <kdeversion.h>
-#include <kaction.h>
 #include <kapplication.h>
-#include <kconfig.h>
 #include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kaccel.h>
-#include <kmenubar.h>
-#include <ktoolbar.h>
 #include <krandomsequence.h>
+#include <kxmlguiwindow.h>
+#include <ktoggleaction.h>
+#include <kdialog.h>
 
 using namespace Profile;
 
 BibleTime::BibleTime()
-: BibleTimeInterface("BibleTimeInterface"),
-#if KDE_VERSION >= 0x030200
-KMainWindow(KMainWindow::NoDCOPObject, 0,0, Qt::WType_TopLevel),
-#else
-KMainWindow(0,0, Qt::WType_TopLevel),
-#endif
-m_windowActionCollection(0),
-m_initialized(false),
-m_moduleList(0),
-m_progress(0),
-m_currentProfile(0),
-m_mainSplitter(0),
-m_leftPaneSplitter(0),
-m_mdi(0),
-m_profileMgr(),
-m_backend(0),
-m_mainIndex(0) {
-	setObjId("BibleTimeInterface");
+	: BibleTimeInterface(),
+	KXmlGuiWindow(0),
+	m_windowActionCollection(0),
+	m_initialized(false),
+	m_moduleList(0),
+	m_progress(0),
+	m_currentProfile(0),
+	m_mainSplitter(0),
+	m_leftPaneSplitter(0),
+	m_mdi(0),
+	m_profileMgr(),
+	m_backend(0),
+	m_mainIndex(0)
+{
+	//setObjId("BibleTimeInterface"); //DCOP?
 	setHelpMenuEnabled(false);
 
 	initBackends();
@@ -84,7 +77,7 @@ m_mainIndex(0) {
 
 	readSettings();
 
-	setPlainCaption("BibleTime " VERSION);
+	setPlainCaption( (QString("BibleTime ") + QString(VERSION)) );
 
 	// we don't save the geometry, it's stored in the startup profile
 	setAutoSaveSettings(QString("MainWindow"), false);
@@ -101,7 +94,8 @@ void BibleTime::saveSettings() {
 		m_mdi->saveSettings();
 	}
 
-	accel()->writeSettings(CBTConfig::getConfig());
+	//TODO: how to write settings?
+	//accel()->writeSettings(CBTConfig::getConfig());
 
 	CBTConfig::set
 		(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
@@ -186,7 +180,7 @@ void BibleTime::readSettings() {
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
-	kapp->setOverrideCursor( Qt::waitCursor );
+	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
 	CDisplayWindow* displayWindow = CDisplayWindow::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
@@ -210,7 +204,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
 }
 
 CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) {
-	kapp->setOverrideCursor( waitCursor );
+	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
 	ListCSwordModuleInfo modules;
 	modules.append(module);
@@ -277,12 +271,12 @@ void BibleTime::restoreWorkspace() {
 
 /** Sets the caption of the mainwindow */
 void BibleTime::setCaption( const QString& ) {
-	KMainWindow::setPlainCaption( KApplication::kApplication()->makeStdCaption( m_mdi->currentApplicationCaption() ) );
+	KMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
 }
 
 /** Sets the plain caption of the main window */
 void BibleTime::setPlainCaption( const QString& ) {
-	KMainWindow::setPlainCaption( KApplication::kApplication()->makeStdCaption( m_mdi->currentApplicationCaption() ) );
+	KMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
 }
 
 /** Processes the commandline options given to BibleTime. */
@@ -320,10 +314,10 @@ void BibleTime::processCommandline() {
 			}
 }
 
-void BibleTime::polish() {
+void BibleTime::ensurePolished() {
 	m_initialized = true;
 
-	KMainWindow::polish();
-	applyMainWindowSettings(CBTConfig::getConfig(), QString::fromLatin1("MainWindow"));
+	KMainWindow::ensurePolished();
+	applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
 }
 

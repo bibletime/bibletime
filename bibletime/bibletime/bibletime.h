@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -25,11 +25,13 @@
 
 //KDE includes
 #include <kmainwindow.h>
-//Added by qt3to4:
-#include <QList>
-//#include <QMenu>
 
-//forward: BT classes
+
+#include <QList>
+
+
+//forward declarations:
+// BT classes
 class CMDIArea;
 class CDisplayWindow;
 class CMainIndex;
@@ -41,7 +43,6 @@ namespace InfoDisplay {
 //KDE classes
 class KToggleAction;
 class KAccel;
-//class KPopupMenu;
 class KAction;
 class KActionMenu;
 class KActionCollection;
@@ -136,7 +137,7 @@ class QSplitter;
  * saveSettings().
  * This is the general way of all BibleTime classes.
  */
-class BibleTime : public KMainWindow, virtual public BibleTimeInterface {
+class BibleTime : public KXmlGuiWindow, virtual public BibleTimeInterface {
 	friend class CMDIArea;
 	Q_OBJECT
 public:
@@ -149,7 +150,7 @@ public:
 	 */
 	virtual ~BibleTime();
 
-	virtual void polish();
+	virtual void ensurePolished();
 	/**
 	* Reads the settings from the configfile and sets the right properties.
 	*/

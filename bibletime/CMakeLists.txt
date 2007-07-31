@@ -143,6 +143,7 @@ SET(bibletime_SOURCES
 	#toplevel files
 	bibletime/bibletimeapp.cpp
 	bibletime/main.cpp
+	bibletime/bibletime.cpp
 
 #Add files to be ported here
 )
