@@ -18,11 +18,11 @@
 #include "util/ctoolclass.h"
 
 #include "frontend/cmdiarea.h"
-#include "frontend/cprofilemgr.h"
-#include "frontend/cprofile.h"
-#include "frontend/cprofilewindow.h"
-#include "frontend/coptionsdialog.h"
-#include "frontend/cswordsetupdialog.h"
+#include "frontend/profile/cprofilemgr.h"
+#include "frontend/profile/cprofile.h"
+#include "frontend/profile/cprofilewindow.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
+//#include "frontend/cswordsetupdialog.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -30,35 +30,40 @@
 #include "frontend/mainindex/cindexitem.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
-#include "frontend/searchdialog/csearchdialog.h"
+//#include "frontend/searchdialog/csearchdialog.h"
 
 #include <errno.h>
 
 //QT includes
 #include <q3progressdialog.h>
-#include <q3listview.h>
-#include <q3valuelist.h>
+//#include <q3listview.h>
 #include <qclipboard.h>
 #include <qinputdialog.h>
 //Added by qt3to4:
-#include <Q3PtrList>
+#include <QList>
 
 //KDE includes
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kapplication.h>
-#include <kaboutkde.h>
-#include <kaboutdialog.h>
+#include <kaboutkdedialog.h>
+//#include <kaboutdialog.h>
 #include <kbugreport.h>
-#include <kaboutapplication.h>
+#include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>
 #include <kmenubar.h>
 #include <kaboutdata.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <kedittoolbar.h>
-#include <kpopupmenu.h>
+#include <kmenu.h>
+#include <kactionmenu.h>
 #include <khelpmenu.h>
 #include <ktip.h>
+#include <ktoggleaction.h>
+#include <ktoolbar.h>
+#include <kcomponentdata.h>
+#include <ktoolinvocation.h>
 
 //Sword includes
 #include <versekey.h>
@@ -71,7 +76,10 @@ using namespace Profile;
 class KUserDataAction : public KToggleAction {
 public:
 	KUserDataAction( QString caption, const KShortcut& shortcut, const QObject* receiver, const char* slot, KActionCollection* actionCollection)
-: KToggleAction(caption, shortcut, receiver, slot, actionCollection), m_userData(0) { /* no impl */
+		: KToggleAction(caption, actionCollection), m_userData(0) 
+	{
+		setShortcut(shortcut);
+		QObject::connect(this, SIGNAL(triggered()), receiver, slot);
 	};
 
 	void setUserData(QWidget* const data) {
@@ -87,11 +95,12 @@ private:
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
-	COptionsDialog *dlg = new COptionsDialog(this, "COptionsDialog", actionCollection());
-	connect(dlg, SIGNAL(signalSettingsChanged()), SLOT(slotSettingsChanged()) );
+	//TODO: commented out temporarily
+	//CConfigurationDialog *dlg = new CConfigurationDialog(this, "CConfigurationDialog", actionCollection());
+	//connect(dlg, SIGNAL(signalSettingsChanged()), SLOT(slotSettingsChanged()) );
 
-	dlg->exec();
-	dlg->delayedDestruct();
+	//dlg->exec();
+	//dlg->delayedDestruct();
 }
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
@@ -100,12 +109,20 @@ void BibleTime::slotSettingsChanged() {
 								 (CBTConfig::language);
 	m_backend->booknameLanguage(language);
 
-	Q3ListViewItemIterator it( m_mainIndex );
-	CItemBase* item = 0;
-	for ( ; it.current(); ++it ) {
-		if ( (item = dynamic_cast<CItemBase*>(it.current())) ) {
-			item->update();
+	//Q3ListViewItemIterator it( m_mainIndex );
+	//CItemBase* item = 0;
+	//for ( ; it.current(); ++it ) {
+	//	if ( (item = dynamic_cast<CItemBase*>(it.current())) ) {
+	//		item->update();
+	//	}
+	//}
+	QTreeWidgetItem* item = m_mainIndex->topLevelItem(0);
+	while(item) {
+		CItemBase* citem = dynamic_cast<CItemBase*>(item);
+		if (citem) {
+			citem->update();
 		}
+		item = m_mainIndex->itemBelow(item);
 	}
 
 	refreshDisplayWindows();
@@ -114,11 +131,12 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-	BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this, "CSwordSetupDialog");
-	connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
+	//TODO: commented out temporarily
+	//BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this, "CSwordSetupDialog");
+	//connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
-	dlg->exec();
-	dlg->delayedDestruct();
+	//dlg->exec();
+	//dlg->delayedDestruct();
 }
 
 /** Is called when settings in the sword setup dialog were changed (ok or apply) */
@@ -173,23 +191,20 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		m_windowCloseAll_action->setEnabled( true );
 	}
 	
-#if QT_VERSION >= 0x030200
-	Q3PtrList<KAction>::iterator end = m_windowOpenWindowsList.end();
-	for (Q3PtrList<KAction>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
-		(*it)->unplugAll();
+	QList<KAction*>::iterator end = m_windowOpenWindowsList.end();
+	for (QList<KAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
+		//(*it)->unplugAll(); //see kde porting doc
+		foreach (QWidget *w, (*it)->associatedWidgets() ) {
+    		w->removeAction(*it);
+		}
 	}
-#else
-	Q3PtrListIterator<KAction> it(m_windowOpenWindowsList);
-	while (it.current() != 0){
-		it.current()->unplugAll();
-		++it;
-	}
-#endif
-	m_windowOpenWindowsList.setAutoDelete(true);
+
+	//m_windowOpenWindowsList.setAutoDelete(true);
+	qDeleteAll(m_windowOpenWindowsList);
 	m_windowOpenWindowsList.clear();
 
 	if (!m_windowActionCollection) {
-		m_windowActionCollection = new KActionCollection(this);
+		m_windowActionCollection = new KActionCollection(this, KComponentData());
 	}
 
 	QWidgetList windows = m_mdi->windowList();
@@ -198,13 +213,13 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		QWidget* w = windows.at(i);
 		Q_ASSERT(w);
 
-		KUserDataAction* action = new KUserDataAction(w->caption(), KShortcut(), this, SLOT(slotWindowMenuActivated()), m_windowActionCollection);
+		KUserDataAction* action = new KUserDataAction(w->windowTitle(), KShortcut(), this, SLOT(slotWindowMenuActivated()), m_windowActionCollection);
 		Q_ASSERT(action);
 		action->setUserData(w);
 
 		m_windowOpenWindowsList.append(action);
 		action->setChecked( w == m_mdi->activeWindow() );
-		action->plug(m_windowMenu);
+		m_windowMenu->addAction(action);
 	}
 }
 
@@ -355,59 +370,62 @@ void BibleTime::slotToggleInfoDisplay() {
 
 /** Opens a toolbar editor */
 void BibleTime::slotSettingsToolbar() {
-	KEditToolbar dlg(actionCollection());
+	KEditToolBar dlg(actionCollection());
 	if (dlg.exec()) {
 		createGUI();
 	}
 }
 
 void BibleTime::slotSearchModules() {
-	//get the modules of the open windows
-	ListCSwordModuleInfo modules;
-
-	QWidgetList windows = m_mdi->windowList();
-	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
-		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
-			ListCSwordModuleInfo windowModules = w->modules();
-
-			ListCSwordModuleInfo::iterator end_it = windowModules.end();
-			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
-				modules.append(*it);
-			};
-		};
-	};
-
-	Search::CSearchDialog::openDialog(modules, QString::null);
+	//TODO: commented out temporarily
+// 	//get the modules of the open windows
+// 	ListCSwordModuleInfo modules;
+// 
+// 	QWidgetList windows = m_mdi->windowList();
+// 	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
+// 		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
+// 			ListCSwordModuleInfo windowModules = w->modules();
+// 
+// 			ListCSwordModuleInfo::iterator end_it = windowModules.end();
+// 			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
+// 				modules.append(*it);
+// 			};
+// 		};
+// 	};
+// 
+// 	Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
 /* Search default Bible slot
  * Call CSearchDialog::openDialog with only the default bible module
  */
 void BibleTime::slotSearchDefaultBible() {
-	ListCSwordModuleInfo module;
-	CSwordModuleInfo* bible = CBTConfig::get
-								  (CBTConfig::standardBible);
-	if (bible) {
-		module.append(bible);
-	}
-
-	Search::CSearchDialog::openDialog(module, QString::null);
+	//TODO:commented out temporarily
+// 	ListCSwordModuleInfo module;
+// 	CSwordModuleInfo* bible = CBTConfig::get
+// 								  (CBTConfig::standardBible);
+// 	if (bible) {
+// 		module.append(bible);
+// 	}
+// 
+// 	Search::CSearchDialog::openDialog(module, QString::null);
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-	kapp->invokeHelp("", "bibletime/handbook/");
+	KToolInvocation::invokeHelp("", "bibletime/handbook/");
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-	kapp->invokeHelp("", "bibletime/howto/");
+	KToolInvocation::invokeHelp("", "bibletime/howto/");
 }
 
-/** Saves the current settings into the currently activatred profile. */
-void BibleTime::saveProfile(int ID) {
+/** Saves the current settings into the currently activated profile. */
+void BibleTime::saveProfile(QAction* action) {
 	m_mdi->setUpdatesEnabled(false);
 
-	KPopupMenu* popup = m_windowSaveProfile_action->popupMenu();
-	const QString profileName = popup->text(ID).remove("&");
+	KMenu* popup = m_windowSaveProfile_action->popupMenu();
+	//const QString profileName = popup->text(ID).remove("&");
+	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	Q_ASSERT(p);
 	if ( p ) {
@@ -426,8 +444,8 @@ void BibleTime::saveProfile(CProfile* profile) {
 	storeProfileSettings(profile);
 
 	QWidgetList windows = m_mdi->windowList();
-	Q3PtrList<CProfileWindow> profileWindows;
-	for (QWidget* w = windows.first(); w; w = windows.next()) {
+	QList<CProfileWindow*> profileWindows;
+	foreach (QWidget* w, windows) {
 		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w);
 		if (!displayWindow) {
 			continue;
@@ -440,14 +458,16 @@ void BibleTime::saveProfile(CProfile* profile) {
 	profile->save(profileWindows);
 
 	//clean up memory - delete all created profile windows
-	profileWindows.setAutoDelete(true);
+	//profileWindows.setAutoDelete(true);
+	qDeleteAll(profileWindows);
 	profileWindows.clear();
 }
 
-void BibleTime::loadProfile(int ID) {
-	KPopupMenu* popup = m_windowLoadProfile_action->popupMenu();
+void BibleTime::loadProfile(QAction* action) {
+	KMenu* popup = m_windowLoadProfile_action->popupMenu();
 	//HACK: workaround the inserted & char by KPopupMenu
-	const QString profileName = popup->text(ID).remove("&");
+	//const QString profileName = popup->text(ID).remove("&");
+	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	//  qWarning("requesting popup: %s", popup->text(ID).latin1());
 	Q_ASSERT(p);
@@ -464,7 +484,7 @@ void BibleTime::loadProfile(CProfile* p) {
 		return;
 	}
 
-	Q3PtrList<CProfileWindow> windows = p->load();
+	QList<CProfileWindow*> windows = p->load();
 	Q_ASSERT(windows.count());
 
 	//load mainwindow setttings
@@ -475,7 +495,7 @@ void BibleTime::loadProfile(CProfile* p) {
 	QWidget* focusWindow = 0;
 
 	//   for (CProfileWindow* w = windows.last(); w; w = windows.prev()) { //from the last one to make sure the order is right in the mdi area
-	for (CProfileWindow* w = windows.first(); w; w = windows.next()) {
+	foreach (CProfileWindow* w, windows) {
 		const QString key = w->key();
 		QStringList usedModules = w->modules();
 
@@ -514,10 +534,11 @@ void BibleTime::loadProfile(CProfile* p) {
 	}
 }
 
-void BibleTime::deleteProfile(int ID) {
-	KPopupMenu* popup = m_windowDeleteProfile_action->popupMenu();
+void BibleTime::deleteProfile(QAction* action) {
+	KMenu* popup = m_windowDeleteProfile_action->popupMenu();
 	//HACK: work around the inserted & char by KPopupMenu
-	const QString profileName = popup->text(ID).remove("&");
+	//const QString profileName = popup->text(ID).remove("&");
+	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	Q_ASSERT(p);
 
@@ -535,7 +556,9 @@ void BibleTime::toggleFullscreen() {
 /** Saves current settings into a new profile. */
 void BibleTime::saveToNewProfile() {
 	bool ok = false;
-	const QString name = QInputDialog::getText(i18n("Session name:"), i18n("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok, this);
+	//const QString & title, const QString & label, QLineEdit::EchoMode echo = QLineEdit::Normal, const QString & text = QString(), bool * ok = 0, QWidget * parent = 0
+//	const QString name = QInputDialog::getText(i18n("Session name:"), i18n("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok, this);
+	const QString name = QInputDialog::getText(this, i18n("Session name:"), i18n("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
 	if (ok && !name.isEmpty()) {
 		CProfile* profile = m_profileMgr.create(name);
 		saveProfile(profile);
@@ -546,27 +569,27 @@ void BibleTime::saveToNewProfile() {
 
 /** Slot to refresh the save profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
-	KPopupMenu* savePopup = m_windowSaveProfile_action->popupMenu();
+	KMenu* savePopup = m_windowSaveProfile_action->popupMenu();
 	savePopup->clear();
 
-	KPopupMenu* loadPopup = m_windowLoadProfile_action->popupMenu();
+	KMenu* loadPopup = m_windowLoadProfile_action->popupMenu();
 	loadPopup->clear();
 
-	KPopupMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
+	KMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
 	deletePopup->clear();
 
 	//refresh the load, save and delete profile menus
 	m_profileMgr.refresh();
-	Q3PtrList<CProfile> profiles = m_profileMgr.profiles();
+	QList<CProfile*> profiles = m_profileMgr.profiles();
 
 	const bool enableActions = bool(profiles.count() != 0);
 	m_windowSaveProfile_action->setEnabled(enableActions);
 	m_windowLoadProfile_action->setEnabled(enableActions);
 	m_windowDeleteProfile_action->setEnabled(enableActions);
 
-	for (CProfile* p = profiles.first(); p; p = profiles.next()) {
-		savePopup->insertItem(p->name());
-		loadPopup->insertItem(p->name());
-		deletePopup->insertItem(p->name());
+	foreach (CProfile* p, profiles) {
+		savePopup->addAction(p->name());
+		loadPopup->addAction(p->name());
+		deletePopup->addAction(p->name());
 	}
 }

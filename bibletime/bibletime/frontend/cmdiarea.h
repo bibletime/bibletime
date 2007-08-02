@@ -23,7 +23,7 @@
 #include <QResizeEvent>
 #include <QChildEvent>
 
-class KPopupMenu;
+
 class CSwordModuleInfo;
 class CSwordKey;
 

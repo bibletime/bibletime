@@ -145,6 +145,7 @@ SET(bibletime_SOURCES
 	bibletime/main.cpp
 	bibletime/bibletime.cpp
 	bibletime/bibletime_init.cpp
+	bibletime/bibletime_slots.cpp
 
 #Add files to be ported here
 )

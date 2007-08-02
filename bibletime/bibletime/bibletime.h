@@ -306,7 +306,7 @@ protected slots:
 	/**
 	* Saves to the profile with the menu id ID
 	*/
-	void saveProfile(int ID);
+	void saveProfile(QAction* action);
 	/**
 	* Saves the current settings into the currently activatred profile.
 	*/
@@ -314,11 +314,11 @@ protected slots:
 	/**
 	* Deletes the chosen session from the menu and from disk.
 	*/
-	void deleteProfile(int ID);
+	void deleteProfile(QAction* action);
 	/**
 	* Loads the profile with the menu id ID
 	*/
-	void loadProfile(int ID);
+	void loadProfile(QAction* action);
 	/**
 	* Loads the profile with the menu ID id
 	*/

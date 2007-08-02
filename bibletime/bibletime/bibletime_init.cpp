@@ -435,9 +435,9 @@ void BibleTime::initActions() {
 	KMenu* savePopup = m_windowSaveProfile_action->popupMenu();
 	KMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
 
-	connect(loadPopup, SIGNAL(activated(int)), SLOT(loadProfile(int)));
-	connect(savePopup, SIGNAL(activated(int)), SLOT(saveProfile(int)));
-	connect(deletePopup, SIGNAL(activated(int)), SLOT(deleteProfile(int)));
+	connect(loadPopup, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
+	connect(savePopup, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
+	connect(deletePopup, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
 
 	refreshProfileMenus();
 

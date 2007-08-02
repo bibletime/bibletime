@@ -12,8 +12,8 @@
 //HibleTime includes
 #include "cbuttons.h"
 
-#include "../../util/cresmgr.h"
-#include "../../util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/cpointers.h"
 
 //Qt includes
 #include <QString>
