@@ -12,7 +12,7 @@
 #ifndef CSWORDSETUPDIALOG_H
 #define CSWORDSETUPDIALOG_H
 
-#include "cbtconfig.h"
+#include "frontend/cbtconfig.h"
 #include "util/cpointers.h"
 #include "btinstallmgr.h"
 

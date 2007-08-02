@@ -11,61 +11,67 @@
 
 //BibleTime includes
 #include "bibletime.h"
-
-#include "backend/btstringmgr.h"
-#include "backend/cswordbackend.h"
-
-#include "frontend/mainindex/cmainindex.h"
-#include "frontend/cprofilemgr.h"
-#include "frontend/cprofile.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/kstartuplogo.h"
-#include "frontend/cswordsetupdialog.h"
-#include "frontend/cprinter.h"
-#include "frontend/cmanageindiceswidget.h"
-
-#include "backend/clanguagemgr.h"
-
-
 #include "config.h"
-#include "frontend/cbtconfig.h"
-#include "frontend/cinfodisplay.h"
 
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
+
+#include "backend/btstringmgr.h"
+#include "backend/cswordbackend.h"
+#include "backend/clanguagemgr.h"
+
+#include "frontend/mainindex/cmainindex.h"
+
+#include "frontend/profile/cprofilemgr.h"
+#include "frontend/profile/cprofile.h"
+
+#include "frontend/bookshelfmanager/cswordsetupdialog.h"
+#include "frontend/bookshelfmanager/cmanageindiceswidget.h"
+
+#include "frontend/cmdiarea.h"
+#include "frontend/kstartuplogo.h"
+#include "frontend/cprinter.h"
+#include "frontend/cbtconfig.h"
+#include "frontend/cinfodisplay.h"
+
 
 //system includes
 #include <stdlib.h>
 
 //QT includes
-#include <q3popupmenu.h>
-#include <qsplitter.h>
-#include <qpointer.h>
-#include <q3listview.h>
-#include <qlayout.h>
-#include <qlabel.h>
-#include <q3vbox.h>
+//#include <q3popupmenu.h>
+#include <QSplitter>
+#include <QPointer>
+//#include <q3listview.h>
+//#include <qlayout.h>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QMenu>
+
+
 
 //KDE includes
 #include <kaboutdata.h>
-#include <kaccel.h>
 #include <kaction.h>
+#include <kstdaction.h>
+#include <ktoggleaction.h>
+#include <kactioncollection.h>
+#include <kactionmenu.h>
 #include <kapplication.h>
 #include <kconfigbase.h>
-#include <kdeversion.h>
 #include <kglobal.h>
 #include <khelpmenu.h>
 #include <kiconloader.h>
 #include <kmenubar.h>
-#include <kstddirs.h>
-#include <kstdaction.h>
+#include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <klocale.h>
-#include <kpopupmenu.h>
-#include <kdeversion.h>
+#include <kmenu.h>
+//#include <kdeversion.h>
 
 //Sword includes
 #include <swlog.h>
+#include <stringmgr.h>
 
 using namespace InfoDisplay;
 using namespace Profile;
@@ -74,330 +80,360 @@ using namespace Profile;
 void BibleTime::initView() {
 	KStartupLogo::setStatusMessage(i18n("Creating BibleTime's GUI") + QString("..."));
 
-	m_mainSplitter = new QSplitter(this, "mainsplitter");
+	m_mainSplitter = new QSplitter(this);
 	m_mainSplitter->setChildrenCollapsible(false);
 	setCentralWidget(m_mainSplitter);
 
 	m_leftPaneSplitter = new QSplitter(Qt::Vertical, m_mainSplitter);
 	m_leftPaneSplitter->setChildrenCollapsible(false);
 	
-	Q3VBox* vBox = new Q3VBox(m_leftPaneSplitter);
-	vBox->setMinimumSize(100, 100);
-	
-	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"), vBox );
+	QVBoxLayout* layout = new QVBoxLayout(m_leftPaneSplitter);
+	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"));
 	bookshelfLabel->setMargin(5);
-
-	m_mainIndex = new CMainIndex(vBox);
+	layout->addWidget(bookshelfLabel);
+	m_mainIndex = new CMainIndex(m_leftPaneSplitter);
+	layout->addWidget(m_mainIndex);
+	
+	QWidget* mainindexwidget = new QWidget;
+	mainindexwidget->setLayout(layout);
+	mainindexwidget->setMinimumSize(100, 100);
 
 	m_infoDisplay = new CInfoDisplay(m_leftPaneSplitter);
 	CPointers::setInfoDisplay(m_infoDisplay);
 
-	m_mdi = new CMDIArea(m_mainSplitter, "mdiarea" );
+	m_mdi = new CMDIArea(m_mainSplitter);
 	m_mdi->setMinimumSize(100, 100);
-	m_mdi->setFocusPolicy(ClickFocus);
+	m_mdi->setFocusPolicy(Qt::ClickFocus);
 
-	m_helpMenu = new KHelpMenu(this, KGlobal::instance()->aboutData(), true, actionCollection());
+	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), true, actionCollection());
+}
+
+void BibleTime::initAction(KAction* action, QString text, QString icon, KShortcut accel, QString tooltip, const char* actionName, const char* slot )
+{
+	action->setText(text);
+	action->setIcon(KIcon(icon));
+	action->setShortcut(accel);
+	if (tooltip != QString::null) {
+		action->setToolTip(tooltip);
+	}
+	actionCollection()->addAction(actionName, action);
+	if (slot) {
+		QObject::connect( action, SIGNAL(triggered), this, slot );
+	}
 }
 
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions() {
 	KStartupLogo::setStatusMessage(i18n("Initializing menu- and toolbars") + QString("..."));
 	KAction* action = 0;
-
-	action = KStdAction::quit(kapp, SLOT( quit() ), actionCollection());
+	KActionCollection* ac = actionCollection();
+	
+	action = KStandardAction::quit(kapp, SLOT( quit() ), ac);
 	action->setToolTip( CResMgr::mainMenu::file::quit::tooltip );
 
-	#if KDE_VERSION_MINOR < 1
+	//action = new KAction(CResMgr::mainMenu::mainIndex::search::icon, i18n("Search in &open work(s)"), ac);
+	//action->setShortcut(CResMgr::mainMenu::mainIndex::search::accel);
+	//action->setToolTip( CResMgr::mainMenu::mainIndex::search::tooltip );
+	//QObject::connect( action, SIGNAL(triggered), this, SLOT(slotSearchModules()) );
+	//ac->addAction(CResMgr::mainMenu::mainIndex::search::actionName, action);
+	
+	initAction(
+		new KAction(ac),
+		i18n("Search in &open work(s)"),
+		CResMgr::mainMenu::mainIndex::search::icon,
+		CResMgr::mainMenu::mainIndex::search::accel,
+		CResMgr::mainMenu::mainIndex::search::tooltip,
+		CResMgr::mainMenu::mainIndex::search::actionName,
+		SLOT( slotSearchModules() )
+	);
+	
+	
+	//action = new KAction(i18n("Search in standard &Bible"),
+	//					 CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
+	//					 CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
+	//					 this, SLOT(slotSearchDefaultBible()), ac,
+	//					 CResMgr::mainMenu::mainIndex::searchdefaultbible::actionName
+	//					);
+	//action->setToolTip( CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip );
+	
+	initAction(
+		new KAction(ac),
+		i18n("Search in standard &Bible"),
+		CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
+		CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
+		CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip,
+		CResMgr::mainMenu::mainIndex::searchdefaultbible::actionName,
+		SLOT(slotSearchDefaultBible())
+	);
+	
 
-	action->plugAccel( accel() );
-	#endif
-
-	action = new KAction(i18n("Search in &open work(s)"),
-						 CResMgr::mainMenu::mainIndex::search::icon,
-						 CResMgr::mainMenu::mainIndex::search::accel,
-						 this, SLOT(slotSearchModules()), actionCollection(),
-						 CResMgr::mainMenu::mainIndex::search::actionName
-						);
-	action->setToolTip( CResMgr::mainMenu::mainIndex::search::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	action->plugAccel( accel() );
-	#endif
-
-	action = new KAction(i18n("Search in standard &Bible"),
-						 CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
-						 CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
-						 this, SLOT(slotSearchDefaultBible()), actionCollection(),
-						 CResMgr::mainMenu::mainIndex::searchdefaultbible::actionName
-						);
-	action->setToolTip( CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	action->plugAccel( accel() );
-	#endif
-
-	m_viewToolbar_action = KStdAction::showToolbar(this, SLOT( slotToggleToolbar() ), actionCollection());
+	//I don't understand why this does not exist any more
+	//m_viewToolbar_action = KStandardAction::showToolbar(this, SLOT( slotToggleToolbar() ), ac);
+	m_viewToolbar_action = KStandardAction::create(KStandardAction::ShowToolbar, this, SLOT( slotToggleToolbar() ), ac);
 	m_viewToolbar_action->setToolTip( CResMgr::mainMenu::view::showToolBar::tooltip );
 
-	#if KDE_VERSION_MINOR < 1
 
-	m_viewToolbar_action->plugAccel( accel() );
-	#endif
+	//m_viewMainIndex_action = new KToggleAction(i18n("&Show bookshelf"),
+	//						 CResMgr::mainMenu::view::showMainIndex::icon,
+	//						 CResMgr::mainMenu::view::showMainIndex::accel,
+	//						 this, SLOT(slotToggleMainIndex()), ac,
+	//						 CResMgr::mainMenu::view::showMainIndex::actionName);
+	//m_viewMainIndex_action->setToolTip( CResMgr::mainMenu::view::showMainIndex::tooltip );
+	
+	m_viewMainIndex_action = new KToggleAction(ac);
+	initAction(
+		m_viewMainIndex_action,
+		i18n("&Show bookshelf"),
+		CResMgr::mainMenu::view::showMainIndex::icon,
+		CResMgr::mainMenu::view::showMainIndex::accel,
+		CResMgr::mainMenu::view::showMainIndex::tooltip,
+		CResMgr::mainMenu::view::showMainIndex::actionName,
+		SLOT(slotToggleMainIndex())
+	);
+	
 
+	//m_viewInfoDisplay_action = new KToggleAction(i18n("Show &mag"),
+	//						   CResMgr::mainMenu::view::showInfoDisplay::icon,
+	//						   CResMgr::mainMenu::view::showInfoDisplay::accel,
+	//						   this, SLOT(slotToggleInfoDisplay()), ac,
+	//						   CResMgr::mainMenu::view::showInfoDisplay::actionName);
+	//m_viewMainIndex_action->setToolTip( CResMgr::mainMenu::view::showInfoDisplay::tooltip );
+	m_viewInfoDisplay_action = new KToggleAction(ac);
+	initAction(
+		m_viewInfoDisplay_action,
+		i18n("Show &mag"),
+		CResMgr::mainMenu::view::showInfoDisplay::icon,
+		CResMgr::mainMenu::view::showInfoDisplay::accel,
+		CResMgr::mainMenu::view::showInfoDisplay::tooltip,
+		CResMgr::mainMenu::view::showInfoDisplay::actionName,
+		SLOT(slotToggleInfoDisplay())
+	);
+	
 
-	m_viewMainIndex_action = new KToggleAction(i18n("&Show bookshelf"),
-							 CResMgr::mainMenu::view::showMainIndex::icon,
-							 CResMgr::mainMenu::view::showMainIndex::accel,
-							 this, SLOT(slotToggleMainIndex()), actionCollection(),
-							 CResMgr::mainMenu::view::showMainIndex::actionName);
-	m_viewMainIndex_action->setToolTip( CResMgr::mainMenu::view::showMainIndex::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	m_viewMainIndex_action->plugAccel( accel() );
-	#endif
-
-	m_viewInfoDisplay_action = new KToggleAction(i18n("Show &mag"),
-							   CResMgr::mainMenu::view::showInfoDisplay::icon,
-							   CResMgr::mainMenu::view::showInfoDisplay::accel,
-							   this, SLOT(slotToggleInfoDisplay()), actionCollection(),
-							   CResMgr::mainMenu::view::showInfoDisplay::actionName);
-	m_viewMainIndex_action->setToolTip( CResMgr::mainMenu::view::showInfoDisplay::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	m_viewInfoDisplay_action->plugAccel( accel() );
-	#endif
-
-	action = KStdAction::preferences(this, SLOT( slotSettingsOptions() ), actionCollection());
+	action = KStandardAction::preferences(this, SLOT( slotSettingsOptions() ), ac);
 	action->setToolTip( CResMgr::mainMenu::settings::optionsDialog::tooltip );
 
-	#if KDE_VERSION_MINOR < 1
+	
 
-	action->plugAccel( accel() );
-	#endif
-
-	action = new KAction(i18n("Bookshelf &Manager"),
-						 CResMgr::mainMenu::settings::swordSetupDialog::icon,
-						 CResMgr::mainMenu::settings::swordSetupDialog::accel,
-						 this, SLOT( slotSwordSetupDialog() ), actionCollection(),
-						 CResMgr::mainMenu::settings::swordSetupDialog::actionName
-						);
-	action->setToolTip( CResMgr::mainMenu::settings::swordSetupDialog::tooltip );
-	#if KDE_VERSION_MINOR < 1
-
-	action->plugAccel( accel() );
-	#endif
+	//action = new KAction(i18n("Bookshelf &Manager"),
+	//					 CResMgr::mainMenu::settings::swordSetupDialog::icon,
+	//					 CResMgr::mainMenu::settings::swordSetupDialog::accel,
+	//					 this, SLOT( slotSwordSetupDialog() ), ac,
+	//					 CResMgr::mainMenu::settings::swordSetupDialog::actionName
+	//					);
+	//action->setToolTip( CResMgr::mainMenu::settings::swordSetupDialog::tooltip );
+	initAction(
+		new KAction(ac),
+		i18n("Bookshelf &Manager"),
+		CResMgr::mainMenu::settings::swordSetupDialog::icon,
+		CResMgr::mainMenu::settings::swordSetupDialog::accel,
+		CResMgr::mainMenu::settings::swordSetupDialog::tooltip,
+		CResMgr::mainMenu::settings::swordSetupDialog::actionName,
+		SLOT( slotSwordSetupDialog() )
+	);
 
 	//delete help action if KDE created it
-	if ( actionCollection()->action( KStdAction::stdName(KStdAction::ConfigureToolbars) )) {
-		actionCollection()->remove
-		(actionCollection()->action(
-			 KStdAction::stdName(KStdAction::ConfigureToolbars))
+	if ( ac->action( KStandardAction::stdName(KStandardAction::ConfigureToolbars) )) {
+		ac->removeAction
+		(ac->action(
+			 KStandardAction::stdName(KStandardAction::ConfigureToolbars))
 		);
 	}
-	action = KStdAction::configureToolbars(this, SLOT( slotSettingsToolbar() ), actionCollection());
+	action = KStandardAction::configureToolbars(this, SLOT( slotSettingsToolbar() ), ac);
 	action->setToolTip( CResMgr::mainMenu::settings::editToolBar::tooltip );
-	#if KDE_VERSION_MINOR < 1
 
-	action->plugAccel( accel() );
-	#endif
 
-	m_windowArrangementMode_action = new KActionMenu(i18n("&Arrangement mode"),
-							 CResMgr::mainMenu::window::arrangementMode::icon,
-							 actionCollection(),
-							 CResMgr::mainMenu::window::arrangementMode::actionName);
+	//m_windowArrangementMode_action = new KActionMenu(i18n("&Arrangement mode"),
+	//						 CResMgr::mainMenu::window::arrangementMode::icon,
+	//						 ac,
+	//						 CResMgr::mainMenu::window::arrangementMode::actionName);
+	m_windowArrangementMode_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::arrangementMode::icon), i18n("&Arrangement mode"), ac);
+	ac->addAction(CResMgr::mainMenu::window::arrangementMode::actionName, action);
 	m_windowArrangementMode_action->setDelayed( false );
 
-	m_windowManualMode_action = new KToggleAction(i18n("&Manual mode"),
-								CResMgr::mainMenu::window::arrangementMode::manual::icon,
-								CResMgr::mainMenu::window::arrangementMode::manual::accel,
-								this, SLOT(slotManualArrangementMode()), actionCollection(),
-								CResMgr::mainMenu::window::arrangementMode::manual::actionName
-												 );
-	m_windowManualMode_action->setToolTip(
-		CResMgr::mainMenu::window::arrangementMode::manual::tooltip
+
+	//m_windowManualMode_action = new KToggleAction(i18n("&Manual mode"),
+	//							CResMgr::mainMenu::window::arrangementMode::manual::icon,
+	//							CResMgr::mainMenu::window::arrangementMode::manual::accel,
+	//							this, SLOT(slotManualArrangementMode()), ac,
+	//							CResMgr::mainMenu::window::arrangementMode::manual::actionName
+	//											 );
+	//m_windowManualMode_action->setToolTip(
+	//	CResMgr::mainMenu::window::arrangementMode::manual::tooltip
+	//);
+	m_windowManualMode_action = new KToggleAction(ac);
+	initAction(
+		m_windowManualMode_action,
+		i18n("&Manual mode"),
+		CResMgr::mainMenu::window::arrangementMode::manual::icon,
+		CResMgr::mainMenu::window::arrangementMode::manual::accel,
+		CResMgr::mainMenu::window::arrangementMode::manual::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::manual::actionName,
+		SLOT( slotManualArrangementMode() )
 	);
-	#if KDE_VERSION_MINOR < 1
 
-	m_windowManualMode_action->plugAccel( accel() );
-	#endif
-
-	m_windowArrangementMode_action->insert( m_windowManualMode_action );
+	m_windowArrangementMode_action->addAction( m_windowManualMode_action );
 
 
-	m_windowAutoTileVertical_action = new KToggleAction(i18n("Auto-tile &vertically"),
-									  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon,
-									  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel,
-									  this, SLOT(slotAutoTileVertical()), actionCollection(),
-									  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::actionName
-													   );
-	m_windowAutoTileVertical_action->setToolTip(
-		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::tooltip
+	//m_windowAutoTileVertical_action = new KToggleAction(i18n("Auto-tile &vertically"),
+	//								  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon,
+	//								  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel,
+	//								  this, SLOT(slotAutoTileVertical()), ac,
+	//								  CResMgr::mainMenu::window::arrangementMode::autoTileVertical::actionName
+	//												   );
+	//m_windowAutoTileVertical_action->setToolTip(
+	//	CResMgr::mainMenu::window::arrangementMode::autoTileVertical::tooltip
+	//);
+	m_windowAutoTileVertical_action = new KToggleAction(ac);
+	initAction(
+		m_windowAutoTileVertical_action,
+		i18n("Auto-tile &vertically"),
+		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon,
+		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel,
+		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::actionName,
+		SLOT( slotAutoTileVertical() )
 	);
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowAutoTileVertical_action->plugAccel( accel() );
-	#endif
-
-	m_windowArrangementMode_action->insert( m_windowAutoTileVertical_action );
 
 
-	m_windowAutoTileHorizontal_action = new KToggleAction(i18n("Auto-tile &horizontally"),
-										CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
-										CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
-										this, SLOT(slotAutoTileHorizontal()), actionCollection(),
-										CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName
-														 );
-	m_windowAutoTileHorizontal_action->setToolTip(
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip
+	m_windowArrangementMode_action->addAction( m_windowAutoTileVertical_action );
+
+
+	//m_windowAutoTileHorizontal_action = new KToggleAction(i18n("Auto-tile &horizontally"),
+	//									CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
+	//									CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
+	//									this, SLOT(slotAutoTileHorizontal()), ac,
+	//									CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName
+	//													 );
+	//m_windowAutoTileHorizontal_action->setToolTip(
+	//	CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip
+	//);
+	m_windowAutoTileHorizontal_action = new KToggleAction(ac);
+	initAction(
+		m_windowAutoTileHorizontal_action,
+		i18n("Auto-tile &horizontally"),
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName,
+		SLOT( slotAutoTileHorizontal() )
 	);
-	#if KDE_VERSION_MINOR < 1
+	
 
-	m_windowAutoTileHorizontal_action->plugAccel( accel() );
-	#endif
-
-	m_windowArrangementMode_action->insert( m_windowAutoTileHorizontal_action );
+	m_windowArrangementMode_action->addAction( m_windowAutoTileHorizontal_action );
 
 
-	m_windowAutoCascade_action  = new KToggleAction(i18n("Auto-&cascade"),
-								  CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
-								  CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
-								  this, SLOT(slotAutoCascade()), actionCollection(),
-								  CResMgr::mainMenu::window::arrangementMode::autoCascade::actionName
-												   );
-	m_windowAutoCascade_action->setToolTip(
-		CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip
+	//m_windowAutoCascade_action  = new KToggleAction(i18n("Auto-&cascade"),
+	//							  CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
+	//							  CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
+	//							  this, SLOT(slotAutoCascade()), ac,
+	//							  CResMgr::mainMenu::window::arrangementMode::autoCascade::actionName
+	//											   );
+	//m_windowAutoCascade_action->setToolTip(
+	//	CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip
+	//);
+	m_windowAutoTileHorizontal_action = new KToggleAction(ac);
+	initAction(
+		m_windowAutoTileHorizontal_action,
+		i18n("Auto-&cascade"),
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName,
+		SLOT( slotAutoTileHorizontal() )
 	);
-	#if KDE_VERSION_MINOR < 1
-	//   qWarning("Plug accel");
-	m_windowAutoCascade_action->plugAccel( accel() );
-	#endif
 
-	m_windowArrangementMode_action->insert( m_windowAutoCascade_action );
+	m_windowArrangementMode_action->addAction( m_windowAutoCascade_action );
 
-	m_windowCascade_action = new KAction(i18n("&Cascade"),
-										 CResMgr::mainMenu::window::cascade::icon,
-										 CResMgr::mainMenu::window::cascade::accel,
-										 this, SLOT(slotCascade()), actionCollection(),
-										 CResMgr::mainMenu::window::cascade::actionName
-										);
-	m_windowCascade_action->setToolTip( CResMgr::mainMenu::window::cascade::tooltip );
+	//m_windowCascade_action = new KAction(i18n("&Cascade"),
+	//									 CResMgr::mainMenu::window::cascade::icon,
+	//									 CResMgr::mainMenu::window::cascade::accel,
+	//									 this, SLOT(slotCascade()), ac,
+	//									 CResMgr::mainMenu::window::cascade::actionName
+	//									);
+	//m_windowCascade_action->setToolTip( CResMgr::mainMenu::window::cascade::tooltip );
 
-	#if KDE_VERSION_MINOR < 1
+	
 
-	m_windowCascade_action->plugAccel( accel() );
-	#endif
+	//m_windowTileVertical_action = new KAction(i18n("Tile &vertically"),
+	//							  CResMgr::mainMenu::window::tileVertical::icon,
+	//							  CResMgr::mainMenu::window::tileVertical::accel,
+	//							  this, SLOT(slotTileVertical()), ac,
+	//							  CResMgr::mainMenu::window::tileVertical::actionName
+	//										 );
+	//m_windowTileVertical_action->setToolTip( CResMgr::mainMenu::window::tileVertical::tooltip );
 
+	//m_windowTileHorizontal_action = new KAction(i18n("Tile &horizontally"),
+	//								CResMgr::mainMenu::window::tileHorizontal::icon,
+	//								CResMgr::mainMenu::window::tileHorizontal::accel,
+	//								this, SLOT(slotTileHorizontal()), ac,
+	//								CResMgr::mainMenu::window::tileHorizontal::actionName
+	//										   );
+	//m_windowTileHorizontal_action->setToolTip( CResMgr::mainMenu::window::tileHorizontal::tooltip );
 
-	m_windowTileVertical_action = new KAction(i18n("Tile &vertically"),
-								  CResMgr::mainMenu::window::tileVertical::icon,
-								  CResMgr::mainMenu::window::tileVertical::accel,
-								  this, SLOT(slotTileVertical()), actionCollection(),
-								  CResMgr::mainMenu::window::tileVertical::actionName
-											 );
-	m_windowTileVertical_action->setToolTip( CResMgr::mainMenu::window::tileVertical::tooltip );
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowTileVertical_action->plugAccel( accel() );
-	#endif
-
-	m_windowTileHorizontal_action = new KAction(i18n("Tile &horizontally"),
-									CResMgr::mainMenu::window::tileHorizontal::icon,
-									CResMgr::mainMenu::window::tileHorizontal::accel,
-									this, SLOT(slotTileHorizontal()), actionCollection(),
-									CResMgr::mainMenu::window::tileHorizontal::actionName
-											   );
-	m_windowTileHorizontal_action->setToolTip( CResMgr::mainMenu::window::tileHorizontal::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowTileHorizontal_action->plugAccel( accel() );
-	#endif
+	
 
 
-	m_windowCloseAll_action = new KAction(i18n("Cl&ose all"),
-										  CResMgr::mainMenu::window::closeAll::icon,
-										  CResMgr::mainMenu::window::closeAll::accel,
-										  m_mdi, SLOT(deleteAll()), actionCollection(),
-										  CResMgr::mainMenu::window::closeAll::actionName
-										 );
-	m_windowCloseAll_action->setToolTip( CResMgr::mainMenu::window::closeAll::tooltip );
-	#if KDE_VERSION_MINOR < 1
+	//m_windowCloseAll_action = new KAction(i18n("Cl&ose all"),
+	//									  CResMgr::mainMenu::window::closeAll::icon,
+	//									  CResMgr::mainMenu::window::closeAll::accel,
+	//									  m_mdi, SLOT(deleteAll()), ac,
+	//									  CResMgr::mainMenu::window::closeAll::actionName
+	//									 );
+	//m_windowCloseAll_action->setToolTip( CResMgr::mainMenu::window::closeAll::tooltip );
+	
 
-	m_windowCloseAll_action->plugAccel( accel() );
-	#endif
-
-
-	m_windowSaveProfile_action = new KActionMenu(i18n("&Save session"),
-								 CResMgr::mainMenu::window::saveProfile::icon,
-								 actionCollection(),
-								 CResMgr::mainMenu::window::saveProfile::actionName
-												);
-	m_windowSaveProfile_action->setToolTip( CResMgr::mainMenu::window::saveProfile::tooltip );
+	//m_windowSaveProfile_action = new KActionMenu(i18n("&Save session"),
+	//							 CResMgr::mainMenu::window::saveProfile::icon,
+	//							 ac,
+	//							 CResMgr::mainMenu::window::saveProfile::actionName
+	//											);
+	//m_windowSaveProfile_action->setToolTip( CResMgr::mainMenu::window::saveProfile::tooltip );
+	
 	m_windowSaveProfile_action->setDelayed( false );
-	#if KDE_VERSION_MINOR < 1
+	
 
-	m_windowSaveProfile_action->plugAccel( accel() );
-	#endif
+	//m_windowSaveToNewProfile_action = new KAction(i18n("Save as &new session"),
+	//								  CResMgr::mainMenu::window::saveToNewProfile::icon,
+	//								  CResMgr::mainMenu::window::saveToNewProfile::accel,
+	//								  this, SLOT(saveToNewProfile()), ac,
+	//								  CResMgr::mainMenu::window::saveToNewProfile::actionName
+	//											 );
+	//m_windowSaveToNewProfile_action->setToolTip( CResMgr::mainMenu::window::saveToNewProfile::tooltip );
+	
 
-
-	m_windowSaveToNewProfile_action = new KAction(i18n("Save as &new session"),
-									  CResMgr::mainMenu::window::saveToNewProfile::icon,
-									  CResMgr::mainMenu::window::saveToNewProfile::accel,
-									  this, SLOT(saveToNewProfile()), actionCollection(),
-									  CResMgr::mainMenu::window::saveToNewProfile::actionName
-												 );
-	m_windowSaveToNewProfile_action->setToolTip( CResMgr::mainMenu::window::saveToNewProfile::tooltip );
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowSaveToNewProfile_action->plugAccel( accel() );
-	#endif
-
-
-	m_windowLoadProfile_action = new KActionMenu(i18n("&Load session"),
-								 CResMgr::mainMenu::window::loadProfile::icon,
-								 actionCollection(),
-								 CResMgr::mainMenu::window::loadProfile::actionName
-												);
-	m_windowLoadProfile_action->setToolTip(	CResMgr::mainMenu::window::loadProfile::tooltip	);
+	//m_windowLoadProfile_action = new KActionMenu(i18n("&Load session"),
+	//							 CResMgr::mainMenu::window::loadProfile::icon,
+	//							 ac,
+	//							 CResMgr::mainMenu::window::loadProfile::actionName
+	//											);
+	//m_windowLoadProfile_action->setToolTip(	CResMgr::mainMenu::window::loadProfile::tooltip	);
+	
 	m_windowLoadProfile_action->setDelayed( false );
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowLoadProfile_action->plugAccel( accel() );
-	#endif
-
-	m_windowDeleteProfile_action = new KActionMenu(i18n("&Delete session"),
-								   CResMgr::mainMenu::window::deleteProfile::icon,
-								   actionCollection(),
-								   CResMgr::mainMenu::window::deleteProfile::actionName
-												  );
-	m_windowLoadProfile_action->setToolTip( CResMgr::mainMenu::window::deleteProfile::tooltip );
+	
+	//m_windowDeleteProfile_action = new KActionMenu(i18n("&Delete session"),
+	//							   CResMgr::mainMenu::window::deleteProfile::icon,
+	//							   ac,
+	//							   CResMgr::mainMenu::window::deleteProfile::actionName
+	//											  );
+	//m_windowLoadProfile_action->setToolTip( CResMgr::mainMenu::window::deleteProfile::tooltip );
 	m_windowLoadProfile_action->setDelayed( false );
-	#if KDE_VERSION_MINOR < 1
 
-	m_windowDeleteProfile_action->plugAccel( accel() );
-	#endif
 
-	m_windowFullscreen_action = new KToggleAction(i18n("&Fullscreen mode"),
-								CResMgr::mainMenu::window::showFullscreen::icon,
-								CResMgr::mainMenu::window::showFullscreen::accel,
-								this, SLOT(toggleFullscreen()), actionCollection(),
-								CResMgr::mainMenu::window::showFullscreen::actionName
-												 );
-	m_windowFullscreen_action->setToolTip( CResMgr::mainMenu::window::showFullscreen::tooltip );
+	//m_windowFullscreen_action = new KToggleAction(i18n("&Fullscreen mode"),
+	//							CResMgr::mainMenu::window::showFullscreen::icon,
+	//							CResMgr::mainMenu::window::showFullscreen::accel,
+	//							this, SLOT(toggleFullscreen()), ac,
+	//							CResMgr::mainMenu::window::showFullscreen::actionName
+	//											 );
+	//m_windowFullscreen_action->setToolTip( CResMgr::mainMenu::window::showFullscreen::tooltip );
 	m_windowFullscreen_action->setShortcutConfigurable(true);
-	#if KDE_VERSION_MINOR < 1
-
-	m_windowFullscreen_action->plugAccel( accel() );
-	#endif
+	
 
 	//connect the profile popups to the right slots
-	KPopupMenu* loadPopup = m_windowLoadProfile_action->popupMenu();
-	KPopupMenu* savePopup = m_windowSaveProfile_action->popupMenu();
-	KPopupMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
+	KMenu* loadPopup = m_windowLoadProfile_action->popupMenu();
+	KMenu* savePopup = m_windowSaveProfile_action->popupMenu();
+	KMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
 
 	connect(loadPopup, SIGNAL(activated(int)), SLOT(loadProfile(int)));
 	connect(savePopup, SIGNAL(activated(int)), SLOT(saveProfile(int)));
@@ -405,87 +441,73 @@ void BibleTime::initActions() {
 
 	refreshProfileMenus();
 
-	if ( actionCollection()->action( KStdAction::stdName(KStdAction::HelpContents) )) {  //delete help action if KDE created it
-		actionCollection()->remove
-		(actionCollection()->action(KStdAction::stdName(KStdAction::HelpContents)) );
+	if ( ac->action( KStandardAction::stdName(KStandardAction::HelpContents) )) {  //delete help action if KDE created it
+		ac->removeAction
+		(ac->action(KStandardAction::stdName(KStandardAction::HelpContents)) );
 	}
 
-	action = new KAction(i18n("&Handbook"),
-						 CResMgr::mainMenu::help::handbook::icon,
-						 CResMgr::mainMenu::help::handbook::accel,
-						 this, SLOT(openOnlineHelp_Handbook()), actionCollection(),
-						 CResMgr::mainMenu::help::handbook::actionName
-						);
-	action->setToolTip( CResMgr::mainMenu::help::handbook::tooltip );
+	//action = new KAction(i18n("&Handbook"),
+	//					 CResMgr::mainMenu::help::handbook::icon,
+	//					 CResMgr::mainMenu::help::handbook::accel,
+	//					 this, SLOT(openOnlineHelp_Handbook()), ac,
+	//					 CResMgr::mainMenu::help::handbook::actionName
+	//					);
+	//action->setToolTip( CResMgr::mainMenu::help::handbook::tooltip );
 
-	#if KDE_VERSION_MINOR < 1
+	
+	//action = new KAction(i18n("&Bible Study Howto"),
+	//					 CResMgr::mainMenu::help::bibleStudyHowTo::icon,
+	//					 CResMgr::mainMenu::help::bibleStudyHowTo::accel,
+	//					 this, SLOT(openOnlineHelp_Howto()), ac,
+	//					 CResMgr::mainMenu::help::bibleStudyHowTo::actionName
+	//					);
+	//action->setToolTip( CResMgr::mainMenu::help::bibleStudyHowTo::tooltip );
 
-	action->plugAccel( accel() );
-	#endif
-
-	action = new KAction(i18n("&Bible Study Howto"),
-						 CResMgr::mainMenu::help::bibleStudyHowTo::icon,
-						 CResMgr::mainMenu::help::bibleStudyHowTo::accel,
-						 this, SLOT(openOnlineHelp_Howto()), actionCollection(),
-						 CResMgr::mainMenu::help::bibleStudyHowTo::actionName
-						);
-	action->setToolTip( CResMgr::mainMenu::help::bibleStudyHowTo::tooltip );
-
-	#if KDE_VERSION_MINOR < 1
-
-	action->plugAccel( accel() );
-	#endif
-
-	if ( actionCollection()->action( KStdAction::stdName( KStdAction::WhatsThis ) ) ) {  //delete "What's this" action if KDE created it already
-		KAction* action = actionCollection()->action(KStdAction::stdName( KStdAction::WhatsThis ));
-		actionCollection()->remove
+	if ( ac->action( KStandardAction::stdName( KStandardAction::WhatsThis ) ) ) {  //delete "What's this" action if KDE created it already
+		QAction* action = ac->action(KStandardAction::stdName( KStandardAction::WhatsThis ));
+		ac->removeAction
 		( action );
 	}
 
 
-	if ( actionCollection()->action( KStdAction::stdName( KStdAction::ReportBug ) ) ) { //delete Report Bug action if KDE created it
-		actionCollection()->remove
-		(actionCollection()->action(KStdAction::stdName( KStdAction::ReportBug )));
+	if ( ac->action( KStandardAction::stdName( KStandardAction::ReportBug ) ) ) { //delete Report Bug action if KDE created it
+		ac->removeAction
+		(ac->action(KStandardAction::stdName( KStandardAction::ReportBug )));
 	}
-	action = KStdAction::reportBug(m_helpMenu, SLOT(reportBug()), actionCollection());
+	action = KStandardAction::reportBug(m_helpMenu, SLOT(reportBug()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::bugreport::tooltip);
-	#if KDE_VERSION_MINOR < 1
+	
 
-	action->plugAccel( accel() );
-	#endif
+	//action = new KAction(i18n("&Daily tip"),
+	//					 CResMgr::mainMenu::help::dailyTip::icon,
+	//					 CResMgr::mainMenu::help::dailyTip::accel,
+	//					 this, SLOT(slotHelpTipOfDay()), ac,
+	//					 CResMgr::mainMenu::help::dailyTip::actionName
+	//					);
+	//action->setToolTip(CResMgr::mainMenu::help::dailyTip::tooltip);
+	
 
-	action = new KAction(i18n("&Daily tip"),
-						 CResMgr::mainMenu::help::dailyTip::icon,
-						 CResMgr::mainMenu::help::dailyTip::accel,
-						 this, SLOT(slotHelpTipOfDay()), actionCollection(),
-						 CResMgr::mainMenu::help::dailyTip::actionName
-						);
-	action->setToolTip(CResMgr::mainMenu::help::dailyTip::tooltip);
-	#if KDE_VERSION_MINOR < 1
-
-	action->plugAccel( accel() );
-	#endif
-
-	if ( actionCollection()->action( KStdAction::stdName( KStdAction::AboutApp ) ) ) {  //delete About KDE action if KDE created it
-		actionCollection()->remove
-		(actionCollection()->action(KStdAction::stdName( KStdAction::AboutApp )));
+	if ( ac->action( KStandardAction::stdName( KStandardAction::AboutApp ) ) ) {  //delete About KDE action if KDE created it
+		ac->removeAction
+		(ac->action(KStandardAction::stdName( KStandardAction::AboutApp )));
 	}
-	action = KStdAction::aboutApp(m_helpMenu, SLOT(aboutApplication()), actionCollection());
+	action = KStandardAction::aboutApp(m_helpMenu, SLOT(aboutApplication()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::aboutBibleTime::tooltip);
 
 	//delete About KDE action if KDE created it already
-	if ( actionCollection()->action( KStdAction::stdName( KStdAction::AboutKDE ) ) ) {  //delete About KDE action if KDE created it
-		actionCollection()->remove
-		(actionCollection()->action(KStdAction::stdName( KStdAction::AboutKDE )));
+	if ( ac->action( KStandardAction::stdName( KStandardAction::AboutKDE ) ) ) {  //delete About KDE action if KDE created it
+		ac->removeAction
+		(ac->action(KStandardAction::stdName( KStandardAction::AboutKDE )));
 	}
-	action = KStdAction::aboutKDE(m_helpMenu, SLOT(aboutKDE()), actionCollection());
+	action = KStandardAction::aboutKDE(m_helpMenu, SLOT(aboutKDE()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::aboutKDE::tooltip);
 }
 
 /** Initializes the menubar of BibleTime. */
 void BibleTime::initMenubar() {
 	//get the window and edit menus using the actions and their properties
-	m_windowMenu = dynamic_cast<Q3PopupMenu*>(m_windowCloseAll_action->container(0));
+	//action->associatedWidgets().value(0)
+	m_windowMenu = dynamic_cast<QMenu*>(m_windowCloseAll_action->associatedWidgets().value(0));
 }
 
 /** Initializes the SIGNAL / SLOT connections */
@@ -520,8 +542,8 @@ void BibleTime::initConnections() {
 void BibleTime::initBackends() {
 	KStartupLogo::setStatusMessage(i18n("Initializing Sword") + QString("..."));
 
-	StringMgr::setSystemStringMgr( new BTStringMgr() );
-	SWLog::getSystemLog()->setLogLevel(1);
+	sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
+	sword::SWLog::getSystemLog()->setLogLevel(1);
 
 	m_backend = new CSwordBackend();
 	m_backend->booknameLanguage( CBTConfig::get

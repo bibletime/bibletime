@@ -25,7 +25,7 @@
 
 //KDE includes
 #include <kmainwindow.h>
-
+#include <kshortcut.h>
 
 #include <QList>
 
@@ -228,6 +228,10 @@ protected: // Protected methods
 	*/
 	void initActions();
 	/**
+	* Initializes one action object
+	*/
+	void initAction(KAction* action, QString text, QString icon, KShortcut accel, QString tooltip, const char* actionName, const char* slot );
+	/**
 	* Refreshes all presenter supporting at least in of the features given as parameter.
 	*/
 	void refreshDisplayWindows();
@@ -356,7 +360,7 @@ private:
 	QMenu* m_editMenu;
 
 	/** VIEW menu actions */
-	KToggleAction* m_viewToolbar_action;
+	KAction* m_viewToolbar_action;
 	KToggleAction* m_viewMainIndex_action;
 	KToggleAction* m_viewInfoDisplay_action;
 
