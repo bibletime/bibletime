@@ -332,15 +332,15 @@ void BibleTime::initActions() {
 	//m_windowAutoCascade_action->setToolTip(
 	//	CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip
 	//);
-	m_windowAutoTileHorizontal_action = new KToggleAction(ac);
+	m_windowAutoCascade_action = new KToggleAction(ac);
 	initAction(
-		m_windowAutoTileHorizontal_action,
+		m_windowAutoCascade_action,
 		i18n("Auto-&cascade"),
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip,
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName,
-		SLOT( slotAutoTileHorizontal() )
+		CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
+		CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
+		CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::autoCascade::actionName,
+		SLOT( slotAutoCascade() )
 	);
 
 	m_windowArrangementMode_action->addAction( m_windowAutoCascade_action );
@@ -352,7 +352,16 @@ void BibleTime::initActions() {
 	//									 CResMgr::mainMenu::window::cascade::actionName
 	//									);
 	//m_windowCascade_action->setToolTip( CResMgr::mainMenu::window::cascade::tooltip );
-
+	m_windowCascade_action = new KToggleAction(ac);
+	initAction(
+		m_windowCascade_action,
+		i18n("&Cascade"),
+		CResMgr::mainMenu::window::arrangementMode::cascade::icon,
+		CResMgr::mainMenu::window::arrangementMode::cascade::accel,
+		CResMgr::mainMenu::window::arrangementMode::cascade::tooltip,
+		CResMgr::mainMenu::window::arrangementMode::cascade::actionName,
+		SLOT( slotCascade() )
+	);
 	
 
 	//m_windowTileVertical_action = new KAction(i18n("Tile &vertically"),
