@@ -52,6 +52,11 @@ public:
 
 	/** Type for bookmark item list. Usage: BTMimeData::ItemList. */
 	typedef QList<BookmarkItem> ItemList;
+	
+	/** Creates a new empty BTMimeData. */
+	BTMimeData();
+
+	virtual ~BTMimeData();
 
 	/** Creates a new BTMimeData.
 	* Creates a new bookmark item and appends it to the list.
