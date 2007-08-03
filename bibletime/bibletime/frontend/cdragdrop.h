@@ -67,7 +67,7 @@ public:
 	* Creates the item using the arguments.
 	* MIME type "BibleTime/Bookmark" is added.
 	*/
-	virtual void appendBookmark(QString, QString, QString);
+	virtual void appendBookmark(QString module, QString key, QString description);
 	/** Returns the bookmarks list. */
 	virtual const ItemList& bookmarks() const {return m_bookmarkList;} ;
 	/** Returns the first bookmark item in the list. */
