@@ -11,6 +11,7 @@
 //
 
 #include "cacceleratorsettings.h"
+#include "cacceleratorsettings.moc"
 
 #include "frontend/cbtconfig.h"
 

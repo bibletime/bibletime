@@ -11,6 +11,7 @@
 //
 
 #include "cswordsettings.h"
+#include "cswordsettings.moc"
 
 #include "frontend/cbtconfig.h"
 

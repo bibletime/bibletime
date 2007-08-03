@@ -11,6 +11,7 @@
 //
 
 #include "cmoduleindexdialog.h"
+#include "cmoduleindexdialog.moc"
 
 #include "util/scoped_resource.h"
 
@@ -21,6 +22,7 @@
 #include <kapplication.h>
 #include <kprogressdialog.h>
 #include <klocale.h>
+
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 	static CModuleIndexDialog* instance = 0;

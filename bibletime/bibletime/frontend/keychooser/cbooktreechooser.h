@@ -51,7 +51,7 @@ public:
 	/**
 	* Returns the key of this keychooser.
 	*/
-	virtual CSwordKey* const key();
+	virtual CSwordKey* key();
 	/**
 	* Sets a new key to this keychooser
 	*/

@@ -10,6 +10,8 @@
 
 
 #include "cbookkeychooser.h"
+#include "cbookkeychooser.moc"
+
 #include "backend/keys/cswordtreekey.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "frontend/cbtconfig.h"
@@ -111,7 +113,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 }
 
 /** Returns the key of this kechooser. */
-CSwordKey* const CBookKeyChooser::key() {
+CSwordKey* CBookKeyChooser::key() {
 	return m_key;
 }
 

@@ -10,6 +10,8 @@
 
 
 #include "cmodulechooserbutton.h"
+#include "cmodulechooserbutton.moc"
+
 #include "cmodulechooserbar.h"
 
 #include "backend/managers/cswordbackend.h"

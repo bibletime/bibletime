@@ -11,6 +11,8 @@
 //
 
 #include "cconfigurationdialog.h"
+#include "cconfigurationdialog.moc"
+
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"
 #include "clanguagesettings.h"
@@ -73,6 +75,8 @@ CConfigurationDialog::CConfigurationDialog
 	setCurrentPage(displayPage);
 	
 }
+
+CConfigurationDialog::~CConfigurationDialog() {}
 
 /** Called if the OK button was clicked */
 void CConfigurationDialog::slotOk() {

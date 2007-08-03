@@ -9,6 +9,7 @@
 
 //BibleTime includes
 #include "cswordmoduleinfo.h"
+#include "cswordmoduleinfo.moc"
 
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"

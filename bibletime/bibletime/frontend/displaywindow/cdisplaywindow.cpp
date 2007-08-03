@@ -11,6 +11,8 @@
 
 //BibleTime includes
 #include "cdisplaywindow.h"
+#include "cdisplaywindow.moc"
+
 #include "creadwindow.h"
 #include "cbiblereadwindow.h"
 #include "ccommentaryreadwindow.h"

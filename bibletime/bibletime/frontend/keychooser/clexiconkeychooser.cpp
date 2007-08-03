@@ -10,6 +10,8 @@
 
 
 #include "clexiconkeychooser.h"
+#include "clexiconkeychooser.moc"
+
 #include "ckeychooserwidget.h"
 #include "cscrollbutton.h"
 
@@ -59,7 +61,7 @@ m_key(dynamic_cast<CSwordLDKey*>(key)) {
 	setKey(key);
 }
 
-CSwordKey* const CLexiconKeyChooser::key() {
+CSwordKey* CLexiconKeyChooser::key() {
 	//  qWarning("key");
 	return m_key;
 }

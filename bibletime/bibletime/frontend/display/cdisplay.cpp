@@ -10,6 +10,8 @@
 
 
 #include "cdisplay.h"
+#include "cdisplay.moc"
+
 #include "chtmlreaddisplay.h"
 #include "cplainwritedisplay.h"
 #include "chtmlwritedisplay.h"

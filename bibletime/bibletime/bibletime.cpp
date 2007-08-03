@@ -12,6 +12,7 @@
 //local includes
 #include "config.h"
 #include "bibletime.h"
+#include "bibletime.moc"
 
 //frontend includes
 #include "frontend/cmdiarea.h"

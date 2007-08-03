@@ -10,6 +10,8 @@
 
 
 #include "ckeychooser.h"
+#include "ckeychooser.moc"
+
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"

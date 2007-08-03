@@ -9,6 +9,7 @@
 
 
 #include "cdragdrop.h"
+#include "cdragdrop.moc"
 
 #include <QString>
 #include <QByteArray>

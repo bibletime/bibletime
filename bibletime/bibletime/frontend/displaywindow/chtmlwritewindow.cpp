@@ -10,6 +10,7 @@
 
 
 #include "chtmlwritewindow.h"
+#include "chtmlwritewindow.moc"
 
 //frontend includes
 #include "frontend/keychooser/ckeychooser.h"

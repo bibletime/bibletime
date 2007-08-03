@@ -10,6 +10,7 @@
 
 
 #include "chtmlreaddisplay.h"
+#include "chtmlreaddisplay.moc"
 
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/creadwindow.h"

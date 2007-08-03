@@ -10,6 +10,7 @@
 
 
 #include "cprinter.h"
+#include "cprinter.moc"
 
 //BibleTime includes
 #include "backend/managers/cdisplaytemplatemgr.h"

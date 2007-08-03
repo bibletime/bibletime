@@ -10,6 +10,7 @@
 
 
 #include "cwritewindow.h"
+#include "cwritewindow.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 

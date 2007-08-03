@@ -11,6 +11,7 @@
 
 //BibleTime includes
 #include "creadwindow.h"
+#include "creadwindow.moc"
 
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"

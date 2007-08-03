@@ -192,7 +192,8 @@ LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 )
 
-ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
+KDE4_AUTOMOC( ${bibletime_SOURCES} )
+KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
@@ -204,9 +205,9 @@ INSTALL(TARGETS bibletime
 )
 
 TARGET_LINK_LIBRARIES(bibletime
-	kdeui
-	kdecore
-	khtml
+	${KDE4_KDEUI_LIBS}
+	${KDE4_KDECORE_LIBS}
+	${KDE4_KHTML_LIBS}
 	QtCore
 	QtGui
 	QtXml

@@ -9,6 +9,8 @@
 
 //BibleTime includes
 #include "ckeyreferencewidget.h"
+#include "ckeyreferencewidget.moc"
+
 #include "cscrollerwidgetset.h"
 
 //BibleTime frontend includes

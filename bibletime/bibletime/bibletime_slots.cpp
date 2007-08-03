@@ -11,6 +11,8 @@
 
 //own includes
 #include "bibletime.h"
+#include "bibletime.moc"
+
 #include "config.h"
 
 #include "backend/keys/cswordversekey.h"

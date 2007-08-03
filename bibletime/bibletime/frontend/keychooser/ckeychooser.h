@@ -62,7 +62,7 @@ public slots:
 	*
 	* @return the current @ref CKey
 	*/
-	virtual CSwordKey* const key() = 0;
+	virtual CSwordKey* key() = 0;
 	/**
 	* Sets the module of this keychooser and refreshes the comboboxes
 	*/

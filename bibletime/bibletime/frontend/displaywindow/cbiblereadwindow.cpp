@@ -10,6 +10,8 @@
 
 
 #include "cbiblereadwindow.h"
+#include "cbiblereadwindow.moc"
+
 #include "ccommentaryreadwindow.h"
 #include "cbuttons.h"
 

@@ -10,6 +10,8 @@
 
 
 #include "cbiblekeychooser.h"
+#include "cbiblekeychooser.moc"
+
 #include "ckeyreferencewidget.h"
 #include "cscrollbutton.h"
 
@@ -43,7 +45,7 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 	setKey(m_key); //set the key without changing it, setKey(key()) would change it
 }
 
-CSwordKey* const CBibleKeyChooser::key() {
+CSwordKey* CBibleKeyChooser::key() {
 	return m_key;
 }
 

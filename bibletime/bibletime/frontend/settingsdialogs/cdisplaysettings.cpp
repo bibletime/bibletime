@@ -11,6 +11,7 @@
 //
 
 #include "cdisplaysettings.h"
+#include "cdisplaysettings.moc"
 
 #include "frontend/cbtconfig.h"
 

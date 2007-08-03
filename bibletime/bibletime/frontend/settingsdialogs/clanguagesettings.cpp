@@ -11,6 +11,7 @@
 //
 
 #include "clanguagesettings.h"
+#include "clanguagesettings.moc"
 
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"

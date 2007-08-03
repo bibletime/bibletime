@@ -10,10 +10,11 @@
 
 
 #include "chtmlwritedisplay.h"
+#include "chtmlwritedisplay.moc"
 
-#include "../displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
-#include "../../util/cresmgr.h"
+#include "util/cresmgr.h"
 
 //Qt includes
 #include <QMenu>

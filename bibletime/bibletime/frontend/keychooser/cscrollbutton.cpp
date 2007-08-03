@@ -10,8 +10,8 @@
 
 
 #include "cscrollbutton.h"
+#include "cscrollbutton.moc"
 
-//#include "../cbtconfig.h"
 
 #include <stdlib.h>
 #include <math.h>

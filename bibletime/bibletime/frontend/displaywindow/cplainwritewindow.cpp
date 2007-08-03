@@ -10,6 +10,8 @@
 
 
 #include "cplainwritewindow.h"
+#include "cplainwritewindow.moc"
+
 #include "frontend/display/cwritedisplay.h"
 
 #include "frontend/keychooser/ckeychooser.h"

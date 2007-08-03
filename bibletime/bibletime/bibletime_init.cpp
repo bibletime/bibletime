@@ -11,6 +11,8 @@
 
 //BibleTime includes
 #include "bibletime.h"
+#include "bibletime.moc"
+
 #include "config.h"
 
 #include "util/cpointers.h"
@@ -662,18 +664,18 @@ void BibleTime::initBackends() {
 			case CSwordBackend::NoModules: //no modules installed, but config exists
 			{
 				KStartupLogo::hideSplash();
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
-				dlg.exec();
+				//TODO: temporary //BookshelfManager::CSwordSetupDialog dlg;
+				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
+				//dlg.exec();
 				break;
 			}
 
 			default: //unknown error
 			{
 				KStartupLogo::hideSplash();
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				dlg.exec();
+				//TODO: temporary // BookshelfManager::CSwordSetupDialog dlg;
+				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+				//dlg.exec();
 				break;
 			}
 		}

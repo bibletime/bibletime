@@ -10,6 +10,8 @@
 
 
 #include "cbookreadwindow.h"
+#include "cbookreadwindow.moc"
+
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 

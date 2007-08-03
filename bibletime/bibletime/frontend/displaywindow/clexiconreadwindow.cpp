@@ -11,6 +11,8 @@
 
 //BibleTime includes
 #include "clexiconreadwindow.h"
+#include "clexiconreadwindow.moc"
+
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 

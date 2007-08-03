@@ -11,6 +11,7 @@
 //BibleTime includes
 #include "cscrollbutton.h"
 #include "cscrollerwidgetset.h"
+#include "cscrollerwidgetset.moc"
 
 //Qt includes
 #include <QString>
