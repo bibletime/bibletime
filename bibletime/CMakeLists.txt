@@ -206,7 +206,10 @@ INSTALL(TARGETS bibletime
 TARGET_LINK_LIBRARIES(bibletime
 	kdeui
 	kdecore
+	khtml
 	QtCore
+	QtGui
+	QtXml
 	${CLUCENE_LIBRARY}
 	${SWORD_LIBRARY}
 )

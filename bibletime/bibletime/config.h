@@ -14,7 +14,7 @@
 #define CONFIG_H_
 
 
-const char* VERSION = "DEVELOPMENT_VERSION";
-const char* PACKAGE = "NONE_PACKAGE";
+#define VERSION "svn_head"
+#define PACKAGE "bibletime"
 
 #endif
