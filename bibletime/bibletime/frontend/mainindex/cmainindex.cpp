@@ -11,7 +11,14 @@
 
 //BibleTime includes
 #include "cmainindex.h"
-#include "cindexitem.h"
+#include "cmainindex.moc"
+
+#include "cindexitembase.h"
+#include "cindexbookmarkitem.h"
+#include "cindexbookmarkfolder.h"
+#include "cindexglossaryfolder.h"
+#include "cindexmoduleitem.h"
+
 
 #include "backend/managers/creferencemanager.h"
 
@@ -30,6 +37,7 @@
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
+#include <QTreeWidget>
 
 //KDE includes
 #include <klocale.h>
@@ -38,26 +46,29 @@
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
 
-using namespace Printing;
 
-CMainIndex::ToolTip::ToolTip(CMainIndex* parent) : QToolTip(parent->viewport()), m_mainIndex(parent) {}
+
+CMainIndex::ToolTip::ToolTip(CMainIndex* parent)
+	: QToolTip(parent)
+{}
 
 void CMainIndex::ToolTip::maybeTip(const QPoint& p) {
-	CItemBase* i = dynamic_cast<CItemBase*>(m_mainIndex->itemAt(p));
+	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(m_mainIndex->itemAt(p));
 	Q_ASSERT(i);
 	if ( !i ) {
 		return;
 	}
 
-	QRect r = m_mainIndex->itemRect(i);
-	if (!r.isValid()) {
-		return;
-	}
+	//TODO: ???
+	//QRect r = m_mainIndex->itemRect(i);
+	//if (!r.isValid()) {
+	//	return;
+	//}
 
 	//get type of item and display correct text
 	const QString text = i->toolTip();
 	if (!text.isEmpty()) {
-		CBookmarkItem* bookmark = dynamic_cast<CBookmarkItem*>(i);
+		CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>(i);
 		if (bookmark) {
 			(CPointers::infoDisplay())->setInfo(
 				InfoDisplay::CInfoDisplay::CrossReference,
@@ -68,15 +79,21 @@ void CMainIndex::ToolTip::maybeTip(const QPoint& p) {
 			CPointers::infoDisplay()->clearInfo();
 		}
 
-		tip(r, text);
+		//tip(r, text); //TODO
 	}
 	else {
 		CPointers::infoDisplay()->clearInfo();
 	}
 }
 
-CMainIndex::CMainIndex(QWidget *parent) : QTreeWidget(parent),
-m_searchDialog(0), m_toolTip(0), m_itemsMovable(false), m_autoOpenFolder(0), m_autoOpenTimer(this) {
+CMainIndex::CMainIndex(QWidget *parent)
+	: QTreeWidget(parent),
+	m_searchDialog(0),
+	m_toolTip(0),
+	m_itemsMovable(false),
+	m_autoOpenFolder(0),
+	m_autoOpenTimer(this)
+{
 	initView();
 	initConnections();
 	//initTree() is called in polish()
@@ -86,29 +103,29 @@ CMainIndex::~CMainIndex() {
 	saveSettings();
 	saveBookmarks();
 
-	m_toolTip->remove(this);
+	this->setToolTip("");
 	delete m_toolTip;
 }
 
 /** Reimplementation. Adds the given group to the tree. */
-void CMainIndex::addGroup(const CItemBase::Type type, const QString language) {
-	CTreeFolder *i = 0;
+void CMainIndex::addGroup(const CIndexItemBase::Type type, const QString language) {
+	CIndexTreeFolder *i = 0;
 	switch (type) {
-		case CItemBase::BookmarkFolder:
-			i = new CBookmarkFolder(this);
+		case CIndexItemBase::BookmarkFolder:
+			i = new CIndexBookmarkFolder(this);
 			break;
-		case CItemBase::GlossaryModuleFolder:
+		case CIndexItemBase::GlossaryModuleFolder:
 			//we have no second language
-			i = new CGlossaryFolder(this, type, language, QString::null); 
+			i = new CIndexGlossaryFolder(this, type, language, QString::null); 
 			break;
 		default:
-			i = new CTreeFolder(this, type, language);
+			i = new CIndexTreeFolder(this, type, language);
 			break;
 	}
 	
 	if (i) {
 		i->init();
-		if (i->childCount() == 0 && type != CItemBase::BookmarkFolder) {
+		if (i->childCount() == 0 && type != CIndexItemBase::BookmarkFolder) {
 			delete i;
 		}
 	}
@@ -200,7 +217,7 @@ void CMainIndex::initConnections() {
 
 /** Is called when an item was clicked/double clicked. */
 void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
-	CItemBase* ci = dynamic_cast<CItemBase*>(i);
+	CIndexItemBase* ci = dynamic_cast<CIndexItemBase*>(i);
 	if (!ci) {
 		return;
 	}
@@ -208,13 +225,13 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
 	if (ci->isFolder()) {
 		i->setOpen(!i->isOpen());
 	}
-	else if (CModuleItem* m = dynamic_cast<CModuleItem*>(i))  { //clicked on a module
+	else if (CIndexModuleItem* m = dynamic_cast<CIndexModuleItem*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->module();
 		ListCSwordModuleInfo modules;
 		modules.append(mod);
 		emit createReadDisplayWindow(modules, QString::null);
 	}
-	else if (CBookmarkItem* b = dynamic_cast<CBookmarkItem*>(i) ) { //clicked on a bookmark
+	else if (CIndexBookmarkItem* b = dynamic_cast<CIndexBookmarkItem*>(i) ) { //clicked on a bookmark
 		if (CSwordModuleInfo* mod = b->module()) {
 			ListCSwordModuleInfo modules;
 			modules.append(mod);
@@ -224,7 +241,8 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
 }
 
 /** Reimplementation. Returns the drag object for the current selection. */
-Q3DragObject* CMainIndex::dragObject() {
+Q3DragObject* CMainIndex::dragObject()
+{
 	if (!m_itemsMovable) {
 		return false;
 	}
@@ -250,8 +268,10 @@ Q3DragObject* CMainIndex::dragObject() {
 	return CDragDropMgr::dragObject( dndItems, viewport() );
 }
 
+
 /** Reimplementation from KListView. Returns true if the drag is acceptable for the listview. */
-bool CMainIndex::acceptDrag( QDropEvent* event ) const {
+bool CMainIndex::acceptDrag( QDropEvent* event ) const
+{
 	const QPoint pos = contentsToViewport(event->pos());
 
 	CItemBase* i = dynamic_cast<CItemBase*>(itemAt(pos));

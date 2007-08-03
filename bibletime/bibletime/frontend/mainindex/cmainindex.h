@@ -11,7 +11,7 @@
 #define CMAININDEX_H
 
 //BibleTime includes
-#include "cindexitem.h"
+#include "cindexitembase.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
@@ -84,7 +84,7 @@ protected: // Protected methods
 	/**
 	* Reimplementation. Adds the given group to the tree.
 	*/
-	virtual void addGroup( const CItemBase::Type type, const QString language);
+	virtual void addGroup( const CIndexItemBase::Type type, const QString language);
 	/**
 	* Initialize the SIGNAL<->SLOT connections
 	*/
@@ -100,7 +100,7 @@ protected: // Protected methods
 	/**
 	* Returns the correct KAction object for the given type of action.
 	*/
-	KAction* const action( const CItemBase::MenuAction type ) const;
+	KAction* const action( const CIndexItemBase::MenuAction type ) const;
 	/**
 	* Reimplementation. Takes care of movable items.
 	*/
@@ -199,7 +199,7 @@ private:
 	* Returns true if more than one netry is supported by this action type.
 	* Returns false for actions which support only one entry, e.g. about module etc.
 	*/
-	const bool isMultiAction( const CItemBase::MenuAction type ) const;
+	const bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
 
 	struct Actions {
 		KAction* newFolder;

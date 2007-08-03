@@ -1,0 +1,180 @@
+//
+// C++ Implementation: cindexbookmarkfolder
+//
+// Description: 
+//
+//
+// Author: The BibleTime team <info@bibletime.info>, (C) 2007
+//
+// Copyright: See COPYING file that comes with this distribution
+//
+//
+CBookmarkFolder::CBookmarkFolder(CMainIndex* mainIndex, const Type type) : CTreeFolder(mainIndex, type, "*") {
+	setSortingEnabled(false);
+}
+
+CBookmarkFolder::CBookmarkFolder(CFolderBase* parentItem, const Type type) : CTreeFolder(parentItem, type, "*") {
+	setSortingEnabled(false);
+}
+
+CBookmarkFolder::~CBookmarkFolder() {}
+
+void CBookmarkFolder::initTree() {
+	addGroup(OldBookmarkFolder, "*");
+
+	KStandardDirs stdDirs;
+	const QString path = stdDirs.saveLocation("data", "bibletime/");
+	if (!path.isEmpty()) {
+		loadBookmarks(path + "bookmarks.xml");
+	}
+}
+
+/** Reimplementation. */
+const bool CBookmarkFolder::enableAction(const MenuAction action) {
+	if ((action == NewFolder) || (action == ImportBookmarks))
+		return true;
+
+	if ((action == ExportBookmarks) && childCount())
+		return true;
+
+	if ((action == PrintBookmarks) && childCount())
+		return true;
+
+	return false;
+}
+
+
+void CBookmarkFolder::exportBookmarks() {
+	QString fileName = KFileDialog::getSaveFileName(QString::null, i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Export bookmarks"));
+	if (!fileName.isEmpty()) {
+		saveBookmarks( fileName, false ); //false means we don't want to overwrite the file without asking the user
+	};
+}
+
+
+void CBookmarkFolder::importBookmarks() {
+	QString fileName = KFileDialog::getOpenFileName(QString::null, i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Import bookmarks"));
+	if (!fileName.isEmpty()) {
+		//we have to decide if we should load an old bookmark file from 1.2 or earlier or the new XML format of > 1.3
+		if ( !loadBookmarks(fileName) ) { //if this failed try to load it as old bookmark file
+			loadBookmarksFromXML( Bookmarks::OldBookmarkImport::oldBookmarksXML( fileName ) );
+		};
+	};
+}
+
+bool CBookmarkFolder::acceptDrop(const QMimeSource * src) const {
+	//   qWarning("bool CBookmarkFolder::acceptDrop(const QMimeSource * src): return%ii", (CDragDropMgr::canDecode(src) && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark)));
+
+	return CDragDropMgr::canDecode(src)
+		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
+}
+
+void CBookmarkFolder::dropped(QDropEvent *e, Q3ListViewItem* after) {
+	if (acceptDrop(e)) {
+		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
+		CDragDropMgr::ItemList::Iterator it;
+		CItemBase* previousItem = dynamic_cast<CItemBase*>(after);
+
+		for( it = dndItems.begin(); it != dndItems.end(); ++it) {
+			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(
+										   (*it).bookmarkModule()
+									   );
+
+			CBookmarkItem* i = new CBookmarkItem(
+								   this,
+								   module,
+								   (*it).bookmarkKey(),
+								   (*it).bookmarkDescription()
+							   );
+
+			if (previousItem) {
+				i->moveAfter( previousItem );
+			}
+
+			i->init();
+			previousItem = i;
+		};
+	};
+}
+
+/** Saves the bookmarks in a file. */
+const bool CBookmarkFolder::saveBookmarks( const QString& filename, const bool& forceOverwrite ) {
+	QDomDocument doc("DOC");
+	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+
+	QDomElement content = doc.createElement("SwordBookmarks");
+	content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
+	doc.appendChild(content);
+
+	//append the XML nodes of all child items
+	CItemBase* i = dynamic_cast<CItemBase*>( firstChild() );
+	while( i ) {
+		if (i->parent() == this) { //only one level under this folder
+			QDomElement newElem = i->saveToXML( doc ); // the cild creates it's own XML code
+			if (!newElem.isNull()) {
+				content.appendChild( newElem ); //append to this folder
+			}
+		}
+		i = dynamic_cast<CItemBase*>( i->nextSibling() );
+	}
+
+	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, Q3TextStream::UnicodeUTF8);
+}
+
+const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
+	QDomDocument doc;
+	doc.setContent(xml);
+	QDomElement document = doc.documentElement();
+	if( document.tagName() != "SwordBookmarks" ) {
+		qWarning("Not a BibleTime Bookmark XML file");
+		return false;
+	}
+
+	CItemBase* oldItem = 0;
+	//restore all child items
+	QDomElement child = document.firstChild().toElement();
+	while ( !child.isNull() && child.parentNode() == document) {
+		CItemBase* i = 0;
+		if (child.tagName() == "Folder") {
+			i = new Bookmarks::SubFolder(this, child);
+		}
+		else if (child.tagName() == "Bookmark") {
+			i = new CBookmarkItem(this, child);
+		}
+		if (!i) {
+			break;
+		}
+
+		i->init();
+		if (oldItem) {
+			i->moveAfter(oldItem);
+		}
+		oldItem = i;
+
+		if (!child.nextSibling().isNull()) {
+			child = child.nextSibling().toElement();
+		}
+		else {
+			break;
+		}
+	}
+	return true;
+}
+
+/** Loads bookmarks from a file. */
+const bool CBookmarkFolder::loadBookmarks( const QString& filename ) {
+	QFile file(filename);
+	if (!file.exists())
+		return false;
+
+	QString xml;
+	if (file.open(QIODevice::ReadOnly)) {
+		Q3TextStream t;
+		t.setEncoding(Q3TextStream::UnicodeUTF8); //set encoding before file is used for input!
+		t.setDevice(&file);
+		xml = t.read();
+		file.close();
+	}
+
+	return loadBookmarksFromXML( xml );
+}

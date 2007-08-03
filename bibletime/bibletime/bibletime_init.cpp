@@ -655,9 +655,9 @@ void BibleTime::initBackends() {
 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
 			{
 				KStartupLogo::hideSplash();
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				dlg.exec();
+				//TODO: temporary //BookshelfManager::CSwordSetupDialog dlg;
+				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+				//dlg.exec();
 				break;
 			}
 
