@@ -52,8 +52,8 @@ void CFolderBase::rename() {
 
 /** Creates a new sub folder of this folder. */
 void CFolderBase::newSubFolder() {
-	if (dynamic_cast<CBookmarkFolder*>(this) || dynamic_cast<Bookmarks::SubFolder*>(this) ) {
-		Bookmarks::SubFolder* f = new Bookmarks::SubFolder(this, i18n("New folder"));
+	if (dynamic_cast<CBookmarkFolder*>(this) || dynamic_cast<CIndexSubFolder*>(this) ) {
+		CIndexSubFolder* f = new CIndexSubFolder(this, i18n("New folder"));
 		f->init();
 
 		listView()->setCurrentItem(f);

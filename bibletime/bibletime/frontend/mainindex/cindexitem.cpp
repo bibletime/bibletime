@@ -486,8 +486,8 @@ void CFolderBase::rename() {
 
 /** Creates a new sub folder of this folder. */
 void CFolderBase::newSubFolder() {
-	if (dynamic_cast<CBookmarkFolder*>(this) || dynamic_cast<Bookmarks::SubFolder*>(this) ) {
-		Bookmarks::SubFolder* f = new Bookmarks::SubFolder(this, i18n("New folder"));
+	if (dynamic_cast<CBookmarkFolder*>(this) || dynamic_cast<CIndexSubFolder*>(this) ) {
+		CIndexSubFolder* f = new CIndexSubFolder(this, i18n("New folder"));
 		f->init();
 
 		listView()->setCurrentItem(f);
@@ -556,7 +556,7 @@ void CTreeFolder::addGroup(const Type type, const QString language) {
 		i = new CBookmarkFolder(this);
 	}
 	else if (type == OldBookmarkFolder) {
-		i = new Bookmarks::OldBookmarksFolder(this);
+		i = new CIndexOldBookmarksFolder(this);
 	}
 	else {
 		i = new CTreeFolder(this, type, language);
@@ -800,7 +800,7 @@ OldBookmarksFolder::OldBookmarksFolder(CTreeFolder* folder) : CBookmarkFolder(fo
 		// Import the bookmarks of the previous BibleTime versions
 		if (!CBTConfig::get
 					( CBTConfig::readOldBookmarks )) { //if we havn't yet loaded the old bookmarks
-				loadBookmarksFromXML( Bookmarks::OldBookmarkImport::oldBookmarksXML() );
+				loadBookmarksFromXML( CIndexOldBookmarkImport::oldBookmarksXML() );
 			}
 	}
 
@@ -904,10 +904,10 @@ SubFolder::SubFolder(CFolderBase* parentItem, QDomElement& xml ) : CBookmarkFold
 		while ( !child.isNull() && child.parentNode() == elem ) {
 			CItemBase* i = 0;
 			if (child.tagName() == "Folder") {
-				i = new Bookmarks::SubFolder(this, child);
+				i = new CIndexSubFolder(this, child);
 			}
 			else if (child.tagName() == "Bookmark") {
-				i = new CBookmarkItem(this, child);
+				i = new CIndexBookmarkItem(this, child);
 			}
 			i->init();
 			if (oldItem)

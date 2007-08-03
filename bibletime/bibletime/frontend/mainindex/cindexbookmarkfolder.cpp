@@ -136,10 +136,10 @@ const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 	while ( !child.isNull() && child.parentNode() == document) {
 		CItemBase* i = 0;
 		if (child.tagName() == "Folder") {
-			i = new Bookmarks::SubFolder(this, child);
+			i = new CIndexSubFolder(this, child);
 		}
 		else if (child.tagName() == "Bookmark") {
-			i = new CBookmarkItem(this, child);
+			i = new CIndexBookmarkItem(this, child);
 		}
 		if (!i) {
 			break;

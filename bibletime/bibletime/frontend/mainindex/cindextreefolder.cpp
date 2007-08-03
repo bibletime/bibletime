@@ -25,7 +25,7 @@ void CTreeFolder::addGroup(const Type type, const QString language) {
 		i = new CBookmarkFolder(this);
 	}
 	else if (type == OldBookmarkFolder) {
-		i = new Bookmarks::OldBookmarksFolder(this);
+		i = new CIndexOldBookmarksFolder(this);
 	}
 	else {
 		i = new CTreeFolder(this, type, language);

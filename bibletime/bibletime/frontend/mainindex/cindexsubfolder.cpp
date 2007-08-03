@@ -74,14 +74,14 @@ SubFolder::SubFolder(CFolderBase* parentItem, QDomElement& xml ) : CBookmarkFold
 
 		//restore all child items
 		QDomElement child = elem.firstChild().toElement();
-		CItemBase* oldItem = 0;
+		CIndexItemBase* oldItem = 0;
 		while ( !child.isNull() && child.parentNode() == elem ) {
 			CItemBase* i = 0;
 			if (child.tagName() == "Folder") {
-				i = new Bookmarks::SubFolder(this, child);
+				i = new CIndexSubFolder(this, child);
 			}
 			else if (child.tagName() == "Bookmark") {
-				i = new CBookmarkItem(this, child);
+				i = new CIndexBookmarkItem(this, child);
 			}
 			i->init();
 			if (oldItem)
