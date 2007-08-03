@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,7 +22,7 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
-//#include "frontend/cswordsetupdialog.h"
+//#include "frontend/cswordsetupdialog.h" //TODO
 #include "frontend/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -30,16 +30,14 @@
 #include "frontend/mainindex/cindexitem.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
-//#include "frontend/searchdialog/csearchdialog.h"
+//#include "frontend/searchdialog/csearchdialog.h" //TODO
 
 #include <errno.h>
 
 //QT includes
 #include <q3progressdialog.h>
-//#include <q3listview.h>
-#include <qclipboard.h>
-#include <qinputdialog.h>
-//Added by qt3to4:
+#include <QClipboard>
+#include <QInputDialog>
 #include <QList>
 
 //KDE includes
@@ -47,7 +45,6 @@
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kaboutkdedialog.h>
-//#include <kaboutdialog.h>
 #include <kbugreport.h>
 #include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>

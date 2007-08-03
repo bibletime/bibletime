@@ -97,10 +97,10 @@ SET(bibletime_SOURCES
 	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
-	bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
-	bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-	bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
-	bibletime/frontend/bookshelfmanager/btinstallmgr.cpp
+	#bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
+	#bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
+	#bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
+	#bibletime/frontend/bookshelfmanager/btinstallmgr.cpp
 
 	#Profile manager frontend
 	bibletime/frontend/profile/cprofilemgr.cpp
