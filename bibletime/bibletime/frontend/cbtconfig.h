@@ -12,8 +12,8 @@
 #ifndef CBTCONFIG_H
 #define CBTCONFIG_H
 
-#include "../backend/cswordbackend.h"
-#include "../backend/clanguagemgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/managers/clanguagemgr.h"
 
 //Qt includes
 #include <QString>

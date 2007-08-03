@@ -13,7 +13,7 @@
 #define INFODISPLAYCROSSREFRENDERING_H
 
 //Backend includes
-#include "backend/chtmlexportrendering.h"
+#include "backend/rendering/chtmlexportrendering.h"
 
 namespace InfoDisplay {
 

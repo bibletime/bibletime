@@ -13,11 +13,11 @@
 #include "ckeyreferencewidget.h"
 #include "cscrollbutton.h"
 
-#include "../../backend/cswordversekey.h"
-#include "../../backend/cswordbiblemoduleinfo.h"
-#include "../../backend/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
-#include "../../util/cresmgr.h"
+#include "util/cresmgr.h"
 
 #include <QHBoxLayout>
 

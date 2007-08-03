@@ -17,8 +17,8 @@
 #include "qlabel.h"
 
 // backend
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
 
 //KDE includes
 #include <klocale.h>

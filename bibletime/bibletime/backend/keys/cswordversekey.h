@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,7 +11,7 @@
 #define CSWORDVERSEKEY_H
 
 #include "cswordkey.h"
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt
 #include <QString>

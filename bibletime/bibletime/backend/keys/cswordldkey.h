@@ -11,7 +11,7 @@
 #define CSWORDLDKEY_H
 
 #include "cswordkey.h"
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt
 #include <QString>

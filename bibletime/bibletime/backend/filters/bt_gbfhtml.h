@@ -9,7 +9,7 @@
 
 
 
-/* $Header: /cvsroot/bibletime/bibletime/bibletime/backend/bt_gbfhtml.h,v 1.24 2006/02/25 11:38:15 joachim Exp $ */
+/* $Header: /cvsroot/bibletime/bibletime/bibletime/backend/filters/bt_gbfhtml.h,v 1.24 2006/02/25 11:38:15 joachim Exp $ */
 /* $Revision: 1.24 $ */
 
 #ifndef BT_GBFHTML_H

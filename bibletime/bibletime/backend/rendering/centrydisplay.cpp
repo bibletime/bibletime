@@ -10,11 +10,11 @@
 //BibleTime includes
 #include "centrydisplay.h"
 
-#include "cswordkey.h"
-#include "cswordversekey.h"
-#include "cswordbookmoduleinfo.h"
-#include "creferencemanager.h"
-#include "cdisplaytemplatemgr.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 #include "cdisplayrendering.h"
 
 #include "frontend/cbtconfig.h"

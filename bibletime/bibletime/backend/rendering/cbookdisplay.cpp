@@ -10,8 +10,8 @@
 //Backend
 #include "cbookdisplay.h"
 #include "cdisplayrendering.h"
-#include "cswordbookmoduleinfo.h"
-#include "cswordtreekey.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/keys/cswordtreekey.h"
 
 //Util
 #include "util/scoped_resource.h"

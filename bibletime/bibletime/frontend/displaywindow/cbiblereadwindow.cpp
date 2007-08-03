@@ -13,8 +13,8 @@
 #include "ccommentaryreadwindow.h"
 #include "cbuttons.h"
 
-#include "backend/cswordversekey.h"
-#include "backend/cswordbiblemoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/cexportmanager.h"

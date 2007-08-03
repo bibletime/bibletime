@@ -13,7 +13,7 @@
 #include "bibletime.h"
 #include "config.h"
 
-#include "backend/cswordversekey.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "util/ctoolclass.h"
 
@@ -35,7 +35,7 @@
 #include <errno.h>
 
 //QT includes
-#include <q3progressdialog.h>
+//#include <q3progressdialog.h>
 #include <QClipboard>
 #include <QInputDialog>
 #include <QList>

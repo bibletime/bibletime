@@ -9,7 +9,7 @@
 
 #include "cswordkey.h"
 
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "cswordversekey.h"
 #include "cswordldkey.h"
 #include "cswordtreekey.h"

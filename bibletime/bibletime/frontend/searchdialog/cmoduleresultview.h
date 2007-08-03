@@ -13,7 +13,7 @@
 #define CMODULERESULTSVIEW_H
 
 //BibleTime includes
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "csearchdialogpages.h"
 
 //Qt includes

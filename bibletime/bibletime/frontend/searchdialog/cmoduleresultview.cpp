@@ -11,7 +11,7 @@
 
 #include "cmoduleresultview.h"
 
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "frontend/util/csortlistviewitem.h"
 #include "frontend/cexportmanager.h"

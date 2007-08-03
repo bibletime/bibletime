@@ -21,7 +21,7 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 //Backend includes
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //KDE includes
 #include <kmainwindow.h>

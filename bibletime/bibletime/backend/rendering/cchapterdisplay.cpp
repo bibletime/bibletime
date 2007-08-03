@@ -10,8 +10,8 @@
 //Backend
 #include "cchapterdisplay.h"
 #include "cdisplayrendering.h"
-#include "cswordversekey.h"
-#include "cswordbiblemoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
 
 const QString Rendering::CChapterDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
 	Q_ASSERT( modules.count() >= 1 );

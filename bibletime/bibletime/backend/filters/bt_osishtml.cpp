@@ -9,9 +9,9 @@
 
 //BibleTime includes
 #include "bt_osishtml.h"
-#include "clanguagemgr.h"
-#include "creferencemanager.h"
-#include "cswordmoduleinfo.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "frontend/cbtconfig.h"
 #include "util/cpointers.h"

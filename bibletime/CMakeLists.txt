@@ -37,37 +37,37 @@ SET(bibletime_SOURCES
 #These files already compile cleanly
 #
 	#backend filters
-	bibletime/backend/bt_gbfhtml.cpp
-	bibletime/backend/bt_osishtml.cpp
-	bibletime/backend/bt_plainhtml.cpp
-	bibletime/backend/bt_thmlhtml.cpp
-	bibletime/backend/bt_thmlplain.cpp
-	bibletime/backend/osismorphsegmentation.cpp
+	bibletime/backend/filters/bt_gbfhtml.cpp
+	bibletime/backend/filters/bt_osishtml.cpp
+	bibletime/backend/filters/bt_plainhtml.cpp
+	bibletime/backend/filters/bt_thmlhtml.cpp
+	bibletime/backend/filters/bt_thmlplain.cpp
+	bibletime/backend/filters/osismorphsegmentation.cpp
 	#backend rendering
-	bibletime/backend/cbookdisplay.cpp
-	bibletime/backend/cchapterdisplay.cpp
-	bibletime/backend/cdisplayrendering.cpp
-	bibletime/backend/centrydisplay.cpp
-	bibletime/backend/chtmlexportrendering.cpp
-	bibletime/backend/cplaintextexportrendering.cpp
-	bibletime/backend/ctextrendering.cpp
+	bibletime/backend/rendering/cbookdisplay.cpp
+	bibletime/backend/rendering/cchapterdisplay.cpp
+	bibletime/backend/rendering/cdisplayrendering.cpp
+	bibletime/backend/rendering/centrydisplay.cpp
+	bibletime/backend/rendering/chtmlexportrendering.cpp
+	bibletime/backend/rendering/cplaintextexportrendering.cpp
+	bibletime/backend/rendering/ctextrendering.cpp
 	#backend managers
-	bibletime/backend/btstringmgr.cpp
-	bibletime/backend/cdisplaytemplatemgr.cpp
-	bibletime/backend/clanguagemgr.cpp
-	bibletime/backend/creferencemanager.cpp
-	bibletime/backend/cswordbackend.cpp
+	bibletime/backend/managers/btstringmgr.cpp
+	bibletime/backend/managers/cdisplaytemplatemgr.cpp
+	bibletime/backend/managers/clanguagemgr.cpp
+	bibletime/backend/managers/creferencemanager.cpp
+	bibletime/backend/managers/cswordbackend.cpp
 	#backend module drivers
-	bibletime/backend/cswordmoduleinfo.cpp
-	bibletime/backend/cswordbiblemoduleinfo.cpp
-	bibletime/backend/cswordbookmoduleinfo.cpp
-	bibletime/backend/cswordcommentarymoduleinfo.cpp
-	bibletime/backend/cswordlexiconmoduleinfo.cpp
+	bibletime/backend/drivers/cswordmoduleinfo.cpp
+	bibletime/backend/drivers/cswordbiblemoduleinfo.cpp
+	bibletime/backend/drivers/cswordbookmoduleinfo.cpp
+	bibletime/backend/drivers/cswordcommentarymoduleinfo.cpp
+	bibletime/backend/drivers/cswordlexiconmoduleinfo.cpp
 	#backend keys
-	bibletime/backend/cswordkey.cpp
-	bibletime/backend/cswordldkey.cpp
-	bibletime/backend/cswordtreekey.cpp
-	bibletime/backend/cswordversekey.cpp
+	bibletime/backend/keys/cswordkey.cpp
+	bibletime/backend/keys/cswordldkey.cpp
+	bibletime/backend/keys/cswordtreekey.cpp
+	bibletime/backend/keys/cswordversekey.cpp
 	
 	bibletime/backend/cswordmodulesearch.cpp
 

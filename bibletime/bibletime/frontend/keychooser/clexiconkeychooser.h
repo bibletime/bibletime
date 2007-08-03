@@ -14,7 +14,7 @@
 
 
 #include "ckeychooser.h"
-#include "../../backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 
 class CKeyChooserWidget;

@@ -18,8 +18,8 @@
 #include "csearchresultview.h"
 #include "cmodulechooser.h"
 
-#include "backend/cswordversekey.h"
-#include "backend/cdisplayrendering.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/rendering/cdisplayrendering.h"
 
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"

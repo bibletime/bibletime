@@ -11,14 +11,18 @@
 #define CKEYREFERENCEWIDGET_H
 
 #include "cscrollerwidgetset.h"
-#include "../../backend/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include <QWidget>
+
 #include <klineedit.h>
 #include <kcompletion.h>
 
+
 class CLexiconKeyChooser;
 class CSwordVerseKey;
+
+
 
 class CKeyReferenceCompletion : public KCompletion {
     Q_OBJECT

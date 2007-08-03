@@ -12,7 +12,7 @@
 #ifndef CMODULEINDEXDIALOG_H
 #define CMODULEINDEXDIALOG_H
 
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 #include <QObject>

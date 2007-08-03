@@ -11,14 +11,14 @@
 
 #include "cexportmanager.h"
 
-#include "backend/cswordkey.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/creferencemanager.h"
-#include "backend/cswordversekey.h"
-#include "backend/centrydisplay.h"
-#include "backend/cdisplaytemplatemgr.h"
-#include "backend/chtmlexportrendering.h"
-#include "backend/cplaintextexportrendering.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/rendering/centrydisplay.h"
+#include "backend/rendering/chtmlexportrendering.h"
+#include "backend/rendering/cplaintextexportrendering.h"
 
 #include "frontend/cprinter.h"
 

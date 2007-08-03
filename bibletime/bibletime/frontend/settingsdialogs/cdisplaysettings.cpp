@@ -14,8 +14,8 @@
 
 #include "frontend/cbtconfig.h"
 
-#include "backend/cdisplayrendering.h"
-#include "backend/cdisplaytemplatemgr.h"
+#include "backend/rendering/cdisplayrendering.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"

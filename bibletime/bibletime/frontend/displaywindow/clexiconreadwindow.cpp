@@ -14,8 +14,8 @@
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 
-#include "backend/cswordkey.h"
-#include "backend/cswordldkey.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordldkey.h"
 
 #include "frontend/cbtconfig.h"
 #include "frontend/cexportmanager.h"

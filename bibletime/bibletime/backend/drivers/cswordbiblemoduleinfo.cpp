@@ -9,8 +9,8 @@
 
 //BibleTime includes
 #include "cswordbiblemoduleinfo.h"
-#include "cswordbackend.h"
-#include "cswordversekey.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/keys/cswordversekey.h"
 
 //Qt
 #include <QFile>

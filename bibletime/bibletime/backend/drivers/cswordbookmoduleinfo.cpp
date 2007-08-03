@@ -9,7 +9,7 @@
 
 //BibleTime includes
 #include "cswordbookmoduleinfo.h"
-#include "cswordtreekey.h"
+#include "backend/keys/cswordtreekey.h"
 
 //Sword includes
 #include <treekeyidx.h>

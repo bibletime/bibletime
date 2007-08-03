@@ -18,8 +18,8 @@
 #include "util/cresmgr.h"
 #include "util/cpointers.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 
 //Qt includes
 #include <QVBoxLayout>

@@ -10,7 +10,7 @@
 #ifndef RENDERINGCHTMLEXPORTRENDERING_H
 #define RENDERINGCHTMLEXPORTRENDERING_H
 
-#include "cswordbackend.h"
+#include "backend/managers/cswordbackend.h"
 #include "ctextrendering.h"
 
 #include "frontend/cbtconfig.h"

@@ -13,8 +13,8 @@
 #include "cswordsetupmodulelistview.h"
 #include "cswordsetupinstallsourcesdialog.h"
 
-#include "backend/cswordbackend.h"
-#include "backend/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 // #include "btinstallmgr.h"
 
 #include "cmanageindiceswidget.h"

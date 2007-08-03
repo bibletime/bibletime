@@ -8,7 +8,7 @@
 **********/
 
 #include "cswordldkey.h"
-#include "cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
 
 //Sword includes
 #include <swmodule.h>

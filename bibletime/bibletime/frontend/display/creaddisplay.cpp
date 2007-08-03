@@ -12,19 +12,19 @@
 //BibleTime includes
 #include "creaddisplay.h"
 
-#include "../../backend/cswordmoduleinfo.h"
-#include "../../backend/cswordbiblemoduleinfo.h"
-#include "../../backend/cswordlexiconmoduleinfo.h"
-#include "../../backend/cswordbookmoduleinfo.h"
-#include "../../backend/cswordkey.h"
-#include "../../backend/cswordversekey.h"
-#include "../../backend/cswordtreekey.h"
-#include "../../backend/cswordldkey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordldkey.h"
 
-#include "../displaywindow/cdisplaywindow.h"
-#include "../displaywindow/creadwindow.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/creadwindow.h"
 
-#include "../cexportmanager.h"
+#include "frontend/cexportmanager.h"
 
 #include "../../util/scoped_resource.h"
 

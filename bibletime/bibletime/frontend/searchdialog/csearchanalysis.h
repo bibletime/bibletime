@@ -14,11 +14,11 @@
 
 //BibleTime includes
 
-#include "../../backend/cswordmoduleinfo.h"
-#include "../../backend/cswordbackend.h"
-#include "../../backend/cswordmodulesearch.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/cswordmodulesearch.h"
 
-#include "../../util/cpointers.h"
+#include "util/cpointers.h"
 
 //Sword includes
 

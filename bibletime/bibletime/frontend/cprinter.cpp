@@ -12,8 +12,8 @@
 #include "cprinter.h"
 
 //BibleTime includes
-#include "backend/cdisplaytemplatemgr.h"
-#include "backend/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "util/cpointers.h"
 

@@ -11,7 +11,7 @@
 
 #include "csearchresultview.h"
 
-#include "backend/cswordversekey.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/cdragdropmgr.h"
 #include "frontend/cexportmanager.h"

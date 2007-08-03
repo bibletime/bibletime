@@ -2,16 +2,16 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 #include "ctoolclass.h"
 
-#include "../util/cresmgr.h"
-#include "../backend/cswordbackend.h"
-#include "../backend/cswordmoduleinfo.h"
+#include "util/cresmgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt
 #include <QLabel>
@@ -21,7 +21,7 @@
 #include <QRegExp>
 //Added by qt3to4:
 #include <QPixmap>
-#include <Q3Frame>
+#include <QFrame>
 
 //KDE includes
 #include <klocale.h>
@@ -162,7 +162,7 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
 	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B><BR>%2").arg(heading).arg(text),parent );
 //	label->setAutoResize(true);
 	label->setMargin(1);
-	label->setFrameStyle(Q3Frame::Box | Q3Frame::Plain);
+	label->setFrameStyle(QFrame::Box | QFrame::Plain);
 	return label;
 }
 

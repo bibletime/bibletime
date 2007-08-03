@@ -13,7 +13,7 @@
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 
-#include "backend/cswordtreekey.h"
+#include "backend/keys/cswordtreekey.h"
 
 #include "frontend/display/cdisplay.h"
 #include "frontend/keychooser/cbooktreechooser.h"

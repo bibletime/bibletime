@@ -12,9 +12,9 @@
 #include "cmodulechooserbutton.h"
 #include "cmodulechooserbar.h"
 
-#include "../../backend/cswordbackend.h"
+#include "backend/managers/cswordbackend.h"
 
-#include "../../util/cresmgr.h"
+#include "util/cresmgr.h"
 
 //Qt includes
 #include <QString>

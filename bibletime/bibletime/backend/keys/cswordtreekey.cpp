@@ -8,7 +8,7 @@
 **********/
 
 #include "cswordtreekey.h"
-#include "cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
 
 CSwordTreeKey::CSwordTreeKey( const CSwordTreeKey& k ) : CSwordKey(k), TreeKeyIdx(k) {}
 

@@ -13,8 +13,8 @@
 #define CSEARCHDIALOGPAGES_H
 
 //BibleTime includes
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
 #include "ui_searchoptionsform.h" // uic generated

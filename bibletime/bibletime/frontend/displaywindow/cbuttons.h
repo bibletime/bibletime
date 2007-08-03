@@ -13,8 +13,8 @@
 #define CBUTTONS_H
 
 //BibleTime includes
-#include "backend/cswordbackend.h"
-#include "backend/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //QT includes
 #include <QHash>

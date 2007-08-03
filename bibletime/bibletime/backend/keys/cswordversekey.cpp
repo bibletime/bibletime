@@ -2,14 +2,14 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 #include "cswordversekey.h"
-#include "cswordbiblemoduleinfo.h"
-#include "cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
 
 //Qt
 #include <QStringList>

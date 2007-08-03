@@ -10,8 +10,8 @@
 
 
 #include "cmdiarea.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordversekey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/keychooser/ckeychooser.h"

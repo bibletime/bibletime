@@ -11,7 +11,7 @@
 #define CSWORDBACKEND_H
 
 //BibleTime includes
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 //#include <QList>

@@ -13,28 +13,21 @@
 #include "cmainindex.h"
 #include "cindexitem.h"
 
-#include "../../backend/creferencemanager.h"
-//#include "../../backend/cswordmoduleinfo.h"
+#include "backend/managers/creferencemanager.h"
 
-#include "../searchdialog/csearchdialog.h"
-#include "../cbtconfig.h"
-//#include "../cdropmgr.h"
-#include "../cinfodisplay.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "frontend/cbtconfig.h"
+#include "frontend/cinfodisplay.h"
 
-#include "../cprinter.h"
+#include "frontend/cprinter.h"
 
-#include "../../util/cresmgr.h"
-#include "../../util/scoped_resource.h"
+#include "util/cresmgr.h"
+#include "util/scoped_resource.h"
 
 //Qt includes
-//#include <q3header.h>
-//#include <q3listview.h>
-//#include <q3dragobject.h>
 #include <QInputDialog>
-#include <qregexp.h>
-//Added by qt3to4:
+#include <QRegExp>
 #include <QDragLeaveEvent>
-//#include <Q3PtrList>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 

@@ -11,7 +11,7 @@
 #define CTEXTRENDERING_H
 
 //BT includes
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "util/autoptrvector.h"
 
 //QT includes

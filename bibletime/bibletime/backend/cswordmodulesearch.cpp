@@ -11,8 +11,8 @@
 
 //BibleTime includes
 #include "cswordmodulesearch.h"
-#include "cswordmoduleinfo.h"
-#include "cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 #include "frontend/cbtconfig.h"
 
 //Sword includes

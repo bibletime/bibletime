@@ -12,8 +12,8 @@
 #include "cswordsetupmodulelistview.h"
 #include "btinstallmgr.h"
 
-#include "backend/cswordbackend.h"
-#include "backend/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"

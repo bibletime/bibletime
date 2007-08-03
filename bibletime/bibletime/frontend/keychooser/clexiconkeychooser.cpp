@@ -13,10 +13,10 @@
 #include "ckeychooserwidget.h"
 #include "cscrollbutton.h"
 
-#include "../../backend/cswordlexiconmoduleinfo.h"
-#include "../../backend/cswordldkey.h"
-#include "../cbtconfig.h"
-#include "../../util/cresmgr.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/keys/cswordldkey.h"
+#include "frontend/cbtconfig.h"
+#include "util/cresmgr.h"
 
 //STL headers
 #include <algorithm>

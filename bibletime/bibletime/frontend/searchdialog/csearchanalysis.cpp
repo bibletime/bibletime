@@ -12,8 +12,8 @@
 #include "csearchanalysis.h"
 #include "csearchdialog.h"
 
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/cbtconfig.h"
 

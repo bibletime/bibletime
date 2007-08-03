@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,19 +11,19 @@
 
 #include "chtmlreaddisplay.h"
 
-#include "../displaywindow/cdisplaywindow.h"
-#include "../displaywindow/creadwindow.h"
-#include "../../backend/creferencemanager.h"
-#include "../../backend/cswordkey.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/creadwindow.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/keys/cswordkey.h"
 
-#include "../cbtconfig.h"
+#include "frontend/cbtconfig.h"
 //#include "../cdragdropmgr.h"
-#include "../cdragdrop.h"
-#include "../cinfodisplay.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/cinfodisplay.h"
 
-#include "../../util/ctoolclass.h"
-#include "../../util/cpointers.h"
-#include "../../util/scoped_resource.h"
+#include "util/ctoolclass.h"
+#include "util/cpointers.h"
+#include "util/scoped_resource.h"
 
 //We will need to reference this in the Qt includes
 #include <kdeversion.h>

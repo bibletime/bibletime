@@ -11,9 +11,9 @@
 
 #include "crossrefrendering.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordversekey.h"
-#include "backend/creferencemanager.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/creferencemanager.h"
 
 namespace InfoDisplay {
 

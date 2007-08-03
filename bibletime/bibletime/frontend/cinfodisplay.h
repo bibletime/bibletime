@@ -14,7 +14,7 @@
 #define CINFODISPLAY_H
 
 //Backend
-#include "../backend/ctextrendering.h"
+#include "backend/rendering/ctextrendering.h"
 
 //Qt includes
 #include <QWidget>

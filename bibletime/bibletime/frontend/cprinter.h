@@ -13,8 +13,8 @@
 #define CPRINTER_H
 
 //BibleTime backend
-#include "backend/cswordbackend.h"
-#include "backend/cdisplayrendering.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/rendering/cdisplayrendering.h"
 
 //BibleTime frontend
 #include "frontend/cbtconfig.h"

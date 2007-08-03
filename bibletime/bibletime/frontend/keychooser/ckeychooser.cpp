@@ -10,10 +10,10 @@
 
 
 #include "ckeychooser.h"
-#include "../../backend/cswordmoduleinfo.h"
-#include "../../backend/cswordbiblemoduleinfo.h"
-#include "../../backend/cswordcommentarymoduleinfo.h"
-#include "../../backend/cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
 
 #include "clexiconkeychooser.h"
 #include "cbiblekeychooser.h"

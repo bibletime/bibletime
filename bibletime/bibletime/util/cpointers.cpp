@@ -10,8 +10,8 @@
 #include "cpointers.h"
 
 //BibleTime's backend
-#include "backend/cswordbackend.h"
-#include "backend/cdisplaytemplatemgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 
 //BibleTime's frontend
 #include "frontend/cprinter.h"

@@ -24,7 +24,7 @@
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 
-#include "backend/cswordkey.h"
+#include "backend/keys/cswordkey.h"
 
 #include "frontend/keychooser/ckeychooser.h"
 

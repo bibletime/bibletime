@@ -10,11 +10,12 @@
 #include "ctextrendering.h"
 
 //BibleTime
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cdisplaytemplatemgr.h"
-#include "backend/creferencemanager.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/creferencemanager.h"
+
 #include "util/scoped_resource.h"
 #include "util/ctoolclass.h"
 

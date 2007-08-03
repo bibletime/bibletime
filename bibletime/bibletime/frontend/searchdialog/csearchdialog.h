@@ -16,8 +16,8 @@
 #include "csearchdialogpages.h"
 #include "csearchanalysis.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
 

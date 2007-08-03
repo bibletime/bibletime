@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -15,16 +15,6 @@
 //BibleTime includes
 #include "clexiconreadwindow.h"
 
-//#include "backend/cswordkey.h"
-//#include "backend/cswordversekey.h"
-
-//Qt includes
-//#include <qwidget.h>
-//Added by qt3to4:
-//#include <QEvent>
-
-//KDE includes
-//#include <kaction.h>
 
 
 class CTransliterationButton;
@@ -37,6 +27,8 @@ class KActionMenu;
 
 class QObject;
 class QEvent;
+
+
 
 /**The read display window for Bibles.
   *@author The BibleTime team

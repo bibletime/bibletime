@@ -9,7 +9,7 @@
 
 #include "clanguagemgr.h"
 
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "cswordbackend.h"
 
 #include "util/cpointers.h"

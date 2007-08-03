@@ -11,7 +11,7 @@
 #define CSWORDBIBLEMODULEINFO_H
 
 #include "cswordmoduleinfo.h"
-#include "cswordversekey.h"
+#include "backend/keys/cswordversekey.h"
 
 //Qt
 #include <QStringList>

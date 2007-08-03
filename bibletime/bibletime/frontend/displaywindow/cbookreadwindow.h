@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -14,12 +14,12 @@
 
 //BibleTime includes
 #include "clexiconreadwindow.h"
-//#include "backend/cswordkey.h"
-//#include "backend/cswordtreekey.h"
-//#include "backend/cswordversekey.h"
+
 
 class KToggleAction;
 class CBookTreeChooser;
+
+
 
 /**
   * @author The BibleTime team

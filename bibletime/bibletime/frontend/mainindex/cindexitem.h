@@ -13,19 +13,16 @@
 #define CINDEXITEM_H
 
 //BibleTime includes
-#include "../../util/cpointers.h"
+#include "util/cpointers.h"
 
-#include "../../backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 #include <QtXml/qdom.h>
-//Added by qt3to4:
 #include <QDropEvent>
 #include <QList>
 #include <QTreeWidgetItem>
 
-//KDE includes
-//#include <klistview.h>
 
 class KConfig;
 class CFolderBase;

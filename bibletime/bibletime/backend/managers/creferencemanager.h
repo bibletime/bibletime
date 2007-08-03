@@ -13,7 +13,7 @@
 //Qt includes
 #include <QString>
 
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 /** Contains static functions to work with referneces used for Drag & Drop and for hyperlinks used in our
  * rendered HTML code.

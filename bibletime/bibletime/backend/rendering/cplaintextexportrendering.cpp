@@ -9,7 +9,7 @@
 
 //Backend includes
 #include "cplaintextexportrendering.h"
-#include "cswordkey.h"
+#include "backend/keys/cswordkey.h"
 
 //Util
 #include "util/scoped_resource.h"

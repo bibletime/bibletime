@@ -13,7 +13,7 @@
 #define CKEYCHOOSER_H
 
 
-#include "../../backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QWidget>
 

@@ -15,12 +15,12 @@
 //BibleTime includes
 #include "util/cpointers.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordbackend.h"
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/cswordtreekey.h"
-#include "backend/cswordldkey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordldkey.h"
 
 #include "frontend/profile/cprofilewindow.h"
 

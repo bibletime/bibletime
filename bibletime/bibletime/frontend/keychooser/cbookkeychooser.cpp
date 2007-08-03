@@ -10,9 +10,9 @@
 
 
 #include "cbookkeychooser.h"
-#include "../../backend/cswordtreekey.h"
-#include "../../backend/cswordbookmoduleinfo.h"
-#include "../cbtconfig.h"
+#include "backend/keys/cswordtreekey.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "frontend/cbtconfig.h"
 
 //Qt includes
 #include <QWidget>

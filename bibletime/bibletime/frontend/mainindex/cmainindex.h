@@ -13,7 +13,7 @@
 //BibleTime includes
 #include "cindexitem.h"
 
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 #include "util/cpointers.h"

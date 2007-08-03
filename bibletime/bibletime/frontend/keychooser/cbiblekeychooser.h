@@ -14,7 +14,7 @@
 
 
 #include "ckeychooser.h"
-#include "../../backend/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include <QList>
 

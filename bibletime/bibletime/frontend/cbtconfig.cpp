@@ -12,8 +12,8 @@
 //BibleTime includes
 #include "cbtconfig.h"
 
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cdisplaytemplatemgr.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 
 #include "util/cpointers.h"
 

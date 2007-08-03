@@ -16,9 +16,9 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 
-#include "backend/btstringmgr.h"
-#include "backend/cswordbackend.h"
-#include "backend/clanguagemgr.h"
+#include "backend/managers/btstringmgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/managers/clanguagemgr.h"
 
 #include "frontend/mainindex/cmainindex.h"
 

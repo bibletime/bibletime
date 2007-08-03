@@ -13,7 +13,7 @@
 #define CEXPORTMANAGER_H
 
 //BibleTime includes
-#include "backend/cswordbackend.h"
+#include "backend/managers/cswordbackend.h"
 #include "cbtconfig.h"
 
 #include "util/cpointers.h"

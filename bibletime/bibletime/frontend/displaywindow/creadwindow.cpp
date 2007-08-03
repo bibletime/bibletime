@@ -12,9 +12,9 @@
 //BibleTime includes
 #include "creadwindow.h"
 
-#include "backend/centrydisplay.h"
-#include "backend/cdisplayrendering.h"
-#include "backend/cswordkey.h"
+#include "backend/rendering/centrydisplay.h"
+#include "backend/rendering/cdisplayrendering.h"
+#include "backend/keys/cswordkey.h"
 
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"

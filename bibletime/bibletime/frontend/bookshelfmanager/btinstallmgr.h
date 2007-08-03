@@ -14,7 +14,7 @@
 
 
 //BibleTIme includes
-#include "backend/cswordbackend.h"
+#include "backend/managers/cswordbackend.h"
 
 
 //sword includes

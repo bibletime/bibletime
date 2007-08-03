@@ -10,7 +10,7 @@
 #ifndef CSWORDMODULEINFO_H
 #define CSWORDMODULEINFO_H
 
-#include "clanguagemgr.h"
+#include "backend/managers/clanguagemgr.h"
 
 //Qt
 #include <QString>

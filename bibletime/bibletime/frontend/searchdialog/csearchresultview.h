@@ -13,7 +13,7 @@
 #define CSEARCHRESULTSVIEW_H
 
 //BibleTime includes
-#include "backend/cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QLabel>
 #include <QTreeWidget>

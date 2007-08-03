@@ -13,11 +13,11 @@
 #include "cindexitem.h"
 #include "cmainindex.h"
 
-#include "backend/creferencemanager.h"
-#include "backend/cswordmoduleinfo.h"
-#include "backend/cswordkey.h"
-#include "backend/cswordversekey.h"
-#include "backend/clanguagemgr.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/cexportmanager.h"

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -13,7 +13,7 @@
 #define CSWORDMODULESEARCH_H
 
 //BibleTime - backend
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //BibleTime - utils
 #include "util/cpointers.h"
@@ -21,7 +21,7 @@
 //Qt includes
 #include <QObject>
 #include <QString>
-//#include <Q3Signal>
+
 
 //System includes
 #include <pthread.h>

@@ -9,11 +9,11 @@
 
 #include "chtmlexportrendering.h"
 
-#include "cdisplaytemplatemgr.h"
-#include "clanguagemgr.h"
-#include "cswordkey.h"
-#include "cswordversekey.h"
-#include "cswordmoduleinfo.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "util/cpointers.h"
 #include "util/scoped_resource.h"
