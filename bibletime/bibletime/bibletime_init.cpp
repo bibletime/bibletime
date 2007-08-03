@@ -352,14 +352,14 @@ void BibleTime::initActions() {
 	//									 CResMgr::mainMenu::window::cascade::actionName
 	//									);
 	//m_windowCascade_action->setToolTip( CResMgr::mainMenu::window::cascade::tooltip );
-	m_windowCascade_action = new KToggleAction(ac);
+	m_windowCascade_action = new KAction(ac);
 	initAction(
 		m_windowCascade_action,
 		i18n("&Cascade"),
-		CResMgr::mainMenu::window::arrangementMode::cascade::icon,
-		CResMgr::mainMenu::window::arrangementMode::cascade::accel,
-		CResMgr::mainMenu::window::arrangementMode::cascade::tooltip,
-		CResMgr::mainMenu::window::arrangementMode::cascade::actionName,
+		CResMgr::mainMenu::window::cascade::icon,
+		CResMgr::mainMenu::window::cascade::accel,
+		CResMgr::mainMenu::window::cascade::tooltip,
+		CResMgr::mainMenu::window::cascade::actionName,
 		SLOT( slotCascade() )
 	);
 	
@@ -371,6 +371,16 @@ void BibleTime::initActions() {
 	//							  CResMgr::mainMenu::window::tileVertical::actionName
 	//										 );
 	//m_windowTileVertical_action->setToolTip( CResMgr::mainMenu::window::tileVertical::tooltip );
+	m_windowTileVertical_action = new KAction(ac);
+	initAction(
+		m_windowTileVertical_action,
+		i18n("Tile &vertically"),
+		CResMgr::mainMenu::window::tileVertical::icon,
+		CResMgr::mainMenu::window::tileVertical::accel,
+		CResMgr::mainMenu::window::tileVertical::tooltip,
+		CResMgr::mainMenu::window::tileVertical::actionName,
+		SLOT( slotTileVertical() )
+	);
 
 	//m_windowTileHorizontal_action = new KAction(i18n("Tile &horizontally"),
 	//								CResMgr::mainMenu::window::tileHorizontal::icon,
@@ -379,7 +389,16 @@ void BibleTime::initActions() {
 	//								CResMgr::mainMenu::window::tileHorizontal::actionName
 	//										   );
 	//m_windowTileHorizontal_action->setToolTip( CResMgr::mainMenu::window::tileHorizontal::tooltip );
-
+	m_windowTileHorizontal_action = new KAction(ac);
+	initAction(
+		m_windowTileVertical_action,
+		i18n("Tile &horizontally"),
+		CResMgr::mainMenu::window::tileHorizontal::icon,
+		CResMgr::mainMenu::window::tileHorizontal::accel,
+		CResMgr::mainMenu::window::tileHorizontal::tooltip,
+		CResMgr::mainMenu::window::tileHorizontal::actionName,
+		SLOT( slotTileHorizontal() )
+	);
 	
 
 
@@ -390,7 +409,16 @@ void BibleTime::initActions() {
 	//									  CResMgr::mainMenu::window::closeAll::actionName
 	//									 );
 	//m_windowCloseAll_action->setToolTip( CResMgr::mainMenu::window::closeAll::tooltip );
-	
+	m_windowCloseAll_action = new KAction(ac);
+	initAction(
+		m_windowCloseAll_action,
+		i18n("Cl&ose all"),
+		CResMgr::mainMenu::window::closeAll::icon,
+		CResMgr::mainMenu::window::closeAll::accel,
+		CResMgr::mainMenu::window::closeAll::tooltip,
+		CResMgr::mainMenu::window::closeAll::actionName,
+		SLOT( slotCloseAll() )
+	);	
 
 	//m_windowSaveProfile_action = new KActionMenu(i18n("&Save session"),
 	//							 CResMgr::mainMenu::window::saveProfile::icon,
@@ -398,7 +426,8 @@ void BibleTime::initActions() {
 	//							 CResMgr::mainMenu::window::saveProfile::actionName
 	//											);
 	//m_windowSaveProfile_action->setToolTip( CResMgr::mainMenu::window::saveProfile::tooltip );
-	
+	m_windowSaveProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::saveProfile::icon), i18n("&Save session"), ac);
+	ac->addAction(CResMgr::mainMenu::window::saveProfile::actionName, m_windowSaveProfile_action);
 	m_windowSaveProfile_action->setDelayed( false );
 	
 
@@ -409,6 +438,16 @@ void BibleTime::initActions() {
 	//								  CResMgr::mainMenu::window::saveToNewProfile::actionName
 	//											 );
 	//m_windowSaveToNewProfile_action->setToolTip( CResMgr::mainMenu::window::saveToNewProfile::tooltip );
+	m_windowSaveToNewProfile_action = new KAction(ac);
+	initAction(
+		m_windowSaveToNewProfile_action,
+		i18n("Save as &new session"),
+		CResMgr::mainMenu::window::saveToNewProfile::icon,
+		CResMgr::mainMenu::window::saveToNewProfile::accel,
+		CResMgr::mainMenu::window::saveToNewProfile::tooltip,
+		CResMgr::mainMenu::window::saveToNewProfile::actionName,
+		SLOT( slotSaveToNewProfile() )
+	);
 	
 
 	//m_windowLoadProfile_action = new KActionMenu(i18n("&Load session"),
@@ -417,7 +456,8 @@ void BibleTime::initActions() {
 	//							 CResMgr::mainMenu::window::loadProfile::actionName
 	//											);
 	//m_windowLoadProfile_action->setToolTip(	CResMgr::mainMenu::window::loadProfile::tooltip	);
-	
+	m_windowLoadProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::loadProfile::icon), i18n("&Load session"), ac);
+	ac->addAction(CResMgr::mainMenu::window::loadProfile::actionName, m_windowLoadProfile_action);
 	m_windowLoadProfile_action->setDelayed( false );
 	
 	//m_windowDeleteProfile_action = new KActionMenu(i18n("&Delete session"),
@@ -426,6 +466,8 @@ void BibleTime::initActions() {
 	//							   CResMgr::mainMenu::window::deleteProfile::actionName
 	//											  );
 	//m_windowLoadProfile_action->setToolTip( CResMgr::mainMenu::window::deleteProfile::tooltip );
+	m_windowDeleteProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::deleteProfile::icon), i18n("&Delete session"), ac);
+	ac->addAction(CResMgr::mainMenu::window::deleteProfile::actionName, m_windowDeleteProfile_action);
 	m_windowLoadProfile_action->setDelayed( false );
 
 
@@ -436,6 +478,17 @@ void BibleTime::initActions() {
 	//							CResMgr::mainMenu::window::showFullscreen::actionName
 	//											 );
 	//m_windowFullscreen_action->setToolTip( CResMgr::mainMenu::window::showFullscreen::tooltip );
+	m_windowFullscreen_action = new KToggleAction(ac);
+	initAction(
+		m_windowFullscreen_action,
+		i18n("&Fullscreen mode"),
+		CResMgr::mainMenu::window::showFullscreen::icon,
+		CResMgr::mainMenu::window::showFullscreen::accel,
+		CResMgr::mainMenu::window::showFullscreen::tooltip,
+		CResMgr::mainMenu::window::showFullscreen::actionName,
+		SLOT( toggleFullscreen() )
+	);
+
 	m_windowFullscreen_action->setShortcutConfigurable(true);
 	
 
@@ -462,6 +515,15 @@ void BibleTime::initActions() {
 	//					 CResMgr::mainMenu::help::handbook::actionName
 	//					);
 	//action->setToolTip( CResMgr::mainMenu::help::handbook::tooltip );
+	initAction(
+		new KAction(ac),
+		i18n("&Handbook"),
+		CResMgr::mainMenu::help::handbook::icon,
+		CResMgr::mainMenu::help::handbook::accel,
+		CResMgr::mainMenu::help::handbook::tooltip,
+		CResMgr::mainMenu::help::handbook::actionName,
+		SLOT( openOnlineHelp_Handbook() )
+	);
 
 	
 	//action = new KAction(i18n("&Bible Study Howto"),
@@ -471,6 +533,16 @@ void BibleTime::initActions() {
 	//					 CResMgr::mainMenu::help::bibleStudyHowTo::actionName
 	//					);
 	//action->setToolTip( CResMgr::mainMenu::help::bibleStudyHowTo::tooltip );
+	initAction(
+		new KAction(ac),
+		i18n("&Bible Study Howto"),
+		CResMgr::mainMenu::help::bibleStudyHowTo::icon,
+		CResMgr::mainMenu::help::bibleStudyHowTo::accel,
+		CResMgr::mainMenu::help::bibleStudyHowTo::tooltip,
+		CResMgr::mainMenu::help::bibleStudyHowTo::actionName,
+		SLOT( slotopenOnlineHelp_Howto() )
+	);
+
 
 	if ( ac->action( KStandardAction::stdName( KStandardAction::WhatsThis ) ) ) {  //delete "What's this" action if KDE created it already
 		QAction* action = ac->action(KStandardAction::stdName( KStandardAction::WhatsThis ));
@@ -494,6 +566,15 @@ void BibleTime::initActions() {
 	//					 CResMgr::mainMenu::help::dailyTip::actionName
 	//					);
 	//action->setToolTip(CResMgr::mainMenu::help::dailyTip::tooltip);
+	initAction(
+		new KAction(ac),
+		i18n("&Daily tip"),
+		CResMgr::mainMenu::help::dailyTip::icon,
+		CResMgr::mainMenu::help::dailyTip::accel,
+		CResMgr::mainMenu::help::dailyTip::tooltip,
+		CResMgr::mainMenu::help::dailyTip::actionName,
+		SLOT( slotHelpTipOfDay() )
+	);	
 	
 
 	if ( ac->action( KStandardAction::stdName( KStandardAction::AboutApp ) ) ) {  //delete About KDE action if KDE created it
