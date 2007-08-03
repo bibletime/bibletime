@@ -88,6 +88,10 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cinfodisplay.cpp
 	bibletime/frontend/cinputdialog.cpp
 	bibletime/frontend/cexportmanager.cpp
+
+	#"Bookshelf" widget in main window
+	#bibletime/frontend/mainindex/cmainindex.cpp
+	#bibletime/frontend/mainindex/cindexitembase.cpp
 	
 	#Settings dialog (configuration)
 	bibletime/frontend/settingsdialogs/cacceleratorsettings.cpp

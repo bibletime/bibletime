@@ -29,7 +29,7 @@
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/mainindex/cmainindex.h"
-#include "frontend/mainindex/cindexitem.h"
+#include "frontend/mainindex/cindexitembase.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 //#include "frontend/searchdialog/csearchdialog.h" //TODO
@@ -117,7 +117,7 @@ void BibleTime::slotSettingsChanged() {
 	//}
 	QTreeWidgetItem* item = m_mainIndex->topLevelItem(0);
 	while(item) {
-		CItemBase* citem = dynamic_cast<CItemBase*>(item);
+		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(item);
 		if (citem) {
 			citem->update();
 		}
