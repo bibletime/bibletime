@@ -43,18 +43,22 @@ class KActionMenu;
 class CMainIndex : public QTreeWidget {
 	Q_OBJECT
 
-	class ToolTip : public QToolTip {
-	public:
-		ToolTip(CMainIndex* parent);
-		virtual ~ToolTip() {}
-		/**
-		* Displays a tooltip for position p using the getToolTip() function of CGroupManagerItem
-		*/
-		virtual void maybeTip( const QPoint &pos);
-
-	private:
-		CMainIndex* m_mainIndex;
-	};
+	
+	// Must be removed, qtooltip cannot be subclassed (it's not even a class really!)
+	// Maybe items should just have their own tooltips (do they)?
+	// Tooltip event can be handled and data shown in tooltip or in mag view.
+// 	class ToolTip : public QToolTip {
+// 	public:
+// 		ToolTip(CMainIndex* parent);
+// 		virtual ~ToolTip() {}
+// 		/**
+// 		* Displays a tooltip for position p using the getToolTip() function of CGroupManagerItem
+// 		*/
+// 		virtual void maybeTip( const QPoint &pos);
+// 
+// 	private:
+// 		CMainIndex* m_mainIndex;
+// 	};
 
 public:
 	CMainIndex(QWidget *parent);
@@ -94,19 +98,21 @@ protected: // Protected methods
 	*/
 	virtual QMimeData* dragObject();
 	/**
-	* Reimplementation from KListView. Returns true if the drag is acceptable for the listview.
+	* Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the listview.
 	*/
-	virtual bool acceptDrag( QDropEvent* event ) const;
+	virtual void dragEnterEvent( QDragEnterEvent* event ) const;
+	virtual void dragMoveEvent( QDragMoveEvent* event ) const;
+	virtual void dropEvent( QDropEvent* event ) const;
 	/**
 	* Returns the correct KAction object for the given type of action.
 	*/
 	KAction* const action( const CIndexItemBase::MenuAction type ) const;
 	/**
-	* Reimplementation. Takes care of movable items.
+	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
-	virtual void startDrag();
+	virtual void startDrag(Qt::DropActions supportedActions);
 	/**
-	* Reimplementation to support the items dragEnter and dragLeave functions.
+	* TODO: qt4 Reimplementation to support the items dragEnter and dragLeave functions.
 	*/
 	virtual void contentsDragMoveEvent( QDragMoveEvent* event );
 	/**
@@ -122,7 +128,7 @@ protected: // Protected methods
 	void saveSettings();
 	/** Reimplementation.
 	 */
-	virtual void polish();
+	virtual void ensurePolished();
 
 protected slots: // Protected slots
 	/**
@@ -184,9 +190,11 @@ protected slots: // Protected slots
 	*/
 	void editModuleHTML();
 
+	
+
 private:
 	CSearchDialog* m_searchDialog;
-	ToolTip* m_toolTip;
+	//ToolTip* m_toolTip;
 	bool m_itemsMovable;
 	QTreeWidgetItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
@@ -195,6 +203,9 @@ private:
 	* Initializes the view.
 	*/
 	void initView();
+	/** Convenience function for creating a new KAction. */
+	KAction* newKAction(const QString& text, const QString& pix, int shortcut, const QObject* receiver, const char* slot, QObject* parent);
+
 	/**
 	* Returns true if more than one netry is supported by this action type.
 	* Returns false for actions which support only one entry, e.g. about module etc.

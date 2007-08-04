@@ -44,7 +44,7 @@ public:
 	void rename();
 	virtual void newSubFolder();
 
-	QList<QTreeWidgetItem> getChildList();
+	QList<QTreeWidgetItem*> getChildList();
 
 protected:
 	/**

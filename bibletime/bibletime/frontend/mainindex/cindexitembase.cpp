@@ -37,8 +37,8 @@ const QString CIndexItemBase::toolTip()
 }
 
 /** Returns the used main index. */
-CMainIndex* CIndexItemBase::listView() const {
-	return dynamic_cast<CMainIndex*>( QTreeWidgetItem::listView() );
+CMainIndex* CIndexItemBase::treeWidget() const {
+	return dynamic_cast<CMainIndex*>( QTreeWidgetItem::treeWidget() );
 }
 
 const bool CIndexItemBase::isFolder() {
@@ -64,7 +64,8 @@ void CIndexItemBase::moveAfter( CIndexItemBase* const item )
 		return;
 
 	if ( parent() == item->parent() ) { //same parent means level
-		moveItem(item); //both items are on the same level, so we can use moveItem
+		//TODO: take item from parent, readd it
+		//moveItem(item); //both items are on the same level, so we can use moveItem
 	}
 }
 
@@ -88,9 +89,9 @@ QDomElement CIndexItemBase::saveToXML( QDomDocument& /*document*/ )
 void CIndexItemBase::loadFromXML( QDomElement& /*element*/ )
 {}
 
-void dropped( QDropEvent* e)
+void dropped( /*QDropEvent* e*/)
 {
-	dropped(e,0);
+	//dropped(e,0);
 }
 
 void CIndexItemBase::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*after*/)
@@ -114,13 +115,13 @@ const bool CIndexItemBase::isSortingEnabled()
 }
 
 /** Reimplementation which takes care of the our sortingEnabled setting. */
-void CIndexItemBase::sortChildItems( int col, bool asc )
+void CIndexItemBase::sortChildItems( int col, Qt::SortOrder order )
 {
 	if (!isSortingEnabled()) {
 		return;
 	}
 	else {
-		QTreeWidgetItem::sortChildItems( col, asc );
+		QTreeWidgetItem::sortChildren( col, order );
 	}
 }
 
@@ -131,6 +132,6 @@ void CIndexItemBase::sort()
 		return;
 	}
 	else {
-		QTreeWidgetItem::sort();
+		// TODO: not in qt4 //QTreeWidgetItem::sort();
 	}
 }

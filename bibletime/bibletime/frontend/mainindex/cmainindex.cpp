@@ -52,47 +52,47 @@
 
 
 
-CMainIndex::ToolTip::ToolTip(CMainIndex* parent)
-{}
+//CMainIndex::ToolTip::ToolTip(CMainIndex* parent)
+//{}
 
-void CMainIndex::ToolTip::maybeTip(const QPoint& p) {
-	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(m_mainIndex->itemAt(p));
-	Q_ASSERT(i);
-	if ( !i ) {
-		return;
-	}
-
-	//TODO: ???
-	//QRect r = m_mainIndex->itemRect(i);
-	//if (!r.isValid()) {
-	//	return;
-	//}
-
-	//get type of item and display correct text
-	const QString text = i->toolTip();
-	if (!text.isEmpty()) {
-		CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>(i);
-		if (bookmark) {
-			(CPointers::infoDisplay())->setInfo(
-				InfoDisplay::CInfoDisplay::CrossReference,
-				bookmark->module()->name() + ":" + bookmark->key()
-			);
-		}
-		else {
-			CPointers::infoDisplay()->clearInfo();
-		}
-
-		//tip(r, text); //TODO
-	}
-	else {
-		CPointers::infoDisplay()->clearInfo();
-	}
-}
+// void CMainIndex::ToolTip::maybeTip(const QPoint& p) {
+// 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(m_mainIndex->itemAt(p));
+// 	Q_ASSERT(i);
+// 	if ( !i ) {
+// 		return;
+// 	}
+// 
+// 	//TODO: ???
+// 	//QRect r = m_mainIndex->itemRect(i);
+// 	//if (!r.isValid()) {
+// 	//	return;
+// 	//}
+// 
+// 	//get type of item and display correct text
+// 	const QString text = i->toolTip();
+// 	if (!text.isEmpty()) {
+// 		CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>(i);
+// 		if (bookmark) {
+// 			(CPointers::infoDisplay())->setInfo(
+// 				InfoDisplay::CInfoDisplay::CrossReference,
+// 				bookmark->module()->name() + ":" + bookmark->key()
+// 			);
+// 		}
+// 		else {
+// 			CPointers::infoDisplay()->clearInfo();
+// 		}
+// 
+// 		//tip(r, text); //TODO
+// 	}
+// 	else {
+// 		CPointers::infoDisplay()->clearInfo();
+// 	}
+// }
 
 CMainIndex::CMainIndex(QWidget *parent)
 	: QTreeWidget(parent),
 	m_searchDialog(0),
-	m_toolTip(0),
+	//m_toolTip(0),
 	m_itemsMovable(false),
 	m_autoOpenFolder(0),
 	m_autoOpenTimer(this)
@@ -106,8 +106,8 @@ CMainIndex::~CMainIndex() {
 	saveSettings();
 	saveBookmarks();
 
-	this->setToolTip("");
-	delete m_toolTip;
+	//this->setToolTip("");
+	//delete m_toolTip;
 }
 
 /** Reimplementation. Adds the given group to the tree. */
@@ -137,51 +137,52 @@ void CMainIndex::addGroup(const CIndexItemBase::Type type, const QString languag
 
 /** Initializes the view. */
 void CMainIndex::initView() {
-	addColumn(QString::null);
+	//addColumn(QString::null);
 	header()->hide();
 
-	m_toolTip = new ToolTip(this);
+	//m_toolTip = new ToolTip(this);
 	//??? setTooltipColumn(-1);
 	//to disable Qt's tooltips
-	setShowToolTips(false);
+	//setShowToolTips(false);
 
-	setBackgroundMode(PaletteBase);
-	setFullWidth(true);
-	setFocusPolicy(WheelFocus);
+	//setBackgroundMode(PaletteBase);
+	//setFullWidth(true);
+	setFocusPolicy(Qt::WheelFocus);
 
 	setAcceptDrops( true );
 	setDragEnabled( true );
-	setDropVisualizer( true );
-	setDropHighlighter( true );
-	setAutoOpen(true);
+	//setDropVisualizer( true );
+	//setDropHighlighter( true );
+	//setAutoOpen(true);
 	viewport()->setAcceptDrops(true);
 	setRootIsDecorated(false);
 	setAllColumnsShowFocus(true);
-	setItemsMovable(false);
-	setSelectionModeExt(Extended);
+	//setItemsMovable(false);
+	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	//setup the popup menu
 	m_popup = new KMenu(viewport());
-	m_popup->insertTitle(i18n("Bookshelf"));
+	m_popup->addTitle(i18n("Bookshelf"));
 
-	m_actions.newFolder = new KAction(i18n("Create a new folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
-	m_actions.changeFolder = new KAction(i18n("Change this folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
+	m_actions.newFolder = newKAction(i18n("Create a new folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
+	m_actions.changeFolder = newKAction(i18n("Change this folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-	m_actions.changeBookmark = new KAction(i18n("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
-	m_actions.importBookmarks = new KAction(i18n("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
-	m_actions.exportBookmarks = new KAction(i18n("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
-	m_actions.printBookmarks = new KAction(i18n("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
+	m_actions.changeBookmark = newKAction(i18n("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+	m_actions.importBookmarks = newKAction(i18n("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
+	m_actions.exportBookmarks = newKAction(i18n("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
+	m_actions.printBookmarks = newKAction(i18n("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
 
-	m_actions.deleteEntries = new KAction(i18n("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
+	m_actions.deleteEntries = newKAction(i18n("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
 
-	m_actions.editModuleMenu = new KActionMenu(i18n("Edit this work"),CResMgr::mainIndex::editModuleMenu::icon, this);
+	m_actions.editModuleMenu = new KActionMenu(KIcon(CResMgr::mainIndex::editModuleMenu::icon), i18n("Edit this work"), this);
 	m_actions.editModuleMenu->setDelayed(false);
-	m_actions.editModulePlain = new KAction(i18n("Plain text"),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(editModulePlain()), this);
-	m_actions.editModuleHTML = new KAction(i18n("HTML"),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(editModuleHTML()), this);
+
+	m_actions.editModulePlain = newKAction(i18n("Plain text"),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(editModulePlain()), this);
+	m_actions.editModuleHTML = newKAction(i18n("HTML"),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(editModuleHTML()), this);
 	
-	m_actions.searchInModules = new KAction(i18n("Search in selected work(s)"),CResMgr::mainIndex::search::icon, 0, this, SLOT(searchInModules()), this);
-	m_actions.unlockModule = new KAction(i18n("Unlock this work"),CResMgr::mainIndex::unlockModule::icon, 0, this, SLOT(unlockModule()), this);
-	m_actions.aboutModule = new KAction(i18n("About this work"),CResMgr::mainIndex::aboutModule::icon, 0, this, SLOT(aboutModule()), this);
+	m_actions.searchInModules = newKAction(i18n("Search in selected work(s)"),CResMgr::mainIndex::search::icon, 0, this, SLOT(searchInModules()), this);
+	m_actions.unlockModule = newKAction(i18n("Unlock this work"),CResMgr::mainIndex::unlockModule::icon, 0, this, SLOT(unlockModule()), this);
+	m_actions.aboutModule = newKAction(i18n("About this work"),CResMgr::mainIndex::aboutModule::icon, 0, this, SLOT(aboutModule()), this);
 
 
 	//fill the popup menu itself
@@ -215,9 +216,9 @@ void CMainIndex::initView() {
 	m_popup->addAction(m_actions.editModuleMenu);
 
 	//sub item of edit module menu
-	m_actions.editModuleMenu->insert(m_actions.editModulePlain); 
+	m_actions.editModuleMenu->addAction(m_actions.editModulePlain);
 	//sub item of edit module menu
-	m_actions.editModuleMenu->insert(m_actions.editModuleHTML);  
+	m_actions.editModuleMenu->addAction(m_actions.editModuleHTML);
 
 	//m_actions.searchInModules->plug(m_popup);
 	m_popup->addAction(m_actions.searchInModules);
@@ -227,16 +228,25 @@ void CMainIndex::initView() {
 	m_popup->addAction(m_actions.aboutModule);
 }
 
+/** Convenience function for creating a new KAction.
+* Should be replaced with something better; it was easier to make a new function
+* than to modify all KAction constructors.
+*/
+KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+{
+	KAction* action = new KAction(KIcon(pix), text, parent);
+	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
+	return action;
+}
+
 /** Initialize the SIGNAL<->SLOT connections */
 void CMainIndex::initConnections() {
-	connect(this, SIGNAL(executed(QTreeWidgetItem*)),
-			SLOT(slotExecuted(Q3ListViewItem*)));
-	connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-			SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
-	connect(this, SIGNAL(contextMenu(KListView*, QTreeWidgetItem*, const QPoint&)),
-			SLOT(contextMenu(KListView*, QTreeWidgetItem*, const QPoint&)));
-	connect(&m_autoOpenTimer, SIGNAL(timeout()),
-			this, SLOT(autoOpenTimeout()));
+	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+		SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+	QObject::connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
+			SLOT(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
+	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
 }
 
 /** Is called when an item was clicked/double clicked. */
@@ -247,7 +257,7 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
 	}
 
 	if (ci->isFolder()) {
-		i->setOpen(!i->isOpen());
+		i->setExpanded(!i->isExpanded());
 	}
 	else if (CIndexModuleItem* m = dynamic_cast<CIndexModuleItem*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->module();
@@ -317,12 +327,27 @@ QMimeData* CMainIndex::dragObject()
 
 
 /** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
-bool CMainIndex::acceptDrag( QDropEvent* event ) const
+void CMainIndex::dragEnterEvent( QDragEnterEvent* event ) const
 {
-	const QPoint pos = contentsToViewport(event->pos());
+	event->acceptProposedAction();
+}
 
-	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-	return i ? (i->acceptDrop(event) || i->isMovable()) : false;
+void CMainIndex::dragMoveEvent( QDragMoveEvent* event ) const
+{
+// 	const QPoint pos = contentsToViewport(event->pos());
+// 
+// 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
+// 	if (i->acceptDrop(event) || i->isMovable()) {
+// 		event->acceptProposedAction();
+// 	} else {
+// 	
+// 	}
+	
+}
+
+void CMainIndex::dropEvent( QDropEvent* event ) const
+{
+
 }
 
 /** No descriptions */
@@ -338,93 +363,93 @@ void CMainIndex::initTree() {
 
 /** No descriptions */
 void CMainIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidgetItem* after) {
-	Q_ASSERT(after);
-	Q_ASSERT(parent);
-
-	//the drop was started in this main index widget
-	if (m_itemsMovable && ((e->source()) == (viewport()))) {
-		/*
-		* If the drag was started from the main index and should move items and if the destination is the bookmark
-		* folder or one of its subfolders
-		* we remove the current items because the new ones will be inserted soon.
-		*/
-		if (dynamic_cast<CIndexBookmarkFolder*>(parent) || dynamic_cast<CIndexSubFolder*>(parent)) { 
-			// we drop onto the bookmark folder or one of it's subfolders
-			//       QPtrList<QListViewItem> items = selectedItems();
-			//       items.setAutoDelete(true);
-			//       items.clear(); //delete the selected items we dragged
-		}
-	}
-
-	//finally do the drop, either with external drop data or with the moved items' data
-	CIndexItemBase* const parentItem = dynamic_cast<CIndexItemBase*>(parent);
-	CIndexItemBase* const afterItem  = dynamic_cast<CIndexItemBase*>(after);
-
-	bool removeSelectedItems = true;
-	bool moveSelectedItems = false;
-
-	if (afterItem && afterItem->isFolder()) {
-		moveSelectedItems = false;
-		removeSelectedItems = false; //why TRUE?
-
-		afterItem->setOpen(true);
-		afterItem->dropped(e); //inserts new items, moving only works on the same level
-	}
-	else if (afterItem && !afterItem->isFolder() && parentItem) {
-		const bool justMoveSelected =
-			(e->source() == viewport())
-			&& m_itemsMovable
-			&& parentItem->acceptDrop(e)
-			&& !afterItem->acceptDrop(e);
-
-		if (justMoveSelected) {
-			moveSelectedItems = true;
-			removeSelectedItems = false;
-		}
-		else {
-			moveSelectedItems = false;
-			removeSelectedItems = false;
-
-			if (afterItem->acceptDrop(e)) {
-				afterItem->dropped(e, after);
-			}
-			else { //insert in the parent folder and then move the inserted items
-				parentItem->dropped(e, after);
-			}
-		}
-
-		parentItem->setOpen(true);
-	}
-	else if (parentItem) { //no after item present, but a parent is there
-		moveSelectedItems = false;
-		removeSelectedItems = false;
-
-		parentItem->setOpen(true);
-		parentItem->dropped(e);
-	}
-
-	if (moveSelectedItems) {
-		//move all selected items after the afterItem
-		if (m_itemsMovable) {
-			QList<QTreeWidgetItem *> items = selectedItems();
-			QListIterator<QTreeWidgetItem *> it(items);
-			QTreeWidgetItem* i = it.next();
-			QTreeWidgetItem* after = afterItem;
-			while (i && afterItem) {
-				i->moveItem(after);
-				after = i;
-
-				i = it.next();
-			}
-		}
-	}
-
-	if (removeSelectedItems) {
-		QList<QTreeWidgetItem *> items = selectedItems();
-		//items.setAutoDelete(true);
-		qDeleteAll(items);
-		items.clear(); //delete the selected items we dragged
-	}
+// 	Q_ASSERT(after);
+// 	Q_ASSERT(parent);
+// 
+// 	//the drop was started in this main index widget
+// 	if (m_itemsMovable && ((e->source()) == (viewport()))) {
+// 		/*
+// 		* If the drag was started from the main index and should move items and if the destination is the bookmark
+// 		* folder or one of its subfolders
+// 		* we remove the current items because the new ones will be inserted soon.
+// 		*/
+// 		if (dynamic_cast<CIndexBookmarkFolder*>(parent) || dynamic_cast<CIndexSubFolder*>(parent)) { 
+// 			// we drop onto the bookmark folder or one of it's subfolders
+// 			//       QPtrList<QListViewItem> items = selectedItems();
+// 			//       items.setAutoDelete(true);
+// 			//       items.clear(); //delete the selected items we dragged
+// 		}
+// 	}
+// 
+// 	//finally do the drop, either with external drop data or with the moved items' data
+// 	CIndexItemBase* const parentItem = dynamic_cast<CIndexItemBase*>(parent);
+// 	CIndexItemBase* const afterItem  = dynamic_cast<CIndexItemBase*>(after);
+// 
+// 	bool removeSelectedItems = true;
+// 	bool moveSelectedItems = false;
+// 
+// 	if (afterItem && afterItem->isFolder()) {
+// 		moveSelectedItems = false;
+// 		removeSelectedItems = false; //why TRUE?
+// 
+// 		afterItem->setExpanded(true);
+// 		afterItem->dropped(e); //inserts new items, moving only works on the same level
+// 	}
+// 	else if (afterItem && !afterItem->isFolder() && parentItem) {
+// 		const bool justMoveSelected =
+// 			(e->source() == viewport())
+// 			&& m_itemsMovable
+// 			&& parentItem->acceptDrop(e)
+// 			&& !afterItem->acceptDrop(e);
+// 
+// 		if (justMoveSelected) {
+// 			moveSelectedItems = true;
+// 			removeSelectedItems = false;
+// 		}
+// 		else {
+// 			moveSelectedItems = false;
+// 			removeSelectedItems = false;
+// 
+// 			if (afterItem->acceptDrop(e)) {
+// 				afterItem->dropped(e, after);
+// 			}
+// 			else { //insert in the parent folder and then move the inserted items
+// 				parentItem->dropped(e, after);
+// 			}
+// 		}
+// 
+// 		parentItem->setExpanded(true);
+// 	}
+// 	else if (parentItem) { //no after item present, but a parent is there
+// 		moveSelectedItems = false;
+// 		removeSelectedItems = false;
+// 
+// 		parentItem->setExpanded(true);
+// 		parentItem->dropped(e);
+// 	}
+// 
+// 	if (moveSelectedItems) {
+// 		//move all selected items after the afterItem
+// 		if (m_itemsMovable) {
+// 			QList<QTreeWidgetItem *> items = selectedItems();
+// 			QListIterator<QTreeWidgetItem *> it(items);
+// 			QTreeWidgetItem* i = it.next();
+// 			QTreeWidgetItem* after = afterItem;
+// 			while (i && afterItem) {
+// 				i->moveItem(after);
+// 				after = i;
+// 
+// 				i = it.next();
+// 			}
+// 		}
+// 	}
+// 
+// 	if (removeSelectedItems) {
+// 		QList<QTreeWidgetItem *> items = selectedItems();
+// 		//items.setAutoDelete(true);
+// 		qDeleteAll(items);
+// 		items.clear(); //delete the selected items we dragged
+// 	}
 }
 
 /** No descriptions */
@@ -569,7 +594,7 @@ void CMainIndex::printBookmarks() {
 	Printing::CPrinter::KeyTreeItem::Settings settings;
 	settings.keyRenderingFace = Printing::CPrinter::KeyTreeItem::Settings::CompleteShort;
 
-	QList<QTreeWidgetItem *> items;
+	QList<QTreeWidgetItem*> items;
 	CIndexBookmarkFolder* bf = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
 
 	if (bf) {
@@ -580,7 +605,7 @@ void CMainIndex::printBookmarks() {
 	}
 
 	//create a tree of keytreeitems using the bookmark hierarchy.
-	QListIterator<QTreeWidgetItem *> it(items);
+	QListIterator<QTreeWidgetItem*> it(items);
 	while(it.hasNext()) {
 		CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(it.next());
 		if (i) {
@@ -643,9 +668,15 @@ void CMainIndex::searchInModules() {
 void CMainIndex::unlockModule() {
 	if (CIndexModuleItem* i = dynamic_cast<CIndexModuleItem*>(currentItem())) {
 		bool ok = false;
-		const QString unlockKey = QInputDialog::getText(i18n("BibleTime - Unlock work"),
-			i18n("Enter the unlock key for this work."),
-			QLineEdit::Normal, i->module()->config(CSwordModuleInfo::CipherKey), &ok);
+		const QString unlockKey =
+			QInputDialog::getText(
+				this,
+				i18n("BibleTime - Unlock work"),
+				i18n("Enter the unlock key for this work."),
+				QLineEdit::Normal,
+				i->module()->config(CSwordModuleInfo::CipherKey),
+				&ok
+			);
 		
 		if (ok) {
 			i->module()->unlock( unlockKey );
@@ -662,69 +693,69 @@ void CMainIndex::aboutModule() {
 }
 
 /** Reimplementation. Takes care of movable items. */
-void CMainIndex::startDrag() {
-	QList<QTreeWidgetItem *> items = selectedItems();
-	QListIterator<QTreeWidgetItem *> it(items);
-	m_itemsMovable = true;
-	
-	while(it.hasNext() && m_itemsMovable) {
-		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.next())) {
-			m_itemsMovable = (m_itemsMovable && i->isMovable());
-		}
-		else {
-			m_itemsMovable = false;
-		}
-	}
-
-	QTreeWidget::startDrag();
+void CMainIndex::startDrag(Qt::DropActions supportedActions) {
+// 	QList<QTreeWidgetItem *> items = selectedItems();
+// 	QListIterator<QTreeWidgetItem *> it(items);
+// 	m_itemsMovable = true;
+// 	
+// 	while(it.hasNext() && m_itemsMovable) {
+// 		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.next())) {
+// 			m_itemsMovable = (m_itemsMovable && i->isMovable());
+// 		}
+// 		else {
+// 			m_itemsMovable = false;
+// 		}
+// 	}
+// 
+// 	QTreeWidget::startDrag();
 }
 
 /** Reimplementation to support the items dragEnter and dragLeave functions. */
 void CMainIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
-	//  qWarning("void CMainIndex:: drag move event ( QDragLeaveEvent* e )");
-	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( itemAt( contentsToViewport(event->pos())) );
-	if (i) {
-		if (i->allowAutoOpen(event) || (i->acceptDrop(event) && i->isFolder() && i->allowAutoOpen(event) && !i->isOpen() && autoOpen()) ) {
-			if (m_autoOpenFolder != i)  {
-				m_autoOpenTimer.stop();
-			}
-			
-			m_autoOpenFolder = i;
-			m_autoOpenTimer.start( 400, true );
-		}
-		else {
-			m_autoOpenFolder = 0;
-		}
-	}
-	else {
-		m_autoOpenFolder = 0;
-	}
-
-	QTreeWidget::contentsDragMoveEvent(event);
+// 	//  qWarning("void CMainIndex:: drag move event ( QDragLeaveEvent* e )");
+// 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( itemAt( contentsToViewport(event->pos())) );
+// 	if (i) {
+// 		if (i->allowAutoOpen(event) || (i->acceptDrop(event) && i->isFolder() && i->allowAutoOpen(event) && !i->isOpen() && autoOpen()) ) {
+// 			if (m_autoOpenFolder != i)  {
+// 				m_autoOpenTimer.stop();
+// 			}
+// 			
+// 			m_autoOpenFolder = i;
+// 			m_autoOpenTimer.start( 400 );
+// 		}
+// 		else {
+// 			m_autoOpenFolder = 0;
+// 		}
+// 	}
+// 	else {
+// 		m_autoOpenFolder = 0;
+// 	}
+// 
+// 	QTreeWidget::contentsDragMoveEvent(event);
 }
 
 QRect CMainIndex::drawItemHighlighter(QPainter* painter, QTreeWidgetItem* item) {
-	CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>(item);
-	if (bookmark) { 
-		//no drops on bookmarks allowed, just moving items after it
-		return QRect();
-	}
-
-	return QTreeWidget::drawItemHighlighter(painter, item);
+// 	CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>(item);
+// 	if (bookmark) { 
+// 		//no drops on bookmarks allowed, just moving items after it
+// 		return QRect();
+// 	}
+// 
+// 	return QTreeWidget::drawItemHighlighter(painter, item);
 }
 
 
 void CMainIndex::autoOpenTimeout() {
 	m_autoOpenTimer.stop();
-	if (m_autoOpenFolder && !m_autoOpenFolder->isOpen() && m_autoOpenFolder->childCount()) {
-		m_autoOpenFolder->setOpen(true);
+	if (m_autoOpenFolder && !m_autoOpenFolder->isExpanded() && m_autoOpenFolder->childCount()) {
+		m_autoOpenFolder->setExpanded(true);
 	}
 }
 
 /** No descriptions */
 void CMainIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
-	m_autoOpenTimer.stop();
-	QTreeWidget::contentsDragLeaveEvent(e);
+// 	m_autoOpenTimer.stop();
+// 	QTreeWidget::contentsDragLeaveEvent(e);
 }
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
@@ -834,75 +865,76 @@ void CMainIndex::saveBookmarks() {
 }
 
 void CMainIndex::readSettings() {
- 	qDebug("CMainIndex::readSettings");
-	
-	QStringList openGroups = CBTConfig::get(CBTConfig::bookshelfOpenGroups);
-	for (QStringList::Iterator it( openGroups.begin() ); it != openGroups.end(); ++it) {
-		/*
-		For each item in openGroups, find the QTreeWidgetItem specified and open it.
-		Better way to do this?
-		*/
-		QStringList path = QStringList::split("/", (*it)); //e.g. with items parent, child
-		QTreeWidgetItem* item = child(0); //get first child in this QTreeWidget
-				//orig: firstChild() begin on the top for each item
-		Q_ASSERT(item);
-		unsigned int index = 1;
-
-		for (QStringList::Iterator p_it( path.begin() ); p_it != path.end(); ++p_it) {
-			QString itemName = (*p_it).replace("\\/", "/");
-
-			while (item && (item->text(0) != itemName)) {
-				//loop through QTreeWidgetItems, looking for one with the same name as from openGroups
-				item = item->nextSibling();
-			}
-
-			if (item && (item->text(0) == itemName)) {
-				if (index < path.count()) { //don't call firstChild on the right, i.e. last item of the list
-					item = item->firstChild();
-				}
-
-				++index;
-			}
-		}
-
-		if (item) {
-			item->setOpen(true);
-		}
-	}
-
-	//restore the content position
-// 	setContentsPos(
-// 		CBTConfig::get(CBTConfig::bookshelfContentsX),
-// 		CBTConfig::get(CBTConfig::bookshelfContentsY)
-// 	);
-// 	horizontalScrollBar()->setValue(CBTConfig::get(CBTConfig::bookshelfContentsX));
-// 	verticalScrollBar()->setValue(CBTConfig::get(CBTConfig::bookshelfContentsY));
-
-
-	//restore the selected item
-	QStringList path = QStringList::split("/", CBTConfig::get(CBTConfig::bookshelfCurrentItem));
-	QTreeWidgetItem* item = firstChild();
-	Q_ASSERT(item);
-	unsigned int index = 1;
-	for (QStringList::iterator it( path.begin() ); it != path.end(); ++it) {
-		//search for the current caption and go down to it's childs
-		while (item && (item->text(0) != (*it)) ) {
-			item = item->nextSibling();
-		}
-
-		if (item && ((*it) == item->text(0))) {
-			if (index == path.count()) { //last item reached
-				setCurrentItem( item );
-				setSelected( item, true );
-				break;//for loop
-			}
-			else {
-				item = item->firstChild();
-			}
-
-			index++;
-		}
-	}
+//  	qDebug("CMainIndex::readSettings");
+// 	
+// 	//Open those groups which are marked open in configuration
+// 	QStringList openGroups = CBTConfig::get(CBTConfig::bookshelfOpenGroups);
+// 	for (QStringList::Iterator it( openGroups.begin() ); it != openGroups.end(); ++it) {
+// 		/*
+// 		For each item in openGroups, find the QTreeWidgetItem specified and open it.
+// 		Better way to do this?
+// 		*/
+// 		QStringList path = QString((*it)).split("/"); //e.g. with items parent, child
+// 		QTreeWidgetItem* item = topLevelItem(0); //get first child in this QTreeWidget
+// 				//orig: firstChild() begin on the top for each item
+// 		Q_ASSERT(item);
+// 		unsigned int index = 1;
+// 
+// 		for (QStringList::Iterator p_it( path.begin() ); p_it != path.end(); ++p_it) {
+// 			QString itemName = (*p_it).replace("\\/", "/");
+// 
+// 			while (item && (item->text(0) != itemName)) {
+// 				//loop through QTreeWidgetItems, looking for one with the same name as from openGroups
+// 				item = item->nextSibling();
+// 			}
+// 
+// 			if (item && (item->text(0) == itemName)) {
+// 				if (index < path.count()) { //don't call firstChild on the right, i.e. last item of the list
+// 					item = item->firstChild();
+// 				}
+// 
+// 				++index;
+// 			}
+// 		}
+// 
+// 		if (item) {
+// 			item->setExpanded(true);
+// 		}
+// 	}
+// 
+// 	//restore the content position
+// // 	setContentsPos(
+// // 		CBTConfig::get(CBTConfig::bookshelfContentsX),
+// // 		CBTConfig::get(CBTConfig::bookshelfContentsY)
+// // 	);
+// // 	horizontalScrollBar()->setValue(CBTConfig::get(CBTConfig::bookshelfContentsX));
+// // 	verticalScrollBar()->setValue(CBTConfig::get(CBTConfig::bookshelfContentsY));
+// 
+// 
+// 	//restore the selected item
+// 	QStringList path = QString(CBTConfig::get(CBTConfig::bookshelfCurrentItem)).split("/");
+// 	QTreeWidgetItem* item = firstChild();
+// 	Q_ASSERT(item);
+// 	unsigned int index = 1;
+// 	for (QStringList::iterator it( path.begin() ); it != path.end(); ++it) {
+// 		//search for the current caption and go down to it's childs
+// 		while (item && (item->text(0) != (*it)) ) {
+// 			item = item->nextSibling();
+// 		}
+// 
+// 		if (item && ((*it) == item->text(0))) {
+// 			if (index == path.count()) { //last item reached
+// 				setCurrentItem( item );
+// 				//setSelected( item, true );
+// 				break;//for loop
+// 			}
+// 			else {
+// 				item = item->firstChild();
+// 			}
+// 
+// 			index++;
+// 		}
+// 	}
 }
 
 void CMainIndex::saveSettings() {
@@ -944,9 +976,9 @@ void CMainIndex::saveSettings() {
 	CBTConfig::set(CBTConfig::bookshelfCurrentItem, path);
 }
 
-void CMainIndex::polish()
+void CMainIndex::ensurePolished()
 {
-	QTreeWidget::polish();
+	QTreeWidget::ensurePolished();
 	initTree();
 	readSettings();
 }

@@ -61,7 +61,7 @@ public:
 	virtual ~CIndexItemBase();
 
 	virtual const QString toolTip();
-	virtual CMainIndex* listView() const;
+	virtual CMainIndex* treeWidget() const;
 
 	/**
 	* Returns if the implementation of this class is a folder item or not.
@@ -102,7 +102,7 @@ public:
 	/**
 	* Reimplementation which takes care of the our isSortingEnabled() setting.
 	*/
-	virtual void sortChildItems( int col, bool asc );
+	virtual void sortChildItems( int col, Qt::SortOrder order );
 	/**
 	* Reimplementation which takes care of the our isSortingEnabled() setting.
 	*/

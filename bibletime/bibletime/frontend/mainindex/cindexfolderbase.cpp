@@ -72,21 +72,22 @@ bool CFolderBase::acceptDrop(const QMimeSource*) const {
 	return false;
 }
 
-Q3PtrList<Q3ListViewItem> CFolderBase::getChildList() {
-	Q3PtrList<Q3ListViewItem> childs;
+QList<QTreeWidgetItem> CFolderBase::getChildList() {
+	QList<QTreeWidgetItem*> childs;
 	if (!childCount()) //no childs available
 		return childs;
 
-	Q3ListViewItem* i = firstChild();
+	QTreeWidgetItem* i = firstChild();
 	while (i && (i->parent() == this)) {
-		CItemBase* item = dynamic_cast<CItemBase*>(i);
+		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(i);
 		if (item) { //we found a valid item
 			childs.append(item);
 
-			CFolderBase* folder = dynamic_cast<CFolderBase*>(i);
+			CIndexFolderBase* folder = dynamic_cast<CIndexFolderBase*>(i);
 			if (folder) {
-				Q3PtrList<Q3ListViewItem> subChilds = folder->getChildList();
-				for (Q3ListViewItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
+				QList<QTreeWidgetItem*> subChilds = folder->getChildList();
+				//for (QTreeWidgetItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
+				foreach (QTreeWidgetItem* ci, subChilds) {
 					childs.append(ci);
 				}
 			}
