@@ -20,15 +20,17 @@
 //Sword includes
 #include <versekey.h>
 #include <listkey.h>
-//Added by qt3to4:
-#include <Q3PtrList>
+
+
+#include <QList>
 
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {
-	qDebug("Syncing modules by type to key %s", key.latin1());
+	qDebug("Syncing modules by type to key %s", key.toLatin1());
 
-	Q3PtrList<QWidget> windows = m_mdi->usableWindowList();
-	for (QWidget* w = windows.first(); w; w = windows.next()) {
+	QList<QWidget*> windows = m_mdi->usableWindowList();
+	//for (QWidget* w = windows.first(); w; w = windows.next()) {
+	foreach (QWidget* w, windows) {
 		CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w);
 		Q_ASSERT(d);
 
@@ -66,7 +68,7 @@ void BibleTime::syncAllVerseBasedModules(const QString& key) {
 }
 
 void BibleTime::openWindow(const QString& moduleName, const QString& key) {
-	qDebug("DCOP: open window for module %s and key %s...", moduleName.latin1(), key.latin1());
+	qDebug("DCOP: open window for module %s and key %s...", moduleName.toLatin1(), key.toLatin1());
 
 	CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName);
 	Q_ASSERT(module);
@@ -85,7 +87,7 @@ void BibleTime::openDefaultBible(const QString& key) {
 }
 
 QStringList BibleTime::searchInModule(const QString& moduleName, const QString& searchText) {
-	qDebug("DCOP: searchInModule %s ...", moduleName.latin1());
+	qDebug("DCOP: searchInModule %s ...", moduleName.toLatin1());
 	QStringList ret;
 	CSwordModuleInfo* mod = CPointers::backend()->findModuleByName(moduleName);
 

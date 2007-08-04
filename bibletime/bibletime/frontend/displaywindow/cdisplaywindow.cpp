@@ -527,7 +527,7 @@ void CDisplayWindow::closeEvent(QCloseEvent* e) {
 }
 
 void CDisplayWindow::slotSearchInModules() {
-	Search::CSearchDialog::openDialog(modules());
+	//TODO: temporary //Search::CSearchDialog::openDialog(modules());
 }
 
 void CDisplayWindow::printAll() {

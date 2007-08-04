@@ -150,6 +150,7 @@ SET(bibletime_SOURCES
 	bibletime/bibletime.cpp
 	bibletime/bibletime_init.cpp
 	bibletime/bibletime_slots.cpp
+	bibletime/bibletime_dcop.cpp
 
 #Add files to be ported here
 )

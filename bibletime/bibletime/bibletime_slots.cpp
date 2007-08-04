@@ -11,7 +11,7 @@
 
 //own includes
 #include "bibletime.h"
-#include "bibletime.moc"
+//#include "bibletime.moc"
 
 #include "config.h"
 

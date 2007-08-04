@@ -11,7 +11,7 @@
 
 //BibleTime includes
 #include "bibletime.h"
-#include "bibletime.moc"
+//#include "bibletime.moc"
 
 #include "config.h"
 
@@ -685,7 +685,7 @@ void BibleTime::initBackends() {
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false
-	BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
+	//TODO: temporary //BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
 	
 }
 
