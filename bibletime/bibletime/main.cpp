@@ -119,23 +119,28 @@ int main(int argc, char* argv[]) {
 	qInstallMsgHandler( myMessageOutput );
 
 	//create about data for this application
-	static KCmdLineOptions options[] =
-		{
-			{"debug", I18N_NOOP("Enable debug messages"),0},
-			{"ignore-session", I18N_NOOP("Ignore the startup session that was saved when BibleTime was closed the last time."),0},
-			{"open-default-bible <key>", I18N_NOOP("Open the standard Bible with the given key. Use <random> to open at a random position."),0},
-			//{"install-local <path>", I18N_NOOP("Open the SwordSetup dialog to install works from <path>"),0},
-			{0,0,0}
-		};
+	//static KCmdLineOptions options[] =
+	//	{
+	//		{"debug", I18N_NOOP("Enable debug messages"),0},
+	//		{"ignore-session", I18N_NOOP("Ignore the startup session that was saved when BibleTime was closed the last time."),0},
+	//		{"open-default-bible <key>", I18N_NOOP("Open the standard Bible with the given key. Use <random> to open at a random position."),0},
+	//		//{"install-local <path>", I18N_NOOP("Open the SwordSetup dialog to install works from <path>"),0},
+	//		{0,0,0}
+	//	};
+	static KCmdLineOptions options;
+	options.add("debug", ki18n("Enable debug messages"),0);
+	options.add("ignore-session", ki18n("Ignore the startup session that was saved when BibleTime was closed the last time."),0);
+	options.add("open-default-bible <key>", ki18n("Open the standard Bible with the given key. Use <random> to open at a random position."),0);
 
 	KAboutData aboutData(
+		"bibletime",
 		PACKAGE,
-		"BibleTime",
+		ki18n("BibleTime"),
 		VERSION,
-		I18N_NOOP("Bible study tool for KDE"),
+		ki18n("Bible study tool for KDE"),
 		KAboutData::License_GPL_V2,
-		I18N_NOOP("(c)1999-2007, The BibleTime Team"),
-		I18N_NOOP("BibleTime is an easy to use but powerful Bible study tool for KDE.\n\nWe are looking for developers and translators.\nIf you'd like to join our team, please send an email to info@bibletime.info."),
+		ki18n("(c)1999-2007, The BibleTime Team"),
+		ki18n("BibleTime is an easy to use but powerful Bible study tool for KDE.\n\nWe are looking for developers and translators.\nIf you'd like to join our team, please send an email to info@bibletime.info."),
 		"http://www.bibletime.info/",
 		"info@bibletime.info"
 	);
@@ -144,11 +149,11 @@ int main(int argc, char* argv[]) {
 	*    Active developers (sorted by last name)   *
 	************************************************/
 	// Project coordination
-	aboutData.addAuthor("Joachim Ansorg", I18N_NOOP("Project coordinator"), "nospam@joachim-ansorg.de", "http://www.joachim-ansorg.de/");
+	aboutData.addAuthor(ki18n("Joachim Ansorg"), ki18n("Project coordinator"), "nospam@joachim-ansorg.de", "http://www.joachim-ansorg.de/");
 	// Second main developer
-	aboutData.addAuthor("Martin Gruner", I18N_NOOP("Frontend, backend"), "mg.pub@gmx.net", "");
+	aboutData.addAuthor(ki18n("Martin Gruner"), ki18n("Frontend, backend"), "mg.pub@gmx.net", "");
 	// artwork
-	aboutData.addAuthor("James Ots", I18N_NOOP("Crystal icons, crystal startlogo, webpage"), "me@jamesots.com", "http://www.jamesots.com");
+	aboutData.addAuthor(ki18n("James Ots"), ki18n("Crystal icons, crystal startlogo, webpage"), "me@jamesots.com", "http://www.jamesots.com");
 
 	//inactiv
 
@@ -156,73 +161,73 @@ int main(int argc, char* argv[]) {
 	*        Credits (sorted by last name)         *
 	************************************************/
 	// Update to the Romanian GUI translation
-	aboutData.addCredit("Horatiu Alexe", I18N_NOOP("Romanian translation"), "");
+	aboutData.addCredit(ki18n("Horatiu Alexe"), ki18n("Romanian translation"), "");
 	//highcolor icons, startlogo for BT <= 1.4
-	aboutData.addCredit("David Blue", I18N_NOOP("High contrast template"), "davidslists@gmx.net");
+	aboutData.addCredit(ki18n("David Blue"), ki18n("High contrast template"), "davidslists@gmx.net");
 	//helped out with the installation manager
-	aboutData.addCredit("Tim Brodie",    I18N_NOOP("Installation manager"),"tbrodie@displayworksinc.com", "");
+	aboutData.addCredit(ki18n("Tim Brodie"),    ki18n("Installation manager"),"tbrodie@displayworksinc.com", "");
 	//first set of icons and the first startup logos
-	aboutData.addCredit("Timothy R. Butler", I18N_NOOP("Icons, startlogo"), "tbutler@uninetsolutions.com", "http://www.uninetsolutions.com");
+	aboutData.addCredit(ki18n("Timothy R. Butler"), ki18n("Icons, startlogo"), "tbutler@uninetsolutions.com", "http://www.uninetsolutions.com");
 	//GUI improvements
-	aboutData.addCredit("Jim Campbell",   I18N_NOOP("GUI"), "jdc.email@gmail.com", ""); 
+	aboutData.addCredit(ki18n("Jim Campbell"),   ki18n("GUI"), "jdc.email@gmail.com", ""); 
 	//Indexed search, gui improvements
-	aboutData.addCredit("Lee Carpenter",  I18N_NOOP("GUI, instant search"),"Lee Carpenter <elc@carpie.net>", "http://www.carpie.net");
+	aboutData.addCredit(ki18n("Lee Carpenter"),  ki18n("GUI, instant search"),"Lee Carpenter <elc@carpie.net>", "http://www.carpie.net");
 	//Translations into Traditional and Simplified Chinese
-	aboutData.addCredit("Chun-shek Chan",   I18N_NOOP("GUI translations into Traditional and Simplified Chinese"), "chunshek@gmail.com", "");
+	aboutData.addCredit(ki18n("Chun-shek Chan"),   ki18n("GUI translations into Traditional and Simplified Chinese"), "chunshek@gmail.com", "");
 	//Binary packages of CLucene, BibleTime and Sword for Fedore, SUSE, Mandriva
-	aboutData.addCredit("Jeremy Erickson",   I18N_NOOP("Binary packages"), "", "");
+	aboutData.addCredit(ki18n("Jeremy Erickson"),   ki18n("Binary packages"), "", "");
 	//Started the Crosswire porject, also contributed some code
-	aboutData.addCredit("Troy A. Griffits",   I18N_NOOP("Founder of the Sword project"), "scribe@crosswire.org", "http://www.crosswire.org/");  
+	aboutData.addCredit(ki18n("Troy A. Griffits"),   ki18n("Founder of the Sword project"), "scribe@crosswire.org", "http://www.crosswire.org/");  
 	//Sponsored many years the www.bibletime.de domain!
-	aboutData.addCredit("Thomas Hagedorn",   I18N_NOOP("Sponsored our internet domain for many years"), "tom@theta-consulting.de", "");
+	aboutData.addCredit(ki18n("Thomas Hagedorn"),   ki18n("Sponsored our internet domain for many years"), "tom@theta-consulting.de", "");
 	//He provided us with the Bible Study HowTo
-	aboutData.addCredit("Bob Harman",        I18N_NOOP("Bible Study HowTo"), "ncc@ncchampton.org", "");
+	aboutData.addCredit(ki18n("Bob Harman"),        ki18n("Bible Study HowTo"), "ncc@ncchampton.org", "");
 	// and / or search for multiple words, other fixes and improvements
-	aboutData.addCredit("Nikolay Igotti", I18N_NOOP("Search dialog enhancements"), "olonho@hotmail.com", "");
+	aboutData.addCredit(ki18n("Nikolay Igotti"), ki18n("Search dialog enhancements"), "olonho@hotmail.com", "");
 	// Language codes iso639-1, iso639-2 and SIL language codes
-	aboutData.addCredit("SIL International", I18N_NOOP("Language codes and names"), "", "http://www.ethnologue.com/iso639");
+	aboutData.addCredit(ki18n("SIL International"), ki18n("Language codes and names"), "", "http://www.ethnologue.com/iso639");
 	//Patch for the mag delay (2007-03-22)
-	aboutData.addCredit("Eeli Kaikkonen",  I18N_NOOP("GUI improvements, KDE 4 port"),"eekaikko@mail.student.oulu.fi", "");
+	aboutData.addCredit(ki18n("Eeli Kaikkonen"),  ki18n("GUI improvements, KDE 4 port"),"eekaikko@mail.student.oulu.fi", "");
 	//Update the the Finnish GUI translation
-	aboutData.addCredit("Ilpo Kantonen",  I18N_NOOP("Finnish translation"),"", "");
+	aboutData.addCredit(ki18n("Ilpo Kantonen"),  ki18n("Finnish translation"),"", "");
 	//Smaller frontend enhancements
-	aboutData.addCredit("Chris Kujawa",  I18N_NOOP("Frontend"),"christopher.kujawa@verizon.net", "");
+	aboutData.addCredit(ki18n("Chris Kujawa"),  ki18n("Frontend"),"christopher.kujawa@verizon.net", "");
 	//Update to the Czech GUI translation
-	aboutData.addCredit("Pavel Lauko",  I18N_NOOP("Czech translation"),"", "");
+	aboutData.addCredit(ki18n("Pavel Lauko"),  ki18n("Czech translation"),"", "");
 	//Smaller searchdialog enhancements
-	aboutData.addCredit("Mark Lybarger",  I18N_NOOP("Searchdialog"), "mlybarge@insight.rr.com","");
+	aboutData.addCredit(ki18n("Mark Lybarger"),  ki18n("Searchdialog"), "mlybarge@insight.rr.com","");
 	//Polish GUI translation update
-	aboutData.addCredit("Piotr Markiewicz",  I18N_NOOP("Polish translation"), "pmarki@o2.pl", "");
+	aboutData.addCredit(ki18n("Piotr Markiewicz"),  ki18n("Polish translation"), "pmarki@o2.pl", "");
 	//Smaller frontend enhancements
-	aboutData.addCredit("Luke Mauldin",  I18N_NOOP("Frontend"), "lukeskyfly@txk.net", "");
+	aboutData.addCredit(ki18n("Luke Mauldin"),  ki18n("Frontend"), "lukeskyfly@txk.net", "");
 	//translated parts of the russian website files
-	aboutData.addCredit("Igor Rykhlin",   I18N_NOOP("Russian website translation"), "", "");
+	aboutData.addCredit(ki18n("Igor Rykhlin"),   ki18n("Russian website translation"), "", "");
 	// update to the Spanish website translation
-	aboutData.addCredit("Gabriel Pérez",   I18N_NOOP("Spanish website translation updates"), "", "");
+	aboutData.addCredit(ki18n("Gabriel Pérez"),   ki18n("Spanish website translation updates"), "", "");
 	//Update to the russian website translation
-	aboutData.addCredit("Igor Plisco", I18N_NOOP("Update to the russian website translation"), "", "");
+	aboutData.addCredit(ki18n("Igor Plisco"), ki18n("Update to the russian website translation"), "", "");
 	// handbook documentation
-	aboutData.addCredit("Fred Saalbach", I18N_NOOP("Documentation"), "saalbach@sybercom.net", "");
+	aboutData.addCredit(ki18n("Fred Saalbach"), ki18n("Documentation"), "saalbach@sybercom.net", "");
 	// Original Russian website translator
-	aboutData.addCredit("Vlad Savitsky", I18N_NOOP("Russian website translation"), "", "");
+	aboutData.addCredit(ki18n("Vlad Savitsky"), ki18n("Russian website translation"), "", "");
 	// comitted search in default bible, opened modules, other smaller things
-	aboutData.addCredit("Gary Sims", I18N_NOOP("Search dialog enhancements"), "gary@garysims.co.uk", "");
+	aboutData.addCredit(ki18n("Gary Sims"), ki18n("Search dialog enhancements"), "gary@garysims.co.uk", "");
 	// Very helpful testing
-	aboutData.addCredit("Wolfgang Stradner", I18N_NOOP("Very helpful and detailed testing"), "wolfgang_stradner@wycliffe.org", "");
+	aboutData.addCredit(ki18n("Wolfgang Stradner"), ki18n("Very helpful and detailed testing"), "wolfgang_stradner@wycliffe.org", "");
 	//The first lead developer
-	aboutData.addCredit("Torsten Uhlmann",   I18N_NOOP("The first lead developer"), "", "");
+	aboutData.addCredit(ki18n("Torsten Uhlmann"),   ki18n("The first lead developer"), "", "");
  	//Update of the dutch website translation
-	aboutData.addCredit("Johan van der Lingen",   I18N_NOOP("Translation updates for the Dutch GUI, the website and the handbook"), "", "");
+	aboutData.addCredit(ki18n("Johan van der Lingen"),   ki18n("Translation updates for the Dutch GUI, the website and the handbook"), "", "");
 	//French handbook translation
-	aboutData.addCredit("Jean Van Schaftingen", I18N_NOOP("French handbook translation"), "", "");
+	aboutData.addCredit(ki18n("Jean Van Schaftingen"), ki18n("French handbook translation"), "", "");
 	//scoped_ptr and related classes
-	aboutData.addCredit("David White",   I18N_NOOP("Helpful source code additions"), "", "http://www.wesnoth.org/");
+	aboutData.addCredit(ki18n("David White"),   ki18n("Helpful source code additions"), "", "http://www.wesnoth.org/");
 	//Translated the GUI into Russian
-	aboutData.addCredit("Dmitry Yurevich",   I18N_NOOP("Translated the GUI into Russian"), "", "");
+	aboutData.addCredit(ki18n("Dmitry Yurevich"),   ki18n("Translated the GUI into Russian"), "", "");
 	//The new keychooser for Bible modules
-	aboutData.addCredit("Mark Zealey",   I18N_NOOP("New Bible key choosers"), "mspam@zealey.org", "");
+	aboutData.addCredit(ki18n("Mark Zealey"),   ki18n("New Bible key choosers"), "mspam@zealey.org", "");
 	//Update to the Spanish GUI translation
- 	aboutData.addCredit("Esteban Zeller",   I18N_NOOP("Spanish translation"), "", "");
+ 	aboutData.addCredit(ki18n("Esteban Zeller"),   ki18n("Spanish translation"), "", "");
 
 	
 	//special message so the translator get his credits in the about box, don't remove this!
