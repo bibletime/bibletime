@@ -9,47 +9,68 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-CTreeFolder::CTreeFolder(CMainIndex* mainIndex, const Type type, const QString& language) : CFolderBase(mainIndex, type) {
+
+#include "cindextreefolder.h"
+#include "cindexfolderbase.h"
+#include "cindexbookmarkfolder.h"
+#include "cindexmoduleitem.h"
+#include "cindexbookmarkitem.h"
+#include "cindexoldbookmarksfolder.h"
+
+
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/cswordbackend.h"
+
+#include "util/cpointers.h"
+
+
+#include <QString>
+
+#include <klocale.h>
+
+
+CIndexTreeFolder::CIndexTreeFolder(CMainIndex* mainIndex, const Type type, const QString& language) : CIndexFolderBase(mainIndex, type) {
 	m_language = language;
 }
 
-CTreeFolder::CTreeFolder(CFolderBase* item, const Type type, const QString& language) : CFolderBase(item, type) {
+CIndexTreeFolder::CIndexTreeFolder(CIndexFolderBase* item, const Type type, const QString& language) : CIndexFolderBase(item, type) {
 	m_language = language;
 }
 
-CTreeFolder::~CTreeFolder() {}
+CIndexTreeFolder::~CIndexTreeFolder() {}
 
-void CTreeFolder::addGroup(const Type type, const QString language) {
-	CTreeFolder* i = 0;
+void CIndexTreeFolder::addGroup(const Type type, const QString language) {
+	CIndexTreeFolder* i = 0;
 	if (type == BookmarkFolder) {
-		i = new CBookmarkFolder(this);
+		i = new CIndexBookmarkFolder(this);
 	}
 	else if (type == OldBookmarkFolder) {
 		i = new CIndexOldBookmarksFolder(this);
 	}
 	else {
-		i = new CTreeFolder(this, type, language);
+		i = new CIndexTreeFolder(this, type, language);
 	}
 	i->init();
 	if (!i->childCount())
 		delete i;
 }
 
-void CTreeFolder::addModule(CSwordModuleInfo* const module) {
-	CModuleItem* i = new CModuleItem(this, module);
+void CIndexTreeFolder::addModule(CSwordModuleInfo* const module) {
+	CIndexModuleItem* i = new CIndexModuleItem(this, module);
 	i->init();
 }
 
-void CTreeFolder::addBookmark(CSwordModuleInfo* module, const QString& key, const QString& description) {
-	CBookmarkItem* i = new CBookmarkItem(this, module, key, description);
+void CIndexTreeFolder::addBookmark(CSwordModuleInfo* module, const QString& key, const QString& description) {
+	CIndexBookmarkItem* i = new CIndexBookmarkItem(this, module, key, description);
 	i->init();
 }
 
-void CTreeFolder::update() {
-	CFolderBase::update();
+void CIndexTreeFolder::update() {
+	CIndexFolderBase::update();
 }
 
-void CTreeFolder::init() {
+void CIndexTreeFolder::init() {
 	if (language() == "*") {
 		switch (type()) {
 			case BibleModuleFolder:
@@ -90,7 +111,7 @@ setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : 
 	update();
 }
 
-void CTreeFolder::initTree() {
+void CIndexTreeFolder::initTree() {
 	//  qWarning("CTreeMgr::initTree");
 	if (type() == Unknown)
 		return;
@@ -157,9 +178,9 @@ void CTreeFolder::initTree() {
 		}
 	}
 
-	sortChildItems(0,true);
+	sortChildItems(0,Qt::AscendingOrder);
 }
 
-const QString& CTreeFolder::language() const {
+const QString& CIndexTreeFolder::language() const {
 	return m_language;
 }
