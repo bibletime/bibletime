@@ -15,7 +15,7 @@
 
 #include "cindextreefolder.h"
 
-
+#define CURRENT_SYNTAX_VERSION 1
 
 class CIndexFolderBase;
 

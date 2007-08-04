@@ -31,8 +31,6 @@
 #include <klocale.h>
 
 
-#define CURRENT_SYNTAX_VERSION 1
-
 
 CIndexBookmarkFolder::CIndexBookmarkFolder(CMainIndex* mainIndex, const Type type) : CIndexTreeFolder(mainIndex, type, "*") {
 	setSortingEnabled(false);
