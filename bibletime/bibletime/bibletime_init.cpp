@@ -88,26 +88,26 @@ void BibleTime::initView() {
 
 	m_leftPaneSplitter = new QSplitter(Qt::Vertical, m_mainSplitter);
 	m_leftPaneSplitter->setChildrenCollapsible(false);
-	
+	m_mainSplitter->addWidget(m_leftPaneSplitter);
 	
 	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"));
 	bookshelfLabel->setMargin(5);
-	
-	m_mainIndex = new CMainIndex(m_leftPaneSplitter);
-	
-	
 	QWidget* mainindexwidget = new QWidget;
 	QVBoxLayout* layout = new QVBoxLayout(mainindexwidget);
 	mainindexwidget->setLayout(layout);
 	mainindexwidget->setMinimumSize(100, 100);
-
+	m_mainIndex = new CMainIndex(mainindexwidget);
 	layout->addWidget(bookshelfLabel);
 	layout->addWidget(m_mainIndex);
 
 	m_infoDisplay = new CInfoDisplay(m_leftPaneSplitter);
+	m_leftPaneSplitter->addWidget(mainindexwidget);
+	m_leftPaneSplitter->addWidget(m_infoDisplay);
 	CPointers::setInfoDisplay(m_infoDisplay);
 
 	m_mdi = new CMDIArea(m_mainSplitter);
+	m_mainSplitter->addWidget(m_mdi);
+
 	m_mdi->setMinimumSize(100, 100);
 	m_mdi->setFocusPolicy(Qt::ClickFocus);
 
@@ -605,7 +605,7 @@ void BibleTime::initMenubar() {
 	//get the window and edit menus using the actions and their properties
 	//action->associatedWidgets().value(0)
 	m_windowMenu = dynamic_cast<QMenu*>(m_windowCloseAll_action->associatedWidgets().value(0));
-	Q_ASSERT(m_windowMenu);
+	//Q_ASSERT(m_windowMenu);
 }
 
 /** Initializes the SIGNAL / SLOT connections */

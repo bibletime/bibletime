@@ -644,7 +644,7 @@ void CBTConfig::setupAccelSettings
 	};
 	
 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-	actionCollection->readSettings(cg);
+	// TODO actionCollection->readSettings(cg);
 }
 
 void CBTConfig::saveAccelSettings
