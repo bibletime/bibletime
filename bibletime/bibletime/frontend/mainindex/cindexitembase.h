@@ -57,7 +57,7 @@ public:
 	};
 
 	CIndexItemBase(CMainIndex* mainIndex, const Type type = Unknown);
-	CIndexItemBase(CIndexItemBase* item, const Type type = Unknown);
+	CIndexItemBase(CIndexItemBase* parentItem, const Type type = Unknown);
 	virtual ~CIndexItemBase();
 
 	virtual const QString toolTip();
