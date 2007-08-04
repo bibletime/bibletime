@@ -90,9 +90,17 @@ SET(bibletime_SOURCES
 	bibletime/frontend/cexportmanager.cpp
 
 	#"Bookshelf" widget in main window
-	#bibletime/frontend/mainindex/cmainindex.cpp
-	#bibletime/frontend/mainindex/cindexitembase.cpp
-	
+	bibletime/frontend/mainindex/cmainindex.cpp
+	bibletime/frontend/mainindex/cindexitembase.cpp
+	bibletime/frontend/mainindex/cindexmoduleitem.cpp
+	bibletime/frontend/mainindex/cindexbookmarkitem.cpp
+	bibletime/frontend/mainindex/cindexfolderbase.cpp
+	bibletime/frontend/mainindex/cindextreefolder.cpp
+	bibletime/frontend/mainindex/cindexglossaryfolder.cpp
+	bibletime/frontend/mainindex/cindexbookmarkfolder.cpp
+	bibletime/frontend/mainindex/cindexsubfolder.cpp
+	bibletime/frontend/mainindex/cindexoldbookmarksfolder.cpp
+
 	#Settings dialog (configuration)
 	bibletime/frontend/settingsdialogs/cacceleratorsettings.cpp
 	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp

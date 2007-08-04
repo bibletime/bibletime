@@ -89,12 +89,12 @@ QDomElement CIndexItemBase::saveToXML( QDomDocument& /*document*/ )
 void CIndexItemBase::loadFromXML( QDomElement& /*element*/ )
 {}
 
-void dropped( /*QDropEvent* e*/)
+void CIndexItemBase::dropped( QDropEvent* e)
 {
-	//dropped(e,0);
+	dropped(e,0);
 }
 
-void CIndexItemBase::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*after*/)
+void CIndexItemBase::dropped( QDropEvent* e, QTreeWidgetItem* after)
 {}
 
 const bool CIndexItemBase::allowAutoOpen( const QMimeSource* ) const
