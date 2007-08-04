@@ -163,11 +163,6 @@ kde4_add_ui_files(bibletime_SOURCES
 
 )
 
-#SET(bibletime_MOC_HEADERS 
-#)
-#bibletime_MOC_SOURCES will contain a list of source files created by Qt's moc
-#QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOC_HEADERS})
-
 #Add all source files to the binary
 #ADD_LIBRARY(Backend ${libbackend_SOURCES} )
 
@@ -197,7 +192,8 @@ LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 )
 
-KDE4_AUTOMOC( ${bibletime_SOURCES} )
+#KDE4_AUTOMOC( ${bibletime_SOURCES} ) #not needed anymore after KDE4beta1, uncomment if you use older version
+
 KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
