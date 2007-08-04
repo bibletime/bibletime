@@ -135,3 +135,8 @@ void CIndexItemBase::sort()
 		// TODO: not in qt4 //QTreeWidgetItem::sort();
 	}
 }
+
+QList<QTreeWidgetItem*> CIndexItemBase::getChildList()
+{
+	return QList<QTreeWidgetItem*>();
+}

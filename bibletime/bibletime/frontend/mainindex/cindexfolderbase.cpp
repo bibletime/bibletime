@@ -10,94 +10,135 @@
 //
 //
 
+#include "cindexfolderbase.h"
 
-CFolderBase::CFolderBase(CMainIndex* mainIndex, const Type type) : CItemBase(mainIndex, type) {}
+#include "cindexitembase.h"
+#include "cmainindex.h"
+#include "cindexbookmarkfolder.h"
+#include "cindexsubfolder.h"
 
-CFolderBase::CFolderBase(CFolderBase* parentItem, const Type type) : CItemBase(parentItem, type) {}
+#include "util/cresmgr.h"
 
-CFolderBase::CFolderBase(CFolderBase* parentFolder, const QString& caption) : CItemBase(parentFolder) {
+
+#include <QList>
+#include <QTreeWidgetItem>
+#include <QMimeSource>
+#include <QList>
+
+
+#include <kiconloader.h>
+#include <klocale.h>
+
+
+CIndexFolderBase::CIndexFolderBase(CMainIndex* mainIndex, const Type type) : CIndexItemBase(mainIndex, type) {}
+
+CIndexFolderBase::CIndexFolderBase(CIndexFolderBase* parentItem, const Type type) : CIndexItemBase(parentItem, type) {}
+
+CIndexFolderBase::CIndexFolderBase(CIndexFolderBase* parentFolder, const QString& caption) : CIndexItemBase(parentFolder) {
 	setText(0, caption);
 }
 
-CFolderBase::~CFolderBase() {}
+CIndexFolderBase::~CIndexFolderBase() {}
 
-const bool CFolderBase::isFolder() {
+const bool CIndexFolderBase::isFolder() {
 	return true;
 }
 
-void CFolderBase::update() {
-	CItemBase::update();
-	if (isOpen() && childCount())
-		setPixmap(0, SmallIcon(CResMgr::mainIndex::openedFolder::icon, 16));
+void CIndexFolderBase::update() {
+	CIndexItemBase::update();
+	if (isExpanded() && childCount())
+		setIcon(0, SmallIcon(CResMgr::mainIndex::openedFolder::icon, 16));
 	else
-		setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
+		setIcon(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
 }
 
-void CFolderBase::init() {
-	CItemBase::init();
-	setDropEnabled(false);
-	setDragEnabled(false);
+void CIndexFolderBase::init() {
+	CIndexItemBase::init();
+	//setDropEnabled(false);
+	//setDragEnabled(false);
 }
 
 /** No descriptions */
-void CFolderBase::setOpen( bool open ) {
-	KListViewItem::setOpen(open);
+void CIndexFolderBase::setExpanded( bool open ) {
+	QTreeWidgetItem::setExpanded(open);
 	update();
 }
 
 /** The function which renames this folder. */
-void CFolderBase::rename() {
-	startRename(0);
+void CIndexFolderBase::rename() {
+	//startRename(0); //TODO: not in qt4
 }
 
 /** Creates a new sub folder of this folder. */
-void CFolderBase::newSubFolder() {
-	if (dynamic_cast<CBookmarkFolder*>(this) || dynamic_cast<CIndexSubFolder*>(this) ) {
+void CIndexFolderBase::newSubFolder() {
+	if (dynamic_cast<CIndexBookmarkFolder*>(this) || dynamic_cast<CIndexSubFolder*>(this) ) {
 		CIndexSubFolder* f = new CIndexSubFolder(this, i18n("New folder"));
 		f->init();
 
-		listView()->setCurrentItem(f);
-		listView()->ensureItemVisible(f);
+		treeWidget()->setCurrentItem(f);
+		//treeWidget()->ensureItemVisible(f);
 		f->rename();
 	}
 }
 
 /** Reimplementation. Returns true if the drop is accepted. */
-const bool CFolderBase::allowAutoOpen( const QMimeSource* ) const {
+const bool CIndexFolderBase::allowAutoOpen( const QMimeSource* ) const {
 	return true;
 }
 
 /** Reimplementation. Returns false because folders have no use for drops (except for the bookmark folders) */
-bool CFolderBase::acceptDrop(const QMimeSource*) const {
+bool CIndexFolderBase::acceptDrop(const QMimeSource*) const {
 	return false;
 }
 
-QList<QTreeWidgetItem> CFolderBase::getChildList() {
-	QList<QTreeWidgetItem*> childs;
-	if (!childCount()) //no childs available
-		return childs;
-
-	QTreeWidgetItem* i = firstChild();
-	while (i && (i->parent() == this)) {
-		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(i);
-		if (item) { //we found a valid item
-			childs.append(item);
-
-			CIndexFolderBase* folder = dynamic_cast<CIndexFolderBase*>(i);
-			if (folder) {
-				QList<QTreeWidgetItem*> subChilds = folder->getChildList();
-				//for (QTreeWidgetItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
-				foreach (QTreeWidgetItem* ci, subChilds) {
-					childs.append(ci);
-				}
-			}
-		}
-
-		do {
-			i = i->nextSibling();
-		}
-		while (i && (i->parent() != this));
-	}
-
-	return childs;
+int CIndexFolderBase::getDirectChildCount()
+{
+	return childCount();
 }
+
+QList<QTreeWidgetItem*> CIndexFolderBase::getChildList() {
+	QList<QTreeWidgetItem*> itemList;
+	for (int i = 0; i < childCount(); i++) {
+		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(child(i));
+		if (item) {
+			itemList.append(item);
+			itemList << item->getChildList();
+		}
+	}
+	return itemList; 
+}
+
+
+
+//I don't quite get the purpose of this...
+// do we want to get all children recursively?
+
+// /*
+// 	QList<QTreeWidgetItem*> childs;
+// 	if (!childCount()) //no childs available
+// 		return childs;
+// 
+// 	QTreeWidgetItem* i = firstChild();
+// 	while (i && (i->parent() == this)) {
+// 		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(i);
+// 		if (item) { //we found a valid item
+// 			childs.append(item);
+// 
+// 			CIndexFolderBase* folder = dynamic_cast<CIndexFolderBase*>(i);
+// 			if (folder) {
+// 				QList<QTreeWidgetItem*> subChilds = folder->getChildList();
+// 				//for (QTreeWidgetItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
+// 				foreach (QTreeWidgetItem* ci, subChilds) {
+// 					childs.append(ci);
+// 				}
+// 			}
+// 		}
+// 
+// 		do {
+// 			i = i->nextSibling();
+// 		}
+// 		while (i && (i->parent() != this));
+// 	}
+// 
+// 	return childs;
+// }*/

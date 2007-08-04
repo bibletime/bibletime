@@ -108,6 +108,9 @@ public:
 	*/
 	virtual void sort();
 
+	virtual QList<QTreeWidgetItem*> getChildList();
+
+	
 protected:
 	friend class CMainIndex;
 

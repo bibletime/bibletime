@@ -37,14 +37,19 @@ public:
 
 	virtual void update();
 	virtual void init();
-	virtual void setOpen( bool open );
+	virtual void setExpanded( bool open );
 	/**
 	* The function which renames this folder.
 	*/
 	void rename();
 	virtual void newSubFolder();
+	
+	/**
+	* Reimplemented from cindexitembase.
+	*/
+	virtual int getDirectChildCount();
 
-	QList<QTreeWidgetItem*> getChildList();
+	virtual QList<QTreeWidgetItem*> getChildList();
 
 protected:
 	/**
