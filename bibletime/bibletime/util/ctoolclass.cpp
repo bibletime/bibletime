@@ -67,7 +67,7 @@ QString CToolClass::textToHTML(const QString& text) {
 
 /** Creates the file filename and put text into the file.
  */
-bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec& fileCodec) {
+bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec* fileCodec) {
 	QFile saveFile(filename);
 	bool ret;
 
@@ -88,7 +88,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
 	if ( saveFile.open(QIODevice::ReadWrite) ) {
 		QTextStream textstream( &saveFile );
-		textstream.setCodec(&fileCodec);
+		textstream.setCodec(fileCodec);
 		textstream << text;
 		saveFile.close();
 		ret = true;

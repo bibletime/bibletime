@@ -51,7 +51,7 @@ public:
 	* @return True if saving was sucessful, otherwise false
 	* @author Joachim Ansorg
 	*/
-	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec& fileCodec = *QTextCodec::codecForLocale());
+	static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec* fileCodec = QTextCodec::codecForLocale());
 	/**
 	* Returns the icon used for the module given as aparameter.
 	*/

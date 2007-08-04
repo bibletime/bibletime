@@ -9,17 +9,42 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-CBookmarkFolder::CBookmarkFolder(CMainIndex* mainIndex, const Type type) : CTreeFolder(mainIndex, type, "*") {
+
+
+
+#include "cindexbookmarkfolder.h"
+#include "cindexbookmarkitem.h"
+#include "cindextreefolder.h"
+#include "cindexfolderbase.h"
+#include "cindexsubfolder.h"
+#include "cindexoldbookmarksfolder.h"
+
+#include "util/cpointers.h"
+#include "util/ctoolclass.h"
+
+#include <QTextStream>
+#include <QString>
+#include <QFile>
+
+#include <kstandarddirs.h>
+#include <kfiledialog.h>
+#include <klocale.h>
+
+
+#define CURRENT_SYNTAX_VERSION 1
+
+
+CIndexBookmarkFolder::CIndexBookmarkFolder(CMainIndex* mainIndex, const Type type) : CIndexTreeFolder(mainIndex, type, "*") {
 	setSortingEnabled(false);
 }
 
-CBookmarkFolder::CBookmarkFolder(CFolderBase* parentItem, const Type type) : CTreeFolder(parentItem, type, "*") {
+CIndexBookmarkFolder::CIndexBookmarkFolder(CIndexFolderBase* parentItem, const Type type) : CIndexTreeFolder(parentItem, type, "*") {
 	setSortingEnabled(false);
 }
 
-CBookmarkFolder::~CBookmarkFolder() {}
+CIndexBookmarkFolder::~CIndexBookmarkFolder() {}
 
-void CBookmarkFolder::initTree() {
+void CIndexBookmarkFolder::initTree() {
 	addGroup(OldBookmarkFolder, "*");
 
 	KStandardDirs stdDirs;
@@ -30,7 +55,7 @@ void CBookmarkFolder::initTree() {
 }
 
 /** Reimplementation. */
-const bool CBookmarkFolder::enableAction(const MenuAction action) {
+const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 	if ((action == NewFolder) || (action == ImportBookmarks))
 		return true;
 
@@ -44,61 +69,61 @@ const bool CBookmarkFolder::enableAction(const MenuAction action) {
 }
 
 
-void CBookmarkFolder::exportBookmarks() {
-	QString fileName = KFileDialog::getSaveFileName(QString::null, i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Export bookmarks"));
+void CIndexBookmarkFolder::exportBookmarks() {
+	QString fileName = KFileDialog::getSaveFileName(KUrl(QString::null), i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Export bookmarks"));
 	if (!fileName.isEmpty()) {
 		saveBookmarks( fileName, false ); //false means we don't want to overwrite the file without asking the user
 	};
 }
 
 
-void CBookmarkFolder::importBookmarks() {
-	QString fileName = KFileDialog::getOpenFileName(QString::null, i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Import bookmarks"));
+void CIndexBookmarkFolder::importBookmarks() {
+	QString fileName = KFileDialog::getOpenFileName(KUrl(QString::null), i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Import bookmarks"));
 	if (!fileName.isEmpty()) {
 		//we have to decide if we should load an old bookmark file from 1.2 or earlier or the new XML format of > 1.3
 		if ( !loadBookmarks(fileName) ) { //if this failed try to load it as old bookmark file
-			loadBookmarksFromXML( Bookmarks::OldBookmarkImport::oldBookmarksXML( fileName ) );
+			loadBookmarksFromXML( COldBookmarkImport::oldBookmarksXML( fileName ) );
 		};
 	};
 }
 
-bool CBookmarkFolder::acceptDrop(const QMimeSource * src) const {
-	//   qWarning("bool CBookmarkFolder::acceptDrop(const QMimeSource * src): return%ii", (CDragDropMgr::canDecode(src) && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark)));
-
-	return CDragDropMgr::canDecode(src)
-		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
+bool CIndexBookmarkFolder::acceptDrop(const QMimeSource * src) const {
+// 	//   qWarning("bool CIndexBookmarkFolder::acceptDrop(const QMimeSource * src): return%ii", (CDragDropMgr::canDecode(src) && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark)));
+// 
+// 	return CDragDropMgr::canDecode(src)
+// 		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
 }
 
-void CBookmarkFolder::dropped(QDropEvent *e, Q3ListViewItem* after) {
-	if (acceptDrop(e)) {
-		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
-		CDragDropMgr::ItemList::Iterator it;
-		CItemBase* previousItem = dynamic_cast<CItemBase*>(after);
-
-		for( it = dndItems.begin(); it != dndItems.end(); ++it) {
-			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(
-										   (*it).bookmarkModule()
-									   );
-
-			CBookmarkItem* i = new CBookmarkItem(
-								   this,
-								   module,
-								   (*it).bookmarkKey(),
-								   (*it).bookmarkDescription()
-							   );
-
-			if (previousItem) {
-				i->moveAfter( previousItem );
-			}
-
-			i->init();
-			previousItem = i;
-		};
-	};
+void CIndexBookmarkFolder::dropped(QDropEvent *e, QTreeWidgetItem* after) {
+// 	if (acceptDrop(e)) {
+// 		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
+// 		CDragDropMgr::ItemList::Iterator it;
+// 		CItemBase* previousItem = dynamic_cast<CItemBase*>(after);
+// 
+// 		for( it = dndItems.begin(); it != dndItems.end(); ++it) {
+// 			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(
+// 										   (*it).bookmarkModule()
+// 									   );
+// 
+// 			CBookmarkItem* i = new CBookmarkItem(
+// 								   this,
+// 								   module,
+// 								   (*it).bookmarkKey(),
+// 								   (*it).bookmarkDescription()
+// 							   );
+// 
+// 			if (previousItem) {
+// 				i->moveAfter( previousItem );
+// 			}
+// 
+// 			i->init();
+// 			previousItem = i;
+// 		};
+// 	};
 }
 
 /** Saves the bookmarks in a file. */
-const bool CBookmarkFolder::saveBookmarks( const QString& filename, const bool& forceOverwrite ) {
+const bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const bool& forceOverwrite ) {
 	QDomDocument doc("DOC");
 	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
 
@@ -107,21 +132,22 @@ const bool CBookmarkFolder::saveBookmarks( const QString& filename, const bool& 
 	doc.appendChild(content);
 
 	//append the XML nodes of all child items
-	CItemBase* i = dynamic_cast<CItemBase*>( firstChild() );
-	while( i ) {
+	
+	for(int n = 0; n < childCount(); n++) {
+		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( child(n) );
 		if (i->parent() == this) { //only one level under this folder
 			QDomElement newElem = i->saveToXML( doc ); // the cild creates it's own XML code
 			if (!newElem.isNull()) {
 				content.appendChild( newElem ); //append to this folder
 			}
 		}
-		i = dynamic_cast<CItemBase*>( i->nextSibling() );
+		
 	}
-
-	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, Q3TextStream::UnicodeUTF8);
+	//QTextCodec& fileCodec
+	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
 }
 
-const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
+const bool CIndexBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 	QDomDocument doc;
 	doc.setContent(xml);
 	QDomElement document = doc.documentElement();
@@ -130,11 +156,11 @@ const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 		return false;
 	}
 
-	CItemBase* oldItem = 0;
+	CIndexItemBase* oldItem = 0;
 	//restore all child items
 	QDomElement child = document.firstChild().toElement();
 	while ( !child.isNull() && child.parentNode() == document) {
-		CItemBase* i = 0;
+		CIndexItemBase* i = 0;
 		if (child.tagName() == "Folder") {
 			i = new CIndexSubFolder(this, child);
 		}
@@ -162,17 +188,19 @@ const bool CBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 }
 
 /** Loads bookmarks from a file. */
-const bool CBookmarkFolder::loadBookmarks( const QString& filename ) {
+const bool CIndexBookmarkFolder::loadBookmarks( const QString& filename ) {
 	QFile file(filename);
 	if (!file.exists())
 		return false;
 
 	QString xml;
 	if (file.open(QIODevice::ReadOnly)) {
-		Q3TextStream t;
-		t.setEncoding(Q3TextStream::UnicodeUTF8); //set encoding before file is used for input!
+		QTextStream t;
+		//t.setEncoding(QTextStream::UnicodeUTF8); //set encoding before file is used for input!
+		t.setAutoDetectUnicode(false);
+		t.setCodec(QTextCodec::codecForName("UTF-8"));
 		t.setDevice(&file);
-		xml = t.read();
+		xml = t.readAll();
 		file.close();
 	}
 

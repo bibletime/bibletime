@@ -15,6 +15,8 @@
 
 #include "cindextreefolder.h"
 
+
+
 class CIndexFolderBase;
 
 class QMimeSource;

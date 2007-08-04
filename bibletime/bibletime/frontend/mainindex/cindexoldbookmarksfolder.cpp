@@ -19,7 +19,7 @@ OldBookmarksFolder::OldBookmarksFolder(CTreeFolder* folder) : CBookmarkFolder(fo
 		// Import the bookmarks of the previous BibleTime versions
 		if (!CBTConfig::get
 					( CBTConfig::readOldBookmarks )) { //if we havn't yet loaded the old bookmarks
-				loadBookmarksFromXML( CIndexOldBookmarkImport::oldBookmarksXML() );
+				loadBookmarksFromXML( COldBookmarkImport::oldBookmarksXML() );
 			}
 	}
 
