@@ -9,21 +9,37 @@
 // Copyright: See COPYING file that comes with this distribution
 //
 //
-CGlossaryFolder::CGlossaryFolder(CMainIndex* mainIndex, const Type type, const QString& fromLanguage, const QString& toLanguage)
-: CTreeFolder(mainIndex, type, fromLanguage) {
+
+#include "cindexglossaryfolder.h"
+#include "cindextreefolder.h"
+#include "cindexfolderbase.h"
+
+#include "util/cpointers.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/cswordbackend.h"
+
+#include <QString>
+
+#include <klocale.h>
+
+
+
+CIndexGlossaryFolder::CIndexGlossaryFolder(CMainIndex* mainIndex, const Type type, const QString& fromLanguage, const QString& toLanguage)
+: CIndexTreeFolder(mainIndex, type, fromLanguage) {
 	m_fromLanguage = fromLanguage;
 	m_toLanguage = toLanguage;
 }
 
-CGlossaryFolder::CGlossaryFolder(CFolderBase* item, const Type type, const QString& fromLanguage, const QString& toLanguage)
-: CTreeFolder(item, type, fromLanguage) {
+CIndexGlossaryFolder::CIndexGlossaryFolder(CIndexFolderBase* item, const Type type, const QString& fromLanguage, const QString& toLanguage)
+: CIndexTreeFolder(item, type, fromLanguage) {
 	m_fromLanguage = fromLanguage;
 	m_toLanguage = toLanguage;
 }
 
-CGlossaryFolder::~CGlossaryFolder() {}
+CIndexGlossaryFolder::~CIndexGlossaryFolder() {}
 
-void CGlossaryFolder::initTree() {
+void CIndexGlossaryFolder::initTree() {
 	if (type() == Unknown)
 		return;
 
@@ -54,7 +70,7 @@ void CGlossaryFolder::initTree() {
 	//we have now all modules we want to have
 	if (language() == QString::fromLatin1("*")) { //create subfolders for each language
 		typedef std::pair<QString, QString> LanguagePair;
-		typedef Q3ValueList<LanguagePair> LanguagePairList;
+		typedef QList<LanguagePair> LanguagePairList;
 
 		LanguagePairList usedLangs;
 		//     for (CSwordModuleInfo* m = usedModules.first(); m; m = usedModules.next()) {
@@ -83,10 +99,10 @@ void CGlossaryFolder::initTree() {
 		}
 	}
 
-	sortChildItems(0,true);
+	sortChildItems(0,Qt::AscendingOrder);
 }
 
-void CGlossaryFolder::init() {
+void CIndexGlossaryFolder::init() {
 	if (language() == "*") {
 		setText(0,i18n("Glossaries"));
 	}
@@ -114,17 +130,17 @@ void CIndexGlossaryFolder::addGroup(const Type /*type*/, const QString& /*fromLa
 {}
 
 /** Returns the language this glossary folder maps from. */
-const QString& CGlossaryFolder::fromLanguage() const {
+const QString& CIndexGlossaryFolder::fromLanguage() const {
 	return m_fromLanguage;
 }
 
 /** Returns the language this glossary folder maps to. */
-const QString& CGlossaryFolder::toLanguage() const {
+const QString& CIndexGlossaryFolder::toLanguage() const {
 	return m_toLanguage;
 }
 
-void CGlossaryFolder::addGroup(const Type type, const QString& fromLanguage, const QString& toLanguage) {
-	CTreeFolder* i = new CGlossaryFolder(this, type, fromLanguage, toLanguage);
+void CIndexGlossaryFolder::addGroup(const Type type, const QString& fromLanguage, const QString& toLanguage) {
+	CIndexTreeFolder* i = new CIndexGlossaryFolder(this, type, fromLanguage, toLanguage);
 	i->init();
 	if (!i->childCount()) {
 		delete i;
