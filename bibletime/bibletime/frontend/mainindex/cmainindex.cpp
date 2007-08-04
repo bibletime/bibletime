@@ -241,9 +241,9 @@ KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const i
 
 /** Initialize the SIGNAL<->SLOT connections */
 void CMainIndex::initConnections() {
-	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-	QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-		SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
 	QObject::connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
 			SLOT(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));

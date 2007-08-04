@@ -89,16 +89,20 @@ void BibleTime::initView() {
 	m_leftPaneSplitter = new QSplitter(Qt::Vertical, m_mainSplitter);
 	m_leftPaneSplitter->setChildrenCollapsible(false);
 	
-	QVBoxLayout* layout = new QVBoxLayout(m_leftPaneSplitter);
+	
 	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"));
 	bookshelfLabel->setMargin(5);
-	layout->addWidget(bookshelfLabel);
+	
 	m_mainIndex = new CMainIndex(m_leftPaneSplitter);
-	layout->addWidget(m_mainIndex);
+	
 	
 	QWidget* mainindexwidget = new QWidget;
+	QVBoxLayout* layout = new QVBoxLayout(mainindexwidget);
 	mainindexwidget->setLayout(layout);
 	mainindexwidget->setMinimumSize(100, 100);
+
+	layout->addWidget(bookshelfLabel);
+	layout->addWidget(m_mainIndex);
 
 	m_infoDisplay = new CInfoDisplay(m_leftPaneSplitter);
 	CPointers::setInfoDisplay(m_infoDisplay);
@@ -120,7 +124,7 @@ void BibleTime::initAction(KAction* action, QString text, QString icon, KShortcu
 	}
 	actionCollection()->addAction(actionName, action);
 	if (slot) {
-		QObject::connect( action, SIGNAL(triggered), this, slot );
+		QObject::connect( action, SIGNAL(triggered()), this, slot );
 	}
 }
 
@@ -419,8 +423,9 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::closeAll::accel,
 		CResMgr::mainMenu::window::closeAll::tooltip,
 		CResMgr::mainMenu::window::closeAll::actionName,
-		SLOT( slotCloseAll() )
-	);	
+		0
+	);
+	QObject::connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT( deleteAll() ) );
 
 	//m_windowSaveProfile_action = new KActionMenu(i18n("&Save session"),
 	//							 CResMgr::mainMenu::window::saveProfile::icon,
@@ -448,7 +453,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::saveToNewProfile::accel,
 		CResMgr::mainMenu::window::saveToNewProfile::tooltip,
 		CResMgr::mainMenu::window::saveToNewProfile::actionName,
-		SLOT( slotSaveToNewProfile() )
+		SLOT( saveToNewProfile() )
 	);
 	
 
@@ -488,7 +493,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::showFullscreen::accel,
 		CResMgr::mainMenu::window::showFullscreen::tooltip,
 		CResMgr::mainMenu::window::showFullscreen::actionName,
-		SLOT( toggleFullscreen() )
+		SLOT(toggleFullscreen())
 	);
 
 	m_windowFullscreen_action->setShortcutConfigurable(true);
@@ -499,9 +504,9 @@ void BibleTime::initActions() {
 	KMenu* savePopup = m_windowSaveProfile_action->popupMenu();
 	KMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
 
-	connect(loadPopup, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
-	connect(savePopup, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
-	connect(deletePopup, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
+	QObject::connect(loadPopup, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
+	QObject::connect(savePopup, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
+	QObject::connect(deletePopup, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
 
 	refreshProfileMenus();
 
@@ -542,7 +547,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::help::bibleStudyHowTo::accel,
 		CResMgr::mainMenu::help::bibleStudyHowTo::tooltip,
 		CResMgr::mainMenu::help::bibleStudyHowTo::actionName,
-		SLOT( slotopenOnlineHelp_Howto() )
+		SLOT( openOnlineHelp_Howto() )
 	);
 
 
@@ -600,18 +605,18 @@ void BibleTime::initMenubar() {
 	//get the window and edit menus using the actions and their properties
 	//action->associatedWidgets().value(0)
 	m_windowMenu = dynamic_cast<QMenu*>(m_windowCloseAll_action->associatedWidgets().value(0));
+	Q_ASSERT(m_windowMenu);
 }
 
 /** Initializes the SIGNAL / SLOT connections */
 void BibleTime::initConnections() {
-	connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
+	QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
 			this, SLOT(setPlainCaption(const QString&)));
-	connect(m_mdi, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
+	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
 			this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)));
 
-	Q_ASSERT(m_windowMenu);
 	if (m_windowMenu) {
-		connect(m_windowMenu, SIGNAL(aboutToShow()),
+		QObject::connect(m_windowMenu, SIGNAL(aboutToShow()),
 				this, SLOT(slotWindowMenuAboutToShow()));
 	}
 	else {
@@ -619,15 +624,15 @@ void BibleTime::initConnections() {
 	}
 
 
-	connect(
+	QObject::connect(
 		m_mainIndex, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
 		this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo,const QString&))
 	);
-	connect(
+	QObject::connect(
 		m_mainIndex, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
 		this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&))
 	);
-	connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+	QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
 }
 
 /** Initializes the backend */
