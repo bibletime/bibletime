@@ -10,10 +10,38 @@
 //
 //
 
-CBookmarkItem::CBookmarkItem(CFolderBase* parentItem, CSwordModuleInfo* module, const QString& key, const QString& description)
-: CItemBase(parentItem),
-m_description(description),
-m_moduleName(module ? module->name() : QString::null) {
+//BibleTime
+#include "cindexbookmarkitem.h"
+#include "cindexitembase.h"
+#include "cindexfolderbase.h"
+#include "cmainindex.h"
+
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/clanguagemgr.h"
+
+#include "frontend/cbtconfig.h"
+#include "frontend/cinputdialog.h"
+
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/scoped_resource.h"
+
+//Qt
+#include <QString>
+#include <QtXml/qdom.h>
+
+//KDE
+#include <kiconloader.h>
+#include <klocale.h>
+
+
+
+CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModuleInfo* module, const QString& key, const QString& description)
+	: CIndexItemBase(parentItem),
+	m_description(description),
+	m_moduleName(module ? module->name() : QString::null)
+{
 	if ((module && (module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary))  ) {
 		CSwordVerseKey vk(0);
 		vk = key;
@@ -27,20 +55,21 @@ m_moduleName(module ? module->name() : QString::null) {
 	m_startupXML = QDomElement(); //empty XML code
 }
 
-CBookmarkItem::CBookmarkItem(CFolderBase* parentItem, QDomElement& xml )
-: CItemBase(parentItem),
-m_key(QString::null),
-m_description(QString::null),
-m_moduleName(QString::null) {
+CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, QDomElement& xml )
+	: CIndexItemBase(parentItem),
+	m_key(QString::null),
+	m_description(QString::null),
+	m_moduleName(QString::null)
+{
 	m_startupXML = xml;
 }
 
-CBookmarkItem::~CBookmarkItem() {}
+CIndexBookmarkItem::~CIndexBookmarkItem() {}
 
 /** No descriptions */
-void CBookmarkItem::update() {
-	setMultiLinesEnabled(true);
-	setPixmap(0,SmallIcon(CResMgr::mainIndex::bookmark::icon,16));
+void CIndexBookmarkItem::update() {
+	//setMultiLinesEnabled(true); //TODO: ???
+	setIcon(0,SmallIcon(CResMgr::mainIndex::bookmark::icon,16));
 
 	const QString title = QString::fromLatin1("%1 (%2)")
 						  .arg(key())
@@ -48,21 +77,21 @@ void CBookmarkItem::update() {
 	setText(0, title);
 }
 
-void CBookmarkItem::init() {
+void CIndexBookmarkItem::init() {
 	if (!m_startupXML.isNull()) { //we have some XML code to parse
 		loadFromXML(m_startupXML);
 	}
 
 	update();
-	setDropEnabled(false);
-	setDragEnabled(false);
+	//setDropEnabled(false);
+	//setDragEnabled(false);
 
 	//  if (!module())
 	//    setSelectable(false);
 }
 
 /** Reimplementation. */
-const QString CBookmarkItem::toolTip() {
+const QString CIndexBookmarkItem::toolTip() {
 	if (!module()) {
 		return QString::null;
 	}
@@ -82,7 +111,7 @@ const QString CBookmarkItem::toolTip() {
 
 	Q_ASSERT(k.get());
 	if (fontPair.first) { //use a special font
-		qWarning("using a font, %s", fontPair.second.family().latin1());
+		qWarning("using a font, %s", fontPair.second.family().toLatin1());
 		ret = QString::fromLatin1("<b>%1 (%2)</b><br/><small>%3</small><hr><font face=\"%4\" size=\"4\">%5</font>")
 			  .arg(key())
 			  .arg(module()->name())
@@ -102,14 +131,14 @@ const QString CBookmarkItem::toolTip() {
 }
 
 /** Returns the used module. */
-CSwordModuleInfo* const CBookmarkItem::module() {
+CSwordModuleInfo* const CIndexBookmarkItem::module() {
 	CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
 	Q_ASSERT(m);
 	return m;
 }
 
 /** Returns the used key. */
-const QString CBookmarkItem::key() {
+const QString CIndexBookmarkItem::key() {
 	const QString englishKeyName = englishKey();
 	if (!module()) {
 		return englishKeyName;
@@ -119,7 +148,7 @@ const QString CBookmarkItem::key() {
 	if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
 		CSwordVerseKey vk(0);
 		vk = englishKeyName;
-		vk.setLocale(CPointers::backend()->booknameLanguage().latin1() );
+		vk.setLocale(CPointers::backend()->booknameLanguage().toLatin1() );
 
 		returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
 	}
@@ -128,17 +157,17 @@ const QString CBookmarkItem::key() {
 }
 
 /** Returns the used description. */
-const QString& CBookmarkItem::description() {
+const QString& CIndexBookmarkItem::description() {
 	return m_description;
 }
 
 /** No descriptions */
-const bool CBookmarkItem::isMovable() {
+const bool CIndexBookmarkItem::isMovable() {
 	return true;
 }
 
 /** Reimplementation to handle  the menu entries of the main index. */
-const bool CBookmarkItem::enableAction(const MenuAction action) {
+const bool CIndexBookmarkItem::enableAction(const MenuAction action) {
 	if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
 		return true;
 
@@ -146,9 +175,9 @@ const bool CBookmarkItem::enableAction(const MenuAction action) {
 }
 
 /** Changes this bookmark. */
-void CBookmarkItem::rename() {
+void CIndexBookmarkItem::rename() {
 	bool ok  = false;
-	const QString newDescription = CInputDialog::getText(i18n("Change description ..."), i18n("Enter a new description for the chosen bookmark."), description(), &ok, listView(), true);
+	const QString newDescription = CInputDialog::getText(i18n("Change description ..."), i18n("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
 
 	if (ok) {
 		m_description = newDescription;
@@ -157,7 +186,7 @@ void CBookmarkItem::rename() {
 }
 
 /** Reimplementation of CItemBase::saveToXML. */
-QDomElement CBookmarkItem::saveToXML( QDomDocument& doc ) {
+QDomElement CIndexBookmarkItem::saveToXML( QDomDocument& doc ) {
 	QDomElement elem = doc.createElement("Bookmark");
 
 	elem.setAttribute("key", englishKey());
@@ -168,7 +197,7 @@ QDomElement CBookmarkItem::saveToXML( QDomDocument& doc ) {
 	return elem;
 }
 
-void CBookmarkItem::loadFromXML( QDomElement& element ) {
+void CIndexBookmarkItem::loadFromXML( QDomElement& element ) {
 	if (element.isNull())
 		return;
 
@@ -188,11 +217,11 @@ void CBookmarkItem::loadFromXML( QDomElement& element ) {
 }
 
 /** Returns the english key. */
-const QString& CBookmarkItem::englishKey() const {
+const QString& CIndexBookmarkItem::englishKey() const {
 	return m_key;
 }
 
 /** Reimplementation. Returns false everytime because a bookmarks  has not possible drops. */
-bool CBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
+bool CIndexBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
 	return false;
 }
