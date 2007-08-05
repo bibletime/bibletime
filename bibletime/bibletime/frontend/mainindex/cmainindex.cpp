@@ -160,8 +160,11 @@ void CMainIndex::initView() {
 	//setDropVisualizer( true );
 	//setDropHighlighter( true );
 	//setAutoOpen(true);
+
+	setItemsExpandable(true);
+	
 	viewport()->setAcceptDrops(true);
-	setRootIsDecorated(false);
+	//setRootIsDecorated(false);
 	setAllColumnsShowFocus(true);
 	//setItemsMovable(false);
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
