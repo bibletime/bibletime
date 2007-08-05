@@ -139,7 +139,7 @@ protected slots: // Protected slots
 	/**
 	* Shows the context menu at the given position.
 	*/
-	void contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&);
+	void contextMenu(const QPoint&);
 	/**
 	* Adds a new subfolder to the current item.
 	*/

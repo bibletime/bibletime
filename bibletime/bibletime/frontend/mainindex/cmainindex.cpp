@@ -97,6 +97,7 @@ CMainIndex::CMainIndex(QWidget *parent)
 	m_autoOpenFolder(0),
 	m_autoOpenTimer(this)
 {
+	setContextMenuPolicy(Qt::CustomContextMenu);
 	initView();
 	initConnections();
 	//initTree() is called in polish()
@@ -244,8 +245,9 @@ void CMainIndex::initConnections() {
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
-	QObject::connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
-			SLOT(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
+	//see QWidget: customContextMenuRequested; 
+	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
+			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
 }
 
@@ -491,8 +493,9 @@ KAction* const CMainIndex::action( const CIndexItemBase::MenuAction type ) const
 }
 
 /** Shows the context menu at the given position. */
-void CMainIndex::contextMenu(QTreeWidget* /*list*/, QTreeWidgetItem* i, const QPoint& p) {
+void CMainIndex::contextMenu(const QPoint& p) {
 	//setup menu entries depending on current selection
+	QTreeWidgetItem* i = itemAt(p);
 	QList<QTreeWidgetItem *> items = selectedItems();
 
 	if (items.count() == 0) { 
@@ -501,7 +504,7 @@ void CMainIndex::contextMenu(QTreeWidget* /*list*/, QTreeWidgetItem* i, const QP
 	else if (items.count() == 1) { 
 		//special handling for one selected item
 		
-		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(i);
+		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(items.at(0));
 		CIndexItemBase::MenuAction actionType;
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
 			actionType = static_cast<CIndexItemBase::MenuAction>(index);
