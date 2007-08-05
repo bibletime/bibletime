@@ -539,7 +539,7 @@ void CMainIndex::contextMenu(const QPoint& p) {
 	}
 	
 	//finally, open the popup
-	m_popup->exec(p);
+	m_popup->exec(mapToGlobal(p));
 }
 
 /** Adds a new subfolder to the current item. */
