@@ -41,14 +41,18 @@ CIndexTreeFolder::CIndexTreeFolder(CIndexFolderBase* item, const Type type, cons
 CIndexTreeFolder::~CIndexTreeFolder() {}
 
 void CIndexTreeFolder::addGroup(const Type type, const QString language) {
+	qDebug("CIndexTreeFolder::addGroup");
 	CIndexTreeFolder* i = 0;
 	if (type == BookmarkFolder) {
+		qDebug("type: BookmarkFolder");
 		i = new CIndexBookmarkFolder(this);
 	}
 	else if (type == OldBookmarkFolder) {
+		qDebug("type: OldBookmarkFolder");
 		i = new CIndexOldBookmarksFolder(this);
 	}
 	else {
+		qDebug("type: other");
 		i = new CIndexTreeFolder(this, type, language);
 	}
 	i->init();
@@ -67,10 +71,12 @@ void CIndexTreeFolder::addBookmark(CSwordModuleInfo* module, const QString& key,
 }
 
 void CIndexTreeFolder::update() {
+	qDebug("CIndexTreeFolder::update");
 	CIndexFolderBase::update();
 }
 
 void CIndexTreeFolder::init() {
+	qDebug("CIndexTreeFolder::init");
 	if (language() == "*") {
 		switch (type()) {
 			case BibleModuleFolder:
@@ -104,15 +110,16 @@ void CIndexTreeFolder::init() {
 	}
 	else {
 		const CLanguageMgr::Language* const lang = CPointers::languageMgr()->languageForAbbrev( language() );
-
-setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : i18n("Unknown language"));
+		setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : i18n("Unknown language"));
 	}
+
+	qDebug(text(0).toLatin1().data());
 	initTree();
 	update();
 }
 
 void CIndexTreeFolder::initTree() {
-	//  qWarning("CTreeMgr::initTree");
+	qDebug("CTreeMgr::initTree");
 	if (type() == Unknown)
 		return;
 

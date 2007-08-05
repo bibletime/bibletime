@@ -128,7 +128,10 @@ protected: // Protected methods
 	void saveSettings();
 	/** Reimplementation.
 	 */
-	virtual void ensurePolished();
+	//virtual void ensurePolished();
+
+	/** Catch the QEvent::Polish to call ensurePolished. */ 
+	virtual bool event(QEvent* event);
 
 protected slots: // Protected slots
 	/**

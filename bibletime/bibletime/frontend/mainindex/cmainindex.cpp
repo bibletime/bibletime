@@ -113,16 +113,20 @@ CMainIndex::~CMainIndex() {
 
 /** Reimplementation. Adds the given group to the tree. */
 void CMainIndex::addGroup(const CIndexItemBase::Type type, const QString language) {
+	qDebug("CMainIndex::addGroup");
 	CIndexTreeFolder *i = 0;
 	switch (type) {
 		case CIndexItemBase::BookmarkFolder:
+			qDebug("case CIndexItemBase::BookmarkFolder");
 			i = new CIndexBookmarkFolder(this);
 			break;
 		case CIndexItemBase::GlossaryModuleFolder:
+			qDebug("case CIndexItemBase::GlossaryModuleFolder");
 			//we have no second language
 			i = new CIndexGlossaryFolder(this, type, language, QString::null); 
 			break;
 		default:
+			qDebug("case treefolder");
 			i = new CIndexTreeFolder(this, type, language);
 			break;
 	}
@@ -139,6 +143,7 @@ void CMainIndex::addGroup(const CIndexItemBase::Type type, const QString languag
 /** Initializes the view. */
 void CMainIndex::initView() {
 	//addColumn(QString::null);
+	qDebug("CMainIndex::initView");
 	header()->hide();
 
 	//m_toolTip = new ToolTip(this);
@@ -245,7 +250,7 @@ void CMainIndex::initConnections() {
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
-	//see QWidget: customContextMenuRequested; 
+ 
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
@@ -354,6 +359,7 @@ void CMainIndex::dropEvent( QDropEvent* event ) const
 
 /** No descriptions */
 void CMainIndex::initTree() {
+	qDebug("CMainIndex::initTree");
 	addGroup(CIndexItemBase::BookmarkFolder, QString("*"));
 	addGroup(CIndexItemBase::BibleModuleFolder, QString("*"));
 	addGroup(CIndexItemBase::BookModuleFolder, QString("*"));
@@ -544,6 +550,7 @@ void CMainIndex::contextMenu(const QPoint& p) {
 
 /** Adds a new subfolder to the current item. */
 void CMainIndex::createNewFolder() {
+	qDebug("CMainIndex::createNewFolder");
 	CIndexFolderBase* i = dynamic_cast<CIndexFolderBase*>(currentItem());
 	Q_ASSERT(i);
 	
@@ -979,9 +986,18 @@ void CMainIndex::saveSettings() {
 	CBTConfig::set(CBTConfig::bookshelfCurrentItem, path);
 }
 
-void CMainIndex::ensurePolished()
+//void CMainIndex::ensurePolished()
+//{
+	//QTreeWidget::ensurePolished();
+	//initTree();
+	//readSettings();
+//}
+
+bool CMainIndex::event(QEvent* event)
 {
-	QTreeWidget::ensurePolished();
-	initTree();
-	readSettings();
+	if (event->type() == QEvent::Polish) {
+		initTree();
+		readSettings();
+	}
+	return QTreeWidget::event(event);
 }

@@ -80,89 +80,90 @@ void CIndexOldBookmarksFolder::loadFromXML( QDomElement& /*element*/ ) {
 
 const QString COldBookmarkImport::oldBookmarksXML( const QString& configFileName )
 {
-	QString fileName = (configFileName.isEmpty()) ? "bt-groupmanager" : configFileName;
-	KConfig* conf = new KConfig( fileName );
-
-	//KConfigGroupSaver groupSaver(config, configFileName.isEmpty() ? "Groupmanager" : "Bookmarks");
-	KConfigGroup* config = &(conf->group(configFileName.isEmpty() ? "Groupmanager" : "Bookmarks"));
-
-	QDomDocument doc("DOC");
-	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
-
-	QDomElement content = doc.createElement("SwordBookmarks");
-	content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
-	doc.appendChild(content);
-
-	//first create the bookmark groups in the XML document, then add the bookmarks to each parent
-	QMap<int, QDomElement> parentMap; //maps parent ids to dom elements
-
-
-	QStringList groupList;
-	config->readEntry("Groups", groupList);
-	QList<int> parentList;
-	config->readEntry("Group parents", parentList);
-
-	QStringList::Iterator it_groups = groupList.begin();
-	QList<int>::Iterator it_parents = parentList.begin();
-
-	int parentIDCounter = 0;
-	while ( (it_groups != groupList.end()) && (it_parents != parentList.end()) ) {
-		QDomElement parentElement = (*it_parents == -1) ? content : parentMap[*it_parents];
-		if (parentElement.isNull()) {
-			qWarning("EMPTY PARENT FOUND!");
-			parentElement = content;
-		}
-
-		QDomElement elem = doc.createElement("Folder");
-		elem.setAttribute("caption", (*it_groups));
-		parentMap.insert(parentIDCounter, elem);
-
-		parentElement.appendChild( elem );
-
-
-		++it_parents;
-		++it_groups;
-		++parentIDCounter;
-	}
-
-	//groups are now read in, create now the bookmarks
-	config->readEntry("Bookmark parents", parentList);
-	QStringList bookmarkList;
-	config->readEntry("Bookmarks", bookmarkList);
-	QStringList bookmarkModulesList;
-	config->readEntry("Bookmark modules", bookmarkModulesList);
-	QStringList bookmarkDescriptionsList;
-	config->readEntry("Bookmark descriptions", bookmarkDescriptionsList);
-
-	it_parents  = parentList.begin();
-	QStringList::Iterator it_bookmarks    = bookmarkList.begin();
-	QStringList::Iterator it_modules     = bookmarkModulesList.begin();
-	QStringList::Iterator it_descriptions = bookmarkDescriptionsList.begin();
-
-	while ( it_bookmarks != bookmarkList.end() && it_parents != parentList.end() && it_modules != bookmarkModulesList.end() ) {
-			QDomElement parentElement = ((*it_parents) == -1) ? content : parentMap[(*it_parents)];
-			if (parentElement.isNull()) {
-				qWarning("EMPTY PARENT FOUND!");
-				parentElement = content;
-			};
-			QDomElement elem = doc.createElement("Bookmark");
-
-			elem.setAttribute("key", *it_bookmarks);
-			elem.setAttribute("description", *it_descriptions);
-			elem.setAttribute("modulename", *it_modules);
-
-			CSwordModuleInfo* m = CPointers::backend()->findModuleByName( *it_modules );
-			elem.setAttribute("moduledescription", m ? m->config(CSwordModuleInfo::Description) : QString::null);
-
-			parentElement.appendChild( elem );
-
-
-			++it_parents;
-			++it_modules;
-			++it_descriptions;
-			++it_bookmarks;
-		};
-
-		return doc.toString();
+// 	QString fileName = (configFileName.isEmpty()) ? "bt-groupmanager" : configFileName;
+// 	KConfig* conf = new KConfig( fileName );
+// 
+// 	//KConfigGroupSaver groupSaver(config, configFileName.isEmpty() ? "Groupmanager" : "Bookmarks");
+// 	KConfigGroup* config = &(conf->group(configFileName.isEmpty() ? "Groupmanager" : "Bookmarks"));
+// 
+// 	QDomDocument doc("DOC");
+// 	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+// 
+// 	QDomElement content = doc.createElement("SwordBookmarks");
+// 	content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
+// 	doc.appendChild(content);
+// 
+// 	//first create the bookmark groups in the XML document, then add the bookmarks to each parent
+// 	QMap<int, QDomElement> parentMap; //maps parent ids to dom elements
+// 
+// 
+// 	QStringList groupList;
+// 	config->readEntry("Groups", groupList);
+// 	QList<int> parentList;
+// 	config->readEntry("Group parents", parentList);
+// 
+// 	QStringList::Iterator it_groups = groupList.begin();
+// 	QList<int>::Iterator it_parents = parentList.begin();
+// 
+// 	int parentIDCounter = 0;
+// 	while ( (it_groups != groupList.end()) && (it_parents != parentList.end()) ) {
+// 		QDomElement parentElement = (*it_parents == -1) ? content : parentMap[*it_parents];
+// 		if (parentElement.isNull()) {
+// 			qWarning("EMPTY PARENT FOUND!");
+// 			parentElement = content;
+// 		}
+// 
+// 		QDomElement elem = doc.createElement("Folder");
+// 		elem.setAttribute("caption", (*it_groups));
+// 		parentMap.insert(parentIDCounter, elem);
+// 
+// 		parentElement.appendChild( elem );
+// 
+// 
+// 		++it_parents;
+// 		++it_groups;
+// 		++parentIDCounter;
+// 	}
+// 
+// 	//groups are now read in, create now the bookmarks
+// 	config->readEntry("Bookmark parents", parentList);
+// 	QStringList bookmarkList;
+// 	config->readEntry("Bookmarks", bookmarkList);
+// 	QStringList bookmarkModulesList;
+// 	config->readEntry("Bookmark modules", bookmarkModulesList);
+// 	QStringList bookmarkDescriptionsList;
+// 	config->readEntry("Bookmark descriptions", bookmarkDescriptionsList);
+// 
+// 	it_parents  = parentList.begin();
+// 	QStringList::Iterator it_bookmarks    = bookmarkList.begin();
+// 	QStringList::Iterator it_modules     = bookmarkModulesList.begin();
+// 	QStringList::Iterator it_descriptions = bookmarkDescriptionsList.begin();
+// 
+// 	while ( it_bookmarks != bookmarkList.end() && it_parents != parentList.end() && it_modules != bookmarkModulesList.end() ) {
+// 			QDomElement parentElement = ((*it_parents) == -1) ? content : parentMap[(*it_parents)];
+// 			if (parentElement.isNull()) {
+// 				qWarning("EMPTY PARENT FOUND!");
+// 				parentElement = content;
+// 			};
+// 			QDomElement elem = doc.createElement("Bookmark");
+// 
+// 			elem.setAttribute("key", *it_bookmarks);
+// 			elem.setAttribute("description", *it_descriptions);
+// 			elem.setAttribute("modulename", *it_modules);
+// 
+// 			CSwordModuleInfo* m = CPointers::backend()->findModuleByName( *it_modules );
+// 			elem.setAttribute("moduledescription", m ? m->config(CSwordModuleInfo::Description) : QString::null);
+// 
+// 			parentElement.appendChild( elem );
+// 
+// 
+// 			++it_parents;
+// 			++it_modules;
+// 			++it_descriptions;
+// 			++it_bookmarks;
+// 		};
+// 
+// 		return doc.toString();
+	return QString::null;
 };
 
