@@ -59,6 +59,7 @@
 using namespace Profile;
 
 CReadWindow* CDisplayWindow::createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent) {
+	qDebug("CDisplayWindow::createReadInstance");
 	switch (modules.first()->type()) {
 		case CSwordModuleInfo::Bible:
 			return new CBibleReadWindow(modules, parent);
@@ -99,6 +100,7 @@ m_moduleChooserBar(0),
 m_mainToolBar(0),
 m_popupMenu(0),
 m_displayWidget(0) {
+	qDebug("CDisplayWindow::CDisplayWindow");
 	setModules(modules);
 	KMainWindow::setAttribute(Qt::WA_DeleteOnClose);
 }
@@ -166,16 +168,10 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 	a->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, action);
 }
 
-void CDisplayWindow::initActions() {
-	/*kde/qt3:
-	new KAction(
-				i18n("Search"),
-				CResMgr::displaywindows::general::search::icon,
-				CResMgr::displaywindows::general::search::accel,
-				this, SLOT(slotSearchInModules()),
-				actionCollection(), CResMgr::displaywindows::general::search::actionName
-			   );
-	*/
+void CDisplayWindow::initActions()
+{
+	qDebug("CDisplayWindow::initActions");	
+
 	KAction* kaction = new KAction(
 				KIcon(CResMgr::displaywindows::general::search::icon),
 				i18n("Search"),
@@ -377,6 +373,7 @@ void CDisplayWindow::setModuleChooserBar( CModuleChooserBar* bar ) {
 
 /** Sets the modules. */
 void CDisplayWindow::setModules( const ListCSwordModuleInfo& newModules ) {
+	qDebug("CDisplayWindow::setModules");
 	m_modules.clear();
 
 	ListCSwordModuleInfo::const_iterator end_it = newModules.end();
@@ -388,6 +385,7 @@ void CDisplayWindow::setModules( const ListCSwordModuleInfo& newModules ) {
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 const bool CDisplayWindow::init() {
 	//BibleTime::createReadDisplayWindow calls the show() method
+	qDebug("CDisplayWindow::init");
 	initView();
 	setMinimumSize( 250,200 );
 
@@ -395,7 +393,7 @@ const bool CDisplayWindow::init() {
 	//setup focus stuff.
 	setFocusPolicy(Qt::ClickFocus);
 	parentWidget()->setFocusPolicy(Qt::ClickFocus);
-
+	qDebug("CDisplayWindow::init, call init Actions,Toolbars,Connections,PopupMenu");
 	initActions();
 	initToolbars();
 	initConnections();
@@ -408,6 +406,7 @@ const bool CDisplayWindow::init() {
 	}
 
 	setReady(true);
+	qDebug("CDisplayWindow::init, will return");
 	return true;
 }
 

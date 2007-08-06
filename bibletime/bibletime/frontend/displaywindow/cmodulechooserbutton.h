@@ -65,7 +65,7 @@ private:
 
 
 private slots:
-	void moduleChosen(int ID );
+	void moduleChosen(QAction* action );
 
 signals:
 	void sigRemoveButton(const int ID);

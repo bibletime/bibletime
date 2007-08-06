@@ -249,7 +249,8 @@ KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const i
 }
 
 /** Initialize the SIGNAL<->SLOT connections */
-void CMainIndex::initConnections() {
+void CMainIndex::initConnections()
+{
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
@@ -260,9 +261,13 @@ void CMainIndex::initConnections() {
 }
 
 /** Is called when an item was clicked/double clicked. */
-void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
+void CMainIndex::slotExecuted( QTreeWidgetItem* i )
+{
+	qDebug("CMainIndex::slotExecuted");
+	qDebug(QString().setNum((int)i).toLatin1().data());
 	CIndexItemBase* ci = dynamic_cast<CIndexItemBase*>(i);
 	if (!ci) {
+		qDebug("if (!ci)");
 		return;
 	}
 
@@ -273,6 +278,7 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i ) {
 		CSwordModuleInfo* mod = m->module();
 		ListCSwordModuleInfo modules;
 		modules.append(mod);
+		qDebug("will emit createReadDisplayWindow");
 		emit createReadDisplayWindow(modules, QString::null);
 	}
 	else if (CIndexBookmarkItem* b = dynamic_cast<CIndexBookmarkItem*>(i) ) { //clicked on a bookmark

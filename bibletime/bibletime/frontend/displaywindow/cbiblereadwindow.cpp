@@ -47,7 +47,9 @@ using namespace Profile;
 
 CBibleReadWindow::CBibleReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
 	: CLexiconReadWindow(moduleList, parent)
-{}
+{
+	qDebug("CBibleReadWindow::CBibleReadWindow");
+}
 
 CBibleReadWindow::~CBibleReadWindow() {}
 

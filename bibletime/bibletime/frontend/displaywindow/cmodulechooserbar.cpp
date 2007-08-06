@@ -34,6 +34,7 @@ m_moduleType(type),
 m_idCounter(0),
 m_buttonLimit(-1) //-1 means no limit
 {
+	qDebug("CModuleChooserBar::CModuleChooserBar");
 	//insert buttons if useModules != 0
 	ListCSwordModuleInfo::iterator end_it = useModules.end();
 	for (ListCSwordModuleInfo::iterator it(useModules.begin()); it != end_it; ++it) {
@@ -49,28 +50,31 @@ m_buttonLimit(-1) //-1 means no limit
 	if ( (m_buttonLimit == -1) || (m_buttonLimit > (int)m_buttonList.count()) ) {
 		addButton(0); //add a button without module set
 	}
+	qDebug("CModuleChooserBar::CModuleChooserBar end");
 }
 
 //change current with append
 /** Adds a button to the toolbar */
-CModuleChooserButton* const CModuleChooserBar::addButton( CSwordModuleInfo* const module ) {
+CModuleChooserButton* const CModuleChooserBar::addButton( CSwordModuleInfo* const module )
+{
+	qDebug("CModuleChooserBar::addButton( CSwordModuleInfo* const module )");
 	CModuleChooserButton* b = new CModuleChooserButton(module, m_moduleType, ++m_idCounter, this);
 	//insertWidget( m_idCounter, b->size().width(), b );
 	QAction* a = addWidget(b);
 	m_buttonList.append(b);
-
+	qDebug("CModuleChooserBar::addButton( CSwordModuleInfo* const module ), connects");
 	connect( b, SIGNAL(sigAddButton()), this, SLOT(addButton()) );
 
 	connect( b, SIGNAL(sigRemoveButton(const int)), this, SLOT(removeButton(const int)) );
 
 	connect( b, SIGNAL(sigChanged()), SIGNAL(sigChanged()) );
 	connect( b, SIGNAL(sigChanged()), SLOT(updateMenuItems()) );
-
+		qDebug("CModuleChooserBar::addButton( CSwordModuleInfo* const module ), connects end");
 	//b->show(); //according to qt4 docs this does not work: "You should use QAction::setVisible()"
 	a->setVisible(true);
 
 	updateMenuItems(); //make sure the items are up to date with the newest module list
-
+	qDebug("CModuleChooserBar::addButton( CSwordModuleInfo* const module ) end");
 	return b;
 }
 

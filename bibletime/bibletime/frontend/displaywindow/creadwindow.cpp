@@ -30,9 +30,10 @@
 using namespace Profile;
 
 CReadWindow::CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
-: CDisplayWindow(modules,parent),
-m_displayWidget(0) {
-
+	: CDisplayWindow(modules,parent),
+	m_displayWidget(0)
+{
+	qDebug("CReadWindow::CReadWindow");
 	//   installEventFilter(this);
 }
 

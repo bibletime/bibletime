@@ -46,7 +46,11 @@
 CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
 	: CReadWindow(moduleList, parent)
 {
+	qDebug("CLexiconReadWindow::CLexiconReadWindow");
+	moduleList.first();
+	qDebug("CLexiconReadWindow::CLexiconReadWindow 2");
 	setKey( CSwordKey::createInstance(moduleList.first()) );
+	qDebug("CLexiconReadWindow::CLexiconReadWindow 3");
 }
 
 CLexiconReadWindow::~CLexiconReadWindow() {}
@@ -185,24 +189,27 @@ void CLexiconReadWindow::initConnections() {
 
 }
 
-void CLexiconReadWindow::initView() {
+void CLexiconReadWindow::initView()
+{
+	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
-
+	qDebug("CLexiconReadWindow::initView 2");
 	setMainToolBar( new KToolBar(this) );
 	//addDockWindow(mainToolBar()); //TODO: does this work? see write windows
-
+	qDebug("CLexiconReadWindow::initView 3");
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
-
+	qDebug("CLexiconReadWindow::initView 4");
 	mainToolBar()->addWidget(keyChooser());
 	//mainToolBar()->setFullSize(false);
-
+	qDebug("CLexiconReadWindow::initView 5");
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
 	//addDockWindow(moduleChooserBar());
-
+	qDebug("CLexiconReadWindow::initView 6");
 	setButtonsToolBar( new KToolBar(this) );
 	//addDockWindow(buttonsToolBar());
-	
+	qDebug("CLexiconReadWindow::initView 7");
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
+	qDebug("CLexiconReadWindow::initView 8");
 	setCentralWidget( displayWidget()->view() );
 }
 

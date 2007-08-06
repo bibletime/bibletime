@@ -72,7 +72,7 @@ BibleTime::BibleTime()
 	initView();
 	initActions();
 
-	createGUI("bibletimeui.rc");
+	createGUI("/usr/share/apps/bibletime/bibletimeui.rc");
 	initMenubar();
 	initConnections();
 
@@ -182,7 +182,7 @@ void BibleTime::readSettings() {
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
 	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-
+	qDebug("BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key)");
 	CDisplayWindow* displayWindow = CDisplayWindow::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
 		displayWindow->init();
