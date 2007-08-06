@@ -27,7 +27,7 @@ SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/install/lib)
 # run create-code.pl to create a .cpp file containing
 # the builtin templates
 ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/create_code.pl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
-                     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates
                      VERBATIM)
 #######################################################
 

@@ -170,4 +170,4 @@ void CDisplayTemplateMgr::loadUserTemplates() {
 }
 
 //Include the HTML templates which were put into a cpp file by a Perl script
-#include "template-init.cpp"
+#include "display-templates/template-init.cpp"
