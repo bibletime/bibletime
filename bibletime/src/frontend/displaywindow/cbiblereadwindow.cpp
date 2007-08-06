@@ -141,6 +141,7 @@ void CBibleReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 }
 
 void CBibleReadWindow::initActions() {
+	qDebug("CBibleReadWindow::initActions");
 	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
 
 	KActionCollection* ac = actionCollection();

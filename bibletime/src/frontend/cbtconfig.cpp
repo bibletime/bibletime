@@ -24,6 +24,8 @@
 #include <QMap>
 #include <QList>
 
+#include <QDebug>
+
 //KDE includes
 #include <kapplication.h>
 #include <kactioncollection.h>
@@ -607,6 +609,7 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 void CBTConfig::setupAccelSettings
 	(const CBTConfig::keys type, KActionCollection* const actionCollection)
 {
+	qDebug("CBTConfig::setupAccelSettings");
 	QString groupName;
 	switch (type) {
 		case allWindows : {
@@ -642,9 +645,16 @@ void CBTConfig::setupAccelSettings
 			break;
 		};
 	};
-	
+	qDebug() << groupName;
+	Q_ASSERT(CBTConfig::getConfig());
+	//buggy???
 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-	// TODO actionCollection->readSettings(cg);
+	Q_ASSERT(cg);
+	
+	//actionCollection->readSettings(cg);
+	actionCollection->setConfigGroup(groupName);
+	actionCollection->readSettings();
+	qDebug("CBTConfig::setupAccelSettings end");
 }
 
 void CBTConfig::saveAccelSettings

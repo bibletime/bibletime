@@ -82,6 +82,7 @@ void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 }
 
 void CLexiconReadWindow::initActions() {
+	qDebug("CLexiconReadWindow::initActions");
 	CReadWindow::initActions();
 
 	m_actions.backInHistory = dynamic_cast<KToolBarPopupAction*>(
