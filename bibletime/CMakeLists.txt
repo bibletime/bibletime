@@ -7,20 +7,13 @@ SET(DEBUG true)
 # Find required packages
 #
 find_package(Qt4 REQUIRED)  		#Qt4
-#Workaround for KDE4 detection. Set ${CMAKE_INSTALL_PREFIX} to your KDE4 install dir.
-set(OLD_CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}) #backup
-set(CMAKE_INSTALL_PREFIX /usr/lib/kde4) #kde4 dir
 find_package(KDE4 REQUIRED) 		#KDE4
-set(CMAKE_INSTALL_PREFIX ${OLD_CMAKE_INSTALL_PREFIX}) #restore
 
 #custom includes
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CLucene REQUIRED)	#CLucene
-find_package(Sword REQUIRED)		#Sword
+find_package(Sword REQUIRED)	#Sword
 ######################################################
-
-SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/install/bin)
-SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/install/lib)
 
 
 #######################################################
@@ -33,9 +26,6 @@ ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-tem
 
 
 SET(bibletime_SOURCES
-#
-#These files already compile cleanly
-#
 	#backend filters
 	src/backend/filters/bt_gbfhtml.cpp
 	src/backend/filters/bt_osishtml.cpp
@@ -159,9 +149,13 @@ SET(bibletime_SOURCES
 	src/bibletime_init.cpp
 	src/bibletime_slots.cpp
 	src/bibletime_dcop.cpp
-
-#Add files to be ported here
 )
+
+#FILE(GLOB ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/ hi*png
+
+FILE(GLOB_RECURSE BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/hi*png)
+
+MESSAGE(STATUS "Icons found: ${BT_INSTALL_ICONS_LIST}")
 
 kde4_add_ui_files(bibletime_SOURCES
 	src/frontend/searchdialog/searchresultsform.ui
@@ -209,10 +203,6 @@ SET_TARGET_PROPERTIES(bibletime
 		COMPILE_FLAGS "-w -fexceptions " #Enable exception handling
 )
 
-INSTALL(TARGETS bibletime
-	DESTINATION bin
-)
-
 TARGET_LINK_LIBRARIES(bibletime
 	${KDE4_KDEUI_LIBS}
 	${KDE4_KDECORE_LIBS}
@@ -223,3 +213,9 @@ TARGET_LINK_LIBRARIES(bibletime
 	${CLUCENE_LIBRARY}
 	${SWORD_LIBRARY}
 )
+
+INSTALL(TARGETS "bibletime" DESTINATION "bin/")
+INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
+INSTALL(FILES "src/pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
+INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
+
