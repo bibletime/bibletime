@@ -95,7 +95,7 @@ private:
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
 	//TODO: commented out temporarily
-	//CConfigurationDialog *dlg = new CConfigurationDialog(this, "CConfigurationDialog", actionCollection());
+	//CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
 	//connect(dlg, SIGNAL(signalSettingsChanged()), SLOT(slotSettingsChanged()) );
 
 	//dlg->exec();
