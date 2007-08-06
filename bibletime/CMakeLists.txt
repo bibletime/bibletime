@@ -26,7 +26,7 @@ SET(LIBRARY_OUTPUT_PATH    ${PROJECT_BINARY_DIR}/install/lib)
 #######################################################
 # run create-code.pl to create a .cpp file containing
 # the builtin templates
-ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/bibletime/display-templates/create_code.pl ${CMAKE_CURRENT_SOURCE_DIR}/bibletime/display-templates/
+ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/create_code.pl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
                      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
                      VERBATIM)
 #######################################################
@@ -37,137 +37,137 @@ SET(bibletime_SOURCES
 #These files already compile cleanly
 #
 	#backend filters
-	bibletime/backend/filters/bt_gbfhtml.cpp
-	bibletime/backend/filters/bt_osishtml.cpp
-	bibletime/backend/filters/bt_plainhtml.cpp
-	bibletime/backend/filters/bt_thmlhtml.cpp
-	bibletime/backend/filters/bt_thmlplain.cpp
-	bibletime/backend/filters/osismorphsegmentation.cpp
+	src/backend/filters/bt_gbfhtml.cpp
+	src/backend/filters/bt_osishtml.cpp
+	src/backend/filters/bt_plainhtml.cpp
+	src/backend/filters/bt_thmlhtml.cpp
+	src/backend/filters/bt_thmlplain.cpp
+	src/backend/filters/osismorphsegmentation.cpp
 	#backend rendering
-	bibletime/backend/rendering/cbookdisplay.cpp
-	bibletime/backend/rendering/cchapterdisplay.cpp
-	bibletime/backend/rendering/cdisplayrendering.cpp
-	bibletime/backend/rendering/centrydisplay.cpp
-	bibletime/backend/rendering/chtmlexportrendering.cpp
-	bibletime/backend/rendering/cplaintextexportrendering.cpp
-	bibletime/backend/rendering/ctextrendering.cpp
+	src/backend/rendering/cbookdisplay.cpp
+	src/backend/rendering/cchapterdisplay.cpp
+	src/backend/rendering/cdisplayrendering.cpp
+	src/backend/rendering/centrydisplay.cpp
+	src/backend/rendering/chtmlexportrendering.cpp
+	src/backend/rendering/cplaintextexportrendering.cpp
+	src/backend/rendering/ctextrendering.cpp
 	#backend managers
-	bibletime/backend/managers/btstringmgr.cpp
-	bibletime/backend/managers/cdisplaytemplatemgr.cpp
-	bibletime/backend/managers/clanguagemgr.cpp
-	bibletime/backend/managers/creferencemanager.cpp
-	bibletime/backend/managers/cswordbackend.cpp
+	src/backend/managers/btstringmgr.cpp
+	src/backend/managers/cdisplaytemplatemgr.cpp
+	src/backend/managers/clanguagemgr.cpp
+	src/backend/managers/creferencemanager.cpp
+	src/backend/managers/cswordbackend.cpp
 	#backend module drivers
-	bibletime/backend/drivers/cswordmoduleinfo.cpp
-	bibletime/backend/drivers/cswordbiblemoduleinfo.cpp
-	bibletime/backend/drivers/cswordbookmoduleinfo.cpp
-	bibletime/backend/drivers/cswordcommentarymoduleinfo.cpp
-	bibletime/backend/drivers/cswordlexiconmoduleinfo.cpp
+	src/backend/drivers/cswordmoduleinfo.cpp
+	src/backend/drivers/cswordbiblemoduleinfo.cpp
+	src/backend/drivers/cswordbookmoduleinfo.cpp
+	src/backend/drivers/cswordcommentarymoduleinfo.cpp
+	src/backend/drivers/cswordlexiconmoduleinfo.cpp
 	#backend keys
-	bibletime/backend/keys/cswordkey.cpp
-	bibletime/backend/keys/cswordldkey.cpp
-	bibletime/backend/keys/cswordtreekey.cpp
-	bibletime/backend/keys/cswordversekey.cpp
+	src/backend/keys/cswordkey.cpp
+	src/backend/keys/cswordldkey.cpp
+	src/backend/keys/cswordtreekey.cpp
+	src/backend/keys/cswordversekey.cpp
 	
-	bibletime/backend/cswordmodulesearch.cpp
+	src/backend/cswordmodulesearch.cpp
 
 	#utilities
-	bibletime/util/cresmgr.cpp
-	bibletime/util/cpointers.cpp
-	bibletime/util/ctoolclass.cpp
-	bibletime/util/directoryutil.cpp
+	src/util/cresmgr.cpp
+	src/util/cpointers.cpp
+	src/util/ctoolclass.cpp
+	src/util/directoryutil.cpp
 	
 	# frontend top level
-	bibletime/frontend/cdragdrop.cpp
-	bibletime/frontend/kstartuplogo.cpp
-	bibletime/frontend/crossrefrendering.cpp
-	bibletime/frontend/cprinter.cpp
-	bibletime/frontend/cbtconfig.cpp
-	bibletime/frontend/cmoduleindexdialog.cpp
-	bibletime/frontend/cmdiarea.cpp
-	bibletime/frontend/cinfodisplay.cpp
-	bibletime/frontend/cinputdialog.cpp
-	bibletime/frontend/cexportmanager.cpp
+	src/frontend/cdragdrop.cpp
+	src/frontend/kstartuplogo.cpp
+	src/frontend/crossrefrendering.cpp
+	src/frontend/cprinter.cpp
+	src/frontend/cbtconfig.cpp
+	src/frontend/cmoduleindexdialog.cpp
+	src/frontend/cmdiarea.cpp
+	src/frontend/cinfodisplay.cpp
+	src/frontend/cinputdialog.cpp
+	src/frontend/cexportmanager.cpp
 
 	#"Bookshelf" widget in main window
-	bibletime/frontend/mainindex/cmainindex.cpp
-	bibletime/frontend/mainindex/cindexitembase.cpp
-	bibletime/frontend/mainindex/cindexmoduleitem.cpp
-	bibletime/frontend/mainindex/cindexbookmarkitem.cpp
-	bibletime/frontend/mainindex/cindexfolderbase.cpp
-	bibletime/frontend/mainindex/cindextreefolder.cpp
-	bibletime/frontend/mainindex/cindexglossaryfolder.cpp
-	bibletime/frontend/mainindex/cindexbookmarkfolder.cpp
-	bibletime/frontend/mainindex/cindexsubfolder.cpp
-	bibletime/frontend/mainindex/cindexoldbookmarksfolder.cpp
+	src/frontend/mainindex/cmainindex.cpp
+	src/frontend/mainindex/cindexitembase.cpp
+	src/frontend/mainindex/cindexmoduleitem.cpp
+	src/frontend/mainindex/cindexbookmarkitem.cpp
+	src/frontend/mainindex/cindexfolderbase.cpp
+	src/frontend/mainindex/cindextreefolder.cpp
+	src/frontend/mainindex/cindexglossaryfolder.cpp
+	src/frontend/mainindex/cindexbookmarkfolder.cpp
+	src/frontend/mainindex/cindexsubfolder.cpp
+	src/frontend/mainindex/cindexoldbookmarksfolder.cpp
 
 	#Settings dialog (configuration)
-	bibletime/frontend/settingsdialogs/cacceleratorsettings.cpp
-	bibletime/frontend/settingsdialogs/cdisplaysettings.cpp
-	bibletime/frontend/settingsdialogs/cswordsettings.cpp
-	bibletime/frontend/settingsdialogs/clanguagesettings.cpp
-	bibletime/frontend/settingsdialogs/cconfigurationdialog.cpp
+	src/frontend/settingsdialogs/cacceleratorsettings.cpp
+	src/frontend/settingsdialogs/cdisplaysettings.cpp
+	src/frontend/settingsdialogs/cswordsettings.cpp
+	src/frontend/settingsdialogs/clanguagesettings.cpp
+	src/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
-	#bibletime/frontend/bookshelfmanager/cmanageindiceswidget.cpp
-	#bibletime/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-	#bibletime/frontend/bookshelfmanager/kio_ftptransport.cpp
-	#bibletime/frontend/bookshelfmanager/btinstallmgr.cpp
+	#src/frontend/bookshelfmanager/cmanageindiceswidget.cpp
+	#src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
+	#src/frontend/bookshelfmanager/kio_ftptransport.cpp
+	#src/frontend/bookshelfmanager/btinstallmgr.cpp
 
 	#Profile manager frontend
-	bibletime/frontend/profile/cprofilemgr.cpp
-	bibletime/frontend/profile/cprofilewindow.cpp
-	bibletime/frontend/profile/cprofile.cpp
+	src/frontend/profile/cprofilemgr.cpp
+	src/frontend/profile/cprofilewindow.cpp
+	src/frontend/profile/cprofile.cpp
 
 	#frontend keychooser widgets
-	bibletime/frontend/keychooser/ckeychooser.cpp
-	bibletime/frontend/keychooser/cbiblekeychooser.cpp
-	bibletime/frontend/keychooser/cbookkeychooser.cpp
-	bibletime/frontend/keychooser/cbooktreechooser.cpp
-	bibletime/frontend/keychooser/clexiconkeychooser.cpp
-	bibletime/frontend/keychooser/ckeychooserwidget.cpp
-	bibletime/frontend/keychooser/ckeyreferencewidget.cpp
-	bibletime/frontend/keychooser/cscrollerwidgetset.cpp
-	bibletime/frontend/keychooser/cscrollbutton.cpp
+	src/frontend/keychooser/ckeychooser.cpp
+	src/frontend/keychooser/cbiblekeychooser.cpp
+	src/frontend/keychooser/cbookkeychooser.cpp
+	src/frontend/keychooser/cbooktreechooser.cpp
+	src/frontend/keychooser/clexiconkeychooser.cpp
+	src/frontend/keychooser/ckeychooserwidget.cpp
+	src/frontend/keychooser/ckeyreferencewidget.cpp
+	src/frontend/keychooser/cscrollerwidgetset.cpp
+	src/frontend/keychooser/cscrollbutton.cpp
 	
 	#behaviour for display areas
-	bibletime/frontend/display/cdisplay.cpp
-	bibletime/frontend/display/creaddisplay.cpp
-	bibletime/frontend/display/chtmlreaddisplay.cpp
-	bibletime/frontend/display/cwritedisplay.cpp
-	bibletime/frontend/display/cplainwritedisplay.cpp
-	bibletime/frontend/display/chtmlwritedisplay.cpp
+	src/frontend/display/cdisplay.cpp
+	src/frontend/display/creaddisplay.cpp
+	src/frontend/display/chtmlreaddisplay.cpp
+	src/frontend/display/cwritedisplay.cpp
+	src/frontend/display/cplainwritedisplay.cpp
+	src/frontend/display/chtmlwritedisplay.cpp
 	
 	#display windows and their widgets
-	bibletime/frontend/displaywindow/cmodulechooserbutton.cpp
-	bibletime/frontend/displaywindow/cmodulechooserbar.cpp
-	bibletime/frontend/displaywindow/cbuttons.cpp
-	bibletime/frontend/displaywindow/cdisplaywindow.cpp
-	bibletime/frontend/displaywindow/creadwindow.cpp
-	bibletime/frontend/displaywindow/cwritewindow.cpp
-	bibletime/frontend/displaywindow/cplainwritewindow.cpp
-	bibletime/frontend/displaywindow/chtmlwritewindow.cpp
-	bibletime/frontend/displaywindow/clexiconreadwindow.cpp
-	bibletime/frontend/displaywindow/cbiblereadwindow.cpp
-	bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp
-	bibletime/frontend/displaywindow/cbookreadwindow.cpp
+	src/frontend/displaywindow/cmodulechooserbutton.cpp
+	src/frontend/displaywindow/cmodulechooserbar.cpp
+	src/frontend/displaywindow/cbuttons.cpp
+	src/frontend/displaywindow/cdisplaywindow.cpp
+	src/frontend/displaywindow/creadwindow.cpp
+	src/frontend/displaywindow/cwritewindow.cpp
+	src/frontend/displaywindow/cplainwritewindow.cpp
+	src/frontend/displaywindow/chtmlwritewindow.cpp
+	src/frontend/displaywindow/clexiconreadwindow.cpp
+	src/frontend/displaywindow/cbiblereadwindow.cpp
+	src/frontend/displaywindow/ccommentaryreadwindow.cpp
+	src/frontend/displaywindow/cbookreadwindow.cpp
 	
 	#toplevel files
-	bibletime/bibletimeapp.cpp
-	bibletime/main.cpp
-	bibletime/bibletime.cpp
-	bibletime/bibletime_init.cpp
-	bibletime/bibletime_slots.cpp
-	bibletime/bibletime_dcop.cpp
+	src/bibletimeapp.cpp
+	src/main.cpp
+	src/bibletime.cpp
+	src/bibletime_init.cpp
+	src/bibletime_slots.cpp
+	src/bibletime_dcop.cpp
 
 #Add files to be ported here
 )
 
 kde4_add_ui_files(bibletime_SOURCES
-	bibletime/frontend/searchdialog/searchresultsform.ui
-	bibletime/frontend/searchdialog/searchoptionsform.ui
+	src/frontend/searchdialog/searchresultsform.ui
+	src/frontend/searchdialog/searchoptionsform.ui
 
-	bibletime/frontend/bookshelfmanager/manageindicesform.ui
+	src/frontend/bookshelfmanager/manageindicesform.ui
 
 )
 
@@ -190,7 +190,7 @@ INCLUDE_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h
 	${SWORD_INCLUDE_DIR}
 	${CMAKE_CURRENT_BINARY_DIR} # for .h files generated from .ui
-	${CMAKE_CURRENT_SOURCE_DIR}/bibletime # so that include paths like "frontend/..." work
+	${CMAKE_CURRENT_SOURCE_DIR}/src # so that include paths like "frontend/..." work
 )
 
 #This must come before the target definition!
