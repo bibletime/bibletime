@@ -110,12 +110,12 @@ void CLexiconReadWindow::initActions() {
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( previousEntry() ) );
 	ac->addAction("previousEntry", kaction);
-
+	qDebug() << "ac: " << ac;
 	m_actions.selectAll = qobject_cast<KAction*>(ac->action("selectAll"));
-	Q_ASSERT(m_actions.selectAll);
+	//TODO: Q_ASSERT(m_actions.selectAll);
 
 	m_actions.findText = qobject_cast<KAction*>(ac->action("findText"));
-	Q_ASSERT(m_actions.findText);
+	//TODO: Q_ASSERT(m_actions.findText);
 	
 	//m_actions.findStrongs = new KAction(i18n("Strong's Search"), KShortcut(0),this, SLOT(openSearchStrongsDialog()), actionCollection(), "findStrongs");
 	m_actions.findStrongs = new KAction(
@@ -174,16 +174,16 @@ void CLexiconReadWindow::initConnections() {
 		this, SLOT(slotFillBackHistory())
 	);
 	connect(
-		m_actions.backInHistory->popupMenu(), SIGNAL(activated(int)),
-		keyChooser(), SLOT(backInHistory(int))
+		m_actions.backInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
+		keyChooser(), SLOT(backInHistory(QAction*))
 	);
 	connect(
 		m_actions.forwardInHistory->popupMenu(), SIGNAL(aboutToShow()),
 		this, SLOT(slotFillForwardHistory())
 	);
 	connect(
-		m_actions.forwardInHistory->popupMenu(), SIGNAL(activated(int)),
-		keyChooser(), SLOT(forwardInHistory(int))
+		m_actions.forwardInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
+		keyChooser(), SLOT(forwardInHistory(QAction*))
 	);
 
 

@@ -24,6 +24,9 @@
 #include <QHash>
 #include <QToolButton>
 
+//for better debug
+#include <QtDebug>
+
 //KDE includes
 #include <klocale.h>
 #include <kglobal.h>
@@ -56,7 +59,7 @@ CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordMod
 
 CModuleChooserButton::~CModuleChooserButton() {
 	//m_submenus.setAutoDelete(true); //delete all submenus
-	while (!m_submenus.isEmpty()) {delete m_submenus.takeFirst();}
+	qDeleteAll(m_submenus);
 	m_submenus.clear();
 
 	delete m_popup; //not necessary, because has "this" as parent?
@@ -153,14 +156,15 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 /** No descriptions */
 void CModuleChooserButton::populateMenu() {
 	qDebug("CModuleChooserButton::populateMenu");
-	while (!m_submenus.isEmpty()) {delete m_submenus.takeFirst();}
+	
+	qDeleteAll(m_submenus);
 	m_submenus.clear();
 
 	delete m_popup;
 
 	//create a new, empty popup
 	m_popup = new KMenu(this);
-	qDebug("CModuleChooserButton::populateMenu 2");
+	
 	if (m_module) {
 		m_titleAction = m_popup->addTitle( i18n("Select a work") );
 	}
@@ -168,10 +172,7 @@ void CModuleChooserButton::populateMenu() {
 		m_titleAction = m_popup->addTitle( i18n("Select an additional work") );
 	}
 
-	//m_popup->setCheckable(true); not necessary anymore
-
 	m_noneAction = m_popup->addAction(i18n("NONE"));
-	qDebug("CModuleChooserButton::populateMenu 3");
 	if ( !m_module ) {
 		m_noneAction->setChecked(true);
 	}
@@ -180,6 +181,9 @@ void CModuleChooserButton::populateMenu() {
 	connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
 	setMenu(m_popup);
 
+
+	//*********************** Add languages and modules*******************************
+
 	QStringList languages;
 	QHash<QString, KMenu*> langdict;
 
@@ -187,76 +191,67 @@ void CModuleChooserButton::populateMenu() {
 	ListCSwordModuleInfo modules;
 	ListCSwordModuleInfo allMods = backend()->moduleList();
 
-	//   for (allMods.first(); allMods.current(); allMods.next()) {
-	qDebug("CModuleChooserButton::populateMenu 4");
-	ListCSwordModuleInfo::iterator end_it = allMods.end();
-	for (ListCSwordModuleInfo::iterator it(allMods.begin()); it != end_it; ++it) {
-		if ((*it)->type() != m_moduleType) {
+	// add all modules of the right type into the module list
+	foreach (CSwordModuleInfo* moduleInfo, allMods) {
+		if (moduleInfo->type() != m_moduleType) {
 			continue;
 		}
-
-		modules.append( *it );
+		modules.append( moduleInfo );
 	};
 
-	//iterate through all found modules of the type we support
-	//  for (modules.first(); modules.current(); modules.next()) {
-	/*ListCSwordModuleInfo::iterator*/
-	end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
-		QString lang = (*it)->language()->translatedName();
+	// iterate through all found modules of the type we support
+	// adding all different languages into languages list
+	// and adding a new {language name/KMenu} pair into the dict
+	foreach (CSwordModuleInfo* moduleInfo, modules) {
+		QString lang = moduleInfo->language()->translatedName();
 
 		if (lang.isEmpty()) {
 			//lang = QString::fromLatin1("xx"); //unknown language -- do not use English as default!!
-			lang = (*it)->language()->abbrev();
+			lang = moduleInfo->language()->abbrev();
 			if (lang.isEmpty()) {
 				lang = "xx";
 			}
 		}
 
-		if (languages.contains(lang) ) { //this lang was not yet added
+		if (!languages.contains(lang) ) { //this lang was not yet added
 			languages += lang;
 
 			KMenu* menu = new KMenu;
 			langdict[lang] = menu;
 			m_submenus.append(menu);
-			connect(menu, SIGNAL(activated(int)), this, SLOT(moduleChosen(int)));
+			connect(menu, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
 		}
 	}
 
-	qDebug("CModuleChooserButton::populateMenu 5");
-	//Check the appropriate entry
-	//  for (modules.first(); modules.current(); modules.next()) {
-	/*ListCSwordModuleInfo::iterator*/
-	end_it = modules.end();
-	qDebug("CModuleChooserButton::populateMenu 6");
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
-		QString lang = (*it)->language()->translatedName();
-		qDebug("CModuleChooserButton::populateMenu 7");
+	// Check the appropriate entry
+	foreach (CSwordModuleInfo* moduleInfo, modules) {
+		QString lang = moduleInfo->language()->translatedName();
 		if (lang.isEmpty()) {
-			lang = (*it)->language()->abbrev();
+			lang = moduleInfo->language()->abbrev();
 			if (lang.isEmpty()) {
 				lang = "xx";
 			}
 		}
-		qDebug("CModuleChooserButton::populateMenu 8");
-		QString name((*it)->name());
-		name.append(" ").append((*it)->isLocked() ? i18n("[locked]") : QString::null);
-		qDebug("CModuleChooserButton::populateMenu 9");
+
+		QString name(moduleInfo->name());
+		name.append(" ").append(moduleInfo->isLocked() ? i18n("[locked]") : QString::null);
+		
 		Q_ASSERT(langdict[lang]);
 		QAction* id = langdict[lang]->addAction( name );
-		qDebug("CModuleChooserButton::populateMenu 10");
-		if ( m_module && (*it)->name() == m_module->name()) {
-			qDebug("CModuleChooserButton::populateMenu 11");
+		
+		if ( m_module && moduleInfo->name() == m_module->name()) {
 			id->setChecked(true);
 		}
 	}
-	qDebug("CModuleChooserButton::populateMenu 12");
+
+
 	languages.sort();
-	for ( QStringList::Iterator it = languages.begin(); it != languages.end(); ++it ) {
-		langdict[*it]->addTitle(*it);
-		m_popup->addMenu(langdict[*it]); //insertItem ->  QMenu::addMenu(QMenu)
+
+	foreach ( QString langName, languages ) {
+		langdict[langName]->addTitle(langName);
+		m_popup->addMenu(langdict[langName]); //insertItem ->  QMenu::addMenu(QMenu)
 	}
-	qDebug("CModuleChooserButton::populateMenu ");
+
 	if (module()) { setToolTip(module()->name());}
 	else { setToolTip(i18n("No work selected"));}
 	qDebug("CModuleChooserButton::populateMenu end");
@@ -277,12 +272,13 @@ void CModuleChooserButton::updateMenuItems() {
 		KMenu* popup = it.next();
 		for (unsigned int i = 0; i < popup->actions().count(); i++) {
 			moduleName = popup->actions().at(i)->text();
+			qDebug() << "moduleName: " << moduleName << " , " << moduleName.left(moduleName.lastIndexOf(" "));
 			module = backend()->findModuleByName( moduleName.left(moduleName.lastIndexOf(" ")) );
 
- 			Q_ASSERT(module);
-// 			if (!module) {
-// 				qWarning("Can't find module with name %s", moduleName.latin1());
-// 			}
+ 			//Q_ASSERT(module);
+ 			if (!module) {
+ 				qWarning("Can't find module with name %s", moduleName.toLatin1().data());
+ 			}
 
 			bool alreadyChosen = chosenModules.contains( module );
 			if (m_module) {

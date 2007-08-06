@@ -150,7 +150,7 @@ public:
 	 */
 	virtual ~BibleTime();
 
-	virtual void ensurePolished();
+	//virtual void ensurePolished();
 	/**
 	* Reads the settings from the configfile and sets the right properties.
 	*/
@@ -251,6 +251,8 @@ protected: // Protected methods
 	* Reimplementation used for sessions management.
 	*/
 	void saveProperties(KConfig* myConfig);
+
+	virtual bool event(QEvent*);
 
 protected slots:
 	/**
@@ -425,6 +427,8 @@ protected: //DCOP interface implementation
 	virtual QStringList searchInDefaultBible(const QString& searchText);
 	virtual QStringList getModulesOfType(const QString& type);
     virtual void reloadModules();
+	
+
 };
 
 #endif

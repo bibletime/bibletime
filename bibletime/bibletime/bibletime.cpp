@@ -315,10 +315,19 @@ void BibleTime::processCommandline() {
 			}
 }
 
-void BibleTime::ensurePolished() {
-	m_initialized = true;
+//void BibleTime::ensurePolished() {
+//	m_initialized = true;
 
-	KMainWindow::ensurePolished();
-	applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
+//	KMainWindow::ensurePolished();
+//	applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
+//}
+
+bool BibleTime::event(QEvent* e)
+{
+	if (e->type() == QEvent::Polish) {
+		qDebug("BibleTime::event type Polish");
+		m_initialized = true;
+		applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
+	}
+	KXmlGuiWindow::event(e);
 }
-

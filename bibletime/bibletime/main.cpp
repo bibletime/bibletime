@@ -290,6 +290,7 @@ int main(int argc, char* argv[]) {
 
 		// restore the workspace and process command line options
 		//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
+		
 		bibletime_ptr->show();
 		bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
 

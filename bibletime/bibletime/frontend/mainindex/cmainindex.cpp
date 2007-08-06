@@ -235,6 +235,7 @@ void CMainIndex::initView() {
 	m_popup->addAction(m_actions.unlockModule);
 	//m_actions.aboutModule->plug(m_popup);
 	m_popup->addAction(m_actions.aboutModule);
+	qDebug("CMainIndex::initView end");
 }
 
 /** Convenience function for creating a new KAction.
@@ -251,6 +252,7 @@ KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const i
 /** Initialize the SIGNAL<->SLOT connections */
 void CMainIndex::initConnections()
 {
+	qDebug("CMainIndex::initConnections");
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
@@ -258,6 +260,7 @@ void CMainIndex::initConnections()
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
+	qDebug("CMainIndex::initConnections");
 }
 
 /** Is called when an item was clicked/double clicked. */

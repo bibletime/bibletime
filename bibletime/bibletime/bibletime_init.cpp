@@ -545,6 +545,7 @@ void BibleTime::initBackends() {
 
 /** Apply the settings given by the profile p*/
 void BibleTime::applyProfileSettings( CProfile* p ) {
+	qDebug("BibleTime::applyProfileSettings");
 	Q_ASSERT(p);
 	if (!p) return;
 
@@ -575,3 +576,4 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
 	geometry.setSize(size());
 	p->setGeometry(geometry);
 }
+

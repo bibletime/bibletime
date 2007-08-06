@@ -144,6 +144,7 @@ void CDisplayWindow::setCaption( const QString&  ) {
 }
 
 void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
+	qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 	a->addAction(KStandardAction::ZoomIn, "zoomIn", 0, 0);
 	a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
 	a->addAction(KStandardAction::Close, "closeWindow", 0, 0);
@@ -223,7 +224,7 @@ void CDisplayWindow::initActions()
 			i18n("Back in history"),
 			actionCollection()
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory));
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory()));
 	actionCollection()->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
 	
 	popupaction = new KToolBarPopupAction(
@@ -231,7 +232,7 @@ void CDisplayWindow::initActions()
 			i18n("Forward in history"),
 			actionCollection()
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory));
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory()));
 	actionCollection()->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
 
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
