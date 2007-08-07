@@ -14,6 +14,8 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 
+#include <QDebug>
+
 namespace util {
 
 namespace filesystem {
@@ -73,6 +75,25 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 		size += getDirSizeRecursive( it_dir->absoluteFilePath() );
 	}
 	return size;
+}
+
+static QDir cached_iconDir;
+
+void DirectoryUtil::initDirectoryCache(QString executablePath)
+{
+	QDir wDir(QFileInfo(executablePath).dir());
+	wDir.makeAbsolute();
+	if (!wDir.cdUp() || !wDir.cd("share/bibletime/icons"))
+	{
+		qWarning() << "Cannot find icon directory relative to" << executablePath;
+		throw; //icon dir
+	}
+	cached_iconDir = wDir;
+}
+
+QDir DirectoryUtil::getIconDir(void)
+{ 
+	return cached_iconDir; 
 }
 
 } //end of namespace util::filesystem

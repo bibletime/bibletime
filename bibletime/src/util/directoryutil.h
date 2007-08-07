@@ -11,6 +11,7 @@
 #define UTIL_FILESDIRECTORYUTIL_H
 
 #include <QString>
+#include <QDir>
 
 namespace util {
 
@@ -44,8 +45,14 @@ public:
 	 * @return The size of the dir in bytes
 	 */
 	static unsigned long getDirSizeRecursive(const QString dir);
+	
+	/** Call this on program startup. Will cache a few directories like icon directory */
+	static void initDirectoryCache(QString executablePath);
+	
+	/** Return the path to the icons. initDirectoryCache must be called before. */
+	static QDir getIconDir(void);
 };
-
+	
 }
 
 }
