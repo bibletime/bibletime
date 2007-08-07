@@ -79,7 +79,7 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 
 static QDir cached_iconDir;
 
-void DirectoryUtil::initDirectoryCache(QString executablePath)
+void DirectoryUtil::initDirectoryCache(QString executableFilePath)
 {
 	QDir wDir(QFileInfo(executablePath).dir());
 	wDir.makeAbsolute();

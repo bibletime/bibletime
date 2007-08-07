@@ -47,7 +47,7 @@ public:
 	static unsigned long getDirSizeRecursive(const QString dir);
 	
 	/** Call this on program startup. Will cache a few directories like icon directory */
-	static void initDirectoryCache(QString executablePath);
+	static void initDirectoryCache(QString executableFilePath);
 	
 	/** Return the path to the icons. initDirectoryCache must be called before. */
 	static QDir getIconDir(void);
