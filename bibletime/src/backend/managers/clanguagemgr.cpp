@@ -21,40 +21,29 @@
 CLanguageMgr::LanguageList CLanguageMgr::m_langList;
 CLanguageMgr::LanguageList CLanguageMgr::m_cleanupLangPtrs;
 
-CLanguageMgr::Language::Language() : m_altAbbrevs(0) {
+CLanguageMgr::Language::Language() {
 	m_abbrev = QString::null;
 	m_englishName = QString::null;
 	m_translatedName = QString::null;
+	m_altAbbrevs = QStringList();
 };
 
 CLanguageMgr::Language::Language(const Language& l) {
 	m_abbrev = l.m_abbrev;
 	m_englishName = l.m_englishName;
 	m_translatedName = l.m_translatedName;
-
-	if (l.m_altAbbrevs) { //copy alternative abbrevs in a new list
-		m_altAbbrevs = new QStringList(*l.m_altAbbrevs);
-		//*m_altAbbrevs = *l.m_altAbbrevs;
-	}
-	else {
-		m_altAbbrevs = 0;
-	}
+	m_altAbbrevs = l.m_altAbbrevs;
 }
 
-CLanguageMgr::Language::Language( const QString& abbrev, const QString& name, const QString& translatedName, const QStringList& altAbbrevs ) : m_altAbbrevs(0) {
+CLanguageMgr::Language::Language( const QString& abbrev, const QString& name, const QString& translatedName, const QStringList& altAbbrevs ) {
 	m_abbrev = abbrev;
 	m_englishName = name;
 	m_translatedName = translatedName;
-
-	if (altAbbrevs.count() > 0) {
-		m_altAbbrevs = new QStringList();
-		*m_altAbbrevs = altAbbrevs;
-	}
-};
+	m_altAbbrevs =  altAbbrevs;
+}
 
 CLanguageMgr::Language::~Language() {
-	delete m_altAbbrevs;
-};
+}
 
 
 /****************************************************/
@@ -124,7 +113,7 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 	//try to search in the alternative abbrevs
 	//const LangMapIterator end = m_langMap.constEnd();
 	for ( LangMapIterator it = m_langMap.begin(); *it; ++it ) {
-		if ((*it)->alternativeAbbrevs() && (*it)->alternativeAbbrevs()->contains(abbrev)) {
+		if ((*it)->alternativeAbbrevs().contains(abbrev)) {
 			return *it;
 		}
 	}

@@ -62,7 +62,7 @@ public:
 		/** The alternative abbreviations which are avalable for this language.
 		 * @return A pointer to the list of alternate abbreviations
 		 */
-		inline const QStringList* const alternativeAbbrevs() const {
+		inline const QStringList alternativeAbbrevs() const {
 			return m_altAbbrevs;
 		};
 
@@ -76,7 +76,7 @@ public:
 		QString m_abbrev;
 		QString m_englishName;
 		QString m_translatedName;
-		QStringList* m_altAbbrevs;
+		QStringList m_altAbbrevs;
 	};
 
 	typedef QList<CLanguageMgr::Language*> LanguageList;
@@ -147,8 +147,8 @@ inline const bool CLanguageMgr::Language::isValid() const {
 }
 
 inline const QString& CLanguageMgr::Language::abbrev() const {
-	if (m_altAbbrevs && m_abbrev.isEmpty() && m_altAbbrevs->count()) { //no standard abbrev but alternative ones
-		return m_altAbbrevs->first();
+	if (m_abbrev.isEmpty() && m_altAbbrevs.count()) { //no standard abbrev but alternative ones
+		return m_altAbbrevs.first();
 	}
 
 	return m_abbrev;

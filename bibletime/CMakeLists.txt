@@ -155,8 +155,6 @@ SET(bibletime_SOURCES
 
 FILE(GLOB_RECURSE BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/hi*png)
 
-MESSAGE(STATUS "Icons found: ${BT_INSTALL_ICONS_LIST}")
-
 kde4_add_ui_files(bibletime_SOURCES
 	src/frontend/searchdialog/searchresultsform.ui
 	src/frontend/searchdialog/searchoptionsform.ui
@@ -200,7 +198,7 @@ KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-w -fexceptions " #Enable exception handling
+		COMPILE_FLAGS "-w -fexceptions -O0 -g" #Enable exception handling
 )
 
 TARGET_LINK_LIBRARIES(bibletime

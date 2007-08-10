@@ -81,11 +81,11 @@ static QDir cached_iconDir;
 
 void DirectoryUtil::initDirectoryCache(QString executableFilePath)
 {
-	QDir wDir(QFileInfo(executablePath).dir());
+	QDir wDir(QFileInfo(executableFilePath).dir());
 	wDir.makeAbsolute();
 	if (!wDir.cdUp() || !wDir.cd("share/bibletime/icons"))
 	{
-		qWarning() << "Cannot find icon directory relative to" << executablePath;
+		qWarning() << "Cannot find icon directory relative to" << executableFilePath;
 		throw; //icon dir
 	}
 	cached_iconDir = wDir;
