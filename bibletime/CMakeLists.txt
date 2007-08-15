@@ -8,11 +8,12 @@ SET(DEBUG true)
 #
 find_package(Qt4 REQUIRED)  		#Qt4
 find_package(KDE4 REQUIRED) 		#KDE4
-
+#
 #custom includes
+#
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CLucene REQUIRED)	#CLucene
-find_package(Sword REQUIRED)	#Sword
+find_package(Sword REQUIRED)		#Sword
 ######################################################
 
 
@@ -151,18 +152,11 @@ SET(bibletime_SOURCES
 	src/bibletime_dcop.cpp
 )
 
-FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/icons/*.svg)
-
 kde4_add_ui_files(bibletime_SOURCES
 	src/frontend/searchdialog/searchresultsform.ui
 	src/frontend/searchdialog/searchoptionsform.ui
-
 	src/frontend/bookshelfmanager/manageindicesform.ui
-
 )
-
-#Add all source files to the binary
-#ADD_LIBRARY(Backend ${libbackend_SOURCES} )
 
 #
 # Install locations
@@ -190,13 +184,11 @@ LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 )
 
-#KDE4_AUTOMOC( ${bibletime_SOURCES} ) #not needed anymore after KDE4beta1, uncomment if you use older version
-
 KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-w -fexceptions -O0 -g" #Enable exception handling
+		COMPILE_FLAGS "-w -fexceptions -O0 -g" #Enable exception handling, debug code and no optimization for now
 )
 
 TARGET_LINK_LIBRARIES(bibletime
@@ -209,6 +201,8 @@ TARGET_LINK_LIBRARIES(bibletime
 	${CLUCENE_LIBRARY}
 	${SWORD_LIBRARY}
 )
+
+FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/icons/*.svg)
 
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
 INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
