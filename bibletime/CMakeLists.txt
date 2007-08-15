@@ -151,9 +151,7 @@ SET(bibletime_SOURCES
 	src/bibletime_dcop.cpp
 )
 
-#FILE(GLOB ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/ hi*png
-
-FILE(GLOB_RECURSE BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/hi*png)
+FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/pics/icons/*.svg)
 
 kde4_add_ui_files(bibletime_SOURCES
 	src/frontend/searchdialog/searchresultsform.ui
