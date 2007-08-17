@@ -78,22 +78,38 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 }
 
 static QDir cached_iconDir;
+static QDir cached_xmlDir;
 
 void DirectoryUtil::initDirectoryCache(QString executableFilePath)
 {
 	QDir wDir(QFileInfo(executableFilePath).dir());
 	wDir.makeAbsolute();
-	if (!wDir.cdUp() || !wDir.cd("share/bibletime/icons"))
+	
+	QDir iconDir(wDir);
+	if (!iconDir.cdUp() || !iconDir.cd("share/bibletime/icons"))
 	{
 		qWarning() << "Cannot find icon directory relative to" << executableFilePath;
 		throw; //icon dir
 	}
-	cached_iconDir = wDir;
+	cached_iconDir = iconDir;
+
+	QDir xmlDir(wDir);
+	qDebug() << "xmlDir: " << xmlDir.canonicalPath();
+	if (!xmlDir.cdUp() || !xmlDir.cd("share/bibletime/xml")) {
+		qWarning() << "Cannot find xml directory relative to" << executableFilePath;
+		throw; //xml dir
+	}
+	cached_xmlDir = xmlDir;
 }
 
 QDir DirectoryUtil::getIconDir(void)
 { 
 	return cached_iconDir; 
+}
+
+QDir DirectoryUtil::getXmlDir(void)
+{
+	return cached_xmlDir;
 }
 
 } //end of namespace util::filesystem
