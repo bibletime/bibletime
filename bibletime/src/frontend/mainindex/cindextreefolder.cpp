@@ -41,18 +41,18 @@ CIndexTreeFolder::CIndexTreeFolder(CIndexFolderBase* item, const Type type, cons
 CIndexTreeFolder::~CIndexTreeFolder() {}
 
 void CIndexTreeFolder::addGroup(const Type type, const QString language) {
-	qDebug("CIndexTreeFolder::addGroup");
+	//qDebug("CIndexTreeFolder::addGroup");
 	CIndexTreeFolder* i = 0;
 	if (type == BookmarkFolder) {
-		qDebug("type: BookmarkFolder");
+		//qDebug("type: BookmarkFolder");
 		i = new CIndexBookmarkFolder(this);
 	}
 	else if (type == OldBookmarkFolder) {
-		qDebug("type: OldBookmarkFolder");
+		//qDebug("type: OldBookmarkFolder");
 		i = new CIndexOldBookmarksFolder(this);
 	}
 	else {
-		qDebug("type: other");
+		//qDebug("type: other");
 		i = new CIndexTreeFolder(this, type, language);
 	}
 	i->init();
@@ -71,7 +71,7 @@ void CIndexTreeFolder::addBookmark(CSwordModuleInfo* module, const QString& key,
 }
 
 void CIndexTreeFolder::update() {
-	qDebug("CIndexTreeFolder::update");
+	//qDebug("CIndexTreeFolder::update");
 	CIndexFolderBase::update();
 }
 
