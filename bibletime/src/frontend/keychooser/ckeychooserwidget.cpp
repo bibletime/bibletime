@@ -173,6 +173,7 @@ void CKeyChooserWidget::reset(QStringList *list, int index, bool do_emit) {
 
 /** Initializes this widget. We need this function because we have more than one constructor. */
 void CKeyChooserWidget::init() {
+	qDebug("CKeyChooserWidget::init");
 	oldKey = QString::null;
 
 	setFocusPolicy(Qt::WheelFocus);
@@ -208,7 +209,7 @@ void CKeyChooserWidget::init() {
 /** Is called when the return key was presed in the combobox. */
 void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
 	Q_ASSERT(comboBox()->lineEdit());
-	qWarning("return pressed");
+	qDebug("return pressed");
 
 	QString text = comboBox()->lineEdit()->text();
 	for (int index = 0; index < comboBox()->count(); ++index) {
@@ -222,7 +223,7 @@ void CKeyChooserWidget::slotReturnPressed( /*const QString& text*/) {
 
 /** Is called when the current item of the combo box was changed. */
 void CKeyChooserWidget::slotComboChanged(int index) {
-	qWarning("CKeyChooserWidget::slotComboChanged(int index)");
+	qDebug("CKeyChooserWidget::slotComboChanged(int index)");
 	if (!updatesEnabled()) {
 		return;
 	}
