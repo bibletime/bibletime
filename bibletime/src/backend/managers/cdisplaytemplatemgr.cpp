@@ -35,7 +35,10 @@ CDisplayTemplateMgr::~CDisplayTemplateMgr() {
 /*!
     \fn CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& title, const QString& content )
  */
-const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings ) {
+const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings )
+{
+	qDebug("CDisplayTemplateMgr::fillTemplate");
+
 	const QString templateName = m_templateMap.contains(name) ? name : defaultTemplate();
 
 	QString displayTypeString;
@@ -72,6 +75,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 
 	if (moduleCount >= 2) {
 		//create header for the modules
+		qDebug("There were more than 1 module, create headers");
 		QString header;
 
 		ListCSwordModuleInfo::iterator end_it = settings.modules.end();
@@ -94,9 +98,11 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	QString langCSS;
 	CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
 
-	for ( CLanguageMgr::LangMapIterator it = langMap.begin(); *it; ++it ) {
-		const CLanguageMgr::Language* lang = *it;
-
+	qDebug("loop through langMap");
+	//for ( CLanguageMgr::LangMapIterator it = langMap.begin(); *it; ++it ) {
+	foreach(const CLanguageMgr::Language* lang, langMap) {
+		//const CLanguageMgr::Language* lang = *it;
+		qDebug() << "lang: " << lang;
 
 		//if (lang->isValid() && CBTConfig::get(lang).first) {
 		if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
@@ -122,6 +128,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 
 	const CLanguageMgr::Language* lang = *it;
 
+	qDebug() << "lang: " << lang;
 	if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
 		const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param
 		langCSS.prepend(
