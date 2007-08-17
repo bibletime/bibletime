@@ -95,17 +95,19 @@ const QString CModuleChooserButton::iconName() {
 
 CSwordModuleInfo* CModuleChooserButton::module() {
 	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	qDebug("CModuleChooserButton::module");
 	QListIterator<KMenu*> it(m_submenus);
-	while (it.hasNext()) {
-		KMenu* popup = it.next();
-		for (unsigned int i = 0; i < popup->actions().count(); i++) { //qt4:added "actions"
-			if ( m_popup->actions().at(i)->isChecked() ) { //idAt -> , isItemChecked -> QAction::isChecked
-				QString mod = popup->actions().at(i)->text(); //popup->text(popup->idAt(i)); //text -> 
+	foreach (KMenu* popup, m_submenus) {
+		foreach (QAction* action, popup->actions()) {
+			if ( action->isChecked() ) { //idAt -> , isItemChecked -> QAction::isChecked
+				QString mod = action->text(); //popup->text(popup->idAt(i)); //text -> 
+				qDebug("CModuleChooserButton::module end, return backend()->findModuleByName( mod.left(mod.indexOf(" "))");
 				return backend()->findModuleByName( mod.left(mod.indexOf(" ")) );
 			}
 		}
 
 	}
+	qDebug("CModuleChooserButton::module end, return 0");
 	return 0; //"none" selected
 }
 
@@ -246,14 +248,18 @@ void CModuleChooserButton::populateMenu() {
 
 
 	languages.sort();
-
+	qDebug("CModuleChooserButton::populateMenu before foreach langName");
 	foreach ( QString langName, languages ) {
 		langdict[langName]->addTitle(langName);
 		m_popup->addMenu(langdict[langName]); //insertItem ->  QMenu::addMenu(QMenu)
 	}
+	qDebug("CModuleChooserButton::populateMenu after foreach langName");
 
-	if (module()) { setToolTip(module()->name());}
-	else { setToolTip(i18n("No work selected"));}
+	if (module()) {
+		 setToolTip(module()->name());
+	} else {
+		setToolTip(i18n("No work selected"));
+	}
 	qDebug("CModuleChooserButton::populateMenu end");
 }
 
