@@ -284,7 +284,8 @@ int main(int argc, char* argv[]) {
 			KStartupLogo::hideSplash();
 
 			CBTConfig::set(CBTConfig::bibletimeVersion, VERSION);
-			bibletime_ptr->slotSettingsOptions();
+			//TODO: unabled temporarily
+			//bibletime_ptr->slotSettingsOptions();
 		}
 
 		//The tip of the day
