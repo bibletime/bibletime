@@ -83,9 +83,11 @@ void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 
 void CLexiconReadWindow::initActions() {
 	qDebug("CLexiconReadWindow::initActions");
-	CReadWindow::initActions();
 
 	KActionCollection* ac = actionCollection();
+	CLexiconReadWindow::insertKeyboardActions(ac);
+	CReadWindow::initActions();
+
 	
 	m_actions.backInHistory = dynamic_cast<KToolBarPopupAction*>(
 		ac->action(CResMgr::displaywindows::general::backInHistory::actionName) );
@@ -133,9 +135,9 @@ void CLexiconReadWindow::initActions() {
 	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
 	ac->addAction("copyEntryWithText", m_actions.copy.entry);
 
+	Q_ASSERT(ac->action("copySelectedText"));
 	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
-	Q_ASSERT(m_actions.copy.selectedText);
-
+	
 	m_actions.save.entryAsPlain = new KAction(i18n("Entry as plain text"), ac );
 	QObject::connect(m_actions.save.entryAsPlain, SIGNAL(triggered()), this, SLOT(saveAsPlain()) );
 	ac->addAction("saveEntryAsPlain", m_actions.save.entryAsPlain);

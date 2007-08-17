@@ -176,7 +176,9 @@ void CDisplayWindow::initActions()
 	qDebug("CDisplayWindow::initActions");	
 
 	KActionCollection* ac = actionCollection();
-	
+	CDisplayWindow::insertKeyboardActions(ac);
+
+
 	KAction* kaction = new KAction(
 				KIcon(CResMgr::displaywindows::general::search::icon),
 				i18n("Search"),
