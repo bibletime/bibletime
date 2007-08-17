@@ -66,18 +66,18 @@ void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 	a->addAction("previousEntry", kaction);
 	
 	//  new KAction(i18n("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
-	kaction = new KAction(i18n("Copy entry with text"), a);
+	kaction = new KAction(i18n("Copy reference only"), a);
 	a->addAction("copyReferenceOnly", kaction);
 
 	//  new KAction(i18n("Copy selected text"), KShortcut(0), a, "copySelectedText");
-	kaction = new KAction(i18n("Save entry as plain text"), a);
+	kaction = new KAction(i18n("Copy selected text"), a);
 	a->addAction("copySelectedText", kaction);
 
 	kaction = new KAction(i18n("Save entry as HTML"), a);
 	a->addAction("saveHtml", kaction);
 
 	//   new KAction(i18n("Print reference only"), KShortcut(0), a, "printReferenceOnly");
-	kaction = new KAction(i18n("Print entry with text"), a);
+	kaction = new KAction(i18n("Print reference only"), a);
 	a->addAction("printReferenceOnly", kaction);
 }
 
@@ -85,24 +85,20 @@ void CLexiconReadWindow::initActions() {
 	qDebug("CLexiconReadWindow::initActions");
 	CReadWindow::initActions();
 
+	KActionCollection* ac = actionCollection();
+	
 	m_actions.backInHistory = dynamic_cast<KToolBarPopupAction*>(
-								  actionCollection()->action(
-									  CResMgr::displaywindows::general::backInHistory::actionName
-								  )
-							  );
+		ac->action(CResMgr::displaywindows::general::backInHistory::actionName) );
 	Q_ASSERT(m_actions.backInHistory);
 
 	m_actions.forwardInHistory = dynamic_cast<KToolBarPopupAction*>(
-									 actionCollection()->action(
-										 CResMgr::displaywindows::general::forwardInHistory::actionName
-									 )
-								 );
-
+		 ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName) );
 	Q_ASSERT(m_actions.forwardInHistory);
 
-	KActionCollection* ac = actionCollection();
 
-	KAction* kaction = new KAction(i18n("Next entry"), ac );
+	KAction* kaction;
+
+	kaction = new KAction(i18n("Next entry"), ac );
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( nextEntry() ) );
 	ac->addAction("nextEntry", kaction);
@@ -111,14 +107,15 @@ void CLexiconReadWindow::initActions() {
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( previousEntry() ) );
 	ac->addAction("previousEntry", kaction);
-	qDebug() << "ac: " << ac;
+
+
 	m_actions.selectAll = qobject_cast<KAction*>(ac->action("selectAll"));
 	//TODO: Q_ASSERT(m_actions.selectAll);
 
 	m_actions.findText = qobject_cast<KAction*>(ac->action("findText"));
 	//TODO: Q_ASSERT(m_actions.findText);
 	
-	//m_actions.findStrongs = new KAction(i18n("Strong's Search"), KShortcut(0),this, SLOT(openSearchStrongsDialog()), actionCollection(), "findStrongs");
+
 	m_actions.findStrongs = new KAction(
 		KIcon(CResMgr::displaywindows::general::findStrongs::icon),
 		i18n("Strong's Search"),
@@ -126,15 +123,15 @@ void CLexiconReadWindow::initActions() {
 		);
 	m_actions.findStrongs->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
 	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
-	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, kaction);
+	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
 
 	m_actions.copy.reference = new KAction(i18n("Reference only"), ac );
 	QObject::connect(m_actions.copy.reference, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()) );
-	ac->addAction("copyReferenceOnly", kaction);
+	ac->addAction("copyReferenceOnly", m_actions.copy.reference);
 
 	m_actions.copy.entry = new KAction(i18n("Entry with text"), ac );
 	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
-	ac->addAction("copyEntryWithText", kaction);
+	ac->addAction("copyEntryWithText", m_actions.copy.entry);
 
 	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
 	Q_ASSERT(m_actions.copy.selectedText);
@@ -157,7 +154,7 @@ void CLexiconReadWindow::initActions() {
 	ac->addAction("printEntryWithText", m_actions.print.entry);
 
 	// init with the user defined settings
-	CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, actionCollection());
+	CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
 };
 
 /** No descriptions */
@@ -194,23 +191,16 @@ void CLexiconReadWindow::initView()
 {
 	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
-	qDebug("CLexiconReadWindow::initView 2");
 	setMainToolBar( new KToolBar(this) );
 	//addDockWindow(mainToolBar()); //TODO: does this work? see write windows
-	qDebug("CLexiconReadWindow::initView 3");
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
-	qDebug("CLexiconReadWindow::initView 4");
 	mainToolBar()->addWidget(keyChooser());
 	//mainToolBar()->setFullSize(false);
-	qDebug("CLexiconReadWindow::initView 5");
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
 	//addDockWindow(moduleChooserBar());
-	qDebug("CLexiconReadWindow::initView 6");
 	setButtonsToolBar( new KToolBar(this) );
 	//addDockWindow(buttonsToolBar());
-	qDebug("CLexiconReadWindow::initView 7");
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
-	qDebug("CLexiconReadWindow::initView 8");
 	setCentralWidget( displayWidget()->view() );
 }
 

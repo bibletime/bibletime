@@ -46,6 +46,8 @@
 #include <QCloseEvent>
 #include <QStringList>
 
+#include <QDebug>
+
 //KDE includes
 #include <kdeversion.h>
 //#include <kaccel.h>
@@ -173,39 +175,24 @@ void CDisplayWindow::initActions()
 {
 	qDebug("CDisplayWindow::initActions");	
 
+	KActionCollection* ac = actionCollection();
+	
 	KAction* kaction = new KAction(
 				KIcon(CResMgr::displaywindows::general::search::icon),
 				i18n("Search"),
-				actionCollection()
+				ac
 				);
 	kaction->setShortcut(CResMgr::displaywindows::general::search::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
-	actionCollection()->addAction(CResMgr::displaywindows::general::search::actionName, kaction);
+	ac->addAction(CResMgr::displaywindows::general::search::actionName, kaction);
 
-	KStandardAction::zoomIn(
-		displayWidget()->connectionsProxy(), SLOT(zoomIn()),
-		actionCollection()
-	);
-	KStandardAction::zoomOut(
-		displayWidget()->connectionsProxy(), SLOT(zoomOut()),
-		actionCollection()
-	);
-	KStandardAction::close(
-		this, SLOT(close()),
-		actionCollection()
-	);
-	KStandardAction::selectAll(
-		displayWidget()->connectionsProxy(), SLOT(selectAll()),
-		actionCollection()
-	);
-	KStandardAction::copy(
-		displayWidget()->connectionsProxy(), SLOT(copySelection()),
-		actionCollection()
-	);
-	KStandardAction::find(
-		displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()),
-		actionCollection()
-	);
+	KStandardAction::zoomIn(displayWidget()->connectionsProxy(), SLOT(zoomIn()), ac	);
+	KStandardAction::zoomOut(displayWidget()->connectionsProxy(), SLOT(zoomOut()), ac );
+	KStandardAction::close(this, SLOT(close()), ac);
+	KStandardAction::selectAll(displayWidget()->connectionsProxy(), SLOT(selectAll()), ac);
+	KStandardAction::copy(displayWidget()->connectionsProxy(), SLOT(copySelection()), ac);
+	KStandardAction::find(displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()), ac);
+
 /* kde/qt3:
 	new KToolBarPopupAction(
 		i18n("Back in history"), CResMgr::displaywindows::general::backInHistory::icon, CResMgr::displaywindows::general::backInHistory::accel,
@@ -222,18 +209,23 @@ void CDisplayWindow::initActions()
 	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
 			KIcon(CResMgr::displaywindows::general::backInHistory::icon),
 			i18n("Back in history"),
-			actionCollection()
+			ac
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory()));
-	actionCollection()->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
+	ac->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
 	
 	popupaction = new KToolBarPopupAction(
 			KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
 			i18n("Forward in history"),
-			actionCollection()
+			ac
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory()));
-	actionCollection()->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
+	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
+	
+	qDebug("actionCollection: ");
+	foreach(QAction* a, actionCollection()->actions()) {
+		qDebug() << a->text();
+	}
 
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
@@ -394,10 +386,13 @@ const bool CDisplayWindow::init() {
 	//setup focus stuff.
 	setFocusPolicy(Qt::ClickFocus);
 	parentWidget()->setFocusPolicy(Qt::ClickFocus);
-	qDebug("CDisplayWindow::init, call init Actions,Toolbars,Connections,PopupMenu");
+	qDebug("CDisplayWindow::init, call init Actions");
 	initActions();
+	qDebug("CDisplayWindow::init, call init Toolbars");
 	initToolbars();
+	qDebug("CDisplayWindow::init, call init Connections");
 	initConnections();
+	qDebug("CDisplayWindow::init, call setupPopupMenu()");
 	setupPopupMenu();
 
 	m_filterOptions = CBTConfig::getFilterOptionDefaults();
