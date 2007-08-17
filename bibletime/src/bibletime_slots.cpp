@@ -95,11 +95,12 @@ private:
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
 	//TODO: commented out temporarily
-	//CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
-	//connect(dlg, SIGNAL(signalSettingsChanged()), SLOT(slotSettingsChanged()) );
+	qDebug("BibleTime::slotSettingsOptions");
+	CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
+	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
-	//dlg->exec();
-	//dlg->delayedDestruct();
+	dlg->exec();
+	dlg->delayedDestruct();
 }
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
