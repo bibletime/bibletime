@@ -16,7 +16,7 @@
 #include <QList>
 #include <QHash>
 
-/** Manages the anguages of BibleTime and provides functions to work with them.
+/** Manages the languages of BibleTime and provides functions to work with them.
   * @author The BibleTime team
   */
 
@@ -46,31 +46,37 @@ public:
 		/** Returns the abbreviation.
 		 * @return The abbreviation of the chosen language.
 		 */
-		inline const QString& abbrev() const;
+		inline const QString& abbrev() const {
+			if (m_abbrev.isEmpty() && m_altAbbrevs.count()) { //no standard abbrev but alternative ones
+				return m_altAbbrevs.first();
+			}
+			return m_abbrev;
+		}
 		/** Returns the translated name.
 		 * @return The translated name of the language.
 		 */
-		inline const QString& translatedName() const;
-		//always define inlines in the header file, or make them not inline.
+		inline const QString& translatedName() const {
+			return m_translatedName;
+		}
 		/** The english name of the language.
 		 * @return The english name of the chosen language.
 		 */
 		inline const QString& name() const {
 			return m_englishName;
 		}
-
 		/** The alternative abbreviations which are avalable for this language.
-		 * @return A pointer to the list of alternate abbreviations
+		 * @return The List of alternate abbreviations
 		 */
 		inline const QStringList alternativeAbbrevs() const {
 			return m_altAbbrevs;
-		};
-
+		}
 		/**
-		  * Returns true if this language object is valid, i.e. has an abbrev and name.
-		  * @return True if the data is valid for this language.
-		  */
-		inline const bool isValid() const;
+		 * Returns true if this language object is valid, i.e. has an abbrev and name.
+		 * @return True if the data is valid for this language.
+		 */
+		inline const bool isValid() const {
+			return (!abbrev().isEmpty() && !name().isEmpty());
+		}
 
 	private:
 		QString m_abbrev;
@@ -79,10 +85,9 @@ public:
 		QStringList m_altAbbrevs;
 	};
 
-	typedef QList<CLanguageMgr::Language*> LanguageList;
-
+	typedef QList<Language*> LanguageList;
 	typedef QHash<QString, const Language*> LangMap;
-	typedef QHash<QString, const Language*>::iterator LangMapIterator;
+	typedef QHash<QString, const Language*>::const_iterator LangMapIterator;
 
 	/** Constructor.
 	*/
@@ -92,9 +97,11 @@ public:
 	virtual ~CLanguageMgr();
 	/**
 	* Returns the standard languages available as standard. Does nothing for Sword.
-	* @return A QDict<Language> map which contains all known languages
+	* @return A LangMap map which contains all known languages
 	*/
-	inline const CLanguageMgr::LangMap* const languages() const;
+	inline const CLanguageMgr::LangMap* const languages() const {
+		return &m_langMap;
+	}
 	/**
 	* Returns the languages which are available. The languages cover all available modules, but nothing more.
 	* @return A map of all languages with modules available for them
@@ -118,7 +125,9 @@ public:
 	/** Default language so we don't return NULL pointers.
 	* @return Pointer to the default language
 	*/
-	inline const CLanguageMgr::Language* const defaultLanguage() const;
+	inline const CLanguageMgr::Language* const defaultLanguage() const {
+		return &m_defaultLanguage;
+	}
 
 private:
 	void init();
@@ -126,12 +135,10 @@ private:
 		return abbrevs.split( ";", QString::KeepEmptyParts, Qt::CaseSensitive );
 	}
 
-	mutable LangMap m_langMap;
 	Language m_defaultLanguage;
-
-	//typedef QPtrList<CLanguageMgr::Language> LanguageList;
-	static LanguageList m_langList;
-	static LanguageList m_cleanupLangPtrs;
+	mutable LanguageList m_langList;
+	mutable LangMap m_langMap;
+	mutable LanguageList m_cleanupLangPtrs;
 
 	struct ModuleCache {
 		unsigned int moduleCount;
@@ -140,30 +147,5 @@ private:
 	m_availableModulesCache;
 };
 
-
-/** Returns true if this language object is valid, i.e. has an abbrev and name. */
-inline const bool CLanguageMgr::Language::isValid() const {
-	return (!abbrev().isEmpty() && !name().isEmpty());
-}
-
-inline const QString& CLanguageMgr::Language::abbrev() const {
-	if (m_abbrev.isEmpty() && m_altAbbrevs.count()) { //no standard abbrev but alternative ones
-		return m_altAbbrevs.first();
-	}
-
-	return m_abbrev;
-}
-
-inline const QString& CLanguageMgr::Language::translatedName() const {
-	return m_translatedName;
-}
-
-inline const CLanguageMgr::LangMap* const CLanguageMgr::languages() const {
-	return &m_langMap;
-}
-
-inline const CLanguageMgr::Language* const CLanguageMgr::defaultLanguage() const {
-	return &m_defaultLanguage;
-}
-
 #endif
+

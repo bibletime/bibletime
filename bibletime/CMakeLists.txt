@@ -144,12 +144,12 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/cbookreadwindow.cpp
 	
 	#toplevel files
-	src/bibletimeapp.cpp
-	src/main.cpp
-	src/bibletime.cpp
 	src/bibletime_init.cpp
 	src/bibletime_slots.cpp
 	src/bibletime_dcop.cpp
+	src/bibletime.cpp
+	src/bibletimeapp.cpp
+	src/main.cpp
 )
 
 kde4_add_ui_files(bibletime_SOURCES
