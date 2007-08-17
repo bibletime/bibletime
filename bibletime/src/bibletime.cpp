@@ -26,6 +26,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //backend includes
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -72,7 +73,7 @@ BibleTime::BibleTime()
 	initView();
 	initActions();
 
-	createGUI("/usr/share/apps/bibletime/bibletimeui.rc");
+	createGUI(util::filesystem::DirectoryUtil::getXmlDir().canonicalPath().append("/bibletimeui.rc"));
 	initMenubar();
 	initConnections();
 
