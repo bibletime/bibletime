@@ -324,47 +324,24 @@ const QString CSwordBackend::findModuleNameByDescription(const QString& descript
 
 /** This function searches for a module with the specified name */
 CSwordModuleInfo* const CSwordBackend::findModuleByName(const QString& name) {
-	CSwordModuleInfo* ret = 0;
-
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		if ( (*it)->name() == name ) {
-			ret = *it;
-			break;
-		}
+	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
+		if ( (*it)->name() == name ) return *it;
 	}
-
-	return ret;
+	return 0;
 }
 
 CSwordModuleInfo* const CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
-	CSwordModuleInfo* ret = 0;
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		if ( (*it)->module() == swmodule ) {
-			ret = *it;
-			break;
-		}
+	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
+		if ( (*it)->module() == swmodule ) return *it;
 	}
-	
-	return ret;
+	return 0;
 }
 
 CSwordModuleInfo* const CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
-	CSwordModuleInfo* ret = 0;
-
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		if ( (*it)  == module ) {
-			ret = *it;
-			break;
-		}
+	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
+		if ( (*it)  == module ) return *it;
 	}
-	
-	return ret;
+	return 0;
 }
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */

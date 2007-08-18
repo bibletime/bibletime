@@ -99,7 +99,6 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
 
 	qDebug("loop through langMap");
-	//for ( CLanguageMgr::LangMapIterator it = langMap.begin(); *it; ++it ) {
 	foreach(const CLanguageMgr::Language* lang, langMap) {
 		//const CLanguageMgr::Language* lang = *it;
 		qDebug() << "lang: " << lang;

@@ -136,7 +136,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 
 	CLanguageMgr::LangMap langMap = languageMgr()->availableLanguages();
 
-	for ( CLanguageMgr::LangMapIterator it = langMap.begin() ; *it; ++it ) {
+	for (CLanguageMgr::LangMapIterator it = langMap.constBegin() ; it != langMap.constEnd(); ++it ) {
 		const QString name =
 			(*it)->translatedName().isEmpty()
 			? (*it)->abbrev()
