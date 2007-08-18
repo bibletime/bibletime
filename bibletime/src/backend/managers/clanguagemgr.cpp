@@ -61,29 +61,27 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 
 		//collect the languages abbrevs of all modules
 		QStringList abbrevs;
-		QString abbrev;
 
-		for (ListCSwordModuleInfo::const_iterator it(mods.constBegin()); it != mods.constEnd(); ++it) {
-			abbrev = (*it)->module()->Lang();
-			if (!abbrevs.contains(abbrev)) abbrevs.append(abbrev);
-		};
+		foreach (const CSwordModuleInfo* mod,  mods) {
+			if (!abbrevs.contains(mod->module()->Lang())){
+				abbrevs.append(mod->module()->Lang());
+			}
+		}
 
 		//now create a map of available langs
-		for ( QStringList::const_iterator it = abbrevs.constBegin(); it != abbrevs.constEnd(); it++ ) {
-			abbrev = (*it);
+		foreach ( QString abbrev, abbrevs ) {
 			const Language* const lang = languageForAbbrev(abbrev);
 
 			if (lang->isValid()) {
 				m_availableModulesCache.availableLanguages.insert( abbrev, lang );
 			}
-			else { //invalid lang used by a modules, create a new language using the abbrev
+			else { //invalid lang used by a module, create a new language using the abbrev
 				Language* newLang = new Language(abbrev, abbrev, abbrev);
 				m_cleanupLangPtrs.append(newLang);
 				m_availableModulesCache.availableLanguages.insert( abbrev, newLang );
 			}
 		}
 	}
-
 	return m_availableModulesCache.availableLanguages;
 }
 
@@ -92,8 +90,8 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 	if (it != m_langMap.constEnd()) return *it; //Language is already here
 	
 	//try to search in the alternative abbrevs
-	for (LangMapIterator it = m_langMap.constBegin(); it != m_langMap.constEnd(); ++it ) {
-		if ((*it)->alternativeAbbrevs().contains(abbrev)) return *it;
+	foreach (const Language* lang, m_langList ) {
+		if (lang->alternativeAbbrevs().contains(abbrev)) return lang;
 	}
 	
 	// Invalid lang used by a modules, create a new language using the abbrev
@@ -104,19 +102,15 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 }
 
 const CLanguageMgr::Language* const CLanguageMgr::languageForName( const QString& name ) const {
-	for ( LangMapIterator it = m_langMap.constBegin(); it != m_langMap.constEnd(); ++it ) {
-		if ((*it)->name() == name) {
-			return *it;
-		}
+	foreach ( const Language* lang, m_langList ) {
+		if (lang->name() == name) return lang;
 	}
 	return &m_defaultLanguage;//invalid language
 }
 
 const CLanguageMgr::Language* const CLanguageMgr::languageForTranslatedName( const QString& name ) const {
-	for ( LangMapIterator it = m_langMap.constBegin(); it != m_langMap.constEnd(); ++it ) {
-	if ((*it)->translatedName() == name) {
-			return *it;
-		}
+	foreach ( const Language* lang, m_langList ) {
+		if (lang->translatedName() == name) return lang;
 	}
 	return &m_defaultLanguage; //invalid language
 }

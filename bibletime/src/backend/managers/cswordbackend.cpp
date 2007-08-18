@@ -380,8 +380,8 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 
 		if (foundConfig) { //copy module section
 
-			for (entry = (*section).second.begin(); entry != (*section).second.end(); entry++) {
-				moduleConfig.Sections[(*section).first].insert(sword::ConfigEntMap::value_type((*entry).first, (*entry).second));
+			for (entry = section->second.begin(); entry != section->second.end(); entry++) {
+				moduleConfig.Sections[section->first].insert(sword::ConfigEntMap::value_type(entry->first, entry->second));
 			}
 		}
 	}
