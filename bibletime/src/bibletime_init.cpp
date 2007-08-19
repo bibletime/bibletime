@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "bibletime.h"
 //#include "bibletime.moc"
@@ -21,21 +19,16 @@
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/clanguagemgr.h"
-
 #include "frontend/mainindex/cmainindex.h"
-
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
-
 #include "frontend/bookshelfmanager/cswordsetupdialog.h"
 #include "frontend/bookshelfmanager/cmanageindiceswidget.h"
-
 #include "frontend/cmdiarea.h"
 #include "frontend/kstartuplogo.h"
 #include "frontend/cprinter.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
-
 
 //system includes
 #include <stdlib.h>
@@ -46,8 +39,6 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QMenu>
-
-
 
 //KDE includes
 #include <kaboutdata.h>

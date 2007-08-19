@@ -12,11 +12,8 @@
 #include "csearchdialog.h"
 #include "csearchanalysis.h"
 #include "backend/cswordmodulesearch.h"
-
-
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-
 #include "frontend/cbtconfig.h"
 #include "frontend/cmoduleindexdialog.h"
 

@@ -7,18 +7,13 @@
 *
 **********/
 
-
-
 #include "cmdiarea.h"
-#include "cmdiarea.moc"
+//#include "cmdiarea.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/keychooser/ckeychooser.h"
-
-//#include "config.h"
 
 //KDE includes
 #include <kmenu.h>

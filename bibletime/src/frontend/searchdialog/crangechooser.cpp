@@ -13,9 +13,7 @@
 
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-
 #include "frontend/cbtconfig.h"
-
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 

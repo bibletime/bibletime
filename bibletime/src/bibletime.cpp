@@ -79,7 +79,7 @@ BibleTime::BibleTime()
 
 	readSettings();
 
-	setPlainCaption( (QString("BibleTime ") + QString(VERSION)) );
+	setPlainCaption( QString("BibleTime ").append(BT_VERSION) );
 
 	// we don't save the geometry, it's stored in the startup profile
 	setAutoSaveSettings(QString("MainWindow"), false);

@@ -52,15 +52,15 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 	switch ( type ) {
 		case QtDebugMsg:
 			if (showDebugMessages) { //only show messages if they are enabled!
-				fprintf( stderr,"(BibleTime %s) Debug: %s\n",VERSION, msg );
+				fprintf( stderr,"(BibleTime %s) Debug: %s\n", BT_VERSION, msg );
 			}
 			break;
 		case QtWarningMsg:
 			//if (showDebugMessages) //comment out for releases so users don't get our debug warnings
-			fprintf( stderr,"(BibleTime %s) WARNING: %s\n",VERSION, msg );
+			fprintf( stderr,"(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
 			break;
 		case QtFatalMsg:
-			fprintf( stderr,"(BibleTime %s) _FATAL_: %s\nPlease contact info@bibletime.de and report this bug!",VERSION, msg );
+			fprintf( stderr,"(BibleTime %s) _FATAL_: %s\nPlease contact info@bibletime.de and report this bug!", BT_VERSION, msg );
 			abort(); // dump core on purpose
 	}
 }
@@ -139,9 +139,9 @@ int main(int argc, char* argv[]) {
 
 	KAboutData aboutData(
 		"bibletime",
-		PACKAGE,
+		"bibletime",
 		ki18n("BibleTime"),
-		VERSION,
+		BT_VERSION,
 		ki18n("Bible study tool for KDE"),
 		KAboutData::License_GPL_V2,
 		ki18n("(c)1999-2007, The BibleTime Team"),
@@ -269,7 +269,7 @@ int main(int argc, char* argv[]) {
 		setSignalHandler(signalHandler);
 
 		// compatibility stuff for 1.3, needs to be moved to better place later
-		if (CBTConfig::get(CBTConfig::bibletimeVersion) != VERSION) {
+		if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
 			KStandardDirs stdDirs;
 			QDir dir(stdDirs.saveLocation("data", "bibletime/"));
 			if (!dir.exists("sessions/") && dir.exists("profiles/")) { //only old dir exists
@@ -280,10 +280,10 @@ int main(int argc, char* argv[]) {
 		bibletime_ptr = new BibleTime();
 
 		// a new BibleTime version was installed (maybe a completely new installation)
-		if (CBTConfig::get(CBTConfig::bibletimeVersion) != VERSION) {
+		if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
 			KStartupLogo::hideSplash();
 
-			CBTConfig::set(CBTConfig::bibletimeVersion, VERSION);
+			CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
 			//TODO: unabled temporarily
 			//bibletime_ptr->slotSettingsOptions();
 		}
