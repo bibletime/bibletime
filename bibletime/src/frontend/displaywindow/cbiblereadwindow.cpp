@@ -261,8 +261,8 @@ void CBibleReadWindow::initView() {
 
 /** Reimplementation. */
 void CBibleReadWindow::setupPopupMenu() {
-	popup()->addTitle(CToolClass::getIconForModule(modules().first()), i18n("Bible window"));
-
+	popup()->setTitle(i18n("Bible window"));
+	popup()->setIcon(CToolClass::getIconForModule(modules().first()) );
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);
 	popup()->addAction(m_actions.selectAll);

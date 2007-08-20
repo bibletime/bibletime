@@ -43,7 +43,7 @@ class CKeyChooser;
 class CModuleChooserBar;
 
 class KToolBar;
-class KMenu;
+class QMenu;
 class KActionCollection;
 
 /** The base class for all display windows of BibleTime.
@@ -132,19 +132,19 @@ public:
 	/**
 	* Sets the main toolbar.
 	*/
-	void setMainToolBar( KToolBar* bar );
+	void setMainToolBar( QToolBar* bar );
 	/**
 	* Sets the buttons toolbar.
 	*/
-	void setButtonsToolBar( KToolBar* bar );
+	void setButtonsToolBar( QToolBar* bar );
 	/**
 	* Returns the main toolbar.
 	*/
-	KToolBar* const mainToolBar() const;
+	QToolBar* const mainToolBar() const;
 	/**
 	* Returns the buttons toolbar.
 	*/
-	KToolBar* const buttonsToolBar() const;
+	QToolBar* const buttonsToolBar() const;
 	/**
 	* Initialize the toolbars
 	*/
@@ -236,7 +236,7 @@ protected:
 	/**
 	* Returns the installed popup menu.
 	*/
-	KMenu* const popup();
+	QMenu* const popup();
 	virtual void closeEvent(QCloseEvent* e);
 
 protected slots:
@@ -268,9 +268,9 @@ private:
 	CSwordKey* m_swordKey;
 	bool m_isReady;
 	CModuleChooserBar* m_moduleChooserBar;
-	KToolBar* m_mainToolBar;
-	KToolBar* m_buttonsToolBar;
-	KMenu* m_popupMenu;
+	QToolBar* m_mainToolBar;
+	QToolBar* m_buttonsToolBar;
+	QMenu* m_popupMenu;
 	CDisplay* m_displayWidget;
 };
 

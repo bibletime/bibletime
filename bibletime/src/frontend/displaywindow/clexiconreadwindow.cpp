@@ -193,15 +193,18 @@ void CLexiconReadWindow::initView()
 {
 	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
-	setMainToolBar( new KToolBar(this) );
-	//addDockWindow(mainToolBar()); //TODO: does this work? see write windows
+	setMainToolBar( new QToolBar(this) );
+	addToolBar(mainToolBar());
+	//addDockWidget(mainToolBar()); //TODO: does this work? see write windows
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
 	//mainToolBar()->setFullSize(false);
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
-	//addDockWindow(moduleChooserBar());
-	setButtonsToolBar( new KToolBar(this) );
-	//addDockWindow(buttonsToolBar());
+	//addDockWidget(moduleChooserBar());
+	addToolBar(moduleChooserBar());
+	setButtonsToolBar( new QToolBar(this) );
+	//addDockWidget(buttonsToolBar());
+	addToolBar(buttonsToolBar());
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
 	setCentralWidget( displayWidget()->view() );
 }
@@ -230,8 +233,8 @@ void CLexiconReadWindow::initToolbars() {
 }
 
 void CLexiconReadWindow::setupPopupMenu() {
-	popup()->addTitle(CToolClass::getIconForModule(modules().first()), i18n("Lexicon window"));
-
+	popup()->setTitle(i18n("Lexicon window"));
+	popup()->setIcon(CToolClass::getIconForModule(modules().first()));
 	//   m_actions.selectAll = new KAction(i18n("Select all"), KShortcut(0), displayWidget()->connectionsProxy(), SLOT(selectAll()), actionCollection());
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);

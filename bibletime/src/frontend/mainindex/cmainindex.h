@@ -36,6 +36,7 @@ class QDragMoveEvent;
 class QDragLeaveEvent;
 class BTMimeData;
 class KActionMenu;
+class KMenu;
 
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team

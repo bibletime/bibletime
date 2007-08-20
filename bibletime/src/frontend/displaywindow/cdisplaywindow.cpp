@@ -376,22 +376,22 @@ const bool CDisplayWindow::init() {
 }
 
 /** Returns the main toolbar. */
-KToolBar* const CDisplayWindow::mainToolBar() const {
+QToolBar* const CDisplayWindow::mainToolBar() const {
 	return m_mainToolBar;
 }
 
 /** Returns the main toolbar. */
-KToolBar* const CDisplayWindow::buttonsToolBar() const {
+QToolBar* const CDisplayWindow::buttonsToolBar() const {
 	return m_buttonsToolBar;
 }
 
 /** Sets the main toolbar. */
-void CDisplayWindow::setMainToolBar( KToolBar* bar ) {
+void CDisplayWindow::setMainToolBar( QToolBar* bar ) {
 	m_mainToolBar = bar;
 }
 
 /** Sets the main toolbar. */
-void CDisplayWindow::setButtonsToolBar( KToolBar* bar ) {
+void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
 	m_buttonsToolBar = bar;
 }
 
@@ -456,10 +456,10 @@ void CDisplayWindow::updatePopupMenu() {}
 
 
 ///** Returns the installed popup menu. */
-KMenu* const CDisplayWindow::popup() {
+QMenu* const CDisplayWindow::popup() {
 	// qWarning("CReadWindow::popup()");
 	if (!m_popupMenu) {
-		m_popupMenu = new KMenu(this);
+		m_popupMenu = new QMenu(this);
 		connect(m_popupMenu, SIGNAL(aboutToShow()), this, SLOT(updatePopupMenu()));
 		if (displayWidget()) {
 			displayWidget()->installPopup(m_popupMenu);
