@@ -24,6 +24,8 @@ const unsigned int MOVER_HEIGHT = 6;
 
 CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
 	m_layout = new QVBoxLayout(this);
+	m_layout->setSpacing(0);
+	m_layout->setContentsMargins(0,0,0,0);
 	m_layout->setAlignment(this, Qt::AlignHCenter | Qt::AlignCenter);
 
 	//setAlignment(Qt::AlignHCenter | Qt::AlignCenter);
@@ -46,7 +48,7 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
 	m_layout->addWidget( btn_up,0 );
 	m_layout->addWidget( btn_fx,0 );
 	m_layout->addWidget( btn_down,0 );
-	setMinimumWidth(WIDTH+4); // Kludge to add some spacing but seems to work.
+	setMinimumWidth(WIDTH); // Kludge to add some spacing but seems to work.
 
 	connect(btn_fx, SIGNAL(lock()), SLOT(slotLock()));
 	connect(btn_fx, SIGNAL(unlock()), SLOT(slotUnlock()));

@@ -107,6 +107,8 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_verseScroller = new CScrollerWidgetSet(this);
 
 	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
+	m_mainLayout->setContentsMargins(0,0,0,0);
+	m_mainLayout->setSpacing(2);
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
 	m_mainLayout->addWidget(m_textbox);

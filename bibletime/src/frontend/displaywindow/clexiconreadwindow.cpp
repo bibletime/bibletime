@@ -194,12 +194,14 @@ void CLexiconReadWindow::initView()
 	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
 	setMainToolBar( new QToolBar(this) );
+	//mainToolBar()->adjustSize();
 	addToolBar(mainToolBar());
 	//addDockWidget(mainToolBar()); //TODO: does this work? see write windows
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
 	//mainToolBar()->setFullSize(false);
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
+	moduleChooserBar()->adjustSize();
 	//addDockWidget(moduleChooserBar());
 	addToolBar(moduleChooserBar());
 	setButtonsToolBar( new QToolBar(this) );

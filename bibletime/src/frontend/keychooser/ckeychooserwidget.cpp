@@ -184,12 +184,14 @@ void CKeyChooserWidget::init() {
 	m_comboBox->setFocusPolicy(Qt::WheelFocus);
 
 	m_mainLayout = new QHBoxLayout( this );
-	m_mainLayout->addWidget(m_comboBox,5);
+	m_mainLayout->setSpacing(0);
+	m_mainLayout->setContentsMargins(0,0,0,0);
+	m_mainLayout->addWidget(m_comboBox);
 
 	m_scroller = new CScrollerWidgetSet(this);
 
 	m_mainLayout->addWidget( m_scroller );
-	m_mainLayout->addSpacing(2);
+	m_mainLayout->addSpacing(0);
 
 	setTabOrder(m_comboBox, 0);
 

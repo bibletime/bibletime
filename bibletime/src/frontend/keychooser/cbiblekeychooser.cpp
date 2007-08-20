@@ -35,6 +35,8 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 		return;
 	}
 	QHBoxLayout* layout = new QHBoxLayout(this);
+	layout->setSpacing(0);
+	layout->setContentsMargins(0,0,0,0);
 	layout->setDirection( QBoxLayout::LeftToRight );
 
 	w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
