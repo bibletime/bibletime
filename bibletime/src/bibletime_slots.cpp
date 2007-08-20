@@ -479,13 +479,9 @@ void BibleTime::loadProfile(QAction* action) {
 }
 
 void BibleTime::loadProfile(CProfile* p) {
-	Q_ASSERT(p);
-	if (!p) {
-		return;
-	}
+	if (!p) return;
 
 	QList<CProfileWindow*> windows = p->load();
-	Q_ASSERT(windows.count());
 
 	//load mainwindow setttings
 	applyProfileSettings(p);
