@@ -187,8 +187,8 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 	//  slotGoToAnchor();
 }
 
-void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args) {
-	KHTMLPart::urlSelected(url, button, state, _target, args);
+void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::OpenUrlArguments args, KParts::BrowserArguments b_args) {
+	KHTMLPart::urlSelected(url, button, state, _target, args, b_args);
 	m_urlWorkaroundData.doWorkaround = false;
 	//  qWarning("clicked: %s", url.toLatin1());
 	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {

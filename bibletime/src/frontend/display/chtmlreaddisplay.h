@@ -67,7 +67,7 @@ protected:
 	CHTMLReadDisplay( CReadWindow* readWindow, QWidget* parent = 0 );
 	virtual ~CHTMLReadDisplay();
 
-	virtual void urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args);
+	virtual void urlSelected( const QString& url, int button, int state, const QString& _target, KParts::OpenUrlArguments args, KParts::BrowserArguments b_args);
 	/**
 	* Reimplementation.
 	*/
@@ -102,7 +102,8 @@ private:
 		int button;
 		int state;
 		QString target;
-		KParts::URLArgs args;
+		KParts::OpenUrlArguments args;
+		KParts::BrowserArguments b_args;
 
 		QString module;
 		QString key;
