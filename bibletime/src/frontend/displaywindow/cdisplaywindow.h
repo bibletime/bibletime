@@ -29,6 +29,8 @@
 #include <QCloseEvent>
 #include <QStringList>
 
+#include <QMdiSubWindow>
+
 //KDE includes
 //#include <kmainwindow.h>
 #include <kxmlguiwindow.h>
@@ -50,7 +52,7 @@ class KActionCollection;
   * @author The BibleTime team
   */
 
-class CDisplayWindow : public KXmlGuiWindow, public CPointers  {
+class CDisplayWindow : public QMdiSubWindow, public CPointers  {
 	Q_OBJECT
 public:
 	enum WriteWindowType {
@@ -176,6 +178,8 @@ public:
 		return false;
 	};
 
+	KActionCollection* actionCollection();
+
 public slots:
 	/**
 	* Lookup the specified key in the given module. If the module is not chosen withing
@@ -254,6 +258,7 @@ protected slots:
 
 
 private:
+	KActionCollection* m_actionCollection;
 	CMDIArea* m_mdi;
 
 	//we may only cache the module names bacause after a backend relaod the pointers are invalid!

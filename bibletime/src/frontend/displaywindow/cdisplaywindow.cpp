@@ -56,7 +56,7 @@
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
 #include <kmenu.h>
-#include <kxmlguiwindow.h>
+//#include <kxmlguiwindow.h>
 
 using namespace Profile;
 
@@ -90,7 +90,7 @@ CWriteWindow* CDisplayWindow::createWriteInstance(ListCSwordModuleInfo modules, 
 }
 
 CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
-: KXmlGuiWindow(parent),
+: QMdiSubWindow(parent),
 m_mdi(parent),
 m_filterOptions(),
 m_displayOptions(),
@@ -103,8 +103,9 @@ m_mainToolBar(0),
 m_popupMenu(0),
 m_displayWidget(0) {
 	qDebug("CDisplayWindow::CDisplayWindow");
+	m_actionCollection = new KActionCollection(this);
 	setModules(modules);
-	KMainWindow::setAttribute(Qt::WA_DeleteOnClose);
+	//KMainWindow::setAttribute(Qt::WA_DeleteOnClose); //what about QMdiSubWindow?
 }
 
 CDisplayWindow::~CDisplayWindow() {
@@ -535,3 +536,7 @@ void CDisplayWindow::printAnchorWithText() {
 	m_displayWidget->connectionsProxy()->printAnchorWithText( m_displayOptions, m_filterOptions);
 }
 
+KActionCollection* CDisplayWindow::actionCollection()
+{
+	return m_actionCollection;
+}

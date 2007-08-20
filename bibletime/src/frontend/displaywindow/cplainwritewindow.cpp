@@ -46,11 +46,11 @@ CPlainWriteWindow::~CPlainWriteWindow() {}
 void CPlainWriteWindow::initView() {
 	//  qWarning("CPlainWriteWindow::initView()");
 	setDisplayWidget( CDisplay::createWriteInstance(this) );
-	setCentralWidget( displayWidget()->view() );
+	setWidget( displayWidget()->view() );
 
 	setMainToolBar( new KToolBar(this) );
 	//mainToolBar()->setFullSize(true);
-	this->addToolBarBreak(); // to replace setFullSize of Qt3?
+	//this->addToolBarBreak(); // to replace setFullSize of Qt3?
 	//TODO: Qt4 is different; I just remove the docking capability now
 	//addDockWindow(mainToolBar());
 

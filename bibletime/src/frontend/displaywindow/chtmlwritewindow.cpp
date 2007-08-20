@@ -39,11 +39,11 @@ void CHTMLWriteWindow::initView() {
 	CWriteDisplay* writeDisplay = CDisplay::createWriteInstance(this, CDisplay::HTMLDisplay);
 	Q_ASSERT(writeDisplay);
 	setDisplayWidget( writeDisplay );
-	setCentralWidget( displayWidget()->view() );
+	setWidget( displayWidget()->view() );
 
 	setMainToolBar( new KToolBar(this) );
 	//mainToolBar()->setFullSize(true);
-	this->addToolBarBreak(); // to replace setFullSize of Qt3?
+	//this->addToolBarBreak(); // to replace setFullSize of Qt3?
 	//TODO: Qt4 is different; I just remove the docking capability now
 	//addDockWindow(mainToolBar());
 

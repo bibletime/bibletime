@@ -203,7 +203,7 @@ void CLexiconReadWindow::initView()
 	setButtonsToolBar( new KToolBar(this) );
 	//addDockWindow(buttonsToolBar());
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
-	setCentralWidget( displayWidget()->view() );
+	setWidget( displayWidget()->view() );
 }
 
 void CLexiconReadWindow::initToolbars() {

@@ -118,7 +118,7 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
 	// settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
 	settings->setType(modules().first()->type());
 	settings->setMaximized(isMaximized() || parentWidget()->isMaximized());
-	settings->setFocus( (this == mdi()->activeWindow()) ); //set property to true if this window is the active one.
+	settings->setFocus( (this == dynamic_cast<CReadWindow*>(mdi()->activeSubWindow()) ) ); //set property to true if this window is the active one.
 
 	if (key()) {
 		sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key());

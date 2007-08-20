@@ -225,8 +225,8 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() {
 	unsigned int index;
-	for ( index = 0; index < m_mdi->windowList().count(); index++) {
-		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->windowList().at(index));
+	for ( index = 0; index < m_mdi->subWindowList().count(); index++) {
+		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index));
 		if (window) {
 			window->reload();
 		}
@@ -248,8 +248,8 @@ bool BibleTime::queryExit() {
 bool BibleTime::queryClose() {
 	bool ret = true;
 
-	for ( unsigned int index = 0; index < m_mdi->windowList().count(); ++index) {
-		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->windowList().at(index))
+	for ( unsigned int index = 0; index < m_mdi->subWindowList().count(); ++index) {
+		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index))
 		   ) {
 			ret = ret && window->queryClose();
 		}

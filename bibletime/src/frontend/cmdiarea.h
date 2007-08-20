@@ -17,7 +17,8 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
-#include <QWorkspace>
+//#include <QWorkspace>
+#include <QMdiArea>
 #include <QList>
 #include <QEvent>
 #include <QResizeEvent>
@@ -28,10 +29,10 @@ class CSwordModuleInfo;
 class CSwordKey;
 
 /** The MDI widget we use in BibleTime.
- * Enhances QWorkspace.
+ * Enhances QMdiArea.
   * @author The BibleTime Team
   */
-class CMDIArea : public QWorkspace, public CPointers  {
+class CMDIArea : public QMdiArea, public CPointers  {
 	Q_OBJECT
 
 public:

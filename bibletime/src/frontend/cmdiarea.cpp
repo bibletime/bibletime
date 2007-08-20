@@ -25,11 +25,11 @@
 #include <QObject>
 #include <QTimer>
 #include <QEvent>
-
+#include <QMdiSubWindow>
 
 
 CMDIArea::CMDIArea(QWidget *parent)
-: QWorkspace(parent),
+: QMdiArea(parent),
 m_guiOption(Nothing),
 m_childEvent(false),
 m_appCaption(QString::null) {
@@ -64,7 +64,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 	}
 
 	//QWidgetList windows = windowList();
-	QListIterator<QWidget*> it(windowList());
+	QListIterator<QMdiSubWindow*> it(subWindowList());
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
 	while (it.hasNext()) {
 		//Don't use!! It would disable accel enabling for the active window, see CDisplayWindow::windowActivated
@@ -81,7 +81,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
 void CMDIArea::childEvent( QChildEvent * e ) {
-	QWorkspace::childEvent(e);
+	QMdiArea::childEvent(e);
 
 	if ( m_childEvent || !e) {
 		return;
@@ -89,7 +89,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 	m_childEvent = true;
 
-	if (!windowList().count()) {
+	if (!subWindowList().count()) {
 		m_appCaption = QString::null;
 		emit sigSetToplevelCaption( KDialog::makeStandardCaption(m_appCaption, this) );
 		emit sigLastPresenterClosed();
@@ -112,7 +112,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 /** Reimplementation */
 void CMDIArea::resizeEvent(QResizeEvent* e) {
-	QWorkspace::resizeEvent(e);
+	QMdiArea::resizeEvent(e);
 
 	if (updatesEnabled()) {
 		triggerWindowUpdate();
@@ -127,15 +127,7 @@ void CMDIArea::readSettings() {}
 
 /** Deletes all the presenters in the MDI area. */
 void CMDIArea::deleteAll() {
-#if QT_VERSION >= 0x030200
-	closeAllWindows();
-#else
-	QWidgetListIt it(windowList());
-	while (it.current() != 0){
-		it.current()->close();
-		++it;
-	}
-#endif
+	closeAllSubWindows();
 }
 
 /** Enable / disable autoCascading */
@@ -159,8 +151,8 @@ void CMDIArea::myTileVertical() {
 		windows.at(0)->showMaximized();
 	}
 	else {
-		QWidget* active = activeWindow();
-		QWorkspace::tile();
+		QWidget* active = activeSubWindow();
+		QMdiArea::tileSubWindows();
 		active->setFocus();
 	}
 }
@@ -178,7 +170,7 @@ void CMDIArea::myTileHorizontal() {
 	}
 	else {
 
-		QWidget* active = activeWindow();
+		QWidget* active = activeSubWindow();
 		if (active->isMaximized()) {
 			active->showNormal();
 		}
@@ -231,7 +223,7 @@ void CMDIArea::myCascade() {
 		int x = 0;
 		int y = 0;
 
-		QWidget* const active = activeWindow();
+		QWidget* const active = activeSubWindow();
 		if (active->isMaximized()) {
 			active->showNormal();
 		}
@@ -269,8 +261,8 @@ void CMDIArea::myCascade() {
     \fn CMDIArea::emitWindowCaptionChanged()
  */
 void CMDIArea::emitWindowCaptionChanged() {
-	if (activeWindow()) {
-		m_appCaption = activeWindow()->windowTitle();
+	if (activeSubWindow()) {
+		m_appCaption = activeSubWindow()->windowTitle();
 	}
 
 	emit sigSetToplevelCaption(currentApplicationCaption());
@@ -285,7 +277,7 @@ QList<QWidget*> CMDIArea::usableWindowList() {
 
 	//QWidgetList windows = windowList();
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
-	QListIterator<QWidget*> it(windowList());
+	QListIterator<QMdiSubWindow*> it(subWindowList());
 	while (it.hasNext()) {	
 		QWidget* w = it.next();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
@@ -303,9 +295,9 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	Q_ASSERT(e);
 
 	QWidget* w = dynamic_cast<QWidget*>( o );
-	bool ret = QWorkspace::eventFilter(o,e);
+	bool ret = QMdiArea::eventFilter(o,e);
 
-#if QT_VERSION >= 0x030300
+
  	if ( w && (e->type() == QEvent::WindowStateChange) ) {
  		if (o->inherits("CDisplayWindow") && ((w->windowState() & Qt::WindowMinimized) || w->isHidden())) { //window was minimized, trigger a tile/cascade update if necessary
 			triggerWindowUpdate();
@@ -318,20 +310,7 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 			o->dumpObjectTree();
 		}
 	}
-#else
-	if (w && o->inherits("CDisplayWindow")){
-		if ((e->type() == QEvent::ShowMinimized) ||
-			(e->type() == QEvent::Hide)){
-			triggerWindowUpdate();
-			ret = false;
-		}
-	}
-	else if (!o->inherits("CDisplayWindow")){
-		qDebug("bad mdi child classname: %s", o->className());
-		o->dumpObjectInfo();
-		o->dumpObjectTree();
-	}
-#endif
+
 	return ret; // standard event processing
 }
 

@@ -173,13 +173,13 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		return;
 	}
 
-	if ( m_mdi->windowList().isEmpty() ) {
+	if ( m_mdi->subWindowList().isEmpty() ) {
 		m_windowCascade_action->setEnabled(false);
 		m_windowTileVertical_action->setEnabled(false);
 		m_windowTileHorizontal_action->setEnabled(false);
 		m_windowCloseAll_action->setEnabled(false);
 	}
-	else if (m_mdi->windowList().count() == 1) {
+	else if (m_mdi->subWindowList().count() == 1) {
 		m_windowTileVertical_action->setEnabled( false );
 		m_windowTileHorizontal_action->setEnabled( false );
 		m_windowCascade_action->setEnabled( false );
@@ -207,7 +207,7 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		m_windowActionCollection = new KActionCollection(this, KComponentData());
 	}
 
-	QWidgetList windows = m_mdi->windowList();
+	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	const int count = windows.count();
 	for ( int i = 0; i < count; ++i ) {
 		QWidget* w = windows.at(i);
@@ -218,7 +218,7 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		action->setUserData(w);
 
 		m_windowOpenWindowsList.append(action);
-		action->setChecked( w == m_mdi->activeWindow() );
+		action->setChecked( w == m_mdi->activeSubWindow() );
 		m_windowMenu->addAction(action);
 	}
 }
@@ -443,9 +443,9 @@ void BibleTime::saveProfile(CProfile* profile) {
 	//save mainwindow settings
 	storeProfileSettings(profile);
 
-	QWidgetList windows = m_mdi->windowList();
+	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	QList<CProfileWindow*> profileWindows;
-	foreach (QWidget* w, windows) {
+	foreach (QMdiSubWindow* w, windows) {
 		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w);
 		if (!displayWindow) {
 			continue;
