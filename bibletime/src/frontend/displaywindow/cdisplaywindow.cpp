@@ -413,6 +413,7 @@ void CDisplayWindow::lookup() {
 
 void CDisplayWindow::lookup( const QString& moduleName, const QString& keyName ) {
 	Q_ASSERT(isReady());
+	qDebug("CDisplayWindow::lookup( const QString& moduleName, const QString& keyName )");
 	if (!isReady()) {
 		return;
 	}

@@ -477,7 +477,7 @@ void BibleTime::initBackends() {
 	qDebug("BibleTime::initBackends");
 	
 	sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
-	sword::SWLog::getSystemLog()->setLogLevel(3);
+	sword::SWLog::getSystemLog()->setLogLevel(1);
 
 	m_backend = new CSwordBackend();
 	m_backend->booknameLanguage( CBTConfig::get

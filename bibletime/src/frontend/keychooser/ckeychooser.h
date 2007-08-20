@@ -18,6 +18,7 @@
 #include <QWidget>
 
 class CSwordKey;
+class QAction;
 
 /**
  * The base class for the KeyChooser.
@@ -75,10 +76,10 @@ public slots:
 	void addToHistory(CSwordKey*);
 
 	void backInHistory();
-	void backInHistory(int);
+	void backInHistory(QAction* action);
 
 	void forwardInHistory();
-	void forwardInHistory(int);
+	void forwardInHistory(QAction* action);
 
 signals:
 	/**

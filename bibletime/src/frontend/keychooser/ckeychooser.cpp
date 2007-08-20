@@ -21,6 +21,8 @@
 #include "cbiblekeychooser.h"
 #include "cbookkeychooser.h"
 
+#include <QAction>
+
 CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
 : QWidget(parent),
 m_inHistoryFunction(false) {}
@@ -51,19 +53,25 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 }
 
 void CKeyChooser::backInHistory() {
-	backInHistory(1);
+	backInHistory(0);
 }
 
-void CKeyChooser::backInHistory(int count) {
+void CKeyChooser::backInHistory(QAction* action) {
 	m_inHistoryFunction = true;
 	//  qWarning("go back %d items in history", count);
 
 	Q_ASSERT(m_prevKeyHistoryList.size());
 
+	//find the key of the action in the list
+	int index;
+	if (action) {
+		index = m_prevKeyHistoryList.indexOf(action->text());
+	}
+	else {
+		index = 1;
+	}
 	QStringList::iterator it = m_prevKeyHistoryList.begin();
-
 	//pop_front count items, the top item is then the new current key
-	int index = count;
 	while ((index > 0) && (it != m_prevKeyHistoryList.end())) {
 		//    qWarning("pop_front");
 
@@ -83,18 +91,24 @@ void CKeyChooser::backInHistory(int count) {
 }
 
 void CKeyChooser::forwardInHistory() {
-	forwardInHistory(1);
+	forwardInHistory(0);
 }
 
-void CKeyChooser::forwardInHistory(int count) {
+void CKeyChooser::forwardInHistory(QAction* action) {
 	m_inHistoryFunction = true;
 	//  qWarning("go forward %d items in history", count);
-
 	Q_ASSERT(m_nextKeyHistoryList.size());
 
+	//find the key of the action in the list
+	int index;
+	if (action) {
+		index = m_nextKeyHistoryList.indexOf(action->text());
+	}
+	else {
+		index = 1;
+	}
 	QStringList::iterator it = m_nextKeyHistoryList.begin();
 	//pop_front count-1 items, the top item is then the new current key
-	int index = count;
 	while (index > 0 && it != m_nextKeyHistoryList.end()) {
 		//    qWarning("pop_front");
 
