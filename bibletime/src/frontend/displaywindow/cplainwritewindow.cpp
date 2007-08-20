@@ -46,7 +46,7 @@ CPlainWriteWindow::~CPlainWriteWindow() {}
 void CPlainWriteWindow::initView() {
 	//  qWarning("CPlainWriteWindow::initView()");
 	setDisplayWidget( CDisplay::createWriteInstance(this) );
-	setWidget( displayWidget()->view() );
+	setCentralWidget( displayWidget()->view() );
 
 	setMainToolBar( new KToolBar(this) );
 	//mainToolBar()->setFullSize(true);

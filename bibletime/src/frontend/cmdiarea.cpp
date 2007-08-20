@@ -25,11 +25,11 @@
 #include <QObject>
 #include <QTimer>
 #include <QEvent>
-#include <QMdiSubWindow>
-
+//#include <QMdiSubWindow>
+#include <QMainWindow>
 
 CMDIArea::CMDIArea(QWidget *parent)
-: QMdiArea(parent),
+: QWorkspace(parent),
 m_guiOption(Nothing),
 m_childEvent(false),
 m_appCaption(QString::null) {
@@ -64,7 +64,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 	}
 
 	//QWidgetList windows = windowList();
-	QListIterator<QMdiSubWindow*> it(subWindowList());
+	QListIterator<QWidget*> it(windowList());
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
 	while (it.hasNext()) {
 		//Don't use!! It would disable accel enabling for the active window, see CDisplayWindow::windowActivated
@@ -81,7 +81,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
 void CMDIArea::childEvent( QChildEvent * e ) {
-	QMdiArea::childEvent(e);
+	QWorkspace::childEvent(e);
 
 	if ( m_childEvent || !e) {
 		return;
@@ -89,7 +89,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 	m_childEvent = true;
 
-	if (!subWindowList().count()) {
+	if (!windowList().count()) {
 		m_appCaption = QString::null;
 		emit sigSetToplevelCaption( KDialog::makeStandardCaption(m_appCaption, this) );
 		emit sigLastPresenterClosed();
@@ -112,7 +112,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 /** Reimplementation */
 void CMDIArea::resizeEvent(QResizeEvent* e) {
-	QMdiArea::resizeEvent(e);
+	QWorkspace::resizeEvent(e);
 
 	if (updatesEnabled()) {
 		triggerWindowUpdate();
@@ -127,7 +127,7 @@ void CMDIArea::readSettings() {}
 
 /** Deletes all the presenters in the MDI area. */
 void CMDIArea::deleteAll() {
-	closeAllSubWindows();
+	closeAllWindows();
 }
 
 /** Enable / disable autoCascading */
@@ -151,8 +151,8 @@ void CMDIArea::myTileVertical() {
 		windows.at(0)->showMaximized();
 	}
 	else {
-		QWidget* active = activeSubWindow();
-		QMdiArea::tileSubWindows();
+		QWidget* active = activeWindow();
+		QWorkspace::tile();
 		if (active) active->setFocus();
 	}
 }
@@ -170,7 +170,7 @@ void CMDIArea::myTileHorizontal() {
 	}
 	else {
 
-		QWidget* active = activeSubWindow();
+		QWidget* active = activeWindow();
 		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
@@ -223,7 +223,7 @@ void CMDIArea::myCascade() {
 		int x = 0;
 		int y = 0;
 
-		QWidget* const active = activeSubWindow();
+		QWidget* const active = activeWindow();
 		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
@@ -261,8 +261,8 @@ void CMDIArea::myCascade() {
     \fn CMDIArea::emitWindowCaptionChanged()
  */
 void CMDIArea::emitWindowCaptionChanged() {
-	if (activeSubWindow()) {
-		m_appCaption = activeSubWindow()->windowTitle();
+	if (activeWindow()) {
+		m_appCaption = activeWindow()->windowTitle();
 	}
 
 	emit sigSetToplevelCaption(currentApplicationCaption());
@@ -277,7 +277,7 @@ QList<QWidget*> CMDIArea::usableWindowList() {
 
 	//QWidgetList windows = windowList();
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
-	QListIterator<QMdiSubWindow*> it(subWindowList());
+	QListIterator<QWidget*> it(windowList());
 	while (it.hasNext()) {	
 		QWidget* w = it.next();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
@@ -295,7 +295,7 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	Q_ASSERT(e);
 
 	QWidget* w = dynamic_cast<QWidget*>( o );
-	bool ret = QMdiArea::eventFilter(o,e);
+	bool ret = QWorkspace::eventFilter(o,e);
 
 
  	if ( w && (e->type() == QEvent::WindowStateChange) ) {

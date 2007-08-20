@@ -140,7 +140,7 @@ void CBookReadWindow::initView() {
 	m_treeChooser->hide();
 
 	//splitter->setResizeMode(m_treeChooser, QSplitter::Stretch);
-	setWidget( splitter );
+	setCentralWidget( splitter );
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
 }
 

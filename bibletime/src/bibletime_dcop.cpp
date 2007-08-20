@@ -124,7 +124,7 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
 	qDebug("DCOP: search in open modules ...");
 	QStringList ret;
 
-	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
+	QList<QWidget*> windows = m_mdi->windowList();
 	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
 		CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i));
 		if (w) {
@@ -150,7 +150,7 @@ QString BibleTime::getCurrentReference() {
 	qDebug("BibleTime::getCurrentReference");
 	QString ret = QString::null;
 
-	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(m_mdi->activeSubWindow());
+	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(m_mdi->activeWindow());
 	Q_ASSERT(w);
 
 	if (w) {

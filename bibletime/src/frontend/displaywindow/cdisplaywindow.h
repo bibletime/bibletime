@@ -29,8 +29,8 @@
 #include <QCloseEvent>
 #include <QStringList>
 
-#include <QMdiSubWindow>
-
+//#include <QMdiSubWindow>
+#include <QMainWindow>
 
 
 //Forward declarations
@@ -50,7 +50,7 @@ class KActionCollection;
   * @author The BibleTime team
   */
 
-class CDisplayWindow : public QMdiSubWindow, public CPointers  {
+class CDisplayWindow : public QMainWindow, public CPointers  {
 	Q_OBJECT
 public:
 	enum WriteWindowType {

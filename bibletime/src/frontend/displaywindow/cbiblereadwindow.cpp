@@ -476,7 +476,7 @@ void CBibleReadWindow::lookup( CSwordKey* newKey ) {
 
 void CBibleReadWindow::syncWindows() {
 	//  qWarning("syncing windows");
-	QList<QMdiSubWindow*> windows = mdi()->subWindowList();
+	QList<QWidget*> windows = mdi()->windowList();
 	//  Q_ASSERT(windows.count());
 	if (!windows.count()) {
 		return;

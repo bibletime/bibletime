@@ -39,7 +39,7 @@ void CHTMLWriteWindow::initView() {
 	CWriteDisplay* writeDisplay = CDisplay::createWriteInstance(this, CDisplay::HTMLDisplay);
 	Q_ASSERT(writeDisplay);
 	setDisplayWidget( writeDisplay );
-	setWidget( displayWidget()->view() );
+	setCentralWidget( displayWidget()->view() );
 
 	setMainToolBar( new KToolBar(this) );
 	//mainToolBar()->setFullSize(true);

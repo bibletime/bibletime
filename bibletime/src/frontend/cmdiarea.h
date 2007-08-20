@@ -17,8 +17,8 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
-//#include <QWorkspace>
-#include <QMdiArea>
+#include <QWorkspace>
+//#include <QMdiArea>
 #include <QList>
 #include <QEvent>
 #include <QResizeEvent>
@@ -32,7 +32,7 @@ class CSwordKey;
  * Enhances QMdiArea.
   * @author The BibleTime Team
   */
-class CMDIArea : public QMdiArea, public CPointers  {
+class CMDIArea : public QWorkspace, public CPointers  {
 	Q_OBJECT
 
 public:

@@ -36,7 +36,8 @@
 #include <QWidget>
 #include <QCloseEvent>
 #include <QStringList>
-#include <QMdiSubWindow>
+//#include <QMdiSubWindow>
+#include <QMainWindow>
 
 #include <QDebug>
 
@@ -53,19 +54,21 @@ using namespace Profile;
 
 
 CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
-: QMdiSubWindow(parent),
-m_mdi(parent),
-m_filterOptions(),
-m_displayOptions(),
-m_displaySettingsButton(0),
-m_keyChooser(0),
-m_swordKey(0),
-m_isReady(false),
-m_moduleChooserBar(0),
-m_mainToolBar(0),
-m_popupMenu(0),
-m_displayWidget(0) {
+	: QMainWindow(parent),
+	m_mdi(parent),
+	m_filterOptions(),
+	m_displayOptions(),
+	m_displaySettingsButton(0),
+	m_keyChooser(0),
+	m_swordKey(0),
+	m_isReady(false),
+	m_moduleChooserBar(0),
+	m_mainToolBar(0),
+	m_popupMenu(0),
+	m_displayWidget(0)
+{
 	qDebug("CDisplayWindow::CDisplayWindow");
+	parent->addWindow(this);
 	m_actionCollection = new KActionCollection(this);
 	setModules(modules);
 	//KMainWindow::setAttribute(Qt::WA_DeleteOnClose); //what about QMdiSubWindow?
