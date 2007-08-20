@@ -153,7 +153,7 @@ void CMDIArea::myTileVertical() {
 	else {
 		QWidget* active = activeSubWindow();
 		QMdiArea::tileSubWindows();
-		active->setFocus();
+		if (active) active->setFocus();
 	}
 }
 
@@ -171,7 +171,7 @@ void CMDIArea::myTileHorizontal() {
 	else {
 
 		QWidget* active = activeSubWindow();
-		if (active->isMaximized()) {
+		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
 
@@ -224,7 +224,7 @@ void CMDIArea::myCascade() {
 		int y = 0;
 
 		QWidget* const active = activeSubWindow();
-		if (active->isMaximized()) {
+		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
 
