@@ -24,7 +24,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //KDE includes
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <kshortcut.h>
 
 #include <QList>

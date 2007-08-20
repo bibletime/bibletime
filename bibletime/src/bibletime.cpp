@@ -19,6 +19,7 @@
 #include "frontend/kstartuplogo.h"
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
@@ -184,7 +185,7 @@ void BibleTime::readSettings() {
 CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
 	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 	qDebug("BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key)");
-	CDisplayWindow* displayWindow = CDisplayWindow::createReadInstance(modules, m_mdi);
+	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
 		displayWindow->init();
 		displayWindow->show();
@@ -211,7 +212,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 	ListCSwordModuleInfo modules;
 	modules.append(module);
 
-	CDisplayWindow* displayWindow = CDisplayWindow::createWriteInstance(modules, m_mdi, type);
+	CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
 	if ( displayWindow ) {
 		displayWindow->init();
 		displayWindow->show();

@@ -13,15 +13,6 @@
 #include "cdisplaywindow.h"
 #include "cdisplaywindow.moc"
 
-#include "creadwindow.h"
-#include "cbiblereadwindow.h"
-#include "ccommentaryreadwindow.h"
-#include "clexiconreadwindow.h"
-#include "cbookreadwindow.h"
-
-#include "cwritewindow.h"
-#include "cplainwritewindow.h"
-#include "chtmlwritewindow.h"
 
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
@@ -45,49 +36,21 @@
 #include <QWidget>
 #include <QCloseEvent>
 #include <QStringList>
+#include <QMdiSubWindow>
 
 #include <QDebug>
 
 //KDE includes
 #include <kdeversion.h>
-//#include <kaccel.h>
 #include <klocale.h>
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
 #include <kmenu.h>
-//#include <kxmlguiwindow.h>
 
 using namespace Profile;
 
-CReadWindow* CDisplayWindow::createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent) {
-	qDebug("CDisplayWindow::createReadInstance");
-	switch (modules.first()->type()) {
-		case CSwordModuleInfo::Bible:
-			return new CBibleReadWindow(modules, parent);
-		case CSwordModuleInfo::Commentary:
-			return new CCommentaryReadWindow(modules, parent);
-		case CSwordModuleInfo::Lexicon:
-			return new CLexiconReadWindow(modules, parent);
-		case CSwordModuleInfo::GenericBook:
-			return new CBookReadWindow(modules, parent);
-		default:
-			qWarning("unknown module type");
-		break;
-	}
-	return 0;
-}
 
-
-CWriteWindow* CDisplayWindow::createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {
-	if (type == HTMLWindow) {
-		return new CHTMLWriteWindow(modules, parent);
-	}
-	else {
-		return new CPlainWriteWindow(modules, parent);
-	}
-	return 0;
-}
 
 CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
 : QMdiSubWindow(parent),

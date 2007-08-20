@@ -3,7 +3,7 @@ PROJECT(bibletime CXX C)
 cmake_minimum_required(VERSION 2.4.0)
 SET(DEBUG true)
 
-SET(BT_VERSION "1.6.0")
+SET(BT_VERSION "1.6.4_KDE4port+svn")
 
 ######################################################
 # Find required packages
@@ -144,6 +144,7 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/cbiblereadwindow.cpp
 	src/frontend/displaywindow/ccommentaryreadwindow.cpp
 	src/frontend/displaywindow/cbookreadwindow.cpp
+	src/frontend/displaywindow/cdisplaywindowfactory.cpp
 	
 	#toplevel files
 	src/bibletime_init.cpp

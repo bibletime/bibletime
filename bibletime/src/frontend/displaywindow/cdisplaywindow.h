@@ -31,9 +31,7 @@
 
 #include <QMdiSubWindow>
 
-//KDE includes
-//#include <kmainwindow.h>
-#include <kxmlguiwindow.h>
+
 
 //Forward declarations
 class CMDIArea;
@@ -60,8 +58,6 @@ public:
 		PlainTextWindow = 2
 	};
 
-	static CReadWindow* createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent);
-	static CWriteWindow* createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const WriteWindowType type = HTMLWindow);
 	/**
 	* Insert the keyboard accelerators of this window into the given KAccel object.
 	*/

@@ -19,7 +19,7 @@
 #include <QPixmap>
 #include <QDesktopWidget>
 //Added by qt3to4:
-#include <Q3Frame>
+#include <QFrame>
 
 //KDE includes
 #include <kapplication.h>
@@ -82,7 +82,7 @@ KStartupLogo::KStartupLogo()
 	textLabel->setPalette(labelPalette);
 
 
-	textLabel->setFrameStyle(Q3Frame::Panel | Q3Frame::Plain);
+	textLabel->setFrameStyle(QFrame::Panel | QFrame::Plain);
 	textLabel->setLineWidth(1);
 	textLabel->setScaledContents( true );
 
