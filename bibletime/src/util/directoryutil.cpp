@@ -107,6 +107,11 @@ QDir DirectoryUtil::getIconDir(void)
 	return cached_iconDir; 
 }
 
+QIcon DirectoryUtil::getIcon(const QString& name)
+{
+	return QIcon(getIconDir().canonicalPath().append("/").append(name));
+}
+
 QDir DirectoryUtil::getXmlDir(void)
 {
 	return cached_xmlDir;

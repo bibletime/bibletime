@@ -18,24 +18,24 @@
 namespace CResMgr {
 	namespace modules {
 		namespace bible {
-			const QString icon_unlocked  = "bt_bible";
-			const QString icon_locked    = "bt_bible_locked";
-			const QString icon_add       = "bt_bible_add";
+			const QString icon_unlocked  = "bible.svg";
+			const QString icon_locked    = "bible_locked.svg";
+			const QString icon_add       = "bible_add.svg";
 		}
 		namespace commentary {
-			const QString icon_unlocked  = "bt_commentary";
-			const QString icon_locked    = "bt_commentary_locked";
-			const QString icon_add       = "bt_commentary_add";
+			const QString icon_unlocked  = "commentary.svg";
+			const QString icon_locked    = "commentary_locked.svg";
+			const QString icon_add       = "commentary_add.svg";
 		}
 		namespace lexicon {
-			const QString icon_unlocked  = "bt_lexicon";
-			const QString icon_locked    = "bt_lexicon_locked";
-			const QString icon_add       = "bt_lexicon_add";
+			const QString icon_unlocked  = "lexicon.svg";
+			const QString icon_locked    = "lexicon_locked.svg";
+			const QString icon_add       = "lexicon_add.svg";
 		}
 		namespace book {
-			const QString icon_unlocked  = "bt_book";
-			const QString icon_locked    = "bt_book_locked";
-			const QString icon_add       = "bt_book_add";
+			const QString icon_unlocked  = "book.svg";
+			const QString icon_locked    = "book_locked.svg";
+			const QString icon_add       = "book_add.svg";
 		}
 	}
 

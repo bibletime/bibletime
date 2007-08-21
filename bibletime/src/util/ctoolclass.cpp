@@ -10,6 +10,7 @@
 #include "ctoolclass.h"
 
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
@@ -105,57 +106,51 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
 
 /** Returns the icon used for the module given as aparameter. */
-QPixmap CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
-	if (!module_info)
-		return SmallIcon(CResMgr::modules::book::icon_locked, 16);
+QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
+	if (!module_info) return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_locked);
 
 	if (module_info->category() == CSwordModuleInfo::Cult) {
-		return SmallIcon("stop.png", 16);
-	};
-
-
-	QPixmap img;
+		return util::filesystem::DirectoryUtil::getIcon("stop.png"); //TODO: what to use, where did that icon go?
+	}
 
 	switch (module_info->type()) {
 		case CSwordModuleInfo::Bible:
-		if (module_info->isLocked())
-			img = SmallIcon(CResMgr::modules::bible::icon_locked, 16);
-		else
-			img = SmallIcon(CResMgr::modules::bible::icon_unlocked, 16);
-		break;
+			if (module_info->isLocked())
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::bible::icon_locked);
+			else
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::bible::icon_unlocked);
+			break;
 
 		case CSwordModuleInfo::Lexicon:
-		if (module_info->isLocked())
-			img = SmallIcon(CResMgr::modules::lexicon::icon_locked, 16);
-		else
-			img = SmallIcon(CResMgr::modules::lexicon::icon_unlocked, 16);
-		break;
+			if (module_info->isLocked())
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::lexicon::icon_locked);
+			else
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::lexicon::icon_unlocked);
+			break;
 
 		case CSwordModuleInfo::Commentary:
-		if (module_info->isLocked())
-			img = SmallIcon(CResMgr::modules::commentary::icon_locked, 16);
-		else
-			img = SmallIcon(CResMgr::modules::commentary::icon_unlocked, 16);
-		break;
+			if (module_info->isLocked())
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::commentary::icon_locked);
+			else
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::commentary::icon_unlocked);
+			break;
 
 		case CSwordModuleInfo::GenericBook:
-		if (module_info->isLocked())
-			img = SmallIcon(CResMgr::modules::book::icon_locked, 16);
-		else
-			img = SmallIcon(CResMgr::modules::book::icon_unlocked, 16);
-		break;
+			if (module_info->isLocked())
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_locked);
+			else
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_unlocked);
+			break;
 
-		case CSwordModuleInfo::Unknown: //fall though to default
-		default:
-		if (module_info->isLocked())
-			img = SmallIcon(CResMgr::modules::book::icon_locked, 16);
-		else
-			img = SmallIcon(CResMgr::modules::book::icon_unlocked, 16);
-		break;
+		case CSwordModuleInfo::Unknown: //fallback
+			default:
+			if (module_info->isLocked())
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_locked);
+			else
+				return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_unlocked);
+			break;
 	}
-
-
-	return img;
+	return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_unlocked);
 }
 
 QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {

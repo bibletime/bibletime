@@ -12,6 +12,7 @@
 
 #include <QString>
 #include <QDir>
+#include <QIcon>
 
 namespace util {
 
@@ -53,10 +54,12 @@ public:
 	static QDir getIconDir(void);
 	/** Return the path to the xml files. initDirectoryCache must be called before. */
 	static QDir getXmlDir(void);
+	/** Returns an icon with the given name */
+	static QIcon getIcon(const QString& name);
 };
 	
-}
+} //namespace filesystem
 
-}
+} //namespace directoryutil
 
 #endif

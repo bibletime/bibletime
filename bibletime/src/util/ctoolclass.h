@@ -11,7 +11,7 @@
 
 //Qt
 #include <QString>
-#include <QPixmap>
+#include <QIcon>
 #include <QTextCodec>
 
 class CSwordModuleInfo;
@@ -22,9 +22,6 @@ class QLabel;
  *
  * Some methods,that would be normaly global, but I hate global functions :-)
  * (the function locateHTML is from Sandy Meier (KDevelop))
- *
- * @short A class which contains static members to do small things.
- * @author Joachim Ansorg <info@bibletime.info>
  */
 class CToolClass {
 public:
@@ -55,7 +52,7 @@ public:
 	/**
 	* Returns the icon used for the module given as aparameter.
 	*/
-	static QPixmap getIconForModule( CSwordModuleInfo* );
+	static QIcon getIconForModule( CSwordModuleInfo* );
 	/** Returns a label to explain difficult things of dialogs.
 	* This function returns a label with heading "heading" and explanation "text". This label should be used to
 	* explain difficult things of the GUI, e.g. in the optionsdialog.

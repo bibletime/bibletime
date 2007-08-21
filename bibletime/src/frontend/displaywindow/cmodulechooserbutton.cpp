@@ -17,6 +17,7 @@
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QString>
@@ -33,8 +34,6 @@
 #include <kiconloader.h>
 #include <kmenu.h>
 
-//TODO: test all (context)menu situations
-
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
 	: QToolButton(parent),
 	m_id(id), m_popup(0), m_moduleChooserBar(parent)
@@ -43,7 +42,7 @@ CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordMod
 	m_module = useModule;
 	m_hasModule = (m_module) ? true : false;
 
-	setIcon( QIcon(iconName()) );
+	setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
 	setPopupMode(QToolButton::InstantPopup);
 
 	populateMenu();
@@ -59,27 +58,15 @@ CModuleChooserButton::~CModuleChooserButton() {
 const QString CModuleChooserButton::iconName() {
 	switch (m_moduleType) {
 		case CSwordModuleInfo::Bible:
-		if (m_hasModule)
-			return CResMgr::modules::bible::icon_unlocked;
-		else
-			return CResMgr::modules::bible::icon_add;
+			return (m_hasModule) ? CResMgr::modules::bible::icon_unlocked : CResMgr::modules::bible::icon_add;
 		case CSwordModuleInfo::Commentary:
-		if (m_hasModule)
-			return CResMgr::modules::commentary::icon_unlocked;
-		else
-			return CResMgr::modules::commentary::icon_add;
+			return (m_hasModule) ? CResMgr::modules::commentary::icon_unlocked : CResMgr::modules::commentary::icon_add;
 		case CSwordModuleInfo::Lexicon:
-		if (m_hasModule)
-			return CResMgr::modules::lexicon::icon_unlocked;
-		else
-			return CResMgr::modules::lexicon::icon_add;
+			return m_hasModule ? CResMgr::modules::lexicon::icon_unlocked : CResMgr::modules::lexicon::icon_add;
 		case CSwordModuleInfo::GenericBook:
-		if (m_hasModule)
-			return CResMgr::modules::book::icon_unlocked;
-		else
-			return CResMgr::modules::book::icon_add;
+			return m_hasModule ? CResMgr::modules::book::icon_unlocked : CResMgr::modules::book::icon_add;
 		default: //return as default the bible icon
-		return CResMgr::modules::bible::icon_unlocked;
+			return CResMgr::modules::bible::icon_unlocked;
 	}
 }
 
@@ -114,9 +101,7 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 		action->setChecked(true); //setItemChecked(ID, true);
 	}
 
-	m_noneAction->setChecked(false);//m_popup->setItemChecked(m_noneId, false); //uncheck the "none" item
-	//QString actiontext = action->text();
-	//actiontext
+	m_noneAction->setChecked(false); //uncheck the "none" item
 	if (action->text().remove(QChar('&')) == i18n("NONE")) { // note: this is for m_popup, the toplevel!
 		if (m_hasModule) {
 			emit sigRemoveButton(m_id);
@@ -130,7 +115,8 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 
 		m_hasModule = true;
 		m_module = module();
-		setIcon( QIcon(iconName()) ); //TODO
+		
+		setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
 		emit sigChanged();
 
 		setText( i18n("Select a work") );
@@ -143,11 +129,8 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 
 /** No descriptions */
 void CModuleChooserButton::populateMenu() {
-	qDebug("CModuleChooserButton::populateMenu");
-	
 	qDeleteAll(m_submenus);
 	m_submenus.clear();
-
 	delete m_popup;
 
 	//create a new, empty popup
@@ -240,10 +223,6 @@ void CModuleChooserButton::populateMenu() {
 	}
 }
 
-
-/*!
-    \fn CModuleChooserButton::updateMenuItems()
- */
 void CModuleChooserButton::updateMenuItems() {
 	QString moduleName;
 	CSwordModuleInfo* module = 0;

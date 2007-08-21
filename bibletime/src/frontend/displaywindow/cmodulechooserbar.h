@@ -14,7 +14,6 @@
 
 //BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
-
 #include "util/cpointers.h"
 
 //Qt includes
@@ -23,11 +22,8 @@
 //KDE includes
 #include <ktoolbar.h>
 
-
 class CModuleChooserButton;
-
 class QWidget;
-
 
 /**
   * @author The BibleTime team
