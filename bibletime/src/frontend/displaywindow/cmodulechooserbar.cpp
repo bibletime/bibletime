@@ -14,8 +14,8 @@
 
 #include "cmodulechooserbutton.h"
 
-//#include <>
 #include <QList>
+#include <QDebug>
 
 #include <ktoolbar.h>
 
@@ -85,15 +85,16 @@ void CModuleChooserBar::addButton( ) {
 //change current with next and remove
 /** Removes a button from the toolbar */
 void CModuleChooserBar::removeButton( const int ID ) {
+	qWarning() << "CModuleChooserBar::removeButton begin";
 	QMutableListIterator<CModuleChooserButton*> it(m_buttonList);
 	//for (m_buttonList.first(); m_buttonList.current(); m_buttonList.next()) {
 	while (it.hasNext()) {
-		if (it.peekNext()->getId() == ID) { //found the right button to remove
-			CModuleChooserButton* b = it.next();
-			it.remove();
+		CModuleChooserButton* b = it.next();
+		if (b->getId() == ID) { //found the right button to remove
+			//it.remove();
 			//TODO: hide does not work; see e.g. QToolBar::addWidget
 			//b->hide();
-			b->defaultAction()->setVisible(false);
+			//b->defaultAction()->setVisible(false);
 			b->deleteLater();
 			break;
 		}
@@ -102,6 +103,8 @@ void CModuleChooserBar::removeButton( const int ID ) {
 	emit sigChanged();
 
 	updateMenuItems(); //make sure the items are up to date with the newest module list
+	
+	qWarning() << "CModuleChooserBar::removeButton end";
 }
 
 /** Returns a list of selected modules. */
@@ -113,9 +116,7 @@ ListCSwordModuleInfo CModuleChooserBar::getModuleList() {
 	QListIterator<CModuleChooserButton*> it(m_buttonList);
 	while (it.hasNext()) {
 		m = it.next()->module();
-		if ( m ) {
-			list.append( m );
-		}
+		if (m) list.append( m );
 	}
 	//qt3: m_buttonList.at( currentItemIndex ); //change current back
 	return list;
@@ -147,9 +148,7 @@ void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
 	setButtonLimit(0);
 	setButtonLimit(-1);  //these two lines clear the bar
 
-	if (!useModules.count()) {
-		return;
-	}
+	if (!useModules.count()) return;
 
 	//  for (useModules.first(); useModules.current(); useModules.next())   {
 	ListCSwordModuleInfo::iterator end_it = useModules.end();
@@ -157,9 +156,9 @@ void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
 		if ( (m_buttonLimit != -1) && (m_buttonLimit <= (int)m_buttonList.count()) ) {
 			break;
 		}
-
 		addButton( *it );
 	}
+	
 	if ( (m_buttonLimit == -1) || (m_buttonLimit > (int)m_buttonList.count()) ) {
 		addButton(0);//add button without module set
 	}
@@ -172,9 +171,6 @@ void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
     \fn CModuleChooserBar::updateMenuItems()
  */
 void CModuleChooserBar::updateMenuItems() {
-	//QList<CModuleChooserButton*> buttons = m_buttonList ;
 	QListIterator<CModuleChooserButton*> it(m_buttonList);
-	while (it.hasNext()) {
-		it.next()->updateMenuItems();
-	}
+	while (it.hasNext()) it.next()->updateMenuItems();
 }

@@ -39,29 +39,19 @@ CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordMod
 	: QToolButton(parent),
 	m_id(id), m_popup(0), m_moduleChooserBar(parent)
 {
-	qDebug("CModuleChooserButton::CModuleChooserButton");
 	m_moduleType = type;
 	m_module = useModule;
-	if (!m_module) {
-		m_hasModule = false;
-	}
-	else {
-		m_hasModule = true;
-	}
+	m_hasModule = (m_module) ? true : false;
 
 	setIcon( QIcon(iconName()) );
-	//setPopupDelay(1); //see comment in cbuttons.cpp
 	setPopupMode(QToolButton::InstantPopup);
 
 	populateMenu();
-	qDebug("CModuleChooserButton::CModuleChooserButton end");
 }
 
 CModuleChooserButton::~CModuleChooserButton() {
-	//m_submenus.setAutoDelete(true); //delete all submenus
 	qDeleteAll(m_submenus);
 	m_submenus.clear();
-
 	delete m_popup; //not necessary, because has "this" as parent?
 }
 
@@ -94,20 +84,15 @@ const QString CModuleChooserButton::iconName() {
 }
 
 CSwordModuleInfo* CModuleChooserButton::module() {
-	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-	qDebug("CModuleChooserButton::module");
-	QListIterator<KMenu*> it(m_submenus);
 	foreach (KMenu* popup, m_submenus) {
 		foreach (QAction* action, popup->actions()) {
 			if ( action->isChecked() ) { //idAt -> , isItemChecked -> QAction::isChecked
 				QString mod = action->text(); //popup->text(popup->idAt(i)); //text -> 
-				qDebug("CModuleChooserButton::module end, return backend()->findModuleByName( mod.left(mod.indexOf(" "))");
+				mod.remove(QChar('&')); //remove hotkey indicators
 				return backend()->findModuleByName( mod.left(mod.indexOf(" ")) );
 			}
 		}
-
 	}
-	qDebug("CModuleChooserButton::module end, return 0");
 	return 0; //"none" selected
 }
 
@@ -130,8 +115,9 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 	}
 
 	m_noneAction->setChecked(false);//m_popup->setItemChecked(m_noneId, false); //uncheck the "none" item
-
-	if (action->text() == i18n("NONE")) { // note: this is for m_popup, the toplevel!
+	//QString actiontext = action->text();
+	//actiontext
+	if (action->text().remove(QChar('&')) == i18n("NONE")) { // note: this is for m_popup, the toplevel!
 		if (m_hasModule) {
 			emit sigRemoveButton(m_id);
 			return;
@@ -175,9 +161,8 @@ void CModuleChooserButton::populateMenu() {
 	}
 
 	m_noneAction = m_popup->addAction(i18n("NONE"));
-	if ( !m_module ) {
-		m_noneAction->setChecked(true);
-	}
+	m_noneAction->setCheckable(true);
+	if (!m_module) m_noneAction->setChecked(true);
 
 	m_popup->addSeparator();
 	connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
@@ -230,9 +215,7 @@ void CModuleChooserButton::populateMenu() {
 		QString lang = moduleInfo->language()->translatedName();
 		if (lang.isEmpty()) {
 			lang = moduleInfo->language()->abbrev();
-			if (lang.isEmpty()) {
-				lang = "xx";
-			}
+			if (lang.isEmpty()) lang = "xx";
 		}
 
 		QString name(moduleInfo->name());
@@ -240,27 +223,21 @@ void CModuleChooserButton::populateMenu() {
 		
 		Q_ASSERT(langdict[lang]);
 		QAction* id = langdict[lang]->addAction( name );
-		
-		if ( m_module && moduleInfo->name() == m_module->name()) {
-			id->setChecked(true);
-		}
+		id->setCheckable(true);
+		if ( m_module && moduleInfo->name() == m_module->name()) id->setChecked(true);
 	}
-
 
 	languages.sort();
-	qDebug("CModuleChooserButton::populateMenu before foreach langName");
 	foreach ( QString langName, languages ) {
-		langdict[langName]->addTitle(langName);
+		langdict[langName]->setTitle(langName);
 		m_popup->addMenu(langdict[langName]); //insertItem ->  QMenu::addMenu(QMenu)
 	}
-	qDebug("CModuleChooserButton::populateMenu after foreach langName");
 
 	if (module()) {
 		 setToolTip(module()->name());
 	} else {
 		setToolTip(i18n("No work selected"));
 	}
-	qDebug("CModuleChooserButton::populateMenu end");
 }
 
 
@@ -278,20 +255,18 @@ void CModuleChooserButton::updateMenuItems() {
 		KMenu* popup = it.next();
 		for (unsigned int i = 0; i < popup->actions().count(); i++) {
 			moduleName = popup->actions().at(i)->text();
-			qDebug() << "moduleName: " << moduleName << " , " << moduleName.left(moduleName.lastIndexOf(" "));
+			moduleName.remove(QChar('&')); //remove Hotkey indicator
 			module = backend()->findModuleByName( moduleName.left(moduleName.lastIndexOf(" ")) );
 
  			//Q_ASSERT(module);
- 			if (!module) {
- 				qWarning("Can't find module with name %s", moduleName.toLatin1().data());
- 			}
+ 			if (!module) qWarning("Can't find module with name %s", moduleName.toLatin1().data());
 
 			bool alreadyChosen = chosenModules.contains( module );
 			if (m_module) {
 				alreadyChosen = alreadyChosen && (m_module->name() != moduleName);
 			}
-
-			popup->actions().at(i)->setEnabled(!alreadyChosen);// setItemEnabled(popup->idAt(i), !alreadyChosen); //grey it out, it was chosen already
+			//grey it out, it was chosen already
+			popup->actions().at(i)->setEnabled(!alreadyChosen);
 		}
 	}
 }

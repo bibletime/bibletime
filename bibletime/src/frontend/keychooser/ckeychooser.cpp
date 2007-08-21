@@ -60,7 +60,8 @@ void CKeyChooser::backInHistory(QAction* action) {
 	m_inHistoryFunction = true;
 	//  qWarning("go back %d items in history", count);
 
-	Q_ASSERT(m_prevKeyHistoryList.size());
+	//Q_ASSERT(m_prevKeyHistoryList.size());
+	if (m_prevKeyHistoryList.empty()) return;
 
 	//find the key of the action in the list
 	int index;
@@ -97,7 +98,8 @@ void CKeyChooser::forwardInHistory() {
 void CKeyChooser::forwardInHistory(QAction* action) {
 	m_inHistoryFunction = true;
 	//  qWarning("go forward %d items in history", count);
-	Q_ASSERT(m_nextKeyHistoryList.size());
+	//Q_ASSERT(m_nextKeyHistoryList.size());
+	if (m_nextKeyHistoryList.empty()) return;
 
 	//find the key of the action in the list
 	int index;
