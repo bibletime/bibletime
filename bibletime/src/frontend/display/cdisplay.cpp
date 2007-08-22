@@ -26,6 +26,8 @@
 #include <QMenu>
 #include <QTimer>
 
+#include <QDebug>
+
 //KDE includes
 #include <kapplication.h>
 #include <kfiledialog.h>
@@ -48,6 +50,8 @@ void CDisplayConnections::saveAsPlain() {
 
 /** Emits the signal. */
 void CDisplayConnections::emitReferenceClicked( const QString& module, const QString& key) {
+	qDebug("CDisplayConnections::emitReferenceClicked");
+	qDebug() << "Module: " << module << " key: " << key;
 	emit referenceClicked( module, key );
 }
 

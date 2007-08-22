@@ -73,6 +73,7 @@ void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
 
 /** Lookup the given entry. */
 void CReadWindow::lookup( CSwordKey* newKey ) {
+	qDebug("CReadWindow::lookup");
 	Q_ASSERT(newKey);
 
 	using namespace Rendering;
@@ -104,6 +105,7 @@ void CReadWindow::lookup( CSwordKey* newKey ) {
 	//  qDebug("[CReadWindow::lookup] Moving to anchor %s", CDisplayRendering::keyToHTMLAnchor(key()->key()).latin1());
 
 	displayWidget()->moveToAnchor( CDisplayRendering::keyToHTMLAnchor(key()->key()) );
+	qDebug("CReadWindow::lookup end");
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */

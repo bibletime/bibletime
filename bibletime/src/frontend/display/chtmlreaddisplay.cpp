@@ -37,6 +37,7 @@
 #include <QMenu>
 #include <QLayout>
 #include <QTimer>
+#include <QDebug>
 //#endif //?
 
 //KDE includes
@@ -73,7 +74,7 @@ CHTMLReadDisplay::CHTMLReadDisplay(CReadWindow* readWindow, QWidget* parentWidge
 	setPluginsEnabled(false);
 
 	//m_view->setDragAutoScroll(false); // TODO: doesn't exist in qt4; is needed?
-
+	m_urlWorkaroundData.doWorkaround = false;
 }
 
 CHTMLReadDisplay::~CHTMLReadDisplay() {}
@@ -197,10 +198,12 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 	//  slotGoToAnchor();
 }
 
-void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args) {
+void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args) 
+{
+	qDebug("CHTMLReadDisplay::urlSelected");
 	KHTMLPart::urlSelected(url, button, state, _target, args);
 	m_urlWorkaroundData.doWorkaround = false;
-	//  qWarning("clicked: %s", url.toLatin1());
+	qDebug() << "clicked: " << url;
 	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {
 		QString module;
 		QString key;
@@ -232,6 +235,7 @@ void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, c
 
 /** Reimplementation. */
 void CHTMLReadDisplay::khtmlMouseReleaseEvent( khtml::MouseReleaseEvent* event ) {
+	qDebug("CHTMLReadDisplay::khtmlMouseReleaseEvent");
 	KHTMLPart::khtmlMouseReleaseEvent(event);
 
 	m_dndData.mousePressed = false;
@@ -240,7 +244,9 @@ void CHTMLReadDisplay::khtmlMouseReleaseEvent( khtml::MouseReleaseEvent* event )
 	m_dndData.anchor = DOM::DOMString();
 
 	if (m_urlWorkaroundData.doWorkaround) {
+		qDebug("do workaround");
 		m_urlWorkaroundData.doWorkaround = false;
+		qDebug("will emit connectionsProxy()->emitReferenceClicked");
 		connectionsProxy()->emitReferenceClicked(
 			m_urlWorkaroundData.module,
 			m_urlWorkaroundData.key
@@ -249,12 +255,14 @@ void CHTMLReadDisplay::khtmlMouseReleaseEvent( khtml::MouseReleaseEvent* event )
 }
 
 void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
+	qDebug("CHTMLReadDisplay::khtmlMousePressEvent");
 	m_dndData.node = DOM::Node();
 	m_dndData.anchor = DOM::DOMString();
 	m_dndData.mousePressed = false;
 	m_dndData.isDragging = false;
 
 	if (event->qmouseEvent()->button() == Qt::RightButton) {
+		qDebug("Right button");
 		DOM::Node tmpNode = event->innerNode();
 		DOM::Node attr;
 		m_nodeInfo[CDisplay::Lemma] = QString::null;
@@ -274,6 +282,7 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 		setActiveAnchor( event->url().string() );
 	}
 	else if (event->qmouseEvent()->button() == Qt::LeftButton) {
+		qDebug("Left button");
 		m_dndData.node = event->innerNode();
 		m_dndData.anchor = event->url();
 		m_dndData.mousePressed = true;
@@ -361,6 +370,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 
 /** The Mag window update happens here if the mouse has not moved to another node after starting the timer.*/
 void CHTMLReadDisplay::timerEvent( QTimerEvent *e ) {
+	qDebug("CHTMLReadDisplay::timerEvent");
 	killTimer(m_magTimerId);
 	DOM::Node currentNode = nodeUnderMouse();
 	CInfoDisplay::ListInfoData infoList;
