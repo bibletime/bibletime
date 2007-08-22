@@ -7,38 +7,26 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cdisplaywindow.h"
 #include "cdisplaywindow.moc"
-
-
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
-
 #include "backend/keys/cswordkey.h"
-
 #include "frontend/keychooser/ckeychooser.h"
-
 #include "frontend/display/cdisplay.h"
-
 #include "frontend/cmdiarea.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/cbtconfig.h"
-
 #include "frontend/searchdialog/csearchdialog.h"
-
 #include "util/cresmgr.h"
-
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QWidget>
 #include <QCloseEvent>
 #include <QStringList>
-//#include <QMdiSubWindow>
 #include <QMainWindow>
-
 #include <QDebug>
 
 //KDE includes
@@ -50,8 +38,6 @@
 #include <kmenu.h>
 
 using namespace Profile;
-
-
 
 CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
 	: QMainWindow(parent),
@@ -122,7 +108,7 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 	a->addAction(KStandardAction::Find, "findText", 0, 0);
 
 	KToolBarPopupAction* action = new KToolBarPopupAction(
-				KIcon(CResMgr::displaywindows::general::backInHistory::icon),
+				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 				i18n("Back in history"),
 				a
 				);
@@ -130,7 +116,7 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 	a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
 	action = new KToolBarPopupAction(
-				KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
+				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
 				i18n("Forward in history"),
 				a
 				);
@@ -147,7 +133,7 @@ void CDisplayWindow::initActions()
 
 
 	KAction* kaction = new KAction(
-				KIcon(CResMgr::displaywindows::general::search::icon),
+				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
 				i18n("Search"),
 				ac
 				);
@@ -176,7 +162,7 @@ void CDisplayWindow::initActions()
 	);
 */
 	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
-			KIcon(CResMgr::displaywindows::general::backInHistory::icon),
+			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 			i18n("Back in history"),
 			ac
 			);
@@ -184,7 +170,7 @@ void CDisplayWindow::initActions()
 	ac->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
 	
 	popupaction = new KToolBarPopupAction(
-			KIcon(CResMgr::displaywindows::general::forwardInHistory::icon),
+			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
 			i18n("Forward in history"),
 			ac
 			);

@@ -125,35 +125,35 @@ namespace CResMgr {
 			namespace arrangementMode {
 				QString tooltip;
 
-				const QString icon        = "bt_cascade_auto";
+				const QString icon        = "cascade_auto.svg";
 				const KShortcut accel;
 				const char* actionName    = "windowArrangementMode_action";
 
 				namespace manual {
 					QString tooltip;
 
-					const QString icon        = "bt_tile";
+					const QString icon        = "tile.svg";
 					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
 					const char* actionName    = "windowArrangementManual_action";
 				}
 				namespace autoTileHorizontal {
 					QString tooltip;
 
-					const QString icon        = "bt_tile_auto";
+					const QString icon        = "tile_auto.svg";
 					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
 					const char* actionName    = "windowAutoTileHorizontal_action";
 				}
 				namespace autoTileVertical {
 					QString tooltip;
 
-					const QString icon        = "bt_tile_auto";
+					const QString icon        = "tile_auto.svg";
 					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
 					const char* actionName    = "windowAutoTileVertical_action";
 				}
 				namespace autoCascade {
 					QString tooltip;
 
-					const QString icon        = "bt_cascade_auto";
+					const QString icon        = "cascade_auto.svg";
 					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
 					const char* actionName    = "windowAutoCascade_action";
 				}
@@ -161,28 +161,28 @@ namespace CResMgr {
 			namespace tileHorizontal {
 				QString tooltip;
 
-				const QString icon        = "bt_tile";
+				const QString icon        = "tile.svg";
 				const KShortcut accel(Qt::CTRL + Qt::Key_H);
 				const char* actionName    = "windowTileHorizontal_action";
 			}
 			namespace tileVertical {
 				QString tooltip;
 
-				const QString icon        = "bt_tile";
+				const QString icon        = "tile.svg";
 				const KShortcut accel(Qt::CTRL + Qt::Key_G);
 				const char* actionName    = "windowTileVertical_action";
 			}
 			namespace cascade {
 				QString tooltip;
 
-				const QString icon        = "bt_cascade";
+				const QString icon        = "cascade.svg";
 				const KShortcut accel(Qt::CTRL + Qt::Key_J);
 				const char* actionName    = "windowCascade_action";
 			}
 			namespace closeAll {
 				QString tooltip;
 
-				const QString icon        = "fileclose";
+				const QString icon        = "fileclose.svg";
 				const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
 				const char* actionName    = "windowCloseAll_action";
 			}
@@ -229,7 +229,7 @@ namespace CResMgr {
 			namespace dailyTip {
 				QString tooltip;
 
-				const QString icon        = "idea";
+				const QString icon        = "info.svg";
 				const KShortcut accel(Qt::Key_F3);
 				const char* actionName    = "helpDailyTip_action";
 			}
@@ -334,7 +334,7 @@ namespace CResMgr {
 					const QString icon = "filesave";
 				}
 				namespace printMenu {
-					const QString icon = "fileprint";
+					const QString icon = "print.svg";
 				}
 			}
 			namespace foundItems {
@@ -348,7 +348,7 @@ namespace CResMgr {
 					const QString icon = "filesave";
 				}
 				namespace printMenu {
-					const QString icon = "fileprint";
+					const QString icon = "print.svg";
 				}
 			}
 			namespace textPreview {
@@ -384,14 +384,14 @@ namespace CResMgr {
 			namespace backInHistory {
 				QString tooltip;
 
-				const QString icon        = "previous";
+				const QString icon        = "back.svg";
 				const KShortcut accel(Qt::ALT + Qt::Key_Left);
 				const char* actionName    = "window_history_back_action";
 			}
 			namespace forwardInHistory {
 				QString tooltip;
 
-				const QString icon        = "next";
+				const QString icon        = "forward.svg";
 				const KShortcut accel(Qt::ALT + Qt::Key_Right);
 				const char* actionName    = "window_history_forward_action";
 			}
@@ -450,7 +450,7 @@ namespace CResMgr {
 				const QString icon = "filesave";
 			}
 			namespace printMenu {
-				const QString icon = "fileprint";
+				const QString icon = "print.svg";
 			}
 		}
 		namespace commentaryWindow {
@@ -481,7 +481,7 @@ namespace CResMgr {
 				const QString icon = "filesave";
 			}
 			namespace printMenu {
-				const QString icon = "fileprint";
+				const QString icon = "print.svg";
 			}
 		}
 		namespace bookWindow {
@@ -715,7 +715,7 @@ namespace CResMgr {
 			const QString icon = "unlock";
 		}
 		namespace aboutModule {
-			const QString icon = "info";
+			const QString icon = "info.svg";
 		}
 	}
 }

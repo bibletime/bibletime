@@ -13,7 +13,6 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QFileInfoList>
-
 #include <QDebug>
 
 namespace util {
@@ -85,21 +84,24 @@ void DirectoryUtil::initDirectoryCache(QString executableFilePath)
 	QDir wDir(QFileInfo(executableFilePath).dir());
 	wDir.makeAbsolute();
 	
-	QDir iconDir(wDir);
-	if (!iconDir.cdUp() || !iconDir.cd("share/bibletime/icons"))
+	if (!wDir.cdUp()) //installation prefix
+	{
+		qWarning() << "Cannot cd up from directory " << executableFilePath;
+		throw;
+	}
+	
+	cached_iconDir = wDir; //icon dir
+	if (!cached_iconDir.cd("share/bibletime/icons"))
 	{
 		qWarning() << "Cannot find icon directory relative to" << executableFilePath;
-		throw; //icon dir
+		throw;
 	}
-	cached_iconDir = iconDir;
 
-	QDir xmlDir(wDir);
-	qDebug() << "xmlDir: " << xmlDir.canonicalPath();
-	if (!xmlDir.cdUp() || !xmlDir.cd("share/bibletime/xml")) {
+	cached_xmlDir = wDir; //xml dir
+	if (!cached_xmlDir.cd("share/bibletime/xml")) {
 		qWarning() << "Cannot find xml directory relative to" << executableFilePath;
-		throw; //xml dir
+		throw;
 	}
-	cached_xmlDir = xmlDir;
 }
 
 QDir DirectoryUtil::getIconDir(void)
@@ -109,6 +111,7 @@ QDir DirectoryUtil::getIconDir(void)
 
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
+	qWarning() << "getIcon called for " << getIconDir().canonicalPath().append("/").append(name);
 	return QIcon(getIconDir().canonicalPath().append("/").append(name));
 }
 

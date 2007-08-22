@@ -20,19 +20,11 @@
 #include <QFileDialog>
 #include <QTextCodec>
 #include <QRegExp>
-//Added by qt3to4:
-#include <QPixmap>
-#include <QFrame>
 
 //KDE includes
 #include <klocale.h>
-#include <kglobal.h>
-#include <kiconloader.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
-#include <kurl.h>
-#include <kfiledialog.h>
-#include <kapplication.h>
 
 QString CToolClass::locatehtml(const QString &filename) {
 	QString path = KStandardDirs::locate("html", KGlobal::locale()->language() + '/' + filename);
@@ -110,7 +102,7 @@ QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
 	if (!module_info) return util::filesystem::DirectoryUtil::getIcon(CResMgr::modules::book::icon_locked);
 
 	if (module_info->category() == CSwordModuleInfo::Cult) {
-		return util::filesystem::DirectoryUtil::getIcon("stop.png"); //TODO: what to use, where did that icon go?
+		return util::filesystem::DirectoryUtil::getIcon("stop.svg");
 	}
 
 	switch (module_info->type()) {

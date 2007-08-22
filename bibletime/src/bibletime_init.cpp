@@ -9,13 +9,10 @@
 
 //BibleTime includes
 #include "bibletime.h"
-//#include "bibletime.moc"
-
 #include "config.h"
-
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-
+#include "util/directoryutil.h"
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/clanguagemgr.h"
@@ -29,9 +26,6 @@
 #include "frontend/cprinter.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
-
-//system includes
-#include <stdlib.h>
 
 //QT includes
 #include <QSplitter>
@@ -49,9 +43,7 @@
 #include <kactionmenu.h>
 #include <kapplication.h>
 #include <kconfigbase.h>
-#include <kglobal.h>
 #include <khelpmenu.h>
-#include <kiconloader.h>
 #include <kmenubar.h>
 #include <kstandarddirs.h>
 #include <ktoolbar.h>
@@ -108,7 +100,7 @@ void BibleTime::initView() {
 void BibleTime::initAction(KAction* action, QString text, QString icon, KShortcut accel, QString tooltip, const char* actionName, const char* slot )
 {
 	action->setText(text);
-	action->setIcon(KIcon(icon));
+	action->setIcon(util::filesystem::DirectoryUtil::getIcon(icon));
 	action->setShortcut(accel);
 	if (tooltip != QString::null) {
 		action->setToolTip(tooltip);
@@ -204,7 +196,7 @@ void BibleTime::initActions() {
 	action->setToolTip( CResMgr::mainMenu::settings::editToolBar::tooltip );
 
 
-	m_windowArrangementMode_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::arrangementMode::icon), i18n("&Arrangement mode"), ac);
+	m_windowArrangementMode_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::arrangementMode::icon)), i18n("&Arrangement mode"), ac);
 	ac->addAction(CResMgr::mainMenu::window::arrangementMode::actionName, action);
 	m_windowArrangementMode_action->setDelayed( false );
 
@@ -312,7 +304,7 @@ void BibleTime::initActions() {
 	);
 	QObject::connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT( deleteAll() ) );
 
-	m_windowSaveProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::saveProfile::icon), i18n("&Save session"), ac);
+	m_windowSaveProfile_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::saveProfile::icon)), i18n("&Save session"), ac);
 	ac->addAction(CResMgr::mainMenu::window::saveProfile::actionName, m_windowSaveProfile_action);
 	m_windowSaveProfile_action->setDelayed( false );
 	
@@ -329,12 +321,12 @@ void BibleTime::initActions() {
 	);
 	
 
-	m_windowLoadProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::loadProfile::icon), i18n("&Load session"), ac);
+	m_windowLoadProfile_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::loadProfile::icon)), i18n("&Load session"), ac);
 	ac->addAction(CResMgr::mainMenu::window::loadProfile::actionName, m_windowLoadProfile_action);
 	m_windowLoadProfile_action->setDelayed( false );
 	
 
-	m_windowDeleteProfile_action = new KActionMenu(KIcon(CResMgr::mainMenu::window::deleteProfile::icon), i18n("&Delete session"), ac);
+	m_windowDeleteProfile_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::deleteProfile::icon)), i18n("&Delete session"), ac);
 	ac->addAction(CResMgr::mainMenu::window::deleteProfile::actionName, m_windowDeleteProfile_action);
 	m_windowLoadProfile_action->setDelayed( false );
 

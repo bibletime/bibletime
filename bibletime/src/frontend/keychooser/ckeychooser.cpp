@@ -36,20 +36,17 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 
 	CKeyChooser* ck = 0;
 	switch ( modules.first()->type() ) {
-		case CSwordModuleInfo::Commentary:  //Bibles and commentaries uise the same key chooser
+		case CSwordModuleInfo::Commentary:  //Bibles and commentaries use the same key chooser
 		case CSwordModuleInfo::Bible:
-		ck = new CBibleKeyChooser(modules,key,parent);
-		break;
+			return new CBibleKeyChooser(modules,key,parent);
+			break;
 		case CSwordModuleInfo::Lexicon:
-		ck = new CLexiconKeyChooser(modules,key,parent);
-		break;
+			return new CLexiconKeyChooser(modules,key,parent);
 		case CSwordModuleInfo::GenericBook:
-		ck = new CBookKeyChooser(modules,key,parent);
-		break;
+			return new CBookKeyChooser(modules,key,parent);
 		default:
-		return 0;
+			return 0;
 	}
-	return ck;
 }
 
 void CKeyChooser::backInHistory() {
