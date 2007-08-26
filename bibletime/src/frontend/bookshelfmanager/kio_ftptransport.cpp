@@ -28,153 +28,148 @@
 
 
 namespace BookshelfManager {
-	bool finishedDownload = false;
+bool finishedDownload = false;
 
-	KIO_FTPTransport::KIO_FTPTransport(const char *host, sword::StatusReporter *statusReporter )
-		: QObject(),
-	sword::FTPTransport(host, statusReporter),
-	m_totalSize(-1)
-	{}
+KIO_FTPTransport::KIO_FTPTransport(const char *host, sword::StatusReporter *statusReporter )
+	: QObject(),
+sword::FTPTransport(host, statusReporter),
+m_totalSize(-1)
+{}
 
 
-	KIO_FTPTransport::~KIO_FTPTransport() {}
+KIO_FTPTransport::~KIO_FTPTransport() {}
 
-	char KIO_FTPTransport::getURL(const char *destPath, const char *sourceURL)
-	{
-		qWarning("FTP: Copy %s -> %s", sourceURL, destPath);
+char KIO_FTPTransport::getURL(const char *destPath, const char *sourceURL)
+{
+	qWarning("FTP: Copy %s -> %s", sourceURL, destPath);
 
-		KIO::file_delete(
+	KIO::file_delete(
+		KUrl(QString::fromLocal8Bit(destPath)),
+		false
+	);
+
+	KIO::Job* job = KIO::copy(
+			KUrl(QString::fromLocal8Bit(sourceURL)),
 			KUrl(QString::fromLocal8Bit(destPath)),
 			false
 		);
 
-		KIO::Job* job = KIO::copy(
-							KUrl(QString::fromLocal8Bit(sourceURL)),
-							KUrl(QString::fromLocal8Bit(destPath)),
-							false
-						);
+	//make sure to wait as long as the job is working
+	finishedDownload = false;
+	//const int progressID = job->progressId(); //no more progressId() in kde4
+	connect(
+		job, SIGNAL(result(KIO::Job*)),
+		this, SLOT(slotCopyResult(KIO::Job*))
+	);
+	connect(
+		job, SIGNAL(totalSize(KIO::Job*, KIO::filesize_t)),
+		this, SLOT(slotTotalSize(KIO::Job*, KIO::filesize_t))
+	);
+	connect(
+		job, SIGNAL(processedSize(KIO::Job*, KIO::filesize_t)),
+		this, SLOT(slotCopyProgress(KIO::Job*, KIO::filesize_t))
+	);
 
-		//make sure to wait as long as the job is working
-		finishedDownload = false;
-		//const int progressID = job->progressId(); //no more progressId() in kde4
-		connect(
-			job, SIGNAL(result(KIO::Job*)),
-			this, SLOT(slotCopyResult(KIO::Job*))
-		);
-		connect(
-			job, SIGNAL(totalSize(KIO::Job*, KIO::filesize_t)),
-			this, SLOT(slotTotalSize(KIO::Job*, KIO::filesize_t))
-		);
-		connect(
-			job, SIGNAL(processedSize(KIO::Job*, KIO::filesize_t)),
-			this, SLOT(slotCopyProgress(KIO::Job*, KIO::filesize_t))
-		);
+	KApplication::kApplication()->enter_loop(); //enters the event loop for waiting, slotCopyResult will end it
 
-		while (!finishedDownload) {
-			KApplication::kApplication()->processEvents(); //qt4: no time! was 1ms
-			//   qWarning("FTP: Copy not yet finished");
-			if (term) {
-				if (job) {
-					job->kill( KJob::EmitResult); //kill emits the result signal
-				}
-			}
-		}
+	statusReporter->statusUpdate(m_totalSize, m_totalSize); //completed
 
-		statusReporter->statusUpdate(m_totalSize, m_totalSize); //completed
+	//if (!m_copyResults.contains(progressID)) {
+	//	return 1; //Error
+	//}
+	//else if (m_copyResults[progressID] > 0) { //an error occurred
+	//	return 1; //an error occured
+	//}
+	return 0;
+}
 
-		//if (!m_copyResults.contains(progressID)) {
-		//	return 1; //Error
-		//}
-		//else if (m_copyResults[progressID] > 0) { //an error occurred
-		//	return 1; //an error occured
-		//}
-		return 0;
+void KIO_FTPTransport::slotTotalSize(KIO::Job* /*job*/, KIO::filesize_t size) {
+	if (size > 0) {
+		m_totalSize = size;
+		statusReporter->statusUpdate(m_totalSize, 0); //emit that we just started
 	}
+}
 
-	void KIO_FTPTransport::slotTotalSize(KIO::Job* /*job*/, KIO::filesize_t size) {
-		if (size > 0) {
-			m_totalSize = size;
-			statusReporter->statusUpdate(m_totalSize, 0); //emit that we just started
-		}
+void KIO_FTPTransport::slotCopyResult(KIO::Job *job) {
+	//m_copyResults.insert(job->progressId(),job->error());
+	finishedDownload = true;
+	KApplication::kApplication()->exit_loop(); //leave the loop in getURL again
+}
+
+void KIO_FTPTransport::slotCopyProgress(KIO::Job* /*job*/, KIO::filesize_t processedSize) {
+	if (term && job){
+		job->kill( KJob::EmitResult); //kill emits the result signal
+		return;
 	}
-
-	void KIO_FTPTransport::slotCopyResult(KIO::Job *job) {
-		//m_copyResults.insert(job->progressId(),job->error());
-		finishedDownload = true;
-
-		if ( job->error() ) {}
+	if (m_totalSize > 0) {
+		statusReporter->statusUpdate(m_totalSize, processedSize);
 	}
+}
 
-	void KIO_FTPTransport::slotCopyProgress(KIO::Job* /*job*/, KIO::filesize_t processedSize) {
-		if (m_totalSize > 0) {
-			statusReporter->statusUpdate(m_totalSize, processedSize);
-		}
-	}
+void KIO_FTPTransport::slotDirListingCanceled() {
+	m_listingCancelled = true;
+}
 
-	void KIO_FTPTransport::slotDirListingCanceled() {
-		m_listingCancelled = true;
-	}
+std::vector<struct ftpparse> KIO_FTPTransport::getDirList(const char *dirURL) {
+	std::vector< struct ftpparse > ret;
 
-	std::vector<struct ftpparse> KIO_FTPTransport::getDirList(const char *dirURL) {
-		std::vector< struct ftpparse > ret;
+	//   char* dirURL = const_cast<char*>(myDir);
+	//  if (dirURL[strlen(dirURL)-1] == '/') {
+	//   qWarning("setting end to 0");
+	//   dirURL[strlen(dirURL)-1] = 0;
+	//  }
 
-		//   char* dirURL = const_cast<char*>(myDir);
-		//  if (dirURL[strlen(dirURL)-1] == '/') {
-		//   qWarning("setting end to 0");
-		//   dirURL[strlen(dirURL)-1] = 0;
-		//  }
+	qWarning("listing %s", dirURL);
 
-		qWarning("listing %s", dirURL);
-
-		Q_ASSERT(!term);
-		if (term) {
-			return ret;
-		}
-
-		m_listingCancelled = false;
-		KDirLister lister;
-		connect(&lister, SIGNAL(canceled()), SLOT(slotDirListingCanceled()));
-		lister.openUrl(KUrl(dirURL));
-
-		while (!lister.isFinished() && !m_listingCancelled) {
-			if (term) {
-				lister.stop();
-				break;
-			}
-
-			KApplication::kApplication()->processEvents();
-		}
-
-
-		if (term) {
-			return ret;
-		}
-
-		KFileItemList items = lister.itemsForDir(KUrl(dirURL));
-		//KFileItem* i = items[0];
-		//for ( i = items.first(); i; i = items.next() ) {
-		foreach (KFileItem* i, items) { //qt foreach
-			int length = i->name().length();
-			const char* t = i->name().toLatin1();
-
-			struct ftpparse s;
-			s.name = new char[length+1];//i->name().latin1();
-			bzero(s.name, length+1);
-			strcpy(s.name, t);
-			s.namelen = length+1;
-
-			s.size = i->size();
-			s.flagtrycwd = i->isDir(); //== 1 means a dir
-
-			s.id = 0;
-			s.idlen = 0;
-
-			//   qWarning("push_back item");
-			ret.push_back(s);
-		}
-
+	Q_ASSERT(!term);
+	if (term) {
 		return ret;
 	}
 
-};
+	m_listingCancelled = false;
+	KDirLister lister;
+	connect(&lister, SIGNAL(canceled()), SLOT(slotDirListingCanceled()));
+	lister.openUrl(KUrl(dirURL));
+
+	while (!lister.isFinished() && !m_listingCancelled) {
+		if (term) {
+			lister.stop();
+			break;
+		}
+
+		KApplication::kApplication()->processEvents();
+	}
+
+
+	if (term) {
+		return ret;
+	}
+
+	KFileItemList items = lister.itemsForDir(KUrl(dirURL));
+	//KFileItem* i = items[0];
+	//for ( i = items.first(); i; i = items.next() ) {
+	foreach (KFileItem* i, items) { //qt foreach
+		int length = i->name().length();
+		const char* t = i->name().toLatin1();
+
+		struct ftpparse s;
+		s.name = new char[length+1];//i->name().latin1();
+		bzero(s.name, length+1);
+		strcpy(s.name, t);
+		s.namelen = length+1;
+
+		s.size = i->size();
+		s.flagtrycwd = i->isDir(); //== 1 means a dir
+
+		s.id = 0;
+		s.idlen = 0;
+
+		//   qWarning("push_back item");
+		ret.push_back(s);
+	}
+
+	return ret;
+}
+
+} //namespace BookshelfManager
 
