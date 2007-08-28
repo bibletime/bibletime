@@ -23,7 +23,7 @@
 #include <kapplication.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-#include <kprocess.h> //TODO: not in kde4 alpha1!!!
+//#include <kprocess.h> //TODO: not in kde4 alpha1!!!
 
 //Sword includes
 #include <filemgr.h>
@@ -118,13 +118,14 @@ namespace BookshelfManager {
 		}
 		conf.Save();
 
+/* TODO: check to see how this can be reactivated
 		if (!directAccess) { //use kdesu to move the file to the right place
 			KProcess *proc = new KProcess;
 			*proc << "kdesu";
 			*proc << QString::fromLatin1("-c") << QString("mv %1 %2").arg(filename).arg(LocalConfig::swordConfigFilename());
 			proc->start();
 			proc->waitForFinished();
-		}
+		}*/
 	}
 
 	sword::InstallSource BTInstallMgr::Tool::RemoteConfig::source( sword::InstallMgr* mgr, const QString& name ) {

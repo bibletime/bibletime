@@ -70,17 +70,12 @@ char KIO_FTPTransport::getURL(const char *destPath, const char *sourceURL)
 		this, SLOT(slotCopyProgress(KIO::Job*, KIO::filesize_t))
 	);
 
-	KApplication::kApplication()->enter_loop(); //enters the event loop for waiting, slotCopyResult will end it
+	//enters the event loop for waiting, slotCopyResult will end it
+	m_eventLoop.exec();
 
 	statusReporter->statusUpdate(m_totalSize, m_totalSize); //completed
 
-	//if (!m_copyResults.contains(progressID)) {
-	//	return 1; //Error
-	//}
-	//else if (m_copyResults[progressID] > 0) { //an error occurred
-	//	return 1; //an error occured
-	//}
-	return 0;
+	return finishedDownload ? 0 : 1;
 }
 
 void KIO_FTPTransport::slotTotalSize(KIO::Job* /*job*/, KIO::filesize_t size) {
@@ -92,11 +87,11 @@ void KIO_FTPTransport::slotTotalSize(KIO::Job* /*job*/, KIO::filesize_t size) {
 
 void KIO_FTPTransport::slotCopyResult(KIO::Job *job) {
 	//m_copyResults.insert(job->progressId(),job->error());
-	finishedDownload = true;
-	KApplication::kApplication()->exit_loop(); //leave the loop in getURL again
+	finishedDownload = job->error() ? false : true;
+	m_eventLoop.exit(); //leave the loop in getURL again
 }
 
-void KIO_FTPTransport::slotCopyProgress(KIO::Job* /*job*/, KIO::filesize_t processedSize) {
+void KIO_FTPTransport::slotCopyProgress(KIO::Job* job, KIO::filesize_t processedSize) {
 	if (term && job){
 		job->kill( KJob::EmitResult); //kill emits the result signal
 		return;

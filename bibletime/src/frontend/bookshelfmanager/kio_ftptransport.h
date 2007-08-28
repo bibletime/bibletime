@@ -18,15 +18,13 @@
 //Qt includes
 #include <QObject>
 #include <QMap>
+#include <QEventLoop>
 
 //KDE includes
 #include <kio/job.h>
 
 //Std C++ includes
 #include <vector>
-
-
-
 
 namespace BookshelfManager {
 
@@ -57,6 +55,7 @@ private:
 	QMap<int, std::vector< struct ftpparse > > m_dirListResults;
 	bool m_listingCancelled;
 	int m_totalSize; //size of currently downloaded file
+	QEventLoop m_eventLoop;
 };
 
 }
