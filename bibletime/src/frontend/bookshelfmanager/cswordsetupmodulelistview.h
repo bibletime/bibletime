@@ -17,17 +17,18 @@
 
 //QT includes
 #include <QString>
-#include <qmap.h>
+#include <QTreeWidget>
 
 //KDE includes
-#include <klistview.h>
+//#include <klistview.h>
 
 class CSwordModuleInfo;
 class CSwordBackend;
+class QTreeWidgetItem;
 
 namespace BookshelfManager {
 
-class CSwordSetupModuleListView : public KListView {
+class CSwordSetupModuleListView : public QTreeWidget {
 	Q_OBJECT
 
 public:
@@ -39,11 +40,11 @@ public:
 	QStringList selectedModules();
 	void clear();
 
-	virtual QString tooltip(Q3ListViewItem* i, int column) const;
-	virtual bool showTooltip(Q3ListViewItem* i, const QPoint& pos, int column) const;
+	virtual QString tooltip(QTreeWidgetItem* i, int column) const;
+	virtual bool showTooltip(QTreeWidgetItem* i, const QPoint& pos, int column) const;
 
 protected slots:
-	void slotItemClicked(Q3ListViewItem*);
+	void slotItemClicked(QTreeWidgetItem*);
 
 private:
 	void init();
@@ -51,12 +52,12 @@ private:
 	CSwordBackend* m_backend;
 	bool m_is_remote;
 
-	Q3ListViewItem* m_categoryBible;
-	Q3ListViewItem* m_categoryCommentary;
-	Q3ListViewItem* m_categoryLexicon;
-	Q3ListViewItem* m_categoryBook;
-	Q3ListViewItem* m_categoryDevotionals;
-	Q3ListViewItem* m_categoryGlossaries;
+	QTreeWidgetItem* m_categoryBible;
+	QTreeWidgetItem* m_categoryCommentary;
+	QTreeWidgetItem* m_categoryLexicon;
+	QTreeWidgetItem* m_categoryBook;
+	QTreeWidgetItem* m_categoryDevotionals;
+	QTreeWidgetItem* m_categoryGlossaries;
 
 signals:
 	void selectedModulesChanged();

@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BT includes
 #include "cswordsetupinstallsourcesdialog.h"
 #include "util/scoped_resource.h"
@@ -24,10 +22,11 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <QFileDialog>
 
 //KDE includes
 #include <klocale.h>
-#include <kdirselectdialog.h>
+//#include <kdirselectdialog.h>
 
 namespace BookshelfManager {
 
@@ -142,7 +141,7 @@ namespace BookshelfManager {
 			m_serverLabel->hide();
 			m_serverEdit->hide();
 
-			KUrl url = KDirSelectDialog::selectDirectory(KUrl(QString::null), true);
+			KUrl url = QFileDialog::getExistingDirectory(this);
 			if (url.isValid()) {
 				m_pathEdit->setText( url.path() );
 			}

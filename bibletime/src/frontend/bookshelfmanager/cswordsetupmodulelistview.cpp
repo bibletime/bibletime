@@ -16,10 +16,12 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include "util/cresmgr.h"
+#include "util/cpointers.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 //QT includes
-#include <qtooltip.h>
+#include <QToolTip>
 
 //KDE includes
 #include <klocale.h>
@@ -29,252 +31,264 @@ using namespace sword;
 
 namespace BookshelfManager {
 
-    /** Tooltip implementation for QListView widgets.
-     * @short Tooltip for InstallationManager listviews
-     * @author Joachim Ansorg
-     */
-    class ToolTip : public QToolTip
-	{
-    public:
-        /** Constructor which takes the listview to operate on.
-          * @param listview We operate on this widget to request tooltips from it'd child items.
-         * @short Constructor.
-         */
-        ToolTip(CSwordSetupModuleListView* listview)
-                : QToolTip( listview->viewport() ),
-        m_parent( listview ) {}
+/** Tooltip implementation for QListView widgets.
+	* @short Tooltip for InstallationManager listviews
+	*/
+class ToolTip
+{
+public:
+	/** Constructor which takes the listview to operate on.
+		* @param listview We operate on this widget to request tooltips from it'd child items.
+		*/
+		//TODO: this class is probably obsolete, QToolTip is now static, check if it can be removed
+	ToolTip(CSwordSetupModuleListView* listview) : 
+		m_parent( listview ) {}
 
-        /** Reimplementation of QToolTip::maybeTip. It's requested if a new tooltip may be displayed.
-         * @short Display a tooltip if we're over an item
-         */
-        virtual void maybeTip(const QPoint& pos) {
-            Q3ListViewItem* i = m_parent->itemAt(pos);
-            Q_ASSERT(i);
+	/** Reimplementation of QToolTip::maybeTip. It's requested if a new tooltip may be displayed.
+		* @short Display a tooltip if we're over an item
+		*/
+	virtual void maybeTip(const QPoint& pos) {
+		QTreeWidgetItem* i = m_parent->itemAt(pos);
+		Q_ASSERT(i);
 
-            const QRect rect = m_parent->itemRect(i);
-            if (m_parent->showTooltip(i, pos, 0)) {
-                const QString tipText = m_parent->tooltip(i, 0);
-                tip(rect, tipText);
-            }
-        }
+		const QRect rect = m_parent->visualItemRect(i);
+		if (m_parent->showTooltip(i, pos, 0)) {
+			const QString tipText = m_parent->tooltip(i, 0);
+			QToolTip::showText(rect.topLeft(), tipText);
+		}
+	}
 
-    protected:
-        CSwordSetupModuleListView* m_parent;
+protected:
+	CSwordSetupModuleListView* m_parent;
+}; //class ToolTip
 
-	}; //class ToolTip
+/** Listview specially made for the installation manager.
+* @short InstallationManager module listviews
+*/
+CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_remote, sword::InstallSource* installSource)
+				: QTreeWidget(parent), m_is_remote( is_remote ) {
+		Q_ASSERT(installSource);
+		new BookshelfManager::ToolTip(this);
+		m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 
-    /** Listview specially made for the installation manager.
-     * @short InstallationManager module listviews
-     * @author Martin Gruner
-     */
-    CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_remote, sword::InstallSource* installSource)
-            : KListView(parent), m_is_remote( is_remote ) {
-        Q_ASSERT(installSource);
-        new BookshelfManager::ToolTip(this);
-        m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
+//columns: use setColumnCount; setHeaderLabels; columnWidth. WidthMode???; Alignment: item-level, not really needed; 
+		/*addColumn(i18n("Name"));
+		setColumnWidthMode( 0, Q3ListView::Maximum );
+		setColumnWidth( 0, 200 ); //don`t get too broad
+
+		addColumn(i18n("Status"));
+		setColumnAlignment(1, Qt::AlignRight);
+		addColumn(i18n("Installed version")); //version
+		setColumnAlignment(2, Qt::AlignHCenter);
 		
-		//columns: use setColumnCount; setHeaderLabels; columnWidth. WidthMode???; Alignment: item-level, not really needed; 
-        addColumn(i18n("Name"));
-        setColumnWidthMode( 0, Q3ListView::Maximum );
-        setColumnWidth( 0, 200 ); //don`t get too broad
 
-        addColumn(i18n("Status"));
-        setColumnAlignment(1, Qt::AlignRight);
-        addColumn(i18n("Installed version")); //version
-        setColumnAlignment(2, Qt::AlignHCenter);
+		if (m_is_remote) {
+				addColumn(i18n("Remote version")); //version
+		} else {
+				addColumn(i18n("Location"));
+		}
+		setColumnAlignment(3, Qt::AlignLeft);
 
-        if (m_is_remote) {
-            addColumn(i18n("Remote version")); //version
-        } else {
-            addColumn(i18n("Location"));
-        }
-        setColumnAlignment(3, Qt::AlignLeft);
+		setAllColumnsShowFocus(true);
+		setFullWidth(true);
+		setRootIsDecorated(true);
+		setResizeMode(Q3ListView::LastColumn);
+		setTooltipColumn(0);
+*/
+		setColumnCount(3);
 
-        setAllColumnsShowFocus(true);
-        setFullWidth(true);
-        setRootIsDecorated(true);
-        setResizeMode(Q3ListView::LastColumn);
-        setTooltipColumn(0);
+		init();
+}
 
-        init();
-    }
+CSwordSetupModuleListView::~CSwordSetupModuleListView() {
+	if (m_is_remote) delete m_backend;
+}
 
-    CSwordSetupModuleListView::~CSwordSetupModuleListView() {
-        if (m_is_remote) {
-            delete m_backend;
-        }
-    }
+void CSwordSetupModuleListView::init() {
 
-    void CSwordSetupModuleListView::init() {
+	m_categoryBible = new QTreeWidgetItem(this);
+	m_categoryBible->setText(0, i18n("Bibles"));
+	m_categoryBible->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryBible);
+	
+	m_categoryCommentary = new QTreeWidgetItem(this);
+	m_categoryCommentary->setText(0, i18n("Commentaries"));
+	m_categoryCommentary->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryCommentary);
+	
+	m_categoryLexicon = new QTreeWidgetItem(this);
+	m_categoryLexicon->setText(0, i18n("Lexicons"));
+	m_categoryLexicon->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryLexicon);
+	
+	m_categoryBook = new QTreeWidgetItem(this);
+	m_categoryBook->setText(0, i18n("Books"));
+	m_categoryBook->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryBook);
+	
+	m_categoryDevotionals = new QTreeWidgetItem(this);
+	m_categoryDevotionals->setText(0, i18n("Daily Devotionals"));
+	m_categoryDevotionals->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryDevotionals);
+	
+	m_categoryGlossaries = new QTreeWidgetItem(this);
+	m_categoryGlossaries->setText(0, i18n("Glossaries"));
+	m_categoryGlossaries->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	addTopLevelItem(m_categoryGlossaries);
 
-        m_categoryBible = new Q3CheckListItem(this, i18n("Bibles"), Q3CheckListItem::CheckBoxController);
-        m_categoryCommentary = new Q3CheckListItem(this, i18n("Commentaries"), Q3CheckListItem::CheckBoxController);
-        m_categoryLexicon = new Q3CheckListItem(this, i18n("Lexicons"), Q3CheckListItem::CheckBoxController);
-        m_categoryBook = new Q3CheckListItem(this, i18n("Books"), Q3CheckListItem::CheckBoxController);
-        m_categoryDevotionals = new Q3CheckListItem(this, i18n("Daily Devotionals"), Q3CheckListItem::CheckBoxController);
-        m_categoryGlossaries = new Q3CheckListItem(this, i18n("Glossaries"), Q3CheckListItem::CheckBoxController);
+	m_categoryBible->setExpanded(true);
+	m_categoryCommentary->setExpanded(true);
+	m_categoryLexicon->setExpanded(true);
+	m_categoryBook->setExpanded(true);
+	m_categoryDevotionals->setExpanded(true);
+	m_categoryGlossaries->setExpanded(true);
 
+	//   connect(this, SIGNAL(executed(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*)));
+	connect(this, SIGNAL(clicked(QTreeWidgetItem*)), SLOT(slotItemClicked(QTreeWidgetItem*))); //items have to be clicked only once in double click mode
+	connect(this, SIGNAL(spacePressed(QTreeWidgetItem*)), SLOT(slotItemClicked(QTreeWidgetItem*)));
+}
 
-        m_categoryBible->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-        m_categoryCommentary->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-        m_categoryLexicon->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-        m_categoryBook->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-        m_categoryDevotionals->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-        m_categoryGlossaries->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
+void CSwordSetupModuleListView::finish() {
+	if (!m_categoryBible->childCount())
+		delete m_categoryBible;
+	if (!m_categoryCommentary->childCount())
+		delete m_categoryCommentary;
+	if (!m_categoryBook->childCount())
+		delete m_categoryBook;
+	if (!m_categoryLexicon->childCount())
+		delete m_categoryLexicon;
+	if (!m_categoryDevotionals->childCount())
+		delete m_categoryDevotionals;
+	if (!m_categoryGlossaries->childCount())
+		delete m_categoryGlossaries;
+}
 
-		//open is not necessary (and not good)
-        m_categoryBible->setOpen(true);
-        m_categoryCommentary->setOpen(true);
-        m_categoryLexicon->setOpen(true);
-        m_categoryBook->setOpen(true);
-        m_categoryDevotionals->setOpen(true);
-        m_categoryGlossaries->setOpen(true);
+void CSwordSetupModuleListView::clear() {
+	QTreeWidget::clear();
+	init();
+}
 
-        //   connect(this, SIGNAL(executed(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*)));
-        connect(this, SIGNAL(clicked(Q3ListViewItem*)), SLOT(slotItemClicked(Q3ListViewItem*))); //items have to be clicked only once in double click mode
-        connect(this, SIGNAL(spacePressed(Q3ListViewItem*)), SLOT(slotItemClicked(Q3ListViewItem*)));
-    }
+void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString localVersion) {
 
-    void CSwordSetupModuleListView::finish() {
-        if (!m_categoryBible->childCount())
-            delete m_categoryBible;
-        if (!m_categoryCommentary->childCount())
-            delete m_categoryCommentary;
-        if (!m_categoryBook->childCount())
-            delete m_categoryBook;
-        if (!m_categoryLexicon->childCount())
-            delete m_categoryLexicon;
-        if (!m_categoryDevotionals->childCount())
-            delete m_categoryDevotionals;
-        if (!m_categoryGlossaries->childCount())
-            delete m_categoryGlossaries;
-    }
+	QTreeWidgetItem* parent = 0;
+	switch ( module->type() ) {
+	case CSwordModuleInfo::Bible:
+		parent = m_categoryBible;
+		break;
+	case CSwordModuleInfo::Commentary:
+		parent = m_categoryCommentary;
+		break;
+	case CSwordModuleInfo::Lexicon:
+		parent = m_categoryLexicon;
+		break;
+	case CSwordModuleInfo::GenericBook:
+		parent = m_categoryBook;
+		break;
+	default:
+		parent = 0;
+		break;
+	}
 
-    void CSwordSetupModuleListView::clear() {
-        Q3ListView::clear();
-        init();
-    }
+	//handling for special module types
+	if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::Glossary)) {
+		parent = m_categoryGlossaries;
+	}
+	else if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::DailyDevotional)) {
+		parent = m_categoryDevotionals;
+	}
 
-    void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString localVersion) {
+	//now we know the category, find the right language group in that category
+	const CLanguageMgr::Language* const lang = module->language();
+	QString langName = lang->translatedName();
+	if (!lang->isValid()) {
+		langName = QString(module->module()->Lang());
+	}
 
-        Q3ListViewItem* parent = 0;
-        switch ( module->type() ) {
-        case CSwordModuleInfo::Bible:
-            parent = m_categoryBible;
-            break;
-        case CSwordModuleInfo::Commentary:
-            parent = m_categoryCommentary;
-            break;
-        case CSwordModuleInfo::Lexicon:
-            parent = m_categoryLexicon;
-            break;
-        case CSwordModuleInfo::GenericBook:
-            parent = m_categoryBook;
-            break;
-        default:
-            parent = 0;
-            break;
-        }
+	QTreeWidgetItem * langFolder = 0;
+	if (parent) {
+		foreach(QTreeWidgetItem* current, parent->takeChildren())
+		{
+			if (current->text(0) == langName) { //found right folder
+				langFolder = current;
+				break;
+			}
+		}
+/*		langFolder = parent->child(0);
 
-        //handling for special module types
-        if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::Glossary)) {
-            parent = m_categoryGlossaries;
-        }
-        if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::DailyDevotional)) {
-            parent = m_categoryDevotionals;
-        }
+		while( langFolder ) { //try to find language folder if it exsists
+			if (langFolder->text(0) == langName) { //found right folder
+				break;
+			}
+			langFolder = langFolder->nextSibling();
+		}*/
+	}
 
-        //now we know the category, find the right language group in that category
-        const CLanguageMgr::Language* const lang = module->language();
-        QString langName = lang->translatedName();
-        if (!lang->isValid()) {
-            langName = QString(module->module()->Lang());
-        }
+	if (!langFolder) { //not yet there
+		langFolder = new QTreeWidgetItem(parent);
+		langFolder->setText(0, langName);
+		langFolder->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+		langFolder->setExpanded(false);
+	}
 
-        Q3ListViewItem * langFolder = 0;
-        if (parent) {
-            langFolder = parent->firstChild();
+	Q_ASSERT(langFolder);
 
-            while( langFolder ) { //try to find language folder if it exsists
-                if (langFolder->text(0) == langName) { //found right folder
-                    break;
-                }
+	QTreeWidgetItem* newItem = 0;
+	if (langFolder) {
+		newItem = new QTreeWidgetItem(langFolder);
+	} else { //shouldn't happen
+		newItem = new QTreeWidgetItem(this);
+	}
+	newItem->setText(0, module->name());
+	newItem->setIcon(0, CToolClass::getIconForModule(module));
+	
+	if (m_is_remote) {
+		newItem->setText(1, localVersion.isEmpty() ? i18n("New") : i18n("Updated"));
+	} else {
+		newItem->setText(1, i18n("Installed") );
+	}
 
-                langFolder = langFolder->nextSibling();
-            }
-        }
+	newItem->setText(2, localVersion);
+	if (m_is_remote) {
+		newItem->setText(3, module->config(CSwordModuleInfo::ModuleVersion));
+	} else {
+		newItem->setText(3, module->config(CSwordModuleInfo::AbsoluteDataPath));
+	}
+}
 
-        if (!langFolder) { //not yet there
+QStringList CSwordSetupModuleListView::selectedModules() {
+	QStringList moduleList;
 
-            langFolder = new Q3CheckListItem(parent, langName, Q3CheckListItem::CheckBoxController);
+	QTreeWidgetItemIterator it( this );
+	while ( (*it) ) {
+		if ((*it)->checkState(0) == Qt::Checked /* && i->type() == Q3CheckListItem::CheckBox*/ ) {
+			moduleList << (*it)->text(0);
+		}
+		++it;
+	}
+	return moduleList;
+}
 
-            langFolder->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
-            langFolder->setOpen(false);
-        }
+void CSwordSetupModuleListView::slotItemClicked(QTreeWidgetItem*) {
+		emit selectedModulesChanged();
+}
 
-        Q_ASSERT(langFolder);
+bool CSwordSetupModuleListView::showTooltip(QTreeWidgetItem* i, const QPoint&, int) const {
+	/*Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
+	Q_ASSERT(checkItem);
+	return (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox));*/
+	
+	//TODO:check
+	return i;
+}
 
-        Q3ListViewItem* newItem = 0;
-        if (langFolder) {
-            newItem = new Q3CheckListItem(langFolder, module->name(), Q3CheckListItem::CheckBox);
-        } else { //shouldn't happen
-            newItem = new Q3CheckListItem(this, module->name(), Q3CheckListItem::CheckBox);
-        }
-
-        newItem->setPixmap(0, CToolClass::getIconForModule(module));
-        if (m_is_remote) {
-            newItem->setText(1, localVersion.isEmpty() ? i18n("New") : i18n("Updated"));
-        } else {
-            newItem->setText(1, i18n("Installed") );
-        }
-
-        newItem->setText(2, localVersion);
-        if (m_is_remote) {
-            newItem->setText(3, module->config(CSwordModuleInfo::ModuleVersion));
-        } else {
-            newItem->setText(3, module->config(CSwordModuleInfo::AbsoluteDataPath));
-        }
-    }
-
-    QStringList CSwordSetupModuleListView::selectedModules() {
-        QStringList moduleList;
-
-        Q3ListViewItemIterator list_it( this );
-        while ( list_it.current() ) {
-            Q3CheckListItem* i = dynamic_cast<Q3CheckListItem*>( list_it.current() );
-            if (i && i->isOn() && i->type() == Q3CheckListItem::CheckBox ) {
-                moduleList << i->text(0);
-            }
-            ++list_it;
-        }
-
-        return moduleList;
-    }
-
-    void CSwordSetupModuleListView::slotItemClicked(Q3ListViewItem*) {
-        emit selectedModulesChanged();
-    }
-
-    bool CSwordSetupModuleListView::showTooltip(Q3ListViewItem* i, const QPoint&, int) const {
-        Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
-        Q_ASSERT(checkItem);
-
-        return (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox));
-    }
-
-    QString CSwordSetupModuleListView::tooltip(Q3ListViewItem* i, int /*column*/) const {
-        QString ret;
-        Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
-
-        if (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox)) {
-            const QString moduleName = checkItem->text(0);
-            CSwordModuleInfo* module = m_backend->findModuleByName(moduleName);
-
-            ret = CToolClass::moduleToolTip(module);
-        }
-
-        return ret;
-    }
+QString CSwordSetupModuleListView::tooltip(QTreeWidgetItem* i, int /*column*/) const {
+	//QString ret;
+	//Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
+	//if (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox)) {
+	const QString moduleName = i->text(0);
+	CSwordModuleInfo* module = m_backend->findModuleByName(moduleName);
+	return CToolClass::moduleToolTip(module);
+}
 
 } //NAMESPACE
 

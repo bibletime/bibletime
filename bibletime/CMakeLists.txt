@@ -102,8 +102,10 @@ SET(bibletime_SOURCES
 	src/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
-	#src/frontend/bookshelfmanager/cmanageindiceswidget.cpp
-	#src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
+	src/frontend/bookshelfmanager/cmanageindiceswidget.cpp
+	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
+	src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp
+	#src/frontend/bookshelfmanager/cswordsetupdialog.cpp
 	src/frontend/bookshelfmanager/kio_ftptransport.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
