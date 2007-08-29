@@ -24,7 +24,7 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
-//#include "frontend/cswordsetupdialog.h" //TODO
+#include "frontend/bookshelfmanager/cswordsetupdialog.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -131,12 +131,11 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-	//TODO: commented out temporarily
-	//BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this, "CSwordSetupDialog");
-	//connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
+	BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this);
+	connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
-	//dlg->exec();
-	//dlg->delayedDestruct();
+	dlg->exec();
+	dlg->delayedDestruct();
 }
 
 /** Is called when settings in the sword setup dialog were changed (ok or apply) */

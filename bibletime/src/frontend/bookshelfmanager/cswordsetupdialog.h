@@ -7,21 +7,14 @@
 *
 **********/
 
-
-
 #ifndef CSWORDSETUPDIALOG_H
 #define CSWORDSETUPDIALOG_H
 
-#include "frontend/cbtconfig.h"
 #include "util/cpointers.h"
-#include "btinstallmgr.h"
 
 //QT includes
 #include <QString>
-#include <qmap.h>
-//Added by qt3to4:
-#include <QLabel>
-#include <Q3Frame>
+#include <QMap>
 
 //KDE includes
 #include <kpagedialog.h>
@@ -33,11 +26,13 @@ class Q3WidgetStack;
 class QButton;
 class QPushButton;
 class QLineEdit;
-class Q3ListView;
+class QTreeWidget;
 
 class KProgressDialog;
 
 namespace BookshelfManager {
+
+class BTInstallMgr;
 
 	class CSwordSetupModuleListView;
 
@@ -73,18 +68,17 @@ private:
 
 		const QString currentInstallSource();
 
-		Q3Frame* m_swordConfigPage;
-		Q3ListView* m_swordPathListBox;
+		KPageWidgetItem* m_swordConfigPage;
+		QTreeWidget* m_swordPathListBox;
 		QPushButton* m_swordEditPathButton;
 		QPushButton* m_swordAddPathButton;
 		QPushButton* m_swordRemovePathButton;
 		QStringList m_swordPathList;
 		bool m_swordSetupChanged;
 
-		Q3Frame* m_removePage;
-		Q3Frame* m_manageIndiciesPage;
-
-		Q3Frame* m_installPage;
+		KPageWidgetItem* m_removePage;
+		KPageWidgetItem* m_manageIndiciesPage;
+		KPageWidgetItem* m_installPage;
 		Q3WidgetStack* m_installWidgetStack;
 
 		QString source;

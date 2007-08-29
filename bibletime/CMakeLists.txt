@@ -61,7 +61,6 @@ SET(bibletime_SOURCES
 	src/backend/keys/cswordldkey.cpp
 	src/backend/keys/cswordtreekey.cpp
 	src/backend/keys/cswordversekey.cpp
-	
 	src/backend/cswordmodulesearch.cpp
 
 	#utilities
@@ -105,7 +104,7 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/cmanageindiceswidget.cpp
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 	src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp
-	#src/frontend/bookshelfmanager/cswordsetupdialog.cpp
+	src/frontend/bookshelfmanager/cswordsetupdialog.cpp
 	src/frontend/bookshelfmanager/kio_ftptransport.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
