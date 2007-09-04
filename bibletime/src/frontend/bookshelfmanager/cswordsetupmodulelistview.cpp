@@ -67,7 +67,6 @@ protected:
 */
 CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_remote, sword::InstallSource* installSource)
 				: QTreeWidget(parent), m_is_remote( is_remote ) {
-		Q_ASSERT(installSource);
 		new BookshelfManager::ToolTip(this);
 		m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 

@@ -73,8 +73,8 @@ CSwordSetupDialog::CSwordSetupDialog(QWidget *parent) : KPageDialog(parent),
 }
 
 void CSwordSetupDialog::initSwordConfig() {
-	m_swordConfigPage = addPage(this, i18n("Bookshelf path(s)"));
-	QWidget* page = m_swordConfigPage->widget();
+	QWidget* page = new QWidget;
+	m_swordConfigPage = addPage(page, i18n("Bookshelf path(s)"));
 	page->setMinimumSize(500,400);
 
 	QGridLayout* layout = new QGridLayout(page/*, 6, 4*/);
@@ -89,7 +89,6 @@ void CSwordSetupDialog::initSwordConfig() {
 						i18n("You can store your bookshelfs in one or more directories, which you can specify here.")
 													);
 	layout->addWidget(mainLabel, 0, 0, 0, 3);
-
 
 	QString swordConfPath = BTInstallMgr::Tool::LocalConfig::swordConfigFilename();
 	QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is <b>%1</b>").arg(swordConfPath), page);
@@ -120,8 +119,8 @@ void CSwordSetupDialog::initSwordConfig() {
 }
 
 void CSwordSetupDialog::initInstall() {
-	m_installPage = addPage(this, i18n("Install/Update works"));
-	QWidget* page = m_installPage->widget();
+	QWidget* page = new QWidget;
+	m_installPage = addPage(page, i18n("Install/Update works"));
 
 	QVBoxLayout* vboxlayout = new QVBoxLayout(page);
 	QHBoxLayout* hboxlayout = new QHBoxLayout();
@@ -206,8 +205,8 @@ the module remote installation feature!</b>")
 }
 
 void CSwordSetupDialog::initRemove() {
-	m_removePage = addPage(this, i18n("Remove works"));
-	QWidget* page = m_removePage->widget();
+	QWidget* page = new QWidget;
+	m_removePage = addPage(page, i18n("Remove works"));
 
 	page->setMinimumSize(500,400);
 
@@ -242,8 +241,8 @@ void CSwordSetupDialog::initRemove() {
 
 void CSwordSetupDialog::initManageIndices()
 {
-	m_manageIndiciesPage = addPage(this, i18n("Manage search indicies"));
-	QWidget* page = m_manageIndiciesPage->widget();
+	QWidget* page = new QWidget;
+	m_manageIndiciesPage = addPage(page, i18n("Manage search indicies"));
 	
 	page->setMinimumSize(500,400);
 	QVBoxLayout* box = new QVBoxLayout(page/*, 4, 4*/);

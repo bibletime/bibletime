@@ -111,7 +111,7 @@ QDir DirectoryUtil::getIconDir(void)
 
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
-	qWarning() << "getIcon called for " << getIconDir().canonicalPath().append("/").append(name);
+	//qWarning() << "getIcon called for " << getIconDir().canonicalPath().append("/").append(name);
 	return QIcon(getIconDir().canonicalPath().append("/").append(name));
 }
 
