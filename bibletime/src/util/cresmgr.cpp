@@ -7,7 +7,7 @@
 *
 **********/
 
-//TODO: this code sucks completely
+//TODO: rework this code
 
 //own includes
 #include "cresmgr.h"
@@ -76,14 +76,14 @@ namespace CResMgr {
 			namespace search {
 				QString tooltip;
 
-				const QString icon        = "find";
+				const QString icon        = "find.svg";
 				const KShortcut accel(Qt::CTRL + Qt::Key_O);
 				const char* actionName    = "mainindex_search_action";
 			}
 			namespace searchdefaultbible {
 				QString tooltip;
 
-				const QString icon        = "find";
+				const QString icon        = "find.svg";
 				const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
 				const char* actionName    = "mainindex_searchdefaultbible_action";
 			}
@@ -200,7 +200,7 @@ namespace CResMgr {
 			namespace swordSetupDialog {
 				QString tooltip;
 
-				const QString icon        = "bt_swordconfig";
+				const QString icon        = "swordconfig.svg";
 				const KShortcut accel(Qt::Key_F4);
 				const char* actionName    = "options_sword_setup";
 			}
@@ -211,14 +211,14 @@ namespace CResMgr {
 			namespace handbook {
 				QString tooltip;
 
-				const QString icon        = "contents";
+				const QString icon        = "contents2.svg";
 				const KShortcut accel(Qt::Key_F1);
 				const char* actionName    = "helpHandbook_action";
 			}
 			namespace bibleStudyHowTo {
 				QString tooltip;
 
-				const QString icon        = "contents";
+				const QString icon        = "contents2.svg";
 				const KShortcut accel(Qt::Key_F2);
 				const char* actionName    = "helpHowTo_action";
 			}
@@ -245,7 +245,7 @@ namespace CResMgr {
 	}  //end of main menu
 
 	namespace searchdialog {
-		const QString icon = "find";
+		const QString icon = "find.svg";
 
 		namespace searchButton {
 			QString tooltip;
@@ -365,7 +365,7 @@ namespace CResMgr {
 			const QString icon = "bt_displaytranslit";
 		}*/
 		namespace displaySettings {
-			const QString icon = "bt_displayconfig";
+			const QString icon = "displayconfig.svg";
 		}
 
 		namespace general {
@@ -376,7 +376,7 @@ namespace CResMgr {
 			namespace search {
 				QString tooltip;
 
-				const QString icon        = "find";
+				const QString icon        = "find.svg";
 				const KShortcut accel(Qt::CTRL + Qt::Key_L);
 				const char* actionName    = "window_search_action";
 			}
@@ -518,21 +518,21 @@ namespace CResMgr {
 			namespace boldText {
 				QString tooltip;
 
-				const QString icon      = "text_bold";
+				const QString icon      = "text_bold.svg";
 				const KShortcut accel;
 				const char* actionName  = "writeWindow_boldText";
 			}
 			namespace italicText {
 				QString tooltip;
 
-				const QString icon      = "text_italic";
+				const QString icon      = "text_italic.svg";
 				const KShortcut accel;
 				const char* actionName  = "writeWindow_italicText";
 			}
 			namespace underlinedText {
 				QString tooltip;
 
-				const QString icon      = "text_under";
+				const QString icon      = "text_under.svg";
 				const KShortcut accel;
 				const char* actionName  = "writeWindow_underlineText";
 			}
@@ -586,7 +586,7 @@ namespace CResMgr {
 
 	namespace settings {
 		namespace startup {
-			const QString icon = "bt_startconfig";
+			const QString icon = "startconfig.svg";
 			namespace dailyTip {
 				QString tooltip;
 			}
@@ -621,7 +621,7 @@ namespace CResMgr {
 			}
 		}
 		namespace sword {
-			const QString icon = "bt_swordconfig";
+			const QString icon = "swordconfig.svg";
 
 			namespace general {
 				namespace language {
@@ -670,32 +670,32 @@ namespace CResMgr {
 			const char* actionName    = "GMsearch_action";
 		}
 		namespace newFolder {
-			const QString icon = "folder_new";
+			const QString icon = "folder_new.svg";
 		}
 		namespace changeFolder {
-			const QString icon = "folder";
+			const QString icon = "folder.svg";
 		}
 		namespace openedFolder {
-			const QString icon = "folder_open";
+			const QString icon = "folder_open.svg";
 		}
 		namespace closedFolder {
-			const QString icon = "folder";
+			const QString icon = "folder.svg";
 		}
 
 		namespace bookmark {
-			const QString icon = "bookmark";
+			const QString icon = "bookmark.svg";
 		}
 		namespace changeBookmark {
-			const QString icon = "bookmark";
+			const QString icon = "bookmark.svg";
 		}
 		namespace importBookmarks {
-			const QString icon = "bookmark";
+			const QString icon = "bookmark.svg";
 		}
 		namespace exportBookmarks {
-			const QString icon = "bookmark";
+			const QString icon = "bookmark.svg";
 		}
 		namespace printBookmarks {
-			const QString icon = "fileprint";
+			const QString icon = "fileprint.svg";
 		}
 		namespace deleteItems {
 			const QString icon = "filedelete";
