@@ -81,7 +81,7 @@ void CSwordSetupDialog::initSwordConfig() {
 	layout->setMargin(5);
 
 	layout->setSpacing(10);
-	//		layout->setColStretch(0,1);
+	layout->setColumnStretch(0,1);
 	layout->setRowStretch(5,1);
 
 	QLabel* mainLabel = CToolClass::explanationLabel(page,
@@ -140,7 +140,7 @@ void CSwordSetupDialog::initInstall() {
 	layout->setMargin(5);
 	layout->setSpacing(10);
 	layout->setRowStretch(6,5);
-//	layout->setColStretch(0,5);
+	layout->setColumnStretch(0,5);
 
 	QLabel* installLabel = CToolClass::explanationLabel(m_installSourcePage,
 							i18n("Install/update works - Step 1"),
@@ -214,7 +214,7 @@ void CSwordSetupDialog::initRemove() {
 	layout->setMargin(5);
 
 	layout->setSpacing(10);
-//	layout->setColStretch(1,1);
+	layout->setColumnStretch(1,1);
 	layout->setRowStretch(2,1);
 
 	QLabel* mainLabel= CToolClass::explanationLabel(page,
@@ -625,7 +625,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 
 		m_installModuleListView = new CSwordSetupModuleListView(m_installModuleListPage, true, &is);
 		layout->addWidget( m_installModuleListView, 1,6,0,1);
-//		layout->setColStretch(0,5);
+		layout->setColumnStretch(0,5);
 		layout->setRowStretch(1,5);
 
 		connect(m_installModuleListView, SIGNAL(selectedModulesChanged()), SLOT(slot_installModulesChanged()));
