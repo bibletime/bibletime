@@ -14,6 +14,7 @@
 #include "frontend/cbtconfig.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <q3hbox.h>
@@ -38,7 +39,6 @@
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kiconloader.h>
 
 namespace Search {
 	namespace Options {
@@ -213,7 +213,7 @@ void CModuleChooser::initTree() {
 			}
 
 			Q3ListViewItem* langFolder = new Q3ListViewItem(typeFolder,language);
-			langFolder->setPixmap(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
+			langFolder->setPixmap(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 
 			//create the module items of this lang folder
 			//       for (modsForType.first(); modsForType.current(); modsForType.next()) {
@@ -225,7 +225,7 @@ void CModuleChooser::initTree() {
 				};
 			};
 		};
-		typeFolder->setPixmap(0,SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
+		typeFolder->setPixmap(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 
 		if (incType) {
 			++type;

@@ -39,7 +39,6 @@
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kiconloader.h>
 
 namespace Search {
 	namespace Options {

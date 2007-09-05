@@ -26,16 +26,14 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/scoped_resource.h"
+#include "util/directoryutil.h"
 
 //Qt
 #include <QString>
 #include <QtXml/qdom.h>
 
 //KDE
-#include <kiconloader.h>
 #include <klocale.h>
-
-
 
 CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModuleInfo* module, const QString& key, const QString& description)
 	: CIndexItemBase(parentItem),
@@ -69,11 +67,9 @@ CIndexBookmarkItem::~CIndexBookmarkItem() {}
 /** No descriptions */
 void CIndexBookmarkItem::update() {
 	//setMultiLinesEnabled(true); //TODO: ???
-	setIcon(0,SmallIcon(CResMgr::mainIndex::bookmark::icon,16));
+	setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
 
-	const QString title = QString::fromLatin1("%1 (%2)")
-						  .arg(key())
-						  .arg(module() ? module()->name() : i18n("unknown"));
+	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : i18n("unknown"));
 	setText(0, title);
 }
 

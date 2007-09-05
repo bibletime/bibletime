@@ -18,15 +18,13 @@
 #include "cindexsubfolder.h"
 
 #include "util/cresmgr.h"
-
+#include "util/directoryutil.h"
 
 #include <QList>
 #include <QTreeWidgetItem>
 #include <QMimeSource>
 #include <QList>
 
-
-#include <kiconloader.h>
 #include <klocale.h>
 
 
@@ -47,9 +45,9 @@ const bool CIndexFolderBase::isFolder() {
 void CIndexFolderBase::update() {
 	CIndexItemBase::update();
 	if (isExpanded() && childCount())
-		setIcon(0, SmallIcon(CResMgr::mainIndex::openedFolder::icon, 16));
+		setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::openedFolder::icon));
 	else
-		setIcon(0, SmallIcon(CResMgr::mainIndex::closedFolder::icon, 16));
+		setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 }
 
 void CIndexFolderBase::init() {

@@ -17,6 +17,7 @@
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
@@ -32,7 +33,6 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kiconloader.h>
 
 namespace BookshelfManager {
 
@@ -76,8 +76,8 @@ void CManageIndicesWidget::initView()
 	m_autoDeleteOrphanedIndicesBox->setChecked( CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) );
 
 	// icons for our buttons
-	m_createIndicesButton->setIcon(SmallIcon("folder_new", 16));
-	m_deleteIndicesButton->setIcon(SmallIcon("remove", 16));
+	m_createIndicesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("folder_new"));
+	m_deleteIndicesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("remove"));
 
 	// connect our signals/slots
 	connect(m_createIndicesButton, SIGNAL(clicked()), this, SLOT(createIndices()));

@@ -41,7 +41,6 @@
 #include <keditlistbox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kprogressdialog.h>
 #include <kurl.h>

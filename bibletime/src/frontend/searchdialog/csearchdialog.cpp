@@ -19,6 +19,7 @@
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <q3hbox.h>
@@ -42,7 +43,6 @@
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kiconloader.h>
 
 namespace Search {
 
@@ -84,7 +84,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 : KDialogBase(Plain, i18n("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, i18n("Search")) {
 
 	setWFlags( getWFlags() | Qt::WStyle_MinMax );
-	setIcon(CResMgr::searchdialog::icon);
+	setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 
 	m_searcher.connectFinished( this, SLOT(searchFinished()));
 

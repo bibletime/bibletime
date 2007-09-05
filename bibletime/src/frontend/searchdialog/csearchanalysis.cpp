@@ -14,9 +14,12 @@
 
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
+
 #include "frontend/cbtconfig.h"
+
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <q3hbox.h>
@@ -42,7 +45,6 @@
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kiconloader.h>
 
 namespace Search {
 	namespace Analysis {
@@ -85,7 +87,7 @@ void CSearchAnalysisDialog::initView() {
 	Q3VBoxLayout* layout = new Q3VBoxLayout(plainPage(),0);
 
 	QPushButton* button = new QPushButton(plainPage(), "button");
-	button->setIconSet(SmallIconSet("filesave"));
+	button->setIcon(util::filesystem::DirectoryUtil::getIcon("filesave"));
 	button->setText(i18n("Save search analysis as HTML"));
 	button->setFixedSize(button->sizeHint());
 	layout->addWidget(button);

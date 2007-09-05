@@ -26,6 +26,7 @@
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <qlayout.h>
@@ -39,7 +40,6 @@
 //KDE includes
 #include <klocale.h>
 #include <kcombobox.h>
-#include <kiconloader.h>
 #include <kmessagebox.h>
 #include <kprogress.h>
 #include <kapplication.h>
@@ -655,10 +655,10 @@ void CSearchOptionsPage::initView() {
 			);
 	QToolTip::add(m_searchTextCombo, CResMgr::searchdialog::options::searchedText::tooltip);
 
-	m_syntaxButton->setIconSet(SmallIconSet("contexthelp"));
+	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
 	connect( m_syntaxButton, SIGNAL(clicked()), this, SLOT(syntaxHelp()));
 
-	m_chooseModulesButton->setIconSet(SmallIconSet("wizard"));
+	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
 	connect(m_chooseModulesButton, SIGNAL(clicked()),
 			this, SLOT(chooseModules()));
 	QToolTip::add
@@ -668,7 +668,7 @@ void CSearchOptionsPage::initView() {
 		(m_rangeChooserCombo, CResMgr::searchdialog::options::chooseScope::tooltip);
 	refreshRanges();
 
-	m_chooseRangeButton->setIconSet(SmallIconSet("configure"));
+	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
 	connect(m_chooseRangeButton, SIGNAL(clicked()),
 			this, SLOT(setupRanges()));
 

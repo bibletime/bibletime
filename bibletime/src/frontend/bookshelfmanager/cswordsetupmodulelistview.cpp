@@ -25,7 +25,6 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kiconloader.h>
 
 using namespace sword;
 

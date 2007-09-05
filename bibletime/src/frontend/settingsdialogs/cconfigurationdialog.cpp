@@ -21,14 +21,13 @@
 
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-
+#include "util/directoryutil.h"
 
 #include <QWidget>
 
 #include <kpagedialog.h>
 #include <kpagewidgetmodel.h>
 #include <kactioncollection.h>
-#include <kiconloader.h>
 #include <klocale.h>
 
 CConfigurationDialog::CConfigurationDialog
@@ -47,28 +46,28 @@ CConfigurationDialog::CConfigurationDialog
 	m_displayPage = new CDisplaySettingsPage(this);
 	KPageWidgetItem* displayPage = new KPageWidgetItem(m_displayPage);
 	displayPage->setHeader( i18n( "Display" ) );
-	displayPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::startup::icon,32)) );
+	displayPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::startup::icon)) );
 	addPage(displayPage);
 
 	// Add "Desk" (sword) page
 	m_swordPage = new CSwordSettingsPage(this);
 	KPageWidgetItem* swordPage = new KPageWidgetItem(m_swordPage);
 	swordPage->setHeader( i18n( "Desk" ) );
-	swordPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::sword::icon,32)) );
+	swordPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::sword::icon)) );
 	addPage(swordPage);
 
 	// Add "Languages" (fonts) page
 	m_languagesPage = new CLanguageSettingsPage(this);
 	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagesPage);
 	langPage->setHeader( i18n( "Languages" ) );
-	langPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::fonts::icon,32)) );
+	langPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::fonts::icon)) );
 	addPage(langPage);
 
 	// Add "Keyboard" (accelerators) page
 	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
 	KPageWidgetItem* accelPage = new KPageWidgetItem(m_acceleratorsPage);
 	accelPage->setHeader( i18n( "HotKeys" ) );
-	accelPage->setIcon( KIcon(DesktopIcon(CResMgr::settings::keys::icon,32)) );
+	accelPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::keys::icon)) );
 	addPage(accelPage);
 
 

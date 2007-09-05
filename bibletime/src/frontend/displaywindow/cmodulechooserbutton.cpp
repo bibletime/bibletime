@@ -31,7 +31,6 @@
 //KDE includes
 #include <klocale.h>
 #include <kglobal.h>
-#include <kiconloader.h>
 #include <kmenu.h>
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
