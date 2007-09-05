@@ -107,6 +107,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 
 void CDisplaySettingsPage::updateStylePreview() {
 	//update the style preview widget
+	qDebug("CDisplaySettingsPage::updateStylePreview");
 	using namespace Rendering;
 
 	const QString styleName = m_styleChooserCombo->currentText();
@@ -162,6 +163,7 @@ void CDisplaySettingsPage::updateStylePreview() {
 
 	CBTConfig::set
 		(CBTConfig::displayStyle, oldStyleName);
+	qDebug("CDisplaySettingsPage::updateStylePreview end");
 }
 
 void CDisplaySettingsPage::save()

@@ -649,10 +649,13 @@ void CBTConfig::setupAccelSettings
 	Q_ASSERT(CBTConfig::getConfig());
 	//buggy???
 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-	Q_ASSERT(cg);
+	//KConfigGroup* cg;
 	
+	Q_ASSERT(cg);
+	Q_ASSERT(actionCollection);
 	//actionCollection->readSettings(cg);
 	actionCollection->setConfigGroup(groupName);
+	
 	actionCollection->readSettings();
 	qDebug("CBTConfig::setupAccelSettings end");
 }
@@ -660,6 +663,7 @@ void CBTConfig::setupAccelSettings
 void CBTConfig::saveAccelSettings
 	(const CBTConfig::keys type, KActionCollection* const actionCollection)
 {
+	qDebug("CBTConfig::saveAccelSettings");
 	QString groupName;
 	switch (type) {
 		case allWindows : {
@@ -697,7 +701,9 @@ void CBTConfig::saveAccelSettings
 	};
 	
 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
+	
 	actionCollection->writeSettings(cg);
+	qDebug("CBTConfig::saveAccelSettings end");
 }
 
 
@@ -731,6 +737,7 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 
 KConfig* const CBTConfig::getConfig()
 {
+	qDebug("CBTConfig::getConfig");
 	KSharedConfigPtr sharedconfigptr = (KGlobal::config());
 	KConfig* config = &(*sharedconfigptr);
 

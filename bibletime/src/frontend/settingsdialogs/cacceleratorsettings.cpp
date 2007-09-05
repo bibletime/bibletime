@@ -23,7 +23,7 @@
 
 #include <QWidget>
 #include <QComboBox>
-#include <Q3WidgetStack>
+#include <QStackedWidget>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QLabel>
@@ -36,11 +36,13 @@
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 	: QWidget(parent)
 {
+	qDebug("CAcceleratorSettingsPage::CAcceleratorSettingsPage");
 	//TODO: widget layout may not work. Maybe it would be easier to use .ui file.
 	
 	QVBoxLayout* vlayout = new QVBoxLayout(this);
 	this->setLayout(vlayout);
-	
+	//TODO: actionCollection must exist, but is this the right way?
+	m_application.actionCollection = new KActionCollection(this);
 	CBTConfig::setupAccelSettings(
 		CBTConfig::application,
 		m_application.actionCollection
@@ -66,7 +68,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 
 	vlayout->setStretchFactor(hbox, 0);
 
-	m_keyChooserStack = new Q3WidgetStack(this);
+	m_keyChooserStack = new QStackedWidget(this);
 	Q_ASSERT(m_keyChooserStack);
 
 	vlayout->setStretchFactor(m_keyChooserStack, 5);
@@ -138,6 +140,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 
 	slotKeyChooserTypeChanged(m_application.title);
 
+	qDebug("CAcceleratorSettingsPage::CAcceleratorSettingsPage end");
 }
 
 
@@ -251,5 +254,5 @@ void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title)
 		);
 	}
 
-	m_keyChooserStack->raiseWidget(t->keyChooser);
+	m_keyChooserStack->setCurrentWidget(t->keyChooser);
 }

@@ -105,7 +105,7 @@ namespace Rendering {
 
 	const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
 		ListCSwordModuleInfo modules = tree.collectModules();
-
+		qDebug("CDisplayRendering::finishText");
 
 		//marking words is very slow, we have to find a better solution
 
@@ -142,7 +142,7 @@ namespace Rendering {
 
 		CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
 
-		Q_ASSERT(modules.count() >= 1);
+		//Q_ASSERT(modules.count() >= 1);
 
 		CDisplayTemplateMgr::Settings settings;
 		settings.modules = modules;

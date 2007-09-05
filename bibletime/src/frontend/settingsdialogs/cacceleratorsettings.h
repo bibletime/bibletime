@@ -18,7 +18,7 @@
 #include <kshortcutseditor.h>
 
 class QComboBox;
-class Q3WidgetStack;
+class QStackedWidget;
 class KActionCollection;
 
 /**
@@ -65,7 +65,7 @@ private:
 	WindowType m_book;
 
 	QComboBox* m_typeChooser;
-	Q3WidgetStack* m_keyChooserStack;
+	QStackedWidget* m_keyChooserStack;
 
 };
 
