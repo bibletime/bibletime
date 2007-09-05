@@ -598,7 +598,7 @@ namespace CResMgr {
 			}
 		}
 		namespace fonts {
-			const QString icon = "fonts";
+			const QString icon = "fontconfig.svg";
 
 			namespace typeChooser {
 				QString tooltip;
@@ -657,7 +657,7 @@ namespace CResMgr {
 			}
 		}
 		namespace keys {
-			const QString icon = "key_bindings";
+			const QString icon = "key_bindings.svg";
 		}
 	}
 
