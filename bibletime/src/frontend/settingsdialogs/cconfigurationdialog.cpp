@@ -35,6 +35,7 @@ CConfigurationDialog::CConfigurationDialog
 	: KPageDialog(0, Qt::Dialog),
 	  m_actionCollection(actionCollection)
 {
+	setCaption(i18n("Configuration"));
 	setFaceType(KPageDialog::List);
 	
 	//General buttons

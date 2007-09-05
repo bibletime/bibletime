@@ -147,7 +147,7 @@ QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
 
 QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
 	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B><BR>%2").arg(heading).arg(text),parent );
-//	label->setAutoResize(true);
+	label->setWordWrap(true);
 	label->setMargin(1);
 	label->setFrameStyle(QFrame::Box | QFrame::Plain);
 	return label;

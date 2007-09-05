@@ -57,7 +57,7 @@ StandardWorksTab::StandardWorksTab()
 				i18n("Standard works"),
 				i18n("Standard works are used when no particular work is specified, \
   for example when a hyperlink into a Bible or lexicon was clicked .")),
-		0,0,0,-1 /*fill the horizontal space*/
+		0,0,1,2 /*fill the horizontal space*/
 	);
 
 	//Create selection boxes

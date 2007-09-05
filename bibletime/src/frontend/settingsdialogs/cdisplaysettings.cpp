@@ -89,7 +89,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 	previewLabel->setBuddy(m_stylePreviewViewer->view());
 	layout->addWidget(previewLabel);
 	layout->addWidget(m_stylePreviewViewer->view());
-
 	m_styleChooserCombo->addItems(
 		CPointers::displayTemplateManager()->availableTemplates()
 	);
@@ -155,12 +154,12 @@ void CDisplaySettingsPage::updateStylePreview() {
 									 (CBTConfig::displayStyle);
 	CBTConfig::set
 		(CBTConfig::displayStyle, styleName);
-
+	
 	CDisplayRendering render;
 	m_stylePreviewViewer->begin();
 	m_stylePreviewViewer->write( render.renderKeyTree(tree));
 	m_stylePreviewViewer->end();
-
+	
 	CBTConfig::set
 		(CBTConfig::displayStyle, oldStyleName);
 	qDebug("CDisplaySettingsPage::updateStylePreview end");
