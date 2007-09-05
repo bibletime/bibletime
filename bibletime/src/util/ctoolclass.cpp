@@ -150,7 +150,6 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
 	label->setWordWrap(true);
 	label->setMargin(1);
 	label->setFrameStyle(QFrame::Box | QFrame::Plain);
-	label->setWordWrap(true);
 	return label;
 }
 
