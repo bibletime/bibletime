@@ -76,7 +76,8 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 CInfoDisplay::~CInfoDisplay() {}
 
 void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
-	qWarning("%s %s", mod_name.toLatin1(), key_text.toLatin1());
+	qDebug("CInfoDisplay::lookup");
+	qDebug() <<  mod_name <<  key_text;
 	CSwordModuleInfo* m = CPointers::backend()->findModuleByName(mod_name);
 	Q_ASSERT(m);
 	if (!m)
@@ -96,8 +97,9 @@ void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
 
 	m_htmlPart->setText(content);			// scroll to top
 	CHTMLReadDisplay *d = dynamic_cast<CHTMLReadDisplay *>(m_htmlPart);
+	Q_ASSERT(d);
 	d->view()->ensureVisible(0, 0);
-
+	qDebug("CInfoDisplay::lookup end");
 }
 
 void CInfoDisplay::setInfo(const InfoType type, const QString& data) {
