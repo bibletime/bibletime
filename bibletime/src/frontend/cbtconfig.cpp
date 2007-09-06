@@ -33,7 +33,7 @@
 #include <kcharsets.h>
 #include <kglobal.h>
 #include <klocale.h>
-#include <kstaticdeleter.h>
+//#include <kstaticdeleter.h>
 
 #include <khtml_settings.h>
 
@@ -289,7 +289,7 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 		return *m_defaultFont;
 	}
 
-	static KStaticDeleter<QFont> sd;
+	//static KStaticDeleter<QFont> sd;
 
 	//TODO: We need a better way to get the KDE konqueror KHTML settings
 	KConfig conf("konquerorrc");
@@ -299,7 +299,8 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 	const QString fontName = settings.stdFontName();
 	const int fontSize = settings.mediumFontSize();
 
-	sd.setObject(m_defaultFont, new QFont(fontName, fontSize));
+	//sd.setObject(m_defaultFont, new QFont(fontName, fontSize));
+	m_defaultFont = new QFont(fontName, fontSize);
 
 	return *m_defaultFont;
 }
@@ -407,8 +408,9 @@ const CBTConfig::FontSettingsPair CBTConfig::get
 	}
 
 	if (!fontConfigMap) {
-		static KStaticDeleter<FontCache> sd;
-		sd.setObject(fontConfigMap, new FontCache());
+		//static KStaticDeleter<FontCache> sd;
+		//sd.setObject(fontConfigMap, new FontCache());
+		fontConfigMap = new FontCache();
 	}
 
 	//KConfig* config = CBTConfig::getConfig();
