@@ -39,39 +39,39 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 	qDebug("CAcceleratorSettingsPage::CAcceleratorSettingsPage");
 	//TODO: widget layout may not work. Maybe it would be easier to use .ui file.
 	
-	QVBoxLayout* vlayout = new QVBoxLayout(this);
-	this->setLayout(vlayout);
+	QVBoxLayout* mainLayout = new QVBoxLayout(this);
+	this->setLayout(mainLayout);
 	//TODO: actionCollection must exist, but is this the right way?
 	m_application.actionCollection = new KActionCollection(this);
 	CBTConfig::setupAccelSettings(
 		CBTConfig::application,
 		m_application.actionCollection
 	);
-
-	QHBoxLayout* hbox = new QHBoxLayout(this);
-	vlayout->addLayout(hbox);
+	qDebug("create layout for window type chooser");
+	QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout(this);
+	mainLayout->addLayout(layoutForWindowTypeChooser);
 	QLabel* label = new QLabel(i18n("Choose type:"), this);
-	hbox->addWidget(label);
+	layoutForWindowTypeChooser->addWidget(label);
 	m_typeChooser = new QComboBox(this);
-	hbox->addWidget(m_typeChooser);
+	layoutForWindowTypeChooser->addWidget(m_typeChooser);
 
 	connect(
 		m_typeChooser, SIGNAL(activated(const QString&)),
 		SLOT(slotKeyChooserTypeChanged(const QString&))
-	);
-	QLabel* dummy = new QLabel( this); // empty label for stretch
-	hbox->addWidget(dummy);
+	);	
+	//too ugly! change!
+	//QLabel* dummy = new QLabel( this); // empty label for stretch
+	//hbox->addWidget(dummy);
 
-	hbox->setStretchFactor(label, 0);
-	hbox->setStretchFactor(m_typeChooser, 0);
-	hbox->setStretchFactor(dummy, 1);
+	//hbox->setStretchFactor(label, 0);
+	//hbox->setStretchFactor(m_typeChooser, 0);
+	//hbox->setStretchFactor(dummy, 1);
 
-	vlayout->setStretchFactor(hbox, 0);
-
+	//mainLayout->setStretchFactor(hbox, 0);
+	qDebug("create stack");
 	m_keyChooserStack = new QStackedWidget(this);
-	Q_ASSERT(m_keyChooserStack);
 
-	vlayout->setStretchFactor(m_keyChooserStack, 5);
+	//mainLayout->setStretchFactor(m_keyChooserStack, 5);
 
 	m_application.title = i18n("BibleTime"); //don't set the app action collection to NULL
 	m_general = WindowType(i18n("All text windows"));
@@ -87,12 +87,14 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 	m_typeChooser->addItem(m_lexicon.title);
 	m_typeChooser->addItem(m_book.title);
 
-
+	qDebug("create shortcuteditors");
 	Q_ASSERT(m_application.actionCollection);
 	m_application.keyChooser = new KShortcutsEditor(
 				m_application.actionCollection,
 				m_keyChooserStack
 			);
+	qDebug("add first w");
+	m_keyChooserStack->addWidget(m_application.keyChooser);
 
 	// ----- All display windows ------ //
 	m_general.actionCollection = new KActionCollection(this);
@@ -105,6 +107,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 											 m_general.actionCollection,
 											 m_keyChooserStack
 										 );
+	qDebug("add second w");
+	m_keyChooserStack->addWidget(m_general.keyChooser);
 
 	// ----- Bible windows ------ //
 	m_bible.actionCollection = new KActionCollection(this);
@@ -113,7 +117,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 		CBTConfig::bibleWindow,
 		m_bible.actionCollection
 	);
-
+	//m_keyChooserStack->addWidget(m_bible.keyChooser);
+	
 	// ----- Commentary windows ------ //
 	m_commentary.actionCollection = new KActionCollection(this);
 	CCommentaryReadWindow::insertKeyboardActions( m_commentary.actionCollection);
@@ -121,7 +126,8 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 		CBTConfig::commentaryWindow,
 		m_commentary.actionCollection
 	);
-
+	//m_keyChooserStack->addWidget(m_commentary.keyChooser);
+	
 	// ----- Lexicon windows ------ //
 	m_lexicon.actionCollection = new KActionCollection(this);
 	CLexiconReadWindow::insertKeyboardActions(  m_lexicon.actionCollection );
@@ -129,6 +135,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 		CBTConfig::lexiconWindow,
 		m_lexicon.actionCollection
 	);
+	//m_keyChooserStack->addWidget(m_lexicon.keyChooser);
 
 	// ----- Book windows ------ //
 	m_book.actionCollection= new KActionCollection(this);
@@ -137,7 +144,9 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 		CBTConfig::bookWindow,
 		m_book.actionCollection
 	);
-
+	//m_keyChooserStack->addWidget(m_book.keyChooser);
+	
+	mainLayout->addWidget(m_keyChooserStack);
 	slotKeyChooserTypeChanged(m_application.title);
 
 	qDebug("CAcceleratorSettingsPage::CAcceleratorSettingsPage end");
@@ -200,7 +209,7 @@ void CAcceleratorSettingsPage::save()
 
 void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title)
 {
-	
+	qDebug("CAcceleratorSettingsPage::slotKeyChooserTypeChanged");
 	//delete all KShortcutsEditors which may not share accels, because this class checks in all instances for key conflicts
 	typedef QList<KShortcutsEditor*> KeyChooserList;
 	KeyChooserList list;
@@ -255,4 +264,5 @@ void CAcceleratorSettingsPage::slotKeyChooserTypeChanged(const QString& title)
 	}
 
 	m_keyChooserStack->setCurrentWidget(t->keyChooser);
+	qDebug("CAcceleratorSettingsPage::slotKeyChooserTypeChanged end");
 }
