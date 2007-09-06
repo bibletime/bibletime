@@ -47,17 +47,22 @@ public:
 	 */
 	static unsigned long getDirSizeRecursive(const QString dir);
 	
-	/** Call this on program startup. Will cache a few directories like icon directory */
-	static void initDirectoryCache(QString executableFilePath);
-	
-	/** Return the path to the icons. initDirectoryCache must be called before. */
+	/** Return the path to the icons. */
 	static QDir getIconDir(void);
-	
-	/** Return the path to the xml files. initDirectoryCache must be called before. */
-	static QDir getXmlDir(void);
 	
 	/** Returns an icon with the given name */
 	static QIcon getIcon(const QString& name);
+	
+	/** Return the path to the pictures. */
+	static QDir getPicsDir(void);
+
+	/** Return the path to the xml files. */
+	static QDir getXmlDir(void);
+	
+private:
+	/** Will cache a few directories like icon directory */
+	static void initDirectoryCache(void);
+
 };
 	
 } //namespace filesystem

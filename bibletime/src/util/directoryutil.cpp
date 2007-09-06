@@ -14,6 +14,7 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QDebug>
+#include <QCoreApplication>
 
 namespace util {
 
@@ -21,7 +22,7 @@ namespace filesystem {
 
 void DirectoryUtil::removeRecursive(const QString dir) {
 	//Check for validity of argument
-	if (dir == QString::null) return;
+	if (dir.isEmpty()) return;
 	QDir d(dir);
 	if (!d.exists()) return;
 
@@ -76,48 +77,66 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 	return size;
 }
 
-static QDir cached_iconDir;
-static QDir cached_xmlDir;
+static QDir cachedIconDir;
+static QDir cachedPicsDir;
+static QDir cachedXmlDir;
+static bool dirCacheInitialized = false;
 
-void DirectoryUtil::initDirectoryCache(QString executableFilePath)
+void DirectoryUtil::initDirectoryCache(void)
 {
-	QDir wDir(QFileInfo(executableFilePath).dir());
+	QDir wDir( QCoreApplication::applicationDirPath() );
 	wDir.makeAbsolute();
 	
 	if (!wDir.cdUp()) //installation prefix
 	{
-		qWarning() << "Cannot cd up from directory " << executableFilePath;
+		qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
 		throw;
 	}
 	
-	cached_iconDir = wDir; //icon dir
-	if (!cached_iconDir.cd("share/bibletime/icons"))
+	cachedIconDir = wDir; //icon dir
+	if (!cachedIconDir.cd("share/bibletime/icons") || !cachedIconDir.isReadable())
 	{
-		qWarning() << "Cannot find icon directory relative to" << executableFilePath;
+		qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
 
-	cached_xmlDir = wDir; //xml dir
-	if (!cached_xmlDir.cd("share/bibletime/xml")) {
-		qWarning() << "Cannot find xml directory relative to" << executableFilePath;
+	cachedPicsDir = wDir; //icon dir
+	if (!cachedPicsDir.cd("share/bibletime/pics") || !cachedPicsDir.isReadable())
+	{
+		qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
+		throw;
+	}
+
+	cachedXmlDir = wDir; //xml dir
+	if (!cachedXmlDir.cd("share/bibletime/xml")) {
+		qWarning() << "Cannot find xml directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
 }
 
 QDir DirectoryUtil::getIconDir(void)
 { 
-	return cached_iconDir; 
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedIconDir; 
 }
 
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
+	//TODO: spit out a warning if an icon cannot be found and load a default icon instead
 	//qWarning() << "getIcon called for " << getIconDir().canonicalPath().append("/").append(name);
 	return QIcon(getIconDir().canonicalPath().append("/").append(name));
 }
 
+QDir DirectoryUtil::getPicsDir(void)
+{ 
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedPicsDir; 
+}
+
 QDir DirectoryUtil::getXmlDir(void)
 {
-	return cached_xmlDir;
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedXmlDir;
 }
 
 } //end of namespace util::filesystem

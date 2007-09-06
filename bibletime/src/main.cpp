@@ -25,7 +25,7 @@
 //util includes
 #include "util/scoped_resource.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+//#include "util/directoryutil.h"
 
 //frontend includes
 #include "frontend/kstartuplogo.h"
@@ -119,10 +119,6 @@ extern "C" {
 int main(int argc, char* argv[]) {
 	qInstallMsgHandler( myMessageOutput );
 	
-	util::filesystem::DirectoryUtil::initDirectoryCache(QString::fromUtf8(argv[0]));
-	
-	qWarning() << "FOUND ICONS IN " << util::filesystem::DirectoryUtil::getIconDir();
-
 	//create about data for this application
 	//static KCmdLineOptions options[] =
 	//	{

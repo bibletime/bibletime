@@ -7,10 +7,9 @@
 *
 **********/
 
-
-
 //Own includes
 #include "kstartuplogo.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QApplication>
@@ -18,13 +17,9 @@
 #include <QLayout>
 #include <QPixmap>
 #include <QDesktopWidget>
-//Added by qt3to4:
-#include <QFrame>
 
 //KDE includes
 #include <kapplication.h>
-#include <kstandarddirs.h>
-//#include <kimageio.h>
 
 //static objects
 KStartupLogo* KStartupLogo::startupLogo = 0;
@@ -64,7 +59,7 @@ KStartupLogo::KStartupLogo()
 {
 
 	QPixmap pm;
-	if ( !pm.load( KStandardDirs::locate("BT_pic","startuplogo.png")) ) {
+	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append("/startuplogo.png")) ) {
 		qWarning("Can't load startuplogo! Check your installation.");
 	}
 
