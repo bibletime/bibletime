@@ -85,18 +85,19 @@ ListCSwordModuleInfo CModuleChooserBar::getModuleList() {
 //change current with remove
 /** Sets the number of the maximum count of buttons. */
 void CModuleChooserBar::setButtonLimit(const int limit) {
+	qDebug("CModuleChooserBar::setButtonLimit");
 	m_buttonLimit = limit;
 	if (limit == -1) //no need to delete buttons
 		return;
 
-	const int tooMuch = m_buttonList.count() - limit;
+	const int tooMuch = m_buttonList.size() - limit;
 	for (int i = 0; i < tooMuch; ++i) {
 		CModuleChooserButton* b = m_buttonList.takeLast();
-		m_buttonList.removeAt(m_buttonList.count() - 1);
 		b->deleteLater();
 	}
 
 	updateMenuItems();
+	qDebug("CModuleChooserBar::setButtonLimit end");
 }
 
 /** Sets the modules which are chosen in this module chooser bar. */

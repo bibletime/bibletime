@@ -94,7 +94,6 @@ private:
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
-	//TODO: commented out temporarily
 	qDebug("BibleTime::slotSettingsOptions");
 	CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
 	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
@@ -105,28 +104,23 @@ void BibleTime::slotSettingsOptions() {
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
+	qDebug("BibleTime::slotSettingsChanged");
 	const QString language = CBTConfig::get
 								 (CBTConfig::language);
 	m_backend->booknameLanguage(language);
 
-	//Q3ListViewItemIterator it( m_mainIndex );
-	//CItemBase* item = 0;
-	//for ( ; it.current(); ++it ) {
-	//	if ( (item = dynamic_cast<CItemBase*>(it.current())) ) {
-	//		item->update();
-	//	}
-	//}
-	QTreeWidgetItem* item = m_mainIndex->topLevelItem(0);
-	while(item) {
-		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(item);
+	QTreeWidgetItemIterator it(m_mainIndex);
+	while (*it) {
+		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
 		if (citem) {
 			citem->update();
 		}
-		item = m_mainIndex->itemBelow(item);
+		++it;
 	}
 
 	refreshDisplayWindows();
 	refreshProfileMenus();
+	qDebug("BibleTime::slotSettingsChanged");
 }
 
 /** Opens the sword setup dialog of BibleTime. */

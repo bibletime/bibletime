@@ -85,18 +85,17 @@ void CConfigurationDialog::slotOk() {
 	m_swordPage->save();
 	m_displayPage->save();
 
-	KPageDialog::slotButtonClicked(KDialog::Ok);
 	emit signalSettingsChanged( );
 }
 
 /** Called if the apply button was clicked*/
 void CConfigurationDialog::slotApply() {
 	//saveAccelerators();
+	qDebug("CConfigurationDialog::slotApply");
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
-
-	KPageDialog::slotButtonClicked(KDialog::Apply);
 	emit signalSettingsChanged( );
+	qDebug("CConfigurationDialog::slotApply end");
 }
 
