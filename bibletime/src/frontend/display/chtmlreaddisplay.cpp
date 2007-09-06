@@ -50,6 +50,7 @@
 #include <dom/dom2_range.h>
 #include <dom/html_element.h>
 #include <dom/dom2_traversal.h>
+#include <dom/html_document.h>
 
 using namespace InfoDisplay;
 
@@ -198,10 +199,10 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 	//  slotGoToAnchor();
 }
 
-void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::URLArgs args) 
+void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::OpenUrlArguments args, KParts::BrowserArguments b_args) 
 {
 	qDebug("CHTMLReadDisplay::urlSelected");
-	KHTMLPart::urlSelected(url, button, state, _target, args);
+	KHTMLPart::urlSelected(url, button, state, _target, args, b_args);
 	m_urlWorkaroundData.doWorkaround = false;
 	qDebug() << "clicked: " << url;
 	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {
