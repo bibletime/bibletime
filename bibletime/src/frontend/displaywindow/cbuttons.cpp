@@ -7,14 +7,12 @@
 *
 **********/
 
-
-
-//HibleTime includes
+//BibleTime includes
 #include "cbuttons.h"
-#include "cbuttons.moc"
 
 #include "util/cresmgr.h"
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QString>
@@ -26,16 +24,10 @@
 #include <klocale.h>
 #include <kmenu.h>
 
-
-
-/************************************************
- *********** CDisplaySettingsButton *************
- ************************************************/
-
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const ListCSwordModuleInfo& useModules,QWidget *parent )
 : QToolButton(parent) {
 	//  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
-	QToolButton::setIcon(QIcon(CResMgr::displaywindows::displaySettings::icon));
+	QToolButton::setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::displaySettings::icon));
 	
 	m_displaySettings = displaySettings;
 	m_moduleSettings = moduleSettings;
