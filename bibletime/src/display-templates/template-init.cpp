@@ -15,10 +15,6 @@ void CDisplayTemplateMgr::init() {
 \n\
 #LANG_CSS#\n\
 \n\
-* { \n\
-	/* To work around a KDE 3.2 bug / problem */\n\
-	background-color:transparent;\n\
-}\n\
 \n\
 #content {\n\
 	background-color:transparent;\n\
@@ -278,7 +274,7 @@ td.entry + td.entry { \n\
 }\n\
 \n\
 .morphSegmentation {\n\
-	border-right: 2px solid grey;\n\
+	border-right: 2px solid gray;\n\
 }\n\
 \n\
 #infodisplay {\n\
@@ -288,9 +284,9 @@ td.entry + td.entry { \n\
 \n\
 #infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3 {\n\
 	padding:4px 4px 2px 0;\n\
-	color:darkGrey;\n\
+	color:darkGray;\n\
 	font-weight:bold;\n\
-	border-bottom:1px solid grey;\n\
+	border-bottom:1px solid gray;\n\
 	font-size:90%;\n\
 	text-align: right;\n\
 }\n\
@@ -371,9 +367,6 @@ body {\n\
 	background-color:transparent;\n\
 }\n\
 \n\
-* {\n\
-	background-color:transparent; /* To work around a KDE 3.2 bug / problem */\n\
-}\n\
 \n\
 \n\
 /* content wraps all of the displayed elements */\n\
@@ -690,10 +683,7 @@ so something like .alternative:before { content:\"'\"attr(alternative); } is pos
 	<style type=\"text/css\">\n\
 	/* <![CDATA[ */\n\
 \n\
-* { \n\
-	/* To work around a KDE 3.2 bug / problem */\n\
-	background-color:transparent;\n\
-}\n\
+\n\
 \n\
 #content {\n\
 	background-color:transparent;\n\
@@ -935,7 +925,7 @@ td.entry + td.entry { \n\
 }\n\
 \n\
 .morphSegmentation {\n\
-	border: 1px solid grey;\n\
+	border: 1px solid gray;\n\
 	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */\n\
 	margin-left: -1px; /* But here, for better reading of the text, \n\
 											this will only occur within a word consisting of several segments.*/\n\
@@ -950,9 +940,9 @@ td.entry + td.entry { \n\
 \n\
 #infodisplay .footnoteinfo h3, #infodisplay .strongsinfo h3, #infodisplay .morphinfo h3, #infodisplay .translationinfo h3, #infodisplay .crossrefinfo h3 {\n\
 	padding:4px 4px 2px 0;\n\
-	color:darkGrey;\n\
+	color:darkGray;\n\
 	font-weight:bold;\n\
-	border-bottom:1px solid grey;\n\
+	border-bottom:1px solid gray;\n\
 	font-size:100%;\n\
 	text-align:left !important;\n\
 }\n\
@@ -1019,10 +1009,6 @@ td.entry + td.entry { \n\
 	<style type=\"text/css\">\n\
 	/* <![CDATA[ */\n\
 \n\
-* { \n\
-	/* To work around a KDE 3.2 bug / problem */\n\
-	background-color:transparent;\n\
-}\n\
 \n\
 #content {\n\
 	/*background-color:white;*/\n\
@@ -1279,7 +1265,7 @@ td.entry + td.entry { \n\
 }\n\
 \n\
 .morphSegmentation {\n\
-	border: 1px solid grey;\n\
+	border: 1px solid gray;\n\
 	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */\n\
 	margin-left: -1px; /* But here, for better reading of the text, \n\
 											this will only occur within a word consisting of several segments.*/\n\
