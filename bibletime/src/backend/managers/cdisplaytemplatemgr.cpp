@@ -167,8 +167,6 @@ void CDisplayTemplateMgr::loadUserTemplates() {
 
 		if (f.open( QIODevice::ReadOnly )) {
 			QString fileContent = QTextStream( &f ).readAll();
-			qWarning() << "Found user template" << *it;
-			qWarning() << "content: " << fileContent;
 
 			if (!fileContent.isEmpty()) {
 				m_templateMap[ QFileInfo(*it).fileName() + QString(" ") + i18n("(user template)")] = fileContent;
