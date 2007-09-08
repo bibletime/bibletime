@@ -112,6 +112,8 @@ void DirectoryUtil::initDirectoryCache(void)
 		qWarning() << "Cannot find xml directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
+	
+	dirCacheInitialized = true;
 }
 
 QDir DirectoryUtil::getIconDir(void)
