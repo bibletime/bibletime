@@ -47,6 +47,7 @@ CConfigurationDialog::CConfigurationDialog
 	m_displayPage = new CDisplaySettingsPage(this);
 	KPageWidgetItem* displayPage = new KPageWidgetItem(m_displayPage);
 	displayPage->setHeader( i18n( "Display" ) );
+	displayPage->setName( i18n( "Display" ) );
 	displayPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::startup::icon)) );
 	addPage(displayPage);
 
@@ -54,6 +55,7 @@ CConfigurationDialog::CConfigurationDialog
 	m_swordPage = new CSwordSettingsPage(this);
 	KPageWidgetItem* swordPage = new KPageWidgetItem(m_swordPage);
 	swordPage->setHeader( i18n( "Desk" ) );
+	swordPage->setName( i18n( "Desk" ) );
 	swordPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::sword::icon)) );
 	addPage(swordPage);
 
@@ -61,6 +63,7 @@ CConfigurationDialog::CConfigurationDialog
 	m_languagesPage = new CLanguageSettingsPage(this);
 	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagesPage);
 	langPage->setHeader( i18n( "Languages" ) );
+	langPage->setName( i18n( "Languages" ) );
 	langPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::fonts::icon)) );
 	addPage(langPage);
 
@@ -68,6 +71,7 @@ CConfigurationDialog::CConfigurationDialog
 	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
 	KPageWidgetItem* accelPage = new KPageWidgetItem(m_acceleratorsPage);
 	accelPage->setHeader( i18n( "HotKeys" ) );
+	accelPage->setName( i18n( "HotKeys" ) );
 	accelPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::keys::icon)) );
 	addPage(accelPage);
 
