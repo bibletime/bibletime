@@ -39,12 +39,9 @@ sub extract_data {
 	while( <IN> ) {
 		my $line = $_;
 		chomp($line);
-		$line .= "\\\n";
-		
-		
 		$line =~ s/"/\\"/g;
-		$line =~ s/\s{2,}|\t/ /g; #replace spaces and tabs by space
-		
+		$line .= "\\n\\\n";
+#		$line =~ s/\s{2,}|\t/ /g; #replace spaces and tabs by space
 		$html .= $line;
 	}
 	close(INT);
