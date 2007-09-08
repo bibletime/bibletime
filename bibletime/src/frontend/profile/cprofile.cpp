@@ -56,11 +56,9 @@ QList<CProfileWindow*> CProfile::load() {
 	QFile file(m_filename);
 	if (!file.exists())
 	{
-		qWarning() << "Standard profile not found at filename " << m_filename;
+		//qWarning() << "Standard profile not found at filename " << m_filename;
 		return QList<CProfileWindow*>();
 	}
-
-	qWarning() << "Reading standard profile at " << m_filename;
 
 	QDomDocument doc;
 	if (file.open(QIODevice::ReadOnly)) {
@@ -70,8 +68,6 @@ QList<CProfileWindow*> CProfile::load() {
 		file.close();
 	}
 	
-	qWarning() << "DOM dump: " << doc.toString();
-
 	QDomElement document = doc.documentElement();
 	if( document.tagName() != "BibleTimeProfile" && document.tagName() != "BibleTime" ) { //BibleTime was used in syntax version 1.0
 		qWarning("CProfile::load: Missing BibleTime doc");
@@ -200,7 +196,6 @@ QList<CProfileWindow*> CProfile::load() {
 		}
 		elem = elem.nextSibling().toElement();
 	}
-	qWarning() << "Found " << m_profileWindows.count() << "windows in startup file.";
 	return m_profileWindows;
 }
 

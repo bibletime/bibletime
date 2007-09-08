@@ -11,6 +11,7 @@
 
 //Qt includes
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QDebug>
@@ -124,9 +125,17 @@ QDir DirectoryUtil::getIconDir(void)
 
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
-	//TODO: spit out a warning if an icon cannot be found and load a default icon instead
-	//qWarning() << "getIcon called for " << getIconDir().canonicalPath().append("/").append(name);
-	return QIcon(getIconDir().canonicalPath().append("/").append(name));
+	QString iconDir = getIconDir().canonicalPath();
+	QString iconFileName = iconDir + "/" + name;
+	if (QFile(iconFileName).exists())
+	{
+		return QIcon(iconFileName);
+	}
+	else
+	{
+		qWarning() << "Cannot find icon file" << iconFileName << ", using default icon.";
+		return QIcon(iconDir + "/default.svg");
+	}
 }
 
 QDir DirectoryUtil::getPicsDir(void)
