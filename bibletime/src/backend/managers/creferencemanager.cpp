@@ -391,7 +391,7 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
 		sword::ListKey lk = dummy.ParseVerseList((*it).toUtf8().constData(), baseKey.key().toUtf8().constData(), true);
 		Q_ASSERT(!dummy.Error());
 
-		Q_ASSERT(lk.Count());
+		//Q_ASSERT(lk.Count());
 		if (!lk.Count()) {
 			ret.append( *it ); //don't change the original
 			continue;

@@ -15,7 +15,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-/** Contains static functions to work with referneces used for Drag & Drop and for hyperlinks used in our
+/** Contains static functions to work with references used for Drag & Drop and for hyperlinks used in our
  * rendered HTML code.
  * @author The BibleTime team
  */
@@ -44,7 +44,7 @@ public:
 	*/
 	static const bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, Type& type);
 	/**
-	* Returns a hyperlink used to be imbedded in the display windows.
+	* Returns a hyperlink used to be embedded in the display windows.
 	* At the moment the format is sword://module/key
 	* @param module The module which is used to encode the hyperlink
 	* @param key The key which is used to encode the hyperlink
