@@ -55,19 +55,14 @@
 using namespace InfoDisplay;
 
 CHTMLReadDisplay::CHTMLReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
-	: KHTMLPart(),
+	: KHTMLPart(m_view = new CHTMLReadDisplayView(
+			this, parentWidget ? parentWidget : readWindow), readWindow ? readWindow : parentWidget),
 	CReadDisplay(readWindow),
 	m_currentAnchorCache(QString::null),
 	m_magTimerId(0)
 {
-//	(m_view = new CHTMLReadDisplayView(
-//			this, parentWidget ? parentWidget : readWindow)), readWindow ? readWindow : parentWidget),
-	QWidget* parentForHtmlView = parentWidget ? parentWidget : readWindow;
-	QWidget* parentForHtmlPart = readWindow ? readWindow : parentWidget;
-	KHTMLPart::setParent(parentForHtmlPart);
-	KHTMLPart::view()->setParent(parentForHtmlView);
 	view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
+	KHTMLPart::view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 	setDNDEnabled(false);
 	setJavaEnabled(false);
@@ -448,11 +443,10 @@ void CHTMLReadDisplayView::popupMenu( const QString& url, const QPoint& pos) {
 bool CHTMLReadDisplayView::event(QEvent* e) {
 	//TODO: this MUST be tested (as other context menus and DnD system) when the app runs)
 	if (e->type() == QEvent::Polish) {
-		KHTMLView::event(e);
 		connect( part(), SIGNAL(popupMenu(const QString&, const QPoint&)),
 			this, SLOT(popupMenu(const QString&, const QPoint&)));
 	}
-	
+	KHTMLView::event(e);
 }
 
 /** Reimplementation from QScrollArea. */
