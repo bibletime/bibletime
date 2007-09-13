@@ -81,7 +81,8 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
 void CMDIArea::childEvent( QChildEvent * e ) {
-	QWorkspace::childEvent(e);
+	//qDebug("CMDIArea::childEvent");
+	//qDebug() << "type" << int(e->type());
 
 	if ( m_childEvent || !e) {
 		return;
@@ -96,17 +97,19 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 	}
 	
 
-	if ((e->added() || e->removed()) ) {
+	if ( (e->added() || e->removed() /*|| (int(e->type()) == 70 )*/) ) {
 		if (e->added() && e->child() && e->child()->inherits("CDisplayWindow")) {
+			//qDebug("added a displaywindow");
 			e->child()->installEventFilter(this); //make sure we catch the events of the new window
 		}
 		else if (e->removed() && e->child() && e->child()->inherits("CDisplayWindow")) {
+			//qDebug("removed a displaywindow");
 			e->child()->removeEventFilter(this); //make sure we catch the events of the new window
 		}
 
 		triggerWindowUpdate();
 	}
-
+	QWorkspace::childEvent(e);
 	m_childEvent = false;
 }
 
@@ -147,6 +150,7 @@ void CMDIArea::myTileVertical() {
 	QList<QWidget*> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
+		//qDebug("should show maximized");
 		m_appCaption = windows.at(0)->windowTitle();
 		windows.at(0)->showMaximized();
 	}
@@ -293,7 +297,11 @@ QList<QWidget*> CMDIArea::usableWindowList() {
 bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	Q_ASSERT(o);
 	Q_ASSERT(e);
-
+	//if (o->metaObject()->className() == "QWorkspaceChild") {
+	//	qDebug("CMDIArea::eventFilter");
+	//	qDebug() << o;
+	//	qDebug() << e;
+	//}
 	QWidget* w = dynamic_cast<QWidget*>( o );
 	bool ret = QWorkspace::eventFilter(o,e);
 
@@ -304,10 +312,9 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 			ret = false;
 		}
 		else if (!o->inherits("CDisplayWindow")){
-			//qDebug("CMDIArea: bad mdi child classname: %s", o->className()); //"error: ‘class QObject’ has no member named ‘className’"
-
-			o->dumpObjectInfo();
-			o->dumpObjectTree();
+			qDebug("CMDIArea::eventFilter: bad mdi child classname: %s", o->metaObject()->className());
+			//o->dumpObjectInfo();
+			//o->dumpObjectTree();
 		}
 	}
 
@@ -319,7 +326,7 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
     \fn CMDIArea::triggerWindowUpdate()
  */
 void CMDIArea::triggerWindowUpdate() {
-	qDebug("CMDIArea::triggerWindowUpfdate");
+	//qDebug("CMDIArea::triggerWindowUpdate");
 
 	if (updatesEnabled() && usableWindowList().count() ) {
 		switch (m_guiOption) {
