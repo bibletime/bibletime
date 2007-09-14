@@ -216,7 +216,6 @@ void CDisplay::installPopup( QMenu* popup ) {
 
 /** Returns the popup menu which was set by installPopupMenu() */
 QMenu* const CDisplay::installedPopup() {
-	Q_ASSERT(m_popup);
 	return m_popup;
 }
 
