@@ -62,7 +62,8 @@ using namespace Profile;
 
 
 /**Initializes the view of this widget*/
-void BibleTime::initView() {
+void BibleTime::initView()
+{
 	KStartupLogo::setStatusMessage(i18n("Creating BibleTime's GUI") + QString("..."));
 
 	m_mainSplitter = new QSplitter(this);
@@ -112,13 +113,15 @@ void BibleTime::initAction(KAction* action, QString text, QString icon, KShortcu
 }
 
 /** Initializes the action objects of the GUI */
-void BibleTime::initActions() {
+void BibleTime::initActions()
+{
 	KStartupLogo::setStatusMessage(i18n("Initializing menu- and toolbars") + QString("..."));
 	KAction* action = 0;
 	KActionCollection* ac = actionCollection();
 	
 	action = KStandardAction::quit(kapp, SLOT( quit() ), ac);
 	action->setToolTip( CResMgr::mainMenu::file::quit::tooltip );
+
 
 	initAction(
 		new KAction(ac),
@@ -130,6 +133,7 @@ void BibleTime::initActions() {
 		SLOT( slotSearchModules() )
 	);
 	
+
 	initAction(
 		new KAction(ac),
 		i18n("Search in standard &Bible"),
@@ -157,7 +161,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::view::showMainIndex::actionName,
 		SLOT(slotToggleMainIndex())
 	);
-	
 
 
 	m_viewInfoDisplay_action = new KToggleAction(ac);
@@ -175,6 +178,7 @@ void BibleTime::initActions() {
 	action = KStandardAction::preferences(this, SLOT( slotSettingsOptions() ), ac);
 	action->setToolTip( CResMgr::mainMenu::settings::optionsDialog::tooltip );
 
+
 	initAction(
 		new KAction(ac),
 		i18n("Bookshelf &Manager"),
@@ -184,6 +188,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::settings::swordSetupDialog::actionName,
 		SLOT( slotSwordSetupDialog() )
 	);
+
 
 	//delete help action if KDE created it
 	if ( ac->action( KStandardAction::stdName(KStandardAction::ConfigureToolbars) )) {
@@ -196,8 +201,10 @@ void BibleTime::initActions() {
 	action->setToolTip( CResMgr::mainMenu::settings::editToolBar::tooltip );
 
 
+	//--------------------------Window arrangement actions---------------------------------------
+
 	m_windowArrangementMode_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::arrangementMode::icon)), i18n("&Arrangement mode"), ac);
-	ac->addAction(CResMgr::mainMenu::window::arrangementMode::actionName, action);
+	ac->addAction(CResMgr::mainMenu::window::arrangementMode::actionName, m_windowArrangementMode_action);
 	m_windowArrangementMode_action->setDelayed( false );
 
 
@@ -211,7 +218,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::arrangementMode::manual::actionName,
 		SLOT( slotManualArrangementMode() )
 	);
-
 	m_windowArrangementMode_action->addAction( m_windowManualMode_action );
 
 
@@ -225,8 +231,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::actionName,
 		SLOT( slotAutoTileVertical() )
 	);
-
-
 	m_windowArrangementMode_action->addAction( m_windowAutoTileVertical_action );
 
 
@@ -240,8 +244,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::actionName,
 		SLOT( slotAutoTileHorizontal() )
 	);
-	
-
 	m_windowArrangementMode_action->addAction( m_windowAutoTileHorizontal_action );
 
 
@@ -255,7 +257,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::actionName,
 		SLOT( slotAutoCascade() )
 	);
-
 	m_windowArrangementMode_action->addAction( m_windowAutoCascade_action );
 
 
@@ -270,6 +271,7 @@ void BibleTime::initActions() {
 		SLOT( slotCascade() )
 	);
 
+
 	m_windowTileVertical_action = new KAction(ac);
 	initAction(
 		m_windowTileVertical_action,
@@ -281,9 +283,10 @@ void BibleTime::initActions() {
 		SLOT( slotTileVertical() )
 	);
 
+
 	m_windowTileHorizontal_action = new KAction(ac);
 	initAction(
-		m_windowTileVertical_action,
+		m_windowTileHorizontal_action,
 		i18n("Tile &horizontally"),
 		CResMgr::mainMenu::window::tileHorizontal::icon,
 		CResMgr::mainMenu::window::tileHorizontal::accel,
@@ -291,6 +294,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::tileHorizontal::actionName,
 		SLOT( slotTileHorizontal() )
 	);
+
 
 	m_windowCloseAll_action = new KAction(ac);
 	initAction(
@@ -304,11 +308,13 @@ void BibleTime::initActions() {
 	);
 	QObject::connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT( deleteAll() ) );
 
+
+	//--------------------------Profile/session actions----------------------------------------
+
 	m_windowSaveProfile_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::saveProfile::icon)), i18n("&Save session"), ac);
 	ac->addAction(CResMgr::mainMenu::window::saveProfile::actionName, m_windowSaveProfile_action);
 	m_windowSaveProfile_action->setDelayed( false );
 	
-
 	m_windowSaveToNewProfile_action = new KAction(ac);
 	initAction(
 		m_windowSaveToNewProfile_action,
@@ -318,8 +324,7 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::window::saveToNewProfile::tooltip,
 		CResMgr::mainMenu::window::saveToNewProfile::actionName,
 		SLOT( saveToNewProfile() )
-	);
-	
+	);	
 
 	m_windowLoadProfile_action = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainMenu::window::loadProfile::icon)), i18n("&Load session"), ac);
 	ac->addAction(CResMgr::mainMenu::window::loadProfile::actionName, m_windowLoadProfile_action);
@@ -361,7 +366,7 @@ void BibleTime::initActions() {
 		(ac->action(KStandardAction::stdName(KStandardAction::HelpContents)) );
 	}
 
-
+	//----------------------------Help menu actions-------------------------------
 	initAction(
 		new KAction(ac),
 		i18n("&Handbook"),
@@ -371,8 +376,6 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::help::handbook::actionName,
 		SLOT( openOnlineHelp_Handbook() )
 	);
-
-	
 
 	initAction(
 		new KAction(ac),
@@ -384,13 +387,11 @@ void BibleTime::initActions() {
 		SLOT( openOnlineHelp_Howto() )
 	);
 
-
 	if ( ac->action( KStandardAction::stdName( KStandardAction::WhatsThis ) ) ) {  //delete "What's this" action if KDE created it already
 		QAction* action = ac->action(KStandardAction::stdName( KStandardAction::WhatsThis ));
 		ac->removeAction
 		( action );
 	}
-
 
 	if ( ac->action( KStandardAction::stdName( KStandardAction::ReportBug ) ) ) { //delete Report Bug action if KDE created it
 		ac->removeAction
@@ -399,8 +400,6 @@ void BibleTime::initActions() {
 	action = KStandardAction::reportBug(m_helpMenu, SLOT(reportBug()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::bugreport::tooltip);
 	
-
-
 	initAction(
 		new KAction(ac),
 		i18n("&Daily tip"),
@@ -409,12 +408,11 @@ void BibleTime::initActions() {
 		CResMgr::mainMenu::help::dailyTip::tooltip,
 		CResMgr::mainMenu::help::dailyTip::actionName,
 		SLOT( slotHelpTipOfDay() )
-	);	
-	
+	);
 
-	if ( ac->action( KStandardAction::stdName( KStandardAction::AboutApp ) ) ) {  //delete About KDE action if KDE created it
+	if (ac->action(KStandardAction::stdName(KStandardAction::AboutApp) )) {  //delete About KDE action if KDE created it
 		ac->removeAction
-		(ac->action(KStandardAction::stdName( KStandardAction::AboutApp )));
+		(ac->action(KStandardAction::stdName( KStandardAction::AboutApp ) ));
 	}
 	action = KStandardAction::aboutApp(m_helpMenu, SLOT(aboutApplication()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::aboutBibleTime::tooltip);
