@@ -175,7 +175,8 @@ const bool CHTMLReadDisplay::hasSelection() {
 
 /** Reimplementation. */
 QScrollArea* CHTMLReadDisplay::view() {
-	return KHTMLPart::view();
+	//return KHTMLPart::view();
+	return m_view;
 }
 
 void CHTMLReadDisplay::selectAll() {
@@ -194,10 +195,16 @@ void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
 	//  slotGoToAnchor();
 }
 
-void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, const QString& _target, KParts::OpenUrlArguments args, KParts::BrowserArguments b_args) 
+/** Reimplementation from KHTMLPart. Called when user selects (clicks) an URL. Returns whether a new
+* URL was opened or not.
+*/
+bool CHTMLReadDisplay::urlSelected( const QString& url, int button, int state,
+									const QString& _target,
+									const KParts::OpenUrlArguments& args,
+									const KParts::BrowserArguments& b_args
+								)
 {
 	qDebug("CHTMLReadDisplay::urlSelected");
-	KHTMLPart::urlSelected(url, button, state, _target, args, b_args);
 	m_urlWorkaroundData.doWorkaround = false;
 	qDebug() << "clicked: " << url;
 	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {
@@ -212,6 +219,7 @@ void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, c
 
 		// we have to use this workaround, otherwise the widget would scroll because it was interrupted
 		// between mouseClick and mouseRelease (I guess)
+		// TODO: is this still true with KDE4?
 		m_urlWorkaroundData.doWorkaround = true;
 		m_urlWorkaroundData.url = url;
 		m_urlWorkaroundData.state = state;
@@ -227,6 +235,8 @@ void CHTMLReadDisplay::urlSelected( const QString& url, int button, int state, c
 	else if (url.left(7) == "http://") { //open the bowser configured by kdeb
 		KToolInvocation::invokeBrowser( url ); //TODO: Not yet tested
 	}
+
+	return KHTMLPart::urlSelected(url, button, state, _target, args, b_args);
 }
 
 /** Reimplementation. */
