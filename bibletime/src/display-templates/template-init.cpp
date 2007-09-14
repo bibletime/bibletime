@@ -364,7 +364,7 @@ body {\n\
 	margin:0px;\n\
 	padding:0;\n\
 	padding:1em;\n\
-	background-color:transparent;\n\
+	/*background-color:transparent;*/\n\
 }\n\
 \n\
 \n\

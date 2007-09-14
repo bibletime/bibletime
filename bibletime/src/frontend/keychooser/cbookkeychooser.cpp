@@ -67,7 +67,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	int index = 0;
 
 	m_key->root();
-
+	//TODO: crash
 	while( m_key->firstChild() && (depth <= int(siblings.count())) ) {
 		const QString key = m_key->key();
 		index = (depth == 0) ? -1 : 0;

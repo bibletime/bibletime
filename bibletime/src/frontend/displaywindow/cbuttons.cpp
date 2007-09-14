@@ -59,9 +59,11 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 
 void CDisplaySettingsButton::optionToggled(QAction* action) {
 	//m_popup->setItemChecked( ID, !(m_popup->isItemChecked(ID)));
+	qDebug("display settings button toggled");
+	qDebug() << "action: " << action;
 	action->toggle();
-	if ( action->text().isEmpty() )
-		m_dict[action->text()] =  action->isChecked();
+	//if ( action->text().isEmpty() )
+	//	m_dict[action->text()] =  action->isChecked();
 	emit sigChanged();
 }
 
@@ -100,14 +102,16 @@ int CDisplaySettingsButton::populateMenu() {
 	return ret;
 }
 
-/** No descriptions */
+/** Adds an entry to m_popup */
 int CDisplaySettingsButton::addMenuEntry( const QString name, const int* option, const bool available) {
 	int ret = 0;
 
 	if (available) {
-		m_dict.insert( name, *option );
+		//m_dict.insert( name, *option );
 		//m_popup->setItemChecked(m_popup->insertItem( name ), *option );
-		m_popup->addAction(name)->setChecked(*option);
+		QAction* a = m_popup->addAction(name);
+		a->setCheckable(true);
+		a->setChecked(*option);
 		ret = 1;
 	}
 
@@ -125,20 +129,20 @@ bool CDisplaySettingsButton::isOptionAvailable( const CSwordModuleInfo::FilterTy
 	return ret;
 }
 
-/** Returns the number of usable menu items in the setttings menu. */
+/** Returns the number of usable menu items in the settings menu. */
 const int CDisplaySettingsButton::menuItemCount() {
 	return m_popup->actions().count();
 }
 
-/** Sets the item at position pos to the satet given as 2nd paramter. */
+/** Sets the item at position pos to the state given as 2nd paramter. */
 void CDisplaySettingsButton::setItemStatus( const int index, const bool checked ) {
 	//const int ID = m_popup->idAt(index);
 	QAction* action = m_popup->actions().at(index);
 	action->setChecked(checked); //m_popup->setItemChecked(ID, checked);
-	const QString text = action->text();
-	if (m_dict[text]) {
-		m_dict[text] = checked;
-	}
+	//const QString text = action->text();
+	//if (m_dict[text]) {
+	//	m_dict[text] = checked;
+	//}
 }
 
 /** Returns the status of the item at position "index" */
