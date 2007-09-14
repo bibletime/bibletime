@@ -306,25 +306,17 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 }
 
 // See kde4 porting documentation for kconfiggroupsaver.
-// TODO: KConfigBase (i.e. KConfig) read*Entry members are deprecated.
 
 const QString CBTConfig::get
 	( const CBTConfig::strings ID)
 {
-	//kde3:	
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "strings");	
 	KConfigGroup cg = CBTConfig::getConfig()->group("strings");
-
 	return cg.readEntry(getKey(ID),getDefault(ID));
 }
 
 CSwordModuleInfo* const CBTConfig::get
 	( const CBTConfig::modules ID)
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "modules");
-
 	KConfigGroup cg = CBTConfig::getConfig()->group("modules");
 	QString name = cg.readEntry(getKey(ID),getDefault(ID));
 	return CPointers::backend()->findModuleByName(name);
@@ -335,18 +327,13 @@ const bool CBTConfig::get
 	( const CBTConfig::bools ID)
 {
 	//special behaviour for the KTipDialog class
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, (ID == CBTConfig::tips) ? "TipOfDay" : "bools");
 	KConfigGroup cg = CBTConfig::getConfig()->group( (ID == CBTConfig::tips) ? "TipOfDay" : "bools" );
-	
 	return cg.config()->readBoolEntry(getKey(ID),getDefault(ID));
 }
 
 const int CBTConfig::get
 	( const CBTConfig::ints ID)
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "ints");
 	KConfigGroup cg = CBTConfig::getConfig()->group("ints");
 	return cg.config()->readNumEntry(getKey(ID), getDefault(ID));
 }
@@ -354,8 +341,6 @@ const int CBTConfig::get
 const QList<int> CBTConfig::get
 	( const CBTConfig::intLists ID )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "intlists");
 	KConfigGroup cg = CBTConfig::getConfig()->group("intlists");
 	return cg.config()->readIntListEntry(getKey(ID));
 }
@@ -363,8 +348,6 @@ const QList<int> CBTConfig::get
 const QStringList CBTConfig::get
 	( const CBTConfig::stringLists ID )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "stringlists");
 	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
 	return cg.config()->readListEntry(getKey(ID));
 }
@@ -372,8 +355,6 @@ const QStringList CBTConfig::get
 const CBTConfig::StringMap CBTConfig::get
 	( const CBTConfig::stringMaps ID )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, getKey(ID));
 	KConfigGroup cg = CBTConfig::getConfig()->group(getKey(ID));
 	
 	if (cg.config()->hasGroup(getKey(ID))) {
@@ -413,11 +394,8 @@ const CBTConfig::FontSettingsPair CBTConfig::get
 		fontConfigMap = new FontCache();
 	}
 
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "font standard settings");
 	KConfigGroup cg = CBTConfig::getConfig()->group("font standard settings");
-	
-	
+
 	FontSettingsPair settings;
 	settings.first = cg.config()->readBoolEntry(getKey(language));
 
@@ -437,21 +415,15 @@ const CBTConfig::FontSettingsPair CBTConfig::get
 void CBTConfig::set
 	( const CBTConfig::strings ID, const QString value )
 {
-	KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "strings");
-	//config->writeEntry(getKey(ID), value);
 	KConfigGroup cg = CBTConfig::getConfig()->group("strings");
-	cg.config()->writeEntry(getKey(ID), value);
+	cg.writeEntry(getKey(ID), value);
 }
 
 void CBTConfig::set
 	( const CBTConfig::modules ID, CSwordModuleInfo* const value )
 {
-	KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "modules");
-	//config->writeEntry(getKey(ID), value ? value->name() : QString::null);
 	KConfigGroup cg = CBTConfig::getConfig()->group("modules");
-	cg.config()->writeEntry(getKey(ID), value ? value->name() : QString::null);
+	cg.writeEntry(getKey(ID), value ? value->name() : QString::null);
 }
 
 void CBTConfig::set
@@ -467,49 +439,35 @@ void CBTConfig::set
 void CBTConfig::set
 	(const CBTConfig::bools ID,const  bool value )
 {
-	//KConfig* config = CBTConfig::getConfig();
 	//special behaviour to work with KTipDialog class of KDE
-	//KConfigGroupSaver groupSaver(config, (ID == CBTConfig::tips) ? "TipOfDay" : "bools");
-	//config->writeEntry(getKey(ID), value);
 	KConfigGroup cg = CBTConfig::getConfig()->group((ID == CBTConfig::tips) ? "TipOfDay" : "bools");
-	cg.config()->writeEntry(getKey(ID), value);
+	cg.writeEntry(getKey(ID), value);
 }
 
 void CBTConfig::set
 	(const CBTConfig::ints ID, const int value )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "ints");
-	//config->writeEntry(getKey(ID), value);
 	KConfigGroup cg = CBTConfig::getConfig()->group("ints");
-	cg.config()->writeEntry(getKey(ID), value);
+	cg.writeEntry(getKey(ID), value);
 }
 
 void CBTConfig::set
 	( const CBTConfig::intLists ID, const QList<int> value )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "intlists");
-	//config->writeEntry(getKey(ID), value);
 	KConfigGroup cg = CBTConfig::getConfig()->group("intlists");
-	cg.config()->writeEntry(getKey(ID), value);
+	cg.writeEntry(getKey(ID), value);
 }
 
 void CBTConfig::set
 	( const CBTConfig::stringLists ID, const QStringList value )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "stringlists");
-	//config->writeEntry(getKey(ID), value);
 	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
-	cg.config()->writeEntry(getKey(ID), value);
+	cg.writeEntry(getKey(ID), value);
 }
 
 void CBTConfig::set
 	( const CBTConfig::stringMaps ID, const CBTConfig::StringMap value )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, getKey(ID));
 	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
 	KConfigBase* config = cg.config();
 	config->deleteGroup(getKey(ID)); //make sure we only save the new entries and don't use old ones
@@ -536,6 +494,7 @@ void CBTConfig::set
 						data += QString::fromUtf8( range->getRangeText() ) + ";";
 					}
 				}
+				//TODO: possibly cg...
 				config->writeEntry(it.key(), data);
 			}
 			break;
@@ -553,18 +512,14 @@ void CBTConfig::set
 void CBTConfig::set
 	( const CLanguageMgr::Language* const language, const FontSettingsPair& value )
 {
-	//KConfig* config = CBTConfig::getConfig();
-
-	//KConfigGroupSaver groupSaver(config, "fonts");
-	//config->writeEntry(getKey(language), value.second);
+	//TODO: does this work, should it be cg.write...
 	KConfigGroup cg = CBTConfig::getConfig()->group("fonts");
 	KConfigBase* config = cg.config();
 
-	//TODO: too difficult atm
-	//config->writeEntry(getKey(language), value);
+	config->writeEntry(getKey(language), value.second);
 
 	config->setGroup("font standard settings");
-	//config->writeEntry(getKey(language), value.first);
+	config->writeEntry(getKey(language), value.first);
 	
 	if (fontConfigMap && fontConfigMap->contains(language)) {
 		fontConfigMap->remove
@@ -576,11 +531,8 @@ void CBTConfig::set
 const CSwordBackend::DisplayOptions CBTConfig::getDisplayOptionDefaults()
 {
 	CSwordBackend::DisplayOptions options;
-
-	options.lineBreaks   =  get
-								(CBTConfig::lineBreaks);
-	options.verseNumbers =  get
-								(CBTConfig::verseNumbers);
+	options.lineBreaks   =  get(CBTConfig::lineBreaks);
+	options.verseNumbers =  get(CBTConfig::verseNumbers);
 
 	return options;
 }
@@ -704,15 +656,14 @@ void CBTConfig::saveAccelSettings
 	
 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
 	
-	actionCollection->writeSettings(cg);
+	qDebug("NOT saving accelerators!");
+	//actionCollection->writeSettings(cg);
 	qDebug("CBTConfig::saveAccelSettings end");
 }
 
 
 const QString CBTConfig::getModuleEncryptionKey( const QString& module )
 {
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "Module keys");
 	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
 
 	return (cg.config()->readEntry(module, QVariant(QString::null) ) ).toString();
@@ -730,16 +681,14 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 	//    return;
 	//  };
 
-	//KConfig* config = CBTConfig::getConfig();
-	//KConfigGroupSaver groupSaver(config, "Module keys");
 	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
-
+	//TODO: cg.write...?
 	cg.config()->writeEntry(module, key);
 };
 
 KConfig* const CBTConfig::getConfig()
 {
-	qDebug("CBTConfig::getConfig");
+	//qDebug("CBTConfig::getConfig");
 	KSharedConfigPtr sharedconfigptr = (KGlobal::config());
 	KConfig* config = &(*sharedconfigptr);
 

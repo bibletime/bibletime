@@ -110,7 +110,7 @@ void CDisplaySettingsPage::updateStylePreview() {
 	using namespace Rendering;
 
 	const QString styleName = m_styleChooserCombo->currentText();
-
+	qDebug() << "style name: " << styleName;
 	CTextRendering::KeyTree tree;
 
 	CTextRendering::KeyTreeItem::Settings settings;
@@ -152,9 +152,10 @@ void CDisplaySettingsPage::updateStylePreview() {
 
 	const QString oldStyleName = CBTConfig::get
 									 (CBTConfig::displayStyle);
+	//qDebug() << "old style name: " << oldStyleName;
 	CBTConfig::set
 		(CBTConfig::displayStyle, styleName);
-	
+	//qDebug() << "new style name: " << CBTConfig::get(CBTConfig::displayStyle);
 	CDisplayRendering render;
 	m_stylePreviewViewer->begin();
 	m_stylePreviewViewer->write( render.renderKeyTree(tree));

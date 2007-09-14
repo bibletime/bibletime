@@ -35,6 +35,7 @@ CConfigurationDialog::CConfigurationDialog
 	: KPageDialog(0, Qt::Dialog),
 	  m_actionCollection(actionCollection)
 {
+	
 	setCaption(i18n("Configuration"));
 	setFaceType(KPageDialog::List);
 	
@@ -83,8 +84,9 @@ CConfigurationDialog::CConfigurationDialog
 CConfigurationDialog::~CConfigurationDialog() {}
 
 /** Called if the OK button was clicked */
-void CConfigurationDialog::slotOk() {
-	//saveAccelerators();
+void CConfigurationDialog::slotOk()
+{
+	m_acceleratorsPage->save();
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
@@ -93,9 +95,10 @@ void CConfigurationDialog::slotOk() {
 }
 
 /** Called if the apply button was clicked*/
-void CConfigurationDialog::slotApply() {
-	//saveAccelerators();
+void CConfigurationDialog::slotApply()
+{
 	qDebug("CConfigurationDialog::slotApply");
+	m_acceleratorsPage->save();
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();

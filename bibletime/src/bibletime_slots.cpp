@@ -100,6 +100,7 @@ void BibleTime::slotSettingsOptions() {
 
 	dlg->exec();
 	dlg->delayedDestruct();
+	// TODO: comment out exec and destruct, use dlg->show();
 }
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
