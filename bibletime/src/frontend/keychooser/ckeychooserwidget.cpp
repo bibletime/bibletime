@@ -180,6 +180,7 @@ void CKeyChooserWidget::init() {
 
 	m_comboBox = new CKCComboBox();
 	m_comboBox->setAutoCompletion( true );
+	m_comboBox->setEditable(true);
 	m_comboBox->setInsertPolicy(QComboBox::NoInsert);
 	m_comboBox->setFocusPolicy(Qt::WheelFocus);
 

@@ -24,7 +24,8 @@
 QMap<QObject*, int> boxes;
 
 CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
-: CKeyChooser(modules, key, parent), m_layout(0) {
+	: CKeyChooser(modules, key, parent), m_layout(0)
+{
 
 	setModules(modules, false);
 	m_key = dynamic_cast<CSwordTreeKey*>(key);
@@ -40,12 +41,14 @@ CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, Q
 
 CBookKeyChooser::~CBookKeyChooser() {}
 
-void CBookKeyChooser::setKey(CSwordKey* newKey) {
+void CBookKeyChooser::setKey(CSwordKey* newKey)
+{
 	setKey(newKey, true);
 }
 
 /** Sets a new key to this keychooser */
-void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
+void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
+{
 	if (m_key != newKey) {
 		m_key = dynamic_cast<CSwordTreeKey*>(newKey);
 	}
@@ -67,7 +70,6 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	int index = 0;
 
 	m_key->root();
-	//TODO: crash
 	while( m_key->firstChild() && (depth < siblings.count()) ) {
 		const QString key = m_key->key();
 		index = (depth == 0) ? -1 : 0;
@@ -113,12 +115,14 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 }
 
 /** Returns the key of this kechooser. */
-CSwordKey* CBookKeyChooser::key() {
+CSwordKey* CBookKeyChooser::key()
+{
 	return m_key;
 }
 
 /** Sets another module to this keychooser */
-void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
+void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh)
+{
 	//m_modules.clear(); // qt3 code... but should this be AutoDelete or not? See clexiconkeychooser.cpp
 	while (!m_modules.isEmpty())
         	m_modules.takeFirst();
@@ -137,6 +141,8 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 	if (refresh && m_modules.count() && m_key) {
 		if (!m_layout) {
 			m_layout = new QHBoxLayout(this);
+			m_layout->setSpacing(0);
+			m_layout->setContentsMargins(0,0,0,0);
 		}
 
 		//delete old widgets
@@ -199,8 +205,8 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 }
 
 /** No descriptions */
-void CBookKeyChooser::adjustFont() {
-
+void CBookKeyChooser::adjustFont()
+{
 	//Make sure the entries are displayed correctly.
 	QListIterator<CKeyChooserWidget*> it(m_chooserWidgets);
 	while (it.hasNext()) {
@@ -213,13 +219,15 @@ void CBookKeyChooser::adjustFont() {
 }
 
 /** Refreshes the content. */
-void CBookKeyChooser::refreshContent() {
+void CBookKeyChooser::refreshContent()
+{
 	if (m_key) {
 		updateKey( m_key ); //refresh with current key
 	}
 }
 
-void CBookKeyChooser::setupCombo(const QString key, const int depth, const int currentItem) {
+void CBookKeyChooser::setupCombo(const QString key, const int depth, const int currentItem)
+{
 	CKeyChooserWidget* chooserWidget = m_chooserWidgets.at(depth);
 
 	const unsigned long oldOffset = m_key->getOffset();
@@ -257,7 +265,8 @@ void CBookKeyChooser::setupCombo(const QString key, const int depth, const int c
 }
 
 /** A keychooser changed. Update and emit a signal if necessary. */
-void CBookKeyChooser::keyChooserChanged(int /*newIndex*/) {
+void CBookKeyChooser::keyChooserChanged(int /*newIndex*/)
+{
 	const int activeID = boxes[const_cast<QObject*>(sender())]; //no so good code!
 
 	QStringList items;
@@ -290,7 +299,8 @@ void CBookKeyChooser::keyChooserChanged(int /*newIndex*/) {
 }
 
 /** Updates the keychoosers for the given key but emit no signal. */
-void CBookKeyChooser::updateKey(CSwordKey* key) {
+void CBookKeyChooser::updateKey(CSwordKey* key)
+{
 	setKey(key, false);
 }
 

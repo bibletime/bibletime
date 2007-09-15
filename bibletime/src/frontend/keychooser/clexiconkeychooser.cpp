@@ -36,6 +36,8 @@ m_key(dynamic_cast<CSwordLDKey*>(key)) {
 
 	//we use a layout because the key chooser should be resized to full size
 	m_layout = new QHBoxLayout(this);
+	m_layout->setSpacing(0);
+	m_layout->setContentsMargins(0,0,0,0);
 	m_layout->setDirection(QBoxLayout::LeftToRight);
 	m_layout->setSizeConstraint(QLayout::SetNoConstraint);
 

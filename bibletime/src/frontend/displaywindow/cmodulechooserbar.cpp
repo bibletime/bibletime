@@ -15,10 +15,10 @@
 #include <QList>
 #include <QDebug>
 
-#include <ktoolbar.h>
+#include <QToolBar>
 
 CModuleChooserBar::CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type, QWidget *parent)
-: KToolBar(parent),
+: QToolBar(parent),
 m_moduleType(type),
 m_idCounter(0),
 m_buttonLimit(-1) //-1 means no limit

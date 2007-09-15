@@ -40,7 +40,9 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 	//now setup the keychooser widgets
 	m_treeView = new QTreeWidget(this);
 
-	QHBoxLayout* layout = new QHBoxLayout(this);	
+	QHBoxLayout* layout = new QHBoxLayout(this);
+	layout->setSpacing(0);
+	layout->setContentsMargins(0,0,0,0);
 	layout->addWidget(m_treeView);
 	m_treeView->header()->hide();
 	

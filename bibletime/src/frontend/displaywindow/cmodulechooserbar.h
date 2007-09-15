@@ -18,9 +18,10 @@
 
 //Qt includes
 #include <QList>
+#include <QToolBar>
 
 //KDE includes
-#include <ktoolbar.h>
+//#include <ktoolbar.h>
 
 class CModuleChooserButton;
 class QWidget;
@@ -28,7 +29,7 @@ class QWidget;
 /**
   * @author The BibleTime team
   */
-class CModuleChooserBar : public KToolBar  {
+class CModuleChooserBar : public QToolBar  {
 	Q_OBJECT
 public:
 	/**

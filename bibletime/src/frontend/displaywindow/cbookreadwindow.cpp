@@ -27,6 +27,7 @@
 
 //Qt includes
 #include <QSplitter>
+#include <QToolBar>
 
 //KDE includes
 #include <kaction.h>
@@ -36,6 +37,7 @@
 #include <klocale.h>
 #include <kdeversion.h>
 #include <kmenu.h>
+//#include <ktoolbar.h>
 
 using namespace Profile;
 
@@ -43,7 +45,8 @@ CBookReadWindow::CBookReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
 
 CBookReadWindow::~CBookReadWindow() {}
 
-void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
+void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow )
+{
 	CLexiconReadWindow::applyProfileSettings(profileWindow);
 
 	const bool enable = static_cast<bool>( profileWindow->windowSettings() );
@@ -52,14 +55,16 @@ void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 	}
 };
 
-void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
+void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow )
+{
 	CLexiconReadWindow::storeProfileSettings(profileWindow);
 
 	//store information about our show tree structure button
 	profileWindow->setWindowSettings( static_cast<int>( m_treeAction->isChecked() ) );
 };
 
-void CBookReadWindow::initActions() {
+void CBookReadWindow::initActions()
+{
 	CLexiconReadWindow::initActions();
 	KActionCollection* ac = actionCollection();
 	//cleanup, not a clean oo-solution
@@ -80,7 +85,8 @@ void CBookReadWindow::initActions() {
 	CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
 };
 
-void CBookReadWindow::insertKeyboardActions( KActionCollection* const a ) {
+void CBookReadWindow::insertKeyboardActions( KActionCollection* const a )
+{
 	KAction* kaction;
 
 	kaction = new KToggleAction(
@@ -106,7 +112,8 @@ void CBookReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 }
 
 /** No descriptions */
-void CBookReadWindow::initConnections() {
+void CBookReadWindow::initConnections()
+{
 	CLexiconReadWindow::initConnections();
 
 	connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)),
@@ -118,10 +125,12 @@ void CBookReadWindow::initConnections() {
 }
 
 /** Init the view */
-void CBookReadWindow::initView() {
+void CBookReadWindow::initView()
+{
 	QSplitter* splitter = new QSplitter(this);
 
-	setMainToolBar( new KToolBar(this) );
+	setMainToolBar( new QToolBar(this) );
+	addToolBar(mainToolBar());
 	//addDockWindow(mainToolBar());
 
 	m_treeChooser = new CBookTreeChooser(modules(), key(), splitter);
@@ -131,12 +140,13 @@ void CBookReadWindow::initView() {
 
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
 	moduleChooserBar()->setButtonLimit(1);
+	addToolBar(moduleChooserBar());
 	//addDockWindow( moduleChooserBar() );
 
-	setButtonsToolBar( new KToolBar(this) );
+	setButtonsToolBar( new QToolBar(this) );
 	//addDockWindow( buttonsToolBar() );
 	setDisplaySettingsButton( new CDisplaySettingsButton( &displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
-
+	addToolBar(buttonsToolBar());
 	m_treeChooser->hide();
 
 	//splitter->setResizeMode(m_treeChooser, QSplitter::Stretch);
@@ -144,7 +154,8 @@ void CBookReadWindow::initView() {
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
 }
 
-void CBookReadWindow::initToolbars() {
+void CBookReadWindow::initToolbars()
+{
 	Q_ASSERT(m_treeAction);
 	Q_ASSERT(m_actions.backInHistory);
 
@@ -164,13 +175,14 @@ void CBookReadWindow::initToolbars() {
 		buttonsToolBar()->addAction(action);
 	}
 
-	#if KDE_VERSION_MINOR < 1
-	action->plugAccel( accel() );
-	#endif
+	//#if KDE_VERSION_MINOR < 1
+	//action->plugAccel( accel() );
+	//#endif
 }
 
 /** Is called when the action was executed to toggle the tree view. */
-void CBookReadWindow::treeToggled() {
+void CBookReadWindow::treeToggled()
+{
 	if (m_treeAction->isChecked()) {
 		m_treeChooser->show();
 	}
@@ -180,12 +192,14 @@ void CBookReadWindow::treeToggled() {
 }
 
 /** Reimplementation to take care of the tree chooser. */
-void CBookReadWindow::modulesChanged() {
+void CBookReadWindow::modulesChanged()
+{
 	CLexiconReadWindow::modulesChanged();
 	m_treeChooser->setModules(modules());
 }
 
-void CBookReadWindow::setupPopupMenu() {
+void CBookReadWindow::setupPopupMenu()
+{
 	CLexiconReadWindow::setupPopupMenu();
 
 	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), i18n("Book window"));
