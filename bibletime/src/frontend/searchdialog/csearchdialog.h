@@ -13,15 +13,13 @@
 #define CSEARCHDIALOG_H
 
 //BibleTime includes
-#include "csearchdialogpages.h"
+#include "csearchdialogareas.h"
 #include "csearchanalysis.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
-
-//Sword includes
 
 
 //Qt includes
@@ -33,7 +31,13 @@
 //forward declarations
 class QWidget;
 
+
+
+
+
 namespace Search {
+
+
 /**
   *@author The BibleTime team
   */

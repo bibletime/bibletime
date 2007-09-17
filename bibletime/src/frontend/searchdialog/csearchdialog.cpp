@@ -10,6 +10,7 @@
 
 
 #include "csearchdialog.h"
+#include "csearchdialogareas.h"
 #include "csearchanalysis.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
@@ -24,7 +25,7 @@
 //Qt includes
 #include <QString>
 #include <QWidget>
-
+#include <QMessageBox>
 
 //KDE includes
 #include <kdialog.h>
@@ -61,7 +62,7 @@ void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString
 	// moved these to after the startSearch() because
 	// the progress dialog caused them to loose focus.
 	m_staticDialog->raise();
-	m_staticDialog->setActiveWindow();
+	m_staticDialog->activateWindow();
 };
 
 CSearchDialog* const CSearchDialog::getSearchDialog()
@@ -77,7 +78,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 	setButtons(KDialog::Close|KDialog::User1);
 	
 	//setWFlags( windowFlags() | Qt::WStyle_MinMax );
-	setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
+	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 
 	m_searcher.connectFinished( this, SLOT(searchFinished()));
 
@@ -88,7 +89,8 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 CSearchDialog::~CSearchDialog()
 {
 	// Added code for saving last size of dialog
-	saveDialogSize("CSearchDialog");
+	KConfigGroup cg = CBTConfig::getConfig()->group("CSearchDialog"); 
+	saveDialogSize( cg );
 }
 
 /** Starts the search with the set modules and the set search text. */
@@ -202,13 +204,15 @@ void CSearchDialog::setSearchText( const QString searchText )
 /** Initializes this object. */
 void CSearchDialog::initView()
 {
-	setButtonTip(User1, CResMgr::searchdialog::searchButton::tooltip);
-	QVBoxLayout *box = new QVBoxLayout( plainPage(), 0, spacingHint() );
+	setMainWidget(new QWidget(this));
+	setButtonToolTip(User1, CResMgr::searchdialog::searchButton::tooltip);
+	QVBoxLayout *box = new QVBoxLayout( mainWidget());
+	mainWidget()->setLayout(box);
 
-	m_searchOptionsPage = new Options::CSearchOptionsArea(plainPage());
+	m_searchOptionsPage = new Options::CSearchOptionsArea(mainWidget());
 	box->addWidget( m_searchOptionsPage );
 
-	m_searchResultPage = new Result::CSearchResultArea(plainPage());
+	m_searchResultPage = new Result::CSearchResultArea(mainWidget());
 	box->addWidget( m_searchResultPage );
 
 	// The dialog doesn't resize properly if the minimum size of the
@@ -220,9 +224,10 @@ void CSearchDialog::initView()
 	int w = m_searchOptionsPage->minimumWidth();
 	int h = m_searchOptionsPage->minimumHeight() +
 		m_searchResultPage->minimumHeight();
-	plainPage()->setMinimumSize(w+10, h+100);
+	mainWidget()->setMinimumSize(w+10, h+100);
 	// Added code for loading last size of dialog
-	setInitialSize(configDialogSize("CSearchDialog"));
+	//setInitialSize(configDialogSize("CSearchDialog"));
+	restoreDialogSize( CBTConfig::getConfig()->group("CSearchDialog") );
 }
 
 void CSearchDialog::searchFinished() {
@@ -235,7 +240,7 @@ void CSearchDialog::searchFinished() {
 		m_searchResultPage->reset();
 	}
 	m_staticDialog->raise();
-	m_staticDialog->setActiveWindow();
+	m_staticDialog->activateWindow();
 }
 
 void CSearchDialog::showModulesSelector() {

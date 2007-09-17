@@ -14,7 +14,7 @@
 
 //BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "csearchdialogpages.h"
+#include "csearchdialogareas.h"
 
 //Qt includes
 #include <QLabel>
