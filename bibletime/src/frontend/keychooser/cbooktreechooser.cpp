@@ -6,16 +6,11 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
-
-
 #include "cbooktreechooser.h"
-#include "cbooktreechooser.moc"
 
 #include "backend/keys/cswordtreekey.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "frontend/cbtconfig.h"
-
 
 #include <QHBoxLayout>
 #include <QTreeWidget>
@@ -68,15 +63,18 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	
 	const QString key = m_key->key(); //key as text, path
 	
-	QList<QTreeWidgetItem*> itemlist = m_treeView->findItems(key,
-		(Qt::MatchRecursive | Qt::MatchWrap | Qt::MatchCaseSensitive | Qt::MatchFixedString),
-		1); //find the key text in items
-	//there should be at most one match, keys are unique
 	QTreeWidgetItem* matching_item = m_treeView->topLevelItem(0);
-	if (itemlist.count()) {
-		matching_item = itemlist[0];
+	
+	QTreeWidgetItemIterator it(m_treeView);
+	while (*it) {
+		if ((*it)->text(1) == key)
+		{
+			matching_item = (*it);
+			break;
+		}
+		++it;
 	}
-
+	
 	m_treeView->setCurrentItem( matching_item );
 	m_treeView->scrollToItem(matching_item);
 
@@ -124,17 +122,15 @@ void CBookTreeChooser::adjustFont() {
 /** Refreshes the content. Inherited from ckeychooser. */
 void CBookTreeChooser::refreshContent() {
 	if (m_key) {
-		updateKey( m_key ); //refresh with current key
+		updateKey(m_key); //refresh with current key
 	}
 }
 
 
 /** Slot for signal when item is selected by user. */
 void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
-	
 	//set the key with text
-	m_key->key( (item->data(1, Qt::DisplayRole)).toByteArray().data() );
-
+	m_key->key( item->text(1));
 	//tell possible listeners about the change
 	emit keyChanged(m_key);
 }

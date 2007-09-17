@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CBOOKKEYCHOOSER_H
 #define CBOOKKEYCHOOSER_H
 
@@ -25,8 +23,6 @@ class CSwordTreeKey;
 namespace sword {
 	class TreeKeyIdx;
 }
-
-class QHBoxLayout;
 
 /** The keychooser implementation for books.
   * @author The BibleTime team

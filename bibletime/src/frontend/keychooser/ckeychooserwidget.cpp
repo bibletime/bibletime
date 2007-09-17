@@ -21,6 +21,7 @@
 #include <QHBoxLayout>
 #include <QComboBox>
 #include <QLineEdit>
+#include <QDebug>
 
 CKCComboBox::CKCComboBox()
 : QComboBox() {
