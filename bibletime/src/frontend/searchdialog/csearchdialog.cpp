@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -22,9 +22,12 @@
 #include "util/directoryutil.h"
 
 //Qt includes
+#include <QString>
+#include <QWidget>
 
 
 //KDE includes
+#include <kdialog.h>
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
@@ -33,7 +36,8 @@ namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
 
-void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString& searchText, QWidget* parentDialog) {
+void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString& searchText, QWidget* parentDialog)
+{
 	if (!m_staticDialog) {
 		m_staticDialog = new CSearchDialog(parentDialog);
 	};
@@ -60,7 +64,8 @@ void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString
 	m_staticDialog->setActiveWindow();
 };
 
-CSearchDialog* const CSearchDialog::getSearchDialog() {
+CSearchDialog* const CSearchDialog::getSearchDialog()
+{
 	Q_ASSERT(m_staticDialog);
 	return m_staticDialog;
 };
@@ -80,13 +85,15 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 	initConnections();
 }
 
-CSearchDialog::~CSearchDialog(){
+CSearchDialog::~CSearchDialog()
+{
 	// Added code for saving last size of dialog
 	saveDialogSize("CSearchDialog");
 }
 
 /** Starts the search with the set modules and the set search text. */
-void CSearchDialog::startSearch() {
+void CSearchDialog::startSearch()
+{
 	QString searchText(m_searchOptionsPage->searchText());
 
 	if (searchText.isEmpty()) {
@@ -142,7 +149,8 @@ void CSearchDialog::startSearch() {
 }
 
 /** Starts the search with the given module list and given search text. */
-void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QString& searchText) {
+void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QString& searchText)
+{
 	m_searchResultPage->reset();
 	m_searchOptionsPage->reset();
 	setModules(modules);
@@ -152,22 +160,26 @@ void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QStri
 }
 
 /** Returns the list of used modules. */
-const ListCSwordModuleInfo CSearchDialog::modules() {
+const ListCSwordModuleInfo CSearchDialog::modules()
+{
 	return m_searchOptionsPage->modules();
 }
 
 /** Sets the list of modules for the search. */
-void CSearchDialog::setModules( const ListCSwordModuleInfo modules ) {
+void CSearchDialog::setModules( const ListCSwordModuleInfo modules )
+{
 	m_searchOptionsPage->setModules(modules);
 	resize( sizeHint() );
 }
 
 /** Returns the search text which is set currently. */
-const QString CSearchDialog::searchText() {
+const QString CSearchDialog::searchText()
+{
 	return m_searchOptionsPage->searchText();
 }
 
-sword::ListKey CSearchDialog::searchScope() {
+sword::ListKey CSearchDialog::searchScope()
+{
 	return m_searchOptionsPage->searchScope();
 };
 
@@ -182,17 +194,18 @@ sword::ListKey CSearchDialog::searchScope() {
 // }
 
 /** Returns the search text which is used for the search. */
-void CSearchDialog::setSearchText( const QString searchText ) {
+void CSearchDialog::setSearchText( const QString searchText )
+{
 	m_searchOptionsPage->setSearchText(searchText);
 }
 
 /** Initializes this object. */
-void CSearchDialog::initView() {
+void CSearchDialog::initView()
+{
 	setButtonTip(User1, CResMgr::searchdialog::searchButton::tooltip);
+	QVBoxLayout *box = new QVBoxLayout( plainPage(), 0, spacingHint() );
 
-   Q3VBoxLayout *box = new Q3VBoxLayout( plainPage(), 0, spacingHint() );
-
-   m_searchOptionsPage = new Options::CSearchOptionsArea(plainPage());
+	m_searchOptionsPage = new Options::CSearchOptionsArea(plainPage());
 	box->addWidget( m_searchOptionsPage );
 
 	m_searchResultPage = new Result::CSearchResultArea(plainPage());
@@ -207,7 +220,7 @@ void CSearchDialog::initView() {
 	int w = m_searchOptionsPage->minimumWidth();
 	int h = m_searchOptionsPage->minimumHeight() +
 		m_searchResultPage->minimumHeight();
-   plainPage()->setMinimumSize(w+10, h+100);
+	plainPage()->setMinimumSize(w+10, h+100);
 	// Added code for loading last size of dialog
 	setInitialSize(configDialogSize("CSearchDialog"));
 }
