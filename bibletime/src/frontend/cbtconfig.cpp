@@ -328,28 +328,28 @@ const bool CBTConfig::get
 {
 	//special behaviour for the KTipDialog class
 	KConfigGroup cg = CBTConfig::getConfig()->group( (ID == CBTConfig::tips) ? "TipOfDay" : "bools" );
-	return cg.config()->readBoolEntry(getKey(ID),getDefault(ID));
+	return cg.readEntry(getKey(ID),getDefault(ID));
 }
 
 const int CBTConfig::get
 	( const CBTConfig::ints ID)
 {
 	KConfigGroup cg = CBTConfig::getConfig()->group("ints");
-	return cg.config()->readNumEntry(getKey(ID), getDefault(ID));
+	return cg.readEntry(getKey(ID), getDefault(ID));
 }
 
 const QList<int> CBTConfig::get
 	( const CBTConfig::intLists ID )
 {
 	KConfigGroup cg = CBTConfig::getConfig()->group("intlists");
-	return cg.config()->readIntListEntry(getKey(ID));
+	return cg.readEntry(getKey(ID), getDefault(ID));
 }
 
 const QStringList CBTConfig::get
 	( const CBTConfig::stringLists ID )
 {
 	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
-	return cg.config()->readListEntry(getKey(ID));
+	return cg.readEntry(getKey(ID), getDefault(ID));
 }
 
 const CBTConfig::StringMap CBTConfig::get
@@ -439,8 +439,10 @@ void CBTConfig::set
 void CBTConfig::set
 	(const CBTConfig::bools ID,const  bool value )
 {
+	//qDebug("CBTConfig::set bools");
 	//special behaviour to work with KTipDialog class of KDE
 	KConfigGroup cg = CBTConfig::getConfig()->group((ID == CBTConfig::tips) ? "TipOfDay" : "bools");
+	//qDebug() << cg.group();
 	cg.writeEntry(getKey(ID), value);
 }
 
