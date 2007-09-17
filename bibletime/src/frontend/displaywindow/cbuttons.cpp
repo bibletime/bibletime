@@ -59,9 +59,9 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 
 void CDisplaySettingsButton::optionToggled(QAction* action) {
 	//m_popup->setItemChecked( ID, !(m_popup->isItemChecked(ID)));
-	qDebug("display settings button toggled");
+	qDebug("display settings option toggled");
 	qDebug() << "action: " << action;
-	action->toggle();
+	//action->toggle();
 	//if ( action->text().isEmpty() )
 	//	m_dict[action->text()] =  action->isChecked();
 	emit sigChanged();
