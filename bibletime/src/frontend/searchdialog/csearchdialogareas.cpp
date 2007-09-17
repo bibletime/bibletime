@@ -188,23 +188,23 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
 **********  CSearchDialogResultPage *********
 ********************************************/
 
-CSearchResultPage::CSearchResultPage(QWidget *parent, const char *name ) : 
+CSearchResultArea::CSearchResultArea(QWidget *parent, const char *name ) : 
 		SearchResultsForm(parent, name) {
 	initView();
 	initConnections();
 }
 
-CSearchResultPage::~CSearchResultPage() {}
+CSearchResultArea::~CSearchResultArea() {}
 
 /** Initializes the view of this widget. */
-void CSearchResultPage::initView() {
+void CSearchResultArea::initView() {
 	Q3VBoxLayout* frameLayout = new Q3VBoxLayout(m_displayFrame, 0, 6, "frameLayout");
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
 }
 
 /** Sets the modules which contain the result of each. */
-void CSearchResultPage::setSearchResult(ListCSwordModuleInfo modules) {
+void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules) {
    const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 	reset(); //clear current modules
 
@@ -226,7 +226,7 @@ void CSearchResultPage::setSearchResult(ListCSwordModuleInfo modules) {
 
 
 /** Resets the current list of modules and the displayed list of found entries. */
-void CSearchResultPage::reset() {
+void CSearchResultArea::reset() {
 	m_moduleListBox->clear();
 	m_resultListBox->clear();
 	m_previewDisplay->setText(QString::null);
@@ -237,7 +237,7 @@ void CSearchResultPage::reset() {
 
 
 /** Update the preview of the selected key. */
-void CSearchResultPage::updatePreview(const QString& key) {
+void CSearchResultArea::updatePreview(const QString& key) {
 	using namespace Rendering;
 
 	CSwordModuleInfo* module = m_moduleListBox->activeModule();
@@ -316,7 +316,7 @@ void CSearchResultPage::updatePreview(const QString& key) {
 	}
 }
 
-QStringList CSearchResultPage::QueryParser(const QString& queryString) {
+QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 	QString token;
 	QStringList tokenList;
 	int cnt, pos;
@@ -456,7 +456,7 @@ QStringList CSearchResultPage::QueryParser(const QString& queryString) {
 	return(tokenList);
 }
 
-const QString CSearchResultPage::highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/) {
+const QString CSearchResultArea::highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/) {
 	QString ret = content;
 
 	//const bool cs = (searchFlags & CSwordModuleSearch::caseSensitive);
@@ -583,7 +583,7 @@ const QString CSearchResultPage::highlightSearchedText(const QString& content, c
 };
 
 /** Initializes the signal slot conections of the child widgets, */
-void CSearchResultPage::initConnections() {
+void CSearchResultArea::initConnections() {
 	connect(m_resultListBox, SIGNAL(keySelected(const QString&)),
 			this, SLOT(updatePreview(const QString&)));
 	connect(m_moduleListBox, SIGNAL(moduleSelected(CSwordModuleInfo*)),
@@ -597,7 +597,7 @@ void CSearchResultPage::initConnections() {
 }
 
 /** Shows a dialog with the search analysis of the current search. */
-void CSearchResultPage::showAnalysis() {
+void CSearchResultArea::showAnalysis() {
 	Analysis::CSearchAnalysisDialog dlg(m_modules, this);
 	dlg.exec();
 }
@@ -608,23 +608,23 @@ void CSearchResultPage::showAnalysis() {
 
 	namespace Options {
 
-CSearchOptionsPage::CSearchOptionsPage(QWidget *parent, const char *name ) :
+CSearchOptionsArea::CSearchOptionsArea(QWidget *parent, const char *name ) :
 	SearchOptionsForm(parent,name) {
 	initView();
 	readSettings();
 }
 
-CSearchOptionsPage::~CSearchOptionsPage() {
+CSearchOptionsArea::~CSearchOptionsArea() {
 	saveSettings();
 }
 
 /** Returns the search text set in this page. */
-const QString CSearchOptionsPage::searchText() {
+const QString CSearchOptionsArea::searchText() {
 	return m_searchTextCombo->currentText();
 }
 
 /** Sets the search text used in the page. */
-void CSearchOptionsPage::setSearchText(const QString& text) {
+void CSearchOptionsArea::setSearchText(const QString& text) {
 	bool found = false;
 	int i = 0;
 	for (i = 0; !found && i < m_searchTextCombo->count(); ++i) {
@@ -646,7 +646,7 @@ void CSearchOptionsPage::setSearchText(const QString& text) {
 }
 
 /** Initializes this page. */
-void CSearchOptionsPage::initView() {
+void CSearchOptionsArea::initView() {
 	connect( m_searchTextCombo, SIGNAL(activated( const QString& )),
 				m_searchTextCombo, SLOT( addToHistory( const QString& ))
 			);
@@ -677,7 +677,7 @@ void CSearchOptionsPage::initView() {
 }
 
 /** Sets the modules used by the search. */
-void CSearchOptionsPage::setModules( ListCSwordModuleInfo modules ) {
+void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 	QString t = i18n("Searching in: ");
 
 	m_modules.clear(); //remove old modules
@@ -702,7 +702,7 @@ void CSearchOptionsPage::setModules( ListCSwordModuleInfo modules ) {
 }
 
 /** Opens the modules chooser dialog. */
-void CSearchOptionsPage::chooseModules() {
+void CSearchOptionsArea::chooseModules() {
 	CModuleChooserDialog* dlg = new CModuleChooserDialog(this, modules());
 	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
 			this, SLOT(setModules(ListCSwordModuleInfo)));
@@ -710,18 +710,18 @@ void CSearchOptionsPage::chooseModules() {
 }
 
 /** Returns the list of used modules. */
-const ListCSwordModuleInfo CSearchOptionsPage::modules() {
+const ListCSwordModuleInfo CSearchOptionsArea::modules() {
 	return m_modules;
 }
 
 /** Sets all options back to the default. */
-void CSearchOptionsPage::reset() {
+void CSearchOptionsArea::reset() {
 	m_rangeChooserCombo->setCurrentItem(0); //no scope
 	m_searchTextCombo->clearEdit();
 }
 
 /** Reads the settings for the searchdialog from disk. */
-void CSearchOptionsPage::saveSettings() {
+void CSearchOptionsArea::saveSettings() {
 	CBTConfig::set
 		(CBTConfig::searchCompletionTexts, m_searchTextCombo->completionObject()->items());
 	CBTConfig::set
@@ -729,19 +729,19 @@ void CSearchOptionsPage::saveSettings() {
 }
 
 /** Reads the settings of the last searchdialog session. */
-void CSearchOptionsPage::readSettings() {
+void CSearchOptionsArea::readSettings() {
 	m_searchTextCombo->completionObject()->setItems( CBTConfig::get
 				(CBTConfig::searchCompletionTexts) );
 	m_searchTextCombo->setHistoryItems( CBTConfig::get
 											(CBTConfig::searchTexts) );
 }
 
-void CSearchOptionsPage::aboutToShow() {
+void CSearchOptionsArea::aboutToShow() {
 	m_searchTextCombo->setFocus();
 }
 
 /** No descriptions */
-void CSearchOptionsPage::setupRanges() {
+void CSearchOptionsArea::setupRanges() {
 	CRangeChooserDialog* chooser = new CRangeChooserDialog(this);
 	chooser->exec();
 
@@ -749,7 +749,7 @@ void CSearchOptionsPage::setupRanges() {
 }
 
 /** No descriptions */
-void CSearchOptionsPage::syntaxHelp() {
+void CSearchOptionsArea::syntaxHelp() {
 	QString syntax = i18n (
 			"<p>Enter search terms separated by spaces.  By default the search "
 			"function will return results that match any of the search terms (OR). "
@@ -775,7 +775,7 @@ void CSearchOptionsPage::syntaxHelp() {
 
 
 /** refreshes the listof ranges and the range combobox. */
-void CSearchOptionsPage::refreshRanges() {
+void CSearchOptionsArea::refreshRanges() {
 	//the first two options are fixed, the others can be edited using the "Setup ranges" button.
 	m_rangeChooserCombo->clear();
 	m_rangeChooserCombo->insertItem(i18n("No search scope"));
@@ -791,7 +791,7 @@ void CSearchOptionsPage::refreshRanges() {
 }
 
 /** Returns the selected search scope if a search scope was selected. */
-sword::ListKey CSearchOptionsPage::searchScope() {
+sword::ListKey CSearchOptionsArea::searchScope() {
 	if (m_rangeChooserCombo->currentItem() > 0) { //is not "no scope"
 		CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
 		
@@ -805,9 +805,9 @@ sword::ListKey CSearchOptionsPage::searchScope() {
 }
 
 /*!
-    \fn CSearchOptionsPage::hasSearchScope()
+    \fn CSearchOptionsArea::hasSearchScope()
  */
-bool CSearchOptionsPage::hasSearchScope() {
+bool CSearchOptionsArea::hasSearchScope() {
 	return (searchScope().Count() > 0);
 }
 

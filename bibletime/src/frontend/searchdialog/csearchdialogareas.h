@@ -135,11 +135,11 @@ private:
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
   */
-class CSearchResultPage : public QWidget, Ui::SearchResultsForm {
+class CSearchResultArea : public QWidget, Ui::SearchResultsForm {
 	Q_OBJECT
 public:
-	CSearchResultPage(QWidget *parent=0, const char *name=0);
-	~CSearchResultPage();
+	CSearchResultArea(QWidget *parent=0, const char *name=0);
+	~CSearchResultArea();
 	/**
 	* Sets the modules which contain the result of each.
 	*/
@@ -191,11 +191,11 @@ protected slots: // Protected slots
 	
 	namespace Options {
 		
-class CSearchOptionsPage : public QWidget, Ui::SearchOptionsForm  {
+class CSearchOptionsArea : public QWidget, Ui::SearchOptionsForm  {
 	Q_OBJECT
 public:
-	CSearchOptionsPage(QWidget *parent=0, const char *name=0);
-	~CSearchOptionsPage();
+	CSearchOptionsArea(QWidget *parent=0, const char *name=0);
+	~CSearchOptionsArea();
 	/**
 	* Sets the search text used in the page.
 	*/

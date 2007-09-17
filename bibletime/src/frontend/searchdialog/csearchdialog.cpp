@@ -22,22 +22,7 @@
 #include "util/directoryutil.h"
 
 //Qt includes
-#include <q3hbox.h>
-#include <q3vbox.h>
-#include <q3ptrlist.h>
-#include <qpainter.h>
-#include <qlayout.h>
-#include <qmap.h>
-#include <qlineedit.h>
-#include <q3textedit.h>
-#include <qlabel.h>
-#include <qsizepolicy.h>
-#include <qpushbutton.h>
-#include <q3header.h>
-#include <qregexp.h>
-#include <qmessagebox.h>
-//Added by qt3to4:
-#include <Q3VBoxLayout>
+
 
 //KDE includes
 #include <kapplication.h>
@@ -81,9 +66,12 @@ CSearchDialog* const CSearchDialog::getSearchDialog() {
 };
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-: KDialogBase(Plain, i18n("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, i18n("Search")) {
-
-	setWFlags( getWFlags() | Qt::WStyle_MinMax );
+//: KDialogBase(Plain, i18n("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, i18n("Search"))
+	:KDialog(parent)
+{
+	setButtons(KDialog::Close|KDialog::User1);
+	
+	//setWFlags( windowFlags() | Qt::WStyle_MinMax );
 	setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 
 	m_searcher.connectFinished( this, SLOT(searchFinished()));
@@ -204,10 +192,10 @@ void CSearchDialog::initView() {
 
    Q3VBoxLayout *box = new Q3VBoxLayout( plainPage(), 0, spacingHint() );
 
-   m_searchOptionsPage = new Options::CSearchOptionsPage(plainPage());
+   m_searchOptionsPage = new Options::CSearchOptionsArea(plainPage());
 	box->addWidget( m_searchOptionsPage );
 
-	m_searchResultPage = new Result::CSearchResultPage(plainPage());
+	m_searchResultPage = new Result::CSearchResultArea(plainPage());
 	box->addWidget( m_searchResultPage );
 
 	// The dialog doesn't resize properly if the minimum size of the

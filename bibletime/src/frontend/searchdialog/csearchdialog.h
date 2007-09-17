@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -25,19 +25,13 @@
 
 
 //Qt includes
-#include <qwidget.h>
 #include <QString>
-#include <q3canvas.h>
-#include <q3dict.h>
-#include <qtooltip.h>
 
 //KDE includes
 #include <kdialog.h>
 
 //forward declarations
-
-class QLineEdit;
-class Q3TextEdit;
+class QWidget;
 
 namespace Search {
 /**
@@ -51,7 +45,7 @@ public:
 
 protected:
 	friend class Analysis::CSearchAnalysis;
-	friend class Result::CSearchResultPage;
+	friend class Result::CSearchResultArea;
 	friend class BibleTime;
 
 	/**
@@ -125,8 +119,8 @@ protected slots:
 	virtual void slotClose();
 
 private:
-	Result::CSearchResultPage* m_searchResultPage;
-	Options::CSearchOptionsPage* m_searchOptionsPage;
+	Result::CSearchResultArea* m_searchResultPage;
+	Options::CSearchOptionsArea* m_searchOptionsPage;
 	
 	CSwordModuleSearch m_searcher;
 };
