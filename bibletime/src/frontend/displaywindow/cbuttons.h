@@ -21,8 +21,8 @@
 #include <QToolButton>
 
 
-class KMenu;
-
+//class KMenu;
+class QMenu;
 
 /** This class manages the display options of the selected modules.
   * @author The BibleTime team
@@ -63,7 +63,7 @@ protected:
 
 	QHash<QString, int> m_dict;
 
-	KMenu* m_popup;
+	QMenu* m_popup;
 
 	int populateMenu();
 	bool isOptionAvailable( const CSwordModuleInfo::FilterTypes option);

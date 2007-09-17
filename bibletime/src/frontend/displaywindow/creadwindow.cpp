@@ -83,6 +83,7 @@ void CReadWindow::lookup( CSwordKey* newKey ) {
 		return;
 	}
 
+	//next-TODO: how about options?
 	Q_ASSERT(modules().first()->getDisplay());
 	CEntryDisplay* display = modules().first()->getDisplay();
 	if (display) { //do we have a display object?

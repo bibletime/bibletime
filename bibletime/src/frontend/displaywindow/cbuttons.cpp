@@ -19,10 +19,11 @@
 #include <QToolTip>
 #include <QToolButton>
 #include <QHash>
+#include <QMenu>
 
 //KDE includes
 #include <klocale.h>
-#include <kmenu.h>
+//#include <kmenu.h>
 
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const ListCSwordModuleInfo& useModules,QWidget *parent )
 : QToolButton(parent) {
@@ -33,7 +34,7 @@ CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *di
 	m_moduleSettings = moduleSettings;
 	m_modules = useModules;
 
-	m_popup = new KMenu(this);
+	m_popup = new QMenu(this);
 	setMenu(m_popup);
 	//setPopupDelay(0001); //Fix, O only opens menu on mouse release or move
 	setPopupMode(QToolButton::InstantPopup);
@@ -58,12 +59,9 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 
 
 void CDisplaySettingsButton::optionToggled(QAction* action) {
-	//m_popup->setItemChecked( ID, !(m_popup->isItemChecked(ID)));
 	qDebug("display settings option toggled");
-	qDebug() << "action: " << action;
-	//action->toggle();
-	//if ( action->text().isEmpty() )
-	//	m_dict[action->text()] =  action->isChecked();
+	//qDebug() << "action: " << action;
+	
 	emit sigChanged();
 }
 
