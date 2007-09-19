@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -27,24 +27,12 @@
 
 
 //forward declarations
-class QLabel;
-class QCheckBox;
-class QPushButton;
-class QRadioButton;
+class QPoint;
+class QMenu;
+class QAction;
+class QStringList;
 
-class KComboBox;
-class KActionMenu;
-class KAction;
-class KHistoryCombo;
-class KProgress;
-class KMenu;
-
-class CReadDisplay;
 class StrongsResultClass;
-
-//to be removed
-class Q3ListViewItem;
-
 
 
 namespace Search {
@@ -75,7 +63,7 @@ protected: // Protected methods
 	*/
 	void initConnections();
 
-   void setupStrongsResults(CSwordModuleInfo* module, Q3ListViewItem* parent, const QString& searchedText);
+   void setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent, const QString& searchedText);
 
 protected slots: // Protected slots
 	/**
@@ -94,7 +82,7 @@ protected slots: // Protected slots
 	/**
 	* This slot opens the popup menu at the given position
 	*/
-	void showPopup(QTreeWidget*, Q3ListViewItem*, const QPoint&);
+	void showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint&);
 	/**
 	* Appends the whole search result to the printer queue.
 	*/
@@ -115,29 +103,29 @@ signals:
 
 private:
 	struct {
-		KActionMenu* saveMenu;
+		QMenu* saveMenu;
 		struct {
-			KAction* result;
-			KAction* resultWithText;
+			QAction* result;
+			QAction* resultWithText;
 		}
 		save;
 
-		KActionMenu* printMenu;
+		QMenu* printMenu;
 		struct {
-			KAction* result;
+			QAction* result;
 		}
 		print;
 
-		KActionMenu* copyMenu;
+		QMenu* copyMenu;
 		struct {
-			KAction* result;
-			KAction* resultWithText;
+			QAction* result;
+			QAction* resultWithText;
 		}
 		copy;
 
 	} m_actions;
 	
-	KMenu* m_popup;
+	QMenu* m_popup;
 	
 	StrongsResultClass* strongsResults;
 };

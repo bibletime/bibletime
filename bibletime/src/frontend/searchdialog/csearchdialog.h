@@ -32,11 +32,7 @@
 class QWidget;
 
 
-
-
-
 namespace Search {
-
 
 /**
   *@author The BibleTime team
@@ -58,7 +54,7 @@ protected:
 	static CSearchDialog* const getSearchDialog();
 
 	/**
-	* The cinstructor of the dialog. It's protected because you should use the static public function openDialog.
+	* The constructor of the dialog. It's protected because you should use the static public function openDialog.
 	* The dialog destroys itself if it was closed.
 	*/
 	CSearchDialog(QWidget *parent);
@@ -70,7 +66,7 @@ protected:
 	void initView();
 	/**
 	* Starts the search with the given module list and given search text.
-	* Doesn't wait for the start button press, starts immediatly
+	* Doesn't wait for the start button press, starts immediately
 	*/
 	void startSearch( const ListCSwordModuleInfo modules, const QString& searchText);
 	/**

@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -31,13 +31,14 @@ class KActionMenu;
 class KAction;
 class KHistoryCombo;
 class KProgress;
-class KPopupMenu;
+//class KPopupMenu;
+class QMenu;
 
 class CReadDisplay;
 
 //to be removed
-class Q3ListViewItem;
-class Q3DragObject;
+//class Q3ListViewItem;
+//class Q3DragObject;
 
 namespace Search {
 	namespace Result {
@@ -45,7 +46,7 @@ namespace Search {
 class CSearchResultView  : public QTreeWidget {
 	Q_OBJECT
 public:
-	CSearchResultView(QWidget* parent, const char* name = 0);
+	CSearchResultView(QWidget* parent);
 	virtual ~CSearchResultView();
 	/** Returns the module which is currently used. */
 	CSwordModuleInfo* const module();
@@ -56,7 +57,8 @@ protected: // Protected methods
 	*/
 	void initView();
 	void initConnections();
-	virtual Q3DragObject* dragObject();
+	//not in qt4:
+	//virtual Q3DragObject* dragObject();
 
 public slots: // Public slots
 	void saveItems();
@@ -71,40 +73,41 @@ public slots: // Public slots
 	/**
 	* Reimplementation to show the popup menu.
 	*/
-	virtual void showPopup(QTreeWidget*, Q3ListViewItem* i, const QPoint& point);
+	virtual void showPopup(QTreeWidget*, int* i, const QPoint& point);
 
 protected slots: // Protected slots
 	void printItems();
 	/**
-	* Is connected to the signal executed, which is emitted when a mew item was chosen.
+	* Is connected to the signal executed, which is emitted when a new item was chosen.
 	*/
-	void executed(Q3ListViewItem*);
+	void executed(QTreeWidgetItem*);
 
 private:
+	//TODO: convert KActionMenu to QMenu?
 	struct {
-		KActionMenu* saveMenu;
+		QMenu* saveMenu;
 		struct {
-			KAction* result;
-			KAction* resultWithText;
+			QAction* result;
+			QAction* resultWithText;
 		}
 		save;
 
-		KActionMenu* printMenu;
+		QMenu* printMenu;
 		struct {
-			KAction* result;
+			QAction* result;
 		}
 		print;
 
-		KActionMenu* copyMenu;
+		QMenu* copyMenu;
 		struct {
-			KAction* result;
-			KAction* resultWithText;
+			QAction* result;
+			QAction* resultWithText;
 		}
 		copy;
 	}
 	m_actions;
 	
-	KPopupMenu* m_popup;
+	QMenu* m_popup;
 	CSwordModuleInfo* m_module;
 
 signals: // Signals

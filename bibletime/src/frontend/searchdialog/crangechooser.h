@@ -22,16 +22,18 @@
 
 
 //Qt includes
-#include <qwidget.h>
-#include <QString>
-#include <q3canvas.h>
-#include <q3dict.h>
-#include <qtooltip.h>
+//#include <qwidget.h>
+//#include <QString>
+//#include <q3canvas.h>
+//#include <q3dict.h>
+//#include <qtooltip.h>
+
+//#include <QListWidget>
 
 //KDE includes
 #include <kdialog.h>
-#include <kdialogbase.h>
-#include <klistview.h>
+//#include <kdialogbase.h>
+//#include <klistview.h>
 
 //forward declarations
 class CSearchAnalysisItem;
@@ -39,12 +41,16 @@ class CSearchAnalysisLegendItem;
 class CSearchAnalysis;
 class CSearchAnalysisView; 
 
-class Q3TextEdit;
+class QTextEdit;
+class QPushButton;
+class QLineEdit;
+class QListWidget;
+class QListWidgetItem;
 
 namespace Search {
 	namespace Options {
 	
-class CRangeChooserDialog : public KDialogBase {
+class CRangeChooserDialog : public KDialog {
 	Q_OBJECT
 public:
 	CRangeChooserDialog(QWidget* parentDialog);
@@ -53,7 +59,7 @@ public:
 protected: // Protected methods
 class RangeItem : public KListViewItem {
 public:
-		RangeItem(Q3ListView*, Q3ListViewItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
+		RangeItem(QListWidget*, QListWidgetItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
 		~RangeItem();
 		const QString& range();
 		const QString caption();
@@ -77,7 +83,7 @@ protected slots: // Protected slots
 	* Adds a new range to the list.
 	*/
 	void addNewRange();
-	void editRange(Q3ListViewItem*);
+	void editRange(QListWidgetItem*);
 	/**
 	* Parses the entered text and prints out the result in the list box below the edit area.
 	*/
@@ -92,10 +98,10 @@ protected slots: // Protected slots
 	virtual void slotOk();
 
 private:
-	KListView* m_rangeList;
-	KListView* m_resultList;
+	QListWidget* m_rangeList;
+	QListWidget* m_resultList;
 	QLineEdit* m_nameEdit;
-	Q3TextEdit* m_rangeEdit;
+	QTextEdit* m_rangeEdit;
 	QPushButton* m_newRangeButton;
 	QPushButton* m_deleteRangeButton;
 };

@@ -24,21 +24,23 @@
 
 
 //Qt includes
-#include <qwidget.h>
-#include <QString>
-#include <q3canvas.h>
-#include <q3dict.h>
-#include <qtooltip.h>
+//#include <qwidget.h>
+//#include <QString>
+//#include <q3canvas.h>
+//#include <q3dict.h>
+//#include <qtooltip.h>
+
+#include <QListWidget>
 
 //KDE includes
 #include <kdialog.h>
-#include <kdialogbase.h>
+//#include <kdialogbase.h>
 #include <klistview.h>
 
 namespace Search {
 	namespace Options {
 	
-class CModuleChooser : public KListView, public CPointers {
+class CModuleChooser : public QListWidget, public CPointers {
 	Q_OBJECT
 public:
 	class ModuleCheckBoxItem : virtual public Q3CheckListItem {
@@ -82,7 +84,7 @@ protected: // Protected methods
 	void initTree();
 };
 
-class CModuleChooserDialog : public KDialogBase  {
+class CModuleChooserDialog : public KDialog  {
 	Q_OBJECT
 public:
 	CModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);

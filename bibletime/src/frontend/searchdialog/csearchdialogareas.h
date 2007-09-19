@@ -21,29 +21,14 @@
 #include "ui_searchresultsform.h" // uic generated
 
 //Qt includes
-#include <qwidget.h>
-#include <q3vgroupbox.h>
-//Added by qt3to4:
-#include <QLabel>
-#include <Q3ValueList>
-
-//KDE includes
-//#include <klistview.h>
+#include <QList>
+#include <QStringList>
+#include <QWidget>
+#include <QSize>
 
 //forward declarations
-class QLabel;
-class QCheckBox;
-class QPushButton;
-class QRadioButton;
 
-class KComboBox;
-class KActionMenu;
-class KAction;
-class KHistoryCombo;
-class KProgress;
-class KPopupMenu;
 
-class CReadDisplay;
 
 namespace Search {
 	namespace Result {
@@ -86,7 +71,7 @@ private:
 	QStringList keyNameList;
 };
 
-typedef Q3ValueList<StrongsResult> StrongsResultList;
+typedef QList<StrongsResult> StrongsResultList;
 
 /**
 * This class is used to keep track of the text strongs results.
@@ -138,7 +123,7 @@ private:
 class CSearchResultArea : public QWidget, Ui::SearchResultsForm {
 	Q_OBJECT
 public:
-	CSearchResultArea(QWidget *parent=0, const char *name=0);
+	CSearchResultArea(QWidget *parent=0);
 	~CSearchResultArea();
 	/**
 	* Sets the modules which contain the result of each.
@@ -150,7 +135,7 @@ public:
 
 public slots: // Public slots
 	/**
-	* Resets the current l�st of modules and the displayed list of found entries.
+	* Resets the current list of modules and the displayed list of found entries.
 	*/
 	void reset();
 
@@ -194,7 +179,7 @@ protected slots: // Protected slots
 class CSearchOptionsArea : public QWidget, Ui::SearchOptionsForm  {
 	Q_OBJECT
 public:
-	CSearchOptionsArea(QWidget *parent=0, const char *name=0);
+	CSearchOptionsArea(QWidget *parent=0);
 	~CSearchOptionsArea();
 	/**
 	* Sets the search text used in the page.
