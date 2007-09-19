@@ -53,7 +53,7 @@ public:
 		};
 
 		/** Opens the page which contaisn the given part ID. */
-		const bool showPart( CSwordSetupDialog::Parts ID );
+		void showPart( CSwordSetupDialog::Parts ID );
 
 private:
 		void initSwordConfig();

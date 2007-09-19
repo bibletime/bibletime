@@ -127,6 +127,9 @@ void CBookTreeChooser::refreshContent() {
 }
 
 
+//TODO: Check if itemActivated is called too many times. I had the impression it is getting called when the regular
+//book keychooser changed, so that the content generation might be done twice. I may be wrong.
+
 /** Slot for signal when item is selected by user. */
 void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
 	//set the key with text

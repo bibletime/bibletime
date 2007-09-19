@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cmanageindiceswidget.h"
 
 #include "frontend/cmoduleindexdialog.h"
@@ -29,7 +27,6 @@
 #include <QTreeWidget>
 #include <QDir>
 #include <QPushButton>
-#include <QLabel>
 
 //KDE includes
 #include <klocale.h>
@@ -63,6 +60,8 @@ void CManageIndicesWidget::initView()
 		i18n("Manage module search indices"),
 		i18n("You can use the list below to create and/or delete search indices for your installed works."));
 	box->addWidget(mainLabel);
+	box->setMargin(0);
+	box->setSpacing(0);
 
 	// configure the list view
 	m_moduleList->setHeaderLabels( (QStringList(i18n("Module")) << i18n("Index size")) );

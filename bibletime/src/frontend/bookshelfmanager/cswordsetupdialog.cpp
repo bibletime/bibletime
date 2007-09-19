@@ -76,7 +76,7 @@ void CSwordSetupDialog::initSwordConfig() {
 	m_swordConfigPage = addPage(page, i18n("Bookshelf path(s)"));
 	page->setMinimumSize(500,400);
 
-	QGridLayout* layout = new QGridLayout(page/*, 6, 4*/);
+	QGridLayout* layout = new QGridLayout(page);
 	layout->setMargin(5);
 
 	layout->setSpacing(10);
@@ -87,32 +87,33 @@ void CSwordSetupDialog::initSwordConfig() {
 						i18n("Configure bookshelf path(s)"),
 						i18n("You can store your bookshelfs in one or more directories, which you can specify here.")
 													);
-	layout->addWidget(mainLabel, 0, 0, 0, 3);
+	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
 	QString swordConfPath = BTInstallMgr::Tool::LocalConfig::swordConfigFilename();
 	QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is <b>%1</b>").arg(swordConfPath), page);
-	layout->addWidget(confPathLabel, 1,1,0,3);
+	confPathLabel->setWordWrap(true);
+	layout->addWidget(confPathLabel, 1, 0, 1, 2);
 
 	m_swordPathListBox = new QTreeWidget(page);
-	//   m_swordPathListBox->setFullWidth(true);
-	//m_swordPathListBox->addColumn(i18n("Path to bookshelf"));
+	m_swordPathListBox->setHeaderLabels(QStringList() << i18n("Path to bookshelf"));
+	
 	connect(m_swordPathListBox, SIGNAL(selectionChanged()), this, SLOT(slot_swordPathSelected()));
-	layout->addWidget(m_swordPathListBox, 2,5,0,1);
+	layout->addWidget(m_swordPathListBox, 2, 0, 4, 1);
 
 	m_swordEditPathButton = new QPushButton(i18n("Edit Entry"), page);
 	m_swordEditPathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit"));
 	connect(m_swordEditPathButton, SIGNAL(clicked()), this, SLOT(slot_swordEditClicked()));
-	layout->addWidget(m_swordEditPathButton, 2, 3);
+	layout->addWidget(m_swordEditPathButton, 2, 1);
 
 	m_swordAddPathButton = new QPushButton(i18n("Add Entry"), page);
 	m_swordAddPathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_add"));
 	connect(m_swordAddPathButton, SIGNAL(clicked()), this, SLOT(slot_swordAddClicked()));
-	layout->addWidget(m_swordAddPathButton, 3,3);
+	layout->addWidget(m_swordAddPathButton, 3, 1);
 
 	m_swordRemovePathButton = new QPushButton(i18n("Remove Entry"), page);
 	m_swordRemovePathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("editdelete"));
 	connect(m_swordRemovePathButton, SIGNAL(clicked()), this, SLOT(slot_swordRemoveClicked()));
-	layout->addWidget(m_swordRemovePathButton, 4,3);
+	layout->addWidget(m_swordRemovePathButton, 4, 1);
 
 	setupSwordPathListBox();
 }
@@ -123,7 +124,6 @@ void CSwordSetupDialog::initInstall() {
 
 	QVBoxLayout* vboxlayout = new QVBoxLayout(page);
 	QHBoxLayout* hboxlayout = new QHBoxLayout();
-//	hboxlayout->setAutoAdd( true );
 
 	vboxlayout->addLayout(hboxlayout);
 
@@ -148,10 +148,10 @@ After that step click on the connect button.<br/>\
 <b>WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use \
 the module remote installation feature!</b>")
 														);
-	layout->addWidget(installLabel, 0,0,0,2);
+	layout->addWidget(installLabel, 0, 0, 1, 3);
 
 	QLabel* sourceHeadingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select library")), m_installSourcePage);
-	layout->addWidget(sourceHeadingLabel, 1,1,0,1);
+	layout->addWidget(sourceHeadingLabel, 1, 0);
 
 	m_sourceCombo = new QComboBox(m_installSourcePage);
 	layout->addWidget(m_sourceCombo, 2, 0);
@@ -167,16 +167,16 @@ the module remote installation feature!</b>")
 	layout->addWidget(addSourceButton, 2, 2, Qt::AlignLeft);
 
 	m_sourceLabel = new QLabel(m_installSourcePage);
-	layout->addWidget(m_sourceLabel, 3,3,0,1);
+	layout->addWidget(m_sourceLabel, 3, 0);
 
 	QLabel* targetHeadingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select bookshelf path")), m_installSourcePage);
-	layout->addWidget(targetHeadingLabel, 4,4,0,1);
+	layout->addWidget(targetHeadingLabel, 4, 0);
 
 	m_targetCombo = new QComboBox(m_installSourcePage);
 	layout->addWidget(m_targetCombo, 5, 0);
 
 	m_targetLabel = new QLabel(m_installSourcePage);
-	layout->addWidget(m_targetLabel, 6,6,0,0,Qt::AlignTop);
+	layout->addWidget(m_targetLabel, 6, 0, Qt::AlignTop);
 
 	//part beloew main layout with the back/next buttons
 	QHBoxLayout* myHBox = new QHBoxLayout();
@@ -209,7 +209,7 @@ void CSwordSetupDialog::initRemove() {
 
 	page->setMinimumSize(500,400);
 
-	QGridLayout* layout = new QGridLayout(page/*, 4, 4*/);
+	QGridLayout* layout = new QGridLayout(page);
 	layout->setMargin(5);
 
 	layout->setSpacing(10);
@@ -220,17 +220,17 @@ void CSwordSetupDialog::initRemove() {
 							i18n("Remove installed work(s)"),
 							i18n("This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.")
 														);
-	layout->addWidget(mainLabel, 0, 0, 0, 3);
+	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
 	QLabel* headingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select works to be uninstalled")), page);
-	layout->addWidget(headingLabel, 1, 1, 0, 3);
+	layout->addWidget(headingLabel, 1, 0, 1, 2);
 
 	m_removeModuleListView = new CSwordSetupModuleListView(page, false);
-	layout->addWidget( m_removeModuleListView, 2,2,0,3);
+	layout->addWidget( m_removeModuleListView, 2, 0, 1, 2);
 
 	m_removeRemoveButton = new QPushButton(i18n("Remove selected work(s)"), page);
 	m_removeRemoveButton->setIcon( util::filesystem::DirectoryUtil::getIcon("edittrash") );
-	layout->addWidget(m_removeRemoveButton, 3, 3, Qt::AlignRight);
+	layout->addWidget(m_removeRemoveButton, 3, 1, Qt::AlignRight);
 
 	connect(m_removeRemoveButton, SIGNAL(clicked()),
 			this, SLOT(slot_doRemoveModules()));
@@ -244,9 +244,12 @@ void CSwordSetupDialog::initManageIndices()
 	m_manageIndiciesPage = addPage(page, i18n("Manage search indicies"));
 	
 	page->setMinimumSize(500,400);
-	QVBoxLayout* box = new QVBoxLayout(page/*, 4, 4*/);
+	QGridLayout* layout = new QGridLayout(page);
+	layout->setMargin(5);
+	layout->setSpacing(10);
+
 	CManageIndicesWidget* mi = new CManageIndicesWidget(page);
-	box->addWidget(mi);
+	layout->addWidget(mi, 0, 0);
 }
 
 void CSwordSetupDialog::slotOk() {
@@ -269,8 +272,7 @@ void CSwordSetupDialog::writeSwordConfig() {
 	}
 }
 
-const bool CSwordSetupDialog::showPart( CSwordSetupDialog::Parts ID ) {
-	bool ret = false; //TODO: is ret used at all?!
+void CSwordSetupDialog::showPart( CSwordSetupDialog::Parts ID ) {
 	switch (ID) {
 		case CSwordSetupDialog::Sword:
 			setCurrentPage(m_swordConfigPage);
@@ -284,7 +286,6 @@ const bool CSwordSetupDialog::showPart( CSwordSetupDialog::Parts ID ) {
 		default:
 			break;
 	}
-	return ret;
 }
 
 

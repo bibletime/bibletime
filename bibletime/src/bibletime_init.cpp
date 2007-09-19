@@ -488,9 +488,9 @@ void BibleTime::initBackends() {
 			{
 				KStartupLogo::hideSplash();
 				qDebug("case CSwordBackend::NoSwordConfig");
-				//TODO: temporary //BookshelfManager::CSwordSetupDialog dlg;
-				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				//dlg.exec();
+				BookshelfManager::CSwordSetupDialog dlg;
+				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+				dlg.exec();
 				break;
 			}
 
@@ -498,9 +498,9 @@ void BibleTime::initBackends() {
 			{
 				KStartupLogo::hideSplash();
 				qDebug("case CSwordBackend::NoModules");
-				//TODO: temporary //BookshelfManager::CSwordSetupDialog dlg;
-				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
-				//dlg.exec();
+				BookshelfManager::CSwordSetupDialog dlg;
+				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
+				dlg.exec();
 				break;
 			}
 
@@ -508,9 +508,9 @@ void BibleTime::initBackends() {
 			{
 				KStartupLogo::hideSplash();
 				qDebug("unknown error");
-				//TODO: temporary // BookshelfManager::CSwordSetupDialog dlg;
-				//dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				//dlg.exec();
+				BookshelfManager::CSwordSetupDialog dlg;
+				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+				dlg.exec();
 				break;
 			}
 		}
@@ -520,7 +520,7 @@ void BibleTime::initBackends() {
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false
-	//TODO: temporary //BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
+	BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
 	
 }
 

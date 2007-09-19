@@ -69,31 +69,11 @@ CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_re
 		new BookshelfManager::ToolTip(this);
 		m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 
-//columns: use setColumnCount; setHeaderLabels; columnWidth. WidthMode???; Alignment: item-level, not really needed; 
-		/*addColumn(i18n("Name"));
-		setColumnWidthMode( 0, Q3ListView::Maximum );
-		setColumnWidth( 0, 200 ); //don`t get too broad
-
-		addColumn(i18n("Status"));
-		setColumnAlignment(1, Qt::AlignRight);
-		addColumn(i18n("Installed version")); //version
-		setColumnAlignment(2, Qt::AlignHCenter);
-		
-
-		if (m_is_remote) {
-				addColumn(i18n("Remote version")); //version
-		} else {
-				addColumn(i18n("Location"));
-		}
-		setColumnAlignment(3, Qt::AlignLeft);
-
-		setAllColumnsShowFocus(true);
-		setFullWidth(true);
-		setRootIsDecorated(true);
-		setResizeMode(Q3ListView::LastColumn);
-		setTooltipColumn(0);
-*/
 		setColumnCount(3);
+		setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
+		setRootIsDecorated(true);
+		setColumnWidth(0, 200);
+		//setTooltipColumn(0);
 
 		init();
 }
