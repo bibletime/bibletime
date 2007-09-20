@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,21 +10,27 @@
 
 
 #include "cmoduleresultview.h"
+#include "cmoduleresultview.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-#include "frontend/util/csortlistviewitem.h"
+//#include "frontend/util/csortlistviewitem.h"
 #include "frontend/cexportmanager.h"
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 
 //Qt includes
+#include <QTreeWidget>
+#include <QAction>
+#include <QStringList>
+#include <QMenu>
+
 
 //KDE includes
 #include <klocale.h>
-#include <kaction.h>
-#include <kpopupmenu.h>
+//#include <kaction.h>
+//#include <kpopupmenu.h>
 
 
 namespace Search {
@@ -34,8 +40,8 @@ namespace Search {
 ************  ModuleResultList **************
 ********************************************/
 
-CModuleResultView::CModuleResultView(QWidget* parent, const char* name) :
-	KListView(parent, name) {
+CModuleResultView::CModuleResultView(QWidget* parent) :
+	QTreeWidget(parent) {
 	initView();
 	initConnections();
    strongsResults = 0;
@@ -46,59 +52,70 @@ CModuleResultView::~CModuleResultView() {}
 
 /** Initializes this widget. */
 void CModuleResultView::initView() {
-	addColumn(i18n("Work"));
-	addColumn(i18n("Hits"));
-	setFullWidth(true);
+	// see also csearchresultview.cpp
+	//addColumn(i18n("Work"));
+	//addColumn(i18n("Hits"));
+	setHeaderLabels(QStringList(i18n("Work") << i18n("Hits") ));
+	//setFullWidth(true);
 	
 	//  setFullWidth(true);
-	setSorting(0, true);
-	setSorting(1, true);
-	setAllColumnsShowFocus(true);
+	//TODO: sorting
+	//setSorting(0, true);
+	//setSorting(1, true);
+	//TODO: highlight all columns when chosen
+	//setAllColumnsShowFocus(true);
 
 
 	//setup the popup menu
-	m_popup = new KPopupMenu(this);
+	m_popup = new QMenu(this);
 	// m_popup->insertTitle(i18n("Bible window"));
 
-	m_actions.copyMenu = new KActionMenu(i18n("Copy..."), CResMgr::searchdialog::result::moduleList::copyMenu::icon, m_popup);
-	m_actions.copyMenu->setDelayed(false);
-	m_actions.copy.result = new KAction(i18n("Reference only"), KShortcut(0), this, SLOT(copyResult()), this);
-	m_actions.copyMenu->insert(m_actions.copy.result);
-	m_actions.copy.resultWithText = new KAction(i18n("Reference with text"), KShortcut(0), this, SLOT(copyResultWithText()), this);
-	m_actions.copyMenu->insert(m_actions.copy.resultWithText);
-	m_actions.copyMenu->plug(m_popup);
+	m_actions.copyMenu = new QMenu(i18n("Copy..."), m_popup);
+	m_actions.copyMenu->setIcon(QIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
+	m_actions.copy.result = new QAction(i18n("Reference only"), this);
+	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
+	m_actions.copyMenu->addAction(m_actions.copy.result);
+	m_actions.copy.resultWithText = new QAction(i18n("Reference with text"), this); 
+	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()), this, SLOT(copyResultWithText()) );
+	m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
+	m_popup->addMenu(m_actions.copyMenu);
 
-	m_actions.saveMenu = new KActionMenu(i18n("Save..."), CResMgr::searchdialog::result::moduleList::saveMenu::icon, m_popup);
-	m_actions.saveMenu->setDelayed( false );
-	m_actions.save.result = new KAction(i18n("Reference only"), KShortcut(0), this, SLOT(saveResult()), this);
-	m_actions.saveMenu->insert(m_actions.save.result);
-	m_actions.save.resultWithText = new KAction(i18n("Reference with text"), KShortcut(0), this, SLOT(saveResultWithText()), this);
-	m_actions.saveMenu->insert(m_actions.save.resultWithText);
-	m_actions.saveMenu->plug(m_popup);
+	m_actions.saveMenu = new QMenu(i18n("Save..."), m_popup);
+	m_actions.saveMenu->setIcon(QIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
+	m_actions.save.result = new QAction(i18n("Reference only"), this);
+	QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
+	m_actions.saveMenu->addAction(m_actions.save.result);
+	m_actions.save.resultWithText = new QAction(i18n("Reference with text"), this);
+	QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveResultWithText()) );
+	m_actions.saveMenu->addAction(m_actions.save.resultWithText);
+	m_popup->addMenu(m_actions.saveMenu);
 
-	m_actions.printMenu = new KActionMenu(i18n("Print..."), CResMgr::searchdialog::result::moduleList::printMenu::icon, m_popup);
-	m_actions.printMenu->setDelayed(false);
-	m_actions.print.result = new KAction(i18n("Reference with text"), KShortcut(0), this, SLOT(printResult()), this);
-	m_actions.printMenu->insert(m_actions.print.result);
-
-
-	m_actions.printMenu->plug(m_popup);
+	m_actions.printMenu = new QMenu(i18n("Print..."), m_popup); 
+	m_actions.printMenu->setIcon(QIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
+	m_actions.print.result = new QAction(i18n("Reference with text"), this);
+	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
+	m_actions.printMenu->addAction(m_actions.print.result);
+	m_popup->addMenu(m_actions.printMenu);
 }
 
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
-	connect(this, SIGNAL(currentChanged(Q3ListViewItem*)),
-			this, SLOT(executed(Q3ListViewItem*)));
-	connect(this, SIGNAL(contextMenu(KListView*, Q3ListViewItem*, const QPoint&)),
-			this, SLOT(showPopup(KListView*, Q3ListViewItem*, const QPoint&)));
+	//TODO:
+	connect(this, SIGNAL(currentChanged(QTreeWidgetItem*)),
+			this, SLOT(executed(QTreeWidgetItem*)));
+	connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
+			this, SLOT(showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
 }
 
 /** Setups the tree using the given list of modules. */
 void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& searchedText ) {
 	clear();
-	
-	util::CSortListViewItem* item = 0;
-	util::CSortListViewItem* oldItem = 0;
+	//TODO: this class is for sorting
+	//util::CSortListViewItem* item = 0;
+	//util::CSortListViewItem* oldItem = 0;
+	QTreeWidgetItem* item = 0;
+	QTreeWidgetItem* oldItem = 0;
+
 	sword::ListKey result;
 
 	if (strongsResults) {
@@ -113,9 +130,9 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 		//   for (modules.first(); modules.current(); modules.next()) {
 		result = (*it)->searchResult();
 
-		item = new util::CSortListViewItem(this, (*it)->name(), QString::number(result.Count()) );
-		item->setColumnSorting(1, util::CSortListViewItem::Number);
-				
+		item = new QTreeWidgetItem(this, (*it)->name(), QString::number(result.Count()) );
+		//TODO: item->setColumnSorting(1, util::CSortListViewItem::Number);
+
 		item->setPixmap(0,CToolClass::getIconForModule(*it) );
 		oldItem = item;
 		//----------------------------------------------------------------------
@@ -150,10 +167,12 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 	executed(currentItem());
 }
 
-void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, Q3ListViewItem* parent,
+void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
                                             const QString& sNumber) {
 	QString lText;
-	util::CSortListViewItem* item = 0;
+	//TODO: 
+	//util::CSortListViewItem* item = 0;
+	QTreeWidgetItem* item = 0;
 	
 	strongsResults = new StrongsResultClass(module, sNumber);
 	
@@ -167,7 +186,7 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, Q3ListView
 
 
 /** Is executed when an item was selected in the list. */
-void CModuleResultView::executed( Q3ListViewItem* i ) {
+void CModuleResultView::executed( QTreeWidgetItem* i ) {
    QString itemText, lText;
 
 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
@@ -196,7 +215,7 @@ void CModuleResultView::executed( Q3ListViewItem* i ) {
 CSwordModuleInfo* const CModuleResultView::activeModule() {
 	Q_ASSERT(currentItem());
 
-	Q3ListViewItem* item = currentItem();
+	QTreeWidgetItem* item = currentItem();
 	if (!item) {
 		return 0;
 	}
@@ -215,7 +234,7 @@ CSwordModuleInfo* const CModuleResultView::activeModule() {
 }
 
 /** No descriptions */
-void CModuleResultView::showPopup(KListView*, Q3ListViewItem*, const QPoint& point) {
+void CModuleResultView::showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint& point) {
 	//make sure that all entries have the correct status
 	m_popup->exec(point);
 }

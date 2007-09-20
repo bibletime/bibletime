@@ -30,22 +30,22 @@
 //#include <q3dict.h>
 //#include <qtooltip.h>
 
-#include <QListWidget>
+#include <QTreeWidget>
 
 //KDE includes
 #include <kdialog.h>
 //#include <kdialogbase.h>
-#include <klistview.h>
+//#include <klistview.h>
 
 namespace Search {
 	namespace Options {
 	
-class CModuleChooser : public QListWidget, public CPointers {
+class CModuleChooser : public QTreeWidget, public CPointers {
 	Q_OBJECT
 public:
-	class ModuleCheckBoxItem : virtual public Q3CheckListItem {
+	class ModuleCheckBoxItem : virtual public QTreeWidgetItem {
 	public:
-		ModuleCheckBoxItem(Q3ListViewItem* item, CSwordModuleInfo* module);
+		ModuleCheckBoxItem(QTreeWidgetItem* item, CSwordModuleInfo* module);
 		~ModuleCheckBoxItem();
 		/**
 		* Returns the used module.

@@ -28,7 +28,7 @@
 //#include <q3dict.h>
 //#include <qtooltip.h>
 
-//#include <QListWidget>
+#include <QListWidgetItem>
 
 //KDE includes
 #include <kdialog.h>
@@ -57,7 +57,7 @@ public:
 	~CRangeChooserDialog();
 
 protected: // Protected methods
-class RangeItem : public KListViewItem {
+class RangeItem : public QListWidgetItem {
 public:
 		RangeItem(QListWidget*, QListWidgetItem* afterThis = 0, const QString caption = QString::null, const QString range = QString::null);
 		~RangeItem();

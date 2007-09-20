@@ -29,19 +29,20 @@
 #include "util/directoryutil.h"
 
 //Qt includes
-#include <qlayout.h>
-#include <qpushbutton.h>
-#include <qlabel.h>
-#include <qregexp.h>
-#include <qeventloop.h>
-//Added by qt3to4:
-#include <Q3VBoxLayout>
+#include <QLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QRegExp>
+//#include <qeventloop.h>
+#include <QVBoxLayout>
+#include <QProgressDialog>
+
 
 //KDE includes
 #include <klocale.h>
 #include <kcombobox.h>
 #include <kmessagebox.h>
-#include <kprogress.h>
+//#include <kprogress.h>
 #include <kapplication.h>
 
 //Lucence includes
@@ -85,7 +86,8 @@ QStringList* StrongsResult::getKeyList() {
 /********************************************
 ************  StrongsResultClass *************
 ********************************************/
-void StrongsResultClass::initStrongsResults(void) {
+void StrongsResultClass::initStrongsResults(void)
+{
 	using namespace Rendering;
 	
 	CDisplayRendering render;
@@ -104,18 +106,20 @@ void StrongsResultClass::initStrongsResults(void) {
 	count = result.Count();
 	if (!count)
 		return;
-KApplication::kApplication()->processEvents( 1 ); //1 ms only
+	KApplication::kApplication()->processEvents( 1 ); //1 ms only
 	srList.clear();
 	// for whatever reason the text "Parsing...translations." does not appear.
 	// this is not critical but the text is necessary to get the dialog box
 	// to be wide enough.
-	KProgressDialog* progress = new KProgressDialog(0, "progressDialog", i18n("Parsing Stong's Numbers"), i18n("Parsing Stong's numbers for translations."), true);
-	progress->setAllowCancel(false);
-	progress->setMinimumDuration(0);
+	QProgressDialog* progress = new QProgressDialog(i18n("Parsing Stong's Numbers"), 0, 0, count);
+	//0, "progressDialog", i18n("Parsing Stong's Numbers"), i18n("Parsing Stong's numbers for translations."), true);
+	
+	//progress->setAllowCancel(false);
+	//progress->setMinimumDuration(0);
 	progress->show();
 	progress->raise();
 	for (index = 0; index < count; index++){
-		progress->progressBar()->setProgress( int( (index*100) / count ) );
+		progress->->setValue( index );
  		KApplication::kApplication()->processEvents( 1 ); //1 ms only
 
 		key = QString::fromUtf8(result.GetElement(index)->getText());
@@ -142,7 +146,7 @@ KApplication::kApplication()->processEvents( 1 ); //1 ms only
 	  delete progress;
 	  progress = 0;
 	//qHeapSort(srList);
-	}
+}
 
 QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, int *startIndex) {
 	// get the strongs text
@@ -185,11 +189,12 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
 }
 
 /********************************************
-**********  CSearchDialogResultPage *********
+**********  CSearchDialogResultArea *********
 ********************************************/
 
-CSearchResultArea::CSearchResultArea(QWidget *parent, const char *name ) : 
-		SearchResultsForm(parent, name) {
+CSearchResultArea::CSearchResultArea(QWidget *parent)
+	: SearchResultsForm(parent)
+{
 	initView();
 	initConnections();
 }
@@ -198,7 +203,7 @@ CSearchResultArea::~CSearchResultArea() {}
 
 /** Initializes the view of this widget. */
 void CSearchResultArea::initView() {
-	Q3VBoxLayout* frameLayout = new Q3VBoxLayout(m_displayFrame, 0, 6, "frameLayout");
+	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame, 0, 6);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
 }

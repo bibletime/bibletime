@@ -41,7 +41,7 @@ namespace Search {
 class CModuleResultView : public QTreeWidget {
 	Q_OBJECT
 public:
-	CModuleResultView(QWidget* parent, const char* name = 0);
+	CModuleResultView(QWidget* parent);
 	~CModuleResultView();
 	
 	/**
