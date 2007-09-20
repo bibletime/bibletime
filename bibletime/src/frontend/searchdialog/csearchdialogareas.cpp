@@ -452,12 +452,15 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		}
 		// if the token contains a ^ then trim the remainder of the
 		// token from the ^
-		else if ( (pos = (*it).contains("^")) >= 0 ) {
+		//What??? error: invalid conversion from ‘const void*’ to ‘int’
+		// and how come "contains" returns bool but is used as int?
+		//else if ( (pos = (*it).contains("^")) >= 0 ) {
+		else if ( (pos = (*it).indexOf("^") ) >= 0 ) {
 			(*it) = (*it).left(pos - 1); 
 		}
 		// if the token contains a ~ then trim the remainder of the
 		// token from the ~
-		else if ( (pos = (*it).contains("~")) >= 0 ) {
+		else if ( (pos = (*it).indexOf("~") ) >= 0 ) {
 			(*it) = (*it).left(pos - 2) + "*"; 
 		}
 	}	
@@ -468,7 +471,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	QString ret = content;
 
 	//const bool cs = (searchFlags & CSwordModuleSearch::caseSensitive);
-	const bool cs = false;
+	const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 	
 	//   int index = 0;
 	int index = ret.indexOf("<body", 0);
@@ -573,9 +576,9 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 
 		//       index = 0; //for every word start at the beginning
 		index = ret.indexOf("<body", 0);
-		findExp.setCaseSensitive(cs);
+		findExp.setCaseSensitivity(cs);
 		//while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
-		while ( (index = findExp.search(ret, index)) != -1 ) { //while we found the word
+		while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
 			matchLen = findExp.matchedLength();
 			if (!CToolClass::inHTMLTag(index, ret)) {
 				length = matchLen;
