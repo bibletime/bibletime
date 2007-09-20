@@ -27,7 +27,7 @@
 #include <QSize>
 
 //forward declarations
-
+class CReadDisplay;
 
 
 namespace Search {

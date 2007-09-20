@@ -40,11 +40,12 @@ namespace Search {
 ************  ModuleResultList **************
 ********************************************/
 
-CModuleResultView::CModuleResultView(QWidget* parent) :
-	QTreeWidget(parent) {
+CModuleResultView::CModuleResultView(QWidget* parent) 
+	: QTreeWidget(parent),
+	strongsResults(0)
+{
 	initView();
 	initConnections();
-   strongsResults = 0;
 };
 
 CModuleResultView::~CModuleResultView() {}
@@ -55,7 +56,7 @@ void CModuleResultView::initView() {
 	// see also csearchresultview.cpp
 	//addColumn(i18n("Work"));
 	//addColumn(i18n("Hits"));
-	setHeaderLabels(QStringList(i18n("Work") << i18n("Hits") ));
+	setHeaderLabels( QStringList(i18n("Work")) << QString(i18n("Hits")) );
 	//setFullWidth(true);
 	
 	//  setFullWidth(true);
@@ -130,10 +131,10 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 		//   for (modules.first(); modules.current(); modules.next()) {
 		result = (*it)->searchResult();
 
-		item = new QTreeWidgetItem(this, (*it)->name(), QString::number(result.Count()) );
+		item = new QTreeWidgetItem(this, QStringList((*it)->name()) << QString::number(result.Count()) );
 		//TODO: item->setColumnSorting(1, util::CSortListViewItem::Number);
 
-		item->setPixmap(0,CToolClass::getIconForModule(*it) );
+		item->setIcon(0,CToolClass::getIconForModule(*it) );
 		oldItem = item;
 		//----------------------------------------------------------------------
 		// we need to make a decision here.  Either don't show any Strong's
@@ -142,7 +143,7 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 		// I choose option number 2 at this time.
 		//----------------------------------------------------------------------
 		int sstIndex, sTokenIndex; // strong search text index for finding "strong:"
-		if ((sstIndex = searchedText.find("strong:", 0)) != -1) {
+		if ((sstIndex = searchedText.indexOf("strong:", 0)) != -1) {
 			QString sNumber;
 			//--------------------------------------------------
 			// get the strongs number from the search text
@@ -150,12 +151,12 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 			// first find the first space after "strong:"
 			//    this should indicate a change in search token
 			sstIndex = sstIndex + 7;
-			sTokenIndex = searchedText.find(" ", sstIndex);
+			sTokenIndex = searchedText.indexOf(" ", sstIndex);
 			sNumber = searchedText.mid(sstIndex, sTokenIndex - sstIndex);
 
 			setupStrongsResults((*it), item, sNumber);
 
-			item->setOpen(true);
+			//TODO: item->setOpen(true);
 			strongsAvailable = true;
 		}
 	};
@@ -163,8 +164,8 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 	//Allow to hide the module strongs if there are any available
 	setRootIsDecorated( strongsAvailable );
 	
-	setSelected(currentItem(), true);
-	executed(currentItem());
+	//TODO: setSelected(currentItem(), true);
+	//TODO: executed(currentItem());
 }
 
 void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
@@ -179,37 +180,38 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
 	for (int cnt = 0; cnt < strongsResults->Count(); ++cnt) {
 		lText = strongsResults->keyText(cnt);
 		
-		item = new util::CSortListViewItem(parent, lText, QString::number(strongsResults->keyCount(cnt)));
-		item->setColumnSorting(1, util::CSortListViewItem::Number);
+		item = new QTreeWidgetItem(parent, QStringList(lText) << QString::number(strongsResults->keyCount(cnt)));
+		//TODO:
+		//item->setColumnSorting(1, util::CSortListViewItem::Number);
 	}
 }
 
-
+//TODO:
 /** Is executed when an item was selected in the list. */
-void CModuleResultView::executed( QTreeWidgetItem* i ) {
-   QString itemText, lText;
-
-	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
-		emit moduleChanged();
-		emit moduleSelected(m);
-      return;
-	}
-	
-	if (!strongsResults) {
-      return;
-	}
-
-   itemText = i->text(0);
-   for (int cnt = 0; cnt < strongsResults->Count(); cnt++) {
-      lText = strongsResults->keyText(cnt);
-      if (lText == itemText) {
-         //clear the verses list
-         	emit moduleChanged();
-         	emit strongsSelected(activeModule(), strongsResults->getKeyList(cnt));
-         	return;
-		}
-	}
-}
+// void CModuleResultView::executed( QTreeWidgetItem* i ) {
+//    QString itemText, lText;
+// 
+// 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
+// 		emit moduleChanged();
+// 		emit moduleSelected(m);
+//       return;
+// 	}
+// 	
+// 	if (!strongsResults) {
+//       return;
+// 	}
+// 
+//    itemText = i->text(0);
+//    for (int cnt = 0; cnt < strongsResults->Count(); cnt++) {
+//       lText = strongsResults->keyText(cnt);
+//       if (lText == itemText) {
+//          //clear the verses list
+//          	emit moduleChanged();
+//          	emit strongsSelected(activeModule(), strongsResults->getKeyList(cnt));
+//          	return;
+// 		}
+// 	}
+// }
 
 /** Returns the currently active module. */
 CSwordModuleInfo* const CModuleResultView::activeModule() {

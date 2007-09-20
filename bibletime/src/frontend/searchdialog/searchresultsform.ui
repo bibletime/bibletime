@@ -76,8 +76,8 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <widget class="Search::Result::CModuleResultView" native="1" name="m_moduleListBox" />
-         <widget class="Search::Result::CSearchResultView" native="1" name="m_resultListBox" />
+         <widget class="QTreeWidget" native="1" name="m_moduleListBox" />
+         <widget class="QTreeWidget" native="1" name="m_resultListBox" />
         </widget>
        </item>
        <item>
@@ -140,25 +140,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11" />
- <customwidgets>
-  <customwidget>
-   <class>Q3Frame</class>
-   <extends>QFrame</extends>
-   <header>Qt3Support/Q3Frame</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Search::Result::CModuleResultView</class>
-   <extends>QWidget</extends>
-   <header>frontend/searchdialog/cmoduleresultview.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Search::Result::CSearchResultView</class>
-   <extends>QWidget</extends>
-   <header>frontend/searchdialog/csearchresultview.h</header>
-  </customwidget>
- </customwidgets>
- <includes/>
  <resources/>
  <connections/>
 </ui>

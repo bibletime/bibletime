@@ -620,7 +620,9 @@ void CSearchResultArea::showAnalysis() {
 	namespace Options {
 
 CSearchOptionsArea::CSearchOptionsArea(QWidget *parent ) :
-	SearchOptionsForm(parent) {
+	SearchOptionsForm()
+{
+	setParent(parent);
 	initView();
 	readSettings();
 }
