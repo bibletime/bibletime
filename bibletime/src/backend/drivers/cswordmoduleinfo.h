@@ -337,9 +337,6 @@ private:
 	m_dataCache;
 
 	CSwordBackend* m_backend;
-
-	//Q3Signal m_indexingFinished;
-	//Q3Signal m_indexingProgress;
 };
 
 // typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;

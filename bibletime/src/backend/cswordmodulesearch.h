@@ -96,8 +96,6 @@ signals:
 	void finished();
 
 private:
- 	//Q3Signal m_finishedSig;
-	
 	static CSwordModuleSearch* searcher;
 };
 

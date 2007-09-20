@@ -26,7 +26,6 @@
 
 //KDE includes
 #include <klocale.h>
-//#include <kdirselectdialog.h>
 
 namespace BookshelfManager {
 

@@ -22,7 +22,7 @@
 class QWidget;
 class QLabel;
 class QComboBox;
-class Q3WidgetStack;
+class QStackedWidget;
 class QButton;
 class QPushButton;
 class QLineEdit;
@@ -79,7 +79,7 @@ private:
 		KPageWidgetItem* m_removePage;
 		KPageWidgetItem* m_manageIndiciesPage;
 		KPageWidgetItem* m_installPage;
-		Q3WidgetStack* m_installWidgetStack;
+		QStackedWidget* m_installStackedWidget;
 
 		QString source;
 		QString target;

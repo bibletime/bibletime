@@ -26,11 +26,10 @@
 #include <QDir>
 #include <QLabel>
 #include <QComboBox>
-#include <Q3WidgetStack>
+#include <QStackedWidget>
 #include <QFileInfo>
 #include <QPushButton>
 #include <QLineEdit>
-//#include <QDict>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QGridLayout>
@@ -127,11 +126,11 @@ void CSwordSetupDialog::initInstall() {
 
 	vboxlayout->addLayout(hboxlayout);
 
-	m_installWidgetStack = new Q3WidgetStack(page);
-	hboxlayout->addWidget(m_installWidgetStack);
+	m_installStackedWidget = new QStackedWidget(page);
+	hboxlayout->addWidget(m_installStackedWidget);
 
 	m_installSourcePage = new QWidget(0);
-	m_installWidgetStack->addWidget(m_installSourcePage);
+	m_installStackedWidget->addWidget(m_installSourcePage);
 
 	//  m_installSourcePage->setMinimumSize(500,400);
 
@@ -616,7 +615,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 		layout->addWidget(installLabel, 0,0,0,1);
 		layout->setRowStretch(0,0);
 
-		m_installWidgetStack->addWidget(m_installModuleListPage);
+		m_installStackedWidget->addWidget(m_installModuleListPage);
 		m_installModuleListPage->setMinimumSize(500,400);
 
 		//insert a list box which contains all available remote modules
@@ -640,7 +639,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 		m_installContinueButton->setText(i18n("Install works"));
 		m_installContinueButton->setEnabled(false);
 
-		m_installWidgetStack->raiseWidget(m_installModuleListPage);
+		m_installStackedWidget->setCurrentWidget(m_installModuleListPage);
 
 		connect( m_installBackButton, SIGNAL(clicked()), this, SLOT(slot_showInstallSourcePage()));
 		m_installBackButton->setEnabled(true);
@@ -791,7 +790,7 @@ void CSwordSetupDialog::slot_showInstallSourcePage() {
 	m_installContinueButton->setText(i18n("Connect to library"));
 	m_installContinueButton->setEnabled(true);
 
-	m_installWidgetStack->raiseWidget(m_installSourcePage);
+	m_installStackedWidget->setCurrentWidget(m_installSourcePage);
 }
 
 void CSwordSetupDialog::slot_swordEditClicked() {

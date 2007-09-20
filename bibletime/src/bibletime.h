@@ -50,7 +50,6 @@ class KHelpMenu;
 
 //QT classes
 class QMenu;
-class Q3ProgressDialog;
 class QSplitter;
 
 /**
@@ -395,7 +394,6 @@ private:
 	* The list of installed SWORD modules
 	*/
 	ListCSwordModuleInfo* m_moduleList;
-	Q3ProgressDialog* m_progress;
 
 	Profile::CProfile* m_currentProfile;
 	QSplitter* m_mainSplitter;

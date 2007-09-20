@@ -7,12 +7,8 @@
 *
 **********/
 
-
-
 //own includes
 #include "bibletime.h"
-//#include "bibletime.moc"
-
 #include "config.h"
 
 #include "backend/keys/cswordversekey.h"
@@ -34,10 +30,10 @@
 #include "frontend/displaywindow/cbiblereadwindow.h"
 //#include "frontend/searchdialog/csearchdialog.h" //TODO
 
-#include <errno.h>
+//Sword includes
+#include <versekey.h>
 
 //QT includes
-//#include <q3progressdialog.h>
 #include <QClipboard>
 #include <QInputDialog>
 #include <QList>
@@ -63,9 +59,6 @@
 #include <ktoolbar.h>
 #include <kcomponentdata.h>
 #include <ktoolinvocation.h>
-
-//Sword includes
-#include <versekey.h>
 
 using namespace Profile;
 

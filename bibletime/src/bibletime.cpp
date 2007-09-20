@@ -52,13 +52,11 @@
 
 using namespace Profile;
 
-BibleTime::BibleTime()
-	: BibleTimeInterface(),
+BibleTime::BibleTime() : BibleTimeInterface(), 
 	KXmlGuiWindow(0),
 	m_windowActionCollection(0),
 	m_initialized(false),
 	m_moduleList(0),
-	m_progress(0),
 	m_currentProfile(0),
 	m_mainSplitter(0),
 	m_leftPaneSplitter(0),

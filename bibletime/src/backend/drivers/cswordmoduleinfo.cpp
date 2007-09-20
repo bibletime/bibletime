@@ -291,7 +291,7 @@ void CSwordModuleInfo::buildIndex() {
         vk->Headings(1);
     }
 
-    //holds UTF-8 data and is faster than QString. Note: use QByteArray (qt4) instead of Q3CString.
+    //holds UTF-8 data and is faster than QString.
     QByteArray textBuffer;
 
     // we start with the first module entry, key is automatically updated

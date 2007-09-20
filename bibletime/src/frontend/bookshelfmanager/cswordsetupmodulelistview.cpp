@@ -238,7 +238,7 @@ QStringList CSwordSetupModuleListView::selectedModules() {
 
 	QTreeWidgetItemIterator it( this );
 	while ( (*it) ) {
-		if ((*it)->checkState(0) == Qt::Checked /* && i->type() == Q3CheckListItem::CheckBox*/ ) {
+		if ((*it)->checkState(0) == Qt::Checked ) {
 			moduleList << (*it)->text(0);
 		}
 		++it;
@@ -251,10 +251,6 @@ void CSwordSetupModuleListView::slotItemClicked(QTreeWidgetItem*) {
 }
 
 bool CSwordSetupModuleListView::showTooltip(QTreeWidgetItem* i, const QPoint&, int) const {
-	/*Q3CheckListItem* checkItem = dynamic_cast<Q3CheckListItem*>( i );
-	Q_ASSERT(checkItem);
-	return (checkItem && (checkItem->type() == Q3CheckListItem::CheckBox));*/
-	
 	//TODO:check
 	return i;
 }

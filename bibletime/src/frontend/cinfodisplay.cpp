@@ -35,7 +35,6 @@
 //Qt includes
 #include <QLayout>
 #include <QLabel>
-//#include <q3scrollview.h>
 #include <QRegExp>
 #include <QVBoxLayout>
 

@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef BIBLETIME_INTERFACE_H
 #define BIBLETIME_INTERFACE_H
 
