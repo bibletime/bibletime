@@ -73,7 +73,7 @@ int StrongsResult::keyCount() const {
 }
 
 void StrongsResult::addKeyName(const QString& keyName) {
-	if (keyNameList.findIndex(keyName) == -1)
+	if (keyNameList.indexOf(keyName) == -1)
 		keyNameList.append(keyName);
 }
 
@@ -106,7 +106,7 @@ void StrongsResultClass::initStrongsResults(void)
 	count = result.Count();
 	if (!count)
 		return;
-	KApplication::kApplication()->processEvents( 1 ); //1 ms only
+	KApplication::kApplication()->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
 	srList.clear();
 	// for whatever reason the text "Parsing...translations." does not appear.
 	// this is not critical but the text is necessary to get the dialog box
@@ -119,8 +119,8 @@ void StrongsResultClass::initStrongsResults(void)
 	progress->show();
 	progress->raise();
 	for (index = 0; index < count; index++){
-		progress->->setValue( index );
- 		KApplication::kApplication()->processEvents( 1 ); //1 ms only
+		progress->setValue( index );
+ 		KApplication::kApplication()->processEvents(QEventLoop::AllEvents, 1 ); //1 ms only
 
 		key = QString::fromUtf8(result.GetElement(index)->getText());
 		text = render.renderSingleKey(key, modules, settings);
@@ -153,28 +153,28 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
 	int idx1, idx2, index;
 	QString sNumber, strongsText;
 	//const bool cs = CSwordModuleSearch::caseSensitive;
-	const bool cs = false;
+	const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 	
 	if (*startIndex == 0) {
-		index = verseContent.find("<body", 0);
+		index = verseContent.indexOf("<body");
 	}
 	else {
 		index = *startIndex;
 	}
    
 	// find all the "lemma=" inside the the content
-	while((index = verseContent.find("lemma=", index, cs)) != -1) {
+	while((index = verseContent.indexOf("lemma=", index, cs)) != -1) {
 		// get the strongs number after the lemma and compare it with the
 		// strongs number we are looking for
-		idx1 = verseContent.find("\"", index) + 1;
-		idx2 = verseContent.find("\"", idx1 + 1);
+		idx1 = verseContent.indexOf("\"", index) + 1;
+		idx2 = verseContent.indexOf("\"", idx1 + 1);
 		sNumber = verseContent.mid(idx1, idx2 - idx1);
 		if (sNumber == lemmaText) {
 			// strongs number is found now we need to get the text of this node
 			// search right until the ">" is found.  Get the text from here to
 			// the next "<".
-			index = verseContent.find(">", index, cs) + 1;
-			idx2  = verseContent.find("<", index, cs);
+			index = verseContent.indexOf(">", index, cs) + 1;
+			idx2  = verseContent.indexOf("<", index, cs);
 			strongsText = verseContent.mid(index, idx2 - index);
 			index = idx2;
 			*startIndex = index;
@@ -193,8 +193,9 @@ QString StrongsResultClass::getStrongsNumberText(const QString& verseContent, in
 ********************************************/
 
 CSearchResultArea::CSearchResultArea(QWidget *parent)
-	: SearchResultsForm(parent)
+	: SearchResultsForm()
 {
+	setParent(parent);
 	initView();
 	initConnections();
 }
@@ -203,7 +204,9 @@ CSearchResultArea::~CSearchResultArea() {}
 
 /** Initializes the view of this widget. */
 void CSearchResultArea::initView() {
-	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame, 0, 6);
+	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
+	
+	//TODO: set spacing/margins?(m_displayFrame, 0, 6);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
 }
@@ -264,7 +267,7 @@ void CSearchResultArea::updatePreview(const QString& key) {
 			vk.Headings(1);
 			vk.key(key);
 
-			((VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+			((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
 			//first go back and then go forward the keys to be in context
 			vk.previous(CSwordVerseKey::UseVerse);
@@ -295,7 +298,7 @@ void CSearchResultArea::updatePreview(const QString& key) {
 			vk.Headings(1);
 			vk.key(key);
 			
-			((VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
+			((sword::VerseKey*)(module->module()->getKey()))->Headings(1); //HACK: enable headings for VerseKeys
 
 			//include Headings in display, they are indexed and searched too
 			if (vk.Verse() == 1){
@@ -336,7 +339,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		}
 		// token break
 		else if (queryString[cnt] == ' ') {
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			token = "";
@@ -351,7 +354,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// wild card - treat as a special token break
 		//else if (queryString[cnt] == '*') {
 		//	token = token + queryString[cnt];
-		//	token = token.stripWhiteSpace();
+		//	token = token.simplified();
 		//	if ((token != "*") && (token != ""))
 		//		tokenList.append(token);
 		//	// start next token with wildcard (kin*m -> kin* *m)
@@ -361,7 +364,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// the ! token is also a token break
 		else if (queryString[cnt] == '!') {
 			// store away current token
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			// add the ! token
@@ -372,7 +375,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// the - token is also a token break
 		else if (queryString[cnt] == '-') {
 			// store away current token
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			// add the ! token
@@ -383,7 +386,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// the + token is also a token break
 		else if (queryString[cnt] == '+') {
 			// store away current token
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			// add the + token
@@ -394,7 +397,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// the || token is also a token break
 		else if ((queryString[cnt] == '|') && (queryString[cnt+1] == '|')) {
 			// store away current token
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			// add the || token
@@ -405,7 +408,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// the && token is also a token break
 		else if ((queryString[cnt] == '&') && (queryString[cnt+1] == '&')) {
 			// store away current token
-			token = token.stripWhiteSpace();
+			token = token.simplified();
 			if ((token != "*") && (token != ""))
 				tokenList.append(token);
 			// add the || token
@@ -415,7 +418,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		}
 		else cnt++;
 	}
-	token = token.stripWhiteSpace();
+	token = token.simplified();
 	if ((token != "*") && (token != ""))
 		tokenList.append(token);
 	
@@ -427,10 +430,10 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		// highlighted in the highlighter
 		//-----------------------------------------------------------
 		if (((*it) == "!") || ((*it) == "NOT") || ((*it) == "-")) {
-			it = tokenList.remove(it);
+			it = tokenList.erase(it);
 			if (it == tokenList.end())
 				break;
-			it = tokenList.remove(it);
+			it = tokenList.erase(it);
 			if (it == tokenList.end())
 				break;
 			it--;
@@ -442,7 +445,7 @@ QStringList CSearchResultArea::QueryParser(const QString& queryString) {
 		else if ( ((*it) == "||")  || ((*it) == "OR") || ((*it) == "+") ||
 		     ((*it) == "AND") || ((*it) == "&&") )
 		{
-			it = tokenList.remove(it);
+			it = tokenList.erase(it);
 			if (it == tokenList.end())
 				break;
 			it--;
@@ -468,7 +471,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	const bool cs = false;
 	
 	//   int index = 0;
-	int index = ret.find("<body", 0);
+	int index = ret.indexOf("<body", 0);
 	int matchLen = 0;
 	int length = searchedText.length();
 
@@ -485,7 +488,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	//---------------------------------------------------------------------
 	// search the searched text for "strong:" until it is not found anymore
 	sstIndex = 0;
-	while ((sstIndex = newSearchText.find("strong:", sstIndex)) != -1) {
+	while ((sstIndex = newSearchText.indexOf("strong:", sstIndex)) != -1) {
 		int idx1, idx2, sTokenIndex, sTokenIndex2;
 		QString sNumber, lemmaText;
 		const QString rep3("style=\"background-color:#FFFF66;\" ");
@@ -497,8 +500,8 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 		// first find the first space after "strong:"
 		//	 this should indicate a change in search token
 		sstIndex = sstIndex + 7;
-		sTokenIndex  = newSearchText.find(" ", sstIndex);
-		sTokenIndex2 = newSearchText.find("|", sstIndex);
+		sTokenIndex  = newSearchText.indexOf(" ", sstIndex);
+		sTokenIndex2 = newSearchText.indexOf("|", sstIndex);
 		if ((sTokenIndex2 != -1) && (sTokenIndex2 < sTokenIndex)) {
 			sNumber = newSearchText.mid(sstIndex, sTokenIndex2 - sstIndex);
 		}
@@ -509,11 +512,11 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 		sstIndex -= 7;
 		newSearchText.replace(sstIndex, sTokenIndex - sstIndex, "");
 		// find all the "lemma=" inside the the content
-		while((strongIndex = ret.find("lemma=", strongIndex, cs)) != -1) {
+		while((strongIndex = ret.indexOf("lemma=", strongIndex, cs)) != -1) {
 			// get the strongs number after the lemma and compare it with the
 			// strongs number we are looking for
-			idx1 = ret.find("\"", strongIndex) + 1;
-			idx2 = ret.find("\"", idx1 + 1);
+			idx1 = ret.indexOf("\"", strongIndex) + 1;
+			idx2 = ret.indexOf("\"", idx1 + 1);
 			lemmaText = ret.mid(idx1, idx2 - idx1);
 			if (lemmaText == sNumber) {
 				// strongs number is found now we need to highlight it
@@ -569,7 +572,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 		}
 
 		//       index = 0; //for every word start at the beginning
-		index = ret.find("<body", 0);
+		index = ret.indexOf("<body", 0);
 		findExp.setCaseSensitive(cs);
 		//while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
 		while ( (index = findExp.search(ret, index)) != -1 ) { //while we found the word
@@ -613,8 +616,8 @@ void CSearchResultArea::showAnalysis() {
 
 	namespace Options {
 
-CSearchOptionsArea::CSearchOptionsArea(QWidget *parent, const char *name ) :
-	SearchOptionsForm(parent,name) {
+CSearchOptionsArea::CSearchOptionsArea(QWidget *parent ) :
+	SearchOptionsForm(parent) {
 	initView();
 	readSettings();
 }
@@ -642,7 +645,7 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
    i--;
 	if (!found) {
 		i = 0;
-		m_searchTextCombo->insertItem( text,0 );
+		m_searchTextCombo->insertItem(0, text );
 	}
 
 	m_searchTextCombo->setCurrentItem(i);
@@ -658,23 +661,22 @@ void CSearchOptionsArea::initView() {
 	connect( m_searchTextCombo, SIGNAL(returnPressed ( const QString& )),
 				m_searchTextCombo, SLOT(addToHistory(const QString&))
 			);
-	QToolTip::add(m_searchTextCombo, CResMgr::searchdialog::options::searchedText::tooltip);
+	//QToolTip::add(m_searchTextCombo, CResMgr::searchdialog::options::searchedText::tooltip);
+	m_searchTextCombo->setToolTip(CResMgr::searchdialog::options::searchedText::tooltip);
 
 	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
-	connect( m_syntaxButton, SIGNAL(clicked()), this, SLOT(syntaxHelp()));
+	connect( m_syntaxButton, SIGNAL(triggered()), this, SLOT(syntaxHelp()));
 
 	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
-	connect(m_chooseModulesButton, SIGNAL(clicked()),
+	connect(m_chooseModulesButton, SIGNAL(triggered()),
 			this, SLOT(chooseModules()));
-	QToolTip::add
-		(m_chooseModulesButton, CResMgr::searchdialog::options::moduleChooserButton::tooltip);
-		
-	QToolTip::add
-		(m_rangeChooserCombo, CResMgr::searchdialog::options::chooseScope::tooltip);
+	
+	m_chooseModulesButton->setToolTip( CResMgr::searchdialog::options::moduleChooserButton::tooltip);
+	m_rangeChooserCombo->setToolTip( CResMgr::searchdialog::options::chooseScope::tooltip);
 	refreshRanges();
 
 	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
-	connect(m_chooseRangeButton, SIGNAL(clicked()),
+	connect(m_chooseRangeButton, SIGNAL(triggered()),
 			this, SLOT(setupRanges()));
 
 	//set the initial focus
@@ -783,7 +785,7 @@ void CSearchOptionsArea::syntaxHelp() {
 void CSearchOptionsArea::refreshRanges() {
 	//the first two options are fixed, the others can be edited using the "Setup ranges" button.
 	m_rangeChooserCombo->clear();
-	m_rangeChooserCombo->insertItem(i18n("No search scope"));
+	m_rangeChooserCombo->insertItem(0, i18n("No search scope"));
 	//m_rangeChooserCombo->insertItem(i18n("Last search result"));
 
 	//insert the user-defined ranges
@@ -791,7 +793,7 @@ void CSearchOptionsArea::refreshRanges() {
 								   (CBTConfig::searchScopes);
 	CBTConfig::StringMap::Iterator it;
 	for (it = map.begin(); it != map.end(); ++it) {
-		m_rangeChooserCombo->insertItem(it.key());
+		m_rangeChooserCombo->insertItem(0, it.key());
 	};
 }
 
@@ -802,7 +804,7 @@ sword::ListKey CSearchOptionsArea::searchScope() {
 		
 		QString scope = map[ m_rangeChooserCombo->currentText() ];
 		if (!scope.isEmpty()) {
-			return sword::VerseKey().ParseVerseList( (const char*)scope.utf8(), "Genesis 1:1", true);
+			return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
 		}
 	}
 	

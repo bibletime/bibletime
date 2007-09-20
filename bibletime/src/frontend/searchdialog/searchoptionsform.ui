@@ -32,12 +32,9 @@
   </property>
   <layout class="QHBoxLayout" >
    <item>
-    <widget class="Q3GroupBox" name="searchGroupBox" >
+    <widget class="QGroupBox" name="searchGroupBox" >
      <property name="title" >
       <string>Search parameters</string>
-     </property>
-     <property name="margin" >
-      <number>0</number>
      </property>
      <layout class="QGridLayout" >
       <property name="leftMargin" >

@@ -121,7 +121,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="Q3Frame" name="m_displayFrame" >
+     <widget class="QFrame" name="m_displayFrame" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
         <horstretch>0</horstretch>
