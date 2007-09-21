@@ -641,7 +641,7 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
 	bool found = false;
 	int i = 0;
 	for (i = 0; !found && i < m_searchTextCombo->count(); ++i) {
-		if (m_searchTextCombo->text(i) == text) {
+		if (m_searchTextCombo->itemText(i) == text) {
 			found = true;
 		}
 	}
@@ -653,7 +653,7 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
 		m_searchTextCombo->insertItem(0, text );
 	}
 
-	m_searchTextCombo->setCurrentItem(i);
+	m_searchTextCombo->setCurrentIndex(i);
 	m_searchTextCombo->reset();
 	m_searchTextCombo->setFocus();
 }
@@ -729,7 +729,7 @@ const ListCSwordModuleInfo CSearchOptionsArea::modules() {
 /** Sets all options back to the default. */
 void CSearchOptionsArea::reset() {
 	m_rangeChooserCombo->setCurrentItem(0); //no scope
-	m_searchTextCombo->clearEdit();
+	m_searchTextCombo->clearEditText();
 }
 
 /** Reads the settings for the searchdialog from disk. */
@@ -804,7 +804,7 @@ void CSearchOptionsArea::refreshRanges() {
 
 /** Returns the selected search scope if a search scope was selected. */
 sword::ListKey CSearchOptionsArea::searchScope() {
-	if (m_rangeChooserCombo->currentItem() > 0) { //is not "no scope"
+	if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
 		CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
 		
 		QString scope = map[ m_rangeChooserCombo->currentText() ];
