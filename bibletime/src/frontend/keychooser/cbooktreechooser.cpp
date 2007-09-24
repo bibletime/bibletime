@@ -132,10 +132,13 @@ void CBookTreeChooser::refreshContent() {
 
 /** Slot for signal when item is selected by user. */
 void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
-	//set the key with text
-	m_key->key( item->text(1));
-	//tell possible listeners about the change
-	emit keyChanged(m_key);
+	//Sometimes Qt calls this function with a null pointer.
+	if (item != NULL){
+		//set the key with text
+		m_key->key( item->text(1));
+		//tell possible listeners about the change
+		emit keyChanged(m_key);
+	}
 }
 
 /** Inherited from ckeychooser */
