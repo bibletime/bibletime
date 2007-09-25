@@ -127,13 +127,14 @@ void CBookTreeChooser::refreshContent() {
 }
 
 
-//TODO: Check if itemActivated is called too many times. I had the impression it is getting called when the regular
-//book keychooser changed, so that the content generation might be done twice. I may be wrong.
+//TODO: itemActivated is called too many times. As tested in GDB, the function
+//is called twice with the pointer to the correct book and twice with a null
+//pointer.
 
 /** Slot for signal when item is selected by user. */
 void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
 	//Sometimes Qt calls this function with a null pointer.
-	if (item != NULL){
+	if (item){
 		//set the key with text
 		m_key->key( item->text(1));
 		//tell possible listeners about the change
