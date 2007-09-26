@@ -217,7 +217,8 @@ void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules) {
 	reset(); //clear current modules
 
 	m_modules = modules;
-	m_moduleListBox->setupTree(modules, searchedText);
+	//TODO:
+	//m_moduleListBox->setupTree(modules, searchedText);
 
 	//have a Bible or commentary in the modules?
 	bool enable = false;
@@ -248,7 +249,7 @@ void CSearchResultArea::reset() {
 void CSearchResultArea::updatePreview(const QString& key) {
 	using namespace Rendering;
 
-	CSwordModuleInfo* module = m_moduleListBox->activeModule();
+	CSwordModuleInfo* module = 0; //TODO: just testing m_moduleListBox->activeModule();
 	if ( module ) {
 		const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 		//const int searchFlags = CSearchDialog::getSearchDialog()->searchFlags();
@@ -609,8 +610,9 @@ void CSearchResultArea::initConnections() {
 
 /** Shows a dialog with the search analysis of the current search. */
 void CSearchResultArea::showAnalysis() {
-	Analysis::CSearchAnalysisDialog dlg(m_modules, this);
-	dlg.exec();
+	//TODO: create and show
+	//Analysis::CSearchAnalysisDialog dlg(m_modules, this);
+	//dlg.exec();
 }
 
 	} //end of namespace Search.Result

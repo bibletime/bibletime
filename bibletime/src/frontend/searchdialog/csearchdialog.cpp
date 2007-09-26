@@ -96,7 +96,7 @@ CSearchDialog::~CSearchDialog()
 /** Starts the search with the set modules and the set search text. */
 void CSearchDialog::startSearch()
 {
-	QString searchText(m_searchOptionsPage->searchText());
+	QString searchText(m_searchOptionsArea->searchText());
 
 	if (searchText.isEmpty()) {
 		return;
@@ -121,23 +121,23 @@ void CSearchDialog::startSearch()
 		}
 	}
 
-	m_searchResultPage->reset();
+	m_searchResultArea->reset();
 
-//	const int searchFlags = m_searchOptionsPage->searchFlags();
+//	const int searchFlags = m_searchOptionsArea->searchFlags();
 
-//	const CSwordModuleSearch::scopeType scopeType = m_searchOptionsPage->scopeType();
+//	const CSwordModuleSearch::scopeType scopeType = m_searchOptionsArea->scopeType();
 // 	if (scopeType == CSwordModuleSearch::Scope_LastSearch) {
 // 		searchFlags |= CSwordModuleSearch::useLastResult;
 // 	}
 // 	else if ( (scopeType == CSwordModuleSearch::Scope_Bounds)
-// 			  && strlen(m_searchOptionsPage->searchScope().getRangeText())) {
+// 			  && strlen(m_searchOptionsArea->searchScope().getRangeText())) {
 // 		//we need the scope flag and a valid scope!
 // 		searchFlags |= CSwordModuleSearch::useScope;
-// 		m_searcher.setSearchScope( m_searchOptionsPage->searchScope() );
+// 		m_searcher.setSearchScope( m_searchOptionsArea->searchScope() );
 // 	}
 
-	if (m_searchOptionsPage->hasSearchScope()) {
-		m_searcher.setSearchScope( m_searchOptionsPage->searchScope() );
+	if (m_searchOptionsArea->hasSearchScope()) {
+		m_searcher.setSearchScope( m_searchOptionsArea->searchScope() );
 	}
 	else {
 		m_searcher.resetSearchScope();
@@ -153,8 +153,8 @@ void CSearchDialog::startSearch()
 /** Starts the search with the given module list and given search text. */
 void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QString& searchText)
 {
-	m_searchResultPage->reset();
-	m_searchOptionsPage->reset();
+	m_searchResultArea->reset();
+	m_searchOptionsArea->reset();
 	setModules(modules);
 	setSearchText(searchText);
 
@@ -164,41 +164,41 @@ void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QStri
 /** Returns the list of used modules. */
 const ListCSwordModuleInfo CSearchDialog::modules()
 {
-	return m_searchOptionsPage->modules();
+	return m_searchOptionsArea->modules();
 }
 
 /** Sets the list of modules for the search. */
 void CSearchDialog::setModules( const ListCSwordModuleInfo modules )
 {
-	m_searchOptionsPage->setModules(modules);
+	m_searchOptionsArea->setModules(modules);
 	resize( sizeHint() );
 }
 
 /** Returns the search text which is set currently. */
 const QString CSearchDialog::searchText()
 {
-	return m_searchOptionsPage->searchText();
+	return m_searchOptionsArea->searchText();
 }
 
 sword::ListKey CSearchDialog::searchScope()
 {
-	return m_searchOptionsPage->searchScope();
+	return m_searchOptionsArea->searchScope();
 };
 
 /** Returns true if the search used a scope, otherwise false. */
 // const CSwordModuleSearch::scopeType CSearchDialog::searchScopeType() const {
-// 	return m_searchOptionsPage->scopeType();
+// 	return m_searchOptionsArea->scopeType();
 // }
 
 /** Returns true if the search used a scope, otherwise false. */
 // const int CSearchDialog::searchFlags() const {
-// 	return m_searchOptionsPage->searchFlags();
+// 	return m_searchOptionsArea->searchFlags();
 // }
 
 /** Returns the search text which is used for the search. */
 void CSearchDialog::setSearchText( const QString searchText )
 {
-	m_searchOptionsPage->setSearchText(searchText);
+	m_searchOptionsArea->setSearchText(searchText);
 }
 
 /** Initializes this object. */
@@ -209,11 +209,11 @@ void CSearchDialog::initView()
 	QVBoxLayout *box = new QVBoxLayout( mainWidget());
 	mainWidget()->setLayout(box);
 
-	m_searchOptionsPage = new Options::CSearchOptionsArea(mainWidget());
-	box->addWidget( m_searchOptionsPage );
+	m_searchOptionsArea = new Options::CSearchOptionsArea(mainWidget());
+	box->addWidget( m_searchOptionsArea );
 
-	m_searchResultPage = new Result::CSearchResultArea(mainWidget());
-	box->addWidget( m_searchResultPage );
+	m_searchResultArea = new Result::CSearchResultArea(mainWidget());
+	box->addWidget( m_searchResultArea );
 
 	// The dialog doesn't resize properly if the minimum size of the
 	// plain page is lower than the minimumsize of our two widgets.
@@ -221,9 +221,9 @@ void CSearchDialog::initView()
 	// button bar and the two widgets instead of stopping at the
 	// minimum size.  The following code sets the minimum with some
 	// margin.  If you know of a better way to do this, do it!
-	int w = m_searchOptionsPage->minimumWidth();
-	int h = m_searchOptionsPage->minimumHeight() +
-		m_searchResultPage->minimumHeight();
+	int w = m_searchOptionsArea->minimumWidth();
+	int h = m_searchOptionsArea->minimumHeight() +
+		m_searchResultArea->minimumHeight();
 	mainWidget()->setMinimumSize(w+10, h+100);
 	// Added code for loading last size of dialog
 	//setInitialSize(configDialogSize("CSearchDialog"));
@@ -234,17 +234,17 @@ void CSearchDialog::searchFinished() {
 // 	qWarning("CSearchDialog::searchFinished()");
 
 	if ( m_searcher.foundItems() ) {
-		m_searchResultPage->setSearchResult(modules());
+		m_searchResultArea->setSearchResult(modules());
 	}
 	else {
-		m_searchResultPage->reset();
+		m_searchResultArea->reset();
 	}
 	m_staticDialog->raise();
 	m_staticDialog->activateWindow();
 }
 
 void CSearchDialog::showModulesSelector() {
-	m_searchOptionsPage->chooseModules();
+	m_searchOptionsArea->chooseModules();
 }
 
 /** Initializes the signal slot connections */
@@ -255,8 +255,8 @@ void CSearchDialog::initConnections() {
 
 /** Resets the parts to the default. */
 void CSearchDialog::reset() {
-	m_searchOptionsPage->reset();
-	m_searchResultPage->reset();
+	m_searchOptionsArea->reset();
+	m_searchResultArea->reset();
 }
 
 /** Reimplementation. */

@@ -119,8 +119,8 @@ protected slots:
 	virtual void slotClose();
 
 private:
-	Result::CSearchResultArea* m_searchResultPage;
-	Options::CSearchOptionsArea* m_searchOptionsPage;
+	Result::CSearchResultArea* m_searchResultArea;
+	Options::CSearchOptionsArea* m_searchOptionsArea;
 	
 	CSwordModuleSearch m_searcher;
 };

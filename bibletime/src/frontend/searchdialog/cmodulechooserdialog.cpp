@@ -12,8 +12,10 @@
 
 #include "cmodulechooserdialog.h"
 
-#include <QDialog>
 #include "backend/drivers/cswordmoduleinfo.h"
+
+#include <QDialog>
+
 
 namespace Search { namespace Options {
 
