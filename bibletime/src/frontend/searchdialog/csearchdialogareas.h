@@ -18,7 +18,7 @@
 #include "backend/cswordmodulesearch.h"
 
 //#include "ui_searchoptionsform.h" // uic generated
-#include "ui_searchresultsform.h" // uic generated
+//#include "ui_searchresultsform.h" // uic generated
 
 //Qt includes
 #include <QList>
@@ -33,9 +33,13 @@ class QHBoxLayout;
 class QGroupBox;
 class QGridLayout;
 class QPushButton;
+class QLabel;
+class QTreeWidget;
+class QFrame;
+
 class KComboBox;
 class KHistoryComboBox;
-class QLabel;
+
 
 namespace Search {
 	namespace Result {
@@ -127,7 +131,8 @@ private:
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
   */
-class CSearchResultArea : public QWidget, Ui::SearchResultsForm {
+class CSearchResultArea : public QWidget
+{
 	Q_OBJECT
 public:
 	CSearchResultArea(QWidget *parent=0);
@@ -165,7 +170,18 @@ protected: // Protected methods
 	const QString highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/);
 
 private:
+
+	
+    
+    QTreeWidget *m_moduleListBox;
+    QTreeWidget *m_resultListBox;
+    
+    QPushButton *m_analyseButton;
+   
+    QFrame *m_displayFrame;
+
 	CReadDisplay* m_previewDisplay;
+
 	ListCSwordModuleInfo m_modules;
 
 protected slots: // Protected slots

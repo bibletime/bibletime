@@ -26,6 +26,7 @@
 #include <QString>
 #include <QWidget>
 #include <QMessageBox>
+#include <QVBoxLayout>
 
 //KDE includes
 #include <kdialog.h>
