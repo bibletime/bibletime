@@ -61,7 +61,8 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 void CDisplaySettingsButton::optionToggled(QAction* action) {
 	qDebug("display settings option toggled");
 	//qDebug() << "action: " << action;
-	
+	//TODO:change the options for this display
+	//set the display window m_module/displaySettings
 	emit sigChanged();
 }
 

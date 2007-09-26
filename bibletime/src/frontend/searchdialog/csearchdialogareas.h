@@ -9,15 +9,15 @@
 
 
 
-#ifndef CSEARCHDIALOGPAGES_H
-#define CSEARCHDIALOGPAGES_H
+#ifndef CSEARCHDIALOGAREAS_H
+#define CSEARCHDIALOGAREAS_H
 
 //BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
-#include "ui_searchoptionsform.h" // uic generated
+//#include "ui_searchoptionsform.h" // uic generated
 #include "ui_searchresultsform.h" // uic generated
 
 //Qt includes
@@ -29,6 +29,13 @@
 //forward declarations
 class CReadDisplay;
 
+class QHBoxLayout;
+class QGroupBox;
+class QGridLayout;
+class QPushButton;
+class KComboBox;
+class KHistoryComboBox;
+class QLabel;
 
 namespace Search {
 	namespace Result {
@@ -176,7 +183,7 @@ protected slots: // Protected slots
 	
 	namespace Options {
 		
-class CSearchOptionsArea : public QWidget, Ui::SearchOptionsForm  {
+class CSearchOptionsArea : public QWidget {
 	Q_OBJECT
 public:
 	CSearchOptionsArea(QWidget *parent=0);
@@ -214,8 +221,7 @@ public:
 	QSize minimumSizeHint() const { return minimumSize(); }
     bool hasSearchScope();
 
-private:
-	ListCSwordModuleInfo m_modules;
+
 	
 protected: // Protected methods
 	/**
@@ -255,6 +261,22 @@ protected slots: // Protected slots
 
 signals:
 	void sigSetSearchButtonStatus(bool);
+
+private:
+	ListCSwordModuleInfo m_modules;
+
+	QHBoxLayout *hboxLayout;
+    QGroupBox *searchGroupBox;
+    QGridLayout *gridLayout;
+    QLabel *m_searchTextLabel;
+    QPushButton *m_syntaxButton;
+    QPushButton *m_chooseModulesButton;
+    QPushButton *m_chooseRangeButton;
+    QLabel *m_searchScopeLabel;
+    KComboBox *m_rangeChooserCombo;
+    KHistoryComboBox *m_searchTextCombo;
+    QLabel *m_modulesLabel;
+
 };
 
 	} //end of namespace Search::Options

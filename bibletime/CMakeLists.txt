@@ -108,6 +108,15 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/kio_ftptransport.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
+	#Search dialog
+	src/frontend/searchdialog/csearchdialog.cpp
+	src/frontend/searchdialog/csearchresultview.cpp
+	src/frontend/searchdialog/csearchdialogareas.cpp
+	src/frontend/searchdialog/cmoduleresultview.cpp
+	#src/frontend/searchdialog/csearchanalysis.cpp
+	src/frontend/searchdialog/cmodulechooserdialog.cpp
+	src/frontend/searchdialog/crangechooserdialog.cpp
+
 	#Profile manager frontend
 	src/frontend/profile/cprofilemgr.cpp
 	src/frontend/profile/cprofilewindow.cpp
@@ -159,6 +168,7 @@ SET(bibletime_SOURCES
 kde4_add_ui_files(bibletime_SOURCES
 	src/frontend/searchdialog/searchresultsform.ui
 	src/frontend/searchdialog/searchoptionsform.ui
+	src/frontend/searchdialog/modulechooser.ui
 	src/frontend/bookshelfmanager/manageindicesform.ui
 )
 
@@ -185,7 +195,8 @@ ELSE(DEBUG)
 ENDIF(DEBUG)
 
 INCLUDE_DIRECTORIES(
-	${QT_INCLUDE_DIR}	${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR} ${QT_QTXML_INCLUDE_DIR} ${QT_QT3SUPPORT_INCLUDE_DIR}
+	${QT_INCLUDE_DIR}	${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR} ${QT_QTXML_INCLUDE_DIR} 
+	${QT_QT3SUPPORT_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
 	${CLUCENE_INCLUDE_DIR} #CLucene headers
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h

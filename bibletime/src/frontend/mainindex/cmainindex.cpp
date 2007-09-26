@@ -683,7 +683,7 @@ void CMainIndex::searchInModules() {
 		}
 	}
 
-	//TODO: temporary //Search::CSearchDialog::openDialog(modules, QString::null);
+	Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
 /** Unlocks the current module. */

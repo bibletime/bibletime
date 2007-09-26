@@ -189,5 +189,5 @@ void CReadWindow::openSearchStrongsDialog() {
 		searchText.append("strong:").append(displayWidget()->getCurrentNodeInfo() [CDisplay::Lemma]);
 	}
 	
-	//TODO: temporary //Search::CSearchDialog::openDialog( modules(), searchText, 0 );
+	Search::CSearchDialog::openDialog( modules(), searchText, 0 );
 }

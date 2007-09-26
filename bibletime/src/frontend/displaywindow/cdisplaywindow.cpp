@@ -479,7 +479,7 @@ void CDisplayWindow::closeEvent(QCloseEvent* e) {
 }
 
 void CDisplayWindow::slotSearchInModules() {
-	//TODO: temporary //Search::CSearchDialog::openDialog(modules());
+	Search::CSearchDialog::openDialog(modules());
 }
 
 void CDisplayWindow::printAll() {

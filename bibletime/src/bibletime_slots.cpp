@@ -28,7 +28,7 @@
 #include "frontend/mainindex/cindexitembase.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
-//#include "frontend/searchdialog/csearchdialog.h" //TODO
+#include "frontend/searchdialog/csearchdialog.h"
 
 //Sword includes
 #include <versekey.h>
@@ -365,22 +365,22 @@ void BibleTime::slotSettingsToolbar() {
 
 void BibleTime::slotSearchModules() {
 	//TODO: commented out temporarily
-// 	//get the modules of the open windows
-// 	ListCSwordModuleInfo modules;
-// 
-// 	QWidgetList windows = m_mdi->windowList();
-// 	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
-// 		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
-// 			ListCSwordModuleInfo windowModules = w->modules();
-// 
-// 			ListCSwordModuleInfo::iterator end_it = windowModules.end();
-// 			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
-// 				modules.append(*it);
-// 			};
-// 		};
-// 	};
-// 
-// 	Search::CSearchDialog::openDialog(modules, QString::null);
+	//get the modules of the open windows
+	ListCSwordModuleInfo modules;
+ 
+	QWidgetList windows = m_mdi->windowList();
+	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
+		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
+			ListCSwordModuleInfo windowModules = w->modules();
+
+			ListCSwordModuleInfo::iterator end_it = windowModules.end();
+			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
+				modules.append(*it);
+			};
+		};
+	};
+
+	Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
 /* Search default Bible slot
@@ -388,14 +388,14 @@ void BibleTime::slotSearchModules() {
  */
 void BibleTime::slotSearchDefaultBible() {
 	//TODO:commented out temporarily
-// 	ListCSwordModuleInfo module;
-// 	CSwordModuleInfo* bible = CBTConfig::get
-// 								  (CBTConfig::standardBible);
-// 	if (bible) {
-// 		module.append(bible);
-// 	}
-// 
-// 	Search::CSearchDialog::openDialog(module, QString::null);
+ 	ListCSwordModuleInfo module;
+ 	CSwordModuleInfo* bible = CBTConfig::get
+ 								  (CBTConfig::standardBible);
+ 	if (bible) {
+ 		module.append(bible);
+ 	}
+ 
+ 	Search::CSearchDialog::openDialog(module, QString::null);
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
