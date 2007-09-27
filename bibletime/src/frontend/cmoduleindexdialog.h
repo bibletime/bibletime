@@ -18,7 +18,8 @@
 #include <QObject>
 
 //forward declaration
-class KProgressDialog;
+//class KProgressDialog;
+class QProgressDialog;
 
 /**
  * This dialog is used to index a list of modules and to show progress for that.\
@@ -44,7 +45,8 @@ public:
 	void indexUnindexedModules( const ListCSwordModuleInfo& modules );
 
 private:
-	KProgressDialog* progress;
+	//KProgressDialog* progress;
+	QProgressDialog* m_progress;
 	int m_currentModuleIndex;
 	
 protected slots:
