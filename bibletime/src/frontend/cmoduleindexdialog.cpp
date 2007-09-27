@@ -35,56 +35,45 @@ CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 	return instance;
 }
 
-void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules ) {
+void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
+{
 	qDebug("indexAllModules");
-	if (modules.count() == 0) {
-		return;
-	}
+	static bool indexing = false;
+	if (!indexing) {
+		indexing = true;
+		qDebug() << &modules << modules << modules.count();
+		//qDebug() << modules[0]->name();
+		if (modules.count() < 1) {
+			return;
+		}
+		
+		m_currentModuleIndex = 0;
+		m_progress = new QProgressDialog(QString(""), 0, 0, modules.count()*100);
+		m_progress->setWindowModality(Qt::WindowModal); // not useful actually, should have parent for this
+		m_progress->show();
+		m_progress->raise();
+		
+		foreach (CSwordModuleInfo* info, modules) {
+			info->connectIndexingFinished(this, SLOT(slotFinished()));
+			info->connectIndexingProgress(this, SLOT(slotModuleProgress(int)) );
+			QString modname(info->name());
+			const QString labelText = QString(i18n("Creating index for work %1", modname  ));
+			m_progress->setLabelText(labelText);
+			info->buildIndex(); //waits until this module is finished
 	
-	m_currentModuleIndex = 0;
-	//progress = new KProgressDialog(0, i18n("Preparing instant search"), QString::null, Qt::Dialog);
-	//progress->setAllowCancel(false);
-	//progress->progressBar()->setRange(0, modules.count() * 100 );
-	//progress->setMinimumDuration(0);
-	m_progress = new QProgressDialog(QString(""), 0, 0, modules.count()*100);
-	//m_progress->setCancelButtonText(0);
-	//m_progress->setRange(0, );
-	m_progress->setLabelText(QString("1"));
-	m_progress->show();
-	m_progress->setLabelText(QString("2"));
-// 	progress->show();
-// 	progress->raise();
-	qDebug("indexAllModules 1");
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for( ListCSwordModuleInfo::const_iterator it = modules.begin(); it != end_it; ++it) {
-		m_progress->setLabelText(QString("3"));
-		qDebug() << *it;
-		(*it)->connectIndexingFinished(this, SLOT(slotFinished()));
-		//(*it)->connectIndexingProgress(this, SLOT(slotModuleProgress(int)));
-		(*it)->connectIndexingProgress(this, SLOT(slotModuleProgress(int)) );
-		m_progress->setLabelText(QString("4"));
-		QString modname((*it)->name());
-		qDebug() << "modname:" << modname;
-		const QString labelText = QString(i18n("Creating index for work %1", modname  )).simplified();
-		QString tempStr(labelText.toUtf8());
-		m_progress->setLabelText(tempStr);
-		//qDebug() << "labelText:" << labelText;
-		//m_progress->setLabelText(labelText);
-		
-		qDebug("Building index for work %s", (*it)->name().toLatin1());
-		
-		(*it)->buildIndex(); //waits until this module is finished
-
-		m_currentModuleIndex++;
-		(*it)->disconnectIndexingSignals(this);
+			m_currentModuleIndex++;
+			info->disconnectIndexingSignals(this);
+		}
+	
+		delete m_progress;
+		m_progress = 0;
+		indexing = false;
 	}
-
-	delete m_progress;
-	m_progress = 0;
 }
 
 void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modules ) {
 	qDebug("indexUnindexedModules");
+	//qDebug() << modules << modules.count();
 	ListCSwordModuleInfo unindexedMods;
 	
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
@@ -95,7 +84,7 @@ void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modu
 
 		unindexedMods << (*it);
 	}
-	
+	//qDebug() << unindexedMods << unindexedMods.count();
 	indexAllModules(unindexedMods);
 }
 
@@ -108,7 +97,8 @@ void CModuleIndexDialog::slotModuleProgress( int percentage ) {
 	
 	//progress->progressBar()->setValue( m_currentModuleIndex * 100 + percentage );
 	m_progress->setValue(m_currentModuleIndex * 100 + percentage);
-	KApplication::kApplication()->processEvents(); //10 ms only; TODO: how about in qt4?
+	//KApplication::kApplication()->processEvents(); //10 ms only; TODO: how about in qt4?
+	qApp->processEvents();
 }
 
 void CModuleIndexDialog::slotFinished( ) {
@@ -116,5 +106,6 @@ void CModuleIndexDialog::slotFinished( ) {
 	
 	//progress->progressBar()->setValue( progress->progressBar()->maximum() - progress->progressBar()->minimum() );
 	m_progress->setValue(m_progress->maximum());
-	KApplication::kApplication()->processEvents(); //1 ms only; TODO: how about in qt4?
+	//KApplication::kApplication()->processEvents(); //1 ms only; TODO: how about in qt4?
+	qApp->processEvents();
 }
