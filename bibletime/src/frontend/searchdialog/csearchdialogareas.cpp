@@ -269,11 +269,10 @@ void CSearchResultArea::initView()
     hboxLayout = new QHBoxLayout();
     hboxLayout->setSpacing(6);
     hboxLayout->setContentsMargins(0, 0, 0, 0);
-    m_analyseButton = new QPushButton(rightSideBox);
-
+    m_analyseButton = new QPushButton(i18n("&Analyze search"), rightSideBox);
     hboxLayout->addWidget(m_analyseButton);
 
-    spacerItem = new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    spacerItem = new QSpacerItem(10, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
     hboxLayout->addItem(spacerItem);
 
@@ -780,7 +779,7 @@ void CSearchOptionsArea::initView() {
     gridLayout->setHorizontalSpacing(3);
     gridLayout->setVerticalSpacing(3);
     gridLayout->setContentsMargins(6, 6, 6, 6);
-    m_searchTextLabel = new QLabel(searchGroupBox);
+    m_searchTextLabel = new QLabel(i18n("Search for:"), searchGroupBox);
 
     QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
     sizePolicy1.setHorizontalStretch(0);
@@ -791,19 +790,19 @@ void CSearchOptionsArea::initView() {
 
     gridLayout->addWidget(m_searchTextLabel, 0, 0, 1, 1);
 
-    m_syntaxButton = new QPushButton(searchGroupBox);
+    m_syntaxButton = new QPushButton(i18n("&Help"), searchGroupBox);
 
     gridLayout->addWidget(m_syntaxButton, 0, 2, 1, 1);
 
-    m_chooseModulesButton = new QPushButton(searchGroupBox);
+    m_chooseModulesButton = new QPushButton(i18n("Ch&oose"), searchGroupBox);
 
     gridLayout->addWidget(m_chooseModulesButton, 1, 2, 1, 1);
 
-    m_chooseRangeButton = new QPushButton(searchGroupBox);
+    m_chooseRangeButton = new QPushButton(i18n("S&etup"), searchGroupBox);
 
     gridLayout->addWidget(m_chooseRangeButton, 2, 2, 1, 1);
 
-    m_searchScopeLabel = new QLabel(searchGroupBox);
+    m_searchScopeLabel = new QLabel(i18n("Search scope:"), searchGroupBox);
     sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
     m_searchScopeLabel->setSizePolicy(sizePolicy1);
     m_searchScopeLabel->setWordWrap(false);
@@ -827,8 +826,9 @@ void CSearchOptionsArea::initView() {
     m_searchTextCombo->setProperty("duplicatesEnabled", QVariant(false));
 
     gridLayout->addWidget(m_searchTextCombo, 0, 1, 1, 1);
-
-    m_modulesLabel = new QLabel(searchGroupBox);
+	
+	//what is this label?
+    m_modulesLabel = new QLabel(i18n("what2"), searchGroupBox);
     sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
     m_modulesLabel->setSizePolicy(sizePolicy1);
     m_modulesLabel->setTextFormat(Qt::RichText);

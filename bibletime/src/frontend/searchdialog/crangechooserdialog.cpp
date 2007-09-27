@@ -101,16 +101,16 @@ void CRangeChooserDialog::initView()
 
 	QHBoxLayout* hboxLayout = new QHBoxLayout();
 	QVBoxLayout* vboxLayout1 = new QVBoxLayout();
-	QLabel* rangeListLabel = new QLabel(this);
+	QLabel* rangeListLabel = new QLabel(i18n("S&earch range:"), this);
 	vboxLayout1->addWidget(rangeListLabel);
 
 	m_rangeList = new QListWidget(this);
 	vboxLayout1->addWidget(m_rangeList);
 
 	QHBoxLayout* hboxLayout1 = new QHBoxLayout();
-	m_newRangeButton = new QPushButton(this);
+	m_newRangeButton = new QPushButton(i18n("&Add new range"), this);
 	hboxLayout1->addWidget(m_newRangeButton);
-	m_deleteRangeButton = new QPushButton(this);
+	m_deleteRangeButton = new QPushButton(i18n("Delete current &range"), this);
 	hboxLayout1->addWidget(m_deleteRangeButton);
 
 	vboxLayout1->addLayout(hboxLayout1);
@@ -118,21 +118,21 @@ void CRangeChooserDialog::initView()
 
 	QVBoxLayout* vboxLayout2 = new QVBoxLayout();
 	QHBoxLayout* hboxLayout2 = new QHBoxLayout();
-	QLabel* nameEditLabel = new QLabel(this);
+	QLabel* nameEditLabel = new QLabel(i18n("&Name:"), this);
 	hboxLayout2->addWidget(nameEditLabel);
 
 	m_nameEdit = new QLineEdit(this);
 	hboxLayout2->addWidget(m_nameEdit);
 	vboxLayout2->addLayout(hboxLayout2);
 
-	QLabel* rangeEditLabel = new QLabel(this);
+	QLabel* rangeEditLabel = new QLabel(i18n("Edi&t current range:"), this);
 	vboxLayout2->addWidget(rangeEditLabel);
 
 	m_rangeEdit = new QTextEdit(this);
 
 	vboxLayout2->addWidget(m_rangeEdit);
 
-	QLabel* resultListLabel = new QLabel(this);
+	QLabel* resultListLabel = new QLabel(i18n("Parsed search range:"), this);
     vboxLayout2->addWidget(resultListLabel);
 
 	m_resultList = new QListWidget(this);
