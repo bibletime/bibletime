@@ -245,13 +245,49 @@ void CMainIndex::initConnections()
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
+	
+	QObject::connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(slotModifySelection()));
+
 	qDebug("CMainIndex::initConnections");
 }
 
-/** Is called when an item was clicked/double clicked. */
+void CMainIndex::slotModifySelection()
+{
+	// This creates recursion if a folder is selected, but not infinite.
+	//qDebug("CMainIndex::slotModifySelection");
+	QList<QTreeWidgetItem*> selection = selectedItems();
+	foreach (QTreeWidgetItem* item, selection) {
+		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(item);
+		if (citem->isFolder()) {
+			item->setSelected(false);
+			break;
+		}
+	}
+}
+
+/**
+* Hack to get single click and selection working. See slotExecuted.
+*/
+void CMainIndex::mouseReleaseEvent(QMouseEvent* event) {
+	//qDebug("CMainIndex::mouseReleaseEvent");
+	//qDebug() << event->type() << event->modifiers();
+	m_mouseReleaseEventModifiers = event->modifiers();
+	QTreeWidget::mouseReleaseEvent(event);
+}
+
+/** Called when an item is clicked with mouse or activated with keyboard. */
 void CMainIndex::slotExecuted( QTreeWidgetItem* i )
 {
 	qDebug("CMainIndex::slotExecuted");
+
+	//HACK: checking the modifier keys from the last mouseReleaseEvent
+	//depends on executing order: mouseReleaseEvent first, then itemClicked signal
+	int modifiers = m_mouseReleaseEventModifiers;
+	m_mouseReleaseEventModifiers = Qt::NoModifier;
+	if (modifiers != Qt::NoModifier) {
+		return;
+	}
+
 	qDebug(QString().setNum((int)i).toLatin1().data());
 	CIndexItemBase* ci = dynamic_cast<CIndexItemBase*>(i);
 	if (!ci) {
@@ -260,9 +296,11 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i )
 	}
 
 	if (ci->isFolder()) {
-		qDebug() << "folder was activated";
-		qDebug() << "item was:" << i->isExpanded() << "and will be:" << !i->isExpanded();
+		//qDebug() << "folder was activated";
+		//qDebug() << "item was:" << i->isExpanded() << "and will be:" << !i->isExpanded();
 		i->setExpanded( !i->isExpanded() );
+		//We don't want to select a folder
+		//i->setSelected(false);
 	}
 	else if (CIndexModuleItem* m = dynamic_cast<CIndexModuleItem*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->module();

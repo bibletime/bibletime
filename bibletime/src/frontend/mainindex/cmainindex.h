@@ -38,6 +38,8 @@ class BTMimeData;
 class KActionMenu;
 class KMenu;
 
+class QMouseEvent; //testing
+
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
   */
@@ -86,6 +88,10 @@ public slots:
 	void searchInModules();
 
 protected: // Protected methods
+
+	//testing
+	virtual void mouseReleaseEvent(QMouseEvent* event);
+	
 	/**
 	* Reimplementation. Adds the given group to the tree.
 	*/
@@ -135,6 +141,10 @@ protected: // Protected methods
 	virtual bool event(QEvent* event);
 
 protected slots: // Protected slots
+	/**
+	* Called when the selection is changed.
+	*/
+	void slotModifySelection();
 	/**
 	* Is called when an item was clicked/double clicked.
 	*/
@@ -202,6 +212,8 @@ private:
 	bool m_itemsMovable;
 	QTreeWidgetItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
+
+	int m_mouseReleaseEventModifiers;
 
 	/**
 	* Initializes the view.
