@@ -77,7 +77,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 	:KDialog(parent)
 {
 	setButtons(KDialog::Close|KDialog::User1);
-	
+	setButtonText(KDialog::User1, i18n("&Search"));
 	//setWFlags( windowFlags() | Qt::WStyle_MinMax );
 	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 

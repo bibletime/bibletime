@@ -791,22 +791,18 @@ void CSearchOptionsArea::initView() {
     gridLayout->addWidget(m_searchTextLabel, 0, 0, 1, 1);
 
     m_syntaxButton = new QPushButton(i18n("&Help"), searchGroupBox);
-
     gridLayout->addWidget(m_syntaxButton, 0, 2, 1, 1);
 
     m_chooseModulesButton = new QPushButton(i18n("Ch&oose"), searchGroupBox);
-
     gridLayout->addWidget(m_chooseModulesButton, 1, 2, 1, 1);
 
     m_chooseRangeButton = new QPushButton(i18n("S&etup"), searchGroupBox);
-
     gridLayout->addWidget(m_chooseRangeButton, 2, 2, 1, 1);
 
     m_searchScopeLabel = new QLabel(i18n("Search scope:"), searchGroupBox);
     sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
     m_searchScopeLabel->setSizePolicy(sizePolicy1);
     m_searchScopeLabel->setWordWrap(false);
-
     gridLayout->addWidget(m_searchScopeLabel, 2, 0, 1, 1);
 
     m_rangeChooserCombo = new KComboBox(searchGroupBox);
@@ -815,7 +811,6 @@ void CSearchOptionsArea::initView() {
     sizePolicy2.setVerticalStretch(0);
     sizePolicy2.setHeightForWidth(m_rangeChooserCombo->sizePolicy().hasHeightForWidth());
     m_rangeChooserCombo->setSizePolicy(sizePolicy2);
-
     gridLayout->addWidget(m_rangeChooserCombo, 2, 1, 1, 1);
 
     m_searchTextCombo = new KHistoryComboBox(searchGroupBox);
@@ -827,12 +822,13 @@ void CSearchOptionsArea::initView() {
 
     gridLayout->addWidget(m_searchTextCombo, 0, 1, 1, 1);
 	
-	//what is this label?
-    m_modulesLabel = new QLabel(i18n("what2"), searchGroupBox);
+	//Modules label, the text will be set later
+    m_modulesLabel = new QLabel( searchGroupBox);
     sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
     m_modulesLabel->setSizePolicy(sizePolicy1);
-    m_modulesLabel->setTextFormat(Qt::RichText);
-    m_modulesLabel->setAlignment(Qt::AlignCenter|Qt::AlignHorizontal_Mask|Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter|Qt::AlignVertical_Mask);
+    //m_modulesLabel->setTextFormat(Qt::RichText);
+    //m_modulesLabel->setAlignment(Qt::AlignCenter|Qt::AlignHorizontal_Mask|Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter|Qt::AlignVertical_Mask);
+	m_modulesLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
     m_modulesLabel->setWordWrap(true);
 
     gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
