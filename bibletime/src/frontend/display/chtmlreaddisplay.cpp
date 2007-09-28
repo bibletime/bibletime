@@ -310,6 +310,8 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 		const int delay = KGlobalSettings::dndEventDelay();
 		QPoint newPos = QPoint(e->x(), e->y());
 	
+
+		//TODO: this should be inspected
 		if ( (newPos.x() > m_dndData.startPos.x()+delay || newPos.x() < (m_dndData.startPos.x()-delay) ||
 				newPos.y() > m_dndData.startPos.y()+delay || newPos.y() < (m_dndData.startPos.y()-delay)) &&
 				!m_dndData.isDragging && m_dndData.mousePressed  ) {
@@ -322,21 +324,14 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				CReferenceManager::Type type;
 				if ( !CReferenceManager::decodeHyperlink(m_dndData.anchor.string(), module, key, type) )
 					return;
-	
-				//CDragDropMgr::ItemList dndItems;
-				//no description!
-				//dndItems.append( CDragDropMgr::Item(module, key, QString::null) ); 
-				//mimedata.append(module, key, QString::null);
-				//d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
+
 				d = new QDrag(KHTMLPart::view()->viewport());
 				BTMimeData* mimedata = new BTMimeData(module, key, QString::null);
 				d->setMimeData(mimedata);
+				//TODO: add real Bible text from module/key
+				//mimedata->setText(QString("some text")); // This works across applications!
 			}
 			else if ((m_dndData.dragType == DNDData::Text) && !m_dndData.selection.isEmpty()) {
-				// create a new plain text drag!
-				//CDragDropMgr::ItemList dndItems;
-				//dndItems.append( CDragDropMgr::Item(m_dndData.selection) ); //no description!
-				//d = CDragDropMgr::dragObject(dndItems, KHTMLPart::view()->viewport());
 				d = new QDrag(KHTMLPart::view()->viewport());
 				BTMimeData* mimedata = new BTMimeData(m_dndData.selection);
 				d->setMimeData(mimedata);
@@ -349,7 +344,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				//first make a virtual mouse click to end the selection, if it's in progress
 				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
 				KApplication::sendEvent(view()->viewport(), &e);
-				d->start();
+				d->exec(Qt::CopyAction, Qt::CopyAction);
 			}
 		}
 	}
