@@ -18,7 +18,8 @@
 
 class CMainIndex;
 class QDropEvent;
-class QMimeSource;
+class QDragMoveEvent;
+class QMimeData;
 
 class CIndexItemBase : public QTreeWidgetItem/*, public CPointers */ {
 public:
@@ -110,6 +111,7 @@ public:
 
 	virtual QList<QTreeWidgetItem*> getChildList();
 
+	virtual bool acceptDrop(const QMimeData* data) const;
 	
 protected:
 	friend class CMainIndex;
@@ -126,7 +128,7 @@ protected:
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
 	* The default return value is "false"
 	*/
-	virtual const bool allowAutoOpen( const QMimeSource* src ) const;
+	virtual const bool allowAutoOpen( const QMimeData* data ) const;
 
 private:
 	Type m_type;

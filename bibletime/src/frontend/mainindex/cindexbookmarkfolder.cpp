@@ -25,6 +25,7 @@
 #include <QTextStream>
 #include <QString>
 #include <QFile>
+#include <QMimeData>
 
 #include <kstandarddirs.h>
 #include <kfiledialog.h>
@@ -85,11 +86,17 @@ void CIndexBookmarkFolder::importBookmarks() {
 	};
 }
 
-bool CIndexBookmarkFolder::acceptDrop(const QMimeSource * src) const {
+bool CIndexBookmarkFolder::acceptDrop(const QMimeData * data) const {
 // 	//   qWarning("bool CIndexBookmarkFolder::acceptDrop(const QMimeSource * src): return%ii", (CDragDropMgr::canDecode(src) && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark)));
 // 
 // 	return CDragDropMgr::canDecode(src)
 // 		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
+	qDebug("CIndexBookmarkFolder::acceptDrop");
+	if (data->hasFormat("BibleTime/Bookmark")) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 void CIndexBookmarkFolder::dropped(QDropEvent *e, QTreeWidgetItem* after) {

@@ -299,8 +299,6 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i )
 		//qDebug() << "folder was activated";
 		//qDebug() << "item was:" << i->isExpanded() << "and will be:" << !i->isExpanded();
 		i->setExpanded( !i->isExpanded() );
-		//We don't want to select a folder
-		//i->setSelected(false);
 	}
 	else if (CIndexModuleItem* m = dynamic_cast<CIndexModuleItem*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->module();
@@ -372,6 +370,7 @@ QMimeData* CMainIndex::dragObject()
 /** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
 void CMainIndex::dragEnterEvent( QDragEnterEvent* event ) const
 {
+	qDebug("CMainIndex::dragEnterEvent");
 	event->acceptProposedAction();
 }
 
@@ -381,11 +380,11 @@ void CMainIndex::dragMoveEvent( QDragMoveEvent* event ) const
  
 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
 	//TODO: CIndexItemBase needs acceptDrop
-	//if (i->acceptDrop(event) || i->isMovable()) {
-	//	event->acceptProposedAction();
-	//} else {
-	//
-	//}
+	if (i->acceptDrop(event->mimeData()) || i->isMovable()) {
+		event->acceptProposedAction();
+	} else {
+	
+	}
 	
 }
 

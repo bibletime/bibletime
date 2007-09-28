@@ -19,7 +19,7 @@
 
 class CIndexFolderBase;
 
-class QMimeSource;
+class QMimeData;
 class QTreeWidgetItem;
 class QDropEvent;
 class QString;
@@ -33,7 +33,7 @@ public:
 	virtual const bool enableAction(const MenuAction action);
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
-	virtual bool acceptDrop(const QMimeSource * src) const;
+	virtual bool acceptDrop(const QMimeData * data) const;
 	virtual void dropped(QDropEvent *e, QTreeWidgetItem* after);
 
 	/**

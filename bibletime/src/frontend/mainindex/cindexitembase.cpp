@@ -15,7 +15,7 @@
 
 #include <QTreeWidgetItem>
 #include <QString>
-#include <QMimeSource>
+#include <QMimeData>
 
 CIndexItemBase::CIndexItemBase(CMainIndex* mainIndex, const Type type)
 	: QTreeWidgetItem(mainIndex),
@@ -94,10 +94,13 @@ void CIndexItemBase::dropped( QDropEvent* e)
 	dropped(e,0);
 }
 
+bool CIndexItemBase::acceptDrop(const QMimeData* data) const
+{return false;}
+
 void CIndexItemBase::dropped( QDropEvent* e, QTreeWidgetItem* after)
 {}
 
-const bool CIndexItemBase::allowAutoOpen( const QMimeSource* ) const
+const bool CIndexItemBase::allowAutoOpen( const QMimeData* ) const
 {
 	return false;
 };
