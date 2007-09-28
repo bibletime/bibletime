@@ -13,15 +13,20 @@
 #ifndef CMODULECHOOSERDIALOG_H
 #define CMODULECHOOSERDIALOG_H
 
-#include "ui_modulechooser.h" // uic generated
+//#include "ui_modulechooser.h" // uic generated
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QDialog>
 
+
+class QTreeWidget;
+class QDialogButtonBox;
+
+
 namespace Search { namespace Options {
 
-class CModuleChooserDialog : public QDialog , Ui::ModuleChooserDialog {
+class CModuleChooserDialog : public QDialog {
 	Q_OBJECT
 public:
 	CModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);
@@ -47,8 +52,9 @@ protected slots: // Protected slots
 	*/
 	virtual void slotOk();
 
-//private:
-//	QTreeWidget* m_moduleChooser;
+private:
+	QTreeWidget *m_moduleChooser;
+	QDialogButtonBox *m_buttonBox;
 };
 
 }} //end of namespaces Options and Search
