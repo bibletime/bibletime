@@ -141,32 +141,27 @@ void CMainIndex::addGroup(const CIndexItemBase::Type type, const QString languag
 
 
 /** Initializes the view. */
-void CMainIndex::initView() {
-	//addColumn(QString::null);
+void CMainIndex::initView()
+{	
 	qDebug("CMainIndex::initView");
-	header()->hide();
 
+	header()->hide();
 	//m_toolTip = new ToolTip(this);
 	//??? setTooltipColumn(-1);
 	//to disable Qt's tooltips
 	//setShowToolTips(false);
-
 	//setBackgroundMode(PaletteBase);
 	//setFullWidth(true);
-	setFocusPolicy(Qt::WheelFocus);
 
+	setFocusPolicy(Qt::WheelFocus);
 	setAcceptDrops( true );
 	setDragEnabled( true );
-	//setDropVisualizer( true );
-	//setDropHighlighter( true );
-	//setAutoOpen(true);
+	setDropIndicatorShown( true );
 
 	setItemsExpandable(true);
-	
 	viewport()->setAcceptDrops(true);
-	//setRootIsDecorated(false);
+	setRootIsDecorated(false);
 	setAllColumnsShowFocus(true);
-	//setItemsMovable(false);
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	//setup the popup menu
@@ -195,45 +190,30 @@ void CMainIndex::initView() {
 
 
 	//fill the popup menu itself
-	//m_actions.newFolder->plug(m_popup);
 	m_popup->addAction(m_actions.newFolder);
-	//m_actions.changeFolder->plug(m_popup);
 	m_popup->addAction(m_actions.changeFolder);
-	//(new KActionSeparator(this))->plug(m_popup);
 	QAction* separator = new QAction(this);
 	separator->setSeparator(true);
 	m_popup->addAction(separator);
-	//m_actions.changeBookmark->plug(m_popup);
 	m_popup->addAction(m_actions.changeBookmark);
-	//m_actions.importBookmarks->plug(m_popup);
 	m_popup->addAction(m_actions.importBookmarks);
-	//m_actions.exportBookmarks->plug(m_popup);
 	m_popup->addAction(m_actions.exportBookmarks);
-	//m_actions.printBookmarks->plug(m_popup);
 	m_popup->addAction(m_actions.printBookmarks);
-	//(new KActionSeparator(this))->plug(m_popup);
 	separator = new QAction(this);
 	separator->setSeparator(true);
 	m_popup->addAction(separator);
-	//m_actions.deleteEntries->plug(m_popup);
 	m_popup->addAction(m_actions.deleteEntries);
-	//(new KActionSeparator(this))->plug(m_popup);
 	separator = new QAction(this);
 	separator->setSeparator(true);	
 	m_popup->addAction(separator);
-	//m_actions.editModuleMenu->plug(m_popup);
 	m_popup->addAction(m_actions.editModuleMenu);
 
 	//sub item of edit module menu
 	m_actions.editModuleMenu->addAction(m_actions.editModulePlain);
 	//sub item of edit module menu
 	m_actions.editModuleMenu->addAction(m_actions.editModuleHTML);
-
-	//m_actions.searchInModules->plug(m_popup);
 	m_popup->addAction(m_actions.searchInModules);
-	//m_actions.unlockModule->plug(m_popup);
 	m_popup->addAction(m_actions.unlockModule);
-	//m_actions.aboutModule->plug(m_popup);
 	m_popup->addAction(m_actions.aboutModule);
 	qDebug("CMainIndex::initView end");
 }
@@ -253,10 +233,15 @@ KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const i
 void CMainIndex::initConnections()
 {
 	qDebug("CMainIndex::initConnections");
+	
+	//Strangely itemActivated only didn't let open a tree by clicking even though the relevant
+	//code in slotExecuted was executed. Therefore itemClicked is necessary.
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-	//QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-	//	SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
- 
+	QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+
+	QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+		SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+ 	
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
@@ -275,7 +260,9 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i )
 	}
 
 	if (ci->isFolder()) {
-		i->setExpanded(!i->isExpanded());
+		qDebug() << "folder was activated";
+		qDebug() << "item was:" << i->isExpanded() << "and will be:" << !i->isExpanded();
+		i->setExpanded( !i->isExpanded() );
 	}
 	else if (CIndexModuleItem* m = dynamic_cast<CIndexModuleItem*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->module();
@@ -326,7 +313,6 @@ QMimeData* CMainIndex::dragObject()
 		if (!widgetItem)
 			break;
 		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(widgetItem)) {
-			//we can move this item!
 			//we can only drag items which allow us to do it, e.g. which are movable
 			if (!i->isMovable()) { 
 				continue;
@@ -353,14 +339,15 @@ void CMainIndex::dragEnterEvent( QDragEnterEvent* event ) const
 
 void CMainIndex::dragMoveEvent( QDragMoveEvent* event ) const
 {
-// 	const QPoint pos = contentsToViewport(event->pos());
-// 
-// 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-// 	if (i->acceptDrop(event) || i->isMovable()) {
-// 		event->acceptProposedAction();
-// 	} else {
-// 	
-// 	}
+	const QPoint pos = event->pos();
+ 
+	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
+	//TODO: CIndexItemBase needs acceptDrop
+	//if (i->acceptDrop(event) || i->isMovable()) {
+	//	event->acceptProposedAction();
+	//} else {
+	//
+	//}
 	
 }
 
@@ -998,12 +985,6 @@ void CMainIndex::saveSettings() {
 	CBTConfig::set(CBTConfig::bookshelfCurrentItem, path);
 }
 
-//void CMainIndex::ensurePolished()
-//{
-	//QTreeWidget::ensurePolished();
-	//initTree();
-	//readSettings();
-//}
 
 bool CMainIndex::event(QEvent* event)
 {
