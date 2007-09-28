@@ -23,6 +23,7 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
+#include <klocale.h>
 
 namespace Search { namespace Options {
 
@@ -30,6 +31,7 @@ CModuleChooserDialog::CModuleChooserDialog( QWidget* parentDialog, ListCSwordMod
 	: QDialog(parentDialog)
 	//KDialogBase(Plain, i18n("Choose work(s)"), Ok, Ok, parentDialog, "CModuleChooser", false, true)
 {
+	setWindowTitle(i18n("Choose work(s)"));
 	initView();
 	initConnections();
 
@@ -40,7 +42,8 @@ CModuleChooserDialog::~CModuleChooserDialog() {}
 ;
 
 /** Initializes the view of this dialog */
-void CModuleChooserDialog::initView() {
+void CModuleChooserDialog::initView()
+{
 	//TODO: choose the button text
 	//setButtonOKText(i18n("Use chosen work(s)"));
 	QVBoxLayout *vboxLayout;
