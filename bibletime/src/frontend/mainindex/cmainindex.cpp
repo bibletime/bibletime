@@ -539,6 +539,9 @@ void CMainIndex::contextMenu(const QPoint& p) {
 	//setup menu entries depending on current selection
 	QTreeWidgetItem* i = itemAt(p);
 	QList<QTreeWidgetItem *> items = selectedItems();
+	//The item which was clicked may not be selected
+	if (!items.contains(i))
+		items.append(i);
 
 	if (items.count() == 0) { 
 		//special handling for no selection
@@ -668,8 +671,14 @@ void CMainIndex::printBookmarks() {
 /** Deletes the selected entries. */
 void CMainIndex::deleteEntries() {
 	QList<QTreeWidgetItem *> items = selectedItems();
-	if (!items.count())
-		return;
+	if (!items.count()) {
+		CIndexBookmarkFolder* f = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
+		if (f) {
+			items.append(currentItem());
+		} else {
+			return;
+		}
+	}
 
 	if (KMessageBox::warningYesNo(this, i18n("Do you really want to delete the selected items and child-items?"), i18n("Delete Items")) != KMessageBox::Yes) {
 		return;
