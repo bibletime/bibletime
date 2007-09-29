@@ -34,7 +34,7 @@
 #include <QDialogButtonBox>
 
 namespace Search {
-	namespace Options {
+
 
 /********** RangeItem ******************/
 CRangeChooserDialog::RangeItem::RangeItem(QListWidget* view, QListWidgetItem* afterThis, const QString caption, const QString range) 
@@ -316,5 +316,5 @@ void CRangeChooserDialog::slotDefault() {
 	//KDialogBase::slotDefault();
 }
 
-	} //end of namespace Search.Options
+
 } //end of namespace Search

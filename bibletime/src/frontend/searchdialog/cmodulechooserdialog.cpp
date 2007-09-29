@@ -31,7 +31,7 @@
 
 #include <klocale.h>
 
-namespace Search { namespace Options {
+namespace Search {
 
 CModuleChooserDialog::CModuleChooserDialog( QWidget* parentDialog, ListCSwordModuleInfo modules )
 	: QDialog(parentDialog)
@@ -270,4 +270,4 @@ void CModuleChooserDialog::slotOk()
 	QDialog::done(0);
 }
 
-}} //end of namespaces Options and Search
+} //end of namespace Search

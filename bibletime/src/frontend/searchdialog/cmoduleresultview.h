@@ -21,11 +21,6 @@
 #include <QTreeWidget>
 
 
-//KDE includes
-//#include <klistview.h>
-
-
-
 //forward declarations
 class QPoint;
 class QMenu;
@@ -36,7 +31,7 @@ class StrongsResultClass;
 
 
 namespace Search {
-	namespace Result {
+
 
 class CModuleResultView : public QTreeWidget {
 	Q_OBJECT
@@ -130,7 +125,7 @@ private:
 	StrongsResultClass* strongsResults;
 };
 
-	} //end of namespace Search::Result
+
 } //end of namespace Search
 
 #endif

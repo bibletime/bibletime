@@ -34,7 +34,7 @@
 
 
 namespace Search {
-	namespace Result {
+
 
 /********************************************
 ************  ModuleResultList **************
@@ -52,10 +52,10 @@ CModuleResultView::~CModuleResultView() {}
 ;
 
 /** Initializes this widget. */
-void CModuleResultView::initView() {
+void CModuleResultView::initView()
+{
 	// see also csearchresultview.cpp
-	//addColumn(i18n("Work"));
-	//addColumn(i18n("Hits"));
+	
 	setHeaderLabels( QStringList(i18n("Work")) << QString(i18n("Hits")) );
 	//setFullWidth(true);
 	
@@ -286,5 +286,5 @@ void CModuleResultView::printResult() {
 	};
 }
 
-	} //end of namespace Search.Result
+
 } //end of namespace Search

@@ -14,7 +14,7 @@
 
 #include "csearchdialog.h"
 #include "csearchanalysis.h"
-#include "crangechooser.h"
+#include "crangechooserdialog.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
 #include "cmodulechooserdialog.h"
@@ -34,10 +34,8 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QRegExp>
-//#include <qeventloop.h>
 #include <QVBoxLayout>
 #include <QProgressDialog>
-
 #include <QHBoxLayout>
 #include <QGroupBox>
 #include <QGridLayout>
@@ -49,9 +47,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-
-
-
 //KDE includes
 #include <klocale.h>
 #include <kcombobox.h>
@@ -60,14 +55,9 @@
 #include <khistorycombobox.h>
 
 
-//Lucence includes
-//#include "CLucene.h"
-//#include "CLucene/util/Reader.h"
-//#include "CLucene/util/Misc.h"
-//#include "CLucene/util/dirent.h"
 
 namespace Search {
-	namespace Result {
+
 
 StrongsResult::StrongsResult()
 {}
@@ -259,10 +249,12 @@ void CSearchResultArea::initView()
     vboxLayout1->setContentsMargins(0, 0, 0, 0);
     resultSplitter = new QSplitter(rightSideBox);
     resultSplitter->setOrientation(Qt::Vertical);
-    m_moduleListBox = new QTreeWidget(resultSplitter);
+
+	//result tree views
+	m_moduleListBox = new CModuleResultView(resultSplitter);
     resultSplitter->addWidget(m_moduleListBox);
     m_resultListBox = new QTreeWidget(resultSplitter);
-    resultSplitter->addWidget(m_resultListBox);
+	resultSplitter->addWidget(m_resultListBox);
 
     vboxLayout1->addWidget(resultSplitter);
 
@@ -300,30 +292,23 @@ void CSearchResultArea::initView()
 }
 
 /** Sets the modules which contain the result of each. */
-void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules) {
-   const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
+void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
+{
+	qDebug("CSearchResultArea::setSearchResult");
+	const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 	reset(); //clear current modules
 
 	m_modules = modules;
 	//TODO:
-	//m_moduleListBox->setupTree(modules, searchedText);
+	m_moduleListBox->setupTree(modules, searchedText);
 
-	//have a Bible or commentary in the modules?
-	bool enable = false;
-	//   for (modules.first(); !enable && modules.current(); modules.next()) {
-	ListCSwordModuleInfo::iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
-		if ((*it)->type() == CSwordModuleInfo::Bible ) {
-			enable = true;
-			break;
-		};
-	};
-	m_analyseButton->setEnabled(enable);
 }
 
 
 /** Resets the current list of modules and the displayed list of found entries. */
-void CSearchResultArea::reset() {
+void CSearchResultArea::reset()
+{
+	qDebug("CSearchResultArea::reset");
 	m_moduleListBox->clear();
 	m_resultListBox->clear();
 	m_previewDisplay->setText(QString::null);
@@ -334,7 +319,9 @@ void CSearchResultArea::reset() {
 
 
 /** Update the preview of the selected key. */
-void CSearchResultArea::updatePreview(const QString& key) {
+void CSearchResultArea::updatePreview(const QString& key)
+{
+	qDebug("CSearchResultArea::updatePreview");
 	using namespace Rendering;
 
 	CSwordModuleInfo* module = 0; //TODO: just testing m_moduleListBox->activeModule();
@@ -706,11 +693,7 @@ void CSearchResultArea::showAnalysis() {
 	//dlg.exec();
 }
 
-	} //end of namespace Search.Result
-
-	/*************************/
-
-	namespace Options {
+//--------------CSearchOptionsArea------------------------
 
 CSearchOptionsArea::CSearchOptionsArea(QWidget *parent )
 	: QWidget(parent)
@@ -1007,5 +990,5 @@ bool CSearchOptionsArea::hasSearchScope() {
 	return (searchScope().Count() > 0);
 }
 
-	} //end of namespace Options
+
 } //end of namespace Search

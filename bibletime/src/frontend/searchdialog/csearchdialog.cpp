@@ -210,10 +210,10 @@ void CSearchDialog::initView()
 	QVBoxLayout *box = new QVBoxLayout( mainWidget());
 	mainWidget()->setLayout(box);
 
-	m_searchOptionsArea = new Options::CSearchOptionsArea(mainWidget());
+	m_searchOptionsArea = new CSearchOptionsArea(mainWidget());
 	box->addWidget( m_searchOptionsArea );
 
-	m_searchResultArea = new Result::CSearchResultArea(mainWidget());
+	m_searchResultArea = new CSearchResultArea(mainWidget());
 	box->addWidget( m_searchResultArea );
 
 	// The dialog doesn't resize properly if the minimum size of the

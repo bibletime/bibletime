@@ -26,7 +26,7 @@ class QTreeWidget;
 class QDialogButtonBox;
 
 
-namespace Search { namespace Options {
+namespace Search {
 
 class CModuleChooserDialog : public QDialog, CPointers
 {
@@ -65,6 +65,6 @@ private:
 	QDialogButtonBox *m_buttonBox;
 };
 
-}} //end of namespaces Options and Search
+} //end of namespace Search
 
 #endif

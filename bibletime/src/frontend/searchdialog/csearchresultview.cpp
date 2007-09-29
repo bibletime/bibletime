@@ -34,7 +34,7 @@
 
 
 namespace Search {
-	namespace Result {
+
 
 CSearchResultView::CSearchResultView(QWidget* parent)
 	: QTreeWidget(parent),
@@ -314,6 +314,6 @@ CSwordModuleInfo* const CSearchResultView::module() {
 // 	return CDragDropMgr::dragObject(dndItems, viewport());
 // }
 
-	} //end of namespace Search::Result
+
 } //end of namespace
 

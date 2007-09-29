@@ -41,7 +41,7 @@ class CReadDisplay;
 //class Q3DragObject;
 
 namespace Search {
-	namespace Result {
+
 
 class CSearchResultView  : public QTreeWidget {
 	Q_OBJECT
@@ -114,7 +114,7 @@ signals: // Signals
 	void keySelected(const QString&);
 };
 
-	} //end of namespace Result
+
 } //end of namespace Search
 
 #endif

@@ -23,8 +23,7 @@ class QDialogButtonBox;
 
 
 namespace Search {
-	namespace Options {
-	
+
 class CRangeChooserDialog : public QDialog
 {
 	Q_OBJECT
@@ -83,7 +82,7 @@ private:
 	QDialogButtonBox* m_buttonBox;
 };
 
-	} //end of namespace Search.Options
+
 } //end of namespace Search
 
 

@@ -44,8 +44,8 @@ public:
 	static void openDialog(const ListCSwordModuleInfo modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
 
 protected:
-	friend class Analysis::CSearchAnalysis;
-	friend class Result::CSearchResultArea;
+	friend class CSearchAnalysis;
+	friend class CSearchResultArea;
 	friend class BibleTime;
 
 	/**
@@ -119,8 +119,8 @@ protected slots:
 	virtual void slotClose();
 
 private:
-	Result::CSearchResultArea* m_searchResultArea;
-	Options::CSearchOptionsArea* m_searchOptionsArea;
+	CSearchResultArea* m_searchResultArea;
+	CSearchOptionsArea* m_searchOptionsArea;
 	
 	CSwordModuleSearch m_searcher;
 };

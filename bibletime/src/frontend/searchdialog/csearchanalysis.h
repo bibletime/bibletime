@@ -43,7 +43,7 @@
 class Q3TextEdit;
 
 namespace Search {
-	namespace Analysis {
+
 
 //forward declarations
 class CSearchAnalysisItem;
@@ -220,7 +220,7 @@ private:
 	ToolTip* m_toolTip;
 };
 
-	} //end of namespace Search::Analysis
+
 } //end of namespace Search
 
 #endif

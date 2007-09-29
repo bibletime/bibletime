@@ -17,8 +17,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
-//#include "ui_searchoptionsform.h" // uic generated
-//#include "ui_searchresultsform.h" // uic generated
 
 //Qt includes
 #include <QList>
@@ -26,9 +24,13 @@
 #include <QWidget>
 #include <QSize>
 
+
 //forward declarations
 class CReadDisplay;
 
+namespace Search {
+	class CModuleResultView;
+}
 class QHBoxLayout;
 class QGroupBox;
 class QGridLayout;
@@ -42,8 +44,7 @@ class KHistoryComboBox;
 
 
 namespace Search {
-	namespace Result {
-		
+
 /**
 * This class is used to keep track of the text strongs results.
 * It only keeps track of one instance of a strongs text result.
@@ -169,20 +170,6 @@ protected: // Protected methods
 	*/
 	const QString highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/);
 
-private:
-
-	
-    
-    QTreeWidget *m_moduleListBox;
-    QTreeWidget *m_resultListBox;
-    
-    QPushButton *m_analyseButton;
-   
-    QFrame *m_displayFrame;
-
-	CReadDisplay* m_previewDisplay;
-
-	ListCSwordModuleInfo m_modules;
 
 protected slots: // Protected slots
 	/**
@@ -194,11 +181,22 @@ protected slots: // Protected slots
 	*/
 	void showAnalysis();
 
+private:
+
+	CModuleResultView* m_moduleListBox;
+	QTreeWidget* m_resultListBox;
+
+	QPushButton *m_analyseButton;
+	QFrame *m_displayFrame;
+	CReadDisplay* m_previewDisplay;
+
+	ListCSwordModuleInfo m_modules;
 };
-	} //end of namespace Search::Result
-	
-	namespace Options {
-		
+
+
+
+//---------------CSearchOptionsArea------------------------------
+
 class CSearchOptionsArea : public QWidget {
 	Q_OBJECT
 public:
@@ -295,7 +293,6 @@ private:
 
 };
 
-	} //end of namespace Search::Options
 } //end of namespace Search
 
 #endif
