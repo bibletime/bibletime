@@ -16,6 +16,8 @@
 //#include "ui_modulechooser.h" // uic generated
 
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "util/cpointers.h"
+
 
 #include <QDialog>
 
@@ -26,7 +28,8 @@ class QDialogButtonBox;
 
 namespace Search { namespace Options {
 
-class CModuleChooserDialog : public QDialog {
+class CModuleChooserDialog : public QDialog, CPointers
+{
 	Q_OBJECT
 public:
 	CModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);
@@ -40,10 +43,15 @@ protected: // Protected methods
 	* Initializes the view of this dialog
 	*/
 	void initView();
+
 	/**
 	* Initializes the connections of this dialog.
 	*/
 	void initConnections();
+
+	/**
+	* Initialized the module tree
+	*/
 	void setModules(ListCSwordModuleInfo& modules);
 
 protected slots: // Protected slots
