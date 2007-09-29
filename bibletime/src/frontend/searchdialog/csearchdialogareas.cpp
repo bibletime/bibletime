@@ -17,7 +17,7 @@
 #include "crangechooser.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
-#include "cmodulechooser.h"
+#include "cmodulechooserdialog.h"
 
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"

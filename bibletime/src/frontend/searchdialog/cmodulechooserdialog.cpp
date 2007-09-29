@@ -14,6 +14,7 @@
 #include "cmodulechooserdialog.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -73,11 +74,11 @@ void CModuleChooserDialog::initView()
 
 }
 
-void CModuleChooserDialog::setModules(ListCSwordModuleInfo& mods)
+void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 {
+	ListCSwordModuleInfo mods = CPointers::backend()->moduleList();
 	qDebug("CModuleChooserDialog::setModules");
 	//Populate the chooser widget with items
-	//taken from another file
 	/**
 	* The next steps:
 	* 1. Sort by type
@@ -101,6 +102,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& mods)
 	bool incType = false;
 
 	while (ok) {
+		qDebug("beginning of while(ok)");
 		ListCSwordModuleInfo modsForType;
 		QString typeFolderCaption = QString::null;
 		incType = false;
@@ -177,6 +179,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& mods)
 		//go through the list of languages and create subfolders for each language and the modules of the language
 		QTreeWidgetItem* typeFolder = 0;
 		if (modsForType.count()) {
+			qDebug("create a new typeFolder");
 			typeFolder = new QTreeWidgetItem(typeFolder, QStringList(typeFolderCaption));
 		}
 		else {
@@ -195,6 +198,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& mods)
 				language = (*it);
 			}
 
+			qDebug("create a new langFolder");
 			QTreeWidgetItem* langFolder = new QTreeWidgetItem(typeFolder, QStringList(language));
 			//langFolder->setPixmap(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 
@@ -205,10 +209,19 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& mods)
 				if (QString( (*mod_Itr)->module()->Lang() ) == (*it) ) { //found correct language
 					//ModuleCheckBoxItem* i = new ModuleCheckBoxItem(langFolder, *mod_Itr);
 					//i->setPixmap(0, CToolClass::getIconForModule(*mod_Itr));
+					QTreeWidgetItem* i = new QTreeWidgetItem(langFolder, QStringList((*mod_Itr)->name()));
+					i->setFlags(Qt::ItemIsUserCheckable);
+					if (false) {
+						//set checked
+					} else {
+						//set unchecked
+						i->setCheckState(0, Qt::Checked);
+					}
 				};
 			};
 		};
 		//typeFolder->setPixmap(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
+		qDebug("add top level folder...");
 		topLevelFolders.append(typeFolder);
 
 		if (incType) {
