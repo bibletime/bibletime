@@ -116,8 +116,8 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 							&& ((*it)->category() != CSwordModuleInfo::Glossary)
 					   ) {
 						modsForType.append( *it );
-					};
-				};
+					}
+				}
 
 				addedLexs = true;
 				typeFolderCaption = QString::null;
@@ -128,8 +128,8 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 				for (ListCSwordModuleInfo::iterator it(mods.begin()); it != end_it; ++it) {
 					if ((*it)->category() == CSwordModuleInfo::DailyDevotional) {
 						modsForType.append(*it);
-					};
-				};
+					}
+				}
 				addedDevotionals = true;
 				typeFolderCaption = i18n("Daily Devotionals");
 			}
@@ -139,8 +139,8 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 				for (ListCSwordModuleInfo::iterator it(mods.begin()); it != end_it; ++it) {
 					if ((*it)->category() == CSwordModuleInfo::Glossary) {
 						modsForType.append(*it);
-					};
-				};
+					}
+				}
 				addedGlossaries = true;
 				typeFolderCaption = i18n("Glossaries");
 			};
@@ -154,8 +154,8 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 			for (ListCSwordModuleInfo::iterator it(mods.begin()); it != end_it; ++it) {
 				if ((*it)->type() == type) {
 					modsForType.append(*it);
-				};
-			};
+				}
+			}
 			incType = true;
 		}
 		else
@@ -173,7 +173,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 			if ( !langs.contains(QString( (*it)->module()->Lang() ))) {
 				langs.append( (*it)->module()->Lang() );
 			}
-		};
+		}
 		langs.sort();
 
 		//go through the list of languages and create subfolders for each language and the modules of the language
@@ -187,7 +187,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 				type++;
 			}
 			continue;
-		};
+		}
 
 
 		QString language = QString::null;
@@ -211,15 +211,15 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 					//i->setPixmap(0, CToolClass::getIconForModule(*mod_Itr));
 					QTreeWidgetItem* i = new QTreeWidgetItem(langFolder, QStringList((*mod_Itr)->name()));
 					i->setFlags(Qt::ItemIsUserCheckable);
-					if (false) {
-						//set checked
-					} else {
-						//set unchecked
+					if (selectedModules.contains(*mod_Itr)) {
+						//Module was in the list of already selected modules
 						i->setCheckState(0, Qt::Checked);
+					} else {
+						i->setCheckState(0, Qt::Unchecked);
 					}
-				};
-			};
-		};
+				}
+			}
+		}
 		//typeFolder->setPixmap(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 		qDebug("add top level folder...");
 		topLevelFolders.append(typeFolder);
@@ -227,7 +227,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 		if (incType) {
 			++type;
 		}
-	};
+	}
 
 	//put these into m_moduleChooser
 	m_moduleChooser->invisibleRootItem()->addChildren(topLevelFolders);
@@ -246,13 +246,27 @@ void CModuleChooserDialog::initConnections()
 	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(slotOk()) );
 }
 
+/* Emits the list of selected modules */
 void CModuleChooserDialog::slotOk()
 {
-	//create the list here?
-	ListCSwordModuleInfo mi; //TODO: testing
-	emit modulesChanged( /*m_moduleChooser->modules()*/ mi); //TODO: testing
+	//create the list of selected modules
+	ListCSwordModuleInfo mods;
+	QTreeWidgetItemIterator it( m_moduleChooser );
+	for ( ; *it; ++it ) {
+		//add the module to list if the box is checked
+		if ((*it)->checkState(0) == Qt::Checked) {
+			ListCSwordModuleInfo allMods = CPointers::backend()->moduleList();
+			for (ListCSwordModuleInfo::iterator all_iter(allMods.begin()); all_iter != allMods.end(); ++all_iter) {
+				if ((*all_iter)->name() == (*it)->text(0)) {
+					mods.append(*all_iter);
+					break;
+				}
+			}
+			
+		}
+	}
 
-	//TODO: forwad this message to QDialog?;
+	emit modulesChanged(mods);
 	QDialog::done(0);
 }
 
