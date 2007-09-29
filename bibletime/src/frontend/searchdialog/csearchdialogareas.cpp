@@ -253,7 +253,7 @@ void CSearchResultArea::initView()
 	//result tree views
 	m_moduleListBox = new CModuleResultView(resultSplitter);
     resultSplitter->addWidget(m_moduleListBox);
-    m_resultListBox = new QTreeWidget(resultSplitter);
+    m_resultListBox = new CSearchResultView(resultSplitter);
 	resultSplitter->addWidget(m_resultListBox);
 
     vboxLayout1->addWidget(resultSplitter);

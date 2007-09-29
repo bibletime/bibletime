@@ -30,6 +30,7 @@ class CReadDisplay;
 
 namespace Search {
 	class CModuleResultView;
+	class CSearchResultView;
 }
 class QHBoxLayout;
 class QGroupBox;
@@ -184,7 +185,7 @@ protected slots: // Protected slots
 private:
 
 	CModuleResultView* m_moduleListBox;
-	QTreeWidget* m_resultListBox;
+	CSearchResultView* m_resultListBox;
 
 	QPushButton *m_analyseButton;
 	QFrame *m_displayFrame;

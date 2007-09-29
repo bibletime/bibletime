@@ -28,8 +28,8 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kaction.h>
-#include <kactionmenu.h>
+//#include <kaction.h>
+//#include <kactionmenu.h>
 //#include <kpopupmenu.h>
 
 
@@ -47,7 +47,8 @@ CSearchResultView::CSearchResultView(QWidget* parent)
 CSearchResultView::~CSearchResultView() {}
 
 /** Initializes the view of this widget. */
-void CSearchResultView::initView() {
+void CSearchResultView::initView()
+{
 	//addColumn(i18n("Results"));
 	setHeaderLabel(i18n("Results"));
 	//TODO: if needed: setFullWidth(true);
@@ -278,7 +279,6 @@ void CSearchResultView::copyItemsWithText() {
 	CSwordKey* k = 0;
 	QList<QTreeWidgetItem*> items = selectedItems();
 	QList<CSwordKey*> keys;
-	//for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 	foreach (QTreeWidgetItem* i, items) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
@@ -286,7 +286,6 @@ void CSearchResultView::copyItemsWithText() {
 	};
 	mgr.copyKeyList( keys, CExportManager::Text, true);
 
-	//keys.setAutoDelete(true);
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
 	
@@ -297,7 +296,7 @@ CSwordModuleInfo* const CSearchResultView::module() {
 	return m_module;
 }
 
-
+//TODO: port this to the new d'n'd
 // Q3DragObject* CSearchResultView::dragObject() {
 // 	//return a valid DragObject to make DnD possible!
 // 

@@ -21,24 +21,11 @@
 
 
 //forward declarations
-class QLabel;
-class QCheckBox;
-class QPushButton;
-class QRadioButton;
-
-class KComboBox;
-class KActionMenu;
-class KAction;
-class KHistoryCombo;
-class KProgress;
-//class KPopupMenu;
 class QMenu;
+class QAction;
 
 class CReadDisplay;
 
-//to be removed
-//class Q3ListViewItem;
-//class Q3DragObject;
 
 namespace Search {
 
@@ -57,7 +44,7 @@ protected: // Protected methods
 	*/
 	void initView();
 	void initConnections();
-	//not in qt4:
+	//TODO: d'n'd system. not in qt4:
 	//virtual Q3DragObject* dragObject();
 
 public slots: // Public slots
@@ -66,7 +53,7 @@ public slots: // Public slots
 	* Setups the list with the given module.
 	*/
 	void setupTree(CSwordModuleInfo*);
-   void setupStrongsTree(CSwordModuleInfo*, QStringList*);
+	void setupStrongsTree(CSwordModuleInfo*, QStringList*);
 	void copyItemsWithText();
 	void copyItems();
 	void saveItemsWithText();
@@ -77,13 +64,13 @@ public slots: // Public slots
 
 protected slots: // Protected slots
 	void printItems();
+	//TODO: should be changed to...?
 	/**
 	* Is connected to the signal executed, which is emitted when a new item was chosen.
 	*/
 	void executed(QTreeWidgetItem*);
 
 private:
-	//TODO: convert KActionMenu to QMenu?
 	struct {
 		QMenu* saveMenu;
 		struct {
