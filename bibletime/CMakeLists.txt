@@ -168,7 +168,7 @@ SET(bibletime_SOURCES
 kde4_add_ui_files(bibletime_SOURCES
 	#src/frontend/searchdialog/searchresultsform.ui
 	#src/frontend/searchdialog/searchoptionsform.ui
-	src/frontend/searchdialog/modulechooser.ui
+	#src/frontend/searchdialog/modulechooser.ui
 	src/frontend/bookshelfmanager/manageindicesform.ui
 )
 
