@@ -109,7 +109,8 @@ void CModuleResultView::initConnections() {
 }
 
 /** Setups the tree using the given list of modules. */
-void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& searchedText ) {
+void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& searchedText )
+{
 	clear();
 	//TODO: this class is for sorting
 	//util::CSortListViewItem* item = 0;
@@ -188,30 +189,30 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
 
 //TODO:
 /** Is executed when an item was selected in the list. */
-// void CModuleResultView::executed( QTreeWidgetItem* i ) {
-//    QString itemText, lText;
-// 
-// 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
-// 		emit moduleChanged();
-// 		emit moduleSelected(m);
-//       return;
-// 	}
-// 	
-// 	if (!strongsResults) {
-//       return;
-// 	}
-// 
-//    itemText = i->text(0);
-//    for (int cnt = 0; cnt < strongsResults->Count(); cnt++) {
-//       lText = strongsResults->keyText(cnt);
-//       if (lText == itemText) {
-//          //clear the verses list
-//          	emit moduleChanged();
-//          	emit strongsSelected(activeModule(), strongsResults->getKeyList(cnt));
-//          	return;
-// 		}
-// 	}
-// }
+void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
+    QString itemText, lText;
+ 
+	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
+		emit moduleChanged();
+		emit moduleSelected(m);
+		return;
+	}
+
+	if (!strongsResults) {
+		return;
+	}
+
+	itemText = i->text(0);
+	for (int cnt = 0; cnt < strongsResults->Count(); cnt++) {
+		lText = strongsResults->keyText(cnt);
+		if (lText == itemText) {
+			//clear the verses list
+			emit moduleChanged();
+			emit strongsSelected(activeModule(), strongsResults->getKeyList(cnt));
+	    	return;
+		}
+	}
+}
 
 /** Returns the currently active module. */
 CSwordModuleInfo* const CModuleResultView::activeModule() {
@@ -287,6 +288,7 @@ void CModuleResultView::printResult() {
 		mgr.printKeyList(&result,m,CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults());
 	};
 }
+
 
 
 } //end of namespace Search

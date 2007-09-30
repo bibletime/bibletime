@@ -99,7 +99,7 @@ void CSearchResultView::initView()
 	//m_actions.printMenu->setDelayed(false);
 
 	m_actions.print.result = new QAction(i18n("Reference with text"), this);
-	QObject::connect(m_actions.print.result, SIGNAL(triggered), this, SLOT(printItems()) );
+	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printItems()) );
 	m_actions.printMenu->addAction(m_actions.print.result);
 	m_popup->addMenu(m_actions.printMenu);
 }

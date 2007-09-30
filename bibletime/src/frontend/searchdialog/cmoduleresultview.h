@@ -59,14 +59,14 @@ protected: // Protected methods
 	*/
 	void initConnections();
 
+
    void setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent, const QString& searchedText);
 
 protected slots: // Protected slots
 	/**
 	* Is executed when an item was selected in the list.
 	*/
-	//replace with QTreeWidget::itemActivated 
-	//void executed( Q3ListViewItem* );
+	void executed(QTreeWidgetItem*, QTreeWidgetItem*);
 	/**
 	* Copies the whole search result with the text into the clipboard.
 	*/
@@ -95,7 +95,7 @@ protected slots: // Protected slots
 signals:
 	void moduleSelected(CSwordModuleInfo*);
 	void moduleChanged();
-   void strongsSelected(CSwordModuleInfo*, QStringList*);
+	void strongsSelected(CSwordModuleInfo*, QStringList*);
 
 private:
 	struct {
