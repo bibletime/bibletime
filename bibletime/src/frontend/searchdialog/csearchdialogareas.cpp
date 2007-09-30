@@ -324,7 +324,7 @@ void CSearchResultArea::updatePreview(const QString& key)
 	qDebug("CSearchResultArea::updatePreview");
 	using namespace Rendering;
 
-	CSwordModuleInfo* module = 0; //TODO: just testing m_moduleListBox->activeModule();
+	CSwordModuleInfo* module = m_moduleListBox->activeModule();
 	if ( module ) {
 		const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 		//const int searchFlags = CSearchDialog::getSearchDialog()->searchFlags();

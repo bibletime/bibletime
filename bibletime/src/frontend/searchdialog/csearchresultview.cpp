@@ -28,9 +28,6 @@
 
 //KDE includes
 #include <klocale.h>
-//#include <kaction.h>
-//#include <kactionmenu.h>
-//#include <kpopupmenu.h>
 
 
 namespace Search {
@@ -49,22 +46,15 @@ CSearchResultView::~CSearchResultView() {}
 /** Initializes the view of this widget. */
 void CSearchResultView::initView()
 {
-	//addColumn(i18n("Results"));
 	setHeaderLabel(i18n("Results"));
-	//TODO: if needed: setFullWidth(true);
-	
-	//TODO: if sorting is wrong: setSorting(-1);
 	setDragEnabled(true);
-	//setSelectionModeExt(KListView::Extended);
+	//TODO: selection: setSelectionModeExt(KListView::Extended);
 
 	//setup the popup menu
 	m_popup = new QMenu(this);
 
-	//TODO: convert to QMenu?
 	m_actions.copyMenu = new QMenu(i18n("Copy..."), m_popup);
-	// CResMgr::searchdialog::result::foundItems::copyMenu::icon, m_popup);
 	m_actions.copyMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon));
-	//m_actions.copyMenu->setDelayed(false);
 	
 	m_actions.copy.result = new QAction(i18n("Reference only"), this);
 	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyItems()) );
@@ -74,29 +64,23 @@ void CSearchResultView::initView()
 	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()),
 		this, SLOT(copyItemsWithText()));
 	m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
-	//m_actions.copyMenu->plug(m_popup);
+
 	m_popup->addMenu(m_actions.copyMenu);
 
 	m_actions.saveMenu = new QMenu(i18n("Save..."), m_popup);
 	m_actions.saveMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon));
-	//m_actions.saveMenu->setDelayed( false );
 
 	m_actions.save.result = new QAction(i18n("Reference only"), this);
 	QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveItems()) );
 	m_actions.saveMenu->addAction(m_actions.save.result);
-	
 
 	m_actions.save.resultWithText = new QAction(i18n("Reference with text"), this);
-	//KShortcut(0), this, SLOT(saveItemsWithText()), this);
 	m_actions.saveMenu->addAction(m_actions.save.resultWithText);
 	QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveItemsWithText()));
-	//m_actions.saveMenu->plug(m_popup);
 	m_popup->addMenu(m_actions.saveMenu);
 
 	m_actions.printMenu = new QMenu(i18n("Print..."), m_popup);
-	//CResMgr::searchdialog::result::foundItems::printMenu::icon, m_popup);
 	m_actions.printMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon));
-	//m_actions.printMenu->setDelayed(false);
 
 	m_actions.print.result = new QAction(i18n("Reference with text"), this);
 	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printItems()) );
@@ -112,9 +96,6 @@ void CSearchResultView::initConnections() {
 	//items: current, previous
 	connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
 			this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
-
-	//connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
-	//		this, SLOT(showPopup(const QPoint&)));
 }
 
 /** Setups the list with the given module. */
@@ -168,7 +149,6 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 	QTreeWidgetItem* oldItem = 0;
 	QTreeWidgetItem* item = 0;
 
-	//for ( QStringList::Iterator it = vList->begin(); it != vList->end(); ++it ) {
 	foreach (QString s, *vList) {
 		item = new QTreeWidgetItem(this, oldItem);
 		item->setText(0, (s));
@@ -204,7 +184,6 @@ void CSearchResultView::printItems() {
 	CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
 
 	QStringList list;
-	//for (Q3ListViewItem* k = items.first(); k; k = items.next()) {
 	foreach (QTreeWidgetItem* k, items) {
 		list.append( k->text(0) );
 	};
@@ -219,7 +198,6 @@ void CSearchResultView::saveItems() {
 	CSwordKey* k = 0;
 	QList<QTreeWidgetItem*> items = selectedItems();
 	QList<CSwordKey*> keys;
-	//for (Q3ListViewItem* i = items.first(); i; i = items.next()) {
 	foreach (QTreeWidgetItem* i, items) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
@@ -227,7 +205,6 @@ void CSearchResultView::saveItems() {
 	};
 	mgr.saveKeyList( keys, CExportManager::Text, false);
 
-	//keys.setAutoDelete(true);
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
 }
@@ -240,7 +217,6 @@ void CSearchResultView::saveItemsWithText() {
 	CSwordKey* k = 0;
 	QList<QTreeWidgetItem*> items = selectedItems();
 	QList<CSwordKey*> keys;
-	//for (QTreeWidgetItem* i = items.first(); i; i = items.next()) {
 	foreach (QTreeWidgetItem* i, items) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
@@ -248,7 +224,6 @@ void CSearchResultView::saveItemsWithText() {
 	};
 	mgr.saveKeyList( keys, CExportManager::Text, true);
 
-	//keys.setAutoDelete(true);
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
 }
@@ -261,7 +236,6 @@ void CSearchResultView::copyItems() {
 	CSwordKey* k = 0;
 	QList<QTreeWidgetItem*> items = selectedItems();
 	QList<CSwordKey*> keys;
-	//for (QTreeWidgetItem* i = items.first(); i; i = items.next()) {
 	foreach (QTreeWidgetItem* i, items) {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
@@ -269,7 +243,6 @@ void CSearchResultView::copyItems() {
 	};
 	mgr.copyKeyList( keys, CExportManager::Text, false);
 
-	//keys.setAutoDelete(true);
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
 }

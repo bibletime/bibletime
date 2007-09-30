@@ -64,7 +64,7 @@ public slots: // Public slots
 
 protected slots: // Protected slots
 	void printItems();
-	//TODO: should be changed to...?
+	
 	/**
 	* Is connected to the signal which is emitted when a new item was chosen.
 	*/

@@ -251,7 +251,7 @@ void CSearchDialog::showModulesSelector() {
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
 	connect(this, SIGNAL(user1Clicked()), SLOT(startSearch()));
-	connect(this, SIGNAL(closeClicked()), SLOT(slotDelayedDestruct()));
+	connect(this, SIGNAL(closeClicked()), SLOT(slotClose()));
 }
 
 /** Resets the parts to the default. */
@@ -262,6 +262,7 @@ void CSearchDialog::reset() {
 
 /** Reimplementation. */
 void CSearchDialog::slotClose() {
+	//TODO: what to do with this when we move to QDialog?
 	delayedDestruct();
 	m_staticDialog = 0;
 }

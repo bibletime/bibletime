@@ -29,8 +29,6 @@
 
 //KDE includes
 #include <klocale.h>
-//#include <kaction.h>
-//#include <kpopupmenu.h>
 
 
 namespace Search {
@@ -63,13 +61,9 @@ void CModuleResultView::initView()
 	//TODO: sorting
 	//setSorting(0, true);
 	//setSorting(1, true);
-	//TODO: highlight all columns when chosen
-	//setAllColumnsShowFocus(true);
-
 
 	//setup the popup menu
 	m_popup = new QMenu(this);
-	// m_popup->insertTitle(i18n("Bible window"));
 
 	m_actions.copyMenu = new QMenu(i18n("Copy..."), m_popup);
 	m_actions.copyMenu->setIcon(QIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
@@ -100,12 +94,11 @@ void CModuleResultView::initView()
 }
 
 /** Initializes the connections of this widget, */
-void CModuleResultView::initConnections() {
+void CModuleResultView::initConnections()
+{
 	//TODO:
 	connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
 			this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
-	//connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
-	//		this, SLOT(showPopup(const QPoint&)));
 }
 
 /** Setups the tree using the given list of modules. */
@@ -170,7 +163,8 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 }
 
 void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
-                                            const QString& sNumber) {
+                                            const QString& sNumber)
+{
 	QString lText;
 	//TODO: 
 	//util::CSortListViewItem* item = 0;
@@ -189,7 +183,8 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
 
 //TODO:
 /** Is executed when an item was selected in the list. */
-void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
+void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*)
+{
     QString itemText, lText;
  
 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
@@ -215,7 +210,8 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
 }
 
 /** Returns the currently active module. */
-CSwordModuleInfo* const CModuleResultView::activeModule() {
+CSwordModuleInfo* const CModuleResultView::activeModule()
+{
 	Q_ASSERT(currentItem());
 
 	QTreeWidgetItem* item = currentItem();
@@ -245,7 +241,8 @@ void CModuleResultView::contextMenuEvent( QContextMenuEvent * event )
 }
 
 /** Copies the whole search result into the clipboard. */
-void CModuleResultView::copyResult() {
+void CModuleResultView::copyResult()
+{
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
 		CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
@@ -254,7 +251,8 @@ void CModuleResultView::copyResult() {
 }
 
 /** Copies the whole search result with the text into the clipboard. */
-void CModuleResultView::copyResultWithText() {
+void CModuleResultView::copyResultWithText()
+{
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
 		CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
@@ -263,7 +261,8 @@ void CModuleResultView::copyResultWithText() {
 }
 
 /** Saves the search result keys. */
-void CModuleResultView::saveResult() {
+void CModuleResultView::saveResult()
+{
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
 		CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
@@ -272,7 +271,8 @@ void CModuleResultView::saveResult() {
 }
 
 /** Saves the search result with it's text. */
-void CModuleResultView::saveResultWithText() {
+void CModuleResultView::saveResultWithText()
+{
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
 		CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
@@ -281,7 +281,8 @@ void CModuleResultView::saveResultWithText() {
 }
 
 /** Appends the whole search result to the printer queue. */
-void CModuleResultView::printResult() {
+void CModuleResultView::printResult()
+{
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
 		CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
