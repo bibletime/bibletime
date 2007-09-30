@@ -109,11 +109,12 @@ void CSearchResultView::initConnections() {
 	//  connect(this, SIGNAL(executed(QListViewItem*)),
 	//   this, SLOT(executed(QListViewItem*)));
 	//TODO: are these right after porting?
-	connect(this, SIGNAL(currentChanged(QTreeWidgetItem*)),
-			this, SLOT(executed(QTreeWidgetItem*)));
+	//items: current, previous
+	connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
+			this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
 
-	connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
-			this, SLOT(showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
+	//connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	//		this, SLOT(showPopup(const QPoint&)));
 }
 
 /** Setups the list with the given module. */
@@ -183,16 +184,18 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 
 //TODO: is this still valid?
 /** Is connected to the signal executed, which is emitted when a mew item was chosen. */
-void CSearchResultView::executed(QTreeWidgetItem* item) {
+void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
 	//  Q_ASSERT(item);
 	//  qWarning("executed");
-	emit keySelected(item->text(0));
+	emit keySelected(current->text(0));
 }
 
 //TODO: another function?
 /** Reimplementation to show the popup menu. */
-void CSearchResultView::showPopup(QTreeWidget*, int*, const QPoint& point) {
-	m_popup->exec(point);
+void CSearchResultView::contextMenuEvent(QContextMenuEvent* event)
+{
+	qDebug("CSearchResultView::showPopup");
+	m_popup->exec(event->globalPos());
 }
 
 /** No descriptions */

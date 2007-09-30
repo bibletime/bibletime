@@ -60,15 +60,15 @@ public slots: // Public slots
 	/**
 	* Reimplementation to show the popup menu.
 	*/
-	virtual void showPopup(QTreeWidget*, int* i, const QPoint& point);
+	virtual void contextMenuEvent(QContextMenuEvent* event);
 
 protected slots: // Protected slots
 	void printItems();
 	//TODO: should be changed to...?
 	/**
-	* Is connected to the signal executed, which is emitted when a new item was chosen.
+	* Is connected to the signal which is emitted when a new item was chosen.
 	*/
-	void executed(QTreeWidgetItem*);
+	void executed(QTreeWidgetItem* current, QTreeWidgetItem*);
 
 private:
 	struct {

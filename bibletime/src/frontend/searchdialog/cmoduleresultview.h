@@ -26,6 +26,7 @@ class QPoint;
 class QMenu;
 class QAction;
 class QStringList;
+class QContextMenuEvent;
 
 class StrongsResultClass;
 
@@ -75,9 +76,9 @@ protected slots: // Protected slots
 	*/
 	void copyResult();
 	/**
-	* This slot opens the popup menu at the given position
+	* This event handler (reimplemented from QWidget) opens the popup menu at the given position.
 	*/
-	void showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint&);
+	void contextMenuEvent( QContextMenuEvent * event );
 	/**
 	* Appends the whole search result to the printer queue.
 	*/

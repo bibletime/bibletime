@@ -25,7 +25,7 @@
 #include <QAction>
 #include <QStringList>
 #include <QMenu>
-
+#include <QContextMenuEvent>
 
 //KDE includes
 #include <klocale.h>
@@ -102,10 +102,10 @@ void CModuleResultView::initView()
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
 	//TODO:
-	connect(this, SIGNAL(currentChanged(QTreeWidgetItem*)),
-			this, SLOT(executed(QTreeWidgetItem*)));
-	connect(this, SIGNAL(contextMenu(QTreeWidget*, QTreeWidgetItem*, const QPoint&)),
-			this, SLOT(showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint&)));
+	connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
+			this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
+	//connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	//		this, SLOT(showPopup(const QPoint&)));
 }
 
 /** Setups the tree using the given list of modules. */
@@ -235,10 +235,12 @@ CSwordModuleInfo* const CModuleResultView::activeModule() {
 	return 0;
 }
 
-/** No descriptions */
-void CModuleResultView::showPopup(QTreeWidget*, QTreeWidgetItem*, const QPoint& point) {
+/** Reimplementation from QWidget. */
+void CModuleResultView::contextMenuEvent( QContextMenuEvent * event )
+{
+	qDebug("CModuleResultView::showPopup");
 	//make sure that all entries have the correct status
-	m_popup->exec(point);
+	m_popup->exec(event->globalPos());
 }
 
 /** Copies the whole search result into the clipboard. */
