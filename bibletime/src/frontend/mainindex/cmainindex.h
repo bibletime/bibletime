@@ -126,7 +126,10 @@ protected: // Protected methods
 	 * Reimplementation.
 	 */
 	virtual void contentsDragLeaveEvent( QDragLeaveEvent* e );
+	
+	//TODO
 	QRect drawItemHighlighter(QPainter* painter, QTreeWidgetItem * item );
+
 	/** Read settings like open groups or scrollbar position and restore them
 	*/
 	void readSettings();
@@ -146,7 +149,7 @@ protected slots: // Protected slots
 	*/
 	void slotModifySelection();
 	/**
-	* Is called when an item was clicked/double clicked.
+	* Is called when an item was clicked or activated.
 	*/
 	void slotExecuted( QTreeWidgetItem* );
 	void dropped( QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*);

@@ -38,8 +38,13 @@
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
-#include <QTreeWidget>
 #include <QHeaderView>
+#include <QTimer>
+#include <QToolTip>
+#include <QList>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+
 
 //KDE includes
 #include <klocale.h>
