@@ -109,6 +109,8 @@ protected slots: // Protected slots
 	* This function saves the entry as plain text using the CExportMgr class.
 	*/
 	void saveAsPlain();
+	void saveRawHTML();
+
 	void slotFillBackHistory();
 	void slotFillForwardHistory();
 

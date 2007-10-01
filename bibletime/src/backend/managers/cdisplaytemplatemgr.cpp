@@ -101,7 +101,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	qDebug("loop through langMap");
 	foreach(const CLanguageMgr::Language* lang, langMap) {
 		//const CLanguageMgr::Language* lang = *it;
-		qDebug() << "lang: " << lang;
+		//qDebug() << "lang: " << lang;
 
 		//if (lang->isValid() && CBTConfig::get(lang).first) {
 		if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
@@ -127,7 +127,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 
 	const CLanguageMgr::Language* lang = *it;
 
-	qDebug() << "lang: " << lang;
+	//qDebug() << "lang: " << lang;
 	if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
 		const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param
 		langCSS.prepend(

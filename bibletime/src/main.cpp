@@ -247,6 +247,9 @@ int main(int argc, char* argv[]) {
 	// A binary option (on / off)
 	if (args->isSet("debug")) {
 		showDebugMessages = true;
+		app.setProperty("--debug", true);
+	} else {
+		app.setProperty("--debug", false);
 	}
 
 	if (kapp->isSessionRestored()) {

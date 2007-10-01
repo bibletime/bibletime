@@ -42,6 +42,7 @@ public:
 	* Returns the right text part in the specified format.
 	*/
 	virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
+	
 	/**
 	* Sets the new text for this display widget.
 	*/

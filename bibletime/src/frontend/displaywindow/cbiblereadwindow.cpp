@@ -34,6 +34,7 @@
 #include <QWidget>
 #include <QTimer>
 #include <QEvent>
+#include <QApplication>
 
 //KDE includes
 #include <kstandardshortcut.h>
@@ -286,6 +287,12 @@ void CBibleReadWindow::setupPopupMenu() {
 	m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
+	// Save raw HTML action for debugging purposes
+	if (qApp->property("--debug").toBool()) {
+		KAction* debugAction = new KAction("Raw HTML", this);
+		QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
+		m_actions.saveMenu->addAction(debugAction);
+	} // end of Save Raw HTML
 	popup()->addAction(m_actions.saveMenu);
 
 	m_actions.printMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::printMenu::icon), i18n("Print..."), popup());

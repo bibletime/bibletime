@@ -23,12 +23,12 @@
 #include "frontend/cexportmanager.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
+#include "frontend/display/chtmlreaddisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 
-//Qt includes
 
 //KDE includes
 #include <ktoolbar.h>
@@ -39,8 +39,12 @@
 #include <kactionmenu.h>
 #include <kmenu.h>
 
+
 #include <QMenu>
-// #include <kactionclasses.h>
+#include <QApplication>
+#include <QFile>
+#include <QFileDialog>
+
 
 
 CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
@@ -145,7 +149,6 @@ void CLexiconReadWindow::initActions() {
 	m_actions.save.entryAsHTML = new KAction(i18n("Entry as HTML"), ac );
 	QObject::connect(m_actions.save.entryAsHTML, SIGNAL(triggered()), this, SLOT(saveAsHTML()));
 	ac->addAction("saveEntryAsHTML", m_actions.save.entryAsHTML);
-
 
 	m_actions.print.reference = new KAction(i18n("Reference only"), ac);
 	QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()));
@@ -264,6 +267,14 @@ void CLexiconReadWindow::setupPopupMenu() {
 	m_actions.saveMenu->setDelayed(false);
 	m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
 	m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
+
+	// Save raw HTML action for debugging purposes
+	if (qApp->property("--debug").toBool()) {
+		KAction* debugAction = new KAction("Raw HTML", this);
+		QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
+		m_actions.saveMenu->addAction(debugAction);
+	} // end of Save Raw HTML
+
 	popup()->addAction(m_actions.saveMenu);
 
 	m_actions.printMenu = new KActionMenu(
@@ -316,6 +327,28 @@ CSwordLDKey* CLexiconReadWindow::ldKey() {
 void CLexiconReadWindow::saveAsHTML() {
 	CExportManager mgr(i18n("Saving entry ..."), true, i18n("Saving"), filterOptions(), displayOptions());
 	mgr.saveKey(key(), CExportManager::HTML, true);
+}
+
+/** Saving the raw HTML for debugging purposes */
+void CLexiconReadWindow::saveRawHTML()
+{
+	//qDebug("CLexiconReadWindow::saveRawHTML");
+	QFile file(QFileDialog::getSaveFileName());
+	CHTMLReadDisplay* disp = dynamic_cast<CHTMLReadDisplay*>(displayWidget());
+	if (disp) {
+		if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+			qDebug("could not open file");
+			return;
+		}
+		QString source = disp->text();
+		int bytes = file.write(source.toUtf8());
+		//qDebug() << "wrote" << bytes << "bytes";
+		file.close();
+		file.flush();
+	} else {
+		qDebug("No htmlreaddisplay widget!");
+	}
+	
 }
 
 /** This function saves the entry as html using the CExportMgr class. */
