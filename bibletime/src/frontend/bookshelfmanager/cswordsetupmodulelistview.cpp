@@ -64,18 +64,17 @@ protected:
 /** Listview specially made for the installation manager.
 * @short InstallationManager module listviews
 */
-CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_remote, sword::InstallSource* installSource)
-				: QTreeWidget(parent), m_is_remote( is_remote ) {
-		new BookshelfManager::ToolTip(this);
-		m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
+CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_remote, sword::InstallSource* installSource) : QTreeWidget(parent), m_is_remote( is_remote ) {
+	new BookshelfManager::ToolTip(this);
+	m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 
-		setColumnCount(3);
-		setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
-		setRootIsDecorated(true);
-		setColumnWidth(0, 200);
-		//setTooltipColumn(0);
+	setColumnCount(3);
+	setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
+	setRootIsDecorated(true);
+	setColumnWidth(0, 200);
+	//setTooltipColumn(0);
 
-		init();
+	init();
 }
 
 CSwordSetupModuleListView::~CSwordSetupModuleListView() {
@@ -83,6 +82,8 @@ CSwordSetupModuleListView::~CSwordSetupModuleListView() {
 }
 
 void CSwordSetupModuleListView::init() {
+	setSelectionMode(QAbstractItemView::ExtendedSelection);
+	setSelectionBehavior(QAbstractItemView::SelectRows);
 
 	m_categoryBible = new QTreeWidgetItem(this);
 	m_categoryBible->setText(0, i18n("Bibles"));
@@ -213,22 +214,26 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 	QTreeWidgetItem* newItem = 0;
 	if (langFolder) {
 		newItem = new QTreeWidgetItem(langFolder);
-	} else { //shouldn't happen
+	} 
+	else { //shouldn't happen
 		newItem = new QTreeWidgetItem(this);
 	}
 	newItem->setText(0, module->name());
 	newItem->setIcon(0, CToolClass::getIconForModule(module));
+	newItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	
 	if (m_is_remote) {
 		newItem->setText(1, localVersion.isEmpty() ? i18n("New") : i18n("Updated"));
-	} else {
+	} 
+	else {
 		newItem->setText(1, i18n("Installed") );
 	}
 
 	newItem->setText(2, localVersion);
 	if (m_is_remote) {
 		newItem->setText(3, module->config(CSwordModuleInfo::ModuleVersion));
-	} else {
+	}
+	else {
 		newItem->setText(3, module->config(CSwordModuleInfo::AbsoluteDataPath));
 	}
 }

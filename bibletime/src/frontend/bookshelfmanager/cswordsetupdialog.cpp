@@ -604,7 +604,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 	if (!m_installModuleListPage) { //the widgets are not yet created
 		m_installModuleListPage = new QWidget(0);
 
-		QGridLayout* layout = new QGridLayout(m_installModuleListPage/*, 7, 2*/);
+		QGridLayout* layout = new QGridLayout(m_installModuleListPage);
 		layout->setMargin(5);
 		layout->setSpacing(10);
 
@@ -612,7 +612,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 			i18n("Install/update works - Step 2"),
 			i18n("Please choose the works which should be installed and/or updated and click the install button."));
 			
-		layout->addWidget(installLabel, 0,0,0,1);
+		layout->addWidget(installLabel, 0, 0);
 		layout->setRowStretch(0,0);
 
 		m_installStackedWidget->addWidget(m_installModuleListPage);
@@ -623,7 +623,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 		sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, currentInstallSource());
 
 		m_installModuleListView = new CSwordSetupModuleListView(m_installModuleListPage, true, &is);
-		layout->addWidget( m_installModuleListView, 1,6,0,1);
+		layout->addWidget( m_installModuleListView, 1, 0);
 		layout->setColumnStretch(0,5);
 		layout->setRowStretch(1,5);
 
