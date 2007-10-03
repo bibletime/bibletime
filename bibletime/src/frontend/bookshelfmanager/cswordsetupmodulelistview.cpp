@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cswordsetupmodulelistview.h"
 #include "btinstallmgr.h"
 
@@ -70,7 +68,7 @@ CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_re
 
 	setColumnCount(3);
 	setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
-	setRootIsDecorated(true);
+	setRootIsDecorated(false);
 	setColumnWidth(0, 200);
 	//setTooltipColumn(0);
 
@@ -82,37 +80,46 @@ CSwordSetupModuleListView::~CSwordSetupModuleListView() {
 }
 
 void CSwordSetupModuleListView::init() {
-	setSelectionMode(QAbstractItemView::ExtendedSelection);
-	setSelectionBehavior(QAbstractItemView::SelectRows);
-
 	m_categoryBible = new QTreeWidgetItem(this);
 	m_categoryBible->setText(0, i18n("Bibles"));
 	m_categoryBible->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryBible->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryBible->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryBible);
 	
 	m_categoryCommentary = new QTreeWidgetItem(this);
 	m_categoryCommentary->setText(0, i18n("Commentaries"));
 	m_categoryCommentary->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryCommentary->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryCommentary->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryCommentary);
 	
 	m_categoryLexicon = new QTreeWidgetItem(this);
 	m_categoryLexicon->setText(0, i18n("Lexicons"));
 	m_categoryLexicon->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryLexicon->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryLexicon->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryLexicon);
 	
 	m_categoryBook = new QTreeWidgetItem(this);
 	m_categoryBook->setText(0, i18n("Books"));
 	m_categoryBook->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryBook->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryBook->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryBook);
 	
 	m_categoryDevotionals = new QTreeWidgetItem(this);
 	m_categoryDevotionals->setText(0, i18n("Daily Devotionals"));
 	m_categoryDevotionals->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryDevotionals->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryDevotionals->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryDevotionals);
 	
 	m_categoryGlossaries = new QTreeWidgetItem(this);
 	m_categoryGlossaries->setText(0, i18n("Glossaries"));
 	m_categoryGlossaries->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryGlossaries->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryGlossaries->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryGlossaries);
 
 	m_categoryBible->setExpanded(true);
@@ -122,24 +129,17 @@ void CSwordSetupModuleListView::init() {
 	m_categoryDevotionals->setExpanded(true);
 	m_categoryGlossaries->setExpanded(true);
 
-	//   connect(this, SIGNAL(executed(QListViewItem*)), SLOT(slotItemClicked(QListViewItem*)));
-	connect(this, SIGNAL(clicked(QTreeWidgetItem*)), SLOT(slotItemClicked(QTreeWidgetItem*))); //items have to be clicked only once in double click mode
-	connect(this, SIGNAL(spacePressed(QTreeWidgetItem*)), SLOT(slotItemClicked(QTreeWidgetItem*)));
+	connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), SLOT(slotItemClicked(void))); //items have to be clicked only once in double click mode
+	connect(this, SIGNAL(itemPressed(QTreeWidgetItem*, int)), SLOT(slotItemClicked(void)));
 }
 
 void CSwordSetupModuleListView::finish() {
-	if (!m_categoryBible->childCount())
-		delete m_categoryBible;
-	if (!m_categoryCommentary->childCount())
-		delete m_categoryCommentary;
-	if (!m_categoryBook->childCount())
-		delete m_categoryBook;
-	if (!m_categoryLexicon->childCount())
-		delete m_categoryLexicon;
-	if (!m_categoryDevotionals->childCount())
-		delete m_categoryDevotionals;
-	if (!m_categoryGlossaries->childCount())
-		delete m_categoryGlossaries;
+	if (!m_categoryBible->childCount()) delete m_categoryBible;
+	if (!m_categoryCommentary->childCount()) delete m_categoryCommentary;
+	if (!m_categoryBook->childCount()) delete m_categoryBook;
+	if (!m_categoryLexicon->childCount()) delete m_categoryLexicon;
+	if (!m_categoryDevotionals->childCount()) delete m_categoryDevotionals;
+	if (!m_categoryGlossaries->childCount()) delete m_categoryGlossaries;
 }
 
 void CSwordSetupModuleListView::clear() {
@@ -167,6 +167,7 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 		parent = 0;
 		break;
 	}
+	Q_ASSERT(parent);
 
 	//handling for special module types
 	if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::Glossary)) {
@@ -185,21 +186,13 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 
 	QTreeWidgetItem * langFolder = 0;
 	if (parent) {
-		foreach(QTreeWidgetItem* current, parent->takeChildren())
+		for(int i = 0; i < parent->childCount(); i++)
 		{
-			if (current->text(0) == langName) { //found right folder
-				langFolder = current;
+			if (parent->child(i)->text(0) == langName) { //found right folder
+				langFolder = parent->child(i);
 				break;
 			}
 		}
-/*		langFolder = parent->child(0);
-
-		while( langFolder ) { //try to find language folder if it exsists
-			if (langFolder->text(0) == langName) { //found right folder
-				break;
-			}
-			langFolder = langFolder->nextSibling();
-		}*/
 	}
 
 	if (!langFolder) { //not yet there
@@ -207,20 +200,18 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 		langFolder->setText(0, langName);
 		langFolder->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 		langFolder->setExpanded(false);
+		langFolder->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+		langFolder->setCheckState(0, Qt::Unchecked);
 	}
 
 	Q_ASSERT(langFolder);
 
 	QTreeWidgetItem* newItem = 0;
-	if (langFolder) {
-		newItem = new QTreeWidgetItem(langFolder);
-	} 
-	else { //shouldn't happen
-		newItem = new QTreeWidgetItem(this);
-	}
+	newItem = new QTreeWidgetItem(langFolder);
 	newItem->setText(0, module->name());
 	newItem->setIcon(0, CToolClass::getIconForModule(module));
 	newItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	newItem->setCheckState(0, Qt::Unchecked);
 	
 	if (m_is_remote) {
 		newItem->setText(1, localVersion.isEmpty() ? i18n("New") : i18n("Updated"));
@@ -238,12 +229,13 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 	}
 }
 
+//Actually finds the items that are checked, not selected.
 QStringList CSwordSetupModuleListView::selectedModules() {
 	QStringList moduleList;
-
+	
 	QTreeWidgetItemIterator it( this );
 	while ( (*it) ) {
-		if ((*it)->checkState(0) == Qt::Checked ) {
+		if ((*it)->checkState(0) == Qt::Checked && !(*it)->text(1).isEmpty() ) {
 			moduleList << (*it)->text(0);
 		}
 		++it;
@@ -251,7 +243,7 @@ QStringList CSwordSetupModuleListView::selectedModules() {
 	return moduleList;
 }
 
-void CSwordSetupModuleListView::slotItemClicked(QTreeWidgetItem*) {
+void CSwordSetupModuleListView::slotItemClicked(void) {
 		emit selectedModulesChanged();
 }
 

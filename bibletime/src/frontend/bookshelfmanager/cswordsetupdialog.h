@@ -27,8 +27,7 @@ class QButton;
 class QPushButton;
 class QLineEdit;
 class QTreeWidget;
-
-class KProgressDialog;
+class QProgressDialog;
 
 namespace BookshelfManager {
 
@@ -106,7 +105,7 @@ private:
 		QWidget* m_installSourcePage;
 
 		CSwordSetupModuleListView* m_installModuleListView;
-		KProgressDialog* m_progressDialog;
+		QProgressDialog* m_progressDialog;
 		QString m_installingModule;
 		bool m_refreshedRemoteSources;
 		unsigned int m_installedModuleCount;

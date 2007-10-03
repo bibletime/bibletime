@@ -7,11 +7,8 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "btinstallmgr.h"
-//#include "kio_ftptransport.h"
 #include "util/cpointers.h"
 
 //Qt includes
@@ -23,7 +20,6 @@
 #include <kapplication.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-//#include <kprocess.h> //TODO: not in kde4 alpha1!!!
 
 //Sword includes
 #include <filemgr.h>

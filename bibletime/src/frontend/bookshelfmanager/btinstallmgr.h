@@ -7,15 +7,10 @@
 *
 **********/
 
-
-
 #ifndef BTINSTALLMGR_H
 #define BTINSTALLMGR_H
 
-
-//BibleTIme includes
 #include "backend/managers/cswordbackend.h"
-
 
 //sword includes
 #include <installmgr.h>
@@ -29,74 +24,70 @@
 
 namespace BookshelfManager {
 
-	typedef QList<sword::InstallSource*> InstallSourceList;
+typedef QList<sword::InstallSource*> InstallSourceList;
 
-	/**Our own reimplementation to provide status bar updates.
-	  *@author The BibleTime team
-	  */
+/**Our own reimplementation to provide status bar updates.
+*@author The BibleTime team
+*/
 class BTInstallMgr : public QObject, public sword::InstallMgr, public sword::StatusReporter {
-		Q_OBJECT
+	Q_OBJECT
 public:
-		class Tool {
+	class Tool {
 public:
-			class LocalConfig {
+		class LocalConfig {
 public:
-				static const QString swordConfigFilename();
-				static QStringList targetList();
-				static void setTargetList( const QStringList& );
+			static const QString swordConfigFilename();
+			static QStringList targetList();
+			static void setTargetList( const QStringList& );
 private:
-				LocalConfig() {}
-				;
-			};
-
-			class RemoteConfig {
-public:
-				static void initConfig();
-				static const QString configPath();
-				static const QString configFilename();
-
-				static void resetRemoteSources();
-				static void resetLocalSources();
-
-				static QStringList sourceList( sword::InstallMgr* );
-				static sword::InstallSource source( sword::InstallMgr*, const QString& name );
-				static const bool isRemoteSource( sword::InstallSource* is );
-				static void addSource( sword::InstallSource* );
-				static void removeSource( sword::InstallMgr*, sword::InstallSource* );
-
-
-private:
-				RemoteConfig() {}
-				;
-			};
-
-			static CSwordBackend* backend( sword::InstallSource* const );
-
-private:
-			Tool() {}
+			LocalConfig() {}
 			;
 		};
 
-		BTInstallMgr();
-		virtual ~BTInstallMgr();
+		class RemoteConfig {
+public:
+			static void initConfig();
+			static const QString configPath();
+			static const QString configFilename();
+
+			static void resetRemoteSources();
+			static void resetLocalSources();
+
+			static QStringList sourceList( sword::InstallMgr* );
+			static sword::InstallSource source( sword::InstallMgr*, const QString& name );
+			static const bool isRemoteSource( sword::InstallSource* is );
+			static void addSource( sword::InstallSource* );
+			static void removeSource( sword::InstallMgr*, sword::InstallSource* );
+private:
+			RemoteConfig() {};
+		};
+
+		static CSwordBackend* backend( sword::InstallSource* const );
+
+private:
+		Tool() {};
+	};
+
+	BTInstallMgr();
+	virtual ~BTInstallMgr();
 
 protected:
-		/* Reimplementations of method in StatusReporter */
-		virtual void statusUpdate(double dltotal, double dlnow);
-		virtual void preStatus(long totalBytes, long completedBytes, const char *message);
+	/* Reimplementations of method in StatusReporter */
+	virtual void statusUpdate(double dltotal, double dlnow);
+	virtual void preStatus(long totalBytes, long completedBytes, const char *message);
 
 	virtual sword::FTPTransport *createFTPTransport(const char *host, StatusReporter *statusReporter);
 
-		long m_totalBytes;
-		long m_completedBytes;
+	long m_totalBytes;
+	long m_completedBytes;
 
 signals: // Signals
-		void completed( const int, const int );
-		/**
-		* Emitted when a new file gets downloaded.
-		*/
-		void downloadStarted( const QString& );
-	};
+	void completed( const int, const int );
+	/**
+	* Emitted when a new file gets downloaded.
+	*/
+	void downloadStarted( const QString& );
+};
 
 }
 

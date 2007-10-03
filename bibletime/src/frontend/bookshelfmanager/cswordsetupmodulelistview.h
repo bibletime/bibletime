@@ -44,7 +44,7 @@ public:
 	virtual bool showTooltip(QTreeWidgetItem* i, const QPoint& pos, int column) const;
 
 protected slots:
-	void slotItemClicked(QTreeWidgetItem*);
+	void slotItemClicked(void);
 
 private:
 	void init();

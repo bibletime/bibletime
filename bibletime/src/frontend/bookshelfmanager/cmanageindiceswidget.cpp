@@ -128,26 +128,16 @@ void CManageIndicesWidget::populateModuleList() {
 /** Creates indices for selected modules if no index currently exists */
 void CManageIndicesWidget::createIndices()
 {
-	QTreeWidgetItem* top = m_modsWithoutIndices;
 	bool indicesCreated = false;
 	ListCSwordModuleInfo moduleList;
 
-	int childCount = top->childCount();
-	if (childCount > 0) {
-		QTreeWidgetItem* item = top->child(0);
-		for (int i = 1; top && i < childCount; i++) {
-		//while (item) {
-			if (item->checkState(0) == Qt::Checked) {
-				CSwordModuleInfo* module =
-					CPointers::backend()->findModuleByName(item->text(0).toUtf8());
-
-			
-				if (module) {
-					moduleList.append( module );
-					indicesCreated = true;
-				}
+	for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
+		if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {
+			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithoutIndices->child(i)->text(0).toUtf8());
+			if (module) {
+				moduleList.append( module );
+				indicesCreated = true;
 			}
-			item = top->child(i);
 		}
 	}
 
@@ -158,27 +148,18 @@ void CManageIndicesWidget::createIndices()
 	}
 }
 
-/** Deletes indices for selected modules and selected orphans */
+/** Deletes indices for selected modules */
 void CManageIndicesWidget::deleteIndices()
 {
-	// delete installed module indices
-	QTreeWidgetItem* top = m_modsWithIndices;
 	bool indicesDeleted = false;
-	//QTreeWidgetItem* item = (QTreeWidgetItem*)top->firstChild();
-	//while (item) {
-	int childCount = top->childCount();
-	if (childCount > 0) {
-		QTreeWidgetItem* item = top->child(0);
-		for (int i = 1; top && i < childCount; i++) {
-			if (item->checkState(0) == Qt::Checked) {
-				CSwordModuleInfo* module =
-					CPointers::backend()->findModuleByName(item->text(0).toUtf8());
-				if (module) {
-					CSwordModuleInfo::deleteIndexForModule( module->name() );
-					indicesDeleted = true;
-				}
+	
+	for (int i = 0; i < m_modsWithIndices->childCount(); i++) {
+		if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
+			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
+			if (module) {
+				CSwordModuleInfo::deleteIndexForModule( module->name() );
+				indicesDeleted = true;
 			}
-			item = top->child(i);
 		}
 	}
 

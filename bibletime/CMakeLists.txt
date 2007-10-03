@@ -105,7 +105,6 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 	src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp
 	src/frontend/bookshelfmanager/cswordsetupdialog.cpp
-	src/frontend/bookshelfmanager/kio_ftptransport.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
 	#Search dialog
