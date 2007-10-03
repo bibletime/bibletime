@@ -69,8 +69,9 @@ void CRangeChooserDialog::RangeItem::setCaption(const QString newCaption) {
 
 CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog )
 	: QDialog(parentDialog)
-	//qdialog constr: (Plain, i18n("Search range editor"), Default | Ok | Cancel, Ok, parentDialog, "CRangeChooserDialog", false, true)
 {
+	//Set the flag to destroy when closed - otherwise eats memory
+	setAttribute(Qt::WA_DeleteOnClose);
 	initView();
 	initConnections();
 
@@ -92,11 +93,6 @@ CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog )
 /** Initializes the view of this object. */
 void CRangeChooserDialog::initView()
 {
-	//designed with qdesigner, code taken from the generated .h file
-	
-	//QSize size(576, 589);
-	//size = size.expandedTo(crangechooserdialog->minimumSizeHint());
-	//this->resize(size);
 	QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
 	QHBoxLayout* hboxLayout = new QHBoxLayout();
@@ -162,7 +158,7 @@ void CRangeChooserDialog::initView()
 void CRangeChooserDialog::initConnections()
 {
 	// Signals from text/list widgets
-/*	QObject::connect(m_rangeList, SIGNAL(selectionChanged(QListWidgetItem*)),
+	QObject::connect(m_rangeList, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)),
 			this, SLOT(editRange(QListWidgetItem*)));
 
 	QObject::connect(m_rangeEdit, SIGNAL(textChanged()),
@@ -172,19 +168,21 @@ void CRangeChooserDialog::initConnections()
 
 	QObject::connect(m_nameEdit, SIGNAL(textChanged(const QString&)),
 			this, SLOT(nameChanged(const QString&)));
-	*/
-	// Buttons
-	//QObject::connect(m_buttonBox, SIGNAL(accepted()), crangechooserdialog, SLOT(slotOk()));
-	//don't use... QObject::connect(m_buttonBox, SIGNAL(rejected()), crangechooserdialog, SLOT(reject()));
-	//connect(m_newRangeButton, SIGNAL(clicked()), this, SLOT(addNewRange()));
-	//connect(m_deleteRangeButton, SIGNAL(clicked()), this, SLOT(deleteCurrentRange()));
-	//restore defaults!
 
+	// Buttons
+	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(slotOk()));
+	QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(close()));
+	QObject::connect(m_newRangeButton, SIGNAL(clicked()), this, SLOT(addNewRange()));
+	QObject::connect(m_deleteRangeButton, SIGNAL(clicked()), this, SLOT(deleteCurrentRange()));
+	//restore defaults!
+	QPushButton* defaultsButton = m_buttonBox->button(QDialogButtonBox::RestoreDefaults);
+	QObject::connect(defaultsButton, SIGNAL(clicked()), this, SLOT(slotDefault()));
 }
 
 /** Adds a new range to the list. */
 void CRangeChooserDialog::addNewRange()
 {
+	//qDebug("CRangeChooserDialog::addNewRange");
 	//RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), i18n("New range"));
 	RangeItem* i = new RangeItem(m_rangeList, 0, i18n("New range"));
 	//use just setCurrentItem... m_rangeList->setSelected(i, true);
@@ -195,7 +193,9 @@ void CRangeChooserDialog::addNewRange()
 }
 
 /** No descriptions */
-void CRangeChooserDialog::editRange(QListWidgetItem* item) {
+void CRangeChooserDialog::editRange(QListWidgetItem* item)
+{
+	//qDebug("CRangeChooserDialog::editRange");
 	RangeItem* const range = dynamic_cast<RangeItem*>(item);
 
 	m_nameEdit->setEnabled( range ); //only if an item is selected enable the edit part
@@ -210,7 +210,9 @@ void CRangeChooserDialog::editRange(QListWidgetItem* item) {
 }
 
 /** Parses the entered text and prints out the result in the list box below the edit area. */
-void CRangeChooserDialog::parseRange() {
+void CRangeChooserDialog::parseRange()
+{
+	//qDebug("CRangeChooserDialog::parseRange");
 	m_resultList->clear();
 
 	//TODO: remove this hack:
@@ -228,7 +230,9 @@ void CRangeChooserDialog::parseRange() {
 }
 
 /** No descriptions */
-void CRangeChooserDialog::rangeChanged() {
+void CRangeChooserDialog::rangeChanged()
+{
+	//qDebug("CRangeChooserDialog::rangeChanged");
 	if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
 	   ) {
 		QString range( m_rangeEdit->toPlainText() );
@@ -240,7 +244,9 @@ void CRangeChooserDialog::rangeChanged() {
 }
 
 /** No descriptions */
-void CRangeChooserDialog::nameChanged(const QString& newCaption) {
+void CRangeChooserDialog::nameChanged(const QString& newCaption)
+{
+	//qDebug("CRangeChooserDialog::nameChanged");
 	m_rangeEdit->setEnabled(!newCaption.isEmpty());
 	m_resultList->setEnabled(!newCaption.isEmpty());
 	//m_resultList->header()->setEnabled(!newCaption.isEmpty());
@@ -248,43 +254,39 @@ void CRangeChooserDialog::nameChanged(const QString& newCaption) {
 	if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
 	   ) {
 		if (!newCaption.isEmpty()) {
+			//enable some items (see "else" below)
 			m_newRangeButton->setEnabled(true);
+			m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+			m_rangeList->setDisabled(false);
 			i->setCaption(newCaption);
-			m_rangeList->sortItems();
 		}
 		else { //invalid name
 			i->setCaption(i18n("<invalid name of search range>"));
+			//disable some items to prevent saving invalid range
 			m_newRangeButton->setEnabled(false);
+			m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+			m_rangeList->setDisabled(true);
 		};
 	};
 }
 
 /** Deletes the selected range. */
-void CRangeChooserDialog::deleteCurrentRange() {
-// 	if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
-// 	   ) {
-// 		if (QListWidgetItem* selection = i->itemBelow() ? i->itemBelow() : i->itemAbove()) {
-// 			m_rangeList->setSelected(selection, true);
-// 			m_rangeList->setCurrentItem(selection);
-// 		}
-// 		else {
-// 			m_rangeList->setSelected(m_rangeList->firstChild(), true);
-// 			m_rangeList->setCurrentItem(m_rangeList->firstChild());
-// 		}
-// 		delete i;
-// 	}
-// 	editRange(m_rangeList->currentItem());
+void CRangeChooserDialog::deleteCurrentRange()
+{
+	//qDebug("CRangeChooserDialog::deleteCurrentRange");
+ 	if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem()) ) {
+		int row = m_rangeList->row(i);
+		m_rangeList->takeItem(row);
+		delete i;
+	}
+	editRange(m_rangeList->currentItem());
 }
 
-void CRangeChooserDialog::slotOk() {
+void CRangeChooserDialog::slotOk()
+{
+	m_rangeList->sortItems(); //sorted first because the order will be saved
 	//save the new map of search scopes
 	CBTConfig::StringMap map;
-	//QListWidgetItemIterator it( m_rangeList );
-	//for (;it.current(); ++it) {
-	//	if ( RangeItem* i = dynamic_cast<RangeItem*>(it.current()) ) {
-	//		map[i->caption()] = i->range();
-	//	};
-	//};
 	for (int i = 0; i < m_rangeList->count(); i++){
 		if ( RangeItem* item = dynamic_cast<RangeItem*>(m_rangeList->item(i)) ) {
 			map[item->caption()] = item->range();
@@ -293,18 +295,18 @@ void CRangeChooserDialog::slotOk() {
 	CBTConfig::set
 		(CBTConfig::searchScopes, map);
 
-	//KDialogBase::slotOk();
 	QDialog::accept();
 }
 
-void CRangeChooserDialog::slotDefault() {
+void CRangeChooserDialog::slotDefault()
+{
+	//qDebug("CRangeChooserDialog::slotDefault");
 	m_rangeList->clear();
 	CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
 	CBTConfig::StringMap::Iterator it;
 	for (it = map.begin(); it != map.end(); ++it) {
 		new RangeItem(m_rangeList, 0, it.key(), it.value());
 	};
-	//m_rangeList->setSelected(m_rangeList->selectedItem(), false);
 	m_rangeList->setCurrentItem(0);
 
 	editRange(0);
@@ -313,7 +315,6 @@ void CRangeChooserDialog::slotDefault() {
 		nameChanged(i->caption());
 	}
 
-	//KDialogBase::slotDefault();
 }
 
 
