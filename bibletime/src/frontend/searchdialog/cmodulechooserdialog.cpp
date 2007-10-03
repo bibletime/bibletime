@@ -37,6 +37,8 @@ CModuleChooserDialog::CModuleChooserDialog( QWidget* parentDialog, ListCSwordMod
 	: QDialog(parentDialog)
 	//KDialogBase(Plain, i18n("Choose work(s)"), Ok, Ok, parentDialog, "CModuleChooser", false, true)
 {
+	//Set the flag to destroy when closed - otherwise eats memory
+	setAttribute(Qt::WA_DeleteOnClose);
 	setWindowTitle(i18n("Choose work(s)"));
 	initView();
 	initConnections();
