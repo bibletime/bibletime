@@ -68,7 +68,7 @@ CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_re
 
 	setColumnCount(3);
 	setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
-	setRootIsDecorated(false);
+	setRootIsDecorated(true);
 	setColumnWidth(0, 200);
 	//setTooltipColumn(0);
 

@@ -9,27 +9,29 @@
 
 //BibleTime includes
 #include "btinstallmgr.h"
+
+#include "backend/managers/cswordbackend.h"
+
 #include "util/cpointers.h"
 
 //Qt includes
-#include <qfile.h>
-#include <qfileinfo.h>
+#include <QFile>
+#include <QFileInfo>
 #include <QDir>
+#include <QDebug>
 
 //KDE includes
-#include <kapplication.h>
-#include <kglobal.h>
 #include <kstandarddirs.h>
 
 //Sword includes
 #include <filemgr.h>
 #include <swconfig.h>
 #include <swbuf.h>
-#include <map>
-#include <utility>
 
 //Stl includes
 #include <functional>
+#include <map>
+#include <utility>
 
 using namespace sword;
 
@@ -307,18 +309,10 @@ void BTInstallMgr::statusUpdate(double dltotal, double dlnow) {
 }
 
 void BTInstallMgr::preStatus(long totalBytes, long completedBytes, const char* /*message*/) {
-	qWarning("pre Status: %i / %i", (int)totalBytes, (int)completedBytes);
-	emit downloadStarted( "unknown filename" );
-
+	qDebug() << "pre Status:" << (int)totalBytes << "/" << (int)completedBytes;
 	m_completedBytes = completedBytes;
 	m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
 }
 
-	FTPTransport *BTInstallMgr::createFTPTransport(const char *host, StatusReporter *statusReporter) {
-//		return new KIO_FTPTransport(host, statusReporter);
-		return InstallMgr::createFTPTransport(host, statusReporter);
-	}
-
-
-}
+} //namespace BookshelfManager
 

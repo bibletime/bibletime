@@ -34,6 +34,7 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 #include <QProgressDialog>
+#include <QMessageBox>
 
 //KDE includes
 #include <kapplication.h>
@@ -41,9 +42,6 @@
 #include <keditlistbox.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kmessagebox.h>
-//#include <kprogressdialog.h>
-#include <kurl.h>
 
 //Sword includes
 #include <installmgr.h>
@@ -91,7 +89,7 @@ void CSwordSetupDialog::initSwordConfig() {
 	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
 	QString swordConfPath = BTInstallMgr::Tool::LocalConfig::swordConfigFilename();
-	QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is <b>%1</b>").arg(swordConfPath), page);
+	QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is: ").append("<b>%1</b>").arg(swordConfPath), page);
 	confPathLabel->setWordWrap(true);
 	layout->addWidget(confPathLabel, 1, 0, 1, 2);
 
@@ -407,10 +405,12 @@ void CSwordSetupDialog::slot_doRemoveModules() {
 		return; //no message, just do nothing
 	}
 
-	const QString message = i18n("You selected the following work(s): %1.\n\n"
-		"Do you really want to remove them from your system?").arg(moduleList.join(", "));
+	const QString message = i18n("You selected the following work(s): ")
+		.append(moduleList.join(", "))
+		.append("\n\n")
+		.append(i18n("Do you really want to remove them from your system?"));
 
-	if ((KMessageBox::warningYesNo(0, message, i18n("Warning")) == KMessageBox::Yes)) {  //Yes was pressed.
+	if ((QMessageBox::question(this, i18n("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 		sword::InstallMgr installMgr;
 		QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
 
@@ -667,15 +667,16 @@ void CSwordSetupDialog::slot_installModules() {
 		return;
 	}
 
-	const QString message = i18n("You selected the following works: %1.\n\n\
-	Do you really want to install them on your system?").arg(moduleList.join(", "));
+	const QString message = i18n("You selected the following works: ")
+		.append(moduleList.join(", "))
+		.append("\n\n")
+		.append(i18n("Do you really want to install them on your system?"));
 
-	if ((KMessageBox::warningYesNo(0, message, i18n("Warning")) == KMessageBox::Yes)) {  //Yes was pressed.
+	if ((QMessageBox::question(this, i18n("Confirmation"), message, QMessageBox::Yes|QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 		BTInstallMgr iMgr;
 		m_currentInstallMgr = &iMgr;
 		sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, currentInstallSource());
 
-		qWarning("installing from %s/%s", is.source.c_str(), is.directory.c_str());
 		QString target = m_targetCombo->currentText();
 
 		//make sure target/mods.d and target/modules exist
@@ -754,7 +755,7 @@ void CSwordSetupDialog::slot_installModules() {
 void CSwordSetupDialog::installCompleted( const int total, const int /* file */) {
 	if (m_progressDialog) {
 		m_progressDialog->setValue(total+100*m_installedModuleCount);
-		m_progressDialog->setLabelText( i18n("[%1]: %2% complete").arg(m_installingModule).arg(total) );
+		m_progressDialog->setLabelText( QString("[%1]: %2%").arg(m_installingModule).arg(total) );
 	}
 	KApplication::kApplication()->processEvents();
 }
@@ -772,16 +773,14 @@ void CSwordSetupDialog::slot_showInstallSourcePage() {
 
 void CSwordSetupDialog::slot_swordEditClicked() {
 	if (QTreeWidgetItem* i = m_swordPathListBox->currentItem()) {
-		KUrl url = QFileDialog::getExistingDirectory(this, i->text(0));
-		if (url.isValid()) {
-			const QFileInfo fi( url.path() );
+		QDir dir = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), i->text(0));
+		if (dir.isReadable()) {
+			const QFileInfo fi( dir.canonicalPath() );
 			if (!fi.exists() || !fi.isWritable()) {
-				const int result = KMessageBox::warningYesNo(this, i18n("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"));
-				if (result == KMessageBox::No) {
-					return;
-				}
+				const int result = QMessageBox::warning(this, i18n("Confirmation"), i18n("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+				if (result != QMessageBox::Yes) return;
 			}
-			i->setText(0, url.path());
+			i->setText(0, dir.canonicalPath());
 			m_swordSetupChanged = true;
 			writeSwordConfig(); //to make sure other parts work with the new setting
 			populateInstallCombos(); //update target list bof on install page
@@ -791,18 +790,16 @@ void CSwordSetupDialog::slot_swordEditClicked() {
 }
 
 void CSwordSetupDialog::slot_swordAddClicked() {
-	KUrl url = QFileDialog::getExistingDirectory(this, "");
-	if (url.isValid()) {
-		const QFileInfo fi( url.path() );
+	QDir dir = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), "");
+	if (dir.isReadable()) {
+		const QFileInfo fi( dir.canonicalPath() );
 		if (!fi.exists() || !fi.isWritable()) {
-			const int result = KMessageBox::warningYesNo(this, i18n("This directory is not writable, \
-	so works can not be installed here using BibleTime. \
-	Do you want to add it to the list of module directories?"));
-			if (result == KMessageBox::No) {
+			const int result = QMessageBox::warning(this, i18n("Warning"), i18n("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+			if (result != QMessageBox::Yes) {
 				return;
 			}
 		}
-		new QTreeWidgetItem(m_swordPathListBox, QStringList(url.path()) );
+		new QTreeWidgetItem(m_swordPathListBox, QStringList(dir.canonicalPath()) );
 		m_swordSetupChanged = true;
 		writeSwordConfig(); //to make sure other parts work with the new setting
 		populateInstallCombos();     //update target list bof on install page

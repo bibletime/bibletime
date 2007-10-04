@@ -10,17 +10,17 @@
 #ifndef BTINSTALLMGR_H
 #define BTINSTALLMGR_H
 
-#include "backend/managers/cswordbackend.h"
-
 //sword includes
 #include <installmgr.h>
 #include <ftptrans.h>
 
 //Qt includes
-#include <qobject.h>
-#include <qlist.h>
+#include <QObject>
+#include <QList>
 #include <QString>
-#include <qstringlist.h>
+#include <QStringList>
+
+class CSwordBackend;
 
 namespace BookshelfManager {
 
@@ -76,17 +76,11 @@ protected:
 	virtual void statusUpdate(double dltotal, double dlnow);
 	virtual void preStatus(long totalBytes, long completedBytes, const char *message);
 
-	virtual sword::FTPTransport *createFTPTransport(const char *host, StatusReporter *statusReporter);
-
 	long m_totalBytes;
 	long m_completedBytes;
 
-signals: // Signals
+signals:
 	void completed( const int, const int );
-	/**
-	* Emitted when a new file gets downloaded.
-	*/
-	void downloadStarted( const QString& );
 };
 
 }
