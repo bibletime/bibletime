@@ -30,6 +30,7 @@ class QMenu;
 class CDisplaySettingsButton : public QToolButton  {
 	Q_OBJECT
 public:
+	
 	CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const ListCSwordModuleInfo& useModules, QWidget *parent=0);
 	void reset(const ListCSwordModuleInfo& useModules);
 	/**
@@ -56,6 +57,11 @@ protected slots:
 	void optionToggled(QAction* action);
 
 protected:
+	
+	/** This enum marks the option types for a display. Used internally.*/
+	enum OptionType {Linebreak, Versenum, Headings, WordsofJ, Vowel, Cantillation, Accents,
+					Variant, Xref, Morphseg};	
+
 	CSwordBackend::FilterOptions*  m_moduleSettings;
 	CSwordBackend::DisplayOptions* m_displaySettings;
 	CSwordBackend::FilterOptions m_available;
@@ -67,7 +73,7 @@ protected:
 
 	int populateMenu();
 	bool isOptionAvailable( const CSwordModuleInfo::FilterTypes option);
-	int addMenuEntry( const QString name, const int* option, const bool available);
+	int addMenuEntry( const QString name, OptionType type, const int* option, const bool available);
 };
 
 #endif

@@ -60,9 +60,46 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 
 void CDisplaySettingsButton::optionToggled(QAction* action) {
 	qDebug("display settings option toggled");
-	//qDebug() << "action: " << action;
-	//TODO:change the options for this display
-	//set the display window m_module/displaySettings
+	//Take each Action and set the corresponding setting.
+	//Using QAction (QObject) property and OptionType enum is a dirty way to do this.
+	//See populateMenu().
+	foreach (QAction* act, m_popup->actions()) {
+		int optionType = act->property("OptionType").toInt();
+		bool checked = act->isChecked();
+		switch(optionType) {
+		case Linebreak:
+			m_displaySettings->lineBreaks = checked;
+			break;
+		case Versenum:
+			m_displaySettings->verseNumbers = checked;
+			break;
+		case Variant:
+			m_moduleSettings->textualVariants = checked;
+			break;
+		case Vowel:
+			m_moduleSettings->hebrewPoints = checked;
+			break;
+		case Accents:
+			m_moduleSettings->greekAccents = checked;
+			break;
+		case Cantillation:
+			m_moduleSettings->hebrewCantillation = checked;
+			break;
+		case Headings:
+			m_moduleSettings->headings = checked;
+			break;
+		case Morphseg:
+			m_moduleSettings->morphSegmentation = checked;
+			break;
+		case Xref:
+			m_moduleSettings->scriptureReferences = checked;
+			break;
+		case WordsofJ:
+			m_moduleSettings->redLetterWords = checked;
+			break;
+		}
+	}
+
 	emit sigChanged();
 }
 
@@ -73,42 +110,48 @@ int CDisplaySettingsButton::populateMenu() {
 	m_popup->clear();
 	m_popup->setTitle(i18n("Display options"));
 	
-	ret += addMenuEntry(i18n("Use linebreaks after each verse"), &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+	// See also optionToggled()
+
+	ret += addMenuEntry(i18n("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
 	//show the verse numbers option only for bible modules
-	ret += addMenuEntry(i18n("Show versenumbers"), &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+	ret += addMenuEntry(i18n("Show versenumbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
-	ret += addMenuEntry(i18n("Show headings"), &m_moduleSettings->headings,
+	ret += addMenuEntry(i18n("Show headings"), Headings, &m_moduleSettings->headings,
 						isOptionAvailable(CSwordModuleInfo::headings));
 	
-	ret += addMenuEntry(i18n("Highlight words of Jesus"), &m_moduleSettings->redLetterWords,
+	ret += addMenuEntry(i18n("Highlight words of Jesus"), WordsofJ, &m_moduleSettings->redLetterWords,
 						isOptionAvailable(CSwordModuleInfo::redLetterWords ));
 
-	ret += addMenuEntry(i18n("Show Hebrew vowel points"), &m_moduleSettings->hebrewPoints,
+	ret += addMenuEntry(i18n("Show Hebrew vowel points"), Vowel, &m_moduleSettings->hebrewPoints,
 						isOptionAvailable(CSwordModuleInfo::hebrewPoints ));
-	ret += addMenuEntry(i18n("Show Hebrew cantillation marks"), &m_moduleSettings->hebrewCantillation,
+
+	ret += addMenuEntry(i18n("Show Hebrew cantillation marks"), Cantillation, &m_moduleSettings->hebrewCantillation,
 						isOptionAvailable(CSwordModuleInfo::hebrewCantillation ));
-	ret += addMenuEntry(i18n("Show Greek accents"), &m_moduleSettings->greekAccents,
+
+	ret += addMenuEntry(i18n("Show Greek accents"), Accents, &m_moduleSettings->greekAccents,
 						isOptionAvailable(CSwordModuleInfo::greekAccents ));
 
-	ret += addMenuEntry(i18n("Use alternative textual variant"), &m_moduleSettings->textualVariants,
+	ret += addMenuEntry(i18n("Use alternative textual variant"), Variant, &m_moduleSettings->textualVariants,
 						isOptionAvailable(CSwordModuleInfo::textualVariants ));
-	ret += addMenuEntry(i18n("Show scripture cross-references"), &m_moduleSettings->scriptureReferences,
+
+	ret += addMenuEntry(i18n("Show scripture cross-references"), Xref, &m_moduleSettings->scriptureReferences,
 						isOptionAvailable(CSwordModuleInfo::scriptureReferences ));
-	ret += addMenuEntry(i18n("Show morph segmentation"), &m_moduleSettings->morphSegmentation,
+
+	ret += addMenuEntry(i18n("Show morph segmentation"), Morphseg, &m_moduleSettings->morphSegmentation,
 						isOptionAvailable(CSwordModuleInfo::morphSegmentation ));
 
 	return ret;
 }
 
-/** Adds an entry to m_popup */
-int CDisplaySettingsButton::addMenuEntry( const QString name, const int* option, const bool available) {
+/** Adds an entry to m_popup. */
+int CDisplaySettingsButton::addMenuEntry( const QString name, OptionType type, const int* option, const bool available) {
 	int ret = 0;
 
 	if (available) {
-		//m_dict.insert( name, *option );
-		//m_popup->setItemChecked(m_popup->insertItem( name ), *option );
 		QAction* a = m_popup->addAction(name);
+		//see optionToggled()
+		a->setProperty("OptionType", type);
 		a->setCheckable(true);
 		a->setChecked(*option);
 		ret = 1;
