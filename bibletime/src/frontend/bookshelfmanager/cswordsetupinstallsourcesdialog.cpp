@@ -36,8 +36,6 @@ namespace BookshelfManager {
 	CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
 		: QDialog()
 	{
-		//Set the flag to destroy when closed - otherwise eats memory
-		setAttribute(Qt::WA_DeleteOnClose);
 		QVBoxLayout* mainLayout = new QVBoxLayout( this );
 		mainLayout->setMargin( 10 );
 		mainLayout->setSpacing( 5 );
@@ -172,9 +170,7 @@ namespace BookshelfManager {
 			newSource.caption = dlg->m_captionEdit->text().toUtf8();
 			newSource.directory = dlg->m_pathEdit->text().toUtf8();
 		}
-
 		return newSource;
 	}
-
 
 } //namespace
