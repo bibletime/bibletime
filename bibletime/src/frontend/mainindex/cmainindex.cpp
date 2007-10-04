@@ -891,9 +891,10 @@ void CMainIndex::editModuleHTML() {
 /** Reloads the main index's Sword dependend things like modules */
 void CMainIndex::reloadSword() {
 	//reload the modules, save the open groups before removing the items
+	qDebug("CMainIndex::reloadSword");
 	saveSettings();
 	clear();
-	initTree();	
+	initTree();
 	readSettings();
 }
 
@@ -998,42 +999,42 @@ void CMainIndex::readSettings() {
 }
 
 void CMainIndex::saveSettings() {
-	//save the complete names of all open groups to the settings file (e.g. Bibles/German/,Bookmarks/Jeuss Christ
-	QStringList openGroups;
-
-	QTreeWidgetItemIterator it( this );
-	while ( *it ) {
-		//porting: checking for a group (has children), and it's open: expanded?
-		if ( ((*it)->childCount() != 0) && ((*it)->isExpanded()) ) { //orig: (*it)->isOpen()is a group and open
-			//it.current()'s full name needs to be added to the list
-			QTreeWidgetItem* i = (*it);
-			QString fullName = i->text(0);
-			while (i->parent()) {
-				i = i->parent();
-				fullName.prepend("/").prepend( i->text(0).replace("/", "\\/")); // parent / child
-			}
-			openGroups << fullName;
-		}
-
-		++it;
-	}
-
-	CBTConfig::set(CBTConfig::bookshelfOpenGroups, openGroups);
-
-	//now save the position of the scrollbars
-// 	CBTConfig::set(CBTConfig::bookshelfContentsX,
-// 		horizontalScrollBar() ? horizontalScrollBar()->value() : 0);
-// 	CBTConfig::set(CBTConfig::bookshelfContentsY,
-// 		verticalScrollBar() ? verticalScrollBar()->value() : 0);
-
-	//save the currently selected item
-	QTreeWidgetItem* item = currentItem();
-	QString path;
-	while (item) {
-		path.prepend( item->text(0) + "/" );
-		item = item->parent();
-	}
-	CBTConfig::set(CBTConfig::bookshelfCurrentItem, path);
+// 	//save the complete names of all open groups to the settings file (e.g. Bibles/German/,Bookmarks/Jeuss Christ
+// 	QStringList openGroups;
+// 
+// 	QTreeWidgetItemIterator it( this );
+// 	while ( *it ) {
+// 		//porting: checking for a group (has children), and it's open: expanded?
+// 		if ( ((*it)->childCount() != 0) && ((*it)->isExpanded()) ) { //orig: (*it)->isOpen()is a group and open
+// 			//it.current()'s full name needs to be added to the list
+// 			QTreeWidgetItem* i = (*it);
+// 			QString fullName = i->text(0);
+// 			while (i->parent()) {
+// 				i = i->parent();
+// 				fullName.prepend("/").prepend( i->text(0).replace("/", "\\/")); // parent / child
+// 			}
+// 			openGroups << fullName;
+// 		}
+// 
+// 		++it;
+// 	}
+// 
+// 	CBTConfig::set(CBTConfig::bookshelfOpenGroups, openGroups);
+// 
+// 	//now save the position of the scrollbars
+// // 	CBTConfig::set(CBTConfig::bookshelfContentsX,
+// // 		horizontalScrollBar() ? horizontalScrollBar()->value() : 0);
+// // 	CBTConfig::set(CBTConfig::bookshelfContentsY,
+// // 		verticalScrollBar() ? verticalScrollBar()->value() : 0);
+// 
+// 	//save the currently selected item
+// 	QTreeWidgetItem* item = currentItem();
+// 	QString path;
+// 	while (item) {
+// 		path.prepend( item->text(0) + "/" );
+// 		item = item->parent();
+// 	}
+// 	CBTConfig::set(CBTConfig::bookshelfCurrentItem, path);
 }
 
 

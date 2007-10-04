@@ -178,10 +178,10 @@ void CDisplayWindow::initActions()
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory()));
 	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
 	
-	qDebug("actionCollection: ");
-	foreach(QAction* a, actionCollection()->actions()) {
-		qDebug() << a->text();
-	}
+	//qDebug("actionCollection: ");
+	//foreach(QAction* a, actionCollection()->actions()) {
+	//	qDebug() << a->text();
+	//}
 
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }

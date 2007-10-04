@@ -69,6 +69,7 @@ CSwordSetupDialog::CSwordSetupDialog(QWidget *parent) : KPageDialog(parent),
 	initInstall();
 	initRemove();
 	initManageIndices();
+	connect(this, SIGNAL(okClicked()), SLOT(slotOk()));
 }
 
 void CSwordSetupDialog::initSwordConfig() {
@@ -97,6 +98,7 @@ void CSwordSetupDialog::initSwordConfig() {
 	m_swordPathListBox = new QTreeWidget(page);
 	m_swordPathListBox->setHeaderLabels(QStringList() << i18n("Path to bookshelf"));
 	
+	//TODO: No such signal QTreeWidget::selectionChanged()
 	connect(m_swordPathListBox, SIGNAL(selectionChanged()), this, SLOT(slot_swordPathSelected()));
 	layout->addWidget(m_swordPathListBox, 2, 0, 4, 1);
 
@@ -253,6 +255,7 @@ void CSwordSetupDialog::initManageIndices()
 }
 
 void CSwordSetupDialog::slotOk() {
+	qDebug("CSwordSetupDialog::slotOk");
 	writeSwordConfig();
 	KDialog::accepted();
 	emit signalSwordSetupChanged( );

@@ -76,7 +76,7 @@ void CIndexTreeFolder::update() {
 }
 
 void CIndexTreeFolder::init() {
-	qDebug("CIndexTreeFolder::init");
+	//qDebug("CIndexTreeFolder::init");
 	if (language() == "*") {
 		switch (type()) {
 			case BibleModuleFolder:
@@ -113,13 +113,13 @@ void CIndexTreeFolder::init() {
 		setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : i18n("Unknown language"));
 	}
 
-	qDebug(text(0).toLatin1().data());
+	//qDebug(text(0).toLatin1().data());
 	initTree();
 	update();
 }
 
 void CIndexTreeFolder::initTree() {
-	qDebug("CTreeMgr::initTree");
+	//qDebug("CTreeMgr::initTree");
 	if (type() == Unknown)
 		return;
 
