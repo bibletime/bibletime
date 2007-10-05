@@ -47,6 +47,8 @@ public:
 	const QStringList getPreviousKeys() const;
 	const QStringList getNextKeys() const;
 
+	virtual void ensurePolished() const;
+
 public slots:
 	/**
 	* sets the @ref CKey
@@ -108,9 +110,7 @@ private:
 	QStringList m_nextKeyHistoryList;
 	int m_currentKeyHistoryPos;
 	bool m_inHistoryFunction;
-protected:
-	virtual void polish();
-	virtual void ensurePolished();
+	
 };
 
 #endif

@@ -34,6 +34,7 @@ CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, Q
 	setKey(key);
 
 	adjustFont();
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }
 
 CBookKeyChooser::~CBookKeyChooser() {}

@@ -46,6 +46,7 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 
 	setKey(key);
 	adjustFont();
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }
 
 CBookTreeChooser::~CBookTreeChooser() {}

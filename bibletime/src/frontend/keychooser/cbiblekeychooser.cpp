@@ -45,6 +45,8 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 	connect(w_ref,SIGNAL(changed(CSwordVerseKey *)),SLOT(refChanged(CSwordVerseKey *)));
 
 	setKey(m_key); //set the key without changing it, setKey(key()) would change it
+
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }
 
 CSwordKey* CBibleKeyChooser::key() {

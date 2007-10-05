@@ -130,7 +130,7 @@ void CKeyChooser::forwardInHistory(QAction* action) {
 void CKeyChooser::addToHistory(CSwordKey* k) {
 	qDebug("CKeyChooser::addToHistory");
 
-	Q_ASSERT(!m_inHistoryFunction);
+	//??Q_ASSERT(!m_inHistoryFunction);
 	if (k && !m_inHistoryFunction) {
 		Q_ASSERT(k->key() == key()->key());
 		m_prevKeyHistoryList.prepend(k->key());
@@ -153,16 +153,26 @@ const QStringList CKeyChooser::getNextKeys() const {
 }
 
 
-/*!
-    \fn CKeyChooser::polish()
- */
-void CKeyChooser::polish() {
-	//Changed to ensurePolished() in qt4, just to be cautious I save this
-	ensurePolished();
-}
-void CKeyChooser::ensurePolished() {
-	QWidget::ensurePolished();
+///*!
+//    \fn CKeyChooser::polish()
+// */
+//void CKeyChooser::polish() {
+//	//Changed to ensurePolished() in qt4, just to be cautious I save this
+//	ensurePolished();
+//}
+
+void CKeyChooser::ensurePolished() const {
 	//connect the history calls just before we show, we want an empty history
 	qDebug("CKeyChooser::ensurePolished - connect keyChanged to addToHistory");
 	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
+	QWidget::ensurePolished();
 }
+
+// bool CKeyChooser::event(QEvent* e)
+// {
+// 	if (e->type() == QEvent::Polish) {
+// 		qDebug("CKeyChooser::event type Polish");
+// 		connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
+// 	}
+// 	QWidget::event(e);
+// }

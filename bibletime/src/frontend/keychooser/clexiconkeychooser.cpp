@@ -29,9 +29,9 @@
 
 
 CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
-: CKeyChooser(modules, key, parent),
-m_key(dynamic_cast<CSwordLDKey*>(key)) {
-
+	: CKeyChooser(modules, key, parent),
+	m_key(dynamic_cast<CSwordLDKey*>(key))
+{
 	setModules(modules, false);
 
 	//we use a layout because the key chooser should be resized to full size
@@ -61,6 +61,7 @@ m_key(dynamic_cast<CSwordLDKey*>(key)) {
 
 	setModules(modules, true);
 	setKey(key);
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }
 
 CSwordKey* CLexiconKeyChooser::key() {
