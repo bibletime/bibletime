@@ -329,5 +329,14 @@ bool BibleTime::event(QEvent* e)
 		m_initialized = true;
 		applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
 	}
-	KXmlGuiWindow::event(e);
+	if (e->type() == QEvent::Close) {
+		
+	}
+	return KXmlGuiWindow::event(e);
+}
+
+void BibleTime::closeEvent(QCloseEvent* e) {
+	//qDebug("Now we will call kapp->quit");
+	e->ignore();
+	kapp->quit();
 }

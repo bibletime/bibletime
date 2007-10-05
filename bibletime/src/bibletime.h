@@ -253,6 +253,8 @@ protected: // Protected methods
 
 	virtual bool event(QEvent*);
 
+	virtual void closeEvent(QCloseEvent* e);
+
 protected slots:
 	/**
 	 * Creates a new presenter in the MDI area according to the type of the module.

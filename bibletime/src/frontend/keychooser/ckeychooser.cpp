@@ -161,6 +161,7 @@ const QStringList CKeyChooser::getNextKeys() const {
 //	ensurePolished();
 //}
 
+//should be deleted unless some way to get this to work is found
 void CKeyChooser::ensurePolished() const {
 	//connect the history calls just before we show, we want an empty history
 	qDebug("CKeyChooser::ensurePolished - connect keyChanged to addToHistory");
