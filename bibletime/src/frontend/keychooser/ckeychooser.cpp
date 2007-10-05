@@ -128,7 +128,7 @@ void CKeyChooser::forwardInHistory(QAction* action) {
 }
 
 void CKeyChooser::addToHistory(CSwordKey* k) {
-	//  qWarning("addToHistory");
+	qDebug("CKeyChooser::addToHistory");
 
 	Q_ASSERT(!m_inHistoryFunction);
 	if (k && !m_inHistoryFunction) {
@@ -163,5 +163,6 @@ void CKeyChooser::polish() {
 void CKeyChooser::ensurePolished() {
 	QWidget::ensurePolished();
 	//connect the history calls just before we show, we want an empty history
+	qDebug("CKeyChooser::ensurePolished - connect keyChanged to addToHistory");
 	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 }

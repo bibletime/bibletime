@@ -51,7 +51,9 @@ CSwordKey* CBibleKeyChooser::key() {
 	return m_key;
 }
 
-void CBibleKeyChooser::setKey(CSwordKey* key) {
+void CBibleKeyChooser::setKey(CSwordKey* key)
+{
+	qDebug("CBibleKeyChooser::setKey");
 	Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
 	if (dynamic_cast<CSwordVerseKey*>(key) == 0) {
 		return;
@@ -65,7 +67,9 @@ void CBibleKeyChooser::setKey(CSwordKey* key) {
 	emit keyChanged(m_key);
 }
 
-void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
+void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
+{
+	qDebug("CBibleKeyChooser::refChanged");
 	Q_ASSERT(m_key);
 	Q_ASSERT(key);
 
@@ -74,9 +78,11 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
 
 	setUpdatesEnabled(false);
 	if (m_key)
+		qDebug("will emit beforeKeyChange");
 		emit beforeKeyChange(m_key->key());
 
 	m_key = key;
+	qDebug("will emit keyChanged");
 	emit keyChanged(m_key);
 
 	setUpdatesEnabled(true);

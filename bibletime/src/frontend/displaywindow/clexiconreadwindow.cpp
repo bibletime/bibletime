@@ -52,40 +52,38 @@ CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea
 {
 	qDebug("CLexiconReadWindow::CLexiconReadWindow");
 	moduleList.first();
-	qDebug("CLexiconReadWindow::CLexiconReadWindow 2");
 	setKey( CSwordKey::createInstance(moduleList.first()) );
-	qDebug("CLexiconReadWindow::CLexiconReadWindow 3");
 }
 
 CLexiconReadWindow::~CLexiconReadWindow() {}
 
-void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a ) {
+void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a )
+{
+	qDebug("CLexiconReadWindow::insertKeyboardActions");
 	KAction* kaction;
 	kaction = new KAction( i18n("Next entry"), a);
 	kaction->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
-	a->addAction("nextEntry", kaction);	
+	a->addAction("nextEntry", kaction);
 
 	kaction = new KAction( i18n("Previous entry"), a);
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	a->addAction("previousEntry", kaction);
 	
-	//  new KAction(i18n("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
 	kaction = new KAction(i18n("Copy reference only"), a);
 	a->addAction("copyReferenceOnly", kaction);
 
-	//  new KAction(i18n("Copy selected text"), KShortcut(0), a, "copySelectedText");
 	kaction = new KAction(i18n("Copy selected text"), a);
 	a->addAction("copySelectedText", kaction);
 
 	kaction = new KAction(i18n("Save entry as HTML"), a);
 	a->addAction("saveHtml", kaction);
 
-	//   new KAction(i18n("Print reference only"), KShortcut(0), a, "printReferenceOnly");
 	kaction = new KAction(i18n("Print reference only"), a);
 	a->addAction("printReferenceOnly", kaction);
 }
 
-void CLexiconReadWindow::initActions() {
+void CLexiconReadWindow::initActions()
+{
 	qDebug("CLexiconReadWindow::initActions");
 
 	KActionCollection* ac = actionCollection();
@@ -159,11 +157,14 @@ void CLexiconReadWindow::initActions() {
 	ac->addAction("printEntryWithText", m_actions.print.entry);
 
 	// init with the user defined settings
+	qDebug("call CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac); and end CLexiconReadWindow::initActions");
 	CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
 };
 
 /** No descriptions */
-void CLexiconReadWindow::initConnections() {
+void CLexiconReadWindow::initConnections()
+{
+	qDebug("CLexiconReadWindow::initConnections");
 	Q_ASSERT(keyChooser());
 
 	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
@@ -197,24 +198,20 @@ void CLexiconReadWindow::initView()
 	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
 	setMainToolBar( new QToolBar(this) );
-	//mainToolBar()->adjustSize();
 	addToolBar(mainToolBar());
-	//addDockWidget(mainToolBar()); //TODO: does this work? see write windows
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
-	//mainToolBar()->setFullSize(false);
 	setModuleChooserBar( new CModuleChooserBar(modules(), modules().first()->type(), this) );
 	moduleChooserBar()->adjustSize();
-	//addDockWidget(moduleChooserBar());
 	addToolBar(moduleChooserBar());
 	setButtonsToolBar( new QToolBar(this) );
-	//addDockWidget(buttonsToolBar());
 	addToolBar(buttonsToolBar());
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
 	setCentralWidget( displayWidget()->view() );
 }
 
-void CLexiconReadWindow::initToolbars() {
+void CLexiconReadWindow::initToolbars()
+{
 	//main toolbar
 	Q_ASSERT(m_actions.backInHistory);
 	mainToolBar()->addAction(m_actions.backInHistory); //1st button
@@ -227,27 +224,21 @@ void CLexiconReadWindow::initToolbars() {
 	if (action) {
 		buttonsToolBar()->addAction(action);
 	}
-	//#if KDE_VERSION_MINOR < 1
-	//action->plugAccel( accel() );
-	//#endif
 
 	setDisplaySettingsButton( new CDisplaySettingsButton( &displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
-	//buttonsToolBar()->insertWidget(2,displaySettingsButton()->size().width(), displaySettingsButton());
+
 	//TODO: find the right place for the button
 	buttonsToolBar()->addWidget(displaySettingsButton());
 }
 
-void CLexiconReadWindow::setupPopupMenu() {
+void CLexiconReadWindow::setupPopupMenu()
+{
 	popup()->setTitle(i18n("Lexicon window"));
 	popup()->setIcon(CToolClass::getIconForModule(modules().first()));
 	//   m_actions.selectAll = new KAction(i18n("Select all"), KShortcut(0), displayWidget()->connectionsProxy(), SLOT(selectAll()), actionCollection());
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);
-	
 	popup()->addAction(m_actions.selectAll);
-
-	
-	//(new KActionSeparator(this))->plug( popup() );
 	popup()->addSeparator();
 
 	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon), i18n("Copy..."), actionCollection());
@@ -289,17 +280,10 @@ void CLexiconReadWindow::setupPopupMenu() {
 }
 
 /** Reimplemented. */
-void CLexiconReadWindow::updatePopupMenu() {
+void CLexiconReadWindow::updatePopupMenu()
+{
 	//enable the action depending on the supported module features
-/*	bool hasStrongs = false;
-	ListCSwordModuleInfo mods = modules();
-	for (ListCSwordModuleInfo::iterator it = mods.begin(); it != mods.end(); ++it) {
-		if ( (*it)->has( CSwordModuleInfo::strongNumbers ) ) {
-			hasStrongs = true;
-			break;
-		}
-	}
-	m_actions.findStrongs->setEnabled( hasStrongs );*/
+
 	m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
 	
 	m_actions.copy.reference->setEnabled( displayWidget()->hasActiveAnchor() );
@@ -309,17 +293,20 @@ void CLexiconReadWindow::updatePopupMenu() {
 }
 
 /** No descriptions */
-void CLexiconReadWindow::nextEntry() {
+void CLexiconReadWindow::nextEntry()
+{
 	keyChooser()->setKey(ldKey()->NextEntry());
 }
 
 /** No descriptions */
-void CLexiconReadWindow::previousEntry() {
+void CLexiconReadWindow::previousEntry()
+{
 	keyChooser()->setKey(ldKey()->PreviousEntry());
 }
 
 /** Reimplementation to return the right key. */
-CSwordLDKey* CLexiconReadWindow::ldKey() {
+CSwordLDKey* CLexiconReadWindow::ldKey()
+{
 	return dynamic_cast<CSwordLDKey*>(CDisplayWindow::key());
 }
 
@@ -352,13 +339,15 @@ void CLexiconReadWindow::saveRawHTML()
 }
 
 /** This function saves the entry as html using the CExportMgr class. */
-void CLexiconReadWindow::saveAsPlain() {
+void CLexiconReadWindow::saveAsPlain()
+{
 	CExportManager mgr(i18n("Saving entry ..."), true, i18n("Saving"), filterOptions(), displayOptions());
 	mgr.saveKey(key(), CExportManager::Text, true);
 }
 
-void CLexiconReadWindow::slotFillBackHistory() {
-	//  qWarning("fill back history");
+void CLexiconReadWindow::slotFillBackHistory()
+{
+	qDebug("CLexiconReadWindow::slotFillBackHistory");
 	QStringList keyList = keyChooser()->getPreviousKeys();
 	QMenu* menu = m_actions.backInHistory->popupMenu();
 	menu->clear();
@@ -371,8 +360,9 @@ void CLexiconReadWindow::slotFillBackHistory() {
 	}
 }
 
-void CLexiconReadWindow::slotFillForwardHistory() {
-	//  qWarning("fill forward history");
+void CLexiconReadWindow::slotFillForwardHistory()
+{
+	qDebug("CLexiconReadWindow::slotFillForwardHistory");
 	QStringList keyList = keyChooser()->getNextKeys();
 	QMenu* menu = m_actions.forwardInHistory->popupMenu();
 	menu->clear();
@@ -386,8 +376,9 @@ void CLexiconReadWindow::slotFillForwardHistory() {
 }
 
 
-void CLexiconReadWindow::slotUpdateHistoryButtons() {
-	//  qWarning("updating history buttons");
+void CLexiconReadWindow::slotUpdateHistoryButtons()
+{
+	qDebug("CLexiconReadWindow::slotUpdateHistoryButtons");
 	Q_ASSERT(m_actions.backInHistory);
 	Q_ASSERT(keyChooser());
 

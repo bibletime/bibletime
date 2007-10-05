@@ -68,12 +68,13 @@ CSwordKey* CLexiconKeyChooser::key() {
 	return m_key;
 }
 
-void CLexiconKeyChooser::setKey(CSwordKey* key) {
+void CLexiconKeyChooser::setKey(CSwordKey* key)
+{
+	qDebug("CLexiconKeyChooser::setKey");	
 	if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
 		return;
 	}
 
-	//  qWarning("setKey start");
 	QString newKey = m_key->key();
 	//very complicated code, qt3
 	//const int index = m_widget->comboBox()->listBox()->index(m_widget->comboBox()->listBox()->findItem( newKey ));
