@@ -59,6 +59,10 @@ public:
 	/** Return the path to the xml files. */
 	static QDir getXmlDir(void);
 	
+	/** Return the path to the xml files. */
+	static QDir getLocaleDir(void);
+
+	
 private:
 	/** Will cache a few directories like icon directory */
 	static void initDirectoryCache(void);

@@ -25,7 +25,7 @@
 //util includes
 #include "util/scoped_resource.h"
 #include "util/cresmgr.h"
-//#include "util/directoryutil.h"
+#include "util/directoryutil.h"
 
 //frontend includes
 #include "frontend/kstartuplogo.h"
@@ -242,6 +242,9 @@ int main(int argc, char* argv[]) {
 	KGlobal::dirs()->addResourceType("BT_pic", "share/apps/bibletime/pics");
 	KGlobal::dirs()->addResourceType("BT_DisplayTemplates", "share/apps/bibletime/display-templates");
 
+	//For the transition time add our own locale dir as locale resource
+	KGlobal::dirs()->addResourceDir("locale", util::filesystem::DirectoryUtil::getLocaleDir().canonicalPath());
+	
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
 	// A binary option (on / off)

@@ -1,21 +1,26 @@
 PROJECT(bibletime CXX C)
 
-cmake_minimum_required(VERSION 2.4.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
+
 SET(DEBUG true)
 
 SET(BT_VERSION "1.6.4_KDE4port+svn")
 
+#Specify which languages are to be installed for UI messages
+SET(INSTALL_LOCALE_LANGS "de")
+
 ######################################################
 # Find required packages
 #
-find_package(Qt4 REQUIRED)  		#Qt4
-find_package(KDE4 REQUIRED) 		#KDE4
+FIND_PACKAGE(Qt4 REQUIRED)
+FIND_PACKAGE(KDE4 REQUIRED)
+FIND_PACKAGE(Gettext REQUIRED)
 #
 #custom includes
 #
 set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-find_package(CLucene REQUIRED)	#CLucene
-find_package(Sword REQUIRED)		#Sword
+find_package(CLucene REQUIRED)
+find_package(Sword REQUIRED)
 ######################################################
 
 
@@ -229,10 +234,26 @@ TARGET_LINK_LIBRARIES(bibletime
 	${SWORD_LIBRARY}
 )
 
-FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
+FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
+	GETTEXT_PROCESS_PO_FILES(${_INSTALL_LOCALE_LANG} ALL "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${INSTALL_LOCALE_LANGS}.po")
+	INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${INSTALL_LOCALE_LANGS}.gmo" 
+		DESTINATION "share/bibletime/locale/${INSTALL_LOCALE_LANGS}/LC_MESSAGES"
+		RENAME "bibletime.mo")
+ENDFOREACH(_INSTALL_LOCALE_LANG)
 
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
+FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
 INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
 INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
 
+#######################################
+# "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
+#
+CONFIGURE_FILE(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  IMMEDIATE @ONLY)
+
+ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+#######################################

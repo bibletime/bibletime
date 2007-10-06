@@ -81,6 +81,7 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 static QDir cachedIconDir;
 static QDir cachedPicsDir;
 static QDir cachedXmlDir;
+static QDir cachedLocaleDir;
 static bool dirCacheInitialized = false;
 
 void DirectoryUtil::initDirectoryCache(void)
@@ -114,6 +115,12 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 	
+	cachedLocaleDir = wDir; //xml dir
+	if (!cachedLocaleDir.cd("share/bibletime/locale")) {
+		qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
+		throw;
+	}
+
 	dirCacheInitialized = true;
 }
 
@@ -149,6 +156,13 @@ QDir DirectoryUtil::getXmlDir(void)
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedXmlDir;
 }
+
+QDir DirectoryUtil::getLocaleDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedLocaleDir;
+}
+
 
 } //end of namespace util::filesystem
 
