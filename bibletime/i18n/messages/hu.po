@@ -1,0 +1,4639 @@
+# translation of hu.po to Polish
+# KTranslator Generated File
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Joachim Ansorg <joachim@ansorgs.de>, 2003
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: hu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-03-31 12:22+0200\n"
+"PO-Revision-Date: 2003-03-31 15:09+0200\n"
+"Last-Translator: Sandor Balint <balintsa@freemail.hu>\n"
+"Language-Team: Ungarian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.1\n"
+
+#: ../bibletime/backend/bt_osishtml.cpp:327
+#, fuzzy
+msgid "Alternative text"
+msgstr "Aktuális dokumentum mentése"
+
+#: ../bibletime/backend/bt_osishtml.cpp:485
+#, fuzzy
+msgid "Added text"
+msgstr "Modul"
+
+#: ../bibletime/backend/cdisplaytemplatemgr.cpp:184
+#, fuzzy
+msgid "(user template)"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/backend/cswordbackend.cpp:503
+#, fuzzy
+msgid "Footnotes"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/backend/cswordbackend.cpp:506
+#, fuzzy
+msgid "Strong's numbers"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/backend/cswordbackend.cpp:509
+#, fuzzy
+msgid "Headings"
+msgstr "Fejléc"
+
+#: ../bibletime/backend/cswordbackend.cpp:512
+msgid "Morphological tags"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:515
+msgid "Lemmas"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:518
+msgid "Hebrew vowel points"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:521
+#, fuzzy
+msgid "Hebrew cantillation marks"
+msgstr "Elhelyezkedés"
+
+#: ../bibletime/backend/cswordbackend.cpp:524
+msgid "Greek accents"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:527
+msgid "Red letter words"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:530
+msgid "Textual variants"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:533
+msgid "Scripture cross-references"
+msgstr ""
+
+#: ../bibletime/backend/cswordbackend.cpp:536
+#, fuzzy
+msgid "Morph segmentation"
+msgstr "hiba a dokumentációban"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:715
+#: ../bibletime/util/ctoolclass.cpp:213
+#, fuzzy
+msgid "Version"
+msgstr "QT verzió :"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:716
+#: ../bibletime/backend/cswordmoduleinfo.cpp:721
+#: ../bibletime/frontend/cprofile.cpp:30
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:287
+msgid "unknown"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:719
+msgid "Markup"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:724
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:86
+#, fuzzy
+msgid "Location"
+msgstr "A hiba helye:"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:728
+#: ../bibletime/util/ctoolclass.cpp:205
+#, fuzzy
+msgid "Language"
+msgstr "Nagy"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:733
+#, fuzzy
+msgid "Category"
+msgstr "Középen"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:738
+msgid "LCSH"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:742
+#, fuzzy
+msgid "Writable"
+msgstr "súlyos"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:743
+msgid "no"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:743
+msgid "yes"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:747
+#: ../bibletime/util/ctoolclass.cpp:208
+msgid "Unlock key"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:766
+msgid "Features"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:774
+#: ../bibletime/util/ctoolclass.cpp:201
+msgid "Take care, this work contains cult / questionable material!"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:808
+#, fuzzy
+msgid "Distribution license"
+msgstr ""
+"Operációs rendszer\n"
+"és disztribúció:"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:810
+#, fuzzy
+msgid "Distribution source"
+msgstr ""
+"Operációs rendszer\n"
+"és disztribúció:"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:812
+#, fuzzy
+msgid "Distribution notes"
+msgstr ""
+"Operációs rendszer\n"
+"és disztribúció:"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:814
+#, fuzzy
+msgid "Text source"
+msgstr "Szöveges eszköztár"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:816
+msgid "Copyright notes"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:818
+msgid "Copyright holder"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:820
+msgid "Copyright date"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:822
+msgid "Copyright contact name"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:824
+msgid "Copyright contact address"
+msgstr ""
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:826
+msgid "Copyright contact email"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:75
+#, fuzzy
+msgid "Creating BibleTime's GUI"
+msgstr "A BibleTime beállításainak változtatása"
+
+#: ../bibletime/bibletime_init.cpp:87
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:147
+#, fuzzy
+msgid "Bookshelf"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/bibletime_init.cpp:104
+msgid "Initializing menu- and toolbars"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:115
+#, fuzzy
+msgid "Search in &open work(s)"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/bibletime_init.cpp:128
+#, fuzzy
+msgid "Search in standard &Bible"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/bibletime_init.cpp:150
+msgid "&Show bookshelf"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:162
+#, fuzzy
+msgid "Show &mag"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/bibletime_init.cpp:182
+#, fuzzy
+msgid "Bookshelf &Manager"
+msgstr "Könyvjelző-kezelő"
+
+#: ../bibletime/bibletime_init.cpp:208
+msgid "&Arrangement mode"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:214
+#, fuzzy
+msgid "&Manual mode"
+msgstr "Alapértelmezett stílusok"
+
+#: ../bibletime/bibletime_init.cpp:231
+msgid "Auto-tile &vertically"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:248
+msgid "Auto-tile &horizontally"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:265
+#, fuzzy
+msgid "Auto-&cascade"
+msgstr "Auto&matikus zárójelek"
+
+#: ../bibletime/bibletime_init.cpp:281
+#, fuzzy
+msgid "&Cascade"
+msgstr "Fekvő"
+
+#: ../bibletime/bibletime_init.cpp:295
+msgid "Tile &vertically"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:307
+msgid "Tile &horizontally"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:321
+#, fuzzy
+msgid "Cl&ose all"
+msgstr "Kijelölt:"
+
+#: ../bibletime/bibletime_init.cpp:334
+#, fuzzy
+msgid "&Save session"
+msgstr "&Kijelölés"
+
+#: ../bibletime/bibletime_init.cpp:347
+#, fuzzy
+msgid "Save as &new session"
+msgstr "&Kijelölés"
+
+#: ../bibletime/bibletime_init.cpp:360
+msgid "&Load session"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:372
+#, fuzzy
+msgid "&Delete session"
+msgstr "Opció törlése"
+
+#: ../bibletime/bibletime_init.cpp:384
+msgid "&Fullscreen mode"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:413
+msgid "&Handbook"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:426
+msgid "&Bible Study Howto"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:457
+msgid "&Daily tip"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:521
+msgid "Initializing Sword"
+msgstr ""
+
+#: ../bibletime/bibletime_init.cpp:570
+msgid "Checking indices"
+msgstr ""
+
+#: ../bibletime/bibletime_slots.cpp:536
+#, fuzzy
+msgid "Please enter a name for the new session."
+msgstr "Ide írja a csoport nevét!"
+
+#: ../bibletime/bibletime_slots.cpp:536
+msgid "Session name:"
+msgstr ""
+
+#: ../bibletime/display-templates/template-init.cpp:351
+msgid "Crazy"
+msgstr ""
+
+#: ../bibletime/display-templates/template-init.cpp:677
+msgid "Green"
+msgstr ""
+
+#: ../bibletime/display-templates/template-init.cpp:1005
+msgid "High contrast"
+msgstr ""
+
+#: ../bibletime/display-templates/template-init.cpp:1346
+#, fuzzy
+msgid "Simple"
+msgstr "Méret:"
+
+#: ../bibletime/frontend/cbtconfig.cpp:252
+msgid "Old testament"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:253
+msgid "Moses/Pentateuch/Torah"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:254
+msgid "History"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:255
+msgid "Prophets"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:256
+msgid "New testament"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:257
+msgid "Gospels"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:258
+msgid "Letters/Epistles"
+msgstr ""
+
+#: ../bibletime/frontend/cbtconfig.cpp:259
+msgid "Paul's Epistles"
+msgstr ""
+
+#: ../bibletime/frontend/cexportmanager.cpp:472
+msgid ""
+"*.html *.htm | HTML files\n"
+" *.* | All files (*.*)"
+msgstr ""
+
+#: ../bibletime/frontend/cexportmanager.cpp:474
+msgid ""
+"*.txt | Text files\n"
+" *.* | All files (*.*)"
+msgstr ""
+
+#: ../bibletime/frontend/cexportmanager.cpp:476
+msgid "All files (*.*)"
+msgstr ""
+
+#: ../bibletime/frontend/cinfodisplay.cpp:53
+msgid "Mag (\"shift\" to lock)"
+msgstr ""
+
+#: ../bibletime/frontend/cinfodisplay.cpp:168
+#, fuzzy
+msgid "Abbreviation"
+msgstr "Cél"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:179
+#: ../bibletime/frontend/cinfodisplay.cpp:272
+msgid "Cross references"
+msgstr ""
+
+#: ../bibletime/frontend/cinfodisplay.cpp:313
+#, fuzzy
+msgid "Footnote"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:340
+#, fuzzy
+msgid "Strongs"
+msgstr "&Beállítások"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:419
+msgid "Morphology"
+msgstr ""
+
+#: ../bibletime/frontend/cinfodisplay.cpp:442
+#, fuzzy
+msgid "Word lookup"
+msgstr "keresés:"
+
+#: ../bibletime/frontend/cinputdialog.cpp:59
+#, fuzzy
+msgid "C&lear"
+msgstr "Keres"
+
+#: ../bibletime/frontend/cinputdialog.cpp:66
+#, fuzzy
+msgid "&Ok"
+msgstr "OK"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:62
+msgid "Manage module search indices"
+msgstr ""
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:63
+msgid ""
+"You can use the list below to create and/or delete search indices for your "
+"installed works."
+msgstr ""
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:67
+msgid "Module"
+msgstr "Modul"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:68
+msgid "Index size"
+msgstr ""
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:90
+msgid "Modules with indices"
+msgstr ""
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:94
+msgid "Modules without indices"
+msgstr ""
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:106
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:111
+msgid "KiB"
+msgstr ""
+
+#: ../bibletime/frontend/cmoduleindexdialog.cpp:41
+msgid "Preparing instant search"
+msgstr ""
+
+#: ../bibletime/frontend/cmoduleindexdialog.cpp:53
+msgid "Creating index for work %1"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:75
+#, fuzzy
+msgid "Configure BibleTime"
+msgstr "A BibleTime beállításainak változtatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:138
+#, fuzzy
+msgid "Display"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:144
+#, fuzzy
+msgid "Show tip of the day"
+msgstr "A nap tippje"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:157
+#, fuzzy
+msgid "Show startuplogo"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:169
+#, fuzzy
+msgid "Display templates"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:170
+msgid ""
+"Display templates define how text is displayed. Please choose a template you "
+"like."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:183
+#, fuzzy
+msgid "Available display styles:"
+msgstr "Konfigurált n&yomtatók"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:193
+#, fuzzy
+msgid "Style preview"
+msgstr "Megtekintés"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:214
+#, fuzzy
+msgid "Languages"
+msgstr "Nagy"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:220
+msgid "Specify a language for names of Bible books"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:221
+msgid ""
+"Sword has a number of locales available which can be used to "
+"internationalize the   names of books of the Bible. You can specify which "
+"locale to use. If you want to   create a new locale, see http://www."
+"crosswire.org/sword/develop for details."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:227
+msgid "Language for names of Bible books"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:303
+msgid "Select custom fonts per-language"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:304
+msgid ""
+"Here you find a list of all languages of the installed works.  You can "
+"specify a custom font for each language that needs a special font  to be "
+"displayed correctly."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:337
+msgid "Use custom font"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:345
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:361
+#, fuzzy
+msgid "HotKeys"
+msgstr "Billentyűk"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:369
+#, fuzzy
+msgid "Choose type:"
+msgstr "Elem stílusa"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:388
+#, fuzzy
+msgid "BibleTime"
+msgstr "A BibleTime beállításainak változtatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:389
+#, fuzzy
+msgid "All text windows"
+msgstr "Új &ablak"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:390
+#, fuzzy
+msgid "Bible windows"
+msgstr "&Biblia-böngésző"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:391
+#, fuzzy
+msgid "Commentary windows"
+msgstr "K&ommentár-böngésző"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:392
+#, fuzzy
+msgid "Lexicon windows"
+msgstr "Lexikonok"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:393
+msgid "Book windows"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:458
+msgid "Desk"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:463
+#: ../bibletime/frontend/coptionsdialog.cpp:468
+#, fuzzy
+msgid "Standard works"
+msgstr "Normál betűk"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:469
+msgid ""
+"Standard works are used when no particular work is specified,   for example "
+"when a hyperlink into a Bible or lexicon was clicked ."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:475
+#, fuzzy
+msgid "Standard Bible"
+msgstr "Normál betűk"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:484
+#, fuzzy
+msgid "Standard Commentary"
+msgstr "Kommentárok"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:494
+#, fuzzy
+msgid "Standard Lexicon"
+msgstr "Normál betűk"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:503
+msgid "Standard Daily Devotional"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:512
+msgid "Standard Hebrew Strong's Lexicon"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:521
+msgid "Standard Greek Strong's Lexicon"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:530
+msgid "Standard Hebrew Morphological Lexicon"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:538
+msgid "Standard Greek Morphological Lexicon"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:660
+#: ../bibletime/frontend/coptionsdialog.cpp:663
+#, fuzzy
+msgid "Text filters"
+msgstr "A file \""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:664
+msgid ""
+"Filters control the appearance of text. Here you can specify default "
+"settings for all filters. You can change the filter settings in each display "
+"window, of course."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:671
+msgid "Insert line break after each verse"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:677
+#, fuzzy
+msgid "Show verse numbers"
+msgstr "Versszámozás:"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:683
+#, fuzzy
+msgid "Show section headings"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:690
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:163
+msgid "Show scripture cross-references"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:696
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:158
+msgid "Show Greek accents"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:702
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:154
+msgid "Show Hebrew vowel points"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:708
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:156
+msgid "Show Hebrew cantillation marks"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:714
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:165
+#, fuzzy
+msgid "Show morph segmentation"
+msgstr "A SWORD-dal kapcsolatos programozási hiba"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:720
+msgid "Use textual variants"
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:925
+msgid ""
+"For God so loved the world, that he gave his one and only Son, that whoever "
+"believes in him should not perish, but have eternal life."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:930
+msgid ""
+"For God didn't send his Son into the world to judge the world, but that the "
+"world should be saved through him."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:937
+msgid ""
+"He who believes in him is not judged. He who doesn't believe has been judged "
+"already, because he has not believed in the name of the one and only Son of "
+"God."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:944
+msgid ""
+"This is the judgment, that the light has come into the world, and men loved "
+"the darkness rather than the light; for their works were evil."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:949
+msgid ""
+"For everyone who does evil hates the light, and doesn't come to the light, "
+"lest his works would be exposed."
+msgstr ""
+
+#: ../bibletime/frontend/coptionsdialog.cpp:954
+msgid ""
+"But he who does the truth comes to the light, that his works may be "
+"revealed, that they have been done in God."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:59
+#, fuzzy
+msgid "Bookshelf Manager"
+msgstr "Könyvjelző-kezelő"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:75
+msgid "Bookshelf path(s)"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:86
+msgid "Configure bookshelf path(s)"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:87
+msgid ""
+"You can store your bookshelfs in one or more directories, which you can "
+"specify here."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:93
+msgid "Your bookshelf configuration file is <b>%1</b>"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:98
+msgid "Path to bookshelf"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:102
+#, fuzzy
+msgid "Edit Entry"
+msgstr "Szöveges eszköztár"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:107
+#, fuzzy
+msgid "Add Entry"
+msgstr "Hozzáadás"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:112
+msgid "Remove Entry"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:121
+msgid "Install/Update works"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:144
+msgid "Install/update works - Step 1"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:145
+msgid ""
+"Please choose a (local or remote) library and a bookshelf path to install "
+"the work(s) to. After that step click on the connect button.<br/><b>WARNING: "
+"If you live in a persecuted country and do not wish to risk detection you "
+"should NOT use the module remote installation feature!</b>"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:152
+#, fuzzy
+msgid "Select library"
+msgstr "Kijelölt:"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:158
+#, fuzzy
+msgid "Delete library"
+msgstr "Könyvjelző törlése"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:163
+#, fuzzy
+msgid "Add library"
+msgstr "Hozzáadás"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:171
+msgid "Select bookshelf path"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:191
+#: ../bibletime/frontend/cswordsetupdialog.cpp:797
+#, fuzzy
+msgid "Connect to library"
+msgstr ""
+"Az aktuális dokumentum\n"
+"vágólapra másolása"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:206
+#, fuzzy
+msgid "Remove works"
+msgstr "A kiválasztott modulhoz tartozó betűtípus"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:218
+#, fuzzy
+msgid "Remove installed work(s)"
+msgstr "Keresés az éppen látható szövegben"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:219
+msgid ""
+"This dialog lets you remove installed works from your system. Choose the "
+"modules and then click on the remove button."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:223
+msgid "Select works to be uninstalled"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:229
+#, fuzzy
+msgid "Remove selected work(s)"
+msgstr "A kijelölt szakasz mozgatása"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:241
+#, fuzzy
+msgid "Manage search indicies"
+msgstr "Konfigurált n&yomtatók"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:319
+#: ../bibletime/frontend/cswordsetupdialog.cpp:371
+#: ../bibletime/frontend/cswordsetupdialog.cpp:881
+msgid "[Remote]"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:324
+#: ../bibletime/frontend/cswordsetupdialog.cpp:366
+#: ../bibletime/frontend/cswordsetupdialog.cpp:876
+msgid "[Local]"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:407
+msgid ""
+"You selected the following work(s): %1.\n"
+"\n"
+"Do you really want to remove them from your system?"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:484
+msgid "Download"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:497
+msgid "Downloading library information..."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:612
+msgid "Install/update works - Step 2"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:613
+msgid ""
+"Please choose the works which should be installed and/or updated and click "
+"the install button."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:639
+#, fuzzy
+msgid "Install works"
+msgstr "Alapértelmezett stílusok"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:690
+msgid ""
+"You selected the following works: %1.\n"
+"\n"
+" Do you really want to install them on your system?"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:717
+msgid "Download of work(s)"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:788
+msgid "[%1]: %2% complete"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:809
+msgid ""
+"This directory is not writable, so works    can not be installed here using "
+"BibleTime.    Do you want to use this directory instead of the previous "
+"value?"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:830
+msgid ""
+"This directory is not writable,    so works can not be installed here using "
+"BibleTime.    Do you want to add it to the list of module directories?"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:31
+#, fuzzy
+msgid "Local"
+msgstr "A hiba helye:"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:32
+#, fuzzy
+msgid "Remote"
+msgstr "Szabványos kifejezésre"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:43
+#, fuzzy
+msgid "Caption"
+msgstr "Sor"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:55
+msgid "Type"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:58
+#, fuzzy
+msgid "Server"
+msgstr "Súlyosság"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:61
+msgid "Path"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:81
+msgid "Ok"
+msgstr "OK"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:95
+msgid "Please provide a caption."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:103
+msgid ""
+"A source with this caption already exists.<br>Please provide a different "
+"caption."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:109
+msgid "Please provide a server name."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:116
+msgid "Please provide a valid, readable path."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:120
+msgid "Please provide a path."
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:74
+#, fuzzy
+msgid "Name"
+msgstr "Az Ön neve:"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:78
+#, fuzzy
+msgid "Status"
+msgstr "Állapotsor"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:80
+msgid "Installed version"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:84
+#, fuzzy
+msgid "Remote version"
+msgstr "Szabványos kifejezésre"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:107
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:115
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:583
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:109
+msgid "Bibles"
+msgstr "Bibliák"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:108
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:116
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:586
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:110
+#, fuzzy
+msgid "Commentaries"
+msgstr "Kommentárok"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:109
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:117
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:589
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:111
+msgid "Lexicons"
+msgstr "Lexikonok"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:110
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:118
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:592
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:112
+#, fuzzy
+msgid "Books"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:111
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:119
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:150
+msgid "Daily Devotionals"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:112
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:120
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:598
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:1174
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:161
+msgid "Glossaries"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:234
+msgid "New"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:234
+msgid "Updated"
+msgstr ""
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:236
+#, fuzzy
+msgid "Installed"
+msgstr "Beszúrva"
+
+#: ../bibletime/frontend/display/cdisplay.cpp:154
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:517
+#, fuzzy
+msgid "HTML files"
+msgstr "A file \""
+
+#: ../bibletime/frontend/display/cdisplay.cpp:157
+#, fuzzy
+msgid "Text files"
+msgstr "A file \""
+
+#: ../bibletime/frontend/display/cdisplay.cpp:161
+#, fuzzy
+msgid "Save document ..."
+msgstr "Aktuális dokumentum mentése"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:133
+msgid "Choose a font"
+msgstr ""
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:144
+msgid "Choose a font size"
+msgstr ""
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:164
+msgid "Bold"
+msgstr "Félkövér"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:186
+#, fuzzy
+msgid "Underline"
+msgstr "Linkek aláhúzása:"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:258
+#, fuzzy
+msgid "Select all"
+msgstr "Kijelölt:"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:262
+msgid "HTML editor window"
+msgstr ""
+
+#: ../bibletime/frontend/display/creaddisplay.cpp:67
+#, fuzzy
+msgid "Print keys"
+msgstr "Nyomtató"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:82
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:134
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:38
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:111
+#, fuzzy
+msgid "Next book"
+msgstr "Következő könyvre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:86
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:140
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:42
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:117
+#, fuzzy
+msgid "Previous book"
+msgstr "Előző könyvre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:90
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:146
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:46
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:123
+#, fuzzy
+msgid "Next chapter"
+msgstr "Következő fejezetre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:94
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:152
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:50
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:129
+#, fuzzy
+msgid "Previous chapter"
+msgstr "Előző fejezetre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:98
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:158
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:54
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:135
+#, fuzzy
+msgid "Next verse"
+msgstr "Következő versre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:102
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:164
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:58
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:141
+#, fuzzy
+msgid "Previous verse"
+msgstr "Előző versre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:113
+#, fuzzy
+msgid "Copy chapter"
+msgstr "Középen"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:118
+#, fuzzy
+msgid "Save chapter as plain text"
+msgstr "Aktuális dokumentum mentése"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:119
+#, fuzzy
+msgid "Save chapter as HTML"
+msgstr "A megjelenített szöveg mentése HTML formátumban"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:123
+#, fuzzy
+msgid "Print chapter"
+msgstr "Előző fejezetre ugrik"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:177
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:101
+#, fuzzy
+msgid "Strong's Search"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:185
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:108
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:119
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:65
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:73
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:53
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:61
+msgid "Reference only"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:187
+msgid "Text of reference"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:189
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:196
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:202
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:67
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:75
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:81
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:55
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:63
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:69
+#, fuzzy
+msgid "Reference with text"
+msgstr ""
+"Aktuális dokumentum mentése\n"
+"versszámokkal együtt"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:191
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:204
+#, fuzzy
+msgid "Chapter"
+msgstr "Középen"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:198
+msgid "Chapter as plain text"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:200
+msgid "Chapter as HTML"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:229
+#, fuzzy
+msgid "Bible window"
+msgstr "&Biblia-böngésző"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:237
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:211
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:63
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:51
+#, fuzzy
+msgid "Copy..."
+msgstr "Másolás ..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:247
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:220
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:71
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:59
+#, fuzzy
+msgid "Save..."
+msgstr "Mentés ..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:254
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:226
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:79
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:67
+#, fuzzy
+msgid "Print..."
+msgstr "Nyomtatás ..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:351
+#, fuzzy
+msgid "Copy chapter to clipboard ..."
+msgstr "Mindent vágólapra másol"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:351
+msgid "Copying"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:372
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:390
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:270
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:276
+#, fuzzy
+msgid "Saving"
+msgstr "Mentés..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:372
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:390
+#, fuzzy
+msgid "Saving chapter ..."
+msgstr "Mentés..."
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:65
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:76
+#, fuzzy
+msgid "Toggle tree view"
+msgstr "Megtekintés"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:82
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:56
+#, fuzzy
+msgid "Copy entry with text"
+msgstr ""
+"Mindent nyomtat\n"
+"versszámozással együtt"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:84
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:58
+msgid "Save entry as plain text"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:85
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:59
+#, fuzzy
+msgid "Save entry as HTML"
+msgstr "Nyomtatás HTML szö&vegként"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:87
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:61
+#, fuzzy
+msgid "Print entry with text"
+msgstr ""
+"Mindent nyomtat\n"
+"versszámozással együtt"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:174
+#, fuzzy
+msgid "Book window"
+msgstr "&Biblia-böngésző"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:111
+msgid "Display settings: No options available"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:116
+#, fuzzy
+msgid "Display settings"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:133
+#, fuzzy
+msgid "Display options"
+msgstr "Lábjegyzetek mutatása"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:136
+msgid "Use linebreaks after each verse"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:139
+#, fuzzy
+msgid "Show versenumbers"
+msgstr "Versszámozás:"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:141
+#, fuzzy
+msgid "Show headings"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:145
+msgid "Highlight words of Jesus"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:161
+msgid "Use alternative textual variant"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:78
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:59
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:55
+msgid "Sync with active Bible"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:197
+#, fuzzy
+msgid "Commentary window"
+msgstr "K&ommentár-böngésző"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:146
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:197
+#, fuzzy
+msgid "Back in history"
+msgstr "Egyet visszalép az elvégzett műveletek sorában"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:153
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:203
+#, fuzzy
+msgid "Forward in history"
+msgstr "Egyet előrelép az elvégzett műveletek sorában"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:161
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:85
+msgid "Search"
+msgstr "Keres"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:68
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:65
+#, fuzzy
+msgid "Save text"
+msgstr "Aktuális dokumentum mentése"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:78
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:76
+#, fuzzy
+msgid "Delete current entry"
+msgstr "Opció törlése"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:88
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:87
+msgid "Restore original text"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:47
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:83
+#, fuzzy
+msgid "Next entry"
+msgstr "Opció törlése"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:51
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:88
+msgid "Previous entry"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:110
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:121
+#, fuzzy
+msgid "Entry with text"
+msgstr ""
+"Mindent nyomtat\n"
+"versszámozással együtt"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:115
+msgid "Entry as plain text"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:117
+#, fuzzy
+msgid "Entry as HTML"
+msgstr "Nyomtatás HTML szö&vegként"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:200
+#, fuzzy
+msgid "Lexicon window"
+msgstr "Lexikonok"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:270
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:276
+#, fuzzy
+msgid "Saving entry ..."
+msgstr "Mentés..."
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:112
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:159
+msgid "NONE"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:128
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:129
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:151
+#, fuzzy
+msgid "Select a work"
+msgstr "Kijelölt + találat:"
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:154
+msgid "Select an additional work"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:225
+msgid "[locked]"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:244
+msgid "No work selected"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:138
+msgid "Module is not writable."
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:139
+msgid ""
+"Either the module may not be edited, or you do not have write permission."
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:141
+msgid "Module not writable"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cwritewindow.cpp:141
+msgid "Save text before closing?"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cwritewindow.cpp:165
+#, fuzzy
+msgid "Save changed text?"
+msgstr "Aktuális dokumentum mentése"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:391
+#, fuzzy
+msgid "Change description ..."
+msgstr "A hiba leírása:"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:391
+msgid "Enter a new description for the chosen bookmark."
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:486
+msgid "New folder"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:595
+msgid "Daily devotionals"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:604
+#, fuzzy
+msgid "Old bookmarks"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:607
+msgid "Unknown"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:614
+msgid "Unknown language"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:959
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:967
+msgid ""
+"*.btb | BibleTime bookmark files (*.btb)\n"
+"*.* | All files (*.*)"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:959
+#, fuzzy
+msgid "BibleTime - Export bookmarks"
+msgstr "BibleTime - nyomtatás"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:967
+#, fuzzy
+msgid "BibleTime - Import bookmarks"
+msgstr "BibleTime - nyomtatás"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:149
+msgid "Create a new folder"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:150
+msgid "Change this folder"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:152
+#, fuzzy
+msgid "Change bookmark description"
+msgstr "A hiba leírása:"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:153
+#, fuzzy
+msgid "Import bookmarks"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:154
+#, fuzzy
+msgid "Export bookmarks"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:155
+#, fuzzy
+msgid "Print bookmarks"
+msgstr "Saját könyvjelzők"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:157
+#, fuzzy
+msgid "Remove selected item(s)"
+msgstr "A kijelölt szakasz mozgatása"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:159
+#, fuzzy
+msgid "Edit this work"
+msgstr "Szöveges eszköztár"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:161
+#, fuzzy
+msgid "Plain text"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:162
+msgid "HTML"
+msgstr "HTML"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:164
+#, fuzzy
+msgid "Search in selected work(s)"
+msgstr "Keresés az éppen látható szövegben"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:165
+msgid "Unlock this work"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:166
+msgid "About this work"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:534
+#, fuzzy
+msgid "Delete Items"
+msgstr "Opció törlése"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:534
+msgid "Do you really want to delete the selected items and child-items?"
+msgstr ""
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:574
+#, fuzzy
+msgid "BibleTime - Unlock work"
+msgstr "BibleTime - külső alkalmazás"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:575
+msgid "Enter the unlock key for this work."
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:92
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:49
+msgid "Work"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:271
+#, fuzzy
+msgid "Choose work(s)"
+msgstr "Színek"
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:283
+#, fuzzy
+msgid "Use chosen work(s)"
+msgstr "A kiválasztott modulhoz tartozó betűtípus"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:50
+#, fuzzy
+msgid "Hits"
+msgstr "Kilép"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:227
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:236
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:212
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:231
+msgid "Copy search result..."
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:227
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:236
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:212
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:231
+msgid "Copying search result"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:245
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:254
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:174
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:193
+msgid "Save search result..."
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:245
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:254
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:174
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:193
+msgid "Saving search result"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:263
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:163
+msgid "Print search result..."
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:263
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:163
+msgid "Printing search result"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:74
+#, fuzzy
+msgid "Search range editor"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:102
+#, fuzzy
+msgid "Search range"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:110
+msgid "Add new range"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:114
+#, fuzzy
+msgid "Delete current range"
+msgstr "Opció törlése"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:120
+#, fuzzy
+msgid "Name:"
+msgstr "Az Ön neve:"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:125
+msgid "Edit current search range:"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:135
+msgid "Parsed search range:"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:164
+#, fuzzy
+msgid "New range"
+msgstr "Oldalak nyomtatása"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:229
+msgid "<invalid name of search range>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:70
+#, fuzzy
+msgid "Search analysis"
+msgstr "grafikon"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:87
+msgid "Save search analysis as HTML"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:519
+msgid "Save Search Analysis"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:540
+#, fuzzy
+msgid "BibleTime Search Analysis"
+msgstr ""
+"BibleTime - keresés eredményének\n"
+"ábrázolása grafikonon"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:541
+#, fuzzy
+msgid "Search text :"
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:543
+#, fuzzy
+msgid "Book"
+msgstr "Könyvjelzők"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:544
+msgid "Total hits"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:580
+msgid "Created by"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:85
+#, fuzzy
+msgid "Search dialog"
+msgstr "Keresési ablak(ok)"
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:111
+msgid "Missing indices"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:112
+msgid ""
+"One or more modules need indexing before they can be searched.\n"
+"This could take a long time. Proceed with indexing?"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:81
+#, fuzzy
+msgid "Parsing Stong's Numbers"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:81
+msgid "Parsing Stong's numbers for translations."
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:650
+#, fuzzy
+msgid "Searching in: "
+msgstr "Keresés a szövegben"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:723
+msgid ""
+"<p>Enter search terms separated by spaces.  By default the search function "
+"will return results that match any of the search terms (OR). To search for "
+"all the terms separate the terms by AND.</p>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:726
+msgid ""
+"<p>You can use wildcards: '*' matches any sequence of characters, while '?' "
+"matches any single character. The use of brackets allows you to group your "
+"search terms, e.g. '(Jesus OR spirit) AND God'.</p>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:729
+msgid ""
+"<p>To search text other than the main text, enter the text type followed by "
+"\":\", and then the search term.  For example, to search for the Strong's "
+"number H8077, use 'strong:H8077'.</p>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:732
+msgid ""
+"<p>Available text types:<br><table><tr><td>heading:</td><td>searches "
+"headings</td></tr><tr><td>footnote:</td><td>searches footnotes</td></"
+"tr><tr><td>strong:</td><td>searches Strong's Numbers</td></tr><tr><td>morph:"
+"</td><td>searches morphology codes</td></tr></table></p>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:737
+msgid ""
+"<p>BibleTime uses the Lucene search engine to perform your searches. It has "
+"many advanced features, and you can read more about it here: <a href="
+"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
+"apache.org/java/docs/queryparsersyntax.html</a></p>"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:742
+msgid "Basic Search Syntax Introduction"
+msgstr ""
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:750
+#, fuzzy
+msgid "No search scope"
+msgstr "A keresés tartománya"
+
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:41
+#, fuzzy
+msgid "Results"
+msgstr "Keresési eredmény-lista"
+
+#: ../bibletime/main.cpp:124
+msgid "Enable debug messages"
+msgstr ""
+
+#: ../bibletime/main.cpp:125
+msgid ""
+"Ignore the startup session that was saved when BibleTime was closed the last "
+"time."
+msgstr ""
+
+#: ../bibletime/main.cpp:126
+msgid ""
+"Open the standard Bible with the given key. Use <random> to open at a random "
+"position."
+msgstr ""
+
+#: ../bibletime/main.cpp:135
+msgid "Bible study tool for KDE"
+msgstr ""
+
+#: ../bibletime/main.cpp:137
+msgid "(c)1999-2007, The BibleTime Team"
+msgstr ""
+
+#: ../bibletime/main.cpp:138
+msgid ""
+"BibleTime is an easy to use but powerful Bible study tool for KDE.\n"
+"\n"
+"We are looking for developers and translators.\n"
+"If you'd like to join our team, please send an email to info@bibletime.info."
+msgstr ""
+
+#: ../bibletime/main.cpp:147
+msgid "Project coordinator"
+msgstr ""
+
+#: ../bibletime/main.cpp:149
+msgid "Frontend, backend"
+msgstr ""
+
+#: ../bibletime/main.cpp:151
+msgid "Crystal icons, crystal startlogo, webpage"
+msgstr ""
+
+#: ../bibletime/main.cpp:159
+msgid "Romanian translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:161
+msgid "High contrast template"
+msgstr ""
+
+#: ../bibletime/main.cpp:163
+msgid "Installation manager"
+msgstr ""
+
+#: ../bibletime/main.cpp:165
+#, fuzzy
+msgid "Icons, startlogo"
+msgstr "Strong's számok mutatása"
+
+#: ../bibletime/main.cpp:167
+msgid "GUI"
+msgstr ""
+
+#: ../bibletime/main.cpp:169
+msgid "GUI, instant search"
+msgstr ""
+
+#: ../bibletime/main.cpp:171
+msgid "GUI translations into Traditional and Simplified Chinese"
+msgstr ""
+
+#: ../bibletime/main.cpp:173
+msgid "Binary packages"
+msgstr ""
+
+#: ../bibletime/main.cpp:175
+msgid "Founder of the Sword project"
+msgstr ""
+
+#: ../bibletime/main.cpp:177
+msgid "Sponsored our internet domain for many years"
+msgstr ""
+
+#: ../bibletime/main.cpp:179
+msgid "Bible Study HowTo"
+msgstr ""
+
+#: ../bibletime/main.cpp:181 ../bibletime/main.cpp:207
+#, fuzzy
+msgid "Search dialog enhancements"
+msgstr "Keresési ablak(ok)"
+
+#: ../bibletime/main.cpp:183
+msgid "Language codes and names"
+msgstr ""
+
+#: ../bibletime/main.cpp:185
+msgid "GUI improvements"
+msgstr ""
+
+#: ../bibletime/main.cpp:187
+msgid "Finnish translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:189 ../bibletime/main.cpp:195
+#, fuzzy
+msgid "Frontend"
+msgstr "Találat"
+
+#: ../bibletime/main.cpp:191
+#, fuzzy
+msgid "Czech translation"
+msgstr "Elhelyezkedés"
+
+#: ../bibletime/main.cpp:193
+#, fuzzy
+msgid "Searchdialog"
+msgstr "Keresési ablak(ok)"
+
+#: ../bibletime/main.cpp:197 ../bibletime/main.cpp:205
+msgid "Russian website translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:199
+msgid "Spanish website translation updates"
+msgstr ""
+
+#: ../bibletime/main.cpp:201
+msgid "Update to the russian website translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:203
+#, fuzzy
+msgid "Documentation"
+msgstr "hiba a dokumentációban"
+
+#: ../bibletime/main.cpp:209
+msgid "Very helpful and detailed testing"
+msgstr ""
+
+#: ../bibletime/main.cpp:211
+msgid "The first lead developer"
+msgstr ""
+
+#: ../bibletime/main.cpp:213
+msgid "Translation updates for the Dutch GUI, the website and the handbook"
+msgstr ""
+
+#: ../bibletime/main.cpp:215
+msgid "French handbook translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:217
+msgid "Helpful source code additions"
+msgstr ""
+
+#: ../bibletime/main.cpp:219
+msgid "Translated the GUI into Russian"
+msgstr ""
+
+#: ../bibletime/main.cpp:221
+msgid "New Bible key choosers"
+msgstr ""
+
+#: ../bibletime/main.cpp:223
+msgid "Spanish translation"
+msgstr ""
+
+#: ../bibletime/main.cpp:226
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: ../bibletime/main.cpp:227
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#: ../bibletime/main.cpp:253
+#, fuzzy
+msgid "Starting BibleTime"
+msgstr "A BibleTime beállításainak változtatása"
+
+#: ../bibletime/rc-dummy.cpp:2
+#, fuzzy
+msgid "&Search"
+msgstr "Keres"
+
+#: ../bibletime/rc-dummy.cpp:4
+#, fuzzy
+msgid "Se&ttings"
+msgstr "&Beállítások"
+
+#: ../bibletime/rc-dummy.cpp:5
+#, fuzzy
+msgid "&Window"
+msgstr "Új &ablak"
+
+#: ../bibletime/tips-dummy.cpp:3
+msgid "The Bible was written so we could believe in Jesus. (John 20:31)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:7
+msgid ""
+"BibleTime includes a really useful handbook written by Fred Saalbach.\n"
+"To read it choose the item \"Handbook\" in the \"Help\" menu of BibleTime.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:12
+msgid ""
+"No one is allowed by God to add anything to or take anything away from the "
+"Word. (Revelation 22:18-19)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:16
+msgid "The Bible is like a mirror. (James 1:23)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:20
+msgid ""
+"BibleTime does include a <B>Bible Study HowTo</B>!\n"
+"It was written by Bob Harman and is a great introduction how to study the "
+"Bible.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:25
+msgid ""
+"You can save, print and copy the whole search result by pressing the right "
+"mouse button on the icon of the searched module in the search dialog.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:29
+msgid "The Bible is our only spiritual weapon. (Ephesians 6:17)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:33
+msgid ""
+"To get the number of verses in the Bible search for a space in the module.\n"
+"The search analysis shows you the number of verses of each book.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:38
+msgid "The Bible is truth. (John 17:17)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:42
+msgid ""
+"If you would like to create a set of bookmarks around a specific topic with "
+"comments containing what the Lord told you here, it's best to\n"
+"make bookmarks from your personal commentary.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:47
+msgid ""
+"The scriptures give us the wisdom that leads to salvation. (2 Timothy 3:15)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:51
+msgid ""
+"To lookup the meaning of the original hebrew or greek word in a Bible "
+"supporting Strong's numbers, switch them on and \n"
+"click on the strong number. Now a new window showing the strong number with\n"
+"it's explanation is shown. If your favourite translation doesn't support "
+"Strong's numbers please refer to an alternate translation for the number of "
+"the corresponding word.\n"
+"Make sure you have set the default modules in the preferences.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:58
+msgid ""
+"If you want to use a commentary as a topical reference, search it for terms "
+"your topic is about.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:62
+msgid ""
+"In the beginning was the Word, the Word was with God, and the Word was God. "
+"(John 1:1)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:66
+msgid ""
+"We will be judged on the last day by the words Jesus spoke. (John 12:48)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:70
+msgid ""
+"If you want to find the full set of verses or entries on a area of content, "
+"you should use the option \"Multiple words (OR)\" for searching.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:74
+msgid ""
+"If you are searching a verse you know only fuzzy or in a different "
+"translation search for the most probable terms in multiple Bible "
+"translations at the same time.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:78
+msgid ""
+"God's Word can be a lamp to your feet and a light to your path. (Psalm "
+"119:105)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:82
+msgid ""
+"If you want to search a word in a foreign module (e.g. greek or hebrew), "
+"open a display window and choose a chapter or an entry which contains this "
+"word.\n"
+"Select it and copy it to the clipboard. Now insert the copied word in the "
+"search text box of the searchdialog.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:87
+msgid ""
+"The Word of God will not return to Him without accomplishing its purpose. "
+"(Isaiah 55:11)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:91
+msgid ""
+"Foreign modules do often require a special font to display correctly. You "
+"can set the font for each language in the preferences.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:95
+msgid ""
+"Did you know that the first book ever printed on a printing press was the "
+"Bible (by Johann Gutenberg, in 1492)?\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:99
+msgid ""
+"God has already given to us everything pertaining to life and godliness. (2 "
+"Peter 1:3)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:103
+msgid ""
+"All important elements of BibleTime's graphical user interface have a "
+"tooltip and a \"What's this?\" help.<BR>\n"
+"To read the \"What's this?\" help press the keys SHIFT+F1 and click on the "
+"part.\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:108
+msgid ""
+"The Word of God is living, active, and sharper than any two-edged sword. "
+"(Hebrews 4:12)\n"
+msgstr ""
+
+#: ../bibletime/tips-dummy.cpp:112
+msgid ""
+"You are using a program that has been written for the glory of God.<BR>May "
+"He bless you as you study His Word!\n"
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:737
+msgid ""
+"Open the printer dialog of BibleTime, where you can edit the print queue, "
+"assign styles to the items and print them."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:741
+#, fuzzy
+msgid "Close BibleTime and save the settings."
+msgstr "BibleTime - lista mentése"
+
+#: ../bibletime/util/cresmgr.cpp:748
+#, fuzzy
+msgid "Show or hide the bookshelf."
+msgstr "A következő könyvre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:752
+#, fuzzy
+msgid "Toggle the main toolbar view."
+msgstr "Szöveges eszköztár ki/be"
+
+#: ../bibletime/util/cresmgr.cpp:760
+msgid "Open the search dialog to search in all works that are currently open."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:764
+msgid "Open the search dialog to search in the standard Bible."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:772
+msgid "Restore a saved BibleTime session."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:776
+msgid "Save current BibleTime session so that it can be reused later."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:780
+msgid "Create and save a new session."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:784
+#, fuzzy
+msgid "Delete a BibleTime session."
+msgstr "A kijelölt szakasz mozgatása"
+
+#: ../bibletime/util/cresmgr.cpp:788
+msgid "Toggle fullscreen mode of the main window."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:792
+msgid "Vertically tile the open windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:796
+msgid "Horizontally tile the open windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:800
+msgid "Cascade the open windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:805
+msgid "Choose the way that is used to arrange the windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:809
+msgid "Automatically tile the open windows vertically."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:813
+msgid "Automatically tile the open windows horizontally."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:817
+msgid "Automatically cascade the open windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:822
+msgid "Close all open windows."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:830
+msgid "Open BibleTime's toolbar editor."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:834
+msgid "Open the dialog to set most of BibleTime's preferences."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:838
+msgid ""
+"Open the dialog to configure your bookshelf and install/update/remove works."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:847
+msgid "Open BibleTime's handbook in the KDE helpbrowser."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:851
+msgid ""
+"Open the Bible study HowTo included with BibleTime in the KDE helpbrowser. "
+"<BR>This HowTo is an introduction on how to study the Bible in an efficient "
+"way."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:855
+msgid "Send a bugreport to the developers of BibleTime."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:859
+msgid ""
+"Show a daily tip each time BibleTime starts. <BR>The tips contain important "
+"Bible quotations and helpful tips for using BibleTime."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:863
+#, fuzzy
+msgid "Show detailed information about BibleTime."
+msgstr "Itt további információkat találhatunk a BibleTime project-ről"
+
+#: ../bibletime/util/cresmgr.cpp:867
+#, fuzzy
+msgid "Show detailed information about the KDE project."
+msgstr "Itt további információkat találhatunk a BibleTime project-ről"
+
+#: ../bibletime/util/cresmgr.cpp:877
+#, fuzzy
+msgid "Start to search the text in each of the chosen work(s)."
+msgstr "A kiválasztott csoport átnevezése"
+
+#: ../bibletime/util/cresmgr.cpp:881
+msgid "Stop the active search."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:888
+msgid "Open a dialog to choose work(s) for the search."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:892
+#, fuzzy
+msgid "Enter the text you want to search in the chosen work(s) here."
+msgstr "Ide írja a keresendő szöveget!"
+
+#: ../bibletime/util/cresmgr.cpp:898
+msgid ""
+"Treat the search text as multiple words. A text must contain all of the "
+"words to match. The order of the words is unimportant."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:902
+msgid ""
+"Treat the search text as multiple words. A text must contain one or more "
+"words of to match. The order is unimportant."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:906
+msgid "The search text will be used exactly as entered."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:910
+msgid ""
+"Treat the search string as a GNU regular expression. The BibleTime handbook "
+"contains an introduction to regular expressions."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:918
+msgid ""
+"If you choose this option the search will distinguish between upper and "
+"lowercase characters."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:923
+msgid ""
+"Choose a scope from the list. Select the first item to use no scope, the "
+"second one is to use each work's last search result as search scope. The "
+"others are user defined search scopes."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:931
+#, fuzzy
+msgid "Select an item from the list to edit the search scope."
+msgstr "A keresési tartomány megadása az előző keresés találatai alapján."
+
+#: ../bibletime/util/cresmgr.cpp:935
+#, fuzzy
+msgid "Change the name of the selected search scope."
+msgstr "A keresési tartomány megadása az előző keresés találatai alapján."
+
+#: ../bibletime/util/cresmgr.cpp:939
+msgid ""
+"Change the search ranges of the selected search scope item. Have a look at "
+"the predefined search scopes to see how search ranges are constructed."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:943
+msgid "Contains the search ranges which will be used for the search."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:947
+msgid ""
+"Add a new search scope. First enter an appropriate name, then edit the "
+"search ranges."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:951
+msgid ""
+"Deletes the selected search scope. If you close the dialog using Cancel the "
+"settings won't be saved."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:959
+msgid "The list of works chosen for the search."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:963
+msgid "This list contains the search result of the selected work."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:967
+msgid "The text preview of the selected search result item."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:979
+msgid ""
+"This button is useful to scroll through the entries of the list. Press the "
+"button and move the mouse to increase or decrease the item."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:983
+msgid "This button opens the search dialog with the work(s) of this window."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:988
+msgid "Go back one item in the display history."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:992
+msgid "Go forward one item in the display history."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:997
+msgid ""
+"Show all occurences of the Strong number currently under the mouse cursor."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1003
+msgid "This list contains the books which are available in this work."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1007
+#, fuzzy
+msgid "Show the next book of this work."
+msgstr "A következő könyvre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:1011
+#, fuzzy
+msgid "Show the previous book of this work."
+msgstr "Az előző könyvre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:1015
+msgid ""
+"This list contains the chapters which are available in the current book."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1019
+#, fuzzy
+msgid "Show the next chapter of the work."
+msgstr "A következő fejezetre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:1023
+#, fuzzy
+msgid "Show the previous chapter of the work."
+msgstr "Az előző fejezetre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:1027
+msgid ""
+"This list contains the verses which are available in the current chapter."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1031
+msgid ""
+"In  Bible texts, the next verse will be highlighted. In commentaries, the "
+"next entry will be shown."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1036
+msgid ""
+"In Bible texts, the previous verse will be highlighted. In commentaries, the "
+"previous entry will be shown."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1043
+msgid ""
+"Synchronize the displayed entry of this work with the active Bible window."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1050
+msgid "This list contains the entries of the current work."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1054
+msgid "The next entry of the work will be shown."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1058
+#, fuzzy
+msgid "The previous entry of the work will be shown."
+msgstr "Az előző fejezetre ugrik"
+
+#: ../bibletime/util/cresmgr.cpp:1066
+msgid "Save the curent text into the work. The old text will be overwritten."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1070
+msgid ""
+"Loads the old text from the work and loads it into the edit area. The "
+"unsaved text will be lost."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1074
+msgid "Deletes the current entry out of the work. The text will be lost."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1080
+msgid "Toggle bold formatting of the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1084
+msgid "Toggle italic formatting of the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1088
+msgid "Toggle underlined formatting of the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1093
+msgid "The text will be aligned on the left side of the page."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1097
+msgid "Centers the text horizontally."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1101
+msgid "Aligns the text on the right side of the page."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1105
+msgid "Justifies the text on the page."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1110
+msgid "Choose a new font for the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1113
+msgid "Choose a new font size for the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1116
+msgid "Choose a new color for the selected text."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1126
+msgid "Activate this box to see a daily tip on startup."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1130
+msgid "Activate this to see the BibleTime logo on startup."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1134
+msgid ""
+"Save the user's session when BibleTime is closed and restore it on the next "
+"startup."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1141
+msgid "The font selection below will apply to all texts in this language."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1150
+msgid "Contains the languages which can be used for the biblical booknames."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1157
+msgid "The standard Bible is used when a hyperlink into a Bible is clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1161
+msgid ""
+"The standard commentary is used when a hyperlink into a commentary is "
+"clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1165
+msgid ""
+"The standard lexicon is used when a hyperlink into a lexicon is clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1169
+msgid ""
+"The standard devotional will be used to display a short start up devotional."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1173
+msgid ""
+"The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon "
+"is clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1177
+msgid ""
+"The standard Greek lexicon is used when a hyperlink into a Greek lexicon is "
+"clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1181
+msgid ""
+"The standard morphological lexicon for Hebrew texts is used when a hyperlink "
+"of a morphological tag in a Hebrew text is clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1185
+msgid ""
+"The standard morphological lexicon for Greek texts is used when a hyperlink "
+"of a morphological tag in a Greek text is clicked."
+msgstr ""
+
+#: ../bibletime/util/cresmgr.cpp:1194
+msgid ""
+"Opens the search dialog to search in the work(s) that are currently open."
+msgstr ""
+
+#: ../bibletime/util/ctoolclass.cpp:78
+msgid "The file already exists."
+msgstr ""
+
+#: ../bibletime/util/ctoolclass.cpp:79
+msgid "Do you want to overwrite it?"
+msgstr ""
+
+#: ../bibletime/util/ctoolclass.cpp:99
+#, fuzzy
+msgid "The file couldn't be saved."
+msgstr "A megjelenítésért felelős alkalmazás elindítása nem sikerült!"
+
+#: ../bibletime/util/ctoolclass.cpp:100
+msgid "Please check permissions etc."
+msgstr ""
+
+#: ../bibletime/util/ctoolclass.cpp:209
+#, fuzzy
+msgid "not set"
+msgstr "nincs korlátozás"
+
+#: clanguagemgr.cpp:197
+msgid "Afrikaans"
+msgstr ""
+
+#: clanguagemgr.cpp:200
+msgid "English, Old (ca.450-1100)"
+msgstr ""
+
+#: clanguagemgr.cpp:202
+msgid "Arabic"
+msgstr ""
+
+#: clanguagemgr.cpp:205
+msgid "Azerbaijani"
+msgstr ""
+
+#: clanguagemgr.cpp:208
+msgid "Belarusian"
+msgstr ""
+
+#: clanguagemgr.cpp:210
+msgid "Bulgarian"
+msgstr ""
+
+#: clanguagemgr.cpp:216
+#, fuzzy
+msgid "Breton"
+msgstr "Gomb"
+
+#: clanguagemgr.cpp:218
+msgid "Bosnian"
+msgstr ""
+
+#: clanguagemgr.cpp:220
+msgid "Catalan"
+msgstr ""
+
+#: clanguagemgr.cpp:223
+msgid "Cebuano"
+msgstr ""
+
+#: clanguagemgr.cpp:225
+msgid "Chamorro"
+msgstr ""
+
+#: clanguagemgr.cpp:228
+msgid "Coptic"
+msgstr ""
+
+#: clanguagemgr.cpp:230
+msgid "Czech"
+msgstr ""
+
+#: clanguagemgr.cpp:232
+msgid "Church Slavic"
+msgstr ""
+
+#: clanguagemgr.cpp:235
+msgid "Welsh"
+msgstr ""
+
+#: clanguagemgr.cpp:237
+msgid "Danish"
+msgstr ""
+
+#: clanguagemgr.cpp:239
+#, fuzzy
+msgid "German"
+msgstr "Általános"
+
+#: clanguagemgr.cpp:243
+msgid "Greek, Modern (1453-)"
+msgstr ""
+
+#: clanguagemgr.cpp:245
+msgid "English"
+msgstr ""
+
+#: clanguagemgr.cpp:247
+msgid "American English"
+msgstr ""
+
+#: clanguagemgr.cpp:249
+msgid "English, Middle (1100-1500)"
+msgstr ""
+
+#: clanguagemgr.cpp:251
+msgid "Esperanto"
+msgstr ""
+
+#: clanguagemgr.cpp:253
+msgid "Spanish"
+msgstr ""
+
+#: clanguagemgr.cpp:255
+msgid "Estonian"
+msgstr ""
+
+#: clanguagemgr.cpp:257
+msgid "Basque"
+msgstr ""
+
+#: clanguagemgr.cpp:260
+msgid "Finnish"
+msgstr ""
+
+#: clanguagemgr.cpp:264
+msgid "French"
+msgstr ""
+
+#: clanguagemgr.cpp:266
+msgid "Frisian"
+msgstr ""
+
+#: clanguagemgr.cpp:268
+msgid "Irish"
+msgstr ""
+
+#: clanguagemgr.cpp:270
+msgid "Gaelic (Scots)"
+msgstr ""
+
+#: clanguagemgr.cpp:275
+msgid "Gothic"
+msgstr ""
+
+#: clanguagemgr.cpp:277
+msgid "Manx"
+msgstr ""
+
+#: clanguagemgr.cpp:279
+msgid "Greek, Ancient (to 1453)"
+msgstr ""
+
+#: clanguagemgr.cpp:281
+msgid "Hebrew"
+msgstr ""
+
+#: clanguagemgr.cpp:283
+msgid "Hausa"
+msgstr ""
+
+#: clanguagemgr.cpp:285
+msgid "Hawaiian"
+msgstr ""
+
+#: clanguagemgr.cpp:289
+#, fuzzy
+msgid "Croatian"
+msgstr "A hiba helye:"
+
+#: clanguagemgr.cpp:291
+msgid "Hungarian"
+msgstr ""
+
+#: clanguagemgr.cpp:293
+msgid "Armenian"
+msgstr ""
+
+#: clanguagemgr.cpp:298
+msgid "Indonesian"
+msgstr ""
+
+#: clanguagemgr.cpp:302
+msgid "Icelandic"
+msgstr ""
+
+#: clanguagemgr.cpp:304
+msgid "Italian"
+msgstr ""
+
+#: clanguagemgr.cpp:308
+msgid "Japanese"
+msgstr ""
+
+#: clanguagemgr.cpp:310
+msgid "Georgian"
+msgstr ""
+
+#: clanguagemgr.cpp:319
+msgid "Korean"
+msgstr ""
+
+#: clanguagemgr.cpp:322
+msgid "Kurdish"
+msgstr ""
+
+#: clanguagemgr.cpp:326
+msgid "Kirghiz"
+msgstr ""
+
+#: clanguagemgr.cpp:328
+#, fuzzy
+msgid "Latin"
+msgstr "Sor"
+
+#: clanguagemgr.cpp:333
+msgid "Lithuanian"
+msgstr ""
+
+#: clanguagemgr.cpp:335
+msgid "Latvian"
+msgstr ""
+
+#: clanguagemgr.cpp:339
+msgid "Maori"
+msgstr ""
+
+#: clanguagemgr.cpp:341 clanguagemgr.cpp:477
+msgid "Macedonian"
+msgstr ""
+
+#: clanguagemgr.cpp:346
+#, fuzzy
+msgid "More"
+msgstr "Keret"
+
+#: clanguagemgr.cpp:349
+msgid "Malay"
+msgstr ""
+
+#: clanguagemgr.cpp:351
+msgid "Maltese"
+msgstr ""
+
+#: clanguagemgr.cpp:358
+msgid "Low German; Low Saxon"
+msgstr ""
+
+#: clanguagemgr.cpp:362
+msgid "Dutch"
+msgstr ""
+
+#: clanguagemgr.cpp:365
+msgid "Norwegian"
+msgstr ""
+
+#: clanguagemgr.cpp:377
+msgid "Papiamento"
+msgstr ""
+
+#: clanguagemgr.cpp:380
+msgid "Polish"
+msgstr ""
+
+#: clanguagemgr.cpp:383
+msgid "Portuguese"
+msgstr ""
+
+#: clanguagemgr.cpp:385
+msgid "Brasilian Portuguese"
+msgstr ""
+
+#: clanguagemgr.cpp:392
+#, fuzzy
+msgid "Romanian"
+msgstr "parancssor"
+
+#: clanguagemgr.cpp:394
+msgid "Russian"
+msgstr ""
+
+#: clanguagemgr.cpp:400
+#, fuzzy
+msgid "Scots"
+msgstr "Tartomány"
+
+#: clanguagemgr.cpp:406
+msgid "Slovak"
+msgstr ""
+
+#: clanguagemgr.cpp:408
+msgid "Slovenian"
+msgstr ""
+
+#: clanguagemgr.cpp:412
+#, fuzzy
+msgid "Somali"
+msgstr "Apró"
+
+#: clanguagemgr.cpp:414
+msgid "Albanian"
+msgstr ""
+
+#: clanguagemgr.cpp:420
+msgid "Swedish"
+msgstr ""
+
+#: clanguagemgr.cpp:422
+msgid "Swahili"
+msgstr ""
+
+#: clanguagemgr.cpp:424
+msgid "Syriac"
+msgstr ""
+
+#: clanguagemgr.cpp:426
+#, fuzzy
+msgid "Tamil"
+msgstr "Betűtípus:"
+
+#: clanguagemgr.cpp:430
+msgid "Thai"
+msgstr ""
+
+#: clanguagemgr.cpp:433
+msgid "Tagalog"
+msgstr ""
+
+#: clanguagemgr.cpp:435
+msgid "Tswana"
+msgstr ""
+
+#: clanguagemgr.cpp:437
+msgid "Turkish"
+msgstr ""
+
+#: clanguagemgr.cpp:442
+msgid "Tahitian"
+msgstr ""
+
+#: clanguagemgr.cpp:446
+msgid "Ukrainian"
+msgstr ""
+
+#: clanguagemgr.cpp:451
+msgid "Vietnamese"
+msgstr ""
+
+#: clanguagemgr.cpp:457
+msgid "Xhosa"
+msgstr ""
+
+#: clanguagemgr.cpp:459
+msgid "Bavarian"
+msgstr ""
+
+#: clanguagemgr.cpp:461
+msgid "Zarma"
+msgstr ""
+
+#: clanguagemgr.cpp:463
+msgid "Alemannisch"
+msgstr ""
+
+#: clanguagemgr.cpp:465
+msgid "Haitian Creole French"
+msgstr ""
+
+#: clanguagemgr.cpp:467
+msgid "Itzá"
+msgstr ""
+
+#: clanguagemgr.cpp:469
+msgid "Shuar"
+msgstr ""
+
+#: clanguagemgr.cpp:471
+msgid "Kekchí"
+msgstr ""
+
+#: clanguagemgr.cpp:473
+msgid "Kabyle"
+msgstr ""
+
+#: clanguagemgr.cpp:475
+msgid "Lombard"
+msgstr ""
+
+#: clanguagemgr.cpp:479
+msgid "Tok Pisin"
+msgstr ""
+
+#: clanguagemgr.cpp:481
+msgid "Uma"
+msgstr ""
+
+#: clanguagemgr.cpp:483
+msgid "Romani, Vlax"
+msgstr ""
+
+#: clanguagemgr.cpp:485
+msgid "Sango"
+msgstr ""
+
+#: clanguagemgr.cpp:487
+msgid "Sranan"
+msgstr ""
+
+#: clanguagemgr.cpp:492
+msgid "Chinese"
+msgstr ""
+
+#: clanguagemgr.cpp:494
+msgid "Zulu"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Search &options"
+#~ msgstr "Kijelölés beállítása"
+
+#, fuzzy
+#~ msgid "Search &result"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Search type :"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Search scope:"
+#~ msgstr "A keresés tartománya"
+
+#, fuzzy
+#~ msgid "Found items"
+#~ msgstr "Találat"
+
+#, fuzzy
+#~ msgid "Search text:"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Search type"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Multiple words (AND)"
+#~ msgstr "Több kifejezésre"
+
+#, fuzzy
+#~ msgid "Multiple words (OR)"
+#~ msgstr "Több kifejezésre"
+
+#, fuzzy
+#~ msgid "Regular expression"
+#~ msgstr "Szabványos kifejezésre"
+
+#, fuzzy
+#~ msgid "Search options"
+#~ msgstr "Kijelölés beállítása"
+
+#, fuzzy
+#~ msgid "Case sensitive"
+#~ msgstr "K&isbetű / nagybetű érzékeny"
+
+#, fuzzy
+#~ msgid "Text type"
+#~ msgstr "Megtekintés"
+
+#, fuzzy
+#~ msgid "Main text"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Search scope"
+#~ msgstr "A keresés tartománya"
+
+#, fuzzy
+#~ msgid "Last search result"
+#~ msgstr "legutóbbi keresés"
+
+#, fuzzy
+#~ msgid "&Bookshelf Manager"
+#~ msgstr "Könyvjelző-kezelő"
+
+#, fuzzy
+#~ msgid "Blue"
+#~ msgstr "Bibliák"
+
+#, fuzzy
+#~ msgid "Show Moprh Segmentation"
+#~ msgstr "A SWORD-dal kapcsolatos programozási hiba"
+
+#, fuzzy
+#~ msgid "Setup ranges"
+#~ msgstr "Oldalak nyomtatása"
+
+#, fuzzy
+#~ msgid "Configure &Sword"
+#~ msgstr "Konfigurációs script"
+
+#, fuzzy
+#~ msgid "Co&nfigure sessions"
+#~ msgstr "Konfigurációs script"
+
+#, fuzzy
+#~ msgid "Please enter a new name for the session."
+#~ msgstr "Ide írja a csoport nevét!"
+
+#, fuzzy
+#~ msgid "Rename session"
+#~ msgstr "Szabványos kifejezésre"
+
+#, fuzzy
+#~ msgid "Sessions"
+#~ msgstr "Lexikonok"
+
+#, fuzzy
+#~ msgid "Rename selected session"
+#~ msgstr "A kijelölt szöveg megjelölése"
+
+#~ msgid "General"
+#~ msgstr "Általános"
+
+#, fuzzy
+#~ msgid "Default modules"
+#~ msgstr "Alapértelmezett stílusok"
+
+#, fuzzy
+#~ msgid "Default Bible"
+#~ msgstr "&Alapbeállítás"
+
+#, fuzzy
+#~ msgid "Default Commentary"
+#~ msgstr "Alapértelmezett betűtípus"
+
+#, fuzzy
+#~ msgid "Default Lexicon"
+#~ msgstr "Alapértelmezett betűtípus"
+
+#, fuzzy
+#~ msgid "Filter settings"
+#~ msgstr "File kiterjesztés"
+
+#, fuzzy
+#~ msgid "Add new directory"
+#~ msgstr "Hozzáadás"
+
+#, fuzzy
+#~ msgid "Configure Sword"
+#~ msgstr "Konfigurációs script"
+
+#, fuzzy
+#~ msgid "Path to Sword modules"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Selected text"
+#~ msgstr "Ki&jelölt szövegben"
+
+#, fuzzy
+#~ msgid "Copy selected text"
+#~ msgstr "A kijelölt szöveg másolása a vágólapra"
+
+#, fuzzy
+#~ msgid "Open the printer dialog"
+#~ msgstr "Beállítás-ablak(ok)"
+
+#, fuzzy
+#~ msgid "Save current session"
+#~ msgstr "Aktuális dokumentum mentése"
+
+#, fuzzy
+#~ msgid "Edit sessions"
+#~ msgstr "Beállítások módosítása"
+
+#, fuzzy
+#~ msgid "Show daily tips at startup"
+#~ msgstr "A logo megjelenítése programindításkor"
+
+#, fuzzy
+#~ msgid "About BibleTime"
+#~ msgstr "A BibleTime-ról..."
+
+#, fuzzy
+#~ msgid "About KDE"
+#~ msgstr "KDE névjegy..."
+
+#, fuzzy
+#~ msgid "Start the search"
+#~ msgstr "legutóbbi keresés"
+
+#, fuzzy
+#~ msgid "Stop search"
+#~ msgstr "legutóbbi keresés"
+
+#, fuzzy
+#~ msgid "Search text"
+#~ msgstr "Keresés a szövegben"
+
+#, fuzzy
+#~ msgid "Exact match"
+#~ msgstr "Pontos kifejezésre"
+
+#, fuzzy
+#~ msgid "Case sensitive matching"
+#~ msgstr ""
+#~ "Ki&s/nagybetű\n"
+#~ "megkülönböztetése"
+
+#, fuzzy
+#~ msgid "Search scope name"
+#~ msgstr "A keresés tartománya"
+
+#, fuzzy
+#~ msgid "Show the previous book"
+#~ msgstr "Az előző könyvre ugrik"
+
+#, fuzzy
+#~ msgid "Show the next chapter"
+#~ msgstr "A következő fejezetre ugrik"
+
+#, fuzzy
+#~ msgid "Show the previous chapter"
+#~ msgstr "Az előző fejezetre ugrik"
+
+#, fuzzy
+#~ msgid "Jump to the next verse"
+#~ msgstr "következő versre"
+
+#, fuzzy
+#~ msgid "Jump to the previous verse"
+#~ msgstr "előző versre"
+
+#, fuzzy
+#~ msgid "Show the next entry"
+#~ msgstr "A következő versre ugrik"
+
+#, fuzzy
+#~ msgid "Show the previous entry"
+#~ msgstr "Az előző versre ugrik"
+
+#, fuzzy
+#~ msgid "Save the current text"
+#~ msgstr "Aktuális dokumentum mentése"
+
+#, fuzzy
+#~ msgid "Delete the current entry"
+#~ msgstr "Opció törlése"
+
+#, fuzzy
+#~ msgid "Bold text"
+#~ msgstr "Félkövér"
+
+#, fuzzy
+#~ msgid "Underline text"
+#~ msgstr "Linkek aláhúzása:"
+
+#~ msgid "Align left"
+#~ msgstr "Balra"
+
+#, fuzzy
+#~ msgid "Align right"
+#~ msgstr "Balra"
+
+#, fuzzy
+#~ msgid "Set the font size"
+#~ msgstr "következő versre"
+
+#, fuzzy
+#~ msgid "Show startup logo"
+#~ msgstr "Strong's számok mutatása"
+
+#, fuzzy
+#~ msgid "Link color"
+#~ msgstr "A WWW linkek színe:"
+
+#, fuzzy
+#~ msgid "Color of the highlighted verse"
+#~ msgstr "A kijelölt vers színe:"
+
+#, fuzzy
+#~ msgid "Verse numbers"
+#~ msgstr "Versszámozás:"
+
+#, fuzzy
+#~ msgid "Show root words."
+#~ msgstr "Lábjegyzetek mutatása"
+
+#, fuzzy
+#~ msgid "Case sensitive search"
+#~ msgstr ""
+#~ "Ki&s/nagybetű\n"
+#~ "megkülönböztetése"
+
+#, fuzzy
+#~ msgid "Styles"
+#~ msgstr "Elem stílusa"
+
+#, fuzzy
+#~ msgid "Move the selected item up one line."
+#~ msgstr "Még nem választott nyomtatót!"
+
+#, fuzzy
+#~ msgid "Move the selected item down one line."
+#~ msgstr "Bemásolja a kijelölt szakaszt a vágóasztalra"
+
+#, fuzzy
+#~ msgid "Delete items"
+#~ msgstr "Opció törlése"
+
+#, fuzzy
+#~ msgid "Delete printing style"
+#~ msgstr "Opció törlése"
+
+#, fuzzy
+#~ msgid "Remove the selected printing style from the list."
+#~ msgstr "Bemásolja a kijelölt szakaszt a vágóasztalra"
+
+#, fuzzy
+#~ msgid "Edit printing style"
+#~ msgstr "Beállítások módosítása"
+
+#, fuzzy
+#~ msgid "Upper border"
+#~ msgstr "Meddig:"
+
+#, fuzzy
+#~ msgid "The size of the border on the top of the paper."
+#~ msgstr "Folytassam a keresést a lap tetejéről?"
+
+#, fuzzy
+#~ msgid "Lower border"
+#~ msgstr "Honnan:"
+
+#~ msgid "Printing..."
+#~ msgstr "Nyomtatás..."
+
+#~ msgid "Colors"
+#~ msgstr "Színek"
+
+#~ msgid "Text"
+#~ msgstr "Szöveg"
+
+#, fuzzy
+#~ msgid "Highlighted verse"
+#~ msgstr "A kijelölt vers színe:"
+
+#, fuzzy
+#~ msgid "Background"
+#~ msgstr "Háttér:"
+
+#~ msgid "Show footnotes"
+#~ msgstr "Lábjegyzetek mutatása"
+
+#, fuzzy
+#~ msgid "Show Strong's numbers"
+#~ msgstr "Strong's számok mutatása"
+
+#, fuzzy
+#~ msgid "Lexicon"
+#~ msgstr "Lexikonok"
+
+#, fuzzy
+#~ msgid "Bookmark to"
+#~ msgstr "Könyvjelzők"
+
+#, fuzzy
+#~ msgid "Show Strong's Numbers"
+#~ msgstr "Strong's számok mutatása"
+
+#, fuzzy
+#~ msgid "Print bookmark"
+#~ msgstr "Saját könyvjelzők"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Könyvjelzők"
+
+#, fuzzy
+#~ msgid "Margins (mm)"
+#~ msgstr "Margók (milliméter)"
+
+#~ msgid "&Left"
+#~ msgstr "&Bal oldalon"
+
+#~ msgid "&Right"
+#~ msgstr "&Jobb oldalon"
+
+#~ msgid "&Top"
+#~ msgstr "&Fent"
+
+#, fuzzy
+#~ msgid "Print queue"
+#~ msgstr "Nyomtató"
+
+#, fuzzy
+#~ msgid "Entries to print:"
+#~ msgstr "találat."
+
+#, fuzzy
+#~ msgid "To"
+#~ msgstr "&Fent"
+
+#, fuzzy
+#~ msgid "Style"
+#~ msgstr "Elem stílusa"
+
+#, fuzzy
+#~ msgid "Style editor"
+#~ msgstr "Jegyzettömb"
+
+#, fuzzy
+#~ msgid "Header"
+#~ msgstr "Ledger"
+
+#, fuzzy
+#~ msgid "Description"
+#~ msgstr "A hiba leírása:"
+
+#, fuzzy
+#~ msgid "Foreground:"
+#~ msgstr "Találat:"
+
+#~ msgid "Background:"
+#~ msgstr "Háttér:"
+
+#, fuzzy
+#~ msgid "Frame color:"
+#~ msgstr "Általános szöveg színe:"
+
+#~ msgid "Tip of the Day"
+#~ msgstr "A nap tippje"
+
+#~ msgid "Did you know...?"
+#~ msgstr "Tudta, hogy ..."
+
+#~ msgid "show Tip of the day on next start"
+#~ msgstr "Tippek programindításkor"
+
+#~ msgid "Next Tip"
+#~ msgstr "Következő tipp"
+
+#~ msgid "Tipdatabase not found ! Please check your installation."
+#~ msgstr ""
+#~ "A tippek adatbázisa nem található. Kérem, ellenőrizze a telepítés "
+#~ "épségétt!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Click this button to start the search!<BR>The text entered in the "
+#~ "editline will be used."
+#~ msgstr ""
+#~ "A keresés megkezdéséhez kattintson erre a gombra!<BR>A keresési mező "
+#~ "tartalmának keresése."
+
+#~ msgid ""
+#~ "Check this box to use multiple words for the search!<BR>The searched text "
+#~ "could span more than one word."
+#~ msgstr ""
+#~ "Jelölje be ezt a négyzetet, ha egyszerre több szóra szeretne keresni!"
+#~ "<BR>A keresésnél több szó kombinációját is megadhatja."
+
+#, fuzzy
+#~ msgid ""
+#~ "Check this button to use exact phrase for the search.<BR>The aearched "
+#~ "text will be searched as entered in the editline."
+#~ msgstr ""
+#~ "Egy pontos kifejezésre való keresés megkezdéséhez kattintson erre a "
+#~ "gombra!<BR>A keresési mező tartalmának keresése."
+
+#~ msgid ""
+#~ "Check this button to use regular expressions for your search!<BR>You may "
+#~ "use standard GNU regexp patterns<BR>A description of regular expressions "
+#~ "is in <I>man regexp</I>"
+#~ msgstr ""
+#~ "Szabványos kifejezésre való keresés megkezdéséhez kattintson erre a "
+#~ "gombra!<BR>Itt szabványos GNU kifejezésekre (regexp) "
+#~ "kereshet<BR>Szabványos kifejezések listája: <I>man regexp</I>"
+
+#~ msgid ""
+#~ "case\n"
+#~ "sensitive"
+#~ msgstr ""
+#~ "kis- és nagybetű\n"
+#~ "megkülönböztetése"
+
+#~ msgid ""
+#~ "Check this box to search the entered text using case sensitive search."
+#~ msgstr ""
+#~ "E négyzet bejelölésével különbséget tehet a keresés során a kis- és "
+#~ "nagybetűk között."
+
+#~ msgid ""
+#~ "<B>Creates the comment</B><BR><BR>Use this button to add the text<BR>in "
+#~ "the editor as a comment for the given key."
+#~ msgstr ""
+#~ "<B>Megjegyzés készítése</B><BR>Ezzel a gombbal beszúrhatjuk\n"
+#~ "a jegyzettömb tartalmát az adott vershez megjegyzésként."
+
+#~ msgid ""
+#~ "<B>Edits the comment</B><BR><BR>Sets the text in the editor<BR>to the "
+#~ "text of the given comment."
+#~ msgstr ""
+#~ "<B>Megjegyzés módosítása</B><BR>Az adott vershez tartozó megjegyzést\n"
+#~ " a jegyzettömbben található szövegre cseréli."
+
+#~ msgid ""
+#~ "<B>Deletes the comment</B><BR><BR>Deletes the comment of the given key."
+#~ msgstr ""
+#~ "<B>Megjegyzés törlése</B><BR>Törli az adott vershez tartozó megjegyzést."
+
+#~ msgid "<B>Start key</B><BR><BR>Represents the start of the comment."
+#~ msgstr ""
+#~ "<B>Megjegyzés kezdete</B><BR>Több versre vonatkozó megjegyzés esetén\n"
+#~ "az első vers, amelyhez a megjegyzés tartozik."
+
+#~ msgid "<B>End key</B><BR><BR>Represents the end verse of the comment."
+#~ msgstr ""
+#~ "<B>Megjegyzés vége</B><BR>Több versre vonatkozó megjegyzés esetén\n"
+#~ "az utolsó vers, amelyhez a megjegyzés tartozik."
+
+#, fuzzy
+#~ msgid "Show tip of the day on next start"
+#~ msgstr "Tippek programindításkor"
+
+#, fuzzy
+#~ msgid ""
+#~ "Tipdatabase not found!\n"
+#~ "Please check your installation."
+#~ msgstr ""
+#~ "A tippek adatbázisa nem található.\n"
+#~ "Kérem, ellenőrizze a telepítés épségétt!"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Új könyvjelzö"
+
+#~ msgid "New Group"
+#~ msgstr "Új csoport"
+
+#~ msgid "Delete Group"
+#~ msgstr "Csoport törlése"
+
+#~ msgid "Group Properties"
+#~ msgstr "Csoport jellemzői"
+
+#~ msgid "Key"
+#~ msgstr "Kulcs"
+
+#~ msgid "new Group"
+#~ msgstr "Új csoport"
+
+#~ msgid "Find"
+#~ msgstr "Keres"
+
+#~ msgid "Le&xica Browser"
+#~ msgstr "Le&xikon-böngésző"
+
+#~ msgid "Vertical Selections On"
+#~ msgstr "Függőleges kijelölés be"
+
+#~ msgid "Vertical Selections Off"
+#~ msgstr "Függőleges kijelölés ki"
+
+#~ msgid "The specified File does not exist"
+#~ msgstr "A megadott fájl nem létezik"
+
+#~ msgid "You have specified a directory"
+#~ msgstr "Egy könyvtárat adott meg"
+
+#~ msgid "You do not have read permission to this file"
+#~ msgstr "Önnek nincs olvasási joga erre a fájlra"
+
+#~ msgid "An Error occured while trying to open this Document"
+#~ msgstr "Hiba történt a dokumentum megnyitásakor."
+
+#~ msgid "You do not have write permission to this file"
+#~ msgstr "Nincsen írási joga erre a fájlra"
+
+#~ msgid "Loading..."
+#~ msgstr "Betöltés..."
+
+#~ msgid "Read"
+#~ msgstr "Olvasás"
+
+#~ msgid ""
+#~ "KWrite is already waiting\n"
+#~ "for an internet job to finish\n"
+#~ "Please wait until it has finished\n"
+#~ "Alternatively stop the running one."
+#~ msgstr ""
+#~ "A KWrite már vár egy internetes\n"
+#~ "feladat befejeződésére.\n"
+#~ "Várhat, amíg ez véget ér,\n"
+#~ "de le is állíthatja."
+
+#~ msgid "Waiting for KFM..."
+#~ msgstr "Várakozás a KFM-re..."
+
+#~ msgid "Could not start or find KFM"
+#~ msgstr "Nem tudtam elindítani (talán mert nem találom) a KFM-et"
+
+#~ msgid "Wrote"
+#~ msgstr "Elmentve"
+
+#~ msgid ""
+#~ "The current Document has been modified.\n"
+#~ "Would you like to save it?"
+#~ msgstr ""
+#~ "A jelenlegi szöveg módosult.\n"
+#~ "Szeretné elmenteni?"
+
+#, fuzzy
+#~ msgid ""
+#~ "Could not save the document.\n"
+#~ "Open a new document anyway?"
+#~ msgstr ""
+#~ "Nem tudtam elmenteni a szöveget.\n"
+#~ "Megnyissam az újat?"
+
+#~ msgid "No changes need to be saved"
+#~ msgstr "Nem történt módosítás"
+
+#~ msgid ""
+#~ "A Document with this Name already exists.\n"
+#~ "Do you want to overwrite it?"
+#~ msgstr ""
+#~ "Már létezik dokumentum ilyen névvel.\n"
+#~ "Felül szeretné írni?"
+
+#~ msgid "End of document reached"
+#~ msgstr "Dokumentum vége"
+
+#~ msgid "Continue from the beginning"
+#~ msgstr "Folytatás az elejéről"
+
+#~ msgid "Beginning of document reached"
+#~ msgstr "Dokumentum eleje"
+
+#~ msgid "Continue from the end"
+#~ msgstr "Folyatás a végétől"
+
+#~ msgid "Search string not found!"
+#~ msgstr "A keresett szöveg nem található!"
+
+#~ msgid "replace(s) made"
+#~ msgstr "csere történt"
+
+#~ msgid "Normal:"
+#~ msgstr "Sima szöveg:"
+
+#~ msgid "Size:"
+#~ msgstr "Méret:"
+
+#~ msgid "Item:"
+#~ msgstr "Elem:"
+
+#~ msgid "Config Select"
+#~ msgstr "Beállítás választás"
+
+#~ msgid "Highlight:"
+#~ msgstr "Kiemelés:"
+
+#~ msgid "Highlight Auto Select"
+#~ msgstr "Automatikus kiemelés választás"
+
+#~ msgid "File Extensions:"
+#~ msgstr "Fájl kiterjesztések:"
+
+#~ msgid "Mime Types:"
+#~ msgstr "Mime típusok:"
+
+#~ msgid "Item Font"
+#~ msgstr "Elem betűtípusa"
+
+#~ msgid "&Text To Find:"
+#~ msgstr "&Keresendő szöveg:"
+
+#~ msgid "&Replace With:"
+#~ msgstr "&Helyettesítés:"
+
+#~ msgid "&Whole Words Only"
+#~ msgstr "Csak e&gész szavak"
+
+#~ msgid "&From Cursor"
+#~ msgstr "K&urzortól"
+
+#~ msgid "Find &Backwards"
+#~ msgstr "&Visszafelé"
+
+#~ msgid "&Prompt On Replace"
+#~ msgstr "Cse&re megerősítése"
+
+#~ msgid "Replace this occurence?"
+#~ msgstr "Kívánja ezt cserélni?"
+
+#~ msgid "&Yes"
+#~ msgstr "&Igen"
+
+#~ msgid "&No"
+#~ msgstr "&Nem"
+
+#~ msgid "&All"
+#~ msgstr "&Mindet"
+
+#~ msgid "&Goto Line:"
+#~ msgstr "U&grás sorra:"
+
+#~ msgid "Auto &Indent"
+#~ msgstr "&Automatikus behúzás"
+
+#~ msgid "&Backspace Indent"
+#~ msgstr "&Backspace behúzás"
+
+#~ msgid "&Word Wrap"
+#~ msgstr "&Sortördelés"
+
+#~ msgid "Replace &Tabs"
+#~ msgstr "&Tabulátorok cseréje"
+
+#~ msgid "Remove Trailing &Spaces"
+#~ msgstr "Sorvégi s&zóközök törlése"
+
+#~ msgid "Wrap &Cursor"
+#~ msgstr "Kurz&or tördelés"
+
+#~ msgid "&Persistent Selections"
+#~ msgstr "T&artós kijelölés"
+
+#~ msgid "&Multiple Selections"
+#~ msgstr "T&öbbszörös kijelölés"
+
+#~ msgid "&Vertical Selections"
+#~ msgstr "&Függőleges kijelölés"
+
+#~ msgid "&Delete On Input"
+#~ msgstr ""
+#~ "A kijelölt szöveg törlése\n"
+#~ "új szöveg beírásakor"
+
+#~ msgid "&Toggle Old"
+#~ msgstr "R&égire váltás"
+
+#~ msgid "Wrap Words At:"
+#~ msgstr "Sortördelés:"
+
+#~ msgid "Tab Width:"
+#~ msgstr "Tabulátorpozíciók:"
+
+#~ msgid "Undo steps:"
+#~ msgstr ""
+#~ "Visszavonások\n"
+#~ "száma:"
+
+#~ msgid "Text Background:"
+#~ msgstr "Szöveg háttere:"
+
+#~ msgid "The lower bound of the search scope.<BR>The start will start here."
+#~ msgstr "A keresési tartomány felső határa.<BR>A keresés innen fog kezdődni."
+
+#~ msgid "The upper bound of the search scope.<BR>The start will stop here."
+#~ msgstr "A keresési tartomány alsó határa.<BR>A keresés eddig fog tartani."
+
+#~ msgid "Use no scope.<BR>Search from Genesis to Revelation."
+#~ msgstr ""
+#~ "A keresési tartomány nincs megadva.<BR>Keresés I. Mózestől a Jelenések "
+#~ "könyvéig."
+
+#~ msgid "set bounds"
+#~ msgstr "Tartomány beállítása"
+
+#~ msgid ""
+#~ "Use the search scope entered in the two edit lines<BR> in this dialog."
+#~ msgstr "Az alábbi két sorban beírt határértékek közötti keresés."
+
+#~ msgid "Show / hide noteseditor"
+#~ msgstr "Jegyzettömb mutatása/elrejtése"
+
+#~ msgid "Show browser maximized /normal"
+#~ msgstr "Böngésző teljes méret/normál nézet"
+
+#~ msgid "Toggle instant lookup"
+#~ msgstr "Azonnali keresés"
+
+#~ msgid "Empty Print &Queue..."
+#~ msgstr "Nyomtatási &sor ürítése"
+
+#~ msgid "&Search the viewed text..."
+#~ msgstr "&Keresés az adott szövegben"
+
+#~ msgid "&Generic Toolbar"
+#~ msgstr "Általános eszköztár"
+
+#~ msgid "Notes &Editor"
+#~ msgstr "Jegyzettömb"
+
+#~ msgid "Big &browser"
+#~ msgstr "Teljes képernyős böngészés"
+
+#, fuzzy
+#~ msgid "Normal"
+#~ msgstr "Sima szöveg:"
+
+#~ msgid "Set Highlight"
+#~ msgstr "Kiemelés beállítása"
+
+#~ msgid "Notes Editor..."
+#~ msgstr "Jegyzettömb..."
+
+#~ msgid "Editor Colors..."
+#~ msgstr "A jegyzettömb színei..."
+
+#~ msgid "Editor Defaults..."
+#~ msgstr "A jegyzettömb alapbeállításai..."
+
+#~ msgid "Syntax Highlighting..."
+#~ msgstr "Speciális szövegkiemelés..."
+
+#~ msgid "Options..."
+#~ msgstr "Beállítások..."
+
+#~ msgid "Help..."
+#~ msgstr "Súgó..."
+
+#~ msgid "Bug report..."
+#~ msgstr "Hibajelzés..."
+
+#~ msgid "Remove all entries from the print queue"
+#~ msgstr "Minden aktuális nyomtatási munka törlése"
+
+#~ msgid "move backwards"
+#~ msgstr "visszafelé"
+
+#~ msgid "move forwards"
+#~ msgstr "előre"
+
+#~ msgid "moves to the previous book"
+#~ msgstr "előző könyvre"
+
+#~ msgid "moves to the previous chapter"
+#~ msgstr "előző fejezetre"
+
+#~ msgid "moves to the next chapter"
+#~ msgstr "következő fejezetre"
+
+#~ msgid "moves to the next book"
+#~ msgstr "következő könyvre"
+
+#~ msgid ""
+#~ "Type in the <b>versename</b> or the <b>keyword</b>\n"
+#~ "you want to see in the browser widget."
+#~ msgstr ""
+#~ "Gépelje be azt a <B>verset</B> vagy <B>kulcsszót,</B>\n"
+#~ "melyet a böngésző ablakában szeretne látni!"
+
+#~ msgid "Instant lookup"
+#~ msgstr "Azonnali kikeresés"
+
+#, fuzzy
+#~ msgid ""
+#~ "Enable this if you want to see the browserwidget\n"
+#~ "updated every time if you change\n"
+#~ "the verse or keyword in the editbox to the left."
+#~ msgstr ""
+#~ "Kapcsoljuk be, ha azt szeretnénk, hogy\n"
+#~ "minden egyes alkalommal, amikor\n"
+#~ "átváltunk egyik helyről a másikra, azonnal az\n"
+#~ "aktuális tartalom jelenjen meg\n"
+#~ "a böngésző ablakában!"
+
+#~ msgid "Ready."
+#~ msgstr "Kész."
+
+#~ msgid "Opening a new Application window..."
+#~ msgstr "Új alkalmazás-ablak nyitása..."
+
+#~ msgid "Closing file..."
+#~ msgstr "Fájl lezárása..."
+
+#~ msgid "Opens a new application window"
+#~ msgstr "Új alkalmazás-ablak nyitása"
+
+#~ msgid "Closes the actual file"
+#~ msgstr "Bezárja az aktuális fájlt"
+
+#~ msgid "Prints the current document"
+#~ msgstr "Kinyomtatja az aktuális dokumentumot"
+
+#~ msgid "Search in the viewed text"
+#~ msgstr "Keresés az aktuális szövegben"
+
+#~ msgid "Cuts the selected section and puts it to the clipboard"
+#~ msgstr "Kivágja a kijelölt szakaszt és berakja a vágóasztalra"
+
+#~ msgid "Pastes the clipboard contents to actual position"
+#~ msgstr "Beilleszti a vágóasztal tartalmát az aktuális pozícióra"
+
+#~ msgid "Enables / disables the actual Toolbar"
+#~ msgstr "Megmutatja ill. elrejti az aktuális eszköztárat"
+
+#~ msgid "Enables / disables the actual Statusbar"
+#~ msgstr "Be- ill. kikapcsolja az aktuális állapotsort"
+
+#~ msgid "Enables / disables the Notes Editor view"
+#~ msgstr "Megmutatja ill. elrejti a jegyzettömböt"
+
+#~ msgid "Maximize / minimize the browsers"
+#~ msgstr ""
+#~ "Teljes ablaknyira nagyítja illetve ikon méretűre zsugorítja a különböző  "
+#~ "böngészőket"
+
+#~ msgid "Enable / disable Strongs Numbers where the are present"
+#~ msgstr ""
+#~ "Megmutatja vagy elrejti a Strong-féle számokat (amennyiben lehetséges)"
+
+#~ msgid "Enable / disable Footnotes where the are present"
+#~ msgstr "Megmutatja ill. elrejti a lábjegyzeteket (ha vannak ilyenek)"
+
+#~ msgid "Customize the notes editor"
+#~ msgstr "A jegyzettömb testre szabása"
+
+#~ msgid "Customize editor´s colors"
+#~ msgstr "A jegyzettömb színeinek beállítása"
+
+#~ msgid "Customize editor defaults"
+#~ msgstr "A jegyzettömb alapbeállításainak változtatása"
+
+#~ msgid "Customize syntax highlighting"
+#~ msgstr "A szövegkiemelés beállításainak változtatása"
+
+#~ msgid "Customize the text browser"
+#~ msgstr "A szöveges böngésző testre szabása"
+
+#~ msgid "Opens a window to report a bug"
+#~ msgstr "Új ablakot nyit, amelyben az esetleges hibákat jelenthetjük"
+
+#~ msgid "BibeTime - optionsdialog"
+#~ msgstr "BibleTime - beállítások ablaka"
+
+#~ msgid "About BibleTime ..."
+#~ msgstr "A BibleTime-ról..."
+
+#~ msgid "Homepage:"
+#~ msgstr "Honlap:"
+
+#, fuzzy
+#~ msgid "eMail:"
+#~ msgstr "E-mail:"
+
+#~ msgid "Authors: "
+#~ msgstr "Szerzők:"
+
+#~ msgid ""
+#~ "This program is covered by the GPL version 2 or any later version.\n"
+#~ "There's really no warranty for this programm.\n"
+#~ "Use it at your own risk!"
+#~ msgstr ""
+#~ "Ez a program szerzői jogi védelem alatt áll a GPL szerint (v.2 vagy "
+#~ "későbbi verzió).\n"
+#~ "A programra semmiféle garancia nincs.\n"
+#~ "Mindenki csak saját felelősségére használja!"
+
+#~ msgid "An external process could not be started!"
+#~ msgstr "A külső alkalmazás elindítása nem sikerült!"
+
+#, fuzzy
+#~ msgid "Sorry, but I can't save the list without a filename."
+#~ msgstr ""
+#~ "Sajnálom, file-név megadása nélkül\n"
+#~ "nem lehet elmenteni a listát!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Can't open the file. Perhaps you don't have write access!\n"
+#~ "Please check this!"
+#~ msgstr ""
+#~ "Nem lehet megnyitni a file-t. Elképzelhető, hogy\n"
+#~ "már a megnyitáshoz is írási jogok szükségesek!\n"
+#~ "Kérem, ellenőrizze!"
+
+#~ msgid "Spaces:"
+#~ msgstr "Szóközök:"
+
+#~ msgid "This color is used for the printing of a verse."
+#~ msgstr "Ezt a színt használjuk a versek nyomtatásakor."
+
+#~ msgid "Verse:"
+#~ msgstr "Versek szövege:"
+
+#~ msgid "Used for the printing of each versenumber."
+#~ msgstr "A versek számozásánál használt szín."
+
+#, fuzzy
+#~ msgid ""
+#~ "The font which will be used for the printing of the <B>headings</B>.\n"
+#~ "These fonts are put together by KFontManager."
+#~ msgstr ""
+#~ "A <B> fejlécek nyomtatása </B> során használt betűtípus.\n"
+#~ "(A betűtípusok megjelenítéséről a KFontManager gondoskodik)"
+
+#~ msgid ""
+#~ "The font which will be used for the printing of the <B>normal text</B>.\n"
+#~ "These fonts are put together by KFontManager."
+#~ msgstr ""
+#~ "A <B> normál szöveg nyomtatása </B> során használt betűtípus.\n"
+#~ "(A betűtípusok megjelenítéséről a KFontManager gondoskodik)"
+
+#, fuzzy
+#~ msgid "The space between the lines of text"
+#~ msgstr "A képernyőn megjelenített sorok egymástól való távolsága."
+
+#~ msgid "Space between lines:"
+#~ msgstr "Sortávolság:"
+
+#, fuzzy
+#~ msgid "The space between each paragraph"
+#~ msgstr "A bekezdések között látható távolság."
+
+#~ msgid "Space between paragraphs:"
+#~ msgstr "Bekezdések távolsága."
+
+#, fuzzy
+#~ msgid "The alignment of a paragraph"
+#~ msgstr "A bekezdés igazítása."
+
+#~ msgid "Alignment:"
+#~ msgstr "Igazítás:"
+
+#~ msgid "Align center"
+#~ msgstr "Középre"
+
+#~ msgid "Please define aliases for the fonts in this list!"
+#~ msgstr "Kérem, adjon meg azonosítókat a listában szereplő betűtípusokhoz!"
+
+#~ msgid "Font managment"
+#~ msgstr "Fontkezelés"
+
+#~ msgid "Link managment"
+#~ msgstr "Link-kezelés"
+
+#~ msgid "Spelling"
+#~ msgstr "Helyesírás"
+
+#~ msgid "Use KDE's language settings"
+#~ msgstr "A KDE nyelvi beállításainak használata"
+
+#~ msgid "Enable this box if you want to see the <b>startuplogo</b>."
+#~ msgstr ""
+#~ "Pipáljuk ki, ha programindításkor\n"
+#~ "szeretnénk látni a bemutatkozó képet!"
+
+#~ msgid "Show Tip of the Day on startup"
+#~ msgstr "Tippek indításkor"
+
+#~ msgid ""
+#~ "Enable this box if you want to see the <b>tip of the day on startup</b>."
+#~ msgstr ""
+#~ "Pipáljuk ki, ha hasznos tippeket szeretnénk látni a program elindításakor!"
+
+#~ msgid "Use KFM to display http:// URL"
+#~ msgstr ""
+#~ "A KFM használata a weblapok\n"
+#~ "megjelenítésekor"
+
+#~ msgid "Enable this box if you want to display URLs of the modules in KFM."
+#~ msgstr ""
+#~ "Pipáljuk ki, ha a KFM-ben szeretnénk megnyitni\n"
+#~ "a modulokhoz tartozó weblapokat!"
+
+#~ msgid "Use international booknames"
+#~ msgstr "Nemzetközi könyvcímek használata"
+
+#, fuzzy
+#~ msgid "Enable this box if you want to use international booknames!"
+#~ msgstr ""
+#~ "Pipáljuk ki, ha a nemzetközileg elfogadott\n"
+#~ "könyvcímeket szeretnénk látni!"
+
+#~ msgid "Type in the edit line the file extension you want to configure."
+#~ msgstr "Kérem, gépelje be a módosítani kívánt kiterjesztést!"
+
+#~ msgid "Command line"
+#~ msgstr "Parancssor"
+
+#~ msgid ""
+#~ "Use this button to add the specified options as an entry in the list at "
+#~ "the top of the page."
+#~ msgstr ""
+#~ "E gomb segítségével a megadott beállításokat az oldal tetején található\n"
+#~ "listához adhatjuk."
+
+#, fuzzy
+#~ msgid "Use this button to change the current entry"
+#~ msgstr "A kijelölt opció megváltoztatása"
+
+#, fuzzy
+#~ msgid "Click on this button to delete the selected entry in the list."
+#~ msgstr "E gomb segítségével törölhetjük az aktuális listaelemet."
+
+#~ msgid "Check Spelling"
+#~ msgstr "Helyesírás-ellenőrzés"
+
+#~ msgid "Bug Report"
+#~ msgstr "Hiba jelzése"
+
+#, fuzzy
+#~ msgid ""
+#~ "Fill in all information,\n"
+#~ "we need it to help you."
+#~ msgstr ""
+#~ "Kérjük, adjon meg minden szükséges információt,\n"
+#~ "csak így tudunk segíteni!"
+
+#~ msgid "Priority"
+#~ msgstr "Fontosság"
+
+#~ msgid "Your E-mail Address :"
+#~ msgstr "Az Ön E-Mail címe:"
+
+#~ msgid "Subject :"
+#~ msgstr "Tárgy:"
+
+#~ msgid "Error Class :"
+#~ msgstr "Hibaosztály:"
+
+#~ msgid "software bug"
+#~ msgstr "szoftverhiba"
+
+#~ msgid "change-request"
+#~ msgstr "módosítási javaslat"
+
+#~ msgid "how do I ..."
+#~ msgstr "hogyan kell ... ?"
+
+#~ msgid "low"
+#~ msgstr "jelentéktelen"
+
+#~ msgid "medium"
+#~ msgstr "közepes"
+
+#~ msgid "high"
+#~ msgstr "fontos"
+
+#~ msgid "normal"
+#~ msgstr "enyhe"
+
+#~ msgid "grave"
+#~ msgstr "közepes"
+
+#~ msgid "I don´t know"
+#~ msgstr "nem tudom"
+
+#~ msgid "Browsers"
+#~ msgstr "Böngészők"
+
+#~ msgid "Graphical analysis"
+#~ msgstr "Grafikon"
+
+#~ msgid "SWORD"
+#~ msgstr "SWORD"
+
+#~ msgid "General information"
+#~ msgstr "Általános információ"
+
+#~ msgid "Environment"
+#~ msgstr "Környezet"
+
+#~ msgid "BibleTime version :"
+#~ msgstr "BibleTime verzió:"
+
+#~ msgid "KDE version :"
+#~ msgstr "KDE verzió :"
+
+#~ msgid "Compiler"
+#~ msgstr "Fordító program"
+
+#~ msgid "System information"
+#~ msgstr "Rendszerinformáció"
+
+#~ msgid ""
+#~ "Insert as much information about your\n"
+#~ "problem, so that we are able to help by\n"
+#~ "your description."
+#~ msgstr ""
+#~ "Kérjük, annyi információt adjon meg\n"
+#~ "a problémával kapcsolatosan, hogy\n"
+#~ "azok alapján legyen esélyünk\n"
+#~ "a segítségnyújtásra! "
+
+#~ msgid "How to repeat the error :"
+#~ msgstr "Hogyan lehet előidézni a hibát?"
+
+#~ msgid "Perhaps a bugfix or workaround ?"
+#~ msgstr "Javaslat a hiba kijavítására (esetleg áthidaló megoldás):"
+
+#~ msgid "Problem description"
+#~ msgstr "A probléma leírása"
+
+#~ msgid "Send E-Mail"
+#~ msgstr "E-Mail elküldése"
+
+#~ msgid "Please fill in at least the subject and bug description!"
+#~ msgstr "Kérem, legalább a tárgymezöt és a hibaleírást töltse ki!"
+
+#~ msgid ""
+#~ "Bugreport was successfully submitted to the BibleTime Team.\n"
+#~ "\t\tThank you!"
+#~ msgstr ""
+#~ "A hiba bejelentése sikerült!\n"
+#~ "Köszönjük a segítséget!\n"
+#~ "- A BibleTime program készítői"
+
+#, fuzzy
+#~ msgid "Save all to file"
+#~ msgstr "minden mentése egy file-ba"
+
+#, fuzzy
+#~ msgid "Save all with versetext"
+#~ msgstr ""
+#~ "Minden mentése\n"
+#~ "versszámokkal együtt"
+
+#, fuzzy
+#~ msgid "Copy all to clipboard with versetext"
+#~ msgstr ""
+#~ "Mindent vágólapra másol\n"
+#~ "versszámokkal együtt"
+
+#, fuzzy
+#~ msgid "Copy current to clipboard with versetext"
+#~ msgstr ""
+#~ "Az aktuális dokumentum\n"
+#~ "vágólapra másolása\n"
+#~ "versszámokkal együtt"
+
+#, fuzzy
+#~ msgid "Print current"
+#~ msgstr ""
+#~ "Aktuális dokumentum\n"
+#~ "nyomtatása"
+
+#, fuzzy
+#~ msgid "Print current with versetext"
+#~ msgstr ""
+#~ "Aktuális dokumentum\n"
+#~ "nyomtatása\n"
+#~ "versszámokkal"
+
+#, fuzzy
+#~ msgid "Print all"
+#~ msgstr "Mindent nyomtat"
+
+#~ msgid "One entry found!"
+#~ msgstr "Egy találat:"
+
+#, fuzzy
+#~ msgid "Print selected text without key"
+#~ msgstr "A kijelölt szöveg nyomtatása fejezetszámok nélkül"
+
+#, fuzzy
+#~ msgid "Print selected text with key"
+#~ msgstr "A kijelölt szöveg nyomtatása fejezetszámokkal"
+
+#~ msgid "Not found!"
+#~ msgstr "Nincs ilyen."
+
+#~ msgid "\" not found!"
+#~ msgstr "\" nem található."
+
+#~ msgid "Find Complete"
+#~ msgstr "A keresés véget ért."
+
+#~ msgid "Sorry, but without a filename I can't save the list."
+#~ msgstr ""
+#~ "Sajnálom, file-név megadása nélkül\n"
+#~ "nem lehet elmenteni a listát!"
+
+#~ msgid "Medium"
+#~ msgstr "Közepes"
+
+#~ msgid "Fixed Font"
+#~ msgstr "Fix betűtípus"
+
+#~ msgid "Background color:"
+#~ msgstr "Háttér színe:"
+
+#~ msgid ""
+#~ "<B>Background color</B><BR><BR>This color is the background<BR>color of "
+#~ "the<BR>browsers.<BR>Use a color with a good contrast<BR>to the other "
+#~ "colors."
+#~ msgstr ""
+#~ "<B>Háttér színe</B><BR>Ilyen színű lesz a böngészőben\n"
+#~ "látható szövegek háttere.\n"
+#~ "A többi színt érdemes úgy megválasztani,\n"
+#~ "hogy jó kontrasztot adjanak."
+
+#~ msgid ""
+#~ "<B>Normal text color</B><BR><BR>The normal text is displayed<BR>in this "
+#~ "this color."
+#~ msgstr ""
+#~ "<B>Általános szöveg színe</B><BR>Ilyen színnel történik majd az "
+#~ "általános\n"
+#~ "szöveg megjelenítése."
+
+#~ msgid ""
+#~ "<B>URL link color</B><BR><BR>This color is used for displaying URLs."
+#~ "<BR>Use a color like red or dark green."
+#~ msgstr ""
+#~ "<B>A WWW linkek színe:</B><BR>Ezzel a színnel történik az Internetes "
+#~ "linkek megjelenítésese\n"
+#~ "Általában a vörös vagy a sötétzöld jó választás."
+
+#~ msgid "Followed link color:"
+#~ msgstr "Követett linkek színe:"
+
+#~ msgid ""
+#~ "<B>Followed link color</B><BR><BR>This color is used to display visited "
+#~ "links."
+#~ msgstr ""
+#~ "<B>Követett linkek színe</B><BR>Ezzel a színnel történik a már "
+#~ "meglátogatott\n"
+#~ "Internetes címek jelölése."
+
+#~ msgid "Versenumber color"
+#~ msgstr "Versszámozás színe:"
+
+#~ msgid ""
+#~ "<B>Versenumber color</B><BR><BR>Each versenumber is displayed in this "
+#~ "color."
+#~ msgstr ""
+#~ "<B>Versszámozás színe</B><BR>Minden vers számozása ilyen színnel történik"
+
+#~ msgid ""
+#~ "<B>Highlighted verse color</B><BR><BR>The selected verse is displayed in "
+#~ "this color."
+#~ msgstr ""
+#~ "<B>A kijelölt vers színe</B><BR>Az éppen kijelölt vers szövege\n"
+#~ "ilyen színű lesz."
+
+#~ msgid ""
+#~ "<B>Underline links</B><BR><BR>Activate this checkbox if you want to "
+#~ "see<BR>the links underlined.<BR>Useful for better recognition"
+#~ msgstr ""
+#~ "<B>Linkek aláhúzása</B><BR>Akkor jelöljük be, ha azt szeretnénk,\n"
+#~ "hogy az Internetes linkek alá legyenek húzva.\n"
+#~ "Ez általában segít a linkek felismerésében."
+
+#~ msgid "Page"
+#~ msgstr "Oldal"
+
+#~ msgid "Page layout"
+#~ msgstr "Oldalbeállítás"
+
+#~ msgid "Host"
+#~ msgstr "Számítógép"
+
+#~ msgid "Comment"
+#~ msgstr "Megjegyzés"
+
+#~ msgid "Print to fi&le"
+#~ msgstr "Nyomtatás fi&le-ba"
+
+#~ msgid "&Browse"
+#~ msgstr "&Böngészés"
+
+#~ msgid "&Everything"
+#~ msgstr "&Minden"
+
+#~ msgid "&Range"
+#~ msgstr "&Tartomány"
+
+#, fuzzy
+#~ msgid "&From page"
+#~ msgstr "&Honnan:"
+
+#, fuzzy
+#~ msgid "&To page"
+#~ msgstr "M&eddig:"
+
+#~ msgid "Text formatting"
+#~ msgstr "Szövegformázás"
+
+#~ msgid "Print as postscr&ipt"
+#~ msgstr "Nyomtatás postsc&ript-ként"
+
+#~ msgid ""
+#~ "This choice will ignore\n"
+#~ "certain options. Refer to\n"
+#~ "help for more information."
+#~ msgstr ""
+#~ "Ha ezt választjuk, egyes\n"
+#~ "opciók kimaradnak.\n"
+#~ "További információ\n"
+#~ "a kézikönyvben."
+
+#~ msgid "Por&trait"
+#~ msgstr "Álló"
+
+#~ msgid "Print in c&olor"
+#~ msgstr "Színes nyomtatás"
+
+#~ msgid "Print in &grayscale"
+#~ msgstr "Szürkeskálás nyomtatás"
+
+#~ msgid "Print in black and &white only"
+#~ msgstr "Fekete-fehér nyomtatás"
+
+#~ msgid "Paper t&ype"
+#~ msgstr "Papírméret"
+
+#~ msgid "Size: 8888mm x 8888mm"
+#~ msgstr "Méret: 8888mm x 8888mm"
+
+#~ msgid "&Scale down printed document to fit selected paper type"
+#~ msgstr "A nyomtatandó dokumentum megadott parírméretre zsugorítása"
+
+#~ msgid "&Number of copies"
+#~ msgstr "Példányok"
+
+#~ msgid "Print &first page first"
+#~ msgstr "&Első oldalt először"
+
+#~ msgid "Print &last page first"
+#~ msgstr "&Utolsó oldalt először"
+
+#~ msgid "Pr&eview application"
+#~ msgstr "Alkalmazás megtekintése"
+
+#~ msgid "&Bottom"
+#~ msgstr "&Lent"
+
+#~ msgid "Draw h&eader above text"
+#~ msgstr "Fejléc rajzolása"
+
+#~ msgid "Left"
+#~ msgstr "Bal"
+
+#~ msgid "Right"
+#~ msgstr "Jobb"
+
+#~ msgid "None"
+#~ msgstr "Nincs"
+
+#~ msgid "Date and time"
+#~ msgstr "Dátum és idő"
+
+#~ msgid "Page number"
+#~ msgstr "Oldalszám"
+
+#~ msgid "FreeString"
+#~ msgstr "Tetszőleges szöveg"
+
+#~ msgid "Single line"
+#~ msgstr "Vonal"
+
+#~ msgid "Rectangle"
+#~ msgstr "Téglalap"
+
+#~ msgid "Draw &footer below text"
+#~ msgstr "Lábléc rajzolása"
+
+#~ msgid "Unable to parse or read any printcap files"
+#~ msgstr ""
+#~ "Nem sikerült a nyomtató beállításainak olvasása (/etc/printcap file?)"
+
+#~ msgid "A4"
+#~ msgstr "A4"
+
+#~ msgid "B5"
+#~ msgstr "B5"
+
+#~ msgid "Letter"
+#~ msgstr "Letter"
+
+#~ msgid "Legal"
+#~ msgstr "Legal"
+
+#~ msgid "Executive"
+#~ msgstr "Executive"
+
+#~ msgid "A0"
+#~ msgstr "A0"
+
+#~ msgid "A1"
+#~ msgstr "A1"
+
+#~ msgid "A2"
+#~ msgstr "A2"
+
+#~ msgid "A3"
+#~ msgstr "A3"
+
+#~ msgid "A5"
+#~ msgstr "A5"
+
+#~ msgid "A6"
+#~ msgstr "A6"
+
+#~ msgid "A7"
+#~ msgstr "A7"
+
+#~ msgid "A8"
+#~ msgstr "A8"
+
+#~ msgid "A9"
+#~ msgstr "A9"
+
+#~ msgid "B0"
+#~ msgstr "B0"
+
+#~ msgid "B1"
+#~ msgstr "B1"
+
+#~ msgid "B10"
+#~ msgstr "B10"
+
+#~ msgid "B2"
+#~ msgstr "B2"
+
+#~ msgid "B3"
+#~ msgstr "B3"
+
+#~ msgid "B4"
+#~ msgstr "B4"
+
+#~ msgid "B6"
+#~ msgstr "B6"
+
+#~ msgid "B7"
+#~ msgstr "B7"
+
+#~ msgid "B8"
+#~ msgstr "B8"
+
+#~ msgid "B9"
+#~ msgstr "B9"
+
+#~ msgid "C5E"
+#~ msgstr "C5E"
+
+#~ msgid "Comm10E"
+#~ msgstr "Comm10E"
+
+#~ msgid "DLE"
+#~ msgstr "DLE"
+
+#~ msgid "Folio"
+#~ msgstr "Folio"
+
+#~ msgid "Tabloid"
+#~ msgstr "Tabloid"
+
+#~ msgid "You must specify a destination file."
+#~ msgstr "Kérem, jelölje ki a célfile-t!"
+
+#~ msgid "You have specified an existing directory."
+#~ msgstr "Ez a könyvtár már létezik!"
+
+#~ msgid "You do not have write permission to this file."
+#~ msgstr "Nincs írási jogosultsága ehhez a file-hoz!"
+
+#~ msgid "You have specified an existing file."
+#~ msgstr "Ez a file már létezik!"
+
+#~ msgid "Overwrite current file?"
+#~ msgstr "Felülírás?"
+
+#~ msgid "Illegal format or missing range specification"
+#~ msgstr "Helytelen formátum, vagy hiányos méret"
+
+#~ msgid ""
+#~ "Not available yet!\n"
+#~ "Print plain text to printer"
+#~ msgstr ""
+#~ "Ez a funkció még nem készült el.\n"
+#~ "Sima szöveg nyomtatása"
+
+#~ msgid "BibleTime, Version "
+#~ msgstr "BibleTime verziószám"
+
+#~ msgid "Preview File"
+#~ msgstr "File megtekintése"
+
+#~ msgid "You must specify a file!"
+#~ msgstr "Kérem, jelöljön ki egy file-t!"
+
+#~ msgid "External Process"
+#~ msgstr "Külső folyamat"
+
+#~ msgid "The properties of your chosen group."
+#~ msgstr "A kiválasztott csoport jellemzői"
+
+#~ msgid "Closes the dialog"
+#~ msgstr "Párbeszédablak bezárása"
+
+#~ msgid "Closes the dialog without applying the changes."
+#~ msgstr "A párbeszédablak bezárása a változtatások elvetésével"
+
+#~ msgid "Group Name:"
+#~ msgstr "Csoport neve:"
+
+#~ msgid "Find:"
+#~ msgstr "Keresés:"
+
+#~ msgid "&Find"
+#~ msgstr "K&eres"
+
+#~ msgid "&Print"
+#~ msgstr "&Nyomtatás"
+
+#~ msgid "&Apply"
+#~ msgstr "&Alkalmaz"
+
+#~ msgid "BibleTime - graphical analysis"
+#~ msgstr "BibleTime - grafikon"
+
+#~ msgid "&To offset"
+#~ msgstr "Medd&ig:"
+
+#~ msgid "grep: "
+#~ msgstr "grep: "
