@@ -328,16 +328,16 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 void CMDIArea::triggerWindowUpdate() {
 	//qDebug("CMDIArea::triggerWindowUpdate");
 
-	if (updatesEnabled() && usableWindowList().count() ) {
+	if (updatesEnabled() /*&& usableWindowList().count()*/ ) {
 		switch (m_guiOption) {
 			case autoTileVertical:
-			QTimer::singleShot(0, this, SLOT(myTileVertical()));
+			QTimer::singleShot(500, this, SLOT(myTileVertical()));
 			break;
 			case autoTileHorizontal:
-			QTimer::singleShot(0, this, SLOT(myTileHorizontal()));
+			QTimer::singleShot(500, this, SLOT(myTileHorizontal()));
 			break;
 			case autoCascade:
-			QTimer::singleShot(0, this, SLOT(myCascade()));
+			QTimer::singleShot(500, this, SLOT(myCascade()));
 			break;
 			default:
 			qDebug("CMDIArea::triggerWindowUpdate: no known m_guiType");
