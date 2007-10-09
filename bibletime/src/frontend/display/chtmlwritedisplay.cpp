@@ -135,7 +135,7 @@ void CHTMLWriteDisplay::slotFontChanged( const QFont& font ) {
 	m_actions.underline->setChecked( font.underline() );
 };
 
-void CHTMLWriteDisplay::setupToolbar(KToolBar * bar, KActionCollection * actions) {
+void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions) {
 	
 	//--------------------font chooser-------------------------
 	//TODO: clean the comments after the port works
@@ -231,16 +231,6 @@ void CHTMLWriteDisplay::setupToolbar(KToolBar * bar, KActionCollection * actions
 	m_actions.alignRight->setToolTip( CResMgr::displaywindows::writeWindow::alignRight::tooltip );
 	bar->addAction(m_actions.alignRight);
 
-	//  m_actions.alignJustify = new KToggleAction( i18n("Justify"),
-	//    CResMgr::displaywindows::writeWindow::alignJustify::icon,
-	//    CResMgr::displaywindows::writeWindow::alignJustify::accel,
-	//    this, SLOT( alignJustify()  ),
-	//    actions
-	//  );
-	//  m_actions.alignJustify->setToolTip( CResMgr::displaywindows::writeWindow::alignJustify::tooltip );
-
-	//  m_actions.alignJustify->plug(bar);
-
 
 	connect(this, SIGNAL(currentFontChanged(const QFont&)), SLOT(slotFontChanged(const QFont&)));
 	connect(this, SIGNAL(currentAlignmentChanged(int)), SLOT(slotAlignmentChanged(int)));
@@ -251,19 +241,18 @@ void CHTMLWriteDisplay::setupToolbar(KToolBar * bar, KActionCollection * actions
 	slotFontChanged( font() );
 	slotAlignmentChanged( alignment() );
 	slotColorChanged( textColor() );
+
 }
 
 /** Reimplementation to show a popup menu if the right mouse button was clicked. */
 QMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& ) {
 	if (!m_actions.selectAll) {
-		//m_actions.selectAll = new KAction(i18n("Select all"), KShortcut(0), this, SLOT(selectAll()), this); //kde3
 		m_actions.selectAll = new KAction(i18n("Select all"), this);
 		connect(m_actions.selectAll, SIGNAL(triggered(bool)), SLOT(selectAll()));
 	}
 
 	KMenu* popup = new KMenu(this);
 	popup->addTitle(i18n("HTML editor window"));
-	//m_actions.selectAll->plug(popup);
 	popup->addAction(m_actions.selectAll);
 	return popup;
 };

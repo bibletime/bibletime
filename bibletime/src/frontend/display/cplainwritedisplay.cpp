@@ -10,11 +10,11 @@
 
 #include "cplainwritedisplay.h"
 
-#include "../cdragdrop.h"
-#include "../displaywindow/cdisplaywindow.h"
-#include "../displaywindow/cwritewindow.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
-#include "../../util/scoped_resource.h"
+#include "util/scoped_resource.h"
 
 //Qt includes
 #include <QDragEnterEvent>
@@ -101,7 +101,7 @@ QMenu* CPlainWriteDisplay::createPopupMenu( ) {
 }
 
 /** Creates the necessary action objects and puts them on the toolbar. */
-void CPlainWriteDisplay::setupToolbar(KToolBar* /*bar*/, KActionCollection* /*actionCollection*/) {}
+void CPlainWriteDisplay::setupToolbar(QToolBar*, KActionCollection*) {}
 
 /** Reimplementation to insert the text of a dragged reference into the edit view. */
 void CPlainWriteDisplay::dragEnterEvent( QDragEnterEvent* e ) {

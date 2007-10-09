@@ -12,10 +12,8 @@
 //BibleTime includes
 #include "cwritedisplay.h"
 
-#include "../displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
-//Qt includes
-#include <qwidget.h>
 
 CWriteDisplay::CWriteDisplay( CWriteWindow* writeWindow ) : CDisplay(writeWindow) {}
 

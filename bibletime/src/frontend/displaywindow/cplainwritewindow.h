@@ -15,9 +15,6 @@
 //BibleTime includes
 #include "cwritewindow.h"
 
-//Qt includes
-//#include <qwidget.h>
-
 
 class KAction;
 class KToggleAction;

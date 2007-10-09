@@ -13,7 +13,6 @@
 #define CWRITEWINDOW_H
 
 //BibleTime includes
-//#include "frontend/display/cwritedisplay.h"
 #include "cdisplaywindow.h"
 
 
@@ -22,6 +21,7 @@ class CWriteDisplay;
 class KActionCollection;
 
 class QString;
+
 
 /**The base class for all write-only display windows.
   *@author The BibleTime team

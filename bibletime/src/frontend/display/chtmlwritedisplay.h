@@ -20,6 +20,7 @@ class CWriteWindow;
 
 class QMenu;
 class QWidget;
+class QToolBar;
 
 class KToggleAction;
 class KFontAction;
@@ -45,7 +46,7 @@ public:
 	* Creates the necessary action objects and puts them on the toolbar.
 	* (CPlainWriteDisplay)
 	*/
-	virtual void setupToolbar(KToolBar * bar, KActionCollection * actionCollection);
+	virtual void setupToolbar(QToolBar * bar, KActionCollection * actionCollection);
 
 protected:
 	friend class CDisplay;

@@ -20,13 +20,14 @@
 #include "util/cresmgr.h"
 
 //Qt includes
+#include <QToolBar>
 
 //KDE includes
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <klocale.h>
-#include <ktoolbar.h>
+
 
 using namespace Profile;
 
@@ -41,15 +42,11 @@ void CHTMLWriteWindow::initView() {
 	setDisplayWidget( writeDisplay );
 	setCentralWidget( displayWidget()->view() );
 
-	setMainToolBar( new KToolBar(this) );
-	//mainToolBar()->setFullSize(true);
-	//this->addToolBarBreak(); // to replace setFullSize of Qt3?
-	//TODO: Qt4 is different; I just remove the docking capability now
-	//addDockWindow(mainToolBar());
+	setMainToolBar( new QToolBar(this) );
+	addToolBar(mainToolBar());
 
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
-	//mainToolBar()->setFullSize(false); //why?
 };
 
 void CHTMLWriteWindow::initConnections() {
@@ -62,7 +59,7 @@ void CHTMLWriteWindow::initConnections() {
 };
 
 void CHTMLWriteWindow::initToolbars() {
-	//setup the toolbar
+	//setup the main toolbar
 	m_actions.syncWindow = new KToggleAction(
 			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
 			i18n("Sync with active Bible"),
@@ -107,12 +104,10 @@ void CHTMLWriteWindow::initToolbars() {
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, m_actions.restoreText);
 	mainToolBar()->addAction(m_actions.restoreText);
 
-
-	KToolBar* bar = new KToolBar(this);
-	//bar->setFullSize(true);
-	//addDockWindow(bar); //see cplainwritewindow
-
+	//html formatting toolbar
+	QToolBar* bar = new QToolBar(this);
 	displayWidget()->setupToolbar( bar, actionCollection() );
+	addToolBar(bar);
 }
 
 void CHTMLWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {

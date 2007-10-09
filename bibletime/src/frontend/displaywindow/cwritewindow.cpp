@@ -30,15 +30,7 @@ CWriteWindow::CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
 CWriteWindow::~CWriteWindow() {}
 
 
-// void CWriteWindow::insertKeyboardActions( KAccel* const /*a*/ ) {
-//
-// };
-void CWriteWindow::insertKeyboardActions( KActionCollection* const ) {
-	/* new KAction(
-	  i18n("Next book"), CResMgr::displaywindows::bibleWindow::nextBook::accel,
-	  a, "nextBook"
-	 );*/
-}
+void CWriteWindow::insertKeyboardActions( KActionCollection* const ) {}
 
 void CWriteWindow::initConnections() {
 	//  qWarning("CWriteWindow::initConnections()");
@@ -82,7 +74,6 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 
 	QStringList mods;
 	ListCSwordModuleInfo allMods = modules();
-	//  for (CSwordModuleInfo* m = modules().first(); m; m = modules().next()) {
 	ListCSwordModuleInfo::iterator end_it = allMods.end();
 	for (ListCSwordModuleInfo::iterator it(allMods.begin()); it != end_it; ++it) {
 		mods.append((*it)->name());

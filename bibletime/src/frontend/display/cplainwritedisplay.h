@@ -66,7 +66,7 @@ public:
 	/**
 	* Creates the necessary action objects and puts them on the toolbar (CWriteDisplay).
 	*/
-	virtual void setupToolbar(KToolBar * bar, KActionCollection * actionCollection);
+	virtual void setupToolbar(QToolBar*, KActionCollection*);
 
 protected:
 	friend class CDisplay;

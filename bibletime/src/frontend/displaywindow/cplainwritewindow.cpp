@@ -21,7 +21,8 @@
 #include "util/cresmgr.h"
 
 //Qt includes
-#include <qregexp.h>
+#include <QRegExp>
+#include <QToolBar>
 
 //KDE includes
 #include <kaction.h>
@@ -29,7 +30,7 @@
 #include <ktoggleaction.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <ktoolbar.h>
+
 
 using namespace Profile;
 
@@ -48,16 +49,11 @@ void CPlainWriteWindow::initView() {
 	setDisplayWidget( CDisplay::createWriteInstance(this) );
 	setCentralWidget( displayWidget()->view() );
 
-	setMainToolBar( new KToolBar(this) );
-	//mainToolBar()->setFullSize(true);
-	//this->addToolBarBreak(); // to replace setFullSize of Qt3?
-	//TODO: Qt4 is different; I just remove the docking capability now
-	//addDockWindow(mainToolBar());
+	setMainToolBar( new QToolBar(this) );
+	addToolBar(mainToolBar());
 
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
-	//mainToolBar()->setFullSize(false); //why?
-
 }
 
 void CPlainWriteWindow::initToolbars() {
