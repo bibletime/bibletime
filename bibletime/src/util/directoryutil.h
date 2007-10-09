@@ -59,8 +59,11 @@ public:
 	/** Return the path to the xml files. */
 	static QDir getXmlDir(void);
 	
-	/** Return the path to the xml files. */
+	/** Return the path to the translation files. */
 	static QDir getLocaleDir(void);
+
+	/** Return the path to the documentation files. */
+	static QDir getDocsDir(void);
 
 	
 private:

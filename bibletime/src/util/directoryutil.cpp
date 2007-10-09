@@ -82,6 +82,7 @@ static QDir cachedIconDir;
 static QDir cachedPicsDir;
 static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
+static QDir cachedDocsDir;
 static bool dirCacheInitialized = false;
 
 void DirectoryUtil::initDirectoryCache(void)
@@ -118,6 +119,12 @@ void DirectoryUtil::initDirectoryCache(void)
 	cachedLocaleDir = wDir; //xml dir
 	if (!cachedLocaleDir.cd("share/bibletime/locale")) {
 		qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
+		throw;
+	}
+
+	cachedDocsDir = wDir; //xml dir
+	if (!cachedDocsDir.cd("share/bibletime/docs/")) {
+		qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
 
@@ -161,6 +168,12 @@ QDir DirectoryUtil::getLocaleDir(void)
 {
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedLocaleDir;
+}
+
+QDir DirectoryUtil::getDocsDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedDocsDir;
 }
 
 

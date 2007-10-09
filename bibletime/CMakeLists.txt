@@ -246,6 +246,7 @@ FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
 INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
 INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
+INSTALL(FILES "docs/tips.xml" DESTINATION "share/bibletime/docs/")
 
 #######################################
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F

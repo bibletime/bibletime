@@ -14,6 +14,7 @@
 #include "backend/keys/cswordversekey.h"
 
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 #include "frontend/cmdiarea.h"
 #include "frontend/profile/cprofilemgr.h"
@@ -148,9 +149,8 @@ void BibleTime::slotSwordSetupChanged() {
 
 /** Shows the daily tip */
 void BibleTime::slotHelpTipOfDay() {
-	KTipDialog::setShowOnStart( CBTConfig::get
-									(CBTConfig::tips) );
-	KTipDialog::showTip(this, "bibletime/tips", true);
+	KTipDialog::setShowOnStart( CBTConfig::get(CBTConfig::tips) );
+	KTipDialog::showTip(this, util::filesystem::DirectoryUtil::getDocsDir().canonicalPath().append("/tips.xml"), true);
 }
 
 /** Is called just before the window menu is ahown. */
