@@ -23,7 +23,8 @@
 
 //KDE includes
 #include <klocale.h>
-//#include <kmenu.h>
+
+
 
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const ListCSwordModuleInfo& useModules,QWidget *parent )
 : QToolButton(parent) {
@@ -36,7 +37,6 @@ CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *di
 
 	m_popup = new QMenu(this);
 	setMenu(m_popup);
-	//setPopupDelay(0001); //Fix, O only opens menu on mouse release or move
 	setPopupMode(QToolButton::InstantPopup);
 
 	connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(optionToggled(QAction*)));
@@ -162,12 +162,10 @@ int CDisplaySettingsButton::addMenuEntry( const QString name, OptionType type, c
 
 bool CDisplaySettingsButton::isOptionAvailable( const CSwordModuleInfo::FilterTypes option ) {
 	bool ret = false;
-	//  for (m_modules.first(); m_modules.current() && !ret; m_modules.next()) {
 	ListCSwordModuleInfo::iterator end_it = m_modules.end();
 	for (ListCSwordModuleInfo::iterator it(m_modules.begin()); it != end_it; ++it) {
 		ret = ret || (*it)->has(option);
 	}
-
 	return ret;
 }
 
@@ -178,18 +176,13 @@ const int CDisplaySettingsButton::menuItemCount() {
 
 /** Sets the item at position pos to the state given as 2nd paramter. */
 void CDisplaySettingsButton::setItemStatus( const int index, const bool checked ) {
-	//const int ID = m_popup->idAt(index);
 	QAction* action = m_popup->actions().at(index);
-	action->setChecked(checked); //m_popup->setItemChecked(ID, checked);
-	//const QString text = action->text();
-	//if (m_dict[text]) {
-	//	m_dict[text] = checked;
-	//}
+	action->setChecked(checked);
 }
 
 /** Returns the status of the item at position "index" */
 const bool CDisplaySettingsButton::itemStatus( const int index ) {
-	return m_popup->actions().at(index)->isChecked(); //m_popup->isItemChecked( m_popup->idAt(index) );
+	return m_popup->actions().at(index)->isChecked();
 }
 
 /** Sets the status to changed. The signal changed will be emitted. */
