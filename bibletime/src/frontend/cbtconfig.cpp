@@ -16,6 +16,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QApplication>
@@ -694,9 +695,11 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 
 KConfig* const CBTConfig::getConfig()
 {
+	static KConfig config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", KConfig::NoGlobals);
+	return &config;
 	//qDebug("CBTConfig::getConfig");
-	KSharedConfigPtr sharedconfigptr = (KGlobal::config());
-	KConfig* config = &(*sharedconfigptr);
+	//KSharedConfigPtr sharedconfigptr = (KGlobal::config());
+	//KConfig* config = &(*sharedconfigptr);
 
 	//if (KApplication::kApplication()->sessionSaving()) {
 	//	qWarning("Using session config");
@@ -706,5 +709,5 @@ KConfig* const CBTConfig::getConfig()
 	//	qWarning("isRestored(): Using session config");
 	//}
 
-	return config;
+	//return config;
 }

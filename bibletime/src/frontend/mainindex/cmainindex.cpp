@@ -31,6 +31,7 @@
 
 #include "util/cresmgr.h"
 #include "util/scoped_resource.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QInputDialog>
@@ -48,7 +49,6 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kstandarddirs.h>
 #include <kmenu.h>
 #include <kmessagebox.h>
 #include <kglobalsettings.h>
@@ -909,9 +909,8 @@ void CMainIndex::saveBookmarks() {
 
 		if (i && (i->type() == CIndexItemBase::BookmarkFolder)) { 
 			//found the bookmark folder
-			KStandardDirs stdDirs;
 
-			const QString path = stdDirs.saveLocation("data", "bibletime/");
+			const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
 			if (!path.isEmpty()) {
 				//save the bookmarks to the right file
 				if (CIndexBookmarkFolder* f = dynamic_cast<CIndexBookmarkFolder*>(i)) {

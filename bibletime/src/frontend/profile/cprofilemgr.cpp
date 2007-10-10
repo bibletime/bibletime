@@ -10,22 +10,20 @@
 
 
 #include "cprofilemgr.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QDir>
 #include <QFile>
 #include <QList>
 
-//KDE includes
-#include <kstandarddirs.h>
 
 namespace Profile {
 
 CProfileMgr::CProfileMgr() : m_startupProfile(0) {
 	//m_profiles.setAutoDelete(true);
 
-	KStandardDirs stdDirs;
-	m_profilePath = stdDirs.saveLocation("data", "bibletime/sessions/");
+	m_profilePath = util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/";
 
 	QDir d( m_profilePath );
 	QStringList files = d.entryList(QStringList("*.xml"));

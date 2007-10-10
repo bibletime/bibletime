@@ -21,13 +21,13 @@
 
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 #include <QTextStream>
 #include <QString>
 #include <QFile>
 #include <QMimeData>
 
-#include <kstandarddirs.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 
@@ -46,8 +46,7 @@ CIndexBookmarkFolder::~CIndexBookmarkFolder() {}
 void CIndexBookmarkFolder::initTree() {
 	addGroup(OldBookmarkFolder, "*");
 
-	KStandardDirs stdDirs;
-	const QString path = stdDirs.saveLocation("data", "bibletime/");
+	const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
 	if (!path.isEmpty()) {
 		loadBookmarks(path + "bookmarks.xml");
 	}

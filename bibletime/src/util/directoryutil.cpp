@@ -83,6 +83,9 @@ static QDir cachedPicsDir;
 static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
 static QDir cachedDocsDir;
+static QDir cachedUserBaseDir;
+static QDir cachedUserSessionsDir;
+
 static bool dirCacheInitialized = false;
 
 void DirectoryUtil::initDirectoryCache(void)
@@ -127,6 +130,26 @@ void DirectoryUtil::initDirectoryCache(void)
 		qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
+
+	wDir = QDir::home();
+	if (!wDir.cd(".bibletime")){
+		bool success = wDir.mkdir(".bibletime") && wDir.cd(".bibletime");
+		if (!success){
+			qWarning() << "Could not create user setting directory.";
+			throw;
+		}
+	}
+
+	cachedUserBaseDir = wDir;
+	if (!wDir.cd("sessions")){
+		bool success = wDir.mkdir("sessions") && wDir.cd("sessions");
+		if (!success){
+			qWarning() << "Could not create user sessions directory.";
+			throw;
+		}
+	}
+
+	cachedUserSessionsDir = wDir;
 
 	dirCacheInitialized = true;
 }
@@ -176,6 +199,17 @@ QDir DirectoryUtil::getDocsDir(void)
 	return cachedDocsDir;
 }
 
+QDir DirectoryUtil::getUserBaseDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserBaseDir;
+}
+
+QDir DirectoryUtil::getUserSessionsDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserSessionsDir;
+}
 
 } //end of namespace util::filesystem
 

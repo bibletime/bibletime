@@ -8,6 +8,7 @@
 **********/
 
 #include "cprofile.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QFile>
@@ -16,7 +17,6 @@
 #include <QDomDocument>
 
 //KDE includes
-#include <kstandarddirs.h>
 #include <klocale.h>
 
 #define CURRENT_SYNTAX_VERSION 2
@@ -37,8 +37,7 @@ CProfile::CProfile( const QString& file, const QString& name )
 	else if (m_filename.isEmpty() && !name.isEmpty()) {
 		m_filename = name;
 		m_filename.replace(QRegExp("\\s=#."),"_");
-		KStandardDirs stdDirs;
-		m_filename = stdDirs.saveLocation("data", "bibletime/sessions/") + m_filename + ".xml";
+		m_filename = util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/"  + m_filename + ".xml";
 		init(m_filename);
 	}
 	else {

@@ -65,6 +65,11 @@ public:
 	/** Return the path to the documentation files. */
 	static QDir getDocsDir(void);
 
+	/** Return the path to the user's settings directory.*/
+	static QDir getUserBaseDir(void);
+
+	/** Return the path to the user's sessions directory.*/
+	static QDir getUserSessionsDir(void);
 	
 private:
 	/** Will cache a few directories like icon directory */

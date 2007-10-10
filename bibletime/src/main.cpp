@@ -290,16 +290,14 @@ int main(int argc, char* argv[]) {
 						break;
 					}
 					//Copy our old bibletimerc into the new KDE4 directory.
-					QString newRcLoc = stdDirs.locateLocal("config",
-							"bibletimerc");
+					QString newRcLoc = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
 					QFile newRc(newRcLoc);
 					newRc.remove();
 					oldRc.copy(newRcLoc);
 					QFile oldBookmarks(currSearch +
 							"/share/apps/bibletime/bookmarks.xml");
 					if (oldBookmarks.exists()){
-						QString newBookmarksLoc = stdDirs.saveLocation("data",
-								"bibletime/") + "bookmarks.xml";
+						QString newBookmarksLoc = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bookmarks.xml";
 						QFile newBookmarks(newBookmarksLoc);
 						newBookmarks.remove();
 						oldBookmarks.copy(newBookmarksLoc);
@@ -312,8 +310,7 @@ int main(int argc, char* argv[]) {
 								files.end(); ++it){
 							QFile currFile(sessionDir.path() + "/" + *it);
 							QString currNewFileLoc =
-									stdDirs.saveLocation("data",
-									"bibletime/sessions") + *it;
+									util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/" + *it;
 							QFile currNewFile(currNewFileLoc);
 							currNewFile.remove();
 							currFile.copy(currNewFileLoc);
