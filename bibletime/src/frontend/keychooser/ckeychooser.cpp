@@ -54,10 +54,11 @@ void CKeyChooser::backInHistory() {
 }
 
 void CKeyChooser::backInHistory(QAction* action) {
-	m_inHistoryFunction = true;
-	//  qWarning("go back %d items in history", count);
+	Q_ASSERT(action);
+	Q_ASSERT( (m_prevKeyHistoryList.count() > 0) );
 
-	//Q_ASSERT(m_prevKeyHistoryList.size());
+	m_inHistoryFunction = true;
+	
 	if (m_prevKeyHistoryList.empty()) return;
 
 	//find the key of the action in the list
@@ -69,16 +70,14 @@ void CKeyChooser::backInHistory(QAction* action) {
 		index = 1;
 	}
 	QStringList::iterator it = m_prevKeyHistoryList.begin();
-	//pop_front count items, the top item is then the new current key
 	while ((index > 0) && (it != m_prevKeyHistoryList.end())) {
-		//    qWarning("pop_front");
-
 		m_nextKeyHistoryList.prepend(*it);
 		it = m_prevKeyHistoryList.erase(it);
 		--index;
 	}
 
 	//the first item is now the item which should be set as key
+	Q_ASSERT(key());
 	if (it != m_nextKeyHistoryList.end() && key()) {
 		CSwordKey* k = key();
 		k->key(*it);
@@ -93,9 +92,11 @@ void CKeyChooser::forwardInHistory() {
 }
 
 void CKeyChooser::forwardInHistory(QAction* action) {
+	Q_ASSERT(m_nextKeyHistoryList.size());
+	Q_ASSERT(action);
+
 	m_inHistoryFunction = true;
-	//  qWarning("go forward %d items in history", count);
-	//Q_ASSERT(m_nextKeyHistoryList.size());
+	
 	if (m_nextKeyHistoryList.empty()) return;
 
 	//find the key of the action in the list
@@ -107,16 +108,14 @@ void CKeyChooser::forwardInHistory(QAction* action) {
 		index = 1;
 	}
 	QStringList::iterator it = m_nextKeyHistoryList.begin();
-	//pop_front count-1 items, the top item is then the new current key
 	while (index > 0 && it != m_nextKeyHistoryList.end()) {
-		//    qWarning("pop_front");
-
 		m_prevKeyHistoryList.prepend(*it);
 		it = m_nextKeyHistoryList.erase(it);
 		--index;
 	}
 
 	//the first item of the back list is now the new key
+	Q_ASSERT(key());
 	it = m_prevKeyHistoryList.begin();
 	if (it != m_prevKeyHistoryList.end() && key()) {
 		CSwordKey* k = key();
@@ -153,13 +152,6 @@ const QStringList CKeyChooser::getNextKeys() const {
 }
 
 
-///*!
-//    \fn CKeyChooser::polish()
-// */
-//void CKeyChooser::polish() {
-//	//Changed to ensurePolished() in qt4, just to be cautious I save this
-//	ensurePolished();
-//}
 
 //should be deleted unless some way to get this to work is found
 void CKeyChooser::ensurePolished() const {
@@ -168,12 +160,3 @@ void CKeyChooser::ensurePolished() const {
 	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
 	QWidget::ensurePolished();
 }
-
-// bool CKeyChooser::event(QEvent* e)
-// {
-// 	if (e->type() == QEvent::Polish) {
-// 		qDebug("CKeyChooser::event type Polish");
-// 		connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
-// 	}
-// 	QWidget::event(e);
-// }
