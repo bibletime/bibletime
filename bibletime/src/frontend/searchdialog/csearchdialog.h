@@ -14,7 +14,7 @@
 
 //BibleTime includes
 #include "csearchdialogareas.h"
-#include "csearchanalysis.h"
+//#include "csearchanalysis.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"

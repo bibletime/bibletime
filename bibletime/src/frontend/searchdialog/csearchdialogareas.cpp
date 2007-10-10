@@ -13,7 +13,7 @@
 #include "csearchdialogareas.moc"
 
 #include "csearchdialog.h"
-#include "csearchanalysis.h"
+//#include "csearchanalysis.h"
 #include "crangechooserdialog.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"

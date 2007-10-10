@@ -14,7 +14,7 @@
 
 #include "backend/keys/cswordversekey.h"
 
-#include "frontend/cdragdropmgr.h"
+//#include "frontend/cdragdropmgr.h"
 #include "frontend/cexportmanager.h"
 
 #include "util/cresmgr.h"
@@ -25,6 +25,7 @@
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QContextMenuEvent>
 
 //KDE includes
 #include <klocale.h>

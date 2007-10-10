@@ -11,7 +11,7 @@
 
 #include "csearchdialog.h"
 #include "csearchdialogareas.h"
-#include "csearchanalysis.h"
+//#include "csearchanalysis.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
