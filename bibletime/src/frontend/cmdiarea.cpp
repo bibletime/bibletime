@@ -299,26 +299,18 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	Q_ASSERT(e);
 	//if (o->metaObject()->className() == "QWorkspaceChild") {
 	//	qDebug("CMDIArea::eventFilter");
-	//	qDebug() << o;
-	//	qDebug() << e;
+	//	qDebug() << o << e;
 	//}
-	QWidget* w = dynamic_cast<QWidget*>( o );
-	bool ret = QWorkspace::eventFilter(o,e);
-
-
+	
+	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>( o );
  	if ( w && (e->type() == QEvent::WindowStateChange) ) {
- 		if (o->inherits("CDisplayWindow") && ((w->windowState() & Qt::WindowMinimized) || w->isHidden())) { //window was minimized, trigger a tile/cascade update if necessary
+ 		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
 			triggerWindowUpdate();
-			ret = false;
-		}
-		else if (!o->inherits("CDisplayWindow")){
-			qDebug("CMDIArea::eventFilter: bad mdi child classname: %s", o->metaObject()->className());
-			//o->dumpObjectInfo();
-			//o->dumpObjectTree();
+			//ret = false;
 		}
 	}
 
-	return ret; // standard event processing
+	return QWorkspace::eventFilter(o,e); // standard event processing
 }
 
 
