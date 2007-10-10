@@ -142,12 +142,21 @@ void CDisplayWindow::initActions()
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
 	ac->addAction(CResMgr::displaywindows::general::search::actionName, kaction);
 
-	KStandardAction::zoomIn(displayWidget()->connectionsProxy(), SLOT(zoomIn()), ac	);
-	KStandardAction::zoomOut(displayWidget()->connectionsProxy(), SLOT(zoomOut()), ac );
-	KStandardAction::close(this, SLOT(close()), ac);
-	KStandardAction::selectAll(displayWidget()->connectionsProxy(), SLOT(selectAll()), ac);
-	KStandardAction::copy(displayWidget()->connectionsProxy(), SLOT(copySelection()), ac);
-	KStandardAction::find(displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()), ac);
+	CDisplayConnections* conn = displayWidget()->connectionsProxy();
+	//ac->addAction(KStandardAction::zoomIn(displayWidget()->connectionsProxy(), SLOT(zoomIn()), ac	));
+	//ac->addAction(KStandardAction::zoomOut(displayWidget()->connectionsProxy(), SLOT(zoomOut()), ac ));
+	ac->addAction(KStandardAction::ZoomIn, conn, SLOT(zoomIn()));
+	ac->addAction(KStandardAction::ZoomOut, conn, SLOT(zoomOut()));
+	ac->addAction(KStandardAction::Close, this, SLOT(close()));
+	ac->addAction(KStandardAction::SelectAll, conn, SLOT(selectAll()));
+	ac->addAction(KStandardAction::Copy, conn, SLOT(copySelection()));
+	ac->addAction(KStandardAction::Find, conn, SLOT(openFindTextDialog()));
+
+	//KStandardAction::close(this, SLOT(close()), ac);
+	//KStandardAction::selectAll(displayWidget()->connectionsProxy(), SLOT(selectAll()), ac);
+	//KStandardAction::copy(displayWidget()->connectionsProxy(), SLOT(copySelection()), ac);
+	//KStandardAction::find(displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()), ac);
+
 
 /* kde/qt3:
 	new KToolBarPopupAction(
