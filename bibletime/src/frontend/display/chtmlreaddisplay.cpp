@@ -185,12 +185,12 @@ void CHTMLReadDisplay::selectAll() {
 
 /** No descriptions */
 void CHTMLReadDisplay::moveToAnchor( const QString& anchor ) {
-	m_currentAnchorCache = anchor;
+	//m_currentAnchorCache = anchor;
 
 	//This is an ugly hack to work around a KDE problem in KDE including 3.3.1 (no later versions tested so far)
 	//TODO for kde4 port: maybe we can remove this?
-	QTimer::singleShot(0, this, SLOT(slotGoToAnchor()));
-
+	//QTimer::singleShot(0, this, SLOT(slotGoToAnchor()));
+	slotGoToAnchor(anchor);
 	// instead of:
 	//  slotGoToAnchor();
 }
@@ -487,15 +487,15 @@ void CHTMLReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
 }
 
 /*!
-\fn CHTMLReadDisplay::slotPageLoaded()
+\fn CHTMLReadDisplay::slotGoToAnchor()
 */
-void CHTMLReadDisplay::slotGoToAnchor() {
-	if (!m_currentAnchorCache.isEmpty()) {
-		if (!gotoAnchor( m_currentAnchorCache ) ) {
-			qDebug("anchor %s not present!", m_currentAnchorCache.toLatin1());
-		}
+void CHTMLReadDisplay::slotGoToAnchor(const QString& anchor) {
+	qDebug("CHTMLReadDisplay::slotGoToAnchor");
+	qDebug() << "anchor:" << anchor;
+	if (!gotoAnchor(anchor) ) {
+		qWarning() << "No such anchor:" << anchor;
 	}
-	m_currentAnchorCache = QString::null;
+	qDebug("CHTMLReadDisplay::slotGoToAnchor end");
 }
 
 void CHTMLReadDisplay::zoomIn() {
@@ -507,15 +507,5 @@ void CHTMLReadDisplay::zoomOut() {
 }
 
 void CHTMLReadDisplay::openFindTextDialog() {
-#if KDE_VERSION >= 0x030300
 	findText();
-#else
-	//TODO: is this old?
-	QMessageBox::information(0, "Not Supported",
-	"This copy of BibleTime was built against a version of KDE older\n"
-	"than 3.3 (probably due to your distro), so this search feature\n"
-	"does not work.\n\n"
-	"This is a known issue.  If we do not have a fix for the next\n"
-	"version of BibleTime, we will remove the option.");
-#endif
 }

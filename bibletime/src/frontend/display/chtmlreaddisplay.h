@@ -118,8 +118,8 @@ private:
 	DOM::Node m_previousEventNode;
 	QString m_currentAnchorCache;
 
-protected slots:
-	void slotGoToAnchor();
+protected:
+	void slotGoToAnchor(const QString& anchor);
 };
 
 class CHTMLReadDisplayView : public KHTMLView, public CPointers {
