@@ -283,7 +283,7 @@ int main(int argc, char* argv[]) {
 						i18n("It"
 						" appears you have a BibleTime configuration from KDE"
 						" 3 stored in %1, and you have not migrated it to"
-						" this version.  Would you like to import it?").arg(
+						" this version.  Would you like to import it?",
 						currSearch), QMessageBox::Yes | QMessageBox::No);
 					int result = msg.exec();
 					if (result != QMessageBox::Yes){
