@@ -45,6 +45,8 @@
 #include <kaboutdata.h>
 #include <klocale.h>
 
+using namespace util::filesystem;
+
 bool showDebugMessages = false;
 BibleTime* bibletime_ptr = 0;
 
@@ -244,7 +246,7 @@ int main(int argc, char* argv[]) {
 	KGlobal::dirs()->addResourceType("BT_DisplayTemplates", "share/apps/bibletime/display-templates");
 
 	//For the transition time add our own locale dir as locale resource
-	KGlobal::dirs()->addResourceDir("locale", util::filesystem::DirectoryUtil::getLocaleDir().canonicalPath());
+	KGlobal::dirs()->addResourceDir("locale", DirectoryUtil::getLocaleDir().canonicalPath());
 	
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
@@ -290,14 +292,14 @@ int main(int argc, char* argv[]) {
 						break;
 					}
 					//Copy our old bibletimerc into the new KDE4 directory.
-					QString newRcLoc = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
+					QString newRcLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
 					QFile newRc(newRcLoc);
 					newRc.remove();
 					oldRc.copy(newRcLoc);
 					QFile oldBookmarks(currSearch +
 							"/share/apps/bibletime/bookmarks.xml");
 					if (oldBookmarks.exists()){
-						QString newBookmarksLoc = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bookmarks.xml";
+						QString newBookmarksLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bookmarks.xml";
 						QFile newBookmarks(newBookmarksLoc);
 						newBookmarks.remove();
 						oldBookmarks.copy(newBookmarksLoc);
@@ -306,7 +308,7 @@ int main(int argc, char* argv[]) {
 							"/share/apps/bibletime/sessions");
 					if (sessionDir.exists()){
 						QStringList files = sessionDir.entryList(QDir::Files);
-						for (QStringList::iterator it = files.begin(); it !=
+/*						for (QStringList::iterator it = files.begin(); it !=
 								files.end(); ++it){
 							QFile currFile(sessionDir.path() + "/" + *it);
 							QString currNewFileLoc =
@@ -314,7 +316,19 @@ int main(int argc, char* argv[]) {
 							QFile currNewFile(currNewFileLoc);
 							currNewFile.remove();
 							currFile.copy(currNewFileLoc);
-						}
+						}*/
+						DirectoryUtil::copyRecursive(
+								sessionDir.absolutePath(), DirectoryUtil::getUserSessionsDir().absolutePath());
+					}
+					QDir cacheDir(currSearch + "/share/apps/bibletime/cache");
+					if (cacheDir.exists()){
+						DirectoryUtil::copyRecursive(cacheDir.absolutePath(),
+								DirectoryUtil::getUserCacheDir().absolutePath());
+					}
+					QDir indexDir(currSearch + "/share/apps/bibletime/indices");
+					if (indexDir.exists()){
+						DirectoryUtil::copyRecursive(indexDir.absolutePath(),
+								DirectoryUtil::getUserIndexDir().absolutePath());
 					}
 					//We found at least a config file, so we are done
 					//searching for migration data.

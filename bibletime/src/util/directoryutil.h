@@ -46,7 +46,14 @@ public:
 	 * @return The size of the dir in bytes
 	 */
 	static unsigned long getDirSizeRecursive(const QString dir);
-	
+
+	/** Recursively copies one directory into another.  This WILL OVERWRITE
+	 * any existing files of the same name, and WILL NOT handle symlinks.
+	 *
+	 * This probably won't need to be used for large directory structures.
+	 */
+	static void copyRecursive(const QString src, const QString dest);
+
 	/** Return the path to the icons. */
 	static QDir getIconDir(void);
 	
@@ -70,6 +77,12 @@ public:
 
 	/** Return the path to the user's sessions directory.*/
 	static QDir getUserSessionsDir(void);
+
+	/** Return the path to the user's cache directory.*/
+	static QDir getUserCacheDir(void);
+
+	/** Return the path to the user's indices directory.*/
+	static QDir getUserIndexDir(void);
 	
 private:
 	/** Will cache a few directories like icon directory */

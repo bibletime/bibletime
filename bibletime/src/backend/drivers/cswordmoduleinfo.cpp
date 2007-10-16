@@ -187,7 +187,7 @@ const bool CSwordModuleInfo::unlockKeyIsValid() {
 }
 
 const QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
-	return KGlobal::dirs()->saveLocation("data", "bibletime/indices");
+	return util::filesystem::DirectoryUtil::getUserIndexDir().absolutePath();
 }
 
 const QString CSwordModuleInfo::getModuleBaseIndexLocation() const {

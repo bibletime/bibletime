@@ -8,6 +8,7 @@
 **********/
 
 #include "cswordlexiconmoduleinfo.h"
+#include "util/directoryutil.h"
 
 //Qt
 #include <QFile>
@@ -65,7 +66,7 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 			return m_entryList;
 		}
 
-		QString dir( KGlobal::dirs()->saveLocation("data", "bibletime/cache/") );
+		QString dir(util::filesystem::DirectoryUtil::getUserCacheDir().absolutePath());
 		QFile f1(
 			QString(dir)
 			.append("/")
@@ -137,7 +138,7 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 
 			if (m_entryList->count()) {
 				//create cache
-				QString dir = KGlobal::dirs()->saveLocation("data", "bibletime/cache/");
+				QString dir = util::filesystem::DirectoryUtil::getUserCacheDir().absolutePath();
 				//QFile f2( QString::fromLatin1("%1/%2").arg(dir).arg( name() ) );
 				QFile f2( QString(dir).append("/").append(name()) );
 

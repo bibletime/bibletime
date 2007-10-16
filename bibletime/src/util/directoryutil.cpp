@@ -78,6 +78,29 @@ unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
 	return size;
 }
 
+/**Recursively copies a directory, overwriting existing files*/
+void DirectoryUtil::copyRecursive(QString src, QString dest){
+	QDir srcDir(src);
+	QDir destDir(dest);
+	//Copy files
+	QStringList files = srcDir.entryList(QDir::Files);
+	for (QStringList::iterator it = files.begin(); it != files.end(); ++it){
+		QFile currFile(src + "/" + *it);
+		QString newFileLoc = dest + "/" + *it;
+		QFile newFile(newFileLoc);
+		newFile.remove();
+		currFile.copy(newFileLoc);
+	}
+	QStringList dirs = srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+	for (QStringList::iterator it = dirs.begin(); it != dirs.end(); ++it){
+		QString temp = *it;
+		if (!destDir.cd(*it)){
+			destDir.mkdir(*it);
+		}
+		copyRecursive(src + "/" + *it, dest + "/" + *it);
+	}
+}
+
 static QDir cachedIconDir;
 static QDir cachedPicsDir;
 static QDir cachedXmlDir;
@@ -85,6 +108,8 @@ static QDir cachedLocaleDir;
 static QDir cachedDocsDir;
 static QDir cachedUserBaseDir;
 static QDir cachedUserSessionsDir;
+static QDir cachedUserCacheDir;
+static QDir cachedUserIndexDir;
 
 static bool dirCacheInitialized = false;
 
@@ -131,25 +156,44 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 
-	wDir = QDir::home();
-	if (!wDir.cd(".bibletime")){
-		bool success = wDir.mkdir(".bibletime") && wDir.cd(".bibletime");
+	cachedUserBaseDir = QDir::home();
+	if (!cachedUserBaseDir.cd(".bibletime")){
+		bool success = cachedUserBaseDir.mkdir(".bibletime") &&
+				cachedUserBaseDir.cd(".bibletime");
 		if (!success){
 			qWarning() << "Could not create user setting directory.";
 			throw;
 		}
 	}
 
-	cachedUserBaseDir = wDir;
-	if (!wDir.cd("sessions")){
-		bool success = wDir.mkdir("sessions") && wDir.cd("sessions");
+	cachedUserSessionsDir = cachedUserBaseDir;
+	if (!cachedUserSessionsDir.cd("sessions")){
+		bool success = cachedUserSessionsDir.mkdir("sessions") &&
+				cachedUserSessionsDir.cd("sessions");
 		if (!success){
 			qWarning() << "Could not create user sessions directory.";
 			throw;
 		}
 	}
 
-	cachedUserSessionsDir = wDir;
+	cachedUserCacheDir = cachedUserBaseDir;
+	if (!cachedUserCacheDir.cd("cache")){
+		bool success = cachedUserCacheDir.mkdir("cache") &&
+				cachedUserCacheDir.cd("cache");
+		if (!success){
+			qWarning() << "Could not create user cache directory.";
+			throw;
+		}
+	}
+
+	cachedUserIndexDir = cachedUserBaseDir;
+	if (!cachedUserIndexDir.cd("indices")){
+		bool success = cachedUserIndexDir.mkdir("indices") &&
+				cachedUserIndexDir.cd("indices");
+		if (!success){
+			qWarning() << "Could not create user indices directory.";
+		}
+	}
 
 	dirCacheInitialized = true;
 }
@@ -209,6 +253,18 @@ QDir DirectoryUtil::getUserSessionsDir(void)
 {
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedUserSessionsDir;
+}
+
+QDir DirectoryUtil::getUserCacheDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserCacheDir;
+}
+
+QDir DirectoryUtil::getUserIndexDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserIndexDir;
 }
 
 } //end of namespace util::filesystem
