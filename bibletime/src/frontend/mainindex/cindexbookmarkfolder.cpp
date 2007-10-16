@@ -23,6 +23,8 @@
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
+#include "frontend/cprinter.h"
+
 #include <QTextStream>
 #include <QString>
 #include <QFile>
@@ -60,8 +62,24 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 	if ((action == ExportBookmarks) && childCount())
 		return true;
 
-	if ((action == PrintBookmarks) && childCount())
-		return true;
+	if ((action == PrintBookmarks) && childCount()){
+	
+		Printing::CPrinter::KeyTree tree;
+		Printing::CPrinter::KeyTreeItem::Settings settings;
+
+		QList<QTreeWidgetItem*> items = getChildList();
+
+		//create a tree of keytreeitems using the bookmark hierarchy.
+		QListIterator<QTreeWidgetItem*> it(items);
+		while(it.hasNext()) {
+			CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(it.next());
+			if (i) {
+				tree.append( new Printing::CPrinter::KeyTreeItem( i->key(), i->module(), settings ) );
+			}
+		}
+		ListCSwordModuleInfo modules = tree.collectModules();
+		return modules.count() > 0;
+	}
 
 	return false;
 }
