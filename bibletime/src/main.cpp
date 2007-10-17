@@ -241,7 +241,16 @@ int main(int argc, char* argv[]) {
 	KCmdLineArgs::init(argc, argv, &aboutData);
 	KCmdLineArgs::addCmdLineOptions( options );
 
+
 	BibleTimeApp app;
+	
+	//Fix for KDE components hardcoded to use standard config file.
+	KStandardDirs stdDirs;
+	QString kdeFile = stdDirs.locateLocal("config", "bibletimerc");
+	QString ourFile = DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bibletimerc";
+	system("/bin/rm " + kdeFile.toLatin1());
+	system("/bin/ln -s " + ourFile.toLatin1() + " " + kdeFile.toLatin1());
+
 	KGlobal::dirs()->addResourceType("BT_pic", "share/apps/bibletime/pics");
 	KGlobal::dirs()->addResourceType("BT_DisplayTemplates", "share/apps/bibletime/display-templates");
 
