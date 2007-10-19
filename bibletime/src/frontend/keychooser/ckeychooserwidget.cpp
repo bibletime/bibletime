@@ -110,8 +110,10 @@ CKeyChooserWidget::CKeyChooserWidget(QStringList *list, const bool useNextPrevSi
 }
 
 void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
-	if (!updatesEnabled())
-		return;
+	//This prevents the widget from resetting during application load, which
+	//produces undesirable behavior.
+	//if (!updatesEnabled())
+	//	return;
 
 	m_list.clear();
 	for (int i=1; i <= count; i++) { //TODO: CHECK
@@ -122,8 +124,10 @@ void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
 }
 
 void CKeyChooserWidget::reset(QStringList& list, int index, bool do_emit) {
-	if (!updatesEnabled())
-		return;
+	//This prevents the widget from resetting during application load, which
+	//produces undesirable behavior.
+	//if (!updatesEnabled())
+	//	return;
 
 	m_list = list;
 	reset(&m_list,index,do_emit);
@@ -131,7 +135,8 @@ void CKeyChooserWidget::reset(QStringList& list, int index, bool do_emit) {
 
 
 void CKeyChooserWidget::reset(QStringList *list, int index, bool do_emit) {
-	if (isResetting || !updatesEnabled())
+	//if (isResetting || !updatesEnabled())
+	if (isResetting)
 		return;
 
 	//  qWarning("starting insert");
