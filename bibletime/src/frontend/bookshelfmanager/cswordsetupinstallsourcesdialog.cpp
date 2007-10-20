@@ -23,6 +23,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QFileDialog>
+#include <QDir>
 
 //KDE includes
 #include <klocale.h>
@@ -140,9 +141,9 @@ namespace BookshelfManager {
 			m_serverLabel->hide();
 			m_serverEdit->hide();
 
-			KUrl url = QFileDialog::getExistingDirectory(this);
-			if (url.isValid()) {
-				m_pathEdit->setText( url.path() );
+			QDir dir = QFileDialog::getExistingDirectory(this);
+			if (dir.exists()) {
+				m_pathEdit->setText( dir.canonicalPath() );
 			}
 		}
 

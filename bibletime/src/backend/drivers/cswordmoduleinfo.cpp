@@ -29,21 +29,19 @@
 #include <dirent.h>
 #include <regex.h>
 
-
 //Qt includes
 #include <QRegExp>
 #include <QDir>
 #include <QFileInfo>
 #include <QList>
 #include <QByteArray>
-
+#include <QDebug>
 
 //KDE includes
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
-
 
 //Sword includes
 #include <swbuf.h>
@@ -52,7 +50,6 @@
 #include <versekey.h>
 #include <swconfig.h>
 #include <rtfhtml.h>
-
 
 //Lucence includes
 #include <CLucene.h>
@@ -207,8 +204,8 @@ const bool CSwordModuleInfo::hasIndex() { //this will return true only
 	}
 
 	//first check if the index version and module version are ok
-	util::scoped_ptr<KConfig> indexconfig(
-		new KConfig( getModuleBaseIndexLocation() + QString("/bibletime-index.conf") )
+	util::scoped_ptr<KConfigGroup> indexconfig(
+		new KConfig( getModuleBaseIndexLocation() + QString("/bibletime-index.conf") )->group()
 	);
 
 	if (hasVersion()) {

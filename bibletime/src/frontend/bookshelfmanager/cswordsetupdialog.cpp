@@ -35,6 +35,7 @@
 #include <QGridLayout>
 #include <QProgressDialog>
 #include <QMessageBox>
+#include <QDebug>
 
 //KDE includes
 #include <kapplication.h>

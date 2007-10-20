@@ -1,14 +1,11 @@
-//
-// C++ Implementation: cmodulechooserdialog
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2006 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #include "cmodulechooserdialog.h"
 #include "cmodulechooserdialog.moc"
@@ -28,6 +25,7 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 #include <QStringList>
+#include <QDebug>
 
 #include <klocale.h>
 

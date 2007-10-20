@@ -19,6 +19,7 @@
 #include <QStringList>
 #include <QFile>
 #include <QFileInfo>
+#include <QTextStream>
 
 //KDE
 #include <klocale.h>

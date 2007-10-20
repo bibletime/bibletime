@@ -18,7 +18,7 @@
 #include <QLabel>
 #include <QFile>
 #include <QFileDialog>
-#include <QTextCodec>
+#include <QTextStream>
 #include <QRegExp>
 
 //KDE includes
