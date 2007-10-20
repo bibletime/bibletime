@@ -403,15 +403,15 @@ const CBTConfig::FontSettingsPair CBTConfig::get
 	KConfigGroup cg = CBTConfig::getConfig()->group("font standard settings");
 
 	FontSettingsPair settings;
-	settings.first = cg.config()->readBoolEntry(getKey(language));
-
+	//settings.first = cg.config()->readBoolEntry(getKey(language));
+	settings.first = cg.readEntry(getKey(language), false);
 	//config->setGroup("fonts");
 	cg = CBTConfig::getConfig()->group("fonts");
 
 	settings.second =
 		settings.first
 		//? cg.config()->readFontEntry(getKey(language))
-		? cg.config()->readEntry(getKey(language), getDefault(language))
+		? cg.readEntry(getKey(language), getDefault(language))
 		: getDefault(language);
 
 	fontConfigMap->insert(language, settings); //cache the value
@@ -476,11 +476,14 @@ void CBTConfig::set
 void CBTConfig::set
 	( const CBTConfig::stringMaps ID, const CBTConfig::StringMap value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
-	KConfigBase* config = cg.config();
-	config->deleteGroup(getKey(ID)); //make sure we only save the new entries and don't use old ones
-	config->sync();
-	config->setGroup(getKey(ID));
+	//KConfigGroup cg(CBTConfig::getConfig(), "stringlists");
+
+	//KConfigBase* config = cg.config();
+	//config->deleteGroup(getKey(ID)); //make sure we only save the new entries and don't use old ones
+	KConfigGroup cg = KConfigGroup(CBTConfig::getConfig(), "stringlists").group(getKey(ID));
+	cg.deleteGroup();
+	cg.sync();
+	//config->setGroup(getKey(ID));
 	
 
 	switch (ID) {
@@ -503,13 +506,13 @@ void CBTConfig::set
 					}
 				}
 				//TODO: possibly cg...
-				config->writeEntry(it.key(), data);
+				cg.writeEntry(it.key(), data);
 			}
 			break;
 		}
 		default: {
 			for (CBTConfig::StringMap::ConstIterator it = value.begin(); it != value.end(); ++it) {
-				config->writeEntry(it.key(), it.value());
+				cg.writeEntry(it.key(), it.value());
 			}
 			break;
 		}
@@ -522,12 +525,12 @@ void CBTConfig::set
 {
 	//TODO: does this work, should it be cg.write...
 	KConfigGroup cg = CBTConfig::getConfig()->group("fonts");
-	KConfigBase* config = cg.config();
+	//KConfigBase* config = cg.config();
 
-	config->writeEntry(getKey(language), value.second);
-
-	config->setGroup("font standard settings");
-	config->writeEntry(getKey(language), value.first);
+	cg.writeEntry(getKey(language), value.second);
+	cg = CBTConfig::getConfig()->group("font standard settings");
+	//cg.setGroup("font standard settings");
+	cg.writeEntry(getKey(language), value.first);
 	
 	if (fontConfigMap && fontConfigMap->contains(language)) {
 		fontConfigMap->remove
@@ -674,7 +677,7 @@ const QString CBTConfig::getModuleEncryptionKey( const QString& module )
 {
 	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
 
-	return (cg.config()->readEntry(module, QVariant(QString::null) ) ).toString();
+	return (cg.readEntry(module, QVariant(QString::null) ) ).toString();
 }
 
 void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& key )
@@ -691,7 +694,7 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 
 	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
 	//TODO: cg.write...?
-	cg.config()->writeEntry(module, key);
+	cg.writeEntry(module, key);
 };
 
 KConfig* const CBTConfig::getConfig()

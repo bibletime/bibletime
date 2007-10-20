@@ -206,8 +206,15 @@ const bool CSwordModuleInfo::hasIndex() { //this will return true only
 
 	//first check if the index version and module version are ok
 	util::scoped_ptr<KConfigGroup> indexconfig(
-		new KConfig( getModuleBaseIndexLocation() + QString("/bibletime-index.conf") )->group()
+		new KConfigGroup(new KConfig(getModuleBaseIndexLocation() + QString("/bibletime-index.conf")), "")
 	);
+			
+// 		new KConfig(
+// 			getModuleBaseIndexLocation()
+// 			 + QString("/bibletime-index.conf")
+// 			 )
+// 		)->group()
+// 	);
 
 	if (hasVersion()) {
 		if (indexconfig->readEntry("module-version") != QString(config(CSwordModuleInfo::ModuleVersion)) ) {
@@ -370,7 +377,7 @@ void CSwordModuleInfo::buildIndex() {
 	writer->close();
 
 	QString configFilename = getModuleStandardIndexLocation() + QString("/../bibletime-index.conf");
-	util::scoped_ptr<KConfig> indexconfig( new KConfig( configFilename ) );
+	util::scoped_ptr<KConfigGroup> indexconfig( new KConfigGroup(new KConfig( configFilename ), "") );
 	if (hasVersion()) {
 		indexconfig->writeEntry("module-version", config(CSwordModuleInfo::ModuleVersion) );
 	}
