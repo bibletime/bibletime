@@ -43,7 +43,6 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kapplication.h>
-#include <kaboutkdedialog.h>
 #include <kbugreport.h>
 #include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>
