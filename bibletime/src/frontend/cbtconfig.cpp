@@ -31,6 +31,7 @@
 #include <kapplication.h>
 #include <kactioncollection.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kcharsets.h>
 #include <kglobal.h>
 #include <klocale.h>

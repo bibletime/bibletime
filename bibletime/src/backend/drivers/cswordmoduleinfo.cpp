@@ -42,6 +42,7 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 
 //Sword includes
 #include <swbuf.h>
