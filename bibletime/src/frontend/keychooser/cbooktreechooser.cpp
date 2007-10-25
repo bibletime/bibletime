@@ -179,9 +179,9 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
         	key->firstChild();
 		do { 
 			QStringList columns;
-			columns << key->getLocalName() << key->getText();
+			columns << key->getLocalNameUnicode() << key->key();
 			QTreeWidgetItem *i = new QTreeWidgetItem(item, columns, QTreeWidgetItem::Type);
-			i->setData(0, Qt::ToolTipRole, key->getLocalName());
+			i->setData(0, Qt::ToolTipRole, key->getLocalNameUnicode());
 			int offset = key->getOffset();
 			addKeyChildren(key, i);
 			key->setOffset(offset);

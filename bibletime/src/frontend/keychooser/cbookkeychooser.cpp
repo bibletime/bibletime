@@ -78,7 +78,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
 
 		do { //look for matching sibling
 			++index;
-			found = (m_key->getLocalName() == siblings[depth]);
+			found = (m_key->getLocalNameUnicode() == siblings[depth]);
 		}
 		while (!found && m_key->nextSibling());
 
@@ -235,7 +235,7 @@ void CBookKeyChooser::setupCombo(const QString key, const int depth, const int c
 	if (depth > 0) items << QString::null; //insert an empty item at the top
 
 	do {
-		items << QString::fromUtf8(tmpKey.getLocalName());
+		items << tmpKey.getLocalNameUnicode();
 	}
 	while (tmpKey.nextSibling());
 

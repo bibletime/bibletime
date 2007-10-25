@@ -47,22 +47,24 @@ CSwordModuleInfo* const CSwordLDKey::module(CSwordModuleInfo* const newModule) {
 
 /** Sets the key of this instance */
 const QString CSwordLDKey::key() const {
-	//  return QString::fromLocal8Bit((const char*)*this);//don't use fromUtf8
-	//  return QString::fromUtf8((const char*)*this);
-	//  qWarning((const char*)*this);
-	return QString::fromUtf8((const char*)*this);
+	//return QString::fromUtf8((const char*)*this);
+	Q_ASSERT(m_module);
+
+	if (m_module->isUnicode()) {
+		return QString::fromUtf8((const char*)*this);
+	} else {
+		return QString::fromLatin1((const char*)*this);
+	}
 }
 
-const bool CSwordLDKey::key( const QString& newKey ) {
-	// SWKey::operator = ((const char*)newKey.local8Bit());
-	//  SWKey::operator = ((const char*)newKey.utf8()); //set the key
-	//   m_module->module()->SetKey(this);
-	//  m_module->module()->getKey()->setText( (const char*)key().utf8() );
-	/* if (!m_module->snap()) {
-	  qWarning("set %s got %s, error=1", newKey.latin1(), m_module->module()->KeyText());
-	 }*/
-	//  SWKey::operator = (m_module->module()->KeyText());
-	return key( newKey.toUtf8().constData() );
+const bool CSwordLDKey::key( const QString& newKey ) {	
+	Q_ASSERT(m_module);
+
+	if (m_module->isUnicode()) {
+		return key(newKey.toUtf8().constData());
+	} else {
+		return key(newKey.toLatin1().constData());
+	}
 }
 
 
@@ -72,11 +74,8 @@ const bool CSwordLDKey::key( const char* newKey ) {
 
 	if (newKey) {
 		SWKey::operator = (newKey); //set the key
-
 		m_module->module()->SetKey(this);
-		//   m_module->module()->getKey()->setText( (const char*)key().utf8() );
 		m_module->snap();
-		//   SWKey::operator = (m_module->module()->KeyText());
 	}
 
 	return !Error();
@@ -113,6 +112,6 @@ CSwordLDKey* CSwordLDKey::PreviousEntry() {
 
 /** Assignment operator for more ease of use of this class. */
 CSwordLDKey& CSwordLDKey::operator = (const QString& keyname ) {
-										 key(keyname);
-										 return *this;
-									 }
+	 key(keyname);
+	 return *this;
+}

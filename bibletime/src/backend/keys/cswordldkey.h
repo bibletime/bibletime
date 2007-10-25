@@ -83,11 +83,11 @@ public:
 	*/
 	virtual const QString key() const;
 	/**
-	* Set the current key
+	* Set the current key using unicode decoded QString.
 	*/
 	virtual const bool key( const QString& newKey );
 	/**
-	* Returns the current key as a QString
+	* Set the current key from char*. To avoid encoding problems use key(QString) instead.
 	*/
 	virtual const bool key( const char* );
 	/**

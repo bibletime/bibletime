@@ -42,8 +42,15 @@ public:
 	* @return A new copy of this object.
 	*/
 	virtual CSwordTreeKey* copy() const;
+
 	/**
-	* Returns the current key
+	* Returns the TreeKeyIdx::getLocalKey value in unicode.
+	* Local key is the last part of the tree key, for example "Subsection1" from "/Section1/Subsection1".
+	* Use this instead of getLocalKey() to avoid encoding problems.
+	*/
+	QString getLocalNameUnicode();
+	/**
+	* Returns the current key as unicode decoded QString.
 	*/
 	virtual const QString key() const;
 	/**
@@ -51,8 +58,8 @@ public:
 	*/
 	virtual const bool key( const QString& key );
 	/**
-	* Set/get the key. If the parameter is not set (means equal to QString::null)
-	* the used key is returned. Otherwise the key is set and the new on ei returned.
+	* Set the key from char* To avoid encoding problems use key(QString instead),
+	* otherwise it is caller's responsibility to ensure the correct encoding (utf8/latin1).
 	*/
 	virtual const bool key( const char* key );
 	/**
