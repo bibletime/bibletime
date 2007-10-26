@@ -66,6 +66,11 @@ public:
 	* Assignment operator.
 	*/
 	virtual CSwordTreeKey& operator = (const QString& keyname );
+protected:
+	/**
+	 * Returns the raw key appropriate for use directly with Sword.
+	 */
+	virtual const char * rawKey() const;
 };
 
 #endif

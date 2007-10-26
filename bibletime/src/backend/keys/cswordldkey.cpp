@@ -15,6 +15,9 @@
 #include <swld.h>
 #include <utilstr.h>
 
+//Qt includes
+#include <QTextCodec>
+
 CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
 	if ((m_module = dynamic_cast<CSwordLexiconModuleInfo*>(module))) {
 		//    *(m_module->module()) = TOP;
@@ -53,8 +56,12 @@ const QString CSwordLDKey::key() const {
 	if (m_module->isUnicode()) {
 		return QString::fromUtf8((const char*)*this);
 	} else {
-		return QString::fromLatin1((const char*)*this);
+		return cp1252Codec()->toUnicode((const char*)*this);
 	}
+}
+
+const char * CSwordLDKey::rawKey() const {
+	return (const char*)*this;
 }
 
 const bool CSwordLDKey::key( const QString& newKey ) {	
@@ -63,7 +70,7 @@ const bool CSwordLDKey::key( const QString& newKey ) {
 	if (m_module->isUnicode()) {
 		return key(newKey.toUtf8().constData());
 	} else {
-		return key(newKey.toLatin1().constData());
+		return key((const char*)cp1252Codec()->fromUnicode(newKey));
 	}
 }
 

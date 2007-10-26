@@ -26,6 +26,7 @@
 //Qt
 #include <QRegExp>
 #include <QString>
+#include <QTextCodec>
 
 CSwordKey::CSwordKey(CSwordModuleInfo* const module) : m_module(module) {}
 
@@ -37,7 +38,10 @@ const QString CSwordKey::rawText() {
 	if (!m_module) return QString::null;
 
 	if (dynamic_cast<sword::SWKey*>(this)) {
-		m_module->module()->getKey()->setText( key().toUtf8().constData() );
+		char * buffer = new char[strlen(rawKey()) + 1];
+		strcpy(buffer, rawKey());
+		m_module->module()->getKey()->setText( buffer );
+		delete buffer;
 	}
 
 	if (key().isNull()) return QString::null;
@@ -54,26 +58,29 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 	sword::SWKey* const k = dynamic_cast<sword::SWKey*>(this);
 
 	if (k) {
+		char * keyBuffer = new char[strlen(rawKey()) + 1];
+		strcpy(keyBuffer, rawKey());
 		sword::VerseKey* vk_mod = dynamic_cast<sword::VerseKey*>(m_module->module()->getKey());
 
 		if (vk_mod) {
 			vk_mod->Headings(1);
 		}
 
-		m_module->module()->getKey()->setText( this->key().toUtf8().constData() );
+		m_module->module()->getKey()->setText( keyBuffer );
 
 		if (m_module->type() == CSwordModuleInfo::Lexicon) {
 			m_module->snap();
 			/* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
 			i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-			if ( strcasecmp(m_module->module()->getKey()->getText(), key().toUtf8().constData())
-					&& !strstr(m_module->module()->getKey()->getText(), key().toUtf8().constData())
+			if ( strcasecmp(m_module->module()->getKey()->getText(), keyBuffer)
+					&& !strstr(m_module->module()->getKey()->getText(), keyBuffer)
 			   ) {
 				qDebug("return an empty key for %s", m_module->module()->getKey()->getText());
 				return QString::null;
 			}
 		}
+		delete keyBuffer;
 	}
 
 	Q_ASSERT(!key().isNull());
@@ -137,10 +144,18 @@ const QString CSwordKey::strippedText() {
 	if (!m_module) return QString::null;
 
 	if (dynamic_cast<sword::SWKey*>(this)) {
-		m_module->module()->getKey()->setText( key().toUtf8().constData() );
+		char * buffer = new char[strlen(rawKey()) + 1];
+		strcpy(buffer, rawKey());
+		m_module->module()->getKey()->setText( buffer );
+		delete buffer;
 	}
 
 	return QString::fromUtf8( m_module->module()->StripText() );
+}
+
+const QTextCodec* CSwordKey::cp1252Codec() {
+	static QTextCodec * codec = QTextCodec::codecForName("Windows-1252");
+	return codec;
 }
 
 

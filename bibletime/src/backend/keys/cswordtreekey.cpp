@@ -29,8 +29,12 @@ const QString CSwordTreeKey::key() const {
 	if (m_module->isUnicode()) {
 		return QString::fromUtf8(getText());
 	} else {
-		return QString::fromLatin1(getText());
+		return cp1252Codec()->toUnicode(getText());
 	}
+}
+
+const char * CSwordTreeKey::rawKey() const {
+	return getText();
 }
 
 const bool CSwordTreeKey::key( const QString& newKey ) {
@@ -41,7 +45,7 @@ const bool CSwordTreeKey::key( const QString& newKey ) {
 	if (m_module->isUnicode()) {
 		return key(newKey.toUtf8().constData());
 	} else {
-		return key(newKey.toLatin1().constData());
+		return key((const char*)cp1252Codec()->fromUnicode(newKey));
 	}
 }
 
@@ -70,7 +74,7 @@ QString CSwordTreeKey::getLocalNameUnicode()
 	if (m_module->isUnicode()) {
 		return QString::fromUtf8(getLocalName());
 	} else {
-		return QString::fromLatin1(getLocalName());
+		return cp1252Codec()->toUnicode(getLocalName());
 	}
 }
 

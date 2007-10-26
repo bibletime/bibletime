@@ -14,6 +14,7 @@
 #include <QString>
 
 class CSwordModuleInfo;
+class QTextCodec;
 
 /** Base class for all keys.
  * The base class for all Sword based keys.
@@ -91,6 +92,11 @@ public:
 	inline virtual CSwordKey& operator = ( const QString& );
 
 protected:
+	/**
+	 * Returns the encoded key appropriate for use directly with Sword.
+	 */
+	virtual const char * rawKey() const = 0;
+	static const QTextCodec * cp1252Codec();
 	CSwordModuleInfo* m_module; //module pointer used by all keys
 };
 

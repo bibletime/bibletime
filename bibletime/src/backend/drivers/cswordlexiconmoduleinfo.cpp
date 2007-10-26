@@ -13,6 +13,7 @@
 //Qt
 #include <QFile>
 #include <QDataStream>
+#include <QTextCodec>
 
 //Sword
 #include <swmodule.h>
@@ -105,7 +106,8 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 				}
 				else { //for latin1 modules use fromLatin1 because of speed
 					//           m_entryList->append(QString::fromLatin1(my_module->KeyText()));
-					m_entryList->append(QString(my_module->KeyText()));
+					QTextCodec* codec = QTextCodec::codecForName("Windows-1252");
+					m_entryList->append(codec->toUnicode(my_module->KeyText()));
 				}
 
 				(*my_module)++;
