@@ -83,7 +83,7 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 		delete keyBuffer;
 	}
 
-	Q_ASSERT(!key().isNull());
+	//Q_ASSERT(!key().isNull());
 	if (!key().isNull()) { //we have valid text
 		QString text = QString::fromUtf8( m_module->module()->RenderText() );
 
