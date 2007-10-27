@@ -61,6 +61,7 @@ CSwordSetupDialog::CSwordSetupDialog(QWidget *parent) : KPageDialog(parent),
 	m_refreshedRemoteSources(false)
 {
 	setFaceType(KPageDialog::List);
+	setButtons(KDialog::Close);
 //	setIconListAllVisible(true);
 	m_swordSetupChanged = false;
 
