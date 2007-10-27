@@ -24,20 +24,21 @@
 
 BTHistory::BTHistory()
 	: m_historyList(),
-	m_historyListIterator(m_historyList)
-{}
+	m_index(-1),
+	m_inHistoryFunction(false)
+{Q_ASSERT(class_invariant());}
 
 void BTHistory::add(CSwordKey* newKey) {
 	qDebug("BTHistory::add");
-	qDebug() << "new key:" << newKey->key();
-
-	if (!m_historyListIterator.hasPrevious() || (newKey->key() != m_historyListIterator.peekPrevious()->text()) ) {
-		m_historyListIterator.insert(new QAction(newKey->key(), this) );
-		// TODO: history limit
-		bool backEnabled;
-		bool fwEnabled;
-		emit historyChanged(backEnabled, fwEnabled);
+	
+	// Add new key Action after current index if we were not using the history functions
+	// and if it's not a duplicate.
+	if (!m_inHistoryFunction && ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
+		m_historyList.insert(++m_index, new QAction(newKey->key(), this));
+		// TODO: history limit?
+		sendChangedSignal();
 	}
+	Q_ASSERT(class_invariant());
 }
 
 void BTHistory::move(QAction* historyItem)
@@ -46,53 +47,79 @@ void BTHistory::move(QAction* historyItem)
 	//Q_ASSERT(historyItem);
 	Q_ASSERT(m_historyList.count());
 
-	//m_inHistoryFunction = true;
-
+	m_inHistoryFunction = true;
 	//find the action in the list
-	m_historyListIterator.toFront();
+	m_index = m_historyList.indexOf(historyItem);
 	//move to the selected item in the list, it will be the current item
-	m_historyListIterator.findNext(historyItem);
+	QString newKey = m_historyList.at(m_index)->text();
+	emit historyMoved(newKey); // signal to "outsiders"; key has been changed
+	sendChangedSignal();
 	
-	//key()->key(historyItem->text());
-	//setKey(key());
-	bool backEnabled;
-	bool fwEnabled;
-	//emit historyMoved(newKey);
-	emit historyChanged(backEnabled, fwEnabled);
-
-	//m_inHistoryFunction = false;
-
-	
+	m_inHistoryFunction = false;
+	Q_ASSERT(class_invariant());
 }
 
 void BTHistory::back()
 {
 	qDebug("BTHistory::back");
-	//TODO: here is the error...
-	if ( m_historyListIterator.hasPrevious() ) {
-		move(m_historyListIterator.peekPrevious());
+	if ( m_index >= 1) {
+		move(m_historyList.at(m_index-1));
 	}
+	Q_ASSERT(class_invariant());
 }
 
 void BTHistory::fw()
 {
 	qDebug("BTHistory::fw");
-	if (m_historyListIterator.hasNext()) {
-		move(m_historyListIterator.peekNext());
+	if (m_index < (m_historyList.size()-1)) {
+		move(m_historyList.at(m_index+1));
 	}
+	Q_ASSERT(class_invariant());
 }
 
 QList<QAction*> BTHistory::getBackList()
 {
-// 	QList<QAction*> list();
-// 	int index = indexOf(m_historyListIterator.peekPrevious());
-// 	for (;index >= 0; --index) {
-// 		list.append(m_historyList[index]);
-// 	}
-	return QList<QAction*>();
+	qDebug("BTHistory::getBackList");
+
+	QList<QAction*> list;
+	for (int i = m_index-1; i >= 0; --i) {
+		list.append(m_historyList.at(i));
+	}
+
+	qDebug() << "return:" << list;
+	Q_ASSERT(class_invariant());
+	return list;
 }
 
 QList<QAction*> BTHistory::getFwList()
 {
-	return QList<QAction*>();
+	qDebug("BTHistory::getFwList");
+	
+	QList<QAction*> list;
+	//qDebug() << "historyList.size:" << m_historyList.size();
+	for (int i = m_index+1; i < m_historyList.size(); ++i) {
+		//qDebug() << "i:" << i;
+		list.append(m_historyList.at(i));
+	}
+	qDebug() << "return:" << list;
+	
+	Q_ASSERT(class_invariant());
+	return list;
+}
+
+void BTHistory::sendChangedSignal()
+{
+	bool backEnabled = m_index > 0; //there are items in the back list
+	bool fwEnabled = m_historyList.size() > m_index+1; //there are items in the fw list
+	emit historyChanged(backEnabled, fwEnabled);
+	Q_ASSERT(class_invariant());
+}
+
+bool BTHistory::class_invariant()
+{
+	for (int i = 0; i < m_historyList.size(); ++i) {
+		if (!m_historyList.at(i) || m_historyList.at(i)->text().isEmpty()) return false;
+	}
+	if (!(m_index >= -1 && m_index < m_historyList.size())) return false;
+	return true;
 }

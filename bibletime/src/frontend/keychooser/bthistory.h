@@ -13,9 +13,8 @@
 #ifndef BTHISTORY_H
 #define BTHISTORY_H
 
-#include <QLinkedList>
+#include <QList>
 #include <QObject>
-#include <QMutableLinkedListIterator>
 
 
 class CSwordKey;
@@ -30,23 +29,52 @@ public:
 	BTHistory();
 	~BTHistory() {};
 
+	/**
+	* Return a list of Actions behind the current point, the first of the history list will be the
+	* last in the returned list and vice versa.
+	*/
 	QList<QAction*> getBackList();
+	/**
+	* Return a list of Actions after the current point.
+	*/
 	QList<QAction*> getFwList();
 
 public slots:
+	/**
+	* Add a new key to the history.
+	*/
 	void add(CSwordKey* newKey);
+	/**
+	* Move the current point in history list.
+	*/
 	void move(QAction*);
+	/**
+	* Go back one step in history.
+	*/
 	void back();
+	/**
+	* Go forward one step in history.
+	*/
 	void fw();
 	
 signals:
+	/**
+	* Signal will be sent when the history has been changed (added, moved)
+	*/
 	void historyChanged(bool backEnabled, bool fwEnabled);
-	void historyMoved(CSwordKey* newKey, CSwordKey* oldKey);
+	/**
+	* Signal will be sent when the current point in history has moved
+	*/
+	void historyMoved(QString& newKey);
 
 private:
-	//QAction* current();
-	QLinkedList<QAction*> m_historyList;
-	QMutableLinkedListIterator<QAction*> m_historyListIterator;
+
+	void sendChangedSignal();
+	bool class_invariant();
+
+	QList<QAction*> m_historyList;
+	int m_index; //pointer to the current item; -1==empty, 0==first etc.
+	bool m_inHistoryFunction; //to prevent recursive behaviour
 };
 
 #endif
