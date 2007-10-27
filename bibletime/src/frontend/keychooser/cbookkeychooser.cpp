@@ -34,7 +34,7 @@ CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, Q
 	setKey(key);
 
 	adjustFont();
-	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
+	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CBookKeyChooser::~CBookKeyChooser() {}
@@ -47,10 +47,12 @@ void CBookKeyChooser::setKey(CSwordKey* newKey)
 /** Sets a new key to this keychooser */
 void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
 {
+	CSwordTreeKey oldCSwordKey(*m_key); //copy the original
+
 	if (m_key != newKey) { //set the internal key to the new one
 		m_key = dynamic_cast<CSwordTreeKey*>(newKey);
 	}
-
+	
 	QString oldKey = m_key->key(); //string backup of key
 	
 	if (oldKey.isEmpty()) { //don't set keys equal to "/", always use a key which may have content
@@ -113,7 +115,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
 		m_key->setOffset(oldOffset);
 	}
 
-	if (emitSignal) emit keyChanged(m_key);
+	if (emitSignal) emit keyChanged(m_key, &oldCSwordKey);
 }
 
 /** Returns the key of this kechooser. */

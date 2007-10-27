@@ -61,7 +61,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *
 
 	setModules(modules, true);
 	setKey(key);
-	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
+	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CSwordKey* CLexiconKeyChooser::key() {
@@ -71,20 +71,18 @@ CSwordKey* CLexiconKeyChooser::key() {
 
 void CLexiconKeyChooser::setKey(CSwordKey* key)
 {
-	qDebug("CLexiconKeyChooser::setKey");	
+	qDebug("CLexiconKeyChooser::setKey");
+	CSwordLDKey oldKey(*m_key);
 	if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
 		return;
 	}
 
 	QString newKey = m_key->key();
-	//very complicated code, qt3
-	//const int index = m_widget->comboBox()->listBox()->index(m_widget->comboBox()->listBox()->findItem( newKey ));
-	// I hope this new qt4 code works
 	const int index = m_widget->comboBox()->findText(newKey);
 	m_widget->comboBox()->setCurrentIndex(index);
 
 	//   qWarning("setKey end");
-	emit keyChanged( m_key );
+	emit keyChanged( m_key, &oldKey );
 }
 
 void CLexiconKeyChooser::activated(int index) {
@@ -113,11 +111,6 @@ void CLexiconKeyChooser::refreshContent() {
 		typedef std::multimap<unsigned int, QStringList*> EntryMap;
 		EntryMap entryMap;
 		QStringList* entries = 0;
-		//qt3 code
-		/*for (m_modules.first(); m_modules.current(); m_modules.next()) {
-			entries = m_modules.current()->entries();
-			entryMap.insert( std::make_pair(entries->count(), entries) );
-		}*/
 		QListIterator<CSwordLexiconModuleInfo*> mit(m_modules);
 		while (mit.hasNext()) {
 			entries = mit.next()->entries();

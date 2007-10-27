@@ -23,6 +23,8 @@
 
 #include <QHBoxLayout>
 
+#include <QDebug>
+
 
 CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
 : CKeyChooser(modules, key, parent),
@@ -46,7 +48,7 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 
 	setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
+	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CSwordKey* CBibleKeyChooser::key() {
@@ -61,12 +63,13 @@ void CBibleKeyChooser::setKey(CSwordKey* key)
 		return;
 	}
 
+	CSwordVerseKey oldKey(*m_key);
 	m_key = dynamic_cast<CSwordVerseKey*>(key);
 	emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
 
 	w_ref->setKey(m_key);
-
-	emit keyChanged(m_key);
+	qDebug() << "CBibleKeyChooser::setKey, m_key: " << m_key->key() << " oldKey:" << oldKey.key();
+	emit keyChanged(m_key, &oldKey);
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
@@ -83,9 +86,11 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 		qDebug("will emit beforeKeyChange");
 		emit beforeKeyChange(m_key->key());
 
+	CSwordVerseKey oldKey(*m_key);
 	m_key = key;
 	qDebug("will emit keyChanged");
-	emit keyChanged(m_key);
+	qDebug() << "m_key: " << m_key->key() << "old key:" << oldKey.key();
+	emit keyChanged(m_key, &oldKey);
 
 	setUpdatesEnabled(true);
 }

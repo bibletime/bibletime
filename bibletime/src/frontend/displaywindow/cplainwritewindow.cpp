@@ -106,7 +106,7 @@ void CPlainWriteWindow::initToolbars() {
 
 void CPlainWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
-	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
+	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*, CSwordKey*)),
 			this, SLOT(lookup(CSwordKey*)));
 
 	QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),

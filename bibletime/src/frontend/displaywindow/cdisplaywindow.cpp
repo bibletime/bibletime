@@ -176,7 +176,7 @@ void CDisplayWindow::initActions()
 			i18n("Back in history"),
 			ac
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(backInHistory()));
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
 	ac->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
 	
 	popupaction = new KToolBarPopupAction(
@@ -184,7 +184,7 @@ void CDisplayWindow::initActions()
 			i18n("Forward in history"),
 			ac
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser(), SLOT(forwardInHistory()));
+	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
 	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
 	
 	//qDebug("actionCollection: ");

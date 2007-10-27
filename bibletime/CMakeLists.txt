@@ -137,6 +137,8 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/ckeyreferencewidget.cpp
 	src/frontend/keychooser/cscrollerwidgetset.cpp
 	src/frontend/keychooser/cscrollbutton.cpp
+
+	src/frontend/keychooser/bthistory.cpp
 	
 	#behaviour for display areas
 	src/frontend/display/cdisplay.cpp

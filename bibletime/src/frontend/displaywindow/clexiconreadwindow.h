@@ -14,7 +14,7 @@
 
 //BibleTime includes
 #include "creadwindow.h"
-
+#include "frontend/keychooser/ckeychooser.h"
 
 //KDE includes
 
@@ -114,7 +114,7 @@ protected slots: // Protected slots
 	void slotFillBackHistory();
 	void slotFillForwardHistory();
 
-	void slotUpdateHistoryButtons();
+	void slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled);
 };
 
 #endif

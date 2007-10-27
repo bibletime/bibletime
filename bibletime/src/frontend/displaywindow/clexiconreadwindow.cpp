@@ -167,10 +167,10 @@ void CLexiconReadWindow::initConnections()
 	qDebug("CLexiconReadWindow::initConnections");
 	Q_ASSERT(keyChooser());
 
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
+	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*, CSwordKey*)),
 			this, SLOT(lookup(CSwordKey*)));
-	connect(keyChooser(), SIGNAL(historyChanged()),
-			this, SLOT(slotUpdateHistoryButtons()));
+	connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)),
+			this, SLOT(slotUpdateHistoryButtons(bool, bool)));
 
 	//connect the history actions to the right slots
 	connect(
@@ -179,7 +179,7 @@ void CLexiconReadWindow::initConnections()
 	);
 	connect(
 		m_actions.backInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
-		keyChooser(), SLOT(backInHistory(QAction*))
+		keyChooser()->history(), SLOT(move(QAction*))
 	);
 	connect(
 		m_actions.forwardInHistory->popupMenu(), SIGNAL(aboutToShow()),
@@ -187,7 +187,7 @@ void CLexiconReadWindow::initConnections()
 	);
 	connect(
 		m_actions.forwardInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
-		keyChooser(), SLOT(forwardInHistory(QAction*))
+		keyChooser()->history(), SLOT(move(QAction*))
 	);
 
 
@@ -287,11 +287,9 @@ void CLexiconReadWindow::updatePopupMenu()
 	m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
 	
 	m_actions.copy.reference->setEnabled( displayWidget()->hasActiveAnchor() );
-	m_actions.copy.entry->setEnabled( displayWidget()->hasActiveAnchor() );
 	m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
 
 	m_actions.print.reference->setEnabled( displayWidget()->hasActiveAnchor() );
-	m_actions.print.entry->setEnabled( displayWidget()->hasActiveAnchor() );
 }
 
 /** No descriptions */
@@ -350,40 +348,37 @@ void CLexiconReadWindow::saveAsPlain()
 void CLexiconReadWindow::slotFillBackHistory()
 {
 	qDebug("CLexiconReadWindow::slotFillBackHistory");
-	QStringList keyList = keyChooser()->getPreviousKeys();
+
 	QMenu* menu = m_actions.backInHistory->popupMenu();
 	menu->clear();
 
-	QStringList::iterator it;
-	int index = 1;
-	for (it = keyList.begin(); it != keyList.end(); ++it) {
-		menu->addAction(*it);
-		++index;
+	//TODO: take the history list and fill the menu
+	QListIterator<QAction*> it(keyChooser()->history()->getBackList());
+	while (it.hasNext()) {
+		menu->addAction(it.next());
 	}
 }
 
 void CLexiconReadWindow::slotFillForwardHistory()
 {
 	qDebug("CLexiconReadWindow::slotFillForwardHistory");
-	QStringList keyList = keyChooser()->getNextKeys();
+
 	QMenu* menu = m_actions.forwardInHistory->popupMenu();
 	menu->clear();
-
-	QStringList::iterator it;
-	int index = 1;
-	for (it = keyList.begin(); it != keyList.end(); ++it) {
-		menu->addAction(*it);
-		++index;
+	//TODO: take the history list and fill the menu using addAction
+	QListIterator<QAction*> it(keyChooser()->history()->getFwList());
+	while (it.hasNext()) {
+		menu->addAction(it.next());
 	}
 }
 
 
-void CLexiconReadWindow::slotUpdateHistoryButtons()
+void CLexiconReadWindow::slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled)
 {
 	qDebug("CLexiconReadWindow::slotUpdateHistoryButtons");
 	Q_ASSERT(m_actions.backInHistory);
 	Q_ASSERT(keyChooser());
 
-	m_actions.backInHistory->setEnabled( keyChooser()->getPreviousKeys().size() > 0 );
-	m_actions.forwardInHistory->setEnabled( keyChooser()->getNextKeys().size() > 0 );
+	m_actions.backInHistory->setEnabled( backEnabled );
+	m_actions.forwardInHistory->setEnabled( fwEnabled );
 }

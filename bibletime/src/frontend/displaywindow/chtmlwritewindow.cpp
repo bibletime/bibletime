@@ -52,7 +52,7 @@ void CHTMLWriteWindow::initView() {
 void CHTMLWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
 
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
+	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*,CSwordKey*)),
 			this, SLOT(lookup(CSwordKey*)));
 	connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),
 			this, SLOT(textChanged()) );

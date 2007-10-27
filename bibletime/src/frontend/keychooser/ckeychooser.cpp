@@ -17,15 +17,22 @@
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 
+#include "backend/keys/cswordkey.h"
+
 #include "clexiconkeychooser.h"
 #include "cbiblekeychooser.h"
 #include "cbookkeychooser.h"
 
 #include <QAction>
+#include <QDebug>
 
 CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
-: QWidget(parent),
-m_inHistoryFunction(false) {}
+	: QWidget(parent),
+	m_inHistoryFunction(false),
+	//m_historyList(),
+	//m_historyListIterator(m_historyList)
+	m_history()
+{}
 
 CKeyChooser::~CKeyChooser() {}
 
@@ -49,114 +56,52 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 	}
 }
 
-void CKeyChooser::backInHistory() {
-	backInHistory(0);
+
+// KeyChooserHistoryIterator CKeyChooser::getHistoryIterator() const
+// {
+// 	qDebug("CKeyChooser::getHistoryIterator");
+// 	//Q_ASSERT(m_historyListIterator.hasPrevious());
+// 	KeyChooserHistoryIterator constIterator(m_historyList);
+// 	KeyChooserHistoryIterator testIt(m_historyList);
+// 	if (m_historyListIterator.hasPrevious()) {
+// 		qDebug() << "the original iterator has previous: " << m_historyListIterator.peekPrevious()->text();
+// 		constIterator.findNext(m_historyListIterator.peekPrevious());
+// 		testIt.findNext(m_historyListIterator.peekPrevious());
+// 	}
+// 	qDebug() << "test iterator forward:";
+// 	while (testIt.hasNext()){
+// 		qDebug() << testIt.next()->text();
+// 	}
+// 	qDebug() << "and backwards, from the end: ";
+// 	while (testIt.hasPrevious()){
+// 		qDebug() << testIt.previous()->text();
+// 	}
+// 	return constIterator;
+// }
+
+
+BTHistory* CKeyChooser::history()
+{
+	return &m_history;
 }
 
-void CKeyChooser::backInHistory(QAction* action) {
-	Q_ASSERT(action);
-	Q_ASSERT( (m_prevKeyHistoryList.count() > 0) );
+// void CKeyChooser::moveInHistory(QAction* historyItem)
+// {
+// 	m_history->move(historyItem);
+// }
+// 
+// void CKeyChooser::backInHistory() {
+// 	m_history->back();
+// }
+// 
+// 
+// 
+// void CKeyChooser::forwardInHistory() {
+// 	m_history->fw();
+// }
+// 
+// 
+// void CKeyChooser::addToHistory(CSwordKey* newKey, CSwordKey* oldKey) {
+// 	m_history->add(newKey);
+// }
 
-	m_inHistoryFunction = true;
-	
-	if (m_prevKeyHistoryList.empty()) return;
-
-	//find the key of the action in the list
-	int index;
-	if (action) {
-		index = m_prevKeyHistoryList.indexOf(action->text());
-	}
-	else {
-		index = 1;
-	}
-	QStringList::iterator it = m_prevKeyHistoryList.begin();
-	while ((index > 0) && (it != m_prevKeyHistoryList.end())) {
-		m_nextKeyHistoryList.prepend(*it);
-		it = m_prevKeyHistoryList.erase(it);
-		--index;
-	}
-
-	//the first item is now the item which should be set as key
-	Q_ASSERT(key());
-	if (it != m_nextKeyHistoryList.end() && key()) {
-		CSwordKey* k = key();
-		k->key(*it);
-		setKey(k);
-	}
-
-	m_inHistoryFunction = false;
-}
-
-void CKeyChooser::forwardInHistory() {
-	forwardInHistory(0);
-}
-
-void CKeyChooser::forwardInHistory(QAction* action) {
-	Q_ASSERT(m_nextKeyHistoryList.size());
-	Q_ASSERT(action);
-
-	m_inHistoryFunction = true;
-	
-	if (m_nextKeyHistoryList.empty()) return;
-
-	//find the key of the action in the list
-	int index;
-	if (action) {
-		index = m_nextKeyHistoryList.indexOf(action->text());
-	}
-	else {
-		index = 1;
-	}
-	QStringList::iterator it = m_nextKeyHistoryList.begin();
-	while (index > 0 && it != m_nextKeyHistoryList.end()) {
-		m_prevKeyHistoryList.prepend(*it);
-		it = m_nextKeyHistoryList.erase(it);
-		--index;
-	}
-
-	//the first item of the back list is now the new key
-	Q_ASSERT(key());
-	it = m_prevKeyHistoryList.begin();
-	if (it != m_prevKeyHistoryList.end() && key()) {
-		CSwordKey* k = key();
-		k->key(*it);
-		setKey(k);
-	}
-
-	m_inHistoryFunction = false;
-}
-
-void CKeyChooser::addToHistory(CSwordKey* k) {
-	qDebug("CKeyChooser::addToHistory");
-
-	//??Q_ASSERT(!m_inHistoryFunction);
-	if (k && !m_inHistoryFunction) {
-		Q_ASSERT(k->key() == key()->key());
-		m_prevKeyHistoryList.prepend(k->key());
-	}
-
-	emit historyChanged();
-}
-
-const QStringList CKeyChooser::getPreviousKeys() const {
-	QStringList ret = m_prevKeyHistoryList;
-	if (ret.size() >= 1) {
-	ret.pop_front(); //the first item always is equal to the current key
-	}
-
-	return ret;
-}
-
-const QStringList CKeyChooser::getNextKeys() const {
-	return m_nextKeyHistoryList;
-}
-
-
-
-//should be deleted unless some way to get this to work is found
-void CKeyChooser::ensurePolished() const {
-	//connect the history calls just before we show, we want an empty history
-	qDebug("CKeyChooser::ensurePolished - connect keyChanged to addToHistory");
-	connect(this, SIGNAL(keyChanged(CSwordKey*)), SLOT(addToHistory(CSwordKey*)));
-	QWidget::ensurePolished();
-}
