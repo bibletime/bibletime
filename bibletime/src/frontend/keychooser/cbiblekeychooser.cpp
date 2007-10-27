@@ -48,7 +48,7 @@ m_key(dynamic_cast<CSwordVerseKey*>(key)) {
 
 	setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CSwordKey* CBibleKeyChooser::key() {
@@ -63,13 +63,12 @@ void CBibleKeyChooser::setKey(CSwordKey* key)
 		return;
 	}
 
-	CSwordVerseKey oldKey(*m_key);
 	m_key = dynamic_cast<CSwordVerseKey*>(key);
 	emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
 
 	w_ref->setKey(m_key);
-	qDebug() << "CBibleKeyChooser::setKey, m_key: " << m_key->key() << " oldKey:" << oldKey.key();
-	emit keyChanged(m_key, &oldKey);
+	qDebug() << "CBibleKeyChooser::setKey, m_key: " << m_key->key();
+	emit keyChanged(m_key);
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
@@ -86,11 +85,10 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 		qDebug("will emit beforeKeyChange");
 		emit beforeKeyChange(m_key->key());
 
-	CSwordVerseKey oldKey(*m_key);
 	m_key = key;
 	qDebug("will emit keyChanged");
-	qDebug() << "m_key: " << m_key->key() << "old key:" << oldKey.key();
-	emit keyChanged(m_key, &oldKey);
+	qDebug() << "m_key: " << m_key->key();
+	emit keyChanged(m_key);
 
 	setUpdatesEnabled(true);
 }
@@ -99,7 +97,6 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 void CBibleKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
 	m_modules.clear();
 
-	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
 	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
 		if ((*it)->type() == CSwordModuleInfo::Bible || (*it)->type() == CSwordModuleInfo::Commentary) {

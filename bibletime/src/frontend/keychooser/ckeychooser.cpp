@@ -28,9 +28,6 @@
 
 CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
 	: QWidget(parent),
-	m_inHistoryFunction(false),
-	//m_historyList(),
-	//m_historyListIterator(m_historyList)
 	m_history()
 {}
 
@@ -57,51 +54,8 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 }
 
 
-// KeyChooserHistoryIterator CKeyChooser::getHistoryIterator() const
-// {
-// 	qDebug("CKeyChooser::getHistoryIterator");
-// 	//Q_ASSERT(m_historyListIterator.hasPrevious());
-// 	KeyChooserHistoryIterator constIterator(m_historyList);
-// 	KeyChooserHistoryIterator testIt(m_historyList);
-// 	if (m_historyListIterator.hasPrevious()) {
-// 		qDebug() << "the original iterator has previous: " << m_historyListIterator.peekPrevious()->text();
-// 		constIterator.findNext(m_historyListIterator.peekPrevious());
-// 		testIt.findNext(m_historyListIterator.peekPrevious());
-// 	}
-// 	qDebug() << "test iterator forward:";
-// 	while (testIt.hasNext()){
-// 		qDebug() << testIt.next()->text();
-// 	}
-// 	qDebug() << "and backwards, from the end: ";
-// 	while (testIt.hasPrevious()){
-// 		qDebug() << testIt.previous()->text();
-// 	}
-// 	return constIterator;
-// }
-
-
 BTHistory* CKeyChooser::history()
 {
 	return &m_history;
 }
-
-// void CKeyChooser::moveInHistory(QAction* historyItem)
-// {
-// 	m_history->move(historyItem);
-// }
-// 
-// void CKeyChooser::backInHistory() {
-// 	m_history->back();
-// }
-// 
-// 
-// 
-// void CKeyChooser::forwardInHistory() {
-// 	m_history->fw();
-// }
-// 
-// 
-// void CKeyChooser::addToHistory(CSwordKey* newKey, CSwordKey* oldKey) {
-// 	m_history->add(newKey);
-// }
 

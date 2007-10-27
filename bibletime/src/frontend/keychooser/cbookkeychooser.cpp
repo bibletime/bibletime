@@ -34,7 +34,7 @@ CBookKeyChooser::CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, Q
 	setKey(key);
 
 	adjustFont();
-	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CBookKeyChooser::~CBookKeyChooser() {}
@@ -47,8 +47,6 @@ void CBookKeyChooser::setKey(CSwordKey* newKey)
 /** Sets a new key to this keychooser */
 void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
 {
-	CSwordTreeKey oldCSwordKey(*m_key); //copy the original
-
 	if (m_key != newKey) { //set the internal key to the new one
 		m_key = dynamic_cast<CSwordTreeKey*>(newKey);
 	}
@@ -115,7 +113,7 @@ void CBookKeyChooser::setKey(CSwordKey* newKey, const bool emitSignal)
 		m_key->setOffset(oldOffset);
 	}
 
-	if (emitSignal) emit keyChanged(m_key, &oldCSwordKey);
+	if (emitSignal) emit keyChanged(m_key);
 }
 
 /** Returns the key of this kechooser. */
@@ -147,11 +145,6 @@ void CBookKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool
 			m_layout->setContentsMargins(0,0,0,0);
 		}
 
-		//delete old widgets
-		//qt3 code, QPtrList is now QList
-		//m_chooserWidgets.setAutoDelete(true);
-		//m_chooserWidgets.clear();
-		//m_chooserWidgets.setAutoDelete(false);
 		qDeleteAll(m_chooserWidgets);
 		m_chooserWidgets.clear();
 

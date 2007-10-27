@@ -16,16 +16,11 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QWidget>
-#include <QLinkedListIterator>
-#include <QMutableLinkedListIterator>
-#include <QLinkedList>
+
 
 class CSwordKey;
 class QAction;
 
-
-// Const iterator for the history list
-typedef QLinkedListIterator<QAction*> KeyChooserHistoryIterator;
 
 
 /**
@@ -53,14 +48,6 @@ public:
 	*/
 	static CKeyChooser* createInstance(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent);
 
-	//const QStringList getPreviousKeys() const;
-	//const QStringList getNextKeys() const;
-	//const 
-
-	//virtual void ensurePolished() const;
-	//KeyChooserHistoryIterator getHistoryIterator() const;
-	//getBackList() const;
-	//getForwardList() const;
 
 public slots:
 	/**
@@ -88,10 +75,9 @@ public slots:
 	*/
 	virtual void refreshContent() = 0;
 
-	//void addToHistory(CSwordKey* newKey, CSwordKey* oldKey);
-	//void backInHistory();
-	//void forwardInHistory();
-	//void moveInHistory(QAction* historyItem);
+	/**
+	* Returns the history object of this keychooser.
+	*/
 	BTHistory* history();
 
 signals:
@@ -99,12 +85,11 @@ signals:
 	/**
 	* is emitted if the @ref CKey was changed by the user
 	*/
-	void keyChanged(CSwordKey* newKey, CSwordKey* oldKey);
+	void keyChanged(CSwordKey* newKey);
 	/**
 	* Is emitted before the key is changed!
 	*/
 	void beforeKeyChange(const QString& key);
-	//void historyChanged();
 
 protected:
 
@@ -119,13 +104,8 @@ protected:
 	virtual void adjustFont() = 0;
 
 private:
-	//QStringList m_prevKeyHistoryList;
-	//QStringList m_nextKeyHistoryList;
-	//int m_currentKeyHistoryPos;
 	bool m_inHistoryFunction;
 	BTHistory m_history;
-	//QLinkedList<QAction*> m_historyList;
-	//QMutableLinkedListIterator<QAction*> m_historyListIterator;
 	
 };
 

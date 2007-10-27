@@ -167,7 +167,7 @@ void CLexiconReadWindow::initConnections()
 	qDebug("CLexiconReadWindow::initConnections");
 	Q_ASSERT(keyChooser());
 
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*, CSwordKey*)),
+	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
 			this, SLOT(lookup(CSwordKey*)));
 	connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)),
 			this, SLOT(slotUpdateHistoryButtons(bool, bool)));

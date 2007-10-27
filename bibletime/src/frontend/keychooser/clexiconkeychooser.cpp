@@ -61,7 +61,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *
 
 	setModules(modules, true);
 	setKey(key);
-	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CSwordKey* CLexiconKeyChooser::key() {
@@ -82,7 +82,7 @@ void CLexiconKeyChooser::setKey(CSwordKey* key)
 	m_widget->comboBox()->setCurrentIndex(index);
 
 	//   qWarning("setKey end");
-	emit keyChanged( m_key, &oldKey );
+	emit keyChanged( m_key);
 }
 
 void CLexiconKeyChooser::activated(int index) {
@@ -143,28 +143,19 @@ void CLexiconKeyChooser::refreshContent() {
 		m_widget->reset(goodEntries, 0, true); //write down the entries
 	} //end of ELSE
 
-	//make sure the list sorted
-	/* This is not the best solution, module()->entries() should be sorted already */
-	//   Q_ASSERT(m_widget->comboBox()->listBox());
-	//   m_widget->comboBox()->listBox()->sort();
 }
 
 /** No descriptions */
 void CLexiconKeyChooser::adjustFont() {
-	//  //Make sure the entries are displayed correctly.
-	//   m_widget->comboBox()->setFont( CBTConfig::get( m_modules.first()->language() ).second );
+
 }
 
 /** Sets the module and refreshes the combo boxes */
 void CLexiconKeyChooser::setModules( const ListCSwordModuleInfo& modules, const bool refresh ) {
-	//qt3 code:
-	//Q_ASSERT(!m_modules.autoDelete());
-	//m_modules.clear();
-	//Q_ASSERT(!m_modules.autoDelete());
+
 	while (!m_modules.isEmpty())
         	m_modules.takeFirst(); // not deleting the pointer
 
-	//   for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
 	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
 		CSwordLexiconModuleInfo* lexicon = dynamic_cast<CSwordLexiconModuleInfo*>(*it);

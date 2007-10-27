@@ -48,7 +48,7 @@ m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 
 	setKey(key);
 	adjustFont();
-	connect(this, SIGNAL(keyChanged(CSwordKey*, CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+	connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CBookTreeChooser::~CBookTreeChooser() {}
@@ -61,7 +61,7 @@ void CBookTreeChooser::setKey(CSwordKey* key) {
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
 void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	qDebug("CBookTreeChooser::setKey");
-	CSwordTreeKey oldKey(*m_key);
+
 	if (m_key != newKey ) {
 		m_key = dynamic_cast<CSwordTreeKey*>(newKey);
 	}
@@ -84,7 +84,7 @@ void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
 	m_treeView->scrollToItem(matching_item);
 
 	if (emitSignal) {
-		emit keyChanged(m_key, &oldKey);
+		emit keyChanged(m_key);
 	}
 }
 
@@ -141,17 +141,9 @@ void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
 	qDebug("CBookTreeChooser::itemActivated");
 	//Sometimes Qt calls this function with a null pointer.
 	if (item){
-		qDebug() << "m_key: " << m_key->key();
-		CSwordTreeKey oldKey(*m_key);
-		//set the key with text
-		qDebug() << "item tex(1): " << item->text(1);
-		//m_key->key( item->text(1));
-		qDebug() << "item tex(0): " << item->text(0);
 		m_key->key(item->text(1));
-		qDebug() << "new m_key: " << m_key->key();
-		qDebug() << "old key: " << oldKey.key();
 		//tell possible listeners about the change
-		emit keyChanged(m_key, &oldKey);
+		emit keyChanged(m_key);
 	}
 }
 
