@@ -134,7 +134,7 @@ void CLexiconReadWindow::initActions()
 	ac->addAction("copyReferenceOnly", m_actions.copy.reference);
 
 	m_actions.copy.entry = new KAction(i18n("Entry with text"), ac );
-	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
+	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAll()) );
 	ac->addAction("copyEntryWithText", m_actions.copy.entry);
 
 	Q_ASSERT(ac->action("copySelectedText"));

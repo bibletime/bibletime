@@ -82,7 +82,36 @@ const QString CHTMLReadDisplay::text( const CDisplay::TextType format, const CDi
 				return document().toHTML();
 			}
 			else {
-				return htmlDocument().body().innerText().string().toLatin1();
+				//return htmlDocument().body().innerText().string().toLatin1();
+				CDisplayWindow* window = parentWindow();
+				CSwordKey* const key = window->key();
+				CSwordModuleInfo* module = key->module();
+				//This is never used for Bibles, so it is not implemented for
+				//them.  If it should be, see CReadDisplay::print() for example
+				//code.
+				Q_ASSERT(module->type() == CSwordModuleInfo::Lexicon ||
+						module->type() == CSwordModuleInfo::Commentary ||
+						module->type() == CSwordModuleInfo::GenericBook);
+				if (module->type() == CSwordModuleInfo::Lexicon ||
+						module->type() == CSwordModuleInfo::Commentary ||
+						module->type() == CSwordModuleInfo::GenericBook){
+					//TODO: This is a BAD HACK, we have to fnd a better solution to manage the settings now
+					CSwordBackend::FilterOptions filterOptions;
+					filterOptions.footnotes = false;
+					filterOptions.strongNumbers = false;
+					filterOptions.morphTags = false;
+					filterOptions.lemmas = false;
+					filterOptions.scriptureReferences = false;
+					filterOptions.textualVariants = false;
+
+					CPointers::backend()->setFilterOptions(filterOptions);
+
+					return QString(key->strippedText()).append("\n(")
+						.append(key->key())
+						.append(", ")
+						.append(key->module()->name())
+						.append(")");
+				}
 			}
 		}
 
