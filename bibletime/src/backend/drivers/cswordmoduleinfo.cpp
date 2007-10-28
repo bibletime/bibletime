@@ -10,6 +10,7 @@
 //BibleTime includes
 #include "cswordmoduleinfo.h"
 #include "cswordmoduleinfo.moc"
+#include "cswordlexiconmoduleinfo.h"
 
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
@@ -299,7 +300,8 @@ void CSwordModuleInfo::buildIndex() {
 
 	// we start with the first module entry, key is automatically updated
 	// because key is a pointer to the modules key
-	for (*m_module = sword::TOP; !(key->Error()); (*key)++) {
+	m_module->setSkipConsecutiveLinks(true);
+	for (*m_module = sword::TOP; !(m_module->Error()); (*m_module)++) {
 
 		//If it is a sword-heading, store in buffer and index later in Verse X:1
 		if (vk) {

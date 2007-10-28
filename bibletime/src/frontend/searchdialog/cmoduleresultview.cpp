@@ -187,6 +187,11 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*)
 {
     QString itemText, lText;
  
+ 	if (!i){
+		//Clear list
+		emit moduleChanged();
+		return;
+	}
 	if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(i->text(0))) {
 		emit moduleChanged();
 		emit moduleSelected(m);

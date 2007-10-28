@@ -168,7 +168,9 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
 	//  Q_ASSERT(item);
 	//  qWarning("executed");
-	emit keySelected(current->text(0));
+	if (current){
+		emit keySelected(current->text(0));
+	}
 }
 
 //TODO: another function?
