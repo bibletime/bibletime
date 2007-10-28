@@ -35,7 +35,8 @@ public:
 		DevotionalModuleFolder,
 		GlossaryModuleFolder,
 		ModuleLanguageFolder,
-		Module
+		Module,
+		ImageModuleFolder
 	};
 	enum MenuAction {
 		NewFolder = 0,

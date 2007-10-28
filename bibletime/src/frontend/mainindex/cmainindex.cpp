@@ -408,6 +408,7 @@ void CMainIndex::initTree() {
 	addGroup(CIndexItemBase::DevotionalModuleFolder, QString("*"));
 	addGroup(CIndexItemBase::GlossaryModuleFolder, QString("*"));
 	addGroup(CIndexItemBase::LexiconModuleFolder, QString("*"));
+	addGroup(CIndexItemBase::ImageModuleFolder, QString("*"));
 }
 
 /** No descriptions */

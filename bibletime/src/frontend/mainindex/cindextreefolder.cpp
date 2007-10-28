@@ -97,6 +97,10 @@ void CIndexTreeFolder::init() {
 			case GlossaryModuleFolder:
 			setText(0,i18n("Glossaries"));
 			break;
+			case ImageModuleFolder:
+			setText(0,i18n("Maps and Images"));
+			break;
+
 			case BookmarkFolder:
 			setText(0,i18n("Bookmarks"));
 			break;
@@ -123,34 +127,24 @@ void CIndexTreeFolder::initTree() {
 	if (type() == Unknown)
 		return;
 
-	CSwordModuleInfo::ModuleType moduleType = CSwordModuleInfo::Unknown;
+	CSwordModuleInfo::Category moduleCategory = CSwordModuleInfo::UnknownCategory;
 	if (type() == BibleModuleFolder)
-		moduleType = CSwordModuleInfo::Bible;
+		moduleCategory = CSwordModuleInfo::Bibles;
 	else if (type() == CommentaryModuleFolder)
-		moduleType = CSwordModuleInfo::Commentary;
+		moduleCategory = CSwordModuleInfo::Commentaries;
 	else if (type() == LexiconModuleFolder || type() == GlossaryModuleFolder || type() == DevotionalModuleFolder)
-		moduleType = CSwordModuleInfo::Lexicon;
+		moduleCategory = CSwordModuleInfo::Lexicons;
 	else if (type() == BookModuleFolder)
-		moduleType = CSwordModuleInfo::GenericBook;
+		moduleCategory = CSwordModuleInfo::Books;
+	else if (type() == ImageModuleFolder)
+		moduleCategory = CSwordModuleInfo::Images;
 
 	//get all modules by using the given type
 	ListCSwordModuleInfo allModules =CPointers::backend()->moduleList();
 	ListCSwordModuleInfo usedModules;
 	ListCSwordModuleInfo::iterator end_it = allModules.end();
 	for (ListCSwordModuleInfo::iterator it(allModules.begin()); it != end_it; ++it) {
-		//   for (CSwordModuleInfo* m = allModules.first(); m; m = allModules.next()) {
-		if ((*it)->type() == moduleType) { //found a module, check if the type is correct (devotional etc.)
-			if (type() == GlossaryModuleFolder && !(*it)->category() == CSwordModuleInfo::Glossary) { //not a gglossary
-				continue;
-			}
-			if (type() == DevotionalModuleFolder && ((*it)->category() != CSwordModuleInfo::DailyDevotional)) {//not a devotional
-				continue;
-			}
-			if (type() == LexiconModuleFolder && ( ((*it)->category() == CSwordModuleInfo::DailyDevotional) || ((*it)->category() == CSwordModuleInfo::Glossary) )) {
-				//while looking for lexicons glossaries and devotionals shouldn't be used
-				continue;
-			}
-
+		if ((*it)->category() == moduleCategory) { //found a module, check if the type is correct (devotional etc.)
 			if (language() == QString::fromLatin1("*") || (language() != QString::fromLatin1("*") && QString::fromLatin1((*it)->module()->Lang()) == language()) )//right type and language!
 				usedModules.append(*it);
 		}
@@ -159,13 +153,9 @@ void CIndexTreeFolder::initTree() {
 	//we have now all modules we want to have
 	if (language() == QString::fromLatin1("*")) { //create subfolders for each language
 		QStringList usedLangs;
-		//     for (CSwordModuleInfo* m = usedModules.first(); m; m = usedModules.next()) {
-		/*ListCSwordModuleInfo::iterator*/
 		end_it = usedModules.end();
 		for (ListCSwordModuleInfo::iterator it(usedModules.begin()); it != end_it; ++it) {
 			QString lang = QString::fromLatin1((*it)->module()->Lang());
-			//      if (lang.isEmpty())
-			//        lang = ");
 			if (!usedLangs.contains(lang)) {
 				usedLangs.append(lang);
 			}
@@ -178,9 +168,8 @@ void CIndexTreeFolder::initTree() {
 		}
 	}
 	else if (usedModules.count() > 0) { //create subitems with the given type and language
-		/*ListCSwordModuleInfo::iterator*/ end_it = usedModules.end();
+		end_it = usedModules.end();
 		for (ListCSwordModuleInfo::iterator it(usedModules.begin()); it != end_it; ++it) {
-			//     for (CSwordModuleInfo* m = usedModules.first(); m; m = usedModules.next()) {
 			addModule(*it);
 		}
 	}

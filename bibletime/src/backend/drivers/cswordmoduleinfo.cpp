@@ -720,20 +720,26 @@ const CSwordModuleInfo::Category CSwordModuleInfo::category() const {
 		else if (cat == "Daily Devotional" || m_module->getConfig().has("Feature", "DailyDevotion")) {
 			m_dataCache.category = DailyDevotional;
 		}
-		else if (cat == "Glossaries" || m_module->getConfig().has("Feature", "Glossary")) { //alow both
+		else if (cat == "Glossaries" || m_module->getConfig().has("Feature", "Glossary")) { //allow both
 			m_dataCache.category = Glossary;
 		}
-		else if (cat == "Essays") {
-			m_dataCache.category = Essays;
-		}
-		else if (cat == "Maps") {
-			m_dataCache.category = Maps;
-		}
-		else if (cat == "Images") {
+		else if (cat == "Images" || cat == "Maps") {
 			m_dataCache.category = Images;
 		}
+		else if (type() == Commentary) {
+			m_dataCache.category = Commentaries;
+		}
+		else if (type() == Bible) {
+			m_dataCache.category = Bibles;
+		}
+		else if (type() == Lexicon) {
+			m_dataCache.category = Lexicons;
+		}
+		else if (type() == GenericBook) {
+			m_dataCache.category = Books;
+		}
 	}
-	//qDebug() << "assigned category: << "<< m_dataCache.category;
+	//qDebug() << "assigned category: " << m_dataCache.category;
 	return m_dataCache.category;
 }
 

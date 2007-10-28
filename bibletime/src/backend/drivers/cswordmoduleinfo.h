@@ -130,9 +130,11 @@ public:
 		Cult, /**< The module is a cult / sect / questionable module */
 		DailyDevotional,
 		Glossary,
-		Essays,
-		Maps,
-		Images
+		Images,
+		Bibles,
+		Commentaries,
+		Lexicons,
+		Books
 	};
 
 	/**
