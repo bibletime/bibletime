@@ -117,7 +117,7 @@ public:
 		Markup  /**< The markup of this module */
 	};
 	enum Feature {
-		//StrongsNumbers, /**< Use for Bibles which have embedded strong numbers */
+		//StrongsNumbers, /**< Use for Bibles which have embedded strong numbers */ BT does not use this as a user option
 		GreekDef,
 		HebrewDef,
 		GreekParse,
@@ -129,7 +129,10 @@ public:
 		UnknownCategory = 0, /**< The category wasn't set or has an unknwon value */
 		Cult, /**< The module is a cult / sect / questionable module */
 		DailyDevotional,
-		Glossary
+		Glossary,
+		Essays,
+		Maps,
+		Images
 	};
 
 	/**

@@ -122,12 +122,34 @@ void CSwordSetupModuleListView::init() {
 	m_categoryGlossaries->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryGlossaries);
 
-	m_categoryBible->setExpanded(true);
-	m_categoryCommentary->setExpanded(true);
-	m_categoryLexicon->setExpanded(true);
-	m_categoryBook->setExpanded(true);
-	m_categoryDevotionals->setExpanded(true);
-	m_categoryGlossaries->setExpanded(true);
+	m_categoryEssays = new QTreeWidgetItem(this);
+	m_categoryEssays->setText(0, i18n("Essays"));
+	m_categoryEssays->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryEssays->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryEssays->setCheckState(0, Qt::Unchecked);
+	addTopLevelItem(m_categoryEssays);
+
+	m_categoryMaps = new QTreeWidgetItem(this);
+	m_categoryMaps->setText(0, i18n("Maps"));
+	m_categoryMaps->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryMaps->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryMaps->setCheckState(0, Qt::Unchecked);
+	addTopLevelItem(m_categoryMaps);
+
+	m_categoryImages = new QTreeWidgetItem(this);
+	m_categoryImages->setText(0, i18n("Images"));
+	m_categoryImages->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryImages->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryImages->setCheckState(0, Qt::Unchecked);
+	addTopLevelItem(m_categoryImages);
+
+
+	//m_categoryBible->setExpanded(true);
+	//m_categoryCommentary->setExpanded(true);
+	//m_categoryLexicon->setExpanded(true);
+	//m_categoryBook->setExpanded(true);
+	//m_categoryDevotionals->setExpanded(true);
+	//m_categoryGlossaries->setExpanded(true);
 
 	connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), SLOT(slotItemClicked(void))); //items have to be clicked only once in double click mode
 	connect(this, SIGNAL(itemPressed(QTreeWidgetItem*, int)), SLOT(slotItemClicked(void)));
@@ -140,6 +162,9 @@ void CSwordSetupModuleListView::finish() {
 	if (!m_categoryLexicon->childCount()) delete m_categoryLexicon;
 	if (!m_categoryDevotionals->childCount()) delete m_categoryDevotionals;
 	if (!m_categoryGlossaries->childCount()) delete m_categoryGlossaries;
+	if (!m_categoryEssays->childCount()) delete m_categoryEssays;
+	if (!m_categoryMaps->childCount()) delete m_categoryMaps;
+	if (!m_categoryImages->childCount()) delete m_categoryImages;
 }
 
 void CSwordSetupModuleListView::clear() {
@@ -175,6 +200,15 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 	}
 	else if ((parent == m_categoryLexicon) && (module->category() == CSwordModuleInfo::DailyDevotional)) {
 		parent = m_categoryDevotionals;
+	}
+		else if ( (module->category() == CSwordModuleInfo::Essays)) {
+		parent = m_categoryEssays;
+	}
+		else if ((module->category() == CSwordModuleInfo::Maps)) {
+		parent = m_categoryMaps;
+	}
+		else if ((module->category() == CSwordModuleInfo::Images)) {
+		parent = m_categoryImages;
 	}
 
 	//now we know the category, find the right language group in that category

@@ -707,9 +707,10 @@ const bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 
 /** Returns the category of this module. See CSwordModuleInfo::Category for possible values. */
 const CSwordModuleInfo::Category CSwordModuleInfo::category() const {
-	if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) {
-		
+	//qDebug("CSwordModuleInfo::category");
+	if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) { 
 		const QString cat(m_module->getConfigEntry("Category"));
+		//qDebug() << "the category was unknown, add a category "<< cat << "for module" << m_module->Name();
 
 		if (cat == "Cults / Unorthodox / Questionable Material") {
 			m_dataCache.category = Cult;
@@ -720,8 +721,17 @@ const CSwordModuleInfo::Category CSwordModuleInfo::category() const {
 		else if (cat == "Glossaries" || m_module->getConfig().has("Feature", "Glossary")) { //alow both
 			m_dataCache.category = Glossary;
 		}
+		else if (cat == "Essays") {
+			m_dataCache.category = Essays;
+		}
+		else if (cat == "Maps") {
+			m_dataCache.category = Maps;
+		}
+		else if (cat == "Images") {
+			m_dataCache.category = Images;
+		}
 	}
-
+	//qDebug() << "assigned category: << "<< m_dataCache.category;
 	return m_dataCache.category;
 }
 

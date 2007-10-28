@@ -58,6 +58,9 @@ private:
 	QTreeWidgetItem* m_categoryBook;
 	QTreeWidgetItem* m_categoryDevotionals;
 	QTreeWidgetItem* m_categoryGlossaries;
+	QTreeWidgetItem* m_categoryEssays;
+	QTreeWidgetItem* m_categoryMaps;
+	QTreeWidgetItem* m_categoryImages;
 
 signals:
 	void selectedModulesChanged();
