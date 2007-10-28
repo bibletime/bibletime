@@ -12,6 +12,7 @@
 #include "cbiblekeychooser.h"
 #include "cbiblekeychooser.moc"
 
+#include "bthistory.h"
 #include "ckeyreferencewidget.h"
 #include "cscrollbutton.h"
 
@@ -119,3 +120,9 @@ void CBibleKeyChooser::refreshContent() {
 /** No descriptions */
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {}
 void CBibleKeyChooser::adjustFont() {}
+
+void CBibleKeyChooser::setKey(QString& newKey)
+{
+	m_key->key(newKey);
+	setKey(m_key);
+}

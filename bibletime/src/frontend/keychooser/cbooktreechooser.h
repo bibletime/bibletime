@@ -76,6 +76,7 @@ protected: // Protected methods
 
 protected slots: // Protected slots
 	void itemActivated( QTreeWidgetItem* item );
+	void setKey(QString& newKey);
 
 private:
 	QList<CSwordBookModuleInfo*> m_modules;

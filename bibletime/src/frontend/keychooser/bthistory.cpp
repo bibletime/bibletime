@@ -22,19 +22,25 @@
 #include <QDebug>
 
 
-BTHistory::BTHistory()
+BTHistory::BTHistory(QWidget* parent)
 	: m_historyList(),
 	m_index(-1),
 	m_inHistoryFunction(false)
-{Q_ASSERT(class_invariant());}
+{
+	setParent(parent);
+	Q_ASSERT(class_invariant());
+}
 
 void BTHistory::add(CSwordKey* newKey) {
 	qDebug("BTHistory::add");
-	
+	Q_ASSERT(newKey);
 	// Add new key Action after current index if we were not using the history functions
 	// and if it's not a duplicate.
-	if (!m_inHistoryFunction && ((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) )) {
-		m_historyList.insert(++m_index, new QAction(newKey->key(), this));
+	if (!m_inHistoryFunction &&	((m_index < 0) || (newKey->key() != m_historyList.at(m_index)->text()) ))
+	{
+		if (!newKey->key().isEmpty()) {
+			m_historyList.insert(++m_index, new QAction(newKey->key(), this));
+		}
 		// TODO: history limit?
 		sendChangedSignal();
 	}

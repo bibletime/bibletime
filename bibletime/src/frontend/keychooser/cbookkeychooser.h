@@ -74,9 +74,7 @@ protected slots:
 	* A keychooser changed. Update and emit a signal if necessary.
 	*/
 	void keyChooserChanged(int);
-	//is called when a keychooser widget wants to jump to the next/previous key
-	//  void nextEntry();
-	//  void previousEntry();
+	virtual void setKey(QString& newKey);
 
 private:
 	QList<CKeyChooserWidget*> m_chooserWidgets;

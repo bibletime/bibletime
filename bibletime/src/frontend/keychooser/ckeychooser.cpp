@@ -19,6 +19,7 @@
 
 #include "backend/keys/cswordkey.h"
 
+#include "bthistory.h"
 #include "clexiconkeychooser.h"
 #include "cbiblekeychooser.h"
 #include "cbookkeychooser.h"
@@ -28,8 +29,10 @@
 
 CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
 	: QWidget(parent),
-	m_history()
-{}
+	m_history(0)
+{
+	m_history = new BTHistory(this);
+}
 
 CKeyChooser::~CKeyChooser() {}
 
@@ -56,6 +59,6 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 
 BTHistory* CKeyChooser::history()
 {
-	return &m_history;
+	return m_history;
 }
 

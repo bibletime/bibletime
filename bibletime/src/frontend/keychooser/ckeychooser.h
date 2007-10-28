@@ -12,7 +12,7 @@
 #ifndef CKEYCHOOSER_H
 #define CKEYCHOOSER_H
 
-#include "bthistory.h"
+
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QWidget>
@@ -21,6 +21,7 @@
 class CSwordKey;
 class QAction;
 
+class BTHistory;
 
 
 /**
@@ -103,9 +104,11 @@ protected:
 	*/
 	virtual void adjustFont() = 0;
 
+protected slots:
+	virtual void setKey(QString& newKey) = 0;
+
 private:
-	bool m_inHistoryFunction;
-	BTHistory m_history;
+	BTHistory* m_history;
 	
 };
 

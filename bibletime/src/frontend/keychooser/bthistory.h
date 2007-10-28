@@ -19,14 +19,14 @@
 
 class CSwordKey;
 class QAction;
-
+class QWidget;
 
 class BTHistory: public QObject
 {
 	Q_OBJECT
 
 public:
-	BTHistory();
+	BTHistory(QWidget* parent);
 	~BTHistory() {};
 
 	/**

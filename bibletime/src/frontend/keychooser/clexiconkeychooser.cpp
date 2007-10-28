@@ -12,6 +12,7 @@
 #include "clexiconkeychooser.h"
 #include "clexiconkeychooser.moc"
 
+#include "bthistory.h"
 #include "ckeychooserwidget.h"
 #include "cscrollbutton.h"
 
@@ -72,7 +73,7 @@ CSwordKey* CLexiconKeyChooser::key() {
 void CLexiconKeyChooser::setKey(CSwordKey* key)
 {
 	qDebug("CLexiconKeyChooser::setKey");
-	CSwordLDKey oldKey(*m_key);
+	
 	if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
 		return;
 	}
@@ -172,3 +173,9 @@ void CLexiconKeyChooser::setModules( const ListCSwordModuleInfo& modules, const 
 
 /** No descriptions */
 void CLexiconKeyChooser::updateKey(CSwordKey*) {}
+
+void CLexiconKeyChooser::setKey(QString& newKey)
+{
+	m_key->key(newKey);
+	setKey(m_key);
+}

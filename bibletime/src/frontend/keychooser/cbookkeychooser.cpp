@@ -8,6 +8,8 @@
 **********/
 #include "cbookkeychooser.h"
 
+#include "bthistory.h"
+
 #include "backend/keys/cswordtreekey.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "frontend/cbtconfig.h"
@@ -269,3 +271,8 @@ void CBookKeyChooser::updateKey(CSwordKey* key)
 	setKey(key, false);
 }
 
+void CBookKeyChooser::setKey(QString& newKey)
+{
+	m_key->key(newKey);
+	setKey(m_key);
+}

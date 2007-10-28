@@ -77,6 +77,10 @@ protected:
 
 public slots: // Public slots
 	virtual void updateKey(CSwordKey* key);
+
+protected slots:
+	virtual void setKey(QString& newKey);
+
 };
 
 #endif

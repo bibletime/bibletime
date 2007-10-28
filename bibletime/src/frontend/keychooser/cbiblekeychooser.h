@@ -66,6 +66,8 @@ public slots:
 	void adjustFont();
 	void refreshContent();
 
+protected slots:
+	virtual void setKey(QString& newKey);
 
 private:
 	CKeyReferenceWidget* w_ref;

@@ -8,6 +8,8 @@
 **********/
 #include "cbooktreechooser.h"
 
+#include "bthistory.h"
+
 #include "backend/keys/cswordtreekey.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "frontend/cbtconfig.h"
@@ -191,4 +193,10 @@ void CBookTreeChooser::addKeyChildren(CSwordTreeKey* key, QTreeWidgetItem* item)
 			key->setOffset(offset);
 		} while (key->nextSibling());
 	}
+}
+
+void CBookTreeChooser::setKey(QString& newKey)
+{
+	m_key->key(newKey);
+	setKey(m_key);
 }

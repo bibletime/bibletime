@@ -10,10 +10,12 @@
 //BibleTime includes
 #include "cdisplaywindow.h"
 #include "cdisplaywindow.moc"
+
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
 #include "backend/keys/cswordkey.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/keychooser/bthistory.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/profile/cprofilewindow.h"

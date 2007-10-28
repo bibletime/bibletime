@@ -25,6 +25,7 @@
 #include "frontend/display/creaddisplay.h"
 #include "frontend/display/chtmlreaddisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/keychooser/bthistory.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
