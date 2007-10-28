@@ -211,6 +211,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 					//i->setPixmap(0, CToolClass::getIconForModule(*mod_Itr));
 					QTreeWidgetItem* i = new QTreeWidgetItem(langFolder, QStringList((*mod_Itr)->name()));
 					i->setFlags(Qt::ItemIsUserCheckable);
+					i->setDisabled(false);
 					if (selectedModules.contains(*mod_Itr)) {
 						//Module was in the list of already selected modules
 						i->setCheckState(0, Qt::Checked);
