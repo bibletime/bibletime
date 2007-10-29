@@ -1,4 +1,4 @@
-SET (REQUIRED_SWORD_VERSION 1.5.9)
+SET (REQUIRED_SWORD_VERSION 1.5.10)
 
 # This module looks for installed sword
 #

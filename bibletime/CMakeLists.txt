@@ -235,6 +235,7 @@ TARGET_LINK_LIBRARIES(bibletime
 	QtXml
 	${CLUCENE_LIBRARY}
 	${SWORD_LIBRARY}
+	curl #??? not sure why I need this, since update to Ubuntu Gutsy / Sword 1.5.10, who knows if there is a workaround?
 )
 
 FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
@@ -257,7 +258,8 @@ INSTALL(FILES "docs/tips.xml" DESTINATION "share/bibletime/docs/")
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-  IMMEDIATE @ONLY)
+  IMMEDIATE @ONLY
+ )
 
 ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 #######################################

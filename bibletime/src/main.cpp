@@ -7,11 +7,6 @@
 *
 **********/
 
-
-
-/* $Header: /cvsroot/bibletime/bibletime/bibletime/main.cpp,v 1.143 2007/04/02 21:53:48 joachim Exp $ */
-/* $Revision: 1.143 $ */
-
 //standard includes
 #include <stdlib.h>
 #include <stdio.h>
@@ -321,16 +316,6 @@ int main(int argc, char* argv[]) {
 						}*/
 						DirectoryUtil::copyRecursive(
 								sessionDir.absolutePath(), DirectoryUtil::getUserSessionsDir().absolutePath());
-					}
-					QDir cacheDir(currSearch + "/share/apps/bibletime/cache");
-					if (cacheDir.exists()){
-						DirectoryUtil::copyRecursive(cacheDir.absolutePath(),
-								DirectoryUtil::getUserCacheDir().absolutePath());
-					}
-					QDir indexDir(currSearch + "/share/apps/bibletime/indices");
-					if (indexDir.exists()){
-						DirectoryUtil::copyRecursive(indexDir.absolutePath(),
-								DirectoryUtil::getUserIndexDir().absolutePath());
 					}
 					//We found at least a config file, so we are done
 					//searching for migration data.
