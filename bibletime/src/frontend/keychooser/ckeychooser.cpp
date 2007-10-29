@@ -31,7 +31,9 @@ CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
 	: QWidget(parent),
 	m_history(0)
 {
+	//qDebug("CKeyChooser::CKeyChooser");
 	m_history = new BTHistory(this);
+	QObject::connect(history(), SIGNAL(historyMoved(QString&)), this, SLOT(setKey(QString&)));
 }
 
 CKeyChooser::~CKeyChooser() {}
