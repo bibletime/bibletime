@@ -206,11 +206,17 @@ void CDisplayWindow::windowActivated( const bool hasFocus ) {
 	
 	//new:
 	if (actionCollection()) {
-		if (hasFocus) {
-			actionCollection()->setAssociatedWidget(this);
-		} else {
-			actionCollection()->removeAssociatedWidget(this);
-		}
+#if KDE_VERSION_MAJOR == 3 && KDE_VERSION_MINOR <= 94
+			if (hasFocus) {
+				actionCollection()->setAssociatedWidget(this);
+			} else {
+				actionCollection()->removeAssociatedWidget(this);
+			}
+#else		
+			if (hasFocus) {
+				actionCollection()->associateWidget(this);
+			}
+#endif
 	}
 }
 
