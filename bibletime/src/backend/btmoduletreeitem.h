@@ -102,12 +102,10 @@ public:
 	* The constructor takes a list of filters (see Filter) and grouping indicator (see Grouping).
 	*/
 	BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping);
+	
+	/** When the root item is deleted the whole tree is deleted. */
 	~BTModuleTreeItem();
 
-	/**
-	* Returns a pointer to the next sibling, or 0 if there is none.
-	*/
-	//inline BTModuleTreeItem* next() const {return m_next;}
 	/**
 	* Returns the item type.
 	*/
@@ -145,10 +143,12 @@ private:
 	/** Default ctor is private because it is not to be called.*/
 	BTModuleTreeItem();
 
-	// creates the tree under this root item (called only from root ctor)
+	/** Creates the tree under this root item (called only from root ctor). */
 	void create_tree(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping);
+	/** Sorts recursively the children of of the given item. */
 	void sort_children(BTModuleTreeItem* parent);
-
+	/** Helper function for creating a group item while creating the tree. */
+	BTModuleTreeItem* create_parent_item(BTModuleTreeItem* parent, const QString& text, BTModuleTreeItem::Type type);
 
 	CSwordModuleInfo* m_moduleInfo;
 	QString m_text;

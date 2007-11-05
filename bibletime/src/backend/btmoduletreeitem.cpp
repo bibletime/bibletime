@@ -31,7 +31,6 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
 {
 	//populate the tree with groups/modules
 	create_tree(filters, grouping);
-	//Q_ASSERT(class_invariant());
 }
 
 /**
@@ -44,15 +43,12 @@ BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* previousSibling, BTModuleTr
 	m_firstChild(0),
 	m_next(0)
 {
-	//Q_ASSERT(previousSibling || parentItem);
-	//Q_ASSERT(info != 0 || ( (type!=BTModuleTreeItem::Module) && !text.isEmpty() ) );
-
 	if (info) {
 		m_text = info->name();
 		m_type = BTModuleTreeItem::Module;
 	}
 
-	//this item must have either a parent or a previous sibling
+	//this item has either a parent or a previous sibling
 	if (previousSibling) {
 		previousSibling->m_next = this;
 	} else {
@@ -64,8 +60,6 @@ BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* previousSibling, BTModuleTr
 
 BTModuleTreeItem::~BTModuleTreeItem()
 {
-	//qDebug("BTModuleTreeItem::~BTModuleTreeItem");
-	//qDebug() << this->text();
 	// this works recursively
 	foreach(BTModuleTreeItem* i, children()) {
 		delete i;
@@ -89,32 +83,12 @@ QList<BTModuleTreeItem*> BTModuleTreeItem::children() const
 	return childList;
 }
 
-
+//TODO
 QString BTModuleTreeItem::iconPath() const
 {
 	return QString::null;
 }
 
-// class invariant was not a good idea here because items are changed in many ways while creating the tree.
-// bool BTModuleTreeItem::class_invariant() const
-// {
-// 	//TODO: add #ifdef DEBUG or something similar around this function body
-// 	bool only_module_has_info = (m_moduleInfo != 0 || ( (m_type!=BTModuleTreeItem::Module) ) );
-// 	bool nonrecursive = (m_next != this);
-// 	bool has_text = (!m_text.isEmpty());
-// 	bool module_has_no_children = !(m_type==BTModuleTreeItem::Module && m_next);
-// 	bool category_and_language_have_children = !((m_type==BTModuleTreeItem::Category || m_type==BTModuleTreeItem::Language) && !m_firstChild);
-// 	bool next_is_same_type = !(m_next && m_type != m_next->m_type);
-// 	bool child_is_different_type = !(m_firstChild && m_type == m_firstChild->m_type);
-// 
-// 	return (only_module_has_info
-// 			&& nonrecursive
-// 			&& has_text
-// 			&& module_has_no_children
-// 			&& category_and_language_have_children
-// 			&& next_is_same_type
-// 			&& child_is_different_type);
-// }
 
 void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping)
 {
@@ -147,102 +121,48 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 		}
 		if (included) {
 			//qDebug() << "a module will be included: " << info->name();
-			BTModuleTreeItem* tempItem = 0;
+			
 			BTModuleTreeItem* parentGroupForModule = this;
 			BTModuleTreeItem* parentGroupForLanguage = this;
 			BTModuleTreeItem* parentGroupForCategory = this;
 
 
 			//the order of if(grouping...) clauses is important
-			// TODO: remove repetition with a new function, refactor if you find a better (simpler) way
-			if (grouping == BTModuleTreeItem::LangMod || grouping == BTModuleTreeItem::LangCatMod) {
-				BTModuleTreeItem* langItem = 0;
-				QString langName = info->language()->translatedName();
-				foreach(BTModuleTreeItem* it, parentGroupForLanguage->children()) {
-					if (it->text() == langName) {
-						langItem = it;
-						break;
-					} 
-				}
-				if (!langItem) {
-					//qDebug() << "create a new language group:" << langName;
-					tempItem = parentGroupForLanguage->m_firstChild;
-					langItem = new BTModuleTreeItem(0, parentGroupForLanguage, langName, BTModuleTreeItem::Language, 0);
-					if (tempItem)  parentGroupForLanguage->m_firstChild->m_next = tempItem;
-				}
-				if (grouping == BTModuleTreeItem::LangMod) {
+			if (grouping == BTModuleTreeItem::LangMod || grouping == BTModuleTreeItem::LangCatMod) {				
+				BTModuleTreeItem* langItem = create_parent_item(parentGroupForLanguage, info->language()->translatedName(), BTModuleTreeItem::Language);
+
+				if (grouping == BTModuleTreeItem::LangMod)
 					parentGroupForModule = langItem;
-				} else if (grouping == BTModuleTreeItem::LangCatMod) {
+				else
 					parentGroupForCategory = langItem;
-				}
 			}
 
 			if (grouping == BTModuleTreeItem::CatMod || grouping == BTModuleTreeItem::CatLangMod) {
-				BTModuleTreeItem* catItem = 0;
-				QString cat = CategoryNamesMap.value(info->category());
-				foreach(BTModuleTreeItem* it, parentGroupForCategory->children()) {
-					if (it->text() == cat) {
-						//qDebug() << "category" << cat << "existed already";
-						catItem = it;
-						break;
-					} 
-				}
-				if (!catItem) {
-					//qDebug() << "create a new Category group:" << cat;
-					tempItem = parentGroupForCategory->m_firstChild;
-					catItem = new BTModuleTreeItem(0, parentGroupForCategory, cat, BTModuleTreeItem::Category, 0);
-					if (tempItem) parentGroupForCategory->m_firstChild->m_next = tempItem;
-				}
-				if (grouping == BTModuleTreeItem::CatMod) {
+				BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category);
+
+				if (grouping == BTModuleTreeItem::CatMod)
 					parentGroupForModule = catItem;
-				} else if (grouping == BTModuleTreeItem::CatLangMod) {
+				else
 					parentGroupForLanguage = catItem;
-				}
 			}
 
 			if (grouping == BTModuleTreeItem::CatLangMod) {
 				// category is there already, create language and make it the parent for the module
-				BTModuleTreeItem* langItem = 0;
-				QString langName = info->language()->translatedName();
-				foreach(BTModuleTreeItem* it, parentGroupForLanguage->children()) {
-					if (it->text() == langName) {
-						langItem = it;
-						break;
-					} 
-				}
-				if (!langItem) {
-					//qDebug() << "create a new language group under category:" << langName;
-					tempItem = parentGroupForLanguage->m_firstChild;
-					langItem = new BTModuleTreeItem(0, parentGroupForLanguage, langName, BTModuleTreeItem::Language, 0);
-					if (tempItem) parentGroupForLanguage->m_firstChild->m_next = tempItem;
-				}
+				BTModuleTreeItem* langItem = create_parent_item(parentGroupForLanguage, info->language()->translatedName(), BTModuleTreeItem::Language);
+
 				parentGroupForModule = langItem;
-				
 			}
 
 			if (grouping == BTModuleTreeItem::LangCatMod) {
 				//language is there already, create category and make it the parent for the module
-				BTModuleTreeItem* catItem = 0;
-				QString cat = CategoryNamesMap.value(info->category());
-				foreach(BTModuleTreeItem* it, parentGroupForCategory->children()) {
-					if (it->text() == cat) {
-						catItem = it;
-						break;
-					} 
-				}
-				if (!catItem) {
-					//qDebug() << "create a new category under language:" << cat;
-					tempItem = parentGroupForCategory->m_firstChild;
-					catItem = new BTModuleTreeItem(0, parentGroupForCategory, cat, BTModuleTreeItem::Category, 0);
-					if (tempItem) parentGroupForCategory->m_firstChild->m_next = tempItem;
-				}
+				BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category);
+
 				parentGroupForModule = catItem;
-				
 			}
 
 			// the parent group for module has been set above, now just add the module to it
 			//qDebug() << "parent groups have been created/set, add add module to:" << parentGroupForModule->text();
-			tempItem = parentGroupForModule->m_firstChild;
+			BTModuleTreeItem* tempItem = parentGroupForModule->m_firstChild;
 			new BTModuleTreeItem(0, parentGroupForModule, QString::null, BTModuleTreeItem::Module, info);
 			parentGroupForModule->m_firstChild->m_next = tempItem;
 			//qDebug() << "included new module into tree:" << parentGroupForModule->m_firstChild;
@@ -252,6 +172,26 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 
 	// Finally sort the items
 	sort_children(this);
+}
+
+BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
+	BTModuleTreeItem* parentGroup,
+	const QString& itemText,
+	BTModuleTreeItem::Type type)
+{
+	BTModuleTreeItem* item = 0;
+	foreach(BTModuleTreeItem* it, parentGroup->children()) {
+		if (it->text() == itemText) {
+			item = it;
+			break;
+		}
+	}
+	if (!item) {
+		BTModuleTreeItem* tempItem = parentGroup->m_firstChild;
+		item = new BTModuleTreeItem(0, parentGroup, itemText, type, 0); // give type as argument
+		if (tempItem) parentGroup->m_firstChild->m_next = tempItem;
+	}
+	return item;
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent)
