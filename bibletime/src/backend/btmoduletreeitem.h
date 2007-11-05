@@ -139,7 +139,7 @@ private:
 	/**
 	* Private constructor which sets the members.
 	*/
-	BTModuleTreeItem(BTModuleTreeItem* previousSibling, BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info=0);
+	BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info=0);
 	/** Default ctor is private because it is not to be called.*/
 	BTModuleTreeItem();
 
