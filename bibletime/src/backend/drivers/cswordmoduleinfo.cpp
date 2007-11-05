@@ -72,6 +72,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
 	m_module = module;
 	Q_ASSERT(module);
 	
+	m_hidden = false;
 	m_searchResult.ClearList();
 	m_backend = usedBackend ? usedBackend : CPointers::backend();
 	m_dataCache.name = module ? QString(module->Name()) : QString::null;
@@ -93,6 +94,7 @@ CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & m) {
 	m_backend = m.m_backend;
 	m_dataCache = m.m_dataCache;
 	m_searchResult = m.m_searchResult;
+	m_hidden = m.m_hidden;
 }
 
 /** No descriptions */

@@ -23,8 +23,10 @@
 
 
 class QTreeWidget;
+class QTreeWidgetItem;
 class QDialogButtonBox;
 
+class BTModuleTreeItem;
 
 namespace Search {
 
@@ -61,6 +63,9 @@ protected slots: // Protected slots
 	virtual void slotOk();
 
 private:
+
+	void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+
 	QTreeWidget *m_moduleChooser;
 	QDialogButtonBox *m_buttonBox;
 };

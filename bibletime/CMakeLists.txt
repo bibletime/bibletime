@@ -67,7 +67,9 @@ SET(bibletime_SOURCES
 	src/backend/keys/cswordldkey.cpp
 	src/backend/keys/cswordtreekey.cpp
 	src/backend/keys/cswordversekey.cpp
+	#backend
 	src/backend/cswordmodulesearch.cpp
+	src/backend/btmoduletreeitem.cpp
 
 	#utilities
 	src/util/cresmgr.cpp
@@ -173,9 +175,6 @@ SET(bibletime_SOURCES
 )
 
 kde4_add_ui_files(bibletime_SOURCES
-	#src/frontend/searchdialog/searchresultsform.ui
-	#src/frontend/searchdialog/searchoptionsform.ui
-	#src/frontend/searchdialog/modulechooser.ui
 	src/frontend/bookshelfmanager/manageindicesform.ui
 )
 
@@ -203,7 +202,6 @@ ENDIF(DEBUG)
 
 INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}	${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR} ${QT_QTXML_INCLUDE_DIR} 
-	#${QT_QT3SUPPORT_INCLUDE_DIR}
 	${KDE4_INCLUDE_DIR}
 	${CLUCENE_INCLUDE_DIR} #CLucene headers
 	${CLUCENE_LIBRARY_DIR} #CLucene/clucene-config.h

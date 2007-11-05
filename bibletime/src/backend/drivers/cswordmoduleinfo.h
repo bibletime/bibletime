@@ -127,14 +127,14 @@ public:
 	};
 	enum Category {
 		UnknownCategory = 0, /**< The category wasn't set or has an unknwon value */
-		Cult, /**< The module is a cult / sect / questionable module */
-		DailyDevotional,
-		Glossary,
-		Images,
 		Bibles,
 		Commentaries,
+		Books,
 		Lexicons,
-		Books
+		Glossary,
+		DailyDevotional,
+		Images,
+		Cult /**< The module is a cult / sect / questionable module */
 	};
 
 	/**
@@ -288,6 +288,13 @@ public:
 	*/
 	inline virtual const bool isWritable() const;
 	/**
+	* Returns true if this module is hidden (not to be shown with other modules in certain views).
+	*/
+	inline const bool isHidden() const;
+
+	inline void setHidden(bool hidden);
+
+	/**
 	* Returns the category of this module. See CSwordModuleInfo::Category for possible values.
 	*/
 	const CSwordModuleInfo::Category category() const;
@@ -342,6 +349,8 @@ private:
 	m_dataCache;
 
 	CSwordBackend* m_backend;
+
+	bool m_hidden;
 };
 
 // typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;
@@ -368,6 +377,16 @@ inline const QString CSwordModuleInfo::name() const {
 /** Returns true if this module may be written by the write display windows. */
 inline const bool CSwordModuleInfo::isWritable() const {
 	return false;
+}
+
+/** Returns true if this module is hidden (not to be shown with other modules in certain views). */
+inline const bool CSwordModuleInfo::isHidden() const {
+	return false;
+}
+
+inline void CSwordModuleInfo::setHidden(bool hidden)
+{
+	m_hidden = hidden;
 }
 
 //#include "util/cpointers.h"
