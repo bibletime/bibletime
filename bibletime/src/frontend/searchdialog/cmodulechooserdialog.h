@@ -64,7 +64,7 @@ protected slots: // Protected slots
 
 private:
 
-	void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+	void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem, ListCSwordModuleInfo& selected);
 
 	QTreeWidget *m_moduleChooser;
 	QDialogButtonBox *m_buttonBox;

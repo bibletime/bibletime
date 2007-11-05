@@ -28,6 +28,7 @@
 #include <QVBoxLayout>
 #include <QStringList>
 #include <QDebug>
+#include <QHeaderView>
 
 #include <klocale.h>
 
@@ -61,6 +62,8 @@ void CModuleChooserDialog::initView()
 	vboxLayout = new QVBoxLayout(this);
 
     m_moduleChooser = new QTreeWidget(this);
+	m_moduleChooser->header()->hide();
+
     vboxLayout->addWidget(m_moduleChooser);
 
     hboxLayout = new QHBoxLayout();
@@ -78,32 +81,36 @@ void CModuleChooserDialog::initView()
 
 void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 {
-	qDebug("CModuleChooserDialog::setModules");
+	//qDebug("CModuleChooserDialog::setModules");
 
 	BTModuleTreeItem::HiddenOff hiddenFilter;
 	QList<BTModuleTreeItem::Filter*> filters;
 	filters.append(&hiddenFilter);
 	BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
-	createModuleTree(&root, m_moduleChooser->invisibleRootItem());
+	createModuleTree(&root, m_moduleChooser->invisibleRootItem(), selectedModules);
 	
-
-	//put these into m_moduleChooser
-	QTreeWidgetItemIterator it(m_moduleChooser);
-	//qDebug("m_moduleChooser items:");
-	//while (*it) {
-	//	qDebug() << *it;
-	//	++it;
-	//}
 }
 
-void CModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
+void CModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem, ListCSwordModuleInfo& selectedModules)
 {
 	foreach (BTModuleTreeItem* i, item->children()) {
-		createModuleTree(i, new QTreeWidgetItem(widgetItem));
+		createModuleTree(i, new QTreeWidgetItem(widgetItem), selectedModules);
 	}
 	if (item->type() != BTModuleTreeItem::Root) {
 		widgetItem->setText(0, item->text());
 		//TODO: set icon
+		if (item->type() == BTModuleTreeItem::Category || item->type() == BTModuleTreeItem::Language) {
+			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+		}
+		if (item->type() == BTModuleTreeItem::Module) {
+			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
+			if (selectedModules.contains(item->moduleInfo())) {
+				widgetItem->setCheckState(0, Qt::Checked);
+			} else {
+				widgetItem->setCheckState(0, Qt::Unchecked);
+			}
+		}
+		
 	}
 }
 
