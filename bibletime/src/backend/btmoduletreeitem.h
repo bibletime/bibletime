@@ -117,7 +117,7 @@ public:
 	/**
 	* Returns the path to the icon which is appropriate for this type of item, or QString::null.
 	*/
-	QString iconPath() const;
+	QString iconName() const;
 	/**
 	* If the type is Module returns a pointer to the corresponding CSwordModuleInfo object,
 	* otherwise returns 0.
@@ -139,7 +139,7 @@ private:
 	/**
 	* Private constructor which sets the members.
 	*/
-	BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info=0);
+	BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, Type type, CSwordModuleInfo* info=0, CSwordModuleInfo::Category category=CSwordModuleInfo::UnknownCategory);
 	/** Default ctor is private because it is not to be called.*/
 	BTModuleTreeItem();
 
@@ -148,11 +148,12 @@ private:
 	/** Sorts recursively the children of of the given item. */
 	void sort_children(BTModuleTreeItem* parent);
 	/** Helper function for creating a group item while creating the tree. */
-	BTModuleTreeItem* create_parent_item(BTModuleTreeItem* parent, const QString& text, BTModuleTreeItem::Type type);
+	BTModuleTreeItem* create_parent_item(BTModuleTreeItem* parent, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo::Category category=CSwordModuleInfo::UnknownCategory);
 
 	CSwordModuleInfo* m_moduleInfo;
 	QString m_text;
 	Type m_type;
+	CSwordModuleInfo::Category m_category;
 	BTModuleTreeItem* m_next;
 	BTModuleTreeItem* m_firstChild;
 };

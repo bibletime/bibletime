@@ -14,6 +14,8 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
 #include <QString>
 #include <QList>
@@ -37,12 +39,13 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BT
 * Private constructor which sets the members of the non-root item. This will be the first child of the
 * parent, the previous firstChild will be the next sibling of this.
 */
-BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo* info)
+BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo* info, CSwordModuleInfo::Category category)
 	: m_type(type),
 	m_moduleInfo(info),
 	m_text(text),
 	m_firstChild(0),
-	m_next(0)
+	m_next(0),
+	m_category(category)
 {
 	if (info) {
 		m_text = info->name();
@@ -78,8 +81,44 @@ QList<BTModuleTreeItem*> BTModuleTreeItem::children() const
 }
 
 //TODO
-QString BTModuleTreeItem::iconPath() const
+QString BTModuleTreeItem::iconName() const
 {
+	if (m_type == Category) {
+		switch ( m_category) {
+		case CSwordModuleInfo::Bibles:
+			return CResMgr::categories::bibles::icon;
+			break;
+		case CSwordModuleInfo::Commentaries:
+			return CResMgr::categories::commentaries::icon;
+			break;
+		case CSwordModuleInfo::Books:
+			return CResMgr::categories::books::icon;
+			break;
+		case CSwordModuleInfo::Cult:
+			return QString::null;
+			break;
+		case CSwordModuleInfo::Images:
+			return CResMgr::categories::images::icon;
+			break;
+		case CSwordModuleInfo::DailyDevotional:
+			return CResMgr::categories::dailydevotional::icon;
+			break;
+		case CSwordModuleInfo::Lexicons:
+			return CResMgr::categories::lexicons::icon;
+			break;
+		case CSwordModuleInfo::Glossary:
+			return CResMgr::categories::glossary::icon;
+			break;
+		}
+	}
+	else if (m_type == Module) {
+		return CToolClass::getIconNameForModule(m_moduleInfo);
+	}
+	else if (m_type == Language) {
+		//TODO: don't hardcode here
+		return "flag.svg";
+	}
+
 	return QString::null;
 }
 
@@ -131,7 +170,7 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 			}
 
 			if (grouping == BTModuleTreeItem::CatMod || grouping == BTModuleTreeItem::CatLangMod) {
-				BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category);
+				BTModuleTreeItem* catItem = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
 
 				if (grouping == BTModuleTreeItem::CatMod)
 					parentGroupForModule = catItem;
@@ -146,7 +185,7 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 
 			if (grouping == BTModuleTreeItem::LangCatMod) {
 				//language is there already, create category and make it the parent for the module
-				parentGroupForModule = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category);
+				parentGroupForModule = create_parent_item(parentGroupForCategory, CategoryNamesMap.value(info->category()), BTModuleTreeItem::Category, info->category());
 			}
 
 			// the parent group for module has been set above, now just add the module to it
@@ -162,7 +201,8 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
 	BTModuleTreeItem* parentGroup,
 	const QString& itemText,
-	BTModuleTreeItem::Type type)
+	BTModuleTreeItem::Type type,
+	CSwordModuleInfo::Category category)
 {
 	BTModuleTreeItem* item = 0;
 	foreach(BTModuleTreeItem* it, parentGroup->children()) {
@@ -172,7 +212,7 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
 		}
 	}
 	if (!item)
-		item = new BTModuleTreeItem(parentGroup, itemText, type, 0);
+		item = new BTModuleTreeItem(parentGroup, itemText, type, 0, category);
 
 	return item;
 }
