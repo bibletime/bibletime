@@ -53,6 +53,11 @@ public:
 	* Returns the icon used for the module given as aparameter.
 	*/
 	static QIcon getIconForModule( CSwordModuleInfo* );
+	/**
+	* Returns the name for the icon used for the module given as aparameter.
+	*/
+	static QString getIconNameForModule( CSwordModuleInfo* );
+	
 	/** Returns a label to explain difficult things of dialogs.
 	* This function returns a label with heading "heading" and explanation "text". This label should be used to
 	* explain difficult things of the GUI, e.g. in the optionsdialog.
