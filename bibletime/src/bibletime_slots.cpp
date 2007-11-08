@@ -26,7 +26,8 @@
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/mainindex/cmainindex.h"
-#include "frontend/mainindex/cindexitembase.h"
+//#include "frontend/mainindex/cindexitembase.h"
+//#include "frontend/mainindex/btindexitem.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
@@ -103,14 +104,15 @@ void BibleTime::slotSettingsChanged() {
 								 (CBTConfig::language);
 	m_backend->booknameLanguage(language);
 
-	QTreeWidgetItemIterator it(m_mainIndex);
-	while (*it) {
-		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
-		if (citem) {
-			citem->update();
-		}
-		++it;
-	}
+// TODO: update the bookmarks after Bible bookname language has been changed
+// 	QTreeWidgetItemIterator it(m_mainIndex);
+// 	while (*it) {
+// 		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
+// 		if (citem) {
+// 			citem->update();
+// 		}
+// 		++it;
+// 	}
 
 	refreshDisplayWindows();
 	refreshProfileMenus();
@@ -133,7 +135,7 @@ void BibleTime::slotSwordSetupChanged() {
 	  these are the mainindex, the searchdialog, the displaywindows
 	  But at first we have to reset the Sword backend to reload the modules
 	*/
-	m_mainIndex->saveBookmarks();
+	// TODO: m_mainIndex->saveBookmarks();
 
 	CPointers::deleteBackend();
 	m_backend = new CSwordBackend();
