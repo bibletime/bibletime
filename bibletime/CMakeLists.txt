@@ -91,15 +91,18 @@ SET(bibletime_SOURCES
 
 	#"Bookshelf" widget in main window
 	src/frontend/mainindex/cmainindex.cpp
-	src/frontend/mainindex/cindexitembase.cpp
-	src/frontend/mainindex/cindexmoduleitem.cpp
-	src/frontend/mainindex/cindexbookmarkitem.cpp
-	src/frontend/mainindex/cindexfolderbase.cpp
-	src/frontend/mainindex/cindextreefolder.cpp
-	src/frontend/mainindex/cindexglossaryfolder.cpp
-	src/frontend/mainindex/cindexbookmarkfolder.cpp
-	src/frontend/mainindex/cindexsubfolder.cpp
-	src/frontend/mainindex/cindexoldbookmarksfolder.cpp
+	#src/frontend/mainindex/cindexitembase.cpp
+	#src/frontend/mainindex/cindexmoduleitem.cpp
+	#src/frontend/mainindex/cindexbookmarkitem.cpp
+	#src/frontend/mainindex/cindexfolderbase.cpp
+	#src/frontend/mainindex/cindextreefolder.cpp
+	#src/frontend/mainindex/cindexglossaryfolder.cpp
+	#src/frontend/mainindex/cindexbookmarkfolder.cpp
+	#src/frontend/mainindex/cindexsubfolder.cpp
+	#src/frontend/mainindex/cindexoldbookmarksfolder.cpp
+	src/frontend/mainindex/btindexitem.cpp
+	src/frontend/mainindex/btindexmodule.cpp
+	src/frontend/mainindex/btindexfolder.cpp
 
 	#Settings dialog (configuration)
 	src/frontend/settingsdialogs/cacceleratorsettings.cpp
