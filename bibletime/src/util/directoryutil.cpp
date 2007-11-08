@@ -206,11 +206,19 @@ QDir DirectoryUtil::getIconDir(void)
 
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
+	static QMap<QString, QIcon> iconCache;
+
+	if (iconCache.contains(name)) {
+		return iconCache.value(name);
+	}
+
 	QString iconDir = getIconDir().canonicalPath();
 	QString iconFileName = iconDir + "/" + name;
 	if (QFile(iconFileName).exists())
 	{
-		return QIcon(iconFileName);
+		QIcon ic = QIcon(iconFileName);
+		iconCache.insert(name, ic);
+		return ic;
 	}
 	else
 	{
