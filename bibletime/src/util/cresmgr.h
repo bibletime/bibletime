@@ -45,6 +45,33 @@ namespace CResMgr {
 		};
 	};
 
+	namespace categories {
+		namespace bibles {
+			extern const QString icon;
+		}
+		namespace commentaries {
+			extern const QString icon;
+		}
+		namespace lexicons {
+			extern const QString icon;
+		}
+		namespace dailydevotional {
+			extern const QString icon;
+		}
+		namespace books {
+			extern const QString icon;
+		}
+		namespace glossary {
+			extern const QString icon;
+		}
+		namespace images {
+			extern const QString icon;
+		}
+		namespace cults {
+			extern const QString icon;
+		}
+	};
+
 	namespace mainMenu { //Main menu
 		namespace file { //Main menu->File
 			namespace print { //a standard action
@@ -722,6 +749,9 @@ namespace workspace {}
 			extern const QString icon;
 		}
 		namespace aboutModule {
+			extern const QString icon;
+		}
+		namespace grouping {
 			extern const QString icon;
 		}
 	}

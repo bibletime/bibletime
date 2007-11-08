@@ -39,6 +39,32 @@ namespace CResMgr {
 		}
 	}
 
+	namespace categories {
+		namespace bibles {
+			const QString icon 			= "bible.svg";
+		}
+		namespace commentaries {
+			const QString icon 			= "commentary.svg";
+		}
+		namespace lexicons {
+			const QString icon 			= "dictionary.svg";
+		}
+		namespace dailydevotional {
+			const QString icon 			= "calendar.svg";
+		}
+		namespace books {
+			const QString icon 			= "books.svg";
+		}
+		namespace glossary {
+			const QString icon 			= "dictionary.svg";
+		}
+		namespace images {
+			const QString icon 			= "map.svg";
+		}
+		namespace cults {
+			const QString icon 			= "";
+		}
+	}
 	namespace mainMenu { //Main menu
 		namespace file { //Main menu->File
 			namespace print { //a standard action
@@ -598,7 +624,7 @@ namespace CResMgr {
 			}
 		}
 		namespace fonts {
-			const QString icon = "fontconfig.svg";
+			const QString icon = "fonts.svg";
 
 			namespace typeChooser {
 				QString tooltip;
@@ -661,7 +687,7 @@ namespace CResMgr {
 		}
 	}
 
-	namespace mainIndex { //Main menu->Settings
+	namespace mainIndex { // Bookshelf view
 		namespace search {
 			QString tooltip;
 
@@ -712,10 +738,13 @@ namespace CResMgr {
 		}
 
 		namespace unlockModule {
-			const QString icon = "unlock";
+			const QString icon = "unlock.svg";
 		}
 		namespace aboutModule {
 			const QString icon = "info.svg";
+		}
+		namespace grouping {
+			const QString icon = "view-tree.svg";
 		}
 	}
 }
