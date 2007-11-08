@@ -12,12 +12,9 @@ void CDisplayTemplateMgr::init() {
 	\n\
 	<style type=\"text/css\">\n\
 	/* <![CDATA[ */\n\
-\n\
 #LANG_CSS#\n\
 \n\
-\n\
 #content {\n\
-	background-color:transparent;\n\
 	margin:10px;\n\
 }\n\
 #content > table {\n\
@@ -38,11 +35,9 @@ a {\n\
 	font-weight:normal;\n\
 	color: #7B7B7B;\n\
 	padding:0 2px;\n\
-	background-color:transparent;\n\
 }\n\
 a:hover {\n\
 	text-decoration:none;\n\
-	background-color:transparent;\n\
 	color: #0000FF;\n\
 	padding:0 2px;\n\
 }\n\
@@ -138,8 +133,8 @@ td.entry + td.entry { \n\
 	color: blue;\n\
 	font-size: 80%;\n\
 	cursor: help;\n\
-	background-color:transparent;\n\
 }\n\
+\n\
 .footnote:before { content:\"(\"; }\n\
 .footnote:after { content:\")\"; }\n\
 \n\
@@ -359,15 +354,11 @@ td.entry + td.entry { \n\
 \n\
 	<style type=\"text/css\">\n\
 /* <![CDATA[ */\n\
-\n\
 body {\n\
 	margin:0px;\n\
 	padding:0;\n\
 	padding:1em;\n\
-	background-color:transparent;\n\
 }\n\
-\n\
-\n\
 \n\
 /* content wraps all of the displayed elements */\n\
 #content {\n\
@@ -655,7 +646,6 @@ so something like .alternative:before { content:\"'\"attr(alternative); } is pos
 \n\
 #printer .rangeheading {}\n\
 \n\
-\n\
 *[dir=rtl] { text-align:right !important; }\n\
 \n\
 /* Here's the marker for the language specific fotn information. BibleTime replaces this by the CSS for the fonts */\n\
@@ -683,18 +673,17 @@ so something like .alternative:before { content:\"'\"attr(alternative); } is pos
 	<style type=\"text/css\">\n\
 	/* <![CDATA[ */\n\
 \n\
-\n\
-\n\
 #content {\n\
-	background-color:transparent;\n\
 	margin:10px;\n\
 }\n\
+\n\
 #content > table {\n\
 	margin: 0;\n\
 	padding: 0;\n\
 	border-spacing:10px;\n\
 	vertical-align:top;\n\
 }\n\
+\n\
 #content > table th {\n\
 	padding: 0 0 2px 0;\n\
 	text-align: center; \n\
@@ -707,11 +696,9 @@ a {\n\
 	text-decoration:none;\n\
 	font-weight:normal;\n\
 	color: #3B11AE;\n\
-	background-color:transparent;	\n\
 	padding:0 2px;\n\
 }\n\
 a:hover {\n\
-	background-color:transparent;\n\
 	color: #AE1518;\n\
 	padding:0 2px;\n\
 }\n\
@@ -1033,10 +1020,8 @@ a {\n\
 	font-weight:normal;\n\
 	/*color: #F98100;*/\n\
 	padding:1px;\n\
-	background-color:transparent;\n\
 }\n\
 a:hover {\n\
-	background-color:transparent;\n\
 	color: #FF0000;\n\
 	padding:1px;\n\
 	text-decoration:underline;\n\
@@ -1065,7 +1050,6 @@ div.entry, td.entry {\n\
 	vertical-align: top;\n\
 	text-align: justify;\n\
 	/*font-weight: bolder;*/\n\
-	/*background-color:transparent;*/\n\
 	/*color:white;*/\n\
 	/*background-color:black;*/\n\
 	/*The background colour of selected text as of kde 3.5.2*/\n\
