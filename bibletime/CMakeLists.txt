@@ -76,6 +76,7 @@ SET(bibletime_SOURCES
 	src/util/cpointers.cpp
 	src/util/ctoolclass.cpp
 	src/util/directoryutil.cpp
+	src/util/migrationutil.cpp
 	
 	# frontend top level
 	src/frontend/cdragdrop.cpp

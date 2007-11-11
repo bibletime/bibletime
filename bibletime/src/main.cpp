@@ -21,6 +21,7 @@
 #include "util/scoped_resource.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
+#include "util/migrationutil.h"
 
 //frontend includes
 #include "frontend/kstartuplogo.h"
@@ -28,15 +29,14 @@
 
 //Qt includes
 #include <qdir.h>
-#include <qmessagebox.h>
 
 //KDE includes
 #include <kcmdlineargs.h>
 #include <kcrash.h>
 #include <kglobal.h>
 #include <kapplication.h>
-#include <kstandarddirs.h>
 //#include <kinstance.h>
+#include <kstandarddirs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 
@@ -260,62 +260,8 @@ int main(int argc, char* argv[]) {
 		RESTORE( BibleTime );
 	}
 	else {
-		//Migration code for KDE 4 port
-		QString test = CBTConfig::get(CBTConfig::bibletimeVersion);
-		if (CBTConfig::get(CBTConfig::bibletimeVersion) == "NOT YET INSTALLED"){
-			//List of potential old KDE directories to load data from.
-			QString searchDirs[8] = {"/.kde", "/.kde3", "/.kde3.5",
-										"/.kde3.4", "/.kde3.3", "/.kde3.2",
-										"/.kde3.1", "/.kde3.0"};
-			for (int i = 0; i < 8; i++){
-				QString currSearch = QDir::homePath() + searchDirs[i];
-				QDir searchHome(currSearch);
-				QFile oldRc(currSearch + "/share/config/bibletimerc");
-				if (oldRc.exists()){
-					QMessageBox msg (QMessageBox::Question, i18n("Settings"
-						" Migration"),
-						i18n("It"
-						" appears you have a BibleTime configuration from KDE"
-						" 3 stored in %1, and you have not migrated it to"
-						" this version.  Would you like to import it?",
-						currSearch), QMessageBox::Yes | QMessageBox::No);
-					int result = msg.exec();
-					if (result != QMessageBox::Yes){
-						break;
-					}
-					//Copy our old bibletimerc into the new KDE4 directory.
-					QString newRcLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
-					QFile newRc(newRcLoc);
-					newRc.remove();
-					oldRc.copy(newRcLoc);
-					QFile oldBookmarks(currSearch +
-							"/share/apps/bibletime/bookmarks.xml");
-					if (oldBookmarks.exists()){
-						QString newBookmarksLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bookmarks.xml";
-						QFile newBookmarks(newBookmarksLoc);
-						newBookmarks.remove();
-						oldBookmarks.copy(newBookmarksLoc);
-					}
-					QDir sessionDir(currSearch +
-							"/share/apps/bibletime/sessions");
-					if (sessionDir.exists()){
-						DirectoryUtil::copyRecursive(
-								sessionDir.absolutePath(), DirectoryUtil::getUserSessionsDir().absolutePath());
-					}
-					else{
-						QDir oldSessionDir(currSearch + "/share/apps/bibletime/profiles");
-						if (oldSessionDir.exists()){
-							DirectoryUtil::copyRecursive(
-									oldSessionDir.absolutePath(),
-									DirectoryUtil::getUserSessionsDir().absolutePath());
-						}
-					}
-					//We found at least a config file, so we are done
-					//searching for migration data.
-					break;
-				}
-			}
-			CBTConfig::getConfig()->reparseConfiguration();
+		if (util::MigrationUtil::checkMigration()){
+			util::MigrationUtil::doMigration();
 		}
 		const bool showIt = CBTConfig::get(CBTConfig::logo);
 
