@@ -129,6 +129,12 @@ void CSwordSetupModuleListView::init() {
 	m_categoryImages->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryImages);
 
+	m_categoryCult = new QTreeWidgetItem(this);
+	m_categoryCult->setText(0, i18n("Cult/Unorthodox/Questionable"));
+	m_categoryCult->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
+	m_categoryCult->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+	m_categoryCult->setCheckState(0, Qt::Unchecked);
+	addTopLevelItem(m_categoryCult);
 
 	//m_categoryBible->setExpanded(true);
 	//m_categoryCommentary->setExpanded(true);
@@ -149,6 +155,7 @@ void CSwordSetupModuleListView::finish() {
 	if (!m_categoryDevotionals->childCount()) delete m_categoryDevotionals;
 	if (!m_categoryGlossaries->childCount()) delete m_categoryGlossaries;
 	if (!m_categoryImages->childCount()) delete m_categoryImages;
+	if (!m_categoryCult->childCount()) delete m_categoryCult;
 }
 
 void CSwordSetupModuleListView::clear() {
@@ -180,6 +187,9 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 		break;
 	case CSwordModuleInfo::DailyDevotional:
 		parent = m_categoryDevotionals;
+		break;
+	case CSwordModuleInfo::Cult:
+		parent = m_categoryCult;
 		break;
 	default:
 		parent = 0;
