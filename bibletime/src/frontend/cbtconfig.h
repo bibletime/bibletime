@@ -70,9 +70,8 @@ public:
 		logo,
 		autoDeleteOrphanedIndices,
 		crashedLastTime,
-		crashedTwoTimes,
+		crashedTwoTimes
 
-		triedMigration
 	};
 	enum ints {
 		footnotes,

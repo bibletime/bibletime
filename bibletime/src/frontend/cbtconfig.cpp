@@ -122,8 +122,6 @@ const QString CBTConfig::getKey( const CBTConfig::bools ID) {
 		case autoDeleteOrphanedIndices:	return "autoDeleteOrphanedIndices";
 		case crashedLastTime:			return "crashedLastTime";
 		case crashedTwoTimes:			return "crashedTwoTimes";
-		
-		case triedMigration:		return "triedMigration";
 	}
 	return QString::null;
 }
@@ -169,8 +167,6 @@ const bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 		case autoDeleteOrphanedIndices:		return true;
 		case crashedLastTime:		return false;
 		case crashedTwoTimes:		return false;
-
-		case triedMigration:	return false;
 	}
 	return false;
 }

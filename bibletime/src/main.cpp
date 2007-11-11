@@ -261,20 +261,15 @@ int main(int argc, char* argv[]) {
 	}
 	else {
 		//Migration code for KDE 4 port
-		if (!CBTConfig::get(CBTConfig::triedMigration)){
+		QString test = CBTConfig::get(CBTConfig::bibletimeVersion);
+		if (CBTConfig::get(CBTConfig::bibletimeVersion) == "NOT YET INSTALLED"){
 			//List of potential old KDE directories to load data from.
 			QString searchDirs[8] = {"/.kde", "/.kde3", "/.kde3.5",
 										"/.kde3.4", "/.kde3.3", "/.kde3.2",
 										"/.kde3.1", "/.kde3.0"};
-			KStandardDirs stdDirs;
-			QDir newKDEHome(stdDirs.localkdedir());
 			for (int i = 0; i < 8; i++){
 				QString currSearch = QDir::homePath() + searchDirs[i];
 				QDir searchHome(currSearch);
-				//Don't search the KDE4 KDEHOME
-				if (searchHome == newKDEHome){
-					continue;
-				}
 				QFile oldRc(currSearch + "/share/config/bibletimerc");
 				if (oldRc.exists()){
 					QMessageBox msg (QMessageBox::Question, i18n("Settings"
@@ -304,18 +299,16 @@ int main(int argc, char* argv[]) {
 					QDir sessionDir(currSearch +
 							"/share/apps/bibletime/sessions");
 					if (sessionDir.exists()){
-						QStringList files = sessionDir.entryList(QDir::Files);
-/*						for (QStringList::iterator it = files.begin(); it !=
-								files.end(); ++it){
-							QFile currFile(sessionDir.path() + "/" + *it);
-							QString currNewFileLoc =
-									util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/" + *it;
-							QFile currNewFile(currNewFileLoc);
-							currNewFile.remove();
-							currFile.copy(currNewFileLoc);
-						}*/
 						DirectoryUtil::copyRecursive(
 								sessionDir.absolutePath(), DirectoryUtil::getUserSessionsDir().absolutePath());
+					}
+					else{
+						QDir oldSessionDir(currSearch + "/share/apps/bibletime/profiles");
+						if (oldSessionDir.exists()){
+							DirectoryUtil::copyRecursive(
+									oldSessionDir.absolutePath(),
+									DirectoryUtil::getUserSessionsDir().absolutePath());
+						}
 					}
 					//We found at least a config file, so we are done
 					//searching for migration data.
@@ -323,15 +316,6 @@ int main(int argc, char* argv[]) {
 				}
 			}
 			CBTConfig::getConfig()->reparseConfiguration();
-			CBTConfig::set(CBTConfig::triedMigration, true);
-		}
-		// compatibility stuff for 1.3, needs to be moved to better place later
-		if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-			KStandardDirs stdDirs;
-			QDir dir(stdDirs.saveLocation("data", "bibletime/"));
-			if (!dir.exists("sessions/") && dir.exists("profiles/")) { //only old dir exists
-				dir.rename("profiles", "sessions");
-			}
 		}
 		const bool showIt = CBTConfig::get(CBTConfig::logo);
 
@@ -353,6 +337,7 @@ int main(int argc, char* argv[]) {
 			CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
 			//TODO: unabled temporarily
 			//bibletime_ptr->slotSettingsOptions();
+			bibletime_ptr->slotSettingsOptions();
 		}
 
 		//The tip of the day
