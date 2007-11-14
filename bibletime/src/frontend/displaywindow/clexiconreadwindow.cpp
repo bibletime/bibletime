@@ -321,7 +321,9 @@ void CLexiconReadWindow::saveAsHTML() {
 void CLexiconReadWindow::saveRawHTML()
 {
 	//qDebug("CLexiconReadWindow::saveRawHTML");
-	QFile file(QFileDialog::getSaveFileName());
+	QString savefilename = QFileDialog::getSaveFileName();
+	if (savefilename.isEmpty()) return;
+	QFile file(savefilename);
 	CHTMLReadDisplay* disp = dynamic_cast<CHTMLReadDisplay*>(displayWidget());
 	if (disp) {
 		if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
