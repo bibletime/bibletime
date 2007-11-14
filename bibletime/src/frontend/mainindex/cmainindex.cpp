@@ -23,6 +23,7 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
+#include "frontend/btaboutmoduledialog.h"
 
 #include "frontend/cprinter.h"
 #include "frontend/cdragdrop.h"
@@ -509,7 +510,10 @@ void CMainIndex::actionUnlockModule() {
 void CMainIndex::actionAboutModule() {
 	if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(currentItem())) {
 		//TODO: show "about" in mag or at least in scrollable view
-		KMessageBox::about(this, i->moduleInfo()->aboutText(), i->moduleInfo()->config(CSwordModuleInfo::Description), false);
+//		KMessageBox::about(this, i->moduleInfo()->aboutText(), i->moduleInfo()->config(CSwordModuleInfo::Description), false);
+		BTAboutModuleDialog* dialog = new BTAboutModuleDialog(this, i->moduleInfo());
+		dialog->show();
+		dialog->raise();
 	}
 }
 

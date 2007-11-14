@@ -89,6 +89,7 @@ SET(bibletime_SOURCES
 	src/frontend/cinfodisplay.cpp
 	src/frontend/cinputdialog.cpp
 	src/frontend/cexportmanager.cpp
+	src/frontend/btaboutmoduledialog.cpp
 
 	#"Bookshelf" widget in main window
 	src/frontend/mainindex/cmainindex.cpp

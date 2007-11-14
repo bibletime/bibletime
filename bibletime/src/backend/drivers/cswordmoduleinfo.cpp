@@ -752,7 +752,7 @@ Rendering::CEntryDisplay * const CSwordModuleInfo::getDisplay() const {
 
 QString CSwordModuleInfo::aboutText() const {
 	QString text;
-	text += "<font size=\"-1\"><table>";
+	text += "<table>";
 
 	text += QString("<tr><td><b>%1</b></td><td>%2</td><tr>")
 			.arg(i18n("Version"))
@@ -816,7 +816,7 @@ QString CSwordModuleInfo::aboutText() const {
 	text += QString("<br/><b>%1</b><br/><br/>")
 			.arg(i18n("Take care, this work contains cult / questionable material!"));
 
-	text += QString("<b>%1:</b><br><font size=\"-1\">%2</font>")
+	text += QString("<b>%1:</b><br>%2</font>")
 			.arg(i18n("About"))
 			.arg(config(AboutInformation));
 
