@@ -147,7 +147,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 
 	for( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
 		if ( m_fontMap[it.key()].first ) { //show font icon
-			m_usageCombo->addItem(util::filesystem::DirectoryUtil::getIcon("fonts"), it.key() );
+			m_usageCombo->addItem(util::filesystem::DirectoryUtil::getIcon("fonts.svg"), it.key() );
 		}
 		else { //don't show icon for font
 			m_usageCombo->addItem(it.key());
@@ -254,7 +254,7 @@ void CLanguageSettingsPage::useOwnFontClicked( bool isOn ) {
 	m_fontMap[ m_usageCombo->currentText() ].first = isOn;
 
 	if (isOn) { //show font icon
-		m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), util::filesystem::DirectoryUtil::getIcon("fonts") );
+		m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), util::filesystem::DirectoryUtil::getIcon("fonts.svg") );
 	}
 	else {    //don't show
 		m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); //TODO: should this change icon to empty?
