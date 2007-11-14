@@ -775,7 +775,11 @@ void CSwordSetupDialog::slot_showInstallSourcePage() {
 
 void CSwordSetupDialog::slot_swordEditClicked() {
 	if (QTreeWidgetItem* i = m_swordPathListBox->currentItem()) {
-		QDir dir = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), i->text(0));
+		QString dirname = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), i->text(0));
+	if (dirname.isEmpty()) { // if user cancelled the dialog
+		return;
+	}	
+		QDir dir = QDir(dirname);
 		if (dir.isReadable()) {
 			const QFileInfo fi( dir.canonicalPath() );
 			if (!fi.exists() || !fi.isWritable()) {
@@ -792,7 +796,12 @@ void CSwordSetupDialog::slot_swordEditClicked() {
 }
 
 void CSwordSetupDialog::slot_swordAddClicked() {
-	QDir dir = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), "");
+	QString dirname = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), "");
+	if (dirname.isEmpty()) { // if user cancelled the dialog
+		return;
+	}
+	QDir dir = QDir(dirname);
+	//qDebug() << "dir object:"<< dir.canonicalPath();
 	if (dir.isReadable()) {
 		const QFileInfo fi( dir.canonicalPath() );
 		if (!fi.exists() || !fi.isWritable()) {
