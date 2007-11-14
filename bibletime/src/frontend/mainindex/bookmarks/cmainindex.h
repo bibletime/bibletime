@@ -46,46 +46,22 @@ class QMouseEvent; //testing
 class CMainIndex : public QTreeWidget {
 	Q_OBJECT
 
-	
-	// Must be removed, qtooltip cannot be subclassed (it's not even a class really!)
-	// Maybe items should just have their own tooltips (do they)?
-	// Tooltip event can be handled and data shown in tooltip or in mag view.
-// 	class ToolTip : public QToolTip {
-// 	public:
-// 		ToolTip(CMainIndex* parent);
-// 		virtual ~ToolTip() {}
-// 		/**
-// 		* Displays a tooltip for position p using the getToolTip() function of CGroupManagerItem
-// 		*/
-// 		virtual void maybeTip( const QPoint &pos);
-// 
-// 	private:
-// 		CMainIndex* m_mainIndex;
-// 	};
-
 public:
 	CMainIndex(QWidget *parent);
 	virtual ~CMainIndex();
 	
 	void initTree();
-	/**
-	* Opens the searchdialog using the given modules using the given search text.
-	*/
-	void emitModulesChosen( ListCSwordModuleInfo modules, QString key );
+	
 	/**
 	* Saves the bookmarks to disk
 	*/
 	void saveBookmarks();
-	/**
-	* Reloads the main index's Sword dependend things like modules
-	*/
-	void reloadSword();
 
-public slots:
+signals:
 	/**
-	 * Opens the searchdialog for the selected modules.
-	 */
-	void searchInModules();
+	* Is emitted when a module should be opened,
+	*/
+	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
 
 protected: // Protected methods
 
@@ -126,28 +102,9 @@ protected: // Protected methods
 	 * Reimplementation.
 	 */
 	virtual void contentsDragLeaveEvent( QDragLeaveEvent* e );
-	
-	//TODO
-	QRect drawItemHighlighter(QPainter* painter, QTreeWidgetItem * item );
 
-	/** Read settings like open groups or scrollbar position and restore them
-	*/
-	void readSettings();
-	/** Save settings like roups close/open status to the settings file.
-	*/
-	void saveSettings();
-	/** Reimplementation.
-	 */
-	//virtual void ensurePolished();
-
-	/** Catch the QEvent::Polish to call ensurePolished. */ 
-	virtual bool event(QEvent* event);
 
 protected slots: // Protected slots
-	/**
-	* Called when the selection is changed.
-	*/
-	void slotModifySelection();
 	/**
 	* Is called when an item was clicked or activated.
 	*/
@@ -185,33 +142,14 @@ protected slots: // Protected slots
 	* Prints the selected bookmarks.
 	*/
 	void printBookmarks();
-	/**
-	* Shows information about the current module.
-	*/
-	void aboutModule();
-	/**
-	* Unlocks the current module.
-	*/
-	void unlockModule();
+
 	void autoOpenTimeout();
 	/**
 	* Is called when items should be moved.
 	*/
 	void moved( QList<QTreeWidgetItem>& items, QList<QTreeWidgetItem>& afterFirst, QList<QTreeWidgetItem>& afterNow);
-	/**
-	* Opens a plain text editor window to edit the modules content.
-	*/
-	void editModulePlain();
-	/**
-	* Opens an HTML editor window to edit the modules content.
-	*/
-	void editModuleHTML();
-
-	
 
 private:
-	CSearchDialog* m_searchDialog;
-	//ToolTip* m_toolTip;
 	bool m_itemsMovable;
 	QTreeWidgetItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
@@ -241,28 +179,10 @@ private:
 		KAction* printBookmarks;
 
 		KAction* deleteEntries;
-
-		KActionMenu* editModuleMenu;
-		KAction* editModulePlain;
-		KAction* editModuleHTML;
-
-		KAction* searchInModules;
-		KAction* unlockModule;
-		KAction* aboutModule;
 	}
 	m_actions;
 	KMenu* m_popup;
 
-signals:
-	/**
-	* Is emitted when a module should be opened,
-	*/
-	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
-	/**
-	 * Is emitted when a write window should be created.
-	 */
-	void createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType& );
-	void signalSwordSetupChanged();
 };
 
 #endif
