@@ -11,7 +11,7 @@
 //
 
 #include "cindexitembase.h"
-#include "cmainindex.h"
+#include "cbookmarkindex.h"
 
 #include <QTreeWidgetItem>
 #include <QString>

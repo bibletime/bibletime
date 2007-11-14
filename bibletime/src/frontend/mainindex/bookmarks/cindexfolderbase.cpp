@@ -13,7 +13,7 @@
 #include "cindexfolderbase.h"
 
 #include "cindexitembase.h"
-#include "cmainindex.h"
+#include "cbookmarkindex.h"
 #include "cindexbookmarkfolder.h"
 #include "cindexsubfolder.h"
 

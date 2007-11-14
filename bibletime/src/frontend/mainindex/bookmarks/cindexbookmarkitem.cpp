@@ -14,7 +14,7 @@
 #include "cindexbookmarkitem.h"
 #include "cindexitembase.h"
 #include "cindexfolderbase.h"
-#include "cmainindex.h"
+#include "cbookmarkindex.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
