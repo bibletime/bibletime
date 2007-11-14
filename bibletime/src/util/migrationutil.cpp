@@ -10,39 +10,50 @@
 #include "migrationutil.h"
 #include "config.h"
 #include "directoryutil.h"
-
 #include "frontend/cbtconfig.h"
 
-#include "kglobal.h"
-#include "klocale.h"
+#include "swversion.h"
 
 #include <QMessageBox>
 
+#include <klocale.h>
+
+
 using namespace util::filesystem;
+
 namespace util{
 
 bool MigrationUtil::checkMigration(){
-	return CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION;
-}
-
-void MigrationUtil::doMigration(){
-	if (CBTConfig::get(CBTConfig::bibletimeVersion) == "NOT YET INSTALLED"){
-		//No old version found, so we try our migration from KDE 3.
-		fromKDE3Migration();
+	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION)
+	{
+		sword::SWVersion lastVersion(CBTConfig::get(CBTConfig::bibletimeVersion).toUtf8());
+		//lastVersion will be 0.0, if it was an old KDE install, 
+		//because the config could not be found yet
+		if (lastVersion < sword::SWVersion("1.7.0") )
+		{
+			tryMigrationFromKDE3(); //
+		}
 	}
 }
 
-void MigrationUtil::fromKDE3Migration(){
-	//Migration code for KDE 4 port
+//Migration code for KDE 4 port, moves from old config dir to ~/.bibletime/
+void MigrationUtil::tryMigrationFromKDE3(){
 	//List of potential old KDE directories to load data from.
-	QString searchDirs[8] = {"/.kde", "/.kde3", "/.kde3.5",
-								"/.kde3.4", "/.kde3.3", "/.kde3.2",
-								"/.kde3.1", "/.kde3.0"};
-	for (int i = 0; i < 8; i++){
-		QString currSearch = QDir::homePath() + searchDirs[i];
+	QStringList searchDirs;
+	searchDirs << "/.kde" << "/.kde3" << "/.kde3.5";
+	searchDirs << "/.kde3.4" << "/.kde3.3" << "/.kde3.2";
+	searchDirs << "/.kde3.1" << "/.kde3.0";
+	
+	foreach (QString searchDir, searchDirs){
+		QString currSearch = QDir::homePath() + searchDir;
 		QDir searchHome(currSearch);
 		QFile oldRc(currSearch + "/share/config/bibletimerc");
-		if (oldRc.exists()){
+		//Copy our old bibletimerc into the new KDE4 directory.
+		QString newRcLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
+		QFile newRc(newRcLoc);
+		
+		//Migrate only if the old config exists and the new doesn't
+		if (oldRc.exists() && !newRc.exists()){
 			QMessageBox msg (QMessageBox::Question, i18n("Settings"
 				" Migration"),
 				i18n("It"
@@ -54,32 +65,26 @@ void MigrationUtil::fromKDE3Migration(){
 			if (result != QMessageBox::Yes){
 				break;
 			}
-			//Copy our old bibletimerc into the new KDE4 directory.
-			QString newRcLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc";
-			QFile newRc(newRcLoc);
-			newRc.remove();
 			oldRc.copy(newRcLoc);
-			QFile oldBookmarks(currSearch +
-					"/share/apps/bibletime/bookmarks.xml");
+			QFile oldBookmarks(currSearch + "/share/apps/bibletime/bookmarks.xml");
 			if (oldBookmarks.exists()){
 				QString newBookmarksLoc = DirectoryUtil::getUserBaseDir().absolutePath() + "/" + "bookmarks.xml";
 				QFile newBookmarks(newBookmarksLoc);
 				newBookmarks.remove();
 				oldBookmarks.copy(newBookmarksLoc);
 			}
-			QDir sessionDir(currSearch +
-					"/share/apps/bibletime/sessions");
+			QDir sessionDir(currSearch + "/share/apps/bibletime/sessions");
 			if (sessionDir.exists()){
 				DirectoryUtil::copyRecursive(
-				sessionDir.absolutePath(),
-				DirectoryUtil::getUserSessionsDir().absolutePath());
+					sessionDir.absolutePath(),
+					DirectoryUtil::getUserSessionsDir().absolutePath());
 			}
 			else{
 				QDir oldSessionDir(currSearch + "/share/apps/bibletime/profiles");
 				if (oldSessionDir.exists()){
 					DirectoryUtil::copyRecursive(
-							oldSessionDir.absolutePath(),
-							DirectoryUtil::getUserSessionsDir().absolutePath());
+						oldSessionDir.absolutePath(),
+						DirectoryUtil::getUserSessionsDir().absolutePath());
 				}
 			}
 			//We found at least a config file, so we are done

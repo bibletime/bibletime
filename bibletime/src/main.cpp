@@ -27,15 +27,10 @@
 #include "frontend/kstartuplogo.h"
 #include "frontend/cbtconfig.h"
 
-//Qt includes
-#include <qdir.h>
-
 //KDE includes
 #include <kcmdlineargs.h>
 #include <kcrash.h>
-#include <kglobal.h>
 #include <kapplication.h>
-//#include <kinstance.h>
 #include <kstandarddirs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
@@ -251,7 +246,8 @@ int main(int argc, char* argv[]) {
 	if (args->isSet("debug")) {
 		showDebugMessages = true;
 		app.setProperty("--debug", true);
-	} else {
+	} 
+	else {
 		app.setProperty("--debug", false);
 	}
 
@@ -260,12 +256,12 @@ int main(int argc, char* argv[]) {
 		RESTORE( BibleTime );
 	}
 	else {
-		if (util::MigrationUtil::checkMigration()){
-			util::MigrationUtil::doMigration();
-		}
-		const bool showIt = CBTConfig::get(CBTConfig::logo);
+		//Migrate configuration data, if neccessary
+		util::MigrationUtil::checkMigration();
+		
+		const bool showSplashScreen = CBTConfig::get(CBTConfig::logo);
 
-		if(showIt) {
+		if (showSplashScreen) {
 			KStartupLogo::createSplash();
 			KStartupLogo::showSplash();
 			KStartupLogo::setStatusMessage( i18n("Starting BibleTime") + QString("...") );
@@ -298,7 +294,7 @@ int main(int argc, char* argv[]) {
 		bibletime_ptr->show();
 		bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
 
-		if (showIt) {
+		if (showSplashScreen) {
 			KStartupLogo::hideSplash();
 			KStartupLogo::deleteSplash();
 		}

@@ -61,7 +61,7 @@ const QString CBTConfig::getKey( const CBTConfig::strings ID) {
 
 const QString CBTConfig::getDefault( const CBTConfig::strings ID) {
 	switch ( ID ) {
-		case bibletimeVersion:		return "NOT YET INSTALLED"; // main() will realize this and set the value to VERSION
+		case bibletimeVersion:		return "0.0"; // main() will realize this and set the value to VERSION
 		case language:				return (KGlobal::locale()->language()).toLocal8Bit();
 		case displayStyle:			return CDisplayTemplateMgr::defaultTemplate();
 		case bookshelfCurrentItem:	return QString();
