@@ -26,8 +26,6 @@
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/mainindex/cmainindex.h"
-//#include "frontend/mainindex/cindexitembase.h"
-//#include "frontend/mainindex/btindexitem.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
@@ -135,7 +133,6 @@ void BibleTime::slotSwordSetupChanged() {
 	  these are the mainindex, the searchdialog, the displaywindows
 	  But at first we have to reset the Sword backend to reload the modules
 	*/
-	// TODO: m_mainIndex->saveBookmarks();
 
 	CPointers::deleteBackend();
 	m_backend = new CSwordBackend();

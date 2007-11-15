@@ -74,18 +74,10 @@ void BibleTime::initView()
 	m_leftPaneSplitter->setChildrenCollapsible(false);
 	m_mainSplitter->addWidget(m_leftPaneSplitter);
 	
-	QLabel* bookshelfLabel = new QLabel( i18n("Bookshelf"));
-	bookshelfLabel->setMargin(5);
-	QWidget* mainindexwidget = new QWidget;
-	QVBoxLayout* layout = new QVBoxLayout(mainindexwidget);
-	mainindexwidget->setLayout(layout);
-	mainindexwidget->setMinimumSize(100, 100);
-	m_mainIndex = new CMainIndex(mainindexwidget);
-	layout->addWidget(bookshelfLabel);
-	layout->addWidget(m_mainIndex);
+	m_mainIndex = new CMainIndex(this);
 
 	m_infoDisplay = new CInfoDisplay(m_leftPaneSplitter);
-	m_leftPaneSplitter->addWidget(mainindexwidget);
+	m_leftPaneSplitter->addWidget(m_mainIndex);
 	m_leftPaneSplitter->addWidget(m_infoDisplay);
 	CPointers::setInfoDisplay(m_infoDisplay);
 

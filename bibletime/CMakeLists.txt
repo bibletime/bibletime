@@ -91,20 +91,22 @@ SET(bibletime_SOURCES
 	src/frontend/cexportmanager.cpp
 	src/frontend/btaboutmoduledialog.cpp
 
-	#"Bookshelf" widget in main window
+	# Bookshelf/Bookmarks widget in main window
 	src/frontend/mainindex/cmainindex.cpp
-	#src/frontend/mainindex/cindexitembase.cpp
-	#src/frontend/mainindex/cindexmoduleitem.cpp
-	#src/frontend/mainindex/cindexbookmarkitem.cpp
-	#src/frontend/mainindex/cindexfolderbase.cpp
-	#src/frontend/mainindex/cindextreefolder.cpp
-	#src/frontend/mainindex/cindexglossaryfolder.cpp
-	#src/frontend/mainindex/cindexbookmarkfolder.cpp
-	#src/frontend/mainindex/cindexsubfolder.cpp
-	#src/frontend/mainindex/cindexoldbookmarksfolder.cpp
-	src/frontend/mainindex/btindexitem.cpp
-	src/frontend/mainindex/btindexmodule.cpp
-	src/frontend/mainindex/btindexfolder.cpp
+	
+	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
+	src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp
+	src/frontend/mainindex/bookmarks/cindexfolderbase.cpp
+	src/frontend/mainindex/bookmarks/cindextreefolder.cpp
+	src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp
+	src/frontend/mainindex/bookmarks/cindexoldbookmarksfolder.cpp
+	src/frontend/mainindex/bookmarks/cindexsubfolder.cpp
+	src/frontend/mainindex/bookmarks/cindexitembase.cpp
+
+	src/frontend/mainindex/bookshelf/cbookshelfindex.cpp
+	src/frontend/mainindex/bookshelf/btindexitem.cpp
+	src/frontend/mainindex/bookshelf/btindexmodule.cpp
+	src/frontend/mainindex/bookshelf/btindexfolder.cpp
 
 	#Settings dialog (configuration)
 	src/frontend/settingsdialogs/cacceleratorsettings.cpp
