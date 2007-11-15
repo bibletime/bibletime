@@ -10,8 +10,8 @@
 
 
 //BibleTime includes
-#include "cmainindex.h"
-#include "cmainindex.moc"
+#include "cbooshelfindex.h"
+#include "cbookshelfindex.moc"
 
 #include "btindexitem.h"
 #include "btindexmodule.h"
@@ -57,7 +57,7 @@
 
 
 
-CMainIndex::CMainIndex(QWidget *parent)
+CBookshelfIndex::CBookshelfIndex(QWidget *parent)
 	: QTreeWidget(parent),
 	m_searchDialog(0),
 	m_autoOpenFolder(0),
@@ -70,14 +70,14 @@ CMainIndex::CMainIndex(QWidget *parent)
 	initTree();
 }
 
-CMainIndex::~CMainIndex() {}
+CBookshelfIndex::~CBookshelfIndex() {}
 
 
 
 /** Initializes the view. */
-void CMainIndex::initView()
+void CBookshelfIndex::initView()
 {	
-	qDebug("CMainIndex::initView");
+	qDebug("CBookshelfIndex::initView");
 
 	header()->hide();
 
@@ -98,10 +98,10 @@ void CMainIndex::initView()
 
 	initActions();
 
-	qDebug("CMainIndex::initView end");
+	qDebug("CBookshelfIndex::initView end");
 }
 
-void CMainIndex::initActions()
+void CBookshelfIndex::initActions()
 {
 
 
@@ -226,7 +226,7 @@ void CMainIndex::initActions()
 * Should be replaced with something better; it was easier to make a new function
 * than to modify all KAction constructors.
 */
-KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+KAction* CBookshelfIndex::newKAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
 {
 	KAction* action = new KAction(KIcon(pix), text, parent);
 	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
@@ -234,9 +234,9 @@ KAction* CMainIndex::newKAction(const QString& text, const QString& pix, const i
 }
 
 /** Initialize the SIGNAL<->SLOT connections */
-void CMainIndex::initConnections()
+void CBookshelfIndex::initConnections()
 {
-	qDebug("CMainIndex::initConnections");
+	qDebug("CBookshelfIndex::initConnections");
 	
 	//Strangely itemActivated only didn't let open a tree by clicking even though the relevant
 	//code in slotExecuted was executed. Therefore itemClicked is necessary.
@@ -252,13 +252,13 @@ void CMainIndex::initConnections()
 
 	QObject::connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(slotModifySelection()));
 
-	qDebug("CMainIndex::initConnections");
+	qDebug("CBookshelfIndex::initConnections");
 }
 
-void CMainIndex::slotModifySelection()
+void CBookshelfIndex::slotModifySelection()
 {
 	// This creates recursion if a folder is selected, but not infinite.
-	//qDebug("CMainIndex::slotModifySelection");
+	//qDebug("CBookshelfIndex::slotModifySelection");
 	QList<QTreeWidgetItem*> selection = selectedItems();
 	foreach (QTreeWidgetItem* item, selection) {
 		BTIndexFolder* folder = dynamic_cast<BTIndexFolder*>(item);
@@ -272,17 +272,17 @@ void CMainIndex::slotModifySelection()
 /**
 * Hack to get single click and selection working. See slotExecuted.
 */
-void CMainIndex::mouseReleaseEvent(QMouseEvent* event) {
-	//qDebug("CMainIndex::mouseReleaseEvent");
+void CBookshelfIndex::mouseReleaseEvent(QMouseEvent* event) {
+	//qDebug("CBookshelfIndex::mouseReleaseEvent");
 	//qDebug() << event->type() << event->modifiers();
 	m_mouseReleaseEventModifiers = event->modifiers();
 	QTreeWidget::mouseReleaseEvent(event);
 }
 
 /** Called when an item is clicked with mouse or activated with keyboard. */
-void CMainIndex::slotExecuted( QTreeWidgetItem* i )
+void CBookshelfIndex::slotExecuted( QTreeWidgetItem* i )
 {
-	qDebug("CMainIndex::slotExecuted");
+	qDebug("CBookshelfIndex::slotExecuted");
 
 	//HACK: checking the modifier keys from the last mouseReleaseEvent
 	//depends on executing order: mouseReleaseEvent first, then itemClicked signal
@@ -310,7 +310,7 @@ void CMainIndex::slotExecuted( QTreeWidgetItem* i )
 }
 
 /** Reimplementation. Returns the drag object for the current selection. */
-QMimeData* CMainIndex::dragObject()
+QMimeData* CBookshelfIndex::dragObject()
 {
 	//TODO: we have to add a mime type "module" if we want to for example enable draggin a module to a displaywindow
 	return 0;
@@ -318,15 +318,15 @@ QMimeData* CMainIndex::dragObject()
 
 
 /** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
-void CMainIndex::dragEnterEvent( QDragEnterEvent* event ) const
+void CBookshelfIndex::dragEnterEvent( QDragEnterEvent* event ) const
 {
-	qDebug("CMainIndex::dragEnterEvent");
+	qDebug("CBookshelfIndex::dragEnterEvent");
 	//TODO: accept only text
 	// But I doubt if searching the text in module by dragging is intuitive or if anyone really uses it
 	event->acceptProposedAction();
 }
 
-void CMainIndex::dragMoveEvent( QDragMoveEvent* event ) const
+void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event ) const
 {
 	const QPoint pos = event->pos();
  
@@ -339,14 +339,14 @@ void CMainIndex::dragMoveEvent( QDragMoveEvent* event ) const
 	}
 }
 
-void CMainIndex::dropEvent( QDropEvent* event ) const
+void CBookshelfIndex::dropEvent( QDropEvent* event ) const
 {
 	//TODO: see dragMoveEvent
 }
 
 /** No descriptions */
-void CMainIndex::initTree() {
-	qDebug("CMainIndex::initTree");
+void CBookshelfIndex::initTree() {
+	qDebug("CBookshelfIndex::initTree");
 	
 	//first clean the tree
 	clear();
@@ -360,7 +360,7 @@ void CMainIndex::initTree() {
 	addToTree(&root, this->invisibleRootItem());
 }
 
-void CMainIndex::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
+void CBookshelfIndex::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
 {
 	foreach (BTModuleTreeItem* i, item->children()) {
 		if (i->type() == BTModuleTreeItem::Module) {
@@ -376,15 +376,15 @@ void CMainIndex::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
 
 
 /** No descriptions */
-void CMainIndex::emitModulesChosen( ListCSwordModuleInfo modules, QString key ) {
+void CBookshelfIndex::emitModulesChosen( ListCSwordModuleInfo modules, QString key ) {
 	emit createReadDisplayWindow(modules, key);
 }
 
 
 
 /** Shows the context menu at the given position. */
-void CMainIndex::contextMenu(const QPoint& p) {
-	qDebug("CMainIndex::contextMenu");
+void CBookshelfIndex::contextMenu(const QPoint& p) {
+	qDebug("CBookshelfIndex::contextMenu");
 	qDebug() << "list of actions: ";
 	foreach (KAction* action, m_actionList) {
 		qDebug() << action->text();
@@ -455,7 +455,7 @@ void CMainIndex::contextMenu(const QPoint& p) {
 	m_popup->exec(mapToGlobal(p));
 }
 
-void CMainIndex::actionChangeGrouping(QAction* action)
+void CBookshelfIndex::actionChangeGrouping(QAction* action)
 {
 	BTModuleTreeItem::Grouping grouping = (BTModuleTreeItem::Grouping)action->property("grouping").toInt();
 	m_grouping = grouping;
@@ -463,7 +463,7 @@ void CMainIndex::actionChangeGrouping(QAction* action)
 }
 
 /** Opens the searchdialog for the selected modules. */
-void CMainIndex::actionSearchInModules() {
+void CBookshelfIndex::actionSearchInModules() {
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
 	ListCSwordModuleInfo modules;
@@ -486,7 +486,7 @@ void CMainIndex::actionSearchInModules() {
 }
 
 /** Unlocks the current module. */
-void CMainIndex::actionUnlockModule() {
+void CBookshelfIndex::actionUnlockModule() {
 	if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(currentItem())) {
 		bool ok = false;
 		const QString unlockKey =
@@ -507,7 +507,7 @@ void CMainIndex::actionUnlockModule() {
 }
 
 /** Shows information about the current module. */
-void CMainIndex::actionAboutModule() {
+void CBookshelfIndex::actionAboutModule() {
 	if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(currentItem())) {
 		//TODO: show "about" in mag or at least in scrollable view
 //		KMessageBox::about(this, i->moduleInfo()->aboutText(), i->moduleInfo()->config(CSwordModuleInfo::Description), false);
@@ -518,13 +518,13 @@ void CMainIndex::actionAboutModule() {
 }
 
 /** Reimplementation. Takes care of movable items. */
-void CMainIndex::startDrag(Qt::DropActions supportedActions) {
+void CBookshelfIndex::startDrag(Qt::DropActions supportedActions) {
 
 }
 
 /** Reimplementation to support the items dragEnter and dragLeave functions. */
-void CMainIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
-// 	//  qWarning("void CMainIndex:: drag move event ( QDragLeaveEvent* e )");
+void CBookshelfIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
+// 	//  qWarning("void CBookshelfIndex:: drag move event ( QDragLeaveEvent* e )");
 // 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( itemAt( contentsToViewport(event->pos())) );
 // 	if (i) {
 // 		if (i->allowAutoOpen(event) || (i->acceptDrop(event) && i->isFolder() && i->allowAutoOpen(event) && !i->isOpen() && autoOpen()) ) {
@@ -547,7 +547,7 @@ void CMainIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
 }
 
 
-void CMainIndex::autoOpenTimeout() {
+void CBookshelfIndex::autoOpenTimeout() {
 	m_autoOpenTimer.stop();
 	if (m_autoOpenFolder && !m_autoOpenFolder->isExpanded() && m_autoOpenFolder->childCount()) {
 		m_autoOpenFolder->setExpanded(true);
@@ -555,14 +555,14 @@ void CMainIndex::autoOpenTimeout() {
 }
 
 /** No descriptions */
-void CMainIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
+void CBookshelfIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
 // 	m_autoOpenTimer.stop();
 // 	QTreeWidget::contentsDragLeaveEvent(e);
 }
 
 
 /** Opens an editor window to edit the modules content. */
-void CMainIndex::actionEditModulePlain() {
+void CBookshelfIndex::actionEditModulePlain() {
 	ListCSwordModuleInfo modules;
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
@@ -578,7 +578,7 @@ void CMainIndex::actionEditModulePlain() {
 }
 
 /** Opens an editor window to edit the modules content. */
-void CMainIndex::actionEditModuleHTML() {
+void CBookshelfIndex::actionEditModuleHTML() {
 	ListCSwordModuleInfo modules;
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
@@ -594,8 +594,8 @@ void CMainIndex::actionEditModuleHTML() {
 }
 
 /** Reloads the main index's Sword dependend things like modules */
-void CMainIndex::reloadSword() {
+void CBookshelfIndex::reloadSword() {
 	//reload the modules
-	qDebug("CMainIndex::reloadSword");
+	qDebug("CBookshelfIndex::reloadSword");
 	initTree();
 }
