@@ -16,7 +16,7 @@
 #include <QTreeWidgetItem>
 #include <QtXml/qdom.h>
 
-class CMainIndex;
+class CBookmarkIndex;
 class QDropEvent;
 class QDragMoveEvent;
 class QMimeData;
@@ -58,12 +58,12 @@ public:
 		ActionEnd = AboutModule
 	};
 
-	CIndexItemBase(CMainIndex* mainIndex, const Type type = Unknown);
+	CIndexItemBase(CBookmarkIndex* bookmarkIndex, const Type type = Unknown);
 	CIndexItemBase(CIndexItemBase* parentItem, const Type type = Unknown);
 	virtual ~CIndexItemBase();
 
 	virtual const QString toolTip();
-	virtual CMainIndex* treeWidget() const;
+	virtual CBookmarkIndex* treeWidget() const;
 
 	/**
 	* Returns if the implementation of this class is a folder item or not.

@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef CMAININDEX_H
-#define CMAININDEX_H
+#ifndef CBOOKSHELFINDEX_H
+#define CBOOKSHELFINDEX_H
 
 //BibleTime includes
 #include "btindexitem.h"

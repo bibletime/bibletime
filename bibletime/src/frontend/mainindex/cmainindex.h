@@ -10,12 +10,11 @@
 #ifndef CMAININDEX_H
 #define CMAININDEX_H
 
-#include "bookshelf/cbookshelfindex.h"
-#include "bookmarks/cbookmarksindex.h"
 
 #include <QTabWidget>
 
-
+class CBookmarkIndex;
+class CBookshelfIndex;
 
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
@@ -25,20 +24,11 @@ class CMainIndex : public QTabWidget {
 
 public:
 	CMainIndex(QWidget *parent);
-	virtual ~CMainIndex();
+	virtual ~CMainIndex() {};
 
-protected:
-	/**
-	* Initialize the SIGNAL<->SLOT connections
-	*/
-	void initConnections();
+	void reloadSword();
 
 private:
-	
-	/**
-	* Initializes the view.
-	*/
-	void initView();
 
 	CBookmarkIndex* m_bookmarksPage;
 	CBookshelfIndex* m_bookshelfPage;

@@ -27,7 +27,7 @@ class QString;
 class CIndexBookmarkFolder : public CIndexTreeFolder
 {
 public:
-	CIndexBookmarkFolder(CMainIndex* mainIndex, const Type type = BookmarkFolder);
+	CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type = BookmarkFolder);
 	CIndexBookmarkFolder(CIndexFolderBase* parentItem, const Type type = BookmarkFolder);
 	virtual ~CIndexBookmarkFolder();
 	virtual const bool enableAction(const MenuAction action);

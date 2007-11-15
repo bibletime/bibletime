@@ -17,8 +17,8 @@
 #include <QString>
 #include <QMimeData>
 
-CIndexItemBase::CIndexItemBase(CMainIndex* mainIndex, const Type type)
-	: QTreeWidgetItem(mainIndex),
+CIndexItemBase::CIndexItemBase(CBookmarkIndex* bookmarkIndex, const Type type)
+	: QTreeWidgetItem(bookmarkIndex),
 	m_type(type),
 	m_sortingEnabled(true)
 {}
@@ -37,8 +37,8 @@ const QString CIndexItemBase::toolTip()
 }
 
 /** Returns the used main index. */
-CMainIndex* CIndexItemBase::treeWidget() const {
-	return dynamic_cast<CMainIndex*>( QTreeWidgetItem::treeWidget() );
+CBookmarkIndex* CIndexItemBase::treeWidget() const {
+	return dynamic_cast<CBookmarkIndex*>( QTreeWidgetItem::treeWidget() );
 }
 
 const bool CIndexItemBase::isFolder() {

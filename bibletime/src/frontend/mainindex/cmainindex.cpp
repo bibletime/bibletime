@@ -13,34 +13,23 @@
 #include "cmainindex.h"
 #include "cmainindex.moc"
 
+#include "bookshelf/cbookshelfindex.h"
+#include "bookmarks/cbookmarkindex.h"
 
+#include <QTabWidget>
+
+#include <klocale.h>
 
 CMainIndex::CMainIndex(QWidget *parent)
 	: QTabWidget(parent)
 {
-	m_bookmarksPage = new CBookmarksIndex(0);
+	m_bookmarksPage = new CBookmarkIndex(0);
 	m_bookshelfPage = new CBookshelfIndex(0);
-	addTab(m_bookshelfPage);
-	addTab(m_bookmarksPage);
-
-
-	initView();
-	initConnections();
+	addTab(m_bookshelfPage, i18n("Bookshelf"));
+	addTab(m_bookmarksPage, i18n("Bookmarks"));
 }
 
-CMainIndex::~CMainIndex() {}
-
-
-
-/** Initializes the view. */
-void CMainIndex::initView()
-{	
-
-}
-
-/** Initialize the SIGNAL<->SLOT connections */
-void CMainIndex::initConnections()
+void CMainIndex::reloadSword()
 {
-	qDebug("CMainIndex::initConnections");
-
+	m_bookshelfPage->reloadSword();
 }

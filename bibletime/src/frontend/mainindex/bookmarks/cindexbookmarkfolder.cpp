@@ -35,7 +35,7 @@
 
 
 
-CIndexBookmarkFolder::CIndexBookmarkFolder(CMainIndex* mainIndex, const Type type) : CIndexTreeFolder(mainIndex, type, "*") {
+CIndexBookmarkFolder::CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type) : CIndexTreeFolder(bookmarkIndex, type, "*") {
 	setSortingEnabled(false);
 }
 

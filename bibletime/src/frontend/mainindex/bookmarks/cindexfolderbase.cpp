@@ -28,7 +28,7 @@
 #include <klocale.h>
 
 
-CIndexFolderBase::CIndexFolderBase(CMainIndex* mainIndex, const Type type) : CIndexItemBase(mainIndex, type) {}
+CIndexFolderBase::CIndexFolderBase(CBookmarkIndex* mainIndex, const Type type) : CIndexItemBase(mainIndex, type) {}
 
 CIndexFolderBase::CIndexFolderBase(CIndexFolderBase* parentItem, const Type type) : CIndexItemBase(parentItem, type) {}
 

@@ -16,8 +16,6 @@
 #include "cindexitembase.h"
 #include "cindexbookmarkitem.h"
 #include "cindexbookmarkfolder.h"
-#include "cindexglossaryfolder.h"
-#include "cindexmoduleitem.h"
 #include "cindexsubfolder.h"
 
 #include "backend/managers/creferencemanager.h"

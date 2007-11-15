@@ -28,7 +28,7 @@ class QMimeSource;
 class CIndexFolderBase : public CIndexItemBase
 {
 public:
-	CIndexFolderBase(CMainIndex* mainIndex, const Type type);
+	CIndexFolderBase(CBookmarkIndex* mainIndex, const Type type);
 	CIndexFolderBase(CIndexFolderBase* parentFolder, const Type type);
 	CIndexFolderBase(CIndexFolderBase* parentFolder, const QString& caption);
 	virtual ~CIndexFolderBase();

@@ -13,7 +13,6 @@
 #include "cindextreefolder.h"
 #include "cindexfolderbase.h"
 #include "cindexbookmarkfolder.h"
-#include "cindexmoduleitem.h"
 #include "cindexbookmarkitem.h"
 #include "cindexoldbookmarksfolder.h"
 
@@ -30,7 +29,7 @@
 #include <klocale.h>
 
 
-CIndexTreeFolder::CIndexTreeFolder(CMainIndex* mainIndex, const Type type, const QString& language) : CIndexFolderBase(mainIndex, type) {
+CIndexTreeFolder::CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type, const QString& language) : CIndexFolderBase(mainIndex, type) {
 	m_language = language;
 }
 
@@ -60,10 +59,7 @@ void CIndexTreeFolder::addGroup(const Type type, const QString language) {
 		delete i;
 }
 
-void CIndexTreeFolder::addModule(CSwordModuleInfo* const module) {
-	CIndexModuleItem* i = new CIndexModuleItem(this, module);
-	i->init();
-}
+
 
 void CIndexTreeFolder::addBookmark(CSwordModuleInfo* module, const QString& key, const QString& description) {
 	CIndexBookmarkItem* i = new CIndexBookmarkItem(this, module, key, description);
@@ -123,58 +119,7 @@ void CIndexTreeFolder::init() {
 }
 
 void CIndexTreeFolder::initTree() {
-	//qDebug("CTreeMgr::initTree");
-	if (type() == Unknown)
-		return;
-
-	CSwordModuleInfo::Category moduleCategory = CSwordModuleInfo::UnknownCategory;
-	if (type() == BibleModuleFolder)
-		moduleCategory = CSwordModuleInfo::Bibles;
-	else if (type() == CommentaryModuleFolder)
-		moduleCategory = CSwordModuleInfo::Commentaries;
-	else if (type() == LexiconModuleFolder || type() == GlossaryModuleFolder || type() == DevotionalModuleFolder)
-		moduleCategory = CSwordModuleInfo::Lexicons;
-	else if (type() == BookModuleFolder)
-		moduleCategory = CSwordModuleInfo::Books;
-	else if (type() == ImageModuleFolder)
-		moduleCategory = CSwordModuleInfo::Images;
-
-	//get all modules by using the given type
-	ListCSwordModuleInfo allModules =CPointers::backend()->moduleList();
-	ListCSwordModuleInfo usedModules;
-	ListCSwordModuleInfo::iterator end_it = allModules.end();
-	for (ListCSwordModuleInfo::iterator it(allModules.begin()); it != end_it; ++it) {
-		if ((*it)->category() == moduleCategory) { //found a module, check if the type is correct (devotional etc.)
-			if (language() == QString::fromLatin1("*") || (language() != QString::fromLatin1("*") && QString::fromLatin1((*it)->module()->Lang()) == language()) )//right type and language!
-				usedModules.append(*it);
-		}
-	}
-
-	//we have now all modules we want to have
-	if (language() == QString::fromLatin1("*")) { //create subfolders for each language
-		QStringList usedLangs;
-		end_it = usedModules.end();
-		for (ListCSwordModuleInfo::iterator it(usedModules.begin()); it != end_it; ++it) {
-			QString lang = QString::fromLatin1((*it)->module()->Lang());
-			if (!usedLangs.contains(lang)) {
-				usedLangs.append(lang);
-			}
-		}
-
-		//ToDo:: Optimize the loop with const itrs
-		QStringList::iterator lang_it;
-		for (lang_it = usedLangs.begin(); lang_it != usedLangs.end(); ++lang_it) {
-			addGroup(/**lang_it,*/ type(), *lang_it);
-		}
-	}
-	else if (usedModules.count() > 0) { //create subitems with the given type and language
-		end_it = usedModules.end();
-		for (ListCSwordModuleInfo::iterator it(usedModules.begin()); it != end_it; ++it) {
-			addModule(*it);
-		}
-	}
-
-	sortChildItems(0,Qt::AscendingOrder);
+	
 }
 
 const QString& CIndexTreeFolder::language() const {

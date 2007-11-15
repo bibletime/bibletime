@@ -10,7 +10,7 @@
 //
 //
 #include "btindexitem.h"
-#include "cmainindex.h"
+#include "cbookshelfindex.h"
 
 #include <QTreeWidgetItem>
 #include <QTreeWidget>

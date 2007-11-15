@@ -10,7 +10,7 @@
 
 
 //BibleTime includes
-#include "cbooshelfindex.h"
+#include "cbookshelfindex.h"
 #include "cbookshelfindex.moc"
 
 #include "btindexitem.h"
