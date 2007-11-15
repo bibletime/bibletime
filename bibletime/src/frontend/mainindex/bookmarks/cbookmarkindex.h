@@ -43,11 +43,11 @@ class QMouseEvent; //testing
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
   */
-class CMainIndex : public QTreeWidget {
+class CBookmarksIndex : public QTreeWidget {
 	Q_OBJECT
 
 public:
-	CMainIndex(QWidget *parent);
+	CBookmarksIndex(QWidget *parent);
 	virtual ~CMainIndex();
 	
 	void initTree();
