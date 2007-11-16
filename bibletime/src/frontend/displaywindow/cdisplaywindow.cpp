@@ -206,7 +206,7 @@ void CDisplayWindow::windowActivated( const bool hasFocus ) {
 	
 	//new:
 	if (actionCollection()) {
-#if KDE_VERSION_MAJOR == 3 && KDE_VERSION_MINOR <= 94
+#if KDE_VERSION_MAJOR == 3 && KDE_VERSION_MINOR < 96
 			if (hasFocus) {
 				actionCollection()->setAssociatedWidget(this);
 			} else {
