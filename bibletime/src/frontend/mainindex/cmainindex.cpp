@@ -27,6 +27,9 @@ CMainIndex::CMainIndex(QWidget *parent)
 	m_bookshelfPage = new CBookshelfIndex(0);
 	addTab(m_bookshelfPage, i18n("Bookshelf"));
 	addTab(m_bookmarksPage, i18n("Bookmarks"));
+
+	QObject::connect(m_bookshelfPage, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )), this, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )));
+	QObject::connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )), this, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )));
 }
 
 void CMainIndex::reloadSword()

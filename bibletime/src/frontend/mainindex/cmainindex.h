@@ -10,6 +10,8 @@
 #ifndef CMAININDEX_H
 #define CMAININDEX_H
 
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
 #include <QTabWidget>
 
@@ -27,6 +29,16 @@ public:
 	virtual ~CMainIndex() {};
 
 	void reloadSword();
+
+signals:
+	/**
+	* Is emitted when a module should be opened,
+	*/
+	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
+	/**
+	 * Is emitted when a write window should be created.
+	 */
+	void createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType& );
 
 private:
 
