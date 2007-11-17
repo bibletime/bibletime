@@ -64,6 +64,7 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	setContextMenuPolicy(Qt::CustomContextMenu);
 	initView();
 	initConnections();
+	initTree();
 }
 
 CBookmarkIndex::~CBookmarkIndex() {
@@ -416,29 +417,37 @@ KAction* const CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) c
 }
 
 /** Shows the context menu at the given position. */
-void CBookmarkIndex::contextMenu(const QPoint& p) {
+void CBookmarkIndex::contextMenu(const QPoint& p)
+{
+	qDebug("CBookmarkIndex::contextMenu");
 	//setup menu entries depending on current selection
 	QTreeWidgetItem* i = itemAt(p);
 	QList<QTreeWidgetItem *> items = selectedItems();
 	//The item which was clicked may not be selected
 	if (!items.contains(i))
 		items.append(i);
-
+	qDebug("CBookmarkIndex::contextMenu 1");
 	if (items.count() == 0) { 
+		qDebug("CBookmarkIndex::contextMenu 2");
 		//special handling for no selection
 	}
 	else if (items.count() == 1) { 
+		qDebug("CBookmarkIndex::contextMenu 4");
 		//special handling for one selected item
 		
 		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(items.at(0));
 		CIndexItemBase::MenuAction actionType;
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
+			qDebug("CBookmarkIndex::contextMenu 6");
 			actionType = static_cast<CIndexItemBase::MenuAction>(index);
 			if (KAction* a = action(actionType))
 				a->setEnabled( item->enableAction(actionType) );
 		}
+		qDebug("CBookmarkIndex::contextMenu 7");
 	}
+	
 	else {
+		qDebug("CBookmarkIndex::contextMenu 8");
 		//first disable all actions
 		CIndexItemBase::MenuAction actionType;
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
@@ -446,16 +455,19 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
 			if (KAction* a = action(actionType))
 				a->setEnabled(false);
 		}
-
+		qDebug("CBookmarkIndex::contextMenu 9");
 		//enable the menu items depending on the types of the selected items.
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
+			qDebug("CBookmarkIndex::contextMenu 10");
 			actionType = static_cast<CIndexItemBase::MenuAction>(index);
 			bool enableAction = isMultiAction(actionType);
 			QListIterator<QTreeWidgetItem *> it(items);
 			while(it.hasNext()) {
+				qDebug("CBookmarkIndex::contextMenu 11");
 				CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.next());
 				enableAction = enableAction && i->enableAction(actionType);
 			}
+			qDebug("CBookmarkIndex::contextMenu 12");
 			if (enableAction) {
 				KAction* a = action(actionType) ;
 				if (i && a)
@@ -463,9 +475,10 @@ void CBookmarkIndex::contextMenu(const QPoint& p) {
 			}
 		}
 	}
-	
+	qDebug("CBookmarkIndex::contextMenu13");
 	//finally, open the popup
 	m_popup->exec(mapToGlobal(p));
+	qDebug("CBookmarkIndex::contextMenu end");
 }
 
 /** Adds a new subfolder to the current item. */
