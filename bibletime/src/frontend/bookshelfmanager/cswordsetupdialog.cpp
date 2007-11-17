@@ -36,6 +36,7 @@
 #include <QProgressDialog>
 #include <QMessageBox>
 #include <QDebug>
+#include <QCloseEvent>
 
 //KDE includes
 #include <kapplication.h>
@@ -70,6 +71,7 @@ CSwordSetupDialog::CSwordSetupDialog(QWidget *parent) : KPageDialog(parent),
 	initRemove();
 	initManageIndices();
 	connect(this, SIGNAL(okClicked()), SLOT(slotOk()));
+	//TODO: we should probably handle also closing by window close button as well
 }
 
 void CSwordSetupDialog::initSwordConfig() {
@@ -255,6 +257,8 @@ void CSwordSetupDialog::initManageIndices()
 }
 
 void CSwordSetupDialog::slotOk() {
+	//TODO: we don't need this, there is no "Cancel" and we have to take care all closing
+	// events which can be done with closeEvent.
 	qDebug("CSwordSetupDialog::slotOk");
 	writeSwordConfig();
 	KDialog::accepted();
@@ -889,6 +893,13 @@ void CSwordSetupDialog::slot_moduleRefreshCompleted(const int /*total*/, const i
 		m_progressDialog->setValue(current);
 	}
 	KApplication::kApplication()->processEvents();
+}
+
+void CSwordSetupDialog::closeEvent(QCloseEvent* event)
+{
+	qDebug("CSwordSetupDialog::closeEvent");
+	writeSwordConfig();
+	emit signalSwordSetupChanged( );
 }
 
 } // NAMESPACE

@@ -28,6 +28,7 @@ class QPushButton;
 class QLineEdit;
 class QTreeWidget;
 class QProgressDialog;
+class QCloseEvent;
 
 namespace BookshelfManager {
 
@@ -53,6 +54,9 @@ public:
 
 		/** Opens the page which contaisn the given part ID. */
 		void showPart( CSwordSetupDialog::Parts ID );
+
+protected:
+	virtual void closeEvent(QCloseEvent* event);
 
 private:
 		void initSwordConfig();
