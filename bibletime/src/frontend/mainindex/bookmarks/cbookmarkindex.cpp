@@ -19,6 +19,7 @@
 #include "cindexsubfolder.h"
 
 #include "backend/managers/creferencemanager.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/cbtconfig.h"
@@ -96,9 +97,10 @@ void CBookmarkIndex::initView()
 	header()->hide();
 
 	setFocusPolicy(Qt::WheelFocus);
+	//setDragEnabled( true );
 	setAcceptDrops( true );
-	setDragEnabled( true );
-	setDropIndicatorShown( true );
+	//setDropIndicatorShown( true );
+	//setDragDropMode(QAbstractItemView::DragDrop);
 
 	setItemsExpandable(true);
 	viewport()->setAcceptDrops(true);
@@ -266,31 +268,61 @@ QMimeData* CBookmarkIndex::dragObject()
 
 }
 
-
-/** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
-void CBookmarkIndex::dragEnterEvent( QDragEnterEvent* event ) const
+void CBookmarkIndex::dragEnterEvent( QDragEnterEvent* event )
 {
 	qDebug("CBookmarkIndex::dragEnterEvent");
 	event->acceptProposedAction();
 }
 
-void CBookmarkIndex::dragMoveEvent( QDragMoveEvent* event ) const
+
+void CBookmarkIndex::dragMoveEvent( QDragMoveEvent* event )
 {
+	qDebug("CBookmarkIndex::dragMoveEvent");
 	const QPoint pos = event->pos();
- 
-	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-	//TODO: CIndexItemBase needs acceptDrop
-	if (i->acceptDrop(event->mimeData()) || i->isMovable()) {
-		event->acceptProposedAction();
+	if (itemAt(pos)) {
+		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
+		if (i) {
+			i->acceptDrop(event);
+		}
 	} else {
-	
+		if (event->provides("BibleTime/Bookmark")) {
+			event->acceptProposedAction();
+		}
 	}
-	
 }
 
-void CBookmarkIndex::dropEvent( QDropEvent* event ) const
+void CBookmarkIndex::dropEvent( QDropEvent* event )
 {
+	qDebug("CBookmarkIndex::dropEvent");
+	const QPoint pos = event->pos();
+	if (itemAt(pos)) {
+		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
+		if (i) {
+			if (i->acceptDrop(event)) {
+				createBookmarkFromDrop(event, i);
+			}
+		}
+	} else {
+		//drop the new bookmark into top level?
+	}
+}
 
+void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* droppedIntoItem)
+{
+	qDebug("CBookmarkIndex::createBookmarkFromDrop");
+	//take the bookmark data from the mime source
+	const BTMimeData* mdata = dynamic_cast<const BTMimeData*>(event->mimeData());
+	if (mdata) {
+		//create the new bookmark
+		QString moduleName = mdata->bookmark().module();
+		QString keyText = mdata->bookmark().key();
+		QString description = mdata->bookmark().description();
+		CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
+		CIndexFolderBase* parentItem =
+		dynamic_cast<CIndexFolderBase*>( droppedIntoItem->isFolder()?droppedIntoItem:droppedIntoItem->parent());
+		
+		CIndexBookmarkItem* newItem = new CIndexBookmarkItem(parentItem, minfo, keyText, description);
+	}			
 }
 
 /** No descriptions */
@@ -596,7 +628,7 @@ void CBookmarkIndex::deleteEntries() {
 
 
 /** Reimplementation. Takes care of movable items. */
-void CBookmarkIndex::startDrag(Qt::DropActions supportedActions) {
+//void CBookmarkIndex::startDrag(Qt::DropActions supportedActions) {
 // 	QList<QTreeWidgetItem *> items = selectedItems();
 // 	QListIterator<QTreeWidgetItem *> it(items);
 // 	m_itemsMovable = true;
@@ -611,32 +643,7 @@ void CBookmarkIndex::startDrag(Qt::DropActions supportedActions) {
 // 	}
 // 
 // 	QTreeWidget::startDrag();
-}
-
-/** Reimplementation to support the items dragEnter and dragLeave functions. */
-void CBookmarkIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
-// 	//  qWarning("void CBookmarkIndex:: drag move event ( QDragLeaveEvent* e )");
-// 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( itemAt( contentsToViewport(event->pos())) );
-// 	if (i) {
-// 		if (i->allowAutoOpen(event) || (i->acceptDrop(event) && i->isFolder() && i->allowAutoOpen(event) && !i->isOpen() && autoOpen()) ) {
-// 			if (m_autoOpenFolder != i)  {
-// 				m_autoOpenTimer.stop();
-// 			}
-// 			
-// 			m_autoOpenFolder = i;
-// 			m_autoOpenTimer.start( 400 );
-// 		}
-// 		else {
-// 			m_autoOpenFolder = 0;
-// 		}
-// 	}
-// 	else {
-// 		m_autoOpenFolder = 0;
-// 	}
-// 
-// 	QTreeWidget::contentsDragMoveEvent(event);
-}
-
+//}
 
 
 
@@ -647,11 +654,6 @@ void CBookmarkIndex::autoOpenTimeout() {
 	}
 }
 
-/** No descriptions */
-void CBookmarkIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
-// 	m_autoOpenTimer.stop();
-// 	QTreeWidget::contentsDragLeaveEvent(e);
-}
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
 const bool CBookmarkIndex::isMultiAction( const CIndexItemBase::MenuAction type ) const {
@@ -715,3 +717,5 @@ void CBookmarkIndex::saveBookmarks() {
 		++it;
 	}
 }
+
+

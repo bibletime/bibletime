@@ -95,8 +95,15 @@ void CIndexItemBase::dropped( QDropEvent* e)
 	dropped(e,0);
 }
 
-bool CIndexItemBase::acceptDrop(const QMimeData* data) const
-{return false;}
+bool CIndexItemBase::acceptDrop(QDropEvent* event) const
+{
+	if (event->provides("BibleTime/Bookmark") || event->provides("BibleTime/BookmarkItem")) {
+		event->acceptProposedAction();
+		// TODO: Draw the placement marker
+
+		return true;
+	}
+}
 
 void CIndexItemBase::dropped( QDropEvent* e, QTreeWidgetItem* after)
 {}

@@ -83,9 +83,9 @@ protected: // Protected methods
 	/**
 	* Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the listview.
 	*/
-	virtual void dragEnterEvent( QDragEnterEvent* event ) const;
-	virtual void dragMoveEvent( QDragMoveEvent* event ) const;
-	virtual void dropEvent( QDropEvent* event ) const;
+	virtual void dragEnterEvent( QDragEnterEvent* event );
+	virtual void dragMoveEvent( QDragMoveEvent* event );
+	virtual void dropEvent( QDropEvent* event );
 	/**
 	* Returns the correct KAction object for the given type of action.
 	*/
@@ -93,15 +93,8 @@ protected: // Protected methods
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
-	virtual void startDrag(Qt::DropActions supportedActions);
-	/**
-	* TODO: qt4 Reimplementation to support the items dragEnter and dragLeave functions.
-	*/
-	virtual void contentsDragMoveEvent( QDragMoveEvent* event );
-	/**
-	 * Reimplementation.
-	 */
-	virtual void contentsDragLeaveEvent( QDragLeaveEvent* e );
+	//virtual void startDrag(Qt::DropActions supportedActions);
+
 
 
 protected slots: // Protected slots
@@ -169,6 +162,11 @@ private:
 	* Returns false for actions which support only one entry, e.g. about module etc.
 	*/
 	const bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
+
+	/**
+	* A helper function for d'n'd which creates a new bookmark item when drop happens.
+	*/
+	void createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* droppedIntoItem);
 
 	struct Actions {
 		KAction* newFolder;

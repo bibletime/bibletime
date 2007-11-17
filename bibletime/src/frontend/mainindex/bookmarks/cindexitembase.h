@@ -112,7 +112,7 @@ public:
 
 	virtual QList<QTreeWidgetItem*> getChildList();
 
-	virtual bool acceptDrop(const QMimeData* data) const;
+	virtual bool acceptDrop(QDropEvent* event) const;
 	
 protected:
 	friend class CMainIndex;
