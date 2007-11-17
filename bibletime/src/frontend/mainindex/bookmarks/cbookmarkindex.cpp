@@ -108,10 +108,10 @@ void CBookmarkIndex::initView()
 
 	//setup the popup menu
 	m_popup = new KMenu(viewport());
-	m_popup->addTitle(i18n("Bookshelf"));
+	m_popup->addTitle(i18n("Bookmarks"));
 
-	m_actions.newFolder = newKAction(i18n("Create a new folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
-	m_actions.changeFolder = newKAction(i18n("Change this folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
+	m_actions.newFolder = newKAction(i18n("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
+	m_actions.changeFolder = newKAction(i18n("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
 	m_actions.changeBookmark = newKAction(i18n("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
 	m_actions.importBookmarks = newKAction(i18n("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
@@ -167,6 +167,7 @@ void CBookmarkIndex::initConnections()
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
 	
+	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), SLOT(slotItemChanged(QTreeWidgetItem*, int)));
 	qDebug("CBookmarkIndex::initConnections");
 }
 
@@ -424,11 +425,12 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 	QTreeWidgetItem* i = itemAt(p);
 	QList<QTreeWidgetItem *> items = selectedItems();
 	//The item which was clicked may not be selected
-	if (!items.contains(i))
+	if (i && !items.contains(i))
 		items.append(i);
 	qDebug("CBookmarkIndex::contextMenu 1");
 	if (items.count() == 0) { 
 		qDebug("CBookmarkIndex::contextMenu 2");
+		return;
 		//special handling for no selection
 	}
 	else if (items.count() == 1) { 
@@ -678,6 +680,14 @@ const bool CBookmarkIndex::isMultiAction( const CIndexItemBase::MenuAction type 
 /** Is called when items should be moved. */
 void CBookmarkIndex::moved( QList<QTreeWidgetItem>& /*items*/, QList<QTreeWidgetItem>& /*afterFirst*/, QList<QTreeWidgetItem>& /*afterNow*/) {
 	qDebug("move items");
+}
+
+void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int index)
+{
+	CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(item);
+	if (i){
+		i->setDescription(item->text(index));
+	}
 }
 
 /** Saves the bookmarks to disk */

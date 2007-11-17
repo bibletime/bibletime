@@ -38,12 +38,9 @@ public:
 	virtual void update();
 	virtual void init();
 	virtual void setExpanded( bool open );
-	/**
-	* The function which renames this folder.
-	*/
-	void rename();
+
 	virtual void newSubFolder();
-	
+	virtual void rename();
 	/**
 	* Reimplemented from cindexitembase.
 	*/

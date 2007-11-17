@@ -221,3 +221,8 @@ const QString& CIndexBookmarkItem::englishKey() const {
 bool CIndexBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
 	return false;
 }
+
+void CIndexBookmarkItem::setDescription(QString text)
+{
+	m_description = text;
+}

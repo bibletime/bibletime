@@ -54,7 +54,8 @@ public:
 	/**
 	* Changes this bookmark.
 	*/
-	void rename();
+	virtual void rename();
+	virtual void setDescription(QString text);
 	/**
 	* Reimplementation of CItemBase::saveToXML.
 	*/
@@ -63,6 +64,7 @@ public:
 	* Loads the content of this folder from the XML code passed as argument to this function.
 	*/
 	virtual void loadFromXML( QDomElement& element );
+	
 
 private:
 	QString m_key;

@@ -24,6 +24,11 @@
 #include <QTreeWidgetItem>
 #include <QMimeSource>
 #include <QList>
+#include <QPoint>
+#include <QRect>
+#include <QApplication>
+
+#include <QDebug>
 
 #include <klocale.h>
 
@@ -60,11 +65,6 @@ void CIndexFolderBase::init() {
 void CIndexFolderBase::setExpanded( bool open ) {
 	QTreeWidgetItem::setExpanded(open);
 	update();
-}
-
-/** The function which renames this folder. */
-void CIndexFolderBase::rename() {
-	//startRename(0); //TODO: not in qt4
 }
 
 /** Creates a new sub folder of this folder. */
@@ -106,37 +106,8 @@ QList<QTreeWidgetItem*> CIndexFolderBase::getChildList() {
 	return itemList; 
 }
 
-
-
-//I don't quite get the purpose of this...
-// do we want to get all children recursively?
-
-// /*
-// 	QList<QTreeWidgetItem*> childs;
-// 	if (!childCount()) //no childs available
-// 		return childs;
-// 
-// 	QTreeWidgetItem* i = firstChild();
-// 	while (i && (i->parent() == this)) {
-// 		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(i);
-// 		if (item) { //we found a valid item
-// 			childs.append(item);
-// 
-// 			CIndexFolderBase* folder = dynamic_cast<CIndexFolderBase*>(i);
-// 			if (folder) {
-// 				QList<QTreeWidgetItem*> subChilds = folder->getChildList();
-// 				//for (QTreeWidgetItem* ci = subChilds.first(); ci; ci = subChilds.next()) {
-// 				foreach (QTreeWidgetItem* ci, subChilds) {
-// 					childs.append(ci);
-// 				}
-// 			}
-// 		}
-// 
-// 		do {
-// 			i = i->nextSibling();
-// 		}
-// 		while (i && (i->parent() != this));
-// 	}
-// 
-// 	return childs;
-// }*/
+void CIndexFolderBase::rename()
+{
+	qDebug("CIndexFolderBase::rename");
+	treeWidget()->editItem(this);
+}

@@ -130,6 +130,7 @@ protected slots: // Protected slots
 	* Changes the current bookmark.
 	*/
 	void changeBookmark();
+	void slotItemChanged(QTreeWidgetItem*, int);
 	/**
 	* Import bookmarks from a file and add them to the selected folder.
 	*/

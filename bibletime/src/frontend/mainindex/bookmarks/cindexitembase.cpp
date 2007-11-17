@@ -47,6 +47,7 @@ const bool CIndexItemBase::isFolder() {
 
 void CIndexItemBase::init()
 {
+	setFlags(Qt::ItemIsEditable|Qt::ItemIsSelectable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsEnabled);
 	update();
 }
 
