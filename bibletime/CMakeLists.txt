@@ -240,7 +240,7 @@ TARGET_LINK_LIBRARIES(bibletime
 	QtXml
 	${CLUCENE_LIBRARY}
 	${SWORD_LIBRARY}
-	curl #??? not sure why I need this, since update to Ubuntu Gutsy / Sword 1.5.10, who knows if there is a workaround?
+#	curl #??? not sure why I need this, since update to Ubuntu Gutsy / Sword 1.5.10, who knows if there is a workaround?
 )
 
 FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
