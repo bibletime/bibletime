@@ -84,6 +84,9 @@ public:
 	/** Return the path to the user's indices directory.*/
 	static QDir getUserIndexDir(void);
 	
+	/** Return the path to the default display templates directory.*/
+	static QDir getUserDisplayTemplatesDir(void);
+	
 private:
 	/** Will cache a few directories like icon directory */
 	static void initDirectoryCache(void);

@@ -106,6 +106,7 @@ static QDir cachedPicsDir;
 static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
 static QDir cachedDocsDir;
+static QDir cachedUserDisplayTemplatesDir;
 static QDir cachedUserBaseDir;
 static QDir cachedUserSessionsDir;
 static QDir cachedUserCacheDir;
@@ -155,11 +156,10 @@ void DirectoryUtil::initDirectoryCache(void)
 		qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
-
+	
 	cachedUserBaseDir = QDir::home();
 	if (!cachedUserBaseDir.cd(".bibletime")){
-		bool success = cachedUserBaseDir.mkdir(".bibletime") &&
-				cachedUserBaseDir.cd(".bibletime");
+		bool success = cachedUserBaseDir.mkdir(".bibletime") && cachedUserBaseDir.cd(".bibletime");
 		if (!success){
 			qWarning() << "Could not create user setting directory.";
 			throw;
@@ -168,8 +168,7 @@ void DirectoryUtil::initDirectoryCache(void)
 
 	cachedUserSessionsDir = cachedUserBaseDir;
 	if (!cachedUserSessionsDir.cd("sessions")){
-		bool success = cachedUserSessionsDir.mkdir("sessions") &&
-				cachedUserSessionsDir.cd("sessions");
+		bool success = cachedUserSessionsDir.mkdir("sessions") && cachedUserSessionsDir.cd("sessions");
 		if (!success){
 			qWarning() << "Could not create user sessions directory.";
 			throw;
@@ -178,8 +177,7 @@ void DirectoryUtil::initDirectoryCache(void)
 
 	cachedUserCacheDir = cachedUserBaseDir;
 	if (!cachedUserCacheDir.cd("cache")){
-		bool success = cachedUserCacheDir.mkdir("cache") &&
-				cachedUserCacheDir.cd("cache");
+		bool success = cachedUserCacheDir.mkdir("cache") && cachedUserCacheDir.cd("cache");
 		if (!success){
 			qWarning() << "Could not create user cache directory.";
 			throw;
@@ -188,10 +186,17 @@ void DirectoryUtil::initDirectoryCache(void)
 
 	cachedUserIndexDir = cachedUserBaseDir;
 	if (!cachedUserIndexDir.cd("indices")){
-		bool success = cachedUserIndexDir.mkdir("indices") &&
-				cachedUserIndexDir.cd("indices");
+		bool success = cachedUserIndexDir.mkdir("indices") && cachedUserIndexDir.cd("indices");
 		if (!success){
 			qWarning() << "Could not create user indices directory.";
+		}
+	}
+	
+	cachedUserDisplayTemplatesDir = cachedUserBaseDir;
+	if (!cachedUserDisplayTemplatesDir.cd("display-templates")){
+		bool success = cachedUserDisplayTemplatesDir.mkdir("display-templates") && cachedUserDisplayTemplatesDir.cd("display-templates");
+		if (!success){
+			qWarning() << "Could not create user display templates directory.";
 		}
 	}
 
@@ -274,6 +279,13 @@ QDir DirectoryUtil::getUserIndexDir(void)
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedUserIndexDir;
 }
+
+QDir DirectoryUtil::getUserDisplayTemplatesDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserDisplayTemplatesDir;
+}
+
 
 } //end of namespace util::filesystem
 

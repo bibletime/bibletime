@@ -23,17 +23,7 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kstandarddirs.h>
 #include <kmessagebox.h>
-
-QString CToolClass::locatehtml(const QString &filename) {
-	QString path = KStandardDirs::locate("html", KGlobal::locale()->language() + '/' + filename);
-	if (path.isNull())
-		path = KStandardDirs::locate("html", "default/" + filename);
-	if (path.isNull())
-		path = KStandardDirs::locate("html", "en/" + filename);
-	return path;
-}
 
 /** Converts HTML text to plain text */
 QString CToolClass::htmlToText(const QString& html) {

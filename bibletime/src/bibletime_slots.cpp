@@ -44,7 +44,6 @@
 #include <kapplication.h>
 #include <kbugreport.h>
 #include <kaboutapplicationdialog.h>
-#include <kstandarddirs.h>
 #include <kmenubar.h>
 #include <kaboutdata.h>
 #include <kglobal.h>

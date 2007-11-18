@@ -40,8 +40,6 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kglobal.h>
-#include <kstandarddirs.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 

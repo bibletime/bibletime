@@ -231,11 +231,7 @@ int main(int argc, char* argv[]) {
 	KCmdLineArgs::init(argc, argv, &aboutData);
 	KCmdLineArgs::addCmdLineOptions( options );
 
-
 	BibleTimeApp app;
-
-	KGlobal::dirs()->addResourceType("BT_pic", "share/apps/bibletime/pics");
-	KGlobal::dirs()->addResourceType("BT_DisplayTemplates", "share/apps/bibletime/display-templates");
 
 	//For the transition time add our own locale dir as locale resource
 	KGlobal::dirs()->addResourceDir("locale", DirectoryUtil::getLocaleDir().canonicalPath());

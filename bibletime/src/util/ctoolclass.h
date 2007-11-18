@@ -26,11 +26,6 @@ class QLabel;
 class CToolClass {
 public:
 	/**
-	 * @return The path of the HTML file "filename". This function searches only in $KDEDIR.
-	 * @author Sandy Meier of the KDevelop team.
-	 */
-	static QString locatehtml(const QString &filename);
-	/**
 	 * Converts HTML text to plain text.
 	 * This function converts some HTML tags in text (e.g. <BR> to \n)
 	 * @return The text withput HTML tags and with converted <BR> to \n

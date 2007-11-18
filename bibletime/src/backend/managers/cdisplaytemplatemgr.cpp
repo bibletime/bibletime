@@ -14,6 +14,7 @@
 
 #include "frontend/cbtconfig.h"
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //Qt
 #include <QStringList>
@@ -23,7 +24,6 @@
 
 //KDE
 #include <klocale.h>
-#include <kstandarddirs.h>
 
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
 	init();
@@ -157,20 +157,17 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     \fn CDisplayTemplateMgr::loadUserTemplates
  */
 void CDisplayTemplateMgr::loadUserTemplates() {
-	qDebug("Loading user templates");
-	QStringList files = KGlobal::dirs()->findAllResources("BT_DisplayTemplates");
+	QStringList files = util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().entryList();
 
-	for ( QStringList::iterator it( files.begin() ); it != files.end(); ++it) {
-		//qDebug("Found user template %s", (*it).latin1());
-
-		QFile f( *it );
+	foreach (QString file, files) {
+		QFile f(file);
 		Q_ASSERT( f.exists() );
 
 		if (f.open( QIODevice::ReadOnly )) {
 			QString fileContent = QTextStream( &f ).readAll();
 
 			if (!fileContent.isEmpty()) {
-				m_templateMap[ QFileInfo(*it).fileName() + QString(" ") + i18n("(user template)")] = fileContent;
+				m_templateMap[ QFileInfo(file).fileName() + QString(" ") + i18n("(user template)")] = fileContent;
 			}
 		}
 	}

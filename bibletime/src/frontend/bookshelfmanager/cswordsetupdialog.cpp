@@ -43,7 +43,6 @@
 #include <kconfig.h>
 #include <keditlistbox.h>
 #include <klocale.h>
-#include <kstandarddirs.h>
 
 //Sword includes
 #include <installmgr.h>

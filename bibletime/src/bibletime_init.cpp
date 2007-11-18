@@ -45,7 +45,6 @@
 #include <kconfigbase.h>
 #include <khelpmenu.h>
 #include <kmenubar.h>
-#include <kstandarddirs.h>
 #include <ktoolbar.h>
 #include <klocale.h>
 #include <kmenu.h>

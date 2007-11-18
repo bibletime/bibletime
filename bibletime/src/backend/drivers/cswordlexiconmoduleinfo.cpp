@@ -18,10 +18,6 @@
 //Sword
 #include <swmodule.h>
 
-//KDE
-#include <kglobal.h>
-#include <kstandarddirs.h>
-
 //STL includes
 #include <algorithm>
 
