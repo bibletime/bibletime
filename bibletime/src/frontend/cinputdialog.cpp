@@ -23,6 +23,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
+#include <QDebug>
+
 //KDE includes
 #include <klocale.h>
 
@@ -79,15 +81,12 @@ const QString CInputDialog::getText
 	( const QString& caption, const QString& description, const QString& text, bool* ok, QWidget* parent, Qt::WindowFlags wflags)
 {
 	CInputDialog* dlg = new CInputDialog(caption, description, text, parent, wflags);
+
 	QString ret = QString::null;
-
-	const bool isOk = (dlg->exec() == CInputDialog::Accepted);
-	if (isOk) {
+	*ok = (dlg->exec() == QDialog::Accepted)?true:false;
+	if (*ok) {
+		//qDebug() << "dialog was accepted, return text: " << dlg->text();
 		ret = dlg->text();
-	}
-
-	if (ok) { //change the ok param to return the value
-		*ok = isOk;
 	}
 
 	delete dlg;
