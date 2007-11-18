@@ -75,6 +75,7 @@ void CIndexBookmarkItem::update() {
 
 	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : i18n("unknown"));
 	setText(0, title);
+	setToolTip(0, toolTip());
 }
 
 void CIndexBookmarkItem::init() {
@@ -229,4 +230,5 @@ bool CIndexBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
 void CIndexBookmarkItem::setDescription(QString text)
 {
 	m_description = text;
+	setToolTip(0, toolTip());
 }
