@@ -97,10 +97,10 @@ void CBookmarkIndex::initView()
 	header()->hide();
 
 	setFocusPolicy(Qt::WheelFocus);
-	//setDragEnabled( true );
+	setDragEnabled( true );
 	setAcceptDrops( true );
-	//setDropIndicatorShown( true );
-	//setDragDropMode(QAbstractItemView::DragDrop);
+	setDropIndicatorShown( true );
+	setDragDropMode(QAbstractItemView::DragDrop);
 
 	setItemsExpandable(true);
 	viewport()->setAcceptDrops(true);
@@ -294,16 +294,30 @@ void CBookmarkIndex::dragMoveEvent( QDragMoveEvent* event )
 void CBookmarkIndex::dropEvent( QDropEvent* event )
 {
 	qDebug("CBookmarkIndex::dropEvent");
-	const QPoint pos = event->pos();
-	if (itemAt(pos)) {
-		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-		if (i) {
-			if (i->acceptDrop(event)) {
-				createBookmarkFromDrop(event, i);
-			}
-		}
+
+	if ( event->source() == this ) {
+		qDebug("dropping internal drag, not implemented");
+		// handle the internal drag, see the Qt source code for QTreeWidget::dropEvent for an example
+		//Create a new subtree from the selected items (by copying?)
+		//If the parent folder of the item is also selected, put the item under that parent
+		//If the parent was not selected, find a grandparent which was selected
+		//If no grandparent, put it to top level
+		//Or should we move the subitems of a folder automatically?
+		// Copy and move could be handled differently?
+
+		// Ask whether to copy or move (with a popup menu)
 	} else {
-		//drop the new bookmark into top level?
+		const QPoint pos = event->pos();
+		if (itemAt(pos)) {
+			CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
+			if (i) {
+				if (i->acceptDrop(event)) {
+					createBookmarkFromDrop(event, i);
+				}
+			}
+		} else {
+			//drop the new bookmark into top level?
+		}
 	}
 }
 
@@ -331,7 +345,7 @@ void CBookmarkIndex::initTree() {
 	addGroup(CIndexItemBase::BookmarkFolder, QString("*"));
 }
 
-/** No descriptions */
+/** Use this from dropEvent or move the code somewhere else */
 void CBookmarkIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidgetItem* after) {
 // 	Q_ASSERT(after);
 // 	Q_ASSERT(parent);
@@ -416,7 +430,6 @@ void CBookmarkIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidge
 // 
 // 	if (removeSelectedItems) {
 // 		QList<QTreeWidgetItem *> items = selectedItems();
-// 		//items.setAutoDelete(true);
 // 		qDeleteAll(items);
 // 		items.clear(); //delete the selected items we dragged
 // 	}
@@ -687,6 +700,7 @@ void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int index)
 
 /** Saves the bookmarks to disk */
 void CBookmarkIndex::saveBookmarks() {
+	qDebug("CBookmarkIndex::saveBookmarks");
 	//find the bookmark folder
 	CIndexItemBase* i = 0;
 
@@ -709,6 +723,7 @@ void CBookmarkIndex::saveBookmarks() {
 
 		++it;
 	}
+	qDebug("CBookmarkIndex::saveBookmarks end");
 }
 
 

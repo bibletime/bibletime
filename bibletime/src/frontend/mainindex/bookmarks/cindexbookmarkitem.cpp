@@ -51,6 +51,7 @@ CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModul
 	};
 
 	m_startupXML = QDomElement(); //empty XML code
+	update();
 }
 
 CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, QDomElement& xml )
