@@ -62,7 +62,10 @@ CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, QDomElement
 	m_startupXML = xml;
 }
 
-CIndexBookmarkItem::~CIndexBookmarkItem() {}
+CIndexBookmarkItem::~CIndexBookmarkItem()
+{
+	parent()->removeChild(this);
+}
 
 /** No descriptions */
 void CIndexBookmarkItem::update() {

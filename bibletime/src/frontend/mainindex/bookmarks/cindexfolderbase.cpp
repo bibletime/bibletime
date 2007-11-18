@@ -41,7 +41,14 @@ CIndexFolderBase::CIndexFolderBase(CIndexFolderBase* parentFolder, const QString
 	setText(0, caption);
 }
 
-CIndexFolderBase::~CIndexFolderBase() {}
+CIndexFolderBase::~CIndexFolderBase(){
+	//delete all children
+	foreach (QTreeWidgetItem* item, getChildList() ) {
+		delete item;
+	}
+	//remove this from the widget tree
+	parent()->removeChild(this);
+}
 
 const bool CIndexFolderBase::isFolder() {
 	return true;

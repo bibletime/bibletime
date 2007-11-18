@@ -600,7 +600,7 @@ void CBookmarkIndex::printBookmarks() {
 void CBookmarkIndex::deleteEntries() {
 	QList<QTreeWidgetItem *> items = selectedItems();
 	if (!items.count()) {
-		CIndexBookmarkFolder* f = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
+		CIndexItemBase* f = dynamic_cast<CIndexItemBase*>(currentItem());
 		if (f) {
 			items.append(currentItem());
 		} else {
@@ -612,15 +612,8 @@ void CBookmarkIndex::deleteEntries() {
 		return;
 	}
 
-	// We have to go backwards because otherwise deleting folders would delete their childs => crash before we delete those
-	QListIterator<QTreeWidgetItem *> it(items);
-	it.toBack();
-	while(it.hasPrevious()) {
-		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.previous())) {
-			if (i->enableAction(CIndexItemBase::DeleteEntries)) {
-				delete i;
-			}
-		}
+	foreach (QTreeWidgetItem* item, items) {
+		delete item; // destructors take care of the children and the item tree
 	}
 }
 
