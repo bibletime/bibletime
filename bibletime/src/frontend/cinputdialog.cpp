@@ -14,76 +14,64 @@
 #include "cinputdialog.moc"
 
 //Qt includes
+#include <QDialog>
 #include <QWidget>
 #include <QLabel>
 #include <QTextEdit>
 #include <QPushButton>
-//#include <QLayout>
-//Added by qt3to4:
+#include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
 //KDE includes
 #include <klocale.h>
-#include <kseparator.h>
-#include <kdialog.h>
 
 CInputDialog::CInputDialog
 	(const QString& caption, const QString& description, const QString& text, QWidget *parent, Qt::WindowFlags wflags )
-	: KDialog(parent, wflags)
+	: QDialog(parent, wflags)
 {
-	setPlainCaption(caption);
+	QVBoxLayout *vboxLayout;
+	QLabel *label;
+	QHBoxLayout *hboxLayout;
+	QPushButton *clearButton;
+	QSpacerItem *spacerItem;
+	QDialogButtonBox *buttonBox;
 
-	QVBoxLayout* topLayout = new QVBoxLayout(this);
-	topLayout->setSpacing(5);
-	topLayout->setMargin(5);
+	resize(400, 300);
+	vboxLayout = new QVBoxLayout(this);
+	label = new QLabel(description, this);
+	vboxLayout->addWidget(label);
 
-	QLabel* l = new QLabel(description, this);
-	topLayout->addWidget(l);
-
-	topLayout->addSpacing(10);
-
-	m_editWidget = new QTextEdit(this);
-	m_editWidget->setWordWrapMode( QTextOption::WordWrap );
-	m_editWidget->setText(text);
+	m_textEdit = new QTextEdit(this);
+	vboxLayout->addWidget(m_textEdit);
+	m_textEdit->setWordWrapMode( QTextOption::WordWrap );
+	m_textEdit->setText(text);
 	if (!text.isEmpty())
-		m_editWidget->selectAll();
+		m_textEdit->selectAll();
 
-	topLayout->addWidget(m_editWidget);
+	hboxLayout = new QHBoxLayout();
+	clearButton = new QPushButton(this);
+	clearButton->setText(i18n("Clear"));
+	hboxLayout->addWidget(clearButton);
+	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	hboxLayout->addItem(spacerItem);
+	buttonBox = new QDialogButtonBox(this);
+	buttonBox->setOrientation(Qt::Horizontal);
+	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
+	hboxLayout->addWidget(buttonBox);
 
-	KSeparator* separator = new KSeparator(Qt::Horizontal, this);
-	topLayout->addWidget(separator);
+	vboxLayout->addLayout(hboxLayout);
 
-	QHBoxLayout* buttonLayout = new QHBoxLayout(this);
-	topLayout->addLayout(buttonLayout);
+	QObject::connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	QObject::connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	QObject::connect(clearButton, SIGNAL(clicked()), m_textEdit, SLOT(clear()));
 
-	buttonLayout->addStretch(2);
-
-	QPushButton* cancel = new QPushButton(this);
-	cancel->setText(i18n("&Cancel"));
-	connect(cancel, SIGNAL(clicked()), SLOT(reject()));
-	buttonLayout->addWidget(cancel,1);
-
-	buttonLayout->addSpacing(15);
-
-	QPushButton* clear = new QPushButton(this);
-	clear->setText(i18n("C&lear"));
-	connect(clear, SIGNAL(clicked()),m_editWidget, SLOT(clear()));
-	buttonLayout->addWidget(clear,1);
-
-	buttonLayout->addSpacing(15);
-
-	QPushButton* ok = new QPushButton(this);
-	ok->setText(i18n("&Ok"));
-	connect(ok, SIGNAL(clicked()), SLOT(accept()));
-	buttonLayout->addWidget(ok,1);
-
-	m_editWidget->setFocus();
+	m_textEdit->setFocus();
 }
 
 /** Returns the text entered at the moment. */
 const QString CInputDialog::text() {
-	return m_editWidget->toPlainText();
+	return m_textEdit->toPlainText();
 }
 
 /** A static function to get some using CInputDialog. */

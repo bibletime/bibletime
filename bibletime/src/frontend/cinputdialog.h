@@ -12,8 +12,8 @@
 #ifndef CINPUTDIALOG_H
 #define CINPUTDIALOG_H
 
-//KDE includes
-#include <kdialog.h>
+
+#include <QDialog>
 
 class QTextEdit;
 class QWidget;
@@ -22,7 +22,7 @@ class QWidget;
  * a multiline edit for the text input.
   * @author The BibleTime team
   */
-class CInputDialog : public KDialog  {
+class CInputDialog : public QDialog  {
 	Q_OBJECT
 public:
 	CInputDialog(const QString& caption, const QString& description, const QString& text, QWidget *parent=0, Qt::WindowFlags wflags = Qt::Dialog);
@@ -37,7 +37,7 @@ public:
 	// ~CInputDialog();
 
 private:
-	QTextEdit* m_editWidget;
+	QTextEdit* m_textEdit;
 };
 
 #endif
