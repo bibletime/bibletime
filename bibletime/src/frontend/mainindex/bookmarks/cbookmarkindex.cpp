@@ -694,7 +694,7 @@ void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int index)
 {
 	CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(item);
 	if (i){
-		i->setDescription(item->text(index));
+		//i->setDescription(item->text(index)); no no no!!! why this was here???
 	}
 }
 
