@@ -18,9 +18,6 @@
 #include <QString>
 #include <QStringList>
 
-//KDE includes
-#include <klocale.h>
-
 /**
  * Manages the display templates used in the filters and display classes.
  * @author The BibleTime team
@@ -66,24 +63,20 @@ public:
     inline static const QString defaultTemplate();
 
 protected:
-
     friend class CPointers;
-    /** Display template manager constructor. Protected to just allow CPointers to create objects.
-    */
+    /** Display template manager constructor. Protected to just allow CPointers to create objects. */
     CDisplayTemplateMgr();
-    /** Destructor.
-    */
+    /** Destructor. */
     ~CDisplayTemplateMgr();
-
-    void loadUserTemplates();
+	/** Does the actual work of loading templates from disk */
+    void loadTemplates();
 
 private:
-    void init();
     QMap<QString, QString> m_templateMap;
 };
 
 inline const QString CDisplayTemplateMgr::defaultTemplate() {
-    return i18n("Default");
+    return QString("Blue.tmpl");
 }
 
 /**

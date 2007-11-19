@@ -4,7 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 SET(DEBUG true)
 
-SET(BT_VERSION "1.6.4_KDE4port+svn")
+SET(BT_VERSION "1.7.alpha")
 
 #Specify which languages are to be installed for UI messages
 SET(INSTALL_LOCALE_LANGS "de")
@@ -23,16 +23,6 @@ set (CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(CLucene REQUIRED)
 find_package(Sword REQUIRED)
 ######################################################
-
-
-#######################################################
-# run create-code.pl to create a .cpp file containing
-# the builtin templates
-ADD_CUSTOM_TARGET(TEMPLATES ALL perl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/create_code.pl ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/
-                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates
-                     VERBATIM)
-#######################################################
-
 
 SET(bibletime_SOURCES
 	#backend filters
@@ -243,21 +233,34 @@ TARGET_LINK_LIBRARIES(bibletime
 #	curl #??? not sure why I need this, since update to Ubuntu Gutsy / Sword 1.5.10, who knows if there is a workaround?
 )
 
+###############################
+# Install files
+#
+# locales
 FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
 	GETTEXT_PROCESS_PO_FILES(${_INSTALL_LOCALE_LANG} ALL "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${INSTALL_LOCALE_LANGS}.po")
 	INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${INSTALL_LOCALE_LANGS}.gmo" 
 		DESTINATION "share/bibletime/locale/${INSTALL_LOCALE_LANGS}/LC_MESSAGES"
 		RENAME "bibletime.mo")
 ENDFOREACH(_INSTALL_LOCALE_LANG)
-
+# main binary
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
+# icons
 FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
 INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
+# display templates
+FILE(GLOB BT_INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
+INSTALL(FILES ${BT_INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/display-templates/")
+# splash screen
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
+# xml menu and toolbar definition
 INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
+# tip of day database
 INSTALL(FILES "docs/tips.xml" DESTINATION "share/bibletime/docs/")
+###############################
 
-#######################################
+
+################################
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F
 #
 CONFIGURE_FILE(
@@ -265,6 +268,5 @@ CONFIGURE_FILE(
   "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
   IMMEDIATE @ONLY
  )
-
 ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
-#######################################
+################################

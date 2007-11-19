@@ -72,6 +72,9 @@ public:
 	/** Return the path to the documentation files. */
 	static QDir getDocsDir(void);
 
+	/** Return the path to the default display template files. */
+	static QDir getDisplayTemplatesDir(void);
+
 	/** Return the path to the user's settings directory.*/
 	static QDir getUserBaseDir(void);
 
@@ -84,7 +87,7 @@ public:
 	/** Return the path to the user's indices directory.*/
 	static QDir getUserIndexDir(void);
 	
-	/** Return the path to the default display templates directory.*/
+	/** Return the path to the user's custom display templates directory.*/
 	static QDir getUserDisplayTemplatesDir(void);
 	
 private:

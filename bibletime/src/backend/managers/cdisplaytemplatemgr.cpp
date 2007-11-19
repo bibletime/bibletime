@@ -11,7 +11,6 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-
 #include "frontend/cbtconfig.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
@@ -21,24 +20,18 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextStream>
-
-//KDE
-#include <klocale.h>
+#include <QDebug>
 
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
-	init();
-	loadUserTemplates();
+	loadTemplates();
 }
 
 CDisplayTemplateMgr::~CDisplayTemplateMgr() {
 }
 
-/*!
-    \fn CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& title, const QString& content )
- */
 const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QString& content, Settings& settings )
 {
-	qDebug("CDisplayTemplateMgr::fillTemplate");
+	qDebug() << "CDisplayTemplateMgr::fillTemplate";
 
 	const QString templateName = m_templateMap.contains(name) ? name : defaultTemplate();
 
@@ -152,26 +145,25 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	return t;
 }
 
-
-/*!
-    \fn CDisplayTemplateMgr::loadUserTemplates
- */
-void CDisplayTemplateMgr::loadUserTemplates() {
-	QStringList files = util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().entryList();
+void CDisplayTemplateMgr::loadTemplates() {
+	QStringList files;
+	foreach (QString file, util::filesystem::DirectoryUtil::getDisplayTemplatesDir().entryList(QStringList("*.tmpl")))
+	{
+		files += util::filesystem::DirectoryUtil::getDisplayTemplatesDir().canonicalPath() + "/" + file;
+	}
+	foreach (QString file, util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().entryList(QStringList("*.tmpl")))
+	{
+		files += util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().canonicalPath() + "/" + file;
+	}
 
 	foreach (QString file, files) {
 		QFile f(file);
-		Q_ASSERT( f.exists() );
-
-		if (f.open( QIODevice::ReadOnly )) {
+		if (f.exists() && f.open( QIODevice::ReadOnly )) {
 			QString fileContent = QTextStream( &f ).readAll();
 
 			if (!fileContent.isEmpty()) {
-				m_templateMap[ QFileInfo(file).fileName() + QString(" ") + i18n("(user template)")] = fileContent;
+				m_templateMap[ QFileInfo(file).fileName() ] = fileContent;
 			}
 		}
 	}
 }
-
-//Include the HTML templates which were put into a cpp file by a Perl script
-#include "display-templates/template-init.cpp"

@@ -106,6 +106,7 @@ static QDir cachedPicsDir;
 static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
 static QDir cachedDocsDir;
+static QDir cachedDisplayTemplatesDir;
 static QDir cachedUserDisplayTemplatesDir;
 static QDir cachedUserBaseDir;
 static QDir cachedUserSessionsDir;
@@ -157,6 +158,12 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 	
+	cachedDisplayTemplatesDir = wDir; //display templates dir
+	if (!cachedDisplayTemplatesDir.cd("share/bibletime/display-templates/")) {
+		qWarning() << "Cannot find display template directory relative to" << QCoreApplication::applicationDirPath();
+		throw;
+	}
+
 	cachedUserBaseDir = QDir::home();
 	if (!cachedUserBaseDir.cd(".bibletime")){
 		bool success = cachedUserBaseDir.mkdir(".bibletime") && cachedUserBaseDir.cd(".bibletime");
@@ -254,6 +261,12 @@ QDir DirectoryUtil::getDocsDir(void)
 {
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedDocsDir;
+}
+
+QDir DirectoryUtil::getDisplayTemplatesDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedDisplayTemplatesDir;
 }
 
 QDir DirectoryUtil::getUserBaseDir(void)
