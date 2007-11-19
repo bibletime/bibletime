@@ -214,77 +214,71 @@ void CSearchResultArea::initView()
 {
 	
 	qDebug("CSearchResultArea::initView");
-
-	// Code created by uic from .ui file to .h file
-
-	QVBoxLayout *vboxLayout;
-    QSplitter *displaySplitter;
-    QWidget *rightSideBox;
-    QVBoxLayout *vboxLayout1;
-	QSplitter *resultSplitter;
+	
+	QVBoxLayout *mainLayout;
+	QSplitter *mainSplitter;
+	QWidget *resultListsWidget;
+	QVBoxLayout *resultListsWidgetLayout;
+	QSplitter *resultListSplitter;
 	QHBoxLayout *hboxLayout;
 	QSpacerItem *spacerItem;
 
-	//QSize size(300, 220);
-    //size = size.expandedTo(SearchResultsForm->minimumSizeHint());
-    //SearchResultsForm->resize(size);
-    QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    sizePolicy.setHorizontalStretch(0);
-    sizePolicy.setVerticalStretch(0);
-    sizePolicy.setHeightForWidth(this->sizePolicy().hasHeightForWidth());
-    this->setSizePolicy(sizePolicy);
-    this->setMinimumSize(QSize(300, 220));
-    this->setBaseSize(QSize(440, 290));
-    vboxLayout = new QVBoxLayout(this);
-    vboxLayout->setSpacing(3);
-    vboxLayout->setMargin(11);
-    vboxLayout->setContentsMargins(0, 0, 0, 0);
-    displaySplitter = new QSplitter(this);
-    displaySplitter->setMinimumSize(QSize(134, 44));
-    displaySplitter->setOrientation(Qt::Horizontal);
-    rightSideBox = new QWidget(displaySplitter);
-    vboxLayout1 = new QVBoxLayout(rightSideBox);
-    vboxLayout1->setSpacing(6);
-    vboxLayout1->setMargin(11);
-    vboxLayout1->setContentsMargins(0, 0, 0, 0);
-    resultSplitter = new QSplitter(rightSideBox);
-    resultSplitter->setOrientation(Qt::Vertical);
+	//Size is calculated from the font rather than set in pixels,
+	// maybe this is better in different kinds of displays?
+	int width = this->fontMetrics().width(QString().fill('M', 50));
+	QSize size = QSize(width, width );
+	this->setMinimumSize(QSize(width, width/2));
+	this->setBaseSize(QSize(width, width/2));
+	mainLayout = new QVBoxLayout(this);
+	mainSplitter = new QSplitter(this);
+	mainSplitter->setOrientation(Qt::Horizontal);
 
-	//result tree views
-	m_moduleListBox = new CModuleResultView(resultSplitter);
-    resultSplitter->addWidget(m_moduleListBox);
-    m_resultListBox = new CSearchResultView(resultSplitter);
-	resultSplitter->addWidget(m_resultListBox);
+	//we have to create a widget (layout is not enough) to set the stretch factor
+	resultListsWidget = new QWidget(mainSplitter);
+	QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+	sizePolicy.setHorizontalStretch(1);
+	sizePolicy.setVerticalStretch(0);
+	sizePolicy.setHeightForWidth(resultListsWidget->sizePolicy().hasHeightForWidth());
+	resultListsWidget->setSizePolicy(sizePolicy);
+	resultListsWidgetLayout = new QVBoxLayout(resultListsWidget);
+	resultListsWidgetLayout->setContentsMargins(0, 0, 0, 0);
 
-    vboxLayout1->addWidget(resultSplitter);
+	//Splitter for two result lists
+	resultListSplitter = new QSplitter(resultListsWidget);
+	resultListSplitter->setOrientation(Qt::Vertical);
+	m_moduleListBox = new CModuleResultView(resultListSplitter);
+	resultListSplitter->addWidget(m_moduleListBox);
+	m_resultListBox = new CSearchResultView(resultListSplitter);
+	resultListSplitter->addWidget(m_resultListBox);
+	resultListsWidgetLayout->addWidget(resultListSplitter);
 
-    hboxLayout = new QHBoxLayout();
-    hboxLayout->setSpacing(6);
-    hboxLayout->setContentsMargins(0, 0, 0, 0);
-    m_analyseButton = new QPushButton(i18n("&Analyze search"), rightSideBox);
-    hboxLayout->addWidget(m_analyseButton);
+	//analyze button
+	hboxLayout = new QHBoxLayout();
+	m_analyseButton = new QPushButton(i18n("&Analyze search"), resultListsWidget);
+	hboxLayout->addWidget(m_analyseButton);
+	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	hboxLayout->addItem(spacerItem);
+	resultListsWidgetLayout->addLayout(hboxLayout);
 
-    spacerItem = new QSpacerItem(10, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	mainSplitter->addWidget(resultListsWidget);
 
-    hboxLayout->addItem(spacerItem);
+	//Preview ("info") area
+	m_displayFrame = new QFrame(mainSplitter);
+	m_displayFrame->resize(this->fontMetrics().width(QString().fill('M', 25)), 100);
+	m_displayFrame->setMinimumSize(this->fontMetrics().width(QString().fill('M', 20)), 50);
+	QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+	sizePolicy2.setHorizontalStretch(1);
+	sizePolicy2.setVerticalStretch(0);
+	sizePolicy2.setHeightForWidth(m_displayFrame->sizePolicy().hasHeightForWidth());
+	m_displayFrame->setSizePolicy(sizePolicy2);
+	m_displayFrame->setFrameShape(QFrame::NoFrame);
+	m_displayFrame->setFrameShadow(QFrame::Plain);
+	mainSplitter->addWidget(m_displayFrame);
 
+	mainLayout->addWidget(mainSplitter);
 
-    vboxLayout1->addLayout(hboxLayout);
-
-    displaySplitter->addWidget(rightSideBox);
-    m_displayFrame = new QFrame(displaySplitter);
-    sizePolicy.setHeightForWidth(m_displayFrame->sizePolicy().hasHeightForWidth());
-    m_displayFrame->setSizePolicy(sizePolicy);
-    m_displayFrame->setFrameShape(QFrame::NoFrame);
-    m_displayFrame->setFrameShadow(QFrame::Plain);
-    displaySplitter->addWidget(m_displayFrame);
-
-    vboxLayout->addWidget(displaySplitter);
-
-
-
-	// taken from old code
 	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
+	frameLayout->setContentsMargins(0,0,0,0);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
 
