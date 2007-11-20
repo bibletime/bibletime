@@ -141,6 +141,10 @@ namespace BookshelfManager {
 			m_serverLabel->hide();
 			m_serverEdit->hide();
 
+			QString dirname = QFileDialog::getExistingDirectory(this);
+			if (dirname.isEmpty()) {
+				return; // user cancelled
+			}
 			QDir dir = QFileDialog::getExistingDirectory(this);
 			if (dir.exists()) {
 				m_pathEdit->setText( dir.canonicalPath() );
