@@ -16,12 +16,21 @@
 
 class CSwordModuleInfo;
 class QLabel;
+class QWidget;
 
 /**
  * Provides some useful functions which would be normally global.
  *
  * Some methods,that would be normaly global, but I hate global functions :-)
  * (the function locateHTML is from Sandy Meier (KDevelop))
+ *
+ * TODO: I think this could be implemented as a namespace:
+ * namespace util { function()...}
+ * And used:
+ * #include "util/util.h"
+ * util::function();
+ * (comment by Eeli)
+ * 
  */
 class CToolClass {
 public:
@@ -67,6 +76,12 @@ public:
 	* @return The tooltip text for the passed module
 	*/
 	static QString moduleToolTip(CSwordModuleInfo* module);
+	
+	/**
+	* Returns the width in pixels for a string which has mCount 'M' letters, using the specified widget's font.
+	* This can be used when setting the size for a widget. It may be better to roughly calculate the size based on some text width rather than use pixels directly.
+	*/
+	static int mWidth(const QWidget* widget, int mCount);
 };
 
 #endif
