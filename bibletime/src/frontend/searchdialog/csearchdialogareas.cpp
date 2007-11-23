@@ -305,12 +305,16 @@ void CSearchResultArea::reset()
 	qDebug("CSearchResultArea::reset");
 	m_moduleListBox->clear();
 	m_resultListBox->clear();
-	m_previewDisplay->setText(QString::null);
+	m_previewDisplay->setText("<html><head/><body></body></html>");
 	m_analyseButton->setEnabled(false);
 	//   m_modules.setAutoDelete(false); //make sure we don't delete modules accidentally
 	m_modules.clear();
 }
 
+/** Clear the preview pane.*/
+void CSearchResultArea::clearPreview(){
+	m_previewDisplay->setText("<html><head/><body></body></html>");
+}
 
 /** Update the preview of the selected key. */
 void CSearchResultArea::updatePreview(const QString& key)
@@ -669,6 +673,9 @@ void CSearchResultArea::initConnections()
 	qDebug("CSearchResultArea::initConnections");
 	connect(m_resultListBox, SIGNAL(keySelected(const QString&)),
 			this, SLOT(updatePreview(const QString&)));
+	connect(m_resultListBox, SIGNAL(keyDeselected()),
+			this, SLOT(clearPreview()));
+			//m_previewDisplay->connectionsProxy(), SLOT(clear()));
 	connect(m_moduleListBox, SIGNAL(moduleSelected(CSwordModuleInfo*)),
 			m_resultListBox, SLOT(setupTree(CSwordModuleInfo*)));
 	connect(m_moduleListBox, SIGNAL(moduleChanged()),

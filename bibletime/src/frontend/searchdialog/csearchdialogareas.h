@@ -178,6 +178,10 @@ protected slots: // Protected slots
 	*/
 	void updatePreview(const QString& key);
 	/**
+	 * Clear the preview of the selected key.
+	 */
+	void clearPreview();
+	/**
 	* Shows a dialog with the search analysis of the current search.
 	*/
 	void showAnalysis();

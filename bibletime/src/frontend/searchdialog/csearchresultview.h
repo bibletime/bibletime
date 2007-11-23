@@ -99,6 +99,7 @@ private:
 
 signals: // Signals
 	void keySelected(const QString&);
+	void keyDeselected();
 };
 
 

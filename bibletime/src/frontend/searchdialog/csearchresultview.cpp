@@ -171,6 +171,9 @@ void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
 	if (current){
 		emit keySelected(current->text(0));
 	}
+	else{
+		emit keyDeselected();
+	}
 }
 
 //TODO: another function?
