@@ -186,7 +186,10 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
 		displayWindow->init();
-		displayWindow->show();
+		if (m_mdi->windowList().count() == 0)
+			displayWindow->showMaximized();
+		else
+			displayWindow->show();
 		//   if (!key.isEmpty())
 		displayWindow->lookup(key);
 	}
@@ -213,7 +216,10 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
 	if ( displayWindow ) {
 		displayWindow->init();
-		displayWindow->show();
+		if (m_mdi->windowList().count() == 0)
+			displayWindow->showMaximized();
+		else
+			displayWindow->show();
 		displayWindow->lookup(key);
 	}
 
