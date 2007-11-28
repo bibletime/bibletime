@@ -41,7 +41,7 @@ const QString CSwordKey::rawText() {
 		char * buffer = new char[strlen(rawKey()) + 1];
 		strcpy(buffer, rawKey());
 		m_module->module()->getKey()->setText( buffer );
-		delete buffer;
+		delete [] buffer;
 	}
 
 	if (key().isNull()) return QString::null;
@@ -80,7 +80,7 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 				return QString::null;
 			}
 		}
-		delete keyBuffer;
+		delete [] keyBuffer;
 	}
 
 	//Q_ASSERT(!key().isNull());
@@ -147,7 +147,7 @@ const QString CSwordKey::strippedText() {
 		char * buffer = new char[strlen(rawKey()) + 1];
 		strcpy(buffer, rawKey());
 		m_module->module()->getKey()->setText( buffer );
-		delete buffer;
+		delete [] buffer;
 	}
 
 	return QString::fromUtf8( m_module->module()->StripText() );

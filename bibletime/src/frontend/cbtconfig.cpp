@@ -557,6 +557,8 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 
 	options.lemmas = true;//required for the info display
 
+	options.redLetterWords = true;
+
 	options.hebrewPoints =     get(CBTConfig::hebrewPoints);
 	options.hebrewCantillation =  get(CBTConfig::hebrewCantillation);
 	options.greekAccents =     get(CBTConfig::greekAccents);
