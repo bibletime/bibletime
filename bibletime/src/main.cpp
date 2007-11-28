@@ -248,8 +248,19 @@ int main(int argc, char* argv[]) {
 	}
 
 	if (kapp->isSessionRestored()) {
-		//    qWarning("Restoring BibleTime");
-		RESTORE( BibleTime );
+		//TODO: how to restore session with pure Qt?
+		//    qDebug("Restoring BibleTime");
+		//RESTORE( BibleTime );
+		//taken from 1.6.5 where the restoring multiple subwindows bug was fixed
+		int n = 1;
+		while (KMainWindow::canBeRestored(n)){
+			if (KMainWindow::classNameOfToplevel(n) == QString("BibleTime")) {
+				bibletime_ptr = new BibleTime;
+				bibletime_ptr->restore(n);
+			}
+			n++;
+   		}
+		bibletime_ptr->restoreWorkspace();
 	}
 	else {
 		//Migrate configuration data, if neccessary
