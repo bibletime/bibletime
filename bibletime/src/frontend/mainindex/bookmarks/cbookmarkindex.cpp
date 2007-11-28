@@ -610,12 +610,12 @@ void CBookmarkIndex::printBookmarks() {
 }
 
 /** Deletes the selected entries. */
-void CBookmarkIndex::deleteEntries() {
-	QList<QTreeWidgetItem *> items = selectedItems();
-	if (!items.count()) {
+void CBookmarkIndex::deleteEntries()
+{
+	if (!selectedItems().count()) {
 		CIndexItemBase* f = dynamic_cast<CIndexItemBase*>(currentItem());
 		if (f) {
-			items.append(currentItem());
+			currentItem()->setSelected(true);
 		} else {
 			return;
 		}
@@ -625,9 +625,10 @@ void CBookmarkIndex::deleteEntries() {
 		return;
 	}
 
-	foreach (QTreeWidgetItem* item, items) {
-		delete item; // QTreeWidgetItem destructor is poorly documented, it removes the item from the view automatically.
+	while (selectedItems().size() > 0) {
+		delete selectedItems().at(0); // deleting all does not work because it may cause double deletion
 	}
+
 }
 
 
