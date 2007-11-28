@@ -53,8 +53,8 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 	: QWidget(parent)
 {
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	QLabel* headingLabel = new QLabel(i18n("Mag (\"shift\" to lock)"),this);
-	headingLabel->setMargin(5);
+	QLabel* headingLabel = new QLabel(i18n("Mag"),this);
+	headingLabel->setMargin(3);
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
 	m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
@@ -67,8 +67,11 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 		SLOT(lookup(const QString&, const QString&))
 	);
 
+	headingLabel->setBuddy(m_htmlPart->view());
 	layout->addWidget(headingLabel);
 	layout->addWidget(m_htmlPart->view());
+	QString initialMagText = i18n("This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.");
+	m_htmlPart->setText(initialMagText);
 }
 
 
