@@ -109,7 +109,7 @@ const QString CIndexBookmarkItem::toolTip() {
 
 	Q_ASSERT(k.get());
 	if (fontPair.first) { //use a special font
-		qWarning("using a font, %s", fontPair.second.family().toLatin1());
+		//qWarning("using a font, %s", fontPair.second.family().toLatin1());
 		ret = QString::fromLatin1("<b>%1 (%2)</b><br/><small>%3</small><hr><font face=\"%4\" size=\"4\">%5</font>")
 			  .arg(key())
 			  .arg(module()->name())
