@@ -626,7 +626,7 @@ void CBookmarkIndex::deleteEntries() {
 	}
 
 	foreach (QTreeWidgetItem* item, items) {
-		delete item; // destructors take care of the children and the item tree
+		delete item; // QTreeWidgetItem destructor is poorly documented, it removes the item from the view automatically.
 	}
 }
 
