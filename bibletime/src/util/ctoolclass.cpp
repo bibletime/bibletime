@@ -21,6 +21,7 @@
 #include <QTextStream>
 #include <QRegExp>
 #include <QWidget>
+#include <QApplication>
 
 //KDE includes
 #include <klocale.h>
@@ -223,5 +224,8 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
 
 int CToolClass::mWidth(const QWidget* widget, int m)
 {
-	widget->fontMetrics().width(QString().fill('M', m));
+	if (widget) {
+		return widget->fontMetrics().width(QString().fill('M', m));
+	}
+	return QApplication::fontMetrics().width(QString().fill('M', m));
 }
