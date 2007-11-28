@@ -42,6 +42,8 @@
 //Qt includes
 #include <QSplitter>
 
+#include <QDebug>
+
 //KDE includes
 #include <kapplication.h>
 #include <kcmdlineargs.h>
@@ -131,6 +133,7 @@ void BibleTime::saveSettings() {
 
 /** Reads the settings from the configfile and sets the right properties. */
 void BibleTime::readSettings() {
+	qDebug("******************BibleTime::readSettings******************************");
 	//  accel()->readSettings(CBTConfig::getConfig());
 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
 
@@ -146,15 +149,11 @@ void BibleTime::readSettings() {
 											  (CBTConfig::infoDisplay) );
 	slotToggleInfoDisplay();
 
-	m_mainSplitter->setSizes(
-		CBTConfig::get
-			(CBTConfig::mainSplitterSizes)
-		);
-	m_leftPaneSplitter->setSizes(
-		CBTConfig::get
-			(CBTConfig::leftPaneSplitterSizes)
-		);
-
+	//we don't want to set wrong sizes
+	if ( CBTConfig::get(CBTConfig::mainSplitterSizes).count() > 0 ) {
+		m_mainSplitter->setSizes(CBTConfig::get(CBTConfig::mainSplitterSizes));
+		m_leftPaneSplitter->setSizes(CBTConfig::get(CBTConfig::leftPaneSplitterSizes));
+	}
 	if ( CBTConfig::get
 				(CBTConfig::autoTileVertical) ) {
 			m_windowAutoTileVertical_action->setChecked( true );
@@ -251,6 +250,7 @@ bool BibleTime::queryExit() {
 
 /** Called before a window is closed */
 bool BibleTime::queryClose() {
+	qDebug("BibleTime::queryClose");
 	bool ret = true;
 
 	for ( unsigned int index = 0; index < m_mdi->windowList().count(); ++index) {
@@ -258,8 +258,9 @@ bool BibleTime::queryClose() {
 		   ) {
 			ret = ret && window->queryClose();
 		}
+		qDebug() << "return value:" << ret;
 	}
-
+	qDebug() << "final return value:" << ret;
 	return ret;
 }
 
@@ -343,6 +344,7 @@ bool BibleTime::event(QEvent* e)
 
 void BibleTime::closeEvent(QCloseEvent* e) {
 	//qDebug("Now we will call kapp->quit");
+	KXmlGuiWindow::closeEvent(e);
 	e->ignore();
 	kapp->quit();
 }
