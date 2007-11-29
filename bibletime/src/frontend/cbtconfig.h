@@ -187,7 +187,7 @@ private:
 	//static caches
 	static QFont* m_defaultFont;
 
-	static FontCache* fontConfigMap;
+	static FontCache fontConfigMap;
 };
 
 

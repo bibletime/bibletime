@@ -28,6 +28,7 @@ class CKeyReferenceCompletion : public KCompletion {
     Q_OBJECT
 public:
     CKeyReferenceCompletion(CSwordBibleModuleInfo*);
+    ~CKeyReferenceCompletion();
     QString makeCompletion(const QString &);
     QStringList allMatches();
 private:

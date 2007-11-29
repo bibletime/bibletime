@@ -23,6 +23,7 @@
 
 //class forward declarations
 class CReadDisplay;
+class KAction;
 
 namespace InfoDisplay {
 
@@ -65,6 +66,7 @@ protected slots:
 
 private:
 		CReadDisplay* m_htmlPart;
+		KAction* m_copyAction;
 	};
 
 } //end of InfoDisplay namespace

@@ -155,6 +155,7 @@ void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
 	delete m_textbox->completionObject();
 	CKeyReferenceCompletion *comp = new CKeyReferenceCompletion(m_module);
 	m_textbox->setCompletionObject(comp);
+	m_textbox->setAutoDeleteCompletionObject(true);
 	m_textbox->setCompletionMode(KGlobalSettings::CompletionPopup);
 }
 
@@ -212,4 +213,8 @@ void CKeyReferenceWidget::slotVerseChange(int n) {
 	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
 	updateText();
 	if (!updatelock) emit changed(m_key);
+}
+
+CKeyReferenceCompletion::~CKeyReferenceCompletion(){
+	delete m_key;
 }

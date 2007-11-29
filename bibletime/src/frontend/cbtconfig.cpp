@@ -44,7 +44,7 @@
 
 //init statics
 QFont* CBTConfig::m_defaultFont = 0;
-CBTConfig::FontCache* CBTConfig::fontConfigMap = 0;
+CBTConfig::FontCache CBTConfig::fontConfigMap;
 
 /*  No constructor and destructor, because this class only contains static methods.
   It won't be instantiated. */
@@ -386,14 +386,8 @@ const CBTConfig::StringMap CBTConfig::get
 const CBTConfig::FontSettingsPair CBTConfig::get
 	( const CLanguageMgr::Language* const language )
 {
-	if (fontConfigMap && fontConfigMap->contains(language)) {
-		return fontConfigMap->find(language).value();
-	}
-
-	if (!fontConfigMap) {
-		//static KStaticDeleter<FontCache> sd;
-		//sd.setObject(fontConfigMap, new FontCache());
-		fontConfigMap = new FontCache();
+	if (fontConfigMap.contains(language)) {
+		return fontConfigMap.find(language).value();
 	}
 
 	KConfigGroup cg = CBTConfig::getConfig()->group("font standard settings");
@@ -410,7 +404,7 @@ const CBTConfig::FontSettingsPair CBTConfig::get
 		? cg.readEntry(getKey(language), getDefault(language))
 		: getDefault(language);
 
-	fontConfigMap->insert(language, settings); //cache the value
+	fontConfigMap.insert(language, settings); //cache the value
 	return settings;
 }
 
@@ -528,8 +522,8 @@ void CBTConfig::set
 	//cg.setGroup("font standard settings");
 	cg.writeEntry(getKey(language), value.first);
 	
-	if (fontConfigMap && fontConfigMap->contains(language)) {
-		fontConfigMap->remove
+	if (fontConfigMap.contains(language)) {
+		fontConfigMap.remove
 		(language); //remove it from the cache
 	}
 }

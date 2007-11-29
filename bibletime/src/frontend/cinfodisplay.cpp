@@ -58,8 +58,8 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
 	m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
-	KAction* ka = KStandardAction::copy(0);
-	QObject::connect(ka, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
+	m_copyAction = KStandardAction::copy(0);
+	QObject::connect(m_copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
 
 	connect(
 		m_htmlPart->connectionsProxy(),
@@ -75,7 +75,9 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 }
 
 
-CInfoDisplay::~CInfoDisplay() {}
+CInfoDisplay::~CInfoDisplay() {
+	delete m_copyAction;
+}
 
 void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
 	qDebug("CInfoDisplay::lookup");
