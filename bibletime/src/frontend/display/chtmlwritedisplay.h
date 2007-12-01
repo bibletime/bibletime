@@ -59,13 +59,15 @@ protected:
 	virtual QMenu* createPopupMenu( const QPoint& pos );
 
 protected slots:
-	void toggleBold();
-	void toggleItalic();
-	void toggleUnderline();
+	void toggleBold(bool);
+	void toggleItalic(bool);
+	void toggleUnderline(bool);
 
-	void alignLeft();
-	void alignCenter();
-	void alignRight();
+	void alignLeft(bool);
+	void alignCenter(bool);
+	void alignRight(bool);
+
+	void changeFontSize(int);
 
 	void slotFontChanged( const QFont& );
 	/**

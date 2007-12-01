@@ -59,7 +59,10 @@ protected slots:
 	* Loads the original text from the module.
 	*/
 	virtual void restoreText();
-
+	/**
+	* Saves the text for the current key. Directly writes the changed text into the module.
+	*/
+	virtual void saveCurrentText( const QString& );
 private:
 	struct {
 		KAction* saveText;

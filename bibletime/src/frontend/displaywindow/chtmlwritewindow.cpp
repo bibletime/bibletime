@@ -16,6 +16,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/display/cwritedisplay.h"
+#include "frontend/display/chtmlwritedisplay.h"
 
 #include "util/cresmgr.h"
 
@@ -27,6 +28,7 @@
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <klocale.h>
+#include <kmessagebox.h>
 
 
 using namespace Profile;
@@ -137,4 +139,29 @@ void CHTMLWriteWindow::restoreText() {
 
 const bool CHTMLWriteWindow::syncAllowed() const {
 	return m_actions.syncWindow->isChecked();
+}
+/** Saves the text for the current key. Directly writes the changed text into the module. */
+void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
+	QString t = ((CHTMLWriteDisplay*)displayWidget())->toHtml();
+	//since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
+	QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
+	re.setMinimal(true);
+	t.replace(re, "");
+	t.replace(QRegExp("</body></html>", Qt::CaseInsensitive), "");//remove footer
+
+	const QString& oldKey = this->key()->key();
+	if( modules().first()->isWritable() ) {
+		modules().first()->write(this->key(), t );
+		this->key()->key( oldKey );
+
+		displayWidget()->setModified(false);
+		textChanged();
+	} else {
+		KMessageBox::error( this,
+				    QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
+				    .arg( i18n("Module is not writable.") )
+				    .arg( i18n("Either the module may not be edited, or "
+					       "you do not have write permission.") ),
+				    i18n("Module not writable") );
+	}
 }
