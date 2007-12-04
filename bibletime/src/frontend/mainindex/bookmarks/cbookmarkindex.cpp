@@ -743,7 +743,7 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 	// Restart timer if we have moved to another item and shift was not pressed
 	QTreeWidgetItem* itemUnderPointer = itemAt(event->pos());
 	if (itemUnderPointer && (itemUnderPointer != m_previousEventItem) ) {
-		qDebug("CBookmarkIndex::mouseMoveEvent, moved onto another item");
+		//qDebug("CBookmarkIndex::mouseMoveEvent, moved onto another item");
 		if ( !(event->modifiers() & Qt::ShiftModifier)) {
 			m_magTimer.start(); // see the ctor for the timer properties
 		}
@@ -754,7 +754,7 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 void CBookmarkIndex::magTimeout()
 {
 	qDebug("CBookmarkIndex::magTimeout");
-	//m_magTimer.stop();
+
 	QTreeWidgetItem* itemUnderPointer = 0;
 	if (underMouse()) {
 		itemUnderPointer = itemAt(mapFromGlobal(QCursor::pos()));
@@ -763,11 +763,12 @@ void CBookmarkIndex::magTimeout()
 	if (itemUnderPointer && (m_previousEventItem == itemUnderPointer)) {
 		CIndexBookmarkItem* bitem = dynamic_cast<CIndexBookmarkItem*>(itemUnderPointer);
 		if (bitem) {
-			qDebug("CBookmarkIndex::timerEvent: update the infodisplay");
-			//TODO: info list (take from the old mainindex code)
-			InfoDisplay::CInfoDisplay::ListInfoData infoList;
+			//qDebug("CBookmarkIndex::timerEvent: update the infodisplay");
 			// Update the mag
-			CPointers::infoDisplay()->setInfo(infoList);
+			(CPointers::infoDisplay())->setInfo(
+				InfoDisplay::CInfoDisplay::CrossReference,
+				bitem->module()->name() + ":" + bitem->key()
+			);
 		}
 	}
 }
