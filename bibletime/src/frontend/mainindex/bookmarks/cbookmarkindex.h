@@ -38,7 +38,7 @@ class BTMimeData;
 class KActionMenu;
 class KMenu;
 
-class QMouseEvent; //testing
+class QMouseEvent;
 
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
@@ -65,7 +65,7 @@ signals:
 
 protected: // Protected methods
 
-	//testing
+	// A hack to get the modifiers
 	virtual void mouseReleaseEvent(QMouseEvent* event);
 	
 	/**
@@ -95,6 +95,11 @@ protected: // Protected methods
 	*/
 	//virtual void startDrag(Qt::DropActions supportedActions);
 
+	
+	/**
+	* Handle mouse moving (mag updates, d'n'd?)
+	*/
+	virtual void mouseMoveEvent(QMouseEvent* event);
 
 
 protected slots: // Protected slots
@@ -137,18 +142,29 @@ protected slots: // Protected slots
 	*/
 	void printBookmarks();
 
+	/**
+	* Slot for the folder auto-open timer (when dragging into a folder).
+	*/
 	void autoOpenTimeout();
+
+	/**
+	* Slot for the mag update timer.
+	*/
+	void magTimeout();
+
 	/**
 	* Is called when items should be moved.
 	*/
 	void moved( QList<QTreeWidgetItem>& items, QList<QTreeWidgetItem>& afterFirst, QList<QTreeWidgetItem>& afterNow);
 
+
 private:
 	bool m_itemsMovable;
 	QTreeWidgetItem* m_autoOpenFolder;
 	QTimer m_autoOpenTimer;
-
+	QTimer m_magTimer;
 	int m_mouseReleaseEventModifiers;
+	QTreeWidgetItem* m_previousEventItem;
 
 	/**
 	* Initializes the view.

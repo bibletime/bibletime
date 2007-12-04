@@ -44,7 +44,10 @@
 #include <QList>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QCursor>
+#include <QMouseEvent>
 
+#include <QDebug>
 
 //KDE includes
 #include <klocale.h>
@@ -60,8 +63,13 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),
 	m_itemsMovable(false),
 	m_autoOpenFolder(0),
-	m_autoOpenTimer(this)
+	m_autoOpenTimer(this),
+	m_magTimer(this),
+	m_previousEventItem(0)
 {
+	setMouseTracking(true);
+	m_magTimer.setSingleShot(true);
+	m_magTimer.setInterval(CBTConfig::get(CBTConfig::magDelay));
 	setContextMenuPolicy(Qt::CustomContextMenu);
 	initView();
 	initConnections();
@@ -168,9 +176,11 @@ void CBookmarkIndex::initConnections()
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
-	
+	QObject::connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));	
+
 	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), SLOT(slotItemChanged(QTreeWidgetItem*, int)));
 	qDebug("CBookmarkIndex::initConnections");
+
 }
 
 
@@ -727,4 +737,37 @@ void CBookmarkIndex::saveBookmarks() {
 	qDebug("CBookmarkIndex::saveBookmarks end");
 }
 
+void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
+{
+	//qDebug("CBookmarkIndex::mouseMoveEvent");
+	// Restart timer if we have moved to another item and shift was not pressed
+	QTreeWidgetItem* itemUnderPointer = itemAt(event->pos());
+	if (itemUnderPointer && (itemUnderPointer != m_previousEventItem) ) {
+		qDebug("CBookmarkIndex::mouseMoveEvent, moved onto another item");
+		if ( !(event->modifiers() & Qt::ShiftModifier)) {
+			m_magTimer.start(); // see the ctor for the timer properties
+		}
+	}
+	m_previousEventItem = itemUnderPointer;
+}
 
+void CBookmarkIndex::magTimeout()
+{
+	qDebug("CBookmarkIndex::magTimeout");
+	//m_magTimer.stop();
+	QTreeWidgetItem* itemUnderPointer = 0;
+	if (underMouse()) {
+		itemUnderPointer = itemAt(mapFromGlobal(QCursor::pos()));
+	}
+	// if the mouse pointer have been over the same item since the timer was started
+	if (itemUnderPointer && (m_previousEventItem == itemUnderPointer)) {
+		CIndexBookmarkItem* bitem = dynamic_cast<CIndexBookmarkItem*>(itemUnderPointer);
+		if (bitem) {
+			qDebug("CBookmarkIndex::timerEvent: update the infodisplay");
+			//TODO: info list (take from the old mainindex code)
+			InfoDisplay::CInfoDisplay::ListInfoData infoList;
+			// Update the mag
+			CPointers::infoDisplay()->setInfo(infoList);
+		}
+	}
+}
