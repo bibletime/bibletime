@@ -205,6 +205,9 @@ private:
 class CSearchOptionsArea : public QWidget {
 	Q_OBJECT
 public:
+
+	friend class CSearchDialog;
+
 	CSearchOptionsArea(QWidget *parent=0);
 	~CSearchOptionsArea();
 	/**

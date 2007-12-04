@@ -27,12 +27,14 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QVBoxLayout>
+#include <QLineEdit>
 
 //KDE includes
 #include <kdialog.h>
 #include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
+#include <khistorycombobox.h>
 
 namespace Search {
 
@@ -252,6 +254,7 @@ void CSearchDialog::showModulesSelector() {
 void CSearchDialog::initConnections() {
 	connect(this, SIGNAL(user1Clicked()), SLOT(startSearch()));
 	connect(this, SIGNAL(closeClicked()), SLOT(slotClose()));
+	QObject::connect(m_searchOptionsArea->m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()), this, SLOT(startSearch()));
 }
 
 /** Resets the parts to the default. */
