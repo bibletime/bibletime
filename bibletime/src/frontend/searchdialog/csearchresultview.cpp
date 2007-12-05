@@ -49,6 +49,7 @@ void CSearchResultView::initView()
 {
 	setHeaderLabel(i18n("Results"));
 	setDragEnabled(true);
+	setRootIsDecorated( false );
 	//TODO: selection: setSelectionModeExt(KListView::Extended);
 
 	//setup the popup menu
