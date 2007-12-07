@@ -182,7 +182,8 @@ const bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format for
 	itemSettings.highlight = false;
 
 	QListIterator<CSwordKey*> it(list);
-	for (CSwordKey* k = it.next(); k && !progressWasCancelled(); k = it.next()) {
+	while (it.hasNext() && !progressWasCancelled()){
+		CSwordKey* k = it.next();
 		tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
 		incProgress();
 	};
@@ -304,13 +305,17 @@ const bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format for
 	itemSettings.highlight = false;
 
 	QListIterator<CSwordKey*> it(list);
-	for (CSwordKey* k = it.next(); k && !progressWasCancelled(); k = it.next()) {
+	while (it.hasNext() && !progressWasCancelled()){
+		CSwordKey* k = it.next();
 		tree.append( new CTextRendering::KeyTreeItem(k->key(), k->module(), itemSettings) );
 		incProgress();
 	};
 
 	const QString text = render->renderKeyTree(tree);
 	KApplication::clipboard()->setText(text);
+	if (!progressWasCancelled()){
+		closeProgressDialog();
+	}
 	return true;
 };
 

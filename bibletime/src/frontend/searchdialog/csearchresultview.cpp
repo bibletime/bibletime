@@ -50,7 +50,7 @@ void CSearchResultView::initView()
 	setHeaderLabel(i18n("Results"));
 	setDragEnabled(true);
 	setRootIsDecorated( false );
-	//TODO: selection: setSelectionModeExt(KListView::Extended);
+	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	//setup the popup menu
 	m_popup = new QMenu(this);
