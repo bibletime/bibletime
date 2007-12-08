@@ -391,16 +391,6 @@ void BibleTime::initActions()
 	action = KStandardAction::reportBug(m_helpMenu, SLOT(reportBug()), ac);
 	action->setToolTip(CResMgr::mainMenu::help::bugreport::tooltip);
 	
-	initAction(
-		new KAction(ac),
-		i18n("&Daily tip"),
-		CResMgr::mainMenu::help::dailyTip::icon,
-		CResMgr::mainMenu::help::dailyTip::accel,
-		CResMgr::mainMenu::help::dailyTip::tooltip,
-		CResMgr::mainMenu::help::dailyTip::actionName,
-		SLOT( slotHelpTipOfDay() )
-	);
-
 	if (ac->action(KStandardAction::stdName(KStandardAction::AboutApp) )) {  //delete About KDE action if KDE created it
 		ac->removeAction
 		(ac->action(KStandardAction::stdName( KStandardAction::AboutApp ) ));

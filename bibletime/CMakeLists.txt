@@ -124,8 +124,6 @@ INSTALL(FILES ${BT_INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
 # xml menu and toolbar definition
 INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
-# tip of day database
-INSTALL(FILES "docs/tips.xml" DESTINATION "share/bibletime/docs/")
 ######################################################
 
 

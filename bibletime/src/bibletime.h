@@ -7,48 +7,34 @@
 *
 **********/
 
-
-
 #ifndef BIBLETIME_H
 #define BIBLETIME_H
 
-//Own includes
 #include "bibletimeinterface.h"
 
-//Frontend includes
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 
-//Backend includes
 #include "backend/drivers/cswordmoduleinfo.h"
-
-//KDE includes
-#include <kxmlguiwindow.h>
-#include <kshortcut.h>
 
 #include <QList>
 
+#include <kxmlguiwindow.h>
+#include <kshortcut.h>
 
-//forward declarations:
-// BT classes
 class CMDIArea;
 class CDisplayWindow;
 class CMainIndex;
-
 namespace InfoDisplay {
 	class CInfoDisplay;
 }
-
-//KDE classes
 class KToggleAction;
 class KAccel;
 class KAction;
 class KActionMenu;
 class KActionCollection;
 class KHelpMenu;
-
-//QT classes
 class QMenu;
 class QSplitter;
 
@@ -172,10 +158,6 @@ public:
 	void storeProfileSettings( Profile::CProfile* p );
 
 public slots:
-	/**
-	* Shows the daily tip
-	*/
-	void slotHelpTipOfDay();
 	/**
 	* Opens the optionsdialog of BibleTime.
 	*/

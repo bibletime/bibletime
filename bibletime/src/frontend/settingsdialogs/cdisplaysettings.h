@@ -1,14 +1,11 @@
-//
-// C++ Interface: displaysettings
-//
-// Description: Widget for "Display" settings of configuration dialog.
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2007 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 
 #ifndef CDISPLAYSETTINGS_H
@@ -34,7 +31,6 @@ protected slots:
 	void updateStylePreview();
 
 private:
-	QCheckBox* m_showTipsCheck;
 	QCheckBox* m_showLogoCheck;
 	QComboBox* m_styleChooserCombo;
 	KHTMLPart* m_stylePreviewViewer;

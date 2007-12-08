@@ -52,7 +52,6 @@
 #include <kmenu.h>
 #include <kactionmenu.h>
 #include <khelpmenu.h>
-#include <ktip.h>
 #include <ktoggleaction.h>
 #include <ktoolbar.h>
 #include <kcomponentdata.h>
@@ -142,12 +141,6 @@ void BibleTime::slotSwordSetupChanged() {
 
 	//  refresh display windows
 	refreshDisplayWindows();
-}
-
-/** Shows the daily tip */
-void BibleTime::slotHelpTipOfDay() {
-	KTipDialog::setShowOnStart( CBTConfig::get(CBTConfig::tips) );
-	KTipDialog::showTip(this, util::filesystem::DirectoryUtil::getDocsDir().canonicalPath().append("/tips.xml"), true);
 }
 
 /** Is called just before the window menu is ahown. */

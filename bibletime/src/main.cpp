@@ -289,15 +289,8 @@ int main(int argc, char* argv[]) {
 			bibletime_ptr->slotSettingsOptions();
 		}
 
-		//The tip of the day
-		if (CBTConfig::get(CBTConfig::tips)) {
-			KStartupLogo::hideSplash();
-			bibletime_ptr->slotHelpTipOfDay();
-		}
-
 		// restore the workspace and process command line options
 		//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
-		
 		bibletime_ptr->show();
 		bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
 

@@ -117,7 +117,6 @@ const QString CBTConfig::getKey( const CBTConfig::bools ID) {
 		case lineBreaks:			return "lineBreaks";
 		case verseNumbers:			return "verseNumbers";
 
-		case tips:						return "RunOnStart";
 		case logo:						return "logo";
 		case autoDeleteOrphanedIndices:	return "autoDeleteOrphanedIndices";
 		case crashedLastTime:			return "crashedLastTime";
@@ -162,7 +161,6 @@ const bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 		case lineBreaks:		return false;
 		case verseNumbers:		return true;
 
-		case tips:		return true;
 		case logo:		return true;
 		case autoDeleteOrphanedIndices:		return true;
 		case crashedLastTime:		return false;
@@ -329,7 +327,7 @@ const bool CBTConfig::get
 	( const CBTConfig::bools ID)
 {
 	//special behaviour for the KTipDialog class
-	KConfigGroup cg = CBTConfig::getConfig()->group( (ID == CBTConfig::tips) ? "TipOfDay" : "bools" );
+	KConfigGroup cg = CBTConfig::getConfig()->group( "bools" );
 	return cg.readEntry(getKey(ID),getDefault(ID));
 }
 
@@ -437,7 +435,7 @@ void CBTConfig::set
 {
 	//qDebug("CBTConfig::set bools");
 	//special behaviour to work with KTipDialog class of KDE
-	KConfigGroup cg = CBTConfig::getConfig()->group((ID == CBTConfig::tips) ? "TipOfDay" : "bools");
+	KConfigGroup cg = CBTConfig::getConfig()->group("bools");
 	//qDebug() << cg.group();
 	cg.writeEntry(getKey(ID), value);
 }

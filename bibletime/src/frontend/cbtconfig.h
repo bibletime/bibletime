@@ -66,7 +66,6 @@ public:
 		lineBreaks,
 		verseNumbers,
 
-		tips,
 		logo,
 		autoDeleteOrphanedIndices,
 		crashedLastTime,

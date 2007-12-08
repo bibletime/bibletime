@@ -1,14 +1,11 @@
-//
-// C++ Implementation: displaysettings
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2007 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #include "cdisplaysettings.h"
 #include "cdisplaysettings.moc"
@@ -39,16 +36,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setSpacing( 5 );
-
-	{//daily tips
-		m_showTipsCheck = new QCheckBox(this);
-		m_showTipsCheck->setText(i18n("Show tip of the day"));
-		m_showTipsCheck->setToolTip(CResMgr::settings::startup::dailyTip::tooltip );
-
-		m_showTipsCheck->setChecked( CBTConfig::get(CBTConfig::tips) );
-	}
-	layout->addWidget(m_showTipsCheck);
-	layout->addSpacing(5);
 
 	{ //startup logo
 		m_showLogoCheck = new QCheckBox(this);
@@ -170,8 +157,6 @@ void CDisplaySettingsPage::save()
 {
 	CBTConfig::set
 		( CBTConfig::logo, m_showLogoCheck->isChecked() );
-	CBTConfig::set
-		( CBTConfig::tips, m_showTipsCheck->isChecked() );
 	CBTConfig::set
 		( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
 }

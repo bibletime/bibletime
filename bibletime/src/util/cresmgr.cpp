@@ -252,13 +252,6 @@ namespace CResMgr {
 				QString tooltip;
 
 			}
-			namespace dailyTip {
-				QString tooltip;
-
-				const QString icon        = "info.svg";
-				const KShortcut accel(Qt::Key_F3);
-				const char* actionName    = "helpDailyTip_action";
-			}
 			namespace aboutBibleTime { // available as KStdAction
 				QString tooltip;
 
@@ -613,9 +606,6 @@ namespace CResMgr {
 	namespace settings {
 		namespace startup {
 			const QString icon = "startconfig.svg";
-			namespace dailyTip {
-				QString tooltip;
-			}
 			namespace showLogo {
 				QString tooltip;
 			}
@@ -881,10 +871,6 @@ namespace CResMgr {
 						tooltip     = i18n ("Send a bugreport to the developers of BibleTime.") ;
 					}
 					{
-						using namespace dailyTip;
-						tooltip     = i18n ("Show a daily tip each time BibleTime starts. <BR>The tips contain important Bible quotations and helpful tips for using BibleTime.") ;
-					}
-					{
 						using namespace aboutBibleTime;
 						tooltip     = i18n ("Show detailed information about BibleTime.") ;
 					}
@@ -1147,10 +1133,6 @@ The others are user defined search scopes.");
 			using namespace settings;
 			{
 				using namespace startup;
-				{
-					using namespace dailyTip;
-					tooltip   = i18n ("Activate this box to see a daily tip on startup.") ;
-				}
 				{
 					using namespace showLogo;
 					tooltip   = i18n ("Activate this to see the BibleTime logo on startup.") ;

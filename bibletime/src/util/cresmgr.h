@@ -255,13 +255,6 @@ namespace CResMgr {
 			namespace bugreport { // available as KStdAction
 				extern QString tooltip;
 			}
-			namespace dailyTip {
-				extern QString tooltip;
-
-				extern const QString icon;
-				extern const KShortcut accel;
-				extern const char* actionName;
-			}
 			namespace aboutBibleTime { // available as KStdAction
 				extern QString tooltip;
 			}
@@ -612,53 +605,39 @@ namespace workspace {}
 	namespace settings {
 		namespace startup {
 			extern const QString icon;
-
-			namespace dailyTip {
-				extern QString tooltip;
-
-			}
 			namespace showLogo {
 				extern QString tooltip;
-
 			}
 			namespace restoreWorkingArea {
 				extern QString tooltip;
-
 			}
 		}
 		namespace fonts {
 			extern const QString icon;
-
 			namespace typeChooser {
 				extern QString tooltip;
-
 			}
 		}
 		namespace profiles {
 			extern const QString icon;
-
 			namespace list {
 				extern QString tooltip;
 
 			}
 			namespace createNew {
 				extern QString tooltip;
-
 			}
 			namespace deleteCurrent {
 				extern QString tooltip;
-
 			}
 			namespace renameCurrent {
 				extern QString tooltip;
-
 			}
 		}
 		namespace sword {
 			extern const QString icon;
 
 			namespace general {
-
 				namespace language {
 					extern QString tooltip;
 				}
@@ -698,7 +677,6 @@ namespace workspace {}
 	namespace mainIndex { //configuration for the main index and the view->search menu
 		namespace search {
 			extern QString tooltip;
-
 			extern const QString icon;
 			extern const KShortcut accel;
 			extern const char* actionName;
