@@ -132,7 +132,9 @@ void CDisplayWindow::initActions()
 	qDebug("CDisplayWindow::initActions");	
 
 	KActionCollection* ac = actionCollection();
-	CDisplayWindow::insertKeyboardActions(ac);
+	//Removed - this method adds objects with conflicting names and no
+	//	implementation.
+	//CDisplayWindow::insertKeyboardActions(ac);
 
 
 	KAction* kaction = new KAction(
@@ -147,12 +149,12 @@ void CDisplayWindow::initActions()
 	CDisplayConnections* conn = displayWidget()->connectionsProxy();
 	//ac->addAction(KStandardAction::zoomIn(displayWidget()->connectionsProxy(), SLOT(zoomIn()), ac	));
 	//ac->addAction(KStandardAction::zoomOut(displayWidget()->connectionsProxy(), SLOT(zoomOut()), ac ));
-	ac->addAction(KStandardAction::ZoomIn, conn, SLOT(zoomIn()));
-	ac->addAction(KStandardAction::ZoomOut, conn, SLOT(zoomOut()));
-	ac->addAction(KStandardAction::Close, this, SLOT(close()));
-	ac->addAction(KStandardAction::SelectAll, conn, SLOT(selectAll()));
-	ac->addAction(KStandardAction::Copy, conn, SLOT(copySelection()));
-	ac->addAction(KStandardAction::Find, conn, SLOT(openFindTextDialog()));
+	addAction(ac->addAction(KStandardAction::ZoomIn, "zoomIn", conn, SLOT(zoomIn())));
+	addAction(ac->addAction(KStandardAction::ZoomOut, "zoomOut", conn, SLOT(zoomOut())));
+	addAction(ac->addAction(KStandardAction::Close, "closeWindow", this, SLOT(close())));
+	addAction(ac->addAction(KStandardAction::SelectAll, "selectAll", conn, SLOT(selectAll())));
+	addAction(ac->addAction(KStandardAction::Copy, "copySelectedText", conn, SLOT(copySelection())));
+	addAction(ac->addAction(KStandardAction::Find, "findText", conn, SLOT(openFindTextDialog())));
 
 	//KStandardAction::close(this, SLOT(close()), ac);
 	//KStandardAction::selectAll(displayWidget()->connectionsProxy(), SLOT(selectAll()), ac);
