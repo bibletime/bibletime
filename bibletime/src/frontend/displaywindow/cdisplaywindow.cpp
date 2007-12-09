@@ -206,20 +206,7 @@ void CDisplayWindow::windowActivated( const bool hasFocus ) {
 	//	accel()->setEnabled(hasFocus);
 	//}
 	
-	//new:
-	if (actionCollection()) {
-#if KDE_VERSION_MAJOR == 3 && KDE_VERSION_MINOR < 96
-			if (hasFocus) {
-				actionCollection()->setAssociatedWidget(this);
-			} else {
-				actionCollection()->removeAssociatedWidget(this);
-			}
-#else		
-			if (hasFocus) {
-				actionCollection()->associateWidget(this);
-			}
-#endif
-	}
+	//Nothing is needed for KDE4
 }
 
 /** Refresh the settings of this window. */
