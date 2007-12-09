@@ -296,6 +296,7 @@ void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
 	//TODO:
 	m_moduleListBox->setupTree(modules, searchedText);
 	m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
+	m_resultListBox->setCurrentItem(m_resultListBox->topLevelItem(0), 0);
 
 }
 
