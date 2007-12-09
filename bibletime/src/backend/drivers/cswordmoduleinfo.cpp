@@ -278,7 +278,15 @@ void CSwordModuleInfo::buildIndex() {
 
 	//verseLowIndex is not 0 in all cases (i.e. NT-only modules)
 	unsigned long verseIndex = verseLowIndex + 1;
+	unsigned long verseSpan = verseHighIndex - verseLowIndex;
 
+	//Index() is not implemented properly for lexicons, so we use a
+	//workaround.
+	if (type() == CSwordModuleInfo::Lexicon){
+		verseIndex = 0;
+		verseLowIndex = 0;
+		verseSpan = ((CSwordLexiconModuleInfo*)this)->entries()->size();
+	}
 
 	const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
@@ -360,16 +368,23 @@ void CSwordModuleInfo::buildIndex() {
 		} // for attListI
 
 		writer->addDocument(doc);
-		verseIndex = m_module->Index();
+		//Index() is not implemented properly for lexicons, so we use a
+		//workaround.
+		if (type() == CSwordModuleInfo::Lexicon){
+			verseIndex++;
+		}
+		else{
+			verseIndex = m_module->Index();
+		}
 
 		if (verseIndex % 200 == 0) {
 			int indexingProgressValue;
-			if (verseHighIndex == verseLowIndex) { //prevent division by zero
+			if (verseSpan == 0) { //prevent division by zero
 				//m_indexingProgress.setValue( QVariant(0) );
 				indexingProgressValue = 0;
 			} else {
 				//m_indexingProgress.setValue( QVariant((int)((100*(verseIndex-verseLowIndex))/(verseHighIndex-verseLowIndex))) );
-				indexingProgressValue = (int)((100*(verseIndex-verseLowIndex)) / (verseHighIndex-verseLowIndex));
+				indexingProgressValue = (int)((100*(verseIndex-verseLowIndex)) / (verseSpan));
 			}
 			//m_indexingProgress.activate();
 			emit indexingProgress(indexingProgressValue);
