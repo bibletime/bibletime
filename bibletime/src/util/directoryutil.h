@@ -70,7 +70,7 @@ public:
 	static QDir getLocaleDir(void);
 
 	/** Return the path to the documentation files. */
-	static QDir getDocsDir(void);
+	//static QDir getDocsDir(void);
 
 	/** Return the path to the default display template files. */
 	static QDir getDisplayTemplatesDir(void);

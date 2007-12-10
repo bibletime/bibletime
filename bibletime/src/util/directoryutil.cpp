@@ -105,7 +105,7 @@ static QDir cachedIconDir;
 static QDir cachedPicsDir;
 static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
-static QDir cachedDocsDir;
+//static QDir cachedDocsDir;
 static QDir cachedDisplayTemplatesDir;
 static QDir cachedUserDisplayTemplatesDir;
 static QDir cachedUserBaseDir;
@@ -152,11 +152,11 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 
-	cachedDocsDir = wDir; //xml dir
-	if (!cachedDocsDir.cd("share/bibletime/docs/")) {
-		qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
-		throw;
-	}
+	//cachedDocsDir = wDir; //xml dir
+	//if (!cachedDocsDir.cd("share/bibletime/docs/")) {
+	//	qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
+	//	throw;
+	//}
 	
 	cachedDisplayTemplatesDir = wDir; //display templates dir
 	if (!cachedDisplayTemplatesDir.cd("share/bibletime/display-templates/")) {
@@ -257,11 +257,11 @@ QDir DirectoryUtil::getLocaleDir(void)
 	return cachedLocaleDir;
 }
 
-QDir DirectoryUtil::getDocsDir(void)
-{
-	if (!dirCacheInitialized) initDirectoryCache();
-	return cachedDocsDir;
-}
+//QDir DirectoryUtil::getDocsDir(void)
+// {
+// 	if (!dirCacheInitialized) initDirectoryCache();
+// 	return cachedDocsDir;
+// }
 
 QDir DirectoryUtil::getDisplayTemplatesDir(void)
 {
