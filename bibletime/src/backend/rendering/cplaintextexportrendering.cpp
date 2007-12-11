@@ -12,7 +12,7 @@
 #include "backend/keys/cswordkey.h"
 
 //Util
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 namespace Rendering {
 
@@ -27,7 +27,7 @@ namespace Rendering {
 		}
 
 		ListCSwordModuleInfo modules = i.modules();
-		util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
+		boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
 		QString renderedText = QString(i.key()).append(":\n");
 
 		QString entry;

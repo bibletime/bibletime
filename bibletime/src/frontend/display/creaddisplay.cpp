@@ -26,8 +26,7 @@
 
 #include "frontend/cexportmanager.h"
 
-#include "../../util/scoped_resource.h"
-
+#include <boost/scoped_ptr.hpp>
 
 //KDE includes
 #include <klocale.h>

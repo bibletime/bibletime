@@ -25,12 +25,13 @@
 
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/scoped_resource.h"
 #include "util/directoryutil.h"
 
 //Qt
 #include <QString>
 #include <QtXml/qdom.h>
+
+#include <boost/scoped_ptr.hpp>
 
 //KDE
 #include <klocale.h>
@@ -100,7 +101,7 @@ const QString CIndexBookmarkItem::toolTip() {
 	CPointers::backend()->setFilterOptions(filterOptions);
 
 	QString ret;
-	util::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
+	boost::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
 	k->key(this->key());
 
 	const CLanguageMgr::Language* lang = module()->language();

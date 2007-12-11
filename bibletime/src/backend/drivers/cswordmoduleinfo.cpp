@@ -18,7 +18,7 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/managers/clanguagemgr.h"
 
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 #include "util/directoryutil.h"
 #include "util/cpointers.h"
 #include "frontend/cbtconfig.h"
@@ -206,9 +206,9 @@ const bool CSwordModuleInfo::hasIndex() { //this will return true only
 	}
 
 	//first check if the index version and module version are ok
-	util::scoped_ptr<KConfig> config_in (new KConfig(getModuleBaseIndexLocation() + QString("/bibletime-index.conf")));
-	util::scoped_ptr<KConfigGroup> indexconfig(
-		new KConfigGroup(config_in, "")
+	boost::scoped_ptr<KConfig> config_in (new KConfig(getModuleBaseIndexLocation() + QString("/bibletime-index.conf")));
+	boost::scoped_ptr<KConfigGroup> indexconfig(
+		new KConfigGroup(config_in.get(), "")
 	);
 			
 // 		new KConfig(
@@ -266,7 +266,7 @@ void CSwordModuleInfo::buildIndex() {
 		}
 	}
 
-	util::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
+	boost::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
 	writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
 	writer->setUseCompoundFile(true); //merge segments into a single file
 	writer->setMinMergeDocs(1000);
@@ -319,7 +319,7 @@ void CSwordModuleInfo::buildIndex() {
 			}
 		}
 
-		util::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
+		boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
 
 		//index the key
 		lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
@@ -367,7 +367,7 @@ void CSwordModuleInfo::buildIndex() {
 			}
 		} // for attListI
 
-		writer->addDocument(doc);
+		writer->addDocument(doc.get());
 		//Index() is not implemented properly for lexicons, so we use a
 		//workaround.
 		if (type() == CSwordModuleInfo::Lexicon){
@@ -395,8 +395,8 @@ void CSwordModuleInfo::buildIndex() {
 	writer->close();
 
 	QString configFilename = getModuleStandardIndexLocation() + QString("/../bibletime-index.conf");
-	util::scoped_ptr<KConfig> config_in ( new KConfig( configFilename ) );
-	util::scoped_ptr<KConfigGroup> indexconfig( new KConfigGroup( config_in , "") );
+	boost::scoped_ptr<KConfig> config_in ( new KConfig( configFilename ) );
+	boost::scoped_ptr<KConfigGroup> indexconfig( new KConfigGroup( config_in.get() , "") );
 	if (hasVersion()) {
 		indexconfig->writeEntry("module-version", config(CSwordModuleInfo::ModuleVersion) );
 	}
@@ -417,7 +417,7 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
 	wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
 	// work around Swords thread insafety for Bibles and Commentaries
-	util::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
+	boost::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
 	sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
 	QList<sword::VerseKey*> list;
 
@@ -435,15 +435,15 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
 		lucene::analysis::standard::StandardAnalyzer analyzer( stop_words );
 		lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toAscii().constData());
 		lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-		util::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse(wcharBuffer, _T("content"), &analyzer) );
+		boost::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse(wcharBuffer, _T("content"), &analyzer) );
 
-		util::scoped_ptr<lucene::search::Hits> h( searcher.search(q, lucene::search::Sort::INDEXORDER) );
+		boost::scoped_ptr<lucene::search::Hits> h( searcher.search(q.get(), lucene::search::Sort::INDEXORDER) );
 
 		const bool useScope = (scope.Count() > 0);
 //		const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
 		lucene::document::Document* doc = 0;
-		util::scoped_ptr<sword::SWKey> swKey( module()->CreateKey() );
+		boost::scoped_ptr<sword::SWKey> swKey( module()->CreateKey() );
 
 
 		for (int i = 0; i < h->length(); ++i) {

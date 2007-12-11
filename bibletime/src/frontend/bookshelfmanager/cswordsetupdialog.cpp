@@ -18,7 +18,7 @@
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 #include "util/directoryutil.h"
 
 //QT includes
@@ -536,7 +536,7 @@ bool CSwordSetupDialog::populateInstallModuleListView( const QString& sourceName
 
 	//kind of a hack to provide a pointer to mgr next line
 	//   qWarning("createing remote_backend");
-	util::scoped_ptr<CSwordBackend> remote_backend( BTInstallMgr::Tool::backend(&is) );
+	boost::scoped_ptr<CSwordBackend> remote_backend( BTInstallMgr::Tool::backend(&is) );
 	//  qWarning("config path1 is %s", remote_backend->configPath);
 	//  qWarning("config path2 is %s", BTInstallMgr::Tool::backend(&is)->configPath ); //mem leak
 	//   qWarning("after creating remote_backend");

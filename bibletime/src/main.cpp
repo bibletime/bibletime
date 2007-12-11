@@ -18,7 +18,7 @@
 #include "config.h"
 
 //util includes
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 #include "util/migrationutil.h"

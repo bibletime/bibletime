@@ -14,7 +14,7 @@
 #include "backend/keys/cswordtreekey.h"
 
 //Util
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 /** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
 const QString Rendering::CBookDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
@@ -31,7 +31,7 @@ const QString Rendering::CBookDisplay::text( const ListCSwordModuleInfo& modules
 	// the number of levels which should be display together, 1 means display no entries together
 	int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
-	util::scoped_ptr<CSwordTreeKey> key (
+	boost::scoped_ptr<CSwordTreeKey> key (
 		dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
 	);
 	key->key(keyName); //set the key to position we'd like to get

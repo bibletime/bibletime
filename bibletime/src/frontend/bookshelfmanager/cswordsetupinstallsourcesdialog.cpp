@@ -9,7 +9,7 @@
 
 //BT includes
 #include "cswordsetupinstallsourcesdialog.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QLayout>
@@ -155,7 +155,7 @@ namespace BookshelfManager {
 
 	sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
 
-		util::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
+		boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
 		sword::InstallSource newSource(""); //empty, invalid Source
 
 		if (dlg->exec() == QDialog::Accepted) {

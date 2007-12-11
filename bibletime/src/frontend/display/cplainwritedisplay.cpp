@@ -14,7 +14,7 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QDragEnterEvent>
@@ -144,7 +144,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e )
 		for (it = items.begin(); it != items.end(); ++it) {
 			
 			CSwordModuleInfo* module = backend()->findModuleByName((*it).module());
-			util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 			key->key( (*it).key() );
 			QString moduleText = key->strippedText();
 

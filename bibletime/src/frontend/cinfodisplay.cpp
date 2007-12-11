@@ -27,7 +27,7 @@
 #include "frontend/display/creaddisplay.h"
 #include "frontend/display/chtmlreaddisplay.h"
 
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //Sword includes
 #include <listkey.h>
@@ -87,7 +87,7 @@ void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
 	if (!m)
 		return;
 
-	util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(m) );
+	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(m) );
 	key->key( key_text ); 
 
 	CDisplayTemplateMgr* mgr = CPointers::displayTemplateManager();
@@ -307,7 +307,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
 		return QString::null;
 	}
 
-	util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 	key->key(keyname);
 	key->renderedText(); //force entryAttributes
 
@@ -342,7 +342,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 
 		QString text;
 		if (module) {
-			util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 			key->key( (*it).mid(1) ); //skip H or G (language sign), will have to change later if we have better modules
 			text = key->renderedText();
 		}
@@ -414,7 +414,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 		QString text;
 		//Q_ASSERT(module);
 		if (module) {
-			util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 
 			//skip H or G (language sign) if we have to skip it
 			const bool isOk = key->key( skipFirstChar ? value.mid(1) : value );
@@ -446,7 +446,7 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
 		return QString::null;
 	}
 
-	util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 	key->key( data );
 	if (key->key().toUpper() != data.toUpper()) { //key not present in the lexicon
 		return QString::null;

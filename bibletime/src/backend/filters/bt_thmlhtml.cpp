@@ -15,7 +15,7 @@
 
 #include "frontend/cbtconfig.h"
 #include "util/cpointers.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //Sword includes
 #include <swmodule.h>

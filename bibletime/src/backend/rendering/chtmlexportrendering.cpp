@@ -16,7 +16,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include "util/cpointers.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //KDE
 #include <klocale.h>
@@ -62,9 +62,9 @@ namespace Rendering {
 
 		Q_ASSERT(modules.count() >= 1);
 
-		util::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
+		boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
 
-		CSwordKey* key = k ? k : scoped_key;
+		CSwordKey* key = k ? k : scoped_key.get();
 
 		Q_ASSERT(key);
 

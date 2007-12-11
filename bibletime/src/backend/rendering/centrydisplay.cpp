@@ -18,7 +18,7 @@
 #include "cdisplayrendering.h"
 
 #include "frontend/cbtconfig.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QApplication>

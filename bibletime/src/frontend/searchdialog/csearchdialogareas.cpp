@@ -622,7 +622,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	//char buf8[1000];
 	//standard::WhitespaceAnalyzer analyzer;
 	//lucene_utf8towcs(m_wcharBuffer, searchedText.utf8(), MAX_CONV_SIZE);
-	//util::scoped_ptr<Query> q( QueryParser::parse(m_wcharBuffer, _T("content"), &analyzer) );
+	//boost::scoped_ptr<Query> q( QueryParser::parse(m_wcharBuffer, _T("content"), &analyzer) );
 	//StringReader reader(m_wcharBuffer);
 	//TokenStream* tokenStream = analyzer.tokenStream( _T("field"), &reader);
 	//Token token;

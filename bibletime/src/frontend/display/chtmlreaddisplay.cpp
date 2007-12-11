@@ -24,7 +24,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 
 //We will need to reference this in the Qt includes
 #include <kdeversion.h>
@@ -144,7 +144,7 @@ const QString CHTMLReadDisplay::text( const CDisplay::TextType format, const CDi
 			CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
-				util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 				key->key( keyName );
 
 				return key->strippedText();
@@ -159,7 +159,7 @@ const QString CHTMLReadDisplay::text( const CDisplay::TextType format, const CDi
 			CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
-				util::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 				key->key( keyName );
 
 				//TODO: This is a BAD HACK, we have to fnd a better solution to manage the settings now

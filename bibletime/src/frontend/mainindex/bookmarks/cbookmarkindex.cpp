@@ -29,8 +29,9 @@
 #include "frontend/cdragdrop.h"
 
 #include "util/cresmgr.h"
-#include "util/scoped_resource.h"
 #include "util/directoryutil.h"
+
+#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QInputDialog>
@@ -613,7 +614,7 @@ void CBookmarkIndex::printBookmarks() {
 		}
 	}
 
-	util::scoped_ptr<Printing::CPrinter> printer( 
+	boost::scoped_ptr<Printing::CPrinter> printer( 
 		new Printing::CPrinter( this, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() ) 
 	);
 	printer->printKeyTree(tree);

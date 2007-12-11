@@ -16,7 +16,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/creferencemanager.h"
 
-#include "util/scoped_resource.h"
+#include <boost/scoped_ptr.hpp>
 #include "util/ctoolclass.h"
 
 //Sword
@@ -196,14 +196,14 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 	QString t;
 
 	//optimization for entries with the same key
-	util::scoped_ptr<CSwordKey> key(
+	boost::scoped_ptr<CSwordKey> key(
 		(modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
 	);
 
 	for (KeyTreeItem* c = tree.first(); c; c = tree.next()) {
 		if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
 			key->key( c->key() );
-			t.append( renderEntry( *c, key) );
+			t.append( renderEntry( *c, key.get()) );
 		}
 		else {
 			t.append( renderEntry( *c ) );
@@ -218,10 +218,10 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
 	CSwordModuleInfo* module = modules.first();
 	//qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
 	
-	util::scoped_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
+	boost::scoped_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
 	lowerBound->key(start);
 
-	util::scoped_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
+	boost::scoped_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
 	upperBound->key(stop);
 
 	sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());

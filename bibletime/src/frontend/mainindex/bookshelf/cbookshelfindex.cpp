@@ -29,7 +29,6 @@
 #include "frontend/cdragdrop.h"
 
 #include "util/cresmgr.h"
-#include "util/scoped_resource.h"
 #include "util/directoryutil.h"
 
 //Qt includes
@@ -45,6 +44,8 @@
 #include <QInputDialog> // for unlocking key
 
 #include <QDebug>
+
+#include <boost/scoped_ptr.hpp>
 
 //KDE includes
 #include <klocale.h>
