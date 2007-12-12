@@ -19,6 +19,9 @@
 class CSearchAnalysisView;
 class CSearchAnalysisScene;
 
+class QAbstractButton;
+class QDialogButtonBox;
+
 namespace Search {
 
 /**
@@ -33,7 +36,7 @@ public:
 	~CSearchAnalysisDialog() {}
 
 protected: // Protected methods
-	
+	void buttonClicked(QAbstractButton* button);
 	/**
 	 * Initializes this dialog.
 	 */
@@ -42,6 +45,7 @@ protected: // Protected methods
 private:
 	CSearchAnalysisScene* m_analysis;
 	CSearchAnalysisView* m_analysisView;
+	QDialogButtonBox* m_buttonBox;
 };
 
 }

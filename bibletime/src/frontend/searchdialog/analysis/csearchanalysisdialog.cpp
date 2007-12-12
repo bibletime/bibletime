@@ -15,20 +15,12 @@
 
 
 #include <QDialog>
-#include <QPushButton>
+#include <QAbstractButton>
+#include <QDialogButtonBox>
 #include <QVBoxLayout>
 
 namespace Search {
 
-CSearchAnalysisDialog::CSearchAnalysisDialog()
- : QDialog()
-{
-}
-
-
-CSearchAnalysisDialog::~CSearchAnalysisDialog()
-{
-}
 
 CSearchAnalysisDialog::CSearchAnalysisDialog( ListCSwordModuleInfo modules, QWidget* parentDialog )
 	: QDialog(parentDialog)
@@ -40,23 +32,33 @@ CSearchAnalysisDialog::CSearchAnalysisDialog( ListCSwordModuleInfo modules, QWid
 }
 
 /** Initializes this dialog. */
-void CSearchAnalysisDialog::initView() {
-	QVBoxLayout* layout = new QVBoxLayout(this);
+void CSearchAnalysisDialog::initView()
+{
 
-	QPushButton* button = new QPushButton(plainPage(), "button");
-	button->setIcon(util::filesystem::DirectoryUtil::getIcon("filesave"));
-	button->setText(i18n("Save search analysis as HTML"));
-	button->setFixedSize(button->sizeHint());
-	layout->addWidget(button);
-	layout->addSpacing(10);
+	QVBoxLayout *vboxLayout = new QVBoxLayout(this);
 
 	m_analysis = new CSearchAnalysisScene(this);
 	m_analysisView = new CSearchAnalysisView(m_analysis, this);
-	m_analysisView->show();
-	layout->addWidget(m_analysisView);
+//	m_analysisView->show();
+	vboxLayout->addWidget(m_analysisView);
 
-	connect(button, SIGNAL(clicked()), m_analysis, SLOT(saveAsHTML()));
+	m_buttonBox = new QDialogButtonBox(this);
+	m_buttonBox->setOrientation(Qt::Horizontal);
+	m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
+	m_buttonBox->addButton(i18n("Save as HTML"), QDialogButtonBox::Save);
+
+	vboxLayout->addWidget(m_buttonBox);
+
+	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	QObject::connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonClicked(QAbstractButton*)));
 }
 
+void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button)
+{
+	if (m_buttonBox->buttonRole(button) == QDialogButtonBox::Save) {
+		m_analysis->saveAsHTML();
+	}
+}
 
 }
