@@ -942,3 +942,27 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString& name) const {
 
 	return ret.isEmpty() ? QString::null : ret;
 }
+
+void CSwordModuleInfo::setHidden(bool hidden)
+{
+	qDebug("CSwordModuleInfo::setHidden");
+	QStringList hiddenModules = CBTConfig::get(CBTConfig::hiddenModules);
+	if (hidden && !hiddenModules.contains(this->name())) {
+		hiddenModules.append(this->name());
+		CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
+	}
+	if (!hidden && hiddenModules.contains(this->name()) ) {
+		hiddenModules.removeAll(this->name());
+		CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
+	}
+}
+
+bool CSwordModuleInfo::isHidden() const
+{
+	//qDebug("CSwordModuleInfo::isHidden");
+	QStringList hiddenModules = CBTConfig::get(CBTConfig::hiddenModules);
+	if (hiddenModules.contains(this->name())) {
+		return true;
+	}
+	return false;
+}

@@ -126,6 +126,18 @@ protected slots: // Protected slots
 	/**
 	* Shows information about the current module.
 	*/
+
+	/**
+	* Show or hide the hidden modules, depending on the action check state.
+	*/
+	void actionShowModules(bool checked);
+
+	/**
+	* Set the selected modules hidden.
+	*/
+	void actionHideModules();
+
+
 	void actionAboutModule();
 	/**
 	* Unlocks the current module.
@@ -153,6 +165,7 @@ private:
 	BTModuleTreeItem::Grouping m_grouping; //temporary solution - this should be in config
 	QActionGroup* m_groupingGroup;
 	int m_mouseReleaseEventModifiers;
+	bool m_showHidden;
 
 	/**
 	* Initializes the view.

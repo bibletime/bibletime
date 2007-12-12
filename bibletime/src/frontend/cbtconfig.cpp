@@ -14,7 +14,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-
+#include "backend/btmoduletreeitem.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 
@@ -141,6 +141,7 @@ const QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case bookshelfContentsX:	return "bookshelfContentsX";
 		case bookshelfContentsY:	return "bookshelfContentsY";
 		case magDelay:		return "magDelay";
+		case bookshelfGrouping:		return "bookshelfGrouping";
 	}
 	return QString::null;
 }
@@ -185,6 +186,7 @@ const int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case bookshelfContentsX:	return 0;
 		case bookshelfContentsY:	return 0;
 		case magDelay:	return 400;
+		case bookshelfGrouping:		return BTModuleTreeItem::CatLangMod;
 	}
 	return 0;
 }
@@ -214,6 +216,7 @@ const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 		case searchCompletionTexts:	return QString("searchCompletionTexts");
 		case searchTexts:			return QString("searchTexts");
 		case bookshelfOpenGroups:	return QString("bookshelfOpenGroups");
+		case hiddenModules:			return QString("hiddenModules");
 	}
 	return QString::null;
 }

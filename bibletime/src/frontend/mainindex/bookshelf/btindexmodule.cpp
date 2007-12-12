@@ -31,7 +31,10 @@ BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previo
 	m_moduleInfo = treeItem->moduleInfo();
 	setToolTip(0, CToolClass::moduleToolTip(moduleInfo()) );
 
-	setFlags(Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsSelectable|Qt::ItemIsEnabled);
+	setFlags(Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsSelectable);
+	if (!m_moduleInfo->isHidden()) {
+		setFlags(flags()|Qt::ItemIsEnabled);
+	}
 }
 
 

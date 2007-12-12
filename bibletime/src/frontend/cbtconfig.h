@@ -86,7 +86,8 @@ public:
 		morphSegmentation,
 		bookshelfContentsX,
 		bookshelfContentsY,
-  		magDelay /* The delay until a mouse move makes the content appear in the mag */
+  		magDelay, /* The delay until a mouse move makes the content appear in the mag */
+		bookshelfGrouping
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
@@ -95,7 +96,8 @@ public:
 	enum stringLists {
 		searchCompletionTexts,
 		searchTexts,
-		bookshelfOpenGroups
+		bookshelfOpenGroups,
+		hiddenModules
 	};
 	enum keys {
 		allWindows,

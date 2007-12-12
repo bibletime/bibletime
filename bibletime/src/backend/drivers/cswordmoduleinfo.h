@@ -290,9 +290,9 @@ public:
 	/**
 	* Returns true if this module is hidden (not to be shown with other modules in certain views).
 	*/
-	inline const bool isHidden() const;
+	bool isHidden() const;
 
-	inline void setHidden(bool hidden);
+	void setHidden(bool hidden);
 
 	/**
 	* Returns the category of this module. See CSwordModuleInfo::Category for possible values.
@@ -377,16 +377,6 @@ inline const QString CSwordModuleInfo::name() const {
 /** Returns true if this module may be written by the write display windows. */
 inline const bool CSwordModuleInfo::isWritable() const {
 	return false;
-}
-
-/** Returns true if this module is hidden (not to be shown with other modules in certain views). */
-inline const bool CSwordModuleInfo::isHidden() const {
-	return false;
-}
-
-inline void CSwordModuleInfo::setHidden(bool hidden)
-{
-	m_hidden = hidden;
 }
 
 //#include "util/cpointers.h"
