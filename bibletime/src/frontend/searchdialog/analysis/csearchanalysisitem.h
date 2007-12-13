@@ -12,7 +12,10 @@
 #ifndef SEARCHCSEARCHANALYSISITEM_H
 #define SEARCHCSEARCHANALYSISITEM_H
 
+#include "backend/drivers/cswordmoduleinfo.h"
+
 #include <QGraphicsRectItem>
+#include <QGraphicsScene>
 
 namespace Search {
 
@@ -50,7 +53,7 @@ private:
 	double *m_scaleFactor;
 	QString m_bookName;
 	int m_moduleCount;
-	Q3MemArray<int> m_resultCountArray;
+	QVector<int> m_resultCountArray;
 	QPixmap* m_bufferPixmap;
 
 };

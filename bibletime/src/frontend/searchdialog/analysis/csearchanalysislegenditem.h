@@ -12,6 +12,8 @@
 #ifndef SEARCHCSEARCHANALYSISLEGENDITEM_H
 #define SEARCHCSEARCHANALYSISLEGENDITEM_H
 
+#include "backend/drivers/cswordmoduleinfo.h"
+
 #include <QGraphicsRectItem>
 
 namespace Search {

@@ -10,6 +10,9 @@
 //
 //
 #include "csearchanalysisitem.h"
+#include "csearchanalysisscene.h"
+
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QGraphicsRectItem>
 #include <QPainter>
@@ -80,7 +83,7 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 	f.setPointSize(ITEM_TEXT_SIZE);
 	painter.setFont(f);
 
-	setPen(QPen(black,1));
+	setPen(QPen(Qt::black,1));
 	setBrush(Qt::red);
 	/**
 	* We have to paint so many bars as we have modules available (we use m_moduleCount)
@@ -101,11 +104,11 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 		for (index = 0; index < m_moduleCount; index++) {
 			if (m_resultCountArray[index] == Value) {
 				QPoint p1((int)x() + (m_moduleCount-drawn-1)*BAR_DELTAX,
-						  (int)height() + (int)y() - BAR_LOWER_BORDER - (m_moduleCount-drawn)*BAR_DELTAY);
+						  (int)rect().height() + (int)y() - BAR_LOWER_BORDER - (m_moduleCount-drawn)*BAR_DELTAY);
 				QPoint p2(p1.x() + BAR_WIDTH,
 						  p1.y() - (int)( !m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))) );
 				QRect r(p1, p2);
-				painter.fillRect(r, QBrush(CSearchAnalysis::getColor(index)) );
+				painter.fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
 				painter.drawRect(r);
 				drawn++;
 			}
@@ -128,7 +131,7 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 		p.rotate(90);
 		p.drawText(QPoint(5,0), m_bookName);
 	}
-	painter.drawPixmap(QPoint(int(x()),int(height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
+	painter.drawPixmap(QPoint(int(x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
 }
 
 /** Returns the width of this item. */
@@ -148,9 +151,9 @@ const QString CSearchAnalysisItem::getToolTip() {
 	for (ListCSwordModuleInfo::iterator it(m_moduleList->begin()); it != end_it; ++it) {
 		//  for (int i = 0; i < m_moduleCount; ++i) {
 		CSwordModuleInfo* info = (*it);
-		const QColor c = CSearchAnalysis::getColor(i);
+		const QColor c = CSearchAnalysisScene::getColor(i);
 
-		ret.append(
+		toolTipString.append(
 			QString("<tr bgcolor=\"white\"><td><b><font color=\"#%1\">%2</font></b></td><td>%3 (%4%)</td></tr>")
 			.arg(QString().sprintf("%02X%02X%02X",c.red(),c.green(),c.blue()))
 			.arg(info ? info->name() : QString::null)

@@ -10,6 +10,15 @@
 //
 //
 #include "csearchanalysisscene.h"
+#include "csearchanalysislegenditem.h"
+
+#include "backend/keys/cswordversekey.h"
+
+
+#include <QHashIterator>
+
+#include <kapplication.h>
+
 
 namespace Search {
 
@@ -46,15 +55,14 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 	connect(this, SIGNAL(resized()), SLOT(slotResized()));
 }
 
-CSearchAnalysis::~CSearchAnalysis() {}
 
-QHash<CSearchAnalysisItem>* CSearchAnalysis::getSearchAnalysisItemList() {
+QHash<CSearchAnalysisItem>* CSearchAnalysisScene::getSearchAnalysisItemList() {
 	// Returns pointer to the search analysis items
 	return &m_itemList;
 }
 
 /** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
-void CSearchAnalysis::analyse(ListCSwordModuleInfo modules) {
+void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 	/**
 	* Steps of analysing our search result;
 	* -Create the items for all available books ("Genesis" - "Revelation")
@@ -83,7 +91,7 @@ void CSearchAnalysis::analyse(ListCSwordModuleInfo modules) {
 	CSwordVerseKey key(0);
 	key.key("Genesis 1:1");
 
-	CSearchAnalysisItem* analysisItem = m_canvasItemList[key.book()];
+	CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
 	bool ok = true;
 	while (ok && analysisItem) {
 		//   for (moduleIndex = 0,m_moduleList.first(); m_moduleList.current(); m_moduleList.next(),++moduleIndex) {
@@ -113,7 +121,7 @@ void CSearchAnalysis::analyse(ListCSwordModuleInfo modules) {
 }
 
 /** Sets te module list used for the analysis. */
-void CSearchAnalysis::setModules(ListCSwordModuleInfo modules) {
+void CSearchAnalysisScene::setModules(ListCSwordModuleInfo modules) {
 	m_moduleList.clear();
 	//  for (modules.first(); modules.current(); modules.next()) {
 	ListCSwordModuleInfo::iterator end_it = modules.end();
@@ -123,24 +131,24 @@ void CSearchAnalysis::setModules(ListCSwordModuleInfo modules) {
 		}
 	}
 
-	m_canvasItemList.clear();
+	m_itemList.clear();
 	CSearchAnalysisItem* analysisItem = 0;
 	CSwordVerseKey key(0);
 	key.key("Genesis 1:1");
 	do {
 		analysisItem = new CSearchAnalysisItem(this, m_moduleList.count(), key.book(), &m_scaleFactor, &m_moduleList);
 		analysisItem->hide();
-		m_canvasItemList.insert(key.book(), analysisItem);
+		m_itemList.insert(key.book(), analysisItem);
 	}
 	while (key.next(CSwordVerseKey::UseBook));
 	update();
 }
 
 /** Sets back the items and deletes things to cleanup */
-void CSearchAnalysis::reset() {
+void CSearchAnalysisScene::reset() {
 	m_scaleFactor = 0.0;
 
-	QHashtIterator<CSearchAnalysisItem> it( m_canvasItemList ); // iterator for items
+	QHashtIterator<CSearchAnalysisItem> it( m_itemList ); // iterator for items
 	while ( it.current() ) {
 		it.current()->hide();
 		++it;
@@ -158,7 +166,7 @@ void CSearchAnalysis::reset() {
 }
 
 /** No descriptions */
-void CSearchAnalysis::slotResized() {
+void CSearchAnalysisScene::slotResized() {
 	m_scaleFactor = (double)( (double)(height()-UPPER_BORDER-LOWER_BORDER-BAR_LOWER_BORDER-(m_moduleList.count()-1)*BAR_DELTAY)
 							  /(double)m_maxCount);
 	QHashtIterator<CSearchAnalysisItem> it( m_canvasItemList );
@@ -171,7 +179,7 @@ void CSearchAnalysis::slotResized() {
 }
 
 /** This function returns a color for each module */
-QColor CSearchAnalysis::getColor(int index) {
+QColor CSearchAnalysisScene::getColor(int index) {
 	switch (index) {
 		case  0:
 		return Qt::red;
@@ -199,14 +207,14 @@ QColor CSearchAnalysis::getColor(int index) {
 }
 
 /** Returns the count of the book in the module */
-const unsigned int CSearchAnalysis::getCount( const QString book, CSwordModuleInfo* module ) {
+const unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInfo* module ) {
 	sword::ListKey& result = module->searchResult();
 	const int length = book.length();
 	unsigned int i = m_lastPosList[module];
 	unsigned int count = 0;
 	const unsigned int resultCount = result.Count();
 	while (i < resultCount) {
-		if ( strncmp(book.utf8(), (const char*)*result.GetElement(i), length) )
+		if ( strncmp(book.toUtf8(), (const char*)*result.GetElement(i), length) )
 			break;
 		i++;
 		++count;

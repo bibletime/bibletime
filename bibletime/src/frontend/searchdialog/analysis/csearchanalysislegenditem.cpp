@@ -10,6 +10,13 @@
 //
 //
 #include "csearchanalysislegenditem.h"
+#include "csearchanalysisscene.h"
+
+#include "backend/drivers/cswordmoduleinfo.h"
+
+#include <QPainter>
+#include <QPen>
+#include <QFont>
 
 namespace Search {
 
@@ -44,11 +51,11 @@ CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QGraphicsScene *parent, Lis
 void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 	painter.save();
 
-	setPen( QPen(black,2) );
-	setBrush( Qt::white );
+	setPen( QPen(Qt::black,2) );
+	setBrush( QBrush(Qt::white) );
 	//the outer rectangle
 	QPoint p1( (int)x(), (int)y() );
-	QPoint p2( (int)x()+width(), (int)y() + height() );
+	QPoint p2( (int)x()+rect().width(), (int)y() + rect().height() );
 	QRect r(p1, p2);
 	r.normalize();
 	painter.drawRect(r);
@@ -65,7 +72,7 @@ void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 		QPoint p1( (int)x() + LEGEND_INNER_BORDER, (int)y() + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
 		QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
 		QRect r(p1,p2);
-		painter.fillRect(r, QBrush(CSearchAnalysis::getColor(moduleIndex)) );
+		painter.fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
 		r.normalize();
 		painter.drawRect(r);
 

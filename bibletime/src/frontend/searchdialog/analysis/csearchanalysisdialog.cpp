@@ -13,11 +13,15 @@
 #include "csearchanalysisscene.h"
 #include "csearchanalysisview.h"
 
+#include "backend/drivers/cswordmoduleinfo.h"
+
 
 #include <QDialog>
 #include <QAbstractButton>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+
+#include <klocale.h>
 
 namespace Search {
 
@@ -45,11 +49,11 @@ void CSearchAnalysisDialog::initView()
 	m_buttonBox = new QDialogButtonBox(this);
 	m_buttonBox->setOrientation(Qt::Horizontal);
 	m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
-	m_buttonBox->addButton(i18n("Save as HTML"), QDialogButtonBox::Save);
+	m_buttonBox->addButton(QDialogButtonBox::Save);
+	//i18n("Save as HTML"), 
 
 	vboxLayout->addWidget(m_buttonBox);
 
-	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
 	QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 	QObject::connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonClicked(QAbstractButton*)));
 }

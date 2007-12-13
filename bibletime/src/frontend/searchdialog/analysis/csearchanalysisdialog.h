@@ -13,16 +13,20 @@
 #define SEARCHCSEARCHANALYSISDIALOG_H
 
 
+#include "backend/drivers/cswordmoduleinfo.h"
+
 #include <QDialog>
 
-
-class CSearchAnalysisView;
-class CSearchAnalysisScene;
 
 class QAbstractButton;
 class QDialogButtonBox;
 
 namespace Search {
+
+class CSearchAnalysisView;
+class CSearchAnalysisScene;
+
+
 
 /**
 	@author The BibleTime team <info@bibletime.info>

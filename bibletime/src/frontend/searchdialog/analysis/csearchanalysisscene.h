@@ -34,7 +34,7 @@ class CSearchAnalysisScene : public QGraphicsScene
 public:
     CSearchAnalysisScene(QObject* parent);
 
-    virtual ~CSearchAnalysisScene();
+    virtual ~CSearchAnalysisScene() {}
 
 	/**
 	* Starts the analysis of the search result.
@@ -50,7 +50,7 @@ public:
 	/**
 	* This function returns a pointer to the list of AnalysisItems
 	*/
-	Q3Dict<CSearchAnalysisItem>* getSearchAnalysisItemList();
+	QHash<CSearchAnalysisItem>* getSearchAnalysisItemList();
 	void reset();
 
 protected slots: // Protected slots
