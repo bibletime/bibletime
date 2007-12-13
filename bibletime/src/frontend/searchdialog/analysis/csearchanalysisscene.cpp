@@ -34,23 +34,23 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysis::CSearchAnalysis(QObject *parent )
-: QGraphicsScene(parent)
+CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
+	: QGraphicsScene(parent),
+	m_scaleFactor(0.0),
+	m_legend(0)
 {
-	m_scaleFactor = 0.0;
-	m_legend = 0;
 	setBackgroundColor(Qt::white);
-	m_canvasItemList.resize(67);
-	m_canvasItemList.setAutoDelete(true);
+	m_itemList.resize(67);
+	//m_canvasItemList.setAutoDelete(true);
 	resize(1,1);
 	connect(this, SIGNAL(resized()), SLOT(slotResized()));
 }
 
 CSearchAnalysis::~CSearchAnalysis() {}
 
-Q3Dict<CSearchAnalysisItem>* CSearchAnalysis::getSearchAnalysisItemList() {
+QHash<CSearchAnalysisItem>* CSearchAnalysis::getSearchAnalysisItemList() {
 	// Returns pointer to the search analysis items
-	return &m_canvasItemList;
+	return &m_itemList;
 }
 
 /** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
@@ -106,7 +106,7 @@ void CSearchAnalysis::analyse(ListCSwordModuleInfo modules) {
 
 		xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;
 		ok = key.next(CSwordVerseKey::UseBook);
-		analysisItem = m_canvasItemList[key.book()];
+		analysisItem = m_itemList[key.book()];
 	}
 	resize(xPos+BAR_WIDTH+(m_moduleList.count()-1)*BAR_DELTAX+RIGHT_BORDER, height() );
 	slotResized();
@@ -140,7 +140,7 @@ void CSearchAnalysis::setModules(ListCSwordModuleInfo modules) {
 void CSearchAnalysis::reset() {
 	m_scaleFactor = 0.0;
 
-	Q3DictIterator<CSearchAnalysisItem> it( m_canvasItemList ); // iterator for items
+	QHashtIterator<CSearchAnalysisItem> it( m_canvasItemList ); // iterator for items
 	while ( it.current() ) {
 		it.current()->hide();
 		++it;
@@ -161,7 +161,7 @@ void CSearchAnalysis::reset() {
 void CSearchAnalysis::slotResized() {
 	m_scaleFactor = (double)( (double)(height()-UPPER_BORDER-LOWER_BORDER-BAR_LOWER_BORDER-(m_moduleList.count()-1)*BAR_DELTAY)
 							  /(double)m_maxCount);
-	Q3DictIterator<CSearchAnalysisItem> it( m_canvasItemList );
+	QHashtIterator<CSearchAnalysisItem> it( m_canvasItemList );
 	while ( it.current() ) {
 		it.current()->setSize(BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-UPPER_BORDER-LOWER_BORDER);
 		it.current()->setY(UPPER_BORDER);

@@ -13,8 +13,13 @@
 #define SEARCHCSEARCHANALYSISVIEW_H
 
 #include <QGraphicsView>
+#include <QSize>
+
+class QResizeEvent;
 
 namespace Search {
+
+class CSearchAnalysisScene;
 
 /**
 	@author The BibleTime team <info@bibletime.info>
@@ -24,7 +29,7 @@ class CSearchAnalysisView : public QGraphicsView
 public:
     CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent);
 
-    ~CSearchAnalysisView();
+    ~CSearchAnalysisView() {}
 
 /**
 	* Returns the sizeHint for this view
@@ -32,30 +37,17 @@ public:
 	* This is a reimplementation from QCanvasView::sizeHint().
 	*/
 	virtual QSize sizeHint();
+
 	/**
 	* Returns the item at position p or 0 if there is no item.
 	*/
-	CSearchAnalysisItem* itemAt( const QPoint& p );
+	//CSearchAnalysisItem* itemAt( const QPoint& p );
 
 protected:
 	/**
 	* Reimplementation.
 	*/
 	virtual void resizeEvent(QResizeEvent* e);
-
-private:
-	class ToolTip{
-	public:
-		ToolTip(QWidget* parent);
-		virtual ~ToolTip() {}
-		;
-		/**
-		* Displays a tooltip for position p
-		*/
-		virtual void maybeTip(const QPoint &pos);
-	};
-	
-	ToolTip* m_toolTip;
 
 };
 

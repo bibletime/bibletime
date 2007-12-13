@@ -11,19 +11,18 @@
 //
 #include "csearchanalysisview.h"
 
+#include <QWidget>
+#include <QGraphicsView>
+#include <QResizeEvent>
+
+
 namespace Search {
 
 CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent)
  : QGraphicsView(scene, parent)
 {
 	setFocusPolicy(Qt::WheelFocus);
-	m_toolTip = new ToolTip(this);
 	resize(sizeHint());
-}
-
-
-CSearchAnalysisView::~CSearchAnalysisView()
-{
 }
 
 
@@ -38,31 +37,6 @@ QSize CSearchAnalysisView::sizeHint() {
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
 	QGraphicsView::resizeEvent(e);
 	scene()->resize( scene()->width(), viewport()->height() );
-}
-
-
-void CSearchAnalysisView::ToolTip::maybeTip(const QPoint& p) {
-	CSearchAnalysisView* view = dynamic_cast<CSearchAnalysisView*>(parentWidget());
-	if (!view)
-		return;
-	QPoint point(p);
-	point = view->viewport()->mapFrom(view, point);
-	CSearchAnalysisItem* i = view->itemAt( view->viewportToContents(point) );
-	if (!i)
-		return;
-
-	//get type of item and display correct text
-	QString text = i->getToolTip();
-	if (text.isEmpty())
-		return;
-
-	QPoint p1 = view->viewport()->mapTo(view, view->contentsToViewport(i->rect().topLeft()));
-	p1.setY(0);
-	QPoint p2 = view->viewport()->mapTo(view, view->contentsToViewport(i->rect().bottomRight()));
-	p2.setY(view->height());
-	QRect r = QRect( p1, p2 );
-	if (r.contains(p))
-		tip(r, text);
 }
 
 

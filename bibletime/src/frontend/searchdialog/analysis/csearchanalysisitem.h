@@ -44,7 +44,7 @@ public:
 	const QString getToolTip();
 
 private:
-	virtual void draw (QPainter & painter);
+	virtual void paint(QPainter & painter);
 
 	ListCSwordModuleInfo* m_moduleList;
 	double *m_scaleFactor;

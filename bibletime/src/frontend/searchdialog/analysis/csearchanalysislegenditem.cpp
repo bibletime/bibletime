@@ -41,7 +41,7 @@ CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QGraphicsScene *parent, Lis
 }
 
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisLegendItem::draw (QPainter& painter) {
+void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 	painter.save();
 
 	setPen( QPen(black,2) );

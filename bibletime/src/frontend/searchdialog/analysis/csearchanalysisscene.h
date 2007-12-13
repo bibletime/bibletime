@@ -12,9 +12,19 @@
 #ifndef SEARCHCSEARCHANALYSISSCENE_H
 #define SEARCHCSEARCHANALYSISSCENE_H
 
+#include "csearchanalysisitem.h"
+
+#include "backend/drivers/cswordmoduleinfo.h"
+
+
 #include <QGraphicsScene>
+#include <QColor>
+#include <QMap>
+#include <QHash>
 
 namespace Search {
+
+class CSearchAnalysisLegendItem;
 
 /**
 	@author The BibleTime team <info@bibletime.info>
@@ -37,7 +47,7 @@ public:
 	* @return The color at position index in the list
 	*/
 	static QColor getColor(int index);
-	/*
+	/**
 	* This function returns a pointer to the list of AnalysisItems
 	*/
 	Q3Dict<CSearchAnalysisItem>* getSearchAnalysisItemList();
@@ -59,7 +69,7 @@ private:
 	const unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
 	ListCSwordModuleInfo m_moduleList;
-	Q3Dict<CSearchAnalysisItem> m_canvasItemList;
+	QHash<CSearchAnalysisItem> m_itemList;
 	QMap<CSwordModuleInfo*,unsigned int> m_lastPosList;
 	int m_maxCount;
 	double m_scaleFactor;

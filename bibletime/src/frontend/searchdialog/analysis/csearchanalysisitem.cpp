@@ -11,6 +11,14 @@
 //
 #include "csearchanalysisitem.h"
 
+#include <QGraphicsRectItem>
+#include <QPainter>
+#include <QFont>
+#include <QPen>
+#include <QPoint>
+#include <QRect>
+
+
 namespace Search {
 
 const int SPACE_BETWEEN_PARTS = 5;
@@ -34,10 +42,7 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysisItem::CSearchAnalysisItem()
- : QGraphicsRectItem()
-{
-}
+
 
 CSearchAnalysisItem::CSearchAnalysisItem(QGraphicsScene *parent, const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
 	: QGraphicsRectItem(parent),
@@ -51,6 +56,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(QGraphicsScene *parent, const int modul
 	int index = 0;
 	for (index = 0; index < m_moduleCount; ++index)
 		m_resultCountArray[index] = 0;
+	setToolTip(getToolTip());
 }
 
 CSearchAnalysisItem::~CSearchAnalysisItem()
@@ -69,7 +75,7 @@ int CSearchAnalysisItem::getCountForModule( const int moduleIndex) {
 }
 
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisItem::draw(QPainter& painter) {
+void CSearchAnalysisItem::paint(QPainter& painter) {
 	QFont f = painter.font();
 	f.setPointSize(ITEM_TEXT_SIZE);
 	painter.setFont(f);
@@ -132,8 +138,8 @@ int CSearchAnalysisItem::width() {
 
 /** Returns the tooltip for this item. */
 const QString CSearchAnalysisItem::getToolTip() {
-	QString ret = QString("<center><b>%1</b></center><hr/>").arg(m_bookName);
-	ret += "<table cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" height=\"100%\" align=\"center\">";
+	QString toolTipString = QString("<center><b>%1</b></center><hr/>").arg(m_bookName);
+	toolTipString += "<table cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" height=\"100%\" align=\"center\">";
 
 	//ToDo: Fix that loop
 	int i = 0;
@@ -154,9 +160,9 @@ const QString CSearchAnalysisItem::getToolTip() {
 		++i;
 	}
 
-	ret += "</table>";
+	toolTipString += "</table>";
 
-	return ret;
+	return toolTipString;
 }
 
 }

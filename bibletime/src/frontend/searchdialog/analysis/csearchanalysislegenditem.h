@@ -25,7 +25,7 @@ public:
 	CSearchAnalysisLegendItem(QGraphicsScene* parent, ListCSwordModuleInfo* list );
 
 private:
-	virtual void draw (QPainter & painter);
+	virtual void paint(QPainter & painter);
 	ListCSwordModuleInfo* m_moduleList;
 
 };
