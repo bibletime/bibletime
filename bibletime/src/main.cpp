@@ -53,7 +53,7 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 			fprintf( stderr,"(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
 			break;
 		case QtFatalMsg:
-			fprintf( stderr,"(BibleTime %s) _FATAL_: %s\nPlease contact info@bibletime.de and report this bug!", BT_VERSION, msg );
+			fprintf( stderr,"(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", BT_VERSION, msg );
 			abort(); // dump core on purpose
 	}
 }
