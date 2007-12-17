@@ -50,8 +50,11 @@ public:
 	/**
 	* This function returns a pointer to the list of AnalysisItems
 	*/
-	QHash<CSearchAnalysisItem>* getSearchAnalysisItemList();
+	QHash<QString, CSearchAnalysisItem*>* getSearchAnalysisItemList();
 	void reset();
+
+public slots:
+	void saveAsHTML();
 
 protected slots: // Protected slots
 	/**
@@ -69,14 +72,12 @@ private:
 	const unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
 	ListCSwordModuleInfo m_moduleList;
-	QHash<CSearchAnalysisItem> m_itemList;
+	QHash<QString, CSearchAnalysisItem*> m_itemList;
 	QMap<CSwordModuleInfo*,unsigned int> m_lastPosList;
 	int m_maxCount;
 	double m_scaleFactor;
 	CSearchAnalysisLegendItem* m_legend;
 
-public slots: // Public slots
-	void saveAsHTML();
 
 };
 

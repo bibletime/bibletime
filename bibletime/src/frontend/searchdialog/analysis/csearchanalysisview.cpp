@@ -10,6 +10,7 @@
 //
 //
 #include "csearchanalysisview.h"
+#include "csearchanalysisscene.h"
 
 #include <QWidget>
 #include <QGraphicsView>
@@ -36,7 +37,7 @@ QSize CSearchAnalysisView::sizeHint() {
 /** No descriptions */
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
 	QGraphicsView::resizeEvent(e);
-	scene()->resize( scene()->width(), viewport()->height() );
+	scene()->setSceneRect(0,0, scene()->sceneRect().width(), viewport()->height() );
 }
 
 

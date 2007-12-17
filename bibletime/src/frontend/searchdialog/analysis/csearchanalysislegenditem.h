@@ -24,7 +24,7 @@ namespace Search {
 class CSearchAnalysisLegendItem : public QGraphicsRectItem
 {
 public:
-	CSearchAnalysisLegendItem(QGraphicsScene* parent, ListCSwordModuleInfo* list );
+	CSearchAnalysisLegendItem(ListCSwordModuleInfo* list );
 
 private:
 	virtual void paint(QPainter & painter);

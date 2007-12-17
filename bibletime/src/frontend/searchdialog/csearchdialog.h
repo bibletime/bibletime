@@ -44,7 +44,7 @@ public:
 	static void openDialog(const ListCSwordModuleInfo modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
 
 protected:
-	friend class CSearchAnalysis;
+	friend class CSearchAnalysisScene;
 	friend class CSearchResultArea;
 	friend class BibleTime;
 

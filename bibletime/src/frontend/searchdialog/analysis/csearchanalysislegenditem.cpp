@@ -41,8 +41,8 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QGraphicsScene *parent, ListCSwordModuleInfo *list )
-	: QGraphicsRectItem(parent)
+CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(ListCSwordModuleInfo *list )
+	: QGraphicsRectItem()
 {
 	m_moduleList = list;
 }
@@ -57,7 +57,7 @@ void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 	QPoint p1( (int)x(), (int)y() );
 	QPoint p2( (int)x()+rect().width(), (int)y() + rect().height() );
 	QRect r(p1, p2);
-	r.normalize();
+	r = r.normalized();
 	painter.drawRect(r);
 
 	QFont f = painter.font();
@@ -73,7 +73,7 @@ void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 		QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
 		QRect r(p1,p2);
 		painter.fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
-		r.normalize();
+		r = r.normalized();
 		painter.drawRect(r);
 
 		QPoint p3( p2.x() + LEGEND_INNER_BORDER, p2.y() );

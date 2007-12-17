@@ -25,8 +25,8 @@ namespace Search {
 class CSearchAnalysisItem : public QGraphicsRectItem
 {
 public:
-    CSearchAnalysisItem();
-	CSearchAnalysisItem(QGraphicsScene* parent, const int moduleCount, const QString& bookname, double *scaleFactor, ListCSwordModuleInfo* modules);
+
+	CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, ListCSwordModuleInfo* modules);
     ~CSearchAnalysisItem();
 	/**
 	* Sets the resultcount of this item

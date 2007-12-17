@@ -47,8 +47,8 @@ const int LEGEND_WIDTH = 85;
 
 
 
-CSearchAnalysisItem::CSearchAnalysisItem(QGraphicsScene *parent, const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
-	: QGraphicsRectItem(parent),
+CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
+	: QGraphicsRectItem(),
 	m_moduleList( modules ),
 	m_scaleFactor(scaleFactor),
 	m_bookName(bookname),
@@ -121,8 +121,8 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 		Value = newValue;
 	}
 	if (!m_bufferPixmap) {
-		m_bufferPixmap = new QPixmap();
-		m_bufferPixmap->resize(width(),BAR_LOWER_BORDER);
+		m_bufferPixmap = new QPixmap(width(),BAR_LOWER_BORDER);
+		//m_bufferPixmap->resize(width(),BAR_LOWER_BORDER);
 		m_bufferPixmap->fill();
 		QPainter p(m_bufferPixmap);
 		f = p.font();
