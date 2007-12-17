@@ -91,9 +91,13 @@ SET(bibletime_SOURCES
 	src/frontend/searchdialog/csearchresultview.cpp
 	src/frontend/searchdialog/csearchdialogareas.cpp
 	src/frontend/searchdialog/cmoduleresultview.cpp
-	#src/frontend/searchdialog/csearchanalysis.cpp
 	src/frontend/searchdialog/cmodulechooserdialog.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
+	src/frontend/searchdialog/analysis/csearchanalysisitem.cpp
+	src/frontend/searchdialog/analysis/csearchanalysislegenditem.cpp
+	src/frontend/searchdialog/analysis/csearchanalysisscene.cpp
+	src/frontend/searchdialog/analysis/csearchanalysisview.cpp
+	src/frontend/searchdialog/analysis/csearchanalysisdialog.cpp
 
 	#Profile manager frontend
 	src/frontend/profile/cprofilemgr.cpp
