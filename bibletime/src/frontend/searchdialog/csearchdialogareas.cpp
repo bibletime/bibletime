@@ -13,11 +13,11 @@
 #include "csearchdialogareas.moc"
 
 #include "csearchdialog.h"
-//#include "csearchanalysis.h"
 #include "crangechooserdialog.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
 #include "cmodulechooserdialog.h"
+#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 
 #include "backend/keys/cswordversekey.h"
 #include "backend/rendering/cdisplayrendering.h"
@@ -254,7 +254,7 @@ void CSearchResultArea::initView()
 
 	//analyze button
 	hboxLayout = new QHBoxLayout();
-	m_analyseButton = new QPushButton(i18n("&Analyze search"), resultListsWidget);
+	m_analyseButton = new QPushButton(i18n("&Analyze search..."), resultListsWidget);
 	hboxLayout->addWidget(m_analyseButton);
 	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	hboxLayout->addItem(spacerItem);
@@ -293,11 +293,12 @@ void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
 	reset(); //clear current modules
 
 	m_modules = modules;
-	//TODO:
+	
 	m_moduleListBox->setupTree(modules, searchedText);
 	m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 	m_resultListBox->setCurrentItem(m_resultListBox->topLevelItem(0), 0);
 
+	m_analyseButton->setEnabled(true);
 }
 
 
@@ -691,9 +692,9 @@ void CSearchResultArea::initConnections()
 
 /** Shows a dialog with the search analysis of the current search. */
 void CSearchResultArea::showAnalysis() {
-	//TODO: create and show
-	//Analysis::CSearchAnalysisDialog dlg(m_modules, this);
-	//dlg.exec();
+	qDebug("CSearchResultArea::showAnalysis");
+	CSearchAnalysisDialog dlg(m_modules, this);
+	dlg.exec();
 }
 
 //--------------CSearchOptionsArea------------------------

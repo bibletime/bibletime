@@ -35,6 +35,7 @@
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <khistorycombobox.h>
+#include <kpushbutton.h>
 
 namespace Search {
 
@@ -124,7 +125,7 @@ void CSearchDialog::startSearch()
 		}
 	}
 
-	m_searchResultArea->reset();
+	//m_searchResultArea->reset();
 
 //	const int searchFlags = m_searchOptionsArea->searchFlags();
 
@@ -234,7 +235,7 @@ void CSearchDialog::initView()
 }
 
 void CSearchDialog::searchFinished() {
-// 	qWarning("CSearchDialog::searchFinished()");
+	qDebug("CSearchDialog::searchFinished()");
 
 	if ( m_searcher.foundItems() ) {
 		m_searchResultArea->setSearchResult(modules());
@@ -254,11 +255,13 @@ void CSearchDialog::showModulesSelector() {
 void CSearchDialog::initConnections() {
 	connect(this, SIGNAL(user1Clicked()), SLOT(startSearch()));
 	connect(this, SIGNAL(closeClicked()), SLOT(slotClose()));
-	QObject::connect(m_searchOptionsArea->m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()), this, SLOT(startSearch()));
+	// Pressing return in search term editor starts the search:
+	QObject::connect(m_searchOptionsArea->m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()), this->button(KDialog::User1), SLOT(setFocus()) );
 }
 
 /** Resets the parts to the default. */
 void CSearchDialog::reset() {
+	qDebug("CSearchDialog::reset");
 	m_searchOptionsArea->reset();
 	m_searchResultArea->reset();
 }
