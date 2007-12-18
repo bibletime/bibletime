@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cbookmarkindex.h"
 #include "cbookmarkindex.moc"
@@ -54,11 +52,8 @@
 #include <klocale.h>
 #include <kmenu.h>
 #include <kmessagebox.h>
-#include <kglobalsettings.h>
 #include <kaction.h>
 #include <kactionmenu.h>
-
-
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),

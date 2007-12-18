@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cbtconfig.h"
 
@@ -24,7 +22,6 @@
 #include <QStringList>
 #include <QMap>
 #include <QList>
-
 #include <QDebug>
 
 //KDE includes
@@ -32,11 +29,7 @@
 #include <kactioncollection.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kcharsets.h>
-#include <kglobal.h>
 #include <klocale.h>
-//#include <kstaticdeleter.h>
-
 #include <khtml_settings.h>
 
 //Sword includes

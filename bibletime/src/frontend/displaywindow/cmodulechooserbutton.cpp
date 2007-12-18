@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cmodulechooserbutton.h"
 #include "cmodulechooserbutton.moc"
 
@@ -30,7 +28,6 @@
 
 //KDE includes
 #include <klocale.h>
-#include <kglobal.h>
 #include <kmenu.h>
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)

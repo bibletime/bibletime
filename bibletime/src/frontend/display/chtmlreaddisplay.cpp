@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "chtmlreaddisplay.h"
 #include "chtmlreaddisplay.moc"
 
@@ -18,7 +16,6 @@
 #include "backend/keys/cswordkey.h"
 
 #include "frontend/cbtconfig.h"
-//#include "../cdragdropmgr.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 
@@ -32,13 +29,11 @@
 //Qt includes
 #include <QCursor>
 #include <QScrollArea>
-//#include <q3dragobject.h>
 #include <QDrag>
 #include <QMenu>
 #include <QLayout>
 #include <QTimer>
 #include <QDebug>
-//#endif //?
 
 //KDE includes
 #include <kapplication.h>

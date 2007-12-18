@@ -8,8 +8,6 @@
 **********/
 
 
-
-//BibleTime includes
 #include "cbookshelfindex.h"
 #include "cbookshelfindex.moc"
 
@@ -24,7 +22,6 @@
 #include "frontend/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/btaboutmoduledialog.h"
-
 #include "frontend/cprinter.h"
 #include "frontend/cdragdrop.h"
 
@@ -42,7 +39,6 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QInputDialog> // for unlocking key
-
 #include <QDebug>
 
 #include <boost/scoped_ptr.hpp>
@@ -50,13 +46,8 @@
 //KDE includes
 #include <klocale.h>
 #include <kmenu.h>
-#include <kmessagebox.h> // module "about"
-#include <kglobalsettings.h>
 #include <kaction.h>
 #include <kactionmenu.h>
-
-
-
 
 CBookshelfIndex::CBookshelfIndex(QWidget *parent)
 	: QTreeWidget(parent),

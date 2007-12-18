@@ -46,7 +46,6 @@
 #include <kaboutapplicationdialog.h>
 #include <kmenubar.h>
 #include <kaboutdata.h>
-#include <kglobal.h>
 #include <klocale.h>
 #include <kedittoolbar.h>
 #include <kmenu.h>
