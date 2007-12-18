@@ -31,7 +31,7 @@
 #include <kcmdlineargs.h>
 #include <kcrash.h>
 #include <kapplication.h>
-#include <kstandarddirs.h>
+#include <kstandarddirs.h> //for locale inclusion
 #include <kaboutdata.h>
 #include <klocale.h>
 

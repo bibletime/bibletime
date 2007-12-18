@@ -13,15 +13,13 @@
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
 #include <QDebug>
-
-//KDE includes
-#include <kstandarddirs.h>
 
 //Sword includes
 #include <filemgr.h>
@@ -39,8 +37,7 @@ namespace BookshelfManager {
 
 const QString BTInstallMgr::Tool::LocalConfig::swordConfigFilename()
 {
-	//  Q_ASSERT( CPointers::backend()->sysconfig );
-	return QString::fromLatin1("%1/.sword/sword.conf").arg(getenv("HOME"));
+	return util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
 }
 
 QStringList BTInstallMgr::Tool::RemoteConfig::sourceList( sword::InstallMgr* mgr )
@@ -83,7 +80,8 @@ QStringList BTInstallMgr::Tool::LocalConfig::targetList()
 void BTInstallMgr::Tool::LocalConfig::setTargetList( const QStringList& targets )
 {
 	//saves a new Sworc config using the provided target list
-	QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
+	//QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
+	QString filename = util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
 	bool directAccess = false;
 
 	QFileInfo i(LocalConfig::swordConfigFilename());
@@ -104,13 +102,12 @@ void BTInstallMgr::Tool::LocalConfig::setTargetList( const QStringList& targets 
 
 	for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
 		QString t = *it;
-		if (t.contains( QString("%1/.sword").arg(getenv("HOME")) )) {
-			//we don't want HOME/.sword in the config
+		if (t.contains( util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword") )) {
+			//we don't want $HOME/.sword in the config
 			continue;
 		}
 		else {
 			conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.toLocal8Bit().data()) );
-
 			setDataPath = true;
 		}
 	}
