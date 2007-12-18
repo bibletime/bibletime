@@ -31,8 +31,7 @@ namespace Rendering {
 	CHTMLExportRendering::~CHTMLExportRendering() {}
 
 	const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
-		//  qDebug("CHTMLExportRendering::renderEntry");
-
+		
 		if (i.hasAlternativeContent()) {
 			QString ret = QString(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
 			ret.append(i.getAlternativeContent());
@@ -59,41 +58,28 @@ namespace Rendering {
 
 
 		const ListCSwordModuleInfo& modules( i.modules() );
-
-		Q_ASSERT(modules.count() >= 1);
-
-		boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
-
-		CSwordKey* key = k ? k : scoped_key.get();
-
-		Q_ASSERT(key);
-
-		CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);
-
-		if ( myVK  ) {
-			myVK->Headings(1);
-		}
-
-		QString renderedText( (modules.count() > 1) ? "<tr>" : "" );
-
 		if (modules.count() == 0) {
 			return QString(""); //no module present for rendering
 		}
 
+		boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
+		CSwordKey* key = k ? k : scoped_key.get();
+		Q_ASSERT(key);
+
+		CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);
+
+		if ( myVK ) myVK->Headings(1);
+
+		QString renderedText( (modules.count() > 1) ? "\n\t\t<tr>\n" : "\n" );
 		// Only insert the table stuff if we are displaying parallel.
-		// Otherwise, strip out he table stuff -> the whole chapter will be rendered in one cell!
 
 		//declarations out of the loop for optimization
 		QString entry;
-
 		QString keyText;
-
 		bool isRTL;
-
-		//taken out of the loop for optimization
 		QString preverseHeading;
-
 		QString langAttr;
+		QString key_renderedText;
 
 		ListCSwordModuleInfo::const_iterator end_modItr = modules.end();
 
@@ -120,9 +106,7 @@ namespace Rendering {
 					.append("\"");
 			}
 
-			const QString key_renderedText = key->renderedText();
-
-			//   qWarning(key_renderedText.latin1());
+			key_renderedText = key->renderedText();
 
 			if (m_filterOptions.headings) {
 				sword::AttributeValue::const_iterator it =
@@ -132,20 +116,18 @@ namespace Rendering {
 
 				for (; it != end; ++it) {
 					preverseHeading = QString::fromUtf8(it->second.c_str());
-
 					//TODO: Take care of the heading type!
-
 					if (!preverseHeading.isEmpty()) {
 						entry.append("<div ")
-						.append(langAttr)
-						.append(" class=\"sectiontitle\">")
-						.append(preverseHeading)
-						.append("</div>");
+							.append(langAttr)
+							.append(" class=\"sectiontitle\">")
+							.append(preverseHeading)
+							.append("</div>");
 					}
 				}
 			}
 
-			entry.append(m_displayOptions.lineBreaks  ? "<div "  : "<span ");
+			entry.append(m_displayOptions.lineBreaks  ? "<div "  : "<div style=\"display: inline;\" ");
 
 			if (modules.count() == 1) { //insert only the class if we're not in a td
 				entry.append( i.settings().highlight  ? "class=\"currententry\" " : "class=\"entry\" " );
@@ -169,26 +151,26 @@ namespace Rendering {
 				}
 			}
 
-			entry.append(m_displayOptions.lineBreaks ? "</div>\n"  : "</span>\n");
+			entry.append("</div>");
 
 			if (modules.count() == 1) {
-				renderedText.append( entry );
+				renderedText.append( "\t\t" ).append( entry ).append("\n");
 			}
 			else {
-				renderedText.append("<td class=\"")
+				renderedText.append("\t\t<td class=\"")
 				.append(i.settings().highlight ? "currententry" : "entry")
 				.append("\" ")
 				.append(langAttr)
 				.append(" dir=\"")
 				.append(isRTL ? "rtl" : "ltr")
-				.append("\">")
-				.append(entry)
-				.append("</td>\n");
+				.append("\">\n")
+				.append( "\t\t\t" ).append( entry ).append("\n")
+				.append("\t\t</td>\n");
 			}
 		}
 
 		if (modules.count() > 1) {
-			renderedText.append("</tr>\n");
+			renderedText.append("\t\t</tr>\n");
 		}
 
 		//  qDebug("CHTMLExportRendering: %s", renderedText.latin1());
