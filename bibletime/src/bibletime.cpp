@@ -38,24 +38,21 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/keys/cswordldkey.h"
 
-
 //Qt includes
 #include <QSplitter>
-
 #include <QDebug>
 
 //KDE includes
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <krandomsequence.h>
-#include <kxmlguiwindow.h>
 #include <ktoggleaction.h>
 #include <kdialog.h>
 
 using namespace Profile;
 
 BibleTime::BibleTime() : BibleTimeInterface(), 
-	KXmlGuiWindow(0),
+	QMainWindow(0),
 	m_windowActionCollection(0),
 	m_initialized(false),
 	m_moduleList(0),
@@ -68,13 +65,13 @@ BibleTime::BibleTime() : BibleTimeInterface(),
 	m_mainIndex(0)
 {
 	//setObjId("BibleTimeInterface"); //DCOP?
-	setHelpMenuEnabled(false);
+// 	setHelpMenuEnabled(false);
 
 	initBackends();
 	initView();
 	initActions();
 
-	createGUI(util::filesystem::DirectoryUtil::getXmlDir().canonicalPath().append("/bibletimeui.rc"));
+	//createGUI(util::filesystem::DirectoryUtil::getXmlDir().canonicalPath().append("/bibletimeui.rc"));
 	initMenubar();
 	initConnections();
 
@@ -83,7 +80,7 @@ BibleTime::BibleTime() : BibleTimeInterface(),
 	setPlainCaption( QString("BibleTime ").append(BT_VERSION) );
 
 	// we don't save the geometry, it's stored in the startup profile
-	setAutoSaveSettings(QString("MainWindow"), false);
+// 	setAutoSaveSettings(QString("MainWindow"), false);
 }
 
 BibleTime::~BibleTime() {
@@ -93,89 +90,89 @@ BibleTime::~BibleTime() {
 
 /** Saves the properties of BibleTime to the application wide configfile  */
 void BibleTime::saveSettings() {
-	if (m_mdi) {
-		m_mdi->saveSettings();
-	}
-
-	//TODO: how to write settings?
-	//accel()->writeSettings(CBTConfig::getConfig());
-
-	CBTConfig::set
-		(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
-	CBTConfig::set
-		(CBTConfig::mainIndex, m_viewMainIndex_action->isChecked());
-	CBTConfig::set
-		(CBTConfig::infoDisplay, m_viewInfoDisplay_action->isChecked());
-
-	CBTConfig::set
-		(CBTConfig::mainSplitterSizes, m_mainSplitter->sizes());
-	CBTConfig::set
-		(CBTConfig::leftPaneSplitterSizes, m_leftPaneSplitter->sizes());
-
-	// set the default to false
-	/* CBTConfig::set(CBTConfig::autoTileVertical, false);
-	 CBTConfig::set(CBTConfig::autoTileHorizontal, false);
-	 CBTConfig::set(CBTConfig::autoCascade, false);
-	*/
-	CBTConfig::set
-		(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
-	CBTConfig::set
-		(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
-	CBTConfig::set
-		(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
-
-
-	CProfile* p = m_profileMgr.startupProfile();
-	if (p) {
-		saveProfile(p);
-	}
+// 	if (m_mdi) {
+// 		m_mdi->saveSettings();
+// 	}
+// 
+// 	//TODO: how to write settings?
+// 	//accel()->writeSettings(CBTConfig::getConfig());
+// 
+// 	CBTConfig::set
+// 		(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
+// 	CBTConfig::set
+// 		(CBTConfig::mainIndex, m_viewMainIndex_action->isChecked());
+// 	CBTConfig::set
+// 		(CBTConfig::infoDisplay, m_viewInfoDisplay_action->isChecked());
+// 
+// 	CBTConfig::set
+// 		(CBTConfig::mainSplitterSizes, m_mainSplitter->sizes());
+// 	CBTConfig::set
+// 		(CBTConfig::leftPaneSplitterSizes, m_leftPaneSplitter->sizes());
+// 
+// 	// set the default to false
+// 	/* CBTConfig::set(CBTConfig::autoTileVertical, false);
+// 	 CBTConfig::set(CBTConfig::autoTileHorizontal, false);
+// 	 CBTConfig::set(CBTConfig::autoCascade, false);
+// 	*/
+// 	CBTConfig::set
+// 		(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
+// 	CBTConfig::set
+// 		(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
+// 	CBTConfig::set
+// 		(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
+// 
+// 
+// 	CProfile* p = m_profileMgr.startupProfile();
+// 	if (p) {
+// 		saveProfile(p);
+// 	}
 }
 
 /** Reads the settings from the configfile and sets the right properties. */
 void BibleTime::readSettings() {
-	qDebug("******************BibleTime::readSettings******************************");
-	//  accel()->readSettings(CBTConfig::getConfig());
-	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
-
-	m_viewToolbar_action->setChecked( CBTConfig::get
-										  (CBTConfig::toolbar) );
-	slotToggleToolbar();
-
-	m_viewMainIndex_action->setChecked( CBTConfig::get
-											(CBTConfig::mainIndex) );
-	slotToggleMainIndex();
-
-	m_viewInfoDisplay_action->setChecked( CBTConfig::get
-											  (CBTConfig::infoDisplay) );
-	slotToggleInfoDisplay();
-
-	//we don't want to set wrong sizes
-	if ( CBTConfig::get(CBTConfig::mainSplitterSizes).count() > 0 ) {
-		m_mainSplitter->setSizes(CBTConfig::get(CBTConfig::mainSplitterSizes));
-		m_leftPaneSplitter->setSizes(CBTConfig::get(CBTConfig::leftPaneSplitterSizes));
-	}
-	if ( CBTConfig::get
-				(CBTConfig::autoTileVertical) ) {
-			m_windowAutoTileVertical_action->setChecked( true );
-			m_windowManualMode_action->setChecked(false);
-			slotAutoTileVertical();
-		}
-	else if ( CBTConfig::get
-				  (CBTConfig::autoTileHorizontal) ) {
-			m_windowAutoTileHorizontal_action->setChecked( true );
-			m_windowManualMode_action->setChecked(false);
-			slotAutoTileHorizontal();
-		}
-	else if ( CBTConfig::get
-				  (CBTConfig::autoCascade) ) {
-			m_windowAutoCascade_action->setChecked(true);
-			m_windowManualMode_action->setChecked(false);
-			slotAutoCascade();
-		}
-	else {
-		m_windowManualMode_action->setChecked(true);
-		slotManualArrangementMode();
-	}
+// 	qDebug("******************BibleTime::readSettings******************************");
+// 	//  accel()->readSettings(CBTConfig::getConfig());
+// // 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
+// 
+// 	m_viewToolbar_action->setChecked( CBTConfig::get
+// 										  (CBTConfig::toolbar) );
+// 	slotToggleToolbar();
+// 
+// 	m_viewMainIndex_action->setChecked( CBTConfig::get
+// 											(CBTConfig::mainIndex) );
+// 	slotToggleMainIndex();
+// 
+// 	m_viewInfoDisplay_action->setChecked( CBTConfig::get
+// 											  (CBTConfig::infoDisplay) );
+// 	slotToggleInfoDisplay();
+// 
+// 	//we don't want to set wrong sizes
+// 	if ( CBTConfig::get(CBTConfig::mainSplitterSizes).count() > 0 ) {
+// 		m_mainSplitter->setSizes(CBTConfig::get(CBTConfig::mainSplitterSizes));
+// 		m_leftPaneSplitter->setSizes(CBTConfig::get(CBTConfig::leftPaneSplitterSizes));
+// 	}
+// 	if ( CBTConfig::get
+// 				(CBTConfig::autoTileVertical) ) {
+// 			m_windowAutoTileVertical_action->setChecked( true );
+// 			m_windowManualMode_action->setChecked(false);
+// 			slotAutoTileVertical();
+// 		}
+// 	else if ( CBTConfig::get
+// 				  (CBTConfig::autoTileHorizontal) ) {
+// 			m_windowAutoTileHorizontal_action->setChecked( true );
+// 			m_windowManualMode_action->setChecked(false);
+// 			slotAutoTileHorizontal();
+// 		}
+// 	else if ( CBTConfig::get
+// 				  (CBTConfig::autoCascade) ) {
+// 			m_windowAutoCascade_action->setChecked(true);
+// 			m_windowManualMode_action->setChecked(false);
+// 			slotAutoCascade();
+// 		}
+// 	else {
+// 		m_windowManualMode_action->setChecked(true);
+// 		slotManualArrangementMode();
+// 	}
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
@@ -279,12 +276,12 @@ void BibleTime::restoreWorkspace() {
 
 /** Sets the caption of the mainwindow */
 void BibleTime::setCaption( const QString& ) {
-	KMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
+// 	QMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
 }
 
 /** Sets the plain caption of the main window */
 void BibleTime::setPlainCaption( const QString& ) {
-	KMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
+// 	QMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
 }
 
 /** Processes the commandline options given to BibleTime. */
@@ -325,7 +322,7 @@ void BibleTime::processCommandline() {
 //void BibleTime::ensurePolished() {
 //	m_initialized = true;
 
-//	KMainWindow::ensurePolished();
+//	QMainWindow::ensurePolished();
 //	applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
 //}
 
@@ -334,17 +331,17 @@ bool BibleTime::event(QEvent* e)
 	if (e->type() == QEvent::Polish) {
 		qDebug("BibleTime::event type Polish");
 		m_initialized = true;
-		applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
+// 		applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
 	}
 	if (e->type() == QEvent::Close) {
 		
 	}
-	return KXmlGuiWindow::event(e);
+	return QMainWindow::event(e);
 }
 
 void BibleTime::closeEvent(QCloseEvent* e) {
 	//qDebug("Now we will call kapp->quit");
-	KXmlGuiWindow::closeEvent(e);
+	QMainWindow::closeEvent(e);
 	e->ignore();
 	kapp->quit();
 }

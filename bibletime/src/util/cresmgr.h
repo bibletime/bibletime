@@ -12,9 +12,7 @@
 
 //Qt includes
 #include <QString>
-
-//KDE includes
-#include <kshortcut.h>
+#include <QKeySequence>
 
 /** Provides static functions to easily access the Tooltip texts for all the frontend parts.
   * @author The BibleTime team
@@ -88,14 +86,14 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace showInfoDisplay {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace showToolBar { //a standard action
@@ -108,14 +106,14 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace searchdefaultbible {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 		}
@@ -137,7 +135,7 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace deleteProfile {
@@ -150,42 +148,42 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace arrangementMode {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 
 				namespace manual {
 					extern QString tooltip;
 
 					extern const QString icon;
-					extern const KShortcut accel;
+					extern const QKeySequence accel;
 					extern const char* actionName;
 				}
 				namespace autoTileVertical {
 					extern QString tooltip;
 
 					extern const QString icon;
-					extern const KShortcut accel;
+					extern const QKeySequence accel;
 					extern const char* actionName;
 				}
 				namespace autoTileHorizontal {
 					extern QString tooltip;
 
 					extern const QString icon;
-					extern const KShortcut accel;
+					extern const QKeySequence accel;
 					extern const char* actionName;
 				}
 				namespace autoCascade {
 					extern QString tooltip;
 
 					extern const QString icon;
-					extern const KShortcut accel;
+					extern const QKeySequence accel;
 					extern const char* actionName;
 				}
 			}
@@ -193,28 +191,28 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace tileHorizontal {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace cascade {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace closeAll {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 		}
@@ -232,7 +230,7 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 		}
@@ -242,14 +240,14 @@ namespace CResMgr {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace bibleStudyHowTo {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace bugreport { // available as KStdAction
@@ -378,7 +376,7 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
@@ -386,14 +384,14 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace forwardInHistory {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
@@ -401,7 +399,7 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 		}
@@ -414,12 +412,12 @@ namespace workspace {}
 			namespace nextBook {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 			namespace previousBook {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 
 			namespace chapterList {
@@ -429,12 +427,12 @@ namespace workspace {}
 			namespace nextChapter {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 			namespace previousChapter {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 
 			namespace verseList {
@@ -444,12 +442,12 @@ namespace workspace {}
 			namespace nextVerse {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 			namespace previousVerse {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 			
 			namespace copyMenu {
@@ -467,7 +465,7 @@ namespace workspace {}
 				extern const QString icon;
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
@@ -481,12 +479,12 @@ namespace workspace {}
 			namespace nextEntry {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 			namespace previousEntry {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 
 			namespace copyMenu {
@@ -502,7 +500,7 @@ namespace workspace {}
 		namespace bookWindow {
 			namespace toggleTree {
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 			}
 		}
 
@@ -512,21 +510,21 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace restoreText {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace deleteEntry {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
@@ -535,21 +533,21 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace italicText {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace underlinedText {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
@@ -557,41 +555,41 @@ namespace workspace {}
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace alignCenter {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace alignRight {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace alignJustify {
 				extern QString tooltip;
 
 				extern const QString icon;
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 
 			namespace fontFamily {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace fontSize {
 				extern QString tooltip;
 
-				extern const KShortcut accel;
+				extern const QKeySequence accel;
 				extern const char* actionName;
 			}
 			namespace fontColor {
@@ -678,7 +676,7 @@ namespace workspace {}
 		namespace search {
 			extern QString tooltip;
 			extern const QString icon;
-			extern const KShortcut accel;
+			extern const QKeySequence accel;
 			extern const char* actionName;
 		}
 		namespace newFolder {

@@ -84,7 +84,7 @@ private:
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
 	qDebug("BibleTime::slotSettingsOptions");
-	CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
+	CConfigurationDialog *dlg = new CConfigurationDialog(this, 0 /*actionCollection()*/);
 	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
 	dlg->exec();
@@ -167,8 +167,8 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		m_windowCloseAll_action->setEnabled( true );
 	}
 	
-	QList<KAction*>::iterator end = m_windowOpenWindowsList.end();
-	for (QList<KAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
+	QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
+	for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
 		//(*it)->unplugAll(); //see kde porting doc
 		foreach (QWidget *w, (*it)->associatedWidgets() ) {
     		w->removeAction(*it);
@@ -200,7 +200,7 @@ void BibleTime::slotWindowMenuAboutToShow() {
 }
 
 /** This slot is connected with the windowAutoTile_action object */
-void BibleTime::slotUpdateWindowArrangementActions( KAction* clickedAction ) {
+void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
 	/* If a toggle action was clicked we see if it checked ot unchecked and
 	* enable/disable the simple cascade and tile options accordingly
 	*/
@@ -309,17 +309,16 @@ void BibleTime::slotWindowMenuActivated() {
 	}
 }
 
-
 /** Shows/hides the toolbar */
 void BibleTime::slotToggleToolbar() {
-	Q_ASSERT(toolBar("mainToolBar"));
+/*	Q_ASSERT(toolBar("mainToolBar"));
 
 	if (m_viewToolbar_action->isChecked()) {
 		toolBar("mainToolBar")->show();
 	}
 	else {
 		toolBar("mainToolBar")->hide();
-	}
+	}*/
 }
 
 /** Shows or hides the groupmanager. 
@@ -346,10 +345,10 @@ void BibleTime::slotToggleInfoDisplay() {
 
 /** Opens a toolbar editor */
 void BibleTime::slotSettingsToolbar() {
-	KEditToolBar dlg(actionCollection());
+/*	KEditToolBar dlg(actionCollection());
 	if (dlg.exec()) {
 		createGUI();
-	}
+	}*/
 }
 
 void BibleTime::slotSearchModules() {
@@ -399,7 +398,7 @@ void BibleTime::openOnlineHelp_Howto() {
 void BibleTime::saveProfile(QAction* action) {
 	m_mdi->setUpdatesEnabled(false);
 
-	KMenu* popup = m_windowSaveProfile_action->popupMenu();
+// 	KMenu* popup = m_windowSaveProfile_action->popupMenu();
 	//const QString profileName = popup->text(ID).remove("&");
 	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
@@ -440,7 +439,7 @@ void BibleTime::saveProfile(CProfile* profile) {
 }
 
 void BibleTime::loadProfile(QAction* action) {
-	KMenu* popup = m_windowLoadProfile_action->popupMenu();
+// 	KMenu* popup = m_windowLoadProfile_action->popupMenu();
 	//HACK: workaround the inserted & char by KPopupMenu
 	//const QString profileName = popup->text(ID).remove("&");
 	const QString profileName = action->text().remove("&");
@@ -507,16 +506,11 @@ void BibleTime::loadProfile(CProfile* p) {
 }
 
 void BibleTime::deleteProfile(QAction* action) {
-	KMenu* popup = m_windowDeleteProfile_action->popupMenu();
 	//HACK: work around the inserted & char by KPopupMenu
-	//const QString profileName = popup->text(ID).remove("&");
 	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	Q_ASSERT(p);
-
-	if ( p ) {
-		m_profileMgr.remove(p);
-	}
+	if ( p ) m_profileMgr.remove(p);
 	refreshProfileMenus();
 }
 
@@ -528,27 +522,19 @@ void BibleTime::toggleFullscreen() {
 /** Saves current settings into a new profile. */
 void BibleTime::saveToNewProfile() {
 	bool ok = false;
-	//const QString & title, const QString & label, QLineEdit::EchoMode echo = QLineEdit::Normal, const QString & text = QString(), bool * ok = 0, QWidget * parent = 0
-//	const QString name = QInputDialog::getText(i18n("Session name:"), i18n("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok, this);
 	const QString name = QInputDialog::getText(this, i18n("Session name:"), i18n("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
 	if (ok && !name.isEmpty()) {
 		CProfile* profile = m_profileMgr.create(name);
 		saveProfile(profile);
-	};
-
+	}
 	refreshProfileMenus();
 }
 
 /** Slot to refresh the save profile and load profile menus. */
 void BibleTime::refreshProfileMenus() {
-	KMenu* savePopup = m_windowSaveProfile_action->popupMenu();
-	savePopup->clear();
-
-	KMenu* loadPopup = m_windowLoadProfile_action->popupMenu();
-	loadPopup->clear();
-
-	KMenu* deletePopup = m_windowDeleteProfile_action->popupMenu();
-	deletePopup->clear();
+	m_windowSaveProfile_action->clear();
+	m_windowLoadProfile_action->clear();
+	m_windowDeleteProfile_action->clear();
 
 	//refresh the load, save and delete profile menus
 	m_profileMgr.refresh();
@@ -560,8 +546,8 @@ void BibleTime::refreshProfileMenus() {
 	m_windowDeleteProfile_action->setEnabled(enableActions);
 
 	foreach (CProfile* p, profiles) {
-		savePopup->addAction(p->name());
-		loadPopup->addAction(p->name());
-		deletePopup->addAction(p->name());
+		m_windowSaveProfile_action->addAction(p->name());
+		m_windowLoadProfile_action->addAction(p->name());
+		m_windowDeleteProfile_action->addAction(p->name());
 	}
 }

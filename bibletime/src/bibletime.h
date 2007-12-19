@@ -19,9 +19,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QList>
-
-#include <kxmlguiwindow.h>
-#include <kshortcut.h>
+#include <QMainWindow>
 
 class CMDIArea;
 class CDisplayWindow;
@@ -29,14 +27,14 @@ class CMainIndex;
 namespace InfoDisplay {
 	class CInfoDisplay;
 }
-class KToggleAction;
+class QAction;
 class KAccel;
-class KAction;
 class KActionMenu;
 class KActionCollection;
 class KHelpMenu;
 class QMenu;
 class QSplitter;
+class KConfig;
 
 /**
   * @page backend The structure of the backend
@@ -122,7 +120,7 @@ class QSplitter;
  * saveSettings().
  * This is the general way of all BibleTime classes.
  */
-class BibleTime : public KXmlGuiWindow, virtual public BibleTimeInterface {
+class BibleTime : public QMainWindow, virtual public BibleTimeInterface {
 	friend class CMDIArea;
 	Q_OBJECT
 public:
@@ -211,7 +209,7 @@ protected: // Protected methods
 	/**
 	* Initializes one action object
 	*/
-	void initAction(KAction* action, QString text, QString icon, KShortcut accel, QString tooltip, const char* actionName, const char* slot );
+	QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel, QString tooltip, const char* slot );
 	/**
 	* Refreshes all presenter supporting at least in of the features given as parameter.
 	*/
@@ -260,7 +258,7 @@ protected slots:
 	 * This slot is connected with the windowAutoCascade_action object
 	 */
 	void slotAutoCascade();
-	void slotUpdateWindowArrangementActions( KAction* );
+	void slotUpdateWindowArrangementActions( QAction* );
 
 	void slotCascade();
 	void slotTileVertical();
@@ -339,39 +337,33 @@ protected slots:
 	*/
 	void refreshProfileMenus();
 
-
 private:
-	QMenu* m_windowMenu;
-	QMenu* m_editMenu;
-
 	/** VIEW menu actions */
-	KAction* m_viewToolbar_action;
-	KToggleAction* m_viewMainIndex_action;
-	KToggleAction* m_viewInfoDisplay_action;
+	QAction* m_viewToolbar_action;
+	QAction* m_viewMainIndex_action;
+	QAction* m_viewInfoDisplay_action;
 
+ 	QMenu* m_windowMenu;
 	/** WINDOW menu actions */
-	KAction* m_windowCascade_action;
-	KAction* m_windowTileHorizontal_action;
-	KAction* m_windowTileVertical_action;
-	KActionMenu* m_windowArrangementMode_action;
-	KToggleAction* m_windowManualMode_action;
-	KToggleAction* m_windowAutoCascade_action;
-	KToggleAction* m_windowAutoTileVertical_action;
-	KToggleAction* m_windowAutoTileHorizontal_action;
-	KAction* m_windowCloseAll_action;
+	QAction* m_windowCascade_action;
+	QAction* m_windowTileHorizontal_action;
+	QAction* m_windowTileVertical_action;
+	QMenu* m_windowArrangementMode_action;
+	QAction* m_windowManualMode_action;
+	QAction* m_windowAutoCascade_action;
+	QAction* m_windowAutoTileVertical_action;
+	QAction* m_windowAutoTileHorizontal_action;
+	QAction* m_windowCloseAll_action;
 
 	KActionCollection* m_windowActionCollection;
 
-	KActionMenu* m_windowSaveProfile_action;
-	KAction* m_windowSaveToNewProfile_action;
-	KActionMenu* m_windowLoadProfile_action;
-	KActionMenu* m_windowDeleteProfile_action;
-	KToggleAction* m_windowFullscreen_action;
+	QMenu* m_windowSaveProfile_action;
+	QAction* m_windowSaveToNewProfile_action;
+	QMenu* m_windowLoadProfile_action;
+	QMenu* m_windowDeleteProfile_action;
+	QAction* m_windowFullscreen_action;
 
-	QList<KAction*> m_windowOpenWindowsList;
-
-	KHelpMenu* m_helpMenu;
-
+	QList<QAction*> m_windowOpenWindowsList;
 
 	bool m_initialized;
 	/**

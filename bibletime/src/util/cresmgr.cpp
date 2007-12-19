@@ -82,14 +82,14 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "view_sidetree";
-				const KShortcut accel(Qt::Key_F9);
+				const QKeySequence accel(Qt::Key_F9);
 				const char* actionName    = "viewMainIndex_action";
 			}
 			namespace showInfoDisplay {
 				QString tooltip;
 
 				const QString icon        = "view_sidetree";
-				const KShortcut accel(Qt::Key_F8);
+				const QKeySequence accel(Qt::Key_F8);
 				const char* actionName    = "viewInfoDisplay_action";
 			}
 			namespace showToolBar { //a standard action
@@ -103,14 +103,14 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "find.svg";
-				const KShortcut accel(Qt::CTRL + Qt::Key_O);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_O);
 				const char* actionName    = "mainindex_search_action";
 			}
 			namespace searchdefaultbible {
 				QString tooltip;
 
 				const QString icon        = "find.svg";
-				const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
+				const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
 				const char* actionName    = "mainindex_searchdefaultbible_action";
 			}
 		}
@@ -132,7 +132,7 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "view_sidetree";
-				const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_S);
+				const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_S);
 				const char* actionName    = "windowSaveToNewProfile_action";
 			}
 			namespace deleteProfile {
@@ -145,42 +145,42 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "window_fullscreen";
-				const KShortcut accel(Qt::CTRL + Qt::SHIFT + Qt::Key_F);
+				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_F);
 				const char* actionName    = "windowFullscreen_action";
 			}
 			namespace arrangementMode {
 				QString tooltip;
 
 				const QString icon        = "cascade_auto.svg";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName    = "windowArrangementMode_action";
 
 				namespace manual {
 					QString tooltip;
 
 					const QString icon        = "tile.svg";
-					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
+					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
 					const char* actionName    = "windowArrangementManual_action";
 				}
 				namespace autoTileHorizontal {
 					QString tooltip;
 
 					const QString icon        = "tile_auto.svg";
-					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
+					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
 					const char* actionName    = "windowAutoTileHorizontal_action";
 				}
 				namespace autoTileVertical {
 					QString tooltip;
 
 					const QString icon        = "tile_auto.svg";
-					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
+					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
 					const char* actionName    = "windowAutoTileVertical_action";
 				}
 				namespace autoCascade {
 					QString tooltip;
 
 					const QString icon        = "cascade_auto.svg";
-					const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
+					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_J);
 					const char* actionName    = "windowAutoCascade_action";
 				}
 			}
@@ -188,28 +188,28 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "tile.svg";
-				const KShortcut accel(Qt::CTRL + Qt::Key_H);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_H);
 				const char* actionName    = "windowTileHorizontal_action";
 			}
 			namespace tileVertical {
 				QString tooltip;
 
 				const QString icon        = "tile.svg";
-				const KShortcut accel(Qt::CTRL + Qt::Key_G);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_G);
 				const char* actionName    = "windowTileVertical_action";
 			}
 			namespace cascade {
 				QString tooltip;
 
 				const QString icon        = "cascade.svg";
-				const KShortcut accel(Qt::CTRL + Qt::Key_J);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_J);
 				const char* actionName    = "windowCascade_action";
 			}
 			namespace closeAll {
 				QString tooltip;
 
 				const QString icon        = "fileclose.svg";
-				const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
+				const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
 				const char* actionName    = "windowCloseAll_action";
 			}
 		}
@@ -227,7 +227,7 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "swordconfig.svg";
-				const KShortcut accel(Qt::Key_F4);
+				const QKeySequence accel(Qt::Key_F4);
 				const char* actionName    = "options_sword_setup";
 			}
 
@@ -238,14 +238,14 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "contents2.svg";
-				const KShortcut accel(Qt::Key_F1);
+				const QKeySequence accel(Qt::Key_F1);
 				const char* actionName    = "helpHandbook_action";
 			}
 			namespace bibleStudyHowTo {
 				QString tooltip;
 
 				const QString icon        = "contents2.svg";
-				const KShortcut accel(Qt::Key_F2);
+				const QKeySequence accel(Qt::Key_F2);
 				const char* actionName    = "helpHowTo_action";
 			}
 			namespace bugreport { // available as KStdAction
@@ -396,7 +396,7 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "find.svg";
-				const KShortcut accel(Qt::CTRL + Qt::Key_L);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_L);
 				const char* actionName    = "window_search_action";
 			}
 
@@ -404,21 +404,21 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon        = "back.svg";
-				const KShortcut accel(Qt::ALT + Qt::Key_Left);
+				const QKeySequence accel(Qt::ALT + Qt::Key_Left);
 				const char* actionName    = "window_history_back_action";
 			}
 			namespace forwardInHistory {
 				QString tooltip;
 
 				const QString icon        = "forward.svg";
-				const KShortcut accel(Qt::ALT + Qt::Key_Right);
+				const QKeySequence accel(Qt::ALT + Qt::Key_Right);
 				const char* actionName    = "window_history_forward_action";
 			}
 			namespace findStrongs {
 				QString tooltip;
 
 				const QString icon        = "bt_findstrongs";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName    = "window_find_strongs_action";
 			}
 
@@ -431,12 +431,12 @@ namespace CResMgr {
 			namespace nextBook {
 				QString tooltip;
 
-				const KShortcut accel(Qt::CTRL + Qt::Key_Y);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_Y);
 			}
 			namespace previousBook {
 				QString tooltip;
 
-				const KShortcut accel(Qt::CTRL + Qt::SHIFT + Qt::Key_Y);
+				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_Y);
 			}
 
 			namespace chapterList {
@@ -444,22 +444,22 @@ namespace CResMgr {
 			}
 			namespace nextChapter {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::Key_X);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_X);
 			}
 			namespace previousChapter {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::SHIFT + Qt::Key_X);
+				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_X);
 			}
 			namespace verseList {
 				QString tooltip;
 			}
 			namespace nextVerse {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::Key_V);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_V);
 			}
 			namespace previousVerse {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
+				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
 			}
 
 			namespace copyMenu {
@@ -476,7 +476,7 @@ namespace CResMgr {
 			namespace syncWindow {
 				QString tooltip;
 				const QString icon   = "bt_sync";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName = "commentary_syncWindow";
 			}
 		}
@@ -486,11 +486,11 @@ namespace CResMgr {
 			}
 			namespace nextEntry {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::Key_V);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_V);
 			}
 			namespace previousEntry {
 				QString tooltip;
-				const KShortcut accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
+				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_V);
 			}
 
 			namespace copyMenu {
@@ -506,7 +506,7 @@ namespace CResMgr {
 		namespace bookWindow {
 			namespace toggleTree {
 				const QString icon = "view_sidetree";
-				const KShortcut accel;
+				const QKeySequence accel;
 			}
 		}
 
@@ -515,21 +515,21 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon      = "filesave";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_saveText";
 			}
 			namespace restoreText {
 				QString tooltip;
 
 				const QString icon      = "undo";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_restoreText";
 			}
 			namespace deleteEntry {
 				QString tooltip;
 
 				const QString icon      = "editdelete";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_deleteEntry";
 			}
 
@@ -538,21 +538,21 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon      = "text_bold.svg";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_boldText";
 			}
 			namespace italicText {
 				QString tooltip;
 
 				const QString icon      = "text_italic.svg";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_italicText";
 			}
 			namespace underlinedText {
 				QString tooltip;
 
 				const QString icon      = "text_under.svg";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_underlineText";
 			}
 
@@ -560,41 +560,41 @@ namespace CResMgr {
 				QString tooltip;
 
 				const QString icon      = "text_left";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignLeft";
 			}
 			namespace alignCenter {
 				QString tooltip;
 
 				const QString icon      = "text_center";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignCenter";
 			}
 			namespace alignRight {
 				QString tooltip;
 
 				const QString icon      = "rightjust";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignRight";
 			}
 			namespace alignJustify {
 				QString tooltip;
 
 				const QString icon      = "text_block";
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName = "writeWindow_alignJustify";
 			}
 
 			namespace fontFamily {
 				QString tooltip;
 
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName = "writeWindow_fontFamily";
 			}
 			namespace fontSize {
 				QString tooltip;
 
-				const KShortcut accel;
+				const QKeySequence accel;
 				const char* actionName = "writeWindow_fontSize";
 			}
 			namespace fontColor {
@@ -682,7 +682,7 @@ namespace CResMgr {
 			QString tooltip;
 
 			const QString icon        = "find";
-			const KShortcut accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
+			const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_M);
 			const char* actionName    = "GMsearch_action";
 		}
 		namespace newFolder {
