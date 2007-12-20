@@ -54,6 +54,7 @@ SET(bibletime_SOURCES
 	src/frontend/cinputdialog.cpp
 	src/frontend/cexportmanager.cpp
 	src/frontend/btaboutmoduledialog.cpp
+	src/frontend/cmodulechooserdialog.cpp
 
 	# Bookshelf/Bookmarks widget in main window
 	src/frontend/mainindex/cmainindex.cpp
@@ -91,7 +92,7 @@ SET(bibletime_SOURCES
 	src/frontend/searchdialog/csearchresultview.cpp
 	src/frontend/searchdialog/csearchdialogareas.cpp
 	src/frontend/searchdialog/cmoduleresultview.cpp
-	src/frontend/searchdialog/cmodulechooserdialog.cpp
+	src/frontend/searchdialog/csearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
 	src/frontend/searchdialog/analysis/csearchanalysisitem.cpp
 	src/frontend/searchdialog/analysis/csearchanalysislegenditem.cpp
