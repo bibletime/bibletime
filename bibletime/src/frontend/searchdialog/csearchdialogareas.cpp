@@ -16,7 +16,7 @@
 #include "crangechooserdialog.h"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
-#include "cmodulechooserdialog.h"
+#include "csearchmodulechooserdialog.h"
 #include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 
 #include "backend/keys/cswordversekey.h"
@@ -886,7 +886,7 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 
 /** Opens the modules chooser dialog. */
 void CSearchOptionsArea::chooseModules() {
-	CModuleChooserDialog* dlg = new CModuleChooserDialog(this, modules());
+	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, modules());
 	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
 			this, SLOT(setModules(ListCSwordModuleInfo)));
 	dlg->exec();

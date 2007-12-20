@@ -10,10 +10,8 @@
 //
 //
 
-#ifndef CMODULECHOOSERDIALOG_H
-#define CMODULECHOOSERDIALOG_H
-
-//#include "ui_modulechooser.h" // uic generated
+#ifndef CSEARCHMODULECHOOSERDIALOG_H
+#define CSEARCHMODULECHOOSERDIALOG_H
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/cpointers.h"
@@ -30,12 +28,12 @@ class BTModuleTreeItem;
 
 namespace Search {
 
-class CModuleChooserDialog : public QDialog, CPointers
+class CSearchModuleChooserDialog : public QDialog, CPointers
 {
 	Q_OBJECT
 public:
-	CModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);
-	~CModuleChooserDialog();
+	CSearchModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);
+	~CSearchModuleChooserDialog();
 
 signals:
 	void modulesChanged(ListCSwordModuleInfo modules);

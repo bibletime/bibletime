@@ -2,13 +2,13 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2007 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "cmodulechooserdialog.h"
-#include "cmodulechooserdialog.moc"
+#include "csearchmodulechooserdialog.h"
+#include "csearchmodulechooserdialog.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
@@ -34,7 +34,7 @@
 
 namespace Search {
 
-CModuleChooserDialog::CModuleChooserDialog( QWidget* parentDialog, ListCSwordModuleInfo modules )
+CSearchModuleChooserDialog::CSearchModuleChooserDialog( QWidget* parentDialog, ListCSwordModuleInfo modules )
 	: QDialog(parentDialog)
 	//KDialogBase(Plain, i18n("Choose work(s)"), Ok, Ok, parentDialog, "CModuleChooser", false, true)
 {
@@ -47,11 +47,11 @@ CModuleChooserDialog::CModuleChooserDialog( QWidget* parentDialog, ListCSwordMod
 	setModules(modules);
 };
 
-CModuleChooserDialog::~CModuleChooserDialog() {}
+CSearchModuleChooserDialog::~CSearchModuleChooserDialog() {}
 ;
 
 /** Initializes the view of this dialog */
-void CModuleChooserDialog::initView()
+void CSearchModuleChooserDialog::initView()
 {
 	//TODO: choose the button text
 	//setButtonOKText(i18n("Use chosen work(s)"));
@@ -79,7 +79,7 @@ void CModuleChooserDialog::initView()
 
 }
 
-void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
+void CSearchModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 {
 	//qDebug("CModuleChooserDialog::setModules");
 
@@ -91,7 +91,7 @@ void CModuleChooserDialog::setModules(ListCSwordModuleInfo& selectedModules)
 	
 }
 
-void CModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem, ListCSwordModuleInfo& selectedModules)
+void CSearchModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem, ListCSwordModuleInfo& selectedModules)
 {
 	foreach (BTModuleTreeItem* i, item->children()) {
 		createModuleTree(i, new QTreeWidgetItem(widgetItem), selectedModules);
@@ -115,14 +115,14 @@ void CModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetI
 }
 
 /** Initializes the connections of this dialog. */
-void CModuleChooserDialog::initConnections()
+void CSearchModuleChooserDialog::initConnections()
 {
 	//QObject::connect(this, SIGNAL(accepted()), this, SLOT(slotOk()) );
 	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(slotOk()) );
 }
 
 /* Emits the list of selected modules */
-void CModuleChooserDialog::slotOk()
+void CSearchModuleChooserDialog::slotOk()
 {
 	//create the list of selected modules
 	ListCSwordModuleInfo mods;
