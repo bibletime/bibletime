@@ -30,6 +30,7 @@
 #include <QStringList>
 #include <QDebug>
 #include <QHeaderView>
+#include <QLabel>
 
 #include <klocale.h>
 
@@ -50,7 +51,7 @@ CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QStr
 /**
 * Call init() after the constructor, either in the end of your own constructor or from outside.
 */
-CModuleChooserDialog::init()
+void CModuleChooserDialog::init()
 {
 	//Set the flag to destroy when closed - otherwise eats memory
 	setAttribute(Qt::WA_DeleteOnClose);

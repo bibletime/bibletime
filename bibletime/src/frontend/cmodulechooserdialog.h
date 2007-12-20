@@ -10,7 +10,7 @@
 #ifndef CMODULECHOOSERDIALOG_H
 #define CMODULECHOOSERDIALOG_H
 
-
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/btmoduletreeitem.h"
 
 #include <QDialog>
@@ -37,7 +37,8 @@ public:
 	* For module list see BTModuleTreeItem constructor documentation.
 	* Call init() after the constructor, either in the end of your own constructor or from outside.
 	*/
-	CModuleChooserDialog(QWidget* parentDialog, QString title, QList<BTModuleTreeItem::Filter*> filters, ListCSwordModuleInfo*  modules = 0);
+	CModuleChooserDialog(QWidget* parent, QString title, QString label,
+		QList<BTModuleTreeItem::Filter*> filters, ListCSwordModuleInfo*  modules = 0);
 	
 	virtual ~CModuleChooserDialog() {}
 	
@@ -53,7 +54,7 @@ public:
 signals:
 	
 	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. */
-	void modulesChanged(ListCSWordModuleInfo*);
+	void modulesChanged(ListCSwordModuleInfo*);
 
 protected:
 
@@ -84,6 +85,7 @@ private:
 	QTreeWidget *m_moduleChooser;
 	QDialogButtonBox *m_buttonBox;
 	QString m_title;
+	QString m_labelText;
 	QList<BTModuleTreeItem::Filter*> m_filters;
 	BTModuleTreeItem::Grouping m_grouping;
 	ListCSwordModuleInfo* m_moduleList;
