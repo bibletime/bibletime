@@ -95,14 +95,17 @@ public:
 	*/
 	enum Grouping {CatLangMod, CatMod, LangCatMod, LangMod, Mod};
 
-	
+
 	/**
 	* This constructor creates a root item. Create it for example with scoped_ptr or in stack.
 	* The root item is populated with the item tree.
-	* The constructor takes a list of filters (see Filter) and grouping indicator (see Grouping).
+	* The constructor takes a list of filters (see Filter), grouping indicator (see Grouping)
+	* and optionally the module list from which the tree is constructed
+	* (by default CPointers::backend()->moduleList() is used).
 	*/
-	BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping);
-	
+	BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
+					BTModuleTreeItem::Grouping grouping, ListCSwordModuleInfo* modules = 0);
+
 	/** When the root item is deleted the whole tree is deleted. */
 	~BTModuleTreeItem();
 
@@ -156,6 +159,7 @@ private:
 	CSwordModuleInfo::Category m_category;
 	BTModuleTreeItem* m_next;
 	BTModuleTreeItem* m_firstChild;
+	ListCSwordModuleInfo m_originalModuleList;
 };
 
 #endif

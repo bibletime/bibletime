@@ -25,12 +25,19 @@
 #include <klocale.h>
 
 //This ctor creates the root item and the tree.
-BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping)
+BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
+									BTModuleTreeItem::Grouping grouping,
+									ListCSwordModuleInfo* modules)
 	: m_moduleInfo(0),
 	m_type(BTModuleTreeItem::Root),
 	m_next(0),
 	m_firstChild(0)
 {
+	if (modules) {
+		m_originalModuleList = *modules;
+	} else {
+		m_originalModuleList = CPointers::backend()->moduleList();
+	}
 	//populate the tree with groups/modules
 	create_tree(filters, grouping);
 }
@@ -141,9 +148,9 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 		map_initialized = true;
 	} 
 
-	ListCSwordModuleInfo originalInfoList = CPointers::backend()->moduleList();
+	//ListCSwordModuleInfo originalInfoList = CPointers::backend()->moduleList();
 	
-	foreach (CSwordModuleInfo* info, originalInfoList) {
+	foreach (CSwordModuleInfo* info, m_originalModuleList) {
 		bool included;
 		included = true;
 		foreach (BTModuleTreeItem::Filter* f, filters) {
