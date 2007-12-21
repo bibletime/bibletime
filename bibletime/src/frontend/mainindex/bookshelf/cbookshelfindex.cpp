@@ -14,6 +14,7 @@
 #include "btindexitem.h"
 #include "btindexmodule.h"
 #include "btindexfolder.h"
+#include "chidemodulechooserdialog.h"
 
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/creferencemanager.h"
@@ -174,7 +175,18 @@ void CBookshelfIndex::initActions()
 	m_popup->addAction(action);
 	m_actionList.append(action);
 
+	// ------------Hide---------------------
+	action = newKAction(i18n("Hide Modules..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
+	action->setProperty("indexActionType", QVariant(HideModules));
+	//action->setProperty("multiItemAction", QVariant(true));
+	m_popup->addAction(action);
+	m_actionList.append(action);
+
+
 	m_popup->addSeparator();
+
+	//------------------------------------------------------------
+	//----------------- Actions for items ------------------------
 
 	// -------------------------Edit module --------------------------------
 	actionMenu = new KActionMenu(KIcon(CResMgr::mainIndex::editModuleMenu::icon), i18n("Edit"), this);
@@ -210,15 +222,6 @@ void CBookshelfIndex::initActions()
 	action->setProperty("indexActionType", QVariant(UnlockModule));
 	action->setProperty("singleItemAction", QVariant(true));
 	m_actionList.append(action);
-
-	
-	// ------------Hide---------------------
-	action = newKAction(i18n("Hide"),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
-	action->setProperty("indexActionType", QVariant(HideModules));
-	action->setProperty("multiItemAction", QVariant(true));
-	m_popup->addAction(action);
-	m_actionList.append(action);
-
 
 	action = newKAction(i18n("About"),CResMgr::mainIndex::aboutModule::icon, 0, this, SLOT(actionAboutModule()), this);
 	m_popup->addAction(action);
@@ -429,8 +432,8 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 			else action->setEnabled(false);
 		}
 		else if (actionType == HideModules) {
-			action->setText(i18n("Hide"));
-			action->setEnabled(false);
+			//action->setText(i18n("Hide"));
+			action->setEnabled(true);
 		}
 		else action->setEnabled(false);
 	}
@@ -451,15 +454,6 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 					qDebug() << "enabling action" << action->text();
 					action->setEnabled(true);
 				}
-				else if ((IndexAction)action->property("indexActionType").toInt() == HideModules ) {
-					// Change the text of the menu item to reflect the module name
-					BTIndexModule* modItem = dynamic_cast<BTIndexModule*>(btItem);
-					if (modItem) {
-						CSwordModuleInfo* info = modItem->moduleInfo();
-						action->setText(QString(i18n("Hide")).append(QString(" ").append(info->name())));
-					}
-					btItem->enableAction(action);
-				}
 				else if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
 					// Change the text of the menu item to reflect the module name
 					BTIndexModule* modItem = dynamic_cast<BTIndexModule*>(btItem);
@@ -479,10 +473,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 	else { // more than one item
 		foreach (KAction* action, m_actionList) {
 			// Change the text of some menu items to reflect multiple selection
-			if ((IndexAction)action->property("indexActionType").toInt() == HideModules ) {
-				action->setText( QString(i18n("Hide Selected")) );
-			}
-			else if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
+			if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
 				action->setText( QString(i18n("Search in Selected")) );
 			}
 			// Enable items
@@ -562,18 +553,22 @@ void CBookshelfIndex::actionShowModules(bool checked)
 void CBookshelfIndex::actionHideModules()
 {
 	qDebug("CBookshelfIndex::actionHideModules");
-	QList<QTreeWidgetItem *> items = selectedItems();
-	QListIterator<QTreeWidgetItem *> it(items);
-
-	while(it.hasNext()) {
-		if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(it.next())) {
-			if (i->moduleInfo()) {
-				i->moduleInfo()->setHidden(true);
-			}
-		}
+	QString current;
+	if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(currentItem())) {
+		current = i->text(0);
 	}
-	initTree();
+
+	QString title(i18n("Hide/Unhide Modules"));
+	QString label(i18n("Select the modules to be hidden."));
+	CHideModuleChooserDialog* dlg = new CHideModuleChooserDialog(this, title, label, current);
+	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
+			this, SLOT(setHiddenModules(ListCSwordModuleInfo)));
+	int code = dlg->exec();
+	if (code == QDialog::Accepted) {
+		initTree();
+	}
 }
+
 
 /** Shows information about the current module. */
 void CBookshelfIndex::actionAboutModule() {

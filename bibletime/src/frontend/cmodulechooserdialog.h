@@ -15,9 +15,9 @@
 
 #include <QDialog>
 #include <QList>
+#include <QTreeWidget>
 
-class QTreeWidget;
-class QTreeWidgetItem;
+
 class QDialogButtonBox;
 
 
@@ -54,6 +54,8 @@ public:
 	* BTModuleTreeItem for the filters. By default the filters list is empty.
 	*/
 	void setFilters(QList<BTModuleTreeItem::Filter*> filters) {m_filters = filters;}
+
+	QTreeWidget* treeWidget() {return m_moduleChooser;}
 
 signals:
 	

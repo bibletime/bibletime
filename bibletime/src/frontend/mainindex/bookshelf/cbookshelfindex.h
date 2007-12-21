@@ -156,6 +156,7 @@ protected slots: // Protected slots
 
 	void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
 
+
 private:
 	CSearchDialog* m_searchDialog;
 	//ToolTip* m_toolTip;

@@ -945,7 +945,7 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString& name) const {
 
 void CSwordModuleInfo::setHidden(bool hidden)
 {
-	qDebug("CSwordModuleInfo::setHidden");
+	//qDebug("CSwordModuleInfo::setHidden");
 	QStringList hiddenModules = CBTConfig::get(CBTConfig::hiddenModules);
 	if (hidden && !hiddenModules.contains(this->name())) {
 		hiddenModules.append(this->name());

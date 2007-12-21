@@ -72,6 +72,7 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/bookshelf/btindexitem.cpp
 	src/frontend/mainindex/bookshelf/btindexmodule.cpp
 	src/frontend/mainindex/bookshelf/btindexfolder.cpp
+	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.cpp
 
 	#Settings dialog (configuration)
 	src/frontend/settingsdialogs/cacceleratorsettings.cpp

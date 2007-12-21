@@ -152,6 +152,6 @@ void CModuleChooserDialog::slotOk()
 
 	// The selection is handled first, then the dialog is closed and destroyed.
 	emit modulesChanged(mods);
-	QDialog::done(0);
+	QDialog::done(QDialog::Accepted);
 }
 
