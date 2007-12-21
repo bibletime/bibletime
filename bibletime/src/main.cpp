@@ -7,27 +7,24 @@
 *
 **********/
 
-//standard includes
-#include <stdlib.h>
-#include <stdio.h>
-#include <signal.h>
-
 //own includes
 #include "bibletimeapp.h"
 #include "bibletime.h"
 #include "config.h"
 
-//util includes
-#include <boost/scoped_ptr.hpp>
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 #include "util/migrationutil.h"
 
-//frontend includes
 #include "frontend/kstartuplogo.h"
 #include "frontend/cbtconfig.h"
 
-//KDE includes
+#include <stdlib.h>
+#include <stdio.h>
+#include <signal.h>
+
+#include <boost/scoped_ptr.hpp>
+
 #include <kcmdlineargs.h>
 #include <kcrash.h>
 #include <kapplication.h>

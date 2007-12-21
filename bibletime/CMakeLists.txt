@@ -127,8 +127,6 @@ FILE(GLOB BT_INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/disp
 INSTALL(FILES ${BT_INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/display-templates/")
 # splash screen
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
-# xml menu and toolbar definition
-INSTALL(FILES "src/xml/bibletimeui.rc" DESTINATION "share/bibletime/xml/")
 ######################################################
 
 

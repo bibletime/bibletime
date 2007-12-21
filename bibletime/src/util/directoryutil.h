@@ -63,9 +63,6 @@ public:
 	/** Return the path to the pictures. */
 	static QDir getPicsDir(void);
 
-	/** Return the path to the xml files. */
-	static QDir getXmlDir(void);
-	
 	/** Return the path to the translation files. */
 	static QDir getLocaleDir(void);
 

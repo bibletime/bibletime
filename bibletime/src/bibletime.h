@@ -28,11 +28,8 @@ namespace InfoDisplay {
 	class CInfoDisplay;
 }
 class QAction;
-class KAccel;
-class KActionMenu;
-class KActionCollection;
-class KHelpMenu;
 class QMenu;
+class QToolBar;
 class QSplitter;
 class KConfig;
 
@@ -275,10 +272,6 @@ protected slots:
 	 */
 	void slotToggleToolbar();
 	/**
-	* Opens a toolbar editor
-	*/
-	void slotSettingsToolbar();
-	/**
 	* Shows or hides the main index part
 	*/
 	void slotToggleMainIndex();
@@ -338,6 +331,7 @@ protected slots:
 	void refreshProfileMenus();
 
 private:
+	QToolBar* m_mainToolBar;
 	/** VIEW menu actions */
 	QAction* m_viewToolbar_action;
 	QAction* m_viewMainIndex_action;
@@ -348,19 +342,17 @@ private:
 	QAction* m_windowCascade_action;
 	QAction* m_windowTileHorizontal_action;
 	QAction* m_windowTileVertical_action;
-	QMenu* m_windowArrangementMode_action;
+	QMenu* m_windowArrangementModeMenu;
 	QAction* m_windowManualMode_action;
 	QAction* m_windowAutoCascade_action;
 	QAction* m_windowAutoTileVertical_action;
 	QAction* m_windowAutoTileHorizontal_action;
 	QAction* m_windowCloseAll_action;
 
-	KActionCollection* m_windowActionCollection;
-
-	QMenu* m_windowSaveProfile_action;
+	QMenu* m_windowSaveProfileMenu;
 	QAction* m_windowSaveToNewProfile_action;
-	QMenu* m_windowLoadProfile_action;
-	QMenu* m_windowDeleteProfile_action;
+	QMenu* m_windowLoadProfileMenu;
+	QMenu* m_windowDeleteProfileMenu;
 	QAction* m_windowFullscreen_action;
 
 	QList<QAction*> m_windowOpenWindowsList;

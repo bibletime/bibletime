@@ -33,21 +33,14 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QMenu>
+#include <QMenuBar>
+#include <QToolBar>
 
 //KDE includes
 #include <kaboutdata.h>
-#include <kaction.h>
-#include <kstdaction.h>
-#include <ktoggleaction.h>
-#include <kactioncollection.h>
-#include <kactionmenu.h>
 #include <kapplication.h>
 #include <kconfigbase.h>
-#include <khelpmenu.h>
-#include <kmenubar.h>
-#include <ktoolbar.h>
 #include <klocale.h>
-#include <kmenu.h>
 
 //Sword includes
 #include <swlog.h>
@@ -107,6 +100,10 @@ void BibleTime::initActions()
 	m_windowMenu = menuBar()->addMenu(i18n("&Window"));
 	QMenu* settingsMenu = menuBar()->addMenu(i18n("Se&ttings"));
 	QMenu* helpMenu = menuBar()->addMenu(i18n("&Help"));
+	
+	m_mainToolBar = addToolBar(i18n("BibleTime"));
+	m_mainToolBar->setFloatable(false);
+	m_mainToolBar->setMovable(false);
 
 	QAction* tmp = new QAction(this);
 	initAction(
@@ -118,6 +115,8 @@ void BibleTime::initActions()
 		SLOT( close() )
 	);
 	fileMenu->addAction(tmp);
+	m_mainToolBar->addAction(tmp);
+	m_mainToolBar->addSeparator();
 	
 	m_viewToolbar_action = new QAction(this);
 	m_viewToolbar_action->setCheckable(true);
@@ -141,6 +140,7 @@ void BibleTime::initActions()
 		CResMgr::mainMenu::view::showMainIndex::accel,
 		CResMgr::mainMenu::view::showMainIndex::tooltip,
 		SLOT(slotToggleMainIndex())));
+	m_mainToolBar->addAction(m_viewMainIndex_action);
 
 	m_viewInfoDisplay_action = new QAction(this);
 	m_viewInfoDisplay_action->setCheckable(true);
@@ -150,16 +150,35 @@ void BibleTime::initActions()
 		CResMgr::mainMenu::view::showInfoDisplay::icon,
 		CResMgr::mainMenu::view::showInfoDisplay::accel,
 		CResMgr::mainMenu::view::showInfoDisplay::tooltip,
-		SLOT(slotToggleInfoDisplay())));
+		SLOT(slotToggleInfoDisplay())
+	));
+	viewMenu->addSeparator();
+	m_mainToolBar->addAction(m_viewInfoDisplay_action);
+	m_mainToolBar->addSeparator();
+	
+	m_windowFullscreen_action = new QAction(this);
+	m_windowFullscreen_action->setCheckable(true);
+	viewMenu->addAction(initAction(
+		m_windowFullscreen_action,
+		i18n("&Fullscreen mode"),
+		CResMgr::mainMenu::window::showFullscreen::icon,
+		CResMgr::mainMenu::window::showFullscreen::accel,
+		CResMgr::mainMenu::window::showFullscreen::tooltip,
+		SLOT(toggleFullscreen()))
+	);
+	m_mainToolBar->addAction(m_windowFullscreen_action);
 
-	searchMenu->addAction(initAction(
+	tmp = initAction(
 		new QAction(this),
 		i18n("Search in &open work(s)"),
 		CResMgr::mainMenu::mainIndex::search::icon,
 		CResMgr::mainMenu::mainIndex::search::accel,
 		CResMgr::mainMenu::mainIndex::search::tooltip,
 		SLOT( slotSearchModules() )
-	));
+	);
+	searchMenu->addAction(tmp);
+	m_mainToolBar->addAction(tmp);
+	m_mainToolBar->addSeparator();
 
 	searchMenu->addAction(initAction(
 		new QAction(this),
@@ -169,8 +188,8 @@ void BibleTime::initActions()
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip,
 		SLOT(slotSearchDefaultBible())));
 
-	m_windowSaveProfile_action = new QMenu(i18n("&Save session"));
-	m_windowMenu->addMenu(m_windowSaveProfile_action);
+	m_windowSaveProfileMenu = new QMenu(i18n("&Save session"));
+	m_windowMenu->addMenu(m_windowSaveProfileMenu);
 
 	m_windowSaveToNewProfile_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
@@ -182,30 +201,17 @@ void BibleTime::initActions()
 		SLOT( saveToNewProfile() ))
 	);	
 
-	m_windowLoadProfile_action = new QMenu(i18n("&Load session"));
-	m_windowMenu->addMenu(m_windowLoadProfile_action);
+	m_windowLoadProfileMenu = new QMenu(i18n("&Load session"));
+	m_windowMenu->addMenu(m_windowLoadProfileMenu);
 
-	m_windowDeleteProfile_action = new QMenu(i18n("&Delete session"));
-	m_windowMenu->addMenu(m_windowDeleteProfile_action);
+	m_windowDeleteProfileMenu = new QMenu(i18n("&Delete session"));
+	m_windowMenu->addMenu(m_windowDeleteProfileMenu);
 	
-	QObject::connect(m_windowLoadProfile_action, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
-	QObject::connect(m_windowSaveProfile_action, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
-	QObject::connect(m_windowDeleteProfile_action, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
+	QObject::connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
+	QObject::connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
+	QObject::connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
 
 	refreshProfileMenus();
-
-	m_windowMenu->addSeparator();
-	
-	m_windowFullscreen_action = new QAction(this);
-	m_windowFullscreen_action->setCheckable(true);
-	m_windowMenu->addAction(initAction(
-		m_windowFullscreen_action,
-		i18n("&Fullscreen mode"),
-		CResMgr::mainMenu::window::showFullscreen::icon,
-		CResMgr::mainMenu::window::showFullscreen::accel,
-		CResMgr::mainMenu::window::showFullscreen::tooltip,
-		SLOT(toggleFullscreen()))
-	);
 
 	m_windowMenu->addSeparator();
 
@@ -306,7 +312,6 @@ void BibleTime::initActions()
 		QKeySequence(),
 		"",
 		SLOT( slotSettingsOptions() )));
-		
 	settingsMenu->addSeparator();
  
  	settingsMenu->addAction(initAction(
@@ -317,14 +322,16 @@ void BibleTime::initActions()
 		CResMgr::mainMenu::settings::swordSetupDialog::tooltip,
 		SLOT( slotSwordSetupDialog() )));
 
-	helpMenu->addAction(initAction(
+	tmp = initAction(
 		new QAction(this),
 		i18n("&Handbook"),
 		CResMgr::mainMenu::help::handbook::icon,
 		CResMgr::mainMenu::help::handbook::accel,
 		CResMgr::mainMenu::help::handbook::tooltip,
-		SLOT( openOnlineHelp_Handbook() ))
+		SLOT( openOnlineHelp_Handbook() )
 	);
+	helpMenu->addAction(tmp);
+	m_mainToolBar->addAction(tmp);
 
 	helpMenu->addAction(initAction(
 		new QAction(this),
@@ -356,12 +363,6 @@ void BibleTime::initActions()
 		"",
 		SLOT(aboutApplication()))
 	);
-}
-
-/** Initializes the menubar of BibleTime. */
-void BibleTime::initMenubar() {
-	//get the window and edit menus using the actions and their properties
-// 	m_windowMenu = dynamic_cast<QMenu*>(m_windowCloseAll_action->associatedWidgets().value(0));
 }
 
 /** Initializes the SIGNAL / SLOT connections */

@@ -103,7 +103,6 @@ void DirectoryUtil::copyRecursive(QString src, QString dest){
 
 static QDir cachedIconDir;
 static QDir cachedPicsDir;
-static QDir cachedXmlDir;
 static QDir cachedLocaleDir;
 //static QDir cachedDocsDir;
 static QDir cachedDisplayTemplatesDir;
@@ -140,12 +139,6 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 
-	cachedXmlDir = wDir; //xml dir
-	if (!cachedXmlDir.cd("share/bibletime/xml")) {
-		qWarning() << "Cannot find xml directory relative to" << QCoreApplication::applicationDirPath();
-		throw;
-	}
-	
 	cachedLocaleDir = wDir; //xml dir
 	if (!cachedLocaleDir.cd("share/bibletime/locale")) {
 		qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
@@ -243,12 +236,6 @@ QDir DirectoryUtil::getPicsDir(void)
 { 
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedPicsDir; 
-}
-
-QDir DirectoryUtil::getXmlDir(void)
-{
-	if (!dirCacheInitialized) initDirectoryCache();
-	return cachedXmlDir;
 }
 
 QDir DirectoryUtil::getLocaleDir(void)
