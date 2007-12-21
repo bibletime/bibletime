@@ -144,7 +144,12 @@ QString CToolClass::getIconNameForModule( CSwordModuleInfo* module_info ) {
 }
 
 QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
-	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B><BR>%2").arg(heading).arg(text),parent );
+	QString br;
+	if (!heading.isEmpty()) {
+		br = QString::fromLatin1("<BR/>");
+	}
+	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B>%2%3").arg(heading).arg(br).arg(text),parent );	
+	
 	label->setWordWrap(true);
 	label->setMargin(1);
 	label->setFrameStyle(QFrame::Box | QFrame::Plain);
