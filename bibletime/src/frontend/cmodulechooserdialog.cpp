@@ -38,14 +38,17 @@
 
 
 CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label,
-						QList<BTModuleTreeItem::Filter*> filters, ListCSwordModuleInfo*  modules)
+											ListCSwordModuleInfo*  allModules)
 	: QDialog(parent),
 	m_title(title),
-	m_labelText(label),
-	m_filters(filters),
-	m_moduleList(modules)
+	m_labelText(label)
 {
 	m_grouping = (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping);
+	m_filters = QList<BTModuleTreeItem::Filter*>();
+	if (!allModules) {
+		m_moduleList = CPointers::backend()->moduleList();
+	}
+	else m_moduleList = *allModules;
 }
 
 /**
@@ -56,7 +59,6 @@ void CModuleChooserDialog::init()
 	//Set the flag to destroy when closed - otherwise eats memory
 	setAttribute(Qt::WA_DeleteOnClose);
 	setWindowTitle(m_title);
-	//TODO: take a descriptive label as argument?
 	initView();
 	initTree();
 }
@@ -93,6 +95,9 @@ void CModuleChooserDialog::initView()
 	vboxLayout->addLayout(hboxLayout);
 	
 	QObject::connect(m_buttonBox, SIGNAL(accepted()), this, SLOT(slotOk()) );
+	//The QDialog doc is a bit unclear but calling reject also destroys the dialog
+	// in this situation.
+	QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()) );
 }
 
 
@@ -101,7 +106,7 @@ void CModuleChooserDialog::initTree()
 	//qDebug("CModuleChooserDialog::initTree");
 
 	// See BTModuleTreeItem documentation.
-	BTModuleTreeItem root(m_filters, m_grouping, m_moduleList);
+	BTModuleTreeItem root(m_filters, m_grouping, &m_moduleList);
 	createModuleTree(&root, m_moduleChooser->invisibleRootItem());
 	
 }
@@ -126,14 +131,17 @@ void CModuleChooserDialog::createModuleTree(BTModuleTreeItem* item, QTreeWidgetI
 /** Emits the signal with the list of the selected modules. */
 void CModuleChooserDialog::slotOk()
 {
+	Q_ASSERT(m_moduleChooser);
 	//create the list of selected modules
 	ListCSwordModuleInfo mods;
 	QTreeWidgetItemIterator it( m_moduleChooser );
 	for ( ; *it; ++it ) {
 		//add the module to list if the box is checked
 		if ((*it)->checkState(0) == Qt::Checked) {
-			for (ListCSwordModuleInfo::iterator all_iter(m_moduleList->begin()); all_iter != m_moduleList->end(); ++all_iter) {
+			qDebug("was checked");
+			for (ListCSwordModuleInfo::iterator all_iter(m_moduleList.begin()); all_iter != m_moduleList.end(); ++all_iter) {
 				if ((*all_iter)->name() == (*it)->text(0)) {
+					qDebug("append");
 					mods.append(*all_iter);
 					break;
 				}
@@ -143,7 +151,7 @@ void CModuleChooserDialog::slotOk()
 	}
 
 	// The selection is handled first, then the dialog is closed and destroyed.
-	emit modulesChanged(&mods);
-	QDialog::done(0); // close the dialog
+	emit modulesChanged(mods);
+	QDialog::done(0);
 }
 

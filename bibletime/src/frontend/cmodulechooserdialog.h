@@ -37,8 +37,7 @@ public:
 	* For module list see BTModuleTreeItem constructor documentation.
 	* Call init() after the constructor, either in the end of your own constructor or from outside.
 	*/
-	CModuleChooserDialog(QWidget* parent, QString title, QString label,
-		QList<BTModuleTreeItem::Filter*> filters, ListCSwordModuleInfo*  modules = 0);
+	CModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* allModules = 0);
 	
 	virtual ~CModuleChooserDialog() {}
 	
@@ -50,11 +49,16 @@ public:
 	* This must be called before the tree is initialized, i.e. before init().
 	*/
 	void setGrouping(BTModuleTreeItem::Grouping grouping) {m_grouping = grouping;}
+	
+	/** Set the module tree filters. See setGrouping() for the calling convention and
+	* BTModuleTreeItem for the filters. By default the filters list is empty.
+	*/
+	void setFilters(QList<BTModuleTreeItem::Filter*> filters) {m_filters = filters;}
 
 signals:
 	
 	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. */
-	void modulesChanged(ListCSwordModuleInfo*);
+	void modulesChanged(ListCSwordModuleInfo);
 
 protected:
 
@@ -88,7 +92,7 @@ private:
 	QString m_labelText;
 	QList<BTModuleTreeItem::Filter*> m_filters;
 	BTModuleTreeItem::Grouping m_grouping;
-	ListCSwordModuleInfo* m_moduleList;
+	ListCSwordModuleInfo m_moduleList;
 };
 
 
