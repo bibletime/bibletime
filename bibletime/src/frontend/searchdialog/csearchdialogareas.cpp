@@ -886,7 +886,9 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 
 /** Opens the modules chooser dialog. */
 void CSearchOptionsArea::chooseModules() {
-	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, modules());
+	QString title(i18n("Modules to Search in"));
+	QString label(i18n("Select the modules in which the search should be run."));
+	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
 	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
 			this, SLOT(setModules(ListCSwordModuleInfo)));
 	dlg->exec();

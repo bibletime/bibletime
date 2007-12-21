@@ -14,58 +14,29 @@
 #define CSEARCHMODULECHOOSERDIALOG_H
 
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "util/cpointers.h"
 
+#include "frontend/cmodulechooserdialog.h"
 
-#include <QDialog>
-
-
-class QTreeWidget;
 class QTreeWidgetItem;
-class QDialogButtonBox;
 
 class BTModuleTreeItem;
 
+
 namespace Search {
 
-class CSearchModuleChooserDialog : public QDialog, CPointers
+class CSearchModuleChooserDialog : public CModuleChooserDialog
 {
 	Q_OBJECT
 public:
-	CSearchModuleChooserDialog(QWidget* parentDialog, ListCSwordModuleInfo modules);
+	CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo selectedModules);
 	~CSearchModuleChooserDialog();
 
-signals:
-	void modulesChanged(ListCSwordModuleInfo modules);
-
 protected: // Protected methods
-	/**
-	* Initializes the view of this dialog
-	*/
-	void initView();
-
-	/**
-	* Initializes the connections of this dialog.
-	*/
-	void initConnections();
-
-	/**
-	* Initialized the module tree
-	*/
-	void setModules(ListCSwordModuleInfo& modules);
-
-protected slots: // Protected slots
-	/**
-	* Handle the modules after the dialog is accepted.
-	*/
-	virtual void slotOk();
+	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
 
 private:
-
-	void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem, ListCSwordModuleInfo& selected);
-
-	QTreeWidget *m_moduleChooser;
-	QDialogButtonBox *m_buttonBox;
+	ListCSwordModuleInfo m_selectedModules;
+	BTModuleTreeItem::HiddenOff* m_hiddenFilter;
 };
 
 } //end of namespace Search
