@@ -342,33 +342,33 @@ void BibleTime::initActions()
 		SLOT( openOnlineHelp_Howto() ))
 	);
 	
-	helpMenu->addSeparator();
-
-	helpMenu->addAction(initAction(
-		new QAction(this),
-		i18n("&Report a bug"),
-		"",
-		QKeySequence(),
-		"",
-		SLOT(reportBug()))
-	);
-	
-	helpMenu->addSeparator();
-
-	helpMenu->addAction(initAction(
-		new QAction(this),
-		i18n("&About BibleTime"),
-		"",
-		QKeySequence(),
-		"",
-		SLOT(aboutApplication()))
-	);
+// 	helpMenu->addSeparator();
+// 
+// 	helpMenu->addAction(initAction(
+// 		new QAction(this),
+// 		i18n("&Report a bug"),
+// 		"",
+// 		QKeySequence(),
+// 		"",
+// 		SLOT(reportBug()))
+// 	);
+// 	
+// 	helpMenu->addSeparator();
+// 
+// 	helpMenu->addAction(initAction(
+// 		new QAction(this),
+// 		i18n("&About BibleTime"),
+// 		"",
+// 		QKeySequence(),
+// 		"",
+// 		SLOT(aboutApplication()))
+// 	);
 }
 
 /** Initializes the SIGNAL / SLOT connections */
 void BibleTime::initConnections() {
-// 	QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
-// 			this, SLOT(setPlainCaption(const QString&)));
+ 	QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
+ 			this, SLOT(setPlainCaption(const QString&)));
 	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
 			this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)));
 

@@ -184,6 +184,7 @@ void CSearchAnalysisScene::slotResized() {
 							  /(double)m_maxCount);
 	QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
 	while ( it.hasNext() ) {
+		it.next();
 		if (it.value()) {
 			//it.value()->setSize(BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-UPPER_BORDER-LOWER_BORDER);
 			//it.value()->setY(UPPER_BORDER);

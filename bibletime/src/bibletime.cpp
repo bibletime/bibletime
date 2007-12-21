@@ -41,7 +41,6 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <krandomsequence.h>
-#include <kdialog.h>
 
 using namespace Profile;
 
@@ -242,14 +241,12 @@ void BibleTime::restoreWorkspace() {
 	}
 }
 
-/** Sets the caption of the mainwindow */
-void BibleTime::setCaption( const QString& ) {
-// 	QMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
-}
-
 /** Sets the plain caption of the main window */
 void BibleTime::setPlainCaption( const QString& ) {
-// 	QMainWindow::setPlainCaption( KDialog::makeStandardCaption( m_mdi->currentApplicationCaption() ) );
+	QString suffix;
+	if (!m_mdi->currentApplicationCaption().isEmpty())
+		suffix = QString(" [").append(m_mdi->currentApplicationCaption()).append("]");
+	QMainWindow::setWindowTitle( i18n("BibleTime ").append(BT_VERSION) + suffix );
 }
 
 /** Processes the commandline options given to BibleTime. */

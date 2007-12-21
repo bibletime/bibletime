@@ -8,7 +8,6 @@
 **********/
 
 #include "cmdiarea.h"
-//#include "cmdiarea.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
@@ -19,7 +18,6 @@
 #include <kmenu.h>
 #include <kapplication.h>
 #include <klocale.h>
-#include <kdialog.h>
 
 //QT includes
 #include <QObject>
@@ -28,8 +26,7 @@
 //#include <QMdiSubWindow>
 #include <QMainWindow>
 
-CMDIArea::CMDIArea(QWidget *parent)
-: QWorkspace(parent),
+CMDIArea::CMDIArea(QWidget *parent) : QWorkspace(parent),
 m_guiOption(Nothing),
 m_childEvent(false),
 m_appCaption(QString::null) {
@@ -91,11 +88,9 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 	m_childEvent = true;
 
 	if (!windowList().count()) {
-		m_appCaption = QString::null;
-		emit sigSetToplevelCaption( KDialog::makeStandardCaption(m_appCaption, this) );
+		emit sigSetToplevelCaption(m_appCaption = QString::null);
 		emit sigLastPresenterClosed();
 	}
-	
 
 	if ( (e->added() || e->removed() /*|| (int(e->type()) == 70 )*/) ) {
 		if (e->added() && e->child() && e->child()->inherits("CDisplayWindow")) {
@@ -261,9 +256,6 @@ void CMDIArea::myCascade() {
 	}
 }
 
-/*!
-    \fn CMDIArea::emitWindowCaptionChanged()
- */
 void CMDIArea::emitWindowCaptionChanged() {
 	if (activeWindow()) {
 		m_appCaption = activeWindow()->windowTitle();
@@ -272,10 +264,6 @@ void CMDIArea::emitWindowCaptionChanged() {
 	emit sigSetToplevelCaption(currentApplicationCaption());
 }
 
-
-/*!
-    \fn CMDIArea::usableWindowsCount()
- */
 QList<QWidget*> CMDIArea::usableWindowList() {
 	QList<QWidget*> ret;
 
