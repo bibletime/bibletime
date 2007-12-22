@@ -1,0 +1,2818 @@
+# translation of bibletime_et.po to
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jaak Ristioja <Ristioja@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: bibletime_et\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-08-23 18:18+0200\n"
+"PO-Revision-Date: 2007-11-12 17:03+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../bibletime/backend/bt_osishtml.cpp:327
+msgid "Alternative text"
+msgstr "Alternatiivne tekst"
+
+#: ../bibletime/backend/bt_osishtml.cpp:499
+msgid "Added text"
+msgstr "Lisatud tekst"
+
+#: ../bibletime/backend/cdisplaytemplatemgr.cpp:184
+msgid "(user template)"
+msgstr "(kasutaja mall)"
+
+#: ../bibletime/backend/cswordbackend.cpp:540
+msgid "Footnotes"
+msgstr "Allmärkused"
+
+#: ../bibletime/backend/cswordbackend.cpp:543
+msgid "Strong's numbers"
+msgstr "Strongi numbrid"
+
+#: ../bibletime/backend/cswordbackend.cpp:546
+msgid "Headings"
+msgstr "Pealkirjad"
+
+#: ../bibletime/backend/cswordbackend.cpp:549
+msgid "Morphological tags"
+msgstr "Morfoloogilised märgised"
+
+#: ../bibletime/backend/cswordbackend.cpp:552
+msgid "Lemmas"
+msgstr "Lemmad"
+
+#: ../bibletime/backend/cswordbackend.cpp:555
+msgid "Hebrew vowel points"
+msgstr "Heebrea keele vokaalimärgid"
+
+#: ../bibletime/backend/cswordbackend.cpp:558
+# Alternative: Heebrea keele kantillatsioonimärgid
+msgid "Hebrew cantillation marks"
+msgstr "Heebrea keele laulumärgid"
+
+#: ../bibletime/backend/cswordbackend.cpp:561
+msgid "Greek accents"
+msgstr "Kreeka keele rõhumärgid"
+
+#: ../bibletime/backend/cswordbackend.cpp:564
+msgid "Red letter words"
+msgstr "Jeesuse sõnad"
+
+#: ../bibletime/backend/cswordbackend.cpp:567
+msgid "Textual variants"
+msgstr "Tekstivariandid"
+
+#: ../bibletime/backend/cswordbackend.cpp:570
+msgid "Scripture cross-references"
+msgstr "Pühakirjade ristviited"
+
+#: ../bibletime/backend/cswordbackend.cpp:573
+msgid "Morph segmentation"
+msgstr "Morfoloogiline segmentatsioon"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:701
+#: ../bibletime/util/ctoolclass.cpp:213
+msgid "Version"
+msgstr "Versioon"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:702
+#: ../bibletime/backend/cswordmoduleinfo.cpp:707
+#: ../bibletime/frontend/cprofile.cpp:30
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:287
+msgid "unknown"
+msgstr "tundmatu"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:705
+msgid "Markup"
+msgstr "Märgendus"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:710
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:86
+msgid "Location"
+msgstr "Asukoht"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:714
+#: ../bibletime/util/ctoolclass.cpp:205
+msgid "Language"
+msgstr "Keel"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:719
+msgid "Category"
+msgstr "Kategooria"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:724
+msgid "LCSH"
+msgstr "LCSH"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:728
+msgid "Writable"
+msgstr "Kirjutamisõigustega"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:729
+msgid "no"
+msgstr "ei"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:729
+msgid "yes"
+msgstr "jah"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:733
+#: ../bibletime/util/ctoolclass.cpp:208
+msgid "Unlock key"
+msgstr "Avamiskood"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:752
+msgid "Features"
+msgstr "Funktsionaalsus"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:760
+#: ../bibletime/util/ctoolclass.cpp:201
+msgid "Take care, this work contains cult / questionable material!"
+msgstr "Hoiatus, see teos sisaldab kultuslikku või küsitavat materjali!"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:794
+msgid "Distribution license"
+msgstr "Distributsiooni litsents"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:796
+msgid "Distribution source"
+msgstr "Distributsiooni lähteallikas"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:798
+msgid "Distribution notes"
+msgstr "Distributsiooni märkmed"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:800
+msgid "Text source"
+msgstr "Teksti allikas"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:802
+msgid "Copyright notes"
+msgstr "Autoriõiguste märkmed"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:804
+msgid "Copyright holder"
+msgstr "Autoriõiguste omanik"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:806
+msgid "Copyright date"
+msgstr "Autoriõiguste kuupäev"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:808
+msgid "Copyright contact name"
+msgstr "Autoriõiguste omaniku kontaktisiku nimi"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:810
+msgid "Copyright contact address"
+msgstr "Autoriõiguste omaniku kontaktisiku aadress"
+
+#: ../bibletime/backend/cswordmoduleinfo.cpp:812
+msgid "Copyright contact email"
+msgstr "Autoriõiguste omaniku kontaktisiku e-post"
+
+#: ../bibletime/bibletime_init.cpp:75
+msgid "Creating BibleTime's GUI"
+msgstr "BibleTime'i graafilise kasutajaliidese loomine"
+
+#: ../bibletime/bibletime_init.cpp:87
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:146
+msgid "Bookshelf"
+msgstr "Raamaturiiul"
+
+#: ../bibletime/bibletime_init.cpp:104
+msgid "Initializing menu- and toolbars"
+msgstr "Menüüde ja tööriistaribade initsialiseerimine"
+
+#: ../bibletime/bibletime_init.cpp:115
+msgid "Search in &open work(s)"
+msgstr "&Otsi avatud teostest"
+
+#: ../bibletime/bibletime_init.cpp:128
+msgid "Search in standard &Bible"
+msgstr "Otsing eelistatud &piiblitõlkest"
+
+#: ../bibletime/bibletime_init.cpp:150
+msgid "&Show bookshelf"
+msgstr "&Kuva raamaturiiul"
+
+#: ../bibletime/bibletime_init.cpp:162
+#, fuzzy
+msgid "Show &mag"
+msgstr "Kuva &märgendinäitaja"
+
+#: ../bibletime/bibletime_init.cpp:182
+msgid "Bookshelf &Manager"
+msgstr "Raamaturiiuli &haldamine"
+
+#: ../bibletime/bibletime_init.cpp:208
+msgid "&Arrangement mode"
+msgstr "&Asetusviis"
+
+#: ../bibletime/bibletime_init.cpp:214
+msgid "&Manual mode"
+msgstr "&Käsitiasetus"
+
+#: ../bibletime/bibletime_init.cpp:231
+# Verb või nimisõna?
+msgid "Auto-tile &vertically"
+msgstr "Automaatne &vertikaalasetus"
+
+#: ../bibletime/bibletime_init.cpp:248
+# Verb või nimisõna?
+msgid "Auto-tile &horizontally"
+msgstr "Automaatne &horisontaalasetus"
+
+#: ../bibletime/bibletime_init.cpp:265
+# Verb või nimisõna?
+msgid "Auto-&cascade"
+msgstr "Automaatne k&askaadasetus"
+
+#: ../bibletime/bibletime_init.cpp:281
+# Verb või nimisõna?
+msgid "&Cascade"
+msgstr "Aseta &kaskaadi"
+
+#: ../bibletime/bibletime_init.cpp:295
+# Verb või nimisõna?
+msgid "Tile &vertically"
+msgstr "Aseta &vertikaalselt "
+
+#: ../bibletime/bibletime_init.cpp:307
+# Verb või nimisõna?
+msgid "Tile &horizontally"
+msgstr "Aseta &horisontaalselt"
+
+#: ../bibletime/bibletime_init.cpp:321
+msgid "Cl&ose all"
+msgstr "&Sule kõik"
+
+#: ../bibletime/bibletime_init.cpp:334
+msgid "&Save session"
+msgstr "&Salvesta sessioon"
+
+#: ../bibletime/bibletime_init.cpp:347
+msgid "Save as &new session"
+msgstr "Salvesta &uue sessioonina"
+
+#: ../bibletime/bibletime_init.cpp:360
+msgid "&Load session"
+msgstr "&Lae sessioon"
+
+#: ../bibletime/bibletime_init.cpp:372
+msgid "&Delete session"
+msgstr "&Kustuta sessioon"
+
+#: ../bibletime/bibletime_init.cpp:384
+msgid "&Fullscreen mode"
+msgstr "&Täisekraanvaade"
+
+#: ../bibletime/bibletime_init.cpp:413
+msgid "&Handbook"
+msgstr "&Käsiraamat"
+
+#: ../bibletime/bibletime_init.cpp:426
+msgid "&Bible Study Howto"
+msgstr "&Piibli uurimise õpetus"
+
+#: ../bibletime/bibletime_init.cpp:457
+msgid "&Daily tip"
+msgstr "&Igapäevane tarkusetera"
+
+#: ../bibletime/bibletime_init.cpp:521
+msgid "Initializing Sword"
+msgstr "Sword teegi initsialiseerimine"
+
+#: ../bibletime/bibletime_init.cpp:570
+msgid "Checking indices"
+msgstr "Indeksite kontrollimine"
+
+#: ../bibletime/bibletime_slots.cpp:539
+# Või nimi?
+msgid "Please enter a name for the new session."
+msgstr "Palun sisestage nimetus uue sessiooni jaoks."
+
+#: ../bibletime/bibletime_slots.cpp:539
+# Või nimi?
+msgid "Session name:"
+msgstr "Sessiooni nimetus:"
+
+#: ../bibletime/display-templates/template-init.cpp:364
+msgid "Crazy"
+msgstr "Pöörane"
+
+#: ../bibletime/display-templates/template-init.cpp:674
+msgid "Green"
+msgstr "Roheline"
+
+#: ../bibletime/display-templates/template-init.cpp:1001
+msgid "High contrast"
+msgstr "Kõrge kontrastiga"
+
+#: ../bibletime/display-templates/template-init.cpp:1341
+msgid "Simple"
+msgstr "Lihtne"
+
+#: ../bibletime/frontend/cbtconfig.cpp:247
+msgid "Old testament"
+msgstr "Vana Testament"
+
+#: ../bibletime/frontend/cbtconfig.cpp:248
+msgid "Moses/Pentateuch/Torah"
+msgstr "Viis Moosese raamatut/Pentateuh/Toora"
+
+#: ../bibletime/frontend/cbtconfig.cpp:249
+msgid "History"
+msgstr "Ajalugu"
+
+#: ../bibletime/frontend/cbtconfig.cpp:250
+msgid "Prophets"
+msgstr "Prohvetid"
+
+#: ../bibletime/frontend/cbtconfig.cpp:251
+msgid "New testament"
+msgstr "Uus Testament"
+
+#: ../bibletime/frontend/cbtconfig.cpp:252
+msgid "Gospels"
+msgstr "Evangeeliumid"
+
+#: ../bibletime/frontend/cbtconfig.cpp:253
+msgid "Letters/Epistles"
+msgstr "Kirjad/epistlid"
+
+#: ../bibletime/frontend/cbtconfig.cpp:254
+msgid "Paul's Epistles"
+msgstr "Pauluse kirjad"
+
+#: ../bibletime/frontend/cexportmanager.cpp:456
+msgid ""
+"*.html *.htm | HTML files\n"
+" *.* | All files (*.*)"
+msgstr ""
+"*.html *.htm | HTML failid\n"
+" *.* | Kõik failid (*.*)"
+
+#: ../bibletime/frontend/cexportmanager.cpp:458
+msgid ""
+"*.txt | Text files\n"
+" *.* | All files (*.*)"
+msgstr ""
+"*.txt | Tekstifailid\n"
+" *.* | Kõik failid (*.*)"
+
+#: ../bibletime/frontend/cexportmanager.cpp:460
+msgid "All files (*.*)"
+msgstr "Kõik failid (*.*)"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:53
+msgid "Mag (\"shift\" to lock)"
+msgstr "Märgendinäitaja (lukustamiseks hoidke all \"SHIFT\"-klahvi)"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:168
+msgid "Abbreviation"
+msgstr "Lühend"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:179
+#: ../bibletime/frontend/cinfodisplay.cpp:272
+msgid "Cross references"
+msgstr "Ristviited"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:313
+msgid "Footnote"
+msgstr "Allmärkus"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:340
+# "Strongs"?
+msgid "Strongs"
+msgstr "Strongi numbrid"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:419
+msgid "Morphology"
+msgstr "Morfoloogia"
+
+#: ../bibletime/frontend/cinfodisplay.cpp:442
+msgid "Word lookup"
+msgstr "Sõnaotsing"
+
+#: ../bibletime/frontend/cinputdialog.cpp:59
+msgid "C&lear"
+msgstr "&Tühjenda"
+
+#: ../bibletime/frontend/cinputdialog.cpp:66
+#, fuzzy
+msgid "&Ok"
+msgstr "&Kinnita"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:62
+msgid "Manage module search indices"
+msgstr "Halda moodulite otsiindekseid"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:63
+msgid ""
+"You can use the list below to create and/or delete search indices for your "
+"installed works."
+msgstr "Te võite kasutada allpoololevat nimekirja paigaldatud teoste otsiindeksite loomiseks ja/või eemaldamiseks."
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:67
+msgid "Module"
+msgstr "Moodul"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:68
+msgid "Index size"
+msgstr "Indeksi suurus"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:90
+msgid "Modules with indices"
+msgstr "Indekseeritud moodulid"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:94
+msgid "Modules without indices"
+msgstr "Indekseerimata moodulid"
+
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:106
+#: ../bibletime/frontend/cmanageindiceswidget.cpp:111
+msgid "KiB"
+msgstr "kiB"
+
+#: ../bibletime/frontend/cmoduleindexdialog.cpp:41
+msgid "Preparing instant search"
+msgstr "Kiirotsingu ettevalmistamine"
+
+#: ../bibletime/frontend/cmoduleindexdialog.cpp:53
+msgid "Creating index for work %1"
+msgstr "Indeksi loomine teosele %1"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:74
+msgid "Configure BibleTime"
+msgstr "Seadista BibleTime"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:137
+msgid "Display"
+msgstr "Kuva"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:143
+msgid "Show tip of the day"
+msgstr "Näita päeva tarkusetera"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:156
+msgid "Show startuplogo"
+msgstr "Näita käivitamisel logo"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:168
+msgid "Display templates"
+msgstr "Kuvamallid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:169
+msgid ""
+"Display templates define how text is displayed. Please choose a template you "
+"like."
+msgstr "Kuvamallid määravad, kuidas kuvatakse teksti. Palun valige Teile meeldiv mall."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:182
+msgid "Available display styles:"
+msgstr "Saadaval olevad mallid:"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:192
+msgid "Style preview"
+msgstr "Malli näide:"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:213
+msgid "Languages"
+msgstr "Keeled"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:219
+msgid "Specify a language for names of Bible books"
+msgstr "Määra keel Piibli raamatute nimetuste jaoks"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:220
+msgid ""
+"Sword has a number of locales available which can be used to "
+"internationalize the   names of books of the Bible. You can specify which "
+"locale to use. If you want to   create a new locale, see http://www."
+"crosswire.org/sword/develop for details."
+msgstr "Swordi teek omab mitut lokaati, mida saab kasutada Piibli raamatute nimede kuvamiseks. Te võite määrata kasutatava lokaadi. Vaadake http://www.crosswire.org/sword/develop uue lokaadi loomiseks."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:226
+msgid "Language for names of Bible books"
+msgstr "Keel Piibli raamatute nimetuste jaoks"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:302
+msgid "Select custom fonts per-language"
+msgstr "Valige kirjatüübid erinevate keelte jaoks"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:303
+msgid ""
+"Here you find a list of all languages of the installed works.  You can "
+"specify a custom font for each language that needs a special font  to be "
+"displayed correctly."
+msgstr "Siin on nimekiri kõikidest paigaldatud teoste keeltest. Te võite kohandada kirjatüübi igale keelele, mis vajab korrektseks kuvamiseks spetsiaalset kirjatüüpi."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:336
+msgid "Use custom font"
+msgstr "Kasuta kohandatud kirjatüüpi"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:344
+#, fuzzy
+# Poliitiliselt ebakorrektne?
+msgid "The quick brown fox jumps over the lazy dog."
+msgstr "Ööhämaras püüdis rõve x-jalgne quebeclane newyorklasest zoofiili šantažeerida."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:360
+msgid "HotKeys"
+msgstr "Kiirklahvid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:368
+msgid "Choose type:"
+msgstr "Valige tüüp:"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:387
+msgid "BibleTime"
+msgstr "BibleTime"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:388
+msgid "All text windows"
+msgstr "Kõik tektstiaknad"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:389
+msgid "Bible windows"
+msgstr "Piibliaknad"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:390
+msgid "Commentary windows"
+msgstr "Kommentaariaknad"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:391
+msgid "Lexicon windows"
+msgstr "Leksikoniaknad"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:392
+msgid "Book windows"
+msgstr "Raamatuaknad"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:457
+msgid "Desk"
+msgstr "Kirjutuslaud"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:462
+#: ../bibletime/frontend/coptionsdialog.cpp:467
+msgid "Standard works"
+msgstr "Eelistatud teosed"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:468
+msgid ""
+"Standard works are used when no particular work is specified,   for example "
+"when a hyperlink into a Bible or lexicon was clicked ."
+msgstr "Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:474
+msgid "Standard Bible"
+msgstr "Eelistatud piiblitõlge"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:483
+msgid "Standard Commentary"
+msgstr "Eelistatud kommentaarid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:493
+msgid "Standard Lexicon"
+msgstr "Eelistatud leksikon"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:502
+msgid "Standard Daily Devotional"
+msgstr "Eelistatud igapäevane harduskirjandus"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:511
+msgid "Standard Hebrew Strong's Lexicon"
+msgstr "Eelistatud heebrea Strongi leksikon"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:520
+msgid "Standard Greek Strong's Lexicon"
+msgstr "Eelistatud kreeka Strongi leksikon"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:529
+msgid "Standard Hebrew Morphological Lexicon"
+msgstr "Eelistatud heebrea morfoloogiline leksikon"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:537
+msgid "Standard Greek Morphological Lexicon"
+msgstr "Eelistatud kreeka morfoloogiline leksikon"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:659
+#: ../bibletime/frontend/coptionsdialog.cpp:662
+msgid "Text filters"
+msgstr "Tekstifiltrid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:663
+msgid ""
+"Filters control the appearance of text. Here you can specify default "
+"settings for all filters. You can change the filter settings in each display "
+"window, of course."
+msgstr "Filtrid reguleerivad teksti välimust. Siin võite Te seadistada vaikimisi sätteid kõikidele filtritele. Te saate filtrite sätteid ka igas aknas eraldi muuta."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:670
+msgid "Insert line break after each verse"
+msgstr "Alusta iga salmi uuelt realt"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:676
+msgid "Show verse numbers"
+msgstr "Kuva salmide numbreid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:682
+msgid "Show section headings"
+msgstr "Kuva tekstiosade pealkirju"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:689
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:163
+msgid "Show scripture cross-references"
+msgstr "Kuva pühakirjade ristviiteid"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:695
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:158
+msgid "Show Greek accents"
+msgstr "Kuva kreeka keele rõhumärke"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:701
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:154
+msgid "Show Hebrew vowel points"
+msgstr "Kuva heebrea keele vokaalimärke"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:707
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:156
+msgid "Show Hebrew cantillation marks"
+msgstr "Kuva heebrea keele laulumärke"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:713
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:165
+msgid "Show morph segmentation"
+msgstr "Kuva morfoloogilist segmentatsiooni"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:719
+msgid "Use textual variants"
+msgstr "Kasuta tekstivariante"
+
+#: ../bibletime/frontend/coptionsdialog.cpp:924
+msgid ""
+"For God so loved the world, that he gave his one and only Son, that whoever "
+"believes in him should not perish, but have eternal life."
+msgstr "Sest nõnda on Jumal maailma armastanud, et ta oma ainusündinud Poja on andnud, et ükski, kes temasse usub, ei hukkuks, vaid et tal oleks igavene elu."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:929
+msgid ""
+"For God didn't send his Son into the world to judge the world, but that the "
+"world should be saved through him."
+msgstr "Jumal ei ole ju läkitanud oma Poega maailma, et ta kohut mõistaks maailma üle, vaid et maailm tema läbi päästetaks."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:936
+msgid ""
+"He who believes in him is not judged. He who doesn't believe has been judged "
+"already, because he has not believed in the name of the one and only Son of "
+"God."
+msgstr "Kes temasse usub, selle üle ei mõisteta kohut, ja kes ei usu, selle üle on kohus juba mõistetud, sest ta ei ole uskunud Jumala ainusündinud Poja nimesse."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:943
+msgid ""
+"This is the judgment, that the light has come into the world, and men loved "
+"the darkness rather than the light; for their works were evil."
+msgstr "Ent kohus on see, et valgus on tulnud maailma, aga inimesed on armastanud pimedust enam kui valgust, sest nende teod on kurjad."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:948
+msgid ""
+"For everyone who does evil hates the light, and doesn't come to the light, "
+"lest his works would be exposed."
+msgstr "Igaüks, kes teeb halba, vihkab valgust ega tule valguse juurde, et ta tegusid ei paljastataks."
+
+#: ../bibletime/frontend/coptionsdialog.cpp:953
+msgid ""
+"But he who does the truth comes to the light, that his works may be "
+"revealed, that they have been done in God."
+msgstr "Aga kes teeb tõtt, see tuleb valguse juurde, et ta teod saaksid avalikuks, sest need on tehtud Jumalas."
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:59
+msgid "Bookshelf Manager"
+msgstr "Raamaturiiuli haldamine"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:75
+msgid "Bookshelf path(s)"
+msgstr "Raamaturiiuli asukohad"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:86
+msgid "Configure bookshelf path(s)"
+msgstr "Raamaturiiuli asukohtade seadistamine"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:87
+msgid ""
+"You can store your bookshelfs in one or more directories, which you can "
+"specify here."
+msgstr "Te võite enda raamaturiiuleid hoida ühes või mitmes kataloogis, mida Te saate siin määratleda."
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:93
+msgid "Your bookshelf configuration file is <b>%1</b>"
+msgstr "Teie raamaturiiulite konfiguratsiooni fail on <b>%1</b>"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:98
+msgid "Path to bookshelf"
+msgstr "Raamaturiiuli asukoht"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:102
+msgid "Edit Entry"
+msgstr "Muuda kirjet"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:107
+msgid "Add Entry"
+msgstr "Lisa kirje"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:112
+msgid "Remove Entry"
+msgstr "Eemalda kirje"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:121
+msgid "Install/Update works"
+msgstr "Paigalda/uuenda teoseid"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:144
+msgid "Install/update works - Step 1"
+msgstr "Teoste paigaldamine/uuendamine - 1. samm"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:145
+msgid ""
+"Please choose a (local or remote) library and a bookshelf path to install "
+"the work(s) to. After that step click on the connect button.<br/><b>WARNING: "
+"If you live in a persecuted country and do not wish to risk detection you "
+"should NOT use the module remote installation feature!</b>"
+msgstr ""
+"Palun valige (kohalik või võrgus olev) raamatukogu ja raamaturiiuli asukoht, kuhu teosed paigaldata. Järgmisena vajutage raamatukoguga ühendundamise nuppu.<br/><b>HOIATUS: "
+"Kui Te elate tagakiusatud riigis ja ei taha riskeerida Teie avastamisega, ÄRGE KASUTAGE mooduli kaugpaigaldusmeetodit üle avaliku arvutivõrgu!</b>"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:152
+msgid "Select library"
+msgstr "Valige raamatukogu"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:158
+msgid "Delete library"
+msgstr "Eemalda raamatukogu"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:163
+msgid "Add library"
+msgstr "Lisa raamatukogu"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:171
+msgid "Select bookshelf path"
+msgstr "Valige raamaturiiuli asukoht"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:191
+#: ../bibletime/frontend/cswordsetupdialog.cpp:797
+msgid "Connect to library"
+msgstr "Ühendu raamatukoguga"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:206
+msgid "Remove works"
+msgstr "Teoste eemaldamine"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:218
+msgid "Remove installed work(s)"
+msgstr "Paigaldatud teoste eemaldamine"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:219
+msgid ""
+"This dialog lets you remove installed works from your system. Choose the "
+"modules and then click on the remove button."
+msgstr "Siin võite eemaldada enda süsteemist paigaldatud teoseid. Valige eemaldatavad moodulid ja siis vajutage eemaldamisnuppu."
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:223
+msgid "Select works to be uninstalled"
+msgstr "Valige eemaldatavad teosed"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:229
+msgid "Remove selected work(s)"
+msgstr "Eemalda valitud teosed"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:241
+msgid "Manage search indicies"
+msgstr "Halda otsiindekseid"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:319
+#: ../bibletime/frontend/cswordsetupdialog.cpp:371
+#: ../bibletime/frontend/cswordsetupdialog.cpp:881
+#, fuzzy
+msgid "[Remote]"
+msgstr "[Võrgus]"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:324
+#: ../bibletime/frontend/cswordsetupdialog.cpp:366
+#: ../bibletime/frontend/cswordsetupdialog.cpp:876
+msgid "[Local]"
+msgstr "[Kohalik]"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:407
+msgid ""
+"You selected the following work(s): %1.\n"
+"\n"
+"Do you really want to remove them from your system?"
+msgstr ""
+"Te valisite järgnevad teosed: %1.\n"
+"\n"
+"Kas Te olete kindel, et soovite need eemaldada?"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:484
+msgid "Download"
+msgstr "Lae alla"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:497
+msgid "Downloading library information..."
+msgstr "Raamatukogu informatsioon allalaadimine..."
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:612
+msgid "Install/update works - Step 2"
+msgstr "Teoste paigaldamine/uuendamine - 2. samm"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:613
+msgid ""
+"Please choose the works which should be installed and/or updated and click "
+"the install button."
+msgstr "Palun valige teosed paigaldamiseks ja/või uuendamiseks ning vajutage paigaldusnuppu."
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:639
+msgid "Install works"
+msgstr "Paigalda teosed"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:690
+msgid ""
+"You selected the following works: %1.\n"
+"\n"
+" Do you really want to install them on your system?"
+msgstr ""
+"Te valisite järgnevad teosed: %1.\n"
+"\n"
+"Kas Te olete kindel, et soovite need paigaldada?"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:717
+msgid "Download of work(s)"
+msgstr "Teoste allalaadimine"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:788
+msgid "[%1]: %2% complete"
+msgstr "[%1]: %2% valmis"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:809
+msgid ""
+"This directory is not writable, so works    can not be installed here using "
+"BibleTime.    Do you want to use this directory instead of the previous "
+"value?"
+msgstr "Sellele kataloogile puuduvad kirjutusõigused, seega pole sinna BibleTime abiga võimalik teoseid paigaldada. Kas olete kindel, et soovite seda kataloogi eelmise väärtuse asemel kasutada?"
+
+#: ../bibletime/frontend/cswordsetupdialog.cpp:830
+msgid ""
+"This directory is not writable,    so works can not be installed here using "
+"BibleTime.    Do you want to add it to the list of module directories?"
+msgstr "Sellele kataloogile puuduvad kirjutamisõigused, seega pole sinna BibleTime abiga võimalik teoseid paigaldada. Kas olete kindel, et soovite selle moodulite kataloogide nimekirja lisada?"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:31
+msgid "Local"
+msgstr "Kohalik"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:32
+msgid "Remote"
+msgstr "Võrgusolev"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:43
+msgid "Caption"
+msgstr "Nimi"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:55
+msgid "Type"
+msgstr "Tüüp"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:58
+msgid "Server"
+msgstr "Server"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:61
+msgid "Path"
+msgstr "Asukoht"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:81
+msgid "Ok"
+msgstr "Lisa"
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:95
+msgid "Please provide a caption."
+msgstr "Palun sisestage ka allika nimetus."
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:103
+msgid ""
+"A source with this caption already exists.<br>Please provide a different "
+"caption."
+msgstr "Sellise nimetusega allikas juba eksisteerib.<br>Palun sisestage erinev nimetus."
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:109
+msgid "Please provide a server name."
+msgstr "Palun sisestage ka serveri nimi."
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:116
+msgid "Please provide a valid, readable path."
+msgstr "Palun sisestage kehtiv, lugemisõigustega asukoht."
+
+#: ../bibletime/frontend/cswordsetupinstallsourcesdialog.cpp:120
+msgid "Please provide a path."
+msgstr "Palun sisestage ka asukoht."
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:74
+msgid "Name"
+msgstr "Nimetus"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:78
+msgid "Status"
+msgstr "Seisund"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:80
+msgid "Installed version"
+msgstr "Paigaldatud versioon"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:84
+msgid "Remote version"
+msgstr "Kaugserveri versioon"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:107
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:115
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:583
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:109
+msgid "Bibles"
+msgstr "Piiblid"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:108
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:116
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:586
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:110
+msgid "Commentaries"
+msgstr "Kommentaarid"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:109
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:117
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:589
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:111
+msgid "Lexicons"
+msgstr "Leksikonid"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:110
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:118
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:592
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:112
+msgid "Books"
+msgstr "Raamatud"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:111
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:119
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:150
+msgid "Daily Devotionals"
+msgstr "Igapäevane harduskirjandus"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:112
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:120
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:598
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:1174
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:161
+msgid "Glossaries"
+msgstr "Sõnastikud"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:234
+msgid "New"
+msgstr "Uus"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:234
+msgid "Updated"
+msgstr "Uuendatud"
+
+#: ../bibletime/frontend/cswordsetupmodulelistview.cpp:236
+msgid "Installed"
+msgstr "Paigaldatud"
+
+#: ../bibletime/frontend/display/cdisplay.cpp:154
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:517
+msgid "HTML files"
+msgstr "HTML-failid"
+
+#: ../bibletime/frontend/display/cdisplay.cpp:157
+msgid "Text files"
+msgstr "Tekstifailid"
+
+#: ../bibletime/frontend/display/cdisplay.cpp:161
+msgid "Save document ..."
+msgstr "Salvesta dokument..."
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:133
+msgid "Choose a font"
+msgstr "Valige kirjatüüp"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:144
+msgid "Choose a font size"
+msgstr "Valige kirjasuurus"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:164
+msgid "Bold"
+msgstr "Rasvane"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:186
+msgid "Underline"
+msgstr "Allajoonitud"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:258
+msgid "Select all"
+msgstr "Vali kõik"
+
+#: ../bibletime/frontend/display/chtmlwritedisplay.cpp:262
+msgid "HTML editor window"
+msgstr "HTML'i redaktoraken"
+
+#: ../bibletime/frontend/display/creaddisplay.cpp:67
+msgid "Print keys"
+msgstr ""
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:82
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:134
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:38
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:111
+msgid "Next book"
+msgstr "Järgmine raamat"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:86
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:140
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:42
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:117
+msgid "Previous book"
+msgstr "Eelmine raamat"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:90
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:146
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:46
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:123
+msgid "Next chapter"
+msgstr "Järgmine peatükk"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:94
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:152
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:50
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:129
+msgid "Previous chapter"
+msgstr "Eelmine peatükk"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:98
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:158
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:54
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:135
+msgid "Next verse"
+msgstr "Järgmine salm"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:102
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:164
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:58
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:141
+msgid "Previous verse"
+msgstr "Eelmine salm"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:113
+msgid "Copy chapter"
+msgstr "Kopeeri peatükk"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:118
+msgid "Save chapter as plain text"
+msgstr "Salvesta peatükk tavalise tekstina"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:119
+msgid "Save chapter as HTML"
+msgstr "Salvesta peatükk HTML'ina"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:123
+msgid "Print chapter"
+msgstr "Trüki peatükk"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:177
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:101
+msgid "Strong's Search"
+msgstr "Strongi otsing"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:185
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:108
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:119
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:65
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:73
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:53
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:61
+msgid "Reference only"
+msgstr "Ainult viide"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:187
+msgid "Text of reference"
+msgstr "Viidatud tekst"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:189
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:196
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:202
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:67
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:75
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:81
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:55
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:63
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:69
+msgid "Reference with text"
+msgstr "Viide koos tekstiga"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:191
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:204
+msgid "Chapter"
+msgstr "Peatükk"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:198
+msgid "Chapter as plain text"
+msgstr "Peatükk tavalise tekstina"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:200
+msgid "Chapter as HTML"
+msgstr "Peatükk HTML'ina"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:229
+msgid "Bible window"
+msgstr "Piibli aken"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:237
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:211
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:63
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:51
+msgid "Copy..."
+msgstr "Kopeeri..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:247
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:220
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:71
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:59
+msgid "Save..."
+msgstr "Salvesta..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:254
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:226
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:79
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:67
+msgid "Print..."
+msgstr "Trüki..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:351
+msgid "Copy chapter to clipboard ..."
+msgstr "Kopeeri terve peatükk lõikelauale..."
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:351
+msgid "Copying"
+msgstr "Kopeerimine"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:372
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:390
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:270
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:276
+msgid "Saving"
+msgstr "Salvestamine"
+
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:372
+#: ../bibletime/frontend/displaywindow/cbiblereadwindow.cpp:390
+msgid "Saving chapter ..."
+msgstr "Peatüki salvestamine"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:65
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:78
+msgid "Toggle tree view"
+msgstr "Sisukorra kuvamine"
+
+#: ../bibletime/frontend/displaywindow/cbookreadwindow.cpp:167
+msgid "Book window"
+msgstr "Raamatu aken"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:111
+msgid "Display settings: No options available"
+msgstr "Kuva sätted: puuduvad valikud"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:116
+msgid "Display settings"
+msgstr "Kuva sätted"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:133
+msgid "Display options"
+msgstr "Kuva valikud"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:136
+msgid "Use linebreaks after each verse"
+msgstr "Alusta iga salmi uuelt realt"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:139
+msgid "Show versenumbers"
+msgstr "Kuva salmide numbreid"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:141
+msgid "Show headings"
+msgstr "Kuva pealkirju"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:145
+msgid "Highlight words of Jesus"
+msgstr "Tõsta esile Jeesuse sõnad"
+
+#: ../bibletime/frontend/displaywindow/cbuttons.cpp:161
+msgid "Use alternative textual variant"
+msgstr "Kasuta alternatiivset tekstivarianti"
+
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:78
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:59
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:55
+msgid "Sync with active Bible"
+msgstr "Sünkroniseeri aktiivse piiblitõlkega"
+
+#: ../bibletime/frontend/displaywindow/ccommentaryreadwindow.cpp:197
+msgid "Commentary window"
+msgstr "Kommentaariaken"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:158
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:209
+msgid "Back in history"
+msgstr "Ajaloos tagasi"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:165
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:215
+msgid "Forward in history"
+msgstr "Ajaloos edasi"
+
+#: ../bibletime/frontend/displaywindow/cdisplaywindow.cpp:173
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:85
+msgid "Search"
+msgstr "Otsing"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:68
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:65
+msgid "Save text"
+msgstr "Salvesta tekst"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:78
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:76
+msgid "Delete current entry"
+msgstr "Kustuta jooksev kirje"
+
+#: ../bibletime/frontend/displaywindow/chtmlwritewindow.cpp:88
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:87
+msgid "Restore original text"
+msgstr "Taasta algne tekst"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:47
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:83
+msgid "Next entry"
+msgstr "Järgmine kirje"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:51
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:88
+msgid "Previous entry"
+msgstr "Eelmine kirje"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:56
+msgid "Copy entry with text"
+msgstr "Kopeeri kirje koos tekstiga"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:58
+msgid "Save entry as plain text"
+msgstr "Salvesta kirje tavalise tekstina"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:59
+msgid "Save entry as HTML"
+msgstr "Salvesta kirje HTML'ina"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:61
+msgid "Print entry with text"
+msgstr "Trüki kirje tekstiga"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:110
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:121
+msgid "Entry with text"
+msgstr "Kirje tekstiga"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:115
+msgid "Entry as plain text"
+msgstr "Kirje tavalise tekstina"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:117
+msgid "Entry as HTML"
+msgstr "Kirje HTML'ina"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:200
+msgid "Lexicon window"
+msgstr "Leksikoniaken"
+
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:270
+#: ../bibletime/frontend/displaywindow/clexiconreadwindow.cpp:276
+msgid "Saving entry ..."
+msgstr "Kirje salvestamine..."
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:112
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:159
+msgid "NONE"
+msgstr "PUUDUB"
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:128
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:129
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:151
+msgid "Select a work"
+msgstr "Valige teos"
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:154
+msgid "Select an additional work"
+msgstr "Valige täiendav teos"
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:225
+msgid "[locked]"
+msgstr "[lukus]"
+
+#: ../bibletime/frontend/displaywindow/cmodulechooserbutton.cpp:244
+msgid "No work selected"
+msgstr "Ühtegi teost pole valitud"
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:138
+msgid "Module is not writable."
+msgstr "Puuduvad kirjutamisõigused moodulile"
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:139
+msgid "Either the module may not be edited, or you do not have write permission."
+msgstr "Moodulit ei või redigeerida või teil puuduvad kirjutusõigused."
+
+#: ../bibletime/frontend/displaywindow/cplainwritewindow.cpp:141
+msgid "Module not writable"
+msgstr "Puuduvad kirjutamisõigused moodulile"
+
+#: ../bibletime/frontend/displaywindow/cwritewindow.cpp:141
+msgid "Save text before closing?"
+msgstr "Kas salvestada tekst enne sulgemist?"
+
+#: ../bibletime/frontend/displaywindow/cwritewindow.cpp:165
+msgid "Save changed text?"
+msgstr "Kas salvestada muudetud tekst?"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:391
+msgid "Change description ..."
+msgstr "Muuda kirjeldust..."
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:391
+msgid "Enter a new description for the chosen bookmark."
+msgstr "Palun sisestage valitud järjehoidjale uus kirjeldus."
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:486
+msgid "New folder"
+msgstr "Uus kaust"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:595
+msgid "Daily devotionals"
+msgstr "Igapäevane harduskirjandus"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:604
+msgid "Old bookmarks"
+msgstr "Vanad järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:607
+msgid "Unknown"
+msgstr "Tundmatu"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:614
+msgid "Unknown language"
+msgstr "Tundmatu keel"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:959
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:967
+msgid ""
+"*.btb | BibleTime bookmark files (*.btb)\n"
+"*.* | All files (*.*)"
+msgstr ""
+"*.btb | BibleTime järjehoidjate failid (*.btb)\n"
+"*.* | Kõik failid (*.*)"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:959
+msgid "BibleTime - Export bookmarks"
+msgstr "BibleTime - Ekspordi järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cindexitem.cpp:967
+msgid "BibleTime - Import bookmarks"
+msgstr "BibleTime - Impordi järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:148
+msgid "Create a new folder"
+msgstr "Loo uus kaust"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:149
+msgid "Change this folder"
+msgstr "Muuda seda kausta"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:151
+msgid "Change bookmark description"
+msgstr "Muuda järjehoidja kirjeldust"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:152
+msgid "Import bookmarks"
+msgstr "Impordi järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:153
+msgid "Export bookmarks"
+msgstr "Ekspordi järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:154
+msgid "Print bookmarks"
+msgstr "Trüki järjehoidjad"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:156
+msgid "Remove selected item(s)"
+msgstr "Eemalda valitud kirjed"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:158
+msgid "Edit this work"
+msgstr "Redigeeri seda teost"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:160
+msgid "Plain text"
+msgstr "Tavaline tekst"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:161
+msgid "HTML"
+msgstr "HTML"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:163
+msgid "Search in selected work(s)"
+msgstr "Otsi valitud teostes"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:164
+msgid "Unlock this work"
+msgstr "Ava teos lukustusest"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:165
+msgid "About this work"
+msgstr "Teave selle teose kohta"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:508
+msgid "Delete Items"
+msgstr "Kustuta kirjed"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:508
+msgid "Do you really want to delete the selected items and child-items?"
+msgstr "Kas soovite tõesti kustutada valitud kirjed ja nende alamkirjed?"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:548
+msgid "BibleTime - Unlock work"
+msgstr "BibleTime - Teose avamine lukustusest"
+
+#: ../bibletime/frontend/mainindex/cmainindex.cpp:549
+msgid "Enter the unlock key for this work."
+msgstr "Palun sisestage võti selle teose lukustuse avamiseks"
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:92
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:49
+msgid "Work"
+msgstr "Teos"
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:271
+msgid "Choose work(s)"
+msgstr "Valige teosed"
+
+#: ../bibletime/frontend/searchdialog/cmodulechooser.cpp:283
+msgid "Use chosen work(s)"
+msgstr "Kasuta valitud teoseid"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:50
+msgid "Hits"
+msgstr "Tabamusi"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:227
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:236
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:212
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:231
+msgid "Copy search result..."
+msgstr "Kopeeri otsingu tulemus..."
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:227
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:236
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:212
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:231
+msgid "Copying search result"
+msgstr "Otsingu tulemuse kopeerimine"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:245
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:254
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:174
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:193
+msgid "Save search result..."
+msgstr "Salvesta otsingu tulemus..."
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:245
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:254
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:174
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:193
+msgid "Saving search result"
+msgstr "Otsingu tulemuse salvestamine"
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:263
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:163
+msgid "Print search result..."
+msgstr "Trüki otsingu tulemus..."
+
+#: ../bibletime/frontend/searchdialog/cmoduleresultview.cpp:263
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:163
+msgid "Printing search result"
+msgstr "Otsingu tulemuse trükkimine"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:74
+msgid "Search range editor"
+msgstr "Otsingu ulatuse redigeerija"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:102
+msgid "Search range"
+msgstr "Otsingu ulatus"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:110
+msgid "Add new range"
+msgstr "Lisa uus ulatus"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:114
+msgid "Delete current range"
+msgstr "Kustuta jooksev ulatus"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:120
+msgid "Name:"
+msgstr "Nimetus:"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:125
+msgid "Edit current search range:"
+msgstr "Muuda valitud otsinguulatust:"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:135
+msgid "Parsed search range:"
+msgstr "Sõelutud otsinguulatus:"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:164
+msgid "New range"
+msgstr "Uus ulatus"
+
+#: ../bibletime/frontend/searchdialog/crangechooser.cpp:229
+msgid "<invalid name of search range>"
+msgstr "<sobimatu otsinguulatuse nimetus>"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:70
+msgid "Search analysis"
+msgstr "Otsingutulemuste analüüs"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:87
+msgid "Save search analysis as HTML"
+msgstr "Salvesta analüüs HTML'ina"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:519
+msgid "Save Search Analysis"
+msgstr "Salvesta otsingutulemuste analüüs"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:540
+msgid "BibleTime Search Analysis"
+msgstr "BibleTime otsingutulemuste analüüs"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:541
+msgid "Search text :"
+msgstr "Otsingutekst:"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:543
+msgid "Book"
+msgstr "Raamat"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:544
+msgid "Total hits"
+msgstr "Tabamusi kokku"
+
+#: ../bibletime/frontend/searchdialog/csearchanalysis.cpp:580
+msgid "Created by"
+msgstr "Loodud tarkvaraga"
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:85
+msgid "Search dialog"
+msgstr "Otsinguaken"
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:111
+msgid "Missing indices"
+msgstr "Puuduvad indeksid"
+
+#: ../bibletime/frontend/searchdialog/csearchdialog.cpp:112
+msgid ""
+"One or more modules need indexing before they can be searched.\n"
+"This could take a long time. Proceed with indexing?"
+msgstr ""
+"Vähemalt üks moodul vajab indekseerimist enne kui temast saab midagi otsida.\n"
+"Indekseerimine võib võtta kaua aega. Kas jätkata indekseerimisega?"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:80
+msgid "Parsing Stong's Numbers"
+msgstr "Strongi numbrite sõelumine"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:80
+msgid "Parsing Stong's numbers for translations."
+msgstr "Sõelutakse Strongi numbreid tõlgete jaoks."
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:617
+msgid "Searching in: "
+msgstr "Otsime teostes:"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:690
+msgid ""
+"<p>Enter search terms separated by spaces.  By default the search function "
+"will return results that match any of the search terms (OR). To search for "
+"all the terms separate the terms by AND.</p>"
+msgstr "<p>Sisestage otsisõnad tühikutega eraldatuna. Vaikimisi kuvab otsingufunktsioon tulemused, mis sisaldavad ükskõik millist otsisõna („||“ või „OR“). Otsimaks tulemusi, mis sisaldavad kõiki otsisõnu, eraldage nad märgendiga „&&“ või „AND“.</p>"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:693
+msgid ""
+"<p>You can use wildcards: '*' matches any sequence of characters, while '?' "
+"matches any single character. The use of brackets allows you to group your "
+"search terms, e.g. '(Jesus OR spirit) AND God'.</p>"
+msgstr "<p>Te võite kasutada ka metamärke: „*“sobindub iga sümbolite järjendiga, „?“ aga sobindub iga üksiku sümboliga. Sulgude kasutamine lubab grupeerida otsisõnu, näiteks „(Jeesus || vaim) && Jumal“.</p>"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:696
+msgid ""
+"<p>To search text other than the main text, enter the text type followed by "
+"\":\", and then the search term.  For example, to search for the Strong's "
+"number H8077, use 'strong:H8077'.</p>"
+msgstr "<p>Otsimaks teisi tekste lisaks põhitekstile sisestage tekstitüüp, millele pange järgi koolon ning otsisõna. Näiteks, et otsida Strongi numbrit H8077, kasutage „strong:H8077“.</p>"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:699
+msgid ""
+"<p>Available text types:<br><table><tr><td>heading:</td><td>searches "
+"headings</td></tr><tr><td>footnote:</td><td>searches footnotes</td></"
+"tr><tr><td>strong:</td><td>searches Strong's Numbers</td></tr><tr><td>morph:"
+"</td><td>searches morphology codes</td></tr></table></p>"
+msgstr "<p>Saadaval olevad tekstitüübid:<br><table><tr><td>heading:</td><td>otsib pealkirjade hulgast</td></tr><tr><td>footnote:</td><td>otsib allmärkuste hulgast</td></tr><tr><td>strong:</td><td>otsib Strongi numbrite hulgast</td></tr><tr><td>morph:</td><td>otsib morfoloogiliste koodide hulgast</td></tr></table></p>"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:704
+msgid ""
+"<p>BibleTime uses the Lucene search engine to perform your searches. It has "
+"many advanced features, and you can read more about it here: <a href="
+"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
+"apache.org/java/docs/queryparsersyntax.html</a></p>"
+msgstr ""
+"<p>BibleTime kasutab otsingute jaoks otsimootorit Lucene. Sellel on palju keerulisisi omadusi, võite neist lähemalt lugeda järgmiselt veebiaadressilt: <a href="
+"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
+"apache.org/java/docs/queryparsersyntax.html</a></p>"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:709
+msgid "Basic Search Syntax Introduction"
+msgstr "Sissejuhatus otsingusüntaksisse"
+
+#: ../bibletime/frontend/searchdialog/csearchdialogpages.cpp:717
+msgid "No search scope"
+msgstr "Puudub otsingu ulatus"
+
+#: ../bibletime/frontend/searchdialog/csearchresultview.cpp:41
+msgid "Results"
+msgstr "Tulemused"
+
+#: ../bibletime/main.cpp:124
+msgid "Enable debug messages"
+msgstr "Luba veaparandussõnumite kuvamine"
+
+#: ../bibletime/main.cpp:125
+msgid ""
+"Ignore the startup session that was saved when BibleTime was closed the last "
+"time."
+msgstr "Ignoreeri käivitussessiooni, mis salvestati BibleTime' viimasel sulgemisel."
+
+#: ../bibletime/main.cpp:126
+msgid ""
+"Open the standard Bible with the given key. Use <random> to open at a random "
+"position."
+msgstr "Ava eelistatud piiblitõlge antud võtmega. Suvalisest kohast avamiseks kasutage võtmena \"<random>\"."
+
+#: ../bibletime/main.cpp:135
+msgid "Bible study tool for KDE"
+msgstr "Piibliõppe tööriist KDE jaoks"
+
+#: ../bibletime/main.cpp:137
+msgid "(c)1999-2006, The BibleTime Team"
+msgstr "(c)1999-2006, BibleTime meeskond"
+
+#: ../bibletime/main.cpp:138
+msgid ""
+"BibleTime is an easy to use but powerful Bible study tool for KDE.\n"
+"\n"
+"We are looking for developers and translators.\n"
+"If you'd like to join our team, please send an email to info@bibletime.info."
+msgstr ""
+"BibleTime on lihtsasti kasutatav, kuid võimas piibliõppe tööriist KDE'le.\n"
+"\n"
+"Me otsime arendajaid ja tõlkijaid.\n"
+"Kui Te soovikside liituda meie meeskonnaga, palun saatke e-kiri aadressile info@bibletime.info."
+
+#: ../bibletime/main.cpp:147
+msgid "Project coordinator"
+msgstr "Projektijuht"
+
+#: ../bibletime/main.cpp:149
+msgid "Frontend, backend"
+msgstr "Eesrakendused, põhirakendused"
+
+#: ../bibletime/main.cpp:151
+msgid "Crystal icons, crystal startlogo, webpage"
+msgstr "Kristalsed ikoonid, kristalne alguslogo, veebilehekülg"
+
+#: ../bibletime/main.cpp:159
+msgid "High contrast template"
+msgstr "Kõrge kontrastiga mall"
+
+#: ../bibletime/main.cpp:161
+msgid "Installation manager"
+msgstr "Paigaldushaldur"
+
+#: ../bibletime/main.cpp:163
+msgid "Icons, startlogo"
+msgstr "Ikoonid, alguslogo"
+
+#: ../bibletime/main.cpp:165
+msgid "GUI"
+msgstr "Graafiline kasutajaliides"
+
+#: ../bibletime/main.cpp:167
+msgid "Founder of the Sword project"
+msgstr "Sword-projekti algataja"
+
+#: ../bibletime/main.cpp:169
+msgid "Sponsored our internet domain for many years"
+msgstr "Sponsoreeris palju aastaid meie internetidomeeni"
+
+#: ../bibletime/main.cpp:171
+msgid "Bible Study HowTo"
+msgstr "Piibli uurimise õpetus"
+
+#: ../bibletime/main.cpp:173 ../bibletime/main.cpp:191
+msgid "Search dialog enhancements"
+msgstr "Otsinguakna täiustused"
+
+#: ../bibletime/main.cpp:175
+msgid "Language codes and names"
+msgstr "Keeltekoodid ja nimetused"
+
+#: ../bibletime/main.cpp:177
+msgid "GUI, instant search"
+msgstr "Graafiline kasutajaliides, kiirotsing"
+
+#: ../bibletime/main.cpp:179 ../bibletime/main.cpp:183
+msgid "Frontend"
+msgstr "Eesrakendused"
+
+#: ../bibletime/main.cpp:181
+msgid "Searchdialog"
+msgstr "Otsinguaken"
+
+#: ../bibletime/main.cpp:185
+msgid "Russian website translation"
+msgstr "Veebilehekülje tõlge vene keelde"
+
+#: ../bibletime/main.cpp:187
+msgid "Documentation"
+msgstr "Dokumentatsioon"
+
+#: ../bibletime/main.cpp:189
+msgid "French handbook translation"
+msgstr "Käsiraamatu tõlge prantsuse keelde"
+
+#: ../bibletime/main.cpp:193
+msgid "Very helpful and detailed testing"
+msgstr "Väga abistav ja põhjalik testimine"
+
+#: ../bibletime/main.cpp:195
+msgid "The first lead developer"
+msgstr "Esimene juhtiv arendaja"
+
+#: ../bibletime/main.cpp:197
+msgid "Helpful source code additions"
+msgstr "Kasulikud lähtekoodi täiustused"
+
+#: ../bibletime/main.cpp:199
+msgid "Translated the GUI into Russian"
+msgstr "Graafilise kasutajaliidese tõlge vene keelde"
+
+#: ../bibletime/main.cpp:201
+msgid "New Bible key choosers"
+msgstr "Uued kirjakohavalijad"
+
+#: ../bibletime/main.cpp:204
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Jaak Ristioja"
+
+#: ../bibletime/main.cpp:205
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "Ristioja@gmail.com"
+
+#: ../bibletime/main.cpp:231
+msgid "Starting BibleTime"
+msgstr "BibleTime käivitamine"
+
+#: ../bibletime/rc-dummy.cpp:2
+msgid "&Search"
+msgstr "&Otsing"
+
+#: ../bibletime/rc-dummy.cpp:4
+msgid "Se&ttings"
+msgstr "&Seaded"
+
+#: ../bibletime/rc-dummy.cpp:5
+msgid "&Window"
+msgstr "&Aken"
+
+#: ../bibletime/tips-dummy.cpp:3
+msgid "The Bible was written so we could believe in Jesus. (John 20:31)\n"
+msgstr "Piibel on kirjutatud, et me usuksime Jeesusesse. (Johannese 20:31)\n"
+
+#: ../bibletime/tips-dummy.cpp:7
+msgid ""
+"BibleTime includes a really useful handbook written by Fred Saalbach.\n"
+"To read it choose the item \"Handbook\" in the \"Help\" menu of BibleTime.\n"
+msgstr ""
+"BibleTime'ga on kaasas väga kasulik Fred Saalbachi poolt kirjutatud käsiraamat.\n"
+"Käsiraamatu lugemiseks valige „Käsiraamat“ BibleTime' „Abi“ menüüst.\n"
+
+#: ../bibletime/tips-dummy.cpp:12
+msgid ""
+"No one is allowed by God to add anything to or take anything away from the "
+"Word. (Revelation 22:18-19)\n"
+msgstr "Keegi ei või Jumala sõnale midagi juurde panna ega sellest ära võtta. (Johannese ilmutus 22:18-19)\n"
+
+#: ../bibletime/tips-dummy.cpp:16
+msgid "The Bible is like a mirror. (James 1:23)\n"
+msgstr "Piibel on kui peegel. (Jaakobuse 1:23)\n"
+
+#: ../bibletime/tips-dummy.cpp:20
+msgid ""
+"BibleTime does include a <B>Bible Study HowTo</B>!\n"
+"It was written by Bob Harman and is a great introduction how to study the "
+"Bible.\n"
+msgstr ""
+"BibleTime'ga on kaasas ka <B>Piibli uurimise õpetus</B>!\n"
+"See kirjutati Bob Harman'i poolt  ja on suurepärane sissejuhatav õpetus Piibli uurimise kohta.\n"
+
+#: ../bibletime/tips-dummy.cpp:25
+msgid ""
+"You can save, print and copy the whole search result by pressing the right "
+"mouse button on the icon of the searched module in the search dialog.\n"
+msgstr "Te saate salvestada, trükkida ja kopeerida kogu otsingutulemuse, vajutades otsinguaknas hiire paremat nuppu mõne otsingus kasutatud teose ikooni peal.\n"
+
+#: ../bibletime/tips-dummy.cpp:29
+msgid "The Bible is our only spiritual weapon. (Ephesians 6:17)\n"
+msgstr "Jumala Sõna on meie vaimseks relvaks. (Efeslastele 6:17)\n"
+
+#: ../bibletime/tips-dummy.cpp:33
+msgid ""
+"To get the number of verses in the Bible search for a space in the module.\n"
+"The search analysis shows you the number of verses of each book.\n"
+msgstr "Salmide arvu leidmiseks Piiblis otsige moodulis tühikut.\nOtsianalüüs näitab teile salmide arvu igas raamatus.\n"
+
+#: ../bibletime/tips-dummy.cpp:38
+msgid "The Bible is truth. (John 17:17)\n"
+msgstr "Jumala Sõna on tõde (Johannese 17:17)\n"
+
+#: ../bibletime/tips-dummy.cpp:42
+msgid ""
+"If you would like to create a set of bookmarks around a specific topic with "
+"comments containing what the Lord told you here, it's best to\n"
+"make bookmarks from your personal commentary.\n"
+msgstr "Kui soovite luua järjehoidjaid mingi kindla teema ümber koos kommentaaridega selle kohta, mida Jumal Teile siin ütles, oleks parim teha järjehoidjaid oma isiklikele kommentaaridele.\n"
+
+#: ../bibletime/tips-dummy.cpp:47
+msgid "The scriptures give us the wisdom that leads to salvation. (2 Timothy 3:15)\n"
+msgstr "Pühakiri võib meile anda tarkust ja juhatada meid õndsusesse. (2. Timoteosele 3:15)\n"
+
+#: ../bibletime/tips-dummy.cpp:51
+msgid ""
+"To lookup the meaning of the original hebrew or greek word in a Bible "
+"supporting Strong's numbers, switch them on and \n"
+"click on the strong number. Now a new window showing the strong number with\n"
+"it's explanation is shown. If your favourite translation doesn't support "
+"Strong's numbers please refer to an alternate translation for the number of "
+"the corresponding word.\n"
+"Make sure you have set the default modules in the preferences.\n"
+msgstr ""
+"Algse heebrea- või kreekakeelse sõna otsimiseks piiblitõlkest, mis toetab Strongi numbreid, lülita need sisse\n"
+"ja vajuta Strongi numbri peal. Siis näidatakse akent Strongi numbri ja selle\n"
+"seletusega. Kui Teie lemmiktõlge ei toeta Strongi numbreid, palun kasutage mõnda teist tõlget, et leida vastava sõna Strongi numbrit.\n"
+"Palun veenduge, et Teil on seadistatud eelistatud moodulid.\n"
+
+#: ../bibletime/tips-dummy.cpp:58
+msgid ""
+"If you want to use a commentary as a topical reference, search it for terms "
+"your topic is about.\n"
+msgstr "Kui Te soovite kasutada kommentaare temaatiliste viidetena, otsige nende hulgast teema märksõnu.\n"
+
+#: ../bibletime/tips-dummy.cpp:62
+msgid ""
+"In the beginning was the Word, the Word was with God, and the Word was God. "
+"(John 1:1)\n"
+msgstr "Alguses oli Sõna ja Sõna oli Jumala juures ja Sõna oli Jumal. (Johannese 1:1)\n"
+
+#: ../bibletime/tips-dummy.cpp:66
+msgid "We will be judged on the last day by the words Jesus spoke. (John 12:48)\n"
+msgstr "Jeesuse räägitud sõnad mõistavad viimsel päeval meie üle kohut. (Johannese 12:48)\n"
+
+#: ../bibletime/tips-dummy.cpp:70
+msgid ""
+"If you want to find the full set of verses or entries on a area of content, "
+"you should use the option \"Multiple words (OR)\" for searching.\n"
+msgstr "Kui soovite leida kõiki salme või kirjeid mingi sisuvaldkonna kohta, peaksite otsimiseks otsitavad terminid lihtsalt otsingulahtrisse kirjutama. Otsingufunktsioon kuvab tulemustena kõik kirjed, kus esineb vähemalt üks otsitavatest terminitest.\n"
+
+#: ../bibletime/tips-dummy.cpp:74
+msgid ""
+"If you are searching a verse you know only fuzzy or in a different "
+"translation search for the most probable terms in multiple Bible "
+"translations at the same time.\n"
+msgstr "Kui Te otsite kirjakohta, mida te mäletate vaid hägusalt või mõne teise tõlke järgi, otsige neis kõige tõenäolisemalt esinevaid termineid mitmetest piiblitõlgetest samal ajal.\n"
+
+#: ../bibletime/tips-dummy.cpp:78
+msgid ""
+"God's Word can be a lamp to your feet and a light to your path. (Psalm "
+"119:105)\n"
+msgstr "Jumala Sõna võib olla lambiks su jalale ja valguseks su teerajale. (Psalm 119:105)\n"
+
+#: ../bibletime/tips-dummy.cpp:82
+msgid ""
+"If you want to search a word in a foreign module (e.g. greek or hebrew), "
+"open a display window and choose a chapter or an entry which contains this "
+"word.\n"
+"Select it and copy it to the clipboard. Now insert the copied word in the "
+"search text box of the searchdialog.\n"
+msgstr ""
+"Kui soovite otsida sõna võõrkeelsest moodulist (näiteks kreeak või heebreakeelsest moodulist), avage vaateaken, ja valiga peatükk või kirje, mis sisaldab seda sõna.\n"
+"Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõna sisestada otsinguboksi otsinguaknas.\n"
+
+#: ../bibletime/tips-dummy.cpp:87
+msgid ""
+"The Word of God will not return to Him without accomplishing its purpose. "
+"(Isaiah 55:11)\n"
+msgstr "Jumala Sõna ei tule Tema juurde tagasi oma eesmärki täitmata. (Jesaja 55:11)\n"
+
+#: ../bibletime/tips-dummy.cpp:91
+msgid ""
+"Foreign modules do often require a special font to display correctly. You "
+"can set the font for each language in the preferences.\n"
+msgstr "Võõrkeelsed moodulid vajavad korrektseks kuvamiseks tihti spetsiaalset kirjatüüpi. Te võite seadete all iga keele jaoks seadistada eraldi kirjatüübi.\n"
+
+#: ../bibletime/tips-dummy.cpp:95
+msgid ""
+"Did you know that the first book ever printed on a printing press was the "
+"Bible (by Johann Gutenberg, in 1492)?\n"
+msgstr "Kas Te teadsite, et esimene trükipressil trükitud raamat oli Piibel (Johann Gutenbergi poolt 1492. aastal)?\n"
+
+#: ../bibletime/tips-dummy.cpp:99
+msgid ""
+"God has already given to us everything pertaining to life and godliness. (2 "
+"Peter 1:3)\n"
+msgstr "Jumal on meile juba kinkinud kõik, mis on vajalik eluks ja vagaduseks. (2. Peetruse 1:3)\n"
+
+#: ../bibletime/tips-dummy.cpp:103
+msgid ""
+"All important elements of BibleTime's graphical user interface have a "
+"tooltip and a \"What's this?\" help.<BR>\n"
+"To read the \"What's this?\" help press the keys SHIFT+F1 and click on the "
+"part.\n"
+msgstr ""
+"Kõikidel BibleTime' graafilise kasutajaliidese olulistel elementidel on kohtspikker ja \"Mis see on?\" abi.<BR>\n"
+"\"Mis see on?\" abi lugemiseks, vajutage klaviatuuril SHIFT+F1 ja siis vajutage kursoriga vastaval elemendil.\n"
+
+#: ../bibletime/tips-dummy.cpp:108
+msgid ""
+"The Word of God is living, active, and sharper than any two-edged sword. "
+"(Hebrews 4:12)\n"
+msgstr "Jumala Sõna on elav ja tõhus ja vahedam kui ükski kaheteraline mõõk. (Heebrealastele 4:12)\n"
+
+#: ../bibletime/tips-dummy.cpp:112
+msgid ""
+"You are using a program that has been written for the glory of God.<BR>May "
+"He bless you as you study His Word!\n"
+msgstr "Te kasutate programmi, mis on kirjutatud Jumala austuseks.<BR>Õnnistagu Ta Teid Tema Sõna õppimisel!\n"
+
+#: ../bibletime/util/cresmgr.cpp:737
+msgid ""
+"Open the printer dialog of BibleTime, where you can edit the print queue, "
+"assign styles to the items and print them."
+msgstr "Ava BibleTime'i trükkali aken, kus võite muuta trükijärjekorda, omistada trükitavale stiile ja neid välja trükkida."
+
+#: ../bibletime/util/cresmgr.cpp:741
+msgid "Close BibleTime and save the settings."
+msgstr "Sule BibleTime ja salvesta seaded."
+
+#: ../bibletime/util/cresmgr.cpp:748
+msgid "Show or hide the bookshelf."
+msgstr "Näita või peida raamaturiiul."
+
+#: ../bibletime/util/cresmgr.cpp:752
+msgid "Toggle the main toolbar view."
+msgstr "Lülita sisse või välja tööriistariba kuvamine."
+
+#: ../bibletime/util/cresmgr.cpp:760
+msgid "Open the search dialog to search in all works that are currently open."
+msgstr "Ava otsinguaken, et otsida kõikidest hetkel avatud teostest."
+
+#: ../bibletime/util/cresmgr.cpp:764
+msgid "Open the search dialog to search in the standard Bible."
+msgstr "Ava otsinguaken eelistatud piiblitõlkest otsimiseks."
+
+#: ../bibletime/util/cresmgr.cpp:772
+msgid "Restore a saved BibleTime session."
+msgstr "Taasta salvestatud BibleTime sessioon."
+
+#: ../bibletime/util/cresmgr.cpp:776
+msgid "Save current BibleTime session so that it can be reused later."
+msgstr "Salvesta käesolev BibleTime sessioon, et seda saaks hiljem taaskasutada."
+
+#: ../bibletime/util/cresmgr.cpp:780
+msgid "Create and save a new session."
+msgstr "Loo ja salvesta uus sessioon."
+
+#: ../bibletime/util/cresmgr.cpp:784
+msgid "Delete a BibleTime session."
+msgstr "Kustuta BibleTime sessioon."
+
+#: ../bibletime/util/cresmgr.cpp:788
+msgid "Toggle fullscreen mode of the main window."
+msgstr "Lülita sisse või välja peaakna täisekraanmoodus."
+
+#: ../bibletime/util/cresmgr.cpp:792
+msgid "Vertically tile the open windows."
+msgstr "Laota avatud aknad vertikaalselt."
+
+#: ../bibletime/util/cresmgr.cpp:796
+msgid "Horizontally tile the open windows."
+msgstr "Laota avatud aknad horisontaalselt."
+
+#: ../bibletime/util/cresmgr.cpp:800
+msgid "Cascade the open windows."
+msgstr "Kaskaadi avatud aknad."
+
+#: ../bibletime/util/cresmgr.cpp:805
+msgid "Choose the way that is used to arrange the windows."
+msgstr "Valige akende korrastamise viis."
+
+#: ../bibletime/util/cresmgr.cpp:809
+msgid "Automatically tile the open windows vertically."
+msgstr "Aseta avatud aknad automaatselt vertikaalsetesse paanidesse."
+
+#: ../bibletime/util/cresmgr.cpp:813
+msgid "Automatically tile the open windows horizontally."
+msgstr "Aseta avatud aknad automaatselt horisontaalsetesse paanidesse."
+
+#: ../bibletime/util/cresmgr.cpp:817
+msgid "Automatically cascade the open windows."
+msgstr "Aseta avatud aknad automaatselt kaskaadi."
+
+#: ../bibletime/util/cresmgr.cpp:822
+msgid "Close all open windows."
+msgstr "Sule kõik avatud aknad."
+
+#: ../bibletime/util/cresmgr.cpp:830
+msgid "Open BibleTime's toolbar editor."
+msgstr "Ava BibleTime'i tööriistariba redigeerija."
+
+#: ../bibletime/util/cresmgr.cpp:834
+msgid "Open the dialog to set most of BibleTime's preferences."
+msgstr "Ava aken enamuse BibleTime'i sätete seadistamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:838
+msgid "Open the dialog to configure your bookshelf and install/update/remove works."
+msgstr "Ava aken raamaturiiuli seadistamiseks ning teoste paigaldamiseks, uuendamiseks ja eemaldamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:847
+msgid "Open BibleTime's handbook in the KDE helpbrowser."
+msgstr "Ava BibleTime'i käsiraamat KDE abikeskuses."
+
+#: ../bibletime/util/cresmgr.cpp:851
+msgid ""
+"Open the Bible study HowTo included with BibleTime in the KDE helpbrowser. "
+"<BR>This HowTo is an introduction on how to study the Bible in an efficient "
+"way."
+msgstr ""
+"Ava BibleTime'ga kaasasolev piibli uurimise õpetus KDE abikeskuses. "
+"<BR>See õpetus on sissejuhatus piibli uurimisse ühel efektiivsel viisil."
+
+#: ../bibletime/util/cresmgr.cpp:855
+msgid "Send a bugreport to the developers of BibleTime."
+msgstr "Saada vearaport BibleTime'i arendajatele."
+
+#: ../bibletime/util/cresmgr.cpp:859
+msgid ""
+"Show a daily tip each time BibleTime starts. <BR>The tips contain important "
+"Bible quotations and helpful tips for using BibleTime."
+msgstr "Näita päeva nõuannet igal BibleTime'i käivitamisel. <BR>Nõuanded sisaldavad tähtsaid Piibli tsitaate ja abistavaid nõuanded BibleTime'i kasutamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:863
+msgid "Show detailed information about BibleTime."
+msgstr "Näita detailset informatsiooni BibleTime'i kohta."
+
+#: ../bibletime/util/cresmgr.cpp:867
+msgid "Show detailed information about the KDE project."
+msgstr "Näita detailset informatsiooni KDE projekti kohta."
+
+#: ../bibletime/util/cresmgr.cpp:877
+msgid "Start to search the text in each of the chosen work(s)."
+msgstr "Alusta sisestatud teksti otsimist valitud teostest."
+
+#: ../bibletime/util/cresmgr.cpp:881
+msgid "Stop the active search."
+msgstr "Peata jooksev otsing."
+
+#: ../bibletime/util/cresmgr.cpp:888
+msgid "Open a dialog to choose work(s) for the search."
+msgstr "Ava dialoogiaken valimaks teosed otsingu jaoks."
+
+#: ../bibletime/util/cresmgr.cpp:892
+msgid "Enter the text you want to search in the chosen work(s) here."
+msgstr "Siia sisestage tekst valitud teostest otsimiseks."
+
+#: ../bibletime/util/cresmgr.cpp:898
+msgid ""
+"Treat the search text as multiple words. A text must contain all of the "
+"words to match. The order of the words is unimportant."
+msgstr "Käsitle otsitavat teksti mitme sõnana. Tekst peab sisaldama kõiki otsitavaid sõnu. Sõnade järjestust ignoreeritakse."
+
+#: ../bibletime/util/cresmgr.cpp:902
+msgid ""
+"Treat the search text as multiple words. A text must contain one or more "
+"words of to match. The order is unimportant."
+msgstr "Käsitle otsitavat teksti mitme sõnana. Tekst peab sisaldama ühte või mitut otsitavat sõna. Sõnade järjestust ignoreeritakse."
+
+#: ../bibletime/util/cresmgr.cpp:906
+msgid "The search text will be used exactly as entered."
+msgstr "Otsitavat teksti otsitakse täpselt sellisena, kui sisestatud."
+
+#: ../bibletime/util/cresmgr.cpp:910
+msgid ""
+"Treat the search string as a GNU regular expression. The BibleTime handbook "
+"contains an introduction to regular expressions."
+msgstr "Kohtle otsisõne GNU reguraalavaldisena. BibleTime'i käsiraamat sisaldab sissejuhatust reguraalavaldistesse."
+
+#: ../bibletime/util/cresmgr.cpp:918
+msgid ""
+"If you choose this option the search will distinguish between upper and "
+"lowercase characters."
+msgstr "Selle valiku aktiveerimisel eristatakse otsimisel suur- ja väiketähti."
+
+#: ../bibletime/util/cresmgr.cpp:923
+msgid ""
+"Choose a scope from the list. Select the first item to use no scope, the "
+"second one is to use each work's last search result as search scope. The "
+"others are user defined search scopes."
+msgstr "Valike nimekirjast otsingu ulatus. Mitte ühegi skoobi kasutamiseks valige nimekirjast esimene kirje. Teine kirja kasutab otsingu skoobina viimase otsingu tulemusi. Ülejäänud kirjed on kasutaja defineeritud skoobid."
+
+#: ../bibletime/util/cresmgr.cpp:931
+msgid "Select an item from the list to edit the search scope."
+msgstr "Otsingu ulatuse muutmiseks valige nimekirjast vastav kirje."
+
+#: ../bibletime/util/cresmgr.cpp:935
+msgid "Change the name of the selected search scope."
+msgstr "Muuda valitud otsinguskoobi nimetust."
+
+#: ../bibletime/util/cresmgr.cpp:939
+msgid ""
+"Change the search ranges of the selected search scope item. Have a look at "
+"the predefined search scopes to see how search ranges are constructed."
+msgstr "Muuda valitud otsinguskoobi ulatusi. Vaadake eeldefineeritud otsinguskoope nägemaks, kuidas on konstrueeritud otsingu ulatused."
+
+#: ../bibletime/util/cresmgr.cpp:943
+msgid "Contains the search ranges which will be used for the search."
+msgstr "Sisaldab otsingu ulatusi, mida kasutatakse otsimisel."
+
+#: ../bibletime/util/cresmgr.cpp:947
+msgid ""
+"Add a new search scope. First enter an appropriate name, then edit the "
+"search ranges."
+msgstr "Lisa uus otsingu skoop. Esmalt sisestage sobiv nimetus, ja siis muutke otsingu ulatusi."
+
+#: ../bibletime/util/cresmgr.cpp:951
+#, fuzzy
+msgid ""
+"Deletes the selected search scope. If you close the dialog using Cancel the "
+"settings won't be saved."
+msgstr "Kustutab valitud otsinguskoobi. Kustutus jõustub lõplikult alles käesoleva akna sulgemisel kui valitakse otsinguks skoop."
+
+#: ../bibletime/util/cresmgr.cpp:959
+msgid "The list of works chosen for the search."
+msgstr "Otsinguks valitud teoste nimekiri."
+
+#: ../bibletime/util/cresmgr.cpp:963
+msgid "This list contains the search result of the selected work."
+msgstr "See nimekiri sisaldab valitud teose otsingutulemusi."
+
+#: ../bibletime/util/cresmgr.cpp:967
+msgid "The text preview of the selected search result item."
+msgstr "Valitud otsingutulemuse kirje teksti eelvaade."
+
+#: ../bibletime/util/cresmgr.cpp:979
+msgid ""
+"This button is useful to scroll through the entries of the list. Press the "
+"button and move the mouse to increase or decrease the item."
+msgstr "See nupp on kasulik läbi nimekirja kirjete kerimiseks. Vajuta seda nuppu ja liiguta hiirt jooksva kirje suurendamiseks või vähendamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:983
+msgid "This button opens the search dialog with the work(s) of this window."
+msgstr "See nupp avab otsinguakna käesoleva akna teostest otsimiseks."
+
+#: ../bibletime/util/cresmgr.cpp:988
+msgid "Go back one item in the display history."
+msgstr "Mine kuva ajaloos üks kirje tagasi."
+
+#: ../bibletime/util/cresmgr.cpp:992
+msgid "Go forward one item in the display history."
+msgstr "Mine kuva ajaloos üks kirje edasi."
+
+#: ../bibletime/util/cresmgr.cpp:997
+msgid "Show all occurences of the Strong number currently under the mouse cursor."
+msgstr "Näita kõiki hiire kursori all oleva Strongi numbri esinemisi."
+
+#: ../bibletime/util/cresmgr.cpp:1003
+msgid "This list contains the books which are available in this work."
+msgstr "See nimekiri sisaldab selles teoses kasutatavaid raamatuid."
+
+#: ../bibletime/util/cresmgr.cpp:1007
+msgid "Show the next book of this work."
+msgstr "Näita selle teose järgmist raamatut."
+
+#: ../bibletime/util/cresmgr.cpp:1011
+msgid "Show the previous book of this work."
+msgstr "Näita selle teose eelmist raamatut."
+
+#: ../bibletime/util/cresmgr.cpp:1015
+msgid "This list contains the chapters which are available in the current book."
+msgstr "See nimekiri sisaldab käesoleva raamatu kõiki peatükke."
+
+#: ../bibletime/util/cresmgr.cpp:1019
+msgid "Show the previous chapter of the work."
+msgstr "Kuva teose eelmine peatükk."
+
+#: ../bibletime/util/cresmgr.cpp:1023
+msgid "Show the next chapter of the work."
+msgstr "Kuva teose järgmine peatükk."
+
+#: ../bibletime/util/cresmgr.cpp:1027
+msgid "This list contains the verses which are available in the current chapter."
+msgstr "See nimekiri sisaldab käesoleva peatüki salme."
+
+#: ../bibletime/util/cresmgr.cpp:1031
+msgid ""
+"In  Bible texts, the next verse will be highlighted. In commentaries, the "
+"next entry will be shown."
+msgstr "Piiblitekstides tõstetakse esile järgmine salm, kommentaarides näidatakse järgmist kirjet."
+
+#: ../bibletime/util/cresmgr.cpp:1036
+msgid ""
+"In Bible texts, the previous verse will be highlighted. In commentaries, the "
+"previous entry will be shown."
+msgstr "Piiblitekstides tõstetakse esile eelmine salm, kommentaarides näidatakse eelmist kirjet."
+
+#: ../bibletime/util/cresmgr.cpp:1043
+msgid "Synchronize the displayed entry of this work with the active Bible window."
+msgstr "Sünkroniseeri selle teose kuvatud kirje aktiivse piibliaknaga."
+
+#: ../bibletime/util/cresmgr.cpp:1050
+msgid "This list contains the entries of the current work."
+msgstr "See nimekiri sisaldab käesoleva teose kirjeid."
+
+#: ../bibletime/util/cresmgr.cpp:1054
+msgid "The next entry of the work will be shown."
+msgstr "Näidatakse teose järgmist kirjet."
+
+#: ../bibletime/util/cresmgr.cpp:1058
+msgid "The previous entry of the work will be shown."
+msgstr "Näidatakse teose eelmist kirjet."
+
+#: ../bibletime/util/cresmgr.cpp:1066
+msgid "Save the curent text into the work. The old text will be overwritten."
+msgstr "Salvesta jooksev tekst teosesse. Selle käigus kirjutatakse üle vana tekst."
+
+#: ../bibletime/util/cresmgr.cpp:1070
+msgid ""
+"Loads the old text from the work and loads it into the edit area. The "
+"unsaved text will be lost."
+msgstr "Laeb teosest vana teksti redigeerimisaknasse. Salvestamata tekst hävib."
+
+#: ../bibletime/util/cresmgr.cpp:1074
+msgid "Deletes the current entry out of the work. The text will be lost."
+msgstr "Kustutab teosest jooksva kirje. Selle tekst hävib."
+
+#: ../bibletime/util/cresmgr.cpp:1080
+msgid "Toggle bold formatting of the selected text."
+msgstr "Muuda valitud tekst rasvaseks."
+
+#: ../bibletime/util/cresmgr.cpp:1084
+msgid "Toggle italic formatting of the selected text."
+msgstr "Pane valitud tekst kursiivkirja."
+
+#: ../bibletime/util/cresmgr.cpp:1088
+msgid "Toggle underlined formatting of the selected text."
+msgstr "Jooni valitud tekst alla."
+
+#: ../bibletime/util/cresmgr.cpp:1093
+msgid "The text will be aligned on the left side of the page."
+msgstr "Joondab teksti lehekülje vasakusse äärde."
+
+#: ../bibletime/util/cresmgr.cpp:1097
+msgid "Centers the text horizontally."
+msgstr "Joondab teksti horisontaalselt keskele."
+
+#: ../bibletime/util/cresmgr.cpp:1101
+msgid "Aligns the text on the right side of the page."
+msgstr "Joondab teksti lehekülje paremasse äärde."
+
+#: ../bibletime/util/cresmgr.cpp:1105
+msgid "Justifies the text on the page."
+msgstr "Joondab teksti leheküljel rööbiti."
+
+#: ../bibletime/util/cresmgr.cpp:1110
+msgid "Choose a new font for the selected text."
+msgstr "Valige uus kirjatüüp valitud teksti jaoks."
+
+#: ../bibletime/util/cresmgr.cpp:1113
+msgid "Choose a new font size for the selected text."
+msgstr "Valige uus kirjasuurus valitud teksti jaoks."
+
+#: ../bibletime/util/cresmgr.cpp:1116
+msgid "Choose a new color for the selected text."
+msgstr "Valige uus värv valitud teksti jaoks."
+
+#: ../bibletime/util/cresmgr.cpp:1126
+msgid "Activate this box to see a daily tip on startup."
+msgstr "Aktiveerige see kontrollkast, et näha igal BibleTime'i käivitusel igapäevast tarkusetera."
+
+#: ../bibletime/util/cresmgr.cpp:1130
+msgid "Activate this to see the BibleTime logo on startup."
+msgstr "Aktiveerige see kontrollkast, et näha programmi käivitusel BibleTime'i logo."
+
+#: ../bibletime/util/cresmgr.cpp:1134
+msgid ""
+"Save the user's session when BibleTime is closed and restore it on the next "
+"startup."
+msgstr "Salvesta kasutaja sessioon BibleTime'i sulgemisel ja taasta see järgmisel käivitusel."
+
+#: ../bibletime/util/cresmgr.cpp:1141
+msgid "The font selection below will apply to all texts in this language."
+msgstr "Allpool määratud kirjatüübi valik rakendub kõikidele tekstidele selles keeles."
+
+#: ../bibletime/util/cresmgr.cpp:1150
+msgid "Contains the languages which can be used for the biblical booknames."
+msgstr "Sisaldab keeli, mida saab kasutada Piibli raamatute nimede kuvamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:1157
+msgid "The standard Bible is used when a hyperlink into a Bible is clicked."
+msgstr "Eelistatud piiblitõlget kasutatakse kui vajutatakse Piiblisse suunaval hüperlingil."
+
+#: ../bibletime/util/cresmgr.cpp:1161
+msgid ""
+"The standard commentary is used when a hyperlink into a commentary is "
+"clicked."
+msgstr "Eelistatud kommentaare kasutatakse kui vajutatakse kommentaaridesse suunaval hüperlingil."
+
+#: ../bibletime/util/cresmgr.cpp:1165
+msgid "The standard lexicon is used when a hyperlink into a lexicon is clicked."
+msgstr "Eelistatud leksikoni kasutatakse kui vajutatakse leksikoni suunaval hüperlingil."
+
+#: ../bibletime/util/cresmgr.cpp:1169
+msgid "The standard devotional will be used to display a short start up devotional."
+msgstr "Eelistatud igapäevast harduskirjandust kasutatakse lühikese sissejuhatava mõtiskluse kuvamiseks."
+
+#: ../bibletime/util/cresmgr.cpp:1173
+msgid ""
+"The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon "
+"is clicked."
+msgstr "Eelistatud heebrea leksikoni kasutatakse kui vajutatakse heebrea leksikoni suunaval hüperlingil."
+
+#: ../bibletime/util/cresmgr.cpp:1177
+msgid ""
+"The standard Greek lexicon is used when a hyperlink into a Greek lexicon is "
+"clicked."
+msgstr "Eelistatud kreeka leksikoni kasutatakse kui vajutatakse heebrea leksikoni suunaval hüperlingil."
+
+#: ../bibletime/util/cresmgr.cpp:1181
+msgid ""
+"The standard morphological lexicon for Hebrew texts is used when a hyperlink "
+"of a morphological tag in a Hebrew text is clicked."
+msgstr "Eelistatud morfoloogilist leksikoni heebreakeelsete tekstide jaoks kasutatakse kui vajutatakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis."
+
+#: ../bibletime/util/cresmgr.cpp:1185
+msgid ""
+"The standard morphological lexicon for Greek texts is used when a hyperlink "
+"of a morphological tag in a Greek text is clicked."
+msgstr "Eelistatud morfoloogilist leksikoni kreekakeelsete tekstide jaoks kasutatakse kui vajutatakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis."
+
+#: ../bibletime/util/cresmgr.cpp:1194
+msgid "Opens the search dialog to search in the work(s) that are currently open."
+msgstr "Avab otsinguakna, et otsida hetkel avatud teoste hulgast."
+
+#: ../bibletime/util/ctoolclass.cpp:78
+msgid "The file already exists."
+msgstr "See fail juba eksisteerib."
+
+#: ../bibletime/util/ctoolclass.cpp:79
+msgid "Do you want to overwrite it?"
+msgstr "Kas Te soovite selle üle kirjutada?"
+
+#: ../bibletime/util/ctoolclass.cpp:99
+msgid "The file couldn't be saved."
+msgstr "Faili ei suudetud salvestada."
+
+#: ../bibletime/util/ctoolclass.cpp:100
+msgid "Please check permissions etc."
+msgstr "Palun kontrollige õigusi jne."
+
+#: ../bibletime/util/ctoolclass.cpp:209
+msgid "not set"
+msgstr "seadmata"
+
+#: clanguagemgr.cpp:197
+msgid "Afrikaans"
+msgstr "afrikaani"
+
+#: clanguagemgr.cpp:200
+msgid "English, Old (ca.450-1100)"
+msgstr "vanainglise (u. 450-1100)"
+
+#: clanguagemgr.cpp:202
+msgid "Arabic"
+msgstr "araabia"
+
+#: clanguagemgr.cpp:205
+msgid "Azerbaijani"
+msgstr "aserbaidžaani"
+
+#: clanguagemgr.cpp:208
+msgid "Belarusian"
+msgstr "valgevene"
+
+#: clanguagemgr.cpp:210
+msgid "Bulgarian"
+msgstr "bulgaaria"
+
+#: clanguagemgr.cpp:216
+msgid "Breton"
+msgstr "bretooni"
+
+#: clanguagemgr.cpp:218
+msgid "Bosnian"
+msgstr "bosnia"
+
+#: clanguagemgr.cpp:220
+msgid "Catalan"
+msgstr "katalani"
+
+#: clanguagemgr.cpp:223
+msgid "Cebuano"
+msgstr "sebu"
+
+#: clanguagemgr.cpp:225
+msgid "Chamorro"
+msgstr "tšamorro"
+
+#: clanguagemgr.cpp:228
+msgid "Coptic"
+msgstr "kopti"
+
+#: clanguagemgr.cpp:230
+msgid "Czech"
+msgstr "tšehhi"
+
+#: clanguagemgr.cpp:232
+msgid "Church Slavic"
+msgstr "kirikuslaavi"
+
+#: clanguagemgr.cpp:235
+msgid "Welsh"
+msgstr "kõmri (uelsi)"
+
+#: clanguagemgr.cpp:237
+msgid "Danish"
+msgstr "taani"
+
+#: clanguagemgr.cpp:239
+msgid "German"
+msgstr "saksa"
+
+#: clanguagemgr.cpp:243
+msgid "Greek, Modern (1453-)"
+msgstr "kreeka (1453-)"
+
+#: clanguagemgr.cpp:245
+msgid "English"
+msgstr "inglise"
+
+#: clanguagemgr.cpp:247
+msgid "American English"
+msgstr "inglise (Ameerika)"
+
+#: clanguagemgr.cpp:249
+msgid "English, Middle (1100-1500)"
+msgstr "keskinglise (1100-1500)"
+
+#: clanguagemgr.cpp:251
+msgid "Esperanto"
+msgstr "esperanto"
+
+#: clanguagemgr.cpp:253
+msgid "Spanish"
+msgstr "hispaania"
+
+#: clanguagemgr.cpp:255
+msgid "Estonian"
+msgstr "eesti"
+
+#: clanguagemgr.cpp:257
+msgid "Basque"
+msgstr "baski"
+
+#: clanguagemgr.cpp:260
+msgid "Finnish"
+msgstr "soome"
+
+#: clanguagemgr.cpp:264
+msgid "French"
+msgstr "prantsuse"
+
+#: clanguagemgr.cpp:266
+msgid "Frisian"
+msgstr "friisi"
+
+#: clanguagemgr.cpp:268
+msgid "Irish"
+msgstr "iiri"
+
+#: clanguagemgr.cpp:270
+msgid "Gaelic (Scots)"
+msgstr "gaeli"
+
+#: clanguagemgr.cpp:275
+msgid "Gothic"
+msgstr "gooti"
+
+#: clanguagemgr.cpp:277
+msgid "Manx"
+msgstr "mänksi"
+
+#: clanguagemgr.cpp:279
+msgid "Greek, Ancient (to 1453)"
+msgstr "muinaskreeka (kuni 1453)"
+
+#: clanguagemgr.cpp:281
+msgid "Hebrew"
+msgstr "heebrea"
+
+#: clanguagemgr.cpp:283
+msgid "Hausa"
+msgstr "hausa"
+
+#: clanguagemgr.cpp:285
+msgid "Hawaiian"
+msgstr "havai"
+
+#: clanguagemgr.cpp:289
+msgid "Croatian"
+msgstr "horvaatia"
+
+#: clanguagemgr.cpp:291
+msgid "Hungarian"
+msgstr "ungari"
+
+#: clanguagemgr.cpp:293
+msgid "Armenian"
+msgstr "armeenia"
+
+#: clanguagemgr.cpp:298
+msgid "Indonesian"
+msgstr "indoneesia"
+
+#: clanguagemgr.cpp:302
+msgid "Icelandic"
+msgstr "islandi"
+
+#: clanguagemgr.cpp:304
+msgid "Italian"
+msgstr "itaalia"
+
+#: clanguagemgr.cpp:308
+msgid "Japanese"
+msgstr "jaapani"
+
+#: clanguagemgr.cpp:310
+msgid "Georgian"
+msgstr "gruusia"
+
+#: clanguagemgr.cpp:319
+msgid "Korean"
+msgstr "korea"
+
+#: clanguagemgr.cpp:322
+msgid "Kurdish"
+msgstr "kurdi"
+
+#: clanguagemgr.cpp:326
+msgid "Kirghiz"
+msgstr "kirgiisi"
+
+#: clanguagemgr.cpp:328
+msgid "Latin"
+msgstr "ladina"
+
+#: clanguagemgr.cpp:333
+msgid "Lithuanian"
+msgstr "leedu"
+
+#: clanguagemgr.cpp:335
+msgid "Latvian"
+msgstr "läti"
+
+#: clanguagemgr.cpp:339
+msgid "Maori"
+msgstr "maoori"
+
+#: clanguagemgr.cpp:341 clanguagemgr.cpp:477
+msgid "Macedonian"
+msgstr "makedoonia"
+
+#: clanguagemgr.cpp:346
+msgid "More"
+msgstr "more (mossi)"
+
+#: clanguagemgr.cpp:349
+msgid "Malay"
+msgstr "malai"
+
+#: clanguagemgr.cpp:351
+msgid "Maltese"
+msgstr "malta"
+
+#: clanguagemgr.cpp:358
+msgid "Low German; Low Saxon"
+msgstr "alamsaksa"
+
+#: clanguagemgr.cpp:362
+msgid "Dutch"
+msgstr "hollandi"
+
+#: clanguagemgr.cpp:365
+msgid "Norwegian"
+msgstr "norra"
+
+#: clanguagemgr.cpp:377
+msgid "Papiamento"
+msgstr "papiamento"
+
+#: clanguagemgr.cpp:380
+msgid "Polish"
+msgstr "poola"
+
+#: clanguagemgr.cpp:383
+msgid "Portuguese"
+msgstr "portugali"
+
+#: clanguagemgr.cpp:385
+msgid "Brasilian Portuguese"
+msgstr "portugali (Brasiilia)"
+
+#: clanguagemgr.cpp:392
+msgid "Romanian"
+msgstr "rumeenia"
+
+#: clanguagemgr.cpp:394
+msgid "Russian"
+msgstr "vene"
+
+#: clanguagemgr.cpp:400
+msgid "Scots"
+msgstr "šoti"
+
+#: clanguagemgr.cpp:406
+msgid "Slovak"
+msgstr "slovakkia"
+
+#: clanguagemgr.cpp:408
+msgid "Slovenian"
+msgstr "sloveenia"
+
+#: clanguagemgr.cpp:412
+msgid "Somali"
+msgstr "somaali"
+
+#: clanguagemgr.cpp:414
+msgid "Albanian"
+msgstr "albaania"
+
+#: clanguagemgr.cpp:420
+msgid "Swedish"
+msgstr "rootsi"
+
+#: clanguagemgr.cpp:422
+msgid "Swahili"
+msgstr "suahiili"
+
+#: clanguagemgr.cpp:424
+msgid "Syriac"
+msgstr "süüria (assüüria ehk uussüüria)"
+
+#: clanguagemgr.cpp:426
+msgid "Tamil"
+msgstr "tamili"
+
+#: clanguagemgr.cpp:430
+msgid "Thai"
+msgstr "tai"
+
+#: clanguagemgr.cpp:433
+msgid "Tagalog"
+msgstr "tagalogi (pilipino)"
+
+#: clanguagemgr.cpp:435
+msgid "Tswana"
+msgstr "tsvana (läänesotho)"
+
+#: clanguagemgr.cpp:437
+msgid "Turkish"
+msgstr "türgi"
+
+#: clanguagemgr.cpp:442
+msgid "Tahitian"
+msgstr "tahiti"
+
+#: clanguagemgr.cpp:446
+msgid "Ukrainian"
+msgstr "ukraina"
+
+#: clanguagemgr.cpp:451
+msgid "Vietnamese"
+msgstr "vietnami"
+
+#: clanguagemgr.cpp:457
+msgid "Xhosa"
+msgstr "koosa"
+
+#: clanguagemgr.cpp:459
+msgid "Bavarian"
+msgstr "baieri"
+
+#: clanguagemgr.cpp:461
+msgid "Zarma"
+msgstr ""
+
+#: clanguagemgr.cpp:463
+msgid "Alemannisch"
+msgstr "alemanni"
+
+#: clanguagemgr.cpp:465
+msgid "Haitian Creole French"
+msgstr "haiti (kreooli)"
+
+#: clanguagemgr.cpp:467
+msgid "Itzá"
+msgstr ""
+
+#: clanguagemgr.cpp:469
+msgid "Shuar"
+msgstr ""
+
+#: clanguagemgr.cpp:471
+msgid "Kekchí"
+msgstr ""
+
+#: clanguagemgr.cpp:473
+msgid "Kabyle"
+msgstr "kabiili"
+
+#: clanguagemgr.cpp:475
+msgid "Lombard"
+msgstr ""
+
+#: clanguagemgr.cpp:479
+msgid "Tok Pisin"
+msgstr "uusmelaneesia (tok-pisini)"
+
+#: clanguagemgr.cpp:481
+msgid "Uma"
+msgstr ""
+
+#: clanguagemgr.cpp:483
+msgid "Romani, Vlax"
+msgstr ""
+
+#: clanguagemgr.cpp:485
+msgid "Sango"
+msgstr "sango"
+
+#: clanguagemgr.cpp:487
+msgid "Sranan"
+msgstr "sranani"
+
+#: clanguagemgr.cpp:492
+msgid "Chinese"
+msgstr "hiina"
+
+#: clanguagemgr.cpp:494
+msgid "Zulu"
+msgstr "suulu"
+
