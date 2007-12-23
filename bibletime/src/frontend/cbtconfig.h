@@ -24,7 +24,7 @@
 //Forward declarations
 class KAccel;
 class KActionCollection;
-class KConfig;
+class QSettings;
 
 /**
  * This class is the interface to the config object of BibleTime
@@ -115,23 +115,15 @@ public:
 	typedef std::pair<bool, QFont> FontSettingsPair;
 	typedef QMap<const CLanguageMgr::Language*, CBTConfig::FontSettingsPair> FontCache;
 
-	static const QString   get
-		( const CBTConfig::strings );
-	static CSwordModuleInfo* const get
-		( const CBTConfig::modules );
-	static const bool    get
-		( const CBTConfig::bools );
-	static const int      get
-		( const CBTConfig::ints );
-	static const QList<int> get
-		( const CBTConfig::intLists );
-	static const QStringList get
-		( const CBTConfig::stringLists );
-	static const CBTConfig::StringMap get
-		( const CBTConfig::stringMaps );
+	static const QString get( const CBTConfig::strings );
+	static CSwordModuleInfo* const get( const CBTConfig::modules );
+	static const bool get( const CBTConfig::bools );
+	static const int get( const CBTConfig::ints );
+	static const QList<int> get( const CBTConfig::intLists );
+	static const QStringList get( const CBTConfig::stringLists );
+	static const CBTConfig::StringMap get( const CBTConfig::stringMaps );
 
-	static const FontSettingsPair get
-		( const CLanguageMgr::Language* const );
+	static const FontSettingsPair get( const CLanguageMgr::Language* const );
 
 	static const QString getDefault( const CBTConfig::strings );
 	static const QString getDefault( const CBTConfig::modules );
@@ -142,24 +134,15 @@ public:
 	static const CBTConfig::StringMap getDefault( const CBTConfig::stringMaps );
 	static const QFont& getDefault( const CLanguageMgr::Language* const );
 
-	static void set
-		( const CBTConfig::strings,  const QString value );
-	static void set
-		( const CBTConfig::modules, CSwordModuleInfo* const module );
-	static void set
-		( const CBTConfig::modules, const QString& moduleName );
-	static void set
-		( const CBTConfig::bools,   const bool value );
-	static void set
-		( const CBTConfig::ints,   const int value );
-	static void set
-		( const CBTConfig::intLists, const QList<int> value );
-	static void set
-		( const CBTConfig::stringLists, const QStringList value);
-	static void set
-		( const CBTConfig::stringMaps, const CBTConfig::StringMap value);
-	static void set
-		( const CLanguageMgr::Language* const language, const FontSettingsPair& fontSettings );
+	static void set( const CBTConfig::strings,  const QString value );
+	static void set( const CBTConfig::modules, CSwordModuleInfo* const module );
+	static void set( const CBTConfig::modules, const QString& moduleName );
+	static void set( const CBTConfig::bools,   const bool value );
+	static void set( const CBTConfig::ints,   const int value );
+	static void set( const CBTConfig::intLists, const QList<int> value );
+	static void set( const CBTConfig::stringLists, const QStringList value);
+	static void set( const CBTConfig::stringMaps, const CBTConfig::StringMap value);
+	static void set( const CLanguageMgr::Language* const language, const FontSettingsPair& fontSettings );
 
 	static const CSwordBackend::FilterOptions getFilterOptionDefaults();
 	static const CSwordBackend::DisplayOptions getDisplayOptionDefaults();
@@ -173,7 +156,7 @@ public:
 	/** The config object.
 	* @return A config object which is used currently, may be the global config or the session config
 	*/
-	static KConfig* const getConfig();
+	static QSettings* const getConfig();
 
 private:
 	static const QString getKey( const CBTConfig::strings );
@@ -184,6 +167,9 @@ private:
 	static const QString getKey( const CBTConfig::stringLists );
 	static const QString getKey( const CBTConfig::stringMaps );
 	static const QString getKey( const CLanguageMgr::Language* const );
+	
+	static const QString IntListToString( const QList<int> );
+	static const QList<int> StringToIntList( const QString );
 
 	//static caches
 	static QFont* m_defaultFont;

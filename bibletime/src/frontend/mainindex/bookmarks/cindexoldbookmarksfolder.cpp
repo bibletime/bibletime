@@ -19,9 +19,7 @@
 #include <QtXml/qdom.h>
 #include <QString>
 
-
-#include <kconfig.h>
-#include <kconfiggroup.h>
+//please use QSettings instead of KConfig
 
 CIndexOldBookmarksFolder::CIndexOldBookmarksFolder(CIndexTreeFolder* folder) : CIndexBookmarkFolder(folder, OldBookmarkFolder) {}
 

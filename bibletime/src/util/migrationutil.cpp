@@ -15,6 +15,7 @@
 #include "swversion.h"
 
 #include <QMessageBox>
+#include <QSettings>
 
 #include <klocale.h>
 
@@ -92,7 +93,7 @@ void MigrationUtil::tryMigrationFromKDE3(){
 			break;
 		}
 	}
-	CBTConfig::getConfig()->reparseConfiguration();
+	CBTConfig::getConfig()->sync();
 }
 
 }

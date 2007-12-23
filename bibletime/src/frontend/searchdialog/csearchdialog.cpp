@@ -88,9 +88,9 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 
 CSearchDialog::~CSearchDialog()
 {
-	// Added code for saving last size of dialog
-	KConfigGroup cg = CBTConfig::getConfig()->group("CSearchDialog"); 
-	saveDialogSize( cg );
+	//TODO: port to QSettings
+// 	KConfigGroup cg = CBTConfig::getConfig()->group("CSearchDialog"); 
+// 	saveDialogSize();
 }
 
 /** Starts the search with the set modules and the set search text. */
@@ -227,7 +227,8 @@ void CSearchDialog::initView()
 	mainWidget()->setMinimumSize(w+10, h+100);
 	// Added code for loading last size of dialog
 	//setInitialSize(configDialogSize("CSearchDialog"));
-	restoreDialogSize( CBTConfig::getConfig()->group("CSearchDialog") );
+	//TODO: port to QSettings
+// 	restoreDialogSize( CBTConfig::getConfig()->group("CSearchDialog") );
 }
 
 void CSearchDialog::searchFinished() {

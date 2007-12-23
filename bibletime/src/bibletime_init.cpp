@@ -35,10 +35,10 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QToolBar>
+#include <QApplication>
 
 //KDE includes
 #include <kaboutdata.h>
-#include <kconfigbase.h>
 #include <klocale.h>
 
 //Sword includes
@@ -387,6 +387,8 @@ void BibleTime::initConnections() {
 		this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&))
 	);
 	QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+
+	connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }
 
 /** Initializes the backend */
@@ -458,7 +460,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
 	Q_ASSERT(p);
 	if (!p) return;
 
-	if (m_initialized) { //on startup KDE sets the main geometry
+// 	if (m_initialized) { //on startup KDE sets the main geometry
 		//see polish(), where m_initialized is set and the KDE methods are called for window resize
 		//first Main Window state
 		m_windowFullscreen_action->setChecked( p->fullscreen() );  //set the fullscreen button state
@@ -467,7 +469,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
 		//Then Main Window geometry
 		QMainWindow::resize( p->geometry().size() ); //Don't use QMainWindowInterface::resize
 		QMainWindow::move( p->geometry().topLeft() );//Don't use QMainWindowInterface::move
-	}
+// 	}
 }
 
 /** Stores the settings of the mainwindow in the profile p */

@@ -23,11 +23,10 @@
 #include <QMap>
 #include <QList>
 #include <QDebug>
+#include <QSettings>
 
 //KDE includes
 #include <kactioncollection.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocale.h>
 #include <kglobal.h>
 #include <khtml_settings.h>
@@ -284,8 +283,6 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 		return *m_defaultFont;
 	}
 
-	//static KStaticDeleter<QFont> sd;
-
 	//TODO: We need a better way to get the KDE konqueror KHTML settings
 	KConfig conf("konquerorrc");
 	KHTMLSettings settings;
@@ -293,181 +290,180 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 
 	const QString fontName = settings.stdFontName();
 	const int fontSize = settings.mediumFontSize();
-
-	//sd.setObject(m_defaultFont, new QFont(fontName, fontSize));
-	m_defaultFont = new QFont(fontName, fontSize);
-
+	
+	m_defaultFont = new QFont(fontName, fontSize); //TODO: there may be a mem leak here!
 	return *m_defaultFont;
 }
 
-// See kde4 porting documentation for kconfiggroupsaver.
-
-const QString CBTConfig::get
-	( const CBTConfig::strings ID)
+const QString CBTConfig::get( const CBTConfig::strings ID)
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("strings");
-	return cg.readEntry(getKey(ID),getDefault(ID));
+	QString result;
+	getConfig()->beginGroup("strings");
+	result = getConfig()->value(getKey(ID), getDefault(ID)).toString();
+	getConfig()->endGroup();
+	return result;
+
 }
 
-CSwordModuleInfo* const CBTConfig::get
-	( const CBTConfig::modules ID)
+CSwordModuleInfo* const CBTConfig::get( const CBTConfig::modules ID)
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("modules");
-	QString name = cg.readEntry(getKey(ID),getDefault(ID));
-	return CPointers::backend()->findModuleByName(name);
+	CSwordModuleInfo* result;
+	getConfig()->beginGroup("modules");
+	result = CPointers::backend()->findModuleByName( getConfig()->value(getKey(ID), getDefault(ID)).toString() );
+	getConfig()->endGroup();
+	return result;
 }
 
-
-const bool CBTConfig::get
-	( const CBTConfig::bools ID)
+const bool CBTConfig::get( const CBTConfig::bools ID)
 {
-	//special behaviour for the KTipDialog class
-	KConfigGroup cg = CBTConfig::getConfig()->group( "bools" );
-	return cg.readEntry(getKey(ID),getDefault(ID));
+	bool result;
+	getConfig()->beginGroup("bools");
+	result = getConfig()->value(getKey(ID), getDefault(ID)).toBool();
+	getConfig()->endGroup();
+	return result;
 }
 
-const int CBTConfig::get
-	( const CBTConfig::ints ID)
+const int CBTConfig::get( const CBTConfig::ints ID)
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("ints");
-	return cg.readEntry(getKey(ID), getDefault(ID));
+	int result;
+	getConfig()->beginGroup("ints");
+	result = getConfig()->value(getKey(ID), getDefault(ID)).toInt();
+	getConfig()->endGroup();
+	return result;
 }
 
-const QList<int> CBTConfig::get
-	( const CBTConfig::intLists ID )
+const QList<int> CBTConfig::get( const CBTConfig::intLists ID )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("intlists");
-	return cg.readEntry(getKey(ID), getDefault(ID));
+	QList<int> result;
+	getConfig()->beginGroup("intlists");
+	result = StringToIntList( getConfig()->value(getKey(ID), IntListToString( getDefault(ID) )).toString() );
+	getConfig()->endGroup();
+	return result;
 }
 
-const QStringList CBTConfig::get
-	( const CBTConfig::stringLists ID )
+const QStringList CBTConfig::get( const CBTConfig::stringLists ID )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
-	return cg.readEntry(getKey(ID), getDefault(ID));
+	QStringList result;
+	getConfig()->beginGroup("stringlists");
+	result = getConfig()->value(getKey(ID), getDefault(ID)).toStringList();
+	getConfig()->endGroup();
+	return result;
 }
 
-const CBTConfig::StringMap CBTConfig::get
-	( const CBTConfig::stringMaps ID )
+const CBTConfig::StringMap CBTConfig::get( const CBTConfig::stringMaps ID )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group(getKey(ID));
+	getConfig()->beginGroup(getKey(ID));
+	CBTConfig::StringMap map;
 	
-	if (cg.config()->hasGroup(getKey(ID))) {
-		CBTConfig::StringMap map = cg.config()->entryMap(getKey(ID));
+	QStringList keys(getConfig()->childKeys());
+ 	if (!keys.isEmpty()) {
 		switch (ID) {
 			case searchScopes: { //make sure we return the scopes in the chosen language. saved keys are in english
-				CBTConfig::StringMap::Iterator it;
 				sword::VerseKey vk;
-
-				for (it = map.begin(); it != map.end(); ++it) {
-					sword::ListKey list = vk.ParseVerseList(it.value().toUtf8(), "Genesis 1:1", true);
+				foreach (QString key, keys) {
+					sword::ListKey list = vk.ParseVerseList(getConfig()->value(key).toString().toUtf8(), "Genesis 1:1", true);
 					QString data;
 					for (int i = 0; i < list.Count(); ++i) {
 						data += QString::fromUtf8(list.GetElement(i)->getRangeText()) + "; ";
 					}
-					map[it.key()] = data; //set the new data
-				};
-				return map;
+					map[key] = data; //set the new data
+				}
 			}
-			default:
-			return getDefault(ID);
+			default: break;
 		}
 	}
-	return getDefault(ID);
+	else
+	{
+		map = getDefault(ID);
+	}
+	getConfig()->endGroup();
+	return map;
 }
 
-const CBTConfig::FontSettingsPair CBTConfig::get
-	( const CLanguageMgr::Language* const language )
+const CBTConfig::FontSettingsPair CBTConfig::get( const CLanguageMgr::Language* const language )
 {
 	if (fontConfigMap.contains(language)) {
 		return fontConfigMap.find(language).value();
 	}
-
-	KConfigGroup cg = CBTConfig::getConfig()->group("font standard settings");
-
+	
 	FontSettingsPair settings;
-	//settings.first = cg.config()->readBoolEntry(getKey(language));
-	settings.first = cg.readEntry(getKey(language), false);
-	//config->setGroup("fonts");
-	cg = CBTConfig::getConfig()->group("fonts");
 
-	settings.second =
-		settings.first
-		//? cg.config()->readFontEntry(getKey(language))
-		? cg.readEntry(getKey(language), getDefault(language))
-		: getDefault(language);
+	getConfig()->beginGroup("font standard settings");
+	settings.first = getConfig()->value(getKey(language), QVariant(false)).toBool();
+	getConfig()->endGroup();
+	getConfig()->beginGroup("fonts");
 
+	QFont font;
+	if (settings.first)
+		font.fromString(getConfig()->value(getKey(language), getDefault(language)).toString());
+	else
+		font = getDefault(language);
+	
+	settings.second = font;
+	getConfig()->endGroup();
+	
 	fontConfigMap.insert(language, settings); //cache the value
 	return settings;
 }
 
-void CBTConfig::set
-	( const CBTConfig::strings ID, const QString value )
+void CBTConfig::set( const CBTConfig::strings ID, const QString value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("strings");
-	cg.writeEntry(getKey(ID), value);
+// 	KConfigGroup cg = CBTConfig::getConfig()->group("strings");
+// 	cg.writeEntry(getKey(ID), value);
+	getConfig()->beginGroup("strings");
+	getConfig()->setValue(getKey(ID), value);
+	getConfig()->endGroup();	
 }
 
-void CBTConfig::set
-	( const CBTConfig::modules ID, CSwordModuleInfo* const value )
+void CBTConfig::set( const CBTConfig::modules ID, CSwordModuleInfo* const value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("modules");
-	cg.writeEntry(getKey(ID), value ? value->name() : QString::null);
+// 	KConfigGroup cg = CBTConfig::getConfig()->group("modules");
+// 	cg.writeEntry(getKey(ID), value ? value->name() : QString::null);
+	getConfig()->beginGroup("modules");
+	getConfig()->setValue(getKey(ID), value ? value->name() : QString::null);
+	getConfig()->endGroup();	
 }
 
-void CBTConfig::set
-	( const CBTConfig::modules ID, const QString& value )
+void CBTConfig::set( const CBTConfig::modules ID, const QString& value )
 {
 	CSwordModuleInfo* module = CPointers::backend()->findModuleByName(value);
 	if (module) {
-		CBTConfig::set
-			(ID, module);
+		CBTConfig::set(ID, module);
 	}
 }
 
-void CBTConfig::set
-	(const CBTConfig::bools ID,const  bool value )
+void CBTConfig::set(const CBTConfig::bools ID,const  bool value )
 {
-	//qDebug("CBTConfig::set bools");
-	//special behaviour to work with KTipDialog class of KDE
-	KConfigGroup cg = CBTConfig::getConfig()->group("bools");
-	//qDebug() << cg.group();
-	cg.writeEntry(getKey(ID), value);
+	getConfig()->beginGroup("bools");
+	getConfig()->setValue(getKey(ID), value);
+	getConfig()->endGroup();	
 }
 
-void CBTConfig::set
-	(const CBTConfig::ints ID, const int value )
+void CBTConfig::set(const CBTConfig::ints ID, const int value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("ints");
-	cg.writeEntry(getKey(ID), value);
+	getConfig()->beginGroup("ints");
+	getConfig()->setValue(getKey(ID), value);
+	getConfig()->endGroup();	
 }
 
-void CBTConfig::set
-	( const CBTConfig::intLists ID, const QList<int> value )
+void CBTConfig::set( const CBTConfig::intLists ID, const QList<int> value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("intlists");
-	cg.writeEntry(getKey(ID), value);
+	getConfig()->beginGroup("intlists");
+	getConfig()->setValue(getKey(ID), IntListToString(value));
+	getConfig()->endGroup();
 }
 
-void CBTConfig::set
-	( const CBTConfig::stringLists ID, const QStringList value )
+void CBTConfig::set( const CBTConfig::stringLists ID, const QStringList value )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("stringlists");
-	cg.writeEntry(getKey(ID), value);
+	getConfig()->beginGroup("stringlists");
+	getConfig()->setValue(getKey(ID), value);
+	getConfig()->endGroup();	
 }
 
-void CBTConfig::set
-	( const CBTConfig::stringMaps ID, const CBTConfig::StringMap value )
+void CBTConfig::set( const CBTConfig::stringMaps ID, const CBTConfig::StringMap value )
 {
-	//KConfigGroup cg(CBTConfig::getConfig(), "stringlists");
-
-	//KConfigBase* config = cg.config();
-	//config->deleteGroup(getKey(ID)); //make sure we only save the new entries and don't use old ones
-	KConfigGroup cg = KConfigGroup(CBTConfig::getConfig(), "stringlists").group(getKey(ID));
-	cg.deleteGroup();
-	cg.sync();
-	//config->setGroup(getKey(ID));
-	
+	getConfig()->beginGroup(getKey(ID));
+	getConfig()->remove(""); //clear all entries of this group to make sure old stuff gets removed
 
 	switch (ID) {
 		case searchScopes: {
@@ -488,39 +484,35 @@ void CBTConfig::set
 						data += QString::fromUtf8( range->getRangeText() ) + ";";
 					}
 				}
-				//TODO: possibly cg...
-				cg.writeEntry(it.key(), data);
+				getConfig()->setValue(it.key(), data);
 			}
 			break;
 		}
 		default: {
 			for (CBTConfig::StringMap::ConstIterator it = value.begin(); it != value.end(); ++it) {
-				cg.writeEntry(it.key(), it.value());
+				getConfig()->setValue(it.key(), it.value());
 			}
 			break;
 		}
-	};
+	}
+	getConfig()->endGroup();
 }
 
 
-void CBTConfig::set
-	( const CLanguageMgr::Language* const language, const FontSettingsPair& value )
+void CBTConfig::set( const CLanguageMgr::Language* const language, const FontSettingsPair& value )
 {
-	//TODO: does this work, should it be cg.write...
-	KConfigGroup cg = CBTConfig::getConfig()->group("fonts");
-	//KConfigBase* config = cg.config();
+	getConfig()->beginGroup("fonts");
+	getConfig()->setValue(getKey(language), value.second.toString());
+	getConfig()->endGroup();
+	getConfig()->beginGroup("font standard settings");
+	getConfig()->setValue(getKey(language), value.first);
+	getConfig()->endGroup();
 
-	cg.writeEntry(getKey(language), value.second);
-	cg = CBTConfig::getConfig()->group("font standard settings");
-	//cg.setGroup("font standard settings");
-	cg.writeEntry(getKey(language), value.first);
-	
 	if (fontConfigMap.contains(language)) {
 		fontConfigMap.remove
 		(language); //remove it from the cache
 	}
 }
-
 
 const CSwordBackend::DisplayOptions CBTConfig::getDisplayOptionDefaults()
 {
@@ -536,16 +528,11 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 	CSwordBackend::FilterOptions options;
 	
 	options.footnotes = true; //required for the info display
-
 	options.strongNumbers =    true; //get(CBTConfig::strongNumbers);
 	options.headings = get(CBTConfig::headings);
-
 	options.morphTags = true;//required for the info display
-
 	options.lemmas = true;//required for the info display
-
 	options.redLetterWords = true;
-
 	options.hebrewPoints =     get(CBTConfig::hebrewPoints);
 	options.hebrewCantillation =  get(CBTConfig::hebrewCantillation);
 	options.greekAccents =     get(CBTConfig::greekAccents);
@@ -556,134 +543,144 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 	return options;
 }
 
-void CBTConfig::setupAccelSettings
-	(const CBTConfig::keys type, KActionCollection* const actionCollection)
+void CBTConfig::setupAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection)
 {
-	qDebug("CBTConfig::setupAccelSettings");
-	QString groupName;
-	switch (type) {
-		case allWindows : {
-			groupName = "Displaywindow shortcuts";
-			break;
-		};
-		case writeWindow : {
-			groupName = "Writewindow shortcuts";
-			break;
-		};
-		case readWindow : {
-			groupName = "Readwindow shortcuts";
-			break;
-		};
-		case bookWindow : {
-			groupName = "Book shortcuts";
-			break;
-		};
-		case bibleWindow : {
-			groupName =  "Bible shortcuts";
-			break;
-		};
-		case commentaryWindow : {
-			groupName = "Commentary shortcuts";
-			break;
-		};
-		case lexiconWindow : {
-			groupName = "Lexicon shortcuts";
-			break;
-		};
-		case application : {
-			groupName = "Application shortcuts";
-			break;
-		};
-	};
-	qDebug() << groupName;
-	Q_ASSERT(CBTConfig::getConfig());
-	//buggy???
-	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-	//KConfigGroup* cg;
-	
-	Q_ASSERT(cg);
-	Q_ASSERT(actionCollection);
-	//actionCollection->readSettings(cg);
-	actionCollection->setConfigGroup(groupName);
-	
-	actionCollection->readSettings();
-	qDebug("CBTConfig::setupAccelSettings end");
+// 	qDebug("CBTConfig::setupAccelSettings");
+// 	QString groupName;
+// 	switch (type) {
+// 		case allWindows : {
+// 			groupName = "Displaywindow shortcuts";
+// 			break;
+// 		};
+// 		case writeWindow : {
+// 			groupName = "Writewindow shortcuts";
+// 			break;
+// 		};
+// 		case readWindow : {
+// 			groupName = "Readwindow shortcuts";
+// 			break;
+// 		};
+// 		case bookWindow : {
+// 			groupName = "Book shortcuts";
+// 			break;
+// 		};
+// 		case bibleWindow : {
+// 			groupName =  "Bible shortcuts";
+// 			break;
+// 		};
+// 		case commentaryWindow : {
+// 			groupName = "Commentary shortcuts";
+// 			break;
+// 		};
+// 		case lexiconWindow : {
+// 			groupName = "Lexicon shortcuts";
+// 			break;
+// 		};
+// 		case application : {
+// 			groupName = "Application shortcuts";
+// 			break;
+// 		};
+// 	};
+// 	qDebug() << groupName;
+// 	Q_ASSERT(CBTConfig::getConfig());
+// 	//buggy???
+// 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
+// 	//KConfigGroup* cg;
+// 	
+// 	Q_ASSERT(cg);
+// 	Q_ASSERT(actionCollection);
+// 	//actionCollection->readSettings(cg);
+// 	actionCollection->setConfigGroup(groupName);
+// 	
+// 	actionCollection->readSettings();
+// 	qDebug("CBTConfig::setupAccelSettings end");
 }
 
-void CBTConfig::saveAccelSettings
-	(const CBTConfig::keys type, KActionCollection* const actionCollection)
+void CBTConfig::saveAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection)
 {
-	qDebug("CBTConfig::saveAccelSettings");
-	QString groupName;
-	switch (type) {
-		case allWindows : {
-			groupName = "Displaywindow shortcuts";
-			break;
-		};
-		case writeWindow : {
-			groupName = "Writewindow shortcuts";
-			break;
-		};
-		case readWindow : {
-			groupName = "Readwindow shortcuts";
-			break;
-		};
-		case bookWindow : {
-			groupName = "Book shortcuts";
-			break;
-		};
-		case bibleWindow : {
-			groupName =  "Bible shortcuts";
-			break;
-		};
-		case commentaryWindow : {
-			groupName = "Commentary shortcuts";
-			break;
-		};
-		case lexiconWindow : {
-			groupName = "Lexicon shortcuts";
-			break;
-		};
-		case application : {
-			groupName = "Application shortcuts";
-			break;
-		};
-	};
-	
-	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-	
-	qDebug("NOT saving accelerators!");
-	//actionCollection->writeSettings(cg);
-	qDebug("CBTConfig::saveAccelSettings end");
+// 	qDebug("CBTConfig::saveAccelSettings");
+// 	QString groupName;
+// 	switch (type) {
+// 		case allWindows : {
+// 			groupName = "Displaywindow shortcuts";
+// 			break;
+// 		};
+// 		case writeWindow : {
+// 			groupName = "Writewindow shortcuts";
+// 			break;
+// 		};
+// 		case readWindow : {
+// 			groupName = "Readwindow shortcuts";
+// 			break;
+// 		};
+// 		case bookWindow : {
+// 			groupName = "Book shortcuts";
+// 			break;
+// 		};
+// 		case bibleWindow : {
+// 			groupName =  "Bible shortcuts";
+// 			break;
+// 		};
+// 		case commentaryWindow : {
+// 			groupName = "Commentary shortcuts";
+// 			break;
+// 		};
+// 		case lexiconWindow : {
+// 			groupName = "Lexicon shortcuts";
+// 			break;
+// 		};
+// 		case application : {
+// 			groupName = "Application shortcuts";
+// 			break;
+// 		};
+// 	};
+// 	
+// // 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
+// 	
+// 	qDebug("NOT saving accelerators!");
+// 	//actionCollection->writeSettings(cg);
+// 	qDebug("CBTConfig::saveAccelSettings end");
 }
 
 
 const QString CBTConfig::getModuleEncryptionKey( const QString& module )
 {
-	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
-
-	return (cg.readEntry(module, QVariant(QString::null) ) ).toString();
+	QString result;
+	getConfig()->beginGroup("Module keys");
+	result = getConfig()->value(module, QVariant(QString::null)).toString();
+	getConfig()->endGroup();
+	return result;
 }
 
 void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& key )
 {
-	//  if (CSwordModuleInfo* const mod = CPointers::backend()->findModuleByName(module) ) {
-	//    // if an empty key is set for an unencrypted module do nothing
-	//    if (key.isEmpty() && !mod->isEncrypted()) {
-	//      return;
-	//    }
-	//  }
-	//  else if (key.isEmpty()) {
-	//    return;
-	//  };
-
-	KConfigGroup cg = CBTConfig::getConfig()->group("Module keys");
-	//TODO: cg.write...?
-	cg.writeEntry(module, key);
+	getConfig()->beginGroup("Module keys");
+	getConfig()->setValue(module, key);
+	getConfig()->endGroup();
 };
 
-KConfig* const CBTConfig::getConfig()
+QSettings* const CBTConfig::getConfig()
 {
-	static KConfig config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", KConfig::NoGlobals);
+	static QSettings config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
 	return &config;
+}
+
+const QString CBTConfig::IntListToString( const QList<int> intList )
+{
+	QStringList intStrings;
+	foreach(int i, intList)
+	{
+		intStrings << QString::number(i);
+	}
+	return intStrings.join(",");
+}
+
+const QList<int> CBTConfig::StringToIntList( const QString intListString )
+{
+	QList<int> intList;
+	foreach(QString intString, intListString.split(","))
+	{
+		intList << intString.trimmed().toInt();
+	}
+	return intList;
 }

@@ -31,7 +31,6 @@ class QAction;
 class QMenu;
 class QToolBar;
 class QSplitter;
-class KConfig;
 
 /**
   * @page backend The structure of the backend
@@ -130,7 +129,6 @@ public:
 	 */
 	virtual ~BibleTime();
 
-	//virtual void ensurePolished();
 	/**
 	* Reads the settings from the configfile and sets the right properties.
 	*/
@@ -211,18 +209,6 @@ protected: // Protected methods
 	* Called before a window is closed
 	*/
 	bool queryClose();
-	/**
-	* Called before quit.
-	*/
-	bool queryExit();
-	/**
-	* Reimplementation used for session management.
-	*/
-	void readProperties(KConfig* config);
-	/**
-	* Reimplementation used for sessions management.
-	*/
-	void saveProperties(KConfig* myConfig);
 
 	virtual bool event(QEvent*);
 
@@ -325,6 +311,11 @@ protected slots:
 	* Slot to refresh the save profile and load profile menus.
 	*/
 	void refreshProfileMenus();
+	/**
+	* Called before quit.
+	*/
+	void slot_aboutToQuit();
+
 
 private:
 	QToolBar* m_mainToolBar;

@@ -62,7 +62,7 @@ BibleTime::BibleTime() : BibleTimeInterface(),
 	initActions();
 	initConnections();
 	readSettings();
-	setPlainCaption( QString("BibleTime ").append(BT_VERSION) );
+	setPlainCaption(QString());
 	// we don't save the geometry, it's stored in the startup profile
 // 	setAutoSaveSettings(QString("MainWindow"), false);
 }
@@ -203,14 +203,8 @@ void BibleTime::refreshDisplayWindows() {
 }
 
 /** Called before quit. */
-bool BibleTime::queryExit() {
-	bool ret = false;
-	if (m_initialized) {
-		saveSettings();
-		ret = true;
-	}
-
-	return ret;
+void BibleTime::slot_aboutToQuit() {
+	saveSettings();
 }
 
 /** Called before a window is closed */
@@ -227,12 +221,6 @@ bool BibleTime::queryClose() {
 	qDebug() << "final return value:" << ret;
 	return ret;
 }
-
-/** Reimplementation used for sessions management. */
-void BibleTime::saveProperties(KConfig* /*myConfig*/) {}
-
-/** Reimplementation used for session management. */
-void BibleTime::readProperties(KConfig* /*myConfig*/) {}
 
 /** Restores the workspace if the flag for this is set in the config. */
 void BibleTime::restoreWorkspace() {
@@ -284,22 +272,13 @@ void BibleTime::processCommandline() {
 			}
 }
 
-//void BibleTime::ensurePolished() {
-//	m_initialized = true;
-
-//	QMainWindow::ensurePolished();
-//	applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
-//}
-
 bool BibleTime::event(QEvent* e)
 {
-	if (e->type() == QEvent::Polish) {
-		qDebug("BibleTime::event type Polish");
-		m_initialized = true;
-// 		applyMainWindowSettings(KConfigGroup(CBTConfig::getConfig(), QString::fromLatin1("MainWindow")));
-	}
-	if (e->type() == QEvent::Close) {
-		
+// /*	if (e->type() == QEvent::Polish) {
+// 		qWarning("BibleTime::event type Polish");
+// 		m_initialized = true;
+// 	}*/
+	if (e->type() == QEvent::Close) {	
 	}
 	return QMainWindow::event(e);
 }

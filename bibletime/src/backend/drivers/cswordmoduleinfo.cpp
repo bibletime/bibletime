@@ -18,17 +18,17 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/managers/clanguagemgr.h"
 
-#include <boost/scoped_ptr.hpp>
 #include "util/directoryutil.h"
 #include "util/cpointers.h"
 #include "frontend/cbtconfig.h"
-
 
 #include <sys/types.h>
 #include <unistd.h>
 #include <stddef.h>
 #include <dirent.h>
 #include <regex.h>
+
+#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QRegExp>
@@ -37,11 +37,7 @@
 #include <QList>
 #include <QByteArray>
 #include <QDebug>
-
-//KDE includes
-#include <klocale.h>
-#include <kconfig.h>
-#include <kconfiggroup.h>
+#include <QSettings>
 
 //Sword includes
 #include <swbuf.h>
@@ -56,6 +52,9 @@
 #include <CLucene/util/Reader.h>
 #include <CLucene/util/Misc.h>
 #include <CLucene/util/dirent.h>
+
+//KDE includes
+#include <klocale.h>
 
 
 //Increment this, if the index format changes
@@ -197,33 +196,23 @@ const QString CSwordModuleInfo::getModuleStandardIndexLocation() const { //this 
 	return getModuleBaseIndexLocation() + QString("/standard");
 }
 
-const bool CSwordModuleInfo::hasIndex() { //this will return true only
+const bool CSwordModuleInfo::hasIndex() { 
+	//this will return true only
 	//if the index exists and has correct version information for both index and module
-
 	QDir d;
 	if (!d.exists( getModuleStandardIndexLocation() )) {
 		return false;
 	}
 
 	//first check if the index version and module version are ok
-	boost::scoped_ptr<KConfig> config_in (new KConfig(getModuleBaseIndexLocation() + QString("/bibletime-index.conf")));
-	boost::scoped_ptr<KConfigGroup> indexconfig(
-		new KConfigGroup(config_in.get(), "")
-	);
-			
-// 		new KConfig(
-// 			getModuleBaseIndexLocation()
-// 			 + QString("/bibletime-index.conf")
-// 			 )
-// 		)->group()
-// 	);
+	QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
 
 	if (hasVersion()) {
-		if (indexconfig->readEntry("module-version") != QString(config(CSwordModuleInfo::ModuleVersion)) ) {
+		if (module_config.value("module-version") != QString(config(CSwordModuleInfo::ModuleVersion)) ) {
 			return false;
 		}
 	}
-	if (indexconfig->readEntry("index-version") != QString::number( INDEX_VERSION )) {
+	if (module_config.value("index-version") != QString::number( INDEX_VERSION )) {
 		qDebug("%s: INDEX_VERSION is not compatible with this version of BibleTime.", name().toUtf8().constData());
 		return false;
 	}
@@ -394,13 +383,9 @@ void CSwordModuleInfo::buildIndex() {
 	writer->optimize();
 	writer->close();
 
-	QString configFilename = getModuleStandardIndexLocation() + QString("/../bibletime-index.conf");
-	boost::scoped_ptr<KConfig> config_in ( new KConfig( configFilename ) );
-	boost::scoped_ptr<KConfigGroup> indexconfig( new KConfigGroup( config_in.get() , "") );
-	if (hasVersion()) {
-		indexconfig->writeEntry("module-version", config(CSwordModuleInfo::ModuleVersion) );
-	}
-	indexconfig->writeEntry("index-version", INDEX_VERSION);
+	QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
+	if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
+	module_config.setValue("index-version", INDEX_VERSION );
 }
 
 void CSwordModuleInfo::deleteIndexForModule( QString name ) {

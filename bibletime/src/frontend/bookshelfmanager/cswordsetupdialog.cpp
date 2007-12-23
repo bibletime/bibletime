@@ -40,7 +40,6 @@
 #include <QApplication>
 
 //KDE includes
-#include <kconfig.h>
 #include <keditlistbox.h>
 #include <klocale.h>
 
