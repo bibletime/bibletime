@@ -15,16 +15,12 @@
 #include "frontend/keychooser/ckeychooser.h"
 
 //KDE includes
-#include <kmenu.h>
-#include <kapplication.h>
 #include <klocale.h>
 
 //QT includes
 #include <QObject>
 #include <QTimer>
 #include <QEvent>
-//#include <QMdiSubWindow>
-#include <QMainWindow>
 
 CMDIArea::CMDIArea(QWidget *parent) : QWorkspace(parent),
 m_guiOption(Nothing),

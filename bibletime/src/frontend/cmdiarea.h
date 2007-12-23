@@ -7,26 +7,21 @@
 *
 **********/
 
-
-
 #ifndef CMDIAREA_H
 #define CMDIAREA_H
 
-//BibleTime includes
 #include "util/cpointers.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 #include <QWorkspace>
-//#include <QMdiArea>
 #include <QList>
-#include <QEvent>
-#include <QResizeEvent>
-#include <QChildEvent>
-
 
 class CSwordModuleInfo;
 class CSwordKey;
+class QEvent;
+class QResizeEvent;
+class QChildEvent;
 
 /** The MDI widget we use in BibleTime.
  * Enhances QMdiArea.

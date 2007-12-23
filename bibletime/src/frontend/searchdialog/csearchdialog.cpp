@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "csearchdialog.h"
 #include "csearchdialogareas.h"
 //#include "csearchanalysis.h"
@@ -31,8 +29,6 @@
 
 //KDE includes
 #include <kdialog.h>
-#include <kapplication.h>
-#include <kfiledialog.h>
 #include <klocale.h>
 #include <khistorycombobox.h>
 #include <kpushbutton.h>

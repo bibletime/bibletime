@@ -34,9 +34,9 @@
 #include <QLayout>
 #include <QTimer>
 #include <QDebug>
+#include <QApplication>
 
 //KDE includes
-#include <kapplication.h>
 #include <ktoolinvocation.h>
 #include <khtmlview.h>
 #include <kglobalsettings.h>
@@ -367,7 +367,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 	
 				//first make a virtual mouse click to end the selection, if it's in progress
 				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
-				KApplication::sendEvent(view()->viewport(), &e);
+				QApplication::sendEvent(view()->viewport(), &e);
 				d->exec(Qt::CopyAction, Qt::CopyAction);
 			}
 		}

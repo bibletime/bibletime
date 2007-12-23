@@ -36,7 +36,6 @@
 #include <Q3Frame>
 
 //KDE includes
-#include <kapplication.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 

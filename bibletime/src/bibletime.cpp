@@ -36,9 +36,9 @@
 #include <QSplitter>
 #include <QDebug>
 #include <QAction>
+#include <QApplication>
 
 //KDE includes
-#include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <krandomsequence.h>
 
@@ -145,7 +145,7 @@ void BibleTime::readSettings() {
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
-	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
+	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 	qDebug("BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key)");
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
@@ -158,7 +158,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 		displayWindow->lookup(key);
 	}
 
-	kapp->restoreOverrideCursor();
+	qApp->restoreOverrideCursor();
 	return displayWindow;
 }
 
@@ -172,7 +172,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
 }
 
 CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) {
-	kapp->setOverrideCursor( QCursor(Qt::WaitCursor) );
+	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
 	ListCSwordModuleInfo modules;
 	modules.append(module);
@@ -187,7 +187,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 		displayWindow->lookup(key);
 	}
 
-	kapp->restoreOverrideCursor();
+	qApp->restoreOverrideCursor();
 	return displayWindow;
 }
 
@@ -305,8 +305,8 @@ bool BibleTime::event(QEvent* e)
 }
 
 void BibleTime::closeEvent(QCloseEvent* e) {
-	//qDebug("Now we will call kapp->quit");
+	//qDebug("Now we will call qApp->quit");
 	QMainWindow::closeEvent(e);
 	e->ignore();
-	kapp->quit();
+	qApp->quit();
 }

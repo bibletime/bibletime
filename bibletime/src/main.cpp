@@ -27,7 +27,6 @@
 
 #include <kcmdlineargs.h>
 #include <kcrash.h>
-#include <kapplication.h>
 #include <kstandarddirs.h> //for locale inclusion
 #include <kaboutdata.h>
 #include <klocale.h>
@@ -228,10 +227,11 @@ int main(int argc, char* argv[]) {
 	KCmdLineArgs::init(argc, argv, &aboutData);
 	KCmdLineArgs::addCmdLineOptions( options );
 
+// 	BibleTimeApp app(argc, argv);#for QApplication
 	BibleTimeApp app;
 
 	//For the transition time add our own locale dir as locale resource
-	KGlobal::dirs()->addResourceDir("locale", DirectoryUtil::getLocaleDir().canonicalPath());
+// 	KGlobal::dirs()->addResourceDir("locale", DirectoryUtil::getLocaleDir().canonicalPath());
 	
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
@@ -244,7 +244,7 @@ int main(int argc, char* argv[]) {
 		app.setProperty("--debug", false);
 	}
 
-	if (kapp->isSessionRestored()) {
+// 	if (kapp->isSessionRestored()) {
 // 		//TODO: how to restore session with pure Qt?
 // 		//    qDebug("Restoring BibleTime");
 // 		//RESTORE( BibleTime );
@@ -258,43 +258,42 @@ int main(int argc, char* argv[]) {
 // 			n++;
 //    		}
 // 		bibletime_ptr->restoreWorkspace();
+// 	}
+	
+	//Migrate configuration data, if neccessary
+	util::MigrationUtil::checkMigration();
+	
+	const bool showSplashScreen = CBTConfig::get(CBTConfig::logo);
+
+	if (showSplashScreen) {
+		KStartupLogo::createSplash();
+		KStartupLogo::showSplash();
+		KStartupLogo::setStatusMessage( i18n("Starting BibleTime") + QString("...") );
 	}
-	else {
-		//Migrate configuration data, if neccessary
-		util::MigrationUtil::checkMigration();
-		
-		const bool showSplashScreen = CBTConfig::get(CBTConfig::logo);
 
-		if (showSplashScreen) {
-			KStartupLogo::createSplash();
-			KStartupLogo::showSplash();
-			KStartupLogo::setStatusMessage( i18n("Starting BibleTime") + QString("...") );
-		}
-
-		setSignalHandler(signalHandler);
+	setSignalHandler(signalHandler);
 
 
-		bibletime_ptr = new BibleTime();
+	bibletime_ptr = new BibleTime();
 
-		// a new BibleTime version was installed (maybe a completely new installation)
-		if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-			KStartupLogo::hideSplash();
+	// a new BibleTime version was installed (maybe a completely new installation)
+	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
+		KStartupLogo::hideSplash();
 
-			CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
-			//TODO: unabled temporarily
-			//bibletime_ptr->slotSettingsOptions();
-			bibletime_ptr->slotSettingsOptions();
-		}
+		CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
+		//TODO: unabled temporarily
+		//bibletime_ptr->slotSettingsOptions();
+		bibletime_ptr->slotSettingsOptions();
+	}
 
-		// restore the workspace and process command line options
-		//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
-		bibletime_ptr->show();
-		bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
+	// restore the workspace and process command line options
+	//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
+	bibletime_ptr->show();
+	bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
 
-		if (showSplashScreen) {
-			KStartupLogo::hideSplash();
-			KStartupLogo::deleteSplash();
-		}
+	if (showSplashScreen) {
+		KStartupLogo::hideSplash();
+		KStartupLogo::deleteSplash();
 	}
 
 	const int ret = app.exec();

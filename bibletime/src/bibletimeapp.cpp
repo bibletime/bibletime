@@ -7,18 +7,15 @@
 *
 **********/
 
-
-
 #include "bibletimeapp.h"
-
 #include "frontend/cbtconfig.h"
-
 #include "util/cresmgr.h"
 
 //KDE includes
 //#include <dcopclient.h> #TODO: USE DBUS INSTEAD OF DCOP
 
-BibleTimeApp::BibleTimeApp() {
+// BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) { #for QApplication
+BibleTimeApp::BibleTimeApp() : KApplication() {
 //	initDCOP();
 	CResMgr::init_i18n();
 }

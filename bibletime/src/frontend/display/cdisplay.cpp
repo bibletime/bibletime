@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cdisplay.h"
 #include "cdisplay.moc"
 
@@ -25,14 +23,12 @@
 #include <QClipboard>
 #include <QMenu>
 #include <QTimer>
-
 #include <QDebug>
+#include <QApplication>
+#include <QFileDialog>
 
 //KDE includes
-#include <kapplication.h>
-#include <kfiledialog.h>
 #include <klocale.h>
-
 
 CDisplayConnections::CDisplayConnections( CDisplay* display ) : m_display(display) {}
 
@@ -143,10 +139,7 @@ CDisplay::~CDisplay() {
 }
 
 const bool CDisplay::copy( const CDisplay::TextType format, const CDisplay::TextPart part  ) {
-	const QString content = text(format, part);
-
-	QClipboard* cb = KApplication::clipboard();
-	cb->setText(content);
+	QApplication::clipboard()->setText( this->text(format, part) );
 	return true;
 }
 
@@ -157,14 +150,14 @@ const bool CDisplay::save( const CDisplay::TextType format, const CDisplay::Text
 
 	switch (format) {
 		case HTMLText:
-		filter = QString("*.html *.htm | ") + i18n("HTML files") + QString("\n *.* | All files (*.*)");
+		filter = i18n("HTML files") + QString(" (*.html *.htm);;") + i18n("All files") + QString(" (*.*)");
 		break;
 		case PlainText:
-		filter = QString("*.txt | ") + i18n("Text files") + QString("\n *.* | All files (*.*)");
+		filter = i18n("Text files") + QString(" (*.txt);;") + i18n("All files") + QString(" (*.*)");
 		break;
 	};
 
-	const QString filename = KFileDialog::getSaveFileName(KUrl(), filter, 0, i18n("Save document ..."));
+	const QString filename = QFileDialog::getSaveFileName(0, i18n("Save document ..."), "", filter);
 
 	if (!filename.isEmpty()) {
 		CToolClass::savePlainFile(filename, content);

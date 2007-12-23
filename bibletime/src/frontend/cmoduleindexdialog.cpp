@@ -16,9 +16,9 @@
 #include <QString>
 #include <QProgressDialog>
 #include <QDebug>
+#include <QApplication>
 
 //KDE includes
-#include <kapplication.h>
 #include <klocale.h>
 
 
@@ -69,7 +69,7 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 }
 
 void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modules ) {
-	qDebug("indexUnindexedModules");
+// 	qDebug("indexUnindexedModules");
 	//qDebug() << modules << modules.count();
 	ListCSwordModuleInfo unindexedMods;
 	
@@ -85,24 +85,12 @@ void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modu
 	indexAllModules(unindexedMods);
 }
 
-
-/*!
-    \fn CModuleIndexDialog::slotModuleProgress( int percentage )
- */
 void CModuleIndexDialog::slotModuleProgress( int percentage ) {
-	qDebug() << "progress:" << percentage;
-	
-	//progress->progressBar()->setValue( m_currentModuleIndex * 100 + percentage );
 	m_progress->setValue(m_currentModuleIndex * 100 + percentage);
-	//KApplication::kApplication()->processEvents(); //10 ms only; TODO: how about in qt4?
 	qApp->processEvents();
 }
 
 void CModuleIndexDialog::slotFinished( ) {
-	qDebug("indexing finished()");
-	
-	//progress->progressBar()->setValue( progress->progressBar()->maximum() - progress->progressBar()->minimum() );
 	m_progress->setValue(m_progress->maximum());
-	//KApplication::kApplication()->processEvents(); //1 ms only; TODO: how about in qt4?
 	qApp->processEvents();
 }

@@ -30,12 +30,12 @@
 #include <QList>
 #include <QProgressDialog>
 #include <QTextStream>
+#include <QApplication>
 
 //KDE includes
 //#include <kprogress.h>
 #include <kfiledialog.h>
 #include <klocale.h>
-#include <kapplication.h>
 
 //Sword includes
 #include <swkey.h>
@@ -240,7 +240,7 @@ const bool CExportManager::copyKey(CSwordKey* key, const Format format, const bo
 		text = render->renderSingleKey(key->key(), modules);
 	}
 
-	KApplication::clipboard()->setText(text);
+	QApplication::clipboard()->setText(text);
 	return true;
 };
 
@@ -275,7 +275,7 @@ const bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* m
 	}
 
 	const QString text = render->renderKeyTree(tree);
-	KApplication::clipboard()->setText(text);
+	QApplication::clipboard()->setText(text);
 	return true;
 };
 
@@ -312,7 +312,7 @@ const bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format for
 	};
 
 	const QString text = render->renderKeyTree(tree);
-	KApplication::clipboard()->setText(text);
+	QApplication::clipboard()->setText(text);
 	if (!progressWasCancelled()){
 		closeProgressDialog();
 	}
@@ -507,7 +507,7 @@ void CExportManager::setProgressRange( const int items ) {
 		dlg->setMinimumDuration(0);
 		dlg->show();
 		//     dlg->repaint();
-		KApplication::kApplication()->processEvents(); //do not lock the GUI!
+		qApp->processEvents(); //do not lock the GUI!
 	}
 }
 
@@ -550,5 +550,5 @@ void CExportManager::closeProgressDialog() {
 		dlg->reset();
 	}
 	
-	KApplication::kApplication()->processEvents(); //do not lock the GUI!
+	qApp->processEvents(); //do not lock the GUI!
 }

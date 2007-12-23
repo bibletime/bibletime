@@ -18,11 +18,9 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QHeaderView>
+#include <QApplication>
 
 #include <QDebug>
-
-#include <kapplication.h>
-
 
 CBookTreeChooser::CBookTreeChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
 : CKeyChooser(modules, key, parent),
@@ -159,10 +157,10 @@ void CBookTreeChooser::show() {
 	CKeyChooser::show();
 
 	if (!m_treeView->topLevelItemCount()) {
-		KApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+		QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
 		setupTree(); //create the tree structure
 		m_treeView->resize(m_treeView->sizeHint());
-		KApplication::restoreOverrideCursor();
+		QApplication::restoreOverrideCursor();
 	}
 }
 

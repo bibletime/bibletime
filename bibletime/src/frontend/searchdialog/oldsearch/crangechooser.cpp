@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "crangechooser.h"
 
 #include "backend/keys/cswordkey.h"
@@ -36,8 +34,6 @@
 #include <Q3GridLayout>
 
 //KDE includes
-#include <kapplication.h>
-#include <kfiledialog.h>
 #include <klocale.h>
 
 namespace Search {

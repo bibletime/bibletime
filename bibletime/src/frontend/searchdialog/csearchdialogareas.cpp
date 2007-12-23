@@ -30,6 +30,7 @@
 #include "util/directoryutil.h"
 
 //Qt includes
+#include <QApplication>
 #include <QLayout>
 #include <QPushButton>
 #include <QLabel>
@@ -51,7 +52,6 @@
 #include <klocale.h>
 #include <kcombobox.h>
 #include <kmessagebox.h>
-#include <kapplication.h>
 #include <khistorycombobox.h>
 
 
@@ -111,7 +111,7 @@ void StrongsResultClass::initStrongsResults(void)
 	count = result.Count();
 	if (!count)
 		return;
-	KApplication::kApplication()->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
+	qApp->processEvents( QEventLoop::AllEvents, 1 ); //1 ms only
 	srList.clear();
 	// for whatever reason the text "Parsing...translations." does not appear.
 	// this is not critical but the text is necessary to get the dialog box
@@ -125,7 +125,7 @@ void StrongsResultClass::initStrongsResults(void)
 	progress->raise();
 	for (index = 0; index < count; index++){
 		progress->setValue( index );
- 		KApplication::kApplication()->processEvents(QEventLoop::AllEvents, 1 ); //1 ms only
+ 		qApp->processEvents(QEventLoop::AllEvents, 1 ); //1 ms only
 
 		key = QString::fromUtf8(result.GetElement(index)->getText());
 		text = render.renderSingleKey(key, modules, settings);

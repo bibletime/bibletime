@@ -39,7 +39,6 @@
 #include <QToolBar>
 
 //KDE includes
-#include <kapplication.h>
 #include <kbugreport.h>
 #include <kaboutapplicationdialog.h>
 #include <kaboutdata.h>

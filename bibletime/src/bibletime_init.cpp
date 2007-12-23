@@ -38,7 +38,6 @@
 
 //KDE includes
 #include <kaboutdata.h>
-#include <kapplication.h>
 #include <kconfigbase.h>
 #include <klocale.h>
 

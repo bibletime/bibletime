@@ -25,11 +25,11 @@
 #include <QDebug>
 
 //KDE includes
-#include <kapplication.h>
 #include <kactioncollection.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <klocale.h>
+#include <kglobal.h>
 #include <khtml_settings.h>
 
 //Sword includes
@@ -280,7 +280,6 @@ const QString CBTConfig::getKey( const CLanguageMgr::Language* const language ) 
 
 const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 	//language specific lookup of the font name
-	//return KApplication::font();
 	if (m_defaultFont) {
 		return *m_defaultFont;
 	}
@@ -687,17 +686,4 @@ KConfig* const CBTConfig::getConfig()
 {
 	static KConfig config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", KConfig::NoGlobals);
 	return &config;
-	//qDebug("CBTConfig::getConfig");
-	//KSharedConfigPtr sharedconfigptr = (KGlobal::config());
-	//KConfig* config = &(*sharedconfigptr);
-
-	//if (KApplication::kApplication()->sessionSaving()) {
-	//	qWarning("Using session config");
-	//	//    config = KApplication::kApplication()->sessionConfig();
-	//}
-	//else if (KApplication::kApplication()->isRestored()) {
-	//	qWarning("isRestored(): Using session config");
-	//}
-
-	//return config;
 }

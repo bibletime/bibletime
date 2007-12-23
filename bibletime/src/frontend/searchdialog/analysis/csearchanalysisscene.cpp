@@ -21,8 +21,8 @@
 #include <QHashIterator>
 #include <QFileDialog>
 #include <QTextCodec>
+#include <QApplication>
 
-#include <kapplication.h>
 #include <klocale.h>
 
 namespace Search {
@@ -108,7 +108,7 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 		moduleIndex = 0;
 		ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 		for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
-			KApplication::kApplication()->processEvents( QEventLoop::AllEvents, 10 ); //10 ms only
+			qApp->processEvents( QEventLoop::AllEvents, 10 ); //10 ms only
 			if (!m_lastPosList.contains(*it)) {
 				m_lastPosList.insert(*it,0);
 			}

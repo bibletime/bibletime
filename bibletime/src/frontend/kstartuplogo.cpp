@@ -18,9 +18,6 @@
 #include <QPixmap>
 #include <QDesktopWidget>
 
-//KDE includes
-#include <kapplication.h>
-
 //static objects
 KStartupLogo* KStartupLogo::startupLogo = 0;
 
@@ -92,9 +89,10 @@ KStartupLogo::KStartupLogo()
 	p.setColor( QPalette::Normal, QPalette::Foreground, Qt::white );
 	setPalette( p );
 
+	QWidget* primaryScreen = QApplication::desktop()->screen( QApplication::desktop()->primaryScreen() );
 	setGeometry (
-		(KApplication::desktop()->width()-pm.width())/2,
-		(KApplication::desktop()->height()-pm.height()-textLabel->height())/2,
+		(primaryScreen->width()-pm.width())/2,
+		(primaryScreen->height()-pm.height()-textLabel->height())/2,
 		pm.width(),
 		pm.height()+textLabel->height()
 	);
@@ -103,7 +101,7 @@ KStartupLogo::KStartupLogo()
 void KStartupLogo::setText(const QString text) {
 	//Please not make the text bold & let the first character be blank
 	textLabel->setText( QString::fromLatin1(" %1").arg(text) );
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 }
 
 /** Makes the splashscreen the toplevel window. */

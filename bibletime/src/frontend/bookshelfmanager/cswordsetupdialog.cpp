@@ -37,9 +37,9 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QCloseEvent>
+#include <QApplication>
 
 //KDE includes
-#include <kapplication.h>
 #include <kconfig.h>
 #include <keditlistbox.h>
 #include <klocale.h>
@@ -458,7 +458,7 @@ void CSwordSetupDialog::slot_doRemoveModules() {
 
 void CSwordSetupDialog::populateRemoveModuleListView() {
 	CSwordBackend myBackend;
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 	myBackend.initModules();
 
 	m_removeModuleListView->clear();
@@ -517,7 +517,7 @@ const bool CSwordSetupDialog::refreshRemoteModuleCache( const QString& sourceNam
 }
 
 bool CSwordSetupDialog::populateInstallModuleListView( const QString& sourceName ) {
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 	if (!m_installModuleListView) { // this may be an update after removing modules
 		return false;
 	}
@@ -550,7 +550,7 @@ bool CSwordSetupDialog::populateInstallModuleListView( const QString& sourceName
 	CSwordBackend* local_backend = CPointers::backend();
 	Q_ASSERT(local_backend);
 	//  qWarning("local backend has path %s", local_backend->);
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 	//local_backend.initModules();
 
 	//  qWarning("config path3 is %s", remote_backend->configPath);
@@ -762,7 +762,7 @@ void CSwordSetupDialog::installCompleted( const int total, const int /* file */)
 		m_progressDialog->setValue(total+100*m_installedModuleCount);
 		m_progressDialog->setLabelText( QString("[%1]: %2%").arg(m_installingModule).arg(total) );
 	}
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 }
 
 void CSwordSetupDialog::slot_showInstallSourcePage() {
@@ -884,14 +884,14 @@ void CSwordSetupDialog::slot_moduleRefreshProgressCancelClicked() {
 	if (m_currentInstallMgr) {
 		m_currentInstallMgr->terminate();
 	}
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 }
 
 void CSwordSetupDialog::slot_moduleRefreshCompleted(const int /*total*/, const int current) {
 	if (m_progressDialog) {
 		m_progressDialog->setValue(current);
 	}
-	KApplication::kApplication()->processEvents();
+	qApp->processEvents();
 }
 
 void CSwordSetupDialog::closeEvent(QCloseEvent* event)

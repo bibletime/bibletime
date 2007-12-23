@@ -13,6 +13,7 @@
 //BibleTime
 #include "util/cpointers.h"
 
+//#include <QApplication>
 //KDE
 #include <kapplication.h>
 
@@ -22,6 +23,7 @@
 class BibleTimeApp : public KApplication, public CPointers {
 public:
 	BibleTimeApp();
+//	BibleTimeApp( int & argc, char ** argv );#for QApplication
 	virtual ~BibleTimeApp();
 
 protected:
