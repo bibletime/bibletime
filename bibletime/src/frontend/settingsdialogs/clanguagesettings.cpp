@@ -4,7 +4,7 @@
 // Description: 
 //
 //
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2007
+// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
 //
 // Copyright: See COPYING file that comes with this distribution
 //

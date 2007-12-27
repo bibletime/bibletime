@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2006 by the BibleTime developers.
+* Copyright 1999-2008 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
 		BT_VERSION,
 		ki18n("Bible study tool for KDE"),
 		KAboutData::License_GPL_V2,
-		ki18n("(c)1999-2007, The BibleTime Team"),
+		ki18n("(c)1999-2008, The BibleTime Team"),
 		ki18n("BibleTime is an easy to use but powerful Bible study tool for KDE.\n\nWe are looking for developers and translators.\nIf you'd like to join our team, please send an email to info@bibletime.info."),
 		"http://www.bibletime.info/",
 		"info@bibletime.info"
