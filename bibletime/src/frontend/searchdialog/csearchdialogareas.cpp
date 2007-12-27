@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "csearchdialogareas.h"
 #include "csearchdialogareas.moc"
 
@@ -47,20 +45,19 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 #include <QWidget>
+#include <QMessageBox>
 
 //KDE includes
 #include <klocale.h>
 #include <kcombobox.h>
-#include <kmessagebox.h>
 #include <khistorycombobox.h>
-
 
 
 namespace Search {
 
-
 StrongsResult::StrongsResult()
-{}
+{
+}
 
 StrongsResult::StrongsResult(const QString& text, const QString &keyName)
 	   : text(text)
@@ -209,12 +206,8 @@ CSearchResultArea::CSearchResultArea(QWidget *parent)
 
 CSearchResultArea::~CSearchResultArea() {}
 
-/** Initializes the view of this widget. */
 void CSearchResultArea::initView()
 {
-	
-	qDebug("CSearchResultArea::initView");
-	
 	QVBoxLayout *mainLayout;
 	QSplitter *mainSplitter;
 	QWidget *resultListsWidget;
@@ -281,31 +274,24 @@ void CSearchResultArea::initView()
 	frameLayout->setContentsMargins(0,0,0,0);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
-
-	qDebug("CSearchResultArea::initView end");
 }
 
-/** Sets the modules which contain the result of each. */
 void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
 {
-	qDebug("CSearchResultArea::setSearchResult");
 	const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 	reset(); //clear current modules
 
 	m_modules = modules;
-	
-	m_moduleListBox->setupTree(modules, searchedText);
+	//pre-select the first module in the list
 	m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
-	m_resultListBox->setCurrentItem(m_resultListBox->topLevelItem(0), 0);
+	//this will pre-select and display the first hit of that module
+	m_moduleListBox->setupTree(modules, searchedText);
 
 	m_analyseButton->setEnabled(true);
 }
 
-
-/** Resets the current list of modules and the displayed list of found entries. */
 void CSearchResultArea::reset()
 {
-	qDebug("CSearchResultArea::reset");
 	m_moduleListBox->clear();
 	m_resultListBox->clear();
 	m_previewDisplay->setText("<html><head/><body></body></html>");
@@ -314,15 +300,12 @@ void CSearchResultArea::reset()
 	m_modules.clear();
 }
 
-/** Clear the preview pane.*/
 void CSearchResultArea::clearPreview(){
 	m_previewDisplay->setText("<html><head/><body></body></html>");
 }
 
-/** Update the preview of the selected key. */
 void CSearchResultArea::updatePreview(const QString& key)
 {
-	qDebug("CSearchResultArea::updatePreview");
 	using namespace Rendering;
 
 	CSwordModuleInfo* module = m_moduleListBox->activeModule();
@@ -673,26 +656,18 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 /** Initializes the signal slot conections of the child widgets, */
 void CSearchResultArea::initConnections()
 {
-	qDebug("CSearchResultArea::initConnections");
-	connect(m_resultListBox, SIGNAL(keySelected(const QString&)),
-			this, SLOT(updatePreview(const QString&)));
-	connect(m_resultListBox, SIGNAL(keyDeselected()),
-			this, SLOT(clearPreview()));
-			//m_previewDisplay->connectionsProxy(), SLOT(clear()));
-	connect(m_moduleListBox, SIGNAL(moduleSelected(CSwordModuleInfo*)),
-			m_resultListBox, SLOT(setupTree(CSwordModuleInfo*)));
-	connect(m_moduleListBox, SIGNAL(moduleChanged()),
-			m_previewDisplay->connectionsProxy(), SLOT(clear()));
+	connect(m_resultListBox, SIGNAL(keySelected(const QString&)), this, SLOT(updatePreview(const QString&)));
+	connect(m_resultListBox, SIGNAL(keyDeselected()), this, SLOT(clearPreview()));
+	connect(m_moduleListBox, SIGNAL(moduleSelected(CSwordModuleInfo*)), m_resultListBox, SLOT(setupTree(CSwordModuleInfo*)));
+	connect(m_moduleListBox, SIGNAL(moduleChanged()), m_previewDisplay->connectionsProxy(), SLOT(clear()));
 	connect(m_analyseButton, SIGNAL(clicked()), SLOT(showAnalysis()));
-   // connect the strongs list
-	connect(m_moduleListBox, SIGNAL(strongsSelected(CSwordModuleInfo*, QStringList*)),
-         m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, QStringList*)));
-	qDebug("CSearchResultArea::initConnections end");
+	// connect the strongs list
+	connect(m_moduleListBox, SIGNAL(strongsSelected(CSwordModuleInfo*, QStringList*)), 
+		m_resultListBox, SLOT(setupStrongsTree(CSwordModuleInfo*, QStringList*)));
 }
 
 /** Shows a dialog with the search analysis of the current search. */
 void CSearchResultArea::showAnalysis() {
-	qDebug("CSearchResultArea::showAnalysis");
 	CSearchAnalysisDialog dlg(m_modules, this);
 	dlg.exec();
 }
@@ -711,12 +686,10 @@ CSearchOptionsArea::~CSearchOptionsArea() {
 	saveSettings();
 }
 
-/** Returns the search text set in this page. */
 const QString CSearchOptionsArea::searchText() {
 	return m_searchTextCombo->currentText();
 }
 
-/** Sets the search text used in the page. */
 void CSearchOptionsArea::setSearchText(const QString& text) {
 	bool found = false;
 	int i = 0;
@@ -738,14 +711,7 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
 	m_searchTextCombo->setFocus();
 }
 
-/** Initializes this page. */
 void CSearchOptionsArea::initView() {
-	qDebug("CSearchOptionsArea::initView");
-
-	// Taken from .h file generated by uic
-    //QSize size(648, 130);
-    //size = size.expandedTo(SearchOptionsForm->minimumSizeHint());
-    //SearchOptionsForm->resize(size);
     QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
@@ -840,8 +806,7 @@ void CSearchOptionsArea::initView() {
 
 	Q_ASSERT(m_chooseModulesButton);
 	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
-	connect(m_chooseModulesButton, SIGNAL(clicked()),
-			this, SLOT(chooseModules()));
+	connect(m_chooseModulesButton, SIGNAL(clicked()), this, SLOT(chooseModules()));
 	
 	m_chooseModulesButton->setToolTip( CResMgr::searchdialog::options::moduleChooserButton::tooltip);
 	Q_ASSERT(m_rangeChooserCombo);
@@ -850,13 +815,11 @@ void CSearchOptionsArea::initView() {
 
 	Q_ASSERT(m_chooseRangeButton);
 	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
-	connect(m_chooseRangeButton, SIGNAL(clicked()),
-			this, SLOT(setupRanges()));
+	connect(m_chooseRangeButton, SIGNAL(clicked()), this, SLOT(setupRanges()));
 
 	//set the initial focus
 	Q_ASSERT(m_searchTextCombo);
 	m_searchTextCombo->setFocus();	
-	qDebug("CSearchOptionsArea::initView end");
 }
 
 /** Sets the modules used by the search. */
@@ -884,48 +847,37 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 	emit( sigSetSearchButtonStatus( (modules.count() != 0) ) );
 }
 
-/** Opens the modules chooser dialog. */
 void CSearchOptionsArea::chooseModules() {
 	QString title(i18n("Modules to Search in"));
 	QString label(i18n("Select the modules in which the search should be run."));
 	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
-	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
-			this, SLOT(setModules(ListCSwordModuleInfo)));
+	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)), this, SLOT(setModules(ListCSwordModuleInfo)));
 	dlg->exec();
 }
 
-/** Returns the list of used modules. */
 const ListCSwordModuleInfo CSearchOptionsArea::modules() {
 	return m_modules;
 }
 
-/** Sets all options back to the default. */
 void CSearchOptionsArea::reset() {
 	m_rangeChooserCombo->setCurrentItem(0); //no scope
 	m_searchTextCombo->clearEditText();
 }
 
-/** Reads the settings for the searchdialog from disk. */
 void CSearchOptionsArea::saveSettings() {
-	CBTConfig::set
-		(CBTConfig::searchCompletionTexts, m_searchTextCombo->completionObject()->items());
-	CBTConfig::set
-		(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
+	CBTConfig::set(CBTConfig::searchCompletionTexts, m_searchTextCombo->completionObject()->items());
+	CBTConfig::set(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
 }
 
-/** Reads the settings of the last searchdialog session. */
 void CSearchOptionsArea::readSettings() {
-	m_searchTextCombo->completionObject()->setItems( CBTConfig::get
-				(CBTConfig::searchCompletionTexts) );
-	m_searchTextCombo->setHistoryItems( CBTConfig::get
-											(CBTConfig::searchTexts) );
+	m_searchTextCombo->completionObject()->setItems( CBTConfig::get(CBTConfig::searchCompletionTexts) );
+	m_searchTextCombo->setHistoryItems( CBTConfig::get(CBTConfig::searchTexts) );
 }
 
 void CSearchOptionsArea::aboutToShow() {
 	m_searchTextCombo->setFocus();
 }
 
-/** No descriptions */
 void CSearchOptionsArea::setupRanges() {
 	CRangeChooserDialog* chooser = new CRangeChooserDialog(this);
 	chooser->exec();
@@ -933,7 +885,6 @@ void CSearchOptionsArea::setupRanges() {
 	refreshRanges();
 }
 
-/** No descriptions */
 void CSearchOptionsArea::syntaxHelp() {
 	QString syntax = i18n (
 			"<p>Enter search terms separated by spaces.  By default the search "
@@ -955,11 +906,9 @@ void CSearchOptionsArea::syntaxHelp() {
 			"<a href=\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">"
 			"http://lucene.apache.org/java/docs/queryparsersyntax.html</a></p>");
 
-	KMessageBox::about( this, syntax, i18n("Basic Search Syntax Introduction"));
+	QMessageBox::about( this, i18n("Basic Search Syntax Introduction"), syntax);
 }
 
-
-/** refreshes the listof ranges and the range combobox. */
 void CSearchOptionsArea::refreshRanges() {
 	//the first two options are fixed, the others can be edited using the "Setup ranges" button.
 	m_rangeChooserCombo->clear();
@@ -967,31 +916,24 @@ void CSearchOptionsArea::refreshRanges() {
 	//m_rangeChooserCombo->insertItem(i18n("Last search result"));
 
 	//insert the user-defined ranges
-	CBTConfig::StringMap map = CBTConfig::get
-								   (CBTConfig::searchScopes);
+	CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
 	CBTConfig::StringMap::Iterator it;
 	for (it = map.begin(); it != map.end(); ++it) {
 		m_rangeChooserCombo->insertItem(0, it.key());
 	};
 }
 
-/** Returns the selected search scope if a search scope was selected. */
 sword::ListKey CSearchOptionsArea::searchScope() {
 	if (m_rangeChooserCombo->currentIndex() > 0) { //is not "no scope"
 		CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
-		
 		QString scope = map[ m_rangeChooserCombo->currentText() ];
 		if (!scope.isEmpty()) {
 			return sword::VerseKey().ParseVerseList( (const char*)scope.toUtf8(), "Genesis 1:1", true);
 		}
 	}
-	
 	return sword::ListKey();
 }
 
-/*!
-    \fn CSearchOptionsArea::hasSearchScope()
- */
 bool CSearchOptionsArea::hasSearchScope() {
 	return (searchScope().Count() > 0);
 }

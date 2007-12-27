@@ -22,13 +22,13 @@
 
 //Qt includes
 #include <QToolBar>
+#include <QMessageBox>
 
 //KDE includes
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <klocale.h>
-#include <kmessagebox.h>
 
 
 using namespace Profile;
@@ -157,11 +157,10 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 		displayWidget()->setModified(false);
 		textChanged();
 	} else {
-		KMessageBox::error( this,
-				    QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
+		QMessageBox::critical( this, i18n("Module not writable"),
+				    QString::fromLatin1("<qt><b>%1</b><br />%2</qt>")
 				    .arg( i18n("Module is not writable.") )
 				    .arg( i18n("Either the module may not be edited, or "
-					       "you do not have write permission.") ),
-				    i18n("Module not writable") );
+					       "you do not have write permission.") ) );
 	}
 }

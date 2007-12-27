@@ -183,17 +183,7 @@ const QString CSearchDialog::searchText()
 sword::ListKey CSearchDialog::searchScope()
 {
 	return m_searchOptionsArea->searchScope();
-};
-
-/** Returns true if the search used a scope, otherwise false. */
-// const CSwordModuleSearch::scopeType CSearchDialog::searchScopeType() const {
-// 	return m_searchOptionsArea->scopeType();
-// }
-
-/** Returns true if the search used a scope, otherwise false. */
-// const int CSearchDialog::searchFlags() const {
-// 	return m_searchOptionsArea->searchFlags();
-// }
+}
 
 /** Returns the search text which is used for the search. */
 void CSearchDialog::setSearchText( const QString searchText )
@@ -232,8 +222,6 @@ void CSearchDialog::initView()
 }
 
 void CSearchDialog::searchFinished() {
-	qDebug("CSearchDialog::searchFinished()");
-
 	if ( m_searcher.foundItems() ) {
 		m_searchResultArea->setSearchResult(modules());
 	}
@@ -258,7 +246,6 @@ void CSearchDialog::initConnections() {
 
 /** Resets the parts to the default. */
 void CSearchDialog::reset() {
-	qDebug("CSearchDialog::reset");
 	m_searchOptionsArea->reset();
 	m_searchResultArea->reset();
 }

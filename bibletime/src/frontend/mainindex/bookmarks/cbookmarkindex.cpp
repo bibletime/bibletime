@@ -45,13 +45,12 @@
 #include <QTreeWidgetItem>
 #include <QCursor>
 #include <QMouseEvent>
-
+#include <QMessageBox>
 #include <QDebug>
 
 //KDE includes
 #include <klocale.h>
 #include <kmenu.h>
-#include <kmessagebox.h>
 #include <kaction.h>
 #include <kactionmenu.h>
 
@@ -627,7 +626,7 @@ void CBookmarkIndex::deleteEntries()
 		}
 	}
 
-	if (KMessageBox::warningYesNo(this, i18n("Do you really want to delete the selected items and child-items?"), i18n("Delete Items")) != KMessageBox::Yes) {
+	if (QMessageBox::question(this, i18n("Delete Items"), i18n("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
 		return;
 	}
 

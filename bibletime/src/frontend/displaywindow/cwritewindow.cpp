@@ -18,8 +18,8 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/display/cwritedisplay.h"
 
-//KDE includes
-#include <kmessagebox.h>
+#include <QMessageBox>
+
 #include <klocale.h>
 
 using namespace Profile;
@@ -128,16 +128,15 @@ CWriteDisplay* const CWriteWindow::displayWidget() {
 
 /** Saves settings */
 bool CWriteWindow::queryClose() {
-	//  qWarning("queryClose called!");
 	//save the text if it has changed
 	if (m_writeDisplay->isModified()) {
-		switch (KMessageBox::warningYesNoCancel( this, i18n("Save text before closing?")) ) {
-			case KMessageBox::Yes: { //save and close
+		switch (QMessageBox::question( this, i18n("Confirmation"), i18n("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
+			case QMessageBox::Yes: { //save and close
 				saveCurrentText();
 				m_writeDisplay->setModified( false );
 				return true;
 			}
-			case KMessageBox::No: //don't save and close
+			case QMessageBox::No: //don't save and close
 			return true;
 			default: // cancel, don't close
 			return false;
@@ -149,14 +148,13 @@ bool CWriteWindow::queryClose() {
 void CWriteWindow::beforeKeyChange(const QString& key) {
 	Q_ASSERT(displayWidget());
 	Q_ASSERT(keyChooser());
-	if (!isReady()) {
-		return;
-	}
+	if (!isReady()) return;
 
 	//If the text changed and we'd do a lookup ask the user if the text should be saved
 	if (modules().first() && displayWidget()->isModified()) {
-		switch (KMessageBox::warningYesNo( this, i18n("Save changed text?")) ) {
-			case KMessageBox::Yes: { //save the changes
+		
+		switch (QMessageBox::question( this, i18n("Confirmation"), i18n("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
+			case QMessageBox::Yes: { //save the changes
 				saveCurrentText( key );
 				break;
 			}

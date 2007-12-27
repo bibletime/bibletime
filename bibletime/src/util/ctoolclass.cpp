@@ -22,10 +22,10 @@
 #include <QRegExp>
 #include <QWidget>
 #include <QApplication>
+#include <QMessageBox>
 
 //KDE includes
 #include <klocale.h>
-#include <kmessagebox.h>
 
 /** Converts HTML text to plain text */
 QString CToolClass::htmlToText(const QString& html) {
@@ -57,19 +57,20 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 	bool ret;
 
 	if (saveFile.exists()) {
-		if (!forceOverwrite && KMessageBox::warningYesNo(0,
+		if (!forceOverwrite && QMessageBox::question(0, i18n("Confirmation"),
 				QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
-				.arg( i18n("The file already exists.") )
-				.arg( i18n("Do you want to overwrite it?")
-					)
-														) == KMessageBox::No
-		   ) {
+					.arg( i18n("The file already exists.") )
+					.arg( i18n("Do you want to overwrite it?")),
+				QMessageBox::Yes|QMessageBox::No,
+				QMessageBox::No) == QMessageBox::No
+		   ) 
+		{
 			return false;
 		}
 		else { //either the user chose yes or forceOverwrite is set
 			saveFile.remove();
 		}
-	};
+	}
 
 	if ( saveFile.open(QIODevice::ReadWrite) ) {
 		QTextStream textstream( &saveFile );
@@ -79,9 +80,10 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 		ret = true;
 	}
 	else {
-		KMessageBox::error(0, QString::fromLatin1("<qt>%1<BR><B>%2</B></qt>")
-						   .arg( i18n("The file couldn't be saved.") )
-						   .arg( i18n("Please check permissions etc.")));
+		QMessageBox::critical(0, i18n("Error"),
+			QString::fromLatin1("<qt>%1<BR><B>%2</B></qt>")
+				.arg( i18n("The file couldn't be saved.") )
+				.arg( i18n("Please check permissions etc.")));
 		saveFile.close();
 		ret = false;
 	}

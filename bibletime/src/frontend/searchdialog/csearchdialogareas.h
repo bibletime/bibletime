@@ -7,23 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CSEARCHDIALOGAREAS_H
 #define CSEARCHDIALOGAREAS_H
 
-//BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
-
-//Qt includes
 #include <QList>
 #include <QStringList>
 #include <QWidget>
-#include <QSize>
-
 
 //forward declarations
 class CReadDisplay;

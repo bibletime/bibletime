@@ -117,10 +117,8 @@ void CSearchResultView::setupTree(CSwordModuleInfo* m) {
 	}
 
 	setUpdatesEnabled(true);
-
-	//TODO: select the first item
-	//setSelected(firstChild(), true);
-	//executed(currentItem());
+	//pre-select the first item
+	this->setCurrentItem(this->topLevelItem(0), 0);
 }
 
 void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList)

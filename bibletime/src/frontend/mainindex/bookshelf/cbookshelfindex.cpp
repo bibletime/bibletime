@@ -573,8 +573,6 @@ void CBookshelfIndex::actionHideModules()
 /** Shows information about the current module. */
 void CBookshelfIndex::actionAboutModule() {
 	if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(currentItem())) {
-		//TODO: show "about" in mag or at least in scrollable view
-//		KMessageBox::about(this, i->moduleInfo()->aboutText(), i->moduleInfo()->config(CSwordModuleInfo::Description), false);
 		BTAboutModuleDialog* dialog = new BTAboutModuleDialog(this, i->moduleInfo());
 		dialog->show();
 		dialog->raise();
