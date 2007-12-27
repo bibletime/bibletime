@@ -7,19 +7,13 @@
 *
 **********/
 
-
-
 #ifndef CPRINTER_H
 #define CPRINTER_H
 
-//BibleTime backend
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/cdisplayrendering.h"
-
-//BibleTime frontend
 #include "frontend/cbtconfig.h"
 
-//Qt includes
 #include <QObject>
 
 class KHTMLPart;
@@ -34,12 +28,8 @@ namespace Printing {
 class CPrinter : public QObject, public Rendering::CDisplayRendering {
 		Q_OBJECT
 public:
-		CPrinter(
-			QObject *parent, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions
-		);
-
+		CPrinter(QObject *parent, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
 		virtual ~CPrinter();
-
 		void printKeyTree( KeyTree& );
 
 protected:
@@ -49,8 +39,8 @@ protected:
 
 private:
 		KHTMLPart* m_htmlPart;
-	};
+};
 
-}
+} //namespace Printing
 
 #endif
