@@ -36,7 +36,6 @@
 #include <Q3Frame>
 
 //KDE includes
-#include <kfiledialog.h>
 #include <klocale.h>
 
 namespace Search {

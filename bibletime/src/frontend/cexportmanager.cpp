@@ -31,10 +31,9 @@
 #include <QProgressDialog>
 #include <QTextStream>
 #include <QApplication>
+#include <QFileDialog>
 
 //KDE includes
-//#include <kprogress.h>
-#include <kfiledialog.h>
 #include <klocale.h>
 
 //Sword includes
@@ -478,17 +477,17 @@ const bool CExportManager::printKeyList(const QStringList& list,CSwordModuleInfo
 const QString CExportManager::filterString( const Format format ) {
 	switch (format) {
 		case HTML:
-		return i18n("*.html *.htm | HTML files\n *.* | All files (*.*)");
+			return i18n("HTML files") + QString(" (*.html *.htm);;") + i18n("All files") + QString(" (*.*)");
 		case Text:
-		return i18n("*.txt | Text files\n *.* | All files (*.*)");
+			return i18n("Text files") + QString(" (*.txt);;") + i18n("All files") + QString(" (*.*)");
 		default:
-		return i18n("All files (*.*)");
+			return i18n("All files") + QString(" (*.*)");
 	}
 }
 
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
-	return KFileDialog::getSaveFileName(KUrl(), filterString(format), 0);
+	return QFileDialog::getSaveFileName(0, i18n("Save file"), "", filterString(format), 0);
 }
 
 /** Returns a string containing the linebreak for the current format. */

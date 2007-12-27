@@ -7,28 +7,19 @@
 *
 **********/
 
-
-
 #ifndef CSEARCHRESULTSVIEW_H
 #define CSEARCHRESULTSVIEW_H
 
-//BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
 
-#include <QLabel>
 #include <QTreeWidget>
-
-
 
 //forward declarations
 class QMenu;
 class QAction;
-
 class CReadDisplay;
 
-
 namespace Search {
-
 
 class CSearchResultView  : public QTreeWidget {
 	Q_OBJECT
@@ -101,7 +92,6 @@ signals: // Signals
 	void keySelected(const QString&);
 	void keyDeselected();
 };
-
 
 } //end of namespace Search
 

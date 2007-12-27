@@ -1,16 +1,11 @@
-//
-// C++ Implementation: cindexbookmarkfolder
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
-
-
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2007 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #include "cindexbookmarkfolder.h"
 #include "cindexbookmarkitem.h"
@@ -29,8 +24,8 @@
 #include <QString>
 #include <QFile>
 #include <QMimeData>
+#include <QFileDialog>
 
-#include <kfiledialog.h>
 #include <klocale.h>
 
 
@@ -86,15 +81,17 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 
 
 void CIndexBookmarkFolder::exportBookmarks() {
-	QString fileName = KFileDialog::getSaveFileName(KUrl(QString::null), i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Export bookmarks"));
+	QString filter = i18n("BibleTime bookmark files") + QString(" (*.btb);;") + i18n("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getSaveFileName(0, i18n("BibleTime - Export Bookmarks"), "", filter);
+	
 	if (!fileName.isEmpty()) {
 		saveBookmarks( fileName, false ); //false means we don't want to overwrite the file without asking the user
 	};
 }
 
-
 void CIndexBookmarkFolder::importBookmarks() {
-	QString fileName = KFileDialog::getOpenFileName(KUrl(QString::null), i18n("*.btb | BibleTime bookmark files (*.btb)\n*.* | All files (*.*)"), 0, i18n("BibleTime - Import bookmarks"));
+	QString filter = i18n("BibleTime bookmark files") + QString(" (*.btb);;") + i18n("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getOpenFileName(0, i18n("BibleTime - Import bookmarks"), "", filter);
 	if (!fileName.isEmpty()) {
 		//we have to decide if we should load an old bookmark file from 1.2 or earlier or the new XML format of > 1.3
 		if ( !loadBookmarks(fileName) ) { //if this failed try to load it as old bookmark file

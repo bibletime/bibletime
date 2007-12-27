@@ -7,18 +7,13 @@
 *
 **********/
 
-
-
 #ifndef CEXPORTMANAGER_H
 #define CEXPORTMANAGER_H
 
-//BibleTime includes
-#include "backend/managers/cswordbackend.h"
 #include "cbtconfig.h"
-
+#include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 
-//Qt includes
 #include <QString>
 #include <QList>
 

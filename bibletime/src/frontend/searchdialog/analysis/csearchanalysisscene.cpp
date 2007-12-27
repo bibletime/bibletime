@@ -240,16 +240,8 @@ const unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordMod
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-	//const QString file = KFileDialog::getSaveFileName(QString::null,
-	//					 QString("*.html | %1").arg(i18n("HTML files")),
-	//					 0,
-	//					 i18n("Save Search Analysis"));
-	const QString fileName = QFileDialog::getSaveFileName(0,
-															i18n("Save Search Analysis"),
-															QString::null,
-															QString(i18n("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
+	const QString fileName = QFileDialog::getSaveFileName(0, i18n("Save Search Analysis"), QString::null, QString(i18n("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
 	if (fileName.isEmpty()) return;
-
 
 	int moduleIndex = 0;
 	int count = 0;

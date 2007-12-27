@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "csearchresultview.h"
 #include "csearchresultview.moc"
 
@@ -16,10 +14,8 @@
 
 //#include "frontend/cdragdropmgr.h"
 #include "frontend/cexportmanager.h"
-
 #include "util/cresmgr.h"
 
-//Qt includes
 #include <QWidget>
 #include <QMenu>
 #include <QList>
@@ -29,7 +25,6 @@
 
 //KDE includes
 #include <klocale.h>
-
 
 namespace Search {
 
@@ -104,17 +99,12 @@ void CSearchResultView::initConnections() {
 void CSearchResultView::setupTree(CSwordModuleInfo* m) {
 	clear();
 	
-	if (!m) {
-		return;
-	}
+	if (!m) return;
 
 	m_module = m;
-
 	sword::ListKey& result = m->searchResult();
 	const int count = result.Count();
-	if (!count) {
-		return;
-	}
+	if (!count) return;
 
 	setUpdatesEnabled(false);
 
@@ -167,8 +157,6 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 //TODO: is this still valid?
 /** Is connected to the signal executed, which is emitted when a mew item was chosen. */
 void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
-	//  Q_ASSERT(item);
-	//  qWarning("executed");
 	if (current){
 		emit keySelected(current->text(0));
 	}
@@ -185,7 +173,6 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event)
 	m_popup->exec(event->globalPos());
 }
 
-/** No descriptions */
 void CSearchResultView::printItems() {
 	QList<QTreeWidgetItem*> items = selectedItems();
 	CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
@@ -193,11 +180,10 @@ void CSearchResultView::printItems() {
 	QStringList list;
 	foreach (QTreeWidgetItem* k, items) {
 		list.append( k->text(0) );
-	};
+	}
 	mgr.printKeyList( list, module(), CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() );
 }
 
-/** No descriptions */
 void CSearchResultView::saveItems() {
 	CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
 
@@ -209,14 +195,13 @@ void CSearchResultView::saveItems() {
 		k = CSwordKey::createInstance( m );
 		k->key(i->text(0));
 		keys.append( k );
-	};
+	}
 	mgr.saveKeyList( keys, CExportManager::Text, false);
 
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
 }
 
-/** No descriptions */
 void CSearchResultView::saveItemsWithText() {
 	CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
 
@@ -235,7 +220,6 @@ void CSearchResultView::saveItemsWithText() {
 	keys.clear(); //delete all the keys we created
 }
 
-/** No descriptions */
 void CSearchResultView::copyItems() {
 	CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
 
@@ -254,7 +238,6 @@ void CSearchResultView::copyItems() {
 	keys.clear(); //delete all the keys we created
 }
 
-/** No descriptions */
 void CSearchResultView::copyItemsWithText() {
 	CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
 
@@ -271,10 +254,8 @@ void CSearchResultView::copyItemsWithText() {
 
 	qDeleteAll(keys);
 	keys.clear(); //delete all the keys we created
-	
 }
 
-/** Returns the module which is currently used. */
 CSwordModuleInfo* const CSearchResultView::module() {
 	return m_module;
 }

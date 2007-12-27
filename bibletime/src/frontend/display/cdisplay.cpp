@@ -150,12 +150,12 @@ const bool CDisplay::save( const CDisplay::TextType format, const CDisplay::Text
 
 	switch (format) {
 		case HTMLText:
-		filter = i18n("HTML files") + QString(" (*.html *.htm);;") + i18n("All files") + QString(" (*.*)");
-		break;
+			filter = i18n("HTML files") + QString(" (*.html *.htm);;") + i18n("All files") + QString(" (*.*)");
+			break;
 		case PlainText:
-		filter = i18n("Text files") + QString(" (*.txt);;") + i18n("All files") + QString(" (*.*)");
-		break;
-	};
+			filter = i18n("Text files") + QString(" (*.txt);;") + i18n("All files") + QString(" (*.*)");
+			break;
+	}
 
 	const QString filename = QFileDialog::getSaveFileName(0, i18n("Save document ..."), "", filter);
 
