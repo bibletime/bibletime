@@ -156,11 +156,11 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 
 		displayWidget()->setModified(false);
 		textChanged();
-	} else {
+	}
+	else {
 		QMessageBox::critical( this, i18n("Module not writable"),
-				    QString::fromLatin1("<qt><b>%1</b><br />%2</qt>")
-				    .arg( i18n("Module is not writable.") )
-				    .arg( i18n("Either the module may not be edited, or "
-					       "you do not have write permission.") ) );
+			QString::fromLatin1("<qt><b>%1</b><br />%2</qt>")
+				.arg( i18n("Module is not writable.") )
+				.arg( i18n("Either the module may not be edited, or you do not have write permission.") ) );
 	}
 }

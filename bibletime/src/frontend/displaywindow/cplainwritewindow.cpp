@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cplainwritewindow.h"
 #include "cplainwritewindow.moc"
 
@@ -20,12 +18,11 @@
 
 #include "util/cresmgr.h"
 
-//Qt includes
 #include <QRegExp>
 #include <QToolBar>
 #include <QMessageBox>
+#include <QDebug>
 
-//KDE includes
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
@@ -33,8 +30,8 @@
 
 using namespace Profile;
 
-CPlainWriteWindow::CPlainWriteWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
-	: CWriteWindow(moduleList, parent)
+CPlainWriteWindow::CPlainWriteWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent) : 
+	CWriteWindow(moduleList, parent)
 {
 	setKey( CSwordKey::createInstance(moduleList.first()) );
 }
@@ -105,11 +102,8 @@ void CPlainWriteWindow::initToolbars() {
 
 void CPlainWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
-	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
-			this, SLOT(lookup(CSwordKey*)));
-
-	QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),
-			this, SLOT(textChanged()) );
+	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookup(CSwordKey*)));
+	QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
 void CPlainWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
@@ -140,7 +134,8 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 
 		displayWidget()->setModified(false);
 		textChanged();
-	} else {
+	}
+	else {
 		QMessageBox::critical( this, i18n("Module not writable"),
 			QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
 			.arg( i18n("Module is not writable.") )

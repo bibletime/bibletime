@@ -33,16 +33,12 @@ CWriteWindow::~CWriteWindow() {}
 void CWriteWindow::insertKeyboardActions( KActionCollection* const ) {}
 
 void CWriteWindow::initConnections() {
-	//  qWarning("CWriteWindow::initConnections()");
 	Q_ASSERT(keyChooser());
-
-	QObject::connect(keyChooser(), SIGNAL(beforeKeyChange(const QString&)),
-			this, SLOT(beforeKeyChange(const QString&))
-		   );
-};
+	QObject::connect(keyChooser(), SIGNAL(beforeKeyChange(const QString&)), this, SLOT(beforeKeyChange(const QString&)));
+}
 
 void CWriteWindow::initActions() {}
-;
+
 
 void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 
@@ -99,13 +95,11 @@ void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
 	setUpdatesEnabled(true);
 };
 
-/** Sets the write display-widget for this write display window. */
 void CWriteWindow::setDisplayWidget( CWriteDisplay* display ) {
 	CDisplayWindow::setDisplayWidget(display);
 	m_writeDisplay = display;
 }
 
-/** Look up the given key and display the text. In our case we offer to edit the text. */
 void CWriteWindow::lookup( CSwordKey* newKey ) {
 	//set the raw text to the display widget
 	if (!newKey)
@@ -121,25 +115,22 @@ void CWriteWindow::lookup( CSwordKey* newKey ) {
 	setCaption( windowCaption() );
 }
 
-/** Returns the write display widget used by this window. */
 CWriteDisplay* const CWriteWindow::displayWidget() {
 	return m_writeDisplay;
 }
 
-/** Saves settings */
 bool CWriteWindow::queryClose() {
 	//save the text if it has changed
 	if (m_writeDisplay->isModified()) {
 		switch (QMessageBox::question( this, i18n("Confirmation"), i18n("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
-			case QMessageBox::Yes: { //save and close
+			case QMessageBox::Yes: //save and close
 				saveCurrentText();
 				m_writeDisplay->setModified( false );
 				return true;
-			}
 			case QMessageBox::No: //don't save and close
-			return true;
+				return true;
 			default: // cancel, don't close
-			return false;
+				return false;
 		}
 	}
 	return true;

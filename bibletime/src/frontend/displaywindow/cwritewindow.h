@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CWRITEWINDOW_H
 #define CWRITEWINDOW_H
 
@@ -17,11 +15,8 @@
 
 
 class CWriteDisplay;
-
-class KActionCollection;
-
 class QString;
-
+class KActionCollection;
 
 /**The base class for all write-only display windows.
   *@author The BibleTime team

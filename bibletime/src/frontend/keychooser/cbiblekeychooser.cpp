@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #include "cbiblekeychooser.h"
 #include "cbiblekeychooser.moc"
 
@@ -23,17 +21,17 @@
 #include "util/cresmgr.h"
 
 #include <QHBoxLayout>
-
 #include <QDebug>
 
 
-CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
-: CKeyChooser(modules, key, parent),
-m_key(dynamic_cast<CSwordVerseKey*>(key)) {
+CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent) : 
+	CKeyChooser(modules, key, parent),
+	m_key(dynamic_cast<CSwordVerseKey*>(key)) 
+{
 	w_ref = 0;
 	setModules(modules, false);
 	if (!m_modules.count()) {
-		qWarning("CBibleKeyChooser: module is not a Bible or commentary!");
+		qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
 		m_key = 0;
 		return;
 	}
@@ -58,43 +56,30 @@ CSwordKey* CBibleKeyChooser::key() {
 
 void CBibleKeyChooser::setKey(CSwordKey* key)
 {
-	qDebug("CBibleKeyChooser::setKey");
 	Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
-	if (dynamic_cast<CSwordVerseKey*>(key) == 0) {
-		return;
-	}
+	if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
 
-	m_key = dynamic_cast<CSwordVerseKey*>(key);
 	emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
-
+	m_key = dynamic_cast<CSwordVerseKey*>(key);
 	w_ref->setKey(m_key);
-	qDebug() << "CBibleKeyChooser::setKey, m_key: " << m_key->key();
 	emit keyChanged(m_key);
 }
 
 void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 {
-	qDebug("CBibleKeyChooser::refChanged");
 	Q_ASSERT(m_key);
 	Q_ASSERT(key);
 
-	if (!updatesEnabled())
-		return;
+	if (!updatesEnabled()) return;
 
 	setUpdatesEnabled(false);
-	if (m_key)
-		qDebug("will emit beforeKeyChange");
-		emit beforeKeyChange(m_key->key());
-
+	if (m_key) emit beforeKeyChange(m_key->key());
 	m_key = key;
-	qDebug("will emit keyChanged");
-	qDebug() << "m_key: " << m_key->key();
 	emit keyChanged(m_key);
 
 	setUpdatesEnabled(true);
 }
 
-/** Sets te module and refreshes the combos */
 void CBibleKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
 	m_modules.clear();
 
@@ -116,9 +101,8 @@ void CBibleKeyChooser::refreshContent() {
 	setKey (m_key);
 }
 
-
-/** No descriptions */
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {}
+
 void CBibleKeyChooser::adjustFont() {}
 
 void CBibleKeyChooser::setKey(QString& newKey)
