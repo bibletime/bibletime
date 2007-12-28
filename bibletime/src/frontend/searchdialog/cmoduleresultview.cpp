@@ -28,7 +28,7 @@
 #include <QContextMenuEvent>
 
 //KDE includes
-#include <klocale.h>
+
 
 
 namespace Search {
@@ -54,7 +54,7 @@ void CModuleResultView::initView()
 {
 	// see also csearchresultview.cpp
 	
-	setHeaderLabels( QStringList(i18n("Work")) << QString(i18n("Hits")) );
+	setHeaderLabels( QStringList(tr("Work")) << QString(tr("Hits")) );
 	//setFullWidth(true);
 	
 	//  setFullWidth(true);
@@ -65,29 +65,29 @@ void CModuleResultView::initView()
 	//setup the popup menu
 	m_popup = new QMenu(this);
 
-	m_actions.copyMenu = new QMenu(i18n("Copy..."), m_popup);
+	m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
 	m_actions.copyMenu->setIcon(QIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
-	m_actions.copy.result = new QAction(i18n("Reference only"), this);
+	m_actions.copy.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
 	m_actions.copyMenu->addAction(m_actions.copy.result);
-	m_actions.copy.resultWithText = new QAction(i18n("Reference with text"), this); 
+	m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this); 
 	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()), this, SLOT(copyResultWithText()) );
 	m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 	m_popup->addMenu(m_actions.copyMenu);
 
-	m_actions.saveMenu = new QMenu(i18n("Save..."), m_popup);
+	m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
 	m_actions.saveMenu->setIcon(QIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
-	m_actions.save.result = new QAction(i18n("Reference only"), this);
+	m_actions.save.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
 	m_actions.saveMenu->addAction(m_actions.save.result);
-	m_actions.save.resultWithText = new QAction(i18n("Reference with text"), this);
+	m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveResultWithText()) );
 	m_actions.saveMenu->addAction(m_actions.save.resultWithText);
 	m_popup->addMenu(m_actions.saveMenu);
 
-	m_actions.printMenu = new QMenu(i18n("Print..."), m_popup); 
+	m_actions.printMenu = new QMenu(tr("Print..."), m_popup); 
 	m_actions.printMenu->setIcon(QIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
-	m_actions.print.result = new QAction(i18n("Reference with text"), this);
+	m_actions.print.result = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
 	m_actions.printMenu->addAction(m_actions.print.result);
 	m_popup->addMenu(m_actions.printMenu);
@@ -250,7 +250,7 @@ void CModuleResultView::copyResult()
 {
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
-		CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
+		CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 		mgr.copyKeyList(&result,m,CExportManager::Text,false);
 	};
 }
@@ -260,7 +260,7 @@ void CModuleResultView::copyResultWithText()
 {
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
-		CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
+		CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 		mgr.copyKeyList(&result,m,CExportManager::Text,true);
 	};
 }
@@ -270,7 +270,7 @@ void CModuleResultView::saveResult()
 {
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
-		CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
+		CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 		mgr.saveKeyList(&result,m,CExportManager::Text,false);
 	};
 }
@@ -280,7 +280,7 @@ void CModuleResultView::saveResultWithText()
 {
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
-		CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
+		CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 		mgr.saveKeyList(&result,m,CExportManager::Text,true);
 	};
 }
@@ -290,7 +290,7 @@ void CModuleResultView::printResult()
 {
 	if (CSwordModuleInfo* m = activeModule()) {
 		sword::ListKey result = m->searchResult();
-		CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
+		CExportManager mgr(tr("Print search result..."), true, tr("Printing search result"));
 		mgr.printKeyList(&result,m,CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults());
 	};
 }

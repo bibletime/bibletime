@@ -28,7 +28,7 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
-#include <klocale.h>
+
 
 
 using namespace Profile;
@@ -64,7 +64,7 @@ void CHTMLWriteWindow::initToolbars() {
 	//setup the main toolbar
 	m_actions.syncWindow = new KToggleAction(
 			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
-			i18n("Sync with active Bible"),
+			tr("Sync with active Bible"),
 			actionCollection()
 			);
 	m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
@@ -74,7 +74,7 @@ void CHTMLWriteWindow::initToolbars() {
 
 	m_actions.saveText = new KAction( 
 			KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
-			i18n("Save text"),
+			tr("Save text"),
 			actionCollection()
 			);
 	m_actions.saveText->setShortcut(CResMgr::displaywindows::writeWindow::saveText::accel);
@@ -86,7 +86,7 @@ void CHTMLWriteWindow::initToolbars() {
 
 	m_actions.deleteEntry = new KAction(
 			KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
-			i18n("Delete current entry"),
+			tr("Delete current entry"),
 			actionCollection()
 			);
 	m_actions.deleteEntry->setShortcut(CResMgr::displaywindows::writeWindow::deleteEntry::accel);
@@ -97,7 +97,7 @@ void CHTMLWriteWindow::initToolbars() {
 
 	m_actions.restoreText = new KAction(
 			KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
-			i18n("Restore original text"),
+			tr("Restore original text"),
 			actionCollection()
 			);
 	m_actions.restoreText->setShortcut(CResMgr::displaywindows::writeWindow::restoreText::accel);
@@ -158,9 +158,9 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 		textChanged();
 	}
 	else {
-		QMessageBox::critical( this, i18n("Module not writable"),
+		QMessageBox::critical( this, tr("Module not writable"),
 			QString::fromLatin1("<qt><b>%1</b><br />%2</qt>")
-				.arg( i18n("Module is not writable.") )
-				.arg( i18n("Either the module may not be edited, or you do not have write permission.") ) );
+				.arg( tr("Module is not writable.") )
+				.arg( tr("Either the module may not be edited, or you do not have write permission.") ) );
 	}
 }

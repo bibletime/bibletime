@@ -18,7 +18,7 @@
   * @author The BibleTime team
   */
 namespace CResMgr {
-	void init_i18n();
+	void init_tr();
 
 	namespace modules {
 		namespace bible {

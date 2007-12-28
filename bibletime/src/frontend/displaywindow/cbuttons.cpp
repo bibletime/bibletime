@@ -22,7 +22,7 @@
 #include <QMenu>
 
 //KDE includes
-#include <klocale.h>
+
 
 
 
@@ -49,11 +49,11 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 	//disable the settings button if no options are available
 	if (!populateMenu()) {
 		setEnabled(false);
-		setToolTip(i18n("Display settings: No options available"));
+		setToolTip(tr("Display settings: No options available"));
 	}
 	else {
 		setEnabled(true);
-		setToolTip(i18n("Display settings"));
+		setToolTip(tr("Display settings"));
 	}
 }
 
@@ -108,37 +108,37 @@ int CDisplaySettingsButton::populateMenu() {
 	int ret = 0;
 
 	m_popup->clear();
-	m_popup->setTitle(i18n("Display options"));
+	m_popup->setTitle(tr("Display options"));
 	
 	// See also optionToggled()
 
-	ret += addMenuEntry(i18n("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+	ret += addMenuEntry(tr("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
 	//show the verse numbers option only for bible modules
-	ret += addMenuEntry(i18n("Show versenumbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+	ret += addMenuEntry(tr("Show versenumbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
-	ret += addMenuEntry(i18n("Show headings"), Headings, &m_moduleSettings->headings,
+	ret += addMenuEntry(tr("Show headings"), Headings, &m_moduleSettings->headings,
 						isOptionAvailable(CSwordModuleInfo::headings));
 	
-	ret += addMenuEntry(i18n("Highlight words of Jesus"), WordsofJ, &m_moduleSettings->redLetterWords,
+	ret += addMenuEntry(tr("Highlight words of Jesus"), WordsofJ, &m_moduleSettings->redLetterWords,
 						isOptionAvailable(CSwordModuleInfo::redLetterWords ));
 
-	ret += addMenuEntry(i18n("Show Hebrew vowel points"), Vowel, &m_moduleSettings->hebrewPoints,
+	ret += addMenuEntry(tr("Show Hebrew vowel points"), Vowel, &m_moduleSettings->hebrewPoints,
 						isOptionAvailable(CSwordModuleInfo::hebrewPoints ));
 
-	ret += addMenuEntry(i18n("Show Hebrew cantillation marks"), Cantillation, &m_moduleSettings->hebrewCantillation,
+	ret += addMenuEntry(tr("Show Hebrew cantillation marks"), Cantillation, &m_moduleSettings->hebrewCantillation,
 						isOptionAvailable(CSwordModuleInfo::hebrewCantillation ));
 
-	ret += addMenuEntry(i18n("Show Greek accents"), Accents, &m_moduleSettings->greekAccents,
+	ret += addMenuEntry(tr("Show Greek accents"), Accents, &m_moduleSettings->greekAccents,
 						isOptionAvailable(CSwordModuleInfo::greekAccents ));
 
-	ret += addMenuEntry(i18n("Use alternative textual variant"), Variant, &m_moduleSettings->textualVariants,
+	ret += addMenuEntry(tr("Use alternative textual variant"), Variant, &m_moduleSettings->textualVariants,
 						isOptionAvailable(CSwordModuleInfo::textualVariants ));
 
-	ret += addMenuEntry(i18n("Show scripture cross-references"), Xref, &m_moduleSettings->scriptureReferences,
+	ret += addMenuEntry(tr("Show scripture cross-references"), Xref, &m_moduleSettings->scriptureReferences,
 						isOptionAvailable(CSwordModuleInfo::scriptureReferences ));
 
-	ret += addMenuEntry(i18n("Show morph segmentation"), Morphseg, &m_moduleSettings->morphSegmentation,
+	ret += addMenuEntry(tr("Show morph segmentation"), Morphseg, &m_moduleSettings->morphSegmentation,
 						isOptionAvailable(CSwordModuleInfo::morphSegmentation ));
 
 	return ret;

@@ -33,7 +33,7 @@
 
 //KDE includes
 #include <kdeversion.h>
-#include <klocale.h>
+
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
@@ -112,7 +112,7 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 
 	KToolBarPopupAction* action = new KToolBarPopupAction(
 				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
-				i18n("Back in history"),
+				tr("Back in history"),
 				a
 				);
 	action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
@@ -120,7 +120,7 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 
 	action = new KToolBarPopupAction(
 				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
-				i18n("Forward in history"),
+				tr("Forward in history"),
 				a
 				);
 	action->setShortcut(CResMgr::displaywindows::general::forwardInHistory::accel);
@@ -139,7 +139,7 @@ void CDisplayWindow::initActions()
 
 	KAction* kaction = new KAction(
 				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
-				i18n("Search"),
+				tr("Search"),
 				ac
 				);
 	kaction->setShortcut(CResMgr::displaywindows::general::search::accel);
@@ -164,20 +164,20 @@ void CDisplayWindow::initActions()
 
 /* kde/qt3:
 	new KToolBarPopupAction(
-		i18n("Back in history"), CResMgr::displaywindows::general::backInHistory::icon, CResMgr::displaywindows::general::backInHistory::accel,
+		tr("Back in history"), CResMgr::displaywindows::general::backInHistory::icon, CResMgr::displaywindows::general::backInHistory::accel,
 		keyChooser(), SLOT( backInHistory() ),
 		actionCollection(), CResMgr::displaywindows::general::backInHistory::actionName
 	);
 
 	new KToolBarPopupAction(
-		i18n("Forward in history"), CResMgr::displaywindows::general::forwardInHistory::icon, CResMgr::displaywindows::general::forwardInHistory::accel,
+		tr("Forward in history"), CResMgr::displaywindows::general::forwardInHistory::icon, CResMgr::displaywindows::general::forwardInHistory::accel,
 		keyChooser(), SLOT( forwardInHistory() ),
 		actionCollection(), CResMgr::displaywindows::general::forwardInHistory::actionName
 	);
 */
 	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
 			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
-			i18n("Back in history"),
+			tr("Back in history"),
 			ac
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
@@ -185,7 +185,7 @@ void CDisplayWindow::initActions()
 	
 	popupaction = new KToolBarPopupAction(
 			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
-			i18n("Forward in history"),
+			tr("Forward in history"),
 			ac
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );

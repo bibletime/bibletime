@@ -24,7 +24,7 @@
 #include <QContextMenuEvent>
 
 //KDE includes
-#include <klocale.h>
+
 
 namespace Search {
 
@@ -42,7 +42,7 @@ CSearchResultView::~CSearchResultView() {}
 /** Initializes the view of this widget. */
 void CSearchResultView::initView()
 {
-	setHeaderLabel(i18n("Results"));
+	setHeaderLabel(tr("Results"));
 	setDragEnabled(true);
 	setRootIsDecorated( false );
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -50,36 +50,36 @@ void CSearchResultView::initView()
 	//setup the popup menu
 	m_popup = new QMenu(this);
 
-	m_actions.copyMenu = new QMenu(i18n("Copy..."), m_popup);
+	m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
 	m_actions.copyMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon));
 	
-	m_actions.copy.result = new QAction(i18n("Reference only"), this);
+	m_actions.copy.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyItems()) );
 	m_actions.copyMenu->addAction(m_actions.copy.result);
 	
-	m_actions.copy.resultWithText = new QAction(i18n("Reference with text"), this);
+	m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()),
 		this, SLOT(copyItemsWithText()));
 	m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 
 	m_popup->addMenu(m_actions.copyMenu);
 
-	m_actions.saveMenu = new QMenu(i18n("Save..."), m_popup);
+	m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
 	m_actions.saveMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::saveMenu::icon));
 
-	m_actions.save.result = new QAction(i18n("Reference only"), this);
+	m_actions.save.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveItems()) );
 	m_actions.saveMenu->addAction(m_actions.save.result);
 
-	m_actions.save.resultWithText = new QAction(i18n("Reference with text"), this);
+	m_actions.save.resultWithText = new QAction(tr("Reference with text"), this);
 	m_actions.saveMenu->addAction(m_actions.save.resultWithText);
 	QObject::connect(m_actions.save.resultWithText, SIGNAL(triggered()), this, SLOT(saveItemsWithText()));
 	m_popup->addMenu(m_actions.saveMenu);
 
-	m_actions.printMenu = new QMenu(i18n("Print..."), m_popup);
+	m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
 	m_actions.printMenu->setIcon(QIcon(CResMgr::searchdialog::result::foundItems::printMenu::icon));
 
-	m_actions.print.result = new QAction(i18n("Reference with text"), this);
+	m_actions.print.result = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printItems()) );
 	m_actions.printMenu->addAction(m_actions.print.result);
 	m_popup->addMenu(m_actions.printMenu);
@@ -173,7 +173,7 @@ void CSearchResultView::contextMenuEvent(QContextMenuEvent* event)
 
 void CSearchResultView::printItems() {
 	QList<QTreeWidgetItem*> items = selectedItems();
-	CExportManager mgr(i18n("Print search result..."), true, i18n("Printing search result"));
+	CExportManager mgr(tr("Print search result..."), true, tr("Printing search result"));
 
 	QStringList list;
 	foreach (QTreeWidgetItem* k, items) {
@@ -183,7 +183,7 @@ void CSearchResultView::printItems() {
 }
 
 void CSearchResultView::saveItems() {
-	CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
+	CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
@@ -201,7 +201,7 @@ void CSearchResultView::saveItems() {
 }
 
 void CSearchResultView::saveItemsWithText() {
-	CExportManager mgr(i18n("Save search result..."), true, i18n("Saving search result"));
+	CExportManager mgr(tr("Save search result..."), true, tr("Saving search result"));
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
@@ -219,7 +219,7 @@ void CSearchResultView::saveItemsWithText() {
 }
 
 void CSearchResultView::copyItems() {
-	CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
+	CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;
@@ -237,7 +237,7 @@ void CSearchResultView::copyItems() {
 }
 
 void CSearchResultView::copyItemsWithText() {
-	CExportManager mgr(i18n("Copy search result..."), true, i18n("Copying search result"));
+	CExportManager mgr(tr("Copy search result..."), true, tr("Copying search result"));
 
 	CSwordModuleInfo* m = module();
 	CSwordKey* k = 0;

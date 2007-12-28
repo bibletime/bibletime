@@ -41,7 +41,7 @@
 
 //KDE includes
 #include <keditlistbox.h>
-#include <klocale.h>
+
 
 //Sword includes
 #include <installmgr.h>
@@ -74,7 +74,7 @@ CSwordSetupDialog::CSwordSetupDialog(QWidget *parent) : KPageDialog(parent),
 
 void CSwordSetupDialog::initSwordConfig() {
 	QWidget* page = new QWidget;
-	m_swordConfigPage = addPage(page, i18n("Bookshelf path(s)"));
+	m_swordConfigPage = addPage(page, tr("Bookshelf path(s)"));
 	page->setMinimumSize(500,400);
 
 	QGridLayout* layout = new QGridLayout(page);
@@ -85,34 +85,34 @@ void CSwordSetupDialog::initSwordConfig() {
 	layout->setRowStretch(5,1);
 
 	QLabel* mainLabel = CToolClass::explanationLabel(page,
-						i18n("Configure bookshelf path(s)"),
-						i18n("You can store your bookshelfs in one or more directories, which you can specify here.")
+						tr("Configure bookshelf path(s)"),
+						tr("You can store your bookshelfs in one or more directories, which you can specify here.")
 													);
 	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
 	QString swordConfPath = BTInstallMgr::Tool::LocalConfig::swordConfigFilename();
-	QLabel* confPathLabel = new QLabel(i18n("Your bookshelf configuration file is: ").append("<b>%1</b>").arg(swordConfPath), page);
+	QLabel* confPathLabel = new QLabel(tr("Your bookshelf configuration file is: ").append("<b>%1</b>").arg(swordConfPath), page);
 	confPathLabel->setWordWrap(true);
 	layout->addWidget(confPathLabel, 1, 0, 1, 2);
 
 	m_swordPathListBox = new QTreeWidget(page);
-	m_swordPathListBox->setHeaderLabels(QStringList() << i18n("Path to bookshelf"));
+	m_swordPathListBox->setHeaderLabels(QStringList() << tr("Path to bookshelf"));
 	
 	//TODO: No such signal QTreeWidget::selectionChanged()
 	connect(m_swordPathListBox, SIGNAL(selectionChanged()), this, SLOT(slot_swordPathSelected()));
 	layout->addWidget(m_swordPathListBox, 2, 0, 4, 1);
 
-	m_swordEditPathButton = new QPushButton(i18n("Edit Entry"), page);
+	m_swordEditPathButton = new QPushButton(tr("Edit Entry"), page);
 	m_swordEditPathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit"));
 	connect(m_swordEditPathButton, SIGNAL(clicked()), this, SLOT(slot_swordEditClicked()));
 	layout->addWidget(m_swordEditPathButton, 2, 1);
 
-	m_swordAddPathButton = new QPushButton(i18n("Add Entry"), page);
+	m_swordAddPathButton = new QPushButton(tr("Add Entry"), page);
 	m_swordAddPathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_add"));
 	connect(m_swordAddPathButton, SIGNAL(clicked()), this, SLOT(slot_swordAddClicked()));
 	layout->addWidget(m_swordAddPathButton, 3, 1);
 
-	m_swordRemovePathButton = new QPushButton(i18n("Remove Entry"), page);
+	m_swordRemovePathButton = new QPushButton(tr("Remove Entry"), page);
 	m_swordRemovePathButton->setIcon(util::filesystem::DirectoryUtil::getIcon("editdelete"));
 	connect(m_swordRemovePathButton, SIGNAL(clicked()), this, SLOT(slot_swordRemoveClicked()));
 	layout->addWidget(m_swordRemovePathButton, 4, 1);
@@ -122,7 +122,7 @@ void CSwordSetupDialog::initSwordConfig() {
 
 void CSwordSetupDialog::initInstall() {
 	QWidget* page = new QWidget;
-	m_installPage = addPage(page, i18n("Install/Update works"));
+	m_installPage = addPage(page, tr("Install/Update works"));
 
 	QVBoxLayout* vboxlayout = new QVBoxLayout(page);
 	QHBoxLayout* hboxlayout = new QHBoxLayout();
@@ -144,26 +144,26 @@ void CSwordSetupDialog::initInstall() {
 	layout->setColumnStretch(0,5);
 
 	QLabel* installLabel = CToolClass::explanationLabel(m_installSourcePage,
-							i18n("Install/update works - Step 1"),
-							i18n("Please choose a (local or remote) library and a bookshelf path to install the work(s) to. \
+							tr("Install/update works - Step 1"),
+							tr("Please choose a (local or remote) library and a bookshelf path to install the work(s) to. \
 After that step click on the connect button.<br/>\
 <b>WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use \
 the module remote installation feature!</b>")
 														);
 	layout->addWidget(installLabel, 0, 0, 1, 3);
 
-	QLabel* sourceHeadingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select library")), m_installSourcePage);
+	QLabel* sourceHeadingLabel = new QLabel(QString("<b>%1</b>").arg(tr("Select library")), m_installSourcePage);
 	layout->addWidget(sourceHeadingLabel, 1, 0);
 
 	m_sourceCombo = new QComboBox(m_installSourcePage);
 	layout->addWidget(m_sourceCombo, 2, 0);
 
-	QPushButton* deleteSourceButton = new QPushButton(i18n("Delete library"), m_installSourcePage);
+	QPushButton* deleteSourceButton = new QPushButton(tr("Delete library"), m_installSourcePage);
 	deleteSourceButton->setIcon(util::filesystem::DirectoryUtil::getIcon("remove"));
 	connect(deleteSourceButton, SIGNAL(clicked()), SLOT(slot_installDeleteSource()));
 	layout->addWidget(deleteSourceButton, 2, 1, Qt::AlignLeft);
 
-	QPushButton* addSourceButton = new QPushButton(i18n("Add library"), m_installSourcePage);
+	QPushButton* addSourceButton = new QPushButton(tr("Add library"), m_installSourcePage);
 	addSourceButton->setIcon(util::filesystem::DirectoryUtil::getIcon("folder_new"));
 	connect(addSourceButton, SIGNAL(clicked()), SLOT(slot_installAddSource()));
 	layout->addWidget(addSourceButton, 2, 2, Qt::AlignLeft);
@@ -171,7 +171,7 @@ the module remote installation feature!</b>")
 	m_sourceLabel = new QLabel(m_installSourcePage);
 	layout->addWidget(m_sourceLabel, 3, 0);
 
-	QLabel* targetHeadingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select bookshelf path")), m_installSourcePage);
+	QLabel* targetHeadingLabel = new QLabel(QString("<b>%1</b>").arg(tr("Select bookshelf path")), m_installSourcePage);
 	layout->addWidget(targetHeadingLabel, 4, 0);
 
 	m_targetCombo = new QComboBox(m_installSourcePage);
@@ -184,14 +184,14 @@ the module remote installation feature!</b>")
 	QHBoxLayout* myHBox = new QHBoxLayout();
 	vboxlayout->addLayout(myHBox);
 
-	m_installBackButton = new QPushButton(i18n("Back"), page);
+	m_installBackButton = new QPushButton(tr("Back"), page);
 	m_installBackButton->setIcon(util::filesystem::DirectoryUtil::getIcon("back"));
 	myHBox->addWidget(m_installBackButton);
 
 	myHBox->addSpacing(10);
 	myHBox->addStretch(5);
 
-	m_installContinueButton = new QPushButton(i18n("Connect to library"), page);
+	m_installContinueButton = new QPushButton(tr("Connect to library"), page);
 	m_installContinueButton->setIcon(util::filesystem::DirectoryUtil::getIcon("forward"));
 	connect(m_installContinueButton, SIGNAL(clicked()), this, SLOT(slot_connectToSource()));
 	myHBox->addWidget(m_installContinueButton);
@@ -207,7 +207,7 @@ the module remote installation feature!</b>")
 
 void CSwordSetupDialog::initRemove() {
 	QWidget* page = new QWidget;
-	m_removePage = addPage(page, i18n("Remove works"));
+	m_removePage = addPage(page, tr("Remove works"));
 
 	page->setMinimumSize(500,400);
 
@@ -219,18 +219,18 @@ void CSwordSetupDialog::initRemove() {
 	layout->setRowStretch(2,1);
 
 	QLabel* mainLabel= CToolClass::explanationLabel(page,
-							i18n("Remove installed work(s)"),
-							i18n("This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.")
+							tr("Remove installed work(s)"),
+							tr("This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.")
 														);
 	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
-	QLabel* headingLabel = new QLabel(QString("<b>%1</b>").arg(i18n("Select works to be uninstalled")), page);
+	QLabel* headingLabel = new QLabel(QString("<b>%1</b>").arg(tr("Select works to be uninstalled")), page);
 	layout->addWidget(headingLabel, 1, 0, 1, 2);
 
 	m_removeModuleListView = new CSwordSetupModuleListView(page, false);
 	layout->addWidget( m_removeModuleListView, 2, 0, 1, 2);
 
-	m_removeRemoveButton = new QPushButton(i18n("Remove selected work(s)"), page);
+	m_removeRemoveButton = new QPushButton(tr("Remove selected work(s)"), page);
 	m_removeRemoveButton->setIcon( util::filesystem::DirectoryUtil::getIcon("edittrash") );
 	layout->addWidget(m_removeRemoveButton, 3, 1, Qt::AlignRight);
 
@@ -243,7 +243,7 @@ void CSwordSetupDialog::initRemove() {
 void CSwordSetupDialog::initManageIndices()
 {
 	QWidget* page = new QWidget;
-	m_manageIndiciesPage = addPage(page, i18n("Manage search indicies"));
+	m_manageIndiciesPage = addPage(page, tr("Manage search indicies"));
 	
 	page->setMinimumSize(500,400);
 	QGridLayout* layout = new QGridLayout(page);
@@ -322,12 +322,12 @@ void CSwordSetupDialog::populateInstallCombos() {
 		sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&mgr, *it);
 
 		if (BTInstallMgr::Tool::RemoteConfig::isRemoteSource(&is)) {
-			m_sourceCombo->addItem( i18n("[Remote]") + " " + *it ); //remote source
+			m_sourceCombo->addItem( tr("[Remote]") + " " + *it ); //remote source
 		}
 		else { // local source
 			QFileInfo fi( is.directory.c_str() );
 			if (fi.isDir() && fi.isReadable()) {
-				m_sourceCombo->addItem( i18n("[Local]") + " " + *it );
+				m_sourceCombo->addItem( tr("[Local]") + " " + *it );
 			}
 		}
 	}
@@ -368,12 +368,12 @@ void CSwordSetupDialog::slot_sourceSelected(const QString &sourceName) {
 	//remove status parta
 	QString source = sourceName;
 
-	QString rep = i18n("[Local]") + " ";
+	QString rep = tr("[Local]") + " ";
 	int i = source.indexOf(rep);
 	if (i>=0) {
 		source.remove(i, rep.length());
 	}
-	rep = i18n("[Remote]") + " ";
+	rep = tr("[Remote]") + " ";
 	i = source.indexOf(rep);
 	if (i>=0) {
 		source.remove(i, rep.length());
@@ -409,12 +409,12 @@ void CSwordSetupDialog::slot_doRemoveModules() {
 		return; //no message, just do nothing
 	}
 
-	const QString message = i18n("You selected the following work(s): ")
+	const QString message = tr("You selected the following work(s): ")
 		.append(moduleList.join(", "))
 		.append("\n\n")
-		.append(i18n("Do you really want to remove them from your system?"));
+		.append(tr("Do you really want to remove them from your system?"));
 
-	if ((QMessageBox::question(this, i18n("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
+	if ((QMessageBox::question(this, tr("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 		sword::InstallMgr installMgr;
 		QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
 
@@ -486,8 +486,8 @@ const bool CSwordSetupDialog::refreshRemoteModuleCache( const QString& sourceNam
 	sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, sourceName);
 	bool success = false;
 
-	m_progressDialog = new QProgressDialog("", i18n("Cancel"), 0 ,100, this);
-	m_progressDialog->setWindowTitle(i18n("Download"));
+	m_progressDialog = new QProgressDialog("", tr("Cancel"), 0 ,100, this);
+	m_progressDialog->setWindowTitle(tr("Download"));
 	m_progressDialog->setMinimumDuration(0);
 
 	connect(m_progressDialog, SIGNAL(canceled()), SLOT(slot_moduleRefreshProgressCancelClicked()));
@@ -600,8 +600,8 @@ void CSwordSetupDialog::slot_connectToSource() {
 		layout->setSpacing(10);
 
 		QLabel* installLabel = CToolClass::explanationLabel(m_installModuleListPage,
-			i18n("Install/update works - Step 2"),
-			i18n("Please choose the works which should be installed and/or updated and click the install button."));
+			tr("Install/update works - Step 2"),
+			tr("Please choose the works which should be installed and/or updated and click the install button."));
 			
 		layout->addWidget(installLabel, 0, 0);
 		layout->setRowStretch(0,0);
@@ -627,7 +627,7 @@ void CSwordSetupDialog::slot_connectToSource() {
 		disconnect( m_installContinueButton, SIGNAL(clicked()), this, SLOT(slot_connectToSource()));
 		connect( m_installContinueButton, SIGNAL(clicked()), this, SLOT(slot_installModules()));
 
-		m_installContinueButton->setText(i18n("Install works"));
+		m_installContinueButton->setText(tr("Install works"));
 		m_installContinueButton->setEnabled(false);
 
 		m_installStackedWidget->setCurrentWidget(m_installModuleListPage);
@@ -671,12 +671,12 @@ void CSwordSetupDialog::slot_installModules() {
 		return;
 	}
 
-	const QString message = i18n("You selected the following works: ")
+	const QString message = tr("You selected the following works: ")
 		.append(moduleList.join(", "))
 		.append("\n\n")
-		.append(i18n("Do you really want to install them on your system?"));
+		.append(tr("Do you really want to install them on your system?"));
 
-	if ((QMessageBox::question(this, i18n("Confirmation"), message, QMessageBox::Yes|QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
+	if ((QMessageBox::question(this, tr("Confirmation"), message, QMessageBox::Yes|QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 		BTInstallMgr iMgr;
 		m_currentInstallMgr = &iMgr;
 		sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, currentInstallSource());
@@ -699,8 +699,8 @@ void CSwordSetupDialog::slot_installModules() {
 
 		//module are removed in this section of code
 		m_installedModuleCount = 0;
-		m_progressDialog = new QProgressDialog("", i18n("Cancel"), 0, 100 * moduleList.count(), this);
-		m_progressDialog->setWindowTitle(i18n("Download of work(s)"));
+		m_progressDialog = new QProgressDialog("", tr("Cancel"), 0, 100 * moduleList.count(), this);
+		m_progressDialog->setWindowTitle(tr("Download of work(s)"));
 		m_progressDialog->setMinimumDuration(0);
 
 		connect(m_progressDialog, SIGNAL(canceled()), SLOT(slot_installProgressCancelClicked()));
@@ -769,7 +769,7 @@ void CSwordSetupDialog::slot_showInstallSourcePage() {
 	disconnect( m_installContinueButton, SIGNAL(clicked()), this, SLOT(slot_installModules()));
 	m_installBackButton->setEnabled(false);
 
-	m_installContinueButton->setText(i18n("Connect to library"));
+	m_installContinueButton->setText(tr("Connect to library"));
 	m_installContinueButton->setEnabled(true);
 
 	m_installStackedWidget->setCurrentWidget(m_installSourcePage);
@@ -777,7 +777,7 @@ void CSwordSetupDialog::slot_showInstallSourcePage() {
 
 void CSwordSetupDialog::slot_swordEditClicked() {
 	if (QTreeWidgetItem* i = m_swordPathListBox->currentItem()) {
-		QString dirname = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), i->text(0));
+		QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), i->text(0));
 	if (dirname.isEmpty()) { // if user cancelled the dialog
 		return;
 	}	
@@ -785,7 +785,7 @@ void CSwordSetupDialog::slot_swordEditClicked() {
 		if (dir.isReadable()) {
 			const QFileInfo fi( dir.canonicalPath() );
 			if (!fi.exists() || !fi.isWritable()) {
-				const int result = QMessageBox::warning(this, i18n("Confirmation"), i18n("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+				const int result = QMessageBox::warning(this, tr("Confirmation"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 				if (result != QMessageBox::Yes) return;
 			}
 			i->setText(0, dir.canonicalPath());
@@ -798,7 +798,7 @@ void CSwordSetupDialog::slot_swordEditClicked() {
 }
 
 void CSwordSetupDialog::slot_swordAddClicked() {
-	QString dirname = QFileDialog::getExistingDirectory(this, i18n("Choose directory"), "");
+	QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), "");
 	if (dirname.isEmpty()) { // if user cancelled the dialog
 		return;
 	}
@@ -807,7 +807,7 @@ void CSwordSetupDialog::slot_swordAddClicked() {
 	if (dir.isReadable()) {
 		const QFileInfo fi( dir.canonicalPath() );
 		if (!fi.exists() || !fi.isWritable()) {
-			const int result = QMessageBox::warning(this, i18n("Warning"), i18n("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+			const int result = QMessageBox::warning(this, tr("Warning"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 			if (result != QMessageBox::Yes) {
 				return;
 			}
@@ -849,12 +849,12 @@ void CSwordSetupDialog::slot_swordPathSelected() {
 
 const QString CSwordSetupDialog::currentInstallSource() {
 	QString source = m_sourceCombo->currentText();
-	QString rep = i18n("[Local]") + " ";
+	QString rep = tr("[Local]") + " ";
 	int i = source.indexOf(rep);
 	if (i>=0) {
 		source.remove(i, rep.length());
 	}
-	rep = i18n("[Remote]") + " ";
+	rep = tr("[Remote]") + " ";
 	i = source.indexOf(rep);
 	if (i>=0) {
 		source.remove(i, rep.length());

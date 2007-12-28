@@ -27,7 +27,7 @@
 #include <QtDebug>
 
 //KDE includes
-#include <klocale.h>
+
 #include <kmenu.h>
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
@@ -98,7 +98,7 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 	}
 
 	m_noneAction->setChecked(false); //uncheck the "none" item
-	if (action->text().remove(QChar('&')) == i18n("NONE")) { // note: this is for m_popup, the toplevel!
+	if (action->text().remove(QChar('&')) == tr("NONE")) { // note: this is for m_popup, the toplevel!
 		if (m_hasModule) {
 			emit sigRemoveButton(m_id);
 			return;
@@ -115,8 +115,8 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 		setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
 		emit sigChanged();
 
-		setText( i18n("Select a work") );
-		m_titleAction->setText(i18n("Select a work"));//m_popup->changeTitle(m_titleId, i18n("Select a work"));
+		setText( tr("Select a work") );
+		m_titleAction->setText(tr("Select a work"));//m_popup->changeTitle(m_titleId, tr("Select a work"));
 
 		setToolTip(QString::null); //TODO: how to remove tooltip? Does this leave an empty tooltip box?
 		if (module()) {setToolTip(module()->name());}
@@ -133,13 +133,13 @@ void CModuleChooserButton::populateMenu() {
 	m_popup = new KMenu(this);
 	
 	if (m_module) {
-		m_titleAction = m_popup->addTitle( i18n("Select a work") );
+		m_titleAction = m_popup->addTitle( tr("Select a work") );
 	}
 	else {
-		m_titleAction = m_popup->addTitle( i18n("Select an additional work") );
+		m_titleAction = m_popup->addTitle( tr("Select an additional work") );
 	}
 
-	m_noneAction = m_popup->addAction(i18n("NONE"));
+	m_noneAction = m_popup->addAction(tr("NONE"));
 	m_noneAction->setCheckable(true);
 	if (!m_module) m_noneAction->setChecked(true);
 
@@ -198,7 +198,7 @@ void CModuleChooserButton::populateMenu() {
 		}
 
 		QString name(moduleInfo->name());
-		name.append(" ").append(moduleInfo->isLocked() ? i18n("[locked]") : QString::null);
+		name.append(" ").append(moduleInfo->isLocked() ? tr("[locked]") : QString::null);
 		
 		Q_ASSERT(langdict[lang]);
 		QAction* id = langdict[lang]->addAction( name );
@@ -215,7 +215,7 @@ void CModuleChooserButton::populateMenu() {
 	if (module()) {
 		 setToolTip(module()->name());
 	} else {
-		setToolTip(i18n("No work selected"));
+		setToolTip(tr("No work selected"));
 	}
 }
 

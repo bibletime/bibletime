@@ -39,7 +39,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 
 	{ //startup logo
 		m_showLogoCheck = new QCheckBox(this);
-		m_showLogoCheck->setText(i18n("Show startuplogo"));
+		m_showLogoCheck->setText(tr("Show startuplogo"));
 		m_showLogoCheck->setToolTip(CResMgr::settings::startup::showLogo::tooltip);
 
 
@@ -51,8 +51,8 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 	layout->addWidget(
 		CToolClass::explanationLabel(
 				this,
-				i18n("Display templates"),
-				i18n("Display templates define how text is displayed. Please choose a template you like.")
+				tr("Display templates"),
+				tr("Display templates define how text is displayed. Please choose a template you like.")
 				)
 		);
 
@@ -64,7 +64,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 	connect( m_styleChooserCombo, SIGNAL( activated( int ) ),
 			 this, SLOT( updateStylePreview() ) );
 
-	QLabel* availableLabel = new QLabel(i18n("Available display styles:"), this);
+	QLabel* availableLabel = new QLabel(tr("Available display styles:"), this);
 	availableLabel->setBuddy(m_styleChooserCombo);
 	hboxlayout->addWidget(availableLabel);
 	hboxlayout->addWidget( m_styleChooserCombo );
@@ -72,7 +72,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 	layout->addLayout( hboxlayout );
 
 	m_stylePreviewViewer = new KHTMLPart(this);
-	QLabel* previewLabel = new QLabel(i18n("Style preview"), this);
+	QLabel* previewLabel = new QLabel(tr("Style preview"), this);
 	previewLabel->setBuddy(m_stylePreviewViewer->view());
 	layout->addWidget(previewLabel);
 	layout->addWidget(m_stylePreviewViewer->view());
@@ -105,36 +105,36 @@ void CDisplaySettingsPage::updateStylePreview() {
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John316\" href=\"sword://Bible/WEB/John 3:16\">16</a></span>%1")
-					 .arg(i18n("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
+					 .arg(tr("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
 					 settings));
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John317\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
-					 .arg(i18n("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
+					 .arg(tr("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
 					 settings));
 
 	settings.highlight = true;
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John318\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
-					 .arg(i18n("He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.")),
+					 .arg(tr("He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.")),
 					 settings) );
 
 	settings.highlight = false;
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John319\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")
-					 .arg(i18n("This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.")),
+					 .arg(tr("This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.")),
 					 settings));
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John320\" href=\"sword://Bible/WEB/John 3:20\">20</a></span>%1<br/>")
-					 .arg(i18n("For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.")),
+					 .arg(tr("For everyone who does evil hates the light, and doesn't come to the light, lest his works would be exposed.")),
 					 settings));
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John321\" href=\"sword://Bible/WEB/John 3:21\">21</a></span>%1")
-					 .arg(i18n("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
+					 .arg(tr("But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.")),
 					 settings));
 
 	const QString oldStyleName = CBTConfig::get

@@ -29,7 +29,7 @@
 #include <kfontaction.h>
 #include <kfontsizeaction.h>
 #include <ktoolbar.h>
-#include <klocale.h>
+
 #include <kcolorbutton.h>
 #include <kmenu.h>
 
@@ -151,7 +151,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	
 	//--------------------font chooser-------------------------
 	//TODO: clean the comments after the port works
-	m_actions.fontChooser = new KFontAction( i18n("Choose a font"),
+	m_actions.fontChooser = new KFontAction( tr("Choose a font"),
 							actions // I suppose this is the parent
 							//CResMgr::displaywindows::writeWindow::underlinedText::accel, //shortcut: setShortcut
 							//actions, //KActionCollection::addAction(), see also previous "parent" and KDE4 porting doc
@@ -165,7 +165,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	connect(m_actions.fontChooser, SIGNAL(triggered(const QString&)), this, SLOT(setFontFamily(const QString&)));
 
 	//--------------------font size chooser-------------------------
-	m_actions.fontSizeChooser = new KFontSizeAction( i18n("Choose a font size"), actions);
+	m_actions.fontSizeChooser = new KFontSizeAction( tr("Choose a font size"), actions);
 	m_actions.fontSizeChooser->setShortcut(CResMgr::displaywindows::writeWindow::fontSize::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::fontSize::actionName, m_actions.fontSizeChooser);
 	m_actions.fontSizeChooser->setToolTip( CResMgr::displaywindows::writeWindow::fontSize::tooltip );
@@ -186,7 +186,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------bold toggle-------------------------
 	m_actions.bold = new KToggleAction(KIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
-						 i18n("Bold"), actions);
+						 tr("Bold"), actions);
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::boldText::actionName, m_actions.bold);
 	m_actions.bold->setToolTip( CResMgr::displaywindows::writeWindow::boldText::tooltip );
@@ -197,7 +197,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------italic toggle-------------------------
 	m_actions.italic = new KToggleAction(KIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
-							i18n("Italic"), actions );
+							tr("Italic"), actions );
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::italicText::actionName, m_actions.italic);
 	connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
@@ -206,7 +206,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------underline toggle-------------------------
 	m_actions.underline = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
-								i18n("Underline"), actions );
+								tr("Underline"), actions );
 	m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::underlinedText::actionName, m_actions.underline);
 	connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
@@ -218,7 +218,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align left toggle-------------------------
 	m_actions.alignLeft = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
-								i18n("Left"), actions);
+								tr("Left"), actions);
 	m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignLeft::actionName, m_actions.alignLeft);
 	connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
@@ -227,7 +227,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align center toggle-------------------------
 	m_actions.alignCenter = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
-								i18n("Center"), actions);
+								tr("Center"), actions);
 	m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignCenter::actionName, m_actions.alignCenter);
 	connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
@@ -236,7 +236,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align right toggle-------------------------
 	m_actions.alignRight = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
-								i18n("Right"), actions);
+								tr("Right"), actions);
 	m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignRight::actionName, m_actions.alignRight);
 	connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
@@ -259,12 +259,12 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 /** Reimplementation to show a popup menu if the right mouse button was clicked. */
 QMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& ) {
 	if (!m_actions.selectAll) {
-		m_actions.selectAll = new KAction(i18n("Select all"), this);
+		m_actions.selectAll = new KAction(tr("Select all"), this);
 		connect(m_actions.selectAll, SIGNAL(triggered(bool)), SLOT(selectAll()));
 	}
 
 	KMenu* popup = new KMenu(this);
-	popup->addTitle(i18n("HTML editor window"));
+	popup->addTitle(tr("HTML editor window"));
 	popup->addAction(m_actions.selectAll);
 	return popup;
 };

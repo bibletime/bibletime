@@ -23,7 +23,7 @@
 #include <QTextCodec>
 #include <QApplication>
 
-#include <klocale.h>
+
 
 namespace Search {
 
@@ -240,7 +240,7 @@ const unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordMod
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-	const QString fileName = QFileDialog::getSaveFileName(0, i18n("Save Search Analysis"), QString::null, QString(i18n("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
+	const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, QString(tr("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
 	if (fileName.isEmpty()) return;
 
 	int moduleIndex = 0;
@@ -259,11 +259,11 @@ void CSearchAnalysisScene::saveAsHTML() {
 
 	CSearchAnalysisItem* analysisItem = m_itemList.value( key.book() );
 
-	QString text = "<html>\n<head>\n<title>" + i18n("BibleTime Search Analysis") + "</title>\n" + txtCSS + metaEncoding + "</head>\n<body>\n";
-	text += "<table>\n<tr><th>" + i18n("Search text :") + "</th><th>" + CSearchDialog::getSearchDialog()->searchText() + "</th></tr>\n";
+	QString text = "<html>\n<head>\n<title>" + tr("BibleTime Search Analysis") + "</title>\n" + txtCSS + metaEncoding + "</head>\n<body>\n";
+	text += "<table>\n<tr><th>" + tr("Search text :") + "</th><th>" + CSearchDialog::getSearchDialog()->searchText() + "</th></tr>\n";
 
-	tableTitle = "<tr><th align=\"left\">" + i18n("Book") + "</th>";
-	tableTotals = "<tr><td align=\"left\">" + i18n("Total hits") + "</td>";
+	tableTitle = "<tr><th align=\"left\">" + tr("Book") + "</th>";
+	tableTotals = "<tr><td align=\"left\">" + tr("Total hits") + "</td>";
 	//   for (moduleIndex = 0,m_moduleList.first(); m_moduleList.current(); m_moduleList.next(),++moduleIndex) {
 	moduleIndex = 0;
 	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
@@ -299,7 +299,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 	}
 
 	text += QString("<table>\n") + tableTitle + tableTotals + m_searchAnalysisHTML + QString("</table>\n");
-	text += QString("<center>") + i18n("Created by") + QString(" <a href=\"http://www.bibletime.info/\">BibleTime</a></center>");
+	text += QString("<center>") + tr("Created by") + QString(" <a href=\"http://www.bibletime.info/\">BibleTime</a></center>");
 	text += QString("</body></html>");
 
 	CToolClass::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));

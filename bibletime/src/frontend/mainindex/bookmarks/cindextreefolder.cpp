@@ -26,7 +26,7 @@
 
 #include <QString>
 
-#include <klocale.h>
+
 
 
 CIndexTreeFolder::CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type, const QString& language) : CIndexFolderBase(mainIndex, type) {
@@ -76,41 +76,41 @@ void CIndexTreeFolder::init() {
 	if (language() == "*") {
 		switch (type()) {
 			case BibleModuleFolder:
-			setText(0,i18n("Bibles"));
+			setText(0,QObject::tr("Bibles"));
 			break;
 			case CommentaryModuleFolder:
-			setText(0,i18n("Commentaries"));
+			setText(0,QObject::tr("Commentaries"));
 			break;
 			case LexiconModuleFolder:
-			setText(0,i18n("Lexicons"));
+			setText(0,QObject::tr("Lexicons"));
 			break;
 			case BookModuleFolder:
-			setText(0,i18n("Books"));
+			setText(0,QObject::tr("Books"));
 			break;
 			case DevotionalModuleFolder:
-			setText(0,i18n("Daily devotionals"));
+			setText(0,QObject::tr("Daily devotionals"));
 			break;
 			case GlossaryModuleFolder:
-			setText(0,i18n("Glossaries"));
+			setText(0,QObject::tr("Glossaries"));
 			break;
 			case ImageModuleFolder:
-			setText(0,i18n("Maps and Images"));
+			setText(0,QObject::tr("Maps and Images"));
 			break;
 
 			case BookmarkFolder:
-			setText(0,i18n("Bookmarks"));
+			setText(0,QObject::tr("Bookmarks"));
 			break;
 			case OldBookmarkFolder:
-			setText(0,i18n("Old bookmarks"));
+			setText(0,QObject::tr("Old bookmarks"));
 			break;
 			default:
-			setText(0, i18n("Unknown"));
+			setText(0, QObject::tr("Unknown"));
 			break;
 		};
 	}
 	else {
 		const CLanguageMgr::Language* const lang = CPointers::languageMgr()->languageForAbbrev( language() );
-		setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : i18n("Unknown language"));
+		setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : QObject::tr("Unknown language"));
 	}
 
 	//qDebug(text(0).toLatin1().data());

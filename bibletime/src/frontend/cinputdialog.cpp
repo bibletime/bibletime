@@ -26,7 +26,7 @@
 #include <QDebug>
 
 //KDE includes
-#include <klocale.h>
+
 
 CInputDialog::CInputDialog
 	(const QString& caption, const QString& description, const QString& text, QWidget *parent, Qt::WindowFlags wflags )
@@ -53,7 +53,7 @@ CInputDialog::CInputDialog
 
 	hboxLayout = new QHBoxLayout();
 	clearButton = new QPushButton(this);
-	clearButton->setText(i18n("Clear"));
+	clearButton->setText(tr("Clear"));
 	hboxLayout->addWidget(clearButton);
 	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	hboxLayout->addItem(spacerItem);

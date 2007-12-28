@@ -17,7 +17,7 @@
 // BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) { #for QApplication
 BibleTimeApp::BibleTimeApp() : KApplication() {
 //	initDCOP();
-	CResMgr::init_i18n();
+	CResMgr::init_tr();
 }
 
 BibleTimeApp::~BibleTimeApp() {

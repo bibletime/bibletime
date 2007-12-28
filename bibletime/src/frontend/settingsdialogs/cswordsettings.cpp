@@ -30,15 +30,15 @@
 #include <QStringList>
 #include <QLabel>
 
-#include <klocale.h>
+
 
 CSwordSettingsPage::CSwordSettingsPage(QWidget* parent)
 	: QTabWidget(parent)
 {
 	m_worksTab = new StandardWorksTab();
 	m_filtersTab = new TextFiltersTab();
-	addTab(m_worksTab, i18n("Standard works"));
-	addTab(m_filtersTab, i18n("Text filters"));
+	addTab(m_worksTab, tr("Standard works"));
+	addTab(m_filtersTab, tr("Text filters"));
 }
 
 //Standard works tab
@@ -47,15 +47,15 @@ StandardWorksTab::StandardWorksTab()
 	: QWidget(0)
 {
 	
-	// move: tabCtl->addTab(currentTab, i18n("Standard works"));
+	// move: tabCtl->addTab(currentTab, tr("Standard works"));
 	QGridLayout* gridLayout = new QGridLayout(this); //the last row is for stretching available space
 	gridLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
 	gridLayout->addWidget(
 		CToolClass::explanationLabel(
 				this,
-				i18n("Standard works"),
-				i18n("Standard works are used when no particular work is specified, \
+				tr("Standard works"),
+				tr("Standard works are used when no particular work is specified, \
   for example when a hyperlink into a Bible or lexicon was clicked .")),
 		0,0,1,2 /*fill the horizontal space*/
 	);
@@ -63,7 +63,7 @@ StandardWorksTab::StandardWorksTab()
 	//Create selection boxes
 
 	m_standardBibleCombo = new QComboBox(this);
-	QLabel* label = new QLabel( i18n("Standard Bible"), this);
+	QLabel* label = new QLabel( tr("Standard Bible"), this);
 	label->setBuddy(m_standardBibleCombo);
 	////label->setAutoResize(true); //? not found in docs
 	m_standardBibleCombo->setToolTip(CResMgr::settings::sword::modules::bible::tooltip);
@@ -72,7 +72,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardBibleCombo, 1, 1);
 
 	m_standardCommentaryCombo = new QComboBox(this);
-	label = new QLabel( i18n("Standard Commentary"), this);
+	label = new QLabel( tr("Standard Commentary"), this);
 	label->setBuddy(m_standardCommentaryCombo);
 	//label->setAutoResize(true);
 	m_standardCommentaryCombo->setToolTip(CResMgr::settings::sword::modules::commentary::tooltip);
@@ -81,7 +81,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardCommentaryCombo, 2, 1);
 
 	m_standardLexiconCombo = new QComboBox(this);
-	label = new QLabel(i18n("Standard Lexicon"), this);
+	label = new QLabel(tr("Standard Lexicon"), this);
 	label->setBuddy(m_standardLexiconCombo);
 	//label->setAutoResize(true);
 	m_standardLexiconCombo->setToolTip(CResMgr::settings::sword::modules::lexicon::tooltip);
@@ -90,7 +90,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardLexiconCombo, 3, 1);
 
 	m_standardDailyDevotionalCombo = new QComboBox(this);
-	label = new QLabel(i18n("Standard Daily Devotional"), this);
+	label = new QLabel(tr("Standard Daily Devotional"), this);
 	label->setBuddy(m_standardDailyDevotionalCombo);
 	//label->setAutoResize(true);
 	m_standardDailyDevotionalCombo->setToolTip(CResMgr::settings::sword::modules::dailyDevotional::tooltip);
@@ -99,7 +99,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardDailyDevotionalCombo, 4, 1);
 
 	m_standardHebrewStrongCombo = new QComboBox(this);
-	label = new QLabel(i18n("Standard Hebrew Strong's Lexicon"), this);
+	label = new QLabel(tr("Standard Hebrew Strong's Lexicon"), this);
 	label->setBuddy(m_standardHebrewStrongCombo);
 	//label->setAutoResize(true);
 	m_standardHebrewStrongCombo->setToolTip(CResMgr::settings::sword::modules::hebrewStrongs::tooltip);
@@ -108,7 +108,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardHebrewStrongCombo, 5, 1);
 
 	m_standardGreekStrongCombo = new QComboBox(this);
-	label = new QLabel(i18n("Standard Greek Strong's Lexicon"), this);
+	label = new QLabel(tr("Standard Greek Strong's Lexicon"), this);
 	label->setBuddy(m_standardGreekStrongCombo);
 	//label->setAutoResize(true);
 	m_standardGreekStrongCombo->setToolTip(CResMgr::settings::sword::modules::greekStrongs::tooltip);
@@ -117,7 +117,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardGreekStrongCombo, 6, 1);
 
 	m_standardHebrewMorphCombo = new QComboBox(this);
-	label = new QLabel( i18n("Standard Hebrew Morphological Lexicon"), this);
+	label = new QLabel( tr("Standard Hebrew Morphological Lexicon"), this);
 	label->setBuddy(m_standardHebrewMorphCombo);
 	//label->setAutoResize(true);
 	m_standardHebrewMorphCombo->setToolTip(CResMgr::settings::sword::modules::hebrewMorph::tooltip);
@@ -126,7 +126,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardHebrewMorphCombo, 7, 1);
 
 	m_standardGreekMorphCombo = new QComboBox(this);
-	label = new QLabel(i18n("Standard Greek Morphological Lexicon"), this);
+	label = new QLabel(tr("Standard Greek Morphological Lexicon"), this);
 	label->setBuddy(m_standardGreekMorphCombo);
 	//label->setAutoResize(true);
 	m_standardGreekMorphCombo->setToolTip(CResMgr::settings::sword::modules::greekMorph::tooltip);
@@ -253,15 +253,15 @@ StandardWorksTab::StandardWorksTab()
 TextFiltersTab::TextFiltersTab()
 {
 	//Q3Frame* currentTab = new Q3Frame(tabCtl);
-	//tabCtl->addTab(currentTab, i18n("Text filters"));
+	//tabCtl->addTab(currentTab, tr("Text filters"));
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(5);
 
 	layout->addWidget(
 		CToolClass::explanationLabel(
 			this,
-			i18n("Text filters"),
-			i18n("Filters control the appearance of text. \
+			tr("Text filters"),
+			tr("Filters control the appearance of text. \
 Here you can specify default settings for all filters. \
 You can change the filter settings in each display window, of course.")
 		)
@@ -270,48 +270,48 @@ You can change the filter settings in each display window, of course.")
 	layout->addSpacing(5);
 
 	m_lineBreaksCheck = new QCheckBox(this);
-	m_lineBreaksCheck->setText(i18n("Insert line break after each verse"));
+	m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
 	m_lineBreaksCheck->setChecked(CBTConfig::get(CBTConfig::lineBreaks));
 	layout->addWidget(m_lineBreaksCheck);
 
 	m_verseNumbersCheck = new QCheckBox(this);
-	m_verseNumbersCheck->setText(i18n("Show verse numbers"));
+	m_verseNumbersCheck->setText(tr("Show verse numbers"));
 	m_verseNumbersCheck->setChecked(CBTConfig::get(CBTConfig::verseNumbers));
 	layout->addWidget(m_verseNumbersCheck);
 
 	m_headingsCheck = new QCheckBox(this);
-	m_headingsCheck->setText(i18n("Show section headings"));
+	m_headingsCheck->setText(tr("Show section headings"));
 	m_headingsCheck->setChecked(CBTConfig::get(CBTConfig::headings));
 	layout->addWidget(m_headingsCheck);
 
 
 	m_scriptureReferencesCheck = new QCheckBox(this);
-	m_scriptureReferencesCheck->setText(i18n("Show scripture cross-references"));
+	m_scriptureReferencesCheck->setText(tr("Show scripture cross-references"));
 	m_scriptureReferencesCheck->setChecked(CBTConfig::get(CBTConfig::scriptureReferences));
 	layout->addWidget(m_scriptureReferencesCheck);
 
 	m_greekAccentsCheck = new QCheckBox(this);
-	m_greekAccentsCheck->setText(i18n("Show Greek accents"));
+	m_greekAccentsCheck->setText(tr("Show Greek accents"));
 	m_greekAccentsCheck->setChecked(CBTConfig::get(CBTConfig::greekAccents));
 	layout->addWidget(m_greekAccentsCheck);
 
 	m_hebrewPointsCheck = new QCheckBox(this);
-	m_hebrewPointsCheck->setText(i18n("Show Hebrew vowel points"));
+	m_hebrewPointsCheck->setText(tr("Show Hebrew vowel points"));
 	m_hebrewPointsCheck->setChecked(CBTConfig::get(CBTConfig::hebrewPoints));
 	layout->addWidget(m_hebrewPointsCheck);
 
 	m_hebrewCantillationCheck = new QCheckBox(this);
-	m_hebrewCantillationCheck->setText(i18n("Show Hebrew cantillation marks"));
+	m_hebrewCantillationCheck->setText(tr("Show Hebrew cantillation marks"));
 	m_hebrewCantillationCheck->setChecked(CBTConfig::get(CBTConfig::hebrewCantillation));
 	layout->addWidget(m_hebrewCantillationCheck);
 
 	m_morphSegmentationCheck = new QCheckBox(this);
-	m_morphSegmentationCheck->setText(i18n("Show morph segmentation"));
+	m_morphSegmentationCheck->setText(tr("Show morph segmentation"));
 	m_morphSegmentationCheck->setChecked(CBTConfig::get(CBTConfig::morphSegmentation));
 	layout->addWidget(m_morphSegmentationCheck);
 
 	m_textualVariantsCheck = new QCheckBox(this);
-	m_textualVariantsCheck->setText(i18n("Use textual variants"));
+	m_textualVariantsCheck->setText(tr("Use textual variants"));
 	m_textualVariantsCheck->setChecked(CBTConfig::get(CBTConfig::textualVariants));
 	layout->addWidget(m_textualVariantsCheck);
 

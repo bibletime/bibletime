@@ -19,7 +19,7 @@
 #include <QApplication>
 
 //KDE includes
-#include <klocale.h>
+
 
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
@@ -54,7 +54,7 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 			info->connectIndexingFinished(this, SLOT(slotFinished()));
 			info->connectIndexingProgress(this, SLOT(slotModuleProgress(int)) );
 			QString modname(info->name());
-			const QString labelText = i18n("Creating index for work: ").append(modname);
+			const QString labelText = tr("Creating index for work: ").append(modname);
 			m_progress->setLabelText(labelText);
 			info->buildIndex(); //waits until this module is finished
 	

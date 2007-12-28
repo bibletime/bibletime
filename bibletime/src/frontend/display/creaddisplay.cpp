@@ -29,7 +29,7 @@
 #include <boost/scoped_ptr.hpp>
 
 //KDE includes
-#include <klocale.h>
+
 
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
 CDisplay(readWindow),
@@ -61,7 +61,7 @@ void CReadDisplay::print(const CDisplay::TextPart type, CSwordBackend::DisplayOp
 	CSwordModuleInfo* module = key->module();
 
 
-	CExportManager mgr(i18n("Print keys"),false, QString::null, parentWindow()->filterOptions(), parentWindow()->displayOptions());
+	CExportManager mgr(QObject::tr("Print keys"),false, QString::null, parentWindow()->filterOptions(), parentWindow()->displayOptions());
 
 	switch (type) {
 		case Document: {

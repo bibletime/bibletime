@@ -54,7 +54,7 @@
 #include <CLucene/util/dirent.h>
 
 //KDE includes
-#include <klocale.h>
+
 
 
 //Increment this, if the index format changes
@@ -753,39 +753,39 @@ QString CSwordModuleInfo::aboutText() const {
 	text += "<table>";
 
 	text += QString("<tr><td><b>%1</b></td><td>%2</td><tr>")
-			.arg(i18n("Version"))
-			.arg(hasVersion()? config(CSwordModuleInfo::ModuleVersion) : i18n("unknown"));
+			.arg(tr("Version"))
+			.arg(hasVersion()? config(CSwordModuleInfo::ModuleVersion) : tr("unknown"));
 
 	text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-			.arg(i18n("Markup"))
+			.arg(tr("Markup"))
 			.arg(!QString(m_module->getConfigEntry("SourceType")).isEmpty()? QString(m_module->
-				getConfigEntry("SourceType")) : i18n("unknown"));
+				getConfigEntry("SourceType")) : tr("unknown"));
 
 	text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-			.arg(i18n("Location"))
+			.arg(tr("Location"))
 			.arg(config(CSwordModuleInfo::AbsoluteDataPath));
 
 	text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-			.arg(i18n("Language"))
+			.arg(tr("Language"))
 			.arg(language()->translatedName());
 
 	if (m_module->getConfigEntry("Category"))
 	text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-			.arg(i18n("Category"))
+			.arg(tr("Category"))
 			.arg(m_module->getConfigEntry("Category"));
 
 	if (m_module->getConfigEntry("LCSH"))
 		text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-				.arg(i18n("LCSH"))
+				.arg(tr("LCSH"))
 				.arg(m_module->getConfigEntry("LCSH"));
 
 		text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-				.arg(i18n("Writable"))
-				.arg(isWritable()? i18n("yes") : i18n("no"));
+				.arg(tr("Writable"))
+				.arg(isWritable()? tr("yes") : tr("no"));
 
 		if (isEncrypted())
 			text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-					.arg(i18n("Unlock key"))
+					.arg(tr("Unlock key"))
 					.arg(config(CSwordModuleInfo::CipherKey));
 
 			QString options;
@@ -804,7 +804,7 @@ QString CSwordModuleInfo::aboutText() const {
 
 	if (!options.isEmpty()) {
 	text += QString("<tr><td><b>%1</b></td><td>%2</td></tr>")
-				.arg(i18n("Features"))
+				.arg(tr("Features"))
 				.arg(options);
 	}
 
@@ -812,10 +812,10 @@ QString CSwordModuleInfo::aboutText() const {
 
 	if (category() == Cult) //clearly say the module contains cult/questionable materials
 	text += QString("<br/><b>%1</b><br/><br/>")
-			.arg(i18n("Take care, this work contains cult / questionable material!"));
+			.arg(tr("Take care, this work contains cult / questionable material!"));
 
 	text += QString("<b>%1:</b><br>%2</font>")
-			.arg(i18n("About"))
+			.arg(tr("About"))
 			.arg(config(AboutInformation));
 
 	typedef QList<CSwordModuleInfo::ConfigEntry> ListConfigEntry;
@@ -846,25 +846,25 @@ QString CSwordModuleInfo::aboutText() const {
 
 	MapConfigEntry entryMap;
 
-	entryMap[DistributionLicense] = i18n("Distribution license");
+	entryMap[DistributionLicense] = tr("Distribution license");
 
-	entryMap[DistributionSource] = i18n("Distribution source");
+	entryMap[DistributionSource] = tr("Distribution source");
 
-	entryMap[DistributionNotes] = i18n("Distribution notes");
+	entryMap[DistributionNotes] = tr("Distribution notes");
 
-	entryMap[TextSource] = i18n("Text source");
+	entryMap[TextSource] = tr("Text source");
 
-	entryMap[CopyrightNotes] = i18n("Copyright notes");
+	entryMap[CopyrightNotes] = tr("Copyright notes");
 
-	entryMap[CopyrightHolder] = i18n("Copyright holder");
+	entryMap[CopyrightHolder] = tr("Copyright holder");
 
-	entryMap[CopyrightDate] = i18n("Copyright date");
+	entryMap[CopyrightDate] = tr("Copyright date");
 
-	entryMap[CopyrightContactName] = i18n("Copyright contact name");
+	entryMap[CopyrightContactName] = tr("Copyright contact name");
 
-	entryMap[CopyrightContactAddress] = i18n("Copyright contact address");
+	entryMap[CopyrightContactAddress] = tr("Copyright contact address");
 
-	entryMap[CopyrightContactEmail] = i18n("Copyright contact email");
+	entryMap[CopyrightContactEmail] = tr("Copyright contact email");
 
 	text += ("<hr><table>");
 

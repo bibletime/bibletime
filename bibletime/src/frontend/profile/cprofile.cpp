@@ -17,14 +17,14 @@
 #include <QDomDocument>
 
 //KDE includes
-#include <klocale.h>
+
 
 #define CURRENT_SYNTAX_VERSION 2
 
 namespace Profile {
 
 CProfile::CProfile( const QString& file, const QString& name )
-	: m_name(name.isEmpty() ? i18n("unknown") : name),
+	: m_name(name.isEmpty() ? QObject::tr("unknown") : name),
 	m_filename(file),
 	m_fullscreen(false),
 	m_geometry(10,20,640,480)

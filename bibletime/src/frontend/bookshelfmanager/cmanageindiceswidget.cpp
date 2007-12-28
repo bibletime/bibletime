@@ -29,7 +29,7 @@
 #include <QPushButton>
 
 //KDE includes
-#include <klocale.h>
+
 
 namespace BookshelfManager {
 
@@ -57,16 +57,16 @@ void CManageIndicesWidget::initView()
 	// Set description label
 	QVBoxLayout* box = new QVBoxLayout(m_labelFrame);
 	QLabel* mainLabel = CToolClass::explanationLabel(m_labelFrame,
-		i18n("Manage module search indices"),
-		i18n("You can use the list below to create and/or delete search indices for your installed works."));
+		tr("Manage module search indices"),
+		tr("You can use the list below to create and/or delete search indices for your installed works."));
 	box->addWidget(mainLabel);
 	box->setMargin(0);
 	box->setSpacing(0);
 
 	// configure the list view
-	m_moduleList->setHeaderLabels( (QStringList(i18n("Module")) << i18n("Index size")) );
-	//m_moduleList->addColumn(i18n("Module"));
-	//m_moduleList->addColumn(i18n("Index size"));
+	m_moduleList->setHeaderLabels( (QStringList(tr("Module")) << tr("Index size")) );
+	//m_moduleList->addColumn(tr("Module"));
+	//m_moduleList->addColumn(tr("Index size"));
 	m_moduleList->setRootIsDecorated(true);
 	m_moduleList->setColumnWidth(0, 150);
 	//m_moduleList->setColumnAlignment(1, Qt::AlignRight); //didn't find this from qt4
@@ -89,15 +89,15 @@ void CManageIndicesWidget::populateModuleList() {
 		
 	// populate installed modules
 	m_modsWithIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithIndices->setText(0, i18n("Modules with indices"));
+	m_modsWithIndices->setText(0, tr("Modules with indices"));
 	m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithIndices->setExpanded(true);
 
-	//m_modsWithoutIndices = new Q3CheckListItem(m_moduleList, i18n("Modules without indices"),
+	//m_modsWithoutIndices = new Q3CheckListItem(m_moduleList, tr("Modules without indices"),
 	//	Q3CheckListItem::CheckBoxController);
 	//m_modsWithoutIndices->setOpen(true);
 	m_modsWithoutIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithoutIndices->setText(0, i18n("Modules without indices"));
+	m_modsWithoutIndices->setText(0, tr("Modules without indices"));
 	m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithoutIndices->setExpanded(true);
 
@@ -111,14 +111,14 @@ void CManageIndicesWidget::populateModuleList() {
 		if ((*it)->hasIndex()) {
 			item = new QTreeWidgetItem(m_modsWithIndices);
 			item->setText(0, (*it)->name());
-			item->setText(1, QString("%1 ").arg((*it)->indexSize() / 1024) + i18n("KiB"));
+			item->setText(1, QString("%1 ").arg((*it)->indexSize() / 1024) + tr("KiB"));
 			item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 			item->setCheckState(0, Qt::Unchecked);
 		}
 		else {
 			item = new QTreeWidgetItem(m_modsWithoutIndices);
 			item->setText(0, (*it)->name());
-			item->setText(1, QString("0 ") + i18n("KiB"));
+			item->setText(1, QString("0 ") + tr("KiB"));
 			item->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 			item->setCheckState(0, Qt::Checked);
 		}

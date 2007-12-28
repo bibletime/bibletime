@@ -34,7 +34,7 @@
 #include <Q3GridLayout>
 
 //KDE includes
-#include <klocale.h>
+
 
 namespace Search {
 	namespace Options {
@@ -66,7 +66,7 @@ void CRangeChooserDialog::RangeItem::setCaption(const QString newCaption) {
 
 
 /**************************/
-CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog ) : KDialogBase(Plain, i18n("Search range editor"), Default | Ok | Cancel, Ok, parentDialog, "CRangeChooserDialog", false, true) {
+CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog ) : KDialogBase(Plain, tr("Search range editor"), Default | Ok | Cancel, Ok, parentDialog, "CRangeChooserDialog", false, true) {
 	initView();
 	initConnections();
 
@@ -89,12 +89,12 @@ CRangeChooserDialog::~CRangeChooserDialog() {}
 
 /** Initializes the view of this object. */
 void CRangeChooserDialog::initView() {
-	//  setButtonOKText(i18n(""));
+	//  setButtonOKText(tr(""));
 
 	Q3GridLayout* grid = new Q3GridLayout(plainPage(),6,5,0,3);
 
 	m_rangeList = new KListView(plainPage());
-	m_rangeList->addColumn(i18n("Search range"));
+	m_rangeList->addColumn(tr("Search range"));
 	m_rangeList->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding));
 	m_rangeList->setFullWidth(true);
 	m_rangeList->setSorting(0, true);
@@ -102,22 +102,22 @@ void CRangeChooserDialog::initView() {
 	m_rangeList->header()->setMovingEnabled(false);
 	grid->addMultiCellWidget(m_rangeList,0,4,0,1);
 
-	m_newRangeButton = new QPushButton(i18n("Add new range"),plainPage());
+	m_newRangeButton = new QPushButton(tr("Add new range"),plainPage());
 	connect(m_newRangeButton, SIGNAL(clicked()), this, SLOT(addNewRange()));
 	grid->addWidget(m_newRangeButton,5,0);
 
-	m_deleteRangeButton = new QPushButton(i18n("Delete current range"),plainPage());
+	m_deleteRangeButton = new QPushButton(tr("Delete current range"),plainPage());
 	connect(m_deleteRangeButton, SIGNAL(clicked()), this, SLOT(deleteCurrentRange()));
 	grid->addWidget(m_deleteRangeButton,5,1);
 
 	grid->addColSpacing(2, 5);
 
-	QLabel* label = new QLabel(i18n("Name:"), plainPage());
+	QLabel* label = new QLabel(tr("Name:"), plainPage());
 	m_nameEdit = new QLineEdit(plainPage());
 	grid->addWidget(label,0,3);
 	grid->addWidget(m_nameEdit,0,4);
 
-	label = new QLabel(i18n("Edit current search range:"), plainPage());
+	label = new QLabel(tr("Edit current search range:"), plainPage());
 	label->setFixedSize(label->sizeHint());
 	m_rangeEdit = new Q3TextEdit(plainPage());
 	m_rangeEdit->setTextFormat(Qt::PlainText);
@@ -127,7 +127,7 @@ void CRangeChooserDialog::initView() {
 	grid->addRowSpacing(3, 10);
 
 	m_resultList = new KListView(plainPage());
-	m_resultList->addColumn(i18n("Parsed search range:"));
+	m_resultList->addColumn(tr("Parsed search range:"));
 	m_resultList->setFullWidth(true);
 	m_resultList->setSorting(-1);
 	m_resultList->setShowSortIndicator(false);
@@ -156,7 +156,7 @@ void CRangeChooserDialog::initConnections() {
 
 /** Adds a new range to the list. */
 void CRangeChooserDialog::addNewRange() {
-	RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), i18n("New range"));
+	RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), tr("New range"));
 	m_rangeList->setSelected(i, true);
 	m_rangeList->setCurrentItem(i);
 	editRange(i);
@@ -221,7 +221,7 @@ void CRangeChooserDialog::nameChanged(const QString& newCaption) {
 			m_rangeList->sort();
 		}
 		else { //invalid name
-			i->setCaption(i18n("<invalid name of search range>"));
+			i->setCaption(tr("<invalid name of search range>"));
 			m_newRangeButton->setEnabled(false);
 		};
 	};

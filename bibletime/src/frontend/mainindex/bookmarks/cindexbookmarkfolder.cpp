@@ -26,7 +26,7 @@
 #include <QMimeData>
 #include <QFileDialog>
 
-#include <klocale.h>
+
 
 
 
@@ -81,8 +81,8 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 
 
 void CIndexBookmarkFolder::exportBookmarks() {
-	QString filter = i18n("BibleTime bookmark files") + QString(" (*.btb);;") + i18n("All files") + QString(" (*.*)");
-	QString fileName = QFileDialog::getSaveFileName(0, i18n("BibleTime - Export Bookmarks"), "", filter);
+	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getSaveFileName(0, QObject::tr("BibleTime - Export Bookmarks"), "", filter);
 	
 	if (!fileName.isEmpty()) {
 		saveBookmarks( fileName, false ); //false means we don't want to overwrite the file without asking the user
@@ -90,8 +90,8 @@ void CIndexBookmarkFolder::exportBookmarks() {
 }
 
 void CIndexBookmarkFolder::importBookmarks() {
-	QString filter = i18n("BibleTime bookmark files") + QString(" (*.btb);;") + i18n("All files") + QString(" (*.*)");
-	QString fileName = QFileDialog::getOpenFileName(0, i18n("BibleTime - Import bookmarks"), "", filter);
+	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("BibleTime - Import bookmarks"), "", filter);
 	if (!fileName.isEmpty()) {
 		//we have to decide if we should load an old bookmark file from 1.2 or earlier or the new XML format of > 1.3
 		if ( !loadBookmarks(fileName) ) { //if this failed try to load it as old bookmark file

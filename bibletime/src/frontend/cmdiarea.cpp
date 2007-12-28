@@ -15,7 +15,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 
 //KDE includes
-#include <klocale.h>
+
 
 //QT includes
 #include <QObject>

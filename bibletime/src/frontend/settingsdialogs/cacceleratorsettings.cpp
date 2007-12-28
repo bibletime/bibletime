@@ -30,7 +30,7 @@
 #include <QList>
 
 #include <kactioncollection.h>
-#include <klocale.h>
+
 
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
@@ -50,7 +50,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 	qDebug("create layout for window type chooser");
 	QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout(this);
 	mainLayout->addLayout(layoutForWindowTypeChooser);
-	QLabel* label = new QLabel(i18n("Choose type:"), this);
+	QLabel* label = new QLabel(tr("Choose type:"), this);
 	layoutForWindowTypeChooser->addWidget(label);
 	m_typeChooser = new QComboBox(this);
 	layoutForWindowTypeChooser->addWidget(m_typeChooser);
@@ -73,12 +73,12 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget *parent)
 
 	//mainLayout->setStretchFactor(m_keyChooserStack, 5);
 
-	m_application.title = i18n("BibleTime"); //don't set the app action collection to NULL
-	m_general = WindowType(i18n("All text windows"));
-	m_bible = WindowType(i18n("Bible windows"));
-	m_commentary = WindowType(i18n("Commentary windows"));
-	m_lexicon = WindowType(i18n("Lexicon windows"));
-	m_book = WindowType(i18n("Book windows"));
+	m_application.title = tr("BibleTime"); //don't set the app action collection to NULL
+	m_general = WindowType(tr("All text windows"));
+	m_bible = WindowType(tr("Bible windows"));
+	m_commentary = WindowType(tr("Commentary windows"));
+	m_lexicon = WindowType(tr("Lexicon windows"));
+	m_book = WindowType(tr("Book windows"));
 
 	m_typeChooser->addItem(m_application.title);
 	m_typeChooser->addItem(m_general.title);

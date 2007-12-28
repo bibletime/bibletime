@@ -49,7 +49,7 @@
 #include <QDebug>
 
 //KDE includes
-#include <klocale.h>
+
 #include <kmenu.h>
 #include <kaction.h>
 #include <kactionmenu.h>
@@ -113,17 +113,17 @@ void CBookmarkIndex::initView()
 
 	//setup the popup menu
 	m_popup = new KMenu(viewport());
-	m_popup->addTitle(i18n("Bookmarks"));
+	m_popup->addTitle(tr("Bookmarks"));
 
-	m_actions.newFolder = newKAction(i18n("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
-	m_actions.changeFolder = newKAction(i18n("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
+	m_actions.newFolder = newKAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
+	m_actions.changeFolder = newKAction(tr("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-	m_actions.changeBookmark = newKAction(i18n("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
-	m_actions.importBookmarks = newKAction(i18n("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
-	m_actions.exportBookmarks = newKAction(i18n("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
-	m_actions.printBookmarks = newKAction(i18n("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
+	m_actions.changeBookmark = newKAction(tr("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+	m_actions.importBookmarks = newKAction(tr("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
+	m_actions.exportBookmarks = newKAction(tr("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
+	m_actions.printBookmarks = newKAction(tr("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
 
-	m_actions.deleteEntries = newKAction(i18n("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
+	m_actions.deleteEntries = newKAction(tr("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
 
 
 	//fill the popup menu itself
@@ -626,7 +626,7 @@ void CBookmarkIndex::deleteEntries()
 		}
 	}
 
-	if (QMessageBox::question(this, i18n("Delete Items"), i18n("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
+	if (QMessageBox::question(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
 		return;
 	}
 

@@ -19,7 +19,7 @@
 #include "listkey.h"
 
 
-#include <klocale.h>
+
 
 #include <QListWidget>
 #include <QListWidgetItem>
@@ -97,16 +97,16 @@ void CRangeChooserDialog::initView()
 
 	QHBoxLayout* hboxLayout = new QHBoxLayout();
 	QVBoxLayout* vboxLayout1 = new QVBoxLayout();
-	QLabel* rangeListLabel = new QLabel(i18n("S&earch range:"), this);
+	QLabel* rangeListLabel = new QLabel(tr("S&earch range:"), this);
 	vboxLayout1->addWidget(rangeListLabel);
 
 	m_rangeList = new QListWidget(this);
 	vboxLayout1->addWidget(m_rangeList);
 
 	QHBoxLayout* hboxLayout1 = new QHBoxLayout();
-	m_newRangeButton = new QPushButton(i18n("&Add new range"), this);
+	m_newRangeButton = new QPushButton(tr("&Add new range"), this);
 	hboxLayout1->addWidget(m_newRangeButton);
-	m_deleteRangeButton = new QPushButton(i18n("Delete current &range"), this);
+	m_deleteRangeButton = new QPushButton(tr("Delete current &range"), this);
 	hboxLayout1->addWidget(m_deleteRangeButton);
 
 	vboxLayout1->addLayout(hboxLayout1);
@@ -114,21 +114,21 @@ void CRangeChooserDialog::initView()
 
 	QVBoxLayout* vboxLayout2 = new QVBoxLayout();
 	QHBoxLayout* hboxLayout2 = new QHBoxLayout();
-	QLabel* nameEditLabel = new QLabel(i18n("&Name:"), this);
+	QLabel* nameEditLabel = new QLabel(tr("&Name:"), this);
 	hboxLayout2->addWidget(nameEditLabel);
 
 	m_nameEdit = new QLineEdit(this);
 	hboxLayout2->addWidget(m_nameEdit);
 	vboxLayout2->addLayout(hboxLayout2);
 
-	QLabel* rangeEditLabel = new QLabel(i18n("Edi&t current range:"), this);
+	QLabel* rangeEditLabel = new QLabel(tr("Edi&t current range:"), this);
 	vboxLayout2->addWidget(rangeEditLabel);
 
 	m_rangeEdit = new QTextEdit(this);
 
 	vboxLayout2->addWidget(m_rangeEdit);
 
-	QLabel* resultListLabel = new QLabel(i18n("Parsed search range:"), this);
+	QLabel* resultListLabel = new QLabel(tr("Parsed search range:"), this);
     vboxLayout2->addWidget(resultListLabel);
 
 	m_resultList = new QListWidget(this);
@@ -183,8 +183,8 @@ void CRangeChooserDialog::initConnections()
 void CRangeChooserDialog::addNewRange()
 {
 	//qDebug("CRangeChooserDialog::addNewRange");
-	//RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), i18n("New range"));
-	RangeItem* i = new RangeItem(m_rangeList, 0, i18n("New range"));
+	//RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), tr("New range"));
+	RangeItem* i = new RangeItem(m_rangeList, 0, tr("New range"));
 	//use just setCurrentItem... m_rangeList->setSelected(i, true);
 	m_rangeList->setCurrentItem(i);
 	editRange(i);
@@ -261,7 +261,7 @@ void CRangeChooserDialog::nameChanged(const QString& newCaption)
 			i->setCaption(newCaption);
 		}
 		else { //invalid name
-			i->setCaption(i18n("<invalid name of search range>"));
+			i->setCaption(tr("<invalid name of search range>"));
 			//disable some items to prevent saving invalid range
 			m_newRangeButton->setEnabled(false);
 			m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);

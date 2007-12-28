@@ -36,7 +36,7 @@ CModuleChooserWidget::~CModuleChooserWidget() {}
 
 /** Initializes this widget and the childs of it. */
 void CModuleChooserWidget::initView() {
-	addColumn( i18n("Work") );
+	addColumn( tr("Work") );
 	setRootIsDecorated(true);
 	//  header()->hide();
 	setFullWidth(true);
@@ -53,10 +53,10 @@ void CModuleChooser::initTree() {
 	*/
 
 	QMap<CSwordModuleInfo::ModuleType, QString> typenameMap;
-	typenameMap.insert(CSwordModuleInfo::Bible, i18n("Bibles"));
-	typenameMap.insert(CSwordModuleInfo::Commentary, i18n("Commentaries"));
-	typenameMap.insert(CSwordModuleInfo::Lexicon, i18n("Lexicons"));
-	typenameMap.insert(CSwordModuleInfo::GenericBook, i18n("Books"));
+	typenameMap.insert(CSwordModuleInfo::Bible, tr("Bibles"));
+	typenameMap.insert(CSwordModuleInfo::Commentary, tr("Commentaries"));
+	typenameMap.insert(CSwordModuleInfo::Lexicon, tr("Lexicons"));
+	typenameMap.insert(CSwordModuleInfo::GenericBook, tr("Books"));
 
 	int type = CSwordModuleInfo::Bible;
 	bool ok = true;
@@ -94,7 +94,7 @@ void CModuleChooser::initTree() {
 					};
 				};
 				addedDevotionals = true;
-				typeFolderCaption = i18n("Daily Devotionals");
+				typeFolderCaption = tr("Daily Devotionals");
 			}
 			else if (!addedGlossaries) {
 				//         for (mods.first(); mods.current(); mods.next()) {
@@ -105,7 +105,7 @@ void CModuleChooser::initTree() {
 					};
 				};
 				addedGlossaries = true;
-				typeFolderCaption = i18n("Glossaries");
+				typeFolderCaption = tr("Glossaries");
 			};
 
 			if (addedLexs && addedDevotionals && addedGlossaries)

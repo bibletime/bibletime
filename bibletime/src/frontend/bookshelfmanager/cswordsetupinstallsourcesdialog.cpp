@@ -26,12 +26,12 @@
 #include <QDir>
 
 //KDE includes
-#include <klocale.h>
+
 
 namespace BookshelfManager {
 
-	const QString PROTO_FILE( i18n("Local") ); //Local path
-	const QString PROTO_FTP( i18n("Remote") ); //Remote path
+	const QString PROTO_FILE( QObject::tr("Local") ); //Local path
+	const QString PROTO_FTP( QObject::tr("Remote") ); //Remote path
 
 
 	CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
@@ -43,7 +43,7 @@ namespace BookshelfManager {
 
 		QHBoxLayout *captionLayout = new QHBoxLayout( this );
 		mainLayout->addLayout(captionLayout);
-		QLabel *label = new QLabel( i18n("Caption"), this );
+		QLabel *label = new QLabel( tr("Caption"), this );
 		captionLayout->addWidget( label );
 
 		m_captionEdit = new QLineEdit( this );
@@ -58,13 +58,13 @@ namespace BookshelfManager {
 		mainLayout->addLayout(layout);
 		layout->setSpacing( 5 );
 
-		label = new QLabel(i18n("Type"), this);
+		label = new QLabel(tr("Type"), this);
 		layout->addWidget( label, 0, 0);
 
-		m_serverLabel = new QLabel(i18n("Server"), this);
+		m_serverLabel = new QLabel(tr("Server"), this);
 		layout->addWidget( m_serverLabel, 0, 1);
 
-		label = new QLabel(i18n("Path"), this);
+		label = new QLabel(tr("Path"), this);
 		layout->addWidget( label, 0, 2 );
 
 		m_protocolCombo = new QComboBox( this );
@@ -85,8 +85,8 @@ namespace BookshelfManager {
 		QHBoxLayout* buttonLayout = new QHBoxLayout( this );
 		mainLayout->addLayout(buttonLayout);
 		buttonLayout->addStretch();
-		QPushButton* okButton = new QPushButton( i18n("Ok"), this);
-		QPushButton* discardButton = new QPushButton( i18n("Discard"), this);
+		QPushButton* okButton = new QPushButton( tr("Ok"), this);
+		QPushButton* discardButton = new QPushButton( tr("Discard"), this);
 		buttonLayout->addWidget( discardButton);
 		buttonLayout->addWidget( okButton);
 		buttonLayout->addStretch();
@@ -99,32 +99,32 @@ namespace BookshelfManager {
 	void CSwordSetupInstallSourcesDialog::slotOk() {
 		//run a few tests to validate the input first
 		if ( m_captionEdit->text().trimmed().isEmpty() ) { //no caption
-			QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a caption."), QMessageBox::Retry);
+			QMessageBox::information( this, tr( "Error" ), tr("Please provide a caption."), QMessageBox::Retry);
 			return;
 		}
 
 		BTInstallMgr iMgr;
 		sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
 		if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
-			QMessageBox::information( this, i18n( "Error" ),
-									  i18n("A source with this caption already exists.<br>Please provide a different caption."), QMessageBox::Retry);
+			QMessageBox::information( this, tr( "Error" ),
+									  tr("A source with this caption already exists.<br>Please provide a different caption."), QMessageBox::Retry);
 			return;
 		}
 
 		if ( m_protocolCombo->currentText() == PROTO_FTP &&
 				m_serverEdit->text().trimmed().isEmpty() ) { //no server name
-			QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a server name."), QMessageBox::Retry);
+			QMessageBox::information( this, tr( "Error" ), tr("Please provide a server name."), QMessageBox::Retry);
 			return;
 		}
 
 		if ( m_protocolCombo->currentText() == PROTO_FILE) {
 			const QFileInfo fi( m_pathEdit->text() );
 			if (!fi.exists() || !fi.isReadable()) { //no valid and readable path
-				QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a valid, readable path."), QMessageBox::Retry);
+				QMessageBox::information( this, tr( "Error" ), tr("Please provide a valid, readable path."), QMessageBox::Retry);
 				return;
 			}
 			else if ( m_pathEdit->text().isEmpty() ) {
-				QMessageBox::information( this, i18n( "Error" ), i18n("Please provide a path."), QMessageBox::Retry);
+				QMessageBox::information( this, tr( "Error" ), tr("Please provide a path."), QMessageBox::Retry);
 
 			}
 		}

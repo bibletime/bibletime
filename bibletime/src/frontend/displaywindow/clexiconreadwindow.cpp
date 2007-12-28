@@ -33,7 +33,7 @@
 
 //KDE includes
 #include <ktoolbar.h>
-#include <klocale.h>
+
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
@@ -62,24 +62,24 @@ void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a )
 {
 	qDebug("CLexiconReadWindow::insertKeyboardActions");
 	KAction* kaction;
-	kaction = new KAction( i18n("Next entry"), a);
+	kaction = new KAction( tr("Next entry"), a);
 	kaction->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
 	a->addAction("nextEntry", kaction);
 
-	kaction = new KAction( i18n("Previous entry"), a);
+	kaction = new KAction( tr("Previous entry"), a);
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	a->addAction("previousEntry", kaction);
 	
-	kaction = new KAction(i18n("Copy reference only"), a);
+	kaction = new KAction(tr("Copy reference only"), a);
 	a->addAction("copyReferenceOnly", kaction);
 
-	kaction = new KAction(i18n("Copy selected text"), a);
+	kaction = new KAction(tr("Copy selected text"), a);
 	a->addAction("copySelectedText", kaction);
 
-	kaction = new KAction(i18n("Save entry as HTML"), a);
+	kaction = new KAction(tr("Save entry as HTML"), a);
 	a->addAction("saveHtml", kaction);
 
-	kaction = new KAction(i18n("Print reference only"), a);
+	kaction = new KAction(tr("Print reference only"), a);
 	a->addAction("printReferenceOnly", kaction);
 }
 
@@ -103,12 +103,12 @@ void CLexiconReadWindow::initActions()
 
 	KAction* kaction;
 
-	kaction = new KAction(i18n("Next entry"), ac );
+	kaction = new KAction(tr("Next entry"), ac );
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( nextEntry() ) );
 	ac->addAction("nextEntry", kaction);
 
-	kaction = new KAction(i18n("Previous entry"), ac );
+	kaction = new KAction(tr("Previous entry"), ac );
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( previousEntry() ) );
 	ac->addAction("previousEntry", kaction);
@@ -123,37 +123,37 @@ void CLexiconReadWindow::initActions()
 
 	m_actions.findStrongs = new KAction(
 		KIcon(CResMgr::displaywindows::general::findStrongs::icon),
-		i18n("Strong's Search"),
+		tr("Strong's Search"),
 		ac
 		);
 	m_actions.findStrongs->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
 	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
 	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
 
-	m_actions.copy.reference = new KAction(i18n("Reference only"), ac );
+	m_actions.copy.reference = new KAction(tr("Reference only"), ac );
 	QObject::connect(m_actions.copy.reference, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()) );
 	ac->addAction("copyReferenceOnly", m_actions.copy.reference);
 
-	m_actions.copy.entry = new KAction(i18n("Entry with text"), ac );
+	m_actions.copy.entry = new KAction(tr("Entry with text"), ac );
 	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAll()) );
 	ac->addAction("copyEntryWithText", m_actions.copy.entry);
 
 	Q_ASSERT(ac->action("copySelectedText"));
 	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
 	
-	m_actions.save.entryAsPlain = new KAction(i18n("Entry as plain text"), ac );
+	m_actions.save.entryAsPlain = new KAction(tr("Entry as plain text"), ac );
 	QObject::connect(m_actions.save.entryAsPlain, SIGNAL(triggered()), this, SLOT(saveAsPlain()) );
 	ac->addAction("saveEntryAsPlain", m_actions.save.entryAsPlain);
 
-	m_actions.save.entryAsHTML = new KAction(i18n("Entry as HTML"), ac );
+	m_actions.save.entryAsHTML = new KAction(tr("Entry as HTML"), ac );
 	QObject::connect(m_actions.save.entryAsHTML, SIGNAL(triggered()), this, SLOT(saveAsHTML()));
 	ac->addAction("saveEntryAsHTML", m_actions.save.entryAsHTML);
 
-	m_actions.print.reference = new KAction(i18n("Reference only"), ac);
+	m_actions.print.reference = new KAction(tr("Reference only"), ac);
 	QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()));
 	ac->addAction("printReferenceOnly", m_actions.print.reference);
 
-	m_actions.print.entry = new KAction(i18n("Entry with text"), ac);
+	m_actions.print.entry = new KAction(tr("Entry with text"), ac);
 	QObject::connect(m_actions.print.entry, SIGNAL(triggered()), this, SLOT(printAll()));
 	ac->addAction("printEntryWithText", m_actions.print.entry);
 
@@ -234,15 +234,15 @@ void CLexiconReadWindow::initToolbars()
 
 void CLexiconReadWindow::setupPopupMenu()
 {
-	popup()->setTitle(i18n("Lexicon window"));
+	popup()->setTitle(tr("Lexicon window"));
 	popup()->setIcon(CToolClass::getIconForModule(modules().first()));
-	//   m_actions.selectAll = new KAction(i18n("Select all"), KShortcut(0), displayWidget()->connectionsProxy(), SLOT(selectAll()), actionCollection());
+	//   m_actions.selectAll = new KAction(tr("Select all"), KShortcut(0), displayWidget()->connectionsProxy(), SLOT(selectAll()), actionCollection());
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);
 	popup()->addAction(m_actions.selectAll);
 	popup()->addSeparator();
 
-	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon), i18n("Copy..."), actionCollection());
+	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon), tr("Copy..."), actionCollection());
 	m_actions.copyMenu->setDelayed(false);
 
 	m_actions.copyMenu->addAction(m_actions.copy.reference);
@@ -253,7 +253,7 @@ void CLexiconReadWindow::setupPopupMenu()
 
 	m_actions.saveMenu = new KActionMenu(
 			KIcon(CResMgr::displaywindows::lexiconWindow::saveMenu::icon),
-			i18n("Save..."),
+			tr("Save..."),
 			actionCollection()
 			);
 	m_actions.saveMenu->setDelayed(false);
@@ -271,7 +271,7 @@ void CLexiconReadWindow::setupPopupMenu()
 
 	m_actions.printMenu = new KActionMenu(
 			KIcon(CResMgr::displaywindows::lexiconWindow::printMenu::icon),
-			i18n("Print..."),
+			tr("Print..."),
 			actionCollection()
 			);
 	m_actions.printMenu->setDelayed(false);
@@ -313,7 +313,7 @@ CSwordLDKey* CLexiconReadWindow::ldKey()
 
 /** This function saves the entry as html using the CExportMgr class. */
 void CLexiconReadWindow::saveAsHTML() {
-	CExportManager mgr(i18n("Saving entry ..."), true, i18n("Saving"), filterOptions(), displayOptions());
+	CExportManager mgr(tr("Saving entry ..."), true, tr("Saving"), filterOptions(), displayOptions());
 	mgr.saveKey(key(), CExportManager::HTML, true);
 }
 
@@ -344,7 +344,7 @@ void CLexiconReadWindow::saveRawHTML()
 /** This function saves the entry as html using the CExportMgr class. */
 void CLexiconReadWindow::saveAsPlain()
 {
-	CExportManager mgr(i18n("Saving entry ..."), true, i18n("Saving"), filterOptions(), displayOptions());
+	CExportManager mgr(tr("Saving entry ..."), true, tr("Saving"), filterOptions(), displayOptions());
 	mgr.saveKey(key(), CExportManager::Text, true);
 }
 

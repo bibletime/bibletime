@@ -29,7 +29,7 @@
 
 //KDE includes
 #include <kdialog.h>
-#include <klocale.h>
+
 #include <khistorycombobox.h>
 #include <kpushbutton.h>
 
@@ -72,11 +72,11 @@ CSearchDialog* const CSearchDialog::getSearchDialog()
 };
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-//: KDialogBase(Plain, i18n("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, i18n("Search"))
+//: KDialogBase(Plain, tr("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, tr("Search"))
 	:KDialog(parent)
 {
 	setButtons(KDialog::Close|KDialog::User1);
-	setButtonText(KDialog::User1, i18n("&Search"));
+	setButtonText(KDialog::User1, tr("&Search"));
 	//setWFlags( windowFlags() | Qt::WStyle_MinMax );
 	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 
@@ -104,8 +104,8 @@ void CSearchDialog::startSearch()
 
 	// check that we have the indices we need for searching
 	if (!m_searcher.modulesHaveIndices( modules() ) )	{
-		int result = QMessageBox::question(this, i18n("Missing indices"),
-			i18n("One or more modules need indexing before they can be searched.\n"
+		int result = QMessageBox::question(this, tr("Missing indices"),
+			tr("One or more modules need indexing before they can be searched.\n"
 			"This could take a long time. Proceed with indexing?"),
 		QMessageBox::Yes | QMessageBox::Default,
 		QMessageBox::No  | QMessageBox::Escape);

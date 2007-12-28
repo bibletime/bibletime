@@ -30,7 +30,7 @@
 
 #include <kglobalsettings.h>
 #include <kcompletionbox.h>
-#include <klocale.h>
+
 #include <kpushbutton.h>
 #include <kguiitem.h>
 

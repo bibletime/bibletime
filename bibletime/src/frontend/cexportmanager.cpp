@@ -34,7 +34,7 @@
 #include <QFileDialog>
 
 //KDE includes
-#include <klocale.h>
+
 
 //Sword includes
 #include <swkey.h>
@@ -477,17 +477,17 @@ const bool CExportManager::printKeyList(const QStringList& list,CSwordModuleInfo
 const QString CExportManager::filterString( const Format format ) {
 	switch (format) {
 		case HTML:
-			return i18n("HTML files") + QString(" (*.html *.htm);;") + i18n("All files") + QString(" (*.*)");
+			return QObject::tr("HTML files") + QString(" (*.html *.htm);;") + QObject::tr("All files") + QString(" (*.*)");
 		case Text:
-			return i18n("Text files") + QString(" (*.txt);;") + i18n("All files") + QString(" (*.*)");
+			return QObject::tr("Text files") + QString(" (*.txt);;") + QObject::tr("All files") + QString(" (*.*)");
 		default:
-			return i18n("All files") + QString(" (*.*)");
+			return QObject::tr("All files") + QString(" (*.*)");
 	}
 }
 
 /** Returns a filename to save a file. */
 const QString CExportManager::getSaveFileName(const Format format) {
-	return QFileDialog::getSaveFileName(0, i18n("Save file"), "", filterString(format), 0);
+	return QFileDialog::getSaveFileName(0, QObject::tr("Save file"), "", filterString(format), 0);
 }
 
 /** Returns a string containing the linebreak for the current format. */

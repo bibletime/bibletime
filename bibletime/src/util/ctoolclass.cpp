@@ -25,7 +25,7 @@
 #include <QMessageBox>
 
 //KDE includes
-#include <klocale.h>
+
 
 /** Converts HTML text to plain text */
 QString CToolClass::htmlToText(const QString& html) {
@@ -57,10 +57,10 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 	bool ret;
 
 	if (saveFile.exists()) {
-		if (!forceOverwrite && QMessageBox::question(0, i18n("Confirmation"),
+		if (!forceOverwrite && QMessageBox::question(0, QObject::tr("Confirmation"),
 				QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
-					.arg( i18n("The file already exists.") )
-					.arg( i18n("Do you want to overwrite it?")),
+					.arg( QObject::tr("The file already exists.") )
+					.arg( QObject::tr("Do you want to overwrite it?")),
 				QMessageBox::Yes|QMessageBox::No,
 				QMessageBox::No) == QMessageBox::No
 		   ) 
@@ -80,10 +80,10 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 		ret = true;
 	}
 	else {
-		QMessageBox::critical(0, i18n("Error"),
+		QMessageBox::critical(0, QObject::tr("Error"),
 			QString::fromLatin1("<qt>%1<BR><B>%2</B></qt>")
-				.arg( i18n("The file couldn't be saved.") )
-				.arg( i18n("Please check permissions etc.")));
+				.arg( QObject::tr("The file couldn't be saved.") )
+				.arg( QObject::tr("Please check permissions etc.")));
 		saveFile.close();
 		ret = false;
 	}
@@ -189,19 +189,19 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
 	QString text;
 
 	text = QString("<b>%1</b> ").arg( module->name() )
-		   + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(i18n("Take care, this work contains cult / questionable material!")) : QString::null);
+		   + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
 
 	text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr>");
 
-	text += i18n("Language") + QString(": %1<br>").arg( module->language()->translatedName() );
+	text += QObject::tr("Language") + QString(": %1<br>").arg( module->language()->translatedName() );
 
 	if (module->isEncrypted()) {
-		text += i18n("Unlock key") + QString(": %1<br>")
-				.arg(!module->config(CSwordModuleInfo::CipherKey).isEmpty() ? module->config(CSwordModuleInfo::CipherKey) : QString("<font COLOR=\"red\">%1</font>").arg(i18n("not set")));
+		text += QObject::tr("Unlock key") + QString(": %1<br>")
+				.arg(!module->config(CSwordModuleInfo::CipherKey).isEmpty() ? module->config(CSwordModuleInfo::CipherKey) : QString("<font COLOR=\"red\">%1</font>").arg(QObject::tr("not set")));
 	}
 
 	if (module->hasVersion()) {
-		text += i18n("Version") + QString(": %1<br>").arg( module->config(CSwordModuleInfo::ModuleVersion) );
+		text += QObject::tr("Version") + QString(": %1<br>").arg( module->config(CSwordModuleInfo::ModuleVersion) );
 	}
 
 	QString options;
@@ -219,7 +219,7 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
 	}
 
 	if (!options.isEmpty()) {
-		text += i18n("Options") + QString::fromLatin1(": <small>") + options + QString("</small>");
+		text += QObject::tr("Options") + QString::fromLatin1(": <small>") + options + QString("</small>");
 	}
 
 	if (text.right(4) == QString::fromLatin1("<br>")) {

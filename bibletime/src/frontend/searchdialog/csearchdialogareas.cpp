@@ -48,7 +48,7 @@
 #include <QMessageBox>
 
 //KDE includes
-#include <klocale.h>
+
 #include <kcombobox.h>
 #include <khistorycombobox.h>
 
@@ -113,8 +113,8 @@ void StrongsResultClass::initStrongsResults(void)
 	// for whatever reason the text "Parsing...translations." does not appear.
 	// this is not critical but the text is necessary to get the dialog box
 	// to be wide enough.
-	QProgressDialog* progress = new QProgressDialog(i18n("Parsing Stong's Numbers"), 0, 0, count);
-	//0, "progressDialog", i18n("Parsing Stong's Numbers"), i18n("Parsing Stong's numbers for translations."), true);
+	QProgressDialog* progress = new QProgressDialog(QObject::tr("Parsing Stong's Numbers"), 0, 0, count);
+	//0, "progressDialog", tr("Parsing Stong's Numbers"), tr("Parsing Stong's numbers for translations."), true);
 	
 	//progress->setAllowCancel(false);
 	//progress->setMinimumDuration(0);
@@ -247,7 +247,7 @@ void CSearchResultArea::initView()
 
 	//analyze button
 	hboxLayout = new QHBoxLayout();
-	m_analyseButton = new QPushButton(i18n("&Analyze search..."), resultListsWidget);
+	m_analyseButton = new QPushButton(tr("&Analyze search..."), resultListsWidget);
 	hboxLayout->addWidget(m_analyseButton);
 	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	hboxLayout->addItem(spacerItem);
@@ -732,7 +732,7 @@ void CSearchOptionsArea::initView() {
     gridLayout->setHorizontalSpacing(3);
     gridLayout->setVerticalSpacing(3);
     gridLayout->setContentsMargins(6, 6, 6, 6);
-    m_searchTextLabel = new QLabel(i18n("Search for:"), searchGroupBox);
+    m_searchTextLabel = new QLabel(tr("Search for:"), searchGroupBox);
 
     QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
     sizePolicy1.setHorizontalStretch(0);
@@ -743,16 +743,16 @@ void CSearchOptionsArea::initView() {
 
     gridLayout->addWidget(m_searchTextLabel, 0, 0, 1, 1);
 
-    m_syntaxButton = new QPushButton(i18n("&Help"), searchGroupBox);
+    m_syntaxButton = new QPushButton(tr("&Help"), searchGroupBox);
     gridLayout->addWidget(m_syntaxButton, 0, 2, 1, 1);
 
-    m_chooseModulesButton = new QPushButton(i18n("Ch&oose"), searchGroupBox);
+    m_chooseModulesButton = new QPushButton(tr("Ch&oose"), searchGroupBox);
     gridLayout->addWidget(m_chooseModulesButton, 1, 2, 1, 1);
 
-    m_chooseRangeButton = new QPushButton(i18n("S&etup"), searchGroupBox);
+    m_chooseRangeButton = new QPushButton(tr("S&etup"), searchGroupBox);
     gridLayout->addWidget(m_chooseRangeButton, 2, 2, 1, 1);
 
-    m_searchScopeLabel = new QLabel(i18n("Search scope:"), searchGroupBox);
+    m_searchScopeLabel = new QLabel(tr("Search scope:"), searchGroupBox);
     sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
     m_searchScopeLabel->setSizePolicy(sizePolicy1);
     m_searchScopeLabel->setWordWrap(false);
@@ -824,7 +824,7 @@ void CSearchOptionsArea::initView() {
 
 /** Sets the modules used by the search. */
 void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
-	QString t = i18n("Searching in: ");
+	QString t = tr("Searching in: ");
 
 	m_modules.clear(); //remove old modules
 	ListCSwordModuleInfo::iterator end_it = modules.end();
@@ -848,8 +848,8 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 }
 
 void CSearchOptionsArea::chooseModules() {
-	QString title(i18n("Modules to Search in"));
-	QString label(i18n("Select the modules in which the search should be run."));
+	QString title(tr("Modules to Search in"));
+	QString label(tr("Select the modules in which the search should be run."));
 	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
 	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)), this, SLOT(setModules(ListCSwordModuleInfo)));
 	dlg->exec();
@@ -886,34 +886,34 @@ void CSearchOptionsArea::setupRanges() {
 }
 
 void CSearchOptionsArea::syntaxHelp() {
-	QString syntax = i18n (
+	QString syntax = tr(
 			"<p>Enter search terms separated by spaces.  By default the search "
 			"function will return results that match any of the search terms (OR). "
-			"To search for all the terms separate the terms by AND.</p>") + i18n(
+			"To search for all the terms separate the terms by AND.</p>") + tr(
 			"<p>You can use wildcards: '*' matches any sequence of characters, "
 			"while '?' matches any single character. The use of brackets allows you to "
-			"group your search terms, e.g. '(Jesus OR spirit) AND God'.</p>") + i18n(
+			"group your search terms, e.g. '(Jesus OR spirit) AND God'.</p>") + tr(
 			"<p>To search text other than the main text, enter the text type followed "
 			"by \":\", and then the search term.  For example, to search for the Strong's "
-			"number H8077, use 'strong:H8077'.</p>") + i18n(
+			"number H8077, use 'strong:H8077'.</p>") + tr(
 			"<p>Available text types:<br><table>"
 			"<tr><td>heading:</td><td>searches headings</td></tr>"
 			"<tr><td>footnote:</td><td>searches footnotes</td></tr>"
 			"<tr><td>strong:</td><td>searches Strong's Numbers</td></tr>"
-			"<tr><td>morph:</td><td>searches morphology codes</td></tr></table></p>") + i18n(
+			"<tr><td>morph:</td><td>searches morphology codes</td></tr></table></p>") + tr(
 			"<p>BibleTime uses the Lucene search engine to perform your searches. "
 			"It has many advanced features, and you can read more about it here: "
 			"<a href=\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">"
 			"http://lucene.apache.org/java/docs/queryparsersyntax.html</a></p>");
 
-	QMessageBox::about( this, i18n("Basic Search Syntax Introduction"), syntax);
+	QMessageBox::about( this, tr("Basic Search Syntax Introduction"), syntax);
 }
 
 void CSearchOptionsArea::refreshRanges() {
 	//the first two options are fixed, the others can be edited using the "Setup ranges" button.
 	m_rangeChooserCombo->clear();
-	m_rangeChooserCombo->insertItem(0, i18n("No search scope"));
-	//m_rangeChooserCombo->insertItem(i18n("Last search result"));
+	m_rangeChooserCombo->insertItem(0, tr("No search scope"));
+	//m_rangeChooserCombo->insertItem(tr("Last search result"));
 
 	//insert the user-defined ranges
 	CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);

@@ -25,7 +25,7 @@
 #include <QString>
 
 //KDE
-#include <klocale.h>
+
 
 Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
 	setPassThruUnknownEscapeString(true); //the HTML widget will render the HTML escape codes
@@ -313,7 +313,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					buf.append(" <span class=\"alternative\" alternative=\"");
 					buf.append(myUserData->lastTextNode);
 					buf.append("\" title=\"");
-					buf.append((const char*)i18n("Alternative text").toUtf8().constData());
+					buf.append((const char*)QObject::tr("Alternative text").toUtf8().constData());
 					buf.append("\" />");
 				}
 
@@ -471,7 +471,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
 				if (type == "added") {
 					buf.append("<span class=\"transchange\" title=\"");
-					buf.append(i18n("Added text").toUtf8().constData());
+					buf.append(QObject::tr("Added text").toUtf8().constData());
 					buf.append("\"><span class=\"added\">");
 				}
 				else if (type == "amplified") {

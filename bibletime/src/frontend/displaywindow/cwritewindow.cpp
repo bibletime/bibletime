@@ -20,7 +20,7 @@
 
 #include <QMessageBox>
 
-#include <klocale.h>
+
 
 using namespace Profile;
 
@@ -122,7 +122,7 @@ CWriteDisplay* const CWriteWindow::displayWidget() {
 bool CWriteWindow::queryClose() {
 	//save the text if it has changed
 	if (m_writeDisplay->isModified()) {
-		switch (QMessageBox::question( this, i18n("Confirmation"), i18n("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
+		switch (QMessageBox::question( this, tr("Confirmation"), tr("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
 			case QMessageBox::Yes: //save and close
 				saveCurrentText();
 				m_writeDisplay->setModified( false );
@@ -144,7 +144,7 @@ void CWriteWindow::beforeKeyChange(const QString& key) {
 	//If the text changed and we'd do a lookup ask the user if the text should be saved
 	if (modules().first() && displayWidget()->isModified()) {
 		
-		switch (QMessageBox::question( this, i18n("Confirmation"), i18n("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
+		switch (QMessageBox::question( this, tr("Confirmation"), tr("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
 			case QMessageBox::Yes: { //save the changes
 				saveCurrentText( key );
 				break;

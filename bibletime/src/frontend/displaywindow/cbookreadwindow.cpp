@@ -34,7 +34,7 @@
 #include <ktoggleaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
-#include <klocale.h>
+
 #include <kdeversion.h>
 #include <kmenu.h>
 //#include <ktoolbar.h>
@@ -75,7 +75,7 @@ void CBookReadWindow::initActions()
 
 	m_treeAction = new KToggleAction(
 			KIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
-			i18n("Toggle tree view"),
+			tr("Toggle tree view"),
 			ac
 			);
 	m_treeAction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
@@ -91,22 +91,22 @@ void CBookReadWindow::insertKeyboardActions( KActionCollection* const a )
 
 	kaction = new KToggleAction(
 			KIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
-			i18n("Toggle tree view"),
+			tr("Toggle tree view"),
 			a
 			);
 	kaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
 	a->addAction("toggleTree", kaction);
 		
-		//  new KAction(i18n("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
-	kaction = new KAction(i18n("Copy entry with text"), a);
+		//  new KAction(tr("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
+	kaction = new KAction(tr("Copy entry with text"), a);
 	a->addAction("copyEntryWithText", kaction);
-	//  new KAction(i18n("Copy selected text"), KShortcut(0), a, "copySelectedText");
-	kaction = new KAction(i18n("Save entry as plain text"), a);
+	//  new KAction(tr("Copy selected text"), KShortcut(0), a, "copySelectedText");
+	kaction = new KAction(tr("Save entry as plain text"), a);
 	a->addAction("saveEntryAsPlainText", kaction);
-	kaction = new KAction(i18n("Save entry as HTML"),a);
+	kaction = new KAction(tr("Save entry as HTML"),a);
 	a->addAction("saveEntryAsHTML", kaction);
-	//   new KAction(i18n("Print reference only"), KShortcut(0), a, "printReferenceOnly");
-	kaction = new KAction(i18n("Print entry with text"), a);
+	//   new KAction(tr("Print reference only"), KShortcut(0), a, "printReferenceOnly");
+	kaction = new KAction(tr("Print entry with text"), a);
 	a->addAction("printEntryWithText", kaction);
 
 }
@@ -202,7 +202,7 @@ void CBookReadWindow::setupPopupMenu()
 {
 	CLexiconReadWindow::setupPopupMenu();
 
-	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), i18n("Book window"));
-	popup()->actions().at(0)->setText(i18n("Book Window"));
+	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), tr("Book window"));
+	popup()->actions().at(0)->setText(tr("Book Window"));
 	popup()->actions().at(0)->setIcon(CToolClass::getIconForModule(modules().first()));
 }

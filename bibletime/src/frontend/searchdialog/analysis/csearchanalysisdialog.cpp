@@ -21,7 +21,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
-#include <klocale.h>
+
 
 namespace Search {
 
@@ -50,7 +50,7 @@ void CSearchAnalysisDialog::initView()
 	m_buttonBox->setOrientation(Qt::Horizontal);
 	m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
 	m_buttonBox->addButton(QDialogButtonBox::Save);
-	//i18n("Save as HTML"), 
+	//tr("Save as HTML"), 
 
 	vboxLayout->addWidget(m_buttonBox);
 

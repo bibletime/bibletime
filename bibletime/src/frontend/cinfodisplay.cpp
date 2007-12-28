@@ -39,7 +39,7 @@
 #include <QVBoxLayout>
 
 //KDE includes
-#include <klocale.h>
+
 #include <kstandardaction.h>
 #include <kaction.h>
 
@@ -53,7 +53,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 	: QWidget(parent)
 {
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	QLabel* headingLabel = new QLabel(i18n("Mag"),this);
+	QLabel* headingLabel = new QLabel(tr("Mag"),this);
 	headingLabel->setMargin(3);
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
@@ -70,7 +70,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 	headingLabel->setBuddy(m_htmlPart->view());
 	layout->addWidget(headingLabel);
 	layout->addWidget(m_htmlPart->view());
-	QString initialMagText = i18n("This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.");
+	QString initialMagText = tr("This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.");
 	m_htmlPart->setText(initialMagText);
 }
 
@@ -176,7 +176,7 @@ const QString CInfoDisplay::decodeAbbreviation( const QString& data ) {
 
 	ret.append(
 		QString("<div class=\"abbreviation\"><h3>%1: %2</h3><p>%3</p></div>")
-		.arg(i18n("Abbreviation"))
+		.arg(tr("Abbreviation"))
 		.arg("text")
 		.arg(text));
 
@@ -187,7 +187,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 	Q_ASSERT(!data.isEmpty());
 	if (data.isEmpty()) {
 		return QString("<div class=\"crossrefinfo\"><h3>%1</h3></div>")
-				.arg(i18n("Cross references"));
+				.arg(tr("Cross references"));
 	}
 
 	//  qWarning("setting crossref %s", data.latin1());
@@ -280,7 +280,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 	//  qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
 	//spanns containing rtl text need dir=rtl on their parent tag to be aligned properly
 	return QString("<div class=\"crossrefinfo\"><h3>%1</h3><div class=\"para\" dir=\"%2\">%3</div></div>")
-			.arg(i18n("Cross references"))
+			.arg(tr("Cross references"))
 	.arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
 			.arg(renderer.renderKeyTree(tree));
 }
@@ -323,7 +323,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
 								));
 
 	return QString("<div class=\"footnoteinfo\"><h3>%1</h3><p>%2</p></div>")
-			.arg(i18n("Footnote"))
+			.arg(tr("Footnote"))
 			.arg(text);
 }
 
@@ -350,7 +350,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 
 		ret.append(
 			QString("<div class=\"strongsinfo\"><h3>%1: %2</h3><p>%3</p></div>")
-			.arg(i18n("Strongs"))
+			.arg(tr("Strongs"))
 			.arg(*it)
 			.arg(text)
 		);
@@ -430,7 +430,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 
 		//if the module wasn't found just display an empty morph info
 		ret.append( QString("<div class=\"morphinfo\"><h3>%1: %2</h3><p>%3</p></div>")
-					.arg(i18n("Morphology"))
+					.arg(tr("Morphology"))
 					.arg(value)
 					.arg(text)
 					);
@@ -453,7 +453,7 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
 	}
 
 	QString ret = QString("<div class=\"translationinfo\"><h3>%1: %2</h3><p>%3</p></div>")
-					.arg(i18n("Word lookup"))
+					.arg(tr("Word lookup"))
 					.arg(data)
 					.arg(key->renderedText());
 

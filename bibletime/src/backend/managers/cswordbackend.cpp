@@ -32,7 +32,7 @@
 #include <QFileInfo>
 
 //KDE
-#include <klocale.h>
+
 #include <kstringhandler.h>
 
 //Sword
@@ -463,42 +463,42 @@ const QString CSwordBackend::translatedOptionName(const CSwordModuleInfo::Filter
 	switch (option) {
 
 		case CSwordModuleInfo::footnotes:
-		return i18n("Footnotes");
+		return QObject::tr("Footnotes");
 
 		case CSwordModuleInfo::strongNumbers:
-		return i18n("Strong's numbers");
+		return QObject::tr("Strong's numbers");
 
 		case CSwordModuleInfo::headings:
-		return i18n("Headings");
+		return QObject::tr("Headings");
 
 		case CSwordModuleInfo::morphTags:
-		return i18n("Morphological tags");
+		return QObject::tr("Morphological tags");
 
 		case CSwordModuleInfo::lemmas:
-		return i18n("Lemmas");
+		return QObject::tr("Lemmas");
 
 		case CSwordModuleInfo::hebrewPoints:
-		return i18n("Hebrew vowel points");
+		return QObject::tr("Hebrew vowel points");
 
 		case CSwordModuleInfo::hebrewCantillation:
-		return i18n("Hebrew cantillation marks");
+		return QObject::tr("Hebrew cantillation marks");
 
 		case CSwordModuleInfo::greekAccents:
-		return i18n("Greek accents");
+		return QObject::tr("Greek accents");
 
 		case CSwordModuleInfo::redLetterWords:
-		return i18n("Red letter words");
+		return QObject::tr("Red letter words");
 
 		case CSwordModuleInfo::textualVariants:
-		return i18n("Textual variants");
+		return QObject::tr("Textual variants");
 
 		case CSwordModuleInfo::scriptureReferences:
-		return i18n("Scripture cross-references");
+		return QObject::tr("Scripture cross-references");
 
 		case CSwordModuleInfo::morphSegmentation:
-		return i18n("Morph segmentation");
+		return QObject::tr("Morph segmentation");
 		//   case CSwordModuleInfo::transliteration:
-		//    return i18n("Transliteration between scripts");
+		//    return tr("Transliteration between scripts");
 	}
 
 	return QString::null;

@@ -26,7 +26,7 @@
 #include <QRegExp>
 
 //KDE
-#include <klocale.h>
+
 #include <kurl.h>
 
 using namespace Rendering;

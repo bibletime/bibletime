@@ -19,7 +19,7 @@
 #include <boost/scoped_ptr.hpp>
 
 //KDE
-#include <klocale.h>
+
 
 namespace Rendering {
 
@@ -198,7 +198,7 @@ namespace Rendering {
 		else
 			settings.pageDirection = QString::null;
 
-		return tMgr->fillTemplate(i18n("Export"), text, settings);
+		return tMgr->fillTemplate(QObject::tr("Export"), text, settings);
 	}
 
 	/*!

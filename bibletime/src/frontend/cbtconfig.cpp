@@ -24,10 +24,11 @@
 #include <QList>
 #include <QDebug>
 #include <QSettings>
+#include <QLocale>
 
 //KDE includes
 #include <kactioncollection.h>
-#include <klocale.h>
+
 #include <kglobal.h>
 #include <khtml_settings.h>
 
@@ -54,7 +55,7 @@ const QString CBTConfig::getKey( const CBTConfig::strings ID) {
 const QString CBTConfig::getDefault( const CBTConfig::strings ID) {
 	switch ( ID ) {
 		case bibletimeVersion:		return "0.0"; // main() will realize this and set the value to VERSION
-		case language:				return (KGlobal::locale()->language()).toLocal8Bit();
+		case language:				return QLocale::system().name();
 		case displayStyle:			return CDisplayTemplateMgr::defaultTemplate();
 		case bookshelfCurrentItem:	return QString();
 	}
@@ -240,14 +241,14 @@ const CBTConfig::StringMap CBTConfig::getDefault( const CBTConfig::stringMaps ID
 	switch ( ID ) {
 		case searchScopes: {
 			CBTConfig::StringMap map;
-			map.insert(i18n("Old testament"),         QString("Gen - Mal"));
-			map.insert(i18n("Moses/Pentateuch/Torah"),QString("Gen - Deut"));
-			map.insert(i18n("History"),               QString("Jos - Est"));
-			map.insert(i18n("Prophets"),              QString("Isa - Mal"));
-			map.insert(i18n("New testament"),         QString("Mat - Rev"));
-			map.insert(i18n("Gospels"),               QString("Mat - Joh"));
-			map.insert(i18n("Letters/Epistles"),      QString("Rom - Jude"));
-			map.insert(i18n("Paul's Epistles"),       QString("Rom - Phile"));
+			map.insert(QObject::tr("Old testament"),         QString("Gen - Mal"));
+			map.insert(QObject::tr("Moses/Pentateuch/Torah"),QString("Gen - Deut"));
+			map.insert(QObject::tr("History"),               QString("Jos - Est"));
+			map.insert(QObject::tr("Prophets"),              QString("Isa - Mal"));
+			map.insert(QObject::tr("New testament"),         QString("Mat - Rev"));
+			map.insert(QObject::tr("Gospels"),               QString("Mat - Joh"));
+			map.insert(QObject::tr("Letters/Epistles"),      QString("Rom - Jude"));
+			map.insert(QObject::tr("Paul's Epistles"),       QString("Rom - Phile"));
 
 			//make the list to the current bookname language!
 			CBTConfig::StringMap::Iterator it;

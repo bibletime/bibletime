@@ -22,7 +22,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+
 
 //This ctor creates the root item and the tree.
 BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
@@ -136,14 +136,14 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 	static bool map_initialized = false;
 	static QMap<CSwordModuleInfo::Category, QString> CategoryNamesMap;
 	if (!map_initialized) {
-		CategoryNamesMap.insert(CSwordModuleInfo::Commentaries, i18n("Commentaries"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Cult, i18n("Cults/Unorthodox"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Images, i18n("Maps and Images"));
-		CategoryNamesMap.insert(CSwordModuleInfo::DailyDevotional, i18n("Daily Devotionals"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Lexicons, i18n("Lexicons and Dictionaries"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Bibles, i18n("Bibles"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Glossary, i18n("Glossaries"));
-		CategoryNamesMap.insert(CSwordModuleInfo::Books, i18n("Books"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Commentaries, QObject::tr("Commentaries"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Cult, QObject::tr("Cults/Unorthodox"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Images, QObject::tr("Maps and Images"));
+		CategoryNamesMap.insert(CSwordModuleInfo::DailyDevotional, QObject::tr("Daily Devotionals"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Lexicons, QObject::tr("Lexicons and Dictionaries"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Bibles, QObject::tr("Bibles"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Glossary, QObject::tr("Glossaries"));
+		CategoryNamesMap.insert(CSwordModuleInfo::Books, QObject::tr("Books"));
 	
 		map_initialized = true;
 	} 
@@ -255,14 +255,14 @@ bool BTModuleTreeItem::localeAwareLessThan(BTModuleTreeItem* first, BTModuleTree
 	static QMap<QString, int> CategoryNameValueMap;
 	if (!map_initialized) {
 		//this is the sorting order for categories
-		CategoryNameValueMap.insert(i18n("Bibles"), 1);
-		CategoryNameValueMap.insert(i18n("Commentaries"), 2);
-		CategoryNameValueMap.insert(i18n("Books"), 3);
-		CategoryNameValueMap.insert(i18n("Lexicons and Dictionaries"), 4);
-		CategoryNameValueMap.insert(i18n("Glossaries"), 5);
-		CategoryNameValueMap.insert(i18n("Daily Devotionals"), 6);
-		CategoryNameValueMap.insert(i18n("Maps and Images"), 7);
-		CategoryNameValueMap.insert(i18n("Cults/Unorthodox"), 8);
+		CategoryNameValueMap.insert(QObject::tr("Bibles"), 1);
+		CategoryNameValueMap.insert(QObject::tr("Commentaries"), 2);
+		CategoryNameValueMap.insert(QObject::tr("Books"), 3);
+		CategoryNameValueMap.insert(QObject::tr("Lexicons and Dictionaries"), 4);
+		CategoryNameValueMap.insert(QObject::tr("Glossaries"), 5);
+		CategoryNameValueMap.insert(QObject::tr("Daily Devotionals"), 6);
+		CategoryNameValueMap.insert(QObject::tr("Maps and Images"), 7);
+		CategoryNameValueMap.insert(QObject::tr("Cults/Unorthodox"), 8);
 		map_initialized = true;
 	}
 

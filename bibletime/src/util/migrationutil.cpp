@@ -17,7 +17,7 @@
 #include <QMessageBox>
 #include <QSettings>
 
-#include <klocale.h>
+
 
 
 using namespace util::filesystem;
@@ -55,13 +55,8 @@ void MigrationUtil::tryMigrationFromKDE3(){
 		
 		//Migrate only if the old config exists and the new doesn't
 		if (oldRc.exists() && !newRc.exists()){
-			QMessageBox msg (QMessageBox::Question, i18n("Settings"
-				" Migration"),
-				i18n("It"
-				" appears you have a BibleTime configuration from KDE"
-				" 3 stored in %1, and you have not migrated it to"
-				" this version.  Would you like to import it?",
-				currSearch), QMessageBox::Yes | QMessageBox::No);
+			QMessageBox msg (QMessageBox::Question, QObject::tr("Settings Migration"),
+				QObject::tr("It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?").arg(currSearch), QMessageBox::Yes | QMessageBox::No);
 			int result = msg.exec();
 			if (result != QMessageBox::Yes){
 				break;

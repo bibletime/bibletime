@@ -29,7 +29,7 @@
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 //#include <kaccel.h>
-#include <klocale.h>
+
 #include <kmenu.h>
 #include <ktoolbar.h>
 
@@ -41,27 +41,27 @@ void CCommentaryReadWindow::insertKeyboardActions( KActionCollection* const a ) 
 	
 	KAction* kaction;
 	
-	kaction = new KAction(i18n("Next book"), a);
+	kaction = new KAction(tr("Next book"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
 	a->addAction("nextBook", kaction);
 	
-	kaction = new KAction(i18n("Previous book"), a);
+	kaction = new KAction(tr("Previous book"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
 	a->addAction( "previousBook", kaction);
 	
-	kaction = new KAction(i18n("Next chapter"), a);
+	kaction = new KAction(tr("Next chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
 	a->addAction("nextChapter", kaction);
 	
-	kaction = new KAction(i18n("Previous chapter"), a);
+	kaction = new KAction(tr("Previous chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
 	a->addAction("previousChapter", kaction);
 	
-	kaction = new KAction(i18n("Next verse"), a);
+	kaction = new KAction(tr("Next verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
 	a->addAction("nextVerse", kaction);
 	
-	kaction = new KAction(i18n("Previous verse"), a);
+	kaction = new KAction(tr("Previous verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	a->addAction("previousVerse", kaction);
 	
@@ -84,7 +84,7 @@ void CCommentaryReadWindow::initToolbars() {
 
 	m_syncButton = new KToggleAction(
 			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
-			i18n("Sync with active Bible"),
+			tr("Sync with active Bible"),
 			actionCollection()
 			);
 	m_syncButton->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
@@ -120,32 +120,32 @@ void CCommentaryReadWindow::initActions() {
 
 	KAction* kaction;
 
-	kaction = new KAction(i18n("Next book"), ac);
+	kaction = new KAction(tr("Next book"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
 	ac->addAction("nextBook", kaction);
 
-	kaction = new KAction(i18n("Previous book"), ac);
+	kaction = new KAction(tr("Previous book"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
 	ac->addAction("previousBook", kaction);
 
-	kaction = new KAction(i18n("Next chapter"), ac);
+	kaction = new KAction(tr("Next chapter"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
 	ac->addAction("nextChapter", kaction);
 
-	kaction = new KAction(i18n("Previous chapter"), ac);
+	kaction = new KAction(tr("Previous chapter"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
 	ac->addAction("previousChapter", kaction);
 
-	kaction = new KAction(i18n("Next verse"), ac);
+	kaction = new KAction(tr("Next verse"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
 	ac->addAction("nextVerse", kaction);
 
-	kaction = new KAction(i18n("Previous verse"), ac);
+	kaction = new KAction(tr("Previous verse"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
 	ac->addAction("previousVerse", kaction);
@@ -200,7 +200,7 @@ const bool CCommentaryReadWindow::syncAllowed() const {
 void CCommentaryReadWindow::setupPopupMenu() {
 	CLexiconReadWindow::setupPopupMenu();
 
-	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), i18n("Commentary window"));
-	popup()->actions().at(0)->setText(i18n("Commentary window"));
+	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), tr("Commentary window"));
+	popup()->actions().at(0)->setText(tr("Commentary window"));
 	popup()->actions().at(0)->setIcon(CToolClass::getIconForModule(modules().first()));
 }

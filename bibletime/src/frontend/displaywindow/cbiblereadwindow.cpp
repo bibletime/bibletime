@@ -38,7 +38,7 @@
 
 //KDE includes
 #include <kstandardshortcut.h>
-#include <klocale.h>
+
 #include <kmenu.h>
 #include <kaction.h>
 #include <kactionmenu.h>
@@ -90,53 +90,53 @@ void CBibleReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 
 	KAction* kaction;
 
-	kaction = new KAction(i18n("Next book"), a);
+	kaction = new KAction(tr("Next book"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
 	a->addAction("nextBook", kaction);
 	
-	kaction = new KAction(i18n("Previous book"), a);
+	kaction = new KAction(tr("Previous book"), a);
 	kaction->setShortcut( CResMgr::displaywindows::bibleWindow::previousBook::accel);
 	a->addAction("previousBook", kaction);
 	
-	kaction = new KAction(i18n("Next chapter"), a);
+	kaction = new KAction(tr("Next chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
 	a->addAction("nextChapter", kaction);
 	
-	kaction = new KAction(i18n("Previous chapter"), a);
+	kaction = new KAction(tr("Previous chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
 	a->addAction("previousChapter", kaction);
 	
-	kaction = new KAction(i18n("Next verse"), a);
+	kaction = new KAction(tr("Next verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
 	a->addAction("nextVerse", kaction);
 	
-	kaction = new KAction(i18n("Previous verse"), a);
+	kaction = new KAction(tr("Previous verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	a->addAction("previousVerse", kaction);
 	
 
 	//popup menu items
-	//  new KAction(i18n("Select all"), KStdAccel::selectAll(), a, "selectAll");
+	//  new KAction(tr("Select all"), KStdAccel::selectAll(), a, "selectAll");
 
 	//copy menu items
-	//  new KAction(i18n("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
-	//  new KAction(i18n("Text of reference"), KShortcut(0), a, "copyTextOfReference");
-	//   new KAction(i18n("Reference with text"), KShortcut(0), a, "copyReferenceWithText");
-	kaction = new KAction(i18n("Copy chapter"), a);
+	//  new KAction(tr("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
+	//  new KAction(tr("Text of reference"), KShortcut(0), a, "copyTextOfReference");
+	//   new KAction(tr("Reference with text"), KShortcut(0), a, "copyReferenceWithText");
+	kaction = new KAction(tr("Copy chapter"), a);
 	a->addAction("copyChapter", kaction);
-	//   new KAction(i18n("Copy selected text"), KStdAccel::copy(), a, "copySelectedText");
+	//   new KAction(tr("Copy selected text"), KStdAccel::copy(), a, "copySelectedText");
 
 	//save menu
-	//   new KAction(i18n("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
-	kaction = new KAction(i18n("Save chapter as plain text"), a);
+	//   new KAction(tr("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
+	kaction = new KAction(tr("Save chapter as plain text"), a);
 	a->addAction("saveChapterAsPlainText", kaction);
 
-	kaction = new KAction(i18n("Save chapter as HTML"), a);
+	kaction = new KAction(tr("Save chapter as HTML"), a);
 	a->addAction("saveChapterAsHTML", kaction);
-	//   new KAction(i18n("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
+	//   new KAction(tr("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
 
 	//print
-	kaction = new KAction(i18n("Print chapter"), a);
+	kaction = new KAction(tr("Print chapter"), a);
 	kaction->setShortcut( KStandardShortcut::print());
 	a->addAction("printChapter", kaction);
 }
@@ -154,32 +154,32 @@ void CBibleReadWindow::initActions() {
 
 	KAction* kaction;
 
-	kaction = new KAction(i18n("Next book"), ac);
+	kaction = new KAction(tr("Next book"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
 	ac->addAction("nextBook", kaction);
 
-	kaction = new KAction(i18n("Previous book"), ac);
+	kaction = new KAction(tr("Previous book"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
 	ac->addAction("previousBook", kaction);
 
-	kaction = new KAction(i18n("Next chapter"), ac);
+	kaction = new KAction(tr("Next chapter"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
 	ac->addAction("nextChapter", kaction);
 
-	kaction = new KAction(i18n("Previous chapter"),ac);
+	kaction = new KAction(tr("Previous chapter"),ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
 	ac->addAction("previousChapter", kaction);
 
-	kaction = new KAction(i18n("Next verse"), ac);
+	kaction = new KAction(tr("Next verse"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
 	ac->addAction("nextVerse", kaction);
 
-	kaction = new KAction(i18n("Previous verse"), ac);
+	kaction = new KAction(tr("Previous verse"), ac);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
 	ac->addAction("previousVerse", kaction);
@@ -193,49 +193,49 @@ void CBibleReadWindow::initActions() {
 
 	m_actions.findStrongs = new KAction(
 		KIcon(CResMgr::displaywindows::general::findStrongs::icon),
-		i18n("Strong's Search"),
+		tr("Strong's Search"),
 		ac
 		);
 	m_actions.findStrongs->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
 	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
 	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
 
-	m_actions.copy.referenceOnly = new KAction(i18n("Reference only"), ac );
+	m_actions.copy.referenceOnly = new KAction(tr("Reference only"), ac );
 	QObject::connect(m_actions.copy.referenceOnly, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()));
 	ac->addAction("copyReferenceOnly", m_actions.copy.referenceOnly);
 
-	m_actions.copy.referenceTextOnly = new KAction(i18n("Text of reference"), ac);
+	m_actions.copy.referenceTextOnly = new KAction(tr("Text of reference"), ac);
 	QObject::connect(m_actions.copy.referenceTextOnly, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()) );
 	ac->addAction("copyTextOfReference", m_actions.copy.referenceTextOnly);
 
-	m_actions.copy.referenceAndText = new KAction(i18n("Reference with text"), ac);
+	m_actions.copy.referenceAndText = new KAction(tr("Reference with text"), ac);
 	QObject::connect(m_actions.copy.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
 	ac->addAction( "copyReferenceWithText", m_actions.copy.referenceAndText);
 
-	m_actions.copy.chapter = new KAction(i18n("Chapter"), ac);
+	m_actions.copy.chapter = new KAction(tr("Chapter"), ac);
 	QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()), this, SLOT(copyDisplayedText()) );
 	ac->addAction("copyChapter", m_actions.copy.chapter);
 
 	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
 	Q_ASSERT(m_actions.copy.selectedText);
 
-	m_actions.save.referenceAndText = new KAction(i18n("Reference with text"), ac );
+	m_actions.save.referenceAndText = new KAction(tr("Reference with text"), ac );
 	QObject::connect(m_actions.save.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()) );
 	ac->addAction("saveReferenceWithText", m_actions.save.referenceAndText);
 
-	m_actions.save.chapterAsPlain = new KAction(i18n("Chapter as plain text"), ac);
+	m_actions.save.chapterAsPlain = new KAction(tr("Chapter as plain text"), ac);
 	QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()), this, SLOT(saveChapterPlain()) );
 	ac->addAction("saveChapterAsPlainText", m_actions.save.chapterAsPlain);
 
-	m_actions.save.chapterAsHTML = new KAction(i18n("Chapter as HTML"), ac);
+	m_actions.save.chapterAsHTML = new KAction(tr("Chapter as HTML"), ac);
 	QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()), this, SLOT(saveChapterHTML()) );
 	ac->addAction("saveChapterAsHTML", m_actions.save.chapterAsHTML);
 
-	m_actions.print.reference = new KAction(i18n("Reference with text"), ac);
+	m_actions.print.reference = new KAction(tr("Reference with text"), ac);
 	QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()) );
 	ac->addAction("saveReferenceWithText", m_actions.print.reference);
 
-	m_actions.print.chapter = new KAction(i18n("Chapter"), ac);
+	m_actions.print.chapter = new KAction(tr("Chapter"), ac);
 	QObject::connect(m_actions.print.chapter, SIGNAL(triggered()), this, SLOT(printAll()) );
 	ac->addAction("printChapter", m_actions.print.chapter);
 
@@ -262,7 +262,7 @@ void CBibleReadWindow::initView() {
 
 /** Reimplementation. */
 void CBibleReadWindow::setupPopupMenu() {
-	popup()->setTitle(i18n("Bible window"));
+	popup()->setTitle(tr("Bible window"));
 	popup()->setIcon(CToolClass::getIconForModule(modules().first()) );
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);
@@ -270,7 +270,7 @@ void CBibleReadWindow::setupPopupMenu() {
 		
 	popup()->addSeparator();
 
-	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::copyMenu::icon), i18n("Copy..."), popup());
+	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::copyMenu::icon), tr("Copy..."), popup());
 	m_actions.copyMenu->setDelayed( false );
 	m_actions.copyMenu->addAction(m_actions.copy.referenceOnly);
 	m_actions.copyMenu->addAction(m_actions.copy.referenceTextOnly);
@@ -282,7 +282,7 @@ void CBibleReadWindow::setupPopupMenu() {
 	m_actions.copyMenu->addAction(m_actions.copy.selectedText);
 	popup()->addAction(m_actions.copyMenu);
 
-	m_actions.saveMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::saveMenu::icon), i18n("Save..."), popup());
+	m_actions.saveMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::saveMenu::icon), tr("Save..."), popup());
 	m_actions.saveMenu->setDelayed( false );
 	m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
@@ -295,7 +295,7 @@ void CBibleReadWindow::setupPopupMenu() {
 	} // end of Save Raw HTML
 	popup()->addAction(m_actions.saveMenu);
 
-	m_actions.printMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::printMenu::icon), i18n("Print..."), popup());
+	m_actions.printMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::printMenu::icon), tr("Print..."), popup());
 	m_actions.printMenu->setDelayed(false);
 	m_actions.printMenu->addAction(m_actions.print.reference);
 	m_actions.printMenu->addAction(m_actions.print.chapter);
@@ -392,7 +392,7 @@ void CBibleReadWindow::copyDisplayedText() {
 	dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
 	vk.UpperBound(dummy);
 
-	CExportManager mgr(i18n("Copy chapter to clipboard ..."), false, i18n("Copying"), filterOptions(), displayOptions());
+	CExportManager mgr(tr("Copy chapter to clipboard ..."), false, tr("Copying"), filterOptions(), displayOptions());
 	mgr.copyKey(&vk, CExportManager::Text, true);
 }
 
@@ -413,7 +413,7 @@ void CBibleReadWindow::saveChapterHTML() {
 	dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
 	vk.UpperBound(dummy);
 
-	CExportManager mgr(i18n("Saving chapter ..."), true, i18n("Saving"), filterOptions(), displayOptions());
+	CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(), displayOptions());
 	mgr.saveKey(&vk, CExportManager::HTML, true);
 }
 
@@ -431,7 +431,7 @@ void CBibleReadWindow::saveChapterPlain() {
 	dummy.Verse(bible->verseCount(dummy.book(), dummy.Chapter()));
 	vk.UpperBound(dummy);
 
-	CExportManager mgr(i18n("Saving chapter ..."), true, i18n("Saving"), filterOptions(),displayOptions());
+	CExportManager mgr(tr("Saving chapter ..."), true, tr("Saving"), filterOptions(),displayOptions());
 	mgr.saveKey(&vk, CExportManager::Text, true);
 }
 

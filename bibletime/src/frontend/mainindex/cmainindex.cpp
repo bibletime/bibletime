@@ -18,15 +18,15 @@
 
 #include <QTabWidget>
 
-#include <klocale.h>
+
 
 CMainIndex::CMainIndex(QWidget *parent)
 	: QTabWidget(parent)
 {
 	m_bookmarksPage = new CBookmarkIndex(0);
 	m_bookshelfPage = new CBookshelfIndex(0);
-	addTab(m_bookshelfPage, i18n("Bookshelf"));
-	addTab(m_bookmarksPage, i18n("Bookmarks"));
+	addTab(m_bookshelfPage, tr("Bookshelf"));
+	addTab(m_bookmarksPage, tr("Bookmarks"));
 
 	//shortcut some signals from pages to signals of this widget so that outsiders
 	// do not have to use the pages directly

@@ -26,7 +26,7 @@
 #include <QLabel>
 
 
-#include <klocale.h>
+
 #include <kfontchooser.h>
 
 
@@ -45,14 +45,14 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addWidget(
 	CToolClass::explanationLabel(
 			this,
-			i18n("Specify a language for names of Bible books"),
-			i18n("Sword has a number of locales available which can be used to internationalize the \
+			tr("Specify a language for names of Bible books"),
+			tr("Sword has a number of locales available which can be used to internationalize the \
   names of books of the Bible. You can specify which locale to use. If you want to \
   create a new locale, see http://www.crosswire.org/sword/develop for details."))
 			);
 
 	m_swordLocaleCombo = new QComboBox(this);
-	QLabel* label = new QLabel( i18n("Language for names of Bible books"), this);
+	QLabel* label = new QLabel( tr("Language for names of Bible books"), this);
 	label->setBuddy(m_swordLocaleCombo);
 	m_swordLocaleCombo->setToolTip(CResMgr::settings::sword::general::language::tooltip);
 
@@ -120,8 +120,8 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addWidget(
 		CToolClass::explanationLabel(
 			this,
-			i18n("Select custom fonts per-language"),
-			i18n("Here you find a list of all languages of the installed works. \
+			tr("Select custom fonts per-language"),
+			tr("Here you find a list of all languages of the installed works. \
  You can specify a custom font for each language that needs a special font \
  to be displayed correctly.")
 		)
@@ -154,7 +154,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 		}
 	}
 
-	m_useOwnFontCheck = new QCheckBox(i18n("Use custom font"), this);
+	m_useOwnFontCheck = new QCheckBox(tr("Use custom font"), this);
 	connect(m_useOwnFontCheck, SIGNAL(toggled(bool)), SLOT(useOwnFontClicked(bool)) );
 	hLayout->addWidget(m_useOwnFontCheck);
 
@@ -162,8 +162,8 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	//#warning TODO: remember the last selected font and jump there.
 
 	m_fontChooser = new KFontChooser(this);
-	//TODO: Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not i18n()'ed!) language?
-	m_fontChooser->setSampleText(i18n("The quick brown fox jumps over the lazy dog."));
+	//TODO: Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
+	m_fontChooser->setSampleText(tr("The quick brown fox jumps over the lazy dog."));
 	layout->addWidget(m_fontChooser);
 
 	connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)), SLOT(newDisplayWindowFontSelected(const QFont&)));

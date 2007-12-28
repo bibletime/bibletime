@@ -39,7 +39,7 @@
 
 //KDE includes
 #include <kaboutdata.h>
-#include <klocale.h>
+
 
 //Sword includes
 #include <swlog.h>
@@ -51,7 +51,7 @@ using namespace Profile;
 /**Initializes the view of this widget*/
 void BibleTime::initView()
 {
-	KStartupLogo::setStatusMessage(i18n("Creating BibleTime's GUI") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Creating BibleTime's GUI") + QString("..."));
 
 	m_mainSplitter = new QSplitter(this);
 	m_mainSplitter->setChildrenCollapsible(false);
@@ -91,26 +91,26 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKey
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions()
 {
-	KStartupLogo::setStatusMessage(i18n("Initializing menu- and toolbars") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Initializing menu- and toolbars") + QString("..."));
 
-	QMenu* fileMenu = menuBar()->addMenu(i18n("&File"));
-	QMenu* viewMenu = menuBar()->addMenu(i18n("&View"));
-	QMenu* searchMenu = menuBar()->addMenu(i18n("&Search"));
-	m_windowMenu = menuBar()->addMenu(i18n("&Window"));
-	QMenu* settingsMenu = menuBar()->addMenu(i18n("Se&ttings"));
-	QMenu* helpMenu = menuBar()->addMenu(i18n("&Help"));
+	QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
+	QMenu* viewMenu = menuBar()->addMenu(tr("&View"));
+	QMenu* searchMenu = menuBar()->addMenu(tr("&Search"));
+	m_windowMenu = menuBar()->addMenu(tr("&Window"));
+	QMenu* settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
+	QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
 	
-	m_mainToolBar = addToolBar(i18n("BibleTime"));
+	m_mainToolBar = addToolBar(tr("BibleTime"));
 	m_mainToolBar->setFloatable(false);
 	m_mainToolBar->setMovable(false);
 
 	QAction* tmp = new QAction(this);
 	initAction(
 		tmp,
-		i18n("Quit"),
+		tr("Quit"),
 		QString("exit.svg"),
 		QKeySequence(Qt::CTRL + Qt::Key_Q),
-		i18n("Exit BibleTime"),
+		tr("Exit BibleTime"),
 		SLOT( close() )
 	);
 	fileMenu->addAction(tmp);
@@ -122,7 +122,7 @@ void BibleTime::initActions()
 	m_viewToolbar_action->setChecked(true);
 	viewMenu->addAction(initAction(
 		m_viewToolbar_action,
-		i18n("&Show toolbar"),
+		tr("&Show toolbar"),
 		"",
 		QKeySequence(),
 		"",
@@ -134,7 +134,7 @@ void BibleTime::initActions()
 	m_viewMainIndex_action->setCheckable(true);
 	viewMenu->addAction(initAction(
 		m_viewMainIndex_action,
-		i18n("&Show bookshelf"),
+		tr("&Show bookshelf"),
 		CResMgr::mainMenu::view::showMainIndex::icon,
 		CResMgr::mainMenu::view::showMainIndex::accel,
 		CResMgr::mainMenu::view::showMainIndex::tooltip,
@@ -145,7 +145,7 @@ void BibleTime::initActions()
 	m_viewInfoDisplay_action->setCheckable(true);
 	viewMenu->addAction(initAction(
 		m_viewInfoDisplay_action,
-		i18n("Show &mag"),
+		tr("Show &mag"),
 		CResMgr::mainMenu::view::showInfoDisplay::icon,
 		CResMgr::mainMenu::view::showInfoDisplay::accel,
 		CResMgr::mainMenu::view::showInfoDisplay::tooltip,
@@ -159,7 +159,7 @@ void BibleTime::initActions()
 	m_windowFullscreen_action->setCheckable(true);
 	viewMenu->addAction(initAction(
 		m_windowFullscreen_action,
-		i18n("&Fullscreen mode"),
+		tr("&Fullscreen mode"),
 		CResMgr::mainMenu::window::showFullscreen::icon,
 		CResMgr::mainMenu::window::showFullscreen::accel,
 		CResMgr::mainMenu::window::showFullscreen::tooltip,
@@ -169,7 +169,7 @@ void BibleTime::initActions()
 
 	tmp = initAction(
 		new QAction(this),
-		i18n("Search in &open work(s)"),
+		tr("Search in &open work(s)"),
 		CResMgr::mainMenu::mainIndex::search::icon,
 		CResMgr::mainMenu::mainIndex::search::accel,
 		CResMgr::mainMenu::mainIndex::search::tooltip,
@@ -181,29 +181,29 @@ void BibleTime::initActions()
 
 	searchMenu->addAction(initAction(
 		new QAction(this),
-		i18n("Search in standard &Bible"),
+		tr("Search in standard &Bible"),
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip,
 		SLOT(slotSearchDefaultBible())));
 
-	m_windowSaveProfileMenu = new QMenu(i18n("&Save session"));
+	m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
 	m_windowMenu->addMenu(m_windowSaveProfileMenu);
 
 	m_windowSaveToNewProfile_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowSaveToNewProfile_action,
-		i18n("Save as &new session"),
+		tr("Save as &new session"),
 		CResMgr::mainMenu::window::saveToNewProfile::icon,
 		CResMgr::mainMenu::window::saveToNewProfile::accel,
 		CResMgr::mainMenu::window::saveToNewProfile::tooltip,
 		SLOT( saveToNewProfile() ))
 	);	
 
-	m_windowLoadProfileMenu = new QMenu(i18n("&Load session"));
+	m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
 	m_windowMenu->addMenu(m_windowLoadProfileMenu);
 
-	m_windowDeleteProfileMenu = new QMenu(i18n("&Delete session"));
+	m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
 	m_windowMenu->addMenu(m_windowDeleteProfileMenu);
 	
 	QObject::connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
@@ -216,14 +216,14 @@ void BibleTime::initActions()
 
 //--------------------------Window arrangement actions---------------------------------------
 
-	QMenu* arrangementMenu = new QMenu(i18n("&Arrangement mode"));
+	QMenu* arrangementMenu = new QMenu(tr("&Arrangement mode"));
 	m_windowMenu->addMenu(arrangementMenu);
 
 	m_windowManualMode_action = new QAction(this);
 	m_windowManualMode_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowManualMode_action,
-		i18n("&Manual mode"),
+		tr("&Manual mode"),
 		CResMgr::mainMenu::window::arrangementMode::manual::icon,
 		CResMgr::mainMenu::window::arrangementMode::manual::accel,
 		CResMgr::mainMenu::window::arrangementMode::manual::tooltip,
@@ -234,7 +234,7 @@ void BibleTime::initActions()
 	m_windowAutoTileVertical_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowAutoTileVertical_action,
-		i18n("Auto-tile &vertically"),
+		tr("Auto-tile &vertically"),
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel,
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::tooltip,
@@ -245,7 +245,7 @@ void BibleTime::initActions()
 	m_windowAutoTileHorizontal_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowAutoTileHorizontal_action,
-		i18n("Auto-tile &horizontally"),
+		tr("Auto-tile &horizontally"),
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip,
@@ -256,7 +256,7 @@ void BibleTime::initActions()
 	m_windowAutoCascade_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowAutoCascade_action,
-		i18n("Auto-&cascade"),
+		tr("Auto-&cascade"),
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip,
@@ -266,7 +266,7 @@ void BibleTime::initActions()
 	m_windowCascade_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowCascade_action,
-		i18n("&Cascade"),
+		tr("&Cascade"),
 		CResMgr::mainMenu::window::cascade::icon,
 		CResMgr::mainMenu::window::cascade::accel,
 		CResMgr::mainMenu::window::cascade::tooltip,
@@ -276,7 +276,7 @@ void BibleTime::initActions()
 	m_windowTileVertical_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowTileVertical_action,
-		i18n("Tile &vertically"),
+		tr("Tile &vertically"),
 		CResMgr::mainMenu::window::tileVertical::icon,
 		CResMgr::mainMenu::window::tileVertical::accel,
 		CResMgr::mainMenu::window::tileVertical::tooltip,
@@ -286,7 +286,7 @@ void BibleTime::initActions()
 	m_windowTileHorizontal_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowTileHorizontal_action,
-		i18n("Tile &horizontally"),
+		tr("Tile &horizontally"),
 		CResMgr::mainMenu::window::tileHorizontal::icon,
 		CResMgr::mainMenu::window::tileHorizontal::accel,
 		CResMgr::mainMenu::window::tileHorizontal::tooltip,
@@ -296,7 +296,7 @@ void BibleTime::initActions()
 	m_windowCloseAll_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowCloseAll_action,
-		i18n("Cl&ose all"),
+		tr("Cl&ose all"),
 		CResMgr::mainMenu::window::closeAll::icon,
 		CResMgr::mainMenu::window::closeAll::accel,
 		CResMgr::mainMenu::window::closeAll::tooltip,
@@ -306,7 +306,7 @@ void BibleTime::initActions()
 
  	settingsMenu->addAction(initAction(
 		new QAction(this),
-		i18n("&Configure BibleTime"),
+		tr("&Configure BibleTime"),
 		"configure.svg",
 		QKeySequence(),
 		"",
@@ -315,7 +315,7 @@ void BibleTime::initActions()
  
  	settingsMenu->addAction(initAction(
 		new QAction(this),
-		i18n("Bookshelf &Manager"),
+		tr("Bookshelf &Manager"),
 		CResMgr::mainMenu::settings::swordSetupDialog::icon,
 		CResMgr::mainMenu::settings::swordSetupDialog::accel,
 		CResMgr::mainMenu::settings::swordSetupDialog::tooltip,
@@ -323,7 +323,7 @@ void BibleTime::initActions()
 
 	tmp = initAction(
 		new QAction(this),
-		i18n("&Handbook"),
+		tr("&Handbook"),
 		CResMgr::mainMenu::help::handbook::icon,
 		CResMgr::mainMenu::help::handbook::accel,
 		CResMgr::mainMenu::help::handbook::tooltip,
@@ -334,7 +334,7 @@ void BibleTime::initActions()
 
 	helpMenu->addAction(initAction(
 		new QAction(this),
-		i18n("&Bible Study Howto"),
+		tr("&Bible Study Howto"),
 		CResMgr::mainMenu::help::bibleStudyHowTo::icon,
 		CResMgr::mainMenu::help::bibleStudyHowTo::accel,
 		CResMgr::mainMenu::help::bibleStudyHowTo::tooltip,
@@ -345,7 +345,7 @@ void BibleTime::initActions()
 // 
 // 	helpMenu->addAction(initAction(
 // 		new QAction(this),
-// 		i18n("&Report a bug"),
+// 		tr("&Report a bug"),
 // 		"",
 // 		QKeySequence(),
 // 		"",
@@ -356,7 +356,7 @@ void BibleTime::initActions()
 // 
 // 	helpMenu->addAction(initAction(
 // 		new QAction(this),
-// 		i18n("&About BibleTime"),
+// 		tr("&About BibleTime"),
 // 		"",
 // 		QKeySequence(),
 // 		"",
@@ -393,7 +393,7 @@ void BibleTime::initConnections() {
 
 /** Initializes the backend */
 void BibleTime::initBackends() {
-	KStartupLogo::setStatusMessage(i18n("Initializing Sword") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Initializing Sword") + QString("..."));
 	qDebug("BibleTime::initBackends");
 	
 	sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
@@ -446,7 +446,7 @@ void BibleTime::initBackends() {
 		}
 	}
 
-	KStartupLogo::setStatusMessage(i18n("Checking indices") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Checking indices") + QString("..."));
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false

@@ -22,7 +22,7 @@
 #include <QToolTip>
 
 //KDE includes
-#include <klocale.h>
+
 
 using namespace sword;
 
@@ -67,7 +67,7 @@ CSwordSetupModuleListView::CSwordSetupModuleListView(QWidget *parent, bool is_re
 	m_backend = installSource ? BTInstallMgr::Tool::backend(installSource) : CPointers::backend();
 
 	setColumnCount(3);
-	setHeaderLabels(QStringList() << i18n("Name") << i18n("Status") << i18n("Installed version") << (m_is_remote ? i18n("Remote version") : i18n("Location")) );
+	setHeaderLabels(QStringList() << tr("Name") << tr("Status") << tr("Installed version") << (m_is_remote ? tr("Remote version") : tr("Location")) );
 	setRootIsDecorated(true);
 	setColumnWidth(0, 200);
 	//setTooltipColumn(0);
@@ -81,56 +81,56 @@ CSwordSetupModuleListView::~CSwordSetupModuleListView() {
 
 void CSwordSetupModuleListView::init() {
 	m_categoryBible = new QTreeWidgetItem(this);
-	m_categoryBible->setText(0, i18n("Bibles"));
+	m_categoryBible->setText(0, tr("Bibles"));
 	m_categoryBible->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryBible->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryBible->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryBible);
 	
 	m_categoryCommentary = new QTreeWidgetItem(this);
-	m_categoryCommentary->setText(0, i18n("Commentaries"));
+	m_categoryCommentary->setText(0, tr("Commentaries"));
 	m_categoryCommentary->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryCommentary->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryCommentary->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryCommentary);
 	
 	m_categoryLexicon = new QTreeWidgetItem(this);
-	m_categoryLexicon->setText(0, i18n("Lexicons"));
+	m_categoryLexicon->setText(0, tr("Lexicons"));
 	m_categoryLexicon->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryLexicon->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryLexicon->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryLexicon);
 	
 	m_categoryBook = new QTreeWidgetItem(this);
-	m_categoryBook->setText(0, i18n("Books"));
+	m_categoryBook->setText(0, tr("Books"));
 	m_categoryBook->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryBook->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryBook->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryBook);
 	
 	m_categoryDevotionals = new QTreeWidgetItem(this);
-	m_categoryDevotionals->setText(0, i18n("Daily Devotionals"));
+	m_categoryDevotionals->setText(0, tr("Daily Devotionals"));
 	m_categoryDevotionals->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryDevotionals->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryDevotionals->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryDevotionals);
 	
 	m_categoryGlossaries = new QTreeWidgetItem(this);
-	m_categoryGlossaries->setText(0, i18n("Glossaries"));
+	m_categoryGlossaries->setText(0, tr("Glossaries"));
 	m_categoryGlossaries->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryGlossaries->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryGlossaries->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryGlossaries);
 
 	m_categoryImages = new QTreeWidgetItem(this);
-	m_categoryImages->setText(0, i18n("Maps and Images"));
+	m_categoryImages->setText(0, tr("Maps and Images"));
 	m_categoryImages->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryImages->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryImages->setCheckState(0, Qt::Unchecked);
 	addTopLevelItem(m_categoryImages);
 
 	m_categoryCult = new QTreeWidgetItem(this);
-	m_categoryCult->setText(0, i18n("Cult/Unorthodox/Questionable"));
+	m_categoryCult->setText(0, tr("Cult/Unorthodox/Questionable"));
 	m_categoryCult->setIcon( 0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon) );
 	m_categoryCult->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_categoryCult->setCheckState(0, Qt::Unchecked);
@@ -245,10 +245,10 @@ void CSwordSetupModuleListView::addModule(CSwordModuleInfo* module, QString loca
 	newItem->setCheckState(0, Qt::Unchecked);
 	
 	if (m_is_remote) {
-		newItem->setText(1, localVersion.isEmpty() ? i18n("New") : i18n("Updated"));
+		newItem->setText(1, localVersion.isEmpty() ? tr("New") : tr("Updated"));
 	} 
 	else {
-		newItem->setText(1, i18n("Installed") );
+		newItem->setText(1, tr("Installed") );
 	}
 
 	newItem->setText(2, localVersion);

@@ -24,7 +24,7 @@
 
 //KDE includes
 #include <kaction.h>
-#include <klocale.h>
+
 
 
 CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {

@@ -234,42 +234,43 @@ void BibleTime::setPlainCaption( const QString& ) {
 	QString suffix;
 	if (!m_mdi->currentApplicationCaption().isEmpty())
 		suffix = QString(" [").append(m_mdi->currentApplicationCaption()).append("]");
-	QMainWindow::setWindowTitle( i18n("BibleTime ").append(BT_VERSION) + suffix );
+	QMainWindow::setWindowTitle( tr("BibleTime ").append(BT_VERSION) + suffix );
 }
 
 /** Processes the commandline options given to BibleTime. */
 void BibleTime::processCommandline() {
-	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-	//   if (CBTConfig::get(CBTConfig::crashedLastTime)) {
-	if (!CBTConfig::get
-				(CBTConfig::crashedTwoTimes) && !args->isSet("ignore-session")) { //restore workspace if it crashed only once
-			restoreWorkspace();
-		}
-	//   }
-
-	//open every time a module if the command line option was set.
-	if ( args->isSet("open-default-bible") && !CBTConfig::get
-				(CBTConfig::crashedLastTime) && !CBTConfig::get
-					(CBTConfig::crashedTwoTimes)) { //restore workspace if it crashed ony once
-				QString bibleKey = args->getOption("open-default-bible");
-				CSwordModuleInfo* bible = CBTConfig::get
-											  (CBTConfig::standardBible);
-
-				if (bibleKey == "<random>") {
-					CSwordVerseKey vk(0);
-					const int maxIndex = 32400;
-
-					KRandomSequence rs;
-					int newIndex = rs.getLong(maxIndex);
-					vk.setPosition(sword::TOP);
-					vk.Index(newIndex);
-					bibleKey = vk.key();
-				}
-				createReadDisplayWindow(bible, bibleKey);
-				//    if (isVisible())
-				m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
-			}
+	return; //TODO: commandline processing disabled for now
+// 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+// 
+// 	//   if (CBTConfig::get(CBTConfig::crashedLastTime)) {
+// 	if (!CBTConfig::get
+// 				(CBTConfig::crashedTwoTimes) && !args->isSet("ignore-session")) { //restore workspace if it crashed only once
+// 			restoreWorkspace();
+// 		}
+// 	//   }
+// 
+// 	//open every time a module if the command line option was set.
+// 	if ( args->isSet("open-default-bible") && !CBTConfig::get
+// 				(CBTConfig::crashedLastTime) && !CBTConfig::get
+// 					(CBTConfig::crashedTwoTimes)) { //restore workspace if it crashed ony once
+// 				QString bibleKey = args->getOption("open-default-bible");
+// 				CSwordModuleInfo* bible = CBTConfig::get
+// 											  (CBTConfig::standardBible);
+// 
+// 				if (bibleKey == "<random>") {
+// 					CSwordVerseKey vk(0);
+// 					const int maxIndex = 32400;
+// 
+// 					KRandomSequence rs;
+// 					int newIndex = rs.getLong(maxIndex);
+// 					vk.setPosition(sword::TOP);
+// 					vk.Index(newIndex);
+// 					bibleKey = vk.key();
+// 				}
+// 				createReadDisplayWindow(bible, bibleKey);
+// 				//    if (isVisible())
+// 				m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
+// 			}
 }
 
 bool BibleTime::event(QEvent* e)

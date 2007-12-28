@@ -30,7 +30,7 @@
 
 #include <QDebug>
 
-#include <klocale.h>
+
 
 
 CIndexFolderBase::CIndexFolderBase(CBookmarkIndex* mainIndex, const Type type) : CIndexItemBase(mainIndex, type) {}
@@ -70,7 +70,7 @@ void CIndexFolderBase::setExpanded( bool open ) {
 /** Creates a new sub folder of this folder. */
 void CIndexFolderBase::newSubFolder() {
 	if (dynamic_cast<CIndexBookmarkFolder*>(this) || dynamic_cast<CIndexSubFolder*>(this) ) {
-		CIndexSubFolder* f = new CIndexSubFolder(this, i18n("New folder"));
+		CIndexSubFolder* f = new CIndexSubFolder(this, QObject::tr("New folder"));
 		f->init();
 
 		treeWidget()->setCurrentItem(f);

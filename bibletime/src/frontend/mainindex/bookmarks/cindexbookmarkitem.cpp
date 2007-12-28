@@ -34,7 +34,7 @@
 #include <boost/scoped_ptr.hpp>
 
 //KDE
-#include <klocale.h>
+
 
 CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModuleInfo* module, const QString& key, const QString& description)
 	: CIndexItemBase(parentItem),
@@ -71,7 +71,7 @@ void CIndexBookmarkItem::update() {
 	//setMultiLinesEnabled(true); //TODO: ???
 	setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
 
-	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : i18n("unknown"));
+	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
 	setText(0, title);
 	setToolTip(0, toolTip());
 }
@@ -179,7 +179,7 @@ const bool CIndexBookmarkItem::enableAction(const MenuAction action) {
 /** Changes this bookmark. */
 void CIndexBookmarkItem::rename() {
 	bool ok  = false;
-	const QString newDescription = CInputDialog::getText(i18n("Change description ..."), i18n("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
+	const QString newDescription = CInputDialog::getText(QObject::tr("Change description ..."), QObject::tr("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
 
 	if (ok) {
 		m_description = newDescription;
