@@ -7837,7 +7837,7 @@ Okno wyszukiwania otworzy się z tym słowem w miejscu na poszukiwane wyrażenie
         <translation>Analiza rdzeni</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation>Startuj BibleTime</translation>
     </message>

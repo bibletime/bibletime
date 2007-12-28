@@ -7768,7 +7768,7 @@ Selecciónela y cópiala al portapapeles.  Entonces inserte la palabra copiada a
         <translation>Analizando Numeros fuertes</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation>Iniciando BibleTime</translation>
     </message>

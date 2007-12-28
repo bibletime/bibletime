@@ -30,7 +30,6 @@
 
 #include <kcmdlineargs.h>
 #include <kcrash.h>
-#include <kstandarddirs.h> //for locale inclusion
 #include <kaboutdata.h>
 
 #include <klocalizedstring.h> //tmp
@@ -242,9 +241,6 @@ int main(int argc, char* argv[]) {
 	BibleTimeTranslator.load( QLocale::system().name(), DirectoryUtil::getLocaleDir().canonicalPath());
 	app.installTranslator(&BibleTimeTranslator);
 
-	//For the transition time add our own locale dir as locale resource
-// 	KGlobal::dirs()->addResourceDir("locale", DirectoryUtil::getLocaleDir().canonicalPath());
-	
 // 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
 	// A binary option (on / off)

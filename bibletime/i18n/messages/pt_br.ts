@@ -7791,7 +7791,7 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="unfinished">Analizar gramaticalmente número de strong&apos;s</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="282"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Iniciando BibleTime</translation>
     </message>

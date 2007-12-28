@@ -136,6 +136,10 @@ FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
 		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.ts")
 	ADD_DEPENDENCIES(messages "messages_${_INSTALL_LOCALE_LANG}")
 ENDFOREACH(_INSTALL_LOCALE_LANG)
+# Template file for translators
+ADD_CUSTOM_TARGET("messages_default"
+	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/messages.ts")
+ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
 

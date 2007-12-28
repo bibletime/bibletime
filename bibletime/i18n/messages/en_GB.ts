@@ -7911,7 +7911,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">Strong&apos;s Numbers</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Starting BibleTime</translation>
     </message>

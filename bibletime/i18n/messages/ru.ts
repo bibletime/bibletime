@@ -7812,7 +7812,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>Номера Стронга</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="282"/>
         <source>Starting BibleTime</source>
         <translation>Запуск BibleTime</translation>
     </message>

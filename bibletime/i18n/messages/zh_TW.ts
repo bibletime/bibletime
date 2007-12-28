@@ -7764,7 +7764,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>正在剖析 Strong&apos;s Numbers</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation>正在啟動 BibleTime</translation>
     </message>

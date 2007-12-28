@@ -8190,7 +8190,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">Strongs nummer</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Om BibleTime</translation>
     </message>

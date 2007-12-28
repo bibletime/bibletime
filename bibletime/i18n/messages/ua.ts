@@ -7992,7 +7992,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">Номери Стронга</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="282"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">BibleTime стартує</translation>
     </message>

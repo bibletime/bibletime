@@ -7816,7 +7816,7 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation>Lancement de BibleTime</translation>
     </message>

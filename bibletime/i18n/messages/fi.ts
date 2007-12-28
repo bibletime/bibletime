@@ -7763,7 +7763,7 @@ Valitse sana ja kopioi se leikepöydälle. Liitä kopioitu sana hakutekstin laat
         <translation>Jäsentää Strongin numeroita</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="263"/>
+        <location filename="../../src/main.cpp" line="283"/>
         <source>Starting BibleTime</source>
         <translation>Käynnistetään BibleTime</translation>
     </message>
