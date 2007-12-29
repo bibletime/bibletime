@@ -523,11 +523,11 @@ void CHTMLReadDisplay::slotGoToAnchor(const QString& anchor) {
 }
 
 void CHTMLReadDisplay::zoomIn() {
-	setZoomFactor( (int)((float)zoomFactor()*1.1) );
+	setFontScaleFactor( (int)((float)fontScaleFactor()*1.1) );
 }
 
 void CHTMLReadDisplay::zoomOut() {
-	setZoomFactor( (int)((float)zoomFactor()*(1.0/1.1)) );
+	setFontScaleFactor( (int)((float)fontScaleFactor()*(1.0/1.1)) );
 }
 
 void CHTMLReadDisplay::openFindTextDialog() {
