@@ -108,11 +108,9 @@ TARGET_LINK_LIBRARIES(bibletime
 #
 # main binary
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
-# catalogs
+# compiled catalogs
 FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
-	ADD_CUSTOM_TARGET("compile_messages_${_INSTALL_LOCALE_LANG}" ALL
-		COMMAND lrelease "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.ts" -qm "${CMAKE_CURRENT_BINARY_DIR}/${_INSTALL_LOCALE_LANG}.qm")
-	INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${_INSTALL_LOCALE_LANG}.qm"
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.qm"
 		DESTINATION "share/bibletime/locale/")
 ENDFOREACH(_INSTALL_LOCALE_LANG)
 # icons
@@ -130,11 +128,15 @@ INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
 # Update source catalog files (this is the basis for the translator's work)
 # Invoke this with "make messages"
 #
-ADD_CUSTOM_TARGET(messages)
+ADD_CUSTOM_TARGET("messages")
 FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
 	ADD_CUSTOM_TARGET("messages_${_INSTALL_LOCALE_LANG}"
 		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.ts")
-	ADD_DEPENDENCIES(messages "messages_${_INSTALL_LOCALE_LANG}")
+	ADD_CUSTOM_TARGET("compile_messages_${_INSTALL_LOCALE_LANG}"
+		COMMAND lrelease "${_INSTALL_LOCALE_LANG}.ts" -qm "${_INSTALL_LOCALE_LANG}.qm"
+		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/)
+	ADD_DEPENDENCIES("compile_messages_${_INSTALL_LOCALE_LANG}" "messages_${_INSTALL_LOCALE_LANG}")
+	ADD_DEPENDENCIES("messages" "compile_messages_${_INSTALL_LOCALE_LANG}")
 ENDFOREACH(_INSTALL_LOCALE_LANG)
 # Template file for translators
 ADD_CUSTOM_TARGET("messages_default"
