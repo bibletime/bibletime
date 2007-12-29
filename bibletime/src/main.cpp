@@ -32,7 +32,7 @@
 #include <kcrash.h>
 #include <kaboutdata.h>
 
-#include <klocalizedstring.h> //tmp
+#include <klocalizedstring.h> //TODO: tmp, remove
 
 using namespace util::filesystem;
 
@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
 	qInstallMsgHandler( myMessageOutput );
 	
 	//TODO: port to QT
-	static KCmdLineOptions options;
+// 	static KCmdLineOptions options;
 // 	options.add("debug", QObject::tr("Enable debug messages"),0);
 // 	options.add("ignore-session", QObject::tr("Ignore the startup session that was saved when BibleTime was closed the last time."),0);
 // 	options.add("open-default-bible <key>", QObject::tr("Open the standard Bible with the given key. Use <random> to open at a random position."),0);
@@ -219,7 +219,7 @@ int main(int argc, char* argv[]) {
 // 	QString dummy = I18N_NOOP("_: NAME OF TRANSLATORS\nYour names"); //translator's name
 // 	dummy = I18N_NOOP("_: EMAIL OF TRANSLATORS\nYour emails"); //translators eMail
 
-	KLocalizedString dummy;
+	KLocalizedString dummy; //TODO: remove, only dummy code here
 	KAboutData aboutData(
 		"bibletime",
 		"bibletime",
@@ -231,8 +231,7 @@ int main(int argc, char* argv[]) {
 		dummy,
 		"http://www.bibletime.info/",
 		"info@bibletime.info");
-	KCmdLineArgs::init(argc, argv, &aboutData);
-// 	KCmdLineArgs::addCmdLineOptions( options );
+	KCmdLineArgs::init(&aboutData);
 
 // 	BibleTimeApp app(argc, argv);#for QApplication
 	BibleTimeApp app;
@@ -241,16 +240,14 @@ int main(int argc, char* argv[]) {
 	BibleTimeTranslator.load( QLocale::system().name(), DirectoryUtil::getLocaleDir().canonicalPath());
 	app.installTranslator(&BibleTimeTranslator);
 
-// 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
 	// A binary option (on / off)
-// 	if (args->isSet("debug")) {
-// 		showDebugMessages = true;
-// 		app.setProperty("--debug", true);
-// 	} 
-// 	else {
-// 		app.setProperty("--debug", false);
-// 	}
+	if (app.QCoreApplication::arguments().contains("--debug")) {
+		showDebugMessages = true;
+		app.setProperty("--debug", true);
+	} 
+	else {
+		app.setProperty("--debug", false);
+	}
 
 // 	if (kapp->isSessionRestored()) {
 // 		//TODO: how to restore session with pure Qt?
