@@ -7767,7 +7767,7 @@ Marker ordet og kopier det ind i søgedialogen
         <translation>Gennemgår Strong&apos;s numre</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>Starter Bibletime</translation>
     </message>

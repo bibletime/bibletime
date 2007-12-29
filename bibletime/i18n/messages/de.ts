@@ -7770,7 +7770,7 @@ Markieren Sie das Wort. Kopieren Sie es anschließend in die Zwischenablage, und
         <translation>Analysiere Strongnummern</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>BibleTime startet</translation>
     </message>

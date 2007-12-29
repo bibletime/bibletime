@@ -7765,7 +7765,7 @@ Selecteer dit woord en kopieer het naar het klembord. Voer nu de gekopieerde tek
         <translation>Strong-nummering verwerken</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>BibleTime start op</translation>
     </message>

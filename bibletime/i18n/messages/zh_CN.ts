@@ -7762,7 +7762,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>正在分析 Strong&apos;s Numbers</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="282"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>正在启动 BibleTime</translation>
     </message>

@@ -7836,7 +7836,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">바이블타임 시작</translation>
     </message>

@@ -7815,7 +7815,7 @@ Vel ordet og kopier det til utklippstavla. No kan du lime inn det kopierte ordet
         <translation>Strong-tal</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>Startar BibleTime</translation>
     </message>

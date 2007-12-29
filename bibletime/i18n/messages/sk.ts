@@ -7832,7 +7832,7 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished">Strongove čísla</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="282"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Spúšťam BibleTime</translation>
     </message>

@@ -7660,7 +7660,7 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
         <translation>Strongi numbrite sõelumine</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>BibleTime käivitamine</translation>
     </message>

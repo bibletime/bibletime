@@ -7770,7 +7770,7 @@ Fereastra de căutare va fi deschisă cu acest cuvânt în linia de editare.
         <translation>Numere Strong</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="282"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>Pornesc BibleTime</translation>
     </message>

@@ -7800,7 +7800,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation>Strongova čísla</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation>Spouštím BibleTime</translation>
     </message>

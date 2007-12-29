@@ -8358,7 +8358,7 @@ versszámozással együtt</translation>
         <translation type="unfinished">Strong&apos;s számok mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">A BibleTime beállításainak változtatása</translation>
     </message>

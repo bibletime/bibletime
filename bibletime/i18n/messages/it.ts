@@ -7946,7 +7946,7 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Numeri di Strong </translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="283"/>
+        <location filename="../../src/main.cpp" line="276"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Inizializzazione di BibleTime</translation>
     </message>
