@@ -235,7 +235,12 @@ int main(int argc, char* argv[]) {
 
 // 	BibleTimeApp app(argc, argv);#for QApplication
 	BibleTimeApp app;
-
+	
+	//first install QT's own translations
+	QTranslator qtTranslator;
+	qtTranslator.load("qt_" + QLocale::system().name());
+	app.installTranslator(&qtTranslator);
+	//then our own
 	QTranslator BibleTimeTranslator;
 	BibleTimeTranslator.load( QLocale::system().name(), DirectoryUtil::getLocaleDir().canonicalPath());
 	app.installTranslator(&BibleTimeTranslator);
