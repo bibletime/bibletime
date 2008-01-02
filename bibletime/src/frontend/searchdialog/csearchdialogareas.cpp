@@ -283,9 +283,9 @@ void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
 
 	m_modules = modules;
 	//pre-select the first module in the list
-	m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 	//this will pre-select and display the first hit of that module
 	m_moduleListBox->setupTree(modules, searchedText);
+	m_moduleListBox->setCurrentItem(m_moduleListBox->topLevelItem(0), 0);
 
 	m_analyseButton->setEnabled(true);
 }
