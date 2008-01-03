@@ -30,23 +30,18 @@
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 
-
-//KDE includes
-#include <ktoolbar.h>
-
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <ktoolbarpopupaction.h>
-#include <kactionmenu.h>
-#include <kmenu.h>
-
-
 #include <QMenu>
 #include <QApplication>
 #include <QFile>
 #include <QFileDialog>
 
 
+#include <ktoolbar.h>
+#include <kaction.h>
+#include <kactioncollection.h>
+#include <ktoolbarpopupaction.h>
+#include <kactionmenu.h>
+#include <kmenu.h>
 
 CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
 	: CReadWindow(moduleList, parent)

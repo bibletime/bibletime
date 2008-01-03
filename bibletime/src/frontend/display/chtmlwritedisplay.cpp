@@ -16,22 +16,19 @@
 
 #include "util/cresmgr.h"
 
-//Qt includes
 #include <QMenu>
 #include <QToolTip>
 #include <QTextEdit>
 #include <QFontComboBox>
+#include <QMenu>
 
-//KDE includes
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
 #include <kfontaction.h>
 #include <kfontsizeaction.h>
 #include <ktoolbar.h>
-
 #include <kcolorbutton.h>
-#include <kmenu.h>
 
 CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
 : CPlainWriteDisplay(parentWindow,parent) {
@@ -263,8 +260,8 @@ QMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& ) {
 		connect(m_actions.selectAll, SIGNAL(triggered(bool)), SLOT(selectAll()));
 	}
 
-	KMenu* popup = new KMenu(this);
-	popup->addTitle(tr("HTML editor window"));
+	QMenu* popup = new QMenu(this);
+	popup->setTitle(tr("HTML editor window"));
 	popup->addAction(m_actions.selectAll);
 	return popup;
 };

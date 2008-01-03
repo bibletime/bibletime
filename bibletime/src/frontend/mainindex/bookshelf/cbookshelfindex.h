@@ -35,7 +35,7 @@ class QDragMoveEvent;
 class QDragLeaveEvent;
 class BTMimeData;
 class KActionMenu;
-class KMenu;
+class QMenu;
 class QActionGroup;
 class QMouseEvent;
 class BTModuleTreeItem;
@@ -179,7 +179,7 @@ private:
 
 	QList<KAction*> m_actionList;
 
-	KMenu* m_popup;
+	QMenu* m_popup;
 
 signals:
 	/**

@@ -35,11 +35,10 @@
 #include <QTimer>
 #include <QEvent>
 #include <QApplication>
+#include <QMenu>
 
 //KDE includes
 #include <kstandardshortcut.h>
-
-#include <kmenu.h>
 #include <kaction.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>

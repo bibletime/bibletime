@@ -14,6 +14,7 @@
 
 #include <QList>
 #include <QDebug>
+#include <QAction>
 
 #include <QToolBar>
 

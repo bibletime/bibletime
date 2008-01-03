@@ -47,10 +47,8 @@
 #include <QMouseEvent>
 #include <QMessageBox>
 #include <QDebug>
+#include <QMenu>
 
-//KDE includes
-
-#include <kmenu.h>
 #include <kaction.h>
 #include <kactionmenu.h>
 
@@ -112,8 +110,8 @@ void CBookmarkIndex::initView()
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	//setup the popup menu
-	m_popup = new KMenu(viewport());
-	m_popup->addTitle(tr("Bookmarks"));
+	m_popup = new QMenu(viewport());
+	m_popup->setTitle(tr("Bookmarks"));
 
 	m_actions.newFolder = newKAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
 	m_actions.changeFolder = newKAction(tr("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);

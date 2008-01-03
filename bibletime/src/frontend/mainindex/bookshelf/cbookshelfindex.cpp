@@ -30,7 +30,6 @@
 #include "util/directoryutil.h"
 
 //Qt includes
-//#include <QRegExp>
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
@@ -41,12 +40,10 @@
 #include <QTreeWidgetItem>
 #include <QInputDialog> // for unlocking key
 #include <QDebug>
+#include <QMenu>
 
 #include <boost/scoped_ptr.hpp>
 
-//KDE includes
-
-#include <kmenu.h>
 #include <kaction.h>
 #include <kactionmenu.h>
 
@@ -86,8 +83,8 @@ void CBookshelfIndex::initView()
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
 	//setup the popup menu
-	m_popup = new KMenu(viewport());
-	m_popup->addTitle(tr("Bookshelf"));
+	m_popup = new QMenu(viewport());
+	m_popup->setTitle(tr("Bookshelf"));
 
 	initActions();
 

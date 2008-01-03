@@ -22,13 +22,8 @@
 #include <QToolTip>
 #include <QHash>
 #include <QToolButton>
-
-//for better debug
+#include <QMenu>
 #include <QtDebug>
-
-//KDE includes
-
-#include <kmenu.h>
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule,CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
 	: QToolButton(parent),
@@ -67,7 +62,7 @@ const QString CModuleChooserButton::iconName() {
 }
 
 CSwordModuleInfo* CModuleChooserButton::module() {
-	foreach (KMenu* popup, m_submenus) {
+	foreach (QMenu* popup, m_submenus) {
 		foreach (QAction* action, popup->actions()) {
 			if ( action->isChecked() ) { //idAt -> , isItemChecked -> QAction::isChecked
 				QString mod = action->text(); //popup->text(popup->idAt(i)); //text -> 
@@ -87,10 +82,10 @@ int CModuleChooserButton::getId() const {
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( QAction* action ) {
 	
-	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-	QListIterator<KMenu*> it(m_submenus);
+	//for ( QMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	QListIterator<QMenu*> it(m_submenus);
 	while (it.hasNext()) {
-		KMenu* popup = it.next();
+		QMenu* popup = it.next();
 		for (unsigned int i = 0; i < popup->actions().count(); i++) {
 			popup->actions().at(i)->setChecked(false);//popup->setItemChecked(popup->idAt(i),false);
 		}
@@ -116,7 +111,7 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 		emit sigChanged();
 
 		setText( tr("Select a work") );
-		m_titleAction->setText(tr("Select a work"));//m_popup->changeTitle(m_titleId, tr("Select a work"));
+		m_popup->setTitle(tr("Select a work"));//m_popup->changeTitle(m_titleId, tr("Select a work"));
 
 		setToolTip(QString::null); //TODO: how to remove tooltip? Does this leave an empty tooltip box?
 		if (module()) {setToolTip(module()->name());}
@@ -130,13 +125,13 @@ void CModuleChooserButton::populateMenu() {
 	delete m_popup;
 
 	//create a new, empty popup
-	m_popup = new KMenu(this);
+	m_popup = new QMenu(this);
 	
 	if (m_module) {
-		m_titleAction = m_popup->addTitle( tr("Select a work") );
+		m_popup->setTitle( tr("Select a work") );
 	}
 	else {
-		m_titleAction = m_popup->addTitle( tr("Select an additional work") );
+		m_popup->setTitle( tr("Select an additional work") );
 	}
 
 	m_noneAction = m_popup->addAction(tr("NONE"));
@@ -151,7 +146,7 @@ void CModuleChooserButton::populateMenu() {
 	//*********************** Add languages and modules*******************************
 
 	QStringList languages;
-	QHash<QString, KMenu*> langdict;
+	QHash<QString, QMenu*> langdict;
 
 	//the modules list contains only the modules we can use, i.e. same type and same features
 	ListCSwordModuleInfo modules;
@@ -167,7 +162,7 @@ void CModuleChooserButton::populateMenu() {
 
 	// iterate through all found modules of the type we support
 	// adding all different languages into languages list
-	// and adding a new {language name/KMenu} pair into the dict
+	// and adding a new {language name/QMenu} pair into the dict
 	foreach (CSwordModuleInfo* moduleInfo, modules) {
 		QString lang = moduleInfo->language()->translatedName();
 
@@ -182,7 +177,7 @@ void CModuleChooserButton::populateMenu() {
 		if (!languages.contains(lang) ) { //this lang was not yet added
 			languages += lang;
 
-			KMenu* menu = new KMenu;
+			QMenu* menu = new QMenu;
 			langdict[lang] = menu;
 			m_submenus.append(menu);
 			connect(menu, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
@@ -224,10 +219,10 @@ void CModuleChooserButton::updateMenuItems() {
 	CSwordModuleInfo* module = 0;
 	ListCSwordModuleInfo chosenModules = m_moduleChooserBar->getModuleList();
 
-	//for ( KMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
-	QListIterator<KMenu*> it(m_submenus);
+	//for ( QMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
+	QListIterator<QMenu*> it(m_submenus);
 	while (it.hasNext()) {
-		KMenu* popup = it.next();
+		QMenu* popup = it.next();
 		for (unsigned int i = 0; i < popup->actions().count(); i++) {
 			moduleName = popup->actions().at(i)->text();
 			moduleName.remove(QChar('&')); //remove Hotkey indicator

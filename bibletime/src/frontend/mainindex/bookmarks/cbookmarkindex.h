@@ -36,7 +36,7 @@ class QDragMoveEvent;
 class QDragLeaveEvent;
 class BTMimeData;
 class KActionMenu;
-class KMenu;
+class QMenu;
 
 class QMouseEvent;
 
@@ -196,7 +196,7 @@ private:
 		KAction* deleteEntries;
 	}
 	m_actions;
-	KMenu* m_popup;
+	QMenu* m_popup;
 
 };
 

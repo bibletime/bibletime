@@ -22,15 +22,11 @@
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 
-//Qt includes
+#include <QMenu>
 
-//KDE includes
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
-//#include <kaccel.h>
-
-#include <kmenu.h>
 #include <ktoolbar.h>
 
 using namespace Profile;

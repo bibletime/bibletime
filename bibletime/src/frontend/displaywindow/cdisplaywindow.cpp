@@ -7,9 +7,7 @@
 *
 **********/
 
-//BibleTime includes
 #include "cdisplaywindow.h"
-#include "cdisplaywindow.moc"
 
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
@@ -24,20 +22,16 @@
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-//Qt includes
 #include <QWidget>
 #include <QCloseEvent>
 #include <QStringList>
 #include <QMainWindow>
 #include <QDebug>
-
-//KDE includes
-#include <kdeversion.h>
+#include <QMenu>
 
 #include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
-#include <kmenu.h>
 
 using namespace Profile;
 
@@ -348,13 +342,9 @@ const bool CDisplayWindow::init() {
 	//setup focus stuff.
 	setFocusPolicy(Qt::ClickFocus);
 	parentWidget()->setFocusPolicy(Qt::ClickFocus);
-	qDebug("CDisplayWindow::init, call init Actions");
 	initActions();
-	qDebug("CDisplayWindow::init, call init Toolbars");
 	initToolbars();
-	qDebug("CDisplayWindow::init, call init Connections");
 	initConnections();
-	qDebug("CDisplayWindow::init, call setupPopupMenu()");
 	setupPopupMenu();
 
 	m_filterOptions = CBTConfig::getFilterOptionDefaults();
@@ -364,7 +354,6 @@ const bool CDisplayWindow::init() {
 	}
 
 	setReady(true);
-	qDebug("CDisplayWindow::init, will return");
 	return true;
 }
 

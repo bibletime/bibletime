@@ -20,8 +20,6 @@
 #include <QHash>
 #include <QToolButton>
 
-
-//class KMenu;
 class QMenu;
 
 /** This class manages the display options of the selected modules.

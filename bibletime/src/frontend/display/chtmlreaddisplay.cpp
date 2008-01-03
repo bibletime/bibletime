@@ -23,10 +23,6 @@
 #include "util/cpointers.h"
 #include <boost/scoped_ptr.hpp>
 
-//We will need to reference this in the Qt includes
-#include <kdeversion.h>
-
-//Qt includes
 #include <QCursor>
 #include <QScrollArea>
 #include <QDrag>
@@ -36,12 +32,10 @@
 #include <QDebug>
 #include <QApplication>
 
-//KDE includes
 #include <ktoolinvocation.h>
 #include <khtmlview.h>
 #include <kglobalsettings.h>
 #include <khtml_events.h>
-
 #include <dom/dom2_range.h>
 #include <dom/html_element.h>
 #include <dom/dom2_traversal.h>

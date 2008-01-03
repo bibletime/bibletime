@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CMODULECHOOSERBUTTON_H
 #define CMODULECHOOSERBUTTON_H
 
@@ -20,9 +18,7 @@
 #include <QToolButton>
 #include <QList>
 
-#include <kmenu.h>
-
-//class KMenu;
+class QMenu;
 class CModuleChooserBar;
 
 /** The CModuleChooserButton displays a list of submenus sorted by language which contain the possible modules
@@ -54,12 +50,11 @@ private:
 	bool m_hasModule;
 	int m_id;
 	QAction* m_noneAction;
-	QAction* m_titleAction;
 	CSwordModuleInfo::ModuleType m_moduleType;
 	CSwordModuleInfo* m_module;
 
-	KMenu* m_popup;
-	QList<KMenu*> m_submenus;
+	QMenu* m_popup;
+	QList<QMenu*> m_submenus;
 
 	CModuleChooserBar* m_moduleChooserBar;
 

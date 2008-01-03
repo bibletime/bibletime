@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CMODULECHOOSERBAR_H
 #define CMODULECHOOSERBAR_H
 
@@ -19,9 +17,6 @@
 //Qt includes
 #include <QList>
 #include <QToolBar>
-
-//KDE includes
-//#include <ktoolbar.h>
 
 class CModuleChooserButton;
 class QWidget;

@@ -25,19 +25,14 @@
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 
-//Qt includes
 #include <QSplitter>
 #include <QToolBar>
+#include <QMenu>
 
-//KDE includes
 #include <kaction.h>
 #include <ktoggleaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
-
-#include <kdeversion.h>
-#include <kmenu.h>
-//#include <ktoolbar.h>
 
 using namespace Profile;
 
