@@ -233,7 +233,7 @@ int main(int argc, char* argv[]) {
 		"info@bibletime.info");
 	KCmdLineArgs::init(&aboutData);
 
-// 	BibleTimeApp app(argc, argv);#for QApplication
+	//BibleTimeApp app(argc, argv); //for QApplication
 	BibleTimeApp app;
 	
 	//first install QT's own translations
@@ -246,13 +246,15 @@ int main(int argc, char* argv[]) {
 	app.installTranslator(&BibleTimeTranslator);
 
 	// A binary option (on / off)
-	if (app.QCoreApplication::arguments().contains("--debug")) {
-		showDebugMessages = true;
-		app.setProperty("--debug", true);
-	} 
-	else {
-		app.setProperty("--debug", false);
-	}
+// 	if (app.QCoreApplication::arguments().contains("--debug")) {
+// 		showDebugMessages = true;
+// 		app.setProperty("--debug", true);
+// 	} 
+// 	else {
+// 		app.setProperty("--debug", false);
+// 	}
+	showDebugMessages = true;
+	app.setProperty("--debug", true);
 
 // 	if (kapp->isSessionRestored()) {
 // 		//TODO: how to restore session with pure Qt?
