@@ -123,6 +123,15 @@ void CReadWindow::lookup( CSwordKey* newKey ) {
 void CReadWindow::slotMoveToAnchor()
 {
 	qDebug("CReadWindow::slotMoveToAnchor");
+
+	//Ugly HACK to get scrollbar working when opening a display window;
+	KHTMLPart* part = dynamic_cast<KHTMLPart*>(displayWidget());
+	if (part) {
+		KHTMLView* view = part->view();
+		view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+		view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+	}
+
 	displayWidget()->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 
