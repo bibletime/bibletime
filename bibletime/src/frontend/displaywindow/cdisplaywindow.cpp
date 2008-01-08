@@ -336,7 +336,7 @@ const bool CDisplayWindow::init() {
 	//BibleTime::createReadDisplayWindow calls the show() method
 	qDebug("CDisplayWindow::init");
 	initView();
-	setMinimumSize( 250,200 );
+	setMinimumSize( 100,100 );
 
 	setCaption(windowCaption());
 	//setup focus stuff.
