@@ -13,6 +13,8 @@
 #include "creadwindow.h"
 #include "creadwindow.moc"
 
+#include "frontend/display/chtmlreaddisplay.h"
+
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/keys/cswordkey.h"
@@ -53,6 +55,12 @@ void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
 		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)), this, SLOT(lookup(const QString&, const QString&)));
 
 		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)), this, SLOT(lookup(const QString&)));
+		
+		CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
+		if (v) {
+			QObject::disconnect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
+		}
+
 	}
 
 	m_displayWidget = newDisplay;
@@ -69,6 +77,10 @@ void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
 		this,
 		SLOT(lookup(const QString&))
 	);
+	CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
+	if (v) {
+		QObject::connect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
+	}
 }
 
 /** Lookup the given entry. */
@@ -103,10 +115,15 @@ void CReadWindow::lookup( CSwordKey* newKey ) {
 
 	setCaption( windowCaption() );
 
-	//  qDebug("[CReadWindow::lookup] Moving to anchor %s", CDisplayRendering::keyToHTMLAnchor(key()->key()).latin1());
+	// moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart	
 
-	displayWidget()->moveToAnchor( CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 	qDebug("CReadWindow::lookup end");
+}
+
+void CReadWindow::slotMoveToAnchor()
+{
+	qDebug("CReadWindow::slotMoveToAnchor");
+	displayWidget()->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
@@ -176,9 +193,9 @@ void CReadWindow::copyDisplayedText() {
     \fn CReadWindow::resizeEvent(QResizeEvent* e)
  */
 void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
-	displayWidget()->moveToAnchor(
-		Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key())
-	);
+	if (displayWidget()) {
+		displayWidget()->moveToAnchor(Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
+	}
 }
 
 void CReadWindow::openSearchStrongsDialog() {

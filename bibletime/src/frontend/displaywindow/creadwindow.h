@@ -56,7 +56,15 @@ protected: // Protected methods
 	virtual void resizeEvent(QResizeEvent* e);
 
 protected slots:
+	/**
+	* Load the text using the key
+	*/
 	virtual void lookup( CSwordKey* );
+	/**
+	* Catch the signal when the KHTMLPart has finished the layout (anchors are not ready before that).
+	*/
+	virtual void slotMoveToAnchor();
+
 	/**
 	* Update the status of the popup menu entries.
 	*/
