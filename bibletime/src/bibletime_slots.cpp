@@ -315,10 +315,10 @@ void BibleTime::slotToggleToolbar() {
 void BibleTime::slotToggleMainIndex() {
 	//we use the parent widget because the main index is enclosed in a layout which adds the label at the top
 	if (m_viewMainIndex_action->isChecked()) {
-		m_mainIndex->parentWidget()->show();
+		m_mainIndex->show();
 	}
 	else {
-		m_mainIndex->parentWidget()->hide();
+		m_mainIndex->hide();
 	}
 }
 
