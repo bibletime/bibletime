@@ -39,7 +39,7 @@
 #include <QApplication>
 
 //KDE includes
-//#include <kcmdlineargs.h>
+#include <kcmdlineargs.h>
 #include <krandomsequence.h>
 
 using namespace Profile;
@@ -239,8 +239,11 @@ void BibleTime::setPlainCaption( const QString& ) {
 
 /** Processes the commandline options given to BibleTime. */
 void BibleTime::processCommandline() {
-	QStringList args = qApp->QCoreApplication::arguments();
-	if (!CBTConfig::get(CBTConfig::crashedTwoTimes) && !args.contains("--ignore-session")) { //restore workspace if it crashed only once
+	//TODO: port to Qt when we remove KApplication
+	//QStringList args = qApp->QCoreApplication::arguments();
+
+	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
+	if (!CBTConfig::get(CBTConfig::crashedTwoTimes) && !args->isSet("ignore-session")) { //restore workspace if it crashed only once
 		restoreWorkspace();
 	}
 
