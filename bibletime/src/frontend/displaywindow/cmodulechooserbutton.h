@@ -12,6 +12,7 @@
 
 //BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/btmoduletreeitem.h"
 #include "util/cpointers.h"
 
 //Qt includes
@@ -28,6 +29,14 @@ class CModuleChooserBar;
 class CModuleChooserButton : public QToolButton, public CPointers  {
 	Q_OBJECT
 public:
+
+	/** Filter out modules of wrong type. See populateMenu() and BTModuleTreeItem. */
+	struct TypeFilter : public BTModuleTreeItem::Filter {
+		TypeFilter(CSwordModuleInfo::ModuleType t) {m_mType = t;}
+		bool filter(CSwordModuleInfo* mi) { return (mi->type() == m_mType); }
+		CSwordModuleInfo::ModuleType m_mType;
+	};
+
 	CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent);
 	~CModuleChooserButton();
 
@@ -38,8 +47,11 @@ public:
 	int getId() const;
 	void updateMenuItems();
 
-protected: // Protected methods
+protected:
+	/** Populates the menu with language submenus and module items. */
 	void populateMenu();
+	/** Adds items to the menu recursively. */
+	void addItemToMenu(BTModuleTreeItem* item, QMenu* menu);
 
 private:
 	/**

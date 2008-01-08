@@ -143,74 +143,44 @@ void CModuleChooserButton::populateMenu() {
 	setMenu(m_popup);
 
 
-	//*********************** Add languages and modules*******************************
+	// ******* Add languages and modules ********
 
-	QStringList languages;
-	QHash<QString, QMenu*> langdict;
-
-	//the modules list contains only the modules we can use, i.e. same type and same features
-	ListCSwordModuleInfo modules;
-	ListCSwordModuleInfo allMods = backend()->moduleList();
-
-	// add all modules of the right type into the module list
-	foreach (CSwordModuleInfo* moduleInfo, allMods) {
-		if (moduleInfo->type() != m_moduleType) {
-			continue;
-		}
-		modules.append( moduleInfo );
-	};
-
-	// iterate through all found modules of the type we support
-	// adding all different languages into languages list
-	// and adding a new {language name/QMenu} pair into the dict
-	foreach (CSwordModuleInfo* moduleInfo, modules) {
-		QString lang = moduleInfo->language()->translatedName();
-
-		if (lang.isEmpty()) {
-			//lang = QString::fromLatin1("xx"); //unknown language -- do not use English as default!!
-			lang = moduleInfo->language()->abbrev();
-			if (lang.isEmpty()) {
-				lang = "xx";
-			}
-		}
-
-		if (!languages.contains(lang) ) { //this lang was not yet added
-			languages += lang;
-
-			QMenu* menu = new QMenu;
-			langdict[lang] = menu;
-			m_submenus.append(menu);
-			connect(menu, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
-		}
+	// Filters: add only non-hidden and right type
+	BTModuleTreeItem::HiddenOff hiddenFilter;
+	TypeFilter typeFilter(m_moduleType);
+	QList<BTModuleTreeItem::Filter*> filters;
+	if (true) { // TODO: don't use this filter if hidden are shown in bookshelf index
+		filters.append(&hiddenFilter);
 	}
+	filters.append(&typeFilter);
+	BTModuleTreeItem root(filters, BTModuleTreeItem::LangMod);
+	// add all items recursively
+	addItemToMenu(&root, m_popup);
 
-	// Check the appropriate entry
-	foreach (CSwordModuleInfo* moduleInfo, modules) {
-		QString lang = moduleInfo->language()->translatedName();
-		if (lang.isEmpty()) {
-			lang = moduleInfo->language()->abbrev();
-			if (lang.isEmpty()) lang = "xx";
+}
+
+void CModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu)
+{
+	foreach (BTModuleTreeItem* i, item->children()) {
+
+		if (i->type() == BTModuleTreeItem::Language) {
+			// argument menu was m_popup, create and add a new lang menu to it
+			QMenu* langMenu = new QMenu(i->text(), this);
+			menu->addMenu(langMenu);
+			m_submenus.append(langMenu);
+			connect(langMenu, SIGNAL(triggered(QAction*)), this, SLOT(moduleChosen(QAction*)));
+			// add the module items to the lang menu
+			addItemToMenu(i, langMenu);
 		}
-
-		QString name(moduleInfo->name());
-		name.append(" ").append(moduleInfo->isLocked() ? tr("[locked]") : QString::null);
-		
-		Q_ASSERT(langdict[lang]);
-		QAction* id = langdict[lang]->addAction( name );
-		id->setCheckable(true);
-		if ( m_module && moduleInfo->name() == m_module->name()) id->setChecked(true);
-	}
-
-	languages.sort();
-	foreach ( QString langName, languages ) {
-		langdict[langName]->setTitle(langName);
-		m_popup->addMenu(langdict[langName]); //insertItem ->  QMenu::addMenu(QMenu)
-	}
-
-	if (module()) {
-		 setToolTip(module()->name());
-	} else {
-		setToolTip(tr("No work selected"));
+		else {
+			// item must be module, create and add it to the lang menu
+			QString name(i->text());
+			name.append(" ").append(i->moduleInfo()->isLocked() ? tr("[locked]") : QString::null);
+			QAction* modItem = new QAction(name, menu);
+			modItem->setCheckable(true);
+			if ( m_module && i->text() == m_module->name()) modItem->setChecked(true);
+			menu->addAction(modItem);
+		}
 	}
 }
 
