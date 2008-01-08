@@ -34,6 +34,8 @@ CMainIndex::CMainIndex(QWidget *parent)
 	QObject::connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )), this, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )));
 
 	QObject::connect(m_bookshelfPage, SIGNAL(createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType& )), this, SIGNAL(createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType&)));
+
+	QObject::connect(m_bookshelfPage, SIGNAL(signalSwordSetupChanged()), this, SIGNAL(signalSwordSetupChanged()));
 }
 
 void CMainIndex::reloadSword()

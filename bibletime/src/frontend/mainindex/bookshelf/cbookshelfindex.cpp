@@ -545,6 +545,8 @@ void CBookshelfIndex::actionShowModules(bool checked)
 	qDebug("CBookshelfIndex::actionShowModules");
 	m_showHidden = checked;
 	initTree();
+	// show hidden status is changed, notify others who may rebuild their module lists
+	emit signalSwordSetupChanged();
 }
 
 void CBookshelfIndex::actionHideModules()
@@ -563,6 +565,8 @@ void CBookshelfIndex::actionHideModules()
 	int code = dlg->exec();
 	if (code == QDialog::Accepted) {
 		initTree();
+		// hidden status is changed, notify others who may rebuild their module lists
+		emit signalSwordSetupChanged();
 	}
 }
 
