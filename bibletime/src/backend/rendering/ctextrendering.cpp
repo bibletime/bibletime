@@ -25,9 +25,6 @@
 //Qt
 #include <QRegExp>
 
-//KDE
-
-#include <kurl.h>
 
 using namespace Rendering;
 
