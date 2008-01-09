@@ -22,9 +22,6 @@
 #include <QDragMoveEvent>
 #include <QMenu>
 
-//KDE includes
-#include <kaction.h>
-
 
 
 CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
