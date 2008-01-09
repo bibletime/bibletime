@@ -34,7 +34,6 @@
 
 #include <ktoolinvocation.h>
 #include <khtmlview.h>
-#include <kglobalsettings.h>
 #include <khtml_events.h>
 #include <dom/dom2_range.h>
 #include <dom/html_element.h>
@@ -325,7 +324,7 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 /** Reimplementation for our drag&drop system. Also needed for the mouse tracking */
 void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 	if( e->qmouseEvent()->buttons() & Qt::LeftButton == Qt::LeftButton) { //left mouse button pressed
-		const int delay = KGlobalSettings::dndEventDelay();
+		const int delay = qApp->startDragDistance();
 		QPoint newPos = QPoint(e->x(), e->y());
 	
 
