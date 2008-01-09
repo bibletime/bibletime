@@ -48,9 +48,9 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QMenu>
+#include <QAction>
 
-#include <kaction.h>
-#include <kactionmenu.h>
+
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),
@@ -113,15 +113,15 @@ void CBookmarkIndex::initView()
 	m_popup = new QMenu(viewport());
 	m_popup->setTitle(tr("Bookmarks"));
 
-	m_actions.newFolder = newKAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
-	m_actions.changeFolder = newKAction(tr("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
+	m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
+	m_actions.changeFolder = newQAction(tr("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-	m_actions.changeBookmark = newKAction(tr("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
-	m_actions.importBookmarks = newKAction(tr("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
-	m_actions.exportBookmarks = newKAction(tr("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
-	m_actions.printBookmarks = newKAction(tr("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
+	m_actions.changeBookmark = newQAction(tr("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+	m_actions.importBookmarks = newQAction(tr("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
+	m_actions.exportBookmarks = newQAction(tr("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
+	m_actions.printBookmarks = newQAction(tr("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
 
-	m_actions.deleteEntries = newKAction(tr("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
+	m_actions.deleteEntries = newQAction(tr("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
 
 
 	//fill the popup menu itself
@@ -142,13 +142,13 @@ void CBookmarkIndex::initView()
 	qDebug("CBookmarkIndex::initView end");
 }
 
-/** Convenience function for creating a new KAction.
+/** Convenience function for creating a new QAction.
 * Should be replaced with something better; it was easier to make a new function
-* than to modify all KAction constructors.
+* than to modify all QAction constructors.
 */
-KAction* CBookmarkIndex::newKAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
 {
-	KAction* action = new KAction(KIcon(pix), text, parent);
+	QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
 	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
 	return action;
 }
@@ -440,8 +440,8 @@ void CBookmarkIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidge
 
 
 
-/** Returns the correct KAction object for the given type of action. */
-KAction* const CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) const {
+/** Returns the correct QAction object for the given type of action. */
+QAction* const CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) const {
 	switch (type) {
 	case CIndexItemBase::NewFolder:
 		return m_actions.newFolder;
@@ -490,7 +490,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
 			qDebug("CBookmarkIndex::contextMenu 6");
 			actionType = static_cast<CIndexItemBase::MenuAction>(index);
-			if (KAction* a = action(actionType))
+			if (QAction* a = action(actionType))
 				a->setEnabled( item->enableAction(actionType) );
 		}
 		qDebug("CBookmarkIndex::contextMenu 7");
@@ -502,7 +502,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 		CIndexItemBase::MenuAction actionType;
 		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
 			actionType = static_cast<CIndexItemBase::MenuAction>(index);
-			if (KAction* a = action(actionType))
+			if (QAction* a = action(actionType))
 				a->setEnabled(false);
 		}
 		qDebug("CBookmarkIndex::contextMenu 9");
@@ -519,7 +519,7 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 			}
 			qDebug("CBookmarkIndex::contextMenu 12");
 			if (enableAction) {
-				KAction* a = action(actionType) ;
+				QAction* a = action(actionType) ;
 				if (i && a)
 					a->setEnabled(enableAction);
 			}

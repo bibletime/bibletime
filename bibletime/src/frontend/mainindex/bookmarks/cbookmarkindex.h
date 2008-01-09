@@ -25,9 +25,6 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 
-//KDE includes
-#include <kaction.h>
-
 class CSearchDialog;
 class CMainIndex;
 class QWidget;
@@ -35,8 +32,8 @@ class QDropEvent;
 class QDragMoveEvent;
 class QDragLeaveEvent;
 class BTMimeData;
-class KActionMenu;
 class QMenu;
+class QAction;
 
 class QMouseEvent;
 
@@ -87,9 +84,9 @@ protected: // Protected methods
 	virtual void dragMoveEvent( QDragMoveEvent* event );
 	virtual void dropEvent( QDropEvent* event );
 	/**
-	* Returns the correct KAction object for the given type of action.
+	* Returns the correct action object for the given type of action.
 	*/
-	KAction* const action( const CIndexItemBase::MenuAction type ) const;
+	QAction* const action( const CIndexItemBase::MenuAction type ) const;
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
@@ -170,8 +167,8 @@ private:
 	* Initializes the view.
 	*/
 	void initView();
-	/** Convenience function for creating a new KAction. */
-	KAction* newKAction(const QString& text, const QString& pix, int shortcut, const QObject* receiver, const char* slot, QObject* parent);
+	/** Convenience function for creating a new action. */
+	QAction* newQAction(const QString& text, const QString& pix, int shortcut, const QObject* receiver, const char* slot, QObject* parent);
 
 	/**
 	* Returns true if more than one netry is supported by this action type.
@@ -185,15 +182,15 @@ private:
 	void createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* droppedIntoItem);
 
 	struct Actions {
-		KAction* newFolder;
-		KAction* changeFolder;
+		QAction* newFolder;
+		QAction* changeFolder;
 
-		KAction* changeBookmark;
-		KAction* importBookmarks;
-		KAction* exportBookmarks;
-		KAction* printBookmarks;
+		QAction* changeBookmark;
+		QAction* importBookmarks;
+		QAction* exportBookmarks;
+		QAction* printBookmarks;
 
-		KAction* deleteEntries;
+		QAction* deleteEntries;
 	}
 	m_actions;
 	QMenu* m_popup;
