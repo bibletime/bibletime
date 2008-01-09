@@ -22,13 +22,11 @@
 #include <QTextEdit>
 #include <QFontComboBox>
 #include <QMenu>
+#include <QToolBar>
 
-#include <kaction.h>
 #include <kactioncollection.h>
-#include <ktoggleaction.h>
 #include <kfontaction.h>
 #include <kfontsizeaction.h>
-#include <ktoolbar.h>
 #include <kcolorbutton.h>
 
 CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
@@ -150,15 +148,11 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	//--------------------font chooser-------------------------
 	//TODO: clean the comments after the port works
 	m_actions.fontChooser = new KFontAction( tr("Choose a font"),
-							actions // I suppose this is the parent
-							//CResMgr::displaywindows::writeWindow::underlinedText::accel, //shortcut: setShortcut
-							//actions, //KActionCollection::addAction(), see also previous "parent" and KDE4 porting doc
-							//CResMgr::displaywindows::writeWindow::fontFamily::actionName //see previous
+							actions
 							);
 	m_actions.fontChooser->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::fontFamily::actionName, m_actions.fontChooser);
 	m_actions.fontChooser->setToolTip( CResMgr::displaywindows::writeWindow::fontFamily::tooltip );
-	//m_actions.fontChooser->plug(bar); // -> bar->addAction
 	bar->addAction(m_actions.fontChooser);
 	connect(m_actions.fontChooser, SIGNAL(triggered(const QString&)), this, SLOT(setFontFamily(const QString&)));
 
@@ -174,17 +168,13 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_colorButton = new KColorButton(bar);
 	connect(m_colorButton, SIGNAL(changed(const QColor&)), this, SLOT(slotColorSelected(const QColor&)));
 	
-	//TODO: this has changed quite much,does it work?
-	//bar->insertWidget(50, m_colorButton->sizeHint().width(), m_colorButton);
 	bar->addWidget(m_colorButton);
 	m_colorButton->setToolTip(CResMgr::displaywindows::writeWindow::fontColor::tooltip);
 
-	//(new KActionSeparator())->plug(bar); //seperate font options from formatting buttons
 	bar->addSeparator();
 
 	//--------------------bold toggle-------------------------
 	m_actions.bold = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
 					tr("Bold"),
 					actions);
@@ -194,12 +184,10 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.bold->setToolTip( CResMgr::displaywindows::writeWindow::boldText::tooltip );
 	connect(m_actions.bold, SIGNAL(toggled(bool)), this, SLOT(toggleBold(bool)));
 
-	//m_actions.bold->plug(bar);
 	bar->addAction(m_actions.bold);
 
 	//--------------------italic toggle-------------------------
 	m_actions.italic = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
 					tr("Italic"),
 					actions );
@@ -212,7 +200,6 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------underline toggle-------------------------
 	m_actions.underline = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
 					tr("Underline"),
 					actions );
@@ -228,7 +215,6 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align left toggle-------------------------
 	m_actions.alignLeft = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
 					tr("Left"), actions);
 	m_actions.alignLeft->setCheckable(true);
@@ -240,7 +226,6 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align center toggle-------------------------
 	m_actions.alignCenter = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
 					tr("Center"), actions);
 	m_actions.alignCenter->setCheckable(true);
@@ -252,7 +237,6 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 
 	//--------------------align right toggle-------------------------
 	m_actions.alignRight = new QAction(
-					//KIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
 					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
 					tr("Right"), actions);
 	m_actions.alignRight->setCheckable(true);

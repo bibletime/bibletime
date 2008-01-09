@@ -24,11 +24,10 @@
 //Qt includes
 #include <QToolBar>
 #include <QMessageBox>
+#include <QAction>
 
 //KDE includes
-#include <kaction.h>
 #include <kactioncollection.h>
-#include <ktoggleaction.h>
 
 
 
@@ -64,7 +63,6 @@ void CHTMLWriteWindow::initConnections() {
 void CHTMLWriteWindow::initToolbars() {
 	//setup the main toolbar
 	m_actions.syncWindow = new QAction(
-			//KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
 			tr("Sync with active Bible"),
 			actionCollection()
@@ -76,7 +74,6 @@ void CHTMLWriteWindow::initToolbars() {
 	mainToolBar()->addAction(m_actions.syncWindow);
 
 	m_actions.saveText = new QAction( 
-			//KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
 			tr("Save text"),
 			actionCollection()
@@ -89,7 +86,6 @@ void CHTMLWriteWindow::initToolbars() {
 	
 
 	m_actions.deleteEntry = new QAction(
-			//KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
 			tr("Delete current entry"),
 			actionCollection()
@@ -101,7 +97,6 @@ void CHTMLWriteWindow::initToolbars() {
 	mainToolBar()->addAction(m_actions.deleteEntry);
 
 	m_actions.restoreText = new QAction(
-			//KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
 			tr("Restore original text"),
 			actionCollection()

@@ -15,9 +15,8 @@
 //BibleTime includes
 #include "cplainwritewindow.h"
 
+class QAction;
 
-class KAction;
-class KToggleAction;
 
 /** The WYSIWYG implementation of the editor.
   * @author The BibleTime team

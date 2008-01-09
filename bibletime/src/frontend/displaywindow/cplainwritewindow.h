@@ -16,8 +16,7 @@
 #include "cwritewindow.h"
 
 
-class KAction;
-class KToggleAction;
+class QAction;
 class KActionCollection;
 
 class QString;

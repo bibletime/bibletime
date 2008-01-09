@@ -23,10 +23,11 @@
 #include <QToolBar>
 #include <QMessageBox>
 #include <QDebug>
+#include <QAction>
 
-#include <kaction.h>
+
 #include <kactioncollection.h>
-#include <ktoggleaction.h>
+
 
 
 using namespace Profile;

@@ -23,7 +23,6 @@ class QWidget;
 class QToolBar;
 class QAction;
 
-//class KToggleAction;
 class KFontAction;
 class KFontSizeAction;
 class KColorButton;
