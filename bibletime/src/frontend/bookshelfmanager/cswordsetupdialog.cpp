@@ -39,8 +39,6 @@
 #include <QCloseEvent>
 #include <QApplication>
 
-//KDE includes
-#include <keditlistbox.h>
 
 
 //Sword includes
