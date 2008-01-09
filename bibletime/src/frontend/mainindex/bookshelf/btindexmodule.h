@@ -19,6 +19,7 @@
 class BTModuleTreeItem;
 class CSwordModuleInfo;
 
+class QAction;
 
 
 class BTIndexModule : public BTIndexItem
@@ -28,7 +29,7 @@ public:
 
     ~BTIndexModule();
 
-    virtual const bool enableAction(KAction* action);
+    virtual const bool enableAction(QAction* action);
     CSwordModuleInfo* moduleInfo();
 
 private:

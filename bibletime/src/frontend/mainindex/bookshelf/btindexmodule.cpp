@@ -17,10 +17,10 @@
 
 #include <QIcon>
 #include <QString>
-
 #include <QDebug>
+#include <QAction>
 
-#include <kaction.h>
+
 
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)
 	: BTIndexItem(previous)
@@ -43,7 +43,7 @@ BTIndexModule::~BTIndexModule()
 }
 
 
-const bool BTIndexModule::enableAction(KAction* action)
+const bool BTIndexModule::enableAction(QAction* action)
 {
 	if (!action->isEnabled()) {
 		IndexAction actionType = (IndexAction)action->property("indexActionType").toInt();

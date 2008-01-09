@@ -19,7 +19,7 @@
 
 class CMainIndex;
 class QMimeData;
-class KAction;
+class QAction;
 
 
 /**
@@ -38,7 +38,7 @@ public:
 	* are always supported by all items. If the action is not supported in the current state of the
 	* item this function does nothing.
 	*/
-    virtual const bool enableAction(KAction*) {}
+    virtual const bool enableAction(QAction*) {}
 
 	//TODO: d'n'd functions so that view can delegate d'n'd to items?
 	virtual bool acceptDrop(const QMimeData*) {return false;}

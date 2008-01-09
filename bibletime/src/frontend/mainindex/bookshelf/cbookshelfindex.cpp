@@ -44,8 +44,7 @@
 
 #include <boost/scoped_ptr.hpp>
 
-#include <kaction.h>
-#include <kactionmenu.h>
+
 
 CBookshelfIndex::CBookshelfIndex(QWidget *parent)
 	: QTreeWidget(parent),
@@ -102,19 +101,19 @@ void CBookshelfIndex::initActions()
 
 	// Actions are added to the popup menu and also to a list for easy foreach access.
 
-	KActionMenu* actionMenu = 0;
-	KAction* action = 0;
+	QMenu* actionMenu = 0;
+	QAction* action = 0;
 
 	// -------------------------Grouping --------------------------------------
-	actionMenu = new KActionMenu(KIcon(CResMgr::mainIndex::grouping::icon), tr("Grouping"), this);
-	actionMenu->setDelayed(false);
+	actionMenu = new QMenu(tr("Grouping"), this);
+	actionMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::grouping::icon));
 	actionMenu->setProperty("indexActionType", QVariant(Grouping));
-	m_actionList.append(actionMenu);
 
 	m_groupingGroup = new QActionGroup(this);
 	QObject::connect(m_groupingGroup, SIGNAL(triggered(QAction*)), this, SLOT(actionChangeGrouping(QAction*)) );
 
-	action = newKAction(tr("Category/Language"), CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	//TODO: set the inital checked state
+	action = newQAction(tr("Category/Language"), CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	action->setProperty("indexActionType", QVariant(Grouping));
 	action->setProperty("grouping", BTModuleTreeItem::CatLangMod);
@@ -123,7 +122,7 @@ void CBookshelfIndex::initActions()
 	if (m_grouping == BTModuleTreeItem::CatLangMod) action->setChecked(true);
 	m_actionList.append(action);
 
-	action = newKAction(tr("Category"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Category"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::CatMod) action->setChecked(true);
@@ -132,7 +131,7 @@ void CBookshelfIndex::initActions()
 	actionMenu->addAction(action);
 	m_actionList.append(action);
 
-	action = newKAction(tr("Language/Category"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Language/Category"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::LangCatMod) action->setChecked(true);
@@ -141,7 +140,7 @@ void CBookshelfIndex::initActions()
 	action->setProperty("grouping", BTModuleTreeItem::LangCatMod);
 	m_actionList.append(action);
 
-	action = newKAction(tr("Language"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Language"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::LangMod) action->setChecked(true);
@@ -150,7 +149,7 @@ void CBookshelfIndex::initActions()
 	action->setProperty("grouping", BTModuleTreeItem::LangMod);
 	m_actionList.append(action);
 
-	action = newKAction(tr("Modules Only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Modules Only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::Mod) action->setChecked(true);
@@ -159,23 +158,25 @@ void CBookshelfIndex::initActions()
 	action->setProperty("grouping", BTModuleTreeItem::Mod);
 	m_actionList.append(action);
 	
-	m_popup->addAction(actionMenu);
+	action = m_popup->addMenu(actionMenu);
+	action->setProperty("indexActionType", QVariant(Grouping));
+	m_actionList.append(action);
 
-	
-	// -------------------Show hidden---------------------------
+
+	// ------------Hide---------------------
+	action = newQAction(tr("Hide/Unhide Modules..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
+	action->setProperty("indexActionType", QVariant(HideModules));
+	//action->setProperty("multiItemAction", QVariant(true));
+	m_popup->addAction(action);
+	m_actionList.append(action);
+
+// -------------------Show hidden---------------------------
 	qDebug("*****************create Show Hidden***************");
-	action = newKAction(tr("Show Hidden"),CResMgr::mainIndex::search::icon, 0, 0, 0, this);
+	action = newQAction(tr("Show Hidden"),CResMgr::mainIndex::search::icon, 0, 0, 0, this);
 	action->setProperty("indexActionType", QVariant(ShowAllModules));
 	action->setCheckable(true);
 	QObject::connect(action, SIGNAL(toggled(bool)), this, SLOT(actionShowModules(bool)));
 	if (m_showHidden) action->setChecked(true); else action->setChecked(false);
-	m_popup->addAction(action);
-	m_actionList.append(action);
-
-	// ------------Hide---------------------
-	action = newKAction(tr("Hide Modules..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
-	action->setProperty("indexActionType", QVariant(HideModules));
-	//action->setProperty("multiItemAction", QVariant(true));
 	m_popup->addAction(action);
 	m_actionList.append(action);
 
@@ -186,41 +187,42 @@ void CBookshelfIndex::initActions()
 	//----------------- Actions for items ------------------------
 
 	// -------------------------Edit module --------------------------------
-	actionMenu = new KActionMenu(KIcon(CResMgr::mainIndex::editModuleMenu::icon), tr("Edit"), this);
-	actionMenu->setDelayed(false);
+	actionMenu = new QMenu(tr("Edit"), this);
+	actionMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::editModuleMenu::icon) );
+//	actionMenu->setDelayed(false);
 	actionMenu->setProperty("indexActionType", QVariant(EditModule));
 	actionMenu->setProperty("singleItemAction", QVariant(true));
-	m_actionList.append(actionMenu);
+	//m_actionList.append(actionMenu);
 
-	action = newKAction(tr("Plain text"),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(actionEditModulePlain()), this);
+	action = newQAction(tr("Plain text"),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(actionEditModulePlain()), this);
 	actionMenu->addAction(action);
 	m_actionList.append(action);
 	action->setProperty("indexActionType", QVariant(EditModule));
 	action->setProperty("singleItemAction", QVariant(true));
 
-	action = newKAction(tr("HTML"),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(actionEditModuleHTML()), this);
+	action = newQAction(tr("HTML"),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(actionEditModuleHTML()), this);
 	actionMenu->addAction(action);
 	m_actionList.append(action);
 	action->setProperty("indexActionType", QVariant(EditModule));
 	action->setProperty("singleItemAction", QVariant(true));
 
-	m_popup->addAction(actionMenu);
+	m_actionList.append(m_popup->addMenu(actionMenu));
 
 	
 	// ------------------------ Misc actions -------------------------------------
-	action = newKAction(tr("Search"),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionSearchInModules()), this);
+	action = newQAction(tr("Search..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionSearchInModules()), this);
 	action->setProperty("indexActionType", QVariant(SearchModules));
 	action->setProperty("multiItemAction", QVariant(true));
 	m_popup->addAction(action);
 	m_actionList.append(action);
 
-	action = newKAction(tr("Unlock"),CResMgr::mainIndex::unlockModule::icon, 0, this, SLOT(actionUnlockModule()), this);
+	action = newQAction(tr("Unlock..."),CResMgr::mainIndex::unlockModule::icon, 0, this, SLOT(actionUnlockModule()), this);
 	m_popup->addAction(action);
 	action->setProperty("indexActionType", QVariant(UnlockModule));
 	action->setProperty("singleItemAction", QVariant(true));
 	m_actionList.append(action);
 
-	action = newKAction(tr("About"),CResMgr::mainIndex::aboutModule::icon, 0, this, SLOT(actionAboutModule()), this);
+	action = newQAction(tr("About..."),CResMgr::mainIndex::aboutModule::icon, 0, this, SLOT(actionAboutModule()), this);
 	m_popup->addAction(action);
 	action->setProperty("singleItemAction", QVariant(true));
 	action->setProperty("indexActionType", QVariant(AboutModule));
@@ -229,13 +231,13 @@ void CBookshelfIndex::initActions()
 	
 }
 
-/** Convenience function for creating a new KAction.
+/** Convenience function for creating a new QAction.
 * Should be replaced with something better; it was easier to make a new function
-* than to modify all KAction constructors.
+* than to modify all QAction constructors.
 */
-KAction* CBookshelfIndex::newKAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
 {
-	KAction* action = new KAction(KIcon(pix), text, parent);
+	QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
 	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
 	return action;
 }
@@ -394,7 +396,7 @@ void CBookshelfIndex::emitModulesChosen( ListCSwordModuleInfo modules, QString k
 void CBookshelfIndex::contextMenu(const QPoint& p) {
 	qDebug("CBookshelfIndex::contextMenu");
 	qDebug() << "list of actions: ";
-	foreach (KAction* action, m_actionList) {
+	foreach (QAction* action, m_actionList) {
 		qDebug() << action->text();
 	}
 	//setup menu entries depending on current selection
@@ -407,10 +409,14 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 
 	// disable those menu entries which are item dependent,
 	// dis/enable some others
-	foreach (KAction* action, m_actionList) {
+	qDebug()<<"grouping action type:"<<(int)Grouping;
+	foreach (QAction* action, m_actionList) {
 		IndexAction actionType = (IndexAction)action->property("indexActionType").toInt();
+		qDebug() << "action type:" << actionType;
 		if ( actionType == Grouping ) {
+			qDebug()<<"grouping action, enabling...";
 			action->setEnabled(true);
+			qDebug()<< action->isEnabled();
 		}
 		else if (actionType == ShowAllModules) {
 			//enabled only if there are hidden modules
@@ -446,7 +452,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 		BTIndexItem* btItem = dynamic_cast<BTIndexItem*>(items.at(0));
 
 		if (btItem && !dynamic_cast<BTIndexFolder*>(btItem)) {
-			foreach (KAction* action, m_actionList) {
+			foreach (QAction* action, m_actionList) {
 				if ( (IndexAction)action->property("indexActionType").toInt() == AboutModule ) {
 					qDebug() << "enabling action" << action->text();
 					action->setEnabled(true);
@@ -468,7 +474,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 		}
 	}
 	else { // more than one item
-		foreach (KAction* action, m_actionList) {
+		foreach (QAction* action, m_actionList) {
 			// Change the text of some menu items to reflect multiple selection
 			if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
 				action->setText( QString(tr("Search in Selected")) );

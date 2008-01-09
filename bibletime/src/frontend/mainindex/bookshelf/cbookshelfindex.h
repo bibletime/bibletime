@@ -24,8 +24,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 
-//KDE includes
-#include <kaction.h>
+
 
 class CSearchDialog;
 class CMainIndex;
@@ -34,7 +33,6 @@ class QDropEvent;
 class QDragMoveEvent;
 class QDragLeaveEvent;
 class BTMimeData;
-class KActionMenu;
 class QMenu;
 class QActionGroup;
 class QMouseEvent;
@@ -174,10 +172,10 @@ private:
 	void initView();
 	void initActions();
 
-	/** Convenience function for creating a new KAction. */
-	KAction* newKAction(const QString& text, const QString& pix, int shortcut, const QObject* receiver, const char* slot, QObject* parent);
+	/** Convenience function for creating a new QAction. */
+	QAction* newQAction(const QString& text, const QString& pix, int shortcut, const QObject* receiver, const char* slot, QObject* parent);
 
-	QList<KAction*> m_actionList;
+	QList<QAction*> m_actionList;
 
 	QMenu* m_popup;
 
