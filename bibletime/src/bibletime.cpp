@@ -40,7 +40,7 @@
 
 //KDE includes
 #include <kcmdlineargs.h>
-#include <krandomsequence.h>
+
 
 using namespace Profile;
 
