@@ -37,9 +37,6 @@
 #include <QToolBar>
 #include <QApplication>
 
-//KDE includes
-#include <kaboutdata.h>
-
 
 //Sword includes
 #include <swlog.h>
