@@ -349,10 +349,10 @@ namespace CResMgr {
 
 
 				namespace copyMenu {
-					const QString icon = "editcopy.svg";
+					const QString icon = "edit_copy.svg";
 				}
 				namespace saveMenu {
-					const QString icon = "filesave.svg";
+					const QString icon = "file_save.svg";
 				}
 				namespace printMenu {
 					const QString icon = "print.svg";
@@ -363,10 +363,10 @@ namespace CResMgr {
 
 
 				namespace copyMenu {
-					const QString icon = "editcopy.svg";
+					const QString icon = "edit_copy.svg";
 				}
 				namespace saveMenu {
-					const QString icon = "filesave.svg";
+					const QString icon = "file_save.svg";
 				}
 				namespace printMenu {
 					const QString icon = "print.svg";
@@ -465,10 +465,10 @@ namespace CResMgr {
 			}
 
 			namespace copyMenu {
-				const QString icon = "editcopy.svg";
+				const QString icon = "edit_copy.svg";
 			}
 			namespace saveMenu {
-				const QString icon = "filesave.svg";
+				const QString icon = "file_save.svg";
 			}
 			namespace printMenu {
 				const QString icon = "print.svg";
@@ -477,7 +477,7 @@ namespace CResMgr {
 		namespace commentaryWindow {
 			namespace syncWindow {
 				QString tooltip;
-				const QString icon   = "bt_sync";
+				const QString icon   = "sync.svg";
 				const QKeySequence accel;
 				const char* actionName = "commentary_syncWindow";
 			}
@@ -496,10 +496,10 @@ namespace CResMgr {
 			}
 
 			namespace copyMenu {
-				const QString icon = "editcopy.svg";
+				const QString icon = "edit_copy.svg";
 			}
 			namespace saveMenu {
-				const QString icon = "filesave.svg";
+				const QString icon = "file_save.svg";
 			}
 			namespace printMenu {
 				const QString icon = "print.svg";
@@ -516,7 +516,7 @@ namespace CResMgr {
 			namespace saveText {
 				QString tooltip;
 
-				const QString icon      = "filesave.svg";
+				const QString icon      = "file_save.svg";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_saveText";
 			}
@@ -530,7 +530,7 @@ namespace CResMgr {
 			namespace deleteEntry {
 				QString tooltip;
 
-				const QString icon      = "editdelete.svg";
+				const QString icon      = "edit_delete.svg";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_deleteEntry";
 			}
@@ -623,7 +623,7 @@ namespace CResMgr {
 			}
 		}
 		namespace profiles {
-			const QString icon = "view_sidetree";
+			const QString icon = "view_profile.svg";
 
 			namespace list {
 				QString tooltip;
@@ -713,7 +713,7 @@ namespace CResMgr {
 			const QString icon = "bookmark.svg";
 		}
 		namespace printBookmarks {
-			const QString icon = "fileprint.svg";
+			const QString icon = "print.svg";
 		}
 		namespace deleteItems {
 			const QString icon = "filedelete.svg";

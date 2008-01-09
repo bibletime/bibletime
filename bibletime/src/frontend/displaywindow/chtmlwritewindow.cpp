@@ -19,6 +19,7 @@
 #include "frontend/display/chtmlwritedisplay.h"
 
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QToolBar>
@@ -62,18 +63,21 @@ void CHTMLWriteWindow::initConnections() {
 
 void CHTMLWriteWindow::initToolbars() {
 	//setup the main toolbar
-	m_actions.syncWindow = new KToggleAction(
-			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+	m_actions.syncWindow = new QAction(
+			//KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
 			tr("Sync with active Bible"),
 			actionCollection()
 			);
+	m_actions.syncWindow->setCheckable(true);
 	m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
 	m_actions.syncWindow->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);
 	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_actions.syncWindow);
 	mainToolBar()->addAction(m_actions.syncWindow);
 
-	m_actions.saveText = new KAction( 
-			KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+	m_actions.saveText = new QAction( 
+			//KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
 			tr("Save text"),
 			actionCollection()
 			);
@@ -84,8 +88,9 @@ void CHTMLWriteWindow::initToolbars() {
 	mainToolBar()->addAction(m_actions.saveText);
 	
 
-	m_actions.deleteEntry = new KAction(
-			KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+	m_actions.deleteEntry = new QAction(
+			//KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
 			tr("Delete current entry"),
 			actionCollection()
 			);
@@ -95,8 +100,9 @@ void CHTMLWriteWindow::initToolbars() {
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, m_actions.deleteEntry);
 	mainToolBar()->addAction(m_actions.deleteEntry);
 
-	m_actions.restoreText = new KAction(
-			KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+	m_actions.restoreText = new QAction(
+			//KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
 			tr("Restore original text"),
 			actionCollection()
 			);

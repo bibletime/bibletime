@@ -21,8 +21,9 @@ class CWriteWindow;
 class QMenu;
 class QWidget;
 class QToolBar;
+class QAction;
 
-class KToggleAction;
+//class KToggleAction;
 class KFontAction;
 class KFontSizeAction;
 class KColorButton;
@@ -85,21 +86,22 @@ protected slots:
 
 private:
 	struct {
-		KToggleAction* bold;
-		KToggleAction* italic;
-		KToggleAction* underline;
+		QAction* bold;
+		QAction* italic;
+		QAction* underline;
 
-		KToggleAction* alignLeft;
-		KToggleAction* alignCenter;
-		KToggleAction* alignRight;
+		QAction* alignLeft;
+		QAction* alignCenter;
+		QAction* alignRight;
 
 		KFontAction* fontChooser;
 		KFontSizeAction* fontSizeChooser;
 
 		//popup menu
-		KAction* selectAll;
+		QAction* selectAll;
 	}
 	m_actions;
+	//TODO: port to Qt
 	KColorButton* m_colorButton;
 };
 

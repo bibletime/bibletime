@@ -68,10 +68,10 @@ protected: // Protected methods
 
 private:
 	struct {
-		KAction* saveText;
-		KAction* deleteEntry;
-		KAction* restoreText;
-		KToggleAction* syncWindow;
+		QAction* saveText;
+		QAction* deleteEntry;
+		QAction* restoreText;
+		QAction* syncWindow;
 	}
 	m_actions;
 

@@ -65,10 +65,10 @@ protected slots:
 	virtual void saveCurrentText( const QString& );
 private:
 	struct {
-		KAction* saveText;
-		KAction* restoreText;
-		KAction* deleteEntry;
-		KToggleAction* syncWindow;
+		QAction* saveText;
+		QAction* restoreText;
+		QAction* deleteEntry;
+		QAction* syncWindow;
 	}
 	m_actions;
 };

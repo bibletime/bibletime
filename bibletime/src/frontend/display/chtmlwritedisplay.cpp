@@ -15,6 +15,7 @@
 #include "frontend/displaywindow/cwritewindow.h"
 
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 #include <QMenu>
 #include <QToolTip>
@@ -182,8 +183,12 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addSeparator();
 
 	//--------------------bold toggle-------------------------
-	m_actions.bold = new KToggleAction(KIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
-						 tr("Bold"), actions);
+	m_actions.bold = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::boldText::icon),
+					tr("Bold"),
+					actions);
+	m_actions.bold->setCheckable(true);
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::boldText::actionName, m_actions.bold);
 	m_actions.bold->setToolTip( CResMgr::displaywindows::writeWindow::boldText::tooltip );
@@ -193,8 +198,12 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addAction(m_actions.bold);
 
 	//--------------------italic toggle-------------------------
-	m_actions.italic = new KToggleAction(KIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
-							tr("Italic"), actions );
+	m_actions.italic = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::italicText::icon),
+					tr("Italic"),
+					actions );
+	m_actions.italic->setCheckable(true);
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::italicText::actionName, m_actions.italic);
 	connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
@@ -202,8 +211,12 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addAction(m_actions.italic);
 
 	//--------------------underline toggle-------------------------
-	m_actions.underline = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
-								tr("Underline"), actions );
+	m_actions.underline = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::underlinedText::icon),
+					tr("Underline"),
+					actions );
+	m_actions.underline->setCheckable(true);
 	m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::underlinedText::actionName, m_actions.underline);
 	connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
@@ -214,8 +227,11 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addSeparator();
 
 	//--------------------align left toggle-------------------------
-	m_actions.alignLeft = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
-								tr("Left"), actions);
+	m_actions.alignLeft = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignLeft::icon),
+					tr("Left"), actions);
+	m_actions.alignLeft->setCheckable(true);
 	m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignLeft::actionName, m_actions.alignLeft);
 	connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
@@ -223,8 +239,11 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addAction(m_actions.alignLeft);
 
 	//--------------------align center toggle-------------------------
-	m_actions.alignCenter = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
-								tr("Center"), actions);
+	m_actions.alignCenter = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignCenter::icon),
+					tr("Center"), actions);
+	m_actions.alignCenter->setCheckable(true);
 	m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignCenter::actionName, m_actions.alignCenter);
 	connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
@@ -232,8 +251,11 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	bar->addAction(m_actions.alignCenter);
 
 	//--------------------align right toggle-------------------------
-	m_actions.alignRight = new KToggleAction( KIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
-								tr("Right"), actions);
+	m_actions.alignRight = new QAction(
+					//KIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
+					util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::alignRight::icon),
+					tr("Right"), actions);
+	m_actions.alignRight->setCheckable(true);
 	m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignRight::actionName, m_actions.alignRight);
 	connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
