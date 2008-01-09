@@ -31,10 +31,6 @@
 #include <QDir>
 #include <QFileInfo>
 
-//KDE
-
-#include <kstringhandler.h>
-
 //Sword
 #include <swdisp.h>
 #include <swfiltermgr.h>
