@@ -28,11 +28,11 @@ class CMainIndex;
   */
 class CIndexTreeFolder : public CIndexFolderBase {
 public:
-	CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type, const QString& language );
-	CIndexTreeFolder(CIndexFolderBase* parentFolder, const Type type, const QString& language );
+	CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type);
+	CIndexTreeFolder(CIndexFolderBase* parentFolder, const Type type);
 	virtual ~CIndexTreeFolder();
 
-	virtual void addGroup(const Type type, const QString language);
+	virtual void addGroup(const Type type);
 
 	virtual void addBookmark(CSwordModuleInfo* module, const QString& key, const QString& description);
 
@@ -41,10 +41,6 @@ public:
 	virtual void update();
 	virtual void init();
 
-	virtual const QString& language() const;
-
-private:
-	QString m_language;
 };
 
 #endif

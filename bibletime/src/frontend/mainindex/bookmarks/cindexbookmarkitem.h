@@ -38,7 +38,6 @@ public:
 	const QString& description();
 	virtual const QString toolTip();
 
-	//virtual int compare( QListViewItem * i, int col, bool ascending ) const;
 
 	virtual void update();
 	virtual void init();

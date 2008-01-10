@@ -29,17 +29,17 @@
 
 
 
-CIndexTreeFolder::CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type, const QString& language) : CIndexFolderBase(mainIndex, type) {
-	m_language = language;
-}
+CIndexTreeFolder::CIndexTreeFolder(CBookmarkIndex* mainIndex, const Type type)
+	: CIndexFolderBase(mainIndex, type)
+{}
 
-CIndexTreeFolder::CIndexTreeFolder(CIndexFolderBase* item, const Type type, const QString& language) : CIndexFolderBase(item, type) {
-	m_language = language;
-}
+CIndexTreeFolder::CIndexTreeFolder(CIndexFolderBase* item, const Type type)
+	: CIndexFolderBase(item, type)
+{}
 
 CIndexTreeFolder::~CIndexTreeFolder() {}
 
-void CIndexTreeFolder::addGroup(const Type type, const QString language) {
+void CIndexTreeFolder::addGroup(const Type type) {
 	//qDebug("CIndexTreeFolder::addGroup");
 	CIndexTreeFolder* i = 0;
 	if (type == BookmarkFolder) {
@@ -49,10 +49,6 @@ void CIndexTreeFolder::addGroup(const Type type, const QString language) {
 	else if (type == OldBookmarkFolder) {
 		//qDebug("type: OldBookmarkFolder");
 		i = new CIndexOldBookmarksFolder(this);
-	}
-	else {
-		//qDebug("type: other");
-		i = new CIndexTreeFolder(this, type, language);
 	}
 	i->init();
 	if (!i->childCount())
@@ -73,45 +69,17 @@ void CIndexTreeFolder::update() {
 
 void CIndexTreeFolder::init() {
 	//qDebug("CIndexTreeFolder::init");
-	if (language() == "*") {
-		switch (type()) {
-			case BibleModuleFolder:
-			setText(0,QObject::tr("Bibles"));
-			break;
-			case CommentaryModuleFolder:
-			setText(0,QObject::tr("Commentaries"));
-			break;
-			case LexiconModuleFolder:
-			setText(0,QObject::tr("Lexicons"));
-			break;
-			case BookModuleFolder:
-			setText(0,QObject::tr("Books"));
-			break;
-			case DevotionalModuleFolder:
-			setText(0,QObject::tr("Daily devotionals"));
-			break;
-			case GlossaryModuleFolder:
-			setText(0,QObject::tr("Glossaries"));
-			break;
-			case ImageModuleFolder:
-			setText(0,QObject::tr("Maps and Images"));
-			break;
-
-			case BookmarkFolder:
+	switch (type()) {
+		case BookmarkFolder:
 			setText(0,QObject::tr("Bookmarks"));
 			break;
-			case OldBookmarkFolder:
+		case OldBookmarkFolder:
 			setText(0,QObject::tr("Old bookmarks"));
 			break;
-			default:
+		default:
 			setText(0, QObject::tr("Unknown"));
 			break;
-		};
-	}
-	else {
-		const CLanguageMgr::Language* const lang = CPointers::languageMgr()->languageForAbbrev( language() );
-		setText(0, !language().isEmpty() ? ( lang->isValid() ? lang->translatedName() : language()) : QObject::tr("Unknown language"));
-	}
+	};
 
 	//qDebug(text(0).toLatin1().data());
 	initTree();
@@ -122,6 +90,3 @@ void CIndexTreeFolder::initTree() {
 	
 }
 
-const QString& CIndexTreeFolder::language() const {
-	return m_language;
-}

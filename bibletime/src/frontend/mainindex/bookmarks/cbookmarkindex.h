@@ -37,9 +37,10 @@ class QAction;
 
 class QMouseEvent;
 
-/** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
-  * @author The BibleTime team
-  */
+/**
+* The widget which manages all bookmarks.
+* @author The BibleTime team
+*/
 class CBookmarkIndex : public QTreeWidget {
 	Q_OBJECT
 
@@ -172,7 +173,7 @@ private:
 
 	/**
 	* Returns true if more than one netry is supported by this action type.
-	* Returns false for actions which support only one entry, e.g. about module etc.
+	* Returns false for actions which support only one entry.
 	*/
 	const bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
 

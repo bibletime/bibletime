@@ -19,14 +19,12 @@
 
 CIndexItemBase::CIndexItemBase(CBookmarkIndex* bookmarkIndex, const Type type)
 	: QTreeWidgetItem(bookmarkIndex),
-	m_type(type),
-	m_sortingEnabled(true)
+	m_type(type)
 {}
 
 CIndexItemBase::CIndexItemBase(CIndexItemBase* parentItem, const Type type)
 	: QTreeWidgetItem(parentItem),
-	m_type(type),
-	m_sortingEnabled(true)
+	m_type(type)
 {}
 
 CIndexItemBase::~CIndexItemBase() {}
@@ -73,7 +71,7 @@ void CIndexItemBase::moveAfter( CIndexItemBase* const item )
 /** Returns true if the given action should be enabled in the popup menu. */
 const bool CIndexItemBase::enableAction( const MenuAction /*action*/ )
 {
-	return false; //this base class has no valif actions
+	return false; //this base class has no valid actions
 }
 
 /** No descriptions */
@@ -113,39 +111,7 @@ const bool CIndexItemBase::allowAutoOpen( const QMimeData* ) const
 	return false;
 };
 
-/** This function engables or disables sorting depending on the parameter. */
-void CIndexItemBase::setSortingEnabled( const bool& enableSort )
-{
-	m_sortingEnabled = enableSort;
-}
 
-/** Returns true whether the sorting is enabled or not. */
-const bool CIndexItemBase::isSortingEnabled()
-{
-	return m_sortingEnabled;
-}
-
-/** Reimplementation which takes care of the our sortingEnabled setting. */
-void CIndexItemBase::sortChildItems( int col, Qt::SortOrder order )
-{
-	if (!isSortingEnabled()) {
-		return;
-	}
-	else {
-		QTreeWidgetItem::sortChildren( col, order );
-	}
-}
-
-/** Reimplementation which takes care of the our sortingEnabled setting. */
-void CIndexItemBase::sort()
-{
-	if (!isSortingEnabled()) {
-		return;
-	}
-	else {
-		// TODO: not in qt4 //QTreeWidgetItem::sort();
-	}
-}
 
 QList<QTreeWidgetItem*> CIndexItemBase::getChildList()
 {

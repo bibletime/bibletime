@@ -30,18 +30,19 @@
 
 
 
-CIndexBookmarkFolder::CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type) : CIndexTreeFolder(bookmarkIndex, type, "*") {
-	setSortingEnabled(false);
-}
+CIndexBookmarkFolder::CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type)
+	: CIndexTreeFolder(bookmarkIndex, type)
+{}
 
-CIndexBookmarkFolder::CIndexBookmarkFolder(CIndexFolderBase* parentItem, const Type type) : CIndexTreeFolder(parentItem, type, "*") {
-	setSortingEnabled(false);
-}
+CIndexBookmarkFolder::CIndexBookmarkFolder(CIndexFolderBase* parentItem, const Type type)
+	: CIndexTreeFolder(parentItem, type)
+{}
 
 CIndexBookmarkFolder::~CIndexBookmarkFolder() {}
 
-void CIndexBookmarkFolder::initTree() {
-	addGroup(OldBookmarkFolder, "*");
+void CIndexBookmarkFolder::initTree()
+{
+	addGroup(OldBookmarkFolder);
 
 	const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
 	if (!path.isEmpty()) {
@@ -100,11 +101,8 @@ void CIndexBookmarkFolder::importBookmarks() {
 	};
 }
 
-bool CIndexBookmarkFolder::acceptDrop(const QMimeData * data) const {
-// 	//   qWarning("bool CIndexBookmarkFolder::acceptDrop(const QMimeSource * src): return%ii", (CDragDropMgr::canDecode(src) && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark)));
-// 
-// 	return CDragDropMgr::canDecode(src)
-// 		   && (CDragDropMgr::dndType(src) == CDragDropMgr::Item::Bookmark);
+bool CIndexBookmarkFolder::acceptDrop(const QMimeData * data) const
+{
 	qDebug("CIndexBookmarkFolder::acceptDrop");
 	if (data->hasFormat("BibleTime/Bookmark")) {
 		return true;
@@ -113,32 +111,9 @@ bool CIndexBookmarkFolder::acceptDrop(const QMimeData * data) const {
 	}
 }
 
-void CIndexBookmarkFolder::dropped(QDropEvent *e, QTreeWidgetItem* after) {
-// 	if (acceptDrop(e)) {
-// 		CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
-// 		CDragDropMgr::ItemList::Iterator it;
-// 		CItemBase* previousItem = dynamic_cast<CItemBase*>(after);
-// 
-// 		for( it = dndItems.begin(); it != dndItems.end(); ++it) {
-// 			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(
-// 										   (*it).bookmarkModule()
-// 									   );
-// 
-// 			CBookmarkItem* i = new CBookmarkItem(
-// 								   this,
-// 								   module,
-// 								   (*it).bookmarkKey(),
-// 								   (*it).bookmarkDescription()
-// 							   );
-// 
-// 			if (previousItem) {
-// 				i->moveAfter( previousItem );
-// 			}
-// 
-// 			i->init();
-// 			previousItem = i;
-// 		};
-// 	};
+void CIndexBookmarkFolder::dropped(QDropEvent *e, QTreeWidgetItem* after)
+{
+
 }
 
 /** Saves the bookmarks in a file. */
@@ -155,14 +130,13 @@ const bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const b
 	for(int n = 0; n < childCount(); n++) {
 		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( child(n) );
 		if (i->parent() == this) { //only one level under this folder
-			QDomElement newElem = i->saveToXML( doc ); // the cild creates it's own XML code
+			QDomElement newElem = i->saveToXML( doc ); // the child creates it's own XML code
 			if (!newElem.isNull()) {
 				content.appendChild( newElem ); //append to this folder
 			}
 		}
 		
 	}
-	//QTextCodec& fileCodec
 	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
 }
 
@@ -215,7 +189,6 @@ const bool CIndexBookmarkFolder::loadBookmarks( const QString& filename ) {
 	QString xml;
 	if (file.open(QIODevice::ReadOnly)) {
 		QTextStream t;
-		//t.setEncoding(QTextStream::UnicodeUTF8); //set encoding before file is used for input!
 		t.setAutoDetectUnicode(false);
 		t.setCodec(QTextCodec::codecForName("UTF-8"));
 		t.setDevice(&file);

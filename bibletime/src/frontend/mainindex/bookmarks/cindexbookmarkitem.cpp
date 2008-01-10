@@ -82,11 +82,6 @@ void CIndexBookmarkItem::init() {
 	}
 
 	update();
-	//setDropEnabled(false);
-	//setDragEnabled(false);
-
-	//  if (!module())
-	//    setSelectable(false);
 }
 
 /** Reimplementation. */
@@ -110,14 +105,10 @@ const QString CIndexBookmarkItem::toolTip() {
 
 	Q_ASSERT(k.get());
 	if (fontPair.first) { //use a special font
-		//qWarning("using a font, %s", fontPair.second.family().toLatin1());
-		//ret = QString::fromLatin1("<b>%1 (%2)</b><br/><small>%3</small><hr><font face=\"%4\" size=\"4\">%5</font>")
 		ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
 			  .arg(key())
 			  .arg(module()->name())
 			  .arg(description())
-			  //.arg(fontPair.second.family())
-			  //.arg(k->renderedText())
 			;
 	}
 	else {
@@ -125,7 +116,6 @@ const QString CIndexBookmarkItem::toolTip() {
 			  .arg(key())
 			  .arg(module()->name())
 			  .arg(description())
-			  //.arg(k->renderedText())
 			;
 	}
 

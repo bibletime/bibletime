@@ -28,15 +28,6 @@ public:
 		BookmarkFolder,
 		Bookmark,
 		OldBookmarkFolder, /* Bookmarks in the old format from BibleTime 1.1.x and 1.2.x */
-		BibleModuleFolder,
-		CommentaryModuleFolder,
-		LexiconModuleFolder,
-		BookModuleFolder,
-		DevotionalModuleFolder,
-		GlossaryModuleFolder,
-		ModuleLanguageFolder,
-		Module,
-		ImageModuleFolder
 	};
 	enum MenuAction {
 		NewFolder = 0,
@@ -49,13 +40,8 @@ public:
 
 		DeleteEntries,
 
-		EditModule,
-		SearchInModules,
-		UnlockModule,
-		AboutModule,
-
 		ActionBegin = NewFolder,
-		ActionEnd = AboutModule
+		ActionEnd = DeleteEntries
 	};
 
 	CIndexItemBase(CBookmarkIndex* bookmarkIndex, const Type type = Unknown);
@@ -93,23 +79,6 @@ public:
 	*/
 	virtual void loadFromXML( QDomElement& /*element*/ );
 	
-	/**
-	* Returns true whether the sorting is enabled or not.
-	*/
-	const bool isSortingEnabled();
-	/**
-	* This function engables or disables sorting depending on the parameter.
-	*/
-	void setSortingEnabled( const bool& enableSorting );
-	/**
-	* Reimplementation which takes care of the our isSortingEnabled() setting.
-	*/
-	virtual void sortChildItems( int col, Qt::SortOrder order );
-	/**
-	* Reimplementation which takes care of the our isSortingEnabled() setting.
-	*/
-	virtual void sort();
-
 	virtual QList<QTreeWidgetItem*> getChildList();
 
 	virtual bool acceptDrop(QDropEvent* event) const;
@@ -133,7 +102,6 @@ protected:
 
 private:
 	Type m_type;
-	bool m_sortingEnabled;
 };
 
 #endif
