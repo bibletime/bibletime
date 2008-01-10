@@ -40,9 +40,11 @@ class BTModuleTreeItem;
 
 
 
-/** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
-  * @author The BibleTime team
-  */
+/**
+* The widget which manages the modules. The modules are put into own,
+* fixed subfolders sorted by category and/or language.
+* @author The BibleTime team
+*/
 class CBookshelfIndex : public QTreeWidget {
 	Q_OBJECT
 
