@@ -13,12 +13,12 @@
 
 #include "cscrollerwidgetset.h"
 
-//BibleTime frontend includes
 #include "frontend/cbtconfig.h"
 
 #include "backend/keys/cswordversekey.h"
 
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 //Qt includes
 #include <QString>
@@ -27,12 +27,12 @@
 #include <QPixmap>
 #include <QApplication>
 #include <QHBoxLayout>
+#include <QToolButton>
 
 #include <kglobalsettings.h>
 #include <kcompletionbox.h>
 
-#include <kpushbutton.h>
-#include <kguiitem.h>
+
 
 /* Override the completion box for our references */
 CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod) : KCompletion()
@@ -90,12 +90,10 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	setFocusPolicy(Qt::WheelFocus);
 
-	// Erase button
-	KGuiItem erase_picture;
-	erase_picture.setIconName("locationbar_erase");
-	KPushButton *clearRef = new KPushButton(this);
-	clearRef->setGuiItem(erase_picture);
-	connect(clearRef, SIGNAL(clicked( ) ), SLOT(slotClearRef( )));
+	QToolButton* clearRef = new QToolButton(this);
+	clearRef->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_clear_locationbar.svg"));
+	clearRef->setAutoRaise(true);
+	connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
 
 	m_bookScroller = new CScrollerWidgetSet(this);
 
@@ -108,12 +106,13 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
 	m_mainLayout->setContentsMargins(0,0,0,0);
-	m_mainLayout->setSpacing(2);
+	m_mainLayout->setSpacing(0);
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
 	m_mainLayout->addWidget(m_textbox);
 	m_mainLayout->addWidget(m_chapterScroller);
 	m_mainLayout->addWidget(m_verseScroller);
+
 
 	setTabOrder(m_textbox, 0);
 
