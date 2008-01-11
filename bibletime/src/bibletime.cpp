@@ -82,6 +82,7 @@ void BibleTime::saveSettings() {
 	//accel()->writeSettings(CBTConfig::getConfig());
 
 	CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
+	CBTConfig::set(CBTConfig::mainindexActiveTab, m_mainIndex->currentIndex());
 	CBTConfig::set(CBTConfig::mainIndex, m_viewMainIndex_action->isChecked());
 	CBTConfig::set(CBTConfig::infoDisplay, m_viewInfoDisplay_action->isChecked());
 	CBTConfig::set(CBTConfig::mainSplitterSizes, m_mainSplitter->sizes());
@@ -113,6 +114,8 @@ void BibleTime::readSettings() {
 
 	m_viewMainIndex_action->setChecked( CBTConfig::get(CBTConfig::mainIndex) );
 	slotToggleMainIndex();
+
+	m_mainIndex->setCurrentIndex(CBTConfig::get(CBTConfig::mainindexActiveTab));
 
 	m_viewInfoDisplay_action->setChecked( CBTConfig::get(CBTConfig::infoDisplay) );
 	slotToggleInfoDisplay();

@@ -135,6 +135,7 @@ const QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case bookshelfContentsY:	return "bookshelfContentsY";
 		case magDelay:		return "magDelay";
 		case bookshelfGrouping:		return "bookshelfGrouping";
+		case mainindexActiveTab:	return "mainindexActiveTab";
 	}
 	return QString::null;
 }

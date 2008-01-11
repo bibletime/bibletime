@@ -84,10 +84,12 @@ public:
 		textualVariants,
 		scriptureReferences,
 		morphSegmentation,
+
 		bookshelfContentsX,
 		bookshelfContentsY,
-  		magDelay, /* The delay until a mouse move makes the content appear in the mag */
-		bookshelfGrouping
+		magDelay, /* The delay until a mouse move makes the content appear in the mag */
+		bookshelfGrouping,
+		mainindexActiveTab
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
