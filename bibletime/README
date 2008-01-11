@@ -1,0 +1,47 @@
+README for BibleTime
+====================
+
+BibleTime is a Bible study application based on KDE.
+
+This is an ALPHA version and for testing purposes only.
+
+1. INSTALLATION
+
+1.1 REQUIREMENTS
+	-QT 4.3+
+	-KDE 4.0+
+	-Sword 1.5.9+ (http://crosswire.org/sword)
+	-CLucene 0.9.16a+ (http://clucene.sf.net)
+	-cmake 2.4.0+ (http://cmake.org)
+	
+1.2 PROCEDURE
+
+In the toplevel directory of this package, you can find
+the scripts "build-debug.sh" and "build-release.sh".
+
+Run "build-debug.sh" to build BibleTime in debug mode. 
+It will build in the directory ./build/ and install to 
+./build/install/. You can run it just there, you do not 
+have to install it to /usr/.
+
+For a real installation, run "build-release.sh". This will
+also build in ./build/, but then install to /usr/local.
+
+2. FEEDBACK
+
+Please report any bugs your find to bt-devel@crosswire.org or 
+use the links on our webpage at http://www.bibletime.info. 
+Please do not hesitate to send suggestions or criticism to 
+bt-devel@crosswire.org.
+
+3. DOCUMENTATION
+
+You can find information about BibleTime, the installation 
+and its usage in the following places:
+	o http://www.bibletime.info/
+	o The BibleTime handbook available in the Help menu 
+		of the BibleTime application
+	o There's a Bible study tutorial in the help menu
+
+May God, our Lord use BibleTime for his glory,
+The BibleTime developers, info@bibletime.info

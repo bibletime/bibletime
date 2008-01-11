@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7.alpha")
+SET(BT_VERSION "1.7.alpha1")
 #Specify which languages are to be installed for UI messages
 LIST(APPEND INSTALL_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk ua zh_CN zh_TW)
 
