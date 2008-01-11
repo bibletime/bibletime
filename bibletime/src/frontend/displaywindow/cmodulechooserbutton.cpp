@@ -14,6 +14,8 @@
 
 #include "backend/managers/cswordbackend.h"
 
+#include "frontend/cbtconfig.h"
+
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
@@ -149,7 +151,7 @@ void CModuleChooserButton::populateMenu() {
 	BTModuleTreeItem::HiddenOff hiddenFilter;
 	TypeFilter typeFilter(m_moduleType);
 	QList<BTModuleTreeItem::Filter*> filters;
-	if (true) { // TODO: don't use this filter if hidden are shown in bookshelf index
+	if (!CBTConfig::get(CBTConfig::bookshelfShowHidden)) {
 		filters.append(&hiddenFilter);
 	}
 	filters.append(&typeFilter);

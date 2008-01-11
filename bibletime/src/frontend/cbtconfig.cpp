@@ -114,6 +114,8 @@ const QString CBTConfig::getKey( const CBTConfig::bools ID) {
 		case autoDeleteOrphanedIndices:	return "autoDeleteOrphanedIndices";
 		case crashedLastTime:			return "crashedLastTime";
 		case crashedTwoTimes:			return "crashedTwoTimes";
+		
+		case bookshelfShowHidden:		return "bookshelfShowHidden";
 	}
 	return QString::null;
 }

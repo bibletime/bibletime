@@ -69,8 +69,9 @@ public:
 		logo,
 		autoDeleteOrphanedIndices,
 		crashedLastTime,
-		crashedTwoTimes
+		crashedTwoTimes,
 
+		bookshelfShowHidden
 	};
 	enum ints {
 		footnotes,

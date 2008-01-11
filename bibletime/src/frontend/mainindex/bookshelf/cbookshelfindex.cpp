@@ -50,9 +50,9 @@ CBookshelfIndex::CBookshelfIndex(QWidget *parent)
 	: QTreeWidget(parent),
 	m_searchDialog(0),
 	m_autoOpenFolder(0),
-	m_autoOpenTimer(this),
-	m_showHidden(false)
+	m_autoOpenTimer(this)
 {
+	m_showHidden = CBTConfig::get(CBTConfig::bookshelfShowHidden);
 	setContextMenuPolicy(Qt::CustomContextMenu);
 	initView();
 	initConnections();
@@ -550,6 +550,7 @@ void CBookshelfIndex::actionShowModules(bool checked)
 {
 	qDebug("CBookshelfIndex::actionShowModules");
 	m_showHidden = checked;
+	CBTConfig::set(CBTConfig::bookshelfShowHidden, m_showHidden);
 	initTree();
 	// show hidden status is changed, notify others who may rebuild their module lists
 	emit signalSwordSetupChanged();
