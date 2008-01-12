@@ -38,6 +38,7 @@ CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *di
 	m_popup = new QMenu(this);
 	setMenu(m_popup);
 	setPopupMode(QToolButton::InstantPopup);
+	setToolTip(tr("Display options"));
 
 	connect(m_popup, SIGNAL(triggered(QAction*)), this, SLOT(optionToggled(QAction*)));
 	populateMenu();
@@ -108,8 +109,7 @@ int CDisplaySettingsButton::populateMenu() {
 	int ret = 0;
 
 	m_popup->clear();
-	m_popup->setTitle(tr("Display options"));
-	
+
 	// See also optionToggled()
 
 	ret += addMenuEntry(tr("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));

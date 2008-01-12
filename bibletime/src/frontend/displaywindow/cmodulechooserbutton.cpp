@@ -84,14 +84,13 @@ int CModuleChooserButton::getId() const {
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( QAction* action ) {
 	
-	//for ( QMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
 	QListIterator<QMenu*> it(m_submenus);
 	while (it.hasNext()) {
 		QMenu* popup = it.next();
 		for (unsigned int i = 0; i < popup->actions().count(); i++) {
-			popup->actions().at(i)->setChecked(false);//popup->setItemChecked(popup->idAt(i),false);
+			popup->actions().at(i)->setChecked(false);
 		}
-		action->setChecked(true); //setItemChecked(ID, true);
+		action->setChecked(true);
 	}
 
 	m_noneAction->setChecked(false); //uncheck the "none" item
@@ -112,11 +111,12 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 		setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
 		emit sigChanged();
 
-		setText( tr("Select a work") );
-		m_popup->setTitle(tr("Select a work"));//m_popup->changeTitle(m_titleId, tr("Select a work"));
-
-		setToolTip(QString::null); //TODO: how to remove tooltip? Does this leave an empty tooltip box?
-		if (module()) {setToolTip(module()->name());}
+		if (m_module) {
+			setToolTip( tr("Select a work") + " [" + m_module->name() + "]" );
+		}
+		else {
+			setToolTip( tr("Select an additional work") );
+		}
 	}
 }
 
@@ -125,15 +125,13 @@ void CModuleChooserButton::populateMenu() {
 	qDeleteAll(m_submenus);
 	m_submenus.clear();
 	delete m_popup;
-
-	//create a new, empty popup
 	m_popup = new QMenu(this);
 	
 	if (m_module) {
-		m_popup->setTitle( tr("Select a work") );
+		this->setToolTip( tr("Select a work") + " [" + m_module->name() + "]" );
 	}
 	else {
-		m_popup->setTitle( tr("Select an additional work") );
+		this->setToolTip( tr("Select an additional work") );
 	}
 
 	m_noneAction = m_popup->addAction(tr("NONE"));
