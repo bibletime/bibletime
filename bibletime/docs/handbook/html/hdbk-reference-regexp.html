@@ -1,0 +1,123 @@
+<html><head><title>GCC Regular Expression Reference</title><link rel="stylesheet" href="help:/common/kde-default.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.67.2"><meta name="keywords" content="KDE, bibletime, sword, crosswire, help dialog"><link rel="start" href="index.html" title="The BibleTime handbook"><link rel="up" href="hdbk-reference.html" title="Chapter 5. Reference"><link rel="prev" href="hdbk-reference-hotkeys.html" title="HotKeys index"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="GENERATOR" content="KDE XSL Stylesheet V1.13 using libxslt"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div style="background-image: url(help:/common/top-middle.png); width: 100%; height: 131px;"><div style="position: absolute;                      right: 0px;"><img src="help:/common/top-right-konqueror.png" style="margin: 0px" alt=""></div><div style="position: absolute;                         top: 25px;                          right: 100px;                          text-align: right;                          font-size: xx-large;                          font-weight: bold;                          text-shadow: #fff 0px 0px 5px;                          color: #444">GCC Regular Expression Reference</div></div><div style="margin-top: 20px; background-color: #white;                        color: black;                       margin-left: 20px;                        margin-right: 20px;"><div style="position: absolute;                          left: 20px;"><a accesskey="p" href="hdbk-reference-hotkeys.html">Prev</a></div><div style="position: absolute;                          right: 20px;"></div><div class="navCenter">Reference</div></div><div class="sect1" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="hdbk-reference-regexp"></a>GCC Regular Expression Reference</h2></div></div></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-reference-regexp-introduction"></a>Introduction</h3></div></div></div><p>Regular expression searches provide a way to do simple or
+complex searches for strings that match a pattern or set of
+patterns (branches) separated by vertical bars "|".
+While a pattern can be built to look for a word or phrase, a
+simple pattern that consists of a word does not look for only
+that word but for any place where that word is found.
+A search for "right" will return verses
+that contain the word "right", but also "<span class="emphasis"><em>right</em></span>eous",
+"<span class="emphasis"><em>right</em></span>eousness", "un<span class="emphasis"><em>right</em></span>eous",
+"up<span class="emphasis"><em>right</em></span>" and even "b<span class="emphasis"><em>right</em></span>".
+A search for "hall not" is not a search for
+"hall" AND "not" but for the string
+"hall not" with a space between the second
+"l" and the "n". The search for "hall
+not" will find occurrences of "s<span class="emphasis"><em>hall not</em></span>".</p><p>The power of Regular Expressions lies in the patterns (or
+templates) used to define a search. A pattern consists of
+ordinary characters and some special characters that are used and
+interpreted by a set of rules. Special characters include
+.\[^*$?+. Ordinary (or simple) characters are any characters that
+are not special. The backslash, "\", is used to convert
+special characters to ordinary and ordinary characters to
+special.</p><p>Example: the pattern "i. love\."
+will find sentences that end with "h<span class="emphasis"><em>i</em></span>s <span class="emphasis"><em>love.</em></span>"
+or "<span class="emphasis"><em>i</em></span>n <span class="emphasis"><em>love.</em></span>" or
+"<span class="emphasis"><em>i</em></span>s <span class="emphasis"><em>love.</em></span>".
+The first period in "i. love\." is a special
+character that means "allow any character in this position". The
+backslash in "i. love\." means that the period
+following it is not to be considered a special character, but is
+an ordinary period.</p></div><div class="sect2" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="hdbk-reference-regexp-characters"></a>Special characters</h3></div></div></div><div class="itemizedlist"><ul type="disc"><li><p>. The period matches any character. See <a href="hdbk-reference-regexp.html#period" title="The period .">details</a></p></li><li><p>* The asterisk matches 0 or more characters of the
+	preceding: set, character or indicated character. See <a href="hdbk-reference-regexp.html#asterisk" title="The asterisk *">details</a></p></li><li><p>+ The plus sign matches 1 or more characters of the
+	preceding: set, character or indicated character. See <a href="hdbk-reference-regexp.html#plus" title="The plus sign +">details</a></p></li><li><p>? The question mark matches 0 or 1 character of the
+	preceding: set, character or indicated character. See <a href="hdbk-reference-regexp.html#question" title="The question mark ?">details</a></p></li><li><p>[ ] Square brackets match any one of the characters
+	specified inside [ ]. See <a href="hdbk-reference-regexp.html#bracket" title="The square brackets [ ]">details</a></p></li><li><p>^ A caret as the first character inside [ ] means NOT. See
+	<a href="hdbk-reference-regexp.html#caret" title="The caret first in square brackets [^xxx]">details</a></p></li><li><p>^ A caret beginning of a pattern anchors the beginning of a
+	line. See <a href="hdbk-reference-regexp.html#caret" title="The caret first in square brackets [^xxx]">details</a></p></li><li><p>$ A dollar at the end of a pattern anchors the end of a
+	line. See <a href="hdbk-reference-regexp.html#dollar" title="The dollar sign as end of line anchor xxx$">details</a></p></li><li><p>| A vertical bar means logical OR. See <a href="hdbk-reference-regexp.html#bar" title="The vertical bar |">details</a></p></li><li><p>( ) Parentheses enclose expressions for grouping.
+<span class="emphasis"><em>Not supported!</em></span></p></li><li><p>\ A backslash can be used prior to any special character
+	to match that character. See <a href="hdbk-reference-regexp.html#backslash" title="The backslash prior to a special character \*">details</a></p></li><li><p>\ A backslash can be used prior to an ordinary character
+	to make it a special character. See <a href="hdbk-reference-regexp.html#backslash" title="The backslash prior to a special character \*">details</a></p></li></ul></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="period"></a>The period .</h4></div></div></div><p>The Period "." will match any single character even
+a space or other non-alphabet character.
+<span class="emphasis"><em>s.t</em></span> matches <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span>,
+<span class="emphasis"><em>s</em></span>e<span class="emphasis"><em>t</em></span>,<span class="emphasis"><em> s</em></span>o<span class="emphasis"><em>t</em></span>,
+etc., which could be located in <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span>ting,
+compas<span class="emphasis"><em>s</em></span>e<span class="emphasis"><em>t</em></span>h and <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>tish
+<span class="emphasis"><em>b..t</em></span> matches <span class="emphasis"><em>b</em></span>oo<span class="emphasis"><em>t</em></span>,
+<span class="emphasis"><em>b</em></span>oa<span class="emphasis"><em>t</em></span> and <span class="emphasis"><em>b</em></span>ea<span class="emphasis"><em>t
+foot.tool </em></span>matches <span class="emphasis"><em>foot</em></span>s<span class="emphasis"><em>tool </em></span>and
+<span class="emphasis"><em>foot tool</em></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="asterisk"></a>The asterisk *</h4></div></div></div><p>The asterisk matches zero or more characters of the preceding:
+set, character or indicated character. Using
+a period asterisk combination ".*" is a common method to match any
+combination of characters.
+<span class="emphasis"><em>be*n</em></span> matches<span class="emphasis"><em> beeen, been, ben</em></span>,
+and <span class="emphasis"><em>bn</em></span> which could locate Reu<span class="emphasis"><em>ben</em></span>
+and She<span class="emphasis"><em>bn</em></span>a. <span class="emphasis"><em>G.*d</em></span> would match
+<span class="emphasis"><em>God, good, guard</em></span> and even <span class="emphasis"><em>Gd</em></span>.
+</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="plus"></a>The plus sign +</h4></div></div></div><p>The Plus Sign matches one or more characters of the preceding:
+set, character or indicated character. Using
+a period and plus sign combination ".+" is similar to ".*" (see above),
+but the string has to contain at least one string to match.
+<span class="emphasis"><em>be+n</em></span> matches <span class="emphasis"><em>beeen, been</em></span> and <span class="emphasis"><em>ben</em></span>,
+but not <span class="emphasis"><em>bn</em></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="question"></a>The question mark ?</h4></div></div></div><p>The Question Mark matches zero or one character of the
+preceding: set, character or indicated character.
+<span class="emphasis"><em>be?n</em></span> matches <span class="emphasis"><em>ben</em></span> and <span class="emphasis"><em>bn</em></span>
+but not <span class="emphasis"><em>been</em></span>.
+<span class="emphasis"><em>trees?</em></span> matches <span class="emphasis"><em>trees</em></span> or <span class="emphasis"><em>tree</em></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="bracket"></a>The square brackets [ ]</h4></div></div></div><p>The Square Brackets enclose a set of characters that can
+match. The period, asterisk, plus sign and question mark are not
+special inside the brackets. A minus sign can be used to indicate
+a range. If you want a caret "^" to be part of the
+range do not place it first after the left bracket or it will be
+a special character. To include a "]" in the set make
+it the first (or second after a special "^") character
+in the set. To include a minus sign in the set make it the first
+(or second after a special "^") or last character in
+the set.
+<span class="emphasis"><em>s[eia]t</em></span> matches <span class="emphasis"><em>set</em></span>, <span class="emphasis"><em>sit</em></span>,
+and <span class="emphasis"><em>sat</em></span>, but not <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>.
+<span class="emphasis"><em>s[eia]+t </em></span>matches as above but also, <span class="emphasis"><em>seat,
+seet, siet</em></span>, etc.
+<span class="emphasis"><em>[a-d]</em></span> matches <span class="emphasis"><em>a, b, c,</em></span> or <span class="emphasis"><em>d</em></span>.
+<span class="emphasis"><em>[A-Z]</em></span> matches any uppercase letter.
+[.;:?!] matches ., ;, :, ?, or ! but not a comma.
+[ ]^-] matches ] or ^ or -.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="caret"></a>The caret first in square brackets [^xxx]</h4></div></div></div><p>If the Caret is the first character after the left bracket it
+means NOT.
+<span class="emphasis"><em>s[^io]t</em></span> matches <span class="emphasis"><em>set, sat</em></span>, etc.,
+but not <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span> and <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="caret-s"></a>The caret as start of line anchor ^xxx</h4></div></div></div><p>If the Caret is the first character in a pattern it anchors
+the pattern to the start of a line. Any match must be at the
+beginning of a line. A line here means a part of text delimited
+by the return character or the end of the text. In Bibles, a "line"
+in this sense is often equivalent to a single verse; the word-wrapping
+that is performed by <span class="application">BibleTime</span> when the text is rendered on the screen
+does not affect the search algorithm.
+<span class="emphasis"><em>^In the beginning</em></span> matches lines that
+start with "<span class="emphasis"><em>In the beginning</em></span>".</p><p>(Because of unfiltered
+formatting characters in some texts, this feature does not always
+work correctly, but may if a few periods are placed after the caret to
+account for the formatting characters. If that is the case for you,
+you could try <span class="emphasis"><em>^..In the beginning</em></span> instead.)</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="dollar"></a>The dollar sign as end of line anchor xxx$</h4></div></div></div><p>If the Dollar Sign is the last character in a pattern it
+anchors the pattern to the end of a line. Any match must be at
+the end of a line.
+<span class="emphasis"><em>Amen\.$</em></span> matches lines that end with
+"<span class="emphasis"><em>Amen.</em></span>"</p><p>(If you encounter the problem with unfiltered formatting characters
+that we just described, you can try: <span class="emphasis"><em>Amen\...$</em></span>
+instead.)</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="bar"></a>The vertical bar |</h4></div></div></div><p>The Vertical Bar between patterns means OR.
+<span class="emphasis"><em>John|Peter</em></span> matches <span class="emphasis"><em>John</em></span> or <span class="emphasis"><em>Peter.
+John .*Peter|Peter .*John</em></span> matches <span class="emphasis"><em>John</em></span>
+... <span class="emphasis"><em>Peter</em></span> or <span class="emphasis"><em>Peter</em></span> ... <span class="emphasis"><em>John</em></span>.
+<span class="emphasis"><em>pain|suffering|sorrow</em></span> matches <span class="emphasis"><em>pain</em></span>,
+or <span class="emphasis"><em>suffering</em></span>, or <span class="emphasis"><em>sorrow</em></span>.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="parenth"></a>The parentheses ( ) </h4></div></div></div><p><span class="emphasis"><em>The use of Parentheses ( ) is
+not supported!</em></span></p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="backslash"></a>The backslash prior to a special character \*</h4></div></div></div><p>The Backslash prior to a special character indicates that the
+character is not being used in its special meaning, but is just
+to match itself.
+"amen\." matches <span class="emphasis"><em>amen.</em></span> but not <span class="emphasis"><em>amen</em></span>t
+and will not locate firm<span class="emphasis"><em>amen</em></span>t.</p></div><div class="sect3" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="backslash-o"></a>The backslash prior to an ordinary character \s</h4></div></div></div><p>The Backslash prior to an ordinary character indicates that
+the character is not being used to match itself, but has special
+meaning.</p><div class="itemizedlist"><ul type="disc"><li><p>
+\b if used outside [ ] means word boundary. If used inside [ ], it means backspace.
+<span class="emphasis"><em>\brighteous\b</em></span> matches <span class="emphasis"><em>righteous</em></span> but
+not un<span class="emphasis"><em>righteous</em></span> or <span class="emphasis"><em>righteous</em></span>ness.</p></li><li><p>\B means non-word boundary.  <span class="emphasis"><em>\Brighteous\B</em></span>
+matches un<span class="emphasis"><em>righteous</em></span>ness and un<span class="emphasis"><em>righteous</em></span>ly
+but not <span class="emphasis"><em>righteous</em></span>, un<span class="emphasis"><em>righteous</em></span> or <span class="emphasis"><em>
+righteous</em></span>ness.</p></li><li><p>\d means digit; same as [0-9].</p></li><li><p>\D means non-digit, same as [^0-9].</p></li><li><p>\s means whitespace character.</p></li><li><p>\S means no whitespace character.</p></li><li><p>\w means alphanumeric; same as [a-zA-Z0-9_].</p></li><li><p>\W means not alphanumeric; same as [^a-zA-Z0-9_].</p></li></ul></div></div></div></div><div style="background-color: #white; color: black;                  margin-top: 20px; margin-left: 20px;                  margin-right: 20px;"><div style="position: absolute; left: 20px;"><a accesskey="p" href="hdbk-reference-hotkeys.html">Prev</a></div><div style="position: absolute; right: 20px;"></div><div align="center"><a accesskey="h" href="index.html">Home</a></div></div><div style="background-color: #white;   color: black;         margin-left: 20px;   margin-right: 20px;"><div class="navLeft">HotKeys index </div><div class="navRight"> </div><div class="navCenter"><a accesskey="u" href="hdbk-reference.html">Up</a></div></div><br><br><div class="bannerBottom" style="background-image: url(help:/common/bottom-middle.png);                                        background-repeat: x-repeat;                                         width: 100%;                                         height: 100px;                                         bottom:0px;"><div class="BannerBottomRight"><img src="help:/common/bottom-right.png" style="margin: 0px" alt=""></div><div class="bannerBottomLeft"><img src="help:/common/bottom-left.png" style="margin: 0px;" alt=""></div><div id="comments" style="position:relative; top: 5px; left: 1em; height:85px; width: 50%; color: #cfe1f6"><p>Would you like to make a comment or contribute an update to this page?<br>
+        Send feedback to the <a href="mailto:kde-docs@kdemail.net" style="background:transparent; color:#cfe1f6; text-decoration: underline;">KDE Docs Team</a></p></div></div></body></html>

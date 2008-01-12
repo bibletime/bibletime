@@ -1,0 +1,3134 @@
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (fi)  #-#-#-#-#
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (fi)  #-#-#-#-#
+# translation of fi.po to finnish
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (handbook)  #-#-#-#-#
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (handbook)  #-#-#-#-#
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (handbook)  #-#-#-#-#
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of full.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# #-#-#-#-#  fi.po (handbook)  #-#-#-#-#
+# translation of handbook.po to finnish
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.#.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.#.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.#.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.#.
+# Ilpo Kantonen <ilpo@iki.fi>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2006-08-23 16:17+0000\n"
+"PO-Revision-Date: 2005-12-21 00:28+0200\n"
+"Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
+"Language-Team: finnish <Finnish <kde-i18n-fi-discussion@lists.sourceforge."
+"net>>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (fi)  #-#-#-#-#\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (fi)  #-#-#-#-#\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (handbook)  #-#-#-#-#\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (handbook)  #-#-#-#-#\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (handbook)  #-#-#-#-#\n"
+"#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+"#-#-#-#-#  fi.po (handbook)  #-#-#-#-#\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#. Tag: title
+#: hdbk-config.docbook:1
+#, no-c-format
+msgid "Configuring &bibletime;"
+msgstr "&bibletime;:n asetukset"
+
+#. Tag: para
+#: hdbk-config.docbook:3
+#, no-c-format
+msgid ""
+"In this section you find a description of the different possibilities to "
+"configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
+"BibleTime Dialog </link> and the <link linkend=\"hdbk-config-toolbar"
+"\">Configure Toolbars</link> dialog. Both can be accessed under "
+"<guimenu>Settings</guimenu> in the main menu."
+msgstr ""
+"Tässä osiossa löydät kuvauksen erilaisista tavoista asettaa &bibletime;:n "
+"asetukset: <link linkend=\"hdbk-config-bt\">Aseta BibleTime -ikkuna </link> "
+"ja <link linkend=\"hdbk-config-toolbar\">Aseta työkalupalkit</link> -ikkuna. "
+"Kumpaankin päästään päävalikon<guimenu>Asetukset</guimenu> -kohdasta."
+
+#. Tag: title
+#: hdbk-config.docbook:8
+#, no-c-format
+msgid "Configure BibleTime Dialog"
+msgstr "Aseta &bibletime; -ikkuna"
+
+#. Tag: para
+#: hdbk-config.docbook:10
+#, no-c-format
+msgid ""
+"The &bibletime; user interface can be customized in many ways depending on "
+"your needs. You can access the configuration dialog by selecting "
+"<menuchoice><guimenu>Settings</guimenu></menuchoice> <guimenuitem>Configure "
+"&bibletime;</guimenuitem>."
+msgstr ""
+"&bibletime; käyttöliittymä voidaan muokata monella tavalla riippuen "
+"tarpeistasi. Pääset asetusikkunaan valitsemalla "
+"<menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta "
+"&bibletime;</guimenuitem>."
+
+#. Tag: guimenu
+#: hdbk-config.docbook:15
+#, no-c-format
+msgid "Display"
+msgstr "Näyttö"
+
+#. Tag: para
+#: hdbk-config.docbook:17
+#, no-c-format
+msgid ""
+"The startup behavior can be customized. Select from the following options:"
+msgstr ""
+"Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista:"
+
+#. Tag: para
+#: hdbk-config.docbook:19
+#, no-c-format
+msgid "Show tip of the day"
+msgstr "Näytä päivän vihje"
+
+#. Tag: para
+#: hdbk-config.docbook:20
+#, no-c-format
+msgid "Show startup logo"
+msgstr "Näytä aloituskuva"
+
+#. Tag: para
+#: hdbk-config.docbook:23
+#, no-c-format
+msgid ""
+"Display templates define the rendering of text (colors, size etc.). Various "
+"built-in templates are available. If you select one, you will see a preview "
+"on the right pane."
+msgstr ""
+"Näyttömallit määrittelevät tekstin renderöinnin (värit, koko jne.). "
+"Erilaisia sisäänrakennettuja mallipohjia on saatavana. Jos valitset yhden "
+"sellaisen, näet esikatselukuvan oikealla paneelissa."
+
+#. Tag: guimenu
+#: hdbk-config.docbook:28
+#, no-c-format
+msgid "Languages"
+msgstr "Kielet"
+
+#. Tag: para
+#: hdbk-config.docbook:30
+#, no-c-format
+msgid ""
+"Here you can specify which language should be used for the biblical "
+"booknames. Set this to your native language, if it is available, and you'll "
+"feel at home."
+msgstr ""
+"Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä "
+"äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi."
+
+#. Tag: para
+#: hdbk-config.docbook:33
+#, no-c-format
+msgid ""
+"By default, &bibletime; uses the &kde; general display font which can be "
+"specified in the &kcontrolcenter;. You can override this font if neccessary. "
+"Some languages require special fonts to be displayed correctly, and this "
+"dialog allows you to specify a custom font for each language."
+msgstr ""
+"Oletuksena &bibletime; käyttää &kde;:n yleisiä näyttökirjasimia, jotka "
+"voidaan asettaa  &kcontrolcenter; (Ohjauskeskuksessa). Voit korvata "
+"tarvittaessa tämän kirjasimen. Jotkut kielet tarvitsevat erikoiskirjasimia "
+"näkyäkseen oikein, ja tällä ikkunalla voit määrittää omat kirjasimet "
+"kullekin kielelle."
+
+#. Tag: phrase
+#: hdbk-config.docbook:41
+#, no-c-format
+msgid "Options Dialog - fonts"
+msgstr "Asetusikkuna - kirjasimet"
+
+#. Tag: para
+#: hdbk-config.docbook:42
+#, no-c-format
+msgid "The Options dialog - Fonts."
+msgstr "Valintaikkuna - Kirjasimet."
+
+#. Tag: para
+#: hdbk-config.docbook:45
+#, no-c-format
+msgid ""
+"&bibletime; can now use all fonts supported by KDE/QT. As long as the works "
+"you are interested in display correctly nothing needs to be done here. If a "
+"work only displays as a series of question marks (??????) or empty boxes, "
+"then you know that the standard KDE display font does not contain the "
+"characters used in this work."
+msgstr ""
+"&bibletime; osaa käyttää nyt kaikkia KDE/QT:n kirjasimia. Niin kauan kuin "
+"olet kiinnostunut näyttämään oikein, tässä ei tarvitse tehdä mitään. Jos "
+"näytöllä näkyy sarja kysymysmerkkejä (??????) tai tyhjiä laatikoita, silloin "
+"tiedät, että KDE:n oletusnäytön kirjasin ei sisällä kaikkia tämän työn "
+"käyttämiä merkkejä."
+
+#. Tag: para
+#: hdbk-config.docbook:51
+#, no-c-format
+msgid ""
+"To correct this, choose this work's language from the drop down menu. Select "
+"the use custom font checkbox. Now select a font. For example, a font that "
+"supports many languages is Code2000. If no installed font can display the "
+"work you are interested in, try installing the &kde; localization package "
+"for that language."
+msgstr ""
+"Korjataksesi tämän valitse tämän teoksen kieli alasvetovalikosta. Valitse "
+"oma kirjasin valintaruutu. Nyt valitse kirjasin. Esimerkiksi monia kieliä "
+"tarjoava kirjasin on Code2000. Jos mikään asennettu kirjasin ei pysty "
+"näyttämään teosta, sinun tulee asentaa konelle &kde; lokalisointipaketti "
+"tälle kielelle."
+
+#. Tag: title
+#: hdbk-config.docbook:57
+#, no-c-format
+msgid "Installing fonts"
+msgstr "Kirjasimien asennus"
+
+#. Tag: para
+#: hdbk-config.docbook:58
+#, no-c-format
+msgid ""
+"Detailed font installation instructions are outside the scope of this "
+"handbook. &kde;'s <ulink url=\"help:/kcontrol/index.html\">KControl Center</"
+"ulink> contains an excellent and easy to use font installation module. "
+"Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> its "
+"documentation</ulink>. For further information you might want to refer to "
+"the <ulink url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/"
+"html_single/Unicode-HOWTO.html#toc4\"> Unicode HOWTO</ulink>."
+msgstr ""
+"Tässä käsikirjassa ei ole kirjasimien asennuksen yksityiskohtaisia ohjeita. "
+"&Kde;:n <ulink url=\"help:/kcontrol/index.html\">Ohjauskeskus</ulink> "
+"sisältää erinomaisen ja helpon kirjasimien asennusmoduulin. Lue <ulink url="
+"\"help:/kcontrol/kcmfontinst/index.html\"> sen dokumentaatio</ulink>. "
+"Lisätietoja saadaksesi voit lukea <ulink url=\"http://www.ibiblio.org/pub/"
+"Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4\"> "
+"Unicode HOWTO</ulink>."
+
+#. Tag: para
+#: hdbk-config.docbook:66
+#, no-c-format
+msgid ""
+"If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
+"faster than with a large font like <trademark class=\"registered\"> "
+"Bitstream Cyberbit</trademark> (about 12Mb)."
+msgstr ""
+"Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on "
+"nopeampi kuin suurilla kirjasimilla kuten <trademark class=\"registered\"> "
+"Bitstream Cyberbit</trademark> (noin 12Mb)."
+
+#. Tag: title
+#: hdbk-config.docbook:71
+#, no-c-format
+msgid "Obtaining Fonts"
+msgstr "Kirjasimien hankinta"
+
+#. Tag: para
+#: hdbk-config.docbook:72
+#, no-c-format
+msgid "Fonts can be obtained from a number of sources:"
+msgstr "Kirjasimia voi hankkia lukuisasta joukosta lähteitä:"
+
+#. Tag: para
+#: hdbk-config.docbook:74
+#, no-c-format
+msgid "Your Linux distribution."
+msgstr "Linux-distribuutiosi."
+
+#. Tag: para
+#: hdbk-config.docbook:75
+#, no-c-format
+msgid "Your distribution's localization packages."
+msgstr "Distribuutiosi lokalisointipaketit."
+
+#. Tag: para
+#: hdbk-config.docbook:76
+#, no-c-format
+msgid ""
+"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
+"installation on the same computer."
+msgstr ""
+"Olemassaoleva <trademark class=\"registered\">Microsoft Windows</trademark> "
+"asennus samalla tietokoneella."
+
+#. Tag: para
+#: hdbk-config.docbook:77
+#, no-c-format
+msgid "A font collection, such as are available from Adobe or Bitstream."
+msgstr ""
+"Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla."
+
+#. Tag: para
+#: hdbk-config.docbook:78
+#, no-c-format
+msgid "Online font collections."
+msgstr "Online kirjasinkokoelmat."
+
+#. Tag: para
+#: hdbk-config.docbook:81
+#, no-c-format
+msgid ""
+"Unicode fonts support more characters than other fonts, and some of these "
+"fonts are available at no charge. None of available fonts includes all "
+"characters defined in the Unicode standard, so you may want to use different "
+"fonts for different languages."
+msgstr ""
+"Unicode-kirjasimet tarjoavat enemmän merkkejä kuin muut kirjasimet, ja "
+"jotkut niistä kirjasimista ovat saatavilla ilmaiseksi. Mikään "
+"saatavillaoleva kirjasin ei sisällä kaikkia Unicode-standardin määrittelemiä "
+"merkkejä. Sinun tulee käyttää eri kirjasimia eri kielille."
+
+#. Tag: title
+#: hdbk-config.docbook:87
+#, no-c-format
+msgid "Unicode Fonts"
+msgstr "Unicode-kirjasimet"
+
+#. Tag: ulink
+#: hdbk-config.docbook:91
+#, no-c-format
+msgid "Code2000"
+msgstr "Code2000"
+
+#. Tag: entry
+#: hdbk-config.docbook:92
+#, no-c-format
+msgid ""
+"Perhaps the best free Unicode font, covering a wide range of characters."
+msgstr "Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä."
+
+#. Tag: ulink
+#: hdbk-config.docbook:94
+#, no-c-format
+msgid "SIL unicode fonts"
+msgstr "SIL-'unicode -kirjasin"
+
+#. Tag: entry
+#: hdbk-config.docbook:96
+#, no-c-format
+msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
+msgstr "Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin."
+
+#. Tag: ulink
+#: hdbk-config.docbook:98
+#, no-c-format
+msgid "FreeFont"
+msgstr "FreeFont"
+
+#. Tag: entry
+#: hdbk-config.docbook:99
+#, no-c-format
+msgid "A new free unicode font initiative."
+msgstr "Uusi vapaa unicode-kirjasinaloite."
+
+#. Tag: ulink
+#: hdbk-config.docbook:101
+#, no-c-format
+msgid "Crosswire's font directory"
+msgstr "Crosswiren kirjasinkansio"
+
+#. Tag: entry
+#: hdbk-config.docbook:102
+#, no-c-format
+msgid "Several fonts available from the Crosswire Bible Society Ftp site."
+msgstr "Useita kirjasimia saatavana Crosswire Bible Society Ftp -palvelimella."
+
+#. Tag: ulink
+#: hdbk-config.docbook:104
+#, no-c-format
+msgid "Bitstream CyberBit"
+msgstr "Bitstream CyberBit"
+
+#. Tag: entry
+#: hdbk-config.docbook:105
+#, no-c-format
+msgid ""
+"Covers almost the entire range of Unicode, but might slow &bibletime; down "
+"because of its size."
+msgstr ""
+"Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä "
+"merkittävästi koon vuoksi."
+
+#. Tag: entry
+#: hdbk-config.docbook:107
+#, no-c-format
+msgid "Clearlyu"
+msgstr "Clearlyu"
+
+#. Tag: entry
+#: hdbk-config.docbook:108
+#, no-c-format
+msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr ""
+"Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, "
+"heprean ja Thai-kielen."
+
+#. Tag: ulink
+#: hdbk-config.docbook:110
+#, no-c-format
+msgid "Caslon, Monospace, Cupola, Caliban"
+msgstr "Caslon, Monospace, Cupola, Caliban"
+
+#. Tag: entry
+#: hdbk-config.docbook:111
+#, no-c-format
+msgid "Partial coverage, see information on linked site."
+msgstr "Osittainen peittävyys, katso tietoja linkitetyltä sivulta."
+
+#. Tag: para
+#: hdbk-config.docbook:116
+#, no-c-format
+msgid ""
+"There are good Unicode font lists on the net, as the one by Christoph Singer "
+"(<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood (<ulink url="
+"\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+msgstr ""
+"Netissä on hyviä Unicode-kirjasinluetteloja, kuten Christoph Singerin "
+"(<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), tai Alan Woodin (<ulink url="
+"\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+
+#. Tag: guimenu
+#: hdbk-config.docbook:127
+#, no-c-format
+msgid "Desk"
+msgstr "Työpöytä"
+
+#. Tag: para
+#: hdbk-config.docbook:129
+#, no-c-format
+msgid ""
+"Many features provided by the Sword backend can now be customized in "
+"&bibletime;. These features are documented right in the dialog. You also "
+"have the possibility to specify standard works that should be used when no "
+"specific work is specified in a reference. An example: The standard Bible is "
+"used to display the content of crossreferences in the Bible. When you hover "
+"over then, the Mag will show the content of the verses referred to, "
+"according to the standard Bible you specified."
+msgstr ""
+
+#. Tag: guimenu
+#: hdbk-config.docbook:138
+#, no-c-format
+msgid "HotKeys"
+msgstr "Pikavalinnat"
+
+#. Tag: para
+#: hdbk-config.docbook:140
+#, no-c-format
+msgid ""
+"HotKeys are special key commands that can be used in the place of the menu "
+"items and icons. A number of &bibletime;'s commands have predefined HotKeys "
+"(see <link linkend=\"hdbk-reference-hotkeys\">this section</link> for a "
+"complete listing). Most of &bibletime;'s commands can be assigned HotKeys "
+"here. This is very helpful to quickly access the functions that you need the "
+"most."
+msgstr ""
+
+#. Tag: title
+#: hdbk-config.docbook:151
+#, no-c-format
+msgid "Configure Toolbars dialog"
+msgstr "Aseta työkalupalkki -ikkuna"
+
+#. Tag: para
+#: hdbk-config.docbook:152
+#, no-c-format
+msgid ""
+"You can adapt the toolbar to your needs. Please use the following entry in "
+"the main menu:"
+msgstr ""
+"Voit mukauttaa työkalupalkin tarpeitasi vastaavaksi. Käytä seuraavaa kohtaa "
+"päävalikossa:"
+
+#. Tag: menuchoice
+#: hdbk-config.docbook:155
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
+"inlinemediaobject>Settings </guimenu> <guimenuitem>Configure toolbars</"
+"guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
+"inlinemediaobject>Asetukset </guimenu> <guimenuitem>Aseta työkalupalkit</"
+"guimenuitem>"
+
+#. Tag: para
+#: hdbk-config.docbook:162
+#, no-c-format
+msgid "Configure toolbars"
+msgstr "Aseta työkalupalkit"
+
+#. Tag: para
+#: hdbk-config.docbook:166
+#, no-c-format
+msgid ""
+"You will see this dialog, which allows adding and removing buttons from the "
+"main toolbar of &bibletime;. The order of the can also be changed."
+msgstr ""
+"Näet tämän ikkunan, joka sallii painikkeiden lisäyksen ja poiston "
+"&bibletime;:n päätyökalurivistä. Painikkeiden järjestys on myös "
+"vaihdettavissa."
+
+#. Tag: phrase
+#: hdbk-config.docbook:173
+#, no-c-format
+msgid "Toolbar configuration dialog"
+msgstr "Työkalupalkin asetusten säätöikkuna"
+
+#. Tag: para
+#: hdbk-config.docbook:174
+#, no-c-format
+msgid "The Toolbar configuration dialog."
+msgstr "Työkalupalkin asetusten säätöikkuna."
+
+#. Tag: para
+#: hdbk-config.docbook:176
+#, no-c-format
+msgid ""
+"Use the 4 buttons in the middle of the window to move buttons to the "
+"toolbar, away from the toolbar or to sort them on the toolbar according to "
+"your preference."
+msgstr ""
+
+#. Tag: para
+#: hdbk-config.docbook:179
+#, no-c-format
+msgid ""
+"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+"section</link> for further information."
+msgstr ""
+"Katso <link linkend=\"hdbk-reference-menus-settings-toolbars\">tämä osio</"
+"link> lisätietojen saamiseksi."
+
+#. Tag: title
+#: hdbk-intro.docbook:1 hdbk-reference.docbook:483
+#, no-c-format
+msgid "Introduction"
+msgstr "Johdanto"
+
+#. Tag: title
+#: hdbk-intro.docbook:3
+#, no-c-format
+msgid "About BibleTime"
+msgstr "Tietoja BibleTimestä"
+
+#. Tag: para
+#: hdbk-intro.docbook:4
+#, no-c-format
+msgid ""
+"&bibletime; is a powerful Bible study tool written for the &kde; environment "
+"on the Linux operating system. It is based on the <ulink url=\"http://www."
+"crosswire.org/sword\">Sword</ulink> library, which provides the back-end "
+"functionality for &bibletime;, such as viewing Bible text, searching etc. "
+"Sword is the flagship product of the <ulink url=\"http://www.crosswire.org"
+"\">Crosswire Bible Society</ulink>."
+msgstr ""
+"&bibletime; on tehokas Raamattuohjelma ohjelmoitu &kde;-"
+"työpöytäohjelmistolle Linux-käyttöjärjestelmässä. Se perustuu <ulink url="
+"\"http://www.crosswire.org/sword\">Sword</ulink>-kirjastoon, joka tarjoaa "
+"toiminnallisuuden &bibletime;:lle, kuten Raamatun tekstin näyttäminen, "
+"etsintä, jne. Sword on <ulink url=\"http://www.crosswire.org\">Crosswire "
+"Bible Societyn</ulink> lippulaiva."
+
+#. Tag: para
+#: hdbk-intro.docbook:12
+#, no-c-format
+msgid ""
+"&bibletime; is designed to be used with works encoded in one of the formats "
+"supported by the Sword project. Complete information on the supported "
+"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
+"sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
+"Crosswire Bible Society."
+msgstr ""
+"&bibletime; on suunniteltu käytettäväksi Sword-projektin mallien mukaisille "
+"teoksille. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät "
+"osoitteesta Crosswire Bible Societyn Sword-projektin <ulink url=\"http://www."
+"crosswire.org/sword/develop/index.jsp\">kehittäjien osio</ulink>."
+
+#. Tag: title
+#: hdbk-intro.docbook:18
+#, no-c-format
+msgid "Available works"
+msgstr "Saatavana olevat tehtävät"
+
+#. Tag: para
+#: hdbk-intro.docbook:20
+#, no-c-format
+msgid ""
+"Over 200 documents in 50 languages are available from the <ulink url="
+"\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
+msgstr ""
+"Yli 200 asiakirjaa 50 kielellä ovat saatavana <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Societyn</ulink> sivuilta. Nämä sisältävät:"
+
+#. Tag: term
+#: hdbk-intro.docbook:26
+#, no-c-format
+msgid "Bibles"
+msgstr "Raamattuja"
+
+#. Tag: para
+#: hdbk-intro.docbook:28
+#, no-c-format
+msgid ""
+"The full Bible text, with optional things like Strong's Numbers, headings "
+"and/or footnotes in the text. Bibles are available in many languages, and "
+"include not only modern versions, but also ancient texts like the Codex "
+"Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
+"is the most advanced section in the library of the Sword project."
+msgstr ""
+
+#. Tag: term
+#: hdbk-intro.docbook:35
+#, no-c-format
+msgid "Books"
+msgstr "Kirjat"
+
+#. Tag: para
+#: hdbk-intro.docbook:37
+#, no-c-format
+msgid ""
+"Books available include &quot;Imitation of Christ&quot;, &quot;Enuma "
+"Elish&quot;, and &quot;Josephus: The Complete Works&quot;"
+msgstr ""
+
+#. Tag: term
+#: hdbk-intro.docbook:43
+#, no-c-format
+msgid "Commentaries"
+msgstr "Kommentaareja"
+
+#. Tag: para
+#: hdbk-intro.docbook:45
+#, no-c-format
+msgid ""
+"Commentaries available include classics like John Wesley's \"Notes on the "
+"Bible\", Matthew Henry`s commentary and Luther's \"Commentary on Galatians."
+"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
+"\"hdbk-op-parts-desk-write\">record your own personal notes</link> to "
+"sections of the Bible."
+msgstr ""
+
+#. Tag: term
+#: hdbk-intro.docbook:52
+#, no-c-format
+msgid "Daily devotionals"
+msgstr "Päivittäiset hartaukset"
+
+#. Tag: para
+#: hdbk-intro.docbook:54
+#, no-c-format
+msgid ""
+"Many people appreciate these daily portions from God's word. Available works "
+"include Daily Light on the Daily Path, and the Losungen."
+msgstr ""
+"Monet ihmiset pitävät arvossa päivän Sanaa. Saatavillaolevat teokset "
+"sisältävät Daily Light Daily Pathilla, ja Losungenin."
+
+#. Tag: term
+#: hdbk-intro.docbook:60
+#, fuzzy, no-c-format
+msgid "Lexicons/Dictionaries"
+msgstr "Lexicons / Sanakirjat"
+
+#. Tag: para
+#: hdbk-intro.docbook:62
+#, no-c-format
+msgid ""
+"Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
+"Driver-Briggs Hebrew Lexicon and the International Standard Bible "
+"Encyclopedia. Dictionaries available include Strong's Hebrew Bible "
+"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
+"Dictionary of the English Language 1913, Nave's Topical Bible."
+msgstr ""
+
+#. Tag: title
+#: hdbk-intro.docbook:73
+#, no-c-format
+msgid "Motivation"
+msgstr "Motivaatiota"
+
+#. Tag: para
+#: hdbk-intro.docbook:74
+#, no-c-format
+msgid ""
+"Our desire is to serve God, and to do our part to help others grow in their "
+"relationship with Him. We have striven to make this a powerful, quality "
+"program, and still make it simple and intuitive to operate. It is our desire "
+"that God be praised, as He is the source of all good things."
+msgstr ""
+"Päämäärämme on palvella Jumalaa ja teemme osamme auttaaksemme muita Jumala-"
+"suhteen kasvussa. Yritämme päästä siihen tehokkaalla, laadukkaalla "
+"ohjelmalla, ja vielä tehdä siitä yksinkertainen ja opastava käytössä. Meidän "
+"päämäärämme on, että Jumalaa ylistettäisiin, sillä hän on kaikkien hyvien "
+"asioiden lähde."
+
+#. Tag: attribution
+#: hdbk-intro.docbook:81
+#, no-c-format
+msgid "James 1:17, NASB"
+msgstr ""
+
+#. Tag: para
+#: hdbk-intro.docbook:82
+#, no-c-format
+msgid ""
+"Every good thing given and every perfect gift is from above, coming down "
+"from the Father of lights, with whom there is no variation or shifting "
+"shadow."
+msgstr ""
+
+#. Tag: para
+#: hdbk-intro.docbook:86
+#, no-c-format
+msgid "God bless you as you use this program."
+msgstr "Jumala siunatkoon sinua käyttäessäsi tätä ohjelmaa."
+
+#. Tag: title
+#: hdbk-operation.docbook:1
+#, no-c-format
+msgid "Program operation"
+msgstr "Ohjelman toiminto"
+
+#. Tag: title
+#: hdbk-operation.docbook:4
+#, no-c-format
+msgid "Program overview"
+msgstr "Yleiskatsaus ohjelmaan"
+
+#. Tag: para
+#: hdbk-operation.docbook:6
+#, no-c-format
+msgid ""
+"This is how a typical &bibletime; session looks like: <mediaobject> "
+"<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\"/> </"
+"imageobject> <textobject> <phrase>The &bibletime; application window</"
+"phrase> </textobject> </mediaobject> You can easily see the different parts "
+"of the application. The Bookshelf on the left side is used to open works and "
+"to manage your bookmarks. The little \"Mag\" window below the Bookshelf is "
+"used to display extra information that is embedded in documents. When you "
+"move your mouse over a footnote marker, for example, then the Mag will "
+"display the actual content of the footnote. The toolbar gives you quick "
+"access to important functions, and the Desk on the right side is where you "
+"do your real work."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:17
+#, no-c-format
+msgid ""
+"Let us now proceed by looking at the different parts of the application "
+"individually."
+msgstr "Jatkakaamme katsomalla sovelluksen eri osia erikseen."
+
+#. Tag: title
+#: hdbk-operation.docbook:21
+#, no-c-format
+msgid "Parts of the &bibletime; application window"
+msgstr "&bibletime;n osa sovellusikkuna"
+
+#. Tag: title
+#: hdbk-operation.docbook:24
+#, no-c-format
+msgid "The Bookshelf"
+msgstr "Kirjahylly"
+
+#. Tag: para
+#: hdbk-operation.docbook:25
+#, no-c-format
+msgid ""
+"The Bookshelf lists all installed works, sorted by category and language. It "
+"also has a category called \"Bookmarks\". This is where you can store and "
+"access your own bookmarks."
+msgstr ""
+"Kirjahyllyn kaikkien asennettujen teosten luettelo, lajiteltu "
+"kategorioittain ja kielien mukaan. Se sisältää kategorian \"Kirjanmerkit\". "
+"Sinne voit tallentaa ja hakea omia kirjanmerkkejäsi."
+
+#. Tag: title
+#: hdbk-operation.docbook:29 hdbk-operation.docbook:81
+#, no-c-format
+msgid "Reading works"
+msgstr "Lukutehtäviä"
+
+#. Tag: para
+#: hdbk-operation.docbook:30
+#, fuzzy, no-c-format
+msgid ""
+"To open a work from the bookshelf for reading, simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the desired category "
+"(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
+"display its contents. Then just click on one of the works to open it for "
+"reading. A read window will appear in the Desk area."
+msgstr ""
+"Avataksesi teoksen kirjahyllystä lukemista varten, napsauta "
+"yksinkertaisesti<mousebutton>vasenta hiiren nappia</mousebutton> halutussa "
+"kategoriassa (Raamatut, kommentaarit, Lexicons, kirjat, Devotionals tai "
+"sanastot) näyttääksesi sen sisällön. Sitten napsauta yksinkertaisesti yhtä "
+"teosta avataksesi sen lukemista varten. Lukuikkuna ilmestyy työpöydälle."
+
+#. Tag: para
+#: hdbk-operation.docbook:33 hdbk-operation.docbook:59
+#, no-c-format
+msgid "Drag &amp; Drop Works Here"
+msgstr "Raahaa &amp; pudota tehtävä tähän"
+
+#. Tag: para
+#: hdbk-operation.docbook:34
+#, no-c-format
+msgid ""
+"If you are reading a certain work, and want to open another work at the "
+"passage you are reading, you can use a shortcut. Simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the verse/passage reference "
+"(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work "
+"you want to open, and it will be opened for reading at the specified "
+"location. You can also drag a verse reference into an existing read window, "
+"then it will jump to the specified location."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:40
+#, no-c-format
+msgid "Additional information about works"
+msgstr "Tehtävien lisätiedot"
+
+#. Tag: para
+#: hdbk-operation.docbook:41
+#, no-c-format
+msgid ""
+"If you click with the <mousebutton>right</mousebutton> mouse button on the "
+"symbol of a work, you will see a menu with additional entries that are "
+"relevant for this work. <guimenuitem>\"About this work\"</guimenuitem> opens "
+"a window with lots of interesting information about the selected work. "
+"<guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog for "
+"encrypted documents, where you can enter the unlock key to access the work. "
+"For additional information on locked works, please see <ulink url=\"http://"
+"www.crosswire.org/sword/modules/aboutlocked.jsp\">this page</ulink> on the "
+"Crosswire Bible Society web site."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:49 hdbk-operation.docbook:115
+#, no-c-format
+msgid "Searching in works"
+msgstr "Etsintä teoksista"
+
+#. Tag: para
+#: hdbk-operation.docbook:49
+#, no-c-format
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
+"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
+"you can select more than one. Then follow the same procedure to open the "
+"search dialog. You will be searching in all of these documents. A complete "
+"description of the operation of the search features can be found <link "
+"linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:57
+#, no-c-format
+msgid "Working with bookmarks"
+msgstr "Kirjanmerkkityöskentely"
+
+#. Tag: para
+#: hdbk-operation.docbook:59
+#, no-c-format
+msgid ""
+"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
+"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
+"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
+"&amp; drop functions to drag verse references from read windows or search "
+"results to the bookmark folder, and to rearrange bookmarks between folders."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:63
+#, no-c-format
+msgid ""
+"You can also import bookmarks from other people or export bookmarks to share "
+"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
+"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
+"collection. You can import bookmarks in a similar way."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:65
+#, no-c-format
+msgid ""
+"You can also click with the <mousebutton>right</mousebutton> on folders and "
+"bookmarks to change their names and descriptions."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:70
+#, no-c-format
+msgid "The Mag(nifying glass)"
+msgstr "Suurennuslasi"
+
+#. Tag: para
+#: hdbk-operation.docbook:71
+#, no-c-format
+msgid ""
+"This little window in the lower left corner of the &bibletime; window is "
+"purely passive. Whenever your mouse cursor is located over some text with "
+"additional information (e.g., Strong's numbers), then this additional "
+"information will be displayed in the Mag, and not in the text itself. Just "
+"try it out."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:76
+#, no-c-format
+msgid "The Desk"
+msgstr "Työpöytä"
+
+#. Tag: para
+#: hdbk-operation.docbook:77
+#, no-c-format
+msgid ""
+"The Desk is where the real work with &bibletime; takes place. Here you can "
+"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
+"\">search</link> in them, and even save your annotations in the personal "
+"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
+"link>)."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:82
+#, no-c-format
+msgid ""
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
+"link>, you can open works for reading simply by clicking on their symbol in "
+"the Bookshelf. A read window will open in the Desk's area. Every read window "
+"has a toolbar. There you can find tools to navigate in the work that this "
+"read window is connected to, as well as history buttons like the ones that "
+"you know from your browser."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:87
+#, no-c-format
+msgid "Read window placement"
+msgstr "Lukuikkunan sijoitus"
+
+#. Tag: para
+#: hdbk-operation.docbook:88
+#, no-c-format
+msgid ""
+"Of course, you can open multiple works at the same time. There are several "
+"possibilities for arranging the read windows on the desk. Please have a look "
+"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"that you can either control the placement of the read windows completely "
+"yourself, or have &bibletime; handle the placement automatically. To achieve "
+"this, you have to select one of the automatic placement modes available at "
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
+"guimenuitem></menuchoice>. Just try it out, it's simple and works."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:94
+#, no-c-format
+msgid "Editing your own commentary"
+msgstr "Muokkaa omaa kommentaariasi"
+
+#. Tag: para
+#: hdbk-operation.docbook:95
+#, fuzzy, no-c-format
+msgid ""
+"To be able to store your own comments about parts of the Bible, you have "
+"install a certain work from the library of the <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
+"\"Personal commentary\"."
+msgstr ""
+"Yli 200 asiakirjaa 50 kielellä ovat saatavana <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Societyn</ulink> sivuilta. Nämä sisältävät:"
+
+#. Tag: para
+#: hdbk-operation.docbook:97
+#, no-c-format
+msgid ""
+"If you open the personal commentary by clicking on its symbol in the "
+"Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
+"read mode. You will not be able to edit it in this mode. Should you wish to "
+"write annotations into the personal commentary, you have to open it with the "
+"<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
+"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
+"(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
+"editor)."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:101
+#, no-c-format
+msgid ""
+"If <menuchoice><guimenu>Edit this work</guimenu></menuchoice> is "
+"deactivated, please check if you have write permission for the files of the "
+"personal commentary."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:105
+#, no-c-format
+msgid ""
+"Drag&amp;drop works here. Drop a verse reference and the text of the verse "
+"will be inserted."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:118
+#, no-c-format
+msgid "Searching text in an open read window"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:119
+#, no-c-format
+msgid ""
+"You can look for a word or phrase in the open window like you are used to "
+"from other programs. This function can be reached either by clicking with "
+"the <mousebutton>right</mousebutton> mouse button and selecting "
+"<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
+"\"simul\">&Alt;<keycap>F</keycap> </keycombo>. Read on to learn how you can "
+"search in entire works."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:126
+#, no-c-format
+msgid "Accessing the search dialog"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:127
+#, no-c-format
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
+"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
+"&Shift; or &Ctrl; and clicking on other work's names you can select more "
+"than one. Then follow the same procedure to open the search dialog. You will "
+"be searching in all of these works at the same time."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:130
+#, no-c-format
+msgid ""
+"You can also access the search dialog by clicking on "
+"<menuchoice><guimenu>Search</guimenu></menuchoice> from the main menu, and "
+"selecting the appropriate entry."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:131
+#, no-c-format
+msgid ""
+"A third possibility to start searches is to click on the search symbol in an "
+"open read window."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:135
+#, no-c-format
+msgid "Search configuration"
+msgstr "Etsinnän asetukset"
+
+#. Tag: para
+#: hdbk-operation.docbook:136
+#, no-c-format
+msgid "Use the options tab to set up your search."
+msgstr ""
+
+#. Tag: screeninfo
+#: hdbk-operation.docbook:138
+#, no-c-format
+msgid "Search Text Dialog Options Tab"
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:147
+#, no-c-format
+msgid "Selecting works"
+msgstr "Tehtävien valinta"
+
+#. Tag: para
+#: hdbk-operation.docbook:148
+#, no-c-format
+msgid ""
+"At the top of the options tab you will find <guibutton>Choose works</"
+"guibutton>. If you would like to search in multiple works, click on this "
+"button and you will be offered a menu where you can select the works you "
+"want to search in."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:153
+#, no-c-format
+msgid "Using Search Scopes"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:154
+#, no-c-format
+msgid ""
+"You can narrow the scope of your search to certain parts of the Bible by "
+"selecting one of the predefined scopes from the list in <guimenu>Search "
+"scope</guimenu>. Most of these should be obvious. The scope "
+"<guimenuitem>Last search result</guimenuitem> will limit the search to the "
+"verses found in the previous search."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:156
+#, no-c-format
+msgid ""
+"You can also define your own search ranges by clicking the <guibutton>Setup "
+"ranges</guibutton> button."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:160
+#, no-c-format
+msgid "Basic Search Syntax Introduction"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:161
+#, no-c-format
+msgid ""
+"Enter search terms separated by spaces. By default the search function will "
+"return results that match any of the search terms (OR). To search for all "
+"the terms separate the terms by AND."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:162
+#, no-c-format
+msgid ""
+"You can use wildcards: '*' matches any sequence of characters, while '?' "
+"matches any single character. The use of brackets allows you to group your "
+"search terms, e.g. '(Jesus OR spirit) AND God'."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:163
+#, no-c-format
+msgid ""
+"To search text other than the main text, enter the text type followed by "
+"':', and then the search term. For example, to search for the Strong's "
+"number H8077, use 'strong:H8077'."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:164
+#, fuzzy, no-c-format
+msgid "Available text types:"
+msgstr "Saatavana olevat tehtävät"
+
+#. Tag: entry
+#: hdbk-operation.docbook:166
+#, no-c-format
+msgid "Prefix"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:166
+#, no-c-format
+msgid "Meaning"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:168
+#, no-c-format
+msgid "heading:"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:168
+#, no-c-format
+msgid "searches headings"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:169
+#, no-c-format
+msgid "footnote:"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:169
+#, fuzzy, no-c-format
+msgid "searches footnotes"
+msgstr "Etsintävalinnat"
+
+#. Tag: entry
+#: hdbk-operation.docbook:170
+#, no-c-format
+msgid "strong:"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:170
+#, no-c-format
+msgid "searches Strong's Numbers"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:171
+#, no-c-format
+msgid "morph:"
+msgstr ""
+
+#. Tag: entry
+#: hdbk-operation.docbook:171
+#, no-c-format
+msgid "searches morphology codes"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:173
+#, no-c-format
+msgid ""
+"BibleTime uses the Lucene search engine to perform your searches. It has "
+"many advanced features, and you can read more about it here: <ulink url="
+"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
+"apache.org/java/docs/queryparsersyntax.html</ulink>"
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:180
+#, no-c-format
+msgid "Search results"
+msgstr "Etsinnän tulokset"
+
+#. Tag: para
+#: hdbk-operation.docbook:181
+#, no-c-format
+msgid ""
+"Here you can see how many instances of the search string were found, sorted "
+"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
+"button allows you to copy, save, or print all verses that were found in a "
+"certain work at once. This also works when you click on one or more of the "
+"references to copy, save or print them. Clicking on a particular reference "
+"opens that verse up in context in the preview window below."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:185
+#, no-c-format
+msgid ""
+"Drag a reference and drop it on a work symbol on the Bookshelf to open the "
+"work at that verse in a new read window."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:187
+#, no-c-format
+msgid ""
+"Drag a reference and drop it on an open read window, and it will jump to "
+"that verse."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:188
+#, no-c-format
+msgid "Select references and drag them to the Bookshelf to create bookmarks."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:191
+#, no-c-format
+msgid "Search result analysis"
+msgstr "Etsintätulosten analysointi"
+
+#. Tag: para
+#: hdbk-operation.docbook:192
+#, no-c-format
+msgid ""
+"Click on <guibutton>Search analysis</guibutton> to open the search analysis "
+"display. This gives a simple graphic analysis of the number of instances the "
+"search string was found in each book of the Bible, and you can also save the "
+"analysis."
+msgstr ""
+
+#. Tag: screeninfo
+#: hdbk-operation.docbook:197
+#, no-c-format
+msgid "Search Analysis Dialog Box"
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:211
+#, no-c-format
+msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:213
+#, no-c-format
+msgid ""
+"The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
+"Bookshelf. You can install new works to your Bookshelf, and update or remove "
+"existing works from your Bookshelf. Access it by clicking "
+"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Bookshelf Manager</"
+"guimenuitem></menuchoice> in the main menu."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:216
+#, no-c-format
+msgid "Bookshelf path(s) setup"
+msgstr "Kirjahyllyn polun/polkujen asetus"
+
+#. Tag: para
+#: hdbk-operation.docbook:218
+#, no-c-format
+msgid ""
+"Here you can specify where &bibletime; may store your Bookshelf on the "
+"harddrive. You can even store it in multiple directories. Default is \"~/."
+"sword/\"."
+msgstr ""
+"Tässä voit määritellä, minne &bibletime; tallettaa kirjahyllysi levyllä. "
+"Voit tallentaa sen jopa useampiin kansioihin. Oletus on \"~/.sword/\"."
+
+#. Tag: para
+#: hdbk-operation.docbook:220
+#, no-c-format
+msgid ""
+"If you have a sword CD, but do not want to install all the works on the "
+"harddisk, but use them directly from the CD, then you can add the path to "
+"the CD as one of your bookshelf paths. When you start &bibletime;, it will "
+"show all works on the CD if it is present."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:224
+#, no-c-format
+msgid "Install/update work(s)"
+msgstr "Asenna/päivitä teos/teoksia"
+
+#. Tag: para
+#: hdbk-operation.docbook:226
+#, no-c-format
+msgid ""
+"With this facility, you can connect to a repository of works (called "
+"\"library\"), and transfer one or more works to your local Bookshelf. These "
+"libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online "
+"repository of Sword modules, or another site offering Sword modules). You "
+"can manage your libraries with <guibutton>Add library</guibutton> and "
+"<guibutton>Delete library</guibutton>."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:228
+#, no-c-format
+msgid ""
+"To begin the installation or update process, select a library you want to "
+"connect to and a local Bookshelf path to install the work(s) to. Then click "
+"on <guibutton>Connect to library</guibutton>. &bibletime; will scan the "
+"contents of the library and present you with a list of works that you can "
+"add to your Bookshelf, or that you already have installed but are available "
+"in a new version in the library, and thus can be updated. Then you can mark "
+"all works that you want to install or update, and click on "
+"<guibutton>Install works</guibutton>. They will then be transferred to your "
+"Bookshelf."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:233
+#, no-c-format
+msgid "Remove work(s)"
+msgstr "Poista teos/teoksia"
+
+#. Tag: para
+#: hdbk-operation.docbook:235
+#, no-c-format
+msgid ""
+"This facility allows you to delete one or more of the works from your "
+"Bookshelf too free up disk space. Simply mark the items and click on "
+"<guibutton>Remove works</guibutton>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-operation.docbook:243
+#, no-c-format
+msgid "Exporting and Printing"
+msgstr "Vienti ja tulostus"
+
+#. Tag: para
+#: hdbk-operation.docbook:245
+#, no-c-format
+msgid ""
+"In many places, you can open a context menu by clicking with the "
+"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
+"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
+"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
+
+#. Tag: para
+#: hdbk-operation.docbook:250
+#, no-c-format
+msgid ""
+"Printing from &bibletime; is rather basic and is intended as a utility. If "
+"you are composing a document or presentation containing text from "
+"&bibletime; works, we suggest that you use one of the presentation or "
+"editing tools on your system to format your document, rather than printing "
+"from &bibletime; directly."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:2
+#, no-c-format
+msgid "Reference"
+msgstr "Viittaus"
+
+#. Tag: title
+#: hdbk-reference.docbook:4
+#, no-c-format
+msgid "Main menu reference"
+msgstr "Päävalikon käyttöopas"
+
+#. Tag: para
+#: hdbk-reference.docbook:6
+#, no-c-format
+msgid ""
+"In this section you can find detailed descriptions of all entries in the "
+"main menu of &bibletime;. They are ordered in just the way they appear in "
+"&bibletime;, with all the sub-items listed under the major menu item they "
+"belong to. You can also see the hotkey of each item;a complete listing of "
+"all hotkeys can be found in <link linkend=\"hdbk-reference-hotkeys\">this "
+"section</link>."
+msgstr ""
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:12
+#, no-c-format
+msgid "File"
+msgstr "Tiedosto"
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:18
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> File</"
+"guimenu> <guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:23
+#, no-c-format
+msgid ""
+"<action>Closes BibleTime.</action> BibleTime will ask you if you want to "
+"write unsaved changes to disk."
+msgstr ""
+"<action>Sulkee BibleTime-ohjelman.</action> BibleTime kysyy sinulta, "
+"haluatko tallettaa tallentamattomat muutokset levylle."
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:31
+#, no-c-format
+msgid "View"
+msgstr "Näytä"
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:35
+#, no-c-format
+msgid "<guimenu>View</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+msgstr ""
+"<guimenu>Näytä</guimenu> <guimenuitem>Näytä työkalupalkki</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:37
+#, no-c-format
+msgid ""
+"<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+"main toolbar on or off."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:42
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\"><keycap>F9</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_sidetree.png\" format=\"PNG\"/></imageobject></inlinemediaobject> View</"
+"guimenu> <guimenuitem>Show Bookshelf</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\"><keycap>F9</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_sidetree.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Näytä</"
+"guimenu> <guimenuitem>Näytä kirjahylly</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:47
+#, no-c-format
+msgid ""
+"<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
+"turn the Bookshelf on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:52
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\"><keycap>F8</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_sidetree.png\" format=\"PNG\"/></imageobject></inlinemediaobject> View</"
+"guimenu> <guimenuitem>Show Mag</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:57
+#, no-c-format
+msgid ""
+"<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
+"setting to turn the Mag on the left pane on or off."
+msgstr ""
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:64
+#, no-c-format
+msgid "Search"
+msgstr "Etsi"
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:68
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>F</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
+"Search</guimenu> <guimenuitem>Search in standard bible</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>F</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
+"Etsi</guimenu> <guimenuitem>Etsi oletusraamatusta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:73
+#, no-c-format
+msgid ""
+"<action>Opens the Search Dialog to search in the standard Bible only</"
+"action>. More works can be added in the Search Dialog."
+msgstr ""
+"<action>Avaa etsintäikkunan vain etsintään oletusraamatusta</action>. Lisää "
+"teoksia voidaan lisätä etsintä-ikkunassa."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:78
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>O</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Search</"
+"guimenu> <guimenuitem>Search in open work(s)</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Etsi</"
+"guimenu> <guimenuitem>Etsi avoinnaolevista teoksista</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:83
+#, no-c-format
+msgid ""
+"<action>Opens the Search Dialog to search in all open works</action>. More "
+"works can be added in the Search Dialog."
+msgstr ""
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:91
+#, no-c-format
+msgid "Window"
+msgstr "Ikkuna"
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:95
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
+"<guimenuitem>Save session</guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Ikkuna</guimenu> "
+"<guimenuitem>Talleta istunto</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:99
+#, no-c-format
+msgid ""
+"<action>Directly saves the current session</action>. This will open a "
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:105
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>S</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_sidetree.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Window</guimenu> <guimenuitem>Save as new Session</"
+"guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>S</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_sidetree.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Ikkuna</guimenu> <guimenuitem>Talleta uutena istuntona</"
+"guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:110
+#, no-c-format
+msgid ""
+"<action>Saves the current session under a new name</action>. This will ask "
+"for a new name to save the session to."
+msgstr ""
+"<action>Tallettaa nykyisen istunnon uudella nimellä</action>. Tämä kysyy "
+"uutta istunnontalletuksen nimeä."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:115
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
+"<guimenuitem>Load session</guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Ikkuna</guimenu> "
+"<guimenuitem>Lataa istunto</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:119
+#, no-c-format
+msgid ""
+"<action>Loads an existing session</action>. This will open a context menu "
+"where you can select an existing session to load."
+msgstr ""
+"<action>Lataa olemassaolevan istunnon</action>. Tämä avaa kontekstivalikon, "
+"josta voit valita olemassaolevan istunnon ladattavaksi."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:124
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
+"<guimenuitem>Delete session</guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Ikkuna</guimenu> "
+"<guimenuitem>Poista istunto</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:128
+#, no-c-format
+msgid ""
+"<action>Deletes an existing session</action>. This will open a context menu "
+"where you can select an existing session that should be deleted."
+msgstr ""
+"<action>Poistaa olemassaolevan istunnon</action>. Tämä avaa "
+"kontekstivalikon, jossa voit valita olemassaolevan istunnon poistettavaksi."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:133
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>F</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_fullscreen.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Window</guimenu> <guimenuitem>Fullscreen Mode</"
+"guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>F</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_fullscreen.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Ikkuna</guimenu> <guimenuitem>Kokoruutu-tila</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:138
+#, no-c-format
+msgid ""
+"<action>Toggles fullscreen mode</action>. Here you can turn fullscreen mode "
+"on or off. In fullscreen mode, &bibletime; will expand to the full size of "
+"your monitor screen, using as much space as possible."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:144
+#, fuzzy, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_cascade_auto.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
+"Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:148
+#, no-c-format
+msgid ""
+"<action>Controls the basic window arrangement behaviour</action>. In the "
+"opening context menu, you can either specify that you want to take care of "
+"the window arrangement yourself (Manual mode) or have &bibletime; handle it "
+"for you (Automatical modes, just try them out!)."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:155
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_tile.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
+"guimenu> <guimenuitem>Tile vertically</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:160
+#, fuzzy, no-c-format
+msgid "<action>Tiles all open read windows vertically</action>."
+msgstr "<action>Sulkee kaikki avoimet lukuikkunat</action>."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:164
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>H</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_tile.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
+"guimenu> <guimenuitem>Tile horizontally</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:169
+#, fuzzy, no-c-format
+msgid "<action>Tiles all open windows horizontally</action>."
+msgstr "<action>Sulkee kaikki avoimet lukuikkunat</action>."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:173
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>J</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_cascade.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
+"guimenu> <guimenuitem>Cascade</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:178
+#, fuzzy, no-c-format
+msgid "<action>Cascades all open windows</action>."
+msgstr "<action>Sulkee kaikki avoimet lukuikkunat</action>."
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:182
+#, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>W</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_fileclose.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Window</guimenu> <guimenuitem>Close all</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>W</keycap></"
+"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
+"fileref=\"i_fileclose.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:187
+#, fuzzy, no-c-format
+msgid "<action>Closes all open windows</action>."
+msgstr "<action>Sulkee kaikki avoimet lukuikkunat</action>."
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:193
+#, no-c-format
+msgid "Settings"
+msgstr "Asetukset"
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:197
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Settings</guimenu> <guimenuitem>Configure toolbars</"
+"guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject></"
+"inlinemediaobject> Asetukset</guimenu> <guimenuitem>Aseta työkalupalkit</"
+"guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:201
+#, no-c-format
+msgid ""
+"<action>Opens a dialog where you can customize &bibletime;'s toolbar</"
+"action>. Just try it out, you can move around the toolbar buttons and even "
+"add new ones. Most of the entries available from the main menu can be put on "
+"the toolbar as buttons. If you need a certain feature often, you might want "
+"to put a button on the main menu, so that you can access it with only one "
+"click. Please see <link linkend=\"hdbk-config-toolbar\">this section</link> "
+"for further information."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:208
+#, no-c-format
+msgid ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_configure."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Settings</guimenu> "
+"<guimenuitem>Configure &bibletime;</guimenuitem>"
+msgstr ""
+"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_configure."
+"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Asetukset</guimenu> "
+"<guimenuitem>Aseta &bibletime;</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:212
+#, no-c-format
+msgid ""
+"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
+"configure all kinds of nice settings there to adapt &bibletime; to your "
+"needs. Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
+"details."
+msgstr ""
+
+#. Tag: menuchoice
+#: hdbk-reference.docbook:219
+#, fuzzy, no-c-format
+msgid ""
+"<shortcut><keycombo action=\"simul\"><keycap>F4</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_configuresword.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
+"Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>"
+msgstr ""
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
+"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
+"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Tiedosto</"
+"guimenu> <guimenuitem>Lopeta</guimenuitem>"
+
+#. Tag: para
+#: hdbk-reference.docbook:224
+#, no-c-format
+msgid ""
+"<action>Opens a dialog where you can change your Sword configuration and "
+"manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\">this section</link> for details."
+msgstr ""
+
+#. Tag: guimenu
+#: hdbk-reference.docbook:234
+#, no-c-format
+msgid "Help"
+msgstr "Ohje"
+
+#. Tag: sect2
+#: hdbk-reference.docbook:234
+#, no-c-format
+msgid "&help.menu.documentation;"
+msgstr "&help.menu.documentation;"
+
+#. Tag: title
+#: hdbk-reference.docbook:242
+#, no-c-format
+msgid "Toolbar reference"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:244
+#, no-c-format
+msgid ""
+"Please review <link linkend=\"hdbk-reference-menus\">the preceding section</"
+"link> for an explanation of the buttons that you find on the toolbar. You "
+"can also <action>move the cursor over a button and wait a few seconds</"
+"action> to activate the button's tooltip with a short description."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:248
+#, no-c-format
+msgid ""
+"You can adapt the toolbar to your needs. Please use the following entry in "
+"the main menu: <variablelist> <varlistentry> <term><menuchoice> <guimenu> "
+"<inlinemediaobject><imageobject> <imagedata fileref=\"i_configuretoolbars.png"
+"\" format=\"PNG\"/></imageobject></inlinemediaobject> Settings</guimenu> "
+"<guimenuitem>Configure toolbars</guimenuitem></menuchoice></term> "
+"<listitem><para>Configure toolbars</para></listitem> </varlistentry> </"
+"variablelist> Please see <link linkend=\"hdbk-reference-menus-settings-"
+"toolbars\">this section</link> for detailed instructions."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:264
+#, no-c-format
+msgid "HotKeys index"
+msgstr "Pikanäppäinten luettelo"
+
+#. Tag: para
+#: hdbk-reference.docbook:266
+#, no-c-format
+msgid ""
+"This is index of all hotkeys and their corresponding description in the "
+"handbook. The hotkeys are sorted (roughly) alphabetical. If you want to "
+"directly find out which hotkey a certain menu item has, you can either look "
+"at the entry itelf in &bibletime; (as it always shows the hotkey), or you "
+"can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
+msgstr ""
+
+#. Tag: entry
+#: hdbk-reference.docbook:278
+#, no-c-format
+msgid "Hotkey"
+msgstr "Pikanäppäin"
+
+#. Tag: entry
+#: hdbk-reference.docbook:279
+#, no-c-format
+msgid "Description"
+msgstr "Kuvaus"
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:284
+#, fuzzy, no-c-format
+msgid "&Alt;<keycap>Left</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>A</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:285
+#, no-c-format
+msgid "Moves back in the history of read windows."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:288
+#, fuzzy, no-c-format
+msgid "&Alt;<keycap>Right</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>W</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:289
+#, no-c-format
+msgid "Moves forward in the history of read windows."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:292
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>F</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>F</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:293
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"><menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</"
+"guimenuitem></menuchoice></link> equivalent; opens the search dialog to "
+"search in the default bible."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:299
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>G</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>G</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:300
+#, no-c-format
+msgid ""
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem></menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:305
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>H</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>H</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:306
+#, no-c-format
+msgid ""
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem></menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:311
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>J</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>J</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:312
+#, no-c-format
+msgid ""
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem></menuchoice> "
+"equivalent; toggle automatic window cascading."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:317
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>M</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>M</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:318
+#, no-c-format
+msgid ""
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem></menuchoice> equivalent; "
+"toggle manual window placement."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:323
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>S</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>S</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:324
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem></"
+"menuchoice></link> equivalent; saves current layout as new session."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:330
+#, no-c-format
+msgid "&Alt;&Ctrl;<keycap>W</keycap>"
+msgstr "&Alt;&Ctrl;<keycap>W</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:331
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem></menuchoice></"
+"link> equivalent; closes all open windows."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:337
+#, no-c-format
+msgid "&Ctrl;<keycap>-</keycap>"
+msgstr "&Ctrl;<keycap>-</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:338
+#, no-c-format
+msgid "Zoom out. This decreases the font size of read windows."
+msgstr "Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:341
+#, no-c-format
+msgid "&Ctrl;<keycap>+</keycap>"
+msgstr "&Ctrl;<keycap>+</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:342
+#, no-c-format
+msgid "Zoom in. This increases the font size of read windows."
+msgstr "Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:345
+#, no-c-format
+msgid "&Ctrl;<keycap>A</keycap>"
+msgstr "&Ctrl;<keycap>A</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:346
+#, no-c-format
+msgid "Select all. This selects all text in read windows."
+msgstr "Valitse kaikki. Tämä valitsee kaikki tekstit lukuikkunassa."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:349
+#, no-c-format
+msgid "&Ctrl;<keycap>C</keycap>"
+msgstr "&Ctrl;<keycap>C</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:350
+#, no-c-format
+msgid "Copy. This copies the selected text to the clipboard."
+msgstr "Kopioi. Tämä kopioi valitun tekstin leikepöydälle."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:353
+#, no-c-format
+msgid "&Ctrl;<keycap>F</keycap>"
+msgstr "&Ctrl;<keycap>F</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:354
+#, fuzzy, no-c-format
+msgid "Search. This lets you search within the text of a read window."
+msgstr "Valitse kaikki. Tämä valitsee kaikki tekstit lukuikkunassa."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:357
+#, no-c-format
+msgid "&Ctrl;<keycap>J</keycap>"
+msgstr "&Ctrl;<keycap>J</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:358
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem></menuchoice></"
+"link> equivalent; cascades all open windows."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:364
+#, no-c-format
+msgid "&Ctrl;<keycap>G</keycap>"
+msgstr "&Ctrl;<keycap>G</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:365
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tile-vertically\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem></"
+"menuchoice></link> equivalent; tiles all open windows vertically."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:371
+#, no-c-format
+msgid "&Ctrl;<keycap>H</keycap>"
+msgstr "&Ctrl;<keycap>H</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:372
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tile-horizontally\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem></"
+"menuchoice></link> equivalent; tiles all open windows horizontally."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:378
+#, fuzzy, no-c-format
+msgid "&Ctrl;<keycap>O</keycap>"
+msgstr "&Ctrl;<keycap>-</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:379
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"><menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem></"
+"menuchoice></link> equivalent; opens the search dialog to search in all "
+"currently opened works."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:385
+#, no-c-format
+msgid "&Ctrl;<keycap>Q</keycap>"
+msgstr "&Ctrl;<keycap>Q</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:386
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"><menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></link> equivalent; "
+"closes &bibletime;."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:392
+#, no-c-format
+msgid "&Ctrl;<keycap>W</keycap>"
+msgstr "&Ctrl;<keycap>W</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:393
+#, no-c-format
+msgid "Closes the current window."
+msgstr "Sulkee nykyisen ikkunan."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:396
+#, no-c-format
+msgid "&Ctrl;<keycap>X</keycap>"
+msgstr "&Ctrl;<keycap>X</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:397
+#, no-c-format
+msgid "Moves a bible or commentary read window to the next chapter."
+msgstr "Siirtää Raamatun tai kommentaarin lukuikkunan seuraavaan lukuun."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:400
+#, no-c-format
+msgid "&Ctrl;<keycap>Y</keycap>"
+msgstr "&Ctrl;<keycap>Y</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:401
+#, no-c-format
+msgid "Moves a bible or commentary read window to the next book."
+msgstr "Siirtää Raamatun tai kommentaarin lukuikkunan seuraavaan kirjaan."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:404
+#, no-c-format
+msgid "&Ctrl;<keycap>V</keycap>"
+msgstr "&Ctrl;<keycap>V</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:405
+#, no-c-format
+msgid "Moves a read window to the next verse or entry."
+msgstr "Siirtää lukuikkunan seuraavaan jakeeseen tai kohtaan."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:410
+#, no-c-format
+msgid "&Ctrl;&Shift;<keycap>F</keycap>"
+msgstr "&Ctrl;&Shift;<keycap>F</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:411
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-fullscreen\"><menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Fullscreen mode</guimenuitem></"
+"menuchoice></link> equivalent; toggles fullscreen mode."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:417
+#, no-c-format
+msgid "&Ctrl;&Shift;<keycap>X</keycap>"
+msgstr "&Ctrl;&Shift;<keycap>X</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:418
+#, no-c-format
+msgid "Moves a bible or commentary read window to the previous chapter."
+msgstr ""
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:421
+#, no-c-format
+msgid "&Ctrl;&Shift;<keycap>Y</keycap>"
+msgstr "&Ctrl;&Shift;<keycap>Y</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:422
+#, no-c-format
+msgid "Moves a bible or commentary read window to the previous book."
+msgstr "Siirtää Raamatun tai kommentaarin lukuikkunan edelliseen kirjaan."
+
+#. Tag: keycombo
+#: hdbk-reference.docbook:425
+#, no-c-format
+msgid "&Ctrl;&Shift;<keycap>V</keycap>"
+msgstr "&Ctrl;&Shift;<keycap>V</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:426
+#, no-c-format
+msgid "Moves a read window to the previous verse or entry."
+msgstr "Siirtää lukuikkunan edelliseen jakeeseen tai kohtaan."
+
+#. Tag: keycap
+#: hdbk-reference.docbook:430
+#, no-c-format
+msgid "<keycap>F1</keycap>"
+msgstr "<keycap>F1</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:431
+#, no-c-format
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem></"
+"menuchoice> equivalent; opens the handbook."
+msgstr ""
+
+#. Tag: keycap
+#: hdbk-reference.docbook:437
+#, no-c-format
+msgid "<keycap>F2</keycap>"
+msgstr "<keycap>F2</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:438
+#, no-c-format
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
+"guimenuitem></menuchoice> equivalent; opens the BibleStudy Howto."
+msgstr ""
+
+#. Tag: keycap
+#: hdbk-reference.docbook:444
+#, no-c-format
+msgid "<keycap>F3</keycap>"
+msgstr "<keycap>F3</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:445
+#, no-c-format
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily tip</guimenuitem></"
+"menuchoice> equivalent; opens the tip of the day."
+msgstr ""
+
+#. Tag: keycap
+#: hdbk-reference.docbook:451
+#, no-c-format
+msgid "<keycap>F4</keycap>"
+msgstr "<keycap>F4</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:452
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager"
+"\"><menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
+"guimenuitem></menuchoice></link> equivalent; opens the Bookshelf Manager."
+msgstr ""
+
+#. Tag: keycap
+#: hdbk-reference.docbook:458
+#, no-c-format
+msgid "<keycap>F8</keycap>"
+msgstr "<keycap>F8</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:459
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"><menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem></"
+"menuchoice></link> equivalent; toggles display of the Bookshelf."
+msgstr ""
+
+#. Tag: keycap
+#: hdbk-reference.docbook:465
+#, no-c-format
+msgid "<keycap>F9</keycap>"
+msgstr "<keycap>F9</keycap>"
+
+#. Tag: entry
+#: hdbk-reference.docbook:466
+#, no-c-format
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"><menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem></menuchoice></"
+"link> equivalent; toggles display of the mag(nifying glass)."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:480
+#, no-c-format
+msgid "GCC Regular Expression Reference"
+msgstr "GCC säännöllisten lausekkeiden käsikirja"
+
+#. Tag: para
+#: hdbk-reference.docbook:485
+#, no-c-format
+msgid ""
+"Regular expression searches provide a way to do simple or complex searches "
+"for strings that match a pattern or set of patterns (branches) separated by "
+"vertical bars \"|\". While a pattern can be built to look for a word or "
+"phrase, a simple pattern that consists of a word does not look for only that "
+"word but for any place where that word is found. A search for \"right\" will "
+"return verses that contain the word \"right\", but also \"<emphasis>right</"
+"emphasis>eous\", \"<emphasis>right</emphasis>eousness\", "
+"\"un<emphasis>right</emphasis>eous\", \"up<emphasis>right</emphasis>\" and "
+"even \"b<emphasis>right</emphasis>\". A search for \"hall not\" is not a "
+"search for \"hall\" AND \"not\" but for the string \"hall not\" with a space "
+"between the second \"l\" and the \"n\". The search for \"hall not\" will "
+"find occurrences of \"s<emphasis>hall not</emphasis>\"."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:501
+#, no-c-format
+msgid ""
+"The power of Regular Expressions lies in the patterns (or templates) used to "
+"define a search. A pattern consists of ordinary characters and some special "
+"characters that are used and interpreted by a set of rules. Special "
+"characters include .\\[^*$?+. Ordinary (or simple) characters are any "
+"characters that are not special. The backslash, \"\\\", is used to convert "
+"special characters to ordinary and ordinary characters to special."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:510
+#, no-c-format
+msgid ""
+"Example: the pattern \"i. love\\.\" will find sentences that end with "
+"\"h<emphasis>i</emphasis>s <emphasis>love.</emphasis>\" or \"<emphasis>i</"
+"emphasis>n <emphasis>love.</emphasis>\" or \"<emphasis>i</emphasis>s "
+"<emphasis>love.</emphasis>\". The first period in \"i. love\\.\" is a "
+"special character that means \"allow any character in this position\". The "
+"backslash in \"i. love\\.\" means that the period following it is not to be "
+"considered a special character, but is an ordinary period."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:522
+#, no-c-format
+msgid "Special characters"
+msgstr "Erikoismerkit"
+
+#. Tag: para
+#: hdbk-reference.docbook:525
+#, no-c-format
+msgid ""
+". The period matches any character. See <link linkend=\"period\">details</"
+"link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:527
+#, no-c-format
+msgid ""
+"* The asterisk matches 0 or more characters of the preceding: set, character "
+"or indicated character. See <link linkend=\"asterisk\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:530
+#, no-c-format
+msgid ""
+"+ The plus sign matches 1 or more characters of the preceding: set, "
+"character or indicated character. See <link linkend=\"plus\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:533
+#, no-c-format
+msgid ""
+"? The question mark matches 0 or 1 character of the preceding: set, "
+"character or indicated character. See <link linkend=\"question\">details</"
+"link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:536
+#, no-c-format
+msgid ""
+"[ ] Square brackets match any one of the characters specified inside [ ]. "
+"See <link linkend=\"bracket\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:538
+#, no-c-format
+msgid ""
+"^ A caret as the first character inside [ ] means NOT. See <link linkend="
+"\"caret\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:540
+#, no-c-format
+msgid ""
+"^ A caret beginning of a pattern anchors the beginning of a line. See <link "
+"linkend=\"caret\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:542
+#, no-c-format
+msgid ""
+"$ A dollar at the end of a pattern anchors the end of a line. See <link "
+"linkend=\"dollar\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:544
+#, no-c-format
+msgid ""
+"| A vertical bar means logical OR. See <link linkend=\"bar\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:546
+#, no-c-format
+msgid ""
+"( ) Parentheses enclose expressions for grouping. <emphasis>Not supported!</"
+"emphasis>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:548
+#, no-c-format
+msgid ""
+"\\ A backslash can be used prior to any special character to match that "
+"character. See <link linkend=\"backslash\">details</link>"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:550
+#, no-c-format
+msgid ""
+"\\ A backslash can be used prior to an ordinary character to make it a "
+"special character. See <link linkend=\"backslash\">details</link>"
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:555
+#, no-c-format
+msgid "The period ."
+msgstr "Jakso ."
+
+#. Tag: para
+#: hdbk-reference.docbook:557
+#, no-c-format
+msgid ""
+"The Period \".\" will match any single character even a space or other non-"
+"alphabet character. <emphasis>s.t</emphasis> matches <emphasis>s</"
+"emphasis>i<emphasis>t</emphasis>, <emphasis>s</emphasis>e<emphasis>t</"
+"emphasis>,<emphasis> s</emphasis>o<emphasis>t</emphasis>, etc., which could "
+"be located in <emphasis>s</emphasis>i<emphasis>t</emphasis>ting, "
+"compas<emphasis>s</emphasis>e<emphasis>t</emphasis>h and <emphasis>s</"
+"emphasis>o<emphasis>t</emphasis>tish <emphasis>b..t</emphasis> matches "
+"<emphasis>b</emphasis>oo<emphasis>t</emphasis>, <emphasis>b</"
+"emphasis>oa<emphasis>t</emphasis> and <emphasis>b</emphasis>ea<emphasis>t "
+"foot.tool </emphasis>matches <emphasis>foot</emphasis>s<emphasis>tool </"
+"emphasis>and <emphasis>foot tool</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:570
+#, no-c-format
+msgid "The asterisk *"
+msgstr "Tähtimerkki *"
+
+#. Tag: para
+#: hdbk-reference.docbook:572
+#, no-c-format
+msgid ""
+"The asterisk matches zero or more characters of the preceding: set, "
+"character or indicated character. Using a period asterisk combination \".*\" "
+"is a common method to match any combination of characters. <emphasis>be*n</"
+"emphasis> matches<emphasis> beeen, been, ben</emphasis>, and <emphasis>bn</"
+"emphasis> which could locate Reu<emphasis>ben</emphasis> and "
+"She<emphasis>bn</emphasis>a. <emphasis>G.*d</emphasis> would match "
+"<emphasis>God, good, guard</emphasis> and even <emphasis>Gd</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:584
+#, no-c-format
+msgid "The plus sign +"
+msgstr "Plus-merkki +"
+
+#. Tag: para
+#: hdbk-reference.docbook:585
+#, no-c-format
+msgid ""
+"The Plus Sign matches one or more characters of the preceding: set, "
+"character or indicated character. Using a period and plus sign combination "
+"\".+\" is similar to \".*\" (see above), but the string has to contain at "
+"least one string to match. <emphasis>be+n</emphasis> matches "
+"<emphasis>beeen, been</emphasis> and <emphasis>ben</emphasis>, but not "
+"<emphasis>bn</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:594
+#, no-c-format
+msgid "The question mark ?"
+msgstr "Kysymysmerkki ?"
+
+#. Tag: para
+#: hdbk-reference.docbook:595
+#, no-c-format
+msgid ""
+"The Question Mark matches zero or one character of the preceding: set, "
+"character or indicated character. <emphasis>be?n</emphasis> matches "
+"<emphasis>ben</emphasis> and <emphasis>bn</emphasis> but not <emphasis>been</"
+"emphasis>. <emphasis>trees?</emphasis> matches <emphasis>trees</emphasis> or "
+"<emphasis>tree</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:603
+#, no-c-format
+msgid "The square brackets [ ]"
+msgstr "Hakasulut [ ]"
+
+#. Tag: para
+#: hdbk-reference.docbook:604
+#, no-c-format
+msgid ""
+"The Square Brackets enclose a set of characters that can match. The period, "
+"asterisk, plus sign and question mark are not special inside the brackets. A "
+"minus sign can be used to indicate a range. If you want a caret \"^\" to be "
+"part of the range do not place it first after the left bracket or it will be "
+"a special character. To include a \"]\" in the set make it the first (or "
+"second after a special \"^\") character in the set. To include a minus sign "
+"in the set make it the first (or second after a special \"^\") or last "
+"character in the set. <emphasis>s[eia]t</emphasis> matches <emphasis>set</"
+"emphasis>, <emphasis>sit</emphasis>, and <emphasis>sat</emphasis>, but not "
+"<emphasis>s</emphasis>o<emphasis>t</emphasis>. <emphasis>s[eia]+t </"
+"emphasis>matches as above but also, <emphasis>seat, seet, siet</emphasis>, "
+"etc. <emphasis>[a-d]</emphasis> matches <emphasis>a, b, c,</emphasis> or "
+"<emphasis>d</emphasis>. <emphasis>[A-Z]</emphasis> matches any uppercase "
+"letter. [.;:?!] matches ., ;, :, ?, or ! but not a comma. [ ]^-] matches ] "
+"or ^ or -."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:625
+#, no-c-format
+msgid "The caret first in square brackets [^xxx]"
+msgstr "Hattu hakasulkujen alussa [^xxx]"
+
+#. Tag: para
+#: hdbk-reference.docbook:626
+#, no-c-format
+msgid ""
+"If the Caret is the first character after the left bracket it means NOT. "
+"<emphasis>s[^io]t</emphasis> matches <emphasis>set, sat</emphasis>, etc., "
+"but not <emphasis>s</emphasis>i<emphasis>t</emphasis> and <emphasis>s</"
+"emphasis>o<emphasis>t</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:633
+#, no-c-format
+msgid "The caret as start of line anchor ^xxx"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:634
+#, no-c-format
+msgid ""
+"If the Caret is the first character in a pattern it anchors the pattern to "
+"the start of a line. Any match must be at the beginning of a line. A line "
+"here means a part of text delimited by the return character or the end of "
+"the text. In Bibles, a \"line\" in this sense is often equivalent to a "
+"single verse; the word-wrapping that is performed by &bibletime; when the "
+"text is rendered on the screen does not affect the search algorithm. "
+"<emphasis>^In the beginning</emphasis> matches lines that start with "
+"\"<emphasis>In the beginning</emphasis>\"."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:644
+#, no-c-format
+msgid ""
+"(Because of unfiltered formatting characters in some texts, this feature "
+"does not always work correctly, but may if a few periods are placed after "
+"the caret to account for the formatting characters. If that is the case for "
+"you, you could try <emphasis>^..In the beginning</emphasis> instead.)"
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:652
+#, no-c-format
+msgid "The dollar sign as end of line anchor xxx$"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:653
+#, no-c-format
+msgid ""
+"If the Dollar Sign is the last character in a pattern it anchors the pattern "
+"to the end of a line. Any match must be at the end of a line. <emphasis>Amen"
+"\\.$</emphasis> matches lines that end with \"<emphasis>Amen.</emphasis>\""
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:659
+#, no-c-format
+msgid ""
+"(If you encounter the problem with unfiltered formatting characters that we "
+"just described, you can try: <emphasis>Amen\\...$</emphasis> instead.)"
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:665
+#, no-c-format
+msgid "The vertical bar |"
+msgstr "Pystyviiva (putkimerkki) |"
+
+#. Tag: para
+#: hdbk-reference.docbook:666
+#, no-c-format
+msgid ""
+"The Vertical Bar between patterns means OR. <emphasis>John|Peter</emphasis> "
+"matches <emphasis>John</emphasis> or <emphasis>Peter. John .*Peter|Peter ."
+"*John</emphasis> matches <emphasis>John</emphasis> ... <emphasis>Peter</"
+"emphasis> or <emphasis>Peter</emphasis> ... <emphasis>John</emphasis>. "
+"<emphasis>pain|suffering|sorrow</emphasis> matches <emphasis>pain</"
+"emphasis>, or <emphasis>suffering</emphasis>, or <emphasis>sorrow</emphasis>."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:675
+#, no-c-format
+msgid "The parentheses ( )"
+msgstr "Sulkumerkit ( )"
+
+#. Tag: emphasis
+#: hdbk-reference.docbook:676
+#, no-c-format
+msgid "The use of Parentheses ( ) is not supported!"
+msgstr "Sulkumerkkien ( ) käyttöä ei tueta!"
+
+#. Tag: title
+#: hdbk-reference.docbook:681
+#, no-c-format
+msgid "The backslash prior to a special character \\*"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:682
+#, no-c-format
+msgid ""
+"The Backslash prior to a special character indicates that the character is "
+"not being used in its special meaning, but is just to match itself. \"amen\\."
+"\" matches <emphasis>amen.</emphasis> but not <emphasis>amen</emphasis>t and "
+"will not locate firm<emphasis>amen</emphasis>t."
+msgstr ""
+
+#. Tag: title
+#: hdbk-reference.docbook:690
+#, no-c-format
+msgid "The backslash prior to an ordinary character \\s"
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:692
+#, no-c-format
+msgid ""
+"The Backslash prior to an ordinary character indicates that the character is "
+"not being used to match itself, but has special meaning."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:697
+#, no-c-format
+msgid ""
+"\\b if used outside [ ] means word boundary. If used inside [ ], it means "
+"backspace. <emphasis>\\brighteous\\b</emphasis> matches <emphasis>righteous</"
+"emphasis> but not un<emphasis>righteous</emphasis> or <emphasis>righteous</"
+"emphasis>ness."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:701
+#, no-c-format
+msgid ""
+"\\B means non-word boundary. <emphasis>\\Brighteous\\B</emphasis> matches "
+"un<emphasis>righteous</emphasis>ness and un<emphasis>righteous</emphasis>ly "
+"but not <emphasis>righteous</emphasis>, un<emphasis>righteous</emphasis> or "
+"<emphasis> righteous</emphasis>ness."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:705
+#, no-c-format
+msgid "\\d means digit; same as [0-9]."
+msgstr "\\d merkitsee numeroa; sama kuin [0-9]."
+
+#. Tag: para
+#: hdbk-reference.docbook:706
+#, no-c-format
+msgid "\\D means non-digit, same as [^0-9]."
+msgstr "\\D merkitsee ei-numeroa, sama kuin [^0-9]."
+
+#. Tag: para
+#: hdbk-reference.docbook:707
+#, no-c-format
+msgid "\\s means whitespace character."
+msgstr "\\s merkitsee tyhjää tai tabulaattoria (whitespace)."
+
+#. Tag: para
+#: hdbk-reference.docbook:708
+#, no-c-format
+msgid "\\S means no whitespace character."
+msgstr ""
+
+#. Tag: para
+#: hdbk-reference.docbook:709
+#, no-c-format
+msgid "\\w means alphanumeric; same as [a-zA-Z0-9_]."
+msgstr "\\w merkitsee alfanumeerista merkkiä, sama kuin [a-zA-Z0-9_]."
+
+#. Tag: para
+#: hdbk-reference.docbook:710
+#, no-c-format
+msgid "\\W means not alphanumeric; same as [^a-zA-Z0-9_]."
+msgstr "\\W merkitsee ei-alfanumeerista merkkiä, sama kuin [^a-zA-Z0-9_]."
+
+#. Tag: title
+#: hdbk-start.docbook:1
+#, no-c-format
+msgid "Starting &bibletime;"
+msgstr "&bibletime;n käynnistys"
+
+#. Tag: title
+#: hdbk-start.docbook:3
+#, no-c-format
+msgid "How to start &bibletime;"
+msgstr "Kuinka &bibletime; käynnistetään"
+
+#. Tag: title
+#: hdbk-start.docbook:5
+#, no-c-format
+msgid "Starting &bibletime; from KDE"
+msgstr "&bibletime;n käynnistys KDE:stä"
+
+#. Tag: para
+#: hdbk-start.docbook:7
+#, no-c-format
+msgid ""
+"&bibletime; is a &kde; program and is integrated with the &kde; desktop. You "
+"can launch &bibletime; from the &kde; Start Menu in the Applications group "
+"with this icon:"
+msgstr ""
+"&bibletime; on &kde;-ohjelma ja se on integroitu &kde;-työpöydän kanssa. "
+"Voit käynnistää  &bibletime;n &kde; K-valikosta tämän kuvakkeen "
+"sovellusryhmässä:"
+
+#. Tag: phrase
+#: hdbk-start.docbook:13
+#, no-c-format
+msgid "&bibletime; start icon"
+msgstr "&bibletime; käynnistyskuvake"
+
+#. Tag: para
+#: hdbk-start.docbook:17
+#, no-c-format
+msgid ""
+"&bibletime; can also be launched from a terminal command prompt. To launch "
+"&bibletime;, open a terminal window and type:"
+msgstr ""
+"&bibletime;-ohjelman voi käynnistää terminaali-ikkunan komentoriviltä. "
+"Käynnistääksesi&bibletime;-ohjelman, avaa terminaali-ikkuna ja kirjoita:"
+
+#. #-#-#-#-#  hdbk-start.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
+#. Tag: screen
+#. #-#-#-#-#  index.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
+#. Tag: keyword
+#: hdbk-start.docbook:19 index.docbook:66
+#, no-c-format
+msgid "bibletime"
+msgstr "bibletime"
+
+#. Tag: title
+#: hdbk-start.docbook:24
+#, no-c-format
+msgid "Other window managers"
+msgstr "Muut ikkunamanagerit"
+
+#. Tag: para
+#: hdbk-start.docbook:26
+#, no-c-format
+msgid ""
+"&bibletime; can be used with other window managers such as Gnome, BlackBox "
+"or Sawfish, providing &kde; is already installed on your computer. If your "
+"&kde; is installed in /opt/kde, then the start-up command in a terminal "
+"would be:"
+msgstr ""
+"Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten "
+"Gnomella, BlackBoxilla tai Sawfishillä edellyttäen, että &kde; on jo "
+"asennettu koneelle. Jos &kde; on asennettu kansioon /opt/kde, "
+"käynnistyskomento terminaalissa on:"
+
+#. Tag: screen
+#: hdbk-start.docbook:30
+#, no-c-format
+msgid ""
+"export KDEDIR=/opt/kde  #your KDE directory\n"
+"bibletime"
+msgstr ""
+"export KDEDIR=/opt/kde  #Sinun KDE-kansiosi\n"
+"bibletime"
+
+#. Tag: title
+#: hdbk-start.docbook:34
+#, no-c-format
+msgid "Startup customization"
+msgstr "Käynnistyksen säätäminen"
+
+#. Tag: para
+#: hdbk-start.docbook:36
+#, no-c-format
+msgid ""
+"From a terminal you can use &bibletime; to open a random verse in the "
+"default bible: <screen>\n"
+"bibletime --open-default-bible \"&lt;random&gt;\"\n"
+"</screen> To open at a given passage like John 3:16, use: <screen>\n"
+"bibletime --open-default-bible \"John 3:16\"\n"
+"</screen> You can also use booknames in your current bookname language."
+msgstr ""
+"Voit avata &bibletime;n satunnaisen jakeen oletusraamatusta terminaali-"
+"ikkunassa: <screen>\n"
+"bibletime --open-default-bible \"&lt;random&gt;\"\n"
+"</screen> Avataksesi tietyn kohdan kuten John 3:16, käytä: <screen>\n"
+"bibletime --open-default-bible \"Joh 3:16\"\n"
+"</screen> Voit käyttää myös kirjannimiä nykyisellä kirjannimien kielellä."
+
+#. Tag: title
+#: hdbk-start.docbook:48
+#, no-c-format
+msgid "Startup sequence"
+msgstr "Käynnistyssarja"
+
+#. Tag: para
+#: hdbk-start.docbook:50
+#, no-c-format
+msgid ""
+"As &bibletime; launches you may see the following screens before the main "
+"&bibletime; window opens:"
+msgstr ""
+"Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n "
+"pääikkuna avautuu:"
+
+#. Tag: interface
+#: hdbk-start.docbook:56
+#, no-c-format
+msgid "Bookshelf Manager"
+msgstr "Kirjahyllyn hallinta"
+
+#. Tag: para
+#: hdbk-start.docbook:57
+#, no-c-format
+msgid ""
+"<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
+"Bookshelf, add or delete works from your system. It will only be shown if no "
+"default Bookshelf can be found. Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\">this section</link>for further details. If you start off "
+"with an empty Bookshelf, it will be helpful to install at least one Bible, "
+"Commentary, Lexicon and one Book to get to know &bibletime;'s basic features "
+"quickly."
+msgstr ""
+
+#. Tag: interface
+#: hdbk-start.docbook:66
+#, no-c-format
+msgid "Configure &bibletime; dialog"
+msgstr "Aseta &bibletime; -ikkuna"
+
+#. Tag: para
+#: hdbk-start.docbook:67
+#, no-c-format
+msgid ""
+"<action>Customizes &bibletime;.</action> This dialog lets you adapt "
+"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\"> the "
+"detailed description</link> of this dialog."
+msgstr ""
+
+#. Tag: interface
+#: hdbk-start.docbook:73
+#, no-c-format
+msgid "Tip of the Day"
+msgstr "Päivän vihje"
+
+#. Tag: para
+#: hdbk-start.docbook:74
+#, no-c-format
+msgid ""
+"These nifty little tips give you helpful hints for working more efficiently "
+"with &bibletime;, and also a few quotations from the Bible."
+msgstr ""
+"Nämä pienet vihjeet antavat sinulle auttavia vihjeitä työskennelläksesi "
+"tehokkaammin &bibletime;-ohjelmalla, ja myös muutamia Raamatunkohtia."
+
+#. Tag: title
+#: index.docbook:21
+#, no-c-format
+msgid "The &bibletime; handbook"
+msgstr "&bibletime;-käsikirja"
+
+#. Tag: author
+#: index.docbook:25
+#, no-c-format
+msgid "<firstname>Fred</firstname> <surname>Saalbach</surname>"
+msgstr "<firstname>Fred</firstname> <surname>Saalbach</surname>"
+
+#. Tag: author
+#: index.docbook:30
+#, no-c-format
+msgid "<firstname>Jeffrey</firstname> <surname>Hoyt</surname>"
+msgstr "<firstname>Jeffrey</firstname> <surname>Hoyt</surname>"
+
+#. Tag: author
+#: index.docbook:35
+#, no-c-format
+msgid "<firstname>Martin</firstname> <surname>Gruner</surname>"
+msgstr "<firstname>Martin</firstname> <surname>Gruner</surname>"
+
+#. Tag: trans_comment
+#: index.docbook:42
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "ROLES_OF_TRANSLATORS"
+
+#. Tag: holder
+#: index.docbook:46
+#, no-c-format
+msgid "the &bibletime; team"
+msgstr "&bibletime;-työryhmä"
+
+#. Tag: para
+#: index.docbook:50
+#, no-c-format
+msgid "The &bibletime; handbook is part of &bibletime;."
+msgstr "&bibletime;-käsikirja on osa &bibletime;-ohjelmaa."
+
+#. Tag: para
+#: index.docbook:59
+#, no-c-format
+msgid "&bibletime; is a powerful Bible study tool for &kde;."
+msgstr "&bibletime; on tehokas Raamatun tutkimistyökalu &kde;:lle."
+
+#. Tag: keyword
+#: index.docbook:65
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:67
+#, no-c-format
+msgid "sword"
+msgstr "sword"
+
+#. Tag: keyword
+#: index.docbook:68
+#, no-c-format
+msgid "crosswire"
+msgstr "crosswire"
+
+#. Tag: keyword
+#: index.docbook:69
+#, no-c-format
+msgid "help dialog"
+msgstr "Ohjeikkuna"
+
+#~ msgid "Search text"
+#~ msgstr "Etsi teksti"
+
+#~ msgid "Search type"
+#~ msgstr "Etsintätyyppi"
+
+#~ msgid "Multiple words (AND)"
+#~ msgstr "Usea sana (JA)"
+
+#~ msgid "Multiple words (OR)"
+#~ msgstr "Usea sana (TAI)"
+
+#~ msgid "Exact"
+#~ msgstr "Täsmällinen"
+
+#~ msgid "Regular expression"
+#~ msgstr "Säännöllinen lauseke"
