@@ -28,6 +28,7 @@
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QToolButton>
+#include <QDebug>
 
 #include <kglobalsettings.h>
 #include <kcompletionbox.h>
@@ -35,9 +36,10 @@
 
 
 /* Override the completion box for our references */
-CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod) : KCompletion()
+CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod) : 
+	KCompletion(),
+	m_key(new CSwordVerseKey(mod))
 {
-	m_key = new CSwordVerseKey(mod);
 	m_module = mod;
 }
 
@@ -83,7 +85,10 @@ void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char *name) : QWidget(parent) {
+CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char *name) : 
+	QWidget(parent),
+	m_key(new CSwordVerseKey(mod))
+{
 
 	updatelock = false;
 	m_module = mod;
@@ -116,22 +121,21 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	setTabOrder(m_textbox, 0);
 
-        m_bookScroller->setToolTips(
-                CResMgr::displaywindows::bibleWindow::nextBook::tooltip,
-                CResMgr::displaywindows::general::scrollButton::tooltip,
-                CResMgr::displaywindows::bibleWindow::previousBook::tooltip
-        );
-        m_chapterScroller->setToolTips(
-                CResMgr::displaywindows::bibleWindow::nextChapter::tooltip,
-                CResMgr::displaywindows::general::scrollButton::tooltip,
-                CResMgr::displaywindows::bibleWindow::previousChapter::tooltip
-        );
-        m_verseScroller->setToolTips(
-                CResMgr::displaywindows::bibleWindow::nextVerse::tooltip,
-                CResMgr::displaywindows::general::scrollButton::tooltip,
-                CResMgr::displaywindows::bibleWindow::previousVerse::tooltip
-        );
-
+    m_bookScroller->setToolTips(
+	    CResMgr::displaywindows::bibleWindow::nextBook::tooltip,
+	    CResMgr::displaywindows::general::scrollButton::tooltip,
+	    CResMgr::displaywindows::bibleWindow::previousBook::tooltip
+    );
+    m_chapterScroller->setToolTips(
+        CResMgr::displaywindows::bibleWindow::nextChapter::tooltip,
+        CResMgr::displaywindows::general::scrollButton::tooltip,
+        CResMgr::displaywindows::bibleWindow::previousChapter::tooltip
+    );
+    m_verseScroller->setToolTips(
+        CResMgr::displaywindows::bibleWindow::nextVerse::tooltip,
+        CResMgr::displaywindows::general::scrollButton::tooltip,
+        CResMgr::displaywindows::bibleWindow::previousVerse::tooltip
+    );
 
 	// signals and slots connections
 
@@ -148,8 +152,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 }
 
 void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
-	if (m)
-		m_module = m;
+	if (m) m_module = m;
 
 	delete m_textbox->completionObject();
 	CKeyReferenceCompletion *comp = new CKeyReferenceCompletion(m_module);
@@ -168,9 +171,10 @@ void CKeyReferenceWidget::updateText() {
 }
 
 bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
-	m_key = key;
-	updateText();
+	if (!key) return false;
 	
+	(*m_key) = (*key);
+	updateText();
 	return true;
 }
 
@@ -182,7 +186,7 @@ void CKeyReferenceWidget::slotReturnPressed() {
 	m_key->key(m_textbox->text());
 	updateText();
 	
-	emit changed(m_key);
+	emit changed(m_key.get());
 }
 
 /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
@@ -193,27 +197,26 @@ void CKeyReferenceWidget::slotUpdateLock() {
 
 void CKeyReferenceWidget::slotUpdateUnlock() {
 	updatelock = false;
-	if (oldKey != m_key->key()) emit changed(m_key);
+	if (oldKey != m_key->key()) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotBookChange(int n) {
 	n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
 	updateText();
-	if (!updatelock) emit changed(m_key);
+	if (!updatelock) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotChapterChange(int n) {
 	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
 	updateText();
-	if (!updatelock) emit changed(m_key);	
+	if (!updatelock) emit changed(m_key.get());	
 }
 
 void CKeyReferenceWidget::slotVerseChange(int n) {
 	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
 	updateText();
-	if (!updatelock) emit changed(m_key);
+	if (!updatelock) emit changed(m_key.get());
 }
 
 CKeyReferenceCompletion::~CKeyReferenceCompletion(){
-	delete m_key;
 }

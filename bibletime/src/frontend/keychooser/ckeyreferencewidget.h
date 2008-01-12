@@ -18,6 +18,8 @@
 #include <klineedit.h>
 #include <kcompletion.h>
 
+#include <boost/scoped_ptr.hpp>
+
 
 class CLexiconKeyChooser;
 class CSwordVerseKey;
@@ -32,7 +34,7 @@ public:
     QString makeCompletion(const QString &);
     QStringList allMatches();
 private:
-    CSwordVerseKey *m_key;
+    boost::scoped_ptr<CSwordVerseKey> m_key;
     CSwordBibleModuleInfo *m_module;
 };
 
@@ -77,7 +79,7 @@ protected slots: // Protected slots
 private:
     friend class CLexiconKeyChooser;
     CKeyReferenceLineEdit *m_textbox;
-    CSwordVerseKey *m_key;
+    boost::scoped_ptr<CSwordVerseKey> m_key;
     CScrollerWidgetSet *m_bookScroller;
     CScrollerWidgetSet *m_chapterScroller;
     CScrollerWidgetSet *m_verseScroller;
