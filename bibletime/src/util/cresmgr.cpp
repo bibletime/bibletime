@@ -716,7 +716,7 @@ namespace CResMgr {
 			const QString icon = "print.svg";
 		}
 		namespace deleteItems {
-			const QString icon = "filedelete.svg";
+			const QString icon = "edit_delete.svg";
 		}
 
 		namespace editModuleMenu {
