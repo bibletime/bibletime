@@ -104,20 +104,7 @@ void BtConfigDialog::slotChangePage(QListWidgetItem *current, QListWidgetItem *p
 	m_pageWidget->setCurrentIndex(m_contentsList->row(current));
 }
 
-bool BtConfigDialog::eventFilter(QObject* obj, QEvent* event)
-{
-	if (event->type() == QEvent::Show) {
-		qDebug("show event");
-		qDebug() << m_contentsList->minimumSizeHint().width();
-		for (int i = 0; i < m_contentsList->count(); i++) {
-			qDebug()<< "size hint:"<< m_contentsList->item(i)->sizeHint().width();
-			//m_contentsList->setMaximumWidth(qMax(m_contentsList->item(i)->sizeHint().width(), m_contentsList->maximumWidth() ) );
-		}
-		return true;
-	} else {
-		return QObject::eventFilter(obj, event);
-	}
-}
+
 
 BtConfigPage::BtConfigPage() {}
 

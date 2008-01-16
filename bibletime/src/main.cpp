@@ -118,6 +118,7 @@ int main(int argc, char* argv[]) {
  	options.add("debug", ki18n("Enable debug messages"),0);
  	options.add("ignore-session", ki18n("Ignore the startup session that was saved when BibleTime was closed the last time."),0);
  	options.add("open-default-bible <key>", ki18n("Open the standard Bible with the given key. Use <random> to open at a random position."),0);
+	options.add("test <feature>", ki18n("Enable a feature for testing. Features: modulemanager."), 0);
 
 // 	KAboutData aboutData(
 // 		"bibletime",
@@ -255,8 +256,11 @@ int main(int argc, char* argv[]) {
 		showDebugMessages = true;
 		app.setProperty("--debug", true);
 	} 
-	else {
-		app.setProperty("--debug", false);
+	if (!args->getOptionList("test").isEmpty()) {
+		QStringList testingFeatures = args->getOptionList("test");
+		foreach (QString feature, testingFeatures) {
+			app.setProperty(feature.toLatin1().data(), true);
+		}
 	}
 	
 	// This is the QT4 version, will only work if main App is QApplication

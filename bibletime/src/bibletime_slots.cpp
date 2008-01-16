@@ -30,6 +30,9 @@
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 
+// testing the new module manager dialog
+#include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
+
 //QT includes
 #include <QClipboard>
 #include <QInputDialog>
@@ -37,6 +40,8 @@
 #include <QAction>
 #include <QMenu>
 #include <QToolBar>
+
+#include <QApplication>
 
 //KDE includes
 #include <kbugreport.h>
@@ -106,11 +111,22 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
+	if (!(qApp->property("modulemanager").isValid())) {
 	BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this);
 	connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
 	dlg->exec();
 	dlg->delayedDestruct();
+
+	}else {
+		//TODO: nonmodal dialog, memory management
+		BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
+		//dlg->exec();
+		//dlg->delayedDestruct();
+		dlg->show();
+		dlg->raise();
+		dlg->activateWindow();
+	}
 }
 
 /** Is called when settings in the sword setup dialog were changed (ok or apply) */
