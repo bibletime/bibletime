@@ -183,8 +183,105 @@ QString BtInstallPage::header()
 }
 
 
+
 // ****************************************************************
 // ******** Installation source and module list widget ************
+// ****************************************************************
+
+BtSourceArea::BtSourceArea(const QString& sourceName)
+	: QWidget(),
+	m_sourceName(sourceName)
+{
+	qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
+	initView();
+}
+
+BtSourceArea::~BtSourceArea()
+{}
+
+void BtSourceArea::initView()
+{
+	qDebug("BtSourceArea::initView");
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
+	// There are no views for the stack yet, see initSources
+	m_view = new QTreeWidget(this);
+	mainLayout->addWidget(m_view);
+
+	qDebug("void BtSourceWidget::createTabWidget() refresh label");
+	QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
+	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
+	m_refreshTimeLabel = new QLabel();
+	QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+	refreshLabelLayout->addWidget(refreshLabel);
+	refreshLabelLayout->addWidget(m_refreshTimeLabel);
+	refreshLabelLayout->addItem(refreshLabelSpacer);
+	mainLayout->addLayout(refreshLabelLayout);
+
+	// source related button row
+	qDebug("void BtSourceWidget::createTabWidget() source buttons");
+	QHBoxLayout *sourceLayout = new QHBoxLayout();
+	m_refreshButton = new QPushButton(tr("Refresh"));
+	m_refreshButton->setEnabled(false);
+	QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	m_editButton = new QPushButton(tr("Edit..."));
+	m_editButton->setEnabled(false); // TODO after writing the edit widget
+	m_deleteButton = new QPushButton(tr("Delete"));
+	m_deleteButton->setEnabled(false);
+	m_addButton = new QPushButton(tr("Add..."));
+
+	sourceLayout->addWidget(m_refreshButton);
+	sourceLayout->addItem(sourceSpacer);
+	sourceLayout->addWidget(m_editButton);
+	sourceLayout->addWidget(m_deleteButton);
+	sourceLayout->addWidget(m_addButton);
+
+	mainLayout->addLayout(sourceLayout);
+
+	//populate the treewidget with the module list
+	createModuleTree();
+}
+
+// doesn't handle widgets/ui but only the tree items and backend
+bool BtSourceArea::createModuleTree()
+{
+	qDebug("BtSourceArea::createModuleTree start");
+	//if the tree already exists for this source,
+	// the selections should be preserved
+	
+	BTInstallMgr iMgr;
+	sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, m_sourceName);
+
+	if (BTInstallMgr::Tool::RemoteConfig::isRemoteSource(&is)
+			//&& !refreshRemoteModuleCache(sourceName)
+	){
+		return false;
+	}
+
+	boost::scoped_ptr<CSwordBackend> remote_backend( BTInstallMgr::Tool::backend(&is) );
+	if (!remote_backend) {
+		return false;
+	}
+	CSwordBackend* local_backend = CPointers::backend();
+	
+	// create the module list from the (cached) source data
+	ListCSwordModuleInfo moduleList = remote_backend->moduleList();
+	
+	// create the BTModuleTreeItem from the moduleList
+
+	// use the treeItem and view root item to populate the tree
+}
+
+void BtSourceArea::createTreeItem()
+{
+
+}
+
+
+
+// ****************************************************************
+// ******** Tab Widget that holds source widgets ******************
 // ****************************************************************
 
 BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
@@ -192,69 +289,28 @@ BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
 	m_page(parent)
 {
 	qDebug("BtSourceWidget::BtSourceWidget start");
-	initView();
-	initConnections();
 	initSources();
 	
-	//choose the page from config (tabbar then emits "changed" signal)
+	//choose the page from config
 	
 }
 
-// init the view except for the current source/module tree
-void BtSourceWidget::initView()
+BtSourceArea* BtSourceWidget::area()
 {
-	qDebug("void BtSourceWidget::initView() start");
-
-	m_pageWidget = new QWidget(this);
-	//setContentsMargins(0,5,0,5);
-	QVBoxLayout *tabLayout = new QVBoxLayout(this);
-	m_pageWidget->setLayout(tabLayout);
-
-	//m_tabBar = new QTabBar();
-	//mainLayout->addWidget(m_tabBar);
-
-	// There are no views for the stack yet, see initSources
-	m_viewStack = new QStackedWidget();	
-	tabLayout->addWidget(m_viewStack);
-	
-	qDebug("void BtSourceWidget::initView() refresh label");
-	QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
-	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
-	m_refreshTimeLabel = new QLabel();
-	QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	
-	refreshLabelLayout->addWidget(refreshLabel);
-	refreshLabelLayout->addWidget(m_refreshTimeLabel);
-	refreshLabelLayout->addItem(refreshLabelSpacer);
-	tabLayout->addLayout(refreshLabelLayout);
-	
-	// source related button row
-	qDebug("void BtSourceWidget::initView() source buttons");
-	QHBoxLayout *sourceLayout = new QHBoxLayout();
-	m_refreshButton = new QPushButton(tr("Refresh"));
-	QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	m_editButton = new QPushButton(tr("Edit..."));
-	m_editButton->setEnabled(false); // TODO after writing the edit widget
-	m_deleteButton = new QPushButton(tr("Delete"));
-	m_addButton = new QPushButton(tr("Add..."));
-	
-	sourceLayout->addWidget(m_refreshButton);
-	sourceLayout->addItem(sourceSpacer);
-	sourceLayout->addWidget(m_editButton);
-	sourceLayout->addWidget(m_deleteButton);
-	sourceLayout->addWidget(m_addButton);
-	
-	tabLayout->addLayout(sourceLayout);
+	return dynamic_cast<BtSourceArea*>(currentWidget());
 }
 
-void BtSourceWidget::initConnections()
+void BtSourceWidget::initSourceConnections()
 {
-	qDebug("void BtSourceWidget::initConnections() start");
-	connect(m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
-	connect(m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
-	connect(m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
-	connect(m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
-	connect(this, SIGNAL(currentChanged(int)), SLOT(slotSourceSelected(int)) );
+	qDebug("void BtSourceWidget::initSourceConnections() start");
+	if (area()) {
+		connect(area()->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
+		connect(area()->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
+		connect(area()->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
+		connect(area()->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
+		connect(area()->m_view, SIGNAL(itemSelectionChanged()), SLOT(slotModuleSelectionChanged()));
+	}
+	qDebug("void BtSourceWidget::initSourceConnections() end");
 }
 
 void BtSourceWidget::slotEdit()
@@ -273,11 +329,10 @@ void BtSourceWidget::slotDelete()
 	// remove from backend
 	
 	// remove tab and view
-	int index = currentIndex();
-	removeTab(index);
-	QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(index));
-	m_viewStack->removeWidget(view);
-	delete view;
+	qDebug("doesn't really remove the source from the backend yet!");
+	QWidget* w = currentWidget();
+	removeTab(currentIndex());
+	delete w;
 }
 
 void BtSourceWidget::slotAdd()
@@ -289,26 +344,11 @@ void BtSourceWidget::slotAdd()
 	// if accepted, add source to backend...
 	
 	// add source to this widget
-	//m_tabBar->addTab(sourceDialog->name());
-	QTreeWidget* view = new QTreeWidget;
-	m_viewStack->addWidget(view);
-
+	// addSource(sourceName);
 	//destroy the dialog
 	
-	// when the item selection is changed the install button
-	// has to be updated
-	connect(view, SIGNAL(itemSelectionChanged()), SLOT(slotModuleSelectionChanged()));
-}
-
-
-// when a source (tab) has been chosen
-void BtSourceWidget::slotSourceSelected(int index)
-{
-	qDebug("void BtSourceWidget::slotSourceSelected(int index) start");
-	//m_sourceName = m_tabBar->tabText(index);
-	m_viewStack->setCurrentIndex(index);
-	// TODO later: update the refresh time label
-	
+	// when the item selection is changed
+	// the install button has to be updated
 }
 
 
@@ -319,9 +359,7 @@ void BtSourceWidget::slotRefresh()
 	// BACKEND
 	
 	// rebuild the view tree and refresh the view
-	int index = currentIndex();
-	QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(index));
-	createModuleTree(view->invisibleRootItem(), tabText(index));
+	area()->createModuleTree();
 }
 
 
@@ -367,10 +405,9 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	BTInstallMgr mgr;
 	sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&mgr, sourceName);
 
-	//Add to the UI
-	// add the tab
-	//int tabNumber = m_tabBar->addTab(sourceName);
-	int tabNumber = this->addTab(m_pageWidget, sourceName);
+	// Here the tab UI is created and added to the tab widget
+	BtSourceArea* area = new BtSourceArea(sourceName);
+	int tabNumber = this->addTab(area, sourceName);
 
 	if (BTInstallMgr::Tool::RemoteConfig::isRemoteSource(&is)) {
 		
@@ -385,44 +422,9 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	// TODO: add "remote/local", server, path etc.
 	QString toolTip(sourceName + QString("<br>"));
 	tabBar()->setTabToolTip(tabNumber, toolTip);
-	
-	//create the treewidget and add it to stack
-	QTreeWidget* view = new QTreeWidget;
-	m_viewStack->addWidget(view);
-	
-	//populate the treewidget with the module list
-	//createModuleTree(view->invisibleRootItem(), sourceName);
+	initSourceConnections();
 }
 
-// doesn't handle widgets/ui but only the tree items and backend
-bool BtSourceWidget::createModuleTree(QTreeWidgetItem* rootItem, const QString& sourceName)
-{
-	qDebug("BtSourceWidget::createModuleTree start");
-	//if the tree already exists for this source,
-	// the selections should be preserved
-	
-	BTInstallMgr iMgr;
-	sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&iMgr, sourceName);
-
-	if (BTInstallMgr::Tool::RemoteConfig::isRemoteSource(&is)
-			//&& !refreshRemoteModuleCache(sourceName)
-	){
-		return false;
-	}
-
-	boost::scoped_ptr<CSwordBackend> remote_backend( BTInstallMgr::Tool::backend(&is) );
-	if (!remote_backend) {
-		return false;
-	}
-	CSwordBackend* local_backend = CPointers::backend();
-	
-	// create the module list from the (cached) source data
-	ListCSwordModuleInfo moduleList = remote_backend->moduleList();
-	
-	//use itemtree and filters
-	
-	//return the root item
-}
 
 void BtSourceWidget::updateList(const QString& sourceName)
 {
@@ -432,6 +434,7 @@ void BtSourceWidget::updateList(const QString& sourceName)
 
 void BtSourceWidget::slotModuleSelectionChanged()
 {
+	//TODO: removing a source should update this also
 	qDebug("BtSourceWidget::slotModuleSelectionChanged start");
 	//bool install = false;
 	//bool update = false;
@@ -439,7 +442,7 @@ void BtSourceWidget::slotModuleSelectionChanged()
 	QList<QTreeWidgetItem*> selectedItems;
 	
 	for (int i = 0; i < count(); i++) {
-		QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(i));
+		QTreeWidget* view = dynamic_cast<QTreeWidget*>(widget(i));
 		selectedItems += view->selectedItems();
 	}
 	

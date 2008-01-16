@@ -57,31 +57,50 @@ private:
 	
 	QComboBox* m_pathCombo;
 	QPushButton* m_configurePathButton;
-
 	BtSourceWidget* m_sourceWidget;
-
 	QPushButton* m_installButton;
 };
 
-
-
-
 /**
-* Widget inside the tabwidget which includes the module view
-* and installation source related functions.
-* 
-* - Tab bar
-* - Stacked tree widgets, one for each source/tab
+* - Tree widget
 * - Buttons for the current source: refresh, edit, remove
 * - Add source button
-* - Install button for all sources
 *
-* The current source name is taken from the tabbar. Changing
-* the tab changes the stacked widget page. Each source has
+* Each source has
 * QTreeWidget, populated with the module tree if the source
 * module list is in a local cache. Refreshing the source refreshes
 * the cache and rebuilds the module tree. Sources are not refreshed
 * automatically, only by the user action, one source at a time.
+*/
+class BtSourceArea : public QWidget
+{
+	Q_OBJECT
+
+	friend class BtSourceWidget;
+public:
+	BtSourceArea(const QString& sourceName);
+	~BtSourceArea();
+
+	void initView();
+
+private:
+	/** Create a module tree for a tree widget */
+	bool createModuleTree();
+	void createTreeItem();
+
+	QString m_sourceName;
+	QTreeWidget* m_view;
+	QLabel* m_refreshTimeLabel;
+	QPushButton* m_refreshButton;
+	QPushButton* m_editButton;
+	QPushButton* m_deleteButton;
+	QPushButton* m_addButton;
+};
+
+
+/**
+* Tabwidget which holds the source widgets.
+* This widget implements the slots for the source action buttons.
 */
 class BtSourceWidget : public QTabWidget
 {
@@ -92,9 +111,10 @@ public:
 	BtSourceWidget(BtInstallPage* parent);
 	virtual ~BtSourceWidget() {}
 
+	BtSourceArea* area();
+
 private:
-	void initView();
-	void initConnections();
+	void initSourceConnections();
 	/** Add tabs/views for each source. */
 	void initSources();
 	
@@ -102,12 +122,9 @@ private:
 	void addSource(const QString& sourceName);
 	/** Update one module tree widget */
 	void updateList(const QString& sourceName);
-	/** Create a module tree for a tree widget */
-	bool createModuleTree(QTreeWidgetItem* rootItem, const QString& source);
 	
 private slots:
-	void slotSourceSelected(int index);
-	/** Refresh button clicked. */
+
 	void slotRefresh();
 	/** Edit button clicked. */
 	void slotEdit();
@@ -120,14 +137,6 @@ private slots:
 	
 private:
 	BtInstallPage* m_page;
-	QWidget* m_pageWidget;
-	//QTabBar* m_tabBar;
-	QStackedWidget* m_viewStack;
-	QLabel* m_refreshTimeLabel;
-	QPushButton* m_refreshButton;
-	QPushButton* m_editButton;
-	QPushButton* m_deleteButton;
-	QPushButton* m_addButton;
 };
 
 
