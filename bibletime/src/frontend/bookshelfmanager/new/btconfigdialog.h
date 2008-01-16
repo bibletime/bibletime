@@ -47,9 +47,6 @@ public:
 	/** Return the currently selected page. */
 	BtConfigPage* currentPage();
 
-protected:
-	bool eventFilter(QObject* obj, QEvent* event);
-	
 private slots:
 	/** Change the page. */
 	void slotChangePage(QListWidgetItem *current, QListWidgetItem *previous);

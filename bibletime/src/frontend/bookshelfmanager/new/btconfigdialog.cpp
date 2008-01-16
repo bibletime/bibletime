@@ -34,8 +34,6 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 	m_contentsList->setViewMode(QListView::IconMode);
 	m_contentsList->setMovement(QListView::Static);
 	m_contentsList->setMaximumWidth(m_contentsList->minimumSizeHint().width());
-	//m_contentsList->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
-	m_contentsList->installEventFilter(this);
 
 	m_pageWidget = new QStackedWidget(this);
 	m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -83,17 +81,10 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 	item->setTextAlignment(Qt::AlignHCenter);
 	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
-	qDebug() << "item rect " << m_contentsList->visualItemRect(item);
+	//set the list width - initially it's too wide
+	// TODO: +10 should be replaced, maybe the viewport should have itemrect width
 	m_contentsList->setMaximumWidth(qMax(m_contentsList->maximumWidth(), (m_contentsList->visualItemRect(item).width() + 10 ) ) );
-// 	int textWidth = m_contentsList->fontMetrics().width(item->text());
-// 	qDebug() << "text width:"<< textWidth;
-// 	qDebug() << "listview icon size:"<<m_contentsList->iconSize();
-// 	qDebug() << "list maxwidth: " << m_contentsList->maximumWidth();
-// 	if (m_contentsList->maximumWidth() < item->sizeHint().width()) {
-// 		qDebug() << "set maxwidth: " << item->sizeHint().width();
-// 		m_contentsList->setMaximumWidth(item->sizeHint().width());
-// 	}
-// 	m_contentsList->setMaximumWidth(qMax(m_contentsList->maximumWidth(), textWidth));
+
 }
 
 void BtConfigDialog::addButtonBox(QDialogButtonBox* box)
