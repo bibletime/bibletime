@@ -36,6 +36,11 @@
 #include <QStackedWidget>
 #include <QTreeWidget>
 #include <QVBoxLayout>
+#include <QFileInfo>
+#include <QFrame>
+#include <QRect>
+#include <QStyle>
+#include <QStyleOptionTabWidgetFrame>
 
 using namespace BookshelfManager;
 
@@ -59,11 +64,13 @@ void BtInstallPage::setInstallEnabled(bool b)
 
 void BtInstallPage::initView()
 {
+	setContentsMargins(0,5,0,5);
 	qDebug("void BtInstallPage::initView() start");
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
-	
+	mainLayout->setContentsMargins(0,5,0,5);
 	// installation path chooser
 	QHBoxLayout* pathLayout = new QHBoxLayout();
+	pathLayout->setContentsMargins(0,5,0,5);
 	QSpacerItem *pathSpacer= new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	QLabel* pathLabel = new QLabel(tr("Install Path:"));
 	m_pathCombo = new QComboBox();
@@ -84,6 +91,7 @@ void BtInstallPage::initView()
 
 	// Install button
 	QHBoxLayout *installButtonLayout = new QHBoxLayout();
+	installButtonLayout->setContentsMargins(0,5,0,5);
 	QSpacerItem *installButtonSpacer = new QSpacerItem(371, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	installButtonLayout->addItem(installButtonSpacer);
 	m_installButton = new QPushButton(tr("Install and Update"), this);
@@ -180,7 +188,7 @@ QString BtInstallPage::header()
 // ****************************************************************
 
 BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
-	: QWidget(parent),
+	: QTabWidget(parent),
 	m_page(parent)
 {
 	qDebug("BtSourceWidget::BtSourceWidget start");
@@ -196,17 +204,20 @@ BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
 void BtSourceWidget::initView()
 {
 	qDebug("void BtSourceWidget::initView() start");
+
+	m_pageWidget = new QWidget(this);
+	//setContentsMargins(0,5,0,5);
 	QVBoxLayout *tabLayout = new QVBoxLayout(this);
-	
-	// TODO: in what layout the tabbar should be, and how?
-	m_tabBar = new QTabBar();
-	tabLayout->addWidget(m_tabBar);
+	m_pageWidget->setLayout(tabLayout);
+
+	//m_tabBar = new QTabBar();
+	//mainLayout->addWidget(m_tabBar);
 
 	// There are no views for the stack yet, see initSources
 	m_viewStack = new QStackedWidget();	
 	tabLayout->addWidget(m_viewStack);
 	
-		qDebug("void BtSourceWidget::initView() refresh label");
+	qDebug("void BtSourceWidget::initView() refresh label");
 	QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
 	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
 	m_refreshTimeLabel = new QLabel();
@@ -243,7 +254,7 @@ void BtSourceWidget::initConnections()
 	connect(m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
 	connect(m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
 	connect(m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
-	connect(m_tabBar, SIGNAL(currentChanged(int)), SLOT(slotSourceSelected(int)) );
+	connect(this, SIGNAL(currentChanged(int)), SLOT(slotSourceSelected(int)) );
 }
 
 void BtSourceWidget::slotEdit()
@@ -262,8 +273,8 @@ void BtSourceWidget::slotDelete()
 	// remove from backend
 	
 	// remove tab and view
-	int index = m_tabBar->currentIndex();
-	m_tabBar->removeTab(index);
+	int index = currentIndex();
+	removeTab(index);
 	QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(index));
 	m_viewStack->removeWidget(view);
 	delete view;
@@ -308,9 +319,9 @@ void BtSourceWidget::slotRefresh()
 	// BACKEND
 	
 	// rebuild the view tree and refresh the view
-	int index = m_tabBar->currentIndex();
+	int index = currentIndex();
 	QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(index));
-	createModuleTree(view->invisibleRootItem(), m_tabBar->tabText(index));
+	createModuleTree(view->invisibleRootItem(), tabText(index));
 }
 
 
@@ -319,10 +330,32 @@ void BtSourceWidget::initSources()
 {
 	qDebug("void BtSourceWidget::initSources() start");
 	// create the list of source names
-	QStringList sourceList;
-	
-	foreach (QString s, sourceList) {
-		addSource(s);
+	//QStringList sourceList;
+
+	// ***** Use the backend to get the list of sources *****
+	BTInstallMgr::Tool::RemoteConfig::initConfig();
+	BTInstallMgr mgr;
+	QStringList sourceList = BTInstallMgr::Tool::RemoteConfig::sourceList(&mgr);
+
+	// Add a default entry, the Crosswire main repository
+	// TODO: this is easy for the user, but should the edit dialog
+	// open automatically?
+	if (!sourceList.count()) {
+		sword::InstallSource is("FTP");   //default return value
+		is.caption = "Crosswire";
+		is.source = "ftp.crosswire.org";
+		is.directory = "/pub/sword/raw";
+		//TODO: passive ftp
+		BTInstallMgr::Tool::RemoteConfig::addSource(&is);
+
+		BTInstallMgr mgr; //make sure we're uptodate
+		sourceList = BTInstallMgr::Tool::RemoteConfig::sourceList(&mgr);
+
+		Q_ASSERT( sourceList.count() > 0 );
+	}
+
+	foreach (QString sourceName, sourceList) {	
+		addSource(sourceName);
 	}
 	
 	// select the current source from the config
@@ -331,18 +364,34 @@ void BtSourceWidget::initSources()
 void BtSourceWidget::addSource(const QString& sourceName)
 {
 	qDebug("void BtSourceWidget::addSource(const QString& sourceName) start");
+	BTInstallMgr mgr;
+	sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source(&mgr, sourceName);
+
+	//Add to the UI
 	// add the tab
-	m_tabBar->addTab(sourceName);
-	// TODO: add "remote/local", path etc.
+	//int tabNumber = m_tabBar->addTab(sourceName);
+	int tabNumber = this->addTab(m_pageWidget, sourceName);
+
+	if (BTInstallMgr::Tool::RemoteConfig::isRemoteSource(&is)) {
+		
+	}
+	else { // local source
+		QFileInfo fi( is.directory.c_str() );
+		if (fi.isDir() && fi.isReadable()) {
+			
+		}
+	}
+
+	// TODO: add "remote/local", server, path etc.
 	QString toolTip(sourceName + QString("<br>"));
-	//setTabToolTip(index, );
+	tabBar()->setTabToolTip(tabNumber, toolTip);
 	
 	//create the treewidget and add it to stack
 	QTreeWidget* view = new QTreeWidget;
 	m_viewStack->addWidget(view);
 	
 	//populate the treewidget with the module list
-	createModuleTree(view->invisibleRootItem(), sourceName);
+	//createModuleTree(view->invisibleRootItem(), sourceName);
 }
 
 // doesn't handle widgets/ui but only the tree items and backend
@@ -389,7 +438,7 @@ void BtSourceWidget::slotModuleSelectionChanged()
 	
 	QList<QTreeWidgetItem*> selectedItems;
 	
-	for (int i = 0; i < m_tabBar->count(); i++) {
+	for (int i = 0; i < count(); i++) {
 		QTreeWidget* view = dynamic_cast<QTreeWidget*>(m_viewStack->widget(i));
 		selectedItems += view->selectedItems();
 	}

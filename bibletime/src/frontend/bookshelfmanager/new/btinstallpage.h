@@ -83,7 +83,7 @@ private:
 * the cache and rebuilds the module tree. Sources are not refreshed
 * automatically, only by the user action, one source at a time.
 */
-class BtSourceWidget : public QWidget
+class BtSourceWidget : public QTabWidget
 {
 	Q_OBJECT
 public:
@@ -120,7 +120,8 @@ private slots:
 	
 private:
 	BtInstallPage* m_page;
-	QTabBar* m_tabBar;
+	QWidget* m_pageWidget;
+	//QTabBar* m_tabBar;
 	QStackedWidget* m_viewStack;
 	QLabel* m_refreshTimeLabel;
 	QPushButton* m_refreshButton;
