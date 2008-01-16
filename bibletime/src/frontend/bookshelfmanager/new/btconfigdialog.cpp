@@ -23,16 +23,23 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QDialogButtonBox>
+#include <QFrame>
+#include <QEvent>
 
-BtConfigDialog::BtConfigDialog()
-	: QDialog()
+BtConfigDialog::BtConfigDialog(QWidget* parent)
+	: QDialog(parent)
 {
+	setWindowFlags(Qt::Window);
 	m_contentsList = new QListWidget(this);
 	m_contentsList->setViewMode(QListView::IconMode);
 	m_contentsList->setMovement(QListView::Static);
-	
+	m_contentsList->setMaximumWidth(m_contentsList->minimumSizeHint().width());
+	//m_contentsList->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
+	m_contentsList->installEventFilter(this);
+
 	m_pageWidget = new QStackedWidget(this);
-	
+	m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+
 	QHBoxLayout *mainLayout = new QHBoxLayout;
 	setLayout(mainLayout);
 	mainLayout->addWidget(m_contentsList);
@@ -40,7 +47,15 @@ BtConfigDialog::BtConfigDialog()
 	mainLayout->addLayout(m_pageLayout);
 	
 	m_pageLayout->addWidget(m_pageWidget);
-	
+
+	//line
+	QFrame* line = new QFrame();
+	line->setGeometry(QRect(1, 1, 1, 3));
+    line->setFrameShape(QFrame::HLine);
+    line->setFrameShadow(QFrame::Sunken);
+	line->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+	m_pageLayout->addWidget(line);
+
 	connect(m_contentsList,
 		SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
 		this, SLOT(slotChangePage(QListWidgetItem *, QListWidgetItem*))
@@ -67,6 +82,18 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 	item->setText(pageWidget->header());
 	item->setTextAlignment(Qt::AlignHCenter);
 	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+	qDebug() << "item rect " << m_contentsList->visualItemRect(item);
+	m_contentsList->setMaximumWidth(qMax(m_contentsList->maximumWidth(), (m_contentsList->visualItemRect(item).width() + 10 ) ) );
+// 	int textWidth = m_contentsList->fontMetrics().width(item->text());
+// 	qDebug() << "text width:"<< textWidth;
+// 	qDebug() << "listview icon size:"<<m_contentsList->iconSize();
+// 	qDebug() << "list maxwidth: " << m_contentsList->maximumWidth();
+// 	if (m_contentsList->maximumWidth() < item->sizeHint().width()) {
+// 		qDebug() << "set maxwidth: " << item->sizeHint().width();
+// 		m_contentsList->setMaximumWidth(item->sizeHint().width());
+// 	}
+// 	m_contentsList->setMaximumWidth(qMax(m_contentsList->maximumWidth(), textWidth));
 }
 
 void BtConfigDialog::addButtonBox(QDialogButtonBox* box)
@@ -84,6 +111,21 @@ void BtConfigDialog::slotChangePage(QListWidgetItem *current, QListWidgetItem *p
 	if (!current)
 		current = previous;
 	m_pageWidget->setCurrentIndex(m_contentsList->row(current));
+}
+
+bool BtConfigDialog::eventFilter(QObject* obj, QEvent* event)
+{
+	if (event->type() == QEvent::Show) {
+		qDebug("show event");
+		qDebug() << m_contentsList->minimumSizeHint().width();
+		for (int i = 0; i < m_contentsList->count(); i++) {
+			qDebug()<< "size hint:"<< m_contentsList->item(i)->sizeHint().width();
+			//m_contentsList->setMaximumWidth(qMax(m_contentsList->item(i)->sizeHint().width(), m_contentsList->maximumWidth() ) );
+		}
+		return true;
+	} else {
+		return QObject::eventFilter(obj, event);
+	}
 }
 
 BtConfigPage::BtConfigPage() {}

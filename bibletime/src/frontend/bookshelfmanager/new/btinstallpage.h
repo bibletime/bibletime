@@ -11,7 +11,7 @@
 #define BTINSTALLPAGE_H
 
 
-#include "frontend/bookshelfmanager/new/btconfigpage.h"
+#include "frontend/bookshelfmanager/new/btconfigdialog.h"
 #include "frontend/cmodulechooserdialog.h"
 
 #include <QString>
@@ -55,7 +55,6 @@ private:
 
 private:
 	
-	QLabel* m_pathLabel;
 	QComboBox* m_pathCombo;
 	QPushButton* m_configurePathButton;
 

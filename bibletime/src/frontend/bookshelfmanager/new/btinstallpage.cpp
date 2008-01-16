@@ -12,7 +12,7 @@
 #include "btinstallpage.moc"
 
 #include "frontend/bookshelfmanager/btinstallmgr.h"
-#include "frontend/bookshelfmanager/new/btconfigpage.h"
+#include "frontend/bookshelfmanager/new/btconfigdialog.h"
 #include "frontend/cmodulechooserdialog.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -46,29 +46,33 @@ using namespace BookshelfManager;
 BtInstallPage::BtInstallPage()
 	: BtConfigPage()
 {
+	qDebug("BtInstallPage::BtInstallPage() start");
 	initView();
 	initConnections();
 }
 
 void BtInstallPage::setInstallEnabled(bool b)
 {
+	qDebug("void BtInstallPage::setInstallEnabled(bool b) start");
 	m_installButton->setEnabled(b);
 }
 
 void BtInstallPage::initView()
 {
-	QVBoxLayout *mainLayout;
+	qDebug("void BtInstallPage::initView() start");
+	QVBoxLayout *mainLayout = new QVBoxLayout(this);
 	
 	// installation path chooser
-	QHBoxLayout *pathLayout;
+	QHBoxLayout* pathLayout = new QHBoxLayout();
 	QSpacerItem *pathSpacer= new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	m_pathLabel = new QLabel(tr("Install Path:"), this);
-	m_pathCombo = new QComboBox(this);
+	QLabel* pathLabel = new QLabel(tr("Install Path:"));
+	m_pathCombo = new QComboBox();
 	initPathCombo(); // set the paths and the current path
-	m_configurePathButton = new QPushButton(tr("Configure..."), this);
+	m_configurePathButton = new QPushButton(tr("Configure..."));
 	m_configurePathButton->setEnabled(false); //TODO after writing the widget
 	
 	pathLayout->addItem(pathSpacer);
+	pathLayout->addWidget(pathLabel);
 	pathLayout->addWidget(m_pathCombo);
 	pathLayout->addWidget(m_configurePathButton);
 	mainLayout->addLayout(pathLayout);
@@ -95,6 +99,7 @@ void BtInstallPage::initView()
 
 void BtInstallPage::initConnections()
 {
+	qDebug("void BtInstallPage::initConnections() start");
 	QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged()));
 	QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
 	QObject::connect(m_installButton, SIGNAL(clicked()), this, SLOT(slotInstall()));
@@ -104,6 +109,7 @@ void BtInstallPage::initConnections()
 
 void BtInstallPage::initPathCombo()
 {
+	qDebug("void BtInstallPage::initPathCombo() start");
 	//populate the combo list
 	m_pathCombo->clear();
 	
@@ -123,6 +129,7 @@ void BtInstallPage::slotPathChanged(const QString& pathText)
 
 void BtInstallPage::slotEditPaths()
 {
+	qDebug("void BtInstallPage::slotEditPaths() start");
 	// Now: do nothing, editing is done in another page
 	// (we have to catch the signal sent from there to refresh the combo)
 	return;
@@ -135,6 +142,7 @@ void BtInstallPage::slotEditPaths()
 
 void BtInstallPage::slotInstall()
 {
+	qDebug("void BtInstallPage::slotInstall() start");
 	//TODO: what to do if there are identical module names?
 	
 	// create the confirmation dialog
@@ -175,6 +183,7 @@ BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
 	: QWidget(parent),
 	m_page(parent)
 {
+	qDebug("BtSourceWidget::BtSourceWidget start");
 	initView();
 	initConnections();
 	initSources();
@@ -186,20 +195,21 @@ BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
 // init the view except for the current source/module tree
 void BtSourceWidget::initView()
 {
-
-	QVBoxLayout *tabLayout;
+	qDebug("void BtSourceWidget::initView() start");
+	QVBoxLayout *tabLayout = new QVBoxLayout(this);
 	
 	// TODO: in what layout the tabbar should be, and how?
-	m_tabBar = new QTabBar(this);
+	m_tabBar = new QTabBar();
 	tabLayout->addWidget(m_tabBar);
 
 	// There are no views for the stack yet, see initSources
-	m_viewStack = new QStackedWidget(this);	
+	m_viewStack = new QStackedWidget();	
 	tabLayout->addWidget(m_viewStack);
 	
-	QHBoxLayout *refreshLabelLayout;
-	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"), this);
-	m_refreshTimeLabel = new QLabel(this);
+		qDebug("void BtSourceWidget::initView() refresh label");
+	QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
+	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
+	m_refreshTimeLabel = new QLabel();
 	QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	
 	refreshLabelLayout->addWidget(refreshLabel);
@@ -208,13 +218,14 @@ void BtSourceWidget::initView()
 	tabLayout->addLayout(refreshLabelLayout);
 	
 	// source related button row
-	QHBoxLayout *sourceLayout = new QHBoxLayout(this);
-	m_refreshButton = new QPushButton(tr("Refresh"), this);
+	qDebug("void BtSourceWidget::initView() source buttons");
+	QHBoxLayout *sourceLayout = new QHBoxLayout();
+	m_refreshButton = new QPushButton(tr("Refresh"));
 	QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	m_editButton = new QPushButton(tr("Edit..."), this);
+	m_editButton = new QPushButton(tr("Edit..."));
 	m_editButton->setEnabled(false); // TODO after writing the edit widget
-	m_deleteButton = new QPushButton(tr("Delete"), this);
-	m_addButton = new QPushButton(tr("Add..."), this);
+	m_deleteButton = new QPushButton(tr("Delete"));
+	m_addButton = new QPushButton(tr("Add..."));
 	
 	sourceLayout->addWidget(m_refreshButton);
 	sourceLayout->addItem(sourceSpacer);
@@ -227,6 +238,7 @@ void BtSourceWidget::initView()
 
 void BtSourceWidget::initConnections()
 {
+	qDebug("void BtSourceWidget::initConnections() start");
 	connect(m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
 	connect(m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
 	connect(m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
@@ -244,6 +256,7 @@ void BtSourceWidget::slotEdit()
 
 void BtSourceWidget::slotDelete()
 {
+	qDebug("void BtSourceWidget::slotDelete() start");
 	// ask for confirmation
 	
 	// remove from backend
@@ -258,6 +271,7 @@ void BtSourceWidget::slotDelete()
 
 void BtSourceWidget::slotAdd()
 {
+	qDebug("void BtSourceWidget::slotAdd() start");
 	// open dialog
 	// don't destroy when closing
 	
@@ -279,6 +293,7 @@ void BtSourceWidget::slotAdd()
 // when a source (tab) has been chosen
 void BtSourceWidget::slotSourceSelected(int index)
 {
+	qDebug("void BtSourceWidget::slotSourceSelected(int index) start");
 	//m_sourceName = m_tabBar->tabText(index);
 	m_viewStack->setCurrentIndex(index);
 	// TODO later: update the refresh time label
@@ -288,6 +303,7 @@ void BtSourceWidget::slotSourceSelected(int index)
 
 void BtSourceWidget::slotRefresh()
 {
+	qDebug("void BtSourceWidget::slotRefresh() start");
 	// (re)build the module cache for the source
 	// BACKEND
 	
@@ -301,6 +317,7 @@ void BtSourceWidget::slotRefresh()
 // init the tabbar, setup the module tree for the current source
 void BtSourceWidget::initSources()
 {
+	qDebug("void BtSourceWidget::initSources() start");
 	// create the list of source names
 	QStringList sourceList;
 	
@@ -313,6 +330,7 @@ void BtSourceWidget::initSources()
 
 void BtSourceWidget::addSource(const QString& sourceName)
 {
+	qDebug("void BtSourceWidget::addSource(const QString& sourceName) start");
 	// add the tab
 	m_tabBar->addTab(sourceName);
 	// TODO: add "remote/local", path etc.
@@ -330,6 +348,7 @@ void BtSourceWidget::addSource(const QString& sourceName)
 // doesn't handle widgets/ui but only the tree items and backend
 bool BtSourceWidget::createModuleTree(QTreeWidgetItem* rootItem, const QString& sourceName)
 {
+	qDebug("BtSourceWidget::createModuleTree start");
 	//if the tree already exists for this source,
 	// the selections should be preserved
 	
@@ -358,12 +377,13 @@ bool BtSourceWidget::createModuleTree(QTreeWidgetItem* rootItem, const QString& 
 
 void BtSourceWidget::updateList(const QString& sourceName)
 {
-
+	qDebug("BtSourceWidget::updateList start");
 	//createModuleTree();
 }
 
 void BtSourceWidget::slotModuleSelectionChanged()
 {
+	qDebug("BtSourceWidget::slotModuleSelectionChanged start");
 	//bool install = false;
 	//bool update = false;
 	
@@ -389,10 +409,11 @@ CInstallModuleChooserDialog::CInstallModuleChooserDialog(QTabBar* tabBar, QStack
 	: CModuleChooserDialog(parent, title, label, moduleInfo),
 	m_tabBar(tabBar),
 	m_viewStack(viewStack)
-{}
+{	qDebug("CInstallModuleChooserDialog::CInstallModuleChooserDialog start");}
 
 void CInstallModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem)
 {
+	qDebug("CInstallModuleChooserDialog::initModuleItem start");
 	// TODO: double entries?
 	
 	QString name = btItem->text();

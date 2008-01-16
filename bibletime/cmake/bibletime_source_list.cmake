@@ -88,6 +88,11 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/cswordsetupdialog.cpp
 	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
+	#new bookshelf manager classes - temporary
+	src/frontend/bookshelfmanager/new/btconfigdialog.cpp
+	src/frontend/bookshelfmanager/new/btinstallpage.cpp
+	src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp
+
 	#Search dialog
 	src/frontend/searchdialog/csearchdialog.cpp
 	src/frontend/searchdialog/csearchresultview.cpp

@@ -14,6 +14,8 @@
 #include <QDialog>
 #include <QWidget>
 
+#include <QDebug>
+
 class BtConfigPage;
 
 class QListWidgetItem;
@@ -27,13 +29,14 @@ class QVBoxLayout;
 * + text) at the left, widget pages and a buttonbox.
 *
 * Usage: add BtConfigPage pages with addPage(), add a button box with addButtonBox().
-* Connect the button box signals.
+* Connect the button box signals. Use setAttribute(Qt::WA_DeleteOnClose) if you want
+* an auto-destroying window.
 */
 class BtConfigDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	BtConfigDialog();
+	BtConfigDialog(QWidget* parent);
 	virtual ~BtConfigDialog();
 	
 	/** Add a BtConfigPage to the paged widget stack. */
@@ -43,6 +46,9 @@ public:
 	
 	/** Return the currently selected page. */
 	BtConfigPage* currentPage();
+
+protected:
+	bool eventFilter(QObject* obj, QEvent* event);
 	
 private slots:
 	/** Change the page. */
