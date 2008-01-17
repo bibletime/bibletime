@@ -175,7 +175,7 @@ QString BtInstallPage::iconName()
 QString BtInstallPage::label()
 {
 	// TODO: move the warning to a dialog which is shown when adding a source.
-	return tr("Install and update modules. Add remote or local sources, refresh them, select the modules to be installed/updated and click Install. <b>WARNING: If you live in a persecuted country and don't want to risk detection, don't use remote sources.</b>");
+	return tr("Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install. <b>WARNING:</b> If you live in a persecuted country and don't want to risk detection don't use remote sources.");
 }
 QString BtInstallPage::header()
 {
