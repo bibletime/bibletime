@@ -5344,190 +5344,190 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime.cpp" line="237"/>
+        <location filename="../../src/bibletime.cpp" line="240"/>
         <source>BibleTime </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="54"/>
+        <location filename="../../src/bibletime_init.cpp" line="51"/>
         <source>Creating BibleTime&apos;s GUI</source>
         <translation type="unfinished">Creazione della GUI di Bible Time</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>Initializing menu- and toolbars</source>
         <translation type="unfinished">Inizializzazione del menu e della barra degli stumenti </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="97"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="98"/>
+        <location filename="../../src/bibletime_init.cpp" line="95"/>
         <source>&amp;Search</source>
         <translation type="unfinished">Cerca (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="99"/>
+        <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>&amp;Window</source>
         <translation type="unfinished">Finestra (&amp;W)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="100"/>
+        <location filename="../../src/bibletime_init.cpp" line="97"/>
         <source>Se&amp;ttings</source>
         <translation type="unfinished">Numeri di Strong </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="101"/>
+        <location filename="../../src/bibletime_init.cpp" line="98"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>BibleTime</source>
         <translation type="unfinished">Chiudi BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="110"/>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="113"/>
+        <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>Exit BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="125"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="137"/>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
         <source>&amp;Show bookshelf</source>
         <translation type="unfinished">Mo&amp;stra note a pié di pagina.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="148"/>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
         <source>Show &amp;mag</source>
         <translation type="unfinished">Mostra i lemmi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="162"/>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
         <source>&amp;Fullscreen mode</source>
         <translation type="unfinished">A tutto Schermo (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="172"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Search in &amp;open work(s)</source>
         <translation type="unfinished">Cerca nel modulo(i)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Search in standard &amp;Bible</source>
         <translation type="unfinished">Cerca nella Bibbia predefinita</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="187"/>
         <source>&amp;Save session</source>
         <translation type="unfinished">&amp;Salva sessione</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
         <source>Save as &amp;new session</source>
         <translation type="unfinished">Salva la sesione con nome</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="203"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>&amp;Load session</source>
         <translation type="unfinished">Carica sessione (&amp;L) </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="206"/>
+        <location filename="../../src/bibletime_init.cpp" line="203"/>
         <source>&amp;Delete session</source>
         <translation type="unfinished">Elimina sessione</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>&amp;Arrangement mode</source>
         <translation type="unfinished">Modulo corrente:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="226"/>
+        <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>&amp;Manual mode</source>
         <translation type="unfinished">Moduli predefiniti</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="237"/>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
         <source>Auto-tile &amp;vertically</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="248"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation type="unfinished">Centra il testo orizzontalmente</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="259"/>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
         <source>Auto-&amp;cascade</source>
         <translation type="unfinished">Sovrapposizione &amp;automatica</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="269"/>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>&amp;Cascade</source>
         <translation type="unfinished">Sovrapponi (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="279"/>
+        <location filename="../../src/bibletime_init.cpp" line="276"/>
         <source>Tile &amp;vertically</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="289"/>
+        <location filename="../../src/bibletime_init.cpp" line="286"/>
         <source>Tile &amp;horizontally</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="299"/>
+        <location filename="../../src/bibletime_init.cpp" line="296"/>
         <source>Cl&amp;ose all</source>
         <translation type="unfinished">&amp;Chiudi tutto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="309"/>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
         <source>&amp;Configure BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="318"/>
+        <location filename="../../src/bibletime_init.cpp" line="315"/>
         <source>Bookshelf &amp;Manager</source>
         <translation type="unfinished">Libri</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="326"/>
+        <location filename="../../src/bibletime_init.cpp" line="323"/>
         <source>&amp;Handbook</source>
         <translation type="unfinished">Manuale (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="337"/>
+        <location filename="../../src/bibletime_init.cpp" line="334"/>
         <source>&amp;Bible Study Howto</source>
         <translation type="unfinished">How To per lo studio della &amp;Bibbia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="396"/>
+        <location filename="../../src/bibletime_init.cpp" line="393"/>
         <source>Initializing Sword</source>
         <translation type="unfinished">Inizializzazione Sword</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="449"/>
+        <location filename="../../src/bibletime_init.cpp" line="446"/>
         <source>Checking indices</source>
         <translation type="unfinished">L&apos;indice principale</translation>
     </message>
@@ -5587,218 +5587,218 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>BookshelfManager::CSwordSetupDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="75"/>
         <source>Bookshelf path(s)</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="88"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="86"/>
         <source>Configure bookshelf path(s)</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="88"/>
         <source>You can store your bookshelfs in one or more directories, which you can specify here.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="92"/>
         <source>Your bookshelf configuration file is: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="97"/>
         <source>Path to bookshelf</source>
         <translation type="unfinished">Lista dei libri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="103"/>
         <source>Edit Entry</source>
         <translation type="unfinished">Modifica voce...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="108"/>
         <source>Add Entry</source>
         <translation type="unfinished">Voce</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="113"/>
         <source>Remove Entry</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="125"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="123"/>
         <source>Install/Update works</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="147"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="145"/>
         <source>Install/update works - Step 1</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="152"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
         <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the module remote installation feature!&lt;/b&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="155"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="153"/>
         <source>Select library</source>
         <translation type="unfinished">Seleziona tutto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="161"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="159"/>
         <source>Delete library</source>
         <translation type="unfinished">Elimina elementi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="166"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="164"/>
         <source>Add library</source>
         <translation type="unfinished">Voce</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="172"/>
         <source>Select bookshelf path</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="185"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="772"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="770"/>
         <source>Connect to library</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="210"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="208"/>
         <source>Remove works</source>
         <translation type="unfinished">Moduli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="220"/>
         <source>Remove installed work(s)</source>
         <translation type="unfinished">Cerca nei moduli selezionati</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="224"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
         <source>This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="227"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="225"/>
         <source>Select works to be uninstalled</source>
         <translation type="unfinished">Aggiungi il modulo selezionato alla lista</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="231"/>
         <source>Remove selected work(s)</source>
         <translation type="unfinished">Rimuovi oggetto(i) selezionato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="246"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="244"/>
         <source>Manage search indicies</source>
         <translation type="unfinished">Gestisci le Sessioni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="857"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="855"/>
         <source>[Remote]</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="852"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="850"/>
         <source>[Local]</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="413"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="411"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="415"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="413"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="788"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="702"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="700"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="490"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="488"/>
         <source>Download</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="603"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="601"/>
         <source>Install/update works - Step 2</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="604"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="602"/>
         <source>Please choose the works which should be installed and/or updated and click the install button.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="630"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="628"/>
         <source>Install works</source>
         <translation type="unfinished">Tutti i moduli:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="675"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="673"/>
         <source>You selected the following works: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="677"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="675"/>
         <source>Do you really want to install them on your system?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="703"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="701"/>
         <source>Download of work(s)</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="801"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="799"/>
         <source>Choose directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="788"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="810"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="810"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5961,6 +5961,77 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
     </message>
 </context>
 <context>
+    <name>BtInstallPage</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="65"/>
+        <source>Install Path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="68"/>
+        <source>Configure...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="85"/>
+        <source>Install and Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="93"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="142"/>
+        <source>Install/Update modules?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="143"/>
+        <source>Do you really want to install these modules?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="162"/>
+        <source>Install and update modules. Add remote or local sources, refresh them, select the modules to be installed/updated and click Install. &lt;b&gt;WARNING: If you live in a persecuted country and don&apos;t want to risk detection, don&apos;t use remote sources.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="166"/>
+        <source>Install/Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtSourceWidget</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="201"/>
+        <source>Last refreshed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="212"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="214"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="216"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="217"/>
+        <source>Add...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CAcceleratorSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
@@ -6001,127 +6072,127 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="157"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
         <source>Next book</source>
         <translation type="unfinished">Mostra il libro successivo </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="161"/>
         <source>Previous book</source>
         <translation type="unfinished">Mostra il libro precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="167"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="166"/>
         <source>Next chapter</source>
         <translation type="unfinished">Mostra il capitolo successivo </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="172"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="171"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Mostra il capitolo precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="177"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="176"/>
         <source>Next verse</source>
         <translation type="unfinished">Prossimo versetto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="182"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="181"/>
         <source>Previous verse</source>
         <translation type="unfinished">Versetto precedente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="125"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="124"/>
         <source>Copy chapter</source>
         <translation type="unfinished">Capitolo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="131"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="130"/>
         <source>Save chapter as plain text</source>
         <translation type="unfinished">Capitolo come testo semplice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="133"/>
         <source>Save chapter as HTML</source>
         <translation type="unfinished">Capitolo come HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Print chapter</source>
         <translation type="unfinished">Mostra il capitolo precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="195"/>
         <source>Strong&apos;s Search</source>
         <translation type="unfinished">Numeri di Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="203"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="202"/>
         <source>Reference only</source>
         <translation type="unfinished">Soltanto il riferimento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="207"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="206"/>
         <source>Text of reference</source>
         <translation type="unfinished">Testo del riferimento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="234"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="233"/>
         <source>Reference with text</source>
         <translation type="unfinished">Riferimento con testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="237"/>
         <source>Chapter</source>
         <translation type="unfinished">Capitolo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="225"/>
         <source>Chapter as plain text</source>
         <translation type="unfinished">Capitolo come testo semplice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="229"/>
         <source>Chapter as HTML</source>
         <translation type="unfinished">Capitolo come HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="265"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="264"/>
         <source>Bible window</source>
         <translation type="unfinished">Finestra della Bibbia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="273"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="272"/>
         <source>Copy...</source>
         <translation type="unfinished">Copia...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="285"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="284"/>
         <source>Save...</source>
         <translation type="unfinished">Salva...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="297"/>
         <source>Print...</source>
         <translation type="unfinished">Stampa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="394"/>
         <source>Copy chapter to clipboard ...</source>
         <translation type="unfinished">Copia capitolo negli appunti...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="394"/>
         <source>Copying</source>
         <translation type="unfinished">Copia in corso</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
         <source>Saving chapter ...</source>
         <translation type="unfinished">Salvataggio capitolo ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
         <source>Saving</source>
         <translation type="unfinished">Salvataggio</translation>
     </message>
@@ -6129,32 +6200,32 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CBookReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="94"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="89"/>
         <source>Toggle tree view</source>
         <translation type="unfinished">Modulo corrente:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="96"/>
         <source>Copy entry with text</source>
         <translation type="unfinished">Voce con testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="104"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="99"/>
         <source>Save entry as plain text</source>
         <translation type="unfinished">Voce come testo semplice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="106"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="101"/>
         <source>Save entry as HTML</source>
         <translation type="unfinished">Salva come HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="109"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="104"/>
         <source>Print entry with text</source>
         <translation type="unfinished">Voce con testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="206"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="201"/>
         <source>Book Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6162,52 +6233,52 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="116"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="114"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="118"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="116"/>
         <source>New folder</source>
         <translation type="unfinished">Crea nuova cartella</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="119"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="119"/>
         <source>Change bookmark description</source>
         <translation type="unfinished">Cambia la descrizione ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Import bookmarks</source>
         <translation type="unfinished">Importa segnalibri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Export bookmarks</source>
         <translation type="unfinished">Esporta segnalibri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="124"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Print bookmarks</source>
         <translation type="unfinished">Stampa segnalibri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="126"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="124"/>
         <source>Remove selected item(s)</source>
         <translation type="unfinished">Rimuovi oggetto(i) selezionato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="629"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="627"/>
         <source>Delete Items</source>
         <translation type="unfinished">Elimina elementi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="629"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="627"/>
         <source>Do you really want to delete the selected items and child-items?</source>
         <translation type="unfinished">
             </translation>
@@ -6216,150 +6287,155 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CBookshelfIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="90"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="86"/>
         <source>Bookshelf</source>
         <translation type="unfinished">Libri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="112"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="108"/>
         <source>Grouping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="120"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="116"/>
         <source>Category/Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="129"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="125"/>
         <source>Category</source>
         <translation type="unfinished">Capitolo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="138"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="134"/>
         <source>Language/Category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="147"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="143"/>
         <source>Language</source>
         <translation type="unfinished">Lista delle lingue </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="156"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
         <source>Modules Only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="170"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="175"/>
         <source>Show Hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="179"/>
-        <source>Hide Modules...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="192"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="190"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="198"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="197"/>
         <source>Plain text</source>
         <translation type="unfinished">Testo semplice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="204"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="203"/>
         <source>HTML</source>
         <translation type="unfinished">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="429"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="432"/>
         <source>Search</source>
         <translation type="unfinished">Cerca</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="220"/>
-        <source>Unlock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="226"/>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="462"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="465"/>
         <source>Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="477"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="480"/>
         <source>Search in Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="532"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="535"/>
         <source>BibleTime - Unlock work</source>
         <translation type="unfinished">BibleTime - Sblocca modulo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="533"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="536"/>
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">Inserisci la chiave per sbloccare questo modulo!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="561"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="567"/>
         <source>Hide/Unhide Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="562"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="568"/>
         <source>Select the modules to be hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
+        <source>Hide/Unhide Modules...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="219"/>
+        <source>Unlock...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
+        <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="119"/>
         <source>Next book</source>
         <translation type="unfinished">Mostra il libro successivo </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="128"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="124"/>
         <source>Previous book</source>
         <translation type="unfinished">Mostra il libro precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="133"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="129"/>
         <source>Next chapter</source>
         <translation type="unfinished">Mostra il capitolo successivo </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="134"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Mostra il capitolo precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="143"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="139"/>
         <source>Next verse</source>
         <translation type="unfinished">Prossimo versetto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="148"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="144"/>
         <source>Previous verse</source>
         <translation type="unfinished">Versetto precedente</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="87"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Sync with active Bible</source>
         <translation type="unfinished">Sincronizza con la Bibbia attiva</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="204"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="200"/>
         <source>Commentary window</source>
         <translation type="unfinished">Finestra del commentario</translation>
     </message>
@@ -6396,18 +6472,18 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CDisplaySettingsButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="52"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="53"/>
         <source>Display settings: No options available</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="56"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="57"/>
         <source>Display settings</source>
         <translation type="unfinished">Mostra impostazioni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="41"/>
         <source>Display options</source>
         <translation type="unfinished">Mostra opzioni</translation>
     </message>
@@ -6531,19 +6607,19 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="180"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="174"/>
         <source>Back in history</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="188"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="182"/>
         <source>Forward in history</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="142"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="136"/>
         <source>Search</source>
         <translation type="unfinished">Cerca</translation>
     </message>
@@ -6551,32 +6627,32 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CHTMLWriteDisplay</name>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="154"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="150"/>
         <source>Choose a font</source>
         <translation type="unfinished">Scegli un carattere</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="168"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="160"/>
         <source>Choose a font size</source>
         <translation type="unfinished">Scegli la dimensione del carattere</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="189"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="179"/>
         <source>Bold</source>
         <translation type="unfinished">Grassetto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="200"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="192"/>
         <source>Italic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="209"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="204"/>
         <source>Underline</source>
         <translation type="unfinished">Sottolineato </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="221"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="219"/>
         <source>Left</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6586,17 +6662,17 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="239"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="241"/>
         <source>Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="262"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="265"/>
         <source>Select all</source>
         <translation type="unfinished">Seleziona tutto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="267"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="270"/>
         <source>HTML editor window</source>
         <translation type="unfinished">Finestra dell&apos;editor HTML</translation>
     </message>
@@ -6609,32 +6685,32 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Sincronizza con la Bibbia attiva</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="77"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation type="unfinished">Salva testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="89"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="90"/>
         <source>Delete current entry</source>
         <translation type="unfinished">Cancella voce attuale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="100"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="101"/>
         <source>Restore original text</source>
         <translation type="unfinished">Ripristina il testo originale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="161"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
         <source>Module not writable</source>
         <translation type="unfinished">Modulo non impostato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="163"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
         <source>Module is not writable.</source>
         <translation type="unfinished">Modulo non impostato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation type="unfinished">
             </translation>
@@ -6689,87 +6765,87 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="106"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="101"/>
         <source>Next entry</source>
         <translation type="unfinished">Prossima voce</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="106"/>
         <source>Previous entry</source>
         <translation type="unfinished">Mostra la voce precedente </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="73"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <source>Copy reference only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="71"/>
         <source>Copy selected text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="79"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Save entry as HTML</source>
         <translation type="unfinished">Salva come HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="82"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="77"/>
         <source>Print reference only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="121"/>
         <source>Strong&apos;s Search</source>
         <translation type="unfinished">Numeri di Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="152"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="147"/>
         <source>Reference only</source>
         <translation type="unfinished">Soltanto il riferimento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="156"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="151"/>
         <source>Entry with text</source>
         <translation type="unfinished">Voce con testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="139"/>
         <source>Entry as plain text</source>
         <translation type="unfinished">Voce come testo semplice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="148"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="143"/>
         <source>Entry as HTML</source>
         <translation type="unfinished">Voce come HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="237"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="232"/>
         <source>Lexicon window</source>
         <translation type="unfinished">Finestra dei lessici</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="245"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="240"/>
         <source>Copy...</source>
         <translation type="unfinished">Copia...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="256"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="251"/>
         <source>Save...</source>
         <translation type="unfinished">Salva...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="274"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="269"/>
         <source>Print...</source>
         <translation type="unfinished">Stampa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="347"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
         <source>Saving entry ...</source>
         <translation type="unfinished">Salvataggio voce...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="347"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
         <source>Saving</source>
         <translation type="unfinished">Salvataggio</translation>
     </message>
@@ -6823,29 +6899,29 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CModuleChooserButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="142"/>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="137"/>
         <source>NONE</source>
         <translation type="unfinished">NESSUNO</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="136"/>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="131"/>
         <source>Select a work</source>
         <translation type="unfinished">Seleziona un modulo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="134"/>
         <source>Select an additional work</source>
         <translation type="unfinished">Seleziona un modulo addizionale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="201"/>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="178"/>
         <source>[locked]</source>
         <translation type="unfinished">[bloccato]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="218"/>
         <source>No work selected</source>
-        <translation type="unfinished">Nessun modulo selezionato</translation>
+        <translation type="obsolete">Nessun modulo selezionato</translation>
     </message>
 </context>
 <context>
@@ -6868,37 +6944,37 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>CPlainWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="58"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="62"/>
         <source>Sync with active Bible</source>
         <translation type="unfinished">Sincronizza con la Bibbia attiva</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="75"/>
         <source>Save text</source>
         <translation type="unfinished">Salva testo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="81"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="88"/>
         <source>Delete current entry</source>
         <translation type="unfinished">Cancella voce attuale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="93"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="101"/>
         <source>Restore original text</source>
         <translation type="unfinished">Ripristina il testo originale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="147"/>
         <source>Module not writable</source>
         <translation type="unfinished">Modulo non impostato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="141"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
         <source>Module is not writable.</source>
         <translation type="unfinished">Modulo non impostato</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="143"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="151"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation type="unfinished">
             </translation>
@@ -7166,7 +7242,7 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="82"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="259"/>
         <source>Commentaries</source>
         <translation type="unfinished">Commentari</translation>
     </message>
@@ -7176,7 +7252,7 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="97"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="264"/>
         <source>Maps and Images</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7191,17 +7267,17 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="79"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="258"/>
         <source>Bibles</source>
         <translation type="unfinished">Bibbie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="94"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="262"/>
         <source>Glossaries</source>
         <translation type="unfinished">Dizionari</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="88"/>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="260"/>
         <source>Books</source>
         <translation type="unfinished">Libri</translation>
     </message>
@@ -7731,62 +7807,62 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="466"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="462"/>
         <source>Footnotes</source>
         <translation type="unfinished">note a piè di pagina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="469"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="465"/>
         <source>Strong&apos;s numbers</source>
         <translation type="unfinished">Numeri di Strong</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="472"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="468"/>
         <source>Headings</source>
         <translation type="unfinished">Intestazioni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="475"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="471"/>
         <source>Morphological tags</source>
         <translation type="unfinished">Note morfologiche</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="478"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="474"/>
         <source>Lemmas</source>
         <translation type="unfinished">Lemmi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="481"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="477"/>
         <source>Hebrew vowel points</source>
         <translation type="unfinished">Punteggiatura vocale ebraica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="484"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="480"/>
         <source>Hebrew cantillation marks</source>
         <translation type="unfinished">Mostra i segni di cantillazione ebraica</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="487"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="483"/>
         <source>Greek accents</source>
         <translation type="unfinished">Accenti greci</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="490"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="486"/>
         <source>Red letter words</source>
         <translation type="unfinished">Parole in rosso</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="493"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="489"/>
         <source>Textual variants</source>
         <translation type="unfinished">Varianti testuali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="496"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="492"/>
         <source>Scripture cross-references</source>
         <translation type="unfinished">Riferimenti incrociati</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="499"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="495"/>
         <source>Morph segmentation</source>
         <translation type="unfinished">Documentazione</translation>
     </message>
@@ -7806,42 +7882,42 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Rinomina  sessione</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="244"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="247"/>
         <source>Old testament</source>
         <translation type="unfinished">Vecchio testamento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="245"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="248"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Mosè/Pentateuco/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="246"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="249"/>
         <source>History</source>
         <translation type="unfinished">Storia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="247"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="250"/>
         <source>Prophets</source>
         <translation type="unfinished">Profeti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="248"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="251"/>
         <source>New testament</source>
         <translation type="unfinished">Nuovo testamento</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="249"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="252"/>
         <source>Gospels</source>
         <translation type="unfinished">Vangeli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="250"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="253"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Lettere/Epistole </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="251"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="254"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Lettere di San Paolo </translation>
     </message>
@@ -7851,7 +7927,7 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">file HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7876,17 +7952,17 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Stampa chiavi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
         <source>BibleTime bookmark files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="85"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="86"/>
         <source>BibleTime - Export Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="95"/>
         <source>BibleTime - Import bookmarks</source>
         <translation type="unfinished">BibleTime - Importa segnalibri</translation>
     </message>
@@ -7896,12 +7972,12 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">sconosciuto</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp" line="182"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp" line="172"/>
         <source>Change description ...</source>
         <translation type="unfinished">Cambia la descrizione ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp" line="182"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp" line="172"/>
         <source>Enter a new description for the chosen bookmark.</source>
         <translation type="unfinished">Immettere una nuova descrizione per il segnalibro selezionato</translation>
     </message>
@@ -7913,32 +7989,32 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="85"/>
         <source>Lexicons</source>
-        <translation type="unfinished">Lessici</translation>
+        <translation type="obsolete">Lessici</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="91"/>
         <source>Daily devotionals</source>
-        <translation type="unfinished">Letture di devozione giornaliere</translation>
+        <translation type="obsolete">Letture di devozione giornaliere</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="101"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="74"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="104"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="77"/>
         <source>Old bookmarks</source>
         <translation type="unfinished">Vecchi segnalibri </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="107"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="80"/>
         <source>Unknown</source>
         <translation type="unfinished">Sconosciuto</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="113"/>
         <source>Unknown language</source>
-        <translation type="unfinished">Lingua sconosciuta</translation>
+        <translation type="obsolete">Lingua sconosciuta</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="116"/>
@@ -7946,7 +8022,7 @@ Selezionarla e copiarla negli appunti. Adesso si inserisca la parola copiata nel
         <translation type="unfinished">Numeri di Strong </translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="276"/>
+        <location filename="../../src/main.cpp" line="296"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">Inizializzazione di BibleTime</translation>
     </message>
