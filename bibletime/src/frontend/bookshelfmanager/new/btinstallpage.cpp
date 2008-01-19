@@ -254,7 +254,6 @@ void BtSourceArea::initView()
 	createModuleTree();
 }
 
-// doesn't handle widgets/ui but only the tree items and backend
 bool BtSourceArea::createModuleTree()
 {
 	qDebug("BtSourceArea::createModuleTree start");
@@ -285,6 +284,10 @@ bool BtSourceArea::createModuleTree()
 	boost::scoped_ptr<CSwordBackend> remote_backend( backend::backend(is) );
 	Q_ASSERT(remote_backend);
 	ListCSwordModuleInfo mods = remote_backend->moduleList();
+	qDebug() << "Remote module list for source" << m_sourceName << ":";
+	for (ListCSwordModuleInfo::iterator it = mods.begin(); it != mods.end(); it++) {
+		qDebug() << (*it)->name() << (*it)->type();
+	}
 	Q_ASSERT(mods.count() > 0); // is this true? what about when there are no modules in remote server?
 
 	// give the list to BTModuleTreeItem, create filter to remove
@@ -295,14 +298,34 @@ bool BtSourceArea::createModuleTree()
 	qDebug("BtSourceArea::createModuleTree 1");
 	BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &mods);
 	qDebug("BtSourceArea::createModuleTree 2");
+	//TODO: create the UI tree
+	m_view->clear();
+	addToTree(&rootItem, m_view->invisibleRootItem());
 	qDebug("BtSourceArea::createModuleTree end");
 	return true;
 
 }
 
-void BtSourceArea::createTreeItem()
+void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
 {
-	qDebug("BtSourceArea::createTreeItem");
+	qDebug("BtSourceArea::addToTree");
+	qDebug() << "BTMTItem type: " << item->type();
+	foreach (BTModuleTreeItem* i, item->children()) {
+		addToTree(i, new QTreeWidgetItem(widgetItem));
+	}
+	if (item->type() != BTModuleTreeItem::Root) {
+		widgetItem->setText(0, item->text());
+		if (item->type() == BTModuleTreeItem::Category || item->type() == BTModuleTreeItem::Language) {
+			qDebug() << "item"<<item->text()<< "was cat or lang";
+			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
+		}
+		if (item->type() == BTModuleTreeItem::Module) {
+			qDebug() << "item"<<item->text()<< "was a module";
+			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
+			widgetItem->setCheckState(0, Qt::Unchecked);
+			// TODO: set columns, set color
+		}
+	}
 }
 
 BtSourceArea::InstalledFilter::InstalledFilter(QString sourceName)
@@ -319,21 +342,21 @@ BtSourceArea::InstalledFilter::InstalledFilter(QString sourceName)
 //filter out already installed, not updateable modules
 bool BtSourceArea::InstalledFilter::filter(CSwordModuleInfo* mInfo)
 {
-	//TODO: sword::InstallSource m_source;
-	// sword::InstallSource m_localSource;
-	qDebug("BtSourceArea::InstalledFilter::filter");
-	//TODO: set the source for the backend
-	//sword::InstallSource source = backend::source("");
-	CSwordModuleInfo* const installedModule = m_swordBackend->findModuleByName(mInfo->name());
-	if (installedModule) {
-		qDebug("already installed, check if it's an update...");
-		//check whether it's an updated module or just the same
-		const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-		const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-		if (installedVersion >= newVersion) {
-			return false;
-		}
-	}
+// 	//TODO: sword::InstallSource m_source;
+// 	// sword::InstallSource m_localSource;
+// 	qDebug() << "BtSourceArea::InstalledFilter::filter, module " << mInfo->name();
+// 	//TODO: set the source for the backend
+// 	//sword::InstallSource source = backend::source("");
+// 	CSwordModuleInfo* const installedModule = m_swordBackend->findModuleByName(mInfo->name());
+// 	if (installedModule) {
+// 		qDebug("already installed, check if it's an update...");
+// 		//check whether it's an updated module or just the same
+// 		const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+// 		const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+// 		if (installedVersion >= newVersion) {
+// 			return false;
+// 		}
+// 	}
 	return true;
 }
 

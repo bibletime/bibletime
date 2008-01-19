@@ -100,7 +100,7 @@ public:
 private:
 	/** Create a module tree for a tree widget */
 	bool createModuleTree();
-	void createTreeItem();
+	void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
 
 	QString m_sourceName;
 	QTreeWidget* m_view;
