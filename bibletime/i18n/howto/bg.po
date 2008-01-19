@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2006-08-23 16:17+0000\n"
+"POT-Creation-Date: 2008-01-19 18:48+0100\n"
 "PO-Revision-Date: 2003-12-28 14:05+0200\n"
 "Last-Translator: Andrew Ivanov <linux_ready@yahoo.com>\n"
 "Language-Team: Bulgarian\n"
@@ -66,27 +66,20 @@ msgstr ""
 "X-Generator: KBabel 1.0.1\n"
 "#-#-#-#-#  bg.po (index)  #-#-#-#-#\n"
 
-#. Tag: title
-#: how2-basics.docbook:1
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Основи на изучаването на Библията"
 
-#. Tag: title
-#: how2-basics.docbook:4
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Целта на изучаването"
 
-#. Tag: attribution
-#: how2-basics.docbook:6
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:6
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:6
+#, fuzzy
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
 "life; and it is these that bear witness of Me; and you are unwilling to come "
@@ -96,11 +89,10 @@ msgstr ""
 "имате вечен живот, и те са, които свидетелствуват за Мене, и пак не искате "
 "да дойдете при Мене, за да имате живот.\"</emphasis>"
 
-#. Tag: para
-#: how2-basics.docbook:12
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:12
+#, fuzzy
 msgid ""
-"The chief purpose of the book is to bring us to the Person. Martin Luther "
+"The chief purpose of the book is to bring us to the Person.  Martin Luther "
 "said <quote>we go to the cradle only for the sake of the baby</quote>; just "
 "so in Bible study, we do it not for its own sake but for fellowship with God."
 msgstr ""
@@ -109,22 +101,19 @@ msgstr ""
 "е и при изучаването на Библията - не я изучаваме заради нея самата, а заради "
 "общението с Бог."
 
-#. Tag: attribution
-#: how2-basics.docbook:17
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:19
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:19
+#, fuzzy
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
 "tantamount to possessing life. Hillel used to say, &quot;He who has gotten "
 "to himself words of Torah has gotten to himself the life of the world to "
-"come.&quot; Their study was an end in itself. In this they were grievously "
+"come.&quot; Their study was an end in itself.  In this they were grievously "
 "deceived. [...]"
 msgstr ""
 "Евреите, към които Исус говори,.... си мислели, че да притежаваш Писанията "
@@ -132,9 +121,7 @@ msgstr ""
 "притежавал думите на Тората, притежавал живот в отвъдния свят.\" Тяхното "
 "изучаване било самодостатъчно. Това била тяхната ужасна заблуда..."
 
-#. Tag: para
-#: how2-basics.docbook:24
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
 "sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
@@ -145,18 +132,15 @@ msgstr ""
 "освен ако не ни приближава до Исус Христос. Това от което имаме нужда при "
 "четенето на Библията, е тръпнещото очакване чрез нея да се срещнем с Христос."
 
-#. Tag: title
-#: how2-basics.docbook:31
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Подходи към Божието Слово"
 
-#. Tag: para
-#: how2-basics.docbook:32
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:32
+#, fuzzy
 msgid ""
 "Hearing and reading provide a telescopic view of the scripture while study "
-"and memorization provide a microscopic view of scripture. Meditating on the "
+"and memorization provide a microscopic view of scripture.  Meditating on the "
 "scriptures brings hearing, reading, studying and memorization together and "
 "cements the word in our minds."
 msgstr ""
@@ -165,15 +149,12 @@ msgstr ""
 "върху писанията спомагат за съединяването на чутото, прочетеното, "
 "изследваното и запаметеното в едно цяло."
 
-#. Tag: title
-#: how2-basics.docbook:37
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Слушане"
 
-#. Tag: para
-#: how2-basics.docbook:38
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:38
+#, fuzzy
 msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
 "quote>"
@@ -181,15 +162,12 @@ msgstr ""
 "Лука 11:25: <emphasis>\"Блажени ония, които слушат Божието слово и го пазят."
 "\"</emphasis>"
 
-#. Tag: title
-#: how2-basics.docbook:42
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:42
 msgid "Read"
 msgstr "Четене"
 
-#. Tag: para
-#: how2-basics.docbook:43
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:43
+#, fuzzy
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
@@ -197,9 +175,8 @@ msgstr ""
 "Откровение 1:3: <emphasis>Блажен, който прочита, и ония, които слушат думите "
 "на това пророчество...\"</emphasis>"
 
-#. Tag: para
-#: how2-basics.docbook:45
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:45
+#, fuzzy
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
 "quote>"
@@ -207,18 +184,12 @@ msgstr ""
 "1 Тим. 4:13: <emphasis>\"...внимавай на прочитането, на увещаването и на "
 "поучаването.\"</emphasis>"
 
-#. #-#-#-#-#  how2-basics.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Tag: title
-#. #-#-#-#-#  index.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Tag: keyword
-#: how2-basics.docbook:49 index.docbook:76
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:49
 msgid "Study"
 msgstr "Study"
 
-#. Tag: para
-#: how2-basics.docbook:50
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:50
+#, fuzzy
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
 "Thessalonica, for they received the word with great eagerness, examining the "
@@ -228,9 +199,8 @@ msgstr ""
 "приеха учението без всякакъв предразсъдък, и всеки ден изследваха писанията "
 "да видят дали това е вярно.\"</emphasis>"
 
-#. Tag: para
-#: how2-basics.docbook:54
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:54
+#, fuzzy
 msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
@@ -240,15 +210,12 @@ msgstr ""
 "работник, който няма от що да се срамува, като излагаш право словото на "
 "истината.\"</emphasis>"
 
-#. Tag: title
-#: how2-basics.docbook:59
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Запаметяване"
 
-#. Tag: para
-#: how2-basics.docbook:60
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:60
+#, fuzzy
 msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
@@ -256,15 +223,12 @@ msgstr ""
 "Пс. 119:11: <emphasis>\"В сърцето си опазих Твоето слово За да не ти "
 "съгрешавам.\"</emphasis>"
 
-#. Tag: title
-#: how2-basics.docbook:64
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Размисъл"
 
-#. Tag: para
-#: how2-basics.docbook:65
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:65
+#, fuzzy
 msgid ""
 "Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
 "meditates day and night. And he will be like a tree firmly planted by "
@@ -276,12 +240,11 @@ msgstr ""
 "Което дава плода си на времето си, И чийто лист не повяхва; Във всичко що "
 "върши ще благоуспява.\"</emphasis>"
 
-#. Tag: para
-#: how2-basics.docbook:71
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:71
+#, fuzzy
 msgid ""
 "The Navigators illustrate this by saying that as the thumb can touch all the "
-"fingers, we can meditate on the Word as we do any of the first four. "
+"fingers, we can meditate on the Word as we do any of the first four.  "
 "Meditation is a key to revelation. A new Christian needs to hear and read "
 "the Bible more than they need to study and memorize it. This is so that they "
 "become familiar with the overall message of the Bible."
@@ -293,21 +256,15 @@ msgstr ""
 "изучават и запаметяват. Това е така, за да могат те да се запознаят с "
 "цялостното послание на Библията."
 
-#. Tag: title
-#: how2-basics.docbook:79
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Начини за изучаване на Библията"
 
-#. Tag: title
-#: how2-basics.docbook:80
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Тематично изучаване"
 
-#. Tag: para
-#: how2-basics.docbook:81
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
@@ -315,48 +272,34 @@ msgstr ""
 "Изберете си определена тема и я следвайте, като използвате препратките или "
 "конкорданс."
 
-#. Tag: title
-#: how2-basics.docbook:85
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Изучаване на герои"
 
-#. Tag: para
-#: how2-basics.docbook:86
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr ""
 "Изучаване на живота на определен библейски герой. Например: живота на Йосиф "
 "(Бит. 37-50)"
 
-#. Tag: title
-#: how2-basics.docbook:90
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Изследване"
 
-#. Tag: para
-#: how2-basics.docbook:91
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "Изучаване на определен пасаж, параграф, глава или книга."
 
-#. Tag: title
-#: how2-basics.docbook:95
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Основи на правилното интерпретиране"
 
-#. Tag: title
-#: how2-basics.docbook:97
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:97
 msgid "Content"
 msgstr "Съдържание"
 
-#. Tag: para
-#: how2-basics.docbook:98
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
 "definitions. Don't read into it what it doesn't say."
@@ -364,15 +307,12 @@ msgstr ""
 "Какво точно се казва? Какво се казва на оригиналния език? Внимавайте с "
 "дефинициите. Не четете това, което не е написано!"
 
-#. Tag: title
-#: how2-basics.docbook:102
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:102
 msgid "Context"
 msgstr "Контекст"
 
-#. Tag: para
-#: how2-basics.docbook:103
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:103
+#, fuzzy
 msgid ""
 "What do the verses around it say? &quot;Context is king&quot; is the rule -- "
 "the passage must make sense within the structure of the entire passage and "
@@ -382,15 +322,12 @@ msgstr ""
 "най-важен - изследваният пасаж трабва да има смисъл в контекста на главата и "
 "книгата."
 
-#. Tag: title
-#: how2-basics.docbook:107 how2-interpretation.docbook:26
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:107
+#: docs/howto/unicode/en/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Препратки"
 
-#. Tag: para
-#: how2-basics.docbook:108
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
@@ -400,21 +337,18 @@ msgstr ""
 "така че нашето тълкувание трябва да може да издържи проверката на останалата "
 "част от Библията."
 
-#. Tag: title
-#: how2-basics.docbook:113
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Примерно изучаване на Матея 6:1-18"
 
-#. Tag: para
-#: how2-basics.docbook:114
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:114
+#, fuzzy
 msgid ""
-"Let's study together Mt.6:1-18. Read it to yourself, first looking for the "
-"key verse, the verse that sums up the whole passage. Think you have it? Test "
-"it by picking different places in the passage and asking yourself if they "
-"relate to the thought of the key verse. Once you find it, write it as Roman "
-"numeral One of your outline:"
+"Let's study together Mt.6:1-18.  Read it to yourself, first looking for the "
+"key verse, the verse that sums up the whole passage.  Think you have it? "
+"Test it by picking different places in the passage and asking yourself if "
+"they relate to the thought of the key verse.  Once you find it, write it as "
+"Roman numeral One of your outline:"
 msgstr ""
 "Нека заедно разгледаме Матея 6:1-18. Прочетете пасажа за себе си. Опитайте "
 "се първо да определите ключовия стих т.е. този който се явява обобщение за "
@@ -423,15 +357,12 @@ msgstr ""
 "мисълта, изказана в ключовия стих. След като го намерите, запишете го с "
 "римска цифра едно:"
 
-#. Tag: para
-#: how2-basics.docbook:119
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:122
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:122
+#, fuzzy
 msgid ""
 "What does <quote>practicing your righteousness</quote> mean? Does the "
 "passage give any examples? What area of our lives is being addressed? "
@@ -439,27 +370,20 @@ msgid ""
 msgstr ""
 "Какво значи \"да вършите делата на правдата\"? Има ли примери в пасажа?"
 
-#. Tag: para
-#: how2-basics.docbook:126 how2-basics.docbook:135
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:126
+#: docs/howto/unicode/en/howto-basics.docbook:135
 msgid "When you give"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:127
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:127
 msgid "When you fast"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:128
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:128
 msgid "When you pray"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:131
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
@@ -467,95 +391,71 @@ msgstr ""
 "Сега нека допълним нашия схематичен план с конкретни инструкции как да "
 "избегнем грешното \"вършите делата на правдата\":"
 
-#. Tag: para
-#: how2-basics.docbook:137
-#, no-c-format
+# type: Content of: <chapter><sect1><orderedlist><listitem><para><orderedlist><listitem><para>
+#: docs/howto/unicode/en/howto-basics.docbook:137
 msgid ""
-"don't sound a trumpet. (how might someone <quote>sound a trumpet</quote> "
+"don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
 "today?)"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:138
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:139
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:139
 msgid "etc."
 msgstr ""
 
-#. Tag: title
-#: how2-basics.docbook:145
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Как да използваме конкорданс?"
 
-#. Tag: title
-#: how2-basics.docbook:147
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "За да намерим определен стих"
 
-#. Tag: para
-#: how2-basics.docbook:149
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr "Изберете си ключова дума от стиха или дума, която не е често срещана."
 
-#. Tag: para
-#: how2-basics.docbook:150
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Намерете тази дума по азбучен ред"
 
-#. Tag: para
-#: how2-basics.docbook:151
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr "Под думата има списък от стихове, сред които е търсеният..."
 
-#. Tag: para
-#: how2-basics.docbook:154
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:154
 msgid "Find these verses:"
 msgstr ""
 
-#. Tag: quote
-#: how2-basics.docbook:156
-#, no-c-format
-msgid "Faithful are the wounds of a friend"
+# type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#: docs/howto/unicode/en/howto-basics.docbook:156
+msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr ""
 
-#. Tag: quote
-#: how2-basics.docbook:157
-#, no-c-format
-msgid "We are ambassadors of Christ."
+# type: Content of: <chapter><sect1><sect2><para><orderedlist><listitem><para>
+#: docs/howto/unicode/en/howto-basics.docbook:157
+msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr ""
 
-#. Tag: para
-#: how2-basics.docbook:158
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr ""
 
-#. Tag: title
-#: how2-basics.docbook:163
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "За да проследим тема"
 
-#. Tag: para
-#: how2-basics.docbook:164
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:164
+#, fuzzy
 msgid ""
 "Let's say you wanted to do a study of the word &quot;redemption.&quot; First "
 "you would look up that word in the concordance and look up references listed "
-"for it. Then you could look up related words and references listed for them, "
-"e.g. &quot;redeem, redeemed, ransom,&quot; even &quot;buy&quot; or &quot;"
-"bought.&quot;"
+"for it.  Then you could look up related words and references listed for "
+"them, e.g.  &quot;redeem, redeemed, ransom,&quot; even &quot;buy&quot; or "
+"&quot;bought.&quot;"
 msgstr ""
 "Да кажем, че искате да изследвате димата \"изкупление\". Първо трябва да "
 "откриете тази дума в конкорданса и да намерите стиховете в които се среща. "
@@ -563,15 +463,12 @@ msgstr ""
 "се срещат. Например: \"спасявам\", \"избавям\", \"изкупен\", \"изкупление\" "
 "и дори \"откуп\" и \"откупен\"."
 
-#. Tag: title
-#: how2-basics.docbook:170
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "За да си изясним значенията на гръцките и еврейските думи"
 
-#. Tag: para
-#: how2-basics.docbook:171
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:171
+#, fuzzy
 msgid ""
 "What if you noticed a contradiction in the KJV between Mt.7:1 <quote>Judge "
 "not lest you be judged</quote> and 1 Cor.2:15 <quote>He that is spiritual "
@@ -585,332 +482,251 @@ msgstr ""
 "две различни думи, а са преведени еднакво или по сходен начин. (От тук "
 "нататък се използва номерацията на Стронг)"
 
-#. Tag: para
-#: how2-basics.docbook:175
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:175
+#, fuzzy
 msgid "Look up &quot;judge&quot;."
 msgstr "Потърсете \"съдя\";"
 
-#. Tag: para
-#: how2-basics.docbook:176
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:176
+#, fuzzy
 msgid ""
-"Go down the column of entries to Mt.7:1. To the right is a number, 2919. "
-"This refers to the Greek word used. Write it down."
+"Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
+"This refers to the Greek word used.  Write it down."
 msgstr ""
 "В списъка от стихове, намерете Матея 7:1. В дясно ще откриете номер - 2919. "
 "Това е номера на гръцката дума, използвана в оригинала. Запишете го;"
 
-#. Tag: para
-#: how2-basics.docbook:178
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:178
+#, fuzzy
 msgid "Now look up &quot;judgeth&quot;."
 msgstr "Сега потърсете \"изпитвам\";"
 
-#. Tag: para
-#: how2-basics.docbook:179
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "Намерете 1 Коринтяни 2:15 ............. 350"
 
-#. Tag: para
-#: how2-basics.docbook:180
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:180
+#, fuzzy
 msgid ""
-"Turn in the back to the Greek dictionary. (Remember, you're in the NT so the "
-"language is Greek, while the OT is Hebrew.) Compare the meaning of 2919 with "
-"the meaning of 350 and you have your answer!"
+"Turn in the back to the Greek dictionary.  (Remember, you're in the NT so "
+"the language is Greek, while the OT is Hebrew.)  Compare the meaning of 2919 "
+"with the meaning of 350 and you have your answer!"
 msgstr ""
 "Отворете конкорданса си на гръцкия речник. (Трябва да помните, че езикът в "
 "Новия Завет е гръцки, а в Стария - иврит.) Сравнете значенията на 2919 и 350 "
 "и ще откриете отговора."
 
-#. Tag: title
-#: how2-basics.docbook:185
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "За да разберем значенията на имената"
 
-#. Tag: para
-#: how2-basics.docbook:186
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
 msgstr ""
 "По същия начин можем да открием значенията на имената на гръцки или еврейски."
 
-#. Tag: para
-#: how2-basics.docbook:187
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr "Потърсете тези имена и сравнете значенията им:"
 
-#. Tag: para
-#: how2-basics.docbook:189
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Навал"
 
-#. Tag: para
-#: how2-basics.docbook:190
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Авигея"
 
-#. Tag: para
-#: how2-basics.docbook:191
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Исус Навиев"
 
-#. Tag: para
-#: how2-basics.docbook:192
-#, no-c-format
+#: docs/howto/unicode/en/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Варава"
 
-#. Tag: title
-#: how2-importance.docbook:1
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Важността на Божието Слово"
 
-#. Tag: para
-#: how2-importance.docbook:2
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:2
+#, fuzzy
 msgid ""
 "Understanding God's word is of great importance to all who call on God's "
-"name. Study of the Bible is one of the primary ways that we learn to "
+"name.  Study of the Bible is one of the primary ways that we learn to "
 "communicate with God."
 msgstr ""
 "Разбирането на Божието Слово е от голяма важност за всеки, който призовава "
 "Божието име. Изучаването на Библията е едни от основните начини да се научим "
 "да комуникираме с Бога."
 
-#. Tag: title
-#: how2-importance.docbook:6
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Книга, която е уникална"
 
-#. Tag: para
-#: how2-importance.docbook:7
-#, no-c-format
-msgid "The Bible stands alone in many ways. It is unique in:"
+#: docs/howto/unicode/en/howto-importance.docbook:7
+#, fuzzy
+msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr ""
 "По много начини, Библията се откроява от другите книги. Тя уникална по:"
 
-#. Tag: para
-#: how2-importance.docbook:11
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:12
+#, fuzzy
 msgid ""
-"popularity. Bible sales in North America: more than $500 million per year. "
+"popularity.  Bible sales in North America: more than $500 million per year. "
 "The Bible is both the the all-time and year-to-year best seller!"
 msgstr ""
 "популярност. Продажбите на Библии в Северна Америка възлизат на повече от "
 "$500 милиона годишно. Библията е бестселър както за всички времена, така и "
 "за всяка отделна година."
 
-#. Tag: para
-#: how2-importance.docbook:17
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:18
+#, fuzzy
 msgid ""
-"authorship. It was written over a period of 1600 years by 40 different "
+"authorship.  It was written over a period of 1600 years by 40 different "
 "authors from different backgrounds, yet reads as if written by one."
 msgstr ""
 "авторство. Библията е написана за период от 1600 години от 40 различни "
 "автора, имащи различен произход, и въпреки това изглежда като книга, "
 "написана от един автор."
 
-#. Tag: para
-#: how2-importance.docbook:23
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:24
+#, fuzzy
 msgid ""
-"preservation. F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
+"preservation.  F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
 "</emphasis> compares New Testament manuscripts with other ancient texts:"
 msgstr ""
 "запазеност. Ф. Ф. Брус в своя труд <emphasis>Надеждни ли са новозаветните "
 "документи?</emphasis> сравнява ръкописите на Новия Завет с други древни "
 "документи."
 
-#. Tag: title
-#: how2-importance.docbook:30
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr "Сравнение на новозаветните ръкописи с други текстове от древността."
 
-#. Tag: entry
-#: how2-importance.docbook:34
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:34
 msgid "Work"
 msgstr "Произведение"
 
-#. Tag: entry
-#: how2-importance.docbook:35
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Написано"
 
-#. Tag: entry
-#: how2-importance.docbook:36
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Най-старо копие"
 
-#. Tag: entry
-#: how2-importance.docbook:37
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Разлика във времето"
 
-#. Tag: entry
-#: how2-importance.docbook:37
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Брой копия"
 
-#. Tag: entry
-#: how2-importance.docbook:41
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Херодот"
 
-#. Tag: entry
-#: how2-importance.docbook:42
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 пр. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:42 how2-importance.docbook:52
-#: how2-importance.docbook:57
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:42
+#: docs/howto/unicode/en/howto-importance.docbook:52
+#: docs/howto/unicode/en/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 сл. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:43
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 години"
 
-#. Tag: entry
-#: how2-importance.docbook:43
-#, fuzzy, no-c-format
-msgid "<entry>8</entry>"
-msgstr "<entry>8 </entry>"
+# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#: docs/howto/unicode/en/howto-importance.docbook:43
+msgid "8"
+msgstr ""
 
-#. Tag: entry
-#: how2-importance.docbook:46
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Тацит"
 
-#. Tag: entry
-#: how2-importance.docbook:47
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 сл. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:47
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 сл. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:48
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 години"
 
-#. Tag: entry
-#: how2-importance.docbook:48 how2-importance.docbook:58
-#, fuzzy, no-c-format
-msgid "<entry>20</entry>"
-msgstr "<entry>20 </entry>"
+# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#: docs/howto/unicode/en/howto-importance.docbook:48
+#: docs/howto/unicode/en/howto-importance.docbook:58
+msgid "20"
+msgstr ""
 
-#. Tag: entry
-#: how2-importance.docbook:51
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "<emphasis>Галската война</emphasis> на Цезар"
 
-#. Tag: entry
-#: how2-importance.docbook:52
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 пр. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:53
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 години"
 
-#. Tag: entry
-#: how2-importance.docbook:53
-#, fuzzy, no-c-format
-msgid "<entry>10</entry>"
-msgstr "<entry>10 </entry>"
+# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#: docs/howto/unicode/en/howto-importance.docbook:53
+msgid "10"
+msgstr ""
 
-#. Tag: entry
-#: how2-importance.docbook:56
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Ливиевата <emphasis>Римска История</emphasis>"
 
-#. Tag: entry
-#: how2-importance.docbook:57
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 пр. хр. - 17 сл. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:58
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 години"
 
-#. Tag: entry
-#: how2-importance.docbook:61
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Нов Завет"
 
-#. Tag: entry
-#: how2-importance.docbook:62
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 сл. хр. - 100 сл. хр."
 
-#. Tag: entry
-#: how2-importance.docbook:62
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 сл. хр.- частични ръкописи; 350 ал. хр. - пълни ръкописи"
 
-#. Tag: entry
-#: how2-importance.docbook:63
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 години"
 
-#. Tag: entry
-#: how2-importance.docbook:63
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 на гръцки и 10 000 на латински"
 
-#. Tag: para
-#: how2-importance.docbook:66
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:66
+#, fuzzy
 msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
-"of which was copied 900 years after Caesar wrote the original, etc. For the "
+"of which was copied 900 years after Caesar wrote the original, etc.  For the "
 "New Testament we have full manuscripts dating to 350 A. D., papyri "
 "containing most of the New Testament from the 200s, and a fragment of John's "
-"gospel from 130 A. D. How many manuscripts do we have to compare to each "
+"gospel from 130 A. D.  How many manuscripts do we have to compare to each "
 "other? 5,000 in Greek and 10,000 in Latin!"
 msgstr ""
 "Съществуват десет копия на Цезаровата <emphasis>галска война</emphasis>, най-"
@@ -921,18 +737,15 @@ msgstr ""
 "хр. А колко различни копия имаме за сравнение? На гръцки - 5 000, а на "
 "латински - 10 000!"
 
-#. Tag: attribution
-#: how2-importance.docbook:72
-#, no-c-format
+# type: Content of: <chapter><sect1><blockquote><attribution>
+#: docs/howto/unicode/en/howto-importance.docbook:72
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
 "vol. 1 p561, Macmillan Co., quoted in <emphasis>Questions of Life</emphasis> "
-"p. 25-26"
+"p.  25-26"
 msgstr ""
 
-#. Tag: para
-#: how2-importance.docbook:74
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
@@ -942,18 +755,15 @@ msgstr ""
 "новозаветните текстове са неоспоримо уникални сред останалите древни творби."
 "\""
 
-#. Tag: title
-#: how2-importance.docbook:79
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "Книга, която е боговдъхновена"
 
-#. Tag: para
-#: how2-importance.docbook:80
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:80
+#, fuzzy
 msgid ""
 "<emphasis>Heb.4:12 </emphasis>\"<emphasis>For the word of God is living and "
-"active... </emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis> "
+"active...  </emphasis>\" Jesus said <emphasis>(Mt.4:4),</emphasis> "
 "\"<emphasis>It is written, Man shall not live on bread alone, but on every "
 "word that proceeds [lit., is proceeding] from the mouth of God.</emphasis>\" "
 "As we read the Bible, God's Spirit is there to speak it to our hearts in a "
@@ -965,9 +775,7 @@ msgstr ""
 "от Божиите уста.'</emphasis>\" Докато четем Библията, Божият Дух говори на "
 "сърцата ни и ги ободрява."
 
-#. Tag: para
-#: how2-importance.docbook:86
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
 "breathed].</emphasis>\" Do you believe this? Before you answer, consider "
@@ -977,32 +785,29 @@ msgstr ""
 "emphasis>\" Вярвате ли го? Преди да отговорите, помислете за Исусовото "
 "отношение към Писанието."
 
-#. Tag: attribution
-#: how2-importance.docbook:89
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
 msgstr ""
 
-#. Tag: para
-#: how2-importance.docbook:90
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:90
+#, fuzzy
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
-"all was a single divine Author. He could equally say 'Moses said' or 'God "
+"all was a single divine Author.  He could equally say 'Moses said' or 'God "
 "said' (Mk.7:10). He could quote a comment of the narrator in Genesis 2:24 as "
-"an utterance of the Creator Himself (Mt.19:4-5). Similarly He said, 'Well "
+"an utterance of the Creator Himself (Mt.19:4-5).  Similarly He said, 'Well "
 "did Isaiah prophesy of you hypocrites, as it is written', when what He went "
-"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13). It "
-"is from Jesus Himself that the New Testament authors have gained their "
-"conviction of the dual authorship of Scripture. For them it was just as true "
-"to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) as "
-"it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
-"Pe.1:21). God did not speak in such a way as to obliterate the personality "
+"on to quote is the direct speech of the Lord God (Mk.7:6 &amp; Is.29:13).  "
+"It is from Jesus Himself that the New Testament authors have gained their "
+"conviction of the dual authorship of Scripture.  For them it was just as "
+"true to say that 'God spoke of old to our fathers by the prophets' (Heb.1:1) "
+"as it was to say that 'men moved by the Holy Spirit spoke from God' (2 "
+"Pe.1:21).  God did not speak in such a way as to obliterate the personality "
 "of the human authors, nor did men speak in such a way as to corrupt the Word "
-"of the divine Author. God spoke. Men spoke. Neither truth must be allowed to "
-"detract from the other. ..."
+"of the divine Author.  God spoke.  Men spoke.  Neither truth must be allowed "
+"to detract from the other. ..."
 msgstr ""
 "Той се позоваваше на хората-автори, но приемаше за сигурно, че зад тях стои "
 "един едниствен божествен Автор. Той можеше да каже както \"Моисей рече\", "
@@ -1018,12 +823,11 @@ msgstr ""
 "изопачени думите на божествения Автор. Бог говори. Светите хора говориха. "
 "Нито една от тези истини трябва дабъде отделяна от другата..."
 
-#. Tag: para
-#: how2-importance.docbook:104
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:105
+#, fuzzy
 msgid ""
-"This, then, was Christ's view of the Scriptures. Their witness was God's "
-"witness. The testimony of the Bible is the testimony of God. And the chief "
+"This, then, was Christ's view of the Scriptures.  Their witness was God's "
+"witness. The testimony of the Bible is the testimony of God.  And the chief "
 "reason why the Christian believes in the divine origin of the Bible is that "
 "Jesus Christ Himself taught it."
 msgstr ""
@@ -1032,9 +836,7 @@ msgstr ""
 "християните да вярват в божествения произход на Библията, е че Исус е мислел "
 "така."
 
-#. Tag: para
-#: how2-importance.docbook:110
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
 "for training in righteousness, that the man of God may be adequate, equipped "
@@ -1049,15 +851,11 @@ msgstr ""
 "че тя ще бъде авторитет за нас по всички въпроси касаещи вярата и "
 "поведението."
 
-#. Tag: title
-#: how2-importance.docbook:117
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Книга, която е действена"
 
-#. Tag: para
-#: how2-importance.docbook:118
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
 "\"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
@@ -1067,106 +865,77 @@ msgstr ""
 "Библията \"<emphasis>действува между вас, вярващите</emphasis>\". Нека "
 "разгледаме някои стихове и видим как Божието Слово действа."
 
-#. Tag: title
-#: how2-importance.docbook:125
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Как изучаването на Библията помага на християните"
 
-#. Tag: entry
-#: how2-importance.docbook:129
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Стих"
 
-#. Tag: entry
-#: how2-importance.docbook:130
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:130
 msgid "Action"
 msgstr "Действие"
 
-#. Tag: entry
-#: how2-importance.docbook:135
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Еф. 5:26"
 
-#. Tag: entry
-#: how2-importance.docbook:137
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr "очистване - \"...я е очистил с водно умиване чрез словото\""
 
-#. Tag: entry
-#: how2-importance.docbook:141
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Деяния 20:32"
 
-#. Tag: entry
-#: how2-importance.docbook:144
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:145
+#, fuzzy
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
-"to give you the inheritance among all those who are sanctified. \""
+"to give you the inheritance among all those who are sanctified.  \""
 msgstr ""
 "назидаване - \"...словото на Неговата благодат, което може да ви назидава и "
 "да ви даде наследството между всичките осветени.\""
 
-#. Tag: entry
-#: how2-importance.docbook:153
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Римл. 15:4"
 
-#. Tag: entry
-#: how2-importance.docbook:156
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
 msgstr "утеха - \"...чрез твърдостта и утехата от писанията да имаме надежда\""
 
-#. Tag: entry
-#: how2-importance.docbook:163
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Римл. 10:17"
 
-#. Tag: entry
-#: how2-importance.docbook:166
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
 msgstr ""
 "вяра - \"И тъй, вярването е от слушане, а слушането - от Христовото слово.\""
 
-#. Tag: entry
-#: how2-importance.docbook:174
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1 Кор. 10:11"
 
-#. Tag: entry
-#: how2-importance.docbook:177
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
 msgstr ""
 "поука - \"А всичко това им се случи за примери, и се написа за поука нам\""
 
-#. Tag: entry
-#: how2-importance.docbook:185
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Мат 4:4"
 
-#. Tag: entry
-#: how2-importance.docbook:188
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
@@ -1175,18 +944,15 @@ msgstr ""
 "духовна храна - \"А Той в отговор каза: 'Писано е: Не само с хляб ще живее "
 "човек, но с всяко слово, което излиза от Божиите уста.\""
 
-#. Tag: title
-#: how2-importance.docbook:200
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Книга, която дарява свобода"
 
-#. Tag: para
-#: how2-importance.docbook:201
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:202
+#, fuzzy
 msgid ""
 "Jn.8:32 \"<emphasis>and you shall know the truth, and the truth shall make "
-"you free.</emphasis>\"This is usually quoted by itself. Is this a "
+"you free.</emphasis>\"This is usually quoted by itself.  Is this a "
 "conditional or unconditional promise? Would it apply to all kinds of "
 "knowledge? Find the answers by examining the first half of the sentence, in "
 "v.31. \"<emphasis>If you abide in My word, then you are truly disciples of "
@@ -1199,9 +965,7 @@ msgstr ""
 "\"<emphasis>... Ако пребъдвате в Моето учение, наистина сте Мои ученици...</"
 "emphasis>\""
 
-#. Tag: para
-#: how2-importance.docbook:208
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
 "truth of God's word."
@@ -1209,9 +973,7 @@ msgstr ""
 "Виждаме, че това обещание е обвързано с условие и говори конкретно за "
 "истината на Божието Слово."
 
-#. Tag: para
-#: how2-importance.docbook:210
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
 "</emphasis> \"<emphasis>As a result, we are no longer to be children, tossed "
@@ -1225,9 +987,7 @@ msgstr ""
 "изучаването на Библията ни помага, е че ни поставя на здравата основа на "
 "Истината, което означава, че няма лесно да бъдем \"завличани\"."
 
-#. Tag: para
-#: how2-importance.docbook:216
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
@@ -1236,99 +996,69 @@ msgstr ""
 "\"<emphasis>А Исус в отговор им рече: Заблуждавате се, като не знаете "
 "писанията нито Божията сила.</emphasis>\" Мат. 22:29"
 
-#. Tag: para
-#: how2-importance.docbook:218
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr "Кои две неща трябва да знаем, за да не се заблудим?"
 
-#. Tag: para
-#: how2-importance.docbook:220
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Писанията"
 
-#. Tag: para
-#: how2-importance.docbook:221
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Божията сила"
 
-#. Tag: title
-#: how2-importance.docbook:225
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Книга за духовното воюване"
 
-#. Tag: para
-#: how2-importance.docbook:226
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "Еф. 6:10 дава представа за духовното ни всеоръжие."
 
-#. Tag: title
-#: how2-importance.docbook:229
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Духовната броня"
 
-#. Tag: entry
-#: how2-importance.docbook:233
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:233
 msgid "Question"
 msgstr "Въпрос"
 
-#. Tag: entry
-#: how2-importance.docbook:234
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Отговор"
 
-#. Tag: entry
-#: how2-importance.docbook:237
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Колко от изброените предмети служат за защита?"
 
-#. Tag: entry
-#: how2-importance.docbook:237
-#, no-c-format
-msgid "<entry>5</entry>"
-msgstr "<entry>5</entry>"
+# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#: docs/howto/unicode/en/howto-importance.docbook:237
+msgid "5"
+msgstr ""
 
-#. Tag: entry
-#: how2-importance.docbook:238
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Колко - за нападение?"
 
-#. Tag: entry
-#: how2-importance.docbook:238
-#, no-c-format
-msgid "<entry>One</entry>"
-msgstr "<entry>едно</entry>"
+# type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
+#: docs/howto/unicode/en/howto-importance.docbook:238
+msgid "One"
+msgstr ""
 
-#. Tag: entry
-#: how2-importance.docbook:239
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Кое?"
 
-#. Tag: entry
-#: how2-importance.docbook:239
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "Словото - <foreignphrase>rhema</foreignphrase>"
 
-#. Tag: title
-#: how2-importance.docbook:243
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Съвети"
 
-#. Tag: para
-#: how2-importance.docbook:244
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
@@ -1338,9 +1068,7 @@ msgstr ""
 "работник, който няма от що да се срамува, като излагаш право словото на "
 "истината.</emphasis>\""
 
-#. Tag: para
-#: how2-importance.docbook:248
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
@@ -1351,25 +1079,20 @@ msgstr ""
 "с пълна мъдрост учете се и увещавайте се с псалми и химни и духовни песни, "
 "като пеете на Бога с благодат в сърцата си.</emphasis>\""
 
-#. Tag: para
-#: how2-importance.docbook:253
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Ако имате от нещо в пълнота, то колко всъщност имате?"
 
-#. Tag: para
-#: how2-importance.docbook:255
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Немалко!"
 
-#. Tag: para
-#: how2-importance.docbook:258
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:259
+#, fuzzy
 msgid ""
 "Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and masters "
 "of these collections are like well-driven nails; they are given by one "
-"Shepherd. But beyond this, my son, be warned: the writing of many books is "
+"Shepherd.  But beyond this, my son, be warned: the writing of many books is "
 "endless, and excessive devotion to books is wearying to the body.</emphasis>"
 "\""
 msgstr ""
@@ -1378,30 +1101,25 @@ msgstr ""
 "пастир. А колкото за нещо повече от това, сине мой, приеми увещание, Че "
 "правене много книги няма край, И много четене е труд на плътта.</emphasis>\""
 
-#. Tag: title
-#: how2-importance.docbook:265
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Допълнение: \"Веднъж завинаги\""
 
-#. Tag: attribution
-#: how2-importance.docbook:268
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
 msgstr ""
 
-#. Tag: para
-#: how2-importance.docbook:269
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:269
+#, fuzzy
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
 "by one word of the Greek Testament, namely the adverb <foreignphrase>hapax</"
 "foreignphrase> and <foreignphrase>ephapax</foreignphrase>. It is usually "
 "translated in the Authorized Version once, meaning once for all. It is used "
 "of what is so done as to be of perpetual validity and never need repetition, "
-"and is applied in the NT to both revelation and redemption. Thus, Jude "
+"and is applied in the NT to both revelation and redemption.  Thus, Jude "
 "refers to the faith which was once for all delivered to the saints (Jude 3), "
 "and Romans says, \"<emphasis>Christ also died for sins once for all</"
 "emphasis>\" (Rom.6:10, see also 1 Pe.3:18; Heb.9:26-28)."
@@ -1418,18 +1136,17 @@ msgstr ""
 "греха веднъж завинаги</emphasis>\" (Римл. 6:10, вижте също 1 Петр, 3:18, "
 "Евр. 9:26-28)"
 
-#. Tag: para
-#: how2-importance.docbook:278
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:279
+#, fuzzy
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
-"once for all. This means that the Christian revelation and the Christian "
-"redemption are both alike in Christ complete. Nothing can be added to either "
-"without being derogatory to Christ... These are the two rocks on which the "
-"Protestant Reformation was built -- Gods revealed word without the addition "
-"of human traditions and Christ's finished work without the addition of human "
-"merits. The Reformers great watchwords were <foreignphrase>sola scriptura</"
-"foreignphrase> for our authority and <foreignphrase>sola gratia</"
+"once for all.  This means that the Christian revelation and the Christian "
+"redemption are both alike in Christ complete.  Nothing can be added to "
+"either without being derogatory to Christ...  These are the two rocks on "
+"which the Protestant Reformation was built -- Gods revealed word without the "
+"addition of human traditions and Christ's finished work without the addition "
+"of human merits.  The Reformers great watchwords were <foreignphrase>sola "
+"scriptura</foreignphrase> for our authority and <foreignphrase>sola gratia</"
 "foreignphrase> for our salvation."
 msgstr ""
 "И така, можем да кажем, че Бог е говорил веднъж завинаги и Исус е страдал "
@@ -1443,33 +1160,26 @@ msgstr ""
 "отношение на авторитета и <foreignphrase>sola gratia</foreignphrase> по "
 "отношение на спасението ни."
 
-#. Tag: title
-#: how2-importance.docbook:290
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Послеслов: Програми за четене на Библията"
 
-#. Tag: para
-#: how2-importance.docbook:291
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:291
+#, fuzzy
 msgid ""
-"Here are some easy programs to systematically read your Bible. You can do "
-"more than one at a time if you like, for instance #1 with #4, or #2 with #5. "
-"Vary the program from year to year to keep it fresh!"
+"Here are some easy programs to systematically read your Bible.  You can do "
+"more than one at a time if you like, for instance #1 with #4, or #2 with "
+"#5.  Vary the program from year to year to keep it fresh!"
 msgstr ""
 "Тук са дадени няколко лесни програми за систематично изучаване на Библията. "
 "Ако желаете, можете да използвате и няколко едновременно (напр. 1 и 4 или 2 "
 "и 5). Сменяйте програмата през година-две, за да не загубите интерес."
 
-#. Tag: para
-#: how2-importance.docbook:296
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr "Новият Завет за една година: четете по една глава всеки работен ден."
 
-#. Tag: para
-#: how2-importance.docbook:298
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
 "the day of the month."
@@ -1477,9 +1187,7 @@ msgstr ""
 "Притчи за месец: четете по една глава от Притчи всеки ден (например главата, "
 "съответстваща на датата)"
 
-#. Tag: para
-#: how2-importance.docbook:300
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
@@ -1488,17 +1196,13 @@ msgstr ""
 "псалмите е поне 30 - например: на 20-ти прочетете псалом 20, 50, 80, 110 и "
 "140."
 
-#. Tag: para
-#: how2-importance.docbook:302
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
 msgstr "Псалми и Притчи за 6 месеца: четете по една глава дневно."
 
-#. Tag: para
-#: how2-importance.docbook:304
-#, no-c-format
+#: docs/howto/unicode/en/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
 "chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
@@ -1508,26 +1212,23 @@ msgstr ""
 "дневно, като пропуснете Псалми и Притчи, ще успеете да прочетете Стария "
 "Завет за 2 години и 2 седмици."
 
-#. Tag: title
-#: how2-interpretation.docbook:1
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Правила за тълкувание на Библията (херменевтика)"
 
-#. Tag: para
-#: how2-interpretation.docbook:2
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:2
+#, fuzzy
 msgid ""
-"We already learned about the \"3 Cs\": content, context, cross-reference. We "
-"want to expand that now by delving briefly into biblical hermeneutics, whose "
-"goal is to discover the meaning intended by the original author (and "
-"Author!). While many applications of a passage are valid, only one "
+"We already learned about the \"3 Cs\": content, context, cross-reference.  "
+"We want to expand that now by delving briefly into biblical hermeneutics, "
+"whose goal is to discover the meaning intended by the original author (and "
+"Author!).  While many applications of a passage are valid, only one "
 "interpretation is valid. The scripture itself says this by saying that no "
 "scripture is of any private interpretation (2 Pe.1:20 KJV <quote>Knowing "
 "this first, that no prophesy of scripture is of any private interpretation.</"
 "quote>). Certain rules are helps toward discovering the correct meaning; by "
 "ignoring these rules people have brought much trouble on themselves and "
-"their followers. 2 Pe.3:16 <quote>...in which are some things hard to "
+"their followers.  2 Pe.3:16 <quote>...in which are some things hard to "
 "understand, which the untaught and unstable distort, as they do also the "
 "rest of the Scriptures, to their own destruction.</quote>"
 msgstr ""
@@ -1543,61 +1244,54 @@ msgstr ""
 "някои неща мъчни за разбиране, които неучените и неутвърдените изопачават, "
 "както правят и с другите писания, за своята погибел.\"."
 
-#. Tag: para
-#: how2-interpretation.docbook:11
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:11
+#, fuzzy
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
 "your attention has been drawn to a particular verse whose meaning is not "
-"clear to you. How do you study it out? Keep these rules in mind:"
+"clear to you.  How do you study it out? Keep these rules in mind:"
 msgstr ""
 "Но как да постъпим, за да изясним значението на даден пасаж? Нека приемем, "
 "че вниманието ви е привлечено от опредеен стих, чието значение ви убягва. "
 "Как да изследвате този стих? Имайте в предвид тези правила:"
 
-#. Tag: title
-#: how2-interpretation.docbook:14
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Правило 1: За тълкувание използвайте точните значения на думите"
 
-#. Tag: para
-#: how2-interpretation.docbook:15
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:15
+#, fuzzy
 msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
-"better our interpretation will be. Try to find the exact meaning of the key "
+"better our interpretation will be.  Try to find the exact meaning of the key "
 "words by following these steps:"
 msgstr ""
 "Колкото по-точно знаем значението на оригиналните думи, толково по-точно ще "
 "бъде и нашето тълкувание. Опитайте се да разберете точното значение на "
 "ключовите думи, като използвате следния план:"
 
-#. Tag: title
-#: how2-interpretation.docbook:20
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:20
+#, fuzzy
 msgid "Definition"
 msgstr "Стъпка 1) Точно значение"
 
-#. Tag: para
-#: how2-interpretation.docbook:21
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:21
+#, fuzzy
 msgid ""
-"Look up the definition in a Greek or Hebrew dictionary. For verbs, the verb "
+"Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
 "tense is also crucial."
 msgstr ""
 "Проверете за превода в речник (на гръцки или иврит). Ако става дума за "
 "глагол, времето, в което е, също има особена важност."
 
-#. Tag: para
-#: how2-interpretation.docbook:27
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:27
+#, fuzzy
 msgid ""
-"Compare scripture with scripture. Seeing how the same Greek or Hebrew word "
+"Compare scripture with scripture.  Seeing how the same Greek or Hebrew word "
 "(not the English word) is used in scripture may clarify or throw new light "
-"on the definition. How does the same author use this word elsewhere? Other "
+"on the definition.  How does the same author use this word elsewhere? Other "
 "authors? Your reference tools may give you uses of the word in non-biblical "
-"documents, as well. Why do we have to go to the original languages; why "
+"documents, as well.  Why do we have to go to the original languages; why "
 "isn't the English word good enough? <emphasis>Because more than one greek "
 "word may be translated into the same english word, and the greek words may "
 "have different shades of meaning.</emphasis>"
@@ -1611,19 +1305,16 @@ msgstr ""
 "достатъчни? ЗАЩОТО ПОВЕЧЕ ОТ ЕДНА ГРЪЦКА ДУМА МОЖЕ ДА БЪДЕ ПРЕВЕДЕНА ПО ЕДИН "
 "И СЪЩ НАЧИН, А ОРИГИНАЛНИТЕ ДУМИ ДА ИМАТ РАЗЛИЧНИ ЗНАЧЕНИЯ."
 
-#. Tag: title
-#: how2-interpretation.docbook:37
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Пример 1.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:38
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:38
+#, fuzzy
 msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
 "it? Sounds like Jesus doesn't want to be touched now that He is risen, that "
-"He is too holy or something. But that doesn't seem right, so let's look it "
+"He is too holy or something.  But that doesn't seem right, so let's look it "
 "up in Spiros Zodhiates' <emphasis>The Complete Word Study New Testament</"
 "emphasis> (AMG Publishers, 1991)."
 msgstr ""
@@ -1633,23 +1324,22 @@ msgstr ""
 "изучаване на Новия Завет</emphasis> от Спирос Зодиатес. (AMG Publishers, "
 "1991)."
 
-#. Tag: para
-#: how2-interpretation.docbook:42
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:42
+#, fuzzy
 msgid ""
 "Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
 "\" The letters give us a code for the part of speech, and the number refers "
-"to Strong's dictionary reference. Let's look up the definition (p. 879). "
-"\"680. Haptomai; from hapto (681), touch. Refers to such handling of an "
+"to Strong's dictionary reference.  Let's look up the definition (p. 879).  "
+"\"680.  Haptomai; from hapto (681), touch.  Refers to such handling of an "
 "object as to exert a modifying influence upon it... Distinguished from "
 "pselaphao (5584), which actually only means to touch the surface of "
 "something. \" Now look up \"pim.\" The grammar codes in Zodhiates come right "
 "after Revelation; on p. 849 we see that pim stands for \"present imperative "
-"active (80)\". On p.857, \"Present Imperative. In the active voice, it may "
+"active (80)\".  On p.857, \"Present Imperative.  In the active voice, it may "
 "indicate a command to do something in the future which involves continuous "
 "or repeated action or, when it is negated, a command to stop doing "
 "something. \" This is a negative command, so it is to stop doing something "
-"that is already occuring. So, what have we found?"
+"that is already occuring.  So, what have we found?"
 msgstr ""
 "Значението: Отгръщайки на Йоана 20:17, над думата \"допирай\" виждаме "
 "\"pim680\". С буквите е означено каква част на речта е думата, а цифрите са "
@@ -1667,40 +1357,31 @@ msgstr ""
 "Изречението е отрицателно и следователно, означава, че трябва да бъде "
 "прекратено действие, което вече е факт. И така, какво открихме?"
 
-#. Tag: emphasis
-#: how2-interpretation.docbook:50
-#, no-c-format
-msgid ""
-"Mary is already clinging to Jesus, and he is saying to stop holding him!"
-msgstr ""
-
-#. Tag: title
-#: how2-interpretation.docbook:53
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:53
+#, fuzzy
 msgid "Example 1B"
 msgstr "Пример 1.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:54
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:54
+#, fuzzy
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
-"sick</emphasis>. What is this anointing?"
+"sick</emphasis>.  What is this anointing?"
 msgstr ""
 "В Яков 5:14, <emphasis>на църковните презвитери е казано да се молят и "
 "помажат онзи, който е болен</emphasis>. Какво е помазването?"
 
-#. Tag: para
-#: how2-interpretation.docbook:55
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:55
+#, fuzzy
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
 "another Greek word translated \"anoint\", chrio (5548) - \"to smear or rub "
-"with oil, i.e. to consecrate to an office or religious service\" (Strong's). "
-"Since it's a verb, consider the tense also, \"apta\" aorist participle "
-"active. \"The aorist participle expresses simple action, as opposed to "
-"continuous action...When its relaitonship to the main verb is temporal, it "
-"usually signifies action prior to that of the main verb.\" (Zodhiates p.851)"
+"with oil, i.e. to consecrate to an office or religious service"
+"\" (Strong's).  Since it's a verb, consider the tense also, \"apta\" aorist "
+"participle active.  \"The aorist participle expresses simple action, as "
+"opposed to continuous action...When its relaitonship to the main verb is "
+"temporal, it usually signifies action prior to that of the main verb."
+"\" (Zodhiates p.851)"
 msgstr ""
 "Значението на aleipho (218) е \"да помажа\", но има и друга гръцка дума, "
 "която се превежда по същия начин -  chrio (5548) - \"да намажа или разтъркам "
@@ -1711,9 +1392,8 @@ msgstr ""
 "временна, обикновено означава действие, предхождащо това на главния глагол."
 "\" (Зодиатес стр. 851)"
 
-#. Tag: para
-#: how2-interpretation.docbook:62
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:62
+#, fuzzy
 msgid "Cross-references for aleipho:"
 msgstr ""
 "#-#-#-#-#  full.po (index)  #-#-#-#-#\n"
@@ -1763,41 +1443,30 @@ msgstr ""
 "#-#-#-#-#  bg.po (index)  #-#-#-#-#\n"
 "Препратки"
 
-#. Tag: para
-#: how2-interpretation.docbook:64
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:65
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:66
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:67
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:68
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:72
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:72
+#, fuzzy
 msgid "Cross-references of chrio:"
 msgstr ""
 "#-#-#-#-#  full.po (index)  #-#-#-#-#\n"
@@ -1847,35 +1516,26 @@ msgstr ""
 "#-#-#-#-#  bg.po (index)  #-#-#-#-#\n"
 "Препратки"
 
-#. Tag: para
-#: how2-interpretation.docbook:74
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:75
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:76
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:77
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:82
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:82
+#, fuzzy
 msgid ""
 "So what's the difference between aleipho and chrio? Look back over the cross-"
 "references and the definitions, and sum up the difference: <emphasis>&quot;"
@@ -1886,13 +1546,12 @@ msgstr ""
 "препратките и след това можете да заключите, че ALEIPHO ОЗНАЧАВА "
 "ПРАКТИЧЕСКОТО ИЗПОЛЗВАНЕ НА МАСЛОТО, А CHRIO - ДУХОВНОТО."
 
-#. Tag: para
-#: how2-interpretation.docbook:85
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:85
+#, fuzzy
 msgid ""
 "As an illustration (although the word is not used) of the practical use of "
 "oil at that time, when the good Samaritan cared for the man beat up by "
-"robbers he poured oil and wine in the wound. So oil had a medicinal use in "
+"robbers he poured oil and wine in the wound.  So oil had a medicinal use in "
 "Jesus' day."
 msgstr ""
 "Kaто илюстрация за практическо използване на маслото по онова време е "
@@ -1900,9 +1559,7 @@ msgstr ""
 "почистил раните с масло и вино. Така че по времето на Исус, маслото е имало "
 "приложение в медицината."
 
-#. Tag: para
-#: how2-interpretation.docbook:89
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
@@ -1914,16 +1571,15 @@ msgstr ""
 "него и го помажат с масло в Господното име\"</emphasis>. В какъв смисъл се "
 "използва думата \"помазвам\" тук - практически или духовен? Практически!"
 
-#. Tag: para
-#: how2-interpretation.docbook:92
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:93
+#, fuzzy
 msgid ""
 "And the tense in Greek, the aorist participle, would be better translated "
 "\"having anointed,\" so the order is the anointing first, then the prayer "
-"(\"in the name of the Lord\"refers to the prayer, not the anointing). James "
+"(\"in the name of the Lord\"refers to the prayer, not the anointing).  James "
 "5 is saying that the elders should give the sick person medicine and pray "
-"for him in the name of the Lord. Doesn't that express a beautiful balance of "
-"practical and spiritual in our God!"
+"for him in the name of the Lord.  Doesn't that express a beautiful balance "
+"of practical and spiritual in our God!"
 msgstr ""
 "Глаголното време на гръцки, аористно (минало свършено) причастие, по-скоро "
 "означава \"след като са го помазали\". Помазването предхожда молитвата. (Тук "
@@ -1931,21 +1587,18 @@ msgstr ""
 "казва, че презвитерите трябва да дадат на болните лекарство и да се молят за "
 "тях в Гослодното име. Нима това не показва Божия прекрасен баланс!"
 
-#. Tag: title
-#: how2-interpretation.docbook:103
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Правило 2: Тълкувайте в библейски контекст"
 
-#. Tag: para
-#: how2-interpretation.docbook:105
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:105
+#, fuzzy
 msgid ""
-"Interpret scripture in harmony with other scripture. What do the verses on "
+"Interpret scripture in harmony with other scripture.  What do the verses on "
 "each side say? What is the theme of the chapter? the book? Does your "
-"interpretation fit with these? If not, it is flawed. Usually, the context "
-"supplies what we need to correctly interpret the passage. Context is key. If "
-"confusion remains as to the meaning after we have interpreted the text "
+"interpretation fit with these? If not, it is flawed.  Usually, the context "
+"supplies what we need to correctly interpret the passage.  Context is key.  "
+"If confusion remains as to the meaning after we have interpreted the text "
 "within its context, we have to look further."
 msgstr ""
 "Tълкувайте писанията в съзвучие с останалата част от Библията. Какво казват "
@@ -1955,15 +1608,11 @@ msgstr ""
 "след като сте разтълкували текста в неговия контекст е останало някакво "
 "съмнение в значението му, трябва да потърсите по-надалеч."
 
-#. Tag: title
-#: how2-interpretation.docbook:110
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Пример 2.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:111
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis> In context, what is the water under discussion here?"
@@ -1971,12 +1620,11 @@ msgstr ""
 "В предишния урок обсъждахме Йоан 3:5 -<emphasis>\"да се роди от вода и Дух"
 "\"</emphasis>. Какво общо има водата с разговора, съгласно контекста?"
 
-#. Tag: para
-#: how2-interpretation.docbook:113
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:113
+#, fuzzy
 msgid ""
 "Water baptism is not under discussion here, which would be a big switch from "
-"the subject being discussed by Jesus and Nicodemus. Watch out for a sudden "
+"the subject being discussed by Jesus and Nicodemus.  Watch out for a sudden "
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural birth."
 msgstr ""
@@ -1986,15 +1634,12 @@ msgstr ""
 "се има в предвид тази при раждането на човека т.е. \"раждане от вода\" = "
 "естествено раждане."
 
-#. Tag: title
-#: how2-interpretation.docbook:117
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Пример 2.2"
 
-#. Tag: para
-#: how2-interpretation.docbook:118
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:118
+#, fuzzy
 msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
@@ -2004,25 +1649,22 @@ msgstr ""
 "трябва да бъде възприеман в контекста на 1 Коринтяни 11:5: <emphasis>\"всяка "
 "жена, която се моли или пророкува...\"</emphasis>"
 
-#. Tag: title
-#: how2-interpretation.docbook:121
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Пример 2.3"
 
-#. Tag: para
-#: how2-interpretation.docbook:122
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:122
+#, fuzzy
 msgid ""
 "Acts 2:38 <quote>And Peter said to them, &quot;Repent, and let each of you "
 "be baptized in the name of Jesus Christ for the forgiveness of your sins "
-"[...]&quot;</quote>. Is this teaching baptismal regeneration? If this was "
-"the only verse of scripture we had, we would have to conclude that. But in "
+"[...]&quot;</quote>.  Is this teaching baptismal regeneration? If this was "
+"the only verse of scripture we had, we would have to conclude that.  But in "
 "the light of the clear teaching elsewhere that regeneration happens by faith "
-"in Christ, we have to interpret it otherwise. Peter is urging baptism as a "
-"way for his hearers to respond to the gospel. If baptism were the pathway to "
-"being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ did "
-"not send me to baptize, but to preach the gospel\"</emphasis>?"
+"in Christ, we have to interpret it otherwise.  Peter is urging baptism as a "
+"way for his hearers to respond to the gospel.  If baptism were the pathway "
+"to being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ "
+"did not send me to baptize, but to preach the gospel\"</emphasis>?"
 msgstr ""
 "Деяния 2:38: <emphasis>\"А Петър им рече: Покайте се, и всеки от вас нека се "
 "кръсти в името Исус Христово за прощение на греховете ви\"</emphasis>. Това "
@@ -2035,19 +1677,16 @@ msgstr ""
 "<emphasis>\"Защото Христос не ме е пратил да кръщавам, но да проповядвам "
 "благовестието\"</emphasis>?"
 
-#. Tag: title
-#: how2-interpretation.docbook:134
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Правило 3: Тълкувайте в рамките на историческия и културен контекст"
 
-#. Tag: para
-#: how2-interpretation.docbook:135
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:136
+#, fuzzy
 msgid ""
 "At first we are not asking <quote>What does it mean to me?</quote> but "
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
-"<quote>What does it mean to me?</quote>. We have to take into account the "
+"<quote>What does it mean to me?</quote>.  We have to take into account the "
 "historical and cultural background of the author and the recipients."
 msgstr ""
 "Първият въпрос, който си задаваме е \"Какво означава това за мен?\", а "
@@ -2055,18 +1694,15 @@ msgstr ""
 "да се запитаме: \"Какво означава това за мен?\". Трябва да имаме в предвид "
 "историческата  и културната среда на автора и неговите първи читатели."
 
-#. Tag: title
-#: how2-interpretation.docbook:139
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Пример 3.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:139
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:139
+#, fuzzy
 msgid ""
 "<quote>3 days &amp; 3 nights</quote> (Mt.12:40) have led some to come up "
-"with a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism. How "
+"with a \"Wednesday crucifixion theory,\" esp. the cult of Armstrongism.  How "
 "could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
 "on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't "
 "help explain the apparent contradiction."
@@ -2078,17 +1714,16 @@ msgstr ""
 "Точното значение на \"третия\" или \"ден\" няма да ни помогне да си обясним "
 "това очевидно противоречие."
 
-#. Tag: para
-#: how2-interpretation.docbook:144
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:144
+#, fuzzy
 msgid ""
 "We need an historical tidbit: Jews counted any part of a day as a full day, "
 "as we would count buckets of water (if there were six and one-half buckets "
 "of water, we would say there were 7 buckets of water even if one was only "
-"partly full). So to the Jewish mind, any part of a day counted as a full "
-"day, and days started at 6 p.m. and ended at 6 p.m. Friday from 3 p.m. to 6 "
-"p.m. = day 1. Friday 6 p.m. to Saturday 6 p.m. = day 2. Saturday 6 p.m. to "
-"Sunday 5 or so a.m. = day 3. Interpreting within the cultural context keeps "
+"partly full).  So to the Jewish mind, any part of a day counted as a full "
+"day, and days started at 6 p.m. and ended at 6 p.m.  Friday from 3 p.m. to 6 "
+"p.m. = day 1.  Friday 6 p.m. to Saturday 6 p.m. = day 2.  Saturday 6 p.m. to "
+"Sunday 5 or so a.m. = day 3.  Interpreting within the cultural context keeps "
 "us out of trouble."
 msgstr ""
 "Имаме нужда от малка историческа клюка: евреите са брояли всяка част от ден "
@@ -2100,21 +1735,18 @@ msgstr ""
 "събота = втори ден. От 18 часа в събота до около 5 часа в неделя = трети "
 "ден. Тълкуването в културния контекста ни предпазва от проблеми."
 
-#. Tag: title
-#: how2-interpretation.docbook:151
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Пример 3.2"
 
-#. Tag: para
-#: how2-interpretation.docbook:151
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:151
+#, fuzzy
 msgid ""
-"Gen.15:7-21. The historical context is that cutting animals in two and then "
+"Gen.15:7-21.  The historical context is that cutting animals in two and then "
 "walking between the pieces was the normal way of entering a contract in "
-"Abraham's day. Both parties walked between, taking the pledge that "
+"Abraham's day.  Both parties walked between, taking the pledge that "
 "dismemberment would happen to them if they didn't live up to their part of "
-"the contract. But in this case only God goes thru, making it a unilateral "
+"the contract.  But in this case only God goes thru, making it a unilateral "
 "covenant."
 msgstr ""
 "Битие 15:7-21. В исторически контекст, да се разсече животно на две и след "
@@ -2125,40 +1757,33 @@ msgstr ""
 "Но в този конкретен случай само само Бог преминава, което прави договора "
 "едностранен."
 
-#. Tag: title
-#: how2-interpretation.docbook:159
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr "Правило 4: Тълкувайте съобразно обичайната употреба на думите в езика"
 
-#. Tag: para
-#: how2-interpretation.docbook:160
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:160
+#, fuzzy
 msgid ""
-"Let literal language be literal and figurative language be figurative. And "
+"Let literal language be literal and figurative language be figurative.  And "
 "watch out for idioms, which have special meanings."
 msgstr ""
 "Отсейте буквалното от символичното. Внимавайте за идиоми, които имат "
 "специфични значения."
 
-#. Tag: title
-#: how2-interpretation.docbook:163
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Пример 4.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:164
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:164
+#, fuzzy
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr "\"Болнаво око\" в Матей 6:23"
 
-#. Tag: para
-#: how2-interpretation.docbook:165
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:165
+#, fuzzy
 msgid ""
-"Rule 1, definition of \"evil\" and \"eye\" - no help here. Rule 2, context: "
-"seems to confuse us even more. It doesn't seem to fit with what goes before "
+"Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, context: "
+"seems to confuse us even more.  It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
 msgstr ""
 "Правило първо, значенията на \"болнаво\" и \"око\" - не помага. Правило "
@@ -2166,15 +1791,14 @@ msgstr ""
 "просто не се връзват с предходните и следващите стихове! Това трябва да ни "
 "подскаже, че не разбираме истинския смисъл!!"
 
-#. Tag: para
-#: how2-interpretation.docbook:168
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:168
+#, fuzzy
 msgid ""
-"What we have here is a Hebrew idiom, <quote>evil eye</quote>. Let's look up "
+"What we have here is a Hebrew idiom, <quote>evil eye</quote>.  Let's look up "
 "other uses of this idiom: Mt.20:15 \"<emphasis>Is it not lawful for me to do "
 "what I wish with what is my own? Or is your eye envious [lit.\"evil\"] "
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
-"\"evil eye\" is a Hebrew idiom for being stingy or envious. Now go back to "
+"\"evil eye\" is a Hebrew idiom for being stingy or envious.  Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
 msgstr ""
 "Това пред което сме изправени тук е еврейски идиом. Нека потърсим и други "
@@ -2184,38 +1808,31 @@ msgstr ""
 "идиом означава \"да бъдеш свидлив\" или \"да бъдеш завистлив\". Сега се "
 "върнете към Матей 6:23 и вижте как това значение пасва на контекста."
 
-#. Tag: title
-#: how2-interpretation.docbook:174
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Пример 4.2"
 
-#. Tag: para
-#: how2-interpretation.docbook:175
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:176
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:177
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:178
+#, fuzzy
 msgid ""
 "References to body parts of God are used by Latter-Day Saints to prove that "
-"God was once a man just as we are. Once they convince people of that, they "
+"God was once a man just as we are.  Once they convince people of that, they "
 "go on to teach that we can become God just like He is! At a lecture he was "
 "giving, a group of Mormon elders challenged Walter Martin (author of "
-"<emphasis>Kingdom of the Cults</emphasis>) with an enumeration of verses "
-"like these. Dr. Martin then asked the Mormons to read one more scripture: "
+"<emphasis>Kingdom of the Cults</emphasis>)  with an enumeration of verses "
+"like these.  Dr. Martin then asked the Mormons to read one more scripture: "
 "Ps.91:4 <quote>He will cover you with His feathers; And under His wings "
-"shalt thou trust</quote>. W.M. said, <quote>By the same rules of "
+"shalt thou trust</quote>.  W.M. said, <quote>By the same rules of "
 "interpretation that you just proved God to be a man, you just proved that He "
-"is a bird</quote>. The Mormons had to laugh as they realised the "
+"is a bird</quote>.  The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
 msgstr ""
 "Исая 59:1 \"<emphasis>Ето, ръката на Господа не се е скъсила</emphasis>\"; "
@@ -2233,9 +1850,7 @@ msgstr ""
 "Мормоните трябвало да се засмеят, осъзнавайки абсурдното положение в което "
 "попаднали."
 
-#. Tag: title
-#: how2-interpretation.docbook:189
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
@@ -2243,29 +1858,24 @@ msgstr ""
 "Правило 5: Разбирайте целите на притчите и правете разлика между притча и "
 "алегория"
 
-#. Tag: para
-#: how2-interpretation.docbook:190
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
 msgstr ""
 
-#. Tag: para
-#: how2-interpretation.docbook:191
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Вярно ли е, че всяка притча е алегория?"
 
-#. Tag: para
-#: how2-interpretation.docbook:193
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:193
+#, fuzzy
 msgid ""
 "Some parables are allegories, for instance, the parable of the sower is an "
 "allegory: the seed is the word of God, the thorns are worries and greed, "
-"etc. But most parables are not allegories but simply stories to illustrate "
-"one point. It's dangerous to get our doctrine from parables; they can be "
-"twisted to say all sorts of things. We need to get our doctrine from clear "
+"etc.  But most parables are not allegories but simply stories to illustrate "
+"one point.  It's dangerous to get our doctrine from parables; they can be "
+"twisted to say all sorts of things.  We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
 msgstr ""
 "Някои пртитчи са алегории. Например питчата за сеяча е: семето е Божието "
@@ -2275,27 +1885,22 @@ msgstr ""
 "Затова извличаме доктрините от писанията, които ги изказват ясно и точно, а "
 "ако някоя притча ги илюстрира - още по-добре."
 
-#. Tag: title
-#: how2-interpretation.docbook:198
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Пример 5.1"
 
-#. Tag: para
-#: how2-interpretation.docbook:199
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:199
+#, fuzzy
 msgid ""
 "The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
-"illustrates one lesson: boldness in prayer. If we draw it into an allegory, "
+"illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
 "what do we have?"
 msgstr ""
 "Притчата за вдовицата и неправедния съдия от Лука 18:1-8. Тази история "
 "илюстрира един урок - усърдие в молитвата. А ако я обрисуваме като алегория, "
 "какво би се получило?"
 
-#. Tag: para
-#: how2-interpretation.docbook:201
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
@@ -2303,81 +1908,68 @@ msgstr ""
 "Истинско насилие над оригиналното значиение: на Бог не му се ще да защитава "
 "правата на вдовиците, молитвите \"го изморяват\" и т.н."
 
-#. Tag: title
-#: how2-interpretation.docbook:204
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Пример 5.2"
 
-#. Tag: para
-#: how2-interpretation.docbook:205
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:205
+#, fuzzy
 msgid ""
-"The parable of the unrighteous steward in Lk.16:1-9. What is the point of "
+"The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
 "the parable? Is it an allegory?"
 msgstr ""
 "Притчата за неправедния настойник от Лука 16:1-9. Какъв е смисълът на "
 "притчата? Алегория ли е?"
 
-#. Tag: para
-#: how2-interpretation.docbook:207
-#, no-c-format
+#: docs/howto/unicode/en/howto-interpretation.docbook:207
+#, fuzzy
 msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
-"had to prepare for a time when he wouldn't have it. But he is not commended "
+"had to prepare for a time when he wouldn't have it.  But he is not commended "
 "for his unethical behavior in cheating his master."
 msgstr ""
 "Настойникът е похвален за едно нещо - за остроумния начин по който употребил "
 "това, което имал, за да се подготви за времето, когато няма да го има. Но не "
 "е похвален за неетичното си поведение и за това, че е измамил господаря си."
 
-#. Tag: title
-#: index.docbook:19
-#, no-c-format
+# type: Content of the bibletime entity
+#: docs/howto/unicode/en/index.docbook:3
+msgid "<application>BibleTime</application>"
+msgstr ""
+
+# type: Content of the kapp entity
+#: docs/howto/unicode/en/index.docbook:4
+msgid "&bibletimehandbook;"
+msgstr ""
+
+# type: Attribute 'lang' of: <book>
+#: docs/howto/unicode/en/index.docbook:16
+msgid "&language;"
+msgstr ""
+
+#: docs/howto/unicode/en/index.docbook:19
 msgid "The Biblestudy HowTo"
 msgstr "Ръководство за изучаване на Библията"
 
-#. Tag: author
-#: index.docbook:22
-#, no-c-format
-msgid "<firstname>Bob</firstname> <surname>Harman</surname>"
-msgstr "<firstname>Боб</firstname> <surname>Хармън</surname>"
-
-#. Tag: trans_comment
-#: index.docbook:28
-#, no-c-format
-msgid "ROLES_OF_TRANSLATORS"
-msgstr ""
-"<othercredit role=\"translator\"><firstname>Андрей</"
-"firstname><surname>Иванов</"
-"surname><affiliation><address><email>linux_ready@yahoo.com</email></"
-"address></affiliation><contrib></contrib></othercredit>"
-
-#. Tag: holder
-#: index.docbook:32
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:32
 msgid "The team of &bibletime;, info@bibletime.info"
 msgstr "Екипът на &bibletime;, info@bibletime.info"
 
-#. Tag: holder
-#: index.docbook:35
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:35
 msgid "Bob Harman"
 msgstr "Боб Хармън"
 
-#. Tag: para
-#: index.docbook:38
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:39
+#, fuzzy
 msgid ""
-"The copyright of this text is held by the author Bob Harman. The text was "
+"The copyright of this text is held by the author Bob Harman.  The text was "
 "adapted for publication with BibleTime by Fred Saalbach."
 msgstr ""
 "Авторските права върху този текст принадлежат на автора - Боб Хармън. "
 "Текстът е адаптиран за разпространение с BibleTime от Фред Заалбах."
 
-#. Tag: para
-#: index.docbook:42
-#, fuzzy, no-c-format
+#: docs/howto/unicode/en/index.docbook:42
+#, fuzzy
 msgid ""
 "Non exclusive serial rights for this distribution of this document with the "
 "&bibletime; software have been made. Redistribution as part of the Bibletime "
@@ -2389,9 +1981,7 @@ msgstr ""
 "без изменения, като част от програмата Bibletime съгласно правилата за "
 "\"честно използване\", дефинирани в закона на САЩ за авторското право."
 
-#. Tag: para
-#: index.docbook:48
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:48
 msgid ""
 "For questions regarding the use of this material contact Bob Harman c/o New "
 "Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
@@ -2401,9 +1991,7 @@ msgstr ""
 "Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
 "<email>ncc@ncchampton.org</email>."
 
-#. Tag: para
-#: index.docbook:52
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:52
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated"
@@ -2412,15 +2000,21 @@ msgstr ""
 "въз основа на българската Библия издадена през 1938г. (SWORD модул - "
 "Bulgarian), случаите когато е използван друго издание са изрично упоменати."
 
-#. Tag: title
-#: index.docbook:61
-#, no-c-format
+# type: Content of: <book><bookinfo><date>
+#: docs/howto/unicode/en/index.docbook:56
+msgid "06/16/2004"
+msgstr ""
+
+# type: Content of: <book><bookinfo><releaseinfo>
+#: docs/howto/unicode/en/index.docbook:57
+msgid "1.02.00"
+msgstr ""
+
+#: docs/howto/unicode/en/index.docbook:61
 msgid "Abstract"
 msgstr "Резюме"
 
-#. Tag: para
-#: index.docbook:62
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:63
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
@@ -2428,15 +2022,14 @@ msgstr ""
 "<application>Ръководството за изучаване на Библията</application> "
 "представлява указания за вашите изследвания."
 
-#. Tag: para
-#: index.docbook:65
-#, no-c-format
+#: docs/howto/unicode/en/index.docbook:65
+#, fuzzy
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
-"readers to study the scriptures to see what they say. This particular study "
+"readers to study the scriptures to see what they say.  This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine. We expect you to read and study the scriptures to "
-"understand what they say. If you start with the attitude that you want to "
+"denominational doctrine.  We expect you to read and study the scriptures to "
+"understand what they say.  If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
 "Надеждата на екипа на &bibletime; е, че това ръководство ще провокира "
@@ -2446,17 +2039,39 @@ msgstr ""
 "четете и изследвате Писанията, за да разберете какво казват. Ако очаквате "
 "Господ да посее Своето слово в сърцето Ви, Той няма да Ви разочарова."
 
-#. Tag: keyword
-#: index.docbook:75
-#, no-c-format
-msgid "Bible"
-msgstr "Bible"
+#, fuzzy
+#~ msgid "<entry>8</entry>"
+#~ msgstr "<entry>8 </entry>"
 
-#. Tag: keyword
-#: index.docbook:77
-#, no-c-format
-msgid "HowTo"
-msgstr "HowTo"
+#, fuzzy
+#~ msgid "<entry>20</entry>"
+#~ msgstr "<entry>20 </entry>"
+
+#, fuzzy
+#~ msgid "<entry>10</entry>"
+#~ msgstr "<entry>10 </entry>"
+
+#~ msgid "<entry>5</entry>"
+#~ msgstr "<entry>5</entry>"
+
+#~ msgid "<entry>One</entry>"
+#~ msgstr "<entry>едно</entry>"
+
+#~ msgid "<firstname>Bob</firstname> <surname>Harman</surname>"
+#~ msgstr "<firstname>Боб</firstname> <surname>Хармън</surname>"
+
+#~ msgid "ROLES_OF_TRANSLATORS"
+#~ msgstr ""
+#~ "<othercredit role=\"translator\"><firstname>Андрей</"
+#~ "firstname><surname>Иванов</"
+#~ "surname><affiliation><address><email>linux_ready@yahoo.com</email></"
+#~ "address></affiliation><contrib></contrib></othercredit>"
+
+#~ msgid "Bible"
+#~ msgstr "Bible"
+
+#~ msgid "HowTo"
+#~ msgstr "HowTo"
 
 #, fuzzy
 #~ msgid "The BibleTime developers"

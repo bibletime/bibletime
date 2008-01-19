@@ -1,0 +1,403 @@
+<chapter id="hdbk-op"><title>Werking van het programma</title>
+
+<sect1 id="hdbk-op-overview">
+<title>Programma overzicht</title>
+
+<para>This is how a typical &bibletime; session looks like:
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="ss_mainterms.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>The &bibletime; application window</phrase> </textobject>
+</mediaobject>
+
+You can easily see the different parts of the application. The Bookshelf on 
+the left side is used to open works and to manage your bookmarks. The little 
+"Mag" window below the Bookshelf is used to display extra information that 
+is embedded in documents. When you move your mouse over a footnote marker, 
+for example, then the Mag will display the actual content of the 
+footnote. The toolbar gives you quick access to important functions, and the 
+Desk on the right side is where you do your real work.</para>
+<para>Laten we nu doorgaan en &eacute;&eacute;n voor &eacute;&eacute;n de 
+verschillende onderdelen van de toepassing bekijken.</para>
+</sect1>
+
+<sect1 id="hdbk-op-parts">
+<title>Onderdelen van het &bibletime; toepassingsvenster</title>
+
+<sect2 id="hdbk-op-parts-bookshelf">
+<title>De Boekenplank</title>
+<para>De Boekenplank laat alle ge&iuml;nstalleerde modules zien, gesorteerd per 
+categorie en taal. Het heeft ook een categorie genaamd "Bladwijzers". Dit is 
+de plaats waar u uw eigen bladwijzers kunt opslaan en openen.
+</para>
+
+<sect3 id="hdbk-op-parts-bookshelf-open">
+<title>Modules lezen</title>
+<para>Om een module uit de boekenplank te openen om te lezen, kunt u simpelweg met 
+de <mousebutton>linker muisknop</mousebutton> klikken op de gewenste 
+categorie (Bijbels, Bijbelcommentaren, Lexicons, Boeken, Overdenkingen of 
+Woordenlijsten) om de inhoud te laten zien. Klik dan op &eacute;&eacute;n 
+van de modules om die te openen. Er verschijnt dan een leesvenster in het 
+Bureaugebied.
+</para>
+<tip><para>Drag &amp; Drop Werkt Hier</para></tip>
+<para>
+Als u een bepaalde module aan het lezen bent en u wilt nog een module openen 
+op de passage die u aan het lezen bent, dan kunt u een snelkoppeling 
+gebruiken. Klik simpelweg met de <mousebutton>linker muisknop</mousebutton> 
+op de verwijzing naar een vers/passage (de muisaanwijzer veranderd in een 
+hand) en sleep deze naar de Boekenplank. Laat de muisknop los boven de 
+module die u wilt openen en deze zal op de opgegeven plaats worden 
+geopend. U kunt ook een verwijzing naar een vers naar een bestaand 
+leesvenster slepen, die dan naar de opgegeven plaats zal verspringen.</para>
+</sect3>
+
+<sect3 id="hdbk-op-parts-bookshelf-metainfo">
+<title>Additionele informatie over modules</title>
+<para>
+If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work. <guimenuitem>"About this work"</guimenuitem> opens a 
+window with lots of interesting information about the selected 
+work. <guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the work.  
+For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp">this 
+page</ulink> on the Crosswire Bible Society web site.
+</para>
+</sect3>
+
+<sect3 id="hdbk-op-parts-bookshelf-search">
+<title>Zoeken in modules</title> <para>
+You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one.  Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found <link linkend="hdbk-op-search">here</link>.
+</para>
+</sect3>
+
+<sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+<title>Werken met bladwijzers</title>
+<para>
+<tip><para>Drag &amp; Drop Werkt Hier</para></tip>
+Klik met de <mousebutton>rechter</mousebutton> muisknop op de bladwijzer 
+categorie van de Boekenplank en kies <guimenuitem>"Maak een nieuwe map 
+aan"</guimenuitem> om een nieuwe submap in de bladwijzers te maken. U kunt 
+de normale drag &amp; drop functies gebruiken om verwijzingen naar verzen in 
+leesvensters of zoekresultaten naar de bladwijzer map te slepen en om 
+bladwijzers opnieuw te schikken in de mappen.</para>
+
+<para>U kunt ook bladwijzers van andere mensen importeren of bladwijzers 
+exporteren om ze te delen. Om dit te doen opent u het <guimenu>context 
+menu</guimenu> van de bladwijzer map zoals hierboven is beschreven en kiest 
+u <guimenuitem>"Exporteer bladwijzers"</guimenuitem>. Dit zal een 
+dialoogvenster oproepen om de verzameling bladwijzers op te slaan. U kunt 
+bladwijzers importeren op een vergelijkbare manier.</para>
+
+<para>U kunt ook met de <mousebutton>rechter</mousebutton> muisknop op mappen en 
+bladwijzers klikken om hun namen en omschrijvingen te wijzigen.</para>
+</sect3>
+</sect2>
+
+<sect2 id="hdbk-op-parts-mag">
+<title>Het Vergrootglas</title>
+<para>Dit kleine venster in de linkeronderhoek van het &bibletime; venster is 
+volledig passief. Telkens wanneer uw muisaanwijzer over een stukje tekst met 
+extra informatie gaat (bijv. Strong-nummers), dan wordt deze extra 
+informatie weergegeven in het Vergrootglas en niet in de tekst zelf. Probeer 
+het maar eens uit.</para>
+</sect2>
+
+
+<sect2 id="hdbk-op-parts-desk">
+<title>Het Bureau</title>
+<para>
+Het Bureau is waar het echte werk met &bibletime; plaatsvindt. Hier kunt u 
+modules van de Boekenplank openen, lezen, <link 
+linkend="hdbk-op-search">doorzoeken</link> en zelfs uw aantekeningen opslaan 
+in de persoonlijke commentaar module (zie <link 
+linkend="hdbk-op-parts-desk-write">hieronder</link>).</para>
+
+<sect3 id="hdbk-op-parts-desk-read">
+<title>Modules lezen</title> 
+<para>
+Zoals we al <link linkend="hdbk-op-parts-bookshelf-open">gezien</link> 
+hebben, kunt u de te lezen modules simpelweg openen door te klikken op hun 
+symbool in de Boekenplank. Een leesvenster zal worden geopend in het Bureau 
+gebied. Ieder leesvenster heeft een werkbalk. Hier kunt u gereedschappen 
+vinden om te navigeren in de module waarin dit leesvenster is verbonden, 
+alsmede history knoppen zoals u die kent vanuit uw internet browser.</para>
+</sect3>
+
+<sect3 id="hdbk-op-parts-desk-placement">
+<title>Plaatsing van leesvensters</title> 
+<para>
+Natuurlijk kunt u meerdere modules tegelijkertijd openen. Er zijn 
+verschillende mogelijkheden om leesvensters op het Bureau te 
+rangschikken. Kijk a.u.b. bij het item <guimenu>Venster</guimenu> in het 
+hoofdmenu. Hier kunt u zien dat u de plaatsing van de leesvensters helemaal 
+zelf kunt regelen, of dat u de plaatsing automatisch door &bibletime; kunt 
+laten afhandelen. Om dit te bereiken, moet u eerst &eacute;&eacute;n van de 
+automatische rangschikkingen kiezen die beschikbaar zijn in 
+<menuchoice><guimenu>Venster</guimenu><guimenuitem>Rangschikking van 
+vensters</guimenuitem></menuchoice>. Probeer het maar gewoon uit, het is 
+simpel en het werkt.
+</para>
+</sect3>
+
+<sect3 id="hdbk-op-parts-desk-write">
+<title>Uw eigen bijbelcommentaar bewerken</title> 
+<para>
+Om uw eigen commentaar over delen van de bijbel op te kunnen slaan, moet u 
+een bepaalde module uit de bibliotheek van de <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink> 
+installeren. Deze module heet "Personal commentary" (Persoonlijk 
+bijbelcommentaar).</para>
+<para>
+Als u het persoonlijk bijbelcommentaar opent door met de <mousebutton> 
+linker</mousebutton> muisknop te klikken op zijn symbool in de Boekenplank, 
+dan opent deze in leesmodus. U kunt niet bewerken in deze modus. Als u 
+notities in het persoonlijk bijbelcommentaar wenst te schrijven, dan moet u 
+deze module openen met uw <mousebutton>rechter</mousebutton> muisknop en 
+<guimenu>Bewerk deze module</guimenu> en dan <guimenuitem>Platte 
+tekst</guimenuitem>(broncode editor) of 
+<guimenuitem>HTML</guimenuitem>(simpele WYSIWYG-editor) kiezen.</para>
+
+<tip><para>Als <menuchoice><guimenu>Bewerk deze module</guimenu></menuchoice> niet 
+geactiveerd is, controleer dan of u schrijfrechten heeft in de bestanden van 
+het persoonlijk bijbelcommentaar.</para></tip>
+
+<tip><para>Drag&amp;drop werkt hier. Laat een verwijzing naar een vers los en de tekst 
+van het vers wordt ingevoegd.</para></tip>
+</sect3>
+
+</sect2>
+
+</sect1>
+
+
+<sect1 id="hdbk-op-search">
+<title>Zoeken in modules</title>
+
+<sect2 id="hdbk-op-search-intext">
+<title>Tekst zoeken in een geopend leesvenster</title>
+<para>
+You can look for a word or phrase in the open read window (e.g. the chapter 
+of a bible that you're reading)  just like you are used to from other 
+programs.  This function can be reached either by clicking with the 
+<mousebutton>right</mousebutton> mouse button and selecting 
+<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
+action="simul">&Ctrl;<keycap>F</keycap> </keycombo>. Read on to learn how 
+you can search in entire works.</para>
+</sect2>
+
+<sect2 id="hdbk-op-search-access">
+<title>De zoekdialoog benaderen</title>
+<para>
+You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol in the 
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in 
+work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
+work's names you can select more than one. Then follow the same procedure to 
+open the search dialog.  You will be searching in all of these works at the 
+same time.</para>
+<para>U kunt de zoekdialoog ook benaderen door te klikken op 
+<menuchoice><guimenu>Zoeken</guimenu></menuchoice> in het hoofdmenu en dan 
+de juiste gegevens te selecteren.</para>
+<para>Een derde mogelijkheid om zoekopdrachten te starten is door op het 
+zoeksymbool in een geopend leesvenster te klikken.</para>
+</sect2>
+
+<sect2 id="hdbk-op-search-config">
+<title>Configuratie van de zoekopdracht</title>
+<screenshot>
+<screeninfo>Het tabblad Opties in de dialoog Tekst Zoeken</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ss_searchopts.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect3 id="hdbk-op-search-config-works">
+<title>Modules selecteren</title>
+<para>At the top of the options tab you will find <guibutton>Choose</guibutton> 
+(works). If you would like to search in multiple works, click on this button 
+and you will be offered a menu where you can select the works you want to 
+search in.
+</para>
+</sect3>
+
+<sect3 id="hd-op-search-config-scope">
+<title>Zoekbereiken gebruiken</title>
+<para>You can narrow the scope of your search to certain parts of the Bible by 
+selecting one of the predefined scopes from the list in <guimenu>Search 
+scope</guimenu>. You can define your own search ranges by clicking the 
+<guibutton>Setup ranges</guibutton> button.</para>
+</sect3>
+
+<sect3 id="hd-op-search-config-syntax">
+<title>Introductie op de syntaxis van een eenvoudige zoekopdracht</title>
+<para>Enter search terms separated by spaces.  By default the search function will 
+return results that match any of the search terms (OR). To search for all 
+the terms separate the terms by AND.</para>
+<para>U kunt jokers gebruiken: '*' komt overeen met elke willekeurige reeks van 
+karakters, terwijl '?' overeenkomt met één willekeurig karakter. Het gebruik 
+van haakjes staat u toe om zoektermen te groeperen, bijv. '(Jezus OR Geest) 
+AND God'.</para>
+<para>To search text other than the main text, enter the text type followed by 
+':', and then the search term.  For example, to search for the Strong's 
+number H8077, use 'strong:H8077'.</para>
+<para>Beschikbare typen tekst:
+<table><tgroup cols="2">
+<thead><row><entry>Voorvoegsel</entry><entry>Betekenis</entry></row></thead>
+<tbody>
+<row><entry>Koptekst:</entry><entry>doorzoekt kopteksten</entry></row>
+<row><entry>voetnoot:</entry><entry>doorzoekt voetnoten</entry></row>
+<row><entry>strong:</entry><entry>doorzoekt Strong-nummering</entry></row>
+<row><entry>morph:</entry><entry>doorzoekt morfologische codes</entry></row>
+</tbody></tgroup></table></para>
+<para>BibleTime gebruikt de Lucene zoekmachine om uw zoekopdrachten uit te 
+voeren. Het heeft vele geavanceerde functies, waarover u hier meer kunt 
+lezen: <ulink 
+url="http://lucene.apache.org/java/docs/queryparsersyntax.html">http://lucene.apache.org/java/docs/queryparsersyntax.html</ulink></para>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="hdbk-op-search-results">
+<title>Zoekresultaten</title>
+<para>
+Here you can see how many instances of the search string were found, sorted 
+by works.  Clicking on a work with the <mousebutton>right</mousebutton> 
+mouse button allows you to copy, save, or print all verses that were found 
+in a certain work at once. This also works when you click on one or more of 
+the references to copy, save or print them. Clicking on a particular 
+reference opens that verse up in context in the preview window below.</para>
+
+<tip><para>Sleep een bijbelverwijzing en laat die los op een symbool van een module op 
+de Boekenplank om de module op dat vers in een nieuw leesvenster te openen.</para></tip>
+<tip><para>Sleep een bijbelverwijzing en laat die vallen op een geopend leesvenster en 
+die zal verspringen naar dat vers.</para></tip>
+<tip><para>Selecteer bijbelverwijzingen en sleep ze naar de Boekenplank om bladwijzers 
+te maken.</para></tip>
+
+<sect3 id="hdbk-op-search-analysis">
+<title>Analyse van zoekresultaten</title>
+<para>Click on <guibutton>Search analysis</guibutton> to open the search analysis 
+display.  This gives a simple graphic analysis of the number of instances 
+the search string was found in each book of the Bible, and you can also save 
+the analysis.</para>
+
+<screenshot>
+<screeninfo>Zoekanalyse Dialoog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="ss_searchanal.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+</sect2>
+</sect1>
+
+
+
+<sect1 id="hdbk-op-bookshelfmanager">
+<title>De <guimenuitem>Boekenplank Manager</guimenuitem></title>
+
+<para>De <guimenuitem>Boekenplank Manager</guimenuitem> is een gereedschap om uw 
+Boekenplank te beheren. U kunt nieuwe modules installeren op uw Boekenplank 
+en bestaande modules bijwerken of verwijderen van uw Boekenplank. Ga er naar 
+toe door te klikken op 
+<menuchoice><guimenu>Instellingen</guimenu><guimenuitem>Boekenplank 
+Manager</guimenuitem></menuchoice> in het hoofdmenu.</para>
+
+<sect2 id="hdbk-op-bookshelfmanager-path">
+<title>Het instellen van Boekenplank bestandspad(en)</title>
+
+<para>Hier kunt u opgeven waar &bibletime; uw Boekenplank mag opslaan op de harde 
+schijf. U kunt hem zelfs opslaan in meerdere directories. De standaard is 
+"~/.sword/".</para>
+
+<tip><para>Als u een Sword CD heeft, en u wilt de modules niet installeren op de harde 
+schijf, maar direct vanaf de CD gebruiken, dan kunt u het bestandspad naar 
+de CD toevoegen als &eacute;&eacute;n van uw Boekenplank bestandspaden. Als 
+u &bibletime; start zal het alle modules op de CD laten zien als die 
+aanwezig is.</para></tip>
+</sect2>
+
+<sect2 id="hdbk-op-bookshelfmanager-installupdate">
+<title>Modules installeren/bijwerken</title>
+
+<para>Met deze voorziening kunt u contact leggen met een opslagplaats (Engels: 
+repository) van modules (een zogeheten "bibliotheek"), en &eacute;&eacute;n 
+of meerdere modules overhevelen naar uw lokale Boekenplank. Deze 
+bibliotheken kunnen lokaal zijn (bijv. een Sword CD) of extern 
+(bijv. Crosswire's online opslagplaats van Sword modules of een andere 
+website die Sword modules aanbiedt). U kunt de bibliotheken beheren met 
+<guibutton>Voeg bibliotheek toe</guibutton> en <guibutton>Verwijder 
+bibliotheek</guibutton>.</para>
+
+<para>Om het proces van installeren of bijwerken te starten kiest u een 
+bibliotheek waarmee u verbinding wilt zoeken en een lokaal bestandspad naar 
+een Boekenplank om de module(s) naar toe te installeren. Klik dan op 
+<guibutton>Verbinden met bibliotheek</guibutton>. &bibletime; zal de inhoud 
+van de bibliotheek scannen en een lijst presenteren van modules die u aan uw 
+Boekenplank kunt toevoegen of die reeds ge&iuml;nstalleerd zijn, maar 
+bijgewerkt kunnen worden omdat er een nieuwe versie beschikbaar is in de 
+bibliotheek. U kunt dan alle modules aanvinken die u wilt installeren of 
+bijwerken en dan klikken op <guibutton>Installeer modules</guibutton>. Ze 
+zullen dan overgeheveld worden naar uw Boekenplank.
+</para>
+</sect2>
+
+<sect2 id="hdbk-op-bookshelfmanager-remove">
+<title>Module(s) verwijderen</title>
+
+<para>Deze voorziening stelt u in staat om &eacute;&eacute;n of meerdere modules 
+van uw Boekenplank te verwijderen om schijfruimte vrij te maken. Vink 
+simpelweg de items aan die u wilt verwijderen en klik op 
+<guibutton>Verwijder modules</guibutton>.
+</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="hdbk-op-output">
+<title>Exporteren en Printen</title>
+
+<para>
+Op veel plaatsen kunt u een context menu openen door op de 
+<mousebutton>rechter</mousebutton> muisknop te klikken. Afhankelijk van de 
+context zal dat het <guimenuitem>Selecteren</guimenuitem>, 
+<guimenuitem>Kopi&euml;ren</guimenuitem> (naar het klembord), 
+<guimenuitem>Opslaan</guimenuitem> of <guimenuitem>Afdrukken</guimenuitem> 
+van tekst mogelijk maken. Dit werkt bijvoorbeeld in de leesvensters, wanneer 
+u klikt op de normale tekst of op een verwijzing naar een vers, of wanneer u 
+in de pagina met zoekresultaten klikt op een module of op &eacute;&eacute;n 
+of meerdere verwijzingen naar verzen. Het is behoorlijke rechttoe rechtaan, 
+dus probeer het maar gewoon uit.</para>
+
+<para>Afdrukken vanuit &bibletime; is redelijk elementair en is bedoelt als een 
+hulpfunctie. Als u een document of presentatie samenstelt die tekst bevat 
+uit &bibletime; modules, dan raden we u aan om een programma voor 
+presentaties of tekstbewerkingen te gebruiken om uw document op te maken en 
+niet om direct vanuit &bibletime; af te drukken.
+</para>
+
+</sect1>
+
+</chapter>
+
+
+
+

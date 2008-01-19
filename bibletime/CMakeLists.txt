@@ -130,6 +130,20 @@ ADD_CUSTOM_TARGET("messages_default"
 ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
+######################################################
+# Update handbook catalog files (this is the basis for the translator's work)
+ADD_CUSTOM_TARGET("handbook")
+ADD_CUSTOM_TARGET("handbook_translations"
+	COMMAND po4a -v --no-backups -k 0 docs/handbook/handbook_po4a.conf
+	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+ADD_DEPENDENCIES("handbook" "handbook_translations")
+# Update howto catalog files (this is the basis for the translator's work)
+ADD_CUSTOM_TARGET("howto")
+ADD_CUSTOM_TARGET("howto_translations"
+	COMMAND po4a -v --no-backups -k 0 docs/howto/howto_po4a.conf
+	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+ADD_DEPENDENCIES("howto" "howto_translations")
+######################################################
 
 ######################################################
 # "make uninstall" target; see http://www.cmake.org/Wiki/CMake_FAQ#Can_I_do_.22make_uninstall.22_with_CMake.3F

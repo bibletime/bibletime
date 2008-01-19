@@ -1,0 +1,202 @@
+<chapter id="hdbk-config"><title>&bibletime; configureren</title>
+
+<para>In deze sectie vindt u een beschrijving van de verschillende mogelijkheden 
+om &bibletime; te configureren: De<link linkend="hdbk-config-bt">Configureer 
+BibleTime </link> Dialoog en de <link 
+linkend="hdbk-config-toolbar">Configureer Werkbalken </link> Dialoog. Beiden 
+kunnen benaderd worden via <guimenu>Instellingen</guimenu> in het hoofdmenu.</para>
+
+<sect1 id="hdbk-config-bt"><title>Configureer BibleTime Dialoog</title>
+
+	<para>De &bibletime; gebruikersinterface kan op vele manieren aangepast worden, 
+afhankelijk van uw behoeften. U kunt de configuratiedialoog benaderen door 
+<menuchoice><guimenu>Instellingen</guimenu></menuchoice> 
+<guimenuitem>Configureer &bibletime;</guimenuitem> te kiezen.</para>
+
+	<sect2 id="hdbk-config-bt-display"><title><guimenu>Display</guimenu></title>
+	
+		<para>Het gedrag bij het opstarten kan aangepast worden aan de gebruiker. Maak een 
+keuze uit de volgende opties:
+			<itemizedlist>
+				<listitem><para>Toon tip van de dag</para></listitem>
+				<listitem><para>Toon opstartlogo</para></listitem>
+			</itemizedlist>
+		</para>
+		<para>Display templates define the rendering of text (colors, size etc.). Various 
+built-in templates are available.  If you select one, you will see a preview 
+on the right pane.</para>
+
+	</sect2>
+	
+	<sect2 id="hdbk-config-bt-languages"><title><guimenu>Languages</guimenu></title>
+	
+	<para>Hier kunt u specificeren welke talen gebruikt moeten worden voor de 
+bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u 
+voelt zich helemaal thuis.</para>
+	
+	<para>By default, &bibletime; uses the &kde; general display font which can be 
+specified in the &kcontrolcenter;. You can override this font if 
+neccessary.  Some languages require special fonts to be displayed correctly, 
+and this dialog allows you to specify a custom font for each language.</para>
+	
+	<mediaobject><imageobject>
+	<imagedata fileref="ss_configfonts.png" format="PNG"/>
+	</imageobject>
+	<textobject><phrase>Options Dialog - fonts</phrase></textobject>
+	<caption><para>De Opties dialoog - Lettertypen</para></caption>
+	</mediaobject>
+
+		<para>&bibletime; can now use all fonts supported by KDE/QT.  As long as the works 
+you are interested in display correctly nothing needs to be done here.  If a 
+work only displays as a series of question marks (??????) or empty boxes, 
+then you know that the standard KDE display font does not contain the 
+characters used in this work.</para>
+	
+		<para>To correct this, choose this work's language from the drop down menu.  
+Select the use custom font checkbox.  Now select a font.  For example, a 
+font that supports many languages is Code2000. If no installed font can 
+display the work you are interested in, try installing the &kde; 
+localization package for that language.</para>
+		
+		<sect3 id="hdbk-config-bt-addfont"><title>Lettertypen installeren</title>
+			<para>Detailed font installation instructions are outside the scope of this 
+handbook.  &kde;'s <ulink url="help:/kcontrol/index.html">KControl 
+Center</ulink> contains an excellent and easy to use font installation 
+module.  Please read <ulink url="help:/kcontrol/kcmfontinst/index.html"> its 
+documentation</ulink>. For further information you might want to refer to 
+the <ulink 
+url="http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4"> 
+Unicode HOWTO</ulink>.</para>
+	
+			<tip><para>Als je een klein lettertype gebruikt, zoals Clearlyu (ongeveer 22KB), dan 
+zal &bibletime; sneller werken dan met een groot font, zoals <trademark 
+class="registered"> Bitstream Cyberbit</trademark> (ongeveer 12MB).</para></tip>
+		</sect3>
+
+		<sect3 id="hdbk-config-bt-ob-font"><title>Lettertypen verkrijgen</title>
+			<para>Lettertypen kunnen worden verkregen uit een aantal bronnen:</para>
+			<itemizedlist>
+			<listitem><para>Uw Linux distributie.</para></listitem>
+			<listitem><para>De lokalisatiepakketten (localization packages) in uw distributie.</para></listitem>
+			<listitem><para>Een bestaande <trademark class="registered">Microsoft Windows</trademark> 
+installatie op dezelfde computer.</para></listitem>
+			<listitem><para>Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream.</para></listitem>
+			<listitem><para>Online verzamelingen van lettertypen.</para></listitem>
+			</itemizedlist>
+	
+			<para>Unicode fonts support more characters than other fonts, and some of these 
+fonts are available at no charge.  None of available fonts includes all 
+characters defined in the Unicode standard, so you may want to use different 
+fonts for different languages.</para>
+			
+			<table>
+				<title>Unicode lettertypen</title>
+				<tgroup cols="2">
+				<tbody>
+				
+				<row><entry><ulink url="http://home.att.net/~jameskass/CODE2000.ZIP">Code2000</ulink></entry>
+				<entry>Misschien het beste gratis Unicode lettertype, welke een groot aantal 
+karakters ondersteunt.</entry></row>
+				
+				<row><entry><ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+				SIL unicode fonts</ulink></entry>
+				<entry>Uitstekende Unicode lettertypen van het Summer Institute of Linguistics.</entry></row>
+	
+				<row><entry><ulink url="http://www.nongnu.org/freefont/">FreeFont</ulink></entry>
+				<entry>Een nieuw initiatief voor gratis Unicode lettertypen.</entry></row>
+				
+				<row><entry><ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">Crosswire's font directory</ulink></entry>
+				<entry>Verscheidene lettertypen zijn beschikbaar op de ftp pagina van de Crosswire 
+Bible Society.</entry></row>
+	
+				<row><entry><ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">Bitstream CyberBit</ulink></entry>
+				<entry>Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen 
+door zijn omvang.</entry></row>
+	
+				<row><entry>Clearlyu</entry>
+				<entry>Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse 
+en Thaise karakters.</entry></row>
+				
+				<row><entry><ulink url="http://bibliofile.mc.duke.edu/gww/fonts/Unicode.html">Caslon, Monospace, Cupola, Caliban</ulink></entry>
+				<entry>Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de 
+bijbehorende website.</entry></row>
+				</tbody>
+				</tgroup>
+			</table>
+				
+			<para>Er zijn lijsten van goede Unicode lettertypen op het internet, zoals die van 
+Christoph Singer (<ulink 
+url="http://www.slovo.info/unifonts.htm">Multilingual Unicode TrueType Fonts 
+in the Internet</ulink>), of die van Alan Wood (<ulink 
+url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
+ranges and the Unicode fonts that support them</ulink>).
+			</para>
+			
+		</sect3>
+	</sect2>
+	
+
+	<sect2 id="hdbk-config-bt-desk"><title><guimenu>Desk</guimenu></title>
+	
+		<para>Vele functies die door de Sword backend aangeboden worden, kunnen nu 
+aangepast worden in &bibletime; Deze functies zijn rechts in de dialoog 
+gedocumenteerd. U heeft ook de mogelijkheid om standaardmodules op te geven 
+die gebruikt moeten worden wanneer niet een bepaalde module is 
+gespecificeerd in een verwijzing. Een voorbeeld: De standaardbijbel wordt 
+gebruikt om de inhoud van kruisverwijzingen in de bijbel weer te geven. Als 
+u daar met uw muis over heen gaat, zal het vergrootglas de inhoud laten zien 
+van de verzen waarnaar verwezen wordt, zoals deze vermeld staan in de 
+standaardbijbel.</para>
+		
+	</sect2>
+	
+	<sect2 id="hdbk-config-bt-hotkeys"><title><guimenu>HotKeys</guimenu></title>
+	
+		<para>Sneltoetsen zijn speciale toetsencombinaties die gebruikt kunnen worden in 
+plaats van menu items en iconen. Een aantal van &bibletime;'s commando's 
+hebben voorgeprogrammeerde sneltoetsen (zie <link 
+linkend="hdbk-reference-hotkeys">deze sectie</link> voor een volledige 
+lijst). Aan de meeste van &bibletime;'s commando's kunnen hier sneltoetsen 
+worden toegewezen. Dit is erg handig om snel toegang te hebben tot de 
+functies die u het meest nodig heeft.</para>
+	
+	</sect2>
+
+</sect1>
+	
+		
+	<sect1 id="hdbk-config-toolbar"><title>Configureer Werkbalken dialoog</title>
+	<para>U kunt de werkbalk aanpassen naar uw behoeften. Gebruik het volgende item in 
+het hoofdmenu:
+	<variablelist>
+		<varlistentry>
+			<term><menuchoice>
+			<guimenu>
+				<inlinemediaobject><imageobject>
+					<imagedata fileref="i_configuretoolbars.png" format="PNG"/></imageobject>
+				</inlinemediaobject>Settings
+			</guimenu>
+			<guimenuitem>Configure toolbars</guimenuitem></menuchoice></term> 
+			<listitem><para>Werkbalken configureren</para></listitem>
+		</varlistentry>
+	</variablelist>
+	</para>
+	<para>You will see this dialog, which allows adding and removing buttons from the 
+main toolbar of &bibletime;. The order of the buttons can also be changed.
+	</para>
+	<mediaobject>
+		<imageobject>
+		<imagedata fileref="ss_configtoolbar.png" format="PNG"/>
+		</imageobject>
+		<textobject><phrase>Toolbar configuration dialog</phrase></textobject>
+		<caption><para>De configuratiedialoog van de werkbalk</para></caption>
+	</mediaobject>
+	<para>Gebruik de vier knoppen in het midden van het venster om knoppen van en naar 
+de werkbalk te verplaatsen of om ze op de werkbalk te sorteren zoals u dat 
+wenst.
+	</para>
+	<para>Zie <link linkend="hdbk-reference-menus-settings-toolbars">deze 
+sectie</link> voor meer informatie.</para>
+	</sect1>
+
+</chapter>

@@ -1,86 +1,528 @@
-# SOME DESCRIPTIVE TITLE.
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2007-04-17 19:46+0000\n"
+"POT-Creation-Date: 2008-01-19 18:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-xml2pot; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING"
 
-#. Tag: title
-#: hdbk-operation.docbook:1
-#, no-c-format
+# type: Content of: <chapter><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:1
+msgid "Configuring &bibletime;"
+msgstr ""
+
+# type: Content of: <chapter><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:3
+msgid ""
+"In this section you find a description of the different possibilities to "
+"configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
+"BibleTime Dialog </link> and the <link "
+"linkend=\"hdbk-config-toolbar\">Configure Toolbars</link> dialog. Both can "
+"be accessed under <guimenu>Settings</guimenu> in the main menu."
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:8
+msgid "Configure BibleTime Dialog"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:10
+msgid ""
+"The &bibletime; user interface can be customized in many ways depending on "
+"your needs. You can access the configuration dialog by selecting "
+"<menuchoice><guimenu>Settings</guimenu></menuchoice> <guimenuitem>Configure "
+"&bibletime;</guimenuitem>."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:17
+msgid "The startup behavior can be customized. Select from the following options:"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:19
+msgid "Show tip of the day"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:20
+msgid "Show startup logo"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:23
+msgid ""
+"Display templates define the rendering of text (colors, size etc.). Various "
+"built-in templates are available.  If you select one, you will see a preview "
+"on the right pane."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:30
+msgid ""
+"Here you can specify which language should be used for the biblical "
+"booknames. Set this to your native language, if it is available, and you'll "
+"feel at home."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:33
+msgid ""
+"By default, &bibletime; uses the &kde; general display font which can be "
+"specified in the &kcontrolcenter;. You can override this font if "
+"neccessary.  Some languages require special fonts to be displayed correctly, "
+"and this dialog allows you to specify a custom font for each language."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
+#: docs/handbook/unicode/en/hdbk-config.docbook:41
+msgid "<phrase>Options Dialog - fonts</phrase>"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:42
+msgid "The Options dialog - Fonts."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:45
+msgid ""
+"&bibletime; can now use all fonts supported by KDE/QT.  As long as the works "
+"you are interested in display correctly nothing needs to be done here.  If a "
+"work only displays as a series of question marks (??????) or empty boxes, "
+"then you know that the standard KDE display font does not contain the "
+"characters used in this work."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:51
+msgid ""
+"To correct this, choose this work's language from the drop down menu.  "
+"Select the use custom font checkbox.  Now select a font.  For example, a "
+"font that supports many languages is Code2000. If no installed font can "
+"display the work you are interested in, try installing the &kde; "
+"localization package for that language."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:57
+msgid "Installing fonts"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:58
+msgid ""
+"Detailed font installation instructions are outside the scope of this "
+"handbook.  &kde;'s <ulink url=\"help:/kcontrol/index.html\">KControl "
+"Center</ulink> contains an excellent and easy to use font installation "
+"module.  Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> "
+"its documentation</ulink>. For further information you might want to refer "
+"to the <ulink "
+"url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4\"> "
+"Unicode HOWTO</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:66
+msgid ""
+"If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
+"faster than with a large font like <trademark class=\"registered\"> "
+"Bitstream Cyberbit</trademark> (about 12Mb)."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:71
+msgid "Obtaining Fonts"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:72
+msgid "Fonts can be obtained from a number of sources:"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:74
+msgid "Your Linux distribution."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:75
+msgid "Your distribution's localization packages."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:76
+msgid ""
+"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
+"installation on the same computer."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:77
+msgid "A font collection, such as are available from Adobe or Bitstream."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:78
+msgid "Online font collections."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:81
+msgid ""
+"Unicode fonts support more characters than other fonts, and some of these "
+"fonts are available at no charge.  None of available fonts includes all "
+"characters defined in the Unicode standard, so you may want to use different "
+"fonts for different languages."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:87
+msgid "Unicode Fonts"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:92
+msgid "Perhaps the best free Unicode font, covering a wide range of characters."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:96
+msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:99
+msgid "A new free unicode font initiative."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:102
+msgid "Several fonts available from the Crosswire Bible Society Ftp site."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:105
+msgid ""
+"Covers almost the entire range of Unicode, but might slow &bibletime; down "
+"because of its size."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:107
+msgid "Clearlyu"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:108
+msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-config.docbook:111
+msgid "Partial coverage, see information on linked site."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:116
+msgid ""
+"There are good Unicode font lists on the net, as the one by Christoph Singer "
+"(<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood (<ulink "
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:129
+msgid ""
+"Many features provided by the Sword backend can now be customized in "
+"&bibletime;. These features are documented right in the dialog. You also "
+"have the possibility to specify standard works that should be used when no "
+"specific work is specified in a reference. An example: The standard Bible is "
+"used to display the content of crossreferences in the Bible. When you hover "
+"over then, the Mag will show the content of the verses referred to, "
+"according to the standard Bible you specified."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:140
+msgid ""
+"HotKeys are special key commands that can be used in the place of the menu "
+"items and icons. A number of &bibletime;'s commands have predefined HotKeys "
+"(see <link linkend=\"hdbk-reference-hotkeys\">this section</link> for a "
+"complete listing). Most of &bibletime;'s commands can be assigned HotKeys "
+"here. This is very helpful to quickly access the functions that you need the "
+"most."
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-config.docbook:151
+msgid "Configure Toolbars dialog"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:152 docs/handbook/unicode/en/hdbk-reference.docbook:248
+msgid ""
+"You can adapt the toolbar to your needs. Please use the following entry in "
+"the main menu:"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:162 docs/handbook/unicode/en/hdbk-reference.docbook:255
+msgid "Configure toolbars"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:166
+msgid ""
+"You will see this dialog, which allows adding and removing buttons from the "
+"main toolbar of &bibletime;. The order of the buttons can also be changed."
+msgstr ""
+
+# type: Content of: <chapter><sect1><mediaobject><textobject>
+#: docs/handbook/unicode/en/hdbk-config.docbook:173
+msgid "<phrase>Toolbar configuration dialog</phrase>"
+msgstr ""
+
+# type: Content of: <chapter><sect1><mediaobject><caption><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:174
+msgid "The Toolbar configuration dialog."
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:176
+msgid ""
+"Use the 4 buttons in the middle of the window to move buttons to the "
+"toolbar, away from the toolbar or to sort them on the toolbar according to "
+"your preference."
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-config.docbook:179
+msgid ""
+"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+"section</link> for further information."
+msgstr ""
+
+# type: Content of: <chapter><title>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:1
+msgid "Introduction"
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:3
+msgid "About BibleTime"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:5
+msgid ""
+"&bibletime; is a powerful Bible study tool written for the &kde; environment "
+"on the Linux operating system. It is based on the <ulink "
+"url=\"http://www.crosswire.org/sword\">Sword</ulink> library, which provides "
+"the back-end functionality for &bibletime;, such as viewing Bible text, "
+"searching etc. Sword is the flagship product of the <ulink "
+"url=\"http://www.crosswire.org\">Crosswire Bible Society</ulink>."
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:12
+msgid ""
+"&bibletime; is designed to be used with works encoded in one of the formats "
+"supported by the Sword project.  Complete information on the supported "
+"document formats can be found in the <ulink "
+"url=\"http://www.crosswire.org/sword/develop/index.jsp\"> developers "
+"section</ulink> of the Sword Project, Crosswire Bible Society."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:18
+msgid "Available works"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:21
+msgid ""
+"Over 200 documents in 50 languages are available from the <ulink "
+"url=\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These "
+"include:"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:26
+msgid "Bibles"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:29
+msgid ""
+"The full Bible text, with optional things like Strong's Numbers, headings "
+"and/or footnotes in the text. Bibles are available in many languages, and "
+"include not only modern versions, but also ancient texts like the Codex "
+"Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
+"is the most advanced section in the library of the Sword project."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:35
+msgid "Books"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:37
+msgid ""
+"Books available include &quot;Imitation of Christ&quot;, &quot;Enuma "
+"Elish&quot;, and &quot;Josephus: The Complete Works&quot;"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:43
+msgid "Commentaries"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:46
+msgid ""
+"Commentaries available include classics like John Wesley's \"Notes on the "
+"Bible\", Matthew Henry`s commentary and Luther's \"Commentary on "
+"Galatians.\" With the <emphasis>Personal</emphasis> commentary you can <link "
+"linkend=\"hdbk-op-parts-desk-write\">record your own personal notes</link> "
+"to sections of the Bible."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:52
+msgid "Daily devotionals"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:54
+msgid ""
+"Many people appreciate these daily portions from God's word. Available works "
+"include Daily Light on the Daily Path, and the Losungen."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:60
+msgid "Lexicons/Dictionaries"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:63
+msgid ""
+"Lexicons available include: Robinson's Morphological Analysis Codes, "
+"Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible "
+"Encyclopedia. Dictionaries available include Strong's Hebrew Bible "
+"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
+"Dictionary of the English Language 1913, Nave's Topical Bible."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:73
+msgid "Motivation"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:75
+msgid ""
+"Our desire is to serve God, and to do our part to help others grow in their "
+"relationship with Him.  We have striven to make this a powerful, quality "
+"program, and still make it simple and intuitive to operate. It is our desire "
+"that God be praised, as He is the source of all good things."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><blockquote><attribution>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:81
+msgid "James 1:17, NASB"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><blockquote><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:82
+msgid ""
+"Every good thing given and every perfect gift is from above, coming down "
+"from the Father of lights, with whom there is no variation or shifting "
+"shadow."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-intro.docbook:87
+msgid "God bless you as you use this program."
+msgstr ""
+
+# type: Content of: <chapter><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:1
 msgid "Program operation"
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:4
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:4
 msgid "Program overview"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:6
-#, no-c-format
-msgid ""
-"This is how a typical &bibletime; session looks like: <mediaobject> "
-"<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\"/> </"
-"imageobject> <textobject> <phrase>The &bibletime; application window</"
-"phrase> </textobject> </mediaobject> You can easily see the different parts "
-"of the application. The Bookshelf on the left side is used to open works and "
-"to manage your bookmarks. The little \"Mag\" window below the Bookshelf is "
-"used to display extra information that is embedded in documents. When you "
-"move your mouse over a footnote marker, for example, then the Mag will "
-"display the actual content of the footnote. The toolbar gives you quick "
-"access to important functions, and the Desk on the right side is where you "
-"do your real work."
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:6
+msgid "This is how a typical &bibletime; session looks like:"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:17
-#, no-c-format
+# type: Content of: <chapter><sect1><para><mediaobject><textobject>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:13
+msgid "<phrase>The &bibletime; application window</phrase>"
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:16
+msgid ""
+"You can easily see the different parts of the application. The Bookshelf on "
+"the left side is used to open works and to manage your bookmarks. The little "
+"\"Mag\" window below the Bookshelf is used to display extra information that "
+"is embedded in documents. When you move your mouse over a footnote marker, "
+"for example, then the Mag will display the actual content of the "
+"footnote. The toolbar gives you quick access to important functions, and the "
+"Desk on the right side is where you do your real work."
+msgstr ""
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:17
 msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:21
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:21
 msgid "Parts of the &bibletime; application window"
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:24
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:24
 msgid "The Bookshelf"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:25
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:25
 msgid ""
 "The Bookshelf lists all installed works, sorted by category and language. It "
 "also has a category called \"Bookmarks\". This is where you can store and "
 "access your own bookmarks."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:29 hdbk-operation.docbook:81
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:29 docs/handbook/unicode/en/hdbk-operation.docbook:81
 msgid "Reading works"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:30
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:30
 msgid ""
 "To open a work from the bookshelf for reading, simply click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -89,15 +531,13 @@ msgid ""
 "reading. A read window will appear in the Desk area."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:33 hdbk-operation.docbook:59
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:33 docs/handbook/unicode/en/hdbk-operation.docbook:59
 msgid "Drag &amp; Drop Works Here"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:34
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:35
 msgid ""
 "If you are reading a certain work, and want to open another work at the "
 "passage you are reading, you can use a shortcut. Simply click with the "
@@ -108,91 +548,82 @@ msgid ""
 "then it will jump to the specified location."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:40
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:40
 msgid "Additional information about works"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:41
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:42
 msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
 "relevant for this work. <guimenuitem>\"About this work\"</guimenuitem> opens "
-"a window with lots of interesting information about the selected work. "
-"<guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog for "
-"encrypted documents, where you can enter the unlock key to access the work. "
-"For additional information on locked works, please see <ulink url=\"http://"
-"www.crosswire.org/sword/modules/aboutlocked.jsp\">this page</ulink> on the "
-"Crosswire Bible Society web site."
+"a window with lots of interesting information about the selected "
+"work. <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog "
+"for encrypted documents, where you can enter the unlock key to access the "
+"work.  For additional information on locked works, please see <ulink "
+"url=\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">this "
+"page</ulink> on the Crosswire Bible Society web site."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:49 hdbk-operation.docbook:115
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:49 docs/handbook/unicode/en/hdbk-operation.docbook:115
 msgid "Searching in works"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:49
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:50
 msgid ""
-"You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
-"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
-"you can select more than one. Then follow the same procedure to open the "
-"search dialog. You will be searching in all of these documents. A complete "
-"description of the operation of the search features can be found <link "
-"linkend=\"hdbk-op-search\">here</link>."
+"You can search in a work by clicking with the "
+"<mousebutton>right</mousebutton> mouse button on its symbol and selecting "
+"<guimenuitem>\"Search in work(s)\"</guimenuitem>. By pressing &Shift; and "
+"clicking on other works you can select more than one.  Then follow the same "
+"procedure to open the search dialog. You will be searching in all of these "
+"documents. A complete description of the operation of the search features "
+"can be found <link linkend=\"hdbk-op-search\">here</link>."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:57
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:57
 msgid "Working with bookmarks"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:59
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:60
 msgid ""
 "Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
-"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
-"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
-"&amp; drop functions to drag verse references from read windows or search "
-"results to the bookmark folder, and to rearrange bookmarks between folders."
+"category of the bookshelf and select <guimenuitem>\"Create new "
+"folder\"</guimenuitem> to create a new bookmark subfolder. You can use "
+"normal drag &amp; drop functions to drag verse references from read windows "
+"or search results to the bookmark folder, and to rearrange bookmarks between "
+"folders."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:63
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:63
 msgid ""
 "You can also import bookmarks from other people or export bookmarks to share "
 "them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
-"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
-"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
-"collection. You can import bookmarks in a similar way."
+"folder as described above, and select <guimenuitem>\"Export "
+"bookmarks\"</guimenuitem>. This will bring up a dialog box for you to save "
+"the bookmark collection. You can import bookmarks in a similar way."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:65
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:65
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton> on folders and "
 "bookmarks to change their names and descriptions."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:70
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:70
 msgid "The Mag(nifying glass)"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:71
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:71
 msgid ""
 "This little window in the lower left corner of the &bibletime; window is "
 "purely passive. Whenever your mouse cursor is located over some text with "
@@ -201,44 +632,39 @@ msgid ""
 "try it out."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:76
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:76
 msgid "The Desk"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:77
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:78
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
-"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
-"\">search</link> in them, and even save your annotations in the personal "
-"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
-"link>)."
+"open works from the Bookshelf, read them, <link "
+"linkend=\"hdbk-op-search\">search</link> in them, and even save your "
+"annotations in the personal commentary module (see <link "
+"linkend=\"hdbk-op-parts-desk-write\">below</link>)."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:82
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:83
 msgid ""
-"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
-"link>, you can open works for reading simply by clicking on their symbol in "
-"the Bookshelf. A read window will open in the Desk's area. Every read window "
-"has a toolbar. There you can find tools to navigate in the work that this "
-"read window is connected to, as well as history buttons like the ones that "
-"you know from your browser."
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already "
+"seen</link>, you can open works for reading simply by clicking on their "
+"symbol in the Bookshelf. A read window will open in the Desk's area. Every "
+"read window has a toolbar. There you can find tools to navigate in the work "
+"that this read window is connected to, as well as history buttons like the "
+"ones that you know from your browser."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:87
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:87
 msgid "Read window placement"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:88
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:89
 msgid ""
 "Of course, you can open multiple works at the same time. There are several "
 "possibilities for arranging the read windows on the desk. Please have a look "
@@ -246,132 +672,118 @@ msgid ""
 "that you can either control the placement of the read windows completely "
 "yourself, or have &bibletime; handle the placement automatically. To achieve "
 "this, you have to select one of the automatic placement modes available at "
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem></menuchoice>. Just try it out, it's simple and works."
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement "
+"mode</guimenuitem></menuchoice>. Just try it out, it's simple and works."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:94
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:94
 msgid "Editing your own commentary"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:95
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:96
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
-"install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
-"\"Personal commentary\"."
+"install a certain work from the library of the <ulink "
+"url=\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. This work "
+"is called \"Personal commentary\"."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:97
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:98
 msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
 "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
 "read mode. You will not be able to edit it in this mode. Should you wish to "
 "write annotations into the personal commentary, you have to open it with the "
 "<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
-"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
-"(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
-"editor)."
+"this work</guimenu> and then either <guimenuitem>Plain "
+"text</guimenuitem>(source code editor) or "
+"<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor)."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:101
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:101
 msgid ""
 "If <menuchoice><guimenu>Edit this work</guimenu></menuchoice> is "
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:105
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:105
 msgid ""
 "Drag&amp;drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:118
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:118
 msgid "Searching text in an open read window"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:119
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:120
 msgid ""
 "You can look for a word or phrase in the open read window (e.g. the chapter "
-"of a bible that you're reading) just like you are used to from other "
-"programs. This function can be reached either by clicking with the "
+"of a bible that you're reading)  just like you are used to from other "
+"programs.  This function can be reached either by clicking with the "
 "<mousebutton>right</mousebutton> mouse button and selecting "
-"<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
-"\"simul\">&Ctrl;<keycap>F</keycap> </keycombo>. Read on to learn how you can "
-"search in entire works."
+"<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo "
+"action=\"simul\">&Ctrl;<keycap>F</keycap> </keycombo>. Read on to learn how "
+"you can search in entire works."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:127
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:127
 msgid "Accessing the search dialog"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:128
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:129
 msgid ""
-"You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
-"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
-"&Shift; or &Ctrl; and clicking on other work's names you can select more "
-"than one. Then follow the same procedure to open the search dialog. You will "
-"be searching in all of these works at the same time."
+"You can search in a work by clicking with the "
+"<mousebutton>right</mousebutton> mouse button on its symbol in the "
+"<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in "
+"work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other "
+"work's names you can select more than one. Then follow the same procedure to "
+"open the search dialog.  You will be searching in all of these works at the "
+"same time."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:131
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:131
 msgid ""
 "You can also access the search dialog by clicking on "
 "<menuchoice><guimenu>Search</guimenu></menuchoice> from the main menu, and "
 "selecting the appropriate entry."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:132
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:132
 msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:136
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:136
 msgid "Search configuration"
 msgstr ""
 
-#. Tag: screeninfo
-#: hdbk-operation.docbook:138
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:138
 msgid "Search Text Dialog Options Tab"
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:147
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:147
 msgid "Selecting works"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:148
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:148
 msgid ""
 "At the top of the options tab you will find <guibutton>Choose</guibutton> "
 "(works). If you would like to search in multiple works, click on this button "
@@ -379,15 +791,13 @@ msgid ""
 "search in."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:153
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:153
 msgid "Using Search Scopes"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:154
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:154
 msgid ""
 "You can narrow the scope of your search to certain parts of the Bible by "
 "selecting one of the predefined scopes from the list in <guimenu>Search "
@@ -395,212 +805,182 @@ msgid ""
 "<guibutton>Setup ranges</guibutton> button."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:158
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:158
 msgid "Basic Search Syntax Introduction"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:159
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:159
 msgid ""
-"Enter search terms separated by spaces. By default the search function will "
+"Enter search terms separated by spaces.  By default the search function will "
 "return results that match any of the search terms (OR). To search for all "
 "the terms separate the terms by AND."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:160
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:160
 msgid ""
 "You can use wildcards: '*' matches any sequence of characters, while '?' "
 "matches any single character. The use of brackets allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:161
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:161
 msgid ""
 "To search text other than the main text, enter the text type followed by "
-"':', and then the search term. For example, to search for the Strong's "
+"':', and then the search term.  For example, to search for the Strong's "
 "number H8077, use 'strong:H8077'."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:162
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:162
 msgid "Available text types:"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:164
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:164
 msgid "Prefix"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:164
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:164
 msgid "Meaning"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:166
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:166
 msgid "heading:"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:166
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:166
 msgid "searches headings"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:167
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:167
 msgid "footnote:"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:167
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:167
 msgid "searches footnotes"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:168
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:168
 msgid "strong:"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:168
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:168
 msgid "searches Strong's Numbers"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:169
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:169
 msgid "morph:"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-operation.docbook:169
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:169
 msgid "searches morphology codes"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:171
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:171
 msgid ""
 "BibleTime uses the Lucene search engine to perform your searches. It has "
-"many advanced features, and you can read more about it here: <ulink url="
-"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
-"apache.org/java/docs/queryparsersyntax.html</ulink>"
+"many advanced features, and you can read more about it here: <ulink "
+"url=\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene.apache.org/java/docs/queryparsersyntax.html</ulink>"
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:178
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:178
 msgid "Search results"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:179
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:180
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
-"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
-"button allows you to copy, save, or print all verses that were found in a "
-"certain work at once. This also works when you click on one or more of the "
-"references to copy, save or print them. Clicking on a particular reference "
-"opens that verse up in context in the preview window below."
+"by works.  Clicking on a work with the <mousebutton>right</mousebutton> "
+"mouse button allows you to copy, save, or print all verses that were found "
+"in a certain work at once. This also works when you click on one or more of "
+"the references to copy, save or print them. Clicking on a particular "
+"reference opens that verse up in context in the preview window below."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:183
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:183
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:185
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:185
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:186
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:186
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:189
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:189
 msgid "Search result analysis"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:190
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:190
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
-"display. This gives a simple graphic analysis of the number of instances the "
-"search string was found in each book of the Bible, and you can also save the "
-"analysis."
+"display.  This gives a simple graphic analysis of the number of instances "
+"the search string was found in each book of the Bible, and you can also save "
+"the analysis."
 msgstr ""
 
-#. Tag: screeninfo
-#: hdbk-operation.docbook:195
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:195
 msgid "Search Analysis Dialog Box"
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:209
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:209
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:211
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:211
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
 "existing works from your Bookshelf. Access it by clicking "
-"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Bookshelf Manager</"
-"guimenuitem></menuchoice> in the main menu."
+"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Bookshelf "
+"Manager</guimenuitem></menuchoice> in the main menu."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:214
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:214
 msgid "Bookshelf path(s) setup"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:216
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:216
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the "
-"harddrive. You can even store it in multiple directories. Default is \"~/."
-"sword/\"."
+"harddrive. You can even store it in multiple directories. Default is "
+"\"~/.sword/\"."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:218
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:218
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the "
 "harddisk, but use them directly from the CD, then you can add the path to "
@@ -608,15 +988,13 @@ msgid ""
 "show all works on the CD if it is present."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:222
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:222
 msgid "Install/update work(s)"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:224
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:224
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -626,9 +1004,8 @@ msgid ""
 "<guibutton>Delete library</guibutton>."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:226
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:226
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -641,44 +1018,40 @@ msgid ""
 "Bookshelf."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:231
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:231
 msgid "Remove work(s)"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:233
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:233
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
 "<guibutton>Remove works</guibutton>."
 msgstr ""
 
-#. Tag: title
-#: hdbk-operation.docbook:241
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:241
 msgid "Exporting and Printing"
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:243
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:244
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
-"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
-"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
-"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
-"windows, when you click on the normal text or the verse reference, or in the "
-"search result page when you click on a work or one or more verse references. "
-"It is pretty straightforward, so just try it out."
+"allow you to <guimenuitem>Select</guimenuitem>, "
+"<guimenuitem>Copy</guimenuitem> (to clipboard), "
+"<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> "
+"text. This works for example in the read windows, when you click on the "
+"normal text or the verse reference, or in the search result page when you "
+"click on a work or one or more verse references. It is pretty "
+"straightforward, so just try it out."
 msgstr ""
 
-#. Tag: para
-#: hdbk-operation.docbook:248
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-operation.docbook:248
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -687,186 +1060,18 @@ msgid ""
 "from &bibletime; directly."
 msgstr ""
 
-#. Tag: title
-#: hdbk-intro.docbook:1
-#, no-c-format
-msgid "Introduction"
-msgstr ""
-
-#. Tag: title
-#: hdbk-intro.docbook:3
-#, no-c-format
-msgid "About BibleTime"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:4
-#, no-c-format
-msgid ""
-"&bibletime; is a powerful Bible study tool written for the &kde; environment "
-"on the Linux operating system. It is based on the <ulink url=\"http://www."
-"crosswire.org/sword\">Sword</ulink> library, which provides the back-end "
-"functionality for &bibletime;, such as viewing Bible text, searching etc. "
-"Sword is the flagship product of the <ulink url=\"http://www.crosswire.org"
-"\">Crosswire Bible Society</ulink>."
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:12
-#, no-c-format
-msgid ""
-"&bibletime; is designed to be used with works encoded in one of the formats "
-"supported by the Sword project. Complete information on the supported "
-"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
-"sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
-"Crosswire Bible Society."
-msgstr ""
-
-#. Tag: title
-#: hdbk-intro.docbook:18
-#, no-c-format
-msgid "Available works"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:20
-#, no-c-format
-msgid ""
-"Over 200 documents in 50 languages are available from the <ulink url="
-"\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
-msgstr ""
-
-#. Tag: term
-#: hdbk-intro.docbook:26
-#, no-c-format
-msgid "Bibles"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:28
-#, no-c-format
-msgid ""
-"The full Bible text, with optional things like Strong's Numbers, headings "
-"and/or footnotes in the text. Bibles are available in many languages, and "
-"include not only modern versions, but also ancient texts like the Codex "
-"Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
-"is the most advanced section in the library of the Sword project."
-msgstr ""
-
-#. Tag: term
-#: hdbk-intro.docbook:35
-#, no-c-format
-msgid "Books"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:37
-#, no-c-format
-msgid ""
-"Books available include &quot;Imitation of Christ&quot;, &quot;Enuma "
-"Elish&quot;, and &quot;Josephus: The Complete Works&quot;"
-msgstr ""
-
-#. Tag: term
-#: hdbk-intro.docbook:43
-#, no-c-format
-msgid "Commentaries"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:45
-#, no-c-format
-msgid ""
-"Commentaries available include classics like John Wesley's \"Notes on the "
-"Bible\", Matthew Henry`s commentary and Luther's \"Commentary on Galatians."
-"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
-"\"hdbk-op-parts-desk-write\">record your own personal notes</link> to "
-"sections of the Bible."
-msgstr ""
-
-#. Tag: term
-#: hdbk-intro.docbook:52
-#, no-c-format
-msgid "Daily devotionals"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:54
-#, no-c-format
-msgid ""
-"Many people appreciate these daily portions from God's word. Available works "
-"include Daily Light on the Daily Path, and the Losungen."
-msgstr ""
-
-#. Tag: term
-#: hdbk-intro.docbook:60
-#, no-c-format
-msgid "Lexicons/Dictionaries"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:62
-#, no-c-format
-msgid ""
-"Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
-"Driver-Briggs Hebrew Lexicon and the International Standard Bible "
-"Encyclopedia. Dictionaries available include Strong's Hebrew Bible "
-"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
-"Dictionary of the English Language 1913, Nave's Topical Bible."
-msgstr ""
-
-#. Tag: title
-#: hdbk-intro.docbook:73
-#, no-c-format
-msgid "Motivation"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:74
-#, no-c-format
-msgid ""
-"Our desire is to serve God, and to do our part to help others grow in their "
-"relationship with Him. We have striven to make this a powerful, quality "
-"program, and still make it simple and intuitive to operate. It is our desire "
-"that God be praised, as He is the source of all good things."
-msgstr ""
-
-#. Tag: attribution
-#: hdbk-intro.docbook:81
-#, no-c-format
-msgid "James 1:17, NASB"
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:82
-#, no-c-format
-msgid ""
-"Every good thing given and every perfect gift is from above, coming down "
-"from the Father of lights, with whom there is no variation or shifting "
-"shadow."
-msgstr ""
-
-#. Tag: para
-#: hdbk-intro.docbook:86
-#, no-c-format
-msgid "God bless you as you use this program."
-msgstr ""
-
-#. Tag: title
-#: hdbk-reference.docbook:2
-#, no-c-format
+# type: Content of: <chapter><title>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:2
 msgid "Reference"
 msgstr ""
 
-#. Tag: title
-#: hdbk-reference.docbook:4
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:4
 msgid "Main menu reference"
 msgstr ""
 
-#. Tag: para
-#: hdbk-reference.docbook:6
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:6
 msgid ""
 "In this section you can find detailed descriptions of all entries in the "
 "main menu of &bibletime;. They are ordered in just the way they appear in "
@@ -876,1538 +1081,601 @@ msgid ""
 "section</link>."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:12
-#, no-c-format
-msgid "File"
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-reference.docbook:18
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_exit.png\" format=\"PNG\"/></imageobject></inlinemediaobject> File</"
-"guimenu> <guimenuitem>Quit</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:23
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:23
 msgid ""
 "<action>Closes BibleTime.</action> BibleTime will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:31
-#, no-c-format
-msgid "View"
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-reference.docbook:35
-#, no-c-format
-msgid "<guimenu>View</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:37
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:37
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:42
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\"><keycap>F9</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_sidetree.png\" format=\"PNG\"/></imageobject></inlinemediaobject> View</"
-"guimenu> <guimenuitem>Show Bookshelf</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:47
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:47
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:52
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\"><keycap>F8</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_sidetree.png\" format=\"PNG\"/></imageobject></inlinemediaobject> View</"
-"guimenu> <guimenuitem>Show Mag</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:57
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:57
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:64
-#, no-c-format
-msgid "Search"
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:73
+msgid ""
+"<action>Opens the Search Dialog to search in the standard Bible "
+"only</action>.  More works can be added in the Search Dialog."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:68
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:83
 msgid ""
-"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>F</keycap></"
-"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
-"fileref=\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
-"Search</guimenu> <guimenuitem>Search in standard bible</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:73
-#, no-c-format
-msgid ""
-"<action>Opens the Search Dialog to search in the standard Bible only</"
-"action>. More works can be added in the Search Dialog."
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-reference.docbook:78
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>O</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Search</"
-"guimenu> <guimenuitem>Search in open work(s)</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:83
-#, no-c-format
-msgid ""
-"<action>Opens the Search Dialog to search in all open works</action>. More "
+"<action>Opens the Search Dialog to search in all open works</action>.  More "
 "works can be added in the Search Dialog."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:91
-#, no-c-format
-msgid "Window"
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:99
+msgid ""
+"<action>Directly saves the current session</action>.  This will open a "
+"context menu where you can select an existing session to save to.  It will "
+"be overwritten with your current session. See the next item on how to save "
+"to a new session."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:95
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:110
 msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
-"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
-"<guimenuitem>Save session</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:99
-#, no-c-format
-msgid ""
-"<action>Directly saves the current session</action>. This will open a "
-"context menu where you can select an existing session to save to. It will be "
-"overwritten with your current session. See the next item on how to save to a "
-"new session."
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-reference.docbook:105
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>S</keycap></"
-"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
-"fileref=\"i_sidetree.png\" format=\"PNG\"/></imageobject></"
-"inlinemediaobject> Window</guimenu> <guimenuitem>Save as new Session</"
-"guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:110
-#, no-c-format
-msgid ""
-"<action>Saves the current session under a new name</action>. This will ask "
+"<action>Saves the current session under a new name</action>.  This will ask "
 "for a new name to save the session to."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:115
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:119
 msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
-"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
-"<guimenuitem>Load session</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:119
-#, no-c-format
-msgid ""
-"<action>Loads an existing session</action>. This will open a context menu "
+"<action>Loads an existing session</action>.  This will open a context menu "
 "where you can select an existing session to load."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:124
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:128
 msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_sidetree."
-"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</guimenu> "
-"<guimenuitem>Delete session</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:128
-#, no-c-format
-msgid ""
-"<action>Deletes an existing session</action>. This will open a context menu "
+"<action>Deletes an existing session</action>.  This will open a context menu "
 "where you can select an existing session that should be deleted."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:133
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:138
 msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>F</keycap></"
-"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
-"fileref=\"i_fullscreen.png\" format=\"PNG\"/></imageobject></"
-"inlinemediaobject> Window</guimenu> <guimenuitem>Fullscreen Mode</"
-"guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:138
-#, no-c-format
-msgid ""
-"<action>Toggles fullscreen mode</action>. Here you can turn fullscreen mode "
+"<action>Toggles fullscreen mode</action>.  Here you can turn fullscreen mode "
 "on or off. In fullscreen mode, &bibletime; will expand to the full size of "
 "your monitor screen, using as much space as possible."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:144
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:148
 msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_cascade_auto.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
-"Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:148
-#, no-c-format
-msgid ""
-"<action>Controls the basic window arrangement behaviour</action>. In the "
+"<action>Controls the basic window arrangement behaviour</action>.  In the "
 "opening context menu, you can either specify that you want to take care of "
 "the window arrangement yourself (Manual mode) or have &bibletime; handle it "
 "for you (Automatical modes, just try them out!)."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:155
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_tile.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
-"guimenu> <guimenuitem>Tile vertically</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:160
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:160
 msgid "<action>Tiles all open read windows vertically</action>."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:164
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>H</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_tile.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
-"guimenu> <guimenuitem>Tile horizontally</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:169
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:169
 msgid "<action>Tiles all open windows horizontally</action>."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:173
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>J</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_cascade.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Window</"
-"guimenu> <guimenuitem>Cascade</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:178
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:178
 msgid "<action>Cascades all open windows</action>."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:182
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\">&Alt;&Ctrl;<keycap>W</keycap></"
-"keycombo></shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata "
-"fileref=\"i_fileclose.png\" format=\"PNG\"/></imageobject></"
-"inlinemediaobject> Window</guimenu> <guimenuitem>Close all</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:187
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:187
 msgid "<action>Closes all open windows</action>."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:193
-#, no-c-format
-msgid "Settings"
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:201
+msgid ""
+"<action>Opens a dialog where you can customize &bibletime;'s "
+"toolbar</action>.  Just try it out, you can move around the toolbar buttons "
+"and even add new ones. Most of the entries available from the main menu can "
+"be put on the toolbar as buttons. If you need a certain feature often, you "
+"might want to put a button on the main menu, so that you can access it with "
+"only one click. Please see <link linkend=\"hdbk-config-toolbar\">this "
+"section</link> for further information."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:197
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:212
 msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject></"
-"inlinemediaobject> Settings</guimenu> <guimenuitem>Configure toolbars</"
-"guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:201
-#, no-c-format
-msgid ""
-"<action>Opens a dialog where you can customize &bibletime;'s toolbar</"
-"action>. Just try it out, you can move around the toolbar buttons and even "
-"add new ones. Most of the entries available from the main menu can be put on "
-"the toolbar as buttons. If you need a certain feature often, you might want "
-"to put a button on the main menu, so that you can access it with only one "
-"click. Please see <link linkend=\"hdbk-config-toolbar\">this section</link> "
-"for further information."
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-reference.docbook:208
-#, no-c-format
-msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref=\"i_configure."
-"png\" format=\"PNG\"/></imageobject></inlinemediaobject> Settings</guimenu> "
-"<guimenuitem>Configure &bibletime;</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:212
-#, no-c-format
-msgid ""
-"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
+"<action>Opens &bibletime;'s main configuration dialog</action>.  You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
-"needs. Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
+"needs.  Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
 "details."
 msgstr ""
 
-#. Tag: menuchoice
-#: hdbk-reference.docbook:219
-#, no-c-format
-msgid ""
-"<shortcut><keycombo action=\"simul\"><keycap>F4</keycap></keycombo></"
-"shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_configuresword.png\" format=\"PNG\"/></imageobject></inlinemediaobject> "
-"Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-reference.docbook:224
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:224
 msgid ""
 "<action>Opens a dialog where you can change your Sword configuration and "
-"manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">this section</link> for details."
+"manage your bookshelf</action>.  Please see <link "
+"linkend=\"hdbk-op-bookshelfmanager\">this section</link> for details."
 msgstr ""
 
-#. Tag: guimenu
-#: hdbk-reference.docbook:234
-#, no-c-format
-msgid "Help"
-msgstr ""
-
-#. Tag: sect2
-#: hdbk-reference.docbook:234
-#, no-c-format
-msgid "&help.menu.documentation;"
-msgstr ""
-
-#. Tag: title
-#: hdbk-reference.docbook:242
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:242
 msgid "Toolbar reference"
 msgstr ""
 
-#. Tag: para
-#: hdbk-reference.docbook:244
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:244
 msgid ""
-"Please review <link linkend=\"hdbk-reference-menus\">the preceding section</"
-"link> for an explanation of the buttons that you find on the toolbar. You "
-"can also <action>move the cursor over a button and wait a few seconds</"
-"action> to activate the button's tooltip with a short description."
+"Please review <link linkend=\"hdbk-reference-menus\">the preceding "
+"section</link> for an explanation of the buttons that you find on the "
+"toolbar. You can also <action>move the cursor over a button and wait a few "
+"seconds</action> to activate the button's tooltip with a short description."
 msgstr ""
 
-#. Tag: para
-#: hdbk-reference.docbook:248
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:258
 msgid ""
-"You can adapt the toolbar to your needs. Please use the following entry in "
-"the main menu: <variablelist> <varlistentry> <term><menuchoice> <guimenu> "
-"<inlinemediaobject><imageobject> <imagedata fileref=\"i_configuretoolbars.png"
-"\" format=\"PNG\"/></imageobject></inlinemediaobject> Settings</guimenu> "
-"<guimenuitem>Configure toolbars</guimenuitem></menuchoice></term> "
-"<listitem><para>Configure toolbars</para></listitem> </varlistentry> </"
-"variablelist> Please see <link linkend=\"hdbk-reference-menus-settings-"
-"toolbars\">this section</link> for detailed instructions."
+"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+"section</link> for detailed instructions."
 msgstr ""
 
-#. Tag: title
-#: hdbk-reference.docbook:264
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:264
 msgid "HotKeys index"
 msgstr ""
 
-#. Tag: para
-#: hdbk-reference.docbook:266
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:266
 msgid ""
 "This is index of all hotkeys and their corresponding description in the "
 "handbook. The hotkeys are sorted (roughly) alphabetical. If you want to "
 "directly find out which hotkey a certain menu item has, you can either look "
 "at the entry itelf in &bibletime; (as it always shows the hotkey), or you "
-"can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
+"can look it up in <link linkend=\"hdbk-reference-menus\">this "
+"section</link>."
 msgstr ""
 
-#. Tag: entry
-#: hdbk-reference.docbook:278
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:278
 msgid "Hotkey"
 msgstr ""
 
-#. Tag: entry
-#: hdbk-reference.docbook:279
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:279
 msgid "Description"
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:284
-#, no-c-format
-msgid "&Alt;<keycap>Left</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:285
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:285
 msgid "Moves back in the history of read windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:288
-#, no-c-format
-msgid "&Alt;<keycap>Right</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:289
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:289
 msgid "Moves forward in the history of read windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:292
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>F</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:293
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:293
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"><menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</"
-"guimenuitem></menuchoice></link> equivalent; opens the search dialog to "
-"search in the default bible."
+"<guimenu>Search</guimenu> <guimenuitem>Search in default "
+"bible</guimenuitem></menuchoice></link> equivalent; opens the search dialog "
+"to search in the default bible."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:299
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>G</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:300
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:300
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem></menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-tile "
+"vertically</guimenuitem></menuchoice> equivalent; toggle automatic window "
+"tiling."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:305
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>H</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:306
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:306
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem></menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-tile "
+"horizontally</guimenuitem></menuchoice> equivalent; toggle automatic window "
+"tiling."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:311
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>J</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:312
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:312
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem></menuchoice> "
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem></menuchoice> "
 "equivalent; toggle automatic window cascading."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:317
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>M</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:318
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:318
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem></menuchoice> equivalent; "
-"toggle manual window placement."
+"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement "
+"mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem></menuchoice> "
+"equivalent; toggle manual window placement."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:323
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>S</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:324
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:324
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem></"
-"menuchoice></link> equivalent; saves current layout as new session."
+"<guimenu>Window</guimenu> <guimenuitem>Save as new "
+"session</guimenuitem></menuchoice></link> equivalent; saves current layout "
+"as new session."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:330
-#, no-c-format
-msgid "&Alt;&Ctrl;<keycap>W</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:331
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:331
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem></menuchoice></"
-"link> equivalent; closes all open windows."
+"<guimenu>Window</guimenu> <guimenuitem>Close "
+"all</guimenuitem></menuchoice></link> equivalent; closes all open windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:337
-#, no-c-format
-msgid "&Ctrl;<keycap>-</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:338
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:338
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:341
-#, no-c-format
-msgid "&Ctrl;<keycap>+</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:342
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:342
 msgid "Zoom in. This increases the font size of read windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:345
-#, no-c-format
-msgid "&Ctrl;<keycap>A</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:346
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:346
 msgid "Select all. This selects all text in read windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:349
-#, no-c-format
-msgid "&Ctrl;<keycap>C</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:350
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:350
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:353
-#, no-c-format
-msgid "&Ctrl;<keycap>F</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:354
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:354
 msgid "Search. This lets you search within the text of a read window."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:357
-#, no-c-format
-msgid "&Ctrl;<keycap>J</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:358
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:358
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem></menuchoice></"
-"link> equivalent; cascades all open windows."
+"<guimenu>Window</guimenu> "
+"<guimenuitem>Cascade</guimenuitem></menuchoice></link> equivalent; cascades "
+"all open windows."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:364
-#, no-c-format
-msgid "&Ctrl;<keycap>G</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:365
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:365
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile-vertically\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem></"
-"menuchoice></link> equivalent; tiles all open windows vertically."
+"<guimenu>Window</guimenu> <guimenuitem>Tile "
+"vertically</guimenuitem></menuchoice></link> equivalent; tiles all open "
+"windows vertically."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:371
-#, no-c-format
-msgid "&Ctrl;<keycap>H</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:372
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:372
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tile-horizontally\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem></"
-"menuchoice></link> equivalent; tiles all open windows horizontally."
+"<guimenu>Window</guimenu> <guimenuitem>Tile "
+"horizontally</guimenuitem></menuchoice></link> equivalent; tiles all open "
+"windows horizontally."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:378
-#, no-c-format
-msgid "&Ctrl;<keycap>O</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:379
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:379
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"><menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem></"
-"menuchoice></link> equivalent; opens the search dialog to search in all "
-"currently opened works."
+"<guimenu>Search</guimenu> <guimenuitem>Search in open "
+"work(s)</guimenuitem></menuchoice></link> equivalent; opens the search "
+"dialog to search in all currently opened works."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:385
-#, no-c-format
-msgid "&Ctrl;<keycap>Q</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:386
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:386
 msgid ""
-"<link linkend=\"hdbk-reference-menus-file-quit\"><menuchoice> <guimenu>File</"
-"guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></link> equivalent; "
-"closes &bibletime;."
+"<link linkend=\"hdbk-reference-menus-file-quit\"><menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></link> "
+"equivalent; closes &bibletime;."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:392
-#, no-c-format
-msgid "&Ctrl;<keycap>W</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:393
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:393
 msgid "Closes the current window."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:396
-#, no-c-format
-msgid "&Ctrl;<keycap>X</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:397
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:397
 msgid "Moves a bible or commentary read window to the next chapter."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:400
-#, no-c-format
-msgid "&Ctrl;<keycap>Y</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:401
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:401
 msgid "Moves a bible or commentary read window to the next book."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:404
-#, no-c-format
-msgid "&Ctrl;<keycap>V</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:405
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:405
 msgid "Moves a read window to the next verse or entry."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:410
-#, no-c-format
-msgid "&Ctrl;&Shift;<keycap>F</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:411
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:411
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-fullscreen\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Fullscreen mode</guimenuitem></"
-"menuchoice></link> equivalent; toggles fullscreen mode."
+"<guimenu>Window</guimenu> <guimenuitem>Fullscreen "
+"mode</guimenuitem></menuchoice></link> equivalent; toggles fullscreen mode."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:417
-#, no-c-format
-msgid "&Ctrl;&Shift;<keycap>X</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:418
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:418
 msgid "Moves a bible or commentary read window to the previous chapter."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:421
-#, no-c-format
-msgid "&Ctrl;&Shift;<keycap>Y</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:422
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:422
 msgid "Moves a bible or commentary read window to the previous book."
 msgstr ""
 
-#. Tag: keycombo
-#: hdbk-reference.docbook:425
-#, no-c-format
-msgid "&Ctrl;&Shift;<keycap>V</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:426
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:426
 msgid "Moves a read window to the previous verse or entry."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:430
-#, no-c-format
-msgid "<keycap>F1</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:431
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:431
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem></"
-"menuchoice> equivalent; opens the handbook."
+"<menuchoice> <guimenu>Help</guimenu> "
+"<guimenuitem>Handbook</guimenuitem></menuchoice> equivalent; opens the "
+"handbook."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:437
-#, no-c-format
-msgid "<keycap>F2</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:438
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:438
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem></menuchoice> equivalent; opens the BibleStudy Howto."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy "
+"Howto</guimenuitem></menuchoice> equivalent; opens the BibleStudy Howto."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:444
-#, no-c-format
-msgid "<keycap>F3</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:445
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:445
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily tip</guimenuitem></"
-"menuchoice> equivalent; opens the tip of the day."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily "
+"tip</guimenuitem></menuchoice> equivalent; opens the tip of the day."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:451
-#, no-c-format
-msgid "<keycap>F4</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:452
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:452
 msgid ""
-"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager"
-"\"><menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem></menuchoice></link> equivalent; opens the Bookshelf Manager."
+"<link "
+"linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"><menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf "
+"Manager</guimenuitem></menuchoice></link> equivalent; opens the Bookshelf "
+"Manager."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:458
-#, no-c-format
-msgid "<keycap>F8</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:459
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:459
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"><menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem></"
-"menuchoice></link> equivalent; toggles display of the Bookshelf."
+"<guimenu>View</guimenu> <guimenuitem>Show "
+"Bookshelf</guimenuitem></menuchoice></link> equivalent; toggles display of "
+"the Bookshelf."
 msgstr ""
 
-#. Tag: keycap
-#: hdbk-reference.docbook:465
-#, no-c-format
-msgid "<keycap>F9</keycap>"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-reference.docbook:466
-#, no-c-format
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/unicode/en/hdbk-reference.docbook:466
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"><menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem></menuchoice></"
-"link> equivalent; toggles display of the mag(nifying glass)."
+"<guimenu>View</guimenu> <guimenuitem>Show "
+"mag</guimenuitem></menuchoice></link> equivalent; toggles display of the "
+"mag(nifying glass)."
 msgstr ""
 
-#. Tag: title
-#: index.docbook:21
-#, no-c-format
-msgid "The &bibletime; handbook"
-msgstr ""
-
-#. Tag: author
-#: index.docbook:25
-#, no-c-format
-msgid "<firstname>Fred</firstname> <surname>Saalbach</surname>"
-msgstr ""
-
-#. Tag: author
-#: index.docbook:30
-#, no-c-format
-msgid "<firstname>Jeffrey</firstname> <surname>Hoyt</surname>"
-msgstr ""
-
-#. Tag: author
-#: index.docbook:35
-#, no-c-format
-msgid "<firstname>Martin</firstname> <surname>Gruner</surname>"
-msgstr ""
-
-#. Tag: trans_comment
-#: index.docbook:42
-#, no-c-format
-msgid "ROLES_OF_TRANSLATORS"
-msgstr ""
-
-#. Tag: holder
-#: index.docbook:46
-#, no-c-format
-msgid "the &bibletime; team"
-msgstr ""
-
-#. Tag: para
-#: index.docbook:50
-#, no-c-format
-msgid "The &bibletime; handbook is part of &bibletime;."
-msgstr ""
-
-#. Tag: para
-#: index.docbook:59
-#, no-c-format
-msgid "&bibletime; is a powerful Bible study tool for &kde;."
-msgstr ""
-
-#. Tag: keyword
-#: index.docbook:65
-#, no-c-format
-msgid "<keyword>KDE</keyword>"
-msgstr ""
-
-#. #-#-#-#-#  index.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Tag: keyword
-#. #-#-#-#-#  hdbk-start.docbook.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Tag: screen
-#: index.docbook:66 hdbk-start.docbook:19
-#, no-c-format
-msgid "bibletime"
-msgstr ""
-
-#. Tag: keyword
-#: index.docbook:67
-#, no-c-format
-msgid "sword"
-msgstr ""
-
-#. Tag: keyword
-#: index.docbook:68
-#, no-c-format
-msgid "crosswire"
-msgstr ""
-
-#. Tag: keyword
-#: index.docbook:69
-#, no-c-format
-msgid "help dialog"
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:1
-#, no-c-format
-msgid "Configuring &bibletime;"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:3
-#, no-c-format
-msgid ""
-"In this section you find a description of the different possibilities to "
-"configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
-"BibleTime Dialog </link> and the <link linkend=\"hdbk-config-toolbar"
-"\">Configure Toolbars</link> dialog. Both can be accessed under "
-"<guimenu>Settings</guimenu> in the main menu."
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:8
-#, no-c-format
-msgid "Configure BibleTime Dialog"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:10
-#, no-c-format
-msgid ""
-"The &bibletime; user interface can be customized in many ways depending on "
-"your needs. You can access the configuration dialog by selecting "
-"<menuchoice><guimenu>Settings</guimenu></menuchoice> <guimenuitem>Configure "
-"&bibletime;</guimenuitem>."
-msgstr ""
-
-#. Tag: guimenu
-#: hdbk-config.docbook:15
-#, no-c-format
-msgid "Display"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:17
-#, no-c-format
-msgid ""
-"The startup behavior can be customized. Select from the following options:"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:19
-#, no-c-format
-msgid "Show tip of the day"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:20
-#, no-c-format
-msgid "Show startup logo"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:23
-#, no-c-format
-msgid ""
-"Display templates define the rendering of text (colors, size etc.). Various "
-"built-in templates are available. If you select one, you will see a preview "
-"on the right pane."
-msgstr ""
-
-#. Tag: guimenu
-#: hdbk-config.docbook:28
-#, no-c-format
-msgid "Languages"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:30
-#, no-c-format
-msgid ""
-"Here you can specify which language should be used for the biblical "
-"booknames. Set this to your native language, if it is available, and you'll "
-"feel at home."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:33
-#, no-c-format
-msgid ""
-"By default, &bibletime; uses the &kde; general display font which can be "
-"specified in the &kcontrolcenter;. You can override this font if neccessary. "
-"Some languages require special fonts to be displayed correctly, and this "
-"dialog allows you to specify a custom font for each language."
-msgstr ""
-
-#. Tag: phrase
-#: hdbk-config.docbook:41
-#, no-c-format
-msgid "Options Dialog - fonts"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:42
-#, no-c-format
-msgid "The Options dialog - Fonts."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:45
-#, no-c-format
-msgid ""
-"&bibletime; can now use all fonts supported by KDE/QT. As long as the works "
-"you are interested in display correctly nothing needs to be done here. If a "
-"work only displays as a series of question marks (??????) or empty boxes, "
-"then you know that the standard KDE display font does not contain the "
-"characters used in this work."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:51
-#, no-c-format
-msgid ""
-"To correct this, choose this work's language from the drop down menu. Select "
-"the use custom font checkbox. Now select a font. For example, a font that "
-"supports many languages is Code2000. If no installed font can display the "
-"work you are interested in, try installing the &kde; localization package "
-"for that language."
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:57
-#, no-c-format
-msgid "Installing fonts"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:58
-#, no-c-format
-msgid ""
-"Detailed font installation instructions are outside the scope of this "
-"handbook. &kde;'s <ulink url=\"help:/kcontrol/index.html\">KControl Center</"
-"ulink> contains an excellent and easy to use font installation module. "
-"Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> its "
-"documentation</ulink>. For further information you might want to refer to "
-"the <ulink url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/"
-"html_single/Unicode-HOWTO.html#toc4\"> Unicode HOWTO</ulink>."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:66
-#, no-c-format
-msgid ""
-"If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-"faster than with a large font like <trademark class=\"registered\"> "
-"Bitstream Cyberbit</trademark> (about 12Mb)."
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:71
-#, no-c-format
-msgid "Obtaining Fonts"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:72
-#, no-c-format
-msgid "Fonts can be obtained from a number of sources:"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:74
-#, no-c-format
-msgid "Your Linux distribution."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:75
-#, no-c-format
-msgid "Your distribution's localization packages."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:76
-#, no-c-format
-msgid ""
-"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
-"installation on the same computer."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:77
-#, no-c-format
-msgid "A font collection, such as are available from Adobe or Bitstream."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:78
-#, no-c-format
-msgid "Online font collections."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:81
-#, no-c-format
-msgid ""
-"Unicode fonts support more characters than other fonts, and some of these "
-"fonts are available at no charge. None of available fonts includes all "
-"characters defined in the Unicode standard, so you may want to use different "
-"fonts for different languages."
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:87
-#, no-c-format
-msgid "Unicode Fonts"
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:91
-#, no-c-format
-msgid "Code2000"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:92
-#, no-c-format
-msgid ""
-"Perhaps the best free Unicode font, covering a wide range of characters."
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:94
-#, no-c-format
-msgid "SIL unicode fonts"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:96
-#, no-c-format
-msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:98
-#, no-c-format
-msgid "FreeFont"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:99
-#, no-c-format
-msgid "A new free unicode font initiative."
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:101
-#, no-c-format
-msgid "Crosswire's font directory"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:102
-#, no-c-format
-msgid "Several fonts available from the Crosswire Bible Society Ftp site."
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:104
-#, no-c-format
-msgid "Bitstream CyberBit"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:105
-#, no-c-format
-msgid ""
-"Covers almost the entire range of Unicode, but might slow &bibletime; down "
-"because of its size."
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:107
-#, no-c-format
-msgid "Clearlyu"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:108
-#, no-c-format
-msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
-msgstr ""
-
-#. Tag: ulink
-#: hdbk-config.docbook:110
-#, no-c-format
-msgid "Caslon, Monospace, Cupola, Caliban"
-msgstr ""
-
-#. Tag: entry
-#: hdbk-config.docbook:111
-#, no-c-format
-msgid "Partial coverage, see information on linked site."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:116
-#, no-c-format
-msgid ""
-"There are good Unicode font lists on the net, as the one by Christoph Singer "
-"(<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
-"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood (<ulink url="
-"\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
-"ranges and the Unicode fonts that support them</ulink>)."
-msgstr ""
-
-#. Tag: guimenu
-#: hdbk-config.docbook:127
-#, no-c-format
-msgid "Desk"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:129
-#, no-c-format
-msgid ""
-"Many features provided by the Sword backend can now be customized in "
-"&bibletime;. These features are documented right in the dialog. You also "
-"have the possibility to specify standard works that should be used when no "
-"specific work is specified in a reference. An example: The standard Bible is "
-"used to display the content of crossreferences in the Bible. When you hover "
-"over then, the Mag will show the content of the verses referred to, "
-"according to the standard Bible you specified."
-msgstr ""
-
-#. Tag: guimenu
-#: hdbk-config.docbook:138
-#, no-c-format
-msgid "HotKeys"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:140
-#, no-c-format
-msgid ""
-"HotKeys are special key commands that can be used in the place of the menu "
-"items and icons. A number of &bibletime;'s commands have predefined HotKeys "
-"(see <link linkend=\"hdbk-reference-hotkeys\">this section</link> for a "
-"complete listing). Most of &bibletime;'s commands can be assigned HotKeys "
-"here. This is very helpful to quickly access the functions that you need the "
-"most."
-msgstr ""
-
-#. Tag: title
-#: hdbk-config.docbook:151
-#, no-c-format
-msgid "Configure Toolbars dialog"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:152
-#, no-c-format
-msgid ""
-"You can adapt the toolbar to your needs. Please use the following entry in "
-"the main menu:"
-msgstr ""
-
-#. Tag: menuchoice
-#: hdbk-config.docbook:155
-#, no-c-format
-msgid ""
-"<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-"\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
-"inlinemediaobject>Settings </guimenu> <guimenuitem>Configure toolbars</"
-"guimenuitem>"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:162
-#, no-c-format
-msgid "Configure toolbars"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:166
-#, no-c-format
-msgid ""
-"You will see this dialog, which allows adding and removing buttons from the "
-"main toolbar of &bibletime;. The order of the buttons can also be changed."
-msgstr ""
-
-#. Tag: phrase
-#: hdbk-config.docbook:173
-#, no-c-format
-msgid "Toolbar configuration dialog"
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:174
-#, no-c-format
-msgid "The Toolbar configuration dialog."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:176
-#, no-c-format
-msgid ""
-"Use the 4 buttons in the middle of the window to move buttons to the "
-"toolbar, away from the toolbar or to sort them on the toolbar according to "
-"your preference."
-msgstr ""
-
-#. Tag: para
-#: hdbk-config.docbook:179
-#, no-c-format
-msgid ""
-"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-"section</link> for further information."
-msgstr ""
-
-#. Tag: title
-#: hdbk-start.docbook:1
-#, no-c-format
+# type: Content of: <chapter><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:1
 msgid "Starting &bibletime;"
 msgstr ""
 
-#. Tag: title
-#: hdbk-start.docbook:3
-#, no-c-format
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:3
 msgid "How to start &bibletime;"
 msgstr ""
 
-#. Tag: title
-#: hdbk-start.docbook:5
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:5
 msgid "Starting &bibletime; from KDE"
 msgstr ""
 
-#. Tag: para
-#: hdbk-start.docbook:7
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:7
 msgid ""
-"&bibletime; is a &kde; program and is integrated with the &kde; desktop. You "
-"can launch &bibletime; from the &kde; Start Menu in the Applications group "
-"with this icon:"
+"&bibletime; is a &kde; program and is integrated with the &kde; desktop.  "
+"You can launch &bibletime; from the &kde; Start Menu in the Applications "
+"group with this icon:"
 msgstr ""
 
-#. Tag: phrase
-#: hdbk-start.docbook:13
-#, no-c-format
-msgid "&bibletime; start icon"
+# type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
+#: docs/handbook/unicode/en/hdbk-start.docbook:13
+msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr ""
 
-#. Tag: para
-#: hdbk-start.docbook:17
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:17
 msgid ""
-"&bibletime; can also be launched from a terminal command prompt. To launch "
+"&bibletime; can also be launched from a terminal command prompt.  To launch "
 "&bibletime;, open a terminal window and type:"
 msgstr ""
 
-#. Tag: title
-#: hdbk-start.docbook:24
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/unicode/en/hdbk-start.docbook:20
+#, no-wrap
+msgid "bibletime"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:26
 msgid "Other window managers"
 msgstr ""
 
-#. Tag: para
-#: hdbk-start.docbook:26
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:28
 msgid ""
 "&bibletime; can be used with other window managers such as Gnome, BlackBox "
-"or Sawfish, providing &kde; is already installed on your computer. If your "
+"or Sawfish, providing\t&kde; is already installed on your computer. If your "
 "&kde; is installed in /opt/kde, then the start-up command in a terminal "
 "would be:"
 msgstr ""
 
-#. Tag: screen
-#: hdbk-start.docbook:30
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><screen>
+#: docs/handbook/unicode/en/hdbk-start.docbook:33
+#, no-wrap
 msgid ""
 "export KDEDIR=/opt/kde  #your KDE directory\n"
 "bibletime"
 msgstr ""
 
-#. Tag: title
-#: hdbk-start.docbook:34
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:39
 msgid "Startup customization"
 msgstr ""
 
-#. Tag: para
-#: hdbk-start.docbook:36
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:41
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
-"default bible: <screen>\n"
-"bibletime --open-default-bible \"&lt;random&gt;\"\n"
-"</screen> To open at a given passage like John 3:16, use: <screen>\n"
-"bibletime --open-default-bible \"John 3:16\"\n"
-"</screen> You can also use booknames in your current bookname language."
+"default bible:"
 msgstr ""
 
-#. Tag: title
-#: hdbk-start.docbook:48
-#, no-c-format
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/unicode/en/hdbk-start.docbook:44
+#, no-wrap
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:46
+msgid "To open at a given passage like John 3:16, use:"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/unicode/en/hdbk-start.docbook:48
+#, no-wrap
+msgid "bibletime --open-default-bible \"John 3:16\""
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:50
+msgid "You can also use booknames in your current bookname language."
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/unicode/en/hdbk-start.docbook:57
 msgid "Startup sequence"
 msgstr ""
 
-#. Tag: para
-#: hdbk-start.docbook:50
-#, no-c-format
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:59
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
 msgstr ""
 
-#. Tag: interface
-#: hdbk-start.docbook:56
-#, no-c-format
-msgid "Bookshelf Manager"
-msgstr ""
-
-#. Tag: para
-#: hdbk-start.docbook:57
-#, no-c-format
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:66
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
-"Bookshelf, add or delete works from your system. It will only be shown if no "
-"default Bookshelf can be found. Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">this section</link>for further details. If you start off "
-"with an empty Bookshelf, it will be helpful to install at least one Bible, "
-"Commentary, Lexicon and one Book to get to know &bibletime;'s basic features "
-"quickly."
+"Bookshelf, add or delete works from your system.  It will only be shown if "
+"no default Bookshelf can be found. Please see <link "
+"linkend=\"hdbk-op-bookshelfmanager\">this section</link>for further "
+"details.  If you start off with an empty Bookshelf, it will be helpful to "
+"install at least one Bible, Commentary, Lexicon and one Book to get to know "
+"&bibletime;'s basic features quickly."
 msgstr ""
 
-#. Tag: interface
-#: hdbk-start.docbook:66
-#, no-c-format
-msgid "Configure &bibletime; dialog"
-msgstr ""
-
-#. Tag: para
-#: hdbk-start.docbook:67
-#, no-c-format
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:76
 msgid ""
 "<action>Customizes &bibletime;.</action> This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\"> the "
 "detailed description</link> of this dialog."
 msgstr ""
 
-#. Tag: interface
-#: hdbk-start.docbook:73
-#, no-c-format
-msgid "Tip of the Day"
-msgstr ""
-
-#. Tag: para
-#: hdbk-start.docbook:74
-#, no-c-format
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/unicode/en/hdbk-start.docbook:83
 msgid ""
 "These nifty little tips give you helpful hints for working more efficiently "
 "with &bibletime;, and also a few quotations from the Bible."
+msgstr ""
+
+# type: Content of the bibletime entity
+#: docs/handbook/unicode/en/index.docbook:3
+msgid "<application>BibleTime</application>"
+msgstr ""
+
+# type: Content of the sword entity
+#: docs/handbook/unicode/en/index.docbook:4
+msgid "<application>Sword</application>"
+msgstr ""
+
+# type: Attribute 'lang' of: <book>
+#: docs/handbook/unicode/en/index.docbook:18
+msgid "&language;"
+msgstr ""
+
+# type: Content of: <book><bookinfo><title>
+#: docs/handbook/unicode/en/index.docbook:21
+msgid "The &bibletime; handbook"
+msgstr ""
+
+# type: Content of: <book><bookinfo><copyright><holder>
+#: docs/handbook/unicode/en/index.docbook:46
+msgid "the &bibletime; team"
+msgstr ""
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: docs/handbook/unicode/en/index.docbook:51
+msgid "The &bibletime; handbook is part of &bibletime;."
+msgstr ""
+
+# type: Content of: <book><bookinfo><date>
+#: docs/handbook/unicode/en/index.docbook:55
+msgid "2005-07"
+msgstr ""
+
+# type: Content of: <book><bookinfo><releaseinfo>
+#: docs/handbook/unicode/en/index.docbook:56
+msgid "1.5"
+msgstr ""
+
+# type: Content of: <book><bookinfo><abstract><para>
+#: docs/handbook/unicode/en/index.docbook:60
+msgid "&bibletime; is a powerful Bible study tool for &kde;."
 msgstr ""
