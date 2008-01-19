@@ -13,11 +13,17 @@
 
 #include "frontend/bookshelfmanager/new/btconfigdialog.h"
 #include "frontend/cmodulechooserdialog.h"
+#include "backend/btmoduletreeitem.h"
 
 #include <QString>
 #include <QWidget>
 
+#include <installmgr.h>
+
+#include <boost/scoped_ptr.hpp>
+
 class BtSourceWidget;
+class Bt_InstallMgr;
 
 class QTreeWidgetItem;
 class QTreeWidget;
@@ -26,7 +32,7 @@ class QComboBox;
 class QPushButton;
 class QTabBar;
 class QStackedWidget;
-
+class QProgressDialog;
 
 /**
 * The Install page includes module path chooser, source/module handler and install button.
@@ -78,6 +84,14 @@ class BtSourceArea : public QWidget
 
 	friend class BtSourceWidget;
 public:
+
+	struct InstalledFilter : BTModuleTreeItem::Filter {
+		InstalledFilter(QString sourceName);
+		bool filter(CSwordModuleInfo*);
+		sword::InstallSource m_source;
+		boost::scoped_ptr<CSwordBackend> m_swordBackend;
+	};
+
 	BtSourceArea(const QString& sourceName);
 	~BtSourceArea();
 
@@ -112,6 +126,7 @@ public:
 	virtual ~BtSourceWidget() {}
 
 	BtSourceArea* area();
+	QString currentSourceName();
 
 private:
 	void initSourceConnections();
@@ -120,12 +135,15 @@ private:
 	
 	/** Add one source to tabs/stack. */
 	void addSource(const QString& sourceName);
-	/** Update one module tree widget */
-	void updateList(const QString& sourceName);
 	
 private slots:
 
 	void slotRefresh();
+	
+	void slotRefreshCanceled();
+
+	void slotRefreshCompleted(int, int);	
+
 	/** Edit button clicked. */
 	void slotEdit();
 	/** Delete button clicked. */
@@ -136,7 +154,10 @@ private slots:
 	void slotModuleSelectionChanged();
 	
 private:
+	QStringList m_sourceNameList;
 	BtInstallPage* m_page;
+	QProgressDialog* m_progressDialog; // for refreshing
+	Bt_InstallMgr* m_currentInstallMgr; // for refreshing
 };
 
 
@@ -148,12 +169,11 @@ private:
 class CInstallModuleChooserDialog : public CModuleChooserDialog
 {
 public:
-	CInstallModuleChooserDialog(QTabBar* tabBar, QStackedWidget* viewStack, QWidget* parent, QString title, QString label, ListCSwordModuleInfo* moduleInfo);
+	CInstallModuleChooserDialog(BtInstallPage* parent, QString title, QString label, ListCSwordModuleInfo* moduleInfo);
 protected:
 	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
 private:
-	QTabBar* m_tabBar;
-	QStackedWidget* m_viewStack;
+
 };
 
 #endif
