@@ -96,16 +96,28 @@ public:
 	~BtSourceArea();
 
 	void initView();
-	
 	void initTreeFirstTime();
+	QTreeWidget* treeWidget();
+
+	QMap<QString, bool>* selectedModules();
+
+signals:
+	void signalSelectionChanged(QString sourceName, int selectedCount);
+
+private slots:
+	void slotSelectionChanged(QTreeWidgetItem* item, int column);
 
 private:
 	/** Create a module tree for a tree widget */
 	bool createModuleTree();
-
 	void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
 
 	QString m_sourceName;
+	bool m_treeAlreadyInitialized;
+	QMap<QString, bool> m_checkedModules;
+	CSwordBackend* m_remoteBackend; // needed for the module list
+	ListCSwordModuleInfo m_moduleList;
+
 	QTreeWidget* m_view;
 	QLabel* m_refreshTimeLabel;
 	QPushButton* m_refreshButton;
@@ -113,7 +125,7 @@ private:
 	QPushButton* m_deleteButton;
 	QPushButton* m_addButton;
 
-	bool m_treeAlreadyInitialized;
+
 };
 
 
@@ -156,7 +168,7 @@ private slots:
 	/** Add button clicked. */
 	void slotAdd();
 	/** Modules have been checked/unchecked in the view. */
-	void slotModuleSelectionChanged();
+	void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
 	void slotTabSelected(int index);
 	
@@ -165,6 +177,7 @@ private:
 	BtInstallPage* m_page;
 	QProgressDialog* m_progressDialog; // for refreshing
 	Bt_InstallMgr* m_currentInstallMgr; // for refreshing
+	QMap<QString, int> m_selectedModulesCountMap;
 };
 
 

@@ -200,14 +200,18 @@ QString BtInstallPage::header()
 BtSourceArea::BtSourceArea(const QString& sourceName)
 	: QWidget(),
 	m_sourceName(sourceName),
-	m_treeAlreadyInitialized(false)
+	m_treeAlreadyInitialized(false),
+	m_remoteBackend(0) //important!
 {
+	m_checkedModules = QMap<QString, bool>();
 	qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
 	initView();
 }
 
 BtSourceArea::~BtSourceArea()
-{}
+{
+	delete m_remoteBackend;
+}
 
 void BtSourceArea::initView()
 {
@@ -251,8 +255,6 @@ void BtSourceArea::initView()
 
 	mainLayout->addLayout(sourceLayout);
 
-	//populate the treewidget with the module list
-	//createModuleTree();
 }
 
 void BtSourceArea::initTreeFirstTime()
@@ -267,37 +269,22 @@ bool BtSourceArea::createModuleTree()
 {
 	qDebug("BtSourceArea::createModuleTree start");
 	// TODO: if the tree already exists for this source,
-	// the selections should be preserved
+	// maybe the selections should be preserved
 
-	//BACKEND CODE
-		
-	// create the module list from the (cached) source data
-	// TODO: ListSwordModuleInfo moduleList = backend::moduleList(sourceName);
-	// create the BTModuleTreeItem from the moduleList
-
-	// use the treeItem and view root item to populate the tree
-
-	// The rest is taken from CSwordSetupDialog::populateInstallModuleListView
-
-	//qApp->processEvents();
 
 	sword::InstallSource is = backend::source(m_sourceName);
-
 	//Q_ASSERT( backend::isRemote(&is) );
-	//why is this here?
-	CSwordBackend* local_backend = CPointers::backend();
-	Q_ASSERT(local_backend);
 
 	//qApp->processEvents();
-
-	boost::scoped_ptr<CSwordBackend> remote_backend( backend::backend(is) );
-	Q_ASSERT(remote_backend);
-	ListCSwordModuleInfo mods = remote_backend->moduleList();
+	delete m_remoteBackend; // the old one can be deleted
+	m_remoteBackend = backend::backend(is);
+	Q_ASSERT(m_remoteBackend);
+	m_moduleList = m_remoteBackend->moduleList();
 	qDebug() << "Remote module list for source" << m_sourceName << ":";
-	for (ListCSwordModuleInfo::iterator it = mods.begin(); it != mods.end(); it++) {
+	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != m_moduleList.end(); it++) {
 		qDebug() << (*it)->name() << (*it)->type();
 	}
-	Q_ASSERT(mods.count() > 0); // is this true? what about when there are no modules in remote server?
+	//Q_ASSERT(m_moduleList.count() > 0); // is this true? what about when there are no modules in remote server?
 
 	// give the list to BTModuleTreeItem, create filter to remove
 	// those modules which are installed already
@@ -305,34 +292,81 @@ bool BtSourceArea::createModuleTree()
 	QList<BTModuleTreeItem::Filter*> filterList;
 	filterList.append(&alreadyInstalledFilter);
 	qDebug("BtSourceArea::createModuleTree 1");
-	BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &mods);
+	BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &m_moduleList);
 	qDebug("BtSourceArea::createModuleTree 2");
 	//TODO: create the UI tree
 	m_view->clear();
+
+	// disconnect the signal so that we don't have to run functions for every module
+	// (note: what to do if we want to restore the item selection when rebuilding?
+	disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
+
 	addToTree(&rootItem, m_view->invisibleRootItem());
+
+	// receive signal when user checks modules
+	connect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
 	qDebug("BtSourceArea::createModuleTree end");
 	return true;
-
 }
 
 void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
 {
-	qDebug("BtSourceArea::addToTree");
-	qDebug() << "BTMTItem type: " << item->type();
+	qDebug()<<"BtSourceArea::addToTree "<<item->text();
+	//qDebug() << "BTMTItem type: " << item->type();
 	foreach (BTModuleTreeItem* i, item->children()) {
 		addToTree(i, new QTreeWidgetItem(widgetItem));
 	}
 	if (item->type() != BTModuleTreeItem::Root) {
 		widgetItem->setText(0, item->text());
 		if (item->type() == BTModuleTreeItem::Category || item->type() == BTModuleTreeItem::Language) {
-			qDebug() << "item"<<item->text()<< "was cat or lang";
+			//qDebug() << "item"<<item->text()<< "was cat or lang";
 			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 		}
 		if (item->type() == BTModuleTreeItem::Module) {
-			qDebug() << "item"<<item->text()<< "was a module";
+			//qDebug() << "item"<<item->text()<< "was a module";
 			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 			widgetItem->setCheckState(0, Qt::Unchecked);
 			// TODO: set columns, set color
+			// if not installed:
+			//     if not newly added:
+			//        state: installable (no indicator)
+			//     else: state: newly added, color
+			// if installed:
+			//     state: updated, color
+		}
+	}
+}
+
+QTreeWidget* BtSourceArea::treeWidget()
+{
+	return m_view;
+}
+
+// return the selected modules
+QMap<QString, bool>* BtSourceArea::selectedModules()
+{
+	return &m_checkedModules;
+}
+
+// when a module is checked/unchecked
+void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column)
+{
+	qDebug("BtSourceArea::slotSelectionChanged");
+	// modify the internal list of selected (actually checked) modules
+	// if() leaves groups away
+	if (!item->childCount() && column == 0) {
+		foreach (CSwordModuleInfo* module, m_moduleList) {
+			if (module->name() == item->text(0)) {
+				if (item->checkState(0) == Qt::Checked) {
+					qDebug() << module->name() << "was checked";
+					m_checkedModules.insert(module->name(), true);
+				} else {
+					qDebug() << module->name() << "was unchecked";
+					m_checkedModules.remove(module->name());
+				}
+				emit signalSelectionChanged(m_sourceName, m_checkedModules.count());
+				break;
+			}
 		}
 	}
 }
@@ -403,7 +437,7 @@ void BtSourceWidget::initSourceConnections()
 		connect(area()->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
 		connect(area()->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
 		connect(area()->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
-		connect(area()->m_view, SIGNAL(itemSelectionChanged()), SLOT(slotModuleSelectionChanged()));
+		connect(area(), SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
 	}
 	qDebug("void BtSourceWidget::initSourceConnections() end");
 }
@@ -567,17 +601,26 @@ void BtSourceWidget::initSources()
 void BtSourceWidget::addSource(const QString& sourceName)
 {
 	qDebug("void BtSourceWidget::addSource(const QString& sourceName) start");
+	// The source has already been added to the backend.
 
-	//BACKEND CODE
-	// the source has already been added to backend
+	QString type;
+	QString server;
+	QString path;
 	sword::InstallSource is = backend::source(sourceName);
 	if (backend::isRemote(is)) {
-
+		type = tr("remote");
+		server = is.source.c_str();
+		path = is.directory.c_str();
 	}
 	else { // local source
+		type = tr("local");
 		QFileInfo fi( is.directory.c_str() );
-		if (fi.isDir() && fi.isReadable()) {
-			
+		path = is.directory.c_str();
+		if (!(fi.isDir() )) {
+			path = path + tr("NOT A DIRECTORY!");
+		}
+		if (fi.isReadable()) {
+			path = path + tr("NOT READABLE!");
 		}
 	}
 
@@ -586,7 +629,7 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	int tabNumber = this->addTab(area, sourceName);
 
 	// TODO: add "remote/local", server, path etc.
-	QString toolTip(sourceName + QString("<br>"));
+	QString toolTip(sourceName + QString("<br>") + tr("Type:") + type + " " + server + path);
 	tabBar()->setTabToolTip(tabNumber, toolTip);
 
 	//select the new tab
@@ -596,25 +639,23 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	qDebug("BtSourceWidget::addSource end");
 }
 
-
-void BtSourceWidget::slotModuleSelectionChanged()
+//
+void BtSourceWidget::slotModuleSelectionChanged(QString sourceName, int selectedCount)
 {
-	//TODO: removing a source should update this also
+	//TODO: editing sources should update the map also
 	qDebug("BtSourceWidget::slotModuleSelectionChanged start");
-	//bool install = false;
-	//bool update = false;
-	
-	QList<QTreeWidgetItem*> selectedItems;
-	
-	for (int i = 0; i < count(); i++) {
-		QTreeWidget* view = dynamic_cast<QTreeWidget*>(widget(i));
-		selectedItems += view->selectedItems();
+
+	int overallCount = 0;
+	m_selectedModulesCountMap.insert(sourceName, selectedCount);
+	foreach (int count, m_selectedModulesCountMap) {
+		qDebug() << "add" << count << "to overall count of selected modules";
+		overallCount += count;
 	}
 	
-	if (selectedItems.isEmpty()) {
-		m_page->setInstallEnabled(false);
-	} else {
+	if (overallCount > 0) {
 		m_page->setInstallEnabled(true);
+	} else {
+		m_page->setInstallEnabled(false);
 	}
 }
 
