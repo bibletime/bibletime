@@ -96,10 +96,13 @@ public:
 	~BtSourceArea();
 
 	void initView();
+	
+	void initTreeFirstTime();
 
 private:
 	/** Create a module tree for a tree widget */
 	bool createModuleTree();
+
 	void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
 
 	QString m_sourceName;
@@ -109,6 +112,8 @@ private:
 	QPushButton* m_editButton;
 	QPushButton* m_deleteButton;
 	QPushButton* m_addButton;
+
+	bool m_treeAlreadyInitialized;
 };
 
 
@@ -152,6 +157,8 @@ private slots:
 	void slotAdd();
 	/** Modules have been checked/unchecked in the view. */
 	void slotModuleSelectionChanged();
+
+	void slotTabSelected(int index);
 	
 private:
 	QStringList m_sourceNameList;

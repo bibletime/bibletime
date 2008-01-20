@@ -199,7 +199,8 @@ QString BtInstallPage::header()
 
 BtSourceArea::BtSourceArea(const QString& sourceName)
 	: QWidget(),
-	m_sourceName(sourceName)
+	m_sourceName(sourceName),
+	m_treeAlreadyInitialized(false)
 {
 	qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
 	initView();
@@ -251,7 +252,15 @@ void BtSourceArea::initView()
 	mainLayout->addLayout(sourceLayout);
 
 	//populate the treewidget with the module list
-	createModuleTree();
+	//createModuleTree();
+}
+
+void BtSourceArea::initTreeFirstTime()
+{
+	if (!m_treeAlreadyInitialized) {
+		createModuleTree();
+		m_treeAlreadyInitialized = true; 
+	}
 }
 
 bool BtSourceArea::createModuleTree()
@@ -546,8 +555,13 @@ void BtSourceWidget::initSources()
 	foreach (QString sourceName, sourceList) {	
 		addSource(sourceName);
 	}
+	// connect this after the tabs have been created,
+	// otherwise the signal is caught too early.
+	QObject::connect(this, SIGNAL(currentChanged(int)), this, SLOT(slotTabSelected(int)));
 	qDebug("void BtSourceWidget::initSources end");
 	// TODO: select the current source from the config
+	// It's important to choose something because the tree is not initialized until now
+	setCurrentIndex(0);
 }
 
 void BtSourceWidget::addSource(const QString& sourceName)
@@ -602,6 +616,12 @@ void BtSourceWidget::slotModuleSelectionChanged()
 	} else {
 		m_page->setInstallEnabled(true);
 	}
+}
+
+void BtSourceWidget::slotTabSelected(int index)
+{
+	BtSourceArea* area = dynamic_cast<BtSourceArea*>(currentWidget());
+	if (area) area->initTreeFirstTime();
 }
 
 // ***************************************************************
