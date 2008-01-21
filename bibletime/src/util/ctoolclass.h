@@ -71,11 +71,18 @@ public:
 	* Returns true if the character at position "pos" of text is inside an HTML tag. Returns false if it's not inside an HTML tag.
 	*/
 	static bool inHTMLTag(int pos, QString & text);
+
 	/** Return the module's tooltip text
-	* @param module The module required for the toolip
+	* @param module The module required for the tooltip
 	* @return The tooltip text for the passed module
 	*/
 	static QString moduleToolTip(CSwordModuleInfo* module);
+
+	/** Return the module's tooltip text for a remote module
+	* @param module The module required for the tooltip
+	* @return The tooltip text for the passed module
+	*/
+	static QString remoteModuleToolTip(CSwordModuleInfo* module, QString localVer);
 	
 	/**
 	* Returns the width in pixels for a string which has mCount 'M' letters, using the specified widget's font.

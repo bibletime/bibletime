@@ -229,6 +229,43 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
 	return text;
 }
 
+QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localVer) {
+	Q_ASSERT(module);
+	if (!module) {
+		return QString::null;
+	}
+
+	QString text;
+
+	text = QString("<b>%1</b> ").arg( module->name() )
+		   + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
+
+	text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr>");
+
+	if (module->isEncrypted()) {
+		text += QObject::tr("Encrypted - needs unlock key") + QString("<br>");
+	}
+
+	if (module->hasVersion()) {
+		text += QObject::tr("Version") + QString(": %1").arg( module->config(CSwordModuleInfo::ModuleVersion) );
+	}
+	// if installed already
+	if (!localVer.isEmpty()) {
+				text += QString(" ") + QObject::tr("Local version") + QString(": %1").arg(localVer);
+	}
+	text += QString("<br>");
+
+	text += QString("<small>(") + QObject::tr("Double click for more information") + QString(")</small>");
+	
+
+	if (text.right(4) == QString::fromLatin1("<br>")) {
+		text = text.left(text.length()-4);
+	}
+
+	return text;
+}
+
+
 int CToolClass::mWidth(const QWidget* widget, int m)
 {
 	if (widget) {

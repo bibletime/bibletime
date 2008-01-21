@@ -106,7 +106,7 @@ signals:
 
 private slots:
 	void slotSelectionChanged(QTreeWidgetItem* item, int column);
-
+	void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
 private:
 	/** Create a module tree for a tree widget */
 	bool createModuleTree();

@@ -17,10 +17,12 @@
 #include "frontend/bookshelfmanager/new/backend.h"
 
 #include "frontend/cmodulechooserdialog.h"
+#include "frontend/btaboutmoduledialog.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
+#include "util/ctoolclass.h"
 
 #include <boost/scoped_ptr.hpp>
 
@@ -220,8 +222,8 @@ void BtSourceArea::initView()
 
 	// There are no views for the stack yet, see initSources
 	m_view = new QTreeWidget(this);
-	// TODO: columns
 	m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Status") << tr("Description"));
+	m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
 	mainLayout->addWidget(m_view);
 
 	qDebug("void BtSourceWidget::createTabWidget, refresh label");
@@ -255,6 +257,7 @@ void BtSourceArea::initView()
 
 	mainLayout->addLayout(sourceLayout);
 
+	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
 }
 
 void BtSourceArea::initTreeFirstTime()
@@ -317,6 +320,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 		addToTree(i, new QTreeWidgetItem(widgetItem));
 	}
 	if (item->type() != BTModuleTreeItem::Root) {
+		CSwordModuleInfo* mInfo = item->moduleInfo();
 		widgetItem->setText(0, item->text());
 		if (item->type() == BTModuleTreeItem::Category || item->type() == BTModuleTreeItem::Language) {
 			//qDebug() << "item"<<item->text()<< "was cat or lang";
@@ -333,6 +337,19 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 			//     else: state: newly added, color
 			// if installed:
 			//     state: updated, color
+			CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
+
+			QString installedV;
+			if (installedModule) {
+				installedV = QString(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+			}
+			QString descr(mInfo->config(CSwordModuleInfo::Description));
+			QString toolTipText = CToolClass::remoteModuleToolTip(mInfo, installedV);
+
+			widgetItem->setText(2, descr);
+			widgetItem->setToolTip(0, toolTipText);
+			widgetItem->setToolTip(1, toolTipText);
+			widgetItem->setToolTip(2, toolTipText);
 		}
 	}
 }
@@ -368,6 +385,16 @@ void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column)
 				break;
 			}
 		}
+	}
+}
+
+void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int column)
+{
+	CSwordModuleInfo* mInfo = m_remoteBackend->findModuleByName(item->text(0));
+	if (mInfo) {
+		BTAboutModuleDialog* dialog = new BTAboutModuleDialog(this, mInfo);
+		dialog->show();
+		dialog->raise();
 	}
 }
 
