@@ -54,10 +54,10 @@ private:
 	void initView();
 	void initConnections();
 	void initPathCombo();
-	
+
+private slots:
 	void slotPathChanged(const QString& pathText);
 	void slotEditPaths();
-	void slotInstall();
 
 private:
 	
@@ -145,6 +145,10 @@ public:
 	BtSourceArea* area();
 	QString currentSourceName();
 
+public slots:
+	/** Install button has been clicked. */
+	void slotInstall();
+
 private:
 	void initSourceConnections();
 	/** Add tabs/views for each source. */
@@ -171,7 +175,8 @@ private slots:
 	void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
 	void slotTabSelected(int index);
-	
+	void slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget* treeWidget);
+
 private:
 	QStringList m_sourceNameList;
 	BtInstallPage* m_page;
@@ -189,11 +194,9 @@ private:
 class CInstallModuleChooserDialog : public CModuleChooserDialog
 {
 public:
-	CInstallModuleChooserDialog(BtInstallPage* parent, QString title, QString label, ListCSwordModuleInfo* moduleInfo);
+	CInstallModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* empty);
 protected:
-	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
-private:
-
+	virtual void initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*);
 };
 
 #endif

@@ -59,8 +59,8 @@ public:
 
 signals:
 	
-	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. */
-	void modulesChanged(ListCSwordModuleInfo);
+	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. The tree widget can be used through the pointer for more complicated actions. */
+	void modulesChanged(ListCSwordModuleInfo, QTreeWidget*);
 
 protected:
 

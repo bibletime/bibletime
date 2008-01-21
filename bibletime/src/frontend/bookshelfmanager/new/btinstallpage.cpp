@@ -79,8 +79,8 @@ void BtInstallPage::initView()
 	QLabel* pathLabel = new QLabel(tr("Install Path:"));
 	m_pathCombo = new QComboBox();
 	initPathCombo(); // set the paths and the current path
-	m_configurePathButton = new QPushButton(tr("Configure..."));
-	m_configurePathButton->setEnabled(false); //TODO after writing the widget
+	m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
+	m_configurePathButton->setEnabled(false); // TODO: fix after there is a dialog for this
 	
 	pathLayout->addItem(pathSpacer);
 	pathLayout->addWidget(pathLabel);
@@ -90,23 +90,18 @@ void BtInstallPage::initView()
 	
 	// Source widget
 	//QTabWidget* m_sourcesTabWidget;
-	BtSourceWidget* m_sourceWidget = new BtSourceWidget(this);
+	m_sourceWidget = new BtSourceWidget(this);
 	mainLayout->addWidget(m_sourceWidget);
-
 	// Install button
 	QHBoxLayout *installButtonLayout = new QHBoxLayout();
 	installButtonLayout->setContentsMargins(0,5,0,5);
 	QSpacerItem *installButtonSpacer = new QSpacerItem(371, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	installButtonLayout->addItem(installButtonSpacer);
-	m_installButton = new QPushButton(tr("Install and Update"), this);
+	m_installButton = new QPushButton(tr("Install"), this);
 	m_installButton->setEnabled(false);
 	installButtonLayout->addWidget(m_installButton);
 	
 	mainLayout->addLayout(installButtonLayout);
-	
-	// reset the install button text, it was set to the longer
-	// one to make it wide enough
-	m_installButton->setText(tr("Install"));
 }
 
 void BtInstallPage::initConnections()
@@ -114,8 +109,7 @@ void BtInstallPage::initConnections()
 	qDebug("void BtInstallPage::initConnections() start");
 	QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged()));
 	QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
-	QObject::connect(m_installButton, SIGNAL(clicked()), this, SLOT(slotInstall()));
-	
+	QObject::connect(m_installButton, SIGNAL(clicked()), m_sourceWidget, SLOT(slotInstall()) );
 	//source widget has its own connections, not here
 }
 
@@ -152,30 +146,6 @@ void BtInstallPage::slotEditPaths()
 	// if the dialog was accepted, set the paths and save them
 	// and repopulate the combo
 }
-
-void BtInstallPage::slotInstall()
-{
-	qDebug("void BtInstallPage::slotInstall() start");
-	//TODO: what to do if there are identical module names?
-	
-	// create the confirmation dialog
-	// (module tree dialog, modules taken from all sources)
-	QString dlgTitle(tr("Install/Update modules?"));
-	QString dlgLabel(tr("Do you really want to install these modules?"));
-	
-	ListCSwordModuleInfo moduleList;
-	
-	// This doesn't work well - we have to install from each source
-	// separately and it requires knowing exactly which module comes from where
-//	CInstallModuleChooserDialog* dlg = new CInstallModuleChooserDialog(m_sourceWidget->m_tabBar, m_sourceWidget->m_viewStack, dlgTitle, dlgLabel, &moduleList);
-	//dlg->setGrouping(BTModuleTreeItem::Mod);
-
-	//BACKEND CODE
-
-	// Eventually we want threaded installation. For now we have to make a queue.
-
-}
-
 
 // implement the BtConfigPage methods
 
@@ -283,10 +253,10 @@ bool BtSourceArea::createModuleTree()
 	m_remoteBackend = backend::backend(is);
 	Q_ASSERT(m_remoteBackend);
 	m_moduleList = m_remoteBackend->moduleList();
-	qDebug() << "Remote module list for source" << m_sourceName << ":";
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != m_moduleList.end(); it++) {
-		qDebug() << (*it)->name() << (*it)->type();
-	}
+	//qDebug() << "Remote module list for source" << m_sourceName << ":";
+	//for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != m_moduleList.end(); it++) {
+	//	qDebug() << (*it)->name() << (*it)->type();
+	//}
 	//Q_ASSERT(m_moduleList.count() > 0); // is this true? what about when there are no modules in remote server?
 
 	// give the list to BTModuleTreeItem, create filter to remove
@@ -314,7 +284,7 @@ bool BtSourceArea::createModuleTree()
 
 void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)
 {
-	qDebug()<<"BtSourceArea::addToTree "<<item->text();
+	//qDebug()<<"BtSourceArea::addToTree "<<item->text();
 	//qDebug() << "BTMTItem type: " << item->type();
 	foreach (BTModuleTreeItem* i, item->children()) {
 		addToTree(i, new QTreeWidgetItem(widgetItem));
@@ -368,7 +338,7 @@ QMap<QString, bool>* BtSourceArea::selectedModules()
 // when a module is checked/unchecked
 void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column)
 {
-	qDebug("BtSourceArea::slotSelectionChanged");
+	//qDebug("BtSourceArea::slotSelectionChanged");
 	// modify the internal list of selected (actually checked) modules
 	// if() leaves groups away
 	if (!item->childCount() && column == 0) {
@@ -403,30 +373,23 @@ BtSourceArea::InstalledFilter::InstalledFilter(QString sourceName)
 	m_source(backend::source(sourceName)),
 	m_swordBackend(backend::backend(m_source))
 {
-	// these are set once because of optimizing
-	//m_source = ;
-	//CSwordBackend*
-	//m_swordBackend = backend::backend(m_source);
+	// these are set once to optimize away repeated calls
+	// m_source, m_swordBackend
 
 }
 //filter out already installed, not updateable modules
 bool BtSourceArea::InstalledFilter::filter(CSwordModuleInfo* mInfo)
 {
-// 	//TODO: sword::InstallSource m_source;
-// 	// sword::InstallSource m_localSource;
-// 	qDebug() << "BtSourceArea::InstalledFilter::filter, module " << mInfo->name();
-// 	//TODO: set the source for the backend
-// 	//sword::InstallSource source = backend::source("");
-// 	CSwordModuleInfo* const installedModule = m_swordBackend->findModuleByName(mInfo->name());
-// 	if (installedModule) {
-// 		qDebug("already installed, check if it's an update...");
-// 		//check whether it's an updated module or just the same
-// 		const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-// 		const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
-// 		if (installedVersion >= newVersion) {
-// 			return false;
-// 		}
-// 	}
+	//qDebug() << "BtSourceArea::InstalledFilter::filter, module " << mInfo->name();
+	CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
+	if (installedModule) {
+		//qDebug("already installed, check if it's an update...");
+		const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+		const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+		if (installedVersion >= newVersion) {
+			return false;
+		}
+	}
 	return true;
 }
 
@@ -487,7 +450,6 @@ void BtSourceWidget::slotDelete()
 			QMessageBox::Yes | QMessageBox::No);
 
 	if (ret == QMessageBox::Yes) {
-		// BACKEND CODE
 		backend::deleteSource(currentSourceName());
 		
 		// remove the UI elements
@@ -692,33 +654,64 @@ void BtSourceWidget::slotTabSelected(int index)
 	if (area) area->initTreeFirstTime();
 }
 
+void BtSourceWidget::slotInstall()
+{
+	qDebug("void BtInstallPage::slotInstall start");
+	//TODO: what to do if there are identical module names?
+	
+	// create the confirmation dialog
+	// (module tree dialog, modules taken from all sources)
+	QString dlgTitle(tr("Install/Update modules?"));
+	QString dlgLabel(tr("Do you really want to install these modules?"));
+	// with empty list we avoid creating the module tree inside the dialog code
+	ListCSwordModuleInfo emptyList;
+	CInstallModuleChooserDialog* dlg = new CInstallModuleChooserDialog(this, dlgTitle, dlgLabel, &emptyList);
+	//dlg->setGrouping(BTModuleTreeItem::Mod);
+	QTreeWidget* treeWidget = dlg->treeWidget();
+	QTreeWidgetItem* rootItem = treeWidget->invisibleRootItem();
+	// loop through each tab
+	for (int tab = 0; tab < count(); ++tab) {
+		BtSourceArea* sArea = dynamic_cast<BtSourceArea*>(widget(tab));
+		if (sArea && sArea->selectedModules()->count() > 0) {
+			// there are selected modules in the source, create items for these
+			QTreeWidgetItem* sourceItem = new QTreeWidgetItem(rootItem);
+			sourceItem->setText(0, m_sourceNameList.at(tab));
+			sourceItem->setFlags(Qt::ItemIsUserCheckable|Qt::ItemIsTristate|Qt::ItemIsEnabled);
+			foreach (QString mName, sArea->selectedModules()->keys()) {
+				QTreeWidgetItem* moduleItem = new QTreeWidgetItem(sourceItem);
+				moduleItem->setText(0, mName);
+				moduleItem->setFlags(Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
+				moduleItem->setCheckState(0, Qt::Checked);
+			}
+			sourceItem->setExpanded(true);
+		}
+	}
+	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), SLOT(slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget*)) );
+	dlg->show();
+	dlg->raise();
+	// The OK signal sent by the dialog is catched with slotInstallAccepted.
+}
+
+void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget* treeWidget)
+{
+	qDebug("BtSourceWidget::slotInstallAccepted");
+	qDebug("nothing yet!");
+	//BACKEND CODE
+
+	// Eventually we want threaded installation. For now we have to make a queue.
+
+}
+
 // ***************************************************************
 // ************* Dialog for confirming the install ***************
 // ***************************************************************
 
-CInstallModuleChooserDialog::CInstallModuleChooserDialog(BtInstallPage* parent, QString title, QString label, ListCSwordModuleInfo* moduleInfo)
-	: CModuleChooserDialog(parent, title, label, moduleInfo)
-{	qDebug("CInstallModuleChooserDialog::CInstallModuleChooserDialog start");}
-
-void CInstallModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem)
+CInstallModuleChooserDialog::CInstallModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* empty)
+	: CModuleChooserDialog(parent, title, label, empty)
 {
-	qDebug("CInstallModuleChooserDialog::initModuleItem start");
-	// TODO: double entries?
-	
-// 	QString name = btItem->text();
-// 	QString source;
-// 	for(int i = 0; i < m_tabBar->count(); i++) {
-// 		// try to find the item in the source view
-// 		QTreeWidget* view = dynamic_cast<QTreeWidget*>();
-// 		QList<QTreeWidgetItem*> matching = view->findItems(, Qt::MatchExactly);
-// 		if (!matching.isEmpty()) {
-// 			source = ;
-// 			break;
-// 		}
-// 	}
-// 	
-// 	QString text = name + " (" + source + ")";
-// 	widgetItem->setText(0, source);
-// 	widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-// 	widgetItem->setCheckState(0, Qt::Checked);
+	qDebug("CInstallModuleChooserDialog::CInstallModuleChooserDialog start");
+	init();
 }
+
+void CInstallModuleChooserDialog::initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*)
+{}
