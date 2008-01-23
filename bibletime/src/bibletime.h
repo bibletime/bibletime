@@ -109,7 +109,7 @@ class QSplitter;
 /** BibleTime's main class.
  * The main class of BibleTime. Here are the main widgets created.
  *
- * This is the main class of BibleTime! This class creates the GUI, the KAction objects
+ * This is the main class of BibleTime! This class creates the GUI, the QAction objects
  * and connects to some slots. Please insert the creation of actions in initActions,
  * the creation of widgets into initView and the connect(...) calls into initConnections.
  * Reading from a config file on creation time should go into readSettings(), saving into

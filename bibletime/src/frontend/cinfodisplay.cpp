@@ -1,18 +1,14 @@
-//
-// C++ Implementation: cinfodisplay
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004,2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 //BibleTime includes
 #include "cinfodisplay.h"
-#include "cinfodisplay.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
@@ -37,20 +33,14 @@
 #include <QLabel>
 #include <QRegExp>
 #include <QVBoxLayout>
-
-//KDE includes
-
-#include <kstandardaction.h>
-#include <kaction.h>
-
+#include <QAction>
 
 using namespace Rendering;
 using namespace sword;
 
 namespace InfoDisplay {
 
-CInfoDisplay::CInfoDisplay(QWidget *parent)
-	: QWidget(parent)
+CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent)
 {
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	QLabel* headingLabel = new QLabel(tr("Mag"),this);
@@ -58,7 +48,8 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
 	m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
-	m_copyAction = KStandardAction::copy(0);
+	m_copyAction = new QAction(tr("Copy"), this);
+	m_copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
 	QObject::connect(m_copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
 
 	connect(
@@ -70,7 +61,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent)
 	headingLabel->setBuddy(m_htmlPart->view());
 	layout->addWidget(headingLabel);
 	layout->addWidget(m_htmlPart->view());
-	QString initialMagText = tr("This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.");
+	QString initialMagText = tr("<small>This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.</small>");
 	m_htmlPart->setText(initialMagText);
 }
 
@@ -469,8 +460,7 @@ void CInfoDisplay::clearInfo() {
 	CDisplayTemplateMgr::Settings settings;
 	settings.pageCSS_ID = "infodisplay";
 
-	m_htmlPart->setText( tmgr->fillTemplate(CBTConfig::get
-												(CBTConfig::displayStyle), QString::null, settings) );
+	m_htmlPart->setText( tmgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), QString::null, settings) );
 }
 
 } //end of namespace InfoDisplay
