@@ -7,10 +7,10 @@
 *
 **********/
 
-#ifndef CONFIG_H_CMAKE_
-#define CONFIG_H_CMAKE_
+#ifndef CONFIG_H_CMAKE
+#define CONFIG_H_CMAKE
 
 #cmakedefine BT_VERSION "${BT_VERSION}"
 
 
-#endif /*CONFIG_H_CMAKE_*/
+#endif CONFIG_H_CMAKE
