@@ -644,7 +644,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-01-19 18:48+0100\n"
+"POT-Creation-Date: 2008-01-25 19:40+0100\n"
 "PO-Revision-Date: 2006-01-13 10:48+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -702,19 +702,19 @@ msgstr ""
 "X-Generator: KBabel 1.10.2\n"
 "#-#-#-#-#  de.po (index)  #-#-#-#-#\n"
 
-#: docs/howto/unicode/en/howto-basics.docbook:1
+#: docs/howto/en/docbook/howto-basics.docbook:1
 msgid "Bible Study Basics"
 msgstr "Grundlagen des Bibelstudiums"
 
-#: docs/howto/unicode/en/howto-basics.docbook:4
+#: docs/howto/en/docbook/howto-basics.docbook:4
 msgid "Our Purpose as we Approach the Bible"
 msgstr "Unsere Absicht, wenn wir uns der Bibel annähern"
 
-#: docs/howto/unicode/en/howto-basics.docbook:6
+#: docs/howto/en/docbook/howto-basics.docbook:6
 msgid "Jn.5:39-40"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-basics.docbook:6
+#: docs/howto/en/docbook/howto-basics.docbook:6
 #, fuzzy
 msgid ""
 "You search the Scriptures, because you think that in them you have eternal "
@@ -725,7 +725,7 @@ msgstr ""
 "das ewige Leben darin; und sie ist's die von mir zeugt; aber ihr wollt nicht "
 "zu mir kommen, dass ihr das Leben hättet.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:12
+#: docs/howto/en/docbook/howto-basics.docbook:12
 #, fuzzy
 msgid ""
 "The chief purpose of the book is to bring us to the Person.  Martin Luther "
@@ -737,7 +737,7 @@ msgstr ""
 "ist es mit dem Bibelstudium, wir tun es nicht um unser selbst willen, "
 "sondern wegen der Gemeinschaft mit Gott."
 
-#: docs/howto/unicode/en/howto-basics.docbook:17
+#: docs/howto/en/docbook/howto-basics.docbook:17
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.97, 104."
@@ -745,7 +745,7 @@ msgstr ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, Seiten 97, 104."
 
-#: docs/howto/unicode/en/howto-basics.docbook:19
+#: docs/howto/en/docbook/howto-basics.docbook:19
 #, fuzzy
 msgid ""
 "The Jews to whom Jesus spoke [...] imagined that to possess Scripture was "
@@ -760,7 +760,7 @@ msgstr ""
 "the world to come.&quot; Ihr Studium hatte das Ende in sich selbst. Hier "
 "wurden sie schmerzhaft getäuscht."
 
-#: docs/howto/unicode/en/howto-basics.docbook:24
+#: docs/howto/en/docbook/howto-basics.docbook:24
 msgid ""
 "There is neither merit nor profit in the reading of Scripture for its own "
 "sake, but only if it effectively introduces us to Jesus Christ. Whenever the "
@@ -772,11 +772,11 @@ msgstr ""
 "wenn wir die Bibel lesen, brauchen wir die eifrige Erwartung, durch sie "
 "Christus zu finden."
 
-#: docs/howto/unicode/en/howto-basics.docbook:31
+#: docs/howto/en/docbook/howto-basics.docbook:31
 msgid "Approaches to God's Word"
 msgstr "Annäherung an Gottes Wort"
 
-#: docs/howto/unicode/en/howto-basics.docbook:32
+#: docs/howto/en/docbook/howto-basics.docbook:32
 #, fuzzy
 msgid ""
 "Hearing and reading provide a telescopic view of the scripture while study "
@@ -789,11 +789,11 @@ msgstr ""
 "die Schriften vereinigt das Hören, Lesen, Studieren und Ausweniglernen und "
 "verfestigt die Worte in unseren Köpfen."
 
-#: docs/howto/unicode/en/howto-basics.docbook:37
+#: docs/howto/en/docbook/howto-basics.docbook:37
 msgid "Hear"
 msgstr "Hören"
 
-#: docs/howto/unicode/en/howto-basics.docbook:38
+#: docs/howto/en/docbook/howto-basics.docbook:38
 msgid ""
 "Lk.11:28 <quote>blessed are those who hear the word of God, and observe it.</"
 "quote>"
@@ -801,11 +801,11 @@ msgstr ""
 "Lukas 11,28 <quote>Er erwiderte: Selig sind vielmehr die, die das Wort "
 "Gottes hören und es befolgen.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:42
+#: docs/howto/en/docbook/howto-basics.docbook:42
 msgid "Read"
 msgstr "Lesen"
 
-#: docs/howto/unicode/en/howto-basics.docbook:43
+#: docs/howto/en/docbook/howto-basics.docbook:43
 msgid ""
 "Rev.1:3 <quote>Blessed is he who reads and those who hear the words of this "
 "prophecy [...]</quote>"
@@ -814,7 +814,7 @@ msgstr ""
 "sie hört und wer sich an das hält, was geschrieben ist; denn die Zeit ist "
 "nahe.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:45
+#: docs/howto/en/docbook/howto-basics.docbook:45
 msgid ""
 "1 Tim.4:13 <quote>give attention to the public reading of Scripture [...]</"
 "quote>"
@@ -822,11 +822,11 @@ msgstr ""
 "1. Timotheus 4,13 <quote>Lies ihnen eifrig (aus der Schrift) vor, ermahne "
 "und belehre sie, bis ich komme.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:49
+#: docs/howto/en/docbook/howto-basics.docbook:49
 msgid "Study"
 msgstr "Studium"
 
-#: docs/howto/unicode/en/howto-basics.docbook:50
+#: docs/howto/en/docbook/howto-basics.docbook:50
 msgid ""
 "Acts 17:11 <quote>Now these were more noble-minded than those in "
 "Thessalonica, for they received the word with great eagerness, examining the "
@@ -837,7 +837,7 @@ msgstr ""
 "Tag für Tag in den Schriften nach, ob sich dies wirklich so verhielte.</"
 "quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:54
+#: docs/howto/en/docbook/howto-basics.docbook:54
 msgid ""
 "2 Tim.2:15 <quote>Be diligent [KJV `Study'] to present yourself approved to "
 "God as a workman who does not need to be ashamed, handling accurately the "
@@ -847,11 +847,11 @@ msgstr ""
 "vor Gott zu bewähren als ein Arbeiter, der sich nicht zu schämen braucht, "
 "als ein Mann, der offen und klar die wahre Lehre vertritt. </quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:59
+#: docs/howto/en/docbook/howto-basics.docbook:59
 msgid "Memorize"
 msgstr "Auswendiglernen"
 
-#: docs/howto/unicode/en/howto-basics.docbook:60
+#: docs/howto/en/docbook/howto-basics.docbook:60
 msgid ""
 "Ps.119:11 <quote>Thy word I have hid in my heart, that I may not sin against "
 "Thee.</quote>"
@@ -859,11 +859,11 @@ msgstr ""
 "Psalm 119,11 <quote>Ich berge deinen Spruch im Herzen, damit ich gegen dich "
 "nicht sündige.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:64
+#: docs/howto/en/docbook/howto-basics.docbook:64
 msgid "Meditate"
 msgstr "Nachdenken"
 
-#: docs/howto/unicode/en/howto-basics.docbook:65
+#: docs/howto/en/docbook/howto-basics.docbook:65
 msgid ""
 "Ps.1:2-3 <quote>But his delight is in the law of the Lord, And in His law he "
 "meditates day and night. And he will be like a tree firmly planted by "
@@ -877,7 +877,7 @@ msgstr ""
 "zur rechten Zeit seine Frucht bringt und dessen Blätter nicht welken. Alles, "
 "was er tut, wird ihm gut gelingen.</quote>"
 
-#: docs/howto/unicode/en/howto-basics.docbook:71
+#: docs/howto/en/docbook/howto-basics.docbook:71
 #, fuzzy
 msgid ""
 "The Navigators illustrate this by saying that as the thumb can touch all the "
@@ -893,15 +893,15 @@ msgstr ""
 "sie zu studieren und Dinge zu lernen. Durch diese Vorgehensweise wird er mit "
 "der allumfassenden Botschaft  der Bibel vetraut."
 
-#: docs/howto/unicode/en/howto-basics.docbook:79
+#: docs/howto/en/docbook/howto-basics.docbook:79
 msgid "Types of Bible Studies"
 msgstr "Arten des Bibelstudiums"
 
-#: docs/howto/unicode/en/howto-basics.docbook:80
+#: docs/howto/en/docbook/howto-basics.docbook:80
 msgid "Topical Study"
 msgstr "Thematische Studie"
 
-#: docs/howto/unicode/en/howto-basics.docbook:81
+#: docs/howto/en/docbook/howto-basics.docbook:81
 msgid ""
 "Pick out a certain topic and follow it through, using cross-references or a "
 "concordance."
@@ -909,34 +909,34 @@ msgstr ""
 "Suchen Sie sich ein bestimmtes Thema heraus und folgen Sie ihm unter "
 "Benutzung von Querverweisen oder einer Konkordanz."
 
-#: docs/howto/unicode/en/howto-basics.docbook:85
+#: docs/howto/en/docbook/howto-basics.docbook:85
 msgid "Character Study"
 msgstr "Charakterstudie"
 
-#: docs/howto/unicode/en/howto-basics.docbook:86
+#: docs/howto/en/docbook/howto-basics.docbook:86
 msgid ""
 "Studying the life of a Bible character, e.g. Joseph's life in Gen.37-50."
 msgstr ""
 "Das Studieren des Lebens einer Person der Bibel, z.B. Josephs Leben in 1. "
 "Mose 37-50"
 
-#: docs/howto/unicode/en/howto-basics.docbook:90
+#: docs/howto/en/docbook/howto-basics.docbook:90
 msgid "Expository Study"
 msgstr "Textauszugsstudie"
 
-#: docs/howto/unicode/en/howto-basics.docbook:91
+#: docs/howto/en/docbook/howto-basics.docbook:91
 msgid "Studying a certain passage: paragraph, chapter, or book."
 msgstr "Studieren eines Absatzes, Kapitels oder Buches."
 
-#: docs/howto/unicode/en/howto-basics.docbook:95
+#: docs/howto/en/docbook/howto-basics.docbook:95
 msgid "Basics of Correct Interpretation"
 msgstr "Grundlagen einer richtiger Auslegung"
 
-#: docs/howto/unicode/en/howto-basics.docbook:97
+#: docs/howto/en/docbook/howto-basics.docbook:97
 msgid "Content"
 msgstr "Inhalt"
 
-#: docs/howto/unicode/en/howto-basics.docbook:98
+#: docs/howto/en/docbook/howto-basics.docbook:98
 msgid ""
 "What does it say? What does it say in the original language? Be careful with "
 "definitions. Don't read into it what it doesn't say."
@@ -945,11 +945,11 @@ msgstr ""
 "Sie vorsichtig mit Definitionen. Lesen Sie nicht hinein, was nicht gesagt "
 "wird."
 
-#: docs/howto/unicode/en/howto-basics.docbook:102
+#: docs/howto/en/docbook/howto-basics.docbook:102
 msgid "Context"
 msgstr "Kontext"
 
-#: docs/howto/unicode/en/howto-basics.docbook:103
+#: docs/howto/en/docbook/howto-basics.docbook:103
 msgid ""
 "What do the verses around it say? &quot;Context is king&quot; is the rule -- "
 "the passage must make sense within the structure of the entire passage and "
@@ -959,12 +959,12 @@ msgstr ""
 "die Devise - der Abschnitt muss in der gesamten Struktur der benachbarten "
 "Abschnitte und Bücher Sinn ergeben."
 
-#: docs/howto/unicode/en/howto-basics.docbook:107
-#: docs/howto/unicode/en/howto-interpretation.docbook:26
+#: docs/howto/en/docbook/howto-basics.docbook:107
+#: docs/howto/en/docbook/howto-interpretation.docbook:26
 msgid "Cross-reference"
 msgstr "Querverweise"
 
-#: docs/howto/unicode/en/howto-basics.docbook:108
+#: docs/howto/en/docbook/howto-basics.docbook:108
 msgid ""
 "What do other verses about this subject say through the rest of the Bible? "
 "God doesn't contradict Himself, so our interpretation needs to stand the "
@@ -974,11 +974,11 @@ msgstr ""
 "widerspricht sich nicht, deshalb muss unsere Auslegung den Test durch andere "
 "Stellen bestehen."
 
-#: docs/howto/unicode/en/howto-basics.docbook:113
+#: docs/howto/en/docbook/howto-basics.docbook:113
 msgid "An Expository Study of Matthew 6:1-18"
 msgstr "Eine Textauszugsstudie von Matthäus 6,1-18"
 
-#: docs/howto/unicode/en/howto-basics.docbook:114
+#: docs/howto/en/docbook/howto-basics.docbook:114
 #, fuzzy
 msgid ""
 "Let's study together Mt.6:1-18.  Read it to yourself, first looking for the "
@@ -995,11 +995,11 @@ msgstr ""
 "den Vers gefunden haben, schreiben Sie ihn hinter die Römische Zahl 1 ihrer "
 "Übersicht:"
 
-#: docs/howto/unicode/en/howto-basics.docbook:119
+#: docs/howto/en/docbook/howto-basics.docbook:119
 msgid "Beware of practicing your righteousness before men to be noticed"
 msgstr "Hütet euch, eure Gerechtigkeit vor den Menschen zur Schau zu stellen"
 
-#: docs/howto/unicode/en/howto-basics.docbook:122
+#: docs/howto/en/docbook/howto-basics.docbook:122
 msgid ""
 "What does <quote>practicing your righteousness</quote> mean? Does the "
 "passage give any examples? What area of our lives is being addressed? "
@@ -1010,20 +1010,20 @@ msgstr ""
 "<emphasis>Unsere Absichten!</emphasis> Welche Unterüberschriften behandeln "
 "diesen Gedanken?"
 
-#: docs/howto/unicode/en/howto-basics.docbook:126
-#: docs/howto/unicode/en/howto-basics.docbook:135
+#: docs/howto/en/docbook/howto-basics.docbook:126
+#: docs/howto/en/docbook/howto-basics.docbook:135
 msgid "When you give"
 msgstr "Wenn Sie spenden"
 
-#: docs/howto/unicode/en/howto-basics.docbook:127
+#: docs/howto/en/docbook/howto-basics.docbook:127
 msgid "When you fast"
 msgstr "Wenn Sie fasten"
 
-#: docs/howto/unicode/en/howto-basics.docbook:128
+#: docs/howto/en/docbook/howto-basics.docbook:128
 msgid "When you pray"
 msgstr "Wenn Sie beten"
 
-#: docs/howto/unicode/en/howto-basics.docbook:131
+#: docs/howto/en/docbook/howto-basics.docbook:131
 msgid ""
 "Now fill in the outline with specific instructions of how to avoid wrong "
 "ways of practicing our righteousness:"
@@ -1031,7 +1031,7 @@ msgstr ""
 "Füllen Sie jetzt die Übersicht mit spezifischen Anweisungen, wie man es "
 "vermeiden kann, seine Gerechtigkeit zur Schau zu stellen:"
 
-#: docs/howto/unicode/en/howto-basics.docbook:137
+#: docs/howto/en/docbook/howto-basics.docbook:137
 #, fuzzy
 msgid ""
 "don't sound a trumpet.  (how might someone <quote>sound a trumpet</quote> "
@@ -1040,59 +1040,59 @@ msgstr ""
 "lass es nicht vor dir herposaunen. (Wie könnte heute jemand das <quote>vor "
 "sich herposaunen lassen</quote>?)"
 
-#: docs/howto/unicode/en/howto-basics.docbook:138
+#: docs/howto/en/docbook/howto-basics.docbook:138
 msgid "do it secretly."
 msgstr "Tun Sie es im Verborgenen."
 
-#: docs/howto/unicode/en/howto-basics.docbook:139
+#: docs/howto/en/docbook/howto-basics.docbook:139
 msgid "etc."
 msgstr "usw."
 
-#: docs/howto/unicode/en/howto-basics.docbook:145
+#: docs/howto/en/docbook/howto-basics.docbook:145
 msgid "Worksheet: How to Use a Concordance"
 msgstr "Arbeitsblatt: Wie man eine Konkordanz benutzt"
 
-#: docs/howto/unicode/en/howto-basics.docbook:147
+#: docs/howto/en/docbook/howto-basics.docbook:147
 msgid "To Find a Particular Verse"
 msgstr "Um einen speziellen Vers zu finden"
 
-#: docs/howto/unicode/en/howto-basics.docbook:149
+#: docs/howto/en/docbook/howto-basics.docbook:149
 msgid "Pick out a key word or most-unusual word of the verse."
 msgstr ""
 "Suchen Sie sich das Schlüsselwort oder das ungewöhnlichste Wort des Verses "
 "heraus."
 
-#: docs/howto/unicode/en/howto-basics.docbook:150
+#: docs/howto/en/docbook/howto-basics.docbook:150
 msgid "Turn to this word alphabetically."
 msgstr "Schlagen Sie dieses Wort alphabetisch nach."
 
-#: docs/howto/unicode/en/howto-basics.docbook:151
+#: docs/howto/en/docbook/howto-basics.docbook:151
 msgid "Go down the column of listings until you find your verse."
 msgstr "Gehen Sie die Spalte der Auflistung durch, bis Sie ihren Vers finden."
 
-#: docs/howto/unicode/en/howto-basics.docbook:154
+#: docs/howto/en/docbook/howto-basics.docbook:154
 msgid "Find these verses:"
 msgstr "Finden Sie diese Verse:"
 
-#: docs/howto/unicode/en/howto-basics.docbook:156
+#: docs/howto/en/docbook/howto-basics.docbook:156
 #, fuzzy
 msgid "<quote>Faithful are the wounds of a friend</quote>"
 msgstr "Treu gemeint sind die Schläge eines Freundes"
 
-#: docs/howto/unicode/en/howto-basics.docbook:157
+#: docs/howto/en/docbook/howto-basics.docbook:157
 #, fuzzy
 msgid "<quote>We are ambassadors of Christ.</quote>"
 msgstr "Wir sind also Gesandte an Christi Statt..."
 
-#: docs/howto/unicode/en/howto-basics.docbook:158
+#: docs/howto/en/docbook/howto-basics.docbook:158
 msgid "The story of the rich man and Lazarus."
 msgstr "Die Geschichte vom reichen Mann und Lazarus"
 
-#: docs/howto/unicode/en/howto-basics.docbook:163
+#: docs/howto/en/docbook/howto-basics.docbook:163
 msgid "To Do a Topical Study"
 msgstr "Eine thematische Studie durchführen"
 
-#: docs/howto/unicode/en/howto-basics.docbook:164
+#: docs/howto/en/docbook/howto-basics.docbook:164
 #, fuzzy
 msgid ""
 "Let's say you wanted to do a study of the word &quot;redemption.&quot; First "
@@ -1108,11 +1108,11 @@ msgstr ""
 "nachschlagen , z.B. &quot;erlösen, erlöst, &quot;Lösegeld&quot;, sogar &quot;"
 "kaufen&quot; oder &quot;erkauft&quot;."
 
-#: docs/howto/unicode/en/howto-basics.docbook:170
+#: docs/howto/en/docbook/howto-basics.docbook:170
 msgid "To Clarify Word Meanings in the Greek and Hebrew"
 msgstr "Wortbedeutungen im Griechischen oder Hebräischen klären"
 
-#: docs/howto/unicode/en/howto-basics.docbook:171
+#: docs/howto/en/docbook/howto-basics.docbook:171
 msgid ""
 "What if you noticed a contradiction in the KJV between Mt.7:1 <quote>Judge "
 "not lest you be judged</quote> and 1 Cor.2:15 <quote>He that is spiritual "
@@ -1127,11 +1127,11 @@ msgstr ""
 "verschiedene griechische Wörter benutzt, die beide mit &quot;richten&quot; "
 "im Deutschen übersetzt wurden? (Wir benutzen ab jetzt Strongnummern)."
 
-#: docs/howto/unicode/en/howto-basics.docbook:175
+#: docs/howto/en/docbook/howto-basics.docbook:175
 msgid "Look up &quot;judge&quot;."
 msgstr "Schlagen Sie nun das erste &quot;richtet&quot; nach."
 
-#: docs/howto/unicode/en/howto-basics.docbook:176
+#: docs/howto/en/docbook/howto-basics.docbook:176
 #, fuzzy
 msgid ""
 "Go down the column of entries to Mt.7:1.  To the right is a number, 2919.  "
@@ -1141,15 +1141,15 @@ msgstr ""
 "Nummer: 2919. Diese bezieht sich auf das verwendete griechische Wort. "
 "Schreiben Sie es auf."
 
-#: docs/howto/unicode/en/howto-basics.docbook:178
+#: docs/howto/en/docbook/howto-basics.docbook:178
 msgid "Now look up &quot;judgeth&quot;."
 msgstr "Schlagen Sie nun das zweite &quot;richtet&quot; nach."
 
-#: docs/howto/unicode/en/howto-basics.docbook:179
+#: docs/howto/en/docbook/howto-basics.docbook:179
 msgid "Go down the column to 1 Cor.2:15 . . . . . 350."
 msgstr "Gehen Sie die Spalte bis 1. Korinther 2,15 durch . . . . . 350."
 
-#: docs/howto/unicode/en/howto-basics.docbook:180
+#: docs/howto/en/docbook/howto-basics.docbook:180
 #, fuzzy
 msgid ""
 "Turn in the back to the Greek dictionary.  (Remember, you're in the NT so "
@@ -1161,43 +1161,43 @@ msgstr ""
 "Vergleichen Sie die Bedeutung von 2219 mit der Bedeutung von 350 und Sie "
 "haben ihre Antwort!"
 
-#: docs/howto/unicode/en/howto-basics.docbook:185
+#: docs/howto/en/docbook/howto-basics.docbook:185
 msgid "To Find Meanings of Names"
 msgstr "Die Bedeutung von Namen finden"
 
-#: docs/howto/unicode/en/howto-basics.docbook:186
+#: docs/howto/en/docbook/howto-basics.docbook:186
 msgid ""
 "By the same process we can find the meaning of a name in the Greek or Hebrew."
 msgstr ""
 "Mit den selben Schritten können wir die Bedeutung von griechischen oder "
 "Hebräischen Namen finden."
 
-#: docs/howto/unicode/en/howto-basics.docbook:187
+#: docs/howto/en/docbook/howto-basics.docbook:187
 msgid "Look up these names and write down their meaning:"
 msgstr ""
 "Schlagen Sie die folgenden Namen nach und schreiben Sie deren Bedeutung auf:"
 
-#: docs/howto/unicode/en/howto-basics.docbook:189
+#: docs/howto/en/docbook/howto-basics.docbook:189
 msgid "Nabal"
 msgstr "Nabal"
 
-#: docs/howto/unicode/en/howto-basics.docbook:190
+#: docs/howto/en/docbook/howto-basics.docbook:190
 msgid "Abigail"
 msgstr "Abigail"
 
-#: docs/howto/unicode/en/howto-basics.docbook:191
+#: docs/howto/en/docbook/howto-basics.docbook:191
 msgid "Joshua"
 msgstr "Josua"
 
-#: docs/howto/unicode/en/howto-basics.docbook:192
+#: docs/howto/en/docbook/howto-basics.docbook:192
 msgid "Barnabus"
 msgstr "Barnabas"
 
-#: docs/howto/unicode/en/howto-importance.docbook:1
+#: docs/howto/en/docbook/howto-importance.docbook:1
 msgid "Importance of God's Word"
 msgstr "Bedeutung des Wortes Gottes"
 
-#: docs/howto/unicode/en/howto-importance.docbook:2
+#: docs/howto/en/docbook/howto-importance.docbook:2
 #, fuzzy
 msgid ""
 "Understanding God's word is of great importance to all who call on God's "
@@ -1208,16 +1208,16 @@ msgstr ""
 "Namen anrufen. Das Studium der Bibel ist eine wichtige Möglichkeit, mit Gott "
 "kommunizieren zu lernen."
 
-#: docs/howto/unicode/en/howto-importance.docbook:6
+#: docs/howto/en/docbook/howto-importance.docbook:6
 msgid "A Book that is Unique"
 msgstr "Ein Buch, das einzigartig ist"
 
-#: docs/howto/unicode/en/howto-importance.docbook:7
+#: docs/howto/en/docbook/howto-importance.docbook:7
 #, fuzzy
 msgid "The Bible stands alone in many ways.  It is unique in:"
 msgstr "Die Bibel ist in vielen Dingen überragend. Sie ist einzigartig in:"
 
-#: docs/howto/unicode/en/howto-importance.docbook:12
+#: docs/howto/en/docbook/howto-importance.docbook:12
 #, fuzzy
 msgid ""
 "popularity.  Bible sales in North America: more than $500 million per year. "
@@ -1227,7 +1227,7 @@ msgstr ""
 "Dollar pro Jahr. Die Bibel ist sowohl insgesamt als auch jährlich der "
 "Bestseller."
 
-#: docs/howto/unicode/en/howto-importance.docbook:18
+#: docs/howto/en/docbook/howto-importance.docbook:18
 #, fuzzy
 msgid ""
 "authorship.  It was written over a period of 1600 years by 40 different "
@@ -1237,7 +1237,7 @@ msgstr ""
 "verschiedenen Autoren verschiedener Milieus geschrieben. Sie liest sich "
 "jedoch, als ob sie von einem einzigen geschrieben wurde."
 
-#: docs/howto/unicode/en/howto-importance.docbook:24
+#: docs/howto/en/docbook/howto-importance.docbook:24
 #, fuzzy
 msgid ""
 "preservation.  F. F. Bruce in <emphasis>Are New Testament Documents Reliable?"
@@ -1247,125 +1247,125 @@ msgstr ""
 "Documents Reliable?</emphasis> die Manuskripte des neuen Testamentes mit "
 "anderen alten Texten:"
 
-#: docs/howto/unicode/en/howto-importance.docbook:30
+#: docs/howto/en/docbook/howto-importance.docbook:30
 msgid "Comparison of New Testament manuscripts with other ancient texts."
 msgstr "Vergleich der Schriften des Neuen Testamentes mit anderen alten Texten"
 
-#: docs/howto/unicode/en/howto-importance.docbook:34
+#: docs/howto/en/docbook/howto-importance.docbook:34
 msgid "Work"
 msgstr "Werk"
 
-#: docs/howto/unicode/en/howto-importance.docbook:35
+#: docs/howto/en/docbook/howto-importance.docbook:35
 msgid "When Written"
 msgstr "Erstellungszeit"
 
-#: docs/howto/unicode/en/howto-importance.docbook:36
+#: docs/howto/en/docbook/howto-importance.docbook:36
 msgid "Earliest Copy"
 msgstr "Erstausgabe"
 
-#: docs/howto/unicode/en/howto-importance.docbook:37
+#: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Time Lapse"
 msgstr "Zeitspanne"
 
-#: docs/howto/unicode/en/howto-importance.docbook:37
+#: docs/howto/en/docbook/howto-importance.docbook:37
 msgid "Number of Copies"
 msgstr "Anzahl von Kopien"
 
-#: docs/howto/unicode/en/howto-importance.docbook:41
+#: docs/howto/en/docbook/howto-importance.docbook:41
 msgid "Herodotus"
 msgstr "Herodot"
 
-#: docs/howto/unicode/en/howto-importance.docbook:42
+#: docs/howto/en/docbook/howto-importance.docbook:42
 msgid "448-428 B.C."
 msgstr "448-428 v.Chr.."
 
-#: docs/howto/unicode/en/howto-importance.docbook:42
-#: docs/howto/unicode/en/howto-importance.docbook:52
-#: docs/howto/unicode/en/howto-importance.docbook:57
+#: docs/howto/en/docbook/howto-importance.docbook:42
+#: docs/howto/en/docbook/howto-importance.docbook:52
+#: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "900 A.D."
 msgstr "900 n.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:43
+#: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "1300 years"
 msgstr "1300 Jahre"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/unicode/en/howto-importance.docbook:43
+#: docs/howto/en/docbook/howto-importance.docbook:43
 msgid "8"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-importance.docbook:46
+#: docs/howto/en/docbook/howto-importance.docbook:46
 msgid "Tacitus"
 msgstr "Tacitus"
 
-#: docs/howto/unicode/en/howto-importance.docbook:47
+#: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "100 A.D."
 msgstr "100 n.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:47
+#: docs/howto/en/docbook/howto-importance.docbook:47
 msgid "1100 A.D."
 msgstr "1100 n.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:48
+#: docs/howto/en/docbook/howto-importance.docbook:48
 msgid "1000 years"
 msgstr "1000 Jahre"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/unicode/en/howto-importance.docbook:48
-#: docs/howto/unicode/en/howto-importance.docbook:58
+#: docs/howto/en/docbook/howto-importance.docbook:48
+#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "20"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-importance.docbook:51
+#: docs/howto/en/docbook/howto-importance.docbook:51
 msgid "Caesar's <emphasis>Gallic War</emphasis>"
 msgstr "Cäsars <emphasis>Gallischer Krieg</emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:52
+#: docs/howto/en/docbook/howto-importance.docbook:52
 msgid "50-58 B.C."
 msgstr "50-58 v.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:53
+#: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "950 years"
 msgstr "950 Jahre"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/unicode/en/howto-importance.docbook:53
+#: docs/howto/en/docbook/howto-importance.docbook:53
 msgid "10"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-importance.docbook:56
+#: docs/howto/en/docbook/howto-importance.docbook:56
 msgid "Livy's <emphasis>Roman History</emphasis>"
 msgstr "Livius' <emphasis>Römische Geschichte</emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:57
+#: docs/howto/en/docbook/howto-importance.docbook:57
 msgid "59 B.C. - 17 A.D."
 msgstr "59 v.Chr. - 17 n.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:58
+#: docs/howto/en/docbook/howto-importance.docbook:58
 msgid "900 years"
 msgstr "900 Jahre"
 
-#: docs/howto/unicode/en/howto-importance.docbook:61
+#: docs/howto/en/docbook/howto-importance.docbook:61
 msgid "New Testament"
 msgstr "Neues Testament"
 
-#: docs/howto/unicode/en/howto-importance.docbook:62
+#: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "40 A.D. - 100 A.D."
 msgstr "40 n.Chr. - 100 n.Chr."
 
-#: docs/howto/unicode/en/howto-importance.docbook:62
+#: docs/howto/en/docbook/howto-importance.docbook:62
 msgid "130 A.D. Partial manuscripts 350 A.D. Full manuscripts"
 msgstr "130 n.Chr. Teile der Manuskripte. 350 n.Chr. alle Manuskripte"
 
-#: docs/howto/unicode/en/howto-importance.docbook:63
+#: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "30 - 310 years"
 msgstr "30 - 310 Jahre"
 
-#: docs/howto/unicode/en/howto-importance.docbook:63
+#: docs/howto/en/docbook/howto-importance.docbook:63
 msgid "5000 Greek &amp; 10,000 Latin"
 msgstr "5000 Grieschische &amp; 10,000 Lateinische"
 
-#: docs/howto/unicode/en/howto-importance.docbook:66
+#: docs/howto/en/docbook/howto-importance.docbook:66
 #, fuzzy
 msgid ""
 "Ten copies of Caesar's <emphasis>Gallic War</emphasis> exist, the earliest "
@@ -1383,7 +1383,7 @@ msgstr ""
 "Johannesevangeliums von 130 n.Chr. Wie viele Ausgaben haben wir, um sie "
 "miteinander zu vergleichen? 500 in Griechisch und 10000 in Lateinisch!"
 
-#: docs/howto/unicode/en/howto-importance.docbook:72
+#: docs/howto/en/docbook/howto-importance.docbook:72
 #, fuzzy
 msgid ""
 "Textual critic F. J. A. Hort, \"The New Testament in the Original Greek\", "
@@ -1393,7 +1393,7 @@ msgstr ""
 "Textkritiker F. J. A. Hort, \"The New Testament in the Original Greek\", Bd. "
 "1, S. 561, zitiert in <emphasis>Questions of Life</emphasis> S. 25-26"
 
-#: docs/howto/unicode/en/howto-importance.docbook:74
+#: docs/howto/en/docbook/howto-importance.docbook:74
 msgid ""
 "\"In the verity and fullness of the evidence on which it rests, the text of "
 "the New Testament stands absolutely and unapproachably alone among other "
@@ -1403,11 +1403,11 @@ msgstr ""
 "des Neuen Testamentes absolut und unerreichbar alleine über den anderen "
 "alten Prosaschriften.\""
 
-#: docs/howto/unicode/en/howto-importance.docbook:79
+#: docs/howto/en/docbook/howto-importance.docbook:79
 msgid "A Book that God Breathed"
 msgstr "Ein Buch, das Gott eingegeben hat"
 
-#: docs/howto/unicode/en/howto-importance.docbook:80
+#: docs/howto/en/docbook/howto-importance.docbook:80
 #, fuzzy
 msgid ""
 "<emphasis>Heb.4:12 </emphasis>\"<emphasis>For the word of God is living and "
@@ -1424,7 +1424,7 @@ msgstr ""
 "quote></emphasis> Wenn wir die Bibel lesen ist Gottes Geist da, um es in "
 "unsere Herzen hinein zu legen in einer immerwieder frischen Art."
 
-#: docs/howto/unicode/en/howto-importance.docbook:86
+#: docs/howto/en/docbook/howto-importance.docbook:86
 msgid ""
 "2 Tim.3:16 declares, \"<emphasis>All scripture is inspired by God [lit., God-"
 "breathed].</emphasis>\" Do you believe this? Before you answer, consider "
@@ -1435,7 +1435,7 @@ msgstr ""
 "Bevor Sie antworten, ziehen Sie Jesu' Einstellung bezüglich der Schrift in "
 "Betracht."
 
-#: docs/howto/unicode/en/howto-importance.docbook:89
+#: docs/howto/en/docbook/howto-importance.docbook:89
 msgid ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, pp.93-95"
@@ -1443,7 +1443,7 @@ msgstr ""
 "John R.W. Stott, <emphasis>Christ the Controversialist</emphasis>, "
 "InterVarsity Press 1978, S. 93-95"
 
-#: docs/howto/unicode/en/howto-importance.docbook:90
+#: docs/howto/en/docbook/howto-importance.docbook:90
 #, fuzzy
 msgid ""
 "He referred to the human authors, but took it for granted that behind them "
@@ -1479,7 +1479,7 @@ msgstr ""
 "Autoren zu zerstören. God sprach. Männer sprachen. Keiner der beiden "
 "Wahrheiten ist es erlaubt von der anderen abzulenken. ..."
 
-#: docs/howto/unicode/en/howto-importance.docbook:105
+#: docs/howto/en/docbook/howto-importance.docbook:105
 #, fuzzy
 msgid ""
 "This, then, was Christ's view of the Scriptures.  Their witness was God's "
@@ -1492,7 +1492,7 @@ msgstr ""
 "an den göttlichen Ursprung der Bibel glauben ist, dass Jesus Christus selbst "
 "sie gelehrt hat."
 
-#: docs/howto/unicode/en/howto-importance.docbook:110
+#: docs/howto/en/docbook/howto-importance.docbook:110
 msgid ""
 "2 Tim.3:16 goes on, \"<emphasis>and profitable for teaching, for correction, "
 "for training in righteousness, that the man of God may be adequate, equipped "
@@ -1507,11 +1507,11 @@ msgstr ""
 "ist, wird die Folge daraus sein, dass sie unsere Autorität in allen Dingen "
 "des Glaubens und Wandels ist."
 
-#: docs/howto/unicode/en/howto-importance.docbook:117
+#: docs/howto/en/docbook/howto-importance.docbook:117
 msgid "A Book that Works"
 msgstr "Ein Buch, das arbeitet"
 
-#: docs/howto/unicode/en/howto-importance.docbook:119
+#: docs/howto/en/docbook/howto-importance.docbook:119
 msgid ""
 "What will studying the Bible do for you? 1 Thess.2:13 says that the Bible "
 "\"<emphasis>performs its work in you who believe.</emphasis>\" Beside each "
@@ -1522,34 +1522,34 @@ msgstr ""
 "quote> </emphasis> Schreiben Sie neben jede Schrift die Arbeit nieder, die "
 "das Wort durchführt."
 
-#: docs/howto/unicode/en/howto-importance.docbook:125
+#: docs/howto/en/docbook/howto-importance.docbook:125
 msgid "What does Bible study do for Christians?"
 msgstr "Was bringt das Bibelstudium für Christen?"
 
-#: docs/howto/unicode/en/howto-importance.docbook:129
+#: docs/howto/en/docbook/howto-importance.docbook:129
 msgid "Reference"
 msgstr "Referenz"
 
-#: docs/howto/unicode/en/howto-importance.docbook:130
+#: docs/howto/en/docbook/howto-importance.docbook:130
 msgid "Action"
 msgstr "Zweck"
 
-#: docs/howto/unicode/en/howto-importance.docbook:135
+#: docs/howto/en/docbook/howto-importance.docbook:135
 msgid "Eph. 5:26"
 msgstr "Epheser 5,26"
 
-#: docs/howto/unicode/en/howto-importance.docbook:137
+#: docs/howto/en/docbook/howto-importance.docbook:137
 msgid ""
 "cleanses -- \"...having cleansed her by the washing of water with the word.\""
 msgstr ""
 "es reinigt -- <quote>[...] Er hat sie gereinigt durch das Wasserbad im "
 "Wort...</quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:142
+#: docs/howto/en/docbook/howto-importance.docbook:142
 msgid "Acts 20:32"
 msgstr "Apostelgeschichte 20,32"
 
-#: docs/howto/unicode/en/howto-importance.docbook:145
+#: docs/howto/en/docbook/howto-importance.docbook:145
 #, fuzzy
 msgid ""
 "builds up -- \" ...the word of His grace, which is able to build you up and "
@@ -1559,11 +1559,11 @@ msgstr ""
 "Gnade, der da mächtig ist, euch zu erbauen und euch das Erbe zu geben mit "
 "allen, die geheiligt sind. </quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:154
+#: docs/howto/en/docbook/howto-importance.docbook:154
 msgid "Rom. 15:4"
 msgstr "Römer 15,4"
 
-#: docs/howto/unicode/en/howto-importance.docbook:157
+#: docs/howto/en/docbook/howto-importance.docbook:157
 msgid ""
 "encourages -- \"that through perseverance and the encouragement of the "
 "Scriptures we might have hope.\""
@@ -1572,11 +1572,11 @@ msgstr ""
 "geschrieben, damit wir durch Geduld und den Trost der Schrift Hoffnung "
 "haben. </quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:164
+#: docs/howto/en/docbook/howto-importance.docbook:164
 msgid "Rom. 10:17"
 msgstr "Römer 10,17"
 
-#: docs/howto/unicode/en/howto-importance.docbook:167
+#: docs/howto/en/docbook/howto-importance.docbook:167
 msgid ""
 "gives faith -- \"So faith comes from hearing, and hearing by the word of "
 "Christ.\""
@@ -1584,11 +1584,11 @@ msgstr ""
 "es gibt Glauben -- <quote>So kommt der Glaube aus der Predigt, das Predigen "
 "aber durch das Wort Christi.</quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:175
+#: docs/howto/en/docbook/howto-importance.docbook:175
 msgid "1 Cor. 10:11"
 msgstr "1. Korinther 10,11"
 
-#: docs/howto/unicode/en/howto-importance.docbook:178
+#: docs/howto/en/docbook/howto-importance.docbook:178
 msgid ""
 "instructs -- \"Now these things happened to them for an example, and they "
 "were written for our instruction\""
@@ -1596,11 +1596,11 @@ msgstr ""
 "es warnt -- <quote> Die wiederfuhr ihnen als ein Vorbild. Es ist aber "
 "geschrieben uns zur Warnung [...]</quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:186
+#: docs/howto/en/docbook/howto-importance.docbook:186
 msgid "Mt. 4:4"
 msgstr "Matthäus 4,4"
 
-#: docs/howto/unicode/en/howto-importance.docbook:189
+#: docs/howto/en/docbook/howto-importance.docbook:189
 msgid ""
 "nourishment -- \"But He answered and said, 'It is written, Man shall not "
 "live on bread alone, but on every word that proceeds out of the mouth of "
@@ -1610,11 +1610,11 @@ msgstr ""
 "Mensch lebt nicht vom Brot allein, sondern von einem jeden Wort, das aus dem "
 "Wort Gottes geht.\"</quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:200
+#: docs/howto/en/docbook/howto-importance.docbook:200
 msgid "A Book that Liberates"
 msgstr "Ein Buch, das befreit"
 
-#: docs/howto/unicode/en/howto-importance.docbook:202
+#: docs/howto/en/docbook/howto-importance.docbook:202
 #, fuzzy
 msgid ""
 "Jn.8:32 \"<emphasis>and you shall know the truth, and the truth shall make "
@@ -1632,7 +1632,7 @@ msgstr ""
 "<emphasis><quote>Wenn ihr bleiben werdet in meinem Wort, so seid ihr "
 "Warhaftig meine Jünger...</quote></emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:208
+#: docs/howto/en/docbook/howto-importance.docbook:208
 msgid ""
 "We see that this is a conditional promice, specifically speaking of the "
 "truth of God's word."
@@ -1640,7 +1640,7 @@ msgstr ""
 "Wir sehen, dass es ein bedingtes Versprechen ist, dass speziell von der "
 "Wahrheit Gottes Wortes spricht."
 
-#: docs/howto/unicode/en/howto-importance.docbook:210
+#: docs/howto/en/docbook/howto-importance.docbook:210
 msgid ""
 "The Greek word for \"wind\" used in Eph.4:14 means a <emphasis>violent wind."
 "</emphasis> \"<emphasis>As a result, we are no longer to be children, tossed "
@@ -1655,7 +1655,7 @@ msgstr ""
 "Bibel in uns bewirkt ist ,dass sie uns in der Wahrheit verwurzelt, mit der "
 "Folge, dass wir nicht leicht <quote>weggeblasen werden</quote>."
 
-#: docs/howto/unicode/en/howto-importance.docbook:216
+#: docs/howto/en/docbook/howto-importance.docbook:216
 msgid ""
 "<emphasis>But Jesus answered and said to them, </emphasis>\"<emphasis>You "
 "are mistaken [KJV Ye do err], not understanding the Scriptures, or the power "
@@ -1665,70 +1665,70 @@ msgstr ""
 "ihr weder die Schrift kennt noch die Kraft Gottes.</quote></emphasis> "
 "Matthäus 22,29"
 
-#: docs/howto/unicode/en/howto-importance.docbook:218
+#: docs/howto/en/docbook/howto-importance.docbook:218
 msgid "What 2 things do we need to know to be kept from error?"
 msgstr ""
 "Welche beiden Dinge müssen wir kennen, um von Fehlern abgehalten zu werden?"
 
-#: docs/howto/unicode/en/howto-importance.docbook:220
+#: docs/howto/en/docbook/howto-importance.docbook:220
 msgid "God's word"
 msgstr "Gottes Wort"
 
-#: docs/howto/unicode/en/howto-importance.docbook:221
+#: docs/howto/en/docbook/howto-importance.docbook:221
 msgid "God's power"
 msgstr "Gottes Kraft"
 
-#: docs/howto/unicode/en/howto-importance.docbook:225
+#: docs/howto/en/docbook/howto-importance.docbook:225
 msgid "A Book that Wars"
 msgstr "Ein Buch, das Krieg führt"
 
-#: docs/howto/unicode/en/howto-importance.docbook:227
+#: docs/howto/en/docbook/howto-importance.docbook:227
 msgid "Eph.6:10-18 is one picture of our spiritual armament."
 msgstr "Epheser 6,10-18 ist ein Bild für unsere geistliche Bewaffnung."
 
-#: docs/howto/unicode/en/howto-importance.docbook:229
+#: docs/howto/en/docbook/howto-importance.docbook:229
 msgid "Spiritual Armor"
 msgstr "Geistliche Rüstung"
 
-#: docs/howto/unicode/en/howto-importance.docbook:233
+#: docs/howto/en/docbook/howto-importance.docbook:233
 msgid "Question"
 msgstr "Frage"
 
-#: docs/howto/unicode/en/howto-importance.docbook:234
+#: docs/howto/en/docbook/howto-importance.docbook:234
 msgid "Answer"
 msgstr "Antwort"
 
-#: docs/howto/unicode/en/howto-importance.docbook:237
+#: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "How many of the weapons listed here are defensive weapons?"
 msgstr "Wie viele der aufgelisteten Waffen sind Verteidigungswaffen?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/unicode/en/howto-importance.docbook:237
+#: docs/howto/en/docbook/howto-importance.docbook:237
 msgid "5"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-importance.docbook:238
+#: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "How many are offensive?"
 msgstr "Wie viele sind Angriffswaffen?"
 
 # type: Content of: <chapter><sect1><table><tgroup><tbody><row><entry>
-#: docs/howto/unicode/en/howto-importance.docbook:238
+#: docs/howto/en/docbook/howto-importance.docbook:238
 msgid "One"
 msgstr ""
 
-#: docs/howto/unicode/en/howto-importance.docbook:239
+#: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "Which one(s)?"
 msgstr "Welche?"
 
-#: docs/howto/unicode/en/howto-importance.docbook:239
+#: docs/howto/en/docbook/howto-importance.docbook:239
 msgid "the word - <foreignphrase>rhema</foreignphrase>"
 msgstr "das Wort - <foreignphrase>rhema</foreignphrase>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:243
+#: docs/howto/en/docbook/howto-importance.docbook:243
 msgid "Exhortations"
 msgstr "Ermahnungen"
 
-#: docs/howto/unicode/en/howto-importance.docbook:245
+#: docs/howto/en/docbook/howto-importance.docbook:245
 msgid ""
 "2 Tim.2:15 (KJV) \"<emphasis>Study to show thyself approved unto God, a "
 "workman that needeth not to be ashamed, rightly dividing the word of truth.</"
@@ -1738,7 +1738,7 @@ msgstr ""
 "erweisen als einen rechtschaffenen und untadeligen Arbeiter, der das Wort "
 "der Wahrheit recht austeilt.</quote></emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:249
+#: docs/howto/en/docbook/howto-importance.docbook:249
 msgid ""
 "Col.3:16 \"<emphasis>Let the word of Christ richly dwell within you; with "
 "all wisdom teaching and admonishing one another with psalms and hymns and "
@@ -1750,15 +1750,15 @@ msgstr ""
 "Lobgesängen und geistlichen Liedern singt Gott dankbar in euren Herzen. </"
 "quote></emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:253
+#: docs/howto/en/docbook/howto-importance.docbook:253
 msgid "If you're rich in something, how much of it do you have?"
 msgstr "Wen Sie in etwas reich sind, wie viel haben Sie dann davon?"
 
-#: docs/howto/unicode/en/howto-importance.docbook:256
+#: docs/howto/en/docbook/howto-importance.docbook:256
 msgid "Not a little!"
 msgstr "Nicht wenig!"
 
-#: docs/howto/unicode/en/howto-importance.docbook:259
+#: docs/howto/en/docbook/howto-importance.docbook:259
 #, fuzzy
 msgid ""
 "Eccl.12:11-12 \"<emphasis>The words of wise men are like goads, and masters "
@@ -1773,11 +1773,11 @@ msgstr ""
 "vielen Büchermachens ist kein Ende, und viel Studieren macht den Leib müde. "
 "</quote></emphasis>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:265
+#: docs/howto/en/docbook/howto-importance.docbook:265
 msgid "Appendix: \"Once for All\""
 msgstr "Anhang: <quote>Einer für Alle</quote>"
 
-#: docs/howto/unicode/en/howto-importance.docbook:268
+#: docs/howto/en/docbook/howto-importance.docbook:268
 msgid ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
@@ -1785,7 +1785,7 @@ msgstr ""
 "John R. W. Stott, <emphasis>Christ the Controversialist,</emphasis> "
 "InterVarsity Press 1978, pp.106-107"
 
-#: docs/howto/unicode/en/howto-importance.docbook:269
+#: docs/howto/en/docbook/howto-importance.docbook:269
 #, fuzzy
 msgid ""
 "The truth regarding the finality of God's initiative in Christ is conveyed "
@@ -1812,7 +1812,7 @@ msgstr ""
 "ist er der Sünde ein für allemal [...]</quote></emphasis> (Römer 6,10, siehe "
 "auch 1. Petrus 3,18; Hebräer 9,26-28)."
 
-#: docs/howto/unicode/en/howto-importance.docbook:279
+#: docs/howto/en/docbook/howto-importance.docbook:279
 #, fuzzy
 msgid ""
 "Thus we may say that God has spoken once for all and Christ has suffered "
@@ -1837,11 +1837,11 @@ msgstr ""
 "scriptura</foreignphrase> für die Autorität und <foreignphrase>sola gratia</"
 "foreignphrase> für unsere Erlösung."
 
-#: docs/howto/unicode/en/howto-importance.docbook:290
+#: docs/howto/en/docbook/howto-importance.docbook:290
 msgid "Supplement: Bible Reading Programs"
 msgstr "Anhang: Bibellesepläne"
 
-#: docs/howto/unicode/en/howto-importance.docbook:291
+#: docs/howto/en/docbook/howto-importance.docbook:291
 #, fuzzy
 msgid ""
 "Here are some easy programs to systematically read your Bible.  You can do "
@@ -1853,13 +1853,13 @@ msgstr ""
 "#4 oder #2 mit #5. Verändern Sie das Programm von Jahr zu Jahr um es frisch "
 "zu halten."
 
-#: docs/howto/unicode/en/howto-importance.docbook:296
+#: docs/howto/en/docbook/howto-importance.docbook:296
 msgid "New Testament in a Year: read one chapter each day, 5 days a week."
 msgstr ""
 "Das neue Testament in einem Jahr: Lesen Sie jeden Tag ein Kapitel, fünf Tage "
 "die Woche."
 
-#: docs/howto/unicode/en/howto-importance.docbook:298
+#: docs/howto/en/docbook/howto-importance.docbook:298
 msgid ""
 "Proverbs in a Month: read one chapter of Proverbs each day, corresponding to "
 "the day of the month."
@@ -1867,7 +1867,7 @@ msgstr ""
 " Die Sprüche in einem Monat: Lesen Sie jeden Tag ein Kapitel der Sprüche, "
 "dem aktuellen Tag des Monats entsprechend."
 
-#: docs/howto/unicode/en/howto-importance.docbook:300
+#: docs/howto/en/docbook/howto-importance.docbook:300
 msgid ""
 "Psalms in a Month: read 5 Psalms at intervals of 30 each day, for instance "
 "on the 20th you read Ps.20, 50, 80, 110, &amp; 140."
@@ -1876,7 +1876,7 @@ msgstr ""
 "von 30, am 20. müssten Sie zum Beispiel die Psalmen 20,50,80,110 &amp; 140 "
 "lesen."
 
-#: docs/howto/unicode/en/howto-importance.docbook:302
+#: docs/howto/en/docbook/howto-importance.docbook:302
 msgid ""
 "Psalms &amp; Proverbs in 6 months: read through Psalms and Proverbs one "
 "chapter per day."
@@ -1884,7 +1884,7 @@ msgstr ""
 "Psalme &amp; Sprüche in 6 Monaten: Lesen Sie sich durch die Psalmen und "
 "Sprüche mit einem Kapitel täglich."
 
-#: docs/howto/unicode/en/howto-importance.docbook:304
+#: docs/howto/en/docbook/howto-importance.docbook:304
 msgid ""
 "Old Testament without Psalms &amp; Proverbs in 2 years: if you read one "
 "chapter a day of the Old Testament, skipping over Psalms &amp; Proverbs, you "
@@ -1894,11 +1894,11 @@ msgstr ""
 "ein Kapitel lesen und wenn sie die Psalmen und Sprüche auslassen, werden Sie "
 "das alte Testament in 2 Jahren und 2 Wochen durchlesen."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:1
+#: docs/howto/en/docbook/howto-interpretation.docbook:1
 msgid "Rules of Bible Interpretation (Hermeneutics)"
 msgstr "Regeln der Bibelauslegung (Hermeneutik)"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:2
+#: docs/howto/en/docbook/howto-interpretation.docbook:2
 #, fuzzy
 msgid ""
 "We already learned about the \"3 Cs\": content, context, cross-reference.  "
@@ -1930,7 +1930,7 @@ msgstr ""
 "verdrehen, wie auch die anderen Schriften zu ihrer eigenen Verdammnis.</"
 "quote>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:11
+#: docs/howto/en/docbook/howto-interpretation.docbook:11
 #, fuzzy
 msgid ""
 "How do we go about discovering the intended meaning of a passage? Let's say "
@@ -1942,11 +1942,11 @@ msgstr ""
 "Aufmerksamkeit auf einen bestimmten Vers gezogen wurde, dessen Bedeutung "
 "ihnen unklar ist. Wie studieren Sie ihn? Behalten Sie sich diese Regeln:"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:14
+#: docs/howto/en/docbook/howto-interpretation.docbook:14
 msgid "Rule 1 - Interpret according to the exact meaning of the words."
 msgstr "Regel 1: Legen Sie anhand der genauen Bedeutung der Wörter aus."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:15
+#: docs/howto/en/docbook/howto-interpretation.docbook:15
 #, fuzzy
 msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
@@ -1957,11 +1957,11 @@ msgstr ""
 "können, desto besser ist unsere Auslegung. Versuchen Sie die exakte "
 "Bedeutung zu finden, indem sie die folgenden Schritte befolgen:"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:20
+#: docs/howto/en/docbook/howto-interpretation.docbook:20
 msgid "Definition"
 msgstr "Bestimmung"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:21
+#: docs/howto/en/docbook/howto-interpretation.docbook:21
 #, fuzzy
 msgid ""
 "Look up the definition in a Greek or Hebrew dictionary.  For verbs, the verb "
@@ -1970,7 +1970,7 @@ msgstr ""
 "Schlagen Sie die Bestimmung in einem Griechisch oder Hebräisch Lexikon nach. "
 "Für Verben ist die Verbform ebenfalls entscheidend."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:27
+#: docs/howto/en/docbook/howto-interpretation.docbook:27
 #, fuzzy
 msgid ""
 "Compare scripture with scripture.  Seeing how the same Greek or Hebrew word "
@@ -1992,11 +1992,11 @@ msgstr ""
 "selbe eutsche übersetzt werden kann, und weil die griechischen Wörter "
 "verschiedene Abstufungen in ihrer Bedeutung haben können.</emphasis>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:37
+#: docs/howto/en/docbook/howto-interpretation.docbook:37
 msgid "Example 1A"
 msgstr "Beispiel 1A"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:38
+#: docs/howto/en/docbook/howto-interpretation.docbook:38
 #, fuzzy
 msgid ""
 "Jn.20:17 <emphasis>\"Touch me not\"</emphasis> (KJV) sounds harsh, doesn't "
@@ -2012,7 +2012,7 @@ msgstr ""
 "Complete Word Study New Testament</emphasis> (AMG Publishers, 1991). "
 "nachschlagen."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:42
+#: docs/howto/en/docbook/howto-interpretation.docbook:42
 #, fuzzy
 msgid ""
 "Definition: Turning to John 20:17, above the word \"Touch\" we see \"pim680."
@@ -2046,11 +2046,11 @@ msgstr ""
 "dass es dafür da ist etwas zu stoppen was schon geschieht. Was haben wir nun "
 "herausgefunden?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:53
+#: docs/howto/en/docbook/howto-interpretation.docbook:53
 msgid "Example 1B"
 msgstr "Beispiel 1B"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:54
+#: docs/howto/en/docbook/howto-interpretation.docbook:54
 #, fuzzy
 msgid ""
 "In James 5:14, <emphasis>Elders are told to pray and anoint someone who is "
@@ -2060,7 +2060,7 @@ msgstr ""
 "der krank ist, beten und ihn mit Öl salben</emphasis>. Was meint dieses "
 "salben?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:55
+#: docs/howto/en/docbook/howto-interpretation.docbook:55
 #, fuzzy
 msgid ""
 "Definition of aleipho (218) - \"to oil\" (Strong's); but we also have "
@@ -2082,41 +2082,41 @@ msgstr ""
 "Hauptverb temporal ist, kennzeichnet es normalerweise eine Handlung, die "
 "früher als die des Hauptverbes stattfindet. </quote> (Zodhiates S. 851)"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:62
+#: docs/howto/en/docbook/howto-interpretation.docbook:62
 msgid "Cross-references for aleipho:"
 msgstr "Querverweise für aleipho:"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:64
+#: docs/howto/en/docbook/howto-interpretation.docbook:64
 msgid "Mt.6:17 But you, when you fast, anoint your head"
 msgstr "Mt 6,17 Du aber salbe dein Haar, wenn du fastest"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:65
+#: docs/howto/en/docbook/howto-interpretation.docbook:65
 msgid "Mk.16:1 [the women] brought spices that they might come and anoint Him."
 msgstr ""
 "Mk 16,1 [die Frauen] kauften wohlriechende Öle, um damit zum Grab zu gehen "
 "und Jesus zu salben."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:66
+#: docs/howto/en/docbook/howto-interpretation.docbook:66
 msgid ""
 "Mk.6:13 And they were...anointing with oil many sick people and healing them."
 msgstr "Mk 6,13 ... und [sie] salbten viele Kranke mit Öl und heilten sie."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:67
+#: docs/howto/en/docbook/howto-interpretation.docbook:67
 msgid "Lk.7:38 [...] kissing His feet and anointing them with the perfume"
 msgstr ""
 "Lk 7,38 Sie trocknete seine Füße mit ihrem Haar, küsste sie und salbte sie "
 "mit dem Öl."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:68
+#: docs/howto/en/docbook/howto-interpretation.docbook:68
 msgid ""
 "Jn.12:3 Mary [...] anointed the feet of Jesus, and wiped them with her hair"
 msgstr "Joh 12,3 [Sie] salbte Jesus die Füße und trocknete sie mit ihrem Haar."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:72
+#: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio:"
 msgstr "Querverweise für chrio:"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:74
+#: docs/howto/en/docbook/howto-interpretation.docbook:74
 msgid ""
 "Lk.4:18 <quote>The Spirit of the Lord is upon me, because He has anointed me "
 "to preach [...]</quote>"
@@ -2125,21 +2125,21 @@ msgstr ""
 "gesalbt. Er hat mich gesandt, damit ich den Armen eine gute Nachricht "
 "bringe...</quote>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:75
+#: docs/howto/en/docbook/howto-interpretation.docbook:75
 msgid "Acts 4:27 Jesus, whom Thou hast anointed"
 msgstr "Apg 4,27 Jesus, den du gesalbt hast"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:76
+#: docs/howto/en/docbook/howto-interpretation.docbook:76
 msgid "Acts 10:38 God anointed Jesus with the Holy Ghost and power"
 msgstr ""
 "Apg 10,38 ...wie Gott Jesus von Nazaret gesalbt hat mit dem Heiligen Geist "
 "und mit Kraft"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:77
+#: docs/howto/en/docbook/howto-interpretation.docbook:77
 msgid "2 Cor.1:21 Now He who...anointed us is God"
 msgstr "2Kor 1,21 Gott aber, ... der uns alle gesalbt hat, ..."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:82
+#: docs/howto/en/docbook/howto-interpretation.docbook:82
 msgid ""
 "So what's the difference between aleipho and chrio? Look back over the cross-"
 "references and the definitions, and sum up the difference: <emphasis>&quot;"
@@ -2151,7 +2151,7 @@ msgstr ""
 "<emphasis>ALEIPHO IST PRAKTISCHE BENUTZUNG VON ÖL UND CHRIO IST DIE "
 "GEISTLICHE</emphasis>."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:85
+#: docs/howto/en/docbook/howto-interpretation.docbook:85
 #, fuzzy
 msgid ""
 "As an illustration (although the word is not used) of the practical use of "
@@ -2164,7 +2164,7 @@ msgstr ""
 "von Räubern geschlagenen Mann sorgte und mit Öl und Wein die Wunden "
 "säuberte. Öl hatte also eine medizinische Bedeutung zur Zeit Jesu."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:89
+#: docs/howto/en/docbook/howto-interpretation.docbook:89
 msgid ""
 "Now let's apply what we just learned by this word study to James 5:14 "
 "<emphasis>\"Is any among you sick? Let him call for the elders of the "
@@ -2177,7 +2177,7 @@ msgstr ""
 "Namen des Herrn.</quote></emphasis> Ist hier <quote>salben</quote> geistlich "
 "oder praktisch gemeint? Praktisch!"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:93
+#: docs/howto/en/docbook/howto-interpretation.docbook:93
 #, fuzzy
 msgid ""
 "And the tense in Greek, the aorist participle, would be better translated "
@@ -2195,11 +2195,11 @@ msgstr ""
 "beten sollen. Drückt dass nicht das wunderbare Gleichgewicht zwischen "
 "Praktischem und Geistlichem in unseren Gott aus?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:103
+#: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
 msgstr "Regel 2 - Auslegung im biblischen Zusammenhang"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:105
+#: docs/howto/en/docbook/howto-interpretation.docbook:105
 #, fuzzy
 msgid ""
 "Interpret scripture in harmony with other scripture.  What do the verses on "
@@ -2217,11 +2217,11 @@ msgstr ""
 "Verwirrung über die Bedeutung nach der Auslegung des Textes ín seinem "
 "Zusammenhang besteht, müssen wir weiter nachforschen."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:110
+#: docs/howto/en/docbook/howto-interpretation.docbook:110
 msgid "Example 2A"
 msgstr "Beispiel 2A"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:111
+#: docs/howto/en/docbook/howto-interpretation.docbook:111
 msgid ""
 "In a previous lesson we considered Jn.3:5 <emphasis>\"born of water and the "
 "Spirit.\"</emphasis> In context, what is the water under discussion here?"
@@ -2230,7 +2230,7 @@ msgstr ""
 "<emphasis><quote>geboren ... aus Wasser und Geist</quote></emphasis> Im "
 "Bezug auf den Kontext, was ist das Wasser in dieser Diskussion?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:113
+#: docs/howto/en/docbook/howto-interpretation.docbook:113
 #, fuzzy
 msgid ""
 "Water baptism is not under discussion here, which would be a big switch from "
@@ -2244,11 +2244,11 @@ msgstr ""
 "ihre Auslegung entgleist ist! Das Wasser ist die lebensspendende "
 "Flüssigkeit, <quote>geboren aus Wasser</quote> = natürliche Geburt."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:117
+#: docs/howto/en/docbook/howto-interpretation.docbook:117
 msgid "Example 2B"
 msgstr "Beispiel 2B"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:118
+#: docs/howto/en/docbook/howto-interpretation.docbook:118
 msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
@@ -2259,11 +2259,11 @@ msgstr ""
 "Korinther 11,5 <quote>Ein Frau aber, die betet oder prophetisch redet [...]</"
 "quote> genommen werden."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:121
+#: docs/howto/en/docbook/howto-interpretation.docbook:121
 msgid "Example 2C"
 msgstr "Beispiel 2C"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:122
+#: docs/howto/en/docbook/howto-interpretation.docbook:122
 #, fuzzy
 msgid ""
 "Acts 2:38 <quote>And Peter said to them, &quot;Repent, and let each of you "
@@ -2287,11 +2287,11 @@ msgstr ""
 "Paulus dann in 1. Kor. 1,17 schreiben <quote>Denn Christus hat mich nicht "
 "gesandt zu taufen, sondern das Evangelium zu verkünden</quote>?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:134
+#: docs/howto/en/docbook/howto-interpretation.docbook:134
 msgid "Rule 3 - Interpret within the historical and cultural context"
 msgstr "Regel 3 - Auslegung im geschichtlichen und kulturellen Zusammenhang"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:136
+#: docs/howto/en/docbook/howto-interpretation.docbook:136
 #, fuzzy
 msgid ""
 "At first we are not asking <quote>What does it mean to me?</quote> but "
@@ -2305,11 +2305,11 @@ msgstr ""
 "müssen den geschichtlichen und kulturellen Hintergrund des Autoren und der "
 "Empfänger in Betracht ziehen."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:139
+#: docs/howto/en/docbook/howto-interpretation.docbook:139
 msgid "Example 3A"
 msgstr "Beispiel 3A"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:139
+#: docs/howto/en/docbook/howto-interpretation.docbook:139
 #, fuzzy
 msgid ""
 "<quote>3 days &amp; 3 nights</quote> (Mt.12:40) have led some to come up "
@@ -2326,7 +2326,7 @@ msgstr ""
 "Bedeutungen von \"drei\" oder \"Tagen\" helfen nicht, den scheinbaren "
 "Widerspruch zu erklären."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:144
+#: docs/howto/en/docbook/howto-interpretation.docbook:144
 #, fuzzy
 msgid ""
 "We need an historical tidbit: Jews counted any part of a day as a full day, "
@@ -2348,11 +2348,11 @@ msgstr ""
 "vielleicht 5h = 3. Tag. Die Auslegung im kulturellen Kontext bringt uns aus "
 "den Schwierigkeiten heraus."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:151
+#: docs/howto/en/docbook/howto-interpretation.docbook:151
 msgid "Example 3B"
 msgstr "Beispiel 3B"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:151
+#: docs/howto/en/docbook/howto-interpretation.docbook:151
 #, fuzzy
 msgid ""
 "Gen.15:7-21.  The historical context is that cutting animals in two and then "
@@ -2369,13 +2369,13 @@ msgstr ""
 "kommen solle, wenn sie nicht ihren Teil des Vertrages halten. Aber in diesem "
 "Falle geht nur Gott hindurch, was dies zu einem einseitigen Vetrag macht."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:159
+#: docs/howto/en/docbook/howto-interpretation.docbook:159
 msgid "Rule 4 - Interpret according to the normal usage of words in language"
 msgstr ""
 "Regel 4 - Auslegung in Bezug auf der normalen Benutzung der Worte in der "
 "Sprache"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:160
+#: docs/howto/en/docbook/howto-interpretation.docbook:160
 #, fuzzy
 msgid ""
 "Let literal language be literal and figurative language be figurative.  And "
@@ -2384,15 +2384,15 @@ msgstr ""
 "Lassen Sie wörtliche Sprache wörtlich sein und bildliche Sprache bildlich "
 "sein. Und achten Sie auf Idiome, die eine besondere Bedeutung haben."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:163
+#: docs/howto/en/docbook/howto-interpretation.docbook:163
 msgid "Example 4A"
 msgstr "Beispiel 4A"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:164
+#: docs/howto/en/docbook/howto-interpretation.docbook:164
 msgid "<quote>evil eye</quote> in Mt.6:23."
 msgstr "<quote>böses Auge</quote> in Mt.6,23."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:165
+#: docs/howto/en/docbook/howto-interpretation.docbook:165
 #, fuzzy
 msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, context: "
@@ -2404,7 +2404,7 @@ msgstr ""
 "mehr zu verwirren. Es scheint nicht mit dem zu passen, was davor und danach "
 "steht! Dies sollte uns zeigen, dass wir es nicht richtig verstehen."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:168
+#: docs/howto/en/docbook/howto-interpretation.docbook:168
 #, fuzzy
 msgid ""
 "What we have here is a Hebrew idiom, <quote>evil eye</quote>.  Let's look up "
@@ -2423,20 +2423,20 @@ msgstr ""
 "neidisch sein ist. Jetzt  gehen Sie zurück zu Mt. 6 und sehen Sie, wie "
 "dieses Verständnis perfekt in den Zusammenhang passt."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:174
+#: docs/howto/en/docbook/howto-interpretation.docbook:174
 msgid "Example 4B"
 msgstr "Beispiel 4B"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:175
+#: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
 msgstr "Jes. 59:1 <quote>Die Hand des Herrn ist nicht zu kurz;</quote>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:176
+#: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
 msgstr ""
 "Deut.33:27 <quote><emphasis> unter den ewigen Armen.</emphasis></quote>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:178
+#: docs/howto/en/docbook/howto-interpretation.docbook:178
 #, fuzzy
 msgid ""
 "References to body parts of God are used by Latter-Day Saints to prove that "
@@ -2465,7 +2465,7 @@ msgstr ""
 "Vogel ist.\" Die Mormonen mussten lachen, als sie die Lächerlichkeit ihrer "
 "Position realisierten."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:189
+#: docs/howto/en/docbook/howto-interpretation.docbook:189
 msgid ""
 "Rule 5 - Understand the purpose of parables and the difference between a "
 "parable and an allegory"
@@ -2473,7 +2473,7 @@ msgstr ""
 "Regel 5 - Verstehen des Zwecks einer Parabeln und des Unterschiedes zwischen "
 "einer Parabel und einer Allegorie"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:190
+#: docs/howto/en/docbook/howto-interpretation.docbook:190
 msgid ""
 "An allegory is: <emphasis>A story where each element has a meaning.</"
 "emphasis>"
@@ -2481,11 +2481,11 @@ msgstr ""
 "Eine Allegorie ist <emphasis>eine Geschichte, in der jedes Element eine "
 "Bedeutung hat.</emphasis>"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:191
+#: docs/howto/en/docbook/howto-interpretation.docbook:191
 msgid "Every parable is an allegory, true or false?"
 msgstr "Jede Parabel ist eine Allegorie, wahr oder falsch?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:193
+#: docs/howto/en/docbook/howto-interpretation.docbook:193
 #, fuzzy
 msgid ""
 "Some parables are allegories, for instance, the parable of the sower is an "
@@ -2504,11 +2504,11 @@ msgstr ""
 "Schriftstellen bekommen, die es auslegen; wenn ein Gleichnis dies zusätzlich "
 "verdeutlicht ist es hilfreich."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:198
+#: docs/howto/en/docbook/howto-interpretation.docbook:198
 msgid "Example 5A"
 msgstr "Beispiel 5A"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:199
+#: docs/howto/en/docbook/howto-interpretation.docbook:199
 #, fuzzy
 msgid ""
 "The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
@@ -2520,7 +2520,7 @@ msgstr ""
 "\"boldness in prayer\"]. Wenn wir das Ganze in eine Allegorie verwandeln, "
 "was haben wir dann?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:201
+#: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
@@ -2528,11 +2528,11 @@ msgstr ""
 "Alle Arten von Gewalt geschehen in der Bedeutung: Gott ist widerwillig die "
 "Rechte der Witwen zu schützen, Gebete \"ärgern\" Ihn, usw."
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:204
+#: docs/howto/en/docbook/howto-interpretation.docbook:204
 msgid "Example 5B"
 msgstr "Beispiel 5B"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:205
+#: docs/howto/en/docbook/howto-interpretation.docbook:205
 #, fuzzy
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
@@ -2541,7 +2541,7 @@ msgstr ""
 "Das Gleichniss der unehrlichen Verwalters in Lukas 16,1-9. Was ist der "
 "Knackpunkt des Gleichnisses? Ist es eine Allegorie?"
 
-#: docs/howto/unicode/en/howto-interpretation.docbook:207
+#: docs/howto/en/docbook/howto-interpretation.docbook:207
 #, fuzzy
 msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
@@ -2554,33 +2554,28 @@ msgstr ""
 "nämlich seinen Herren zu hintergehen."
 
 # type: Content of the bibletime entity
-#: docs/howto/unicode/en/index.docbook:3
+#: docs/howto/en/docbook/index.docbook:6
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
-#: docs/howto/unicode/en/index.docbook:4
+#: docs/howto/en/docbook/index.docbook:7
 msgid "&bibletimehandbook;"
 msgstr ""
 
-# type: Attribute 'lang' of: <book>
-#: docs/howto/unicode/en/index.docbook:16
-msgid "&language;"
-msgstr ""
-
-#: docs/howto/unicode/en/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:19
 msgid "The Biblestudy HowTo"
 msgstr "Die Anleitung zum Bibelstudium"
 
-#: docs/howto/unicode/en/index.docbook:32
+#: docs/howto/en/docbook/index.docbook:32
 msgid "The team of &bibletime;, info@bibletime.info"
 msgstr "Das &bibletime; Team, info@bibletime.info"
 
-#: docs/howto/unicode/en/index.docbook:35
+#: docs/howto/en/docbook/index.docbook:35
 msgid "Bob Harman"
 msgstr "Bob Harman"
 
-#: docs/howto/unicode/en/index.docbook:39
+#: docs/howto/en/docbook/index.docbook:39
 #, fuzzy
 msgid ""
 "The copyright of this text is held by the author Bob Harman.  The text was "
@@ -2589,7 +2584,7 @@ msgstr ""
 "Das Copyright dieses Textes liegt bei dem Autoren Bob Harman. Der Text wurde "
 "von Fred Saalbach zur Publikation mit BibleTime angepasst."
 
-#: docs/howto/unicode/en/index.docbook:42
+#: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
 "Non exclusive serial rights for this distribution of this document with the "
@@ -2602,7 +2597,7 @@ msgstr ""
 "software without modification and limited reproduction as provided by the "
 "\"fair use\" provisions of the US copyright code are also permitted."
 
-#: docs/howto/unicode/en/index.docbook:48
+#: docs/howto/en/docbook/index.docbook:48
 msgid ""
 "For questions regarding the use of this material contact Bob Harman c/o New "
 "Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
@@ -2612,7 +2607,7 @@ msgstr ""
 "c/o New Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
 "<email>ncc@ncchampton.org</email>."
 
-#: docs/howto/unicode/en/index.docbook:52
+#: docs/howto/en/docbook/index.docbook:52
 msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
 "indicated"
@@ -2626,20 +2621,20 @@ msgstr ""
 "mit BibleTime mitgeliefert."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/howto/unicode/en/index.docbook:56
+#: docs/howto/en/docbook/index.docbook:56
 msgid "06/16/2004"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/howto/unicode/en/index.docbook:57
+#: docs/howto/en/docbook/index.docbook:57
 msgid "1.02.00"
 msgstr ""
 
-#: docs/howto/unicode/en/index.docbook:61
+#: docs/howto/en/docbook/index.docbook:61
 msgid "Abstract"
 msgstr "Zusammenfassung"
 
-#: docs/howto/unicode/en/index.docbook:63
+#: docs/howto/en/docbook/index.docbook:63
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
@@ -2647,7 +2642,7 @@ msgstr ""
 "Die <application>Anleitung zum Bibelstudium</application> ist ein Handbuch "
 "zum Studieren der Bibel."
 
-#: docs/howto/unicode/en/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:65
 #, fuzzy
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
