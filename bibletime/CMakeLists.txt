@@ -3,8 +3,10 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
 SET(BT_VERSION "1.7.alpha1")
-#Specify which languages are to be installed for UI messages
-LIST(APPEND INSTALL_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
+
+LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
+LIST(APPEND HANDBOOK_LOCALE_LANGS de fi fr nl)
+LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 
 ######################################################
 # Find required packages
@@ -95,10 +97,10 @@ TARGET_LINK_LIBRARIES(bibletime
 # main binary
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
 # compiled catalogs
-FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.qm"
+FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm"
 		DESTINATION "share/bibletime/locale/")
-ENDFOREACH(_INSTALL_LOCALE_LANG)
+ENDFOREACH(MESSAGE_LOCALE_LANG)
 # icons
 FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
 INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
@@ -115,15 +117,15 @@ INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
 # Invoke this with "make messages"
 #
 ADD_CUSTOM_TARGET("messages")
-FOREACH(_INSTALL_LOCALE_LANG ${INSTALL_LOCALE_LANGS})
-	ADD_CUSTOM_TARGET("messages_${_INSTALL_LOCALE_LANG}"
-		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${_INSTALL_LOCALE_LANG}.ts")
-	ADD_CUSTOM_TARGET("compile_messages_${_INSTALL_LOCALE_LANG}"
-		COMMAND lrelease "${_INSTALL_LOCALE_LANG}.ts" -qm "${_INSTALL_LOCALE_LANG}.qm"
-		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/)
-	ADD_DEPENDENCIES("compile_messages_${_INSTALL_LOCALE_LANG}" "messages_${_INSTALL_LOCALE_LANG}")
-	ADD_DEPENDENCIES("messages" "compile_messages_${_INSTALL_LOCALE_LANG}")
-ENDFOREACH(_INSTALL_LOCALE_LANG)
+FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
+	ADD_CUSTOM_TARGET("messages_${MESSAGE_LOCALE_LANG}"
+		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.ts")
+	ADD_CUSTOM_TARGET("compile_messages_${MESSAGE_LOCALE_LANG}"
+		COMMAND lrelease "${MESSAGE_LOCALE_LANG}.ts" -qm "${MESSAGE_LOCALE_LANG}.qm"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/")
+	ADD_DEPENDENCIES("compile_messages_${MESSAGE_LOCALE_LANG}" "messages_${MESSAGE_LOCALE_LANG}")
+	ADD_DEPENDENCIES("messages" "compile_messages_${MESSAGE_LOCALE_LANG}")
+ENDFOREACH(MESSAGE_LOCALE_LANG)
 # Template file for translators
 ADD_CUSTOM_TARGET("messages_default"
 	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/messages.ts")
@@ -131,18 +133,38 @@ ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
 ######################################################
-# Update handbook catalog files (this is the basis for the translator's work)
+# Update handbook
 ADD_CUSTOM_TARGET("handbook")
+
 ADD_CUSTOM_TARGET("handbook_translations"
-	COMMAND po4a -v --no-backups -k 0 docs/handbook/handbook_po4a.conf
+	COMMAND po4a -v --no-backups -k 0 cmake/docs/handbook_po4a.conf
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
-ADD_DEPENDENCIES("handbook" "handbook_translations")
-# Update howto catalog files (this is the basis for the translator's work)
+
+FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
+	ADD_CUSTOM_TARGET("handbook_${HANDBOOK_LOCALE_LANG}"
+		COMMAND xsltproc "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl" "../docbook/index.docbook"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
+	ADD_DEPENDENCIES("handbook_${HANDBOOK_LOCALE_LANG}" "handbook_translations")
+	ADD_DEPENDENCIES("handbook" "handbook_${HANDBOOK_LOCALE_LANG}")
+ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS})
+######################################################
+
+######################################################
+# Update howto
 ADD_CUSTOM_TARGET("howto")
 ADD_CUSTOM_TARGET("howto_translations"
-	COMMAND po4a -v --no-backups -k 0 docs/howto/howto_po4a.conf
+	COMMAND po4a -v --no-backups -k 0 cmake/docs/howto_po4a.conf
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 ADD_DEPENDENCIES("howto" "howto_translations")
+
+FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
+	ADD_CUSTOM_TARGET("howto_${HOWTO_LOCALE_LANG}"
+		COMMAND xsltproc "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl" "../docbook/index.docbook"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
+	ADD_DEPENDENCIES("howto_${HOWTO_LOCALE_LANG}" "howto_translations")
+	ADD_DEPENDENCIES("howto" "howto_${HOWTO_LOCALE_LANG}")
+ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS})
+
 ######################################################
 
 ######################################################
