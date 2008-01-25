@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY sword '<application>Sword</application>'>
-  <!--<!ENTITY % addindex "IGNORE"> -->
-  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+  <!ENTITY kde '<application>KDE</application>'>
 
-  <!-- user entities -->
+  <!ENTITY Shift 'Shift'>
+  <!ENTITY Ctrl 'Ctrl'>
+  <!ENTITY Alt 'Alt'>
+
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
   <!ENTITY hdbkchap2 SYSTEM "hdbk-start.docbook">
   <!ENTITY hdbkchap3 SYSTEM "hdbk-operation.docbook">
   <!ENTITY hdbkchap4 SYSTEM "hdbk-config.docbook">
   <!ENTITY hdbkchap5 SYSTEM "hdbk-reference.docbook">
-
 ]>
 
 
-<book lang="&language;">
+<book>
 
 <bookinfo>
 <title>Het &bibletime; handboek</title>
@@ -58,7 +61,7 @@
 
 <abstract>
 <para>
-	&bibletime; is een krachtig bijbelstudieprogramma voor &kde;
+	&bibletime; is a powerful Bible study tool for KDE.
 </para>
 </abstract>
 

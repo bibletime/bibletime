@@ -2,12 +2,12 @@
 
 <sect1 id="hdbk-intro-about"><title>Tietoja BibleTimestä</title>
 	<para>
-	&bibletime; on tehokas Raamattuohjelma ohjelmoitu 
-&kde;-työpöytäohjelmistolle Linux-käyttöjärjestelmässä. Se perustuu <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink>-kirjastoon, joka tarjoaa 
-toiminnallisuuden &bibletime;:lle, kuten Raamatun tekstin näyttäminen, 
-etsintä, jne. Sword on <ulink url="http://www.crosswire.org">Crosswire Bible 
-Societyn</ulink> lippulaiva. </para>
+	&bibletime; is a powerful Bible study tool written for the s environment on 
+the Linux operating system. It is based on the <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. Sword is the flagship product of the <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>. </para>
 	
 	<para>&bibletime; is designed to be used with works encoded in one of the formats 
 supported by the Sword project.  Complete information on the supported 

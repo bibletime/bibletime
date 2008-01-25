@@ -33,7 +33,7 @@ on the right pane.</para>
 äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
 	
 	<para>By default, &bibletime; uses the &kde; general display font which can be 
-specified in the &kcontrolcenter;. You can override this font if 
+specified in KDE's Control Center. You can override this font if 
 neccessary.  Some languages require special fonts to be displayed correctly, 
 and this dialog allows you to specify a custom font for each language.</para>
 	
