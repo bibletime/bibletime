@@ -2,13 +2,12 @@
 
 <sect1 id="hdbk-intro-about"><title>Über BibleTime</title>
 	<para>
-	&bibletime; ist ein mächtiges Bibelstudien-Werkzeug, geschrieben für die 
-&kde;Umgebung auf dem Linux Betriebssystem. Es basiert auf der <ulink 
-url="http://www.crosswire.org">Sword</ulink> Bibliothek, welche die 
-&bibletime; zugrundeliegende Funktionalität zur Verfügung stellt, zum 
-Beispiel um Bibeltexte anzuschauen, darin zu suchen, usw. Sword ist das 
-Hauptprodukt der <ulink url="http://www.crosswire.org">Crosswire 
-Bibelgesellschaft</ulink>. </para>
+	&bibletime; is a powerful Bible study tool written for the s environment on 
+the Linux operating system. It is based on the <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. Sword is the flagship product of the <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>. </para>
 	
 	<para>&bibletime; is designed to be used with works encoded in one of the formats 
 supported by the Sword project.  Complete information on the supported 

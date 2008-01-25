@@ -36,7 +36,7 @@ verwendet werden soll. Stellen Sie (falls verfügbar) ihre Muttersprache ein,
 und sie werden sich gleich zu Hause fühlen.</para>
 	
 	<para>By default, &bibletime; uses the &kde; general display font which can be 
-specified in the &kcontrolcenter;. You can override this font if 
+specified in KDE's Control Center. You can override this font if 
 neccessary.  Some languages require special fonts to be displayed correctly, 
 and this dialog allows you to specify a custom font for each language.</para>
 	
