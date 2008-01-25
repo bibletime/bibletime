@@ -1,19 +1,19 @@
 <?xml version="1.0" ?>
-<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+
+
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY kapp "&bibletimehandbook;">
   <!ENTITY % addindex "IGNORE">
-  <!ENTITY % English "INCLUDE"><!-- change language only here -->
 
-  <!-- user entities -->
-
-  <!ENTITY how2-chap1 SYSTEM "how2-importance.docbook">
-  <!ENTITY how2-chap2 SYSTEM "how2-basics.docbook">
-  <!ENTITY how2-chap3 SYSTEM "how2-interpretation.docbook">
+  <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
+  <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
+  <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
 
 ]>
 
-<book lang="&language;">
+<book>
 
 <bookinfo>
 <title>The Biblestudy HowTo</title>
@@ -79,9 +79,9 @@ heart He will not disappoint you.</para>
 
 </bookinfo>
 
-&how2-chap1;
-&how2-chap2;
-&how2-chap3;
+&howto-chap1;
+&howto-chap2;
+&howto-chap3;
 
 </book>
 <!--

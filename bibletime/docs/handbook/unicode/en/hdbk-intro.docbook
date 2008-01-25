@@ -2,7 +2,7 @@
 
 <sect1 id="hdbk-intro-about"><title>About BibleTime</title>
 	<para>
-	&bibletime; is a powerful Bible study tool written for the &kde; environment on the
+	&bibletime; is a powerful Bible study tool written for the s environment on the
 	Linux operating system. It is based on the <ulink
 	url="http://www.crosswire.org/sword">Sword</ulink> library, which provides the back-end
 	functionality for &bibletime;, such as viewing Bible text, searching

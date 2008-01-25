@@ -31,7 +31,7 @@ dialog. Both can be accessed under <guimenu>Settings</guimenu> in the main menu.
 	this to your native language, if it is available, and you'll feel at home.</para>
 	
 	<para>By default, &bibletime; uses the &kde; general display font which can
-	be specified in the &kcontrolcenter;. You can override this font if neccessary.
+	be specified in KDE's Control Center. You can override this font if neccessary.
 	Some languages require special fonts to be displayed correctly, and this dialog
 	allows you to specify a custom font for each language.</para>
 	
