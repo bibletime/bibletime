@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-01-19 18:25+0100\n"
+"POT-Creation-Date: 2008-01-25 18:59+0100\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -94,7 +94,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "By default, &bibletime; uses the &kde; general display font which can be "
-"specified in the &kcontrolcenter;. You can override this font if "
+"specified in KDE's Control Center. You can override this font if "
 "neccessary.  Some languages require special fonts to be displayed correctly, "
 "and this dialog allows you to specify a custom font for each language."
 msgstr ""
@@ -391,9 +391,10 @@ msgid "About BibleTime"
 msgstr "Over BibleTime"
 
 #: docs/handbook/unicode/en/hdbk-intro.docbook:5
+#, fuzzy
 msgid ""
-"&bibletime; is a powerful Bible study tool written for the &kde; environment "
-"on the Linux operating system. It is based on the <ulink url=\"http://www."
+"&bibletime; is a powerful Bible study tool written for the s environment on "
+"the Linux operating system. It is based on the <ulink url=\"http://www."
 "crosswire.org/sword\">Sword</ulink> library, which provides the back-end "
 "functionality for &bibletime;, such as viewing Bible text, searching etc. "
 "Sword is the flagship product of the <ulink url=\"http://www.crosswire.org"
@@ -1974,45 +1975,65 @@ msgstr ""
 "tussen."
 
 # type: Content of the bibletime entity
-#: docs/handbook/unicode/en/index.docbook:3
+#: docs/handbook/unicode/en/index.docbook:5
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the sword entity
-#: docs/handbook/unicode/en/index.docbook:4
+#: docs/handbook/unicode/en/index.docbook:6
 msgid "<application>Sword</application>"
 msgstr ""
 
-#: docs/handbook/unicode/en/index.docbook:18
-#, fuzzy
-msgid "&language;"
-msgstr "Talen"
+# type: Content of the kde entity
+#: docs/handbook/unicode/en/index.docbook:7
+msgid "<application>KDE</application>"
+msgstr ""
 
-#: docs/handbook/unicode/en/index.docbook:21
+# type: Content of the Shift entity
+#: docs/handbook/unicode/en/index.docbook:9
+msgid "Shift"
+msgstr ""
+
+# type: Content of the Ctrl entity
+#: docs/handbook/unicode/en/index.docbook:10
+msgid "Ctrl"
+msgstr ""
+
+# type: Content of the Alt entity
+#: docs/handbook/unicode/en/index.docbook:11
+msgid "Alt"
+msgstr ""
+
+#: docs/handbook/unicode/en/index.docbook:24
 msgid "The &bibletime; handbook"
 msgstr "Het &bibletime; handboek"
 
-#: docs/handbook/unicode/en/index.docbook:46
+#: docs/handbook/unicode/en/index.docbook:49
 msgid "the &bibletime; team"
 msgstr "het &bibletime; team"
 
-#: docs/handbook/unicode/en/index.docbook:51
+#: docs/handbook/unicode/en/index.docbook:54
 msgid "The &bibletime; handbook is part of &bibletime;."
 msgstr "Het &bibletime; handboek is onderdeel van &bibletime;"
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/unicode/en/index.docbook:55
+#: docs/handbook/unicode/en/index.docbook:58
 msgid "2005-07"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/unicode/en/index.docbook:56
+#: docs/handbook/unicode/en/index.docbook:59
 msgid "1.5"
 msgstr ""
 
-#: docs/handbook/unicode/en/index.docbook:60
-msgid "&bibletime; is a powerful Bible study tool for &kde;."
+#: docs/handbook/unicode/en/index.docbook:63
+#, fuzzy
+msgid "&bibletime; is a powerful Bible study tool for KDE."
 msgstr "&bibletime; is een krachtig bijbelstudieprogramma voor &kde;"
+
+#, fuzzy
+#~ msgid "&language;"
+#~ msgstr "Talen"
 
 #~ msgid "Display"
 #~ msgstr "Weergave"
