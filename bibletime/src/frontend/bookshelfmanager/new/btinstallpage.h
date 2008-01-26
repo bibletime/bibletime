@@ -163,7 +163,7 @@ private slots:
 	
 	void slotRefreshCanceled();
 
-	void slotRefreshCompleted(int, int);	
+	void slotRefreshCompleted(int, int);
 
 	/** Edit button clicked. */
 	void slotEdit();

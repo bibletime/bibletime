@@ -44,6 +44,7 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QProgressDialog>
+#include <QTimer>
 
 #include <swversion.h>
 
@@ -501,6 +502,9 @@ void BtSourceWidget::slotRefresh()
 	connect(&iMgr, SIGNAL(completed(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
 	if (backend::isRemote(is)) {
+		m_progressDialog->setLabelText(tr("Connecting..."));
+		m_progressDialog->setValue(0);
+		qApp->processEvents();
 		qDebug("void BtSourceWidget::slotRefresh 3");
 		bool successful = iMgr.refreshRemoteSource( &is );
 		if (!successful ) { //make sure the sources were updated sucessfully
@@ -539,6 +543,9 @@ void BtSourceWidget::slotRefreshCompleted(const int, const int current)
 {
 	qDebug("BtSourceWidget::slotRefreshCompleted");
 	if (m_progressDialog) {
+		if (m_progressDialog->labelText() != tr("Refreshing...")) {
+			m_progressDialog->setLabelText(tr("Refreshing..."));
+		}
 		m_progressDialog->setValue(current);
 	}
 	qApp->processEvents();
