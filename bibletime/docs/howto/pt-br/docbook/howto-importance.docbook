@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Comparação dos manuscritos do Novo Testamento com outros textos antigos.</title>
 <tgroup cols="5">
 <thead>
@@ -121,7 +121,7 @@ O que o Estudo Bíblico pode fazer por você? 1 Ts 2.13 diz que a Bíblia
 "<emphasis>opera em vós que credes</emphasis>". Do lado de cada escritura, 
 escreva o que a Palavra faz:
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>O que o Estudo Bíblico faz para os cristãos?</title>
 <tgroup cols="2">
 <thead>
@@ -220,7 +220,7 @@ Escrituras nem o poder de Deus"</emphasis> Mt 22.29</para>
 <sect1 id="h2-importance-wars"><title>Um Livro que Luta</title>
 <para>
 Ef. 6.10-18 é uma figura de nossa armadura espiritual.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Armadura Espiritual</title>
 <tgroup cols="2">
 <thead>

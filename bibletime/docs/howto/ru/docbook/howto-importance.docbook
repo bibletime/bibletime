@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Сравнение новозаветних Писаний с другими древними текстами.</title>
 <tgroup cols="5">
 <thead>
@@ -122,7 +122,7 @@ Jesus Christ Himself taught it.  </para></blockquote>
 "<emphasis>действует в вас, верующих.</emphasis>" Рядом с каждым отрывком, 
 запишите действие, которое производит Слово. 
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Что даёт изучение Библии христианам?</title>
 <tgroup cols="2">
 <thead>
@@ -217,7 +217,7 @@ Mine... </emphasis>"</para>
 <sect1 id="h2-importance-wars"><title>Книга, которая воюет</title>
 <para>
 В Еф.6:10-18 есть описание нашего духовного оружия.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Духовное оружие</title>
 <tgroup cols="2">
 <thead>

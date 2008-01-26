@@ -255,14 +255,18 @@ AND God'.</para>
 ':', and then the search term.  For example, to search for the Strong's 
 number H8077, use 'strong:H8077'.</para>
 <para>Beschikbare typen tekst:
-<table><tgroup cols="2">
-<thead><row><entry>Voorvoegsel</entry><entry>Betekenis</entry></row></thead>
-<tbody>
-<row><entry>Koptekst:</entry><entry>doorzoekt kopteksten</entry></row>
-<row><entry>voetnoot:</entry><entry>doorzoekt voetnoten</entry></row>
-<row><entry>strong:</entry><entry>doorzoekt Strong-nummering</entry></row>
-<row><entry>morph:</entry><entry>doorzoekt morfologische codes</entry></row>
-</tbody></tgroup></table></para>
+<table id="hd-op-search-config-syntax-table">
+<tgroup cols="2">
+	<thead><row><entry>Voorvoegsel</entry><entry>Betekenis</entry></row></thead>
+	<tbody>
+		<row><entry>Koptekst:</entry><entry>doorzoekt kopteksten</entry></row>
+		<row><entry>voetnoot:</entry><entry>doorzoekt voetnoten</entry></row>
+		<row><entry>strong:</entry><entry>doorzoekt Strong-nummering</entry></row>
+		<row><entry>morph:</entry><entry>doorzoekt morfologische codes</entry></row>
+	</tbody>
+</tgroup>
+</table>
+</para>
 <para>BibleTime gebruikt de Lucene zoekmachine om uw zoekopdrachten uit te 
 voeren. Het heeft vele geavanceerde functies, waarover u hier meer kunt 
 lezen: <ulink 

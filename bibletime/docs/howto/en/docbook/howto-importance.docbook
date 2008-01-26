@@ -26,7 +26,7 @@ compares New Testament manuscripts with other ancient texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Comparison of New Testament manuscripts with other ancient texts.</title>
 <tgroup cols="5">
 <thead>
@@ -121,7 +121,7 @@ What will studying the Bible do for you?  1 Thess.2:13 says that the Bible
 who believe.</emphasis>"  Beside each scripture, write down the work the Word
 performs.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>What does Bible study do for Christians?</title>
 <tgroup cols="2">
 <thead>
@@ -225,7 +225,7 @@ understanding the Scriptures, or the power of God.</emphasis>"Mt.22:29</para>
 <sect1 id="h2-importance-wars"><title>A Book that Wars</title>
 <para>
 Eph.6:10-18 is one picture of our spiritual armament.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Spiritual Armor</title>
 <tgroup cols="2">
 <thead>

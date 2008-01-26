@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Vergelijking van handschriften van het Nieuwe Testament met andere oude 
 teksten.</title>
 <tgroup cols="5">
@@ -124,7 +124,7 @@ Wat doet bijbelstudie met je? 1 Thess.2:13 zegt dat de bijbel
 "<emphasis>werkzaam is in u, die gelooft</emphasis>" Schrijf naast elk 
 schriftgedeelte, het werk dat het Woord doet.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Wat doet bijbelstudie voor Christenen?</title>
 <tgroup cols="2">
 <thead>
@@ -224,7 +224,7 @@ Schriften niet noch de kracht Gods.</emphasis>" Matt.22:29</para>
 <sect1 id="h2-importance-wars"><title>Een boek dat strijdt</title>
 <para>
 Ef.6:10-18 is een mogelijke afbeelding van onze geestelijke wapenrusting.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Geestelijke wapenrusting</title>
 <tgroup cols="2">
 <thead>

@@ -91,7 +91,7 @@ fonts are available at no charge.  None of available fonts includes all
 characters defined in the Unicode standard, so you may want to use different 
 fonts for different languages.</para>
 			
-			<table>
+			<table id="hdbk-config-unicode-fonts-table">
 				<title>Unicode Schriftarten</title>
 				<tgroup cols="2">
 				<tbody>

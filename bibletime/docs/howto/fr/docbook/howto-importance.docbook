@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Comparaison des manuscrits du Nouveau Testament avec d'autres textes 
 anciens.</title>
 <tgroup cols="5">
@@ -123,7 +123,7 @@ Que l'étude de la Bible va-t-elle vous apporter ? 1 Thessaloniciens 2:13
 affirme que la Bible "<emphasis>...agit en vous qui croyez.</emphasis>" À 
 coté de chaque verset, l'ouvrage accomplit par la Parole est écrit.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Qu'est ce que l'étude de la Bible apporte aux chrétiens ?</title>
 <tgroup cols="2">
 <thead>
@@ -225,7 +225,7 @@ l'erreur ?</para>
 <sect1 id="h2-importance-wars"><title>Un livre qui combat</title>
 <para>
 Eph 6:10 est une illustration de notre armement spirituel</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>L'armure spirituelle</title>
 <tgroup cols="2">
 <thead>

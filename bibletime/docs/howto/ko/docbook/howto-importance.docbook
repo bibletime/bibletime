@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>신약성경 사본과 다른 고대 사본 텍스트들과의 비교</title>
 <tgroup cols="5">
 <thead>
@@ -116,7 +116,7 @@ Jesus Christ Himself taught it.  </para></blockquote>
 성경을 공부하는 것이 어떤 도움이 되는가? 살전 2:13에서 말씀하기를 "<emphasis>말씀이 또한 너희 믿는 자 속에서 
 역사하느니라.</emphasis>" 그밖의 다른 말씀들도, 말씀이 역사하는 것에 관해 기록하고 있다.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>성경을 공부하는 것이 그리스도인들에게 어떤 도움을 주는가?</title>
 <tgroup cols="2">
 <thead>
@@ -210,7 +210,7 @@ Ye do err] 오해하였도다.</emphasis>"마 22:29</para>
 <sect1 id="h2-importance-wars"><title>영적전쟁을 하는 책</title>
 <para>
 엡 6:10-18은 우리의 영적 무장에 관해 보여준다.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>영적인 무기</title>
 <tgroup cols="2">
 <thead>

@@ -2,9 +2,12 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7.alpha1")
+SET(BT_VERSION "1.7.alpha2cvs")
 
+#Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
+#WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS, 
+#also modify the po4a conf files in cmake/docs/ to make sure all languages are processed. 
 LIST(APPEND HANDBOOK_LOCALE_LANGS de fi fr nl)
 LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 
@@ -98,17 +101,28 @@ TARGET_LINK_LIBRARIES(bibletime
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm"
-		DESTINATION "share/bibletime/locale/")
-ENDFOREACH(MESSAGE_LOCALE_LANG)
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" DESTINATION "share/bibletime/locale/")
+ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
-FILE(GLOB BT_INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
-INSTALL(FILES ${BT_INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
+FILE(GLOB INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
+INSTALL(FILES ${INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
 # display templates
-FILE(GLOB BT_INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
-INSTALL(FILES ${BT_INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/display-templates/")
+FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
+INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/display-templates/")
 # splash screen
 INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
+#handbook (install images from en/ to all languages)
+FILE(GLOB INSTALL_HANDBOOK_IMAGES "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/*.png")
+FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
+	FILE(GLOB INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/*.html")
+	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}} DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/")
+	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES} DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/")
+ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
+#howto (does not have images)
+FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
+	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
+	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} DESTINATION "share/bibletime/docs/hotwo/${HOWTO_LOCALE_LANG}/")
+ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 ######################################################
 
 

@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Vergleich der Schriften des Neuen Testamentes mit anderen alten Texten</title>
 <tgroup cols="5">
 <thead>
@@ -125,7 +125,7 @@ dass die Bibel <emphasis><quote> auch wirkt in euch, die ihr
 glaubet.</quote> </emphasis> Schreiben Sie neben jede Schrift die Arbeit 
 nieder, die das Wort durchführt.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Was bringt das Bibelstudium für Christen?</title>
 <tgroup cols="2">
 <thead>
@@ -228,7 +228,7 @@ Matthäus 22,29</para>
 <sect1 id="h2-importance-wars"><title>Ein Buch, das Krieg führt</title>
 <para>
 Epheser 6,10-18 ist ein Bild für unsere geistliche Bewaffnung.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Geistliche Rüstung</title>
 <tgroup cols="2">
 <thead>

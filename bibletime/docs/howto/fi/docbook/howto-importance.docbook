@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Uuden Testamentin käsikirjoituksen ja muiden muinaisten tekstien vertailu.</title>
 <tgroup cols="5">
 <thead>
@@ -124,7 +124,7 @@ Mitä Raamatun tutkiminen tekee sinulle? 1 Tess.2:13 sanoo, että Raamattu
 scripture, write down the work the Word performs. Jokaisen kirjoituksen 
 rinnalla merkitse muistiin työ, jonka Sana vaikuttaa.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Mitä Raamatun tutkiminen tekee kristitylle?</title>
 <tgroup cols="2">
 <thead>
@@ -223,7 +223,7 @@ voimaa.</emphasis>"Matt.22:29</para>
 <sect1 id="h2-importance-wars"><title>Kirja, joka sotii</title>
 <para>
 Ef.6:10-18 on yksi kuva meidän hengellisistä aseistuksestamme.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Hengellinen sotavaruste</title>
 <tgroup cols="2">
 <thead>

@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Сравнение на новозаветните ръкописи с други текстове от древността.</title>
 <tgroup cols="5">
 <thead>
@@ -122,7 +122,7 @@ Jesus Christ Himself taught it.  </para></blockquote>
 Библията "<emphasis>действува между вас, вярващите</emphasis>". Нека 
 разгледаме някои стихове и видим как Божието Слово действа.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Как изучаването на Библията помага на християните</title>
 <tgroup cols="2">
 <thead>
@@ -217,7 +217,7 @@ Mine... </emphasis>"</para>
 <sect1 id="h2-importance-wars"><title>Книга за духовното воюване</title>
 <para>
 Еф. 6:10 дава представа за духовното ни всеоръжие.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Духовната броня</title>
 <tgroup cols="2">
 <thead>

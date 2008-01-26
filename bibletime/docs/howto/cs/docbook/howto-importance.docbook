@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Porovnání spisů Nového Zákona s ostatními starověkými texty.</title>
 <tgroup cols="5">
 <thead>
@@ -120,7 +120,7 @@ Co vám studium Bible přinese? 1Te 2,13 říká, že Bible je <emphasis>"slovo
 Boží, jež také působí ve vás věřících."</emphasis> Popišme si, co všechno 
 Slovo vykonává.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Co studium Bible dělá s křesťanem?</title>
 <tgroup cols="2">
 <thead>
@@ -215,7 +215,7 @@ děláte chybu], protože neznáte Písma ani Boží moc."</emphasis>Mt 22,29</p
 <sect1 id="h2-importance-wars"><title>Kniha, která bojuje</title>
 <para>
 V Ef 6,10-18 je jeden přehled naší duchovní zbroje.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Duchovní zbroj</title>
 <tgroup cols="2">
 <thead>

@@ -83,7 +83,7 @@ dialog. Both can be accessed under <guimenu>Settings</guimenu> in the main menu.
 			defined in the Unicode standard, so you may want to use different fonts for different 
 			languages.</para>
 			
-			<table>
+			<table id="hdbk-config-unicode-fonts-table">
 				<title>Unicode Fonts</title>
 				<tgroup cols="2">
 				<tbody>

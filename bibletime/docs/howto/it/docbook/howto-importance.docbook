@@ -27,7 +27,7 @@ texts:
 </para>
 </listitem>
 </itemizedlist>
-<table>
+<table id="h2-importance-manuscripts-table">
 <title>Paragone di manoscritti del nuovo testamento con altri testi antichi.</title>
 <tgroup cols="5">
 <thead>
@@ -122,7 +122,7 @@ Quale sarà l'effetto dello studio della Bibbia per te? 1 Ts 2,13 dice che la
 bibbia "<emphasis>opera in voi che credete.</emphasis>" Accanto ad ogni 
 scrittura, inserisci l'opera che la parola compie.
 </para>
-<table>
+<table id="h2-importance-results-table">
 <title>Quale effetto ha lo studio della Bibbia per i cristiani?</title>
 <tgroup cols="2">
 <thead>
@@ -222,7 +222,7 @@ dall'errore?</para>
 <sect1 id="h2-importance-wars"><title>Un libro che da battaglia</title>
 <para>
 Ef 6,10-18 è un immagine del nostro armamento spirituale.</para>
-<table>
+<table id="h2-importance-armor-table">
 <title>Armamento spirituale</title>
 <tgroup cols="2">
 <thead>

@@ -15,11 +15,11 @@ This is an ALPHA version and for testing purposes only.
 	-Boost header files (libboost-dev)
 	-cmake 2.4.0+ (http://cmake.org)
 	
-1.3 DEVELOPER-ONLY REQUIREMENTS
+1.2 DEVELOPER-ONLY REQUIREMENTS
 	-po4a
 	-xsltproc, docbook-xml, docbook-xsl
 	
-1.2 PROCEDURE
+1.3 PROCEDURE
 
 In the toplevel directory of this package, you can find
 the scripts "build-debug.sh" and "build-release.sh".
