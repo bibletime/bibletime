@@ -5454,12 +5454,12 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
             </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="496"/>
+        <location filename="../../src/bibletime_slots.cpp" line="512"/>
         <source>Session name:</source>
         <translation>Profil:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="496"/>
+        <location filename="../../src/bibletime_slots.cpp" line="512"/>
         <source>Please enter a name for the new session.</source>
         <translation>Veuillez entrer le nom du nouveau profil</translation>
     </message>
@@ -5859,71 +5859,147 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="80"/>
         <source>Install Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="83"/>
         <source>Configure...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="85"/>
-        <source>Install and Update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="101"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="142"/>
-        <source>Install/Update modules?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="143"/>
-        <source>Do you really want to install these modules?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="162"/>
-        <source>Install and update modules. Add remote or local sources, refresh them, select the modules to be installed/updated and click Install. &lt;b&gt;WARNING: If you live in a persecuted country and don&apos;t want to risk detection, don&apos;t use remote sources.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="166"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="164"/>
         <source>Install/Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="160"/>
+        <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtModuleManagerDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp" line="21"/>
+        <source>BibleTime Bookshelf Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtSourceArea</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
+        <source>Work</source>
+        <translation type="unfinished">Module</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
+        <source>Status</source>
+        <translation type="unfinished">État</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="202"/>
+        <source>Last refreshed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="214"/>
+        <source>Refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="217"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="221"/>
+        <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="201"/>
-        <source>Last refreshed:</source>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="449"/>
+        <source>Delete Source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="212"/>
-        <source>Refresh</source>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="450"/>
+        <source>Do you really want to delete this source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="214"/>
-        <source>Edit...</source>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="485"/>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="216"/>
-        <source>Delete</source>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="486"/>
+        <source>Refreshing Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="217"/>
-        <source>Add...</source>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="505"/>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="547"/>
+        <source>Refreshing...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="607"/>
+        <source>remote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="612"/>
+        <source>local</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="616"/>
+        <source>NOT A DIRECTORY!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="619"/>
+        <source>NOT READABLE!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="628"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="671"/>
+        <source>Install/Update modules?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="672"/>
+        <source>Do you really want to install these modules?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7023,44 +7099,49 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="56"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="46"/>
         <source>Mag</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="73"/>
-        <source>This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="179"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="170"/>
         <source>Abbreviation</source>
         <translation>Abréviation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="274"/>
         <source>Cross references</source>
         <translation>Références croisées</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="326"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="317"/>
         <source>Footnote</source>
         <translation>Notes de pied de page</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="353"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="344"/>
         <source>Strongs</source>
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="433"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="424"/>
         <source>Morphology</source>
         <translation>Marques morphologiques</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="456"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="447"/>
         <source>Word lookup</source>
         <translation>Recherche</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7892,7 +7973,7 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="296"/>
+        <location filename="../../src/main.cpp" line="300"/>
         <source>Starting BibleTime</source>
         <translation>Lancement de BibleTime</translation>
     </message>
@@ -8378,7 +8459,7 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
         <translation>Vérifiez les permissions, etc !</translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="192"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="241"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Attention, ce module contient des éléments polémiques !</translation>
     </message>
@@ -8398,7 +8479,7 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
         <translation>non activé</translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="204"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
@@ -8416,6 +8497,21 @@ La fenêtre de recherche s&apos;ouvrira alors avec le mot sélectionné dans la 
         <location filename="../../src/util/migrationutil.cpp" line="59"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="246"/>
+        <source>Encrypted - needs unlock key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="254"/>
+        <source>Local version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="258"/>
+        <source>Double click for more information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
