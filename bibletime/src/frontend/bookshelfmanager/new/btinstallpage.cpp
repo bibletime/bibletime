@@ -193,7 +193,7 @@ void BtSourceArea::initView()
 
 	// There are no views for the stack yet, see initSources
 	m_view = new QTreeWidget(this);
-	m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Status") << tr("Description"));
+	m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Description"));
 	m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
 	mainLayout->addWidget(m_view);
 
@@ -301,26 +301,43 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 			//qDebug() << "item"<<item->text()<< "was a module";
 			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 			widgetItem->setCheckState(0, Qt::Unchecked);
-			// TODO: set columns, set color
-			// if not installed:
-			//     if not newly added:
-			//        state: installable (no indicator)
-			//     else: state: newly added, color
-			// if installed:
-			//     state: updated, color
-			CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
 
+			CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
 			QString installedV;
-			if (installedModule) {
+
+			if (!installedModule) {
+				//if not newly added:
+					//state: installable (no indicator)
+				//else: status: newly added, color
+			} else { // the module is already installed
+				QBrush bg(QColor(255,153,153));
+				widgetItem->setBackground(0, bg);
+				widgetItem->setBackground(1, bg);
 				installedV = QString(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
+				// set the color for the parent items
+				QTreeWidgetItem* parent1 = widgetItem->parent();
+				if (parent1) {
+					parent1->setBackground(0,bg);
+					parent1->setBackground(1,bg);
+					//parent1->setToolTip(0, tr("Has updated works"));
+					//parent1->setToolTip(1, tr("Has updated works"));
+					QTreeWidgetItem* parent2 = parent1->parent();
+					if (parent2) {
+						parent2->setBackground(0,bg);
+						parent2->setBackground(1,bg);
+						//parent2->setToolTip(0,tr("Has updated works"));
+						//parent2->setToolTip(1,tr("Has updated works"));
+					}
+				}
 			}
+
+
 			QString descr(mInfo->config(CSwordModuleInfo::Description));
 			QString toolTipText = CToolClass::remoteModuleToolTip(mInfo, installedV);
 
-			widgetItem->setText(2, descr);
+			widgetItem->setText(1, descr);
 			widgetItem->setToolTip(0, toolTipText);
 			widgetItem->setToolTip(1, toolTipText);
-			widgetItem->setToolTip(2, toolTipText);
 		}
 	}
 }
@@ -504,6 +521,10 @@ void BtSourceWidget::slotRefresh()
 	if (backend::isRemote(is)) {
 		m_progressDialog->setLabelText(tr("Connecting..."));
 		m_progressDialog->setValue(0);
+		qApp->processEvents();
+		qApp->flush();
+		qApp->processEvents();
+		m_progressDialog->repaint();
 		qApp->processEvents();
 		qDebug("void BtSourceWidget::slotRefresh 3");
 		bool successful = iMgr.refreshRemoteSource( &is );

@@ -240,10 +240,14 @@ QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localV
 	text = QString("<b>%1</b> ").arg( module->name() )
 		   + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
 
-	text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr>");
+	text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")<hr></small>");
 
 	if (module->isEncrypted()) {
 		text += QObject::tr("Encrypted - needs unlock key") + QString("<br>");
+	}
+
+	if (!localVer.isEmpty()) {
+		text += QString("<b>") + QObject::tr("Updated version available!") + QString("</b><br>");
 	}
 
 	if (module->hasVersion()) {

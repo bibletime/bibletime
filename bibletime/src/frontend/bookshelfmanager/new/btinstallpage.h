@@ -69,8 +69,7 @@ private:
 
 /**
 * - Tree widget
-* - Buttons for the current source: refresh, edit, remove
-* - Add source button
+* - Buttons for the handling the sources: refresh, edit, remove, add
 *
 * Each source has
 * QTreeWidget, populated with the module tree if the source
