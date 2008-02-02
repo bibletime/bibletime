@@ -164,7 +164,7 @@ void CBookshelfIndex::initActions()
 
 
 	// ------------Hide---------------------
-	action = newQAction(tr("Hide/Unhide Modules..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
+	action = newQAction(tr("Hide/Unhide Works..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
 	action->setProperty("indexActionType", QVariant(HideModules));
 	//action->setProperty("multiItemAction", QVariant(true));
 	m_popup->addAction(action);
@@ -564,8 +564,8 @@ void CBookshelfIndex::actionHideModules()
 		current = i->text(0);
 	}
 
-	QString title(tr("Hide/Unhide Modules"));
-	QString label(tr("Select the modules to be hidden."));
+	QString title(tr("Hide/Unhide Works"));
+	QString label(tr("Select the works to be hidden."));
 	CHideModuleChooserDialog* dlg = new CHideModuleChooserDialog(this, title, label, current);
 	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
 			this, SLOT(setHiddenModules(ListCSwordModuleInfo)));
