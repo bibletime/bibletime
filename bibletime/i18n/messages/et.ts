@@ -5116,6 +5116,14 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
     </message>
 </context>
 <context>
+    <name>BTAboutModuleDialog</name>
+    <message>
+        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
+        <source>Information About</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BibleTime</name>
     <message>
         <location filename="../../src/bibletime.cpp" line="240"/>
@@ -5746,7 +5754,7 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
         <source>Status</source>
-        <translation type="unfinished">Seisund</translation>
+        <translation type="obsolete">Seisund</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
@@ -5782,67 +5790,67 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="449"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="466"/>
         <source>Delete Source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="450"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="467"/>
         <source>Do you really want to delete this source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="485"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="502"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="486"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="503"/>
         <source>Refreshing Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="505"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="522"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="547"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="568"/>
         <source>Refreshing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="607"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="628"/>
         <source>remote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="612"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="633"/>
         <source>local</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="616"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="637"/>
         <source>NOT A DIRECTORY!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="619"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="640"/>
         <source>NOT READABLE!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="628"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="649"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="671"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="692"/>
         <source>Install/Update modules?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="672"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="693"/>
         <source>Do you really want to install these modules?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6182,21 +6190,6 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
         <translation>Palun sisestage võti selle teose lukustuse avamiseks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="567"/>
-        <source>Hide/Unhide Modules</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="568"/>
-        <source>Select the modules to be hidden.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
-        <source>Hide/Unhide Modules...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
@@ -6209,6 +6202,21 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
         <source>About...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
+        <source>Hide/Unhide Works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="567"/>
+        <source>Hide/Unhide Works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="568"/>
+        <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6258,11 +6266,6 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
-        <source>Configuration</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="51"/>
         <source>Display</source>
         <translation>Kuva</translation>
@@ -6281,6 +6284,11 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="75"/>
         <source>HotKeys</source>
         <translation>Kiirklahvid</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
+        <source>Configure BibleTime</source>
+        <translation type="unfinished">Seadista BibleTime</translation>
     </message>
 </context>
 <context>
@@ -8322,7 +8330,7 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
         <translation>seadmata</translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="254"/>
         <source>Version</source>
         <translation>Versioon</translation>
     </message>
@@ -8347,13 +8355,18 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="254"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="258"/>
         <source>Local version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="258"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="262"/>
         <source>Double click for more information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
+        <source>Updated version available!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8524,6 +8537,11 @@ Märgistage see sõna ja kopeerige see lõikelauale. Nüüd saate kopeeritud sõ
 This could take a long time. Proceed with indexing?</source>
         <translation>Vähemalt üks moodul vajab indekseerimist enne kui temast saab midagi otsida.
 Indekseerimine võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="82"/>
+        <source>Search</source>
+        <translation type="unfinished">Otsing</translation>
     </message>
 </context>
 <context>

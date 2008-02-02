@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
+    <name>BTAboutModuleDialog</name>
+    <message>
+        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
+        <source>Information About</source>
+        <translation>Information über</translation>
+    </message>
+</context>
+<context>
     <name>BibleTime</name>
     <message>
         <location filename="../../src/bibletime.cpp" line="240"/>
@@ -366,12 +374,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="411"/>
         <source>You selected the following work(s): </source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben folgende Werke ausgewählt:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="413"/>
         <source>Do you really want to remove them from your system?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie diese wirklich von Ihrem System entfernen?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
@@ -406,12 +414,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="673"/>
         <source>You selected the following works: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben folgende Werke ausgewählt:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="675"/>
         <source>Do you really want to install them on your system?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie diese wirklich auf Ihrem System installieren?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="701"/>
@@ -421,7 +429,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="799"/>
         <source>Choose directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzeichnis auswählen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
@@ -567,7 +575,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="133"/>
         <source>Cult/Unorthodox/Questionable</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekte/Unorthodox/Fragwürdig</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
@@ -590,22 +598,22 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="80"/>
         <source>Install Path:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationspfad:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="83"/>
         <source>Configure...</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurieren...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="101"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installieren</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="164"/>
         <source>Install/Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Installieren/Updaten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="160"/>
@@ -618,7 +626,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp" line="21"/>
         <source>BibleTime Bookshelf Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime-Bücherregal-Verwaltung</translation>
     </message>
 </context>
 <context>
@@ -626,108 +634,103 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
         <source>Work</source>
-        <translation type="unfinished">Werk</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
-        <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Werk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="196"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="202"/>
         <source>Last refreshed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zuletzt aktualisiert:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="214"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="217"/>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="221"/>
         <source>Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinzufügen...</translation>
     </message>
 </context>
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="449"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="466"/>
         <source>Delete Source?</source>
-        <translation type="unfinished"></translation>
+        <translation>Quelle löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="450"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="467"/>
         <source>Do you really want to delete this source?</source>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie diese Quelle wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="485"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="502"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="486"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="503"/>
         <source>Refreshing Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Quelle wird aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="505"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="522"/>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinde...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="547"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="568"/>
         <source>Refreshing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiere...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="607"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="628"/>
         <source>remote</source>
-        <translation type="unfinished"></translation>
+        <translation>entfernt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="612"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="633"/>
         <source>local</source>
-        <translation type="unfinished"></translation>
+        <translation>lokal</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="616"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="637"/>
         <source>NOT A DIRECTORY!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="619"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="640"/>
         <source>NOT READABLE!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="628"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="649"/>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="671"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="692"/>
         <source>Install/Update modules?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="672"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="693"/>
         <source>Do you really want to install these modules?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -928,7 +931,7 @@
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="201"/>
         <source>Book Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Buchfenster</translation>
     </message>
 </context>
 <context>
@@ -1027,11 +1030,6 @@
         <translation>Versteckte anzeigen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="179"/>
-        <source>Hide Modules...</source>
-        <translation type="obsolete">Module verstecken...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="190"/>
         <source>Edit</source>
         <translation>Bearbeiten</translation>
@@ -1050,16 +1048,6 @@
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="432"/>
         <source>Search</source>
         <translation>Suche</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="220"/>
-        <source>Unlock</source>
-        <translation type="obsolete">Entschlüsseln</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="226"/>
-        <source>About</source>
-        <translation type="obsolete">Über</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="465"/>
@@ -1082,33 +1070,33 @@
         <translation>Geben Sie den Schlüssel für dieses Werke ein</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="567"/>
-        <source>Hide/Unhide Modules</source>
-        <translation>Module verbergen/anzeigen</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="568"/>
-        <source>Select the modules to be hidden.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
-        <source>Hide/Unhide Modules...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="219"/>
         <source>Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>Entschlüsseln...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
         <source>About...</source>
+        <translation>Über...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
+        <source>Hide/Unhide Works...</source>
+        <translation>Werke verstecken/zeigen...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="567"/>
+        <source>Hide/Unhide Works</source>
+        <translation>Werke verstecken/zeigen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="568"/>
+        <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1158,11 +1146,6 @@
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
-        <source>Configuration</source>
-        <translation>Konfiguration</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="51"/>
         <source>Display</source>
         <translation>Anzeige</translation>
@@ -1181,6 +1164,11 @@
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="75"/>
         <source>HotKeys</source>
         <translation>Tastenkürzel</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
+        <source>Configure BibleTime</source>
+        <translation>BibleTime konfigurieren</translation>
     </message>
 </context>
 <context>
@@ -1479,12 +1467,12 @@
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <source>Copy reference only</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere nur die Referenz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="71"/>
         <source>Copy selected text</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere ausgewählten Text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
@@ -1494,7 +1482,7 @@
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="77"/>
         <source>Print reference only</source>
-        <translation type="unfinished"></translation>
+        <translation>Drucke nur die Referenz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="121"/>
@@ -1620,11 +1608,6 @@
         <source>[locked]</source>
         <translation>[verschlüsselt]</translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="218"/>
-        <source>No work selected</source>
-        <translation type="obsolete">Kein Werk ausgewählt</translation>
-    </message>
 </context>
 <context>
     <name>CModuleChooserWidget</name>
@@ -1639,7 +1622,7 @@
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="57"/>
         <source>Creating index for work: </source>
-        <translation type="unfinished"></translation>
+        <translation>Erstelle Index für Werk:</translation>
     </message>
 </context>
 <context>
@@ -1839,7 +1822,7 @@
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="46"/>
         <source>Mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Lupe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="170"/>
@@ -1874,7 +1857,7 @@
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
@@ -1887,17 +1870,17 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="13"/>
         <source>Manage Indicies</source>
-        <translation type="unfinished"></translation>
+        <translation>Indices verwalten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="50"/>
         <source>Automaticall&amp;y delete orphaned indices when BibleTime starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche ver&amp;waiste Indices automatisch beim Start von BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="53"/>
         <source>Alt+Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+Y</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="61"/>
@@ -1907,17 +1890,17 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="66"/>
         <source>Index Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexgröße</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="92"/>
         <source>&amp;Create selected indices</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Erzeuge ausgewählte Indices</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="99"/>
         <source>De&amp;lete selected indices</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lösche ausgewählte Indices</translation>
     </message>
 </context>
 <context>
@@ -1925,12 +1908,12 @@
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
 </context>
 <context>
@@ -1943,7 +1926,7 @@
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="265"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation>Sekten/Unorthodox</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="264"/>
@@ -1958,7 +1941,7 @@
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="261"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Lexika und Wörterbücher</translation>
     </message>
     <message>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="258"/>
@@ -2113,7 +2096,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
         <source>Persian</source>
-        <translation type="unfinished"></translation>
+        <translation>Persisch</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
@@ -2173,7 +2156,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Hindi</source>
-        <translation type="unfinished"></translation>
+        <translation>Hindi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
@@ -2278,7 +2261,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="249"/>
         <source>Nepali</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepalesisch</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="251"/>
@@ -2483,7 +2466,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
         <source>Yiddish</source>
-        <translation type="unfinished"></translation>
+        <translation>Yiddisch</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
@@ -2558,7 +2541,7 @@
     <message>
         <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="201"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportieren</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="33"/>
@@ -2618,7 +2601,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Dateien</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="156"/>
@@ -2628,7 +2611,7 @@
     <message>
         <location filename="../../src/frontend/cexportmanager.cpp" line="490"/>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichere Datei</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="160"/>
@@ -2643,7 +2626,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
         <source>BibleTime bookmark files</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime-Lesezeichen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="86"/>
@@ -2676,16 +2659,6 @@
         <translation>Neuer Ordner</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="85"/>
-        <source>Lexicons</source>
-        <translation type="obsolete">Lexika</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="91"/>
-        <source>Daily devotionals</source>
-        <translation type="obsolete">Andachtsbücher</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="74"/>
         <source>Bookmarks</source>
         <translation>Lesezeichen</translation>
@@ -2699,11 +2672,6 @@
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="80"/>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="113"/>
-        <source>Unknown language</source>
-        <translation type="obsolete">Unbekannte Sprache</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="116"/>
@@ -3216,19 +3184,19 @@
         <translation>nicht gesetzt</translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
+        <location filename="../../src/util/ctoolclass.cpp" line="254"/>
         <source>Version</source>
         <translation>Version</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="222"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Optionen</translation>
     </message>
     <message>
         <location filename="../../src/util/migrationutil.cpp" line="58"/>
         <source>Settings Migration</source>
-        <translation type="unfinished"></translation>
+        <translation>Übernahme von Einstellungen</translation>
     </message>
     <message>
         <location filename="../../src/util/migrationutil.cpp" line="59"/>
@@ -3238,17 +3206,22 @@
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="246"/>
         <source>Encrypted - needs unlock key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="254"/>
-        <source>Local version</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlüsselt - benötigt Schlüssel</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="258"/>
+        <source>Local version</source>
+        <translation>Lokale Version</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="262"/>
         <source>Double click for more information</source>
-        <translation type="unfinished"></translation>
+        <translation>Klicken Sie doppelt für weitere Informationen</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
+        <source>Updated version available!</source>
+        <translation>Aktualisierte Version verfügbar!</translation>
     </message>
 </context>
 <context>
@@ -3324,27 +3297,27 @@
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="100"/>
         <source>S&amp;earch range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchbereich:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="107"/>
         <source>&amp;Add new range</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Neuen Bereich hinzufügen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
         <source>Delete current &amp;range</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuellen Bereich &amp;löschen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="117"/>
         <source>&amp;Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
         <source>Edi&amp;t current range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuellen Bereich &amp;bearbeiten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="131"/>
@@ -3418,13 +3391,18 @@
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="82"/>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
 </context>
 <context>
     <name>Search::CSearchOptionsArea</name>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="735"/>
         <source>Search for:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche nach:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="746"/>
@@ -3434,17 +3412,17 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="749"/>
         <source>Ch&amp;oose</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;uswählen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="752"/>
         <source>S&amp;etup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Einrichten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="755"/>
         <source>Search scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchbereich:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="827"/>
@@ -3672,17 +3650,17 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
         <source>Search Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchoptionen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
         <source>Search parameters</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchparameter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
         <source>Search for:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche nach:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
@@ -3692,37 +3670,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
         <source>Alt+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
         <source>&amp;Choose</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Auswählen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
         <source>Alt+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+C</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
         <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Einrichten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
         <source>Alt+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt+S</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
         <source>Search scope:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchbereich:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
         <source>Search in:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche in:</translation>
     </message>
 </context>
 <context>
@@ -3730,12 +3708,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
         <source>SearchResults</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchergebnisse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
         <source>Analyze search</source>
-        <translation type="unfinished"></translation>
+        <translation>Suche analysieren</translation>
     </message>
 </context>
 <context>
@@ -3859,7 +3837,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
         <source>Search range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Suchbereich</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
@@ -3869,7 +3847,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
