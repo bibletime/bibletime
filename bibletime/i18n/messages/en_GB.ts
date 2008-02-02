@@ -6919,32 +6919,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="56"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibles</translation>
+        <translation type="obsolete">Bibles</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="57"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Commentaries</translation>
+        <translation type="obsolete">Commentaries</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="58"/>
         <source>Lexicons</source>
-        <translation type="unfinished">Lexicons</translation>
+        <translation type="obsolete">Lexicons</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="59"/>
         <source>Books</source>
-        <translation type="unfinished">Books</translation>
+        <translation type="obsolete">Books</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="97"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Daily Devotionals</translation>
+        <translation type="obsolete">Daily Devotionals</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="108"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Glossaries</translation>
+        <translation type="obsolete">Glossaries</translation>
     </message>
 </context>
 <context>
@@ -6980,7 +6980,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="39"/>
         <source>Work</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
 </context>
@@ -7278,19 +7278,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="99"/>
         <source>De&amp;lete selected indices</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
-        <source>1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8963,38 +8950,38 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
         <source>Work</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibles</translation>
+        <translation type="obsolete">Bibles</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Commentaries</translation>
+        <translation type="obsolete">Commentaries</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
         <source>Lexicons</source>
-        <translation type="unfinished">Lexicons</translation>
+        <translation type="obsolete">Lexicons</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
         <source>Books</source>
-        <translation type="unfinished">Books</translation>
+        <translation type="obsolete">Books</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Daily Devotionals</translation>
+        <translation type="obsolete">Daily Devotionals</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Glossaries</translation>
+        <translation type="obsolete">Glossaries</translation>
     </message>
 </context>
 <context>
@@ -9002,12 +8989,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
         <source>Choose work(s)</source>
-        <translation type="unfinished">Choose colours</translation>
+        <translation type="obsolete">Choose colours</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
         <source>Use chosen work(s)</source>
-        <translation type="unfinished">Use Chosen Modules</translation>
+        <translation type="obsolete">Use Chosen Modules</translation>
     </message>
 </context>
 <context>
@@ -9015,118 +9002,47 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
         <source>Search range editor</source>
-        <translation type="unfinished">Search range editor</translation>
+        <translation type="obsolete">Search range editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
         <source>Search range</source>
-        <translation type="unfinished">Search Range</translation>
+        <translation type="obsolete">Search Range</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
         <source>Add new range</source>
-        <translation type="unfinished">Add New Range</translation>
+        <translation type="obsolete">Add New Range</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
         <source>Delete current range</source>
-        <translation type="unfinished">Delete Current Range</translation>
+        <translation type="obsolete">Delete Current Range</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
         <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation type="obsolete">Name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
         <source>Edit current search range:</source>
-        <translation type="unfinished">Edit current search range:</translation>
+        <translation type="obsolete">Edit current search range:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished">Parsed Search Range</translation>
+        <translation type="obsolete">Parsed Search Range</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
         <source>New range</source>
-        <translation type="unfinished">New range</translation>
+        <translation type="obsolete">New range</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation type="unfinished">&lt;invalid name of search range&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SearchOptionsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
-        <source>Search Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
-        <source>Search parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
-        <source>Search for:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
-        <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
-        <source>Alt+H</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
-        <source>&amp;Choose</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
-        <source>Alt+C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
-        <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
-        <source>Alt+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
-        <source>Search scope:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
-        <source>Search in:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SearchResultsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
-        <source>SearchResults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
-        <source>Analyze search</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&lt;invalid name of search range&gt;</translation>
     </message>
 </context>
 <context>
@@ -10035,37 +9951,27 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
         <source>Search range editor</source>
-        <translation type="unfinished">Search range editor</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
-        <source>Search range:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Search range editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
         <source>New</source>
-        <translation type="unfinished">New</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">New</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
         <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation type="obsolete">Name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
         <source>Edit current search range:</source>
-        <translation type="unfinished">Edit current search range:</translation>
+        <translation type="obsolete">Edit current search range:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished">Parsed Search Range</translation>
+        <translation type="obsolete">Parsed Search Range</translation>
     </message>
 </context>
 </TS>

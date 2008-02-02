@@ -6791,32 +6791,32 @@ Marker ordet og kopier det ind i søgedialogen
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="56"/>
         <source>Bibles</source>
-        <translation>Bibler</translation>
+        <translation type="obsolete">Bibler</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="57"/>
         <source>Commentaries</source>
-        <translation>Kommentarer</translation>
+        <translation type="obsolete">Kommentarer</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="58"/>
         <source>Lexicons</source>
-        <translation>Leksika</translation>
+        <translation type="obsolete">Leksika</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="59"/>
         <source>Books</source>
-        <translation>Bøger</translation>
+        <translation type="obsolete">Bøger</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="97"/>
         <source>Daily Devotionals</source>
-        <translation>Andagts-tekster</translation>
+        <translation type="obsolete">Andagts-tekster</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="108"/>
         <source>Glossaries</source>
-        <translation>Ordbøger</translation>
+        <translation type="obsolete">Ordbøger</translation>
     </message>
 </context>
 <context>
@@ -6852,7 +6852,7 @@ Marker ordet og kopier det ind i søgedialogen
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="39"/>
         <source>Work</source>
-        <translation>Værk</translation>
+        <translation type="obsolete">Værk</translation>
     </message>
 </context>
 <context>
@@ -7138,19 +7138,6 @@ Marker ordet og kopier det ind i søgedialogen
     <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="99"/>
         <source>De&amp;lete selected indices</source>
-        <translation></translation>
-    </message>
-</context>
-<context>
-    <name>ModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
-        <source>Dialog</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
-        <source>1</source>
         <translation></translation>
     </message>
 </context>
@@ -8805,37 +8792,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
         <source>Work</source>
-        <translation>Værk</translation>
+        <translation type="obsolete">Værk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
         <source>Bibles</source>
-        <translation>Bibler</translation>
+        <translation type="obsolete">Bibler</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
         <source>Commentaries</source>
-        <translation>Kommentarer</translation>
+        <translation type="obsolete">Kommentarer</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
         <source>Lexicons</source>
-        <translation>Leksika</translation>
+        <translation type="obsolete">Leksika</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
         <source>Books</source>
-        <translation>Bøger</translation>
+        <translation type="obsolete">Bøger</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
         <source>Daily Devotionals</source>
-        <translation>Andagts-tekster</translation>
+        <translation type="obsolete">Andagts-tekster</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
         <source>Glossaries</source>
-        <translation>Ordbøger</translation>
+        <translation type="obsolete">Ordbøger</translation>
     </message>
 </context>
 <context>
@@ -8843,12 +8830,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
         <source>Choose work(s)</source>
-        <translation>Vælg værk(er)</translation>
+        <translation type="obsolete">Vælg værk(er)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
         <source>Use chosen work(s)</source>
-        <translation>Brug valgte værk(er)</translation>
+        <translation type="obsolete">Brug valgte værk(er)</translation>
     </message>
 </context>
 <context>
@@ -8856,118 +8843,47 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
         <source>Search range editor</source>
-        <translation>Søge-område editor</translation>
+        <translation type="obsolete">Søge-område editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
         <source>Search range</source>
-        <translation>Søge område</translation>
+        <translation type="obsolete">Søge område</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
         <source>Add new range</source>
-        <translation>Tilføj nyt område</translation>
+        <translation type="obsolete">Tilføj nyt område</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
         <source>Delete current range</source>
-        <translation>Slet nuværende område</translation>
+        <translation type="obsolete">Slet nuværende område</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation type="obsolete">Navn:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
         <source>Edit current search range:</source>
-        <translation>Ret nuværende søge-område:</translation>
+        <translation type="obsolete">Ret nuværende søge-område:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
         <source>Parsed search range:</source>
-        <translation>Behandlet søge-område:</translation>
+        <translation type="obsolete">Behandlet søge-område:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
         <source>New range</source>
-        <translation>Nyt område</translation>
+        <translation type="obsolete">Nyt område</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;fejlagtigt navn på søge område&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>SearchOptionsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
-        <source>Search Options</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
-        <source>Search parameters</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
-        <source>Search for:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
-        <source>&amp;Help</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
-        <source>Alt+H</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
-        <source>&amp;Choose</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
-        <source>Alt+C</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
-        <source>&amp;Setup</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
-        <source>Alt+S</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
-        <source>Search scope:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
-        <source>Search in:</source>
-        <translation></translation>
-    </message>
-</context>
-<context>
-    <name>SearchResultsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
-        <source>SearchResults</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
-        <source>Analyze search</source>
-        <translation></translation>
+        <translation type="obsolete">&lt;fejlagtigt navn på søge område&gt;</translation>
     </message>
 </context>
 <context>
@@ -9870,37 +9786,27 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
         <source>Search range editor</source>
-        <translation>Søge-område editor</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
-        <source>Search range:</source>
-        <translation></translation>
+        <translation type="obsolete">Søge-område editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
         <source>New</source>
-        <translation>Ny</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
-        <source>Delete</source>
-        <translation></translation>
+        <translation type="obsolete">Ny</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
         <source>Name:</source>
-        <translation>Navn:</translation>
+        <translation type="obsolete">Navn:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
         <source>Edit current search range:</source>
-        <translation>Ret nuværende søge-område:</translation>
+        <translation type="obsolete">Ret nuværende søge-område:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
         <source>Parsed search range:</source>
-        <translation>Behandlet søge-område:</translation>
+        <translation type="obsolete">Behandlet søge-område:</translation>
     </message>
 </context>
 </TS>

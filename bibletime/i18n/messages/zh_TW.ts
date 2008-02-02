@@ -6788,32 +6788,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="56"/>
         <source>Bibles</source>
-        <translation>聖經</translation>
+        <translation type="obsolete">聖經</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="57"/>
         <source>Commentaries</source>
-        <translation>評論</translation>
+        <translation type="obsolete">評論</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="58"/>
         <source>Lexicons</source>
-        <translation>辭典</translation>
+        <translation type="obsolete">辭典</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="59"/>
         <source>Books</source>
-        <translation>書籍</translation>
+        <translation type="obsolete">書籍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="97"/>
         <source>Daily Devotionals</source>
-        <translation>每日靈修</translation>
+        <translation type="obsolete">每日靈修</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="108"/>
         <source>Glossaries</source>
-        <translation>字彙表</translation>
+        <translation type="obsolete">字彙表</translation>
     </message>
 </context>
 <context>
@@ -6849,7 +6849,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="39"/>
         <source>Work</source>
-        <translation>著作</translation>
+        <translation type="obsolete">著作</translation>
     </message>
 </context>
 <context>
@@ -7140,16 +7140,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 </context>
 <context>
     <name>ModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
-        <source>Dialog</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
-        <source>1</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -8802,37 +8792,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
         <source>Work</source>
-        <translation>著作</translation>
+        <translation type="obsolete">著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
         <source>Bibles</source>
-        <translation>聖經</translation>
+        <translation type="obsolete">聖經</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
         <source>Commentaries</source>
-        <translation>評論</translation>
+        <translation type="obsolete">評論</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
         <source>Lexicons</source>
-        <translation>辭典</translation>
+        <translation type="obsolete">辭典</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
         <source>Books</source>
-        <translation>書籍</translation>
+        <translation type="obsolete">書籍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
         <source>Daily Devotionals</source>
-        <translation>每日靈修</translation>
+        <translation type="obsolete">每日靈修</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
         <source>Glossaries</source>
-        <translation>字彙表</translation>
+        <translation type="obsolete">字彙表</translation>
     </message>
 </context>
 <context>
@@ -8840,12 +8830,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
         <source>Choose work(s)</source>
-        <translation>選擇著作</translation>
+        <translation type="obsolete">選擇著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
         <source>Use chosen work(s)</source>
-        <translation>使用已選著作</translation>
+        <translation type="obsolete">使用已選著作</translation>
     </message>
 </context>
 <context>
@@ -8853,119 +8843,54 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
         <source>Search range editor</source>
-        <translation>搜尋範圍編輯器</translation>
+        <translation type="obsolete">搜尋範圍編輯器</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
         <source>Search range</source>
-        <translation>搜尋範圍</translation>
+        <translation type="obsolete">搜尋範圍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
         <source>Add new range</source>
-        <translation>加入新範圍</translation>
+        <translation type="obsolete">加入新範圍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
         <source>Delete current range</source>
-        <translation>刪除目前範圍</translation>
+        <translation type="obsolete">刪除目前範圍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
         <source>Name:</source>
-        <translation>名稱:</translation>
+        <translation type="obsolete">名稱:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
         <source>Edit current search range:</source>
-        <translation>編輯目前搜尋範圍:</translation>
+        <translation type="obsolete">編輯目前搜尋範圍:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
         <source>Parsed search range:</source>
-        <translation>剖析搜尋範圍:</translation>
+        <translation type="obsolete">剖析搜尋範圍:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
         <source>New range</source>
-        <translation>新範圍</translation>
+        <translation type="obsolete">新範圍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;無效的搜尋範圍名稱&gt;</translation>
+        <translation type="obsolete">&lt;無效的搜尋範圍名稱&gt;</translation>
     </message>
 </context>
 <context>
     <name>SearchOptionsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
-        <source>Search Options</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
-        <source>Search parameters</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
-        <source>Search for:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
-        <source>&amp;Help</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
-        <source>Alt+H</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
-        <source>&amp;Choose</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
-        <source>Alt+C</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
-        <source>&amp;Setup</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
-        <source>Alt+S</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
-        <source>Search scope:</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
-        <source>Search in:</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>SearchResultsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
-        <source>SearchResults</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
-        <source>Analyze search</source>
-        <translation></translation>
-    </message>
 </context>
 <context>
     <name>StandardWorksTab</name>
@@ -9867,37 +9792,27 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
         <source>Search range editor</source>
-        <translation>搜尋範圍編輯器</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
-        <source>Search range:</source>
-        <translation></translation>
+        <translation type="obsolete">搜尋範圍編輯器</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
         <source>New</source>
-        <translation>新</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
-        <source>Delete</source>
-        <translation></translation>
+        <translation type="obsolete">新</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
         <source>Name:</source>
-        <translation>名稱:</translation>
+        <translation type="obsolete">名稱:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
         <source>Edit current search range:</source>
-        <translation>編輯目前搜尋範圍:</translation>
+        <translation type="obsolete">編輯目前搜尋範圍:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
         <source>Parsed search range:</source>
-        <translation>剖析搜尋範圍:</translation>
+        <translation type="obsolete">剖析搜尋範圍:</translation>
     </message>
 </context>
 </TS>

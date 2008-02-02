@@ -6856,32 +6856,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="56"/>
         <source>Bibles</source>
-        <translation type="unfinished">성서</translation>
+        <translation type="obsolete">성서</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="57"/>
         <source>Commentaries</source>
-        <translation type="unfinished">주석</translation>
+        <translation type="obsolete">주석</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="58"/>
         <source>Lexicons</source>
-        <translation type="unfinished">렉시컨</translation>
+        <translation type="obsolete">렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="59"/>
         <source>Books</source>
-        <translation type="unfinished">책</translation>
+        <translation type="obsolete">책</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="97"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">매일 경건</translation>
+        <translation type="obsolete">매일 경건</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="108"/>
         <source>Glossaries</source>
-        <translation type="unfinished">어휘</translation>
+        <translation type="obsolete">어휘</translation>
     </message>
 </context>
 <context>
@@ -6917,7 +6917,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="39"/>
         <source>Work</source>
-        <translation type="unfinished">작업</translation>
+        <translation type="obsolete">작업</translation>
     </message>
 </context>
 <context>
@@ -7212,16 +7212,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 </context>
 <context>
     <name>ModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -8884,37 +8874,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
         <source>Work</source>
-        <translation type="unfinished">작업</translation>
+        <translation type="obsolete">작업</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
         <source>Bibles</source>
-        <translation type="unfinished">성서</translation>
+        <translation type="obsolete">성서</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
         <source>Commentaries</source>
-        <translation type="unfinished">주석</translation>
+        <translation type="obsolete">주석</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
         <source>Lexicons</source>
-        <translation type="unfinished">렉시컨</translation>
+        <translation type="obsolete">렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
         <source>Books</source>
-        <translation type="unfinished">책</translation>
+        <translation type="obsolete">책</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">매일 경건</translation>
+        <translation type="obsolete">매일 경건</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
         <source>Glossaries</source>
-        <translation type="unfinished">어휘</translation>
+        <translation type="obsolete">어휘</translation>
     </message>
 </context>
 <context>
@@ -8922,12 +8912,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
         <source>Choose work(s)</source>
-        <translation type="unfinished">작업 선택</translation>
+        <translation type="obsolete">작업 선택</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
         <source>Use chosen work(s)</source>
-        <translation type="unfinished">선택된 작업 사용</translation>
+        <translation type="obsolete">선택된 작업 사용</translation>
     </message>
 </context>
 <context>
@@ -8935,119 +8925,54 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
         <source>Search range editor</source>
-        <translation type="unfinished">찾기 범위 설정</translation>
+        <translation type="obsolete">찾기 범위 설정</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
         <source>Search range</source>
-        <translation type="unfinished">찾기 범위</translation>
+        <translation type="obsolete">찾기 범위</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
         <source>Add new range</source>
-        <translation type="unfinished">새 범위 더하기</translation>
+        <translation type="obsolete">새 범위 더하기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
         <source>Delete current range</source>
-        <translation type="unfinished">현재 범위 지우기</translation>
+        <translation type="obsolete">현재 범위 지우기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
         <source>Name:</source>
-        <translation type="unfinished">이름:</translation>
+        <translation type="obsolete">이름:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
         <source>Edit current search range:</source>
-        <translation type="unfinished">현재 찾기 범위 편집</translation>
+        <translation type="obsolete">현재 찾기 범위 편집</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished">처리된 찾기 범위</translation>
+        <translation type="obsolete">처리된 찾기 범위</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
         <source>New range</source>
-        <translation type="unfinished">새 범위</translation>
+        <translation type="obsolete">새 범위</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation type="unfinished">&lt;잘못된 찾기 범위 이름&gt;</translation>
+        <translation type="obsolete">&lt;잘못된 찾기 범위 이름&gt;</translation>
     </message>
 </context>
 <context>
     <name>SearchOptionsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
-        <source>Search Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
-        <source>Search parameters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
-        <source>Search for:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
-        <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
-        <source>Alt+H</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
-        <source>&amp;Choose</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
-        <source>Alt+C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
-        <source>&amp;Setup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
-        <source>Alt+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
-        <source>Search scope:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
-        <source>Search in:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SearchResultsForm</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
-        <source>SearchResults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
-        <source>Analyze search</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>StandardWorksTab</name>
@@ -9950,37 +9875,27 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
         <source>Search range editor</source>
-        <translation type="unfinished">찾기 범위 설정</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
-        <source>Search range:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">찾기 범위 설정</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
         <source>New</source>
-        <translation type="unfinished">새로운...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">새로운...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
         <source>Name:</source>
-        <translation type="unfinished">이름:</translation>
+        <translation type="obsolete">이름:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
         <source>Edit current search range:</source>
-        <translation type="unfinished">현재 찾기 범위 편집</translation>
+        <translation type="obsolete">현재 찾기 범위 편집</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished">처리된 찾기 범위</translation>
+        <translation type="obsolete">처리된 찾기 범위</translation>
     </message>
 </context>
 </TS>

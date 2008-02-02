@@ -1558,32 +1558,32 @@
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="56"/>
         <source>Bibles</source>
-        <translation>Bibeln</translation>
+        <translation type="obsolete">Bibeln</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="57"/>
         <source>Commentaries</source>
-        <translation>Kommentare</translation>
+        <translation type="obsolete">Kommentare</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="58"/>
         <source>Lexicons</source>
-        <translation>Lexika</translation>
+        <translation type="obsolete">Lexika</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="59"/>
         <source>Books</source>
-        <translation>Bücher</translation>
+        <translation type="obsolete">Bücher</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="97"/>
         <source>Daily Devotionals</source>
-        <translation>Andachtsbücher</translation>
+        <translation type="obsolete">Andachtsbücher</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="108"/>
         <source>Glossaries</source>
-        <translation>Wörterbücher</translation>
+        <translation type="obsolete">Wörterbücher</translation>
     </message>
 </context>
 <context>
@@ -1614,7 +1614,7 @@
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooserwidget.cpp" line="39"/>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation type="obsolete">Werk</translation>
     </message>
 </context>
 <context>
@@ -1908,12 +1908,12 @@
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="13"/>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="obsolete">Dialog</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/modulechooser.ui" line="20"/>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="obsolete">1</translation>
     </message>
 </context>
 <context>
@@ -3551,37 +3551,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
         <source>Work</source>
-        <translation>Werk</translation>
+        <translation type="obsolete">Werk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
         <source>Bibles</source>
-        <translation>Bibeln</translation>
+        <translation type="obsolete">Bibeln</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
         <source>Commentaries</source>
-        <translation>Kommentare</translation>
+        <translation type="obsolete">Kommentare</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
         <source>Lexicons</source>
-        <translation>Lexika</translation>
+        <translation type="obsolete">Lexika</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
         <source>Books</source>
-        <translation>Bücher</translation>
+        <translation type="obsolete">Bücher</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
         <source>Daily Devotionals</source>
-        <translation>Andachtsbücher</translation>
+        <translation type="obsolete">Andachtsbücher</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
         <source>Glossaries</source>
-        <translation>Wörterbücher</translation>
+        <translation type="obsolete">Wörterbücher</translation>
     </message>
 </context>
 <context>
@@ -3589,12 +3589,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
         <source>Choose work(s)</source>
-        <translation>Werk(e) wählen</translation>
+        <translation type="obsolete">Werk(e) wählen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
         <source>Use chosen work(s)</source>
-        <translation>Ausgewählte Werke verwenden</translation>
+        <translation type="obsolete">Ausgewählte Werke verwenden</translation>
     </message>
 </context>
 <context>
@@ -3602,47 +3602,47 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
         <source>Search range editor</source>
-        <translation>Suchbereich Editor</translation>
+        <translation type="obsolete">Suchbereich Editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
         <source>Search range</source>
-        <translation>Suchbereich</translation>
+        <translation type="obsolete">Suchbereich</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
         <source>Add new range</source>
-        <translation>Neuen Suchbereich hinzufügen</translation>
+        <translation type="obsolete">Neuen Suchbereich hinzufügen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
         <source>Delete current range</source>
-        <translation>Aktuellen Suchbereich löschen</translation>
+        <translation type="obsolete">Aktuellen Suchbereich löschen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
         <source>Name:</source>
-        <translation>Name:</translation>
+        <translation type="obsolete">Name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
         <source>Edit current search range:</source>
-        <translation>Aktuellen Suchbereich bearbeiten:</translation>
+        <translation type="obsolete">Aktuellen Suchbereich bearbeiten:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
         <source>Parsed search range:</source>
-        <translation>Ausgewerteter Suchbereich:</translation>
+        <translation type="obsolete">Ausgewerteter Suchbereich:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
         <source>New range</source>
-        <translation>Neuer Suchbereich</translation>
+        <translation type="obsolete">Neuer Suchbereich</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation>&lt;ungültiger Name des Suchbereiches&gt;</translation>
+        <translation type="obsolete">&lt;ungültiger Name des Suchbereiches&gt;</translation>
     </message>
 </context>
 <context>
@@ -3650,57 +3650,57 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="31"/>
         <source>Search Options</source>
-        <translation>Suchoptionen</translation>
+        <translation type="obsolete">Suchoptionen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="37"/>
         <source>Search parameters</source>
-        <translation>Suchparameter</translation>
+        <translation type="obsolete">Suchparameter</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="67"/>
         <source>Search for:</source>
-        <translation>Suche nach:</translation>
+        <translation type="obsolete">Suche nach:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="77"/>
         <source>&amp;Help</source>
-        <translation>&amp;Hilfe</translation>
+        <translation type="obsolete">&amp;Hilfe</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="80"/>
         <source>Alt+H</source>
-        <translation>Alt+H</translation>
+        <translation type="obsolete">Alt+H</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="87"/>
         <source>&amp;Choose</source>
-        <translation>&amp;Auswählen</translation>
+        <translation type="obsolete">&amp;Auswählen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="90"/>
         <source>Alt+C</source>
-        <translation>Alt+C</translation>
+        <translation type="obsolete">Alt+C</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="97"/>
         <source>&amp;Setup</source>
-        <translation>&amp;Einrichten</translation>
+        <translation type="obsolete">&amp;Einrichten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="100"/>
         <source>Alt+S</source>
-        <translation>Alt+S</translation>
+        <translation type="obsolete">Alt+S</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="113"/>
         <source>Search scope:</source>
-        <translation>Suchbereich:</translation>
+        <translation type="obsolete">Suchbereich:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchoptionsform.ui" line="158"/>
         <source>Search in:</source>
-        <translation>Suche in:</translation>
+        <translation type="obsolete">Suche in:</translation>
     </message>
 </context>
 <context>
@@ -3708,12 +3708,12 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="31"/>
         <source>SearchResults</source>
-        <translation>Suchergebnisse</translation>
+        <translation type="obsolete">Suchergebnisse</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/searchresultsform.ui" line="100"/>
         <source>Analyze search</source>
-        <translation>Suche analysieren</translation>
+        <translation type="obsolete">Suche analysieren</translation>
     </message>
 </context>
 <context>
@@ -3832,37 +3832,37 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
         <source>Search range editor</source>
-        <translation>Suchbereich Editor</translation>
+        <translation type="obsolete">Suchbereich Editor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="23"/>
         <source>Search range:</source>
-        <translation>Suchbereich</translation>
+        <translation type="obsolete">Suchbereich</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
         <source>New</source>
-        <translation>Neu</translation>
+        <translation type="obsolete">Neu</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="45"/>
         <source>Delete</source>
-        <translation>Löschen</translation>
+        <translation type="obsolete">Löschen</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
         <source>Name:</source>
-        <translation>Name:</translation>
+        <translation type="obsolete">Name:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
         <source>Edit current search range:</source>
-        <translation>Aktuellen Suchbereich bearbeiten:</translation>
+        <translation type="obsolete">Aktuellen Suchbereich bearbeiten:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
         <source>Parsed search range:</source>
-        <translation>Ausgewerteter Suchbereich:</translation>
+        <translation type="obsolete">Ausgewerteter Suchbereich:</translation>
     </message>
 </context>
 </TS>
