@@ -36,7 +36,7 @@ CConfigurationDialog::CConfigurationDialog
 	  m_actionCollection(actionCollection)
 {
 	
-	setCaption(tr("Configuration"));
+	setCaption(tr("Configure BibleTime"));
 	setFaceType(KPageDialog::List);
 	
 	//General buttons
