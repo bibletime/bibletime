@@ -83,7 +83,9 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 
 	//set the list width - initially it's too wide
 	// TODO: +10 should be replaced, maybe the viewport should have itemrect width
-	m_contentsList->setFixedWidth(qMax(m_contentsList->maximumWidth(), (m_contentsList->visualItemRect(item).width() + 10 ) ) );
+	m_contentsList->setFixedWidth( qMax(
+		m_contentsList->maximumWidth(), (m_contentsList->visualItemRect(item).width() + (m_contentsList->frameWidth()*2) ) 
+	));
 
 }
 
