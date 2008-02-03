@@ -851,7 +851,7 @@ void CSearchOptionsArea::chooseModules() {
 	QString title(tr("Modules to Search in"));
 	QString label(tr("Select the modules in which the search should be run."));
 	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
-	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)), this, SLOT(setModules(ListCSwordModuleInfo)));
+	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), this, SLOT(setModules(ListCSwordModuleInfo)));
 	dlg->exec();
 }
 

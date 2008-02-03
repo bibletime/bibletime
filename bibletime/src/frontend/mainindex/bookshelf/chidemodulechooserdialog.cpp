@@ -38,7 +38,7 @@ CHideModuleChooserDialog::CHideModuleChooserDialog( QWidget* parent, QString tit
 	m_currentModule(currentModule),
 	m_focusItem(0)
 {
-	QObject::connect(this, SIGNAL(modulesChanged(ListCSwordModuleInfo)), this, SLOT(applyHiddenModules(ListCSwordModuleInfo)));
+	QObject::connect(this, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), this, SLOT(applyHiddenModules(ListCSwordModuleInfo)));
 	init();
 	if (m_focusItem) {
 		treeWidget()->scrollToItem(m_focusItem);
