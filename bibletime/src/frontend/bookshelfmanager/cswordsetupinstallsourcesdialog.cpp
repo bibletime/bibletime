@@ -134,18 +134,18 @@ namespace BookshelfManager {
 
 	void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 		if (m_protocolCombo->currentText() == PROTO_FTP) { //REMOTE
-			m_serverLabel->show();
-			m_serverEdit->show();
+			m_serverLabel->setEnabled(true);
+			m_serverEdit->setEnabled(true);
 		}
 		else { //LOCAL, no server needed
-			m_serverLabel->hide();
-			m_serverEdit->hide();
+			m_serverLabel->setEnabled(false);
+			m_serverEdit->setEnabled(false);
 
 			QString dirname = QFileDialog::getExistingDirectory(this);
 			if (dirname.isEmpty()) {
 				return; // user cancelled
 			}
-			QDir dir = QFileDialog::getExistingDirectory(this);
+			QDir dir(dirname);
 			if (dir.exists()) {
 				m_pathEdit->setText( dir.canonicalPath() );
 			}
