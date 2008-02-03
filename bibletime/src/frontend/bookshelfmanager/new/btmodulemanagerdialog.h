@@ -15,15 +15,22 @@
 
 class QWidget;
 
+/**
+* The Bookshelf Manger dialog. Includes pages for Install, Remove, Indexes.
+*/
 class BtModuleManagerDialog : public BtConfigDialog
 {
 	Q_OBJECT
 
 public:
+	/** Adds the pages and the button box. */
 	BtModuleManagerDialog(QWidget* parent);
 	~BtModuleManagerDialog(){}
 
-	void slotClose();
+	//void slotClose();
+protected:
+	/** Reimplementation from QWidget. */
+	virtual void closeEvent(QCloseEvent* event);
 };
 
 

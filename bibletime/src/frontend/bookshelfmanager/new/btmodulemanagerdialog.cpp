@@ -28,10 +28,16 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	QDialogButtonBox* bbox = new QDialogButtonBox(this);
 	bbox->addButton(QDialogButtonBox::Close);
 	addButtonBox(bbox);
+	connect(bbox, SIGNAL(rejected()), SLOT(close()));
 }
 
-
-void BtModuleManagerDialog::slotClose()
+// The QWidget close() sends close event, so does closing by the window X button.
+void BtModuleManagerDialog::closeEvent(QCloseEvent*)
 {
-
+	qDebug("BtModuleManagerDialog::closeEvent");
+	// TODO: should we do this here or after every change? If the dialog is
+	// nonmodal the user may never close it. But then the change may be applied
+	// in the middle of some other user action - is it OK?
+	//writeSwordConfig();
+	//emit signalSwordSetupChanged( );
 }
