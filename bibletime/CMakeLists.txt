@@ -99,6 +99,9 @@ TARGET_LINK_LIBRARIES(bibletime
 #
 # main binary
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
+#
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
+
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" DESTINATION "share/bibletime/locale/")
