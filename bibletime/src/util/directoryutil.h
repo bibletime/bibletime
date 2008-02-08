@@ -66,8 +66,11 @@ public:
 	/** Return the path to the translation files. */
 	static QDir getLocaleDir(void);
 
-	/** Return the path to the documentation files. */
-	//static QDir getDocsDir(void);
+	/** Return the path to the handbook files, either of the current locale or en as fallback. */
+	static QDir getHandbookDir(void);
+
+	/** Return the path to the bible study howto files, either of the current locale or en as fallback. */
+	static QDir getHowtoDir(void);
 
 	/** Return the path to the default display template files. */
 	static QDir getDisplayTemplatesDir(void);

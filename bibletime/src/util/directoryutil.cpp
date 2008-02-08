@@ -16,6 +16,7 @@
 #include <QFileInfoList>
 #include <QDebug>
 #include <QCoreApplication>
+#include <QLocale>
 
 namespace util {
 
@@ -104,7 +105,8 @@ void DirectoryUtil::copyRecursive(QString src, QString dest){
 static QDir cachedIconDir;
 static QDir cachedPicsDir;
 static QDir cachedLocaleDir;
-//static QDir cachedDocsDir;
+static QDir cachedHandbookDir;
+static QDir cachedHowtoDir;
 static QDir cachedDisplayTemplatesDir;
 static QDir cachedUserDisplayTemplatesDir;
 static QDir cachedUserBaseDir;
@@ -139,18 +141,35 @@ void DirectoryUtil::initDirectoryCache(void)
 		throw;
 	}
 
-	cachedLocaleDir = wDir; //xml dir
+	cachedLocaleDir = wDir;
 	if (!cachedLocaleDir.cd("share/bibletime/locale")) {
 		qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
-
-	//cachedDocsDir = wDir; //xml dir
-	//if (!cachedDocsDir.cd("share/bibletime/docs/")) {
-	//	qWarning() << "Cannot find documentation directory relative to" << QCoreApplication::applicationDirPath();
-	//	throw;
-	//}
 	
+	QString localeName = QLocale::system().name();
+	QString langCode = localeName.section('_', 0, 0);
+	
+	cachedHandbookDir = wDir;
+	if (!cachedHandbookDir.cd(QString("share/bibletime/docs/handbook/") + localeName)) {
+		if (!cachedHandbookDir.cd(QString("share/bibletime/docs/handbook/") + langCode)) {
+			if (!cachedHandbookDir.cd("share/bibletime/docs/handbook/en/")) {
+				qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
+				throw;
+			}
+		}
+	}
+
+	cachedHowtoDir = wDir;
+	if (!cachedHowtoDir.cd(QString("share/bibletime/docs/howto/") + localeName)) {
+		if (!cachedHowtoDir.cd(QString("share/bibletime/docs/howto/") + langCode)) {
+			if (!cachedHowtoDir.cd("share/bibletime/docs/howto/en/")) {
+				qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
+				throw;
+			}
+		}
+	}
+
 	cachedDisplayTemplatesDir = wDir; //display templates dir
 	if (!cachedDisplayTemplatesDir.cd("share/bibletime/display-templates/")) {
 		qWarning() << "Cannot find display template directory relative to" << QCoreApplication::applicationDirPath();
@@ -244,11 +263,17 @@ QDir DirectoryUtil::getLocaleDir(void)
 	return cachedLocaleDir;
 }
 
-//QDir DirectoryUtil::getDocsDir(void)
-// {
-// 	if (!dirCacheInitialized) initDirectoryCache();
-// 	return cachedDocsDir;
-// }
+QDir DirectoryUtil::getHandbookDir(void)
+{
+ 	if (!dirCacheInitialized) initDirectoryCache();
+ 	return cachedHandbookDir;
+}
+
+QDir DirectoryUtil::getHowtoDir(void)
+{
+ 	if (!dirCacheInitialized) initDirectoryCache();
+ 	return cachedHowtoDir;
+}
 
 QDir DirectoryUtil::getDisplayTemplatesDir(void)
 {

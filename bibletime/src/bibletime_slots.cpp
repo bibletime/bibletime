@@ -40,16 +40,13 @@
 #include <QAction>
 #include <QMenu>
 #include <QToolBar>
-
 #include <QApplication>
+#include <QProcess>
 
 //KDE includes
 #include <kbugreport.h>
 #include <kaboutapplicationdialog.h>
 #include <kaboutdata.h>
-
-#include <kedittoolbar.h>
-#include <ktoolinvocation.h>
 
 using namespace Profile;
 
@@ -381,11 +378,17 @@ void BibleTime::slotSearchDefaultBible() {
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-	KToolInvocation::invokeHelp("", "bibletime/handbook/");
+	QStringList args;
+	args << util::filesystem::DirectoryUtil::getHandbookDir().canonicalPath() +"/index.html";
+	if (QProcess::startDetached("konqueror", args)) return;
+	if (QProcess::startDetached("firefox", args)) return;
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-	KToolInvocation::invokeHelp("", "bibletime/howto/");
+	QStringList args;
+	args << util::filesystem::DirectoryUtil::getHowtoDir().canonicalPath() +"/index.html";
+	if (QProcess::startDetached("konqueror", args)) return;
+	if (QProcess::startDetached("firefox", args)) return;
 }
 
 /** Saves the current settings into the currently activated profile. */
