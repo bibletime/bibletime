@@ -99,15 +99,12 @@ TARGET_LINK_LIBRARIES(bibletime
 #
 # main binary
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
-#
-CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
-
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" DESTINATION "share/bibletime/locale/")
 ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
-FILE(GLOB INSTALL_ICONS_LIST ${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg)
+FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
@@ -126,6 +123,14 @@ FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
 	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} DESTINATION "share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/")
 ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
+#
+# Platform specific installation
+#
+# LINUX: application icon
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg" DESTINATION "share/icons/")
+# LINUX: desktop file
+CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" DESTINATION "share/applications/")
 ######################################################
 
 
