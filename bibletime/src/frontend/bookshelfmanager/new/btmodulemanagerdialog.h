@@ -16,7 +16,7 @@
 class QWidget;
 
 /**
-* The Bookshelf Manger dialog. Includes pages for Install, Remove, Indexes.
+* The Bookshelf Manager dialog. Includes pages for Install, Remove, Indexes.
 */
 class BtModuleManagerDialog : public BtConfigDialog
 {

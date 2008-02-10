@@ -57,6 +57,8 @@ public:
 
 	QTreeWidget* treeWidget() {return m_moduleChooser;}
 
+	QPushButton* okButton();
+
 signals:
 	
 	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. The tree widget can be used through the pointer for more complicated actions. */

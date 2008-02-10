@@ -155,3 +155,7 @@ void CModuleChooserDialog::slotOk()
 	QDialog::done(QDialog::Accepted);
 }
 
+QPushButton* CModuleChooserDialog::okButton()
+{
+	return m_buttonBox->button(QDialogButtonBox::Ok);
+}

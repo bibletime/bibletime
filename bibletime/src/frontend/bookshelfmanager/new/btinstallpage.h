@@ -17,6 +17,7 @@
 
 #include <QString>
 #include <QWidget>
+#include <QList>
 
 #include <installmgr.h>
 
@@ -147,6 +148,8 @@ public:
 public slots:
 	/** Install button has been clicked. */
 	void slotInstall();
+	/** "Stop All" button clicked */
+	void slotStopInstall(QTreeWidget* treeWidget);
 
 private:
 	void initSourceConnections();
@@ -176,6 +179,8 @@ private slots:
 	void slotTabSelected(int index);
 	void slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget* treeWidget);
 
+
+
 private:
 	QStringList m_sourceNameList;
 	BtInstallPage* m_page;
@@ -192,10 +197,24 @@ private:
 */
 class CInstallModuleChooserDialog : public CModuleChooserDialog
 {
+	Q_OBJECT
+
 public:
 	CInstallModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* empty);
+
+	void initModuleItem(QString name, QTreeWidgetItem* sourceItem);
+	void enableOk(bool enabled);
+
+public slots:
+	void slotItemChecked(QTreeWidgetItem* item, int column);
+
 protected:
 	virtual void initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*);
+
+	QList<QTreeWidgetItem*> findModuleItemsByName(QString name);
+private:
+	QStringList m_nameList;
+
 };
 
 #endif
