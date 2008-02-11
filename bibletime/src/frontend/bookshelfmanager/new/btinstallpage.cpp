@@ -698,7 +698,7 @@ void BtSourceWidget::slotInstall()
 	QString dlgTitle(tr("Install/Update works?"));
 	QString dlgLabel(tr("Do you really want to install these works?") +
 		QString("<br/><br/><small>") +
-				tr("(Only one work of the same name can be installed at a the same time, select only one if there are items marked with red.)") +
+				tr("Only one version of a work can be installed at the same time. Select only one if there are items marked with red.") +
 				QString("</small>"));
 	//TODO: there can be only one module with a certain name
 
@@ -828,7 +828,7 @@ void CInstallModuleChooserDialog::initModuleItem(QString name, QTreeWidgetItem* 
 	if (m_nameList.contains(name)) {
 		qDebug() << "item already in list:" << name;
 		//moduleItem->setCheckState(0, Qt::Unchecked);
-		QBrush bg(QColor(255,153,153));
+		QBrush bg(Qt::red);
 		moduleItem->setBackground(0, bg);
 		//find and change the other offending items
 		foreach (QTreeWidgetItem* doubleItem, treeWidget()->findItems(name, Qt::MatchFixedString|Qt::MatchCaseSensitive|Qt::MatchRecursive, 0)) {
@@ -836,17 +836,18 @@ void CInstallModuleChooserDialog::initModuleItem(QString name, QTreeWidgetItem* 
 			//qDebug() << "CInstallModuleChooserDialog::initModuleItem" << doubleItem;
 			doubleItem->setBackground(0, bg);
 		}
+		m_doubleCheckedModules[name] = true;
 		enableOk(false);
-
 	}
 	m_nameList << name;
 }
 
 void CInstallModuleChooserDialog::slotItemChecked(QTreeWidgetItem* item, int column)
 {
+	QString moduleName = item->text(0);
 	qDebug("CInstallModuleChooserDialog::slotItemChecked start");
 	// handle only non-toplevel items which has duplicates and where the first column was changed
-	if (item->parent() && column == 0 && (findModuleItemsByName(item->text(0)).count() > 1))  {
+	if (item->parent() && column == 0 && (findModuleItemsByName(moduleName).count() > 1))  {
 		//prevent handling when the color is changed
 		if (item->data(1, Qt::UserRole).toBool() == false) {
 			qDebug("was not updating");
@@ -857,7 +858,7 @@ void CInstallModuleChooserDialog::slotItemChecked(QTreeWidgetItem* item, int col
 			return;
 		}
 
-		QList<QTreeWidgetItem*> doubleNameItems = findModuleItemsByName(item->text(0));
+		QList<QTreeWidgetItem*> doubleNameItems = findModuleItemsByName(moduleName);
 		QList<QTreeWidgetItem*> doubleCheckedItems;
 		foreach (QTreeWidgetItem* nItem, doubleNameItems) {
 			if (nItem->checkState(0) == Qt::Checked) {
@@ -866,21 +867,24 @@ void CInstallModuleChooserDialog::slotItemChecked(QTreeWidgetItem* item, int col
 		}
 
 		if (doubleCheckedItems.count() > 1) {
+			enableOk(false);
 			// color the items
-			qDebug() << "there were more than 1 item of the name" << item->text(0);
+			qDebug() << "there were more than 1 item of the name" << moduleName;
 			foreach (QTreeWidgetItem* i, doubleNameItems) {
-				QBrush bg(QColor(255,153,153));
+				QBrush bg(Qt::red);
 				i->setBackground(0, bg);
 			}
-			enableOk(false);
+			m_doubleCheckedModules[moduleName] = true;
 		} else if (doubleCheckedItems.count() == 1) {
-			qDebug() << "there were 1 checked items of the name" << item->text(0);
+			qDebug() << "there were 1 checked items of the name" << moduleName;
 			// uncolor the items
 			foreach (QTreeWidgetItem* i, doubleNameItems) {
 				i->setBackground(0, i->parent()->background(0));
 			}
-			enableOk(true);
-	
+			m_doubleCheckedModules.remove(moduleName);
+			if (m_doubleCheckedModules.count() == 0) {
+				enableOk(true);
+			}
 		}
 	}
 }
@@ -906,3 +910,54 @@ void CInstallModuleChooserDialog::enableOk(bool enabled)
 	qDebug() << "CInstallModuleChooserDialog::enableOk" << enabled;
 	okButton()->setEnabled(enabled);
 }
+
+// ***************************************************************
+// ************* Dialog for showing the install progress *********
+// ***************************************************************
+
+// BtInstallProgressDialog::BtInstallProgressDialog()
+// {
+// 	//create the tab which shows the status and lets the user stop installation
+// 	QTreeWidget* statusWidget = new QTreeWidget();
+// 	statusWidget->setRootIsDecorated(false);
+// 	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
+// 	statusWidget->header()->setStretchLastSection(false);
+// 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
+// 	stopAllButton->setFixedSize(stopAllButton->sizeHint());
+// 	statusWidget->setColumnWidth(2, stopAllButton->sizeHint().width());
+// 	statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
+// 
+// 	foreach (QTreeWidgetItem* sourceItem, treeWidget->invisibleRootItem()->takeChildren()) {
+// 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
+// 			if (moduleItem->checkState(0) == Qt::Checked) {
+// 				qDebug("BtSourceWidget::slotInstallAccepted 1");
+// 				// create a thread and a progress widget for this module
+// 				//BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), QString::null/*destination*/);
+// 				//m_threadList.append(thread);
+// 				// progress widget
+// 				QProgressBar* bar = new QProgressBar(statusWidget);
+// 				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+// 				QPushButton* stopButton = new QPushButton(tr("Stop"), statusWidget);
+// 				stopButton->setFixedSize(stopButton->sizeHint());
+// 				QTreeWidgetItem* progressItem = new QTreeWidgetItem(statusWidget);
+// 				progressItem->setSizeHint(2, stopButton->sizeHint());
+// 				progressItem->setText(0, moduleItem->text(0));
+// 				statusWidget->setItemWidget(progressItem, 1, bar);
+// 				statusWidget->setItemWidget(progressItem, 2, stopButton);
+// 				//connect
+// 				//QObject::connect(stopButton, SIGNAL(clicked(), thread, SLOT(slotStopInstall()) );
+// 				qDebug("BtSourceWidget::slotInstallAccepted 2");
+// 			}
+// 		}
+// 	}
+// 	QTreeWidgetItem* stopAllItem = new QTreeWidgetItem(statusWidget);
+// 	statusWidget->setItemWidget(stopAllItem, 2, stopAllButton);
+// 	connect(stopAllButton, SIGNAL(clicked()), SLOT(slotStopInstall()) );
+// 
+// 	this->addTab(statusWidget, tr("Installing..."));
+// 	this->setCurrentWidget(statusWidget);
+// 	this->tabBar()->setEnabled(false);
+// }
+// 
+// BtInstallProgressDialog::~BtInstallProgressDialog() {}
+

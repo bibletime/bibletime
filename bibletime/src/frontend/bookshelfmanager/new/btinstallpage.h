@@ -214,6 +214,7 @@ protected:
 	QList<QTreeWidgetItem*> findModuleItemsByName(QString name);
 private:
 	QStringList m_nameList;
+	QMap<QString, bool> m_doubleCheckedModules;
 
 };
 
