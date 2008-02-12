@@ -538,42 +538,45 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	int matchLen = 0;
 	int length = searchedText.length();
 
+	// Highlighting constants - 
+	// TODO: We need to make the highlight color configurable.
 	const QString rep1("<span style=\"background-color:#FFFF66;\">");
 	const QString rep2("</span>");
 	const unsigned int repLength = rep1.length() + rep1.length();
-	int sstIndex; // strong search text index for finding "strong:"
+	const QString rep3("style=\"background-color:#FFFF66;\" ");
+	const unsigned int rep3Length = rep3.length();
+
+	
 	bool inQuote;
 	QString newSearchText;
 
 	newSearchText = searchedText;
-	//---------------------------------------------------------------------
+	
 	// find the strongs search lemma and highlight it
-	//---------------------------------------------------------------------
 	// search the searched text for "strong:" until it is not found anymore
-	sstIndex = 0;
-	while ((sstIndex = newSearchText.indexOf("strong:", sstIndex)) != -1) {
+	QStringList list;
+	
+	// split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
+	// TODO: find all possible seperators
+	QString regExp = "\\s";
+	list = searchedText.split(QRegExp(regExp));
+	foreach (QString newSearchText, list) {		
+		int sstIndex; // strong search text index for finding "strong:"
 		int idx1, idx2, sTokenIndex, sTokenIndex2;
 		QString sNumber, lemmaText;
-		const QString rep3("style=\"background-color:#FFFF66;\" ");
-		const unsigned int rep3Length = rep3.length();
+		
+		sstIndex = newSearchText.indexOf("strong:");
+		if (sstIndex == -1)
+			continue;
+		
+		// set the start index to the start of <body>
 		int strongIndex = index;
-		//--------------------------------------------------
-		// get the strongs number from the search text
-		//--------------------------------------------------
-		// first find the first space after "strong:"
-		//	 this should indicate a change in search token
+		
+		// Get the strongs number from the search text.
+		// First, find the first space after "strong:"
 		sstIndex = sstIndex + 7;
-		sTokenIndex  = newSearchText.indexOf(" ", sstIndex);
-		sTokenIndex2 = newSearchText.indexOf("|", sstIndex);
-		if ((sTokenIndex2 != -1) && (sTokenIndex2 < sTokenIndex)) {
-			sNumber = newSearchText.mid(sstIndex, sTokenIndex2 - sstIndex);
-		}
-		else {
-			sNumber = newSearchText.mid(sstIndex, sTokenIndex - sstIndex);
-		}
-		// remove this strong entry
-		sstIndex -= 7;
-		newSearchText.replace(sstIndex, sTokenIndex - sstIndex, "");
+		// get the strongs number -> the text following "strong:" to the end of the string.
+		sNumber = newSearchText.mid(sstIndex, -1);
 		// find all the "lemma=" inside the the content
 		while((strongIndex = ret.indexOf("lemma=", strongIndex, cs)) != -1) {
 			// get the strongs number after the lemma and compare it with the
@@ -581,7 +584,11 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 			idx1 = ret.indexOf("\"", strongIndex) + 1;
 			idx2 = ret.indexOf("\"", idx1 + 1);
 			lemmaText = ret.mid(idx1, idx2 - idx1);
-			if (lemmaText == sNumber) {
+			
+			// this is interesting because we could have a strongs number like: G3218|G300
+			// To handle this we will use some extra cpu cycles and do a partial match against
+			// the lemmaText
+			if (lemmaText.contains(sNumber)) {
 				// strongs number is found now we need to highlight it
 				// I believe the easiest way is to insert rep3 just before "lemma="
 				ret = ret.insert(strongIndex, rep3);
@@ -594,9 +601,9 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	// now that the strong: stuff is out of the way continue with
 	// other search options
 	//---------------------------------------------------------------------
-	//-----------------------------------------------------------
+	
 	// try to figure out how to use the lucene query parser
-	//-----------------------------------------------------------
+	
 	//using namespace lucene::queryParser;
 	//using namespace lucene::search;
 	//using namespace lucene::analysis;
