@@ -46,6 +46,10 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QMessageBox>
+#include <QLineEdit>
+#include <QKeyEvent>
+
+#include <QDebug>
 
 //KDE includes
 
@@ -783,28 +787,25 @@ void CSearchOptionsArea::initView() {
     gridLayout->addWidget(m_searchTextCombo, 0, 1, 1, 1);
 	
 	//Modules label, the text will be set later
-    m_modulesLabel = new QLabel( searchGroupBox);
-    sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
-    m_modulesLabel->setSizePolicy(sizePolicy1);
-    //m_modulesLabel->setTextFormat(Qt::RichText);
-    //m_modulesLabel->setAlignment(Qt::AlignCenter|Qt::AlignHorizontal_Mask|Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter|Qt::AlignVertical_Mask);
+	m_modulesLabel = new QLabel( searchGroupBox);
+	sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
+	m_modulesLabel->setSizePolicy(sizePolicy1);
 	m_modulesLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
     m_modulesLabel->setWordWrap(true);
 
-    gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
+	gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
 
 
-    hboxLayout->addWidget(searchGroupBox);
+	hboxLayout->addWidget(searchGroupBox);
 
-	//Taken from old code
 	Q_ASSERT(m_searchTextCombo);
 	QObject::connect( m_searchTextCombo, SIGNAL(activated( const QString& )),
-				m_searchTextCombo, SLOT( addToHistory( const QString& ))
+				this, SLOT( slotHistoryItemActivated(const QString&) )
 			);
-	QObject::connect( m_searchTextCombo, SIGNAL(returnPressed ( const QString& )),
-				m_searchTextCombo, SLOT(addToHistory(const QString&))
+	QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ( const QString& )),
+				this, SLOT( slotSearchTextEditReturnPressed(const QString&) )
 			);
-	//QToolTip::add(m_searchTextCombo, CResMgr::searchdialog::options::searchedText::tooltip);
+
 	m_searchTextCombo->setToolTip(CResMgr::searchdialog::options::searchedText::tooltip);
 
 	Q_ASSERT(m_syntaxButton);
@@ -827,6 +828,11 @@ void CSearchOptionsArea::initView() {
 	//set the initial focus
 	Q_ASSERT(m_searchTextCombo);
 	m_searchTextCombo->setFocus();	
+
+	// event filter to prevent the Return/Enter presses in the combo box doing something
+	// in the parent widget
+	//m_searchTextCombo->view()->installEventFilter(this);
+	m_searchTextCombo->installEventFilter(this);
 }
 
 /** Sets the modules used by the search. */
@@ -945,5 +951,29 @@ bool CSearchOptionsArea::hasSearchScope() {
 	return (searchScope().Count() > 0);
 }
 
+void CSearchOptionsArea::slotHistoryItemActivated(const QString& item)
+{
+	qDebug("CSearchOptionsArea::slotHistoryItemActivated");
+	m_searchTextCombo->addToHistory( item );
+}
+
+void CSearchOptionsArea::slotSearchTextEditReturnPressed(const QString& item)
+{
+	qDebug("CSearchOptionsArea::slotSearchTextEditReturnPressed");
+	m_searchTextCombo->addToHistory( item );
+	emit sigStartSearch();
+}
+
+bool CSearchOptionsArea::eventFilter(QObject* obj, QEvent* event)
+{
+	if (obj == m_searchTextCombo->view() || obj == m_searchTextCombo || obj == m_searchTextCombo->lineEdit()) {
+		//qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
+		obj->event(event);
+		// don't handle this event in parent
+		event->accept();
+		return true;
+	}
+	return QWidget::eventFilter(obj, event);
+}
 
 } //end of namespace Search

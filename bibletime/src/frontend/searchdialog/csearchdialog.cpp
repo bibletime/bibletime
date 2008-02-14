@@ -238,10 +238,11 @@ void CSearchDialog::showModulesSelector() {
 
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
+	// Search button is clicked
 	connect(this, SIGNAL(user1Clicked()), SLOT(startSearch()));
+	// Return/Enter is pressed in the search text field
+	connect(m_searchOptionsArea, SIGNAL(sigStartSearch()), SLOT(startSearch()) );
 	connect(this, SIGNAL(closeClicked()), SLOT(slotClose()));
-	// Pressing return in search term editor starts the search:
-	QObject::connect(m_searchOptionsArea->m_searchTextCombo->lineEdit(), SIGNAL(returnPressed()), this->button(KDialog::User1), SLOT(setFocus()) );
 }
 
 /** Resets the parts to the default. */

@@ -251,7 +251,7 @@ protected: // Protected methods
 	* Reads the settings for the searchdialog from disk.
 	*/
 	void saveSettings();
-
+	bool eventFilter(QObject* obj, QEvent* event);
 public slots: // Public slots
 	/**
 	* Sets the modules used by the search.
@@ -273,9 +273,12 @@ public slots: // Public slots
 protected slots: // Protected slots
 	void setupRanges();
 	void syntaxHelp();
+	void slotHistoryItemActivated(const QString& item);
+	void slotSearchTextEditReturnPressed(const QString& item);
 
 signals:
 	void sigSetSearchButtonStatus(bool);
+	void sigStartSearch();
 
 private:
 	ListCSwordModuleInfo m_modules;
@@ -293,6 +296,17 @@ private:
     QLabel *m_modulesLabel;
 
 };
+
+
+// class BtSearchTextComboBox : public KHistoryComboBox
+// {
+// 	Q_OBJECT
+// public:
+// 	BtSearchTextComboBox(QWidget* parent);
+// 
+// protected:
+// 	keyPressEvent(QKeyEvent* e);
+// };
 
 } //end of namespace Search
 
