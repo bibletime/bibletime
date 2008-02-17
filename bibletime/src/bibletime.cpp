@@ -160,7 +160,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 		//   if (!key.isEmpty())
 		displayWindow->lookup(key);
 	}
-
+	qApp->processEvents();
 	qApp->restoreOverrideCursor();
 	return displayWindow;
 }
