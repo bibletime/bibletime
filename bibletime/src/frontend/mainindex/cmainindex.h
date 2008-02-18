@@ -30,6 +30,8 @@ public:
 
 	void reloadSword();
 
+	CBookshelfIndex* bookshelfIndex() {return m_bookshelfPage;}
+
 signals:
 	/**
 	* Is emitted when a module should be opened,
