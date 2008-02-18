@@ -284,8 +284,16 @@ void CBookshelfIndex::slotModifySelection()
 void CBookshelfIndex::mouseReleaseEvent(QMouseEvent* event) {
 	//qDebug("CBookshelfIndex::mouseReleaseEvent");
 	//qDebug() << event->type() << event->modifiers();
+	if (itemAt(event->pos())) {
+		if (m_frozenModules.contains(  itemAt(event->pos())->text(0)  )) {
+			//do nothing
+			event->accept();
+			return;
+		}
+	}
 	m_mouseReleaseEventModifiers = event->modifiers();
 	QTreeWidget::mouseReleaseEvent(event);
+
 }
 
 /** Called when an item is clicked with mouse or activated with keyboard. */
@@ -309,12 +317,23 @@ void CBookshelfIndex::slotExecuted( QTreeWidgetItem* i )
 
 	if (BTIndexModule* m = dynamic_cast<BTIndexModule*>(i))  { //clicked on a module
 		CSwordModuleInfo* mod = m->moduleInfo();
-		ListCSwordModuleInfo modules;
-		modules.append(mod);
-		qDebug("will emit createReadDisplayWindow");
-		emit createReadDisplayWindow(modules, QString::null);
+		if (!m_frozenModules.contains(mod->name())) {
+			m_frozenModules.insert(mod->name());
+			ListCSwordModuleInfo modules;
+			modules.append(mod);
+			qDebug("will emit createReadDisplayWindow");
+			emit createReadDisplayWindow(modules, QString::null);
+			
+		}
 	} else {
 		i->setExpanded( !i->isExpanded() );
+	}
+}
+
+void CBookshelfIndex::unfreezeModules(ListCSwordModuleInfo modules)
+{
+	foreach (CSwordModuleInfo* mInfo, modules) {
+		m_frozenModules.remove(mInfo->name());
 	}
 }
 

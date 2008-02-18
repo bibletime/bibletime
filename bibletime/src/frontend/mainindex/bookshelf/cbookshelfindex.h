@@ -63,6 +63,8 @@ public:
 	*/
 	void reloadSword();
 
+	void unfreezeModules(ListCSwordModuleInfo);
+
 public slots:
 	/**
 	 * Opens the searchdialog for the selected modules.
@@ -167,6 +169,7 @@ private:
 	QActionGroup* m_groupingGroup;
 	int m_mouseReleaseEventModifiers;
 	bool m_showHidden;
+	QSet<QString> m_frozenModules;
 
 	/**
 	* Initializes the view.

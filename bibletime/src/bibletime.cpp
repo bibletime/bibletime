@@ -13,6 +13,7 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/kstartuplogo.h"
 #include "frontend/mainindex/cmainindex.h"
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
@@ -160,7 +161,11 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 		//   if (!key.isEmpty())
 		displayWindow->lookup(key);
 	}
+	// We have to process pending events here, otherwise displayWindow is not fully painted
 	qApp->processEvents();
+	// Now all events, including mouse clicks for the displayWindow have been handled
+	// and we can let the user click the same module again
+	m_mainIndex->bookshelfIndex()->unfreezeModules(modules);
 	qApp->restoreOverrideCursor();
 	return displayWindow;
 }
