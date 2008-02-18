@@ -149,7 +149,7 @@ void CBookshelfIndex::initActions()
 	action->setProperty("grouping", BTModuleTreeItem::LangMod);
 	m_actionList.append(action);
 
-	action = newQAction(tr("Modules Only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Works Only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::Mod) action->setChecked(true);
