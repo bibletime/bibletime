@@ -191,6 +191,8 @@ const QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 	switch ( ID ) {
 		case leftPaneSplitterSizes:	return "leftPaneSplitterSizes";
 		case mainSplitterSizes:		return "mainSplitterSizes";
+		case searchMainSplitterSizes:	return "searchMainSplitterSizes";
+		case searchResultSplitterSizes:	return "searchResultSplitterSizes";
 	}
 
 	return QString::null;
@@ -200,6 +202,12 @@ const QList<int> CBTConfig::getDefault( const CBTConfig::intLists ID) {
 	switch ( ID ) {
 		case leftPaneSplitterSizes: //fall through
 		case mainSplitterSizes: {
+			return QList<int>();
+		}
+		case searchMainSplitterSizes: {
+			return QList<int>();
+		}
+		case searchResultSplitterSizes: {
 			return QList<int>();
 		}
 	}

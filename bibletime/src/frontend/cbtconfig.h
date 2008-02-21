@@ -94,7 +94,9 @@ public:
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
-		mainSplitterSizes
+		mainSplitterSizes,
+		searchMainSplitterSizes,
+		searchResultSplitterSizes
 	};
 	enum stringLists {
 		searchCompletionTexts,
