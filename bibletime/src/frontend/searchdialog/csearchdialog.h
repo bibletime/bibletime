@@ -101,6 +101,14 @@ protected:
 	* Resets the parts to the default.
 	*/
 	void reset();
+	/**
+	* Load the settings from the resource file
+	*/
+	void loadDialogSettings();
+	/**
+	* Save the settings to the resource file
+	*/
+	void saveDialogSettings();
 
 protected slots:
 	/**

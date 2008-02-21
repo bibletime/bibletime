@@ -41,13 +41,13 @@
 #include <QFrame>
 #include <QPushButton>
 #include <QSpacerItem>
-#include <QSplitter>
 #include <QTreeWidget>
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QMessageBox>
 #include <QLineEdit>
 #include <QKeyEvent>
+#include <QSettings>
 
 #include <QDebug>
 
@@ -208,15 +208,16 @@ CSearchResultArea::CSearchResultArea(QWidget *parent)
 	qDebug("CSearchResultArea::CSearchResultArea end");
 }
 
-CSearchResultArea::~CSearchResultArea() {}
+CSearchResultArea::~CSearchResultArea() 
+{
+	saveDialogSettings();
+}
 
 void CSearchResultArea::initView()
 {
 	QVBoxLayout *mainLayout;
-	QSplitter *mainSplitter;
 	QWidget *resultListsWidget;
 	QVBoxLayout *resultListsWidgetLayout;
-	QSplitter *resultListSplitter;
 	QHBoxLayout *hboxLayout;
 	QSpacerItem *spacerItem;
 
@@ -264,7 +265,8 @@ void CSearchResultArea::initView()
 	m_displayFrame->resize(this->fontMetrics().width(QString().fill('M', 25)), 100);
 	m_displayFrame->setMinimumSize(this->fontMetrics().width(QString().fill('M', 20)), 50);
 	QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-	sizePolicy2.setHorizontalStretch(1);
+	// preview area will expand 2-to-1 compared to the modules area
+	sizePolicy2.setHorizontalStretch(2);
 	sizePolicy2.setVerticalStretch(0);
 	sizePolicy2.setHeightForWidth(m_displayFrame->sizePolicy().hasHeightForWidth());
 	m_displayFrame->setSizePolicy(sizePolicy2);
@@ -278,6 +280,8 @@ void CSearchResultArea::initView()
 	frameLayout->setContentsMargins(0,0,0,0);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
 	frameLayout->addWidget(m_previewDisplay->view());
+	
+	loadDialogSettings();
 }
 
 void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
@@ -682,6 +686,39 @@ void CSearchResultArea::showAnalysis() {
 	CSearchAnalysisDialog dlg(m_modules, this);
 	dlg.exec();
 }
+
+/**
+* Load the settings from the resource file
+*/
+void CSearchResultArea::loadDialogSettings()
+{
+	bool hasSplitters = false;
+	
+	// we don't want to set wrong sizes
+	// this must be within the intlists group
+	CBTConfig::getConfig()->beginGroup("intlists");
+	if (CBTConfig::getConfig()->contains("searchMainSplitterSizes")) {
+		hasSplitters = true;
+	}
+	CBTConfig::getConfig()->endGroup();
+	
+	// this must be done outside of a settings group
+	if (hasSplitters) {	
+		mainSplitter->setSizes(CBTConfig::get(CBTConfig::searchMainSplitterSizes));
+		resultListSplitter->setSizes(CBTConfig::get(CBTConfig::searchResultSplitterSizes));
+	}
+	
+}
+
+/**
+* Save the settings to the resource file
+*/
+void CSearchResultArea::saveDialogSettings()
+{
+	CBTConfig::set(CBTConfig::searchMainSplitterSizes, mainSplitter->sizes());
+	CBTConfig::set(CBTConfig::searchResultSplitterSizes, resultListSplitter->sizes());
+}
+
 
 //--------------CSearchOptionsArea------------------------
 

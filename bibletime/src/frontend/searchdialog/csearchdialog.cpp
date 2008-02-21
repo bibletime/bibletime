@@ -6,7 +6,7 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
+#include "config.h"
 #include "csearchdialog.h"
 #include "csearchdialogareas.h"
 //#include "csearchanalysis.h"
@@ -26,6 +26,7 @@
 #include <QMessageBox>
 #include <QVBoxLayout>
 #include <QLineEdit>
+#include <QSettings>
 
 //KDE includes
 #include <kdialog.h>
@@ -91,6 +92,7 @@ CSearchDialog::~CSearchDialog()
 	//TODO: port to QSettings
 // 	KConfigGroup cg = CBTConfig::getConfig()->group("CSearchDialog"); 
 // 	saveDialogSize();
+	saveDialogSettings();
 }
 
 /** Starts the search with the set modules and the set search text. */
@@ -171,7 +173,9 @@ const ListCSwordModuleInfo CSearchDialog::modules()
 void CSearchDialog::setModules( const ListCSwordModuleInfo modules )
 {
 	m_searchOptionsArea->setModules(modules);
-	resize( sizeHint() );
+	// the resize here breakes any attempt to size the dialog
+	// also it is not proper for a method named setModules.
+	//resize( sizeHint() );
 }
 
 /** Returns the search text which is set currently. */
@@ -194,7 +198,8 @@ void CSearchDialog::setSearchText( const QString searchText )
 /** Initializes this object. */
 void CSearchDialog::initView()
 {
-	setMainWidget(new QWidget(this));
+	setMainWidget(new QWidget(this));	
+
 	setButtonToolTip(User1, CResMgr::searchdialog::searchButton::tooltip);
 	QVBoxLayout *box = new QVBoxLayout( mainWidget());
 	mainWidget()->setLayout(box);
@@ -215,10 +220,13 @@ void CSearchDialog::initView()
 	int h = m_searchOptionsArea->minimumHeight() +
 		m_searchResultArea->minimumHeight();
 	mainWidget()->setMinimumSize(w+10, h+100);
+		
 	// Added code for loading last size of dialog
 	//setInitialSize(configDialogSize("CSearchDialog"));
 	//TODO: port to QSettings
 // 	restoreDialogSize( CBTConfig::getConfig()->group("CSearchDialog") );
+
+	loadDialogSettings();
 }
 
 void CSearchDialog::searchFinished() {
@@ -257,5 +265,34 @@ void CSearchDialog::slotClose() {
 	delayedDestruct();
 	m_staticDialog = 0;
 }
+
+/**
+* Load the settings from the resource file
+*/
+void CSearchDialog::loadDialogSettings()
+{
+	//we don't want to set wrong sizes
+	// set the size of the main widget
+	CBTConfig::getConfig()->beginGroup("CSearchDialog");
+	if (CBTConfig::getConfig()->contains("size"))
+		resize(CBTConfig::getConfig()->value("size").toSize());
+	else
+		resize( sizeHint() );		
+	if (CBTConfig::getConfig()->contains("pos"))
+		move(CBTConfig::getConfig()->value("pos").toPoint());
+	CBTConfig::getConfig()->endGroup();
+}
+
+/**
+* Save the settings to the resource file
+*/
+void CSearchDialog::saveDialogSettings()
+{
+	CBTConfig::getConfig()->beginGroup("CSearchDialog");
+	CBTConfig::getConfig()->setValue("size", size());
+	CBTConfig::getConfig()->setValue("pos", pos());
+	CBTConfig::getConfig()->endGroup();
+}
+
 
 } //end of namespace Search

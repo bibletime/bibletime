@@ -14,6 +14,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
+#include <QSplitter>
 #include <QList>
 #include <QStringList>
 #include <QWidget>
@@ -164,6 +165,14 @@ protected: // Protected methods
 	*/
 	const QString highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/);
 
+	/**
+	* Load the settings from the resource file
+	*/
+	void loadDialogSettings();
+	/**
+	* Save the settings to the resource file
+	*/
+	void saveDialogSettings();
 
 protected slots: // Protected slots
 	/**
@@ -189,6 +198,9 @@ private:
 	CReadDisplay* m_previewDisplay;
 
 	ListCSwordModuleInfo m_modules;
+
+	QSplitter *mainSplitter;
+	QSplitter *resultListSplitter;
 };
 
 
