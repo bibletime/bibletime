@@ -762,10 +762,15 @@ void CBookmarkIndex::magTimeout()
 		if (bitem) {
 			//qDebug("CBookmarkIndex::timerEvent: update the infodisplay");
 			// Update the mag
-			(CPointers::infoDisplay())->setInfo(
-				InfoDisplay::CInfoDisplay::CrossReference,
-				bitem->module()->name() + ":" + bitem->key()
-			);
+			if (bitem->module()) {
+				(CPointers::infoDisplay())->setInfo(
+					InfoDisplay::CInfoDisplay::CrossReference,
+					bitem->module()->name() + ":" + bitem->key()
+				);
+			} else {
+				(CPointers::infoDisplay())->setInfo(InfoDisplay::CInfoDisplay::Text, tr("The work to which the bookmark points to is not installed."));
+			}
+
 		}
 	}
 }

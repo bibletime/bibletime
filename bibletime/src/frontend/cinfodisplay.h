@@ -34,7 +34,8 @@ public:
 		Lemma,
 		Morph,
 		WordTranslation,
-		WordGloss
+		WordGloss,
+		Text
 	};
 
 	typedef QPair<InfoType, QString> InfoData;

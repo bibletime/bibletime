@@ -142,6 +142,9 @@ void CInfoDisplay::setInfo(const ListInfoData& list) {
 			case Abbreviation:
 			text.append( decodeAbbreviation( (*it).second ) );
 			continue;
+			case Text:
+			text.append( (*it).second );
+			continue;
 			default:
 			continue;
 		};

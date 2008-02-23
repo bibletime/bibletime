@@ -31,6 +31,8 @@
 #include <QString>
 #include <QtXml/qdom.h>
 
+#include <QDebug>
+
 #include <boost/scoped_ptr.hpp>
 
 //KDE
@@ -66,9 +68,8 @@ CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, QDomElement
 
 CIndexBookmarkItem::~CIndexBookmarkItem() {}
 
-/** No descriptions */
+
 void CIndexBookmarkItem::update() {
-	//setMultiLinesEnabled(true); //TODO: ???
 	setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
 
 	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
@@ -84,7 +85,6 @@ void CIndexBookmarkItem::init() {
 	update();
 }
 
-/** Reimplementation. */
 const QString CIndexBookmarkItem::toolTip() {
 	if (!module()) {
 		return QString::null;
@@ -122,14 +122,14 @@ const QString CIndexBookmarkItem::toolTip() {
 	return ret;
 }
 
-/** Returns the used module. */
+
 CSwordModuleInfo* const CIndexBookmarkItem::module() {
+	qDebug() << "CIndexBookmarkItem::module" << m_moduleName;
 	CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
-	Q_ASSERT(m);
+	//Q_ASSERT(m); not so: the module may be uninstalled
 	return m;
 }
 
-/** Returns the used key. */
 const QString CIndexBookmarkItem::key() {
 	const QString englishKeyName = englishKey();
 	if (!module()) {
@@ -148,17 +148,16 @@ const QString CIndexBookmarkItem::key() {
 	return returnKeyName;
 }
 
-/** Returns the used description. */
+
 const QString& CIndexBookmarkItem::description() {
 	return m_description;
 }
 
-/** No descriptions */
 const bool CIndexBookmarkItem::isMovable() {
 	return true;
 }
 
-/** Reimplementation to handle  the menu entries of the main index. */
+
 const bool CIndexBookmarkItem::enableAction(const MenuAction action) {
 	if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
 		return true;
@@ -166,7 +165,7 @@ const bool CIndexBookmarkItem::enableAction(const MenuAction action) {
 	return false;
 }
 
-/** Changes this bookmark. */
+
 void CIndexBookmarkItem::rename() {
 	bool ok  = false;
 	const QString newDescription = CInputDialog::getText(QObject::tr("Change description ..."), QObject::tr("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
@@ -177,7 +176,7 @@ void CIndexBookmarkItem::rename() {
 	}
 }
 
-/** Reimplementation of CItemBase::saveToXML. */
+
 QDomElement CIndexBookmarkItem::saveToXML( QDomDocument& doc ) {
 	QDomElement elem = doc.createElement("Bookmark");
 
@@ -208,12 +207,12 @@ void CIndexBookmarkItem::loadFromXML( QDomElement& element ) {
 	}
 }
 
-/** Returns the english key. */
+
 const QString& CIndexBookmarkItem::englishKey() const {
 	return m_key;
 }
 
-/** Reimplementation. Returns false everytime because a bookmarks  has not possible drops. */
+
 bool CIndexBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
 	return false;
 }
