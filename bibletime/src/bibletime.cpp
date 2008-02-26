@@ -45,7 +45,7 @@
 
 using namespace Profile;
 
-BibleTime::BibleTime() : BibleTimeInterface(), 
+BibleTime::BibleTime() : 
 	QMainWindow(0),
 	m_initialized(false),
 	m_moduleList(0),

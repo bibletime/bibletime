@@ -11,6 +11,7 @@
 #include "bibletimeapp.h"
 #include "bibletime.h"
 #include "config.h"
+#include "bibletime_dbus_adaptor.h"
 
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
@@ -28,6 +29,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QDebug>
+#include <QDBusConnection>
 
 #include <kcmdlineargs.h>
 #include <kcrash.h>
@@ -324,6 +326,11 @@ int main(int argc, char* argv[]) {
 		KStartupLogo::hideSplash();
 		KStartupLogo::deleteSplash();
 	}
+	
+	BibleTimeDBusAdaptor* adaptor = new BibleTimeDBusAdaptor(bibletime_ptr);
+	
+    // connect to D-Bus and register as an object:
+	QDBusConnection::sessionBus().registerObject("/BibleTime", bibletime_ptr);
 
 	const int ret = app.exec();
 

@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "bibletime.h"
 
@@ -21,7 +19,7 @@
 #include <versekey.h>
 #include <listkey.h>
 
-
+//QT
 #include <QList>
 
 //helper function

@@ -10,8 +10,6 @@
 #ifndef BIBLETIME_H
 #define BIBLETIME_H
 
-#include "bibletimeinterface.h"
-
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
@@ -116,8 +114,10 @@ class QSplitter;
  * saveSettings().
  * This is the general way of all BibleTime classes.
  */
-class BibleTime : public QMainWindow, virtual public BibleTimeInterface {
+class BibleTime : public QMainWindow 
+{
 	friend class CMDIArea;
+	friend class BibleTimeDBusAdaptor;
 	Q_OBJECT
 public:
 	/**

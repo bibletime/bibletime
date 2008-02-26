@@ -152,9 +152,10 @@ SET(bibletime_SOURCES
 	#toplevel files
 	src/bibletime_init.cpp
 	src/bibletime_slots.cpp
-	src/bibletime_dcop.cpp
+	src/bibletime_dbus.cpp
 	src/bibletime.cpp
 	src/bibletimeapp.cpp
+	src/bibletime_dbus_adaptor.cpp
 	src/main.cpp
 )
 
