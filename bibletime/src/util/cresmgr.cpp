@@ -862,11 +862,11 @@ namespace CResMgr {
 					using namespace help;
 					{
 						using namespace handbook;
-						tooltip     = QObject::tr("Open BibleTime's handbook in the KDE helpbrowser.") ;
+						tooltip     = QObject::tr("Open BibleTime's handbook.") ;
 					}
 					{
 						using namespace bibleStudyHowTo;
-						tooltip     = QObject::tr("Open the Bible study HowTo included with BibleTime in the KDE helpbrowser. <BR>This HowTo is an introduction on how to study the Bible in an efficient way.") ;
+						tooltip     = QObject::tr("Open the Bible study HowTo included with BibleTime.<BR>This HowTo is an introduction on how to study the Bible in an efficient way.") ;
 					}
 					{
 						using namespace bugreport;
@@ -888,7 +888,7 @@ namespace CResMgr {
 			using namespace searchdialog;
 			{
 				using namespace searchButton;
-				tooltip     = QObject::tr("Start to search the text in each of the chosen work(s).") ;
+				tooltip     = QObject::tr("Start to search the text in each of the chosen works.") ;
 			}
 			{
 				using namespace cancelSearchButton;
@@ -899,21 +899,21 @@ namespace CResMgr {
 				using namespace options;
 				{
 					using namespace moduleChooserButton;
-					tooltip     = QObject::tr("Open a dialog to choose work(s) for the search.") ;
+					tooltip     = QObject::tr("Choose works for the search.") ;
 				}
 				{
 					using namespace searchedText;
-					tooltip     = QObject::tr("Enter the text you want to search in the chosen work(s) here.") ;
+					tooltip     = QObject::tr("The text you want to search for in the chosen works.") ;
 				}
 				{
 					using namespace searchType;
 					{
 						using namespace multipleWords_and;
-						tooltip     = QObject::tr("Treat the search text as multiple words. A text must contain all of the words to match. The order of the words is unimportant.") ;
+						tooltip     = QObject::tr("Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.") ;
 					}
 					{
 						using namespace multipleWords_or;
-						tooltip     = QObject::tr("Treat the search text as multiple words. A text must contain one or more words of to match. The order is unimportant.") ;
+						tooltip     = QObject::tr("Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.") ;
 					}
 					{
 						using namespace exactMatch;
@@ -929,7 +929,7 @@ namespace CResMgr {
 					using namespace searchOptions;
 					{
 						using namespace caseSensitive;
-						tooltip     = QObject::tr("If you choose this option the search will distinguish between upper and lowercase characters.") ;
+						tooltip     = QObject::tr("Case sensitive distinguishes between upper and lowercase characters.") ;
 					}
 				}
 				{
@@ -962,7 +962,7 @@ The others are user defined search scopes.");
 					}
 					{
 						using namespace deleteCurrentRange;
-						tooltip     = QObject::tr("Deletes the selected search scope. If you close the dialog using Cancel the settings won't be saved.") ;
+						tooltip     = QObject::tr("Deletes the selected search scope. If you cancel the dialog the settings won't be saved.") ;
 					}
 				}
 			}
@@ -990,11 +990,11 @@ The others are user defined search scopes.");
 				{
 					{
 						using namespace scrollButton;
-						tooltip = QObject::tr("This button is useful to scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.") ;
+						tooltip = QObject::tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.") ;
 					}
 					{
 						using namespace search;
-						tooltip = QObject::tr("This button opens the search dialog with the work(s) of this window.") ;
+						tooltip = QObject::tr("Open the search dialog with the works of this window.") ;
 
 					}
 					{
@@ -1081,7 +1081,7 @@ The others are user defined search scopes.");
 				}
 				{
 					using namespace restoreText;
-					tooltip   = QObject::tr("Loads the old text from the work and loads it into the edit area. The unsaved text will be lost.") ;
+					tooltip   = QObject::tr("Loads the old text from the work into the edit area. The unsaved text will be lost.") ;
 				}
 				{
 					using namespace deleteEntry;
@@ -1201,7 +1201,7 @@ The others are user defined search scopes.");
 			using namespace mainIndex;
 			{
 				using namespace search;
-				tooltip     = QObject::tr("Opens the search dialog to search in the work(s) that are currently open.") ;
+				tooltip     = QObject::tr("Opens the search dialog to search in the works that are currently open.") ;
 			}
 		}
 	}
