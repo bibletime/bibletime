@@ -25,8 +25,8 @@ class CSwordBackend;
 
 typedef QList<sword::InstallSource*> InstallSourceList;
 
-/**Our own reimplementation to provide status bar updates.
-*@author The BibleTime team
+/**
+* Our own reimplementation to provide installation and status bar updates.
 */
 class Bt_InstallMgr : public QObject, public sword::InstallMgr, public sword::StatusReporter {
 	Q_OBJECT

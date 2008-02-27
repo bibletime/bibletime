@@ -8,12 +8,25 @@
 **********/
 
 #include "btinstallthread.h"
+#include "btinstallthread.moc"
+
+#include "bt_installmgr.h"
+#include "backend.h"
+#include "util/cpointers.h"
+#include "backend/managers/cswordbackend.h"
+
+#include <QString>
+#include <QThread>
+#include <QDir>
+
+#include <QDebug>
 
 BtInstallThread::BtInstallThread(QString moduleName, QString sourceName, QString destinationName)
 	: QThread(),
 	m_module(moduleName),
 	m_destination(destinationName),
-	m_source(sourceName)
+	m_source(sourceName),
+	m_cancelled(false)
 {
 }
 
@@ -24,10 +37,65 @@ BtInstallThread::~BtInstallThread()
 
 void BtInstallThread::run()
 {
+	qDebug("BtInstallThread::run");
+	qDebug() << "Module:" << m_module;
+	qDebug() << "source: "<<m_source;
+	qDebug()<<"destination:"<<m_destination;
 
+	Bt_InstallMgr iMgr;
+	sword::InstallSource is = backend::source(m_source);
+
+
+	//make sure target/mods.d and target/modules exist
+	QDir dir(m_destination);
+	if (!dir.exists()) {
+		dir.mkdir(m_destination);
+		qDebug() << "made directory" << m_destination;
+	}
+	if (!dir.exists("modules")) {
+		dir.mkdir("modules");
+		qDebug() << "made directory" << m_destination << "/modules";
+	}
+	if (!dir.exists("mods.d")) {
+		dir.mkdir("mods.d");
+		qDebug() << "made directory" << m_destination << "/mods.d";
+	}
+
+	sword::SWMgr lMgr( m_destination.toLatin1() );
+
+	//check whether it's an update. If yes, remove existing module first
+	//TODO: silently removing without undo if the user cancels the update is WRONG!!!
+	CSwordModuleInfo* m = CPointers::backend()->findModuleByName(m_module);
+	if (m && !m_cancelled) { //module found?
+		QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
+		QString dataPath = m->config(CSwordModuleInfo::DataPath);
+		if (dataPath.left(2) == "./") {
+			dataPath = dataPath.mid(2);
+		}
+
+		if (prefixPath.contains(dataPath)) {
+			prefixPath.remove( prefixPath.indexOf(dataPath), dataPath.length() );
+		}
+		else {
+			prefixPath = QString::fromLatin1(CPointers::backend()->prefixPath);
+		}
+
+		sword::SWMgr mgr(prefixPath.toLatin1());
+		iMgr.removeModule(&mgr, m->name().toLatin1());
+	}
+
+	if (!m_cancelled && backend::isRemote(is)) {
+		qDebug() << "calling install";
+		int status = iMgr.installModule(&lMgr, 0, m_module.toLatin1(), &is);
+		qWarning() << "INFO: return status of install manager: " << status;
+	}
+	else if (!m_cancelled) { //local source
+		iMgr.installModule(&lMgr, is.directory.c_str(), m_module.toLatin1());
+	}
 }
 
 void BtInstallThread::slotStopInstall()
 {
-
+	m_cancelled = true;
+	//iMgr.terminate();
 }

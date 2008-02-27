@@ -51,6 +51,8 @@ public:
 
 	void setInstallEnabled(bool b);
 
+	QString selectedInstallPath();
+
 private:
 	void initView();
 	void initConnections();
@@ -177,7 +179,7 @@ private slots:
 	void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
 	void slotTabSelected(int index);
-	void slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget* treeWidget);
+	void slotInstallAccepted(ListCSwordModuleInfo mi, QTreeWidget* treeWidget);
 
 
 

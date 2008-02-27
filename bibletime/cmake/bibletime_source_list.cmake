@@ -94,6 +94,9 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp
 	src/frontend/bookshelfmanager/new/backend.cpp
 	src/frontend/bookshelfmanager/new/bt_installmgr.cpp
+	src/frontend/bookshelfmanager/new/btinstallthread.cpp
+	src/frontend/bookshelfmanager/new/btinstallitem.cpp
+	src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp
 
 	#Search dialog
 	src/frontend/searchdialog/csearchdialog.cpp

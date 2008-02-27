@@ -15,6 +15,7 @@
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfmanager/new/btconfigdialog.h"
 #include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/new/btinstallprogressdialog.h"
 
 #include "frontend/cmodulechooserdialog.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -40,6 +41,7 @@
 #include <QTabBar>
 #include <QStackedWidget>
 #include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include <QVBoxLayout>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -68,6 +70,11 @@ void BtInstallPage::setInstallEnabled(bool b)
 {
 	qDebug("void BtInstallPage::setInstallEnabled(bool b) start");
 	m_installButton->setEnabled(b);
+}
+
+QString BtInstallPage::selectedInstallPath()
+{
+	return m_pathCombo->currentText();
 }
 
 void BtInstallPage::initView()
@@ -525,13 +532,16 @@ void BtSourceWidget::slotRefresh()
 	connect(&iMgr, SIGNAL(completed(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
 	if (backend::isRemote(is)) {
+		m_progressDialog->show();
+		qApp->processEvents();
+		this->slotRefreshCompleted(0,0);
 		m_progressDialog->setLabelText(tr("Connecting..."));
 		m_progressDialog->setValue(0);
 		qApp->processEvents();
-		qApp->flush();
-		qApp->processEvents();
-		m_progressDialog->repaint();
-		qApp->processEvents();
+		//qApp->flush();
+		//qApp->processEvents();
+		//m_progressDialog->repaint();
+		//qApp->processEvents();
 		qDebug("void BtSourceWidget::slotRefresh 3");
 		bool successful = iMgr.refreshRemoteSource( &is );
 		if (!successful ) { //make sure the sources were updated sucessfully
@@ -631,19 +641,19 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	QString path;
 	sword::InstallSource is = backend::source(sourceName);
 	if (backend::isRemote(is)) {
-		type = tr("remote");
+		type = tr("Remote:");
 		server = is.source.c_str();
 		path = is.directory.c_str();
 	}
 	else { // local source
-		type = tr("local");
+		type = tr("Local:");
 		QFileInfo fi( is.directory.c_str() );
 		path = is.directory.c_str();
 		if (!(fi.isDir() )) {
-			path = path + tr("NOT A DIRECTORY!");
+			path = path + QString(" ") + tr("NOT A DIRECTORY!");
 		}
 		if (fi.isReadable()) {
-			path = path + tr("NOT READABLE!");
+			path = path + QString(" ") + tr("NOT READABLE!");
 		}
 	}
 
@@ -652,7 +662,7 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	int tabNumber = this->addTab(area, sourceName);
 
 	// TODO: add "remote/local", server, path etc.
-	QString toolTip(sourceName + QString("<br>") + tr("Type:") + type + " " + server + path);
+	QString toolTip(QString("<p style='white-space:pre'>") + sourceName + QString("<br/><b>") + type + QString("</b> ") + server + path + QString("</p>"));
 	tabBar()->setTabToolTip(tabNumber, toolTip);
 
 	//select the new tab
@@ -738,14 +748,14 @@ void BtSourceWidget::slotStopInstall(QTreeWidget* treeWidget)
 {
 	qDebug("BtSourceWidget::slotStopInstall");
 	// click programmatically all stop buttons
-	QTreeWidgetItemIterator it(treeWidget);
-	while (*it) {
-		if (!((*it)->text(0).isEmpty())) {
-			QPushButton* itemButton = dynamic_cast<QPushButton*>(treeWidget->itemWidget(*it, 2));
-			if (itemButton) { itemButton->click(); }
-		}
- 		++it;
- 	}
+// 	QTreeWidgetItemIterator it(treeWidget);
+// 	while (*it) {
+// 		if (!((*it)->text(0).isEmpty())) {
+// 			QPushButton* itemButton = dynamic_cast<QPushButton*>(treeWidget->itemWidget(*it, 2));
+// 			if (itemButton) { itemButton->click(); }
+// 		}
+//  		++it;
+//  	}
 	// qApp->processEvents()?
 	// remove and delete the tab
 }
@@ -753,47 +763,52 @@ void BtSourceWidget::slotStopInstall(QTreeWidget* treeWidget)
 void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidget* treeWidget)
 {
 	qDebug("BtSourceWidget::slotInstallAccepted");
+
+ 	BtInstallProgressDialog* dlg = new BtInstallProgressDialog(treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
+
+	dlg->exec();
+
 	//TODO: disable the Install button
-	//create the tab which shows the status and lets the user stop installation
-	QTreeWidget* statusWidget = new QTreeWidget();
-	statusWidget->setRootIsDecorated(false);
-	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
-	statusWidget->header()->setStretchLastSection(false);
-	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
-	stopAllButton->setFixedSize(stopAllButton->sizeHint());
-	statusWidget->setColumnWidth(2, stopAllButton->sizeHint().width());
-	statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
-
-	foreach (QTreeWidgetItem* sourceItem, treeWidget->invisibleRootItem()->takeChildren()) {
-		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
-			if (moduleItem->checkState(0) == Qt::Checked) {
-				qDebug("BtSourceWidget::slotInstallAccepted 1");
-				// create a thread and a progress widget for this module
-				//BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), QString::null/*destination*/);
-				//m_threadList.append(thread);
-				// progress widget
-				QProgressBar* bar = new QProgressBar(statusWidget);
-				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
-				QPushButton* stopButton = new QPushButton(tr("Stop"), statusWidget);
-				stopButton->setFixedSize(stopButton->sizeHint());
-				QTreeWidgetItem* progressItem = new QTreeWidgetItem(statusWidget);
-				progressItem->setSizeHint(2, stopButton->sizeHint());
-				progressItem->setText(0, moduleItem->text(0));
-				statusWidget->setItemWidget(progressItem, 1, bar);
-				statusWidget->setItemWidget(progressItem, 2, stopButton);
-				//connect
-				//QObject::connect(stopButton, SIGNAL(clicked(), thread, SLOT(slotStopInstall()) );
-				qDebug("BtSourceWidget::slotInstallAccepted 2");
-			}
-		}
-	}
-	QTreeWidgetItem* stopAllItem = new QTreeWidgetItem(statusWidget);
-	statusWidget->setItemWidget(stopAllItem, 2, stopAllButton);
-	connect(stopAllButton, SIGNAL(clicked()), SLOT(slotStopInstall()) );
-
-	this->addTab(statusWidget, tr("Installing..."));
-	this->setCurrentWidget(statusWidget);
-	this->tabBar()->setEnabled(false);
+// 	//create the tab which shows the status and lets the user stop installation
+// 	QTreeWidget* statusWidget = new QTreeWidget();
+// 	statusWidget->setRootIsDecorated(false);
+// 	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
+// 	statusWidget->header()->setStretchLastSection(false);
+// 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
+// 	stopAllButton->setFixedSize(stopAllButton->sizeHint());
+// 	statusWidget->setColumnWidth(2, stopAllButton->sizeHint().width());
+// 	statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
+// 
+// 	foreach (QTreeWidgetItem* sourceItem, treeWidget->invisibleRootItem()->takeChildren()) {
+// 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
+// 			if (moduleItem->checkState(0) == Qt::Checked) {
+// 				qDebug("BtSourceWidget::slotInstallAccepted 1");
+// 				// create a thread and a progress widget for this module
+// 				//BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), QString::null/*destination*/);
+// 				//m_threadList.append(thread);
+// 				// progress widget
+// 				QProgressBar* bar = new QProgressBar(statusWidget);
+// 				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+// 				QPushButton* stopButton = new QPushButton(tr("Stop"), statusWidget);
+// 				stopButton->setFixedSize(stopButton->sizeHint());
+// 				QTreeWidgetItem* progressItem = new QTreeWidgetItem(statusWidget);
+// 				progressItem->setSizeHint(2, stopButton->sizeHint());
+// 				progressItem->setText(0, moduleItem->text(0));
+// 				statusWidget->setItemWidget(progressItem, 1, bar);
+// 				statusWidget->setItemWidget(progressItem, 2, stopButton);
+// 				//connect
+// 				//QObject::connect(stopButton, SIGNAL(clicked(), thread, SLOT(slotStopInstall()) );
+// 				qDebug("BtSourceWidget::slotInstallAccepted 2");
+// 			}
+// 		}
+// 	}
+// 	QTreeWidgetItem* stopAllItem = new QTreeWidgetItem(statusWidget);
+// 	statusWidget->setItemWidget(stopAllItem, 2, stopAllButton);
+// 	connect(stopAllButton, SIGNAL(clicked()), SLOT(slotStopInstall()) );
+// 
+// 	this->addTab(statusWidget, tr("Installing..."));
+// 	this->setCurrentWidget(statusWidget);
+// 	this->tabBar()->setEnabled(false);
 	
 	qDebug("BtSourceWidget::slotInstallAccepted end");
 	//start all threads, set the initial progressbar status

@@ -15,24 +15,24 @@
 
 #include "backend/managers/cswordbackend.h"
 
-#include "util/cpointers.h"
-#include "util/directoryutil.h"
+//#include "util/cpointers.h"
+//#include "util/directoryutil.h"
 
 //Qt includes
-#include <QFile>
-#include <QFileInfo>
-#include <QDir>
+//#include <QFile>
+//#include <QFileInfo>
+//#include <QDir>
 #include <QDebug>
-
+//#include <QApplication>
 //Sword includes
-#include <filemgr.h>
-#include <swconfig.h>
-#include <swbuf.h>
+//#include <filemgr.h>
+//#include <swconfig.h>
+//#include <swbuf.h>
 
 //Stl includes
-#include <functional>
-#include <map>
-#include <utility>
+//#include <functional>
+//#include <map>
+//#include <utility>
 
 using namespace sword;
 
@@ -69,7 +69,7 @@ void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 	else if (filePercent < 0) {
 		filePercent = 0;
 	}
-
+	//qApp->processEvents();
 	emit completed(totalPercent, filePercent);
 }
 

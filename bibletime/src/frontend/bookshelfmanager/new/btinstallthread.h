@@ -18,6 +18,7 @@
 */
 class BtInstallThread : public QThread
 {
+	Q_OBJECT
 public:
     BtInstallThread(QString moduleName, QString sourceName, QString destinationName);
 
@@ -33,9 +34,13 @@ protected:
 	QString m_module;
 	QString m_destination;
 	QString m_source;
+	bool m_cancelled;
 
 signals:
-	void statusUpdated(int, int );
+	void statusUpdated(QString module, int progressPercent);
+	void installStopped(QString module);
+	//is this needed?:
+	void installCompleted(QString module);
 };
 
 #endif
