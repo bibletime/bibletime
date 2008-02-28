@@ -125,7 +125,7 @@ public:
 	 */
 	BibleTime();
 	/**
-	 * destrutor of BibleTime
+	 * destructor of BibleTime
 	 */
 	virtual ~BibleTime();
 
@@ -362,26 +362,22 @@ private:
 
 	InfoDisplay::CInfoDisplay* m_infoDisplay;
 
-protected: //DCOP interface implementation
+protected: //DBUS interface implementation
+	void closeAllModuleWindows();
+	void syncAllBibles(const QString& key);
+	void syncAllCommentaries(const QString& key);
+	void syncAllLexicons(const QString& key);
+	void syncAllVerseBasedModules(const QString& key);
+	void openWindow(const QString& moduleName, const QString& key);
+	void openDefaultBible(const QString& key);
+	QString getCurrentReference();
+	QStringList searchInModule(const QString& module, const QString& searchText);
+	QStringList searchInOpenModules(const QString& searchText);
+	QStringList searchInDefaultBible(const QString& searchText);
+	QStringList getModulesOfType(const QString& type);
+    void reloadModules();
 	//helper function
 	void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
-
-	//see bibletimeinterface.h for a documentation of these functions
-	virtual void closeAllModuleWindows();
-	virtual void syncAllBibles(const QString& key);
-	virtual void syncAllCommentaries(const QString& key);
-	virtual void syncAllLexicons(const QString& key);
-	virtual void syncAllVerseBasedModules(const QString& key);
-	virtual void openWindow(const QString& moduleName, const QString& key);
-	virtual void openDefaultBible(const QString& key);
-	virtual QString getCurrentReference();
-	virtual QStringList searchInModule(const QString& module, const QString& searchText);
-	virtual QStringList searchInOpenModules(const QString& searchText);
-	virtual QStringList searchInDefaultBible(const QString& searchText);
-	virtual QStringList getModulesOfType(const QString& type);
-    virtual void reloadModules();
-	
-
 };
 
 #endif

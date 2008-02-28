@@ -13,7 +13,6 @@
 //frontend includes
 #include "frontend/cmdiarea.h"
 #include "frontend/cbtconfig.h"
-#include "frontend/searchdialog/csearchdialog.h"
 
 //Sword includes
 #include <versekey.h>
@@ -21,17 +20,14 @@
 
 //QT
 #include <QList>
+#include <QDebug>
 
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {
-	qDebug("Syncing modules by type to key %s", key.toLatin1());
-
+	qDebug() << "Syncing modules by type to key" << key.toLatin1();
 	QList<QWidget*> windows = m_mdi->usableWindowList();
-	//for (QWidget* w = windows.first(); w; w = windows.next()) {
 	foreach (QWidget* w, windows) {
 		CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w);
-		Q_ASSERT(d);
-
 		if (d && d->modules().count() && d->modules().first()->type() == type) {
 			d->lookup(key);
 		}
@@ -39,53 +35,49 @@ void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, co
 }
 
 void BibleTime::closeAllModuleWindows() {
-	qDebug("DCOP: close all windows now...");
-
+	qDebug() << "DBUS: close all windows now...";
 	m_mdi->deleteAll();
 }
 
 void BibleTime::syncAllBibles(const QString& key) {
-	qDebug("DCOP: syncing all bibles ...");
+	qDebug() << "DBUS: syncing all bibles ...";
 	syncAllModulesByType(CSwordModuleInfo::Bible, key);
 }
 
 void BibleTime::syncAllCommentaries(const QString& key) {
-	qDebug("DCOP: syncing all commentaries ...");
+	qDebug() << "DBUS: syncing all commentaries ...";
 	syncAllModulesByType(CSwordModuleInfo::Commentary, key);
 }
 
 void BibleTime::syncAllLexicons(const QString& key) {
-	qDebug("DCOP: syncing all lexicons ...");
+	qDebug() << "DBUS: syncing all lexicons ...";
 	syncAllModulesByType(CSwordModuleInfo::Lexicon, key);
 }
 
 void BibleTime::syncAllVerseBasedModules(const QString& key) {
-	qDebug("DCOP: syncing all verse based modules ...");
+	qDebug() << "DBUS: syncing all verse based modules ...";
 	syncAllModulesByType(CSwordModuleInfo::Bible, key);
 	syncAllModulesByType(CSwordModuleInfo::Commentary, key);
 }
 
 void BibleTime::openWindow(const QString& moduleName, const QString& key) {
-	qDebug("DCOP: open window for module %s and key %s...", moduleName.toLatin1(), key.toLatin1());
-
+	qDebug() << "DBUS: open window for module" << moduleName.toLatin1() << "and key" << key.toLatin1();
 	CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName);
-	Q_ASSERT(module);
 	if (module) {
 		createReadDisplayWindow(module, key);
 	}
 }
 
 void BibleTime::openDefaultBible(const QString& key) {
-	qDebug("DCOP: open default bible ...");
-	CSwordModuleInfo* mod = CBTConfig::get
-								(CBTConfig::standardBible);
+	qDebug() << "DBUS: open default bible ...";
+	CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
 	if (mod) {
 		openWindow(mod->name(), key);
 	}
 }
 
 QStringList BibleTime::searchInModule(const QString& moduleName, const QString& searchText) {
-	qDebug("DCOP: searchInModule %s ...", moduleName.toLatin1());
+	qDebug() << "DBUS: searchInModule" << moduleName.toLatin1();
 	QStringList ret;
 	CSwordModuleInfo* mod = CPointers::backend()->findModuleByName(moduleName);
 
@@ -119,7 +111,7 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
 }
 
 QStringList BibleTime::searchInOpenModules(const QString& searchText) {
-	qDebug("DCOP: search in open modules ...");
+	qDebug() << "DBUS: search in open modules ...";
 	QStringList ret;
 
 	QList<QWidget*> windows = m_mdi->windowList();
@@ -139,13 +131,12 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
 }
 
 QStringList BibleTime::searchInDefaultBible(const QString& searchText) {
-	CSwordModuleInfo* bible = CBTConfig::get
-								  (CBTConfig::standardBible);
+	CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
 	return searchInModule(bible->name(), searchText);
 }
 
 QString BibleTime::getCurrentReference() {
-	qDebug("BibleTime::getCurrentReference");
+	qDebug() << "BibleTime::getCurrentReference";
 	QString ret = QString::null;
 
 	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(m_mdi->activeWindow());
@@ -216,7 +207,6 @@ QStringList BibleTime::getModulesOfType(const QString& type) {
 }
 
 void BibleTime::reloadModules() {
-	//m_backend->reloadModules();
 	slotSwordSetupChanged();
 }
 
