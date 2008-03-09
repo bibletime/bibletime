@@ -88,7 +88,7 @@ void MigrationUtil::tryMigrationFromKDE3(){
 			break;
 		}
 	}
-	CBTConfig::getConfig()->sync();
+	CBTConfig::syncConfig();
 }
 
 }

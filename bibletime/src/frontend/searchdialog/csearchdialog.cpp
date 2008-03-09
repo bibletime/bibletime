@@ -89,9 +89,6 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 
 CSearchDialog::~CSearchDialog()
 {
-	//TODO: port to QSettings
-// 	KConfigGroup cg = CBTConfig::getConfig()->group("CSearchDialog"); 
-// 	saveDialogSize();
 	saveDialogSettings();
 }
 
@@ -217,15 +214,9 @@ void CSearchDialog::initView()
 	// minimum size.  The following code sets the minimum with some
 	// margin.  If you know of a better way to do this, do it!
 	int w = m_searchOptionsArea->minimumWidth();
-	int h = m_searchOptionsArea->minimumHeight() +
-		m_searchResultArea->minimumHeight();
+	int h = m_searchOptionsArea->minimumHeight() + m_searchResultArea->minimumHeight();
 	mainWidget()->setMinimumSize(w+10, h+100);
 		
-	// Added code for loading last size of dialog
-	//setInitialSize(configDialogSize("CSearchDialog"));
-	//TODO: port to QSettings
-// 	restoreDialogSize( CBTConfig::getConfig()->group("CSearchDialog") );
-
 	loadDialogSettings();
 }
 
@@ -271,16 +262,8 @@ void CSearchDialog::slotClose() {
 */
 void CSearchDialog::loadDialogSettings()
 {
-	//we don't want to set wrong sizes
-	// set the size of the main widget
-	CBTConfig::getConfig()->beginGroup("CSearchDialog");
-	if (CBTConfig::getConfig()->contains("size"))
-		resize(CBTConfig::getConfig()->value("size").toSize());
-	else
-		resize( sizeHint() );		
-	if (CBTConfig::getConfig()->contains("pos"))
-		move(CBTConfig::getConfig()->value("pos").toPoint());
-	CBTConfig::getConfig()->endGroup();
+//	resize(CBTConfig::get(CBTConfig::searchDialogWidth), CBTConfig::searchDialogHeight);
+//	move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::searchDialogY);
 }
 
 /**
@@ -288,10 +271,10 @@ void CSearchDialog::loadDialogSettings()
 */
 void CSearchDialog::saveDialogSettings()
 {
-	CBTConfig::getConfig()->beginGroup("CSearchDialog");
-	CBTConfig::getConfig()->setValue("size", size());
-	CBTConfig::getConfig()->setValue("pos", pos());
-	CBTConfig::getConfig()->endGroup();
+//	CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
+//	CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
+//	CBTConfig::set(CBTConfig::searchDialogX, x());
+//	CBTConfig::set(CBTConfig::searchDialogY, y());
 }
 
 

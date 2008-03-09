@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CSEARCHDIALOG_H
 #define CSEARCHDIALOG_H
 

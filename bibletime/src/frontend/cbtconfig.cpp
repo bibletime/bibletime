@@ -122,12 +122,12 @@ const QString CBTConfig::getKey( const CBTConfig::bools ID) {
 
 const QString CBTConfig::getKey( const CBTConfig::ints ID) {
 	switch ( ID ) {
-		case footnotes:		return "footnotes";
-		case strongNumbers:	return "strongNumbers";
-		case headings:		return "headings";
-		case morphTags:		return "morphTags";
-		case lemmas:		return "lemmas";
-		case hebrewPoints:	return "hebrewPoints";
+		case footnotes:				return "footnotes";
+		case strongNumbers:			return "strongNumbers";
+		case headings:				return "headings";
+		case morphTags:				return "morphTags";
+		case lemmas:				return "lemmas";
+		case hebrewPoints:			return "hebrewPoints";
 		case hebrewCantillation:	return "hebrewCantillation";
 		case greekAccents:			return "greekAccents";
 		case textualVariants:		return "textualVariants";
@@ -135,9 +135,13 @@ const QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case morphSegmentation:		return "morphSegmentation";
 		case bookshelfContentsX:	return "bookshelfContentsX";
 		case bookshelfContentsY:	return "bookshelfContentsY";
-		case magDelay:		return "magDelay";
+		case magDelay:				return "magDelay";
 		case bookshelfGrouping:		return "bookshelfGrouping";
 		case mainindexActiveTab:	return "mainindexActiveTab";
+		case searchDialogWidth:		return "searchDialogWidth";
+		case searchDialogHeight:	return "searchDialogHeight";
+		case searchDialogX:			return "searchDialogX";
+		case searchDialogY:			return "searchDialogY";
 	}
 	return QString::null;
 }
@@ -181,8 +185,12 @@ const int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case morphSegmentation:		return int(true);
 		case bookshelfContentsX:	return 0;
 		case bookshelfContentsY:	return 0;
-		case magDelay:	return 400;
+		case magDelay:				return 400;
 		case bookshelfGrouping:		return BTModuleTreeItem::CatLangMod;
+		case searchDialogWidth:		return 200;
+		case searchDialogHeight:	return 400;
+		case searchDialogX:			return 200;
+		case searchDialogY:			return 200;
 	}
 	return 0;
 }
@@ -675,6 +683,11 @@ QSettings* const CBTConfig::getConfig()
 {
 	static QSettings config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
 	return &config;
+}
+
+void CBTConfig::syncConfig()
+{
+	CBTConfig::getConfig()->sync();
 }
 
 const QString CBTConfig::IntListToString( const QList<int> intList )

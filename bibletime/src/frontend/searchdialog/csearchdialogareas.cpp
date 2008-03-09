@@ -202,7 +202,6 @@ CSearchResultArea::CSearchResultArea(QWidget *parent)
 	: QWidget(parent)
 {
 	qDebug("CSearchResultArea::CSearchResultArea");
-	setParent(parent);
 	initView();
 	initConnections();
 	qDebug("CSearchResultArea::CSearchResultArea end");
@@ -692,22 +691,8 @@ void CSearchResultArea::showAnalysis() {
 */
 void CSearchResultArea::loadDialogSettings()
 {
-	bool hasSplitters = false;
-	
-	// we don't want to set wrong sizes
-	// this must be within the intlists group
-	CBTConfig::getConfig()->beginGroup("intlists");
-	if (CBTConfig::getConfig()->contains("searchMainSplitterSizes")) {
-		hasSplitters = true;
-	}
-	CBTConfig::getConfig()->endGroup();
-	
-	// this must be done outside of a settings group
-	if (hasSplitters) {	
-		mainSplitter->setSizes(CBTConfig::get(CBTConfig::searchMainSplitterSizes));
-		resultListSplitter->setSizes(CBTConfig::get(CBTConfig::searchResultSplitterSizes));
-	}
-	
+	mainSplitter->setSizes(CBTConfig::get(CBTConfig::searchMainSplitterSizes));
+	resultListSplitter->setSizes(CBTConfig::get(CBTConfig::searchResultSplitterSizes));
 }
 
 /**
@@ -725,7 +710,6 @@ void CSearchResultArea::saveDialogSettings()
 CSearchOptionsArea::CSearchOptionsArea(QWidget *parent )
 	: QWidget(parent)
 {
-	setParent(parent);
 	initView();
 	readSettings();
 }

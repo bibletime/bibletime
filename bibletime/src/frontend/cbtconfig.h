@@ -90,7 +90,12 @@ public:
 		bookshelfContentsY,
 		magDelay, /* The delay until a mouse move makes the content appear in the mag */
 		bookshelfGrouping,
-		mainindexActiveTab
+		mainindexActiveTab,
+		
+		searchDialogWidth,
+		searchDialogHeight,
+		searchDialogX,
+		searchDialogY
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
@@ -157,13 +162,16 @@ public:
 
 	static const QString getModuleEncryptionKey( const QString& name );
 	static void setModuleEncryptionKey( const QString& name, const QString& key );
+	
+	/** Re-reads the config from disk */
+	static void syncConfig();
 
+private:
 	/** The config object.
 	* @return A config object which is used currently, may be the global config or the session config
 	*/
 	static QSettings* const getConfig();
 
-private:
 	static const QString getKey( const CBTConfig::strings );
 	static const QString getKey( const CBTConfig::modules );
 	static const QString getKey( const CBTConfig::bools );
