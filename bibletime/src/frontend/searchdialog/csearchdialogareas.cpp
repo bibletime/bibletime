@@ -987,6 +987,7 @@ void CSearchOptionsArea::slotSearchTextEditReturnPressed(const QString& item)
 
 bool CSearchOptionsArea::eventFilter(QObject* obj, QEvent* event)
 {
+	qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
 	if (obj == m_searchTextCombo->view() || obj == m_searchTextCombo || obj == m_searchTextCombo->lineEdit()) {
 		//qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
 		obj->event(event);
