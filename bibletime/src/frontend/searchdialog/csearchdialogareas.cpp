@@ -987,13 +987,15 @@ void CSearchOptionsArea::slotSearchTextEditReturnPressed(const QString& item)
 
 bool CSearchOptionsArea::eventFilter(QObject* obj, QEvent* event)
 {
-	qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
-	if (obj == m_searchTextCombo->view() || obj == m_searchTextCombo || obj == m_searchTextCombo->lineEdit()) {
-		//qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
-		obj->event(event);
-		// don't handle this event in parent
-		event->accept();
-		return true;
+	if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease) {
+		qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
+		if (obj == m_searchTextCombo->view() || obj == m_searchTextCombo || obj == m_searchTextCombo->lineEdit()) {
+			//qDebug() << "CSearchOptionsArea::eventFilter" << obj << event;
+			obj->event(event);
+			// don't handle this event in parent
+			event->accept();
+			return true;
+		}
 	}
 	return QWidget::eventFilter(obj, event);
 }
