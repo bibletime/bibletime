@@ -35,18 +35,32 @@ public:
 	Bt_InstallMgr();
 	virtual ~Bt_InstallMgr();
 
+	/**
+	* Refreshing the source should be cancellable (othewise it might freeze the app if there is
+	* for example something wrong with the network).
+	*/
 	void slotRefreshCanceled();
 
 protected:
-	/* Reimplementations of method in StatusReporter */
+	/* Reimplementations of methods in StatusReporter */
+	/**
+	* Gets the total and current file status, emits the signal with those values as percents.
+	*/
 	virtual void statusUpdate(double dltotal, double dlnow);
+	/**
+	* Called before starting to download each file of the module package.
+	* The sword message is not i18n'ed, it's in the form "Downloading (1 of 6): nt.bzs".
+	* This function is not utilized in the UI ATM.
+	*/
 	virtual void preStatus(long totalBytes, long completedBytes, const char *message);
 
 	long m_totalBytes;
 	long m_completedBytes;
 
 signals:
-	void completed( const int, const int );
+	/** Download status. Percent of total and file.*/
+	void percentCompleted( const int, const int);
+	void downloadStarted();
 };
 
 

@@ -26,7 +26,7 @@ public:
 
 public slots:
 	void slotStopInstall();
-
+	void slotManagerStatusUpdated(int totalProgress, int fileProgress);
 
 protected:
 	virtual void run();
@@ -40,7 +40,7 @@ signals:
 	void statusUpdated(QString module, int progressPercent);
 	void installStopped(QString module);
 	//is this needed?:
-	void installCompleted(QString module);
+	void installCompleted(QString module, int errorStatus);
 };
 
 #endif

@@ -14,7 +14,7 @@
 #include <QString>
 
 class QTreeWidget;
-
+class QTreeWidgetItem;
 
 /**
 
@@ -28,12 +28,17 @@ public:
 	~BtInstallProgressDialog();
 
 public slots:
-	void slotOneItemCompleted(QString);
-	void slotOneItemStopped(QString);
+	void slotOneItemCompleted(QString module);
+	void slotOneItemStopped(QString module);
 	void slotStopInstall();
+	void slotStatusUpdated(QString module, int status);
+	void slotDownloadStarted(QString module);
 
 private:
 	QList<QThread*> m_threads;
+	QTreeWidget* m_statusWidget;
+
+	QTreeWidgetItem* getItem(QString moduleName);
 };
 
 #endif

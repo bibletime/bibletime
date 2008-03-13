@@ -529,7 +529,7 @@ void BtSourceWidget::slotRefresh()
 	bool success = false;
 	qDebug("void BtSourceWidget::slotRefresh 2");
 	// connect this directly to the dialog setValue(int) if possible
-	connect(&iMgr, SIGNAL(completed(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
+	connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
 	if (backend::isRemote(is)) {
 		m_progressDialog->show();

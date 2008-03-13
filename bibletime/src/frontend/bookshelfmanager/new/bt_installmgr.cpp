@@ -70,12 +70,19 @@ void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 		filePercent = 0;
 	}
 	//qApp->processEvents();
-	emit completed(totalPercent, filePercent);
+	qDebug() << "status: total"<<totalPercent<<"file"<<filePercent;
+	emit percentCompleted(totalPercent, filePercent);
 }
 
-void Bt_InstallMgr::preStatus(long totalBytes, long completedBytes, const char* /*message*/)
+
+void Bt_InstallMgr::preStatus(long totalBytes, long completedBytes, const char* message)
 {
-	qDebug() << "pre Status:" << (int)totalBytes << "/" << (int)completedBytes;
+	static bool firstCall = true;
+	if (firstCall) {
+		firstCall = false;
+		emit downloadStarted();
+	}
+	qDebug() << "Bt_InstallMgr::preStatus:" << (int)totalBytes << "/" << (int)completedBytes << QString(message);
 	m_completedBytes = completedBytes;
 	m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
 }

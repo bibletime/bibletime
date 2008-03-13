@@ -43,6 +43,8 @@ void BtInstallThread::run()
 	qDebug()<<"destination:"<<m_destination;
 
 	Bt_InstallMgr iMgr;
+	qDebug() << "connect the status signal from iMgr to thread...";
+	QObject::connect(&iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)));
 	sword::InstallSource is = backend::source(m_source);
 
 
@@ -88,6 +90,7 @@ void BtInstallThread::run()
 		qDebug() << "calling install";
 		int status = iMgr.installModule(&lMgr, 0, m_module.toLatin1(), &is);
 		qWarning() << "INFO: return status of install manager: " << status;
+		emit installCompleted(m_module, status);
 	}
 	else if (!m_cancelled) { //local source
 		iMgr.installModule(&lMgr, is.directory.c_str(), m_module.toLatin1());
@@ -98,4 +101,10 @@ void BtInstallThread::slotStopInstall()
 {
 	m_cancelled = true;
 	//iMgr.terminate();
+}
+
+void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int fileProgress)
+{
+	qDebug("BtInstallThread::slotManagerStatusUpdated");
+	emit statusUpdated(m_module, totalProgress);
 }
