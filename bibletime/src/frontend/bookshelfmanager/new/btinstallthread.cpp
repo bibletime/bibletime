@@ -43,6 +43,7 @@ void BtInstallThread::run()
 	qDebug()<<"destination:"<<m_destination;
 
 	Bt_InstallMgr iMgr;
+	m_iMgr = &iMgr;
 	qDebug() << "connect the status signal from iMgr to thread...";
 	QObject::connect(&iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)));
 	QObject::connect(&iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()));
@@ -90,8 +91,14 @@ void BtInstallThread::run()
 	if (!m_cancelled && backend::isRemote(is)) {
 		qDebug() << "calling install";
 		int status = iMgr.installModule(&lMgr, 0, m_module.toLatin1(), &is);
+		//this->setPriority(QThread::HighPriority);
 		qWarning() << "INFO: return status of install manager: " << status;
-		emit installCompleted(m_module, status);
+		if (status != 0) {
+			emit installStopped(m_module);
+		}
+		else {
+			emit installCompleted(m_module, status);
+		}
 	}
 	else if (!m_cancelled) { //local source
 		iMgr.installModule(&lMgr, is.directory.c_str(), m_module.toLatin1());
@@ -100,8 +107,10 @@ void BtInstallThread::run()
 
 void BtInstallThread::slotStopInstall()
 {
+	//this->setPriority(QThread::IdlePriority);
 	m_cancelled = true;
-	//iMgr.terminate();
+	if (m_iMgr) m_iMgr->terminate();
+	//this->setPriority(QThread::NormalPriority);
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int fileProgress)

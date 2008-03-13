@@ -34,6 +34,13 @@ public slots:
 	void slotStatusUpdated(QString module, int status);
 	void slotDownloadStarted(QString module);
 
+protected:
+	/**
+	* Handles closing by the window close button, Cancel (Stop) All button, or completing
+	* the downloads.
+	*/
+	virtual void closeEvent(QCloseEvent* event);
+
 signals:
 	void swordSetupChanged();
 

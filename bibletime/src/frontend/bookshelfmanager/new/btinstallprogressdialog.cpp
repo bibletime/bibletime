@@ -29,6 +29,9 @@
 BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination)
 	: QDialog(parent)
 {
+	// we want this dialog to be deleted when user closes it or the downloads are completed
+	setAttribute(Qt::WA_DeleteOnClose, true);
+
 	//create the dialog which shows the status and lets the user stop installation
 	m_statusWidget = new QTreeWidget();
 	m_statusWidget->setRootIsDecorated(false);
@@ -90,7 +93,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 	// start threads
 	qDebug() << "start all threads...";
 	foreach (QThread* t, m_threads) {
-		t->start();
+		t->start(QThread::LowPriority);
 	}
 }
 
@@ -115,27 +118,40 @@ void BtInstallProgressDialog::slotOneItemCompleted(QString module)
 			++runningThreads;
 		}
 	}
-	if (runningThreads == 0) {
+	if (runningThreads == 1) {
 		qDebug() << "todo: close the dialog, update the module list";
-		//close();
+		close();
 	}
 }
 
 void BtInstallProgressDialog::slotOneItemStopped(QString module)
 {
 	qDebug("BtInstallProgressDialog::slotOneItemStopped");
-	// mark the item completed (change/remove it),
-	// if all items are stopped/completed close the dialog
-	
 
-	if (false) {
+	m_statusWidget->setItemWidget(getItem(module), 1, 0);
+	getItem(module)->setText(1, tr("Cancelled"));
+	m_statusWidget->itemWidget(getItem(module), 2)->setEnabled(false);
+	int runningThreads = 0;
+	foreach(QThread* thread, m_threads){
+		if (thread->isRunning()) {
+			qDebug() << "a thread is running";
+			++runningThreads;
+		}
+	}
+	if (runningThreads == 1) {
+		qDebug() << "todo: close the dialog, update the module list";
 		close();
 	}
+
 }
 
 void BtInstallProgressDialog::slotStopInstall()
 {
 	qDebug("BtInstallProgressDialog::slotStopInstall");
+	//close();
+	foreach(QThread* thread, m_threads) {
+		(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
+	}
 }
 
 void BtInstallProgressDialog::slotStatusUpdated(QString module, int status)
@@ -165,4 +181,13 @@ QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName)
 {
 	qDebug() << "BtInstallProgressDialog::getItem" << moduleName;
 	return m_statusWidget->findItems(moduleName, Qt::MatchExactly).at(0);
+}
+
+void BtInstallProgressDialog::closeEvent(QCloseEvent* event)
+{
+	qDebug("BtInstallProgressDialog::closeEvent");
+	//event->ignore();
+	foreach(QThread* thread, m_threads){
+		(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
+	}
 }

@@ -12,6 +12,7 @@
 
 #include <QThread>
 
+class Bt_InstallMgr;
 
 /**
 * Thread for installing a module.
@@ -36,6 +37,7 @@ protected:
 	QString m_destination;
 	QString m_source;
 	bool m_cancelled;
+	Bt_InstallMgr* m_iMgr;
 
 signals:
 	/** Emitted when the install progress status is updated. */
