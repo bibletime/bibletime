@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CSWORDMODULELISTVIEW_H
 #define CSWORDMODULELISTVIEW_H
 
@@ -18,9 +16,6 @@
 //QT includes
 #include <QString>
 #include <QTreeWidget>
-
-//KDE includes
-//#include <klistview.h>
 
 class CSwordModuleInfo;
 class CSwordBackend;

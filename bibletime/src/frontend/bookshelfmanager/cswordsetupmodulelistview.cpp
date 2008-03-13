@@ -21,8 +21,6 @@
 //QT includes
 #include <QToolTip>
 
-//KDE includes
-
 
 using namespace sword;
 

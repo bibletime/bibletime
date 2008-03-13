@@ -32,13 +32,8 @@
 #include <QHeaderView>
 #include <QLabel>
 
-#include <klocale.h>
 
-
-
-
-CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label,
-											ListCSwordModuleInfo*  allModules)
+CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label, ListCSwordModuleInfo*  allModules)
 	: QDialog(parent),
 	m_title(title),
 	m_labelText(label)

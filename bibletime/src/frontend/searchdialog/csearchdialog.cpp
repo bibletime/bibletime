@@ -28,12 +28,6 @@
 #include <QLineEdit>
 #include <QSettings>
 
-//KDE includes
-#include <kdialog.h>
-
-#include <khistorycombobox.h>
-#include <kpushbutton.h>
-
 namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
@@ -170,9 +164,6 @@ const ListCSwordModuleInfo CSearchDialog::modules()
 void CSearchDialog::setModules( const ListCSwordModuleInfo modules )
 {
 	m_searchOptionsArea->setModules(modules);
-	// the resize here breakes any attempt to size the dialog
-	// also it is not proper for a method named setModules.
-	//resize( sizeHint() );
 }
 
 /** Returns the search text which is set currently. */
@@ -257,24 +248,18 @@ void CSearchDialog::slotClose() {
 	m_staticDialog = 0;
 }
 
-/**
-* Load the settings from the resource file
-*/
 void CSearchDialog::loadDialogSettings()
 {
-//	resize(CBTConfig::get(CBTConfig::searchDialogWidth), CBTConfig::searchDialogHeight);
-//	move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::searchDialogY);
+	resize(CBTConfig::get(CBTConfig::searchDialogWidth), CBTConfig::get(CBTConfig::searchDialogHeight));
+	move(CBTConfig::get(CBTConfig::searchDialogX), CBTConfig::get(CBTConfig::searchDialogY));
 }
 
-/**
-* Save the settings to the resource file
-*/
 void CSearchDialog::saveDialogSettings()
 {
-//	CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
-//	CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
-//	CBTConfig::set(CBTConfig::searchDialogX, x());
-//	CBTConfig::set(CBTConfig::searchDialogY, y());
+	CBTConfig::set(CBTConfig::searchDialogWidth, size().width());
+	CBTConfig::set(CBTConfig::searchDialogHeight, size().height());
+	CBTConfig::set(CBTConfig::searchDialogX, x());
+	CBTConfig::set(CBTConfig::searchDialogY, y());
 }
 
 

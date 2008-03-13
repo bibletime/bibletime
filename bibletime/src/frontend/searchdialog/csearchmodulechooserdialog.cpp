@@ -30,8 +30,6 @@
 #include <QDebug>
 #include <QHeaderView>
 
-#include <klocale.h>
-
 namespace Search {
 
 CSearchModuleChooserDialog::CSearchModuleChooserDialog( QWidget* parent, QString title, QString label,

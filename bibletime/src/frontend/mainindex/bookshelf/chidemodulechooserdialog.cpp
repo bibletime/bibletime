@@ -30,8 +30,6 @@
 #include <QDebug>
 #include <QHeaderView>
 
-#include <klocale.h>
-
 
 CHideModuleChooserDialog::CHideModuleChooserDialog( QWidget* parent, QString title, QString label, QString currentModule)
 	: CModuleChooserDialog(parent, title, label),

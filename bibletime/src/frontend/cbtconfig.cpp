@@ -27,13 +27,11 @@
 #include <QLocale>
 
 //KDE includes
-#include <kactioncollection.h>
-
-#include <kglobal.h>
-#include <khtml_settings.h>
+#include <kconfig.h> //tmp, for font detection
+#include <khtml_settings.h> //tmp, for font detection
 
 //Sword includes
-#include <versekey.h>
+#include <versekey.h> //for range configuration
 
 //init statics
 QFont* CBTConfig::m_defaultFont = 0;

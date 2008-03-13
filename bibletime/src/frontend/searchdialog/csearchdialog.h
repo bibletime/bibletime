@@ -19,7 +19,6 @@
 
 #include "util/cpointers.h"
 
-
 //Qt includes
 #include <QString>
 
