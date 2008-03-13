@@ -5683,12 +5683,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BookshelfManager::CManageIndicesWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="55"/>
         <source>Manage module search indices</source>
         <translation type="unfinished">Beheer verre bronne</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="56"/>
         <source>You can use the list below to create and/or delete search indices for your installed works.</source>
         <translation type="unfinished">
             </translation>
@@ -5696,30 +5696,46 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
         <source>Module</source>
-        <translation type="unfinished">Module</translation>
+        <translation type="obsolete">Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
         <source>Index size</source>
         <translation type="unfinished">Indonesies</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="92"/>
         <source>Modules with indices</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="100"/>
         <source>Modules without indices</source>
+        <translation type="obsolete">
+            </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="116"/>
+        <source>KiB</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="121"/>
-        <source>KiB</source>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
+        <source>Work</source>
         <translation type="unfinished">
             </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="87"/>
+        <source>Works with indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="95"/>
+        <source>Works without indices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5780,7 +5796,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
         <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the module remote installation feature!&lt;/b&gt;</source>
-        <translation type="unfinished">Kies asb &apos;n bron en &apos;n bestemming.  Kliek dan op die &quot;koppel&quot; knoppie.&lt;br/&gt;&lt;b&gt;Versigtig: Indien u in &apos;n land leef waar u vervolg kan word en nie die risiko wil loop om oor die net opgespoor te word nie, moet u die die verre installasieproses gebruik nie!&lt;/b&gt;</translation>
+        <translation type="obsolete">Kies asb &apos;n bron en &apos;n bestemming.  Kliek dan op die &quot;koppel&quot; knoppie.&lt;br/&gt;&lt;b&gt;Versigtig: Indien u in &apos;n land leef waar u vervolg kan word en nie die risiko wil loop om oor die net opgespoor te word nie, moet u die die verre installasieproses gebruik nie!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="153"/>
@@ -5826,7 +5842,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
         <source>This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
@@ -5928,8 +5944,18 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
+        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the remote installation feature!&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
+        <source>This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?</source>
+        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6006,85 +6032,85 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BookshelfManager::CSwordSetupModuleListView</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Name</source>
         <translation type="unfinished">Naam</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Status</source>
         <translation type="unfinished">Status</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Installed version</source>
         <translation type="unfinished">Geïnstalleerde weergawe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Remote version</source>
         <translation type="unfinished">Verre weergawe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Location</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="82"/>
         <source>Bibles</source>
         <translation type="unfinished">Bybels</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="89"/>
         <source>Commentaries</source>
         <translation type="unfinished">Kommentare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="96"/>
         <source>Lexicons</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="103"/>
         <source>Books</source>
         <translation type="unfinished">Boeke</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="110"/>
         <source>Daily Devotionals</source>
         <translation type="unfinished">Dagoordenkings</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="117"/>
         <source>Glossaries</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="124"/>
         <source>Maps and Images</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="131"/>
         <source>Cult/Unorthodox/Questionable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>New</source>
         <translation type="unfinished">Nuut</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>Updated</source>
         <translation type="unfinished">Bygewerk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
         <translation type="unfinished">Geïnstalleerde weergawe</translation>
     </message>
@@ -6092,27 +6118,27 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="91"/>
         <source>Install Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="94"/>
         <source>Configure...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="112"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="174"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="175"/>
         <source>Install/Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="170"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="171"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6120,24 +6146,34 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Work</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="51"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="72"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="80"/>
         <source>Stop All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="65"/>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="109"/>
+        <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6152,7 +6188,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Work</source>
         <translation type="unfinished">
             </translation>
@@ -6163,32 +6199,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">Status</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="206"/>
         <source>Last refreshed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="218"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="222"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="223"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="224"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="225"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="226"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6196,52 +6232,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="479"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
         <source>Delete Source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="481"/>
         <source>Do you really want to delete this source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="515"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="517"/>
         <source>Refreshing Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="538"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="539"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="584"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="585"/>
         <source>Refreshing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="653"/>
-        <source>NOT A DIRECTORY!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="656"/>
-        <source>NOT READABLE!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="644"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="645"/>
         <source>Remote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="649"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="650"/>
         <source>Local:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6258,6 +6284,16 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="712"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="654"/>
+        <source>Not a directory!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="657"/>
+        <source>Not readable!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6977,7 +7013,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="827"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="832"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8187,42 +8223,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">Verre weergawe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
         <source>Old testament</source>
         <translation type="unfinished">Ou Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Moses/Pentateug/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
         <source>History</source>
         <translation type="unfinished">Geskiedenis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
         <source>Prophets</source>
         <translation type="unfinished">Profete</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
         <source>New testament</source>
         <translation type="unfinished">Nuwe Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
         <source>Gospels</source>
         <translation type="unfinished">Evangelies</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="269"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Briewe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="270"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Paulus se briewe</translation>
     </message>
@@ -8337,7 +8373,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="755"/>
         <source>Open the printer dialog of BibleTime, where you can edit the print queue, assign styles to the items and print them.</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
@@ -9008,6 +9044,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Installed version</source>
         <translation type="unfinished">Geïnstalleerde weergawe</translation>
     </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="755"/>
+        <source>Open the printer dialog of BibleTime.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
@@ -9166,12 +9207,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>&amp;Search</source>
         <translation type="unfinished">&amp;Soek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="100"/>
         <source>Missing indices</source>
         <translation type="unfinished">Hoof indeks</translation>
     </message>
@@ -9179,13 +9220,19 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="108"/>
         <source>One or more modules need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="77"/>
         <source>Search</source>
         <translation type="unfinished">Soek</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="102"/>
+        <source>One or more works need indexing before they can be searched.
+This could take a long time. Proceed with indexing?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9220,16 +9267,6 @@ This could take a long time. Proceed with indexing?</source>
         <source>Searching in: </source>
         <translation type="unfinished">
             </translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
-        <source>Modules to Search in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
-        <source>Select the modules in which the search should be run.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="926"/>
@@ -9272,6 +9309,16 @@ This could take a long time. Proceed with indexing?</source>
         <source>No search scope</source>
         <translation type="unfinished">
             </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

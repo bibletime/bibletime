@@ -209,39 +209,39 @@
 <context>
     <name>BookshelfManager::CManageIndicesWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="55"/>
         <source>Manage module search indices</source>
         <translation>Modul Suchindexe verwalten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="56"/>
         <source>You can use the list below to create and/or delete search indices for your installed works.</source>
         <translation>Sie können unten stehende Liste verwenden, um Suchindices für Ihre installierten Werke zu erstellen/löschen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
-        <source>Module</source>
-        <translation>Modul</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
         <source>Index size</source>
         <translation>Indexgröße</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="92"/>
-        <source>Modules with indices</source>
-        <translation>Module mit Indexen</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="100"/>
-        <source>Modules without indices</source>
-        <translation>Module ohne Indexe</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="116"/>
         <source>KiB</source>
         <translation>KiB</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
+        <source>Work</source>
+        <translation>Work</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="87"/>
+        <source>Works with indices</source>
+        <translation>Werke mit Indices</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="95"/>
+        <source>Works without indices</source>
+        <translation>Werke ohne indices</translation>
     </message>
 </context>
 <context>
@@ -297,11 +297,6 @@
         <translation>Module installieren/aktualisieren - Schritt 1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
-        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the module remote installation feature!&lt;/b&gt;</source>
-        <translation>Bitte wählen Sie eine Bibliothek (lokal oder entfernt) und einen Bücherregal-Pfad zur Installation der Werke. Klicken Sie danach auf den &quot;Verbinden&quot;-Knopf.&lt;br/&gt;&lt;b&gt;WARNUNG: Wenn Sie in einem Land mit Christenverfolgung leben und Sie eine Entdeckung vermeiden möchten, dann sollten Sie diese Funktion NICHT benutzten!&lt;/b&gt;</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="153"/>
         <source>Select library</source>
         <translation>Bibliothek wählen</translation>
@@ -340,11 +335,6 @@
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="220"/>
         <source>Remove installed work(s)</source>
         <translation>Installierte Werke entfernen</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
-        <source>This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.</source>
-        <translation>Dieser Dialog lässt Sie Sword Module von ihrem Rechner zu entfernen. Wählen Sie die gewünschten Module aus und klicken Sie dann auf &quot;Entfernen&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="225"/>
@@ -442,9 +432,19 @@
         <translation>Warnung</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
+        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the remote installation feature!&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
+        <source>This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?</source>
-        <translation>In dieses Verzeichnis kann nicht geschrieben werden, daher können hier keine Werke von BibleTime installiert werden. Möchten Sie es trotzdem zur Liste von Werk-Verzeichnissen hinzufügen?</translation>
+        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -513,82 +513,82 @@
 <context>
     <name>BookshelfManager::CSwordSetupModuleListView</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Installed version</source>
         <translation>Installierte Version</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Remote version</source>
         <translation>Entfernte Version</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Location</source>
         <translation>Ort</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="82"/>
         <source>Bibles</source>
         <translation>Bibeln</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="89"/>
         <source>Commentaries</source>
         <translation>Kommentare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="96"/>
         <source>Lexicons</source>
         <translation>Lexika</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="103"/>
         <source>Books</source>
         <translation>Bücher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="110"/>
         <source>Daily Devotionals</source>
         <translation>Andachtsbücher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="117"/>
         <source>Glossaries</source>
         <translation>Wörterbücher</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="124"/>
         <source>Maps and Images</source>
         <translation>Karten und Bilder</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="131"/>
         <source>Cult/Unorthodox/Questionable</source>
         <translation>Sekte/Unorthodox/Fragwürdig</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>New</source>
         <translation>Neu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>Updated</source>
         <translation>Update</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
         <translation>Installiert</translation>
     </message>
@@ -596,27 +596,27 @@
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="91"/>
         <source>Install Path:</source>
         <translation>Installationspfad:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="94"/>
         <source>Configure...</source>
         <translation>Konfigurieren...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="112"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="174"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="175"/>
         <source>Install/Update</source>
         <translation>Installieren/Updaten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="170"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="171"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Werke installieren und aktualisieren. Fügen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, wählen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religiöser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
     </message>
@@ -624,24 +624,34 @@
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Progress</source>
         <translation>Fortschritt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="51"/>
         <source>Stop</source>
         <translation>Anhalten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="72"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="80"/>
         <source>Stop All</source>
         <translation>Alle anhalten</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="65"/>
+        <source>Connecting...</source>
+        <translation>Verbinde...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="109"/>
+        <source>Completed</source>
+        <translation>Abgeschlossen</translation>
     </message>
 </context>
 <context>
@@ -655,37 +665,37 @@
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Work</source>
         <translation>Werk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="206"/>
         <source>Last refreshed:</source>
         <translation>Zuletzt aktualisiert:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="218"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
         <source>Refresh</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="222"/>
         <source>Edit...</source>
         <translation>Bearbeiten...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="223"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="224"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="225"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="226"/>
         <source>Add...</source>
         <translation>Hinzufügen...</translation>
     </message>
@@ -693,52 +703,42 @@
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="479"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
         <source>Delete Source?</source>
         <translation>Quelle löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="481"/>
         <source>Do you really want to delete this source?</source>
         <translation>Möchten Sie diese Quelle wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="515"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="517"/>
         <source>Refreshing Source</source>
         <translation>Quelle wird aktualisiert</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="538"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="539"/>
         <source>Connecting...</source>
         <translation>Verbinde...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="584"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="585"/>
         <source>Refreshing...</source>
         <translation>Aktualisiere...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="653"/>
-        <source>NOT A DIRECTORY!</source>
-        <translation>KEIN VERZEICHNIS!</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="656"/>
-        <source>NOT READABLE!</source>
-        <translation>NICHT LESBAR!</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="644"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="645"/>
         <source>Remote:</source>
         <translation>Entfernt:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="649"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="650"/>
         <source>Local:</source>
         <translation>Lokal:</translation>
     </message>
@@ -756,6 +756,16 @@
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="712"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Nur eine Version eines Werkes kann installiert werden. Wählen Sie eine aus, wenn rot markierte Einträge vorliegen.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="654"/>
+        <source>Not a directory!</source>
+        <translation>Kein Verzeichnis!</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="657"/>
+        <source>Not readable!</source>
+        <translation>Nicht lesbar!</translation>
     </message>
 </context>
 <context>
@@ -1421,12 +1431,12 @@
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
         <source>Module not writable</source>
-        <translation>Modul ist nicht schreibbar.</translation>
+        <translation>Modul ist nicht schreibbar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
         <source>Module is not writable.</source>
-        <translation>Modul ist nicht schreibbar</translation>
+        <translation>Das Modul ist nicht schreibbar.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
@@ -1445,7 +1455,7 @@
 <context>
     <name>CInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="827"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="832"/>
         <source>Install</source>
         <translation>Installieren</translation>
     </message>
@@ -2253,7 +2263,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Norwegian Nynorsk</source>
-        <translation type="unfinished"></translation>
+        <translation>Neu-Norwegisch</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
@@ -2398,7 +2408,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
         <source>Itz&#xc3;&#xa1;</source>
-        <translation type="unfinished"></translation>
+        <translation>ItzÃ¡</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="319"/>
@@ -2408,7 +2418,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="320"/>
         <source>Kekch&#xc3;&#xad;</source>
-        <translation type="unfinished"></translation>
+        <translation>KekchÃ­</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
@@ -2536,42 +2546,42 @@
         <translation>Internet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
         <source>Old testament</source>
         <translation>Altes Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mose/Pentateuch/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
         <source>History</source>
         <translation>Geschichte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
         <source>Prophets</source>
         <translation>Propheten</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
         <source>New testament</source>
         <translation>Neues Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
         <source>Gospels</source>
         <translation>Evangelien</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="269"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
         <source>Letters/Epistles</source>
         <translation>Briefe/Episteln</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="270"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Paulus-Briefe</translation>
     </message>
@@ -2664,11 +2674,6 @@
         <location filename="../../src/main.cpp" line="302"/>
         <source>Starting BibleTime</source>
         <translation>BibleTime startet</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="755"/>
-        <source>Open the printer dialog of BibleTime, where you can edit the print queue, assign styles to the items and print them.</source>
-        <translation>Den Druckdialog von BibleTime öffnen. Hier können Sie die Druckerwarteschlange bearbeiten, den zu druckenden Einträgen Druck-Stile zuweisen und sie ausdrucken.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
@@ -3210,6 +3215,11 @@
         <source>Installed version</source>
         <translation>Installierte Version</translation>
     </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="755"/>
+        <source>Open the printer dialog of BibleTime.</source>
+        <translation>Offnet den Druckdialog von BibleTime.</translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
@@ -3337,7 +3347,7 @@
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
         <source>BibleTime Search Analysis</source>
-        <translation>Suchanalyse von BibleTime</translation>
+        <translation>BibleTime-Suchanalyse BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
@@ -3363,26 +3373,26 @@
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>&amp;Search</source>
         <translation>&amp;Suche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="100"/>
         <source>Missing indices</source>
         <translation>Fehlende Indexe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="108"/>
-        <source>One or more modules need indexing before they can be searched.
-This could take a long time. Proceed with indexing?</source>
-        <translation>Eines oder mehrere Werke müssen indiziert werden, bevor darin gesucht werden kann. 
-Das könnte eine Weile dauern. Mit dem Indizieren fortfahren?</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="77"/>
         <source>Search</source>
         <translation>Suche</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="102"/>
+        <source>One or more works need indexing before they can be searched.
+This could take a long time. Proceed with indexing?</source>
+        <translation>Für ein oder mehrere Werke müssen Indices erstellt werden, bevor darin gesucht werden kann. 
+Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
 </context>
 <context>
@@ -3418,16 +3428,6 @@ Das könnte eine Weile dauern. Mit dem Indizieren fortfahren?</translation>
         <translation>Suche in: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
-        <source>Modules to Search in</source>
-        <translation>Werke, in denen gesucht werden soll</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
-        <source>Select the modules in which the search should be run.</source>
-        <translation>Die Werke auswählen, in denen gesucht werden soll.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="926"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
@@ -3461,6 +3461,16 @@ Das könnte eine Weile dauern. Mit dem Indizieren fortfahren?</translation>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="949"/>
         <source>No search scope</source>
         <translation>Kein Suchbereich</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
+        <source>Works to Search in</source>
+        <translation>Zu durchsuchende Werke</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
+        <source>Select the works which should be searched.</source>
+        <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
 </context>
 <context>

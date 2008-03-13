@@ -752,7 +752,7 @@ namespace CResMgr {
 				using namespace file;
 				{
 					using namespace print;
-					tooltip     = QObject::tr("Open the printer dialog of BibleTime, where you can edit the print queue, assign styles to the items and print them.") ;
+					tooltip     = QObject::tr("Open the printer dialog of BibleTime.") ;
 				}
 				{
 					using namespace quit;

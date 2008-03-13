@@ -651,10 +651,10 @@ void BtSourceWidget::addSource(const QString& sourceName)
 		QFileInfo fi( is.directory.c_str() );
 		path = is.directory.c_str();
 		if (!(fi.isDir() )) {
-			path = path + QString(" ") + tr("NOT A DIRECTORY!");
+			path = path + QString(" ") + tr("Not a directory!"); //TODO: change this
 		}
 		if (fi.isReadable()) {
-			path = path + QString(" ") + tr("NOT READABLE!");
+			path = path + QString(" ") + tr("Not readable!"); //TODO: change this
 		}
 	}
 

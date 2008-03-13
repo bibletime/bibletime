@@ -5432,39 +5432,54 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BookshelfManager::CManageIndicesWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="60"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="55"/>
         <source>Manage module search indices</source>
         <translation>管理模块搜索索引</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="56"/>
         <source>You can use the list below to create and/or delete search indices for your installed works.</source>
         <translation>你可以使用以下列表创建及/或删除你已安装著作的搜索索引.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
         <source>Module</source>
-        <translation>模块</translation>
+        <translation type="obsolete">模块</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
         <source>Index size</source>
         <translation>索引大小</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="92"/>
         <source>Modules with indices</source>
-        <translation>有索引的模块</translation>
+        <translation type="obsolete">有索引的模块</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="100"/>
         <source>Modules without indices</source>
-        <translation>没有索引的模块</translation>
+        <translation type="obsolete">没有索引的模块</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="116"/>
         <source>KiB</source>
         <translation>千字节</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
+        <source>Work</source>
+        <translation type="unfinished">著作</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="87"/>
+        <source>Works with indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="95"/>
+        <source>Works without indices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5522,7 +5537,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
         <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the module remote installation feature!&lt;/b&gt;</source>
-        <translation>请选择一个文库 (本地或远程) 及书架路径以安装著作. 然後点击一下连接钮.&lt;br/&gt;&lt;b&gt;警告: 如果你居住的国家发生宗教迫害, 而你不希望被侦测到的话, 就不应该使用远程安装功能!&lt;/b&gt;</translation>
+        <translation type="obsolete">请选择一个文库 (本地或远程) 及书架路径以安装著作. 然後点击一下连接钮.&lt;br/&gt;&lt;b&gt;警告: 如果你居住的国家发生宗教迫害, 而你不希望被侦测到的话, 就不应该使用远程安装功能!&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="153"/>
@@ -5567,7 +5582,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
         <source>This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.</source>
-        <translation>这个对话框让你从系统里删除已安装的著作. 选择以下模块并点击删除钮.</translation>
+        <translation type="obsolete">这个对话框让你从系统里删除已安装的著作. 选择以下模块并点击删除钮.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="225"/>
@@ -5665,9 +5680,19 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation></translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
+        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the remote installation feature!&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
+        <source>This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?</source>
-        <translation></translation>
+        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5736,82 +5761,82 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BookshelfManager::CSwordSetupModuleListView</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Installed version</source>
         <translation>已安装版本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Remote version</source>
         <translation>远程版本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Location</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="82"/>
         <source>Bibles</source>
         <translation>圣经</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="89"/>
         <source>Commentaries</source>
         <translation>评论</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="96"/>
         <source>Lexicons</source>
         <translation>辞典</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="103"/>
         <source>Books</source>
         <translation>书籍</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="110"/>
         <source>Daily Devotionals</source>
         <translation>每日灵修</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="117"/>
         <source>Glossaries</source>
         <translation>字汇表</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="124"/>
         <source>Maps and Images</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="131"/>
         <source>Cult/Unorthodox/Questionable</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>New</source>
         <translation>新</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="248"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>Updated</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
         <translation>已安装</translation>
     </message>
@@ -5819,27 +5844,27 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="90"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="91"/>
         <source>Install Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="93"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="94"/>
         <source>Configure...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="112"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="174"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="175"/>
         <source>Install/Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="170"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="171"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5847,23 +5872,33 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Work</source>
         <translation type="unfinished">著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="51"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="72"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="80"/>
         <source>Stop All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="65"/>
+        <source>Connecting...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="109"/>
+        <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5878,7 +5913,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Work</source>
         <translation type="unfinished">著作</translation>
     </message>
@@ -5888,32 +5923,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">状态</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="236"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="205"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="206"/>
         <source>Last refreshed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="218"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="221"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="222"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="223"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="224"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="225"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="226"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5921,52 +5956,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="479"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
         <source>Delete Source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="481"/>
         <source>Do you really want to delete this source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="515"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="517"/>
         <source>Refreshing Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="538"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="539"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="584"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="585"/>
         <source>Refreshing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="653"/>
-        <source>NOT A DIRECTORY!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="656"/>
-        <source>NOT READABLE!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="644"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="645"/>
         <source>Remote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="649"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="650"/>
         <source>Local:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5983,6 +6008,16 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="712"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="654"/>
+        <source>Not a directory!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="657"/>
+        <source>Not readable!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6673,7 +6708,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CInstallModuleChooserDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="827"/>
+        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="832"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7810,42 +7845,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>远程</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
         <source>Old testament</source>
         <translation>旧约</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>摩西五经/律法书</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
         <source>History</source>
         <translation>历史书</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
         <source>Prophets</source>
         <translation>先知书</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
         <source>New testament</source>
         <translation>新约</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
         <source>Gospels</source>
         <translation>四福音书</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="269"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
         <source>Letters/Epistles</source>
         <translation>书信</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="270"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
         <source>Paul&apos;s Epistles</source>
         <translation>保罗书信</translation>
     </message>
@@ -7957,7 +7992,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="755"/>
         <source>Open the printer dialog of BibleTime, where you can edit the print queue, assign styles to the items and print them.</source>
-        <translation>打开 BibleTime 的打印对话框, 让你编辑打印队列, 为项目设置样式并打印项目.</translation>
+        <translation type="obsolete">打开 BibleTime 的打印对话框, 让你编辑打印队列, 为项目设置样式并打印项目.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
@@ -8564,6 +8599,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Installed version</source>
         <translation type="unfinished">已安装版本</translation>
     </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="755"/>
+        <source>Open the printer dialog of BibleTime.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
@@ -8717,12 +8757,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
         <source>&amp;Search</source>
         <translation>搜索(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="100"/>
         <source>Missing indices</source>
         <translation>遗漏的索引</translation>
     </message>
@@ -8730,13 +8770,19 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="108"/>
         <source>One or more modules need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
-        <translation>一个或更多模块需要在搜索前创建索引.
+        <translation type="obsolete">一个或更多模块需要在搜索前创建索引.
 这可能花长时间. 要继续创建索引吗?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="77"/>
         <source>Search</source>
         <translation type="unfinished">搜索</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="102"/>
+        <source>One or more works need indexing before they can be searched.
+This could take a long time. Proceed with indexing?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8772,16 +8818,6 @@ This could take a long time. Proceed with indexing?</source>
         <translation>正在搜索: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
-        <source>Modules to Search in</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
-        <source>Select the modules in which the search should be run.</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="926"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation>&lt;p&gt;输入搜索字词, 以空格分开. 搜索功能默认为显示符合任何一个搜索字词的结果 (OR). 要搜索所有字词, 请用 AND 分开字词.&lt;/p&gt;</translation>
@@ -8815,6 +8851,16 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="949"/>
         <source>No search scope</source>
         <translation>没有搜索范围</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

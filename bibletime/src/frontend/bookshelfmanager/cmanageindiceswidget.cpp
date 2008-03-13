@@ -28,13 +28,8 @@
 #include <QDir>
 #include <QPushButton>
 
-//KDE includes
-
 
 namespace BookshelfManager {
-
-
-//TODO: The qt4 tree view probably doesn't work out of the box. Needs attention.
 
 /** Constructor */
 CManageIndicesWidget::CManageIndicesWidget(QWidget* parent) 
@@ -64,7 +59,7 @@ void CManageIndicesWidget::initView()
 	box->setSpacing(0);
 
 	// configure the list view
-	m_moduleList->setHeaderLabels( (QStringList(tr("Module")) << tr("Index size")) );
+	m_moduleList->setHeaderLabels( (QStringList(tr("Work")) << tr("Index size")) );
 	//m_moduleList->addColumn(tr("Module"));
 	//m_moduleList->addColumn(tr("Index size"));
 	m_moduleList->setRootIsDecorated(true);
@@ -89,7 +84,7 @@ void CManageIndicesWidget::populateModuleList() {
 		
 	// populate installed modules
 	m_modsWithIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithIndices->setText(0, tr("Modules with indices"));
+	m_modsWithIndices->setText(0, tr("Works with indices"));
 	m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithIndices->setExpanded(true);
 
@@ -97,7 +92,7 @@ void CManageIndicesWidget::populateModuleList() {
 	//	Q3CheckListItem::CheckBoxController);
 	//m_modsWithoutIndices->setOpen(true);
 	m_modsWithoutIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithoutIndices->setText(0, tr("Modules without indices"));
+	m_modsWithoutIndices->setText(0, tr("Works without indices"));
 	m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithoutIndices->setExpanded(true);
 

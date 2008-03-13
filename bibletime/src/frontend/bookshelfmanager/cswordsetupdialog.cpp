@@ -146,7 +146,7 @@ void CSwordSetupDialog::initInstall() {
 							tr("Please choose a (local or remote) library and a bookshelf path to install the work(s) to. \
 After that step click on the connect button.<br/>\
 <b>WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use \
-the module remote installation feature!</b>")
+the remote installation feature!</b>")
 														);
 	layout->addWidget(installLabel, 0, 0, 1, 3);
 
@@ -218,7 +218,7 @@ void CSwordSetupDialog::initRemove() {
 
 	QLabel* mainLabel= CToolClass::explanationLabel(page,
 							tr("Remove installed work(s)"),
-							tr("This dialog lets you remove installed works from your system. Choose the modules and then click on the remove button.")
+							tr("This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.")
 														);
 	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
@@ -805,7 +805,7 @@ void CSwordSetupDialog::slot_swordAddClicked() {
 	if (dir.isReadable()) {
 		const QFileInfo fi( dir.canonicalPath() );
 		if (!fi.exists() || !fi.isWritable()) {
-			const int result = QMessageBox::warning(this, tr("Warning"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of module directories?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+			const int result = QMessageBox::warning(this, tr("Warning"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 			if (result != QMessageBox::Yes) {
 				return;
 			}
