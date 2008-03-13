@@ -75,6 +75,12 @@ public:
 	virtual QString iconName() = 0;
 	virtual QString label() = 0;
 	virtual QString header() = 0;
+	BtConfigDialog* parentDialog() {return m_parentDialog;}
+
+private:
+	friend class BtConfigDialog;
+	BtConfigDialog* m_parentDialog;
+
 };
 
 

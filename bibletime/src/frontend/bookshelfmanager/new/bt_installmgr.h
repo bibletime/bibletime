@@ -57,6 +57,9 @@ protected:
 	long m_totalBytes;
 	long m_completedBytes;
 
+private:
+	bool m_firstCallOfPreStatus;
+
 signals:
 	/** Download status. Percent of total and file.*/
 	void percentCompleted( const int, const int);

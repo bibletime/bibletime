@@ -12,6 +12,8 @@
 
 #include "btinstallthread.h"
 
+#include "util/ctoolclass.h"
+
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QDialog>
@@ -24,16 +26,17 @@
 #include <QDebug>
 
 
-BtInstallProgressDialog::BtInstallProgressDialog(QTreeWidget* selectedModulesTreeWidget, QString destination)
-	: QDialog()
+BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination)
+	: QDialog(parent)
 {
 	//create the dialog which shows the status and lets the user stop installation
 	m_statusWidget = new QTreeWidget();
 	m_statusWidget->setRootIsDecorated(false);
 	m_statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
 	m_statusWidget->header()->setStretchLastSection(false);
-
 	m_statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
+	m_statusWidget->header()->setMovable(false);
+	//m_statusWidget->setColumnWidth(1, CToolClass::mWidth(m_statusWidget, 2));
 
 	foreach (QTreeWidgetItem* sourceItem, selectedModulesTreeWidget->invisibleRootItem()->takeChildren()) {
 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
@@ -43,22 +46,22 @@ BtInstallProgressDialog::BtInstallProgressDialog(QTreeWidget* selectedModulesTre
 				BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), destination);
 				m_threads.append(thread);
 				// progress widget/item
-				QProgressBar* bar = new QProgressBar(m_statusWidget);
-				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+				//QProgressBar* bar = new QProgressBar(m_statusWidget);
+				//bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
 				QPushButton* stopButton = new QPushButton(tr("Stop"), m_statusWidget);
 				stopButton->setFixedSize(stopButton->sizeHint());
 
 				// the item
 				QTreeWidgetItem* progressItem = new QTreeWidgetItem(m_statusWidget);
-
+				m_statusWidget->setColumnWidth(2, stopButton->sizeHint().width());
 				progressItem->setSizeHint(2, stopButton->sizeHint());
 				progressItem->setText(0, moduleItem->text(0));
 				progressItem->setFlags(Qt::ItemIsEnabled);
 
-				m_statusWidget->setItemWidget(progressItem, 1, bar);
+				//m_statusWidget->setItemWidget(progressItem, 1, bar);
 				m_statusWidget->setItemWidget(progressItem, 2, stopButton);
-				bar->setValue(0);
-				bar->setVisible(false);
+				//bar->setValue(0);
+				//bar->setVisible(false);
 				progressItem->setText(1, tr("Connecting..."));
 				//connect the signals between the dialog, items and threads
 				QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()) );
@@ -66,12 +69,14 @@ BtInstallProgressDialog::BtInstallProgressDialog(QTreeWidget* selectedModulesTre
 				//is this needed or is statusUpdated enough?
 				QObject::connect(thread, SIGNAL(installCompleted(QString, int)), this, SLOT(slotOneItemCompleted(QString)));
 				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)));
+				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)));
 				
 				qDebug("");
 			}
 		}
 	}
-
+	//m_statusWidget->setMinimumSize(m_statusWidget->size());
+	m_statusWidget->setMinimumWidth(m_statusWidget->size().width());
 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), this);
 	
 	QVBoxLayout* layout = new QVBoxLayout(this);
@@ -121,11 +126,7 @@ void BtInstallProgressDialog::slotOneItemStopped(QString module)
 	qDebug("BtInstallProgressDialog::slotOneItemStopped");
 	// mark the item completed (change/remove it),
 	// if all items are stopped/completed close the dialog
-
-	//find the item for this module name
-	//remove the progress dialog
-	// write "stopped"
-	//remove the stop button
+	
 
 	if (false) {
 		close();
@@ -149,12 +150,19 @@ void BtInstallProgressDialog::slotStatusUpdated(QString module, int status)
 
 void BtInstallProgressDialog::slotDownloadStarted(QString module)
 {
-	qDebug("BtInstallProgressDialog::slotDownloadStarted");
+	qDebug() << "BtInstallProgressDialog::slotDownloadStarted" << module;
 	getItem(module)->setText(1, QString::null);
-	m_statusWidget->itemWidget(getItem(module), 1)->setVisible(true);
+	//m_statusWidget->itemWidget(getItem(module), 1)->setVisible(true);
+
+	QProgressBar* bar = new QProgressBar(m_statusWidget);
+	bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
+	bar->setValue(0);
+	//bar->setVisible(false);
+	m_statusWidget->setItemWidget(getItem(module), 1, bar);
 }
 
 QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName)
 {
+	qDebug() << "BtInstallProgressDialog::getItem" << moduleName;
 	return m_statusWidget->findItems(moduleName, Qt::MatchExactly).at(0);
 }

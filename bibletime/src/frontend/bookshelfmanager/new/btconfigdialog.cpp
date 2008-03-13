@@ -65,7 +65,9 @@ BtConfigDialog::~BtConfigDialog() {}
 
 void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 {
-	
+	// this is a friend
+	pageWidget->m_parentDialog = this;
+
 	QVBoxLayout* containerLayout = new QVBoxLayout;
 	QLabel* headerLabel = CToolClass::explanationLabel(pageWidget, pageWidget->header(), pageWidget->label());
 	containerLayout->addWidget(headerLabel);

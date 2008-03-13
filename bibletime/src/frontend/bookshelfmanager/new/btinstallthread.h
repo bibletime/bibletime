@@ -27,6 +27,7 @@ public:
 public slots:
 	void slotStopInstall();
 	void slotManagerStatusUpdated(int totalProgress, int fileProgress);
+	void slotDownloadStarted();
 
 protected:
 	virtual void run();
@@ -37,10 +38,14 @@ protected:
 	bool m_cancelled;
 
 signals:
+	/** Emitted when the install progress status is updated. */
 	void statusUpdated(QString module, int progressPercent);
+	/** Emitted when installing has been stopped/cancelled. */
 	void installStopped(QString module);
-	//is this needed?:
+	/** Emitted when installing is complete. */
 	void installCompleted(QString module, int errorStatus);
+	/** Emitted when the first file download has been started. */
+	void downloadStarted(QString module);
 };
 
 #endif

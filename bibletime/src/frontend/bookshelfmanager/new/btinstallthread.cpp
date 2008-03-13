@@ -45,6 +45,7 @@ void BtInstallThread::run()
 	Bt_InstallMgr iMgr;
 	qDebug() << "connect the status signal from iMgr to thread...";
 	QObject::connect(&iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)));
+	QObject::connect(&iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()));
 	sword::InstallSource is = backend::source(m_source);
 
 
@@ -107,4 +108,10 @@ void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int fileProgre
 {
 	qDebug("BtInstallThread::slotManagerStatusUpdated");
 	emit statusUpdated(m_module, totalProgress);
+}
+
+void BtInstallThread::slotDownloadStarted()
+{
+	qDebug("BtInstallThread::slotDownloadStarted");
+	emit downloadStarted(m_module);
 }

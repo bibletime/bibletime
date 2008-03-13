@@ -37,7 +37,9 @@
 using namespace sword;
 
 
-Bt_InstallMgr::Bt_InstallMgr() : InstallMgr(backend::configPath().toLatin1(), this)
+Bt_InstallMgr::Bt_InstallMgr()
+	: InstallMgr(backend::configPath().toLatin1(), this),
+	m_firstCallOfPreStatus(true)
 { //use this class also as status reporter
 	qDebug("Bt_InstallMgr::Bt_InstallMgr");
 	this->setFTPPassive(true);
@@ -77,14 +79,11 @@ void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 
 void Bt_InstallMgr::preStatus(long totalBytes, long completedBytes, const char* message)
 {
-	static bool firstCall = true;
-	if (firstCall) {
-		firstCall = false;
+	if (m_firstCallOfPreStatus) {
+		m_firstCallOfPreStatus = false;
 		emit downloadStarted();
 	}
 	qDebug() << "Bt_InstallMgr::preStatus:" << (int)totalBytes << "/" << (int)completedBytes << QString(message);
 	m_completedBytes = completedBytes;
 	m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
 }
-
-

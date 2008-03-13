@@ -16,6 +16,7 @@
 #include "frontend/bookshelfmanager/new/btconfigdialog.h"
 #include "frontend/bookshelfmanager/new/backend.h"
 #include "frontend/bookshelfmanager/new/btinstallprogressdialog.h"
+#include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
 
 #include "frontend/cmodulechooserdialog.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -701,7 +702,6 @@ void BtSourceWidget::slotTabSelected(int index)
 void BtSourceWidget::slotInstall()
 {
 	qDebug("void BtInstallPage::slotInstall start");
-	//TODO: what to do if there are identical module names?
 	
 	// create the confirmation dialog
 	// (module tree dialog, modules taken from all sources)
@@ -710,7 +710,6 @@ void BtSourceWidget::slotInstall()
 		QString("<br/><br/><small>") +
 				tr("Only one version of a work can be installed at the same time. Select only one if there are items marked with red.") +
 				QString("</small>"));
-	//TODO: there can be only one module with a certain name
 
 	// with empty list we avoid creating the module tree inside the dialog code
 	ListCSwordModuleInfo emptyList;
@@ -764,8 +763,13 @@ void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidg
 {
 	qDebug("BtSourceWidget::slotInstallAccepted");
 
- 	BtInstallProgressDialog* dlg = new BtInstallProgressDialog(treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
+	BtModuleManagerDialog* parentDialog = dynamic_cast<BtModuleManagerDialog*>(dynamic_cast<BtInstallPage*>(parent())->parentDialog());
 
+ 	BtInstallProgressDialog* dlg = new BtInstallProgressDialog(parentDialog, treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
+
+	if (!parentDialog) qDebug("error, wrong parent!");
+	QObject::connect(dlg, SIGNAL(swordSetupChanged()), parentDialog, SIGNAL(swordSetupChanged()));
+	// the progress dialog is now modal, it can be made modeless later.
 	dlg->exec();
 
 	//TODO: disable the Install button
@@ -773,6 +777,7 @@ void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidg
 // 	QTreeWidget* statusWidget = new QTreeWidget();
 // 	statusWidget->setRootIsDecorated(false);
 // 	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
+
 // 	statusWidget->header()->setStretchLastSection(false);
 // 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
 // 	stopAllButton->setFixedSize(stopAllButton->sizeHint());

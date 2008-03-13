@@ -23,7 +23,7 @@ class BtInstallProgressDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	BtInstallProgressDialog(QTreeWidget* selectedModulesTreeWidget, QString destination);
+	BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination);
 
 	~BtInstallProgressDialog();
 
@@ -33,6 +33,9 @@ public slots:
 	void slotStopInstall();
 	void slotStatusUpdated(QString module, int status);
 	void slotDownloadStarted(QString module);
+
+signals:
+	void swordSetupChanged();
 
 private:
 	QList<QThread*> m_threads;
