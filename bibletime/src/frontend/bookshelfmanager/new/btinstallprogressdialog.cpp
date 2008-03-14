@@ -22,6 +22,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QApplication>
+#include <QCloseEvent>
 
 #include <QDebug>
 
@@ -93,7 +94,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 	// start threads
 	qDebug() << "start all threads...";
 	foreach (QThread* t, m_threads) {
-		t->start(QThread::LowPriority);
+		t->start();
 	}
 }
 
@@ -118,8 +119,8 @@ void BtInstallProgressDialog::slotOneItemCompleted(QString module)
 			++runningThreads;
 		}
 	}
-	if (runningThreads == 1) {
-		qDebug() << "todo: close the dialog, update the module list";
+	if (runningThreads == 0) {
+		qDebug() << "close the dialog";
 		close();
 	}
 }
@@ -138,8 +139,8 @@ void BtInstallProgressDialog::slotOneItemStopped(QString module)
 			++runningThreads;
 		}
 	}
-	if (runningThreads == 1) {
-		qDebug() << "todo: close the dialog, update the module list";
+	if (runningThreads == 0) {
+		qDebug() << "close the dialog";
 		close();
 	}
 
@@ -186,8 +187,11 @@ QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName)
 void BtInstallProgressDialog::closeEvent(QCloseEvent* event)
 {
 	qDebug("BtInstallProgressDialog::closeEvent");
-	//event->ignore();
-	foreach(QThread* thread, m_threads){
-		(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
+	
+	//foreach(QThread* thread, m_threads){
+	//	(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
+	//}
+	if (event->spontaneous()) {
+		event->ignore();
 	}
 }

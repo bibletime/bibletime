@@ -130,9 +130,8 @@ void BtInstallPage::initPathCombo()
 	qDebug("void BtInstallPage::initPathCombo() start");
 	//populate the combo list
 	m_pathCombo->clear();
-	//BACKEND CODE
+
 	QStringList targets = backend::targetList();
-	//QStringList targets = BTInstallMgr::Tool::LocalConfig::targetList();
 	for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
 		if ((*it).isEmpty()) continue;
 		m_pathCombo->addItem(*it);
@@ -254,23 +253,16 @@ void BtSourceArea::initTreeFirstTime()
 bool BtSourceArea::createModuleTree()
 {
 	qDebug("BtSourceArea::createModuleTree start");
+
 	// TODO: if the tree already exists for this source,
 	// maybe the selections should be preserved
 
-
 	sword::InstallSource is = backend::source(m_sourceName);
-	//Q_ASSERT( backend::isRemote(&is) );
 
-	//qApp->processEvents();
 	delete m_remoteBackend; // the old one can be deleted
 	m_remoteBackend = backend::backend(is);
 	Q_ASSERT(m_remoteBackend);
 	m_moduleList = m_remoteBackend->moduleList();
-	//qDebug() << "Remote module list for source" << m_sourceName << ":";
-	//for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != m_moduleList.end(); it++) {
-	//	qDebug() << (*it)->name() << (*it)->type();
-	//}
-	//Q_ASSERT(m_moduleList.count() > 0); // is this true? what about when there are no modules in remote server?
 
 	// give the list to BTModuleTreeItem, create filter to remove
 	// those modules which are installed already
@@ -280,7 +272,7 @@ bool BtSourceArea::createModuleTree()
 	qDebug("BtSourceArea::createModuleTree 1");
 	BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &m_moduleList);
 	qDebug("BtSourceArea::createModuleTree 2");
-	//TODO: create the UI tree
+
 	m_view->clear();
 
 	// disconnect the signal so that we don't have to run functions for every module
@@ -299,6 +291,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 {
 	//qDebug()<<"BtSourceArea::addToTree "<<item->text();
 	//qDebug() << "BTMTItem type: " << item->type();
+
 	foreach (BTModuleTreeItem* i, item->children()) {
 		addToTree(i, new QTreeWidgetItem(widgetItem));
 	}
@@ -333,14 +326,10 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 				if (parent1) {
 					parent1->setBackground(0,bg);
 					parent1->setBackground(1,bg);
-					//parent1->setToolTip(0, tr("Has updated works"));
-					//parent1->setToolTip(1, tr("Has updated works"));
 					QTreeWidgetItem* parent2 = parent1->parent();
 					if (parent2) {
 						parent2->setBackground(0,bg);
 						parent2->setBackground(1,bg);
-						//parent2->setToolTip(0,tr("Has updated works"));
-						//parent2->setToolTip(1,tr("Has updated works"));
 					}
 				}
 			}
@@ -436,7 +425,7 @@ BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
 	qDebug("BtSourceWidget::BtSourceWidget start");
 	initSources();
 	
-	//choose the page from config
+	// TODO: choose the page from config
 	
 }
 
@@ -498,7 +487,6 @@ void BtSourceWidget::slotAdd()
 	qDebug("open the old dialog, TODO: write new one");
 	sword::InstallSource newSource = BookshelfManager::CSwordSetupInstallSourcesDialog::getSource();
 	if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-		//BACKEND CODE
 		backend::addSource(newSource);
 		addSource(QString(newSource.caption.c_str()));
 	}
@@ -593,15 +581,10 @@ void BtSourceWidget::slotRefreshCompleted(const int, const int current)
 void BtSourceWidget::initSources()
 {
 	qDebug("void BtSourceWidget::initSources() start");
-	// create the list of source names
-	//QStringList sourceList;
 
 	// ***** Use the backend to get the list of sources *****
-	//BTInstallMgr::Tool::RemoteConfig::initConfig();
 	backend::initPassiveFtpMode();
-	//BTInstallMgr mgr;
 	QStringList sourceList = backend::sourceList();
-	//QStringList sourceList = BTInstallMgr::Tool::RemoteConfig::sourceList(&mgr);
 
 	// Add a default entry, the Crosswire main repository
 	// TODO: this is easy for the user, but should the edit dialog
@@ -746,17 +729,7 @@ void BtSourceWidget::slotInstall()
 void BtSourceWidget::slotStopInstall(QTreeWidget* treeWidget)
 {
 	qDebug("BtSourceWidget::slotStopInstall");
-	// click programmatically all stop buttons
-// 	QTreeWidgetItemIterator it(treeWidget);
-// 	while (*it) {
-// 		if (!((*it)->text(0).isEmpty())) {
-// 			QPushButton* itemButton = dynamic_cast<QPushButton*>(treeWidget->itemWidget(*it, 2));
-// 			if (itemButton) { itemButton->click(); }
-// 		}
-//  		++it;
-//  	}
-	// qApp->processEvents()?
-	// remove and delete the tab
+	// not needed?
 }
 
 void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidget* treeWidget)
@@ -771,53 +744,9 @@ void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidg
 	QObject::connect(dlg, SIGNAL(swordSetupChanged()), parentDialog, SIGNAL(swordSetupChanged()));
 	// the progress dialog is now modal, it can be made modeless later.
 	dlg->exec();
-
 	//TODO: disable the Install button
-// 	//create the tab which shows the status and lets the user stop installation
-// 	QTreeWidget* statusWidget = new QTreeWidget();
-// 	statusWidget->setRootIsDecorated(false);
-// 	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
-
-// 	statusWidget->header()->setStretchLastSection(false);
-// 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
-// 	stopAllButton->setFixedSize(stopAllButton->sizeHint());
-// 	statusWidget->setColumnWidth(2, stopAllButton->sizeHint().width());
-// 	statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
-// 
-// 	foreach (QTreeWidgetItem* sourceItem, treeWidget->invisibleRootItem()->takeChildren()) {
-// 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
-// 			if (moduleItem->checkState(0) == Qt::Checked) {
-// 				qDebug("BtSourceWidget::slotInstallAccepted 1");
-// 				// create a thread and a progress widget for this module
-// 				//BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), QString::null/*destination*/);
-// 				//m_threadList.append(thread);
-// 				// progress widget
-// 				QProgressBar* bar = new QProgressBar(statusWidget);
-// 				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
-// 				QPushButton* stopButton = new QPushButton(tr("Stop"), statusWidget);
-// 				stopButton->setFixedSize(stopButton->sizeHint());
-// 				QTreeWidgetItem* progressItem = new QTreeWidgetItem(statusWidget);
-// 				progressItem->setSizeHint(2, stopButton->sizeHint());
-// 				progressItem->setText(0, moduleItem->text(0));
-// 				statusWidget->setItemWidget(progressItem, 1, bar);
-// 				statusWidget->setItemWidget(progressItem, 2, stopButton);
-// 				//connect
-// 				//QObject::connect(stopButton, SIGNAL(clicked(), thread, SLOT(slotStopInstall()) );
-// 				qDebug("BtSourceWidget::slotInstallAccepted 2");
-// 			}
-// 		}
-// 	}
-// 	QTreeWidgetItem* stopAllItem = new QTreeWidgetItem(statusWidget);
-// 	statusWidget->setItemWidget(stopAllItem, 2, stopAllButton);
-// 	connect(stopAllButton, SIGNAL(clicked()), SLOT(slotStopInstall()) );
-// 
-// 	this->addTab(statusWidget, tr("Installing..."));
-// 	this->setCurrentWidget(statusWidget);
-// 	this->tabBar()->setEnabled(false);
 	
 	qDebug("BtSourceWidget::slotInstallAccepted end");
-	//start all threads, set the initial progressbar status
-
 }
 
 // ***************************************************************
@@ -930,54 +859,3 @@ void CInstallModuleChooserDialog::enableOk(bool enabled)
 	qDebug() << "CInstallModuleChooserDialog::enableOk" << enabled;
 	okButton()->setEnabled(enabled);
 }
-
-// ***************************************************************
-// ************* Dialog for showing the install progress *********
-// ***************************************************************
-
-// BtInstallProgressDialog::BtInstallProgressDialog()
-// {
-// 	//create the tab which shows the status and lets the user stop installation
-// 	QTreeWidget* statusWidget = new QTreeWidget();
-// 	statusWidget->setRootIsDecorated(false);
-// 	statusWidget->setHeaderLabels(QStringList(tr("Work")) << tr("Progress") << QString::null);
-// 	statusWidget->header()->setStretchLastSection(false);
-// 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), statusWidget);
-// 	stopAllButton->setFixedSize(stopAllButton->sizeHint());
-// 	statusWidget->setColumnWidth(2, stopAllButton->sizeHint().width());
-// 	statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
-// 
-// 	foreach (QTreeWidgetItem* sourceItem, treeWidget->invisibleRootItem()->takeChildren()) {
-// 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
-// 			if (moduleItem->checkState(0) == Qt::Checked) {
-// 				qDebug("BtSourceWidget::slotInstallAccepted 1");
-// 				// create a thread and a progress widget for this module
-// 				//BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), QString::null/*destination*/);
-// 				//m_threadList.append(thread);
-// 				// progress widget
-// 				QProgressBar* bar = new QProgressBar(statusWidget);
-// 				bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
-// 				QPushButton* stopButton = new QPushButton(tr("Stop"), statusWidget);
-// 				stopButton->setFixedSize(stopButton->sizeHint());
-// 				QTreeWidgetItem* progressItem = new QTreeWidgetItem(statusWidget);
-// 				progressItem->setSizeHint(2, stopButton->sizeHint());
-// 				progressItem->setText(0, moduleItem->text(0));
-// 				statusWidget->setItemWidget(progressItem, 1, bar);
-// 				statusWidget->setItemWidget(progressItem, 2, stopButton);
-// 				//connect
-// 				//QObject::connect(stopButton, SIGNAL(clicked(), thread, SLOT(slotStopInstall()) );
-// 				qDebug("BtSourceWidget::slotInstallAccepted 2");
-// 			}
-// 		}
-// 	}
-// 	QTreeWidgetItem* stopAllItem = new QTreeWidgetItem(statusWidget);
-// 	statusWidget->setItemWidget(stopAllItem, 2, stopAllButton);
-// 	connect(stopAllButton, SIGNAL(clicked()), SLOT(slotStopInstall()) );
-// 
-// 	this->addTab(statusWidget, tr("Installing..."));
-// 	this->setCurrentWidget(statusWidget);
-// 	this->tabBar()->setEnabled(false);
-// }
-// 
-// BtInstallProgressDialog::~BtInstallProgressDialog() {}
-
