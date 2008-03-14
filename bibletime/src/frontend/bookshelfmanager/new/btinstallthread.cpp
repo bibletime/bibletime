@@ -31,6 +31,7 @@ BtInstallThread::BtInstallThread(QString moduleName, QString sourceName, QString
 	m_destination(destinationName),
 	m_source(sourceName),
 	m_cancelled(false),
+	done(false),
 	m_installSource(backend::source(sourceName)),
 	m_backendForSource(backend::backend(m_installSource))
 {
@@ -38,17 +39,12 @@ BtInstallThread::BtInstallThread(QString moduleName, QString sourceName, QString
 
 
 BtInstallThread::~BtInstallThread()
-{
-	//delete m_iMgr;
-}
+{}
 
 void BtInstallThread::run()
 {
 	qDebug() << "BtInstallThread::run, mod:" << m_module << "src:" << m_source << "dest:" << m_destination;
 
-	//Bt_InstallMgr iMgr;
-	//m_iMgr = &iMgr;
-	
 	//make sure target/mods.d and target/modules exist
 	QDir dir(m_destination);
 	if (!dir.exists()) {
@@ -64,11 +60,9 @@ void BtInstallThread::run()
 		qDebug() << "made directory" << m_destination << "/mods.d";
 	}
 
-	//m_iMgr = new Bt_InstallMgr();
 	QObject::connect(&m_iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)));
 	QObject::connect(&m_iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()));
-	//sword::InstallSource is = backend::source(m_source);
-	//m_installSource = backend::source(m_source);
+
 	//check whether it's an update. If yes, remove existing module first
 	//TODO: silently removing without undo if the user cancels the update is WRONG!!!
 	removeModule();
@@ -83,6 +77,7 @@ void BtInstallThread::run()
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
 		else {
+			done = true;
 			emit installCompleted(m_module, status);
 		}
 	}
@@ -108,6 +103,7 @@ void BtInstallThread::slotStopInstall()
 		qApp->processEvents();
 		//delete m_iMgr;
 		//m_iMgr = 0; // dtor of this thread deletes iMgr
+		done = true;
 		emit installStopped(m_module);
 		qApp->processEvents();
 	}
@@ -115,7 +111,7 @@ void BtInstallThread::slotStopInstall()
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int fileProgress)
 {
-	qDebug("BtInstallThread::slotManagerStatusUpdated");
+	//qDebug("BtInstallThread::slotManagerStatusUpdated");
 	emit statusUpdated(m_module, totalProgress);
 }
 

@@ -31,6 +31,9 @@ public:
 protected:
 	/** Reimplementation from QWidget. */
 	virtual void closeEvent(QCloseEvent* event);
+
+signals:
+	void swordSetupChanged();
 };
 
 

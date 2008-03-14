@@ -16,6 +16,9 @@
 class QTreeWidget;
 class QTreeWidgetItem;
 
+class BtInstallThread;
+
+
 /**
 
 */
@@ -45,10 +48,11 @@ signals:
 	void swordSetupChanged();
 
 private:
-	QList<QThread*> m_threads;
+	QList<BtInstallThread*> m_threads;
 	QTreeWidget* m_statusWidget;
 
 	QTreeWidgetItem* getItem(QString moduleName);
+	bool threadsDone();
 };
 
 #endif

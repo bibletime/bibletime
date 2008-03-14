@@ -112,14 +112,9 @@ void BtInstallProgressDialog::slotOneItemCompleted(QString module)
 	m_statusWidget->setItemWidget(getItem(module), 1, 0);
 	getItem(module)->setText(1, tr("Completed"));
 	m_statusWidget->itemWidget(getItem(module), 2)->setEnabled(false);
-	int runningThreads = 0;
-	foreach(QThread* thread, m_threads){
-		if (thread->isRunning()) {
-			qDebug() << "a thread is running";
-			++runningThreads;
-		}
-	}
-	if (runningThreads == 0) {
+	getItem(module)->setDisabled(true);
+
+	if (threadsDone()) {
 		qDebug() << "close the dialog";
 		close();
 	}
@@ -132,14 +127,9 @@ void BtInstallProgressDialog::slotOneItemStopped(QString module)
 	m_statusWidget->setItemWidget(getItem(module), 1, 0);
 	getItem(module)->setText(1, tr("Cancelled"));
 	m_statusWidget->itemWidget(getItem(module), 2)->setEnabled(false);
-	int runningThreads = 0;
-	foreach(QThread* thread, m_threads){
-		if (thread->isRunning()) {
-			qDebug() << "a thread is running";
-			++runningThreads;
-		}
-	}
-	if (runningThreads == 0) {
+	getItem(module)->setDisabled(true);
+
+	if (threadsDone()) {
 		qDebug() << "close the dialog";
 		close();
 	}
@@ -157,7 +147,7 @@ void BtInstallProgressDialog::slotStopInstall()
 
 void BtInstallProgressDialog::slotStatusUpdated(QString module, int status)
 {
-	qDebug("BtInstallProgressDialog::slotStatusUpdated");
+	//qDebug("BtInstallProgressDialog::slotStatusUpdated");
 	qDebug() << "module:" << module << "status:" << status;
 	// find the progress bar for this module and update the value
 	QWidget* itemWidget = m_statusWidget->itemWidget(getItem(module) , 1);
@@ -180,7 +170,7 @@ void BtInstallProgressDialog::slotDownloadStarted(QString module)
 
 QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName)
 {
-	qDebug() << "BtInstallProgressDialog::getItem" << moduleName;
+	//qDebug() << "BtInstallProgressDialog::getItem" << moduleName;
 	return m_statusWidget->findItems(moduleName, Qt::MatchExactly).at(0);
 }
 
@@ -188,10 +178,23 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent* event)
 {
 	qDebug("BtInstallProgressDialog::closeEvent");
 	
-	//foreach(QThread* thread, m_threads){
-	//	(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
-	//}
 	if (event->spontaneous()) {
 		event->ignore();
+		return;
 	}
+	// other parts of the UI/engine must be updated
+	emit swordSetupChanged();
+}
+
+bool BtInstallProgressDialog::threadsDone()
+{
+	int runningThreads = 0;
+	foreach(BtInstallThread* thread, m_threads){
+		
+		if (!thread->done) {
+			qDebug() << "a thread is running";
+			++runningThreads;
+		}
+	}
+	return runningThreads == 0;
 }

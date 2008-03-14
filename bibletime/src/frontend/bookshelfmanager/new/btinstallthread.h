@@ -44,6 +44,9 @@ public slots:
 	void slotManagerStatusUpdated(int totalProgress, int fileProgress);
 	void slotDownloadStarted();
 
+public: // data member
+	bool done;
+
 protected:
 	virtual void run();
 	void removeModule();

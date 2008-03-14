@@ -51,7 +51,7 @@ Bt_InstallMgr::~Bt_InstallMgr() {
 
 void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 {
-	qDebug("Bt_InstallMgr::statusUpdate");
+	//qDebug("Bt_InstallMgr::statusUpdate");
 	if (dlnow > dltotal)
 		dlnow = dltotal;
 
@@ -72,7 +72,7 @@ void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 		filePercent = 0;
 	}
 	//qApp->processEvents();
-	qDebug() << "status: total"<<totalPercent<<"file"<<filePercent;
+	//qDebug() << "status: total"<<totalPercent<<"file"<<filePercent;
 	emit percentCompleted(totalPercent, filePercent);
 }
 
