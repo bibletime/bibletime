@@ -174,7 +174,10 @@ QString BtInstallPage::header()
 	return tr("Install/Update");
 }
 
-
+void BtInstallPage::slotSwordSetupChanged()
+{
+	qDebug() << "BtInstallPage::slotSwordSetupChanged, does nothing yet, should update sources";
+}
 
 // ****************************************************************
 // ******** Installation source and module list widget ************

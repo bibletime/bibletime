@@ -148,7 +148,7 @@ void BtInstallProgressDialog::slotStopInstall()
 void BtInstallProgressDialog::slotStatusUpdated(QString module, int status)
 {
 	//qDebug("BtInstallProgressDialog::slotStatusUpdated");
-	qDebug() << "module:" << module << "status:" << status;
+	//qDebug() << "module:" << module << "status:" << status;
 	// find the progress bar for this module and update the value
 	QWidget* itemWidget = m_statusWidget->itemWidget(getItem(module) , 1);
 	QProgressBar* bar = dynamic_cast<QProgressBar*>(itemWidget);

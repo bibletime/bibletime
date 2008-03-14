@@ -21,7 +21,7 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	setWindowTitle(tr("BibleTime Bookshelf Manager"));
 	BtInstallPage* installPage = new BtInstallPage();
 	addPage(installPage);
-
+	QObject::connect(this, SIGNAL(swordSetupChanged()), installPage, SLOT(slotSwordSetupChanged()));
 	//Uninstall page
 	//Index page
 

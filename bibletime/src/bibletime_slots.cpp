@@ -116,8 +116,9 @@ void BibleTime::slotSwordSetupDialog() {
 	dlg->delayedDestruct();
 
 	}else {
-		//TODO: nonmodal dialog, memory management
+		//TODO: nonmodal dialog, memory management (one instance only! which is hidden between calls, like search dialog)
 		BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
+		connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 		//dlg->exec();
 		//dlg->delayedDestruct();
 		dlg->show();
@@ -132,7 +133,13 @@ void BibleTime::slotSwordSetupChanged() {
 	  Refresh everything here what might have changed
 	  these are the mainindex, the searchdialog, the displaywindows
 	  But at first we have to reset the Sword backend to reload the modules
+
+	TODO: should bookshelf manager be updated?
+	Should there be different signals/slots for visual changes,
+	i.e. grouping/hiding?
+
 	*/
+
 
 	CPointers::deleteBackend();
 	m_backend = new CSwordBackend();

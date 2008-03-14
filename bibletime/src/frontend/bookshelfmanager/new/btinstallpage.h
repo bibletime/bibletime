@@ -53,6 +53,9 @@ public:
 
 	QString selectedInstallPath();
 
+public slots:
+	void slotSwordSetupChanged();
+
 private:
 	void initView();
 	void initConnections();
