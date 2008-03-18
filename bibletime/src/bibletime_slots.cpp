@@ -42,6 +42,7 @@
 #include <QToolBar>
 #include <QApplication>
 #include <QProcess>
+#include <QMdiSubWindow>
 
 //KDE includes
 #include <kbugreport.h>
@@ -159,13 +160,13 @@ void BibleTime::slotWindowMenuAboutToShow() {
 		return;
 	}
 
-	if ( m_mdi->windowList().isEmpty() ) {
+	if ( m_mdi->subWindowList().isEmpty() ) {
 		m_windowCascade_action->setEnabled(false);
 		m_windowTileVertical_action->setEnabled(false);
 		m_windowTileHorizontal_action->setEnabled(false);
 		m_windowCloseAll_action->setEnabled(false);
 	}
-	else if (m_mdi->windowList().count() == 1) {
+	else if (m_mdi->subWindowList().count() == 1) {
 		m_windowTileVertical_action->setEnabled( false );
 		m_windowTileHorizontal_action->setEnabled( false );
 		m_windowCascade_action->setEnabled( false );
@@ -357,7 +358,7 @@ void BibleTime::slotSearchModules() {
 	//get the modules of the open windows
 	ListCSwordModuleInfo modules;
  
-	QWidgetList windows = m_mdi->windowList();
+	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
 		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
 			ListCSwordModuleInfo windowModules = w->modules();
@@ -420,7 +421,7 @@ void BibleTime::saveProfile(CProfile* profile) {
 	//save mainwindow settings
 	storeProfileSettings(profile);
 
-	QList<QWidget*> windows = m_mdi->windowList();
+	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	QList<CProfileWindow*> profileWindows;
 	foreach (QWidget* w, windows) {
 		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w);

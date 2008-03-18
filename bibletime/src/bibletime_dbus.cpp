@@ -21,11 +21,12 @@
 //QT
 #include <QList>
 #include <QDebug>
+#include <QMdiSubWindow>
 
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {
 	qDebug() << "Syncing modules by type to key" << key.toLatin1();
-	QList<QWidget*> windows = m_mdi->usableWindowList();
+	QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
 	foreach (QWidget* w, windows) {
 		CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w);
 		if (d && d->modules().count() && d->modules().first()->type() == type) {
@@ -114,7 +115,7 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
 	qDebug() << "DBUS: search in open modules ...";
 	QStringList ret;
 
-	QList<QWidget*> windows = m_mdi->windowList();
+	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
 		CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i));
 		if (w) {
@@ -139,7 +140,7 @@ QString BibleTime::getCurrentReference() {
 	qDebug() << "BibleTime::getCurrentReference";
 	QString ret = QString::null;
 
-	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(m_mdi->activeWindow());
+	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(m_mdi->activeSubWindow());
 	Q_ASSERT(w);
 
 	if (w) {

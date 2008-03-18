@@ -14,7 +14,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
-#include <QWorkspace>
+#include <QMdiArea>
 #include <QList>
 
 class CSwordModuleInfo;
@@ -22,12 +22,13 @@ class CSwordKey;
 class QEvent;
 class QResizeEvent;
 class QChildEvent;
+class QMdiSubWindow;
 
 /** The MDI widget we use in BibleTime.
  * Enhances QMdiArea.
   * @author The BibleTime Team
   */
-class CMDIArea : public QWorkspace, public CPointers  {
+class CMDIArea : public QMdiArea, public CPointers  {
 	Q_OBJECT
 
 public:
@@ -42,27 +43,17 @@ public:
 	};
 	CMDIArea(QWidget *parent);
 	/**
-	*/
-	void readSettings();
-	/**
-	*/
-	void saveSettings();
-	/**
 	* Enable / disable autoCascading
 	*/
 	void setGUIOption( const MDIOption& newOption );
 	/**
-	* This works around a problem/limitation in QWorkspace. QWorkspace sets every time the
-	* application caption on its on way. This confuses BibleTime - wrong captions are generated.
-	* This function returns the right caption (using the MDI child).
 	*/
-	inline const QString currentApplicationCaption() const;
 	void emitWindowCaptionChanged();
 	/**
 	* Forces an update of the currently chosen window arrangement.
 	*/
 	void triggerWindowUpdate();
-	QList<QWidget*> usableWindowList();
+	QList<QMdiSubWindow*> usableWindowList();
 
 public slots:
 	/**
@@ -89,25 +80,9 @@ public slots:
 	 * Emits the signal to create a new display window in the MDI area.
 	 */
 	inline void emitCreateDisplayWindow( ListCSwordModuleInfo modules, const QString keyName );
-
-protected: // Protected methods
 	/**
-	* Used to make use of the fixedGUIOption part.
 	*/
-	virtual void childEvent (QChildEvent * e);
-	/**
-	* Reimplementation
-	*/
-	virtual void resizeEvent(QResizeEvent* e);
-	/**
-	* Initializes the connectiosn to SIGNALS
-	*/
-	void initConnections();
-	/**
-	* Initializes the view of the MDI area
-	*/
-	void initView();
-	bool eventFilter( QObject *o, QEvent *e );
+	void saveSettings();
 
 signals: // Signals
 	/**
@@ -121,15 +96,27 @@ signals: // Signals
 	void createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& keyName);
 
 private:
+	/**
+	*/
+	void readSettings();
+	/**
+	* Used to make use of the fixedGUIOption part.
+	*/
+	virtual void childEvent (QChildEvent * e);
+	/**
+	* Reimplementation
+	*/
+	virtual void resizeEvent(QResizeEvent* e);
+	/**
+	* Initializes the connectiosn to SIGNALS
+	*/
+	void initConnections();
+
+	bool eventFilter( QObject *o, QEvent *e );
+
 	MDIOption m_guiOption;
 	bool m_childEvent;
-	QString m_appCaption;
 };
-
-/** This works around a problem/limitation in QWorkspace. QWorkspace sets every time the  application caption on its on way. This confuses BibleTime - wrong captions are generated. This function returns the right caption (using the MDI child). */
-inline const QString CMDIArea::currentApplicationCaption() const {
-	return m_appCaption;
-}
 
 /** Emits the signal to create a new display window in the MDI area. */
 inline void CMDIArea::emitCreateDisplayWindow( ListCSwordModuleInfo modules, const QString keyName ) {

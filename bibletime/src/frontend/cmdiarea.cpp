@@ -14,34 +14,23 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 
-//KDE includes
-
-
 //QT includes
 #include <QObject>
 #include <QTimer>
 #include <QEvent>
+#include <QMdiSubWindow>
 
-CMDIArea::CMDIArea(QWidget *parent) : QWorkspace(parent),
-m_guiOption(Nothing),
-m_childEvent(false),
-m_appCaption(QString::null) {
-	initView();
+CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
+	m_guiOption(Nothing),
+	m_childEvent(false)
+{
 	initConnections();
 	readSettings();
 }
 
-
-/** Initializes the view of the MDI area */
-void CMDIArea::initView() {
-	//TODO: test with kde4
-	//setPaletteBackgroundColor( parentWidget()->paletteBackgroundColor() ); //work around a KDE bug (IMHO was in KDE 2.x)
-}
-
 /** Initilizes the connectiosn to SIGNALS */
 void CMDIArea::initConnections() {
-	connect(this, SIGNAL(windowActivated(QWidget*)),
-			this, SLOT(slotClientActivated(QWidget*)));
+	connect(this, SIGNAL(windowActivated(QWidget*)), this, SLOT(slotClientActivated(QWidget*)));
 }
 
 /** Called whan a client window was activated */
@@ -57,7 +46,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 	}
 
 	//QWidgetList windows = windowList();
-	QListIterator<QWidget*> it(windowList());
+	QListIterator<QMdiSubWindow*> it(subWindowList());
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
 	while (it.hasNext()) {
 		//Don't use!! It would disable accel enabling for the active window, see CDisplayWindow::windowActivated
@@ -69,7 +58,7 @@ void CMDIArea::slotClientActivated(QWidget* client) {
 		window->windowActivated( (window == sp) ? true : false);
 	}
 
-	emit sigSetToplevelCaption( ( m_appCaption = client->windowTitle().trimmed() ) );
+	emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 }
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
@@ -83,8 +72,8 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 	m_childEvent = true;
 
-	if (!windowList().count()) {
-		emit sigSetToplevelCaption(m_appCaption = QString::null);
+	if (!subWindowList().count()) {
+		emit sigSetToplevelCaption(QString::null);
 		emit sigLastPresenterClosed();
 	}
 
@@ -100,13 +89,13 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 		triggerWindowUpdate();
 	}
-	QWorkspace::childEvent(e);
+	QMdiArea::childEvent(e);
 	m_childEvent = false;
 }
 
 /** Reimplementation */
 void CMDIArea::resizeEvent(QResizeEvent* e) {
-	QWorkspace::resizeEvent(e);
+	QMdiArea::resizeEvent(e);
 
 	if (updatesEnabled()) {
 		triggerWindowUpdate();
@@ -121,7 +110,7 @@ void CMDIArea::readSettings() {}
 
 /** Deletes all the presenters in the MDI area. */
 void CMDIArea::deleteAll() {
-	closeAllWindows();
+	closeAllSubWindows();
 }
 
 /** Enable / disable autoCascading */
@@ -138,16 +127,15 @@ void CMDIArea::myTileVertical() {
 		return;
 	}
 
-	QList<QWidget*> windows = usableWindowList();
+	QList<QMdiSubWindow*> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
 		//qDebug("should show maximized");
-		m_appCaption = windows.at(0)->windowTitle();
 		windows.at(0)->showMaximized();
 	}
 	else {
-		QWidget* active = activeWindow();
-		QWorkspace::tile();
+		QMdiSubWindow* active = activeSubWindow();
+		QMdiArea::tileSubWindows();
 		if (active) active->setFocus();
 	}
 }
@@ -157,39 +145,35 @@ void CMDIArea::myTileHorizontal() {
 		return;
 	}
 
-	QList<QWidget*> windows = usableWindowList();
+	QList<QMdiSubWindow*> windows = usableWindowList();
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		m_appCaption = windows.at(0)->windowTitle();
-		windows.at(0)/*->parentWidget()*/->showMaximized();
+		windows.at(0)->showMaximized();
 	}
 	else {
-
-		QWidget* active = activeWindow();
+		QMdiSubWindow* active = activeSubWindow();
 		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
 
-		blockSignals(true);
+		//blockSignals(true);
 		setUpdatesEnabled(false);
 		int heightForEach = height() / windows.count();
 		int y = 0;
 		for ( int i = 0; i < int(windows.count()); ++i ) {
-			QWidget *window = windows.at(i);
-			window->parentWidget()->showNormal();
-			//TODO: what this line did:
-			//qApp->sendPostedEvents( 0, QEvent::ShowNormal );
+			QMdiSubWindow *window = windows.at(i);
+			window->showNormal();
 
-			const int preferredHeight = window->minimumHeight() + window->parentWidget()->baseSize().height();
+			const int preferredHeight = window->minimumHeight() + window->baseSize().height();
 			const int actHeight = qMax(heightForEach, preferredHeight);
 
-			window->parentWidget()->setGeometry( 0, y, width(), actHeight );
+			window->setGeometry( 0, y, width(), actHeight );
 			y += actHeight;
 		}
 
 		setUpdatesEnabled(true);
 		active->setFocus();
-		blockSignals(false);
+		//blockSignals(false);
 	}
 
 }
@@ -200,14 +184,13 @@ void CMDIArea::myCascade() {
 		return;
 	}
 
-	QList<QWidget*> windows = usableWindowList();
+	QList<QMdiSubWindow*> windows = usableWindowList();
 	if ( !windows.count() ) {
 		return;
 	}
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		m_appCaption = windows.at(0)->windowTitle();
-		windows.at(0)->parentWidget()->showMaximized();
+		windows.at(0)->showMaximized();
 	}
 	else {
 		const int offsetX = 40;
@@ -218,7 +201,7 @@ void CMDIArea::myCascade() {
 		int x = 0;
 		int y = 0;
 
-		QWidget* const active = activeWindow();
+		QMdiSubWindow* const active = activeSubWindow();
 		if (active && active->isMaximized()) {
 			active->showNormal();
 		}
@@ -227,15 +210,15 @@ void CMDIArea::myCascade() {
 		setUpdatesEnabled(false);
 
 		for (int i(0); i < int(windows.count()); ++i) {
-			QWidget* window = windows.at(i);
+			QMdiSubWindow* window = windows.at(i);
 			if (window == active) { //leave out the active window which should be the top window
 				continue;
 			}
 
 			window->setUpdatesEnabled(false);
 
-			window->parentWidget()->raise(); //make it the on-top-of-window-stack window to make sure they're in the right order
-			window->parentWidget()->setGeometry(x, y, windowWidth, windowHeight);
+			window->raise(); //make it the on-top-of-window-stack window to make sure they're in the right order
+			window->setGeometry(x, y, windowWidth, windowHeight);
 			x += offsetX;
 			y += offsetY;
 
@@ -244,8 +227,8 @@ void CMDIArea::myCascade() {
 
 		setUpdatesEnabled(true);
 
-		active->parentWidget()->setGeometry(x, y, windowWidth, windowHeight);
-		active->parentWidget()->raise();
+		active->setGeometry(x, y, windowWidth, windowHeight);
+		active->raise();
 		active->activateWindow();
 
 		blockSignals(false);
@@ -253,21 +236,21 @@ void CMDIArea::myCascade() {
 }
 
 void CMDIArea::emitWindowCaptionChanged() {
-	if (activeWindow()) {
-		m_appCaption = activeWindow()->windowTitle();
+	QString appCaption;
+	if (activeSubWindow()) {
+		appCaption = activeSubWindow()->windowTitle();
 	}
-
-	emit sigSetToplevelCaption(currentApplicationCaption());
+	emit sigSetToplevelCaption(appCaption);
 }
 
-QList<QWidget*> CMDIArea::usableWindowList() {
-	QList<QWidget*> ret;
+QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
+	QList<QMdiSubWindow*> ret;
 
 	//QWidgetList windows = windowList();
 	//for ( QWidget* w = windows.first(); w; w = windows.next() ) {
-	QListIterator<QWidget*> it(windowList());
+	QListIterator<QMdiSubWindow*> it(subWindowList());
 	while (it.hasNext()) {	
-		QWidget* w = it.next();
+		QMdiSubWindow* w = it.next();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
 			continue;
 		}
@@ -281,10 +264,6 @@ QList<QWidget*> CMDIArea::usableWindowList() {
 bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	Q_ASSERT(o);
 	Q_ASSERT(e);
-	//if (o->metaObject()->className() == "QWorkspaceChild") {
-	//	qDebug("CMDIArea::eventFilter");
-	//	qDebug() << o << e;
-	//}
 	
 	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>( o );
  	if ( w && (e->type() == QEvent::WindowStateChange) ) {
@@ -294,7 +273,7 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 		}
 	}
 
-	return QWorkspace::eventFilter(o,e); // standard event processing
+	return QMdiArea::eventFilter(o,e); // standard event processing
 }
 
 

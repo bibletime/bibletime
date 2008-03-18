@@ -38,6 +38,7 @@
 #include <QDebug>
 #include <QAction>
 #include <QApplication>
+#include <QMdiSubWindow>
 
 //KDE includes
 #include <kcmdlineargs.h>
@@ -154,7 +155,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
 		displayWindow->init();
-		if (m_mdi->windowList().count() == 0)
+		if (m_mdi->subWindowList().count() == 0)
 			displayWindow->showMaximized();
 		else
 			displayWindow->show();
@@ -188,7 +189,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
 	if ( displayWindow ) {
 		displayWindow->init();
-		if (m_mdi->windowList().count() == 0)
+		if (m_mdi->subWindowList().count() == 0)
 			displayWindow->showMaximized();
 		else
 			displayWindow->show();
@@ -202,8 +203,8 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() {
 	unsigned int index;
-	for ( index = 0; index < m_mdi->windowList().count(); index++) {
-		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->windowList().at(index));
+	for ( index = 0; index < m_mdi->subWindowList().count(); index++) {
+		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index));
 		if (window) {
 			window->reload();
 		}
@@ -220,8 +221,8 @@ bool BibleTime::queryClose() {
 	qDebug("BibleTime::queryClose");
 	bool ret = true;
 
-	for ( unsigned int index = 0; index < m_mdi->windowList().count(); ++index) {
-		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->windowList().at(index))) {
+	for ( unsigned int index = 0; index < m_mdi->subWindowList().count(); ++index) {
+		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index))) {
 			ret = ret && window->queryClose();
 		}
 		qDebug() << "return value:" << ret;
@@ -240,8 +241,9 @@ void BibleTime::restoreWorkspace() {
 /** Sets the plain caption of the main window */
 void BibleTime::setPlainCaption( const QString& ) {
 	QString suffix;
-	if (!m_mdi->currentApplicationCaption().isEmpty())
-		suffix = QString(" [").append(m_mdi->currentApplicationCaption()).append("]");
+	if (m_mdi->activeSubWindow()) {
+		suffix = QString(" [").append(m_mdi->activeSubWindow()->windowTitle()).append("]");
+	}
 	QMainWindow::setWindowTitle( tr("BibleTime ").append(BT_VERSION) + suffix );
 }
 
