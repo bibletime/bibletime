@@ -10,7 +10,7 @@
 #include "btmodulemanagerdialog.h"
 #include "btmodulemanagerdialog.moc"
 
-#include "btinstallpage.h"
+#include "installpage/btinstallpage.h"
 
 #include <QDialogButtonBox>
 

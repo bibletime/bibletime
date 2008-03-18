@@ -90,13 +90,15 @@ SET(bibletime_SOURCES
 
 	#new bookshelf manager classes - temporary
 	src/frontend/bookshelfmanager/new/btconfigdialog.cpp
-	src/frontend/bookshelfmanager/new/btinstallpage.cpp
+	src/frontend/bookshelfmanager/new/installpage/btinstallpage.cpp
 	src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp
 	src/frontend/bookshelfmanager/new/backend.cpp
 	src/frontend/bookshelfmanager/new/bt_installmgr.cpp
-	src/frontend/bookshelfmanager/new/btinstallthread.cpp
-	src/frontend/bookshelfmanager/new/btinstallitem.cpp
-	src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp
+	src/frontend/bookshelfmanager/new/installpage/btinstallthread.cpp
+	src/frontend/bookshelfmanager/new/installpage/btinstallprogressdialog.cpp
+	src/frontend/bookshelfmanager/new/installpage/btsourcewidget.cpp
+	src/frontend/bookshelfmanager/new/installpage/btsourcearea.cpp
+	src/frontend/bookshelfmanager/new/installpage/btinstallmodulechooserdialog.cpp
 
 	#Search dialog
 	src/frontend/searchdialog/csearchdialog.cpp
