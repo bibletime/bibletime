@@ -76,10 +76,6 @@ BibleTime::~BibleTime() {
 
 /** Saves the properties of BibleTime to the application wide configfile  */
 void BibleTime::saveSettings() {
-	if (m_mdi) {
-		m_mdi->saveSettings();
-	}
-
 	//TODO: how to write settings?
 	//accel()->writeSettings(CBTConfig::getConfig());
 
@@ -239,10 +235,12 @@ void BibleTime::restoreWorkspace() {
 }
 
 /** Sets the plain caption of the main window */
-void BibleTime::setPlainCaption( const QString& ) {
+void BibleTime::setPlainCaption(const QString& title) {
 	QString suffix;
-	if (m_mdi->activeSubWindow()) {
-		suffix = QString(" [").append(m_mdi->activeSubWindow()->windowTitle()).append("]");
+	//Watch out, subtitles must be appended with the form " - [%s]", otherwise
+	//QMdiSubWindow will mess up when it is maximized
+	if (!title.isEmpty()) {
+		suffix = QString(" - [").append(title).append("]");
 	}
 	QMainWindow::setWindowTitle( tr("BibleTime ").append(BT_VERSION) + suffix );
 }

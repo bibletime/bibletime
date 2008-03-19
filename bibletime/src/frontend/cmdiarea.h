@@ -26,8 +26,7 @@ class QMdiSubWindow;
 
 /** The MDI widget we use in BibleTime.
  * Enhances QMdiArea.
-  * @author The BibleTime Team
-  */
+ */
 class CMDIArea : public QMdiArea, public CPointers  {
 	Q_OBJECT
 
@@ -80,9 +79,6 @@ public slots:
 	 * Emits the signal to create a new display window in the MDI area.
 	 */
 	inline void emitCreateDisplayWindow( ListCSwordModuleInfo modules, const QString keyName );
-	/**
-	*/
-	void saveSettings();
 
 signals: // Signals
 	/**
@@ -90,32 +86,23 @@ signals: // Signals
 	*/
 	void sigSetToplevelCaption(const QString&);
 	/**
-	* Is emitted when the last presenter was closed.
-	*/
-	void sigLastPresenterClosed();
+	 */
 	void createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& keyName);
 
 private:
 	/**
-	*/
-	void readSettings();
-	/**
 	* Used to make use of the fixedGUIOption part.
 	*/
-	virtual void childEvent (QChildEvent * e);
+	virtual void childEvent(QChildEvent * e);
 	/**
 	* Reimplementation
 	*/
 	virtual void resizeEvent(QResizeEvent* e);
-	/**
-	* Initializes the connectiosn to SIGNALS
-	*/
-	void initConnections();
 
 	bool eventFilter( QObject *o, QEvent *e );
-
+	/**
+	 */
 	MDIOption m_guiOption;
-	bool m_childEvent;
 };
 
 /** Emits the signal to create a new display window in the MDI area. */

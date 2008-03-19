@@ -333,7 +333,6 @@ void CDisplayWindow::setModules( const ListCSwordModuleInfo& newModules ) {
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 const bool CDisplayWindow::init() {
-	//BibleTime::createReadDisplayWindow calls the show() method
 	qDebug("CDisplayWindow::init");
 	initView();
 	setMinimumSize( 100,100 );
