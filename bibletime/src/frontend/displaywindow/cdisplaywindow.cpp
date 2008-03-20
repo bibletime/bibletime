@@ -193,16 +193,6 @@ void CDisplayWindow::initActions()
 	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
 
-/** Is called when this window gets the focus or looses the focus. */
-void CDisplayWindow::windowActivated( const bool hasFocus ) {
-	//kde/qt3:
-	//if (accel()) {
-	//	accel()->setEnabled(hasFocus);
-	//}
-	
-	//Nothing is needed for KDE4
-}
-
 /** Refresh the settings of this window. */
 void CDisplayWindow::reload() {
 	//first make sure all used Sword modules are still present

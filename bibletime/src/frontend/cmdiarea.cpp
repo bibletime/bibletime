@@ -9,13 +9,7 @@
 
 #include "cmdiarea.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/keychooser/ckeychooser.h"
-
 //QT includes
-#include <QObject>
 #include <QTimer>
 #include <QEvent>
 #include <QMdiSubWindow>
@@ -24,30 +18,20 @@
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
 	m_guiOption(Nothing)
 {
-	connect(this, SIGNAL(windowActivated(QWidget*)), this, SLOT(slotClientActivated(QWidget*)));
+	connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
 }
 
 /** Called whan a client window was activated */
-void CMDIArea::slotClientActivated(QWidget* client) {
+void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
 	if (!client || !updatesEnabled()) {
 		return;
 	}
-
-	CDisplayWindow* sp = dynamic_cast<CDisplayWindow*>(client);
-	Q_ASSERT(sp);
-	if (!sp || !sp->isReady()) return;
-
-	foreach(QMdiSubWindow* w, subWindowList()){
-		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(w);
-		window->windowActivated( (window == sp) ? true : false);
-	}
-
 	emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 }
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
 void CMDIArea::childEvent( QChildEvent * e ) {
-	qDebug() << "CMDIArea::childEvent type" << int(e->type());
+	//qDebug() << "CMDIArea::childEvent type" << int(e->type());
 	if (!e) return;
 
 	if (!subWindowList().count()) {
@@ -132,7 +116,6 @@ void CMDIArea::myTileHorizontal() {
 
 }
 
-/**  */
 void CMDIArea::myCascade() {
 	if (!updatesEnabled() || !usableWindowList().count() ) {
 		return;
@@ -206,16 +189,14 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 }
 
 bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
-	Q_ASSERT(o);
-	Q_ASSERT(e);
-	
-	CDisplayWindow* w = dynamic_cast<CDisplayWindow*>( o );
+	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>( o );
+	//if (w) qDebug() << "CMDIArea::eventFilter called for CMdiSubWindow, e is type" << (int)(e->type());
  	if ( w && (e->type() == QEvent::WindowStateChange) ) {
  		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
 			triggerWindowUpdate();
 		}
 	}
-	return QMdiArea::eventFilter(o,e); // standard event processing
+	return false; //let the event be handled by other filters too
 }
 
 void CMDIArea::triggerWindowUpdate() {

@@ -27,7 +27,7 @@ class QMdiSubWindow;
 /** The MDI widget we use in BibleTime.
  * Enhances QMdiArea.
  */
-class CMDIArea : public QMdiArea, public CPointers  {
+class CMDIArea : public QMdiArea {
 	Q_OBJECT
 
 public:
@@ -58,7 +58,7 @@ public slots:
 	/**
 	* Called whan a client window was activated
 	*/
-	void slotClientActivated(QWidget* client);
+	void slotClientActivated(QMdiSubWindow* client);
 	/**
 	* Deletes all the presenters in the MDI area.
 	*/

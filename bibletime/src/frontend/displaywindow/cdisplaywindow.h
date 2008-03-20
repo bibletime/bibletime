@@ -202,10 +202,6 @@ protected:
 	*/
 	virtual void initActions();
 	/**
-	 Is called when this window gets the focus or looses the focus.
-	*/
-	virtual void windowActivated( const bool hasFocus );
-	/**
 	* Sets the keychooser widget for this display window.
 	*/
 	void setKeyChooser( CKeyChooser* ck );
