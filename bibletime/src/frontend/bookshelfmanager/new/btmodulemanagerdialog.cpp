@@ -36,6 +36,9 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 
 	//Index page
 
+	//TODO: select the page from config? Now it's always the first one
+	slotChangePage(0);
+
 	// Dialog button (Close)
 	QDialogButtonBox* bbox = new QDialogButtonBox(this);
 	bbox->addButton(QDialogButtonBox::Close);
