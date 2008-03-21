@@ -99,6 +99,7 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/new/installpage/btsourcewidget.cpp
 	src/frontend/bookshelfmanager/new/installpage/btsourcearea.cpp
 	src/frontend/bookshelfmanager/new/installpage/btinstallmodulechooserdialog.cpp
+	src/frontend/bookshelfmanager/new/removepage/btremovepage.cpp
 
 	#Search dialog
 	src/frontend/searchdialog/csearchdialog.cpp
