@@ -55,6 +55,7 @@ private:
 	QListWidget* m_contentsList;
 	QStackedWidget* m_pageWidget;
 	QVBoxLayout* m_pageLayout;
+	int m_maxItemWidth;
 };
 
 
