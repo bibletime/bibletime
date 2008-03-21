@@ -11,6 +11,8 @@
 #include "btmodulemanagerdialog.moc"
 
 #include "installpage/btinstallpage.h"
+#include "removepage/btremovepage.h"
+
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
 
@@ -21,10 +23,17 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	setWindowTitle(tr("BibleTime Bookshelf Manager"));
+
+	// Install page
 	BtInstallPage* installPage = new BtInstallPage();
 	addPage(installPage);
 	QObject::connect(this, SIGNAL(swordSetupChanged()), installPage, SLOT(slotSwordSetupChanged()));
+
 	//Uninstall page
+	BtRemovePage* removePage = new BtRemovePage();
+	addPage(removePage);
+	QObject::connect(this, SIGNAL(swordSetupChanged()), removePage, SLOT(slotSwordSetupChanged()));
+
 	//Index page
 
 	// Dialog button (Close)

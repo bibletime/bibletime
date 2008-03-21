@@ -79,17 +79,17 @@ BtRemovePage::BtRemovePage()
 	populateModuleList();
 }
 
-QString BtRemovePage::header()
+QString BtRemovePage::label()
 {
-	return QString();
+	return tr("Remove installed works. Select the works and click Remove button.");
 }
 QString BtRemovePage::iconName()
 {
-	return QString();
+	return "remove_modules.svg";
 }
-QString BtRemovePage::label()
+QString BtRemovePage::header()
 {
-	return QString();
+	return tr("Remove");
 }
 
 
@@ -219,7 +219,7 @@ void BtRemovePage::slotRemoveModules() {
 
 void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 {
-	// Enable/disable the Remove button.
+	// Enable/disable the Remove button, modify the list of the selected modules.
 }
 
 void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* item, int column)

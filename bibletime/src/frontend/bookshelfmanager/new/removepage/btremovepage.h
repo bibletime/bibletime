@@ -24,7 +24,7 @@ class QTreeWidgetItem;
 class QPushButton;
 
 
-class BtRemovePage : BtConfigPage
+class BtRemovePage : public BtConfigPage
 {
 	Q_OBJECT
 
