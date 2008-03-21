@@ -183,7 +183,7 @@ void CReadWindow::applyProfileSettings(CProfileWindow * const settings) {
 	}
 	else {
 		const QRect rect = settings->geometry();
-		resize(rect.width(), rect.height());
+		parentWidget()->resize(rect.width(), rect.height());
 		parentWidget()->move(rect.x(), rect.y());
 	}
 
