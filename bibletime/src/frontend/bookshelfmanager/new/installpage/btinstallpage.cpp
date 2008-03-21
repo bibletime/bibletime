@@ -17,6 +17,7 @@
 #include "frontend/bookshelfmanager/new/backend.h"
 #include "btinstallprogressdialog.h"
 #include "btsourcewidget.h"
+#include "btsourcearea.h"
 #include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
 
 #include "frontend/cmodulechooserdialog.h"
@@ -178,6 +179,13 @@ QString BtInstallPage::header()
 void BtInstallPage::slotSwordSetupChanged()
 {
 	qDebug() << "BtInstallPage::slotSwordSetupChanged, does nothing yet, should update sources";
+	//m_sourceWidget, each sourceArea->createModuleTree
+	// BUG: the backend is not updated
+	for (int i = 0; i < m_sourceWidget->count(); i++ ) {
+		BtSourceArea* sourceArea = dynamic_cast<BtSourceArea*>(m_sourceWidget->widget(i));
+		Q_ASSERT(sourceArea);
+		sourceArea->createModuleTree();
+	}
 }
 
 

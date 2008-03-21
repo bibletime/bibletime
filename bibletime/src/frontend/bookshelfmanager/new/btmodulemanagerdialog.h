@@ -27,6 +27,9 @@ public:
 	BtModuleManagerDialog(QWidget* parent);
 	~BtModuleManagerDialog(){}
 
+public slots:
+	void slotSwordSetupChanged();
+
 	//void slotClose();
 protected:
 	/** Reimplementation from QWidget. */

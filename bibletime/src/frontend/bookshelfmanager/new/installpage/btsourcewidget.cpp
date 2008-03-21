@@ -360,7 +360,7 @@ void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidg
  	BtInstallProgressDialog* dlg = new BtInstallProgressDialog(parentDialog, treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
 
 	if (!parentDialog) qDebug("error, wrong parent!");
-	QObject::connect(dlg, SIGNAL(swordSetupChanged()), parentDialog, SIGNAL(swordSetupChanged()));
+	QObject::connect(dlg, SIGNAL(swordSetupChanged()), parentDialog, SLOT(slotSwordSetupChanged()));
 	// the progress dialog is now modal, it can be made modeless later.
 	dlg->exec();
 	//TODO: disable the Install button

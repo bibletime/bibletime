@@ -11,6 +11,8 @@
 #include "btmodulemanagerdialog.moc"
 
 #include "installpage/btinstallpage.h"
+#include "util/cpointers.h"
+#include "backend/managers/cswordbackend.h"
 
 #include <QDialogButtonBox>
 
@@ -42,3 +44,10 @@ void BtModuleManagerDialog::closeEvent(QCloseEvent*)
 	//writeSwordConfig();
 	//emit signalSwordSetupChanged( );
 }
+
+void BtModuleManagerDialog::slotSwordSetupChanged()
+{
+	CPointers::backend()->reloadModules();
+	emit swordSetupChanged();
+}
+
