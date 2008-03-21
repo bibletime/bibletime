@@ -60,7 +60,9 @@ private: // data
 	QTreeWidget* m_view;
 	QPushButton* m_removeButton;
 	/** Map of module name and install path (absolute path from the moduleinfo config entry).*/
-	QMultiMap<QString, QString> m_selectedModules;
+	//QMultiMap<QString, QString> m_selectedModules;
+	ListCSwordModuleInfo m_selectedModules;
+	ListCSwordModuleInfo m_installedModules;
 };
 
 #endif

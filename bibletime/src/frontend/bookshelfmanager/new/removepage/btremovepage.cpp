@@ -43,10 +43,8 @@
 BtRemovePage::BtRemovePage()
 	: BtConfigPage()
 {
-	//QWidget* page = new QWidget;
-	//m_removePage = addPage(page, tr("Remove works"));
-
-	setMinimumSize(500,400);
+	//setMinimumSize(500,400);
+	m_installedModules = CPointers::backend()->moduleList();
 
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(5);
@@ -55,18 +53,10 @@ BtRemovePage::BtRemovePage()
 	layout->setColumnStretch(1,1);
 	layout->setRowStretch(2,1);
 
-	// TODO: use btconfigpage methods
-	//QLabel* mainLabel= CToolClass::explanationLabel(this,
-	//						tr("Remove works"),
-	//						tr("Remove installed works from your system. Select the works and click the Remove button.")
-	//													);
-	//layout->addWidget(mainLabel, 0, 0, 1, 2);
-
-	//QLabel* headingLabel = new QLabel(QString("<b>%1</b>").arg(tr("Select works to be uninstalled")), this);
-	//layout->addWidget(headingLabel, 1, 0, 1, 2);
-
-	//m_removeModuleListView = new CSwordSetupModuleListView(this, false);
 	m_view = new QTreeWidget(this);
+	m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Install path"));
+	m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
+
 	layout->addWidget( m_view, 2, 0, 1, 2);
 
 	m_removeButton = new QPushButton(tr("Remove"), this);
@@ -93,18 +83,16 @@ QString BtRemovePage::header()
 }
 
 
-void BtRemovePage::populateModuleList() {
-
-	//TODO: use BtModuleTreeItem, get rid of the modulelistview class
-//createModuleTree()
-	QList<BTModuleTreeItem::Filter*> empty;
-	BTModuleTreeItem rootItem(empty, (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping));
+void BtRemovePage::populateModuleList()
+{
 
 	m_view->clear();
 
 	// disconnect the signal so that we don't have to run functions for every module
 	disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
 
+	QList<BTModuleTreeItem::Filter*> empty;
+	BTModuleTreeItem rootItem(empty, (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping));
 	addToTree(&rootItem, m_view->invisibleRootItem());
 
 	// receive signal when user checks modules
@@ -132,36 +120,30 @@ void BtRemovePage::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 			widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 			widgetItem->setCheckState(0, Qt::Unchecked);
 
-			CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
-
-			if (!installedModule) {
-			} else { // the module is installed
-			}
-
 			//TODO: add the relevant information in to item or tooltip
 			// (install path, is still available from some source)
 
-			QString descr(mInfo->config(CSwordModuleInfo::Description));
+			QString descr(mInfo->config(CSwordModuleInfo::AbsoluteDataPath));
 			QString toolTipText = CToolClass::moduleToolTip(mInfo);
-
 			widgetItem->setText(1, descr);
 			widgetItem->setToolTip(0, toolTipText);
+			widgetItem->setToolTip(1, descr);
 		}
 	}
 }
 
 
 
-void BtRemovePage::slotRemoveModules() {
-
-	//TODO:
-	//map: modname, path
-
+void BtRemovePage::slotRemoveModules()
+{
 	if ( m_selectedModules.empty() ) {
 		return; //no message, just do nothing
 	}
 
-	QStringList moduleNames = m_selectedModules.keys();
+	QStringList moduleNames;
+	foreach (CSwordModuleInfo* m, m_selectedModules) {
+		moduleNames.append(m->name());
+	}
 	const QString message = tr("You selected the following work(s): ")
 		.append(moduleNames.join(", "))
 		.append("\n\n")
@@ -169,18 +151,9 @@ void BtRemovePage::slotRemoveModules() {
 
 	if ((QMessageBox::question(this, tr("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
-		//TODO: handle duplicates in different paths
 		sword::InstallMgr installMgr;
 		QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-		ListCSwordModuleInfo installedModules = CPointers::backend()->moduleList();
-		for ( QMultiMap<QString, QString>::Iterator it = m_selectedModules.begin(); it != m_selectedModules.end(); ++it ) {
-			CSwordModuleInfo* mInfo = 0;
-			// find the selected module/path in the list of the installed modules
-			foreach (CSwordModuleInfo* m, installedModules) {
-				if (m->name() == it.key() && m->config(CSwordModuleInfo::AbsoluteDataPath) == it.value()) {
-					mInfo = m;
-				}
-			}
+		foreach ( CSwordModuleInfo* mInfo, m_selectedModules ) {
 			Q_ASSERT(mInfo); // Only installed modules could have been selected, this should exist
 
 			// Find the install path for the sword manager
@@ -203,6 +176,7 @@ void BtRemovePage::slotRemoveModules() {
 				mgrDict.insert(prefixPath, new sword::SWMgr(prefixPath.toLocal8Bit()));
 				mgr = mgrDict[ prefixPath ];
 			}
+			qDebug() << "Removing the module"<< mInfo->name() << "...";
 			installMgr.removeModule(mgr, mInfo->name().toLatin1());
 		}
 
@@ -219,7 +193,33 @@ void BtRemovePage::slotRemoveModules() {
 
 void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 {
-	// Enable/disable the Remove button, modify the list of the selected modules.
+	//qDebug("BtRemovePage::slotSelectionChanged");
+	// modify the internal list of checked modules
+	// if() leaves groups away
+	if (!item->childCount() && column == 0) {
+		CSwordModuleInfo* mInfo = 0;
+		qDebug("BtRemovePage::slotSelectionChanged");
+		foreach (CSwordModuleInfo* module, m_installedModules) {
+			if (module->name() == item->text(0) && module->config(CSwordModuleInfo::AbsoluteDataPath) == item->text(1)) {
+				mInfo = module;
+				break;
+			}
+		}
+		Q_ASSERT(mInfo); // this should have been found
+		if (item->checkState(0) == Qt::Checked) {
+			qDebug() << item->text(0) << "in" << item->text(1) << "was checked";
+			m_selectedModules.append(mInfo);
+		}  else {
+			qDebug() << mInfo->name() << "was unchecked";
+			m_selectedModules.removeAll(mInfo); // there is only one, it's a pointer
+		}
+
+		if (m_selectedModules.count() > 0) {
+			m_removeButton->setEnabled(true);
+		} else {
+			m_removeButton->setEnabled(false);
+		}
+	}
 }
 
 void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* item, int column)
@@ -229,5 +229,6 @@ void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* item, int column)
 
 void BtRemovePage::slotSwordSetupChanged()
 {
+	m_installedModules = CPointers::backend()->moduleList();
 	populateModuleList();
 }

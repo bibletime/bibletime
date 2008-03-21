@@ -33,7 +33,7 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	BtRemovePage* removePage = new BtRemovePage();
 	addPage(removePage);
 	QObject::connect(this, SIGNAL(swordSetupChanged()), removePage, SLOT(slotSwordSetupChanged()));
-
+	QObject::connect(removePage, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
 	//Index page
 
 	//TODO: select the page from config? Now it's always the first one
