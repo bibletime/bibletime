@@ -39,6 +39,7 @@
 #include <QAction>
 #include <QApplication>
 #include <QMdiSubWindow>
+#include <QCloseEvent>
 
 //KDE includes
 #include <kcmdlineargs.h>
@@ -199,9 +200,8 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() {
 	unsigned int index;
-	for ( index = 0; index < m_mdi->subWindowList().count(); index++) {
-		CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index));
-		if (window) {
+	foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
+		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
 			window->reload();
 		}
 	}
@@ -217,8 +217,8 @@ bool BibleTime::queryClose() {
 	qDebug("BibleTime::queryClose");
 	bool ret = true;
 
-	for ( unsigned int index = 0; index < m_mdi->subWindowList().count(); ++index) {
-		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(m_mdi->subWindowList().at(index))) {
+	foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()){
+		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
 			ret = ret && window->queryClose();
 		}
 		qDebug() << "return value:" << ret;

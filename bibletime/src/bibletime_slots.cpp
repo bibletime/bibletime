@@ -354,22 +354,14 @@ void BibleTime::slotToggleInfoDisplay() {
 }
 
 void BibleTime::slotSearchModules() {
-	//TODO: commented out temporarily
 	//get the modules of the open windows
 	ListCSwordModuleInfo modules;
  
-	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
-	for ( int i = 0; i < static_cast<int>(windows.count()); ++i ) {
-		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(windows.at(i))) {
-			ListCSwordModuleInfo windowModules = w->modules();
-
-			ListCSwordModuleInfo::iterator end_it = windowModules.end();
-			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
-				modules.append(*it);
-			};
-		};
-	};
-
+	foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()){
+		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+			modules << w->modules();
+		}
+	}
 	Search::CSearchDialog::openDialog(modules, QString::null);
 }
 
@@ -417,14 +409,12 @@ void BibleTime::saveProfile(CProfile* profile) {
 	if (!profile) {
 		return;
 	}
-
 	//save mainwindow settings
 	storeProfileSettings(profile);
 
-	QList<QMdiSubWindow*> windows = m_mdi->subWindowList();
 	QList<CProfileWindow*> profileWindows;
-	foreach (QWidget* w, windows) {
-		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w);
+	foreach (QMdiSubWindow* w, m_mdi->subWindowList()) {
+		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
 		if (!displayWindow) {
 			continue;
 		}
@@ -493,10 +483,11 @@ void BibleTime::loadProfile(CProfile* p) {
 			}
 
 			displayWindow->applyProfileSettings(w);
-		};
+		}
 	}
 
 	m_mdi->setUpdatesEnabled(true);
+	m_mdi->triggerWindowUpdate();
 
 	if (focusWindow) {
 		focusWindow->setFocus();

@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CDISPLAYWINDOW_H
 #define CDISPLAYWINDOW_H
 
@@ -25,13 +23,8 @@
 #include "frontend/profile/cprofilewindow.h"
 
 //Qt includes
-#include <QWidget>
-#include <QCloseEvent>
 #include <QStringList>
-
-//#include <QMdiSubWindow>
 #include <QMainWindow>
-
 
 //Forward declarations
 class CMDIArea;
@@ -41,8 +34,10 @@ class CDisplaySettingsButton;
 class CDisplay;
 class CKeyChooser;
 class CModuleChooserBar;
+class QCloseEvent;
 
-class KToolBar;
+class QToolBar;
+class QCloseEvent;
 class QMenu;
 class KActionCollection;
 

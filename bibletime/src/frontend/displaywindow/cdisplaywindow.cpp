@@ -25,7 +25,6 @@
 #include <QWidget>
 #include <QCloseEvent>
 #include <QStringList>
-#include <QMainWindow>
 #include <QDebug>
 #include <QMenu>
 
