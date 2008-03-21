@@ -28,13 +28,13 @@
 
 BtConfigDialog::BtConfigDialog(QWidget* parent)
 	: QDialog(parent),
-	m_maxItemWidth(0)
+	m_maxItemWidth(0),
+	m_previousPageIndex(-2)
 {
 	setWindowFlags(Qt::Window);
 	m_contentsList = new QListWidget(this);
 	m_contentsList->setViewMode(QListView::IconMode);
 	m_contentsList->setMovement(QListView::Static);
-	//m_contentsList->setMaximumWidth(m_contentsList->minimumSizeHint().width());
 
 	m_pageWidget = new QStackedWidget(this);
 	m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -47,7 +47,7 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 	
 	m_pageLayout->addWidget(m_pageWidget);
 
-	//line
+	// Horizontal line
 	QFrame* line = new QFrame();
 	line->setGeometry(QRect(1, 1, 1, 3));
     line->setFrameShape(QFrame::HLine);
@@ -56,8 +56,8 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 	m_pageLayout->addWidget(line);
 
 	connect(m_contentsList,
-		SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-		this, SLOT(slotChangePage(QListWidgetItem *, QListWidgetItem*))
+		SIGNAL(currentRowChanged(int)),
+		this, SLOT(slotChangePage(int))
 		);
 	
 }
@@ -92,6 +92,8 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 	else {
 		item->setSizeHint(QSize(m_maxItemWidth, m_contentsList->visualItemRect(item).height()) );
 	}
+
+	slotChangePage(m_contentsList->row(item));
 }
 
 void BtConfigDialog::addButtonBox(QDialogButtonBox* box)
@@ -104,11 +106,13 @@ BtConfigPage* BtConfigDialog::currentPage()
 	return dynamic_cast<BtConfigPage*>(m_pageWidget->currentWidget());
 }
 
-void BtConfigDialog::slotChangePage(QListWidgetItem *current, QListWidgetItem *previous)
+void BtConfigDialog::slotChangePage(int newIndex)
 {
-	if (!current)
-		current = previous;
-	m_pageWidget->setCurrentIndex(m_contentsList->row(current));
+	if (m_previousPageIndex != newIndex) {
+		m_previousPageIndex = newIndex;
+		m_contentsList->setCurrentRow(newIndex);
+		m_pageWidget->setCurrentIndex(newIndex);
+	}
 }
 
 

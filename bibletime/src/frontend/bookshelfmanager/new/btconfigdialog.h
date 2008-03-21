@@ -39,23 +39,24 @@ public:
 	BtConfigDialog(QWidget* parent);
 	virtual ~BtConfigDialog();
 	
-	/** Add a BtConfigPage to the paged widget stack. */
+	/** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
 	void addPage(BtConfigPage* pageWidget);
 	/** Adds a button box to the lower edge of the dialog. */
 	void addButtonBox(QDialogButtonBox* buttonBox);
 	
-	/** Return the currently selected page. */
+	/** Returns the currently selected page. */
 	BtConfigPage* currentPage();
 
-private slots:
-	/** Change the page. */
-	void slotChangePage(QListWidgetItem *current, QListWidgetItem *previous);
+public slots:
+	/** Changes the current page using the given index number. */
+	void slotChangePage(int newIndex);
 
 private:
 	QListWidget* m_contentsList;
 	QStackedWidget* m_pageWidget;
 	QVBoxLayout* m_pageLayout;
 	int m_maxItemWidth;
+	int m_previousPageIndex;
 };
 
 
