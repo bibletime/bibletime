@@ -61,6 +61,7 @@ BtRemovePage::BtRemovePage()
 
 	m_removeButton = new QPushButton(tr("Remove"), this);
 	m_removeButton->setIcon( util::filesystem::DirectoryUtil::getIcon("edittrash") );
+	m_removeButton->setEnabled(false);
 	layout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
 
 	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));

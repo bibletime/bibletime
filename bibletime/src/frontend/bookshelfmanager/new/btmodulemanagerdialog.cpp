@@ -12,6 +12,7 @@
 
 #include "installpage/btinstallpage.h"
 #include "removepage/btremovepage.h"
+#include "indexpage/btindexpage.h"
 
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
@@ -28,13 +29,21 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	BtInstallPage* installPage = new BtInstallPage();
 	addPage(installPage);
 	QObject::connect(this, SIGNAL(swordSetupChanged()), installPage, SLOT(slotSwordSetupChanged()));
+	//The vice versa signal/slot is connected in a page class
 
 	//Uninstall page
 	BtRemovePage* removePage = new BtRemovePage();
 	addPage(removePage);
 	QObject::connect(this, SIGNAL(swordSetupChanged()), removePage, SLOT(slotSwordSetupChanged()));
 	QObject::connect(removePage, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+
 	//Index page
+	BtIndexPage* indexPage = new BtIndexPage();
+	addPage(indexPage);
+	QObject::connect(this, SIGNAL(swordSetupChanged()), indexPage, SLOT(slotSwordSetupChanged()));
+	//QObject::connect(indexPage, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+
+
 
 	//TODO: select the page from config? Now it's always the first one
 	slotChangePage(0);
