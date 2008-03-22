@@ -159,7 +159,11 @@ void BtInstallPage::slotEditPaths()
  
 	// Later: open the dialog
 	BtInstallPathDialog* dlg = new BtInstallPathDialog();
-	dlg->exec();
+	int result = dlg->exec();
+	if (result == QDialog::Accepted) {
+		initPathCombo();
+		dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();	
+	}
 	// if the dialog was accepted, set the paths and save them
 	// and repopulate the combo
 }
