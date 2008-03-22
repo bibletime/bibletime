@@ -66,7 +66,8 @@ void BtSourceArea::initView()
 	refreshLabelLayout->addWidget(refreshLabel);
 	refreshLabelLayout->addWidget(m_refreshTimeLabel);
 	refreshLabelLayout->addItem(refreshLabelSpacer);
-	// TODO:
+	// TODO: or would it be better to integrate this information into the tooltip
+	// of the source tab?
 	//mainLayout->addLayout(refreshLabelLayout);
 
 	// source related button row
@@ -83,7 +84,7 @@ void BtSourceArea::initView()
 
 	sourceLayout->addWidget(m_refreshButton);
 	sourceLayout->addItem(sourceSpacer);
-	sourceLayout->addWidget(m_editButton);
+	//sourceLayout->addWidget(m_editButton);
 	sourceLayout->addWidget(m_deleteButton);
 	sourceLayout->addWidget(m_addButton);
 

@@ -84,13 +84,15 @@ QString BtInstallPage::selectedInstallPath()
 
 void BtInstallPage::initView()
 {
-	//setContentsMargins(0,5,0,5);
 	qDebug("void BtInstallPage::initView() start");
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
-	//mainLayout->setContentsMargins(0,5,0,5);
+
 	// installation path chooser
 	QHBoxLayout* pathLayout = new QHBoxLayout();
-	//pathLayout->setContentsMargins(0,5,0,5);
+	// beautify the layout
+	int top; int bottom; int left; int right;
+	pathLayout->getContentsMargins(&left, &top, &right, &bottom);
+	pathLayout->setContentsMargins(left, top + 7, right, bottom + 7 );
 	QSpacerItem *pathSpacer= new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	QLabel* pathLabel = new QLabel(tr("Install Path:"));
 	m_pathCombo = new QComboBox();
