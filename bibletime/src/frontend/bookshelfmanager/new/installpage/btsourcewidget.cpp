@@ -161,6 +161,10 @@ void BtSourceWidget::slotRefresh()
 			success = false;
 		}
 	}
+	else {
+		// Local source, update the list
+		success = true;
+	}
 
 	delete m_progressDialog;
 	m_progressDialog = 0;
@@ -255,7 +259,7 @@ void BtSourceWidget::addSource(const QString& sourceName)
 		if (!(fi.isDir() )) {
 			path = path + QString(" ") + tr("Not a directory!"); //TODO: change this
 		}
-		if (fi.isReadable()) {
+		if (!fi.isReadable()) {
 			path = path + QString(" ") + tr("Not readable!"); //TODO: change this
 		}
 	}
