@@ -31,7 +31,8 @@ different set of filters you have to create a new tree - it's not possible to mo
 Example:
 
 	...
-	BTModuleTreeItem root(QList<BTModuleTreeItem::Filter*>(), BTModuleTreeItem::CatLangMod);
+	QList<BTModuleTreeItem::Filter*> noFilters
+	BTModuleTreeItem root(noFilters, BTModuleTreeItem::CatLangMod);
 	add_to_view(&root, qtreewidget->invisibleRootItem());
 	...
 	void add_to_view(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
@@ -66,7 +67,7 @@ public:
 	* will stop with the first negative.
 	*
 	* Example:
-	*	QList<BTModuleTreeItem::Filter> filters;
+	*	QList<BTModuleTreeItem::Filter*> filters;
 	*	MyFilter filter; BTModuleTreeItem::HiddenOff hideFilter; 
 	*	filters.append(&hideFilter); filters.append(&filter);
 	*	BTModuleTreeItem root(filters, BTModuleTreeItem::CatLangMod);
