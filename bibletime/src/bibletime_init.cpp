@@ -37,10 +37,8 @@
 #include <QToolBar>
 #include <QApplication>
 
-
 //Sword includes
 #include <swlog.h>
-#include <stringmgr.h>
 
 using namespace InfoDisplay;
 using namespace Profile;
@@ -397,8 +395,7 @@ void BibleTime::initBackends() {
 	sword::SWLog::getSystemLog()->setLogLevel(1);
 
 	m_backend = new CSwordBackend();
-	m_backend->booknameLanguage( CBTConfig::get
-									 (CBTConfig::language) );
+	m_backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
 
 	CPointers::setBackend(m_backend);
 	const CSwordBackend::LoadError errorCode = m_backend->initModules();
@@ -451,25 +448,30 @@ void BibleTime::initBackends() {
 	
 }
 
-/** Apply the settings given by the profile p*/
 void BibleTime::applyProfileSettings( CProfile* p ) {
 	qDebug("BibleTime::applyProfileSettings");
 	Q_ASSERT(p);
 	if (!p) return;
 
-// 	if (m_initialized) { //on startup KDE sets the main geometry
-		//see polish(), where m_initialized is set and the KDE methods are called for window resize
-		//first Main Window state
-		m_windowFullscreen_action->setChecked( p->fullscreen() );  //set the fullscreen button state
-		toggleFullscreen(); //either showFullscreen or showNormal
-		if (p->maximized()) QMainWindow::showMaximized(); //if maximized, then also call showMaximized
-		//Then Main Window geometry
-		QMainWindow::resize( p->geometry().size() ); //Don't use QMainWindowInterface::resize
-		QMainWindow::move( p->geometry().topLeft() );//Don't use QMainWindowInterface::move
-// 	}
+	//first Main Window state
+	m_windowFullscreen_action->setChecked( p->fullscreen() );  //set the fullscreen button state
+	toggleFullscreen(); //either showFullscreen or showNormal
+	if (p->maximized()) QMainWindow::showMaximized(); //if maximized, then also call showMaximized
+	//Then Main Window geometry
+	QMainWindow::resize( p->geometry().size() ); //Don't use QMainWindowInterface::resize
+	QMainWindow::move( p->geometry().topLeft() );//Don't use QMainWindowInterface::move
+	
+	const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
+	//make sure actions are updated by calling the slot functions
+	//updatesEnabled in the MDI area is false atm, so changes won't actually be displayed yet
+	switch(newArrangementMode){
+		case CMDIArea::ArrangementModeTileVertical: slotAutoTileVertical(); break;
+		case CMDIArea::ArrangementModeTileHorizontal: slotAutoTileHorizontal(); break;
+		case CMDIArea::ArrangementModeCascade: slotAutoCascade(); break;
+		default: slotManualArrangementMode(); break;
+	}
 }
 
-/** Stores the settings of the mainwindow in the profile p */
 void BibleTime::storeProfileSettings( CProfile* p ) {
 	Q_ASSERT(p && m_windowFullscreen_action);
 	if (!p || !m_windowFullscreen_action) return;
@@ -481,5 +483,7 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
 	geometry.setTopLeft(pos());
 	geometry.setSize(size());
 	p->setGeometry(geometry);
+	
+	p->setMDIArrangementMode(m_mdi->getMDIArrangementMode());
 }
 

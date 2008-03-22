@@ -7,12 +7,11 @@
 *
 **********/
 
-
-
 #ifndef CPROFILE_H
 #define CPROFILE_H
 
 #include "cprofilewindow.h"
+#include "frontend/cmdiarea.h"
 
 //Qt includes
 #include <QList>
@@ -81,6 +80,15 @@ public:
 	* Returns the geometry of the main window
 	*/
 	const QRect geometry();
+	/**
+	* Sets the MDI arrangement mode
+	*/
+	void setMDIArrangementMode(const CMDIArea::MDIArrangementMode);
+	/**
+	* Returns mdi arrangement mode
+	*/
+	const CMDIArea::MDIArrangementMode getMDIArrangementMode(void);
+
 
 private:
 	/**
@@ -95,6 +103,7 @@ private:
 	bool m_fullscreen;
 	bool m_maximized;
 	QRect m_geometry;
+	CMDIArea::MDIArrangementMode m_mdiArrangementMode;
 };
 
 } //end of namespace Profile

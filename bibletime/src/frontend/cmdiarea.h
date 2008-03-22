@@ -29,22 +29,26 @@ class QMdiSubWindow;
  */
 class CMDIArea : public QMdiArea {
 	Q_OBJECT
+	Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
 public:
 	/**
 	* The options you can set for this widget.
 	*/
-	enum MDIOption {
-		autoTileVertical,
-		autoTileHorizontal,
-		autoCascade,
-		Nothing
+	enum MDIArrangementMode {
+		ArrangementModeTileVertical = 1,
+		ArrangementModeTileHorizontal = 2,
+		ArrangementModeCascade = 3,
+		ArrangementModeManual = 4,
+		MDIArrangementModeMIN = ArrangementModeTileVertical,
+		MDIArrangementModeMAX = ArrangementModeManual
 	};
 	CMDIArea(QWidget *parent);
 	/**
-	* Enable / disable autoCascading
 	*/
-	void setGUIOption( const MDIOption& newOption );
+	void setMDIArrangementMode( const MDIArrangementMode );
+	/** */
+	const MDIArrangementMode getMDIArrangementMode(void);
 	/**
 	*/
 	void emitWindowCaptionChanged();
@@ -102,7 +106,7 @@ private:
 	bool eventFilter( QObject *o, QEvent *e );
 	/**
 	 */
-	MDIOption m_guiOption;
+	MDIArrangementMode m_mdiArrangementMode;
 };
 
 /** Emits the signal to create a new display window in the MDI area. */

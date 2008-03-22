@@ -236,39 +236,39 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
-		m_mdi->setGUIOption( CMDIArea::Nothing );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 	}
 	else if (clickedAction == m_windowAutoTileVertical_action) {
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
-		m_mdi->setGUIOption( CMDIArea::autoTileVertical );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
 	}
 	else if (clickedAction == m_windowAutoTileHorizontal_action) {
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileVertical_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
-		m_mdi->setGUIOption( CMDIArea::autoTileHorizontal );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
 	}
 	else if (clickedAction == m_windowAutoCascade_action) {
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoTileVertical_action->setChecked(false);
 
-		m_mdi->setGUIOption( CMDIArea::autoCascade );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
 	}
 	else if (clickedAction == m_windowCascade_action) {
-		m_mdi->setGUIOption( CMDIArea::Nothing );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myCascade();
 	}
 	else if (clickedAction == m_windowTileVertical_action) {
-		m_mdi->setGUIOption( CMDIArea::Nothing );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myTileVertical();
 	}
 	else if (clickedAction == m_windowTileHorizontal_action) {
-		m_mdi->setGUIOption( CMDIArea::Nothing );
+		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myTileHorizontal();
 	}
 }
@@ -446,10 +446,10 @@ void BibleTime::loadProfile(CProfile* p) {
 
 	QList<CProfileWindow*> windows = p->load();
 
+	m_mdi->setUpdatesEnabled(false);//don't auto tile or auto cascade, this would mess up everything!!
+
 	//load mainwindow setttings
 	applyProfileSettings(p);
-
-	m_mdi->setUpdatesEnabled(false);//don't auto tile or auto cascade, this would mess up everything!!
 
 	QWidget* focusWindow = 0;
 

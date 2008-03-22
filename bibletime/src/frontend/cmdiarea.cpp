@@ -16,7 +16,7 @@
 #include <QDebug>
 
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
-	m_guiOption(Nothing)
+	m_mdiArrangementMode(ArrangementModeManual)
 {
 	connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
 }
@@ -56,18 +56,19 @@ void CMDIArea::resizeEvent(QResizeEvent* e) {
 	if (updatesEnabled()) triggerWindowUpdate();
 }
 
-/** Deletes all the presenters in the MDI area. */
 void CMDIArea::deleteAll() {
 	closeAllSubWindows();
 }
 
-/** Enable / disable autoCascading */
-void CMDIArea::setGUIOption( const MDIOption& newOption ) {
-	m_guiOption = newOption;
+void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMode ) {
+	m_mdiArrangementMode = newArrangementMode;
 	triggerWindowUpdate();
 }
 
-/**  */
+const CMDIArea::MDIArrangementMode CMDIArea::getMDIArrangementMode(void) {
+	return m_mdiArrangementMode;
+}
+
 void CMDIArea::myTileVertical() {
 	if (!updatesEnabled() || !usableWindowList().count() ) {
 		return;
@@ -201,14 +202,14 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 
 void CMDIArea::triggerWindowUpdate() {
 	if (updatesEnabled()) {
-		switch (m_guiOption) {
-			case autoTileVertical:
+		switch (m_mdiArrangementMode) {
+			case ArrangementModeTileVertical:
 				QTimer::singleShot(0, this, SLOT(myTileVertical()));
 				break;
-			case autoTileHorizontal:
+			case ArrangementModeTileHorizontal:
 				QTimer::singleShot(0, this, SLOT(myTileHorizontal()));
 				break;
-			case autoCascade:
+			case ArrangementModeCascade:
 				QTimer::singleShot(0, this, SLOT(myCascade()));
 				break;
 			default:

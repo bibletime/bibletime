@@ -16,10 +16,7 @@
 #include <QTextStream>
 #include <QDomDocument>
 
-//KDE includes
-
-
-#define CURRENT_SYNTAX_VERSION 2
+#define CURRENT_SYNTAX_VERSION 3
 
 namespace Profile {
 
@@ -27,10 +24,9 @@ CProfile::CProfile( const QString& file, const QString& name )
 	: m_name(name.isEmpty() ? QObject::tr("unknown") : name),
 	m_filename(file),
 	m_fullscreen(false),
-	m_geometry(10,20,640,480)
+	m_geometry(10,20,640,480),
+	m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) //0 is not a valid enum entry, means "unknown"
 {
-
-	//m_profileWindows.setAutoDelete(true); //see dtor
 	if (!m_filename.isEmpty() && name.isEmpty()) {
 		loadBasics();
 	}
@@ -76,7 +72,6 @@ QList<CProfileWindow*> CProfile::load() {
 		m_name = document.attribute("name");
 	}
 
-
 	//load settings of the main window
 	{
 		// see if there's a section with the name MAINWINDOW
@@ -91,27 +86,33 @@ QList<CProfileWindow*> CProfile::load() {
 		}
 		if (!mainWindow.isNull()) { //was found
 			setFullscreen( (bool)mainWindow.attribute("fullscreen").toInt());
-			QDomElement object = mainWindow.namedItem("GEOMETRY").toElement();
+			QDomElement geometry_element = mainWindow.namedItem("GEOMETRY").toElement();
 			QRect rect;
-			if(!object.isNull()) {
-				if (object.hasAttribute("x")) {
-					rect.setX(object.attribute("x").toInt());
+			if(!geometry_element.isNull()) {
+				if (geometry_element.hasAttribute("x")) {
+					rect.setX(geometry_element.attribute("x").toInt());
 				}
-				if (object.hasAttribute("y")) {
-					rect.setY(object.attribute("y").toInt());
+				if (geometry_element.hasAttribute("y")) {
+					rect.setY(geometry_element.attribute("y").toInt());
 				}
-				if (object.hasAttribute("width")) {
-					rect.setWidth(object.attribute("width").toInt());
+				if (geometry_element.hasAttribute("width")) {
+					rect.setWidth(geometry_element.attribute("width").toInt());
 				}
-				if (object.hasAttribute("height")) {
-					rect.setHeight(object.attribute("height").toInt());
+				if (geometry_element.hasAttribute("height")) {
+					rect.setHeight(geometry_element.attribute("height").toInt());
 				}
-				if (object.hasAttribute("isMaximized")) {
-					this->setMaximized( static_cast<bool>(object.attribute("isMaximized").toInt()) );
+				if (geometry_element.hasAttribute("isMaximized")) {
+					this->setMaximized( static_cast<bool>(geometry_element.attribute("isMaximized").toInt()) );
 				}
-
+				setGeometry(rect);
 			}
-			setGeometry(rect);
+			
+			QDomElement mdi_element = mainWindow.namedItem("MDI").toElement();
+			if(!mdi_element.isNull()) {
+				if (mdi_element.hasAttribute("ArrangementMode")) {
+					this->setMDIArrangementMode((CMDIArea::MDIArrangementMode)mdi_element.attribute("ArrangementMode").toInt());
+				}
+			}
 		}
 	}
 
@@ -225,6 +226,10 @@ const bool CProfile::save(QList<CProfileWindow*> windows) {
 		geometry.setAttribute("width",r.width());
 		geometry.setAttribute("height",r.height());
 		geometry.setAttribute("isMaximized",static_cast<int>(this->maximized()));
+		
+		QDomElement mdi = doc.createElement("MDI");
+		mainWindow.appendChild(mdi);
+		mdi.setAttribute("ArrangementMode",static_cast<int>(this->getMDIArrangementMode()));
 
 		content.appendChild(mainWindow);
 	}
@@ -395,5 +400,17 @@ const QRect CProfile::geometry() {
 void CProfile::setGeometry( const QRect rect ) {
 	m_geometry = rect;
 }
+
+void CProfile::setMDIArrangementMode(const CMDIArea::MDIArrangementMode newArrangementMode)
+{
+	m_mdiArrangementMode = newArrangementMode;
+}
+
+const CMDIArea::MDIArrangementMode CProfile::getMDIArrangementMode(void)
+{
+	return m_mdiArrangementMode;
+}
+
+
 
 } //end of namespace Profile
