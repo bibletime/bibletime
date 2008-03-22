@@ -84,13 +84,14 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget)
 	item->setTextAlignment(Qt::AlignHCenter);
 	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
-	//set the list width - initially it's too wide
+	//set the list width - it may bee too wide (if there were no pages) or too narrow
 	if (m_maxItemWidth < m_contentsList->visualItemRect(item).width()) {
 		m_maxItemWidth = m_contentsList->visualItemRect(item).width();
 		m_contentsList->setFixedWidth( m_maxItemWidth + (m_contentsList->frameWidth()*2) );
 	}
-	else {
-		item->setSizeHint(QSize(m_maxItemWidth, m_contentsList->visualItemRect(item).height()) );
+	// all items should has the same width
+	for(int i = 0; i < m_contentsList->count(); ++i) {
+		m_contentsList->item(i)->setSizeHint(QSize(m_maxItemWidth, m_contentsList->visualItemRect(m_contentsList->item(i)).height()) );
 	}
 
 	slotChangePage(m_contentsList->row(item));
