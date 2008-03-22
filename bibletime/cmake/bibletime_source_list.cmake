@@ -94,11 +94,14 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp
 	src/frontend/bookshelfmanager/new/backend.cpp
 	src/frontend/bookshelfmanager/new/bt_installmgr.cpp
+
 	src/frontend/bookshelfmanager/new/installpage/btinstallthread.cpp
 	src/frontend/bookshelfmanager/new/installpage/btinstallprogressdialog.cpp
 	src/frontend/bookshelfmanager/new/installpage/btsourcewidget.cpp
 	src/frontend/bookshelfmanager/new/installpage/btsourcearea.cpp
 	src/frontend/bookshelfmanager/new/installpage/btinstallmodulechooserdialog.cpp
+	src/frontend/bookshelfmanager/new/installpage/btinstallpathdialog.cpp
+
 	src/frontend/bookshelfmanager/new/removepage/btremovepage.cpp
 	src/frontend/bookshelfmanager/new/indexpage/btindexpage.cpp
 
