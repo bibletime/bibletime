@@ -26,57 +26,69 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QHeaderView>
+#include <QDialogButtonBox>
 
 BtInstallPathDialog::BtInstallPathDialog()
 {
 
-	QGridLayout* layout = new QGridLayout(this);
-	layout->setMargin(5);
+    QVBoxLayout *mainLayout;
+    QHBoxLayout *viewLayout;
 
-	layout->setSpacing(10);
-	layout->setColumnStretch(0,1);
-	layout->setRowStretch(5,1);
+    mainLayout = new QVBoxLayout(this);
+    viewLayout = new QHBoxLayout();
 
 	QLabel* mainLabel = CToolClass::explanationLabel(this,
 						tr("Configure install paths"),
 						tr("New works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.")
 													);
-	layout->addWidget(mainLabel, 0, 0, 1, 2);
+	mainLayout->addWidget(mainLabel);
 
 	QString swordConfPath = backend::configFilename();
 	QLabel* confPathLabel = new QLabel(tr("Configuration file for the paths is: ").append("<b>%1</b>").arg(swordConfPath), this);
 	confPathLabel->setWordWrap(true);
-	layout->addWidget(confPathLabel, 1, 0, 1, 2);
+	mainLayout->addWidget(confPathLabel);
 
-	m_swordPathListBox = new QTreeWidget(this);
+
+    m_swordPathListBox = new QTreeWidget(this);
 	m_swordPathListBox->header()->hide();
 
 	QStringList targets = backend::targetList();
-	m_swordPathListBox->clear();
-
 	for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
 		if ((*it).isEmpty()) continue;
 		new QTreeWidgetItem(m_swordPathListBox, QStringList(*it) );
 	}
+	
+	viewLayout->addWidget(m_swordPathListBox);
 
-	layout->addWidget(m_swordPathListBox, 2, 0, 4, 1);
-
-	m_editButton = new QPushButton(tr("Edit..."), this);
-	m_editButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit"));
-	connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
-	layout->addWidget(m_editButton, 2, 1);
+    QVBoxLayout* buttonLayout = new QVBoxLayout();
 
 	m_addButton = new QPushButton(tr("Add..."), this);
 	m_addButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_add"));
 	connect(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
-	layout->addWidget(m_addButton, 3, 1);
+    buttonLayout->addWidget(m_addButton);
+
+	m_editButton = new QPushButton(tr("Edit..."), this);
+	m_editButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit"));
+	connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
+	buttonLayout->addWidget(m_editButton);
 
 	m_removeButton = new QPushButton(tr("Remove"), this);
 	m_removeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("editdelete"));
 	connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));
-	layout->addWidget(m_removeButton, 4, 1);
+    buttonLayout->addWidget(m_removeButton);
 
-	//TODO: dialogbuttonbox ok cancel
+	QSpacerItem* spacerItem = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+	buttonLayout->addItem(spacerItem);
+
+	viewLayout->addLayout(buttonLayout);
+	mainLayout->addLayout(viewLayout);
+
+	QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
+	buttonBox->setOrientation(Qt::Horizontal);
+	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
+    mainLayout->addWidget(buttonBox);
+	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
 }
 
