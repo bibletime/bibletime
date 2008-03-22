@@ -36,7 +36,6 @@ private:
 	QPushButton* m_removeButton;
 	QTreeWidget* m_swordPathListBox;
 
-
 };
 
 #endif

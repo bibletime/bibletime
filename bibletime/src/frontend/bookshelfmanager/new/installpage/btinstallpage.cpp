@@ -11,6 +11,8 @@
 #include "btinstallpage.h"
 #include "btinstallpage.moc"
 
+#include "btinstallpathdialog.h"
+
 #include "frontend/bookshelfmanager/new/bt_installmgr.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfmanager/new/btconfigdialog.h"
@@ -94,7 +96,6 @@ void BtInstallPage::initView()
 	m_pathCombo = new QComboBox();
 	initPathCombo(); // set the paths and the current path
 	m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
-	m_configurePathButton->setEnabled(false); // TODO: fix after there is a dialog for this
 	
 	pathLayout->addItem(pathSpacer);
 	pathLayout->addWidget(pathLabel);
@@ -152,10 +153,11 @@ void BtInstallPage::slotEditPaths()
 	qDebug("void BtInstallPage::slotEditPaths() start");
 	// Now: do nothing, editing is done in another page
 	// (we have to catch the signal sent from there to refresh the combo?)
-	return;
+	//return;
  
 	// Later: open the dialog
-	
+	BtInstallPathDialog* dlg = new BtInstallPathDialog();
+	dlg->exec();
 	// if the dialog was accepted, set the paths and save them
 	// and repopulate the combo
 }

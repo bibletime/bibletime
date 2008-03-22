@@ -13,6 +13,7 @@
 #include "frontend/bookshelfmanager/new/backend.h"
 
 #include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 #include <QString>
 #include <QDialog>
@@ -24,10 +25,10 @@
 #include <QPushButton>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QHeaderView>
 
 BtInstallPathDialog::BtInstallPathDialog()
 {
-	//this->setMinimumSize(500,400);
 
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(5);
@@ -42,14 +43,22 @@ BtInstallPathDialog::BtInstallPathDialog()
 													);
 	layout->addWidget(mainLabel, 0, 0, 1, 2);
 
-	// TODO: use backend::
-	QString swordConfPath = BTInstallMgr::Tool::LocalConfig::swordConfigFilename();
+	QString swordConfPath = backend::configFilename();
 	QLabel* confPathLabel = new QLabel(tr("Configuration file for the paths is: ").append("<b>%1</b>").arg(swordConfPath), this);
 	confPathLabel->setWordWrap(true);
 	layout->addWidget(confPathLabel, 1, 0, 1, 2);
 
 	m_swordPathListBox = new QTreeWidget(this);
-	
+	m_swordPathListBox->header()->hide();
+
+	QStringList targets = backend::targetList();
+	m_swordPathListBox->clear();
+
+	for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
+		if ((*it).isEmpty()) continue;
+		new QTreeWidgetItem(m_swordPathListBox, QStringList(*it) );
+	}
+
 	layout->addWidget(m_swordPathListBox, 2, 0, 4, 1);
 
 	m_editButton = new QPushButton(tr("Edit..."), this);
@@ -66,6 +75,9 @@ BtInstallPathDialog::BtInstallPathDialog()
 	m_removeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("editdelete"));
 	connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));
 	layout->addWidget(m_removeButton, 4, 1);
+
+	//TODO: dialogbuttonbox ok cancel
+
 }
 
 void BtInstallPathDialog::slotEditClicked() {
@@ -82,10 +94,8 @@ void BtInstallPathDialog::slotEditClicked() {
 				if (result != QMessageBox::Yes) return;
 			}
 			i->setText(0, dir.canonicalPath());
-			m_swordSetupChanged = true;
+
 			writeSwordConfig(); //to make sure other parts work with the new setting
-			populateInstallCombos(); //update target list bof on install page
-			populateRemoveModuleListView();
 		}
 	}
 }
@@ -96,7 +106,6 @@ void BtInstallPathDialog::slotAddClicked() {
 		return;
 	}
 	QDir dir = QDir(dirname);
-	//qDebug() << "dir object:"<< dir.canonicalPath();
 	if (dir.isReadable()) {
 		const QFileInfo fi( dir.canonicalPath() );
 		if (!fi.exists() || !fi.isWritable()) {
@@ -106,13 +115,9 @@ void BtInstallPathDialog::slotAddClicked() {
 			}
 		}
 		new QTreeWidgetItem(m_swordPathListBox, QStringList(dir.canonicalPath()) );
-		m_swordSetupChanged = true;
-		
-		//TODO: signal is not needed, this is a modal dialog and the list can
-		// be updated after closing this
+
+
 		writeSwordConfig(); //to make sure other parts work with the new setting
-		//populateInstallCombos();     //update target list bof on install page
-		//populateRemoveModuleListView();
 	}
 }
 
@@ -121,10 +126,12 @@ void BtInstallPathDialog::slotRemoveClicked() {
 	if (i) {
 		delete i;
 
-		// todo: see above
-		m_swordSetupChanged = true;
+
 		writeSwordConfig(); //to make sure other parts work with the new setting
-		populateInstallCombos(); //update target list bof on install page
-		populateRemoveModuleListView();
 	}
+}
+
+void BtInstallPathDialog::writeSwordConfig()
+{
+	//TODO: send signal
 }
