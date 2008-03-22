@@ -31,7 +31,7 @@ void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
 
 /** Reimplementation. Used to make use of the fixedGUIOption part. */
 void CMDIArea::childEvent( QChildEvent * e ) {
-	//qDebug() << "CMDIArea::childEvent type" << int(e->type());
+	qDebug() << "CMDIArea::childEvent type" << int(e->type());
 	if (!e) return;
 
 	if (!subWindowList().count()) {
@@ -43,7 +43,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 			e->child()->installEventFilter(this); //make sure we catch the events of the new window
 		}
 		else if (e->removed() && e->child() && e->child()->inherits("CDisplayWindow")) {
-			e->child()->removeEventFilter(this); //make sure we catch the events of the new window
+			e->child()->removeEventFilter(this);
 		}
 		triggerWindowUpdate();
 	}
@@ -83,6 +83,7 @@ void CMDIArea::myTileVertical() {
 		QMdiArea::tileSubWindows();
 		if (active) active->setFocus();
 	}
+	emitWindowCaptionChanged();
 }
 
 void CMDIArea::myTileHorizontal() {
@@ -114,7 +115,7 @@ void CMDIArea::myTileHorizontal() {
 		active->setFocus();
 		setUpdatesEnabled(true);
 	}
-
+	emitWindowCaptionChanged();
 }
 
 void CMDIArea::myCascade() {
@@ -165,6 +166,7 @@ void CMDIArea::myCascade() {
 
 		setUpdatesEnabled(true);
 	}
+	emitWindowCaptionChanged();
 }
 
 void CMDIArea::emitWindowCaptionChanged() {
@@ -192,11 +194,15 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>( o );
 	//if (w) qDebug() << "CMDIArea::eventFilter called for CMdiSubWindow, e is type" << (int)(e->type());
- 	if ( w && (e->type() == QEvent::WindowStateChange) ) {
+ 	if (w && (e->type() == QEvent::WindowStateChange) ) {
  		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
 			triggerWindowUpdate();
 		}
 	}
+ 	if (w && (e->type() == QEvent::Close))
+ 	{
+ 		triggerWindowUpdate();
+ 	}
 	return false; //let the event be handled by other filters too
 }
 
@@ -213,7 +219,6 @@ void CMDIArea::triggerWindowUpdate() {
 				QTimer::singleShot(0, this, SLOT(myCascade()));
 				break;
 			default:
-				qDebug("CMDIArea::triggerWindowUpdate: no known m_guiType");
 				break;
 		}
 	}
