@@ -52,7 +52,7 @@ void CMDIArea::childEvent( QChildEvent * e ) {
 
 /** Reimplementation */
 void CMDIArea::resizeEvent(QResizeEvent* e) {
-	QMdiArea::resizeEvent(e);
+	//do not call QMdiArea::resizeEvent(e), this would mess up our layout
 	if (updatesEnabled()) triggerWindowUpdate();
 }
 
