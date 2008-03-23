@@ -75,6 +75,9 @@ public:
 	/** Return the path to the default display template files. */
 	static QDir getDisplayTemplatesDir(void);
 
+	/** Return the path to the user's home directory.*/
+	static QDir getUserHomeDir(void);
+
 	/** Return the path to the user's settings directory.*/
 	static QDir getUserBaseDir(void);
 

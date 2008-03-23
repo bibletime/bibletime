@@ -110,6 +110,7 @@ static QDir cachedHowtoDir;
 static QDir cachedDisplayTemplatesDir;
 static QDir cachedUserDisplayTemplatesDir;
 static QDir cachedUserBaseDir;
+static QDir cachedUserHomeDir;
 static QDir cachedUserSessionsDir;
 static QDir cachedUserCacheDir;
 static QDir cachedUserIndexDir;
@@ -175,6 +176,8 @@ void DirectoryUtil::initDirectoryCache(void)
 		qWarning() << "Cannot find display template directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
+
+	cachedUserHomeDir = QDir::home();
 
 	cachedUserBaseDir = QDir::home();
 	if (!cachedUserBaseDir.cd(".bibletime")){
@@ -285,6 +288,12 @@ QDir DirectoryUtil::getUserBaseDir(void)
 {
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedUserBaseDir;
+}
+
+QDir DirectoryUtil::getUserHomeDir(void)
+{
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedUserHomeDir;
 }
 
 QDir DirectoryUtil::getUserSessionsDir(void)
