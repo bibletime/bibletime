@@ -11,17 +11,17 @@
 #ifndef CSWORDSETUPINSTALLSOURCESDIALOG_H
 #define CSWORDSETUPINSTALLSOURCESDIALOG_H
 
-#include "btinstallmgr.h"
+#include "frontend/bookshelfmanager/bt_installmgr.h"
 
 #include <QDialog>
 
+#include <sword/installmgr.h>
 
 class QLabel;
 class QComboBox;
 class QLineEdit;
 
 
-namespace BookshelfManager {
 
 class CSwordSetupInstallSourcesDialog : public QDialog  {
 		Q_OBJECT
@@ -40,8 +40,7 @@ private:
 		QLabel    *m_serverLabel;
 		QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
 		QComboBox *m_protocolCombo;
-	};
+};
 
-} //namespace
 
 #endif //CSWORDSETUPINSTALLSOURCESDIALOG_H

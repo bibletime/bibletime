@@ -10,7 +10,7 @@
 #include "btsourcearea.h"
 #include "btsourcearea.moc"
 
-#include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/backend.h"
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"

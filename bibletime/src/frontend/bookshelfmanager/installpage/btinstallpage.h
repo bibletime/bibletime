@@ -11,7 +11,7 @@
 #define BTINSTALLPAGE_H
 
 
-#include "frontend/bookshelfmanager/new/btconfigdialog.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include <QString>
 

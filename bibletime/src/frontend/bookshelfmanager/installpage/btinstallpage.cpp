@@ -13,17 +13,17 @@
 
 #include "btinstallpathdialog.h"
 
-#include "frontend/bookshelfmanager/new/bt_installmgr.h"
-#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/new/btconfigdialog.h"
-#include "frontend/bookshelfmanager/new/backend.h"
 #include "btinstallprogressdialog.h"
 #include "btsourcewidget.h"
 #include "btsourcearea.h"
-#include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
+
+#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
 #include "frontend/cmodulechooserdialog.h"
-
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"

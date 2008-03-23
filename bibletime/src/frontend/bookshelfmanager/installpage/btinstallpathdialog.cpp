@@ -10,7 +10,7 @@
 #include "btinstallpathdialog.h"
 #include "btinstallpathdialog.moc"
 
-#include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/backend.h"
 
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
@@ -28,6 +28,8 @@
 #include <QHeaderView>
 #include <QDialogButtonBox>
 
+#include <QDebug>
+
 BtInstallPathDialog::BtInstallPathDialog()
 {
 
@@ -43,7 +45,7 @@ BtInstallPathDialog::BtInstallPathDialog()
 													);
 	mainLayout->addWidget(mainLabel);
 
-	QString swordConfPath = backend::configFilename();
+	QString swordConfPath = backend::swordConfigFilename();
 	QLabel* confPathLabel = new QLabel(tr("Configuration file for the paths is: ").append("<b>%1</b>").arg(swordConfPath), this);
 	confPathLabel->setWordWrap(true);
 	mainLayout->addWidget(confPathLabel);
@@ -106,8 +108,6 @@ void BtInstallPathDialog::slotEditClicked() {
 				if (result != QMessageBox::Yes) return;
 			}
 			i->setText(0, dir.canonicalPath());
-
-			writeSwordConfig(); //to make sure other parts work with the new setting
 		}
 	}
 }
@@ -127,9 +127,6 @@ void BtInstallPathDialog::slotAddClicked() {
 			}
 		}
 		new QTreeWidgetItem(m_swordPathListBox, QStringList(dir.canonicalPath()) );
-
-
-		writeSwordConfig(); //to make sure other parts work with the new setting
 	}
 }
 
@@ -137,13 +134,28 @@ void BtInstallPathDialog::slotRemoveClicked() {
 	QTreeWidgetItem* i = m_swordPathListBox->currentItem();
 	if (i) {
 		delete i;
-
-
-		writeSwordConfig(); //to make sure other parts work with the new setting
 	}
 }
 
 void BtInstallPathDialog::writeSwordConfig()
 {
-	//TODO: send signal
+	qDebug("BtInstallPathDialog::writeSwordConfig");
+	if (m_swordPathListBox->topLevelItemCount() > 1) {
+		QStringList targets;
+		QTreeWidgetItemIterator it(m_swordPathListBox);
+		while (*it) {
+			if (!(*it)->text(0).isEmpty()) {
+				targets << (*it)->text(0);
+			}
+			++it;
+		}
+		qDebug() << "save the target list" << targets;
+		backend::setTargetList(targets); //creates new Sword config
+	}
+}
+
+void BtInstallPathDialog::accept()
+{
+	writeSwordConfig();
+	QDialog::accept();
 }

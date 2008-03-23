@@ -10,8 +10,8 @@
 #include "btinstallthread.h"
 #include "btinstallthread.moc"
 
-#include "frontend/bookshelfmanager/new/bt_installmgr.h"
-#include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/backend.h"
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
 

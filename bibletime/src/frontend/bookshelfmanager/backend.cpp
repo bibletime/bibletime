@@ -1,6 +1,6 @@
 #include "backend.h"
 
-#include "frontend/bookshelfmanager/new/bt_installmgr.h"
+#include "frontend/bookshelfmanager/bt_installmgr.h"
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
@@ -145,30 +145,33 @@ QStringList targetList()
 	return names;
 }
 
-void setTargetList( const QStringList& targets )
+bool setTargetList( const QStringList& targets )
 {
 	qDebug("backend::setTargetList");
-	//saves a new Sworc config using the provided target list
+	//saves a new Sword config using the provided target list
 	//QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
-	QString filename = util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
+	//QString filename = util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
 	bool directAccess = false;
-
-	QFileInfo i(swordConfigFilename());
+	QString filename = swordConfigFilename();
+	QFileInfo i(filename);
 	QFileInfo dirInfo(i.absolutePath());
 
 	if ( i.exists() && i.isWritable() ) { //we can write to the file ourself
-		filename = swordConfigFilename();
-		directAccess = true;
+
 	}
-	else if ( !i.exists() && dirInfo.isWritable() ) { // if the file doesn't exist but th eparent is writable for us, create it
-		filename = swordConfigFilename();
-		directAccess = true;
+	else if ( !i.exists() && dirInfo.isWritable() ) {
+		// if the file doesn't exist but the parent is writable, create it
+		//TODO: create the file!
+
+	}
+	else if (!i.isWritable() || (!i.exists() && !dirInfo.isWritable()) ) {
+		// There is no way to save to the file
+		return false;
 	}
 
-	bool setDataPath = false;
 	SWConfig conf(filename.toLocal8Bit());
 	conf.Sections.clear();
-
+	bool setDataPath = false;
 	for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
 		QString t = *it;
 		if (t.contains( util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword") )) {
@@ -176,21 +179,13 @@ void setTargetList( const QStringList& targets )
 			continue;
 		}
 		else {
+			qDebug() << "Add path to the conf file" << filename << ":" << t;
 			conf["Install"].insert( std::make_pair(!setDataPath ? SWBuf("DataPath") : SWBuf("AugmentPath"), t.toLocal8Bit().data()) );
 			setDataPath = true;
 		}
 	}
 	conf.Save();
-
-// 	TODO: check to see how this can be reactivated (and how about Qt-only?)
-// 	if (!directAccess) { //use kdesu to move the file to the right place
-// 		KProcess *proc = new KProcess;
-// 		*proc << "kdesu";
-// 		*proc << QString::fromLatin1("-c") << QString("mv %1 %2").arg(filename).arg(LocalConfig::swordConfigFilename());
-// 		proc->start();
-// 		proc->waitForFinished();
-// 	}
-
+	return true;
 }
 
 QStringList sourceList()
@@ -235,6 +230,7 @@ void initPassiveFtpMode()
 const QString swordConfigFilename()
 {
 	qDebug("backend::swordConfigFilename");
+	qDebug() << util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
 	return util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
 }
 

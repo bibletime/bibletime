@@ -11,7 +11,7 @@
 #include "bt_installmgr.h"
 #include "bt_installmgr.moc"
 
-#include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/backend.h"
 #include "backend/managers/cswordbackend.h"
 
 //Qt includes

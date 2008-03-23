@@ -11,7 +11,7 @@
 #ifndef BTREMOVEPAGE_H
 #define BTREMOVEPAGE_H
 
-#include "frontend/bookshelfmanager/new/btconfigdialog.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 #include "backend/btmoduletreeitem.h"
 
 #include <QString>

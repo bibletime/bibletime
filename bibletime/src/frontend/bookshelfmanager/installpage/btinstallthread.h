@@ -10,7 +10,7 @@
 #ifndef BTINSTALLTHREAD_H
 #define BTINSTALLTHREAD_H
 
-#include "frontend/bookshelfmanager/new/bt_installmgr.h"
+#include "frontend/bookshelfmanager/bt_installmgr.h"
 
 #include <QThread>
 

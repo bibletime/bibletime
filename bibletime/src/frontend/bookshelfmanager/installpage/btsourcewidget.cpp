@@ -15,10 +15,10 @@
 #include "btinstallprogressdialog.h"
 #include "btinstallmodulechooserdialog.h"
 
-#include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/new/bt_installmgr.h"
-#include "frontend/bookshelfmanager/new/backend.h"
+#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/backend.h"
 
 
 #include <QString>
@@ -104,7 +104,7 @@ void BtSourceWidget::slotAdd()
 {
 	qDebug("void BtSourceWidget::slotAdd() start");
 	qDebug("open the old dialog, TODO: write new one");
-	sword::InstallSource newSource = BookshelfManager::CSwordSetupInstallSourcesDialog::getSource();
+	sword::InstallSource newSource = CSwordSetupInstallSourcesDialog::getSource();
 	if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
 		backend::addSource(newSource);
 		addSource(QString(newSource.caption.c_str()));

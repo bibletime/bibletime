@@ -21,7 +21,6 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "frontend/bookshelfmanager/cswordsetupdialog.h"
 #include "frontend/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
@@ -29,9 +28,7 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
-
-// testing the new module manager dialog
-#include "frontend/bookshelfmanager/new/btmodulemanagerdialog.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
 //QT includes
 #include <QClipboard>
@@ -109,23 +106,13 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-	if (!(qApp->property("modulemanager").isValid())) {
-	BookshelfManager::CSwordSetupDialog *dlg = new BookshelfManager::CSwordSetupDialog(this);
-	connect(dlg, SIGNAL(signalSwordSetupChanged()), SLOT(slotSwordSetupChanged()) );
+	//TODO: nonmodal dialog, memory management (one instance only! which is hidden between calls, like search dialog)
+	BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
+	connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
-	dlg->exec();
-	dlg->delayedDestruct();
-
-	}else {
-		//TODO: nonmodal dialog, memory management (one instance only! which is hidden between calls, like search dialog)
-		BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
-		connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
-		//dlg->exec();
-		//dlg->delayedDestruct();
-		dlg->show();
-		dlg->raise();
-		dlg->activateWindow();
-	}
+	dlg->show();
+	dlg->raise();
+	dlg->activateWindow();
 }
 
 /** Is called when settings in the sword setup dialog were changed (ok or apply) */

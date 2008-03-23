@@ -28,6 +28,9 @@ bool isRemote(const sword::InstallSource& source);
 /** Returns the list of available install target paths. */
 QStringList targetList();
 
+/** Saves the list of available install target paths to the sword config. Return success indicator.*/
+bool setTargetList( const QStringList& targets );
+
 QStringList sourceList();
 
 /** Returns the path of the sword installer configuration file. */

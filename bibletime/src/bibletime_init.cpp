@@ -19,8 +19,6 @@
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
-#include "frontend/bookshelfmanager/cswordsetupdialog.h"
-#include "frontend/bookshelfmanager/cmanageindiceswidget.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/kstartuplogo.h"
 #include "frontend/cprinter.h"
@@ -407,44 +405,46 @@ void BibleTime::initBackends() {
 	else {
 		m_moduleList = 0;
 		//show error message that initBackend failed
-		switch (errorCode) {
-			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
-			{
-				KStartupLogo::hideSplash();
-				qDebug("case CSwordBackend::NoSwordConfig");
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				dlg.exec();
-				break;
-			}
-
-			case CSwordBackend::NoModules: //no modules installed, but config exists
-			{
-				KStartupLogo::hideSplash();
-				qDebug("case CSwordBackend::NoModules");
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
-				dlg.exec();
-				break;
-			}
-
-			default: //unknown error
-			{
-				KStartupLogo::hideSplash();
-				qDebug("unknown error");
-				BookshelfManager::CSwordSetupDialog dlg;
-				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
-				dlg.exec();
-				break;
-			}
-		}
+		//TODO:
+// 		switch (errorCode) {
+// 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
+// 			{
+// 				KStartupLogo::hideSplash();
+// 				qDebug("case CSwordBackend::NoSwordConfig");
+// 				BookshelfManager::CSwordSetupDialog dlg;
+// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+// 				dlg.exec();
+// 				break;
+// 			}
+// 
+// 			case CSwordBackend::NoModules: //no modules installed, but config exists
+// 			{
+// 				KStartupLogo::hideSplash();
+// 				qDebug("case CSwordBackend::NoModules");
+// 				BookshelfManager::CSwordSetupDialog dlg;
+// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
+// 				dlg.exec();
+// 				break;
+// 			}
+// 
+// 			default: //unknown error
+// 			{
+// 				KStartupLogo::hideSplash();
+// 				qDebug("unknown error");
+// 				BookshelfManager::CSwordSetupDialog dlg;
+// 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
+// 				dlg.exec();
+// 				break;
+// 			}
+// 		}
 	}
 
 	KStartupLogo::setStatusMessage(tr("Checking indices") + QString("..."));
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false
-	BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
+	//BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
+	//TODO: //backend::deleteOrphanedIndices();
 	
 }
 

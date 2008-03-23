@@ -82,28 +82,22 @@ SET(bibletime_SOURCES
 	src/frontend/settingsdialogs/cconfigurationdialog.cpp
 
 	#Bookshelf manager frontend
-	src/frontend/bookshelfmanager/cmanageindiceswidget.cpp
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
-	src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp
-	src/frontend/bookshelfmanager/cswordsetupdialog.cpp
-	src/frontend/bookshelfmanager/btinstallmgr.cpp
+	src/frontend/bookshelfmanager/btconfigdialog.cpp
+	src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
+	src/frontend/bookshelfmanager/backend.cpp
+	src/frontend/bookshelfmanager/bt_installmgr.cpp
 
-	#new bookshelf manager classes - temporary
-	src/frontend/bookshelfmanager/new/btconfigdialog.cpp
-	src/frontend/bookshelfmanager/new/installpage/btinstallpage.cpp
-	src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp
-	src/frontend/bookshelfmanager/new/backend.cpp
-	src/frontend/bookshelfmanager/new/bt_installmgr.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallthread.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp
+	src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp
+	src/frontend/bookshelfmanager/installpage/btsourcearea.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp
+	src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp
 
-	src/frontend/bookshelfmanager/new/installpage/btinstallthread.cpp
-	src/frontend/bookshelfmanager/new/installpage/btinstallprogressdialog.cpp
-	src/frontend/bookshelfmanager/new/installpage/btsourcewidget.cpp
-	src/frontend/bookshelfmanager/new/installpage/btsourcearea.cpp
-	src/frontend/bookshelfmanager/new/installpage/btinstallmodulechooserdialog.cpp
-	src/frontend/bookshelfmanager/new/installpage/btinstallpathdialog.cpp
-
-	src/frontend/bookshelfmanager/new/removepage/btremovepage.cpp
-	src/frontend/bookshelfmanager/new/indexpage/btindexpage.cpp
+	src/frontend/bookshelfmanager/removepage/btremovepage.cpp
+	src/frontend/bookshelfmanager/indexpage/btindexpage.cpp
 
 	#Search dialog
 	src/frontend/searchdialog/csearchdialog.cpp
@@ -170,5 +164,5 @@ SET(bibletime_SOURCES
 )
 
 KDE4_ADD_UI_FILES(bibletime_SOURCES
-	src/frontend/bookshelfmanager/manageindicesform.ui
+	
 )
