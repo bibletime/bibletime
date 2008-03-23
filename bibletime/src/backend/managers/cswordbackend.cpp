@@ -46,31 +46,31 @@ using namespace Filters;
 using namespace Rendering;
 
 CSwordBackend::CSwordBackend()
-: sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true) {
-	m_displays.entry = 0;
-	m_displays.chapter = 0;
-	m_displays.book = 0;
+	: sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true)
+{
+	m_filters.gbf = new BT_GBFHTML();
+	m_filters.plain = new BT_PLAINHTML();
+	m_filters.thml = new BT_ThMLHTML();
+	m_filters.osis = new BT_OSISHTML();
 
-	m_filters.gbf = 0;
-	m_filters.thml = 0;
-	m_filters.osis = 0;
-	m_filters.plain = 0;
+	m_displays.entry = new CEntryDisplay();
+	m_displays.chapter = new CChapterDisplay();
+	m_displays.book = new CBookDisplay();
 
 	filterInit();
 }
 
 CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
-: sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) // don't allow module renaming, because we load from a path
+	: sword::SWMgr(!path.isEmpty() ? path.toLocal8Bit().constData() : 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), false, augmentHome) // don't allow module renaming, because we load from a path
 {
-	//qDebug("CSwordBackend::CSwordBackend for %s, using %s", path.latin1(), configPath);
-	m_displays.entry = 0;
-	m_displays.chapter = 0;
-	m_displays.book = 0;
+	m_filters.gbf = new BT_GBFHTML();
+	m_filters.plain = new BT_PLAINHTML();
+	m_filters.thml = new BT_ThMLHTML();
+	m_filters.osis = new BT_OSISHTML();
 
-	m_filters.gbf = 0;
-	m_filters.thml = 0;
-	m_filters.osis = 0;
-	m_filters.plain = 0;
+	m_displays.entry = new CEntryDisplay();
+	m_displays.chapter = new CChapterDisplay();
+	m_displays.book = new CBookDisplay();
 
 	filterInit();
 }
@@ -105,35 +105,19 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 
 		if (!strcmp(curMod->Type(), "Biblical Texts")) {
 			newModule = new CSwordBibleModuleInfo(curMod, this);
-			newModule->module()->Disp(
-				m_displays.chapter
-				? m_displays.chapter
-				: (m_displays.chapter = new CChapterDisplay)
-			);
+			newModule->module()->Disp(m_displays.chapter);
 		}
 		else if (!strcmp(curMod->Type(), "Commentaries")) {
 			newModule = new CSwordCommentaryModuleInfo(curMod, this);
-			newModule->module()->Disp(
-				m_displays.entry
-				? m_displays.entry
-				: (m_displays.entry = new CEntryDisplay)
-			);
+			newModule->module()->Disp(m_displays.entry);
 		}
 		else if (!strcmp(curMod->Type(), "Lexicons / Dictionaries")) {
 			newModule = new CSwordLexiconModuleInfo(curMod, this);
-			newModule->module()->Disp(
-				m_displays.entry
-				? m_displays.entry
-				: (m_displays.entry = new CEntryDisplay)
-			);
+			newModule->module()->Disp(m_displays.entry);
 		}
 		else if (!strcmp(curMod->Type(), "Generic Books")) {
 			newModule = new CSwordBookModuleInfo(curMod, this);
-			newModule->module()->Disp(
-				m_displays.book
-				? m_displays.book
-				: (m_displays.book = new CBookDisplay)
-			);
+			newModule->module()->Disp(m_displays.book);
 		}
 
 		if (newModule) { 
@@ -175,40 +159,24 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
 	moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
 
 	if (sourceformat == "GBF") {
-		if (!m_filters.gbf) {
-			m_filters.gbf = new BT_GBFHTML();
-		}
 		module->AddRenderFilter(m_filters.gbf);
 		noDriver = false;
 	}
 	else if (sourceformat == "PLAIN") {
-		if (!m_filters.plain) {
-			m_filters.plain = new BT_PLAINHTML();
-		}
 		module->AddRenderFilter(m_filters.plain);
 		noDriver = false;
 	}
 	else if (sourceformat == "ThML") {
-		if (!m_filters.thml) {
-			m_filters.thml = new BT_ThMLHTML();
-		}
 		module->AddRenderFilter(m_filters.thml);
 		noDriver = false;
 	}
 	else if (sourceformat == "OSIS") {
-		if (!m_filters.osis) {
-			m_filters.osis = new BT_OSISHTML();
-		}
-
 		module->AddRenderFilter(m_filters.osis);
 		noDriver = false;
 	}
 
 	if (noDriver) { //no driver found
 		if ( (moduleDriver == "RawCom") || (moduleDriver == "RawLD") ) {
-			if (!m_filters.plain) {
-				m_filters.plain = new BT_PLAINHTML();
-			}
 			module->AddRenderFilter(m_filters.plain);
 			noDriver = false;
 		}

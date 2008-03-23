@@ -217,10 +217,10 @@ protected:
 private:
 	// Filters
 	struct Filters {
-		sword::SWFilter *gbf;
-		sword::SWFilter *plain;
-		sword::SWFilter *thml;
-		sword::SWFilter *osis;
+		sword::SWFilter* gbf;
+		sword::SWFilter* plain;
+		sword::SWFilter* thml;
+		sword::SWFilter* osis;
 	}	m_filters;
 
 	struct Displays {
