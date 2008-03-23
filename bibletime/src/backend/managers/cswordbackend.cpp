@@ -30,8 +30,10 @@
 #include <dirent.h>
 
 //Qt
+#include <QString>
 #include <QDir>
 #include <QFileInfo>
+#include <QSet>
 
 //Sword
 #include <swdisp.h>
@@ -454,7 +456,7 @@ void CSwordBackend::reloadModules() {
 }
 
 const QStringList CSwordBackend::swordDirList() {
-	QStringList ret;
+	QSet<QString> ret;
 	const QString home = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
 
 	//return a list of used Sword dirs. Useful for the installer
@@ -479,15 +481,18 @@ const QStringList CSwordBackend::swordDirList() {
 		sword::ConfigEntMap::iterator end = group.equal_range("AugmentPath").second;
 
 		for (sword::ConfigEntMap::const_iterator it = start; it != end; ++it) {
-			ret << it->second.c_str(); //added augment path
+			ret << QDir(it->second.c_str()).absolutePath(); //added augment path
 		}
 	}
 
 	if (!home.isEmpty()) {
-		ret << home + "/.sword/";
+		// This is added to the set if not there already. Notice that
+		// this prevents duplication only if the QDir::absolutePath() returns
+		// string without the prepended "/".
+		ret << home + "/.sword";
 	}
 
-	return ret;
+	return ret.values();
 }
 
 void CSwordBackend::filterInit() {

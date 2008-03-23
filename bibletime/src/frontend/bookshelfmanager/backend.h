@@ -1,4 +1,5 @@
 #include <QString>
+#include <QDir>
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
@@ -46,6 +47,10 @@ void initPassiveFtpMode();
 
 /** Returns the file name for the Sword config file. */
 const QString swordConfigFilename();
+
+/** Returns the Sword directory ($HOME/.sword/) as a QDir, created with absolute path (not canonical).
+*/
+const QDir swordDir();
 
 /** Returns backend Sword manager for the source. */
 CSwordBackend* backend( const sword::InstallSource& is);

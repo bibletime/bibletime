@@ -157,15 +157,18 @@ bool setTargetList( const QStringList& targets )
 	QFileInfo dirInfo(i.absolutePath());
 
 	if ( i.exists() && i.isWritable() ) { //we can write to the file ourself
-
+		qDebug() << "The file is writable";
 	}
 	else if ( !i.exists() && dirInfo.isWritable() ) {
 		// if the file doesn't exist but the parent is writable, create it
 		//TODO: create the file!
+		qWarning() << "The file does not exist, it has to be created! (not implemented)";
+		return false;
 
 	}
-	else if (!i.isWritable() || (!i.exists() && !dirInfo.isWritable()) ) {
+	else {
 		// There is no way to save to the file
+		qWarning() << "The file is not writable!";
 		return false;
 	}
 
@@ -174,7 +177,7 @@ bool setTargetList( const QStringList& targets )
 	bool setDataPath = false;
 	for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
 		QString t = *it;
-		if (t.contains( util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword") )) {
+		if (t.contains( util::filesystem::DirectoryUtil::getUserHomeDir().canonicalPath().append("/.sword") )) {
 			//we don't want $HOME/.sword in the config
 			continue;
 		}
@@ -184,6 +187,7 @@ bool setTargetList( const QStringList& targets )
 			setDataPath = true;
 		}
 	}
+	qDebug() << "save the sword conf...";
 	conf.Save();
 	return true;
 }
@@ -230,8 +234,13 @@ void initPassiveFtpMode()
 const QString swordConfigFilename()
 {
 	qDebug("backend::swordConfigFilename");
-	qDebug() << util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
-	return util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
+	qDebug() << util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
+	return util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
+}
+
+const QDir swordDir()
+{
+	return QDir(util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/"));
 }
 
 CSwordBackend* backend( const sword::InstallSource& is)

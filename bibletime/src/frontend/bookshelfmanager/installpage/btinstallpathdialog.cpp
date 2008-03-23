@@ -39,10 +39,11 @@ BtInstallPathDialog::BtInstallPathDialog()
     mainLayout = new QVBoxLayout(this);
     viewLayout = new QHBoxLayout();
 
+	QString l1 = tr("Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.");
+	QString l2 = tr("BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. \".sword\" directory in your home directory is always used automatically and can't be removed or added.");
+
 	QLabel* mainLabel = CToolClass::explanationLabel(this,
-						tr("Configure install paths"),
-						tr("New works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.")
-													);
+		tr("Configure install paths"), l1 + QString("<small><br><br>") + l2 + QString("</small>"));
 	mainLayout->addWidget(mainLabel);
 
 	QString swordConfPath = backend::swordConfigFilename();
@@ -54,10 +55,11 @@ BtInstallPathDialog::BtInstallPathDialog()
     m_swordPathListBox = new QTreeWidget(this);
 	m_swordPathListBox->header()->hide();
 
+	QDir swordDir = backend::swordDir();
 	QStringList targets = backend::targetList();
-	for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
-		if ((*it).isEmpty()) continue;
-		new QTreeWidgetItem(m_swordPathListBox, QStringList(*it) );
+	foreach (QString pathname, targets)  {
+		if (pathname.isEmpty() || QDir(pathname) == swordDir) continue;
+		new QTreeWidgetItem(m_swordPathListBox, QStringList(pathname) );
 	}
 	
 	viewLayout->addWidget(m_swordPathListBox);
@@ -96,10 +98,11 @@ BtInstallPathDialog::BtInstallPathDialog()
 
 void BtInstallPathDialog::slotEditClicked() {
 	if (QTreeWidgetItem* i = m_swordPathListBox->currentItem()) {
-		QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), i->text(0));
-	if (dirname.isEmpty()) { // if user cancelled the dialog
-		return;
-	}
+		QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), i->text(0), QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);
+
+		if (dirname.isEmpty()) { // if user cancelled the dialog
+			return;
+		}
 		QDir dir = QDir(dirname);
 		if (dir.isReadable()) {
 			const QFileInfo fi( dir.canonicalPath() );
@@ -107,13 +110,13 @@ void BtInstallPathDialog::slotEditClicked() {
 				const int result = QMessageBox::warning(this, tr("Confirmation"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 				if (result != QMessageBox::Yes) return;
 			}
-			i->setText(0, dir.canonicalPath());
+			i->setText(0, dir.absolutePath()); // absolute, not canonical
 		}
 	}
 }
 
 void BtInstallPathDialog::slotAddClicked() {
-	QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), "");
+	QString dirname = QFileDialog::getExistingDirectory(this, tr("Choose directory"), "", QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);
 	if (dirname.isEmpty()) { // if user cancelled the dialog
 		return;
 	}
@@ -140,7 +143,7 @@ void BtInstallPathDialog::slotRemoveClicked() {
 void BtInstallPathDialog::writeSwordConfig()
 {
 	qDebug("BtInstallPathDialog::writeSwordConfig");
-	if (m_swordPathListBox->topLevelItemCount() > 1) {
+	if (m_swordPathListBox->topLevelItemCount() >= 1) {
 		QStringList targets;
 		QTreeWidgetItemIterator it(m_swordPathListBox);
 		while (*it) {

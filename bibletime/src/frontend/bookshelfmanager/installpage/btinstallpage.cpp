@@ -161,8 +161,7 @@ void BtInstallPage::slotEditPaths()
 	BtInstallPathDialog* dlg = new BtInstallPathDialog();
 	int result = dlg->exec();
 	if (result == QDialog::Accepted) {
-		initPathCombo();
-		dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();	
+		dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();
 	}
 	// if the dialog was accepted, set the paths and save them
 	// and repopulate the combo
@@ -189,6 +188,7 @@ void BtInstallPage::slotSwordSetupChanged()
 	qDebug() << "BtInstallPage::slotSwordSetupChanged, does nothing yet, should update sources";
 	//m_sourceWidget, each sourceArea->createModuleTree
 	// BUG: the backend is not updated
+	initPathCombo();
 	for (int i = 0; i < m_sourceWidget->count(); i++ ) {
 		BtSourceArea* sourceArea = dynamic_cast<BtSourceArea*>(m_sourceWidget->widget(i));
 		Q_ASSERT(sourceArea);
