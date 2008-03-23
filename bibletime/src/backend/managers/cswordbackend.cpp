@@ -142,22 +142,22 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 			if (!newModule->hasVersion() || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion)) {
 				m_moduleList.append( newModule );	
 			}
+			else
+			{
+				delete newModule;
+			}
 		}
 	}
 
 	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		m_moduleDescriptionMap.insert( (*it)->config(CSwordModuleInfo::Description), (*it)->name() );
-	}
-
-	//unlock modules if keys are present
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		if ( (*it)->isEncrypted() ) {
-			const QString unlockKey = CBTConfig::getModuleEncryptionKey( (*it)->name() );
-
+	foreach (CSwordModuleInfo* mod, m_moduleList) {
+		m_moduleDescriptionMap.insert( mod->config(CSwordModuleInfo::Description), mod->name() );
+		//unlock modules if keys are present
+		if ( mod->isEncrypted() ) {
+			const QString unlockKey = CBTConfig::getModuleEncryptionKey( mod->name() );
 			if (!unlockKey.isNull()) {
-				setCipherKey( (*it)->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
+				setCipherKey( mod->name().toUtf8().constData(), unlockKey.toUtf8().constData() );
 			}
 		}
 	}
@@ -283,32 +283,12 @@ void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options
 	setOption( CSwordModuleInfo::scriptureReferences, options.scriptureReferences);
 }
 
-void CSwordBackend::setDisplayOptions( const CSwordBackend::DisplayOptions ) {
-	/*  if (m_displays.entry) {
-	  m_displays.entry->setDisplayOptions(options); 
-	 }
-	  if (m_displays.chapter) {
-	  m_displays.chapter->setDisplayOptions(options); 
-	 }
-	  if (m_displays.book) {
-	  m_displays.book->setDisplayOptions(options);
-	 }
-	 */
-}
-
 /** This function searches for a module with the specified description */
 CSwordModuleInfo* const CSwordBackend::findModuleByDescription(const QString& description) {
-	CSwordModuleInfo* ret = 0;
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != end_it; ++it) {
-		if ( (*it)->config(CSwordModuleInfo::Description) == description ) {
-			ret = *it;
-			break;
-		}
+	foreach(CSwordModuleInfo* mod, m_moduleList) {
+		if (mod->config(CSwordModuleInfo::Description) == description) return mod;
 	}
-
-	return ret;
+	return 0;
 }
 
 /** This function searches for a module with the specified description */
@@ -316,28 +296,27 @@ const QString CSwordBackend::findModuleNameByDescription(const QString& descript
 	if (m_moduleDescriptionMap.contains(description)) {
 		return m_moduleDescriptionMap[description];
 	}
-
 	return QString::null;
 }
 
 /** This function searches for a module with the specified name */
 CSwordModuleInfo* const CSwordBackend::findModuleByName(const QString& name) {
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
-		if ( (*it)->name() == name ) return *it;
+	foreach(CSwordModuleInfo* mod, m_moduleList) {
+		if (mod->name() == name) return mod;
 	}
 	return 0;
 }
 
 CSwordModuleInfo* const CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
-		if ( (*it)->module() == swmodule ) return *it;
+	foreach(CSwordModuleInfo* mod, m_moduleList) {
+		if (mod->module() == swmodule ) return mod;
 	}
 	return 0;
 }
 
 CSwordModuleInfo* const CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin() ; it != m_moduleList.end(); ++it) {
-		if ( (*it)  == module ) return *it;
+	foreach(CSwordModuleInfo* mod, m_moduleList) {
+		if (mod  == module) return mod;
 	}
 	return 0;
 }
@@ -414,139 +393,57 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 /** Returns the text used for the option given as parameter. */
 const QString CSwordBackend::optionName( const CSwordModuleInfo::FilterTypes option ) {
 	switch (option) {
-
-		case CSwordModuleInfo::footnotes:
-		return QString("Footnotes");
-
-		case CSwordModuleInfo::strongNumbers:
-		return QString("Strong's Numbers");
-
-		case CSwordModuleInfo::headings:
-		return QString("Headings");
-
-		case CSwordModuleInfo::morphTags:
-		return QString("Morphological Tags");
-
-		case CSwordModuleInfo::lemmas:
-		return QString("Lemmas");
-
-		case CSwordModuleInfo::hebrewPoints:
-		return QString("Hebrew Vowel Points");
-
-		case CSwordModuleInfo::hebrewCantillation:
-		return QString("Hebrew Cantillation");
-
-		case CSwordModuleInfo::greekAccents:
-		return QString("Greek Accents");
-
-		case CSwordModuleInfo::redLetterWords:
-		return QString("Words of Christ in Red");
-
-		case CSwordModuleInfo::textualVariants:
-		return QString("Textual Variants");
-
-		case CSwordModuleInfo::scriptureReferences:
-		return QString("Cross-references");
-
-		case CSwordModuleInfo::morphSegmentation:
-		return QString("Morph Segmentation");
-		//   case CSwordModuleInfo::transliteration:
-		//    return QString("Transliteration");
+		case CSwordModuleInfo::footnotes:			return QString("Footnotes");
+		case CSwordModuleInfo::strongNumbers:		return QString("Strong's Numbers");
+		case CSwordModuleInfo::headings:			return QString("Headings");
+		case CSwordModuleInfo::morphTags:			return QString("Morphological Tags");
+		case CSwordModuleInfo::lemmas:				return QString("Lemmas");
+		case CSwordModuleInfo::hebrewPoints:		return QString("Hebrew Vowel Points");
+		case CSwordModuleInfo::hebrewCantillation:	return QString("Hebrew Cantillation");
+		case CSwordModuleInfo::greekAccents:		return QString("Greek Accents");
+		case CSwordModuleInfo::redLetterWords:		return QString("Words of Christ in Red");
+		case CSwordModuleInfo::textualVariants:		return QString("Textual Variants");
+		case CSwordModuleInfo::scriptureReferences:	return QString("Cross-references");
+		case CSwordModuleInfo::morphSegmentation:	return QString("Morph Segmentation");
 	}
-
 	return QString::null;
 }
 
 /** Returns the translated name of the option given as parameter. */
 const QString CSwordBackend::translatedOptionName(const CSwordModuleInfo::FilterTypes option) {
 	switch (option) {
-
-		case CSwordModuleInfo::footnotes:
-		return QObject::tr("Footnotes");
-
-		case CSwordModuleInfo::strongNumbers:
-		return QObject::tr("Strong's numbers");
-
-		case CSwordModuleInfo::headings:
-		return QObject::tr("Headings");
-
-		case CSwordModuleInfo::morphTags:
-		return QObject::tr("Morphological tags");
-
-		case CSwordModuleInfo::lemmas:
-		return QObject::tr("Lemmas");
-
-		case CSwordModuleInfo::hebrewPoints:
-		return QObject::tr("Hebrew vowel points");
-
-		case CSwordModuleInfo::hebrewCantillation:
-		return QObject::tr("Hebrew cantillation marks");
-
-		case CSwordModuleInfo::greekAccents:
-		return QObject::tr("Greek accents");
-
-		case CSwordModuleInfo::redLetterWords:
-		return QObject::tr("Red letter words");
-
-		case CSwordModuleInfo::textualVariants:
-		return QObject::tr("Textual variants");
-
-		case CSwordModuleInfo::scriptureReferences:
-		return QObject::tr("Scripture cross-references");
-
-		case CSwordModuleInfo::morphSegmentation:
-		return QObject::tr("Morph segmentation");
-		//   case CSwordModuleInfo::transliteration:
-		//    return tr("Transliteration between scripts");
+		case CSwordModuleInfo::footnotes:					return QObject::tr("Footnotes");
+		case CSwordModuleInfo::strongNumbers:				return QObject::tr("Strong's numbers");
+		case CSwordModuleInfo::headings:					return QObject::tr("Headings");
+		case CSwordModuleInfo::morphTags:					return QObject::tr("Morphological tags");
+		case CSwordModuleInfo::lemmas:						return QObject::tr("Lemmas");
+		case CSwordModuleInfo::hebrewPoints:				return QObject::tr("Hebrew vowel points");
+		case CSwordModuleInfo::hebrewCantillation:			return QObject::tr("Hebrew cantillation marks");
+		case CSwordModuleInfo::greekAccents:				return QObject::tr("Greek accents");
+		case CSwordModuleInfo::redLetterWords:				return QObject::tr("Red letter words");
+		case CSwordModuleInfo::textualVariants:				return QObject::tr("Textual variants");
+		case CSwordModuleInfo::scriptureReferences:			return QObject::tr("Scripture cross-references");
+		case CSwordModuleInfo::morphSegmentation:			return QObject::tr("Morph segmentation");
 	}
-
 	return QString::null;
 }
 
 
 const QString CSwordBackend::configOptionName( const CSwordModuleInfo::FilterTypes option ) {
 	switch (option) {
-
-		case CSwordModuleInfo::footnotes:
-		return QString("Footnotes");
-
-		case CSwordModuleInfo::strongNumbers:
-		return QString("Strongs");
-
-		case CSwordModuleInfo::headings:
-		return QString("Headings");
-
-		case CSwordModuleInfo::morphTags:
-		return QString("Morph");
-
-		case CSwordModuleInfo::lemmas:
-		return QString("Lemma");
-
-		case CSwordModuleInfo::hebrewPoints:
-		return QString("HebrewPoints");
-
-		case CSwordModuleInfo::hebrewCantillation:
-		return QString("Cantillation");
-
-		case CSwordModuleInfo::greekAccents:
-		return QString("GreekAccents");
-
-		case CSwordModuleInfo::redLetterWords:
-		return QString("RedLetterWords");
-
-		case CSwordModuleInfo::textualVariants:
-		return QString("Variants");
-
-		case CSwordModuleInfo::scriptureReferences:
-		return QString("Scripref");
-
-		case CSwordModuleInfo::morphSegmentation:
-		return QString("MorphSegmentation");
-
-		default:
-		return QString::null;
+		case CSwordModuleInfo::footnotes:				return QString("Footnotes");
+		case CSwordModuleInfo::strongNumbers:			return QString("Strongs");
+		case CSwordModuleInfo::headings:				return QString("Headings");
+		case CSwordModuleInfo::morphTags:				return QString("Morph");
+		case CSwordModuleInfo::lemmas:					return QString("Lemma");
+		case CSwordModuleInfo::hebrewPoints:			return QString("HebrewPoints");
+		case CSwordModuleInfo::hebrewCantillation:		return QString("Cantillation");
+		case CSwordModuleInfo::greekAccents:			return QString("GreekAccents");
+		case CSwordModuleInfo::redLetterWords:			return QString("RedLetterWords");
+		case CSwordModuleInfo::textualVariants:			return QString("Variants");
+		case CSwordModuleInfo::scriptureReferences:		return QString("Scripref");
+		case CSwordModuleInfo::morphSegmentation:		return QString("MorphSegmentation");
 	}
-
 	return QString::null;
 }
 
@@ -555,20 +452,17 @@ const QString CSwordBackend::booknameLanguage( const QString& language ) {
 		sword::LocaleMgr::getSystemLocaleMgr()->setDefaultLocaleName( language.toUtf8().constData() );
 
 		//refresh the locale of all Bible and commentary modules!
-		const ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-
 		//use what sword returns, language may be different
 		QString newLocaleName( sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()  );
 
-		for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != end_it; ++it) {
-			if ( ((*it)->type() == CSwordModuleInfo::Bible) || ((*it)->type() == CSwordModuleInfo::Commentary) ) {
+		foreach(CSwordModuleInfo* mod, m_moduleList) {
+			if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) {
 				//Create a new key, it will get the default bookname language
-				((sword::VerseKey*)((*it)->module()->getKey()))->setLocale( newLocaleName.toUtf8().constData() );
+				((sword::VerseKey*)(mod->module()->getKey()))->setLocale( newLocaleName.toUtf8().constData() );
 			}
 		}
 
 	}
-
 	return QString( sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName() );
 }
 

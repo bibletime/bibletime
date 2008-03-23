@@ -14,7 +14,6 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
-//#include <QList>
 #include <QMap>
 #include <QString>
 #include <QStringList>
@@ -27,12 +26,10 @@
 #include <localemgr.h>
 #include <utilstr.h>
 
+//forward declarations
 namespace Rendering {
-
 	class CEntryDisplay;
-
 	class CChapterDisplay;
-
 	class CBookDisplay;
 }
 
@@ -52,7 +49,6 @@ public:
 	 * control the text display of modules. Uses int and not bool because not all
 	 * options have just two toggle values.
 	 */
-
 	struct FilterOptions {
 		int footnotes; /**< 0 for disabled, 1 for enabled */
 		int strongNumbers; /**< 0 for disabled, 1 for enabled */
@@ -70,7 +66,6 @@ public:
 
 	/** Control the display of a text.
 	*/
-
 	struct DisplayOptions {
 		int lineBreaks;
 		int verseNumbers;
@@ -127,8 +122,8 @@ public:
 	* @param enable If this is true the option will be enabled, otherwise it will be disabled.
 	*/
 	void setOption( const CSwordModuleInfo::FilterTypes type, const int state );
+	/** */
 	void setFilterOptions( const CSwordBackend::FilterOptions options );
-	void setDisplayOptions( const CSwordBackend::DisplayOptions options );
 	/**
 	* Returns true if the given option is enabled.
 	*
@@ -221,23 +216,18 @@ protected:
 	
 private:
 	// Filters
-
 	struct Filters {
 		sword::SWFilter *gbf;
 		sword::SWFilter *plain;
 		sword::SWFilter *thml;
 		sword::SWFilter *osis;
-	}
-
-	m_filters;
+	}	m_filters;
 
 	struct Displays {
 		Rendering::CChapterDisplay* chapter;
 		Rendering::CEntryDisplay* entry;
 		Rendering::CBookDisplay* book;
-	}
-
-	m_displays;
+	}	m_displays;
 
 	ListCSwordModuleInfo m_moduleList;
 	QMap<QString, QString> m_moduleDescriptionMap;
