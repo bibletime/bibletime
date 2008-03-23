@@ -25,7 +25,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stddef.h>
-#include <dirent.h>
 #include <regex.h>
 
 #include <boost/scoped_ptr.hpp>
