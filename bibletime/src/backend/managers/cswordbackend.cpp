@@ -25,6 +25,8 @@
 
 #include "frontend/cbtconfig.h"
 
+#include "util/directoryutil.h"
+
 #include <dirent.h>
 
 //Qt
@@ -383,7 +385,8 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 	}
 
 	if (!foundConfig && configType != 2) { //search in $HOME/.sword/
-		QString myPath(getenv("HOME"));
+		
+		QString myPath = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
 		myPath.append("/.sword/mods.d");
 		dir = opendir(myPath.toUtf8().constData());
 
@@ -590,7 +593,7 @@ void CSwordBackend::reloadModules() {
 
 const QStringList CSwordBackend::swordDirList() {
 	QStringList ret;
-	const QString home = QString(getenv("HOME"));
+	const QString home = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
 
 	//return a list of used Sword dirs. Useful for the installer
 	QString configPath = QString("%1/.sword/sword.conf").arg(home);
