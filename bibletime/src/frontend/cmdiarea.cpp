@@ -29,25 +29,20 @@ void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
 	emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 }
 
-/** Reimplementation. Used to make use of the fixedGUIOption part. */
-void CMDIArea::childEvent( QChildEvent * e ) {
-	qDebug() << "CMDIArea::childEvent type" << int(e->type());
-	if (!e) return;
-
-	if (!subWindowList().count()) {
-		emit sigSetToplevelCaption(QString::null);
+QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags)
+{
+	qDebug() << "CMDIArea::addSubWindow called";
+	QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
+	subWindow->installEventFilter(this);
+	if (m_mdiArrangementMode == ArrangementModeManual)
+	{
+		subWindow->resize(400, 400); //set the window to be big enough
 	}
-
-	if ( (e->added() || e->removed()) ) {
-		if (e->added() && e->child() && e->child()->inherits("CDisplayWindow")) {
-			e->child()->installEventFilter(this); //make sure we catch the events of the new window
-		}
-		else if (e->removed() && e->child() && e->child()->inherits("CDisplayWindow")) {
-			e->child()->removeEventFilter(this);
-		}
+	else
+	{
 		triggerWindowUpdate();
 	}
-	QMdiArea::childEvent(e);
+	return subWindow;
 }
 
 /** Reimplementation */

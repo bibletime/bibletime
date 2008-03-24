@@ -44,8 +44,11 @@ public:
 		MDIArrangementModeMAX = ArrangementModeManual
 	};
 	CMDIArea(QWidget *parent);
-	/**
+	/** Reimplementation
 	*/
+	virtual QMdiSubWindow* addSubWindow(QWidget* widget, Qt::WindowFlags windowFlags = 0);
+	/**
+	 */
 	void setMDIArrangementMode( const MDIArrangementMode );
 	/** */
 	const MDIArrangementMode getMDIArrangementMode(void);
@@ -56,6 +59,8 @@ public:
 	* Forces an update of the currently chosen window arrangement.
 	*/
 	void triggerWindowUpdate();
+	/** Lists all subWindows which are not minimized or hidden
+	 */
 	QList<QMdiSubWindow*> usableWindowList();
 
 public slots:
@@ -95,14 +100,12 @@ signals: // Signals
 
 private:
 	/**
-	* Used to make use of the fixedGUIOption part.
-	*/
-	virtual void childEvent(QChildEvent * e);
-	/**
 	* Reimplementation
 	*/
 	virtual void resizeEvent(QResizeEvent* e);
-
+	/** 
+	 * Used to handle Events of MDI windows
+	 * */
 	bool eventFilter( QObject *o, QEvent *e );
 	/**
 	 */

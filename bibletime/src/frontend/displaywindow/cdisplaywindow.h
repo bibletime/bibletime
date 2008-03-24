@@ -15,10 +15,6 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/keys/cswordtreekey.h"
-#include "backend/keys/cswordldkey.h"
 
 #include "frontend/profile/cprofilewindow.h"
 

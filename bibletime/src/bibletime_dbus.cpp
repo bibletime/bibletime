@@ -10,9 +10,10 @@
 //BibleTime includes
 #include "bibletime.h"
 
-//frontend includes
 #include "frontend/cmdiarea.h"
 #include "frontend/cbtconfig.h"
+
+#include "backend/keys/cswordversekey.h"
 
 //Sword includes
 #include <versekey.h>

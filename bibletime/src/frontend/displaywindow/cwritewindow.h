@@ -64,11 +64,9 @@ protected: // Protected methods
 protected slots:
 	/** Save text to the module
 	*/
-	void saveCurrentText() {
-		if(key()) {
-			saveCurrentText(key()->key());
-		};
-	};
+	void saveCurrentText();
+	/**
+	 */
 	virtual void beforeKeyChange(const QString&);
 
 private:

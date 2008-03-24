@@ -8,18 +8,18 @@
 **********/
 
 
-
 #include "cwritewindow.h"
 #include "cwritewindow.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/display/cwritedisplay.h"
 
-#include <QMessageBox>
 
+#include <QMessageBox>
 
 
 using namespace Profile;
@@ -156,3 +156,10 @@ void CWriteWindow::beforeKeyChange(const QString& key) {
 		}
 	}
 }
+
+void CWriteWindow::saveCurrentText() {
+	if(key()) {
+		saveCurrentText(key()->key());
+	}
+}
+

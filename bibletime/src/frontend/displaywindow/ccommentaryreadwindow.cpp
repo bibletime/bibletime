@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "ccommentaryreadwindow.h"
 #include "ccommentaryreadwindow.moc"
@@ -18,6 +16,8 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
+
+#include "backend/keys/cswordversekey.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"

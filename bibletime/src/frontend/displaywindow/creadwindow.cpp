@@ -17,6 +17,7 @@
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
 
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"

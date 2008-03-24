@@ -18,6 +18,8 @@
 #include "frontend/display/cwritedisplay.h"
 #include "frontend/display/chtmlwritedisplay.h"
 
+#include "backend/keys/cswordkey.h"
+
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 

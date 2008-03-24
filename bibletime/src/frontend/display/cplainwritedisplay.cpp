@@ -14,6 +14,9 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 
+#include "backend/keys/cswordkey.h"
+
+
 #include <boost/scoped_ptr.hpp>
 
 //Qt includes

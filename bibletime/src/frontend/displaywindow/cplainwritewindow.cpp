@@ -16,6 +16,8 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/cbtconfig.h"
 
+#include "backend/keys/cswordkey.h"
+
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
