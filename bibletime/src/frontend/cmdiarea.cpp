@@ -34,9 +34,16 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
 	qDebug() << "CMDIArea::addSubWindow called";
 	QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
 	subWindow->installEventFilter(this);
+	
+	//If we do have a maximized Window, set it to normal so that the new window can be seen
+	if (activeSubWindow() && activeSubWindow()->isMaximized()){
+		activeSubWindow()->showNormal();
+	}
+	
 	if (m_mdiArrangementMode == ArrangementModeManual)
 	{
 		subWindow->resize(400, 400); //set the window to be big enough
+		subWindow->raise();
 	}
 	else
 	{
@@ -70,16 +77,13 @@ void CMDIArea::myTileVertical() {
 	}
 
 	QList<QMdiSubWindow*> windows = usableWindowList();
-	if ((windows.count() == 1) && windows.at(0)) {
-		if (windows.at(0)->isMaximized()){
-			if (windows.at(0)->size() != this->size()) {
-				windows.at(0)->resize(this->size());
-			}
+	if (activeSubWindow() && activeSubWindow()->isMaximized()){
+		if (activeSubWindow()->size() != this->size()) {
+			activeSubWindow()->resize(this->size());
 		}
-		else
-		{
-			windows.at(0)->showMaximized();
-		}
+	}
+	else if (windows.count() == 1) {
+		windows.at(0)->showMaximized();
 	}
 	else {
 		QMdiSubWindow* active = activeSubWindow();
@@ -95,16 +99,14 @@ void CMDIArea::myTileHorizontal() {
 	}
 
 	QList<QMdiSubWindow*> windows = usableWindowList();
-	if ((windows.count() == 1) && windows.at(0)) {
-		if (windows.at(0)->isMaximized()){
-			if (windows.at(0)->size() != this->size()) {
-				windows.at(0)->resize(this->size());
-			}
+
+	if (activeSubWindow() && activeSubWindow()->isMaximized()){
+		if (activeSubWindow()->size() != this->size()) {
+			activeSubWindow()->resize(this->size());
 		}
-		else
-		{
-			windows.at(0)->showMaximized();
-		}
+	}
+	else if (windows.count() == 1) {
+		windows.at(0)->showMaximized();
 	}
 	else {
 		QMdiSubWindow* active = activeSubWindow();
@@ -135,20 +137,14 @@ void CMDIArea::myCascade() {
 	}
 
 	QList<QMdiSubWindow*> windows = usableWindowList();
-	if ( !windows.count() ) {
-		return;
-	}
 
-	if ((windows.count() == 1) && windows.at(0)) {
-		if (windows.at(0)->isMaximized()){
-			if (windows.at(0)->size() != this->size()) {
-				windows.at(0)->resize(this->size());
-			}
+	if (activeSubWindow() && activeSubWindow()->isMaximized()){
+		if (activeSubWindow()->size() != this->size()) {
+			activeSubWindow()->resize(this->size());
 		}
-		else
-		{
-			windows.at(0)->showMaximized();
-		}
+	}
+	else if (windows.count() == 1) {
+		windows.at(0)->showMaximized();
 	}
 	else {
 		const int offsetX = 40;
@@ -214,9 +210,9 @@ bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
 	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>( o );
 	//if (w) qDebug() << "CMDIArea::eventFilter called for CMdiSubWindow, e is type" << (int)(e->type());
  	if (w && (e->type() == QEvent::WindowStateChange) ) {
- 		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
+// 		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
 			triggerWindowUpdate();
-		}
+//		}
 	}
  	if (w && (e->type() == QEvent::Close))
  	{
