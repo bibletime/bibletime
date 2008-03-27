@@ -52,9 +52,6 @@
 #include <CLucene/util/Misc.h>
 #include <CLucene/util/dirent.h>
 
-//KDE includes
-
-
 
 //Increment this, if the index format changes
 //Then indices on the user's systems will be rebuilt
@@ -69,6 +66,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
 	Q_ASSERT(module);
 	
 	m_hidden = false;
+	m_cancelIndexing = false;
 	m_searchResult.ClearList();
 	m_backend = usedBackend ? usedBackend : CPointers::backend();
 	m_dataCache.name = module ? QString(module->Name()) : QString::null;
@@ -91,6 +89,7 @@ CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & m) {
 	m_dataCache = m.m_dataCache;
 	m_searchResult = m.m_searchResult;
 	m_hidden = m.m_hidden;
+	m_cancelIndexing = m.m_cancelIndexing;
 }
 
 /** No descriptions */
@@ -226,6 +225,8 @@ void CSwordModuleInfo::buildIndex() {
 
 	//we don't want the linked entries indexed again
 	module()->setSkipConsecutiveLinks(true);
+	
+	m_cancelIndexing = false;
 
 	//Without this we don't get strongs, lemmas, etc
 	backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
@@ -297,7 +298,7 @@ void CSwordModuleInfo::buildIndex() {
 	// we start with the first module entry, key is automatically updated
 	// because key is a pointer to the modules key
 	m_module->setSkipConsecutiveLinks(true);
-	for (*m_module = sword::TOP; !(m_module->Error()); (*m_module)++) {
+	for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
 
 		//If it is a sword-heading, store in buffer and index later in Verse X:1
 		if (vk) {
@@ -379,12 +380,22 @@ void CSwordModuleInfo::buildIndex() {
 		}
 	}
 
-	writer->optimize();
+	if (!m_cancelIndexing)
+	{
+		writer->optimize();
+	}
 	writer->close();
 
-	QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
-	if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
-	module_config.setValue("index-version", INDEX_VERSION );
+	if (m_cancelIndexing){
+		deleteIndexForModule(name());
+		m_cancelIndexing = false;
+	}
+	else
+	{
+		QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
+		if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
+		module_config.setValue("index-version", INDEX_VERSION );
+	}
 }
 
 void CSwordModuleInfo::deleteIndexForModule( QString name ) {
@@ -459,23 +470,6 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
 	list.clear();
 
 	return (m_searchResult.Count() > 0);
-}
-
-void CSwordModuleInfo::connectIndexingFinished(QObject* receiver, const char* slot) {
-	//m_indexingFinished.connect(receiver, slot);
-	QObject::connect(this, SIGNAL(indexingFinished()), receiver, slot);
-}
-
-void CSwordModuleInfo::connectIndexingProgress(QObject* receiver, const char* slot) {
-	//m_indexingProgress.connect(receiver, slot);
-	QObject::connect(this, SIGNAL(indexingProgress(int)), receiver, slot);
-}
-
-void CSwordModuleInfo::disconnectIndexingSignals(QObject* receiver) {
-	//m_indexingProgress.disconnect(receiver);
-	//m_indexingFinished.disconnect(receiver);
-	QObject::disconnect(this, SIGNAL(indexingProgress(int)), receiver, 0);
-	QObject::disconnect(this, SIGNAL(indexingFinished()), receiver, 0);
 }
 
 /** Returns the last search result for this module. */

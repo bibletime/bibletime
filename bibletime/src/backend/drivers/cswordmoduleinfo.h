@@ -221,11 +221,6 @@ public:
 	* Returns index size
 	*/
 	virtual unsigned long indexSize() const;
-	
-	void connectIndexingFinished(QObject* receiver, const char* slot);
-	void connectIndexingProgress(QObject* receiver, const char* slot);
-	void disconnectIndexingSignals(QObject* receiver);
-	
 	/**
 	* Returns true if something was found, otherwise return false.
 	* This function uses CLucene to perform and index based search.  It also 
@@ -310,6 +305,9 @@ public:
 		return m_dataCache.isUnicode;
 	}
 
+public slots:
+	inline void cancelIndexing() { m_cancelIndexing = true; };
+
 protected:
 	friend class CSwordBackend;
 
@@ -351,6 +349,8 @@ private:
 	CSwordBackend* m_backend;
 
 	bool m_hidden;
+	
+	bool m_cancelIndexing;
 };
 
 // typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;

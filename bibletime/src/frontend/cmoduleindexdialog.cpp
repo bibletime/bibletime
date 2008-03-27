@@ -18,9 +18,6 @@
 #include <QDebug>
 #include <QApplication>
 
-//KDE includes
-
-
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 	qDebug("CModuleIndexDialog::getInstance");
@@ -34,32 +31,32 @@ CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 
 void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 {
-	qDebug("indexAllModules");
 	static bool indexing = false;
 	if (!indexing) {
 		indexing = true;
-		qDebug() << &modules << modules << modules.count();
-		//qDebug() << modules[0]->name();
-		if (modules.count() < 1) {
-			return;
-		}
+		if (modules.count() < 1) return;
 		
 		m_currentModuleIndex = 0;
-		m_progress = new QProgressDialog(QString(""), 0, 0, modules.count()*100);
+		m_progress = new QProgressDialog(QString(""), tr("Cancel"), 0, modules.count()*100);
 		m_progress->setWindowModality(Qt::WindowModal); // not useful actually, should have parent for this
+		m_progress->setWindowTitle(tr("Creating indices"));
 		m_progress->show();
 		m_progress->raise();
 		
 		foreach (CSwordModuleInfo* info, modules) {
-			info->connectIndexingFinished(this, SLOT(slotFinished()));
-			info->connectIndexingProgress(this, SLOT(slotModuleProgress(int)) );
+			connect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
+			connect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
+			connect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
 			QString modname(info->name());
 			const QString labelText = tr("Creating index for work: ").append(modname);
 			m_progress->setLabelText(labelText);
 			info->buildIndex(); //waits until this module is finished
 	
 			m_currentModuleIndex++;
-			info->disconnectIndexingSignals(this);
+			disconnect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
+			disconnect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
+			disconnect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
+			if (m_progress->wasCanceled()) break;
 		}
 	
 		delete m_progress;
@@ -69,8 +66,6 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 }
 
 void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modules ) {
-// 	qDebug("indexUnindexedModules");
-	//qDebug() << modules << modules.count();
 	ListCSwordModuleInfo unindexedMods;
 	
 	ListCSwordModuleInfo::const_iterator end_it = modules.end();
@@ -81,7 +76,6 @@ void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modu
 
 		unindexedMods << (*it);
 	}
-	//qDebug() << unindexedMods << unindexedMods.count();
 	indexAllModules(unindexedMods);
 }
 
@@ -91,6 +85,6 @@ void CModuleIndexDialog::slotModuleProgress( int percentage ) {
 }
 
 void CModuleIndexDialog::slotFinished( ) {
-	m_progress->setValue(m_progress->maximum());
+	m_progress->setValue(m_currentModuleIndex * 100 + 100);
 	qApp->processEvents();
 }
