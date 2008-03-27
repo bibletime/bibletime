@@ -31,7 +31,6 @@ void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
 
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags)
 {
-	qDebug() << "CMDIArea::addSubWindow called";
 	QMdiSubWindow* subWindow = QMdiArea::addSubWindow(widget, windowFlags);
 	subWindow->installEventFilter(this);
 	
@@ -206,18 +205,11 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 	return ret;
 }
 
-bool CMDIArea::eventFilter( QObject *o, QEvent *e ) {
+bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
 	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>( o );
-	//if (w) qDebug() << "CMDIArea::eventFilter called for CMdiSubWindow, e is type" << (int)(e->type());
- 	if (w && (e->type() == QEvent::WindowStateChange) ) {
-// 		if ( (w->windowState() & Qt::WindowMinimized) || w->isHidden() ) { //window was minimized, trigger a tile/cascade update if necessary
-			triggerWindowUpdate();
-//		}
+ 	if (w && (e->type() == QEvent::WindowStateChange || e->type() == QEvent::Close) ) {
+		triggerWindowUpdate();
 	}
- 	if (w && (e->type() == QEvent::Close))
- 	{
- 		triggerWindowUpdate();
- 	}
 	return false; //let the event be handled by other filters too
 }
 
