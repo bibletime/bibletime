@@ -71,7 +71,15 @@ void CMDIArea::myTileVertical() {
 
 	QList<QMdiSubWindow*> windows = usableWindowList();
 	if ((windows.count() == 1) && windows.at(0)) {
-		windows.at(0)->showMaximized();
+		if (windows.at(0)->isMaximized()){
+			if (windows.at(0)->size() != this->size()) {
+				windows.at(0)->resize(this->size());
+			}
+		}
+		else
+		{
+			windows.at(0)->showMaximized();
+		}
 	}
 	else {
 		QMdiSubWindow* active = activeSubWindow();
@@ -88,7 +96,15 @@ void CMDIArea::myTileHorizontal() {
 
 	QList<QMdiSubWindow*> windows = usableWindowList();
 	if ((windows.count() == 1) && windows.at(0)) {
-		windows.at(0)->showMaximized();
+		if (windows.at(0)->isMaximized()){
+			if (windows.at(0)->size() != this->size()) {
+				windows.at(0)->resize(this->size());
+			}
+		}
+		else
+		{
+			windows.at(0)->showMaximized();
+		}
 	}
 	else {
 		QMdiSubWindow* active = activeSubWindow();
@@ -124,7 +140,15 @@ void CMDIArea::myCascade() {
 	}
 
 	if ((windows.count() == 1) && windows.at(0)) {
-		windows.at(0)->showMaximized();
+		if (windows.at(0)->isMaximized()){
+			if (windows.at(0)->size() != this->size()) {
+				windows.at(0)->resize(this->size());
+			}
+		}
+		else
+		{
+			windows.at(0)->showMaximized();
+		}
 	}
 	else {
 		const int offsetX = 40;
