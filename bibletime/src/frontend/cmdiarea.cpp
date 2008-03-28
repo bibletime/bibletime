@@ -12,6 +12,7 @@
 //QT includes
 #include <QTimer>
 #include <QEvent>
+#include <QWindowStateChangeEvent>
 #include <QMdiSubWindow>
 #include <QDebug>
 
@@ -19,14 +20,6 @@ CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
 	m_mdiArrangementMode(ArrangementModeManual)
 {
 	connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
-}
-
-/** Called whan a client window was activated */
-void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
-	if (!client || !updatesEnabled()) {
-		return;
-	}
-	emit sigSetToplevelCaption( client->windowTitle().trimmed() );
 }
 
 QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFlags)
@@ -49,12 +42,6 @@ QMdiSubWindow* CMDIArea::addSubWindow(QWidget * widget, Qt::WindowFlags windowFl
 		triggerWindowUpdate();
 	}
 	return subWindow;
-}
-
-/** Reimplementation */
-void CMDIArea::resizeEvent(QResizeEvent* e) {
-	//do not call QMdiArea::resizeEvent(e), this would mess up our layout
-	if (updatesEnabled()) triggerWindowUpdate();
 }
 
 void CMDIArea::deleteAll() {
@@ -205,9 +192,40 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 	return ret;
 }
 
+void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
+	if (!client || !updatesEnabled()) {
+		return;
+	}
+	emit sigSetToplevelCaption( client->windowTitle().trimmed() );
+}
+
+//resize event of the MDI area itself, update layout if necessary
+void CMDIArea::resizeEvent(QResizeEvent* e) {
+	//do not call QMdiArea::resizeEvent(e), this would mess up our layout
+	if (updatesEnabled()) triggerWindowUpdate();
+}
+
+//handle events of the client windows to update layout if necessary
 bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
-	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>( o );
- 	if (w && (e->type() == QEvent::WindowStateChange || e->type() == QEvent::Close) ) {
+	QMdiSubWindow* w = dynamic_cast<QMdiSubWindow*>(o);
+	if (!w) return false; //let the event be handled by other filters too
+	
+ 	if (e->type() == QEvent::WindowStateChange) {
+ 		Qt::WindowStates newState =  w->windowState();
+ 		Qt::WindowStates oldState = ((QWindowStateChangeEvent*)e)->oldState();
+ 		
+ 		//Do not handle window activation or deactivation here, it will produce wrong
+ 		//results because this event is handled too early. Let slotClientActivated() handle this.
+ 		
+ 		bool needsLayoutUpdate = false;
+ 		//Window was maximized or un-maximized
+ 		if ((newState & Qt::WindowMaximized) ^ (oldState & Qt::WindowMaximized)) needsLayoutUpdate = true;
+ 		//Window was minimized or de-minimized
+ 		if ((newState & Qt::WindowMinimized) ^ (oldState & Qt::WindowMinimized)) needsLayoutUpdate = true;
+ 		//update Layout?
+		if (needsLayoutUpdate) triggerWindowUpdate();
+ 	}
+ 	if (e->type() == QEvent::Close) {
 		triggerWindowUpdate();
 	}
 	return false; //let the event be handled by other filters too

@@ -10,18 +10,13 @@
 #ifndef CMDIAREA_H
 #define CMDIAREA_H
 
-#include "util/cpointers.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
 //Qt includes
 #include <QMdiArea>
 #include <QList>
 
 class CSwordModuleInfo;
-class CSwordKey;
 class QEvent;
 class QResizeEvent;
-class QChildEvent;
 class QMdiSubWindow;
 
 /** The MDI widget we use in BibleTime.
@@ -87,7 +82,7 @@ public slots:
 	/**
 	 * Emits the signal to create a new display window in the MDI area.
 	 */
-	inline void emitCreateDisplayWindow( ListCSwordModuleInfo modules, const QString keyName );
+	inline void emitCreateDisplayWindow(QList<CSwordModuleInfo*> modules, const QString keyName);
 
 signals: // Signals
 	/**
@@ -96,7 +91,7 @@ signals: // Signals
 	void sigSetToplevelCaption(const QString&);
 	/**
 	 */
-	void createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& keyName);
+	void createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& keyName);
 
 private:
 	/**
@@ -113,7 +108,7 @@ private:
 };
 
 /** Emits the signal to create a new display window in the MDI area. */
-inline void CMDIArea::emitCreateDisplayWindow( ListCSwordModuleInfo modules, const QString keyName ) {
+inline void CMDIArea::emitCreateDisplayWindow(QList<CSwordModuleInfo*> modules, const QString keyName) {
 	emit createReadDisplayWindow(modules, keyName);
 }
 
