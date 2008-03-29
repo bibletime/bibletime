@@ -219,9 +219,9 @@ bool CMDIArea::eventFilter(QObject *o, QEvent *e) {
  		
  		bool needsLayoutUpdate = false;
  		//Window was maximized or un-maximized
- 		if ((newState & Qt::WindowMaximized) ^ (oldState & Qt::WindowMaximized)) needsLayoutUpdate = true;
+ 		if ((newState ^ oldState) & Qt::WindowMaximized) needsLayoutUpdate = true;
  		//Window was minimized or de-minimized
- 		if ((newState & Qt::WindowMinimized) ^ (oldState & Qt::WindowMinimized)) needsLayoutUpdate = true;
+ 		if ((newState ^ oldState) & Qt::WindowMinimized) needsLayoutUpdate = true;
  		//update Layout?
 		if (needsLayoutUpdate) triggerWindowUpdate();
  	}
