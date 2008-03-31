@@ -179,7 +179,6 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 	QList<QMdiSubWindow*> ret;
 	foreach(QMdiSubWindow* w, subWindowList())
 	{
-		qWarning() << "CMDIArea::usableWindowList widget loop, current:" << w->windowTitle();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
 			continue;
 		}
