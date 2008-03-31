@@ -82,8 +82,6 @@ QStringList BibleTime::searchInModule(const QString& moduleName, const QString& 
 	QStringList ret;
 	CSwordModuleInfo* mod = CPointers::backend()->findModuleByName(moduleName);
 
-	//TODO: Check this
-	Q_ASSERT(mod);
 	if (mod) {
 		//mod->search(searchText, CSwordModuleSearch::multipleWords, sword::ListKey());
 		sword::ListKey scope;

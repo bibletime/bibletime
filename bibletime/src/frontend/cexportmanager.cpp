@@ -449,16 +449,9 @@ const bool CExportManager::printKeyList(const QStringList& list,CSwordModuleInfo
 	CPrinter::KeyTree tree;
 	setProgressRange(list.count());
 
-	//ToDo: Fix that as soon as we use Qt > 3.1
-	//  const QStringList::const_iterator end = list.constEnd();
-	const QStringList::const_iterator end = list.end();
-
-	//ToDo: Fix that as soon as we use Qt > 3.1
-	//  for (QStringList::const_iterator it = list.constBegin(); (it != end) && !progressWasCancelled(); ++it) {
-
-	for (QStringList::const_iterator it = list.begin(); (it != end) && !progressWasCancelled(); ++it) {
+	const QStringList::const_iterator end = list.constEnd();
+	for (QStringList::const_iterator it = list.constBegin(); (it != end) && !progressWasCancelled(); ++it) {
 		tree.append( new CPrinter::KeyTreeItem(*it, module, settings) );
-
 		incProgress();
 	}
 

@@ -19,6 +19,8 @@
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
 	m_mdiArrangementMode(ArrangementModeManual)
 {
+	//TODO: activate this when we require QT 4.4
+	//setActivationOrder( CreationOrder );
 	connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
 }
 
@@ -72,9 +74,11 @@ void CMDIArea::myTileVertical() {
 		windows.at(0)->showMaximized();
 	}
 	else {
+		setUpdatesEnabled(false);
 		QMdiSubWindow* active = activeSubWindow();
 		QMdiArea::tileSubWindows();
 		if (active) active->setFocus();
+		setUpdatesEnabled(true);
 	}
 	emitWindowCaptionChanged();
 }
@@ -95,14 +99,13 @@ void CMDIArea::myTileHorizontal() {
 		windows.at(0)->showMaximized();
 	}
 	else {
-		QMdiSubWindow* active = activeSubWindow();
-		if (active && active->isMaximized()) active->showNormal();
-
 		setUpdatesEnabled(false);
+		
+		QMdiSubWindow* active = activeSubWindow();
+
 		const int heightForEach = height() / windows.count();
-		int y = 0;
-		for ( int i = 0; i < int(windows.count()); ++i ) {
-			QMdiSubWindow *window = windows.at(i);
+		unsigned int y = 0;
+		foreach (QMdiSubWindow *window, windows) {
 			window->showNormal();
 
 			const int preferredHeight = window->minimumHeight() + window->baseSize().height();
@@ -133,33 +136,25 @@ void CMDIArea::myCascade() {
 		windows.at(0)->showMaximized();
 	}
 	else {
-		const int offsetX = 40;
-		const int offsetY = 40;
-		const int windowWidth =  width() - (windows.count()-1)*offsetX;
-		const int windowHeight = height() - (windows.count()-1)*offsetY;
-
-		int x = 0;
-		int y = 0;
-
-		QMdiSubWindow* const active = activeSubWindow();
-		if (active && active->isMaximized()) active->showNormal();
-
 		setUpdatesEnabled(false);
 
-		for (int i(0); i < int(windows.count()); ++i) {
-			QMdiSubWindow* window = windows.at(i);
+		QMdiSubWindow* active = activeSubWindow();
+
+		const unsigned int offsetX = 40;
+		const unsigned int offsetY = 40;
+		const unsigned int windowWidth =  width() - (windows.count()-1)*offsetX;
+		const unsigned int windowHeight = height() - (windows.count()-1)*offsetY;
+		unsigned int x = 0;
+		unsigned int y = 0;
+
+		foreach (QMdiSubWindow* window, windows) {
 			if (window == active) { //leave out the active window which should be the top window
 				continue;
 			}
-
-			window->setUpdatesEnabled(false);
-
 			window->raise(); //make it the on-top-of-window-stack window to make sure they're in the right order
 			window->setGeometry(x, y, windowWidth, windowHeight);
 			x += offsetX;
 			y += offsetY;
-
-			window->setUpdatesEnabled(true);
 		}
 		active->setGeometry(x, y, windowWidth, windowHeight);
 		active->raise();
@@ -184,6 +179,7 @@ QList<QMdiSubWindow*> CMDIArea::usableWindowList() {
 	QList<QMdiSubWindow*> ret;
 	foreach(QMdiSubWindow* w, subWindowList())
 	{
+		qWarning() << "CMDIArea::usableWindowList widget loop, current:" << w->windowTitle();
 		if (w->isMinimized() || w->isHidden()) { //not usable for us
 			continue;
 		}
