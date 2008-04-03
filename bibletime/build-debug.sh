@@ -10,8 +10,9 @@ PATH="$PATH:/usr/lib/kde4/bin"
 
 if [ ! -d build ]; then mkdir build; fi
 cd build
-VERBOSE=1 cmake -D MODE=DEBUG ..  || exit 1
-make install || exit 1
+cmake -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX="install/" ..  || exit 1
+make VERBOSE=1 install || exit 1
+cd ..
 
 echo
 echo "BibleTime has been installed to ./build/install."

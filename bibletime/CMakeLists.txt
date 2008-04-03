@@ -62,27 +62,9 @@ LINK_DIRECTORIES(
 	${QT_LIBRARY_DIR}
 	${CLUCENE_LIBRARY_DIR}
 )
-#
+
 KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
-#
-IF(MODE STREQUAL "RELEASE")
-	MESSAGE(STATUS "Building in release mode")
-	IF (NOT CMAKE_INSTALL_PREFIX)
-		SET(CMAKE_INSTALL_PREFIX /usr/local/)
-	ENDIF (NOT CMAKE_INSTALL_PREFIX)
-	SET_TARGET_PROPERTIES(bibletime
-		PROPERTIES 
-			COMPILE_FLAGS "-w -fexceptions -O2"
-	)
-ELSE(MODE STREQUAL "RELEASE")
-	MESSAGE(STATUS "Building in debug mode")
-	SET(CMAKE_INSTALL_PREFIX install) #install to ./build/install
-	SET_TARGET_PROPERTIES(bibletime
-		PROPERTIES 
-			COMPILE_FLAGS "-w -fexceptions -O0 -g" #Enable exception handling, debug code and no optimization
-	)
-ENDIF(MODE STREQUAL "RELEASE")
-#
+
 TARGET_LINK_LIBRARIES(bibletime
 	${KDE4_KDEUI_LIBS}
 	${KDE4_KDECORE_LIBS}
@@ -96,6 +78,24 @@ TARGET_LINK_LIBRARIES(bibletime
 )
 ######################################################
 
+IF (NOT CMAKE_INSTALL_PREFIX)
+	SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
+ENDIF (NOT CMAKE_INSTALL_PREFIX)
+
+SET(CMAKE_CXX_FLAGS_RELEASE "-W -fexceptions -O2")
+SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wabi -fexceptions -O0 -g")
+
+SET(CMAKE_CXX_FLAGS_DEBUG_BINONLY ${CMAKE_CXX_FLAGS_DEBUG})
+SET(CMAKE_C_FLAGS_DEBUG_BINONLY ${CMAKE_C_FLAGS_DEBUG})
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG_BINONLY ${CMAKE_EXE_LINKER_FLAGS_DEBUG})
+SET(CMAKE_SHARED_LINKER_FLAGS_DEBUG_BINONLY ${CMAKE_SHARED_LINKER_FLAGS_DEBUG})
+MARK_AS_ADVANCED(
+	CMAKE_CXX_FLAGS_DEBUG_BINONLY
+	CMAKE_C_FLAGS_DEBUG_BINONLY
+	CMAKE_EXE_LINKER_FLAGS_DEBUG_BINONLY
+	CMAKE_SHARED_LINKER_FLAGS_DEBUG_BINONLY
+)
+
 
 ######################################################
 # Install files
@@ -104,36 +104,63 @@ TARGET_LINK_LIBRARIES(bibletime
 INSTALL(TARGETS "bibletime" DESTINATION "bin/")
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" DESTINATION "share/bibletime/locale/")
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" 
+		DESTINATION "share/bibletime/locale/"
+		CONFIGURATIONS Debug Release
+	)
 ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
-INSTALL(FILES ${INSTALL_ICONS_LIST} DESTINATION "share/bibletime/icons/")
+INSTALL(FILES ${INSTALL_ICONS_LIST} 
+	DESTINATION "share/bibletime/icons/"
+	CONFIGURATIONS Debug Release
+)
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
-INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST} DESTINATION "share/bibletime/display-templates/")
+INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST} 
+	DESTINATION "share/bibletime/display-templates/"
+	CONFIGURATIONS Debug Release
+)
 # splash screen
-INSTALL(FILES "pics/startuplogo.png" DESTINATION "share/bibletime/pics/")
+INSTALL(FILES "pics/startuplogo.png" 
+	DESTINATION "share/bibletime/pics/"
+	CONFIGURATIONS Debug Release
+)
 #handbook (install images from en/ to all languages)
 FILE(GLOB INSTALL_HANDBOOK_IMAGES "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/*.png")
 FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}} DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/")
-	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES} DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/")
+	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}} 
+		DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
+		CONFIGURATIONS Debug Release
+	)
+	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES} 
+		DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
+		CONFIGURATIONS Debug Release
+	)
 ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 #howto (does not have images)
 FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} DESTINATION "share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/")
+	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} 
+		DESTINATION "share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/"
+		CONFIGURATIONS Debug Release
+	)
 ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 #
 # Platform specific installation
 #
 # LINUX: application icon
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg" DESTINATION "share/icons/")
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg" 
+	DESTINATION "share/icons/"
+	CONFIGURATIONS Debug Release
+)
 # LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
-INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" DESTINATION "share/applications/")
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" 
+	DESTINATION "share/applications/"
+	CONFIGURATIONS Debug Release
+)
 ######################################################
 
 
