@@ -107,7 +107,10 @@ MARK_AS_ADVANCED(
 # Install files
 #
 # main binary
-INSTALL(TARGETS "bibletime" DESTINATION "bin/")
+INSTALL(TARGETS "bibletime" 
+	DESTINATION "bin/"
+	CONFIGURATIONS Debug Release Debug_Binonly
+)
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" 
