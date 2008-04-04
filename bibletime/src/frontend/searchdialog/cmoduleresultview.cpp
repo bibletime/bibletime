@@ -44,10 +44,12 @@ CModuleResultView::CModuleResultView(QWidget* parent)
 {
 	initView();
 	initConnections();
-};
+}
 
-CModuleResultView::~CModuleResultView() {}
-;
+CModuleResultView::~CModuleResultView()
+{
+}
+
 
 /** Initializes this widget. */
 void CModuleResultView::initView()

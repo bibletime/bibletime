@@ -75,7 +75,7 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 		mods.append((*it)->name());
 	}
 	settings->setModules(mods);
-};
+}
 
 void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
 	setUpdatesEnabled(false);
@@ -93,7 +93,7 @@ void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
 	// m_htmlWidget->view()->verticalScrollBar()->setValue( settings->scrollbarPositions().vertical );
 
 	setUpdatesEnabled(true);
-};
+}
 
 void CWriteWindow::setDisplayWidget( CWriteDisplay* display ) {
 	CDisplayWindow::setDisplayWidget(display);

@@ -21,7 +21,7 @@ public:
 	/**
 	* Performs any and all applicable migration actions, if neccessary
 	*/
-	static bool checkMigration();
+	static void checkMigration();
 private:
 	MigrationUtil() {}; //hide
 	~MigrationUtil() {}; //hide

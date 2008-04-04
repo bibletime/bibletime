@@ -82,7 +82,7 @@ BtIndexPage::BtIndexPage()
 	connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));
 	connect(m_deleteButton, SIGNAL(clicked()), this, SLOT(deleteIndices()));
 	populateModuleList();
-};
+}
 
 BtIndexPage::~BtIndexPage()
 {
@@ -194,7 +194,7 @@ void BtIndexPage::deleteOrphanedIndices()
 	
 	for (unsigned int i = 0; i < dir.count(); i++) {
 		if (dir[i] != "." && dir[i] != "..") {
-			if (module = CPointers::backend()->findModuleByName( dir[i] ) ) { //mod exists
+			if ( (module = CPointers::backend()->findModuleByName(dir[i])) ) { //mod exists
 				if (!module->hasIndex()){ //index files found, but wrong version etc.
 					CSwordModuleInfo::deleteIndexForModule( dir[i] );
 				}

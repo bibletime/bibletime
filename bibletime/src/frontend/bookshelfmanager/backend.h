@@ -55,4 +55,4 @@ const QDir swordDir();
 /** Returns backend Sword manager for the source. */
 CSwordBackend* backend( const sword::InstallSource& is);
 
-};
+}

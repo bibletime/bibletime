@@ -53,7 +53,7 @@ void CIndexItemBase::update()
 const CIndexItemBase::Type& CIndexItemBase::type() const
 {
 	return m_type;
-};
+}
 
 void CIndexItemBase::moveAfter( CIndexItemBase* const item )
 {
@@ -102,12 +102,13 @@ bool CIndexItemBase::acceptDrop(QDropEvent* event) const
 }
 
 void CIndexItemBase::dropped( QDropEvent* e, QTreeWidgetItem* after)
-{}
+{
+}
 
 const bool CIndexItemBase::allowAutoOpen( const QMimeData* ) const
 {
 	return false;
-};
+}
 
 
 

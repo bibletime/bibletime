@@ -100,7 +100,7 @@ void CLexiconKeyChooser::activated(int index) {
 
 inline const bool my_cmpEntries(const QString& a, const QString& b) {
 	return a < b;
-};
+}
 
 /** Reimplementation. */
 void CLexiconKeyChooser::refreshContent() {

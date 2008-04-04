@@ -200,7 +200,7 @@ void CBookmarkIndex::slotExecuted( QTreeWidgetItem* i )
 		return;
 	}
 
-	qDebug(QString().setNum((int)i).toLatin1().data());
+	qDebug() << QString().setNum((int)i).toLatin1().data();
 	CIndexItemBase* ci = dynamic_cast<CIndexItemBase*>(i);
 	if (!ci) {
 		qDebug("if (!ci)");

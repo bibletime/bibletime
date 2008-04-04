@@ -12,4 +12,4 @@
 
 #define BT_VERSION "${BT_VERSION}"
 
-#endif CONFIG_H_CMAKE
+#endif //CONFIG_H_CMAKE

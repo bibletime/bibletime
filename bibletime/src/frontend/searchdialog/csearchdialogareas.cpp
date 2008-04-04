@@ -665,7 +665,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	}
 	//qWarning("\n\n\n%s", ret.latin1());
 	return ret;
-};
+}
 
 /** Initializes the signal slot conections of the child widgets, */
 void CSearchResultArea::initConnections()

@@ -50,7 +50,7 @@ CExportManager::CExportManager(const QString& caption, const bool showProgress, 
 	m_displayOptions = displayOptions;
 	m_showProgress = showProgress;
 	m_progressDialog = 0;
-};
+}
 
 const bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool addText) {
 	if (!key) {
@@ -100,7 +100,7 @@ const bool CExportManager::saveKey(CSwordKey* key, const Format format, const bo
 		return true;
 	}
 	return false;
-};
+}
 
 const bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText) {
 	if (!list->Count())
@@ -148,7 +148,7 @@ const bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* m
 		return true;
 	}
 	return false;
-};
+}
 
 const bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format format, const bool addText ) {
 	if (!list.count())
@@ -195,7 +195,7 @@ const bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format for
 		return true;
 	}
 	return false;
-};
+}
 
 const bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool addText) {
 	if (!key) {
@@ -241,7 +241,7 @@ const bool CExportManager::copyKey(CSwordKey* key, const Format format, const bo
 
 	QApplication::clipboard()->setText(text);
 	return true;
-};
+}
 
 const bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module, const Format format, const bool addText) {
 	if (!list->Count())
@@ -276,7 +276,7 @@ const bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* m
 	const QString text = render->renderKeyTree(tree);
 	QApplication::clipboard()->setText(text);
 	return true;
-};
+}
 
 
 const bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format format, const bool addText ) {
@@ -316,7 +316,7 @@ const bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format for
 		closeProgressDialog();
 	}
 	return true;
-};
+}
 
 const bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) {
 	CPrinter::KeyTreeItem::Settings settings;
@@ -351,7 +351,7 @@ const bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* 
 	}
 
 	return false;
-};
+}
 
 const bool CExportManager::printKey( CSwordModuleInfo* module, const QString& startKey, const QString& stopKey, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions ) {
 	CPrinter::KeyTreeItem::Settings settings;

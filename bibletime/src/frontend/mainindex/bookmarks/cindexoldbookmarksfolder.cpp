@@ -163,5 +163,5 @@ const QString COldBookmarkImport::oldBookmarksXML( const QString& configFileName
 // 
 // 		return doc.toString();
 	return QString::null;
-};
+}
 

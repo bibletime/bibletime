@@ -261,5 +261,4 @@ CSwordBackend* backend( const sword::InstallSource& is)
 	return ret;
 }
 
-
-};
+}

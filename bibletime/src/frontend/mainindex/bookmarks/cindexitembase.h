@@ -27,7 +27,7 @@ public:
 		Unknown = 0,
 		BookmarkFolder,
 		Bookmark,
-		OldBookmarkFolder, /* Bookmarks in the old format from BibleTime 1.1.x and 1.2.x */
+		OldBookmarkFolder /* Bookmarks in the old format from BibleTime 1.1.x and 1.2.x */
 	};
 	enum MenuAction {
 		NewFolder = 0,

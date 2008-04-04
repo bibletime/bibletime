@@ -48,7 +48,7 @@ void CBookReadWindow::applyProfileSettings( CProfileWindow* profileWindow )
 	if (enable) {
 		m_treeAction->activate(QAction::Trigger);
 	}
-};
+}
 
 void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow )
 {
@@ -56,7 +56,7 @@ void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow )
 
 	//store information about our show tree structure button
 	profileWindow->setWindowSettings( static_cast<int>( m_treeAction->isChecked() ) );
-};
+}
 
 void CBookReadWindow::initActions()
 {
@@ -78,7 +78,7 @@ void CBookReadWindow::initActions()
 	ac->addAction("toggleTree", m_treeAction);
 
 	CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
-};
+}
 
 void CBookReadWindow::insertKeyboardActions( KActionCollection* const a )
 {

@@ -58,13 +58,13 @@ void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString
 	// the progress dialog caused them to loose focus.
 	m_staticDialog->raise();
 	m_staticDialog->activateWindow();
-};
+}
 
 CSearchDialog* const CSearchDialog::getSearchDialog()
 {
 	Q_ASSERT(m_staticDialog);
 	return m_staticDialog;
-};
+}
 
 CSearchDialog::CSearchDialog(QWidget *parent)
 //: KDialogBase(Plain, tr("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, tr("Search"))

@@ -93,7 +93,7 @@ CKeyChooserWidget::CKeyChooserWidget(int count, const bool useNextPrevSignals,  
 	}
 	init();
 	reset(m_list,0,false);
-};
+}
 
 CKeyChooserWidget::CKeyChooserWidget(QStringList *list, const bool useNextPrevSignals, QWidget *parent ) : QWidget(parent) {
 	m_useNextPrevSignals = useNextPrevSignals;

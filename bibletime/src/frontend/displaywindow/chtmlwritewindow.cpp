@@ -51,7 +51,7 @@ void CHTMLWriteWindow::initView() {
 
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
-};
+}
 
 void CHTMLWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
@@ -60,7 +60,7 @@ void CHTMLWriteWindow::initConnections() {
 			this, SLOT(lookup(CSwordKey*)));
 	connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()),
 			this, SLOT(textChanged()) );
-};
+}
 
 void CHTMLWriteWindow::initToolbars() {
 	//setup the main toolbar
@@ -118,14 +118,14 @@ void CHTMLWriteWindow::initToolbars() {
 void CHTMLWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
 	CWriteWindow::storeProfileSettings(profileWindow);
 	profileWindow->setWindowSettings( m_actions.syncWindow->isChecked() );
-};
+}
 
 void CHTMLWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 	CWriteWindow::applyProfileSettings(profileWindow);
 	if (profileWindow->windowSettings()) {
 		m_actions.syncWindow->setChecked(true);
 	}
-};
+}
 
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {

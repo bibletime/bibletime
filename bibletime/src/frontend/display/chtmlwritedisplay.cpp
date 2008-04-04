@@ -52,19 +52,19 @@ void CHTMLWriteDisplay::setText( const QString& newText ) {
 
 const QString CHTMLWriteDisplay::plainText() {
 	return QTextEdit::toPlainText();
-};
+}
 
 void CHTMLWriteDisplay::toggleBold(bool) {
 	setFontWeight( m_actions.bold->isChecked() ? QFont::Bold : QFont::Normal );
-};
+}
 
 void CHTMLWriteDisplay::toggleItalic(bool) {
 	setFontItalic( m_actions.italic->isChecked() );
-};
+}
 
 void CHTMLWriteDisplay::toggleUnderline(bool) {
 	setFontUnderline( m_actions.underline->isChecked() );
-};
+}
 
 
 void CHTMLWriteDisplay::alignLeft(bool set) {
@@ -72,21 +72,21 @@ void CHTMLWriteDisplay::alignLeft(bool set) {
 		setAlignment(Qt::AlignLeft);
 		slotAlignmentChanged(Qt::AlignLeft);
 	}
-};
+}
 
 void CHTMLWriteDisplay::alignCenter(bool set) {
 	if (set && (alignment() != Qt::AlignHCenter)){
 		setAlignment(Qt::AlignHCenter);
 		slotAlignmentChanged(Qt::AlignHCenter);
 	}
-};
+}
 
 void CHTMLWriteDisplay::alignRight(bool set) {
 	if (set && (alignment() != Qt::AlignRight)){
 		setAlignment(Qt::AlignRight);
 		slotAlignmentChanged(Qt::AlignRight);
 	}
-};
+}
 
 
 /** The text's alignment changed. Enable the right buttons. */
@@ -141,7 +141,7 @@ void CHTMLWriteDisplay::slotFontChanged( const QFont& font ) {
 	m_actions.bold->setChecked( font.bold() );
 	m_actions.italic->setChecked( font.italic() );
 	m_actions.underline->setChecked( font.underline() );
-};
+}
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions) {
 	
@@ -270,4 +270,4 @@ QMenu* CHTMLWriteDisplay::createPopupMenu( const QPoint& ) {
 	popup->setTitle(tr("HTML editor window"));
 	popup->addAction(m_actions.selectAll);
 	return popup;
-};
+}

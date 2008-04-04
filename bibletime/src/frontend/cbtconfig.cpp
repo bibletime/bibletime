@@ -675,7 +675,7 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 	getConfig()->beginGroup("Module keys");
 	getConfig()->setValue(module, key);
 	getConfig()->endGroup();
-};
+}
 
 QSettings* const CBTConfig::getConfig()
 {

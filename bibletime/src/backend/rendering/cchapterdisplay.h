@@ -32,6 +32,6 @@ public: // Public methods
 	virtual const QString text( const ListCSwordModuleInfo& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
 };
 
-};
+}
 
 #endif

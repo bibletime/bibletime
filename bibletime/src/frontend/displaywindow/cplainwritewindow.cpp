@@ -119,14 +119,14 @@ void CPlainWriteWindow::initConnections() {
 void CPlainWriteWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
 	CWriteWindow::storeProfileSettings(profileWindow);
 	profileWindow->setWindowSettings( m_actions.syncWindow->isChecked() );
-};
+}
 
 void CPlainWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 	CWriteWindow::applyProfileSettings(profileWindow);
 	if (profileWindow->windowSettings()) {
 		m_actions.syncWindow->setChecked(true);
 	}
-};
+}
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */
 void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {

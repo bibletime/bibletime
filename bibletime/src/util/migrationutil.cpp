@@ -18,13 +18,11 @@
 #include <QSettings>
 
 
-
-
 using namespace util::filesystem;
 
 namespace util{
 
-bool MigrationUtil::checkMigration(){
+void MigrationUtil::checkMigration(){
 	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION)
 	{
 		sword::SWVersion lastVersion(CBTConfig::get(CBTConfig::bibletimeVersion).toUtf8());

@@ -38,7 +38,8 @@ public: // Public methods
 
 protected:
 		void setupRenderTree(CSwordTreeKey* swordTree, CTextRendering::KeyTree* renderTree, const QString& highlightKey);
-	};
 };
+
+}
 
 #endif

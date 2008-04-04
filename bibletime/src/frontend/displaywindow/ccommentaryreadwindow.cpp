@@ -68,12 +68,12 @@ void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow 
 	if (profileWindow->windowSettings()) {
 		m_syncButton->setChecked(true);
 	}
-};
+}
 
 void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
 	CLexiconReadWindow::storeProfileSettings(profileWindow);
 	profileWindow->setWindowSettings( m_syncButton->isChecked() );
-};
+}
 
 void CCommentaryReadWindow::initToolbars() {
 	CLexiconReadWindow::initToolbars();

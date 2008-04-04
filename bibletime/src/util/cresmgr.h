@@ -30,18 +30,18 @@ namespace CResMgr {
 			extern const QString icon_unlocked;
 			extern const QString icon_locked;
 			extern const QString icon_add;
-		};
+		}
 		namespace lexicon {
 			extern const QString icon_unlocked;
 			extern const QString icon_locked;
 			extern const QString icon_add;
-		};
+		}
 		namespace book {
 			extern const QString icon_unlocked;
 			extern const QString icon_locked;
 			extern const QString icon_add;
-		};
-	};
+		}
+	}
 
 	namespace categories {
 		namespace bibles {
@@ -68,7 +68,7 @@ namespace CResMgr {
 		namespace cults {
 			extern const QString icon;
 		}
-	};
+	}
 
 	namespace mainMenu { //Main menu
 		namespace file { //Main menu->File

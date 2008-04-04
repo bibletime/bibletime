@@ -65,6 +65,12 @@ LINK_DIRECTORIES(
 
 KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
+SET_TARGET_PROPERTIES(bibletime
+	PROPERTIES 
+		COMPILE_FLAGS "-pedantic-errors -fexceptions" #Enable exception handling, debug code and no optimization
+)
+
+
 TARGET_LINK_LIBRARIES(bibletime
 	${KDE4_KDEUI_LIBS}
 	${KDE4_KDECORE_LIBS}
@@ -82,8 +88,8 @@ IF (NOT CMAKE_INSTALL_PREFIX)
 	SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
 ENDIF (NOT CMAKE_INSTALL_PREFIX)
 
-SET(CMAKE_CXX_FLAGS_RELEASE "-W -fexceptions -O2")
-SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wabi -fexceptions -O0 -g")
+SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
+SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wabi -O0 -g")
 
 SET(CMAKE_CXX_FLAGS_DEBUG_BINONLY ${CMAKE_CXX_FLAGS_DEBUG})
 SET(CMAKE_C_FLAGS_DEBUG_BINONLY ${CMAKE_C_FLAGS_DEBUG})

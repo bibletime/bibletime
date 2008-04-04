@@ -23,18 +23,18 @@ namespace Rendering {
 class CPlainTextExportRendering : public CHTMLExportRendering {
 
 public:
-		CPlainTextExportRendering(
-			const Settings& settings,
-			CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
-			CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
-		);
-		virtual ~CPlainTextExportRendering();
+	CPlainTextExportRendering(
+		const Settings& settings,
+		CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
+		CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
+	);
+	virtual ~CPlainTextExportRendering();
 
 protected:
-		virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
-		virtual const QString finishText( const QString&, KeyTree& tree );
-	};
-
+	virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
+	virtual const QString finishText( const QString&, KeyTree& tree );
 };
+
+}
 
 #endif

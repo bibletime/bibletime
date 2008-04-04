@@ -448,7 +448,7 @@ CHTMLReadDisplayView::CHTMLReadDisplayView(CHTMLReadDisplay* displayWidget, QWid
 	viewport()->setAcceptDrops(true);
 	setMarginWidth(4);
 	setMarginHeight(4);
-};
+}
 
 
 /** Opens the popupmenu at the given position. */

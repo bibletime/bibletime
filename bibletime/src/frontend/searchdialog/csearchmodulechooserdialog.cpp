@@ -42,7 +42,7 @@ CSearchModuleChooserDialog::CSearchModuleChooserDialog( QWidget* parent, QString
 	filters.append(m_hiddenFilter);
 	setFilters(filters);
 	init();
-};
+}
 
 CSearchModuleChooserDialog::~CSearchModuleChooserDialog()
 {

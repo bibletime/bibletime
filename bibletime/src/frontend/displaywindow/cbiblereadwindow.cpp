@@ -69,7 +69,7 @@ void CBibleReadWindow::applyProfileSettings( CProfileWindow* const settings ) {
 		}
 	}
 	displaySettingsButton()->setChanged();
-};
+}
 
 void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) {
 	CLexiconReadWindow::storeProfileSettings(settings);
@@ -82,7 +82,7 @@ void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) {
 			result += (int)pow((double)2,i-1);//add 2^i (the i. digit in binary)
 	}
 	settings->setWindowSettings(result);
-};
+}
 
 
 /** Reimplementation. */
