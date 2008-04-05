@@ -5239,192 +5239,192 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="51"/>
+        <location filename="../../src/bibletime_init.cpp" line="47"/>
         <source>Creating BibleTime&apos;s GUI</source>
         <translation>正在创建 BibleTime 的介面</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="91"/>
+        <location filename="../../src/bibletime_init.cpp" line="87"/>
         <source>Initializing menu- and toolbars</source>
         <translation>正在初始化菜单及工具栏</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="89"/>
         <source>&amp;File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="90"/>
         <source>&amp;View</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="95"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>&amp;Search</source>
         <translation>搜索(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="92"/>
         <source>&amp;Window</source>
         <translation>窗口(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="97"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>Se&amp;ttings</source>
         <translation>设置(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="98"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;Help</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="100"/>
+        <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>BibleTime</source>
         <translation>BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>Quit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="110"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Exit BibleTime</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="122"/>
+        <location filename="../../src/bibletime_init.cpp" line="118"/>
         <source>&amp;Show toolbar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <location filename="../../src/bibletime_init.cpp" line="130"/>
         <source>&amp;Show bookshelf</source>
         <translation>显示书架(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>Show &amp;mag</source>
         <translation>显示放大镜(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/bibletime_init.cpp" line="155"/>
         <source>&amp;Fullscreen mode</source>
         <translation>全屏幕模式(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Search in &amp;open work(s)</source>
         <translation>於已打开著作里搜索(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Search in standard &amp;Bible</source>
         <translation>於标准圣经里搜索(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>&amp;Save session</source>
         <translation>保存工作阶段(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Save as &amp;new session</source>
         <translation>另存为新工作阶段(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="200"/>
+        <location filename="../../src/bibletime_init.cpp" line="196"/>
         <source>&amp;Load session</source>
         <translation>载入工作阶段(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="203"/>
+        <location filename="../../src/bibletime_init.cpp" line="199"/>
         <source>&amp;Delete session</source>
         <translation>删除工作阶段(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="216"/>
+        <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>&amp;Arrangement mode</source>
         <translation>排列模式(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="223"/>
+        <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>&amp;Manual mode</source>
         <translation>手动模式(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <location filename="../../src/bibletime_init.cpp" line="230"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>自动垂直并排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <location filename="../../src/bibletime_init.cpp" line="241"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>自动水平并排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/bibletime_init.cpp" line="252"/>
         <source>Auto-&amp;cascade</source>
         <translation>自动重叠显示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <location filename="../../src/bibletime_init.cpp" line="262"/>
         <source>&amp;Cascade</source>
         <translation>重叠显示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/bibletime_init.cpp" line="272"/>
         <source>Tile &amp;vertically</source>
         <translation>垂直并排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <location filename="../../src/bibletime_init.cpp" line="282"/>
         <source>Tile &amp;horizontally</source>
         <translation>水平并排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <location filename="../../src/bibletime_init.cpp" line="292"/>
         <source>Cl&amp;ose all</source>
         <translation>关闭全部(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <location filename="../../src/bibletime_init.cpp" line="302"/>
         <source>&amp;Configure BibleTime</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="315"/>
+        <location filename="../../src/bibletime_init.cpp" line="311"/>
         <source>Bookshelf &amp;Manager</source>
         <translation>书架管理器(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="323"/>
+        <location filename="../../src/bibletime_init.cpp" line="319"/>
         <source>&amp;Handbook</source>
         <translation>手册(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="334"/>
+        <location filename="../../src/bibletime_init.cpp" line="330"/>
         <source>&amp;Bible Study Howto</source>
         <translation>如何研经(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="393"/>
+        <location filename="../../src/bibletime_init.cpp" line="389"/>
         <source>Initializing Sword</source>
         <translation>正在初始化 Sword</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="446"/>
+        <location filename="../../src/bibletime_init.cpp" line="442"/>
         <source>Checking indices</source>
         <translation>正在检查索引</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="515"/>
+        <location filename="../../src/bibletime_slots.cpp" line="501"/>
         <source>Session name:</source>
         <translation>工作阶段名称:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="515"/>
+        <location filename="../../src/bibletime_slots.cpp" line="501"/>
         <source>Please enter a name for the new session.</source>
         <translation>请输入新工作阶段的名称.</translation>
     </message>
@@ -5434,12 +5434,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="55"/>
         <source>Manage module search indices</source>
-        <translation>管理模块搜索索引</translation>
+        <translation type="obsolete">管理模块搜索索引</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="56"/>
         <source>You can use the list below to create and/or delete search indices for your installed works.</source>
-        <translation>你可以使用以下列表创建及/或删除你已安装著作的搜索索引.</translation>
+        <translation type="obsolete">你可以使用以下列表创建及/或删除你已安装著作的搜索索引.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="67"/>
@@ -5449,7 +5449,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
         <source>Index size</source>
-        <translation>索引大小</translation>
+        <translation type="obsolete">索引大小</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="92"/>
@@ -5464,22 +5464,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="116"/>
         <source>KiB</source>
-        <translation>千字节</translation>
+        <translation type="obsolete">千字节</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="62"/>
         <source>Work</source>
-        <translation type="unfinished">著作</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="87"/>
-        <source>Works with indices</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cmanageindiceswidget.cpp" line="95"/>
-        <source>Works without indices</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">著作</translation>
     </message>
 </context>
 <context>
@@ -5487,52 +5477,47 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="75"/>
         <source>Bookshelf path(s)</source>
-        <translation>书架路径</translation>
+        <translation type="obsolete">书架路径</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="86"/>
         <source>Configure bookshelf path(s)</source>
-        <translation>配置书架路径</translation>
+        <translation type="obsolete">配置书架路径</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="88"/>
         <source>You can store your bookshelfs in one or more directories, which you can specify here.</source>
-        <translation>你可以在这里指定一个或更多目录, 以保存你的书架.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="92"/>
-        <source>Your bookshelf configuration file is: </source>
-        <translation></translation>
+        <translation type="obsolete">你可以在这里指定一个或更多目录, 以保存你的书架.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="97"/>
         <source>Path to bookshelf</source>
-        <translation>往书架路径</translation>
+        <translation type="obsolete">往书架路径</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="103"/>
         <source>Edit Entry</source>
-        <translation>编辑条目</translation>
+        <translation type="obsolete">编辑条目</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="108"/>
         <source>Add Entry</source>
-        <translation>加入条目</translation>
+        <translation type="obsolete">加入条目</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="113"/>
         <source>Remove Entry</source>
-        <translation>删除条目</translation>
+        <translation type="obsolete">删除条目</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="123"/>
         <source>Install/Update works</source>
-        <translation>安装/更新著作</translation>
+        <translation type="obsolete">安装/更新著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="145"/>
         <source>Install/update works - Step 1</source>
-        <translation>安装/更新著作 - 步骤1</translation>
+        <translation type="obsolete">安装/更新著作 - 步骤1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
@@ -5542,42 +5527,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="153"/>
         <source>Select library</source>
-        <translation>选择文库</translation>
+        <translation type="obsolete">选择文库</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="159"/>
         <source>Delete library</source>
-        <translation>删除文库</translation>
+        <translation type="obsolete">删除文库</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="164"/>
         <source>Add library</source>
-        <translation>加入文库</translation>
+        <translation type="obsolete">加入文库</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="172"/>
         <source>Select bookshelf path</source>
-        <translation>选择书架路径</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="185"/>
-        <source>Back</source>
-        <translation></translation>
+        <translation type="obsolete">选择书架路径</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="770"/>
         <source>Connect to library</source>
-        <translation>连接至文库</translation>
+        <translation type="obsolete">连接至文库</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="208"/>
         <source>Remove works</source>
-        <translation>删除著作</translation>
+        <translation type="obsolete">删除著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="220"/>
         <source>Remove installed work(s)</source>
-        <translation>删除已安装著作</translation>
+        <translation type="obsolete">删除已安装著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
@@ -5587,112 +5567,52 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="225"/>
         <source>Select works to be uninstalled</source>
-        <translation>选择你想卸载的著作</translation>
+        <translation type="obsolete">选择你想卸载的著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="231"/>
         <source>Remove selected work(s)</source>
-        <translation>删除已选著作</translation>
+        <translation type="obsolete">删除已选著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="244"/>
         <source>Manage search indicies</source>
-        <translation>管理搜索索引</translation>
+        <translation type="obsolete">管理搜索索引</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="855"/>
         <source>[Remote]</source>
-        <translation>[远程]</translation>
+        <translation type="obsolete">[远程]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="850"/>
         <source>[Local]</source>
-        <translation>[本地]</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="411"/>
-        <source>You selected the following work(s): </source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="413"/>
-        <source>Do you really want to remove them from your system?</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
-        <source>Confirmation</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="700"/>
-        <source>Cancel</source>
-        <translation></translation>
+        <translation type="obsolete">[本地]</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="488"/>
         <source>Download</source>
-        <translation>下载</translation>
+        <translation type="obsolete">下载</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="601"/>
         <source>Install/update works - Step 2</source>
-        <translation>安装/更新著作 - 步骤2</translation>
+        <translation type="obsolete">安装/更新著作 - 步骤2</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="602"/>
         <source>Please choose the works which should be installed and/or updated and click the install button.</source>
-        <translation>请选择你想安装及/或更新的著作并点击安装钮.</translation>
+        <translation type="obsolete">请选择你想安装及/或更新的著作并点击安装钮.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="628"/>
         <source>Install works</source>
-        <translation>安装著作</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="673"/>
-        <source>You selected the following works: </source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="675"/>
-        <source>Do you really want to install them on your system?</source>
-        <translation></translation>
+        <translation type="obsolete">安装著作</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="701"/>
         <source>Download of work(s)</source>
-        <translation>下载著作</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="799"/>
-        <source>Choose directory</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="786"/>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
-        <source>Warning</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="150"/>
-        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the remote installation feature!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="222"/>
-        <source>This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupdialog.cpp" line="808"/>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">下载著作</translation>
     </message>
 </context>
 <context>
@@ -5700,62 +5620,52 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="46"/>
         <source>Caption</source>
-        <translation>标题</translation>
+        <translation type="obsolete">标题</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="61"/>
         <source>Type</source>
-        <translation>类型</translation>
+        <translation type="obsolete">类型</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="64"/>
         <source>Server</source>
-        <translation>服务器</translation>
+        <translation type="obsolete">服务器</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="67"/>
         <source>Path</source>
-        <translation>路径</translation>
+        <translation type="obsolete">路径</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="88"/>
         <source>Ok</source>
-        <translation>确定</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="89"/>
-        <source>Discard</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="127"/>
-        <source>Error</source>
-        <translation></translation>
+        <translation type="obsolete">确定</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="102"/>
         <source>Please provide a caption.</source>
-        <translation>请提供标题.</translation>
+        <translation type="obsolete">请提供标题.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="110"/>
         <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation>一个拥有相同标题的来源已经存在.&lt;br&gt;请提供不同的标题.</translation>
+        <translation type="obsolete">一个拥有相同标题的来源已经存在.&lt;br&gt;请提供不同的标题.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="116"/>
         <source>Please provide a server name.</source>
-        <translation>请提供服务器名称.</translation>
+        <translation type="obsolete">请提供服务器名称.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="123"/>
         <source>Please provide a valid, readable path.</source>
-        <translation>请提供有效的, 可读的路径.</translation>
+        <translation type="obsolete">请提供有效的, 可读的路径.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="127"/>
         <source>Please provide a path.</source>
-        <translation>请提供路径.</translation>
+        <translation type="obsolete">请提供路径.</translation>
     </message>
 </context>
 <context>
@@ -5763,157 +5673,329 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Name</source>
-        <translation>名称</translation>
+        <translation type="obsolete">名称</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Status</source>
-        <translation>状态</translation>
+        <translation type="obsolete">状态</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Installed version</source>
-        <translation>已安装版本</translation>
+        <translation type="obsolete">已安装版本</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Remote version</source>
-        <translation>远程版本</translation>
+        <translation type="obsolete">远程版本</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="68"/>
         <source>Location</source>
-        <translation>位置</translation>
+        <translation type="obsolete">位置</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="82"/>
         <source>Bibles</source>
-        <translation>圣经</translation>
+        <translation type="obsolete">圣经</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="89"/>
         <source>Commentaries</source>
-        <translation>评论</translation>
+        <translation type="obsolete">评论</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="96"/>
         <source>Lexicons</source>
-        <translation>辞典</translation>
+        <translation type="obsolete">辞典</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="103"/>
         <source>Books</source>
-        <translation>书籍</translation>
+        <translation type="obsolete">书籍</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="110"/>
         <source>Daily Devotionals</source>
-        <translation>每日灵修</translation>
+        <translation type="obsolete">每日灵修</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="117"/>
         <source>Glossaries</source>
-        <translation>字汇表</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="124"/>
-        <source>Maps and Images</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="131"/>
-        <source>Cult/Unorthodox/Questionable</source>
-        <translation></translation>
+        <translation type="obsolete">字汇表</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>New</source>
-        <translation>新</translation>
+        <translation type="obsolete">新</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="246"/>
         <source>Updated</source>
-        <translation>更新</translation>
+        <translation type="obsolete">更新</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
-        <translation>已安装</translation>
+        <translation type="obsolete">已安装</translation>
+    </message>
+</context>
+<context>
+    <name>BtIndexPage</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="44"/>
+        <source>If selected, those indexes which have no corresponding work will be deleted when BibleTime starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="45"/>
+        <source>Automatically delete orphaned indexes when BibleTime starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="57"/>
+        <source>Delete the selected indexes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="58"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="62"/>
+        <source>Create new indexes for the selected works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="63"/>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="69"/>
+        <source>Work</source>
+        <translation type="unfinished">著作</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="69"/>
+        <source>Index size</source>
+        <translation type="unfinished">索引大小</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
+        <source>Create new search indexes and delete created indexes for the installed works.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="102"/>
+        <source>Search Indexes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
+        <source>Works with indexes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
+        <source>Works without indexes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="138"/>
+        <source>KiB</source>
+        <translation type="unfinished">千字节</translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallModuleChooserDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="33"/>
+        <source>Install</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="91"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="97"/>
         <source>Install Path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
         <source>Configure...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
         <source>Install</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="183"/>
         <source>Install/Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="171"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtInstallPathDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
+        <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
+        <source>Configure install paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
+        <source>Configuration file for the paths is: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="69"/>
+        <source>Add...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="74"/>
+        <source>Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="119"/>
+        <source>Choose directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Work</source>
         <translation type="unfinished">著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="35"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="84"/>
         <source>Stop All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="69"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallprogressdialog.cpp" line="109"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="113"/>
         <source>Completed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="128"/>
+        <source>Cancelled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btmodulemanagerdialog.cpp" line="21"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="26"/>
         <source>BibleTime Bookshelf Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtRemovePage</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <source>Work</source>
+        <translation type="unfinished">著作</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <source>Install path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="83"/>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
+        <source>Remove installed works. Select the works and click Remove button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
+        <source>You selected the following work(s): </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="151"/>
+        <source>Do you really want to remove them from your system?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="153"/>
+        <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
         <source>Work</source>
         <translation type="unfinished">著作</translation>
     </message>
@@ -5923,32 +6005,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">状态</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="237"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="206"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="62"/>
         <source>Last refreshed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="219"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="222"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="224"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="226"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="83"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5956,67 +6038,67 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="480"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="88"/>
         <source>Delete Source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="481"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="89"/>
         <source>Do you really want to delete this source?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="516"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="123"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="517"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="124"/>
         <source>Refreshing Source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="539"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="146"/>
         <source>Connecting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="585"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="196"/>
         <source>Refreshing...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="645"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
         <source>Remote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="650"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
         <source>Local:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="708"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
         <source>Install/Update works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="710"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="316"/>
         <source>Do you really want to install these works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="712"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="654"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
         <source>Not a directory!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="657"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="263"/>
         <source>Not readable!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6062,127 +6144,127 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="157"/>
         <source>Next book</source>
         <translation>下一卷</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="161"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="162"/>
         <source>Previous book</source>
         <translation>上一卷</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="166"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="167"/>
         <source>Next chapter</source>
         <translation>下一章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="171"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="172"/>
         <source>Previous chapter</source>
         <translation>上一章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="176"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="177"/>
         <source>Next verse</source>
         <translation>下一节</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="181"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="182"/>
         <source>Previous verse</source>
         <translation>上一节</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="125"/>
         <source>Copy chapter</source>
         <translation>复制本章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="131"/>
         <source>Save chapter as plain text</source>
         <translation>保存本章为纯文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="133"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="134"/>
         <source>Save chapter as HTML</source>
         <translation>保存本章为 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="139"/>
         <source>Print chapter</source>
         <translation>打印本章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="195"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
         <source>Strong&apos;s Search</source>
         <translation>Strong&apos;s 搜索</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="202"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="203"/>
         <source>Reference only</source>
         <translation>只限参照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="206"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="207"/>
         <source>Text of reference</source>
         <translation>参照经文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="233"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="234"/>
         <source>Reference with text</source>
         <translation>经文连同参照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="237"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="238"/>
         <source>Chapter</source>
         <translation>本章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="225"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
         <source>Chapter as plain text</source>
         <translation>本章为纯文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="229"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="230"/>
         <source>Chapter as HTML</source>
         <translation>本章为 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="264"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="265"/>
         <source>Bible window</source>
         <translation>圣经窗口</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="272"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="273"/>
         <source>Copy...</source>
         <translation>复制...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="284"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="285"/>
         <source>Save...</source>
         <translation>保存...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="297"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
         <source>Print...</source>
         <translation>打印...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="394"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>复制本章至剪贴板...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="394"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
         <source>Copying</source>
         <translation>正在复制</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
         <source>Saving chapter ...</source>
         <translation>正在保存本章...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="433"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
         <source>Saving</source>
         <translation>正在保存</translation>
     </message>
@@ -6591,17 +6673,17 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="174"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
         <source>Back in history</source>
         <translation>上一步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="182"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="181"/>
         <source>Forward in history</source>
         <translation>下一步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="136"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Search</source>
         <translation>搜索</translation>
     </message>
@@ -6662,37 +6744,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="67"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="69"/>
         <source>Sync with active Bible</source>
         <translation>与活动的圣经同步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="80"/>
         <source>Save text</source>
         <translation>保存文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="90"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="92"/>
         <source>Delete current entry</source>
         <translation>删除当前条目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="103"/>
         <source>Restore original text</source>
         <translation>还原原来文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
         <source>Module not writable</source>
         <translation>不能写入模块</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="166"/>
         <source>Module is not writable.</source>
         <translation>不能写入模块.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="167"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>模块不可被编辑, 或你没有写入权限.</translation>
     </message>
@@ -6707,11 +6789,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 </context>
 <context>
     <name>CInstallModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallpage.cpp" line="832"/>
-        <source>Install</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
@@ -6924,45 +7001,55 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="57"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="51"/>
         <source>Creating index for work: </source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
+        <source>Creating indices</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CPlainWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="62"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="64"/>
         <source>Sync with active Bible</source>
         <translation>与活动的圣经同步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="75"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="77"/>
         <source>Save text</source>
         <translation>保存文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="88"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="90"/>
         <source>Delete current entry</source>
         <translation>删除当前条目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="103"/>
         <source>Restore original text</source>
         <translation>还原原来文本</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
         <source>Module not writable</source>
         <translation>不能写入模块</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="151"/>
         <source>Module is not writable.</source>
         <translation>不能写入模块.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="151"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="153"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>模块不可被编辑, 或你没有写入权限.</translation>
     </message>
@@ -6970,122 +7057,122 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="756"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="762"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
         <source>unknown</source>
         <translation>未知的</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="753"/>
         <source>Markup</source>
         <translation>标记</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="765"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
         <source>Location</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="762"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
         <source>Category</source>
         <translation>类别</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="779"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="783"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
         <source>Writable</source>
         <translation>可写入</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="784"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>no</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="788"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
         <source>Unlock key</source>
         <translation>解锁钥</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>Features</source>
         <translation>特点</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="815"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="808"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>小心, 此著作包含异端或可疑的内容!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="818"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="811"/>
         <source>About</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Distribution license</source>
         <translation>发行许可证</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Distribution source</source>
         <translation>发行来源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Distribution notes</source>
         <translation>发行备注</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Text source</source>
         <translation>文本来源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Copyright notes</source>
         <translation>版权备注</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="859"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright holder</source>
         <translation>版权持有人</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="861"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright date</source>
         <translation>版权日期</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="863"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact name</source>
         <translation>版权联系人姓名</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="865"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
         <source>Copyright contact address</source>
         <translation>版权联系人地址</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="867"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
         <source>Copyright contact email</source>
         <translation>版权联系人电子邮件</translation>
     </message>
@@ -7101,6 +7188,69 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="41"/>
         <source>Text filters</source>
         <translation>文本过滤器</translation>
+    </message>
+</context>
+<context>
+    <name>CSwordSetupInstallSourcesDialog</name>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="47"/>
+        <source>Caption</source>
+        <translation type="unfinished">标题</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="62"/>
+        <source>Type</source>
+        <translation type="unfinished">类型</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="65"/>
+        <source>Server</source>
+        <translation type="unfinished">服务器</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="68"/>
+        <source>Path</source>
+        <translation type="unfinished">路径</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="89"/>
+        <source>Ok</source>
+        <translation type="unfinished">确定</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="90"/>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="129"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="103"/>
+        <source>Please provide a caption.</source>
+        <translation type="unfinished">请提供标题.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="112"/>
+        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
+        <translation type="unfinished">一个拥有相同标题的来源已经存在.&lt;br&gt;请提供不同的标题.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
+        <source>Please provide a server name.</source>
+        <translation type="unfinished">请提供服务器名称.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
+        <source>Please provide a valid, readable path.</source>
+        <translation type="unfinished">请提供有效的, 可读的路径.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="129"/>
+        <source>Please provide a path.</source>
+        <translation type="unfinished">请提供路径.</translation>
     </message>
 </context>
 <context>
@@ -7172,39 +7322,9 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>ManageIndicesForm</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="13"/>
-        <source>Manage Indicies</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="50"/>
-        <source>Automaticall&amp;y delete orphaned indices when BibleTime starts</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="53"/>
-        <source>Alt+Y</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="61"/>
         <source>Module</source>
-        <translation>模块</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="66"/>
-        <source>Index Size</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="92"/>
-        <source>&amp;Create selected indices</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="99"/>
-        <source>De&amp;lete selected indices</source>
-        <translation></translation>
+        <translation type="obsolete">模块</translation>
     </message>
 </context>
 <context>
@@ -7250,12 +7370,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>书籍</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="316"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="314"/>
         <source>Alternative text</source>
         <translation>可选文字</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="474"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="472"/>
         <source>Added text</source>
         <translation>附加文本</translation>
     </message>
@@ -7280,552 +7400,552 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>阿塞拜疆语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="153"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
         <source>Belarusian</source>
         <translation>白俄罗斯语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
         <source>Bulgarian</source>
         <translation>保加利亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="159"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
         <source>Breton</source>
         <translation>布里敦语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
         <source>Bosnian</source>
         <translation>波斯尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="162"/>
         <source>Catalan</source>
         <translation>加泰罗尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="163"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
         <source>Cebuano</source>
         <translation>宿雾语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
         <source>Chamorro</source>
         <translation>查莫罗语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="166"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
         <source>Coptic</source>
         <translation>科普特语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
         <source>Czech</source>
         <translation>捷克语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
         <source>Church Slavic</source>
         <translation>教会斯拉夫语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="170"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
         <source>Welsh</source>
         <translation>威尔士语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
         <source>Danish</source>
         <translation>丹麦语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
         <source>German</source>
         <translation>德语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="174"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
         <source>Greek, Modern (1453-)</source>
         <translation>希腊语, 现代 (1453-)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>English</source>
         <translation>英语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="177"/>
         <source>American English</source>
         <translation>美国英语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="177"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
         <source>English, Middle (1100-1500)</source>
         <translation>英语, 中世纪 (1100-1500)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
         <source>Esperanto</source>
         <translation>世界语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="180"/>
         <source>Spanish</source>
         <translation>西班牙语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="180"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Estonian</source>
         <translation>爱沙尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
         <source>Basque</source>
         <translation>巴斯克语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
         <source>Persian</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
         <source>Finnish</source>
         <translation>芬兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="186"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="187"/>
         <source>French</source>
         <translation>法语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="187"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Frisian</source>
         <translation>弗里西语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
         <source>Irish</source>
         <translation>爱尔兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
         <source>Gaelic (Scots)</source>
         <translation>盖尔语 (苏格兰)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="193"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
         <source>Gothic</source>
         <translation>哥德语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
         <source>Manx</source>
         <translation>曼岛语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Greek, Ancient (to 1453)</source>
         <translation>希腊语, 古代 (至1453)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
         <source>Hebrew</source>
         <translation>希伯来语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
         <source>Hausa</source>
         <translation>豪萨语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Hawaiian</source>
         <translation>夏威夷语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
         <source>Hindi</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="201"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
         <source>Croatian</source>
         <translation>克罗地亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>Hungarian</source>
         <translation>匈牙利语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
         <source>Armenian</source>
         <translation>亚美尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="206"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="208"/>
         <source>Indonesian</source>
         <translation>印度尼西亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>Icelandic</source>
         <translation>冰岛语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="210"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="212"/>
         <source>Italian</source>
         <translation>意大利语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="212"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="214"/>
         <source>Japanese</source>
         <translation>日语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
         <source>Georgian</source>
         <translation>格鲁吉亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="221"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
         <source>Korean</source>
         <translation>朝鲜语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="223"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
         <source>Kurdish</source>
         <translation>库尔德语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
         <source>Kirghiz</source>
         <translation>吉尔吉斯语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="227"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="230"/>
         <source>Latin</source>
         <translation>拉丁语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="231"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
         <source>Lithuanian</source>
         <translation>立陶宛语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="232"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="236"/>
         <source>Latvian</source>
         <translation>拉脱维亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
         <source>Maori</source>
         <translation>毛利语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
         <source>Macedonian</source>
         <translation>马其顿语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="240"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
         <source>More</source>
         <translation>更多</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="242"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
         <source>Malay</source>
         <translation>马来语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="243"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="247"/>
         <source>Maltese</source>
         <translation>马尔他语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Low German; Low Saxon</source>
         <translation>低地德语; 低地萨克逊语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="249"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
         <source>Nepali</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="251"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
         <source>Dutch</source>
         <translation>荷兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="256"/>
         <source>Norwegian Nynorsk</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
         <source>Norwegian</source>
         <translation>挪威语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="262"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
         <source>Papiamento</source>
         <translation>帕皮亚门托语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="264"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
         <source>Polish</source>
         <translation>波兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
         <source>Portuguese</source>
         <translation>葡萄牙语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="267"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="273"/>
         <source>Brasilian Portuguese</source>
         <translation>巴西葡萄牙语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="271"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
         <source>Romanian</source>
         <translation>罗马尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="278"/>
         <source>Russian</source>
         <translation>俄语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="276"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="282"/>
         <source>Scots</source>
         <translation>苏格兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="281"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
         <source>Slovak</source>
         <translation>斯洛伐克语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="282"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="288"/>
         <source>Slovenian</source>
         <translation>斯洛文尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="285"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="291"/>
         <source>Somali</source>
         <translation>索马里语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="286"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
         <source>Albanian</source>
         <translation>阿尔巴尼亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="291"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
         <source>Swedish</source>
         <translation>瑞典语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
         <source>Swahili</source>
         <translation>斯瓦希里语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
         <source>Syriac</source>
         <translation>叙利亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
         <source>Tamil</source>
         <translation>泰米尔语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="297"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
         <source>Thai</source>
         <translation>泰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
         <source>Tagalog</source>
         <translation>塔加洛语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
         <source>Tswana</source>
         <translation>茨瓦纳语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="309"/>
         <source>Turkish</source>
         <translation>土耳其语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="305"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
         <source>Tahitian</source>
         <translation>大溪地语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
         <source>Ukrainian</source>
         <translation>乌克兰语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
         <source>Vietnamese</source>
         <translation>越南语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
         <source>Xhosa</source>
         <translation>科萨语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
         <source>Bavarian</source>
         <translation>巴伐利亚语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
         <source>Zarma</source>
         <translation>Zarma 语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="316"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
         <source>Alemannisch</source>
         <translation>阿勒曼尼语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="317"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
         <source>Haitian Creole French</source>
         <translation>海地的克里欧式法语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="326"/>
         <source>Itz&#xc3;&#xa1;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="319"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
         <source>Shuar</source>
         <translation>舒阿尔语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="320"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
         <source>Kekch&#xc3;&#xad;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
         <source>Kabyle</source>
         <translation>卡拜尔语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
         <source>Lombard</source>
         <translation>伦巴底语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
         <source>Tok Pisin</source>
         <translation>巴布亚皮钦语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="333"/>
         <source>Uma</source>
         <translation>Uma 语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="326"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="334"/>
         <source>Romani, Vlax</source>
         <translation>罗姆语 (Vlax Romani)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
         <source>Sango</source>
         <translation>Sango 语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="336"/>
         <source>Sranan</source>
         <translation>苏利南语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
         <source>Yiddish</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
         <source>Chinese</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
         <source>Zulu</source>
         <translation>祖鲁语</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="462"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
         <source>Footnotes</source>
         <translation>注释</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="465"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strong&apos;s numbers</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="468"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
         <source>Headings</source>
         <translation>标题</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="471"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
         <source>Morphological tags</source>
         <translation>构词学标记</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="474"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
         <source>Lemmas</source>
         <translation>词形</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="477"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
         <source>Hebrew vowel points</source>
         <translation>希伯来文元音符号</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="480"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
         <source>Hebrew cantillation marks</source>
         <translation>希伯来文咏诵标记</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="483"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="392"/>
         <source>Greek accents</source>
         <translation>希腊文变音符号</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="486"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="393"/>
         <source>Red letter words</source>
         <translation>红字版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="489"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="394"/>
         <source>Textual variants</source>
         <translation>文字变体</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="492"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="395"/>
         <source>Scripture cross-references</source>
         <translation>经文参照</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="495"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="396"/>
         <source>Morph segmentation</source>
         <translation>构词学分割</translation>
     </message>
@@ -7835,12 +7955,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="33"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="34"/>
         <source>Local</source>
         <translation>本地</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="34"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="35"/>
         <source>Remote</source>
         <translation>远程</translation>
     </message>
@@ -7900,7 +8020,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>文本文件</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cexportmanager.cpp" line="490"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="483"/>
         <source>Save file</source>
         <translation></translation>
     </message>
@@ -7930,7 +8050,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>BibleTime - 导入书签</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/profile/cprofile.cpp" line="27"/>
+        <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
         <source>unknown</source>
         <translation>未知的</translation>
     </message>
@@ -7985,7 +8105,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>正在分析 Strong&apos;s Numbers</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="302"/>
+        <location filename="../../src/main.cpp" line="301"/>
         <source>Starting BibleTime</source>
         <translation>正在启动 BibleTime</translation>
     </message>
@@ -8500,12 +8620,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="58"/>
+        <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>Settings Migration</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="59"/>
+        <location filename="../../src/util/migrationutil.cpp" line="57"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
         <translation></translation>
     </message>
@@ -8522,11 +8642,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="250"/>
         <source>Updated version available!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/new/btinstallitem.cpp" line="29"/>
-        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8604,71 +8719,101 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Open the printer dialog of BibleTime.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
+        <source>Haitian Creole</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
+        <source>Kekchi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
+        <source>Burmese</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
+        <source>Potawatomi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
+        <source>Klingon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
+        <source>Yoryba</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="57"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
         <source>Work</source>
         <translation>著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="57"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
         <source>Hits</source>
         <translation>搜索项数</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="68"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
         <source>Copy...</source>
         <translation>复制...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="82"/>
         <source>Reference only</source>
         <translation>只限参照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="90"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="92"/>
         <source>Reference with text</source>
         <translation>经文连同参照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="78"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
         <source>Save...</source>
         <translation>保存...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="88"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="90"/>
         <source>Print...</source>
         <translation>打印...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
         <source>Copy search result...</source>
         <translation>复制搜索结果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="263"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
         <source>Copying search result</source>
         <translation>正在复制搜索结果</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="283"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
         <source>Save search result...</source>
         <translation>保存搜索结果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="283"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
         <source>Saving search result</source>
         <translation>正在保存搜索结果</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="293"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
         <source>Print search result...</source>
         <translation>打印搜索结果...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="293"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
         <source>Printing search result</source>
         <translation>正在打印搜索结果</translation>
     </message>
