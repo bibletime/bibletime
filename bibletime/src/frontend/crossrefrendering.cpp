@@ -36,7 +36,7 @@ const QString CrossRefRendering::entryLink( const KeyTreeItem& item, CSwordModul
 	const bool isBible = module && (module->type() == CSwordModuleInfo::Bible);
 	CSwordVerseKey vk(module); //only valid for bible modules, i.e. isBible == true
 	if (isBible) {
-		vk = item.key();
+		vk.key(item.key());
 	}
 
 	switch (item.settings().keyRenderingFace) {

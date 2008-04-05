@@ -163,10 +163,8 @@ void CLexiconReadWindow::initConnections()
 	qDebug("CLexiconReadWindow::initConnections");
 	Q_ASSERT(keyChooser());
 
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
-			this, SLOT(lookup(CSwordKey*)));
-	connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)),
-			this, SLOT(slotUpdateHistoryButtons(bool, bool)));
+	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
+	connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)), this, SLOT(slotUpdateHistoryButtons(bool, bool)));
 
 	//connect the history actions to the right slots
 	connect(
@@ -282,10 +280,10 @@ void CLexiconReadWindow::updatePopupMenu()
 
 	m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
 	
-	m_actions.copy.reference->setEnabled( displayWidget()->hasActiveAnchor() );
+	m_actions.copy.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
 	m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
 
-	m_actions.print.reference->setEnabled( displayWidget()->hasActiveAnchor() );
+	m_actions.print.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
 }
 
 /** No descriptions */
@@ -326,7 +324,7 @@ void CLexiconReadWindow::saveRawHTML()
 			return;
 		}
 		QString source = disp->text();
-		int bytes = file.write(source.toUtf8());
+		file.write(source.toUtf8());
 		//qDebug() << "wrote" << bytes << "bytes";
 		file.close();
 		file.flush();

@@ -25,13 +25,12 @@
 
 
 //This ctor creates the root item and the tree.
-BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
-									BTModuleTreeItem::Grouping grouping,
-									ListCSwordModuleInfo* modules)
+BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, ListCSwordModuleInfo* modules)
 	: m_moduleInfo(0),
-	m_type(BTModuleTreeItem::Root),
+	m_firstChild(0),
 	m_next(0),
-	m_firstChild(0)
+	m_type(BTModuleTreeItem::Root),
+	m_category(CSwordModuleInfo::UnknownCategory)
 {
 	if (modules) {
 		m_originalModuleList = *modules;
@@ -47,11 +46,11 @@ BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
 * parent, the previous firstChild will be the next sibling of this.
 */
 BTModuleTreeItem::BTModuleTreeItem(BTModuleTreeItem* parentItem, const QString& text, BTModuleTreeItem::Type type, CSwordModuleInfo* info, CSwordModuleInfo::Category category)
-	: m_type(type),
-	m_moduleInfo(info),
+	: m_moduleInfo(info),
 	m_text(text),
 	m_firstChild(0),
 	m_next(0),
+	m_type(type),
 	m_category(category)
 {
 	if (info) {
@@ -116,6 +115,7 @@ QString BTModuleTreeItem::iconName() const
 		case CSwordModuleInfo::Glossary:
 			return CResMgr::categories::glossary::icon;
 			break;
+		default: break;
 		}
 	}
 	else if (m_type == Module) {

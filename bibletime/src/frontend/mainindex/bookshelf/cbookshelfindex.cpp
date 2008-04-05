@@ -346,7 +346,7 @@ QMimeData* CBookshelfIndex::dragObject()
 
 
 /** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
-void CBookshelfIndex::dragEnterEvent( QDragEnterEvent* event ) const
+void CBookshelfIndex::dragEnterEvent( QDragEnterEvent* event )
 {
 	qDebug("CBookshelfIndex::dragEnterEvent");
 	//TODO: accept only text
@@ -354,7 +354,7 @@ void CBookshelfIndex::dragEnterEvent( QDragEnterEvent* event ) const
 	event->acceptProposedAction();
 }
 
-void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event ) const
+void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event )
 {
 	const QPoint pos = event->pos();
  
@@ -367,7 +367,7 @@ void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event ) const
 	}
 }
 
-void CBookshelfIndex::dropEvent( QDropEvent* event ) const
+void CBookshelfIndex::dropEvent( QDropEvent* event )
 {
 	//TODO: see dragMoveEvent
 }

@@ -33,7 +33,7 @@ namespace Rendering {
 		vk.Headings(true);
 
 		if (isBible) {
-			vk = item.key();
+			vk.key(item.key());
 		}
 
 		if (isBible && (vk.Verse() == 0)) {

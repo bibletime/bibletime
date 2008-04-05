@@ -60,7 +60,7 @@ const QString CPrinter::entryLink(const KeyTreeItem& item, CSwordModuleInfo* mod
 
 	if (module->type() == CSwordModuleInfo::Bible) {
 		CSwordVerseKey vk(module);
-		vk = item.key();
+		vk.key(item.key());
 
 		switch (item.settings().keyRenderingFace) {
 			case KeyTreeItem::Settings::CompleteShort:

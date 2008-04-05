@@ -74,6 +74,7 @@ public:
 	*/
 	struct Filter {
 		virtual bool filter(CSwordModuleInfo*) = 0;
+		inline virtual ~Filter() {};
 	};
 
 	/**
@@ -82,6 +83,7 @@ public:
 	*/
 	struct HiddenOff : public Filter {
 		inline bool filter(CSwordModuleInfo* mi) { return !mi->isHidden(); }
+		inline virtual ~HiddenOff() {};
 	};
 	
 	/**
@@ -156,10 +158,10 @@ private:
 
 	CSwordModuleInfo* m_moduleInfo;
 	QString m_text;
+	BTModuleTreeItem* m_firstChild;
+	BTModuleTreeItem* m_next;
 	Type m_type;
 	CSwordModuleInfo::Category m_category;
-	BTModuleTreeItem* m_next;
-	BTModuleTreeItem* m_firstChild;
 	ListCSwordModuleInfo m_originalModuleList;
 };
 

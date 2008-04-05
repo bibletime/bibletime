@@ -105,15 +105,17 @@ public:
 	* Sets the module for this key
 	*/
 	virtual CSwordModuleInfo* const module( CSwordModuleInfo* const newModule = 0 );
-	/**
-	* Assignment operator for more ease of use.
-	*/
-	virtual CSwordVerseKey& operator = (const QString& keyname);
+//	/**
+//	* Assignment operator for more ease of use.
+//	*/
+//	virtual CSwordVerseKey& operator = (const QString& keyname);
 protected:
 	/**
 	 * Returns the raw key appropriate for use directly with Sword.
 	 */
 	virtual const char * rawKey() const;
+private:
+	inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) {}; //to prevent compiler warnings
 };
 
 #endif

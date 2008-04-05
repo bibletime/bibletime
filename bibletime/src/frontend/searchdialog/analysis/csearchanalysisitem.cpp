@@ -78,10 +78,10 @@ int CSearchAnalysisItem::getCountForModule( const int moduleIndex) {
 }
 
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisItem::paint(QPainter& painter) {
-	QFont f = painter.font();
+void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
+	QFont f = painter->font();
 	f.setPointSize(ITEM_TEXT_SIZE);
-	painter.setFont(f);
+	painter->setFont(f);
 
 	setPen(QPen(Qt::black,1));
 	setBrush(Qt::red);
@@ -108,8 +108,8 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 				QPoint p2(p1.x() + BAR_WIDTH,
 						  p1.y() - (int)( !m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))) );
 				QRect r(p1, p2);
-				painter.fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
-				painter.drawRect(r);
+				painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(index)) );
+				painter->drawRect(r);
 				drawn++;
 			}
 		}
@@ -131,7 +131,7 @@ void CSearchAnalysisItem::paint(QPainter& painter) {
 		p.rotate(90);
 		p.drawText(QPoint(5,0), m_bookName);
 	}
-	painter.drawPixmap(QPoint(int(x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
+	painter->drawPixmap(QPoint(int(x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
 }
 
 /** Returns the width of this item. */

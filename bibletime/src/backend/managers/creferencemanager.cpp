@@ -68,7 +68,7 @@ const QString CReferenceManager::encodeHyperlink( const QString moduleName, cons
 
 		QChar c;
 
-		for(unsigned int i = 0; i < s.length(); ++i) {
+		for(int i = 0; i < s.length(); ++i) {
 			c = s.at(i);
 
 			if (c == '/') {

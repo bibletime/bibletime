@@ -83,7 +83,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
 	}
 }
 
-CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & m) {
+CSwordModuleInfo::CSwordModuleInfo(const CSwordModuleInfo & m) : QObject(){
 	m_module = m.m_module;
 	m_backend = m.m_backend;
 	m_dataCache = m.m_dataCache;
@@ -171,7 +171,7 @@ const bool CSwordModuleInfo::unlockKeyIsValid() {
 		return false;
 	}
 
-	for (unsigned int i = 0; i <= test.length() && i < 100; i++) {
+	for (int i = 0; i <= test.length() && i < 100; i++) {
 		if ( !test[i].isPrint() && !test[i].isNull() ) {
 			qWarning() << "Unlock key of module" << name() << "is NOT valid!";
 			return false;
@@ -276,8 +276,6 @@ void CSwordModuleInfo::buildIndex() {
 		verseLowIndex = 0;
 		verseSpan = ((CSwordLexiconModuleInfo*)this)->entries()->size();
 	}
-
-	const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
 	emit indexingProgress(0);
 
@@ -415,8 +413,6 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
 	boost::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
 	sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
 	QList<sword::VerseKey*> list;
-
-	const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
 
 	if (s) {
 		m_module->SetKey(*s);

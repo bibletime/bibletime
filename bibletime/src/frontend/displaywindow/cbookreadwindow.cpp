@@ -111,12 +111,9 @@ void CBookReadWindow::initConnections()
 {
 	CLexiconReadWindow::initConnections();
 
-	connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)),
-			this, SLOT(lookup(CSwordKey*)));
-	connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)),
-			keyChooser(), SLOT(updateKey(CSwordKey*)));
-	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)),
-			m_treeChooser, SLOT(updateKey(CSwordKey*)));
+	connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
+	connect(m_treeChooser, SIGNAL(keyChanged(CSwordKey*)), keyChooser(), SLOT(updateKey(CSwordKey*)));
+	connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), m_treeChooser, SLOT(updateKey(CSwordKey*)));
 }
 
 /** Init the view */

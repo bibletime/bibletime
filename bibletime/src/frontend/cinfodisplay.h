@@ -57,7 +57,7 @@ protected:
 	const QString getWordTranslation( const QString& data );
 
 protected slots:
-	void lookup(const QString &, const QString &);
+	void lookupInfo(const QString &, const QString &);
 
 private:
 	CReadDisplay* m_htmlPart;

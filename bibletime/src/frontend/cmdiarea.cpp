@@ -195,7 +195,7 @@ void CMDIArea::slotClientActivated(QMdiSubWindow* client) {
 }
 
 //resize event of the MDI area itself, update layout if necessary
-void CMDIArea::resizeEvent(QResizeEvent* e) {
+void CMDIArea::resizeEvent(QResizeEvent* /*e*/) {
 	//do not call QMdiArea::resizeEvent(e), this would mess up our layout
 	if (updatesEnabled()) triggerWindowUpdate();
 }

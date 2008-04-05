@@ -48,18 +48,16 @@ protected: // Protected methods
 	/**
 	* Sets the display widget of this display window.
 	*/
-	virtual void setDisplayWidget( CReadDisplay* newDisplay );
+	virtual void setDisplayWidget( CDisplay* newDisplay );
 	/**
-	* Returns the display widget of this window.
-	*/
-	virtual CReadDisplay* const displayWidget();
+	 */
 	virtual void resizeEvent(QResizeEvent* e);
 
 protected slots:
 	/**
 	* Load the text using the key
 	*/
-	virtual void lookup( CSwordKey* );
+	virtual void lookupSwordKey( CSwordKey* );
 	/**
 	* Catch the signal when the KHTMLPart has finished the layout (anchors are not ready before that).
 	*/

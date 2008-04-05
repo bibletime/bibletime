@@ -45,18 +45,13 @@ CReadWindow::~CReadWindow() {
 	//  qWarning("destructor of CReadWindow");
 }
 
-/** Returns the display widget of this window. */
-CReadDisplay* const CReadWindow::displayWidget() {
-	return m_displayWidget;
-}
-
 /** Sets the display widget of this display window. */
-void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
+void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
+	Q_ASSERT(dynamic_cast<CReadDisplay*>(newDisplay));
 	CDisplayWindow::setDisplayWidget(newDisplay);
 	if (m_displayWidget) {
-		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)), this, SLOT(lookup(const QString&, const QString&)));
-
-		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)), this, SLOT(lookup(const QString&)));
+		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)), this, SLOT(lookupModKey(const QString&, const QString&)));
+		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)), this, SLOT(lookupKey(const QString&)));
 		
 		CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
 		if (v) {
@@ -65,19 +60,19 @@ void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
 
 	}
 
-	m_displayWidget = newDisplay;
+	m_displayWidget = (CReadDisplay*)newDisplay;
 	connect(
 		m_displayWidget->connectionsProxy(),
 		SIGNAL(referenceClicked(const QString&, const QString&)),
 		this,
-		SLOT(lookup(const QString&, const QString&))
+		SLOT(lookupModKey(const QString&, const QString&))
 	);
 
 	connect(
 		m_displayWidget->connectionsProxy(),
 		SIGNAL(referenceDropped(const QString&)),
 		this,
-		SLOT(lookup(const QString&))
+		SLOT(lookupKey(const QString&))
 	);
 	CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
 	if (v) {
@@ -86,7 +81,7 @@ void CReadWindow::setDisplayWidget( CReadDisplay* newDisplay ) {
 }
 
 /** Lookup the given entry. */
-void CReadWindow::lookup( CSwordKey* newKey ) {
+void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 	qDebug("CReadWindow::lookup");
 	Q_ASSERT(newKey);
 
@@ -134,7 +129,7 @@ void CReadWindow::slotMoveToAnchor()
 		view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	}
 
-	displayWidget()->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
+	((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 
 /** Store the settings of this window in the given CProfileWindow object. */
@@ -205,7 +200,7 @@ void CReadWindow::copyDisplayedText() {
  */
 void CReadWindow::resizeEvent(QResizeEvent* /*e*/) {
 	if (displayWidget()) {
-		displayWidget()->moveToAnchor(Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
+		((CReadDisplay*)displayWidget())->moveToAnchor(Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()));
 	}
 }
 

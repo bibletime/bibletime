@@ -100,7 +100,7 @@ void CWriteWindow::setDisplayWidget( CWriteDisplay* display ) {
 	m_writeDisplay = display;
 }
 
-void CWriteWindow::lookup( CSwordKey* newKey ) {
+void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
 	//set the raw text to the display widget
 	if (!newKey)
 		return;

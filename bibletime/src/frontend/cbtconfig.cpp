@@ -164,6 +164,7 @@ const bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 		case autoDeleteOrphanedIndices:		return true;
 		case crashedLastTime:		return false;
 		case crashedTwoTimes:		return false;
+		case bookshelfShowHidden:	return false;
 	}
 	return false;
 }
@@ -189,6 +190,7 @@ const int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case searchDialogHeight:	return 400;
 		case searchDialogX:			return 200;
 		case searchDialogY:			return 200;
+		case mainindexActiveTab:	return 0;
 	}
 	return 0;
 }
@@ -233,15 +235,14 @@ const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 
 const QStringList CBTConfig::getDefault( const CBTConfig::stringLists ID) {
 	switch ( ID ) {
-		case searchTexts: {
+		case searchTexts: { 
 			QStringList list;
 			list.append(QString::null);
 			return list;
 		}
-		case searchCompletionTexts:
-		return QStringList();
-		case bookshelfOpenGroups:
-		return QStringList();
+		case searchCompletionTexts:		return QStringList();
+		case bookshelfOpenGroups:		return QStringList();
+		case hiddenModules:				return QStringList();
 	}
 	return QStringList();
 }
@@ -561,7 +562,7 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 	return options;
 }
 
-void CBTConfig::setupAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection)
+void CBTConfig::setupAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
 {
 // 	qDebug("CBTConfig::setupAccelSettings");
 // 	QString groupName;
@@ -614,7 +615,7 @@ void CBTConfig::setupAccelSettings(const CBTConfig::keys type, KActionCollection
 // 	qDebug("CBTConfig::setupAccelSettings end");
 }
 
-void CBTConfig::saveAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection)
+void CBTConfig::saveAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
 {
 // 	qDebug("CBTConfig::saveAccelSettings");
 // 	QString groupName;

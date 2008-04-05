@@ -87,9 +87,9 @@ protected: // Protected methods
 	/**
 	* Reimplementation from QTreeWidget (QAbstractItemView). Returns true if the drag is acceptable for the listview.
 	*/
-	virtual void dragEnterEvent( QDragEnterEvent* event ) const;
-	virtual void dragMoveEvent( QDragMoveEvent* event ) const;
-	virtual void dropEvent( QDropEvent* event ) const;
+	virtual void dragEnterEvent( QDragEnterEvent* event );
+	virtual void dragMoveEvent( QDragMoveEvent* event );
+	virtual void dropEvent( QDropEvent* event );
 
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.

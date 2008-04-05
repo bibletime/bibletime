@@ -172,11 +172,11 @@ public slots:
 	* Lookup the specified key in the given module. If the module is not chosen withing
 	* this display window create a new displaywindow with the right module in it.
 	*/
-	virtual void lookup( const QString& module, const QString& key );
+	virtual void lookupModKey( const QString& module, const QString& key );
 	/**
 	* Lookup the key in the chosen modules.
 	*/
-	virtual void lookup( const QString& key );
+	virtual void lookupKey( const QString& key );
 	/**
 	* Refresh the settings of this window.
 	*/
@@ -203,7 +203,7 @@ protected:
 	/**
 	* Lookup the given key.
 	*/
-	virtual void lookup( CSwordKey* ) = 0;
+	virtual void lookupSwordKey( CSwordKey* ) = 0;
 	/**
 	* Sets the module chooser bar.
 	*/

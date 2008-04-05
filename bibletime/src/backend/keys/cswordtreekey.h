@@ -62,15 +62,15 @@ public:
 	* otherwise it is caller's responsibility to ensure the correct encoding (utf8/latin1).
 	*/
 	virtual const bool key( const char* key );
-	/**
-	* Assignment operator.
-	*/
-	virtual CSwordTreeKey& operator = (const QString& keyname );
+
 protected:
 	/**
 	 * Returns the raw key appropriate for use directly with Sword.
 	 */
 	virtual const char * rawKey() const;
+
+private:
+	inline virtual CSwordTreeKey& operator= (const sword::TreeKeyIdx&) {}; //to prevent compiler warnings
 };
 
 #endif

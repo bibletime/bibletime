@@ -381,12 +381,10 @@ void CDisplayWindow::setDisplaySettingsButton( CDisplaySettingsButton* button ) 
 
 /** Lookup the current key. Used to refresh the display. */
 void CDisplayWindow::lookup() {
-	lookup( key() );
+	lookupSwordKey( key() );
 }
 
-void CDisplayWindow::lookup( const QString& moduleName, const QString& keyName ) {
-	Q_ASSERT(isReady());
-	qDebug("CDisplayWindow::lookup( const QString& moduleName, const QString& keyName )");
+void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& keyName ) {
 	if (!isReady()) {
 		return;
 	}
@@ -404,7 +402,6 @@ void CDisplayWindow::lookup( const QString& moduleName, const QString& keyName )
 	}
 	else { //given module not displayed in this window
 		//if the module is displayed in another display window we assume a wrong drop
-		bool found = false;
 		//create a new window for the given module
 		ListCSwordModuleInfo mList;
 		mList.append(m);
@@ -412,13 +409,13 @@ void CDisplayWindow::lookup( const QString& moduleName, const QString& keyName )
 	}
 }
 
-void CDisplayWindow::lookup( const QString& keyName ) {
+void CDisplayWindow::lookupKey( const QString& keyName ) {
 	/* This function is called for example after a bookmark was dropped on this window
 	*/
 	Q_ASSERT(modules().first());
 
 	//qDebug("CDisplayWindow::lookup: %s", keyName.latin1());
-	lookup(modules().first()->name(), keyName);
+	lookupModKey(modules().first()->name(), keyName);
 }
 
 /** Update the status of the popup menu entries. */

@@ -244,10 +244,6 @@ void CBibleReadWindow::initActions() {
 
 void CBibleReadWindow::initConnections() {
 	CLexiconReadWindow::initConnections();
-
-	/*  if (m_transliterationButton) { // Transliteration is not always available
-	    connect(m_transliterationButton, SIGNAL(sigChanged()), SLOT(lookup()));
-	  }*/
 }
 
 void CBibleReadWindow::initToolbars() {
@@ -320,14 +316,14 @@ void CBibleReadWindow::updatePopupMenu() {
 	m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
 
 	
-	m_actions.copy.referenceOnly->setEnabled( displayWidget()->hasActiveAnchor() );
-	m_actions.copy.referenceTextOnly->setEnabled( displayWidget()->hasActiveAnchor() );
-	m_actions.copy.referenceAndText->setEnabled( displayWidget()->hasActiveAnchor() );
-	m_actions.copy.selectedText->setEnabled( displayWidget()->hasSelection() );
+	m_actions.copy.referenceOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+	m_actions.copy.referenceTextOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+	m_actions.copy.referenceAndText->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
+	m_actions.copy.selectedText->setEnabled( ((CReadDisplay*)displayWidget())->hasSelection() );
 
-	m_actions.save.referenceAndText->setEnabled( displayWidget()->hasActiveAnchor() );
+	m_actions.save.referenceAndText->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
 
-	m_actions.print.reference->setEnabled( displayWidget()->hasActiveAnchor() );
+	m_actions.print.reference->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
 }
 
 /** Moves to the next book. */
@@ -474,10 +470,8 @@ bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
 	return ret;
 }
 
-void CBibleReadWindow::lookup( CSwordKey* newKey ) {
-	qDebug("CBibleReadWindow::lookup( CSwordKey* newKey )");
-	CLexiconReadWindow::lookup(newKey);
-
+void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) {
+	CLexiconReadWindow::lookupSwordKey(newKey);
 	syncWindows();
 }
 
@@ -485,7 +479,7 @@ void CBibleReadWindow::syncWindows() {
 	foreach (QMdiSubWindow* subWindow, mdi()->subWindowList()) {
 		CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
 		if (w && w->syncAllowed()) {
-			w->lookup( key()->key() );
+			w->lookupKey( key()->key() );
 		}
 	}
 }

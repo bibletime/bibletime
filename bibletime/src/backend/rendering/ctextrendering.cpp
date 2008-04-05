@@ -95,10 +95,10 @@ m_alternativeContent( QString::null ) {
 
 	if (module->type() == CSwordModuleInfo::Bible) {
 		CSwordVerseKey start(module);
-		start = startKey;
+		start.key(startKey);
 
 		CSwordVerseKey stop(module);
-		stop = stopKey;
+		stop.key(stopKey);
 
 		if (!m_key.isEmpty() && !m_stopKey.isEmpty()) { //we have a range of keys
 			bool ok = true;

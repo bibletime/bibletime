@@ -112,7 +112,7 @@ void CPlainWriteWindow::initToolbars() {
 
 void CPlainWriteWindow::initConnections() {
 	CWriteWindow::initConnections();
-	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookup(CSwordKey*)));
+	QObject::connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
 	QObject::connect(displayWidget()->connectionsProxy(), SIGNAL(textChanged()), this, SLOT(textChanged()) );
 }
 
@@ -156,7 +156,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 
 /** Loads the original text from the module. */
 void CPlainWriteWindow::restoreText() {
-	lookup(key());
+	lookupSwordKey(key());
 	displayWidget()->setModified(false);
 	textChanged();
 }
@@ -170,7 +170,7 @@ void CPlainWriteWindow::textChanged() {
 /** Deletes the module entry and clears the edit widget, */
 void CPlainWriteWindow::deleteEntry() {
 	modules().first()->deleteEntry( key() );
-	lookup( key() );
+	lookupSwordKey( key() );
 	displayWidget()->setModified(false);
 }
 

@@ -157,7 +157,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 		else
 			displayWindow->show();
 		//   if (!key.isEmpty())
-		displayWindow->lookup(key);
+		displayWindow->lookupKey(key);
 	}
 	// We have to process pending events here, otherwise displayWindow is not fully painted
 	qApp->processEvents();
@@ -190,7 +190,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 			displayWindow->showMaximized();
 		else
 			displayWindow->show();
-		displayWindow->lookup(key);
+		displayWindow->lookupKey(key);
 	}
 
 	qApp->restoreOverrideCursor();
@@ -199,7 +199,6 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 
 /** Refreshes all presenters.*/
 void BibleTime::refreshDisplayWindows() {
-	unsigned int index;
 	foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
 		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
 			window->reload();

@@ -41,9 +41,7 @@ public:
 	/** Destructor.
 	* Public, not protected like the constructor, because CSwordKey pointers may be deleted by all others.
 	*/
-	virtual ~CSwordKey() {}
-
-	;
+	virtual ~CSwordKey() {};
 
 	//pure virtual functions
 	/** Returns the current key.
@@ -86,10 +84,10 @@ public:
 	 * @see CSwordModuleInfo, CSwordBibleModuleInfo, CSwordCommentaryModuleInfo, CSwordLexiconModukleInfo
 	 */
 	static CSwordKey* createInstance(CSwordModuleInfo * const module);
-	/**
-	 * The assignment operator for more easy use of the key classes.
-	 */
-	inline virtual CSwordKey& operator = ( const QString& );
+//	/**
+//	 * The assignment operator for more easy use of the key classes.
+//	 */
+//	inline virtual CSwordKey& operator = ( const QString& );
 
 protected:
 	/**
@@ -100,12 +98,11 @@ protected:
 	CSwordModuleInfo* m_module; //module pointer used by all keys
 };
 
-
-/** The assignment operator for more easy use of the key classes. */
-inline CSwordKey& CSwordKey::operator = ( const QString& newKey ) {
-	key(newKey);
-	return *this;
-}
+///** The assignment operator for more easy use of the key classes. */
+//inline CSwordKey& CSwordKey::operator=(const QString& newKey) {
+//	key(newKey);
+//	return *this;
+//}
 
 inline CSwordModuleInfo* const CSwordKey::module(CSwordModuleInfo* const newModule) {
 	if (newModule) {

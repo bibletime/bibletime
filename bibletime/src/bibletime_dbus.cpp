@@ -30,7 +30,7 @@ void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, co
 	foreach (QMdiSubWindow* w, m_mdi->usableWindowList()) {
 		CDisplayWindow* d = dynamic_cast<CDisplayWindow*>(w->widget());
 		if (d && d->modules().count() && d->modules().first()->type() == type) {
-			d->lookup(key);
+			d->lookupKey(key);
 		}
 	}
 }

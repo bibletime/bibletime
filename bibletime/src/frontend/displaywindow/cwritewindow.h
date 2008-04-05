@@ -48,7 +48,7 @@ public slots:
 	/**
 	* Look up the given key and display the text. In our case we offer to edit the text.
 	*/
-	virtual void lookup( CSwordKey* key );
+	virtual void lookupSwordKey( CSwordKey* key );
 
 
 protected: // Protected methods

@@ -45,7 +45,7 @@ CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModul
 {
 	if ((module && (module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary))  ) {
 		CSwordVerseKey vk(0);
-		vk = key;
+		vk.key(key);
 		vk.setLocale("en");
 		m_key = vk.key(); //the m_key member is always the english key!
 	}
@@ -139,7 +139,7 @@ const QString CIndexBookmarkItem::key() {
 	QString returnKeyName = englishKeyName;
 	if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
 		CSwordVerseKey vk(0);
-		vk = englishKeyName;
+		vk.key(englishKeyName);
 		vk.setLocale(CPointers::backend()->booknameLanguage().toLatin1() );
 
 		returnKeyName = vk.key(); //the returned key is always in the currently set bookname language

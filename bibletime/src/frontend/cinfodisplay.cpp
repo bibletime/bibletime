@@ -55,7 +55,7 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent)
 	connect(
 		m_htmlPart->connectionsProxy(),
 		SIGNAL(referenceClicked(const QString&, const QString&)),
-		SLOT(lookup(const QString&, const QString&))
+		SLOT(lookupInfo(const QString&, const QString&))
 	);
 
 	headingLabel->setBuddy(m_htmlPart->view());
@@ -70,7 +70,7 @@ CInfoDisplay::~CInfoDisplay() {
 	delete m_copyAction;
 }
 
-void CInfoDisplay::lookup(const QString &mod_name, const QString &key_text) {
+void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
 	qDebug("CInfoDisplay::lookup");
 	qDebug() <<  mod_name <<  key_text;
 	CSwordModuleInfo* m = CPointers::backend()->findModuleByName(mod_name);

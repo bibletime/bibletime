@@ -38,6 +38,8 @@ CInputDialog::CInputDialog
 	QPushButton *clearButton;
 	QSpacerItem *spacerItem;
 	QDialogButtonBox *buttonBox;
+	
+	setWindowTitle(caption);
 
 	resize(400, 300);
 	vboxLayout = new QVBoxLayout(this);
