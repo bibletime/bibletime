@@ -24,10 +24,8 @@
 #include <QString>
 #include <QFile>
 #include <QMimeData>
+#include <QDropEvent>
 #include <QFileDialog>
-
-
-
 
 
 CIndexBookmarkFolder::CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type)
@@ -101,19 +99,19 @@ void CIndexBookmarkFolder::importBookmarks() {
 	};
 }
 
-bool CIndexBookmarkFolder::acceptDrop(const QMimeData * data) const
+bool CIndexBookmarkFolder::acceptDrop(QDropEvent* e) const
 {
 	qDebug("CIndexBookmarkFolder::acceptDrop");
-	if (data->hasFormat("BibleTime/Bookmark")) {
+	if (e->provides("BibleTime/Bookmark")) {
+		e->acceptProposedAction();
 		return true;
 	} else {
 		return false;
 	}
 }
 
-void CIndexBookmarkFolder::dropped(QDropEvent *e, QTreeWidgetItem* after)
+void CIndexBookmarkFolder::droppedItem(QDropEvent* /*e*/, QTreeWidgetItem* /*after*/)
 {
-
 }
 
 /** Saves the bookmarks in a file. */

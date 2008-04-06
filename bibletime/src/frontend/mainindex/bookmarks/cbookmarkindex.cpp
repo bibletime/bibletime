@@ -74,7 +74,7 @@ CBookmarkIndex::~CBookmarkIndex() {
 }
 
 /** Reimplementation. Adds the given group to the tree. */
-void CBookmarkIndex::addGroup(const CIndexItemBase::Type type, const QString language) {
+void CBookmarkIndex::addGroup(const CIndexItemBase::Type type, const QString /*language*/) {
 	qDebug("CBookmarkIndex::addGroup");
 	CIndexTreeFolder *i = 0;
 	switch (type) {
@@ -82,6 +82,7 @@ void CBookmarkIndex::addGroup(const CIndexItemBase::Type type, const QString lan
 			qDebug("case CIndexItemBase::BookmarkFolder");
 			i = new CIndexBookmarkFolder(this);
 			break;
+		default: break;
 	}
 	
 	if (i) {
@@ -146,7 +147,7 @@ void CBookmarkIndex::initView()
 * Should be replaced with something better; it was easier to make a new function
 * than to modify all QAction constructors.
 */
-QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent)
 {
 	QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
 	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
@@ -163,8 +164,8 @@ void CBookmarkIndex::initConnections()
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 
-	QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-		SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
  	
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
@@ -338,7 +339,7 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* d
 		CIndexFolderBase* parentItem =
 		dynamic_cast<CIndexFolderBase*>( droppedIntoItem->isFolder()?droppedIntoItem:droppedIntoItem->parent());
 		
-		CIndexBookmarkItem* newItem = new CIndexBookmarkItem(parentItem, minfo, keyText, description);
+		new CIndexBookmarkItem(parentItem, minfo, keyText, description);
 	}			
 }
 
@@ -349,7 +350,7 @@ void CBookmarkIndex::initTree() {
 }
 
 /** Use this from dropEvent or move the code somewhere else */
-void CBookmarkIndex::dropped( QDropEvent* e, QTreeWidgetItem* parent, QTreeWidgetItem* after) {
+void CBookmarkIndex::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*parent*/, QTreeWidgetItem* /*after*/) {
 // 	Q_ASSERT(after);
 // 	Q_ASSERT(parent);
 // 
@@ -698,7 +699,7 @@ void CBookmarkIndex::moved( QList<QTreeWidgetItem>& /*items*/, QList<QTreeWidget
 	qDebug("move items");
 }
 
-void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int index)
+void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int /*index*/)
 {
 	CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(item);
 	if (i){

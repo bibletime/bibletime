@@ -92,7 +92,7 @@ protected:
 
 	/** Our extended version of the dropped method to include a item above the point we dropped the stuff.
 	*/
-	virtual void dropped( QDropEvent* e, QTreeWidgetItem* after);
+	virtual void droppedItem( QDropEvent* e, QTreeWidgetItem* after);
 	
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd

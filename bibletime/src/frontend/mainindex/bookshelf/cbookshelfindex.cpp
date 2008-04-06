@@ -235,7 +235,7 @@ void CBookshelfIndex::initActions()
 * Should be replaced with something better; it was easier to make a new function
 * than to modify all QAction constructors.
 */
-QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int shortcut, const QObject* receiver, const char* slot, QObject* parent)
+QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent)
 {
 	QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
 	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
@@ -252,8 +252,8 @@ void CBookshelfIndex::initConnections()
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 	QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 
-	QObject::connect(this, SIGNAL(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-		SLOT(dropped(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
+	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
+		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
  	
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
@@ -367,7 +367,7 @@ void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event )
 	}
 }
 
-void CBookshelfIndex::dropEvent( QDropEvent* event )
+void CBookshelfIndex::dropEvent( QDropEvent* /*event*/ )
 {
 	//TODO: see dragMoveEvent
 }
@@ -607,12 +607,12 @@ void CBookshelfIndex::actionAboutModule() {
 }
 
 /** Reimplementation. Takes care of movable items. */
-void CBookshelfIndex::startDrag(Qt::DropActions supportedActions) {
+void CBookshelfIndex::startDrag(Qt::DropActions /*supportedActions*/) {
 
 }
 
 /** Reimplementation to support the items dragEnter and dragLeave functions. */
-void CBookshelfIndex::contentsDragMoveEvent( QDragMoveEvent* event ) {
+void CBookshelfIndex::contentsDragMoveEvent( QDragMoveEvent* /*event*/ ) {
 // 	//  qWarning("void CBookshelfIndex:: drag move event ( QDragLeaveEvent* e )");
 // 	CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( itemAt( contentsToViewport(event->pos())) );
 // 	if (i) {
@@ -644,7 +644,7 @@ void CBookshelfIndex::autoOpenTimeout() {
 }
 
 /** No descriptions */
-void CBookshelfIndex::contentsDragLeaveEvent( QDragLeaveEvent* e ) {
+void CBookshelfIndex::contentsDragLeaveEvent( QDragLeaveEvent* /*e*/ ) {
 // 	m_autoOpenTimer.stop();
 // 	QTreeWidget::contentsDragLeaveEvent(e);
 }

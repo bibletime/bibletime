@@ -70,7 +70,7 @@ protected:
 	virtual const char * rawKey() const;
 
 private:
-	inline virtual CSwordTreeKey& operator= (const sword::TreeKeyIdx&) {}; //to prevent compiler warnings
+	inline virtual CSwordTreeKey& operator= (const sword::TreeKeyIdx&) { return (*this); }; //private dummy, to prevent compiler warnings
 };
 
 #endif

@@ -33,8 +33,8 @@ public:
 	virtual const bool enableAction(const MenuAction action);
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
-	virtual bool acceptDrop(const QMimeData * data) const;
-	virtual void dropped(QDropEvent *e, QTreeWidgetItem* after);
+	virtual bool acceptDrop(QDropEvent* e) const;
+	virtual void droppedItem(QDropEvent *e, QTreeWidgetItem* after);
 
 	/**
 	* Loads bookmarks from XML content

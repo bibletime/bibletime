@@ -80,12 +80,12 @@ void CIndexFolderBase::newSubFolder() {
 }
 
 /** Reimplementation. Returns true if the drop is accepted. */
-const bool CIndexFolderBase::allowAutoOpen( const QMimeSource* ) const {
+const bool CIndexFolderBase::allowAutoOpen(const QMimeData*) const {
 	return true;
 }
 
 /** Reimplementation. Returns false because folders have no use for drops (except for the bookmark folders) */
-bool CIndexFolderBase::acceptDrop(const QMimeSource*) const {
+bool CIndexFolderBase::acceptDrop(QDropEvent *) const {
 	return false;
 }
 

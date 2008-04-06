@@ -115,7 +115,7 @@ protected:
 	 */
 	virtual const char * rawKey() const;
 private:
-	inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) {}; //to prevent compiler warnings
+	inline virtual CSwordVerseKey& operator= (const sword::VerseKey&) { return (*this); }; //private dummy to prevent compiler warnings
 };
 
 #endif

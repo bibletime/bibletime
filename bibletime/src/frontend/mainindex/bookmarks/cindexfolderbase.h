@@ -52,12 +52,12 @@ protected:
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
 	*/
-	virtual const bool allowAutoOpen( const QMimeSource* src ) const;
+	virtual const bool allowAutoOpen(const QMimeData* data) const;
 	/**
 	* Reimplementation. Returns false because folders have no use for drops
 	* (except for the bookmark folders) 
 	*/
-	bool acceptDrop(const QMimeSource * src) const;
+	bool acceptDrop(QDropEvent* e) const;
 };
 
 #endif

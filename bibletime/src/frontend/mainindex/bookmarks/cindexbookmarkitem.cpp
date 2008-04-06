@@ -213,7 +213,7 @@ const QString& CIndexBookmarkItem::englishKey() const {
 }
 
 
-bool CIndexBookmarkItem::acceptDrop(const QMimeSource* /*src*/) const {
+bool CIndexBookmarkItem::acceptDrop(QDropEvent*) const {
 	return false;
 }
 

@@ -76,7 +76,7 @@ void CIndexOldBookmarksFolder::loadFromXML( QDomElement& /*element*/ ) {
 
 
 
-const QString COldBookmarkImport::oldBookmarksXML( const QString& configFileName )
+const QString COldBookmarkImport::oldBookmarksXML( const QString& /*configFileName*/ )
 {
 // 	QString fileName = (configFileName.isEmpty()) ? "bt-groupmanager" : configFileName;
 // 	KConfig* conf = new KConfig( fileName );

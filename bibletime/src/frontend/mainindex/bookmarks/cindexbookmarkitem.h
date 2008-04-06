@@ -94,7 +94,7 @@ protected: // Protected methods
 	* because bookmarks 
 	* have no possible drops.
 	*/
-	virtual bool acceptDrop(const QMimeSource * src) const;
+	virtual bool acceptDrop(QDropEvent* e) const;
 
 private: // Private methods
 
