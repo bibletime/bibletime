@@ -299,7 +299,7 @@ void BtSourceWidget::slotModuleSelectionChanged(QString sourceName, int selected
 	}
 }
 
-void BtSourceWidget::slotTabSelected(int index)
+void BtSourceWidget::slotTabSelected(int /*index*/)
 {
 	BtSourceArea* area = dynamic_cast<BtSourceArea*>(currentWidget());
 	if (area) area->initTreeFirstTime();
@@ -349,15 +349,15 @@ void BtSourceWidget::slotInstall()
 	// The OK signal sent by the dialog is catched with slotInstallAccepted.
 }
 
-void BtSourceWidget::slotStopInstall(QTreeWidget* treeWidget)
+void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/)
 {
-	qDebug("BtSourceWidget::slotStopInstall");
+	qDebug() << "BtSourceWidget::slotStopInstall";
 	// not needed?
 }
 
-void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo modules, QTreeWidget* treeWidget)
+void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo /*modules*/, QTreeWidget* treeWidget)
 {
-	qDebug("BtSourceWidget::slotInstallAccepted");
+	qDebug() << "BtSourceWidget::slotInstallAccepted";
 
 	BtModuleManagerDialog* parentDialog = dynamic_cast<BtModuleManagerDialog*>(dynamic_cast<BtInstallPage*>(parent())->parentDialog());
 

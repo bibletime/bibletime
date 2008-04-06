@@ -43,7 +43,6 @@ CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey
 		return 0;
 	}
 
-	CKeyChooser* ck = 0;
 	switch ( modules.first()->type() ) {
 		case CSwordModuleInfo::Commentary:  //Bibles and commentaries use the same key chooser
 		case CSwordModuleInfo::Bible:

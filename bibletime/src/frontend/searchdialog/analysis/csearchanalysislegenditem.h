@@ -27,7 +27,7 @@ public:
 	CSearchAnalysisLegendItem(ListCSwordModuleInfo* list );
 
 private:
-	virtual void paint(QPainter & painter);
+	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 	ListCSwordModuleInfo* m_moduleList;
 
 };

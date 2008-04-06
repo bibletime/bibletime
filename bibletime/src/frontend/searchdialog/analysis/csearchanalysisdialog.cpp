@@ -60,7 +60,7 @@ void CSearchAnalysisDialog::initView()
 
 void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button)
 {
-	if (m_buttonBox->buttonRole(button) == QDialogButtonBox::Save) {
+	if (m_buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole) {
 		m_analysis->saveAsHTML();
 	}
 }

@@ -33,7 +33,7 @@
 #include <QString>
 #include <QDir>
 #include <QFileInfo>
-//#include <QSet>
+#include <QSet>
 
 //Sword
 #include <swdisp.h>
@@ -456,7 +456,7 @@ void CSwordBackend::reloadModules() {
 }
 
 const QStringList CSwordBackend::swordDirList() {
-	QStringList ret;
+	QSet<QString> ret;
 	const QString home = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
 
 	//return a list of used Sword dirs. Useful for the installer
@@ -492,7 +492,7 @@ const QStringList CSwordBackend::swordDirList() {
 		ret << home + "/.sword";
 	}
 
-	return ret;
+	return ret.values();
 }
 
 void CSwordBackend::filterInit() {

@@ -46,8 +46,8 @@ CHTMLReadDisplay::CHTMLReadDisplay(CReadWindow* readWindow, QWidget* parentWidge
 	: KHTMLPart(m_view = new CHTMLReadDisplayView(
 			this, parentWidget ? parentWidget : readWindow), readWindow ? readWindow : parentWidget),
 	CReadDisplay(readWindow),
-	m_currentAnchorCache(QString::null),
-	m_magTimerId(0)
+	m_magTimerId(0),
+	m_currentAnchorCache(QString::null)
 {
 	view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	KHTMLPart::view()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -387,8 +387,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 }
 
 /** The Mag window update happens here if the mouse has not moved to another node after starting the timer.*/
-void CHTMLReadDisplay::timerEvent( QTimerEvent *e ) {
-	qDebug("CHTMLReadDisplay::timerEvent");
+void CHTMLReadDisplay::timerEvent( QTimerEvent* /*e*/ ) {
 	killTimer(m_magTimerId);
 	DOM::Node currentNode = nodeUnderMouse();
 	CInfoDisplay::ListInfoData infoList;
@@ -468,7 +467,7 @@ bool CHTMLReadDisplayView::event(QEvent* e) {
 		connect( part(), SIGNAL(popupMenu(const QString&, const QPoint&)),
 			this, SLOT(popupMenu(const QString&, const QPoint&)));
 	}
-	KHTMLView::event(e);
+	return KHTMLView::event(e);
 }
 
 /** Reimplementation from QScrollArea. */

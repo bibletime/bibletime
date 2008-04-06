@@ -66,7 +66,7 @@ const QString CPlainWriteDisplay::text( const CDisplay::TextType /*format*/, con
 	return QString::null;
 }
 
-void CPlainWriteDisplay::print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions ) {
+void CPlainWriteDisplay::print( const CDisplay::TextPart, CSwordBackend::DisplayOptions, CSwordBackend::FilterOptions) {
 }
 
 /** Sets the current status of the edit widget. */
@@ -94,11 +94,11 @@ const QString CPlainWriteDisplay::plainText() {
 QMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
 	return installedPopup();
 }
-
-/** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
-QMenu* CPlainWriteDisplay::createPopupMenu( ) {
-	return installedPopup();
-}
+//
+///** Reimplementation from QTextEdit. Provides an popup menu for the given position. */
+//QMenu* CPlainWriteDisplay::createPopupMenu( ) {
+//	return installedPopup();
+//}
 
 /** Creates the necessary action objects and puts them on the toolbar. */
 void CPlainWriteDisplay::setupToolbar(QToolBar*, KActionCollection*) {}

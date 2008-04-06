@@ -37,10 +37,6 @@ public:
 	* Store the settings of this window in the given CProfileWindow object.
 	*/
 	virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
-	/**
-	* Returns the write display widget used by this window.
-	*/
-	CWriteDisplay* const displayWidget();
 	virtual void initConnections();
 	virtual void initActions();
 
@@ -56,7 +52,7 @@ protected: // Protected methods
 	* Saves the given text as text of the given key. Use this function
 	* as backend in each write window implementation.
 	*/
-	void setDisplayWidget( CWriteDisplay* display );
+	void setDisplayWidget( CDisplay* display );
 	virtual const CDisplayWindow::WriteWindowType writeWindowType() = 0;
 	virtual bool queryClose();
 	virtual void saveCurrentText( const QString& key ) = 0;

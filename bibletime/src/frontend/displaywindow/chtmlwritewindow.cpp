@@ -109,7 +109,7 @@ void CHTMLWriteWindow::initToolbars() {
 
 	//html formatting toolbar
 	QToolBar* bar = new QToolBar(this);
-	displayWidget()->setupToolbar( bar, actionCollection() );
+	((CWriteDisplay*)displayWidget())->setupToolbar( bar, actionCollection() );
 	addToolBar(bar);
 }
 
@@ -127,14 +127,14 @@ void CHTMLWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 
 /** Is called when the current text was changed. */
 void CHTMLWriteWindow::textChanged() {
-	m_actions.saveText->setEnabled( displayWidget()->isModified() );
-	m_actions.restoreText->setEnabled( displayWidget()->isModified() );
+	m_actions.saveText->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+	m_actions.restoreText->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
 }
 
 /** Loads the original text from the module. */
 void CHTMLWriteWindow::restoreText() {
 	lookupSwordKey(key());
-	displayWidget()->setModified(false);
+	((CWriteDisplay*)displayWidget())->setModified(false);
 	textChanged();
 }
 
@@ -155,7 +155,7 @@ void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 		modules().first()->write(this->key(), t );
 		this->key()->key( oldKey );
 
-		displayWidget()->setModified(false);
+		((CWriteDisplay*)displayWidget())->setModified(false);
 		textChanged();
 	}
 	else {

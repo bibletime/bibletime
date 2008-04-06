@@ -27,11 +27,11 @@
 
 BtInstallThread::BtInstallThread(QString moduleName, QString sourceName, QString destinationName)
 	: QThread(),
+	done(false),
 	m_module(moduleName),
 	m_destination(destinationName),
 	m_source(sourceName),
 	m_cancelled(false),
-	done(false),
 	m_installSource(backend::source(sourceName)),
 	m_backendForSource(backend::backend(m_installSource))
 {
@@ -109,7 +109,7 @@ void BtInstallThread::slotStopInstall()
 	}
 }
 
-void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int fileProgress)
+void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/)
 {
 	//qDebug("BtInstallThread::slotManagerStatusUpdated");
 	emit statusUpdated(m_module, totalProgress);

@@ -107,18 +107,21 @@ bool deleteSource(QString name)
 	}
 
 	config.Save();
+	return true; //TODO: dummy
 }
 
 /** Refreshes the remote source module list. */
-bool refreshSource(QString name)
+bool refreshSource(QString /*name*/)
 {
 	// not possible until manager and progressdialog work together
+	return true; //TODO: dummy
 }
 
 /** Returns the moduleinfo list for the source. Delete the pointer after using. IS THIS POSSIBLE?*/
-ListCSwordModuleInfo moduleList(QString name)
+ListCSwordModuleInfo moduleList(QString /*name*/)
 {
-
+	QList<CSwordModuleInfo*> list; //TODO: dummy
+	return list;
 }
 
 bool isRemote(const sword::InstallSource& source)
@@ -151,7 +154,7 @@ bool setTargetList( const QStringList& targets )
 	//saves a new Sword config using the provided target list
 	//QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
 	//QString filename = util::filesystem::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
-	bool directAccess = false;
+	//bool directAccess = false;
 	QString filename = swordConfigFilename();
 	QFileInfo i(filename);
 	QFileInfo dirInfo(i.absolutePath());

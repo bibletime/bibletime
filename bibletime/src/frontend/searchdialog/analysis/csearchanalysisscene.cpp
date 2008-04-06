@@ -94,7 +94,7 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 		LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules-1) );
 	m_legend->show();
 
-	int xPos = LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS;
+	int xPos = (int)(LEFT_BORDER + m_legend->rect().width() + SPACE_BETWEEN_PARTS);
 	int moduleIndex = 0;
 	m_maxCount = 0;
 	int count = 0;

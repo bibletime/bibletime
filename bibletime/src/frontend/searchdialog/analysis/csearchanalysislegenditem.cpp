@@ -48,21 +48,21 @@ CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(ListCSwordModuleInfo *list 
 }
 
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisLegendItem::paint(QPainter& painter) {
-	painter.save();
+void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
+	painter->save();
 
 	setPen( QPen(Qt::black,2) );
 	setBrush( QBrush(Qt::white) );
 	//the outer rectangle
 	QPoint p1( (int)x(), (int)y() );
-	QPoint p2( (int)x()+rect().width(), (int)y() + rect().height() );
+	QPoint p2( (int)(x()+rect().width()), (int)(y() + rect().height()) );
 	QRect r(p1, p2);
 	r = r.normalized();
-	painter.drawRect(r);
+	painter->drawRect(r);
 
-	QFont f = painter.font();
+	QFont f = painter->font();
 	f.setPointSize(ITEM_TEXT_SIZE);
-	painter.setFont(f);
+	painter->setFont(f);
 
 	//   for (unsigned int index=0; index < m_moduleList->count(); index++){
 	int moduleIndex = 0;
@@ -72,16 +72,16 @@ void CSearchAnalysisLegendItem::paint(QPainter& painter) {
 		QPoint p1( (int)x() + LEGEND_INNER_BORDER, (int)y() + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
 		QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
 		QRect r(p1,p2);
-		painter.fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
+		painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
 		r = r.normalized();
-		painter.drawRect(r);
+		painter->drawRect(r);
 
 		QPoint p3( p2.x() + LEGEND_INNER_BORDER, p2.y() );
-		painter.drawText(p3, (*it)->name() );
+		painter->drawText(p3, (*it)->name() );
 
 		++moduleIndex;
 	}
-	painter.restore();
+	painter->restore();
 }
 
 

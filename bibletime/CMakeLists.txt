@@ -67,7 +67,7 @@ KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 
 SET_TARGET_PROPERTIES(bibletime
 	PROPERTIES 
-		COMPILE_FLAGS "-pedantic-errors -fexceptions" #Enable exception handling, debug code and no optimization
+		COMPILE_FLAGS "-fexceptions" #Enable exception handling
 )
 
 
@@ -89,7 +89,7 @@ IF (NOT CMAKE_INSTALL_PREFIX)
 ENDIF (NOT CMAKE_INSTALL_PREFIX)
 
 SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
-SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wabi -O0 -g")
+SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Werror -pedantic-errors -O0 -g")
 
 SET(CMAKE_CXX_FLAGS_DEBUG_BINONLY ${CMAKE_CXX_FLAGS_DEBUG})
 SET(CMAKE_C_FLAGS_DEBUG_BINONLY ${CMAKE_C_FLAGS_DEBUG})

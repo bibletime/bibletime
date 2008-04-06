@@ -95,9 +95,10 @@ void CWriteWindow::applyProfileSettings(CProfileWindow * const settings) {
 	setUpdatesEnabled(true);
 }
 
-void CWriteWindow::setDisplayWidget( CWriteDisplay* display ) {
-	CDisplayWindow::setDisplayWidget(display);
-	m_writeDisplay = display;
+void CWriteWindow::setDisplayWidget( CDisplay* display ) {
+	Q_ASSERT(dynamic_cast<CWriteDisplay*>(display));
+	CDisplayWindow::setDisplayWidget((CWriteDisplay*)display);
+	m_writeDisplay = (CWriteDisplay*)display;
 }
 
 void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
@@ -113,10 +114,6 @@ void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
 		displayWidget()->setText( key()->rawText() );
 	}
 	setCaption( windowCaption() );
-}
-
-CWriteDisplay* const CWriteWindow::displayWidget() {
-	return m_writeDisplay;
 }
 
 bool CWriteWindow::queryClose() {
@@ -142,7 +139,7 @@ void CWriteWindow::beforeKeyChange(const QString& key) {
 	if (!isReady()) return;
 
 	//If the text changed and we'd do a lookup ask the user if the text should be saved
-	if (modules().first() && displayWidget()->isModified()) {
+	if (modules().first() && ((CWriteDisplay*)displayWidget())->isModified()) {
 		
 		switch (QMessageBox::question( this, tr("Confirmation"), tr("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
 			case QMessageBox::Yes: { //save the changes
@@ -150,7 +147,7 @@ void CWriteWindow::beforeKeyChange(const QString& key) {
 				break;
 			}
 			default: {// set modified to false so it won't ask again
-				displayWidget()->setModified(false);
+				((CWriteDisplay*)displayWidget())->setModified(false);
 				break;
 			}
 		}

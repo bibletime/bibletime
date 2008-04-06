@@ -87,8 +87,8 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
 	QListIterator<QMenu*> it(m_submenus);
 	while (it.hasNext()) {
 		QMenu* popup = it.next();
-		for (unsigned int i = 0; i < popup->actions().count(); i++) {
-			popup->actions().at(i)->setChecked(false);
+		foreach (QAction* a, popup->actions()) {
+			a->setChecked(false);
 		}
 		action->setChecked(true);
 	}
@@ -193,8 +193,8 @@ void CModuleChooserButton::updateMenuItems() {
 	QListIterator<QMenu*> it(m_submenus);
 	while (it.hasNext()) {
 		QMenu* popup = it.next();
-		for (unsigned int i = 0; i < popup->actions().count(); i++) {
-			moduleName = popup->actions().at(i)->text();
+		foreach (QAction* action, popup->actions()) {
+			moduleName = action->text();
 			moduleName.remove(QChar('&')); //remove Hotkey indicator
 			module = backend()->findModuleByName( moduleName.left(moduleName.lastIndexOf(" ")) );
 
@@ -206,7 +206,7 @@ void CModuleChooserButton::updateMenuItems() {
 				alreadyChosen = alreadyChosen && (m_module->name() != moduleName);
 			}
 			//grey it out, it was chosen already
-			popup->actions().at(i)->setEnabled(!alreadyChosen);
+			action->setEnabled(!alreadyChosen);
 		}
 	}
 }

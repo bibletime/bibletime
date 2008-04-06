@@ -28,7 +28,7 @@ CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* p
 
 
 /** Returns the sizeHint for this view */
-QSize CSearchAnalysisView::sizeHint() {
+QSize CSearchAnalysisView::sizeHint() const {
 	if ( parentWidget() )
 		return parentWidget()->sizeHint();
 	return QGraphicsView::sizeHint();

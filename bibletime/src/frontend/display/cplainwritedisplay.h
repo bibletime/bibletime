@@ -78,10 +78,10 @@ protected:
 	* Reimplementation from QTextEdit. Provides an popup menu for the given position.
 	*/
 	virtual QMenu* createPopupMenu( const QPoint& pos );
-	/**
-	* Reimplementation from QTextEdit. Provides an popup menu.
-	*/
-	virtual QMenu* createPopupMenu();
+//	/**
+//	* Reimplementation from QTextEdit. Provides an popup menu.
+//	*/
+//	virtual QMenu* createPopupMenu();
 	/**
 	* Reimplementation from QTextEdit to manage drops of our drag and drop objects.
 	*/

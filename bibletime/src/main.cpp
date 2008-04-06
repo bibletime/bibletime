@@ -45,7 +45,7 @@ BibleTime* bibletime_ptr = 0;
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
 	//we use this messagehandler to switch debugging off in final releases
-	switch ( type ) {
+	switch (type) {
 		case QtDebugMsg:
 			if (showDebugMessages) { //only show messages if they are enabled!
 				fprintf( stderr,"(BibleTime %s) Debug: %s\n", BT_VERSION, msg );
@@ -56,6 +56,7 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 			fprintf( stderr,"(BibleTime %s) WARNING: %s\n", BT_VERSION, msg );
 			break;
 		case QtFatalMsg:
+		case QtCriticalMsg:
 			fprintf( stderr,"(BibleTime %s) _FATAL_: %s\nPlease report this bug! (http://www.bibletime.info/development_help.html)", BT_VERSION, msg );
 			abort(); // dump core on purpose
 	}
@@ -326,7 +327,7 @@ int main(int argc, char* argv[]) {
 		KStartupLogo::deleteSplash();
 	}
 	
-	BibleTimeDBusAdaptor* adaptor = new BibleTimeDBusAdaptor(bibletime_ptr);
+	new BibleTimeDBusAdaptor(bibletime_ptr);
 	
     // connect to D-Bus and register as an object:
 	QDBusConnection::sessionBus().registerObject("/BibleTime", bibletime_ptr);

@@ -237,7 +237,7 @@ void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column)
 	}
 }
 
-void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int column)
+void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/)
 {
 	CSwordModuleInfo* mInfo = m_remoteBackend->findModuleByName(item->text(0));
 	if (mInfo) {

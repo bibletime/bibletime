@@ -45,7 +45,6 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 	foreach (QTreeWidgetItem* sourceItem, selectedModulesTreeWidget->invisibleRootItem()->takeChildren()) {
 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
 			if (moduleItem->checkState(0) == Qt::Checked) {
-				qDebug("");
 				// create a thread for this module
 				BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), destination);
 				m_threads.append(thread);
@@ -74,8 +73,6 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 				QObject::connect(thread, SIGNAL(installCompleted(QString, int)), this, SLOT(slotOneItemCompleted(QString)));
 				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)));
 				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)));
-				
-				qDebug("");
 			}
 		}
 	}

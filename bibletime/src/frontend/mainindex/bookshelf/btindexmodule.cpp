@@ -49,18 +49,23 @@ const bool BTIndexModule::enableAction(QAction* action)
 		IndexAction actionType = (IndexAction)action->property("indexActionType").toInt();
 		
 		switch (actionType) {
-		case EditModule:
-			if (moduleInfo()->isWritable()) action->setEnabled(true);
-			break;
-		case UnlockModule:
-			if (moduleInfo()->isEncrypted()) action->setEnabled(true);
-			break;
-		case HideModules:
-			if (!m_moduleInfo->isHidden()) action->setEnabled(true);
-		case UpdateModules:
-			break;
+			case EditModule:
+				if (moduleInfo()->isWritable()) action->setEnabled(true);
+				break;
+			case UnlockModule:
+				if (moduleInfo()->isEncrypted()) action->setEnabled(true);
+				break;
+			case HideModules:
+				if (!m_moduleInfo->isHidden()) action->setEnabled(true);
+			case UpdateModules:
+				break;
+			case AboutModule:
+			case Grouping:
+			case SearchModules:
+			case ShowAllModules: break;
 		}
 	}
+	return true; //TODO: check, is this correct?
 }
 
 

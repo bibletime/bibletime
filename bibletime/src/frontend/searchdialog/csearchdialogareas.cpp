@@ -554,7 +554,6 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	const unsigned int rep3Length = rep3.length();
 
 	
-	bool inQuote;
 	QString newSearchText;
 
 	newSearchText = searchedText;
@@ -569,7 +568,7 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	list = searchedText.split(QRegExp(regExp));
 	foreach (QString newSearchText, list) {		
 		int sstIndex; // strong search text index for finding "strong:"
-		int idx1, idx2, sTokenIndex, sTokenIndex2;
+		int idx1, idx2;
 		QString sNumber, lemmaText;
 		
 		sstIndex = newSearchText.indexOf("strong:");
@@ -634,9 +633,8 @@ const QString CSearchResultArea::highlightSearchedText(const QString& content, c
 	// made a simple parser.
 	//===========================================================
 	QStringList words = QueryParser(newSearchText);
-	for ( int wi = 0; (unsigned int)wi < words.count(); ++wi ) { //search for every word in the list
+	foreach (QString word, words) { //search for every word in the list
 		QRegExp findExp;
-		QString word = words[ wi ];
 		if (word.contains("*")) {
 			length = word.length() - 1;
 			word.replace('*', "\\S*"); //match within a word

@@ -37,7 +37,7 @@ namespace Search {
 
 
 /********** RangeItem ******************/
-CRangeChooserDialog::RangeItem::RangeItem(QListWidget* view, QListWidgetItem* afterThis, const QString caption, const QString range) 
+CRangeChooserDialog::RangeItem::RangeItem(QListWidget* view, QListWidgetItem* /*afterThis*/, const QString caption, const QString range) 
 	: QListWidgetItem(view)
 {
 	setCaption(caption);

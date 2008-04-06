@@ -59,7 +59,7 @@ void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
 }
 
 
-void CDisplaySettingsButton::optionToggled(QAction* action) {
+void CDisplaySettingsButton::optionToggled(QAction* /*action*/) {
 	qDebug("display settings option toggled");
 	//Take each Action and set the corresponding setting.
 	//Using QAction (QObject) property and OptionType enum is a dirty way to do this.

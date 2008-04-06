@@ -36,7 +36,7 @@ public:
 	* We give back the size of the parent widgetas default.
 	* This is a reimplementation from QCanvasView::sizeHint().
 	*/
-	virtual QSize sizeHint();
+	virtual QSize sizeHint() const;
 
 	/**
 	* Returns the item at position p or 0 if there is no item.

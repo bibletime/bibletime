@@ -223,7 +223,7 @@ void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 	}
 }
 
-void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* item, int column)
+void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* /*item*/, int /*column*/)
 {
 	// Open the About dialog.
 }

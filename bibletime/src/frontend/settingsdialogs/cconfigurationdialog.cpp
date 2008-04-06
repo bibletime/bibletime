@@ -30,9 +30,8 @@
 #include <kactioncollection.h>
 
 
-CConfigurationDialog::CConfigurationDialog
-	(QWidget *parent, KActionCollection* actionCollection )
-	: KPageDialog(0, Qt::Dialog),
+CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* actionCollection )
+	: KPageDialog(parent, Qt::Dialog),
 	  m_actionCollection(actionCollection)
 {
 	

@@ -163,6 +163,4 @@ SET(bibletime_SOURCES
 	src/main.cpp
 )
 
-KDE4_ADD_UI_FILES(bibletime_SOURCES
-	
-)
+KDE4_ADD_UI_FILES(bibletime_SOURCES)

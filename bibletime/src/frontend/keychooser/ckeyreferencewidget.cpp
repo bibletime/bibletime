@@ -54,7 +54,7 @@ QString CKeyReferenceCompletion::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 /* To get popup working we have to rework KLineEdit too */
-CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char *name) : KLineEdit(parent) {
+CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char* /*name*/) : KLineEdit(parent) {
 }
 
 void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
@@ -85,7 +85,7 @@ void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char *name) : 
+CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) : 
 	QWidget(parent),
 	m_key(new CSwordVerseKey(mod))
 {

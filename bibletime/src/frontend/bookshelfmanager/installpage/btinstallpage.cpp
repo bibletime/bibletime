@@ -145,7 +145,7 @@ void BtInstallPage::initPathCombo()
 	// TODO:choose the current value from config
 }
 
-void BtInstallPage::slotPathChanged(const QString& pathText)
+void BtInstallPage::slotPathChanged(const QString& /*pathText*/)
 {
 	// TODO: save to config
 }

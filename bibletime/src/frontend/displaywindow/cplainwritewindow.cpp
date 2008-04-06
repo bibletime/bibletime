@@ -130,7 +130,7 @@ void CPlainWriteWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
 
 /** Saves the text for the current key. Directly writes the changed text into the module. */
 void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
-	QString t = displayWidget()->plainText();
+	QString t = ((CWriteDisplay*)displayWidget())->plainText();
 	//since t is a complete HTML page at the moment, strip away headers and footers of a HTML page
 	QRegExp re("(?:<html.*>.+<body.*>)", Qt::CaseInsensitive); //remove headers, case insensitive
 	re.setMinimal(true);
@@ -142,7 +142,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 		modules().first()->write(this->key(), t );
 		this->key()->key( oldKey );
 
-		displayWidget()->setModified(false);
+		((CWriteDisplay*)displayWidget())->setModified(false);
 		textChanged();
 	}
 	else {
@@ -157,21 +157,21 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 /** Loads the original text from the module. */
 void CPlainWriteWindow::restoreText() {
 	lookupSwordKey(key());
-	displayWidget()->setModified(false);
+	((CWriteDisplay*)displayWidget())->setModified(false);
 	textChanged();
 }
 
 /** Is called when the current text was changed. */
 void CPlainWriteWindow::textChanged() {
-	m_actions.saveText->setEnabled( displayWidget()->isModified() );
-	m_actions.restoreText->setEnabled( displayWidget()->isModified() );
+	m_actions.saveText->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
+	m_actions.restoreText->setEnabled( ((CWriteDisplay*)displayWidget())->isModified() );
 }
 
 /** Deletes the module entry and clears the edit widget, */
 void CPlainWriteWindow::deleteEntry() {
 	modules().first()->deleteEntry( key() );
 	lookupSwordKey( key() );
-	displayWidget()->setModified(false);
+	((CWriteDisplay*)displayWidget())->setModified(false);
 }
 
 /** Setups the popup menu of this display widget. */
