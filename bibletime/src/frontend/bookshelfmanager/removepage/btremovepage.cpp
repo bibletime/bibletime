@@ -35,17 +35,10 @@
 #include <QDebug>
 
 
-//TODO: All modules, even duplicates in different locations, should be shown. Duplicates
-// should be handled correctly. Getting the modinfo by name is not enough.
-
-
 
 BtRemovePage::BtRemovePage()
 	: BtConfigPage()
 {
-	//setMinimumSize(500,400);
-	m_installedModules = CPointers::backend()->moduleList();
-
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(5);
 
@@ -199,8 +192,8 @@ void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 	// if() leaves groups away
 	if (!item->childCount() && column == 0) {
 		CSwordModuleInfo* mInfo = 0;
-		qDebug("BtRemovePage::slotSelectionChanged");
-		foreach (CSwordModuleInfo* module, m_installedModules) {
+		//qDebug("BtRemovePage::slotSelectionChanged");
+		foreach (CSwordModuleInfo* module, CPointers::backend()->moduleList()) {
 			if (module->name() == item->text(0) && module->config(CSwordModuleInfo::AbsoluteDataPath) == item->text(1)) {
 				mInfo = module;
 				break;
@@ -208,10 +201,10 @@ void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 		}
 		Q_ASSERT(mInfo); // this should have been found
 		if (item->checkState(0) == Qt::Checked) {
-			qDebug() << item->text(0) << "in" << item->text(1) << "was checked";
+			//qDebug() << item->text(0) << "in" << item->text(1) << "was checked";
 			m_selectedModules.append(mInfo);
 		}  else {
-			qDebug() << mInfo->name() << "was unchecked";
+			//qDebug() << mInfo->name() << "was unchecked";
 			m_selectedModules.removeAll(mInfo); // there is only one, it's a pointer
 		}
 
@@ -225,11 +218,10 @@ void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column)
 
 void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* /*item*/, int /*column*/)
 {
-	// Open the About dialog.
+	// TODO: Open the About dialog.
 }
 
 void BtRemovePage::slotSwordSetupChanged()
 {
-	m_installedModules = CPointers::backend()->moduleList();
 	populateModuleList();
 }
