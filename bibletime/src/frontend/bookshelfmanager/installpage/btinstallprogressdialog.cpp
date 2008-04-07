@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QCloseEvent>
+#include <QMultiMap>
 
 #include <QDebug>
 
@@ -43,14 +44,14 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 	//m_statusWidget->setColumnWidth(1, CToolClass::mWidth(m_statusWidget, 2));
 
 	foreach (QTreeWidgetItem* sourceItem, selectedModulesTreeWidget->invisibleRootItem()->takeChildren()) {
+		// create items and threads for modules under this source
 		foreach (QTreeWidgetItem* moduleItem, sourceItem->takeChildren()) {
 			if (moduleItem->checkState(0) == Qt::Checked) {
 				// create a thread for this module
-				BtInstallThread* thread = new BtInstallThread(moduleItem->text(0), sourceItem->text(0), destination);
-				m_threads.append(thread);
+				BtInstallThread* thread = new BtInstallThread(this, moduleItem->text(0), sourceItem->text(0), destination);
+				m_waitingThreads.insert(sourceItem->text(0), thread);
+				m_threadsByModule.insert(moduleItem->text(0), thread);
 				// progress widget/item
-				//QProgressBar* bar = new QProgressBar(m_statusWidget);
-				//bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
 				QPushButton* stopButton = new QPushButton(tr("Stop"), m_statusWidget);
 				stopButton->setFixedSize(stopButton->sizeHint());
 
@@ -60,23 +61,23 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 				progressItem->setSizeHint(2, stopButton->sizeHint());
 				progressItem->setText(0, moduleItem->text(0));
 				progressItem->setFlags(Qt::ItemIsEnabled);
-
-				//m_statusWidget->setItemWidget(progressItem, 1, bar);
 				m_statusWidget->setItemWidget(progressItem, 2, stopButton);
-				//bar->setValue(0);
-				//bar->setVisible(false);
-				progressItem->setText(1, tr("Connecting..."));
+				progressItem->setText(1, tr("Waiting for turn..."));
+
 				//connect the signals between the dialog, items and threads
 				QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()) );
-				QObject::connect(thread, SIGNAL(installStopped(QString)), this, SLOT(slotOneItemStopped(QString)));
+				QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)));
 				//is this needed or is statusUpdated enough?
-				QObject::connect(thread, SIGNAL(installCompleted(QString, int)), this, SLOT(slotOneItemCompleted(QString)));
+				QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString)));
 				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)));
 				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)));
+
+				QObject::connect(thread, SIGNAL(preparingInstall(QString, QString)), this, SLOT(slotInstallStarted(QString, QString)));
+
 			}
 		}
 	}
-	//m_statusWidget->setMinimumSize(m_statusWidget->size());
+
 	m_statusWidget->setMinimumWidth(m_statusWidget->size().width());
 	QPushButton* stopAllButton = new QPushButton(tr("Stop All"), this);
 	
@@ -88,57 +89,81 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 
 	qApp->processEvents();
 
-	// start threads
-	qDebug() << "start all threads...";
-	foreach (QThread* t, m_threads) {
-		t->start();
-	}
+	startThreads();
+
 }
 
+void BtInstallProgressDialog::startThreads()
+{
+	qDebug() << "start threads...";
+	//loop through the multimap of the waiting threads, start at most 3 threads for each source
+	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
+	while (threadIterator != m_waitingThreads.end()) {
+		QString sourceName = threadIterator.key();
+		qDebug() << sourceName;
+		if (m_runningThreads.values(sourceName).count() < 3) {
+			BtInstallThread* t = threadIterator.value();
+			m_runningThreads.insert(sourceName, t);
+			threadIterator = m_waitingThreads.erase(threadIterator);
+			t->start();
+		}
+		else ++threadIterator;
+	}
+	qDebug("BtInstallProgressDialog::startThreads end");
+}
 
 BtInstallProgressDialog::~BtInstallProgressDialog()
+{}
+
+
+void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source)
 {
+	oneItemStoppedOrCompleted(module, source, tr("Completed"));
 }
 
-
-void BtInstallProgressDialog::slotOneItemCompleted(QString module)
+void BtInstallProgressDialog::slotOneItemStopped(QString module, QString source)
 {
-	qDebug("BtInstallProgressDialog::slotOneItemCompleted");
-	// mark the item completed (change/remove it),
-	// if all items are stopped/completed close the dialog
+	oneItemStoppedOrCompleted(module, source, tr("Cancelled"));
+}
+
+void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString source, QString statusMessage)
+{
+	qDebug() << "BtInstallProgressDialog::oneItemStoppedOrCompleted" << module << source << statusMessage;
+	// update the list item
 	m_statusWidget->setItemWidget(getItem(module), 1, 0);
-	getItem(module)->setText(1, tr("Completed"));
+	getItem(module)->setText(1, statusMessage);
 	m_statusWidget->itemWidget(getItem(module), 2)->setEnabled(false);
 	getItem(module)->setDisabled(true);
+
+	qDebug() << "remove from threads maps" << source << m_threadsByModule.value(module);
+	m_runningThreads.remove(source, m_threadsByModule.value(module));
+	m_waitingThreads.remove(source, m_threadsByModule.value(module));
+
+	//start a waiting thread if there are any
+	QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
+	qDebug() << threadsForSource;
+	if (!threadsForSource.isEmpty()) {
+		BtInstallThread* thread = threadsForSource.at(0);
+		m_waitingThreads.remove(source, thread);
+		m_runningThreads.insert(source, thread);
+		thread->start();
+	}
 
 	if (threadsDone()) {
 		qDebug() << "close the dialog";
 		close();
 	}
-}
-
-void BtInstallProgressDialog::slotOneItemStopped(QString module)
-{
-	qDebug("BtInstallProgressDialog::slotOneItemStopped");
-
-	m_statusWidget->setItemWidget(getItem(module), 1, 0);
-	getItem(module)->setText(1, tr("Cancelled"));
-	m_statusWidget->itemWidget(getItem(module), 2)->setEnabled(false);
-	getItem(module)->setDisabled(true);
-
-	if (threadsDone()) {
-		qDebug() << "close the dialog";
-		close();
-	}
-
 }
 
 void BtInstallProgressDialog::slotStopInstall()
 {
 	qDebug("BtInstallProgressDialog::slotStopInstall");
-	//close();
-	foreach(QThread* thread, m_threads) {
-		(dynamic_cast<BtInstallThread*>(thread))->slotStopInstall();
+
+	// Clear the waiting threads map, stop all running threads.
+
+	m_waitingThreads.clear();
+	foreach(BtInstallThread* thread, m_runningThreads) {
+		thread->slotStopInstall();
 	}
 }
 
@@ -152,6 +177,11 @@ void BtInstallProgressDialog::slotStatusUpdated(QString module, int status)
 	if (bar) bar->setValue(status);
 }
 
+void BtInstallProgressDialog::slotInstallStarted(QString module, QString)
+{
+	getItem(module)->setText(1, tr("Preparing install..."));
+}
+
 void BtInstallProgressDialog::slotDownloadStarted(QString module)
 {
 	qDebug() << "BtInstallProgressDialog::slotDownloadStarted" << module;
@@ -161,7 +191,6 @@ void BtInstallProgressDialog::slotDownloadStarted(QString module)
 	QProgressBar* bar = new QProgressBar(m_statusWidget);
 	bar->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
 	bar->setValue(0);
-	//bar->setVisible(false);
 	m_statusWidget->setItemWidget(getItem(module), 1, bar);
 }
 
@@ -185,13 +214,5 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent* event)
 
 bool BtInstallProgressDialog::threadsDone()
 {
-	int runningThreads = 0;
-	foreach(BtInstallThread* thread, m_threads){
-		
-		if (!thread->done) {
-			qDebug() << "a thread is running";
-			++runningThreads;
-		}
-	}
-	return runningThreads == 0;
+	return (m_waitingThreads.count() == 0 && m_runningThreads.count() == 0);
 }

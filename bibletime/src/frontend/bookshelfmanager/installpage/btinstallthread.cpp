@@ -25,8 +25,8 @@
 // sword
 #include <filemgr.h>
 
-BtInstallThread::BtInstallThread(QString moduleName, QString sourceName, QString destinationName)
-	: QThread(),
+BtInstallThread::BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName)
+	: QThread(parent),
 	done(false),
 	m_module(moduleName),
 	m_destination(destinationName),
@@ -44,6 +44,9 @@ BtInstallThread::~BtInstallThread()
 void BtInstallThread::run()
 {
 	qDebug() << "BtInstallThread::run, mod:" << m_module << "src:" << m_source << "dest:" << m_destination;
+
+
+	emit preparingInstall(m_module, m_source);
 
 	//make sure target/mods.d and target/modules exist
 	QDir dir(m_destination);
@@ -78,34 +81,39 @@ void BtInstallThread::run()
 		}
 		else {
 			done = true;
-			emit installCompleted(m_module, status);
+			emit installCompleted(m_module, m_source, status);
 		}
 	}
 	else { //local source
+		emit statusUpdated(m_module, 0);
 		m_iMgr.installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
+		emit statusUpdated(m_module, 100);
+		emit installStopped(m_module, m_source);
 	}
 }
 
 void BtInstallThread::slotStopInstall()
 {
-	this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
-	qApp->processEvents();
-	this->wait(); // wait for termination
-	qApp->processEvents();
-	// cleanup: remove the module, remove the temp files
-	// Actually m_iMgr is unnecessary, it could be local in the run().
-	if (true) {
-		// remove the installed module, just to be sure because mgr may
-		// have been terminated when copying files
-		removeModule();
+	if (!done) {
+		this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
 		qApp->processEvents();
-		removeTempFiles();
+		this->wait(); // wait for termination
 		qApp->processEvents();
-		//delete m_iMgr;
-		//m_iMgr = 0; // dtor of this thread deletes iMgr
-		done = true;
-		emit installStopped(m_module);
-		qApp->processEvents();
+		// cleanup: remove the module, remove the temp files
+		// Actually m_iMgr is unnecessary, it could be local in the run().
+		if (true) {
+			// remove the installed module, just to be sure because mgr may
+			// have been terminated when copying files
+			removeModule();
+			qApp->processEvents();
+			removeTempFiles();
+			qApp->processEvents();
+			//delete m_iMgr;
+			//m_iMgr = 0; // dtor of this thread deletes iMgr
+			done = true;
+			emit installStopped(m_module, m_source);
+			qApp->processEvents();
+		}
 	}
 }
 

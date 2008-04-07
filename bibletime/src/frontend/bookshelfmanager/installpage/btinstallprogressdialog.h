@@ -12,6 +12,7 @@
 
 #include <QDialog>
 #include <QString>
+#include <QMultiMap>
 
 class QTreeWidget;
 class QTreeWidgetItem;
@@ -31,11 +32,12 @@ public:
 	~BtInstallProgressDialog();
 
 public slots:
-	void slotOneItemCompleted(QString module);
-	void slotOneItemStopped(QString module);
+	void slotOneItemCompleted(QString module, QString source);
+	void slotOneItemStopped(QString module, QString source);
 	void slotStopInstall();
 	void slotStatusUpdated(QString module, int status);
 	void slotDownloadStarted(QString module);
+	void slotInstallStarted(QString module, QString);
 
 protected:
 	/**
@@ -48,11 +50,21 @@ signals:
 	void swordSetupChanged();
 
 private:
-	QList<BtInstallThread*> m_threads;
+
+	//TODO: using maps is tedious and error prone. Find better solution for handling the modules
+	// and their states.
+	QMultiMap<QString, BtInstallThread*> m_waitingThreads;
+	QMultiMap<QString, BtInstallThread*> m_runningThreads;
+	QMap<QString, BtInstallThread*> m_threadsByModule;
+	//QList<BtInstallThread*> m_doneThreads;
+
 	QTreeWidget* m_statusWidget;
 
+private:
 	QTreeWidgetItem* getItem(QString moduleName);
 	bool threadsDone();
+	void startThreads();
+	void oneItemStoppedOrCompleted(QString module, QString source, QString message);
 };
 
 #endif

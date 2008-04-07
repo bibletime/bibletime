@@ -16,7 +16,7 @@
 
 #include <boost/scoped_ptr.hpp>
 
-//class Bt_InstallMgr;
+class BtInstallProgressDialog;
 
 /**
 * Thread for installing a module.
@@ -55,7 +55,7 @@ class BtInstallThread : public QThread
 {
 	Q_OBJECT
 public:
-    BtInstallThread(QString moduleName, QString sourceName, QString destinationName);
+    BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName);
 
     ~BtInstallThread();
 
@@ -88,11 +88,12 @@ signals:
 	/** Emitted when the install progress status is updated. */
 	void statusUpdated(QString module, int progressPercent);
 	/** Emitted when installing has been stopped/cancelled. */
-	void installStopped(QString module);
+	void installStopped(QString module, QString source);
 	/** Emitted when installing is complete. */
-	void installCompleted(QString module, int errorStatus);
+	void installCompleted(QString module, QString source, int errorStatus);
 	/** Emitted when the first file download has been started. */
 	void downloadStarted(QString module);
+	void preparingInstall(QString module, QString source);
 };
 
 #endif
