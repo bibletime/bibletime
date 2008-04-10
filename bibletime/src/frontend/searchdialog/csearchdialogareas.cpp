@@ -689,8 +689,10 @@ void CSearchResultArea::showAnalysis() {
 */
 void CSearchResultArea::loadDialogSettings()
 {
-	mainSplitter->setSizes(CBTConfig::get(CBTConfig::searchMainSplitterSizes));
-	resultListSplitter->setSizes(CBTConfig::get(CBTConfig::searchResultSplitterSizes));
+	QList<int> mainSplitterSizes = CBTConfig::get(CBTConfig::searchMainSplitterSizes);
+	if (mainSplitterSizes.count() > 0) mainSplitter->setSizes(mainSplitterSizes);
+	QList<int> resultSplitterSizes = CBTConfig::get(CBTConfig::searchResultSplitterSizes); 
+	if (resultSplitterSizes.count() > 0) resultListSplitter->setSizes(resultSplitterSizes);
 }
 
 /**

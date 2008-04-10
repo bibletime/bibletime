@@ -206,21 +206,14 @@ const QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 	return QString::null;
 }
 
-const QList<int> CBTConfig::getDefault( const CBTConfig::intLists ID) {
-	switch ( ID ) {
-		case leftPaneSplitterSizes: //fall through
-		case mainSplitterSizes: {
-			return QList<int>();
-		}
-		case searchMainSplitterSizes: {
-			return QList<int>();
-		}
-		case searchResultSplitterSizes: {
-			return QList<int>();
-		}
-	}
-
-	return QList<int>();
+const QList<int> CBTConfig::getDefault( const CBTConfig::intLists /*ID*/) {
+	QList<int> result;
+	/*switch ( ID ) {
+		case leftPaneSplitterSizes: break;
+		case mainSplitterSizes: break;
+		case searchMainSplitterSizes: break;
+		case searchResultSplitterSizes: break;*/
+	return result;
 }
 
 const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
@@ -702,9 +695,12 @@ const QString CBTConfig::IntListToString( const QList<int> intList )
 const QList<int> CBTConfig::StringToIntList( const QString intListString )
 {
 	QList<int> intList;
-	foreach(QString intString, intListString.split(","))
+	if (!intListString.isEmpty() && intListString.contains(','))
 	{
-		intList << intString.trimmed().toInt();
+		foreach(QString intString, intListString.split(","))
+		{
+			intList << intString.trimmed().toInt();
+		}
 	}
 	return intList;
 }
