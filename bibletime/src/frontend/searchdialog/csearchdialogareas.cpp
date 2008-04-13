@@ -790,7 +790,7 @@ void CSearchOptionsArea::initView() {
     m_searchScopeLabel->setWordWrap(false);
     gridLayout->addWidget(m_searchScopeLabel, 2, 0, 1, 1);
 
-    m_rangeChooserCombo = new KComboBox(searchGroupBox);
+    m_rangeChooserCombo = new QComboBox(searchGroupBox);
     QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
     sizePolicy2.setHorizontalStretch(0);
     sizePolicy2.setVerticalStretch(0);
@@ -894,7 +894,7 @@ const ListCSwordModuleInfo CSearchOptionsArea::modules() {
 }
 
 void CSearchOptionsArea::reset() {
-	m_rangeChooserCombo->setCurrentItem(0); //no scope
+	m_rangeChooserCombo->setCurrentIndex(0);
 	m_searchTextCombo->clearEditText();
 }
 
@@ -944,17 +944,15 @@ void CSearchOptionsArea::syntaxHelp() {
 }
 
 void CSearchOptionsArea::refreshRanges() {
-	//the first two options are fixed, the others can be edited using the "Setup ranges" button.
+	//the first option is fixed, the others can be edited using the "Setup ranges" button.
 	m_rangeChooserCombo->clear();
-	m_rangeChooserCombo->insertItem(0, tr("No search scope"));
+	m_rangeChooserCombo->insertItem(0, QString("[") + tr("No search scope") + QString("]"));
+	//TODO: what about this?
 	//m_rangeChooserCombo->insertItem(tr("Last search result"));
 
 	//insert the user-defined ranges
-	CBTConfig::StringMap map = CBTConfig::get(CBTConfig::searchScopes);
-	CBTConfig::StringMap::Iterator it;
-	for (it = map.begin(); it != map.end(); ++it) {
-		m_rangeChooserCombo->insertItem(0, it.key());
-	};
+	m_rangeChooserCombo->insertItems(1, CBTConfig::get(CBTConfig::searchScopes).keys());
+
 }
 
 sword::ListKey CSearchOptionsArea::searchScope() {

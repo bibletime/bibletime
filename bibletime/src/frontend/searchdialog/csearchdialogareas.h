@@ -33,6 +33,7 @@ class QPushButton;
 class QLabel;
 class QTreeWidget;
 class QFrame;
+class QComboBox;
 
 class KComboBox;
 class KHistoryComboBox;
@@ -303,7 +304,7 @@ private:
     QPushButton *m_chooseModulesButton;
     QPushButton *m_chooseRangeButton;
     QLabel *m_searchScopeLabel;
-    KComboBox *m_rangeChooserCombo;
+    QComboBox *m_rangeChooserCombo;
     KHistoryComboBox *m_searchTextCombo;
     QLabel *m_modulesLabel;
 
