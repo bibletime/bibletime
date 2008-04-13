@@ -711,6 +711,7 @@ CSearchOptionsArea::CSearchOptionsArea(QWidget *parent )
 	: QWidget(parent)
 {
 	initView();
+	initConnections();
 	readSettings();
 }
 
@@ -743,7 +744,8 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
 	m_searchTextCombo->setFocus();
 }
 
-void CSearchOptionsArea::initView() {
+void CSearchOptionsArea::initView()
+{
     QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
@@ -764,101 +766,104 @@ void CSearchOptionsArea::initView() {
     gridLayout->setHorizontalSpacing(3);
     gridLayout->setVerticalSpacing(3);
     gridLayout->setContentsMargins(6, 6, 6, 6);
-    m_searchTextLabel = new QLabel(tr("Search for:"), searchGroupBox);
 
+	// ******** label for search text editor***********
+    m_searchTextLabel = new QLabel(tr("Search for:"), searchGroupBox);
     QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
     sizePolicy1.setHorizontalStretch(0);
     sizePolicy1.setVerticalStretch(0);
     sizePolicy1.setHeightForWidth(m_searchTextLabel->sizePolicy().hasHeightForWidth());
     m_searchTextLabel->setSizePolicy(sizePolicy1);
     m_searchTextLabel->setWordWrap(false);
+    gridLayout->addWidget(m_searchTextLabel, 0, 0);
 
-    gridLayout->addWidget(m_searchTextLabel, 0, 0, 1, 1);
+	// **********Buttons******************
+	m_syntaxButton = new QPushButton(tr("&Help..."), searchGroupBox);
+	gridLayout->addWidget(m_syntaxButton, 0, 2);
+	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
 
-    m_syntaxButton = new QPushButton(tr("&Help"), searchGroupBox);
-    gridLayout->addWidget(m_syntaxButton, 0, 2, 1, 1);
+	m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
+	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
+	m_chooseModulesButton->setToolTip( CResMgr::searchdialog::options::moduleChooserButton::tooltip);
+	gridLayout->addWidget(m_chooseModulesButton, 1, 2);
 
-    m_chooseModulesButton = new QPushButton(tr("Ch&oose"), searchGroupBox);
-    gridLayout->addWidget(m_chooseModulesButton, 1, 2, 1, 1);
+	m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
+	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
+	gridLayout->addWidget(m_chooseRangeButton, 2, 2);
 
-    m_chooseRangeButton = new QPushButton(tr("S&etup"), searchGroupBox);
-    gridLayout->addWidget(m_chooseRangeButton, 2, 2, 1, 1);
+	// ************* Label for search range/scope selector *************
+	m_searchScopeLabel = new QLabel(tr("Scope:"), searchGroupBox);
+	sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
+	m_searchScopeLabel->setSizePolicy(sizePolicy1);
+	m_searchScopeLabel->setWordWrap(false);
+	gridLayout->addWidget(m_searchScopeLabel, 2, 0);
 
-    m_searchScopeLabel = new QLabel(tr("Search scope:"), searchGroupBox);
-    sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
-    m_searchScopeLabel->setSizePolicy(sizePolicy1);
-    m_searchScopeLabel->setWordWrap(false);
-    gridLayout->addWidget(m_searchScopeLabel, 2, 0, 1, 1);
+	// ***********Range/scope selector combo box***********
+	m_rangeChooserCombo = new QComboBox(searchGroupBox);
+	QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
+	sizePolicy2.setHorizontalStretch(0);
+	sizePolicy2.setVerticalStretch(0);
+	sizePolicy2.setHeightForWidth(m_rangeChooserCombo->sizePolicy().hasHeightForWidth());
+	m_rangeChooserCombo->setSizePolicy(sizePolicy2);
+	m_rangeChooserCombo->setToolTip( CResMgr::searchdialog::options::chooseScope::tooltip);
+	gridLayout->addWidget(m_rangeChooserCombo, 2, 1);
 
-    m_rangeChooserCombo = new QComboBox(searchGroupBox);
-    QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    sizePolicy2.setHorizontalStretch(0);
-    sizePolicy2.setVerticalStretch(0);
-    sizePolicy2.setHeightForWidth(m_rangeChooserCombo->sizePolicy().hasHeightForWidth());
-    m_rangeChooserCombo->setSizePolicy(sizePolicy2);
-    gridLayout->addWidget(m_rangeChooserCombo, 2, 1, 1, 1);
-
-    m_searchTextCombo = new KHistoryComboBox(searchGroupBox);
-    sizePolicy2.setHeightForWidth(m_searchTextCombo->sizePolicy().hasHeightForWidth());
-    m_searchTextCombo->setSizePolicy(sizePolicy2);
-    m_searchTextCombo->setFocusPolicy(Qt::WheelFocus);
-    m_searchTextCombo->setProperty("sizeLimit", QVariant(25));
-    m_searchTextCombo->setProperty("duplicatesEnabled", QVariant(false));
-
-    gridLayout->addWidget(m_searchTextCombo, 0, 1, 1, 1);
+	// ************* Search text combo box *******************
+	m_searchTextCombo = new KHistoryComboBox(searchGroupBox);
+	sizePolicy2.setHeightForWidth(m_searchTextCombo->sizePolicy().hasHeightForWidth());
+	m_searchTextCombo->setSizePolicy(sizePolicy2);
+	m_searchTextCombo->setFocusPolicy(Qt::WheelFocus);
+	m_searchTextCombo->setProperty("sizeLimit", QVariant(25));
+	m_searchTextCombo->setProperty("duplicatesEnabled", QVariant(false));
+	m_searchTextCombo->setToolTip(CResMgr::searchdialog::options::searchedText::tooltip);
+	gridLayout->addWidget(m_searchTextCombo, 0, 1);
 	
 	//Modules label, the text will be set later
-	m_modulesLabel = new QLabel( searchGroupBox);
-	sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
-	m_modulesLabel->setSizePolicy(sizePolicy1);
-	m_modulesLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
-    m_modulesLabel->setWordWrap(true);
+	//m_modulesLabel = new QLabel( searchGroupBox);
+	//sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
+	//m_modulesLabel->setSizePolicy(sizePolicy1);
+	//m_modulesLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
+    //m_modulesLabel->setWordWrap(true);
+	//gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
 
-	gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
-
+	m_modulesLabel = new QLabel(tr("Works:"), searchGroupBox);
+	gridLayout->addWidget(m_modulesLabel, 1, 0);
+	
+	m_modulesCombo = new QComboBox(searchGroupBox);
+	m_modulesCombo->setDuplicatesEnabled(false);
+	gridLayout->addWidget(m_modulesCombo, 1, 1);
 
 	hboxLayout->addWidget(searchGroupBox);
 
-	Q_ASSERT(m_searchTextCombo);
+	refreshRanges();
+	//set the initial focus
+	m_searchTextCombo->setFocus();	
+	// event filter to prevent the Return/Enter presses in the combo box doing something
+	// in the parent widget
+	m_searchTextCombo->installEventFilter(this);
+}
+
+void CSearchOptionsArea::initConnections()
+{
 	QObject::connect( m_searchTextCombo, SIGNAL(activated( const QString& )),
 				this, SLOT( slotHistoryItemActivated(const QString&) )
 			);
 	QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ( const QString& )),
 				this, SLOT( slotSearchTextEditReturnPressed(const QString&) )
 			);
-
-	m_searchTextCombo->setToolTip(CResMgr::searchdialog::options::searchedText::tooltip);
-
-	Q_ASSERT(m_syntaxButton);
-	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
 	connect( m_syntaxButton, SIGNAL(clicked()), this, SLOT(syntaxHelp()));
-
-	Q_ASSERT(m_chooseModulesButton);
-	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
 	connect(m_chooseModulesButton, SIGNAL(clicked()), this, SLOT(chooseModules()));
-	
-	m_chooseModulesButton->setToolTip( CResMgr::searchdialog::options::moduleChooserButton::tooltip);
-	Q_ASSERT(m_rangeChooserCombo);
-	m_rangeChooserCombo->setToolTip( CResMgr::searchdialog::options::chooseScope::tooltip);
-	refreshRanges();
-
-	Q_ASSERT(m_chooseRangeButton);
-	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
 	connect(m_chooseRangeButton, SIGNAL(clicked()), this, SLOT(setupRanges()));
+	connect(m_modulesCombo, SIGNAL(activated(int)), this, SLOT(moduleListTextSelected(int) ) );
 
-	//set the initial focus
-	Q_ASSERT(m_searchTextCombo);
-	m_searchTextCombo->setFocus();	
-
-	// event filter to prevent the Return/Enter presses in the combo box doing something
-	// in the parent widget
-	//m_searchTextCombo->view()->installEventFilter(this);
-	m_searchTextCombo->installEventFilter(this);
 }
 
 /** Sets the modules used by the search. */
-void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
-	QString t = tr("Searching in: ");
+void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules )
+{
+	qDebug("CSearchOptionsArea::setModules");
+	qDebug() << modules;
+	QString t;
 
 	m_modules.clear(); //remove old modules
 	ListCSwordModuleInfo::iterator end_it = modules.end();
@@ -868,7 +873,7 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 		if (*it == 0) { //don't operate on null modules.
 			continue;
 		}
-		
+		qDebug() << "new module:" << (*it)->name();
 		if ( !m_modules.contains(*it) ) {
 			m_modules.append( *it );
 			t.append( (*it)->name() );
@@ -877,8 +882,43 @@ void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules ) {
 			}
 		}
 	};
-	m_modulesLabel->setText(t);
+	//m_modulesLabel->setText(t);
+	int existingIndex = m_modulesCombo->findText(t);
+	qDebug() << "index of the module list string which already exists in combobox:" << existingIndex;
+	if (existingIndex >= 0) {
+		m_modulesCombo->removeItem(existingIndex);
+	}
+	if (m_modulesCombo->count() > 10) {
+		m_modulesCombo->removeItem(m_modulesCombo->count()-1);
+	}
+	m_modulesCombo->insertItem(0, t);
+	m_modulesCombo->setItemData(0, t, Qt::ToolTipRole);
+	m_modulesCombo->setCurrentIndex(0);
+	m_modulesCombo->setToolTip(t);
+	//Save the list in config here, not when deleting, because the history may be used
+	// elsewhere while the dialog is still open
+	QStringList historyList;
+	for (int i = 0; i < m_modulesCombo->count(); ++i) {
+		historyList.append(m_modulesCombo->itemText(i));
+	}
+	CBTConfig::set(CBTConfig::searchModulesHistory, historyList);
 	emit( sigSetSearchButtonStatus( (modules.count() != 0) ) );
+}
+
+// Catch activated signal of module selector combobox
+void CSearchOptionsArea::moduleListTextSelected(int index)
+{
+	qDebug("CSearchOptionsArea::moduleListTextSelected");
+	//create the module list
+	QString text = m_modulesCombo->itemText(index);
+	qDebug() << text;
+	QStringList moduleNamesList = text.split(", ");
+	ListCSwordModuleInfo moduleList;
+	foreach(QString name, moduleNamesList) {
+		moduleList.append(CPointers::backend()->findModuleByName(name));
+	}
+	//set the list and the combobox list and text
+	setModules(moduleList);
 }
 
 void CSearchOptionsArea::chooseModules() {
@@ -906,6 +946,11 @@ void CSearchOptionsArea::saveSettings() {
 void CSearchOptionsArea::readSettings() {
 	m_searchTextCombo->completionObject()->setItems( CBTConfig::get(CBTConfig::searchCompletionTexts) );
 	m_searchTextCombo->setHistoryItems( CBTConfig::get(CBTConfig::searchTexts) );
+	//TODO: set the module selector items
+	m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
+	for (int i = 0; i < m_modulesCombo->count(); ++i) {
+		m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
+	}
 }
 
 void CSearchOptionsArea::aboutToShow() {

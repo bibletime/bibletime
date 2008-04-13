@@ -256,6 +256,7 @@ protected: // Protected methods
 	* Initializes this page.
 	*/
 	void initView();
+	void initConnections();
 	/**
 	* Reads the settings of the last searchdialog session.
 	*/
@@ -270,6 +271,10 @@ public slots: // Public slots
 	* Sets the modules used by the search.
 	*/
 	void setModules( ListCSwordModuleInfo modules );
+
+	/** Sets the modules when user selects them from the combobox.*/
+	void moduleListTextSelected(int index);
+
 	/**
 	* Reimplementation.
 	*/
@@ -307,6 +312,7 @@ private:
     QComboBox *m_rangeChooserCombo;
     KHistoryComboBox *m_searchTextCombo;
     QLabel *m_modulesLabel;
+	QComboBox* m_modulesCombo;
 
 };
 

@@ -220,6 +220,7 @@ const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 	switch ( ID ) {
 		case searchCompletionTexts:	return QString("searchCompletionTexts");
 		case searchTexts:			return QString("searchTexts");
+		case searchModulesHistory:	return QString("searchModulesHistory");
 		case bookshelfOpenGroups:	return QString("bookshelfOpenGroups");
 		case hiddenModules:			return QString("hiddenModules");
 	}
@@ -236,6 +237,7 @@ const QStringList CBTConfig::getDefault( const CBTConfig::stringLists ID) {
 		case searchCompletionTexts:		return QStringList();
 		case bookshelfOpenGroups:		return QStringList();
 		case hiddenModules:				return QStringList();
+		case searchModulesHistory:				return QStringList();
 	}
 	return QStringList();
 }

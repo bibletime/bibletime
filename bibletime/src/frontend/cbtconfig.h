@@ -106,6 +106,7 @@ public:
 	enum stringLists {
 		searchCompletionTexts,
 		searchTexts,
+		searchModulesHistory,
 		bookshelfOpenGroups,
 		hiddenModules
 	};
