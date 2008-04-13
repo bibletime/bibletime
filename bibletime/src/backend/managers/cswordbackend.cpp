@@ -148,6 +148,7 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 		}
 	}
 
+	emit sigSwordSetupChanged();
 	return ret;
 }
 

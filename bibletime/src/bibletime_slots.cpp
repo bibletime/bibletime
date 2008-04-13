@@ -87,8 +87,8 @@ void BibleTime::slotSettingsChanged() {
 	qDebug("BibleTime::slotSettingsChanged");
 	const QString language = CBTConfig::get
 								 (CBTConfig::language);
-	m_backend->booknameLanguage(language);
-
+	//m_backend->booknameLanguage(language);
+	CPointers::backend()->booknameLanguage(language);
 // TODO: update the bookmarks after Bible bookname language has been changed
 // 	QTreeWidgetItemIterator it(m_mainIndex);
 // 	while (*it) {
@@ -134,9 +134,9 @@ void BibleTime::slotSwordSetupChanged() {
 
 
 	CPointers::deleteBackend();
-	m_backend = new CSwordBackend();
-	CPointers::setBackend(m_backend);
-	m_backend->initModules();
+	//m_backend = new CSwordBackend();
+	CPointers::setBackend(new CSwordBackend());
+	CPointers::backend()->initModules();
 
 	m_mainIndex->reloadSword();
 
@@ -451,7 +451,7 @@ void BibleTime::loadProfile(CProfile* p) {
 
 		ListCSwordModuleInfo modules;
 		for ( QStringList::Iterator it = usedModules.begin(); it != usedModules.end(); ++it ) {
-			if (CSwordModuleInfo* m = m_backend->findModuleByName(*it)) {
+			if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(*it)) {
 				modules.append(m);
 			}
 		}

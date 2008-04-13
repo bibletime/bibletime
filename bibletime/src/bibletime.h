@@ -356,7 +356,7 @@ private:
 	CMDIArea* m_mdi;
 
 	Profile::CProfileMgr m_profileMgr;
-	CSwordBackend* m_backend;
+	//CSwordBackend* m_backend;
 
 	CMainIndex* m_mainIndex;
 

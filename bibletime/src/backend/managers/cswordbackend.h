@@ -14,6 +14,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
+#include <QObject>
 #include <QMap>
 #include <QString>
 #include <QStringList>
@@ -42,8 +43,9 @@ namespace Rendering {
   * @version $Id: cswordbackend.h,v 1.58 2007/03/14 21:32:47 joachim Exp $
   */
 
-class CSwordBackend : public sword::SWMgr {
-
+class CSwordBackend : public QObject, public sword::SWMgr
+{
+	Q_OBJECT
 public:
 	/** Filter options. Filter options to
 	 * control the text display of modules. Uses int and not bool because not all
@@ -203,6 +205,9 @@ public:
 	* @return A list of all known Sword prefix dirs
 	*/
 	const QStringList swordDirList();
+
+signals:
+	void sigSwordSetupChanged();
 
 protected:
 	/**

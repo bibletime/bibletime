@@ -392,15 +392,15 @@ void BibleTime::initBackends() {
 	sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
 	sword::SWLog::getSystemLog()->setLogLevel(1);
 
-	m_backend = new CSwordBackend();
-	m_backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
+	CSwordBackend* backend = new CSwordBackend();
+	backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
 
-	CPointers::setBackend(m_backend);
-	const CSwordBackend::LoadError errorCode = m_backend->initModules();
+	CPointers::setBackend(backend);
+	const CSwordBackend::LoadError errorCode = CPointers::backend()->initModules();
 
 	m_moduleList = 0;
 	if ( errorCode == CSwordBackend::NoError ) { //no error
-		m_moduleList = &(m_backend->moduleList());
+		m_moduleList = &(CPointers::backend()->moduleList());
 	}
 	else {
 		m_moduleList = 0;

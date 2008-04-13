@@ -56,7 +56,6 @@ BibleTime::BibleTime() :
 	m_leftPaneSplitter(0),
 	m_mdi(0),
 	m_profileMgr(),
-	m_backend(0),
 	m_mainIndex(0)
 {
 	//setObjId("BibleTimeInterface"); //DCOP?
