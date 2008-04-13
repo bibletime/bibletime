@@ -86,9 +86,14 @@ void BtInstallThread::run()
 	}
 	else { //local source
 		emit statusUpdated(m_module, 0);
-		m_iMgr.installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
-		emit statusUpdated(m_module, 100);
-		emit installStopped(m_module, m_source);
+		int status = m_iMgr.installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
+		if (status != 0) {
+			qWarning() << "Error with install: " << status << "module:" << m_module;
+		} else {
+			emit statusUpdated(m_module, 100);
+			done = true;
+			emit installCompleted(m_module, m_source, status);
+		}
 	}
 }
 
