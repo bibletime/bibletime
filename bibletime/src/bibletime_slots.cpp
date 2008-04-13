@@ -133,10 +133,10 @@ void BibleTime::slotSwordSetupChanged() {
 	*/
 
 
-	CPointers::deleteBackend();
+	//CPointers::deleteBackend();
 	//m_backend = new CSwordBackend();
-	CPointers::setBackend(new CSwordBackend());
-	CPointers::backend()->initModules();
+	//CPointers::setBackend(new CSwordBackend());
+	CPointers::backend()->reloadModules();
 
 	m_mainIndex->reloadSword();
 
