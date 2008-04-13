@@ -19,6 +19,18 @@
 
 #include <QDialogButtonBox>
 
+
+static BtModuleManagerDialog* m_staticModuleManagerDialog = 0;
+
+BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget* parent)
+{
+	if (!m_staticModuleManagerDialog) {
+		m_staticModuleManagerDialog = new BtModuleManagerDialog(parent);
+	};
+	Q_ASSERT(m_staticModuleManagerDialog);
+	return m_staticModuleManagerDialog;
+}
+
 BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	: BtConfigDialog(parent)
 {
@@ -53,6 +65,11 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	bbox->addButton(QDialogButtonBox::Close);
 	addButtonBox(bbox);
 	connect(bbox, SIGNAL(rejected()), SLOT(close()));
+}
+
+BtModuleManagerDialog::~BtModuleManagerDialog()
+{
+	m_staticModuleManagerDialog = 0;
 }
 
 // The QWidget close() sends close event, so does closing by the window X button.

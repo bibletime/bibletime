@@ -106,10 +106,14 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-	//TODO: nonmodal dialog, memory management (one instance only! which is hidden between calls, like search dialog)
-	BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
+	//TODO: nonmodal dialog, memory management (one instance only!
+	//BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
+	BtModuleManagerDialog* dlg = BtModuleManagerDialog::getInstance(this);
+	//disconnect first because it may be connected already
+	QObject::disconnect(dlg, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()) );
 	connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
+	dlg->showNormal();
 	dlg->show();
 	dlg->raise();
 	dlg->activateWindow();

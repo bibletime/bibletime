@@ -23,9 +23,9 @@ class BtModuleManagerDialog : public BtConfigDialog
 	Q_OBJECT
 
 public:
-	/** Adds the pages and the button box. */
-	BtModuleManagerDialog(QWidget* parent);
-	~BtModuleManagerDialog(){}
+	static BtModuleManagerDialog* getInstance(QWidget* parent);
+	
+	~BtModuleManagerDialog();
 
 public slots:
 	void slotSwordSetupChanged();
@@ -34,6 +34,8 @@ public slots:
 protected:
 	/** Reimplementation from QWidget. */
 	virtual void closeEvent(QCloseEvent* event);
+	/** Adds the pages and the button box. */
+	BtModuleManagerDialog(QWidget* parent);
 
 signals:
 	void swordSetupChanged();
