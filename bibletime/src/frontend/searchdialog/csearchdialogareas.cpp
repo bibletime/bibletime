@@ -48,12 +48,11 @@
 #include <QLineEdit>
 #include <QKeyEvent>
 #include <QSettings>
+#include <QComboBox>
 
 #include <QDebug>
 
 //KDE includes
-
-#include <kcombobox.h>
 #include <khistorycombobox.h>
 
 

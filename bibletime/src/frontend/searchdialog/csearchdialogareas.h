@@ -35,7 +35,6 @@ class QTreeWidget;
 class QFrame;
 class QComboBox;
 
-class KComboBox;
 class KHistoryComboBox;
 
 

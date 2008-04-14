@@ -86,10 +86,7 @@ protected:
 	* Returns the used search scope as a list key
 	*/
 	sword::ListKey searchScope();
-	/**
-	* Returns true if the search used a scope, otherwise false.
-	*/
-	//const CSwordModuleSearch::scopeType searchScopeType() const;
+	
 	/**
 	* Returns they type of search which is set
 	*/

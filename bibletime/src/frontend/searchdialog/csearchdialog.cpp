@@ -27,6 +27,8 @@
 #include <QVBoxLayout>
 #include <QLineEdit>
 #include <QSettings>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 namespace Search {
 
@@ -114,21 +116,6 @@ void CSearchDialog::startSearch()
 		}
 	}
 
-	//m_searchResultArea->reset();
-
-//	const int searchFlags = m_searchOptionsArea->searchFlags();
-
-//	const CSwordModuleSearch::scopeType scopeType = m_searchOptionsArea->scopeType();
-// 	if (scopeType == CSwordModuleSearch::Scope_LastSearch) {
-// 		searchFlags |= CSwordModuleSearch::useLastResult;
-// 	}
-// 	else if ( (scopeType == CSwordModuleSearch::Scope_Bounds)
-// 			  && strlen(m_searchOptionsArea->searchScope().getRangeText())) {
-// 		//we need the scope flag and a valid scope!
-// 		searchFlags |= CSwordModuleSearch::useScope;
-// 		m_searcher.setSearchScope( m_searchOptionsArea->searchScope() );
-// 	}
-
 	if (m_searchOptionsArea->hasSearchScope()) {
 		m_searcher.setSearchScope( m_searchOptionsArea->searchScope() );
 	}
@@ -138,7 +125,6 @@ void CSearchDialog::startSearch()
 
 	m_searcher.setModules( modules() );
 	m_searcher.setSearchedText(searchText);
-//	m_searcher.setSearchOptions(searchFlags);
 
 	m_searcher.startSearch();
 }
@@ -198,6 +184,13 @@ void CSearchDialog::initView()
 	m_searchResultArea = new CSearchResultArea(mainWidget());
 	box->addWidget( m_searchResultArea );
 
+	//TODO: for QDialog, after removing KDialog
+	//QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Help|QDialogButtonBox::Close, Qt::Horizontal, mainWidget());
+	//QPushButton* helpButton = buttonBox->button(QDialogButtonBox::Help);
+	//helpButton->setText(tr("Quick &Help"));
+	//helpButton->setToolTip(tr("Quick help a.k.a \"What's This?\". Click this, then point and click some user interface element."));
+	//box->addWidget(buttonBox);
+
 	// The dialog doesn't resize properly if the minimum size of the
 	// plain page is lower than the minimumsize of our two widgets.
 	// You can resize the dialog, but it just starts covering up the
@@ -244,6 +237,7 @@ void CSearchDialog::reset() {
 /** Reimplementation. */
 void CSearchDialog::slotClose() {
 	//TODO: what to do with this when we move to QDialog?
+	// maybe Qt::WA_DeleteOnClose
 	delayedDestruct();
 	m_staticDialog = 0;
 }
