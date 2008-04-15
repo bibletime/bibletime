@@ -168,6 +168,7 @@ public:
 	static void syncConfig();
 
 private:
+	friend class BibleTimeTest;
 	/** The config object.
 	* @return A config object which is used currently, may be the global config or the session config
 	*/

@@ -163,4 +163,14 @@ SET(bibletime_SOURCES
 	src/main.cpp
 )
 
+#unit tests
+SET(bibletime_test_SOURCES
+	#main file
+	src/tests/bibletime_test.cpp
+	#frontend
+	src/tests/frontend/cbtconfig_test.cpp
+)
+
 KDE4_ADD_UI_FILES(bibletime_SOURCES)
+KDE4_ADD_UI_FILES(bibletime_test_SOURCES)
+

@@ -31,6 +31,11 @@
 #include <QDebug>
 #include <QDBusConnection>
 
+#ifdef BT_ENABLE_TESTING
+#include <QtTest/QtTest>
+#include "tests/bibletime_test.h"
+#endif
+
 #include <kcmdlineargs.h>
 #include <kcrash.h>
 #include <kaboutdata.h>
@@ -115,6 +120,14 @@ extern "C" {
 
 int main(int argc, char* argv[]) {
 	qInstallMsgHandler( myMessageOutput );
+
+#ifdef BT_ENABLE_TESTING
+	if (QString(argv[1]) == QString("--run-tests"))
+	{
+		BibleTimeTest testClass;
+		return QTest::qExec(&testClass);
+	}
+#endif
 	
 	//TODO: port to QT
  	static KCmdLineOptions options;

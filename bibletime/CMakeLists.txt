@@ -63,25 +63,51 @@ LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 )
 
-KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
+#Link to QtTest only in debug builds
+IF (CMAKE_BUILD_TYPE STREQUAL "Release")
+	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
+	SET_TARGET_PROPERTIES(bibletime
+		PROPERTIES 
+			COMPILE_FLAGS "-fexceptions" #Enable exception handling
+	)
+	TARGET_LINK_LIBRARIES(bibletime
+		${KDE4_KDEUI_LIBS}
+		${KDE4_KDECORE_LIBS}
+		${KDE4_KHTML_LIBS}
+		QtCore
+		QtGui
+		QtXml
+		QtDBus
+		${CLUCENE_LIBRARY}
+		${SWORD_LIBRARY}
+	)
+ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
+	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES})
+	SET_TARGET_PROPERTIES(bibletime
+		PROPERTIES 
+			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING" #Enable exception handling and Testing
+	)
+	TARGET_LINK_LIBRARIES(bibletime
+		${KDE4_KDEUI_LIBS}
+		${KDE4_KDECORE_LIBS}
+		${KDE4_KHTML_LIBS}
+		QtCore
+		QtGui
+		QtXml
+		QtDBus
+		QtTest
+		${CLUCENE_LIBRARY}
+		${SWORD_LIBRARY}
+	)
+	# Unit Tests
+	ADD_CUSTOM_TARGET(test
+		COMMAND "./bibletime --run-tests"
+		WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+		COMMENT "Running BibleTime Unit Tests"
+	)
+ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
-SET_TARGET_PROPERTIES(bibletime
-	PROPERTIES 
-		COMPILE_FLAGS "-fexceptions" #Enable exception handling
-)
 
-
-TARGET_LINK_LIBRARIES(bibletime
-	${KDE4_KDEUI_LIBS}
-	${KDE4_KDECORE_LIBS}
-	${KDE4_KHTML_LIBS}
-	QtCore
-	QtGui
-	QtXml
-	QtDBus
-	${CLUCENE_LIBRARY}
-	${SWORD_LIBRARY}
-)
 ######################################################
 
 IF (NOT CMAKE_INSTALL_PREFIX)
