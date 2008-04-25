@@ -10,6 +10,10 @@
 	<style type="text/css">
 	/* <![CDATA[ */
 
+* { 
+	/* To work around a KDE 3.2 bug / problem */
+	background-color:transparent;
+}
 
 #content {
 	/*background-color:white;*/
@@ -34,8 +38,10 @@ a {
 	font-weight:normal;
 	/*color: #F98100;*/
 	padding:1px;
+	background-color:transparent;
 }
 a:hover {
+	background-color:transparent;
 	color: #FF0000;
 	padding:1px;
 	text-decoration:underline;
@@ -63,7 +69,7 @@ div.entry, td.entry {
 	padding: 2px;
 	vertical-align: top;
 	text-align: justify;
-	/*font-weight: bolder;*/
+	/*background-color:transparent;*/
 	/*color:white;*/
 	/*background-color:black;*/
 	/*The background colour of selected text as of kde 3.5.2*/
@@ -132,7 +138,6 @@ td.entry + td.entry {
 	/*color: #F98100;*/
 	font-size:80%;
 	color: black;
-	content: "1";
 }
 
 
@@ -263,7 +268,7 @@ td.entry + td.entry {
 }
 
 .morphSegmentation {
-	border: 1px solid gray;
+	border: 1px solid grey;
 	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */
 	margin-left: -1px; /* But here, for better reading of the text, 
 											this will only occur within a word consisting of several segments.*/
