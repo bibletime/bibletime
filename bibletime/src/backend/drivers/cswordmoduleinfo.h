@@ -47,7 +47,7 @@ class CSwordModuleInfo: public QObject
 public:
 	/**
 	 * These are the options which could be supported by modules and by this backend.
-	 * It's used in @ref CSwordBackend::isOptionEnabled and @ref CSwordBackend::setOption.
+	 * It's used in @ref CSwordBackend::setOption.
 	 */
 	enum FilterTypes {
 		footnotes, /**< Footnotes embedded in the module's text */

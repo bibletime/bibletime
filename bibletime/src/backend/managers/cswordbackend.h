@@ -128,12 +128,6 @@ public:
 	/** */
 	void setFilterOptions( const CSwordBackend::FilterOptions options );
 	/**
-	* Returns true if the given option is enabled.
-	*
-	* @return Returns true if the options given as aparameter is switched on at this time, otherwise return false.
-	*/
-	virtual const bool isOptionEnabled( const CSwordModuleInfo::FilterTypes type);
-	/**
 	* Sets the language for the international booknames of Sword.
 	* @param langName The abbreviation string which should be used for the Sword backend
 	*/

@@ -204,12 +204,6 @@ const bool CSwordBackend::shutdownModules() {
 	return true;
 }
 
-/** Returns true if the given option is enabled. */
-const bool CSwordBackend::isOptionEnabled( const CSwordModuleInfo::FilterTypes type) {
-	return (getGlobalOption( optionName(type).toUtf8().constData() ) == "On");
-}
-
-/** Sets the given options enabled or disabled depending on the second parameter. */
 void CSwordBackend::setOption( const CSwordModuleInfo::FilterTypes type, const int state ) {
 	sword::SWBuf value;
 
