@@ -5288,7 +5288,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime.cpp" line="245"/>
+        <location filename="../../src/bibletime.cpp" line="243"/>
         <source>BibleTime </source>
         <translation type="unfinished"></translation>
     </message>
@@ -5474,12 +5474,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
             </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="501"/>
+        <location filename="../../src/bibletime_slots.cpp" line="505"/>
         <source>Session name:</source>
         <translation type="unfinished">세션 이름:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="501"/>
+        <location filename="../../src/bibletime_slots.cpp" line="505"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">새로운 세션의 이름을 입력하세요</translation>
     </message>
@@ -5972,12 +5972,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5987,30 +5987,35 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="82"/>
         <source>Stop All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="69"/>
-        <source>Connecting...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="113"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="121"/>
         <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="128"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="126"/>
         <source>Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="65"/>
+        <source>Waiting for turn...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="182"/>
+        <source>Preparing install...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="26"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="38"/>
         <source>BibleTime Bookshelf Manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6018,37 +6023,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
         <source>Install path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="76"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="75"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="68"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="142"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="151"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="144"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="153"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6290,42 +6295,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">장을 HTML로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="265"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="261"/>
         <source>Bible window</source>
         <translation type="unfinished">성서 창</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="273"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
         <source>Copy...</source>
         <translation type="unfinished">복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="285"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="281"/>
         <source>Save...</source>
         <translation type="unfinished">저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="298"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="294"/>
         <source>Print...</source>
         <translation type="unfinished">인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
         <source>Copy chapter to clipboard ...</source>
         <translation type="unfinished">장을 클립보드에 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="395"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
         <source>Copying</source>
         <translation type="unfinished">복사 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
         <source>Saving chapter ...</source>
         <translation type="unfinished">장 저장 중 ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="434"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
         <source>Saving</source>
         <translation type="unfinished">저장 중</translation>
     </message>
@@ -6358,7 +6363,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">목록과 텍스트 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="201"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="198"/>
         <source>Book Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6366,57 +6371,57 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="114"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="115"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="116"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="117"/>
         <source>New folder</source>
         <translation type="unfinished">새 폴더</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="117"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="118"/>
         <source>Rename folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="119"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Change bookmark description</source>
         <translation type="unfinished">설명 바꾸기 ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Import bookmarks</source>
         <translation type="unfinished">북마크 가져오기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Export bookmarks</source>
         <translation type="unfinished">북마크 내보내기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Print bookmarks</source>
         <translation type="unfinished">북마크 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="124"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
         <source>Remove selected item(s)</source>
         <translation type="unfinished">선택한 항목(들) 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="631"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="632"/>
         <source>Delete Items</source>
         <translation type="unfinished">항목 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="631"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="632"/>
         <source>Do you really want to delete the selected items and child-items?</source>
         <translation type="unfinished">정말 선택한 항목과 하위 항목들을 삭제하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="771"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="772"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6580,27 +6585,27 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="50"/>
         <source>Display</source>
         <translation type="unfinished">표시 옵션</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="58"/>
         <source>Desk</source>
         <translation type="unfinished">데스크</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="67"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="66"/>
         <source>Languages</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="75"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="74"/>
         <source>HotKeys</source>
         <translation type="unfinished">단축키</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
         <source>Configure BibleTime</source>
         <translation type="unfinished">바이블타임 시작</translation>
     </message>
@@ -6812,39 +6817,39 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="67"/>
         <source>Sync with active Bible</source>
         <translation type="unfinished">활성화된 성서와 동기화</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="80"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation type="unfinished">텍스트 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="92"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="90"/>
         <source>Delete current entry</source>
         <translation type="unfinished">현재 목록 지우기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="103"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="101"/>
         <source>Restore original text</source>
         <translation type="unfinished">원래 텍스트 복구</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
         <source>Module not writable</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="166"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
         <source>Module is not writable.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="167"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation type="unfinished">
             </translation>
@@ -6853,13 +6858,10 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CInputDialog</name>
     <message>
-        <location filename="../../src/frontend/cinputdialog.cpp" line="56"/>
+        <location filename="../../src/frontend/cinputdialog.cpp" line="58"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>CInstallModuleChooserDialog</name>
 </context>
 <context>
     <name>CLanguageSettingsPage</name>
@@ -6957,32 +6959,32 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">목록을 HTML로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="232"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="230"/>
         <source>Lexicon window</source>
         <translation type="unfinished">렉시컨 창</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="240"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="238"/>
         <source>Copy...</source>
         <translation type="unfinished">복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="251"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="249"/>
         <source>Save...</source>
         <translation type="unfinished">저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="267"/>
         <source>Print...</source>
         <translation type="unfinished">인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
         <source>Saving entry ...</source>
         <translation type="unfinished">목록 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="342"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
         <source>Saving</source>
         <translation type="unfinished">저장 중</translation>
     </message>
@@ -7131,123 +7133,123 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
         <source>Version</source>
         <translation type="unfinished">버전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
         <source>unknown</source>
         <translation type="unfinished">미상</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="753"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
         <source>Markup</source>
         <translation type="unfinished">마크업</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
         <source>Location</source>
         <translation type="unfinished">위치</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="762"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
         <source>Language</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="767"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Category</source>
         <translation type="unfinished">분류</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
         <source>LCSH</source>
         <translation type="unfinished">LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="776"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
         <source>Writable</source>
         <translation type="unfinished">쓸수 있음</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>yes</source>
         <translation type="unfinished">예</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>no</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="781"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>Unlock key</source>
         <translation type="unfinished">키 풀기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="796"/>
         <source>Features</source>
         <translation type="unfinished">특징</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="808"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation type="unfinished">조심하세요. 이 모듈은 이교적으로 의심되는 내용을 포함하고 있습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="811"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>Distribution license</source>
         <translation type="unfinished">배포 라이센스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
         <source>Distribution source</source>
         <translation type="unfinished">배포 소스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Distribution notes</source>
         <translation type="unfinished">배포 노트</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Text source</source>
         <translation type="unfinished">텍스트 소스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Copyright notes</source>
         <translation type="unfinished">저작권 노트</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Copyright holder</source>
         <translation type="unfinished">저작권 소유자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Copyright date</source>
         <translation type="unfinished">저작권 날짜</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright contact name</source>
         <translation type="unfinished">저작권 연락 이름</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Copyright contact address</source>
         <translation type="unfinished">저작권 연락처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Copyright contact email</source>
         <translation type="unfinished">저작권 연락 이메일</translation>
     </message>
@@ -7331,17 +7333,17 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="144"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="125"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="122"/>
         <source>Save text before closing?</source>
         <translation type="unfinished">닫기 전에 텍스트를 저장할까요?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="147"/>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="144"/>
         <source>Save changed text?</source>
         <translation type="unfinished">바뀐 텍스트를 저장할까요?</translation>
     </message>
@@ -7351,6 +7353,16 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="46"/>
         <source>Mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7382,24 +7394,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/cinfodisplay.cpp" line="450"/>
         <source>Word lookup</source>
         <translation type="unfinished">단어 찾기</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="51"/>
-        <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
-        <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ManageIndicesForm</name>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="61"/>
-        <source>Module</source>
-        <translation type="obsolete">모어</translation>
     </message>
 </context>
 <context>
@@ -7457,127 +7451,132 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="146"/>
         <source>Afrikaans</source>
-        <translation type="unfinished">아프리카어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="148"/>
         <source>English, Old (ca.450-1100)</source>
-        <translation type="unfinished">영어, 고대 (약 450-1100)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="149"/>
         <source>Arabic</source>
-        <translation type="unfinished">아랍어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="151"/>
         <source>Azerbaijani</source>
-        <translation type="unfinished">아제르바이잔어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
+        <source>Bavarian</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
         <source>Belarusian</source>
-        <translation type="unfinished">벨라루시어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
         <source>Bulgarian</source>
-        <translation type="unfinished">불가리아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
         <source>Breton</source>
-        <translation type="unfinished">브리타니어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
         <source>Bosnian</source>
-        <translation type="unfinished">보스니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="162"/>
         <source>Catalan</source>
-        <translation type="unfinished">카탈루니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
         <source>Cebuano</source>
-        <translation type="unfinished">세부어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
         <source>Chamorro</source>
-        <translation type="unfinished">차모로어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
         <source>Coptic</source>
-        <translation type="unfinished">콥트어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
         <source>Czech</source>
-        <translation type="unfinished">체코어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
         <source>Church Slavic</source>
-        <translation type="unfinished">교회슬라브어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
         <source>Welsh</source>
-        <translation type="unfinished">웨일즈어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
         <source>Danish</source>
-        <translation type="unfinished">덴마크어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
         <source>German</source>
-        <translation type="unfinished">독일어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
         <source>Greek, Modern (1453-)</source>
-        <translation type="unfinished">현대 그리스어 (1453-)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>English</source>
-        <translation type="unfinished">영어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="177"/>
         <source>American English</source>
-        <translation type="unfinished">미국영어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
         <source>English, Middle (1100-1500)</source>
-        <translation type="unfinished">중세 영어 (1100-1500)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
         <source>Esperanto</source>
-        <translation type="unfinished">에스페란토</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="180"/>
         <source>Spanish</source>
-        <translation type="unfinished">스페인어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Estonian</source>
-        <translation type="unfinished">에스토니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
         <source>Basque</source>
-        <translation type="unfinished">바스크어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
@@ -7587,57 +7586,57 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
         <source>Finnish</source>
-        <translation type="unfinished">핀란드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="187"/>
         <source>French</source>
-        <translation type="unfinished">프랑스어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Frisian</source>
-        <translation type="unfinished">프리슬란드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
         <source>Irish</source>
-        <translation type="unfinished">아일랜드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
         <source>Gaelic (Scots)</source>
-        <translation type="unfinished">게일어 (스코틀랜드어)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
         <source>Gothic</source>
-        <translation type="unfinished">고트어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
         <source>Manx</source>
-        <translation type="unfinished">맨어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Greek, Ancient (to 1453)</source>
-        <translation type="unfinished">고대 그리스어 (1453년까지)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
         <source>Hebrew</source>
-        <translation type="unfinished">히브리어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
         <source>Hausa</source>
-        <translation type="unfinished">하우사어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Hawaiian</source>
-        <translation type="unfinished">하와이어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
@@ -7647,102 +7646,122 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
         <source>Croatian</source>
-        <translation type="unfinished">크로아티아어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
+        <source>Haitian Creole</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>Hungarian</source>
-        <translation type="unfinished">헝가리어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
         <source>Armenian</source>
-        <translation type="unfinished">미국어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="208"/>
         <source>Indonesian</source>
-        <translation type="unfinished">인도네시아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>Icelandic</source>
-        <translation type="unfinished">아이슬란드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="212"/>
         <source>Italian</source>
-        <translation type="unfinished">이탈리아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="214"/>
         <source>Japanese</source>
-        <translation type="unfinished">일본어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
         <source>Georgian</source>
-        <translation type="unfinished">그루지야어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
+        <source>Kekchi</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
         <source>Korean</source>
-        <translation type="unfinished">한국어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
         <source>Kurdish</source>
-        <translation type="unfinished">쿠르드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
         <source>Kirghiz</source>
-        <translation type="unfinished">키르기스어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="230"/>
         <source>Latin</source>
-        <translation type="unfinished">라틴어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
+        <source>Lombard</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
         <source>Lithuanian</source>
-        <translation type="unfinished">리투아니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="236"/>
         <source>Latvian</source>
-        <translation type="unfinished">라트비아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
         <source>Maori</source>
-        <translation type="unfinished">마오리어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
         <source>Macedonian</source>
-        <translation type="unfinished">마케도니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
         <source>More</source>
-        <translation type="unfinished">모어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
         <source>Malay</source>
-        <translation type="unfinished">말레이어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="247"/>
         <source>Maltese</source>
-        <translation type="unfinished">말타어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
+        <source>Burmese</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Low German; Low Saxon</source>
-        <translation type="unfinished">저지 독일어, 저지 색슨어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
@@ -7752,7 +7771,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
         <source>Dutch</source>
-        <translation type="unfinished">네덜란드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="256"/>
@@ -7762,265 +7781,260 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
         <source>Norwegian</source>
-        <translation type="unfinished">노르웨이어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
         <source>Papiamento</source>
-        <translation type="unfinished">파피아멘토어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
+        <source>Uma</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
         <source>Polish</source>
-        <translation type="unfinished">폴란드어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
+        <source>Potawatomi</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
         <source>Portuguese</source>
-        <translation type="unfinished">포르투갈어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="273"/>
         <source>Brasilian Portuguese</source>
-        <translation type="unfinished">브라질 포르투갈어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
         <source>Romanian</source>
-        <translation type="unfinished">루마니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="278"/>
         <source>Russian</source>
-        <translation type="unfinished">러시아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="282"/>
         <source>Scots</source>
-        <translation type="unfinished">스코틀랜드어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
         <source>Slovak</source>
-        <translation type="unfinished">슬로바키아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="288"/>
         <source>Slovenian</source>
-        <translation type="unfinished">슬로베니아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="291"/>
         <source>Somali</source>
-        <translation type="unfinished">소말리아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
         <source>Albanian</source>
-        <translation type="unfinished">알바니아어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="344"/>
+        <source>Sranan</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
         <source>Swedish</source>
-        <translation type="unfinished">스웨덴어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
         <source>Swahili</source>
-        <translation type="unfinished">스와힐리어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
         <source>Syriac</source>
-        <translation type="unfinished">시리아어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
         <source>Tamil</source>
-        <translation type="unfinished">타밀어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
         <source>Thai</source>
-        <translation type="unfinished">타이어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
         <source>Tagalog</source>
-        <translation type="unfinished">타갈로그어</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
+        <source>Klingon</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
         <source>Tswana</source>
-        <translation type="unfinished">보츠와나어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="309"/>
         <source>Turkish</source>
-        <translation type="unfinished">터키어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
         <source>Tahitian</source>
-        <translation type="unfinished">타히티어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
         <source>Ukrainian</source>
-        <translation type="unfinished">우크라이나어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
         <source>Vietnamese</source>
-        <translation type="unfinished">베트남어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
         <source>Xhosa</source>
-        <translation type="unfinished">크호사어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
-        <source>Bavarian</source>
-        <translation type="unfinished">바이에른어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
         <source>Zarma</source>
-        <translation type="unfinished">차르마어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
         <source>Alemannisch</source>
-        <translation type="unfinished">알라만어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
         <source>Haitian Creole French</source>
-        <translation type="unfinished">타히티 크리올 프랑스어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="326"/>
-        <source>Itz&#xc3;&#xa1;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
         <source>Shuar</source>
-        <translation type="unfinished">수아르어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
-        <source>Kekch&#xc3;&#xad;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
-        <source>Kabyle</source>
-        <translation type="unfinished">카바일어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
-        <source>Lombard</source>
-        <translation type="unfinished">롬바르드어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
-        <source>Tok Pisin</source>
-        <translation type="unfinished">톡 피신어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="333"/>
-        <source>Uma</source>
-        <translation type="unfinished">우마어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="334"/>
-        <source>Romani, Vlax</source>
-        <translation type="unfinished">로마니 블랙스어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
-        <source>Sango</source>
-        <translation type="unfinished">상고어</translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="336"/>
-        <source>Sranan</source>
-        <translation type="unfinished">수리남어</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
-        <source>Yiddish</source>
+        <source>Kabyle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
+        <source>Tok Pisin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
+        <source>Romani, Vlax</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="343"/>
+        <source>Sango</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="345"/>
+        <source>Yiddish</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="346"/>
+        <source>Yoryba</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="348"/>
         <source>Chinese</source>
-        <translation type="unfinished">중국어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
         <source>Zulu</source>
-        <translation type="unfinished">줄루어</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
         <source>Footnotes</source>
         <translation type="unfinished">각주</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="381"/>
         <source>Strong&apos;s numbers</source>
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
         <source>Headings</source>
         <translation type="unfinished">표제</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="383"/>
         <source>Morphological tags</source>
         <translation type="unfinished">형태학적 태그</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="384"/>
         <source>Lemmas</source>
         <translation type="unfinished">부제</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
         <source>Hebrew vowel points</source>
         <translation type="unfinished">히브리어 모음부호</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
         <source>Hebrew cantillation marks</source>
         <translation type="unfinished">히브리어 영창 표시 보기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="392"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
         <source>Greek accents</source>
         <translation type="unfinished">그리스어 강세</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="393"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
         <source>Red letter words</source>
         <translation type="unfinished">붉은 글씨 단어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="394"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
         <source>Textual variants</source>
         <translation type="unfinished">다른 원문</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="395"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
         <source>Scripture cross-references</source>
         <translation type="unfinished">성서 상호 참조</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="396"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
         <source>Morph segmentation</source>
         <translation type="unfinished">문서 작업</translation>
     </message>
@@ -8040,42 +8054,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">원격</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="257"/>
         <source>Old testament</source>
         <translation type="unfinished">구약 성서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="258"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">모세/모세5경/토라</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="259"/>
         <source>History</source>
         <translation type="unfinished">역사서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="260"/>
         <source>Prophets</source>
         <translation type="unfinished">선지서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
         <source>New testament</source>
         <translation type="unfinished">신약 성서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
         <source>Gospels</source>
         <translation type="unfinished">복음서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">편지/서신서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">바울서신</translation>
     </message>
@@ -8085,7 +8099,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">HTML 파일</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="92"/>
         <source>All files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8110,17 +8124,17 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">키 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="94"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="92"/>
         <source>BibleTime bookmark files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="86"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
         <source>BibleTime - Export Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="95"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
         <source>BibleTime - Import bookmarks</source>
         <translation type="unfinished">바이블타임 - 북마크 가져오기</translation>
     </message>
@@ -8145,16 +8159,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">새 폴더</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="85"/>
-        <source>Lexicons</source>
-        <translation type="obsolete">렉시컨</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="91"/>
-        <source>Daily devotionals</source>
-        <translation type="obsolete">매일 경건</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="74"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
@@ -8170,24 +8174,19 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">모름</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindextreefolder.cpp" line="113"/>
-        <source>Unknown language</source>
-        <translation type="obsolete">알려지지 않은 언어</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="120"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="119"/>
         <source>Parsing Stong&apos;s Numbers</source>
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/main.cpp" line="301"/>
+        <location filename="../../src/main.cpp" line="315"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished">바이블타임 시작</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="755"/>
-        <source>Open the printer dialog of BibleTime, where you can edit the print queue, assign styles to the items and print them.</source>
-        <translation type="obsolete">바이블 타임의 프린터 대화상자를 열면 인쇄 대기열을 편집하거나 목록에 스타일을 적용한 후 인쇄할 수 있습니다.</translation>
+        <source>Open the printer dialog of BibleTime.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
@@ -8296,13 +8295,13 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="865"/>
-        <source>Open BibleTime&apos;s handbook in the KDE helpbrowser.</source>
-        <translation type="obsolete">바이블타임 핸드북을 KDE 도움말 프로그램에서 엽니다.</translation>
+        <source>Open BibleTime&apos;s handbook.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="869"/>
-        <source>Open the Bible study HowTo included with BibleTime in the KDE helpbrowser. &lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">바이블타임의 성경 공부 길잡이를 KDE 도움말 프로그램에서 엽니다.&lt;BR&gt; 이 길잡이는 성경을 어떻게 효과적으로 공부할 수 있을지에 대한 간단한 안내입니다.</translation>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="873"/>
@@ -8321,8 +8320,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="891"/>
-        <source>Start to search the text in each of the chosen work(s).</source>
-        <translation type="obsolete">각 선택된 작업에서 찾기를 시작합니다.</translation>
+        <source>Start to search the text in each of the chosen works.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="895"/>
@@ -8331,23 +8330,23 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="902"/>
-        <source>Open a dialog to choose work(s) for the search.</source>
-        <translation type="obsolete">찾기에 사용될 작업 선택 대화상자를 엽니다.</translation>
+        <source>Choose works for the search.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="906"/>
-        <source>Enter the text you want to search in the chosen work(s) here.</source>
-        <translation type="obsolete">선택된 작업에서 찾고자 하는 단어를 여기에 입력하세요.</translation>
+        <source>The text you want to search for in the chosen works.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="912"/>
-        <source>Treat the search text as multiple words. A text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation type="obsolete">찾기 텍스트를 여러 단어로 취급합니다. 검색되려면 모든 단어를 포함하고 있어야 합니다. 단어들의 순서는 중요하지 않습니다.</translation>
+        <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="916"/>
-        <source>Treat the search text as multiple words. A text must contain one or more words of to match. The order is unimportant.</source>
-        <translation type="obsolete">찾기 텍스트를 여러 단어로 취급합니다. 검색되려면 한개 이상의 단어가 들어있어야 합니다. 단어의 순서는 중요하지 않습니다.</translation>
+        <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="920"/>
@@ -8361,8 +8360,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="932"/>
-        <source>If you choose this option the search will distinguish between upper and lowercase characters.</source>
-        <translation type="obsolete">이 옵션을 선택하면 대문자와 소문자를 구별하여 찾습니다.</translation>
+        <source>Case sensitive distinguishes between upper and lowercase characters.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="939"/>
@@ -8396,8 +8395,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="965"/>
-        <source>Deletes the selected search scope. If you close the dialog using Cancel the settings won&apos;t be saved.</source>
-        <translation type="obsolete">선택된 찾기 영역을 삭제합니다. 만약 취소 버튼을 이용해 창을 닫으면 설정이 저장되지 않습니다.</translation>
+        <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="973"/>
@@ -8416,13 +8415,13 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="993"/>
-        <source>This button is useful to scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="obsolete">이 버튼은 리스트의 항목을 보두 보는데 유용합니다. 버튼을 누르고 마우스를 움직이면 항목이 증가하거나 감소합니다.</translation>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="997"/>
-        <source>This button opens the search dialog with the work(s) of this window.</source>
-        <translation type="obsolete">이 버튼을 누르면 이 창의 작업으로 찾기 대화상자를 엽니다.</translation>
+        <source>Open the search dialog with the works of this window.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1002"/>
@@ -8512,8 +8511,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1084"/>
-        <source>Loads the old text from the work and loads it into the edit area. The unsaved text will be lost.</source>
-        <translation type="obsolete">작업에서 이전 텍스트를 불러와 편집 영역으로 옮깁니다. 저장되지 않은 텍스트는 삭제됩니다.</translation>
+        <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1088"/>
@@ -8632,8 +8631,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1204"/>
-        <source>Opens the search dialog to search in the work(s) that are currently open.</source>
-        <translation type="obsolete">열린 작업에서 찾기 대화상자 열기</translation>
+        <source>Opens the search dialog to search in the works that are currently open.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="60"/>
@@ -8696,6 +8695,26 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="246"/>
+        <source>Encrypted - needs unlock key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
+        <source>Updated version available!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="258"/>
+        <source>Installed version</source>
+        <translation type="unfinished">설치된 버전</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="262"/>
+        <source>Double click for more information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>Settings Migration</source>
         <translation type="unfinished"></translation>
@@ -8706,123 +8725,8 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="246"/>
-        <source>Encrypted - needs unlock key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="262"/>
-        <source>Double click for more information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="250"/>
-        <source>Updated version available!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="865"/>
-        <source>Open BibleTime&apos;s handbook.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="869"/>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="891"/>
-        <source>Start to search the text in each of the chosen works.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="902"/>
-        <source>Choose works for the search.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="906"/>
-        <source>The text you want to search for in the chosen works.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="912"/>
-        <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="916"/>
-        <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="932"/>
-        <source>Case sensitive distinguishes between upper and lowercase characters.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="965"/>
-        <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="993"/>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="997"/>
-        <source>Open the search dialog with the works of this window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1084"/>
-        <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1204"/>
-        <source>Opens the search dialog to search in the works that are currently open.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/ctoolclass.cpp" line="258"/>
-        <source>Installed version</source>
-        <translation type="unfinished">설치된 버전</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="755"/>
-        <source>Open the printer dialog of BibleTime.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
-        <source>Haitian Creole</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
-        <source>Kekchi</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
-        <source>Burmese</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
-        <source>Potawatomi</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
-        <source>Klingon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
-        <source>Yoryba</source>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
+        <source>Itza</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8979,30 +8883,23 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="76"/>
         <source>&amp;Search</source>
         <translation type="unfinished">찾기&amp;S</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="100"/>
-        <source>Missing indices</source>
-        <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="108"/>
-        <source>One or more modules need indexing before they can be searched.
-This could take a long time. Proceed with indexing?</source>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="77"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="79"/>
         <source>Search</source>
         <translation type="unfinished">찾기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="102"/>
+        <source>Missing indices</source>
+        <translation type="unfinished">
+            </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="104"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
@@ -9011,91 +8908,91 @@ This could take a long time. Proceed with indexing?</source>
 <context>
     <name>Search::CSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="767"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="770"/>
         <source>Search for:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="778"/>
-        <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="781"/>
-        <source>Ch&amp;oose</source>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="780"/>
+        <source>&amp;Help...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
-        <source>S&amp;etup</source>
+        <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="787"/>
-        <source>Search scope:</source>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
+        <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="861"/>
-        <source>Searching in: </source>
-        <translation type="unfinished">찾는 곳: </translation>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
+        <source>Scope:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="926"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="828"/>
+        <source>Works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="924"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="925"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="929"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="932"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="976"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="937"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="981"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="941"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="985"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="943"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="987"/>
         <source>Basic Search Syntax Introduction</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="949"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="993"/>
         <source>No search scope</source>
         <translation type="unfinished">찾기 영역 없음</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="885"/>
-        <source>Works to Search in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="886"/>
-        <source>Select the works which should be searched.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="254"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="253"/>
         <source>&amp;Analyze search...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9162,105 +9059,6 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
         <source>Copying search result</source>
         <translation type="unfinished">찾기 결과 복사 중</translation>
-    </message>
-</context>
-<context>
-    <name>Search::Options::CModuleChooser</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="89"/>
-        <source>Work</source>
-        <translation type="obsolete">작업</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="106"/>
-        <source>Bibles</source>
-        <translation type="obsolete">성서</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="107"/>
-        <source>Commentaries</source>
-        <translation type="obsolete">주석</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="108"/>
-        <source>Lexicons</source>
-        <translation type="obsolete">렉시컨</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="109"/>
-        <source>Books</source>
-        <translation type="obsolete">책</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="147"/>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">매일 경건</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="158"/>
-        <source>Glossaries</source>
-        <translation type="obsolete">어휘</translation>
-    </message>
-</context>
-<context>
-    <name>Search::Options::CModuleChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="268"/>
-        <source>Choose work(s)</source>
-        <translation type="obsolete">작업 선택</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/cmodulechooser.cpp" line="280"/>
-        <source>Use chosen work(s)</source>
-        <translation type="obsolete">선택된 작업 사용</translation>
-    </message>
-</context>
-<context>
-    <name>Search::Options::CRangeChooserDialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="69"/>
-        <source>Search range editor</source>
-        <translation type="obsolete">찾기 범위 설정</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="97"/>
-        <source>Search range</source>
-        <translation type="obsolete">찾기 범위</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="105"/>
-        <source>Add new range</source>
-        <translation type="obsolete">새 범위 더하기</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="109"/>
-        <source>Delete current range</source>
-        <translation type="obsolete">현재 범위 지우기</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="115"/>
-        <source>Name:</source>
-        <translation type="obsolete">이름:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="120"/>
-        <source>Edit current search range:</source>
-        <translation type="obsolete">현재 찾기 범위 편집</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="130"/>
-        <source>Parsed search range:</source>
-        <translation type="obsolete">처리된 찾기 범위</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="159"/>
-        <source>New range</source>
-        <translation type="obsolete">새 범위</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/crangechooser.cpp" line="224"/>
-        <source>&lt;invalid name of search range&gt;</source>
-        <translation type="obsolete">&lt;잘못된 찾기 범위 이름&gt;</translation>
     </message>
 </context>
 <context>
@@ -9373,818 +9171,6 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
         <source>Use textual variants</source>
         <translation type="unfinished">다른 원문 사용</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:197</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Afrikaans</source>
-        <translation type="obsolete">아프리카어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:200</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>English, Old (ca.450-1100)</source>
-        <translation type="obsolete">영어, 고대 (약 450-1100)</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:202</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Arabic</source>
-        <translation type="obsolete">아랍어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:205</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Azerbaijani</source>
-        <translation type="obsolete">아제르바이잔어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:208</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Belarusian</source>
-        <translation type="obsolete">벨라루시어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:210</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Bulgarian</source>
-        <translation type="obsolete">불가리아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:216</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Breton</source>
-        <translation type="obsolete">브리타니어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:218</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Bosnian</source>
-        <translation type="obsolete">보스니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:220</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Catalan</source>
-        <translation type="obsolete">카탈루니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:223</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Cebuano</source>
-        <translation type="obsolete">세부어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:225</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Chamorro</source>
-        <translation type="obsolete">차모로어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:228</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Coptic</source>
-        <translation type="obsolete">콥트어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:230</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Czech</source>
-        <translation type="obsolete">체코어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:232</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Church Slavic</source>
-        <translation type="obsolete">교회슬라브어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:235</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Welsh</source>
-        <translation type="obsolete">웨일즈어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:237</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Danish</source>
-        <translation type="obsolete">덴마크어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:239</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>German</source>
-        <translation type="obsolete">독일어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:243</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Greek, Modern (1453-)</source>
-        <translation type="obsolete">현대 그리스어 (1453-)</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:245</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>English</source>
-        <translation type="obsolete">영어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:247</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>American English</source>
-        <translation type="obsolete">미국영어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:249</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>English, Middle (1100-1500)</source>
-        <translation type="obsolete">중세 영어 (1100-1500)</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:251</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Esperanto</source>
-        <translation type="obsolete">에스페란토</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:253</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Spanish</source>
-        <translation type="obsolete">스페인어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:255</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Estonian</source>
-        <translation type="obsolete">에스토니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:257</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Basque</source>
-        <translation type="obsolete">바스크어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:260</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Finnish</source>
-        <translation type="obsolete">핀란드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:264</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>French</source>
-        <translation type="obsolete">프랑스어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:266</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Frisian</source>
-        <translation type="obsolete">프리슬란드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:268</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Irish</source>
-        <translation type="obsolete">아일랜드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:270</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Gaelic (Scots)</source>
-        <translation type="obsolete">게일어 (스코틀랜드어)</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:275</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Gothic</source>
-        <translation type="obsolete">고트어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:277</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Manx</source>
-        <translation type="obsolete">맨어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:279</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Greek, Ancient (to 1453)</source>
-        <translation type="obsolete">고대 그리스어 (1453년까지)</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:281</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Hebrew</source>
-        <translation type="obsolete">히브리어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:283</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Hausa</source>
-        <translation type="obsolete">하우사어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:285</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Hawaiian</source>
-        <translation type="obsolete">하와이어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:289</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Croatian</source>
-        <translation type="obsolete">크로아티아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:291</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Hungarian</source>
-        <translation type="obsolete">헝가리어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:293</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Armenian</source>
-        <translation type="obsolete">미국어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:298</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Indonesian</source>
-        <translation type="obsolete">인도네시아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:302</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Icelandic</source>
-        <translation type="obsolete">아이슬란드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:304</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Italian</source>
-        <translation type="obsolete">이탈리아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:308</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Japanese</source>
-        <translation type="obsolete">일본어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:310</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Georgian</source>
-        <translation type="obsolete">그루지야어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:319</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Korean</source>
-        <translation type="obsolete">한국어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:322</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Kurdish</source>
-        <translation type="obsolete">쿠르드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:326</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Kirghiz</source>
-        <translation type="obsolete">키르기스어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:328</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Latin</source>
-        <translation type="obsolete">라틴어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:333</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Lithuanian</source>
-        <translation type="obsolete">리투아니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:335</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Latvian</source>
-        <translation type="obsolete">라트비아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:339</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Maori</source>
-        <translation type="obsolete">마오리어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:341</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Macedonian</source>
-        <translation type="obsolete">마케도니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:346</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>More</source>
-        <translation type="obsolete">모어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:349</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Malay</source>
-        <translation type="obsolete">말레이어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:351</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Maltese</source>
-        <translation type="obsolete">말타어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:358</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Low German; Low Saxon</source>
-        <translation type="obsolete">저지 독일어, 저지 색슨어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:362</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Dutch</source>
-        <translation type="obsolete">네덜란드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:365</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Norwegian</source>
-        <translation type="obsolete">노르웨이어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:377</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Papiamento</source>
-        <translation type="obsolete">파피아멘토어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:380</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Polish</source>
-        <translation type="obsolete">폴란드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:383</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Portuguese</source>
-        <translation type="obsolete">포르투갈어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:385</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Brasilian Portuguese</source>
-        <translation type="obsolete">브라질 포르투갈어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:392</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Romanian</source>
-        <translation type="obsolete">루마니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:394</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Russian</source>
-        <translation type="obsolete">러시아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:400</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Scots</source>
-        <translation type="obsolete">스코틀랜드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:406</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Slovak</source>
-        <translation type="obsolete">슬로바키아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:408</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Slovenian</source>
-        <translation type="obsolete">슬로베니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:412</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Somali</source>
-        <translation type="obsolete">소말리아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:414</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Albanian</source>
-        <translation type="obsolete">알바니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:420</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Swedish</source>
-        <translation type="obsolete">스웨덴어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:422</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Swahili</source>
-        <translation type="obsolete">스와힐리어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:424</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Syriac</source>
-        <translation type="obsolete">시리아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:426</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Tamil</source>
-        <translation type="obsolete">타밀어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:430</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Thai</source>
-        <translation type="obsolete">타이어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:433</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Tagalog</source>
-        <translation type="obsolete">타갈로그어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:435</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Tswana</source>
-        <translation type="obsolete">보츠와나어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:437</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Turkish</source>
-        <translation type="obsolete">터키어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:442</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Tahitian</source>
-        <translation type="obsolete">타히티어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:446</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Ukrainian</source>
-        <translation type="obsolete">우크라이나어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:451</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Vietnamese</source>
-        <translation type="obsolete">베트남어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:457</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Xhosa</source>
-        <translation type="obsolete">크호사어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:459</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Bavarian</source>
-        <translation type="obsolete">바이에른어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:461</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Zarma</source>
-        <translation type="obsolete">차르마어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:463</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Alemannisch</source>
-        <translation type="obsolete">알라만어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:465</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Haitian Creole French</source>
-        <translation type="obsolete">타히티 크리올 프랑스어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:467</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Itz&#xe1;</source>
-        <translation type="obsolete">이츠어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:469</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Shuar</source>
-        <translation type="obsolete">수아르어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:471</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Kekch&#xed;</source>
-        <translation type="obsolete">케치어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:473</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Kabyle</source>
-        <translation type="obsolete">카바일어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:475</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Lombard</source>
-        <translation type="obsolete">롬바르드어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:477</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Macedonian</source>
-        <translation type="obsolete">마케도니아어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:479</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Tok Pisin</source>
-        <translation type="obsolete">톡 피신어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:481</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Uma</source>
-        <translation type="obsolete">우마어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:483</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Romani, Vlax</source>
-        <translation type="obsolete">로마니 블랙스어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:485</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Sango</source>
-        <translation type="obsolete">상고어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:487</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Sranan</source>
-        <translation type="obsolete">수리남어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:492</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Chinese</source>
-        <translation type="obsolete">중국어</translation>
-    </message>
-</context>
-<context>
-    <name>clanguagemgr.cpp:494</name>
-    <message>
-        <location filename="" line="7471221"/>
-        <source>Zulu</source>
-        <translation type="obsolete">줄루어</translation>
-    </message>
-</context>
-<context>
-    <name>crangechooserdialog</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="13"/>
-        <source>Search range editor</source>
-        <translation type="obsolete">찾기 범위 설정</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="38"/>
-        <source>New</source>
-        <translation type="obsolete">새로운...</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="60"/>
-        <source>Name:</source>
-        <translation type="obsolete">이름:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="75"/>
-        <source>Edit current search range:</source>
-        <translation type="obsolete">현재 찾기 범위 편집</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/oldsearch/rangechooser.ui" line="88"/>
-        <source>Parsed search range:</source>
-        <translation type="obsolete">처리된 찾기 범위</translation>
     </message>
 </context>
 </TS>
