@@ -1,3 +1,19 @@
+2008-04 * MAJOR CHANGES FOR 1.7 *
+	* Port to KDE4/QT4, reduced KDE dependency to a minimum
+	* New build system: cmake
+	* i18n of UI strings is now handled by QT
+	* Massive code cleanups and internal refactoring
+	* New bookshelf manager
+	* Bookshelf improvements
+		* Separation of works and bookmarks on two tabs
+		* Different work grouping types supported
+		* Hide/Unhide feature to select which modules should be displayed
+	* Corrections and enhancements to session management
+	* Search dialog now has a history for the modules to search in
+
+2007-11-01 Martin Gruner <mgruner@crosswire.org>
+	* Released 1.6.5 with several important bugfixes
+
 2007-04-18 Joachim Ansorg <info@bibletime.info>
   * Released version 1.6.4
 
