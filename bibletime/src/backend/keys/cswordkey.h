@@ -25,7 +25,7 @@ class QTextCodec;
 class CSwordKey {
 
 protected:
-	/** Constructor. May not be called because this class contains pure virtual methods.
+	/** Constructor. May only be called from sublasses because this class contains pure virtual methods.
 	* @param module The module which belongs to this key, may be NULL
 	*/
 	CSwordKey(CSwordModuleInfo* const module = 0); //protected constructor, because CSwordKey shouldn't be used (it's an abstract base class).
@@ -84,25 +84,22 @@ public:
 	 * @see CSwordModuleInfo, CSwordBibleModuleInfo, CSwordCommentaryModuleInfo, CSwordLexiconModukleInfo
 	 */
 	static CSwordKey* createInstance(CSwordModuleInfo * const module);
-//	/**
-//	 * The assignment operator for more easy use of the key classes.
-//	 */
-//	inline virtual CSwordKey& operator = ( const QString& );
 
 protected:
 	/**
 	 * Returns the encoded key appropriate for use directly with Sword.
 	 */
 	virtual const char * rawKey() const = 0;
-	static const QTextCodec * cp1252Codec();
+	static const QTextCodec* cp1252Codec();
 	CSwordModuleInfo* m_module; //module pointer used by all keys
-};
 
-///** The assignment operator for more easy use of the key classes. */
-//inline CSwordKey& CSwordKey::operator=(const QString& newKey) {
-//	key(newKey);
-//	return *this;
-//}
+private:
+	/**
+	 * Disable the assignment operator
+	 */
+	CSwordKey& operator= ( const CSwordKey & );
+
+};
 
 inline CSwordModuleInfo* const CSwordKey::module(CSwordModuleInfo* const newModule) {
 	if (newModule) {

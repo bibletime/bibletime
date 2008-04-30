@@ -90,15 +90,19 @@ public:
 	* Set the current key from char*. To avoid encoding problems use key(QString) instead.
 	*/
 	virtual const bool key( const char* );
-	/**
-	* Assignment operator for more ease of use of this class. 
-	*/
-	virtual CSwordLDKey& operator = (const QString& keyname );
+
 protected:
 	/**
 	 * Returns the raw key appropriate for use directly with Sword.
 	 */
 	virtual const char * rawKey() const;
+
+private:
+	/**
+	* Disable assignment operator 
+	*/
+	CSwordLDKey& operator= (const CSwordLDKey& );
+
 };
 
 

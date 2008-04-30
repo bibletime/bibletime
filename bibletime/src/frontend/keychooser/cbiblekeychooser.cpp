@@ -83,12 +83,9 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 void CBibleKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
 	m_modules.clear();
 
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
-		if ((*it)->type() == CSwordModuleInfo::Bible || (*it)->type() == CSwordModuleInfo::Commentary) {
-			if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(*it)) {
-				m_modules.append(bible);
-			}
+	foreach (CSwordModuleInfo* mod, modules) {
+		if (mod->type() == CSwordModuleInfo::Bible || mod->type() == CSwordModuleInfo::Commentary) {
+			if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(mod)) m_modules.append(bible);
 		}
 	}
 
@@ -98,7 +95,7 @@ void CBibleKeyChooser::setModules(const ListCSwordModuleInfo& modules, const boo
 }
 
 void CBibleKeyChooser::refreshContent() {
-	setKey (m_key);
+	setKey(m_key);
 }
 
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {}

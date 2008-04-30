@@ -314,9 +314,8 @@ void CDisplayWindow::setModules( const ListCSwordModuleInfo& newModules ) {
 	qDebug("CDisplayWindow::setModules");
 	m_modules.clear();
 
-	ListCSwordModuleInfo::const_iterator end_it = newModules.end();
-	for (ListCSwordModuleInfo::const_iterator it(newModules.begin()); it != end_it; ++it) {
-		m_modules.append((*it)->name());
+	foreach (CSwordModuleInfo* mod, newModules) {
+		m_modules.append(mod->name());
 	}
 }
 

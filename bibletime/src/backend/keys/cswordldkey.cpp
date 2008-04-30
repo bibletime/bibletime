@@ -23,7 +23,7 @@ CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
 		//    *(m_module->module()) = TOP;
 	}
 
-	SWKey::operator = (" ");
+	SWKey::operator= (" ");
 }
 
 /** No descriptions */
@@ -48,7 +48,6 @@ CSwordModuleInfo* const CSwordLDKey::module(CSwordModuleInfo* const newModule) {
 	return m_module;
 }
 
-/** Sets the key of this instance */
 const QString CSwordLDKey::key() const {
 	//return QString::fromUtf8((const char*)*this);
 	Q_ASSERT(m_module);
@@ -117,8 +116,3 @@ CSwordLDKey* CSwordLDKey::PreviousEntry() {
 	return this;
 }
 
-/** Assignment operator for more ease of use of this class. */
-CSwordLDKey& CSwordLDKey::operator = (const QString& keyname ) {
-	 key(keyname);
-	 return *this;
-}

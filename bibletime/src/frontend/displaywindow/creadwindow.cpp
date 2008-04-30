@@ -82,7 +82,7 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 
 /** Lookup the given entry. */
 void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
-	qDebug("CReadWindow::lookup");
+	qDebug() << "CReadWindow::lookup newKey" << newKey->key();
 	Q_ASSERT(newKey);
 
 	using namespace Rendering;
@@ -114,7 +114,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 
 	// moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart	
 
-	qDebug("CReadWindow::lookup end");
+	qDebug() << "CReadWindow::lookup end, key is :" << newKey->key();
 }
 
 void CReadWindow::slotMoveToAnchor()

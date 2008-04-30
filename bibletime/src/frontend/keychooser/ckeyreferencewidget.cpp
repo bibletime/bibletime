@@ -152,8 +152,12 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 }
 
 void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
-	if (m) m_module = m;
-
+	if (m) //can be null
+	{
+		m_module = m;
+		m_key->module(m);
+	}
+	
 	delete m_textbox->completionObject();
 	CKeyReferenceCompletion *comp = new CKeyReferenceCompletion(m_module);
 	m_textbox->setCompletionObject(comp);
@@ -173,7 +177,7 @@ void CKeyReferenceWidget::updateText() {
 bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
 	if (!key) return false;
 	
-	(*m_key) = (*key);
+	m_key->key(key->key());
 	updateText();
 	return true;
 }
