@@ -34,6 +34,7 @@
 #include <QMenuBar>
 #include <QToolBar>
 #include <QApplication>
+#include <QDebug>
 
 //Sword includes
 #include <swlog.h>
@@ -360,23 +361,21 @@ void BibleTime::initActions()
 /** Initializes the SIGNAL / SLOT connections */
 void BibleTime::initConnections() {
  	QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
- 			this, SLOT(setPlainCaption(const QString&)));
-	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
-			this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)));
+ 		this, SLOT(setPlainCaption(const QString&)));
+	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+		this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)));
 
 	if (m_windowMenu) {
 		QObject::connect(m_windowMenu, SIGNAL(aboutToShow()), this, SLOT(slotWindowMenuAboutToShow()));
 	}
 	else {
-		qWarning("Main window: can't find window menu");
+		qWarning() << "Main window: can't find window menu";
 	}
 
-	QObject::connect(
-		m_mainIndex, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
+	QObject::connect(m_mainIndex, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
 		this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo,const QString&))
 	);
-	QObject::connect(
-		m_mainIndex, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
+	QObject::connect(m_mainIndex, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
 		this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&))
 	);
 	QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));

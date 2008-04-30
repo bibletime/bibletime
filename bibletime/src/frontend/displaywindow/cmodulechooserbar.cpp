@@ -8,21 +8,19 @@
 **********/
 
 #include "cmodulechooserbar.h"
-#include "cmodulechooserbar.moc"
 
 #include "cmodulechooserbutton.h"
 
 #include <QList>
 #include <QDebug>
 #include <QAction>
-
 #include <QToolBar>
 
 CModuleChooserBar::CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type, QWidget *parent)
-: QToolBar(parent),
-m_moduleType(type),
-m_idCounter(0),
-m_buttonLimit(-1) //-1 means no limit
+	: QToolBar(parent),
+	m_moduleType(type),
+	m_idCounter(0),
+	m_buttonLimit(-1) //-1 means no limit
 {
 	//insert buttons if useModules != 0
 	ListCSwordModuleInfo::iterator end_it = useModules.end();
@@ -39,8 +37,6 @@ m_buttonLimit(-1) //-1 means no limit
 	}
 }
 
-//change current with append
-/** Adds a button to the toolbar */
 CModuleChooserButton* const CModuleChooserBar::addButton( CSwordModuleInfo* const module )
 {
 	CModuleChooserButton* b = new CModuleChooserButton(module, m_moduleType, ++m_idCounter, this);
@@ -79,14 +75,15 @@ void CModuleChooserBar::removeButton( const int ID ) {
 ListCSwordModuleInfo CModuleChooserBar::getModuleList() {
 	ListCSwordModuleInfo list;
 	foreach (CModuleChooserButton* b, m_buttonList)
+	{
 		if (b->module()) list.append( b->module() );
+	}
 	return list;
 }
 
 //change current with remove
 /** Sets the number of the maximum count of buttons. */
 void CModuleChooserBar::setButtonLimit(const int limit) {
-	qDebug("CModuleChooserBar::setButtonLimit");
 	m_buttonLimit = limit;
 	if (limit == -1) //no need to delete buttons
 		return;
@@ -98,7 +95,6 @@ void CModuleChooserBar::setButtonLimit(const int limit) {
 	}
 
 	updateMenuItems();
-	qDebug("CModuleChooserBar::setButtonLimit end");
 }
 
 /** Sets the modules which are chosen in this module chooser bar. */
@@ -124,6 +120,8 @@ void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
 }
 
 void CModuleChooserBar::updateMenuItems() {
+	resize(sizeHint());
+	update(); //seems to be neccessary to enforce display of the layout changes when a button was removed or added
 	foreach (CModuleChooserButton* b, m_buttonList)
 		b->updateMenuItems();
 }
