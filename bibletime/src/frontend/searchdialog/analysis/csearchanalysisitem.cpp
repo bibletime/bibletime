@@ -1,14 +1,12 @@
-//
-// C++ Implementation: csearchanalysisitem
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #include "csearchanalysisitem.h"
 #include "csearchanalysisscene.h"
 
@@ -44,9 +42,6 @@ const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
-
-
-
 CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
 	: QGraphicsRectItem(),
 	m_moduleList( modules ),
@@ -57,8 +52,7 @@ CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &b
 {
 	m_resultCountArray.resize(m_moduleCount);
 	int index = 0;
-	for (index = 0; index < m_moduleCount; ++index)
-		m_resultCountArray[index] = 0;
+	for (index = 0; index < m_moduleCount; ++index) m_resultCountArray[index] = 0;
 	setToolTip(getToolTip());
 }
 

@@ -1,14 +1,12 @@
-//
-// C++ Implementation: csearchanalysisscene
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #include "csearchanalysisscene.h"
 #include "csearchanalysisitem.h"
 #include "csearchanalysislegenditem.h"
@@ -108,7 +106,7 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 		moduleIndex = 0;
 		ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 		for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
-			qApp->processEvents( QEventLoop::AllEvents, 10 ); //10 ms only
+			qApp->processEvents( QEventLoop::AllEvents );
 			if (!m_lastPosList.contains(*it)) {
 				m_lastPosList.insert(*it,0);
 			}
@@ -135,11 +133,9 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 /** Sets te module list used for the analysis. */
 void CSearchAnalysisScene::setModules(ListCSwordModuleInfo modules) {
 	m_moduleList.clear();
-	//  for (modules.first(); modules.current(); modules.next()) {
-	ListCSwordModuleInfo::iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
-		if ( ((*it)->type() == CSwordModuleInfo::Bible) || ((*it)->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
-			m_moduleList.append(*it);
+	foreach (CSwordModuleInfo * mod, modules) {
+		if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
+			m_moduleList.append(mod);
 		}
 	}
 
@@ -168,9 +164,7 @@ void CSearchAnalysisScene::reset() {
 	}
 	m_lastPosList.clear();
 
-	if (m_legend) {
-		m_legend->hide();
-	}
+	if (m_legend) m_legend->hide();
 
 	delete m_legend;
 	m_legend = 0;
@@ -243,7 +237,6 @@ void CSearchAnalysisScene::saveAsHTML() {
 	const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, QString(tr("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
 	if (fileName.isEmpty()) return;
 
-	int moduleIndex = 0;
 	int count = 0;
 	QString countStr = "";
 	QString m_searchAnalysisHTML = "";
@@ -264,16 +257,13 @@ void CSearchAnalysisScene::saveAsHTML() {
 
 	tableTitle = "<tr><th align=\"left\">" + tr("Book") + "</th>";
 	tableTotals = "<tr><td align=\"left\">" + tr("Total hits") + "</td>";
-	//   for (moduleIndex = 0,m_moduleList.first(); m_moduleList.current(); m_moduleList.next(),++moduleIndex) {
-	moduleIndex = 0;
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-	for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
-		tableTitle += QString("<th align=\"left\">") + (*it)->name() + QString("</th>");
-		searchResult = (*it)->searchResult();
+
+	foreach (CSwordModuleInfo* mod, m_moduleList) {
+		tableTitle += QString("<th align=\"left\">") + mod->name() + QString("</th>");
+		searchResult = mod->searchResult();
 		countStr.setNum(searchResult.Count());
 
 		tableTotals += QString("<td align=\"right\">") + countStr + QString("</td>");
-		++moduleIndex;
 	}
 	tableTitle += QString("</tr>\n");
 	tableTotals += QString("</tr>\n");
@@ -284,8 +274,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 		m_searchAnalysisHTML += QString("<tr><td>") + key.book() + QString("</td>");
 		analysisItem = m_itemList.value( key.book() );
 
-		//    for (moduleIndex = 0, m_moduleList.first(); m_moduleList.current(); m_moduleList.next(), ++moduleIndex) {
-		moduleIndex = 0;
+		int moduleIndex = 0;
 		ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
 		for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
 			count = analysisItem->getCountForModule(moduleIndex);

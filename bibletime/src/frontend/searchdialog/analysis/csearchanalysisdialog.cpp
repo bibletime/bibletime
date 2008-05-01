@@ -1,14 +1,12 @@
-//
-// C++ Implementation: csearchanalysisdialog
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #include "csearchanalysisdialog.h"
 #include "csearchanalysisscene.h"
 #include "csearchanalysisview.h"
@@ -43,7 +41,7 @@ void CSearchAnalysisDialog::initView()
 
 	m_analysis = new CSearchAnalysisScene(this);
 	m_analysisView = new CSearchAnalysisView(m_analysis, this);
-//	m_analysisView->show();
+////	m_analysisView->show();
 	vboxLayout->addWidget(m_analysisView);
 
 	m_buttonBox = new QDialogButtonBox(this);
