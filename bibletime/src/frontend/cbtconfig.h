@@ -7,13 +7,10 @@
 *
 **********/
 
-
-
 #ifndef CBTCONFIG_H
 #define CBTCONFIG_H
 
 #include "backend/managers/cswordbackend.h"
-#include "backend/managers/clanguagemgr.h"
 
 //Qt includes
 #include <QString>
@@ -22,9 +19,8 @@
 #include <QMap>
 
 //Forward declarations
-class KAccel;
-class KActionCollection;
 class QSettings;
+class CLanguageMgr::Language;
 
 /**
  * This class is the interface to the config object of BibleTime
@@ -158,8 +154,8 @@ public:
 	static const CSwordBackend::FilterOptions getFilterOptionDefaults();
 	static const CSwordBackend::DisplayOptions getDisplayOptionDefaults();
 
-	static void setupAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
-	static void saveAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
+//	static void setupAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
+//	static void saveAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
 
 	static const QString getModuleEncryptionKey( const QString& name );
 	static void setModuleEncryptionKey( const QString& name, const QString& key );

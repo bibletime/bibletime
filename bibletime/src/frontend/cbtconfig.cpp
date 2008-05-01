@@ -11,6 +11,7 @@
 #include "cbtconfig.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/clanguagemgr.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/btmoduletreeitem.h"
 #include "util/cpointers.h"
@@ -557,8 +558,8 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 	return options;
 }
 
-void CBTConfig::setupAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
-{
+//void CBTConfig::setupAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
+//{
 // 	qDebug("CBTConfig::setupAccelSettings");
 // 	QString groupName;
 // 	switch (type) {
@@ -608,10 +609,10 @@ void CBTConfig::setupAccelSettings(const CBTConfig::keys /*type*/, KActionCollec
 // 	
 // 	actionCollection->readSettings();
 // 	qDebug("CBTConfig::setupAccelSettings end");
-}
+//}
 
-void CBTConfig::saveAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
-{
+//void CBTConfig::saveAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
+//{
 // 	qDebug("CBTConfig::saveAccelSettings");
 // 	QString groupName;
 // 	switch (type) {
@@ -654,7 +655,7 @@ void CBTConfig::saveAccelSettings(const CBTConfig::keys /*type*/, KActionCollect
 // 	qDebug("NOT saving accelerators!");
 // 	//actionCollection->writeSettings(cg);
 // 	qDebug("CBTConfig::saveAccelSettings end");
-}
+//}
 
 
 const QString CBTConfig::getModuleEncryptionKey( const QString& module )
