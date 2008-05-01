@@ -146,7 +146,7 @@ void CCommentaryReadWindow::initActions() {
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
 	ac->addAction("previousVerse", kaction);
 
-	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
+//	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
 }
 
 /** Moves to the next book. */

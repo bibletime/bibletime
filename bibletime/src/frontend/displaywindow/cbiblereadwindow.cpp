@@ -239,7 +239,7 @@ void CBibleReadWindow::initActions() {
 	QObject::connect(m_actions.print.chapter, SIGNAL(triggered()), this, SLOT(printAll()) );
 	ac->addAction("printChapter", m_actions.print.chapter);
 
-	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, ac);
+//	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, ac);
 }
 
 void CBibleReadWindow::initConnections() {
@@ -444,8 +444,8 @@ void CBibleReadWindow::reload() {
 	verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
 	keyChooser()->refreshContent();
 
-	CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection()); //setup the predefined actions
-	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());
+//	CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection()); //setup the predefined actions
+//	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());
 }
 
 /** No descriptions */

@@ -189,7 +189,7 @@ void CDisplayWindow::initActions()
 	//	qDebug() << a->text();
 	//}
 
-	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
+//	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
 
 /** Refresh the settings of this window. */

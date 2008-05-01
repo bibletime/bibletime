@@ -154,7 +154,7 @@ void CLexiconReadWindow::initActions()
 
 	// init with the user defined settings
 	qDebug("call CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac); and end CLexiconReadWindow::initActions");
-	CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
+//	CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
 }
 
 /** No descriptions */

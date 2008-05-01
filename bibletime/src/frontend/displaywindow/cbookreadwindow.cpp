@@ -77,7 +77,7 @@ void CBookReadWindow::initActions()
 	QObject::connect(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()) );
 	ac->addAction("toggleTree", m_treeAction);
 
-	CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
+//	CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
 }
 
 void CBookReadWindow::insertKeyboardActions( KActionCollection* const a )
