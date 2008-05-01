@@ -1,4 +1,4 @@
-2008-04 * MAJOR CHANGES FOR 1.7 *
+2008-05 * MAJOR CHANGES FOR 1.7 *
 	* Port to KDE4/QT4, reduced KDE dependency to a minimum
 	* New build system: cmake
 	* i18n of UI strings is now handled by QT
@@ -10,6 +10,9 @@
 		* Hide/Unhide feature to select which modules should be displayed
 	* Corrections and enhancements to session management
 	* Search dialog now has a history for the modules to search in
+	* Disabled features
+		* Key binding configuration (maybe this will re-appear in a later release)
+		* Search analysis (should re-appear soon)
 
 2007-11-01 Martin Gruner <mgruner@crosswire.org>
 	* Released 1.6.5 with several important bugfixes

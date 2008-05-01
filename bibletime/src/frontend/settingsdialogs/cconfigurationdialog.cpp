@@ -1,22 +1,18 @@
-//
-// C++ Implementation: cconfigurationdialog
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #include "cconfigurationdialog.h"
-#include "cconfigurationdialog.moc"
 
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"
 #include "clanguagesettings.h"
-#include "cacceleratorsettings.h"
+//#include "cacceleratorsettings.h"
 
 
 #include "util/cpointers.h"
@@ -67,13 +63,13 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* 
 	langPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::fonts::icon)) );
 	addPage(langPage);
 
-	// Add "Keyboard" (accelerators) page
-	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
-	KPageWidgetItem* accelPage = new KPageWidgetItem(m_acceleratorsPage);
-	accelPage->setHeader( tr( "HotKeys" ) );
-	accelPage->setName( tr( "HotKeys" ) );
-	accelPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::keys::icon)) );
-	addPage(accelPage);
+//	// Add "Keyboard" (accelerators) page
+//	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
+//	KPageWidgetItem* accelPage = new KPageWidgetItem(m_acceleratorsPage);
+//	accelPage->setHeader( tr( "HotKeys" ) );
+//	accelPage->setName( tr( "HotKeys" ) );
+//	accelPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::keys::icon)) );
+//	addPage(accelPage);
 
 
 	setCurrentPage(displayPage);
@@ -85,7 +81,7 @@ CConfigurationDialog::~CConfigurationDialog() {}
 /** Called if the OK button was clicked */
 void CConfigurationDialog::slotOk()
 {
-	m_acceleratorsPage->save();
+//	m_acceleratorsPage->save();
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
@@ -97,7 +93,7 @@ void CConfigurationDialog::slotOk()
 void CConfigurationDialog::slotApply()
 {
 	qDebug("CConfigurationDialog::slotApply");
-	m_acceleratorsPage->save();
+//	m_acceleratorsPage->save();
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();

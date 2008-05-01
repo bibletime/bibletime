@@ -75,7 +75,7 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.cpp
 
 	#Settings dialog (configuration)
-	src/frontend/settingsdialogs/cacceleratorsettings.cpp
+#	src/frontend/settingsdialogs/cacceleratorsettings.cpp #DISABLED
 	src/frontend/settingsdialogs/cdisplaysettings.cpp
 	src/frontend/settingsdialogs/cswordsettings.cpp
 	src/frontend/settingsdialogs/clanguagesettings.cpp
