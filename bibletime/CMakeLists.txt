@@ -14,9 +14,9 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 ######################################################
 # Find required packages
 #
-SET(QT_MIN_VERSION 4.3.0)
+SET(QT_MIN_VERSION 4.4.0)
 FIND_PACKAGE(Qt4 REQUIRED)
-SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK
+SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 FIND_PACKAGE(KDE4 REQUIRED)
 FIND_PACKAGE(Boost REQUIRED)
 #

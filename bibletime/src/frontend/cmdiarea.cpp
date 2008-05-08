@@ -19,8 +19,7 @@
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
 	m_mdiArrangementMode(ArrangementModeManual)
 {
-	//TODO: activate this when we require QT 4.4
-	//setActivationOrder( CreationOrder );
+	setActivationOrder( CreationOrder ); //keep window order consistent
 	connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
 }
 
