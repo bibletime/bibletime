@@ -485,7 +485,9 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					buf.append("<span class=\"transchange\"><span class=\"moved\">");
 				}
 				else if (type == "tenseChange") {
-					buf.append("<span class=\"transchange\"><span class=\"tenseChange\">");
+					buf.append("<span class=\"transchange\" title=\"");
+					buf.append(QObject::tr("Verb tense changed").toUtf8().constData());
+					buf.append("\"><span class=\"tenseChange\">");
 				}
 				else {
 					buf.append("<span class=\"transchange\"><span>");
