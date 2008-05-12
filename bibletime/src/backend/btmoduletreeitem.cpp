@@ -101,7 +101,7 @@ QString BTModuleTreeItem::iconName() const
 			return CResMgr::categories::books::icon;
 			break;
 		case CSwordModuleInfo::Cult:
-			return QString::null;
+			return CResMgr::categories::cults::icon;
 			break;
 		case CSwordModuleInfo::Images:
 			return CResMgr::categories::images::icon;

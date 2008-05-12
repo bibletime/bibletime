@@ -11,7 +11,7 @@
 #ifndef CSWORDSETUPINSTALLSOURCESDIALOG_H
 #define CSWORDSETUPINSTALLSOURCESDIALOG_H
 
-#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 
 #include <QDialog>
 

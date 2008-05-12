@@ -57,15 +57,17 @@ public:
 	* Opens the searchdialog using the given modules using the given search text.
 	*/
 	void emitModulesChosen( ListCSwordModuleInfo modules, QString key );
-	
-	/**
-	* Reloads the main index's Sword dependend things like modules
-	*/
-	void reloadSword();
 
+	/** Helper method for "freezing" modules while opening them in windows. */
 	void unfreezeModules(ListCSwordModuleInfo);
 
 public slots:
+
+	/**
+	* Reloads the main index's Sword dependend things like modules
+	*/
+	void reloadSword(CSwordBackend::SetupChangedReason);
+
 	/**
 	 * Opens the searchdialog for the selected modules.
 	 */
@@ -193,7 +195,7 @@ signals:
 	 * Is emitted when a write window should be created.
 	 */
 	void createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType& );
-	void signalSwordSetupChanged();
+
 };
 
 #endif

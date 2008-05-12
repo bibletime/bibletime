@@ -32,7 +32,7 @@ public:
 	~BtInstallProgressDialog();
 
 public slots:
-	void slotOneItemCompleted(QString module, QString source);
+	void slotOneItemCompleted(QString module, QString source, int status);
 	void slotOneItemStopped(QString module, QString source);
 	void slotStopInstall();
 	void slotStatusUpdated(QString module, int status);
@@ -46,8 +46,8 @@ protected:
 	*/
 	virtual void closeEvent(QCloseEvent* event);
 
-signals:
-	void swordSetupChanged();
+//signals:
+//	void swordSetupChanged();
 
 private:
 

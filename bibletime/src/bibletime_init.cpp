@@ -362,7 +362,7 @@ void BibleTime::initActions()
 void BibleTime::initConnections() {
  	QObject::connect(m_mdi, SIGNAL(sigSetToplevelCaption(const QString&)),
  		this, SLOT(setPlainCaption(const QString&)));
-	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+	QObject::connect(m_mdi, SIGNAL(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)),
 		this, SLOT(createReadDisplayWindow(ListCSwordModuleInfo, const QString&)));
 
 	if (m_windowMenu) {
@@ -378,7 +378,7 @@ void BibleTime::initConnections() {
 	QObject::connect(m_mainIndex, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
 		this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&))
 	);
-	QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+	//QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
 
 	connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }
@@ -395,7 +395,7 @@ void BibleTime::initBackends() {
 	backend->booknameLanguage(CBTConfig::get(CBTConfig::language) );
 
 	CPointers::setBackend(backend);
-	const CSwordBackend::LoadError errorCode = CPointers::backend()->initModules();
+	const CSwordBackend::LoadError errorCode = CPointers::backend()->initModules(CSwordBackend::OtherChange);
 
 	m_moduleList = 0;
 	if ( errorCode == CSwordBackend::NoError ) { //no error

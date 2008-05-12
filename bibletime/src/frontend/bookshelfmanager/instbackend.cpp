@@ -1,6 +1,6 @@
-#include "backend.h"
+#include "instbackend.h"
 
-#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
@@ -10,6 +10,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDir>
+#include <QMessageBox>
+
 #include <QDebug>
 
 //Sword includes
@@ -24,7 +26,7 @@
 
 using namespace sword;
 
-namespace backend {
+namespace instbackend {
 
 /** Adds the source described by Source to the backend. */
 bool addSource(sword::InstallSource& source)
@@ -50,7 +52,7 @@ bool addSource(sword::InstallSource& source)
 sword::InstallSource source(QString name)
 {
 	qDebug("backend::source");
-	Bt_InstallMgr mgr;
+	BtInstallMgr mgr;
 	InstallSourceMap::iterator source = mgr.sources.find(name.toLatin1().data());
 	if (source != mgr.sources.end()) {
 		return *(source->second);
@@ -159,22 +161,23 @@ bool setTargetList( const QStringList& targets )
 	QFileInfo i(filename);
 	QFileInfo dirInfo(i.absolutePath());
 
-	if ( i.exists() && i.isWritable() ) { //we can write to the file ourself
-		qDebug() << "The file is writable";
-	}
-	else if ( !i.exists() && dirInfo.isWritable() ) {
+	
+	if ( !i.exists() && dirInfo.isWritable() ) {
 		// if the file doesn't exist but the parent is writable, create it
-		//TODO: create the file!
-		qWarning() << "The file does not exist, it has to be created! (not implemented)";
-		return false;
-
+		qWarning() << "The Sword config file does not exist, it has to be created";
+		QFile f(filename);
+		f.open(QIODevice::WriteOnly);
+		f.close();
+		i.refresh();
 	}
-	else {
+	if ( i.exists() && i.isWritable() ) { //we can write to the file ourself
+		qDebug() << "The Sword config file is writable";
+	} else {
 		// There is no way to save to the file
-		qWarning() << "The file is not writable!";
+		qWarning() << "The Sword config file is not writable!";
+		QMessageBox::warning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
 		return false;
 	}
-
 	SWConfig conf(filename.toLocal8Bit());
 	conf.Sections.clear();
 	bool setDataPath = false;
@@ -192,13 +195,14 @@ bool setTargetList( const QStringList& targets )
 	}
 	qDebug() << "save the sword conf...";
 	conf.Save();
+	CPointers::backend()->reloadModules(CSwordBackend::PathChanged);
 	return true;
 }
 
 QStringList sourceList()
 {
 	qDebug("backend::sourceList");
-	Bt_InstallMgr mgr;
+	BtInstallMgr mgr;
 	Q_ASSERT(mgr.installConf);
 
 	QStringList names;
@@ -259,7 +263,7 @@ CSwordBackend* backend( const sword::InstallSource& is)
 
 	Q_ASSERT(ret);
 	if (ret) {
-		ret->initModules();
+		ret->initModules(CSwordBackend::OtherChange);
 	}
 	return ret;
 }

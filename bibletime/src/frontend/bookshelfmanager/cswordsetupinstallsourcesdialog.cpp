@@ -11,7 +11,7 @@
 #include "cswordsetupinstallsourcesdialog.h"
 #include "cswordsetupinstallsourcesdialog.moc"
 
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 
 #include <boost/scoped_ptr.hpp>
 
@@ -106,7 +106,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
 
 	//BTInstallMgr iMgr;
 	//sword::InstallSource is = BTInstallMgr::Tool::RemoteConfig::source( &iMgr, m_captionEdit->text() );
-	sword::InstallSource is = backend::source(m_captionEdit->text());
+	sword::InstallSource is = instbackend::source(m_captionEdit->text());
 	if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
 		QMessageBox::information( this, tr( "Error" ),
 									tr("A source with this caption already exists.<br>Please provide a different caption."), QMessageBox::Retry);

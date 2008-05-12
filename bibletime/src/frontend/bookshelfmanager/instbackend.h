@@ -6,7 +6,7 @@
 #include <installmgr.h>
 
 
-namespace backend {
+namespace instbackend {
 
 /** Adds the source to the backend. */
 bool addSource(sword::InstallSource& source);

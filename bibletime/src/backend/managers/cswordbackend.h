@@ -47,6 +47,16 @@ class CSwordBackend : public QObject, public sword::SWMgr
 {
 	Q_OBJECT
 public:
+
+	/** The reason for the sigSwordSetupChanged signal, i.e. why the module list has changed. */
+	enum SetupChangedReason {
+		AddedModules = 1,
+		RemovedModules = 2,
+		HidedModules = 4,
+		PathChanged = 8,
+		OtherChange = 16
+	};
+
 	/** Filter options. Filter options to
 	 * control the text display of modules. Uses int and not bool because not all
 	 * options have just two toggle values.
@@ -111,7 +121,7 @@ public:
 	*
 	* @return True if the initializiation was succesful, otherwise return false.
 	*/
-	virtual const CSwordBackend::LoadError initModules();
+	virtual const CSwordBackend::LoadError initModules(SetupChangedReason reason);
 	/**
 	* This function deinitializes the modules and deletes them.
 	*
@@ -194,14 +204,26 @@ public:
 	/**
 	* Reload all Sword modules.
 	*/
-	void reloadModules();
+	void reloadModules(SetupChangedReason reason);
+
+	/**
+	* Takes off the given modules from the list and returns them.
+	* User must take care of the deletion of the returned CSwordModuleInfo pointers.
+	*/
+	ListCSwordModuleInfo takeModulesFromList(QStringList names);
+
 	/** Sword prefix list.
 	* @return A list of all known Sword prefix dirs
 	*/
 	const QStringList swordDirList();
 
+	/** Emits the sigSwordSetupChanged signal.
+	* This can be called directly from outside if there is no need to reload the backend.
+	*/
+	void notifyChange(SetupChangedReason reason);
+
 signals:
-	void sigSwordSetupChanged();
+	void sigSwordSetupChanged(CSwordBackend::SetupChangedReason reason);
 
 protected:
 	/**

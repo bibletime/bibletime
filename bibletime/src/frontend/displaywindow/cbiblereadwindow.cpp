@@ -431,8 +431,8 @@ void CBibleReadWindow::saveChapterPlain() {
 	mgr.saveKey(&vk, CExportManager::Text, true);
 }
 
-void CBibleReadWindow::reload() {
-	CLexiconReadWindow::reload();
+void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
+	CLexiconReadWindow::reload(reason);
 
 	if (m_modules.count() == 0) {
 		close();

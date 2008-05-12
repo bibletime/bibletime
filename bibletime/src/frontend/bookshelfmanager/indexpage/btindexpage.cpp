@@ -81,6 +81,8 @@ BtIndexPage::BtIndexPage()
 	// connect our signals/slots
 	connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));
 	connect(m_deleteButton, SIGNAL(clicked()), this, SLOT(deleteIndices()));
+	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+
 	populateModuleList();
 }
 

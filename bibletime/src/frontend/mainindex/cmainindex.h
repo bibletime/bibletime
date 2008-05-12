@@ -28,7 +28,7 @@ public:
 	CMainIndex(QWidget *parent);
 	virtual ~CMainIndex() {};
 
-	void reloadSword();
+	//void reloadSword();
 
 	CBookshelfIndex* bookshelfIndex() {return m_bookshelfPage;}
 
@@ -41,8 +41,7 @@ signals:
 	 * Is emitted when a write window should be created.
 	 */
 	void createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType& );
-	/** Emitted when the bookshelf tab changes some module or module tree related settings. */
-	void signalSwordSetupChanged();
+
 
 private:
 

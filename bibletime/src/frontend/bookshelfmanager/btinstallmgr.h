@@ -28,12 +28,12 @@ typedef QList<sword::InstallSource*> InstallSourceList;
 /**
 * Our own reimplementation to provide installation and status bar updates.
 */
-class Bt_InstallMgr : public QObject, public sword::InstallMgr, public sword::StatusReporter {
+class BtInstallMgr : public QObject, public sword::InstallMgr, public sword::StatusReporter {
 	Q_OBJECT
 public:
 
-	Bt_InstallMgr();
-	virtual ~Bt_InstallMgr();
+	BtInstallMgr();
+	virtual ~BtInstallMgr();
 
 	/**
 	* Refreshing the source should be cancellable (othewise it might freeze the app if there is

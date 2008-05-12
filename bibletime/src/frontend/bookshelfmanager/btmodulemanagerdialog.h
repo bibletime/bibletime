@@ -27,8 +27,6 @@ public:
 	
 	~BtModuleManagerDialog();
 
-public slots:
-	void slotSwordSetupChanged();
 
 	//void slotClose();
 protected:
@@ -37,8 +35,8 @@ protected:
 	/** Adds the pages and the button box. */
 	BtModuleManagerDialog(QWidget* parent);
 
-signals:
-	void swordSetupChanged();
+//signals:
+//	void swordSetupChanged();
 };
 
 

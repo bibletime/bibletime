@@ -56,7 +56,7 @@ public slots: // Public slots
 	/**
 	* Reimplementation to handle the keychooser refresh.
 	*/
-	virtual void reload();
+	virtual void reload(CSwordBackend::SetupChangedReason);
 
 protected:
 	virtual void initActions();

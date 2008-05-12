@@ -15,7 +15,7 @@
 #include <QString>
 #include <QMap>
 
-class Bt_InstallMgr;
+class BtInstallMgr;
 class BtInstallPage;
 class BtSourceArea;
 
@@ -79,7 +79,7 @@ private:
 	QStringList m_sourceNameList;
 	BtInstallPage* m_page;
 	QProgressDialog* m_progressDialog; // for refreshing
-	Bt_InstallMgr* m_currentInstallMgr; // for refreshing
+	BtInstallMgr* m_currentInstallMgr; // for refreshing
 	QMap<QString, int> m_selectedModulesCountMap;
 };
 

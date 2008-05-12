@@ -62,6 +62,9 @@ public:
 	/** Create a module tree for a tree widget */
 	bool createModuleTree();
 
+public slots:
+	void slotSwordSetupChanged();
+
 signals:
 	void signalSelectionChanged(QString sourceName, int selectedCount);
 

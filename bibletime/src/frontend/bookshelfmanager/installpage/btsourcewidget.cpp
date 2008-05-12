@@ -17,8 +17,8 @@
 
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/bt_installmgr.h"
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 
 
 #include <QString>
@@ -90,7 +90,7 @@ void BtSourceWidget::slotDelete()
 			QMessageBox::Yes | QMessageBox::No);
 
 	if (ret == QMessageBox::Yes) {
-		backend::deleteSource(currentSourceName());
+		instbackend::deleteSource(currentSourceName());
 		
 		// remove the UI elements
 		m_sourceNameList.removeAt(currentIndex());
@@ -106,7 +106,7 @@ void BtSourceWidget::slotAdd()
 	qDebug("open the old dialog, TODO: write new one");
 	sword::InstallSource newSource = CSwordSetupInstallSourcesDialog::getSource();
 	if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-		backend::addSource(newSource);
+		instbackend::addSource(newSource);
 		addSource(QString(newSource.caption.c_str()));
 	}
 }
@@ -124,22 +124,22 @@ void BtSourceWidget::slotRefresh()
 	m_progressDialog->setWindowTitle(tr("Refreshing Source"));
 	m_progressDialog->setMinimumDuration(0);
 
-	// TODO: get rid of the backend code, Bt_InstallMgr and progressdialog could handle this
-	//write method Bt_InstallMgr::slotRefreshCanceled()
+	// TODO: get rid of the backend code, BtInstallMgr and progressdialog could handle this
+	//write method BtInstallMgr::slotRefreshCanceled()
 	connect(m_progressDialog, SIGNAL(canceled()), SLOT(slotRefreshCanceled()));
 
 	// BACKEND CODE **********************************************************
-	// would this be possible: backend::refreshSource( arguments );
+	// would this be possible: instbackend::refreshSource( arguments );
 	qDebug("void BtSourceWidget::slotRefresh 1");
-	Bt_InstallMgr iMgr;
+	BtInstallMgr iMgr;
 	m_currentInstallMgr = &iMgr; //for the progress dialog
-	sword::InstallSource is = backend::source(sourceName);
+	sword::InstallSource is = instbackend::source(sourceName);
 	bool success = false;
 	qDebug("void BtSourceWidget::slotRefresh 2");
 	// connect this directly to the dialog setValue(int) if possible
 	connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
-	if (backend::isRemote(is)) {
+	if (instbackend::isRemote(is)) {
 		m_progressDialog->show();
 		qApp->processEvents();
 		this->slotRefreshCompleted(0,0);
@@ -176,7 +176,7 @@ void BtSourceWidget::slotRefresh()
 	}
 }
 
-//TODO: try to move this to Bt_InstallMgr
+//TODO: try to move this to BtInstallMgr
 void BtSourceWidget::slotRefreshCanceled()
 {
 	qDebug("BtSourceWidget::slotRefreshCanceled");
@@ -206,8 +206,8 @@ void BtSourceWidget::initSources()
 	qDebug("void BtSourceWidget::initSources() start");
 
 	// ***** Use the backend to get the list of sources *****
-	backend::initPassiveFtpMode();
-	QStringList sourceList = backend::sourceList();
+	instbackend::initPassiveFtpMode();
+	QStringList sourceList = instbackend::sourceList();
 
 	// Add a default entry, the Crosswire main repository
 	// TODO: this is easy for the user, but should the edit dialog
@@ -219,9 +219,9 @@ void BtSourceWidget::initSources()
 		is.directory = "/pub/sword/raw";
 		// passive ftp is not needed here, it's the default
 
-		backend::addSource(is);
+		instbackend::addSource(is);
 
-		sourceList = backend::sourceList();
+		sourceList = instbackend::sourceList();
 		Q_ASSERT( sourceList.count() > 0 );
 	}
 	qDebug("void BtSourceWidget::initSources 1");
@@ -236,6 +236,7 @@ void BtSourceWidget::initSources()
 	// TODO: select the current source from the config
 	// It's important to choose something because the tree is not initialized until now
 	setCurrentIndex(0);
+	slotTabSelected(0); // setting the index wasn't enough if there were only 1 tab
 }
 
 void BtSourceWidget::addSource(const QString& sourceName)
@@ -246,8 +247,8 @@ void BtSourceWidget::addSource(const QString& sourceName)
 	QString type;
 	QString server;
 	QString path;
-	sword::InstallSource is = backend::source(sourceName);
-	if (backend::isRemote(is)) {
+	sword::InstallSource is = instbackend::source(sourceName);
+	if (instbackend::isRemote(is)) {
 		type = tr("Remote:");
 		server = is.source.c_str();
 		path = is.directory.c_str();
@@ -309,6 +310,24 @@ void BtSourceWidget::slotInstall()
 {
 	qDebug("void BtInstallPage::slotInstall start");
 	
+	// check that the destination path is writable, do nothing if not and user doesn't want to continue
+	QDir dir = QDir(dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
+	bool canWrite = true;
+	if (dir.isReadable()) {
+		const QFileInfo fi( dir.canonicalPath() );
+		if (!fi.exists() || !fi.isWritable()) {
+			canWrite = false;
+		}
+	} else {
+		canWrite = false;
+	}
+	if (!canWrite) {
+		const int result = QMessageBox::warning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore|QMessageBox::Cancel, QMessageBox::Cancel);
+		if (result != QMessageBox::Ignore) {
+			return;
+		}
+	}
+
 	// create the confirmation dialog
 	// (module tree dialog, modules taken from all sources)
 	QString dlgTitle(tr("Install/Update works?"));
@@ -359,15 +378,18 @@ void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo /*modules*/, QTree
 {
 	qDebug() << "BtSourceWidget::slotInstallAccepted";
 
+	//TODO: first remove all modules which will be updated from the module list
+	// but what modules? all with the same real name? (there may be _n modules...)
+
 	BtModuleManagerDialog* parentDialog = dynamic_cast<BtModuleManagerDialog*>(dynamic_cast<BtInstallPage*>(parent())->parentDialog());
 
  	BtInstallProgressDialog* dlg = new BtInstallProgressDialog(parentDialog, treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
 
 	if (!parentDialog) qDebug("error, wrong parent!");
-	QObject::connect(dlg, SIGNAL(swordSetupChanged()), parentDialog, SLOT(slotSwordSetupChanged()));
+
+	m_page->setInstallEnabled(false);
 	// the progress dialog is now modal, it can be made modeless later.
 	dlg->exec();
-	//TODO: disable the Install button
-	
+		
 	qDebug("BtSourceWidget::slotInstallAccepted end");
 }

@@ -90,8 +90,8 @@ void CCommentaryReadWindow::initToolbars() {
 }
 
 /** Reimplementation to handle the keychooser refresh. */
-void CCommentaryReadWindow::reload() {
-	CLexiconReadWindow::reload();
+void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
+	CLexiconReadWindow::reload(reason);
 
 	//refresh the book lists
 	verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );

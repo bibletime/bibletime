@@ -44,14 +44,18 @@ public:
 	 */
 	void indexUnindexedModules( const ListCSwordModuleInfo& modules );
 
+signals:
+	/** Indexing is cancelled programmatically. */
+	void sigCancel();
+
 private:
-	//KProgressDialog* progress;
 	QProgressDialog* m_progress;
 	int m_currentModuleIndex;
 	
 protected slots:
     void slotModuleProgress( int percentage );
 	void slotFinished();
+	void slotSwordSetupChanged();
 };
 
 #endif

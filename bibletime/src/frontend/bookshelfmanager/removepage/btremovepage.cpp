@@ -59,7 +59,7 @@ BtRemovePage::BtRemovePage()
 
 	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
 	connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveModules()));
-
+	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
 	populateModuleList();
 }
 
@@ -145,11 +145,13 @@ void BtRemovePage::slotRemoveModules()
 
 	if ((QMessageBox::question(this, tr("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
+		// Update the module list before really removing. Remember deleting the pointers later.
+		ListCSwordModuleInfo toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);
+
 		sword::InstallMgr installMgr;
 		QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects
-		foreach ( CSwordModuleInfo* mInfo, m_selectedModules ) {
-			Q_ASSERT(mInfo); // Only installed modules could have been selected, this should exist
-
+		foreach ( CSwordModuleInfo* mInfo, toBeDeleted ) {
+			Q_ASSERT(mInfo); // Only installed modules could have been selected and returned by takeModulesFromList
 			// Find the install path for the sword manager
 			QString prefixPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
 			QString dataPath = mInfo->config(CSwordModuleInfo::DataPath);
@@ -171,13 +173,10 @@ void BtRemovePage::slotRemoveModules()
 				mgr = mgrDict[ prefixPath ];
 			}
 			qDebug() << "Removing the module"<< mInfo->name() << "...";
-			installMgr.removeModule(mgr, mInfo->name().toLatin1());
+			installMgr.removeModule(mgr, mInfo->module()->Name());
 		}
-
-		CPointers::backend()->reloadModules();
-		emit swordSetupChanged();
-		//populateRemoveModuleListView(); //rebuild the tree. Do this through signal/slot?
-
+		//delete the removed moduleinfo pointers
+		qDeleteAll(toBeDeleted);
 		//delete all mgrs which were created above
 		qDeleteAll(mgrDict);
 		mgrDict.clear();

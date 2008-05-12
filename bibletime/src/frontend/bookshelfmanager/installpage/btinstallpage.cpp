@@ -17,10 +17,10 @@
 #include "btsourcewidget.h"
 #include "btsourcearea.h"
 
-#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 #include "frontend/bookshelfmanager/btconfigdialog.h"
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
 #include "frontend/cmodulechooserdialog.h"
@@ -124,9 +124,11 @@ void BtInstallPage::initView()
 void BtInstallPage::initConnections()
 {
 	qDebug("void BtInstallPage::initConnections() start");
-	QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged()));
+	QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged(const QString&)));
 	QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
 	QObject::connect(m_installButton, SIGNAL(clicked()), m_sourceWidget, SLOT(slotInstall()) );
+
+	QObject::connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), this, SLOT(slotSwordSetupChanged()));
 	//source widget has its own connections, not here
 }
 
@@ -136,7 +138,7 @@ void BtInstallPage::initPathCombo()
 	//populate the combo list
 	m_pathCombo->clear();
 
-	QStringList targets = backend::targetList();
+	QStringList targets = instbackend::targetList();
 	for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
 		if ((*it).isEmpty()) continue;
 		m_pathCombo->addItem(*it);
@@ -153,18 +155,13 @@ void BtInstallPage::slotPathChanged(const QString& /*pathText*/)
 void BtInstallPage::slotEditPaths()
 {
 	qDebug("void BtInstallPage::slotEditPaths() start");
-	// Now: do nothing, editing is done in another page
-	// (we have to catch the signal sent from there to refresh the combo?)
-	//return;
- 
-	// Later: open the dialog
+	
 	BtInstallPathDialog* dlg = new BtInstallPathDialog();
 	int result = dlg->exec();
 	if (result == QDialog::Accepted) {
-		dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();
+		//dynamic_cast<BtModuleManagerDialog*>(parentDialog())->slotSwordSetupChanged();
+		CPointers::backend()->reloadModules(CSwordBackend::PathChanged);
 	}
-	// if the dialog was accepted, set the paths and save them
-	// and repopulate the combo
 }
 
 // implement the BtConfigPage methods
@@ -185,15 +182,13 @@ QString BtInstallPage::header()
 
 void BtInstallPage::slotSwordSetupChanged()
 {
-	qDebug() << "BtInstallPage::slotSwordSetupChanged, does nothing yet, should update sources";
-	//m_sourceWidget, each sourceArea->createModuleTree
-	// BUG: the backend is not updated
+	qDebug() << "BtInstallPage::slotSwordSetupChanged";
 	initPathCombo();
-	for (int i = 0; i < m_sourceWidget->count(); i++ ) {
-		BtSourceArea* sourceArea = dynamic_cast<BtSourceArea*>(m_sourceWidget->widget(i));
-		Q_ASSERT(sourceArea);
-		sourceArea->createModuleTree();
-	}
+// 	for (int i = 0; i < m_sourceWidget->count(); i++ ) {
+// 		BtSourceArea* sourceArea = dynamic_cast<BtSourceArea*>(m_sourceWidget->widget(i));
+// 		Q_ASSERT(sourceArea);
+// 		sourceArea->createModuleTree();
+// 	}
 }
 
 

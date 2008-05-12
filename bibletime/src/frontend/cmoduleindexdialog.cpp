@@ -10,6 +10,9 @@
 #include "cmoduleindexdialog.h"
 #include "cmoduleindexdialog.moc"
 
+#include "util/cpointers.h"
+#include "backend/managers/cswordbackend.h"
+
 #include <boost/scoped_ptr.hpp>
 
 //Qt includes
@@ -17,7 +20,7 @@
 #include <QProgressDialog>
 #include <QDebug>
 #include <QApplication>
-
+#include <QMessageBox>
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 	qDebug("CModuleIndexDialog::getInstance");
@@ -44,12 +47,16 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 		m_progress->raise();
 		
 		foreach (CSwordModuleInfo* info, modules) {
+			//TODO: how to cancel
+			//QObject::connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
+			connect(this, SIGNAL(sigCancel()), info, SLOT(cancelIndexing()) );
 			connect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
 			connect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
 			connect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
 			QString modname(info->name());
 			const QString labelText = tr("Creating index for work: ").append(modname);
 			m_progress->setLabelText(labelText);
+			//todo: if we want to cancel indexing from
 			info->buildIndex(); //waits until this module is finished
 	
 			m_currentModuleIndex++;
@@ -87,4 +94,12 @@ void CModuleIndexDialog::slotModuleProgress( int percentage ) {
 void CModuleIndexDialog::slotFinished( ) {
 	m_progress->setValue(m_currentModuleIndex * 100 + 100);
 	qApp->processEvents();
+}
+
+// Modules may be removed
+void CModuleIndexDialog::slotSwordSetupChanged()
+{
+	qDebug("CModuleIndexDialog::slotSwordSetupChanged, TODO: cancel if modules are removed");
+	QMessageBox::information(0, tr("Indexing Is Cancelled"), tr("Indexing is cancelled because modules are removed."));
+	emit sigCancel();
 }

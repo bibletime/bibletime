@@ -53,6 +53,9 @@ CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
 	parent->addSubWindow(this);
 	m_actionCollection = new KActionCollection(this);
 	setModules(modules);
+	
+	// Connect this to the backend module list changes
+	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reload(CSwordBackend::SetupChangedReason)));
 	//KMainWindow::setAttribute(Qt::WA_DeleteOnClose); //what about QMdiSubWindow?
 }
 
@@ -193,7 +196,7 @@ void CDisplayWindow::initActions()
 }
 
 /** Refresh the settings of this window. */
-void CDisplayWindow::reload() {
+void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 	//first make sure all used Sword modules are still present
 	QMutableStringListIterator it(m_modules);
 	while (it.hasNext()) {

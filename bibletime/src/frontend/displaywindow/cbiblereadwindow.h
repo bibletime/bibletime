@@ -113,7 +113,7 @@ public slots:
 	/**
 	* Refreshes the content of this display window and the content of the keychooser.
 	*/
-	virtual void reload();
+	virtual void reload(CSwordBackend::SetupChangedReason reason);
 
 protected slots: // Protected slots
 	/**

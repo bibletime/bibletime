@@ -13,6 +13,8 @@
 #include "btinstallthread.h"
 
 #include "util/ctoolclass.h"
+#include "util/cpointers.h"
+#include "backend/managers/cswordbackend.h"
 
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
@@ -68,7 +70,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 				QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()) );
 				QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)));
 				//is this needed or is statusUpdated enough?
-				QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString)));
+				QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString, int)));
 				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)));
 				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)));
 
@@ -95,6 +97,10 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 
 void BtInstallProgressDialog::startThreads()
 {
+	// remove all the updated modules from the backend module list at once
+	//foreach (QString mName, m_threadsByModule.keys()) {
+	//}
+	//ListCSwordModuleInfo CPointers::backend()->takeModulesFromList(m_threadsByModule.keys());
 	qDebug() << "start threads...";
 	//loop through the multimap of the waiting threads, start at most 3 threads for each source
 	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
@@ -116,9 +122,17 @@ BtInstallProgressDialog::~BtInstallProgressDialog()
 {}
 
 
-void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source)
+void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source, int status)
 {
-	oneItemStoppedOrCompleted(module, source, tr("Completed"));
+	QString message;
+	//status comes from the sword installer. TODO: Additionally we should check that there are files really installed.
+	if (status != 0) {
+		message = tr("Failed");
+	}
+	else {
+		message = tr("Completed");
+	}
+	oneItemStoppedOrCompleted(module, source, message);
 }
 
 void BtInstallProgressDialog::slotOneItemStopped(QString module, QString source)
@@ -143,6 +157,7 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 	QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
 	qDebug() << threadsForSource;
 	if (!threadsForSource.isEmpty()) {
+		qDebug() << "Threads are waiting for turn";
 		BtInstallThread* thread = threadsForSource.at(0);
 		m_waitingThreads.remove(source, thread);
 		m_runningThreads.insert(source, thread);
@@ -162,8 +177,12 @@ void BtInstallProgressDialog::slotStopInstall()
 	// Clear the waiting threads map, stop all running threads.
 
 	m_waitingThreads.clear();
-	foreach(BtInstallThread* thread, m_runningThreads) {
-		thread->slotStopInstall();
+	if (m_runningThreads.count() > 0) {
+		foreach(BtInstallThread* thread, m_runningThreads) {
+			thread->slotStopInstall();
+		}
+	} else {
+		close();
 	}
 }
 
@@ -209,7 +228,7 @@ void BtInstallProgressDialog::closeEvent(QCloseEvent* event)
 		return;
 	}
 	// other parts of the UI/engine must be updated
-	emit swordSetupChanged();
+	CPointers::backend()->reloadModules(CSwordBackend::AddedModules);
 }
 
 bool BtInstallProgressDialog::threadsDone()

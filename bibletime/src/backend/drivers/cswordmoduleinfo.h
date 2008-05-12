@@ -369,7 +369,10 @@ inline const bool CSwordModuleInfo::hasVersion() const {
 }
 
 
-/** Returns the name of the module. */
+/**
+* Returns the name of the module.
+* The Sword library takes care of the duplicate names: _n is added after each duplicate.
+*/
 inline const QString CSwordModuleInfo::name() const {
 	return m_dataCache.name;
 }

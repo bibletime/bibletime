@@ -8,10 +8,10 @@
 **********/
 
 //BibleTime includes
-#include "bt_installmgr.h"
-#include "bt_installmgr.moc"
+#include "btinstallmgr.h"
+#include "btinstallmgr.moc"
 
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 #include "backend/managers/cswordbackend.h"
 
 //Qt includes
@@ -29,21 +29,21 @@
 using namespace sword;
 
 
-Bt_InstallMgr::Bt_InstallMgr()
-	: InstallMgr(backend::configPath().toLatin1(), this),
+BtInstallMgr::BtInstallMgr()
+	: InstallMgr(instbackend::configPath().toLatin1(), this),
 	m_firstCallOfPreStatus(true)
 { //use this class also as status reporter
-	qDebug("Bt_InstallMgr::Bt_InstallMgr");
+	qDebug("BtInstallMgr::BtInstallMgr");
 	this->setFTPPassive(true);
 }
 
-Bt_InstallMgr::~Bt_InstallMgr() {
+BtInstallMgr::~BtInstallMgr() {
 	terminate(); //make sure to close the connection
 }
 
-void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
+void BtInstallMgr::statusUpdate(double dltotal, double dlnow)
 {
-	//qDebug("Bt_InstallMgr::statusUpdate");
+	//qDebug("BtInstallMgr::statusUpdate");
 	if (dlnow > dltotal)
 		dlnow = dltotal;
 
@@ -69,13 +69,13 @@ void Bt_InstallMgr::statusUpdate(double dltotal, double dlnow)
 }
 
 
-void Bt_InstallMgr::preStatus(long totalBytes, long completedBytes, const char* message)
+void BtInstallMgr::preStatus(long totalBytes, long completedBytes, const char* message)
 {
 	if (m_firstCallOfPreStatus) {
 		m_firstCallOfPreStatus = false;
 		emit downloadStarted();
 	}
-	qDebug() << "Bt_InstallMgr::preStatus:" << (int)totalBytes << "/" << (int)completedBytes << QString(message);
+	qDebug() << "BtInstallMgr::preStatus:" << (int)totalBytes << "/" << (int)completedBytes << QString(message);
 	m_completedBytes = completedBytes;
 	m_totalBytes = (totalBytes > 0) ? totalBytes : 1; //avoid division by zero
 }

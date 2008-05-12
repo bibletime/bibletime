@@ -10,7 +10,7 @@
 #include "btsourcearea.h"
 #include "btsourcearea.moc"
 
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
@@ -95,9 +95,8 @@ void BtSourceArea::initView()
 	m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
 	mainLayout->addWidget(m_view);
 
-	
-
 	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
+	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
 }
 
 void BtSourceArea::initTreeFirstTime()
@@ -114,11 +113,12 @@ bool BtSourceArea::createModuleTree()
 
 	// TODO: if the tree already exists for this source,
 	// maybe the selections should be preserved
+	m_checkedModules.clear();
 
-	sword::InstallSource is = backend::source(m_sourceName);
+	sword::InstallSource is = instbackend::source(m_sourceName);
 
 	delete m_remoteBackend; // the old one can be deleted
-	m_remoteBackend = backend::backend(is);
+	m_remoteBackend = instbackend::backend(is);
 	Q_ASSERT(m_remoteBackend);
 	m_moduleList = m_remoteBackend->moduleList();
 
@@ -249,8 +249,8 @@ void BtSourceArea::slotItemDoubleClicked(QTreeWidgetItem* item, int /*column*/)
 
 BtSourceArea::InstalledFilter::InstalledFilter(QString sourceName)
 	: BTModuleTreeItem::Filter(),
-	m_source(backend::source(sourceName)),
-	m_swordBackend(backend::backend(m_source))
+	m_source(instbackend::source(sourceName)),
+	m_swordBackend(instbackend::backend(m_source))
 {
 	// these are set once to optimize away repeated calls
 	// m_source, m_swordBackend
@@ -270,4 +270,9 @@ bool BtSourceArea::InstalledFilter::filter(CSwordModuleInfo* mInfo)
 		}
 	}
 	return true;
+}
+
+void BtSourceArea::slotSwordSetupChanged()
+{
+	createModuleTree();
 }

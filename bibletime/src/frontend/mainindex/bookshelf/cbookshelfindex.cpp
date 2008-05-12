@@ -52,6 +52,7 @@ CBookshelfIndex::CBookshelfIndex(QWidget *parent)
 	m_autoOpenFolder(0),
 	m_autoOpenTimer(this)
 {
+	m_grouping = (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping);
 	m_showHidden = CBTConfig::get(CBTConfig::bookshelfShowHidden);
 	setContextMenuPolicy(Qt::CustomContextMenu);
 	initView();
@@ -246,6 +247,9 @@ QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, co
 void CBookshelfIndex::initConnections()
 {
 	qDebug("CBookshelfIndex::initConnections");
+
+	//Connect this to the backend module list changes.
+	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
 	
 	//Strangely itemActivated only didn't let open a tree by clicking even though the relevant
 	//code in slotExecuted was executed. Therefore itemClicked is necessary.
@@ -378,7 +382,7 @@ void CBookshelfIndex::initTree() {
 	
 	//first clean the tree
 	clear();
-	m_grouping = (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping);
+	//m_grouping = (BTModuleTreeItem::Grouping)CBTConfig::get(CBTConfig::bookshelfGrouping);
 	
 	BTModuleTreeItem::HiddenOff hiddenFilter;
 	QList<BTModuleTreeItem::Filter*> filters;
@@ -560,7 +564,7 @@ void CBookshelfIndex::actionUnlockModule() {
 		
 		if (ok) {
 			i->moduleInfo()->unlock( unlockKey );
-			emit signalSwordSetupChanged();
+			CPointers::backend()->reloadModules(CSwordBackend::OtherChange);
 		}
 	}
 }
@@ -570,9 +574,9 @@ void CBookshelfIndex::actionShowModules(bool checked)
 	qDebug("CBookshelfIndex::actionShowModules");
 	m_showHidden = checked;
 	CBTConfig::set(CBTConfig::bookshelfShowHidden, m_showHidden);
-	initTree();
 	// show hidden status is changed, notify others who may rebuild their module lists
-	emit signalSwordSetupChanged();
+	CPointers::backend()->notifyChange(CSwordBackend::HidedModules);
+
 }
 
 void CBookshelfIndex::actionHideModules()
@@ -590,9 +594,8 @@ void CBookshelfIndex::actionHideModules()
 			this, SLOT(setHiddenModules(ListCSwordModuleInfo)));
 	int code = dlg->exec();
 	if (code == QDialog::Accepted) {
-		initTree();
-		// hidden status is changed, notify others who may rebuild their module lists
-		emit signalSwordSetupChanged();
+		// notify all who may rebuild their module lists
+		CPointers::backend()->notifyChange(CSwordBackend::HidedModules);
 	}
 }
 
@@ -683,7 +686,7 @@ void CBookshelfIndex::actionEditModuleHTML() {
 }
 
 /** Reloads the main index's Sword dependend things like modules */
-void CBookshelfIndex::reloadSword() {
+void CBookshelfIndex::reloadSword(CSwordBackend::SetupChangedReason) {
 	//reload the modules
 	qDebug("CBookshelfIndex::reloadSword");
 	initTree();

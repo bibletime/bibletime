@@ -10,7 +10,7 @@
 #ifndef BTINSTALLTHREAD_H
 #define BTINSTALLTHREAD_H
 
-#include "frontend/bookshelfmanager/bt_installmgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 
 #include <QThread>
 
@@ -76,9 +76,9 @@ protected:
 	QString m_destination;
 	QString m_source;
 	bool m_cancelled;
-	//Bt_InstallMgr* m_iMgr;
+	//BtInstallMgr* m_iMgr;
 	//sword::InstallSource m_installSource;
-	Bt_InstallMgr m_iMgr;
+	BtInstallMgr m_iMgr;
 	sword::InstallSource m_installSource;
 	//TODO: it would be best to get the backend from the bookshelf manager install page
 	// where it has already been created. Could fasten the progress dialog startup.

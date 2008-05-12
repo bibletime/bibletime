@@ -40,24 +40,15 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	// Install page
 	BtInstallPage* installPage = new BtInstallPage();
 	addPage(installPage);
-	QObject::connect(this, SIGNAL(swordSetupChanged()), installPage, SLOT(slotSwordSetupChanged()));
-	//The vice versa signal/slot is connected in a page class
 
 	//Uninstall page
 	BtRemovePage* removePage = new BtRemovePage();
 	addPage(removePage);
-	QObject::connect(this, SIGNAL(swordSetupChanged()), removePage, SLOT(slotSwordSetupChanged()));
-	QObject::connect(removePage, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
 
 	//Index page
 	BtIndexPage* indexPage = new BtIndexPage();
 	addPage(indexPage);
-	QObject::connect(this, SIGNAL(swordSetupChanged()), indexPage, SLOT(slotSwordSetupChanged()));
-	//QObject::connect(indexPage, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
 
-
-
-	//TODO: select the page from config? Now it's always the first one
 	slotChangePage(0);
 
 	// Dialog button (Close)
@@ -76,16 +67,6 @@ BtModuleManagerDialog::~BtModuleManagerDialog()
 void BtModuleManagerDialog::closeEvent(QCloseEvent*)
 {
 	qDebug("BtModuleManagerDialog::closeEvent");
-	// TODO: should we do this here or after every change? If the dialog is
-	// nonmodal the user may never close it. But then the change may be applied
-	// in the middle of some other user action - is it OK?
-	//writeSwordConfig();
-	//emit signalSwordSetupChanged( );
 }
 
-void BtModuleManagerDialog::slotSwordSetupChanged()
-{
-	CPointers::backend()->reloadModules();
-	emit swordSetupChanged();
-}
 

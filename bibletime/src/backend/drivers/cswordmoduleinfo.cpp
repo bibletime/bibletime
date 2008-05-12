@@ -22,10 +22,6 @@
 #include "util/cpointers.h"
 #include "frontend/cbtconfig.h"
 
-#include <sys/types.h>
-#include <unistd.h>
-#include <stddef.h>
-#include <regex.h>
 
 #include <boost/scoped_ptr.hpp>
 

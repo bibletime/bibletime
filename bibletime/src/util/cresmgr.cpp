@@ -64,7 +64,7 @@ namespace CResMgr {
 			const QString icon 			= "map.svg";
 		}
 		namespace cults {
-			const QString icon 			= "";
+			const QString icon 			= "questionable.svg";
 		}
 	}
 	namespace mainMenu { //Main menu

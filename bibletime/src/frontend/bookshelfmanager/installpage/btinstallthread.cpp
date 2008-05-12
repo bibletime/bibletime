@@ -10,8 +10,8 @@
 #include "btinstallthread.h"
 #include "btinstallthread.moc"
 
-#include "frontend/bookshelfmanager/bt_installmgr.h"
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
 
@@ -32,8 +32,8 @@ BtInstallThread::BtInstallThread(QObject* parent, QString moduleName, QString so
 	m_destination(destinationName),
 	m_source(sourceName),
 	m_cancelled(false),
-	m_installSource(backend::source(sourceName)),
-	m_backendForSource(backend::backend(m_installSource))
+	m_installSource(instbackend::source(sourceName)),
+	m_backendForSource(instbackend::backend(m_installSource))
 {
 }
 
@@ -73,7 +73,7 @@ void BtInstallThread::run()
 	// manager for the destination path
 	sword::SWMgr lMgr( m_destination.toLatin1() );
 
-	if (backend::isRemote(m_installSource)) {
+	if (instbackend::isRemote(m_installSource)) {
 		qDebug() << "calling install";
 		int status = m_iMgr.installModule(&lMgr, 0, m_module.toLatin1(), &m_installSource);
 		if (status != 0) {
@@ -87,9 +87,13 @@ void BtInstallThread::run()
 	else { //local source
 		emit statusUpdated(m_module, 0);
 		int status = m_iMgr.installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
-		if (status != 0) {
+		if (status > 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
-		} else {
+		}
+		else if (status == -1) {
+			// it was terminated, do nothing
+		}
+		else {
 			emit statusUpdated(m_module, 100);
 			done = true;
 			emit installCompleted(m_module, m_source, status);
@@ -99,27 +103,34 @@ void BtInstallThread::run()
 
 void BtInstallThread::slotStopInstall()
 {
+	qDebug() << "BtInstallThread::slotStopInstall, installing" << m_module << "was cancelled";
 	if (!done) {
+		done = true;
+		qDebug() << "BtInstallThread::slotStopInstall 1";
+		m_iMgr.terminate();
 		this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
-		qApp->processEvents();
-		this->wait(); // wait for termination
+		qDebug() << "BtInstallThread::slotStopInstall 2";
+		//qApp->processEvents();
+		// wait to terminate for some secs. We rather let the execution go on and cleaning up to fail than the app to freeze
+		this->wait(3000);
+		qDebug() << "BtInstallThread::slotStopInstall 3";
 		qApp->processEvents();
 		// cleanup: remove the module, remove the temp files
 		// Actually m_iMgr is unnecessary, it could be local in the run().
 		if (true) {
+			qDebug() << "BtInstallThread::slotStopInstall 4";
 			// remove the installed module, just to be sure because mgr may
 			// have been terminated when copying files
 			removeModule();
 			qApp->processEvents();
 			removeTempFiles();
 			qApp->processEvents();
-			//delete m_iMgr;
-			//m_iMgr = 0; // dtor of this thread deletes iMgr
-			done = true;
+			qDebug() << "BtInstallThread::slotStopInstall will emit installStopped...";
 			emit installStopped(m_module, m_source);
 			qApp->processEvents();
 		}
 	}
+	qDebug() << "BtInstallThread::slotStopInstall end";
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/)
@@ -152,7 +163,8 @@ void BtInstallThread::removeModule()
 		}
 
 		sword::SWMgr mgr(prefixPath.toLatin1());
-		//Bt_InstallMgr iMgr;
+		//BtInstallMgr iMgr;
+		//TODO: use SWModule name, see also removepage
 		m_iMgr.removeModule(&mgr, m->name().toLatin1());
 	}
 }
@@ -164,8 +176,8 @@ void BtInstallThread::removeTempFiles()
 	// (take the remote conf file for this module, take DataPath,
 	// take the absolute path of the InstallMgr)
 
-	//sword::InstallSource is = backend::source(m_source);
-	if (backend::isRemote(m_installSource)) {
+	//sword::InstallSource is = instbackend::source(m_source);
+	if (instbackend::isRemote(m_installSource)) {
 		// get the path for the module temp files
 		CSwordModuleInfo* mInfo = m_backendForSource->findModuleByName(m_module);
 		QString dataPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath);

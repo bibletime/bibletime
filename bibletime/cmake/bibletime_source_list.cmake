@@ -85,8 +85,8 @@ SET(bibletime_SOURCES
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 	src/frontend/bookshelfmanager/btconfigdialog.cpp
 	src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp
-	src/frontend/bookshelfmanager/backend.cpp
-	src/frontend/bookshelfmanager/bt_installmgr.cpp
+	src/frontend/bookshelfmanager/instbackend.cpp
+	src/frontend/bookshelfmanager/btinstallmgr.cpp
 
 	src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
 	src/frontend/bookshelfmanager/installpage/btinstallthread.cpp

@@ -10,7 +10,7 @@
 #include "btinstallpathdialog.h"
 #include "btinstallpathdialog.moc"
 
-#include "frontend/bookshelfmanager/backend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
@@ -46,7 +46,7 @@ BtInstallPathDialog::BtInstallPathDialog()
 		tr("Configure install paths"), l1 + QString("<small><br><br>") + l2 + QString("</small>"));
 	mainLayout->addWidget(mainLabel);
 
-	QString swordConfPath = backend::swordConfigFilename();
+	QString swordConfPath = instbackend::swordConfigFilename();
 	QLabel* confPathLabel = new QLabel(tr("Configuration file for the paths is: ").append("<b>%1</b>").arg(swordConfPath), this);
 	confPathLabel->setWordWrap(true);
 	mainLayout->addWidget(confPathLabel);
@@ -55,8 +55,8 @@ BtInstallPathDialog::BtInstallPathDialog()
     m_swordPathListBox = new QTreeWidget(this);
 	m_swordPathListBox->header()->hide();
 
-	QDir swordDir = backend::swordDir();
-	QStringList targets = backend::targetList();
+	QDir swordDir = instbackend::swordDir();
+	QStringList targets = instbackend::targetList();
 	foreach (QString pathname, targets)  {
 		if (pathname.isEmpty() || QDir(pathname) == swordDir) continue;
 		new QTreeWidgetItem(m_swordPathListBox, QStringList(pathname) );
@@ -143,7 +143,7 @@ void BtInstallPathDialog::slotRemoveClicked() {
 void BtInstallPathDialog::writeSwordConfig()
 {
 	qDebug("BtInstallPathDialog::writeSwordConfig");
-	if (m_swordPathListBox->topLevelItemCount() >= 1) {
+	if (m_swordPathListBox->topLevelItemCount() >= 0) {
 		QStringList targets;
 		QTreeWidgetItemIterator it(m_swordPathListBox);
 		while (*it) {
@@ -153,7 +153,7 @@ void BtInstallPathDialog::writeSwordConfig()
 			++it;
 		}
 		qDebug() << "save the target list" << targets;
-		backend::setTargetList(targets); //creates new Sword config
+		instbackend::setTargetList(targets); //creates new Sword config
 	}
 }
 

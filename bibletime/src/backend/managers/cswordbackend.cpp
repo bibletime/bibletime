@@ -90,8 +90,25 @@ CSwordBackend::~CSwordBackend() {
 	delete m_displays.entry;
 }
 
+ListCSwordModuleInfo CSwordBackend::takeModulesFromList(QStringList names)
+{
+	int numberOfRemoved = 0;
+	ListCSwordModuleInfo list;
+	foreach(QString name, names) {
+		CSwordModuleInfo* mInfo = findModuleByName(name);
+		if (mInfo) {
+			m_moduleList.removeAll(mInfo);
+			++numberOfRemoved;
+			list.append(mInfo);
+		}
+	}
+	if (numberOfRemoved > 0)
+		emit sigSwordSetupChanged(RemovedModules);
+	return list;
+}
+
 /** Initializes the Sword modules. */
-const CSwordBackend::LoadError CSwordBackend::initModules() {
+const CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 	//  qWarning("globalSwordConfigPath is %s", globalConfPath);
 	LoadError ret = NoError;
 
@@ -122,11 +139,11 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 			newModule->module()->Disp(m_displays.book);
 		}
 
-		if (newModule) { 
-			//append the new modules to our list, but only if it's supported
-			//the constructor of CSwordModuleInfo prints a waring on stdout
+		if (newModule) {
+			//Append the new modules to our list, but only if it's supported
+			//The constructor of CSwordModuleInfo prints a warning on stdout
 			if (!newModule->hasVersion() || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion)) {
-				m_moduleList.append( newModule );	
+				m_moduleList.append( newModule );
 			}
 			else
 			{
@@ -148,7 +165,7 @@ const CSwordBackend::LoadError CSwordBackend::initModules() {
 		}
 	}
 
-	emit sigSwordSetupChanged();
+	emit sigSwordSetupChanged(reason);
 	return ret;
 }
 
@@ -433,7 +450,7 @@ const QString CSwordBackend::booknameLanguage( const QString& language ) {
 
 
 /** Reload all Sword modules. */
-void CSwordBackend::reloadModules() {
+void CSwordBackend::reloadModules(SetupChangedReason reason) {
 	shutdownModules();
 
 	//delete Sword's config to make Sword reload it!
@@ -447,7 +464,7 @@ void CSwordBackend::reloadModules() {
 		config->Load();
 	}
 
-	initModules();
+	initModules(reason);
 }
 
 const QStringList CSwordBackend::swordDirList() {
@@ -503,4 +520,9 @@ void CSwordBackend::filterInit() {
 	delete thmlplain;
 	thmlplain = new BT_ThMLPlain();
 	cleanupFilters.push_back(thmlplain);
+}
+
+void CSwordBackend::notifyChange(SetupChangedReason reason)
+{
+	emit sigSwordSetupChanged(reason);
 }

@@ -180,7 +180,7 @@ public slots:
 	/**
 	* Refresh the settings of this window.
 	*/
-	virtual void reload();
+	virtual void reload(CSwordBackend::SetupChangedReason reason);
 
 protected:
 	friend class CMDIArea;

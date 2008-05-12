@@ -40,8 +40,8 @@ public:
 
 	void populateModuleList();
 
-signals:
-	void swordSetupChanged();
+//signals:
+	//void swordSetupChanged();
 
 public slots:
 	void slotSwordSetupChanged();

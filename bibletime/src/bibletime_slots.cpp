@@ -110,8 +110,8 @@ void BibleTime::slotSwordSetupDialog() {
 	//BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
 	BtModuleManagerDialog* dlg = BtModuleManagerDialog::getInstance(this);
 	//disconnect first because it may be connected already
-	QObject::disconnect(dlg, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()) );
-	connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
+	//QObject::disconnect(dlg, SIGNAL(swordSetupChanged()), this, SLOT(slotSwordSetupChanged()) );
+	//connect(dlg, SIGNAL(swordSetupChanged()), SLOT(slotSwordSetupChanged()) );
 
 	dlg->showNormal();
 	dlg->show();
@@ -136,12 +136,12 @@ void BibleTime::slotSwordSetupChanged() {
 	//CPointers::deleteBackend();
 	//m_backend = new CSwordBackend();
 	//CPointers::setBackend(new CSwordBackend());
-	CPointers::backend()->reloadModules();
+	//CPointers::backend()->reloadModules();
 
-	m_mainIndex->reloadSword();
+	//m_mainIndex->reloadSword();
 
 	//  refresh display windows
-	refreshDisplayWindows();
+	//refreshDisplayWindows();
 }
 
 /** Is called just before the window menu is ahown. */

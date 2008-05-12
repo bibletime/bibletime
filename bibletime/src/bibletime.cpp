@@ -200,7 +200,7 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 void BibleTime::refreshDisplayWindows() {
 	foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
 		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-			window->reload();
+			window->reload(CSwordBackend::OtherChange);
 		}
 	}
 }
