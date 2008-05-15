@@ -20,7 +20,7 @@
 
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/cexportmanager.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/creaddisplay.h"
 #include "frontend/keychooser/ckeychooser.h"

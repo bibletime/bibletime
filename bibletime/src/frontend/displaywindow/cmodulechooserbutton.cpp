@@ -14,7 +14,7 @@
 
 #include "backend/managers/cswordbackend.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"

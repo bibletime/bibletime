@@ -13,7 +13,7 @@
 #include "cswordsettings.h"
 #include "cswordsettings.moc"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"

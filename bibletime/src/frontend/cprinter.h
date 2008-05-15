@@ -12,7 +12,7 @@
 
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/cdisplayrendering.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QObject>
 

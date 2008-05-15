@@ -14,7 +14,7 @@
 
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "backend/keys/cswordkey.h"
 

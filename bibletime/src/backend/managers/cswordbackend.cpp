@@ -23,7 +23,7 @@
 #include "backend/filters/bt_plainhtml.h"
 #include "backend/filters/osismorphsegmentation.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/directoryutil.h"
 

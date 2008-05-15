@@ -10,7 +10,7 @@
 #ifndef CEXPORTMANAGER_H
 #define CEXPORTMANAGER_H
 
-#include "cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 

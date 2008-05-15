@@ -11,7 +11,7 @@
 #include "btindexpage.moc"
 
 #include "frontend/cmoduleindexdialog.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"

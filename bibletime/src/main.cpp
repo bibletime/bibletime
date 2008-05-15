@@ -18,7 +18,7 @@
 #include "util/migrationutil.h"
 
 #include "frontend/kstartuplogo.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <stdlib.h>
 #include <stdio.h>

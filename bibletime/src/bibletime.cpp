@@ -19,7 +19,7 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"

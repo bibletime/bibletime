@@ -15,7 +15,7 @@
 #include "backend/managers/creferencemanager.h"
 #include "backend/keys/cswordkey.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 

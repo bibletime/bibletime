@@ -18,7 +18,7 @@
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QDialog>
 #include <QButtonGroup>

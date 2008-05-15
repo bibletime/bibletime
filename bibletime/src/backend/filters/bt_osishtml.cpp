@@ -13,7 +13,7 @@
 #include "backend/managers/creferencemanager.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 
 //Sword

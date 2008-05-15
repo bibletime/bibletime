@@ -18,7 +18,7 @@
 
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordldkey.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cresmgr.h"
 
 //STL headers

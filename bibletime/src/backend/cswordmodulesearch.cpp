@@ -15,7 +15,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 //Sword includes
 #include <swmodule.h>

@@ -12,7 +12,7 @@
 
 #include "backend/keys/cswordtreekey.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QHBoxLayout>
 #include <QTreeWidget>

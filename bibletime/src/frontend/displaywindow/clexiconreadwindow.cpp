@@ -19,7 +19,7 @@
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordldkey.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"

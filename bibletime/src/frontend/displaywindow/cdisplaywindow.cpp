@@ -17,7 +17,7 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"

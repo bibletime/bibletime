@@ -13,7 +13,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/creferencemanager.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 #include <boost/scoped_ptr.hpp>
 

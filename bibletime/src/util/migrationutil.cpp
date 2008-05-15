@@ -10,7 +10,7 @@
 #include "migrationutil.h"
 #include "config.h"
 #include "directoryutil.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "swversion.h"
 

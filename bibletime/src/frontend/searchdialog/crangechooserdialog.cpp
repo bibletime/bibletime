@@ -12,7 +12,7 @@
 #include "crangechooserdialog.h"
 #include "crangechooserdialog.moc"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 //sword
 #include "versekey.h"

@@ -13,7 +13,7 @@
 
 #include "cscrollerwidgetset.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "backend/keys/cswordversekey.h"
 

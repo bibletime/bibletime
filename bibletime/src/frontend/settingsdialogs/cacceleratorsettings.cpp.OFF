@@ -13,7 +13,7 @@
 #include "cacceleratorsettings.h"
 #include "cacceleratorsettings.moc"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/displaywindow/ccommentaryreadwindow.h"

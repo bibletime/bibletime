@@ -13,7 +13,7 @@
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cmoduleindexdialog.h"
 
 #include "util/cresmgr.h"

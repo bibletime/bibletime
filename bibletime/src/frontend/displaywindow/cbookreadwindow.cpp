@@ -20,7 +20,7 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/keychooser/cbooktreechooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"

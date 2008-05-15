@@ -15,7 +15,7 @@
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 #include "backend/btmoduletreeitem.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/directoryutil.h"
 

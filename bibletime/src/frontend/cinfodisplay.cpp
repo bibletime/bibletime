@@ -16,7 +16,7 @@
 #include "backend/managers/creferencemanager.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/crossrefrendering.h"
 
 #include "frontend/display/cdisplay.h"

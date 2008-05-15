@@ -10,7 +10,7 @@
 #include "cdisplaysettings.h"
 #include "cdisplaysettings.moc"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/managers/cdisplaytemplatemgr.h"

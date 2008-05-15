@@ -31,6 +31,8 @@ SET(bibletime_SOURCES
 	src/backend/keys/cswordldkey.cpp
 	src/backend/keys/cswordtreekey.cpp
 	src/backend/keys/cswordversekey.cpp
+	#backend config
+	src/backend/config/cbtconfig.cpp
 	#backend
 	src/backend/cswordmodulesearch.cpp
 	src/backend/btmoduletreeitem.cpp
@@ -47,7 +49,6 @@ SET(bibletime_SOURCES
 	src/frontend/kstartuplogo.cpp
 	src/frontend/crossrefrendering.cpp
 	src/frontend/cprinter.cpp
-	src/frontend/cbtconfig.cpp
 	src/frontend/cmoduleindexdialog.cpp
 	src/frontend/cmdiarea.cpp
 	src/frontend/cinfodisplay.cpp
@@ -168,7 +169,7 @@ SET(bibletime_test_SOURCES
 	#main file
 	src/tests/bibletime_test.cpp
 	#frontend
-	src/tests/frontend/cbtconfig_test.cpp
+	src/tests/backend/config/cbtconfig_test.cpp
 )
 
 KDE4_ADD_UI_FILES(bibletime_SOURCES)

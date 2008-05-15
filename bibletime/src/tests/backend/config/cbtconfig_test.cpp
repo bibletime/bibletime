@@ -9,7 +9,7 @@
 
 #include "tests/bibletime_test.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QtTest/QtTest>
 

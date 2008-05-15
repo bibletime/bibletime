@@ -17,7 +17,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "cdisplayrendering.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include <boost/scoped_ptr.hpp>
 
 //Qt includes

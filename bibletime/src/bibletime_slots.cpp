@@ -21,7 +21,7 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/mainindex/cmainindex.h"

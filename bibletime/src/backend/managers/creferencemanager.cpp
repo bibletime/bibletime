@@ -10,7 +10,7 @@
 #include "creferencemanager.h"
 #include "backend/keys/cswordversekey.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 
 //QT

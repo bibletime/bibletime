@@ -20,7 +20,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/clanguagemgr.h"
 
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 
 #include "util/cpointers.h"

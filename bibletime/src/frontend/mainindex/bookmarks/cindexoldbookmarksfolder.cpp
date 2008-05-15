@@ -14,7 +14,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/cpointers.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QtXml/qdom.h>
 #include <QString>

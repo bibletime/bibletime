@@ -11,7 +11,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 

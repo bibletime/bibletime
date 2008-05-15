@@ -22,7 +22,7 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/kstartuplogo.h"
 #include "frontend/cprinter.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
 
 //QT includes

@@ -20,7 +20,7 @@
 
 #include "util/directoryutil.h"
 #include "util/cpointers.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
 
 #include <boost/scoped_ptr.hpp>

@@ -8,7 +8,7 @@
 **********/
 
 #include "bibletimeapp.h"
-#include "frontend/cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 #include "util/cresmgr.h"
 
 //KDE includes
