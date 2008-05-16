@@ -228,11 +228,11 @@ signals:
 protected:
 	/**
 	* Adds a render filter to the module.
-	* @param module Add a render filter to this module!
+	* This is used to apply our own render filters to our modules instead of the sword filters
 	*/
 	virtual void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
 	/**
-	* Initializes the filters provided by BibleTime.
+	* Overrides Sword filters which appear to be buggy.
 	*/
 	virtual void filterInit();
 	

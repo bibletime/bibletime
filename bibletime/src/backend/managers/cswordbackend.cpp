@@ -34,6 +34,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QSet>
+#include <QDebug>
 
 //Sword
 #include <swdisp.h>
@@ -88,6 +89,26 @@ CSwordBackend::~CSwordBackend() {
 	delete m_displays.book;
 	delete m_displays.chapter;
 	delete m_displays.entry;
+}
+
+void CSwordBackend::filterInit() {
+	//HACK: replace Sword's OSISMorphSegmentation filter, seems to be buggy, ours works
+	if (sword::SWOptionFilter* filter = optionFilters["OSISMorphSegmentation"])
+	{
+		cleanupFilters.remove(filter);
+		optionFilters.erase("OSISMorphSegmentation");
+		delete filter;
+	}
+	sword::SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
+	optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
+	cleanupFilters.push_back(tmpFilter);
+	
+	//HACK: replace Sword's ThML strip filter with our own version
+	//remove this hack as soon as Sword is fixed
+	cleanupFilters.remove(thmlplain);
+	delete thmlplain;
+	thmlplain = new BT_ThMLPlain();
+	cleanupFilters.push_back(thmlplain);
 }
 
 ListCSwordModuleInfo CSwordBackend::takeModulesFromList(QStringList names)
@@ -217,6 +238,20 @@ const bool CSwordBackend::shutdownModules() {
 	Q_ASSERT(m_moduleList.count() == 0);
 	//BT  mods are deleted now, delete Sword mods, too.
 	DeleteMods();
+
+	/* Cipher filters must be handled specially, because SWMgr creates them,
+	 * stores them in cipherFilters and cleanupFilters and attaches them to locked
+	 * modules. If these modules are removed, the filters need to be removed as well,
+	 * so that they are re-created for the new module objects.
+	 */
+	sword::FilterMap::iterator cipher_it;
+	for (cipher_it = cipherFilters.begin(); cipher_it != cipherFilters.end(); cipher_it++)
+	{
+		//Delete the Filter and remove it from the cleanup list
+		cleanupFilters.remove(cipher_it->second);
+		delete cipher_it->second;
+	}
+	cipherFilters.clear();
 
 	return true;
 }
@@ -505,21 +540,6 @@ const QStringList CSwordBackend::swordDirList() {
 	}
 
 	return ret.values();
-}
-
-void CSwordBackend::filterInit() {
-	//  qWarning("## INIT");
-
-	sword::SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
-	optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
-	cleanupFilters.push_back(tmpFilter);
-	
-	//HACK: replace Sword's ThML strip filter with our own version
-	//remove this hack as soon as Sword is fixed
-	cleanupFilters.remove(thmlplain);
-	delete thmlplain;
-	thmlplain = new BT_ThMLPlain();
-	cleanupFilters.push_back(thmlplain);
 }
 
 void CSwordBackend::notifyChange(SetupChangedReason reason)
