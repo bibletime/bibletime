@@ -273,13 +273,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					myUserData->suspendTextPassThru = true;
 					myUserData->noteType = BT_UserData::StrongsMarkup;
 				}
-				else if (type == "alternative") {
-					//      qWarning("found alternative");
-					//       buf.append(" <span class=\"alternative\">");
-					myUserData->noteType = BT_UserData::Alternative;
-					myUserData->suspendTextPassThru = true;
-					myUserData->swordFootnote++; // count as notes, too
-				}
+
 				else {
 					//           qWarning("found note in %s", myUserData->key->getShortText());
 					buf.append(" <span class=\"footnote\" note=\"");
@@ -306,13 +300,6 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					buf.append("</span> ");
 // 					myUserData->suspendTextPassThru = false;
 					myUserData->inCrossrefNote = false;
-				}
-				else if (myUserData->noteType == BT_UserData::Alternative) {
-					buf.append(" <span class=\"alternative\" alternative=\"");
-					buf.append(myUserData->lastTextNode);
-					buf.append("\" title=\"");
-					buf.append((const char*)QObject::tr("Alternative text").toUtf8().constData());
-					buf.append("\" />");
 				}
 
 				myUserData->noteType = BT_UserData::Unknown;
