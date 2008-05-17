@@ -250,8 +250,10 @@ void CSearchResultArea::initView()
 
 	//analyze button
 	hboxLayout = new QHBoxLayout();
-	m_analyseButton = new QPushButton(tr("&Analyze search..."), resultListsWidget);
-	hboxLayout->addWidget(m_analyseButton);
+	//disabled temporarily until analyze window is fixed:
+	//m_analyseButton = new QPushButton(tr("&Analyze search..."), resultListsWidget);
+	m_analyseButton = new QPushButton(tr("&Analyze search..."), 0);
+	//hboxLayout->addWidget(m_analyseButton);
 	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	hboxLayout->addItem(spacerItem);
 	resultListsWidgetLayout->addLayout(hboxLayout);
