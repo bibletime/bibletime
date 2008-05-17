@@ -4,6 +4,7 @@
 	* i18n of UI strings is now handled by QT
 	* Massive code cleanups and internal refactoring
 	* New bookshelf manager
+	* New external communications interface DBUS (instead of DCOP)
 	* Bookshelf improvements
 		* Separation of works and bookmarks on two tabs
 		* Different work grouping types supported
