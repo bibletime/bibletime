@@ -22,7 +22,7 @@ BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info
 	//Set the flag to destroy when closed - otherwise eats memory
 	setAttribute(Qt::WA_DeleteOnClose);
 	setWindowTitle(tr("Information About") + QString(" ") + info->name());
-    resize(650, 500);
+    resize(650, 400);
     QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
     QTextEdit* textEdit = new QTextEdit(this);
