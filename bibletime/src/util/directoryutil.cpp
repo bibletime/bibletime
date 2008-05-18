@@ -234,17 +234,19 @@ QDir DirectoryUtil::getIconDir(void)
 QIcon DirectoryUtil::getIcon(const QString& name)
 {
 	static QMap<QString, QIcon> iconCache;
-
-	if (iconCache.contains(name)) {
-		return iconCache.value(name);
+	//error if trying to use name directly...
+	QString name2(name);
+	QString plainName = name2.remove(".svg", Qt::CaseInsensitive);
+	if (iconCache.contains(plainName)) {
+		return iconCache.value(plainName);
 	}
 
 	QString iconDir = getIconDir().canonicalPath();
-	QString iconFileName = iconDir + "/" + name;
+	QString iconFileName = iconDir + "/" + plainName + ".svg";
 	if (QFile(iconFileName).exists())
 	{
 		QIcon ic = QIcon(iconFileName);
-		iconCache.insert(name, ic);
+		iconCache.insert(plainName, ic);
 		return ic;
 	}
 	else
