@@ -174,7 +174,7 @@ void CSearchDialog::initView()
 {
 	setMainWidget(new QWidget(this));	
 
-	setButtonToolTip(User1, CResMgr::searchdialog::searchButton::tooltip);
+	setButtonToolTip(User1, tr("Start to search the text in the chosen works"));
 	QVBoxLayout *box = new QVBoxLayout( mainWidget());
 	mainWidget()->setLayout(box);
 

@@ -731,6 +731,26 @@ namespace workspace {}
 			extern const QString icon;
 		}
 	}
+
+	namespace bookshelfmgr {
+		namespace installpage {
+			extern const QString icon;
+			extern const QString refresh_icon;
+			extern const QString delete_icon;
+			extern const QString add_icon;
+			extern const QString install_icon;
+			extern const QString path_icon;
+		}
+		namespace removepage {
+			extern const QString icon;
+			extern const QString remove_icon;
+		}
+		namespace indexpage {
+			extern const QString icon;
+			extern const QString create_icon;
+			extern const QString delete_icon;
+		}
+	}
 }
 
 #endif

@@ -253,6 +253,7 @@ void CSearchResultArea::initView()
 	//disabled temporarily until analyze window is fixed:
 	//m_analyseButton = new QPushButton(tr("&Analyze search..."), resultListsWidget);
 	m_analyseButton = new QPushButton(tr("&Analyze search..."), 0);
+	//m_analyzeButton->setToolTip(tr("Show a graphical analyzis of the search result"));
 	//hboxLayout->addWidget(m_analyseButton);
 	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	hboxLayout->addItem(spacerItem);
@@ -782,14 +783,16 @@ void CSearchOptionsArea::initView()
 	m_syntaxButton = new QPushButton(tr("&Help..."), searchGroupBox);
 	gridLayout->addWidget(m_syntaxButton, 0, 2);
 	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
+	m_syntaxButton->setToolTip("Show short help for the search syntax");
 
 	m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
 	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
-	m_chooseModulesButton->setToolTip( CResMgr::searchdialog::options::moduleChooserButton::tooltip);
+	m_chooseModulesButton->setToolTip( tr("Choose works for the search"));
 	gridLayout->addWidget(m_chooseModulesButton, 1, 2);
 
 	m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
 	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
+	m_chooseRangeButton->setToolTip("Configure predefined scopes for search");
 	gridLayout->addWidget(m_chooseRangeButton, 2, 2);
 
 	// ************* Label for search range/scope selector *************
@@ -806,7 +809,7 @@ void CSearchOptionsArea::initView()
 	sizePolicy2.setVerticalStretch(0);
 	sizePolicy2.setHeightForWidth(m_rangeChooserCombo->sizePolicy().hasHeightForWidth());
 	m_rangeChooserCombo->setSizePolicy(sizePolicy2);
-	m_rangeChooserCombo->setToolTip( CResMgr::searchdialog::options::chooseScope::tooltip);
+	m_rangeChooserCombo->setToolTip(tr("Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries."));
 	gridLayout->addWidget(m_rangeChooserCombo, 2, 1);
 
 	// ************* Search text combo box *******************
@@ -816,17 +819,9 @@ void CSearchOptionsArea::initView()
 	m_searchTextCombo->setFocusPolicy(Qt::WheelFocus);
 	m_searchTextCombo->setProperty("sizeLimit", QVariant(25));
 	m_searchTextCombo->setProperty("duplicatesEnabled", QVariant(false));
-	m_searchTextCombo->setToolTip(CResMgr::searchdialog::options::searchedText::tooltip);
+	m_searchTextCombo->setToolTip(tr("The text you want to search for"));
 	gridLayout->addWidget(m_searchTextCombo, 0, 1);
 	
-	//Modules label, the text will be set later
-	//m_modulesLabel = new QLabel( searchGroupBox);
-	//sizePolicy1.setHeightForWidth(m_modulesLabel->sizePolicy().hasHeightForWidth());
-	//m_modulesLabel->setSizePolicy(sizePolicy1);
-	//m_modulesLabel->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
-    //m_modulesLabel->setWordWrap(true);
-	//gridLayout->addWidget(m_modulesLabel, 1, 0, 1, 2);
-
 	m_modulesLabel = new QLabel(tr("Works:"), searchGroupBox);
 	gridLayout->addWidget(m_modulesLabel, 1, 0);
 	
@@ -838,7 +833,7 @@ void CSearchOptionsArea::initView()
 
 	refreshRanges();
 	//set the initial focus
-	m_searchTextCombo->setFocus();	
+	m_searchTextCombo->setFocus();
 	// event filter to prevent the Return/Enter presses in the combo box doing something
 	// in the parent widget
 	m_searchTextCombo->installEventFilter(this);
@@ -947,7 +942,6 @@ void CSearchOptionsArea::saveSettings() {
 void CSearchOptionsArea::readSettings() {
 	m_searchTextCombo->completionObject()->setItems( CBTConfig::get(CBTConfig::searchCompletionTexts) );
 	m_searchTextCombo->setHistoryItems( CBTConfig::get(CBTConfig::searchTexts) );
-	//TODO: set the module selector items
 	m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
 	for (int i = 0; i < m_modulesCombo->count(); ++i) {
 		m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);

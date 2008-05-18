@@ -35,7 +35,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 {
 	// we want this dialog to be deleted when user closes it or the downloads are completed
 	setAttribute(Qt::WA_DeleteOnClose, true);
-
+	setWindowTitle(tr("Install Progress"));
 	//create the dialog which shows the status and lets the user stop installation
 	m_statusWidget = new QTreeWidget();
 	m_statusWidget->setRootIsDecorated(false);

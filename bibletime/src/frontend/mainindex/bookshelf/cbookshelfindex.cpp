@@ -150,7 +150,7 @@ void CBookshelfIndex::initActions()
 	action->setProperty("grouping", BTModuleTreeItem::LangMod);
 	m_actionList.append(action);
 
-	action = newQAction(tr("Works Only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
+	action = newQAction(tr("Works only"),CResMgr::mainIndex::grouping::icon, 0, 0, 0, this);
 	action->setCheckable(true);
 	m_groupingGroup->addAction(action);
 	if (m_grouping == BTModuleTreeItem::Mod) action->setChecked(true);
@@ -165,7 +165,7 @@ void CBookshelfIndex::initActions()
 
 
 	// ------------Hide---------------------
-	action = newQAction(tr("Hide/Unhide Works..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
+	action = newQAction(tr("Hide/unhide works..."),CResMgr::mainIndex::search::icon, 0, this, SLOT(actionHideModules()), this);
 	action->setProperty("indexActionType", QVariant(HideModules));
 	//action->setProperty("multiItemAction", QVariant(true));
 	m_popup->addAction(action);
@@ -173,7 +173,7 @@ void CBookshelfIndex::initActions()
 
 // -------------------Show hidden---------------------------
 	qDebug("*****************create Show Hidden***************");
-	action = newQAction(tr("Show Hidden"),CResMgr::mainIndex::search::icon, 0, 0, 0, this);
+	action = newQAction(tr("Show hidden"),CResMgr::mainIndex::search::icon, 0, 0, 0, this);
 	action->setProperty("indexActionType", QVariant(ShowAllModules));
 	action->setCheckable(true);
 	QObject::connect(action, SIGNAL(toggled(bool)), this, SLOT(actionShowModules(bool)));
@@ -195,13 +195,13 @@ void CBookshelfIndex::initActions()
 	actionMenu->setProperty("singleItemAction", QVariant(true));
 	//m_actionList.append(actionMenu);
 
-	action = newQAction(tr("Plain text"),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(actionEditModulePlain()), this);
+	action = newQAction(tr("Plain text..."),CResMgr::mainIndex::editModulePlain::icon, 0, this, SLOT(actionEditModulePlain()), this);
 	actionMenu->addAction(action);
 	m_actionList.append(action);
 	action->setProperty("indexActionType", QVariant(EditModule));
 	action->setProperty("singleItemAction", QVariant(true));
 
-	action = newQAction(tr("HTML"),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(actionEditModuleHTML()), this);
+	action = newQAction(tr("HTML..."),CResMgr::mainIndex::editModuleHTML::icon, 0, this, SLOT(actionEditModuleHTML()), this);
 	actionMenu->addAction(action);
 	m_actionList.append(action);
 	action->setProperty("indexActionType", QVariant(EditModule));
@@ -485,7 +485,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 					BTIndexModule* modItem = dynamic_cast<BTIndexModule*>(btItem);
 					if (modItem) {
 						CSwordModuleInfo* info = modItem->moduleInfo();
-						action->setText(QString(tr("Search in")).append(QString(" ").append(info->name())));
+						action->setText(QString(tr("Search in")).append(QString(" ").append(info->name()).append("...")));
 					}
 				}
 				else {
@@ -500,7 +500,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 		foreach (QAction* action, m_actionList) {
 			// Change the text of some menu items to reflect multiple selection
 			if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
-				action->setText( QString(tr("Search in Selected")) );
+				action->setText( QString(tr("Search in selected...")) );
 			}
 			// Enable items
 			foreach(QTreeWidgetItem* item, items) {
@@ -555,7 +555,7 @@ void CBookshelfIndex::actionUnlockModule() {
 		const QString unlockKey =
 			QInputDialog::getText(
 				this,
-				tr("BibleTime - Unlock work"),
+				tr("Unlock Work"),
 				tr("Enter the unlock key for this work."),
 				QLineEdit::Normal,
 				i->moduleInfo()->config(CSwordModuleInfo::CipherKey),

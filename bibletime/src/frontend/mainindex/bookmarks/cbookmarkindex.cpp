@@ -117,12 +117,12 @@ void CBookmarkIndex::initView()
 	m_actions.newFolder = newQAction(tr("New folder"), CResMgr::mainIndex::newFolder::icon, 0, this, SLOT(createNewFolder()), this);
 	m_actions.changeFolder = newQAction(tr("Rename folder"),CResMgr::mainIndex::changeFolder::icon, 0, this, SLOT(changeFolder()), this);
 
-	m_actions.changeBookmark = newQAction(tr("Change bookmark description"),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
-	m_actions.importBookmarks = newQAction(tr("Import bookmarks"),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
-	m_actions.exportBookmarks = newQAction(tr("Export bookmarks"),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
-	m_actions.printBookmarks = newQAction(tr("Print bookmarks"),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
+	m_actions.changeBookmark = newQAction(tr("Change bookmark description..."),CResMgr::mainIndex::changeBookmark::icon, 0, this, SLOT(changeBookmark()), this);
+	m_actions.importBookmarks = newQAction(tr("Import bookmarks..."),CResMgr::mainIndex::importBookmarks::icon, 0, this, SLOT(importBookmarks()), this);
+	m_actions.exportBookmarks = newQAction(tr("Export bookmarks..."),CResMgr::mainIndex::exportBookmarks::icon, 0, this, SLOT(exportBookmarks()), this);
+	m_actions.printBookmarks = newQAction(tr("Print bookmarks..."),CResMgr::mainIndex::printBookmarks::icon, 0, this, SLOT(printBookmarks()), this);
 
-	m_actions.deleteEntries = newQAction(tr("Remove selected item(s)"),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
+	m_actions.deleteEntries = newQAction(tr("Remove selected items..."),CResMgr::mainIndex::deleteItems::icon, 0, this, SLOT(deleteEntries()), this);
 
 
 	//fill the popup menu itself

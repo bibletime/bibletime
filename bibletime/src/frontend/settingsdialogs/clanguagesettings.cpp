@@ -45,14 +45,12 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addWidget(
 	CToolClass::explanationLabel(
 			this,
-			tr("Specify a language for names of Bible books"),
-			tr("Sword has a number of locales available which can be used to internationalize the \
-  names of books of the Bible. You can specify which locale to use. If you want to \
-  create a new locale, see http://www.crosswire.org/sword/develop for details."))
-			);
+			tr("Select the language for names of Bible books"),
+			tr("Select the language in which the Biblical book names are displayed.<br><br><small>Translated names come from the Sword project.</small>")
+			));
 
 	m_swordLocaleCombo = new QComboBox(this);
-	QLabel* label = new QLabel( tr("Language for names of Bible books"), this);
+	QLabel* label = new QLabel( tr("Language for names of Bible books:"), this);
 	label->setBuddy(m_swordLocaleCombo);
 	m_swordLocaleCombo->setToolTip(CResMgr::settings::sword::general::language::tooltip);
 
@@ -121,8 +119,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 		CToolClass::explanationLabel(
 			this,
 			tr("Select custom fonts per-language"),
-			tr("Here you find a list of all languages of the installed works. \
- You can specify a custom font for each language that needs a special font \
+			tr("You can specify a custom font for each language that needs a special font \
  to be displayed correctly.")
 		)
 	);

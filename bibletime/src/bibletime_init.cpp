@@ -45,7 +45,7 @@ using namespace Profile;
 /**Initializes the view of this widget*/
 void BibleTime::initView()
 {
-	KStartupLogo::setStatusMessage(tr("Creating BibleTime's GUI") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Creating BibleTime's user interface") + QString("..."));
 
 	m_mainSplitter = new QSplitter(this);
 	m_mainSplitter->setChildrenCollapsible(false);
@@ -104,7 +104,7 @@ void BibleTime::initActions()
 		tr("Quit"),
 		QString("exit.svg"),
 		QKeySequence(Qt::CTRL + Qt::Key_Q),
-		tr("Exit BibleTime"),
+		tr("Quit BibleTime"),
 		SLOT( close() )
 	);
 	fileMenu->addAction(tmp);
@@ -131,7 +131,7 @@ void BibleTime::initActions()
 		tr("&Show bookshelf"),
 		CResMgr::mainMenu::view::showMainIndex::icon,
 		CResMgr::mainMenu::view::showMainIndex::accel,
-		CResMgr::mainMenu::view::showMainIndex::tooltip,
+		tr("Show or hide the bookshelf"),
 		SLOT(slotToggleMainIndex())));
 	m_mainToolBar->addAction(m_viewMainIndex_action);
 
@@ -142,7 +142,7 @@ void BibleTime::initActions()
 		tr("Show &mag"),
 		CResMgr::mainMenu::view::showInfoDisplay::icon,
 		CResMgr::mainMenu::view::showInfoDisplay::accel,
-		CResMgr::mainMenu::view::showInfoDisplay::tooltip,
+		tr("Show or hide the mag"),
 		SLOT(slotToggleInfoDisplay())
 	));
 	viewMenu->addSeparator();
@@ -156,17 +156,17 @@ void BibleTime::initActions()
 		tr("&Fullscreen mode"),
 		CResMgr::mainMenu::window::showFullscreen::icon,
 		CResMgr::mainMenu::window::showFullscreen::accel,
-		CResMgr::mainMenu::window::showFullscreen::tooltip,
+		tr("Toggle fullscreen mode of the main window"),
 		SLOT(toggleFullscreen()))
 	);
 	m_mainToolBar->addAction(m_windowFullscreen_action);
 
 	tmp = initAction(
 		new QAction(this),
-		tr("Search in &open work(s)"),
+		tr("Search in &open works..."),
 		CResMgr::mainMenu::mainIndex::search::icon,
 		CResMgr::mainMenu::mainIndex::search::accel,
-		CResMgr::mainMenu::mainIndex::search::tooltip,
+		tr("Open the search dialog to search in all works that are currently open"),
 		SLOT( slotSearchModules() )
 	);
 	searchMenu->addAction(tmp);
@@ -175,10 +175,10 @@ void BibleTime::initActions()
 
 	searchMenu->addAction(initAction(
 		new QAction(this),
-		tr("Search in standard &Bible"),
+		tr("Search in standard &Bible..."),
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
-		CResMgr::mainMenu::mainIndex::searchdefaultbible::tooltip,
+		tr("Open the search dialog to search in the standard Bible"),
 		SLOT(slotSearchDefaultBible())));
 
 	m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
@@ -187,10 +187,10 @@ void BibleTime::initActions()
 	m_windowSaveToNewProfile_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowSaveToNewProfile_action,
-		tr("Save as &new session"),
+		tr("Save as &new session..."),
 		CResMgr::mainMenu::window::saveToNewProfile::icon,
 		CResMgr::mainMenu::window::saveToNewProfile::accel,
-		CResMgr::mainMenu::window::saveToNewProfile::tooltip,
+		tr("Create and save a new session"),
 		SLOT( saveToNewProfile() ))
 	);	
 
@@ -220,7 +220,7 @@ void BibleTime::initActions()
 		tr("&Manual mode"),
 		CResMgr::mainMenu::window::arrangementMode::manual::icon,
 		CResMgr::mainMenu::window::arrangementMode::manual::accel,
-		CResMgr::mainMenu::window::arrangementMode::manual::tooltip,
+		"",
 		SLOT( slotManualArrangementMode() ))
 	);
 
@@ -231,7 +231,7 @@ void BibleTime::initActions()
 		tr("Auto-tile &vertically"),
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::accel,
-		CResMgr::mainMenu::window::arrangementMode::autoTileVertical::tooltip,
+		tr("Automatically tile the open windows vertically (arrange side by side)"),
 		SLOT( slotAutoTileVertical() ))
 	);
 
@@ -242,7 +242,7 @@ void BibleTime::initActions()
 		tr("Auto-tile &horizontally"),
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
-		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::tooltip,
+		tr("Automatically tile the open windows horizontally (arrange on top of each other)"),
 		SLOT( slotAutoTileHorizontal() ))
 	);
 
@@ -253,7 +253,7 @@ void BibleTime::initActions()
 		tr("Auto-&cascade"),
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
-		CResMgr::mainMenu::window::arrangementMode::autoCascade::tooltip,
+		tr("Automatically cascade the open windows"),
 		SLOT( slotAutoCascade() ))
 	);
 
@@ -263,7 +263,7 @@ void BibleTime::initActions()
 		tr("&Cascade"),
 		CResMgr::mainMenu::window::cascade::icon,
 		CResMgr::mainMenu::window::cascade::accel,
-		CResMgr::mainMenu::window::cascade::tooltip,
+		tr("Cascade the open windows"),
 		SLOT( slotCascade() ))
 	);
 
@@ -273,7 +273,7 @@ void BibleTime::initActions()
 		tr("Tile &vertically"),
 		CResMgr::mainMenu::window::tileVertical::icon,
 		CResMgr::mainMenu::window::tileVertical::accel,
-		CResMgr::mainMenu::window::tileVertical::tooltip,
+		tr("Vertically tile (arrange side by side) the open windows"),
 		SLOT( slotTileVertical() ))
 	);
 
@@ -283,7 +283,7 @@ void BibleTime::initActions()
 		tr("Tile &horizontally"),
 		CResMgr::mainMenu::window::tileHorizontal::icon,
 		CResMgr::mainMenu::window::tileHorizontal::accel,
-		CResMgr::mainMenu::window::tileHorizontal::tooltip,
+		tr("Horizontally tile (arrange on top of each other) the open windows"),
 		SLOT( slotTileHorizontal() ))
 	);
 
@@ -293,26 +293,26 @@ void BibleTime::initActions()
 		tr("Cl&ose all"),
 		CResMgr::mainMenu::window::closeAll::icon,
 		CResMgr::mainMenu::window::closeAll::accel,
-		CResMgr::mainMenu::window::closeAll::tooltip,
+		tr("Close all open windows"),
 		0)
 	);
 	QObject::connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT( deleteAll() ) );
 
  	settingsMenu->addAction(initAction(
 		new QAction(this),
-		tr("&Configure BibleTime"),
+		tr("&Configure BibleTime..."),
 		"configure.svg",
 		QKeySequence(),
-		"",
+		tr("Set BibleTime's preferences"),
 		SLOT( slotSettingsOptions() )));
 	settingsMenu->addSeparator();
  
  	settingsMenu->addAction(initAction(
 		new QAction(this),
-		tr("Bookshelf &Manager"),
+		tr("Bookshelf &Manager..."),
 		CResMgr::mainMenu::settings::swordSetupDialog::icon,
 		CResMgr::mainMenu::settings::swordSetupDialog::accel,
-		CResMgr::mainMenu::settings::swordSetupDialog::tooltip,
+		tr("Configure your bookshelf and install/update/remove/index works"),
 		SLOT( slotSwordSetupDialog() )));
 
 	tmp = initAction(
@@ -320,7 +320,7 @@ void BibleTime::initActions()
 		tr("&Handbook"),
 		CResMgr::mainMenu::help::handbook::icon,
 		CResMgr::mainMenu::help::handbook::accel,
-		CResMgr::mainMenu::help::handbook::tooltip,
+		tr("Open BibleTime's handbook"),
 		SLOT( openOnlineHelp_Handbook() )
 	);
 	helpMenu->addAction(tmp);
@@ -331,7 +331,7 @@ void BibleTime::initActions()
 		tr("&Bible Study Howto"),
 		CResMgr::mainMenu::help::bibleStudyHowTo::icon,
 		CResMgr::mainMenu::help::bibleStudyHowTo::accel,
-		CResMgr::mainMenu::help::bibleStudyHowTo::tooltip,
+		tr("Open the Bible study HowTo included with BibleTime.<BR>This HowTo is an introduction on how to study the Bible in an efficient way."),
 		SLOT( openOnlineHelp_Howto() ))
 	);
 	
@@ -438,7 +438,7 @@ void BibleTime::initBackends() {
 // 		}
 	}
 
-	KStartupLogo::setStatusMessage(tr("Checking indices") + QString("..."));
+	KStartupLogo::setStatusMessage(tr("Checking indexes") + QString("..."));
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false

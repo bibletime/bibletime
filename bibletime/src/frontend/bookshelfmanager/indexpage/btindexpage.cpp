@@ -75,8 +75,8 @@ BtIndexPage::BtIndexPage()
 	m_autoDeleteOrphanedIndicesBox->setChecked( CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) );
 
 	// icons for our buttons
-	m_createButton->setIcon(util::filesystem::DirectoryUtil::getIcon("folder_new"));
-	m_deleteButton->setIcon(util::filesystem::DirectoryUtil::getIcon("remove"));
+	m_createButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
+	m_deleteButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
 
 	// connect our signals/slots
 	connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));
@@ -97,7 +97,7 @@ QString BtIndexPage::label()
 }
 QString BtIndexPage::iconName()
 {
-	return "index";
+	return CResMgr::bookshelfmgr::indexpage::icon;
 }
 QString BtIndexPage::header()
 {

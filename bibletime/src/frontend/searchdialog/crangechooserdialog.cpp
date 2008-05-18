@@ -101,12 +101,15 @@ void CRangeChooserDialog::initView()
 	vboxLayout1->addWidget(rangeListLabel);
 
 	m_rangeList = new QListWidget(this);
+	m_rangeList->setToolTip(tr("Select a scope from the list to edit the search ranges"));
 	vboxLayout1->addWidget(m_rangeList);
 
 	QHBoxLayout* hboxLayout1 = new QHBoxLayout();
-	m_newRangeButton = new QPushButton(tr("&Add new range"), this);
+	m_newRangeButton = new QPushButton(tr("&Add new scope"), this);
+	m_newRangeButton->setToolTip(tr("Add a new search scope. First enter an appropriate name, then edit the search ranges."));
 	hboxLayout1->addWidget(m_newRangeButton);
-	m_deleteRangeButton = new QPushButton(tr("Delete current &range"), this);
+	m_deleteRangeButton = new QPushButton(tr("Delete current &scope"), this);
+	m_deleteRangeButton->setToolTip(tr("Delete the selected search scope"));
 	hboxLayout1->addWidget(m_deleteRangeButton);
 
 	vboxLayout1->addLayout(hboxLayout1);
@@ -118,6 +121,7 @@ void CRangeChooserDialog::initView()
 	hboxLayout2->addWidget(nameEditLabel);
 
 	m_nameEdit = new QLineEdit(this);
+	m_nameEdit->setToolTip(tr("Change the name of the selected search scope"));
 	hboxLayout2->addWidget(m_nameEdit);
 	vboxLayout2->addLayout(hboxLayout2);
 
@@ -125,6 +129,7 @@ void CRangeChooserDialog::initView()
 	vboxLayout2->addWidget(rangeEditLabel);
 
 	m_rangeEdit = new QTextEdit(this);
+	m_rangeEdit->setToolTip(tr("Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed."));
 
 	vboxLayout2->addWidget(m_rangeEdit);
 
@@ -132,6 +137,7 @@ void CRangeChooserDialog::initView()
     vboxLayout2->addWidget(resultListLabel);
 
 	m_resultList = new QListWidget(this);
+	m_resultList->setToolTip(tr("The search ranges which will be used for the search, parsed to the canonical form"));
 	vboxLayout2->addWidget(m_resultList);
 
 	hboxLayout->addLayout(vboxLayout2);

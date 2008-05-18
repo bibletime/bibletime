@@ -23,23 +23,23 @@ namespace CResMgr {
 			const QString icon_unlocked  = "bible.svg";
 			const QString icon_locked    = "bible_locked.svg";
 			const QString icon_add       = "bible_add.svg";
-		}
+		} //bible
 		namespace commentary {
 			const QString icon_unlocked  = "commentary.svg";
 			const QString icon_locked    = "commentary_locked.svg";
 			const QString icon_add       = "commentary_add.svg";
-		}
+		} //commentary
 		namespace lexicon {
 			const QString icon_unlocked  = "lexicon.svg";
 			const QString icon_locked    = "lexicon_locked.svg";
 			const QString icon_add       = "lexicon_add.svg";
-		}
+		}//lexicon
 		namespace book {
 			const QString icon_unlocked  = "book.svg";
 			const QString icon_locked    = "book_locked.svg";
 			const QString icon_add       = "book_add.svg";
-		}
-	}
+		}//book
+	}//modules
 
 	namespace categories {
 		namespace bibles {
@@ -66,7 +66,7 @@ namespace CResMgr {
 		namespace cults {
 			const QString icon 			= "questionable.svg";
 		}
-	}
+	}//categories
 	namespace mainMenu { //Main menu
 		namespace file { //Main menu->File
 			namespace print { //a standard action
@@ -77,7 +77,7 @@ namespace CResMgr {
 				QString tooltip;
 
 			}
-		}
+		}//file
 
 		namespace view { //Main menu->View
 			namespace showMainIndex {
@@ -98,9 +98,9 @@ namespace CResMgr {
 				QString tooltip;
 
 			}
-		}
+		}//mainMenu::view
 
-		namespace mainIndex { //Main menu->Settings
+		namespace mainIndex {
 			namespace search {
 				QString tooltip;
 
@@ -115,9 +115,9 @@ namespace CResMgr {
 				const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_F);
 				const char* actionName    = "mainindex_searchdefaultbible_action";
 			}
-		}
+		}//mainMenu::mainIndex
 
-		namespace window { //Main menu->Window
+		namespace window { //mainMenu::window
 			namespace loadProfile {
 				QString tooltip;
 
@@ -214,7 +214,7 @@ namespace CResMgr {
 				const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_W);
 				const char* actionName    = "windowCloseAll_action";
 			}
-		}
+		}//mainMenu::window
 
 		namespace settings { //Main menu->Settings
 			namespace editToolBar { // available as KStdAction
@@ -233,7 +233,7 @@ namespace CResMgr {
 				const char* actionName    = "options_sword_setup";
 			}
 
-		}
+		}//mainMenu::settings
 
 		namespace help { //Main menu->Help
 			namespace handbook {
@@ -262,8 +262,8 @@ namespace CResMgr {
 				QString tooltip;
 
 			}
-		}
-	}  //end of main menu
+		}//mainMenu::help
+	}  //end of mainMenu
 
 	namespace searchdialog {
 		const QString icon = "find.svg";
@@ -377,7 +377,7 @@ namespace CResMgr {
 
 			}
 		}
-	}
+	} //searchDialog
 
 	namespace workspace {}
 
@@ -516,14 +516,14 @@ namespace CResMgr {
 			namespace saveText {
 				QString tooltip;
 
-				const QString icon      = "file_save.svg";
+				const QString icon      = "file_save";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_saveText";
 			}
 			namespace restoreText {
 				QString tooltip;
 
-				const QString icon      = "undo.svg";
+				const QString icon      = "import.svg";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_restoreText";
 			}
@@ -561,28 +561,28 @@ namespace CResMgr {
 			namespace alignLeft {
 				QString tooltip;
 
-				const QString icon      = "text_left.svg";
+				const QString icon      = "text_leftalign";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignLeft";
 			}
 			namespace alignCenter {
 				QString tooltip;
 
-				const QString icon      = "text_center.svg";
+				const QString icon      = "text_center";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignCenter";
 			}
 			namespace alignRight {
 				QString tooltip;
 
-				const QString icon      = "rightjust.svg";
+				const QString icon      = "text_rightalign";
 				const QKeySequence accel;
 				const char* actionName  = "writeWindow_alignRight";
 			}
 			namespace alignJustify {
 				QString tooltip;
 
-				const QString icon      = "text_block.svg";
+				const QString icon      = "text_justify";
 				const QKeySequence accel;
 				const char* actionName = "writeWindow_alignJustify";
 			}
@@ -603,7 +603,7 @@ namespace CResMgr {
 				QString tooltip;
 			}
 		}
-	}
+	}//displayWindows
 
 	namespace settings {
 		namespace startup {
@@ -677,7 +677,7 @@ namespace CResMgr {
 		namespace keys {
 			const QString icon = "key_bindings.svg";
 		}
-	}
+	}//settings
 
 	namespace mainIndex { // Bookshelf view
 		namespace search {
@@ -738,7 +738,28 @@ namespace CResMgr {
 		namespace grouping {
 			const QString icon = "view-tree.svg";
 		}
+	}//mainIndex
+
+	namespace bookshelfmgr {
+		namespace installpage {
+			const QString icon = "bible_add";
+			const QString refresh_icon = "refresh";
+			const QString delete_icon = "trash";
+			const QString add_icon = "plus";
+			const QString install_icon = "bible_add";
+			const QString path_icon = "configure";
+		}
+		namespace removepage {
+			const QString icon = "trash";
+			const QString remove_icon = "trash";
+		}
+		namespace indexpage {
+			const QString icon = "document_magnifier";
+			const QString create_icon = "folder_new";
+			const QString delete_icon = "trash";
+		}
 	}
+	
 }
 
 
@@ -752,134 +773,31 @@ namespace CResMgr {
 				using namespace file;
 				{
 					using namespace print;
-					tooltip     = QObject::tr("Open the printer dialog of BibleTime.") ;
+					tooltip     = QObject::tr("Open the printer dialog") ;
 				}
 				{
 					using namespace quit;
-					tooltip     = QObject::tr("Close BibleTime and save the settings.") ;
+					tooltip     = QObject::tr("Close BibleTime and save the settings") ;
 				}
 
 				{
 					using namespace view;
 					{
-						using namespace showMainIndex;
-						tooltip     = QObject::tr("Show or hide the bookshelf.") ;
-					}
-					{
 						using namespace showToolBar;
-						tooltip     = QObject::tr("Toggle the main toolbar view.") ;
+						tooltip     = QObject::tr("Toggle the main toolbar view") ;
 					}
 				}
-
-				{
-					using namespace mainMenu::mainIndex;
-					{
-						using namespace search;
-						tooltip     = QObject::tr("Open the search dialog to search in all works that are currently open.") ;
-					}
-					{
-						using namespace searchdefaultbible;
-						tooltip     = QObject::tr("Open the search dialog to search in the standard Bible.") ;
-					}
-				};
 
 				{
 					using namespace window;
-					{
-						using namespace loadProfile;
-						tooltip     = QObject::tr("Restore a saved BibleTime session.") ;
-					}
-					{
-						using namespace saveProfile;
-						tooltip     = QObject::tr("Save current BibleTime session so that it can be reused later.") ;
-					}
-					{
-						using namespace saveToNewProfile;
-						tooltip     = QObject::tr("Create and save a new session.") ;
-					}
-					{
-						using namespace deleteProfile;
-						tooltip     = QObject::tr("Delete a BibleTime session.") ;
-					}
-					{
-						using namespace showFullscreen;
-						tooltip     = QObject::tr("Toggle fullscreen mode of the main window.") ;
-					}
-					{
-						using namespace tileVertical;
-						tooltip     = QObject::tr("Vertically tile the open windows.") ;
-					}
-					{
-						using namespace tileHorizontal;
-						tooltip     = QObject::tr("Horizontally tile the open windows.") ;
-					}
-					{
-						using namespace cascade;
-						tooltip     = QObject::tr("Cascade the open windows.") ;
-					}
+					
 					{
 						{
 							using namespace arrangementMode;
-							tooltip     = QObject::tr("Choose the way that is used to arrange the windows.") ;
-						}
-						{
-							using namespace arrangementMode::autoTileVertical;
-							tooltip     = QObject::tr("Automatically tile the open windows vertically.") ;
-						}
-						{
-							using namespace arrangementMode::autoTileHorizontal;
-							tooltip     = QObject::tr("Automatically tile the open windows horizontally.") ;
-						}
-						{
-							using namespace arrangementMode::autoCascade;
-							tooltip     = QObject::tr("Automatically cascade the open windows.") ;
+							tooltip     = QObject::tr("Choose the way to arrange the windows") ;
 						}
 					}
-					{
-						using namespace closeAll;
-						tooltip     = QObject::tr("Close all open windows.") ;
-					}
-				}
-
-				{
-					using namespace mainMenu::settings;
-					{
-						using namespace editToolBar;
-						tooltip     = QObject::tr("Open BibleTime's toolbar editor.") ;
-					}
-					{
-						using namespace optionsDialog;
-						tooltip     = QObject::tr("Open the dialog to set most of BibleTime's preferences.") ;
-					};
-					{
-						using namespace swordSetupDialog;
-						tooltip     = QObject::tr("Open the dialog to configure your bookshelf and install/update/remove works.") ;
-					}
-
-				}
-
-				{
-					using namespace help;
-					{
-						using namespace handbook;
-						tooltip     = QObject::tr("Open BibleTime's handbook.") ;
-					}
-					{
-						using namespace bibleStudyHowTo;
-						tooltip     = QObject::tr("Open the Bible study HowTo included with BibleTime.<BR>This HowTo is an introduction on how to study the Bible in an efficient way.") ;
-					}
-					{
-						using namespace bugreport;
-						tooltip     = QObject::tr("Send a bugreport to the developers of BibleTime.") ;
-					}
-					{
-						using namespace aboutBibleTime;
-						tooltip     = QObject::tr("Show detailed information about BibleTime.") ;
-					}
-					{
-						using namespace aboutKDE;
-						tooltip     = QObject::tr("Show detailed information about the KDE project.") ;
-					}
+					
 				}
 			}
 		}
@@ -887,98 +805,18 @@ namespace CResMgr {
 		{
 			using namespace searchdialog;
 			{
-				using namespace searchButton;
-				tooltip     = QObject::tr("Start to search the text in each of the chosen works.") ;
-			}
-			{
-				using namespace cancelSearchButton;
-				tooltip     = QObject::tr("Stop the active search.") ;
-			}
-
-			{
-				using namespace options;
-				{
-					using namespace moduleChooserButton;
-					tooltip     = QObject::tr("Choose works for the search.") ;
-				}
-				{
-					using namespace searchedText;
-					tooltip     = QObject::tr("The text you want to search for in the chosen works.") ;
-				}
-				{
-					using namespace searchType;
-					{
-						using namespace multipleWords_and;
-						tooltip     = QObject::tr("Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.") ;
-					}
-					{
-						using namespace multipleWords_or;
-						tooltip     = QObject::tr("Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.") ;
-					}
-					{
-						using namespace exactMatch;
-						tooltip     = QObject::tr("The search text will be used exactly as entered.") ;
-					}
-					{
-						using namespace regExp;
-						tooltip     = QObject::tr("Treat the search string as a GNU regular expression. The BibleTime handbook contains an introduction to regular expressions.") ;
-					}
-				}
-
-				{
-					using namespace searchOptions;
-					{
-						using namespace caseSensitive;
-						tooltip     = QObject::tr("Case sensitive distinguishes between upper and lowercase characters.") ;
-					}
-				}
-				{
-					using namespace chooseScope;
-					tooltip     = QObject::tr("Choose a scope from the list. \
-Select the first item to use no scope, the second one is to use each work's last search result as search scope. \
-The others are user defined search scopes.");
-				}
-				{
-					using namespace scopeEditor;
-					{
-						using namespace rangeList;
-						tooltip     = QObject::tr("Select an item from the list to edit the search scope.") ;
-					}
-					{
-						using namespace nameEdit;
-						tooltip     = QObject::tr("Change the name of the selected search scope.") ;
-					}
-					{
-						using namespace editRange;
-						tooltip     = QObject::tr("Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.") ;
-					}
-					{
-						using namespace parsedResult;
-						tooltip     = QObject::tr("Contains the search ranges which will be used for the search.") ;
-					}
-					{
-						using namespace addNewRange;
-						tooltip     = QObject::tr("Add a new search scope. First enter an appropriate name, then edit the search ranges.") ;
-					}
-					{
-						using namespace deleteCurrentRange;
-						tooltip     = QObject::tr("Deletes the selected search scope. If you cancel the dialog the settings won't be saved.") ;
-					}
-				}
-			}
-			{
 				using namespace result;
 				{
 					using namespace moduleList;
-					tooltip     = QObject::tr("The list of works chosen for the search.") ;
+					tooltip     = QObject::tr("Works chosen for the search") ;
 				}
 				{
 					using namespace foundItems;
-					tooltip     = QObject::tr("This list contains the search result of the selected work.") ;
+					tooltip     = QObject::tr("Search result of the selected work") ;
 				}
 				{
 					using namespace textPreview;
-					tooltip     = QObject::tr("The text preview of the selected search result item.") ;
+					tooltip     = QObject::tr("The text preview of the selected search result item") ;
 				}
 			}
 		}
@@ -994,82 +832,82 @@ The others are user defined search scopes.");
 					}
 					{
 						using namespace search;
-						tooltip = QObject::tr("Open the search dialog with the works of this window.") ;
+						tooltip = QObject::tr("Open the search dialog with the works of this window") ;
 
 					}
 					{
 						using namespace backInHistory;
-						tooltip = QObject::tr("Go back one item in the display history.") ;
+						tooltip = QObject::tr("Go back in the display history") ;
 					}
 					{
 						using namespace forwardInHistory;
-						tooltip = QObject::tr("Go forward one item in the display history.") ;
+						tooltip = QObject::tr("Go forward in the display history") ;
 
 					}
 					{
 						using namespace findStrongs;
-						tooltip = QObject::tr("Show all occurences of the Strong number currently under the mouse cursor.") ;
+						tooltip = QObject::tr("Find all occurences of the Strong number currently under the mouse cursor") ;
 					}
 				}
 				using namespace bibleWindow;
 				{
 					using namespace bookList;
-					tooltip = QObject::tr("This list contains the books which are available in this work.") ;
+					tooltip = QObject::tr("Books available in this work") ;
 				}
 				{
 					using namespace nextBook;
-					tooltip = QObject::tr("Show the next book of this work.") ;
+					tooltip = QObject::tr("Next book") ;
 				}
 				{
 					using namespace previousBook;
-					tooltip = QObject::tr("Show the previous book of this work.") ;
+					tooltip = QObject::tr("Previous book") ;
 				}
 				{
 					using namespace chapterList;
-					tooltip = QObject::tr("This list contains the chapters which are available in the current book.") ;
+					tooltip = QObject::tr("Chapters available in the current book") ;
 				}
 				{
 					using namespace nextChapter;
-					tooltip = QObject::tr("Show the next chapter of the work.") ;
+					tooltip = QObject::tr("Next chapter") ;
 				}
 				{
 					using namespace previousChapter;
-					tooltip = QObject::tr("Show the previous chapter of the work.") ;
+					tooltip = QObject::tr("Previous chapter") ;
 				}
 				{
 					using namespace verseList;
-					tooltip = QObject::tr("This list contains the verses which are available in the current chapter.") ;
+					tooltip = QObject::tr("Verses available in the current chapter") ;
 				}
 				{
 					using namespace nextVerse;
-					tooltip = QObject::tr("In  Bible texts, the next verse will be highlighted. In commentaries, the next entry will be shown.") ;
+					tooltip = QObject::tr("Next verse") ;
 
 				}
 				{
 					using namespace previousVerse;
-					tooltip = QObject::tr("In Bible texts, the previous verse will be highlighted. In commentaries, the previous entry will be shown.") ;
+					tooltip = QObject::tr("Previous verse") ;
 				}
 			}
 			{
 				using namespace commentaryWindow;
 				{
 					using namespace syncWindow;
-					tooltip = QObject::tr("Synchronize the displayed entry of this work with the active Bible window.") ;
+					tooltip = QObject::tr("Synchronize the displayed entry of this work with the active Bible window") ;
 				}
 			}
 			{
 				using namespace lexiconWindow;
 				{
 					using namespace entryList;
-					tooltip = QObject::tr("This list contains the entries of the current work.") ;
+					tooltip = QObject::tr("Entries of the current work") ;
 				}
 				{
 					using namespace nextEntry;
-					tooltip = QObject::tr("The next entry of the work will be shown.") ;
+					tooltip = QObject::tr("Next entry") ;
 				}
 				{
 					using namespace previousEntry;
-					tooltip = QObject::tr("The previous entry of the work will be shown.") ;
+					tooltip = QObject::tr("Previous entry") ;
 				}
 			}
 
@@ -1077,57 +915,57 @@ The others are user defined search scopes.");
 				using namespace writeWindow;
 				{
 					using namespace saveText;
-					tooltip   = QObject::tr("Save the curent text into the work. The old text will be overwritten.") ;
+					tooltip   = QObject::tr("Save the current text into the work overwriting the old text") ;
 				}
 				{
 					using namespace restoreText;
-					tooltip   = QObject::tr("Loads the old text from the work into the edit area. The unsaved text will be lost.") ;
+					tooltip   = QObject::tr("Load the old text from the work into the edit area deleting the text in the area") ;
 				}
 				{
 					using namespace deleteEntry;
-					tooltip   = QObject::tr("Deletes the current entry out of the work. The text will be lost.") ;
+					tooltip   = QObject::tr("Deletes the current entry out of the work (no undo!)") ;
 				}
 
 				//formatting buttons
 				{
 					using namespace boldText;
-					tooltip   = QObject::tr("Toggle bold formatting of the selected text.") ;
+					tooltip   = QObject::tr("Bold") ;
 				}
 				{
 					using namespace italicText;
-					tooltip   = QObject::tr("Toggle italic formatting of the selected text.") ;
+					tooltip   = QObject::tr("Italic") ;
 				}
 				{
 					using namespace underlinedText;
-					tooltip   = QObject::tr("Toggle underlined formatting of the selected text.") ;
+					tooltip   = QObject::tr("Underline") ;
 				}
 
 				{
 					using namespace alignLeft;
-					tooltip   = QObject::tr("The text will be aligned on the left side of the page.") ;
+					tooltip   = QObject::tr("Align left") ;
 				}
 				{
 					using namespace alignCenter;
-					tooltip   = QObject::tr("Centers the text horizontally.") ;
+					tooltip   = QObject::tr("Centered") ;
 				}
 				{
 					using namespace alignRight;
-					tooltip   = QObject::tr("Aligns the text on the right side of the page.") ;
+					tooltip   = QObject::tr("Align right") ;
 				}
 				{
 					using namespace alignJustify;
-					tooltip   = QObject::tr("Justifies the text on the page.") ;
+					tooltip   = QObject::tr("Justified") ;
 				}
 
 				{
 					using namespace fontFamily;
-					tooltip   = QObject::tr("Choose a new font for the selected text.") ;
+					tooltip   = QObject::tr("Font") ;
 				}
 				{ using namespace fontSize;
-					tooltip   = QObject::tr("Choose a new font size for the selected text.") ;
+					tooltip   = QObject::tr("Font size") ;
 				}
 				{ using namespace fontColor;
-					tooltip   = QObject::tr("Choose a new color for the selected text.") ;
+					tooltip   = QObject::tr("Font color") ;
 				}
 			}
 		}
@@ -1137,18 +975,18 @@ The others are user defined search scopes.");
 				using namespace startup;
 				{
 					using namespace showLogo;
-					tooltip   = QObject::tr("Activate this to see the BibleTime logo on startup.") ;
+					tooltip   = QObject::tr("Show the BibleTime logo on startup") ;
 				}
 				{
 					using namespace restoreWorkingArea;
-					tooltip   = QObject::tr("Save the user's session when BibleTime is closed and restore it on the next startup.") ;
+					tooltip   = QObject::tr("Save the user's session when BibleTime is closed and restore it on the next startup") ;
 				}
 			}
 			{
 				using namespace fonts;
 				{
 					using namespace typeChooser;
-					tooltip   = QObject::tr("The font selection below will apply to all texts in this language.") ;
+					tooltip   = QObject::tr("The font selection below will apply to all texts in this language") ;
 				}
 			}
 			{
@@ -1157,52 +995,11 @@ The others are user defined search scopes.");
 					using namespace general;
 					{
 						using namespace language;
-						tooltip   = QObject::tr("Contains the languages which can be used for the biblical booknames.") ;
+						tooltip   = QObject::tr("The languages which can be used for the biblical booknames") ;
 					}
 				}
-				{
-					using namespace settings::sword::modules;
-					{
-						using namespace bible;
-						tooltip   = QObject::tr("The standard Bible is used when a hyperlink into a Bible is clicked.") ;
-					}
-					{
-						using namespace commentary;
-						tooltip   = QObject::tr("The standard commentary is used when a hyperlink into a commentary is clicked.") ;
-					}
-					{
-						using namespace lexicon;
-						tooltip   = QObject::tr("The standard lexicon is used when a hyperlink into a lexicon is clicked.") ;
-					}
-					{
-						using namespace dailyDevotional;
-						tooltip   = QObject::tr("The standard devotional will be used to display a short start up devotional.") ;
-					}
-					{
-						using namespace hebrewStrongs;
-						tooltip   = QObject::tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked.") ;
-					}
-					{
-						using namespace greekStrongs;
-						tooltip   = QObject::tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked.") ;
-					}
-					{
-						using namespace hebrewMorph;
-						tooltip   = QObject::tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked.") ;
-					}
-					{
-						using namespace greekMorph;
-						tooltip   = QObject::tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked.") ;
-					}
-				}
+				
 			}
 		}
-		{
-			using namespace mainIndex;
-			{
-				using namespace search;
-				tooltip     = QObject::tr("Opens the search dialog to search in the works that are currently open.") ;
-			}
-		}
-	}
-}
+	} //init_tr()	
+} //CResMgr

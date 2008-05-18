@@ -29,6 +29,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"
+#include "util/cresmgr.h"
 
 #include <boost/scoped_ptr.hpp>
 
@@ -168,7 +169,7 @@ void BtInstallPage::slotEditPaths()
 
 QString BtInstallPage::iconName()
 {
-	return "install_modules.svg";
+	return CResMgr::bookshelfmgr::installpage::icon;
 }
 QString BtInstallPage::label()
 {

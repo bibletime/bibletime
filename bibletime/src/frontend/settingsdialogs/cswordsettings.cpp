@@ -63,73 +63,73 @@ StandardWorksTab::StandardWorksTab()
 	//Create selection boxes
 
 	m_standardBibleCombo = new QComboBox(this);
-	QLabel* label = new QLabel( tr("Standard Bible"), this);
+	QLabel* label = new QLabel( tr("Bible"), this);
 	label->setBuddy(m_standardBibleCombo);
 	////label->setAutoResize(true); //? not found in docs
-	m_standardBibleCombo->setToolTip(CResMgr::settings::sword::modules::bible::tooltip);
+	m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
 
 	gridLayout->addWidget(label,1,0);
 	gridLayout->addWidget(m_standardBibleCombo, 1, 1);
 
 	m_standardCommentaryCombo = new QComboBox(this);
-	label = new QLabel( tr("Standard Commentary"), this);
+	label = new QLabel( tr("Commentary"), this);
 	label->setBuddy(m_standardCommentaryCombo);
 	//label->setAutoResize(true);
-	m_standardCommentaryCombo->setToolTip(CResMgr::settings::sword::modules::commentary::tooltip);
+	m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
 
 	gridLayout->addWidget(label, 2, 0);
 	gridLayout->addWidget(m_standardCommentaryCombo, 2, 1);
 
 	m_standardLexiconCombo = new QComboBox(this);
-	label = new QLabel(tr("Standard Lexicon"), this);
+	label = new QLabel(tr("Lexicon"), this);
 	label->setBuddy(m_standardLexiconCombo);
 	//label->setAutoResize(true);
-	m_standardLexiconCombo->setToolTip(CResMgr::settings::sword::modules::lexicon::tooltip);
+	m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
 
 	gridLayout->addWidget(label,3,0);
 	gridLayout->addWidget(m_standardLexiconCombo, 3, 1);
 
 	m_standardDailyDevotionalCombo = new QComboBox(this);
-	label = new QLabel(tr("Standard Daily Devotional"), this);
+	label = new QLabel(tr("Daily Devotional"), this);
 	label->setBuddy(m_standardDailyDevotionalCombo);
 	//label->setAutoResize(true);
-	m_standardDailyDevotionalCombo->setToolTip(CResMgr::settings::sword::modules::dailyDevotional::tooltip);
+	m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
 
 	gridLayout->addWidget(label,4,0);
 	gridLayout->addWidget(m_standardDailyDevotionalCombo, 4, 1);
 
 	m_standardHebrewStrongCombo = new QComboBox(this);
-	label = new QLabel(tr("Standard Hebrew Strong's Lexicon"), this);
+	label = new QLabel(tr("Hebrew Strong's Lexicon"), this);
 	label->setBuddy(m_standardHebrewStrongCombo);
 	//label->setAutoResize(true);
-	m_standardHebrewStrongCombo->setToolTip(CResMgr::settings::sword::modules::hebrewStrongs::tooltip);
+	m_standardHebrewStrongCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
 
 	gridLayout->addWidget(label, 5, 0);
 	gridLayout->addWidget(m_standardHebrewStrongCombo, 5, 1);
 
 	m_standardGreekStrongCombo = new QComboBox(this);
-	label = new QLabel(tr("Standard Greek Strong's Lexicon"), this);
+	label = new QLabel(tr("Greek Strong's Lexicon"), this);
 	label->setBuddy(m_standardGreekStrongCombo);
 	//label->setAutoResize(true);
-	m_standardGreekStrongCombo->setToolTip(CResMgr::settings::sword::modules::greekStrongs::tooltip);
+	m_standardGreekStrongCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
 
 	gridLayout->addWidget(label, 6, 0);
 	gridLayout->addWidget(m_standardGreekStrongCombo, 6, 1);
 
 	m_standardHebrewMorphCombo = new QComboBox(this);
-	label = new QLabel( tr("Standard Hebrew Morphological Lexicon"), this);
+	label = new QLabel( tr("Hebrew Morphological Lexicon"), this);
 	label->setBuddy(m_standardHebrewMorphCombo);
 	//label->setAutoResize(true);
-	m_standardHebrewMorphCombo->setToolTip(CResMgr::settings::sword::modules::hebrewMorph::tooltip);
+	m_standardHebrewMorphCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
 
 	gridLayout->addWidget(label, 7, 0);
 	gridLayout->addWidget(m_standardHebrewMorphCombo, 7, 1);
 
 	m_standardGreekMorphCombo = new QComboBox(this);
-	label = new QLabel(tr("Standard Greek Morphological Lexicon"), this);
+	label = new QLabel(tr("Greek Morphological Lexicon"), this);
 	label->setBuddy(m_standardGreekMorphCombo);
 	//label->setAutoResize(true);
-	m_standardGreekMorphCombo->setToolTip(CResMgr::settings::sword::modules::greekMorph::tooltip);
+	m_standardGreekMorphCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));
 
 	gridLayout->addWidget(label, 8, 0);
 	gridLayout->addWidget(m_standardGreekMorphCombo, 8, 1);

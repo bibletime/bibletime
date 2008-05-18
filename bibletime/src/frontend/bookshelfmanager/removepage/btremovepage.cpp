@@ -12,12 +12,14 @@
 #include "btremovepage.moc"
 
 
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
 #include "backend/btmoduletreeitem.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
+
+#include "util/ctoolclass.h"
+#include "util/cpointers.h"
 #include "util/directoryutil.h"
+#include "util/cresmgr.h"
 
 #include <swmgr.h>
 #include <installmgr.h>
@@ -53,7 +55,7 @@ BtRemovePage::BtRemovePage()
 	layout->addWidget( m_view, 2, 0, 1, 2);
 
 	m_removeButton = new QPushButton(tr("Remove"), this);
-	m_removeButton->setIcon( util::filesystem::DirectoryUtil::getIcon("edittrash") );
+	m_removeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon) );
 	m_removeButton->setEnabled(false);
 	layout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
 
@@ -69,7 +71,7 @@ QString BtRemovePage::label()
 }
 QString BtRemovePage::iconName()
 {
-	return "remove_modules.svg";
+	return CResMgr::bookshelfmgr::removepage::icon;
 }
 QString BtRemovePage::header()
 {

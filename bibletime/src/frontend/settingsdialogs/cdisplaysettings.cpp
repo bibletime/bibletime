@@ -52,7 +52,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 		CToolClass::explanationLabel(
 				this,
 				tr("Display templates"),
-				tr("Display templates define how text is displayed. Please choose a template you like.")
+				tr("Display templates define how text is displayed.")
 				)
 		);
 
