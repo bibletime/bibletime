@@ -12,11 +12,11 @@
 
 * { 
 	/* To work around a KDE 3.2 bug / problem */
-	background-color:transparent;
+	/* background-color:white; #this seems to break*/
 }
 
 #content {
-	/*background-color:white;*/
+	background-color:white;
 	margin:10px;
 }
 #content > table {
@@ -38,10 +38,8 @@ a {
 	font-weight:normal;
 	/*color: #F98100;*/
 	padding:1px;
-	background-color:transparent;
 }
 a:hover {
-	background-color:transparent;
 	color: #FF0000;
 	padding:1px;
 	text-decoration:underline;
@@ -50,7 +48,7 @@ a:hover {
 /* Settings which apply to all entries in all modules */
 .entry {
 	padding: 2px;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	text-align: justify;
 }
 #printer .entry {
@@ -67,11 +65,9 @@ div.entry, td.entry {
 /* Keep the values the same as in .entry (take the border into account!) */
 .currententry {
 	padding: 2px;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	text-align: justify;
-	/*background-color:transparent;*/
 	/*color:white;*/
-	/*background-color:black;*/
 	/*The background colour of selected text as of kde 3.5.2*/
 	background-color: #A5A5FF;
 }
@@ -104,7 +100,6 @@ td.entry + td.entry {
 }
 #book span.currententry {
 }
-
 
 .entryname {
  	font-size:70%;
