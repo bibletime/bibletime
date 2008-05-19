@@ -63,7 +63,8 @@ StandardWorksTab::StandardWorksTab()
 	//Create selection boxes
 
 	m_standardBibleCombo = new QComboBox(this);
-	QLabel* label = new QLabel( tr("Bible"), this);
+	QLabel* label = new QLabel( tr("Bible:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardBibleCombo);
 	////label->setAutoResize(true); //? not found in docs
 	m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
@@ -72,7 +73,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardBibleCombo, 1, 1);
 
 	m_standardCommentaryCombo = new QComboBox(this);
-	label = new QLabel( tr("Commentary"), this);
+	label = new QLabel( tr("Commentary:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardCommentaryCombo);
 	//label->setAutoResize(true);
 	m_standardCommentaryCombo->setToolTip(tr("The standard commentary is used when a hyperlink into a commentary is clicked"));
@@ -81,7 +83,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardCommentaryCombo, 2, 1);
 
 	m_standardLexiconCombo = new QComboBox(this);
-	label = new QLabel(tr("Lexicon"), this);
+	label = new QLabel(tr("Lexicon:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardLexiconCombo);
 	//label->setAutoResize(true);
 	m_standardLexiconCombo->setToolTip(tr("The standard lexicon is used when a hyperlink into a lexicon is clicked"));
@@ -90,7 +93,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardLexiconCombo, 3, 1);
 
 	m_standardDailyDevotionalCombo = new QComboBox(this);
-	label = new QLabel(tr("Daily Devotional"), this);
+	label = new QLabel(tr("Daily devotional:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardDailyDevotionalCombo);
 	//label->setAutoResize(true);
 	m_standardDailyDevotionalCombo->setToolTip(tr("The standard devotional will be used to display a short start up devotional"));
@@ -99,7 +103,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardDailyDevotionalCombo, 4, 1);
 
 	m_standardHebrewStrongCombo = new QComboBox(this);
-	label = new QLabel(tr("Hebrew Strong's Lexicon"), this);
+	label = new QLabel(tr("Hebrew Strong's lexicon:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardHebrewStrongCombo);
 	//label->setAutoResize(true);
 	m_standardHebrewStrongCombo->setToolTip(tr("The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked"));
@@ -108,7 +113,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardHebrewStrongCombo, 5, 1);
 
 	m_standardGreekStrongCombo = new QComboBox(this);
-	label = new QLabel(tr("Greek Strong's Lexicon"), this);
+	label = new QLabel(tr("Greek Strong's lexicon:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardGreekStrongCombo);
 	//label->setAutoResize(true);
 	m_standardGreekStrongCombo->setToolTip(tr("The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked"));
@@ -117,7 +123,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardGreekStrongCombo, 6, 1);
 
 	m_standardHebrewMorphCombo = new QComboBox(this);
-	label = new QLabel( tr("Hebrew Morphological Lexicon"), this);
+	label = new QLabel( tr("Hebrew morphological lexicon:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardHebrewMorphCombo);
 	//label->setAutoResize(true);
 	m_standardHebrewMorphCombo->setToolTip(tr("The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked"));
@@ -126,7 +133,8 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(m_standardHebrewMorphCombo, 7, 1);
 
 	m_standardGreekMorphCombo = new QComboBox(this);
-	label = new QLabel(tr("Greek Morphological Lexicon"), this);
+	label = new QLabel(tr("Greek morphological lexicon:"), this);
+	label->setAlignment(Qt::AlignRight);
 	label->setBuddy(m_standardGreekMorphCombo);
 	//label->setAutoResize(true);
 	m_standardGreekMorphCombo->setToolTip(tr("The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked"));

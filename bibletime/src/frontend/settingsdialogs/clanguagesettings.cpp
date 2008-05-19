@@ -45,8 +45,8 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addWidget(
 	CToolClass::explanationLabel(
 			this,
-			tr("Select the language for names of Bible books"),
-			tr("Select the language in which the Biblical book names are displayed.<br><br><small>Translated names come from the Sword project.</small>")
+			tr("Language for names of Bible books"),
+			tr("Select the language in which the Biblical book names are displayed.<small><br><br>Translated names come from the Sword project.</small>")
 			));
 
 	m_swordLocaleCombo = new QComboBox(this);
@@ -118,7 +118,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	layout->addWidget(
 		CToolClass::explanationLabel(
 			this,
-			tr("Select custom fonts per-language"),
+			tr("Custom fonts"),
 			tr("You can specify a custom font for each language that needs a special font \
  to be displayed correctly.")
 		)
