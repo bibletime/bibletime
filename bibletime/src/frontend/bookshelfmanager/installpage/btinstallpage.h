@@ -22,6 +22,7 @@ class BtSourceWidget;
 
 class QComboBox;
 class QPushButton;
+class QToolButton;
 
 /**
 * The Install page includes module path chooser, source/module handler and install button.
@@ -56,7 +57,8 @@ private slots:
 private:
 	
 	QComboBox* m_pathCombo;
-	QPushButton* m_configurePathButton;
+	//QPushButton* m_configurePathButton;
+	QToolButton* m_configurePathButton;
 	BtSourceWidget* m_sourceWidget;
 	QPushButton* m_installButton;
 };

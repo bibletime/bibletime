@@ -121,20 +121,21 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	setTabOrder(m_textbox, 0);
 
+	QString scrollButtonToolTip(tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."));
     m_bookScroller->setToolTips(
-	    CResMgr::displaywindows::bibleWindow::nextBook::tooltip,
-	    CResMgr::displaywindows::general::scrollButton::tooltip,
-	    CResMgr::displaywindows::bibleWindow::previousBook::tooltip
+	    tr("Next book"),
+		scrollButtonToolTip,
+		tr("Previous book")
     );
     m_chapterScroller->setToolTips(
-        CResMgr::displaywindows::bibleWindow::nextChapter::tooltip,
-        CResMgr::displaywindows::general::scrollButton::tooltip,
-        CResMgr::displaywindows::bibleWindow::previousChapter::tooltip
+        tr("Next chapter"),
+        scrollButtonToolTip,
+        tr("Previous chapter")
     );
     m_verseScroller->setToolTips(
-        CResMgr::displaywindows::bibleWindow::nextVerse::tooltip,
-        CResMgr::displaywindows::general::scrollButton::tooltip,
-        CResMgr::displaywindows::bibleWindow::previousVerse::tooltip
+        tr("Next verse"),
+        scrollButtonToolTip,
+        tr("Previous verse")
     );
 
 	// signals and slots connections

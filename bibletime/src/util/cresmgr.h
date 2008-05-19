@@ -750,6 +750,11 @@ namespace workspace {}
 			extern const QString create_icon;
 			extern const QString delete_icon;
 		}
+		namespace paths {
+			extern const QString add_icon;
+			extern const QString edit_icon;
+			extern const QString remove_icon;
+		}
 	}
 }
 

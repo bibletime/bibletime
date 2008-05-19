@@ -43,6 +43,7 @@ CSearchResultView::~CSearchResultView() {}
 /** Initializes the view of this widget. */
 void CSearchResultView::initView()
 {
+	setToolTip(tr("Search result of the selected work"));
 	setHeaderLabel(tr("Results"));
 	setDragEnabled(true);
 	setRootIsDecorated( false );

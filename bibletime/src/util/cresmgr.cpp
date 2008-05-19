@@ -707,10 +707,10 @@ namespace CResMgr {
 			const QString icon = "bookmark.svg";
 		}
 		namespace importBookmarks {
-			const QString icon = "bookmark.svg";
+			const QString icon = "import.svg";
 		}
 		namespace exportBookmarks {
-			const QString icon = "bookmark.svg";
+			const QString icon = "export.svg";
 		}
 		namespace printBookmarks {
 			const QString icon = "print.svg";
@@ -758,6 +758,11 @@ namespace CResMgr {
 			const QString create_icon = "folder_new";
 			const QString delete_icon = "trash";
 		}
+		namespace paths {
+			const QString add_icon = "plus";
+			const QString edit_icon = "pencil";
+			const QString remove_icon = "trash";
+		}
 	}
 	
 }
@@ -803,90 +808,10 @@ namespace CResMgr {
 		}
 
 		{
-			using namespace searchdialog;
-			{
-				using namespace result;
-				{
-					using namespace moduleList;
-					tooltip     = QObject::tr("Works chosen for the search") ;
-				}
-				{
-					using namespace foundItems;
-					tooltip     = QObject::tr("Search result of the selected work") ;
-				}
-				{
-					using namespace textPreview;
-					tooltip     = QObject::tr("The text preview of the selected search result item") ;
-				}
-			}
-		}
-
-		{
 			using namespace displaywindows;
 			{
-				using namespace general;
-				{
-					{
-						using namespace scrollButton;
-						tooltip = QObject::tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.") ;
-					}
-					{
-						using namespace search;
-						tooltip = QObject::tr("Open the search dialog with the works of this window") ;
-
-					}
-					{
-						using namespace backInHistory;
-						tooltip = QObject::tr("Go back in the display history") ;
-					}
-					{
-						using namespace forwardInHistory;
-						tooltip = QObject::tr("Go forward in the display history") ;
-
-					}
-					{
-						using namespace findStrongs;
-						tooltip = QObject::tr("Find all occurences of the Strong number currently under the mouse cursor") ;
-					}
-				}
 				using namespace bibleWindow;
-				{
-					using namespace bookList;
-					tooltip = QObject::tr("Books available in this work") ;
-				}
-				{
-					using namespace nextBook;
-					tooltip = QObject::tr("Next book") ;
-				}
-				{
-					using namespace previousBook;
-					tooltip = QObject::tr("Previous book") ;
-				}
-				{
-					using namespace chapterList;
-					tooltip = QObject::tr("Chapters available in the current book") ;
-				}
-				{
-					using namespace nextChapter;
-					tooltip = QObject::tr("Next chapter") ;
-				}
-				{
-					using namespace previousChapter;
-					tooltip = QObject::tr("Previous chapter") ;
-				}
-				{
-					using namespace verseList;
-					tooltip = QObject::tr("Verses available in the current chapter") ;
-				}
-				{
-					using namespace nextVerse;
-					tooltip = QObject::tr("Next verse") ;
-
-				}
-				{
-					using namespace previousVerse;
-					tooltip = QObject::tr("Previous verse") ;
-				}
+				
 			}
 			{
 				using namespace commentaryWindow;

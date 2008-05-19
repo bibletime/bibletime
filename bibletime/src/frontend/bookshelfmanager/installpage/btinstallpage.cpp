@@ -12,7 +12,6 @@
 #include "btinstallpage.moc"
 
 #include "btinstallpathdialog.h"
-
 #include "btinstallprogressdialog.h"
 #include "btsourcewidget.h"
 #include "btsourcearea.h"
@@ -27,9 +26,11 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 #include <boost/scoped_ptr.hpp>
 
@@ -43,6 +44,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
+#include <QToolButton>
 #include <QSpacerItem>
 #include <QTabBar>
 #include <QStackedWidget>
@@ -95,11 +97,15 @@ void BtInstallPage::initView()
 	pathLayout->getContentsMargins(&left, &top, &right, &bottom);
 	pathLayout->setContentsMargins(left, top + 7, right, bottom + 7 );
 	QSpacerItem *pathSpacer= new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	QLabel* pathLabel = new QLabel(tr("Install Path:"));
+	QLabel* pathLabel = new QLabel(tr("Install path:"));
 	m_pathCombo = new QComboBox();
+	m_pathCombo->setToolTip(tr("The path where the new works will be installed"));
 	initPathCombo(); // set the paths and the current path
-	m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
-	
+	//m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
+	m_configurePathButton = new QToolButton(this);
+	m_configurePathButton->setToolTip(tr("Configure paths where works are installed"));
+	m_configurePathButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
+
 	pathLayout->addItem(pathSpacer);
 	pathLayout->addWidget(pathLabel);
 	pathLayout->addWidget(m_pathCombo);
@@ -115,7 +121,9 @@ void BtInstallPage::initView()
 	installButtonLayout->setContentsMargins(0,5,0,5);
 	QSpacerItem *installButtonSpacer = new QSpacerItem(371, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 	installButtonLayout->addItem(installButtonSpacer);
-	m_installButton = new QPushButton(tr("Install"), this);
+	m_installButton = new QPushButton(tr("Install..."), this);
+	m_installButton->setToolTip(tr("Install or update selected works"));
+	m_installButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
 	m_installButton->setEnabled(false);
 	installButtonLayout->addWidget(m_installButton);
 	

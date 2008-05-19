@@ -128,14 +128,10 @@ void CDisplayWindow::initActions()
 	qDebug("CDisplayWindow::initActions");	
 
 	KActionCollection* ac = actionCollection();
-	//Removed - this method adds objects with conflicting names and no
-	//	implementation.
-	//CDisplayWindow::insertKeyboardActions(ac);
-
 
 	KAction* kaction = new KAction(
 				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
-				tr("Search"),
+				tr("Open the search dialog with the works of this window"),
 				ac
 				);
 	kaction->setShortcut(CResMgr::displaywindows::general::search::accel);
@@ -143,8 +139,7 @@ void CDisplayWindow::initActions()
 	ac->addAction(CResMgr::displaywindows::general::search::actionName, kaction);
 
 	CDisplayConnections* conn = displayWidget()->connectionsProxy();
-	//ac->addAction(KStandardAction::zoomIn(displayWidget()->connectionsProxy(), SLOT(zoomIn()), ac	));
-	//ac->addAction(KStandardAction::zoomOut(displayWidget()->connectionsProxy(), SLOT(zoomOut()), ac ));
+
 	addAction(ac->addAction(KStandardAction::ZoomIn, "zoomIn", conn, SLOT(zoomIn())));
 	addAction(ac->addAction(KStandardAction::ZoomOut, "zoomOut", conn, SLOT(zoomOut())));
 	addAction(ac->addAction(KStandardAction::Close, "closeWindow", this, SLOT(close())));
@@ -152,25 +147,7 @@ void CDisplayWindow::initActions()
 	addAction(ac->addAction(KStandardAction::Copy, "copySelectedText", conn, SLOT(copySelection())));
 	addAction(ac->addAction(KStandardAction::Find, "findText", conn, SLOT(openFindTextDialog())));
 
-	//KStandardAction::close(this, SLOT(close()), ac);
-	//KStandardAction::selectAll(displayWidget()->connectionsProxy(), SLOT(selectAll()), ac);
-	//KStandardAction::copy(displayWidget()->connectionsProxy(), SLOT(copySelection()), ac);
-	//KStandardAction::find(displayWidget()->connectionsProxy(), SLOT(openFindTextDialog()), ac);
 
-
-/* kde/qt3:
-	new KToolBarPopupAction(
-		tr("Back in history"), CResMgr::displaywindows::general::backInHistory::icon, CResMgr::displaywindows::general::backInHistory::accel,
-		keyChooser(), SLOT( backInHistory() ),
-		actionCollection(), CResMgr::displaywindows::general::backInHistory::actionName
-	);
-
-	new KToolBarPopupAction(
-		tr("Forward in history"), CResMgr::displaywindows::general::forwardInHistory::icon, CResMgr::displaywindows::general::forwardInHistory::accel,
-		keyChooser(), SLOT( forwardInHistory() ),
-		actionCollection(), CResMgr::displaywindows::general::forwardInHistory::actionName
-	);
-*/
 	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
 			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 			tr("Back in history"),
@@ -187,12 +164,6 @@ void CDisplayWindow::initActions()
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
 	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
 	
-	//qDebug("actionCollection: ");
-	//foreach(QAction* a, actionCollection()->actions()) {
-	//	qDebug() << a->text();
-	//}
-
-//	CBTConfig::setupAccelSettings(CBTConfig::allWindows, actionCollection());
 }
 
 /** Refresh the settings of this window. */

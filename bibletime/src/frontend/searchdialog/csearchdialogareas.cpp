@@ -280,6 +280,7 @@ void CSearchResultArea::initView()
 	QVBoxLayout* frameLayout = new QVBoxLayout(m_displayFrame);
 	frameLayout->setContentsMargins(0,0,0,0);
 	m_previewDisplay = CDisplay::createReadInstance(0, m_displayFrame);
+	m_previewDisplay->view()->setToolTip(tr("Text of the selected search result item"));
 	frameLayout->addWidget(m_previewDisplay->view());
 	
 	loadDialogSettings();

@@ -51,7 +51,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *
 	m_widget->setToolTips(
 		CResMgr::displaywindows::lexiconWindow::entryList::tooltip,
 		CResMgr::displaywindows::lexiconWindow::nextEntry::tooltip,
-		CResMgr::displaywindows::general::scrollButton::tooltip,
+		tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."),
 		CResMgr::displaywindows::lexiconWindow::previousEntry::tooltip
 	);
 

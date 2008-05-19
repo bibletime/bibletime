@@ -80,11 +80,11 @@ void CCommentaryReadWindow::initToolbars() {
 
 	m_syncButton = new KToggleAction(
 			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
-			tr("Sync with active Bible"),
+			tr("Synchronize"),
 			actionCollection()
 			);
 	m_syncButton->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
-	m_syncButton->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);	
+	m_syncButton->setToolTip(tr("Synchronize the displayed entry of this work with the active Bible window"));
 	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_syncButton);
 	buttonsToolBar()->addAction(m_syncButton);
 }

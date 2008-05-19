@@ -56,7 +56,7 @@ CModuleResultView::~CModuleResultView()
 void CModuleResultView::initView()
 {
 	// see also csearchresultview.cpp
-	
+	setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
 	setHeaderLabels( QStringList(tr("Work")) << QString(tr("Hits")) );
 	//setFullWidth(true);
 	

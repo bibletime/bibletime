@@ -193,10 +193,11 @@ void CBibleReadWindow::initActions() {
 
 	m_actions.findStrongs = new KAction(
 		KIcon(CResMgr::displaywindows::general::findStrongs::icon),
-		tr("Strong's Search"),
+		tr("Strong's search"),
 		ac
 		);
 	m_actions.findStrongs->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+	m_actions.findStrongs->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
 	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
 	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
 

@@ -54,7 +54,8 @@ BtRemovePage::BtRemovePage()
 
 	layout->addWidget( m_view, 2, 0, 1, 2);
 
-	m_removeButton = new QPushButton(tr("Remove"), this);
+	m_removeButton = new QPushButton(tr("Remove..."), this);
+	m_removeButton->setToolTip(tr("Remove the selected works"));
 	m_removeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon) );
 	m_removeButton->setEnabled(false);
 	layout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);

@@ -14,6 +14,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
+#include "util/cresmgr.h"
 
 #include <QString>
 #include <QDialog>
@@ -32,18 +33,19 @@
 
 BtInstallPathDialog::BtInstallPathDialog()
 {
+	setWindowTitle(tr("Bookshelf Paths"));
 
-    QVBoxLayout *mainLayout;
-    QHBoxLayout *viewLayout;
+	QVBoxLayout *mainLayout;
+	QHBoxLayout *viewLayout;
 
-    mainLayout = new QVBoxLayout(this);
-    viewLayout = new QHBoxLayout();
+	mainLayout = new QVBoxLayout(this);
+	viewLayout = new QHBoxLayout();
 
 	QString l1 = tr("Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.");
 	QString l2 = tr("BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. \".sword\" directory in your home directory is always used automatically and can't be removed or added.");
 
 	QLabel* mainLabel = CToolClass::explanationLabel(this,
-		tr("Configure install paths"), l1 + QString("<small><br><br>") + l2 + QString("</small>"));
+		tr("Configure bookshelf paths"), l1 + QString("<small><br><br>") + l2 + QString("</small>"));
 	mainLayout->addWidget(mainLabel);
 
 	QString swordConfPath = instbackend::swordConfigFilename();
@@ -52,7 +54,7 @@ BtInstallPathDialog::BtInstallPathDialog()
 	mainLayout->addWidget(confPathLabel);
 
 
-    m_swordPathListBox = new QTreeWidget(this);
+	m_swordPathListBox = new QTreeWidget(this);
 	m_swordPathListBox->header()->hide();
 
 	QDir swordDir = instbackend::swordDir();
@@ -64,22 +66,25 @@ BtInstallPathDialog::BtInstallPathDialog()
 	
 	viewLayout->addWidget(m_swordPathListBox);
 
-    QVBoxLayout* buttonLayout = new QVBoxLayout();
+	QVBoxLayout* buttonLayout = new QVBoxLayout();
 
 	m_addButton = new QPushButton(tr("Add..."), this);
-	m_addButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_add"));
+	m_addButton->setToolTip(tr("Add new path"));
+	m_addButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::paths::add_icon));
 	connect(m_addButton, SIGNAL(clicked()), this, SLOT(slotAddClicked()));
-    buttonLayout->addWidget(m_addButton);
+	buttonLayout->addWidget(m_addButton);
 
 	m_editButton = new QPushButton(tr("Edit..."), this);
-	m_editButton->setIcon(util::filesystem::DirectoryUtil::getIcon("edit"));
+	m_editButton->setToolTip(tr("Edit the selected path"));
+	m_editButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::paths::edit_icon));
 	connect(m_editButton, SIGNAL(clicked()), this, SLOT(slotEditClicked()));
 	buttonLayout->addWidget(m_editButton);
 
 	m_removeButton = new QPushButton(tr("Remove"), this);
-	m_removeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("editdelete"));
+	m_removeButton->setToolTip(tr("Remove the selected path"));
+	m_removeButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::paths::remove_icon));
 	connect(m_removeButton, SIGNAL(clicked()), this, SLOT(slotRemoveClicked()));
-    buttonLayout->addWidget(m_removeButton);
+	buttonLayout->addWidget(m_removeButton);
 
 	QSpacerItem* spacerItem = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 	buttonLayout->addItem(spacerItem);
@@ -90,7 +95,7 @@ BtInstallPathDialog::BtInstallPathDialog()
 	QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
 	buttonBox->setOrientation(Qt::Horizontal);
 	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
-    mainLayout->addWidget(buttonBox);
+	mainLayout->addWidget(buttonBox);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
