@@ -8,7 +8,7 @@ This is an ALPHA version and for testing purposes only.
 1. INSTALLATION
 
 1.1 REQUIREMENTS
-	-QT 4.3+
+	-QT 4.4+
 	-KDE 4.0+
 	-Sword 1.5.9+ (http://crosswire.org/sword)
 	-CLucene 0.9.16a+ (http://clucene.sf.net)

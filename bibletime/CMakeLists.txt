@@ -206,16 +206,16 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 ADD_CUSTOM_TARGET("messages")
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 	ADD_CUSTOM_TARGET("messages_${MESSAGE_LOCALE_LANG}"
-		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.ts")
+		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.ts")
 	ADD_CUSTOM_TARGET("compile_messages_${MESSAGE_LOCALE_LANG}"
-		COMMAND lrelease "${MESSAGE_LOCALE_LANG}.ts" -qm "${MESSAGE_LOCALE_LANG}.qm"
+		COMMAND lrelease "bibletime_ui_${MESSAGE_LOCALE_LANG}.ts" -qm "bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/")
 	ADD_DEPENDENCIES("compile_messages_${MESSAGE_LOCALE_LANG}" "messages_${MESSAGE_LOCALE_LANG}")
 	ADD_DEPENDENCIES("messages" "compile_messages_${MESSAGE_LOCALE_LANG}")
 ENDFOREACH(MESSAGE_LOCALE_LANG)
 # Template file for translators
 ADD_CUSTOM_TARGET("messages_default"
-	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/messages.ts")
+	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui.ts")
 ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
