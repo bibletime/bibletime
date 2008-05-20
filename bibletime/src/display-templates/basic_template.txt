@@ -40,6 +40,8 @@ a:hover { }
 /* Special formatting for the block element entries */
 div.entry, td.entry { }
 
+td.currententry { }
+
 /* Currententry is chosen when the entry should be highlighted as the current entry chosen by the user
  currententry may apply to span, div, td (just like .entry)
  */
