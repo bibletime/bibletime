@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-01-25 19:40+0100\n"
+"POT-Creation-Date: 2008-05-20 18:50+0200\n"
 "PO-Revision-Date: 2004-02-04 11:05+0545\n"
 "Last-Translator:  <s970501@ku.edu.np>\n"
 "Language-Team:  <ko@li.org>\n"
@@ -1775,82 +1775,46 @@ msgstr ""
 "for his unethical behavior in cheating his master."
 
 # type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:6
+#: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:7
+#: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
-#: docs/howto/en/docbook/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "바이블스터디 하우투"
 
-#: docs/howto/en/docbook/index.docbook:32
-msgid "The team of &bibletime;, info@bibletime.info"
+#: docs/howto/en/docbook/index.docbook:31
+#, fuzzy
+msgid "The team of &bibletime; (info@bibletime.info)"
 msgstr "&bibletime;팀, info@bibletime.info"
 
-#: docs/howto/en/docbook/index.docbook:35
-msgid "Bob Harman"
-msgstr "밥(Bob) 하먼(Harman)"
-
-#: docs/howto/en/docbook/index.docbook:39
-#, fuzzy
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: docs/howto/en/docbook/index.docbook:36
 msgid ""
-"The copyright of this text is held by the author Bob Harman.  The text was "
-"adapted for publication with BibleTime by Fred Saalbach."
+"This document was originally created by Mr. Bob Harman and is licensed under "
+"the terms of the license <link url=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
-"이 텍스트의 판권은 저자 밥(Bob) 하먼(Harman)에게 있습니다. The text was "
-"adapted for publication with BibleTime by Fred Saalbach."
 
 #: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
-"Non exclusive serial rights for this distribution of this document with the "
-"&bibletime; software have been made. Redistribution as part of the Bibletime "
-"software without modification and limited reproduction as provided by the "
-"\"fair use\" provisions of the US copyright code are also permitted."
-msgstr ""
-"Non exclusive serial rights for this distribution of this document with the "
-"&bibletime; Software have been made. Redistribution as part of the Bibletime "
-"software without modification and limited reproduction as provided by the "
-"\"fair use\" provisions of the US copyright code are also permitted."
-
-#: docs/howto/en/docbook/index.docbook:48
-msgid ""
-"For questions regarding the use of this material contact Bob Harman c/o New "
-"Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
-"<email>ncc@ncchampton.org</email>."
-msgstr ""
-"바이블타임의 자료 사용을 위한 질문은 Bob Harman c/o New Covenant Church 1079 "
-"Big Bethel Rd. Hampton VA 23666 USA <email>ncc@ncchampton.org</email>으로 해"
-"주시기 바랍니다."
-
-#: docs/howto/en/docbook/index.docbook:52
-msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
-"indicated"
+"indicated."
 msgstr ""
 "인용된 성경 구절들은 특별히 명시되지 않았다면 개역한글성경(영문 성구는 New "
 "American Standard Bible)의 것들입니다."
 
-# type: Content of: <book><bookinfo><date>
-#: docs/howto/en/docbook/index.docbook:56
-msgid "06/16/2004"
-msgstr ""
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#: docs/howto/en/docbook/index.docbook:57
-msgid "1.02.00"
-msgstr ""
-
-#: docs/howto/en/docbook/index.docbook:61
+#: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "개요"
 
-#: docs/howto/en/docbook/index.docbook:63
+#: docs/howto/en/docbook/index.docbook:50
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
@@ -1858,14 +1822,14 @@ msgstr ""
 "<application>바이블스터디 하우투</application>는 성경공부를 위한 길잡이입니"
 "다."
 
-#: docs/howto/en/docbook/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:53
 #, fuzzy
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
 "readers to study the scriptures to see what they say.  This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine.  We expect you to read and study the scriptures to "
-"understand what they say.  If you start with the attitude that you want to "
+"denominational doctrine.  We recommend you to read and study the scriptures "
+"to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
 "이 하우투문서가 독자들이 성경이 말씀하고자 하는 것을 공부하는데 도움이 되길 "
@@ -1873,6 +1837,40 @@ msgstr ""
 "분들을 제하여 만들어졌습니다. 성경이 말씀하는 바를 알기위해서 말씀을 읽고 공"
 "부하시기를 소망합니다. 주님께서 말씀으로 여러분의 마음 속에 심으시기를 사모하"
 "는 마음으로 시작하신다면, 그분께서는 당신을 실망시키지 않을 것 입니다."
+
+#~ msgid "Bob Harman"
+#~ msgstr "밥(Bob) 하먼(Harman)"
+
+#, fuzzy
+#~ msgid ""
+#~ "The copyright of this text is held by the author Bob Harman.  The text "
+#~ "was adapted for publication with BibleTime by Fred Saalbach."
+#~ msgstr ""
+#~ "이 텍스트의 판권은 저자 밥(Bob) 하먼(Harman)에게 있습니다. The text was "
+#~ "adapted for publication with BibleTime by Fred Saalbach."
+
+#, fuzzy
+#~ msgid ""
+#~ "Non exclusive serial rights for this distribution of this document with "
+#~ "the &bibletime; software have been made. Redistribution as part of the "
+#~ "Bibletime software without modification and limited reproduction as "
+#~ "provided by the \"fair use\" provisions of the US copyright code are also "
+#~ "permitted."
+#~ msgstr ""
+#~ "Non exclusive serial rights for this distribution of this document with "
+#~ "the &bibletime; Software have been made. Redistribution as part of the "
+#~ "Bibletime software without modification and limited reproduction as "
+#~ "provided by the \"fair use\" provisions of the US copyright code are also "
+#~ "permitted."
+
+#~ msgid ""
+#~ "For questions regarding the use of this material contact Bob Harman c/o "
+#~ "New Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
+#~ "<email>ncc@ncchampton.org</email>."
+#~ msgstr ""
+#~ "바이블타임의 자료 사용을 위한 질문은 Bob Harman c/o New Covenant Church "
+#~ "1079 Big Bethel Rd. Hampton VA 23666 USA <email>ncc@ncchampton.org</email>"
+#~ "으로 해주시기 바랍니다."
 
 #~ msgid "<entry>8</entry>"
 #~ msgstr "<entry>8</entry>"
@@ -4365,16 +4363,16 @@ msgstr ""
 #~ "Trotzdem: Alles dran, alles drin - BibleTime ist ein funktional wie "
 #~ "optisch gelungenes Bibel-Programm, dem man unter Linux große Verbreitung "
 #~ "wünschen darf. Ein wenig bedauerlich ist das copyrightbedingte Fehlen der "
-#~ "»großen« zeitgenössischen Bibelübersetzungen. Dafür beschert BibleTime "
-#~ "dem Nutzer Einblicke in selten genutzte Übersetzungen und ein gutes "
-#~ "Handling griechischer und hebräischer Originaltexte."
+#~ "»großen« zeitgenössischen Bibelübersetzungen. Dafür beschert BibleTime dem "
+#~ "Nutzer Einblicke in selten genutzte Übersetzungen und ein gutes Handling "
+#~ "griechischer und hebräischer Originaltexte."
 #~ msgstr ""
 #~ "Trotzdem: Alles dran, alles drin - BibleTime ist ein funktional wie "
 #~ "optisch gelungenes Bibel-Programm, dem man unter Linux große Verbreitung "
 #~ "wünschen darf. Ein wenig bedauerlich ist das copyrightbedingte Fehlen der "
-#~ "»großen« zeitgenössischen Bibelübersetzungen. Dafür beschert BibleTime "
-#~ "dem Nutzer Einblicke in selten genutzte Übersetzungen und ein gutes "
-#~ "Handling griechischer und hebräischer Originaltexte."
+#~ "»großen« zeitgenössischen Bibelübersetzungen. Dafür beschert BibleTime dem "
+#~ "Nutzer Einblicke in selten genutzte Übersetzungen und ein gutes Handling "
+#~ "griechischer und hebräischer Originaltexte."
 
 #~ msgid ""
 #~ "The review is online at: <ulink url=\"http://www.pfarrer-pc.de/magazin/2-"

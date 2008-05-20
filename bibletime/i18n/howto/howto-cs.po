@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-01-25 19:40+0100\n"
+"POT-Creation-Date: 2008-05-20 18:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -11837,12 +11837,12 @@ msgstr ""
 "chování při podvádění svého pána."
 
 # type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:6
+#: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:7
+#: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
@@ -11896,7 +11896,7 @@ msgstr ""
 # #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
-#: docs/howto/en/docbook/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr "Jak studovat Bibli"
 
@@ -11950,123 +11950,64 @@ msgstr "Jak studovat Bibli"
 # #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
-#: docs/howto/en/docbook/index.docbook:32
-msgid "The team of &bibletime;, info@bibletime.info"
+#: docs/howto/en/docbook/index.docbook:31
+#, fuzzy
+msgid "The team of &bibletime; (info@bibletime.info)"
 msgstr "The team of &bibletime;, info@bibletime.info"
 
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-#: docs/howto/en/docbook/index.docbook:35
-msgid "Bob Harman"
-msgstr "Bob Harman"
-
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-#: docs/howto/en/docbook/index.docbook:39
-#, fuzzy
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: docs/howto/en/docbook/index.docbook:36
 msgid ""
-"The copyright of this text is held by the author Bob Harman.  The text was "
-"adapted for publication with BibleTime by Fred Saalbach."
+"This document was originally created by Mr. Bob Harman and is licensed under "
+"the terms of the license <link url=\"http://creativecommons.org/licenses/by-"
+"sa/3.0/\"> \"Creative Commons Attribution-Share Alike\"</link>."
 msgstr ""
-"Autorská práva (copyright) k tomuto textu vlastní autor Bob Harman. Text byl "
-"přizpůsoben k publikaci spolu s aplikací BibleTime Fredem Saalbachem."
 
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
 # #-#-#-#-#  cs.po  #-#-#-#-#
@@ -12075,144 +12016,12 @@ msgstr ""
 #: docs/howto/en/docbook/index.docbook:42
 #, fuzzy
 msgid ""
-"Non exclusive serial rights for this distribution of this document with the "
-"&bibletime; software have been made. Redistribution as part of the Bibletime "
-"software without modification and limited reproduction as provided by the "
-"\"fair use\" provisions of the US copyright code are also permitted."
-msgstr ""
-"Pro tuto distribuci tohoto dokumentu spolu s aplikací BibleTime byla "
-"poskytnuta neexklusivní práva. Redistribuce jako součást aplikace BibleTime "
-"bez úprav a omezená reprodukce podle ustanovení o \"slušném užití\" "
-"Amerického zákona o autorských právech jsou také dovoleny."
-
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-#: docs/howto/en/docbook/index.docbook:48
-msgid ""
-"For questions regarding the use of this material contact Bob Harman c/o New "
-"Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
-"<email>ncc@ncchampton.org</email>."
-msgstr ""
-"Pokud máte otázky ohledně používání tohoto textu, kontaktujte autora na "
-"adrese Bob Harman c/o New Covenant Church 1079 Big Bethel Rd. Hampton VA "
-"23666 USA <email>ncc@ncchampton.org</email>."
-
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-# #-#-#-#-#  cs.po  #-#-#-#-#
-# #-#-#-#-#  full.po  #-#-#-#-#
-#
-#: docs/howto/en/docbook/index.docbook:52
-msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
-"indicated"
+"indicated."
 msgstr ""
 "Biblické citace jsou z překladu Nové Bible Kralické, pokud není uvedeno "
 "jinak."
 
-# type: Content of: <book><bookinfo><date>
-#: docs/howto/en/docbook/index.docbook:56
-msgid "06/16/2004"
-msgstr ""
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#: docs/howto/en/docbook/index.docbook:57
-msgid "1.02.00"
-msgstr ""
-
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
 # #-#-#-#-#  cs.po  #-#-#-#-#
@@ -12263,7 +12072,7 @@ msgstr ""
 # #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
-#: docs/howto/en/docbook/index.docbook:61
+#: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr "Původní anglické znění:"
 
@@ -12317,7 +12126,7 @@ msgstr "Původní anglické znění:"
 # #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
-#: docs/howto/en/docbook/index.docbook:63
+#: docs/howto/en/docbook/index.docbook:50
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
@@ -12375,20 +12184,208 @@ msgstr ""
 # #-#-#-#-#  cs.po  #-#-#-#-#
 # #-#-#-#-#  full.po  #-#-#-#-#
 #
-#: docs/howto/en/docbook/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:53
 #, fuzzy
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
 "readers to study the scriptures to see what they say.  This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine.  We expect you to read and study the scriptures to "
-"understand what they say.  If you start with the attitude that you want to "
+"denominational doctrine.  We recommend you to read and study the scriptures "
+"to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""
 "Non exclusive serial rights for this distribution of this document with the "
 "Bibletime Software have been made. Redistribution as part of the Bibletime "
 "software without modification and limited reproduction as provided by the "
 "\"fair use\" provisions of the US copyright code are also permitted."
+
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+#~ msgid "Bob Harman"
+#~ msgstr "Bob Harman"
+
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+#, fuzzy
+#~ msgid ""
+#~ "The copyright of this text is held by the author Bob Harman.  The text "
+#~ "was adapted for publication with BibleTime by Fred Saalbach."
+#~ msgstr ""
+#~ "Autorská práva (copyright) k tomuto textu vlastní autor Bob Harman. Text "
+#~ "byl přizpůsoben k publikaci spolu s aplikací BibleTime Fredem Saalbachem."
+
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+#, fuzzy
+#~ msgid ""
+#~ "Non exclusive serial rights for this distribution of this document with "
+#~ "the &bibletime; software have been made. Redistribution as part of the "
+#~ "Bibletime software without modification and limited reproduction as "
+#~ "provided by the \"fair use\" provisions of the US copyright code are also "
+#~ "permitted."
+#~ msgstr ""
+#~ "Pro tuto distribuci tohoto dokumentu spolu s aplikací BibleTime byla "
+#~ "poskytnuta neexklusivní práva. Redistribuce jako součást aplikace "
+#~ "BibleTime bez úprav a omezená reprodukce podle ustanovení o \"slušném "
+#~ "užití\" Amerického zákona o autorských právech jsou také dovoleny."
+
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+# #-#-#-#-#  cs.po  #-#-#-#-#
+# #-#-#-#-#  full.po  #-#-#-#-#
+#
+#~ msgid ""
+#~ "For questions regarding the use of this material contact Bob Harman c/o "
+#~ "New Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
+#~ "<email>ncc@ncchampton.org</email>."
+#~ msgstr ""
+#~ "Pokud máte otázky ohledně používání tohoto textu, kontaktujte autora na "
+#~ "adrese Bob Harman c/o New Covenant Church 1079 Big Bethel Rd. Hampton VA "
+#~ "23666 USA <email>ncc@ncchampton.org</email>."
 
 #
 #, fuzzy

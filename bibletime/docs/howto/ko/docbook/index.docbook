@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY kapp "&bibletimehandbook;">
   <!ENTITY % addindex "IGNORE">
-
   <!ENTITY howto-chap1 SYSTEM "howto-importance.docbook">
   <!ENTITY howto-chap2 SYSTEM "howto-basics.docbook">
   <!ENTITY howto-chap3 SYSTEM "howto-interpretation.docbook">
-
 ]>
 
 <book>
 
 <bookinfo>
-<title>바이블스터디 하우투</title>
-
-<authorgroup>
-<author>
-<firstname>Bob</firstname>
-<surname>Harman</surname>
-</author>
-</authorgroup>
-
-
-
-<!-- TRANS:ROLES_OF_TRANSLATORS -->
+	<title>바이블스터디 하우투</title>
+	
+	<authorgroup>
+		<author>
+			<firstname>Bob</firstname>
+			<surname>Harman</surname>
+		</author>
+		<author>
+			<firstname></firstname>
+			<surname>The BibleTime team</surname>
+		</author>
+	</authorgroup>
+	
+	
+	
+	<!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
-<year>2001</year><year>2002</year><year>2003</year><year>2004</year>
-<holder>&bibletime;팀, info@bibletime.info</holder>
-</copyright><copyright>
-<year>2001</year><year>2002</year><year>2003</year><year>2004</year>
-<holder>밥(Bob) 하먼(Harman)</holder>
-</copyright>
-
-<legalnotice><para>
-The copyright of this text is held by the author Bob Harman.  The text was 
-adapted for publication with BibleTime by Fred Saalbach.</para>
-
-<para>Non exclusive serial rights for this distribution of this document with the 
-&bibletime; software have been made. Redistribution as part of the Bibletime 
-software without modification and limited reproduction as provided by the 
-"fair use" provisions of the US copyright code are also permitted.</para>
-
-<para>바이블타임의 자료 사용을 위한 질문은 Bob Harman c/o New Covenant Church 1079 Big Bethel 
-Rd. Hampton VA 23666 USA <email>ncc@ncchampton.org</email>으로 해주시기 바랍니다.</para>
-
-<para>인용된 성경 구절들은 특별히 명시되지 않았다면 개역한글성경(영문 성구는 New American Standard Bible)의 것들입니다.</para>
-</legalnotice>
-
-
-<date>06/16/2004</date>
-<releaseinfo>1.02.00</releaseinfo>
-
-
-<abstract>
-<title>개요</title>
-<para>
-<application>바이블스터디 하우투</application>는 성경공부를 위한 길잡이입니다.
-</para>
-<para>It is the hope of the &bibletime; team that this HowTo will provoke the 
+		<year>2001-2008</year>
+		<holder>The team of &bibletime; (info@bibletime.info)</holder>
+	</copyright>
+	
+	<legalnotice>
+		<para>
+			This document was originally created by Mr. Bob Harman and is licensed under 
+the terms of the license <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
+Attribution-Share Alike"</link>.
+		</para>
+		<para>
+			Scripture quotes are from the New American Standard Bible unless otherwise 
+indicated.
+		</para>
+	</legalnotice>
+	
+	<abstract>
+		<title>개요</title>
+		
+		<para>
+			<application>바이블스터디 하우투</application>는 성경공부를 위한 길잡이입니다.
+		</para>
+		<para>
+			It is the hope of the &bibletime; team that this HowTo will provoke the 
 readers to study the scriptures to see what they say.  This particular study 
 guide has been chosen as it takes care not to advocate any particular 
-denominational doctrine.  We expect you to read and study the scriptures to 
-understand what they say.  If you start with the attitude that you want to 
-have the Lord sow his word in your heart He will not disappoint you.</para>
-</abstract>
-
-<keywordset>
-<keyword>Bible</keyword>
-<keyword>Study</keyword>
-<keyword>HowTo</keyword>
-</keywordset>
+denominational doctrine.  We recommend you to read and study the scriptures 
+to understand what they say. If you start with the attitude that you want to 
+have the Lord sow his word in your heart He will not disappoint you.
+		</para>
+	</abstract>
+	
+	<keywordset>
+		<keyword>Bible</keyword>
+		<keyword>Study</keyword>
+		<keyword>HowTo</keyword>
+	</keywordset>
 
 </bookinfo>
 
@@ -82,20 +74,3 @@ have the Lord sow his word in your heart He will not disappoint you.</para>
 &howto-chap3;
 
 </book>
-<!--
-
-Local Variables:
-
-mode: sgml
-
-sgml-minimize-attributes:nil
-
-sgml-general-insert-case:lower
-
-sgml-indent-step:0
-
-sgml-indent-data:nil
-
-End:
-
--->

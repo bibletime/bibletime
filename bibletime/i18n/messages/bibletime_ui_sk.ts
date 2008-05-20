@@ -5283,182 +5283,172 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/bibletime_init.cpp" line="47"/>
         <source>Creating BibleTime&apos;s GUI</source>
-        <translation type="unfinished">Vytvorenie GUI pre BibleTime</translation>
+        <translation type="obsolete">Vytvorenie GUI pre BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="87"/>
+        <location filename="../../src/bibletime_init.cpp" line="88"/>
         <source>Initializing menu- and toolbars</source>
         <translation type="unfinished">Inicializácia ponuky a panela nástrojov</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="89"/>
+        <location filename="../../src/bibletime_init.cpp" line="90"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="90"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="91"/>
+        <location filename="../../src/bibletime_init.cpp" line="92"/>
         <source>&amp;Search</source>
         <translation type="unfinished">&amp;Hľadať </translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="92"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;Window</source>
         <translation type="unfinished">&amp;Okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>Se&amp;ttings</source>
         <translation type="unfinished">Strongove čísla</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="95"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="97"/>
         <source>BibleTime</source>
         <translation type="unfinished">Zatvoriť BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="106"/>
-        <source>Exit BibleTime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="118"/>
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
         <source>&amp;Show bookshelf</source>
         <translation type="unfinished">&amp;Zobraz knižnicu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>Show &amp;mag</source>
         <translation type="unfinished">Zobraziť nadpisy</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>&amp;Fullscreen mode</source>
         <translation type="unfinished">&amp;Celá obrazovka</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Search in &amp;open work(s)</source>
-        <translation type="unfinished">Hľadať v otvorených moduloch</translation>
+        <translation type="obsolete">Hľadať v otvorených moduloch</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Search in standard &amp;Bible</source>
-        <translation type="unfinished">Hľadať v štandardnej &amp;Bibli</translation>
+        <translation type="obsolete">Hľadať v štandardnej &amp;Bibli</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>&amp;Save session</source>
         <translation type="unfinished">&amp;Uložiť sedenie</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Save as &amp;new session</source>
-        <translation type="unfinished">Uložiť ako nové sedenie</translation>
+        <translation type="obsolete">Uložiť ako nové sedenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>&amp;Load session</source>
         <translation type="unfinished">N&amp;ačítať sedenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>&amp;Delete session</source>
         <translation type="unfinished">Odstrániť sedenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>&amp;Arrangement mode</source>
         <translation type="unfinished">&amp;Usporiadaný mód</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>&amp;Manual mode</source>
         <translation type="unfinished">&amp;Manuálny mód</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="230"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>Auto-tile &amp;vertically</source>
         <translation type="unfinished">Automatické zarovnanie &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="241"/>
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation type="unfinished">Automatické zarovnanie &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="252"/>
+        <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Auto-&amp;cascade</source>
         <translation type="unfinished">&amp;Automatická kaskáda</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="262"/>
+        <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Cascade</source>
         <translation type="unfinished">&amp;Kaskáda</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="272"/>
+        <location filename="../../src/bibletime_init.cpp" line="273"/>
         <source>Tile &amp;vertically</source>
         <translation type="unfinished">Zarovnať &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="282"/>
+        <location filename="../../src/bibletime_init.cpp" line="283"/>
         <source>Tile &amp;horizontally</source>
         <translation type="unfinished">Zarovnať &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="292"/>
+        <location filename="../../src/bibletime_init.cpp" line="293"/>
         <source>Cl&amp;ose all</source>
         <translation type="unfinished">Všetko &amp;zatvoriť</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="302"/>
-        <source>&amp;Configure BibleTime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="311"/>
         <source>Bookshelf &amp;Manager</source>
-        <translation type="unfinished">Správca knižnice</translation>
+        <translation type="obsolete">Správca knižnice</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="319"/>
+        <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>&amp;Handbook</source>
         <translation type="unfinished">&amp;Príručka</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="330"/>
+        <location filename="../../src/bibletime_init.cpp" line="331"/>
         <source>&amp;Bible Study Howto</source>
         <translation type="unfinished">&amp;Biblické štúdium HowTO</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="389"/>
+        <location filename="../../src/bibletime_init.cpp" line="388"/>
         <source>Initializing Sword</source>
         <translation type="unfinished">Inicializujem Sword</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="442"/>
         <source>Checking indices</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
@@ -5470,6 +5460,131 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <location filename="../../src/bibletime_slots.cpp" line="505"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">Vložte prosím názov nového sedenia.</translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="48"/>
+        <source>Creating BibleTime&apos;s user interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <source>Quit BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <source>Show or hide the bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <source>Show or hide the mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <source>Toggle fullscreen mode of the main window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <source>Search in &amp;open works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <source>Open the search dialog to search in all works that are currently open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <source>Search in standard &amp;Bible...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <source>Open the search dialog to search in the standard Bible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <source>Save as &amp;new session...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <source>Create and save a new session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <source>Automatically tile the open windows vertically (arrange side by side)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <source>Automatically cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <source>Cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <source>Vertically tile (arrange side by side) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <source>Horizontally tile (arrange on top of each other) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <source>Close all open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="303"/>
+        <source>&amp;Configure BibleTime...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <source>Set BibleTime&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="312"/>
+        <source>Bookshelf &amp;Manager...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="315"/>
+        <source>Configure your bookshelf and install/update/remove/index works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="323"/>
+        <source>Open BibleTime&apos;s handbook</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="334"/>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="441"/>
+        <source>Checking indexes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5832,27 +5947,27 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished">Indonézske</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="102"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="104"/>
         <source>Search Indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
         <source>Works with indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="119"/>
         <source>Works without indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="138"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="140"/>
         <source>KiB</source>
         <translation type="unfinished">
             </translation>
@@ -5869,134 +5984,174 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="97"/>
-        <source>Install Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
-        <source>Configure...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
-        <source>Install</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="183"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="189"/>
         <source>Install/Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="185"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
+        <source>Install path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="102"/>
+        <source>The path where the new works will be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="106"/>
+        <source>Configure paths where works are installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="124"/>
+        <source>Install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="125"/>
+        <source>Install or update selected works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
         <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="45"/>
         <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
-        <source>Configure install paths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
         <source>Configuration file for the paths is: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="69"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="71"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="124"/>
         <source>Choose directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="36"/>
+        <source>Bookshelf Paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="48"/>
+        <source>Configure bookshelf paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="72"/>
+        <source>Add new path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
+        <source>Edit the selected path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
+        <source>Remove the selected path</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Work</source>
         <translation type="unfinished">Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="57"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="84"/>
         <source>Stop All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
         <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="140"/>
         <source>Cancelled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="67"/>
         <source>Waiting for turn...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="201"/>
         <source>Preparing install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <source>Install Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <source>Failed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6011,45 +6166,55 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Work</source>
         <translation type="unfinished">Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Install path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="71"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="142"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="144"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="147"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <source>Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="58"/>
+        <source>Remove the selected works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Work</source>
         <translation type="unfinished">Modul</translation>
     </message>
@@ -6059,33 +6224,48 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="obsolete">Stav</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Last refreshed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
-        <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="84"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
-        <source>Delete</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="83"/>
-        <source>Add...</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <source>Refresh...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="80"/>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <source>Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
+        <source>Delete this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="91"/>
+        <source>Add new source</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6122,38 +6302,48 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="252"/>
         <source>Remote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Local:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>Install/Update works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="316"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="335"/>
         <source>Do you really want to install these works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="261"/>
         <source>Not a directory!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="263"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="264"/>
         <source>Not readable!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6162,37 +6352,37 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>Choose type:</source>
-        <translation type="unfinished">Vyberte štýl</translation>
+        <translation type="obsolete">Vyberte štýl</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="76"/>
         <source>BibleTime</source>
-        <translation type="unfinished">Zatvoriť BibleTime</translation>
+        <translation type="obsolete">Zatvoriť BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="77"/>
         <source>All text windows</source>
-        <translation type="unfinished">Všetky okná s textom</translation>
+        <translation type="obsolete">Všetky okná s textom</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="78"/>
         <source>Bible windows</source>
-        <translation type="unfinished">Okná Biblie</translation>
+        <translation type="obsolete">Okná Biblie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="79"/>
         <source>Commentary windows</source>
-        <translation type="unfinished">Okná komentárov</translation>
+        <translation type="obsolete">Okná komentárov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="80"/>
         <source>Lexicon windows</source>
-        <translation type="unfinished">Okná lexikónov</translation>
+        <translation type="obsolete">Okná lexikónov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="81"/>
         <source>Book windows</source>
-        <translation type="unfinished">Okná kníh</translation>
+        <translation type="obsolete">Okná kníh</translation>
     </message>
 </context>
 <context>
@@ -6250,77 +6440,87 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished">Strongove čísla</translation>
+        <translation type="obsolete">Strongove čísla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="203"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="204"/>
         <source>Reference only</source>
         <translation type="unfinished">Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="207"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
         <source>Text of reference</source>
         <translation type="unfinished">Odkaz na text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="234"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="235"/>
         <source>Reference with text</source>
         <translation type="unfinished">Odkaz s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="239"/>
         <source>Chapter</source>
         <translation type="unfinished">Kapitolu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="227"/>
         <source>Chapter as plain text</source>
         <translation type="unfinished">Kapitolu ako surový text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="231"/>
         <source>Chapter as HTML</source>
         <translation type="unfinished">Kapitolu ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="261"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="262"/>
         <source>Bible window</source>
         <translation type="unfinished">Okno Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="270"/>
         <source>Copy...</source>
         <translation type="unfinished">Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="281"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="282"/>
         <source>Save...</source>
         <translation type="unfinished">Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="294"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="295"/>
         <source>Print...</source>
         <translation type="unfinished">Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copy chapter to clipboard ...</source>
         <translation type="unfinished">Skopírovať kapitolu do schránky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copying</source>
         <translation type="unfinished">Kopírujem</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving chapter ...</source>
         <translation type="unfinished">Ukladám kapitolu...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving</source>
         <translation type="unfinished">Ukladám</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
+        <source>Strong&apos;s search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="200"/>
+        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6376,27 +6576,27 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Change bookmark description</source>
-        <translation type="unfinished">Zmeniť popis...</translation>
+        <translation type="obsolete">Zmeniť popis...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Import bookmarks</source>
-        <translation type="unfinished">Import záložiek</translation>
+        <translation type="obsolete">Import záložiek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Export bookmarks</source>
-        <translation type="unfinished">Exportuj záložky</translation>
+        <translation type="obsolete">Exportuj záložky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Print bookmarks</source>
-        <translation type="unfinished">Tlač záložiek</translation>
+        <translation type="obsolete">Tlač záložiek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
         <source>Remove selected item(s)</source>
-        <translation type="unfinished">Odstrániť vybrané položky</translation>
+        <translation type="obsolete">Odstrániť vybrané položky</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="632"/>
@@ -6413,117 +6613,157 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <source>The work to which the bookmark points to is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
+        <source>Change bookmark description...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <source>Import bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
+        <source>Export bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
+        <source>Print bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
+        <source>Remove selected items...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CBookshelfIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="86"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="87"/>
         <source>Bookshelf</source>
         <translation type="unfinished">Knižnica</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="108"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="109"/>
         <source>Grouping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="116"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="117"/>
         <source>Category/Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="125"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="126"/>
         <source>Category</source>
         <translation type="unfinished">Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="134"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="135"/>
         <source>Language/Category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="143"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="144"/>
         <source>Language</source>
         <translation type="unfinished">Jazyk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="175"/>
-        <source>Show Hidden</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="190"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="191"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="197"/>
         <source>Plain text</source>
-        <translation type="unfinished">Surový text</translation>
+        <translation type="obsolete">Surový text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="203"/>
         <source>HTML</source>
-        <translation type="unfinished">HTML</translation>
+        <translation type="obsolete">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="451"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="455"/>
         <source>Search</source>
         <translation type="unfinished">Hľadať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="484"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="488"/>
         <source>Search in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="499"/>
-        <source>Search in Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="554"/>
         <source>BibleTime - Unlock work</source>
-        <translation type="unfinished">BibleTime - Odomknutie modulu</translation>
+        <translation type="obsolete">BibleTime - Odomknutie modulu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="555"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="559"/>
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">Zadaj kľúč k odomknutiu modulu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="214"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="219"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="220"/>
         <source>Unlock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="226"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
-        <source>Hide/Unhide Works...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="586"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="590"/>
         <source>Hide/Unhide Works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="587"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="591"/>
         <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
-        <source>Works Only</source>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="153"/>
+        <source>Works only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="168"/>
+        <source>Hide/unhide works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="176"/>
+        <source>Show hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="198"/>
+        <source>Plain text...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="204"/>
+        <source>HTML...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="503"/>
+        <source>Search in selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="558"/>
+        <source>Unlock Work</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6562,38 +6802,48 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Sync with active Bible</source>
-        <translation type="unfinished">Synchronizovať s aktívnou Bibliou</translation>
+        <translation type="obsolete">Synchronizovať s aktívnou Bibliou</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="200"/>
         <source>Commentary window</source>
         <translation type="unfinished">Okná komentárov</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
+        <source>Synchronize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="87"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="46"/>
         <source>Display</source>
         <translation type="unfinished">Zobraziť nastavenia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="54"/>
         <source>Desk</source>
         <translation type="unfinished">Sword</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="62"/>
         <source>Languages</source>
         <translation type="unfinished">Zoznam jazykov</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="74"/>
         <source>HotKeys</source>
-        <translation type="unfinished">Klávesové skratky</translation>
+        <translation type="obsolete">Klávesové skratky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="34"/>
         <source>Configure BibleTime</source>
         <translation type="unfinished">Nastavenie BibleTime</translation>
     </message>
@@ -6681,7 +6931,7 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
         <source>Display templates define how text is displayed. Please choose a template you like.</source>
-        <translation type="unfinished">Šablóny zobrazenia určujú spôsob akým sa bude zobrazovať text. Vyberte si šablónu, ktorá sa vám páči.</translation>
+        <translation type="obsolete">Šablóny zobrazenia určujú spôsob akým sa bude zobrazovať text. Vyberte si šablónu, ktorá sa vám páči.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
@@ -6723,23 +6973,33 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation type="unfinished">Ale ten, kto činí pravdu, ide k svetlu, aby boli zjavené jeho skutky, že sú vykonané v Bohu.</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
+        <source>Display templates define how text is displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
         <source>Back in history</source>
         <translation type="unfinished">Späť v histórii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="181"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
         <source>Forward in history</source>
         <translation type="unfinished">Dopredu v histórii</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Search</source>
-        <translation type="unfinished">Hľadať</translation>
+        <translation type="obsolete">Hľadať</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <source>Open the search dialog with the works of this window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6845,41 +7105,107 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     </message>
 </context>
 <context>
+    <name>CKeyReferenceWidget</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="124"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="126"/>
+        <source>Next book</source>
+        <translation type="unfinished">Ďalšia kniha</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="129"/>
+        <source>Previous book</source>
+        <translation type="unfinished">Predchádzajúca kniha</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="131"/>
+        <source>Next chapter</source>
+        <translation type="unfinished">Nasledujúca kapitola</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="134"/>
+        <source>Previous chapter</source>
+        <translation type="unfinished">Predchádzajúca kapitola</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="136"/>
+        <source>Next verse</source>
+        <translation type="unfinished">Nasledujúci verš</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="139"/>
+        <source>Previous verse</source>
+        <translation type="unfinished">Predchádzajúci verš</translation>
+    </message>
+</context>
+<context>
     <name>CLanguageSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Specify a language for names of Bible books</source>
-        <translation type="unfinished">Vyberte jazyk pre názvy biblických kníh</translation>
+        <translation type="obsolete">Vyberte jazyk pre názvy biblických kníh</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
         <source>Sword has a number of locales available which can be used to internationalize the   names of books of the Bible. You can specify which locale to use. If you want to   create a new locale, see http://www.crosswire.org/sword/develop for details.</source>
-        <translation type="unfinished">Sword má množstvo prekladov, ktoré môžu byť použité pre názvy kníh Biblie. Môžete si vybrať, ktorý sa má použiť. Ak chcete vytvoriť nový preklad, pozrite si http://www.crosswire.org/sword/, kde sú detaily.</translation>
+        <translation type="obsolete">Sword má množstvo prekladov, ktoré môžu byť použité pre názvy kníh Biblie. Môžete si vybrať, ktorý sa má použiť. Ak chcete vytvoriť nový preklad, pozrite si http://www.crosswire.org/sword/, kde sú detaily.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Language for names of Bible books</source>
         <translation type="unfinished">Jazyk pre názvy biblických kníh</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="123"/>
         <source>Select custom fonts per-language</source>
-        <translation type="unfinished">Vybrať vlastné písmo pre jazyk</translation>
+        <translation type="obsolete">Vybrať vlastné písmo pre jazyk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="127"/>
         <source>Here you find a list of all languages of the installed works.  You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
-        <translation type="unfinished">Tu môžete nájsť zoznam všetkých jazykov nainštalovaných modulov. Môžete určiť vlastné písmo pre každý jazyk, ktorý pre správne zobrazenie vyžaduje špeciálne písmo.</translation>
+        <translation type="obsolete">Tu môžete nájsť zoznam všetkých jazykov nainštalovaných modulov. Môžete určiť vlastné písmo pre každý jazyk, ktorý pre správne zobrazenie vyžaduje špeciálne písmo.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="157"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="154"/>
         <source>Use custom font</source>
         <translation type="unfinished">Použiť vlastné písmo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>The quick brown fox jumps over the lazy dog.</source>
         <translation type="unfinished">Rýchla hnedá líška skáče cez lenivého psa.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
+        <source>Select the language in which the Biblical book names are displayed.&lt;small&gt;&lt;br&gt;&lt;br&gt;Translated names come from the Sword project.&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
+        <source>Language for names of Bible books:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="121"/>
+        <source>Custom fonts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="124"/>
+        <source>You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CLexiconKeyChooser</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="54"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7055,18 +7381,28 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="57"/>
         <source>Creating index for work: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="43"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="45"/>
         <source>Creating indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing Is Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing is cancelled because modules are removed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7114,123 +7450,123 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="741"/>
         <source>Version</source>
         <translation type="unfinished">Verzia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="747"/>
         <source>unknown</source>
         <translation type="unfinished">neznámy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
         <source>Markup</source>
         <translation type="unfinished">Označenie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
         <source>Location</source>
         <translation type="unfinished">Umiestnenie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
         <source>Language</source>
         <translation type="unfinished">Jazyk</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
         <source>Category</source>
         <translation type="unfinished">Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
         <source>LCSH</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
         <source>Writable</source>
         <translation type="unfinished">Zapisovateľné</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>yes</source>
         <translation type="unfinished">áno</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>no</source>
         <translation type="unfinished">nie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Unlock key</source>
         <translation type="unfinished">Kľúč k odomknutiu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="796"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Features</source>
         <translation type="unfinished">Vlastnosti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation type="unfinished">Dávajte si pozor, tento modul obsahuje kultický / otázny materiál!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Distribution license</source>
         <translation type="unfinished">Distribučná licencia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>Distribution source</source>
         <translation type="unfinished">Zdroj distribúcie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>Distribution notes</source>
         <translation type="unfinished">Poznámky k distribúcii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
         <source>Text source</source>
         <translation type="unfinished">Zdroj textu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Copyright notes</source>
         <translation type="unfinished">Poznámky k Copyrightu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Copyright holder</source>
         <translation type="unfinished">Držiteľ Copyrightu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Copyright date</source>
         <translation type="unfinished">Dátum Copyrightu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Copyright contact name</source>
         <translation type="unfinished">Copyright: kontaktná osoba</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Copyright contact address</source>
         <translation type="unfinished">Copyright: kontaktná adresa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright contact email</source>
         <translation type="unfinished">Copyright: kontaktný email</translation>
     </message>
@@ -7430,10 +7766,10 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="314"/>
         <source>Alternative text</source>
-        <translation type="unfinished">Alternatívny text</translation>
+        <translation type="obsolete">Alternatívny text</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="472"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="459"/>
         <source>Added text</source>
         <translation type="unfinished">Vloženýt text</translation>
     </message>
@@ -7953,62 +8289,62 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished">Zulské</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
         <source>Footnotes</source>
         <translation type="unfinished">Poznámky pod čiarou</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="381"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
         <source>Strong&apos;s numbers</source>
         <translation type="unfinished">Strongove čísla</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
         <source>Headings</source>
         <translation type="unfinished">Hlavičky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="383"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
         <source>Morphological tags</source>
         <translation type="unfinished">Morfologické príznaky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="384"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
         <source>Lemmas</source>
         <translation type="unfinished">Nadpisy</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
         <source>Hebrew vowel points</source>
         <translation type="unfinished">Body hebrejských samohlások</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
         <source>Hebrew cantillation marks</source>
         <translation type="unfinished">Zobraziť hebrejské liturgické znaky</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
         <source>Greek accents</source>
         <translation type="unfinished">Grécke akcenty</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
         <source>Red letter words</source>
         <translation type="unfinished">Slová s červeným písmom</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
         <source>Textual variants</source>
         <translation type="unfinished">Textové varianty</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
         <source>Scripture cross-references</source>
         <translation type="unfinished">Krížové referencie Písma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
         <source>Morph segmentation</source>
         <translation type="unfinished">Morfologické delenie</translation>
     </message>
@@ -8028,42 +8364,42 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished">Vzdialený</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="257"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="258"/>
         <source>Old testament</source>
         <translation type="unfinished">Starý zákon</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="258"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="259"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Mojžišove knihy/Pentateuch/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="259"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
         <source>History</source>
         <translation type="unfinished">Histórické knihy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="260"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
         <source>Prophets</source>
         <translation type="unfinished">Proroci</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
         <source>New testament</source>
         <translation type="unfinished">Nový zákon</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
         <source>Gospels</source>
         <translation type="unfinished">Evanjeliá</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Listy/Epištoly</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Pavlove epištoly</translation>
     </message>
@@ -8103,14 +8439,9 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
-        <source>BibleTime - Export Bookmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
         <source>BibleTime - Import bookmarks</source>
-        <translation type="unfinished">BibleTime - Import záložiek</translation>
+        <translation type="obsolete">BibleTime - Import záložiek</translation>
     </message>
     <message>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
@@ -8180,107 +8511,107 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
         <source>Close BibleTime and save the settings.</source>
-        <translation type="unfinished">Ukončí BibleTime a uloží nastavenia.</translation>
+        <translation type="obsolete">Ukončí BibleTime a uloží nastavenia.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="766"/>
         <source>Show or hide the bookshelf.</source>
-        <translation type="unfinished">Zobraziť nasledujúcu knihu</translation>
+        <translation type="obsolete">Zobraziť nasledujúcu knihu</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="770"/>
         <source>Toggle the main toolbar view.</source>
-        <translation type="unfinished">Prepne pohľad na hlavný panel nástrojov.</translation>
+        <translation type="obsolete">Prepne pohľad na hlavný panel nástrojov.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="778"/>
         <source>Open the search dialog to search in all works that are currently open.</source>
-        <translation type="unfinished">Otvorí vyhľadávací dialóg pre hľadanie vo všetkých práve otvorených moduloch.</translation>
+        <translation type="obsolete">Otvorí vyhľadávací dialóg pre hľadanie vo všetkých práve otvorených moduloch.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="782"/>
         <source>Open the search dialog to search in the standard Bible.</source>
-        <translation type="unfinished">Otvorí vyhľadávací dialóg pre hľadanie v štandardnej Biblií.</translation>
+        <translation type="obsolete">Otvorí vyhľadávací dialóg pre hľadanie v štandardnej Biblií.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="790"/>
         <source>Restore a saved BibleTime session.</source>
-        <translation type="unfinished">Obnoviť a a uložiť BibleTime sedenie.</translation>
+        <translation type="obsolete">Obnoviť a a uložiť BibleTime sedenie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="794"/>
         <source>Save current BibleTime session so that it can be reused later.</source>
-        <translation type="unfinished">Uloží aktuálne BibleTime sedenie, tak aby mohlo byť neskôr použité.</translation>
+        <translation type="obsolete">Uloží aktuálne BibleTime sedenie, tak aby mohlo byť neskôr použité.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="798"/>
         <source>Create and save a new session.</source>
-        <translation type="unfinished">Vytvoriť a uložiť nové sedenie.</translation>
+        <translation type="obsolete">Vytvoriť a uložiť nové sedenie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="802"/>
         <source>Delete a BibleTime session.</source>
-        <translation type="unfinished">Obnoviť a a uložiť BibleTime sedenie.</translation>
+        <translation type="obsolete">Obnoviť a a uložiť BibleTime sedenie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="806"/>
         <source>Toggle fullscreen mode of the main window.</source>
-        <translation type="unfinished">Prepnúť celoobrazovkový režim zobrazenia hlavného okna.</translation>
+        <translation type="obsolete">Prepnúť celoobrazovkový režim zobrazenia hlavného okna.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="810"/>
         <source>Vertically tile the open windows.</source>
-        <translation type="unfinished">Automaticky dláždiť otvorené okná.</translation>
+        <translation type="obsolete">Automaticky dláždiť otvorené okná.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="814"/>
         <source>Horizontally tile the open windows.</source>
-        <translation type="unfinished">Automaticky dláždiť otvorené okná.</translation>
+        <translation type="obsolete">Automaticky dláždiť otvorené okná.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="818"/>
         <source>Cascade the open windows.</source>
-        <translation type="unfinished">Poukladá všetky otvorené okná do kaskády.</translation>
+        <translation type="obsolete">Poukladá všetky otvorené okná do kaskády.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="823"/>
         <source>Choose the way that is used to arrange the windows.</source>
-        <translation type="unfinished">Farba použitá pre zobrazenie bežného textu.</translation>
+        <translation type="obsolete">Farba použitá pre zobrazenie bežného textu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="827"/>
         <source>Automatically tile the open windows vertically.</source>
-        <translation type="unfinished">Automaticky dláždiť okná</translation>
+        <translation type="obsolete">Automaticky dláždiť okná</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="831"/>
         <source>Automatically tile the open windows horizontally.</source>
-        <translation type="unfinished">Automaticky dláždiť okná</translation>
+        <translation type="obsolete">Automaticky dláždiť okná</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="835"/>
         <source>Automatically cascade the open windows.</source>
-        <translation type="unfinished">Automaticky kaskádovať otvorené okná.</translation>
+        <translation type="obsolete">Automaticky kaskádovať otvorené okná.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="840"/>
         <source>Close all open windows.</source>
-        <translation type="unfinished">Zatvorí všetky zobrazené okná.</translation>
+        <translation type="obsolete">Zatvorí všetky zobrazené okná.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="848"/>
         <source>Open BibleTime&apos;s toolbar editor.</source>
-        <translation type="unfinished">Otvoriť editor panela nástrojov BibleTime.</translation>
+        <translation type="obsolete">Otvoriť editor panela nástrojov BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="852"/>
         <source>Open the dialog to set most of BibleTime&apos;s preferences.</source>
-        <translation type="unfinished">Otvorí dialóg pre nastavenie väčšiny BibleTime nastavení.</translation>
+        <translation type="obsolete">Otvorí dialóg pre nastavenie väčšiny BibleTime nastavení.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="856"/>
         <source>Open the dialog to configure your bookshelf and install/update/remove works.</source>
-        <translation type="unfinished">Otvoriť dialóg pre nastavenia knižnice a inštaláciu/aktualizáciu/odstránenie modulov.</translation>
+        <translation type="obsolete">Otvoriť dialóg pre nastavenia knižnice a inštaláciu/aktualizáciu/odstránenie modulov.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="865"/>
@@ -8295,17 +8626,17 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="873"/>
         <source>Send a bugreport to the developers of BibleTime.</source>
-        <translation type="unfinished">Poslať správu o chybe vývojárom BibleTime.</translation>
+        <translation type="obsolete">Poslať správu o chybe vývojárom BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="877"/>
         <source>Show detailed information about BibleTime.</source>
-        <translation type="unfinished">Zobrazí detailné informácie o BibleTime.</translation>
+        <translation type="obsolete">Zobrazí detailné informácie o BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="881"/>
         <source>Show detailed information about the KDE project.</source>
-        <translation type="unfinished">Zobrazí detailné informácie o projekte KDE.</translation>
+        <translation type="obsolete">Zobrazí detailné informácie o projekte KDE.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="891"/>
@@ -8315,7 +8646,7 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="895"/>
         <source>Stop the active search.</source>
-        <translation type="unfinished">Zastaviť aktívne hľadanie</translation>
+        <translation type="obsolete">Zastaviť aktívne hľadanie</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="902"/>
@@ -8340,12 +8671,12 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="920"/>
         <source>The search text will be used exactly as entered.</source>
-        <translation type="unfinished">Bude sa hľadať text presne tak ako ste ho vložili.</translation>
+        <translation type="obsolete">Bude sa hľadať text presne tak ako ste ho vložili.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="924"/>
         <source>Treat the search string as a GNU regular expression. The BibleTime handbook contains an introduction to regular expressions.</source>
-        <translation type="unfinished">S reťazcom sa bude narábať ako s GNU regulárnym výrazom. BibleTime príručka obsahuje úvod k regulárnym výrazom.</translation>
+        <translation type="obsolete">S reťazcom sa bude narábať ako s GNU regulárnym výrazom. BibleTime príručka obsahuje úvod k regulárnym výrazom.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="932"/>
@@ -8355,32 +8686,32 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="939"/>
         <source>Choose a scope from the list. Select the first item to use no scope, the second one is to use each work&apos;s last search result as search scope. The others are user defined search scopes.</source>
-        <translation type="unfinished">Vyberte si rozsah zo zoznamu. Prvú položku vyberte, ak nechcete použiť rozsah (prehľadá sa celý modul), druhú ak chcete použiť posledné výsledky hľadania ako rozsah pre hľadanie. Ďalšie položky sú používateľom definované rozsahy.</translation>
+        <translation type="obsolete">Vyberte si rozsah zo zoznamu. Prvú položku vyberte, ak nechcete použiť rozsah (prehľadá sa celý modul), druhú ak chcete použiť posledné výsledky hľadania ako rozsah pre hľadanie. Ďalšie položky sú používateľom definované rozsahy.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="945"/>
         <source>Select an item from the list to edit the search scope.</source>
-        <translation type="unfinished">Vyberte položku zo zoznamu na úpravu rozsahu hľadania.</translation>
+        <translation type="obsolete">Vyberte položku zo zoznamu na úpravu rozsahu hľadania.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="949"/>
         <source>Change the name of the selected search scope.</source>
-        <translation type="unfinished">Zmeniť názov vybraného rozsahu hľadania.</translation>
+        <translation type="obsolete">Zmeniť názov vybraného rozsahu hľadania.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="953"/>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished">Zmení rozsah hľadania zvolenej položky. Pozrite si preddefinované rozsahy, aby ste videli, ako sú zostavené.</translation>
+        <translation type="obsolete">Zmení rozsah hľadania zvolenej položky. Pozrite si preddefinované rozsahy, aby ste videli, ako sú zostavené.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="957"/>
         <source>Contains the search ranges which will be used for the search.</source>
-        <translation type="unfinished">Obsahuje rozsahy hľadania, ktoré sa použijú pri hľadaní.</translation>
+        <translation type="obsolete">Obsahuje rozsahy hľadania, ktoré sa použijú pri hľadaní.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="961"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation type="unfinished">Pridá nový rozsah pre hľadanie. Najskôr vložte správne meno, a potom upravte rozsahy.</translation>
+        <translation type="obsolete">Pridá nový rozsah pre hľadanie. Najskôr vložte správne meno, a potom upravte rozsahy.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="965"/>
@@ -8390,17 +8721,17 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="973"/>
         <source>The list of works chosen for the search.</source>
-        <translation type="unfinished">Zoznam modulov vybraných pre vyhľadávanie.</translation>
+        <translation type="obsolete">Zoznam modulov vybraných pre vyhľadávanie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="977"/>
         <source>This list contains the search result of the selected work.</source>
-        <translation type="unfinished">Tento zoznam obsahuje výsledky hľadania vybraného modulu</translation>
+        <translation type="obsolete">Tento zoznam obsahuje výsledky hľadania vybraného modulu</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="981"/>
         <source>The text preview of the selected search result item.</source>
-        <translation type="unfinished">Textový náhľad vybraných položiek výsledkov hľadania</translation>
+        <translation type="obsolete">Textový náhľad vybraných položiek výsledkov hľadania</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="993"/>
@@ -8415,88 +8746,88 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1002"/>
         <source>Go back one item in the display history.</source>
-        <translation type="unfinished">Choď o jednu položku dozadu v histórii zobrazenia</translation>
+        <translation type="obsolete">Choď o jednu položku dozadu v histórii zobrazenia</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1006"/>
         <source>Go forward one item in the display history.</source>
-        <translation type="unfinished">Choď o jednu položku dopredu v histórii zobrazenia</translation>
+        <translation type="obsolete">Choď o jednu položku dopredu v histórii zobrazenia</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1011"/>
         <source>Show all occurences of the Strong number currently under the mouse cursor.</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1017"/>
         <source>This list contains the books which are available in this work.</source>
-        <translation type="unfinished">Zoznam obsahuje knihy, ktoré sú dostupné v tomto module.</translation>
+        <translation type="obsolete">Zoznam obsahuje knihy, ktoré sú dostupné v tomto module.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1021"/>
         <source>Show the next book of this work.</source>
-        <translation type="unfinished">Zobraziť ďalšiu knihu tohoto modulu.</translation>
+        <translation type="obsolete">Zobraziť ďalšiu knihu tohoto modulu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1025"/>
         <source>Show the previous book of this work.</source>
-        <translation type="unfinished">Zobraziť predchádzajúcu knihu tohoto modulu.</translation>
+        <translation type="obsolete">Zobraziť predchádzajúcu knihu tohoto modulu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1029"/>
         <source>This list contains the chapters which are available in the current book.</source>
-        <translation type="unfinished">Zoznam obsahuje kapitoly, ktoré sú dostupné v tomto module v aktuálnej knihe.</translation>
+        <translation type="obsolete">Zoznam obsahuje kapitoly, ktoré sú dostupné v tomto module v aktuálnej knihe.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1033"/>
         <source>Show the next chapter of the work.</source>
-        <translation type="unfinished">Zobraziť  nasledujúcu kapitolu modulu.</translation>
+        <translation type="obsolete">Zobraziť  nasledujúcu kapitolu modulu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1037"/>
         <source>Show the previous chapter of the work.</source>
-        <translation type="unfinished">Zobraziť predchádzajúcu kapitolu modulu.</translation>
+        <translation type="obsolete">Zobraziť predchádzajúcu kapitolu modulu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1041"/>
         <source>This list contains the verses which are available in the current chapter.</source>
-        <translation type="unfinished">Zoznam obsahuje verše, ktoré sú dostupné v tomto module v aktuálnej kapitole.</translation>
+        <translation type="obsolete">Zoznam obsahuje verše, ktoré sú dostupné v tomto module v aktuálnej kapitole.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1045"/>
         <source>In  Bible texts, the next verse will be highlighted. In commentaries, the next entry will be shown.</source>
-        <translation type="unfinished">V textoch Biblie sa zvýrazní nasledujúci verš. V komentároch sa zobrazí nasledujúci záznam.</translation>
+        <translation type="obsolete">V textoch Biblie sa zvýrazní nasledujúci verš. V komentároch sa zobrazí nasledujúci záznam.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1050"/>
         <source>In Bible texts, the previous verse will be highlighted. In commentaries, the previous entry will be shown.</source>
-        <translation type="unfinished">V textoch Biblie sa zvýrazní predchádzajúci verš. V komentároch sa zobrazí predchádzajúci záznam.</translation>
+        <translation type="obsolete">V textoch Biblie sa zvýrazní predchádzajúci verš. V komentároch sa zobrazí predchádzajúci záznam.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1057"/>
         <source>Synchronize the displayed entry of this work with the active Bible window.</source>
-        <translation type="unfinished">Synchronizuje zobrazenie záznamov tohoto modulu s aktívnym oknom Biblie.</translation>
+        <translation type="obsolete">Synchronizuje zobrazenie záznamov tohoto modulu s aktívnym oknom Biblie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1064"/>
         <source>This list contains the entries of the current work.</source>
-        <translation type="unfinished">Zoznam obsahuje položky aktuálneho modulu.</translation>
+        <translation type="obsolete">Zoznam obsahuje položky aktuálneho modulu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1068"/>
         <source>The next entry of the work will be shown.</source>
-        <translation type="unfinished">Ďalší záznam modulu bude zobrazený.</translation>
+        <translation type="obsolete">Ďalší záznam modulu bude zobrazený.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1072"/>
         <source>The previous entry of the work will be shown.</source>
-        <translation type="unfinished">Predchádzajúci záznam modulu bude zobrazený.</translation>
+        <translation type="obsolete">Predchádzajúci záznam modulu bude zobrazený.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1080"/>
         <source>Save the curent text into the work. The old text will be overwritten.</source>
-        <translation type="unfinished">Uloží aktuálny text do modulu. Starý text bude prepísaný.</translation>
+        <translation type="obsolete">Uloží aktuálny text do modulu. Starý text bude prepísaný.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1084"/>
@@ -8506,117 +8837,117 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1088"/>
         <source>Deletes the current entry out of the work. The text will be lost.</source>
-        <translation type="unfinished">Zmaže aktuálnu položku z modulu. Text bude stratený.</translation>
+        <translation type="obsolete">Zmaže aktuálnu položku z modulu. Text bude stratený.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1094"/>
         <source>Toggle bold formatting of the selected text.</source>
-        <translation type="unfinished">Prepína tučný formát zvoleného textu.</translation>
+        <translation type="obsolete">Prepína tučný formát zvoleného textu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1098"/>
         <source>Toggle italic formatting of the selected text.</source>
-        <translation type="unfinished">Prepína medzi formátom kurzívy zvoleného textu.</translation>
+        <translation type="obsolete">Prepína medzi formátom kurzívy zvoleného textu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1102"/>
         <source>Toggle underlined formatting of the selected text.</source>
-        <translation type="unfinished">Prepína formátom podčiarknutia zvoleného textu.</translation>
+        <translation type="obsolete">Prepína formátom podčiarknutia zvoleného textu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1107"/>
         <source>The text will be aligned on the left side of the page.</source>
-        <translation type="unfinished">Text bude zarovnaný k ľavému okraju strany.</translation>
+        <translation type="obsolete">Text bude zarovnaný k ľavému okraju strany.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1111"/>
         <source>Centers the text horizontally.</source>
-        <translation type="unfinished">Vodorovne zarovnáva text</translation>
+        <translation type="obsolete">Vodorovne zarovnáva text</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1115"/>
         <source>Aligns the text on the right side of the page.</source>
-        <translation type="unfinished">Zarovná text k pravému okraju strany.</translation>
+        <translation type="obsolete">Zarovná text k pravému okraju strany.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1119"/>
         <source>Justifies the text on the page.</source>
-        <translation type="unfinished">Zarovná text na strane</translation>
+        <translation type="obsolete">Zarovná text na strane</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1124"/>
         <source>Choose a new font for the selected text.</source>
-        <translation type="unfinished">Vyberie nový typ písma pre zvolený text.</translation>
+        <translation type="obsolete">Vyberie nový typ písma pre zvolený text.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1127"/>
         <source>Choose a new font size for the selected text.</source>
-        <translation type="unfinished">Vybrať novú veľkosť písma pre zvolený text.</translation>
+        <translation type="obsolete">Vybrať novú veľkosť písma pre zvolený text.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1130"/>
         <source>Choose a new color for the selected text.</source>
-        <translation type="unfinished">Vyberie farbu pre zvolený text.</translation>
+        <translation type="obsolete">Vyberie farbu pre zvolený text.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1140"/>
         <source>Activate this to see the BibleTime logo on startup.</source>
-        <translation type="unfinished">Aktivujte túto možnosť, ak chcete vidieť pri spustení logo BibleTime.</translation>
+        <translation type="obsolete">Aktivujte túto možnosť, ak chcete vidieť pri spustení logo BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1144"/>
         <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup.</source>
-        <translation type="unfinished">Uložiť používateľské sedenie pri ukončení BibleTime a obnoviť ho pri nasledujúcom spustení.</translation>
+        <translation type="obsolete">Uložiť používateľské sedenie pri ukončení BibleTime a obnoviť ho pri nasledujúcom spustení.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1151"/>
         <source>The font selection below will apply to all texts in this language.</source>
-        <translation type="unfinished">Výber písma ovplyvní všetky texty v tomto jazyku.</translation>
+        <translation type="obsolete">Výber písma ovplyvní všetky texty v tomto jazyku.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1160"/>
         <source>Contains the languages which can be used for the biblical booknames.</source>
-        <translation type="unfinished">Obsahuje jazyky, ktoré môžu byť použité pre názvy biblických kníh.</translation>
+        <translation type="obsolete">Obsahuje jazyky, ktoré môžu byť použité pre názvy biblických kníh.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1167"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked.</source>
-        <translation type="unfinished">Štandardná Biblia sa použije pri kliknutí na hyperodkaz do Biblie.</translation>
+        <translation type="obsolete">Štandardná Biblia sa použije pri kliknutí na hyperodkaz do Biblie.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1171"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked.</source>
-        <translation type="unfinished">Štandardný komentár sa použije pri kliknutí na hyperodkaz do komentáru.</translation>
+        <translation type="obsolete">Štandardný komentár sa použije pri kliknutí na hyperodkaz do komentáru.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1175"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked.</source>
-        <translation type="unfinished">Štandardný lexikón sa použije pri kliknutí na hyperodkaz do lexikónu.</translation>
+        <translation type="obsolete">Štandardný lexikón sa použije pri kliknutí na hyperodkaz do lexikónu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1179"/>
         <source>The standard devotional will be used to display a short start up devotional.</source>
-        <translation type="unfinished">Štandardné Denné zamyslenie sa použije pre zobrazenie krátkeho zamyslenia pri štarte.</translation>
+        <translation type="obsolete">Štandardné Denné zamyslenie sa použije pre zobrazenie krátkeho zamyslenia pri štarte.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1183"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked.</source>
-        <translation type="unfinished">Štandardný hebrejský lexikón sa použije pri kliknutí na hyper odkaz do hebrejského lexikónu.</translation>
+        <translation type="obsolete">Štandardný hebrejský lexikón sa použije pri kliknutí na hyper odkaz do hebrejského lexikónu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1187"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked.</source>
-        <translation type="unfinished">Štandardný grécky lexikón sa použije pri kliknutí na hyper odkaz do gréckeho lexikónu.</translation>
+        <translation type="obsolete">Štandardný grécky lexikón sa použije pri kliknutí na hyper odkaz do gréckeho lexikónu.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1191"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked.</source>
-        <translation type="unfinished">Štandardný lexikón morfológií pre texty v hebrejčine sa použije pri kliknutí na hyperodkaz v hebrejskom texte.</translation>
+        <translation type="obsolete">Štandardný lexikón morfológií pre texty v hebrejčine sa použije pri kliknutí na hyperodkaz v hebrejskom texte.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1195"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked.</source>
-        <translation type="unfinished">Štandardný lexikón morfológií pre texty v gréčtine sa použije pri kliknutí na hyperodkaz v gréckom texte.</translation>
+        <translation type="obsolete">Štandardný lexikón morfológií pre texty v gréčtine sa použije pri kliknutí na hyperodkaz v gréckom texte.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1204"/>
@@ -8709,79 +9040,9 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/util/cresmgr.cpp" line="865"/>
-        <source>Open BibleTime&apos;s handbook.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="869"/>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="891"/>
-        <source>Start to search the text in each of the chosen works.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="902"/>
-        <source>Choose works for the search.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="906"/>
-        <source>The text you want to search for in the chosen works.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="912"/>
-        <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="916"/>
-        <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="932"/>
-        <source>Case sensitive distinguishes between upper and lowercase characters.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="965"/>
-        <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="993"/>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="997"/>
-        <source>Open the search dialog with the works of this window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1084"/>
-        <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1204"/>
-        <source>Opens the search dialog to search in the works that are currently open.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/util/ctoolclass.cpp" line="258"/>
         <source>Installed version</source>
         <translation type="unfinished">Nainštalovaná verzia</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="755"/>
-        <source>Open the printer dialog of BibleTime.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
@@ -8818,74 +9079,229 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <source>Itza</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="476"/>
+        <source>Verb tense changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>Can&apos;t write file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>The Sword config file can&apos;t be written!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
+        <source>Export Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
+        <source>Import bookmarks</source>
+        <translation type="unfinished">Import záložiek</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="781"/>
+        <source>Open the printer dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="785"/>
+        <source>Close BibleTime and save the settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="792"/>
+        <source>Toggle the main toolbar view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="802"/>
+        <source>Choose the way to arrange the windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="820"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="827"/>
+        <source>Entries of the current work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="831"/>
+        <source>Next entry</source>
+        <translation type="unfinished">Nasledujúci záznamu</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="835"/>
+        <source>Previous entry</source>
+        <translation type="unfinished">Predchádzajúci záznam</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="843"/>
+        <source>Save the current text into the work overwriting the old text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="847"/>
+        <source>Load the old text from the work into the edit area deleting the text in the area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="851"/>
+        <source>Deletes the current entry out of the work (no undo!)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="857"/>
+        <source>Bold</source>
+        <translation type="unfinished">Tučné</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="861"/>
+        <source>Italic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="865"/>
+        <source>Underline</source>
+        <translation type="unfinished">Podčiarknuté</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="870"/>
+        <source>Align left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="874"/>
+        <source>Centered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="878"/>
+        <source>Align right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="882"/>
+        <source>Justified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="887"/>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="890"/>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="893"/>
+        <source>Font color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="903"/>
+        <source>Show the BibleTime logo on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="907"/>
+        <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="914"/>
+        <source>The font selection below will apply to all texts in this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="923"/>
+        <source>The languages which can be used for the biblical booknames</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Work</source>
         <translation type="unfinished">Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Hits</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
         <source>Copy...</source>
         <translation type="unfinished">Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="83"/>
         <source>Reference only</source>
         <translation type="unfinished">Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="92"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="93"/>
         <source>Reference with text</source>
         <translation type="unfinished">Odkaz s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
         <source>Save...</source>
         <translation type="unfinished">Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="90"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="91"/>
         <source>Print...</source>
         <translation type="unfinished">Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copy search result...</source>
         <translation type="unfinished">Kopírovať výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copying search result</source>
         <translation type="unfinished">Kopírovanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Save search result...</source>
         <translation type="unfinished">Uložiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Saving search result</source>
         <translation type="unfinished">Ukladanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Print search result...</source>
         <translation type="unfinished">Vytlačiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Printing search result</source>
         <translation type="unfinished">Tlač výsledkov hľadania</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <source>Works chosen for the search and the number of the hits in each work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8896,75 +9312,105 @@ Označte ho a skopírujte do schránky. Potom vložte slovo do vyhľadávacieho 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="107"/>
-        <source>&amp;Add new range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
-        <source>Delete current &amp;range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="120"/>
         <source>&amp;Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="128"/>
         <source>Edi&amp;t current range:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="136"/>
         <source>Parsed search range:</source>
         <translation type="unfinished">Analyzovaný rozsah hľadania:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="193"/>
         <source>New range</source>
         <translation type="unfinished">Nový rozsah</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="270"/>
         <source>&lt;invalid name of search range&gt;</source>
         <translation type="unfinished">&lt;neplatný názov rozsahu hľadania&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="104"/>
+        <source>Select a scope from the list to edit the search ranges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="108"/>
+        <source>&amp;Add new scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
+        <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
+        <translation type="unfinished">Pridá nový rozsah pre hľadanie. Najskôr vložte správne meno, a potom upravte rozsahy.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="111"/>
+        <source>Delete current &amp;scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="112"/>
+        <source>Delete the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <source>Change the name of the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="132"/>
+        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
+        <translation type="unfinished">Zmení rozsah hľadania zvolenej položky. Pozrite si preddefinované rozsahy, aby ste videli, ako sú zostavené.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="140"/>
+        <source>The search ranges which will be used for the search, parsed to the canonical form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>Save Search Analysis</source>
         <translation type="unfinished">Uložiť analýzu hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="255"/>
         <source>BibleTime Search Analysis</source>
         <translation type="unfinished">BibleTime analýza hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
         <source>Search text :</source>
         <translation type="unfinished">Hľadaný text:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
         <source>Book</source>
         <translation type="unfinished">Kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="266"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="259"/>
         <source>Total hits</source>
         <translation type="unfinished">Celkom nájdených</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
         <source>Created by</source>
         <translation type="unfinished">Vytvoril</translation>
     </message>
@@ -9000,11 +9446,16 @@ This could take a long time. Proceed with indexing?</source>
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
+        <source>Start to search the text in the chosen works</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="770"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="774"/>
         <source>Search for:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9014,152 +9465,177 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="obsolete">Hľadanie v: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="967"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="976"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="981"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="978"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="985"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="982"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="987"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="984"/>
         <source>Basic Search Syntax Introduction</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="993"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="990"/>
         <source>No search scope</source>
         <translation type="unfinished">Bez rozsahu vyhľadávania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="924"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="922"/>
         <source>Works to Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="925"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="923"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="780"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
         <source>&amp;Help...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
         <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
         <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="800"/>
         <source>Scope:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="828"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="826"/>
         <source>Works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="791"/>
+        <source>Choose works for the search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="813"/>
+        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="823"/>
+        <source>The text you want to search for</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="253"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="255"/>
         <source>&amp;Analyze search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="283"/>
+        <source>Text of the selected search result item</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="45"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="47"/>
         <source>Results</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="53"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="55"/>
         <source>Copy...</source>
         <translation type="unfinished">Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="72"/>
         <source>Reference only</source>
         <translation type="unfinished">Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Reference with text</source>
         <translation type="unfinished">Odkaz s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="67"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="69"/>
         <source>Save...</source>
         <translation type="unfinished">Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="79"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="81"/>
         <source>Print...</source>
         <translation type="unfinished">Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Print search result...</source>
         <translation type="unfinished">Vytlačiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Printing search result</source>
         <translation type="unfinished">Tlač výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Save search result...</source>
         <translation type="unfinished">Uložiť výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Saving search result</source>
         <translation type="unfinished">Ukladanie výsledkov hľadania</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copy search result...</source>
         <translation type="unfinished">Kopírovať výsledky hľadania...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copying search result</source>
         <translation type="unfinished">Kopírovanie výsledkov hľadania</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="46"/>
+        <source>Search result of the selected work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9276,98 +9752,178 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
         <source>Standard Bible</source>
-        <translation type="unfinished">Štandardná Biblia</translation>
+        <translation type="obsolete">Štandardná Biblia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
         <source>Standard Commentary</source>
-        <translation type="unfinished">Štandardný Komentár</translation>
+        <translation type="obsolete">Štandardný Komentár</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
         <source>Standard Lexicon</source>
-        <translation type="unfinished">Štandardný Lexikón</translation>
+        <translation type="obsolete">Štandardný Lexikón</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="93"/>
         <source>Standard Daily Devotional</source>
-        <translation type="unfinished">Štandardné Denné zamyslenia</translation>
+        <translation type="obsolete">Štandardné Denné zamyslenia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="102"/>
         <source>Standard Hebrew Strong&apos;s Lexicon</source>
-        <translation type="unfinished">Štandardný Hebrejský lexikón Strongových čísel</translation>
+        <translation type="obsolete">Štandardný Hebrejský lexikón Strongových čísel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="111"/>
         <source>Standard Greek Strong&apos;s Lexicon</source>
-        <translation type="unfinished">Štandardný Grécky lexikón Strongových čísel</translation>
+        <translation type="obsolete">Štandardný Grécky lexikón Strongových čísel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
         <source>Standard Hebrew Morphological Lexicon</source>
-        <translation type="unfinished">Štandardný lexikón s hebrejskými morfológiami</translation>
+        <translation type="obsolete">Štandardný lexikón s hebrejskými morfológiami</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="129"/>
         <source>Standard Greek Morphological Lexicon</source>
-        <translation type="unfinished">Štandardný lexikón s gréckymi morfológiami</translation>
+        <translation type="obsolete">Štandardný lexikón s gréckymi morfológiami</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
+        <source>Bible:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="70"/>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="76"/>
+        <source>Commentary:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="80"/>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
+        <source>Lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="90"/>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
+        <source>Daily devotional:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="100"/>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="110"/>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
+        <source>Greek morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="140"/>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="263"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="271"/>
         <source>Text filters</source>
         <translation type="unfinished">Textové filtre</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="267"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="275"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can change the filter settings in each display window, of course.</source>
         <translation type="unfinished">Filtre ovplyvňujú zobrazovanie textu v okne. Tu si môžete nastaviť predvolené nastavenie pre všetky filtre. Prirodzene môžete si zmeniť nastavenia pre jednotlivé okná.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="273"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="281"/>
         <source>Insert line break after each verse</source>
         <translation type="unfinished">Vložiť ukončenie riadku po každom verši</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="278"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="286"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">Zobraziť čísla veršov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="283"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Show section headings</source>
         <translation type="unfinished">Zobraziť nadpisy oddielov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="289"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="297"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">Zobraziť krížové odkazy Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="294"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="302"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">Zobraziť grécke akcenty</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="307"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">Zobraziť body hebrejských hlások</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="304"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="312"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">Zobraziť hebrejské liturgické znaky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="309"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="317"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">Zobraziť morfologické delenie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="322"/>
         <source>Use textual variants</source>
         <translation type="unfinished">Použiť textové varianty</translation>
     </message>

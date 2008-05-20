@@ -1,12 +1,13 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-01-25 19:40+0100\n"
+"POT-Creation-Date: 2008-05-20 18:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1581,90 +1582,60 @@ msgid ""
 msgstr ""
 
 # type: Content of the bibletime entity
-#: docs/howto/en/docbook/index.docbook:6
+#: docs/howto/en/docbook/index.docbook:3
 msgid "<application>BibleTime</application>"
 msgstr ""
 
 # type: Content of the kapp entity
-#: docs/howto/en/docbook/index.docbook:7
+#: docs/howto/en/docbook/index.docbook:4
 msgid "&bibletimehandbook;"
 msgstr ""
 
 # type: Content of: <book><bookinfo><title>
-#: docs/howto/en/docbook/index.docbook:19
+#: docs/howto/en/docbook/index.docbook:14
 msgid "The Biblestudy HowTo"
 msgstr ""
 
 # type: Content of: <book><bookinfo><copyright><holder>
-#: docs/howto/en/docbook/index.docbook:32
-msgid "The team of &bibletime;, info@bibletime.info"
-msgstr ""
-
-# type: Content of: <book><bookinfo><copyright><holder>
-#: docs/howto/en/docbook/index.docbook:35
-msgid "Bob Harman"
+#: docs/howto/en/docbook/index.docbook:31
+msgid "The team of &bibletime; (info@bibletime.info)"
 msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:39
+#: docs/howto/en/docbook/index.docbook:36
 msgid ""
-"The copyright of this text is held by the author Bob Harman.  The text was "
-"adapted for publication with BibleTime by Fred Saalbach."
+"This document was originally created by Mr. Bob Harman and is licensed under "
+"the terms of the license <link "
+"url=\"http://creativecommons.org/licenses/by-sa/3.0/\"> \"Creative Commons "
+"Attribution-Share Alike\"</link>."
 msgstr ""
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/howto/en/docbook/index.docbook:42
 msgid ""
-"Non exclusive serial rights for this distribution of this document with the "
-"&bibletime; software have been made. Redistribution as part of the Bibletime "
-"software without modification and limited reproduction as provided by the "
-"\"fair use\" provisions of the US copyright code are also permitted."
-msgstr ""
-
-# type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:48
-msgid ""
-"For questions regarding the use of this material contact Bob Harman c/o New "
-"Covenant Church 1079 Big Bethel Rd. Hampton VA 23666 USA "
-"<email>ncc@ncchampton.org</email>."
-msgstr ""
-
-# type: Content of: <book><bookinfo><legalnotice><para>
-#: docs/howto/en/docbook/index.docbook:52
-msgid ""
 "Scripture quotes are from the New American Standard Bible unless otherwise "
-"indicated"
-msgstr ""
-
-# type: Content of: <book><bookinfo><date>
-#: docs/howto/en/docbook/index.docbook:56
-msgid "06/16/2004"
-msgstr ""
-
-# type: Content of: <book><bookinfo><releaseinfo>
-#: docs/howto/en/docbook/index.docbook:57
-msgid "1.02.00"
+"indicated."
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><title>
-#: docs/howto/en/docbook/index.docbook:61
+#: docs/howto/en/docbook/index.docbook:47
 msgid "Abstract"
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:63
+#: docs/howto/en/docbook/index.docbook:50
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
 msgstr ""
 
 # type: Content of: <book><bookinfo><abstract><para>
-#: docs/howto/en/docbook/index.docbook:65
+#: docs/howto/en/docbook/index.docbook:53
 msgid ""
 "It is the hope of the &bibletime; team that this HowTo will provoke the "
 "readers to study the scriptures to see what they say.  This particular study "
 "guide has been chosen as it takes care not to advocate any particular "
-"denominational doctrine.  We expect you to read and study the scriptures to "
-"understand what they say.  If you start with the attitude that you want to "
+"denominational doctrine.  We recommend you to read and study the scriptures "
+"to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
 msgstr ""

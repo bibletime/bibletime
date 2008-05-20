@@ -18,182 +18,182 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="47"/>
         <source>Creating BibleTime&apos;s GUI</source>
-        <translation>Creez interfaţa BibleTime</translation>
+        <translation type="obsolete">Creez interfaţa BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="87"/>
+        <location filename="../../src/bibletime_init.cpp" line="88"/>
         <source>Initializing menu- and toolbars</source>
         <translation>Iniţializez meniul- şi bara de unelte</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="89"/>
+        <location filename="../../src/bibletime_init.cpp" line="90"/>
         <source>&amp;File</source>
         <translation>&amp;Fişier</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="90"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>&amp;View</source>
         <translation>&amp;Interfaţă</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="91"/>
+        <location filename="../../src/bibletime_init.cpp" line="92"/>
         <source>&amp;Search</source>
         <translation>&amp;Caută</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="92"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;Window</source>
         <translation>&amp;Fereastră</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>Se&amp;ttings</source>
         <translation>Se&amp;tări</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="95"/>
         <source>&amp;Help</source>
         <translation>A&amp;jutor</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="97"/>
         <source>BibleTime</source>
         <translation>BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>Quit</source>
         <translation>Ieşire</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Exit BibleTime</source>
-        <translation>Ieşi din BibleTime</translation>
+        <translation type="obsolete">Ieşi din BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="118"/>
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Arată bara de unelte</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
         <source>&amp;Show bookshelf</source>
         <translation>Arată &amp;raftul de cărţi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>Show &amp;mag</source>
         <translation>Arată fereastra &amp;MAG</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Mod ecran plin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Search in &amp;open work(s)</source>
-        <translation>Caută în m&amp;odulul(e) deschis(e)</translation>
+        <translation type="obsolete">Caută în m&amp;odulul(e) deschis(e)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Search in standard &amp;Bible</source>
-        <translation>Caută în &amp;Biblia standard</translation>
+        <translation type="obsolete">Caută în &amp;Biblia standard</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>&amp;Save session</source>
         <translation>&amp;Salvează sesiunea</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Save as &amp;new session</source>
-        <translation>Salvează ca sesiune &amp;nouă</translation>
+        <translation type="obsolete">Salvează ca sesiune &amp;nouă</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>&amp;Load session</source>
         <translation>&amp;Încarcă sesiunea</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Şterge sesiune</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>&amp;Arrangement mode</source>
         <translation>Mod de &amp;vizualizare</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>&amp;Manual mode</source>
         <translation>Vizualizare &amp;manuală</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="230"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Vizualizare &amp;verticală</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="241"/>
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Vizualizare &amp;orizontală</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="252"/>
+        <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Auto-&amp;cascade</source>
         <translation>Supr&amp;apune ferestrele automat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="262"/>
+        <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Cascade</source>
         <translation>&amp;Suprapune ferestrele</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="272"/>
+        <location filename="../../src/bibletime_init.cpp" line="273"/>
         <source>Tile &amp;vertically</source>
         <translation>Vizualizare &amp;verticală</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="282"/>
+        <location filename="../../src/bibletime_init.cpp" line="283"/>
         <source>Tile &amp;horizontally</source>
         <translation>Vizualizare &amp;orizontală</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="292"/>
+        <location filename="../../src/bibletime_init.cpp" line="293"/>
         <source>Cl&amp;ose all</source>
         <translation>Închide t&amp;oate ferestrele</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="302"/>
         <source>&amp;Configure BibleTime</source>
-        <translation>&amp;Configurează BibleTime</translation>
+        <translation type="obsolete">&amp;Configurează BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="311"/>
         <source>Bookshelf &amp;Manager</source>
-        <translation>Ad&amp;ministratorul raftului de cărţi</translation>
+        <translation type="obsolete">Ad&amp;ministratorul raftului de cărţi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="319"/>
+        <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Manual</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="330"/>
+        <location filename="../../src/bibletime_init.cpp" line="331"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Cum să studiezi Biblia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="389"/>
+        <location filename="../../src/bibletime_init.cpp" line="388"/>
         <source>Initializing Sword</source>
         <translation>Iniţializez Sword</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="442"/>
         <source>Checking indices</source>
-        <translation>Verificare indici</translation>
+        <translation type="obsolete">Verificare indici</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="505"/>
@@ -204,6 +204,131 @@
         <location filename="../../src/bibletime_slots.cpp" line="505"/>
         <source>Please enter a name for the new session.</source>
         <translation>Te rog să introduci un nume pentru noua sesiune</translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="48"/>
+        <source>Creating BibleTime&apos;s user interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <source>Quit BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <source>Show or hide the bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <source>Show or hide the mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <source>Toggle fullscreen mode of the main window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <source>Search in &amp;open works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <source>Open the search dialog to search in all works that are currently open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <source>Search in standard &amp;Bible...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <source>Open the search dialog to search in the standard Bible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <source>Save as &amp;new session...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <source>Create and save a new session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <source>Automatically tile the open windows vertically (arrange side by side)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <source>Automatically cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <source>Cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <source>Vertically tile (arrange side by side) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <source>Horizontally tile (arrange on top of each other) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <source>Close all open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="303"/>
+        <source>&amp;Configure BibleTime...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <source>Set BibleTime&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="312"/>
+        <source>Bookshelf &amp;Manager...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="315"/>
+        <source>Configure your bookshelf and install/update/remove/index works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="323"/>
+        <source>Open BibleTime&apos;s handbook</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="334"/>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
+        <translation type="unfinished">Deschide studiul CumSă, inclus cu BibleTime.&lt;BR&gt;Acest CumSă este o introducere despre cum să studiezi Sfânta Biblie într-un mod eficient.</translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="441"/>
+        <source>Checking indexes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -636,27 +761,27 @@
         <translation type="unfinished">Mărime index</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="102"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="104"/>
         <source>Search Indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
         <source>Works with indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="119"/>
         <source>Works without indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="138"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="140"/>
         <source>KiB</source>
         <translation type="unfinished">KiB</translation>
     </message>
@@ -674,111 +799,156 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="97"/>
         <source>Install Path:</source>
-        <translation>Locul de Instalare:</translation>
+        <translation type="obsolete">Locul de Instalare:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
         <source>Configure...</source>
-        <translation>Configurare...</translation>
+        <translation type="obsolete">Configurare...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
         <source>Install</source>
-        <translation>Instalare</translation>
+        <translation type="obsolete">Instalare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="183"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="189"/>
         <source>Install/Update</source>
         <translation>Instalează/Actualizează</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="185"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Instalare şi Actualizare de module. Adaugă biblioteci (locale [de pe calculator] sau de pe Internet), reînnoieşte-le, selectează modulele pe care le doreşti să le instalezi sau să le reactualizezi şi după-aceea apasă pe butonul de instalare.&lt;br/&gt;&lt;b&gt;ATENŢIE: Dacă trăieşti într-o ţară unde creştinii sunt persecutaţi, nu folosi prin BibleTime vreo bibliotecă de pe Internet pentru a nu risca detectarea!&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
+        <source>Install path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="102"/>
+        <source>The path where the new works will be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="106"/>
+        <source>Configure paths where works are installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="124"/>
+        <source>Install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="125"/>
+        <source>Install or update selected works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
         <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="45"/>
         <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
-        <source>Configure install paths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
         <source>Configuration file for the paths is: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="69"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="71"/>
         <source>Add...</source>
         <translation type="unfinished">Adaugă...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
         <source>Edit...</source>
         <translation type="unfinished">Editează...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="124"/>
         <source>Choose directory</source>
         <translation type="unfinished">Selectează directorul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>Confirmation</source>
         <translation type="unfinished">Confirmare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation type="unfinished">Acest director nu este inscriptibil, deci BibleTime nu poate instala modulele aici. Vrei sa foloseşti aceste director in locul precedentului?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>Warning</source>
         <translation type="unfinished">Atenţie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
         <translation type="unfinished">Acest director nu este inscriptibil, deci BibleTime nu poate instala modulele aici. Vrei totuşi să-l adaugi la lista de rafturi de carţi?</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="36"/>
+        <source>Bookshelf Paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="48"/>
+        <source>Configure bookshelf paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="72"/>
+        <source>Add new path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
+        <source>Edit the selected path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
+        <source>Remove the selected path</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Work</source>
         <translation>Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Progress</source>
         <translation>Progres</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="57"/>
         <source>Stop</source>
         <translation>Opreşte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="84"/>
         <source>Stop All</source>
         <translation>Opreşte-le pe toate</translation>
     </message>
@@ -788,23 +958,33 @@
         <translation type="obsolete">Se conectează...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
         <source>Completed</source>
         <translation>Gata!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="140"/>
         <source>Cancelled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="67"/>
         <source>Waiting for turn...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="201"/>
         <source>Preparing install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <source>Install Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <source>Failed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -819,77 +999,112 @@
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Work</source>
         <translation type="unfinished">Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Install path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="71"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="142"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished">Ai selectat următoarele module:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="144"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="147"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished">Eşti sigur ca vrei sa le ştergi din calculator?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Confirmation</source>
         <translation type="unfinished">Confirmare</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <source>Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="58"/>
+        <source>Remove the selected works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Work</source>
         <translation>Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Description</source>
         <translation>Descriere:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Last refreshed:</source>
         <translation>Ultima oară reînnoit:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
         <source>Refresh</source>
-        <translation>Reînnoieşte</translation>
+        <translation type="obsolete">Reînnoieşte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="84"/>
         <source>Edit...</source>
         <translation>Editează...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
         <source>Delete</source>
-        <translation>Şterge</translation>
+        <translation type="obsolete">Şterge</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Add...</source>
         <translation>Adaugă...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <source>Refresh...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="80"/>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <source>Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
+        <source>Delete this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="91"/>
+        <source>Add new source</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -925,39 +1140,49 @@
         <translation>Reînnoire</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="252"/>
         <source>Remote:</source>
         <translation>De pe Internet:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Local:</source>
         <translation>Local:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>Install/Update works?</source>
         <translation>Vrei să instalezi/actualizezi modulele?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="316"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="335"/>
         <source>Do you really want to install these works?</source>
         <translation>Eşti sigur că vrei să instalezi aceste module?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Doar un singur modul poate fi instalat deodată. Selectează doar un singur modul dacă sunt altele marcate cu roşu!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="261"/>
         <source>Not a directory!</source>
         <translation>Nu este director!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="263"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="264"/>
         <source>Not readable!</source>
         <translation>Nu se poate citi!</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>Warning</source>
+        <translation type="unfinished">Atenţie</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -965,37 +1190,37 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>Choose type:</source>
-        <translation>Selectează felul:</translation>
+        <translation type="obsolete">Selectează felul:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="76"/>
         <source>BibleTime</source>
-        <translation>BibleTime</translation>
+        <translation type="obsolete">BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="77"/>
         <source>All text windows</source>
-        <translation>Toate ferestrele cu text</translation>
+        <translation type="obsolete">Toate ferestrele cu text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="78"/>
         <source>Bible windows</source>
-        <translation>Ferestrele Bibliei</translation>
+        <translation type="obsolete">Ferestrele Bibliei</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="79"/>
         <source>Commentary windows</source>
-        <translation>Ferestrele comentariilor</translation>
+        <translation type="obsolete">Ferestrele comentariilor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="80"/>
         <source>Lexicon windows</source>
-        <translation>Ferestrele lexicoanelor</translation>
+        <translation type="obsolete">Ferestrele lexicoanelor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="81"/>
         <source>Book windows</source>
-        <translation>Ferestrele cărţilor</translation>
+        <translation type="obsolete">Ferestrele cărţilor</translation>
     </message>
 </context>
 <context>
@@ -1053,77 +1278,87 @@
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
         <source>Strong&apos;s Search</source>
-        <translation>Căutarea Strong</translation>
+        <translation type="obsolete">Căutarea Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="203"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="204"/>
         <source>Reference only</source>
         <translation>Doar referinţele</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="207"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
         <source>Text of reference</source>
         <translation>Textul referinţei</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="234"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="235"/>
         <source>Reference with text</source>
         <translation>Referinţă cu text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="239"/>
         <source>Chapter</source>
         <translation>Capitol</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="227"/>
         <source>Chapter as plain text</source>
         <translation>Capitol ca text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="231"/>
         <source>Chapter as HTML</source>
         <translation>Capitol ca HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="261"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="262"/>
         <source>Bible window</source>
         <translation>Fereastra Bibliei</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="270"/>
         <source>Copy...</source>
         <translation>Copiază ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="281"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="282"/>
         <source>Save...</source>
         <translation>Salvează...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="294"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="295"/>
         <source>Print...</source>
         <translation>Tipăreşte...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>Copiază capitolul în clipboard ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copying</source>
         <translation>Copiez</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving chapter ...</source>
         <translation>Salvez capitol...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving</source>
         <translation>Salvez</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
+        <source>Strong&apos;s search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="200"/>
+        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1179,27 +1414,27 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Change bookmark description</source>
-        <translation>Schimbă descrierea semnului de carte ...</translation>
+        <translation type="obsolete">Schimbă descrierea semnului de carte ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Import bookmarks</source>
-        <translation>Importă semne de carte</translation>
+        <translation type="obsolete">Importă semne de carte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Export bookmarks</source>
-        <translation>Exportă semne de carte</translation>
+        <translation type="obsolete">Exportă semne de carte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Print bookmarks</source>
-        <translation>Tipăreşte semne de carte</translation>
+        <translation type="obsolete">Tipăreşte semne de carte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
         <source>Remove selected item(s)</source>
-        <translation>Şterge referinţa selectată</translation>
+        <translation type="obsolete">Şterge referinţa selectată</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="632"/>
@@ -1216,118 +1451,178 @@
         <source>The work to which the bookmark points to is not installed.</source>
         <translation>Modulul unde semnul de carte se află nu este instalat.</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
+        <source>Change bookmark description...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <source>Import bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
+        <source>Export bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
+        <source>Print bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
+        <source>Remove selected items...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CBookshelfIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="86"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="87"/>
         <source>Bookshelf</source>
         <translation>Raft de cărţi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="108"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="109"/>
         <source>Grouping</source>
         <translation>Grupare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="116"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="117"/>
         <source>Category/Language</source>
         <translation>Categorie/Limbă</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="125"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="126"/>
         <source>Category</source>
         <translation>Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="134"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="135"/>
         <source>Language/Category</source>
         <translation>Limbă/Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="143"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="144"/>
         <source>Language</source>
         <translation>Limbă</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="175"/>
         <source>Show Hidden</source>
-        <translation>Arată şi cele ascunse</translation>
+        <translation type="obsolete">Arată şi cele ascunse</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="190"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="191"/>
         <source>Edit</source>
         <translation>Editare</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="197"/>
         <source>Plain text</source>
-        <translation>Text</translation>
+        <translation type="obsolete">Text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="203"/>
         <source>HTML</source>
-        <translation>HTML</translation>
+        <translation type="obsolete">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="451"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="455"/>
         <source>Search</source>
         <translation>Caută</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="484"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="488"/>
         <source>Search in</source>
         <translation>Caută în</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="499"/>
         <source>Search in Selected</source>
-        <translation>Caută în cele selectate</translation>
+        <translation type="obsolete">Caută în cele selectate</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="554"/>
         <source>BibleTime - Unlock work</source>
-        <translation>BibleTime - Descuie modulul</translation>
+        <translation type="obsolete">BibleTime - Descuie modulul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="555"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="559"/>
         <source>Enter the unlock key for this work.</source>
         <translation> Introduce cheia pentru a descuia modulul.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="214"/>
         <source>Search...</source>
         <translation>Caută...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="219"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="220"/>
         <source>Unlock...</source>
         <translation>Descuie...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="226"/>
         <source>About...</source>
         <translation>Despre...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
         <source>Hide/Unhide Works...</source>
-        <translation>Ascunde/Arată Module...</translation>
+        <translation type="obsolete">Ascunde/Arată Module...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="586"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="590"/>
         <source>Hide/Unhide Works</source>
         <translation>Ascunde/Arată Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="587"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="591"/>
         <source>Select the works to be hidden.</source>
         <translation>Selectează modulele pe care vrei să le ascunzi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
         <source>Works Only</source>
-        <translation>Doar Module</translation>
+        <translation type="obsolete">Doar Module</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="153"/>
+        <source>Works only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="168"/>
+        <source>Hide/unhide works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="176"/>
+        <source>Show hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="198"/>
+        <source>Plain text...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="204"/>
+        <source>HTML...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="503"/>
+        <source>Search in selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="558"/>
+        <source>Unlock Work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1365,38 +1660,48 @@
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Sync with active Bible</source>
-        <translation>Sincronizează cu Biblia activă</translation>
+        <translation type="obsolete">Sincronizează cu Biblia activă</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="200"/>
         <source>Commentary window</source>
         <translation>Ferestrele comentariilor</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
+        <source>Synchronize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="87"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="46"/>
         <source>Display</source>
         <translation>Afişează opţiunile</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="54"/>
         <source>Desk</source>
         <translation>Birou</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="62"/>
         <source>Languages</source>
         <translation>Limbi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="74"/>
         <source>HotKeys</source>
-        <translation>Taste de scurtături</translation>
+        <translation type="obsolete">Taste de scurtături</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="34"/>
         <source>Configure BibleTime</source>
         <translation>Configurează BibleTime</translation>
     </message>
@@ -1484,7 +1789,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
         <source>Display templates define how text is displayed. Please choose a template you like.</source>
-        <translation>Şabloanele definesc felul cum textul este afişat. Alege te rog şablonul care-ţi place.</translation>
+        <translation type="obsolete">Şabloanele definesc felul cum textul este afişat. Alege te rog şablonul care-ţi place.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
@@ -1526,23 +1831,33 @@
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Dar cine lucrează după adevăr, vine la lumină, pentru ca să i se arate faptele, fiindcă sînt făcute în Dumnezeu.``</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
+        <source>Display templates define how text is displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
         <source>Back in history</source>
         <translation>Navighează înapoi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="181"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
         <source>Forward in history</source>
         <translation>Navighează înainte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Search</source>
-        <translation>Caută</translation>
+        <translation type="obsolete">Caută</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <source>Open the search dialog with the works of this window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1653,41 +1968,107 @@
     </message>
 </context>
 <context>
+    <name>CKeyReferenceWidget</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="124"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished">Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="126"/>
+        <source>Next book</source>
+        <translation type="unfinished">Cartea următoare</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="129"/>
+        <source>Previous book</source>
+        <translation type="unfinished">Cartea anterioară</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="131"/>
+        <source>Next chapter</source>
+        <translation type="unfinished">Capitolul următor</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="134"/>
+        <source>Previous chapter</source>
+        <translation type="unfinished">Capitolul anterior</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="136"/>
+        <source>Next verse</source>
+        <translation type="unfinished">Versetul următor</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="139"/>
+        <source>Previous verse</source>
+        <translation type="unfinished">Versetul anterior</translation>
+    </message>
+</context>
+<context>
     <name>CLanguageSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Specify a language for names of Bible books</source>
-        <translation>Specifică o limbă pentru numele cărţilor biblice</translation>
+        <translation type="obsolete">Specifică o limbă pentru numele cărţilor biblice</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
         <source>Sword has a number of locales available which can be used to internationalize the   names of books of the Bible. You can specify which locale to use. If you want to   create a new locale, see http://www.crosswire.org/sword/develop for details.</source>
-        <translation>Sword are un număr de localizări disponibile care pot fi folosite pentru a internaţionaliza numele cărţilor Bibliei. Poţi specifica localizarea dorită. Dacă vrei să creezi o nouă localizare, vezi http://www.crosswire.org/sword/develop pentru detalii.</translation>
+        <translation type="obsolete">Sword are un număr de localizări disponibile care pot fi folosite pentru a internaţionaliza numele cărţilor Bibliei. Poţi specifica localizarea dorită. Dacă vrei să creezi o nouă localizare, vezi http://www.crosswire.org/sword/develop pentru detalii.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Language for names of Bible books</source>
         <translation>Limba pentru numele cărţilor biblice</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="123"/>
         <source>Select custom fonts per-language</source>
-        <translation>Selectează fonturi predefinite pentru fiecare limbă</translation>
+        <translation type="obsolete">Selectează fonturi predefinite pentru fiecare limbă</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="127"/>
         <source>Here you find a list of all languages of the installed works.  You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
-        <translation>Aici găseşti o listă cu toate limbile modulelor instalate. Poţi specifica un font predefinit pentru fiecare limbă ce necesită un font specific pentru o afişare corectă a caracterelor.</translation>
+        <translation type="obsolete">Aici găseşti o listă cu toate limbile modulelor instalate. Poţi specifica un font predefinit pentru fiecare limbă ce necesită un font specific pentru o afişare corectă a caracterelor.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="157"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="154"/>
         <source>Use custom font</source>
         <translation>Foloseşte fonturi predefinite</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>The quick brown fox jumps over the lazy dog.</source>
         <translation>Dumnezeu sa te binecuvanteze</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
+        <source>Select the language in which the Biblical book names are displayed.&lt;small&gt;&lt;br&gt;&lt;br&gt;Translated names come from the Sword project.&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
+        <source>Language for names of Bible books:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="121"/>
+        <source>Custom fonts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="124"/>
+        <source>You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CLexiconKeyChooser</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="54"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished">Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
     </message>
 </context>
 <context>
@@ -1817,18 +2198,28 @@
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="57"/>
         <source>Creating index for work: </source>
         <translation>Se crează indexul pentru modul(e): </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="43"/>
         <source>Cancel</source>
         <translation type="unfinished">Anulează</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="45"/>
         <source>Creating indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing Is Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing is cancelled because modules are removed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1873,122 +2264,122 @@
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="741"/>
         <source>Version</source>
         <translation>Versiune</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="747"/>
         <source>unknown</source>
         <translation>necunoscut</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
         <source>Markup</source>
         <translation>Marcare</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
         <source>Location</source>
         <translation>Locaţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
         <source>Language</source>
         <translation>Limbă</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
         <source>Category</source>
         <translation>Categorie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
         <source>Writable</source>
         <translation>Inscriptibil</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>yes</source>
         <translation>da</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>no</source>
         <translation>nu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Unlock key</source>
         <translation>Cod de descuiere</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="796"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Features</source>
         <translation>Opţiuni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Atenţie, acest modul conţine material sectant / chestionabil!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
         <source>About</source>
         <translation>Despre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Distribution license</source>
         <translation>Licenţa de distribuţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>Distribution source</source>
         <translation>Sursă distribuţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>Distribution notes</source>
         <translation>Note distribuţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
         <source>Text source</source>
         <translation>Sursă text</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Copyright notes</source>
         <translation>Note drept de autor</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Copyright holder</source>
         <translation>Deţinător drept de autor</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Copyright date</source>
         <translation>Data drept de autor</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Copyright contact name</source>
         <translation>Nume contact drept de autor</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Copyright contact address</source>
         <translation>Adresă contact drept de autor</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright contact email</source>
         <translation>Email contact drept de autor</translation>
     </message>
@@ -2218,10 +2609,10 @@
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="314"/>
         <source>Alternative text</source>
-        <translation>Text alternativ</translation>
+        <translation type="obsolete">Text alternativ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="472"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="459"/>
         <source>Added text</source>
         <translation>Text adăugat</translation>
     </message>
@@ -2736,62 +3127,62 @@
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
         <source>Footnotes</source>
         <translation>Note de subsol</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="381"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
         <source>Strong&apos;s numbers</source>
         <translation>Numere Strong</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
         <source>Headings</source>
         <translation>Titluri</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="383"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
         <source>Morphological tags</source>
         <translation>Etichete morfologice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="384"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
         <source>Lemmas</source>
         <translation>Comentarii auxiliare</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
         <source>Hebrew vowel points</source>
         <translation>Vocalizare ebraică</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
         <source>Hebrew cantillation marks</source>
         <translation>Semne ebraice de intonaţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
         <source>Greek accents</source>
         <translation>Accente greceşti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
         <source>Red letter words</source>
         <translation>Cuvinte colorate în roşu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
         <source>Textual variants</source>
         <translation>Variante textuale</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
         <source>Scripture cross-references</source>
         <translation>Trimiteri biblice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
         <source>Morph segmentation</source>
         <translation>Segmentare morfologică</translation>
     </message>
@@ -2811,42 +3202,42 @@
         <translation>De pe Internet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="257"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="258"/>
         <source>Old testament</source>
         <translation>Vechiul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="258"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="259"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moise/Pentateuc/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="259"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
         <source>History</source>
         <translation>Istorice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="260"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
         <source>Prophets</source>
         <translation>Profeţi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
         <source>New testament</source>
         <translation>Noul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
         <source>Gospels</source>
         <translation>Evanghelii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
         <source>Letters/Epistles</source>
         <translation>Scrisori/Epistole</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Epistolele lui Pavel</translation>
     </message>
@@ -2888,12 +3279,12 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
         <source>BibleTime - Export Bookmarks</source>
-        <translation>BibleTime - Exportă semne de carte</translation>
+        <translation type="obsolete">BibleTime - Exportă semne de carte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
         <source>BibleTime - Import bookmarks</source>
-        <translation>BibleTime - Importă semne de carte</translation>
+        <translation type="obsolete">BibleTime - Importă semne de carte</translation>
     </message>
     <message>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
@@ -2943,382 +3334,382 @@
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
         <source>Close BibleTime and save the settings.</source>
-        <translation>Închide BibleTime şi salvează configurările.</translation>
+        <translation type="obsolete">Închide BibleTime şi salvează configurările.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="766"/>
         <source>Show or hide the bookshelf.</source>
-        <translation>Arată sau ascunde raftul cu cărţi.</translation>
+        <translation type="obsolete">Arată sau ascunde raftul cu cărţi.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="770"/>
         <source>Toggle the main toolbar view.</source>
-        <translation>Activează bara de unelte.</translation>
+        <translation type="obsolete">Activează bara de unelte.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="778"/>
         <source>Open the search dialog to search in all works that are currently open.</source>
-        <translation>Deschide fereastra de căutare pentru a căuta în toate modulele deschise.</translation>
+        <translation type="obsolete">Deschide fereastra de căutare pentru a căuta în toate modulele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="782"/>
         <source>Open the search dialog to search in the standard Bible.</source>
-        <translation>Deschide fereastra de căutare pentru a căuta în Biblia standard.</translation>
+        <translation type="obsolete">Deschide fereastra de căutare pentru a căuta în Biblia standard.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="790"/>
         <source>Restore a saved BibleTime session.</source>
-        <translation>Restaurează o sesiune BibleTime salvată.</translation>
+        <translation type="obsolete">Restaurează o sesiune BibleTime salvată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="794"/>
         <source>Save current BibleTime session so that it can be reused later.</source>
-        <translation>Salvează sesiunea curentă pentru a putea fi refolosită ulterior.</translation>
+        <translation type="obsolete">Salvează sesiunea curentă pentru a putea fi refolosită ulterior.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="798"/>
         <source>Create and save a new session.</source>
-        <translation>Crează şi salvează o sesiune nouă.</translation>
+        <translation type="obsolete">Crează şi salvează o sesiune nouă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="802"/>
         <source>Delete a BibleTime session.</source>
-        <translation>Şterge o sesiune BibleTime salvată anterior.</translation>
+        <translation type="obsolete">Şterge o sesiune BibleTime salvată anterior.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="806"/>
         <source>Toggle fullscreen mode of the main window.</source>
-        <translation>Activează ecran plin pentru fereastra principală</translation>
+        <translation type="obsolete">Activează ecran plin pentru fereastra principală</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="810"/>
         <source>Vertically tile the open windows.</source>
-        <translation>Vizualizare automată verticală pentru ferestrele deschise.</translation>
+        <translation type="obsolete">Vizualizare automată verticală pentru ferestrele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="814"/>
         <source>Horizontally tile the open windows.</source>
-        <translation>Vizualizare automată orizontală pentru ferestrele deschise.</translation>
+        <translation type="obsolete">Vizualizare automată orizontală pentru ferestrele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="818"/>
         <source>Cascade the open windows.</source>
-        <translation>Vizualizare suprapusă pentru ferestrele deschise.</translation>
+        <translation type="obsolete">Vizualizare suprapusă pentru ferestrele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="823"/>
         <source>Choose the way that is used to arrange the windows.</source>
-        <translation>Alege felul în care vor fi afişate ferestrele.</translation>
+        <translation type="obsolete">Alege felul în care vor fi afişate ferestrele.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="827"/>
         <source>Automatically tile the open windows vertically.</source>
-        <translation>Vizualizare automată verticală a ferestrelor deschise.</translation>
+        <translation type="obsolete">Vizualizare automată verticală a ferestrelor deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="831"/>
         <source>Automatically tile the open windows horizontally.</source>
-        <translation>Vizualizare automată orizontală a ferestrelor deschise.</translation>
+        <translation type="obsolete">Vizualizare automată orizontală a ferestrelor deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="835"/>
         <source>Automatically cascade the open windows.</source>
-        <translation>Vizualizare automată prin suprapunere pentru ferestrele deschise.</translation>
+        <translation type="obsolete">Vizualizare automată prin suprapunere pentru ferestrele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="840"/>
         <source>Close all open windows.</source>
-        <translation>Închide toate ferestrele deschise.</translation>
+        <translation type="obsolete">Închide toate ferestrele deschise.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="848"/>
         <source>Open BibleTime&apos;s toolbar editor.</source>
-        <translation>Deschide editorul barei de unelte al BibleTime.</translation>
+        <translation type="obsolete">Deschide editorul barei de unelte al BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="852"/>
         <source>Open the dialog to set most of BibleTime&apos;s preferences.</source>
-        <translation>Deschide fereastra de opţiuni BibleTime unde puteţi selecta cele mai multe preferinţe.</translation>
+        <translation type="obsolete">Deschide fereastra de opţiuni BibleTime unde puteţi selecta cele mai multe preferinţe.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="856"/>
         <source>Open the dialog to configure your bookshelf and install/update/remove works.</source>
-        <translation>Deschide fereastra de opţiuni pentru a configura raftul de cărţi sau pentru a instala/actualiza/şterge module.</translation>
+        <translation type="obsolete">Deschide fereastra de opţiuni pentru a configura raftul de cărţi sau pentru a instala/actualiza/şterge module.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="873"/>
         <source>Send a bugreport to the developers of BibleTime.</source>
-        <translation>Raportează o eroare dezvoltatorilor BibleTime.</translation>
+        <translation type="obsolete">Raportează o eroare dezvoltatorilor BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="877"/>
         <source>Show detailed information about BibleTime.</source>
-        <translation>Arată informaţii detaliate despre BibleTime.</translation>
+        <translation type="obsolete">Arată informaţii detaliate despre BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="881"/>
         <source>Show detailed information about the KDE project.</source>
-        <translation>Arată informaţii detaliate despre proiectul KDE.</translation>
+        <translation type="obsolete">Arată informaţii detaliate despre proiectul KDE.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="895"/>
         <source>Stop the active search.</source>
-        <translation>Opreşte căutarea curentă.</translation>
+        <translation type="obsolete">Opreşte căutarea curentă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="920"/>
         <source>The search text will be used exactly as entered.</source>
-        <translation>Textul de căutat va fi exact ca cel introdus.</translation>
+        <translation type="obsolete">Textul de căutat va fi exact ca cel introdus.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="924"/>
         <source>Treat the search string as a GNU regular expression. The BibleTime handbook contains an introduction to regular expressions.</source>
-        <translation>Textul de căutare este tratat ca expresie regulată GNU. Consultă manualul BibleTime pentru o explicaţie în legătură cu expresiile regulate.</translation>
+        <translation type="obsolete">Textul de căutare este tratat ca expresie regulată GNU. Consultă manualul BibleTime pentru o explicaţie în legătură cu expresiile regulate.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="939"/>
         <source>Choose a scope from the list. Select the first item to use no scope, the second one is to use each work&apos;s last search result as search scope. The others are user defined search scopes.</source>
-        <translation>Alege un domeniu din lista celor disponibile. Selectează prima referinţă pentru folosirea fără domeniu, a doua referinţă fiind pentru folosirea rezultatului căutării din fiecare modul ca domeniu de căutare.Celelalte sunt domenii predefinite ale utilizatorului.</translation>
+        <translation type="obsolete">Alege un domeniu din lista celor disponibile. Selectează prima referinţă pentru folosirea fără domeniu, a doua referinţă fiind pentru folosirea rezultatului căutării din fiecare modul ca domeniu de căutare.Celelalte sunt domenii predefinite ale utilizatorului.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="945"/>
         <source>Select an item from the list to edit the search scope.</source>
-        <translation>Selectează o referinţă din listă pentru a edita domeniul de căutare.</translation>
+        <translation type="obsolete">Selectează o referinţă din listă pentru a edita domeniul de căutare.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="949"/>
         <source>Change the name of the selected search scope.</source>
-        <translation>Schimbă numele domeniilor de căutare selectate.</translation>
+        <translation type="obsolete">Schimbă numele domeniilor de căutare selectate.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="953"/>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation>Schimbă razele de acţiune ale domeniilor de căutare selectate. Aruncă o privire asupra domeniilor de căutare predefinite pentru a vedea cum sunt construite aceste raze de acţiune.</translation>
+        <translation type="obsolete">Schimbă razele de acţiune ale domeniilor de căutare selectate. Aruncă o privire asupra domeniilor de căutare predefinite pentru a vedea cum sunt construite aceste raze de acţiune.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="957"/>
         <source>Contains the search ranges which will be used for the search.</source>
-        <translation>Conţine razele de căutare care vor fi folosite de BibleTime.</translation>
+        <translation type="obsolete">Conţine razele de căutare care vor fi folosite de BibleTime.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="961"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation>Adaugă un nou domeniu de căutare. Mai întâi introdu un nume potrivit, apoi editează razele de căutare.</translation>
+        <translation type="obsolete">Adaugă un nou domeniu de căutare. Mai întâi introdu un nume potrivit, apoi editează razele de căutare.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="973"/>
         <source>The list of works chosen for the search.</source>
-        <translation>Lista modulelor selectate pentru căutare.</translation>
+        <translation type="obsolete">Lista modulelor selectate pentru căutare.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="977"/>
         <source>This list contains the search result of the selected work.</source>
-        <translation>Lista conţine rezultatele căutării în modulele selectate.</translation>
+        <translation type="obsolete">Lista conţine rezultatele căutării în modulele selectate.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="981"/>
         <source>The text preview of the selected search result item.</source>
-        <translation>Previzualizare text pentru referinţele rezultate în urma căutării.</translation>
+        <translation type="obsolete">Previzualizare text pentru referinţele rezultate în urma căutării.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1002"/>
         <source>Go back one item in the display history.</source>
-        <translation>Du-te înapoi o intrare în istoria afişărilor.</translation>
+        <translation type="obsolete">Du-te înapoi o intrare în istoria afişărilor.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1006"/>
         <source>Go forward one item in the display history.</source>
-        <translation>Du-te înainte o intrare în istoria afişărilor.</translation>
+        <translation type="obsolete">Du-te înainte o intrare în istoria afişărilor.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1011"/>
         <source>Show all occurences of the Strong number currently under the mouse cursor.</source>
-        <translation>Arată toate instanţele</translation>
+        <translation type="obsolete">Arată toate instanţele</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1017"/>
         <source>This list contains the books which are available in this work.</source>
-        <translation>Această listă conţine cărţile disponibile în acest modul.</translation>
+        <translation type="obsolete">Această listă conţine cărţile disponibile în acest modul.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1021"/>
         <source>Show the next book of this work.</source>
-        <translation>Arată cartea următoare a acestui modul.</translation>
+        <translation type="obsolete">Arată cartea următoare a acestui modul.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1025"/>
         <source>Show the previous book of this work.</source>
-        <translation>Arată cartea anterioară a acestui modul.</translation>
+        <translation type="obsolete">Arată cartea anterioară a acestui modul.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1029"/>
         <source>This list contains the chapters which are available in the current book.</source>
-        <translation>Această listă conţine capitolele disponibile în cartea curentă.</translation>
+        <translation type="obsolete">Această listă conţine capitolele disponibile în cartea curentă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1033"/>
         <source>Show the next chapter of the work.</source>
-        <translation>Arată capitolul următor al modulului.</translation>
+        <translation type="obsolete">Arată capitolul următor al modulului.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1037"/>
         <source>Show the previous chapter of the work.</source>
-        <translation>Arată capitolul anterior al modulului.</translation>
+        <translation type="obsolete">Arată capitolul anterior al modulului.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1041"/>
         <source>This list contains the verses which are available in the current chapter.</source>
-        <translation>Această listă conţine versetele care sunt diponibile în capitolul curent.</translation>
+        <translation type="obsolete">Această listă conţine versetele care sunt diponibile în capitolul curent.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1045"/>
         <source>In  Bible texts, the next verse will be highlighted. In commentaries, the next entry will be shown.</source>
-        <translation>Pentru textele Bibliei, versetul următor va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea următoare.</translation>
+        <translation type="obsolete">Pentru textele Bibliei, versetul următor va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea următoare.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1050"/>
         <source>In Bible texts, the previous verse will be highlighted. In commentaries, the previous entry will be shown.</source>
-        <translation>Pentru textele Bibliei, versetul anterior va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea anterioară.</translation>
+        <translation type="obsolete">Pentru textele Bibliei, versetul anterior va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea anterioară.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1057"/>
         <source>Synchronize the displayed entry of this work with the active Bible window.</source>
-        <translation>Sincronizează intrarea afişată din acest modul cu fereastra Bibliei active.</translation>
+        <translation type="obsolete">Sincronizează intrarea afişată din acest modul cu fereastra Bibliei active.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1064"/>
         <source>This list contains the entries of the current work.</source>
-        <translation>Această listă conţine intrările modulului curent.</translation>
+        <translation type="obsolete">Această listă conţine intrările modulului curent.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1068"/>
         <source>The next entry of the work will be shown.</source>
-        <translation>Va fi afişată intrarea următoare a modulului.</translation>
+        <translation type="obsolete">Va fi afişată intrarea următoare a modulului.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1072"/>
         <source>The previous entry of the work will be shown.</source>
-        <translation>Va fi afişată intrarea anterioară a modulului.</translation>
+        <translation type="obsolete">Va fi afişată intrarea anterioară a modulului.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1080"/>
         <source>Save the curent text into the work. The old text will be overwritten.</source>
-        <translation>Salvează textul curent în cadrul modulului. Vechiul text va fi pierdut.</translation>
+        <translation type="obsolete">Salvează textul curent în cadrul modulului. Vechiul text va fi pierdut.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1088"/>
         <source>Deletes the current entry out of the work. The text will be lost.</source>
-        <translation>Şterge intrarea curentă din modul. Textul va fi pierdut.</translation>
+        <translation type="obsolete">Şterge intrarea curentă din modul. Textul va fi pierdut.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1094"/>
         <source>Toggle bold formatting of the selected text.</source>
-        <translation>Activează formatarea îngroşată a textului selectat.</translation>
+        <translation type="obsolete">Activează formatarea îngroşată a textului selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1098"/>
         <source>Toggle italic formatting of the selected text.</source>
-        <translation>Activează formatarea înclinată a textului selectat.</translation>
+        <translation type="obsolete">Activează formatarea înclinată a textului selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1102"/>
         <source>Toggle underlined formatting of the selected text.</source>
-        <translation>Activează formatarea subliniat a textului selectat.</translation>
+        <translation type="obsolete">Activează formatarea subliniat a textului selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1107"/>
         <source>The text will be aligned on the left side of the page.</source>
-        <translation>Textul va fi aliniat pe partea stângă a paginii.</translation>
+        <translation type="obsolete">Textul va fi aliniat pe partea stângă a paginii.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1111"/>
         <source>Centers the text horizontally.</source>
-        <translation>Centrează textul orizontal.</translation>
+        <translation type="obsolete">Centrează textul orizontal.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1115"/>
         <source>Aligns the text on the right side of the page.</source>
-        <translation>Textul va fi aliniat pe partea dreaptă a paginii.</translation>
+        <translation type="obsolete">Textul va fi aliniat pe partea dreaptă a paginii.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1119"/>
         <source>Justifies the text on the page.</source>
-        <translation>Aliniere dreaptă a textului de pe pagină.</translation>
+        <translation type="obsolete">Aliniere dreaptă a textului de pe pagină.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1124"/>
         <source>Choose a new font for the selected text.</source>
-        <translation>Alege un font nou pentru textul selectat.</translation>
+        <translation type="obsolete">Alege un font nou pentru textul selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1127"/>
         <source>Choose a new font size for the selected text.</source>
-        <translation>Alege o nouă mărime a fontului pentru textul selectat.</translation>
+        <translation type="obsolete">Alege o nouă mărime a fontului pentru textul selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1130"/>
         <source>Choose a new color for the selected text.</source>
-        <translation>Alege o culoare nouă pentru textul selectat.</translation>
+        <translation type="obsolete">Alege o culoare nouă pentru textul selectat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1140"/>
         <source>Activate this to see the BibleTime logo on startup.</source>
-        <translation>Activează aceasta pentru a vedea logo-ul BibleTime la pornire.</translation>
+        <translation type="obsolete">Activează aceasta pentru a vedea logo-ul BibleTime la pornire.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1144"/>
         <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup.</source>
-        <translation>Salvează sesiunea utilizatorului la închiderea BibleTime şi restaureaz-o la următoarea pornire.</translation>
+        <translation type="obsolete">Salvează sesiunea utilizatorului la închiderea BibleTime şi restaureaz-o la următoarea pornire.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1151"/>
         <source>The font selection below will apply to all texts in this language.</source>
-        <translation>Fontul selectat mai jos va fi aplicat tuturor textelor din această limbă.</translation>
+        <translation type="obsolete">Fontul selectat mai jos va fi aplicat tuturor textelor din această limbă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1160"/>
         <source>Contains the languages which can be used for the biblical booknames.</source>
-        <translation>Conţine limbile ce pot fi folosite pentru denumirile internaţionale ale cărţilor.</translation>
+        <translation type="obsolete">Conţine limbile ce pot fi folosite pentru denumirile internaţionale ale cărţilor.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1167"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked.</source>
-        <translation>Biblia standard este folosită când o legătură din Biblie e apăsată.</translation>
+        <translation type="obsolete">Biblia standard este folosită când o legătură din Biblie e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1171"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked.</source>
-        <translation>Comentariu standard e folosit când o legătură din comentariu e apăsată.</translation>
+        <translation type="obsolete">Comentariu standard e folosit când o legătură din comentariu e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1175"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked.</source>
-        <translation>Lexiconul standard e folosit când o hiperlegătură din lexicon e apăsată.</translation>
+        <translation type="obsolete">Lexiconul standard e folosit când o hiperlegătură din lexicon e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1179"/>
         <source>The standard devotional will be used to display a short start up devotional.</source>
-        <translation>Devoţionalul standard va fi folosit pentru a afişa un mic devoţional de pornire.</translation>
+        <translation type="obsolete">Devoţionalul standard va fi folosit pentru a afişa un mic devoţional de pornire.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1183"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked.</source>
-        <translation>Lexiconul ebraic standard e folosit când o hiperlegătură din lexiconul ebraic e apăsată.</translation>
+        <translation type="obsolete">Lexiconul ebraic standard e folosit când o hiperlegătură din lexiconul ebraic e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1187"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked.</source>
-        <translation>Lexiconul grecesc standard e folosit când o legătură din lexiconul grecesc e apăsată.</translation>
+        <translation type="obsolete">Lexiconul grecesc standard e folosit când o legătură din lexiconul grecesc e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1191"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked.</source>
-        <translation>Lexiconul morfologic standard pentru textele ebraice e folosit când o legătură a etichetelor morfologice din textul ebraic e apăsată.</translation>
+        <translation type="obsolete">Lexiconul morfologic standard pentru textele ebraice e folosit când o legătură a etichetelor morfologice din textul ebraic e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1195"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked.</source>
-        <translation>Lexiconul morfologic standard pentru textele greceşti e folosit când o legătură a etichetelor morfologice din textul grecesc e apăsată.</translation>
+        <translation type="obsolete">Lexiconul morfologic standard pentru textele greceşti e folosit când o legătură a etichetelor morfologice din textul grecesc e apăsată.</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="60"/>
@@ -3413,67 +3804,67 @@
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="865"/>
         <source>Open BibleTime&apos;s handbook.</source>
-        <translation>Deschide manualul BibleTime-ului</translation>
+        <translation type="obsolete">Deschide manualul BibleTime-ului</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="869"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Deschide studiul CumSă, inclus cu BibleTime.&lt;BR&gt;Acest CumSă este o introducere despre cum să studiezi Sfânta Biblie într-un mod eficient.</translation>
+        <translation type="obsolete">Deschide studiul CumSă, inclus cu BibleTime.&lt;BR&gt;Acest CumSă este o introducere despre cum să studiezi Sfânta Biblie într-un mod eficient.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="891"/>
         <source>Start to search the text in each of the chosen works.</source>
-        <translation>Caută textul in fiecare dintre modulele alese.</translation>
+        <translation type="obsolete">Caută textul in fiecare dintre modulele alese.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="902"/>
         <source>Choose works for the search.</source>
-        <translation>Selectează modulele în care trebuie căutat.</translation>
+        <translation type="obsolete">Selectează modulele în care trebuie căutat.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="906"/>
         <source>The text you want to search for in the chosen works.</source>
-        <translation>Textul pe care vrei să-l cauţi în modulele selectate.</translation>
+        <translation type="obsolete">Textul pe care vrei să-l cauţi în modulele selectate.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="912"/>
         <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation>Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină toate cuvintele de căutat. Ordinea cuvintelor nu este importantă.</translation>
+        <translation type="obsolete">Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină toate cuvintele de căutat. Ordinea cuvintelor nu este importantă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="916"/>
         <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
-        <translation>Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină unul sau mai multe cuvinte de căutat. Ordinea lor nu este importantă.</translation>
+        <translation type="obsolete">Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină unul sau mai multe cuvinte de căutat. Ordinea lor nu este importantă.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="932"/>
         <source>Case sensitive distinguishes between upper and lowercase characters.</source>
-        <translation>Sensibil la majuscule = face diferenţa între litere mari (majuscule) si litere mici (normale).</translation>
+        <translation type="obsolete">Sensibil la majuscule = face diferenţa între litere mari (majuscule) si litere mici (normale).</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="965"/>
         <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
-        <translation>Şterge întregul domeniu de căutare. Dacă anulezi, setările  nu vor fi salvate.</translation>
+        <translation type="obsolete">Şterge întregul domeniu de căutare. Dacă anulezi, setările  nu vor fi salvate.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="993"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation>Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
+        <translation type="obsolete">Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="997"/>
         <source>Open the search dialog with the works of this window.</source>
-        <translation>Deschide căutarea în modulele acestei ferestre.</translation>
+        <translation type="obsolete">Deschide căutarea în modulele acestei ferestre.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1084"/>
         <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
-        <translation>Încarcă vechiul text al modulului în zona de editare. Textul nesalvat se va pierde.</translation>
+        <translation type="obsolete">Încarcă vechiul text al modulului în zona de editare. Textul nesalvat se va pierde.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1204"/>
         <source>Opens the search dialog to search in the works that are currently open.</source>
-        <translation>Deschide căutarea în modulele deschise în acest moment.</translation>
+        <translation type="obsolete">Deschide căutarea în modulele deschise în acest moment.</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="258"/>
@@ -3483,7 +3874,7 @@
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="755"/>
         <source>Open the printer dialog of BibleTime.</source>
-        <translation>Deschide fereastra de tipărire.</translation>
+        <translation type="obsolete">Deschide fereastra de tipărire.</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
@@ -3520,73 +3911,228 @@
         <source>Itza</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="476"/>
+        <source>Verb tense changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>Can&apos;t write file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>The Sword config file can&apos;t be written!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
+        <source>Export Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
+        <source>Import bookmarks</source>
+        <translation type="unfinished">Importă semne de carte</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="781"/>
+        <source>Open the printer dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="785"/>
+        <source>Close BibleTime and save the settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="792"/>
+        <source>Toggle the main toolbar view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="802"/>
+        <source>Choose the way to arrange the windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="820"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="827"/>
+        <source>Entries of the current work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="831"/>
+        <source>Next entry</source>
+        <translation type="unfinished">Intrarea următoare</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="835"/>
+        <source>Previous entry</source>
+        <translation type="unfinished">Intrarea anterioară</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="843"/>
+        <source>Save the current text into the work overwriting the old text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="847"/>
+        <source>Load the old text from the work into the edit area deleting the text in the area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="851"/>
+        <source>Deletes the current entry out of the work (no undo!)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="857"/>
+        <source>Bold</source>
+        <translation type="unfinished">Ingroşat</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="861"/>
+        <source>Italic</source>
+        <translation type="unfinished">Înclinat</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="865"/>
+        <source>Underline</source>
+        <translation type="unfinished">Subliniat</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="870"/>
+        <source>Align left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="874"/>
+        <source>Centered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="878"/>
+        <source>Align right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="882"/>
+        <source>Justified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="887"/>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="890"/>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="893"/>
+        <source>Font color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="903"/>
+        <source>Show the BibleTime logo on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="907"/>
+        <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="914"/>
+        <source>The font selection below will apply to all texts in this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="923"/>
+        <source>The languages which can be used for the biblical booknames</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Work</source>
         <translation>Modul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Hits</source>
         <translation>Hits</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
         <source>Copy...</source>
         <translation>Copiază ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="83"/>
         <source>Reference only</source>
         <translation>Doar referinţele</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="92"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="93"/>
         <source>Reference with text</source>
         <translation>Referinţă cu text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
         <source>Save...</source>
         <translation>Salvează...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="90"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="91"/>
         <source>Print...</source>
         <translation>Tipăreşte...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copy search result...</source>
         <translation>Copiază rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copying search result</source>
         <translation>Copiez rezultatele căutării</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Save search result...</source>
         <translation>Salvează rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Saving search result</source>
         <translation>Salvez rezultatele căutării</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Print search result...</source>
         <translation>Tipăreşte rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Printing search result</source>
         <translation>Tipăresc rezultatele căutarii</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <source>Works chosen for the search and the number of the hits in each work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3599,73 +4145,113 @@
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="107"/>
         <source>&amp;Add new range</source>
-        <translation>&amp;Adaugă un nou loc de căutare:</translation>
+        <translation type="obsolete">&amp;Adaugă un nou loc de căutare:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
         <source>Delete current &amp;range</source>
-        <translation>Şte&amp;rge raza de acţiune a căutarii actuale</translation>
+        <translation type="obsolete">Şte&amp;rge raza de acţiune a căutarii actuale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="120"/>
         <source>&amp;Name:</source>
         <translation>&amp;Nume:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="128"/>
         <source>Edi&amp;t current range:</source>
         <translation>Edi&amp;tează raza de acţiune a căutarii actuale</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="136"/>
         <source>Parsed search range:</source>
         <translation>Raza de căutare analizată:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="193"/>
         <source>New range</source>
         <translation>Loc nou de căutare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="270"/>
         <source>&lt;invalid name of search range&gt;</source>
         <translation>&lt;rază de căutare invalidă&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="104"/>
+        <source>Select a scope from the list to edit the search ranges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="108"/>
+        <source>&amp;Add new scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
+        <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
+        <translation type="unfinished">Adaugă un nou domeniu de căutare. Mai întâi introdu un nume potrivit, apoi editează razele de căutare.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="111"/>
+        <source>Delete current &amp;scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="112"/>
+        <source>Delete the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <source>Change the name of the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="132"/>
+        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
+        <translation type="unfinished">Schimbă razele de acţiune ale domeniilor de căutare selectate. Aruncă o privire asupra domeniilor de căutare predefinite pentru a vedea cum sunt construite aceste raze de acţiune.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="140"/>
+        <source>The search ranges which will be used for the search, parsed to the canonical form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>Save Search Analysis</source>
         <translation>Salvează analiza căutării</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
         <translation>Fişiere HTML (*.html;*.HTML;*.HTM;*.htm)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="255"/>
         <source>BibleTime Search Analysis</source>
         <translation>Analiza căutării BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
         <source>Search text :</source>
         <translation>Textul căutării:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
         <source>Book</source>
         <translation>Carte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="266"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="259"/>
         <source>Total hits</source>
         <translation>Total găsite</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
         <source>Created by</source>
         <translation>Creat de</translation>
     </message>
@@ -3693,11 +4279,16 @@
 This could take a long time. Proceed with indexing?</source>
         <translation>Unul sau mai multe module trebuie să fie indexate înainte de a putea fi căutate. Acest proces poate dura ceva timp. Doriţi începerea indexării?</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
+        <source>Start to search the text in the chosen works</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="770"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="774"/>
         <source>Search for:</source>
         <translation>Caută:</translation>
     </message>
@@ -3727,145 +4318,170 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="obsolete">Caut în:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="967"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Introdu termenii pentru căutare, separaţi unul de altul prin spaţii. În mod implicit (default), funcţia de căutare returnează rezultatele ce se potrivesc cu oricare dintre termenii precizaţi (OR). Pentru ca funcţia de căutare să returneze doar rezultatele ce se potrivesc cu toţi termenii precizaţi, separă-i pe aceştia prin cuvântul AND.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Poţi folosi wildcard-uri: &apos;*&apos; înlocui orice secvenţă de caractere, în timp ce &apos;p&apos; inlocuieşte un singur caracter. Folosirea parantezelor te ajută sa grupezi termenii de căutare (de exemplu: ( Iisus OR suflet) AND Dumnezeu&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="976"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation>&lt;p&gt;Pentru a căuta în alt text în afară de cel principal, tastează tipul textului urmat de &quot;:&quot;, iar după-aceea termenul de căutat. De exemplu, pentru a căuta numărul Strong H8077, scrie &apos;strong:H8077&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="981"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="978"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Tipuri de text disponibile&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;titlul:&lt;/td&gt;&lt;td&gt;căutări titluri&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;notă de subsol&lt;/td&gt;&lt;td&gt;căutări note de subsol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;căutări numere Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfologie:&lt;/td&gt;&lt;td&gt;căutări coduri morfologice&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="985"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="982"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;BibleTime foloseşte motorul de căutare Lucene pentru a găsi termenii precizaţi de tine. Este foarte complex, având foarte multe funcţii avansate, despre care poţi afla mai mult aici: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="987"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="984"/>
         <source>Basic Search Syntax Introduction</source>
         <translation>Introducere în sintaxa căutarii simple.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="993"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="990"/>
         <source>No search scope</source>
         <translation>Nici un domeniu de căutare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="924"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="922"/>
         <source>Works to Search in</source>
         <translation>Module în care să se caute:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="925"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="923"/>
         <source>Select the works which should be searched.</source>
         <translation>Selectează modulele în care să se caute:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="780"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
         <source>&amp;Help...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
         <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
         <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="800"/>
         <source>Scope:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="828"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="826"/>
         <source>Works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="791"/>
+        <source>Choose works for the search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="813"/>
+        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="823"/>
+        <source>The text you want to search for</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="253"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="255"/>
         <source>&amp;Analyze search...</source>
         <translation>&amp;Analizează căutarea...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="283"/>
+        <source>Text of the selected search result item</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="45"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="47"/>
         <source>Results</source>
         <translation>Rezultate</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="53"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="55"/>
         <source>Copy...</source>
         <translation>Copiază ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="72"/>
         <source>Reference only</source>
         <translation>Doar referinţele</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Reference with text</source>
         <translation>Referinţă cu text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="67"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="69"/>
         <source>Save...</source>
         <translation>Salvează...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="79"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="81"/>
         <source>Print...</source>
         <translation>Tipăreşte...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Print search result...</source>
         <translation>Tipăreşte rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Printing search result</source>
         <translation>Tipăresc rezultatele căutarii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Save search result...</source>
         <translation>Salvează rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Saving search result</source>
         <translation>Salvez rezultatele căutării</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copy search result...</source>
         <translation>Copiază rezultatele căutării...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copying search result</source>
         <translation>Copiez rezultatele căutării</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="46"/>
+        <source>Search result of the selected work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3883,98 +4499,178 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
         <source>Standard Bible</source>
-        <translation>Biblia standard</translation>
+        <translation type="obsolete">Biblia standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
         <source>Standard Commentary</source>
-        <translation>Comentariu standard</translation>
+        <translation type="obsolete">Comentariu standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
         <source>Standard Lexicon</source>
-        <translation>Lexicon standard</translation>
+        <translation type="obsolete">Lexicon standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="93"/>
         <source>Standard Daily Devotional</source>
-        <translation>Devoţional zilnic standard</translation>
+        <translation type="obsolete">Devoţional zilnic standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="102"/>
         <source>Standard Hebrew Strong&apos;s Lexicon</source>
-        <translation>Lexiconul ebraic Strong standard</translation>
+        <translation type="obsolete">Lexiconul ebraic Strong standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="111"/>
         <source>Standard Greek Strong&apos;s Lexicon</source>
-        <translation>Lexiconul grecesc Strong standard</translation>
+        <translation type="obsolete">Lexiconul grecesc Strong standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
         <source>Standard Hebrew Morphological Lexicon</source>
-        <translation>Lexicon morfologic ebraic standard</translation>
+        <translation type="obsolete">Lexicon morfologic ebraic standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="129"/>
         <source>Standard Greek Morphological Lexicon</source>
-        <translation>Lexicon morfologic grecesc standard</translation>
+        <translation type="obsolete">Lexicon morfologic grecesc standard</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
+        <source>Bible:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="70"/>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="76"/>
+        <source>Commentary:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="80"/>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
+        <source>Lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="90"/>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
+        <source>Daily devotional:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="100"/>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="110"/>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
+        <source>Greek morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="140"/>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="263"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="271"/>
         <source>Text filters</source>
         <translation>Filtre text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="267"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="275"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can change the filter settings in each display window, of course.</source>
         <translation>Filtrele controlează înfăţişarea textului în cadrul ferestrelor. Aici poţi alege configurările standard pentru toate filtrele. Poţi schimba, de asemenea, configurările filtrelor din fiecare fereastră.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="273"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="281"/>
         <source>Insert line break after each verse</source>
         <translation>Afişează versetele pe rânduri noi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="278"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="286"/>
         <source>Show verse numbers</source>
         <translation>Arată numerele versetelor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="283"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Show section headings</source>
         <translation>Arată titlurile secţiilor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="289"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="297"/>
         <source>Show scripture cross-references</source>
         <translation>Arată trimiterile biblice</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="294"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="302"/>
         <source>Show Greek accents</source>
         <translation>Arată accentele greceşti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="307"/>
         <source>Show Hebrew vowel points</source>
         <translation>Arată vocalizarea ebraică</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="304"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="312"/>
         <source>Show Hebrew cantillation marks</source>
         <translation>Arată semnele ebraice de intonaţie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="309"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="317"/>
         <source>Show morph segmentation</source>
         <translation>Arată segmentarea morfologică</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="322"/>
         <source>Use textual variants</source>
         <translation>Foloseşte variantele textuale</translation>
     </message>

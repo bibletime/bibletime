@@ -5295,182 +5295,172 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/bibletime_init.cpp" line="47"/>
         <source>Creating BibleTime&apos;s GUI</source>
-        <translation type="unfinished">바이블타임의 GUI 만들기</translation>
+        <translation type="obsolete">바이블타임의 GUI 만들기</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="87"/>
+        <location filename="../../src/bibletime_init.cpp" line="88"/>
         <source>Initializing menu- and toolbars</source>
         <translation type="unfinished">메뉴와 툴바 초기화</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="89"/>
+        <location filename="../../src/bibletime_init.cpp" line="90"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="90"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="91"/>
+        <location filename="../../src/bibletime_init.cpp" line="92"/>
         <source>&amp;Search</source>
         <translation type="unfinished">찾기&amp;S</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="92"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;Window</source>
         <translation type="unfinished">창&amp;W</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>Se&amp;ttings</source>
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="95"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="97"/>
         <source>BibleTime</source>
         <translation type="unfinished">바이블타임</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="106"/>
-        <source>Exit BibleTime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="118"/>
+        <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="130"/>
+        <location filename="../../src/bibletime_init.cpp" line="131"/>
         <source>&amp;Show bookshelf</source>
         <translation type="unfinished">책꽂이 보기</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>Show &amp;mag</source>
         <translation type="unfinished">부제 보기</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="155"/>
+        <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>&amp;Fullscreen mode</source>
         <translation type="unfinished">전체화면으로 표시&amp;F</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="165"/>
         <source>Search in &amp;open work(s)</source>
-        <translation type="unfinished">열린 작업에서 찾기</translation>
+        <translation type="obsolete">열린 작업에서 찾기</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="177"/>
         <source>Search in standard &amp;Bible</source>
-        <translation type="unfinished">기본 성경에서 찾기</translation>
+        <translation type="obsolete">기본 성경에서 찾기</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>&amp;Save session</source>
         <translation type="unfinished">세션 저장하기&amp;S</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Save as &amp;new session</source>
-        <translation type="unfinished">새 세션으로 저장</translation>
+        <translation type="obsolete">새 세션으로 저장</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="196"/>
+        <location filename="../../src/bibletime_init.cpp" line="197"/>
         <source>&amp;Load session</source>
         <translation type="unfinished">세션 불러오기&amp;L</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="199"/>
+        <location filename="../../src/bibletime_init.cpp" line="200"/>
         <source>&amp;Delete session</source>
         <translation type="unfinished">세션 삭제</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="212"/>
+        <location filename="../../src/bibletime_init.cpp" line="213"/>
         <source>&amp;Arrangement mode</source>
         <translation type="unfinished">정렬 모드</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="219"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>&amp;Manual mode</source>
         <translation type="unfinished">수동 모드</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="230"/>
+        <location filename="../../src/bibletime_init.cpp" line="231"/>
         <source>Auto-tile &amp;vertically</source>
         <translation type="unfinished">수직으로 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="241"/>
+        <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation type="unfinished">수평으로 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="252"/>
+        <location filename="../../src/bibletime_init.cpp" line="253"/>
         <source>Auto-&amp;cascade</source>
         <translation type="unfinished">정렬&amp;C</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="262"/>
+        <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>&amp;Cascade</source>
         <translation type="unfinished">정렬&amp;C</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="272"/>
+        <location filename="../../src/bibletime_init.cpp" line="273"/>
         <source>Tile &amp;vertically</source>
         <translation type="unfinished">수직으로 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="282"/>
+        <location filename="../../src/bibletime_init.cpp" line="283"/>
         <source>Tile &amp;horizontally</source>
         <translation type="unfinished">수평으로 정렬</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="292"/>
+        <location filename="../../src/bibletime_init.cpp" line="293"/>
         <source>Cl&amp;ose all</source>
         <translation type="unfinished">창 모두 닫기</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="302"/>
-        <source>&amp;Configure BibleTime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="311"/>
         <source>Bookshelf &amp;Manager</source>
-        <translation type="unfinished">책꽂이 관리자</translation>
+        <translation type="obsolete">책꽂이 관리자</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="319"/>
+        <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>&amp;Handbook</source>
         <translation type="unfinished">핸드북&amp;H</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="330"/>
+        <location filename="../../src/bibletime_init.cpp" line="331"/>
         <source>&amp;Bible Study Howto</source>
         <translation type="unfinished">성경공부 길잡이&amp;B</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="389"/>
+        <location filename="../../src/bibletime_init.cpp" line="388"/>
         <source>Initializing Sword</source>
         <translation type="unfinished">Sword 시작하기</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="442"/>
         <source>Checking indices</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
@@ -5482,6 +5472,131 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/bibletime_slots.cpp" line="505"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">새로운 세션의 이름을 입력하세요</translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="48"/>
+        <source>Creating BibleTime&apos;s user interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
+        <source>Quit BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="134"/>
+        <source>Show or hide the bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="145"/>
+        <source>Show or hide the mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <source>Toggle fullscreen mode of the main window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <source>Search in &amp;open works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <source>Open the search dialog to search in all works that are currently open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <source>Search in standard &amp;Bible...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <source>Open the search dialog to search in the standard Bible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <source>Save as &amp;new session...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <source>Create and save a new session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
+        <source>Automatically tile the open windows vertically (arrange side by side)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
+        <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <source>Automatically cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <source>Cascade the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <source>Vertically tile (arrange side by side) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <source>Horizontally tile (arrange on top of each other) the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <source>Close all open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="303"/>
+        <source>&amp;Configure BibleTime...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <source>Set BibleTime&apos;s preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="312"/>
+        <source>Bookshelf &amp;Manager...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="315"/>
+        <source>Configure your bookshelf and install/update/remove/index works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="323"/>
+        <source>Open BibleTime&apos;s handbook</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="334"/>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="441"/>
+        <source>Checking indexes</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5844,27 +5959,27 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">인도네시아어</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="96"/>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="102"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="104"/>
         <source>Search Indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="114"/>
         <source>Works with indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="119"/>
         <source>Works without indexes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="138"/>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="140"/>
         <source>KiB</source>
         <translation type="unfinished">
             </translation>
@@ -5881,134 +5996,174 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="97"/>
-        <source>Install Path:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
-        <source>Configure...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="117"/>
-        <source>Install</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="183"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="189"/>
         <source>Install/Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="185"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="100"/>
+        <source>Install path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="102"/>
+        <source>The path where the new works will be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="106"/>
+        <source>Configure paths where works are installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="124"/>
+        <source>Install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="125"/>
+        <source>Install or update selected works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
         <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="45"/>
         <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
-        <source>Configure install paths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="52"/>
         <source>Configuration file for the paths is: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="69"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="71"/>
         <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="124"/>
         <source>Choose directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="127"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="36"/>
+        <source>Bookshelf Paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="48"/>
+        <source>Configure bookshelf paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="72"/>
+        <source>Add new path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="78"/>
+        <source>Edit the selected path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="84"/>
+        <source>Remove the selected path</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="42"/>
         <source>Progress</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="57"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="84"/>
         <source>Stop All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
         <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="126"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="140"/>
         <source>Cancelled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="65"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="67"/>
         <source>Waiting for turn...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="182"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="201"/>
         <source>Preparing install...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="38"/>
+        <source>Install Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <source>Failed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6023,45 +6178,55 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtRemovePage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="50"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="52"/>
         <source>Install path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="79"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="68"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="71"/>
         <source>Remove installed works. Select the works and click Remove button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="142"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="144"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="147"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
+        <source>Remove...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="58"/>
+        <source>Remove the selected works</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
@@ -6071,33 +6236,48 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">상태</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="94"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="103"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Last refreshed:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="76"/>
-        <source>Refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="84"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
-        <source>Delete</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
+        <source>Add...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="83"/>
-        <source>Add...</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="79"/>
+        <source>Refresh...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="80"/>
+        <source>Refresh the list of works from this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <source>Delete...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="87"/>
+        <source>Delete this source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="91"/>
+        <source>Add new source</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6134,38 +6314,48 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="252"/>
         <source>Remote:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Local:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="314"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>Install/Update works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="316"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="335"/>
         <source>Do you really want to install these works?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="261"/>
         <source>Not a directory!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="263"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="264"/>
         <source>Not readable!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="325"/>
+        <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6174,37 +6364,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>Choose type:</source>
-        <translation type="unfinished">타입 선택</translation>
+        <translation type="obsolete">타입 선택</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="76"/>
         <source>BibleTime</source>
-        <translation type="unfinished">바이블타임</translation>
+        <translation type="obsolete">바이블타임</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="77"/>
         <source>All text windows</source>
-        <translation type="unfinished">모든 텍스트 창</translation>
+        <translation type="obsolete">모든 텍스트 창</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="78"/>
         <source>Bible windows</source>
-        <translation type="unfinished">성서 창</translation>
+        <translation type="obsolete">성서 창</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="79"/>
         <source>Commentary windows</source>
-        <translation type="unfinished">주석 창</translation>
+        <translation type="obsolete">주석 창</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="80"/>
         <source>Lexicon windows</source>
-        <translation type="unfinished">렉시컨 창</translation>
+        <translation type="obsolete">렉시컨 창</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="81"/>
         <source>Book windows</source>
-        <translation type="unfinished">책 창</translation>
+        <translation type="obsolete">책 창</translation>
     </message>
 </context>
 <context>
@@ -6262,77 +6452,87 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
         <source>Strong&apos;s Search</source>
-        <translation type="unfinished">스트롱 넘버</translation>
+        <translation type="obsolete">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="203"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="204"/>
         <source>Reference only</source>
         <translation type="unfinished">참조만</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="207"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="208"/>
         <source>Text of reference</source>
         <translation type="unfinished">참조의 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="234"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="235"/>
         <source>Reference with text</source>
         <translation type="unfinished">참조와 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="239"/>
         <source>Chapter</source>
         <translation type="unfinished">장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="226"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="227"/>
         <source>Chapter as plain text</source>
         <translation type="unfinished">장을 일반 텍스트로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="231"/>
         <source>Chapter as HTML</source>
         <translation type="unfinished">장을 HTML로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="261"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="262"/>
         <source>Bible window</source>
         <translation type="unfinished">성서 창</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="269"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="270"/>
         <source>Copy...</source>
         <translation type="unfinished">복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="281"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="282"/>
         <source>Save...</source>
         <translation type="unfinished">저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="294"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="295"/>
         <source>Print...</source>
         <translation type="unfinished">인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copy chapter to clipboard ...</source>
         <translation type="unfinished">장을 클립보드에 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="392"/>
         <source>Copying</source>
         <translation type="unfinished">복사 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving chapter ...</source>
         <translation type="unfinished">장 저장 중 ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="430"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="431"/>
         <source>Saving</source>
         <translation type="unfinished">저장 중</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="196"/>
+        <source>Strong&apos;s search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="200"/>
+        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6388,27 +6588,27 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
         <source>Change bookmark description</source>
-        <translation type="unfinished">설명 바꾸기 ...</translation>
+        <translation type="obsolete">설명 바꾸기 ...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
         <source>Import bookmarks</source>
-        <translation type="unfinished">북마크 가져오기</translation>
+        <translation type="obsolete">북마크 가져오기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
         <source>Export bookmarks</source>
-        <translation type="unfinished">북마크 내보내기</translation>
+        <translation type="obsolete">북마크 내보내기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
         <source>Print bookmarks</source>
-        <translation type="unfinished">북마크 인쇄</translation>
+        <translation type="obsolete">북마크 인쇄</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
         <source>Remove selected item(s)</source>
-        <translation type="unfinished">선택한 항목(들) 지우기</translation>
+        <translation type="obsolete">선택한 항목(들) 지우기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="632"/>
@@ -6425,117 +6625,157 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>The work to which the bookmark points to is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="120"/>
+        <source>Change bookmark description...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="121"/>
+        <source>Import bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="122"/>
+        <source>Export bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="123"/>
+        <source>Print bookmarks...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="125"/>
+        <source>Remove selected items...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CBookshelfIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="86"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="87"/>
         <source>Bookshelf</source>
         <translation type="unfinished">책꽂이</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="108"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="109"/>
         <source>Grouping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="116"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="117"/>
         <source>Category/Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="125"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="126"/>
         <source>Category</source>
         <translation type="unfinished">분류</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="134"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="135"/>
         <source>Language/Category</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="143"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="144"/>
         <source>Language</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="175"/>
-        <source>Show Hidden</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="190"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="191"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="197"/>
         <source>Plain text</source>
-        <translation type="unfinished">단순 텍스트</translation>
+        <translation type="obsolete">단순 텍스트</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="203"/>
         <source>HTML</source>
-        <translation type="unfinished">HTML</translation>
+        <translation type="obsolete">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="451"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="455"/>
         <source>Search</source>
         <translation type="unfinished">찾기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="484"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="488"/>
         <source>Search in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="499"/>
-        <source>Search in Selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="554"/>
         <source>BibleTime - Unlock work</source>
-        <translation type="unfinished">바이블타임 - 작업 풀기</translation>
+        <translation type="obsolete">바이블타임 - 작업 풀기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="555"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="559"/>
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">이 작업의 해제 키를 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="213"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="214"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="219"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="220"/>
         <source>Unlock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="225"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="226"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
-        <source>Hide/Unhide Works...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="586"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="590"/>
         <source>Hide/Unhide Works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="587"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="591"/>
         <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
-        <source>Works Only</source>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="153"/>
+        <source>Works only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="168"/>
+        <source>Hide/unhide works...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="176"/>
+        <source>Show hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="198"/>
+        <source>Plain text...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="204"/>
+        <source>HTML...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="503"/>
+        <source>Search in selected...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="558"/>
+        <source>Unlock Work</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6574,38 +6814,48 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Sync with active Bible</source>
-        <translation type="unfinished">활성화된 성서와 동기화</translation>
+        <translation type="obsolete">활성화된 성서와 동기화</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="200"/>
         <source>Commentary window</source>
         <translation type="unfinished">주석 창</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
+        <source>Synchronize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="87"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="50"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="46"/>
         <source>Display</source>
         <translation type="unfinished">표시 옵션</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="54"/>
         <source>Desk</source>
         <translation type="unfinished">데스크</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="62"/>
         <source>Languages</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="74"/>
         <source>HotKeys</source>
-        <translation type="unfinished">단축키</translation>
+        <translation type="obsolete">단축키</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="34"/>
         <source>Configure BibleTime</source>
         <translation type="unfinished">바이블타임 시작</translation>
     </message>
@@ -6694,7 +6944,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
         <source>Display templates define how text is displayed. Please choose a template you like.</source>
-        <translation type="unfinished">화면 템플레이트는 모듈 텍스트를 어떻게 보여줄지를 정의합니다. 원하는 템플레이트를 선택하세요.</translation>
+        <translation type="obsolete">화면 템플레이트는 모듈 텍스트를 어떻게 보여줄지를 정의합니다. 원하는 템플레이트를 선택하세요.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
@@ -6742,23 +6992,33 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">
             </translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
+        <source>Display templates define how text is displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
         <source>Back in history</source>
         <translation type="unfinished">히스토리 이전으로</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="181"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
         <source>Forward in history</source>
         <translation type="unfinished">히스토리 앞으로</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="135"/>
         <source>Search</source>
-        <translation type="unfinished">찾기</translation>
+        <translation type="obsolete">찾기</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <source>Open the search dialog with the works of this window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6864,41 +7124,107 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     </message>
 </context>
 <context>
+    <name>CKeyReferenceWidget</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="124"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="126"/>
+        <source>Next book</source>
+        <translation type="unfinished">다음 책</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="129"/>
+        <source>Previous book</source>
+        <translation type="unfinished">이전 책</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="131"/>
+        <source>Next chapter</source>
+        <translation type="unfinished">다음 장</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="134"/>
+        <source>Previous chapter</source>
+        <translation type="unfinished">이전 장</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="136"/>
+        <source>Next verse</source>
+        <translation type="unfinished">다음 절</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="139"/>
+        <source>Previous verse</source>
+        <translation type="unfinished">이전 절 </translation>
+    </message>
+</context>
+<context>
     <name>CLanguageSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Specify a language for names of Bible books</source>
-        <translation type="unfinished">성서의 책 이름을 위한 언어 지정</translation>
+        <translation type="obsolete">성서의 책 이름을 위한 언어 지정</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
         <source>Sword has a number of locales available which can be used to internationalize the   names of books of the Bible. You can specify which locale to use. If you want to   create a new locale, see http://www.crosswire.org/sword/develop for details.</source>
-        <translation type="unfinished">스워드는 성서의 책 이름을 번역하는데 사용될 수 있는 여러개의 로케일을 가지고 있습니다. 사용자는 어떤 로케일을 사용할지 결정할 수 있습니다. 새로운 로케일을 만들고 싶으면 http://www.crosswire.org/sword/develop 을 참조하십시오.</translation>
+        <translation type="obsolete">스워드는 성서의 책 이름을 번역하는데 사용될 수 있는 여러개의 로케일을 가지고 있습니다. 사용자는 어떤 로케일을 사용할지 결정할 수 있습니다. 새로운 로케일을 만들고 싶으면 http://www.crosswire.org/sword/develop 을 참조하십시오.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Language for names of Bible books</source>
         <translation type="unfinished">성서의 책 이름을 위한 언어</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="123"/>
         <source>Select custom fonts per-language</source>
-        <translation type="unfinished">언어별 폰트 선택</translation>
+        <translation type="obsolete">언어별 폰트 선택</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="127"/>
         <source>Here you find a list of all languages of the installed works.  You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
-        <translation type="unfinished">설치한 모듈의 모든 언어 목록이 있습니다. 정확히 표현하기 위해 특별한 폰트가 필요한 언어의 경우 사용자 폰트를 지정할 수 있습니다.</translation>
+        <translation type="obsolete">설치한 모듈의 모든 언어 목록이 있습니다. 정확히 표현하기 위해 특별한 폰트가 필요한 언어의 경우 사용자 폰트를 지정할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="157"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="154"/>
         <source>Use custom font</source>
         <translation type="unfinished">사용자 폰트 사용</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="166"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>The quick brown fox jumps over the lazy dog.</source>
         <translation type="unfinished">The quick brown fox jumps over the lazy dog. 무궁화꽃이 피었습니다.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
+        <source>Select the language in which the Biblical book names are displayed.&lt;small&gt;&lt;br&gt;&lt;br&gt;Translated names come from the Sword project.&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
+        <source>Language for names of Bible books:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="121"/>
+        <source>Custom fonts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="124"/>
+        <source>You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CLexiconKeyChooser</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="54"/>
+        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7074,18 +7400,28 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="57"/>
         <source>Creating index for work: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="43"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="45"/>
         <source>Creating indices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing Is Cancelled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="103"/>
+        <source>Indexing is cancelled because modules are removed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7133,123 +7469,123 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="741"/>
         <source>Version</source>
         <translation type="unfinished">버전</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="751"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="747"/>
         <source>unknown</source>
         <translation type="unfinished">미상</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="749"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
         <source>Markup</source>
         <translation type="unfinished">마크업</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
         <source>Location</source>
         <translation type="unfinished">위치</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="758"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
         <source>Language</source>
         <translation type="unfinished">언어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
         <source>Category</source>
         <translation type="unfinished">분류</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
         <source>LCSH</source>
         <translation type="unfinished">LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
         <source>Writable</source>
         <translation type="unfinished">쓸수 있음</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>yes</source>
         <translation type="unfinished">예</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>no</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Unlock key</source>
         <translation type="unfinished">키 풀기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="796"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
         <source>Features</source>
         <translation type="unfinished">특징</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="804"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation type="unfinished">조심하세요. 이 모듈은 이교적으로 의심되는 내용을 포함하고 있습니다!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="807"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
         <source>Distribution license</source>
         <translation type="unfinished">배포 라이센스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
         <source>Distribution source</source>
         <translation type="unfinished">배포 소스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
         <source>Distribution notes</source>
         <translation type="unfinished">배포 노트</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
         <source>Text source</source>
         <translation type="unfinished">텍스트 소스</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
         <source>Copyright notes</source>
         <translation type="unfinished">저작권 노트</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
         <source>Copyright holder</source>
         <translation type="unfinished">저작권 소유자</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
         <source>Copyright date</source>
         <translation type="unfinished">저작권 날짜</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
         <source>Copyright contact name</source>
         <translation type="unfinished">저작권 연락 이름</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
         <source>Copyright contact address</source>
         <translation type="unfinished">저작권 연락처</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Copyright contact email</source>
         <translation type="unfinished">저작권 연락 이메일</translation>
     </message>
@@ -7441,10 +7777,10 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="314"/>
         <source>Alternative text</source>
-        <translation type="unfinished">다른 텍스트</translation>
+        <translation type="obsolete">다른 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="472"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="459"/>
         <source>Added text</source>
         <translation type="unfinished">첨가된 텍스트</translation>
     </message>
@@ -7979,62 +8315,62 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="380"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
         <source>Footnotes</source>
         <translation type="unfinished">각주</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="381"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
         <source>Strong&apos;s numbers</source>
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="382"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
         <source>Headings</source>
         <translation type="unfinished">표제</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="383"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
         <source>Morphological tags</source>
         <translation type="unfinished">형태학적 태그</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="384"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
         <source>Lemmas</source>
         <translation type="unfinished">부제</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="385"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
         <source>Hebrew vowel points</source>
         <translation type="unfinished">히브리어 모음부호</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="386"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
         <source>Hebrew cantillation marks</source>
         <translation type="unfinished">히브리어 영창 표시 보기</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="387"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
         <source>Greek accents</source>
         <translation type="unfinished">그리스어 강세</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="388"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
         <source>Red letter words</source>
         <translation type="unfinished">붉은 글씨 단어</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="389"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
         <source>Textual variants</source>
         <translation type="unfinished">다른 원문</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="390"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
         <source>Scripture cross-references</source>
         <translation type="unfinished">성서 상호 참조</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="391"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
         <source>Morph segmentation</source>
         <translation type="unfinished">문서 작업</translation>
     </message>
@@ -8054,42 +8390,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">원격</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="257"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="258"/>
         <source>Old testament</source>
         <translation type="unfinished">구약 성서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="258"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="259"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">모세/모세5경/토라</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="259"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
         <source>History</source>
         <translation type="unfinished">역사서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="260"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
         <source>Prophets</source>
         <translation type="unfinished">선지서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
         <source>New testament</source>
         <translation type="unfinished">신약 성서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
         <source>Gospels</source>
         <translation type="unfinished">복음서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">편지/서신서</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">바울서신</translation>
     </message>
@@ -8129,14 +8465,9 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
-        <source>BibleTime - Export Bookmarks</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
         <source>BibleTime - Import bookmarks</source>
-        <translation type="unfinished">바이블타임 - 북마크 가져오기</translation>
+        <translation type="obsolete">바이블타임 - 북마크 가져오기</translation>
     </message>
     <message>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
@@ -8184,455 +8515,385 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">바이블타임 시작</translation>
     </message>
     <message>
-        <location filename="../../src/util/cresmgr.cpp" line="755"/>
-        <source>Open the printer dialog of BibleTime.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/util/cresmgr.cpp" line="759"/>
         <source>Close BibleTime and save the settings.</source>
-        <translation type="unfinished">바이블타임 닫고 설정 저장하기</translation>
+        <translation type="obsolete">바이블타임 닫고 설정 저장하기</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="766"/>
         <source>Show or hide the bookshelf.</source>
-        <translation type="unfinished">책꽂이 보기 또는 감추기</translation>
+        <translation type="obsolete">책꽂이 보기 또는 감추기</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="770"/>
         <source>Toggle the main toolbar view.</source>
-        <translation type="unfinished">메인 툴바 보기 전환</translation>
+        <translation type="obsolete">메인 툴바 보기 전환</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="778"/>
         <source>Open the search dialog to search in all works that are currently open.</source>
-        <translation type="unfinished">현재 열고 있는 모든 작업에서 찾기 위해서는 찾기 대화상자를 여세요.</translation>
+        <translation type="obsolete">현재 열고 있는 모든 작업에서 찾기 위해서는 찾기 대화상자를 여세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="782"/>
         <source>Open the search dialog to search in the standard Bible.</source>
-        <translation type="unfinished">기본 성경에서 찾기 위해서는 찾기 대화상자를 여세요.</translation>
+        <translation type="obsolete">기본 성경에서 찾기 위해서는 찾기 대화상자를 여세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="790"/>
         <source>Restore a saved BibleTime session.</source>
-        <translation type="unfinished">바이블타임의 저장된 세션 복구</translation>
+        <translation type="obsolete">바이블타임의 저장된 세션 복구</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="794"/>
         <source>Save current BibleTime session so that it can be reused later.</source>
-        <translation type="unfinished">나중에 다시 사용할 수 있도록 현재 바이블타임 세션을 저장합니다.</translation>
+        <translation type="obsolete">나중에 다시 사용할 수 있도록 현재 바이블타임 세션을 저장합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="798"/>
         <source>Create and save a new session.</source>
-        <translation type="unfinished">새 세션을 만들어 저장합니다.</translation>
+        <translation type="obsolete">새 세션을 만들어 저장합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="802"/>
         <source>Delete a BibleTime session.</source>
-        <translation type="unfinished">바이블타임 세션 삭제</translation>
+        <translation type="obsolete">바이블타임 세션 삭제</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="806"/>
         <source>Toggle fullscreen mode of the main window.</source>
-        <translation type="unfinished">메인 윈도우의 전체 화면 모드를 전환합니다.</translation>
+        <translation type="obsolete">메인 윈도우의 전체 화면 모드를 전환합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="810"/>
         <source>Vertically tile the open windows.</source>
-        <translation type="unfinished">열려진 창을 수직 배열.</translation>
+        <translation type="obsolete">열려진 창을 수직 배열.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="814"/>
         <source>Horizontally tile the open windows.</source>
-        <translation type="unfinished">열려진 창을 수평 배열.</translation>
+        <translation type="obsolete">열려진 창을 수평 배열.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="818"/>
         <source>Cascade the open windows.</source>
-        <translation type="unfinished">열려진 창을 순서대로 정렬.</translation>
+        <translation type="obsolete">열려진 창을 순서대로 정렬.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="823"/>
         <source>Choose the way that is used to arrange the windows.</source>
-        <translation type="unfinished">창들을 배열하는 방식을 선택하세요.</translation>
+        <translation type="obsolete">창들을 배열하는 방식을 선택하세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="827"/>
         <source>Automatically tile the open windows vertically.</source>
-        <translation type="unfinished">자동 수직 타일식 배열</translation>
+        <translation type="obsolete">자동 수직 타일식 배열</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="831"/>
         <source>Automatically tile the open windows horizontally.</source>
-        <translation type="unfinished">자동 수평 타일식 배열</translation>
+        <translation type="obsolete">자동 수평 타일식 배열</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="835"/>
         <source>Automatically cascade the open windows.</source>
-        <translation type="unfinished">열려진 창을 자동으로 정렬합니다.</translation>
+        <translation type="obsolete">열려진 창을 자동으로 정렬합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="840"/>
         <source>Close all open windows.</source>
-        <translation type="unfinished">열려진 모든 창을 닫습니다.</translation>
+        <translation type="obsolete">열려진 모든 창을 닫습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="848"/>
         <source>Open BibleTime&apos;s toolbar editor.</source>
-        <translation type="unfinished">바이블타임의 툴바 편집기를 엽니다.</translation>
+        <translation type="obsolete">바이블타임의 툴바 편집기를 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="852"/>
         <source>Open the dialog to set most of BibleTime&apos;s preferences.</source>
-        <translation type="unfinished">바이블타임의 대부분의 설정을 위한 대화상자를 엽니다.</translation>
+        <translation type="obsolete">바이블타임의 대부분의 설정을 위한 대화상자를 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="856"/>
         <source>Open the dialog to configure your bookshelf and install/update/remove works.</source>
-        <translation type="unfinished">스워드를 설정하고 스워드 작업을 설치/업데이트하기 위한 대화창을 엽니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="865"/>
-        <source>Open BibleTime&apos;s handbook.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="869"/>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">스워드를 설정하고 스워드 작업을 설치/업데이트하기 위한 대화창을 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="873"/>
         <source>Send a bugreport to the developers of BibleTime.</source>
-        <translation type="unfinished">바이블타임의 개발자에게 버그리포트를 보냅니다.</translation>
+        <translation type="obsolete">바이블타임의 개발자에게 버그리포트를 보냅니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="877"/>
         <source>Show detailed information about BibleTime.</source>
-        <translation type="unfinished">바이블타임에 대한 자세한 정보를 보여줍니다.</translation>
+        <translation type="obsolete">바이블타임에 대한 자세한 정보를 보여줍니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="881"/>
         <source>Show detailed information about the KDE project.</source>
-        <translation type="unfinished">KDE 프로젝트에 관한 자세한 정보를 보여줍니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="891"/>
-        <source>Start to search the text in each of the chosen works.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">KDE 프로젝트에 관한 자세한 정보를 보여줍니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="895"/>
         <source>Stop the active search.</source>
-        <translation type="unfinished">현재 찾기를 중단합니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="902"/>
-        <source>Choose works for the search.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="906"/>
-        <source>The text you want to search for in the chosen works.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="912"/>
-        <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="916"/>
-        <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">현재 찾기를 중단합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="920"/>
         <source>The search text will be used exactly as entered.</source>
-        <translation type="unfinished">찾기 텍스트는 입력된대로 사용됩니다.</translation>
+        <translation type="obsolete">찾기 텍스트는 입력된대로 사용됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="924"/>
         <source>Treat the search string as a GNU regular expression. The BibleTime handbook contains an introduction to regular expressions.</source>
-        <translation type="unfinished">찾기 문자열을 GNU의 정규 표현식으로 취급합니다. 바이블타임 핸드북에는 정규 표현식에 대한 소개가 들어있습니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="932"/>
-        <source>Case sensitive distinguishes between upper and lowercase characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">찾기 문자열을 GNU의 정규 표현식으로 취급합니다. 바이블타임 핸드북에는 정규 표현식에 대한 소개가 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="939"/>
         <source>Choose a scope from the list. Select the first item to use no scope, the second one is to use each work&apos;s last search result as search scope. The others are user defined search scopes.</source>
-        <translation type="unfinished">리스트에서 찾기 영역을 선택합니다. 영역을 사용하지 않으려면 첫번째 항목을 선택하세요. 두번째 항목은 각 작업의 마지막 찾기 결과를 찾기 영역으로 사용합니다. 다른 항목들은 사용자 지정 찾기 영역입니다.</translation>
+        <translation type="obsolete">리스트에서 찾기 영역을 선택합니다. 영역을 사용하지 않으려면 첫번째 항목을 선택하세요. 두번째 항목은 각 작업의 마지막 찾기 결과를 찾기 영역으로 사용합니다. 다른 항목들은 사용자 지정 찾기 영역입니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="945"/>
         <source>Select an item from the list to edit the search scope.</source>
-        <translation type="unfinished">찾기 영역을 편집하려면 리스트에서 항목을 선택하세요.</translation>
+        <translation type="obsolete">찾기 영역을 편집하려면 리스트에서 항목을 선택하세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="949"/>
         <source>Change the name of the selected search scope.</source>
-        <translation type="unfinished">선택된 찾기 영역의 이름을 바꿉니다.</translation>
+        <translation type="obsolete">선택된 찾기 영역의 이름을 바꿉니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="953"/>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished">선택된 찾기 영역 항목의 찾기 범위를 변경합니다. 미리 정의된 찾기 영역을 보면 찾기 범위가 어떻게 구성되는지 알 수 있습니다.</translation>
+        <translation type="obsolete">선택된 찾기 영역 항목의 찾기 범위를 변경합니다. 미리 정의된 찾기 영역을 보면 찾기 범위가 어떻게 구성되는지 알 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="957"/>
         <source>Contains the search ranges which will be used for the search.</source>
-        <translation type="unfinished">찾기에 사용될 찾기 범위를 포함하고 있습니다.</translation>
+        <translation type="obsolete">찾기에 사용될 찾기 범위를 포함하고 있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="961"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation type="unfinished">새로운 찾기 영역을 더합니다. 먼저 적절한 이름을 입력하고, 찾기 범위를 편집하세요.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="965"/>
-        <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">새로운 찾기 영역을 더합니다. 먼저 적절한 이름을 입력하고, 찾기 범위를 편집하세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="973"/>
         <source>The list of works chosen for the search.</source>
-        <translation type="unfinished">찾기를 위해 선택된 작업 리스트</translation>
+        <translation type="obsolete">찾기를 위해 선택된 작업 리스트</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="977"/>
         <source>This list contains the search result of the selected work.</source>
-        <translation type="unfinished">이 리스트에는 선택된 작업에서 찾은 결과가 들어있습니다.</translation>
+        <translation type="obsolete">이 리스트에는 선택된 작업에서 찾은 결과가 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="981"/>
         <source>The text preview of the selected search result item.</source>
-        <translation type="unfinished">선택된 찾기 결과 항목의 텍스트 미리보기</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="993"/>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="997"/>
-        <source>Open the search dialog with the works of this window.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">선택된 찾기 결과 항목의 텍스트 미리보기</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1002"/>
         <source>Go back one item in the display history.</source>
-        <translation type="unfinished">표시 히스토리에서 한 항목만 뒤로 가세요.</translation>
+        <translation type="obsolete">표시 히스토리에서 한 항목만 뒤로 가세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1006"/>
         <source>Go forward one item in the display history.</source>
-        <translation type="unfinished">표시 히스토리에서 한 항목만 앞으로 가세요.</translation>
+        <translation type="obsolete">표시 히스토리에서 한 항목만 앞으로 가세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1011"/>
         <source>Show all occurences of the Strong number currently under the mouse cursor.</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1017"/>
         <source>This list contains the books which are available in this work.</source>
-        <translation type="unfinished">이 리스트에는 이 작업에서 사용 가능한 책이 들어있습니다.</translation>
+        <translation type="obsolete">이 리스트에는 이 작업에서 사용 가능한 책이 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1021"/>
         <source>Show the next book of this work.</source>
-        <translation type="unfinished">이 작업의 다음 책을 봅니다.</translation>
+        <translation type="obsolete">이 작업의 다음 책을 봅니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1025"/>
         <source>Show the previous book of this work.</source>
-        <translation type="unfinished">이 작업의 이전 책을 봅니다.</translation>
+        <translation type="obsolete">이 작업의 이전 책을 봅니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1029"/>
         <source>This list contains the chapters which are available in the current book.</source>
-        <translation type="unfinished">이 리스트에는 현재 책에서 사용가능한 장이 들어있습니다.</translation>
+        <translation type="obsolete">이 리스트에는 현재 책에서 사용가능한 장이 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1033"/>
         <source>Show the next chapter of the work.</source>
-        <translation type="unfinished">이 작업의 다음 장을 보여줍니다.</translation>
+        <translation type="obsolete">이 작업의 다음 장을 보여줍니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1037"/>
         <source>Show the previous chapter of the work.</source>
-        <translation type="unfinished">이 작업의 이전 장을 보여줍니다.</translation>
+        <translation type="obsolete">이 작업의 이전 장을 보여줍니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1041"/>
         <source>This list contains the verses which are available in the current chapter.</source>
-        <translation type="unfinished">이 리스트에는 현재 장에서 사용가능한 절이 들어있습니다.</translation>
+        <translation type="obsolete">이 리스트에는 현재 장에서 사용가능한 절이 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1045"/>
         <source>In  Bible texts, the next verse will be highlighted. In commentaries, the next entry will be shown.</source>
-        <translation type="unfinished">성경 본문에서는 다음 절이 하이라이트됩니다. 주석에서는 다음 항목이 표시됩니다.</translation>
+        <translation type="obsolete">성경 본문에서는 다음 절이 하이라이트됩니다. 주석에서는 다음 항목이 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1050"/>
         <source>In Bible texts, the previous verse will be highlighted. In commentaries, the previous entry will be shown.</source>
-        <translation type="unfinished">성경 본문에서는 이전 절이 하이라이트됩니다. 주석에서는 이전 항목이 표시됩니다.</translation>
+        <translation type="obsolete">성경 본문에서는 이전 절이 하이라이트됩니다. 주석에서는 이전 항목이 표시됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1057"/>
         <source>Synchronize the displayed entry of this work with the active Bible window.</source>
-        <translation type="unfinished">이 작업의 표시된 항목을 활성화된 성경 창과 동기화합니다.</translation>
+        <translation type="obsolete">이 작업의 표시된 항목을 활성화된 성경 창과 동기화합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1064"/>
         <source>This list contains the entries of the current work.</source>
-        <translation type="unfinished">이 리스트에는 현재 작업의 항목이 들어있습니다.</translation>
+        <translation type="obsolete">이 리스트에는 현재 작업의 항목이 들어있습니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1068"/>
         <source>The next entry of the work will be shown.</source>
-        <translation type="unfinished">이 작업의 다음 항목이 나타납니다.</translation>
+        <translation type="obsolete">이 작업의 다음 항목이 나타납니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1072"/>
         <source>The previous entry of the work will be shown.</source>
-        <translation type="unfinished">이 작업의 이전 항목이 나타납니다.</translation>
+        <translation type="obsolete">이 작업의 이전 항목이 나타납니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1080"/>
         <source>Save the curent text into the work. The old text will be overwritten.</source>
-        <translation type="unfinished">현재 텍스트를 작업에 저장합니다. 이전 텍스트는 지워집니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1084"/>
-        <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">현재 텍스트를 작업에 저장합니다. 이전 텍스트는 지워집니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1088"/>
         <source>Deletes the current entry out of the work. The text will be lost.</source>
-        <translation type="unfinished">현재 항목을 작업에서 삭제합니다. 텍스트는 삭제됩니다.</translation>
+        <translation type="obsolete">현재 항목을 작업에서 삭제합니다. 텍스트는 삭제됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1094"/>
         <source>Toggle bold formatting of the selected text.</source>
-        <translation type="unfinished">선택된 텍스트의 굵기 지정을 전환합니다.</translation>
+        <translation type="obsolete">선택된 텍스트의 굵기 지정을 전환합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1098"/>
         <source>Toggle italic formatting of the selected text.</source>
-        <translation type="unfinished">선택된 텍스트의 기울기 지정을 전환합니다.</translation>
+        <translation type="obsolete">선택된 텍스트의 기울기 지정을 전환합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1102"/>
         <source>Toggle underlined formatting of the selected text.</source>
-        <translation type="unfinished">선택된 텍스트의 밑줄 긋기 지정을 전환합니다.</translation>
+        <translation type="obsolete">선택된 텍스트의 밑줄 긋기 지정을 전환합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1107"/>
         <source>The text will be aligned on the left side of the page.</source>
-        <translation type="unfinished">텍스트를 페이지의 왼쪽에 맞추어 정렬합니다.</translation>
+        <translation type="obsolete">텍스트를 페이지의 왼쪽에 맞추어 정렬합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1111"/>
         <source>Centers the text horizontally.</source>
-        <translation type="unfinished">텍스트를 가로 방향 가운데로</translation>
+        <translation type="obsolete">텍스트를 가로 방향 가운데로</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1115"/>
         <source>Aligns the text on the right side of the page.</source>
-        <translation type="unfinished">텍스트를 페이지의 오른쪽에 맞추어 정렬합니다.</translation>
+        <translation type="obsolete">텍스트를 페이지의 오른쪽에 맞추어 정렬합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1119"/>
         <source>Justifies the text on the page.</source>
-        <translation type="unfinished">페이지의 텍스트를 양쪽으로 맞춥니다.</translation>
+        <translation type="obsolete">페이지의 텍스트를 양쪽으로 맞춥니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1124"/>
         <source>Choose a new font for the selected text.</source>
-        <translation type="unfinished">선택된 텍스트에 새 폰트를 선택합니다.</translation>
+        <translation type="obsolete">선택된 텍스트에 새 폰트를 선택합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1127"/>
         <source>Choose a new font size for the selected text.</source>
-        <translation type="unfinished">선택된 텍스트의 폰트 크기를 선택합니다.</translation>
+        <translation type="obsolete">선택된 텍스트의 폰트 크기를 선택합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1130"/>
         <source>Choose a new color for the selected text.</source>
-        <translation type="unfinished">선택된 텍스트의 색을 선택합니다.</translation>
+        <translation type="obsolete">선택된 텍스트의 색을 선택합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1140"/>
         <source>Activate this to see the BibleTime logo on startup.</source>
-        <translation type="unfinished">시작할 때 로고를 보려면 이 상자를 활성화하세요.</translation>
+        <translation type="obsolete">시작할 때 로고를 보려면 이 상자를 활성화하세요.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1144"/>
         <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup.</source>
-        <translation type="unfinished">바이블타임을 종료할 때 세션을 저장하고 다음번 시작 때 복구합니다.</translation>
+        <translation type="obsolete">바이블타임을 종료할 때 세션을 저장하고 다음번 시작 때 복구합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1151"/>
         <source>The font selection below will apply to all texts in this language.</source>
-        <translation type="unfinished">아래의 폰트 선택은 이 언어의 모든 텍스트에 적용됩니다.</translation>
+        <translation type="obsolete">아래의 폰트 선택은 이 언어의 모든 텍스트에 적용됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1160"/>
         <source>Contains the languages which can be used for the biblical booknames.</source>
-        <translation type="unfinished">성경 이름을 위해 사용할 수 있는 언어 리스트</translation>
+        <translation type="obsolete">성경 이름을 위해 사용할 수 있는 언어 리스트</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1167"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked.</source>
-        <translation type="unfinished">성경 하이퍼링크를 클릭하면 기본 성경을 사용합니다.</translation>
+        <translation type="obsolete">성경 하이퍼링크를 클릭하면 기본 성경을 사용합니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1171"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked.</source>
-        <translation type="unfinished">주석 하이퍼링크를 클릭하면 기본 주석을 엽니다.</translation>
+        <translation type="obsolete">주석 하이퍼링크를 클릭하면 기본 주석을 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1175"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked.</source>
-        <translation type="unfinished">렉시컨 하이퍼링크를 클릭하면 기본 렉시컨을 엽니다.</translation>
+        <translation type="obsolete">렉시컨 하이퍼링크를 클릭하면 기본 렉시컨을 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1179"/>
         <source>The standard devotional will be used to display a short start up devotional.</source>
-        <translation type="unfinished">짧은 묵상을 보여줄 때 기본 경건이 사용됩니다.</translation>
+        <translation type="obsolete">짧은 묵상을 보여줄 때 기본 경건이 사용됩니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1183"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked.</source>
-        <translation type="unfinished">히브리 렉시컨 하이퍼링크를 클릭하면 기본 히브리 렉시컨을 엽니다.</translation>
+        <translation type="obsolete">히브리 렉시컨 하이퍼링크를 클릭하면 기본 히브리 렉시컨을 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1187"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked.</source>
-        <translation type="unfinished">그리스 렉시컨 하이퍼링크를 클릭하면 기본 그리스 렉시컨을 엽니다.</translation>
+        <translation type="obsolete">그리스 렉시컨 하이퍼링크를 클릭하면 기본 그리스 렉시컨을 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1191"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked.</source>
-        <translation type="unfinished">히브리어 텍스트에서 형태학적 태그 하이퍼링크를 클릭하면 기본 히브리어 형태학적 태그를 엽니다.</translation>
+        <translation type="obsolete">히브리어 텍스트에서 형태학적 태그 하이퍼링크를 클릭하면 기본 히브리어 형태학적 태그를 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/cresmgr.cpp" line="1195"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked.</source>
-        <translation type="unfinished">그리스어 형태학적 태그 하이퍼링크를 클릭하면 기본 그리스어 형태학적 태그를 엽니다.</translation>
-    </message>
-    <message>
-        <location filename="../../src/util/cresmgr.cpp" line="1204"/>
-        <source>Opens the search dialog to search in the works that are currently open.</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">그리스어 형태학적 태그 하이퍼링크를 클릭하면 기본 그리스어 형태학적 태그를 엽니다.</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="60"/>
@@ -8729,74 +8990,229 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Itza</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="476"/>
+        <source>Verb tense changed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>Can&apos;t write file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="178"/>
+        <source>The Sword config file can&apos;t be written!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="84"/>
+        <source>Export Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp" line="93"/>
+        <source>Import bookmarks</source>
+        <translation type="unfinished">북마크 가져오기</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="781"/>
+        <source>Open the printer dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="785"/>
+        <source>Close BibleTime and save the settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="792"/>
+        <source>Toggle the main toolbar view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="802"/>
+        <source>Choose the way to arrange the windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="820"/>
+        <source>Synchronize the displayed entry of this work with the active Bible window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="827"/>
+        <source>Entries of the current work</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="831"/>
+        <source>Next entry</source>
+        <translation type="unfinished">다음 목록</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="835"/>
+        <source>Previous entry</source>
+        <translation type="unfinished">이전 목록</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="843"/>
+        <source>Save the current text into the work overwriting the old text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="847"/>
+        <source>Load the old text from the work into the edit area deleting the text in the area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="851"/>
+        <source>Deletes the current entry out of the work (no undo!)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="857"/>
+        <source>Bold</source>
+        <translation type="unfinished">굵게</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="861"/>
+        <source>Italic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="865"/>
+        <source>Underline</source>
+        <translation type="unfinished">밑줄</translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="870"/>
+        <source>Align left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="874"/>
+        <source>Centered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="878"/>
+        <source>Align right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="882"/>
+        <source>Justified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="887"/>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="890"/>
+        <source>Font size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="893"/>
+        <source>Font color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="903"/>
+        <source>Show the BibleTime logo on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="907"/>
+        <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="914"/>
+        <source>The font selection below will apply to all texts in this language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/util/cresmgr.cpp" line="923"/>
+        <source>The languages which can be used for the biblical booknames</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Work</source>
         <translation type="unfinished">작업</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
         <source>Hits</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
         <source>Copy...</source>
         <translation type="unfinished">복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="83"/>
         <source>Reference only</source>
         <translation type="unfinished">참조만</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="92"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="93"/>
         <source>Reference with text</source>
         <translation type="unfinished">참조와 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
         <source>Save...</source>
         <translation type="unfinished">저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="90"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="91"/>
         <source>Print...</source>
         <translation type="unfinished">인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copy search result...</source>
         <translation type="unfinished">찾기 결과 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
         <source>Copying search result</source>
         <translation type="unfinished">찾기 결과 복사 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Save search result...</source>
         <translation type="unfinished">찾기 결과 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="285"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
         <source>Saving search result</source>
         <translation type="unfinished">찾기 결과 저장 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Print search result...</source>
         <translation type="unfinished">찾기 결과 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="295"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
         <source>Printing search result</source>
         <translation type="unfinished">찾기 결과 인쇄 중</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <source>Works chosen for the search and the number of the hits in each work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8807,75 +9223,105 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="107"/>
-        <source>&amp;Add new range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
-        <source>Delete current &amp;range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="120"/>
         <source>&amp;Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="128"/>
         <source>Edi&amp;t current range:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="131"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="136"/>
         <source>Parsed search range:</source>
         <translation type="unfinished">처리된 찾기 범위</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="187"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="193"/>
         <source>New range</source>
         <translation type="unfinished">새 범위</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="264"/>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="270"/>
         <source>&lt;invalid name of search range&gt;</source>
         <translation type="unfinished">&lt;잘못된 찾기 범위 이름&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="104"/>
+        <source>Select a scope from the list to edit the search ranges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="108"/>
+        <source>&amp;Add new scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="109"/>
+        <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
+        <translation type="unfinished">새로운 찾기 영역을 더합니다. 먼저 적절한 이름을 입력하고, 찾기 범위를 편집하세요.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="111"/>
+        <source>Delete current &amp;scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="112"/>
+        <source>Delete the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="124"/>
+        <source>Change the name of the selected search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="132"/>
+        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
+        <translation type="unfinished">선택된 찾기 영역 항목의 찾기 범위를 변경합니다. 미리 정의된 찾기 영역을 보면 찾기 범위가 어떻게 구성되는지 알 수 있습니다.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="140"/>
+        <source>The search ranges which will be used for the search, parsed to the canonical form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>Save Search Analysis</source>
         <translation type="unfinished">찾기 분석 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="243"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="262"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="255"/>
         <source>BibleTime Search Analysis</source>
         <translation type="unfinished">바이블타임 찾기 분석</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="263"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
         <source>Search text :</source>
         <translation type="unfinished">찾는 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="265"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
         <source>Book</source>
         <translation type="unfinished">책</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="266"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="259"/>
         <source>Total hits</source>
         <translation type="unfinished">총 검색수</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="302"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
         <source>Created by</source>
         <translation type="unfinished">만든 사람</translation>
     </message>
@@ -8904,161 +9350,191 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="177"/>
+        <source>Start to search the text in the chosen works</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="770"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="774"/>
         <source>Search for:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="780"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
         <source>&amp;Help...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
         <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
         <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="800"/>
         <source>Scope:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="828"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="826"/>
         <source>Works:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="924"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="922"/>
         <source>Works to Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="925"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="923"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="967"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="976"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="981"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="978"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="985"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="982"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="987"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="984"/>
         <source>Basic Search Syntax Introduction</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="993"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="990"/>
         <source>No search scope</source>
         <translation type="unfinished">찾기 영역 없음</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="791"/>
+        <source>Choose works for the search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="813"/>
+        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="823"/>
+        <source>The text you want to search for</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="253"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="255"/>
         <source>&amp;Analyze search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="283"/>
+        <source>Text of the selected search result item</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Search::CSearchResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="45"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="47"/>
         <source>Results</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="53"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="55"/>
         <source>Copy...</source>
         <translation type="unfinished">복사...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="70"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="72"/>
         <source>Reference only</source>
         <translation type="unfinished">참조만</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="82"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Reference with text</source>
         <translation type="unfinished">참조와 텍스트</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="67"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="69"/>
         <source>Save...</source>
         <translation type="unfinished">저장...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="79"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="81"/>
         <source>Print...</source>
         <translation type="unfinished">인쇄...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Print search result...</source>
         <translation type="unfinished">찾기 결과 인쇄</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="176"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="178"/>
         <source>Printing search result</source>
         <translation type="unfinished">찾기 결과 인쇄 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Save search result...</source>
         <translation type="unfinished">찾기 결과 저장</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="204"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Saving search result</source>
         <translation type="unfinished">찾기 결과 저장 중</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copy search result...</source>
         <translation type="unfinished">찾기 결과 복사</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copying search result</source>
         <translation type="unfinished">찾기 결과 복사 중</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="46"/>
+        <source>Search result of the selected work</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9076,99 +9552,179 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
         <source>Standard Bible</source>
-        <translation type="unfinished">기본 성경</translation>
+        <translation type="obsolete">기본 성경</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
         <source>Standard Commentary</source>
-        <translation type="unfinished">기본 주석</translation>
+        <translation type="obsolete">기본 주석</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
         <source>Standard Lexicon</source>
-        <translation type="unfinished">기본 렉시컨</translation>
+        <translation type="obsolete">기본 렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="93"/>
         <source>Standard Daily Devotional</source>
-        <translation type="unfinished">기본 매일 경건</translation>
+        <translation type="obsolete">기본 매일 경건</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="102"/>
         <source>Standard Hebrew Strong&apos;s Lexicon</source>
-        <translation type="unfinished">기본 히브리어 스트롱 렉시컨</translation>
+        <translation type="obsolete">기본 히브리어 스트롱 렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="111"/>
         <source>Standard Greek Strong&apos;s Lexicon</source>
-        <translation type="unfinished">기본 그리스어 스트롱 렉시컨</translation>
+        <translation type="obsolete">기본 그리스어 스트롱 렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
         <source>Standard Hebrew Morphological Lexicon</source>
-        <translation type="unfinished">기본 히브리어 형태학적 렉시컨</translation>
+        <translation type="obsolete">기본 히브리어 형태학적 렉시컨</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="129"/>
         <source>Standard Greek Morphological Lexicon</source>
-        <translation type="unfinished">기본 그리스어 형태학적 렉시컨</translation>
+        <translation type="obsolete">기본 그리스어 형태학적 렉시컨</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
+        <source>Bible:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="70"/>
+        <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="76"/>
+        <source>Commentary:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="80"/>
+        <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
+        <source>Lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="90"/>
+        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
+        <source>Daily devotional:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="100"/>
+        <source>The standard devotional will be used to display a short start up devotional</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
+        <source>Hebrew Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="110"/>
+        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
+        <source>Greek Strong&apos;s lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
+        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
+        <source>Hebrew morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
+        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
+        <source>Greek morphological lexicon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="140"/>
+        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="263"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="271"/>
         <source>Text filters</source>
         <translation type="unfinished">텍스트 필터</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="267"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="275"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can change the filter settings in each display window, of course.</source>
         <translation type="unfinished">필터는 화면 창에 나타난 텍스트의 외양을 제어합니다. 여기서 모든 필터의 기본 설정을 할 수 있습니다. 물론 각 창에서 필터 설정을 바꿀 수도 있습니다.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="273"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="281"/>
         <source>Insert line break after each verse</source>
         <translation type="unfinished">각 절의 끝에서 줄바꾸기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="278"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="286"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">절 번호 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="283"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Show section headings</source>
         <translation type="unfinished">단락 표제 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="289"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="297"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">성서 상호 참조 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="294"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="302"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">그리스어 강세 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="307"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">히브리어 모음기호 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="304"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="312"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">히브리어 영창 표시 보기</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="309"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="317"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="322"/>
         <source>Use textual variants</source>
         <translation type="unfinished">다른 원문 사용</translation>
     </message>
