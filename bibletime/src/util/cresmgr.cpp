@@ -750,7 +750,7 @@ namespace CResMgr {
 			const QString path_icon = "configure";
 		}
 		namespace removepage {
-			const QString icon = "trash";
+			const QString icon = "bible_remove";
 			const QString remove_icon = "trash";
 		}
 		namespace indexpage {
