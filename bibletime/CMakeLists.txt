@@ -139,7 +139,7 @@ INSTALL(TARGETS "bibletime"
 )
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/${MESSAGE_LOCALE_LANG}.qm" 
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm" 
 		DESTINATION "share/bibletime/locale/"
 		CONFIGURATIONS Debug Release
 	)

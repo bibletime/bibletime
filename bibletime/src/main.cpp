@@ -262,7 +262,7 @@ int main(int argc, char* argv[]) {
 	app.installTranslator(&qtTranslator);
 	//then our own
 	QTranslator BibleTimeTranslator;
-	BibleTimeTranslator.load( QLocale::system().name(), DirectoryUtil::getLocaleDir().canonicalPath());
+	BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DirectoryUtil::getLocaleDir().canonicalPath());
 	app.installTranslator(&BibleTimeTranslator);
 	
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
