@@ -146,7 +146,7 @@ void BtRemovePage::slotRemoveModules()
 		.append("\n\n")
 		.append(tr("Do you really want to remove them from your system?"));
 
-	if ((QMessageBox::question(this, tr("Confirmation"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
+	if ((QMessageBox::question(this, tr("Remove Works?"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
 		// Update the module list before really removing. Remember deleting the pointers later.
 		ListCSwordModuleInfo toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);

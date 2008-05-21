@@ -119,7 +119,7 @@ void CWriteWindow::lookupSwordKey( CSwordKey* newKey ) {
 bool CWriteWindow::queryClose() {
 	//save the text if it has changed
 	if (m_writeDisplay->isModified()) {
-		switch (QMessageBox::question( this, tr("Confirmation"), tr("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
+		switch (QMessageBox::question( this, tr("Save Text?"), tr("Save text before closing?"), QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel, QMessageBox::Yes) ) {
 			case QMessageBox::Yes: //save and close
 				saveCurrentText();
 				m_writeDisplay->setModified( false );
@@ -141,7 +141,7 @@ void CWriteWindow::beforeKeyChange(const QString& key) {
 	//If the text changed and we'd do a lookup ask the user if the text should be saved
 	if (modules().first() && ((CWriteDisplay*)displayWidget())->isModified()) {
 		
-		switch (QMessageBox::question( this, tr("Confirmation"), tr("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
+		switch (QMessageBox::question( this, tr("Save Text?"), tr("Save changed text?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes) ) {
 			case QMessageBox::Yes: { //save the changes
 				saveCurrentText( key );
 				break;

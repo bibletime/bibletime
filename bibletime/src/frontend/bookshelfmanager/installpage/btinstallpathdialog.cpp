@@ -112,7 +112,7 @@ void BtInstallPathDialog::slotEditClicked() {
 		if (dir.isReadable()) {
 			const QFileInfo fi( dir.canonicalPath() );
 			if (!fi.exists() || !fi.isWritable()) {
-				const int result = QMessageBox::warning(this, tr("Confirmation"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+				const int result = QMessageBox::warning(this, tr("Use Directory?"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
 				if (result != QMessageBox::Yes) return;
 			}
 			i->setText(0, dir.absolutePath()); // absolute, not canonical
