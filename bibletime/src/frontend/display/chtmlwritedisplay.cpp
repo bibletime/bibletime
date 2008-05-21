@@ -152,7 +152,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 							);
 	m_actions.fontChooser->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::fontFamily::actionName, m_actions.fontChooser);
-	m_actions.fontChooser->setToolTip( CResMgr::displaywindows::writeWindow::fontFamily::tooltip );
+	m_actions.fontChooser->setToolTip( tr("Font") );
 	bar->addAction(m_actions.fontChooser);
 	connect(m_actions.fontChooser, SIGNAL(triggered(const QString&)), this, SLOT(setFontFamily(const QString&)));
 
@@ -160,7 +160,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.fontSizeChooser = new KFontSizeAction( tr("Choose a font size"), actions);
 	m_actions.fontSizeChooser->setShortcut(CResMgr::displaywindows::writeWindow::fontSize::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::fontSize::actionName, m_actions.fontSizeChooser);
-	m_actions.fontSizeChooser->setToolTip( CResMgr::displaywindows::writeWindow::fontSize::tooltip );
+	m_actions.fontSizeChooser->setToolTip( tr("Font size") );
 	bar->addAction(m_actions.fontSizeChooser);
 	connect(m_actions.fontSizeChooser, SIGNAL(fontSizeChanged(int)), this, SLOT(changeFontSize(int)));
 
@@ -169,7 +169,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	connect(m_colorButton, SIGNAL(changed(const QColor&)), this, SLOT(slotColorSelected(const QColor&)));
 	
 	bar->addWidget(m_colorButton);
-	m_colorButton->setToolTip(CResMgr::displaywindows::writeWindow::fontColor::tooltip);
+	m_colorButton->setToolTip(tr("Font color"));
 
 	bar->addSeparator();
 
@@ -181,7 +181,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.bold->setCheckable(true);
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::boldText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::boldText::actionName, m_actions.bold);
-	m_actions.bold->setToolTip( CResMgr::displaywindows::writeWindow::boldText::tooltip );
+	m_actions.bold->setToolTip( tr("Bold") );
 	connect(m_actions.bold, SIGNAL(toggled(bool)), this, SLOT(toggleBold(bool)));
 
 	bar->addAction(m_actions.bold);
@@ -195,7 +195,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.bold->setShortcut(CResMgr::displaywindows::writeWindow::italicText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::italicText::actionName, m_actions.italic);
 	connect(m_actions.italic, SIGNAL(toggled(bool)), this, SLOT(toggleItalic(bool)));
-	m_actions.italic->setToolTip( CResMgr::displaywindows::writeWindow::italicText::tooltip );
+	m_actions.italic->setToolTip( tr("Italic") );
 	bar->addAction(m_actions.italic);
 
 	//--------------------underline toggle-------------------------
@@ -207,7 +207,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.underline->setShortcut(CResMgr::displaywindows::writeWindow::underlinedText::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::underlinedText::actionName, m_actions.underline);
 	connect(m_actions.underline, SIGNAL(toggled(bool)), this, SLOT(toggleUnderline(bool)));
-	m_actions.underline->setToolTip( CResMgr::displaywindows::writeWindow::underlinedText::tooltip );
+	m_actions.underline->setToolTip( tr("Underline") );
 	bar->addAction(m_actions.underline);
 
 	//seperate formatting from alignment buttons
@@ -221,7 +221,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.alignLeft->setShortcut(CResMgr::displaywindows::writeWindow::alignLeft::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignLeft::actionName, m_actions.alignLeft);
 	connect(m_actions.alignLeft, SIGNAL(toggled(bool)), this, SLOT(alignLeft(bool)));
-	m_actions.alignLeft->setToolTip( CResMgr::displaywindows::writeWindow::alignLeft::tooltip );
+	m_actions.alignLeft->setToolTip( tr("Align left") );
 	bar->addAction(m_actions.alignLeft);
 
 	//--------------------align center toggle-------------------------
@@ -232,7 +232,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.alignCenter->setShortcut(CResMgr::displaywindows::writeWindow::alignCenter::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignCenter::actionName, m_actions.alignCenter);
 	connect(m_actions.alignCenter, SIGNAL(toggled(bool)), this, SLOT(alignCenter(bool)));
-	m_actions.alignCenter->setToolTip( CResMgr::displaywindows::writeWindow::alignCenter::tooltip );
+	m_actions.alignCenter->setToolTip( tr("Center") );
 	bar->addAction(m_actions.alignCenter);
 
 	//--------------------align right toggle-------------------------
@@ -243,7 +243,7 @@ void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions
 	m_actions.alignRight->setShortcut(CResMgr::displaywindows::writeWindow::alignRight::accel);
 	actions->addAction(CResMgr::displaywindows::writeWindow::alignRight::actionName, m_actions.alignRight);
 	connect(m_actions.alignRight, SIGNAL(toggled(bool)), this, SLOT(alignRight(bool)));
-	m_actions.alignRight->setToolTip( CResMgr::displaywindows::writeWindow::alignRight::tooltip );
+	m_actions.alignRight->setToolTip( tr("Align right") );
 	bar->addAction(m_actions.alignRight);
 
 

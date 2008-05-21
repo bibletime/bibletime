@@ -49,10 +49,10 @@ CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *
 	m_widget->comboBox()->setMaximumWidth(200);
 
 	m_widget->setToolTips(
-		CResMgr::displaywindows::lexiconWindow::entryList::tooltip,
-		CResMgr::displaywindows::lexiconWindow::nextEntry::tooltip,
+		tr("Entries of the current work"),
+		tr("Next entry"),
 		tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."),
-		CResMgr::displaywindows::lexiconWindow::previousEntry::tooltip
+		tr("Previous entry")
 	);
 
 	m_layout->addWidget(m_widget,0,Qt::AlignLeft);

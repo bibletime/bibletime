@@ -52,7 +52,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	m_swordLocaleCombo = new QComboBox(this);
 	QLabel* label = new QLabel( tr("Language for names of Bible books:"), this);
 	label->setBuddy(m_swordLocaleCombo);
-	m_swordLocaleCombo->setToolTip(CResMgr::settings::sword::general::language::tooltip);
+	m_swordLocaleCombo->setToolTip(tr("The languages which can be used for the biblical booknames"));
 
 
 	QHBoxLayout* hBoxLayout = new QHBoxLayout();
@@ -127,7 +127,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	QHBoxLayout* hLayout = new QHBoxLayout();
 
 	m_usageCombo = new QComboBox(this);
-	m_usageCombo->setToolTip(CResMgr::settings::fonts::typeChooser::tooltip);
+	m_usageCombo->setToolTip(tr("The font selection below will apply to all texts in this language"));
 
 	hLayout->addWidget(m_usageCombo);
 

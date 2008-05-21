@@ -40,7 +40,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
 	{ //startup logo
 		m_showLogoCheck = new QCheckBox(this);
 		m_showLogoCheck->setText(tr("Show startuplogo"));
-		m_showLogoCheck->setToolTip(CResMgr::settings::startup::showLogo::tooltip);
+		m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
 
 
 		m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));

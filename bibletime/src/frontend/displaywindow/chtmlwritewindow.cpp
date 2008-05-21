@@ -69,7 +69,7 @@ void CHTMLWriteWindow::initToolbars() {
 			);
 	m_actions.syncWindow->setCheckable(true);
 	m_actions.syncWindow->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
-	m_actions.syncWindow->setToolTip(CResMgr::displaywindows::commentaryWindow::syncWindow::tooltip);
+	m_actions.syncWindow->setToolTip(tr("Synchronize (show the same verse) with the active Bible window"));
 	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_actions.syncWindow);
 	mainToolBar()->addAction(m_actions.syncWindow);
 
@@ -79,7 +79,7 @@ void CHTMLWriteWindow::initToolbars() {
 			actionCollection()
 			);
 	m_actions.saveText->setShortcut(CResMgr::displaywindows::writeWindow::saveText::accel);
-	m_actions.saveText->setToolTip( CResMgr::displaywindows::writeWindow::saveText::tooltip );
+	m_actions.saveText->setToolTip( tr("Save text") );
 	QObject::connect(m_actions.saveText, SIGNAL(triggered()), this, SLOT( saveCurrentText() ) );
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, m_actions.saveText);
 	mainToolBar()->addAction(m_actions.saveText);
@@ -91,7 +91,7 @@ void CHTMLWriteWindow::initToolbars() {
 			actionCollection()
 			);
 	m_actions.deleteEntry->setShortcut(CResMgr::displaywindows::writeWindow::deleteEntry::accel);
-	m_actions.deleteEntry->setToolTip( CResMgr::displaywindows::writeWindow::deleteEntry::tooltip );
+	m_actions.deleteEntry->setToolTip( tr("Delete current entry (no undo)") );
 	QObject::connect(m_actions.deleteEntry, SIGNAL(triggered()), this, SLOT( deleteEntry() ) );
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::deleteEntry::actionName, m_actions.deleteEntry);
 	mainToolBar()->addAction(m_actions.deleteEntry);
@@ -102,7 +102,7 @@ void CHTMLWriteWindow::initToolbars() {
 			actionCollection()
 			);
 	m_actions.restoreText->setShortcut(CResMgr::displaywindows::writeWindow::restoreText::accel);
-	m_actions.restoreText->setToolTip( CResMgr::displaywindows::writeWindow::restoreText::tooltip );
+	m_actions.restoreText->setToolTip( tr("Restore original text, new text will be lost") );
 	QObject::connect(m_actions.restoreText, SIGNAL(triggered()), this, SLOT( restoreText() ) );
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::restoreText::actionName, m_actions.restoreText);
 	mainToolBar()->addAction(m_actions.restoreText);
