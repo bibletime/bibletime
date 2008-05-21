@@ -21,6 +21,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 #include <QMenu>
 
@@ -79,7 +80,7 @@ void CCommentaryReadWindow::initToolbars() {
 	CLexiconReadWindow::initToolbars();
 
 	m_syncButton = new KToggleAction(
-			KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
 			tr("Synchronize"),
 			actionCollection()
 			);

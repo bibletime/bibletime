@@ -166,7 +166,7 @@ void BibleTime::initActions()
 		tr("Search in &open works..."),
 		CResMgr::mainMenu::mainIndex::search::icon,
 		CResMgr::mainMenu::mainIndex::search::accel,
-		tr("Open the search dialog to search in all works that are currently open"),
+		tr("Search in all works that are currently open"),
 		SLOT( slotSearchModules() )
 	);
 	searchMenu->addAction(tmp);
@@ -178,7 +178,7 @@ void BibleTime::initActions()
 		tr("Search in standard &Bible..."),
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::icon,
 		CResMgr::mainMenu::mainIndex::searchdefaultbible::accel,
-		tr("Open the search dialog to search in the standard Bible"),
+		tr("Search in the standard Bible"),
 		SLOT(slotSearchDefaultBible())));
 
 	m_windowSaveProfileMenu = new QMenu(tr("&Save session"));

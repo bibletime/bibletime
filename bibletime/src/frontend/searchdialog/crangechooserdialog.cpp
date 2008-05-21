@@ -93,6 +93,8 @@ CRangeChooserDialog::CRangeChooserDialog( QWidget* parentDialog )
 /** Initializes the view of this object. */
 void CRangeChooserDialog::initView()
 {
+	setWindowTitle(tr("Setup Search Scopes"));
+
 	QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
 	QHBoxLayout* hboxLayout = new QHBoxLayout();

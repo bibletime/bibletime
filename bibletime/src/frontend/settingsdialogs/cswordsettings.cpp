@@ -260,8 +260,6 @@ StandardWorksTab::StandardWorksTab()
 
 TextFiltersTab::TextFiltersTab()
 {
-	//Q3Frame* currentTab = new Q3Frame(tabCtl);
-	//tabCtl->addTab(currentTab, tr("Text filters"));
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(5);
 
@@ -271,7 +269,7 @@ TextFiltersTab::TextFiltersTab()
 			tr("Text filters"),
 			tr("Filters control the appearance of text. \
 Here you can specify default settings for all filters. \
-You can change the filter settings in each display window, of course.")
+You can override these settings in each display window.")
 		)
 	);
 

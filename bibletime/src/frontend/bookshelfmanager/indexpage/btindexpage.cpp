@@ -60,7 +60,7 @@ BtIndexPage::BtIndexPage()
 
 	m_createButton = new QPushButton(this);
 	m_createButton->setToolTip(tr("Create new indexes for the selected works"));
-	m_createButton->setText(tr("Create"));
+	m_createButton->setText(tr("Create..."));
 	hboxLayout->addWidget(m_createButton);
 
 	vboxLayout->addLayout(hboxLayout);

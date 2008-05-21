@@ -46,7 +46,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
 	CToolClass::explanationLabel(
 			this,
 			tr("Language for names of Bible books"),
-			tr("Select the language in which the Biblical book names are displayed.<small><br><br>Translated names come from the Sword project.</small>")
+			tr("Select the language in which the Biblical book names are displayed.<blockquote><small>Translated names come from the Sword project.</small></blockquote>")
 			));
 
 	m_swordLocaleCombo = new QComboBox(this);

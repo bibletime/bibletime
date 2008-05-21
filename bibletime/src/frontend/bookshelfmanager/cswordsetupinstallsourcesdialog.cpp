@@ -38,6 +38,8 @@ const QString PROTO_FTP( QObject::tr("Remote") ); //Remote path
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
 	: QDialog()
 {
+	setWindowTitle(tr("New  Installation Source"));
+
 	QVBoxLayout* mainLayout = new QVBoxLayout( this );
 	mainLayout->setMargin( 10 );
 	mainLayout->setSpacing( 5 );

@@ -36,6 +36,7 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
 	
 	btn_up->setFixedSize(WIDTH, ARROW_HEIGHT);
 	btn_up->setFocusPolicy(Qt::NoFocus);
+	btn_up->setAutoRaise(true);
 
 	btn_fx = new CScrollButton(this);
 	btn_fx->setFixedSize(WIDTH, MOVER_HEIGHT);
@@ -45,6 +46,8 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
 	btn_down->setArrowType(Qt::DownArrow);
 	btn_down->setFixedSize(WIDTH, ARROW_HEIGHT);
 	btn_down->setFocusPolicy(Qt::NoFocus);
+	btn_down->setAutoRaise(true);
+
 	m_layout->addWidget( btn_up,0 );
 	m_layout->addWidget( btn_fx,0 );
 	m_layout->addWidget( btn_down,0 );
