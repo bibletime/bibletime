@@ -57,7 +57,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 	bool ret;
 
 	if (saveFile.exists()) {
-		if (!forceOverwrite && QMessageBox::question(0, QObject::tr("Confirmation"),
+		if (!forceOverwrite && QMessageBox::question(0, QObject::tr("Overwrite File?"),
 				QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
 					.arg( QObject::tr("The file already exists.") )
 					.arg( QObject::tr("Do you want to overwrite it?")),

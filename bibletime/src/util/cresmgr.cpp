@@ -167,14 +167,14 @@ namespace CResMgr {
 				namespace autoTileHorizontal {
 					QString tooltip;
 
-					const QString icon        = "tile_auto.svg";
+					const QString icon        = "tile_horiz.svg";
 					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_H);
 					const char* actionName    = "windowAutoTileHorizontal_action";
 				}
 				namespace autoTileVertical {
 					QString tooltip;
 
-					const QString icon        = "tile_auto.svg";
+					const QString icon        = "tile_vert.svg";
 					const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_G);
 					const char* actionName    = "windowAutoTileVertical_action";
 				}
@@ -189,14 +189,14 @@ namespace CResMgr {
 			namespace tileHorizontal {
 				QString tooltip;
 
-				const QString icon        = "tile.svg";
+				const QString icon        = "tile_horiz.svg";
 				const QKeySequence accel(Qt::CTRL + Qt::Key_H);
 				const char* actionName    = "windowTileHorizontal_action";
 			}
 			namespace tileVertical {
 				QString tooltip;
 
-				const QString icon        = "tile.svg";
+				const QString icon        = "tile_vert.svg";
 				const QKeySequence accel(Qt::CTRL + Qt::Key_G);
 				const char* actionName    = "windowTileVertical_action";
 			}
