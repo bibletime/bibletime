@@ -110,7 +110,7 @@ namespace CResMgr {
 			}
 			namespace showFullscreen {
 				const QString icon        = "window_fullscreen.svg";
-				const QKeySequence accel(Qt::CTRL + Qt::SHIFT + Qt::Key_F);
+				const QKeySequence accel(Qt::Key_F5);
 				const char* actionName    = "windowFullscreen_action";
 			}
 			namespace arrangementMode {

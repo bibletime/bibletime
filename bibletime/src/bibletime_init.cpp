@@ -110,7 +110,19 @@ void BibleTime::initActions()
 	fileMenu->addAction(tmp);
 	m_mainToolBar->addAction(tmp);
 	m_mainToolBar->addSeparator();
-	
+
+	m_windowFullscreen_action = new QAction(this);
+	m_windowFullscreen_action->setCheckable(true);
+	viewMenu->addAction(initAction(
+		m_windowFullscreen_action,
+		tr("&Fullscreen mode"),
+		CResMgr::mainMenu::window::showFullscreen::icon,
+		CResMgr::mainMenu::window::showFullscreen::accel,
+		tr("Toggle fullscreen mode of the main window"),
+		SLOT(toggleFullscreen()))
+	);
+	m_mainToolBar->addAction(m_windowFullscreen_action);
+
 	m_viewToolbar_action = new QAction(this);
 	m_viewToolbar_action->setCheckable(true);
 	m_viewToolbar_action->setChecked(true);
@@ -118,12 +130,10 @@ void BibleTime::initActions()
 		m_viewToolbar_action,
 		tr("&Show toolbar"),
 		"",
-		QKeySequence(),
+		QKeySequence(Qt::Key_F6),
 		"",
 		SLOT(slotToggleToolbar())));
 	
-	viewMenu->addSeparator();
- 
 	m_viewMainIndex_action = new QAction(this);
 	m_viewMainIndex_action->setCheckable(true);
 	viewMenu->addAction(initAction(
@@ -145,21 +155,9 @@ void BibleTime::initActions()
 		tr("Show or hide the mag"),
 		SLOT(slotToggleInfoDisplay())
 	));
-	viewMenu->addSeparator();
 	m_mainToolBar->addAction(m_viewInfoDisplay_action);
+
 	m_mainToolBar->addSeparator();
-	
-	m_windowFullscreen_action = new QAction(this);
-	m_windowFullscreen_action->setCheckable(true);
-	viewMenu->addAction(initAction(
-		m_windowFullscreen_action,
-		tr("&Fullscreen mode"),
-		CResMgr::mainMenu::window::showFullscreen::icon,
-		CResMgr::mainMenu::window::showFullscreen::accel,
-		tr("Toggle fullscreen mode of the main window"),
-		SLOT(toggleFullscreen()))
-	);
-	m_mainToolBar->addAction(m_windowFullscreen_action);
 
 	tmp = initAction(
 		new QAction(this),
