@@ -33,7 +33,7 @@
 #include <QLabel>
 
 
-CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label, ListCSwordModuleInfo*  allModules)
+CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>*  allModules)
 	: QDialog(parent),
 	m_title(title),
 	m_labelText(label)
@@ -128,13 +128,13 @@ void CModuleChooserDialog::slotOk()
 {
 	Q_ASSERT(m_moduleChooser);
 	//create the list of selected modules
-	ListCSwordModuleInfo mods;
+	QList<CSwordModuleInfo*> mods;
 	QTreeWidgetItemIterator it( m_moduleChooser );
 	for ( ; *it; ++it ) {
 		//add the module to list if the box is checked
 		if ((*it)->checkState(0) == Qt::Checked) {
 			qDebug("was checked");
-			for (ListCSwordModuleInfo::iterator all_iter(m_moduleList.begin()); all_iter != m_moduleList.end(); ++all_iter) {
+			for (QList<CSwordModuleInfo*>::iterator all_iter(m_moduleList.begin()); all_iter != m_moduleList.end(); ++all_iter) {
 				if ((*all_iter)->name() == (*it)->text(0)) {
 					qDebug("append");
 					mods.append(*all_iter);

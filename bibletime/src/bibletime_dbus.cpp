@@ -114,9 +114,9 @@ QStringList BibleTime::searchInOpenModules(const QString& searchText) {
 	QStringList ret;
 	foreach (QMdiSubWindow* subWindow,  m_mdi->subWindowList()) {
 		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
-			ListCSwordModuleInfo windowModules = w->modules();
-			ListCSwordModuleInfo::iterator end_it = windowModules.end();
-			for (ListCSwordModuleInfo::iterator it(windowModules.begin()); it != end_it; ++it) {
+			QList<CSwordModuleInfo*> windowModules = w->modules();
+			QList<CSwordModuleInfo*>::iterator end_it = windowModules.end();
+			for (QList<CSwordModuleInfo*>::iterator it(windowModules.begin()); it != end_it; ++it) {
 				ret += searchInModule((*it)->name(), searchText);
 			}
 		}
@@ -192,8 +192,8 @@ QStringList BibleTime::getModulesOfType(const QString& type) {
 		modType = CSwordModuleInfo::GenericBook;
 	}
 
-	ListCSwordModuleInfo modList = CPointers::backend()->moduleList();
-	for (ListCSwordModuleInfo::iterator it( modList.begin() ); it != modList.end(); ++it) {
+	QList<CSwordModuleInfo*> modList = CPointers::backend()->moduleList();
+	for (QList<CSwordModuleInfo*>::iterator it( modList.begin() ); it != modList.end(); ++it) {
 		if ((*it)->type() == modType) {
 			ret.append( (*it)->name() );
 		}

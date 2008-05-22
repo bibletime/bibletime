@@ -29,7 +29,7 @@ class CBookReadWindow : public CLexiconReadWindow  {
 public:
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CBookReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CBookReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	
 	virtual ~CBookReadWindow();
 	/**

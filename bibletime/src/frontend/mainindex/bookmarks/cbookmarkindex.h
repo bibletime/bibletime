@@ -13,7 +13,7 @@
 //BibleTime includes
 #include "cindexitembase.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 #include "util/cpointers.h"
@@ -59,7 +59,7 @@ signals:
 	/**
 	* Is emitted when a module should be opened,
 	*/
-	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
+	void createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& );
 
 protected: // Protected methods
 

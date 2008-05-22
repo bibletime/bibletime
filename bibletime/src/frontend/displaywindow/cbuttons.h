@@ -14,7 +14,7 @@
 
 //BibleTime includes
 #include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 //QT includes
 #include <QHash>
@@ -29,8 +29,8 @@ class CDisplaySettingsButton : public QToolButton  {
 	Q_OBJECT
 public:
 	
-	CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const ListCSwordModuleInfo& useModules, QWidget *parent=0);
-	void reset(const ListCSwordModuleInfo& useModules);
+	CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent=0);
+	void reset(const QList<CSwordModuleInfo*>& useModules);
 	/**
 	* Sets the item at position pos to the satet given as 2nd paramter.
 	*/
@@ -63,7 +63,7 @@ protected:
 	CSwordBackend::FilterOptions*  m_moduleSettings;
 	CSwordBackend::DisplayOptions* m_displaySettings;
 	CSwordBackend::FilterOptions m_available;
-	ListCSwordModuleInfo m_modules;
+	QList<CSwordModuleInfo*> m_modules;
 
 	QHash<QString, int> m_dict;
 

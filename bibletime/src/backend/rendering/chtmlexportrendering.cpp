@@ -41,7 +41,7 @@ namespace Rendering {
 		if (i.hasChildItems()) {
 			KeyTree const * tree = i.childList();
 
-			const ListCSwordModuleInfo& modules( tree->collectModules() );
+			const QList<CSwordModuleInfo*>& modules( tree->collectModules() );
 
 			if (modules.count() == 1) { //insert the direction into the sorrounding div
 				ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
@@ -57,7 +57,7 @@ namespace Rendering {
 	}
 
 
-	const ListCSwordModuleInfo& modules( i.modules() );
+	const QList<CSwordModuleInfo*>& modules( i.modules() );
 	if (modules.count() == 0) {
 		return QString(""); //no module present for rendering
 	}
@@ -81,9 +81,9 @@ namespace Rendering {
 	QString langAttr;
 	QString key_renderedText;
 
-	ListCSwordModuleInfo::const_iterator end_modItr = modules.end();
+	QList<CSwordModuleInfo*>::const_iterator end_modItr = modules.end();
 
-	for (ListCSwordModuleInfo::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
+	for (QList<CSwordModuleInfo*>::const_iterator mod_Itr(modules.begin()); mod_Itr != end_modItr; ++mod_Itr) {
 		key->module(*mod_Itr);
 		key->key( i.key() );
 
@@ -183,7 +183,7 @@ void CHTMLExportRendering::initRendering() {
 }
 
 const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {
-	ListCSwordModuleInfo modules = tree.collectModules();
+	QList<CSwordModuleInfo*> modules = tree.collectModules();
 
 	const CLanguageMgr::Language* const lang = modules.first()->language();
 

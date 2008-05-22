@@ -9,7 +9,7 @@
 #ifndef BTSOURCEWIDGET_H
 #define BTSOURCEWIDGET_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QTabWidget>
 #include <QString>
@@ -71,7 +71,7 @@ private slots:
 	void slotModuleSelectionChanged(QString sourceName, int selectedCount);
 
 	void slotTabSelected(int index);
-	void slotInstallAccepted(ListCSwordModuleInfo mi, QTreeWidget* treeWidget);
+	void slotInstallAccepted(QList<CSwordModuleInfo*> mi, QTreeWidget* treeWidget);
 
 
 

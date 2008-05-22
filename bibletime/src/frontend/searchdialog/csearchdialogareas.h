@@ -10,7 +10,7 @@
 #ifndef CSEARCHDIALOGAREAS_H
 #define CSEARCHDIALOGAREAS_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
@@ -136,7 +136,7 @@ public:
 	/**
 	* Sets the modules which contain the result of each.
 	*/
-	void setSearchResult(ListCSwordModuleInfo modules);
+	void setSearchResult(QList<CSwordModuleInfo*> modules);
 	
 	QSize sizeHint() const { return baseSize(); }
 	QSize minimumSizeHint() const { return minimumSize(); }
@@ -197,7 +197,7 @@ private:
 	QFrame *m_displayFrame;
 	CReadDisplay* m_previewDisplay;
 
-	ListCSwordModuleInfo m_modules;
+	QList<CSwordModuleInfo*> m_modules;
 
 	QSplitter *mainSplitter;
 	QSplitter *resultListSplitter;
@@ -226,7 +226,7 @@ public:
 	/**
 	* Returns the list of used modules.
 	*/
-	const ListCSwordModuleInfo modules();
+	const QList<CSwordModuleInfo*> modules();
 	/**
 	* Return the selected search type,.
 	*/
@@ -269,7 +269,7 @@ public slots: // Public slots
 	/**
 	* Sets the modules used by the search.
 	*/
-	void setModules( ListCSwordModuleInfo modules );
+	void setModules( QList<CSwordModuleInfo*> modules );
 
 	/** Sets the modules when user selects them from the combobox.*/
 	void moduleListTextSelected(int index);
@@ -298,7 +298,7 @@ signals:
 	void sigStartSearch();
 
 private:
-	ListCSwordModuleInfo m_modules;
+	QList<CSwordModuleInfo*> m_modules;
 
 	QHBoxLayout *hboxLayout;
     QGroupBox *searchGroupBox;

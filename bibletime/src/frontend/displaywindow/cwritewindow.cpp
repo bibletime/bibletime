@@ -24,7 +24,7 @@
 
 using namespace Profile;
 
-CWriteWindow::CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
+CWriteWindow::CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
 : CDisplayWindow(modules, parent), m_writeDisplay(0) {}
 
 CWriteWindow::~CWriteWindow() {}
@@ -69,9 +69,9 @@ void CWriteWindow::storeProfileSettings(CProfileWindow * const settings) {
 	}
 
 	QStringList mods;
-	ListCSwordModuleInfo allMods = modules();
-	ListCSwordModuleInfo::iterator end_it = allMods.end();
-	for (ListCSwordModuleInfo::iterator it(allMods.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*> allMods = modules();
+	QList<CSwordModuleInfo*>::iterator end_it = allMods.end();
+	for (QList<CSwordModuleInfo*>::iterator it(allMods.begin()); it != end_it; ++it) {
 		mods.append((*it)->name());
 	}
 	settings->setModules(mods);

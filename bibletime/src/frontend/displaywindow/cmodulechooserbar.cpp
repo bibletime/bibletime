@@ -16,15 +16,15 @@
 #include <QAction>
 #include <QToolBar>
 
-CModuleChooserBar::CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type, QWidget *parent)
+CModuleChooserBar::CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSwordModuleInfo::ModuleType type, QWidget *parent)
 	: QToolBar(parent),
 	m_moduleType(type),
 	m_idCounter(0),
 	m_buttonLimit(-1) //-1 means no limit
 {
 	//insert buttons if useModules != 0
-	ListCSwordModuleInfo::iterator end_it = useModules.end();
-	for (ListCSwordModuleInfo::iterator it(useModules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = useModules.end();
+	for (QList<CSwordModuleInfo*>::iterator it(useModules.begin()); it != end_it; ++it) {
 		if ((m_buttonLimit != -1) && ( m_buttonLimit <= (int)m_buttonList.count()) ) { //we reached the button limit
 			break;
 		}
@@ -72,8 +72,8 @@ void CModuleChooserBar::removeButton( const int ID ) {
 }
 
 /** Returns a list of selected modules. */
-ListCSwordModuleInfo CModuleChooserBar::getModuleList() {
-	ListCSwordModuleInfo list;
+QList<CSwordModuleInfo*> CModuleChooserBar::getModuleList() {
+	QList<CSwordModuleInfo*> list;
 	foreach (CModuleChooserButton* b, m_buttonList)
 	{
 		if (b->module()) list.append( b->module() );
@@ -98,14 +98,14 @@ void CModuleChooserBar::setButtonLimit(const int limit) {
 }
 
 /** Sets the modules which are chosen in this module chooser bar. */
-void CModuleChooserBar::setModules( ListCSwordModuleInfo useModules ) {
+void CModuleChooserBar::setModules( QList<CSwordModuleInfo*> useModules ) {
 	setButtonLimit(0);
 	setButtonLimit(-1);  //these two lines clear the bar
 
 	if (!useModules.count()) return;
 
-	ListCSwordModuleInfo::iterator end_it = useModules.end();
-	for (ListCSwordModuleInfo::iterator it(useModules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = useModules.end();
+	for (QList<CSwordModuleInfo*>::iterator it(useModules.begin()); it != end_it; ++it) {
 		if ( (m_buttonLimit != -1) && (m_buttonLimit <= (int)m_buttonList.count()) ) {
 			break;
 		}

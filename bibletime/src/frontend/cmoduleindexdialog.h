@@ -12,7 +12,7 @@
 #ifndef CMODULEINDEXDIALOG_H
 #define CMODULEINDEXDIALOG_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 //Qt includes
 #include <QObject>
@@ -38,11 +38,11 @@ public:
 
 	/** Starts the actual indexing. It shows the dialog with progress information.
 	 */
-	void indexAllModules( const ListCSwordModuleInfo& modules );
+	void indexAllModules( const QList<CSwordModuleInfo*>& modules );
 	
 	/** Indexes all modules in the list which don't have an index yet.
 	 */
-	void indexUnindexedModules( const ListCSwordModuleInfo& modules );
+	void indexUnindexedModules( const QList<CSwordModuleInfo*>& modules );
 
 signals:
 	/** Indexing is cancelled programmatically. */

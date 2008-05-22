@@ -13,7 +13,7 @@
 //BibleTime includes
 #include "btindexitem.h"
 #include "backend/btmoduletreeitem.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 #include "util/cpointers.h"
@@ -56,10 +56,10 @@ public:
 	/**
 	* Opens the searchdialog using the given modules using the given search text.
 	*/
-	void emitModulesChosen( ListCSwordModuleInfo modules, QString key );
+	void emitModulesChosen( QList<CSwordModuleInfo*> modules, QString key );
 
 	/** Helper method for "freezing" modules while opening them in windows. */
-	void unfreezeModules(ListCSwordModuleInfo);
+	void unfreezeModules(QList<CSwordModuleInfo*>);
 
 public slots:
 
@@ -190,7 +190,7 @@ signals:
 	/**
 	* Is emitted when a module should be opened,
 	*/
-	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
+	void createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& );
 	/**
 	 * Is emitted when a write window should be created.
 	 */

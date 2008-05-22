@@ -215,7 +215,7 @@ void CBookmarkIndex::slotExecuted( QTreeWidgetItem* i )
 	}
 	else if (CIndexBookmarkItem* b = dynamic_cast<CIndexBookmarkItem*>(i) ) { //clicked on a bookmark
 		if (CSwordModuleInfo* mod = b->module()) {
-			ListCSwordModuleInfo modules;
+			QList<CSwordModuleInfo*> modules;
 			modules.append(mod);
 			emit createReadDisplayWindow(modules, b->key());
 		}

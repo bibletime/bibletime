@@ -10,7 +10,7 @@
 #ifndef CSEARCHRESULTSVIEW_H
 #define CSEARCHRESULTSVIEW_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QTreeWidget>
 

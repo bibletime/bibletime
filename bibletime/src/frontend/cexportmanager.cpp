@@ -83,7 +83,7 @@ const bool CExportManager::saveKey(CSwordKey* key, const Format format, const bo
 	QString startKey;
 	QString stopKey;
 
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	modules.append(key->module());
 
 	CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);
@@ -224,7 +224,7 @@ const bool CExportManager::copyKey(CSwordKey* key, const Format format, const bo
 	QString startKey;
 	QString stopKey;
 
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	modules.append(key->module());
 
 	CSwordVerseKey *vk = dynamic_cast<CSwordVerseKey*>(key);

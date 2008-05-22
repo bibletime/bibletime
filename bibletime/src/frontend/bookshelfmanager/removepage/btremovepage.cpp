@@ -149,7 +149,7 @@ void BtRemovePage::slotRemoveModules()
 	if ((QMessageBox::question(this, tr("Remove Works?"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
 		// Update the module list before really removing. Remember deleting the pointers later.
-		ListCSwordModuleInfo toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);
+		QList<CSwordModuleInfo*> toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);
 
 		sword::InstallMgr installMgr;
 		QMap<QString, sword::SWMgr*> mgrDict; //maps config paths to SWMgr objects

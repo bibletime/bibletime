@@ -66,7 +66,7 @@ QHash<QString, CSearchAnalysisItem*>* CSearchAnalysisScene::getSearchAnalysisIte
 }
 
 /** Starts the analysis of the search result. This should be called only once because QCanvas handles the updates automatically. */
-void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
+void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 	/**
 	* Steps of analysing our search result;
 	* -Create the items for all available books ("Genesis" - "Revelation")
@@ -104,8 +104,8 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 	while (ok && analysisItem) {
 		//   for (moduleIndex = 0,m_moduleList.first(); m_moduleList.current(); m_moduleList.next(),++moduleIndex) {
 		moduleIndex = 0;
-		ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-		for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
+		QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
+		for (QList<CSwordModuleInfo*>::iterator it(m_moduleList.begin()); it != end_it; ++it) {
 			qApp->processEvents( QEventLoop::AllEvents );
 			if (!m_lastPosList.contains(*it)) {
 				m_lastPosList.insert(*it,0);
@@ -131,7 +131,7 @@ void CSearchAnalysisScene::analyse(ListCSwordModuleInfo modules) {
 }
 
 /** Sets te module list used for the analysis. */
-void CSearchAnalysisScene::setModules(ListCSwordModuleInfo modules) {
+void CSearchAnalysisScene::setModules(QList<CSwordModuleInfo*> modules) {
 	m_moduleList.clear();
 	foreach (CSwordModuleInfo * mod, modules) {
 		if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) { //a Bible or an commentary
@@ -275,8 +275,8 @@ void CSearchAnalysisScene::saveAsHTML() {
 		analysisItem = m_itemList.value( key.book() );
 
 		int moduleIndex = 0;
-		ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
-		for (ListCSwordModuleInfo::iterator it(m_moduleList.begin()); it != end_it; ++it) {
+		QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
+		for (QList<CSwordModuleInfo*>::iterator it(m_moduleList.begin()); it != end_it; ++it) {
 			count = analysisItem->getCountForModule(moduleIndex);
 			countStr.setNum(count);
 			m_searchAnalysisHTML += QString("<td align=\"right\">") + countStr + QString("</td>");

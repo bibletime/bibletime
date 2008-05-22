@@ -32,7 +32,7 @@ CModuleIndexDialog* CModuleIndexDialog::getInstance() {
 	return instance;
 }
 
-void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
+void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& modules )
 {
 	static bool indexing = false;
 	if (!indexing) {
@@ -72,11 +72,11 @@ void CModuleIndexDialog::indexAllModules( const ListCSwordModuleInfo& modules )
 	}
 }
 
-void CModuleIndexDialog::indexUnindexedModules( const ListCSwordModuleInfo& modules ) {
-	ListCSwordModuleInfo unindexedMods;
+void CModuleIndexDialog::indexUnindexedModules( const QList<CSwordModuleInfo*>& modules ) {
+	QList<CSwordModuleInfo*> unindexedMods;
 	
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for( ListCSwordModuleInfo::const_iterator it = modules.begin(); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
+	for( QList<CSwordModuleInfo*>::const_iterator it = modules.begin(); it != end_it; ++it) {
 		if ((*it)->hasIndex()) {
 			continue;
 		}

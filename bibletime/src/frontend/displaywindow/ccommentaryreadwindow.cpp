@@ -32,7 +32,7 @@
 
 using namespace Profile;
 
-CCommentaryReadWindow::CCommentaryReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
+CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
 
 void CCommentaryReadWindow::insertKeyboardActions( KActionCollection* const a ) {
 	

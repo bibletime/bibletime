@@ -11,11 +11,12 @@
 #define CTEXTRENDERING_H
 
 //BT includes
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "util/autoptrvector.h"
 
 //QT includes
 #include <QString>
+#include <QList>
 
 class CSwordKey;
 
@@ -58,7 +59,7 @@ public:
 		};
 
 		KeyTreeItem(const QString& key, CSwordModuleInfo const * module, const Settings settings);
-		KeyTreeItem(const QString& key, const ListCSwordModuleInfo& modules, const Settings settings);
+		KeyTreeItem(const QString& key, const QList<CSwordModuleInfo*>& modules, const Settings settings);
 		KeyTreeItem(const QString& startKey, const QString& stopKey, CSwordModuleInfo* module, const Settings settings);
 		KeyTreeItem(const QString& content, const Settings settings);
 		KeyTreeItem(const KeyTreeItem& i);
@@ -74,7 +75,7 @@ public:
 			return !m_alternativeContent.isNull();
 		};
 
-		inline const ListCSwordModuleInfo& modules() const {
+		inline const QList<CSwordModuleInfo*>& modules() const {
 			return m_moduleList;
 		};
 
@@ -93,7 +94,7 @@ public:
 		KeyTreeItem();
 
 		Settings m_settings;
-		ListCSwordModuleInfo m_moduleList;
+		QList<CSwordModuleInfo*> m_moduleList;
 		QString m_key;
 		mutable KeyTree* m_childList;
 
@@ -103,16 +104,16 @@ public:
 
 	class KeyTree : public KeyTreeItemList {		
 	public:
-		ListCSwordModuleInfo collectModules() const;
+		QList<CSwordModuleInfo*> collectModules() const;
 	};
 
 	virtual ~CTextRendering() {}
 
 	const QString renderKeyTree( KeyTree& );
 
-	const QString renderKeyRange( const QString& start, const QString& stop, const ListCSwordModuleInfo& modules, const QString& hightlightKey = QString::null, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
+	const QString renderKeyRange( const QString& start, const QString& stop, const QList<CSwordModuleInfo*>& modules, const QString& hightlightKey = QString::null, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
 
-	const QString renderSingleKey( const QString& key, const ListCSwordModuleInfo&, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
+	const QString renderSingleKey( const QString& key, const QList<CSwordModuleInfo*>&, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
 
 protected:
 	virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;

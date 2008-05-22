@@ -34,7 +34,7 @@
 
 using namespace Profile;
 
-CDisplayWindow::CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea *parent)
+CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *parent)
 	: QMainWindow(parent),
 	m_mdi(parent),
 	m_filterOptions(),
@@ -78,8 +78,8 @@ const QString CDisplayWindow::windowCaption() {
 }
 
 /** Returns the used modules as a QPtrList */
-ListCSwordModuleInfo CDisplayWindow::modules() {
-	ListCSwordModuleInfo mods;
+QList<CSwordModuleInfo*> CDisplayWindow::modules() {
+	QList<CSwordModuleInfo*> mods;
 
 	for (QStringList::iterator it = m_modules.begin(); it != m_modules.end(); ++it) {
 		Q_ASSERT(backend()->findModuleByName(*it));
@@ -284,7 +284,7 @@ void CDisplayWindow::setModuleChooserBar( CModuleChooserBar* bar ) {
 }
 
 /** Sets the modules. */
-void CDisplayWindow::setModules( const ListCSwordModuleInfo& newModules ) {
+void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
 	qDebug("CDisplayWindow::setModules");
 	m_modules.clear();
 
@@ -376,7 +376,7 @@ void CDisplayWindow::lookupModKey( const QString& moduleName, const QString& key
 	else { //given module not displayed in this window
 		//if the module is displayed in another display window we assume a wrong drop
 		//create a new window for the given module
-		ListCSwordModuleInfo mList;
+		QList<CSwordModuleInfo*> mList;
 		mList.append(m);
 		mdi()->emitCreateDisplayWindow(mList, keyName);
 	}

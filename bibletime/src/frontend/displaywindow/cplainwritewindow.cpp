@@ -34,7 +34,7 @@
 
 using namespace Profile;
 
-CPlainWriteWindow::CPlainWriteWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent) : 
+CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent) : 
 	CWriteWindow(moduleList, parent)
 {
 	setKey( CSwordKey::createInstance(moduleList.first()) );

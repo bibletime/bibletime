@@ -13,7 +13,7 @@
 #define CKEYCHOOSER_H
 
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QWidget>
 
@@ -47,7 +47,7 @@ public:
 	* @param key if not NULL, the @ref CKey the KeyChooser should be set to
 	* @param parent the parent of the widget to create
 	*/
-	static CKeyChooser* createInstance(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent);
+	static CKeyChooser* createInstance(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent);
 
 
 public slots:
@@ -70,7 +70,7 @@ public slots:
 	/**
 	* Sets the module of this keychooser and refreshes the comboboxes
 	*/
-	virtual void setModules( const ListCSwordModuleInfo& modules, const bool refresh = true ) = 0;
+	virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true ) = 0;
 	/**
 	* Freshes the content of the different key chooser parts.
 	*/
@@ -97,7 +97,7 @@ protected:
 	/**
 	* the constructor - DO NOT USE! -- use @ref #createInstance instead!
 	*/
-	CKeyChooser(ListCSwordModuleInfo info, CSwordKey *key=0, QWidget *parent=0);
+	CKeyChooser(QList<CSwordModuleInfo*> info, CSwordKey *key=0, QWidget *parent=0);
 	virtual ~CKeyChooser();
 	/**
 	* Set the appropriate font do display the modules

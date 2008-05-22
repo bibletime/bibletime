@@ -14,7 +14,7 @@
 
 
 #include "ckeychooser.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 
 class CKeyChooserWidget;
@@ -40,7 +40,7 @@ public:
 	*
 	* you should not need to use this, use @ref CKeyChooser::createInstance instead
 	*/
-	CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
+	CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
 
 public slots:
 	/**
@@ -65,7 +65,7 @@ public slots:
 	/**
 	* Sets the module and refreshes the combo boxes of this keychooser.
 	*/
-	virtual void setModules( const ListCSwordModuleInfo& modules, const bool refresh = true );
+	virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true );
 
 protected:
 	CKeyChooserWidget *m_widget;

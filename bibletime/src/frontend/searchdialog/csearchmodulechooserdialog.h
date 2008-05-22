@@ -13,7 +13,7 @@
 #ifndef CSEARCHMODULECHOOSERDIALOG_H
 #define CSEARCHMODULECHOOSERDIALOG_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include "frontend/cmodulechooserdialog.h"
 
@@ -28,14 +28,14 @@ class CSearchModuleChooserDialog : public CModuleChooserDialog
 {
 	Q_OBJECT
 public:
-	CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo selectedModules);
+	CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*> selectedModules);
 	~CSearchModuleChooserDialog();
 
 protected: // Protected methods
 	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
 
 private:
-	ListCSwordModuleInfo m_selectedModules;
+	QList<CSwordModuleInfo*> m_selectedModules;
 	BTModuleTreeItem::HiddenOff* m_hiddenFilter;
 };
 

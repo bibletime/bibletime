@@ -105,7 +105,7 @@ void CModuleResultView::initConnections()
 }
 
 /** Setups the tree using the given list of modules. */
-void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& searchedText )
+void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QString& searchedText )
 {
 	clear();
 	//TODO: this class is for sorting
@@ -123,8 +123,8 @@ void CModuleResultView::setupTree( ListCSwordModuleInfo modules, const QString& 
 
 	bool strongsAvailable = false;
 
-	ListCSwordModuleInfo::iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
+	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
 		//   for (modules.first(); modules.current(); modules.next()) {
 		result = (*it)->searchResult();
 

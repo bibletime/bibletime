@@ -111,10 +111,10 @@ void CSwordBackend::filterInit() {
 	cleanupFilters.push_back(thmlplain);
 }
 
-ListCSwordModuleInfo CSwordBackend::takeModulesFromList(QStringList names)
+QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names)
 {
 	int numberOfRemoved = 0;
-	ListCSwordModuleInfo list;
+	QList<CSwordModuleInfo*> list;
 	foreach(QString name, names) {
 		CSwordModuleInfo* mInfo = findModuleByName(name);
 		if (mInfo) {
@@ -173,7 +173,7 @@ const CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason rea
 		}
 	}
 
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
+	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
 
 	foreach (CSwordModuleInfo* mod, m_moduleList) {
 		m_moduleDescriptionMap.insert( mod->config(CSwordModuleInfo::Description), mod->name() );
@@ -226,8 +226,8 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
 
 /** This function deinitializes the modules and deletes them. */
 const bool CSwordBackend::shutdownModules() {
-	ListCSwordModuleInfo::iterator it = m_moduleList.begin();
-	ListCSwordModuleInfo::iterator end = m_moduleList.end();
+	QList<CSwordModuleInfo*>::iterator it = m_moduleList.begin();
+	QList<CSwordModuleInfo*>::iterator end = m_moduleList.end();
 
 	while (it != end) {
 		CSwordModuleInfo* current = (*it);

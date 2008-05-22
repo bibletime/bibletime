@@ -1,14 +1,12 @@
-//
-// C++ Interface: btmoduletreeitem
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #ifndef BTMODULETREEITEM_H
 #define BTMODULETREEITEM_H
 
@@ -107,7 +105,7 @@ public:
 	* (by default CPointers::backend()->moduleList() is used).
 	*/
 	BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters,
-					BTModuleTreeItem::Grouping grouping, ListCSwordModuleInfo* modules = 0);
+					BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules = 0);
 
 	/** When the root item is deleted the whole tree is deleted. */
 	~BTModuleTreeItem();
@@ -162,7 +160,7 @@ private:
 	BTModuleTreeItem* m_next;
 	Type m_type;
 	CSwordModuleInfo::Category m_category;
-	ListCSwordModuleInfo m_originalModuleList;
+	QList<CSwordModuleInfo*> m_originalModuleList;
 };
 
 #endif

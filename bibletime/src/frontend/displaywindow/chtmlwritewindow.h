@@ -24,7 +24,7 @@ class QAction;
 class CHTMLWriteWindow : public CPlainWriteWindow  {
 	Q_OBJECT
 public:
-	CHTMLWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CHTMLWriteWindow();
 
 	/**

@@ -46,7 +46,7 @@
 
 using namespace Profile;
 
-CBibleReadWindow::CBibleReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
+CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
 	: CLexiconReadWindow(moduleList, parent)
 {
 	qDebug("CBibleReadWindow::CBibleReadWindow");
@@ -305,8 +305,8 @@ void CBibleReadWindow::updatePopupMenu() {
 
 	//enable the action depending on the supported module features
 // 	bool hasStrongs = false;
-// 	ListCSwordModuleInfo mods = modules();
-// 	for (ListCSwordModuleInfo::iterator it = mods.begin(); it != mods.end(); ++it) {
+// 	QList<CSwordModuleInfo*> mods = modules();
+// 	for (QList<CSwordModuleInfo*>::iterator it = mods.begin(); it != mods.end(); ++it) {
 // 		if ( (*it)->has( CSwordModuleInfo::strongNumbers ) ) {
 // 			hasStrongs = true;
 // 			break;

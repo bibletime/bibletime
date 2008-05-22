@@ -33,7 +33,7 @@ public:
 	//  static void insertKeyboardActions( KAccel* const a );
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

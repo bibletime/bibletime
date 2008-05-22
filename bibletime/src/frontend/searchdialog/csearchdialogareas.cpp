@@ -96,7 +96,7 @@ void StrongsResultClass::initStrongsResults(void)
 	using namespace Rendering;
 	
 	CDisplayRendering render;
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	CTextRendering::KeyTreeItem::Settings settings;
 	QString rText, lText, key;
 	bool found;
@@ -286,7 +286,7 @@ void CSearchResultArea::initView()
 	loadDialogSettings();
 }
 
-void CSearchResultArea::setSearchResult(ListCSwordModuleInfo modules)
+void CSearchResultArea::setSearchResult(QList<CSwordModuleInfo*> modules)
 {
 	const QString searchedText = CSearchDialog::getSearchDialog()->searchText();
 	reset(); //clear current modules
@@ -326,7 +326,7 @@ void CSearchResultArea::updatePreview(const QString& key)
 		QString text;
 		CDisplayRendering render;
 
-		ListCSwordModuleInfo modules;
+		QList<CSwordModuleInfo*> modules;
 		modules.append(module);
 
 		CTextRendering::KeyTreeItem::Settings settings;
@@ -856,16 +856,16 @@ void CSearchOptionsArea::initConnections()
 }
 
 /** Sets the modules used by the search. */
-void CSearchOptionsArea::setModules( ListCSwordModuleInfo modules )
+void CSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules )
 {
 	qDebug("CSearchOptionsArea::setModules");
 	qDebug() << modules;
 	QString t;
 
 	m_modules.clear(); //remove old modules
-	ListCSwordModuleInfo::iterator end_it = modules.end();
+	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
 
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
+	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
 		//ToDo:  Check for containsRef compat
 		if (*it == 0) { //don't operate on null modules.
 			continue;
@@ -910,7 +910,7 @@ void CSearchOptionsArea::moduleListTextSelected(int index)
 	QString text = m_modulesCombo->itemText(index);
 	qDebug() << text;
 	QStringList moduleNamesList = text.split(", ");
-	ListCSwordModuleInfo moduleList;
+	QList<CSwordModuleInfo*> moduleList;
 	foreach(QString name, moduleNamesList) {
 		moduleList.append(CPointers::backend()->findModuleByName(name));
 	}
@@ -922,11 +922,11 @@ void CSearchOptionsArea::chooseModules() {
 	QString title(tr("Works to Search in"));
 	QString label(tr("Select the works which should be searched."));
 	CSearchModuleChooserDialog* dlg = new CSearchModuleChooserDialog(this, title, label, modules());
-	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), this, SLOT(setModules(ListCSwordModuleInfo)));
+	connect(dlg, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), this, SLOT(setModules(QList<CSwordModuleInfo*>)));
 	dlg->exec();
 }
 
-const ListCSwordModuleInfo CSearchOptionsArea::modules() {
+const QList<CSwordModuleInfo*> CSearchOptionsArea::modules() {
 	return m_modules;
 }
 

@@ -78,7 +78,7 @@ private:
 	bool m_treeAlreadyInitialized;
 	QMap<QString, bool> m_checkedModules;
 	CSwordBackend* m_remoteBackend; // needed for the module list
-	ListCSwordModuleInfo m_moduleList;
+	QList<CSwordModuleInfo*> m_moduleList;
 
 	QTreeWidget* m_view;
 	QLabel* m_refreshTimeLabel;

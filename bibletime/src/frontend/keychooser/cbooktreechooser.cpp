@@ -22,7 +22,7 @@
 
 #include <QDebug>
 
-CBookTreeChooser::CBookTreeChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
 : CKeyChooser(modules, key, parent),
 m_key( dynamic_cast<CSwordTreeKey*>(key) ) {
 	
@@ -95,12 +95,12 @@ CSwordKey*  CBookTreeChooser::key() {
 
 /** Sets another module to this keychooser. Inherited from ckeychooser (therefore
 the list of modules instead of one). */
-void CBookTreeChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
+void CBookTreeChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
 	
 	//Add given modules into private list
 	m_modules.clear();
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
+	for (QList<CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
 		if (CSwordBookModuleInfo* book = dynamic_cast<CSwordBookModuleInfo*>(*it)) {
 			m_modules.append(book);
 		}

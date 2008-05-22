@@ -25,7 +25,7 @@
 #include "frontend/cmdiarea.h"
 
 
-CReadWindow* CDisplayWindowFactory::createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent)
+CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
 {
 	qDebug("CDisplayWindowFactory::createReadInstance");
 	switch (modules.first()->type()) {
@@ -45,7 +45,7 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(ListCSwordModuleInfo modu
 }
 
 
-CWriteWindow* CDisplayWindowFactory::createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type)
+CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type)
 {
 	if (type == CDisplayWindow::HTMLWindow) {
 		return new CHTMLWriteWindow(modules, parent);

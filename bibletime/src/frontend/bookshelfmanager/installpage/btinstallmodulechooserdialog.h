@@ -32,7 +32,7 @@ class BtInstallModuleChooserDialog : public CModuleChooserDialog
 	Q_OBJECT
 
 public:
-	BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* empty);
+	BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty);
 
 	void initModuleItem(QString name, QTreeWidgetItem* sourceItem);
 	void enableOk(bool enabled);

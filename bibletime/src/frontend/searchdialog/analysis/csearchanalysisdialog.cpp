@@ -24,7 +24,7 @@
 namespace Search {
 
 
-CSearchAnalysisDialog::CSearchAnalysisDialog( ListCSwordModuleInfo modules, QWidget* parentDialog )
+CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, QWidget* parentDialog )
 	: QDialog(parentDialog)
 {
 	initView();

@@ -11,7 +11,7 @@
 #define CMODULECHOOSERBUTTON_H
 
 //BibleTime includes
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/btmoduletreeitem.h"
 #include "util/cpointers.h"
 

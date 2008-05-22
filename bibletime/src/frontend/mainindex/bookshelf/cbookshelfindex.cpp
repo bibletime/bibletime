@@ -322,7 +322,7 @@ void CBookshelfIndex::slotExecuted( QTreeWidgetItem* i )
 		CSwordModuleInfo* mod = m->moduleInfo();
 		if (!m_frozenModules.contains(mod->name())) {
 			m_frozenModules.insert(mod->name());
-			ListCSwordModuleInfo modules;
+			QList<CSwordModuleInfo*> modules;
 			modules.append(mod);
 			qDebug("will emit createReadDisplayWindow");
 			emit createReadDisplayWindow(modules, QString::null);
@@ -333,7 +333,7 @@ void CBookshelfIndex::slotExecuted( QTreeWidgetItem* i )
 	}
 }
 
-void CBookshelfIndex::unfreezeModules(ListCSwordModuleInfo modules)
+void CBookshelfIndex::unfreezeModules(QList<CSwordModuleInfo*> modules)
 {
 	foreach (CSwordModuleInfo* mInfo, modules) {
 		m_frozenModules.remove(mInfo->name());
@@ -408,7 +408,7 @@ void CBookshelfIndex::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetI
 
 
 /** No descriptions */
-void CBookshelfIndex::emitModulesChosen( ListCSwordModuleInfo modules, QString key ) {
+void CBookshelfIndex::emitModulesChosen( QList<CSwordModuleInfo*> modules, QString key ) {
 	emit createReadDisplayWindow(modules, key);
 }
 
@@ -528,7 +528,7 @@ void CBookshelfIndex::actionChangeGrouping(QAction* action)
 void CBookshelfIndex::actionSearchInModules() {
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	while(it.hasNext()) {
 		if (BTIndexModule* i = dynamic_cast<BTIndexModule*>(it.next())) {
 			if (i->moduleInfo()) {
@@ -589,8 +589,8 @@ void CBookshelfIndex::actionHideModules()
 	QString title(tr("Hide/Unhide Works"));
 	QString label(tr("Select the works to be hidden."));
 	CHideModuleChooserDialog* dlg = new CHideModuleChooserDialog(this, title, label, current);
-	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo)),
-			this, SLOT(setHiddenModules(ListCSwordModuleInfo)));
+	connect(dlg, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>)),
+			this, SLOT(setHiddenModules(QList<CSwordModuleInfo*>)));
 	int code = dlg->exec();
 	if (code == QDialog::Accepted) {
 		// notify all who may rebuild their module lists
@@ -654,7 +654,7 @@ void CBookshelfIndex::contentsDragLeaveEvent( QDragLeaveEvent* /*e*/ ) {
 
 /** Opens an editor window to edit the modules content. */
 void CBookshelfIndex::actionEditModulePlain() {
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
 	//loop through items
@@ -670,7 +670,7 @@ void CBookshelfIndex::actionEditModulePlain() {
 
 /** Opens an editor window to edit the modules content. */
 void CBookshelfIndex::actionEditModuleHTML() {
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	QList<QTreeWidgetItem *> items = selectedItems();
 	QListIterator<QTreeWidgetItem *> it(items);
 	while(it.hasNext()) {

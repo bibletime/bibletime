@@ -337,7 +337,7 @@ void BtSourceWidget::slotInstall()
 				QString("</small>"));
 
 	// with empty list we avoid creating the module tree inside the dialog code
-	ListCSwordModuleInfo emptyList;
+	QList<CSwordModuleInfo*> emptyList;
 	BtInstallModuleChooserDialog* dlg = new BtInstallModuleChooserDialog(this, dlgTitle, dlgLabel, &emptyList);
 	//dlg->setGrouping(BTModuleTreeItem::Mod);
 	QTreeWidget* treeWidget = dlg->treeWidget();
@@ -361,7 +361,7 @@ void BtSourceWidget::slotInstall()
 	}
 
 	//user accepts the dialog
-	connect(dlg, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), SLOT(slotInstallAccepted(ListCSwordModuleInfo, QTreeWidget*)) );
+	connect(dlg, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), SLOT(slotInstallAccepted(QList<CSwordModuleInfo*>, QTreeWidget*)) );
 	// user checks/unchecks an item, needed for preventing double items
 	QObject::connect(treeWidget, SIGNAL(itemChanged(QTreeWidgetItem*, int)), dlg, SLOT(slotItemChecked(QTreeWidgetItem*, int)));
 	dlg->exec();
@@ -374,7 +374,7 @@ void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/)
 	// not needed?
 }
 
-void BtSourceWidget::slotInstallAccepted(ListCSwordModuleInfo /*modules*/, QTreeWidget* treeWidget)
+void BtSourceWidget::slotInstallAccepted(QList<CSwordModuleInfo*> /*modules*/, QTreeWidget* treeWidget)
 {
 	qDebug() << "BtSourceWidget::slotInstallAccepted";
 

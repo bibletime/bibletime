@@ -27,7 +27,7 @@ class CWriteWindow : public CDisplayWindow  {
 public:
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CWriteWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

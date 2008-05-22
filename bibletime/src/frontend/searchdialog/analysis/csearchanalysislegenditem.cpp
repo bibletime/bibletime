@@ -39,7 +39,7 @@ const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
 
-CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(ListCSwordModuleInfo *list )
+CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QList<CSwordModuleInfo*> *list )
 	: QGraphicsRectItem()
 {
 	m_moduleList = list;
@@ -64,8 +64,8 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
 
 	//   for (unsigned int index=0; index < m_moduleList->count(); index++){
 	int moduleIndex = 0;
-	ListCSwordModuleInfo::iterator end_it = m_moduleList->end();
-	for (ListCSwordModuleInfo::iterator it(m_moduleList->begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
+	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
 		// the module color indicators
 		QPoint p1( (int)x() + LEGEND_INNER_BORDER, (int)y() + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
 		QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);

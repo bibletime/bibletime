@@ -41,7 +41,7 @@ public:
 	* the constructor
 	* you should not need to use this, use @ref CKeyChooser::createInstance instead
 	*/
-	CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
+	CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
 
 public slots:
 	/**
@@ -55,7 +55,7 @@ public slots:
 	/**
 	* Sets the module
 	*/
-	virtual void setModules(const ListCSwordModuleInfo& modules, const bool refresh = true);
+	virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
 	/**
 	* used to react to changes
 	* @param index not used

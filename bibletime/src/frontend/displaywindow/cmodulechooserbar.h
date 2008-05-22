@@ -12,6 +12,7 @@
 
 //BibleTime includes
 #include "backend/drivers/cswordmoduleinfo.h"
+
 #include "util/cpointers.h"
 
 //Qt includes
@@ -30,11 +31,11 @@ public:
 	/**
 	* Default constructor
 	*/
-	CModuleChooserBar(ListCSwordModuleInfo useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent=0);
+	CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent=0);
 	/**
 	* Returns a list of selected modules.
 	*/
-	ListCSwordModuleInfo getModuleList();
+	QList<CSwordModuleInfo*> getModuleList();
 	/**
 	* Sets the number of the maximum count of buttons.
 	*/
@@ -42,7 +43,7 @@ public:
 	/**
 	* Sets the modules which are chosen in this module chooser bar.
 	*/
-	void setModules( ListCSwordModuleInfo modules );
+	void setModules( QList<CSwordModuleInfo*> modules );
 
 signals:
 	void sigChanged();

@@ -11,7 +11,7 @@
 #define SEARCHCSEARCHANALYSISDIALOG_H
 
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QDialog>
 
@@ -34,7 +34,7 @@ class CSearchAnalysisDialog : public QDialog
 	Q_OBJECT
 
 public:
-	CSearchAnalysisDialog(ListCSwordModuleInfo modules, QWidget* parentDialog);
+	CSearchAnalysisDialog(QList<CSwordModuleInfo*> modules, QWidget* parentDialog);
 	~CSearchAnalysisDialog() {}
 
 protected: // Protected methods

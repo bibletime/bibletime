@@ -122,9 +122,9 @@ void BtIndexPage::populateModuleList() {
 
 
 
-	ListCSwordModuleInfo& modules = CPointers::backend()->moduleList();
-	ListCSwordModuleInfo::iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it = modules.begin(); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>& modules = CPointers::backend()->moduleList();
+	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
+	for (QList<CSwordModuleInfo*>::iterator it = modules.begin(); it != end_it; ++it) {
 		QTreeWidgetItem* item = 0;
 		
 		if ((*it)->hasIndex()) {
@@ -148,7 +148,7 @@ void BtIndexPage::populateModuleList() {
 void BtIndexPage::createIndices()
 {
 	bool indicesCreated = false;
-	ListCSwordModuleInfo moduleList;
+	QList<CSwordModuleInfo*> moduleList;
 
 	for (int i = 0; i < m_modsWithoutIndices->childCount(); i++) {
 		if (m_modsWithoutIndices->child(i)->checkState(0) == Qt::Checked) {

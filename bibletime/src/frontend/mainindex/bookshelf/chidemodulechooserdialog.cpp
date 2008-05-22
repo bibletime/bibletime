@@ -36,7 +36,7 @@ CHideModuleChooserDialog::CHideModuleChooserDialog( QWidget* parent, QString tit
 	m_currentModule(currentModule),
 	m_focusItem(0)
 {
-	QObject::connect(this, SIGNAL(modulesChanged(ListCSwordModuleInfo, QTreeWidget*)), this, SLOT(applyHiddenModules(ListCSwordModuleInfo)));
+	QObject::connect(this, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), this, SLOT(applyHiddenModules(QList<CSwordModuleInfo*>)));
 	init();
 	if (m_focusItem) {
 		treeWidget()->scrollToItem(m_focusItem);
@@ -56,10 +56,10 @@ void CHideModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWid
 	}
 }
 
-void CHideModuleChooserDialog::applyHiddenModules(ListCSwordModuleInfo hiddenModules)
+void CHideModuleChooserDialog::applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules)
 {
 	qDebug("CHideModuleChooserDialog::applyHiddenModules");
-	ListCSwordModuleInfo allModules = CPointers::backend()->moduleList();
+	QList<CSwordModuleInfo*> allModules = CPointers::backend()->moduleList();
 	foreach(CSwordModuleInfo* i, allModules) {
 		if (hiddenModules.contains(i)) {
 			i->setHidden(true);

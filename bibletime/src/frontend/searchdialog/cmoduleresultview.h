@@ -13,7 +13,7 @@
 #define CMODULERESULTSVIEW_H
 
 //BibleTime includes
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "csearchdialogareas.h"
 
 //Qt includes
@@ -43,7 +43,7 @@ public:
 	/**
 	* Setups the tree using the given list of modules.
 	*/
-	void setupTree( ListCSwordModuleInfo modules, const QString& searchedText );
+	void setupTree( QList<CSwordModuleInfo*> modules, const QString& searchedText );
 	/**
 	* Returns the currently active module.
 	*/

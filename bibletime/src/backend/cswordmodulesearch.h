@@ -13,7 +13,7 @@
 #define CSWORDMODULESEARCH_H
 
 //BibleTime - backend
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 //BibleTime - utils
 #include "util/cpointers.h"
@@ -57,7 +57,7 @@ public:
 	/**
 	* This function sets the modules which should be searched.
 	*/
-	void setModules( const ListCSwordModuleInfo& );
+	void setModules( const QList<CSwordModuleInfo*>& );
 	/**
 	* Sets the search scope.
 	*/
@@ -81,12 +81,12 @@ public:
 	/**
 	* Returns true if all of the specified modules have indices already built.
 	*/
-	const bool modulesHaveIndices( const ListCSwordModuleInfo& );
+	const bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
 
 protected:
 	QString m_searchedText;
 	sword::ListKey m_searchScope;
-	ListCSwordModuleInfo m_moduleList;
+	QList<CSwordModuleInfo*> m_moduleList;
 
 	int m_searchOptions;
 

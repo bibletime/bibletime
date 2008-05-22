@@ -14,7 +14,7 @@
 #include "frontend/profile/cprofile.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QList>
 #include <QMainWindow>
@@ -218,7 +218,7 @@ protected slots:
 	/**
 	 * Creates a new presenter in the MDI area according to the type of the module.
 	 */
-	CDisplayWindow* createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key);
+	CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
 	CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key);
 	CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type);
 	/**
@@ -348,7 +348,7 @@ private:
 	/**
 	* The list of installed SWORD modules
 	*/
-	ListCSwordModuleInfo* m_moduleList;
+	QList<CSwordModuleInfo*>* m_moduleList;
 
 	Profile::CProfile* m_currentProfile;
 	QSplitter* m_mainSplitter;

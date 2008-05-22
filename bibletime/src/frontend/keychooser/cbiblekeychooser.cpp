@@ -24,7 +24,7 @@
 #include <QDebug>
 
 
-CBibleKeyChooser::CBibleKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent) : 
+CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) : 
 	CKeyChooser(modules, key, parent),
 	m_key(dynamic_cast<CSwordVerseKey*>(key)) 
 {
@@ -80,7 +80,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
 	setUpdatesEnabled(true);
 }
 
-void CBibleKeyChooser::setModules(const ListCSwordModuleInfo& modules, const bool refresh) {
+void CBibleKeyChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
 	m_modules.clear();
 
 	foreach (CSwordModuleInfo* mod, modules) {

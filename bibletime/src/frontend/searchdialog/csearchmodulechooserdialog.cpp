@@ -33,7 +33,7 @@
 namespace Search {
 
 CSearchModuleChooserDialog::CSearchModuleChooserDialog( QWidget* parent, QString title, QString label,
-														ListCSwordModuleInfo selectedModules)
+														QList<CSwordModuleInfo*> selectedModules)
 	: CModuleChooserDialog(parent, title, label),
 	m_selectedModules(selectedModules)
 {

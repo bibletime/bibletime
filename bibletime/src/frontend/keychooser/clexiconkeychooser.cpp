@@ -29,7 +29,7 @@
 #include <QHBoxLayout>
 
 
-CLexiconKeyChooser::CLexiconKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent)
+CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
 	: CKeyChooser(modules, key, parent),
 	m_key(dynamic_cast<CSwordLDKey*>(key))
 {
@@ -152,13 +152,13 @@ void CLexiconKeyChooser::adjustFont() {
 }
 
 /** Sets the module and refreshes the combo boxes */
-void CLexiconKeyChooser::setModules( const ListCSwordModuleInfo& modules, const bool refresh ) {
+void CLexiconKeyChooser::setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh ) {
 
 	while (!m_modules.isEmpty())
         	m_modules.takeFirst(); // not deleting the pointer
 
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::const_iterator it(modules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
+	for (QList<CSwordModuleInfo*>::const_iterator it(modules.begin()); it != end_it; ++it) {
 		CSwordLexiconModuleInfo* lexicon = dynamic_cast<CSwordLexiconModuleInfo*>(*it);
 		if (lexicon) {
 			m_modules.append(lexicon);

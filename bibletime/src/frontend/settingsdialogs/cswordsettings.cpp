@@ -147,10 +147,10 @@ StandardWorksTab::StandardWorksTab()
 
 	//fill the comboboxes with the right modules
 
-	ListCSwordModuleInfo& modules = backend()->moduleList();
+	QList<CSwordModuleInfo*>& modules = backend()->moduleList();
 	QString modDescript;
-	ListCSwordModuleInfo::iterator end_it = modules.end();
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
+	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
 		modDescript = (*it)->config(CSwordModuleInfo::Description);
 
 		switch ((*it)->type()) {

@@ -353,9 +353,6 @@ private:
 	bool m_cancelIndexing;
 };
 
-// typedef QPtrList<CSwordModuleInfo> ListCSwordModuleInfo;
-typedef QList<CSwordModuleInfo*> ListCSwordModuleInfo;
-
 inline const CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
 	return CSwordModuleInfo::Unknown;
 }

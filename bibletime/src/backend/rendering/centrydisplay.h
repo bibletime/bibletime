@@ -12,7 +12,7 @@
 
 //BibleTime
 //#include "ctextrendering.h"
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
@@ -42,7 +42,7 @@ public:
 	* Returns the rendered text using the modules in the list and using the key parameter.
 	* The displayoptions and filter options are used, too.
 	*/
-	virtual const QString text( const ListCSwordModuleInfo& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
+	virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
 };
 
 

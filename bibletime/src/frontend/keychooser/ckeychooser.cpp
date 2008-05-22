@@ -27,7 +27,7 @@
 #include <QAction>
 #include <QDebug>
 
-CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
+CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, CSwordKey *, QWidget *parent)
 	: QWidget(parent),
 	m_history(0)
 {
@@ -38,7 +38,7 @@ CKeyChooser::CKeyChooser(ListCSwordModuleInfo, CSwordKey *, QWidget *parent)
 
 CKeyChooser::~CKeyChooser() {}
 
-CKeyChooser* CKeyChooser::createInstance(ListCSwordModuleInfo modules, CSwordKey *key, QWidget *parent) {
+CKeyChooser* CKeyChooser::createInstance(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) {
 	if (!modules.count()) {
 		return 0;
 	}

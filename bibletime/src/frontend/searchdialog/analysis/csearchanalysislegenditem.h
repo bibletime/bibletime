@@ -10,7 +10,7 @@
 #ifndef SEARCHCSEARCHANALYSISLEGENDITEM_H
 #define SEARCHCSEARCHANALYSISLEGENDITEM_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QGraphicsRectItem>
 
@@ -22,11 +22,11 @@ namespace Search {
 class CSearchAnalysisLegendItem : public QGraphicsRectItem
 {
 public:
-	CSearchAnalysisLegendItem(ListCSwordModuleInfo* list );
+	CSearchAnalysisLegendItem(QList<CSwordModuleInfo*>* list );
 
 private:
 	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
-	ListCSwordModuleInfo* m_moduleList;
+	QList<CSwordModuleInfo*>* m_moduleList;
 
 };
 

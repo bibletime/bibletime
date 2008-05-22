@@ -35,7 +35,7 @@ public:
 	*/
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CCommentaryReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	/**
 	* Store the settings of this window in the given CProfileWindow object.
 	*/

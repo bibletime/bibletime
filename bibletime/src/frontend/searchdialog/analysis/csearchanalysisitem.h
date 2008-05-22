@@ -10,7 +10,7 @@
 #ifndef SEARCHCSEARCHANALYSISITEM_H
 #define SEARCHCSEARCHANALYSISITEM_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
@@ -24,7 +24,7 @@ class CSearchAnalysisItem : public QGraphicsRectItem
 {
 public:
 
-	CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, ListCSwordModuleInfo* modules);
+	CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules);
     ~CSearchAnalysisItem();
 	/**
 	* Sets the resultcount of this item
@@ -47,7 +47,7 @@ public:
 private:
 	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
-	ListCSwordModuleInfo* m_moduleList;
+	QList<CSwordModuleInfo*>* m_moduleList;
 	double *m_scaleFactor;
 	QString m_bookName;
 	int m_moduleCount;

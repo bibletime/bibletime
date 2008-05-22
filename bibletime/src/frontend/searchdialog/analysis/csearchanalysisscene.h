@@ -12,7 +12,7 @@
 
 #include "csearchanalysisitem.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 
 #include <QGraphicsScene>
@@ -39,7 +39,7 @@ public:
 	* This should be called only once because
 	* QCanvas handles the updates automatically.
 	*/
-	void analyse(ListCSwordModuleInfo modules);
+	void analyse(QList<CSwordModuleInfo*> modules);
 	/**
 	* This function returns a color for each module
 	* @return The color at position index in the list
@@ -61,7 +61,7 @@ protected slots: // Protected slots
 	void slotResized();
 
 protected:
-	void setModules(ListCSwordModuleInfo modules);
+	void setModules(QList<CSwordModuleInfo*> modules);
 
 private:
 	/**
@@ -69,7 +69,7 @@ private:
 	*/
 	const unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
-	ListCSwordModuleInfo m_moduleList;
+	QList<CSwordModuleInfo*> m_moduleList;
 	QHash<QString, CSearchAnalysisItem*> m_itemList;
 	QMap<CSwordModuleInfo*,unsigned int> m_lastPosList;
 	int m_maxCount;

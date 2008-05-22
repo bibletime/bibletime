@@ -28,8 +28,8 @@ CMainIndex::CMainIndex(QWidget *parent)	: QTabWidget(parent)
 
 	//shortcut some signals from pages to signals of this widget so that outsiders
 	// do not have to use the pages directly
-	QObject::connect(m_bookshelfPage, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )), this, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )));
-	QObject::connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )), this, SIGNAL(createReadDisplayWindow( ListCSwordModuleInfo, const QString& )));
+	QObject::connect(m_bookshelfPage, SIGNAL(createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& )), this, SIGNAL(createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& )));
+	QObject::connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& )), this, SIGNAL(createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& )));
 
 	QObject::connect(m_bookshelfPage, SIGNAL(createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType& )), this, SIGNAL(createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType&)));
 

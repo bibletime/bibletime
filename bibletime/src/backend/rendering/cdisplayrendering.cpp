@@ -104,7 +104,7 @@ namespace Rendering {
 	}
 
 	const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
-		ListCSwordModuleInfo modules = tree.collectModules();
+		QList<CSwordModuleInfo*> modules = tree.collectModules();
 		qDebug("CDisplayRendering::finishText");
 
 		//marking words is very slow, we have to find a better solution

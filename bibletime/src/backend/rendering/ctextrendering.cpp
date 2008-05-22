@@ -46,7 +46,7 @@ m_childList( 0 ),
 m_stopKey( QString::null ),
 m_alternativeContent( content ) {}
 
-CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, const ListCSwordModuleInfo& mods, const Settings settings )
+CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, const QList<CSwordModuleInfo*>& mods, const Settings settings )
 : m_settings( settings ),
 m_moduleList( mods ),
 m_key( key ),
@@ -155,27 +155,27 @@ const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
 	return m_alternativeContent;
 }
 
-ListCSwordModuleInfo CTextRendering::KeyTree::collectModules() const {
+QList<CSwordModuleInfo*> CTextRendering::KeyTree::collectModules() const {
 	//collect all modules which are available and used by child items
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 
 	for (KeyTreeItem* c = first(); c; c = next()) {
 	Q_ASSERT(c);
 
-		ListCSwordModuleInfo childMods = c->modules();
+		QList<CSwordModuleInfo*> childMods = c->modules();
 
 		/*ToDo: Use the const iterators as soon as we use Qt > 3.1
-		 const ListCSwordModuleInfo::const_iterator c_end = childMods.end();
-		  for (ListCSwordModuleInfo::const_iterator c_it = childMods.constBegin(); c_it != c_end; ++c_it) {
+		 const QList<CSwordModuleInfo*>::const_iterator c_end = childMods.end();
+		  for (QList<CSwordModuleInfo*>::const_iterator c_it = childMods.constBegin(); c_it != c_end; ++c_it) {
 		   if (!modules.contains(*c_it)) {
 		    modules.append(*c_it);
 		   }
 		  }*/
 
 		//   for (CSwordModuleInfo* m = childMods.first(); m; m = childMods.next()) {
-		ListCSwordModuleInfo::iterator end_it = childMods.end();
+		QList<CSwordModuleInfo*>::iterator end_it = childMods.end();
 
-		for (ListCSwordModuleInfo::iterator it(childMods.begin()); it != end_it; ++it) {
+		for (QList<CSwordModuleInfo*>::iterator it(childMods.begin()); it != end_it; ++it) {
 			if (!modules.contains(*it)) {
 				modules.append(*it);
 			}
@@ -189,7 +189,7 @@ ListCSwordModuleInfo CTextRendering::KeyTree::collectModules() const {
 const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 	initRendering();
 
-	ListCSwordModuleInfo modules = tree.collectModules();
+	QList<CSwordModuleInfo*> modules = tree.collectModules();
 	QString t;
 
 	//optimization for entries with the same key
@@ -210,7 +210,7 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 	return finishText(t, tree);
 }
 
-const QString CTextRendering::renderKeyRange( const QString& start, const QString& stop, const ListCSwordModuleInfo& modules, const QString& highlightKey, const KeyTreeItem::Settings& keySettings ) {
+const QString CTextRendering::renderKeyRange( const QString& start, const QString& stop, const QList<CSwordModuleInfo*>& modules, const QString& highlightKey, const KeyTreeItem::Settings& keySettings ) {
 
 	CSwordModuleInfo* module = modules.first();
 	//qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
@@ -263,7 +263,7 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
 	return QString::null;
 }
 
-const QString CTextRendering::renderSingleKey( const QString& key, const ListCSwordModuleInfo& moduleList, const KeyTreeItem::Settings& settings ) {
+const QString CTextRendering::renderSingleKey( const QString& key, const QList<CSwordModuleInfo*>& moduleList, const KeyTreeItem::Settings& settings ) {
 	KeyTree tree;
 	tree.append( new KeyTreeItem(key, moduleList, settings) );
 

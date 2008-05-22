@@ -11,7 +11,7 @@
 #define CDISPLAYTEMPLATEMGR_H
 
 //BibleTime include
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 //Qt includes
 #include <QMap>
@@ -39,7 +39,7 @@ public:
             pageDirection = QString("ltr");
         };
 
-        ListCSwordModuleInfo modules; /**< the list of modules */
+        QList<CSwordModuleInfo*> modules; /**< the list of modules */
         QString title; /**< the title which is used for the new processed HTML page */
         QString langAbbrev; /**< the language for the HTML page. */
         QString pageDirection; /**< the language for the HTML page. */

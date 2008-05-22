@@ -11,6 +11,7 @@
 #define CBTCONFIG_H
 
 #include "backend/managers/cswordbackend.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 #include <QString>

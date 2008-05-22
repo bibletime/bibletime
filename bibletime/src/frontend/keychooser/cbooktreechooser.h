@@ -38,7 +38,7 @@ class QTreeWidgetItem;
 class CBookTreeChooser : public CKeyChooser  {
 	Q_OBJECT
 public:
-	CBookTreeChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
+	CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
 	~CBookTreeChooser();
 	/**
 	* Refreshes the content.
@@ -47,7 +47,7 @@ public:
 	/**
 	* Sets another module to this keychooser
 	*/
-	virtual void setModules(const ListCSwordModuleInfo& modules, const bool refresh = true);
+	virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
 	/**
 	* Returns the key of this keychooser.
 	*/

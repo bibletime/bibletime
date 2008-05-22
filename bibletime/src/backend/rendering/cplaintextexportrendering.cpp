@@ -26,15 +26,15 @@ const QString CPlainTextExportRendering::renderEntry( const KeyTreeItem& i, CSwo
 		return QString(i.key()).append("\n");
 	}
 
-	ListCSwordModuleInfo modules = i.modules();
+	QList<CSwordModuleInfo*> modules = i.modules();
 	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
 	QString renderedText = QString(i.key()).append(":\n");
 
 	QString entry;
 	//   for (CSwordModuleInfo* m = modules.first(); m; m = modules.next()) {
-	ListCSwordModuleInfo::iterator end_it = modules.end();
+	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
 
-	for (ListCSwordModuleInfo::iterator it(modules.begin()); it != end_it; ++it) {
+	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
 		key->module(*it);
 		key->key( i.key() );
 

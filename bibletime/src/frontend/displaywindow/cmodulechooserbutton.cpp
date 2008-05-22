@@ -187,7 +187,7 @@ void CModuleChooserButton::addItemToMenu(BTModuleTreeItem* item, QMenu* menu)
 void CModuleChooserButton::updateMenuItems() {
 	QString moduleName;
 	CSwordModuleInfo* module = 0;
-	ListCSwordModuleInfo chosenModules = m_moduleChooserBar->getModuleList();
+	QList<CSwordModuleInfo*> chosenModules = m_moduleChooserBar->getModuleList();
 
 	//for ( QMenu* popup = m_submenus.first(); popup; popup = m_submenus.next() ) {
 	QListIterator<QMenu*> it(m_submenus);

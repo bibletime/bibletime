@@ -115,7 +115,7 @@ public:
 	* 
 	* @return The list of modules managed by this backend
 	*/
-	inline virtual ListCSwordModuleInfo& moduleList();
+	inline virtual QList<CSwordModuleInfo*>& moduleList();
 	/**
 	* Initializes the Sword modules.
 	*
@@ -210,7 +210,7 @@ public:
 	* Takes off the given modules from the list and returns them.
 	* User must take care of the deletion of the returned CSwordModuleInfo pointers.
 	*/
-	ListCSwordModuleInfo takeModulesFromList(QStringList names);
+	QList<CSwordModuleInfo*> takeModulesFromList(QStringList names);
 
 	/** Sword prefix list.
 	* @return A list of all known Sword prefix dirs
@@ -251,12 +251,12 @@ private:
 		Rendering::CBookDisplay* book;
 	}	m_displays;
 
-	ListCSwordModuleInfo m_moduleList;
+	QList<CSwordModuleInfo*> m_moduleList;
 	QMap<QString, QString> m_moduleDescriptionMap;
 };
 
 /**Returns The list of modules managed by this backend*/
-inline ListCSwordModuleInfo& CSwordBackend::moduleList() {
+inline QList<CSwordModuleInfo*>& CSwordBackend::moduleList() {
 	return m_moduleList;
 }
 

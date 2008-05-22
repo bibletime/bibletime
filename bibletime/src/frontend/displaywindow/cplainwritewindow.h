@@ -27,7 +27,7 @@ class QString;
 class CPlainWriteWindow : public CWriteWindow  {
 	Q_OBJECT
 public:
-	CPlainWriteWindow( ListCSwordModuleInfo modules, CMDIArea* parent);
+	CPlainWriteWindow( QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CPlainWriteWindow();
 
 	/**

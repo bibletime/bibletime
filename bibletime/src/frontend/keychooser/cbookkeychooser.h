@@ -30,7 +30,7 @@ namespace sword {
 class CBookKeyChooser : public CKeyChooser  {
 	Q_OBJECT
 public:
-	CBookKeyChooser(ListCSwordModuleInfo modules, CSwordKey *key=0, QWidget *parent=0);
+	CBookKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
 	~CBookKeyChooser();
 	/**
 	* Refreshes the content.
@@ -39,7 +39,7 @@ public:
 	/**
 	* Sets another module to this keychooser
 	*/
-	virtual void setModules(const ListCSwordModuleInfo& modules, const bool refresh = false);
+	virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = false);
 	/**
 	* Returns the key of this keychooser
 	*/

@@ -34,7 +34,7 @@ class KActionMenu;
 class CLexiconReadWindow : public CReadWindow  {
 	Q_OBJECT
 public:
-	CLexiconReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CLexiconReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

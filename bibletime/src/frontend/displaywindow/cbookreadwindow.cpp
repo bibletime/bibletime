@@ -36,7 +36,7 @@
 
 using namespace Profile;
 
-CBookReadWindow::CBookReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
+CBookReadWindow::CBookReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
 
 CBookReadWindow::~CBookReadWindow() {}
 

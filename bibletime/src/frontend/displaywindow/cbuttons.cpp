@@ -26,7 +26,7 @@
 
 
 
-CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const ListCSwordModuleInfo& useModules,QWidget *parent )
+CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules,QWidget *parent )
 : QToolButton(parent) {
 	//  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
 	QToolButton::setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::displaySettings::icon));
@@ -44,7 +44,7 @@ CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *di
 	populateMenu();
 }
 
-void CDisplaySettingsButton::reset(const ListCSwordModuleInfo& useModules) {
+void CDisplaySettingsButton::reset(const QList<CSwordModuleInfo*>& useModules) {
 	m_modules = useModules;
 	populateMenu();
 	//disable the settings button if no options are available
@@ -162,8 +162,8 @@ int CDisplaySettingsButton::addMenuEntry( const QString name, OptionType type, c
 
 bool CDisplaySettingsButton::isOptionAvailable( const CSwordModuleInfo::FilterTypes option ) {
 	bool ret = false;
-	ListCSwordModuleInfo::iterator end_it = m_modules.end();
-	for (ListCSwordModuleInfo::iterator it(m_modules.begin()); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::iterator end_it = m_modules.end();
+	for (QList<CSwordModuleInfo*>::iterator it(m_modules.begin()); it != end_it; ++it) {
 		ret = ret || (*it)->has(option);
 	}
 	return ret;

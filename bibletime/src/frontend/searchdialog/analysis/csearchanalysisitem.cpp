@@ -42,7 +42,7 @@ const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
 const int LEGEND_WIDTH = 85;
 
-CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &bookname, double *scaleFactor, ListCSwordModuleInfo* modules)
+CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules)
 	: QGraphicsRectItem(),
 	m_moduleList( modules ),
 	m_scaleFactor(scaleFactor),
@@ -140,9 +140,9 @@ const QString CSearchAnalysisItem::getToolTip() {
 
 	//ToDo: Fix that loop
 	int i = 0;
-	ListCSwordModuleInfo::iterator end_it = m_moduleList->end();
+	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
 
-	for (ListCSwordModuleInfo::iterator it(m_moduleList->begin()); it != end_it; ++it) {
+	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
 		//  for (int i = 0; i < m_moduleCount; ++i) {
 		CSwordModuleInfo* info = (*it);
 		const QColor c = CSearchAnalysisScene::getColor(i);

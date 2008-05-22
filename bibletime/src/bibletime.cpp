@@ -145,9 +145,9 @@ void BibleTime::readSettings() {
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
-CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key) {
+CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
 	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-	qDebug("BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules, const QString& key)");
+	qDebug("BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)");
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
 	if ( displayWindow ) {
 		displayWindow->init();
@@ -170,7 +170,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(ListCSwordModuleInfo modules,
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
 CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) {
-	ListCSwordModuleInfo list;
+	QList<CSwordModuleInfo*> list;
 	list.append(module);
 
 	return createReadDisplayWindow(list, key);
@@ -179,7 +179,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, con
 CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) {
 	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
-	ListCSwordModuleInfo modules;
+	QList<CSwordModuleInfo*> modules;
 	modules.append(module);
 
 	CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);

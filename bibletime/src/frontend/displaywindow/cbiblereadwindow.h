@@ -37,7 +37,7 @@ class QEvent;
 class CBibleReadWindow : public CLexiconReadWindow  {
 	Q_OBJECT
 public:
-	CBibleReadWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CBibleReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CBibleReadWindow();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.

@@ -13,7 +13,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 
-const QString Rendering::CChapterDisplay::text( const ListCSwordModuleInfo& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
+const QString Rendering::CChapterDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
 	Q_ASSERT( modules.count() >= 1 );
 	Q_ASSERT( !keyName.isEmpty() );
 

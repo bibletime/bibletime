@@ -12,7 +12,7 @@
 #ifndef CPROFILEWINDOW_H
 #define CPROFILEWINDOW_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
 
 //Qt includes

@@ -129,7 +129,7 @@ bool refreshSource(QString /*name*/)
 }
 
 /** Returns the moduleinfo list for the source. Delete the pointer after using. IS THIS POSSIBLE?*/
-ListCSwordModuleInfo moduleList(QString /*name*/)
+QList<CSwordModuleInfo*> moduleList(QString /*name*/)
 {
 	QList<CSwordModuleInfo*> list; //TODO: dummy
 	return list;

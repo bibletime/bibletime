@@ -35,7 +35,7 @@
 
 using namespace Profile;
 
-CHTMLWriteWindow::CHTMLWriteWindow(ListCSwordModuleInfo modules, CMDIArea* parent)
+CHTMLWriteWindow::CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
 : CPlainWriteWindow(modules, parent) {}
 
 CHTMLWriteWindow::~CHTMLWriteWindow() {}

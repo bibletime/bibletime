@@ -14,7 +14,7 @@
 #include "csearchdialogareas.h"
 //#include "csearchanalysis.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
 
 #include "util/cpointers.h"
@@ -38,7 +38,7 @@ class CSearchDialog : public KDialog  {
 	Q_OBJECT
 
 public:
-	static void openDialog(const ListCSwordModuleInfo modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
+	static void openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
 
 protected:
 	friend class CSearchAnalysisScene;
@@ -65,15 +65,15 @@ protected:
 	* Starts the search with the given module list and given search text.
 	* Doesn't wait for the start button press, starts immediately
 	*/
-	void startSearch( const ListCSwordModuleInfo modules, const QString& searchText);
+	void startSearch( const QList<CSwordModuleInfo*> modules, const QString& searchText);
 	/**
 	* Sets the list of modules for the search.
 	*/
-	void setModules( const ListCSwordModuleInfo modules );
+	void setModules( const QList<CSwordModuleInfo*> modules );
 	/**
 	* Returns the list of used modules.
 	*/
-	const ListCSwordModuleInfo modules();
+	const QList<CSwordModuleInfo*> modules();
 	/**
 	* Returns the search text which is used for the search.
 	*/

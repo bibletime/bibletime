@@ -1,14 +1,12 @@
-//
-// C++ Implementation: btmoduletreeitem
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #include "btmoduletreeitem.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -25,7 +23,7 @@
 
 
 //This ctor creates the root item and the tree.
-BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, ListCSwordModuleInfo* modules)
+BTModuleTreeItem::BTModuleTreeItem(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping, QList<CSwordModuleInfo*>* modules)
 	: m_moduleInfo(0),
 	m_firstChild(0),
 	m_next(0),
@@ -148,7 +146,7 @@ void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BT
 		map_initialized = true;
 	} 
 
-	//ListCSwordModuleInfo originalInfoList = CPointers::backend()->moduleList();
+	//QList<CSwordModuleInfo*> originalInfoList = CPointers::backend()->moduleList();
 	
 	foreach (CSwordModuleInfo* info, m_originalModuleList) {
 		bool included;

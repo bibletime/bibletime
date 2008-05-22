@@ -34,7 +34,7 @@ namespace Search {
 
 static CSearchDialog* m_staticDialog = 0;
 
-void CSearchDialog::openDialog(const ListCSwordModuleInfo modules, const QString& searchText, QWidget* parentDialog)
+void CSearchDialog::openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText, QWidget* parentDialog)
 {
 	if (!m_staticDialog) {
 		m_staticDialog = new CSearchDialog(parentDialog);
@@ -130,7 +130,7 @@ void CSearchDialog::startSearch()
 }
 
 /** Starts the search with the given module list and given search text. */
-void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QString& searchText)
+void CSearchDialog::startSearch( const QList<CSwordModuleInfo*> modules, const QString& searchText)
 {
 	m_searchResultArea->reset();
 	m_searchOptionsArea->reset();
@@ -141,13 +141,13 @@ void CSearchDialog::startSearch( const ListCSwordModuleInfo modules, const QStri
 }
 
 /** Returns the list of used modules. */
-const ListCSwordModuleInfo CSearchDialog::modules()
+const QList<CSwordModuleInfo*> CSearchDialog::modules()
 {
 	return m_searchOptionsArea->modules();
 }
 
 /** Sets the list of modules for the search. */
-void CSearchDialog::setModules( const ListCSwordModuleInfo modules )
+void CSearchDialog::setModules( const QList<CSwordModuleInfo*> modules )
 {
 	m_searchOptionsArea->setModules(modules);
 }

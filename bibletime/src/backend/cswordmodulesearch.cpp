@@ -38,7 +38,7 @@ CSwordModuleSearch::~CSwordModuleSearch() {
 }
 
 /** This function sets the modules which should be searched. */
-void CSwordModuleSearch::setModules( const ListCSwordModuleInfo& list ) {
+void CSwordModuleSearch::setModules( const QList<CSwordModuleInfo*>& list ) {
 	m_moduleList = list;
 }
 
@@ -50,9 +50,9 @@ const bool CSwordModuleSearch::startSearch() {
 	bool foundItems = false;
 
 	// for (m_moduleList.first(); m_moduleList.current() && !m_terminateSearch; m_moduleList.next()) {
-	ListCSwordModuleInfo::iterator end_it = m_moduleList.end();
+	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
 
-	for (ListCSwordModuleInfo::iterator it = m_moduleList.begin(); it != end_it; ++it) {
+	for (QList<CSwordModuleInfo*>::iterator it = m_moduleList.begin(); it != end_it; ++it) {
 		if ( (*it)->searchIndexed(m_searchedText/*, m_searchOptions*/, m_searchScope) ) {
 			foundItems = true;
 		}
@@ -112,11 +112,11 @@ void CSwordModuleSearch::searchFinished() {
 	emit finished();
 }
 
-const bool CSwordModuleSearch::modulesHaveIndices( const ListCSwordModuleInfo& modules )
+const bool CSwordModuleSearch::modulesHaveIndices( const QList<CSwordModuleInfo*>& modules )
 {
 	bool hasIndices = true;
-	ListCSwordModuleInfo::const_iterator end_it = modules.end();
-	for( ListCSwordModuleInfo::const_iterator it = modules.begin(); it != end_it; ++it) {
+	QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();
+	for( QList<CSwordModuleInfo*>::const_iterator it = modules.begin(); it != end_it; ++it) {
 		if (!(*it)->hasIndex()) {
 			hasIndices = false;
 			break;

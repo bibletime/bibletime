@@ -25,7 +25,7 @@
 #include <QDebug>
 
 
-BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, ListCSwordModuleInfo* empty)
+BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty)
 	: CModuleChooserDialog(parent, title, label, empty)
 {
 	qDebug("BtInstallModuleChooserDialog::BtInstallModuleChooserDialog start");

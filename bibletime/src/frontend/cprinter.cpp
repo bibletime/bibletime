@@ -105,7 +105,7 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
 }
 
 const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
-	ListCSwordModuleInfo modules = tree.collectModules();
+	QList<CSwordModuleInfo*> modules = tree.collectModules();
 	Q_ASSERT(modules.count() > 0);
 
 	const CLanguageMgr::Language* const lang = modules.first()->language();

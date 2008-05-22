@@ -10,10 +10,12 @@
 #ifndef INSTBACKEND_H
 #define INSTBACKEND_H
 
+#include "backend/managers/cswordbackend.h"
+
+class CSwordModuleInfo;
+
 #include <QString>
 #include <QDir>
-
-#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <installmgr.h>
 
@@ -33,7 +35,7 @@ bool deleteSource(QString name);
 bool refreshSource(QString name);
 
 /** Returns the moduleinfo list for the source. */
-ListCSwordModuleInfo moduleList(QString name);
+QList<CSwordModuleInfo*> moduleList(QString name);
 
 /** Tells if the source is remote or local. */
 bool isRemote(const sword::InstallSource& source);

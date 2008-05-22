@@ -13,7 +13,7 @@
 //BibleTime includes
 #include "util/cpointers.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
 
 #include "frontend/profile/cprofilewindow.h"
@@ -63,7 +63,7 @@ public:
 	/**
 	* Returns the used modules as a QPtrList
 	*/
-	ListCSwordModuleInfo modules();
+	QList<CSwordModuleInfo*> modules();
 	/**
 	* Store the settings of this window in the given CProfileWindow object.
 	*/
@@ -186,7 +186,7 @@ protected:
 	friend class CMDIArea;
 	friend class CBibleReadWindow;
 
-	CDisplayWindow(ListCSwordModuleInfo modules, CMDIArea* parent);
+	CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CDisplayWindow();
 	/**
 	* Initializes the intern keyboard actions.
@@ -211,7 +211,7 @@ protected:
 	/**
 	* Sets the modules.
 	*/
-	void setModules( const ListCSwordModuleInfo& modules );
+	void setModules( const QList<CSwordModuleInfo*>& modules );
 	/**
 	* Initializes the signal / slot connections of this display window.
 	*/

@@ -10,7 +10,7 @@
 #ifndef CHIDEMODULECHOOSERDIALOG_H
 #define CHIDEMODULECHOOSERDIALOG_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 #include "frontend/cmodulechooserdialog.h"
 
@@ -30,7 +30,7 @@ public:
 protected:
 	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
 protected slots:
-	void applyHiddenModules(ListCSwordModuleInfo hiddenModules);
+	void applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules);
 		
 
 private:

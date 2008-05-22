@@ -14,7 +14,7 @@
 
 #include "cdisplaywindow.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
+class CSwordModuleInfo;
 
 
 class CReadWindow;
@@ -24,8 +24,8 @@ class CMDIArea;
 class CDisplayWindowFactory
 {
 public:
-	static CReadWindow* createReadInstance(ListCSwordModuleInfo modules, CMDIArea* parent);
-	static CWriteWindow* createWriteInstance(ListCSwordModuleInfo modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type = CDisplayWindow::HTMLWindow);
+	static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+	static CWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type = CDisplayWindow::HTMLWindow);
 
 private:
 	CDisplayWindowFactory();

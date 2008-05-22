@@ -100,7 +100,7 @@ void BtInstallProgressDialog::startThreads()
 	// remove all the updated modules from the backend module list at once
 	//foreach (QString mName, m_threadsByModule.keys()) {
 	//}
-	//ListCSwordModuleInfo CPointers::backend()->takeModulesFromList(m_threadsByModule.keys());
+	//QList<CSwordModuleInfo*> CPointers::backend()->takeModulesFromList(m_threadsByModule.keys());
 	qDebug() << "start threads...";
 	//loop through the multimap of the waiting threads, start at most 3 threads for each source
 	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();

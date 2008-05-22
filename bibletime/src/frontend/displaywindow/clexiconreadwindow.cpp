@@ -43,7 +43,7 @@
 #include <kactionmenu.h>
 #include <kmenu.h>
 
-CLexiconReadWindow::CLexiconReadWindow(ListCSwordModuleInfo moduleList, CMDIArea* parent)
+CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
 	: CReadWindow(moduleList, parent)
 {
 	qDebug("CLexiconReadWindow::CLexiconReadWindow");

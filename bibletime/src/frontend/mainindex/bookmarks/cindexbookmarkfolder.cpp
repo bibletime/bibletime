@@ -71,7 +71,7 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 				tree.append( new Printing::CPrinter::KeyTreeItem( i->key(), i->module(), settings ) );
 			}
 		}
-		ListCSwordModuleInfo modules = tree.collectModules();
+		QList<CSwordModuleInfo*> modules = tree.collectModules();
 		return modules.count() > 0;
 	}
 
