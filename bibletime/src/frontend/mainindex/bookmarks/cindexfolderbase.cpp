@@ -108,6 +108,6 @@ QList<QTreeWidgetItem*> CIndexFolderBase::getChildList() {
 
 void CIndexFolderBase::rename()
 {
-	qDebug("CIndexFolderBase::rename");
+//	qDebug("CIndexFolderBase::rename");
 	treeWidget()->editItem(this);
 }

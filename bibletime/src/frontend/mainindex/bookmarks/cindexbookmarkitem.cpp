@@ -1,14 +1,11 @@
-//
-// C++ Implementation: cindexbookmarkitem
-//
-// Description: 
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 //BibleTime
 #include "cindexbookmarkitem.h"
@@ -124,7 +121,7 @@ const QString CIndexBookmarkItem::toolTip() {
 
 
 CSwordModuleInfo* const CIndexBookmarkItem::module() {
-	qDebug() << "CIndexBookmarkItem::module" << m_moduleName;
+//	qDebug() << "CIndexBookmarkItem::module" << m_moduleName;
 	CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
 	//Q_ASSERT(m); not so: the module may be uninstalled
 	return m;
