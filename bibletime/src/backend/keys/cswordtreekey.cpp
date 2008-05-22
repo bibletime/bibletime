@@ -39,7 +39,6 @@ const char * CSwordTreeKey::rawKey() const {
 
 const bool CSwordTreeKey::key( const QString& newKey ) {
 	//return key( newKey.toLocal8Bit().constData() );
-	qDebug("CSwordTreeKey::key( const QString& newKey )");
 	//return key(m_module->getTextCodec()->fromUnicode(newKey).constData());
 	Q_ASSERT(m_module);
 	if (m_module->isUnicode()) {
@@ -50,16 +49,12 @@ const bool CSwordTreeKey::key( const QString& newKey ) {
 }
 
 const bool CSwordTreeKey::key( const char* newKey ) {
-	qDebug("CSwordTreeKey::key( const char* newKey )");
-	qDebug() << "key: "<<newKey;
 	Q_ASSERT(newKey);
 
 	if (newKey) {
-		qDebug("use operator=");
 		TreeKeyIdx::operator = (newKey);
 	}
 	else {
-		qDebug("call root()");
 		root();
 	}
 
