@@ -7,11 +7,11 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cmainindex.h"
 #include "cmainindex.moc"
+
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include "bookshelf/cbookshelfindex.h"
 #include "bookmarks/cbookmarkindex.h"
@@ -19,9 +19,7 @@
 #include <QTabWidget>
 
 
-
-CMainIndex::CMainIndex(QWidget *parent)
-	: QTabWidget(parent)
+CMainIndex::CMainIndex(QWidget *parent)	: QTabWidget(parent)
 {
 	m_bookmarksPage = new CBookmarkIndex(0);
 	m_bookshelfPage = new CBookshelfIndex(0);

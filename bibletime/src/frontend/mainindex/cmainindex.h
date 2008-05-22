@@ -10,13 +10,13 @@
 #ifndef CMAININDEX_H
 #define CMAININDEX_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 #include <QTabWidget>
 
 class CBookmarkIndex;
 class CBookshelfIndex;
+class CSwordModuleInfo;
 
 /** The class which manages all bookmarks and modules. The modules are put into own, fixed subfolders sorted by language.
   * @author The BibleTime team
@@ -36,7 +36,7 @@ signals:
 	/**
 	* Is emitted when a module should be opened,
 	*/
-	void createReadDisplayWindow( ListCSwordModuleInfo, const QString& );
+	void createReadDisplayWindow( QList<CSwordModuleInfo*>, const QString& );
 	/**
 	 * Is emitted when a write window should be created.
 	 */
