@@ -65,7 +65,7 @@ CBookshelfIndex::~CBookshelfIndex() {}
 /** Initializes the view. */
 void CBookshelfIndex::initView()
 {	
-	qDebug("CBookshelfIndex::initView");
+//	qDebug("CBookshelfIndex::initView");
 
 	header()->hide();
 
@@ -86,7 +86,7 @@ void CBookshelfIndex::initView()
 
 	initActions();
 
-	qDebug("CBookshelfIndex::initView end");
+//	qDebug("CBookshelfIndex::initView end");
 }
 
 void CBookshelfIndex::initActions()
@@ -170,7 +170,6 @@ void CBookshelfIndex::initActions()
 	m_actionList.append(action);
 
 // -------------------Show hidden---------------------------
-	qDebug("*****************create Show Hidden***************");
 	action = newQAction(tr("Show hidden"),CResMgr::mainIndex::search::icon, 0, 0, 0, this);
 	action->setProperty("indexActionType", QVariant(ShowAllModules));
 	action->setCheckable(true);
@@ -237,14 +236,17 @@ void CBookshelfIndex::initActions()
 QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent)
 {
 	QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
-	QObject::connect(action, SIGNAL(triggered()), receiver, slot);
+	if (receiver && !QString(slot).isEmpty())
+	{
+		QObject::connect(action, SIGNAL(triggered()), receiver, slot);
+	}
 	return action;
 }
 
 /** Initialize the SIGNAL<->SLOT connections */
 void CBookshelfIndex::initConnections()
 {
-	qDebug("CBookshelfIndex::initConnections");
+//	qDebug("CBookshelfIndex::initConnections");
 
 	//Connect this to the backend module list changes.
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
@@ -257,13 +259,12 @@ void CBookshelfIndex::initConnections()
 	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
  	
-	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
-			SLOT(contextMenu(const QPoint&)));
+	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
 
 	QObject::connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(slotModifySelection()));
 
-	qDebug("CBookshelfIndex::initConnections");
+//	qDebug("CBookshelfIndex::initConnections");
 }
 
 void CBookshelfIndex::slotModifySelection()
