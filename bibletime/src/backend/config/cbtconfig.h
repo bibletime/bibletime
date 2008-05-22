@@ -11,7 +11,6 @@
 #define CBTCONFIG_H
 
 #include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
 
 //Qt includes
 #include <QString>
@@ -121,7 +120,6 @@ public:
 		searchScopes
 	};
 	typedef std::pair<bool, QFont> FontSettingsPair;
-	typedef QMap<const CLanguageMgr::Language*, CBTConfig::FontSettingsPair> FontCache;
 
 	static const QString get( const CBTConfig::strings );
 	static CSwordModuleInfo* const get( const CBTConfig::modules );
@@ -186,7 +184,8 @@ private:
 	//static caches
 	static QFont* m_defaultFont;
 
-	static FontCache fontConfigMap;
+	typedef QMap<const CLanguageMgr::Language*, CBTConfig::FontSettingsPair> FontCache;
+	static QMap<const CLanguageMgr::Language*, CBTConfig::FontSettingsPair> fontConfigMap;
 };
 
 
