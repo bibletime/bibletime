@@ -783,16 +783,16 @@ void CSearchOptionsArea::initView()
 	// **********Buttons******************
 	m_syntaxButton = new QPushButton(tr("&Help..."), searchGroupBox);
 	gridLayout->addWidget(m_syntaxButton, 0, 2);
-	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon("contexthelp"));
+	m_syntaxButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::help_icon));
 	m_syntaxButton->setToolTip("Show short help for the search syntax");
 
 	m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
-	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon("wizard"));
+	m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::chooseworks_icon));
 	m_chooseModulesButton->setToolTip( tr("Choose works for the search"));
 	gridLayout->addWidget(m_chooseModulesButton, 1, 2);
 
 	m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
-	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon("configure"));
+	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::setupscope_icon));
 	m_chooseRangeButton->setToolTip("Configure predefined scopes for search");
 	gridLayout->addWidget(m_chooseRangeButton, 2, 2);
 
