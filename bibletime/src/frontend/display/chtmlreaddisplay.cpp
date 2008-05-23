@@ -336,17 +336,21 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			QDrag* d = 0;
 			if (!m_dndData.anchor.isEmpty() && (m_dndData.dragType == DNDData::Link) && !m_dndData.node.isNull() ) {
 				// create a new bookmark drag!
-				QString module = QString::null;
-				QString key = QString::null;
+				QString moduleName = QString::null;
+				QString keyName = QString::null;
 				CReferenceManager::Type type;
-				if ( !CReferenceManager::decodeHyperlink(m_dndData.anchor.string(), module, key, type) )
+				if ( !CReferenceManager::decodeHyperlink(m_dndData.anchor.string(), moduleName, keyName, type) )
 					return;
 
 				d = new QDrag(KHTMLPart::view()->viewport());
-				BTMimeData* mimedata = new BTMimeData(module, key, QString::null);
+				BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
 				d->setMimeData(mimedata);
-				//TODO: add real Bible text from module/key
-				//mimedata->setText(QString("some text")); // This works across applications!
+				//add real Bible text from module/key
+				if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
+					boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
+					key->key( keyName );
+					mimedata->setText(key->strippedText()); // This works across applications!
+				}
 			}
 			else if ((m_dndData.dragType == DNDData::Text) && !m_dndData.selection.isEmpty()) {
 				d = new QDrag(KHTMLPart::view()->viewport());
