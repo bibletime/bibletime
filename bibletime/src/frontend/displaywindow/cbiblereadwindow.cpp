@@ -27,6 +27,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 #include <math.h>
 
@@ -267,7 +268,7 @@ void CBibleReadWindow::setupPopupMenu() {
 		
 	popup()->addSeparator();
 
-	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::copyMenu::icon), tr("Copy..."), popup());
+	m_actions.copyMenu = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::bibleWindow::copyMenu::icon)), tr("Copy..."), popup());
 	m_actions.copyMenu->setDelayed( false );
 	m_actions.copyMenu->addAction(m_actions.copy.referenceOnly);
 	m_actions.copyMenu->addAction(m_actions.copy.referenceTextOnly);
@@ -279,7 +280,7 @@ void CBibleReadWindow::setupPopupMenu() {
 	m_actions.copyMenu->addAction(m_actions.copy.selectedText);
 	popup()->addAction(m_actions.copyMenu);
 
-	m_actions.saveMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::saveMenu::icon), tr("Save..."), popup());
+	m_actions.saveMenu = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::bibleWindow::saveMenu::icon)), tr("Save..."), popup());
 	m_actions.saveMenu->setDelayed( false );
 	m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
@@ -292,7 +293,7 @@ void CBibleReadWindow::setupPopupMenu() {
 	} // end of Save Raw HTML
 	popup()->addAction(m_actions.saveMenu);
 
-	m_actions.printMenu = new KActionMenu(KIcon(CResMgr::displaywindows::bibleWindow::printMenu::icon), tr("Print..."), popup());
+	m_actions.printMenu = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::bibleWindow::printMenu::icon)), tr("Print..."), popup());
 	m_actions.printMenu->setDelayed(false);
 	m_actions.printMenu->addAction(m_actions.print.reference);
 	m_actions.printMenu->addAction(m_actions.print.chapter);

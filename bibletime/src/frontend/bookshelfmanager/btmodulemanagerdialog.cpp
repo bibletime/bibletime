@@ -35,7 +35,7 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	: BtConfigDialog(parent)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
-	setWindowTitle(tr("BibleTime Bookshelf Manager"));
+	setWindowTitle(tr("Bookshelf Manager"));
 
 	// Install page
 	BtInstallPage* installPage = new BtInstallPage();

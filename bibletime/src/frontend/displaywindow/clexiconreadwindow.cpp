@@ -29,6 +29,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 #include <QMenu>
 #include <QApplication>
@@ -229,13 +230,12 @@ void CLexiconReadWindow::setupPopupMenu()
 {
 	popup()->setTitle(tr("Lexicon window"));
 	popup()->setIcon(CToolClass::getIconForModule(modules().first()));
-	//   m_actions.selectAll = new KAction(tr("Select all"), KShortcut(0), displayWidget()->connectionsProxy(), SLOT(selectAll()), actionCollection());
 	popup()->addAction(m_actions.findText);
 	popup()->addAction(m_actions.findStrongs);
 	popup()->addAction(m_actions.selectAll);
 	popup()->addSeparator();
 
-	m_actions.copyMenu = new KActionMenu(KIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon), tr("Copy..."), actionCollection());
+	m_actions.copyMenu = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon)), tr("Copy..."), actionCollection());
 	m_actions.copyMenu->setDelayed(false);
 
 	m_actions.copyMenu->addAction(m_actions.copy.reference);
@@ -245,7 +245,7 @@ void CLexiconReadWindow::setupPopupMenu()
 	popup()->addAction(m_actions.copyMenu);
 
 	m_actions.saveMenu = new KActionMenu(
-			KIcon(CResMgr::displaywindows::lexiconWindow::saveMenu::icon),
+			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::saveMenu::icon)),
 			tr("Save..."),
 			actionCollection()
 			);
@@ -263,7 +263,7 @@ void CLexiconReadWindow::setupPopupMenu()
 	popup()->addAction(m_actions.saveMenu);
 
 	m_actions.printMenu = new KActionMenu(
-			KIcon(CResMgr::displaywindows::lexiconWindow::printMenu::icon),
+			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::printMenu::icon)),
 			tr("Print..."),
 			actionCollection()
 			);

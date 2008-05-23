@@ -502,7 +502,7 @@ void BibleTime::toggleFullscreen() {
 /** Saves current settings into a new profile. */
 void BibleTime::saveToNewProfile() {
 	bool ok = false;
-	const QString name = QInputDialog::getText(this, tr("Session name:"), tr("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
+	const QString name = QInputDialog::getText(this, tr("New Session"), tr("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
 	if (ok && !name.isEmpty()) {
 		CProfile* profile = m_profileMgr.create(name);
 		saveProfile(profile);
