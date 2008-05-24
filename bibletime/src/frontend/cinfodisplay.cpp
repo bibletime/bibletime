@@ -48,6 +48,8 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent)
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
 	m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
+	m_htmlPart->view()->setAcceptDrops(false);
+
 	m_copyAction = new QAction(tr("Copy"), this);
 	m_copyAction->setShortcut( QKeySequence(Qt::CTRL + Qt::Key_C) );
 	QObject::connect(m_copyAction, SIGNAL(triggered()), m_htmlPart->connectionsProxy(), SLOT(copySelection()) );
