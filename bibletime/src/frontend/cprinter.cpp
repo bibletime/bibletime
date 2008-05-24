@@ -89,10 +89,10 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
 	if (printItem && printItem->hasAlternativeContent()) {
 		QString ret = QString::fromLatin1("<div class=\"entry\"><div class=\"rangeheading\">%1</div>").arg(printItem->getAlternativeContent());
 
-		if (i.hasChildItems()) {
+		if (!i.childList()->isEmpty()) {
 			KeyTree const * tree = i.childList();
 
-			for ( KeyTreeItem* c = tree->first(); c; c = tree->next() ) {
+			foreach ( KeyTreeItem* c, (*tree)) {
 				ret.append( CDisplayRendering::renderEntry( *c ) );
 			}
 		}
@@ -105,7 +105,7 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
 }
 
 const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
-	QList<CSwordModuleInfo*> modules = tree.collectModules();
+	QList<CSwordModuleInfo*> modules = collectModules(&tree);
 	Q_ASSERT(modules.count() > 0);
 
 	const CLanguageMgr::Language* const lang = modules.first()->language();

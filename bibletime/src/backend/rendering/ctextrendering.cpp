@@ -29,63 +29,69 @@
 using namespace Rendering;
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, CSwordModuleInfo const * mod, const Settings settings )
-: m_settings( settings ),
-m_moduleList(),
-m_key( key ),
-m_childList( 0 ),
-m_stopKey( QString::null ),
-m_alternativeContent( QString::null ) {
+	: m_settings( settings ),
+	m_moduleList(),
+	m_key( key ),
+	m_childList(),
+	m_stopKey( QString::null ),
+	m_alternativeContent( QString::null ) 
+{
 	m_moduleList.append( const_cast<CSwordModuleInfo*>(mod) ); //BAD CODE
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString& content, const Settings settings )
-: m_settings( settings ),
-m_moduleList(),
-m_key( QString::null ),
-m_childList( 0 ),
-m_stopKey( QString::null ),
-m_alternativeContent( content ) {}
+	: m_settings( settings ),
+	m_moduleList(),
+	m_key( QString::null ),
+	m_childList(),
+	m_stopKey( QString::null ),
+	m_alternativeContent( content )
+{
+}
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, const QList<CSwordModuleInfo*>& mods, const Settings settings )
-: m_settings( settings ),
-m_moduleList( mods ),
-m_key( key ),
-m_childList( 0 ),
-m_stopKey( QString::null ),
-m_alternativeContent( QString::null ) {}
+	: m_settings( settings ),
+	m_moduleList( mods ),
+	m_key( key ),
+	m_childList(),
+	m_stopKey( QString::null ),
+	m_alternativeContent( QString::null )
+{
+}
 
 CTextRendering::KeyTreeItem::KeyTreeItem()
-: m_settings(),
-m_moduleList(),
-m_key(QString::null),
-m_childList(0),
-m_stopKey(QString::null),
-m_alternativeContent(QString::null) {}
+	: m_settings(),
+	m_moduleList(),
+	m_key(QString::null),
+	m_childList(),
+	m_stopKey(QString::null),
+	m_alternativeContent(QString::null) 
+{
+}
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
-: m_settings( i.m_settings ),
-m_moduleList( i.m_moduleList ),
-m_key( i.m_key ),
-m_childList( 0 ),
-m_stopKey( i.m_stopKey ),
-m_alternativeContent( i.m_alternativeContent ) {
-	if (i.hasChildItems()) {
-		m_childList = new KeyTree();
-		*m_childList = *(i.childList()); //deep copy
+	: m_settings( i.m_settings ),
+	m_moduleList( i.m_moduleList ),
+	m_key( i.m_key ),
+	m_childList(),
+	m_stopKey( i.m_stopKey ),
+	m_alternativeContent( i.m_alternativeContent ) 
+{
+	foreach(KeyTreeItem* item, (*i.childList())){
+		m_childList.append(new KeyTreeItem((*item))); //deep copy
 	}
 
 }
 
 CTextRendering::KeyTreeItem::~KeyTreeItem() {
-	delete m_childList;
-	m_childList = 0;
+	qDeleteAll(m_childList);
 }
 
 CTextRendering::KeyTreeItem::KeyTreeItem(const QString& startKey, const QString& stopKey, CSwordModuleInfo* module, const Settings settings)
 : m_settings( settings ),
 m_moduleList(),
 m_key( startKey ),
-m_childList( 0 ),
+m_childList(),
 m_stopKey( stopKey ),
 m_alternativeContent( QString::null ) {
 	Q_ASSERT(module);
@@ -104,7 +110,7 @@ m_alternativeContent( QString::null ) {
 			bool ok = true;
 
 			while (ok && ((start < stop) || (start == stop)) ) { //range
-				childList()->append(
+				m_childList.append(
 					new KeyTreeItem(start.key(), module, KeyTreeItem::Settings(false, settings.keyRenderingFace))
 				);
 				
@@ -113,14 +119,14 @@ m_alternativeContent( QString::null ) {
 			}
 		}
 		else if (m_key.isEmpty()) {
-			childList()->append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, settings.keyRenderingFace)) );
+			m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, settings.keyRenderingFace)) );
 		}
 	}
 	else if ((module->type() == CSwordModuleInfo::Lexicon) || (module->type() == CSwordModuleInfo::Commentary) ) {
-		childList()->append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
+		m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
 	}
 	else if (module->type() == CSwordModuleInfo::GenericBook) {
-		childList()->append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
+		m_childList.append( new KeyTreeItem(startKey, module, KeyTreeItem::Settings(false, KeyTreeItem::Settings::NoKey)) );
 	}
 
 	//make it into "<simple|range> (modulename)"
@@ -155,41 +161,25 @@ const QString& CTextRendering::KeyTreeItem::getAlternativeContent() const {
 	return m_alternativeContent;
 }
 
-QList<CSwordModuleInfo*> CTextRendering::KeyTree::collectModules() const {
+const QList<CSwordModuleInfo*> CTextRendering::collectModules(KeyTree* const tree) const {
 	//collect all modules which are available and used by child items
 	QList<CSwordModuleInfo*> modules;
 
-	for (KeyTreeItem* c = first(); c; c = next()) {
-	Q_ASSERT(c);
-
-		QList<CSwordModuleInfo*> childMods = c->modules();
-
-		/*ToDo: Use the const iterators as soon as we use Qt > 3.1
-		 const QList<CSwordModuleInfo*>::const_iterator c_end = childMods.end();
-		  for (QList<CSwordModuleInfo*>::const_iterator c_it = childMods.constBegin(); c_it != c_end; ++c_it) {
-		   if (!modules.contains(*c_it)) {
-		    modules.append(*c_it);
-		   }
-		  }*/
-
-		//   for (CSwordModuleInfo* m = childMods.first(); m; m = childMods.next()) {
-		QList<CSwordModuleInfo*>::iterator end_it = childMods.end();
-
-		for (QList<CSwordModuleInfo*>::iterator it(childMods.begin()); it != end_it; ++it) {
-			if (!modules.contains(*it)) {
-				modules.append(*it);
+	foreach (KeyTreeItem* c, (*tree)) {
+		Q_ASSERT(c);
+		foreach (CSwordModuleInfo* mod, c->modules()) {
+			if (!modules.contains(mod)) {
+				modules.append(mod);
 			}
 		}
-
 	}
-
 	return modules;
 }
 
 const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 	initRendering();
 
-	QList<CSwordModuleInfo*> modules = tree.collectModules();
+	QList<CSwordModuleInfo*> modules = collectModules(&tree);
 	QString t;
 
 	//optimization for entries with the same key
@@ -197,7 +187,7 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 		(modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
 	);
 
-	for (KeyTreeItem* c = tree.first(); c; c = tree.next()) {
+	foreach (KeyTreeItem* c, tree) {
 		if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
 			key->key( c->key() );
 			t.append( renderEntry( *c, key.get()) );

@@ -38,16 +38,16 @@ namespace Rendering {
 
 		//   Q_ASSERT(i.hasChildItems());
 
-		if (i.hasChildItems()) {
-			KeyTree const * tree = i.childList();
+		if (!i.childList()->isEmpty()) {
+			KeyTree * const  tree = i.childList();
 
-			const QList<CSwordModuleInfo*>& modules( tree->collectModules() );
+			const QList<CSwordModuleInfo*> modules = collectModules(tree);
 
 			if (modules.count() == 1) { //insert the direction into the sorrounding div
 				ret.insert( 5, QString("dir=\"%1\" ").arg((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl" ));
 			}
 
-			for ( KeyTreeItem* c = tree->first(); c; c = tree->next() ) {
+			foreach ( KeyTreeItem* c, (*tree) ) {
 				ret.append( renderEntry( *c ) );
 			}
 		}
@@ -143,10 +143,10 @@ namespace Rendering {
 			entry.append( key_renderedText );
 		}
 
-		if (i.hasChildItems()) {
-			KeyTree const * tree = i.childList();
+		if (!i.childList()->isEmpty()) {
+			KeyTree* tree(i.childList());
 
-			for (KeyTreeItem* c = tree->first(); c; c = tree->next()) {
+			foreach (KeyTreeItem* c, (*tree)) {
 				entry.append( renderEntry(*c) );
 			}
 		}
@@ -183,16 +183,14 @@ void CHTMLExportRendering::initRendering() {
 }
 
 const QString CHTMLExportRendering::finishText( const QString& text, KeyTree& tree ) {
-	QList<CSwordModuleInfo*> modules = tree.collectModules();
+	const QList<CSwordModuleInfo*> modules = collectModules(&tree);
 
 	const CLanguageMgr::Language* const lang = modules.first()->language();
 
 	CDisplayTemplateMgr* tMgr = CPointers::displayTemplateManager();
 	CDisplayTemplateMgr::Settings settings;
 	settings.modules = modules;
-	settings.langAbbrev = ((modules.count() == 1) && lang->isValid())
-						  ? lang->abbrev()
-						  : "unknown";
+	settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : "unknown";
 	if (modules.count() == 1)
 		settings.pageDirection = ((modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl");
 	else

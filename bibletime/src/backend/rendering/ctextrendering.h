@@ -12,7 +12,7 @@
 
 //BT includes
 class CSwordModuleInfo;
-#include "util/autoptrvector.h"
+//#include "util/autoptrvector.h"
 
 //QT includes
 #include <QString>
@@ -32,14 +32,12 @@ class CSwordKey;
 
 namespace Rendering {
 
-	class CTextRendering {
+class CTextRendering {
 
 public:
 
 	class KeyTreeItem;
-
-	class KeyTree;
-	typedef util::AutoPtrVector<KeyTreeItem> KeyTreeItemList;
+	typedef QList<KeyTreeItem*> KeyTree;
 
 	class KeyTreeItem {
 	public:
@@ -88,25 +86,20 @@ public:
 		};
 
 		inline KeyTree* const childList() const;
-		inline const bool hasChildItems() const;
+//		inline const bool hasChildItems() const;
 
 	protected:
 		KeyTreeItem();
-
+		
 		Settings m_settings;
 		QList<CSwordModuleInfo*> m_moduleList;
 		QString m_key;
-		mutable KeyTree* m_childList;
+		mutable KeyTree m_childList;
 
 		QString m_stopKey;
 		QString m_alternativeContent;
 	};
-
-	class KeyTree : public KeyTreeItemList {		
-	public:
-		QList<CSwordModuleInfo*> collectModules() const;
-	};
-
+	
 	virtual ~CTextRendering() {}
 
 	const QString renderKeyTree( KeyTree& );
@@ -116,20 +109,19 @@ public:
 	const QString renderSingleKey( const QString& key, const QList<CSwordModuleInfo*>&, const KeyTreeItem::Settings& settings = KeyTreeItem::Settings() );
 
 protected:
+	const QList<CSwordModuleInfo*> collectModules(KeyTree* const tree) const;
 	virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 ) = 0;
 	virtual const QString finishText( const QString&, KeyTree& tree ) = 0;
 	virtual void initRendering() = 0;
 };
 
-inline CTextRendering::KeyTree* const CTextRendering::KeyTreeItem::childList() const {
-	if (!m_childList) m_childList = new KeyTree();
-	return m_childList;
+inline CTextRendering::KeyTree* const CTextRendering::KeyTreeItem::childList() const{
+	return &m_childList;
 }
-
-inline const bool CTextRendering::KeyTreeItem::hasChildItems() const {
-	if (!m_childList) return false;
-	return !m_childList->isEmpty();
-}
+//
+//inline const bool CTextRendering::KeyTreeItem::hasChildItems() const {
+//	return !m_childList.isEmpty();
+//}
 
 }
 
