@@ -376,9 +376,9 @@ void CBookshelfIndex::dropEvent( QDropEvent* event )
 	//TODO: implement accepting drop in item
 	if (i && i->acceptDrop(event->mimeData()) ) {
 		QMenu* menu = new QMenu(this);
-		QAction* openAction = menu->addAction(tr("Open reference in new subwindow"));
-		QAction* searchRefAction = menu->addAction(tr("Search for reference as crossreference"));
-		QAction* searchAction = menu->addAction(tr("Search text"));
+		QAction* openAction = menu->addAction("Open reference in new subwindow");
+		QAction* searchRefAction = menu->addAction("Search for reference as crossreference");
+		QAction* searchAction = menu->addAction("Search text");
 		QAction* selectedAction = menu->exec(this->mapToGlobal(pos));
 		if (selectedAction == openAction) {;}
 		if (selectedAction == searchAction) {;}
