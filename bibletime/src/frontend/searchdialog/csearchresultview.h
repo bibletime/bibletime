@@ -35,8 +35,10 @@ protected: // Protected methods
 	*/
 	void initView();
 	void initConnections();
-	//TODO: d'n'd system. not in qt4:
-	//virtual Q3DragObject* dragObject();
+
+	//from QTreeWidget
+	virtual QMimeData * mimeData ( const QList<QTreeWidgetItem *> items ) const;
+	virtual QStringList mimeTypes () const;
 
 public slots: // Public slots
 	void saveItems();

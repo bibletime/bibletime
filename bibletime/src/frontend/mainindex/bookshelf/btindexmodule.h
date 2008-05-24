@@ -18,17 +18,19 @@ class BTModuleTreeItem;
 class CSwordModuleInfo;
 
 class QAction;
+class QMimeData;
 
 
 class BTIndexModule : public BTIndexItem
 {
 public:
-    BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous);
+	BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous);
 
-    ~BTIndexModule();
+	~BTIndexModule();
 
-    virtual const bool enableAction(QAction* action);
-    CSwordModuleInfo* moduleInfo();
+	virtual const bool enableAction(QAction* action);
+	virtual bool acceptDrop(const QMimeData* data);
+	CSwordModuleInfo* moduleInfo();
 
 private:
 	CSwordModuleInfo* m_moduleInfo;

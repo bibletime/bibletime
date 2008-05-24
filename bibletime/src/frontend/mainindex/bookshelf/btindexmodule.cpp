@@ -12,6 +12,7 @@
 #include "backend/btmoduletreeitem.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/directoryutil.h"
+#include "frontend/cdragdrop.h"
 
 #include <QIcon>
 #include <QString>
@@ -64,6 +65,25 @@ const bool BTIndexModule::enableAction(QAction* action)
 		}
 	}
 	return true; //TODO: check, is this correct?
+}
+
+
+bool BTIndexModule::acceptDrop(const QMimeData* data)
+{
+	//TODO: check the module type of the reference, accept only proper type.
+	// Bible accepts biblical references and plain text (for search),
+	// but it could accept a lexicon entry too for search, especially a Strong's entry.
+	// Lexicon could accept lexicon references but also biblical references to find all places where
+	// the verse is referred to. Same with genbooks.
+
+	const BTMimeData* btData = dynamic_cast<const BTMimeData*>(data);
+	if (btData) {
+		return true;
+	}
+	if (data->hasText()) {
+		return true;
+	}
+	return false;
 }
 
 

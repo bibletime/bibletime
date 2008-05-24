@@ -70,12 +70,12 @@ void CBookshelfIndex::initView()
 	header()->hide();
 
 	setFocusPolicy(Qt::WheelFocus);
-	setAcceptDrops( true );
+	setAcceptDrops( false ); // TODO: accept drops
 	setDragEnabled( true );
 	setDropIndicatorShown( true );
 
 	setItemsExpandable(true);
-	viewport()->setAcceptDrops(true);
+	viewport()->setAcceptDrops(false); //TODO: accept drops
 	setRootIsDecorated(false);
 	setAllColumnsShowFocus(true);
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -351,9 +351,7 @@ QMimeData* CBookshelfIndex::dragObject()
 /** Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the widget. */
 void CBookshelfIndex::dragEnterEvent( QDragEnterEvent* event )
 {
-	qDebug("CBookshelfIndex::dragEnterEvent");
-	//TODO: accept only text
-	// But I doubt if searching the text in module by dragging is intuitive or if anyone really uses it
+	//qDebug("CBookshelfIndex::dragEnterEvent");
 	event->acceptProposedAction();
 }
 
@@ -366,13 +364,29 @@ void CBookshelfIndex::dragMoveEvent( QDragMoveEvent* event )
 	if (i && i->acceptDrop(event->mimeData()) ) {
 		event->acceptProposedAction();
 	} else {
-	
+		event->ignore();
 	}
 }
 
-void CBookshelfIndex::dropEvent( QDropEvent* /*event*/ )
+void CBookshelfIndex::dropEvent( QDropEvent* event )
 {
-	//TODO: see dragMoveEvent
+	const QPoint pos = event->pos();
+ 
+	BTIndexItem* i = dynamic_cast<BTIndexItem*>(itemAt(pos));
+	//TODO: implement accepting drop in item
+	if (i && i->acceptDrop(event->mimeData()) ) {
+		QMenu* menu = new QMenu(this);
+		QAction* openAction = menu->addAction(tr("Open reference in new subwindow"));
+		QAction* searchRefAction = menu->addAction(tr("Search for reference as crossreference"));
+		QAction* searchAction = menu->addAction(tr("Search text"));
+		QAction* selectedAction = menu->exec(this->mapToGlobal(pos));
+		if (selectedAction == openAction) {;}
+		if (selectedAction == searchAction) {;}
+		if (selectedAction == searchRefAction) {;}
+		event->acceptProposedAction();
+	} else {
+		event->ignore();
+	}
 }
 
 /** No descriptions */

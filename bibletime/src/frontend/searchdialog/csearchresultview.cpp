@@ -12,7 +12,7 @@
 
 #include "backend/keys/cswordversekey.h"
 
-//#include "frontend/cdragdropmgr.h"
+#include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
@@ -277,6 +277,20 @@ CSwordModuleInfo* const CSearchResultView::module() {
 // 	return CDragDropMgr::dragObject(dndItems, viewport());
 // }
 
+
+QMimeData * CSearchResultView::mimeData ( const QList<QTreeWidgetItem *> items ) const
+{
+	BTMimeData* mdata = new BTMimeData(m_module->name(), items.first()->text(0), QString::null);
+	foreach (QTreeWidgetItem* i, items) {
+		mdata->appendBookmark(m_module->name(), i->text(0), QString::null);
+	}
+	return mdata;
+}
+
+QStringList CSearchResultView::mimeTypes () const
+{
+	return QStringList("BibleTime/Bookmark");
+}
 
 } //end of namespace
 
