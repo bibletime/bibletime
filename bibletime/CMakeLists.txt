@@ -79,7 +79,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 		QtXml
 		QtDBus
 		${CLUCENE_LIBRARY}
-		${SWORD_LIBRARY}
+		${SWORD_LIBS}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES})
@@ -97,7 +97,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 		QtDBus
 		QtTest
 		${CLUCENE_LIBRARY}
-		${SWORD_LIBRARY}
+		${SWORD_LIBS}
 	)
 	# Unit Tests
 	ADD_CUSTOM_TARGET(test
