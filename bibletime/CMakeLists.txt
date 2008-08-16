@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7.alpha2")
+SET(BT_VERSION "1.7.alpha3")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
@@ -16,7 +16,15 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 #
 SET(QT_MIN_VERSION 4.4.0)
 FIND_PACKAGE(Qt4 REQUIRED)
-SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
+#
+# If cmake says that qdbusxml2cpp is missing, uncomment the following line
+#
+#SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
+
+#
+# If you have problems with detecting KDE4, try uncommenting the following line
+#
+#SET(CMAKE_PREFIX_PATH /usr/lib/kde4)
 FIND_PACKAGE(KDE4 REQUIRED)
 FIND_PACKAGE(Boost REQUIRED)
 #
