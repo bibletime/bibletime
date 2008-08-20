@@ -1,0 +1,483 @@
+<chapter id="hdbk-reference">
+<title>Viittaus</title>
+
+<sect1 id="hdbk-reference-menus"><title>Päävalikon käyttöopas</title>
+
+	<para>In this section you can find detailed descriptions of all entries in the 
+main menu of &bibletime;. They are ordered in just the way they appear in 
+&bibletime;, with all the sub-items listed under the major menu item they 
+belong to. You can also see the hotkey of each item;a complete listing of 
+all hotkeys can be found in <link linkend="hdbk-reference-hotkeys">this 
+section</link>.</para>
+
+	<sect2 id="hdbk-reference-menus-file"><title><guimenu>File</guimenu></title>
+
+	<para>
+	<variablelist>
+
+	<varlistentry id="hdbk-reference-menus-file-quit">
+		<term><menuchoice>
+		<shortcut><keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo></shortcut>
+		<guimenu>	<inlinemediaobject><imageobject>
+		<imagedata fileref="i_exit.png"	format="PNG"/></imageobject></inlinemediaobject>
+		File</guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></term>
+		<listitem><para><action>Sulkee BibleTime-ohjelman.</action> BibleTime kysyy sinulta, 
+haluatko tallettaa tallentamattomat muutokset levylle.</para></listitem>
+</varlistentry>
+
+	</variablelist>
+	</para>
+	</sect2>
+
+	<sect2 id="hdbk-reference-menus-view"><title><guimenu>View</guimenu></title>
+
+	<variablelist>
+		<varlistentry id="hdbk-reference-menus-view-showtoolbar">
+			<term><menuchoice>
+			<guimenu>View</guimenu> <guimenuitem>Show Toolbar</guimenuitem></menuchoice></term>
+			<listitem><para><action>Toggles Toolbar display.</action> Toggle this setting to turn the 
+main toolbar on or off.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-view-showbookshelf">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem></menuchoice></term>
+			<listitem><para><action>Toggles display of the Bookshelf.</action> Toggle this setting to 
+turn the Bookshelf on the left pane on or off. This can be handy if you need 
+more space for the Mag.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-view-showmag">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul"><keycap>F8</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			View</guimenu> <guimenuitem>Show Mag</guimenuitem></menuchoice></term>
+			<listitem><para><action>Toggles display of the Mag(nifying glass).</action> Toggle this 
+setting to turn the Mag on the left pane on or off.</para></listitem>
+		</varlistentry>
+
+		</variablelist>
+	</sect2>
+
+	<sect2 id="hdbk-reference-menus-search"><title><guimenu>Search</guimenu></title>
+		<variablelist>
+
+		<varlistentry id="hdbk-reference-menus-search-defaultbible">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Alt;&Ctrl;<keycap>F</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_find.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Search</guimenu> <guimenuitem>Search in standard bible</guimenuitem></menuchoice></term>
+			<listitem><para><action>Opens the Search Dialog to search in the standard Bible 
+only</action>.  More works can be added in the Search Dialog.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-search-openworks">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_find.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem></menuchoice></term>
+			<listitem><para><action>Opens the Search Dialog to search in all open works</action>.  More 
+works can be added in the Search Dialog.</para></listitem>
+		</varlistentry>
+
+		</variablelist>
+
+	</sect2>
+
+	<sect2 id="hdbk-reference-menus-window"><title><guimenu>Window</guimenu></title>
+		<variablelist>
+
+		<varlistentry id="hdbk-reference-menus-window-savesession">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Save session</guimenuitem></menuchoice></term>
+			<listitem><para><action>Directly saves the current session</action>.  This will open a 
+context menu where you can select an existing session to save to.  It will 
+be overwritten with your current session. See the next item on how to save 
+to a new session.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-savenewsession">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Alt;&Ctrl;<keycap>S</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Save as new Session</guimenuitem></menuchoice></term>
+			<listitem><para><action>Saves the current session under a new name</action>.  This will ask 
+for a new name to save the session to.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-loadsession">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Load session</guimenuitem></menuchoice></term>
+			<listitem><para><action>Loads an existing session</action>.  This will open a context menu 
+where you can select an existing session to load.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-deletesession">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_sidetree.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Delete session</guimenuitem></menuchoice></term>
+			<listitem><para><action>Deletes an existing session</action>.  This will open a context menu 
+where you can select an existing session that should be deleted.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-fullscreen">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_fullscreen.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Fullscreen Mode</guimenuitem></menuchoice></term>
+			<listitem><para><action>Toggles fullscreen mode</action>.  Here you can turn fullscreen mode 
+on or off. In fullscreen mode, &bibletime; will expand to the full size of 
+your monitor screen, using as much space as possible.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-arrangement_mode">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_cascade_auto.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Arrangement mode</guimenuitem></menuchoice></term>
+			<listitem><para><action>Controls the basic window arrangement behaviour</action>.  In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode) or have &bibletime; handle it 
+for you (Automatical modes, just try them out!).</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-tile-vertically">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_tile.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Tile vertically</guimenuitem></menuchoice></term>
+			<listitem><para><action>Tiles all open read windows vertically</action>.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-tile-horizontally">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_tile.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem></menuchoice></term>
+			<listitem><para><action>Tiles all open windows horizontally</action>.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-cascade">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Ctrl;<keycap>J</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_cascade.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Cascade</guimenuitem></menuchoice></term>
+			<listitem><para><action>Cascades all open windows</action>.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-window-closeall">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul">&Alt;&Ctrl;<keycap>W</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_fileclose.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Window</guimenu> <guimenuitem>Close all</guimenuitem></menuchoice></term>
+			<listitem><para><action>Closes all open windows</action>.</para></listitem>
+		</varlistentry>
+
+		</variablelist>
+	</sect2>
+
+	<sect2 id="hdbk-reference-menus-settings"><title><guimenu>Settings</guimenu></title>
+		<variablelist>
+
+		<varlistentry id="hdbk-reference-menus-settings-toolbars">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_configuretoolbars.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Settings</guimenu> <guimenuitem>Configure toolbars</guimenuitem></menuchoice></term>
+			<listitem><para><action>Opens a dialog where you can customize &bibletime;'s 
+toolbar</action>.  Just try it out, you can move around the toolbar buttons 
+and even add new ones. Most of the entries available from the main menu can 
+be put on the toolbar as buttons. If you need a certain feature often, you 
+might want to put a button on the main menu, so that you can access it with 
+only one click. Please see <link linkend="hdbk-config-toolbar">this 
+section</link> for further information.</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-settings-bibletime">
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_configure.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Settings</guimenu> <guimenuitem>Configure &bibletime;</guimenuitem></menuchoice></term>
+			<listitem><para><action>Opens &bibletime;'s main configuration dialog</action>.  You can 
+configure all kinds of nice settings there to adapt &bibletime; to your 
+needs.  Please see <link linkend="hdbk-config-bt">this section</link> for 
+details.
+			</para></listitem>
+		</varlistentry>
+
+		<varlistentry id="hdbk-reference-menus-settings-bookshelf_manager">
+			<term><menuchoice>
+			<shortcut><keycombo action="simul"><keycap>F4</keycap></keycombo></shortcut>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_configuresword.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem></menuchoice></term>
+			<listitem><para><action>Opens a dialog where you can change your Sword configuration and 
+manage your bookshelf</action>.  Please see <link 
+linkend="hdbk-op-bookshelfmanager">this section</link> for details.
+			</para></listitem>
+		</varlistentry>
+
+		</variablelist>
+	</sect2>
+
+
+	<sect2 id="hdbk-reference-menus-help"><title><guimenu>Help</guimenu></title>
+
+		TODO: ADD
+
+	</sect2>
+
+</sect1>
+
+<sect1 id="hdbk-reference-toolbar"><title>Toolbar reference</title>
+
+	<para>Please review <link linkend="hdbk-reference-menus">the preceding 
+section</link> for an explanation of the buttons that you find on the 
+toolbar. You can also <action>move the cursor over a button and wait a few 
+seconds</action> to activate the button's tooltip with a short description.</para>
+	<para>Voit mukauttaa työkalupalkin tarpeitasi vastaavaksi. Käytä seuraavaa kohtaa 
+päävalikossa:
+	<variablelist>
+		<varlistentry>
+			<term><menuchoice>
+			<guimenu>	<inlinemediaobject><imageobject>
+			<imagedata fileref="i_configuretoolbars.png"	format="PNG"/></imageobject></inlinemediaobject>
+			Settings</guimenu> <guimenuitem>Configure toolbars</guimenuitem></menuchoice></term>
+			<listitem><para>Aseta työkalupalkit</para></listitem>
+		</varlistentry>
+	</variablelist>
+	Please see <link linkend="hdbk-reference-menus-settings-toolbars">this 
+section</link> for detailed instructions.
+	</para>
+
+</sect1>
+
+<sect1 id="hdbk-reference-hotkeys">
+<title>Pikanäppäinten luettelo</title>
+
+<para>This is index of all hotkeys and their corresponding description in the 
+handbook. The hotkeys are sorted (roughly) alphabetical. If you want to 
+directly find out which hotkey a certain menu item has, you can either look 
+at the entry itelf in &bibletime; (as it always shows the hotkey), or you 
+can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
+
+<informaltable>
+<tgroup cols="2">
+<colspec colname="hotkey"/>
+<colspec colname="desc"/>
+<thead>
+<row>
+  <entry>Pikanäppäin</entry>
+  <entry>Kuvaus</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry><keycombo action="simul">&Alt;<keycap>Left</keycap> </keycombo></entry>
+  <entry>Moves back in the history of read windows.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;<keycap>Right</keycap> </keycombo></entry>
+  <entry>Moves forward in the history of read windows.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>F</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-search-defaultbible"><menuchoice> 
+<guimenu>Search</guimenu> <guimenuitem>Search in default 
+bible</guimenuitem></menuchoice></link> equivalent; opens the search dialog 
+to search in the default bible.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>G</keycap> </keycombo></entry>
+  <entry><menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile 
+vertically</guimenuitem></menuchoice> equivalent; toggle automatic window 
+tiling.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>H</keycap> </keycombo></entry>
+  <entry><menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-tile 
+horizontally</guimenuitem></menuchoice> equivalent; toggle automatic window 
+tiling.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>J</keycap> </keycombo></entry>
+  <entry><menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem></menuchoice> 
+equivalent; toggle automatic window cascading.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>M</keycap> </keycombo></entry>
+  <entry><menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement 
+mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem></menuchoice> 
+equivalent; toggle manual window placement.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>S</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-savenewsession"><menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Save as new 
+session</guimenuitem></menuchoice></link> equivalent; saves current layout 
+as new session.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Alt;&Ctrl;<keycap>W</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-closeall"><menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Close 
+all</guimenuitem></menuchoice></link> equivalent; closes all open windows.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>-</keycap> </keycombo></entry>
+  <entry>Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>+</keycap> </keycombo></entry>
+  <entry>Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>A</keycap> </keycombo></entry>
+  <entry>Valitse kaikki. Tämä valitsee kaikki tekstit lukuikkunassa.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>C</keycap> </keycombo></entry>
+  <entry>Kopioi. Tämä kopioi valitun tekstin leikepöydälle.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>F</keycap> </keycombo></entry>
+  <entry>Search. This lets you search within the text of a read window.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>J</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-cascade"><menuchoice> 
+<guimenu>Window</guimenu> 
+<guimenuitem>Cascade</guimenuitem></menuchoice></link> equivalent; cascades 
+all open windows.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>G</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-tile-vertically"><menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Tile 
+vertically</guimenuitem></menuchoice></link> equivalent; tiles all open 
+windows vertically.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>H</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-tile-horizontally"><menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Tile 
+horizontally</guimenuitem></menuchoice></link> equivalent; tiles all open 
+windows horizontally.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>O</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-search-openworks"><menuchoice> 
+<guimenu>Search</guimenu> <guimenuitem>Search in open 
+work(s)</guimenuitem></menuchoice></link> equivalent; opens the search 
+dialog to search in all currently opened works.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>Q</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-file-quit"><menuchoice> 
+<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></link> 
+equivalent; closes &bibletime;.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>W</keycap> </keycombo></entry>
+  <entry>Sulkee nykyisen ikkunan.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>X</keycap> </keycombo></entry>
+  <entry>Siirtää Raamatun tai kommentaarin lukuikkunan seuraavaan lukuun.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>Y</keycap> </keycombo></entry>
+  <entry>Siirtää Raamatun tai kommentaarin lukuikkunan seuraavaan kirjaan.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;<keycap>V</keycap> </keycombo></entry>
+  <entry>Siirtää lukuikkunan seuraavaan jakeeseen tai kohtaan.</entry>
+</row>
+
+
+<row>
+  <entry><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-window-fullscreen"><menuchoice> 
+<guimenu>Window</guimenu> <guimenuitem>Fullscreen 
+mode</guimenuitem></menuchoice></link> equivalent; toggles fullscreen mode.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap> </keycombo></entry>
+  <entry>Moves a bible or commentary read window to the previous chapter.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;&Shift;<keycap>Y</keycap> </keycombo></entry>
+  <entry>Siirtää Raamatun tai kommentaarin lukuikkunan edelliseen kirjaan.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul">&Ctrl;&Shift;<keycap>V</keycap> </keycombo></entry>
+  <entry>Siirtää lukuikkunan edelliseen jakeeseen tai kohtaan.</entry>
+</row>
+
+<row>
+  <entry><keycombo action="simul"><keycap>F1</keycap> </keycombo></entry>
+  <entry><menuchoice> <guimenu>Help</guimenu> 
+<guimenuitem>Handbook</guimenuitem></menuchoice> equivalent; opens the 
+handbook.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul"><keycap>F2</keycap> </keycombo></entry>
+  <entry><menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
+Howto</guimenuitem></menuchoice> equivalent; opens the BibleStudy Howto.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul"><keycap>F3</keycap> </keycombo></entry>
+  <entry><menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily 
+tip</guimenuitem></menuchoice> equivalent; opens the tip of the day.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul"><keycap>F4</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-settings-bookshelf_manager"><menuchoice> 
+<guimenu>Settings</guimenu> <guimenuitem>Bookshelf 
+Manager</guimenuitem></menuchoice></link> equivalent; opens the Bookshelf 
+Manager.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul"><keycap>F8</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-view-showbookshelf"><menuchoice> 
+<guimenu>View</guimenu> <guimenuitem>Show 
+Bookshelf</guimenuitem></menuchoice></link> equivalent; toggles display of 
+the Bookshelf.</entry>
+</row>
+<row>
+  <entry><keycombo action="simul"><keycap>F9</keycap> </keycombo></entry>
+  <entry><link linkend="hdbk-reference-menus-view-showmag"><menuchoice> 
+<guimenu>View</guimenu> <guimenuitem>Show 
+mag</guimenuitem></menuchoice></link> equivalent; toggles display of the 
+mag(nifying glass).</entry>
+</row>
+
+
+</tbody>
+</tgroup>
+</informaltable>
+
+</sect1>
+
+</chapter>
+
