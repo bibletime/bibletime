@@ -3,8 +3,6 @@ README for BibleTime
 
 BibleTime is a Bible study application based on KDE.
 
-This is an ALPHA version and for testing purposes only.
-
 1. INSTALLATION
 
 1.1 REQUIREMENTS
@@ -35,9 +33,7 @@ also build in ./build/, but then install to /usr/local.
 2. FEEDBACK
 
 Please report any bugs your find to bt-devel@crosswire.org or 
-use the links on our webpage at http://www.bibletime.info. 
-Please do not hesitate to send suggestions or criticism to 
-bt-devel@crosswire.org.
+use the links on our webpage at http://www.bibletime.info.
 
 3. DOCUMENTATION
 
@@ -48,5 +44,6 @@ and its usage in the following places:
 		of the BibleTime application
 	o There's a Bible study tutorial in the help menu
 
-May God, our Lord use BibleTime for his glory,
+May God, our Lord, use BibleTime for his glory.
+
 The BibleTime developers, info@bibletime.info
