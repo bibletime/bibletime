@@ -1,3 +1,7 @@
+2008-08-27 Martin Gruner <mgruner@crosswire.org>
+	* Released 1.7.beta1 for distributions to package
+	* several bugfixes
+
 2008-05 * MAJOR CHANGES FOR 1.7 *
 	* Port to KDE4/QT4, reduced KDE dependency to a minimum
 	* New build system: cmake
