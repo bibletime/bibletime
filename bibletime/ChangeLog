@@ -3,10 +3,18 @@
 	* several bugfixes
 
 2008-05 * MAJOR CHANGES FOR 1.7 *
+	* The code is in svn instead of cvs
 	* Port to KDE4/QT4, reduced KDE dependency to a minimum
+	* Command line options have changed (--help is out of date)
+	* Configuration files have been moved to ~/.bibletime/
 	* New build system: cmake
 	* i18n of UI strings is now handled by QT
+		* tr() function in the source code, .ts files for translations
+	* UI strings have been changed radically
 	* Massive code cleanups and internal refactoring
+		* New classes, rewritten and renamed classes, removed classes
+		* Better directory structure
+		* Cleaned up #includes
 	* New bookshelf manager
 	* New external communications interface DBUS (instead of DCOP)
 	* Bookshelf improvements
@@ -15,9 +23,16 @@
 		* Hide/Unhide feature to select which modules should be displayed
 	* Corrections and enhancements to session management
 	* Search dialog now has a history for the modules to search in
+	* Bugfixes to backend filters and display templates
 	* Disabled features
 		* Key binding configuration (maybe this will re-appear in a later release)
 		* Search analysis (should re-appear soon)
+		* Startup tips (probably not coming back)
+		* Drag and Drop in the main window Bookshelf (should re-appear)
+		* "About" dialogs in Help menu ("About BibleTime" is probably needed back)
+	* Eeli Kaikkonen and Martin Gruner are responsible for most of the work
+		with the help of Jeremy Erickson and some other contributors,
+		Joachim Ansorg has retired from coding
 
 2007-11-01 Martin Gruner <mgruner@crosswire.org>
 	* Released 1.6.5 with several important bugfixes
