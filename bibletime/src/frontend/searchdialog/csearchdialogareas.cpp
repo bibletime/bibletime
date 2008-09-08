@@ -116,8 +116,8 @@ void StrongsResultClass::initStrongsResults(void)
 	// for whatever reason the text "Parsing...translations." does not appear.
 	// this is not critical but the text is necessary to get the dialog box
 	// to be wide enough.
-	QProgressDialog* progress = new QProgressDialog(QObject::tr("Parsing Stong's Numbers"), 0, 0, count);
-	//0, "progressDialog", tr("Parsing Stong's Numbers"), tr("Parsing Stong's numbers for translations."), true);
+	QProgressDialog* progress = new QProgressDialog(QObject::tr("Parsing Strong's Numbers"), 0, 0, count);
+	//0, "progressDialog", tr("Parsing Strong's Numbers"), tr("Parsing Strong's numbers for translations."), true);
 	
 	//progress->setAllowCancel(false);
 	//progress->setMinimumDuration(0);

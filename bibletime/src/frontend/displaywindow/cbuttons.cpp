@@ -115,7 +115,7 @@ int CDisplaySettingsButton::populateMenu() {
 	ret += addMenuEntry(tr("Use linebreaks after each verse"), Linebreak, &m_displaySettings->lineBreaks, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
 	//show the verse numbers option only for bible modules
-	ret += addMenuEntry(tr("Show versenumbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
+	ret += addMenuEntry(tr("Show verse numbers"), Versenum, &m_displaySettings->verseNumbers, (m_modules.first()->type() == CSwordModuleInfo::Bible));
 
 	ret += addMenuEntry(tr("Show headings"), Headings, &m_moduleSettings->headings,
 						isOptionAvailable(CSwordModuleInfo::headings));
