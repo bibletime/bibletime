@@ -11,7 +11,7 @@ PATH="$PATH:/usr/lib/kde4/bin"
 if [ ! -d build ]; then mkdir build; fi
 cd build
 cmake -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX="install/" ..  || exit 1
-make install || exit 1
+make -j4 install || exit 1
 cd ..
 
 echo
