@@ -15,6 +15,8 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 # Find required packages
 #
 SET(QT_MIN_VERSION 4.4.0)
+SET(QT_USE_DBUS 1)
+SET(QT_USE_QTXML 1)
 FIND_PACKAGE(Qt4 REQUIRED)
 #
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
@@ -78,32 +80,30 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions" #Enable exception handling
 	)
+	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
 		${KDE4_KDEUI_LIBS}
 		${KDE4_KDECORE_LIBS}
 		${KDE4_KHTML_LIBS}
-		QtCore
-		QtGui
-		QtXml
-		QtDBus
+		${QT_LIBRARIES}
 		${CLUCENE_LIBRARY}
 		${SWORD_LIBS}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
+	SET(CMAKE_BUILD_TYPE "Debug")
 	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING" #Enable exception handling and Testing
 	)
+	SET(QT_USE_QTTEST 1)
+	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
 		${KDE4_KDEUI_LIBS}
 		${KDE4_KDECORE_LIBS}
 		${KDE4_KHTML_LIBS}
-		QtCore
-		QtGui
-		QtXml
-		QtDBus
-		QtTest
+		${QT_LIBRARIES}
+		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
 		${SWORD_LIBS}
 	)
@@ -118,70 +118,81 @@ ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
 ######################################################
 
-IF (NOT CMAKE_INSTALL_PREFIX)
+IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 	SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
-ENDIF (NOT CMAKE_INSTALL_PREFIX)
+ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
-SET(CMAKE_CXX_FLAGS "-W -O2")
-SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Werror -O0 -g") #-pedantic-errors
-SET(CMAKE_CXX_FLAGS_DEBUGFULL "-Wall -Werror -O0 -g") #-pedantic-errors
+SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
+IF (NOT APPLE)
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Werror -O0 -g") #-pedantic-errors
+ELSE (NOT APPLE)
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -g")
+ENDIF (NOT APPLE)
+
 
 ######################################################
 # Install files
 #
-# main binary
-INSTALL(TARGETS "bibletime"
-	DESTINATION "bin/"
+# main binary - Mac specifics handled by the KDE4_ADD_EXECUTABLE
+IF (APPLE)
+	SET (BT_DESTINATION ".")
+	SET (BT_SHARE_PATH bibletime.app/Contents/)
+ELSE (APPLE)
+	SET (BT_DESTINATION "bin/")
+	SET (BT_SHARE_PATH "")
+ENDIF (APPLE)
+INSTALL(TARGETS "bibletime" 
+	DESTINATION "${BT_DESTINATION}"
 )
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
-		DESTINATION "share/bibletime/locale/"
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm" 
+		DESTINATION "${BT_SHARE_PATH}share/bibletime/locale/"
 	)
 ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
-INSTALL(FILES ${INSTALL_ICONS_LIST}
-	DESTINATION "share/bibletime/icons/"
+INSTALL(FILES ${INSTALL_ICONS_LIST} 
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
 )
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
-INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
-	DESTINATION "share/bibletime/display-templates/"
+INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST} 
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/display-templates/"
 )
 # splash screen
-INSTALL(FILES "pics/startuplogo.png"
-	DESTINATION "share/bibletime/pics/"
+INSTALL(FILES "pics/startuplogo.png" 
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/pics/"
 )
 #handbook (install images from en/ to all languages)
 FILE(GLOB INSTALL_HANDBOOK_IMAGES "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/*.png")
 FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}}
-		DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
+	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}} 
+		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
 	)
-	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES}
-		DESTINATION "share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
+	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES} 
+		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
 	)
 ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 #howto (does not have images)
 FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}}
-		DESTINATION "share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/"
+	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} 
+		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/"
 	)
 ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 #
 # Platform specific installation
 #
 # LINUX: application icon
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
-	DESTINATION "share/icons/"
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg" 
+	DESTINATION "${BT_SHARE_PATH}share/icons/"
 )
 # LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
-INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
-	DESTINATION "share/applications/"
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" 
+	DESTINATION "${BT_SHARE_PATH}share/applications/"
 )
 ######################################################
 
