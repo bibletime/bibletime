@@ -74,7 +74,7 @@ public:
 		 * Returns true if this language object is valid, i.e. has an abbrev and name.
 		 * @return True if the data is valid for this language.
 		 */
-		inline const bool isValid() const {
+		inline bool isValid() const {
 			return (!abbrev().isEmpty() && !name().isEmpty());
 		}
 
@@ -99,7 +99,7 @@ public:
 	* Returns the standard languages available as standard. Does nothing for Sword.
 	* @return A LangMap map which contains all known languages
 	*/
-	inline const CLanguageMgr::LangMap* const languages() const {
+	inline const CLanguageMgr::LangMap* languages() const {
 		return &m_langMap;
 	}
 	/**
@@ -111,21 +111,21 @@ public:
 	* @param abbrev The language abbreviation
 	* @return Pointer to a language for the given string abbreviation.
 	*/
-	const CLanguageMgr::Language* const languageForAbbrev( const QString& abbrev ) const;
+	const CLanguageMgr::Language* languageForAbbrev( const QString& abbrev ) const;
 	/** Language for english name.
 	* @param abbrev The english language name.
 	* @return Pointer to a language for the given name
 	*/
-	const CLanguageMgr::Language* const languageForName( const QString& language ) const;
+	const CLanguageMgr::Language* languageForName( const QString& language ) const;
 	/** Language for translated language name.
 	* @param abbrev The translated language name
 	* @return Pointer to a language for the given translated language name
 	*/
-	const CLanguageMgr::Language* const languageForTranslatedName( const QString& language ) const;
+	const CLanguageMgr::Language* languageForTranslatedName( const QString& language ) const;
 	/** Default language so we don't return NULL pointers.
 	* @return Pointer to the default language
 	*/
-	inline const CLanguageMgr::Language* const defaultLanguage() const {
+	inline const CLanguageMgr::Language* defaultLanguage() const {
 		return &m_defaultLanguage;
 	}
 

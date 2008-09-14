@@ -42,7 +42,7 @@ BTIndexModule::~BTIndexModule()
 }
 
 
-const bool BTIndexModule::enableAction(QAction* action)
+bool BTIndexModule::enableAction(QAction* action) const
 {
 	if (!action->isEnabled()) {
 		IndexAction actionType = (IndexAction)action->property("indexActionType").toInt();
@@ -87,7 +87,7 @@ bool BTIndexModule::acceptDrop(const QMimeData* data)
 }
 
 
-CSwordModuleInfo* BTIndexModule::moduleInfo()
+CSwordModuleInfo* BTIndexModule::moduleInfo() const
 {
 	return m_moduleInfo;
 }

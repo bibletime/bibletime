@@ -85,7 +85,7 @@ const CLanguageMgr::LangMap& CLanguageMgr::availableLanguages() {
 	return m_availableModulesCache.availableLanguages;
 }
 
-const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QString& abbrev ) const {
+const CLanguageMgr::Language* CLanguageMgr::languageForAbbrev( const QString& abbrev ) const {
 	LangMapIterator it = m_langMap.find(abbrev);
 	if (it != m_langMap.constEnd()) return *it; //Language is already here
 	
@@ -101,14 +101,14 @@ const CLanguageMgr::Language* const CLanguageMgr::languageForAbbrev( const QStri
 	return newLang;
 }
 
-const CLanguageMgr::Language* const CLanguageMgr::languageForName( const QString& name ) const {
+const CLanguageMgr::Language* CLanguageMgr::languageForName( const QString& name ) const {
 	foreach ( const Language* lang, m_langList ) {
 		if (lang->name() == name) return lang;
 	}
 	return &m_defaultLanguage;//invalid language
 }
 
-const CLanguageMgr::Language* const CLanguageMgr::languageForTranslatedName( const QString& name ) const {
+const CLanguageMgr::Language* CLanguageMgr::languageForTranslatedName( const QString& name ) const {
 	foreach ( const Language* lang, m_langList ) {
 		if (lang->translatedName() == name) return lang;
 	}

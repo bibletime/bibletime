@@ -36,7 +36,7 @@ public:
 	* are always supported by all items. If the action is not supported in the current state of the
 	* item this function does nothing.
 	*/
-    virtual const bool enableAction(QAction*) {return false;}
+    virtual bool enableAction(QAction*) const {return false;}
 
 	//TODO: d'n'd functions so that view can delegate d'n'd to items?
 	virtual bool acceptDrop(const QMimeData*) {return false;}

@@ -13,6 +13,7 @@
 #include "frontend/displaywindow/cdisplaywindow.h"
 
 #include <QTabWidget>
+#include <QFocusEvent>
 
 class CBookmarkIndex;
 class CBookshelfIndex;
@@ -42,6 +43,9 @@ signals:
 	 */
 	void createWriteDisplayWindow( CSwordModuleInfo*, const QString&, const  CDisplayWindow::WriteWindowType& );
 
+protected:
+	/** QWidget method - move focus to the active page widget */
+	virtual void focusInEvent(QFocusEvent*) {currentWidget()->setFocus();}
 
 private:
 

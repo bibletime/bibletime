@@ -21,6 +21,7 @@
 
 CMainIndex::CMainIndex(QWidget *parent)	: QTabWidget(parent)
 {
+	setFocusPolicy(Qt::StrongFocus);
 	m_bookmarksPage = new CBookmarkIndex(0);
 	m_bookshelfPage = new CBookshelfIndex(0);
 	addTab(m_bookshelfPage, tr("Bookshelf"));

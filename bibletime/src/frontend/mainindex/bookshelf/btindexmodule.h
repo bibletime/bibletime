@@ -28,9 +28,9 @@ public:
 
 	~BTIndexModule();
 
-	virtual const bool enableAction(QAction* action);
+	virtual bool enableAction(QAction* action) const;
 	virtual bool acceptDrop(const QMimeData* data);
-	CSwordModuleInfo* moduleInfo();
+	CSwordModuleInfo* moduleInfo() const;
 
 private:
 	CSwordModuleInfo* m_moduleInfo;
