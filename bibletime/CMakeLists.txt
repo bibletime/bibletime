@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7.beta1")
+SET(BT_VERSION "1.7.beta2")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
@@ -141,44 +141,44 @@ ELSE (APPLE)
 	SET (BT_DESTINATION "bin/")
 	SET (BT_SHARE_PATH "")
 ENDIF (APPLE)
-INSTALL(TARGETS "bibletime" 
+INSTALL(TARGETS "bibletime"
 	DESTINATION "${BT_DESTINATION}"
 )
 # compiled catalogs
 FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm" 
+	INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
 		DESTINATION "${BT_SHARE_PATH}share/bibletime/locale/"
 	)
 ENDFOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 # icons
 FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
-INSTALL(FILES ${INSTALL_ICONS_LIST} 
+INSTALL(FILES ${INSTALL_ICONS_LIST}
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
 )
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
-INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST} 
+INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/display-templates/"
 )
 # splash screen
-INSTALL(FILES "pics/startuplogo.png" 
+INSTALL(FILES "pics/startuplogo.png"
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/pics/"
 )
 #handbook (install images from en/ to all languages)
 FILE(GLOB INSTALL_HANDBOOK_IMAGES "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/en/html/*.png")
 FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}} 
+	INSTALL(FILES ${INSTALL_HANDBOOK_HTML_FILES_${HANDBOOK_LOCALE_LANG}}
 		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
 	)
-	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES} 
+	INSTALL(FILES ${INSTALL_HANDBOOK_IMAGES}
 		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/handbook/${HANDBOOK_LOCALE_LANG}/"
 	)
 ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 #howto (does not have images)
 FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 	FILE(GLOB INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG} "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/*.html")
-	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}} 
+	INSTALL(FILES ${INSTALL_HOWTO_HTML_FILES_${HOWTO_LOCALE_LANG}}
 		DESTINATION "${BT_SHARE_PATH}share/bibletime/docs/howto/${HOWTO_LOCALE_LANG}/"
 	)
 ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
@@ -186,12 +186,12 @@ ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 # Platform specific installation
 #
 # LINUX: application icon
-INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg" 
+INSTALL(FILES "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.svg"
 	DESTINATION "${BT_SHARE_PATH}share/icons/"
 )
 # LINUX: desktop file
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desktop.cmake" "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop")
-INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop" 
+INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 	DESTINATION "${BT_SHARE_PATH}share/applications/"
 )
 ######################################################
