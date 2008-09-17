@@ -251,10 +251,9 @@ void CBookshelfIndex::initConnections()
 	//Connect this to the backend module list changes.
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
 	
-	//Strangely itemActivated only didn't let open a tree by clicking even though the relevant
-	//code in slotExecuted was executed. Therefore itemClicked is necessary.
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-	QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	// This was necessary probably because of a Qt bug: clicking didn't open a tree without this.
+	//QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 
 	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
