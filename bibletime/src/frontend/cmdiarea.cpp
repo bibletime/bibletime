@@ -54,7 +54,7 @@ void CMDIArea::setMDIArrangementMode( const MDIArrangementMode newArrangementMod
 	triggerWindowUpdate();
 }
 
-const CMDIArea::MDIArrangementMode CMDIArea::getMDIArrangementMode(void) {
+CMDIArea::MDIArrangementMode CMDIArea::getMDIArrangementMode(void) const {
 	return m_mdiArrangementMode;
 }
 

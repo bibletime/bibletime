@@ -46,7 +46,7 @@ public:
 	 */
 	void setMDIArrangementMode( const MDIArrangementMode );
 	/** */
-	const MDIArrangementMode getMDIArrangementMode(void);
+	MDIArrangementMode getMDIArrangementMode(void) const;
 	/**
 	*/
 	void emitWindowCaptionChanged();
