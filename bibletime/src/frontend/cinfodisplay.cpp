@@ -226,7 +226,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 		//   Q_ASSERT(module);
 	}
 
-	Q_ASSERT(module);
+	//Q_ASSERT(module); //why? the existense of the module is tested later
 	CTextRendering::KeyTreeItem::Settings settings (
 		false,
 		CTextRendering::KeyTreeItem::Settings::CompleteShort
