@@ -92,10 +92,12 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	QString langCSS;
 	CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
 
+	qDebug() << "langMap length:" << langMap.count();
 	qDebug("loop through langMap");
 	foreach(const CLanguageMgr::Language* lang, langMap) {
 		//const CLanguageMgr::Language* lang = *it;
-		//qDebug() << "lang: " << lang;
+		//qDebug() << "foreach, lang: ";
+		//qDebug() << lang;
 
 		//if (lang->isValid() && CBTConfig::get(lang).first) {
 		if (!lang->abbrev().isEmpty() && CBTConfig::get(lang).first) {
@@ -117,11 +119,10 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 	}
 
 	//at first append the font standard settings for all languages without configured font
-	CLanguageMgr::LangMapIterator it = langMap.begin();
+	// Create a dummy language (the langmap may be empty)
+	CLanguageMgr::Language lang_v(QString("en"), QString("English"), QString());
+	CLanguageMgr::Language* lang = &lang_v;
 
-	const CLanguageMgr::Language* lang = *it;
-
-	//qDebug() << "lang: " << lang;
 	if (lang && !lang->abbrev().isEmpty()/*&& lang->isValid()*/) {
 		const QFont standardFont = CBTConfig::getDefault(lang); //we just need a dummy lang param
 		langCSS.prepend(
