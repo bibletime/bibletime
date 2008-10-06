@@ -278,14 +278,14 @@ void CHTMLReadDisplay::khtmlMouseReleaseEvent( khtml::MouseReleaseEvent* event )
 }
 
 void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
-	qDebug("CHTMLReadDisplay::khtmlMousePressEvent");
+	//qDebug("CHTMLReadDisplay::khtmlMousePressEvent");
 	m_dndData.node = DOM::Node();
 	m_dndData.anchor = DOM::DOMString();
 	m_dndData.mousePressed = false;
 	m_dndData.isDragging = false;
 
 	if (event->qmouseEvent()->button() == Qt::RightButton) {
-		qDebug("Right button");
+		//qDebug("Right button");
 		DOM::Node tmpNode = event->innerNode();
 		DOM::Node attr;
 		m_nodeInfo[CDisplay::Lemma] = QString::null;
@@ -305,7 +305,7 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 		setActiveAnchor( event->url().string() );
 	}
 	else if (event->qmouseEvent()->button() == Qt::LeftButton) {
-		qDebug("Left button");
+		//qDebug("Left button");
 		m_dndData.node = event->innerNode();
 		m_dndData.anchor = event->url();
 		m_dndData.mousePressed = true;
@@ -323,16 +323,9 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 
 /** Reimplementation for our drag&drop system. Also needed for the mouse tracking */
 void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
-	if( e->qmouseEvent()->buttons() & Qt::LeftButton == Qt::LeftButton) { //left mouse button pressed
-		const int delay = qApp->startDragDistance();
-		QPoint newPos = QPoint(e->x(), e->y());
-	
 
-		//TODO: this should be inspected
-		if ( (newPos.x() > m_dndData.startPos.x()+delay || newPos.x() < (m_dndData.startPos.x()-delay) ||
-				newPos.y() > m_dndData.startPos.y()+delay || newPos.y() < (m_dndData.startPos.y()-delay)) &&
-				!m_dndData.isDragging && m_dndData.mousePressed  ) {
-			//Q3DragObject* d = 0;
+	if( (e->qmouseEvent()->buttons() & Qt::LeftButton) && !m_dndData.isDragging && m_dndData.mousePressed) {
+		if ((e->qmouseEvent()->pos() - m_dndData.startPos).manhattanLength() > qApp->startDragDistance()) {
 			QDrag* d = 0;
 			if (!m_dndData.anchor.isEmpty() && (m_dndData.dragType == DNDData::Link) && !m_dndData.node.isNull() ) {
 				// create a new bookmark drag!
@@ -341,7 +334,6 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				CReferenceManager::Type type;
 				if ( !CReferenceManager::decodeHyperlink(m_dndData.anchor.string(), moduleName, keyName, type) )
 					return;
-
 				d = new QDrag(KHTMLPart::view()->viewport());
 				BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
 				d->setMimeData(mimedata);
@@ -466,7 +458,6 @@ void CHTMLReadDisplayView::popupMenu( const QString& url, const QPoint& pos) {
 
 /** Reimplementation from QScrollArea. Sets the right slots */
 bool CHTMLReadDisplayView::event(QEvent* e) {
-	//TODO: this MUST be tested (as other context menus and DnD system) when the app runs)
 	if (e->type() == QEvent::Polish) {
 		connect( part(), SIGNAL(popupMenu(const QString&, const QPoint&)),
 			this, SLOT(popupMenu(const QString&, const QPoint&)));
@@ -477,6 +468,7 @@ bool CHTMLReadDisplayView::event(QEvent* e) {
 /** Reimplementation from QScrollArea. */
 void CHTMLReadDisplayView::dropEvent( QDropEvent* e ) {
 	//if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
+	qDebug("CHTMLReadDisplayView::dropEvent");
 	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
 		//CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
 		//see docs for BTMimeData and QMimeData
@@ -488,7 +480,7 @@ void CHTMLReadDisplayView::dropEvent( QDropEvent* e ) {
 		m_display->connectionsProxy()->emitReferenceDropped(item.key());
 		return;
 	};
-
+	qDebug("ignored");
 	//don't accept the action!
 	//e->acceptAction(false);
 	e->ignore();
@@ -497,11 +489,12 @@ void CHTMLReadDisplayView::dropEvent( QDropEvent* e ) {
 /** Reimplementation from QScrollArea. */
 void CHTMLReadDisplayView::dragEnterEvent( QDragEnterEvent* e ) {
 	//if (CDragDropMgr::canDecode(e) && CDragDropMgr::dndType(e) == CDragDropMgr::Item::Bookmark) {
+	qDebug("CHTMLReadDisplayView::dragEnterEvent");
 	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) {
 		e->acceptProposedAction();
 		return;
 	}
-	
+	qDebug("ignored");
 	//e->acceptAction(false);
 	e->ignore();
 }
