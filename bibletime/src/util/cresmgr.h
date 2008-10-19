@@ -197,6 +197,7 @@ namespace CResMgr {
 
 	namespace searchdialog {
 		extern const QString icon;
+		extern const QString close_icon;
 		extern const QString help_icon;
 		extern const QString chooseworks_icon;
 		extern const QString setupscope_icon;

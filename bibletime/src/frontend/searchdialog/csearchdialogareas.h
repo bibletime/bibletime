@@ -25,6 +25,7 @@ class CReadDisplay;
 namespace Search {
 	class CModuleResultView;
 	class CSearchResultView;
+	class CHistoryComboBox;
 }
 class QHBoxLayout;
 class QGroupBox;
@@ -34,8 +35,6 @@ class QLabel;
 class QTreeWidget;
 class QFrame;
 class QComboBox;
-
-class KHistoryComboBox;
 
 
 namespace Search {
@@ -291,7 +290,7 @@ protected slots: // Protected slots
 	void setupRanges();
 	void syntaxHelp();
 	void slotHistoryItemActivated(const QString& item);
-	void slotSearchTextEditReturnPressed(const QString& item);
+	void slotSearchTextEditReturnPressed();
 
 signals:
 	void sigSetSearchButtonStatus(bool);
@@ -309,7 +308,7 @@ private:
     QPushButton *m_chooseRangeButton;
     QLabel *m_searchScopeLabel;
     QComboBox *m_rangeChooserCombo;
-    KHistoryComboBox *m_searchTextCombo;
+    CHistoryComboBox *m_searchTextCombo;
     QLabel *m_modulesLabel;
 	QComboBox* m_modulesCombo;
 

@@ -15,6 +15,7 @@
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
 #include "csearchmodulechooserdialog.h"
+#include "chistorycombobox.h"
 #include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 
 #include "backend/keys/cswordversekey.h"
@@ -51,10 +52,6 @@
 #include <QComboBox>
 
 #include <QDebug>
-
-//KDE includes
-#include <khistorycombobox.h>
-
 
 namespace Search {
 
@@ -743,7 +740,6 @@ void CSearchOptionsArea::setSearchText(const QString& text) {
 	}
 
 	m_searchTextCombo->setCurrentIndex(i);
-	m_searchTextCombo->reset();
 	m_searchTextCombo->setFocus();
 }
 
@@ -814,7 +810,7 @@ void CSearchOptionsArea::initView()
 	gridLayout->addWidget(m_rangeChooserCombo, 2, 1);
 
 	// ************* Search text combo box *******************
-	m_searchTextCombo = new KHistoryComboBox(searchGroupBox);
+	m_searchTextCombo = new CHistoryComboBox(searchGroupBox);
 	sizePolicy2.setHeightForWidth(m_searchTextCombo->sizePolicy().hasHeightForWidth());
 	m_searchTextCombo->setSizePolicy(sizePolicy2);
 	m_searchTextCombo->setFocusPolicy(Qt::WheelFocus);
@@ -845,8 +841,8 @@ void CSearchOptionsArea::initConnections()
 	QObject::connect( m_searchTextCombo, SIGNAL(activated( const QString& )),
 				this, SLOT( slotHistoryItemActivated(const QString&) )
 			);
-	QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ( const QString& )),
-				this, SLOT( slotSearchTextEditReturnPressed(const QString&) )
+	QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ()),
+				this, SLOT( slotSearchTextEditReturnPressed() )
 			);
 	connect( m_syntaxButton, SIGNAL(clicked()), this, SLOT(syntaxHelp()));
 	connect(m_chooseModulesButton, SIGNAL(clicked()), this, SLOT(chooseModules()));
@@ -936,13 +932,11 @@ void CSearchOptionsArea::reset() {
 }
 
 void CSearchOptionsArea::saveSettings() {
-	CBTConfig::set(CBTConfig::searchCompletionTexts, m_searchTextCombo->completionObject()->items());
 	CBTConfig::set(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
 }
 
 void CSearchOptionsArea::readSettings() {
-	m_searchTextCombo->completionObject()->setItems( CBTConfig::get(CBTConfig::searchCompletionTexts) );
-	m_searchTextCombo->setHistoryItems( CBTConfig::get(CBTConfig::searchTexts) );
+	m_searchTextCombo->addItems( CBTConfig::get(CBTConfig::searchTexts) );
 	m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
 	for (int i = 0; i < m_modulesCombo->count(); ++i) {
 		m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
@@ -1017,10 +1011,9 @@ void CSearchOptionsArea::slotHistoryItemActivated(const QString& item)
 	m_searchTextCombo->addToHistory( item );
 }
 
-void CSearchOptionsArea::slotSearchTextEditReturnPressed(const QString& item)
+void CSearchOptionsArea::slotSearchTextEditReturnPressed()
 {
 	qDebug("CSearchOptionsArea::slotSearchTextEditReturnPressed");
-	m_searchTextCombo->addToHistory( item );
 	emit sigStartSearch();
 }
 

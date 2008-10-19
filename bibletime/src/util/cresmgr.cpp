@@ -186,6 +186,7 @@ namespace CResMgr {
 
 	namespace searchdialog {
 		const QString icon = "find.svg";
+		const QString close_icon = "stop.svg";
 		const QString help_icon = "questionmark";
 		const QString chooseworks_icon = "checkbox";
 		const QString setupscope_icon = "configure";

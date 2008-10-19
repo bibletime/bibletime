@@ -21,9 +21,10 @@ class CSwordModuleInfo;
 
 //Qt includes
 #include <QString>
+class QPushButton;
 
 //KDE includes
-#include <kdialog.h>
+#include <QDialog>
 
 //forward declarations
 class QWidget;
@@ -34,7 +35,7 @@ namespace Search {
 /**
   *@author The BibleTime team
   */
-class CSearchDialog : public KDialog  {
+class CSearchDialog : public QDialog  {
 	Q_OBJECT
 
 public:
@@ -115,15 +116,15 @@ protected slots:
 	* Initializes the signal slot connections
 	*/
 	void initConnections();
-	/**
-	* Reimplementation.
-	*/
-	virtual void slotClose();
+
+	void closeButtonPressed();
 
 private:
+	QPushButton* m_searchButton;
+	QPushButton* m_closeButton;
 	CSearchResultArea* m_searchResultArea;
 	CSearchOptionsArea* m_searchOptionsArea;
-	
+
 	CSwordModuleSearch m_searcher;
 };
 

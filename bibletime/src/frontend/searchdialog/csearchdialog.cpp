@@ -29,6 +29,7 @@
 #include <QSettings>
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QSizePolicy>
 
 namespace Search {
 
@@ -69,17 +70,13 @@ CSearchDialog* const CSearchDialog::getSearchDialog()
 }
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-//: KDialogBase(Plain, tr("Search dialog"), Close | User1, User1, parent, "CSearchDialog", false, true, tr("Search"))
-	:KDialog(parent)
+	:QDialog(parent), m_searchButton(0), m_closeButton(0), 
+	m_searchResultArea(0), m_searchOptionsArea(0)
 {
-	setButtons(KDialog::Close|KDialog::User1);
-	setButtonText(KDialog::User1, tr("&Search"));
-	setButtonIcon(KDialog::User1, KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon)) );
-	//setWFlags( windowFlags() | Qt::WStyle_MinMax );
 	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
 	setWindowTitle(tr("Search"));
+	setAttribute(Qt::WA_DeleteOnClose);
 	m_searcher.connectFinished( this, SLOT(searchFinished()));
-
 	initView();
 	initConnections();
 }
@@ -87,6 +84,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
 CSearchDialog::~CSearchDialog()
 {
 	saveDialogSettings();
+	m_staticDialog = 0;
 }
 
 /** Starts the search with the set modules and the set search text. */
@@ -108,7 +106,7 @@ void CSearchDialog::startSearch()
 		// In SuSE 10.0 the result is the logical or of the button type, just like it is
 		// inputed into the QMessageBox.
 		if ( (result == (QMessageBox::Yes | QMessageBox::Default)) ||
-		     (result == QMessageBox::Yes) || (result == QMessageBox::Default) ) {
+			(result == QMessageBox::Yes) || (result == QMessageBox::Default) ) {
 			CModuleIndexDialog* dlg = CModuleIndexDialog::getInstance();
 			dlg->indexUnindexedModules( modules() );
 		}
@@ -173,17 +171,33 @@ void CSearchDialog::setSearchText( const QString searchText )
 /** Initializes this object. */
 void CSearchDialog::initView()
 {
-	setMainWidget(new QWidget(this));	
+	QVBoxLayout* verticalLayout = new QVBoxLayout(this);
+	setLayout(verticalLayout);
 
-	setButtonToolTip(User1, tr("Start to search the text in the chosen works"));
-	QVBoxLayout *box = new QVBoxLayout( mainWidget());
-	mainWidget()->setLayout(box);
+	m_searchOptionsArea = new CSearchOptionsArea(this);
+	verticalLayout->addWidget(m_searchOptionsArea);
 
-	m_searchOptionsArea = new CSearchOptionsArea(mainWidget());
-	box->addWidget( m_searchOptionsArea );
+	m_searchResultArea = new CSearchResultArea(this);
+	verticalLayout->addWidget(m_searchResultArea);
+	
+	QHBoxLayout* horizontalLayout = new QHBoxLayout();
+	QSpacerItem* horizontalSpacer = new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Minimum);
+	horizontalLayout->addItem(horizontalSpacer);
 
-	m_searchResultArea = new CSearchResultArea(mainWidget());
-	box->addWidget( m_searchResultArea );
+	m_searchButton = new QPushButton(this);
+	m_searchButton->setText(tr("&Search")); 
+	m_searchButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon));
+	m_searchButton->setToolTip(tr("Start to search the text in the chosen works"));
+	horizontalLayout->addWidget(m_searchButton);
+
+	m_closeButton = new QPushButton(this);
+	m_closeButton->setText(tr("&Close")); 
+	m_closeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::close_icon));
+	horizontalLayout->addWidget(m_closeButton);
+
+	verticalLayout->addLayout(horizontalLayout);
+
+	loadDialogSettings();
 
 	//TODO: for QDialog, after removing KDialog
 	//QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Help|QDialogButtonBox::Close, Qt::Horizontal, mainWidget());
@@ -191,18 +205,6 @@ void CSearchDialog::initView()
 	//helpButton->setText(tr("Quick &Help"));
 	//helpButton->setToolTip(tr("Quick help a.k.a \"What's This?\". Click this, then point and click some user interface element."));
 	//box->addWidget(buttonBox);
-
-	// The dialog doesn't resize properly if the minimum size of the
-	// plain page is lower than the minimumsize of our two widgets.
-	// You can resize the dialog, but it just starts covering up the
-	// button bar and the two widgets instead of stopping at the
-	// minimum size.  The following code sets the minimum with some
-	// margin.  If you know of a better way to do this, do it!
-	int w = m_searchOptionsArea->minimumWidth();
-	int h = m_searchOptionsArea->minimumHeight() + m_searchResultArea->minimumHeight();
-	mainWidget()->setMinimumSize(w+10, h+100);
-		
-	loadDialogSettings();
 }
 
 void CSearchDialog::searchFinished() {
@@ -223,10 +225,13 @@ void CSearchDialog::showModulesSelector() {
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
 	// Search button is clicked
-	connect(this, SIGNAL(user1Clicked()), SLOT(startSearch()));
+	bool ok = connect(m_searchButton, SIGNAL(pressed()),this, SLOT(startSearch()));
+	Q_ASSERT(ok);
 	// Return/Enter is pressed in the search text field
-	connect(m_searchOptionsArea, SIGNAL(sigStartSearch()), SLOT(startSearch()) );
-	connect(this, SIGNAL(closeClicked()), SLOT(slotClose()));
+	ok = connect(m_searchOptionsArea, SIGNAL(sigStartSearch()), this, SLOT(startSearch()) );
+	Q_ASSERT(ok);
+	ok = connect(m_closeButton, SIGNAL(pressed()), this, SLOT(closeButtonPressed()));
+	Q_ASSERT(ok);
 }
 
 /** Resets the parts to the default. */
@@ -235,12 +240,9 @@ void CSearchDialog::reset() {
 	m_searchResultArea->reset();
 }
 
-/** Reimplementation. */
-void CSearchDialog::slotClose() {
-	//TODO: what to do with this when we move to QDialog?
-	// maybe Qt::WA_DeleteOnClose
-	delayedDestruct();
-	m_staticDialog = 0;
+void CSearchDialog::closeButtonPressed() {
+	// With Qt::WA_DeleteOnClose set, the dialog will be deleted now
+	m_staticDialog->close();
 }
 
 void CSearchDialog::loadDialogSettings()

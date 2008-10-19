@@ -104,6 +104,7 @@ SET(bibletime_SOURCES
 	src/frontend/searchdialog/csearchdialog.cpp
 	src/frontend/searchdialog/csearchresultview.cpp
 	src/frontend/searchdialog/csearchdialogareas.cpp
+	src/frontend/searchdialog/chistorycombobox.cpp
 	src/frontend/searchdialog/cmoduleresultview.cpp
 	src/frontend/searchdialog/csearchmodulechooserdialog.cpp
 	src/frontend/searchdialog/crangechooserdialog.cpp
