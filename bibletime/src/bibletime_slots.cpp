@@ -77,9 +77,7 @@ void BibleTime::slotSettingsOptions() {
 	CConfigurationDialog *dlg = new CConfigurationDialog(this, 0 /*actionCollection()*/);
 	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
-	dlg->exec();
-	dlg->delayedDestruct();
-	// TODO: comment out exec and destruct, use dlg->show();
+	dlg->show();
 }
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */

@@ -15,26 +15,25 @@
 
 //#include "util/cpointers.h"
 
-#include <kpagedialog.h>
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 class KActionCollection;
 class QWidget;
-class KPageWidgetItem;
+class QAbstractButton;
 
 class CDisplaySettingsPage;
 class CSwordSettingsPage;
 class CLanguageSettingsPage;
 class CAcceleratorSettingsPage;
 
-class CConfigurationDialog : public KPageDialog {
+class CConfigurationDialog : public BtConfigDialog {
 	Q_OBJECT
 
 public:
 	CConfigurationDialog(QWidget *parent, KActionCollection* actionCollection);
 	virtual ~CConfigurationDialog();
 protected slots:
-	void slotOk();
-	void slotApply();
+	void slotButtonClicked(QAbstractButton *);
 private:
 	KActionCollection* m_actionCollection;
 	CDisplaySettingsPage* m_displayPage;

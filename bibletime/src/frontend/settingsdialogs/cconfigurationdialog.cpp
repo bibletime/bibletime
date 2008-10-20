@@ -14,54 +14,35 @@
 #include "clanguagesettings.h"
 //#include "cacceleratorsettings.h"
 
-
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
 #include <QWidget>
+#include <QDialogButtonBox>
+#include <QAbstractButton>
 
-#include <kpagedialog.h>
-#include <kpagewidgetmodel.h>
 #include <kactioncollection.h>
 
 
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* actionCollection )
-	: KPageDialog(parent, Qt::Dialog),
+	: BtConfigDialog(parent),
 	  m_actionCollection(actionCollection)
 {
+	setWindowTitle(tr("Configure BibleTime"));
+	setAttribute(Qt::WA_DeleteOnClose);
 	
-	setCaption(tr("Configure BibleTime"));
-	setFaceType(KPageDialog::List);
-	
-	//General buttons
-	setButtons(KDialog::Ok | KDialog::Cancel | KDialog::Apply);
-	connect( this, SIGNAL( applyClicked() ), this, SLOT( slotApply() ) );
-	connect( this, SIGNAL( okClicked() ), this, SLOT( slotOk() ) );
-
 	// Add "Display" page
 	m_displayPage = new CDisplaySettingsPage(this);
-	KPageWidgetItem* displayPage = new KPageWidgetItem(m_displayPage);
-	displayPage->setHeader( tr( "Display" ) );
-	displayPage->setName( tr( "Display" ) );
-	displayPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::startup::icon)) );
-	addPage(displayPage);
+	addPage(m_displayPage);
 
 	// Add "Desk" (sword) page
 	m_swordPage = new CSwordSettingsPage(this);
-	KPageWidgetItem* swordPage = new KPageWidgetItem(m_swordPage);
-	swordPage->setHeader( tr( "Desk" ) );
-	swordPage->setName( tr( "Desk" ) );
-	swordPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::sword::icon)) );
-	addPage(swordPage);
+	addPage(m_swordPage);
 
 	// Add "Languages" (fonts) page
 	m_languagesPage = new CLanguageSettingsPage(this);
-	KPageWidgetItem* langPage = new KPageWidgetItem(m_languagesPage);
-	langPage->setHeader( tr( "Languages" ) );
-	langPage->setName( tr( "Languages" ) );
-	langPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::fonts::icon)) );
-	addPage(langPage);
+	addPage(m_languagesPage);
 
 //	// Add "Keyboard" (accelerators) page
 //	m_acceleratorsPage = new CAcceleratorSettingsPage(this);
@@ -71,33 +52,33 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* 
 //	accelPage->setIcon( KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::settings::keys::icon)) );
 //	addPage(accelPage);
 
+	// Dialog buttons
+	QDialogButtonBox* bbox = new QDialogButtonBox(this);
+	bbox->addButton(QDialogButtonBox::Ok);
+	bbox->addButton(QDialogButtonBox::Apply);
+	bbox->addButton(QDialogButtonBox::Cancel);
+	addButtonBox(bbox);
+	bool ok = connect(bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
+	Q_ASSERT(ok);
 
-	setCurrentPage(displayPage);
-	
+	slotChangePage(0);
 }
 
 CConfigurationDialog::~CConfigurationDialog() {}
 
-/** Called if the OK button was clicked */
-void CConfigurationDialog::slotOk()
+/** Called if any button was clicked*/
+void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 {
-//	m_acceleratorsPage->save();
-	m_languagesPage->save();
-	m_swordPage->save();
-	m_displayPage->save();
+	if (button->text() == "&Cancel")
+		close();
 
-	emit signalSettingsChanged( );
-}
-
-/** Called if the apply button was clicked*/
-void CConfigurationDialog::slotApply()
-{
-	qDebug("CConfigurationDialog::slotApply");
 //	m_acceleratorsPage->save();
 	m_languagesPage->save();
 	m_swordPage->save();
 	m_displayPage->save();
 	emit signalSettingsChanged( );
-	qDebug("CConfigurationDialog::slotApply end");
+
+	if (button->text() == "&OK")
+		close();
 }
 

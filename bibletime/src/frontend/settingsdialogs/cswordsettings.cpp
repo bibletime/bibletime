@@ -32,13 +32,18 @@
 
 
 
-CSwordSettingsPage::CSwordSettingsPage(QWidget* parent)
-	: QTabWidget(parent)
+CSwordSettingsPage::CSwordSettingsPage(QWidget* /*parent*/)
+	: BtConfigPage()
 {
+	QVBoxLayout* vbox = new QVBoxLayout(this);
+	QTabWidget* tabWidget = new QTabWidget();
+	vbox->addWidget(tabWidget);
+	setLayout(vbox);
+
 	m_worksTab = new StandardWorksTab();
 	m_filtersTab = new TextFiltersTab();
-	addTab(m_worksTab, tr("Standard works"));
-	addTab(m_filtersTab, tr("Text filters"));
+	tabWidget->addTab(m_worksTab, tr("Standard works"));
+	tabWidget->addTab(m_filtersTab, tr("Text filters"));
 }
 
 //Standard works tab
@@ -330,6 +335,19 @@ void CSwordSettingsPage::save()
 	m_filtersTab->save();	
 }
 
+QString CSwordSettingsPage::iconName()
+{
+	return CResMgr::settings::sword::icon;
+}
+QString CSwordSettingsPage::label()
+{
+	return tr("");
+}
+QString CSwordSettingsPage::header()
+{
+	return tr("Desk");
+}
+
 void StandardWorksTab::save()
 {
 	for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
@@ -384,3 +402,5 @@ void TextFiltersTab::save()
 	CBTConfig::set(CBTConfig::greekAccents, m_greekAccentsCheck->isChecked());
 	CBTConfig::set(CBTConfig::textualVariants, m_textualVariantsCheck->isChecked());
 }
+
+

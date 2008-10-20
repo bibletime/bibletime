@@ -11,6 +11,7 @@
 #ifndef CDISPLAYSETTINGS_H
 #define CDISPLAYSETTINGS_H
 
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include <QWidget>
 
@@ -18,13 +19,16 @@ class QCheckBox;
 class QComboBox;
 class KHTMLPart;
 
-class CDisplaySettingsPage : public QWidget
+class CDisplaySettingsPage : public BtConfigPage
 {
 	Q_OBJECT
 
 public:
 	CDisplaySettingsPage(QWidget* parent);
 	void save();
+	QString iconName();
+	QString label();
+	QString header();
 
 protected slots:
 	/** Update the style preview widget. */

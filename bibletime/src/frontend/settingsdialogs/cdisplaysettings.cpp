@@ -19,7 +19,6 @@
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 
-
 #include <khtml_part.h>
 #include <khtmlview.h>
 
@@ -30,8 +29,8 @@
 
 
 /** Initializes the startup section of the OD. */
-CDisplaySettingsPage::CDisplaySettingsPage(QWidget* parent)
-	: QWidget(parent)
+CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
+	: BtConfigPage()
 {
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
@@ -160,3 +159,19 @@ void CDisplaySettingsPage::save()
 	CBTConfig::set
 		( CBTConfig::displayStyle, m_styleChooserCombo->currentText() );
 }
+
+// implement the BtConfigPage methods
+
+QString CDisplaySettingsPage::iconName()
+{
+	return CResMgr::settings::startup::icon;
+}
+QString CDisplaySettingsPage::label()
+{
+	return tr("");
+}
+QString CDisplaySettingsPage::header()
+{
+	return tr("Display");
+}
+

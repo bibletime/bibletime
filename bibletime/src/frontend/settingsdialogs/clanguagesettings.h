@@ -15,6 +15,7 @@
 
 #include "util/cpointers.h"
 #include "backend/config/cbtconfig.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include <QWidget>
 #include <QMap>
@@ -27,15 +28,16 @@ class KFontChooser;
 /**
 	@author The BibleTime team <info@bibletime.info>
 */
-class CLanguageSettingsPage : public QWidget, CPointers
+class CLanguageSettingsPage : public BtConfigPage, CPointers
 {
 Q_OBJECT
 public:
     CLanguageSettingsPage(QWidget *parent);
-
     ~CLanguageSettingsPage();
-
 	void save();
+	QString iconName();
+	QString label();
+	QString header();
 
 protected slots:
 	/**

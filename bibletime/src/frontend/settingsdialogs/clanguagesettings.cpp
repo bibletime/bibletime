@@ -34,8 +34,8 @@
 #include <localemgr.h>
 #include <swlocale.h>
 
-CLanguageSettingsPage::CLanguageSettingsPage(QWidget *parent)
- : QWidget(parent)
+CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
+ : BtConfigPage()
 {
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
@@ -256,4 +256,18 @@ void CLanguageSettingsPage::useOwnFontClicked( bool isOn ) {
 	else {    //don't show
 		m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); //TODO: should this change icon to empty?
 	}
+}
+
+
+QString CLanguageSettingsPage::iconName()
+{
+	return CResMgr::settings::fonts::icon;
+}
+QString CLanguageSettingsPage::label()
+{
+	return tr("");
+}
+QString CLanguageSettingsPage::header()
+{
+	return tr("Languages");
 }

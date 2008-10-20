@@ -13,6 +13,7 @@
 #ifndef CSWORDSETTINGS_H
 #define CSWORDSETTINGS_H
 
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include "util/cpointers.h"
 
@@ -25,13 +26,16 @@ class QCheckBox;
 class StandardWorksTab;
 class TextFiltersTab;
 
-class CSwordSettingsPage : public QTabWidget
+class CSwordSettingsPage : public BtConfigPage
 {
 	Q_OBJECT
 
 public:
 	CSwordSettingsPage(QWidget* parent);
 	void save();
+	QString iconName();
+	QString label();
+	QString header();
 
 private:
 	StandardWorksTab* m_worksTab;

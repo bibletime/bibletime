@@ -35,7 +35,6 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 	m_contentsList = new QListWidget(this);
 	m_contentsList->setViewMode(QListView::IconMode);
 	m_contentsList->setMovement(QListView::Static);
-	m_contentsList->setSpacing(m_contentsList->spacing() + 10); //looks better
 
 	m_pageWidget = new QStackedWidget(this);
 	m_pageWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
