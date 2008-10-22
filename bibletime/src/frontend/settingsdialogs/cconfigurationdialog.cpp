@@ -21,13 +21,19 @@
 #include <QWidget>
 #include <QDialogButtonBox>
 #include <QAbstractButton>
+#include <QPushButton>
 
 #include <kactioncollection.h>
 
 
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* actionCollection )
 	: BtConfigDialog(parent),
-	  m_actionCollection(actionCollection)
+	  m_actionCollection(actionCollection),
+	  m_displayPage(0),
+	  m_swordPage(0),
+	  m_acceleratorsPage(0),
+	  m_languagesPage(0),
+	  m_bbox(0)
 {
 	setWindowTitle(tr("Configure BibleTime"));
 	setAttribute(Qt::WA_DeleteOnClose);
@@ -53,12 +59,12 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* 
 //	addPage(accelPage);
 
 	// Dialog buttons
-	QDialogButtonBox* bbox = new QDialogButtonBox(this);
-	bbox->addButton(QDialogButtonBox::Ok);
-	bbox->addButton(QDialogButtonBox::Apply);
-	bbox->addButton(QDialogButtonBox::Cancel);
-	addButtonBox(bbox);
-	bool ok = connect(bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
+	m_bbox = new QDialogButtonBox(this);
+	m_bbox->addButton(QDialogButtonBox::Ok);
+	m_bbox->addButton(QDialogButtonBox::Apply);
+	m_bbox->addButton(QDialogButtonBox::Cancel);
+	addButtonBox(m_bbox);
+	bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
 	Q_ASSERT(ok);
 
 	slotChangePage(0);
@@ -69,7 +75,7 @@ CConfigurationDialog::~CConfigurationDialog() {}
 /** Called if any button was clicked*/
 void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 {
-	if (button->text() == "&Cancel")
+	if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Cancel)))
 		close();
 
 //	m_acceleratorsPage->save();
@@ -78,7 +84,7 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 	m_displayPage->save();
 	emit signalSettingsChanged( );
 
-	if (button->text() == "&OK")
+	if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Ok)))
 		close();
 }
 

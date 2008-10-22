@@ -25,6 +25,7 @@ class CDisplaySettingsPage;
 class CSwordSettingsPage;
 class CLanguageSettingsPage;
 class CAcceleratorSettingsPage;
+class QDialogButtonBox;
 
 class CConfigurationDialog : public BtConfigDialog {
 	Q_OBJECT
@@ -40,6 +41,7 @@ private:
 	CSwordSettingsPage* m_swordPage;
 	CAcceleratorSettingsPage* m_acceleratorsPage;
 	CLanguageSettingsPage* m_languagesPage;
+	QDialogButtonBox* m_bbox;
 
 signals:
 	void signalSettingsChanged();
