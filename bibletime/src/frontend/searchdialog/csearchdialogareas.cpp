@@ -936,7 +936,12 @@ void CSearchOptionsArea::saveSettings() {
 }
 
 void CSearchOptionsArea::readSettings() {
-	m_searchTextCombo->addItems( CBTConfig::get(CBTConfig::searchTexts) );
+	QStringList texts = CBTConfig::get(CBTConfig::searchTexts);
+	for (int i=0; i<texts.size(); i++)
+	{
+		if (texts.at(i).size() > 0)
+			m_searchTextCombo->addItem(texts.at(i));
+	}
 	m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
 	for (int i = 0; i < m_modulesCombo->count(); ++i) {
 		m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);

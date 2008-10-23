@@ -8,6 +8,8 @@
 **********/
 
 #include "chistorycombobox.h"
+#include <QString>
+#include <QCompleter>
 
 namespace Search {
 
@@ -15,6 +17,7 @@ CHistoryComboBox::CHistoryComboBox( QWidget* parent)
 	: QComboBox(parent)
 {
 	setEditable(true);
+	completer()->setCompletionMode(QCompleter::PopupCompletion);
 }
 
 CHistoryComboBox::~CHistoryComboBox()
@@ -35,7 +38,9 @@ QStringList CHistoryComboBox::historyItems() const
 	QStringList items;
 	for (int i=0; i<count(); i++)
 	{
-		items << itemText(i);
+		QString text = itemText(i);
+		if (text.size() > 0)
+			items << text;
 	}
 	return items;
 }
