@@ -58,9 +58,9 @@ void CModuleResultView::initView()
 	// see also csearchresultview.cpp
 	setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
 	setHeaderLabels( QStringList(tr("Work")) << QString(tr("Hits")) );
-	//setFullWidth(true);
-	
-	//  setFullWidth(true);
+
+	setColumnWidth(1, CToolClass::mWidth(this, 4));
+
 	//TODO: sorting
 	//setSorting(0, true);
 	//setSorting(1, true);
