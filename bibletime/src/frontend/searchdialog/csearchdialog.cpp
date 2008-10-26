@@ -96,6 +96,9 @@ void CSearchDialog::startSearch()
 		return;
 	}
 
+	// Insert search text into history list of combobox
+	m_searchOptionsArea->addToHistory(searchText);
+
 	// check that we have the indices we need for searching
 	if (!m_searcher.modulesHaveIndices( modules() ) )	{
 		int result = QMessageBox::question(this, tr("Missing indices"),

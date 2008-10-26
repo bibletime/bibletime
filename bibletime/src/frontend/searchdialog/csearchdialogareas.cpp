@@ -817,6 +817,7 @@ void CSearchOptionsArea::initView()
 	m_searchTextCombo->setProperty("sizeLimit", QVariant(25));
 	m_searchTextCombo->setProperty("duplicatesEnabled", QVariant(false));
 	m_searchTextCombo->setToolTip(tr("The text you want to search for"));
+	m_searchTextCombo->setInsertPolicy(QComboBox::NoInsert);
 	gridLayout->addWidget(m_searchTextCombo, 0, 1);
 	
 	m_modulesLabel = new QLabel(tr("Works:"), searchGroupBox);
@@ -838,9 +839,6 @@ void CSearchOptionsArea::initView()
 
 void CSearchOptionsArea::initConnections()
 {
-	QObject::connect( m_searchTextCombo, SIGNAL(activated( const QString& )),
-				this, SLOT( slotHistoryItemActivated(const QString&) )
-			);
 	QObject::connect( m_searchTextCombo->lineEdit(), SIGNAL(returnPressed ()),
 				this, SLOT( slotSearchTextEditReturnPressed() )
 			);
@@ -1010,15 +1008,15 @@ bool CSearchOptionsArea::hasSearchScope() {
 	return (searchScope().Count() > 0);
 }
 
-void CSearchOptionsArea::slotHistoryItemActivated(const QString& item)
+void CSearchOptionsArea::addToHistory(const QString& text)
 {
-	qDebug("CSearchOptionsArea::slotHistoryItemActivated");
-	m_searchTextCombo->addToHistory( item );
+	m_searchTextCombo->addToHistory(text);
 }
 
 void CSearchOptionsArea::slotSearchTextEditReturnPressed()
 {
 	qDebug("CSearchOptionsArea::slotSearchTextEditReturnPressed");
+	m_searchTextCombo->addToHistory( m_searchTextCombo->currentText() );
 	emit sigStartSearch();
 }
 

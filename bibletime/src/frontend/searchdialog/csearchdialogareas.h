@@ -214,6 +214,10 @@ public:
 
 	CSearchOptionsArea(QWidget *parent=0);
 	~CSearchOptionsArea();
+	/*
+	* Add text to search combox box history
+	*/
+	void addToHistory(const QString& text);
 	/**
 	* Sets the search text used in the page.
 	*/
@@ -289,7 +293,6 @@ public slots: // Public slots
 protected slots: // Protected slots
 	void setupRanges();
 	void syntaxHelp();
-	void slotHistoryItemActivated(const QString& item);
 	void slotSearchTextEditReturnPressed();
 
 signals:
