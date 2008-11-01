@@ -10,7 +10,7 @@
 #ifndef CKEYREFERENCEWIDGET_H
 #define CKEYREFERENCEWIDGET_H
 
-#include "cscrollerwidgetset.h"
+#include "../cscrollerwidgetset.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include <QWidget>

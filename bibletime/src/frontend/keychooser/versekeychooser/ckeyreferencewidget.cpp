@@ -11,7 +11,7 @@
 #include "ckeyreferencewidget.h"
 #include "ckeyreferencewidget.moc"
 
-#include "cscrollerwidgetset.h"
+#include "../cscrollerwidgetset.h"
 
 #include "backend/config/cbtconfig.h"
 

@@ -10,9 +10,9 @@
 #include "cbiblekeychooser.h"
 #include "cbiblekeychooser.moc"
 
-#include "bthistory.h"
+#include "../bthistory.h"
 #include "ckeyreferencewidget.h"
-#include "cscrollbutton.h"
+#include "../cscrollbutton.h"
 
 #include "backend/keys/cswordversekey.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"

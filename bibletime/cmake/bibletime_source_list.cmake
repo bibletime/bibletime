@@ -121,14 +121,15 @@ SET(bibletime_SOURCES
 
 	#frontend keychooser widgets
 	src/frontend/keychooser/ckeychooser.cpp
-	src/frontend/keychooser/cbiblekeychooser.cpp
 	src/frontend/keychooser/cbookkeychooser.cpp
 	src/frontend/keychooser/cbooktreechooser.cpp
 	src/frontend/keychooser/clexiconkeychooser.cpp
 	src/frontend/keychooser/ckeychooserwidget.cpp
-	src/frontend/keychooser/ckeyreferencewidget.cpp
 	src/frontend/keychooser/cscrollerwidgetset.cpp
 	src/frontend/keychooser/cscrollbutton.cpp
+
+	src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp
+	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 
 	src/frontend/keychooser/bthistory.cpp
 	

@@ -13,7 +13,7 @@
 #define CBIBLEKEYCHOOSER_H
 
 
-#include "ckeychooser.h"
+#include "../ckeychooser.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include <QList>
