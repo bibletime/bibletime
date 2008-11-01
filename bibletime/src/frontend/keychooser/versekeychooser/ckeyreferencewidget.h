@@ -72,9 +72,9 @@ protected slots: // Protected slots
 
 	void slotUpdateLock();
 	void slotUpdateUnlock();
-	void slotBookChange(int);
-	void slotChapterChange(int);
-	void slotVerseChange(int);
+	void slotStepBook(int);
+	void slotStepChapter(int);
+	void slotStepVerse(int);
 
 private:
 	friend class CLexiconKeyChooser;
