@@ -64,6 +64,12 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 			m->addAction(QString::number(i));
 		}
 	}
+	if (m_type == Book) {
+		QStringList* booklist = m_ref->m_module->books();
+		foreach (QString bookname, *booklist) {
+			m->addAction(bookname);
+		}
+	}
 	qDebug() << "Added items";
 	QToolButton::mousePressEvent(e);
 }
