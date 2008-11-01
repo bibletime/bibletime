@@ -16,7 +16,7 @@
 class CKeyReferenceWidget;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+* Base class for book/ch/v dropdown list chooser buttons.
 */
 class BtDropdownChooserButton : public QToolButton
 {
@@ -25,17 +25,22 @@ public:
 	BtDropdownChooserButton(CKeyReferenceWidget* ref);
 
 	virtual ~BtDropdownChooserButton() {}
+	/** The item list is constructed here just before the menu is shown.*/
 	virtual void mousePressEvent(QMouseEvent* event);
+	/** Recreates the menu list.*/
 	virtual void newList() = 0;
 public slots:
+	/** When a menu item is selected the key will be changed.*/
 	virtual void slotMenuTriggered(QAction* action) = 0;
 
+	/** Returns the verse reference widget which this button belongs to.*/
 	CKeyReferenceWidget* ref() {return m_ref;}
 
 protected:
 	CKeyReferenceWidget* m_ref;
 };
 
+/** See BtDropdownChooserButton.*/
 class BtBookDropdownChooserButton : public BtDropdownChooserButton
 {
 	Q_OBJECT
@@ -47,6 +52,7 @@ public slots:
 	virtual void slotMenuTriggered(QAction* action);
 };
 
+/** See BtDropdownChooserButton.*/
 class BtChapterDropdownChooserButton : public BtDropdownChooserButton
 {
 public:
@@ -56,6 +62,7 @@ public:
 	virtual void slotMenuTriggered(QAction* action);
 };
 
+/** See BtDropdownChooserButton.*/
 class BtVerseDropdownChooserButton : public BtDropdownChooserButton
 {
 public:
