@@ -79,6 +79,9 @@ protected slots: // Protected slots
 private:
 	friend class CLexiconKeyChooser;
 	friend class BtDropdownChooserButton;
+	friend class BtBookDropdownChooserButton;
+	friend class BtChapterDropdownChooserButton;
+	friend class BtVerseDropdownChooserButton;
 
 	boost::scoped_ptr<CSwordVerseKey> m_key;
 

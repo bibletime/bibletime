@@ -21,17 +21,38 @@ class CKeyReferenceWidget;
 class BtDropdownChooserButton : public QToolButton
 {
 public:
-	enum Type { Book, Chapter, Verse };
+	BtDropdownChooserButton(CKeyReferenceWidget* ref);
 
-	BtDropdownChooserButton(CKeyReferenceWidget* ref, Type type);
-
-	~BtDropdownChooserButton();
+	virtual ~BtDropdownChooserButton() {}
 	virtual void mousePressEvent(QMouseEvent* event);
+	virtual void newList() = 0;
+	CKeyReferenceWidget* ref() {return m_ref;}
 
-private:
+protected:
 	CKeyReferenceWidget* m_ref;
-	Type m_type;
-
 };
 
+class BtBookDropdownChooserButton : public BtDropdownChooserButton
+{
+public:
+	BtBookDropdownChooserButton(CKeyReferenceWidget* ref);
+	~BtBookDropdownChooserButton() {}
+	virtual void newList();
+};
+
+class BtChapterDropdownChooserButton : public BtDropdownChooserButton
+{
+public:
+	BtChapterDropdownChooserButton(CKeyReferenceWidget* ref);
+	~BtChapterDropdownChooserButton() {}
+	virtual void newList();
+};
+
+class BtVerseDropdownChooserButton : public BtDropdownChooserButton
+{
+public:
+	BtVerseDropdownChooserButton(CKeyReferenceWidget* ref);
+	~BtVerseDropdownChooserButton() {}
+	virtual void newList();
+};
 #endif
