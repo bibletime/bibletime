@@ -88,8 +88,9 @@ void BtChapterDropdownChooserButton::newList()
 	}
 }
 
-void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* /*action*/)
+void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action)
 {
+	m_ref->slotChangeChapter(action->text().toInt());
 }
 
 
@@ -108,6 +109,7 @@ void BtVerseDropdownChooserButton::newList()
 	}
 }
 
-void BtVerseDropdownChooserButton::slotMenuTriggered(QAction* /*action*/)
+void BtVerseDropdownChooserButton::slotMenuTriggered(QAction* action)
 {
+	m_ref->slotChangeVerse(action->text().toInt());
 }
