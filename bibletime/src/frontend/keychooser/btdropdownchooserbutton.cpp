@@ -9,11 +9,9 @@
 
 #include "btdropdownchooserbutton.h"
 #include "ckeyreferencewidget.h"
+#include "btversekeymenu.h"
 
-#include <QMenu>
-#include <QTime> //temp
-
-#include <kacceleratormanager.h>
+#include <kacceleratormanager.h> // needed to remove the automatic shortcuts
 
 #include <QDebug>
 
@@ -32,7 +30,7 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 	setPopupMode(QToolButton::InstantPopup);
 	setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
 
-	QMenu* m = new QMenu(this);
+	BtVerseKeyMenu* m = new BtVerseKeyMenu(this);
 	KAcceleratorManager::setNoAccel(m);
 	setMenu(m);
 	QObject::connect(m, SIGNAL(triggered(QAction*)), this, SLOT(slotMenuTriggered(QAction*)));

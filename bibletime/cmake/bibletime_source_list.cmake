@@ -131,6 +131,7 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
+	src/frontend/keychooser/versekeychooser/btversekeymenu.cpp
 
 	src/frontend/keychooser/bthistory.cpp
 	
