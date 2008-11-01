@@ -107,6 +107,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	m_textbox = new CKeyReferenceLineEdit( this );
 	m_textbox->setStyleSheet("QLineEdit{margin:0px;}");
+
 	setKey(key);	// The order of these two functions is important.
 	setModule();
 
