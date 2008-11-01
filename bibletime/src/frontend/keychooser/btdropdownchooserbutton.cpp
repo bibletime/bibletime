@@ -16,11 +16,14 @@
 
 const unsigned int ARROW_HEIGHT = 12;
 
-BtDropdownChooserButton::BtDropdownChooserButton()
- : QToolButton()
+BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
+	: QToolButton(),
+	m_ref(ref)
 {
-	setAutoRaise(true);
-	setArrowType(Qt::DownArrow);
+	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+	
+	setAutoRaise(false);
+	setArrowType(Qt::NoArrow);
 	setFixedHeight(ARROW_HEIGHT);
 	setFocusPolicy(Qt::NoFocus);
 	setPopupMode(QToolButton::InstantPopup);
@@ -32,13 +35,13 @@ BtDropdownChooserButton::BtDropdownChooserButton()
 	//test
 	QMenu* menu = new QMenu(this);
 	setMenu(menu);
-
+	
 }
 
 
 BtDropdownChooserButton::~BtDropdownChooserButton() {}
 
-void BtDropdownChooserButton::mousePressEvent(QMouseEvent*)
+void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 {
 	qDebug("BtDropdownChooserButton::mousePressEvent");
 	//recreate the menu
@@ -46,5 +49,5 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent*)
 	QString ctime = QTime::currentTime().toString();
 	menu()->addAction(ctime);
 	qDebug() << "Added time:" << ctime;
-	
+	QToolButton::mousePressEvent(e);
 }

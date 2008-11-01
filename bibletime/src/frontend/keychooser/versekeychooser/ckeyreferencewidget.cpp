@@ -12,6 +12,7 @@
 #include "ckeyreferencewidget.moc"
 
 #include "../cscrollerwidgetset.h"
+#include "btdropdownchooserbutton.h"
 
 #include "backend/config/cbtconfig.h"
 
@@ -36,14 +37,15 @@
 
 
 /* Override the completion box for our references */
-CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod) : 
-	KCompletion(),
+CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod)
+	: KCompletion(),
 	m_key(new CSwordVerseKey(mod))
 {
 	m_module = mod;
 }
 
-QString CKeyReferenceCompletion::makeCompletion(const QString &text) {
+QString CKeyReferenceCompletion::makeCompletion(const QString &text)
+{
 	if(!text.isEmpty() && m_key->key(text)) {
 		// XXX: key() does not check bounds properly if we only have eg the NT.
 		return m_key->key();
@@ -54,10 +56,10 @@ QString CKeyReferenceCompletion::makeCompletion(const QString &text) {
 
 //**********************************************************************************/
 /* To get popup working we have to rework KLineEdit too */
-CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char* /*name*/) : KLineEdit(parent) {
-}
+CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char* /*name*/) : KLineEdit(parent) {}
 
-void CKeyReferenceLineEdit::makeCompletion(const QString &text) {
+void CKeyReferenceLineEdit::makeCompletion(const QString &text)
+{
 	KCompletion *comp = compObj();
 	KGlobalSettings::Completion mode = completionMode();
 
@@ -96,33 +98,44 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	setFocusPolicy(Qt::WheelFocus);
 
 	QToolButton* clearRef = new QToolButton(this);
-	clearRef->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_clear_locationbar.svg"));
+	clearRef->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_clear_locationbar"));
 	clearRef->setAutoRaise(true);
+	clearRef->setStyleSheet("QToolButton{margin:0px;}");
 	connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );
 
 	m_bookScroller = new CScrollerWidgetSet(this);
 
 	m_textbox = new CKeyReferenceLineEdit( this );
+	m_textbox->setStyleSheet("QLineEdit{margin:0px;}");
 	setKey(key);	// The order of these two functions is important.
 	setModule();
 
 	m_chapterScroller = new CScrollerWidgetSet(this);
 	m_verseScroller = new CScrollerWidgetSet(this);
 
-	m_bookDropdownButton = new QToolButton(this);
-	m_bookDropdownButton = new QToolButton(this);
-	m_bookDropdownButton = new QToolButton(this);
+	m_bookDropdownButton = new BtBookDropdownChooserButton(this);
+	m_chapterDropdownButton = new BtChapterDropdownChooserButton(this);
+	m_verseDropdownButton = new BtVerseDropdownChooserButton(this);
 
-	//QHBoxLayout* dropdownButtonsLayout = new QHBoxLayout();
-	//QVBoxLayout* editorAndButtonsLayout = new QVBoxLayout();
+	QHBoxLayout* dropdownButtonsLayout = new QHBoxLayout();
+	QVBoxLayout* editorAndButtonsLayout = new QVBoxLayout();
+	dropdownButtonsLayout->setContentsMargins(0,0,0,0);
+	editorAndButtonsLayout->setContentsMargins(0,0,0,0);
+	dropdownButtonsLayout->setSpacing(0);
+	editorAndButtonsLayout->setSpacing(0);
 	
+	dropdownButtonsLayout->addWidget(m_bookDropdownButton, 2);
+	dropdownButtonsLayout->addWidget(m_chapterDropdownButton,1);
+	dropdownButtonsLayout->addWidget(m_verseDropdownButton,1);
+	editorAndButtonsLayout->addWidget(m_textbox);
+	editorAndButtonsLayout->addLayout(dropdownButtonsLayout);
 
 	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
 	m_mainLayout->setContentsMargins(0,0,0,0);
 	m_mainLayout->setSpacing(0);
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
-	m_mainLayout->addWidget(m_textbox);
+	m_mainLayout->addLayout(editorAndButtonsLayout);
 	m_mainLayout->addWidget(m_chapterScroller);
 	m_mainLayout->addWidget(m_verseScroller);
 
@@ -148,19 +161,20 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	// signals and slots connections
 
-	connect(m_bookScroller, SIGNAL(change(int)), SLOT(slotBookChange(int)));
+	connect(m_bookScroller, SIGNAL(change(int)), SLOT(slotStepBook(int)));
 	connect(m_bookScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
 	connect(m_bookScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
 	connect(m_textbox, SIGNAL(returnPressed()), SLOT(slotReturnPressed()));
-	connect(m_chapterScroller, SIGNAL(change(int)), SLOT(slotChapterChange(int)));
+	connect(m_chapterScroller, SIGNAL(change(int)), SLOT(slotStepChapter(int)));
 	connect(m_chapterScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
 	connect(m_chapterScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
-	connect(m_verseScroller, SIGNAL(change(int)), SLOT(slotVerseChange(int)));
+	connect(m_verseScroller, SIGNAL(change(int)), SLOT(slotStepVerse(int)));
 	connect(m_verseScroller, SIGNAL(scroller_pressed()), SLOT(slotUpdateLock()));
 	connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
 }
 
-void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
+void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m)
+{
 	if (m) //can be null
 	{
 		m_module = m;
@@ -174,16 +188,19 @@ void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m) {
 	m_textbox->setCompletionMode(KGlobalSettings::CompletionPopup);
 }
 
-void CKeyReferenceWidget::slotClearRef( ) {
+void CKeyReferenceWidget::slotClearRef( )
+{
 	m_textbox->setText("");
 	m_textbox->setFocus();
 }
 
-void CKeyReferenceWidget::updateText() {
+void CKeyReferenceWidget::updateText()
+{
 	m_textbox->setText(m_key->key());
 }
 
-bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
+bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
+{
 	if (!key) return false;
 	
 	m_key->key(key->key());
@@ -191,11 +208,13 @@ bool CKeyReferenceWidget::setKey(CSwordVerseKey *key) {
 	return true;
 }
 
-KLineEdit* CKeyReferenceWidget::textbox() {
+KLineEdit* CKeyReferenceWidget::textbox()
+{
 	return m_textbox;
 }
 
-void CKeyReferenceWidget::slotReturnPressed() {
+void CKeyReferenceWidget::slotReturnPressed()
+{
 	m_key->key(m_textbox->text());
 	updateText();
 	
@@ -203,33 +222,69 @@ void CKeyReferenceWidget::slotReturnPressed() {
 }
 
 /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
-void CKeyReferenceWidget::slotUpdateLock() {
+void CKeyReferenceWidget::slotUpdateLock()
+{
 	updatelock = true;
 	oldKey = m_key->key();
 }
 
-void CKeyReferenceWidget::slotUpdateUnlock() {
+void CKeyReferenceWidget::slotUpdateUnlock()
+{
 	updatelock = false;
 	if (oldKey != m_key->key()) emit changed(m_key.get());
 }
 
-void CKeyReferenceWidget::slotBookChange(int n) {
+void CKeyReferenceWidget::slotStepBook(int n)
+{
 	n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
 	updateText();
 	if (!updatelock) emit changed(m_key.get());
 }
 
-void CKeyReferenceWidget::slotChapterChange(int n) {
+void CKeyReferenceWidget::slotStepChapter(int n)
+{
 	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
 	updateText();
 	if (!updatelock) emit changed(m_key.get());	
 }
 
-void CKeyReferenceWidget::slotVerseChange(int n) {
+void CKeyReferenceWidget::slotStepVerse(int n)
+{
 	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
 	updateText();
 	if (!updatelock) emit changed(m_key.get());
 }
 
-CKeyReferenceCompletion::~CKeyReferenceCompletion(){
+
+void CKeyReferenceWidget::slotChangeVerse(int n)
+{
+	if (m_key->Verse() != n) {
+		m_key->Verse( n );
+		setKey( m_key.get() );
+	}
+	updateText();
+	if (!updatelock) emit changed(m_key.get());
 }
+
+void CKeyReferenceWidget::slotChangeChapter(int n)
+{
+	if (m_key->Chapter() != n) {
+		m_key->Chapter( n );
+		setKey( m_key.get() );
+	}
+	updateText();
+	if (!updatelock) emit changed(m_key.get());
+}
+
+void CKeyReferenceWidget::slotChangeBook(QString bookname)
+{
+	if (m_key->book() != bookname) {
+		m_key->book( bookname );
+		setKey( m_key.get() );
+	}
+	updateText();
+	if (!updatelock) emit changed(m_key.get());
+}
+
+
+CKeyReferenceCompletion::~CKeyReferenceCompletion(){}

@@ -28,9 +28,6 @@ CScrollerWidgetSet::CScrollerWidgetSet(QWidget *parent) : QWidget(parent) {
 	m_layout->setContentsMargins(0,0,0,0);
 	m_layout->setAlignment(this, Qt::AlignHCenter | Qt::AlignCenter);
 
-	//setAlignment(Qt::AlignHCenter | Qt::AlignCenter);
-
-	//TODO: old constructor gave "name" argument, is that needed? "btn_up" etc.
 	btn_up = new QToolButton(this);
 	btn_up->setArrowType(Qt::UpArrow);
 	

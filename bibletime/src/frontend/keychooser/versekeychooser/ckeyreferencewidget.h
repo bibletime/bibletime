@@ -23,7 +23,7 @@
 
 class CLexiconKeyChooser;
 class CSwordVerseKey;
-
+class BtDropdownChooserButton;
 
 
 class CKeyReferenceCompletion : public KCompletion {
@@ -78,6 +78,8 @@ protected slots: // Protected slots
 
 private:
 	friend class CLexiconKeyChooser;
+	friend class BtDropdownChooserButton;
+
 	boost::scoped_ptr<CSwordVerseKey> m_key;
 
 	CKeyReferenceLineEdit *m_textbox;
@@ -85,9 +87,9 @@ private:
 	CScrollerWidgetSet *m_chapterScroller;
 	CScrollerWidgetSet *m_verseScroller;
 
-	QToolButton* m_bookDropdownButton;
-	QToolButton* m_chapterDropdownButton;
-	QToolButton* m_verseDropdownButton;
+	BtDropdownChooserButton* m_bookDropdownButton;
+	BtDropdownChooserButton* m_chapterDropdownButton;
+	BtDropdownChooserButton* m_verseDropdownButton;
 
 	bool updatelock;
 	QString oldKey;

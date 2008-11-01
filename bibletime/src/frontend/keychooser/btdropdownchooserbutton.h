@@ -10,7 +10,10 @@
 #ifndef BTDROPDOWNCHOOSERBUTTON_H
 #define BTDROPDOWNCHOOSERBUTTON_H
 
+
 #include <QToolButton>
+
+class CKeyReferenceWidget;
 
 /**
 	@author The BibleTime team <info@bibletime.info>
@@ -18,10 +21,16 @@
 class BtDropdownChooserButton : public QToolButton
 {
 public:
-    BtDropdownChooserButton();
+	enum Type { Book, Chapter, Verse };
 
-    ~BtDropdownChooserButton();
+	BtDropdownChooserButton(CKeyReferenceWidget* ref);
+
+	~BtDropdownChooserButton();
 	virtual void mousePressEvent(QMouseEvent* event);
+
+private:
+	CKeyReferenceWidget* m_ref;
+
 };
 
 #endif
