@@ -13,6 +13,8 @@
 #include <QMenu>
 #include <QTime> //temp
 
+#include <kacceleratormanager.h>
+
 #include <QDebug>
 
 const unsigned int ARROW_HEIGHT = 12;
@@ -28,15 +30,13 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 	setFixedHeight(ARROW_HEIGHT);
 	setFocusPolicy(Qt::NoFocus);
 	setPopupMode(QToolButton::InstantPopup);
-	setStyleSheet("QToolButton{margin-width:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
-	//does this need new class? can the menu be updated with standard signals/slots?
-	//add menu later
-	//populate menu, connect each menu Action to a slot which reads the text and changes the book/chapter/verse
+	setStyleSheet("QToolButton{margin:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
 
-	//test
-	QMenu* menu = new QMenu(this);
-	setMenu(menu);
-	
+	QMenu* m = new QMenu(this);
+	KAcceleratorManager::setNoAccel(m);
+	setMenu(m);
+	QObject::connect(m, SIGNAL(triggered(QAction*)), this, SLOT(slotMenuTriggered(QAction*)));
+
 }
 
 
@@ -54,7 +54,7 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 BtBookDropdownChooserButton::BtBookDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
-	setToolTip(tr("Select book"));
+	setToolTip(tr("Select book"));	
 }
 
 void BtBookDropdownChooserButton::newList()
@@ -66,6 +66,11 @@ void BtBookDropdownChooserButton::newList()
 	}
 }
 
+void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action)
+{
+	qDebug() << "BtBookDropdownChooserButton::slotMenuTriggered" << action->text();
+	m_ref->slotChangeBook(action->text());
+}
 
 
 BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(CKeyReferenceWidget* ref)
@@ -83,6 +88,9 @@ void BtChapterDropdownChooserButton::newList()
 	}
 }
 
+void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* /*action*/)
+{
+}
 
 
 BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(CKeyReferenceWidget* ref)
@@ -98,4 +106,8 @@ void BtVerseDropdownChooserButton::newList()
 	for (int i = 1; i <= count; i++) {
 		m->addAction(QString::number(i));
 	}
+}
+
+void BtVerseDropdownChooserButton::slotMenuTriggered(QAction* /*action*/)
+{
 }

@@ -20,12 +20,16 @@ class CKeyReferenceWidget;
 */
 class BtDropdownChooserButton : public QToolButton
 {
+	Q_OBJECT
 public:
 	BtDropdownChooserButton(CKeyReferenceWidget* ref);
 
 	virtual ~BtDropdownChooserButton() {}
 	virtual void mousePressEvent(QMouseEvent* event);
 	virtual void newList() = 0;
+public slots:
+	virtual void slotMenuTriggered(QAction* action) = 0;
+
 	CKeyReferenceWidget* ref() {return m_ref;}
 
 protected:
@@ -34,10 +38,13 @@ protected:
 
 class BtBookDropdownChooserButton : public BtDropdownChooserButton
 {
+	Q_OBJECT
 public:
 	BtBookDropdownChooserButton(CKeyReferenceWidget* ref);
 	~BtBookDropdownChooserButton() {}
 	virtual void newList();
+public slots:
+	virtual void slotMenuTriggered(QAction* action);
 };
 
 class BtChapterDropdownChooserButton : public BtDropdownChooserButton
@@ -46,6 +53,7 @@ public:
 	BtChapterDropdownChooserButton(CKeyReferenceWidget* ref);
 	~BtChapterDropdownChooserButton() {}
 	virtual void newList();
+	virtual void slotMenuTriggered(QAction* action);
 };
 
 class BtVerseDropdownChooserButton : public BtDropdownChooserButton
@@ -54,5 +62,6 @@ public:
 	BtVerseDropdownChooserButton(CKeyReferenceWidget* ref);
 	~BtVerseDropdownChooserButton() {}
 	virtual void newList();
+	virtual void slotMenuTriggered(QAction* action);
 };
 #endif

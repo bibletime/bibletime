@@ -75,6 +75,9 @@ protected slots: // Protected slots
 	void slotStepBook(int);
 	void slotStepChapter(int);
 	void slotStepVerse(int);
+	void slotChangeBook(QString bookname);
+	void slotChangeChapter(int chapter);
+	void slotChangeVerse(int verse);
 
 private:
 	friend class CLexiconKeyChooser;
