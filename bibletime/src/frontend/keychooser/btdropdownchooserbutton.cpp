@@ -28,7 +28,7 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 	setFixedHeight(ARROW_HEIGHT);
 	setFocusPolicy(Qt::NoFocus);
 	setPopupMode(QToolButton::InstantPopup);
-	setStyleSheet("QToolButton{margin-width:0px;}QToolButton::menu-indicator {subcontrol-origin: padding;subcontrol-position: center center;}");
+	setStyleSheet("QToolButton{margin-width:0px;}QToolButton::menu-indicator{subcontrol-position: center center;}");
 	//does this need new class? can the menu be updated with standard signals/slots?
 	//add menu later
 	//populate menu, connect each menu Action to a slot which reads the text and changes the book/chapter/verse
@@ -42,12 +42,11 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 
 void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 {
-	qDebug("BtDropdownChooserButton::mousePressEvent");
+	//qDebug("BtDropdownChooserButton::mousePressEvent");
 	//recreate the menu
 	menu()->clear();
 	this->newList();
-	//menu()->setStyleSheet("QMenu { border-width: 0px;padding:0px;margin:0px;} ");
-	qDebug() << menu()->styleSheet();
+
 	QToolButton::mousePressEvent(e);
 }
 
@@ -55,7 +54,7 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 BtBookDropdownChooserButton::BtBookDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
-	// set tooltip
+	setToolTip(tr("Select book"));
 }
 
 void BtBookDropdownChooserButton::newList()
@@ -72,8 +71,7 @@ void BtBookDropdownChooserButton::newList()
 BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
-	// set tooltip
-	menu()->setStyleSheet("QMenu { border-width: 0px;padding:0px;margin:0px;} QMenu::item{background-color: blue;}  ");
+	setToolTip(tr("Select chapter"));
 }
 
 void BtChapterDropdownChooserButton::newList()
@@ -90,7 +88,7 @@ void BtChapterDropdownChooserButton::newList()
 BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
-	// set tooltip
+	setToolTip(tr("Select verse"));
 }
 
 void BtVerseDropdownChooserButton::newList()
