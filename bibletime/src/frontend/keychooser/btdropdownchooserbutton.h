@@ -23,13 +23,14 @@ class BtDropdownChooserButton : public QToolButton
 public:
 	enum Type { Book, Chapter, Verse };
 
-	BtDropdownChooserButton(CKeyReferenceWidget* ref);
+	BtDropdownChooserButton(CKeyReferenceWidget* ref, Type type);
 
 	~BtDropdownChooserButton();
 	virtual void mousePressEvent(QMouseEvent* event);
 
 private:
 	CKeyReferenceWidget* m_ref;
+	Type m_type;
 
 };
 
