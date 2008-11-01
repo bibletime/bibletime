@@ -127,6 +127,7 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/ckeychooserwidget.cpp
 	src/frontend/keychooser/cscrollerwidgetset.cpp
 	src/frontend/keychooser/cscrollbutton.cpp
+	src/frontend/keychooser/btdropdownchooserbutton.cpp
 
 	src/frontend/keychooser/versekeychooser/cbiblekeychooser.cpp
 	src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp

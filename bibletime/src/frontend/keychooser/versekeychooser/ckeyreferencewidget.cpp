@@ -109,6 +109,14 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_chapterScroller = new CScrollerWidgetSet(this);
 	m_verseScroller = new CScrollerWidgetSet(this);
 
+	m_bookDropdownButton = new QToolButton(this);
+	m_bookDropdownButton = new QToolButton(this);
+	m_bookDropdownButton = new QToolButton(this);
+
+	//QHBoxLayout* dropdownButtonsLayout = new QHBoxLayout();
+	//QVBoxLayout* editorAndButtonsLayout = new QVBoxLayout();
+	
+
 	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
 	m_mainLayout->setContentsMargins(0,0,0,0);
 	m_mainLayout->setSpacing(0);
