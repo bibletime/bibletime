@@ -29,15 +29,16 @@ public:
 	virtual void mousePressEvent(QMouseEvent* event);
 	/** Recreates the menu list.*/
 	virtual void newList() = 0;
+	/** Returns the verse reference widget which this button belongs to.*/
+	CKeyReferenceWidget* ref() {return m_ref;}
 public slots:
 	/** When a menu item is selected the key will be changed.*/
 	virtual void slotMenuTriggered(QAction* action) = 0;
-
-	/** Returns the verse reference widget which this button belongs to.*/
-	CKeyReferenceWidget* ref() {return m_ref;}
-
 protected:
 	CKeyReferenceWidget* m_ref;
+	void wheelEvent(QWheelEvent* event);
+signals:
+	void stepItem(int step);
 };
 
 /** See BtDropdownChooserButton.*/
@@ -55,20 +56,24 @@ public slots:
 /** See BtDropdownChooserButton.*/
 class BtChapterDropdownChooserButton : public BtDropdownChooserButton
 {
+	Q_OBJECT
 public:
 	BtChapterDropdownChooserButton(CKeyReferenceWidget* ref);
 	~BtChapterDropdownChooserButton() {}
 	virtual void newList();
+public slots:
 	virtual void slotMenuTriggered(QAction* action);
 };
 
 /** See BtDropdownChooserButton.*/
 class BtVerseDropdownChooserButton : public BtDropdownChooserButton
 {
+	Q_OBJECT
 public:
 	BtVerseDropdownChooserButton(CKeyReferenceWidget* ref);
 	~BtVerseDropdownChooserButton() {}
 	virtual void newList();
+public slots:
 	virtual void slotMenuTriggered(QAction* action);
 };
 #endif

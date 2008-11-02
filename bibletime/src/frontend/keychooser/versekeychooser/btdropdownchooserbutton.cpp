@@ -13,6 +13,7 @@
 
 #include <kacceleratormanager.h> // needed to remove the automatic shortcuts
 
+#include <QWheelEvent>
 #include <QDebug>
 
 const unsigned int ARROW_HEIGHT = 12;
@@ -34,7 +35,6 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 	KAcceleratorManager::setNoAccel(m);
 	setMenu(m);
 	QObject::connect(m, SIGNAL(triggered(QAction*)), this, SLOT(slotMenuTriggered(QAction*)));
-
 }
 
 
@@ -48,11 +48,28 @@ void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e)
 	QToolButton::mousePressEvent(e);
 }
 
+void BtDropdownChooserButton::wheelEvent(QWheelEvent* e)
+{
+	// The problem is, that wheel events do everytime have the delta value 120
+	const int vchange = ((e->delta() > 0) ? (-1) : (1));
+
+	if (vchange!=0) {//do not emit a change with value 0
+		emit stepItem(vchange);
+		e->accept();
+	}
+	else {
+		e->ignore();
+	}
+}
+
+
+//******************Book dropdown button*************************************/
 
 BtBookDropdownChooserButton::BtBookDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
-	setToolTip(tr("Select book"));	
+	setToolTip(tr("Select book"));
+	QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepBook(int)));
 }
 
 void BtBookDropdownChooserButton::newList()
@@ -71,10 +88,13 @@ void BtBookDropdownChooserButton::slotMenuTriggered(QAction* action)
 }
 
 
+//****************** Chapter dropdown button *************************************/
+
 BtChapterDropdownChooserButton::BtChapterDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
 	setToolTip(tr("Select chapter"));
+	QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepChapter(int)));
 }
 
 void BtChapterDropdownChooserButton::newList()
@@ -92,10 +112,13 @@ void BtChapterDropdownChooserButton::slotMenuTriggered(QAction* action)
 }
 
 
+//****************** Verse dropdown button *************************************/
+
 BtVerseDropdownChooserButton::BtVerseDropdownChooserButton(CKeyReferenceWidget* ref)
 	: BtDropdownChooserButton(ref)
 {
 	setToolTip(tr("Select verse"));
+	QObject::connect(this, SIGNAL(stepItem(int)), m_ref, SLOT(slotStepVerse(int)));
 }
 
 void BtVerseDropdownChooserButton::newList()
