@@ -21,7 +21,7 @@
 
 #include "bthistory.h"
 #include "clexiconkeychooser.h"
-#include "cbiblekeychooser.h"
+#include "versekeychooser/cbiblekeychooser.h"
 #include "cbookkeychooser.h"
 
 #include <QAction>
