@@ -54,6 +54,9 @@ signals:
 	void scroller_released();
 
 protected:
+
+	virtual void wheelEvent( QWheelEvent* e );
+
 	QToolButton* btn_up;
 	QToolButton* btn_down;
 	CScrollButton* btn_fx;

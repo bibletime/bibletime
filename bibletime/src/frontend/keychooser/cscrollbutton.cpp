@@ -84,21 +84,3 @@ void CScrollButton::mouseMoveEvent( QMouseEvent* e ) {
 		QToolButton::mouseMoveEvent(e);
 	}
 }
-
-
-
-/** If the wheel of the mouse is used while the mouse stays over our scrollbutton the content is  scrolled like the mouse was pressed and moved. */
-void CScrollButton::wheelEvent( QWheelEvent* e ) {
-	/**
-	* The problem is, that wheel events do everytime have the delta value 120
-	*/
-	const int vchange = ((e->delta() > 0) ? (1) : (-1));
-
-	if (vchange!=0) {//do not emit a change with value 0
-		emit change_requested( vchange );
-		e->accept();
-	}
-	else {
-		e->ignore();
-	}
-}

@@ -17,6 +17,7 @@
 #include <QString>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <QWheelEvent>
 
 const unsigned int WIDTH = 16;
 const unsigned int ARROW_HEIGHT = 12;
@@ -62,6 +63,22 @@ void CScrollerWidgetSet::setToolTips( const QString nextEntryTip, const QString 
 	btn_fx->setToolTip(scrollButtonTip);
 	btn_down->setToolTip(nextEntryTip);
 	btn_up->setToolTip(previousEntryTip);
+}
+
+
+void CScrollerWidgetSet::wheelEvent( QWheelEvent* e ) {
+	/**
+	* The problem is, that wheel events do everytime have the delta value 120
+	*/
+	const int vchange = ((e->delta() > 0) ? (-1) : (1));
+
+	if (vchange!=0) {//do not emit a change with value 0
+		emit change(vchange);
+		e->accept();
+	}
+	else {
+		e->ignore();
+	}
 }
 
 void CScrollerWidgetSet::slotLock() { emit scroller_pressed(); }

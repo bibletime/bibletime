@@ -70,11 +70,6 @@ protected:
 	* @return the lock point
 	*/
 	const QPoint get_lock_Point() const;
-	/**
-	* If the wheel of the mouse is used while the mouse stays over our scrollbutton the content is
-	* scrolled like the mouse was pressed and moved.
-	*/
-	virtual void wheelEvent( QWheelEvent* e );
 
 private:
 	/**
