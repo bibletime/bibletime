@@ -33,7 +33,7 @@ CScrollButton::CScrollButton(QWidget *parent) : QToolButton(parent) {
 	connect(this, SIGNAL(released()), SLOT(was_released()));
 }
 
-const bool CScrollButton::isLocked( ) const {
+bool CScrollButton::isLocked( ) const {
 	return m_isLocked;
 }
 

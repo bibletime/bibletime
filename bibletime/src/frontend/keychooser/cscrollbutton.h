@@ -31,7 +31,7 @@ public:
 	* The constructor
 	*/
 	CScrollButton(QWidget *parent=0);
-	const bool isLocked() const;
+	bool isLocked() const;
 
 signals:
 	/**

@@ -73,7 +73,7 @@ CSwordKey* CLexiconKeyChooser::key() {
 void CLexiconKeyChooser::setKey(CSwordKey* key)
 {
 	qDebug("CLexiconKeyChooser::setKey");
-	
+
 	if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
 		return;
 	}
@@ -98,7 +98,7 @@ void CLexiconKeyChooser::activated(int index) {
 	//  qWarning("activated end");
 }
 
-inline const bool my_cmpEntries(const QString& a, const QString& b) {
+inline bool my_cmpEntries(const QString& a, const QString& b) {
 	return a < b;
 }
 
