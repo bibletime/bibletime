@@ -52,7 +52,7 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
 	QTextEdit::setText(text);
 }
 
-const bool CPlainWriteDisplay::hasSelection() {
+bool CPlainWriteDisplay::hasSelection() {
 	//TODO: test this
 	return textCursor().hasSelection();
 }
@@ -75,7 +75,7 @@ void CPlainWriteDisplay::setModified( const bool modified ) {
 }
 
 /** Reimplementation. */
-const bool CPlainWriteDisplay::isModified() const {
+bool CPlainWriteDisplay::isModified() const {
 	return document()->isModified();
 }
 
@@ -142,7 +142,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e )
 		BTMimeData::ItemList items = mimedata->bookmarks();
 		BTMimeData::ItemList::iterator it;
 		for (it = items.begin(); it != items.end(); ++it) {
-			
+
 			CSwordModuleInfo* module = backend()->findModuleByName((*it).module());
 			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 			key->key( (*it).key() );

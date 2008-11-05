@@ -36,7 +36,7 @@ public:
 	*/
 	virtual void applyProfileSettings( Profile::CProfileWindow* );
 
-	virtual const bool syncAllowed() const;
+	virtual bool syncAllowed() const;
 
 protected: // Protected methods
 	/**
@@ -45,7 +45,7 @@ protected: // Protected methods
 	virtual void initView();
 	virtual void initConnections();
 	virtual void initToolbars();
-	virtual const CDisplayWindow::WriteWindowType writeWindowType() {
+	virtual CDisplayWindow::WriteWindowType writeWindowType() {
 		return CDisplayWindow::HTMLWindow;
 	};
 

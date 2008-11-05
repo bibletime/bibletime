@@ -37,7 +37,7 @@ CBookmarkIndex* CIndexItemBase::treeWidget() const {
 	return dynamic_cast<CBookmarkIndex*>( QTreeWidgetItem::treeWidget() );
 }
 
-const bool CIndexItemBase::isFolder() {
+bool CIndexItemBase::isFolder() {
 	return false;
 }
 
@@ -67,13 +67,13 @@ void CIndexItemBase::moveAfter( CIndexItemBase* const item )
 }
 
 /** Returns true if the given action should be enabled in the popup menu. */
-const bool CIndexItemBase::enableAction( const MenuAction /*action*/ )
+bool CIndexItemBase::enableAction( const MenuAction /*action*/ )
 {
 	return false; //this base class has no valid actions
 }
 
 /** No descriptions */
-const bool CIndexItemBase::isMovable()
+bool CIndexItemBase::isMovable()
 {
 	return false;
 }
@@ -108,7 +108,7 @@ void CIndexItemBase::droppedItem( QDropEvent* /*e*/, QTreeWidgetItem* /*after*/)
 {
 }
 
-const bool CIndexItemBase::allowAutoOpen( const QMimeData* ) const
+bool CIndexItemBase::allowAutoOpen( const QMimeData* ) const
 {
 	return false;
 }

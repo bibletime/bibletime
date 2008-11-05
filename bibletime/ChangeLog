@@ -1,3 +1,6 @@
+2008-11-05 Martin Gruner <mgruner@crosswire.org>
+	* more const modifier fixes in various sources to improve standards conformity
+
 2008-09-12 Martin Gruner <mgruner@crosswire.org>
 	* Bugfixes to the cmake build framework (with MacOS contributions by Greg Hellings)
 	* const modifier fixes in various sources to improve standards conformity by Eeli

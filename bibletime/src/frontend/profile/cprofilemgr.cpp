@@ -57,8 +57,7 @@ CProfile* CProfileMgr::create( const QString name ) {
 }
 
 /** Removes the profile from the list and from the directory containg the profile files. */
-const bool CProfileMgr::remove
-	( CProfile* p )
+bool CProfileMgr::remove( CProfile* p )
 {
 	bool ret = false;
 	QFile f( p->filename() );
@@ -68,13 +67,12 @@ const bool CProfileMgr::remove
 	int i = m_profiles.indexOf(p);
 	if (i != -1)
 		delete m_profiles.takeAt(i);
-	
+
 	ret = true;
 	return ret;
 }
 
-const bool CProfileMgr::remove
-	( const QString& profile)
+bool CProfileMgr::remove( const QString& profile)
 {
 	bool ret = false;
 	QListIterator<CProfile*> it(m_profiles);

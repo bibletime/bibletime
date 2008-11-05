@@ -37,7 +37,7 @@ public: // Public methods
 	/**
 	* Returns true if the current text was modified.
 	*/
-	virtual const bool isModified() const = 0;
+	virtual bool isModified() const = 0;
 	/**
 	* Returns the text of this edit widget.
 	*/

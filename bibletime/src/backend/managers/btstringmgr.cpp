@@ -46,7 +46,7 @@ bool BTStringMgr::supportsUnicode() const {
 	return true;
 }
 
-const bool BTStringMgr::isUtf8(const char *buf) const {
+bool BTStringMgr::isUtf8(const char *buf) const {
 	int i, n;
 	register unsigned char c;
 	bool gotone = false;

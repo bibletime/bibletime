@@ -18,7 +18,7 @@
 
 /**
  * This is the CModuleInfo imlementation for Bible modules managed by Sword.
- * 
+ *
  * @short Implementation for Sword Bibles
   * @author The BibleTime team
   * @version $Id: cswordbiblemoduleinfo.h,v 1.18 2006/02/25 11:38:15 joachim Exp $
@@ -50,7 +50,7 @@ public:
 	* @param chapter The chapter we should use
 	* @return The number of verses for the given book and chapter
 	*/
-	virtual const unsigned int verseCount( const unsigned int book, const unsigned int chapter );
+	virtual unsigned int verseCount( const unsigned int book, const unsigned int chapter );
 	/**
 	* Returns the number of avalable verses for the given chapter and book.
 	*
@@ -58,32 +58,32 @@ public:
 	* @param chapter The number of the chapter we use
 	* @return The number of verses for the given book and chapter
 	*/
-	virtual const unsigned int verseCount( const QString& book, const unsigned int chapter );
+	virtual unsigned int verseCount( const QString& book, const unsigned int chapter );
 	/** Information about the chapters in a book.
 	* @return The number of available chapters of the given book.
 	* @return The number of chapters for the given book
 	*/
-	virtual const unsigned int chapterCount( const unsigned int book );
+	virtual unsigned int chapterCount( const unsigned int book );
 	/** Information about the chapters in a book.
 	* @return The number of available chapters of the given book.
 	*/
-	virtual const unsigned int chapterCount( const QString& book );
+	virtual unsigned int chapterCount( const QString& book );
 	/** Return all book of this module.
 	* @return A QStringList containing the books which are available in this module.
 	*/
-	virtual QStringList* const books();
+	virtual QStringList* books();
 	/**
 	* Reimplementation, Returns the type
 	*/
-	virtual const CSwordModuleInfo::ModuleType type() const;
+	virtual CSwordModuleInfo::ModuleType type() const;
 	/**
 	* @return the book number, values starting with 1; 0 if not found
 	*/
-	const unsigned int bookNumber(const QString &book);
+	unsigned int bookNumber(const QString &book);
 	/**
 	* Returns true if his module has the text of desired type of testament
 	*/
-	const bool hasTestament( CSwordBibleModuleInfo::Testament );
+	bool hasTestament( CSwordBibleModuleInfo::Testament );
 	/** Reimplementation to clone this object. */
 	virtual CSwordModuleInfo* clone();
 	/**
@@ -107,7 +107,7 @@ private:
 	short int m_hasNT;
 };
 
-inline const CSwordModuleInfo::ModuleType CSwordBibleModuleInfo::type() const {
+inline CSwordModuleInfo::ModuleType CSwordBibleModuleInfo::type() const {
 	return CSwordModuleInfo::Bible;
 }
 

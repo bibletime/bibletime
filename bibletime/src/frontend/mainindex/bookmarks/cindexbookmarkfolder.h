@@ -27,7 +27,7 @@ public:
 	CIndexBookmarkFolder(CBookmarkIndex* bookmarkIndex, const Type type = BookmarkFolder);
 	CIndexBookmarkFolder(CIndexFolderBase* parentItem, const Type type = BookmarkFolder);
 	virtual ~CIndexBookmarkFolder();
-	virtual const bool enableAction(const MenuAction action);
+	virtual bool enableAction(const MenuAction action);
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
 	virtual bool acceptDrop(QDropEvent* e) const;
@@ -36,15 +36,15 @@ public:
 	/**
 	* Loads bookmarks from XML content
 	*/
-	const bool loadBookmarksFromXML( const QString& xml );
+	bool loadBookmarksFromXML( const QString& xml );
 	/**
 	* Loads bookmarks from a file.
 	*/
-	const bool loadBookmarks( const QString& );
+	bool loadBookmarks( const QString& );
 	/**
 	* Saves the bookmarks in a file.
 	*/
-	const bool saveBookmarks( const QString& filename, const bool& forceOverwrite = true );
+	bool saveBookmarks( const QString& filename, const bool& forceOverwrite = true );
 
 protected: // Protected methods
 	virtual void initTree();

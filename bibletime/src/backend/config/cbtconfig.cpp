@@ -41,7 +41,7 @@ CBTConfig::FontCache CBTConfig::fontConfigMap;
 /*  No constructor and destructor, because this class only contains static methods.
   It won't be instantiated. */
 
-const QString CBTConfig::getKey( const CBTConfig::strings ID) {
+QString CBTConfig::getKey( const CBTConfig::strings ID) {
 	switch ( ID ) {
 		case bibletimeVersion:		return "bibletimeVersion";
 		case language:				return "language";
@@ -51,7 +51,7 @@ const QString CBTConfig::getKey( const CBTConfig::strings ID) {
 	return QString::null;
 }
 
-const QString CBTConfig::getDefault( const CBTConfig::strings ID) {
+QString CBTConfig::getDefault( const CBTConfig::strings ID) {
 	switch ( ID ) {
 		case bibletimeVersion:		return "0.0"; // main() will realize this and set the value to VERSION
 		case language:				return QLocale::system().name();
@@ -61,7 +61,7 @@ const QString CBTConfig::getDefault( const CBTConfig::strings ID) {
 	return QString::null;
 }
 
-const QString CBTConfig::getKey( const CBTConfig::modules ID) {
+QString CBTConfig::getKey( const CBTConfig::modules ID) {
 	switch ( ID ) {
 		case standardBible:			return "standardBible";
 		case standardCommentary:	return "standardCommentary";
@@ -76,7 +76,7 @@ const QString CBTConfig::getKey( const CBTConfig::modules ID) {
 	return QString::null;
 }
 
-const QString CBTConfig::getDefault( const CBTConfig::modules ID) {
+QString CBTConfig::getDefault( const CBTConfig::modules ID) {
 	//  CSwordBackend* b = CPointers::backend();
 	switch ( ID ) {
 		case standardBible:				return "KJV";
@@ -93,7 +93,7 @@ const QString CBTConfig::getDefault( const CBTConfig::modules ID) {
 	return QString::null;
 }
 
-const QString CBTConfig::getKey( const CBTConfig::bools ID) {
+QString CBTConfig::getKey( const CBTConfig::bools ID) {
 	switch ( ID ) {
 		case firstSearchDialog:		return "firstSearchDialog";
 		case readOldBookmarks:		return "readOldBookmarks";
@@ -113,13 +113,13 @@ const QString CBTConfig::getKey( const CBTConfig::bools ID) {
 		case autoDeleteOrphanedIndices:	return "autoDeleteOrphanedIndices";
 		case crashedLastTime:			return "crashedLastTime";
 		case crashedTwoTimes:			return "crashedTwoTimes";
-		
+
 		case bookshelfShowHidden:		return "bookshelfShowHidden";
 	}
 	return QString::null;
 }
 
-const QString CBTConfig::getKey( const CBTConfig::ints ID) {
+QString CBTConfig::getKey( const CBTConfig::ints ID) {
 	switch ( ID ) {
 		case footnotes:				return "footnotes";
 		case strongNumbers:			return "strongNumbers";
@@ -145,7 +145,7 @@ const QString CBTConfig::getKey( const CBTConfig::ints ID) {
 	return QString::null;
 }
 
-const bool CBTConfig::getDefault( const CBTConfig::bools ID) {
+bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 	switch ( ID ) {
 		case firstSearchDialog:		return true;
 		case readOldBookmarks:		return false;
@@ -170,7 +170,7 @@ const bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 	return false;
 }
 
-const int CBTConfig::getDefault( const CBTConfig::ints ID) {
+int CBTConfig::getDefault( const CBTConfig::ints ID) {
 	switch ( ID ) {
 		case footnotes:		return int(true);
 		case strongNumbers:	return int(true);
@@ -196,7 +196,7 @@ const int CBTConfig::getDefault( const CBTConfig::ints ID) {
 	return 0;
 }
 
-const QString CBTConfig::getKey( const CBTConfig::intLists ID) {
+QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 	switch ( ID ) {
 		case leftPaneSplitterSizes:	return "leftPaneSplitterSizes";
 		case mainSplitterSizes:		return "mainSplitterSizes";
@@ -207,7 +207,7 @@ const QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 	return QString::null;
 }
 
-const QList<int> CBTConfig::getDefault( const CBTConfig::intLists /*ID*/) {
+QList<int> CBTConfig::getDefault( const CBTConfig::intLists /*ID*/) {
 	QList<int> result;
 	/*switch ( ID ) {
 		case leftPaneSplitterSizes: break;
@@ -217,7 +217,7 @@ const QList<int> CBTConfig::getDefault( const CBTConfig::intLists /*ID*/) {
 	return result;
 }
 
-const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
+QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 	switch ( ID ) {
 		case searchCompletionTexts:	return QString("searchCompletionTexts");
 		case searchTexts:			return QString("searchTexts");
@@ -228,9 +228,9 @@ const QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 	return QString::null;
 }
 
-const QStringList CBTConfig::getDefault( const CBTConfig::stringLists ID) {
+QStringList CBTConfig::getDefault( const CBTConfig::stringLists ID) {
 	switch ( ID ) {
-		case searchTexts: { 
+		case searchTexts: {
 			QStringList list;
 			list.append(QString::null);
 			return list;
@@ -243,7 +243,7 @@ const QStringList CBTConfig::getDefault( const CBTConfig::stringLists ID) {
 	return QStringList();
 }
 
-const QString CBTConfig::getKey( const CBTConfig::stringMaps ID) {
+QString CBTConfig::getKey( const CBTConfig::stringMaps ID) {
 	switch (ID) {
 		case searchScopes:
 		return QString("SearchScopes");
@@ -251,7 +251,7 @@ const QString CBTConfig::getKey( const CBTConfig::stringMaps ID) {
 	return QString::null;
 }
 
-const CBTConfig::StringMap CBTConfig::getDefault( const CBTConfig::stringMaps ID) {
+CBTConfig::StringMap CBTConfig::getDefault( const CBTConfig::stringMaps ID) {
 	switch ( ID ) {
 		case searchScopes: {
 			CBTConfig::StringMap map;
@@ -288,11 +288,11 @@ const CBTConfig::StringMap CBTConfig::getDefault( const CBTConfig::stringMaps ID
 }
 
 
-const QString CBTConfig::getKey( const CLanguageMgr::Language* const language ) {
+QString CBTConfig::getKey( const CLanguageMgr::Language* const language ) {
 	return language->name();
 }
 
-const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
+QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 	//language specific lookup of the font name
 	if (m_defaultFont) {
 		return *m_defaultFont;
@@ -305,12 +305,12 @@ const QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
 
 	const QString fontName = settings.stdFontName();
 	const int fontSize = settings.mediumFontSize();
-	
+
 	m_defaultFont = new QFont(fontName, fontSize); //TODO: there may be a mem leak here!
 	return *m_defaultFont;
 }
 
-const QString CBTConfig::get( const CBTConfig::strings ID)
+QString CBTConfig::get( const CBTConfig::strings ID)
 {
 	QString result;
 	getConfig()->beginGroup("strings");
@@ -320,7 +320,7 @@ const QString CBTConfig::get( const CBTConfig::strings ID)
 
 }
 
-CSwordModuleInfo* const CBTConfig::get( const CBTConfig::modules ID)
+CSwordModuleInfo* CBTConfig::get( const CBTConfig::modules ID)
 {
 	CSwordModuleInfo* result;
 	getConfig()->beginGroup("modules");
@@ -329,7 +329,7 @@ CSwordModuleInfo* const CBTConfig::get( const CBTConfig::modules ID)
 	return result;
 }
 
-const bool CBTConfig::get( const CBTConfig::bools ID)
+bool CBTConfig::get( const CBTConfig::bools ID)
 {
 	bool result;
 	getConfig()->beginGroup("bools");
@@ -338,7 +338,7 @@ const bool CBTConfig::get( const CBTConfig::bools ID)
 	return result;
 }
 
-const int CBTConfig::get( const CBTConfig::ints ID)
+int CBTConfig::get( const CBTConfig::ints ID)
 {
 	int result;
 	getConfig()->beginGroup("ints");
@@ -347,7 +347,7 @@ const int CBTConfig::get( const CBTConfig::ints ID)
 	return result;
 }
 
-const QList<int> CBTConfig::get( const CBTConfig::intLists ID )
+QList<int> CBTConfig::get( const CBTConfig::intLists ID )
 {
 	QList<int> result;
 	getConfig()->beginGroup("intlists");
@@ -356,7 +356,7 @@ const QList<int> CBTConfig::get( const CBTConfig::intLists ID )
 	return result;
 }
 
-const QStringList CBTConfig::get( const CBTConfig::stringLists ID )
+QStringList CBTConfig::get( const CBTConfig::stringLists ID )
 {
 	QStringList result;
 	getConfig()->beginGroup("stringlists");
@@ -365,11 +365,11 @@ const QStringList CBTConfig::get( const CBTConfig::stringLists ID )
 	return result;
 }
 
-const CBTConfig::StringMap CBTConfig::get( const CBTConfig::stringMaps ID )
+CBTConfig::StringMap CBTConfig::get( const CBTConfig::stringMaps ID )
 {
 	getConfig()->beginGroup(getKey(ID));
 	CBTConfig::StringMap map;
-	
+
 	QStringList keys(getConfig()->childKeys());
  	if (!keys.isEmpty()) {
 		switch (ID) {
@@ -395,12 +395,12 @@ const CBTConfig::StringMap CBTConfig::get( const CBTConfig::stringMaps ID )
 	return map;
 }
 
-const CBTConfig::FontSettingsPair CBTConfig::get( const CLanguageMgr::Language* const language )
+CBTConfig::FontSettingsPair CBTConfig::get( const CLanguageMgr::Language* const language )
 {
 	if (fontConfigMap.contains(language)) {
 		return fontConfigMap.find(language).value();
 	}
-	
+
 	FontSettingsPair settings;
 
 	getConfig()->beginGroup("font standard settings");
@@ -413,10 +413,10 @@ const CBTConfig::FontSettingsPair CBTConfig::get( const CLanguageMgr::Language* 
 		font.fromString(getConfig()->value(getKey(language), getDefault(language)).toString());
 	else
 		font = getDefault(language);
-	
+
 	settings.second = font;
 	getConfig()->endGroup();
-	
+
 	fontConfigMap.insert(language, settings); //cache the value
 	return settings;
 }
@@ -427,7 +427,7 @@ void CBTConfig::set( const CBTConfig::strings ID, const QString value )
 // 	cg.writeEntry(getKey(ID), value);
 	getConfig()->beginGroup("strings");
 	getConfig()->setValue(getKey(ID), value);
-	getConfig()->endGroup();	
+	getConfig()->endGroup();
 }
 
 void CBTConfig::set( const CBTConfig::modules ID, CSwordModuleInfo* const value )
@@ -436,7 +436,7 @@ void CBTConfig::set( const CBTConfig::modules ID, CSwordModuleInfo* const value 
 // 	cg.writeEntry(getKey(ID), value ? value->name() : QString::null);
 	getConfig()->beginGroup("modules");
 	getConfig()->setValue(getKey(ID), value ? value->name() : QString::null);
-	getConfig()->endGroup();	
+	getConfig()->endGroup();
 }
 
 void CBTConfig::set( const CBTConfig::modules ID, const QString& value )
@@ -451,14 +451,14 @@ void CBTConfig::set(const CBTConfig::bools ID,const  bool value )
 {
 	getConfig()->beginGroup("bools");
 	getConfig()->setValue(getKey(ID), value);
-	getConfig()->endGroup();	
+	getConfig()->endGroup();
 }
 
 void CBTConfig::set(const CBTConfig::ints ID, const int value )
 {
 	getConfig()->beginGroup("ints");
 	getConfig()->setValue(getKey(ID), value);
-	getConfig()->endGroup();	
+	getConfig()->endGroup();
 }
 
 void CBTConfig::set( const CBTConfig::intLists ID, const QList<int> value )
@@ -472,7 +472,7 @@ void CBTConfig::set( const CBTConfig::stringLists ID, const QStringList value )
 {
 	getConfig()->beginGroup("stringlists");
 	getConfig()->setValue(getKey(ID), value);
-	getConfig()->endGroup();	
+	getConfig()->endGroup();
 }
 
 void CBTConfig::set( const CBTConfig::stringMaps ID, const CBTConfig::StringMap value )
@@ -529,7 +529,7 @@ void CBTConfig::set( const CLanguageMgr::Language* const language, const FontSet
 	}
 }
 
-const CSwordBackend::DisplayOptions CBTConfig::getDisplayOptionDefaults()
+CSwordBackend::DisplayOptions CBTConfig::getDisplayOptionDefaults()
 {
 	CSwordBackend::DisplayOptions options;
 	options.lineBreaks   =  get(CBTConfig::lineBreaks);
@@ -538,10 +538,10 @@ const CSwordBackend::DisplayOptions CBTConfig::getDisplayOptionDefaults()
 	return options;
 }
 
-const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
+CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 {
 	CSwordBackend::FilterOptions options;
-	
+
 	options.footnotes = true; //required for the info display
 	options.strongNumbers =    true; //get(CBTConfig::strongNumbers);
 	options.headings = get(CBTConfig::headings);
@@ -601,12 +601,12 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 // 	//buggy???
 // 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
 // 	//KConfigGroup* cg;
-// 	
+//
 // 	Q_ASSERT(cg);
 // 	Q_ASSERT(actionCollection);
 // 	//actionCollection->readSettings(cg);
 // 	actionCollection->setConfigGroup(groupName);
-// 	
+//
 // 	actionCollection->readSettings();
 // 	qDebug("CBTConfig::setupAccelSettings end");
 //}
@@ -649,16 +649,16 @@ const CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 // 			break;
 // 		};
 // 	};
-// 	
+//
 // // 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-// 	
+//
 // 	qDebug("NOT saving accelerators!");
 // 	//actionCollection->writeSettings(cg);
 // 	qDebug("CBTConfig::saveAccelSettings end");
 //}
 
 
-const QString CBTConfig::getModuleEncryptionKey( const QString& module )
+QString CBTConfig::getModuleEncryptionKey( const QString& module )
 {
 	QString result;
 	getConfig()->beginGroup("Module keys");
@@ -674,7 +674,7 @@ void CBTConfig::setModuleEncryptionKey( const QString& module, const QString& ke
 	getConfig()->endGroup();
 }
 
-QSettings* const CBTConfig::getConfig()
+QSettings* CBTConfig::getConfig()
 {
 	static QSettings config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
 	return &config;
@@ -685,7 +685,7 @@ void CBTConfig::syncConfig()
 	CBTConfig::getConfig()->sync();
 }
 
-const QString CBTConfig::IntListToString( const QList<int> intList )
+QString CBTConfig::IntListToString( const QList<int> intList )
 {
 	QStringList intStrings;
 	foreach(int i, intList)
@@ -695,7 +695,7 @@ const QString CBTConfig::IntListToString( const QList<int> intList )
 	return intStrings.join(",");
 }
 
-const QList<int> CBTConfig::StringToIntList( const QString intListString )
+QList<int> CBTConfig::StringToIntList( const QString intListString )
 {
 	QList<int> intList;
 	if (!intListString.isEmpty() && intListString.contains(','))

@@ -440,7 +440,7 @@ void CBookmarkIndex::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*parent*/, QT
 
 
 /** Returns the correct QAction object for the given type of action. */
-QAction* const CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) const {
+QAction* CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) const {
 	switch (type) {
 	case CIndexItemBase::NewFolder:
 		return m_actions.newFolder;
@@ -669,7 +669,7 @@ void CBookmarkIndex::autoOpenTimeout() {
 
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
-const bool CBookmarkIndex::isMultiAction( const CIndexItemBase::MenuAction type ) const {
+bool CBookmarkIndex::isMultiAction( const CIndexItemBase::MenuAction type ) const {
 	switch (type) {
 	case CIndexItemBase::NewFolder:
 		return false;

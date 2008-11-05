@@ -217,7 +217,7 @@ QColor CSearchAnalysisScene::getColor(int index) {
 }
 
 /** Returns the count of the book in the module */
-const unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInfo* module ) {
+unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInfo* module ) {
 	sword::ListKey& result = module->searchResult();
 	const int length = book.length();
 	unsigned int i = m_lastPosList[module];

@@ -30,7 +30,7 @@ CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *di
 : QToolButton(parent) {
 	//  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
 	QToolButton::setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::displaySettings::icon));
-	
+
 	m_displaySettings = displaySettings;
 	m_moduleSettings = moduleSettings;
 	m_modules = useModules;
@@ -119,7 +119,7 @@ int CDisplaySettingsButton::populateMenu() {
 
 	ret += addMenuEntry(tr("Show headings"), Headings, &m_moduleSettings->headings,
 						isOptionAvailable(CSwordModuleInfo::headings));
-	
+
 	ret += addMenuEntry(tr("Highlight words of Jesus"), WordsofJ, &m_moduleSettings->redLetterWords,
 						isOptionAvailable(CSwordModuleInfo::redLetterWords ));
 
@@ -170,7 +170,7 @@ bool CDisplaySettingsButton::isOptionAvailable( const CSwordModuleInfo::FilterTy
 }
 
 /** Returns the number of usable menu items in the settings menu. */
-const int CDisplaySettingsButton::menuItemCount() {
+int CDisplaySettingsButton::menuItemCount() {
 	return m_popup->actions().count();
 }
 
@@ -181,7 +181,7 @@ void CDisplaySettingsButton::setItemStatus( const int index, const bool checked 
 }
 
 /** Returns the status of the item at position "index" */
-const bool CDisplaySettingsButton::itemStatus( const int index ) {
+bool CDisplaySettingsButton::itemStatus( const int index ) {
 	return m_popup->actions().at(index)->isChecked();
 }
 

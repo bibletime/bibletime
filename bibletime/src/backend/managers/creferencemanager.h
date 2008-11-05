@@ -42,7 +42,7 @@ public:
 	* @param key The string which will contain the key after decoding
 	* @param type The type param will contain the reference type after decoding
 	*/
-	static const bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, Type& type);
+	static bool decodeHyperlink( const QString& hyperlink, QString& module, QString& key, Type& type);
 	/**
 	* Returns a hyperlink used to be embedded in the display windows.
 	* At the moment the format is sword://module/key
@@ -71,7 +71,7 @@ public:
 	* @param hyperlink The string which is tested
 	* @return True if the passed string is a hyperlink
 	*/
-	static const bool isHyperlink( const QString& hyperlink );
+	static bool isHyperlink( const QString& hyperlink );
 	/**
 	* Returns the preferred module name for the given type.
 	* @param type The type which is used to find the module

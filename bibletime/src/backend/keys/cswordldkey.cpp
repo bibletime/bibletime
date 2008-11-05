@@ -38,7 +38,7 @@ CSwordLDKey* CSwordLDKey::copy() const {
 }
 
 /** Sets the module of this key. */
-CSwordModuleInfo* const CSwordLDKey::module(CSwordModuleInfo* const newModule) {
+CSwordModuleInfo* CSwordLDKey::module(CSwordModuleInfo* const newModule) {
 	if (newModule && newModule->type() == CSwordModuleInfo::Lexicon) {
 		const QString oldKey = key();
 		m_module = newModule;
@@ -48,7 +48,7 @@ CSwordModuleInfo* const CSwordLDKey::module(CSwordModuleInfo* const newModule) {
 	return m_module;
 }
 
-const QString CSwordLDKey::key() const {
+QString CSwordLDKey::key() const {
 	//return QString::fromUtf8((const char*)*this);
 	Q_ASSERT(m_module);
 
@@ -63,7 +63,7 @@ const char * CSwordLDKey::rawKey() const {
 	return (const char*)*this;
 }
 
-const bool CSwordLDKey::key( const QString& newKey ) {	
+bool CSwordLDKey::key( const QString& newKey ) {
 	Q_ASSERT(m_module);
 
 	if (m_module->isUnicode()) {
@@ -75,7 +75,7 @@ const bool CSwordLDKey::key( const QString& newKey ) {
 
 
 /** Sets the key of this instance */
-const bool CSwordLDKey::key( const char* newKey ) {
+bool CSwordLDKey::key( const char* newKey ) {
 	Q_ASSERT(newKey);
 
 	if (newKey) {

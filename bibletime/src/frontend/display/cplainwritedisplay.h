@@ -44,7 +44,7 @@ public:
 	/**
 	* Returns true if the display widget has a selection. Otherwise false.
 	*/
-	virtual const bool hasSelection();
+	virtual bool hasSelection();
 	/**
 	* Returns the view of this display widget.
 	*/
@@ -54,7 +54,7 @@ public:
 	/**
 	* Reimplementation (CWriteDisplay).
 	*/
-	virtual const bool isModified() const;
+	virtual bool isModified() const;
 	/**
 	* Sets the current status of the edit widget (CWriteDisplay).
 	*/

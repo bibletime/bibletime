@@ -40,7 +40,7 @@ CIndexBookmarkItem::CIndexBookmarkItem(CIndexFolderBase* parentItem, CSwordModul
 	m_description(description),
 	m_moduleName(module ? module->name() : QString::null)
 {
-	if ((module && (module->type() == CSwordModuleInfo::Bible) || (module->type() == CSwordModuleInfo::Commentary))  ) {
+	if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
 		CSwordVerseKey vk(0);
 		vk.key(key);
 		vk.setLocale("en");
@@ -120,7 +120,7 @@ const QString CIndexBookmarkItem::toolTip() {
 }
 
 
-CSwordModuleInfo* const CIndexBookmarkItem::module() {
+CSwordModuleInfo* CIndexBookmarkItem::module() {
 //	qDebug() << "CIndexBookmarkItem::module" << m_moduleName;
 	CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
 	//Q_ASSERT(m); not so: the module may be uninstalled
@@ -150,12 +150,12 @@ const QString& CIndexBookmarkItem::description() {
 	return m_description;
 }
 
-const bool CIndexBookmarkItem::isMovable() {
+bool CIndexBookmarkItem::isMovable() {
 	return true;
 }
 
 
-const bool CIndexBookmarkItem::enableAction(const MenuAction action) {
+bool CIndexBookmarkItem::enableAction(const MenuAction action) {
 	if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
 		return true;
 

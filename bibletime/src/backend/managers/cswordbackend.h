@@ -112,7 +112,7 @@ public:
 	/**
 	* This function returns the list of available modules managed by this backend.
 	* You have to call initModules() first;
-	* 
+	*
 	* @return The list of modules managed by this backend
 	*/
 	inline virtual QList<CSwordModuleInfo*>& moduleList();
@@ -121,13 +121,13 @@ public:
 	*
 	* @return True if the initializiation was succesful, otherwise return false.
 	*/
-	virtual const CSwordBackend::LoadError initModules(SetupChangedReason reason);
+	virtual CSwordBackend::LoadError initModules(SetupChangedReason reason);
 	/**
 	* This function deinitializes the modules and deletes them.
 	*
 	* @return True if it was succesful, otherwise return false
 	*/
-	virtual const bool shutdownModules();
+	virtual bool shutdownModules();
 	/**
 	* Sets the given options enabled or disabled depending on the second parameter.
 	*
@@ -147,7 +147,7 @@ public:
 	* @param description The description of the desired module
 	* @return pointer to the desired module; null if no module has the specified description
 	*/
-	virtual CSwordModuleInfo* const findModuleByDescription(const QString& description);
+	virtual CSwordModuleInfo* findModuleByDescription(const QString& description);
 	/**
 	* This function searches for a module with the specified description
 	* @param description The description of the desired module
@@ -159,28 +159,28 @@ public:
 	* @param name The name of the desired module
 	* @return Pointer to the desired module; null if no module has the specified name
 	*/
-	CSwordModuleInfo* const findModuleByName(const QString& name);
+	CSwordModuleInfo* findModuleByName(const QString& name);
 	/**
 	* This function searches for a module with the specified sword module as module() object!
 	* @param swmodule to a Sword module
 	* @return pointer to the desired module; null if no module has the specified name
 	*/
-	CSwordModuleInfo* const findSwordModuleByPointer(const sword::SWModule* const swmodule);
+	CSwordModuleInfo* findSwordModuleByPointer(const sword::SWModule* const swmodule);
 	/**
 	* This function searches for a module which is the same as the passed module.
 	* @param module The module which should be used for searching the new one. May be child of a different backend.
 	* @return Pointer to the desired module; null if no module has the specified name
 	*/
-	CSwordModuleInfo* const findModuleByPointer(const CSwordModuleInfo* const module);
+	CSwordModuleInfo* findModuleByPointer(const CSwordModuleInfo* const module);
 	/**
 	* @return Our global config object which contains the configs of all modules merged together.
 	*/
-	inline sword::SWConfig* const getConfig() const;
+	inline sword::SWConfig* getConfig() const;
 	/**
 	* Tries to find the config object for the module. The second paramter will be the found config.
 	* @return True if the config was found, false if not. If false is returned the moduleConfig object is in undefined/unknwon state.
 	*/
-	const bool moduleConfig(const QString& module, sword::SWConfig& moduleConfig );
+	bool moduleConfig(const QString& module, sword::SWConfig& moduleConfig );
 	/**
 	* Returns the text used for the option given as parameter.
 	* @param The paramter enum
@@ -235,7 +235,7 @@ protected:
 	* Overrides Sword filters which appear to be buggy.
 	*/
 	virtual void filterInit();
-	
+
 private:
 	// Filters
 	struct Filters {
@@ -261,7 +261,7 @@ inline QList<CSwordModuleInfo*>& CSwordBackend::moduleList() {
 }
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
-inline sword::SWConfig* const CSwordBackend::getConfig() const {
+inline sword::SWConfig* CSwordBackend::getConfig() const {
 	return config;
 }
 

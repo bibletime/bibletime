@@ -47,9 +47,9 @@ class CBookmarkIndex : public QTreeWidget {
 public:
 	CBookmarkIndex(QWidget *parent);
 	virtual ~CBookmarkIndex();
-	
+
 	void initTree();
-	
+
 	/**
 	* Saves the bookmarks to disk
 	*/
@@ -65,7 +65,7 @@ protected: // Protected methods
 
 	// A hack to get the modifiers
 	virtual void mouseReleaseEvent(QMouseEvent* event);
-	
+
 	/**
 	* Reimplementation. Adds the given group to the tree.
 	*/
@@ -87,13 +87,13 @@ protected: // Protected methods
 	/**
 	* Returns the correct action object for the given type of action.
 	*/
-	QAction* const action( const CIndexItemBase::MenuAction type ) const;
+	QAction* action( const CIndexItemBase::MenuAction type ) const;
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
 	//virtual void startDrag(Qt::DropActions supportedActions);
 
-	
+
 	/**
 	* Handle mouse moving (mag updates, d'n'd?)
 	*/
@@ -175,7 +175,7 @@ private:
 	* Returns true if more than one netry is supported by this action type.
 	* Returns false for actions which support only one entry.
 	*/
-	const bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
+	bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
 
 	/**
 	* A helper function for d'n'd which creates a new bookmark item when drop happens.

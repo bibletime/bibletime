@@ -42,12 +42,12 @@ public:
 	* Returns the right text part in the specified format.
 	*/
 	virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
-	
+
 	/**
 	* Sets the new text for this display widget.
 	*/
 	virtual void setText( const QString& newText );
-	virtual const bool hasSelection();
+	virtual bool hasSelection();
 	/**
 	* Reimplementation.
 	*/
@@ -58,7 +58,7 @@ public:
 	virtual void zoomIn();
 	virtual void zoomOut();
 	virtual void openFindTextDialog();
-	
+
 	virtual QMap<CDisplay::NodeInfoType, QString> getCurrentNodeInfo() {
 		return m_nodeInfo;
 	}
@@ -98,7 +98,7 @@ protected:
 
 	QMap<NodeInfoType, QString> m_nodeInfo;
 	int m_magTimerId;
-	
+
 private:
 	CHTMLReadDisplayView* m_view;
 	struct URLWorkaroundData {

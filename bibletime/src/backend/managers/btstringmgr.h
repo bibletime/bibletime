@@ -33,7 +33,7 @@ public:
 	* @param The text encoded in latin1 which should be turned into an upper case string
 	*/
 	virtual char *upperLatin1(char *text, unsigned int max = 0) const;
-	
+
 protected:
 	/** Enable Unicode support.
 	* Reimplementation to show unicode support.
@@ -47,7 +47,7 @@ protected:
 	* This function checks whether a string is utf8 or not.
 	* It was taken from kdelibs so we do not depend on KDE 3.2.
 	*/
-	const bool isUtf8(const char *buf) const;
+	bool isUtf8(const char *buf) const;
 };
 
 #endif

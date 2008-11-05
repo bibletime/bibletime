@@ -39,11 +39,11 @@ public:
 	/**
 	* Removes the profile from the list and from the directory containg the profile files.
 	*/
-	const bool remove( CProfile* p );
+	bool remove( CProfile* p );
 	/**
 	* Removes the profile from the list and from the directory containg the profile files.
 	*/
-	const bool remove( const QString& );
+	bool remove( const QString& );
 	/**
 	* Returns the profile with the desired name. If there's no such profile 0 is returned.
 	*/

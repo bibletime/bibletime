@@ -58,11 +58,11 @@ public:
 	/**
 	* Copies the given text with the specified format into the applications clipboard.
 	*/
-	virtual const bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
+	virtual bool copy( const CDisplay::TextType format, const CDisplay::TextPart part );
 	/**
 	* Saves the given text with the specified format into the applications clipboard.
 	*/
-	virtual const bool save( const CDisplay::TextType format, const CDisplay::TextPart part );
+	virtual bool save( const CDisplay::TextType format, const CDisplay::TextPart part );
 
 	//the pure virtual methods of this base class
 
@@ -77,7 +77,7 @@ public:
 	/**
 	* Returns true if the display widget has a selection. Otherwise false.
 	*/
-	virtual const bool hasSelection() = 0;
+	virtual bool hasSelection() = 0;
 	/**
 	* Returns the view of this display widget.
 	*/
@@ -89,11 +89,11 @@ public:
 	/**
 	* Returns the connections obect used for signas and slots.
 	*/
-	virtual CDisplayConnections* const connectionsProxy() const;
+	virtual CDisplayConnections* connectionsProxy() const;
 	/**
 	* Returns the parent window used for this display widget.
 	*/
-	CDisplayWindow* const parentWindow() const;
+	CDisplayWindow* parentWindow() const;
 	virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions) = 0;
 	/**
 	* Installs the popup which should be opened when the right mouse button was pressed.
@@ -102,7 +102,7 @@ public:
 	/**
 	* Returns the popup menu which was set by installPopupMenu()
 	*/
-	QMenu* const installedPopup();
+	QMenu* installedPopup();
 
 	virtual void zoomIn() {}
 	virtual void zoomOut() {}
@@ -111,12 +111,12 @@ public:
 	enum NodeInfoType {
 		Lemma
 	};
-	
-	
+
+
 	virtual QMap<NodeInfoType, QString> getCurrentNodeInfo() {
 		return QMap<NodeInfoType, QString>();
 	}
-	
+
 protected:
 	/**
 	* Used when a reference was dropped onto the widget.

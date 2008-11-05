@@ -52,10 +52,10 @@ protected:
 	/**
 	 * Adds a button to the toolbar
 	 */
-	CModuleChooserButton* const addButton( CSwordModuleInfo* const module );
+	CModuleChooserButton* addButton( CSwordModuleInfo* const module );
 
 protected slots: // Protected slots
-	/* 
+	/*
 	* This slot calls the addButton function above to add a button.
 	*/
 	void addButton();

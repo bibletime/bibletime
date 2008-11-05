@@ -27,7 +27,7 @@ public:
 		/**
 		* Reimplementation from  CItemBase.
 		*/
-		const bool enableAction(const MenuAction action);
+		bool enableAction(const MenuAction action);
 		/**
 		* Returns the XML code which represents the content of this folder.
 		*/

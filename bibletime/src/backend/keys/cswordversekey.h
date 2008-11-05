@@ -75,36 +75,36 @@ public:
 	* Set/get the key. If the parameter is not set (means equal to QString::null)
 	* the used key is returned. Otherwise the key is set and the new on ei returned.
 	*/
-	virtual const QString key() const;
+	virtual QString key() const;
 	/**
 	* Set the current key.
 	*/
-	virtual const bool key( const QString& );
+	virtual bool key( const QString& );
 	/**
 	* Set/get the key. If the parameter is not set (means equal to QString::null)
 	* the used key is returned. Otherwise the key is set and the new on ei returned.
 	*/
-	virtual const bool key( const char* key );
+	virtual bool key( const char* key );
 
 	/**
 	* Jumps to the next entry of the given type
 	*/
-	const bool next( const JumpType type );
+	bool next( const JumpType type );
 	/**
 	* Jumps to the previous entry of the given type
 	*/
-	const bool previous ( const JumpType type );
+	bool previous ( const JumpType type );
 	/**
 	* This functions returns the current book as localised text, not as book numer.
 	*
 	* Use "char Book()" to retrieve the book number of the current book.
 	* @return The name of the current book
 	*/
-	const QString book(const QString& newBook = QString::null);
+	QString book(const QString& newBook = QString::null);
 	/**
 	* Sets the module for this key
 	*/
-	virtual CSwordModuleInfo* const module( CSwordModuleInfo* const newModule = 0 );
+	virtual CSwordModuleInfo* module( CSwordModuleInfo* const newModule = 0 );
 
 protected:
 	/**

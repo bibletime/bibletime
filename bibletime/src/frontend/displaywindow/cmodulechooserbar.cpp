@@ -37,7 +37,7 @@ CModuleChooserBar::CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSword
 	}
 }
 
-CModuleChooserButton* const CModuleChooserBar::addButton( CSwordModuleInfo* const module )
+CModuleChooserButton* CModuleChooserBar::addButton( CSwordModuleInfo* const module )
 {
 	CModuleChooserButton* b = new CModuleChooserButton(module, m_moduleType, ++m_idCounter, this);
 	QAction* a = addWidget(b);
@@ -111,7 +111,7 @@ void CModuleChooserBar::setModules( QList<CSwordModuleInfo*> useModules ) {
 		}
 		addButton( *it );
 	}
-	
+
 	if ( (m_buttonLimit == -1) || (m_buttonLimit > (int)m_buttonList.count()) ) {
 		addButton(0);//add button without module set
 	}

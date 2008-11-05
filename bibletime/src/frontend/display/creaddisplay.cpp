@@ -50,7 +50,7 @@ void CReadDisplay::setActiveAnchor( const QString& anchor ) {
 
 
 /** Returns true if the display has an active anchor. */
-const bool CReadDisplay::hasActiveAnchor() {
+bool CReadDisplay::hasActiveAnchor() {
 	return !activeAnchor().isEmpty();
 }
 

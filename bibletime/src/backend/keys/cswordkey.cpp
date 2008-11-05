@@ -34,7 +34,7 @@ CSwordKey::CSwordKey(const CSwordKey& k) {
 	m_module = k.m_module;
 }
 
-const QString CSwordKey::rawText() {
+QString CSwordKey::rawText() {
 	if (!m_module) return QString::null;
 
 	if (dynamic_cast<sword::SWKey*>(this)) {
@@ -49,7 +49,7 @@ const QString CSwordKey::rawText() {
 	return QString::fromUtf8( m_module->module()->getRawEntry() );
 }
 
-const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
+QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 	Q_ASSERT(m_module);
 	if (!m_module) {
 		return QString::null;
@@ -140,7 +140,7 @@ const QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 	return QString::null;
 }
 
-const QString CSwordKey::strippedText() {
+QString CSwordKey::strippedText() {
 	if (!m_module) return QString::null;
 
 	if (dynamic_cast<sword::SWKey*>(this)) {

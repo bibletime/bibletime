@@ -63,14 +63,14 @@ void CSearchDialog::openDialog(const QList<CSwordModuleInfo*> modules, const QSt
 	m_staticDialog->activateWindow();
 }
 
-CSearchDialog* const CSearchDialog::getSearchDialog()
+CSearchDialog* CSearchDialog::getSearchDialog()
 {
 	Q_ASSERT(m_staticDialog);
 	return m_staticDialog;
 }
 
 CSearchDialog::CSearchDialog(QWidget *parent)
-	:QDialog(parent), m_searchButton(0), m_closeButton(0), 
+	:QDialog(parent), m_searchButton(0), m_closeButton(0),
 	m_searchResultArea(0), m_searchOptionsArea(0)
 {
 	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
@@ -182,19 +182,19 @@ void CSearchDialog::initView()
 
 	m_searchResultArea = new CSearchResultArea(this);
 	verticalLayout->addWidget(m_searchResultArea);
-	
+
 	QHBoxLayout* horizontalLayout = new QHBoxLayout();
 	QSpacerItem* horizontalSpacer = new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Minimum);
 	horizontalLayout->addItem(horizontalSpacer);
 
 	m_searchButton = new QPushButton(this);
-	m_searchButton->setText(tr("&Search")); 
+	m_searchButton->setText(tr("&Search"));
 	m_searchButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon));
 	m_searchButton->setToolTip(tr("Start to search the text in the chosen works"));
 	horizontalLayout->addWidget(m_searchButton);
 
 	m_closeButton = new QPushButton(this);
-	m_closeButton->setText(tr("&Close")); 
+	m_closeButton->setText(tr("&Close"));
 	m_closeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::close_icon));
 	horizontalLayout->addWidget(m_closeButton);
 

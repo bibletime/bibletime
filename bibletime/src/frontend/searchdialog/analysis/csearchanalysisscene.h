@@ -67,7 +67,7 @@ private:
 	/**
 	* Returns the count of the book in the module
 	*/
-	const unsigned int getCount( const QString book, CSwordModuleInfo* module );
+	unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
 	QList<CSwordModuleInfo*> m_moduleList;
 	QHash<QString, CSearchAnalysisItem*> m_itemList;

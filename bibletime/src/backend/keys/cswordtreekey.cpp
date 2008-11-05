@@ -23,7 +23,7 @@ CSwordTreeKey* CSwordTreeKey::copy() const {
 }
 
 /** Sets the key of this instance */
-const QString CSwordTreeKey::key() const {
+QString CSwordTreeKey::key() const {
 	//return getTextUnicode();
 	Q_ASSERT(m_module);
 	if (m_module->isUnicode()) {
@@ -37,7 +37,7 @@ const char * CSwordTreeKey::rawKey() const {
 	return getText();
 }
 
-const bool CSwordTreeKey::key( const QString& newKey ) {
+bool CSwordTreeKey::key( const QString& newKey ) {
 	//return key( newKey.toLocal8Bit().constData() );
 	//return key(m_module->getTextCodec()->fromUnicode(newKey).constData());
 	Q_ASSERT(m_module);
@@ -48,7 +48,7 @@ const bool CSwordTreeKey::key( const QString& newKey ) {
 	}
 }
 
-const bool CSwordTreeKey::key( const char* newKey ) {
+bool CSwordTreeKey::key( const char* newKey ) {
 	Q_ASSERT(newKey);
 
 	if (newKey) {
@@ -73,7 +73,7 @@ QString CSwordTreeKey::getLocalNameUnicode()
 	}
 }
 
-CSwordModuleInfo* const CSwordTreeKey::module( CSwordModuleInfo* const newModule ) {
+CSwordModuleInfo* CSwordTreeKey::module( CSwordModuleInfo* const newModule ) {
 	if (newModule && (newModule != m_module) && (newModule->type() == CSwordModuleInfo::GenericBook) ) {
 		m_module = newModule;
 

@@ -39,7 +39,7 @@ class CModuleResultView : public QTreeWidget {
 public:
 	CModuleResultView(QWidget* parent);
 	~CModuleResultView();
-	
+
 	/**
 	* Setups the tree using the given list of modules.
 	*/
@@ -47,7 +47,7 @@ public:
 	/**
 	* Returns the currently active module.
 	*/
-	CSwordModuleInfo* const activeModule();
+	CSwordModuleInfo* activeModule();
 
 protected: // Protected methods
 	/**
@@ -120,9 +120,9 @@ private:
 		copy;
 
 	} m_actions;
-	
+
 	QMenu* m_popup;
-	
+
 	StrongsResultClass* strongsResults;
 };
 

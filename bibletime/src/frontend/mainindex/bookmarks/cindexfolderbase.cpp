@@ -1,7 +1,7 @@
 //
 // C++ Implementation: cindexfolderbase
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2007
@@ -43,7 +43,7 @@ CIndexFolderBase::CIndexFolderBase(CIndexFolderBase* parentFolder, const QString
 
 CIndexFolderBase::~CIndexFolderBase() {}
 
-const bool CIndexFolderBase::isFolder() {
+bool CIndexFolderBase::isFolder() {
 	return true;
 }
 
@@ -80,7 +80,7 @@ void CIndexFolderBase::newSubFolder() {
 }
 
 /** Reimplementation. Returns true if the drop is accepted. */
-const bool CIndexFolderBase::allowAutoOpen(const QMimeData*) const {
+bool CIndexFolderBase::allowAutoOpen(const QMimeData*) const {
 	return true;
 }
 
@@ -103,7 +103,7 @@ QList<QTreeWidgetItem*> CIndexFolderBase::getChildList() {
 			itemList << item->getChildList();
 		}
 	}
-	return itemList; 
+	return itemList;
 }
 
 void CIndexFolderBase::rename()

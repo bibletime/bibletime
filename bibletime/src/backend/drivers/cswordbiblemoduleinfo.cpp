@@ -78,7 +78,7 @@ void CSwordBibleModuleInfo::initBounds() {
 
 
 /** Returns the books available in this module */
-QStringList* const CSwordBibleModuleInfo::books() {
+QStringList* CSwordBibleModuleInfo::books() {
 	if (m_cachedLocale != backend()->booknameLanguage()) { //if the locale has changed
 		delete m_bookList;
 		m_bookList = 0;
@@ -130,7 +130,7 @@ QStringList* const CSwordBibleModuleInfo::books() {
 }
 
 /** Returns the number of chapters for the given book. */
-const unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
+unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
 	int result = 0;
 
 	if ( (book >= 1) && book <= (unsigned int)staticKey.BMAX[0] && hasTestament(OldTestament)) {  //Is the book in the old testament?
@@ -143,13 +143,13 @@ const unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) 
 	return result;
 }
 
-const unsigned int CSwordBibleModuleInfo::chapterCount(const QString& book) {
+unsigned int CSwordBibleModuleInfo::chapterCount(const QString& book) {
 	return chapterCount( bookNumber(book) );
 }
 
 /** Returns the number of verses  for the given chapter. */
 
-const unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
+unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
 	unsigned int result = 0;
 
 	if (book>=1 && (book <= (unsigned int)staticKey.BMAX[0]) && hasTestament(OldTestament) ) { //Is the book in the old testament?
@@ -166,11 +166,11 @@ const unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, c
 	return result;
 }
 
-const unsigned int CSwordBibleModuleInfo::verseCount( const QString& book, const unsigned int chapter ) {
+unsigned int CSwordBibleModuleInfo::verseCount( const QString& book, const unsigned int chapter ) {
 	return verseCount( bookNumber(book), chapter );
 }
 
-const unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
+unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 	unsigned int bookNumber = 0;
 	bool found = false;
 	staticKey.setLocale(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName());
@@ -180,7 +180,7 @@ const unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 	//find out if we have ot and nt, only ot or only nt
 	initBounds();
 
-	if ((m_hasOT>0 && m_hasNT>0) || (m_hasOT == m_hasNT == -1)) {
+	if ((m_hasOT>0 && m_hasNT>0) || (m_hasOT == -1 && m_hasNT == -1)) {
 		min = 0;
 		max = 1;
 		bookNumber = 0;
@@ -215,7 +215,7 @@ const unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 }
 
 /** Returns true if his module has the text of desired type of testament */
-const bool CSwordBibleModuleInfo::hasTestament( CSwordBibleModuleInfo::Testament type ) {
+bool CSwordBibleModuleInfo::hasTestament( CSwordBibleModuleInfo::Testament type ) {
 	if (m_hasOT == -1 || m_hasNT == -1) {
 		const bool oldStatus = module()->getSkipConsecutiveLinks();
 		module()->setSkipConsecutiveLinks(true);

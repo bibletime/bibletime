@@ -34,7 +34,7 @@ public:
 	virtual ~CIndexBookmarkItem();
 
 	/** Returns the used module, 0 if there is no such module. */
-	CSwordModuleInfo* const module();
+	CSwordModuleInfo* module();
 
 	/** Returns the used key. */
 	const QString key();
@@ -51,11 +51,11 @@ public:
 	virtual void init();
 
 	/** Returns true because this subclass of CIndexItemBase can be moved around.*/
-	virtual const bool isMovable();
+	virtual bool isMovable();
 	/**
 	* Reimplementation to handle  the menu entries of the main index.
 	*/
-	virtual const bool enableAction(const MenuAction action);
+	virtual bool enableAction(const MenuAction action);
 	/**
 	* Prints this bookmark.
 	*/
@@ -76,7 +76,7 @@ public:
 	* Loads the content of this folder from the XML code passed as argument to this function.
 	*/
 	virtual void loadFromXML( QDomElement& element );
-	
+
 
 private:
 	QString m_key;
@@ -88,7 +88,7 @@ private:
 protected: // Protected methods
 	/**
 	* Reimplementation. Returns false everytime
-	* because bookmarks 
+	* because bookmarks
 	* have no possible drops.
 	*/
 	virtual bool acceptDrop(QDropEvent* e) const;

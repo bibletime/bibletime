@@ -138,12 +138,12 @@ CDisplay::~CDisplay() {
 	delete m_connections;
 }
 
-const bool CDisplay::copy( const CDisplay::TextType format, const CDisplay::TextPart part  ) {
+bool CDisplay::copy( const CDisplay::TextType format, const CDisplay::TextPart part  ) {
 	QApplication::clipboard()->setText( this->text(format, part) );
 	return true;
 }
 
-const bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part ) {
+bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part ) {
 	//  qWarning("CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart part  )");
 	const QString content = text(format, part);
 	QString filter = QString::null;
@@ -186,11 +186,11 @@ void CDisplay::emitReferenceDropped( const QString& reference ) {
 }
 
 /** Returns the connections obect used for signas and slots. */
-CDisplayConnections* const CDisplay::connectionsProxy() const {
+CDisplayConnections* CDisplay::connectionsProxy() const {
 	return m_connections;
 }
 
-CDisplayWindow* const CDisplay::parentWindow() const {
+CDisplayWindow* CDisplay::parentWindow() const {
 	return m_parentWindow;
 }
 
@@ -200,7 +200,7 @@ void CDisplay::installPopup( QMenu* popup ) {
 }
 
 /** Returns the popup menu which was set by installPopupMenu() */
-QMenu* const CDisplay::installedPopup() {
+QMenu* CDisplay::installedPopup() {
 	return m_popup;
 }
 

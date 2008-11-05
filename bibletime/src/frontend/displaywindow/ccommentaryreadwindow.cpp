@@ -35,33 +35,33 @@ using namespace Profile;
 CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
 
 void CCommentaryReadWindow::insertKeyboardActions( KActionCollection* const a ) {
-	
+
 	KAction* kaction;
-	
+
 	kaction = new KAction(tr("Next book"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
 	a->addAction("nextBook", kaction);
-	
+
 	kaction = new KAction(tr("Previous book"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
 	a->addAction( "previousBook", kaction);
-	
+
 	kaction = new KAction(tr("Next chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
 	a->addAction("nextChapter", kaction);
-	
+
 	kaction = new KAction(tr("Previous chapter"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
 	a->addAction("previousChapter", kaction);
-	
+
 	kaction = new KAction(tr("Next verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
 	a->addAction("nextVerse", kaction);
-	
+
 	kaction = new KAction(tr("Previous verse"), a);
 	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	a->addAction("previousVerse", kaction);
-	
+
 }
 
 void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
@@ -186,7 +186,7 @@ void CCommentaryReadWindow::previousVerse() {
 		keyChooser()->setKey(key());
 }
 
-const bool CCommentaryReadWindow::syncAllowed() const {
+bool CCommentaryReadWindow::syncAllowed() const {
 	return m_syncButton->isChecked();
 }
 

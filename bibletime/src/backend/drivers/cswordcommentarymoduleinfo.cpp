@@ -20,12 +20,12 @@ CSwordModuleInfo* CSwordCommentaryModuleInfo::clone() {
 }
 
 /** Returns true if this module may be written by the write display windows. */
-const bool CSwordCommentaryModuleInfo::isWritable() const {
+bool CSwordCommentaryModuleInfo::isWritable() const {
 	//  qWarning(module()->getConfigEntry("ModDrv"));
 	//a module is only writable if it's a RawFiles module with writable returning true
 
 	if ( (std::string(module()->getConfigEntry("ModDrv")) == std::string("RawFiles")) && module()->isWritable()) {
-	return true;
+		return true;
 	};
 
 	return false;

@@ -69,7 +69,7 @@ public:
 			m_alternativeContent = newContent;
 		};
 
-		inline const bool hasAlternativeContent() const {
+		inline bool hasAlternativeContent() const {
 			return !m_alternativeContent.isNull();
 		};
 
@@ -85,12 +85,12 @@ public:
 			return m_settings;
 		};
 
-		inline KeyTree* const childList() const;
+		inline KeyTree* childList() const;
 //		inline const bool hasChildItems() const;
 
 	protected:
 		KeyTreeItem();
-		
+
 		Settings m_settings;
 		QList<CSwordModuleInfo*> m_moduleList;
 		QString m_key;
@@ -99,7 +99,7 @@ public:
 		QString m_stopKey;
 		QString m_alternativeContent;
 	};
-	
+
 	virtual ~CTextRendering() {}
 
 	const QString renderKeyTree( KeyTree& );
@@ -115,7 +115,7 @@ protected:
 	virtual void initRendering() = 0;
 };
 
-inline CTextRendering::KeyTree* const CTextRendering::KeyTreeItem::childList() const{
+inline CTextRendering::KeyTree* CTextRendering::KeyTreeItem::childList() const{
 	return &m_childList;
 }
 //

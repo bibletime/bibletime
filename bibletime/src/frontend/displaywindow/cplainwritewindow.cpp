@@ -34,7 +34,7 @@
 
 using namespace Profile;
 
-CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent) : 
+CPlainWriteWindow::CPlainWriteWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent) :
 	CWriteWindow(moduleList, parent)
 {
 	setKey( CSwordKey::createInstance(moduleList.first()) );
@@ -177,7 +177,7 @@ void CPlainWriteWindow::deleteEntry() {
 /** Setups the popup menu of this display widget. */
 void CPlainWriteWindow::setupPopupMenu() {}
 
-const bool CPlainWriteWindow::syncAllowed() const {
+bool CPlainWriteWindow::syncAllowed() const {
 	return m_actions.syncWindow->isChecked();
 }
 

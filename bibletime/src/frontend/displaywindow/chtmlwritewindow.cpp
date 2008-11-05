@@ -73,7 +73,7 @@ void CHTMLWriteWindow::initToolbars() {
 	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_actions.syncWindow);
 	mainToolBar()->addAction(m_actions.syncWindow);
 
-	m_actions.saveText = new QAction( 
+	m_actions.saveText = new QAction(
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
 			tr("Save text"),
 			actionCollection()
@@ -83,7 +83,7 @@ void CHTMLWriteWindow::initToolbars() {
 	QObject::connect(m_actions.saveText, SIGNAL(triggered()), this, SLOT( saveCurrentText() ) );
 	actionCollection()->addAction(CResMgr::displaywindows::writeWindow::saveText::actionName, m_actions.saveText);
 	mainToolBar()->addAction(m_actions.saveText);
-	
+
 
 	m_actions.deleteEntry = new QAction(
 			util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
@@ -138,9 +138,10 @@ void CHTMLWriteWindow::restoreText() {
 	textChanged();
 }
 
-const bool CHTMLWriteWindow::syncAllowed() const {
+bool CHTMLWriteWindow::syncAllowed() const {
 	return m_actions.syncWindow->isChecked();
 }
+
 /** Saves the text for the current key. Directly writes the changed text into the module. */
 void CHTMLWriteWindow::saveCurrentText( const QString& /*key*/ ) {
 	QString t = ((CHTMLWriteDisplay*)displayWidget())->toHtml();

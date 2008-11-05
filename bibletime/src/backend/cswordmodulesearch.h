@@ -53,7 +53,7 @@ public:
 	/**
 	* Starts the search for the search text.
 	*/
-	const bool startSearch();
+	bool startSearch();
 	/**
 	* This function sets the modules which should be searched.
 	*/
@@ -69,7 +69,7 @@ public:
 	/**
 	* @return "true" if in the last search the searcher found items, if no items were found return "false"
 	*/
-	const bool foundItems() const;
+	bool foundItems() const;
 	/**
 	* Returns a copy of the used search scope.
 	*/
@@ -81,7 +81,7 @@ public:
 	/**
 	* Returns true if all of the specified modules have indices already built.
 	*/
-	const bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
+	bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
 
 protected:
 	QString m_searchedText;

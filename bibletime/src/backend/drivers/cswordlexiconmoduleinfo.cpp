@@ -44,7 +44,7 @@ CSwordLexiconModuleInfo::~CSwordLexiconModuleInfo() {
 }
 
 /** Returns the entries of the module. */
-QStringList* const CSwordLexiconModuleInfo::entries() {
+QStringList* CSwordLexiconModuleInfo::entries() {
 	if (!module()) {
 		return 0;
 	}
@@ -156,7 +156,7 @@ QStringList* const CSwordLexiconModuleInfo::entries() {
 }
 
 /** Jumps to the closest entry in the module.  */
-const bool CSwordLexiconModuleInfo::snap() {
+bool CSwordLexiconModuleInfo::snap() {
 	if(module()->getRawEntry()) { // Snap to the current entry
 		return true;
 	}

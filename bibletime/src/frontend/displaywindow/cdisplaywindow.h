@@ -55,7 +55,7 @@ public:
 	//   static void insertKeyboardActions( KAccel* const accel );
 	static void insertKeyboardActions( KActionCollection* const a );
 
-	CMDIArea* const mdi() const;
+	CMDIArea* mdi() const;
 	/**
 	* Returns the right window caption.
 	*/
@@ -99,7 +99,7 @@ public:
 	/**
 	* Returns true if the widget is ready for use.
 	*/
-	const bool isReady() const;
+	bool isReady() const;
 	/**
 	* Returns true if the window may be closed.
 	*/
@@ -107,7 +107,7 @@ public:
 	/**
 	* Returns the keychooser widget of this display window.
 	*/
-	CKeyChooser* const keyChooser() const;
+	CKeyChooser* keyChooser() const;
 	/**
 	* Sets the new sword key.
 	*/
@@ -119,7 +119,7 @@ public:
 	/**
 	* Initialize the window. Call this method from the outside, because calling this in the constructor is not possible!
 	*/
-	virtual const bool init();
+	virtual bool init();
 	/**
 	* Sets the main toolbar.
 	*/
@@ -131,11 +131,11 @@ public:
 	/**
 	* Returns the main toolbar.
 	*/
-	QToolBar* const mainToolBar() const;
+	QToolBar* mainToolBar() const;
 	/**
 	* Returns the buttons toolbar.
 	*/
-	QToolBar* const buttonsToolBar() const;
+	QToolBar* buttonsToolBar() const;
 	/**
 	* Initialize the toolbars
 	*/
@@ -143,7 +143,7 @@ public:
 	/**
 	* Returns the display settings button
 	*/
-	CDisplaySettingsButton* const displaySettingsButton() const;
+	CDisplaySettingsButton* displaySettingsButton() const;
 	/**
 	* Sets the display settings button.
 	*/
@@ -152,7 +152,7 @@ public:
 	/**
 	* Returns the display widget used by this implementation of CDisplayWindow.
 	*/
-	virtual CDisplay* const displayWidget() const;
+	virtual CDisplay* displayWidget() const;
 	/**
 	* Sets the display widget used by this display window.
 	*/
@@ -161,7 +161,7 @@ public:
 	/** Returns whether syncs to the active window are allowed at this time for this display window
 	* @return boolean value whether sync is allowed
 	*/
-	virtual const bool syncAllowed() const {
+	virtual bool syncAllowed() const {
 		return false;
 	};
 
@@ -199,7 +199,7 @@ protected:
 	/**
 	* Returns the module chooser bar.
 	*/
-	CModuleChooserBar* const moduleChooserBar() const;
+	CModuleChooserBar* moduleChooserBar() const;
 	/**
 	* Lookup the given key.
 	*/
@@ -223,7 +223,7 @@ protected:
 	/**
 	* Returns the installed popup menu.
 	*/
-	QMenu* const popup();
+	QMenu* popup();
 	virtual void closeEvent(QCloseEvent* e);
 
 protected slots:

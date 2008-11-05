@@ -47,15 +47,15 @@ public:
 	/** Returns the current key.
 	 * @return The current key which belongs to the current object.
 	 */
-	virtual const QString key() const = 0;
+	virtual QString key() const = 0;
 	/** Sets the current key. Sets the key using a utf8 enabled QString.
 	 * @param key The key which should be used to set the current one
 	 */
-	virtual const bool key(const QString& key) = 0;
+	virtual bool key(const QString& key) = 0;
 	/** Set the key using a utf8-decoded c-string
 	 * @param key The key which should be used to set the current one
 	 */
-	virtual const bool key(const char* key) = 0;
+	virtual bool key(const char* key) = 0;
 	/** Clone this object. Clone this current object and return it.
 	 * @return A clone of the current object.
 	 */
@@ -65,18 +65,18 @@ public:
 	/** Set/get the module. Set and get the module which belongs to this key.
 	 * @return The module which belongs to this key.
 	 */
-	inline virtual CSwordModuleInfo* const module(CSwordModuleInfo* const newModule = 0);
+	inline virtual CSwordModuleInfo* module(CSwordModuleInfo* const newModule = 0);
 	/** Returns the raw, unchanged text. Returns the text without any filter modifications,
 	 * just in the way it comes out of the module.
 	 */
-	virtual const QString rawText();
+	virtual QString rawText();
 	/** Returns the rendered text. Returns the text of the current key after passign it through the
 	 * modules filters.
 	 */
-	virtual const QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
+	virtual QString renderedText( const CSwordKey::TextRenderType mode = CSwordKey::Normal );
 	/** Stripped down text. Returns the text after removing all markup tags from it.
 	 */
-	virtual const QString strippedText();
+	virtual QString strippedText();
 	/**
 	 * This returns a new object of the right CSwordKey* implementation
 	 * (e.g. CSwordVerseKey or CSwordLDKey)
@@ -101,7 +101,7 @@ private:
 
 };
 
-inline CSwordModuleInfo* const CSwordKey::module(CSwordModuleInfo* const newModule) {
+inline CSwordModuleInfo* CSwordKey::module(CSwordModuleInfo* const newModule) {
 	if (newModule) {
 		m_module = newModule;
 	}

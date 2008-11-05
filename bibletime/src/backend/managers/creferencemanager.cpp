@@ -111,7 +111,7 @@ const QString CReferenceManager::encodeHyperlink( const QString moduleName, cons
 }
 
 /** Decodes the given hyperlink to module and key. */
-const bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& module, QString& key, CReferenceManager::Type& type ) {
+bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& module, QString& key, CReferenceManager::Type& type ) {
 	/**
 	* We have to decide between three types of URLS: sword://Type/Module/Key, morph://Testament/key and strongs://Testament/Key
 	*/
@@ -253,7 +253,7 @@ void CReferenceManager::decodeReference(QString &dragreference, QString &module,
 }
 
 /** Returns true if the parameter is a hyperlink. */
-const bool CReferenceManager::isHyperlink( const QString& hyperlink ) {
+bool CReferenceManager::isHyperlink( const QString& hyperlink ) {
 	return (    hyperlink.left(8)  == "sword://")
 		   || (hyperlink.left(10) == "strongs://")
 		   || (hyperlink.left(8)  == "morph://");

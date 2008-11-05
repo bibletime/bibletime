@@ -38,15 +38,15 @@ public:
 	/**
 	* Returns the type of the module.
 	*/
-	virtual const CSwordModuleInfo::ModuleType type() const;
+	virtual CSwordModuleInfo::ModuleType type() const;
 	/**
 	* Returns the maximal depth of sections and subsections.
 	*/
-	const int depth();
+	int depth();
 	/**
 	* @return A treekey filled with the structure of this module. Don't delete the returned key because it's casted from the module object.
 	*/
-	sword::TreeKeyIdx* const tree() const;
+	sword::TreeKeyIdx* tree() const;
 
 private:
 	/**
@@ -56,7 +56,7 @@ private:
 	int m_depth;
 };
 
-inline const CSwordBookModuleInfo::ModuleType CSwordBookModuleInfo::type() const {
+inline CSwordBookModuleInfo::ModuleType CSwordBookModuleInfo::type() const {
 	return CSwordModuleInfo::GenericBook;
 }
 

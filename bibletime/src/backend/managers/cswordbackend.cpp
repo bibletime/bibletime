@@ -102,7 +102,7 @@ void CSwordBackend::filterInit() {
 	sword::SWOptionFilter* tmpFilter = new OSISMorphSegmentation();
 	optionFilters.insert(sword::OptionFilterMap::value_type("OSISMorphSegmentation", tmpFilter));
 	cleanupFilters.push_back(tmpFilter);
-	
+
 	//HACK: replace Sword's ThML strip filter with our own version
 	//remove this hack as soon as Sword is fixed
 	cleanupFilters.remove(thmlplain);
@@ -129,7 +129,7 @@ QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names)
 }
 
 /** Initializes the Sword modules. */
-const CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
+CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
 	//  qWarning("globalSwordConfigPath is %s", globalConfPath);
 	LoadError ret = NoError;
 
@@ -225,7 +225,7 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
 }
 
 /** This function deinitializes the modules and deletes them. */
-const bool CSwordBackend::shutdownModules() {
+bool CSwordBackend::shutdownModules() {
 	QList<CSwordModuleInfo*>::iterator it = m_moduleList.begin();
 	QList<CSwordModuleInfo*>::iterator end = m_moduleList.end();
 
@@ -272,7 +272,7 @@ void CSwordBackend::setOption( const CSwordModuleInfo::FilterTypes type, const i
 			else {
 				value = "All Readings";
 			}
-	
+
 			break;
 
 		default:
@@ -301,7 +301,7 @@ void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options
 }
 
 /** This function searches for a module with the specified description */
-CSwordModuleInfo* const CSwordBackend::findModuleByDescription(const QString& description) {
+CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& description) {
 	foreach(CSwordModuleInfo* mod, m_moduleList) {
 		if (mod->config(CSwordModuleInfo::Description) == description) return mod;
 	}
@@ -317,21 +317,21 @@ const QString CSwordBackend::findModuleNameByDescription(const QString& descript
 }
 
 /** This function searches for a module with the specified name */
-CSwordModuleInfo* const CSwordBackend::findModuleByName(const QString& name) {
+CSwordModuleInfo* CSwordBackend::findModuleByName(const QString& name) {
 	foreach(CSwordModuleInfo* mod, m_moduleList) {
 		if (mod->name() == name) return mod;
 	}
 	return 0;
 }
 
-CSwordModuleInfo* const CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
+CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
 	foreach(CSwordModuleInfo* mod, m_moduleList) {
 		if (mod->module() == swmodule ) return mod;
 	}
 	return 0;
 }
 
-CSwordModuleInfo* const CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
+CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
 	foreach(CSwordModuleInfo* mod, m_moduleList) {
 		if (mod  == module) return mod;
 	}
@@ -339,7 +339,7 @@ CSwordModuleInfo* const CSwordBackend::findModuleByPointer(const CSwordModuleInf
 }
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
-const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
+bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
 	sword::SectionMap::iterator section;
 	DIR *dir = opendir(configPath);
 
@@ -381,7 +381,7 @@ const bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& m
 	}
 
 	if (!foundConfig && configType != 2) { //search in $HOME/.sword/
-		
+
 		QString myPath = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
 		myPath.append("/.sword/mods.d");
 		dir = opendir(myPath.toUtf8().constData());

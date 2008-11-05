@@ -63,19 +63,19 @@ public: // Public methods
 	/** Returns a pointer to the backend
 	* @return The backend pointer.
 	*/
-	inline static CSwordBackend* const backend();
+	inline static CSwordBackend* backend();
 	/** Returns a pointer to the language manager
 	* @return The language manager
 	*/
-	inline static CLanguageMgr* const languageMgr();
+	inline static CLanguageMgr* languageMgr();
 	/** Returns a pointer to the info display.
 	* @return The backend pointer.
 	*/
-	inline static InfoDisplay::CInfoDisplay* const infoDisplay();
+	inline static InfoDisplay::CInfoDisplay* infoDisplay();
 	/** Returns a pointer to the application's display template manager
 	* @return The backend pointer.
 	*/
-	static CDisplayTemplateMgr* const displayTemplateManager();
+	static CDisplayTemplateMgr* displayTemplateManager();
 
 	struct PointerCache {
 		PointerCache() {
@@ -95,12 +95,12 @@ public: // Public methods
 extern CPointers::PointerCache m_pointerCache;
 
 /** Returns a pointer to the backend ... */
-inline CSwordBackend* const CPointers::backend() {
+inline CSwordBackend* CPointers::backend() {
 	return m_pointerCache.backend;
 }
 
 /** Returns a pointer to the backend ... */
-inline CLanguageMgr* const CPointers::languageMgr() {
+inline CLanguageMgr* CPointers::languageMgr() {
 	if (!m_pointerCache.langMgr) {
 		m_pointerCache.langMgr = new CLanguageMgr();
 	}
@@ -108,7 +108,7 @@ inline CLanguageMgr* const CPointers::languageMgr() {
 }
 
 /** Returns a pointer to the printer object. */
-inline InfoDisplay::CInfoDisplay* const CPointers::infoDisplay() {
+inline InfoDisplay::CInfoDisplay* CPointers::infoDisplay() {
 	return m_pointerCache.infoDisplay;
 }
 

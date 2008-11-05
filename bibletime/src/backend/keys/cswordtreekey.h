@@ -37,7 +37,7 @@ public:
 	/** The module which belongs to this key.
 	 * @return The module.
 	 */
-	virtual CSwordModuleInfo* const module( CSwordModuleInfo* const newModule );
+	virtual CSwordModuleInfo* module( CSwordModuleInfo* const newModule );
 	/** Copy method.
 	* @return A new copy of this object.
 	*/
@@ -52,16 +52,16 @@ public:
 	/**
 	* Returns the current key as unicode decoded QString.
 	*/
-	virtual const QString key() const;
+	virtual QString key() const;
 	/**
 	* Set the key. If the parameter is empty or null, the key will be set to "/"
 	*/
-	virtual const bool key( const QString& key );
+	virtual bool key( const QString& key );
 	/**
 	* Set the key from char* To avoid encoding problems use key(QString instead),
 	* otherwise it is caller's responsibility to ensure the correct encoding (utf8/latin1).
 	*/
-	virtual const bool key( const char* key );
+	virtual bool key( const char* key );
 
 protected:
 	/**

@@ -47,15 +47,15 @@ public:
 	* If the function is called again, the cached list is returned so we have a major speed improvement.
 	* @return The list of lexicon entries
 	*/
-	QStringList* const entries();
+	QStringList* entries();
 	/**
 	* Reimplementation, to return the right type for this lexicon.
 	*/
-	virtual const CSwordModuleInfo::ModuleType type() const;
+	virtual CSwordModuleInfo::ModuleType type() const;
 	/**
 	* Jumps to the closest entry in the module.
 	*/
-	const bool snap();
+	bool snap();
 
 private:
 	/**
@@ -64,7 +64,7 @@ private:
 	QStringList* m_entryList;
 };
 
-inline const CSwordModuleInfo::ModuleType CSwordLexiconModuleInfo::type() const {
+inline CSwordModuleInfo::ModuleType CSwordLexiconModuleInfo::type() const {
 	return CSwordModuleInfo::Lexicon;
 }
 

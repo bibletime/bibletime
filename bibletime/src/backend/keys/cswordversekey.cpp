@@ -34,7 +34,7 @@ CSwordKey* CSwordVerseKey::copy() const {
 }
 
 /** Sets the module for this key */
-CSwordModuleInfo* const CSwordVerseKey::module( CSwordModuleInfo* const newModule ) {
+CSwordModuleInfo* CSwordVerseKey::module( CSwordModuleInfo* const newModule ) {
 	if (newModule && ((newModule->type() == CSwordModuleInfo::Bible)  || (newModule->type() == CSwordModuleInfo::Commentary) ) ) {
 		m_module = newModule;
 
@@ -54,7 +54,7 @@ CSwordModuleInfo* const CSwordVerseKey::module( CSwordModuleInfo* const newModul
 }
 
 /** Returns the current book as Text, not as integer. */
-const QString CSwordVerseKey::book( const QString& newBook ) {
+QString CSwordVerseKey::book( const QString& newBook ) {
 	int min = 0;
 	int max = 1;
 
@@ -103,7 +103,7 @@ const QString CSwordVerseKey::book( const QString& newBook ) {
 }
 
 /** Sets the key we use to the parameter. */
-const QString CSwordVerseKey::key() const {
+QString CSwordVerseKey::key() const {
 	return QString::fromUtf8(getText());
 }
 
@@ -111,11 +111,11 @@ const char * CSwordVerseKey::rawKey() const {
 	return getText();
 }
 
-const bool CSwordVerseKey::key( const QString& newKey ) {
+bool CSwordVerseKey::key( const QString& newKey ) {
 	return key( newKey.toUtf8().constData() );
 }
 
-const bool CSwordVerseKey::key( const char* newKey ) {
+bool CSwordVerseKey::key( const char* newKey ) {
 	if (newKey && (strlen(newKey)>0) ) {
 		VerseKey::operator = (newKey);
 	}
@@ -130,7 +130,7 @@ const bool CSwordVerseKey::key( const char* newKey ) {
 	return !Error();
 }
 
-const bool CSwordVerseKey::next( const JumpType type ) {
+bool CSwordVerseKey::next( const JumpType type ) {
 	Error(); //clear Error status
 	bool ret = true;
 
@@ -139,7 +139,7 @@ const bool CSwordVerseKey::next( const JumpType type ) {
 		case UseBook: {
 			const int currentTestament = Testament();
 			const int currentBook = Book();
-			 
+
 			if ((currentTestament == 2) && (currentBook >= BMAX[currentTestament-1])) { //Revelation, i.e. end of navigation
 				return false;
 			}
@@ -217,7 +217,7 @@ const bool CSwordVerseKey::next( const JumpType type ) {
 	return ret;
 }
 
-const bool CSwordVerseKey::previous( const JumpType type ) {
+bool CSwordVerseKey::previous( const JumpType type ) {
 	bool ret = true;
 
 	switch (type) {
@@ -233,7 +233,7 @@ const bool CSwordVerseKey::previous( const JumpType type ) {
 			else{
 				Book( Book()-1 );
 			}
-			
+
 			break;
 		}
 

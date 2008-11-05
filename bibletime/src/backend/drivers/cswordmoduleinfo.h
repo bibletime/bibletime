@@ -140,7 +140,7 @@ public:
 	/**
 	* Returns the base directory for search indices
 	*/
-	static const QString getGlobalBaseIndexLocation();
+	static QString getGlobalBaseIndexLocation();
 	/**
 	* Removes search index for this module, even if the module is not there any more
 	*/
@@ -150,7 +150,7 @@ public:
 	/**
 	* Returns the config entry which is pecified by the parameter.
 	*/
-	const QString config( const CSwordModuleInfo::ConfigEntry entry ) const;
+	QString config( const CSwordModuleInfo::ConfigEntry entry ) const;
 
 	CSwordModuleInfo( sword::SWModule* module, CSwordBackend* const = 0 );
 	/** Copy constructor to copy the passed parameter.
@@ -167,12 +167,12 @@ public:
 	/**
 	* Returns the module object so all objects can access the original Sword module.
 	*/
-	inline sword::SWModule* const module() const;
+	sword::SWModule* module() const;
 	/**
 	* Sets the unlock key of the modules and writes the key into the cofig file.
 	* @return True if the unlock process was succesful, if the key was wrong, or if the config file was write protected return false.
 	*/
-	const bool unlock( const QString& unlockKey );
+	bool unlock( const QString& unlockKey );
 	/**
 	* Returns the display object for this module. Normally every module should have a Display object.
 	* Please don't use module()->Display() because this function does return the Sword display and does
@@ -180,39 +180,39 @@ public:
 	* This function performs some casts to return the correct display. If it returns 0 there's no valid
 	* display object.
 	*/
-	Rendering::CEntryDisplay* const getDisplay() const;
+	Rendering::CEntryDisplay* getDisplay() const;
 	/**
 	* This function does return true if the data files of the module are encrypted by the module author
 	* (the on who made the module) no matter if it's locked or not.
 	* @return True if this module is encryped
 	*/
-	const bool isEncrypted() const;
+	bool isEncrypted() const;
 	/**
 	* This function returns true if this module is locked (encrypted + correct cipher key),
 	* otherwise return false.
 	* @return True if this module is locked, i.e. encrypted but without a key set
 	*/
-	const bool isLocked();
+	bool isLocked();
 
-	const bool unlockKeyIsValid();
+	bool unlockKeyIsValid();
 
 	/** The module version.
 	* @return true if this module has a version number and false if it doesn't have one.
 	*/
-	inline const bool hasVersion() const;
-	
+	inline bool hasVersion() const;
+
 	/**
 	* Returns true if the module's index has been built.
 	*/
-	virtual const bool hasIndex();
+	virtual bool hasIndex();
 	/**
 	* Returns the path to this module's index base dir
 	*/
-	virtual const QString getModuleBaseIndexLocation() const;
+	virtual QString getModuleBaseIndexLocation() const;
 	/**
 	* Returns the path to this module's standard index
 	*/
-	virtual const QString getModuleStandardIndexLocation() const;
+	virtual QString getModuleStandardIndexLocation() const;
 	/**
 	* Builds a search index for this module
   	*/
@@ -223,10 +223,10 @@ public:
 	virtual unsigned long indexSize() const;
 	/**
 	* Returns true if something was found, otherwise return false.
-	* This function uses CLucene to perform and index based search.  It also 
+	* This function uses CLucene to perform and index based search.  It also
 	* overwrites the variable containing the last search result.
 	*/
-	virtual const bool searchIndexed(const QString& searchedText, sword::ListKey& scope);
+	virtual bool searchIndexed(const QString& searchedText, sword::ListKey& scope);
 	/**
 	* Returns the last search result for this module.
 	* The last result is cleared by @ref search
@@ -241,31 +241,31 @@ public:
 	/**
 	* Returns the type of the module.
 	*/
-	virtual const CSwordModuleInfo::ModuleType type() const;
+	virtual CSwordModuleInfo::ModuleType type() const;
 	/**
 	* Returns the required Sword version for this module.
 	* Returns -1 if no special Sword version is required.
 	*/
-	const sword::SWVersion minimumSwordVersion();
+	sword::SWVersion minimumSwordVersion();
 	/**
 	* Returns the name of the module.
 	* @return The name of this module.
 	*/
-	inline const QString name() const;
+	QString name() const;
 	/**
 	* Snaps to the closest entry in the module if the current key is
 	* not present in the data files.
 	*/
-	virtual const bool snap() {
+	virtual bool snap() {
 		return false;
 	};
 
-	const bool has( const CSwordModuleInfo::Feature ) const;
-	const bool has( const CSwordModuleInfo::FilterTypes  ) const;
+	bool has( const CSwordModuleInfo::Feature ) const;
+	bool has( const CSwordModuleInfo::FilterTypes  ) const;
 	/**
 	* Returns the text direction of the module's text.,
 	*/
-	virtual const CSwordModuleInfo::TextDirection textDirection();
+	virtual CSwordModuleInfo::TextDirection textDirection();
 	/**
 	* Writes the new text at the given position into the module. This does only work for writabe modules.
 	*/
@@ -273,15 +273,15 @@ public:
 	/**
 	* Deletes the current entry and removes it from the module.
 	*/
-	const bool deleteEntry( CSwordKey* const key );
+	bool deleteEntry( CSwordKey* const key );
 	/**
 	* Returns the language of the module.
 	*/
-	const CLanguageMgr::Language* const language() const;
+	const CLanguageMgr::Language* language() const;
 	/**
 	* Returns true if this module may be written by the write display windows.
 	*/
-	inline virtual const bool isWritable() const;
+	inline virtual bool isWritable() const;
 	/**
 	* Returns true if this module is hidden (not to be shown with other modules in certain views).
 	*/
@@ -292,7 +292,7 @@ public:
 	/**
 	* Returns the category of this module. See CSwordModuleInfo::Category for possible values.
 	*/
-	const CSwordModuleInfo::Category category() const;
+	CSwordModuleInfo::Category category() const;
 	/**
 	* The about text which belongs to this module.
 	*/
@@ -301,7 +301,7 @@ public:
 	* Returns true if this module is Unicode encoded. False if the charset is iso8859-1.
 	* Protected because it should not be used outside of the CSword*ModuleInfo classes.
 	*/
-	inline const bool isUnicode() const {
+	inline bool isUnicode() const {
 		return m_dataCache.isUnicode;
 	}
 
@@ -349,19 +349,19 @@ private:
 	CSwordBackend* m_backend;
 
 	bool m_hidden;
-	
+
 	bool m_cancelIndexing;
 };
 
-inline const CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
+inline CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
 	return CSwordModuleInfo::Unknown;
 }
 
-inline sword::SWModule* const CSwordModuleInfo::module() const {
+inline sword::SWModule* CSwordModuleInfo::module() const {
 	return m_module;
 }
 
-inline const bool CSwordModuleInfo::hasVersion() const {
+inline bool CSwordModuleInfo::hasVersion() const {
 	return m_dataCache.hasVersion;
 }
 
@@ -370,12 +370,12 @@ inline const bool CSwordModuleInfo::hasVersion() const {
 * Returns the name of the module.
 * The Sword library takes care of the duplicate names: _n is added after each duplicate.
 */
-inline const QString CSwordModuleInfo::name() const {
+inline QString CSwordModuleInfo::name() const {
 	return m_dataCache.name;
 }
 
 /** Returns true if this module may be written by the write display windows. */
-inline const bool CSwordModuleInfo::isWritable() const {
+inline bool CSwordModuleInfo::isWritable() const {
 	return false;
 }
 

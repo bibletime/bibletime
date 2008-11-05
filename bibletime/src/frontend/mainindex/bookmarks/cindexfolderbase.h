@@ -30,7 +30,7 @@ public:
 	CIndexFolderBase(CIndexFolderBase* parentFolder, const QString& caption);
 	virtual ~CIndexFolderBase();
 
-	virtual const bool isFolder();
+	virtual bool isFolder();
 
 	virtual void update();
 	virtual void init();
@@ -49,10 +49,10 @@ protected:
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
 	*/
-	virtual const bool allowAutoOpen(const QMimeData* data) const;
+	virtual bool allowAutoOpen(const QMimeData* data) const;
 	/**
 	* Reimplementation. Returns false because folders have no use for drops
-	* (except for the bookmark folders) 
+	* (except for the bookmark folders)
 	*/
 	bool acceptDrop(QDropEvent* e) const;
 };

@@ -52,7 +52,7 @@ public:
 	* Returns if the implementation of this class is a folder item or not.
 	* Reimplement this function to return the correct value.
 	*/
-	virtual const bool isFolder();
+	virtual bool isFolder();
 
 	const Type& type() const;
 	virtual void init();
@@ -62,24 +62,24 @@ public:
 	/**
 	* Returns true if the given action should be enabled in the popup menu.
 	*/
-	virtual const bool enableAction( const MenuAction action );
+	virtual bool enableAction( const MenuAction action );
 
-	virtual const bool isMovable();
+	virtual bool isMovable();
 
 	/**
 	* Returns the XML code which represents the content of this folder.
 	*/
 	virtual QDomElement saveToXML( QDomDocument& /*document*/ );
-	
+
 	/**
 	* Loads the content of this folder from the XML code passed as argument to this function.
 	*/
 	virtual void loadFromXML( QDomElement& /*element*/ );
-	
+
 	virtual QList<QTreeWidgetItem*> getChildList();
 
 	virtual bool acceptDrop(QDropEvent* event) const;
-	
+
 protected:
 	friend class CMainIndex;
 
@@ -90,12 +90,12 @@ protected:
 	/** Our extended version of the dropped method to include a item above the point we dropped the stuff.
 	*/
 	virtual void droppedItem( QDropEvent* e, QTreeWidgetItem* after);
-	
+
 	/**
 	* Reimplementation. Returns true if the auto opening of this folder is allowd
 	* The default return value is "false"
 	*/
-	virtual const bool allowAutoOpen( const QMimeData* data ) const;
+	virtual bool allowAutoOpen( const QMimeData* data ) const;
 
 private:
 	Type m_type;

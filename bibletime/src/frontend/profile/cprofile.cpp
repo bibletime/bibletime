@@ -62,7 +62,7 @@ QList<CProfileWindow*> CProfile::load() {
 		doc.setContent(t.readAll());
 		file.close();
 	}
-	
+
 	QDomElement document = doc.documentElement();
 	if( document.tagName() != "BibleTimeProfile" && document.tagName() != "BibleTime" ) { //BibleTime was used in syntax version 1.0
 		qWarning("CProfile::load: Missing BibleTime doc");
@@ -106,7 +106,7 @@ QList<CProfileWindow*> CProfile::load() {
 				}
 				setGeometry(rect);
 			}
-			
+
 			QDomElement mdi_element = mainWindow.namedItem("MDI").toElement();
 			if(!mdi_element.isNull()) {
 				if (mdi_element.hasAttribute("ArrangementMode")) {
@@ -200,7 +200,7 @@ QList<CProfileWindow*> CProfile::load() {
 }
 
 /** Saves the profile to the file given in the constructor. */
-const bool CProfile::save(QList<CProfileWindow*> windows) {
+bool CProfile::save(QList<CProfileWindow*> windows) {
 	/** Save the settings using a XML file
 	* Save the CProfileWindow objects using a XML file which name is in m_filename
 	*/
@@ -226,7 +226,7 @@ const bool CProfile::save(QList<CProfileWindow*> windows) {
 		geometry.setAttribute("width",r.width());
 		geometry.setAttribute("height",r.height());
 		geometry.setAttribute("isMaximized",static_cast<int>(this->maximized()));
-		
+
 		QDomElement mdi = doc.createElement("MDI");
 		mainWindow.appendChild(mdi);
 		mdi.setAttribute("ArrangementMode",static_cast<int>(this->getMDIArrangementMode()));
@@ -301,7 +301,7 @@ const bool CProfile::save(QList<CProfileWindow*> windows) {
 }
 
 /** Saves the profile to the file given in the constructor. */
-const bool CProfile::save() {
+bool CProfile::save() {
 	return save(m_profileWindows);
 }
 
@@ -372,7 +372,7 @@ void CProfile::saveBasics() {
 }
 
 /** Returns true if the main window was in fullscreen mode as the profile was saved. */
-const bool CProfile::fullscreen() const {
+bool CProfile::fullscreen() const {
 	return m_fullscreen;
 }
 
@@ -382,7 +382,7 @@ void CProfile::setFullscreen( const bool fullscreen ) {
 }
 
 /** Returns true if the main window was maximized as the profile was saved. */
-const bool CProfile::maximized() const {
+bool CProfile::maximized() const {
 	return m_maximized;
 }
 
@@ -406,7 +406,7 @@ void CProfile::setMDIArrangementMode(const CMDIArea::MDIArrangementMode newArran
 	m_mdiArrangementMode = newArrangementMode;
 }
 
-const CMDIArea::MDIArrangementMode CProfile::getMDIArrangementMode(void)
+CMDIArea::MDIArrangementMode CProfile::getMDIArrangementMode(void)
 {
 	return m_mdiArrangementMode;
 }

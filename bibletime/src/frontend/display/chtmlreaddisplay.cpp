@@ -185,7 +185,7 @@ void CHTMLReadDisplay::setText( const QString& newText ) {
 }
 
 /** No descriptions */
-const bool CHTMLReadDisplay::hasSelection() {
+bool CHTMLReadDisplay::hasSelection() {
 	return KHTMLPart::hasSelection();
 }
 
@@ -291,7 +291,7 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 		m_nodeInfo[CDisplay::Lemma] = QString::null;
 
 		do {
-			if (!tmpNode.isNull() && (tmpNode.nodeType() == 
+			if (!tmpNode.isNull() && (tmpNode.nodeType() ==
 						DOM::Node::ELEMENT_NODE) && tmpNode.hasAttributes()) {
 				attr = tmpNode.attributes().getNamedItem("lemma");
 				if (!attr.isNull()) {
@@ -301,7 +301,7 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 			}
 			tmpNode = tmpNode.parentNode();
 		} while ( !tmpNode.isNull() );
-		
+
 		setActiveAnchor( event->url().string() );
 	}
 	else if (event->qmouseEvent()->button() == Qt::LeftButton) {
@@ -349,11 +349,11 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				BTMimeData* mimedata = new BTMimeData(m_dndData.selection);
 				d->setMimeData(mimedata);
 			}
-	
+
 			if (d) {
 				m_dndData.isDragging = true;
 				m_dndData.mousePressed = false;
-	
+
 				//first make a virtual mouse click to end the selection, if it's in progress
 				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
 				QApplication::sendEvent(view()->viewport(), &e);
@@ -361,7 +361,7 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			}
 		}
 	}
-	else if (getMouseTracking() && !(e->qmouseEvent()->modifiers() & Qt::ShiftModifier == Qt::ShiftModifier)) { 
+	else if (getMouseTracking() && !((e->qmouseEvent()->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier)) {
 		//no mouse button pressed and tracking enabled
 		DOM::Node node = e->innerNode();
 		//if no link was under the mouse try to find a title attribute
@@ -369,16 +369,16 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 			// we want to avoid processing the node again
 			// After some millisecs the new timer activates the Mag window update, see timerEvent()
 			// SHIFT key not pressed, so we start timer
-			if ( !(e->qmouseEvent()->modifiers() & Qt::ShiftModifier)) { 
+			if ( !(e->qmouseEvent()->modifiers() & Qt::ShiftModifier)) {
 				// QObject has simple timer
 				killTimer(m_magTimerId);
 				m_magTimerId = startTimer( CBTConfig::get(CBTConfig::magDelay) );
 			}
-	
+
 			m_previousEventNode = node;
 		}
 	}
-		
+
 	KHTMLPart::khtmlMouseMoveEvent(e);
 }
 
@@ -387,7 +387,7 @@ void CHTMLReadDisplay::timerEvent( QTimerEvent* /*e*/ ) {
 	killTimer(m_magTimerId);
 	DOM::Node currentNode = nodeUnderMouse();
 	CInfoDisplay::ListInfoData infoList;
-	
+
 	// Process the node under cursor if it is the same as at the start of the timer
 	if (!currentNode.isNull() && (currentNode != m_previousEventNode) && this->view()->underMouse()) {
 		DOM::Node attr;
@@ -397,39 +397,39 @@ void CHTMLReadDisplay::timerEvent( QTimerEvent* /*e*/ ) {
 				if (!attr.isNull()) {
 					infoList.append( qMakePair(CInfoDisplay::Footnote, attr.nodeValue().string()) );
 				}
-	
+
 				attr = currentNode.attributes().getNamedItem("lemma");
 				if (!attr.isNull()) {
 					infoList.append( qMakePair(CInfoDisplay::Lemma, attr.nodeValue().string()) );
 				}
-	
+
 				attr = currentNode.attributes().getNamedItem("morph");
 				if (!attr.isNull()) {
 					infoList.append( qMakePair(CInfoDisplay::Morph, attr.nodeValue().string()) );
 				}
-	
+
 				attr = currentNode.attributes().getNamedItem("expansion");
 				if (!attr.isNull()) {
 					infoList.append( qMakePair(CInfoDisplay::Abbreviation, attr.nodeValue().string()) );
 				}
-				
+
 				attr = currentNode.attributes().getNamedItem("crossrefs");
 				if (!attr.isNull()) {
 					infoList.append( qMakePair(CInfoDisplay::CrossReference, attr.nodeValue().string()) );
 				}
 			}
-	
+
 			currentNode = currentNode.parentNode();
 			if (!currentNode.isNull() && currentNode.hasAttributes()) {
 				attr = currentNode.attributes().getNamedItem("class");
-				if (!attr.isNull() && (attr.nodeValue().string() == "entry") || (attr.nodeValue().string() == "currententry") ) {
+				if ((!attr.isNull() && (attr.nodeValue().string() == "entry")) || (attr.nodeValue().string() == "currententry") ) {
 					break;
 				}
 			}
 		}
 		while ( !currentNode.isNull() );
 	}
-	
+
 	// Update the mag if there is new content
 	if (!(infoList.isEmpty())) {
 		CPointers::infoDisplay()->setInfo(infoList);
@@ -473,7 +473,7 @@ void CHTMLReadDisplayView::dropEvent( QDropEvent* e ) {
 		//CDragDropMgr::ItemList dndItems = CDragDropMgr::decode(e);
 		//see docs for BTMimeData and QMimeData
 		BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
-		
+
 		//TODO: acceptAction() is no more in qt4. This should be tested. See also dragEnterEvent.
 		e->acceptProposedAction();
 		//bookmarkkey: QString

@@ -53,7 +53,7 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
 	parent->addSubWindow(this);
 	m_actionCollection = new KActionCollection(this);
 	setModules(modules);
-	
+
 	// Connect this to the backend module list changes
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reload(CSwordBackend::SetupChangedReason)));
 	//KMainWindow::setAttribute(Qt::WA_DeleteOnClose); //what about QMdiSubWindow?
@@ -64,7 +64,7 @@ CDisplayWindow::~CDisplayWindow() {
 	m_swordKey = 0;
 }
 
-CMDIArea* const CDisplayWindow::mdi() const {
+CMDIArea* CDisplayWindow::mdi() const {
 	return m_mdi;
 }
 
@@ -73,7 +73,7 @@ const QString CDisplayWindow::windowCaption() {
 	if (!m_modules.count()) {
 		return QString::null;
 	}
-	
+
 	return QString(key()->key()).append(" (").append(m_modules.join(" | ")).append(")");
 }
 
@@ -125,7 +125,7 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 
 void CDisplayWindow::initActions()
 {
-	qDebug("CDisplayWindow::initActions");	
+	qDebug("CDisplayWindow::initActions");
 
 	KActionCollection* ac = actionCollection();
 
@@ -155,15 +155,15 @@ void CDisplayWindow::initActions()
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
 	ac->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
-	
+
 	popupaction = new KToolBarPopupAction(
 			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
 			tr("Forward in history"),
 			ac
 			);
 	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
-	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);	
-	
+	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);
+
 }
 
 /** Refresh the settings of this window. */
@@ -182,7 +182,7 @@ void CDisplayWindow::reload(CSwordBackend::SetupChangedReason) {
 	}
 
 	if (keyChooser()) keyChooser()->setModules( modules(), false );
-	
+
 	if (m_moduleChooserBar) { //necessary for edit windows which have now chooser bar
 		m_moduleChooserBar->setModules(modules());
 	}
@@ -211,7 +211,7 @@ void CDisplayWindow::setFilterOptions( CSwordBackend::FilterOptions& filterOptio
 }
 
 /** Returns true if the widget is ready for use. */
-const bool CDisplayWindow::isReady() const {
+bool CDisplayWindow::isReady() const {
 	return m_isReady;
 }
 
@@ -226,7 +226,7 @@ bool CDisplayWindow::queryClose() {
 }
 
 /** Returns the keychooser widget of this display window. */
-CKeyChooser* const CDisplayWindow::keyChooser() const {
+CKeyChooser* CDisplayWindow::keyChooser() const {
 	return m_keyChooser;
 }
 
@@ -266,7 +266,7 @@ void CDisplayWindow::modulesChanged() {
 }
 
 /** Returns the module chooser bar. */
-CModuleChooserBar* const CDisplayWindow::moduleChooserBar() const {
+CModuleChooserBar* CDisplayWindow::moduleChooserBar() const {
 	return m_moduleChooserBar;
 }
 
@@ -275,7 +275,7 @@ void CDisplayWindow::setModuleChooserBar( CModuleChooserBar* bar ) {
 	if (m_moduleChooserBar) {
 		disconnect(m_moduleChooserBar, SIGNAL(sigChanged()), this, SLOT(modulesChanged()));
 	}
- 	
+
 	//if a new bar should be set!
 	if (bar) {
 		m_moduleChooserBar = bar;
@@ -294,7 +294,7 @@ void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
 }
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
-const bool CDisplayWindow::init() {
+bool CDisplayWindow::init() {
 	qDebug("CDisplayWindow::init");
 	initView();
 	setMinimumSize( 100,100 );
@@ -319,12 +319,12 @@ const bool CDisplayWindow::init() {
 }
 
 /** Returns the main toolbar. */
-QToolBar* const CDisplayWindow::mainToolBar() const {
+QToolBar* CDisplayWindow::mainToolBar() const {
 	return m_mainToolBar;
 }
 
 /** Returns the main toolbar. */
-QToolBar* const CDisplayWindow::buttonsToolBar() const {
+QToolBar* CDisplayWindow::buttonsToolBar() const {
 	return m_buttonsToolBar;
 }
 
@@ -339,7 +339,7 @@ void CDisplayWindow::setButtonsToolBar( QToolBar* bar ) {
 }
 
 /** Returns the display settings button */
-CDisplaySettingsButton* const CDisplayWindow::displaySettingsButton() const {
+CDisplaySettingsButton* CDisplayWindow::displaySettingsButton() const {
 	return m_displaySettingsButton;
 }
 
@@ -396,7 +396,7 @@ void CDisplayWindow::updatePopupMenu() {}
 
 
 ///** Returns the installed popup menu. */
-QMenu* const CDisplayWindow::popup() {
+QMenu* CDisplayWindow::popup() {
 	// qWarning("CReadWindow::popup()");
 	if (!m_popupMenu) {
 		m_popupMenu = new QMenu(this);
@@ -412,7 +412,7 @@ QMenu* const CDisplayWindow::popup() {
 }
 
 /** Returns the display widget used by this implementation of CDisplayWindow. */
-CDisplay* const CDisplayWindow::displayWidget() const {
+CDisplay* CDisplayWindow::displayWidget() const {
 	Q_ASSERT(m_displayWidget);
 	return m_displayWidget;
 }

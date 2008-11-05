@@ -7,11 +7,8 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "cswordmodulesearch.h"
-#include "cswordmodulesearch.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
@@ -43,7 +40,7 @@ void CSwordModuleSearch::setModules( const QList<CSwordModuleInfo*>& list ) {
 }
 
 /** Starts the search for the search text. */
-const bool CSwordModuleSearch::startSearch() {
+bool CSwordModuleSearch::startSearch() {
 	backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
 	m_foundItems   = false;
 
@@ -92,7 +89,7 @@ void CSwordModuleSearch::resetSearchScope() {
 }
 
 /** Returns true if in the last search the searcher found items, if no items were found return false. */
-const bool CSwordModuleSearch::foundItems() const {
+bool CSwordModuleSearch::foundItems() const {
 	return m_foundItems;
 }
 
@@ -112,7 +109,7 @@ void CSwordModuleSearch::searchFinished() {
 	emit finished();
 }
 
-const bool CSwordModuleSearch::modulesHaveIndices( const QList<CSwordModuleInfo*>& modules )
+bool CSwordModuleSearch::modulesHaveIndices( const QList<CSwordModuleInfo*>& modules )
 {
 	bool hasIndices = true;
 	QList<CSwordModuleInfo*>::const_iterator end_it = modules.end();

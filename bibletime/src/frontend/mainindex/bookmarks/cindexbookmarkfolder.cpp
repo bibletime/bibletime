@@ -47,7 +47,7 @@ void CIndexBookmarkFolder::initTree()
 }
 
 /** Reimplementation. */
-const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
+bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 	if ((action == NewFolder) || (action == ImportBookmarks))
 		return true;
 
@@ -55,7 +55,7 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 		return true;
 
 	if ((action == PrintBookmarks) && childCount()){
-	
+
 		QList<QTreeWidgetItem*> items = getChildList();
 		QListIterator<QTreeWidgetItem*> it(items);
 		while(it.hasNext()) {
@@ -72,7 +72,7 @@ const bool CIndexBookmarkFolder::enableAction(const MenuAction action) {
 void CIndexBookmarkFolder::exportBookmarks() {
 	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
 	QString fileName = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
-	
+
 	if (!fileName.isEmpty()) {
 		saveBookmarks( fileName, false ); //false means we don't want to overwrite the file without asking the user
 	};
@@ -105,7 +105,7 @@ void CIndexBookmarkFolder::droppedItem(QDropEvent* /*e*/, QTreeWidgetItem* /*aft
 }
 
 /** Saves the bookmarks in a file. */
-const bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const bool& forceOverwrite ) {
+bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const bool& forceOverwrite ) {
 	QDomDocument doc("DOC");
 	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
 
@@ -114,7 +114,7 @@ const bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const b
 	doc.appendChild(content);
 
 	//append the XML nodes of all child items
-	
+
 	for(int n = 0; n < childCount(); n++) {
 		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( child(n) );
 		if (i->parent() == this) { //only one level under this folder
@@ -123,12 +123,12 @@ const bool CIndexBookmarkFolder::saveBookmarks( const QString& filename, const b
 				content.appendChild( newElem ); //append to this folder
 			}
 		}
-		
+
 	}
 	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
 }
 
-const bool CIndexBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
+bool CIndexBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 	QDomDocument doc;
 	doc.setContent(xml);
 	QDomElement document = doc.documentElement();
@@ -169,7 +169,7 @@ const bool CIndexBookmarkFolder::loadBookmarksFromXML( const QString& xml ) {
 }
 
 /** Loads bookmarks from a file. */
-const bool CIndexBookmarkFolder::loadBookmarks( const QString& filename ) {
+bool CIndexBookmarkFolder::loadBookmarks( const QString& filename ) {
 	QFile file(filename);
 	if (!file.exists())
 		return false;

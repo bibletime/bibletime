@@ -42,7 +42,7 @@ public:
 	/**
 	* Returns the type of the managed window (bible window, commentary window or lexicon window).
 	*/
-	const CSwordModuleInfo::ModuleType type() const;
+	CSwordModuleInfo::ModuleType type() const;
 	/**
 	* Sets the type of the used modules.
 	*/

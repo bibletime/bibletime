@@ -30,11 +30,11 @@ public:
 	* Saves the profile to the file given in the constructor.
 	* @param windows The list of windows available in the profile.
 	*/
-	const bool save( QList<CProfileWindow*> windows );
+	bool save( QList<CProfileWindow*> windows );
 	/**
 	* Saves the profile to the file given in the constructor.
 	*/
-	const bool save();
+	bool save();
 	/**
 	* Loads the profile from the file given in the constructor.
 	* @return The list of profiled window which exist in the profile.
@@ -59,7 +59,7 @@ public:
 	/**
 	* Returns true if the main window was in fullscreen mode as the profile was saved.
 	*/
-	const bool fullscreen() const;
+	bool fullscreen() const;
 	/**
 	* Set the parameter to true if the main window coveres the full screen size.
 	*/
@@ -67,7 +67,7 @@ public:
 	/**
 	* Returns true if the main window was maximized as the profile was saved.
 	*/
-	const bool maximized() const;
+	bool maximized() const;
 	/**
 	* Set the parameter to true if the main window is maximized.
 	*/
@@ -87,7 +87,7 @@ public:
 	/**
 	* Returns mdi arrangement mode
 	*/
-	const CMDIArea::MDIArrangementMode getMDIArrangementMode(void);
+	CMDIArea::MDIArrangementMode getMDIArrangementMode(void);
 
 
 private:

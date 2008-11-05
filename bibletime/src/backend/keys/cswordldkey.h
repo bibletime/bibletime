@@ -77,29 +77,29 @@ public:
 	/**
 	* Sets the module of this key.
 	*/
-	virtual CSwordModuleInfo* const module( CSwordModuleInfo* const module = 0 );
+	virtual CSwordModuleInfo* module( CSwordModuleInfo* const module = 0 );
 	/**
 	* Returns the current key as a QString
 	*/
-	virtual const QString key() const;
+	virtual QString key() const;
 	/**
 	* Set the current key using unicode decoded QString.
 	*/
-	virtual const bool key( const QString& newKey );
+	virtual bool key( const QString& newKey );
 	/**
 	* Set the current key from char*. To avoid encoding problems use key(QString) instead.
 	*/
-	virtual const bool key( const char* );
+	virtual bool key( const char* );
 
 protected:
 	/**
 	 * Returns the raw key appropriate for use directly with Sword.
 	 */
-	virtual const char * rawKey() const;
+	virtual const char* rawKey() const;
 
 private:
 	/**
-	* Disable assignment operator 
+	* Disable assignment operator
 	*/
 	CSwordLDKey& operator= (const CSwordLDKey& );
 

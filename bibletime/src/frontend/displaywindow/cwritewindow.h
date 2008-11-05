@@ -53,7 +53,7 @@ protected: // Protected methods
 	* as backend in each write window implementation.
 	*/
 	void setDisplayWidget( CDisplay* display );
-	virtual const CDisplayWindow::WriteWindowType writeWindowType() = 0;
+	virtual CDisplayWindow::WriteWindowType writeWindowType() = 0;
 	virtual bool queryClose();
 	virtual void saveCurrentText( const QString& key ) = 0;
 

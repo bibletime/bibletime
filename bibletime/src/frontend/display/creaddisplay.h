@@ -26,7 +26,7 @@ public:
 	/**
 	* Returns true if the display has an active anchor.
 	*/
-	const bool hasActiveAnchor();
+	bool hasActiveAnchor();
 	/**
 	* Returns the current active anchor.
 	*/
@@ -40,7 +40,7 @@ public:
 	void setMouseTracking(const bool trackingEnabled) {
 		m_useMouseTracking = trackingEnabled;
 	};
-	const bool getMouseTracking() const {
+	bool getMouseTracking() const {
 		return m_useMouseTracking;
 	};
 

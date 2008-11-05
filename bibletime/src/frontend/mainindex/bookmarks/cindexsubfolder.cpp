@@ -38,7 +38,7 @@ void CIndexSubFolder::init()
 }
 
 /** Reimplementation from  CItemBase. */
-const bool CIndexSubFolder::enableAction(const MenuAction action) {
+bool CIndexSubFolder::enableAction(const MenuAction action) {
 	if (action == ChangeFolder || action == NewFolder || action == DeleteEntries || action == ImportBookmarks )
 		return true;
 	if (action == ExportBookmarks || action == ImportBookmarks )
@@ -56,7 +56,7 @@ QDomElement CIndexSubFolder::saveToXML( QDomDocument& doc ) {
 	*/
 	QDomElement elem = doc.createElement("Folder");
 	elem.setAttribute("caption", text(0));
-	
+
 	for(int n = 0; n < childCount(); n++) {
 		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( child(n) );
 		if (i->parent() == this) { //only one level under this folder
@@ -65,7 +65,7 @@ QDomElement CIndexSubFolder::saveToXML( QDomDocument& doc ) {
 				elem.appendChild( newElem ); //append to this folder
 			}
 		}
-		
+
 	}
 
 	return elem;

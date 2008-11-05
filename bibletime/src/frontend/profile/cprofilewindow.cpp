@@ -48,7 +48,7 @@ void CProfileWindow::setGeometry( const QRect& rect ) {
 }
 
 /** Returns the type of the managed window (bible window, commentary window or lexicon window). */
-const CSwordModuleInfo::ModuleType CProfileWindow::type() const {
+CSwordModuleInfo::ModuleType CProfileWindow::type() const {
 	if (m_type != CSwordModuleInfo::Unknown)
 	return m_type;
 	return CSwordModuleInfo::Unknown;

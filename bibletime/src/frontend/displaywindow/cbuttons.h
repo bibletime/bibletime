@@ -28,7 +28,7 @@ class QMenu;
 class CDisplaySettingsButton : public QToolButton  {
 	Q_OBJECT
 public:
-	
+
 	CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent=0);
 	void reset(const QList<CSwordModuleInfo*>& useModules);
 	/**
@@ -38,11 +38,11 @@ public:
 	/**
 	* Returns the number of usable menu items in the setttings menu.
 	*/
-	const int menuItemCount();
+	int menuItemCount();
 	/**
 	* Returns the status of the item at position "index"
 	*/
-	const bool itemStatus( const int index );
+	bool itemStatus( const int index );
 	/**
 	* Sets the status to changed. The signal changed will be emitted.
 	*/
@@ -55,10 +55,10 @@ protected slots:
 	void optionToggled(QAction* action);
 
 protected:
-	
+
 	/** This enum marks the option types for a display. Used internally.*/
 	enum OptionType {Linebreak, Versenum, Headings, WordsofJ, Vowel, Cantillation, Accents,
-					Variant, Xref, Morphseg};	
+					Variant, Xref, Morphseg};
 
 	CSwordBackend::FilterOptions*  m_moduleSettings;
 	CSwordBackend::DisplayOptions* m_displaySettings;

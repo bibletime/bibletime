@@ -44,7 +44,7 @@ public:
 	* Store the settings of this window in the given profile window.
 	*/
 	virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow );
-	virtual const bool syncAllowed() const;
+	virtual bool syncAllowed() const;
 
 public slots: // Public slots
 	void nextBook();

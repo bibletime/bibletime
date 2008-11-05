@@ -60,7 +60,7 @@ const unsigned long BT_MAX_LUCENE_FIELD_LENGTH = 1024*1024;
 CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * const usedBackend) {
 	m_module = module;
 	Q_ASSERT(module);
-	
+
 	m_hidden = false;
 	m_cancelIndexing = false;
 	m_searchResult.ClearList();
@@ -70,7 +70,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
 	m_dataCache.category = UnknownCategory;
 	m_dataCache.language = 0;
 	m_dataCache.hasVersion = !QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty();
-	
+
 	if (backend()) {
 		if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
 			qWarning("The module \"%s\" requires a newer Sword library. Please update to \"Sword %s\".",
@@ -99,23 +99,23 @@ CSwordModuleInfo::~CSwordModuleInfo() {
 }
 
 /** Sets the unlock key of the modules and writes the key into the cofig file.*/
-const bool CSwordModuleInfo::unlock(const QString & unlockKey) {
+bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 	if (!isEncrypted()) {
 		return false;
 	}
-	
+
 	CBTConfig::setModuleEncryptionKey(name(), unlockKey);
 	backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
 	//TODO: write to Sword config as well
-	
+
 	return true;
 }
 
 /** This function returns true if this module is locked, otherwise return false. */
-const bool CSwordModuleInfo::isLocked() {
+bool CSwordModuleInfo::isLocked() {
 	//still works, but the cipherkey is stored in CBTConfig.
 	//Works because it is set in sword on program startup.
-	
+
 	if (isEncrypted()) {
 		if (unlockKeyIsValid()) {
 			return false;
@@ -126,7 +126,7 @@ const bool CSwordModuleInfo::isLocked() {
 }
 
 /** This functions returns true if this module is encrypted (locked or unlocked). */
-const bool CSwordModuleInfo::isEncrypted() const {
+bool CSwordModuleInfo::isEncrypted() const {
 	/**
 	* If we have the CipherKey entry the module
 	* is encrypted but not necessarily locked
@@ -144,13 +144,13 @@ const bool CSwordModuleInfo::isEncrypted() const {
 }
 
 /** This function makes an estimate if a module was properly unlocked.
-* It returns true if the first entry of the module is not empty and 
+* It returns true if the first entry of the module is not empty and
 * contains only printable characters (for the first 100 chars or so).
 * If that is the case, we can safely assume that a) the module was properly
 * unlocked and b) no buffer overflows will occur, which can happen when
 * Sword filters process garbage text which was not properly decrypted.
 */
-const bool CSwordModuleInfo::unlockKeyIsValid() {
+bool CSwordModuleInfo::unlockKeyIsValid() {
 
 	(*m_module) = sword::TOP;
 
@@ -178,19 +178,19 @@ const bool CSwordModuleInfo::unlockKeyIsValid() {
 	return true;
 }
 
-const QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
+QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
 	return util::filesystem::DirectoryUtil::getUserIndexDir().absolutePath();
 }
 
-const QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
+QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
 	return getGlobalBaseIndexLocation() + QString("/") + name().toLocal8Bit();
 }
 
-const QString CSwordModuleInfo::getModuleStandardIndexLocation() const { //this for now returns the location of the main index
+QString CSwordModuleInfo::getModuleStandardIndexLocation() const { //this for now returns the location of the main index
 	return getModuleBaseIndexLocation() + QString("/standard");
 }
 
-const bool CSwordModuleInfo::hasIndex() { 
+bool CSwordModuleInfo::hasIndex() {
 	//this will return true only
 	//if the index exists and has correct version information for both index and module
 	QDir d;
@@ -221,7 +221,7 @@ void CSwordModuleInfo::buildIndex() {
 
 	//we don't want the linked entries indexed again
 	module()->setSkipConsecutiveLinks(true);
-	
+
 	m_cancelIndexing = false;
 
 	//Without this we don't get strongs, lemmas, etc
@@ -401,7 +401,7 @@ unsigned long CSwordModuleInfo::indexSize() const {
 }
 
 
-const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey& scope) {
+bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey& scope) {
 	char utfBuffer[BT_MAX_LUCENE_FIELD_LENGTH  + 1];
 	wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
 
@@ -452,7 +452,7 @@ const bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::L
 				m_searchResult.add(*swKey);
 			}
 		}
-	} 
+	}
 	catch (...) {
 		qWarning("CLucene exception");
 		return false;
@@ -479,16 +479,16 @@ void CSwordModuleInfo::clearSearchResult() {
 }
 
 /** Returns the required Sword version for this module. Returns -1 if no special Sword version is required. */
-const sword::SWVersion CSwordModuleInfo::minimumSwordVersion() {
+sword::SWVersion CSwordModuleInfo::minimumSwordVersion() {
 	return sword::SWVersion(config(CSwordModuleInfo::MinimumSwordVersion).toUtf8().constData());
 }
 
-const QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) const {
+QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) const {
 	switch (entry) {
 
 		case AboutInformation:
 			return getFormattedConfigEntry("About");
-		
+
 		case CipherKey: {
 			if (CBTConfig::getModuleEncryptionKey(name()).isNull()) { //fall back!
 				return QString(m_module->getConfigEntry("CipherKey"));
@@ -497,137 +497,137 @@ const QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry
 				return CBTConfig::getModuleEncryptionKey(name());
 			}
 		}
-	
+
 		case AbsoluteDataPath: {
 			QString path( getSimpleConfigEntry("AbsoluteDataPath") );
 			path.replace(QRegExp("/./"), "/"); // make /abs/path/./modules/ looking better
 			//make sure we have a trailing slash!
-	
+
 			if (path.right(1) != "/") {
 				path.append('/');
 			}
-	
+
 			return path;
 		}
-	
+
 		case DataPath: { //make sure we remove the dataFile part if it's a Lexicon
 			QString path(getSimpleConfigEntry("DataPath"));
-	
+
 			if ((type() == CSwordModuleInfo::GenericBook) || (type() == CSwordModuleInfo::Lexicon)) {
 				int pos = path.lastIndexOf("/"); //last slash in the string
-	
+
 				if (pos != -1) {
 					path = path.left(pos + 1); //include the slash
 				}
 			}
-	
+
 			return path;
 		}
-	
+
 		case Description:
 			return getFormattedConfigEntry("Description");
-	
+
 		case ModuleVersion: {
 			QString version(getSimpleConfigEntry("Version"));
-	
+
 			if (version.isEmpty()) {
 				version = "1.0";
 			}
-	
+
 			return version;
 		}
-	
+
 		case MinimumSwordVersion: {
 			const QString minimumVersion(getSimpleConfigEntry("MinimumVersion"));
 			return !minimumVersion.isEmpty()? minimumVersion : QString("0.0");
 		}
-	
+
 		case TextDir: {
 			const QString dir(getSimpleConfigEntry("Direction"));
 			return !dir.isEmpty()? dir : QString("LtoR");
 		}
-	
+
 		case DisplayLevel: {
 			const QString level(getSimpleConfigEntry("DisplayLevel"));
 			return !level.isEmpty()? level : QString("1");
 		}
-	
+
 		case GlossaryFrom: {
 			if (!category() == Glossary) {
 				return QString::null;
 			};
-	
+
 			const QString lang(getSimpleConfigEntry("GlossaryFrom"));
-	
+
 			return !lang.isEmpty()? lang : QString::null;
 		}
-	
+
 		case GlossaryTo: {
 			if (!category() == Glossary) {
 				return QString::null;
 			};
-	
+
 			const QString lang(getSimpleConfigEntry("GlossaryTo"));
-	
+
 			return !lang.isEmpty()? lang : QString::null;
 		}
-	
+
 		case Markup: {
 			const QString markup(getSimpleConfigEntry("SourceType"));
 			return !markup.isEmpty()? markup : QString("Unknown");
 		}
-	
+
 		case DistributionLicense:
 			return getSimpleConfigEntry("DistributionLicense");
-	
+
 		case DistributionSource:
 			return getSimpleConfigEntry("DistributionSource");
-	
+
 		case DistributionNotes:
 			return getSimpleConfigEntry("DistributionNotes");
-	
+
 		case TextSource:
 			return getSimpleConfigEntry("TextSource");
-	
+
 		case CopyrightNotes:
 			return getSimpleConfigEntry("CopyrightNotes");
-	
+
 		case CopyrightHolder:
 			return getSimpleConfigEntry("CopyrightHolder");
-	
+
 		case CopyrightDate:
 			return getSimpleConfigEntry("CopyrightDate");
-	
+
 		case CopyrightContactName:
 			return getSimpleConfigEntry("CopyrightContactName");
-	
+
 		case CopyrightContactAddress:
 			return getSimpleConfigEntry("CopyrightContactAddress");
-	
+
 		case CopyrightContactEmail:
 			return getSimpleConfigEntry("CopyrightContactEmail");
-	
+
 		default:
 			return QString::null;
 	}
 }
 
 /** Returns true if the module supports the feature given as parameter. */
-const bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
+bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const {
 	switch (feature) {
 
 		// 		case StrongsNumbers:
 		// 		return m_module->getConfig().has("Feature", "StrongsNumber");
-	
+
 		case GreekDef:
 		return m_module->getConfig().has("Feature", "GreekDef");
-	
+
 		case HebrewDef:
 			return m_module->getConfig().has("Feature", "HebrewDef");
-	
+
 		case GreekParse:
 			return m_module->getConfig().has("Feature", "GreekParse");
-	
+
 		case HebrewParse:
 			return m_module->getConfig().has("Feature", "HebrewParse");
 	}
@@ -635,7 +635,7 @@ const bool CSwordModuleInfo::has(const CSwordModuleInfo::Feature feature) const 
 	return false;
 }
 
-const bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
+bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) const {
 	//BAD workaround to see if the filter is GBF, OSIS or ThML!
 	const QString name = backend()->configOptionName(option);
 
@@ -663,7 +663,7 @@ const bool CSwordModuleInfo::has(const CSwordModuleInfo::FilterTypes option) con
 }
 
 /** Returns the text direction of the module's text., */
-const CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() {
+CSwordModuleInfo::TextDirection CSwordModuleInfo::textDirection() {
 	if (config(TextDir) == "RtoL") {
 		return CSwordModuleInfo::RightToLeft;
 	}
@@ -681,7 +681,7 @@ void CSwordModuleInfo::write(CSwordKey * key, const QString & newText) {
 }
 
 /** Deletes the current entry and removes it from the module. */
-const bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
+bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 	module()->KeyText(isUnicode()? key->key().toUtf8().constData() : key->key().toLocal8Bit().constData());
 
 	if (module()) {
@@ -693,9 +693,9 @@ const bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 }
 
 /** Returns the category of this module. See CSwordModuleInfo::Category for possible values. */
-const CSwordModuleInfo::Category CSwordModuleInfo::category() const {
+CSwordModuleInfo::Category CSwordModuleInfo::category() const {
 	//qDebug("CSwordModuleInfo::category");
-	if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) { 
+	if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) {
 		const QString cat(m_module->getConfigEntry("Category"));
 		//qDebug() << "the category was unknown, add a category "<< cat << "for module" << m_module->Name();
 
@@ -729,7 +729,7 @@ const CSwordModuleInfo::Category CSwordModuleInfo::category() const {
 }
 
 /** Returns the display object for this module. */
-Rendering::CEntryDisplay * const CSwordModuleInfo::getDisplay() const {
+Rendering::CEntryDisplay * CSwordModuleInfo::getDisplay() const {
 	return dynamic_cast < Rendering::CEntryDisplay * >(m_module->Disp());
 }
 
@@ -871,7 +871,7 @@ QString CSwordModuleInfo::aboutText() const {
 }
 
 /** Returns the language of the module. */
-const CLanguageMgr::Language * const CSwordModuleInfo::language() const {
+const CLanguageMgr::Language* CSwordModuleInfo::language() const {
 	if (!m_dataCache.language) {
 	if (module()) {
 			if (category() == Glossary) {
@@ -906,8 +906,8 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString& name) const {
 	sword::SWBuf RTF_Buffer(m_module->getConfigEntry(name.toUtf8().constData()));
 	sword::RTFHTML RTF_Filter;
 	RTF_Filter.processText(RTF_Buffer, 0, 0);
-	QString ret = isUnicode() 
-		? QString::fromUtf8(RTF_Buffer.c_str()) 
+	QString ret = isUnicode()
+		? QString::fromUtf8(RTF_Buffer.c_str())
 		: QString::fromLatin1(RTF_Buffer.c_str());
 
 	return ret.isEmpty() ? QString::null : ret;
