@@ -15,9 +15,6 @@
 
 #include <QWidget>
 
-#include <klineedit.h>
-#include <kcompletion.h>
-
 #include <boost/scoped_ptr.hpp>
 
 
@@ -25,25 +22,8 @@ class CLexiconKeyChooser;
 class CSwordVerseKey;
 class BtDropdownChooserButton;
 
+class QLineEdit;
 
-// class CKeyReferenceCompletion : public KCompletion {
-// 	Q_OBJECT
-// public:
-// 	CKeyReferenceCompletion(CSwordBibleModuleInfo*);
-// 	~CKeyReferenceCompletion();
-// 	QString makeCompletion(const QString &);
-// 	QStringList allMatches();
-// private:
-// 	boost::scoped_ptr<CSwordVerseKey> m_key;
-// 	CSwordBibleModuleInfo *m_module;
-// };
-
-// class CKeyReferenceLineEdit : public KLineEdit {
-// 	Q_OBJECT
-// public:
-// 	CKeyReferenceLineEdit(QWidget *parent=0);
-// //	void makeCompletion(const QString &);
-// };
 
 class CKeyReferenceWidget : public QWidget  {
 	Q_OBJECT
@@ -53,7 +33,6 @@ public:
 	*/
 	CKeyReferenceWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent=0, const char *name=0);
 	bool setKey(CSwordVerseKey* key);
-	//KLineEdit* textbox();
 	QLineEdit* textbox();
 	void setModule(CSwordBibleModuleInfo *m = 0);
 
@@ -89,7 +68,6 @@ private:
 
 	boost::scoped_ptr<CSwordVerseKey> m_key;
 
-	//CKeyReferenceLineEdit *m_textbox;
 	QLineEdit* m_textbox;
 
 	CScrollerWidgetSet *m_bookScroller;
