@@ -36,54 +36,54 @@
 
 
 
-/* Override the completion box for our references */
-CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod)
-	: KCompletion(),
-	m_key(new CSwordVerseKey(mod))
-{
-	m_module = mod;
-}
-
-QString CKeyReferenceCompletion::makeCompletion(const QString &text)
-{
-	if(!text.isEmpty() && m_key->key(text)) {
-		// XXX: key() does not check bounds properly if we only have eg the NT.
-		return m_key->key();
-	}
-
-	return QString::null;
-}
+// /* Override the completion box for our references */
+// CKeyReferenceCompletion::CKeyReferenceCompletion(CSwordBibleModuleInfo *mod)
+// 	: KCompletion(),
+// 	m_key(new CSwordVerseKey(mod))
+// {
+// 	m_module = mod;
+// }
+// 
+// QString CKeyReferenceCompletion::makeCompletion(const QString &text)
+// {
+// 	if(!text.isEmpty() && m_key->key(text)) {
+// 		// XXX: key() does not check bounds properly if we only have eg the NT.
+// 		return m_key->key();
+// 	}
+// 
+// 	return QString::null;
+// }
 
 //**********************************************************************************/
 /* To get popup working we have to rework KLineEdit too */
-CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent, const char* /*name*/) : KLineEdit(parent) {}
+//CKeyReferenceLineEdit::CKeyReferenceLineEdit(QWidget *parent) : KLineEdit(parent) {}
 
-void CKeyReferenceLineEdit::makeCompletion(const QString &text)
-{
-	KCompletion *comp = compObj();
-	KGlobalSettings::Completion mode = completionMode();
-
-	if ( !comp || mode == KGlobalSettings::CompletionNone )
-		return;  // No completion object...
-
-	QString match = comp->makeCompletion( text );
-	if ( mode == KGlobalSettings::CompletionPopup ||
-		mode == KGlobalSettings::CompletionPopupAuto )
-	{
-		if ( match.isNull() )
-		{
-			KCompletionBox *compbox = completionBox();
-			compbox->hide();
-			compbox->clear();
-		} else {
-			QStringList t;
-			t.append(match);
-			setCompletedItems(t);
-		}
-	} else {
-		KLineEdit::makeCompletion(text);
-	}
-}
+//void CKeyReferenceLineEdit::makeCompletion(const QString& /*text*/)
+//{
+// 	KCompletion *comp = compObj();
+// 	KGlobalSettings::Completion mode = completionMode();
+// 
+// 	if ( !comp || mode == KGlobalSettings::CompletionNone )
+// 		return;  // No completion object...
+// 
+// 	QString match = comp->makeCompletion( text );
+// 	if ( mode == KGlobalSettings::CompletionPopup ||
+// 		mode == KGlobalSettings::CompletionPopupAuto )
+// 	{
+// 		if ( match.isNull() )
+// 		{
+// 			KCompletionBox *compbox = completionBox();
+// 			compbox->hide();
+// 			compbox->clear();
+// 		} else {
+// 			QStringList t;
+// 			t.append(match);
+// 			setCompletedItems(t);
+// 		}
+// 	} else {
+// 		KLineEdit::makeCompletion(text);
+// 	}
+//}
 
 //**********************************************************************************/
 
@@ -105,7 +105,8 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	m_bookScroller = new CScrollerWidgetSet(this);
 
-	m_textbox = new CKeyReferenceLineEdit( this );
+//	m_textbox = new CKeyReferenceLineEdit( this );
+	m_textbox = new QLineEdit( this );
 	m_textbox->setStyleSheet("QLineEdit{margin:0px;}");
 
 	setKey(key);	// The order of these two functions is important.
@@ -182,11 +183,11 @@ void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m)
 		m_key->module(m);
 	}
 	
-	delete m_textbox->completionObject();
-	CKeyReferenceCompletion *comp = new CKeyReferenceCompletion(m_module);
-	m_textbox->setCompletionObject(comp);
-	m_textbox->setAutoDeleteCompletionObject(true);
-	m_textbox->setCompletionMode(KGlobalSettings::CompletionPopup);
+	//delete m_textbox->completionObject();
+	//CKeyReferenceCompletion *comp = new CKeyReferenceCompletion(m_module);
+	//m_textbox->setCompletionObject(comp);
+	//m_textbox->setAutoDeleteCompletionObject(true);
+	//m_textbox->setCompletionMode(KGlobalSettings::CompletionPopup);
 }
 
 void CKeyReferenceWidget::slotClearRef( )
@@ -209,7 +210,8 @@ bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
 	return true;
 }
 
-KLineEdit* CKeyReferenceWidget::textbox()
+//KLineEdit* CKeyReferenceWidget::textbox()
+QLineEdit* CKeyReferenceWidget::textbox()
 {
 	return m_textbox;
 }
@@ -288,4 +290,4 @@ void CKeyReferenceWidget::slotChangeBook(QString bookname)
 }
 
 
-CKeyReferenceCompletion::~CKeyReferenceCompletion(){}
+//CKeyReferenceCompletion::~CKeyReferenceCompletion(){}
