@@ -17,6 +17,7 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 SET(QT_MIN_VERSION 4.4.0)
 SET(QT_USE_DBUS 1)
 SET(QT_USE_QTXML 1)
+SET(QT_USE_QTWEBKIT 1)
 FIND_PACKAGE(Qt4 REQUIRED)
 #
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line

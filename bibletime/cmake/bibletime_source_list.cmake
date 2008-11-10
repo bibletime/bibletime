@@ -81,6 +81,8 @@ SET(bibletime_SOURCES
 	src/frontend/settingsdialogs/cswordsettings.cpp
 	src/frontend/settingsdialogs/clanguagesettings.cpp
 	src/frontend/settingsdialogs/cconfigurationdialog.cpp
+	src/frontend/settingsdialogs/cfontchooser.cpp
+	src/frontend/settingsdialogs/clistwidget.cpp
 
 	#Bookshelf manager frontend
 	src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp

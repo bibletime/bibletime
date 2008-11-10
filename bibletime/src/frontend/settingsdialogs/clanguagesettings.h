@@ -22,7 +22,7 @@
 
 class QComboBox;
 class QCheckBox;
-class KFontChooser;
+class CFontChooser;
 
 
 /**
@@ -53,11 +53,11 @@ protected slots:
 	*/
 	void newDisplayWindowFontAreaSelected(const QString&);
 
-private:	
+private:
 	QComboBox* m_swordLocaleCombo;
 	QComboBox* m_usageCombo;
 	QCheckBox* m_useOwnFontCheck;
-	KFontChooser* m_fontChooser;
+	CFontChooser* m_fontChooser;
 
 	QMap<QString,CBTConfig::FontSettingsPair> m_fontMap;
 };

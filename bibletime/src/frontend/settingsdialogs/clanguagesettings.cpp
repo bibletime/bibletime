@@ -26,8 +26,7 @@
 #include <QLabel>
 
 
-
-#include <kfontchooser.h>
+#include "cfontchooser.h"
 
 
 //Sword includes
@@ -158,9 +157,15 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 	layout->addLayout(hLayout);
 	//#warning TODO: remember the last selected font and jump there.
 
-	m_fontChooser = new KFontChooser(this);
+	m_fontChooser = new CFontChooser(this);
+
 	//TODO: Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
-	m_fontChooser->setSampleText(tr("The quick brown fox jumps over the lazy dog."));
+	QString sampleText;
+	sampleText.append("1 In the beginning God created the heaven and the earth.  ");
+    sampleText.append("2 And the earth was without form, and void; and darkness was on the face of the deep.");
+	sampleText.append(" And the Spirit of God moved on the face of the waters.");
+
+	m_fontChooser->setSampleText(sampleText);
 	layout->addWidget(m_fontChooser);
 
 	connect(m_fontChooser, SIGNAL(fontSelected(const QFont&)), SLOT(newDisplayWindowFontSelected(const QFont&)));
@@ -170,8 +175,6 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 	useOwnFontClicked( m_fontMap[m_usageCombo->currentText()].first );
 	m_useOwnFontCheck->setChecked( m_fontMap[m_usageCombo->currentText()].first );
 	m_fontChooser->setMinimumSize(m_fontChooser->sizeHint());
-
-
 }
 
 
