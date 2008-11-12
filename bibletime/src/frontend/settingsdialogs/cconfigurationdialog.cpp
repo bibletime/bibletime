@@ -76,7 +76,10 @@ CConfigurationDialog::~CConfigurationDialog() {}
 void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 {
 	if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Cancel)))
+	{
 		close();
+		return;
+	}
 
 //	m_acceleratorsPage->save();
 	m_languagesPage->save();
