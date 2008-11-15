@@ -27,7 +27,7 @@ public:
 	CSearchResultView(QWidget* parent);
 	virtual ~CSearchResultView();
 	/** Returns the module which is currently used. */
-	CSwordModuleInfo* module();
+	CSwordModuleInfo* const module();
 
 protected: // Protected methods
 	/**
@@ -57,7 +57,7 @@ public slots: // Public slots
 
 protected slots: // Protected slots
 	void printItems();
-
+	
 	/**
 	* Is connected to the signal which is emitted when a new item was chosen.
 	*/
@@ -86,7 +86,7 @@ private:
 		copy;
 	}
 	m_actions;
-
+	
 	QMenu* m_popup;
 	CSwordModuleInfo* m_module;
 

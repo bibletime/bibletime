@@ -54,11 +54,11 @@ void CSearchResultView::initView()
 
 	m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
 	m_actions.copyMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::result::foundItems::copyMenu::icon));
-
+	
 	m_actions.copy.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyItems()) );
 	m_actions.copyMenu->addAction(m_actions.copy.result);
-
+	
 	m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()),
 		this, SLOT(copyItemsWithText()));
@@ -100,7 +100,7 @@ void CSearchResultView::initConnections() {
 /** Setups the list with the given module. */
 void CSearchResultView::setupTree(CSwordModuleInfo* m) {
 	clear();
-
+	
 	if (!m) return;
 
 	m_module = m;
@@ -256,24 +256,24 @@ void CSearchResultView::copyItemsWithText() {
 	keys.clear(); //delete all the keys we created
 }
 
-CSwordModuleInfo* CSearchResultView::module() {
+CSwordModuleInfo* const CSearchResultView::module() {
 	return m_module;
 }
 
 //TODO: port this to the new d'n'd
 // Q3DragObject* CSearchResultView::dragObject() {
 // 	//return a valid DragObject to make DnD possible!
-//
+// 
 // 	/*
 // 	* First get all selected items and fill with them the dndItems list. The return the QDragObject we got from CDRagDropMgr
 // 	*/
 // 	CDragDropMgr::ItemList dndItems;
-//
+// 
 // 	Q3PtrList<Q3ListViewItem> items = selectedItems();
 // 	for (items.first(); items.current(); items.next()) {
 // 		dndItems.append( CDragDropMgr::Item(m_module->name(), items.current()->text(0), QString::null) ); //no description
 // 	};
-//
+// 
 // 	return CDragDropMgr::dragObject(dndItems, viewport());
 // }
 

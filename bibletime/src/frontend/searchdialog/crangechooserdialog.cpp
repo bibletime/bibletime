@@ -46,7 +46,7 @@ CRangeChooserDialog::RangeItem::RangeItem(QListWidget* view, QListWidgetItem* /*
 
 CRangeChooserDialog::RangeItem::~RangeItem() {}
 
-const QString& CRangeChooserDialog::RangeItem::range()
+const QString& CRangeChooserDialog::RangeItem::range() const
 {
 	//  qWarning("range is %s", (const char*)m_range.utf8());
 	return m_range;
@@ -56,7 +56,7 @@ void CRangeChooserDialog::RangeItem::setRange(QString newRange) {
 	m_range = newRange;
 }
 
-const QString CRangeChooserDialog::RangeItem::caption() {
+QString CRangeChooserDialog::RangeItem::caption() const {
 	return text();
 }
 

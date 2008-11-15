@@ -7,10 +7,10 @@
 *
 **********/
 
-#ifndef CSEARCHDIALOGAREAS_H
-#define CSEARCHDIALOGAREAS_H
+#ifndef BTSEARCHRESULTAREA_H
+#define BTSEARCHRESULTAREA_H
 
-class CSwordModuleInfo;
+
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
@@ -21,21 +21,15 @@ class CSwordModuleInfo;
 
 //forward declarations
 class CReadDisplay;
-
+class CSwordModuleInfo;
 namespace Search {
 	class CModuleResultView;
 	class CSearchResultView;
-	class CHistoryComboBox;
 }
+
 class QHBoxLayout;
-class QGroupBox;
-class QGridLayout;
-class QPushButton;
-class QLabel;
 class QTreeWidget;
 class QFrame;
-class QComboBox;
-
 
 namespace Search {
 
@@ -123,15 +117,16 @@ private:
 	QString lemmaText;
 };
 
+
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
   */
-class CSearchResultArea : public QWidget
+class BtSearchResultArea : public QWidget
 {
 	Q_OBJECT
 public:
-	CSearchResultArea(QWidget *parent=0);
-	~CSearchResultArea();
+	BtSearchResultArea(QWidget *parent=0);
+	~BtSearchResultArea();
 	/**
 	* Sets the modules which contain the result of each.
 	*/
@@ -140,13 +135,13 @@ public:
 	QSize sizeHint() const { return baseSize(); }
 	QSize minimumSizeHint() const { return minimumSize(); }
 
-public slots: // Public slots
+public slots:
 	/**
 	* Resets the current list of modules and the displayed list of found entries.
 	*/
 	void reset();
 
-protected: // Protected methods
+protected:
 	/**
 	* Initializes the view of this widget.
 	*/
@@ -162,7 +157,7 @@ protected: // Protected methods
 	/**
 	* This function highlights the searched text in the content using the search type given by search flags
 	*/
-	const QString highlightSearchedText(const QString& content, const QString& searchedText/*, const int searchFlags*/);
+	QString highlightSearchedText(const QString& content, const QString& searchedText);
 
 	/**
 	* Load the settings from the resource file
@@ -173,7 +168,7 @@ protected: // Protected methods
 	*/
 	void saveDialogSettings();
 
-protected slots: // Protected slots
+protected slots:
 	/**
 	* Update the preview of the selected key.
 	*/
@@ -192,7 +187,6 @@ private:
 	CModuleResultView* m_moduleListBox;
 	CSearchResultView* m_resultListBox;
 
-	QPushButton *m_analyseButton;
 	QFrame *m_displayFrame;
 	CReadDisplay* m_previewDisplay;
 
@@ -202,132 +196,6 @@ private:
 	QSplitter *resultListSplitter;
 };
 
-
-
-//---------------CSearchOptionsArea------------------------------
-
-class CSearchOptionsArea : public QWidget {
-	Q_OBJECT
-public:
-
-	friend class CSearchDialog;
-
-	CSearchOptionsArea(QWidget *parent=0);
-	~CSearchOptionsArea();
-	/*
-	* Add text to search combox box history
-	*/
-	void addToHistory(const QString& text);
-	/**
-	* Sets the search text used in the page.
-	*/
-	void setSearchText(const QString& text);
-	/**
-	* Returns the search text set in this page.
-	*/
-	const QString searchText();
-	/**
-	* Returns the list of used modules.
-	*/
-	const QList<CSwordModuleInfo*> modules();
-	/**
-	* Return the selected search type,.
-	*/
-//	const int searchFlags();
-	/**
-	* Sets all options back to the default.
-	*/
-	void reset();
-	/**
-	* Returns the selected search scope if a search scope was selected.
-	*/
-	sword::ListKey searchScope();
-	/**
-	* Returns the selected scope type.
-	*/
-	//const CSwordModuleSearch::scopeType scopeType();
-
-	QSize sizeHint() const { return baseSize(); }
-	QSize minimumSizeHint() const { return minimumSize(); }
-    bool hasSearchScope();
-
-
-	
-protected: // Protected methods
-	/**
-	* Initializes this page.
-	*/
-	void initView();
-	void initConnections();
-	/**
-	* Reads the settings of the last searchdialog session.
-	*/
-	void readSettings();
-	/**
-	* Reads the settings for the searchdialog from disk.
-	*/
-	void saveSettings();
-	bool eventFilter(QObject* obj, QEvent* event);
-public slots: // Public slots
-	/**
-	* Sets the modules used by the search.
-	*/
-	void setModules( QList<CSwordModuleInfo*> modules );
-
-	/** Sets the modules when user selects them from the combobox.*/
-	void moduleListTextSelected(int index);
-
-	/**
-	* Reimplementation.
-	*/
-	void aboutToShow();
-	/**
-	* Refreshes the list of ranges and the range combobox. 
-	*/
-	void refreshRanges();
-	/**
-	 * Opens the modules chooser dialog.
-	 */
-	void chooseModules();
-
-protected slots: // Protected slots
-	void setupRanges();
-	void syntaxHelp();
-	void slotSearchTextEditReturnPressed();
-
-signals:
-	void sigSetSearchButtonStatus(bool);
-	void sigStartSearch();
-
-private:
-	QList<CSwordModuleInfo*> m_modules;
-
-	QHBoxLayout *hboxLayout;
-    QGroupBox *searchGroupBox;
-    QGridLayout *gridLayout;
-    QLabel *m_searchTextLabel;
-    QPushButton *m_syntaxButton;
-    QPushButton *m_chooseModulesButton;
-    QPushButton *m_chooseRangeButton;
-    QLabel *m_searchScopeLabel;
-    QComboBox *m_rangeChooserCombo;
-    CHistoryComboBox *m_searchTextCombo;
-    QLabel *m_modulesLabel;
-	QComboBox* m_modulesCombo;
-
-};
-
-
-// class BtSearchTextComboBox : public KHistoryComboBox
-// {
-// 	Q_OBJECT
-// public:
-// 	BtSearchTextComboBox(QWidget* parent);
-// 
-// protected:
-// 	keyPressEvent(QKeyEvent* e);
-// };
-
-} //end of namespace Search
+} //namespace Search
 
 #endif

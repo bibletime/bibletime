@@ -13,8 +13,7 @@
 #define CMODULERESULTSVIEW_H
 
 //BibleTime includes
-class CSwordModuleInfo;
-#include "csearchdialogareas.h"
+#include "btsearchresultarea.h"
 
 //Qt includes
 #include <QLabel>
@@ -22,6 +21,8 @@ class CSwordModuleInfo;
 
 
 //forward declarations
+class CSwordModuleInfo;
+
 class QPoint;
 class QMenu;
 class QAction;
@@ -39,7 +40,7 @@ class CModuleResultView : public QTreeWidget {
 public:
 	CModuleResultView(QWidget* parent);
 	~CModuleResultView();
-
+	
 	/**
 	* Setups the tree using the given list of modules.
 	*/
@@ -47,9 +48,9 @@ public:
 	/**
 	* Returns the currently active module.
 	*/
-	CSwordModuleInfo* activeModule();
+	CSwordModuleInfo* const activeModule();
 
-protected: // Protected methods
+protected:
 	/**
 	* Initializes this widget.
 	*/
@@ -62,7 +63,7 @@ protected: // Protected methods
 
    void setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent, const QString& searchedText);
 
-protected slots: // Protected slots
+protected slots:
 	/**
 	* Is executed when an item was selected in the list.
 	*/
@@ -120,9 +121,9 @@ private:
 		copy;
 
 	} m_actions;
-
+	
 	QMenu* m_popup;
-
+	
 	StrongsResultClass* strongsResults;
 };
 

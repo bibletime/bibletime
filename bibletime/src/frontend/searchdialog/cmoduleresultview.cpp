@@ -14,7 +14,6 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-//#include "frontend/util/csortlistviewitem.h"
 #include "frontend/cexportmanager.h"
 
 #include "util/cresmgr.h"
@@ -28,9 +27,6 @@
 #include <QMenu>
 #include <QContextMenuEvent>
 
-//KDE includes
-
-
 
 namespace Search {
 
@@ -39,7 +35,7 @@ namespace Search {
 ************  ModuleResultList **************
 ********************************************/
 
-CModuleResultView::CModuleResultView(QWidget* parent)
+CModuleResultView::CModuleResultView(QWidget* parent) 
 	: QTreeWidget(parent),
 	strongsResults(0)
 {
@@ -73,7 +69,7 @@ void CModuleResultView::initView()
 	m_actions.copy.result = new QAction(tr("Reference only"), this);
 	QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
 	m_actions.copyMenu->addAction(m_actions.copy.result);
-	m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this);
+	m_actions.copy.resultWithText = new QAction(tr("Reference with text"), this); 
 	QObject::connect(m_actions.copy.resultWithText, SIGNAL(triggered()), this, SLOT(copyResultWithText()) );
 	m_actions.copyMenu->addAction(m_actions.copy.resultWithText);
 	m_popup->addMenu(m_actions.copyMenu);
@@ -88,7 +84,7 @@ void CModuleResultView::initView()
 	m_actions.saveMenu->addAction(m_actions.save.resultWithText);
 	m_popup->addMenu(m_actions.saveMenu);
 
-	m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
+	m_actions.printMenu = new QMenu(tr("Print..."), m_popup); 
 	m_actions.printMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
 	m_actions.print.result = new QAction(tr("Reference with text"), this);
 	QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
@@ -160,24 +156,21 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
 
 	//Allow to hide the module strongs if there are any available
 	setRootIsDecorated( strongsAvailable );
-
-	//TODO: setSelected(currentItem(), true);
-	//TODO: executed(currentItem());
 }
 
 void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
                                             const QString& sNumber)
 {
 	QString lText;
-	//TODO:
+	//TODO: 
 	//util::CSortListViewItem* item = 0;
 	QTreeWidgetItem* item = 0;
-
+	
 	strongsResults = new StrongsResultClass(module, sNumber);
-
+	
 	for (int cnt = 0; cnt < strongsResults->Count(); ++cnt) {
 		lText = strongsResults->keyText(cnt);
-
+		
 		item = new QTreeWidgetItem(parent, QStringList(lText) << QString::number(strongsResults->keyCount(cnt)));
 		//TODO:
 		//item->setColumnSorting(1, util::CSortListViewItem::Number);
@@ -189,7 +182,7 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
 void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*)
 {
     QString itemText, lText;
-
+ 
  	if (!i){
 		//Clear list
 		emit moduleChanged();
@@ -218,7 +211,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*)
 }
 
 /** Returns the currently active module. */
-CSwordModuleInfo* CModuleResultView::activeModule()
+CSwordModuleInfo* const CModuleResultView::activeModule()
 {
 	Q_ASSERT(currentItem());
 

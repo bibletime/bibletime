@@ -11,23 +11,24 @@
 #define CSEARCHDIALOG_H
 
 //BibleTime includes
-#include "csearchdialogareas.h"
-//#include "csearchanalysis.h"
-
-class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
+#include "backend/cswordmodulesearch.h"
 
 #include "util/cpointers.h"
 
 //Qt includes
 #include <QString>
-class QPushButton;
-
-//KDE includes
 #include <QDialog>
 
+
 //forward declarations
+namespace Search {
+	class BtSearchResultArea;
+	class BtSearchOptionsArea;
+}
+
 class QWidget;
+class QPushButton;
 
 
 namespace Search {
@@ -44,12 +45,13 @@ public:
 protected:
 	friend class CSearchAnalysisScene;
 	friend class CSearchResultArea;
+	friend class BtSearchResultArea;
 	friend class BibleTime;
 
 	/**
 	* Only interesting for the class members! Useful to get the searched text etc.
 	*/
-	static CSearchDialog* getSearchDialog();
+	static CSearchDialog* const getSearchDialog();
 
 	/**
 	* The constructor of the dialog. It's protected because you should use the static public function openDialog.
@@ -74,24 +76,20 @@ protected:
 	/**
 	* Returns the list of used modules.
 	*/
-	const QList<CSwordModuleInfo*> modules();
+	QList<CSwordModuleInfo*> modules() const;
 	/**
-	* Returns the search text which is used for the search.
+	* Sets the search text which is used for the search.
 	*/
 	void setSearchText( const QString searchText );
 	/**
 	* Returns the search text which is set currently.
 	*/
-	const QString searchText();
+	QString searchText() const;
 	/**
 	* Returns the used search scope as a list key
 	*/
 	sword::ListKey searchScope();
-
-	/**
-	* Returns they type of search which is set
-	*/
-// 	const int searchFlags() const;
+	
 	/**
 	* Resets the parts to the default.
 	*/
@@ -120,10 +118,10 @@ protected slots:
 	void closeButtonPressed();
 
 private:
-	QPushButton* m_searchButton;
+	QPushButton* m_analyseButton;
 	QPushButton* m_closeButton;
-	CSearchResultArea* m_searchResultArea;
-	CSearchOptionsArea* m_searchOptionsArea;
+	BtSearchResultArea* m_searchResultArea;
+	BtSearchOptionsArea* m_searchOptionsArea;
 
 	CSwordModuleSearch m_searcher;
 };
