@@ -69,6 +69,8 @@ protected:
 	* Doesn't wait for the start button press, starts immediately
 	*/
 	void startSearch( const QList<CSwordModuleInfo*> modules, const QString& searchText);
+	/**Prepares the search string given by user for a specific search type */
+	QString prepareSearchText(const QString& orig);
 	/**
 	* Sets the list of modules for the search.
 	*/

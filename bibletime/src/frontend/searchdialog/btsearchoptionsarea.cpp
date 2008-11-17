@@ -48,6 +48,17 @@ QString BtSearchOptionsArea::searchText() const {
 	return m_searchTextCombo->currentText();
 }
 
+BtSearchOptionsArea::SearchType BtSearchOptionsArea::searchType()
+{
+	if (m_typeAndButton->isChecked()) {
+		return BtSearchOptionsArea::AndType;
+	}
+	if (m_typeOrButton->isChecked()) {
+		return BtSearchOptionsArea::OrType;
+	}
+	return BtSearchOptionsArea::FullType;
+}
+
 QPushButton* BtSearchOptionsArea::searchButton() const {
 	return m_searchButton;
 }
@@ -397,35 +408,35 @@ bool BtSearchOptionsArea::eventFilter(QObject* obj, QEvent* event)
 	return QWidget::eventFilter(obj, event);
 }
 
-void BtSearchOptionsArea::slotValidateText(const QString& newText)
+void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/)
 {
-	static const QRegExp re("\\b(AND|OR)\\b");
-	qDebug() << "new text:" << newText;
-	qDebug() << "contains:" << (newText.contains(re));
-	if (newText.isEmpty() || !newText.contains(re) ) {
-		qDebug()<< "no AND/OR";
-		if (!m_typeAndButton->isEnabled()) {
-			m_typeOrButton->setEnabled(true);
-			m_typeAndButton->setEnabled(true);
-			m_typeAndButton->setToolTip(tr("All of the words (AND is added between the words)"));
-			m_typeOrButton->setToolTip(tr("Some of the words"));
-		}
-	}
-	else {
-		qDebug("AND/OR!");
-		if (m_typeAndButton->isEnabled()) {
-			m_typeOrButton->setChecked(true);
-			m_typeOrButton->setEnabled(false);
-			m_typeAndButton->setEnabled(false);
-			m_typeAndButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
-			m_typeOrButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
-		}
-	}
+// 	static const QRegExp re("\\b(AND|OR)\\b");
+// 	qDebug() << "new text:" << newText;
+// 	qDebug() << "contains:" << (newText.contains(re));
+// 	if (newText.isEmpty() || !newText.contains(re) ) {
+// 		qDebug()<< "no AND/OR";
+// 		if (!m_typeAndButton->isEnabled()) {
+// 			m_typeOrButton->setEnabled(true);
+// 			m_typeAndButton->setEnabled(true);
+// 			m_typeAndButton->setToolTip(tr("All of the words (AND is added between the words)"));
+// 			m_typeOrButton->setToolTip(tr("Some of the words"));
+// 		}
+// 	}
+// 	else {
+// 		qDebug("AND/OR!");
+// 		if (m_typeAndButton->isEnabled()) {
+// 			m_typeOrButton->setChecked(true);
+// 			m_typeOrButton->setEnabled(false);
+// 			m_typeAndButton->setEnabled(false);
+// 			m_typeAndButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
+// 			m_typeOrButton->setToolTip(tr("Full syntax is used because text includes AND or OR"));
+// 		}
+// 	}
 }
 
 bool BtSearchOptionsArea::isAndSearchType()
 {
-	return m_typeAndButton->isChecked();
+	
 }
 
 

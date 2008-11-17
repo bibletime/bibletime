@@ -36,6 +36,8 @@ class BtSearchOptionsArea : public QWidget
 	Q_OBJECT
 public:
 
+	enum SearchType {AndType, OrType, FullType};
+
 	friend class CSearchDialog;
 
 	BtSearchOptionsArea(QWidget *parent=0);
@@ -52,6 +54,8 @@ public:
 	* Returns the search text set in this page.
 	*/
 	QString searchText() const;
+
+	SearchType searchType();
 
 	QPushButton* searchButton() const;
 
