@@ -34,7 +34,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 {
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	layout->setSpacing( 5 );
 
 	{ //startup logo
 		m_showLogoCheck = new QCheckBox(this);
@@ -44,7 +43,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 
 		m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
 		layout->addWidget(m_showLogoCheck);
-		layout->addSpacing(20);
 	}
 
 	layout->addWidget(
@@ -55,7 +53,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 				)
 		);
 
-	layout->addSpacing( 5 );
 
 	QHBoxLayout* hboxlayout = new QHBoxLayout();
 
@@ -71,6 +68,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 	layout->addLayout( hboxlayout );
 
 	m_stylePreviewViewer = new KHTMLPart(this);
+	m_stylePreviewViewer->view()->setMaximumHeight(190);
 	QLabel* previewLabel = new QLabel(tr("Style preview"), this);
 	previewLabel->setBuddy(m_stylePreviewViewer->view());
 	layout->addWidget(previewLabel);
@@ -107,19 +105,19 @@ void CDisplaySettingsPage::updateStylePreview() {
 					 .arg(tr("For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.")),
 					 settings));
 
+	settings.highlight = true;
+
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John317\" href=\"sword://Bible/WEB/John 3:17\">17</a></span>%1")
 					 .arg(tr("For God didn't send his Son into the world to judge the world, but that the world should be saved through him.")),
 					 settings));
 
-	settings.highlight = true;
+	settings.highlight = false;
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John318\" href=\"sword://Bible/WEB/John 3:18\">18</a></span>%1")
 					 .arg(tr("He who believes in him is not judged. He who doesn't believe has been judged already, because he has not believed in the name of the one and only Son of God.")),
 					 settings) );
-
-	settings.highlight = false;
 
 	tree.append( new CTextRendering::KeyTreeItem(
 					 QString("\n<span class=\"entryname\"><a name=\"John319\" href=\"sword://Bible/WEB/John 3:19\">19</a></span>%1")

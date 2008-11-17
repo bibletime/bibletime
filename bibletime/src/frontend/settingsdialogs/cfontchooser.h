@@ -20,6 +20,7 @@
 
 
 #include <QWidget>
+#include <QFrame>
 
 class QString;
 class QFrame;
@@ -33,7 +34,7 @@ class KHTMLPart;
 class QWebView;
 #endif
 
-class CFontChooser : public QWidget {
+class CFontChooser : public QFrame {
 	Q_OBJECT
 
 public:

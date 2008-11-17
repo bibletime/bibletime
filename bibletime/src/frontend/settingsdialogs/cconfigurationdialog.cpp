@@ -22,6 +22,7 @@
 #include <QDialogButtonBox>
 #include <QAbstractButton>
 #include <QPushButton>
+#include <QLayout>
 
 #include <kactioncollection.h>
 
@@ -38,6 +39,8 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* 
 	setWindowTitle(tr("Configure BibleTime"));
 	setAttribute(Qt::WA_DeleteOnClose);
 	
+	layout()->setContentsMargins(0,0,0,0);
+
 	// Add "Display" page
 	m_displayPage = new CDisplaySettingsPage(this);
 	addPage(m_displayPage);

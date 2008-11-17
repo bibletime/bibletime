@@ -16,26 +16,28 @@
 #include <QFontDatabase>
 #include <QListWidgetItem>
 #include <QWebSettings>
+#include <QFrame>
 #ifdef USE_KHTML
 #include <khtml_part.h>
 #include <khtmlview.h>
 #endif
 #ifdef USE_QWEBKIT
 #include <QWebView>
-static int textRenderAreaWidth = 500;
+static int textRenderAreaWidth = 505;
 #endif
-static int fontChooseAreaHeight = 200;
-static int textRenderAreaHeight = 110;
+static int textRenderAreaHeight = 80;
 
 
 CFontChooser::CFontChooser(QWidget* parent)
- :  QWidget(parent), m_fontWidget(0),
+ :  QFrame(parent), m_fontWidget(0),
 	m_fontListWidget(0), m_styleListWidget(0), m_sizeListWidget(0)
 {
-	setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+	setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 	createLayout();
 	connectListWidgets();
 	loadFonts();
+	setFrameStyle(QFrame::Box);
+	setFrameShadow(QFrame::Raised);
 }
 
 
@@ -44,63 +46,57 @@ CFontChooser::~CFontChooser() {
 
 
 void CFontChooser::createFontAreaLayout() {
-
-	QVBoxLayout* vBoxLayout = new QVBoxLayout(m_fontWidget);
-    m_fontWidget->setLayout(vBoxLayout);
-
-	QLabel* heading = new QLabel(tr("Requested Font"));
-	heading->setAlignment(Qt::AlignHCenter);
-	vBoxLayout->addWidget(heading);	
-
 	QHBoxLayout* fontStyleSizeHBoxLayout = new QHBoxLayout();
-	vBoxLayout->addLayout(fontStyleSizeHBoxLayout);
 
 	// font column
 	QVBoxLayout* fontLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(fontLayout);
+	fontLayout->setContentsMargins(3,0,3,0);
+	fontLayout->setSpacing(0);
 
-	QLabel* fontLabel = new QLabel(tr("Font:"));
+	QLabel* fontLabel = new QLabel(tr("Font Name:"));
 	fontLayout->addWidget(fontLabel);
 
-	m_fontListWidget = new CListWidget(this);
+	m_fontListWidget = new CListWidget();
+	m_fontListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 	fontLayout->addWidget(m_fontListWidget);
 
 	// style column
 	QVBoxLayout* styleLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(styleLayout);
+	styleLayout->setContentsMargins(0,0,0,0);
+	styleLayout->setSpacing(0);
 
-	QLabel* styleLabel = new QLabel(tr("Font style:"));
+	QLabel* styleLabel = new QLabel(tr("Font Style:"));
 	styleLayout->addWidget(styleLabel);
 
-	m_styleListWidget = new CListWidget(this);
+	m_styleListWidget = new CListWidget();
+	m_styleListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 	styleLayout->addWidget(m_styleListWidget);
 
 	// size column
 	QVBoxLayout* sizeLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(sizeLayout);
+	sizeLayout->setContentsMargins(0,0,0,0);
+	sizeLayout->setSpacing(0);
 
 	QLabel* sizeLabel = new QLabel(tr("Size:"));
 	sizeLayout->addWidget(sizeLabel);
 
-	m_sizeListWidget = new CListWidget(this);
+	m_sizeListWidget = new CListWidget();
+	m_sizeListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 	sizeLayout->addWidget(m_sizeListWidget);
+
+	m_vBoxLayout->addLayout(fontStyleSizeHBoxLayout);
 }
 
 
 void CFontChooser::createLayout()
 {
-	m_vBoxLayout = new QVBoxLayout();
+	m_vBoxLayout = new QVBoxLayout(this);
+	m_vBoxLayout->setSpacing(3);
+	m_vBoxLayout->setContentsMargins(0,0,0,0);
 	setLayout(m_vBoxLayout);
-
-	// create frame for font, sytle, size
-	m_fontWidget = new QFrame;
-	m_fontWidget->setFrameShape(QFrame::StyledPanel);
-	m_fontWidget->setFrameShadow(QFrame::Raised);
-	m_fontWidget->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-	m_fontWidget->setMaximumHeight(fontChooseAreaHeight);
-
-	m_vBoxLayout->addWidget(m_fontWidget);
-
 	createFontAreaLayout();
 	createTextAreaLayout();
 }
@@ -111,10 +107,13 @@ void CFontChooser::createTextAreaLayout() {
 	m_kHtmlPart = new KHTMLPart(this);
 	m_vBoxLayout->addWidget(m_kHtmlPart->view());
 	m_kHtmlPart->view()->setMaximumHeight(textRenderAreaHeight);
+	m_kHtmlPart->view()->setMarginHeight(0);
+//	m_kHtmlPart->view()->setFrameStyle(QFrame::Box);
+//	m_kHtmlPart->view()->setFrameShadow(QFrame::Raised);
 #endif
 #ifdef USE_QWEBKIT
 	m_webView = new QWebView(this);
-	m_webView->setSizePolicy(QSizePolicy::MinimumExpanding,QSizePolicy::MinimumExpanding);
+	m_webView->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
 // I should not have to do this, but setSizePolicy does
 // not seem to work for a QWebView
 	m_webView->setMaximumWidth(textRenderAreaWidth); 

@@ -38,14 +38,15 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 {
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	layout->setSpacing( 5 );
+	layout->setSpacing( 0 );
+	layout->setContentsMargins(0,0,0,0);
 
 	//Sword locales
 	layout->addWidget(
 	CToolClass::explanationLabel(
 			this,
-			tr("Language for names of Bible books"),
-			tr("Select the language in which the Biblical book names are displayed.<blockquote><small>Translated names come from the Sword project.</small></blockquote>")
+			tr(""),
+			tr("Select the language in which the Biblical book names are displayed.")
 			));
 
 	m_swordLocaleCombo = new QComboBox(this);
@@ -110,19 +111,17 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 		}
 	}
 
-	layout->addSpacing( 20 );
+	layout->addSpacing(5);
 
 	//Font settings
 	
 	layout->addWidget(
 		CToolClass::explanationLabel(
 			this,
-			tr("Custom fonts"),
-			tr("You can specify a custom font for each language that needs a special font \
- to be displayed correctly.")
+			tr("Fonts"),
+			tr("You can specify a custom font for each language.")
 		)
 	);
-	layout->addSpacing(5);
 	QHBoxLayout* hLayout = new QHBoxLayout();
 
 	m_usageCombo = new QComboBox(this);
@@ -151,10 +150,12 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 	}
 
 	m_useOwnFontCheck = new QCheckBox(tr("Use custom font"), this);
+	m_useOwnFontCheck->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	connect(m_useOwnFontCheck, SIGNAL(toggled(bool)), SLOT(useOwnFontClicked(bool)) );
 	hLayout->addWidget(m_useOwnFontCheck);
 
 	layout->addLayout(hLayout);
+	hLayout->setContentsMargins(0,0,0,0);
 	//#warning TODO: remember the last selected font and jump there.
 
 	m_fontChooser = new CFontChooser(this);

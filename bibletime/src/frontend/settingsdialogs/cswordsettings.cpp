@@ -59,7 +59,7 @@ StandardWorksTab::StandardWorksTab()
 	gridLayout->addWidget(
 		CToolClass::explanationLabel(
 				this,
-				tr("Standard works"),
+				tr(""),
 				tr("Standard works are used when no particular work is specified, \
   for example when a hyperlink into a Bible or lexicon was clicked .")),
 		0,0,1,2 /*fill the horizontal space*/
@@ -75,6 +75,7 @@ StandardWorksTab::StandardWorksTab()
 	m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
 
 	gridLayout->addWidget(label,1,0);
+	gridLayout->setVerticalSpacing(0);
 	gridLayout->addWidget(m_standardBibleCombo, 1, 1);
 
 	m_standardCommentaryCombo = new QComboBox(this);
@@ -146,9 +147,6 @@ StandardWorksTab::StandardWorksTab()
 
 	gridLayout->addWidget(label, 8, 0);
 	gridLayout->addWidget(m_standardGreekMorphCombo, 8, 1);
-
-	gridLayout->setRowStretch(9,5);
-
 
 	//fill the comboboxes with the right modules
 
@@ -265,20 +263,20 @@ StandardWorksTab::StandardWorksTab()
 
 TextFiltersTab::TextFiltersTab()
 {
-	QVBoxLayout* layout = new QVBoxLayout(this);
+	QVBoxLayout* layout = new QVBoxLayout(this);	
 	layout->setMargin(5);
-
-	layout->addWidget(
-		CToolClass::explanationLabel(
+	QWidget* eLabel = CToolClass::explanationLabel(
 			this,
-			tr("Text filters"),
+			tr(""),
 			tr("Filters control the appearance of text. \
 Here you can specify default settings for all filters. \
 You can override these settings in each display window.")
-		)
-	);
-
-	layout->addSpacing(5);
+		);
+	eLabel->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
+	eLabel->setMaximumHeight(50);
+	eLabel->setMinimumWidth(300);
+	layout->setSpacing(2);
+	layout->addWidget(eLabel);
 
 	m_lineBreaksCheck = new QCheckBox(this);
 	m_lineBreaksCheck->setText(tr("Insert line break after each verse"));
@@ -325,8 +323,6 @@ You can override these settings in each display window.")
 	m_textualVariantsCheck->setText(tr("Use textual variants"));
 	m_textualVariantsCheck->setChecked(CBTConfig::get(CBTConfig::textualVariants));
 	layout->addWidget(m_textualVariantsCheck);
-
-	layout->addStretch(4);
 }
 
 void CSwordSettingsPage::save()
