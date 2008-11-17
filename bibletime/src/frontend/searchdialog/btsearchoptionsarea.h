@@ -133,13 +133,13 @@ private:
 	QLabel* m_helpLabel;
 	QRadioButton* m_typeAndButton;
 	QRadioButton* m_typeOrButton;
-
-    QPushButton *m_chooseModulesButton;
-    QPushButton *m_chooseRangeButton;
-    QLabel *m_searchScopeLabel;
-    QComboBox *m_rangeChooserCombo;
-    CHistoryComboBox *m_searchTextCombo;
-    QLabel *m_modulesLabel;
+	QRadioButton* m_typeFreeButton;
+	QPushButton *m_chooseModulesButton;
+	QPushButton *m_chooseRangeButton;
+	QLabel *m_searchScopeLabel;
+	QComboBox *m_rangeChooserCombo;
+	CHistoryComboBox *m_searchTextCombo;
+	QLabel *m_modulesLabel;
 	QComboBox* m_modulesCombo;
 
 };

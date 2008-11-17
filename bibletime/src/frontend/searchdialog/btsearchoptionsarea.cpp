@@ -125,24 +125,30 @@ void BtSearchOptionsArea::initView()
 
 	// ************* Search type (AND/OR) selector ***************************************
 	QHBoxLayout* typeSelectorLayout = new QHBoxLayout();
-	QHBoxLayout* orButtonLayout = new QHBoxLayout();
-	m_typeAndButton = new QRadioButton(tr("AND"));
+	int tsLeft, tsTop, tsRight, tsBottom;
+	typeSelectorLayout->getContentsMargins(&tsLeft, &tsTop, &tsRight, &tsBottom);
+	typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom);
+	QHBoxLayout* fullButtonLayout = new QHBoxLayout();
+	m_typeAndButton = new QRadioButton(tr("All words"));
 	m_typeAndButton->setChecked(true);
-	m_typeOrButton = new QRadioButton(tr("OR"));
+	m_typeOrButton = new QRadioButton(tr("Some words"));
+	m_typeFreeButton = new QRadioButton(tr("Free"));
 	//these tooltips are set also in slotValidateText
 	m_typeAndButton->setToolTip(tr("All of the words (AND is added between the words)"));
-	m_typeOrButton->setToolTip(tr("Some of the words"));
+	m_typeOrButton->setToolTip(tr("Some of the words (OR is added between the words)"));
+	m_typeFreeButton->setToolTip(tr("Full lucene syntax"));
 
 	m_helpLabel = new QLabel(tr(" (<a href='syntax_help'>full syntax</a>)"));
 	m_helpLabel->setToolTip("Click the link to get help for search syntax");
 	
 	typeSelectorLayout->addWidget(m_typeAndButton);
-	orButtonLayout->addSpacing(CToolClass::mWidth(this, 2));
-	orButtonLayout->addWidget(m_typeOrButton);
-	orButtonLayout->addWidget(m_helpLabel);
-	orButtonLayout->addItem(new QSpacerItem(1,1,QSizePolicy::Expanding));
-	typeSelectorLayout->addLayout(orButtonLayout);
-	gridLayout->addLayout(typeSelectorLayout, 1,1);
+	typeSelectorLayout->addWidget(m_typeOrButton);
+	//fullButtonLayout->addSpacing(CToolClass::mWidth(this, 2));
+	fullButtonLayout->addWidget(m_typeFreeButton);
+	fullButtonLayout->addWidget(m_helpLabel);
+	//fullButtonLayout->addItem(new QSpacerItem(1,1,QSizePolicy::Expanding));
+	typeSelectorLayout->addLayout(fullButtonLayout);
+	gridLayout->addLayout(typeSelectorLayout, 1,1, 1,0, Qt::AlignLeft|Qt::AlignTop);
 
 	// ************* Label for search range/scope selector *************
 	m_searchScopeLabel = new QLabel(tr("Scope:"), searchGroupBox);
@@ -158,7 +164,7 @@ void BtSearchOptionsArea::initView()
 	sizePolicy2.setVerticalStretch(0);
 	sizePolicy2.setHeightForWidth(m_rangeChooserCombo->sizePolicy().hasHeightForWidth());
 	m_rangeChooserCombo->setSizePolicy(sizePolicy2);
-	m_rangeChooserCombo->setToolTip(tr("Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries."));
+	m_rangeChooserCombo->setToolTip(tr("Choose the scope (books/chapters/verses to search in).<br />Applicable for Bibles and commentaries."));
 	gridLayout->addWidget(m_rangeChooserCombo, 3, 1);
 
 	// ************* Search text combo box *******************
