@@ -153,40 +153,49 @@ StandardWorksTab::StandardWorksTab()
 	QList<CSwordModuleInfo*>& modules = backend()->moduleList();
 	QString modDescript;
 	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
-	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
+	for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) 
+	{
 		modDescript = (*it)->config(CSwordModuleInfo::Description);
 
-		switch ((*it)->type()) {
+		switch ((*it)->type()) 
+		{
 			case CSwordModuleInfo::Bible:
 				m_standardBibleCombo->addItem(modDescript);
 				break;
 			case CSwordModuleInfo::Commentary:
 				m_standardCommentaryCombo->addItem(modDescript);
 				break;
-			case CSwordModuleInfo::Lexicon: {
+			case CSwordModuleInfo::Lexicon: 
+				{
 				bool inserted = false;
-				if ((*it)->has(CSwordModuleInfo::HebrewDef)) {
+				if ((*it)->has(CSwordModuleInfo::HebrewDef)) 
+				{
 					m_standardHebrewStrongCombo->addItem(modDescript);
 					inserted = true;
 				}
-				if ((*it)->has(CSwordModuleInfo::GreekDef)) {
+				if ((*it)->has(CSwordModuleInfo::GreekDef)) 
+				{
 					m_standardGreekStrongCombo->addItem(modDescript);
 					inserted = true;
 				}
-				if ((*it)->has(CSwordModuleInfo::HebrewParse)) {
+				if ((*it)->has(CSwordModuleInfo::HebrewParse)) 
+				{
 					m_standardHebrewMorphCombo->addItem(modDescript);
 					inserted = true;
 				}
-				if ((*it)->has(CSwordModuleInfo::GreekParse)) {
+				if ((*it)->has(CSwordModuleInfo::GreekParse)) 
+				{
 					m_standardGreekMorphCombo->addItem(modDescript);
 					inserted = true;
 				}
-				if ((*it)->category() == CSwordModuleInfo::DailyDevotional) {
+				if ((*it)->category() == CSwordModuleInfo::DailyDevotional) 
+				{
 					m_standardDailyDevotionalCombo->addItem(modDescript);
 					inserted = true;
 				}
 
-				if (!inserted) {//daily dvotionals, striong lexicons etc. are not very useful for word lookups
+				if (!inserted) 
+				{	//daily dvotionals, striong lexicons etc. are not very useful for word lookups
 					m_standardLexiconCombo->addItem(modDescript);
 				}
 				break;
@@ -200,10 +209,12 @@ StandardWorksTab::StandardWorksTab()
 	QList<QComboBox*> comboList;
 	QStringList moduleList;
 
-	for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
+	for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) 
+	{
 		//fill the combobox list in the right order (i.e. same order as the CBTConfig::module enum list)
 		CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-		switch (moduleType) {
+		switch (moduleType) 
+		{
 			case CBTConfig::standardBible:
 				comboList.append(m_standardBibleCombo);
 				break;
@@ -232,10 +243,12 @@ StandardWorksTab::StandardWorksTab()
 
 		//fill the module list
 		CSwordModuleInfo* const m = CBTConfig::get( (CBTConfig::modules)(i) );
-		if (m) {
+		if (m) 
+		{
 			moduleList << m->config(CSwordModuleInfo::Description);
 		}
-		else {
+		else 
+		{
 			moduleList << QString::null;
 		}
 	} //for
@@ -244,15 +257,18 @@ StandardWorksTab::StandardWorksTab()
 	int item = 0;
 	int count = 0;
 	QListIterator<QComboBox*> it(comboList);
-	while (it.hasNext()) {
-	//for (QComboBox* combo = comboList.first(); combo; combo = comboList.next() ) {
+	while (it.hasNext()) 
+	{
+	//for (QComboBox* combo = comboList.first(); combo; combo = comboList.next() ) 
 		QComboBox* combo = it.next();
 		module = moduleList[comboList.indexOf(combo)];
 		count = combo->count();
 		combo->setMaximumWidth(300);
 
-		for (item = 0; item < count; item++) {
-			if (combo->itemText(item) == module ) {
+		for (item = 0; item < count; item++) 
+		{
+			if (combo->itemText(item) == module ) 
+			{
 				combo->setCurrentIndex(item);
 				break;
 			}
@@ -346,11 +362,13 @@ QString CSwordSettingsPage::header()
 
 void StandardWorksTab::save()
 {
-	for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) {
+	for (int i = 0; i <= (int)CBTConfig::lastModuleType; ++i) 
+	{
 		QString moduleDescription = QString::null;
 
 		CBTConfig::modules moduleType = (CBTConfig::modules)(i);
-		switch (moduleType) {
+		switch (moduleType) 
+		{
 			case CBTConfig::standardBible:
 				moduleDescription = m_standardBibleCombo->currentText();
 				break;

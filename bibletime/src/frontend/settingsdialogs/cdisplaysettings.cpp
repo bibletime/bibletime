@@ -77,8 +77,10 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 		CPointers::displayTemplateManager()->availableTemplates()
 	);
 
-	for (int i = 0; i < m_styleChooserCombo->count(); ++i) {
-		if ( m_styleChooserCombo->itemText(i) == CBTConfig::get(CBTConfig::displayStyle) ) {
+	for (int i = 0; i < m_styleChooserCombo->count(); ++i) 
+	{
+		if ( m_styleChooserCombo->itemText(i) == CBTConfig::get(CBTConfig::displayStyle) ) 
+		{
 			m_styleChooserCombo->setCurrentIndex( i );
 			break;
 		}
@@ -88,7 +90,8 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 }
 
 
-void CDisplaySettingsPage::updateStylePreview() {
+void CDisplaySettingsPage::updateStylePreview() 
+{
 	//update the style preview widget
 	qDebug("CDisplaySettingsPage::updateStylePreview");
 	using namespace Rendering;
