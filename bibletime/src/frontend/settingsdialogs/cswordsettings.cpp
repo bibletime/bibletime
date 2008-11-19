@@ -75,7 +75,6 @@ StandardWorksTab::StandardWorksTab()
 	m_standardBibleCombo->setToolTip(tr("The standard Bible is used when a hyperlink into a Bible is clicked"));
 
 	gridLayout->addWidget(label,1,0);
-	gridLayout->setVerticalSpacing(0);
 	gridLayout->addWidget(m_standardBibleCombo, 1, 1);
 
 	m_standardCommentaryCombo = new QComboBox(this);
@@ -147,6 +146,8 @@ StandardWorksTab::StandardWorksTab()
 
 	gridLayout->addWidget(label, 8, 0);
 	gridLayout->addWidget(m_standardGreekMorphCombo, 8, 1);
+
+	gridLayout->setRowStretch(9,5);
 
 	//fill the comboboxes with the right modules
 
@@ -339,6 +340,8 @@ You can override these settings in each display window.")
 	m_textualVariantsCheck->setText(tr("Use textual variants"));
 	m_textualVariantsCheck->setChecked(CBTConfig::get(CBTConfig::textualVariants));
 	layout->addWidget(m_textualVariantsCheck);
+
+	layout->addStretch(4);
 }
 
 void CSwordSettingsPage::save()

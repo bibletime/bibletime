@@ -12,7 +12,7 @@
 CListWidget::CListWidget(QWidget* parent)
  : QListWidget(parent)
 {
-	setMaximumHeight(95);
+	setMaximumHeight(75);
 }
 
 CListWidget::~CListWidget() 

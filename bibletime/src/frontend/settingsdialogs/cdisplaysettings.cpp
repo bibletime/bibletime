@@ -44,6 +44,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 		m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
 		layout->addWidget(m_showLogoCheck);
 	}
+	layout->addSpacing(20);
 
 	layout->addWidget(
 		CToolClass::explanationLabel(

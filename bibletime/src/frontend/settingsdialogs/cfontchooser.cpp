@@ -25,7 +25,7 @@
 #include <QWebView>
 static int textRenderAreaWidth = 505;
 #endif
-static int textRenderAreaHeight = 80;
+static int textRenderAreaHeight = 65;
 
 
 CFontChooser::CFontChooser(QWidget* parent)
@@ -53,10 +53,8 @@ void CFontChooser::createFontAreaLayout()
 	// font column
 	QVBoxLayout* fontLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(fontLayout);
-	fontLayout->setContentsMargins(3,0,3,0);
-	fontLayout->setSpacing(0);
 
-	QLabel* fontLabel = new QLabel(tr("Font Name:"));
+	QLabel* fontLabel = new QLabel(tr("Font name:"));
 	fontLayout->addWidget(fontLabel);
 
 	m_fontListWidget = new CListWidget();
@@ -66,10 +64,8 @@ void CFontChooser::createFontAreaLayout()
 	// style column
 	QVBoxLayout* styleLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(styleLayout);
-	styleLayout->setContentsMargins(0,0,0,0);
-	styleLayout->setSpacing(0);
 
-	QLabel* styleLabel = new QLabel(tr("Font Style:"));
+	QLabel* styleLabel = new QLabel(tr("Font style:"));
 	styleLayout->addWidget(styleLabel);
 
 	m_styleListWidget = new CListWidget();
@@ -96,8 +92,6 @@ void CFontChooser::createFontAreaLayout()
 void CFontChooser::createLayout()
 {
 	m_vBoxLayout = new QVBoxLayout(this);
-	m_vBoxLayout->setSpacing(3);
-	m_vBoxLayout->setContentsMargins(0,0,0,0);
 	setLayout(m_vBoxLayout);
 	createFontAreaLayout();
 	createTextAreaLayout();

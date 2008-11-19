@@ -38,8 +38,6 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 {
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	layout->setSpacing( 0 );
-	layout->setContentsMargins(0,0,0,0);
 
 	//Sword locales
 	layout->addWidget(
@@ -120,7 +118,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 		}
 	}
 
-	layout->addSpacing(5);
+	layout->addSpacing(20);
 
 	//Font settings
 	
