@@ -75,8 +75,6 @@ void CFontChooser::createFontAreaLayout()
 	// size column
 	QVBoxLayout* sizeLayout = new QVBoxLayout();
 	fontStyleSizeHBoxLayout->addLayout(sizeLayout);
-	sizeLayout->setContentsMargins(0,0,0,0);
-	sizeLayout->setSpacing(0);
 
 	QLabel* sizeLabel = new QLabel(tr("Size:"));
 	sizeLayout->addWidget(sizeLabel);
@@ -92,7 +90,6 @@ void CFontChooser::createFontAreaLayout()
 void CFontChooser::createLayout()
 {
 	m_vBoxLayout = new QVBoxLayout(this);
-	setLayout(m_vBoxLayout);
 	createFontAreaLayout();
 	createTextAreaLayout();
 }
@@ -103,18 +100,9 @@ void CFontChooser::createTextAreaLayout()
 #ifdef USE_KHTML
 	m_kHtmlPart = new KHTMLPart(this);
 	m_vBoxLayout->addWidget(m_kHtmlPart->view());
-	m_kHtmlPart->view()->setMaximumHeight(textRenderAreaHeight);
-	m_kHtmlPart->view()->setMarginHeight(0);
-//	m_kHtmlPart->view()->setFrameStyle(QFrame::Box);
-//	m_kHtmlPart->view()->setFrameShadow(QFrame::Raised);
 #endif
 #ifdef USE_QWEBKIT
 	m_webView = new QWebView(this);
-	m_webView->setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
-// I should not have to do this, but setSizePolicy does
-// not seem to work for a QWebView
-	m_webView->setMaximumWidth(textRenderAreaWidth); 
-	m_webView->setMaximumHeight(textRenderAreaHeight);
 	m_vBoxLayout->addWidget(m_webView);
 #endif
 }
@@ -330,6 +318,11 @@ void CFontChooser::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*prev
 	emit fontSelected(m_font);
 }
 
+
+QSize CFontChooser::sizeHint() const 
+{
+	return QSize(170,170);
+}
 
 void CFontChooser::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/)
 {

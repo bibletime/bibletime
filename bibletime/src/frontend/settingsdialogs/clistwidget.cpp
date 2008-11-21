@@ -12,7 +12,6 @@
 CListWidget::CListWidget(QWidget* parent)
  : QListWidget(parent)
 {
-	setMaximumHeight(75);
 }
 
 CListWidget::~CListWidget() 
@@ -21,7 +20,6 @@ CListWidget::~CListWidget()
 
 QSize CListWidget::sizeHint () const
 {
-	QSize size = QListWidget::sizeHint();
-	size.setWidth(100);
-	return size;
+	return QSize(100,80);
 }
+

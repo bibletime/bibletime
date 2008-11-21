@@ -42,6 +42,7 @@ public:
 	~CFontChooser();
 	void setFont(const QFont& font); 
 	void setSampleText(const QString& text);
+	QSize sizeHint() const;
 
 private:
 	void createFontAreaLayout();
