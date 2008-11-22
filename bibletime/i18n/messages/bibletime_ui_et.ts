@@ -2417,7 +2417,7 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="obsolete">Sessiooni nimetus:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="505"/>
+        <location filename="../../src/bibletime_slots.cpp" line="503"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">Palun sisestage nimetus uue sessiooni jaoks.</translation>
     </message>
@@ -2547,7 +2547,7 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="505"/>
+        <location filename="../../src/bibletime_slots.cpp" line="503"/>
         <source>New Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2857,6 +2857,22 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
         <translation type="obsolete">Paigaldatud</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookDropdownChooserButton</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="71"/>
+        <source>Select book</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtChapterDropdownChooserButton</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="96"/>
+        <source>Select chapter</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3297,6 +3313,14 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
     </message>
 </context>
 <context>
+    <name>BtVerseDropdownChooserButton</name>
+    <message>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="120"/>
+        <source>Select verse</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CAcceleratorSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
@@ -3616,27 +3640,27 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="468"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="467"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="501"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="500"/>
         <source>Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="572"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="571"/>
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="603"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="602"/>
         <source>Hide/Unhide Works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="604"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="603"/>
         <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3666,12 +3690,12 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="516"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="515"/>
         <source>Search in selected...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="571"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="570"/>
         <source>Unlock Work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3727,24 +3751,24 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
 <context>
     <name>CConfigurationDialog</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="34"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
         <source>Configure BibleTime</source>
         <translation type="unfinished">Seadista BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="46"/>
         <source>Display</source>
-        <translation type="unfinished">Kuva</translation>
+        <translation type="obsolete">Kuva</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="54"/>
         <source>Desk</source>
-        <translation type="unfinished">Kirjutuslaud</translation>
+        <translation type="obsolete">Kirjutuslaud</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="62"/>
         <source>Languages</source>
-        <translation type="unfinished">Keeled</translation>
+        <translation type="obsolete">Keeled</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="74"/>
@@ -3772,11 +3796,6 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="115"/>
         <source>Use linebreaks after each verse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="118"/>
-        <source>Show versenumbers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3819,16 +3838,21 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <source>Show morph segmentation</source>
         <translation type="unfinished">Kuva morfoloogilist segmentatsiooni</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="118"/>
+        <source>Show verse numbers</source>
+        <translation type="unfinished">Kuva salmide numbreid</translation>
+    </message>
 </context>
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="42"/>
         <source>Show startuplogo</source>
-        <translation type="unfinished">Näita käivitamisel logo</translation>
+        <translation type="obsolete">Näita käivitamisel logo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="54"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="51"/>
         <source>Display templates</source>
         <translation type="unfinished">Kuvamallid</translation>
     </message>
@@ -3838,12 +3862,12 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="obsolete">Kuvamallid määravad, kuidas kuvatakse teksti. Palun valige Teile meeldiv mall.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="63"/>
         <source>Available display styles:</source>
         <translation type="unfinished">Saadaval olevad mallid:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="75"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="72"/>
         <source>Style preview</source>
         <translation type="unfinished">Malli näide:</translation>
     </message>
@@ -3853,12 +3877,12 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished">Sest nõnda on Jumal maailma armastanud, et ta oma ainusündinud Poja on andnud, et ükski, kes temasse usub, ei hukkuks, vaid et tal oleks igavene elu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="113"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation type="unfinished">Jumal ei ole ju läkitanud oma Poega maailma, et ta kohut mõistaks maailma üle, vaid et maailm tema läbi päästetaks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="120"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation type="unfinished">Kes temasse usub, selle üle ei mõisteta kohut, ja kes ei usu, selle üle on kohus juba mõistetud, sest ta ei ole uskunud Jumala ainusündinud Poja nimesse.</translation>
     </message>
@@ -3878,14 +3902,24 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished">Aga kes teeb tõtt, see tuleb valguse juurde, et ta teod saaksid avalikuks, sest need on tehtud Jumalas.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="56"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="53"/>
         <source>Display templates define how text is displayed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="43"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="41"/>
         <source>Show the BibleTime logo on startup</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="40"/>
+        <source>Show startup logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="176"/>
+        <source>Display</source>
+        <translation type="unfinished">Kuva</translation>
     </message>
 </context>
 <context>
@@ -3903,6 +3937,24 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
         <source>Open the search dialog with the works of this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>CFontChooser</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="59"/>
+        <source>Font Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="72"/>
+        <source>Font Style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="85"/>
+        <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4007,17 +4059,17 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="163"/>
         <source>Module not writable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="164"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
         <source>Module is not writable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="166"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4048,37 +4100,37 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="124"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="93"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="126"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="95"/>
         <source>Next book</source>
         <translation type="unfinished">Järgmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="129"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="98"/>
         <source>Previous book</source>
         <translation type="unfinished">Eelmine raamat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="131"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="100"/>
         <source>Next chapter</source>
         <translation type="unfinished">Järgmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="134"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Eelmine peatükk</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="136"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="105"/>
         <source>Next verse</source>
         <translation type="unfinished">Järgmine salm</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/ckeyreferencewidget.cpp" line="139"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous verse</source>
         <translation type="unfinished">Eelmine salm</translation>
     </message>
@@ -4098,7 +4150,7 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Language for names of Bible books</source>
-        <translation type="unfinished">Keel Piibli raamatute nimetuste jaoks</translation>
+        <translation type="obsolete">Keel Piibli raamatute nimetuste jaoks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="123"/>
@@ -4111,33 +4163,18 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="obsolete">Siin on nimekiri kõikidest paigaldatud teoste keeltest. Te võite kohandada kirjatüübi igale keelele, mis vajab korrektseks kuvamiseks spetsiaalset kirjatüüpi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="154"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="165"/>
         <source>Use custom font</source>
         <translation type="unfinished">Kasuta kohandatud kirjatüüpi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>The quick brown fox jumps over the lazy dog.</source>
-        <translation type="unfinished">Ööhämaras püüdis rõve x-jalgne quebeclane newyorklasest zoofiili šantažeerida.</translation>
+        <translation type="obsolete">Ööhämaras püüdis rõve x-jalgne quebeclane newyorklasest zoofiili šantažeerida.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
         <source>Language for names of Bible books:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="121"/>
-        <source>Custom fonts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="124"/>
-        <source>You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
-        <source>Select the language in which the Biblical book names are displayed.&lt;blockquote&gt;&lt;small&gt;Translated names come from the Sword project.&lt;/small&gt;&lt;/blockquote&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4146,9 +4183,29 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="130"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="137"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
+        <source>Select the language in which the Biblical book names are displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="130"/>
+        <source>Fonts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="132"/>
+        <source>You can specify a custom font for each language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
+        <source>Languages</source>
+        <translation type="unfinished">Keeled</translation>
     </message>
 </context>
 <context>
@@ -4265,12 +4322,12 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
 <context>
     <name>CMainIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/cmainindex.cpp" line="26"/>
+        <location filename="../../src/frontend/mainindex/cmainindex.cpp" line="27"/>
         <source>Bookshelf</source>
         <translation type="unfinished">Raamaturiiul</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/cmainindex.cpp" line="27"/>
+        <location filename="../../src/frontend/mainindex/cmainindex.cpp" line="28"/>
         <source>Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4505,14 +4562,19 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
 <context>
     <name>CSwordSettingsPage</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="45"/>
         <source>Standard works</source>
         <translation type="unfinished">Eelistatud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="41"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="46"/>
         <source>Text filters</source>
         <translation type="unfinished">Tekstifiltrid</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="360"/>
+        <source>Desk</source>
+        <translation type="unfinished">Kirjutuslaud</translation>
     </message>
 </context>
 <context>
@@ -5396,11 +5458,6 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="119"/>
-        <source>Parsing Stong&apos;s Numbers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/main.cpp" line="315"/>
         <source>Starting BibleTime</source>
         <translation type="unfinished"></translation>
@@ -5565,76 +5622,217 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
         <source>Overwrite File?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="574"/>
+        <source>Parsing Strong&apos;s Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchOptionsArea</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
+        <source>Search for:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
+        <source>&amp;Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
+        <source>Start to search the text in the chosen works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
+        <source>Ch&amp;oose...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
+        <source>Choose works for the search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="121"/>
+        <source>S&amp;etup...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
+        <source>AND</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
+        <source>OR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="404"/>
+        <source>All of the words (AND is added between the words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="405"/>
+        <source>Some of the words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
+        <source>Scope:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
+        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
+        <source>The text you want to search for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
+        <source>Works:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
+        <source>Works to Search in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
+        <source>Select the works which should be searched.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="320"/>
+        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="323"/>
+        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="326"/>
+        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="331"/>
+        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="335"/>
+        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="337"/>
+        <source>Basic Search Syntax Introduction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="343"/>
+        <source>No search scope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="415"/>
+        <source>Full syntax is used because text includes AND or OR</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Search::BtSearchResultArea</name>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
+        <source>Text of the selected search result item</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Search::CModuleResultView</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="56"/>
         <source>Work</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="60"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="56"/>
         <source>Hits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="67"/>
         <source>Copy...</source>
         <translation type="unfinished">Kopeeri...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="83"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="79"/>
         <source>Reference only</source>
         <translation type="unfinished">Ainult viide</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="93"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="89"/>
         <source>Reference with text</source>
         <translation type="unfinished">Viide koos tekstiga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="77"/>
         <source>Save...</source>
         <translation type="unfinished">Salvesta...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="91"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="87"/>
         <source>Print...</source>
         <translation type="unfinished">Trüki...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
         <source>Copy search result...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="266"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="259"/>
         <source>Copying search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="279"/>
         <source>Save search result...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="286"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="279"/>
         <source>Saving search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="289"/>
         <source>Print search result...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="296"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="289"/>
         <source>Printing search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="59"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="55"/>
         <source>Works chosen for the search and the number of the hits in each work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5758,135 +5956,34 @@ Kas Te olete kindel, et soovite need paigaldada?</translation>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="76"/>
-        <source>&amp;Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="80"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="103"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="112"/>
         <source>Missing indices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="114"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="178"/>
-        <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchOptionsArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="774"/>
-        <source>Search for:</source>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="205"/>
+        <source>&amp;Analyze results...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="967"/>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="206"/>
+        <source>Show a graphical analyzis of the search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="970"/>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="973"/>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="978"/>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="982"/>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="984"/>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="990"/>
-        <source>No search scope</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="922"/>
-        <source>Works to Search in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="923"/>
-        <source>Select the works which should be searched.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="784"/>
-        <source>&amp;Help...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="789"/>
-        <source>Ch&amp;oose...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="794"/>
-        <source>S&amp;etup...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="800"/>
-        <source>Scope:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="826"/>
-        <source>Works:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="791"/>
-        <source>Choose works for the search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="813"/>
-        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="823"/>
-        <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchResultArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="255"/>
-        <source>&amp;Analyze search...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialogareas.cpp" line="283"/>
-        <source>Text of the selected search result item</source>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="212"/>
+        <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5963,10 +6060,10 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="57"/>
         <source>Standard works</source>
-        <translation type="unfinished">Eelistatud teosed</translation>
+        <translation type="obsolete">Eelistatud teosed</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="59"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="64"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
         <translation type="unfinished">Eelistatud teoseid kasutatake kui ei ole määratud konkreetset teost, näiteks kui kasutatakse hüperlinki, mis viitab Piiblisse või mõnda leksikoni.</translation>
     </message>
@@ -6011,82 +6108,82 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="obsolete">Eelistatud kreeka morfoloogiline leksikon</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="66"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="71"/>
         <source>Bible:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="70"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="75"/>
         <source>The standard Bible is used when a hyperlink into a Bible is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="76"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="82"/>
         <source>Commentary:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="80"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="92"/>
         <source>Lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="90"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="102"/>
         <source>Daily devotional:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="100"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="112"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="110"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="122"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="132"/>
         <source>Hebrew morphological lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="142"/>
         <source>Greek morphological lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="140"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="146"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6096,7 +6193,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="269"/>
         <source>Text filters</source>
-        <translation type="unfinished">Tekstifiltrid</translation>
+        <translation type="obsolete">Tekstifiltrid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="275"/>
@@ -6104,52 +6201,52 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="obsolete">Filtrid reguleerivad teksti välimust. Siin võite Te seadistada vaikimisi sätteid kõikidele filtritele. Te saate filtrite sätteid ka igas aknas eraldi muuta.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="279"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="298"/>
         <source>Insert line break after each verse</source>
         <translation type="unfinished">Alusta iga salmi uuelt realt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="284"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="303"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">Kuva salmide numbreid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="289"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="308"/>
         <source>Show section headings</source>
         <translation type="unfinished">Kuva tekstiosade pealkirju</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="295"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
         <source>Show scripture cross-references</source>
         <translation type="unfinished">Kuva pühakirjade ristviiteid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="300"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="319"/>
         <source>Show Greek accents</source>
         <translation type="unfinished">Kuva kreeka keele rõhumärke</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="305"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="324"/>
         <source>Show Hebrew vowel points</source>
         <translation type="unfinished">Kuva heebrea keele vokaalimärke</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="310"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="329"/>
         <source>Show Hebrew cantillation marks</source>
         <translation type="unfinished">Kuva heebrea keele laulumärke</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="315"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="334"/>
         <source>Show morph segmentation</source>
         <translation type="unfinished">Kuva morfoloogilist segmentatsiooni</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="320"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="339"/>
         <source>Use textual variants</source>
         <translation type="unfinished">Kasuta tekstivariante</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="273"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="290"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation type="unfinished"></translation>
     </message>
