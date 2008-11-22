@@ -40,6 +40,12 @@
 #include <dom/dom2_traversal.h>
 #include <dom/html_document.h>
 
+//temp hack
+#include <kconfig.h>
+#include <kglobal.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
+
 using namespace InfoDisplay;
 
 CHTMLReadDisplay::CHTMLReadDisplay(CReadWindow* readWindow, QWidget* parentWidget)
@@ -379,7 +385,15 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 		}
 	}
 
+	//ugly hack:
+	// we need KHTMLPart::khtmlMouseMoveEvent because it handles selection.
+	// But it also creates an unwanted URL drag automatically. This was the only way to
+	// prevent it which I could find.
+	KConfigGroup g( KGlobal::config(), "General" );
+	int origDist = g.readEntry("StartDragDist", QApplication::startDragDistance());
+	g.writeEntry("StartDragDist", 100000);
 	KHTMLPart::khtmlMouseMoveEvent(e);
+	g.writeEntry("StartDragDist", origDist);
 }
 
 /** The Mag window update happens here if the mouse has not moved to another node after starting the timer.*/
