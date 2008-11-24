@@ -27,6 +27,33 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
+// ***********************
+// Container for KHTHMView to control its size
+class CWebViewerWidget : public QWidget 
+{
+	public:
+		CWebViewerWidget(QWidget* parent = 0);
+		~CWebViewerWidget();
+		virtual QSize sizeHint () const;
+};
+
+CWebViewerWidget::CWebViewerWidget(QWidget* parent)
+	: QWidget(parent)
+{
+}
+
+CWebViewerWidget::~CWebViewerWidget() 
+{
+}
+
+QSize CWebViewerWidget::sizeHint () const
+{
+	return QSize(100,100);
+}
+// ************************
+
+
+
 
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
@@ -68,12 +95,17 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 	hboxlayout->addStretch();
 	layout->addLayout( hboxlayout );
 
-	m_stylePreviewViewer = new KHTMLPart(this);
-	m_stylePreviewViewer->view()->setMaximumHeight(190);
-	QLabel* previewLabel = new QLabel(tr("Style preview"), this);
+	QWidget* webViewWidget = new CWebViewerWidget(this);
+	QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
+	
+	m_stylePreviewViewer = new KHTMLPart(webViewWidget);
+	QLabel* previewLabel = new QLabel(tr("Style preview"), webViewWidget);
 	previewLabel->setBuddy(m_stylePreviewViewer->view());
-	layout->addWidget(previewLabel);
-	layout->addWidget(m_stylePreviewViewer->view());
+	
+	webViewLayout->addWidget(previewLabel);
+	webViewLayout->addWidget(m_stylePreviewViewer->view());
+	layout->addWidget(webViewWidget);
+
 	m_styleChooserCombo->addItems(
 		CPointers::displayTemplateManager()->availableTemplates()
 	);
