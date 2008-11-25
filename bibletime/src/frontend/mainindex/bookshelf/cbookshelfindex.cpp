@@ -252,8 +252,11 @@ void CBookshelfIndex::initConnections()
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
 	
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-	// This was necessary probably because of a Qt bug: clicking didn't open a tree without this.
-	//QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+
+	// Single/double click item activation is style dependend
+	if (style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) == 0) {
+		QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	}
 
 	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
@@ -386,6 +389,18 @@ void CBookshelfIndex::dropEvent( QDropEvent* event )
 	} else {
 		event->ignore();
 	}
+}
+
+void CBookshelfIndex::changeEvent(QEvent* e)
+{
+	if (e->type() == QEvent::StyleChange) {
+		// Single/double click item activation is style dependend
+		QObject::disconnect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+		if (style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) == 0) {
+			QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+		}
+	}
+	QTreeWidget::changeEvent(e);
 }
 
 /** No descriptions */

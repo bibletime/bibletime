@@ -93,6 +93,9 @@ protected: // Protected methods
 	virtual void dragMoveEvent( QDragMoveEvent* event );
 	virtual void dropEvent( QDropEvent* event );
 
+	/** Receive style change event to change single/double click activation behaviour. */
+	virtual void changeEvent(QEvent*);
+	
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
