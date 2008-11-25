@@ -22,6 +22,7 @@ public:
 	CListWidget(QWidget* parent = 0);
 	~CListWidget();
 	virtual QSize sizeHint () const;
+	void setCharWidth(int width);
 };
 
 #endif

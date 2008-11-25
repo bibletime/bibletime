@@ -23,9 +23,34 @@
 #endif
 #ifdef USE_QWEBKIT
 #include <QWebView>
-static int textRenderAreaWidth = 505;
 #endif
-static int textRenderAreaHeight = 65;
+
+
+// ***********************
+// Container for KHTHMView to control its size
+class WebViewerWidget : public QWidget 
+{
+	public:
+		WebViewerWidget(QWidget* parent = 0);
+		~WebViewerWidget();
+		virtual QSize sizeHint () const;
+};
+
+WebViewerWidget::WebViewerWidget(QWidget* parent)
+	: QWidget(parent)
+{
+}
+
+WebViewerWidget::~WebViewerWidget() 
+{
+}
+
+QSize WebViewerWidget::sizeHint () const
+{
+	return QSize(100,100);
+}
+// ************************
+
 
 
 CFontChooser::CFontChooser(QWidget* parent)
@@ -58,7 +83,7 @@ void CFontChooser::createFontAreaLayout()
 	fontLayout->addWidget(fontLabel);
 
 	m_fontListWidget = new CListWidget();
-	m_fontListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+	m_fontListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
 	fontLayout->addWidget(m_fontListWidget);
 
 	// style column
@@ -69,7 +94,8 @@ void CFontChooser::createFontAreaLayout()
 	styleLayout->addWidget(styleLabel);
 
 	m_styleListWidget = new CListWidget();
-	m_styleListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+	m_styleListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+	m_styleListWidget->setCharWidth(12);
 	styleLayout->addWidget(m_styleListWidget);
 
 	// size column
@@ -80,7 +106,8 @@ void CFontChooser::createFontAreaLayout()
 	sizeLayout->addWidget(sizeLabel);
 
 	m_sizeListWidget = new CListWidget();
-	m_sizeListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+	m_sizeListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+	m_sizeListWidget->setCharWidth(5);
 	sizeLayout->addWidget(m_sizeListWidget);
 
 	m_vBoxLayout->addLayout(fontStyleSizeHBoxLayout);
@@ -97,14 +124,19 @@ void CFontChooser::createLayout()
 
 void CFontChooser::createTextAreaLayout() 
 {
+	QWidget* webViewWidget = new WebViewerWidget(this);
+	QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
+	
 #ifdef USE_KHTML
-	m_kHtmlPart = new KHTMLPart(this);
-	m_vBoxLayout->addWidget(m_kHtmlPart->view());
+	m_kHtmlPart = new KHTMLPart(webViewWidget);
+	m_kHtmlPart->view()->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+	webViewLayout->addWidget(m_kHtmlPart->view());
 #endif
 #ifdef USE_QWEBKIT
-	m_webView = new QWebView(this);
-	m_vBoxLayout->addWidget(m_webView);
+	m_webView = new QWebView(webViewWidget);
+	webViewLayout->addWidget(m_webView);
 #endif
+	m_vBoxLayout->addWidget(webViewWidget);
 }
 
 

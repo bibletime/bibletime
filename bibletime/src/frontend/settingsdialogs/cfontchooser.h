@@ -33,6 +33,7 @@ class KHTMLPart;
 #ifdef USE_QWEBKIT
 class QWebView;
 #endif
+class CListWidget;
 
 class CFontChooser : public QFrame {
 	Q_OBJECT
@@ -64,9 +65,9 @@ private:
 #ifdef USE_QWEBKIT
 	QWebView* m_webView;
 #endif
-	QListWidget* m_fontListWidget;
-	QListWidget* m_styleListWidget;
-	QListWidget* m_sizeListWidget;
+	CListWidget* m_fontListWidget;
+	CListWidget* m_styleListWidget;
+	CListWidget* m_sizeListWidget;
 	QString m_htmlText;
 	QFont m_font;
 	QVBoxLayout* m_vBoxLayout;
