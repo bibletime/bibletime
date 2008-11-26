@@ -104,18 +104,18 @@ void KStartupLogo::setText(const QString text) {
 	qApp->processEvents();
 }
 
-/** Makes the splashscreen the toplevel window. */
-void KStartupLogo::raiseSplash() {
-	if (startupLogo) {
-		startupLogo->raise();
-		startupLogo->activateWindow();
-		startupLogo->textLabel->show();
-	}
-}
-
-/** Lowers the splash screen one window down, so it's possible to make it not to hide tip windows or other startup stuff. */
-void KStartupLogo::lowerSplash() {
-	if (startupLogo) {
-		startupLogo->lower();
-	}
-}
+///** Makes the splashscreen the toplevel window. */
+//void KStartupLogo::raiseSplash() {
+//	if (startupLogo) {
+//		startupLogo->raise();
+//		startupLogo->activateWindow();
+//		startupLogo->textLabel->show();
+//	}
+//}
+//
+///** Lowers the splash screen one window down, so it's possible to make it not to hide tip windows or other startup stuff. */
+//void KStartupLogo::lowerSplash() {
+//	if (startupLogo) {
+//		startupLogo->lower();
+//	}
+//}
