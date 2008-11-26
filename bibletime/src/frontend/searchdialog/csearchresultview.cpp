@@ -256,7 +256,7 @@ void CSearchResultView::copyItemsWithText() {
 	keys.clear(); //delete all the keys we created
 }
 
-CSwordModuleInfo* const CSearchResultView::module() {
+CSwordModuleInfo* CSearchResultView::module() {
 	return m_module;
 }
 

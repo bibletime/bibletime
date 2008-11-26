@@ -48,7 +48,7 @@ public:
 	/**
 	* Returns the currently active module.
 	*/
-	CSwordModuleInfo* const activeModule();
+	CSwordModuleInfo* activeModule();
 
 protected:
 	/**

@@ -51,7 +51,7 @@ protected:
 	/**
 	* Only interesting for the class members! Useful to get the searched text etc.
 	*/
-	static CSearchDialog* const getSearchDialog();
+	static CSearchDialog* getSearchDialog();
 
 	/**
 	* The constructor of the dialog. It's protected because you should use the static public function openDialog.

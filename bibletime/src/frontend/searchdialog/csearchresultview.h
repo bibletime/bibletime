@@ -27,7 +27,7 @@ public:
 	CSearchResultView(QWidget* parent);
 	virtual ~CSearchResultView();
 	/** Returns the module which is currently used. */
-	CSwordModuleInfo* const module();
+	CSwordModuleInfo* module();
 
 protected: // Protected methods
 	/**

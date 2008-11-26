@@ -211,7 +211,7 @@ void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*)
 }
 
 /** Returns the currently active module. */
-CSwordModuleInfo* const CModuleResultView::activeModule()
+CSwordModuleInfo* CModuleResultView::activeModule()
 {
 	Q_ASSERT(currentItem());
 

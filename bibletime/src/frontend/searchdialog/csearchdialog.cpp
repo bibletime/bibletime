@@ -66,7 +66,7 @@ void CSearchDialog::openDialog(const QList<CSwordModuleInfo*> modules, const QSt
 	m_staticDialog->activateWindow();
 }
 
-CSearchDialog* const CSearchDialog::getSearchDialog()
+CSearchDialog* CSearchDialog::getSearchDialog()
 {
 	Q_ASSERT(m_staticDialog);
 	return m_staticDialog;
