@@ -97,7 +97,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 	while (drawn < m_moduleCount) {
 		for (index = 0; index < m_moduleCount; index++) {
 			if (m_resultCountArray[index] == Value) {
-				QPoint p1((int)x() + (m_moduleCount-drawn-1)*BAR_DELTAX,
+				QPoint p1((int)rect().x() + (m_moduleCount-drawn-1)*BAR_DELTAX,
 						  (int)rect().height() + (int)y() - BAR_LOWER_BORDER - (m_moduleCount-drawn)*BAR_DELTAY);
 				QPoint p2(p1.x() + BAR_WIDTH,
 						  p1.y() - (int)( !m_resultCountArray[index] ? 0 : ((m_resultCountArray[index])*(*m_scaleFactor))) );
@@ -125,7 +125,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 		p.rotate(90);
 		p.drawText(QPoint(5,0), m_bookName);
 	}
-	painter->drawPixmap(QPoint(int(x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
+	painter->drawPixmap(QPoint(int(rect().x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
 }
 
 /** Returns the width of this item. */
@@ -141,7 +141,7 @@ const QString CSearchAnalysisItem::getToolTip() {
 	//ToDo: Fix that loop
 	int i = 0;
 	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
-
+	
 	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
 		//  for (int i = 0; i < m_moduleCount; ++i) {
 		CSwordModuleInfo* info = (*it);

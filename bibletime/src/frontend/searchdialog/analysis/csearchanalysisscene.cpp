@@ -39,7 +39,7 @@ const int BAR_DELTAX = 4;
 const int BAR_DELTAY = 2;
 const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the label font size
 // Used for the text below the bars
-const int BAR_LOWER_BORDER = 100;
+const int BAR_LOWER_BORDER = 70;
 
 const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
@@ -52,11 +52,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 	m_legend(0)
 {
 	setBackgroundBrush(QBrush(Qt::white));
-	//m_itemList.resize(67);
-	//m_canvasItemList.setAutoDelete(true);
-	//resize(1,1);
-	setSceneRect(0,0,1,1);
-	connect(this, SIGNAL(resized()), SLOT(slotResized()));
+	setSceneRect(0,0,400,700);
 }
 
 
@@ -83,11 +79,6 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 		return;
 	m_legend = new CSearchAnalysisLegendItem(&m_moduleList);
 	addItem(m_legend);
-	//m_legend->setX(LEFT_BORDER);
-	//m_legend->setY(UPPER_BORDER);
-	//m_legend->setPos(LEFT_BORDER, UPPER_BORDER);
-	//m_legend->setSize(LEGEND_WIDTH,
-	//				  LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules-1));
 	m_legend->setRect(LEFT_BORDER, UPPER_BORDER,
 		LEGEND_WIDTH, LEGEND_INNER_BORDER*2 + ITEM_TEXT_SIZE*numberOfModules + LEGEND_DELTAY*(numberOfModules-1) );
 	m_legend->show();
@@ -102,7 +93,6 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 	CSearchAnalysisItem* analysisItem = m_itemList[key.book()];
 	bool ok = true;
 	while (ok && analysisItem) {
-		//   for (moduleIndex = 0,m_moduleList.first(); m_moduleList.current(); m_moduleList.next(),++moduleIndex) {
 		moduleIndex = 0;
 		QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
 		for (QList<CSwordModuleInfo*>::iterator it(m_moduleList.begin()); it != end_it; ++it) {
@@ -110,14 +100,12 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 			if (!m_lastPosList.contains(*it)) {
 				m_lastPosList.insert(*it,0);
 			}
-
+			
 			analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), *it)));
 			m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
 			++moduleIndex;
 		}
-		//analysisItem->setX(xPos);
-		//analysisItem->setY(UPPER_BORDER);
 		analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
 		analysisItem->show();
 
@@ -125,12 +113,11 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 		ok = key.next(CSwordVerseKey::UseBook);
 		analysisItem = m_itemList[key.book()];
 	}
-	//resize(xPos+BAR_WIDTH+(m_moduleList.count()-1)*BAR_DELTAX+RIGHT_BORDER, height() );
 	setSceneRect(0,0, xPos+BAR_WIDTH+(m_moduleList.count()-1)*BAR_DELTAX+RIGHT_BORDER, height() );
 	slotResized();
 }
 
-/** Sets te module list used for the analysis. */
+/** Sets the module list used for the analysis. */
 void CSearchAnalysisScene::setModules(QList<CSwordModuleInfo*> modules) {
 	m_moduleList.clear();
 	foreach (CSwordModuleInfo * mod, modules) {
@@ -174,15 +161,13 @@ void CSearchAnalysisScene::reset() {
 
 /** No descriptions */
 void CSearchAnalysisScene::slotResized() {
-	m_scaleFactor = (double)( (double)(height()-UPPER_BORDER-LOWER_BORDER-BAR_LOWER_BORDER-(m_moduleList.count()-1)*BAR_DELTAY)
+	m_scaleFactor = (double)( (double)(height()-UPPER_BORDER-LOWER_BORDER-BAR_LOWER_BORDER-100-(m_moduleList.count()-1)*BAR_DELTAY)
 							  /(double)m_maxCount);
 	QHashIterator<QString, CSearchAnalysisItem*> it( m_itemList );
 	while ( it.hasNext() ) {
 		it.next();
 		if (it.value()) {
-			//it.value()->setSize(BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-UPPER_BORDER-LOWER_BORDER);
-			//it.value()->setY(UPPER_BORDER);
-			it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-UPPER_BORDER-LOWER_BORDER);
+			it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-LOWER_BORDER-BAR_LOWER_BORDER);			
 		}
 	}
 	update();
@@ -294,5 +279,10 @@ void CSearchAnalysisScene::saveAsHTML() {
 	CToolClass::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
 }
 
+void CSearchAnalysisScene::resizeHeight(int height)
+{
+	setSceneRect(0,0, sceneRect().width(), height);
+	slotResized();	
+}
 
 }

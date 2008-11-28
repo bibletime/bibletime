@@ -14,8 +14,8 @@
 class CSwordModuleInfo;
 
 #include <QDialog>
-
-
+#include <QObject>
+				 
 class QAbstractButton;
 class QDialogButtonBox;
 
@@ -38,12 +38,15 @@ public:
 	~CSearchAnalysisDialog() {}
 
 protected: // Protected methods
-	void buttonClicked(QAbstractButton* button);
 	/**
 	 * Initializes this dialog.
 	 */
 	void initView();
-
+	void resizeEvent(QResizeEvent* event);
+	
+private slots:
+	void buttonClicked(QAbstractButton* button);
+	
 private:
 	CSearchAnalysisScene* m_analysis;
 	CSearchAnalysisView* m_analysisView;

@@ -52,8 +52,10 @@ void CSearchAnalysisDialog::initView()
 
 	vboxLayout->addWidget(m_buttonBox);
 
-	QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-	QObject::connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonClicked(QAbstractButton*)));
+	bool ok = QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+	Q_ASSERT(ok);
+	ok = QObject::connect(m_buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(buttonClicked(QAbstractButton*)));
+	Q_ASSERT(ok);
 }
 
 void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button)
@@ -61,6 +63,12 @@ void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button)
 	if (m_buttonBox->buttonRole(button) == QDialogButtonBox::AcceptRole) {
 		m_analysis->saveAsHTML();
 	}
+}
+
+void CSearchAnalysisDialog::resizeEvent(QResizeEvent* event)
+{
+	QDialog::resizeEvent(event);
+	m_analysis->resizeHeight(height()-10);
 }
 
 }

@@ -50,6 +50,10 @@ public:
 	*/
 	QHash<QString, CSearchAnalysisItem*>* getSearchAnalysisItemList();
 	void reset();
+	/**
+	 * resize the height of the scene
+	 */
+	void resizeHeight(int height);
 
 public slots:
 	void saveAsHTML();
