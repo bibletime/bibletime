@@ -18,11 +18,13 @@
 #include <QAbstractButton>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-
-
+#include <QApplication>
+#include <QDesktopWidget>
 
 namespace Search {
 
+static const int DIALOG_HEIGHT=400;
+static const int DIALOG_BORDER=30;
 
 CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, QWidget* parentDialog )
 	: QDialog(parentDialog)
@@ -30,7 +32,15 @@ CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, 
 	initView();
 	m_analysis->reset();
 	m_analysis->analyse(modules);
-	showMaximized();
+	
+	// Set initial width based on the search data, but limit to the
+	// width of the desktop
+	int width = m_analysis->width()+DIALOG_BORDER;
+	int desktopWidth = QApplication::desktop()->screenGeometry(this).width();
+	if (width > desktopWidth)
+		width = desktopWidth;
+	resize(width, DIALOG_HEIGHT);
+	
 }
 
 /** Initializes this dialog. */
@@ -68,7 +78,7 @@ void CSearchAnalysisDialog::buttonClicked(QAbstractButton* button)
 void CSearchAnalysisDialog::resizeEvent(QResizeEvent* event)
 {
 	QDialog::resizeEvent(event);
-	m_analysis->resizeHeight(height()-10);
+	m_analysis->resizeHeight(height());
 }
 
 }

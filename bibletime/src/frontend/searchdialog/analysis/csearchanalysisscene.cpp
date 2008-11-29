@@ -39,7 +39,7 @@ const int BAR_DELTAX = 4;
 const int BAR_DELTAY = 2;
 const int BAR_WIDTH  = 2 + (2*BAR_DELTAX);  //should be equal or bigger than the label font size
 // Used for the text below the bars
-const int BAR_LOWER_BORDER = 70;
+const int BAR_LOWER_BORDER = 90;
 
 const int LEGEND_INNER_BORDER = 5;
 const int LEGEND_DELTAY = 4;
@@ -52,7 +52,7 @@ CSearchAnalysisScene::CSearchAnalysisScene(QObject *parent )
 	m_legend(0)
 {
 	setBackgroundBrush(QBrush(Qt::white));
-	setSceneRect(0,0,400,700);
+	setSceneRect(0,0,1,1);
 }
 
 
@@ -107,6 +107,8 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 			++moduleIndex;
 		}
 		analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
+		QString tip = analysisItem->getToolTip();
+		analysisItem->setToolTip(tip);
 		analysisItem->show();
 
 		xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;

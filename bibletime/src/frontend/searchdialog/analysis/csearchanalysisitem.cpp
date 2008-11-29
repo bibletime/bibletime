@@ -53,7 +53,6 @@ CSearchAnalysisItem::CSearchAnalysisItem(const int moduleCount, const QString &b
 	m_resultCountArray.resize(m_moduleCount);
 	int index = 0;
 	for (index = 0; index < m_moduleCount; ++index) m_resultCountArray[index] = 0;
-	setToolTip(getToolTip());
 }
 
 CSearchAnalysisItem::~CSearchAnalysisItem()
@@ -143,7 +142,6 @@ const QString CSearchAnalysisItem::getToolTip() {
 	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
 	
 	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
-		//  for (int i = 0; i < m_moduleCount; ++i) {
 		CSwordModuleInfo* info = (*it);
 		const QColor c = CSearchAnalysisScene::getColor(i);
 

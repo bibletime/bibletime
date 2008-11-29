@@ -21,6 +21,7 @@ CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* p
  : QGraphicsView(scene, parent)
 {
 	setFocusPolicy(Qt::WheelFocus);
+	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	resize(sizeHint());
 }
 
