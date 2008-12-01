@@ -77,8 +77,8 @@ public:
 	QSize minimumSizeHint() const { return minimumSize(); }
     bool hasSearchScope();
 
-	bool isAndSearchType();
-	
+//	bool isAndSearchType();
+
 protected:
 	/**
 	* Initializes this page.
@@ -108,7 +108,7 @@ public slots:
 	*/
 	void aboutToShow();
 	/**
-	* Refreshes the list of ranges and the range combobox. 
+	* Refreshes the list of ranges and the range combobox.
 	*/
 	void refreshRanges();
 	/**

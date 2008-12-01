@@ -151,7 +151,7 @@ void BtSearchOptionsArea::initView()
 
 	m_helpLabel = new QLabel(tr(" (<a href='syntax_help'>full syntax</a>)"));
 	m_helpLabel->setToolTip("Click the link to get help for search syntax");
-	
+
 	typeSelectorLayout->addWidget(m_typeAndButton);
 	typeSelectorLayout->addWidget(m_typeOrButton);
 	//fullButtonLayout->addSpacing(CToolClass::mWidth(this, 2));
@@ -188,10 +188,10 @@ void BtSearchOptionsArea::initView()
 	m_searchTextCombo->setToolTip(tr("The text you want to search for"));
 	m_searchTextCombo->setInsertPolicy(QComboBox::NoInsert);
 	gridLayout->addWidget(m_searchTextCombo, 0, 1);
-	
+
 	m_modulesLabel = new QLabel(tr("Works:"), searchGroupBox);
 	gridLayout->addWidget(m_modulesLabel, 2, 0);
-	
+
 	m_modulesCombo = new QComboBox(searchGroupBox);
 	m_modulesCombo->setDuplicatesEnabled(false);
 	gridLayout->addWidget(m_modulesCombo, 2, 1);
@@ -434,10 +434,10 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/)
 // 	}
 }
 
-bool BtSearchOptionsArea::isAndSearchType()
-{
-	
-}
+//bool BtSearchOptionsArea::isAndSearchType()
+//{
+//
+//}
 
 
 }
