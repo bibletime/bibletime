@@ -71,13 +71,11 @@ int CSearchAnalysisItem::getCountForModule( const int moduleIndex) {
 }
 
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
+void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {	
 	QFont f = painter->font();
 	f.setPointSize(ITEM_TEXT_SIZE);
 	painter->setFont(f);
 
-	setPen(QPen(Qt::black,1));
-	setBrush(Qt::red);
 	/**
 	* We have to paint so many bars as we have modules available (we use m_moduleCount)
 	* We paint inside the area which is given by height and width of this rectangle item
@@ -124,7 +122,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 		p.rotate(90);
 		p.drawText(QPoint(5,0), m_bookName);
 	}
-	painter->drawPixmap(QPoint(int(rect().x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
+	painter->drawPixmap(QPoint(int(rect().x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);	
 }
 
 /** Returns the width of this item. */

@@ -49,8 +49,6 @@ CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QList<CSwordModuleInfo*> *l
 void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
 	painter->save();
 
-	setPen( QPen(Qt::black,2) );
-	setBrush( QBrush(Qt::white) );
 	//the outer rectangle
 	QPoint p1( (int)(rect().x()), (int)(rect().y()) );
 	QPoint p2( (int)(rect().x()+rect().width()), (int)(rect().y()) + rect().height() );
