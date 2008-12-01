@@ -125,10 +125,10 @@ ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
 IF (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wno-return-type -O0 -g") #-pedantic-errors
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -pedantic -g") #-pedantic-errors
 #	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wno-return-type -Werror -O0 -g") #-pedantic-errors
 ELSE (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -Wno-return-type -g")
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -pedantic -g")
 ENDIF (NOT APPLE)
 
 
