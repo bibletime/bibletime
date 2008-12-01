@@ -100,18 +100,20 @@ void CSearchAnalysisScene::analyse(QList<CSwordModuleInfo*> modules) {
 			if (!m_lastPosList.contains(*it)) {
 				m_lastPosList.insert(*it,0);
 			}
-			
+
 			analysisItem->setCountForModule(moduleIndex, (count = getCount(key.book(), *it)));
 			m_maxCount = (count > m_maxCount) ? count : m_maxCount;
 
 			++moduleIndex;
 		}
-		analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
-		QString tip = analysisItem->getToolTip();
-		analysisItem->setToolTip(tip);
-		analysisItem->show();
-
-		xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;
+		if (analysisItem->hasHitsInAnyModule())
+		{
+			analysisItem->setRect(xPos, UPPER_BORDER, analysisItem->rect().width(), analysisItem->rect().height());
+			QString tip = analysisItem->getToolTip();
+			analysisItem->setToolTip(tip);
+			analysisItem->show();
+			xPos += (int)analysisItem->width() + SPACE_BETWEEN_PARTS;
+		}
 		ok = key.next(CSwordVerseKey::UseBook);
 		analysisItem = m_itemList[key.book()];
 	}
@@ -169,7 +171,7 @@ void CSearchAnalysisScene::slotResized() {
 	while ( it.hasNext() ) {
 		it.next();
 		if (it.value()) {
-			it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-LOWER_BORDER-BAR_LOWER_BORDER);			
+			it.value()->setRect(it.value()->rect().x(), UPPER_BORDER, BAR_WIDTH + (m_moduleList.count()-1)*BAR_DELTAX, height()-LOWER_BORDER-BAR_LOWER_BORDER);
 		}
 	}
 	update();
@@ -284,7 +286,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 void CSearchAnalysisScene::resizeHeight(int height)
 {
 	setSceneRect(0,0, sceneRect().width(), height);
-	slotResized();	
+	slotResized();
 }
 
 }

@@ -70,8 +70,16 @@ int CSearchAnalysisItem::getCountForModule( const int moduleIndex) {
 	return m_resultCountArray[moduleIndex];
 }
 
+
+bool CSearchAnalysisItem::hasHitsInAnyModule() {
+	foreach (const int hits, m_resultCountArray){
+		if (hits) return true;
+	}
+	return false;
+}
+
 /** Reimplementation. Draws the content of this item. */
-void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {	
+void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
 	QFont f = painter->font();
 	f.setPointSize(ITEM_TEXT_SIZE);
 	painter->setFont(f);
@@ -122,7 +130,7 @@ void CSearchAnalysisItem::paint(QPainter* painter, const QStyleOptionGraphicsIte
 		p.rotate(90);
 		p.drawText(QPoint(5,0), m_bookName);
 	}
-	painter->drawPixmap(QPoint(int(rect().x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);	
+	painter->drawPixmap(QPoint(int(rect().x()),int(rect().height()+y()-BAR_LOWER_BORDER)), *m_bufferPixmap);
 }
 
 /** Returns the width of this item. */
@@ -138,7 +146,7 @@ const QString CSearchAnalysisItem::getToolTip() {
 	//ToDo: Fix that loop
 	int i = 0;
 	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
-	
+
 	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
 		CSwordModuleInfo* info = (*it);
 		const QColor c = CSearchAnalysisScene::getColor(i);

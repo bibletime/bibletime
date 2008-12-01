@@ -36,6 +36,10 @@ public:
 	*/
 	int getCountForModule( const int moduleIndex);
 	/**
+	* Does one of the modules contain hits?
+	*/
+	bool hasHitsInAnyModule();
+	/**
 	* Returns the width of this item.
 	*/
 	virtual int width();
