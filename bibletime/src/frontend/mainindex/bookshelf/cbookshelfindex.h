@@ -73,10 +73,13 @@ public slots:
 	 */
 	void actionSearchInModules();
 
-protected: // Protected methods
+protected:
 
-	//testing
+	/** Handle mouse clicks.*/
 	virtual void mouseReleaseEvent(QMouseEvent* event);
+
+	/** Empty re-implementation to prevent unwanted opening of folders with some styles.*/
+	virtual void mouseDoubleClickEvent(QMouseEvent*) {}
 
 	/**
 	* Initialize the SIGNAL<->SLOT connections
