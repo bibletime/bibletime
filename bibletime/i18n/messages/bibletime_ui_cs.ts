@@ -6681,12 +6681,12 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="467"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="482"/>
         <source>Search</source>
         <translation>Hledat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="500"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="515"/>
         <source>Search in</source>
         <translation></translation>
     </message>
@@ -6696,7 +6696,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">BibleTime - Odemknutí modulu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="571"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="586"/>
         <source>Enter the unlock key for this work.</source>
         <translation>Vložte klíč k odemknutí modulu.</translation>
     </message>
@@ -6716,12 +6716,12 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="602"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="617"/>
         <source>Hide/Unhide Works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="603"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="618"/>
         <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6751,12 +6751,12 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="515"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="530"/>
         <source>Search in selected...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="570"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="585"/>
         <source>Unlock Work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6924,7 +6924,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">Zobrazovat spouštěcí logo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="51"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="79"/>
         <source>Display templates</source>
         <translation>Zobrazit šablony</translation>
     </message>
@@ -6934,62 +6934,62 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">Šablony zobrazení určují, jak bude text zobrazen. Prosím zvolte si preferovanou šablonu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="63"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="91"/>
         <source>Available display styles:</source>
         <translation>Dostupné styly:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="72"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="102"/>
         <source>Style preview</source>
         <translation>Náhled stylu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="108"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="141"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation>Neboť Bůh tak miloval svět, že dal svého jednorozeného Syna, aby žádný, kdo věří v něho, nezahynul, ale měl věčný život.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="115"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="148"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation>Bůh totiž neposlal svého Syna na svět, aby svět odsoudil, ale aby svět byl skrze něho spasen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="155"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation>Kdo v něj věří, není souzen, ale kdo nevěří, je již odsouzen; neboť neuvěřil ve jméno jednorozeného Božího Syna.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="127"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="160"/>
         <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation>A toto je ten soud, že světlo přišlo na svět, ale lidé si více oblíbili tmu nežli světlo, protože jejich skutky byly zlé.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="132"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="165"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation>Každý, kdo koná zlo, totiž nenávidí světlo a nepřichází ke světlu, aby jeho skutky nebyly odhaleny.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="137"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="170"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation>Ale kdo koná pravdu, přichází ke světlu, aby jeho skutky byly zjeveny, že jsou vykonány v Bohu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="53"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="81"/>
         <source>Display templates define how text is displayed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="41"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="68"/>
         <source>Show the BibleTime logo on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="40"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
         <source>Show startup logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="176"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="209"/>
         <source>Display</source>
         <translation type="unfinished">Zobrazit</translation>
     </message>
@@ -7020,18 +7020,18 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
 <context>
     <name>CFontChooser</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="59"/>
-        <source>Font Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="72"/>
-        <source>Font Style:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="85"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="105"/>
         <source>Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="82"/>
+        <source>Font name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="93"/>
+        <source>Font style:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7240,7 +7240,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">Zde vidíte seznam všech jazyků v nainstalovaných modulech. Můžete nastavit, jaké písmo (font) se má pro který jazyk použít, aby byl text zobrazen správně.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="165"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>Use custom font</source>
         <translation>Použít vlastní písmo</translation>
     </message>
@@ -7250,37 +7250,37 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">Žluťoučký kůň úpěl ďábelské ódy.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
         <source>Language for names of Bible books:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="55"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="53"/>
         <source>The languages which can be used for the biblical booknames</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="137"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="135"/>
         <source>The font selection below will apply to all texts in this language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="50"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="130"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="128"/>
         <source>Fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="132"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="130"/>
         <source>You can specify a custom font for each language.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="299"/>
         <source>Languages</source>
         <translation type="unfinished">Jazyk</translation>
     </message>
@@ -7696,7 +7696,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation>Textové filtry</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="360"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="363"/>
         <source>Desk</source>
         <translation type="unfinished">
             </translation>
@@ -9263,128 +9263,133 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="99"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
         <source>Search for:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="111"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="122"/>
         <source>&amp;Search</source>
         <translation type="unfinished">&amp;Hledat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="124"/>
         <source>Start to search the text in the chosen works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="116"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="127"/>
         <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
         <source>Choose works for the search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="121"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
         <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="129"/>
-        <source>AND</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
-        <source>OR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="404"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
         <source>All of the words (AND is added between the words)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="405"/>
-        <source>Some of the words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="152"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="148"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="165"/>
         <source>Scope:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
-        <source>Choose the scope (books/chapters/verses to search in) from the list. Applicable for Bibles and commentaries.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="188"/>
         <source>The text you want to search for</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="192"/>
         <source>Works:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="285"/>
         <source>Works to Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="286"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="320"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="337"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;Zadejte slova oddělená mezerami.  Ve výchozím nastavení se vrací výsledky, shodující se v jakémkoliv slově (OR). Pro shodu ve všech slovech oddělte slova AND.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="323"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="340"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;Lze použít zástupné znaky: &apos;*&apos; zastupuje libovolnou sekvenci znaků, zatímco &apos;?&apos; zastupuje jeden samostatný znak. Použití závorek dovoluje seskupení vyhledávacích výrazů, například &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="326"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="343"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;Pro hledání jiného než hlavního textu, zadejte text následován &quot;:&quot; a pak hledaný výraz.  Například pro hledání Strongova čísla H8077, použijte &apos;strong:H8077&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="331"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="348"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;Dostupné druhy textů:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;nadpis:&lt;/td&gt;&lt;td&gt;hledat nadpisy&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;vysvětlivka:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Strongova čísla:&lt;/td&gt;&lt;td&gt;hledat Strongova čísla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfologie:&lt;/td&gt;&lt;td&gt;hledat morfologické značky&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="335"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;BibleTime používá vyhledávací engin Lucene pro vykonání vyhledávání. Locene má mnoho pokročilých funkcí. Můžete si o tom přečíst více zde: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="337"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="354"/>
         <source>Basic Search Syntax Introduction</source>
         <translation type="unfinished">Základní syntaxe hledání</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="343"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="360"/>
         <source>No search scope</source>
         <translation type="unfinished">Bez omezení</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="415"/>
-        <source>Full syntax is used because text includes AND or OR</source>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="143"/>
+        <source>All words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="145"/>
+        <source>Some words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="146"/>
+        <source>Free</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="149"/>
+        <source>Some of the words (OR is added between the words)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
+        <source>Full lucene syntax</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="178"/>
+        <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9551,37 +9556,37 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
         <source>Save Search Analysis</source>
         <translation>Uložit analýzu hledání</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="237"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="255"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="244"/>
         <source>BibleTime Search Analysis</source>
         <translation>Analýza hledání</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="256"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
         <source>Search text :</source>
         <translation>Hledat text:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="258"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="247"/>
         <source>Book</source>
         <translation>Kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="259"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
         <source>Total hits</source>
         <translation>Celkem</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="291"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by</source>
         <translation>Vytvořeno pomocí</translation>
     </message>
@@ -9594,7 +9599,7 @@ Vyberte je a uložte do schránky (clipboard) a vložte do vstupního pole ve vy
         <translation type="obsolete">&amp;Hledat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="110"/>
         <source>Missing indices</source>
         <translation>Chybějící rejstříky</translation>
     </message>
@@ -9611,23 +9616,23 @@ Toto může trvat dlouhou dobu. Pokračovat s indexací?</translation>
         <translation type="unfinished">Hledat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="114"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="112"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="205"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="233"/>
         <source>&amp;Analyze results...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="206"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="234"/>
         <source>Show a graphical analyzis of the search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="212"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="240"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9905,72 +9910,72 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="82"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="81"/>
         <source>Commentary:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="86"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="85"/>
         <source>The standard commentary is used when a hyperlink into a commentary is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="92"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="91"/>
         <source>Lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="96"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="95"/>
         <source>The standard lexicon is used when a hyperlink into a lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="102"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="101"/>
         <source>Daily devotional:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="106"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="105"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="112"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="111"/>
         <source>Hebrew Strong&apos;s lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="116"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="115"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="122"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="121"/>
         <source>Greek Strong&apos;s lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="126"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="125"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="132"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="131"/>
         <source>Hebrew morphological lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="136"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="135"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="142"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="141"/>
         <source>Greek morphological lexicon:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="146"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="145"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9988,52 +9993,52 @@ This could take a long time. Proceed with indexing?</source>
         <translation type="obsolete">Filtry upravují zobrazení textu v oknech. Zde můžete nastavit standardní chování různých filtrů. V jednotlivých oknech si můžete nastavení upravit podle potřeby.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="298"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
         <source>Insert line break after each verse</source>
         <translation>Zalomit řádek po každém verši</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="303"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="304"/>
         <source>Show verse numbers</source>
         <translation>Zobrazit čísla veršů</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="308"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="309"/>
         <source>Show section headings</source>
         <translation>Zobrazit nadpisy částí</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="314"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="315"/>
         <source>Show scripture cross-references</source>
         <translation>Ukázat odkaz v Bibli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="319"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="320"/>
         <source>Show Greek accents</source>
         <translation>Zobrazit řecké značky přízvuku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="324"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="325"/>
         <source>Show Hebrew vowel points</source>
         <translation>Zobrazit hebrejské značky samohlásek</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="329"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="330"/>
         <source>Show Hebrew cantillation marks</source>
         <translation>Zobrazit hebrejské značky přízvuku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="334"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="335"/>
         <source>Show morph segmentation</source>
         <translation>Ukázat morfologické dělení</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="339"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="340"/>
         <source>Use textual variants</source>
         <translation>Použít textové varianty</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="290"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation type="unfinished"></translation>
     </message>

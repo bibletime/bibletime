@@ -5,7 +5,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 SET(BT_VERSION "1.7.beta2")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
-LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua zh_CN zh_TW)
+LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS de fi fr nl)
