@@ -85,36 +85,21 @@ void BtSearchOptionsArea::setSearchText(const QString& text) {
 
 void BtSearchOptionsArea::initView()
 {
-    QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-    sizePolicy.setHorizontalStretch(0);
-    sizePolicy.setVerticalStretch(0);
-    sizePolicy.setHeightForWidth(this->sizePolicy().hasHeightForWidth());
-    this->setSizePolicy(sizePolicy);
-    this->setMinimumSize(QSize(260, 130));
-    this->setBaseSize(QSize(420, 150));
-    hboxLayout = new QHBoxLayout(this);
-    hboxLayout->setSpacing(3);
-    hboxLayout->setMargin(0);
+	QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+	this->setSizePolicy(sizePolicy);
+	hboxLayout = new QHBoxLayout(this);
+	hboxLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
-    searchGroupBox = new QGroupBox(this);
+	searchGroupBox = new QGroupBox(this);
 
-    gridLayout = new QGridLayout(searchGroupBox);
-    gridLayout->setSpacing(3);
-    gridLayout->setMargin(0);
+	gridLayout = new QGridLayout(searchGroupBox);
 
-    gridLayout->setHorizontalSpacing(3);
-    gridLayout->setVerticalSpacing(3);
-    gridLayout->setContentsMargins(6, 6, 6, 6);
+	gridLayout->setHorizontalSpacing(3);
 
 	// ******** label for search text editor***********
     m_searchTextLabel = new QLabel(tr("Search for:"), searchGroupBox);
-    QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
-    sizePolicy1.setHorizontalStretch(0);
-    sizePolicy1.setVerticalStretch(0);
-    sizePolicy1.setHeightForWidth(m_searchTextLabel->sizePolicy().hasHeightForWidth());
-    m_searchTextLabel->setSizePolicy(sizePolicy1);
-    m_searchTextLabel->setWordWrap(false);
-    gridLayout->addWidget(m_searchTextLabel, 0, 0);
+	m_searchTextLabel->setWordWrap(false);
+	gridLayout->addWidget(m_searchTextLabel, 0, 0);
 
 	// **********Buttons******************
 
@@ -137,14 +122,16 @@ void BtSearchOptionsArea::initView()
 	// ************* Search type (AND/OR) selector ***************************************
 	QHBoxLayout* typeSelectorLayout = new QHBoxLayout();
 	int tsLeft, tsTop, tsRight, tsBottom;
+	// Added space looks nicer and enhances readability
 	typeSelectorLayout->getContentsMargins(&tsLeft, &tsTop, &tsRight, &tsBottom);
-	typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom);
+	typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom + CToolClass::mWidth(this,1) );
+	typeSelectorLayout->setSpacing(typeSelectorLayout->spacing()+CToolClass::mWidth(this,1)/2);
 	QHBoxLayout* fullButtonLayout = new QHBoxLayout();
 	m_typeAndButton = new QRadioButton(tr("All words"));
 	m_typeAndButton->setChecked(true);
 	m_typeOrButton = new QRadioButton(tr("Some words"));
 	m_typeFreeButton = new QRadioButton(tr("Free"));
-	//these tooltips are set also in slotValidateText
+
 	m_typeAndButton->setToolTip(tr("All of the words (AND is added between the words)"));
 	m_typeOrButton->setToolTip(tr("Some of the words (OR is added between the words)"));
 	m_typeFreeButton->setToolTip(tr("Full lucene syntax"));
@@ -154,17 +141,13 @@ void BtSearchOptionsArea::initView()
 
 	typeSelectorLayout->addWidget(m_typeAndButton);
 	typeSelectorLayout->addWidget(m_typeOrButton);
-	//fullButtonLayout->addSpacing(CToolClass::mWidth(this, 2));
 	fullButtonLayout->addWidget(m_typeFreeButton);
 	fullButtonLayout->addWidget(m_helpLabel);
-	//fullButtonLayout->addItem(new QSpacerItem(1,1,QSizePolicy::Expanding));
 	typeSelectorLayout->addLayout(fullButtonLayout);
 	gridLayout->addLayout(typeSelectorLayout, 1,1, 1,0, Qt::AlignLeft|Qt::AlignTop);
 
 	// ************* Label for search range/scope selector *************
 	m_searchScopeLabel = new QLabel(tr("Scope:"), searchGroupBox);
-	sizePolicy1.setHeightForWidth(m_searchScopeLabel->sizePolicy().hasHeightForWidth());
-	m_searchScopeLabel->setSizePolicy(sizePolicy1);
 	m_searchScopeLabel->setWordWrap(false);
 	gridLayout->addWidget(m_searchScopeLabel, 3, 0);
 
