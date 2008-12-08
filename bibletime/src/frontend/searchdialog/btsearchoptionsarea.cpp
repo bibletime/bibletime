@@ -283,6 +283,14 @@ void BtSearchOptionsArea::reset() {
 
 void BtSearchOptionsArea::saveSettings() {
 	CBTConfig::set(CBTConfig::searchTexts, m_searchTextCombo->historyItems());
+	SearchType t = FullType;
+	if (m_typeAndButton->isChecked()) {
+		t = AndType;
+	}
+	if (m_typeOrButton->isChecked()) {
+		t = OrType;
+	}
+	CBTConfig::set(CBTConfig::searchType, t);
 }
 
 void BtSearchOptionsArea::readSettings() {
@@ -299,6 +307,15 @@ void BtSearchOptionsArea::readSettings() {
 	m_modulesCombo->insertItems(0, CBTConfig::get(CBTConfig::searchModulesHistory));
 	for (int i = 0; i < m_modulesCombo->count(); ++i) {
 		m_modulesCombo->setItemData(i, m_modulesCombo->itemText(i), Qt::ToolTipRole);
+	}
+
+	int stype = CBTConfig::get(CBTConfig::searchType);
+	switch (stype) {
+		case AndType: m_typeAndButton->setChecked(true);
+		break;
+		case OrType: m_typeOrButton->setChecked(true);
+		break;
+		default: m_typeFreeButton->setChecked(true);
 	}
 }
 

@@ -16,6 +16,7 @@
 #include "backend/btmoduletreeitem.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
+#include "frontend/searchdialog/btsearchoptionsarea.h"
 
 //Qt includes
 #include <QApplication>
@@ -141,6 +142,7 @@ QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case searchDialogHeight:	return "searchDialogHeight";
 		case searchDialogX:			return "searchDialogX";
 		case searchDialogY:			return "searchDialogY";
+		case searchType:			return "searchType";
 	}
 	return QString::null;
 }
@@ -191,6 +193,7 @@ int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case searchDialogHeight:	return 400;
 		case searchDialogX:			return 200;
 		case searchDialogY:			return 200;
+		case searchType:			return Search::BtSearchOptionsArea::AndType;
 		case mainindexActiveTab:	return 0;
 	}
 	return 0;
