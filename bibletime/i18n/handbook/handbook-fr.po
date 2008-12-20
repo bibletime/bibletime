@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-05-20 18:48+0200\n"
+"POT-Creation-Date: 2008-12-19 00:14-0500\n"
 "PO-Revision-Date: 2006-05-26 13:46WET\n"
 "Last-Translator: Jean Van Schaftingen <vanschaf@yahoo.fr>\n"
 "Language-Team: Français\n"
@@ -15,66 +15,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10\n"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:1
+#: docs/handbook/en/docbook/hdbk-config.docbook:2
 msgid "Configuring &bibletime;"
 msgstr "Configurer &bibletime;"
 
+# type: Content of: <chapter><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:3
 msgid ""
-"In this section you find a description of the different possibilities to "
-"configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
-"BibleTime Dialog </link> and the <link linkend=\"hdbk-config-toolbar"
-"\">Configure Toolbars</link> dialog. Both can be accessed under "
-"<guimenu>Settings</guimenu> in the main menu."
+"In this section you find an overview to configure &bibletime;, which can be "
+"found under <guimenu>Settings</guimenu> in the main menu."
 msgstr ""
-"Dans cette section vous trouverez une description des différentes "
-"possibilités de configurer &bibletime;: le dialogue<link linkend=\"hdbk-"
-"config-bt\"> Configurer &bibletime;</link>et le dialogue <link linkend="
-"\"hdbk-config-toolbar\">Configurer les barres d'outils</link> qui sont tous "
-"les deux accessibles dans le menu <guimenu>Settings</guimenu>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:8
+#: docs/handbook/en/docbook/hdbk-config.docbook:7
 msgid "Configure BibleTime Dialog"
 msgstr "Le Dialogue Configurer Bibletime"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:10
+#: docs/handbook/en/docbook/hdbk-config.docbook:8
+#, fuzzy
 msgid ""
 "The &bibletime; user interface can be customized in many ways depending on "
 "your needs. You can access the configuration dialog by selecting "
-"<menuchoice><guimenu>Settings</guimenu></menuchoice> <guimenuitem>Configure "
-"&bibletime;</guimenuitem>."
+"<menuchoice> <guimenu>Settings</guimenu> </menuchoice> "
+"<guimenuitem>Configure &bibletime;</guimenuitem>."
 msgstr ""
 "L'interface utilisateur de &bibletime; peut être réglée de plusieurs "
 "manières en fonction de vos besoins. Vous pouvez accéder le dialogue de "
 "configuration en sélectionnant <menuchoice><guimenu>Settings</guimenu></"
 "menuchoice> <guimenuitem>Configurer &bibletime;</guimenuitem>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:17
+#: docs/handbook/en/docbook/hdbk-config.docbook:19
 msgid ""
 "The startup behavior can be customized. Select from the following options:"
 msgstr ""
 "Choisissez pour le comportement au démarrage parmi les options suivantes :"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:19
-msgid "Show tip of the day"
-msgstr "Afficher l'astuce du jour"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:20
+#: docs/handbook/en/docbook/hdbk-config.docbook:23
 msgid "Show startup logo"
 msgstr "Afficher le logo de démarrage"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:23
+#: docs/handbook/en/docbook/hdbk-config.docbook:26
 #, fuzzy
 msgid ""
 "Display templates define the rendering of text (colors, size etc.). Various "
-"built-in templates are available.  If you select one, you will see a preview "
+"built-in templates are available. If you select one, you will see a preview "
 "on the right pane."
 msgstr ""
 "Les modéles d'affichages définissent la manière d'afficher le texte (taille, "
 "couleurs, etc.). Plusieurs modèles prédéfinis sont disponibles. En en "
 "sélectionnant un, vous le prévisualiserez dans le panneau de gauche."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:30
+#: docs/handbook/en/docbook/hdbk-config.docbook:34
 msgid ""
 "Here you can specify which language should be used for the biblical "
 "booknames. Set this to your native language, if it is available, and you'll "
@@ -84,13 +74,13 @@ msgstr ""
 "Choisissez votre langue maternelle. Si elle est disponible vous vous "
 "sentirez chez vous."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:33
+#: docs/handbook/en/docbook/hdbk-config.docbook:37
 #, fuzzy
 msgid ""
 "By default, &bibletime; uses the &kde; general display font which can be "
-"specified in KDE's Control Center. You can override this font if "
-"neccessary.  Some languages require special fonts to be displayed correctly, "
-"and this dialog allows you to specify a custom font for each language."
+"specified in KDE's Control Center. You can override this font if neccessary. "
+"Some languages require special fonts to be displayed correctly, and this "
+"dialog allows you to specify a custom font for each language."
 msgstr ""
 "&bibletime; utilise par défaut la police d'affichage général de &kde; qui "
 "peuvent être choisies dans &kcontrolcenter;. Vous pouvez modifier ce "
@@ -98,20 +88,20 @@ msgstr ""
 "spécifiques pour s'afficher correctement. Ce dialogue permet de désigner une "
 "police adaptée pour chaque langue."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:41
+#: docs/handbook/en/docbook/hdbk-config.docbook:47
 #, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
 msgstr "Le dialogue Options - polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:42
+#: docs/handbook/en/docbook/hdbk-config.docbook:50
 msgid "The Options dialog - Fonts."
 msgstr "Le dialogue Options - polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:45
+#: docs/handbook/en/docbook/hdbk-config.docbook:53
 #, fuzzy
 msgid ""
 "&bibletime; can now use all fonts supported by KDE/QT.  As long as the works "
-"you are interested in display correctly nothing needs to be done here.  If a "
+"you are interested in display correctly nothing needs to be done here. If a "
 "work only displays as a series of question marks (??????) or empty boxes, "
 "then you know that the standard KDE display font does not contain the "
 "characters used in this work."
@@ -123,14 +113,14 @@ msgstr ""
 "d'affichage standard de KDE ne contient pas les caractères utilisées dans "
 "cette oeuvre. "
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:51
+#: docs/handbook/en/docbook/hdbk-config.docbook:59
 #, fuzzy
 msgid ""
-"To correct this, choose this work's language from the drop down menu.  "
-"Select the use custom font checkbox.  Now select a font.  For example, a "
-"font that supports many languages is Code2000. If no installed font can "
-"display the work you are interested in, try installing the &kde; "
-"localization package for that language."
+"To correct this, choose this work's language from the drop down menu. Select "
+"the use custom font checkbox. Now select a font. For example, a font that "
+"supports many languages is Code2000. If no installed font can display the "
+"work you are interested in, try installing the &kde; localization package "
+"for that language."
 msgstr ""
 "Pour corriger cela, choisissez la langue de l'module à partir du menu "
 "déroulant. Cochez la case \"Utiliser une police personnalisée\" et "
@@ -139,16 +129,16 @@ msgstr ""
 "qui vous intéresse, essayez d'installer le paquetage de localisation de "
 "&kde;."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:57
+#: docs/handbook/en/docbook/hdbk-config.docbook:66
 msgid "Installing fonts"
 msgstr "Installer des polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:58
+#: docs/handbook/en/docbook/hdbk-config.docbook:67
 #, fuzzy
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
-"handbook.  &kde;'s <ulink url=\"help:/kcontrol/index.html\">KControl Center</"
-"ulink> contains an excellent and easy to use font installation module.  "
+"handbook. &kde;'s <ulink url=\"help:/kcontrol/index.html\"> KControl Center</"
+"ulink> contains an excellent and easy to use font installation module. "
 "Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> its "
 "documentation</ulink>. For further information you might want to refer to "
 "the <ulink url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/"
@@ -162,54 +152,56 @@ msgstr ""
 "technique est le <ulink url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/"
 "other-formats/html_single/Unicode-HOWTO.html#toc4\"> Unicode HOWTO</ulink>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:66
+#: docs/handbook/en/docbook/hdbk-config.docbook:78
+#, fuzzy
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
-"faster than with a large font like <trademark class=\"registered\"> "
-"Bitstream Cyberbit</trademark> (about 12Mb)."
+"faster than with a large font like <trademark class=\"registered\">Bitstream "
+"Cyberbit</trademark>(about 12Mb)."
 msgstr ""
 "Si vous utilisez une petite police Clearlyu (environ 22 Ko), &bibletime; "
 "tournera plus rapidement qu'avec une grande police comme <trademark class="
 "\"registered\"> Bitstream Cyberbit</trademark> (environ 12 Mo)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:71
+#: docs/handbook/en/docbook/hdbk-config.docbook:85
 msgid "Obtaining Fonts"
 msgstr "Obtenir des polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:72
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
 msgid "Fonts can be obtained from a number of sources:"
 msgstr "Des polices peuvent être obtenues de plusieurs sources"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:74
+#: docs/handbook/en/docbook/hdbk-config.docbook:89
 msgid "Your Linux distribution."
 msgstr "Votre distribution linux"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:75
+#: docs/handbook/en/docbook/hdbk-config.docbook:92
 msgid "Your distribution's localization packages."
 msgstr "Les paquetages de localisation de votre distribution"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:76
+#: docs/handbook/en/docbook/hdbk-config.docbook:95
+#, fuzzy
 msgid ""
-"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
-"installation on the same computer."
+"An existing <trademark class=\"registered\">Microsoft Windows</"
+"trademark>installation on the same computer."
 msgstr ""
 "Une installation existante de <trademark class=\"registered\">Microsoft "
 "Windows</trademark> sur le même ordinateur."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:77
+#: docs/handbook/en/docbook/hdbk-config.docbook:101
 msgid "A font collection, such as are available from Adobe or Bitstream."
 msgstr ""
 "Une collection de polices, comme celles disponibles chez Adobe ou Bitstream."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:78
+#: docs/handbook/en/docbook/hdbk-config.docbook:105
 msgid "Online font collections."
 msgstr "Des collections de polices disponibles en ligne."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:81
+#: docs/handbook/en/docbook/hdbk-config.docbook:108
 #, fuzzy
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
-"fonts are available at no charge.  None of available fonts includes all "
+"fonts are available at no charge. None of available fonts includes all "
 "characters defined in the Unicode standard, so you may want to use different "
 "fonts for different languages."
 msgstr ""
@@ -219,32 +211,32 @@ msgstr ""
 "sorte que vous pouvez avoir besoin d'utiliser des polices différentes pour "
 "des langues différentes."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:87
+#: docs/handbook/en/docbook/hdbk-config.docbook:114
 msgid "Unicode Fonts"
 msgstr "Polices Unicode "
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:92
+#: docs/handbook/en/docbook/hdbk-config.docbook:122
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr ""
 "Peut-être bien la meilleure police Unicode gratuite, couvrant un large "
 "spectre de caractères."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:96
+#: docs/handbook/en/docbook/hdbk-config.docbook:130
 msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
 msgstr "Excellentes polices Unicode du Summer Institute of Linguistics."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:99
+#: docs/handbook/en/docbook/hdbk-config.docbook:138
 msgid "A new free unicode font initiative."
 msgstr "Une nouvelle initiative de police Unicode gratuite."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:102
+#: docs/handbook/en/docbook/hdbk-config.docbook:145
 msgid "Several fonts available from the Crosswire Bible Society Ftp site."
 msgstr ""
 "Plusieurs polices sont disponibles sur le serveur ftp de la Crosswire Bible "
 "Society."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:105
+#: docs/handbook/en/docbook/hdbk-config.docbook:153
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
@@ -252,26 +244,27 @@ msgstr ""
 "Couvre presque tout le spectre d'Unicode, mais peut ralentir &bibletime; à "
 "cause de sa taille."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:107
+#: docs/handbook/en/docbook/hdbk-config.docbook:158
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:108
+#: docs/handbook/en/docbook/hdbk-config.docbook:159
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
 "Inclue dans certaines distributions. Comporte les alphabets latins, "
 "cyrilliques, grec, hébreu et thaï."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:111
+#: docs/handbook/en/docbook/hdbk-config.docbook:167
 msgid "Partial coverage, see information on linked site."
 msgstr "Couverture partielle, voir les informations sur le site en lien."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:116
+#: docs/handbook/en/docbook/hdbk-config.docbook:173
+#, fuzzy
 msgid ""
 "There are good Unicode font lists on the net, as the one by Christoph Singer "
-"(<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
-"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood (<ulink url="
-"\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink "
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
 "ranges and the Unicode fonts that support them</ulink>)."
 msgstr ""
 "Il y a de bonnes listes de polices Unicode sur le web, comme celles de "
@@ -280,7 +273,7 @@ msgstr ""
 "www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character ranges and "
 "the Unicode fonts that support them</ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:129
+#: docs/handbook/en/docbook/hdbk-config.docbook:187
 msgid ""
 "Many features provided by the Sword backend can now be customized in "
 "&bibletime;. These features are documented right in the dialog. You also "
@@ -299,7 +292,7 @@ msgstr ""
 "dessus d'une de celles-ci, vous verrez le contenu des versets auquel il est "
 "fait référence, d'après la bible standard que vous avez désignée."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:140
+#: docs/handbook/en/docbook/hdbk-config.docbook:201
 msgid ""
 "HotKeys are special key commands that can be used in the place of the menu "
 "items and icons. A number of &bibletime;'s commands have predefined HotKeys "
@@ -315,76 +308,25 @@ msgstr ""
 "&bibletime; epuvent être associées ici à des raccourcis. Cela permet "
 "d'accéder rapidement aux fonctionnalités dont on a le plus besoin."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:151
-msgid "Configure Toolbars dialog"
-msgstr "Le dialogue Configurer les barres d'outils"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:152
-#: docs/handbook/en/docbook/hdbk-reference.docbook:248
-msgid ""
-"You can adapt the toolbar to your needs. Please use the following entry in "
-"the main menu:"
-msgstr ""
-"Vous pouvez adapter la barre d'outils à vos besoins, par le choix suivant "
-"dans le menu principal:"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:162
-#: docs/handbook/en/docbook/hdbk-reference.docbook:255
-msgid "Configure toolbars"
-msgstr "Configurer les barres d'outils"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:166
-#, fuzzy
-msgid ""
-"You will see this dialog, which allows adding and removing buttons from the "
-"main toolbar of &bibletime;. The order of the buttons can also be changed."
-msgstr ""
-"Vous verrez ce dialogue, qui permet d'ajouter, de déplacer et de retirer des "
-"boutons de la barre d'outils principale de &bibletime;."
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:173
-#, fuzzy
-msgid "<phrase>Toolbar configuration dialog</phrase>"
-msgstr "Le dialogue de configuration de la barre d'outil"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:174
-msgid "The Toolbar configuration dialog."
-msgstr "Le dialogue de configuration de la barre d'outil"
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:176
-msgid ""
-"Use the 4 buttons in the middle of the window to move buttons to the "
-"toolbar, away from the toolbar or to sort them on the toolbar according to "
-"your preference."
-msgstr ""
-"Les quatre boutons au milieu de la fenêtre permettent d'ajouter des boutons "
-"à la barre d'outil, de les en ôter et de les y déplacer."
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:179
-msgid ""
-"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-"section</link> for further information."
-msgstr ""
-"Voir <link linkend=\"hdbk-reference-menus-settings-toolbars\">cette section</"
-"link> pour plus d'information."
-
-#: docs/handbook/en/docbook/hdbk-intro.docbook:1
+#: docs/handbook/en/docbook/hdbk-intro.docbook:2
 msgid "Introduction"
 msgstr "Introduction"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:3
-msgid "About BibleTime"
+#: docs/handbook/en/docbook/hdbk-intro.docbook:4
+#, fuzzy
+msgid "About &bibletime;"
 msgstr "À propos de &bibletime;"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:5
 #, fuzzy
 msgid ""
-"&bibletime; is a powerful Bible study tool written for the s environment on "
-"the Linux operating system. It is based on the <ulink url=\"http://www."
-"crosswire.org/sword\">Sword</ulink> library, which provides the back-end "
-"functionality for &bibletime;, such as viewing Bible text, searching etc. "
-"Sword is the flagship product of the <ulink url=\"http://www.crosswire.org"
-"\">Crosswire Bible Society</ulink>."
+"&bibletime; is a Bible study tool with support for different types of texts "
+"and languages. Even large amounts of works modules) are easy to install and "
+"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword"
+"\">Sword</ulink> library, which provides the back-end functionality for "
+"&bibletime;, such as viewing Bible text, searching etc. Sword is the "
+"flagship product of the <ulink url=\"http://www.crosswire.org\">Crosswire "
+"Bible Society</ulink>."
 msgstr ""
 "&bibletime; est un outil puissant d'étude de la Bible écrit pour "
 "l'environnement  &kde; environment sur le système d'exploitation Linux. Il "
@@ -393,11 +335,11 @@ msgstr ""
 "texte de la Bible, effectuer une recherche. Sword est le produit phare de la "
 "<ulink url=\"http://www.crosswire.org\">Crosswire Bible Society</ulink>."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:12
+#: docs/handbook/en/docbook/hdbk-intro.docbook:14
 #, fuzzy
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
-"supported by the Sword project.  Complete information on the supported "
+"supported by the Sword project. Complete information on the supported "
 "document formats can be found in the <ulink url=\"http://www.crosswire.org/"
 "sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
 "Crosswire Bible Society."
@@ -408,11 +350,11 @@ msgstr ""
 "crosswire.org/sword/develop/index.jsp\">section développement</ulink> du "
 "projet Sword de la Crosswire Bible Society."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:18
+#: docs/handbook/en/docbook/hdbk-intro.docbook:22
 msgid "Available works"
 msgstr "Œuvres disponibles"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:21
+#: docs/handbook/en/docbook/hdbk-intro.docbook:23
 msgid ""
 "Over 200 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
@@ -421,14 +363,15 @@ msgstr ""
 "de la <ulink url=\"http://www.crosswire.org\">Crosswire Bible Society</"
 "ulink>. Parmi ceux-ci:"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:26
+#: docs/handbook/en/docbook/hdbk-intro.docbook:28
 msgid "Bibles"
 msgstr "Bibles"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:29
+#: docs/handbook/en/docbook/hdbk-intro.docbook:30
+#, fuzzy
 msgid ""
 "The full Bible text, with optional things like Strong's Numbers, headings "
-"and/or footnotes in the text. Bibles are available in many languages, and "
+"and/or footnotes in the text.  Bibles are available in many languages, and "
 "include not only modern versions, but also ancient texts like the Codex "
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
 "is the most advanced section in the library of the Sword project."
@@ -440,29 +383,31 @@ msgstr ""
 "\", grec). C'est la section la plus développée de la bibliothèque du projet "
 "Sword."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:35
+#: docs/handbook/en/docbook/hdbk-intro.docbook:40
 msgid "Books"
 msgstr "Livres"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:37
+#: docs/handbook/en/docbook/hdbk-intro.docbook:42
+#, fuzzy
 msgid ""
-"Books available include &quot;Imitation of Christ&quot;, &quot;Enuma "
-"Elish&quot;, and &quot;Josephus: The Complete Works&quot;"
+"Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
+"\"Josephus: The Complete Works\""
 msgstr ""
 "Les livres disponibles comprennent &quot;L'Imitation de Jésus-Christ&quot;, "
 "&quot;Enuma Elish&quot;, et &quot;Les Œuvres complètes de Flavius "
 "Josèphe&quot;"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:43
+#: docs/handbook/en/docbook/hdbk-intro.docbook:47
 msgid "Commentaries"
 msgstr "Commentaires"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:46
+#: docs/handbook/en/docbook/hdbk-intro.docbook:49
+#, fuzzy
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
 "Bible\", Matthew Henry`s commentary and Luther's \"Commentary on Galatians."
 "\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
-"\"hdbk-op-parts-desk-write\">record your own personal notes</link> to "
+"\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
 msgstr ""
 "Parmi les commentaires, on trouve des classiques comme les \"Notes on the "
@@ -471,11 +416,11 @@ msgstr ""
 "<emphasis>personnel</emphasis> vous pouvez <link linkend=\"hdbk-op-parts-"
 "desk-write\">conserver vos propres notes</link> sur des passages de la Bible."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:52
+#: docs/handbook/en/docbook/hdbk-intro.docbook:58
 msgid "Daily devotionals"
 msgstr "Lectures quotidiennes"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:54
+#: docs/handbook/en/docbook/hdbk-intro.docbook:60
 msgid ""
 "Many people appreciate these daily portions from God's word. Available works "
 "include Daily Light on the Daily Path, and the Losungen."
@@ -484,11 +429,11 @@ msgstr ""
 "Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les "
 "Losungen."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:60
+#: docs/handbook/en/docbook/hdbk-intro.docbook:66
 msgid "Lexicons/Dictionaries"
 msgstr "Lexiques et dictionnaires"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:63
+#: docs/handbook/en/docbook/hdbk-intro.docbook:68
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
 "Driver-Briggs Hebrew Lexicon and the International Standard Bible "
@@ -503,15 +448,15 @@ msgstr ""
 "\"Unabridged Dictionary of the English Language\" de Webster revu en 1913 et "
 "la \"Topical Bible\" de Nave."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:73
+#: docs/handbook/en/docbook/hdbk-intro.docbook:80
 msgid "Motivation"
 msgstr "Motivation"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:75
+#: docs/handbook/en/docbook/hdbk-intro.docbook:81
 #, fuzzy
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
-"relationship with Him.  We have striven to make this a powerful, quality "
+"relationship with Him. We have striven to make this a powerful, quality "
 "program, and still make it simple and intuitive to operate. It is our desire "
 "that God be praised, as He is the source of all good things."
 msgstr ""
@@ -521,11 +466,11 @@ msgstr ""
 "intuitif d'emploi. Nous désirons que Dieu soit loué, comme il est la source "
 "de tout ce qui est bon."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:81
+#: docs/handbook/en/docbook/hdbk-intro.docbook:87
 msgid "James 1:17, NASB"
 msgstr "Jacques 1:17, TOB"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:82
+#: docs/handbook/en/docbook/hdbk-intro.docbook:88
 msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
@@ -534,11 +479,11 @@ msgstr ""
 "Tout don de valeur et tout cadeau parfait descendent d'en haut, du Père des "
 "lumières chez lequel il n'y a ni balancement ni ombre due au mouvement."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:87
+#: docs/handbook/en/docbook/hdbk-intro.docbook:92
 msgid "God bless you as you use this program."
 msgstr "Dieu vous bénisse dans l'utilisation de ce programma"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:1
+#: docs/handbook/en/docbook/hdbk-operation.docbook:2
 msgid "Program operation"
 msgstr "Utilisation du programme"
 
@@ -547,16 +492,16 @@ msgid "Program overview"
 msgstr "Vue d'ensemble du programme"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:6
-msgid "This is how a typical &bibletime; session looks like:"
+#: docs/handbook/en/docbook/hdbk-operation.docbook:5
+msgid "This is what a typical &bibletime; session looks like:"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:13
+#: docs/handbook/en/docbook/hdbk-operation.docbook:11
 #, fuzzy
 msgid "<phrase>The &bibletime; application window</phrase>"
 msgstr "Regardons les différentes parties de l'application une par une."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:16
+#: docs/handbook/en/docbook/hdbk-operation.docbook:14
 #, fuzzy
 msgid ""
 "You can easily see the different parts of the application. The Bookshelf on "
@@ -579,21 +524,21 @@ msgstr ""
 "permet d'accéder rapidement aux fonctions importantes et le bureau à droite "
 "est l'endroit où vous travaillez."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:17
+#: docs/handbook/en/docbook/hdbk-operation.docbook:24
 msgid ""
 "Let us now proceed by looking at the different parts of the application "
 "individually."
 msgstr "Examinons chacune des parties de l'application."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:21
+#: docs/handbook/en/docbook/hdbk-operation.docbook:28
 msgid "Parts of the &bibletime; application window"
 msgstr "Regardons les différentes parties de l'application une par une."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:24
+#: docs/handbook/en/docbook/hdbk-operation.docbook:30
 msgid "The Bookshelf"
 msgstr "La bibliothèque"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:25
+#: docs/handbook/en/docbook/hdbk-operation.docbook:31
 msgid ""
 "The Bookshelf lists all installed works, sorted by category and language. It "
 "also has a category called \"Bookmarks\". This is where you can store and "
@@ -603,12 +548,12 @@ msgstr ""
 "catégories et par langues. La catégorie \"Signets\" permet de conserver vos "
 "signets et d'y accéder."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:29
-#: docs/handbook/en/docbook/hdbk-operation.docbook:81
+#: docs/handbook/en/docbook/hdbk-operation.docbook:36
+#: docs/handbook/en/docbook/hdbk-operation.docbook:141
 msgid "Reading works"
 msgstr "Lire des modules"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:30
+#: docs/handbook/en/docbook/hdbk-operation.docbook:37
 msgid ""
 "To open a work from the bookshelf for reading, simply click with the "
 "<mousebutton>left mouse button</mousebutton> on the desired category "
@@ -622,16 +567,17 @@ msgstr ""
 "Cliquez ensuite sur une module pour l'ouvrir. Une fenêtre de lecture "
 "apparaîtra dans l'espace de bureau."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:33
-#: docs/handbook/en/docbook/hdbk-operation.docbook:59
+#: docs/handbook/en/docbook/hdbk-operation.docbook:46
+#: docs/handbook/en/docbook/hdbk-operation.docbook:96
 msgid "Drag &amp; Drop Works Here"
 msgstr "Le glisser-déplacer fonctionne ici"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:35
+#: docs/handbook/en/docbook/hdbk-operation.docbook:49
+#, fuzzy
 msgid ""
 "If you are reading a certain work, and want to open another work at the "
 "passage you are reading, you can use a shortcut. Simply click with the "
-"<mousebutton>left mouse button</mousebutton> on the verse/passage reference "
+"<mousebutton>left mouse button</mousebutton>on the verse/passage reference "
 "(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work "
 "you want to open, and it will be opened for reading at the specified "
 "location. You can also drag a verse reference into an existing read window, "
@@ -646,21 +592,21 @@ msgstr ""
 "désigné. Vous pouvez aussi faire glisser une référence de verset sur une "
 "fenêtre de lecture ouverte, elle ira alors au passage désigné."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:40
+#: docs/handbook/en/docbook/hdbk-operation.docbook:61
 msgid "Additional information about works"
 msgstr "Informations supplémentaires à propos des modules"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:42
+#: docs/handbook/en/docbook/hdbk-operation.docbook:62
 #, fuzzy
 msgid ""
-"If you click with the <mousebutton>right</mousebutton> mouse button on the "
+"If you click with the <mousebutton>right</mousebutton>mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
-"relevant for this work. <guimenuitem>\"About this work\"</guimenuitem> opens "
-"a window with lots of interesting information about the selected work. "
-"<guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog for "
-"encrypted documents, where you can enter the unlock key to access the work.  "
+"relevant for this work.  <guimenuitem>\"About this work\"</guimenuitem>opens "
+"a window with lots of interesting information about the selected work.  "
+"<guimenuitem>\"Unlock this work\"</guimenuitem>opens a small dialog for "
+"encrypted documents, where you can enter the unlock key to access the work. "
 "For additional information on locked works, please see <ulink url=\"http://"
-"www.crosswire.org/sword/modules/aboutlocked.jsp\">this page</ulink> on the "
+"www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</ulink> on the "
 "Crosswire Bible Society web site."
 msgstr ""
 "Si vous cliquez avec le <mousebutton>bouton droit de la souris</mousebutton> "
@@ -673,18 +619,18 @@ msgstr ""
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">cette page</"
 "ulink> sur le site web de la Crosswire Bible Society."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:49
-#: docs/handbook/en/docbook/hdbk-operation.docbook:115
+#: docs/handbook/en/docbook/hdbk-operation.docbook:78
+#: docs/handbook/en/docbook/hdbk-operation.docbook:204
 msgid "Searching in works"
 msgstr "Rechercher dans des modules"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:50
+#: docs/handbook/en/docbook/hdbk-operation.docbook:79
 #, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
+"mousebutton>mouse button on its symbol and selecting <guimenuitem>\"Search "
 "in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
-"you can select more than one.  Then follow the same procedure to open the "
+"you can select more than one. Then follow the same procedure to open the "
 "search dialog. You will be searching in all of these documents. A complete "
 "description of the operation of the search features can be found <link "
 "linkend=\"hdbk-op-search\">here</link>."
@@ -698,13 +644,14 @@ msgstr ""
 "description complète des opérations de recherche se trouve <link linkend="
 "\"hdbk-op-search\">ici</link>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:57
+#: docs/handbook/en/docbook/hdbk-operation.docbook:92
 msgid "Working with bookmarks"
 msgstr "Utilisez les signets"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:60
+#: docs/handbook/en/docbook/hdbk-operation.docbook:99
+#, fuzzy
 msgid ""
-"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
+"Click with the <mousebutton>right</mousebutton>mouse button on the bookmark "
 "category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
 "guimenuitem> to create a new bookmark subfolder. You can use normal drag "
 "&amp; drop functions to drag verse references from read windows or search "
@@ -718,10 +665,11 @@ msgstr ""
 "résultats de recherche dans le dossier signets et pour déplacer les signets "
 "d'un dossier à l'autre."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:63
+#: docs/handbook/en/docbook/hdbk-operation.docbook:107
+#, fuzzy
 msgid ""
 "You can also import bookmarks from other people or export bookmarks to share "
-"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"them. To do this, open the <guimenu>context menu</guimenu>of the bookmark "
 "folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
 "guimenuitem>. This will bring up a dialog box for you to save the bookmark "
 "collection. You can import bookmarks in a similar way."
@@ -733,20 +681,21 @@ msgstr ""
 "de dialogue permettant d'enregistrer la collection de signets. Vous pouvez "
 "importer des signets d'une manière semblable."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:65
+#: docs/handbook/en/docbook/hdbk-operation.docbook:115
+#, fuzzy
 msgid ""
-"You can also click with the <mousebutton>right</mousebutton> on folders and "
+"You can also click with the <mousebutton>right</mousebutton>on folders and "
 "bookmarks to change their names and descriptions."
 msgstr ""
 "Vous pouvez aussi cliquer avec le <mousebutton>bouton droit de la souris</"
 "mousebutton> sur les dossiers et signets pour changer leurs noms et "
 "descriptions. "
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:70
+#: docs/handbook/en/docbook/hdbk-operation.docbook:122
 msgid "The Mag(nifying glass)"
 msgstr "Le zoom"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:71
+#: docs/handbook/en/docbook/hdbk-operation.docbook:124
 msgid ""
 "This little window in the lower left corner of the &bibletime; window is "
 "purely passive. Whenever your mouse cursor is located over some text with "
@@ -760,15 +709,16 @@ msgstr ""
 "par exemple), cette information est affichée dans le zoom, et pas dans le "
 "texte-même. Essayez."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:76
+#: docs/handbook/en/docbook/hdbk-operation.docbook:133
 msgid "The Desk"
 msgstr "Le bureau"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:78
+#: docs/handbook/en/docbook/hdbk-operation.docbook:134
+#, fuzzy
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
 "open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
-"\">search</link> in them, and even save your annotations in the personal "
+"\">search</link>in them, and even save your annotations in the personal "
 "commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
 "link>)."
 msgstr ""
@@ -778,7 +728,7 @@ msgstr ""
 "op-parts-desk-write\">enregistrer vos notes dans le module de commentaires "
 "personnels</link>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:83
+#: docs/handbook/en/docbook/hdbk-operation.docbook:142
 msgid ""
 "As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
 "link>, you can open works for reading simply by clicking on their symbol in "
@@ -794,20 +744,21 @@ msgstr ""
 "des outils pour naviguer au sein de l'module affichée ainsi que des boutons "
 "d'historique semblables à ceux de votre navigateur web."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:87
+#: docs/handbook/en/docbook/hdbk-operation.docbook:153
 msgid "Read window placement"
 msgstr "Le positionnement de la fenêtre de lecture"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:89
+#: docs/handbook/en/docbook/hdbk-operation.docbook:154
+#, fuzzy
 msgid ""
-"Of course, you can open multiple works at the same time. There are several "
+"Of course, you can open multiple works at the same time.  There are several "
 "possibilities for arranging the read windows on the desk. Please have a look "
-"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"at the entry <guimenu>Window</guimenu>in the main menu. There you can see "
 "that you can either control the placement of the read windows completely "
 "yourself, or have &bibletime; handle the placement automatically. To achieve "
 "this, you have to select one of the automatic placement modes available at "
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem></menuchoice>. Just try it out, it's simple and works."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
 msgstr ""
 "Vous pouvez bien entendu ouvrir plusieurs modules simultanément. Les "
 "fenêtres de lecture peuvent être disposées de différentes manières sur le "
@@ -817,11 +768,11 @@ msgstr ""
 "disposition automatique dans  <menuchoice><guimenu>Fenêtre</"
 "guimenu><guimenuitem>Mode d'arrangement</guimenuitem></menuchoice>"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:94
+#: docs/handbook/en/docbook/hdbk-operation.docbook:169
 msgid "Editing your own commentary"
 msgstr "Éditer votre propre commentaire"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:96
+#: docs/handbook/en/docbook/hdbk-operation.docbook:170
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
 "install a certain work from the library of the <ulink url=\"http://www."
@@ -833,14 +784,15 @@ msgstr ""
 "crosswire.org\">Crosswire Bible Society</ulink>, appelé \"Commentaire "
 "personnel\" (\"Personal commentary\")."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:98
+#: docs/handbook/en/docbook/hdbk-operation.docbook:176
+#, fuzzy
 msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
-"Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
+"Bookshelf with a <mousebutton>left</mousebutton>mouse button, it opens in "
 "read mode. You will not be able to edit it in this mode. Should you wish to "
 "write annotations into the personal commentary, you have to open it with the "
-"<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
-"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
+"<mousebutton>right</mousebutton>mouse button and then select <guimenu>Edit "
+"this work</guimenu>and then either <guimenuitem>Plain text</guimenuitem>"
 "(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
 "editor)."
 msgstr ""
@@ -853,9 +805,10 @@ msgstr ""
 "<guimenuitem>Texte brut</guimenuitem>(éditeur de code source) ou "
 "<guimenuitem>HTML</guimenuitem> (éditeur de base en mode graphique)."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:101
+#: docs/handbook/en/docbook/hdbk-operation.docbook:189
+#, fuzzy
 msgid ""
-"If <menuchoice><guimenu>Edit this work</guimenu></menuchoice> is "
+"If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice>is "
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
 msgstr ""
@@ -863,43 +816,44 @@ msgstr ""
 "désactivé, vérifiez si vous avez des permissions d'écriture sur les fichiers "
 "du commentaire personnel. "
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:105
+#: docs/handbook/en/docbook/hdbk-operation.docbook:197
+#, fuzzy
 msgid ""
-"Drag&amp;drop works here. Drop a verse reference and the text of the verse "
+"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
 msgstr ""
 "Si vous déplacez avec la souris une référence de verset et que vous la "
 "lâchez sur le commentaire personnel, le texte du verset y sera inséré."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:118
+#: docs/handbook/en/docbook/hdbk-operation.docbook:207
 #, fuzzy
 msgid "Searching text in an open read window"
 msgstr "Retourne en arrière dans l'historique de la fenêtre de lecture."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:120
+#: docs/handbook/en/docbook/hdbk-operation.docbook:208
 msgid ""
 "You can look for a word or phrase in the open read window (e.g. the chapter "
-"of a bible that you're reading)  just like you are used to from other "
-"programs.  This function can be reached either by clicking with the "
-"<mousebutton>right</mousebutton> mouse button and selecting "
+"of a bible that you're reading) just like you are used to from other "
+"programs. This function can be reached either by clicking with the "
+"<mousebutton>right</mousebutton>mouse button and selecting "
 "<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
-"\"simul\">&Ctrl;<keycap>F</keycap> </keycombo>. Read on to learn how you can "
+"\"simul\">&Ctrl; <keycap>F</keycap></keycombo>. Read on to learn how you can "
 "search in entire works."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:127
+#: docs/handbook/en/docbook/hdbk-operation.docbook:220
 msgid "Accessing the search dialog"
 msgstr "Accéder au dialogue de recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:129
+#: docs/handbook/en/docbook/hdbk-operation.docbook:221
 #, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
-"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
-"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
-"&Shift; or &Ctrl; and clicking on other work's names you can select more "
-"than one. Then follow the same procedure to open the search dialog.  You "
+"mousebutton>mouse button on its symbol in the <guimenu>Bookshelf</"
+"guimenu>and selecting <guimenuitem>Search in work(s)</guimenuitem>. By "
+"holding &Shift; or &Ctrl; and clicking on other work's names you can select "
+"more than one. Then follow the same procedure to open the search dialog. You "
 "will be searching in all of these works at the same time."
 msgstr ""
 "Pour chercher dans une module, cliquez avec le <mousebutton>bouton droit de "
@@ -910,17 +864,18 @@ msgstr ""
 "ouvrir le dialogue de recherche. Vous chercherez dans toutes ces modules en "
 "même temps."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:131
+#: docs/handbook/en/docbook/hdbk-operation.docbook:231
+#, fuzzy
 msgid ""
-"You can also access the search dialog by clicking on "
-"<menuchoice><guimenu>Search</guimenu></menuchoice> from the main menu, and "
-"selecting the appropriate entry."
+"You can also access the search dialog by clicking on <menuchoice> "
+"<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
+"the appropriate entry."
 msgstr ""
 "Vous pouvez aussi accéder au dialogue de recherche en cliquant "
 "<menuchoice><guimenu>Rechercher</guimenu></menuchoice> dans le menu "
 "principal."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:132
+#: docs/handbook/en/docbook/hdbk-operation.docbook:237
 msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
@@ -928,22 +883,22 @@ msgstr ""
 "Une troisième manière de lancer une recherche consiste à cliquer sur l'icône "
 "de recherche dans une fenêtre de lecture ouverte."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:136
+#: docs/handbook/en/docbook/hdbk-operation.docbook:242
 msgid "Search configuration"
 msgstr "Configuration de la recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:138
+#: docs/handbook/en/docbook/hdbk-operation.docbook:244
 msgid "Search Text Dialog Options Tab"
 msgstr "Onglets du dialogue rechercher"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:147
+#: docs/handbook/en/docbook/hdbk-operation.docbook:252
 msgid "Selecting works"
 msgstr "Sélectionner les modules"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:148
+#: docs/handbook/en/docbook/hdbk-operation.docbook:253
 #, fuzzy
 msgid ""
-"At the top of the options tab you will find <guibutton>Choose</guibutton> "
+"At the top of the options tab you will find <guibutton>Choose</guibutton>"
 "(works). If you would like to search in multiple works, click on this button "
 "and you will be offered a menu where you can select the works you want to "
 "search in."
@@ -952,17 +907,17 @@ msgstr ""
 "vous permet d'ouvrir un menu pour sélectionner les modules dans lesquelles "
 "la recherche sera effectuée."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:153
+#: docs/handbook/en/docbook/hdbk-operation.docbook:260
 msgid "Using Search Scopes"
 msgstr "Limiter l'étendue de la recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:154
+#: docs/handbook/en/docbook/hdbk-operation.docbook:261
 #, fuzzy
 msgid ""
 "You can narrow the scope of your search to certain parts of the Bible by "
 "selecting one of the predefined scopes from the list in <guimenu>Search "
 "scope</guimenu>. You can define your own search ranges by clicking the "
-"<guibutton>Setup ranges</guibutton> button."
+"<guibutton>Setup ranges</guibutton>button."
 msgstr ""
 "Vous pouvez restreindre l'étendue de la recherche à certaines parties de la "
 "Bible en choisissant l'une des étendues prédéfinies dans la liste "
@@ -972,20 +927,20 @@ msgstr ""
 "dernière recherche."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:158
+#: docs/handbook/en/docbook/hdbk-operation.docbook:269
 msgid "Basic Search Syntax Introduction"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:159
+#: docs/handbook/en/docbook/hdbk-operation.docbook:270
 msgid ""
-"Enter search terms separated by spaces.  By default the search function will "
+"Enter search terms separated by spaces. By default the search function will "
 "return results that match any of the search terms (OR). To search for all "
 "the terms separate the terms by AND."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:160
+#: docs/handbook/en/docbook/hdbk-operation.docbook:274
 msgid ""
 "You can use wildcards: '*' matches any sequence of characters, while '?' "
 "matches any single character. The use of brackets allows you to group your "
@@ -993,90 +948,90 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:161
+#: docs/handbook/en/docbook/hdbk-operation.docbook:278
 msgid ""
 "To search text other than the main text, enter the text type followed by "
-"':', and then the search term.  For example, to search for the Strong's "
+"':', and then the search term. For example, to search for the Strong's "
 "number H8077, use 'strong:H8077'."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:162
+#: docs/handbook/en/docbook/hdbk-operation.docbook:282
 #, fuzzy
 msgid "Available text types:"
 msgstr "Œuvres disponibles"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:165
+#: docs/handbook/en/docbook/hdbk-operation.docbook:287
 msgid "Prefix"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:165
+#: docs/handbook/en/docbook/hdbk-operation.docbook:288
 msgid "Meaning"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:167
+#: docs/handbook/en/docbook/hdbk-operation.docbook:293
 msgid "heading:"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:167
+#: docs/handbook/en/docbook/hdbk-operation.docbook:294
 #, fuzzy
 msgid "searches headings"
 msgstr "Options de recherche"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:168
+#: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "footnote:"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:168
+#: docs/handbook/en/docbook/hdbk-operation.docbook:298
 #, fuzzy
 msgid "searches footnotes"
 msgstr "Options de recherche"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:169
+#: docs/handbook/en/docbook/hdbk-operation.docbook:301
 msgid "strong:"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:169
+#: docs/handbook/en/docbook/hdbk-operation.docbook:302
 #, fuzzy
 msgid "searches Strong's Numbers"
 msgstr "Options de recherche"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:170
+#: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "morph:"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:170
+#: docs/handbook/en/docbook/hdbk-operation.docbook:306
 #, fuzzy
 msgid "searches morphology codes"
 msgstr "Options de recherche"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:175
+#: docs/handbook/en/docbook/hdbk-operation.docbook:311
 msgid ""
 "BibleTime uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
-"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">http://lucene."
+"\"http://lucene.apache.org/java/docs/queryparsersyntax.html\"> http://lucene."
 "apache.org/java/docs/queryparsersyntax.html</ulink>"
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:182
+#: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "Search results"
 msgstr "Résultats de recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:184
+#: docs/handbook/en/docbook/hdbk-operation.docbook:320
 #, fuzzy
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
-"by works.  Clicking on a work with the <mousebutton>right</mousebutton> "
-"mouse button allows you to copy, save, or print all verses that were found "
-"in a certain work at once. This also works when you click on one or more of "
-"the references to copy, save or print them. Clicking on a particular "
-"reference opens that verse up in context in the preview window below."
+"by works. Clicking on a work with the <mousebutton>right</mousebutton>mouse "
+"button allows you to copy, save, or print all verses that were found in a "
+"certain work at once. This also works when you click on one or more of the "
+"references to copy, save or print them. Clicking on a particular reference "
+"opens that verse up in context in the preview window below."
 msgstr ""
 "Vous pouvez voir ici combien de fois la chaîne recherchée a été trouvée, "
 "classée par module. En cliquant sur une module avec le <mousebutton>bouton "
@@ -1087,7 +1042,7 @@ msgstr ""
 "<mousebutton>bouton gauche de la souris</mousebutton> vous verrez ce verset "
 "dans son contexte dans la fenêtre de visualisation située en bas."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:187
+#: docs/handbook/en/docbook/hdbk-operation.docbook:329
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
@@ -1096,7 +1051,7 @@ msgstr ""
 "bibliothèque pour ouvrir cette module à ce verset dans une nouvelle fenêtre "
 "de lecture."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:189
+#: docs/handbook/en/docbook/hdbk-operation.docbook:334
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
@@ -1104,44 +1059,45 @@ msgstr ""
 "Faites glisser une référence et déposez-la sur une fenêtre de lecture "
 "ouverte, et elle ira automatiquement à ce verset."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:190
+#: docs/handbook/en/docbook/hdbk-operation.docbook:338
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr ""
 "Faites glisser une référence et déposez-la dans un dossier de signets de la "
 "bibliothèque et le verset s'ajoutera aux signets."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:193
+#: docs/handbook/en/docbook/hdbk-operation.docbook:342
 msgid "Search result analysis"
 msgstr "Analyse de la recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:194
+#: docs/handbook/en/docbook/hdbk-operation.docbook:343
 #, fuzzy
 msgid ""
-"Click on <guibutton>Search analysis</guibutton> to open the search analysis "
-"display.  This gives a simple graphic analysis of the number of instances "
-"the search string was found in each book of the Bible, and you can also save "
-"the analysis."
+"Click on <guibutton>Search analysis</guibutton>to open the search analysis "
+"display. This gives a simple graphic analysis of the number of instances the "
+"search string was found in each book of the Bible, and you can also save the "
+"analysis."
 msgstr ""
 "Cliquez sur <guibutton>Analyse de la recherche</guibutton> pour afficher "
 "l'analyse de la recherche. Cela donne une analyse graphique simple du nombre "
 "de fois que la chaîne recherchée a été trouvée dans chaque livre de la "
 "Bible. Vous pouvez enregistrer cette analyse sur le disque."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:199
+#: docs/handbook/en/docbook/hdbk-operation.docbook:349
 msgid "Search Analysis Dialog Box"
 msgstr "La boîte de dialogue d'analyse de la recherche"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:213
+#: docs/handbook/en/docbook/hdbk-operation.docbook:360
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "Le <guimenuitem>Gestionnaire de Bibliothèque</guimenuitem>"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:215
+#: docs/handbook/en/docbook/hdbk-operation.docbook:362
+#, fuzzy
 msgid ""
-"The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
+"The <guimenuitem>Bookshelf Manager</guimenuitem>is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
-"existing works from your Bookshelf. Access it by clicking "
-"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Bookshelf Manager</"
-"guimenuitem></menuchoice> in the main menu."
+"existing works from your Bookshelf. Access it by clicking <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
+"menuchoice>in the main menu."
 msgstr ""
 "Le <guimenuitem>Gestionnaire de bibliothèque</guimenuitem> est un outil de "
 "gestion de la bibliothèque. Vous pouvez installer de nouvelles modules dans "
@@ -1149,11 +1105,11 @@ msgstr ""
 "Choisissez<menuchoice><guimenu>Settings</guimenu><guimenuitem>Bookshelf "
 "Manager</guimenuitem></menuchoice> dans le menu principal."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:218
+#: docs/handbook/en/docbook/hdbk-operation.docbook:372
 msgid "Bookshelf path(s) setup"
 msgstr "Configurer les chemins vers les bibliothèques"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:220
+#: docs/handbook/en/docbook/hdbk-operation.docbook:373
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the "
 "harddrive. You can even store it in multiple directories. Default is \"~/."
@@ -1163,7 +1119,7 @@ msgstr ""
 "sur le disque dur. Vous pouvez même la placer dnas plusieurs répertoires. Le "
 "répertoire par défaut est \"~/.sword/\"."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:222
+#: docs/handbook/en/docbook/hdbk-operation.docbook:377
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the "
 "harddisk, but use them directly from the CD, then you can add the path to "
@@ -1176,18 +1132,18 @@ msgstr ""
 "lancez &bibletime;, si le CD est présent, les modules qu'il contient "
 "s'afficheront dans la bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:226
+#: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "Install/update work(s)"
 msgstr "Installer/mettre à jour module"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:228
+#: docs/handbook/en/docbook/hdbk-operation.docbook:386
 #, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
 "libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online "
 "repository of Sword modules, or another site offering Sword modules). You "
-"can manage your libraries with <guibutton>Add library</guibutton> and "
+"can manage your libraries with <guibutton>Add library</guibutton>and "
 "<guibutton>Delete library</guibutton>."
 msgstr ""
 "Avec cet utilitaire vous pouvez vous connecter à un dépôt d'modules (appelé "
@@ -1197,7 +1153,7 @@ msgstr ""
 "modules Sword). Vous pouvez gérer les biblothèques avec <guibutton>Ajouter "
 "bibliothèque</guibutton> and <guibutton>Effacer bibliothèque</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:230
+#: docs/handbook/en/docbook/hdbk-operation.docbook:394
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1219,11 +1175,11 @@ msgstr ""
 "mettre à jour et cliquez sur <guibutton>Installer modules</guibutton>. Elles "
 "seront alors transférées dans votre bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:235
+#: docs/handbook/en/docbook/hdbk-operation.docbook:407
 msgid "Remove work(s)"
 msgstr "Enlever des modules"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:237
+#: docs/handbook/en/docbook/hdbk-operation.docbook:408
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1233,14 +1189,15 @@ msgstr ""
 "libérer de l'espace disque. Marquer les modules à effacer et cliquez "
 "sur<guibutton>Enlever modules</guibutton>."
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:245
+#: docs/handbook/en/docbook/hdbk-operation.docbook:415
 msgid "Exporting and Printing"
 msgstr "Exporter et imprimer"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:248
+#: docs/handbook/en/docbook/hdbk-operation.docbook:416
+#, fuzzy
 msgid ""
 "In many places, you can open a context menu by clicking with the "
-"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
+"<mousebutton>right</mousebutton>mouse button. Depending on context, it will "
 "allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
 "guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
 "<guimenuitem>Print</guimenuitem> text. This works for example in the read "
@@ -1258,7 +1215,7 @@ msgstr ""
 "ou encore dans la page de résultats de la recherche quand vous cliquez sur "
 "une module ou sur une ou plusieurs références de versets. "
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:252
+#: docs/handbook/en/docbook/hdbk-operation.docbook:429
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -1280,7 +1237,7 @@ msgstr "Référence"
 msgid "Main menu reference"
 msgstr "Référence du menu principal"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:6
+#: docs/handbook/en/docbook/hdbk-reference.docbook:5
 msgid ""
 "In this section you can find detailed descriptions of all entries in the "
 "main menu of &bibletime;. They are ordered in just the way they appear in "
@@ -1296,7 +1253,7 @@ msgstr ""
 "voir le raccourci de chaque élément. Vous pouvez aussi consulter <link "
 "linkend=\"hdbk-reference-hotkeys\">la liste complète des raccourcis</link>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:23
+#: docs/handbook/en/docbook/hdbk-reference.docbook:36
 msgid ""
 "<action>Closes BibleTime.</action> BibleTime will ask you if you want to "
 "write unsaved changes to disk."
@@ -1304,7 +1261,7 @@ msgstr ""
 "<action>Ferme &bibletime;</action> &bibletime; vous demandera si vous "
 "désirez enregistrer les modifications qui ne l'ont pas encore été."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:37
+#: docs/handbook/en/docbook/hdbk-reference.docbook:57
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
@@ -1312,7 +1269,7 @@ msgstr ""
 "<action>Active/désactive l'affichage de la barre d'outils.</action> Permet "
 "de faire apparaître ou disparaître la barre d'outil."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:47
+#: docs/handbook/en/docbook/hdbk-reference.docbook:80
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
@@ -1323,7 +1280,7 @@ msgstr ""
 "gauche. Cela peut être utile si vous avez besoin de plus de place pour le "
 "zoom."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:57
+#: docs/handbook/en/docbook/hdbk-reference.docbook:105
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
@@ -1331,68 +1288,68 @@ msgstr ""
 "<action>Active/désactive l'affichage de la barre d'outils.</action> Permet "
 "de faire apparaître ou disparaître le zoom dans le panneau de gauche. "
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:73
+#: docs/handbook/en/docbook/hdbk-reference.docbook:135
 #, fuzzy
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
-"action>.  More works can be added in the Search Dialog."
+"action>. More works can be added in the Search Dialog."
 msgstr ""
 "<action>Ouvre le dialogue de recherche pour rechercher dans la Bible par "
 "défaut uniquement</action>. D'autres modules peuvent être ajoutées dans le "
 "dialogue."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:83
+#: docs/handbook/en/docbook/hdbk-reference.docbook:158
 #, fuzzy
 msgid ""
-"<action>Opens the Search Dialog to search in all open works</action>.  More "
+"<action>Opens the Search Dialog to search in all open works</action>. More "
 "works can be added in the Search Dialog."
 msgstr ""
 "<action>Ouvre le dialogue de recherche pour rechercher dans les module "
 "ouvertes</action>. D'autres modules peuvent être ajoutées dans le dialogue."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:99
+#: docs/handbook/en/docbook/hdbk-reference.docbook:184
 #, fuzzy
 msgid ""
-"<action>Directly saves the current session</action>.  This will open a "
-"context menu where you can select an existing session to save to.  It will "
-"be overwritten with your current session. See the next item on how to save "
-"to a new session."
+"<action>Directly saves the current session</action>. This will open a "
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
 msgstr ""
 "<action>Enregistre immédiatement le profil courant</action>. Un dialogue "
 "s'ouvrira, permettant de choisir un profil existant qui sera remplacé par le "
 "profil courant. Voyez l'entrée suivante pour enregistrer un nouveau profil."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:110
+#: docs/handbook/en/docbook/hdbk-reference.docbook:209
 #, fuzzy
 msgid ""
-"<action>Saves the current session under a new name</action>.  This will ask "
+"<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
 msgstr ""
 "<action>Enregistre le profil courant sous un nouveau nom</action> à "
 "spécifier dans le dialogue qui s'ouvrira."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:119
+#: docs/handbook/en/docbook/hdbk-reference.docbook:228
 #, fuzzy
 msgid ""
-"<action>Loads an existing session</action>.  This will open a context menu "
+"<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
 msgstr ""
 "<action>Ouvre un profil existant</action>. Un menu permettant de choisir un "
 "profil existant à ouvrir s'ouvrira."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:128
+#: docs/handbook/en/docbook/hdbk-reference.docbook:247
 #, fuzzy
 msgid ""
-"<action>Deletes an existing session</action>.  This will open a context menu "
+"<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
 msgstr ""
 "<action>Efface un profil existant</action>, à choisir dans le menu qui "
 "s'ouvrira. "
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:138
+#: docs/handbook/en/docbook/hdbk-reference.docbook:270
 #, fuzzy
 msgid ""
-"<action>Toggles fullscreen mode</action>.  Here you can turn fullscreen mode "
+"<action>Toggles fullscreen mode</action>. Here you can turn fullscreen mode "
 "on or off. In fullscreen mode, &bibletime; will expand to the full size of "
 "your monitor screen, using as much space as possible."
 msgstr ""
@@ -1400,10 +1357,10 @@ msgstr ""
 "désactiver le mode plein écran. En mode plein écran, &bibletime; utilisera "
 "toute la place disponible sur votre écran."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:148
+#: docs/handbook/en/docbook/hdbk-reference.docbook:292
 #, fuzzy
 msgid ""
-"<action>Controls the basic window arrangement behaviour</action>.  In the "
+"<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
 "the window arrangement yourself (Manual mode) or have &bibletime; handle it "
 "for you (Automatical modes, just try them out!)."
@@ -1413,36 +1370,36 @@ msgstr ""
 "des fenêtres (Mode manuel) ou de laisser &bibletime; le faire pour vous "
 "(Modes automatiques, essayez-les!)."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:160
+#: docs/handbook/en/docbook/hdbk-reference.docbook:318
 msgid "<action>Tiles all open read windows vertically</action>."
 msgstr ""
 "<action>Place les fenêtres de lecture ouvertes en mosaïque horizontale</"
 "action>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:169
+#: docs/handbook/en/docbook/hdbk-reference.docbook:341
 msgid "<action>Tiles all open windows horizontally</action>."
 msgstr ""
 "<action>Place les fenêtres de lecture ouvertes en mosaïque verticale</"
 "action>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:178
+#: docs/handbook/en/docbook/hdbk-reference.docbook:363
 msgid "<action>Cascades all open windows</action>."
 msgstr "<action>Empile les fenêtres de lecture en cascade</action>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:187
+#: docs/handbook/en/docbook/hdbk-reference.docbook:384
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Ferme toutes les fenêtres ouvertes</action>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:201
+#: docs/handbook/en/docbook/hdbk-reference.docbook:409
 #, fuzzy
 msgid ""
 "<action>Opens a dialog where you can customize &bibletime;'s toolbar</"
-"action>.  Just try it out, you can move around the toolbar buttons and even "
-"add new ones. Most of the entries available from the main menu can be put on "
-"the toolbar as buttons. If you need a certain feature often, you might want "
-"to put a button on the main menu, so that you can access it with only one "
-"click. Please see <link linkend=\"hdbk-config-toolbar\">this section</link> "
-"for further information."
+"action>. Just try it out, you can move around the toolbar buttons and even "
+"add new ones.  Most of the entries available from the main menu can be put "
+"on the toolbar as buttons. If you need a certain feature often, you might "
+"want to put a button on the main menu, so that you can access it with only "
+"one click. Please see <link linkend=\"hdbk-config-toolbar\">this section</"
+"link> for further information."
 msgstr ""
 "<action>Ouvre un dialogue permettant de configurer la barre d'outils de "
 "&bibletime;</action>. Vous pouvez déplacer les boutons de la barre d'outils "
@@ -1453,10 +1410,10 @@ msgstr ""
 "Pour plus d'information, voyez comment <link linkend=\"hdbk-config-toolbar"
 "\">configurer la barre d'outils</link>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:212
+#: docs/handbook/en/docbook/hdbk-reference.docbook:434
 #, fuzzy
 msgid ""
-"<action>Opens &bibletime;'s main configuration dialog</action>.  You can "
+"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
 "needs.  Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
 "details."
@@ -1466,23 +1423,23 @@ msgstr ""
 "&bibletime; à vos besoins. Pour plus de détails, voyez la section sur la "
 "<link linkend=\"hdbk-config-bt\">configuration de &bibletime;</link>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:224
+#: docs/handbook/en/docbook/hdbk-reference.docbook:463
 #, fuzzy
 msgid ""
 "<action>Opens a dialog where you can change your Sword configuration and "
-"manage your bookshelf</action>.  Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">this section</link> for details."
+"manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\">this section</link>for details."
 msgstr ""
 "<action>Ouvre un dialogue permettant de modifier la configuration de Sword "
 "et de gérer votre bibliothèque</action>. Voyez la section sur le <link "
 "linkend=\"hdbk-op-bookshelfmanager\">gestionnaire de bibliothèque</link> "
 "pour plus de détails."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:242
+#: docs/handbook/en/docbook/hdbk-reference.docbook:478
 msgid "Toolbar reference"
 msgstr "Référence de la barre d'outils"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:244
+#: docs/handbook/en/docbook/hdbk-reference.docbook:479
 msgid ""
 "Please review <link linkend=\"hdbk-reference-menus\">the preceding section</"
 "link> for an explanation of the buttons that you find on the toolbar. You "
@@ -1494,23 +1451,36 @@ msgstr ""
 "aussi <action>placer le pointeur sur un bouton et attendre quelques seconde</"
 "action> pour afficher une courte description du bouton."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:258
+#: docs/handbook/en/docbook/hdbk-reference.docbook:486
+msgid ""
+"You can adapt the toolbar to your needs. Please use the following entry in "
+"the main menu:"
+msgstr ""
+"Vous pouvez adapter la barre d'outils à vos besoins, par le choix suivant "
+"dans le menu principal:"
+
+#: docs/handbook/en/docbook/hdbk-reference.docbook:503
+msgid "Configure toolbars"
+msgstr "Configurer les barres d'outils"
+
+#: docs/handbook/en/docbook/hdbk-reference.docbook:506
 #, fuzzy
 msgid ""
 "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-"section</link> for detailed instructions."
+"section</link>for detailed instructions."
 msgstr ""
 "Voir <link linkend=\"hdbk-reference-menus-settings-toolbars\">cette section</"
 "link> pour plus d'information."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:264
+#: docs/handbook/en/docbook/hdbk-reference.docbook:511
 msgid "HotKeys index"
 msgstr "Index des raccourcis"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:266
+#: docs/handbook/en/docbook/hdbk-reference.docbook:512
+#, fuzzy
 msgid ""
 "This is index of all hotkeys and their corresponding description in the "
-"handbook. The hotkeys are sorted (roughly) alphabetical. If you want to "
+"handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to "
 "directly find out which hotkey a certain menu item has, you can either look "
 "at the entry itelf in &bibletime; (as it always shows the hotkey), or you "
 "can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
@@ -1522,156 +1492,168 @@ msgstr ""
 "toujours le raccourci) ou consulter <link linkend=\"hdbk-reference-menus"
 "\">la référence des menus</link>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:278
+#: docs/handbook/en/docbook/hdbk-reference.docbook:525
 msgid "Hotkey"
 msgstr "Raccourci"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:279
+#: docs/handbook/en/docbook/hdbk-reference.docbook:526
 msgid "Description"
 msgstr "Description"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:285
+#: docs/handbook/en/docbook/hdbk-reference.docbook:535
 msgid "Moves back in the history of read windows."
 msgstr "Retourne en arrière dans l'historique de la fenêtre de lecture."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:289
+#: docs/handbook/en/docbook/hdbk-reference.docbook:542
 msgid "Moves forward in the history of read windows."
 msgstr "Avance dans l'historique de la fenêtre de lecture"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:293
+#: docs/handbook/en/docbook/hdbk-reference.docbook:551
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-search-defaultbible\"><menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</"
-"guimenuitem></menuchoice></link> equivalent; opens the search dialog to "
-"search in the default bible."
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
+"</menuchoice> </link>equivalent; opens the search dialog to search in the "
+"default bible."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-search-defaultbible"
 "\"><menuchoice> <guimenu>Rechercher</guimenu> <guimenuitem>Rechercher dans "
 "la bible par défaut</guimenuitem></menuchoice></link>, ouvre le dialogue "
 "pour recherche dans bible par défaut."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:300
+#: docs/handbook/en/docbook/hdbk-reference.docbook:565
+#, fuzzy
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem></menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </"
+"menuchoice>equivalent; toggle automatic window tiling."
 msgstr ""
 "Équivalent à <menuchoice><guimenu>Fenêtre</guimenu><guimenuitem>Mode "
 "d'arrangement</guimenuitem> <guimenuitem>Mosaïque verticale</guimenuitem></"
 "menuchoice>, active l'arrangement automatique des fenêtres en mosaïque "
 "verticale."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:306
+#: docs/handbook/en/docbook/hdbk-reference.docbook:578
+#, fuzzy
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem></menuchoice> "
-"equivalent; toggle automatic window tiling."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </"
+"menuchoice>equivalent; toggle automatic window tiling."
 msgstr ""
 "Équivalent à <menuchoice><guimenu>Fenêtre</guimenu><guimenuitem>Mode "
 "d'arrangement </guimenuitem> <guimenuitem>Mosaïque horizontale</"
 "guimenuitem></menuchoice> active l'arrangement automatique des fenêtres en "
 "mosaïque."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:312
+#: docs/handbook/en/docbook/hdbk-reference.docbook:591
+#, fuzzy
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem></menuchoice> "
-"equivalent; toggle automatic window cascading."
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </"
+"menuchoice>equivalent; toggle automatic window cascading."
 msgstr ""
 "Équivalent à <menuchoice><guimenu>Fenêtre</guimenu><guimenuitem>Mode "
 "d'arrangement </guimenuitem> <guimenuitem>Cascade</guimenuitem></menuchoice> "
 "active l'arrangement automatique des fenêtres en cascade."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:318
+#: docs/handbook/en/docbook/hdbk-reference.docbook:604
+#, fuzzy
 msgid ""
-"<menuchoice><guimenu>Window</guimenu><guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem></menuchoice> equivalent; "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice>equivalent; "
 "toggle manual window placement."
 msgstr ""
 "Équivalent à <menuchoice><guimenu>Fenêtre</guimenu><guimenuitem>Mode "
 "d'arrangement </guimenuitem> <guimenuitem>Mode manuel</guimenuitem></"
 "menuchoice> active  l'arrangement manuel des fenêtres."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:324
+#: docs/handbook/en/docbook/hdbk-reference.docbook:617
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-savenewsession\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem></"
-"menuchoice></link> equivalent; saves current layout as new session."
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
+"menuchoice> </link>equivalent; saves current layout as new session."
 msgstr ""
 "Équivalent <link linkend=\"hdbk-reference-menus-window-savenewsession"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Sauver comme nouveau "
 "profil</guimenuitem></menuchoice></link>, enregistre la disposition courante "
 "comme un nouveau profil."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:331
+#: docs/handbook/en/docbook/hdbk-reference.docbook:631
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-closeall\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem></menuchoice></"
-"link> equivalent; closes all open windows."
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
+"</link>equivalent; closes all open windows."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-window-closeall"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Tout fermer</"
 "guimenuitem></menuchoice></link>, ferme toutes les fenêtres ouvertes."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:338
+#: docs/handbook/en/docbook/hdbk-reference.docbook:643
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Diminuer la taille des polices des fenêtres de lecture."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:342
+#: docs/handbook/en/docbook/hdbk-reference.docbook:651
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Augmenter la taille des polices des fenêtres de lecture."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:346
+#: docs/handbook/en/docbook/hdbk-reference.docbook:659
 msgid "Select all. This selects all text in read windows."
 msgstr ""
 "Tout sélectionner. Sélectionner tout le texte dans les fenêtres de lecture."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:350
+#: docs/handbook/en/docbook/hdbk-reference.docbook:667
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Copier. Copie le texte sélectionné dans le presse-papiers."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:354
+#: docs/handbook/en/docbook/hdbk-reference.docbook:675
 msgid "Search. This lets you search within the text of a read window."
 msgstr ""
 "Chercher. Permet d'effectuer une recherche dans le texte d'une fenêtre de "
 "lecture."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:358
+#: docs/handbook/en/docbook/hdbk-reference.docbook:684
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-cascade\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem></menuchoice></"
-"link> equivalent; cascades all open windows."
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link>equivalent; cascades all open windows."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-window-cascade"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Cascade</"
 "guimenuitem></menuchoice></link> equivalent; cascades all open windows."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:365
+#: docs/handbook/en/docbook/hdbk-reference.docbook:697
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tile-vertically\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem></"
-"menuchoice></link> equivalent; tiles all open windows vertically."
+"<link linkend=\"hdbk-reference-menus-window-tile-vertically\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link>equivalent; tiles all open windows vertically."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-window-tile-vertically"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Mosaïque verticale</"
 "guimenuitem></menuchoice></link>, place les fenêtre en mosaïque verticale."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:372
+#: docs/handbook/en/docbook/hdbk-reference.docbook:712
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-tile-horizontally\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem></"
-"menuchoice></link> equivalent; tiles all open windows horizontally."
+"<link linkend=\"hdbk-reference-menus-window-tile-horizontally\"> "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Tile horizontally</"
+"guimenuitem> </menuchoice> </link>equivalent; tiles all open windows "
+"horizontally."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-window-tile-vertically"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Mosaïque "
 "horizontale</guimenuitem></menuchoice></link>, place les fenêtre en mosaïque "
 "horizontale."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:379
+#: docs/handbook/en/docbook/hdbk-reference.docbook:727
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-search-openworks\"><menuchoice> "
-"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem></"
-"menuchoice></link> equivalent; opens the search dialog to search in all "
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
+"</menuchoice> </link>equivalent; opens the search dialog to search in all "
 "currently opened works."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-search-openworks"
@@ -1680,225 +1662,226 @@ msgstr ""
 "dialogue de recherche pour effectuer une recherche à travers toutes les "
 "modules qui sont ouvertes."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:386
+#: docs/handbook/en/docbook/hdbk-reference.docbook:741
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-file-quit\"><menuchoice> <guimenu>File</"
-"guimenu> <guimenuitem>Quit</guimenuitem></menuchoice></link> equivalent; "
-"closes &bibletime;."
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+"link>equivalent; closes &bibletime;."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-file-quit\"><menuchoice> "
 "<guimenu>Fichier</guimenu> <guimenuitem>Quitter</guimenuitem></menuchoice></"
 "link>, ferme l'application &bibletime;."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:393
+#: docs/handbook/en/docbook/hdbk-reference.docbook:753
 msgid "Closes the current window."
 msgstr "Ferme la fenêtre courante."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:397
+#: docs/handbook/en/docbook/hdbk-reference.docbook:760
 msgid "Moves a bible or commentary read window to the next chapter."
 msgstr ""
 "Fait aller une fenêtre de lecture de la bible ou d'un commentaire au "
 "chapitre suivant."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:401
+#: docs/handbook/en/docbook/hdbk-reference.docbook:768
 msgid "Moves a bible or commentary read window to the next book."
 msgstr ""
 "Fait aller une fenêtre de lecture de la bible ou d'un commentaire au livre "
 "suivant."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:405
+#: docs/handbook/en/docbook/hdbk-reference.docbook:776
 msgid "Moves a read window to the next verse or entry."
 msgstr "Fait aller une fenêtre de lecture au verset ou à l'entrée suivant."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:411
+#: docs/handbook/en/docbook/hdbk-reference.docbook:785
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-window-fullscreen\"><menuchoice> "
-"<guimenu>Window</guimenu> <guimenuitem>Fullscreen mode</guimenuitem></"
-"menuchoice></link> equivalent; toggles fullscreen mode."
+"<link linkend=\"hdbk-reference-menus-window-fullscreen\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Fullscreen mode</guimenuitem> </"
+"menuchoice> </link>equivalent; toggles fullscreen mode."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-window-fullscreen"
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Mode plein écran</"
 "guimenuitem></menuchoice></link>, active/désactive le mode plein écran."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:418
+#: docs/handbook/en/docbook/hdbk-reference.docbook:797
 msgid "Moves a bible or commentary read window to the previous chapter."
 msgstr ""
 "Fait aller une fenêtre de lecture de la bible ou d'un commentaire au le "
 "chapitre précédent."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:422
+#: docs/handbook/en/docbook/hdbk-reference.docbook:805
 msgid "Moves a bible or commentary read window to the previous book."
 msgstr ""
 "Fait aller une fenêtre de lecture de la bible ou d'un commentaire au livre "
 "précédent."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:426
+#: docs/handbook/en/docbook/hdbk-reference.docbook:813
 msgid "Moves a read window to the previous verse or entry."
 msgstr "Fait aller une fenêtre de lecture au verset ou à l'entrée suivant."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:431
+#: docs/handbook/en/docbook/hdbk-reference.docbook:823
+#, fuzzy
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem></"
-"menuchoice> equivalent; opens the handbook."
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
+"menuchoice>equivalent; opens the handbook."
 msgstr ""
 "Équivalent à <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Manuel</"
 "guimenuitem></menuchoice>, ouvre le manuel."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:438
+#: docs/handbook/en/docbook/hdbk-reference.docbook:835
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem></menuchoice> equivalent; opens the BibleStudy Howto."
+"guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto."
 msgstr ""
 "Équivalent à <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Tutoriel "
 "d'étude Biblique</guimenuitem></menuchoice>, ouvre le tutoriel d'étude "
 "biblique."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:445
+#: docs/handbook/en/docbook/hdbk-reference.docbook:848
+#, fuzzy
 msgid ""
-"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily tip</guimenuitem></"
-"menuchoice> equivalent; opens the tip of the day."
-msgstr ""
-"Équivalent à <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Astuce du "
-"jour</guimenuitem></menuchoice>, ouvre l'astuce du jour."
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:452
-msgid ""
-"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager"
-"\"><menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem></menuchoice></link> equivalent; opens the Bookshelf Manager."
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
+"guimenuitem> </menuchoice> </link>equivalent; opens the Bookshelf Manager."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-settings-bookshelf_manager"
 "\"><menuchoice> <guimenu>Configuration</guimenu> <guimenuitem>Gestionnaire "
 "de bibliothèque</guimenuitem></menuchoice></link>, ouvre le gestionnaire de "
 "bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:459
+#: docs/handbook/en/docbook/hdbk-reference.docbook:863
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"><menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem></"
-"menuchoice></link> equivalent; toggles display of the Bookshelf."
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
+"menuchoice> </link>equivalent; toggles display of the Bookshelf."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-view-showbookshelf"
 "\"><menuchoice> <guimenu>Affichage</guimenu> <guimenuitem>Afficher la "
 "bibliothèque</guimenuitem></menuchoice></link>, affiche/masque la "
 "Bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:466
+#: docs/handbook/en/docbook/hdbk-reference.docbook:878
+#, fuzzy
 msgid ""
-"<link linkend=\"hdbk-reference-menus-view-showmag\"><menuchoice> "
-"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem></menuchoice></"
-"link> equivalent; toggles display of the mag(nifying glass)."
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
+"link>equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
 "Équivalent à <link linkend=\"hdbk-reference-menus-view-showmag"
 "\"><menuchoice> <guimenu>Affichage</guimenu> <guimenuitem>Afficher le zoom</"
 "guimenuitem></menuchoice></link>, affiche/masque le zoom."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:1
+#: docs/handbook/en/docbook/hdbk-start.docbook:2
 msgid "Starting &bibletime;"
 msgstr "Lancer &bibletime;"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:3
+#: docs/handbook/en/docbook/hdbk-start.docbook:4
 msgid "How to start &bibletime;"
 msgstr "Comment lancer &bibletime;"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:5
+#: docs/handbook/en/docbook/hdbk-start.docbook:6
 msgid "Starting &bibletime; from KDE"
 msgstr "Démarrer &bibletime; depuis &kde;"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:7
 #, fuzzy
 msgid ""
-"&bibletime; is a &kde; program and is integrated with the &kde; desktop.  "
-"You can launch &bibletime; from the &kde; Start Menu in the Applications "
-"group with this icon:"
+"&bibletime; is a &kde; program and is integrated with the desktop. You can "
+"launch &bibletime; from the Start Menu in the Applications group with this "
+"icon:"
 msgstr ""
 "&bibletime; est une application &kde; intégrée dans le bureau de &kde; "
 "desktop. Vous pouvez lancer &bibletime; à partir du menu démarrer &kde; dans "
 "le groupe Applications avec cette icône :"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:13
+#: docs/handbook/en/docbook/hdbk-start.docbook:16
 #, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "L'icône de démarrage &bibletime;"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:17
+#: docs/handbook/en/docbook/hdbk-start.docbook:19
 #, fuzzy
 msgid ""
-"&bibletime; can also be launched from a terminal command prompt.  To launch "
+"&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
 msgstr ""
 "&bibletime; peut aussi être lancé à partir de la ligne de commande d'un "
 "terminal. Pour lancer &bibletime;, ouvrez une fenêtre de terminal et tapez :"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:20
+#: docs/handbook/en/docbook/hdbk-start.docbook:22
 #, no-wrap
 msgid "bibletime"
 msgstr "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:26
+#: docs/handbook/en/docbook/hdbk-start.docbook:25
 msgid "Other window managers"
 msgstr "Autres gestionnaires de fenêtres"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:28
+#: docs/handbook/en/docbook/hdbk-start.docbook:26
 #, fuzzy
 msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox "
-"or Sawfish, providing\t&kde; is already installed on your computer. If your "
-"&kde; is installed in /opt/kde, then the start-up command in a terminal "
-"would be:"
+"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
+"Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are "
+"already installed on your computer. If your &kde; is installed in /opt/kde, "
+"then the start-up command in a terminal would be:"
 msgstr ""
 "&bibletime; peut être utilisé avec d'autres gestionnaires de fenêtres comme "
 "Gnome, BlackBox ou Sawfish, pourvu que &kde; soit installé sur votre "
 "ordinateur. Si &kde; est installé dans /opt/kde, alors la commande de "
 "démarrage dans un terminal est:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:33
-#, no-wrap
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#, fuzzy, no-wrap
 msgid ""
-"export KDEDIR=/opt/kde  #your KDE directory\n"
-"bibletime"
+"export KDEDIR=/opt/kde #your KDE directory\n"
+"      bibletime"
 msgstr ""
 "export KDEDIR=/opt/kde  #votre répertoire KDE\n"
 "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:39
+#: docs/handbook/en/docbook/hdbk-start.docbook:36
 msgid "Startup customization"
 msgstr "Configuration du démarrage"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:41
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:44
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 #, no-wrap
-msgid "bibletime --open-default-bible \"&lt;random&gt;\""
+msgid ""
+"bibletime --open-default-bible\n"
+"      \"&lt;random&gt;\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:46
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid "To open at a given passage like John 3:16, use:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:48
+#: docs/handbook/en/docbook/hdbk-start.docbook:42
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:50
+#: docs/handbook/en/docbook/hdbk-start.docbook:42
 msgid "You can also use booknames in your current bookname language."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:57
+#: docs/handbook/en/docbook/hdbk-start.docbook:47
 msgid "Startup sequence"
 msgstr "Séquence de démarrage"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:59
+#: docs/handbook/en/docbook/hdbk-start.docbook:48
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1906,16 +1889,16 @@ msgstr ""
 "Au démarrage de &bibletime;, vous pouvez voir les écrans suivant avant que "
 "la fenêtre principale de &bibletime; ne s'ouvre:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:66
+#: docs/handbook/en/docbook/hdbk-start.docbook:57
 #, fuzzy
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
-"no default Bookshelf can be found. Please see <link linkend=\"hdbk-op-"
-"bookshelfmanager\">this section</link>for further details.  If you start off "
-"with an empty Bookshelf, it will be helpful to install at least one Bible, "
-"Commentary, Lexicon and one Book to get to know &bibletime;'s basic features "
-"quickly."
+"no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\"> this section</link> for further details. If you start "
+"off with an empty Bookshelf, it will be helpful to install at least one "
+"Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
+"features quickly."
 msgstr ""
 "<action>Modifie votre bibliothèque.</action> Ce dialogue vous permet de "
 "modifier votre bibliothèque en ajoutant ou retirant des modules de votre "
@@ -1925,23 +1908,16 @@ msgstr ""
 "est utile d'installer au moins une bible, un commentaire, un lexique et un "
 "livre pour découvrir les caractéristique de &bibletime;."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:76
+#: docs/handbook/en/docbook/hdbk-start.docbook:74
+#, fuzzy
 msgid ""
-"<action>Customizes &bibletime;.</action> This dialog lets you adapt "
-"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\"> the "
+"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
+"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
 msgstr ""
 "<action>Personnalise &bibletime;.</action> Ce dialogue vous permet d'adapter "
 "&bibletime; à vos besoins. Voyez <link linkend=\"hdbk-config-bt\"> la "
 "description détaillée</link> de ce dialogue."
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:83
-msgid ""
-"These nifty little tips give you helpful hints for working more efficiently "
-"with &bibletime;, and also a few quotations from the Bible."
-msgstr ""
-"Ces petites astuces vous aident à travailler plus efficacement avec "
-"&bibletime; et vous proposent quelques citations de la Bible."
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
@@ -1973,32 +1949,96 @@ msgstr ""
 msgid "Alt"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:24
+#: docs/handbook/en/docbook/index.docbook:21
 msgid "The &bibletime; handbook"
 msgstr "Le manuel de &bibletime;"
 
-#: docs/handbook/en/docbook/index.docbook:49
+#: docs/handbook/en/docbook/index.docbook:43
 msgid "the &bibletime; team"
 msgstr "l'équipe &bibletime;"
 
-#: docs/handbook/en/docbook/index.docbook:54
+#: docs/handbook/en/docbook/index.docbook:46
 msgid "The &bibletime; handbook is part of &bibletime;."
 msgstr "Le manuel &bibletime; fait partie de &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:58
-msgid "2005-07"
+#: docs/handbook/en/docbook/index.docbook:49
+msgid "2005-08"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:59
-msgid "1.5"
+#: docs/handbook/en/docbook/index.docbook:50
+msgid "1.7"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:63
+#: docs/handbook/en/docbook/index.docbook:52
 #, fuzzy
-msgid "&bibletime; is a powerful Bible study tool for KDE."
+msgid "&bibletime; is a Bible study tool based on the Sword framwork."
 msgstr "&bibletime; est un outil puissant d'étude de la Bible pour &kde;."
+
+#~ msgid ""
+#~ "In this section you find a description of the different possibilities to "
+#~ "configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
+#~ "BibleTime Dialog </link> and the <link linkend=\"hdbk-config-toolbar"
+#~ "\">Configure Toolbars</link> dialog. Both can be accessed under "
+#~ "<guimenu>Settings</guimenu> in the main menu."
+#~ msgstr ""
+#~ "Dans cette section vous trouverez une description des différentes "
+#~ "possibilités de configurer &bibletime;: le dialogue<link linkend=\"hdbk-"
+#~ "config-bt\"> Configurer &bibletime;</link>et le dialogue <link linkend="
+#~ "\"hdbk-config-toolbar\">Configurer les barres d'outils</link> qui sont "
+#~ "tous les deux accessibles dans le menu <guimenu>Settings</guimenu>."
+
+#~ msgid "Show tip of the day"
+#~ msgstr "Afficher l'astuce du jour"
+
+#~ msgid "Configure Toolbars dialog"
+#~ msgstr "Le dialogue Configurer les barres d'outils"
+
+#, fuzzy
+#~ msgid ""
+#~ "You will see this dialog, which allows adding and removing buttons from "
+#~ "the main toolbar of &bibletime;. The order of the buttons can also be "
+#~ "changed."
+#~ msgstr ""
+#~ "Vous verrez ce dialogue, qui permet d'ajouter, de déplacer et de retirer "
+#~ "des boutons de la barre d'outils principale de &bibletime;."
+
+#, fuzzy
+#~ msgid "<phrase>Toolbar configuration dialog</phrase>"
+#~ msgstr "Le dialogue de configuration de la barre d'outil"
+
+#~ msgid "The Toolbar configuration dialog."
+#~ msgstr "Le dialogue de configuration de la barre d'outil"
+
+#~ msgid ""
+#~ "Use the 4 buttons in the middle of the window to move buttons to the "
+#~ "toolbar, away from the toolbar or to sort them on the toolbar according "
+#~ "to your preference."
+#~ msgstr ""
+#~ "Les quatre boutons au milieu de la fenêtre permettent d'ajouter des "
+#~ "boutons à la barre d'outil, de les en ôter et de les y déplacer."
+
+#~ msgid ""
+#~ "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+#~ "section</link> for further information."
+#~ msgstr ""
+#~ "Voir <link linkend=\"hdbk-reference-menus-settings-toolbars\">cette "
+#~ "section</link> pour plus d'information."
+
+#~ msgid ""
+#~ "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Daily tip</"
+#~ "guimenuitem></menuchoice> equivalent; opens the tip of the day."
+#~ msgstr ""
+#~ "Équivalent à <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Astuce du "
+#~ "jour</guimenuitem></menuchoice>, ouvre l'astuce du jour."
+
+#~ msgid ""
+#~ "These nifty little tips give you helpful hints for working more "
+#~ "efficiently with &bibletime;, and also a few quotations from the Bible."
+#~ msgstr ""
+#~ "Ces petites astuces vous aident à travailler plus efficacement avec "
+#~ "&bibletime; et vous proposent quelques citations de la Bible."
 
 #, fuzzy
 #~ msgid "&language;"
