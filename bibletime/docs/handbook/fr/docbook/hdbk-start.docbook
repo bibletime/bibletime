@@ -1,95 +1,73 @@
-<chapter id="hdbk-term"><title>Lancer &bibletime;</title>
-
-<sect1 id="hdbk-start"><title>Comment lancer &bibletime;</title>
-
-	<sect2 id="hdbk-start-kde"><title>Démarrer &bibletime; depuis &kde;</title>
-	
-		<para>		&bibletime; is a &kde; program and is integrated with the &kde; desktop.  
-You can launch &bibletime; from the &kde; Start Menu in the Applications 
-group with this icon:
-		<mediaobject>
-		<imageobject><imagedata fileref="i_bibletime.png" format="PNG"/></imageobject>
-		<textobject>
-		<phrase>&bibletime; start icon</phrase> </textobject>
-		</mediaobject>
-		</para>
-		
-		<para>&bibletime; can also be launched from a terminal command prompt.  To launch 
+<chapter id="hdbk-term">
+  <title>Lancer &bibletime;</title>
+  <sect1 id="hdbk-start">
+    <title>Comment lancer &bibletime;</title>
+    <sect2 id="hdbk-start-kde">
+      <title>Démarrer &bibletime; depuis &kde;</title>
+      <para>&bibletime; is a &kde; program and is integrated with the desktop. You can 
+launch &bibletime; from the Start Menu in the Applications group with this 
+icon: 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="i_bibletime.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>&bibletime; start icon</phrase>
+        </textobject>
+      </mediaobject></para>
+      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
 &bibletime;, open a terminal window and type: 
-<screen>
-bibletime
-</screen>
-		</para>
-	
-	</sect2>
-	
-	<sect2 id="hdbk-start-otherwm"><title>Autres gestionnaires de fenêtres</title>
-	
-		<para>&bibletime; can be used with other window managers such as Gnome, BlackBox 
-or Sawfish, providing	&kde; is already installed on your computer. If your 
-&kde; is installed in /opt/kde, then the start-up command in a terminal 
-would be:</para>
-		
-<screen>
-export KDEDIR=/opt/kde  #votre répertoire KDE
-bibletime
-</screen>
-			
-	</sect2>
-	
-	<sect2 id="hdbk-start-custom"><title>Configuration du démarrage</title>
-		
-		<para>From a terminal you can use &bibletime; to open a random verse in the 
-default bible:
-<screen>
-bibletime --open-default-bible "&lt;random&gt;"
-</screen>
-		To open at a given passage like John 3:16, use:
-<screen>
-bibletime --open-default-bible "John 3:16"
-</screen>
-		You can also use booknames in your current bookname language.
-		</para>
-		
-	</sect2>
-
-</sect1>
-
-<sect1 id="hdbk-startsequence"><title>Séquence de démarrage</title>
-
-	<para>Au démarrage de &bibletime;, vous pouvez voir les écrans suivant avant que 
+      <screen>bibletime</screen></para>
+    </sect2>
+    <sect2 id="hdbk-start-otherwm">
+      <title>Autres gestionnaires de fenêtres</title>
+      <para>&bibletime; can be used with other window managers such as Gnome, BlackBox, 
+Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are 
+already installed on your computer. If your &kde; is installed in /opt/kde, 
+then the start-up command in a terminal would be:</para>
+      <screen>export KDEDIR=/opt/kde #your KDE directory
+      bibletime</screen>
+    </sect2>
+    <sect2 id="hdbk-start-custom">
+      <title>Configuration du démarrage</title>
+      <para>From a terminal you can use &bibletime; to open a random verse in the 
+default bible: 
+      <screen>bibletime --open-default-bible
+      "&lt;random&gt;"</screen>To open at a given passage like John 3:16, use: 
+      <screen>bibletime --open-default-bible "John 3:16"</screen>You can also use booknames in your current bookname language.</para>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-startsequence">
+    <title>Séquence de démarrage</title>
+    <para>Au démarrage de &bibletime;, vous pouvez voir les écrans suivant avant que 
 la fenêtre principale de &bibletime; ne s'ouvre:</para>
-	
-	<variablelist>
-	
-		<varlistentry>
-			<term><interface>Bookshelf Manager</interface></term>
-			<listitem><para><action>Modifies your Bookshelf.</action> This dialog lets you modify your 
+    <variablelist>
+      <varlistentry>
+        <term>
+          <interface>Bookshelf Manager</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Modifies your Bookshelf.</action> This dialog lets you modify your 
 Bookshelf, add or delete works from your system.  It will only be shown if 
-no default Bookshelf can be found. Please see <link 
-linkend="hdbk-op-bookshelfmanager">this section</link>for further details.  
-If you start off with an empty Bookshelf, it will be helpful to install at 
-least one Bible, Commentary, Lexicon and one Book to get to know 
-&bibletime;'s basic features quickly.</para></listitem> 
-		</varlistentry>
-		
-		<varlistentry>
-			<term><interface>Configure &bibletime; dialog</interface></term>
-			<listitem><para><action>Personnalise &bibletime;.</action> Ce dialogue vous permet d'adapter 
-&bibletime; à vos besoins. Voyez <link linkend="hdbk-config-bt"> la 
-description détaillée</link> de ce dialogue.</para></listitem> 
-		</varlistentry>
-		
-		<varlistentry>
-			<term><interface>Tip of the Day</interface></term>
-			<listitem><para>Ces petites astuces vous aident à travailler plus efficacement avec 
-&bibletime; et vous proposent quelques citations de la Bible.
-			</para></listitem> 
-		</varlistentry>
-		
-	</variablelist>
-
-</sect1>
-
+no default Bookshelf can be found.  Please see <link 
+linkend="hdbk-op-bookshelfmanager"> this section</link> for further 
+details. If you start off with an empty Bookshelf, it will be helpful to 
+install at least one Bible, Commentary, Lexicon and one Book to get to know 
+&bibletime;'s basic features quickly.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <interface>Configure &bibletime; dialog</interface>
+        </term>
+        <listitem>
+          <para>
+          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
+&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
+detailed description</link> of this dialog.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect1>
 </chapter>
-

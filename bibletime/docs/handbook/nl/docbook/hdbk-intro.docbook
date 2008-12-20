@@ -1,106 +1,87 @@
-<chapter id="hdbk-intro"><title>Introductie</title>
-
-<sect1 id="hdbk-intro-about"><title>Over BibleTime</title>
-	<para>
-	&bibletime; is a powerful Bible study tool written for the s environment on 
-the Linux operating system. It is based on the <ulink 
+<chapter id="hdbk-intro">
+  <title>Introductie</title>
+  <sect1 id="hdbk-intro-about">
+    <title>About &bibletime;</title>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules) are easy to install and 
+manage. It is built on the <ulink 
 url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
 the back-end functionality for &bibletime;, such as viewing Bible text, 
 searching etc. Sword is the flagship product of the <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>. </para>
-	
-	<para>&bibletime; is designed to be used with works encoded in one of the formats 
-supported by the Sword project.  Complete information on the supported 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>&bibletime; is designed to be used with works encoded in one of the formats 
+supported by the Sword project. Complete information on the supported 
 document formats can be found in the <ulink 
 url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
 section</ulink> of the Sword Project, Crosswire Bible Society.</para>
-	
-<sect2 id="hdbk-intro-works"><title>Beschikbare modules</title>
 
-	<para>
-	Meer dan 200 documenten in 50 talen zijn beschikbaar bij de <ulink 
+    <sect2 id="hdbk-intro-works">
+      <title>Beschikbare modules</title>
+      <para>Meer dan 200 documenten in 50 talen zijn beschikbaar bij de <ulink 
 url="http://www.crosswire.org">Crosswire Bible Society</ulink>. Hierin zijn 
-opgenomen:
-
-	<variablelist>
-		<varlistentry>
-		<term>Bijbels</term>
-		<listitem>
-		<para>
-		De volledige bijbeltekst, met optionele toevoegingen zoals Strong-nummering, 
-kopjes en/of voetnoten in de tekst. Bijbels zijn beschikbaar in vele talen; 
-het zijn niet alleen moderne versies, maar ook oude teksten, zoals de Codex 
-Leningradensis ("WLC", Hebreeuws) en de Septuagint ("LXX", Grieks). Dit is 
-de meest geavanceerde sectie in de bibliotheek van het Sword project.
-		</para>
-		</listitem></varlistentry>
-	
-		<varlistentry>
-		<term>Boeken</term>
-		<listitem>
-		<para>Beschikbare boeken zijn onder andere &quot;Imitation of Christ&quot;, 
-&quot;Enuma Elish&quot; en &quot;Josephus:The Complete Works&quot;
-		</para>
-		</listitem>
-		</varlistentry>
-			
-		<varlistentry>
-		<term>Bijbelcommentaren</term>
-		<listitem>
-		<para>
-		Beschikbare bijbelcommentaren zijn klassiekers zoals John Wesleys "Notes on 
-the Bible", Matthew Henry's bijbelcommentaar en Luthers "Commentary on 
-Galatians." Met het <emphasis>Persoonlijk</emphasis> commentaar kun u <link 
-linkend="hdbk-op-parts-desk-write">uw eigen kanttekeningen opnemen</link> 
-bij bijbelverzen.
-		</para> 
-		</listitem>
-		</varlistentry>
-			
-		<varlistentry>
-		<term>Dagelijkse overdenkingen</term>
-		<listitem>
-		<para>Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de 
+opgenomen: 
+      <variablelist>
+        <varlistentry>
+          <term>Bijbels</term>
+          <listitem>
+            <para>The full Bible text, with optional things like Strong's Numbers, headings 
+and/or footnotes in the text.  Bibles are available in many languages, and 
+include not only modern versions, but also ancient texts like the Codex 
+Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
+the most advanced section in the library of the Sword project.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Boeken</term>
+          <listitem>
+            <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus: 
+The Complete Works"</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bijbelcommentaren</term>
+          <listitem>
+            <para>Commentaries available include classics like John Wesley's "Notes on the 
+Bible", Matthew Henry`s commentary and Luther's "Commentary on Galatians." 
+With the <emphasis>Personal</emphasis> commentary you can <link 
+linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to 
+sections of the Bible.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Dagelijkse overdenkingen</term>
+          <listitem>
+            <para>Veel mensen waarderen deze dagelijkse porties van Gods Woord. Onder de 
 beschikbare modules bevinden zich Daily Light on the Daily Path (Dagelijks 
-Licht op het Dagelijkse Pad) en de Losungen.
-		</para>
-		</listitem>
-		</varlistentry>
-	
-		<varlistentry>
-		<term>Lexicons/Woordenboeken</term>
-		<listitem>
-		<para>
-		Beschikbare lexicons zijn: Robinson's Morphological Analysis Codes, 
+Licht op het Dagelijkse Pad) en de Losungen.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lexicons/Woordenboeken</term>
+          <listitem>
+            <para>Beschikbare lexicons zijn: Robinson's Morphological Analysis Codes, 
 Brown-Driver-Briggs Hebrew Lexicon en de International Standard Bible 
 Encyclopedia. Onder de beschikbare woordenboeken bevinden zich Strong's 
 Hebrew Bible Dictionary, Strong's Greek Bible Dictionary, Webster's Revised 
-Unabridged Dictionary of the English Language 1913 en Nave's Topical Bible.
-		</para>
-		</listitem>
-		</varlistentry>
-	</variablelist>
-
-	</para>
-</sect2>
-
-<sect2 id="hdbk-intro-motivation"><title>Motivatie</title>
-	<para>
-	Our desire is to serve God, and to do our part to help others grow in their 
-relationship with Him.  We have striven to make this a powerful, quality 
+Unabridged Dictionary of the English Language 1913 en Nave's Topical Bible.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivatie</title>
+      <para>Our desire is to serve God, and to do our part to help others grow in their 
+relationship with Him. We have striven to make this a powerful, quality 
 program, and still make it simple and intuitive to operate. It is our desire 
-that God be praised, as He is the source of all good things.
-	</para>
-	<blockquote><attribution>Jakobus 1:17, NBG51</attribution>
-	<para>Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven 
+that God be praised, as He is the source of all good things.</para>
+      <blockquote>
+        <attribution>Jakobus 1:17, NBG51</attribution>
+        <para>Iedere gave, die goed, en elk geschenk, dat volmaakt is, daalt van boven 
 neder, van de Vader der lichten, bij wie geen verandering is of zweem van 
 ommekeer.</para>
-	</blockquote>
-	<para>
-	God zegene u wanneer u dit programma gebruikt.
-	</para>
-</sect2>
-
-</sect1>
-
+      </blockquote>
+      <para>God zegene u wanneer u dit programma gebruikt.</para>
+    </sect2>
+  </sect1>
 </chapter>

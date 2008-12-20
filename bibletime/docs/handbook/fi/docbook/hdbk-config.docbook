@@ -1,193 +1,183 @@
-<chapter id="hdbk-config"><title>&bibletime;:n asetukset</title>
-
-<para>Tässä osiossa löydät kuvauksen erilaisista tavoista asettaa &bibletime;:n 
-asetukset: <link linkend="hdbk-config-bt">Aseta BibleTime -ikkuna </link> ja 
-<link linkend="hdbk-config-toolbar">Aseta työkalupalkit</link> 
--ikkuna. Kumpaankin päästään päävalikon<guimenu>Asetukset</guimenu> 
--kohdasta.</para>
-
-<sect1 id="hdbk-config-bt"><title>Aseta &bibletime; -ikkuna</title>
-
-	<para>&bibletime; käyttöliittymä voidaan muokata monella tavalla riippuen 
-tarpeistasi. Pääset asetusikkunaan valitsemalla 
-<menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta 
-&bibletime;</guimenuitem>.</para>
-
-	<sect2 id="hdbk-config-bt-display"><title><guimenu>Display</guimenu></title>
-	
-		<para>Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista:
-			<itemizedlist>
-				<listitem><para>Näytä päivän vihje</para></listitem>
-				<listitem><para>Näytä aloituskuva</para></listitem>
-			</itemizedlist>
-		</para>
-		<para>Display templates define the rendering of text (colors, size etc.). Various 
-built-in templates are available.  If you select one, you will see a preview 
+<chapter id="hdbk-config">
+  <title>&bibletime;:n asetukset</title>
+  <para>In this section you find an overview to configure &bibletime;, which can be 
+found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <sect1 id="hdbk-config-bt">
+    <title>Aseta &bibletime; -ikkuna</title>
+    <para>The &bibletime; user interface can be customized in many ways depending on 
+your needs. You can access the configuration dialog by selecting 
+<menuchoice> <guimenu>Settings</guimenu> </menuchoice> 
+<guimenuitem>Configure &bibletime;</guimenuitem>.</para>
+    <sect2 id="hdbk-config-bt-display">
+      <title>
+        <guimenu>Display</guimenu>
+      </title>
+      <para>Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista: 
+      <itemizedlist>
+        <listitem>
+          <para>Näytä aloituskuva</para>
+        </listitem>
+      </itemizedlist></para>
+      <para>Display templates define the rendering of text (colors, size etc.). Various 
+built-in templates are available. If you select one, you will see a preview 
 on the right pane.</para>
-
-	</sect2>
-	
-	<sect2 id="hdbk-config-bt-languages"><title><guimenu>Languages</guimenu></title>
-	
-	<para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä 
+    </sect2>
+    <sect2 id="hdbk-config-bt-languages">
+      <title>
+        <guimenu>Languages</guimenu>
+      </title>
+      <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä 
 äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
-	
-	<para>By default, &bibletime; uses the &kde; general display font which can be 
+      <para>By default, &bibletime; uses the &kde; general display font which can be 
 specified in KDE's Control Center. You can override this font if 
-neccessary.  Some languages require special fonts to be displayed correctly, 
+neccessary. Some languages require special fonts to be displayed correctly, 
 and this dialog allows you to specify a custom font for each language.</para>
-	
-	<mediaobject><imageobject>
-	<imagedata fileref="ss_configfonts.png" format="PNG"/>
-	</imageobject>
-	<textobject><phrase>Options Dialog - fonts</phrase></textobject>
-	<caption><para>Valintaikkuna - Kirjasimet.</para></caption>
-	</mediaobject>
-
-		<para>&bibletime; can now use all fonts supported by KDE/QT.  As long as the works 
-you are interested in display correctly nothing needs to be done here.  If a 
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="ss_configfonts.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>Options Dialog - fonts</phrase>
+        </textobject>
+        <caption>
+          <para>Valintaikkuna - Kirjasimet.</para>
+        </caption>
+      </mediaobject>
+      <para>&bibletime; can now use all fonts supported by KDE/QT.  As long as the works 
+you are interested in display correctly nothing needs to be done here. If a 
 work only displays as a series of question marks (??????) or empty boxes, 
 then you know that the standard KDE display font does not contain the 
 characters used in this work.</para>
-	
-		<para>To correct this, choose this work's language from the drop down menu.  
-Select the use custom font checkbox.  Now select a font.  For example, a 
-font that supports many languages is Code2000. If no installed font can 
-display the work you are interested in, try installing the &kde; 
-localization package for that language.</para>
-		
-		<sect3 id="hdbk-config-bt-addfont"><title>Kirjasimien asennus</title>
-			<para>Detailed font installation instructions are outside the scope of this 
-handbook.  &kde;'s <ulink url="help:/kcontrol/index.html">KControl 
+      <para>To correct this, choose this work's language from the drop down menu. Select 
+the use custom font checkbox. Now select a font. For example, a font that 
+supports many languages is Code2000. If no installed font can display the 
+work you are interested in, try installing the &kde; localization package 
+for that language.</para>
+      <sect3 id="hdbk-config-bt-addfont">
+        <title>Kirjasimien asennus</title>
+        <para>Detailed font installation instructions are outside the scope of this 
+handbook. &kde;'s <ulink url="help:/kcontrol/index.html"> KControl 
 Center</ulink> contains an excellent and easy to use font installation 
-module.  Please read <ulink url="help:/kcontrol/kcmfontinst/index.html"> its 
+module. Please read <ulink url="help:/kcontrol/kcmfontinst/index.html"> its 
 documentation</ulink>. For further information you might want to refer to 
 the <ulink 
 url="http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4"> 
 Unicode HOWTO</ulink>.</para>
-	
-			<tip><para>Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on 
-nopeampi kuin suurilla kirjasimilla kuten <trademark class="registered"> 
-Bitstream Cyberbit</trademark> (noin 12Mb).</para></tip>
-		</sect3>
-
-		<sect3 id="hdbk-config-bt-ob-font"><title>Kirjasimien hankinta</title>
-			<para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
-			<itemizedlist>
-			<listitem><para>Linux-distribuutiosi.</para></listitem>
-			<listitem><para>Distribuutiosi lokalisointipaketit.</para></listitem>
-			<listitem><para>Olemassaoleva <trademark class="registered">Microsoft Windows</trademark> 
-asennus samalla tietokoneella.</para></listitem>
-			<listitem><para>Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla.</para></listitem>
-			<listitem><para>Online kirjasinkokoelmat.</para></listitem>
-			</itemizedlist>
-	
-			<para>Unicode fonts support more characters than other fonts, and some of these 
-fonts are available at no charge.  None of available fonts includes all 
+        <tip>
+          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run 
+faster than with a large font like <trademark class="registered">Bitstream 
+Cyberbit</trademark>(about 12Mb).</para>
+        </tip>
+      </sect3>
+      <sect3 id="hdbk-config-bt-ob-font">
+        <title>Kirjasimien hankinta</title>
+        <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Linux-distribuutiosi.</para>
+          </listitem>
+          <listitem>
+            <para>Distribuutiosi lokalisointipaketit.</para>
+          </listitem>
+          <listitem>
+            <para>An existing <trademark class="registered">Microsoft 
+Windows</trademark>installation on the same computer.</para>
+          </listitem>
+          <listitem>
+            <para>Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla.</para>
+          </listitem>
+          <listitem>
+            <para>Online kirjasinkokoelmat.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Unicode fonts support more characters than other fonts, and some of these 
+fonts are available at no charge. None of available fonts includes all 
 characters defined in the Unicode standard, so you may want to use different 
 fonts for different languages.</para>
-			
-			<table id="hdbk-config-unicode-fonts-table">
-				<title>Unicode-kirjasimet</title>
-				<tgroup cols="2">
-				<tbody>
-				
-				<row><entry><ulink url="http://home.att.net/~jameskass/CODE2000.ZIP">Code2000</ulink></entry>
-				<entry>Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä.</entry></row>
-				
-				<row><entry><ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
-				SIL unicode fonts</ulink></entry>
-				<entry>Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin.</entry></row>
-	
-				<row><entry><ulink url="http://www.nongnu.org/freefont/">FreeFont</ulink></entry>
-				<entry>Uusi vapaa unicode-kirjasinaloite.</entry></row>
-				
-				<row><entry><ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">Crosswire's font directory</ulink></entry>
-				<entry>Useita kirjasimia saatavana Crosswire Bible Society Ftp -palvelimella.</entry></row>
-	
-				<row><entry><ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">Bitstream CyberBit</ulink></entry>
-				<entry>Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä 
-merkittävästi koon vuoksi.</entry></row>
-	
-				<row><entry>Clearlyu</entry>
-				<entry>Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, 
-heprean ja Thai-kielen.</entry></row>
-				
-				<row><entry><ulink url="http://bibliofile.mc.duke.edu/gww/fonts/Unicode.html">Caslon, Monospace, Cupola, Caliban</ulink></entry>
-				<entry>Osittainen peittävyys, katso tietoja linkitetyltä sivulta.</entry></row>
-				</tbody>
-				</tgroup>
-			</table>
-				
-			<para>Netissä on hyviä Unicode-kirjasinluetteloja, kuten Christoph Singerin 
-(<ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode 
-TrueType Fonts in the Internet</ulink>), tai Alan Woodin (<ulink 
+        <table id="hdbk-config-unicode-fonts-table">
+          <title>Unicode-kirjasimet</title>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>
+                  <ulink url="http://home.att.net/~jameskass/CODE2000.ZIP">
+                  Code2000</ulink>
+                </entry>
+                <entry>Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+                  SIL unicode fonts</ulink>
+                </entry>
+                <entry>Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://www.nongnu.org/freefont/">
+                  FreeFont</ulink>
+                </entry>
+                <entry>Uusi vapaa unicode-kirjasinaloite.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">
+                  Crosswire's font directory</ulink>
+                </entry>
+                <entry>Useita kirjasimia saatavana Crosswire Bible Society Ftp -palvelimella.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  Bitstream CyberBit</ulink>
+                </entry>
+                <entry>Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä 
+merkittävästi koon vuoksi.</entry>
+              </row>
+              <row>
+                <entry>Clearlyu</entry>
+                <entry>Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, 
+heprean ja Thai-kielen.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://bibliofile.mc.duke.edu/gww/fonts/Unicode.html">
+                  Caslon, Monospace, Cupola, Caliban</ulink>
+                </entry>
+                <entry>Osittainen peittävyys, katso tietoja linkitetyltä sivulta.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>There are good Unicode font lists on the net, as the one by Christoph Singer 
+( <ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode 
+TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink 
 url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
-ranges and the Unicode fonts that support them</ulink>).
-			</para>
-			
-		</sect3>
-	</sect2>
-	
-
-	<sect2 id="hdbk-config-bt-desk"><title><guimenu>Desk</guimenu></title>
-	
-		<para>Many features provided by the Sword backend can now be customized in 
+ranges and the Unicode fonts that support them</ulink>).</para>
+      </sect3>
+    </sect2>
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Many features provided by the Sword backend can now be customized in 
 &bibletime;. These features are documented right in the dialog. You also 
 have the possibility to specify standard works that should be used when no 
 specific work is specified in a reference. An example: The standard Bible is 
 used to display the content of crossreferences in the Bible. When you hover 
 over then, the Mag will show the content of the verses referred to, 
 according to the standard Bible you specified.</para>
-		
-	</sect2>
-	
-	<sect2 id="hdbk-config-bt-hotkeys"><title><guimenu>HotKeys</guimenu></title>
-	
-		<para>HotKeys are special key commands that can be used in the place of the menu 
+    </sect2>
+    <sect2 id="hdbk-config-bt-hotkeys">
+      <title>
+        <guimenu>HotKeys</guimenu>
+      </title>
+      <para>HotKeys are special key commands that can be used in the place of the menu 
 items and icons. A number of &bibletime;'s commands have predefined HotKeys 
 (see <link linkend="hdbk-reference-hotkeys">this section</link> for a 
 complete listing). Most of &bibletime;'s commands can be assigned HotKeys 
 here. This is very helpful to quickly access the functions that you need the 
 most.</para>
-	
-	</sect2>
-
-</sect1>
-	
-		
-	<sect1 id="hdbk-config-toolbar"><title>Aseta työkalupalkki -ikkuna</title>
-	<para>Voit mukauttaa työkalupalkin tarpeitasi vastaavaksi. Käytä seuraavaa kohtaa 
-päävalikossa:
-	<variablelist>
-		<varlistentry>
-			<term><menuchoice>
-			<guimenu>
-				<inlinemediaobject><imageobject>
-					<imagedata fileref="i_configuretoolbars.png" format="PNG"/></imageobject>
-				</inlinemediaobject>Settings
-			</guimenu>
-			<guimenuitem>Configure toolbars</guimenuitem></menuchoice></term> 
-			<listitem><para>Aseta työkalupalkit</para></listitem>
-		</varlistentry>
-	</variablelist>
-	</para>
-	<para>You will see this dialog, which allows adding and removing buttons from the 
-main toolbar of &bibletime;. The order of the buttons can also be changed.
-	</para>
-	<mediaobject>
-		<imageobject>
-		<imagedata fileref="ss_configtoolbar.png" format="PNG"/>
-		</imageobject>
-		<textobject><phrase>Toolbar configuration dialog</phrase></textobject>
-		<caption><para>Työkalupalkin asetusten säätöikkuna.</para></caption>
-	</mediaobject>
-	<para>Use the 4 buttons in the middle of the window to move buttons to the 
-toolbar, away from the toolbar or to sort them on the toolbar according to 
-your preference.
-	</para>
-	<para>Katso <link linkend="hdbk-reference-menus-settings-toolbars">tämä 
-osio</link> lisätietojen saamiseksi.</para>
-	</sect1>
-
+    </sect2>
+  </sect1>
 </chapter>
