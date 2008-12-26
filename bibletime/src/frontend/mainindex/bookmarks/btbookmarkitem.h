@@ -11,9 +11,14 @@
 #define BTBOOKMARKITEM_H
 
 
+#include "btbookmarkitembase.h"
+
 class BtBookmarkItem : public BtBookmarkItemBase
 {
 public:
+	friend class BtBookmarkLoader;
+	BtBookmarkItem(QTreeWidgetItem* parent);
+	~BtBookmarkItem() {}
 
 	/** Returns the used module, 0 if there is no such module. */
 	CSwordModuleInfo* const module();
@@ -31,7 +36,7 @@ public:
 
 	virtual const QString toolTip();
 
-	virtual const bool enableAction(const MenuAction action);
+	virtual bool enableAction(const MenuAction action);
 	/**
 	* Changes this bookmark.
 	*/

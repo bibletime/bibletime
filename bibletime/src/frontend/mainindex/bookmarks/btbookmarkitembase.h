@@ -40,6 +40,9 @@ public:
 		ActionBegin = NewFolder,
 		ActionEnd = DeleteEntries
 	};
+
+	virtual ~BtBookmarkItemBase() {}
+
 	virtual void init();
 	virtual const QString toolTip();
 	virtual CBookmarkIndex* treeWidget() const;
@@ -65,3 +68,4 @@ protected:
 };
 
 #endif
+

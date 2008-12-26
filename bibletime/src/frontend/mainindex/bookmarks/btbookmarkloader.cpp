@@ -9,6 +9,9 @@
 
 #include "btbookmarkloader.h"
 
+#include "btbookmarkitem.h"
+#include "btbookmarkfolder.h"
+
 #include "util/ctoolclass.h"
 
 #include <QTreeWidgetItem>
@@ -20,9 +23,11 @@
 #include <QIODevice>
 #include <QTextCodec>
 
+#define CURRENT_SYNTAX_VERSION 1
+
 QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
 {
-	QList<QTreeWidgetItem*> itemList();
+	QList<QTreeWidgetItem*> itemList;
 	
 	QDomDocument doc;
 	doc.setContent(loadXmlFromFile());
@@ -39,7 +44,7 @@ QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
 
 	while ( !child.isNull() && child.parentNode() == document) {
 		QTreeWidgetItem* i = handleXmlElement(child, 0);
-		itemList.add(i);
+		itemList.append(i);
 		if (!child.nextSibling().isNull()) {
 			child = child.nextSibling().toElement();
 		}
@@ -53,26 +58,30 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
 {
 	QTreeWidgetItem* newItem = 0;
 	if (element.tagName() == "Folder") {
-		newItem = new BtBookmarkFolder(parent);
-		if (elem.hasAttribute("caption")) {
-			newItem->setText(0, elem.attribute("caption"));
+		BtBookmarkFolder* newFolder = new BtBookmarkFolder(parent);
+		if (element.hasAttribute("caption")) {
+			newFolder->setText(0, element.attribute("caption"));
 		}
 		foreach (QDomNode node, element.childNodes()) {
-			newItem->addChild(handleXmlElement(node.toElement(), newItem));
+			QDomElement newElement = node.toElement();
+			QTreeWidgetItem* newChildItem = handleXmlElement(newElement, newFolder);
+			newFolder->addChild(newChildItem);
 		}
+		newItem = newFolder;
 	}
 	else if (element.tagName() == "Bookmark") {
-		newItem = new BtBookmarkItem(parent);
+		BtBookmarkItem* newBookmarkItem = new BtBookmarkItem(parent);
 		if (element.hasAttribute("modulename")) {
 			//we use the name in all cases, even if the module isn't installed anymore
-			newItem->m_moduleName = element.attribute("modulename");
+			newBookmarkItem->m_moduleName = element.attribute("modulename");
 		}
 		if (element.hasAttribute("key")) {
-			newItem->m_key = element.attribute("key");
+			newBookmarkItem->m_key = element.attribute("key");
 		}
 		if (element.hasAttribute("description")) {
-			newItem->m_description = element.attribute("description");
+			newBookmarkItem->m_description = element.attribute("description");
 		}
+		newItem = newBookmarkItem;
 	}
 	
 	return newItem;
@@ -97,7 +106,7 @@ QString BtBookmarkLoader::loadXmlFromFile()
 	return xml;
 }
 
-BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
+void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
 {
 	const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
 	if (!path.isEmpty()) {

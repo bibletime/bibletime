@@ -53,8 +53,6 @@
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),
 	m_itemsMovable(false),
-	m_autoOpenFolder(0),
-	m_autoOpenTimer(this),
 	m_magTimer(this),
 	m_previousEventItem(0)
 {
@@ -150,7 +148,6 @@ void CBookmarkIndex::initConnections()
 
 	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
-	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
 	QObject::connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));
 
 	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), SLOT(slotItemChanged(QTreeWidgetItem*, int)));

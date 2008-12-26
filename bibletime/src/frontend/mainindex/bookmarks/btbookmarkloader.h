@@ -22,7 +22,7 @@ public:
 	void saveTreeFromRootItem(QTreeWidgetItem* rootItem);
 
 private:
-	QTreeWidgetItem* handleXmlElement(QDomElement element, QTreeWidgetItem* parent);
+	QTreeWidgetItem* handleXmlElement(QDomElement& element, QTreeWidgetItem* parent);
 	void saveItem(QTreeWidgetItem* item, QDomElement& parentElement);
 	QString loadXmlFromFile();
 };
