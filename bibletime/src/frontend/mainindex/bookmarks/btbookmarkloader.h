@@ -24,3 +24,5 @@ private:
 	QTreeWidgetItem* loadOldFolder();
 	QTreeWidgetItem* loadOldItem();
 };
+
+#endif

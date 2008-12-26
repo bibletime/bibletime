@@ -10,7 +10,7 @@
 #ifndef BTBOOKMARKFOLDER_H
 #define BTBOOKMARKFOLDER_H
 
-#include ""
+#include "btbookmarkitembase.h"
 
 #define CURRENT_SYNTAX_VERSION 1
 
@@ -23,6 +23,7 @@ public:
 	~BtBookmarkFolder();
 
 	virtual void init();
+	void addFirstChild(BtBookmarkItemBase* item);
 };
 
 #endif
