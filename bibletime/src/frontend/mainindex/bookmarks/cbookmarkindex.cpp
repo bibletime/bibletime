@@ -27,6 +27,7 @@
 
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
+#include "util/ctoolclass.h"
 
 #include <boost/scoped_ptr.hpp>
 
@@ -47,12 +48,15 @@
 #include <QMessageBox>
 #include <QMenu>
 #include <QAction>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QApplication>
+#include <QDrag>
 
 #include <QDebug>
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),
-	m_itemsMovable(false),
 	m_magTimer(this),
 	m_previousEventItem(0)
 {
@@ -78,14 +82,19 @@ void CBookmarkIndex::initView()
 	header()->hide();
 
 	setFocusPolicy(Qt::WheelFocus);
+
+	//d'n'd related settings
 	setDragEnabled( true );
 	setAcceptDrops( true );
 	setDropIndicatorShown( true );
-	setDragDropMode(QAbstractItemView::InternalMove);
+	setDragDropMode(QAbstractItemView::DragDrop);
+	viewport()->setAcceptDrops(true);
+	setAutoScroll(true);
+	//setAutoScrollMargin(10);
+	setAutoExpandDelay(600);
 
 	setItemsExpandable(true);
-	viewport()->setAcceptDrops(true);
-	setRootIsDecorated(false);
+	setRootIsDecorated(true);
 	setAllColumnsShowFocus(true);
 	setSelectionMode(QAbstractItemView::ExtendedSelection);
 
@@ -141,7 +150,7 @@ void CBookmarkIndex::initConnections()
 	//Strangely itemActivated only didn't let open a tree by clicking even though the relevant
 	//code in slotExecuted was executed. Therefore itemClicked is necessary.
 	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-	QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	//QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
 
 	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
 		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
@@ -150,26 +159,37 @@ void CBookmarkIndex::initConnections()
 			SLOT(contextMenu(const QPoint&)));
 	QObject::connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));
 
-	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), SLOT(slotItemChanged(QTreeWidgetItem*, int)));
+	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotItemChanged(QTreeWidgetItem*, int)) );
 	//qDebug("CBookmarkIndex::initConnections");
-
+	QObject::connect(this, SIGNAL(itemEntered(QTreeWidgetItem*, int)), this, SLOT(slotItemEntered(QTreeWidgetItem*, int)) );
 }
+
+// void CBookmarkIndex::mousePressEvent(QMouseEvent *event)
+// {
+// 	if (event->button() == Qt::LeftButton)
+// 		m_dragStartPosition = event->pos();
+// 	QTreeWidget::mousePressEvent(event);
+// }
 
 
 /**
 * Hack to get single click and selection working. See slotExecuted.
 */
-void CBookmarkIndex::mouseReleaseEvent(QMouseEvent* event) {
+void CBookmarkIndex::mouseReleaseEvent(QMouseEvent* event)
+{
 	//qDebug("CBookmarkIndex::mouseReleaseEvent");
 	//qDebug() << event->type() << event->modifiers();
+
 	m_mouseReleaseEventModifiers = event->modifiers();
+
 	QTreeWidget::mouseReleaseEvent(event);
+
 }
 
 /** Called when an item is clicked with mouse or activated with keyboard. */
 void CBookmarkIndex::slotExecuted( QTreeWidgetItem* i )
 {
-	//qDebug("CBookmarkIndex::slotExecuted");
+	qDebug("CBookmarkIndex::slotExecuted");
 
 	//HACK: checking the modifier keys from the last mouseReleaseEvent
 	//depends on executing order: mouseReleaseEvent first, then itemClicked signal
@@ -179,22 +199,25 @@ void CBookmarkIndex::slotExecuted( QTreeWidgetItem* i )
 		return;
 	}
 
-	CIndexItemBase* ci = dynamic_cast<CIndexItemBase*>(i);
-	if (!ci) {
+	BtBookmarkItemBase* btItem = dynamic_cast<BtBookmarkItemBase*>(i);
+	if (!btItem) {
 		//qDebug("if (!ci)");
 		return;
 	}
 
-	if (ci->isFolder()) {
+	BtBookmarkFolder* folderItem = 0;
+	BtBookmarkItem* bookmarkItem = 0;
+	if ((folderItem = dynamic_cast<BtBookmarkFolder*>(btItem))) {
 		//qDebug() << "folder was activated";
 		//qDebug() << "item was:" << i->isExpanded() << "and will be:" << !i->isExpanded();
 		i->setExpanded( !i->isExpanded() );
 	}
-	else if (CIndexBookmarkItem* b = dynamic_cast<CIndexBookmarkItem*>(i) ) { //clicked on a bookmark
-		if (CSwordModuleInfo* mod = b->module()) {
+	else if (( bookmarkItem = dynamic_cast<BtBookmarkItem*>(btItem) )) { //clicked on a bookmark
+		qDebug() << "clicked on a bookmark";
+		if (CSwordModuleInfo* mod = bookmarkItem->module()) {
 			QList<CSwordModuleInfo*> modules;
 			modules.append(mod);
-			emit createReadDisplayWindow(modules, b->key());
+			emit createReadDisplayWindow(modules, bookmarkItem->key());
 		}
 	}
 }
@@ -202,107 +225,246 @@ void CBookmarkIndex::slotExecuted( QTreeWidgetItem* i )
 /** Reimplementation. Returns the drag object for the current selection. */
 QMimeData* CBookmarkIndex::dragObject()
 {
-	if (!m_itemsMovable) {
-		return false;
-	}
-
 	BTMimeData::ItemList dndItems;
-
-// 	QList<QTreeWidgetItem> items = selectedItems();
-// 	for (items.first(); items.current(); items.next()) {
-// 		if (CItemBase* i = dynamic_cast<CItemBase*>(items.current())) {
-// 			//we can move this item!
-// 			if (!i->isMovable()) { //we can only drag items which allow us to do it, e.g. which are movable
-// 				continue;
-// 			}
-//
-// 			if (CBookmarkItem* bookmark = dynamic_cast<CBookmarkItem*>( items.current() )) {
-// 				//take care of bookmarks which have no valid module any more, e.g. if it was uninstalled
-// 				const QString moduleName = bookmark->module() ? bookmark->module()->name() : QString::null;
-// 				dndItems.append( CDragDropMgr::Item(moduleName, bookmark->key(), bookmark->description()) );
-// 			}
-// 		}
-// 	}
-//
-// 	return CDragDropMgr::dragObject( dndItems, viewport() );
-
 	BTMimeData* mimeData = new BTMimeData;
 
 	foreach( QTreeWidgetItem* widgetItem, selectedItems() ) {
 		if (!widgetItem)
 			break;
-		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(widgetItem)) {
-			//we can only drag items which allow us to do it, e.g. which are movable
-			if (!i->isMovable()) {
-				continue;
-			}
-
-			if (CIndexBookmarkItem* bookmark = dynamic_cast<CIndexBookmarkItem*>( widgetItem )) {
+		if (dynamic_cast<BtBookmarkItemBase*>(widgetItem)) {
+			if (BtBookmarkItem* bookmark = dynamic_cast<BtBookmarkItem*>( widgetItem )) {
 				//take care of bookmarks which have no valid module any more, e.g. if it was uninstalled
 				const QString moduleName = bookmark->module() ? bookmark->module()->name() : QString::null;
 				mimeData->appendBookmark(moduleName, bookmark->key(), bookmark->description());
 			}
-
 		}
 	}
 	return mimeData;
-
 }
 
 void CBookmarkIndex::dragEnterEvent( QDragEnterEvent* event )
 {
 	//qDebug("CBookmarkIndex::dragEnterEvent");
-	event->acceptProposedAction();
+	setState(QAbstractItemView::DraggingState);
+	QTreeWidget::dragEnterEvent(event);
+	if (event->source() == this || event->mimeData()->hasFormat("BibleTime/Bookmark")) {
+		event->acceptProposedAction();
+	}
 }
 
 
 void CBookmarkIndex::dragMoveEvent( QDragMoveEvent* event )
 {
 	//qDebug("CBookmarkIndex::dragMoveEvent");
-	const QPoint pos = event->pos();
-	if (itemAt(pos)) {
-		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-		if (i) {
-			i->acceptDrop(event);
+
+	// do this first, otherwise the event may be ignored
+	QTreeWidget::dragMoveEvent(event);
+
+	event->acceptProposedAction();
+	event->accept();
+
+	// 
+	//m_autoOpenTimer.start(autoExpandDelay(), this);
+
+	// do this to paint the arrow
+	m_dragMovementPosition = event->pos();
+	viewport()->update();
+	
+}
+
+void CBookmarkIndex::dragLeaveEvent( QDragLeaveEvent* event )
+{
+	qDebug("CBookmarkIndex::dragLeaveEvent");
+	setState(QAbstractItemView::NoState);
+	viewport()->update();
+}
+
+
+void CBookmarkIndex::paintEvent(QPaintEvent* event)
+{
+	static QPixmap pix;
+	static int halfPixHeight;
+	static bool arrowInitialized = false;
+
+	if (!arrowInitialized) {
+		arrowInitialized = true;
+		int arrowSize = CToolClass::mWidth(this, 1);
+		QString fileName;
+		if (util::filesystem::DirectoryUtil::getIconDir().exists("pointing_arrow.svg")) {
+			fileName = util::filesystem::DirectoryUtil::getIconDir().filePath("pointing_arrow.svg");	
+		} else {
+			if (util::filesystem::DirectoryUtil::getIconDir().exists("pointing_arrow.png")) {
+				fileName = util::filesystem::DirectoryUtil::getIconDir().filePath("pointing_arrow.png");
+			} else {
+				qWarning() << "Picture file pointing_arrow.svg or .png not found!";
+			}
 		}
-	} else {
-		if (event->provides("BibleTime/Bookmark")) {
-			event->acceptProposedAction();
+		
+		pix = QPixmap(fileName);
+		pix = pix.scaled(arrowSize, arrowSize, Qt::KeepAspectRatioByExpanding);
+		halfPixHeight = pix.height()/2;
+	}
+
+	QTreeWidget::paintEvent(event);
+	
+	if (QAbstractItemView::DraggingState == state()) {
+		bool rtol = QApplication::isRightToLeft();
+		
+		QPainter painter(this->viewport());
+		QTreeWidgetItem* item = itemAt(m_dragMovementPosition);
+		bool isFolder = dynamic_cast<BtBookmarkFolder*>(item);
+		bool isBookmark = dynamic_cast<BtBookmarkItem*>(item);
+
+		QRect rect = visualItemRect(item);
+		int xCoord = rtol ? rect.right() : rect.left();
+		int yCoord;
+		if (isFolder) {
+			if (m_dragMovementPosition.y() > rect.bottom() - (2* rect.height()/3) ) {
+				yCoord = rect.bottom() - halfPixHeight; // bottom
+				xCoord = rtol ? (xCoord - indentation()) : (xCoord + indentation());
+			} else {
+				yCoord = rect.top() - halfPixHeight - 1; // top
+			}
+			
+		} else {
+			if (isBookmark) {
+				if (m_dragMovementPosition.y() > rect.bottom() - rect.height()/2) {
+					yCoord = rect.bottom() - halfPixHeight; // bottom
+				} else {
+					yCoord = rect.top() - halfPixHeight - 1; // top
+				}
+			} else {
+				if (item) { // the extra item
+					yCoord = rect.top() - halfPixHeight - 1;
+				} else { // empty area
+					rect = visualItemRect(m_extraItem);
+					yCoord = rect.top() - halfPixHeight - 1;
+					xCoord = rtol ? rect.right() : rect.left();
+				}
+			}
 		}
+		
+		painter.drawPixmap(xCoord, yCoord, pix);
 	}
 }
 
+
 void CBookmarkIndex::dropEvent( QDropEvent* event )
 {
-	//qDebug("CBookmarkIndex::dropEvent");
+	qDebug("CBookmarkIndex::dropEvent");
+
+	setState(QAbstractItemView::NoState);
+
+	QTreeWidgetItem* item = itemAt(event->pos());
+	QTreeWidgetItem* parentItem = 0;
+	int indexUnderParent = 0;
+
+	// Find the place where the drag is dropped
+	if (item) {
+		qDebug()<<"there was item";
+
+		QRect rect = visualItemRect(item);
+		bool isFolder = dynamic_cast<BtBookmarkFolder*>(item);
+		bool isBookmark = dynamic_cast<BtBookmarkItem*>(item);
+
+		if (isFolder) { // item is a folder
+			qDebug()<<"item was folder";
+			if (event->pos().y() > rect.bottom() - (2* rect.height()/3) ) {
+				parentItem = item;
+			} else {
+				parentItem = item->parent();
+				if (!parentItem) {
+					parentItem = invisibleRootItem();
+				}
+				qDebug()<<"item:" << item << "parent:" << parentItem;
+				indexUnderParent = parentItem->indexOfChild(item); // before the current folder
+			}
+		} else {
+			if (isBookmark) { // item is a bookmark
+				qDebug()<<"item was bookmark";
+				parentItem = item->parent();
+				if (!parentItem) {
+					parentItem = invisibleRootItem();
+				}
+				indexUnderParent = parentItem->indexOfChild(item); // before the current bookmark
+				if (event->pos().y() > rect.bottom() - rect.height()/2) {
+					indexUnderParent++; // after the current bookmark
+				}
+			} else { // item is the extra item
+				parentItem = item->parent();
+				if (!parentItem) {
+					parentItem = invisibleRootItem();
+				}
+				indexUnderParent = parentItem->indexOfChild(item); // before the current bookmark
+			}
+		}
+
+	} else { // no item under event point: drop to the end
+		qDebug()<<"there was no item";
+		parentItem = invisibleRootItem();
+		indexUnderParent = parentItem->childCount()-1;
+	}
+
 
 	if ( event->source() == this ) {
-		//qDebug("dropping internal drag, not implemented");
-		// handle the internal drag, see the Qt source code for QTreeWidget::dropEvent for an example
-		//Create a new subtree from the selected items (by copying?)
+		qDebug("dropping internal drag");
+		// handle the internal drag. Don't use the QDrag/MimeData at all.
+		// See startDrag().
+		//Create a new subtree from the selected items.
 		//If the parent folder of the item is also selected, put the item under that parent
 		//If the parent was not selected, find a grandparent which was selected
 		//If no grandparent, put it to top level
 		//Or should we move the subitems of a folder automatically?
+		
+		// Can copy only one folder or items without folders? Or sibling folders. Easier to implement...
+		// But how to indicate that when user tries to select and drag? show a tooltip?
+		// Can't move under moved folder.
+
+
 		// Copy and move could be handled differently?
 
-		// Ask whether to copy or move (with a popup menu)
-	} else {
-		const QPoint pos = event->pos();
-		if (itemAt(pos)) {
-			CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(itemAt(pos));
-			if (i) {
-				if (i->acceptDrop(event)) {
-					createBookmarkFromDrop(event, i);
-				}
-			}
+		// Ask whether to copy or move with a popup menu
+		QMenu* dropPopupMenu = new QMenu(this);
+		QAction* copy = dropPopupMenu->addAction(tr("Copy"));
+		QAction* move = dropPopupMenu->addAction(tr("Move"));
+		QAction* dropAction = dropPopupMenu->exec(QCursor::pos());
+		if (dropAction == copy) {
+			qDebug() << "copy not implemented yet";
 		} else {
-			//drop the new bookmark into top level?
+			if (dropAction == move) {
+				qDebug() << "move not implemented yet";
+			} else return; // user canceled
 		}
+
+	} else {
+		qDebug()<<"the source was outside this";
+		createBookmarkFromDrop(event, parentItem, indexUnderParent);
 	}
 }
 
-void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* droppedIntoItem)
+
+
+// void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, BtBookmarkItemBase* droppedIntoItem)
+// {
+// 	//qDebug("CBookmarkIndex::createBookmarkFromDrop");
+// 	//take the bookmark data from the mime source
+// 	const BTMimeData* mdata = dynamic_cast<const BTMimeData*>(event->mimeData());
+// 	if (mdata) {
+// 		//create the new bookmark
+// 		QString moduleName = mdata->bookmark().module();
+// 		QString keyText = mdata->bookmark().key();
+// 		QString description = mdata->bookmark().description();
+// 		CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
+// 		//CIndexFolderBase* parentItem =
+// 		//TODO: accept drops into items or folders
+// 		BtBookmarkFolder* parentItem =
+// 		dynamic_cast<BtBookmarkFolder*>( dynamic_cast<BtBookmarkFolder*>(droppedIntoItem)?droppedIntoItem:droppedIntoItem->parent());
+// 
+// 		new BtBookmarkItem(parentItem, minfo, keyText, description);
+// 	}
+// }
+
+void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* parentItem, int indexInParent)
 {
 	//qDebug("CBookmarkIndex::createBookmarkFromDrop");
 	//take the bookmark data from the mime source
@@ -313,21 +475,38 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* d
 		QString keyText = mdata->bookmark().key();
 		QString description = mdata->bookmark().description();
 		CSwordModuleInfo* minfo = CPointers::backend()->findModuleByName(moduleName);
-		CIndexFolderBase* parentItem =
-		dynamic_cast<CIndexFolderBase*>( droppedIntoItem->isFolder()?droppedIntoItem:droppedIntoItem->parent());
 
-		new CIndexBookmarkItem(parentItem, minfo, keyText, description);
+		QTreeWidgetItem* newItem = new BtBookmarkItem(0, minfo, keyText, description);
+		parentItem->insertChild(indexInParent, newItem);
 	}
 }
+
 
 /** Load the tree from file */
 void CBookmarkIndex::initTree() {
 	qDebug("CBookmarkIndex::initTree");
-	BtBookmarkLoader loader();
+	BtBookmarkLoader loader;
 	addTopLevelItems(loader.loadTree());
+
+	// add the invisible extra item at the end
+	m_extraItem = new QTreeWidgetItem();
+	m_extraItem->setFlags(Qt::ItemIsDropEnabled);
+	addTopLevelItem(m_extraItem);
 }
 
-/** Use this from dropEvent or move the code somewhere else */
+void CBookmarkIndex::slotItemEntered(QTreeWidgetItem* item, int)
+{
+	qDebug() << "CBookmarkIndex::slotItemEntered";
+	if (item == m_extraItem) {
+		m_extraItem->setText(0, tr("Drag references from text views to this view"));
+	}
+	else {
+		m_extraItem->setText(0, QString::null);
+	}
+}
+
+
+// TODO: Use this from dropEvent or move the code somewhere else */
 void CBookmarkIndex::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*parent*/, QTreeWidgetItem* /*after*/) {
 // 	Q_ASSERT(after);
 // 	Q_ASSERT(parent);
@@ -348,8 +527,8 @@ void CBookmarkIndex::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*parent*/, QT
 // 	}
 //
 // 	//finally do the drop, either with external drop data or with the moved items' data
-// 	CIndexItemBase* const parentItem = dynamic_cast<CIndexItemBase*>(parent);
-// 	CIndexItemBase* const afterItem  = dynamic_cast<CIndexItemBase*>(after);
+// 	BtBookmarkItemBase* const parentItem = dynamic_cast<BtBookmarkItemBase*>(parent);
+// 	BtBookmarkItemBase* const afterItem  = dynamic_cast<BtBookmarkItemBase*>(after);
 //
 // 	bool removeSelectedItems = true;
 // 	bool moveSelectedItems = false;
@@ -418,25 +597,24 @@ void CBookmarkIndex::dropped( QDropEvent* /*e*/, QTreeWidgetItem* /*parent*/, QT
 }
 
 
-
 /** Returns the correct QAction object for the given type of action. */
-QAction* CBookmarkIndex::action( const CIndexItemBase::MenuAction type ) const {
+QAction* CBookmarkIndex::action( BtBookmarkItemBase::MenuAction type ) const {
 	switch (type) {
-	case CIndexItemBase::NewFolder:
+	case BtBookmarkItemBase::NewFolder:
 		return m_actions.newFolder;
-	case CIndexItemBase::ChangeFolder:
+	case BtBookmarkItemBase::ChangeFolder:
 		return m_actions.changeFolder;
 
-	case CIndexItemBase::ChangeBookmark:
+	case BtBookmarkItemBase::ChangeBookmark:
 		return m_actions.changeBookmark;
-	case CIndexItemBase::ImportBookmarks:
+	case BtBookmarkItemBase::ImportBookmarks:
 		return m_actions.importBookmarks;
-	case CIndexItemBase::ExportBookmarks:
+	case BtBookmarkItemBase::ExportBookmarks:
 		return m_actions.exportBookmarks;
-	case CIndexItemBase::PrintBookmarks:
+	case BtBookmarkItemBase::PrintBookmarks:
 		return m_actions.printBookmarks;
 
-	case CIndexItemBase::DeleteEntries:
+	case BtBookmarkItemBase::DeleteEntries:
 		return m_actions.deleteEntries;
 
 	default:
@@ -452,20 +630,20 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 	QTreeWidgetItem* i = itemAt(p);
 	QList<QTreeWidgetItem *> items = selectedItems();
 	//The item which was clicked may not be selected
-	if (i && !items.contains(i))
+	if (i && !items.contains(i) && i != m_extraItem)
 		items.append(i);
 
 	if (items.count() == 0) {
 		//special handling for no selection
-		CIndexItemBase::MenuAction actionType;
-		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
-			actionType = static_cast<CIndexItemBase::MenuAction>(index);
+		BtBookmarkItemBase::MenuAction actionType;
+		for (int index = BtBookmarkItemBase::ActionBegin; index <= BtBookmarkItemBase::ActionEnd; ++index) {
+			actionType = static_cast<BtBookmarkItemBase::MenuAction>(index);
 			if (QAction* a = action(actionType)) {
 				switch (index) {
-				case CIndexItemBase::ExportBookmarks:
-				case CIndexItemBase::ImportBookmarks:
-				case CIndexItemBase::NewFolder:
-				case CIndexItemBase::PrintBookmarks:
+				case BtBookmarkItemBase::ExportBookmarks:
+				case BtBookmarkItemBase::ImportBookmarks:
+				case BtBookmarkItemBase::NewFolder:
+				case BtBookmarkItemBase::PrintBookmarks:
 					a->setEnabled(true);
 					break;
 				default:
@@ -477,29 +655,29 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 	else if (items.count() == 1) {
 		//special handling for one selected item
 
-		CIndexItemBase* item = dynamic_cast<CIndexItemBase*>(items.at(0));
-		CIndexItemBase::MenuAction actionType;
-		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
-			actionType = static_cast<CIndexItemBase::MenuAction>(index);
+		BtBookmarkItemBase* item = dynamic_cast<BtBookmarkItemBase*>(items.at(0));
+		BtBookmarkItemBase::MenuAction actionType;
+		for (int index = BtBookmarkItemBase::ActionBegin; index <= BtBookmarkItemBase::ActionEnd; ++index) {
+			actionType = static_cast<BtBookmarkItemBase::MenuAction>(index);
 			if (QAction* a = action(actionType))
 				a->setEnabled( item->enableAction(actionType) );
 		}
 	}
 	else {
 		//first disable all actions
-		CIndexItemBase::MenuAction actionType;
-		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
-			actionType = static_cast<CIndexItemBase::MenuAction>(index);
+		BtBookmarkItemBase::MenuAction actionType;
+		for (int index = BtBookmarkItemBase::ActionBegin; index <= BtBookmarkItemBase::ActionEnd; ++index) {
+			actionType = static_cast<BtBookmarkItemBase::MenuAction>(index);
 			if (QAction* a = action(actionType))
 				a->setEnabled(false);
 		}
 		//enable the menu items depending on the types of the selected items.
-		for (int index = CIndexItemBase::ActionBegin; index <= CIndexItemBase::ActionEnd; ++index) {
-			actionType = static_cast<CIndexItemBase::MenuAction>(index);
+		for (int index = BtBookmarkItemBase::ActionBegin; index <= BtBookmarkItemBase::ActionEnd; ++index) {
+			actionType = static_cast<BtBookmarkItemBase::MenuAction>(index);
 			bool enableAction = isMultiAction(actionType);
 			QListIterator<QTreeWidgetItem *> it(items);
 			while(it.hasNext()) {
-				CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.next());
+				BtBookmarkItemBase* i = dynamic_cast<BtBookmarkItemBase*>(it.next());
 				enableAction = enableAction && i->enableAction(actionType);
 			}
 			if (enableAction) {
@@ -517,17 +695,26 @@ void CBookmarkIndex::contextMenu(const QPoint& p)
 /** Adds a new subfolder to the current item. */
 void CBookmarkIndex::createNewFolder() {
 	//qDebug("CBookmarkIndex::createNewFolder");
-	CIndexFolderBase* i = dynamic_cast<CIndexFolderBase*>(currentItem());
-	Q_ASSERT(i);
-
-	if (i) {
-		i->newSubFolder();
+	QList<QTreeWidgetItem*> selected = selectedItems();
+	if (selected.count() > 0) {
+		BtBookmarkFolder* i = dynamic_cast<BtBookmarkFolder*>(currentItem());
+		if (i) {
+			i->newSubFolder();
+		}
+	}
+	else {
+		// create a top level folder
+		BtBookmarkFolder* newFolder = new BtBookmarkFolder(0, QObject::tr("New folder"));
+		//parentFolder->addChild(newFolder);
+		insertTopLevelItem(topLevelItemCount()-1, newFolder);
+		newFolder->update();
+		newFolder->rename();
 	}
 }
 
 /** Opens a dialog to change the current folder. */
 void CBookmarkIndex::changeFolder() {
-	CIndexFolderBase* i = dynamic_cast<CIndexFolderBase*>(currentItem());
+	BtBookmarkFolder* i = dynamic_cast<BtBookmarkFolder*>(currentItem());
 	Q_ASSERT(i);
 	if (i) {
 		i->rename();
@@ -536,7 +723,7 @@ void CBookmarkIndex::changeFolder() {
 
 /** Changes the current bookmark. */
 void CBookmarkIndex::changeBookmark() {
-	CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(currentItem());
+	BtBookmarkItem* i = dynamic_cast<BtBookmarkItem*>(currentItem());
 	Q_ASSERT(i);
 
 	if (i) {
@@ -546,7 +733,7 @@ void CBookmarkIndex::changeBookmark() {
 
 /** Exports the bookmarks being in the selected folder. */
 void CBookmarkIndex::exportBookmarks() {
-	CIndexBookmarkFolder* i = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
+	BtBookmarkFolder* i = dynamic_cast<BtBookmarkFolder*>(currentItem());
 	Q_ASSERT(i);
 
 	if (i) {
@@ -556,7 +743,7 @@ void CBookmarkIndex::exportBookmarks() {
 
 /** Import bookmarks from a file and add them to the selected folder. */
 void CBookmarkIndex::importBookmarks() {
-	CIndexBookmarkFolder* i = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
+	BtBookmarkFolder* i = dynamic_cast<BtBookmarkFolder*>(currentItem());
 	Q_ASSERT(i);
 
 	if (i) {
@@ -571,7 +758,7 @@ void CBookmarkIndex::printBookmarks() {
 	settings.keyRenderingFace = Printing::CPrinter::KeyTreeItem::Settings::CompleteShort;
 
 	QList<QTreeWidgetItem*> items;
-	CIndexBookmarkFolder* bf = dynamic_cast<CIndexBookmarkFolder*>(currentItem());
+	BtBookmarkFolder* bf = dynamic_cast<BtBookmarkFolder*>(currentItem());
 
 	if (bf) {
 		items = bf->getChildList();
@@ -583,7 +770,7 @@ void CBookmarkIndex::printBookmarks() {
 	//create a tree of keytreeitems using the bookmark hierarchy.
 	QListIterator<QTreeWidgetItem*> it(items);
 	while(it.hasNext()) {
-		CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(it.next());
+		BtBookmarkItem* i = dynamic_cast<BtBookmarkItem*>(it.next());
 		if (i) {
 			tree.append( new Printing::CPrinter::KeyTreeItem( i->key(), i->module(), settings ) );
 		}
@@ -599,7 +786,7 @@ void CBookmarkIndex::printBookmarks() {
 void CBookmarkIndex::deleteEntries()
 {
 	if (!selectedItems().count()) {
-		CIndexItemBase* f = dynamic_cast<CIndexItemBase*>(currentItem());
+		BtBookmarkItemBase* f = dynamic_cast<BtBookmarkItemBase*>(currentItem());
 		if (f) {
 			currentItem()->setSelected(true);
 		} else {
@@ -618,25 +805,24 @@ void CBookmarkIndex::deleteEntries()
 }
 
 
+/*
+Reimplementation from QAbstractItemView/QTreeWidget. Takes care of movable items.
+It's easier to use this than to start drag with mouse event handlers.
+The default implementation would drag items, but we don't call it. Instead we create
+a BibleTime mimedata object. It can be dragged and dropped to a text view or somewhere else.
+The internal drag is handled differently, it doesn't use the mimedata (see dropEvent()).
+*/
+void CBookmarkIndex::startDrag(Qt::DropActions supportedActions)
+{
+	qDebug("CBookmarkIndex::startDrag");
 
-
-/** Reimplementation. Takes care of movable items. */
-//void CBookmarkIndex::startDrag(Qt::DropActions supportedActions) {
-// 	QList<QTreeWidgetItem *> items = selectedItems();
-// 	QListIterator<QTreeWidgetItem *> it(items);
-// 	m_itemsMovable = true;
-//
-// 	while(it.hasNext() && m_itemsMovable) {
-// 		if (CIndexItemBase* i = dynamic_cast<CIndexItemBase*>(it.next())) {
-// 			m_itemsMovable = (m_itemsMovable && i->isMovable());
-// 		}
-// 		else {
-// 			m_itemsMovable = false;
-// 		}
-// 	}
-//
-// 	QTreeWidget::startDrag();
-//}
+	QMimeData* mData = dragObject(); // create the data which can be used in other widgets
+	QDrag* drag = new QDrag(this);
+	drag->setMimeData(mData);
+	Qt::DropAction dropAction = drag->exec();
+	viewport()->update(); // because of the arrow
+			
+}
 
 
 
@@ -644,55 +830,44 @@ void CBookmarkIndex::deleteEntries()
 
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
-bool CBookmarkIndex::isMultiAction( const CIndexItemBase::MenuAction type ) const {
+bool CBookmarkIndex::isMultiAction( const BtBookmarkItemBase::MenuAction type ) const {
 	switch (type) {
-	case CIndexItemBase::NewFolder:
+	case BtBookmarkItemBase::NewFolder:
 		return false;
-	case CIndexItemBase::ChangeFolder:
+	case BtBookmarkItemBase::ChangeFolder:
 		return false;
 
-	case CIndexItemBase::ChangeBookmark:
+	case BtBookmarkItemBase::ChangeBookmark:
 		return false;
-	case CIndexItemBase::ImportBookmarks:
+	case BtBookmarkItemBase::ImportBookmarks:
 		return false;
-	case CIndexItemBase::ExportBookmarks:
+	case BtBookmarkItemBase::ExportBookmarks:
 		return false;
-	case CIndexItemBase::PrintBookmarks:
+	case BtBookmarkItemBase::PrintBookmarks:
 		return true;
 
-	case CIndexItemBase::DeleteEntries:
+	case BtBookmarkItemBase::DeleteEntries:
 		return true;
 	}
 
 	return false;
 }
 
-/** Is called when items should be moved. */
-void CBookmarkIndex::moved( QList<QTreeWidgetItem>& /*items*/, QList<QTreeWidgetItem>& /*afterFirst*/, QList<QTreeWidgetItem>& /*afterNow*/) {
-	//qDebug("move items");
-}
-
-void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int /*index*/)
-{
-	CIndexBookmarkItem* i = dynamic_cast<CIndexBookmarkItem*>(item);
-	if (i){
-		//i->setDescription(item->text(index)); no no no!!! why this was here???
-	}
-}
 
 /** Saves the bookmarks to disk */
 void CBookmarkIndex::saveBookmarks() {
 
 	qDebug("CBookmarkIndex::saveBookmarks()");
-	BtBookmarkLoader loader();
+	BtBookmarkLoader loader;
 	loader.saveTreeFromRootItem(invisibleRootItem());
 	//qDebug("CBookmarkIndex::saveBookmarks end");
 }
 
 void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 {
-	////qDebug("CBookmarkIndex::mouseMoveEvent");
-	// Restart timer if we have moved to another item and shift was not pressed
+	qDebug() << "CBookmarkIndex::mouseMoveEvent";
+
+	// Restart the mag timer if we have moved to another item and shift was not pressed.
 	QTreeWidgetItem* itemUnderPointer = itemAt(event->pos());
 	if (itemUnderPointer && (itemUnderPointer != m_previousEventItem) ) {
 		//qDebug("CBookmarkIndex::mouseMoveEvent, moved onto another item");
@@ -701,6 +876,13 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 		}
 	}
 	m_previousEventItem = itemUnderPointer;
+
+	// Clear the extra item text unless we are on top of it
+	if ( (itemUnderPointer != m_extraItem) && !m_extraItem->text(0).isNull()) {
+		m_extraItem->setText(0, QString::null);
+	}
+
+	QTreeWidget::mouseMoveEvent(event);
 }
 
 void CBookmarkIndex::magTimeout()
@@ -713,7 +895,7 @@ void CBookmarkIndex::magTimeout()
 	}
 	// if the mouse pointer have been over the same item since the timer was started
 	if (itemUnderPointer && (m_previousEventItem == itemUnderPointer)) {
-		CIndexBookmarkItem* bitem = dynamic_cast<CIndexBookmarkItem*>(itemUnderPointer);
+		BtBookmarkItem* bitem = dynamic_cast<BtBookmarkItem*>(itemUnderPointer);
 		if (bitem) {
 			//qDebug("CBookmarkIndex::timerEvent: update the infodisplay");
 			// Update the mag

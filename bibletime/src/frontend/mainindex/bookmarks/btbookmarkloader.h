@@ -10,8 +10,11 @@
 #ifndef BTBOOKMARKCREATOR_H
 #define BTBOOKMARKCREATOR_H
 
+#include "util/directoryutil.h"
+
 #include <QList>
 #include <QDomElement>
+
 
 class QTreeWidgetItem;
 

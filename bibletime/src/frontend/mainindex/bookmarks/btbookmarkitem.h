@@ -13,38 +13,44 @@
 
 #include "btbookmarkitembase.h"
 
+#include <QString>
+
+class BtBookmarkFolder;
+class CSwordModuleInfo;
+
 class BtBookmarkItem : public BtBookmarkItemBase
 {
 public:
 	friend class BtBookmarkLoader;
 	BtBookmarkItem(QTreeWidgetItem* parent);
+	BtBookmarkItem(BtBookmarkItemBase* sibling, BtBookmarkItemBase::Location location, CSwordModuleInfo* module, QString key, QString& description);
+	BtBookmarkItem(BtBookmarkFolder* parent, CSwordModuleInfo* module, QString key, QString& description);
 	~BtBookmarkItem() {}
 
 	/** Returns the used module, 0 if there is no such module. */
-	CSwordModuleInfo* const module();
+	CSwordModuleInfo* module();
 
 	/** Returns the used key. */
-	const QString key();
+	QString key();
 
 	/** Returns the used description. */
 	const QString& description();
 	/** Sets the description text for this bookmark. */
 	virtual void setDescription(QString text);
 
-	//virtual QDomElement saveToXml( QDomDocument& document );
-	//virtual void loadFromXml( QDomElement& element );
+	virtual QString toolTip();
 
-	virtual const QString toolTip();
-
-	virtual bool enableAction(const MenuAction action);
+	virtual bool enableAction(MenuAction action);
 	/**
 	* Changes this bookmark.
 	*/
 	virtual void rename();
 
+	void update();
+
 private:
 	/** Returns the english key.*/
-	const QString& englishKey() const;
+	QString englishKey() const;
 
 	QString m_key;
 	QString m_description;

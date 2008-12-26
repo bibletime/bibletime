@@ -11,15 +11,12 @@
 #define BTBOOKMARKITEMBASE_H
 
 
-#include "cindexitembase.h"
-#include "cbookmarkindex.h"
-
 #include <QTreeWidgetItem>
 #include <QString>
 #include <QMimeData>
 #include <QDropEvent>
 
-
+class CBookmarkIndex;
 
 
 class BtBookmarkItemBase : public QTreeWidgetItem
@@ -41,30 +38,36 @@ public:
 		ActionEnd = DeleteEntries
 	};
 
+	/** Where to drop/create item(s): above, below or inside an item.*/
+	enum Location {Above, Below, Inside};
+
+	BtBookmarkItemBase();
+	BtBookmarkItemBase(QTreeWidgetItem* parent);
 	virtual ~BtBookmarkItemBase() {}
 
-	virtual void init();
-	virtual const QString toolTip();
-	virtual CBookmarkIndex* treeWidget() const;
+	//virtual void init();
+	virtual QString toolTip() = 0;
+	virtual CBookmarkIndex* bookmarkWidget() const;
 
-	virtual void addPreviousSibling(BtBookmarkItemBase* item);
-	virtual void addNextSibling(BtBookmarkItemBase* item);
+	//virtual void addPreviousSibling(BtBookmarkItemBase* item);
+	//virtual void addNextSibling(BtBookmarkItemBase* item);
 
 	/**
 	* Returns true if the given action should be enabled in the popup menu.
 	*/
-	virtual bool enableAction( const MenuAction action );
+	virtual bool enableAction( MenuAction action ) = 0;
 
-	virtual QList<QTreeWidgetItem*> getChildList();
+	//virtual QList<QTreeWidgetItem*> getChildList();
 
-	virtual bool acceptDrop(QDropEvent* e) const;
+	virtual bool acceptDrop(QDropEvent*) const {return true;}
 
-	virtual void rename();
+	virtual void rename() = 0;
+	virtual void update() {}
 
 protected:
 	friend class CMainIndex;
 
-	virtual void dropped( QDropEvent* e);
+	//virtual void dropped( QDropEvent* e);
 };
 
 #endif

@@ -329,6 +329,9 @@ void CHTMLReadDisplay::khtmlMousePressEvent( khtml::MousePressEvent* event ) {
 
 /** Reimplementation for our drag&drop system. Also needed for the mouse tracking */
 void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
+	//qDebug() << "CHTMLReadDisplay::khtmlMouseMoveEvent";
+
+	bool dontCallKhtmlEvent = false;
 
 	if( (e->qmouseEvent()->buttons() & Qt::LeftButton) && !m_dndData.isDragging && m_dndData.mousePressed) {
 		if ((e->qmouseEvent()->pos() - m_dndData.startPos).manhattanLength() > qApp->startDragDistance()) {
@@ -363,7 +366,10 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 				//first make a virtual mouse click to end the selection, if it's in progress
 				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
 				QApplication::sendEvent(view()->viewport(), &e);
+				//qDebug() << "CHTMLReadDisplay::khtmlMouseMoveEvent: execute drag";
 				d->exec(Qt::CopyAction, Qt::CopyAction);
+				//qDebug() << "CHTMLReadDisplay::khtmlMouseMoveEvent: return from drag";
+				dontCallKhtmlEvent = true;
 			}
 		}
 	}
@@ -385,15 +391,20 @@ void CHTMLReadDisplay::khtmlMouseMoveEvent( khtml::MouseMoveEvent* e ) {
 		}
 	}
 
-	//ugly hack:
-	// we need KHTMLPart::khtmlMouseMoveEvent because it handles selection.
-	// But it also creates an unwanted URL drag automatically. This was the only way to
-	// prevent it which I could find.
-	KConfigGroup g( KGlobal::config(), "General" );
-	int origDist = g.readEntry("StartDragDist", QApplication::startDragDistance());
-	g.writeEntry("StartDragDist", 100000);
-	KHTMLPart::khtmlMouseMoveEvent(e);
-	g.writeEntry("StartDragDist", origDist);
+	// no need to execute this if drag was executed, and this may cause problems after drag
+	if (!dontCallKhtmlEvent) {
+		//ugly hack:
+		// we need KHTMLPart::khtmlMouseMoveEvent because it handles selection.
+		// But it also creates an unwanted URL drag automatically. This was the only way to
+		// prevent it which I could find.
+		KConfigGroup g( KGlobal::config(), "General" );
+		int origDist = g.readEntry("StartDragDist", QApplication::startDragDistance());
+		g.writeEntry("StartDragDist", 100000);
+		//qDebug() << "CHTMLReadDisplay::khtmlMouseMoveEvent: call KHTMLPart::khtmlMouseMoveEvent";
+		KHTMLPart::khtmlMouseMoveEvent(e);
+		//qDebug() << "CHTMLReadDisplay::khtmlMouseMoveEvent: returned from KHTMLPart::khtmlMouseMoveEvent";
+		g.writeEntry("StartDragDist", origDist);
+	}
 }
 
 /** The Mag window update happens here if the mouse has not moved to another node after starting the timer.*/

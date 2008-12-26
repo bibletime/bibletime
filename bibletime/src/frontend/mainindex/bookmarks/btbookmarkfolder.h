@@ -17,17 +17,23 @@
 
 class BtBookmarkFolder : public BtBookmarkItemBase
 {
-	Q_OBJECT
 public:
 	friend class BtBookmarkLoader;
-	BtBookmarkFolder(QTreeWidgetItem* parent);
-	~BtBookmarkFolder();
+	BtBookmarkFolder(QTreeWidgetItem* parent, QString name);
+	~BtBookmarkFolder() {}
 
-	virtual void init();
+	//virtual void init();
 	void addFirstChild(BtBookmarkItemBase* item);
 	virtual bool enableAction(const MenuAction action);
 	virtual void exportBookmarks();
 	virtual void importBookmarks();
+
+	void newSubFolder();
+	QList<QTreeWidgetItem*> getChildList();
+	void rename();
+	void update();
+
+	QString toolTip();
 };
 
 #endif

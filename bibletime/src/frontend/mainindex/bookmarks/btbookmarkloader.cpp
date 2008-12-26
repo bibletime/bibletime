@@ -13,6 +13,7 @@
 #include "btbookmarkfolder.h"
 
 #include "util/ctoolclass.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QTreeWidgetItem>
 #include <QDomElement>
@@ -23,10 +24,13 @@
 #include <QIODevice>
 #include <QTextCodec>
 
+#include <QDebug>
+
 #define CURRENT_SYNTAX_VERSION 1
 
 QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
 {
+	qDebug() << "BtBookmarkLoader::loadTree";
 	QList<QTreeWidgetItem*> itemList;
 	
 	QDomDocument doc;
@@ -43,10 +47,13 @@ QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
 	QDomElement child = document.firstChild().toElement();
 
 	while ( !child.isNull() && child.parentNode() == document) {
+		qDebug() << "BtBookmarkLoader::loadTree while start";
 		QTreeWidgetItem* i = handleXmlElement(child, 0);
 		itemList.append(i);
 		if (!child.nextSibling().isNull()) {
 			child = child.nextSibling().toElement();
+		} else {
+			child = QDomElement(); //null
 		}
 		
 	}
@@ -56,20 +63,26 @@ QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
 
 QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeWidgetItem* parent)
 {
+	qDebug() << "BtBookmarkLoader::handleXmlElement";
 	QTreeWidgetItem* newItem = 0;
 	if (element.tagName() == "Folder") {
-		BtBookmarkFolder* newFolder = new BtBookmarkFolder(parent);
+		qDebug() << "BtBookmarkLoader::handleXmlElement: found folder";
+		BtBookmarkFolder* newFolder = new BtBookmarkFolder(parent, QString());
 		if (element.hasAttribute("caption")) {
 			newFolder->setText(0, element.attribute("caption"));
 		}
-		foreach (QDomNode node, element.childNodes()) {
-			QDomElement newElement = node.toElement();
+		QDomNodeList childList = element.childNodes();
+		for (unsigned int i = 0; i < childList.length(); i++) {
+			qDebug() << "BtBookmarkLoader::handleXmlElement: go through child list of folder";
+			QDomElement newElement = childList.at(i).toElement();
 			QTreeWidgetItem* newChildItem = handleXmlElement(newElement, newFolder);
 			newFolder->addChild(newChildItem);
 		}
+		newFolder->update();
 		newItem = newFolder;
 	}
 	else if (element.tagName() == "Bookmark") {
+		qDebug() << "BtBookmarkLoader::handleXmlElement: found bookmark";
 		BtBookmarkItem* newBookmarkItem = new BtBookmarkItem(parent);
 		if (element.hasAttribute("modulename")) {
 			//we use the name in all cases, even if the module isn't installed anymore
@@ -81,16 +94,18 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
 		if (element.hasAttribute("description")) {
 			newBookmarkItem->m_description = element.attribute("description");
 		}
+		newBookmarkItem->update();
 		newItem = newBookmarkItem;
 	}
-	
+	qDebug() << "BtBookmarkLoader::handleXmlElement: return new item";
 	return newItem;
 }
 
 
 QString BtBookmarkLoader::loadXmlFromFile()
 {
-	QFile file(FILENAME);
+	QString bookmarkFileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+	QFile file(bookmarkFileName);
 	if (!file.exists())
 		return QString();
 
@@ -108,8 +123,8 @@ QString BtBookmarkLoader::loadXmlFromFile()
 
 void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
 {
-	const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
-	if (!path.isEmpty()) {
+	QString bookmarkFileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+	if (/*!path.isEmpty()*/true) {
 
 		QDomDocument doc("DOC");
 		doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
@@ -120,10 +135,10 @@ void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
 	
 		//append the XML nodes of all child items
 	
-		foreach(QTreeWidgetItem* childItem, rootItem->children()) {
-			saveItem(childItem, content);
+		for (int i = 0; i < rootItem->childCount(); i++) {
+			saveItem(rootItem->child(i), content);
 		}
-		return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
+		CToolClass::savePlainFile(bookmarkFileName, doc.toString(), true, QTextCodec::codecForName("UTF-8"));
 	}
 }
 
@@ -132,23 +147,23 @@ void BtBookmarkLoader::saveItem(QTreeWidgetItem* item, QDomElement& parentElemen
 	BtBookmarkFolder* folderItem = 0;
 	BtBookmarkItem* bookmarkItem = 0;
 
-	if (folderItem = dynamic_cast<BtBookmarkFolder*>(item)) {
-		QDomElement elem = doc.createElement("Folder");
-		elem.setAttribute("caption", text(0));
+	if ((folderItem = dynamic_cast<BtBookmarkFolder*>(item))) {
+		QDomElement elem = parentElement.ownerDocument().createElement("Folder");
+		elem.setAttribute("caption", folderItem->text(0));
 
 		parentElement.appendChild(elem);
 
-		foreach (QTreeWidgetItem* subItem, folderItem->children()) {
-			saveItem(subItem, elem);
+		for (int i = 0; i < folderItem->childCount(); i++) {
+			saveItem(folderItem->child(i), elem);
 		}
 	}
-	else if (bookmarkItem = dynamic_cast<BtBookmarkItem*>(item)) {
-		QDomElement elem = doc.createElement("Bookmark");
+	else if ((bookmarkItem = dynamic_cast<BtBookmarkItem*>(item))) {
+		QDomElement elem = parentElement.ownerDocument().createElement("Bookmark");
 
-		elem.setAttribute("key", englishKey());
-		elem.setAttribute("description", description());
-		elem.setAttribute("modulename", m_moduleName);
-		elem.setAttribute("moduledescription", module() ? module()->config(CSwordModuleInfo::Description) : QString::null);
+		elem.setAttribute("key", bookmarkItem->englishKey());
+		elem.setAttribute("description", bookmarkItem->description());
+		elem.setAttribute("modulename", bookmarkItem->m_moduleName);
+		elem.setAttribute("moduledescription", bookmarkItem->module() ? bookmarkItem->module()->config(CSwordModuleInfo::Description) : QString::null);
 
 		parentElement.appendChild(elem);
 	}

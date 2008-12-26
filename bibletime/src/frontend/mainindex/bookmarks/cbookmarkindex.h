@@ -11,7 +11,7 @@
 #define CBOOKMARKINDEX_H
 
 //BibleTime includes
-#include "cindexitembase.h"
+#include "btbookmarkitembase.h"
 
 class CSwordModuleInfo;
 #include "frontend/displaywindow/cdisplaywindow.h"
@@ -34,6 +34,7 @@ class QDragLeaveEvent;
 class BTMimeData;
 class QMenu;
 class QAction;
+class QPaintEvent;
 
 class QMouseEvent;
 
@@ -63,9 +64,13 @@ signals:
 
 protected: // Protected methods
 
+	//virtual bool event(QEvent* e);
+
 	// A hack to get the modifiers
 	virtual void mouseReleaseEvent(QMouseEvent* event);
-
+	/** Needed to paint an drag pointer arrow. */
+	virtual void paintEvent(QPaintEvent* event);
+	//virtual void mousePressEvent(QMouseEvent* event);
 
 	/**
 	* Initialize the SIGNAL<->SLOT connections
@@ -73,26 +78,28 @@ protected: // Protected methods
 	void initConnections();
 
 	/**
-	* Reimplementation. Returns the drag object for the current selection.
+	* Returns the drag object for the current selection.
 	*/
 	virtual QMimeData* dragObject();
 
 	/**
-	* Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the listview.
+	* D'n'd methods are reimplementations from QTreeWidget or its ancestors.
+	* In these we handle creating, moving and copying bookmarks with d'n'd.
 	*/
 	virtual void dragEnterEvent( QDragEnterEvent* event );
 	virtual void dragMoveEvent( QDragMoveEvent* event );
 	virtual void dropEvent( QDropEvent* event );
+	virtual void dragLeaveEvent( QDragLeaveEvent* event );
 
 	/**
 	* Returns the correct action object for the given type of action.
 	*/
-	QAction* action( const CIndexItemBase::MenuAction type ) const;
+	QAction* action( BtBookmarkItemBase::MenuAction type ) const;
 
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
-	//virtual void startDrag(Qt::DropActions supportedActions);
+	virtual void startDrag(Qt::DropActions supportedActions);
 
 
 	/**
@@ -102,10 +109,14 @@ protected: // Protected methods
 
 
 protected slots:
+	
+
 	/**
 	* Is called when an item was clicked or activated.
 	*/
 	void slotExecuted( QTreeWidgetItem* );
+
+
 
 	void dropped( QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*);
 
@@ -134,7 +145,8 @@ protected slots:
 	*/
 	void changeBookmark();
 
-	void slotItemChanged(QTreeWidgetItem*, int);
+	//void slotItemChanged(QTreeWidgetItem*, int);
+	void slotItemEntered(QTreeWidgetItem*, int);
 
 	/**
 	* Import bookmarks from a file and add them to the selected folder.
@@ -156,11 +168,6 @@ protected slots:
 	*/
 	void magTimeout();
 
-	/**
-	* Is called when items should be moved.
-	*/
-	void moved( QList<QTreeWidgetItem>& items, QList<QTreeWidgetItem>& afterFirst, QList<QTreeWidgetItem>& afterNow);
-
 
 private:
 
@@ -175,12 +182,17 @@ private:
 	* Returns true if more than one netry is supported by this action type.
 	* Returns false for actions which support only one entry.
 	*/
-	bool isMultiAction( const CIndexItemBase::MenuAction type ) const;
+	bool isMultiAction( const BtBookmarkItemBase::MenuAction type ) const;
 
 	/**
 	* A helper function for d'n'd which creates a new bookmark item when drop happens.
 	*/
-	void createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* droppedIntoItem);
+	//void createBookmarkFromDrop(QDropEvent* event, BtBookmarkItemBase* droppedIntoItem);
+
+	/**
+	* A helper function for d'n'd which creates a new bookmark item when drop happens.
+	*/
+	void createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* parentItem, int indexInParent);
 
 	struct Actions {
 		QAction* newFolder;
@@ -196,10 +208,12 @@ private:
 	m_actions;
 
 	QMenu* m_popup;
-	bool m_itemsMovable;
+	//bool m_itemsMovable;
 	QTimer m_magTimer;
 	int m_mouseReleaseEventModifiers;
 	QTreeWidgetItem* m_previousEventItem;
+	QPoint m_dragMovementPosition;
+	QTreeWidgetItem* m_extraItem;
 };
 
 #endif
