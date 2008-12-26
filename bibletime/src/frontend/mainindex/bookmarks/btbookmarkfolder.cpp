@@ -1,6 +1,7 @@
 #include "btbookmarkfolder.h"
 
-BtBookmarkFolder::BtBookmarkFolder(CBookmarkIndex* indexWidget)
+BtBookmarkFolder::BtBookmarkFolder(QTreeWidgetItem* parent)
+	: BtBookmarkItemBase(parent)
 {
 
 }

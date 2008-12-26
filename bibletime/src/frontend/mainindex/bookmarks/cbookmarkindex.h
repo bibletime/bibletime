@@ -66,10 +66,7 @@ protected: // Protected methods
 	// A hack to get the modifiers
 	virtual void mouseReleaseEvent(QMouseEvent* event);
 
-	/**
-	* Reimplementation. Adds the given group to the tree.
-	*/
-	virtual void addGroup( const CIndexItemBase::Type type, const QString language);
+
 	/**
 	* Initialize the SIGNAL<->SLOT connections
 	*/

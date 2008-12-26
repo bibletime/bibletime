@@ -10,10 +10,10 @@
 //BibleTime includes
 #include "cbookmarkindex.h"
 
-#include "cindexitembase.h"
-#include "cindexbookmarkitem.h"
-#include "cindexbookmarkfolder.h"
-#include "cindexsubfolder.h"
+#include "btbookmarkitembase.h"
+#include "btbookmarkitem.h"
+#include "btbookmarkfolder.h"
+#include "btbookmarkloader.h"
 
 #include "backend/managers/creferencemanager.h"
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -45,11 +45,10 @@
 #include <QCursor>
 #include <QMouseEvent>
 #include <QMessageBox>
-#include <QDebug>
 #include <QMenu>
 #include <QAction>
 
-
+#include <QDebug>
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 	: QTreeWidget(parent),
@@ -70,23 +69,6 @@ CBookmarkIndex::CBookmarkIndex(QWidget *parent)
 
 CBookmarkIndex::~CBookmarkIndex() {
 	saveBookmarks();
-}
-
-/** Reimplementation. Adds the given group to the tree. */
-void CBookmarkIndex::addGroup(const CIndexItemBase::Type type, const QString /*language*/) {
-	//qDebug("CBookmarkIndex::addGroup");
-	CIndexTreeFolder *i = 0;
-	switch (type) {
-		case CIndexItemBase::BookmarkFolder:
-			//qDebug("case CIndexItemBase::BookmarkFolder");
-			i = new CIndexBookmarkFolder(this);
-			break;
-		default: break;
-	}
-
-	if (i) {
-		i->init();
-	}
 }
 
 
@@ -341,10 +323,11 @@ void CBookmarkIndex::createBookmarkFromDrop(QDropEvent* event, CIndexItemBase* d
 	}
 }
 
-/** No descriptions */
+/** Load the tree from file */
 void CBookmarkIndex::initTree() {
-	//qDebug("CBookmarkIndex::initTree");
-	addGroup(CIndexItemBase::BookmarkFolder, QString("*"));
+	qDebug("CBookmarkIndex::initTree");
+	BtBookmarkLoader loader();
+	addTopLevelItems(loader.loadTree());
 }
 
 /** Use this from dropEvent or move the code somewhere else */
@@ -707,29 +690,10 @@ void CBookmarkIndex::slotItemChanged(QTreeWidgetItem* item, int /*index*/)
 
 /** Saves the bookmarks to disk */
 void CBookmarkIndex::saveBookmarks() {
-	//qDebug("CBookmarkIndex::saveBookmarks");
-	//find the bookmark folder
-	CIndexItemBase* i = 0;
 
-	QTreeWidgetItemIterator it( this );
-	while ( *it ) {
-		i = dynamic_cast<CIndexItemBase*>( *it );
-
-		if (i && (i->type() == CIndexItemBase::BookmarkFolder)) {
-			//found the bookmark folder
-
-			const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
-			if (!path.isEmpty()) {
-				//save the bookmarks to the right file
-				if (CIndexBookmarkFolder* f = dynamic_cast<CIndexBookmarkFolder*>(i)) {
-					f->saveBookmarks( path + "bookmarks.xml" );
-				}
-			}
-			break;
-		}
-
-		++it;
-	}
+	qDebug("CBookmarkIndex::saveBookmarks()");
+	BtBookmarkLoader loader();
+	loader.saveTreeFromRootItem(invisibleRootItem());
 	//qDebug("CBookmarkIndex::saveBookmarks end");
 }
 

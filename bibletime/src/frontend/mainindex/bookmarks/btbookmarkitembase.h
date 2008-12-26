@@ -56,6 +56,8 @@ public:
 
 	virtual bool acceptDrop(QDropEvent* e) const;
 
+	virtual void rename();
+
 protected:
 	friend class CMainIndex;
 

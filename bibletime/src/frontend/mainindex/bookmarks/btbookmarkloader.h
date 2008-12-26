@@ -10,19 +10,20 @@
 #ifndef BTBOOKMARKCREATOR_H
 #define BTBOOKMARKCREATOR_H
 
+#include <QList>
+#include <QDomElement>
+
+class QTreeWidgetItem;
+
 class BtBookmarkLoader
 {
 public:
-	QTreeWidgetItem* loadTree();
-	QTreeWidgetItem* loadOldTree();
+	QList<QTreeWidgetItem*> loadTree();
 	void saveTreeFromRootItem(QTreeWidgetItem* rootItem);
 
 private:
-	QTreeWidgetItem* loadFolder();
-	QTreeWidgetItem* loadItem();
-
-	QTreeWidgetItem* loadOldFolder();
-	QTreeWidgetItem* loadOldItem();
+	QTreeWidgetItem* handleXmlElement(QDomElement element, QTreeWidgetItem* parent);
+	QString loadXmlFromFile();
 };
 
 #endif

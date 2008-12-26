@@ -19,11 +19,14 @@ class BtBookmarkFolder : public BtBookmarkItemBase
 {
 	Q_OBJECT
 public:
-	BtBookmarkFolder(CBookmarkIndex* indexWidget);
+	BtBookmarkFolder(QTreeWidgetItem* parent);
 	~BtBookmarkFolder();
 
 	virtual void init();
 	void addFirstChild(BtBookmarkItemBase* item);
+	virtual const bool enableAction(const MenuAction action);
+	virtual void exportBookmarks();
+	virtual void importBookmarks();
 };
 
 #endif
