@@ -75,6 +75,7 @@ void CIndexBookmarkItem::update() {
 }
 
 void CIndexBookmarkItem::init() {
+	CIndexItemBase::init();
 	if (!m_startupXML.isNull()) { //we have some XML code to parse
 		loadFromXML(m_startupXML);
 	}
