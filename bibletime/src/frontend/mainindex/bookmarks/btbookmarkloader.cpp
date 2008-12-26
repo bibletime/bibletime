@@ -9,6 +9,8 @@
 
 #include "btbookmarkloader.h"
 
+#include "util/ctoolclass.h"
+
 #include <QTreeWidgetItem>
 #include <QDomElement>
 #include <QDomNode>
@@ -99,32 +101,46 @@ BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
 {
 	const QString path = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/";
 	if (!path.isEmpty()) {
-		//save the bookmarks to the right file
-		if (CIndexBookmarkFolder* f = dynamic_cast<CIndexBookmarkFolder*>(i)) {
-			f->saveBookmarks( path + "bookmarks.xml" );
+
+		QDomDocument doc("DOC");
+		doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+	
+		QDomElement content = doc.createElement("SwordBookmarks");
+		content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
+		doc.appendChild(content);
+	
+		//append the XML nodes of all child items
+	
+		foreach(QTreeWidgetItem* childItem, rootItem->children()) {
+			saveItem(childItem, content);
+		}
+		return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
+	}
+}
+
+void BtBookmarkLoader::saveItem(QTreeWidgetItem* item, QDomElement& parentElement)
+{
+	BtBookmarkFolder* folderItem = 0;
+	BtBookmarkItem* bookmarkItem = 0;
+
+	if (folderItem = dynamic_cast<BtBookmarkFolder*>(item)) {
+		QDomElement elem = doc.createElement("Folder");
+		elem.setAttribute("caption", text(0));
+
+		parentElement.appendChild(elem);
+
+		foreach (QTreeWidgetItem* subItem, folderItem->children()) {
+			saveItem(subItem, elem);
 		}
 	}
+	else if (bookmarkItem = dynamic_cast<BtBookmarkItem*>(item)) {
+		QDomElement elem = doc.createElement("Bookmark");
 
-	//f::saveBookmarks
-	QDomDocument doc("DOC");
-	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+		elem.setAttribute("key", englishKey());
+		elem.setAttribute("description", description());
+		elem.setAttribute("modulename", m_moduleName);
+		elem.setAttribute("moduledescription", module() ? module()->config(CSwordModuleInfo::Description) : QString::null);
 
-	QDomElement content = doc.createElement("SwordBookmarks");
-	content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
-	doc.appendChild(content);
-
-	//append the XML nodes of all child items
-
-	for(int n = 0; n < childCount(); n++) {
-		CIndexItemBase* i = dynamic_cast<CIndexItemBase*>( child(n) );
-		if (i->parent() == this) { //only one level under this folder
-			QDomElement newElem = i->saveToXML( doc ); // the child creates it's own XML code
-			if (!newElem.isNull()) {
-				content.appendChild( newElem ); //append to this folder
-			}
-		}
-
+		parentElement.appendChild(elem);
 	}
-	return CToolClass::savePlainFile(filename, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
-
 }

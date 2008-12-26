@@ -71,20 +71,24 @@ protected: // Protected methods
 	* Initialize the SIGNAL<->SLOT connections
 	*/
 	void initConnections();
+
 	/**
 	* Reimplementation. Returns the drag object for the current selection.
 	*/
 	virtual QMimeData* dragObject();
+
 	/**
 	* Reimplementation from QTreeWidget. Returns true if the drag is acceptable for the listview.
 	*/
 	virtual void dragEnterEvent( QDragEnterEvent* event );
 	virtual void dragMoveEvent( QDragMoveEvent* event );
 	virtual void dropEvent( QDropEvent* event );
+
 	/**
 	* Returns the correct action object for the given type of action.
 	*/
 	QAction* action( const CIndexItemBase::MenuAction type ) const;
+
 	/**
 	* Reimplementation from QAbstractItemView. Takes care of movable items.
 	*/
@@ -97,50 +101,55 @@ protected: // Protected methods
 	virtual void mouseMoveEvent(QMouseEvent* event);
 
 
-protected slots: // Protected slots
+protected slots:
 	/**
 	* Is called when an item was clicked or activated.
 	*/
 	void slotExecuted( QTreeWidgetItem* );
+
 	void dropped( QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*);
+
 	/**
 	* Shows the context menu at the given position.
 	*/
 	void contextMenu(const QPoint&);
+
 	/**
 	* Adds a new subfolder to the current item.
 	*/
 	void createNewFolder();
+
 	/**
 	* Opens a dialog to change the current folder.
 	*/
 	void changeFolder();
+
 	/**
 	* Exports the bookmarks being in the selected folder.
 	*/
 	void exportBookmarks();
+
 	/**
 	* Changes the current bookmark.
 	*/
 	void changeBookmark();
+
 	void slotItemChanged(QTreeWidgetItem*, int);
+
 	/**
 	* Import bookmarks from a file and add them to the selected folder.
 	*/
 	void importBookmarks();
+
 	/**
 	* Deletes the selected entries.
 	*/
 	void deleteEntries();
+
 	/**
 	* Prints the selected bookmarks.
 	*/
 	void printBookmarks();
-
-	/**
-	* Slot for the folder auto-open timer (when dragging into a folder).
-	*/
-	void autoOpenTimeout();
 
 	/**
 	* Slot for the mag update timer.
@@ -154,12 +163,6 @@ protected slots: // Protected slots
 
 
 private:
-	bool m_itemsMovable;
-	QTreeWidgetItem* m_autoOpenFolder;
-	QTimer m_autoOpenTimer;
-	QTimer m_magTimer;
-	int m_mouseReleaseEventModifiers;
-	QTreeWidgetItem* m_previousEventItem;
 
 	/**
 	* Initializes the view.
@@ -191,8 +194,12 @@ private:
 		QAction* deleteEntries;
 	}
 	m_actions;
-	QMenu* m_popup;
 
+	QMenu* m_popup;
+	bool m_itemsMovable;
+	QTimer m_magTimer;
+	int m_mouseReleaseEventModifiers;
+	QTreeWidgetItem* m_previousEventItem;
 };
 
 #endif

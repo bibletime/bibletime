@@ -643,12 +643,7 @@ void CBookmarkIndex::deleteEntries()
 
 
 
-void CBookmarkIndex::autoOpenTimeout() {
-	m_autoOpenTimer.stop();
-	if (m_autoOpenFolder && !m_autoOpenFolder->isExpanded() && m_autoOpenFolder->childCount()) {
-		m_autoOpenFolder->setExpanded(true);
-	}
-}
+
 
 
 /** Returns true if more than one netry is supported by this action type. Returns false for actions which support only one entry, e.g. about module etc. */
