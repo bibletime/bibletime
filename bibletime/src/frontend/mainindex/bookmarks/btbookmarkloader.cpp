@@ -129,22 +129,21 @@ void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString f
 	if (fileName.isNull()) {
 		fileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
 	}
-	if (/*!path.isEmpty()*/true) {
 
-		QDomDocument doc("DOC");
-		doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
-	
-		QDomElement content = doc.createElement("SwordBookmarks");
-		content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
-		doc.appendChild(content);
-	
-		//append the XML nodes of all child items
-	
-		for (int i = 0; i < rootItem->childCount(); i++) {
-			saveItem(rootItem->child(i), content);
-		}
-		CToolClass::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
+	QDomDocument doc("DOC");
+	doc.appendChild( doc.createProcessingInstruction( "xml", "version=\"1.0\" encoding=\"UTF-8\"" ) );
+
+	QDomElement content = doc.createElement("SwordBookmarks");
+	content.setAttribute("syntaxVersion", CURRENT_SYNTAX_VERSION);
+	doc.appendChild(content);
+
+	//append the XML nodes of all child items
+
+	for (int i = 0; i < rootItem->childCount(); i++) {
+		saveItem(rootItem->child(i), content);
 	}
+	CToolClass::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
+
 }
 
 void BtBookmarkLoader::saveItem(QTreeWidgetItem* item, QDomElement& parentElement)

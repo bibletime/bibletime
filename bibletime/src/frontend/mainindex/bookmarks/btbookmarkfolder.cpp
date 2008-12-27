@@ -38,11 +38,6 @@ bool BtBookmarkFolder::enableAction(MenuAction action)
 	return false;
 }
 
-void BtBookmarkFolder::addFirstChild(BtBookmarkItemBase* item)
-{
-
-}
-
 void BtBookmarkFolder::exportBookmarks()
 {
 	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
@@ -79,7 +74,6 @@ void BtBookmarkFolder::newSubFolder()
 		BtBookmarkFolder* f = new BtBookmarkFolder(this, QObject::tr("New folder"));
 
 		treeWidget()->setCurrentItem(f);
-		//treeWidget()->ensureItemVisible(f);
 		f->update();
 		f->rename();
 	}

@@ -45,29 +45,18 @@ public:
 	BtBookmarkItemBase(QTreeWidgetItem* parent);
 	virtual ~BtBookmarkItemBase() {}
 
-	//virtual void init();
 	virtual QString toolTip() = 0;
 	virtual CBookmarkIndex* bookmarkWidget() const;
 
-	//virtual void addPreviousSibling(BtBookmarkItemBase* item);
-	//virtual void addNextSibling(BtBookmarkItemBase* item);
-
-	/**
-	* Returns true if the given action should be enabled in the popup menu.
-	*/
+	/** Returns true if the given action should be enabled in the popup menu. */
 	virtual bool enableAction( MenuAction action ) = 0;
 
-	//virtual QList<QTreeWidgetItem*> getChildList();
-
-	virtual bool acceptDrop(QDropEvent*) const {return true;}
-
+	/** Rename the item. */
 	virtual void rename() = 0;
+
+	/** Update the item (icon etc.) after creating or changing it. */
 	virtual void update() {}
 
-protected:
-	friend class CMainIndex;
-
-	//virtual void dropped( QDropEvent* e);
 };
 
 #endif

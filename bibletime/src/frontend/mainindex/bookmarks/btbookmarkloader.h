@@ -7,8 +7,8 @@
 *
 **********/
 
-#ifndef BTBOOKMARKCREATOR_H
-#define BTBOOKMARKCREATOR_H
+#ifndef BTBOOKMARKLOADER_H
+#define BTBOOKMARKLOADER_H
 
 #include "util/directoryutil.h"
 
@@ -19,15 +19,28 @@
 
 class QTreeWidgetItem;
 
+/**
+* Class for loading and saving bookmarks.
+*/
 class BtBookmarkLoader
 {
 public:
+	/** Loads a list of items (with subitem trees) from a named file
+	* or from the default bookmarks file. */
 	QList<QTreeWidgetItem*> loadTree(QString fileName=QString::null);
+
+	/** Takes one item and saves the tree which is under it to a named file
+	* or to the default bookmarks file, asking the user about overwriting if necessary. */
 	void saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString fileName=QString::null, bool forceOverwrite=true);
 
 private:
+	/** Create a new item from a document element. */
 	QTreeWidgetItem* handleXmlElement(QDomElement& element, QTreeWidgetItem* parent);
+
+	/** Writes one item to a document element. */
 	void saveItem(QTreeWidgetItem* item, QDomElement& parentElement);
+
+	/** Loads a bookmark XML document from a named file or from the default bookmarks file. */
 	QString loadXmlFromFile(QString fileName=QString::null);
 };
 

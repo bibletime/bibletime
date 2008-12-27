@@ -22,10 +22,15 @@ class BtBookmarkItem : public BtBookmarkItemBase
 {
 public:
 	friend class BtBookmarkLoader;
+
 	BtBookmarkItem(QTreeWidgetItem* parent);
-	BtBookmarkItem(BtBookmarkItemBase* sibling, BtBookmarkItemBase::Location location, CSwordModuleInfo* module, QString key, QString& description);
-	BtBookmarkItem(BtBookmarkFolder* parent, CSwordModuleInfo* module, QString key, QString& description);
+
+	/** Creates a bookmark with module, key and description. */
+	BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description);
+
+	/** Creates a copy. */
 	BtBookmarkItem(const BtBookmarkItem& other);
+
 	~BtBookmarkItem() {}
 
 	/** Returns the used module, 0 if there is no such module. */
@@ -39,12 +44,13 @@ public:
 	/** Sets the description text for this bookmark. */
 	virtual void setDescription(QString text);
 
+	/** Returns a tooltip for this bookmark. */
 	virtual QString toolTip();
 
+	/** Returns whether the action is supported by this item. */
 	virtual bool enableAction(MenuAction action);
-	/**
-	* Changes this bookmark.
-	*/
+
+	/** Changes this bookmark. */
 	virtual void rename();
 
 	void update();
@@ -56,9 +62,6 @@ private:
 	QString m_key;
 	QString m_description;
 	QString m_moduleName;
-
-
-
 };
 
 #endif

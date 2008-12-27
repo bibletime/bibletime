@@ -24,28 +24,7 @@
 #include <boost/scoped_ptr.hpp>
 
 
-BtBookmarkItem::BtBookmarkItem(BtBookmarkItemBase* sibling, BtBookmarkItemBase::Location location, CSwordModuleInfo* module, QString key, QString& description)
-	: m_description(description),
-	m_moduleName(module ? module->name() : QString::null)
-{
-	if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
-		CSwordVerseKey vk(0);
-		vk.key(key);
-		vk.setLocale("en");
-		m_key = vk.key(); //the m_key member is always the english key!
-	}
-	else {
-		m_key = key;
-	};
-	int index = sibling->parent()->indexOfChild(sibling);
-	if (location == BtBookmarkItemBase::Below) {
-		index++;
-	}
-	sibling->parent()->insertChild(index, this);
-	update();
-}
-
-BtBookmarkItem::BtBookmarkItem(BtBookmarkFolder* parent, CSwordModuleInfo* module, QString key, QString& description)
+BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)
 	:m_description(description),
 	m_moduleName(module ? module->name() : QString::null)
 {
@@ -58,9 +37,7 @@ BtBookmarkItem::BtBookmarkItem(BtBookmarkFolder* parent, CSwordModuleInfo* modul
 	else {
 		m_key = key;
 	};
-	if (parent) {
-		parent->insertChild(0, this);
-	}
+
 	update();
 }
 
@@ -109,7 +86,7 @@ const QString& BtBookmarkItem::description()
 
 void BtBookmarkItem::setDescription(QString text)
 {
-
+	m_description = text;
 }
 
 QString BtBookmarkItem::toolTip()
