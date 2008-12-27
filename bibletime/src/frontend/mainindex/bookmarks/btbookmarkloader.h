@@ -12,6 +12,7 @@
 
 #include "util/directoryutil.h"
 
+#include <QString>
 #include <QList>
 #include <QDomElement>
 
@@ -21,13 +22,13 @@ class QTreeWidgetItem;
 class BtBookmarkLoader
 {
 public:
-	QList<QTreeWidgetItem*> loadTree();
-	void saveTreeFromRootItem(QTreeWidgetItem* rootItem);
+	QList<QTreeWidgetItem*> loadTree(QString fileName=QString::null);
+	void saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString fileName=QString::null, bool forceOverwrite=true);
 
 private:
 	QTreeWidgetItem* handleXmlElement(QDomElement& element, QTreeWidgetItem* parent);
 	void saveItem(QTreeWidgetItem* item, QDomElement& parentElement);
-	QString loadXmlFromFile();
+	QString loadXmlFromFile(QString fileName=QString::null);
 };
 
 #endif

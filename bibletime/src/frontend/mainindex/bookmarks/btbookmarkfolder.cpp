@@ -11,9 +11,12 @@
 #include "btbookmarkfolder.h"
 #include "btbookmarkitembase.h"
 #include "btbookmarkitem.h"
+#include "btbookmarkloader.h"
 
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
+
+#include <QFileDialog>
 
 #include <QDebug>
 
@@ -42,12 +45,27 @@ void BtBookmarkFolder::addFirstChild(BtBookmarkItemBase* item)
 
 void BtBookmarkFolder::exportBookmarks()
 {
+	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getSaveFileName(0, QObject::tr("Export Bookmarks"), "", filter);
+
+	if (!fileName.isEmpty()) {
+		qDebug() << "exportBookmarks()";
+		BtBookmarkLoader loader;
+		loader.saveTreeFromRootItem(this, fileName, false ); //false: don't overwrite without asking
+	};
 
 }
 
 void BtBookmarkFolder::importBookmarks()
 {
-
+	QString filter = QObject::tr("BibleTime bookmark files") + QString(" (*.btb);;") + QObject::tr("All files") + QString(" (*.*)");
+	QString fileName = QFileDialog::getOpenFileName(0, QObject::tr("Import bookmarks"), "", filter);
+	if (!fileName.isEmpty()) {
+		qDebug() << "import bookmarks";
+		BtBookmarkLoader loader;
+		QList<QTreeWidgetItem*> itemList = loader.loadTree(fileName);
+		this->insertChildren(0, itemList);
+	};
 }
 
 QString BtBookmarkFolder::toolTip()

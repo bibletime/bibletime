@@ -28,13 +28,13 @@
 
 #define CURRENT_SYNTAX_VERSION 1
 
-QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree()
+QList<QTreeWidgetItem*> BtBookmarkLoader::loadTree(QString fileName)
 {
 	qDebug() << "BtBookmarkLoader::loadTree";
 	QList<QTreeWidgetItem*> itemList;
 	
 	QDomDocument doc;
-	doc.setContent(loadXmlFromFile());
+	doc.setContent(loadXmlFromFile(fileName));
 	
 	//bookmarkfolder::loadBookmarksFromXML()
 	
@@ -102,10 +102,12 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
 }
 
 
-QString BtBookmarkLoader::loadXmlFromFile()
+QString BtBookmarkLoader::loadXmlFromFile(QString fileName)
 {
-	QString bookmarkFileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
-	QFile file(bookmarkFileName);
+	if (fileName.isNull()) {
+		fileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+	}
+	QFile file(fileName);
 	if (!file.exists())
 		return QString();
 
@@ -121,9 +123,12 @@ QString BtBookmarkLoader::loadXmlFromFile()
 	return xml;
 }
 
-void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
+void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString fileName, bool forceOverwrite)
 {
-	QString bookmarkFileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+	Q_ASSERT(rootItem);
+	if (fileName.isNull()) {
+		fileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+	}
 	if (/*!path.isEmpty()*/true) {
 
 		QDomDocument doc("DOC");
@@ -138,7 +143,7 @@ void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem)
 		for (int i = 0; i < rootItem->childCount(); i++) {
 			saveItem(rootItem->child(i), content);
 		}
-		CToolClass::savePlainFile(bookmarkFileName, doc.toString(), true, QTextCodec::codecForName("UTF-8"));
+		CToolClass::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
 	}
 }
 
