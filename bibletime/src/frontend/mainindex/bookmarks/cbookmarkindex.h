@@ -70,7 +70,7 @@ protected: // Protected methods
 	virtual void mouseReleaseEvent(QMouseEvent* event);
 	/** Needed to paint an drag pointer arrow. */
 	virtual void paintEvent(QPaintEvent* event);
-	//virtual void mousePressEvent(QMouseEvent* event);
+	virtual void mousePressEvent(QMouseEvent* event);
 
 	/**
 	* Initialize the SIGNAL<->SLOT connections
@@ -156,7 +156,7 @@ protected slots:
 	/**
 	* Deletes the selected entries.
 	*/
-	void deleteEntries();
+	void deleteEntries(bool confirm=true);
 
 	/**
 	* Prints the selected bookmarks.
@@ -194,6 +194,8 @@ private:
 	*/
 	void createBookmarkFromDrop(QDropEvent* event, QTreeWidgetItem* parentItem, int indexInParent);
 
+	QList<QTreeWidgetItem*> addItemsToDropTree(QTreeWidgetItem* target, bool& bookmarksOnly, bool& targetIncluded, bool& moreThanOneFolder);
+
 	struct Actions {
 		QAction* newFolder;
 		QAction* changeFolder;
@@ -213,6 +215,7 @@ private:
 	int m_mouseReleaseEventModifiers;
 	QTreeWidgetItem* m_previousEventItem;
 	QPoint m_dragMovementPosition;
+	QPoint m_dragStartPosition;
 	QTreeWidgetItem* m_extraItem;
 };
 

@@ -29,7 +29,9 @@ public:
 	virtual void importBookmarks();
 
 	void newSubFolder();
-	QList<QTreeWidgetItem*> getChildList();
+	QList<QTreeWidgetItem*> getChildList() const;
+	bool hasDescendant(QTreeWidgetItem* item) const;
+	BtBookmarkFolder* deepCopy();
 	void rename();
 	void update();
 

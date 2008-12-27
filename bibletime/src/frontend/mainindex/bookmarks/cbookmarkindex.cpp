@@ -84,14 +84,14 @@ void CBookmarkIndex::initView()
 	setFocusPolicy(Qt::WheelFocus);
 
 	//d'n'd related settings
-	setDragEnabled( true );
+	setDragEnabled( true ); //
 	setAcceptDrops( true );
-	setDropIndicatorShown( true );
+	//setDropIndicatorShown( true );
 	setDragDropMode(QAbstractItemView::DragDrop);
 	viewport()->setAcceptDrops(true);
 	setAutoScroll(true);
 	//setAutoScrollMargin(10);
-	setAutoExpandDelay(600);
+	setAutoExpandDelay(800);
 
 	setItemsExpandable(true);
 	setRootIsDecorated(true);
@@ -164,12 +164,12 @@ void CBookmarkIndex::initConnections()
 	QObject::connect(this, SIGNAL(itemEntered(QTreeWidgetItem*, int)), this, SLOT(slotItemEntered(QTreeWidgetItem*, int)) );
 }
 
-// void CBookmarkIndex::mousePressEvent(QMouseEvent *event)
-// {
-// 	if (event->button() == Qt::LeftButton)
-// 		m_dragStartPosition = event->pos();
-// 	QTreeWidget::mousePressEvent(event);
-// }
+void CBookmarkIndex::mousePressEvent(QMouseEvent *event)
+{
+	//if (event->button() == Qt::LeftButton)
+	//	m_dragStartPosition = event->pos();
+	QTreeWidget::mousePressEvent(event);
+}
 
 
 /**
@@ -353,7 +353,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 {
 	qDebug("CBookmarkIndex::dropEvent");
 
-	setState(QAbstractItemView::NoState);
+	//setState(QAbstractItemView::NoState);
 
 	QTreeWidgetItem* item = itemAt(event->pos());
 	QTreeWidgetItem* parentItem = 0;
@@ -408,6 +408,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 
 	if ( event->source() == this ) {
 		qDebug("dropping internal drag");
+		event->accept();
 		// handle the internal drag. Don't use the QDrag/MimeData at all.
 		// See startDrag().
 		//Create a new subtree from the selected items.
@@ -420,19 +421,46 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 		// But how to indicate that when user tries to select and drag? show a tooltip?
 		// Can't move under moved folder.
 
-
+/*
+Creates a list of new items based on the current selection.
+If there are only bookmarks in the selection they are all included.
+If there is one folder it's included as a deep copy.
+Sets bookmarksOnly=false if it finds a folder.
+Sets targetIncluded=true if the target is in the list.
+Sets moreThanOneFolder=true if selection includes one folder and something more.
+If moreThanOneFolder or targetIncluded is detected the creation of list is stopped
+and the list is incomplete.
+*/
 		// Copy and move could be handled differently?
+//QList<BtBookmarkItemBase*> addItemsToDropTree(QTreeWidgetItem* target, bool& bookmarksOnly, bool& targetIncluded, bool& moreThanOneFolder);
+		bool bookmarksOnly = true;
+		bool targetIncluded = false;
+		bool moreThanOneFolder = false;
 
+		QList<QTreeWidgetItem*> newItems = addItemsToDropTree(parentItem, bookmarksOnly, targetIncluded, moreThanOneFolder);
+
+		if (moreThanOneFolder) {
+			QToolTip::showText(QCursor::pos(), tr("Can drop only bookmarks or one folder"));
+			return;
+		}
+		if (targetIncluded) {
+			QToolTip::showText(QCursor::pos(), tr("Can't drop folder into the folder itself or into its subfolder"));
+			return;
+		}
 		// Ask whether to copy or move with a popup menu
+		
 		QMenu* dropPopupMenu = new QMenu(this);
 		QAction* copy = dropPopupMenu->addAction(tr("Copy"));
 		QAction* move = dropPopupMenu->addAction(tr("Move"));
 		QAction* dropAction = dropPopupMenu->exec(QCursor::pos());
 		if (dropAction == copy) {
-			qDebug() << "copy not implemented yet";
+			qDebug() << "copy";
+			parentItem->insertChildren(indexUnderParent, newItems);
 		} else {
 			if (dropAction == move) {
-				qDebug() << "move not implemented yet";
+				qDebug() << "move";
+				parentItem->insertChildren(indexUnderParent, newItems);
+				deleteEntries(false);
 			} else return; // user canceled
 		}
 
@@ -440,6 +468,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 		qDebug()<<"the source was outside this";
 		createBookmarkFromDrop(event, parentItem, indexUnderParent);
 	}
+	setState(QAbstractItemView::NoState);
 }
 
 
@@ -783,19 +812,21 @@ void CBookmarkIndex::printBookmarks() {
 }
 
 /** Deletes the selected entries. */
-void CBookmarkIndex::deleteEntries()
+void CBookmarkIndex::deleteEntries(bool confirm)
 {
-	if (!selectedItems().count()) {
-		BtBookmarkItemBase* f = dynamic_cast<BtBookmarkItemBase*>(currentItem());
-		if (f) {
-			currentItem()->setSelected(true);
-		} else {
+	if (confirm) {
+		if (!selectedItems().count()) {
+			BtBookmarkItemBase* f = dynamic_cast<BtBookmarkItemBase*>(currentItem());
+			if (f) {
+				currentItem()->setSelected(true);
+			} else {
+				return;
+			}
+		}
+	
+		if (QMessageBox::question(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
 			return;
 		}
-	}
-
-	if (QMessageBox::question(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
-		return;
 	}
 
 	while (selectedItems().size() > 0) {
@@ -816,12 +847,15 @@ void CBookmarkIndex::startDrag(Qt::DropActions supportedActions)
 {
 	qDebug("CBookmarkIndex::startDrag");
 
-	QMimeData* mData = dragObject(); // create the data which can be used in other widgets
-	QDrag* drag = new QDrag(this);
-	drag->setMimeData(mData);
-	Qt::DropAction dropAction = drag->exec();
-	viewport()->update(); // because of the arrow
-			
+	//if (itemAt(m_dragStartPosition) && itemAt(m_dragStartPosition)->isSelected()) {
+		QMimeData* mData = dragObject(); // create the data which can be used in other widgets
+		QDrag* drag = new QDrag(this);
+		drag->setMimeData(mData);
+		//if (mData) {
+			Qt::DropAction dropAction = drag->exec();
+		//}
+	//}
+	viewport()->update(); // because of the arrow	
 }
 
 
@@ -865,7 +899,7 @@ void CBookmarkIndex::saveBookmarks() {
 
 void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 {
-	qDebug() << "CBookmarkIndex::mouseMoveEvent";
+	//qDebug() << "CBookmarkIndex::mouseMoveEvent";
 
 	// Restart the mag timer if we have moved to another item and shift was not pressed.
 	QTreeWidgetItem* itemUnderPointer = itemAt(event->pos());
@@ -877,6 +911,11 @@ void CBookmarkIndex::mouseMoveEvent(QMouseEvent* event)
 	}
 	m_previousEventItem = itemUnderPointer;
 
+	//if (event->buttons() & Qt::LeftButton) {
+	//	if ((event->pos() - m_dragStartPosition).manhattanLength() > qApp->startDragDistance()) {
+	//		startDrag(0);
+	//	}
+	//}
 	// Clear the extra item text unless we are on top of it
 	if ( (itemUnderPointer != m_extraItem) && !m_extraItem->text(0).isNull()) {
 		m_extraItem->setText(0, QString::null);
@@ -911,3 +950,57 @@ void CBookmarkIndex::magTimeout()
 		}
 	}
 }
+
+/*
+Creates a list of new items based on the current selection.
+If there are only bookmarks in the selection they are all included.
+If there is one folder it's included as a deep copy.
+Sets bookmarksOnly=false if it finds a folder.
+Sets targetIncluded=true if the target is in the list.
+Sets moreThanOneFolder=true if selection includes one folder and something more.
+If moreThanOneFolder or targetIncluded is detected the creation of list is stopped
+and the list is incomplete.
+*/
+QList<QTreeWidgetItem*> CBookmarkIndex::addItemsToDropTree(
+	QTreeWidgetItem* target, bool& bookmarksOnly, bool& targetIncluded, bool& moreThanOneFolder)
+{
+	qDebug() << "CBookmarkIndex::addItemsToDropTree";
+	QList<QTreeWidgetItem*> selectedList = selectedItems();
+	QList<QTreeWidgetItem*> newList;
+	//list << selectedItems();
+	bool stop = false;
+	//bookmarksOnly = true;
+	foreach(QTreeWidgetItem* item, selectedList) {
+		qDebug() << "go through all items:" << item;
+		if ( BtBookmarkFolder* folder = dynamic_cast<BtBookmarkFolder*>(item)) {
+			bookmarksOnly = false;
+			if (selectedList.count() > 1) { // only one item allowed if a folder is selected
+				qDebug() << "one folder and something else is selected";
+				moreThanOneFolder = true;
+				break;
+			}
+			if (item == target || folder->hasDescendant(item)) { // dropping to self or descendand not allowed
+				qDebug() << "target is included";
+				targetIncluded = true;
+				break;
+			}
+		} else {
+			qDebug() << "append new QTreeWidget item (should be BtBookmarkItem?)";
+			newList.append(new BtBookmarkItem( *(dynamic_cast<BtBookmarkItem*>(item)) ));
+		}
+	}
+	if (!bookmarksOnly && selectedList.count() == 1) {
+		qDebug() << "exactly one folder";
+		BtBookmarkFolder* folder = dynamic_cast<BtBookmarkFolder*>(selectedList.value(0));
+		BtBookmarkFolder* copy = folder->deepCopy();
+		newList.append(copy);
+	}
+	if (!bookmarksOnly && selectedList.count() > 1) {
+		// wrong amount of items
+		qDebug() << "one folder and something else is selected 2";
+		moreThanOneFolder = true;
+	}
+	qDebug() << "return the new list" << newList;
+	return newList;
+}
+

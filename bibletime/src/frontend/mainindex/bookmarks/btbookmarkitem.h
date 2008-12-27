@@ -25,6 +25,7 @@ public:
 	BtBookmarkItem(QTreeWidgetItem* parent);
 	BtBookmarkItem(BtBookmarkItemBase* sibling, BtBookmarkItemBase::Location location, CSwordModuleInfo* module, QString key, QString& description);
 	BtBookmarkItem(BtBookmarkFolder* parent, CSwordModuleInfo* module, QString key, QString& description);
+	BtBookmarkItem(const BtBookmarkItem& other);
 	~BtBookmarkItem() {}
 
 	/** Returns the used module, 0 if there is no such module. */

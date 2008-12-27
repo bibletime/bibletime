@@ -68,6 +68,14 @@ BtBookmarkItem::BtBookmarkItem(QTreeWidgetItem* parent)
 	: BtBookmarkItemBase(parent)
 {}
 
+BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
+	: BtBookmarkItemBase(0),
+	m_key(other.m_key),
+	m_description(other.m_description),
+	m_moduleName(other.m_moduleName)
+{
+	update();
+}
 
 CSwordModuleInfo* BtBookmarkItem::module()
 {

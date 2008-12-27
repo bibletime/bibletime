@@ -10,6 +10,7 @@
 
 #include "btbookmarkfolder.h"
 #include "btbookmarkitembase.h"
+#include "btbookmarkitem.h"
 
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
@@ -66,7 +67,7 @@ void BtBookmarkFolder::newSubFolder()
 	}
 }
 
-QList<QTreeWidgetItem*> BtBookmarkFolder::getChildList()
+QList<QTreeWidgetItem*> BtBookmarkFolder::getChildList() const
 {
 	QList<QTreeWidgetItem*> list;
 	for (int i = 0; i < childCount(); i++) {
@@ -89,3 +90,48 @@ void BtBookmarkFolder::update()
 	else
 		setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
 }
+
+bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const
+{
+	qDebug() << "BtBookmarkFolder::hasDescendant, this:" << this << "possible descendant:" << item;
+	
+	if (this == item) {
+		qDebug() << "it's this, return true";
+		return true;
+	}
+	if (getChildList().indexOf(item) > -1) {
+		qDebug() << "direct child, return true";
+		return true;
+	}
+	foreach(QTreeWidgetItem* item, getChildList()) {
+		bool subresult = false;
+		if (BtBookmarkFolder* folder = dynamic_cast<BtBookmarkFolder*>(item)) {
+			subresult = folder->hasDescendant(item);
+		}
+		
+		if (subresult == true) {
+			qDebug() << "descendand child, return true";
+			return true;
+		}
+	}
+	qDebug() << "no child, return false";
+	return false;
+}
+
+BtBookmarkFolder* BtBookmarkFolder::deepCopy()
+{
+	qDebug() << "BtBookmarkFolder::deepCopy";
+	BtBookmarkFolder* newFolder = new BtBookmarkFolder(0, this->text(0));
+	foreach(QTreeWidgetItem* subitem, getChildList()) {
+		if (BtBookmarkItem* bmItem = dynamic_cast<BtBookmarkItem*>(subitem)) {
+			newFolder->addChild(new BtBookmarkItem(*bmItem));
+		} else {
+			if (BtBookmarkFolder* bmFolder = dynamic_cast<BtBookmarkFolder*>(subitem)) {
+				newFolder->addChild(bmFolder->deepCopy());
+			}
+		}
+	}
+	newFolder->update();
+	return newFolder;
+}
+
