@@ -61,13 +61,6 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/cmainindex.cpp
 	
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
-	#src/frontend/mainindex/bookmarks/cindexbookmarkitem.cpp
-	#src/frontend/mainindex/bookmarks/cindexfolderbase.cpp
-	#src/frontend/mainindex/bookmarks/cindextreefolder.cpp
-	#src/frontend/mainindex/bookmarks/cindexbookmarkfolder.cpp
-	#src/frontend/mainindex/bookmarks/cindexoldbookmarksfolder.cpp
-	#src/frontend/mainindex/bookmarks/cindexsubfolder.cpp
-	#src/frontend/mainindex/bookmarks/cindexitembase.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
