@@ -354,7 +354,8 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 	qDebug("CBookmarkIndex::dropEvent");
 
 	//setState(QAbstractItemView::NoState);
-
+	// Try to prevent annoying timed autocollapsing. Remember to disconnect before return.
+	QObject::connect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
 	QTreeWidgetItem* item = itemAt(event->pos());
 	QTreeWidgetItem* parentItem = 0;
 	int indexUnderParent = 0;
@@ -409,30 +410,7 @@ void CBookmarkIndex::dropEvent( QDropEvent* event )
 	if ( event->source() == this ) {
 		qDebug("dropping internal drag");
 		event->accept();
-		// handle the internal drag. Don't use the QDrag/MimeData at all.
-		// See startDrag().
-		//Create a new subtree from the selected items.
-		//If the parent folder of the item is also selected, put the item under that parent
-		//If the parent was not selected, find a grandparent which was selected
-		//If no grandparent, put it to top level
-		//Or should we move the subitems of a folder automatically?
-		
-		// Can copy only one folder or items without folders? Or sibling folders. Easier to implement...
-		// But how to indicate that when user tries to select and drag? show a tooltip?
-		// Can't move under moved folder.
 
-/*
-Creates a list of new items based on the current selection.
-If there are only bookmarks in the selection they are all included.
-If there is one folder it's included as a deep copy.
-Sets bookmarksOnly=false if it finds a folder.
-Sets targetIncluded=true if the target is in the list.
-Sets moreThanOneFolder=true if selection includes one folder and something more.
-If moreThanOneFolder or targetIncluded is detected the creation of list is stopped
-and the list is incomplete.
-*/
-		// Copy and move could be handled differently?
-//QList<BtBookmarkItemBase*> addItemsToDropTree(QTreeWidgetItem* target, bool& bookmarksOnly, bool& targetIncluded, bool& moreThanOneFolder);
 		bool bookmarksOnly = true;
 		bool targetIncluded = false;
 		bool moreThanOneFolder = false;
@@ -441,10 +419,12 @@ and the list is incomplete.
 
 		if (moreThanOneFolder) {
 			QToolTip::showText(QCursor::pos(), tr("Can drop only bookmarks or one folder"));
+			QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
 			return;
 		}
 		if (targetIncluded) {
 			QToolTip::showText(QCursor::pos(), tr("Can't drop folder into the folder itself or into its subfolder"));
+			QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
 			return;
 		}
 		// Ask whether to copy or move with a popup menu
@@ -461,13 +441,17 @@ and the list is incomplete.
 				qDebug() << "move";
 				parentItem->insertChildren(indexUnderParent, newItems);
 				deleteEntries(false);
-			} else return; // user canceled
+			} else {
+				QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
+				return; // user canceled
+			}
 		}
 
 	} else {
 		qDebug()<<"the source was outside this";
 		createBookmarkFromDrop(event, parentItem, indexUnderParent);
 	}
+	QObject::disconnect(this, SIGNAL(itemCollapsed(QTreeWidgetItem*)), this, SLOT(expandAutoCollapsedItem(QTreeWidgetItem*)));
 	setState(QAbstractItemView::NoState);
 }
 
@@ -979,8 +963,8 @@ QList<QTreeWidgetItem*> CBookmarkIndex::addItemsToDropTree(
 				moreThanOneFolder = true;
 				break;
 			}
-			if (item == target || folder->hasDescendant(item)) { // dropping to self or descendand not allowed
-				qDebug() << "target is included";
+			if (folder->hasDescendant(target)) { // dropping to self or descendand not allowed
+				qDebug() << "addItemsToDropTree: target is included";
 				targetIncluded = true;
 				break;
 			}

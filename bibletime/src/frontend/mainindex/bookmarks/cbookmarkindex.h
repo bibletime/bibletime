@@ -110,6 +110,7 @@ protected: // Protected methods
 
 protected slots:
 	
+	void expandAutoCollapsedItem(QTreeWidgetItem* i) {expandItem(i);}
 
 	/**
 	* Is called when an item was clicked or activated.
@@ -167,7 +168,6 @@ protected slots:
 	* Slot for the mag update timer.
 	*/
 	void magTimeout();
-
 
 private:
 

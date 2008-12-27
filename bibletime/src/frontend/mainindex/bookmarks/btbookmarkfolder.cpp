@@ -103,10 +103,11 @@ bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const
 		qDebug() << "direct child, return true";
 		return true;
 	}
-	foreach(QTreeWidgetItem* item, getChildList()) {
+	foreach(QTreeWidgetItem* childItem, getChildList()) {
 		bool subresult = false;
-		if (BtBookmarkFolder* folder = dynamic_cast<BtBookmarkFolder*>(item)) {
-			subresult = folder->hasDescendant(item);
+		BtBookmarkFolder* folder = 0;
+		if ( (folder = dynamic_cast<BtBookmarkFolder*>(childItem)) ) {
+			subresult = folder->hasDescendant(childItem);
 		}
 		
 		if (subresult == true) {
