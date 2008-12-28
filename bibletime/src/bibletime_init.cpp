@@ -20,7 +20,6 @@
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/kstartuplogo.h"
 #include "frontend/cprinter.h"
 #include "backend/config/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
@@ -45,8 +44,6 @@ using namespace Profile;
 /**Initializes the view of this widget*/
 void BibleTime::initView()
 {
-	KStartupLogo::setStatusMessage(tr("Creating BibleTime's user interface") + QString("..."));
-
 	m_mainSplitter = new QSplitter(this);
 	m_mainSplitter->setChildrenCollapsible(false);
 	setCentralWidget(m_mainSplitter);
@@ -85,8 +82,6 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKey
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions()
 {
-	KStartupLogo::setStatusMessage(tr("Initializing menu- and toolbars") + QString("..."));
-
 	QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
 	QMenu* viewMenu = menuBar()->addMenu(tr("&View"));
 	QMenu* searchMenu = menuBar()->addMenu(tr("&Search"));
@@ -383,7 +378,6 @@ void BibleTime::initConnections() {
 
 /** Initializes the backend */
 void BibleTime::initBackends() {
-	KStartupLogo::setStatusMessage(tr("Initializing Sword") + QString("..."));
 	qDebug("BibleTime::initBackends");
 	
 	sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
@@ -436,7 +430,6 @@ void BibleTime::initBackends() {
 // 		}
 	}
 
-	KStartupLogo::setStatusMessage(tr("Checking indexes") + QString("..."));
 	//This function will 
 	// - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
 	// - delete all indices of modules where hasIndex() returns false

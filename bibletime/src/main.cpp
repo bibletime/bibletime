@@ -17,7 +17,6 @@
 #include "util/directoryutil.h"
 #include "util/migrationutil.h"
 
-#include "frontend/kstartuplogo.h"
 #include "backend/config/cbtconfig.h"
 
 #include <stdlib.h>
@@ -306,23 +305,13 @@ int main(int argc, char* argv[]) {
 	
 	//Migrate configuration data, if neccessary
 	util::MigrationUtil::checkMigration();
-	
-	const bool showSplashScreen = CBTConfig::get(CBTConfig::logo);
-
-	if (showSplashScreen) {
-		KStartupLogo::createSplash();
-		KStartupLogo::showSplash();
-		KStartupLogo::setStatusMessage( QObject::tr("Starting BibleTime") + QString("...") );
-	}
 
 	setSignalHandler(signalHandler);
-
 
 	bibletime_ptr = new BibleTime();
 
 	// a new BibleTime version was installed (maybe a completely new installation)
 	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-		KStartupLogo::hideSplash();
 
 		CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
 		//TODO: unabled temporarily
@@ -334,11 +323,6 @@ int main(int argc, char* argv[]) {
 	//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
 	bibletime_ptr->show();
 	bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
-
-	if (showSplashScreen) {
-		KStartupLogo::hideSplash();
-		KStartupLogo::deleteSplash();
-	}
 	
 	new BibleTimeDBusAdaptor(bibletime_ptr);
 	

@@ -11,7 +11,6 @@
 #include "bibletime.moc"
 
 #include "frontend/cmdiarea.h"
-#include "frontend/kstartuplogo.h"
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
@@ -40,6 +39,7 @@
 #include <QApplication>
 #include <QMdiSubWindow>
 #include <QCloseEvent>
+#include <QSplashScreen>
 
 //KDE includes
 #include <kcmdlineargs.h>
@@ -58,15 +58,24 @@ BibleTime::BibleTime() :
 	m_profileMgr(),
 	m_mainIndex(0)
 {
-	//setObjId("BibleTimeInterface"); //DCOP?
-	initBackends();
-	initView();
-	initActions();
-	initConnections();
-	readSettings();
-	setPlainCaption(QString());
-	// we don't save the geometry, it's stored in the startup profile
-// 	setAutoSaveSettings(QString("MainWindow"), false);
+	QPixmap pm;
+	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) {
+		qWarning("Can't load startuplogo! Check your installation.");
+   }
+   QSplashScreen splash(pm);
+   QString splashHtml("<div style='background-color:black;color:white;font-weight:bold'>%1</div>");
+   if (CBTConfig::get(CBTConfig::logo)) {
+       splash.show();
+   }
+   splash.showMessage(splashHtml.arg(tr("Initializing the Sword engine...")), Qt::AlignCenter);
+   initBackends();
+   splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")), Qt::AlignCenter);
+   initView();
+   splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")), Qt::AlignCenter);
+   initActions();
+   initConnections();
+   readSettings();
+   setPlainCaption(QString()); 
 }
 
 BibleTime::~BibleTime() {

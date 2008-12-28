@@ -46,7 +46,6 @@ SET(bibletime_SOURCES
 	
 	# frontend top level
 	src/frontend/cdragdrop.cpp
-	src/frontend/kstartuplogo.cpp
 	src/frontend/crossrefrendering.cpp
 	src/frontend/cprinter.cpp
 	src/frontend/cmoduleindexdialog.cpp
