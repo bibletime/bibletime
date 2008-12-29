@@ -47,7 +47,7 @@
 
 using namespace Profile;
 
-BibleTime::BibleTime() : 
+BibleTime::BibleTime() :
 	QMainWindow(0),
 	m_initialized(false),
 	m_moduleList(0),
@@ -63,7 +63,7 @@ BibleTime::BibleTime() :
 		qWarning("Can't load startuplogo! Check your installation.");
    }
    QSplashScreen splash(pm);
-   QString splashHtml("<div style='background-color:black;color:white;font-weight:bold'>%1</div>");
+   QString splashHtml("<div style='background:transparent;color:white;font-weight:bold'>%1</div>");
    if (CBTConfig::get(CBTConfig::logo)) {
        splash.show();
    }
@@ -75,7 +75,7 @@ BibleTime::BibleTime() :
    initActions();
    initConnections();
    readSettings();
-   setPlainCaption(QString()); 
+   setPlainCaption(QString());
 }
 
 BibleTime::~BibleTime() {
@@ -267,11 +267,11 @@ void BibleTime::processCommandline() {
 // 	if ( args.contains("--open-default-bible") && !CBTConfig::get(CBTConfig::crashedLastTime) && !CBTConfig::get(CBTConfig::crashedTwoTimes)) { //restore workspace if it crashed ony once
 // 		QString bibleKey = args->getOption("open-default-bible");
 // 		CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
-// 
+//
 // 		if (bibleKey == "<random>") {
 // 			CSwordVerseKey vk(0);
 // 			const int maxIndex = 32400;
-// 
+//
 // 			KRandomSequence rs;
 // 			int newIndex = rs.getLong(maxIndex);
 // 			vk.setPosition(sword::TOP);
@@ -290,7 +290,7 @@ bool BibleTime::event(QEvent* e)
 // 		qWarning("BibleTime::event type Polish");
 // 		m_initialized = true;
 // 	}*/
-	if (e->type() == QEvent::Close) {	
+	if (e->type() == QEvent::Close) {
 	}
 	return QMainWindow::event(e);
 }
