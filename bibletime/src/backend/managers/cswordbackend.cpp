@@ -493,6 +493,9 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 	if (myconfig) { // force reload on config object because we may have changed the paths
 		delete myconfig;
 		config = myconfig = 0;
+		// we need to call findConfig to make sure that augPaths are reloaded
+		findConfig(&configType, &prefixPath, &configPath, &augPaths, sysconfig);
+		// now re-read module configuration files
 		loadConfigDir(configPath);
 	}
 	else if (config) {
