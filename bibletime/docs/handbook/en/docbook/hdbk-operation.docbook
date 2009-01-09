@@ -360,7 +360,7 @@
     <title>The 
     <guimenuitem>Bookshelf Manager</guimenuitem></title>
     <para>The 
-    <guimenuitem>Bookshelf Manager</guimenuitem>is a tool to manage
+    <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage
     your Bookshelf. You can install new works to your Bookshelf, and
     update or remove existing works from your Bookshelf. Access it by
     clicking 
@@ -389,7 +389,7 @@
       or remote (e.g. Crosswire's online repository of Sword modules,
       or another site offering Sword modules). You can manage your
       libraries with 
-      <guibutton>Add library</guibutton>and 
+      <guibutton>Add library</guibutton> and 
       <guibutton>Delete library</guibutton>.</para>
       <para>To begin the installation or update process, select a
       library you want to connect to and a local Bookshelf path to
@@ -409,6 +409,15 @@
       from your Bookshelf too free up disk space. Simply mark the items
       and click on 
       <guibutton>Remove works</guibutton>.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
+      <title>Search Indexes</title>
+      <para>This option allows you to create new search indexes and
+      cleanup orphaned index files for removed works.</para>
+      <tip>
+	If you are having problems with your search function, visit
+	this feature.
+      </tip>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
