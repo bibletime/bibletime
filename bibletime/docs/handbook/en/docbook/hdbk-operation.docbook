@@ -311,8 +311,8 @@
         <para>BibleTime uses the Lucene search engine to perform your
         searches. It has many advanced features, and you can read more
         about it here: 
-        <ulink url="http://lucene.apache.org/java/docs/queryparsersyntax.html">
-        http://lucene.apache.org/java/docs/queryparsersyntax.html</ulink></para>
+        <ulink url="http://lucene.apache.org/java/docs/index.html">
+        http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
     <sect2 id="hdbk-op-search-results">
