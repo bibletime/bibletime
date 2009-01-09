@@ -249,32 +249,7 @@
             session that should be deleted.</para>
           </listitem>
         </varlistentry>
-        <varlistentry id="hdbk-reference-menus-window-fullscreen">
-          <term>
-            <menuchoice>
-              <shortcut>
-                <keycombo action="simul">&Ctrl;&Shift;
-                <keycap>F</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_fullscreen.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Fullscreen Mode</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Toggles fullscreen mode</action>. Here you can turn
-            fullscreen mode on or off. In fullscreen mode,
-            &bibletime; will expand to the full size of your
-            monitor screen, using as much space as possible.</para>
-          </listitem>
-        </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
-
           <term>
             <menuchoice>
               <guimenu>
@@ -295,72 +270,6 @@
             arrangement yourself (Manual mode) or have &bibletime;
             handle it for you (Automatical modes, just try them
             out!).</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry id="hdbk-reference-menus-window-tile-vertically">
-          <term>
-            <menuchoice>
-              <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>G</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_tile.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Tile vertically</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Tiles all open read windows
-            vertically</action>.</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry id="hdbk-reference-menus-window-tile-horizontally">
-
-          <term>
-            <menuchoice>
-              <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>H</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_tile.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Tile horizontally</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Tiles all open windows
-            horizontally</action>.</para>
-          </listitem>
-        </varlistentry>
-        <varlistentry id="hdbk-reference-menus-window-cascade">
-          <term>
-            <menuchoice>
-              <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>J</keycap></keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_cascade.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Cascade</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Cascades all open windows</action>.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-closeall">
@@ -464,7 +373,7 @@
             configuration and manage your bookshelf</action>. Please
             see 
             <link linkend="hdbk-op-bookshelfmanager">this
-            section</link>for details.</para>
+            section</link> for details.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -505,7 +414,7 @@
       </varlistentry>
     </variablelist>Please see 
     <link linkend="hdbk-reference-menus-settings-toolbars">this
-    section</link>for detailed instructions.</para>
+    section</link> for detailed instructions.</para>
   </sect1>
   <sect1 id="hdbk-reference-hotkeys">
     <title>HotKeys index</title>
@@ -678,49 +587,6 @@
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
-              <keycap>J</keycap></keycombo>
-            </entry>
-            <entry>
-            <link linkend="hdbk-reference-menus-window-cascade">
-              <menuchoice>
-                <guimenu>Window</guimenu>
-                <guimenuitem>Cascade</guimenuitem>
-              </menuchoice>
-            </link>equivalent; cascades all open windows.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>G</keycap></keycombo>
-            </entry>
-            <entry>
-            <link linkend="hdbk-reference-menus-window-tile-vertically">
-
-              <menuchoice>
-                <guimenu>Window</guimenu>
-                <guimenuitem>Tile vertically</guimenuitem>
-              </menuchoice>
-            </link>equivalent; tiles all open windows
-            vertically.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>H</keycap></keycombo>
-            </entry>
-            <entry>
-            <link linkend="hdbk-reference-menus-window-tile-horizontally">
-
-              <menuchoice>
-                <guimenu>Window</guimenu>
-                <guimenuitem>Tile horizontally</guimenuitem>
-              </menuchoice>
-            </link>equivalent; tiles all open windows
-            horizontally.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
               <keycap>O</keycap></keycombo>
             </entry>
             <entry>
@@ -751,67 +617,6 @@
               <keycap>W</keycap></keycombo>
             </entry>
             <entry>Closes the current window.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>X</keycap></keycombo>
-            </entry>
-            <entry>Moves a bible or commentary read window to the next
-            chapter.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>Y</keycap></keycombo>
-            </entry>
-            <entry>Moves a bible or commentary read window to the next
-            book.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>V</keycap></keycombo>
-            </entry>
-            <entry>Moves a read window to the next verse or
-            entry.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;&Shift;
-              <keycap>F</keycap></keycombo>
-            </entry>
-            <entry>
-            <link linkend="hdbk-reference-menus-window-fullscreen">
-              <menuchoice>
-                <guimenu>Window</guimenu>
-                <guimenuitem>Fullscreen mode</guimenuitem>
-              </menuchoice>
-            </link>equivalent; toggles fullscreen mode.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;&Shift;
-              <keycap>X</keycap></keycombo>
-            </entry>
-            <entry>Moves a bible or commentary read window to the
-            previous chapter.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;&Shift;
-              <keycap>Y</keycap></keycombo>
-            </entry>
-            <entry>Moves a bible or commentary read window to the
-            previous book.</entry>
-          </row>
-          <row>
-            <entry>
-              <keycombo action="simul">&Ctrl;&Shift;
-              <keycap>V</keycap></keycombo>
-            </entry>
-            <entry>Moves a read window to the previous verse or
-            entry.</entry>
           </row>
           <row>
             <entry>
