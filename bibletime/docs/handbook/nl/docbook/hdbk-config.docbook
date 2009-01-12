@@ -62,8 +62,7 @@ handbook. &kde;'s <ulink url="help:/kcontrol/index.html"> KControl
 Center</ulink> contains an excellent and easy to use font installation 
 module. Please read <ulink url="help:/kcontrol/kcmfontinst/index.html"> its 
 documentation</ulink>. For further information you might want to refer to 
-the <ulink 
-url="http://www.ibiblio.org/pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4"> 
+the <ulink url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> 
 Unicode HOWTO</ulink>.</para>
         <tip>
           <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run 
@@ -102,7 +101,7 @@ fonts for different languages.</para>
             <tbody>
               <row>
                 <entry>
-                  <ulink url="http://home.att.net/~jameskass/CODE2000.ZIP">
+                  <ulink url="http://code2000.net/CODE2000.ZIP">
                   Code2000</ulink>
                 </entry>
                 <entry>Misschien het beste gratis Unicode lettertype, welke een groot aantal 
@@ -145,7 +144,7 @@ en Thaise karakters.</entry>
               </row>
               <row>
                 <entry>
-                  <ulink url="http://bibliofile.mc.duke.edu/gww/fonts/Unicode.html">
+                  <ulink url="http://fontforge.sourceforge.net/sfds/">
                   Caslon, Monospace, Cupola, Caliban</ulink>
                 </entry>
                 <entry>Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de 

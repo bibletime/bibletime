@@ -266,8 +266,8 @@ number H8077, use 'strong:H8077'.</para>
         </table></para>
         <para>BibleTime uses the Lucene search engine to perform your searches. It has 
 many advanced features, and you can read more about it here: <ulink 
-url="http://lucene.apache.org/java/docs/queryparsersyntax.html"> 
-http://lucene.apache.org/java/docs/queryparsersyntax.html</ulink></para>
+url="http://lucene.apache.org/java/docs/index.html"> 
+http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
     <sect2 id="hdbk-op-search-results">
@@ -310,7 +310,7 @@ analysis.</para>
   </sect1>
   <sect1 id="hdbk-op-bookshelfmanager">
     <title>Le <guimenuitem>Gestionnaire de Bibliothèque</guimenuitem></title>
-    <para>The <guimenuitem>Bookshelf Manager</guimenuitem>is a tool to manage your 
+    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
 Bookshelf. You can install new works to your Bookshelf, and update or remove 
 existing works from your Bookshelf. Access it by clicking <menuchoice> 
 <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
@@ -334,7 +334,7 @@ s'afficheront dans la bibliothèque.</para>
 "library"), and transfer one or more works to your local Bookshelf. These 
 libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online 
 repository of Sword modules, or another site offering Sword modules). You 
-can manage your libraries with <guibutton>Add library</guibutton>and 
+can manage your libraries with <guibutton>Add library</guibutton> and 
 <guibutton>Delete library</guibutton>.</para>
       <para>Pour commencer une installation ou une mise à jour, choisissez la 
 bibliothèque à laquelle vous désirez vous connecter et une bibliothèque 
@@ -351,6 +351,15 @@ seront alors transférées dans votre bibliothèque.</para>
       <para>Vous pouvez enlever une ou plusieurs modules de votre bibliothèque pour 
 libérer de l'espace disque. Marquer les modules à effacer et cliquez 
 sur<guibutton>Enlever modules</guibutton>.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
+      <title>Search Indexes</title>
+      <para>This option allows you to create new search indexes and cleanup orphaned 
+index files for removed works.</para>
+      <tip>
+	If you are having problems with your search function, visit
+	this feature.
+      </tip>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
