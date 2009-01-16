@@ -1,6 +1,8 @@
 #
 # SOURCE: http://websvn.kde.org/trunk/kdesupport/strigi/cmake/FindCLucene.cmake?view=log
 #
+# ONE FIX: /usr/lib64 added to work on Fedora
+#
 
 
 #
