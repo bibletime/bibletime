@@ -31,6 +31,7 @@ SET(TRIAL_LIBRARY_PATHS
   /usr/local/lib${LIB_SUFFIX}
   /opt/local/lib${LIB_SUFFIX}
   /usr/lib${LIB_SUFFIX}
+  /usr/lib64
   /sw/lib${LIB_SUFFIX}
   /usr/pkg/lib${LIB_SUFFIX}
   )
