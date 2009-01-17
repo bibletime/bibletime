@@ -379,9 +379,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 			// Morphs usually don't have [GH] prepended, but some old OLB
 			// codes do.  We should check if we're digit after first char
 			// to better guess this.
-			// No need to check len, if at(1) is > len QChar::null is
-			// returned which is ok to .isDigit()
-			if (value.at(1).isDigit()) {
+			if (value.size() > 1 && value.at(1).isDigit()) {
 				switch (value.at(0).toLatin1()) {
 					case 'G':
 					module = CBTConfig::get
