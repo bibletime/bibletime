@@ -26,6 +26,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/config/cbtconfig.h"
 
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"
@@ -153,12 +154,15 @@ void BtInstallPage::initPathCombo()
 		m_pathCombo->addItem(*it);
 	}
 	
-	// TODO:choose the current value from config
+	// choose the current value from config but check whether we have so many items
+	int configValue = CBTConfig::get(CBTConfig::installPathIndex);
+	int index = configValue > (m_pathCombo->count()-1) ? m_pathCombo->count()-1 : configValue;
+	m_pathCombo->setCurrentIndex(index);
 }
 
 void BtInstallPage::slotPathChanged(const QString& /*pathText*/)
 {
-	// TODO: save to config
+	CBTConfig::set(CBTConfig::installPathIndex, m_pathCombo->currentIndex( ) );
 }
 
 void BtInstallPage::slotEditPaths()

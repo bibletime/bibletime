@@ -92,7 +92,9 @@ public:
 		searchDialogHeight,
 		searchDialogX,
 		searchDialogY,
-		searchType
+		searchType,
+
+		installPathIndex
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
