@@ -79,7 +79,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
-			COMPILE_FLAGS "-fexceptions" #Enable exception handling
+			COMPILE_FLAGS "-fexceptions ${SWORD_CFLAGS}" #Enable exception handling
 	)
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
@@ -95,7 +95,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
-			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING" #Enable exception handling and Testing
+			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing
 	)
 	SET(QT_USE_QTTEST 1)
 	INCLUDE(${QT_USE_FILE})
