@@ -10,7 +10,14 @@
 #include "cdisplay.h"
 #include "cdisplay.moc"
 
-#include "chtmlreaddisplay.h"
+#ifdef USE_QTWEBKIT
+	#include "bthtmlreaddisplay.h"
+	typedef BtHtmlReadDisplay HTMLREADDISPLAY;
+#else
+	#include "chtmlreaddisplay.h"
+	typedef CHTMLReadDisplay HTMLREADDISPLAY;
+#endif
+
 #include "cplainwritedisplay.h"
 #include "chtmlwritedisplay.h"
 
@@ -114,8 +121,9 @@ void CDisplayConnections::openFindTextDialog() {
 
 /*----------------------*/
 
-CReadDisplay* CDisplay::createReadInstance( CReadWindow* readWindow, QWidget* parent ) {
-	return new CHTMLReadDisplay(readWindow, parent);
+CReadDisplay* CDisplay::createReadInstance( CReadWindow* readWindow, QWidget* parent ) 
+{
+	return new HTMLREADDISPLAY(readWindow, parent);
 }
 
 CWriteDisplay* CDisplay::createWriteInstance( CWriteWindow* writeWindow, const CWriteDisplay::WriteDisplayType& type, QWidget* parent ) {

@@ -12,7 +12,13 @@
 //BibleTime includes
 #include "creadwindow.h"
 
-#include "frontend/display/chtmlreaddisplay.h"
+#ifdef USE_QTWEBKIT
+	#include "frontend/display/bthtmlreaddisplay.h"
+	typedef BtHtmlReadDisplay HTMLREADDISPLAY;
+#else
+	#include "frontend/display/chtmlreaddisplay.h"
+	typedef CHTMLReadDisplay HTMLREADDISPLAY;
+#endif
 
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
@@ -30,6 +36,7 @@
 
 #include <QResizeEvent>
 #include <QMdiSubWindow>
+#include <QDebug>
 
 using namespace Profile;
 
@@ -53,7 +60,7 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceClicked(const QString&, const QString&)), this, SLOT(lookupModKey(const QString&, const QString&)));
 		disconnect(m_displayWidget->connectionsProxy(), SIGNAL(referenceDropped(const QString&)), this, SLOT(lookupKey(const QString&)));
 		
-		CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
+		HTMLREADDISPLAY* v = dynamic_cast<HTMLREADDISPLAY*>(m_displayWidget);
 		if (v) {
 			QObject::disconnect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
 		}
@@ -74,8 +81,9 @@ void CReadWindow::setDisplayWidget( CDisplay* newDisplay ) {
 		this,
 		SLOT(lookupKey(const QString&))
 	);
-	CHTMLReadDisplay* v = dynamic_cast<CHTMLReadDisplay*>(m_displayWidget);
-	if (v) {
+	HTMLREADDISPLAY* v = dynamic_cast<HTMLREADDISPLAY*>(m_displayWidget);
+	if (v) 
+	{
 		QObject::connect(v, SIGNAL(completed()), this, SLOT(slotMoveToAnchor()) );
 	}
 }
@@ -92,6 +100,10 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 		return;
 	}
 
+	if (key() != newKey) {
+		key()->key(newKey->key());
+	}
+
 	//next-TODO: how about options?
 	Q_ASSERT(modules().first()->getDisplay());
 	CEntryDisplay* display = modules().first()->getDisplay();
@@ -106,10 +118,6 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 		);
 	}
 
-	if (key() != newKey) {
-		key()->key(newKey->key());
-	}
-
 	setCaption( windowCaption() );
 
 	// moving to anchor happens in slotMoveToAnchor which catches the completed() signal from KHTMLPart	
@@ -120,7 +128,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 void CReadWindow::slotMoveToAnchor()
 {
 	qDebug("CReadWindow::slotMoveToAnchor");
-
+#ifndef USE_QTWEBKIT
 	//Ugly HACK to get scrollbar working when opening a display window;
 	KHTMLPart* part = dynamic_cast<KHTMLPart*>(displayWidget());
 	if (part) {
@@ -128,7 +136,7 @@ void CReadWindow::slotMoveToAnchor()
 		view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 		view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	}
-
+#endif
 	((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 

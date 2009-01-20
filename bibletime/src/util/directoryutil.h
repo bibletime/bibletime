@@ -57,6 +57,9 @@ public:
 	/** Return the path to the icons. */
 	static QDir getIconDir(void);
 	
+	/** Return the path to the javascript. */
+	static QDir getJavascriptDir(void);
+	
 	/** Returns an icon with the given name */
 	static QIcon getIcon(const QString& name);
 	

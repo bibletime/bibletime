@@ -135,6 +135,8 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/bthistory.cpp
 	
 	#behaviour for display areas
+	src/frontend/display/bthtmljsobject.cpp
+	src/frontend/display/bthtmlreaddisplay.cpp
 	src/frontend/display/cdisplay.cpp
 	src/frontend/display/creaddisplay.cpp
 	src/frontend/display/chtmlreaddisplay.cpp

@@ -4,6 +4,9 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 #Version
 SET(BT_VERSION "1.7.beta3")
 
+# If you change this option, remove build/CMakeCache.txt or the option change won't be recognized
+OPTION(USE_QT_WEB_KIT "Compile with QtWebkit instead of KHTML" OFF)
+
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
@@ -116,6 +119,9 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	)
 ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 
+IF(USE_QT_WEB_KIT)
+	SET_SOURCE_FILES_PROPERTIES( ${bibletime_SOURCES} COMPILE_FLAGS -DUSE_QTWEBKIT )
+ENDIF(USE_QT_WEB_KIT)
 
 ######################################################
 
@@ -161,6 +167,10 @@ INSTALL(FILES ${INSTALL_ICONS_LIST}
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
 INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/display-templates/"
+)
+# javascript
+INSTALL(FILES "src/frontend/display/bthtml.js"
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/javascript/"
 )
 # splash screen
 INSTALL(FILES "pics/startuplogo.png"

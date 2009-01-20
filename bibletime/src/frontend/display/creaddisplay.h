@@ -45,6 +45,9 @@ public:
 	};
 
 protected: // Protected methods
+	friend class BtHtmlReadDisplay;
+	friend class BtHtmlReadDisplayView;
+	friend class BtHtmlJsObject;
 	friend class CDisplay;
 	friend class CHTMLReadDisplay;
 	friend class CHTMLReadDisplayView;
