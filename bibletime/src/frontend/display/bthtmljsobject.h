@@ -24,6 +24,7 @@ public:
 	void moveToAnchor(const QString& anchor);
 
 public slots: void mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey);
+	void mouseClick(const QString& url);
 	void mouseDownLeft(const QString& url, const int& X, const int& Y);
 	void mouseDownRight(const QString& url);
 	void timeOutEvent(const QString& attributes);

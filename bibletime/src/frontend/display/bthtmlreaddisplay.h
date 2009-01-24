@@ -71,12 +71,6 @@ protected:
 	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
 	void slotGoToAnchor(const QString& anchor);
 
-//	virtual bool urlSelected(const QString &url, int button, int state,
-//                            const QString &_target,
-//                            const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-//                            const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
-//	 const QString& url, int button, int state, const QString& _target, KParts::OpenUrlArguments args, KParts::BrowserArguments b_args);
-
 	struct DNDData 
 	{
 		bool mousePressed;
@@ -108,7 +102,6 @@ class BtHtmlReadDisplayView : public QWebView, public CPointers
 	Q_OBJECT
 protected:
 	friend class BtHtmlReadDisplay;
-//	bool event(QEvent* e);
 	void mousePressEvent(QMouseEvent * event);
 	void contextMenuEvent(QContextMenuEvent* event);
 	BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent);

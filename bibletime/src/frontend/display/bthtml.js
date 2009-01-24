@@ -19,11 +19,19 @@ btHtmlJsObject.gotoAnchor.connect(this, this.gotoAnchor);
 
 document.getElementsByTagName("body")[0].addEventListener ('mousedown', function (eve) { mouseDownHandler (eve); }, true);
 document.getElementsByTagName("body")[0].addEventListener ('mousemove', function (eve) { mouseMoveHandler (eve); }, true);
+document.getElementsByTagName("body")[0].addEventListener ('click',     function (eve) { mouseClickHandler (eve); }, true);
 
 // Scroll window to html anchor
 function gotoAnchor(anchor)
 {
 	document.location=document.location + "#" + anchor;
+}
+
+// Mouse button clicked handler
+function mouseClickHandler (mEvent)
+{
+	var url = mEvent.target.getAttribute("href");
+	btHtmlJsObject.mouseClick(url);
 }
 
 // Mouse button pressed down handler

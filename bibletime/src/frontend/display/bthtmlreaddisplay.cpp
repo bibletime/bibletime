@@ -298,16 +298,24 @@ void BtHtmlReadDisplayView::popupMenu( const QString& url, const QPoint& pos)
 }
 #endif
 
-// Reimplementation from QWebView
+// Reimplementation from QWidget
 void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) 
 {
 	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) 
 	{
 		//see docs for BTMimeData and QMimeData
-		BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
-		e->acceptProposedAction();
-		m_display->connectionsProxy()->emitReferenceDropped(item.key());
-		return;
+		const QMimeData* mimedata = e->mimeData();
+		if (mimedata != 0)
+		{
+			const BTMimeData* btmimedata = qobject_cast<const BTMimeData*>(mimedata);
+			if (btmimedata != 0)
+			{
+				BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
+				e->acceptProposedAction();
+				m_display->connectionsProxy()->emitReferenceDropped(item.key());
+				return;
+			}
+		}
 	};
 	//don't accept the action!
 	e->ignore();

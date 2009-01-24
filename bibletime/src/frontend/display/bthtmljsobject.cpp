@@ -43,6 +43,24 @@ void BtHtmlJsObject::mouseDownLeft(const QString& url, const int& x, const int& 
 	m_dndData.url = url;
 }
  
+void BtHtmlJsObject::mouseClick(const QString& url)
+{
+	m_dndData.mousePressed = false;
+	if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) 
+	{
+		QString module;
+		QString key;
+		CReferenceManager::Type type;
+
+		CReferenceManager::decodeHyperlink(url, module, key, type);
+		if (module.isEmpty()) 
+		{
+			module = CReferenceManager::preferredModule( type );
+		}
+		m_display->connectionsProxy()->emitReferenceClicked(module,key);
+	}
+}
+
 void BtHtmlJsObject::mouseDownRight(const QString& url)
 {
 	m_display->setActiveAnchor(url);
