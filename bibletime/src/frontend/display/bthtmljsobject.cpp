@@ -61,9 +61,10 @@ void BtHtmlJsObject::mouseClick(const QString& url)
 	}
 }
 
-void BtHtmlJsObject::mouseDownRight(const QString& url)
+void BtHtmlJsObject::mouseDownRight(const QString& url, const QString& lemma)
 {
 	m_display->setActiveAnchor(url);
+	m_display->setLemma(lemma);
 }
 
 void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x, const int& y, const bool& shiftKey)

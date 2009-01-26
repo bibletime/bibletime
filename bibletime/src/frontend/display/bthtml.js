@@ -38,21 +38,30 @@ function mouseClickHandler (mEvent)
 function mouseDownHandler (mEvent)
 {
 	var node;
-	var X;
-	var Y;
-	var url;
-	url = mEvent.target.getAttribute("href");
+	var url = "";
+	var lemma = "";
+	var mTarget = mEvent.target;
+	if (mTarget)
+	{
+		
+		var tmpUrl = mEvent.target.getAttribute("href");
+		if (tmpUrl)
+			url = tmpUrl;
+		var tmpLemma = mEvent.target.getAttribute("lemma");
+		if (tmpLemma)
+			lemma = tmpLemma;
+	}
 
 	if (mEvent.button === 2) // Right mouse button
 	{
-		btHtmlJsObject.mouseDownRight(url);
+		btHtmlJsObject.mouseDownRight(url, lemma);
 	}
 	if (mEvent.button === 0) // Left mouse button
 	{
 		if (!(mEvent.target === undefined)) 
 		{
-			X = mEvent.clientX;
-			Y = mEvent.clientY;
+			var X = mEvent.clientX;
+			var Y = mEvent.clientY;
 			btHtmlJsObject.mouseDownLeft(url, X, Y);
 		} 
 	}

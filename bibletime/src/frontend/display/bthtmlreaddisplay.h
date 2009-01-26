@@ -56,6 +56,7 @@ public:
 		return m_nodeInfo;
 	}
 	QWidget* view();
+	void setLemma(const QString& lemma);
 
 public slots:
 	void loadJSObject();
@@ -70,7 +71,6 @@ protected:
 	virtual ~BtHtmlReadDisplay();
 	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
 	void slotGoToAnchor(const QString& anchor);
-
 	struct DNDData 
 	{
 		bool mousePressed;
@@ -105,10 +105,13 @@ protected:
 	void mousePressEvent(QMouseEvent * event);
 	void contextMenuEvent(QContextMenuEvent* event);
 	BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent);
-
+	~BtHtmlReadDisplayView()
+	{
+		m_display = 0;
+	}
 protected slots:
 	// Opens the popupmenu at the given position.
-//	void popupMenu( const QString&, const QPoint& );
+	void popupMenu( const QString&, const QPoint& );
 
 private:
 	BtHtmlReadDisplay* m_display;

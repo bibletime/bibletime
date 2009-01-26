@@ -20,7 +20,9 @@
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
+#include <boost/scoped_ptr.hpp>
 #include <QString>
+#include <QMenu>
 
 using namespace InfoDisplay;
 
@@ -76,16 +78,18 @@ void BtHtmlReadDisplay::loadJSObject()
 	mainFrame()->addToJavaScriptWindowObject(m_jsObject->objectName(), m_jsObject);
 }
 
-const QString BtHtmlReadDisplay::text( const CDisplay::TextType /*format*/, const CDisplay::TextPart /*part*/) 
+const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CDisplay::TextPart part) 
 {
-// TODO
-#if 0
-	switch (part) {
-		case Document: {
-			if (format == HTMLText) {
-				return document().toHTML();
+	switch (part) 
+	{
+		case Document: 
+		{
+			if (format == HTMLText) 
+			{
+				return mainFrame()->toHtml();
 			}
-			else {
+			else 
+			{
 				//return htmlDocument().body().innerText().string().toLatin1();
 				CDisplayWindow* window = parentWindow();
 				CSwordKey* const key = window->key();
@@ -119,20 +123,26 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType /*format*/, cons
 			}
 		}
 
-		case SelectedText: {
-			if (!hasSelection()) {
+		case SelectedText: 
+		{
+			if (!hasSelection()) 
+			{
 				return QString::null;
 			}
-			else if (format == HTMLText) {
-				DOM::Range range = selection();
-				return range.toHTML().string();
+			else if (format == HTMLText) 
+			{
+				//	TODO: It does not appear this is ever called
+				//	DOM::Range range = selection();
+				//	return range.toHTML().string();
 			}
-			else { //plain text requested
+			else 
+			{ //plain text requested
 				return selectedText();
 			}
 		}
 
-		case AnchorOnly: {
+		case AnchorOnly: 
+		{
 			QString moduleName;
 			QString keyName;
 			CReferenceManager::Type type;
@@ -141,13 +151,15 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType /*format*/, cons
 			return keyName;
 		}
 
-		case AnchorTextOnly: {
+		case AnchorTextOnly: 
+		{
 			QString moduleName;
 			QString keyName;
 			CReferenceManager::Type type;
 			CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
+			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) 
+			{
 				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 				key->key( keyName );
 
@@ -156,13 +168,15 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType /*format*/, cons
 			return QString::null;
 		}
 
-		case AnchorWithText: {
+		case AnchorWithText: 
+		{
 			QString moduleName;
 			QString keyName;
 			CReferenceManager::Type type;
 			CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
-			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
+			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) 
+			{
 				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 				key->key( keyName );
 
@@ -192,7 +206,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType /*format*/, cons
 		default:
 		return QString::null;
 	}
-#endif
+	return QString();
 }
 
 // Puts html text and javascript into QWebView
@@ -210,9 +224,9 @@ void BtHtmlReadDisplay::setText( const QString& newText )
 
 bool BtHtmlReadDisplay::hasSelection() 
 {
-// TODO
-//	return KHTMLPart::hasSelection();
-	return false;
+	if (selectedText().isEmpty())
+		return false;
+	return true;
 }
 
 // Reimplementation
@@ -223,7 +237,7 @@ QWidget* BtHtmlReadDisplay::view()
 
 void BtHtmlReadDisplay::selectAll() 
 {
-// TODO
+// TODO - needs implementation
 //	KHTMLPart::selectAll();
 }
 
@@ -239,11 +253,18 @@ void BtHtmlReadDisplay::slotGoToAnchor(const QString& anchor)
 	m_jsObject->moveToAnchor(anchor);
 }
 
-void BtHtmlReadDisplay::openFindTextDialog() {
+void BtHtmlReadDisplay::setLemma(const QString& lemma)
+{
+	m_nodeInfo[ CDisplay::Lemma ] = lemma;
+}
+
+void BtHtmlReadDisplay::openFindTextDialog() 
+{
+// TODO - needs implementation
 //	findText();
 }
 
-void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& /*message*/, int /*lineNumber*/, const QString& /*sourceID*/ )
+void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int lineNumber, const QString& sourceID )
 {
 }
 
@@ -257,7 +278,8 @@ void BtHtmlReadDisplay::slotLoadFinished(bool)
 
 // ----------------- BtHtmlReadDisplayView -------------------------------------
 
-BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, QWidget* parent) : QWebView(parent), m_display(displayWidget) 
+BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, QWidget* parent) 
+	: QWebView(parent), m_display(displayWidget) 
 {
 }
 
@@ -268,10 +290,13 @@ void BtHtmlReadDisplayView::mousePressEvent(QMouseEvent * event)
 
 void BtHtmlReadDisplayView::contextMenuEvent(QContextMenuEvent* event)
 {
-	QWebView::contextMenuEvent(event);
+//	QWebView::contextMenuEvent(event);
+	if (QMenu* popup = m_display->installedPopup()) 
+	{
+		popup->exec(event->globalPos());
+	}
 }
 
-#if 0
 /** Opens the popupmenu at the given position. */
 void BtHtmlReadDisplayView::popupMenu( const QString& url, const QPoint& pos) 
 {
@@ -284,19 +309,6 @@ void BtHtmlReadDisplayView::popupMenu( const QString& url, const QPoint& pos)
 		popup->exec(pos);
 	}
 }
-
-/** Reimplementation from QScrollArea. Sets the right slots */
-	bool BtHtmlReadDisplayView::event(QEvent* e) 
-{
-	if (e->type() == QEvent::Polish) 
-	{
-		connect( this, SIGNAL(popupMenu(const QString&, const QPoint&)), // TODO
-			this, SLOT(popupMenu(const QString&, const QPoint&)));
-	}
-	return QWebView::event(e);
-	return false;
-}
-#endif
 
 // Reimplementation from QWidget
 void BtHtmlReadDisplayView::dropEvent( QDropEvent* e ) 
