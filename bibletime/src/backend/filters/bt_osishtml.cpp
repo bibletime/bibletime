@@ -259,6 +259,11 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					     }*/
 
 					buf.append("<span class=\"crossreference\">");
+#ifdef SWORD_SIMPLERENDER
+					sword::SWBuf footnoteNumber = tag.getAttribute("swordFootnote");
+					sword::SWBuf footnoteBody = myModule->getEntryAttributes()["Footnote"][footnoteNumber]["body"];
+					buf += myModule->RenderText(footnoteBody);
+#endif
 				}
 
 				/* else if (type == "explanation") {
@@ -308,57 +313,10 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 		}
 		// The <p> paragraph tag is handled by OSISHTMLHref
 		else if (!strcmp(tag.getName(), "reference")) { // <reference> tag
-
 			if (!tag.isEndTag() && !tag.isEmpty()) {
-				QString ref( tag.getAttribute("osisRef") );
-				QString hrefRef( ref );
-				Q_ASSERT(!ref.isEmpty());
 
-				if (!ref.isEmpty()) {
-					//find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
-					//If the osisRef is something like "ModuleID:key comes here" then the
-					// modulename is given, so we'll use that one
+				renderReference(tag.getAttribute("osisRef"), buf, myModule, myUserData);
 
-					CSwordModuleInfo* mod = CPointers::backend()->findSwordModuleByPointer(myModule);
-					Q_ASSERT(mod);
-					if (!mod || (mod->type() != CSwordModuleInfo::Bible
-							&& mod->type() != CSwordModuleInfo::Commentary)) {
-
-						mod = CBTConfig::get( CBTConfig::standardBible );
-					}
-
-					Q_ASSERT(mod);
-
-					//if the osisRef like "GerLut:key" contains a module, use that
-					int pos = ref.indexOf(":");
-
-					if ((pos >= 0) && ref.at(pos-1).isLetter() && ref.at(pos+1).isLetter()) {
-						QString newModuleName = ref.left(pos);
-						hrefRef = ref.mid(pos+1);
-
-						if (CPointers::backend()->findModuleByName(newModuleName)) {
-							mod = CPointers::backend()->findModuleByName(newModuleName);
-						}
-					}
-
-					CReferenceManager::ParseOptions options;
-					options.refBase = QString::fromUtf8(myUserData->key->getText());
-					options.refDestinationModule = QString(mod->name());
-					options.sourceLanguage = QString(myModule->Lang());
-					options.destinationLanguage = QString("en");
-
-					buf.append("<a href=\"");
-					buf.append( //create the hyperlink with key and mod
-						CReferenceManager::encodeHyperlink(
-							mod->name(),
-							CReferenceManager::parseVerseReference(hrefRef, options),
-							CReferenceManager::typeFromModule(mod->type())
-						).toUtf8().constData()
-					);
-					buf.append("\" crossrefs=\"");
-					buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
-					buf.append("\">");
-				}
 			}
 			else if (tag.isEndTag()) {
 				buf.append("</a>");
@@ -597,3 +555,56 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
 	return false;
 }
+
+void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData) {
+	QString ref( osisRef );
+	QString hrefRef( ref );
+	Q_ASSERT(!ref.isEmpty());
+
+	if (!ref.isEmpty()) {
+		//find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
+		//If the osisRef is something like "ModuleID:key comes here" then the
+		// modulename is given, so we'll use that one
+
+		CSwordModuleInfo* mod = CPointers::backend()->findSwordModuleByPointer(myModule);
+		Q_ASSERT(mod);
+		if (!mod || (mod->type() != CSwordModuleInfo::Bible
+				&& mod->type() != CSwordModuleInfo::Commentary)) {
+
+			mod = CBTConfig::get( CBTConfig::standardBible );
+		}
+
+		Q_ASSERT(mod);
+
+		//if the osisRef like "GerLut:key" contains a module, use that
+		int pos = ref.indexOf(":");
+
+		if ((pos >= 0) && ref.at(pos-1).isLetter() && ref.at(pos+1).isLetter()) {
+			QString newModuleName = ref.left(pos);
+			hrefRef = ref.mid(pos+1);
+
+			if (CPointers::backend()->findModuleByName(newModuleName)) {
+				mod = CPointers::backend()->findModuleByName(newModuleName);
+			}
+		}
+
+		CReferenceManager::ParseOptions options;
+		options.refBase = QString::fromUtf8(myUserData->key->getText());
+		options.refDestinationModule = QString(mod->name());
+		options.sourceLanguage = QString(myModule->Lang());
+		options.destinationLanguage = QString("en");
+
+		buf.append("<a href=\"");
+		buf.append( //create the hyperlink with key and mod
+			CReferenceManager::encodeHyperlink(
+				mod->name(),
+				CReferenceManager::parseVerseReference(hrefRef, options),
+				CReferenceManager::typeFromModule(mod->type())
+			).toUtf8().constData()
+		);
+		buf.append("\" crossrefs=\"");
+		buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
+		buf.append("\">");
+	}
+}
+

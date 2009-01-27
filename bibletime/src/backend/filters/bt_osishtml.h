@@ -58,6 +58,8 @@ BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::OSI
 public:
 		BT_OSISHTML();
 		virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
+private:
+		void renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData);
 	};
 
 } //end of Filters namespace
