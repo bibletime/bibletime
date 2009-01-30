@@ -22,5 +22,5 @@ TerminalOptions=
 Type=Application
 X-KDE-SubstituteUID=false
 X-KDE-Username=
-Categories=X-Bible;X-Religion;Literature;Art;Education;Utility;KDE;QT
+Categories=X-Bible;X-Religion;Literature;Art;Education;Utility;KDE;QT;
 DocPath=bibletime/handbook/index.html
