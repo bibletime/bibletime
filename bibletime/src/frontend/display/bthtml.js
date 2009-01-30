@@ -14,24 +14,38 @@ var eventType = "";
 var prevNode = 0;
 var currentNode = 0;
 
-btHtmlJsObject.startTimer.connect(this, this.startTimer);
-btHtmlJsObject.gotoAnchor.connect(this, this.gotoAnchor);
-
-document.getElementsByTagName("body")[0].addEventListener ('mousedown', function (eve) { mouseDownHandler (eve); }, true);
-document.getElementsByTagName("body")[0].addEventListener ('mousemove', function (eve) { mouseMoveHandler (eve); }, true);
-document.getElementsByTagName("body")[0].addEventListener ('click',     function (eve) { mouseClickHandler (eve); }, true);
-
 // Scroll window to html anchor
 function gotoAnchor(anchor)
 {
 	document.location=document.location + "#" + anchor;
 }
 
+// Set body editable
+function setEditable()
+{
+	var theBody = document.getElementsByTagName('body')[0];
+	theBody.setAttribute('contenteditable','true');
+}
+
+// Set body not editable
+function setNotEditable()
+{
+	var theBody = document.getElementsByTagName('body')[0]; 
+	theBody.setAttribute('contenteditable','false');
+}
+
 // Mouse button clicked handler
 function mouseClickHandler (mEvent)
 {
-	var url = mEvent.target.getAttribute("href");
-	btHtmlJsObject.mouseClick(url);
+	var mTarget = mEvent.target;
+	if (mTarget)
+	{
+		var url = "";
+		var tmpUrl = mEvent.target.getAttribute("href");
+		if (tmpUrl)
+			url = tmpUrl;
+		btHtmlJsObject.mouseClick(url);
+	}
 }
 
 // Mouse button pressed down handler
@@ -43,7 +57,6 @@ function mouseDownHandler (mEvent)
 	var mTarget = mEvent.target;
 	if (mTarget)
 	{
-		
 		var tmpUrl = mEvent.target.getAttribute("href");
 		if (tmpUrl)
 			url = tmpUrl;
@@ -116,6 +129,15 @@ function timerEvent()
 		btHtmlJsObject.timeOutEvent(attributes);
 	}
 }
+
+document.getElementsByTagName("body")[0].addEventListener ('mousedown', function (eve) { mouseDownHandler (eve); }, true);
+document.getElementsByTagName("body")[0].addEventListener ('mousemove', function (eve) { mouseMoveHandler (eve); }, true);
+document.getElementsByTagName("body")[0].addEventListener ('click',     function (eve) { mouseClickHandler (eve); }, true);
+
+btHtmlJsObject.startTimer.connect(this, this.startTimer);
+btHtmlJsObject.gotoAnchor.connect(this, this.gotoAnchor);
+btHtmlJsObject.setDocumentEditable.connect(this, this.setEditable);
+btHtmlJsObject.setDocumentNotEditable.connect(this, this.setNotEditable);
 
 ;
 

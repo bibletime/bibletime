@@ -22,6 +22,7 @@ public:
 	BtHtmlJsObject(BtHtmlReadDisplay* display);
 	~BtHtmlJsObject(){}
 	void moveToAnchor(const QString& anchor);
+	void setBodyEditable(bool editable);
 
 public slots: void mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey);
 	void mouseClick(const QString& url);
@@ -33,6 +34,9 @@ signals:
 	void startTimer(int time);
 	void mouseMoveAttribute(const QString& attrName, const QString& attrValue);
 	void gotoAnchor(const QString& anchor);
+	void selectAll();
+	void setDocumentEditable();
+	void setDocumentNotEditable();
 
 private:
 	int m_int;
