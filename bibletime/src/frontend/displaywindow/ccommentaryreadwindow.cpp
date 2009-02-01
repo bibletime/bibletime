@@ -196,8 +196,4 @@ bool CCommentaryReadWindow::syncAllowed() const {
  */
 void CCommentaryReadWindow::setupPopupMenu() {
 	CLexiconReadWindow::setupPopupMenu();
-
-	//popup()->changeTitle(-1, CToolClass::getIconForModule(modules().first()), tr("Commentary window"));
-	popup()->actions().at(0)->setText(tr("Commentary window"));
-	popup()->actions().at(0)->setIcon(CToolClass::getIconForModule(modules().first()));
 }
