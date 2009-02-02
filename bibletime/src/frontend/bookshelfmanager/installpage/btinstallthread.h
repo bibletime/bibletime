@@ -76,9 +76,9 @@ protected:
 	QString m_destination;
 	QString m_source;
 	bool m_cancelled;
-	//BtInstallMgr* m_iMgr;
+	BtInstallMgr* m_iMgr;
 	//sword::InstallSource m_installSource;
-	BtInstallMgr m_iMgr;
+	//BtInstallMgr m_iMgr;
 	sword::InstallSource m_installSource;
 	//TODO: it would be best to get the backend from the bookshelf manager install page
 	// where it has already been created. Could fasten the progress dialog startup.

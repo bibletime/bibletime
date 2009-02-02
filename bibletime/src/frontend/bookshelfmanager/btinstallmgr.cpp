@@ -38,6 +38,7 @@ BtInstallMgr::BtInstallMgr()
 }
 
 BtInstallMgr::~BtInstallMgr() {
+	//doesn't really help because it only sets a flag
 	terminate(); //make sure to close the connection
 }
 

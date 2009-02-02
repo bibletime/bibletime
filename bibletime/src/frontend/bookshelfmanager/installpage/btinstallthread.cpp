@@ -35,11 +35,14 @@ BtInstallThread::BtInstallThread(QObject* parent, QString moduleName, QString so
 	m_installSource(instbackend::source(sourceName)),
 	m_backendForSource(instbackend::backend(m_installSource))
 {
+	m_iMgr = new BtInstallMgr();
 }
 
 
 BtInstallThread::~BtInstallThread()
-{}
+{
+	delete m_iMgr;
+}
 
 void BtInstallThread::run()
 {
@@ -49,6 +52,7 @@ void BtInstallThread::run()
 	emit preparingInstall(m_module, m_source);
 
 	//make sure target/mods.d and target/modules exist
+	//TODO: move this to some common precondition
 	QDir dir(m_destination);
 	if (!dir.exists()) {
 		dir.mkdir(m_destination);
@@ -63,8 +67,8 @@ void BtInstallThread::run()
 		qDebug() << "made directory" << m_destination << "/mods.d";
 	}
 
-	QObject::connect(&m_iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)));
-	QObject::connect(&m_iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()));
+	QObject::connect(m_iMgr, SIGNAL(percentCompleted(int, int)), this, SLOT(slotManagerStatusUpdated(int, int)), Qt::QueuedConnection);
+	QObject::connect(m_iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()), Qt::QueuedConnection);
 
 	//check whether it's an update. If yes, remove existing module first
 	//TODO: silently removing without undo if the user cancels the update is WRONG!!!
@@ -75,7 +79,7 @@ void BtInstallThread::run()
 
 	if (instbackend::isRemote(m_installSource)) {
 		qDebug() << "calling install";
-		int status = m_iMgr.installModule(&lMgr, 0, m_module.toLatin1(), &m_installSource);
+		int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), &m_installSource);
 		if (status != 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
@@ -86,7 +90,7 @@ void BtInstallThread::run()
 	}
 	else { //local source
 		emit statusUpdated(m_module, 0);
-		int status = m_iMgr.installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
+		int status = m_iMgr->installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
 		if (status > 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
@@ -103,34 +107,34 @@ void BtInstallThread::run()
 
 void BtInstallThread::slotStopInstall()
 {
-	qDebug() << "BtInstallThread::slotStopInstall, installing" << m_module << "was cancelled";
 	if (!done) {
 		done = true;
-		qDebug() << "BtInstallThread::slotStopInstall 1";
-		m_iMgr.terminate();
-		this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
+		qDebug() << "BtInstallThread::slotStopInstall, installing" << m_module << "was cancelled";
+		m_iMgr->terminate();
+		//this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
 		qDebug() << "BtInstallThread::slotStopInstall 2";
 		//qApp->processEvents();
 		// wait to terminate for some secs. We rather let the execution go on and cleaning up to fail than the app to freeze
-		this->wait(3000);
+		int notRun = this->wait(200);
+		if (notRun) {
+			this->terminate();
+			this->wait(2);
+			qDebug() << "installthread ("<< m_module << ") terminated, delete m_iMgr";
+			delete m_iMgr; // this makes sure the ftp library will be cleaned up in the destroyer
+			m_iMgr = 0;
+		}
 		qDebug() << "BtInstallThread::slotStopInstall 3";
-		qApp->processEvents();
 		// cleanup: remove the module, remove the temp files
-		// Actually m_iMgr is unnecessary, it could be local in the run().
 		if (true) {
 			qDebug() << "BtInstallThread::slotStopInstall 4";
 			// remove the installed module, just to be sure because mgr may
 			// have been terminated when copying files
 			removeModule();
-			qApp->processEvents();
 			removeTempFiles();
-			qApp->processEvents();
 			qDebug() << "BtInstallThread::slotStopInstall will emit installStopped...";
 			emit installStopped(m_module, m_source);
-			qApp->processEvents();
 		}
 	}
-	qDebug() << "BtInstallThread::slotStopInstall end";
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/)
@@ -147,8 +151,10 @@ void BtInstallThread::slotDownloadStarted()
 
 void BtInstallThread::removeModule()
 {
+	qDebug() << "BtInstallThread::removeModule start";
 	CSwordModuleInfo* m = CPointers::backend()->findModuleByName(m_module);
 	if (m) { //module found?
+		qDebug() << "BtInstallThread::removeModule, module" << m_module << "found";
 		QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
 		QString dataPath = m->config(CSwordModuleInfo::DataPath);
 		if (dataPath.left(2) == "./") {
@@ -163,15 +169,17 @@ void BtInstallThread::removeModule()
 		}
 
 		sword::SWMgr mgr(prefixPath.toLatin1());
-		//BtInstallMgr iMgr;
+		BtInstallMgr iMgr;
 		//TODO: use SWModule name, see also removepage
-		m_iMgr.removeModule(&mgr, m->name().toLatin1());
+		iMgr.removeModule(&mgr, m->name().toLatin1());
+	} else {
+		qDebug() << "BtInstallThread::removeModule, module" << m_module << "not found";
 	}
 }
 
 void BtInstallThread::removeTempFiles()
 {
-	qDebug("BtInstallThread::removeTempFiles");
+	qDebug("BtInstallThread::removeTempFiles start");
 
 	// (take the remote conf file for this module, take DataPath,
 	// take the absolute path of the InstallMgr)
