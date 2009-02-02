@@ -67,14 +67,14 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
 				progressItem->setText(1, tr("Waiting for turn..."));
 
 				//connect the signals between the dialog, items and threads
-				QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()) );
-				QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)));
+				QObject::connect(stopButton, SIGNAL(clicked()), thread, SLOT(slotStopInstall()), Qt::QueuedConnection);
+				QObject::connect(thread, SIGNAL(installStopped(QString, QString)), this, SLOT(slotOneItemStopped(QString, QString)), Qt::QueuedConnection);
 				//is this needed or is statusUpdated enough?
-				QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString, int)));
-				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)));
-				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)));
+				QObject::connect(thread, SIGNAL(installCompleted(QString, QString, int)), this, SLOT(slotOneItemCompleted(QString, QString, int)), Qt::QueuedConnection);
+				QObject::connect(thread, SIGNAL(statusUpdated(QString, int)), this, SLOT(slotStatusUpdated(QString, int)), Qt::QueuedConnection);
+				QObject::connect(thread, SIGNAL(downloadStarted(QString)), this, SLOT(slotDownloadStarted(QString)), Qt::QueuedConnection);
 
-				QObject::connect(thread, SIGNAL(preparingInstall(QString, QString)), this, SLOT(slotInstallStarted(QString, QString)));
+				QObject::connect(thread, SIGNAL(preparingInstall(QString, QString)), this, SLOT(slotInstallStarted(QString, QString)), Qt::QueuedConnection);
 
 			}
 		}
@@ -104,17 +104,27 @@ void BtInstallProgressDialog::startThreads()
 	qDebug() << "start threads...";
 	//loop through the multimap of the waiting threads, start at most 3 threads for each source
 	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
-	while (threadIterator != m_waitingThreads.end()) {
+// concurrency is disabled for now
+// 	while (threadIterator != m_waitingThreads.end()) {
+// 		QString sourceName = threadIterator.key();
+// 		qDebug() << sourceName;
+// 		if (m_runningThreads.values(sourceName).count() < 3) {
+// 			BtInstallThread* t = threadIterator.value();
+// 			m_runningThreads.insert(sourceName, t);
+// 			threadIterator = m_waitingThreads.erase(threadIterator);
+// 			t->start();
+// 		}
+// 		else ++threadIterator;
+// 	}
+	//non-concurrent
+	if (threadIterator != m_waitingThreads.end()) {
 		QString sourceName = threadIterator.key();
-		qDebug() << sourceName;
-		if (m_runningThreads.values(sourceName).count() < 3) {
-			BtInstallThread* t = threadIterator.value();
-			m_runningThreads.insert(sourceName, t);
-			threadIterator = m_waitingThreads.erase(threadIterator);
-			t->start();
-		}
-		else ++threadIterator;
+		BtInstallThread* t = threadIterator.value();
+		m_runningThreads.insert(sourceName, t);
+		threadIterator = m_waitingThreads.erase(threadIterator);
+		t->start();
 	}
+
 	qDebug("BtInstallProgressDialog::startThreads end");
 }
 
@@ -153,15 +163,26 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 	m_runningThreads.remove(source, m_threadsByModule.value(module));
 	m_waitingThreads.remove(source, m_threadsByModule.value(module));
 
-	//start a waiting thread if there are any
-	QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
-	qDebug() << threadsForSource;
-	if (!threadsForSource.isEmpty()) {
-		qDebug() << "Threads are waiting for turn";
-		BtInstallThread* thread = threadsForSource.at(0);
-		m_waitingThreads.remove(source, thread);
-		m_runningThreads.insert(source, thread);
-		thread->start();
+//concurrency is disabled for now
+// 	//start a waiting thread if there are any
+// 	QList<BtInstallThread*> threadsForSource = m_waitingThreads.values(source);
+// 	qDebug() << threadsForSource;
+// 	if (!threadsForSource.isEmpty()) {
+// 		qDebug() << "Threads are waiting for turn";
+// 		BtInstallThread* thread = threadsForSource.at(0);
+// 		m_waitingThreads.remove(source, thread);
+// 		m_runningThreads.insert(source, thread);
+// 		thread->start();
+// 	}
+
+	//non-concurrent
+	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
+	if (m_runningThreads.size() == 0 && threadIterator != m_waitingThreads.end()) {
+		QString sourceName = threadIterator.key();
+		BtInstallThread* t = threadIterator.value();
+		m_runningThreads.insert(sourceName, t);
+		threadIterator = m_waitingThreads.erase(threadIterator);
+		t->start();
 	}
 
 	if (threadsDone()) {
