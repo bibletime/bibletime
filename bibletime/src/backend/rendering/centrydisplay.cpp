@@ -58,7 +58,6 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
 			k1.Verse(0);
 			if ( k1.rawText().length() > 0 ) result.append( render.renderSingleKey(k1.key(), modules, preverse_settings ) );
 		}
-		return result;
 	}
 	return result.append( render.renderSingleKey(keyName, modules, normal_settings) );
 }
