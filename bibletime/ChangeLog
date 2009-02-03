@@ -1,3 +1,9 @@
+2009-02-03 Gary, Eeli, Martin
+	* tons of bugfixes
+	* threading disabled in Bookshelf Manager because of non-threadsafe ftp library in Sword
+	* beginnings of port to QTWebKit by Gary (code disabled by default)
+	* release 1.7rc1
+
 2008-11-05 Martin Gruner <mgruner@crosswire.org>
 	* more const modifier fixes in various sources to improve standards conformity
 
