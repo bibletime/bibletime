@@ -1,3 +1,9 @@
+
+
+SET(bibletime_UIS
+     src/frontend/display/bthtmlfindtext.ui
+)
+
 SET(bibletime_SOURCES
 	#backend filters
 	src/backend/filters/bt_gbfhtml.cpp
@@ -135,6 +141,7 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/bthistory.cpp
 	
 	#behaviour for display areas
+    src/frontend/display/bthtmlfindtext.cpp
 	src/frontend/display/bthtmljsobject.cpp
 	src/frontend/display/bthtmlreaddisplay.cpp
 	src/frontend/display/cdisplay.cpp

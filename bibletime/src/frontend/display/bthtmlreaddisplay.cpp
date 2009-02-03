@@ -26,6 +26,8 @@
 
 using namespace InfoDisplay;
 
+void showBtHtmlFindText(CMDIArea*);
+
 const static QString body = "</body>";
 const static QString jsBegin = "<script  type=\"text/javascript\">";
 const static QString jsEnd = "</script>";
@@ -37,8 +39,10 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 
 {
 	settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
+//	m_view = new BtHtmlReadDisplayView(this, 0);
 	m_view = new BtHtmlReadDisplayView(this, parentWidget ? parentWidget : readWindow);
 	m_view->setPage(this);
+	setParent(m_view);
 	m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	m_view->setHtml("");
 	initJavascript();
@@ -46,8 +50,12 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 	Q_ASSERT(ok);
 }
 
-BtHtmlReadDisplay::~BtHtmlReadDisplay() {}
+BtHtmlReadDisplay::~BtHtmlReadDisplay() 
+{
+	setView(0);
+}
 
+// Read javascript into memory once and create the c++ javascript object
 void BtHtmlReadDisplay::initJavascript()
 {
 	// read bthtml.js javascript file once
@@ -71,8 +79,8 @@ void BtHtmlReadDisplay::initJavascript()
 	m_jsObject->setObjectName("btHtmlJsObject");
 }
 
-// When the QWebFrame is cleared, this function is called to install the BtHtmlJsObject
-// into the Javascript model
+// When the QWebFrame is cleared, this function is called to install the 
+// javascript object (BtHtmlJsObject class) into the Javascript model
 void BtHtmlReadDisplay::loadJSObject()
 {
 	mainFrame()->addToJavaScriptWindowObject(m_jsObject->objectName(), m_jsObject);
@@ -90,7 +98,6 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 			}
 			else 
 			{
-				//return htmlDocument().body().innerText().string().toLatin1();
 				CDisplayWindow* window = parentWindow();
 				CSwordKey* const key = window->key();
 				CSwordModuleInfo* module = key->module();
@@ -132,8 +139,6 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 			else if (format == HTMLText) 
 			{
 				//	TODO: It does not appear this is ever called
-				//	DOM::Range range = selection();
-				//	return range.toHTML().string();
 			}
 			else 
 			{ //plain text requested
@@ -215,13 +220,17 @@ void BtHtmlReadDisplay::setText( const QString& newText )
 	QString jsText = newText;
 	jsText.replace(body,jsBegin+javascript+jsEnd+body);
 
+	// Disconnect any previous connect and connect to slot that loads the javascript object
 	QWebFrame* frame = mainFrame();
-	m_view->setHtml(jsText);
-	frame = mainFrame();
+	disconnect(frame,SIGNAL(javaScriptWindowObjectCleared()),0,0);
 	bool ok = connect(frame,SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(loadJSObject()));
 	Q_ASSERT(ok);
+
+	// Send text to the html viewer
+	m_view->setHtml(jsText);
 }
 
+// See if any text is selected
 bool BtHtmlReadDisplay::hasSelection() 
 {
 	if (selectedText().isEmpty())
@@ -230,11 +239,13 @@ bool BtHtmlReadDisplay::hasSelection()
 }
 
 // Reimplementation
+// Returns the BtHtmlReadDisplayView object
 QWidget* BtHtmlReadDisplay::view()
 {
 	return m_view;
 }
 
+// Select all text in the viewer
 void BtHtmlReadDisplay::selectAll() 
 {
 	m_jsObject->setBodyEditable(true);
@@ -255,25 +266,31 @@ void BtHtmlReadDisplay::slotGoToAnchor(const QString& anchor)
 	m_jsObject->moveToAnchor(anchor);
 }
 
+// Save the Lemma (Strongs number) attribute 
 void BtHtmlReadDisplay::setLemma(const QString& lemma)
 {
 	m_nodeInfo[ CDisplay::Lemma ] = lemma;
 }
 
+// Open the Find text dialog
 void BtHtmlReadDisplay::openFindTextDialog() 
 {
-// TODO - needs implementation
-//	findText();
+	CMDIArea* mdiArea = parentWindow()->mdi();
+	showBtHtmlFindText(mdiArea);
 }
 
-void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int lineNumber, const QString& sourceID )
-{
-}
-
+// Send "completed" signal when the text is finished loading into the viewer
 void BtHtmlReadDisplay::slotLoadFinished(bool)
 {
 	emit completed();
 }
+
+// For debugging javascript
+#if 0
+void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int lineNumber, const QString& sourceID )
+{
+}
+#endif
 
 
 
@@ -285,30 +302,17 @@ BtHtmlReadDisplayView::BtHtmlReadDisplayView(BtHtmlReadDisplay* displayWidget, Q
 {
 }
 
-void BtHtmlReadDisplayView::mousePressEvent(QMouseEvent * event)
-{
-	QWebView::mousePressEvent(event);
-}
+BtHtmlReadDisplayView::~BtHtmlReadDisplayView()
+	{
+		setPage(0);
+	}
 
+// Create the right mouse context menus
 void BtHtmlReadDisplayView::contextMenuEvent(QContextMenuEvent* event)
 {
-//	QWebView::contextMenuEvent(event);
 	if (QMenu* popup = m_display->installedPopup()) 
 	{
 		popup->exec(event->globalPos());
-	}
-}
-
-/** Opens the popupmenu at the given position. */
-void BtHtmlReadDisplayView::popupMenu( const QString& url, const QPoint& pos) 
-{
-	if (!url.isEmpty()) 
-	{
-		m_display->setActiveAnchor(url);
-	}
-	if (QMenu* popup = m_display->installedPopup()) 
-	{
-		popup->exec(pos);
 	}
 }
 

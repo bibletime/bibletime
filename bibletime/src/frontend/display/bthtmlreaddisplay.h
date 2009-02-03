@@ -69,7 +69,6 @@ protected:
 	friend class CDisplay;
 	BtHtmlReadDisplay( CReadWindow* readWindow, QWidget* parent = 0 );
 	virtual ~BtHtmlReadDisplay();
-	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
 	void slotGoToAnchor(const QString& anchor);
 	struct DNDData 
 	{
@@ -88,6 +87,9 @@ protected:
 	QMap<NodeInfoType, QString> m_nodeInfo;
 	int m_magTimerId;
 
+// For debugging javascript
+//	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
+
 private:
 	void initJavascript();
 	BtHtmlReadDisplayView* m_view;
@@ -102,16 +104,9 @@ class BtHtmlReadDisplayView : public QWebView, public CPointers
 	Q_OBJECT
 protected:
 	friend class BtHtmlReadDisplay;
-	void mousePressEvent(QMouseEvent * event);
 	void contextMenuEvent(QContextMenuEvent* event);
 	BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent);
-	~BtHtmlReadDisplayView()
-	{
-		m_display = 0;
-	}
-protected slots:
-	// Opens the popupmenu at the given position.
-	void popupMenu( const QString&, const QPoint& );
+	~BtHtmlReadDisplayView();
 
 private:
 	BtHtmlReadDisplay* m_display;

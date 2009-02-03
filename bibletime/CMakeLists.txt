@@ -77,9 +77,12 @@ LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 )
 
+# this will run uic on .ui files:
+QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
+
 #Link to QtTest only in debug builds
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
-	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES})
+	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions ${SWORD_CFLAGS}" #Enable exception handling
@@ -95,7 +98,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	SET(CMAKE_BUILD_TYPE "Debug")
-	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES})
+	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing
