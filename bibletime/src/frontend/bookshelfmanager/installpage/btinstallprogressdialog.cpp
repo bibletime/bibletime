@@ -103,7 +103,7 @@ void BtInstallProgressDialog::startThreads()
 	//QList<CSwordModuleInfo*> CPointers::backend()->takeModulesFromList(m_threadsByModule.keys());
 	qDebug() << "start threads...";
 	//loop through the multimap of the waiting threads, start at most 3 threads for each source
-	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
+	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
 // concurrency is disabled for now
 // 	while (threadIterator != m_waitingThreads.end()) {
 // 		QString sourceName = threadIterator.key();
@@ -117,7 +117,10 @@ void BtInstallProgressDialog::startThreads()
 // 		else ++threadIterator;
 // 	}
 	//non-concurrent
-	if (threadIterator != m_waitingThreads.end()) {
+	if (threadIterator != m_waitingThreads.begin()) {
+		// go to the last item which is actually the first in the visible list
+		// because the iterator is reversed compared to insert order
+		threadIterator--;
 		QString sourceName = threadIterator.key();
 		BtInstallThread* t = threadIterator.value();
 		m_runningThreads.insert(sourceName, t);
@@ -152,7 +155,7 @@ void BtInstallProgressDialog::slotOneItemStopped(QString module, QString source)
 
 void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString source, QString statusMessage)
 {
-	qDebug() << "***************************************************\nBtInstallProgressDialog::oneItemStoppedOrCompleted" << module << statusMessage << "\n******************************************";
+	qDebug() << "\n**********************************\nBtInstallProgressDialog::oneItemStoppedOrCompleted" << module << statusMessage << "\n******************************************";
 	// update the list item
 	m_statusWidget->setItemWidget(getItem(module), 1, 0);
 	getItem(module)->setText(1, statusMessage);
@@ -176,8 +179,9 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 // 	}
 
 	//non-concurrent
-	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.begin();
-	if (m_runningThreads.size() == 0 && threadIterator != m_waitingThreads.end()) {
+	QMultiMap<QString, BtInstallThread*>::iterator threadIterator = m_waitingThreads.end();
+	if (m_runningThreads.size() == 0 && threadIterator != m_waitingThreads.begin()) {
+		threadIterator--; // the last item
 		QString sourceName = threadIterator.key();
 		BtInstallThread* t = threadIterator.value();
 		m_runningThreads.insert(sourceName, t);
