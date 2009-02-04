@@ -84,6 +84,7 @@ void BtRemovePage::populateModuleList()
 {
 
 	m_view->clear();
+	m_selectedModules.clear();
 
 	// disconnect the signal so that we don't have to run functions for every module
 	disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
