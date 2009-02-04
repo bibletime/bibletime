@@ -152,7 +152,7 @@ void BtInstallProgressDialog::slotOneItemStopped(QString module, QString source)
 
 void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString source, QString statusMessage)
 {
-	qDebug() << "BtInstallProgressDialog::oneItemStoppedOrCompleted" << module << source << statusMessage;
+	qDebug() << "***************************************************\nBtInstallProgressDialog::oneItemStoppedOrCompleted" << module << statusMessage << "\n******************************************";
 	// update the list item
 	m_statusWidget->setItemWidget(getItem(module), 1, 0);
 	getItem(module)->setText(1, statusMessage);

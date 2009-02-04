@@ -46,7 +46,7 @@ BtInstallThread::~BtInstallThread()
 
 void BtInstallThread::run()
 {
-	qDebug() << "BtInstallThread::run, mod:" << m_module << "src:" << m_source << "dest:" << m_destination;
+	qDebug() << "****************************************\nBtInstallThread::run, mod:" << m_module << "\n************************************";
 
 
 	emit preparingInstall(m_module, m_source);
@@ -107,9 +107,10 @@ void BtInstallThread::run()
 
 void BtInstallThread::slotStopInstall()
 {
+	qDebug() << "*************************************\nBtInstallThread::slotStopInstall" << m_module << "\n********************************";
 	if (!done) {
 		done = true;
-		qDebug() << "BtInstallThread::slotStopInstall, installing" << m_module << "was cancelled";
+		qDebug() << "*********************************\nBtInstallThread::slotStopInstall, installing" << m_module << "was cancelled\n**************************************";
 		m_iMgr->terminate();
 		//this->terminate(); // It's dangerous to forcibly stop, but we will clean up the files
 		qDebug() << "BtInstallThread::slotStopInstall 2";
@@ -152,7 +153,11 @@ void BtInstallThread::slotDownloadStarted()
 void BtInstallThread::removeModule()
 {
 	qDebug() << "BtInstallThread::removeModule start";
-	CSwordModuleInfo* m = CPointers::backend()->findModuleByName(m_module);
+	CSwordModuleInfo* m;
+	m = CPointers::backend()->findModuleByName(m_module);
+	if (!m) {
+		m = instbackend::backend(instbackend::source(m_destination.toLatin1()))->findModuleByName(m_module);
+	}
 	if (m) { //module found?
 		qDebug() << "BtInstallThread::removeModule, module" << m_module << "found";
 		QString prefixPath = m->config(CSwordModuleInfo::AbsoluteDataPath) + "/";
@@ -170,7 +175,6 @@ void BtInstallThread::removeModule()
 
 		sword::SWMgr mgr(prefixPath.toLatin1());
 		BtInstallMgr iMgr;
-		//TODO: use SWModule name, see also removepage
 		iMgr.removeModule(&mgr, m->name().toLatin1());
 	} else {
 		qDebug() << "BtInstallThread::removeModule, module" << m_module << "not found";
