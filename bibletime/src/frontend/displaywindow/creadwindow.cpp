@@ -95,8 +95,8 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 
 	using namespace Rendering;
 
-	Q_ASSERT(isReady() && newKey && modules().first());
-	if (!isReady() || !newKey || !modules().first()) {
+//	Q_ASSERT(isReady() && newKey && modules().first());
+	if (!isReady() || !newKey || modules().empty() || !modules().first()) {
 		return;
 	}
 
