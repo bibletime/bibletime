@@ -249,7 +249,7 @@ void BibleTime::setPlainCaption(const QString& title) {
 	if (!title.isEmpty()) {
 		suffix = QString(" - [").append(title).append("]");
 	}
-	QMainWindow::setWindowTitle( tr("BibleTime ").append(BT_VERSION) + suffix );
+	QMainWindow::setWindowTitle( QString("BibleTime ").append(BT_VERSION) + suffix );
 }
 
 /** Processes the commandline options given to BibleTime. */

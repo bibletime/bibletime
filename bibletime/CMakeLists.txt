@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7.rc1")
+SET(BT_VERSION "1.7")
 
 # If you change this option, remove build/CMakeCache.txt or the option change won't be recognized
 OPTION(USE_QT_WEB_KIT "Compile with QtWebkit instead of KHTML" OFF)

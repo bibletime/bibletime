@@ -1,3 +1,7 @@
+2009-02-07 Gary, Eeli, Martin
+	* several bugfixes
+	* releasing 1.7 final
+
 2009-02-03 Gary, Eeli, Martin
 	* tons of bugfixes
 	* threading disabled in Bookshelf Manager because of non-threadsafe ftp library in Sword
