@@ -2,10 +2,10 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "1.7")
+SET(BT_VERSION "1.7.1.cvs")
 
 # If you change this option, remove build/CMakeCache.txt or the option change won't be recognized
-OPTION(USE_QT_WEB_KIT "Compile with QtWebkit instead of KHTML" OFF)
+OPTION(USE_QT_WEB_KIT "Compile with QtWebkit instead of KHTML" ON)
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
