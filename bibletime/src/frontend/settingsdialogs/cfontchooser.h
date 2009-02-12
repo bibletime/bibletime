@@ -15,8 +15,8 @@
 
 // These following two defines allow chosing between using KDE and 
 // Qt only for rendering the preview text
-#define USE_KHTML
-//#define USE_QWEBKIT
+//#define USE_KHTML
+#define USE_QWEBKIT
 
 
 #include <QWidget>
