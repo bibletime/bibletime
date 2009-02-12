@@ -13,6 +13,7 @@ var attribs = [];
 var eventType = "";
 var prevNode = 0;
 var currentNode = 0;
+var timeOutId = -1;
 
 // Scroll window to html anchor
 function gotoAnchor(anchor)
@@ -117,12 +118,14 @@ function getNodeAttributes(node)
 // Start a timer event
 function startTimer(time)
 {
-	var t=setTimeout("timerEvent()",time);
+	clearTimeout(timeOutId);
+	timeOutId = setTimeout("timerEvent()",time);
 }
 
 // Handles a timer event
 function timerEvent()
 {
+	timeOutId = -1;
 	if (currentNode != 0  && currentNode == prevNode)
 	{
 		var attributes = getNodeAttributes(currentNode);
