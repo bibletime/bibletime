@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,20 +11,22 @@
 
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/keys/cswordversekey.h"
-
 #include "util/cpointers.h"
 
-#include <khtml_part.h>
-#include <khtmlview.h>
+#include <QWebPage>
+#include <QWebFrame>
+#include <QPrinter>
+#include <QPrintDialog>
 
-namespace Printing {
+namespace Printing 
+{
 
-CPrinter::CPrinter(QObject *, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
+CPrinter::CPrinter(QObject*, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions)
 	:	QObject(0),
 		CDisplayRendering(displayOptions, filterOptions),
-		m_htmlPart(new KHTMLPart())
+		m_htmlPage(new QWebPage())
 {
-	m_htmlPart->setParent(this);
+	m_htmlPage->setParent(this);
 
 	//override the filteroptions set in the c-tor of CDisplayRendering
 	m_filterOptions.footnotes = false;
@@ -32,37 +34,35 @@ CPrinter::CPrinter(QObject *, CSwordBackend::DisplayOptions displayOptions, CSwo
 	m_filterOptions.strongNumbers = false;
 	m_filterOptions.morphTags = false;
 	m_filterOptions.headings = false;
-
-	m_htmlPart->setJScriptEnabled(false);
-	m_htmlPart->setJavaEnabled(false);
-	m_htmlPart->setMetaRefreshEnabled(false);
-	m_htmlPart->setPluginsEnabled(false);
-	m_htmlPart->view()->resize(500,500);
-	m_htmlPart->view()->hide();
 }
 
-CPrinter::~CPrinter() {
-	delete m_htmlPart;
-	m_htmlPart = 0;
+CPrinter::~CPrinter() 
+{
+	delete m_htmlPage;
+	m_htmlPage = 0;
 }
 
-void CPrinter::printKeyTree( KeyTree& tree ) {
-	m_htmlPart->begin();
-	m_htmlPart->write(renderKeyTree(tree));
-	m_htmlPart->end();
+void CPrinter::printKeyTree( KeyTree& tree ) 
+{
+	m_htmlPage->mainFrame()->setHtml(renderKeyTree(tree));
 
-	m_htmlPart->view()->layout();
-	m_htmlPart->view()->print();
+	QPrinter printer;
+	QPrintDialog printDialog(&printer);
+	if (printDialog.exec() == QDialog::Accepted) 
+	{
+		m_htmlPage->mainFrame()->print(&printer);
+ 	}
 }
 
-const QString CPrinter::entryLink(const KeyTreeItem& item, CSwordModuleInfo* module) {
+const QString CPrinter::entryLink(const KeyTreeItem& item, CSwordModuleInfo* module) 
+{
 	Q_ASSERT(module);
-
-	if (module->type() == CSwordModuleInfo::Bible) {
+	if (module->type() == CSwordModuleInfo::Bible) 
+	{
 		CSwordVerseKey vk(module);
 		vk.key(item.key());
-
-		switch (item.settings().keyRenderingFace) {
+		switch (item.settings().keyRenderingFace) 
+		{
 			case KeyTreeItem::Settings::CompleteShort:
 				return QString::fromUtf8(vk.getShortText());
 
@@ -76,23 +76,25 @@ const QString CPrinter::entryLink(const KeyTreeItem& item, CSwordModuleInfo* mod
 			default:
 				return QString::number(vk.Verse());
 		}
-
 	}
-
 	return item.key();
 }
 
-const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
+const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) 
+{
 	const CPrinter::KeyTreeItem* printItem = dynamic_cast<const CPrinter::KeyTreeItem*>(&i);
 	Q_ASSERT(printItem);
 
-	if (printItem && printItem->hasAlternativeContent()) {
+	if (printItem && printItem->hasAlternativeContent()) 
+	{
 		QString ret = QString::fromLatin1("<div class=\"entry\"><div class=\"rangeheading\">%1</div>").arg(printItem->getAlternativeContent());
 
-		if (!i.childList()->isEmpty()) {
+		if (!i.childList()->isEmpty()) 
+		{
 			KeyTree const * tree = i.childList();
 
-			foreach ( KeyTreeItem* c, (*tree)) {
+			foreach ( KeyTreeItem* c, (*tree)) 
+			{
 				ret.append( CDisplayRendering::renderEntry( *c ) );
 			}
 		}
@@ -100,11 +102,11 @@ const QString CPrinter::renderEntry( const KeyTreeItem& i, CSwordKey* ) {
 		ret.append("</div>");
 		return ret;
 	}
-
 	return CDisplayRendering::renderEntry(i);
 }
 
-const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
+const QString CPrinter::finishText(const QString& text, KeyTree& tree) 
+{
 	QList<CSwordModuleInfo*> modules = collectModules(&tree);
 	Q_ASSERT(modules.count() > 0);
 
@@ -118,10 +120,12 @@ const QString CPrinter::finishText(const QString& text, KeyTree& tree) {
 
 	//the previous version gave compiler error for some strange reason
 	//(well, I don't like ?: anyway, let alone nested)
-	if (modules.count() != 1) {
+	if (modules.count() != 1) 
+	{
 		settings.pageDirection = QString::null;
 	}
-	else {
+	else 
+	{
 		settings.pageDirection = ( modules.first()->textDirection() == CSwordModuleInfo::LeftToRight ) ? "ltr" : "rtl";
 	}
 
