@@ -19,7 +19,7 @@ static BtHtmlFindText* dialog = 0;
 void showBtHtmlFindText(CMDIArea* mdiArea)
 {
 	if (dialog == 0)
-		dialog = new BtHtmlFindText(mdiArea);
+		dialog = new BtHtmlFindText(mdiArea, mdiArea);
 	dialog->show();
 }
 

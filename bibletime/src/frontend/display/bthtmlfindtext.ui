@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>227</width>
-    <height>141</height>
+    <height>115</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -36,30 +36,6 @@
        </spacer>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3" >
-        <item>
-         <widget class="QLabel" name="textLabel_2" >
-          <property name="text" >
-           <string>Text to find:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer" >
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0" >
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item>
        <widget class="QComboBox" name="findTextComboBox" >
         <property name="toolTip" >
          <string>The text you want to search for</string>
@@ -75,7 +51,7 @@
          <string>Seach with case sensitivity</string>
         </property>
         <property name="text" >
-         <string>Case &amp;Sensitive</string>
+         <string>Case &amp;sensitive</string>
         </property>
        </widget>
       </item>
