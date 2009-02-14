@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -11,7 +11,6 @@
 #include "cdisplaysettings.moc"
 
 #include "backend/config/cbtconfig.h"
-
 #include "backend/rendering/cdisplayrendering.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 
@@ -19,16 +18,14 @@
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 
-#include <khtml_part.h>
-#include <khtmlview.h>
-
+#include <QWebView>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QVBoxLayout>
 #include <QLabel>
 
 // ***********************
-// Container for KHTHMView to control its size
+// Container for QWebView to control its size
 class CWebViewerWidget : public QWidget 
 {
 	public:
@@ -52,21 +49,16 @@ QSize CWebViewerWidget::sizeHint () const
 }
 // ************************
 
-
-
-
 /** Initializes the startup section of the OD. */
 CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 	: BtConfigPage()
 {
-
 	QVBoxLayout* layout = new QVBoxLayout(this);
 
 	{ //startup logo
 		m_showLogoCheck = new QCheckBox(this);
 		m_showLogoCheck->setText(tr("Show startup logo"));
 		m_showLogoCheck->setToolTip(tr("Show the BibleTime logo on startup"));
-
 
 		m_showLogoCheck->setChecked(CBTConfig::get(CBTConfig::logo));
 		layout->addWidget(m_showLogoCheck);
@@ -80,7 +72,6 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 				tr("Display templates define how text is displayed.")
 				)
 		);
-
 
 	QHBoxLayout* hboxlayout = new QHBoxLayout();
 
@@ -97,13 +88,12 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
 
 	QWidget* webViewWidget = new CWebViewerWidget(this);
 	QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
-	
-	m_stylePreviewViewer = new KHTMLPart(webViewWidget);
+	m_stylePreviewViewer = new QWebView(webViewWidget);
 	QLabel* previewLabel = new QLabel(tr("Style preview"), webViewWidget);
-	previewLabel->setBuddy(m_stylePreviewViewer->view());
-	
+	previewLabel->setBuddy(m_stylePreviewViewer);
 	webViewLayout->addWidget(previewLabel);
-	webViewLayout->addWidget(m_stylePreviewViewer->view());
+	webViewLayout->addWidget(m_stylePreviewViewer);
+	webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
 	layout->addWidget(webViewWidget);
 
 	m_styleChooserCombo->addItems(
@@ -177,9 +167,7 @@ void CDisplaySettingsPage::updateStylePreview()
 		(CBTConfig::displayStyle, styleName);
 	//qDebug() << "new style name: " << CBTConfig::get(CBTConfig::displayStyle);
 	CDisplayRendering render;
-	m_stylePreviewViewer->begin();
-	m_stylePreviewViewer->write( render.renderKeyTree(tree));
-	m_stylePreviewViewer->end();
+	m_stylePreviewViewer->setHtml( render.renderKeyTree(tree));
 	
 	CBTConfig::set
 		(CBTConfig::displayStyle, oldStyleName);

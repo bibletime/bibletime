@@ -17,7 +17,7 @@
 
 class QCheckBox;
 class QComboBox;
-class KHTMLPart;
+class QWebView;
 
 class CDisplaySettingsPage : public BtConfigPage
 {
@@ -37,7 +37,7 @@ protected slots:
 private:
 	QCheckBox* m_showLogoCheck;
 	QComboBox* m_styleChooserCombo;
-	KHTMLPart* m_stylePreviewViewer;
+	QWebView* m_stylePreviewViewer;
 };
 
 #endif
