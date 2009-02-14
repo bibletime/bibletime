@@ -17,13 +17,7 @@
 #include <QListWidgetItem>
 #include <QWebSettings>
 #include <QFrame>
-#ifdef USE_KHTML
-#include <khtml_part.h>
-#include <khtmlview.h>
-#endif
-#ifdef USE_QWEBKIT
 #include <QWebView>
-#endif
 
 
 // ***********************
@@ -47,7 +41,7 @@ WebViewerWidget::~WebViewerWidget()
 
 QSize WebViewerWidget::sizeHint () const
 {
-	return QSize(100,100);
+	return QSize(100,85);
 }
 // ************************
 
@@ -127,15 +121,8 @@ void CFontChooser::createTextAreaLayout()
 	QWidget* webViewWidget = new WebViewerWidget(this);
 	QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
 	
-#ifdef USE_KHTML
-	m_kHtmlPart = new KHTMLPart(webViewWidget);
-	m_kHtmlPart->view()->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
-	webViewLayout->addWidget(m_kHtmlPart->view());
-#endif
-#ifdef USE_QWEBKIT
 	m_webView = new QWebView(webViewWidget);
 	webViewLayout->addWidget(m_webView);
-#endif
 	m_vBoxLayout->addWidget(webViewWidget);
 }
 
@@ -250,14 +237,7 @@ void CFontChooser::outputHtmlText()
 	text.replace("#FONT-SIZE#", QString::number(m_font.pointSize()));
 	text.replace("#FONT-WEIGHT#", (m_font.bold() ? "bold" : "normal") );
 	text.replace("#FONT-STYLE#", m_font.italic() ? "italic" : "normal");
-#ifdef USE_KHTML
-	m_kHtmlPart->begin();
-	m_kHtmlPart->write(text);
-	m_kHtmlPart->end();
-#endif
-#ifdef USE_QWEBKIT
 	m_webView->setHtml(text);
-#endif
 }
 
 

@@ -15,8 +15,6 @@
 
 // These following two defines allow chosing between using KDE and 
 // Qt only for rendering the preview text
-//#define USE_KHTML
-#define USE_QWEBKIT
 
 
 #include <QWidget>
@@ -27,12 +25,7 @@ class QFrame;
 class QListWidget;
 class QListWidgetItem;
 class QVBoxLayout;
-#ifdef USE_KHTML
-class KHTMLPart;
-#endif
-#ifdef USE_QWEBKIT
 class QWebView;
-#endif
 class CListWidget;
 
 class CFontChooser : public QFrame {
@@ -59,12 +52,7 @@ private:
 	QString saveListWidgetValue(QListWidget* listWidget);
 	
 	QFrame* m_fontWidget;
-#ifdef USE_KHTML
-	KHTMLPart* m_kHtmlPart;
-#endif
-#ifdef USE_QWEBKIT
 	QWebView* m_webView;
-#endif
 	CListWidget* m_fontListWidget;
 	CListWidget* m_styleListWidget;
 	CListWidget* m_sizeListWidget;
