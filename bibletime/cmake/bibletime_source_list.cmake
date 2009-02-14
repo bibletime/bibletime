@@ -150,6 +150,8 @@ SET(bibletime_SOURCES
 	src/frontend/display/cwritedisplay.cpp
 	src/frontend/display/cplainwritedisplay.cpp
 	src/frontend/display/chtmlwritedisplay.cpp
+	src/frontend/display/btfontsizewidget.cpp
+	src/frontend/display/btcolorwidget.cpp
 	
 	#display windows and their widgets
 	src/frontend/displaywindow/cmodulechooserbutton.cpp

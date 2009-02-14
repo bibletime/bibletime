@@ -2,12 +2,10 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
-
 
 #ifndef CHTMLWRITEDISPLAY_H
 #define CHTMLWRITEDISPLAY_H
@@ -15,22 +13,20 @@
 //BibleTime includes
 #include "cplainwritedisplay.h"
 
-
 class CWriteWindow;
-
 class QMenu;
 class QWidget;
 class QToolBar;
 class QAction;
-
-class KFontAction;
-class KFontSizeAction;
-class KColorButton;
+class QFontComboBox;
+class BtFontSizeWidget;
+class BtColorWidget;
 
 /** The WYSIWYG implementation of the write display interface.
   * @author The BibleTime team
   */
-class CHTMLWriteDisplay : public CPlainWriteDisplay  {
+class CHTMLWriteDisplay : public CPlainWriteDisplay  
+{
 	Q_OBJECT
 public:
 	/**
@@ -70,6 +66,8 @@ protected slots:
 	void changeFontSize(int);
 
 	void slotFontChanged( const QFont& );
+	void slotFontFamilyChoosen(const QFont&);
+	
 	/**
 	* The text's alignment changed. Enable the right buttons.
 	*/
@@ -84,7 +82,8 @@ protected slots:
 	void slotColorChanged( const QColor& );
 
 private:
-	struct {
+	struct 
+	{
 		QAction* bold;
 		QAction* italic;
 		QAction* underline;
@@ -93,15 +92,14 @@ private:
 		QAction* alignCenter;
 		QAction* alignRight;
 
-		KFontAction* fontChooser;
-		KFontSizeAction* fontSizeChooser;
-
 		//popup menu
 		QAction* selectAll;
 	}
 	m_actions;
-	//TODO: port to Qt
-	KColorButton* m_colorButton;
+	
+	QFontComboBox* m_fontFamilyChooser;
+	BtFontSizeWidget*   m_fontSizeChooser;
+	BtColorWidget*      m_colorChooser;
 };
 
 #endif
