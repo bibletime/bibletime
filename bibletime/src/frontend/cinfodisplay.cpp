@@ -92,14 +92,6 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
 				(CBTConfig::displayStyle), key->renderedText(), settings);
 
 	//   qWarning("setting text:\n%s", content.latin1());
-
-#ifndef USE_QTWEBKIT
-	m_htmlPart->setText(content);			// scroll to top
-	CHTMLReadDisplay *d = dynamic_cast<CHTMLReadDisplay *>(m_htmlPart);
-	Q_ASSERT(d);
-	d->view()->ensureVisible(0, 0);
-	qDebug("CInfoDisplay::lookup end");
-#endif
 }
 
 void CInfoDisplay::setInfo(const InfoType type, const QString& data) {

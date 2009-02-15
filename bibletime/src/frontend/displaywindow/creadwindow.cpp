@@ -12,13 +12,8 @@
 //BibleTime includes
 #include "creadwindow.h"
 
-#ifdef USE_QTWEBKIT
-	#include "frontend/display/bthtmlreaddisplay.h"
-	typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-#else
-	#include "frontend/display/chtmlreaddisplay.h"
-	typedef CHTMLReadDisplay HTMLREADDISPLAY;
-#endif
+#include "frontend/display/bthtmlreaddisplay.h"
+typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cdisplayrendering.h"
@@ -128,15 +123,6 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 void CReadWindow::slotMoveToAnchor()
 {
 	qDebug("CReadWindow::slotMoveToAnchor");
-#ifndef USE_QTWEBKIT
-	//Ugly HACK to get scrollbar working when opening a display window;
-	KHTMLPart* part = dynamic_cast<KHTMLPart*>(displayWidget());
-	if (part) {
-		KHTMLView* view = part->view();
-		view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-		view->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-	}
-#endif
 	((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 

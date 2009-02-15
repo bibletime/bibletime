@@ -23,11 +23,7 @@
 #include "frontend/cexportmanager.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
-#ifdef USE_QTWEBKIT
-	#include "frontend/display/bthtmlreaddisplay.h"
-#else
-	#include "frontend/display/chtmlreaddisplay.h"
-#endif
+#include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/keychooser/bthistory.h"
 
@@ -321,11 +317,7 @@ void CLexiconReadWindow::saveRawHTML()
 	QString savefilename = QFileDialog::getSaveFileName();
 	if (savefilename.isEmpty()) return;
 	QFile file(savefilename);
-#ifdef USE_QTWEBKIT
 	BtHtmlReadDisplay* disp = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
-#else
-	CHTMLReadDisplay* disp = dynamic_cast<CHTMLReadDisplay*>(displayWidget());
-#endif
 	if (disp) {
 		if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
 			qDebug("could not open file");

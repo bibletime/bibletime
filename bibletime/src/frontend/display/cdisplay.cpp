@@ -10,13 +10,8 @@
 #include "cdisplay.h"
 #include "cdisplay.moc"
 
-#ifdef USE_QTWEBKIT
-	#include "bthtmlreaddisplay.h"
-	typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-#else
-	#include "chtmlreaddisplay.h"
-	typedef CHTMLReadDisplay HTMLREADDISPLAY;
-#endif
+#include "bthtmlreaddisplay.h"
+typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 
 #include "cplainwritedisplay.h"
 #include "chtmlwritedisplay.h"
