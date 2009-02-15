@@ -21,7 +21,6 @@
 
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
-#include "frontend/display/chtmlreaddisplay.h"
 
 #include <boost/scoped_ptr.hpp>
 

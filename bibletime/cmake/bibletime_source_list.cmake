@@ -146,7 +146,6 @@ SET(bibletime_SOURCES
 	src/frontend/display/bthtmlreaddisplay.cpp
 	src/frontend/display/cdisplay.cpp
 	src/frontend/display/creaddisplay.cpp
-	src/frontend/display/chtmlreaddisplay.cpp
 	src/frontend/display/cwritedisplay.cpp
 	src/frontend/display/cplainwritedisplay.cpp
 	src/frontend/display/chtmlwritedisplay.cpp
