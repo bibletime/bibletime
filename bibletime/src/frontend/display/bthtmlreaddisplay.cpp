@@ -28,9 +28,9 @@ using namespace InfoDisplay;
 
 void showBtHtmlFindText(CMDIArea*);
 
-const static QString body = "</body>";
-const static QString jsBegin = "<script  type=\"text/javascript\">";
-const static QString jsEnd = "</script>";
+static const QString body = "</body>";
+static const QString jsBegin = "<script  type=\"text/javascript\">";
+static const QString jsEnd = "</script>";
 static QString javascript; // Initialized from file bthtml.js
 
 
