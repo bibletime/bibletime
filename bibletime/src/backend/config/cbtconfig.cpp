@@ -27,10 +27,7 @@
 #include <QDebug>
 #include <QSettings>
 #include <QLocale>
-
-//KDE includes
-#include <kconfig.h> //tmp, for font detection
-#include <khtml_settings.h> //tmp, for font detection
+#include <QWebSettings>
 
 //Sword includes
 #include <versekey.h> //for range configuration
@@ -295,19 +292,16 @@ QString CBTConfig::getKey( const CLanguageMgr::Language* const language ) {
 	return language->name();
 }
 
-QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) {
+QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const) 
+{
 	//language specific lookup of the font name
-	if (m_defaultFont) {
+	if (m_defaultFont) 
+	{
 		return *m_defaultFont;
 	}
 
-	//TODO: We need a better way to get the KDE konqueror KHTML settings
-	KConfig conf("konquerorrc");
-	KHTMLSettings settings;
-	settings.init(&conf);
-
-	const QString fontName = settings.stdFontName();
-	const int fontSize = settings.mediumFontSize();
+	int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
+	QString fontName = QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont);
 
 	m_defaultFont = new QFont(fontName, fontSize); //TODO: there may be a mem leak here!
 	return *m_defaultFont;
