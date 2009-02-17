@@ -5590,11 +5590,6 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime.cpp" line="252"/>
-        <source>BibleTime </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="47"/>
         <source>Creating BibleTime&apos;s GUI</source>
         <translation type="obsolete">A BibleTime beállításainak változtatása</translation>
@@ -6513,12 +6508,12 @@ vágólapra másolása</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="133"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="146"/>
         <source>Completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="153"/>
         <source>Cancelled</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6528,7 +6523,7 @@ vágólapra másolása</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="201"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="226"/>
         <source>Preparing install...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6538,7 +6533,7 @@ vágólapra másolása</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="130"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="143"/>
         <source>Failed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6575,12 +6570,12 @@ vágólapra másolása</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
         <source>You selected the following work(s): </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="147"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="148"/>
         <source>Do you really want to remove them from your system?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6595,7 +6590,7 @@ vágólapra másolása</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="150"/>
         <source>Remove Works?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6958,11 +6953,6 @@ versszámozással együtt</translation>
         <translation type="unfinished">Mindent nyomtat
 versszámozással együtt</translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="198"/>
-        <source>Book Window</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CBookmarkIndex</name>
@@ -7244,7 +7234,7 @@ versszámozással együtt</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="201"/>
         <source>Commentary window</source>
-        <translation type="unfinished">K&amp;ommentár-böngésző</translation>
+        <translation type="obsolete">K&amp;ommentár-böngésző</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="84"/>
@@ -7375,7 +7365,7 @@ versszámozással együtt</translation>
         <translation type="obsolete">Strong&apos;s számok mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="79"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="71"/>
         <source>Display templates</source>
         <translation type="unfinished">Lábjegyzetek mutatása</translation>
     </message>
@@ -7386,75 +7376,70 @@ versszámozással együtt</translation>
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="91"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="82"/>
         <source>Available display styles:</source>
         <translation type="unfinished">Konfigurált n&amp;yomtatók</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="102"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="92"/>
         <source>Style preview</source>
         <translation type="unfinished">Megtekintés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="141"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="131"/>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="148"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="138"/>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="155"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="145"/>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="160"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="150"/>
         <source>This is the judgment, that the light has come into the world, and men loved the darkness rather than the light; for their works were evil.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="165"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="155"/>
         <source>For everyone who does evil hates the light, and doesn&apos;t come to the light, lest his works would be exposed.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="170"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="160"/>
         <source>But he who does the truth comes to the light, that his works may be revealed, that they have been done in God.</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="81"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="73"/>
         <source>Display templates define how text is displayed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="68"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="61"/>
         <source>Show the BibleTime logo on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="67"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="60"/>
         <source>Show startup logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="209"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="197"/>
         <source>Display</source>
         <translation type="unfinished">Lábjegyzetek mutatása</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="205"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7483,17 +7468,17 @@ versszámozással együtt</translation>
 <context>
     <name>CFontChooser</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="105"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="99"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="82"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="76"/>
         <source>Font name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="93"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="87"/>
         <source>Font style:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7503,78 +7488,78 @@ versszámozással együtt</translation>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="150"/>
         <source>Choose a font</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="160"/>
         <source>Choose a font size</source>
-        <translation type="unfinished">
+        <translation type="obsolete">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="184"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="197"/>
         <source>Bold</source>
         <translation type="unfinished">Félkövér</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="211"/>
         <source>Italic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="210"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="223"/>
         <source>Underline</source>
         <translation type="unfinished">Linkek aláhúzása:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="219"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="232"/>
         <source>Left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="235"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="248"/>
         <source>Center</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="241"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="254"/>
         <source>Right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="265"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="277"/>
         <source>Select all</source>
         <translation type="unfinished">Kijelölt:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="270"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="282"/>
         <source>HTML editor window</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="155"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="167"/>
         <source>Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="163"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="175"/>
         <source>Font size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="172"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="182"/>
         <source>Font color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="224"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="237"/>
         <source>Align left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="246"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="259"/>
         <source>Align right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7762,11 +7747,6 @@ versszámozással együtt</translation>
         <source>Languages</source>
         <translation type="unfinished">Nagy</translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="295"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CLexiconKeyChooser</name>
@@ -7795,91 +7775,91 @@ versszámozással együtt</translation>
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="106"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="102"/>
         <source>Next entry</source>
         <translation type="unfinished">Opció törlése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="111"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="107"/>
         <source>Previous entry</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="73"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
         <source>Copy reference only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="76"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
         <source>Copy selected text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="79"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
         <source>Save entry as HTML</source>
         <translation type="unfinished">Nyomtatás HTML szö&amp;vegként</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="82"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="78"/>
         <source>Print reference only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="122"/>
         <source>Strong&apos;s Search</source>
         <translation type="unfinished">Strong&apos;s számok mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="152"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="148"/>
         <source>Reference only</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="156"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="152"/>
         <source>Entry with text</source>
         <translation type="unfinished">Mindent nyomtat
 versszámozással együtt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="140"/>
         <source>Entry as plain text</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="148"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="144"/>
         <source>Entry as HTML</source>
         <translation type="unfinished">Nyomtatás HTML szö&amp;vegként</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="235"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="231"/>
         <source>Lexicon window</source>
         <translation type="unfinished">Lexikonok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="242"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="238"/>
         <source>Copy...</source>
         <translation type="unfinished">Másolás ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="253"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="249"/>
         <source>Save...</source>
         <translation type="unfinished">Mentés ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="271"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="267"/>
         <source>Print...</source>
         <translation type="unfinished">Nyomtatás ...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="348"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
         <source>Saving entry ...</source>
         <translation type="unfinished">Mentés...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="348"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
         <source>Saving</source>
         <translation type="unfinished">Mentés...</translation>
     </message>
@@ -8217,11 +8197,6 @@ versszámozással együtt</translation>
         <translation type="unfinished">
             </translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
@@ -8320,49 +8295,49 @@ versszámozással együtt</translation>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="47"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="46"/>
         <source>Mag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="178"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="169"/>
         <source>Abbreviation</source>
         <translation type="unfinished">Cél</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="282"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="273"/>
         <source>Cross references</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="325"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="316"/>
         <source>Footnote</source>
         <translation type="unfinished">Lábjegyzetek mutatása</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="352"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="343"/>
         <source>Strongs</source>
         <translation type="unfinished">&amp;Beállítások</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="430"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="421"/>
         <source>Morphology</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="453"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="444"/>
         <source>Word lookup</source>
         <translation type="unfinished">keresés:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="66"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8425,7 +8400,7 @@ versszámozással együtt</translation>
         <translation type="obsolete">Aktuális dokumentum mentése</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="459"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="417"/>
         <source>Added text</source>
         <translation type="unfinished">Modul</translation>
     </message>
@@ -9083,7 +9058,7 @@ versszámozással együtt</translation>
         <translation type="unfinished">hiba a dokumentációban</translation>
     </message>
     <message>
-        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="199"/>
+        <location filename="../../src/backend/rendering/chtmlexportrendering.cpp" line="226"/>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9098,55 +9073,55 @@ versszámozással együtt</translation>
         <translation type="unfinished">Szabványos kifejezésre</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="258"/>
         <source>Old testament</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="259"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
         <source>History</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
         <source>Prophets</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
         <source>New testament</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
         <source>Gospels</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="161"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="156"/>
         <source>HTML files</source>
         <translation type="unfinished">A file &quot;</translation>
     </message>
@@ -9156,7 +9131,7 @@ versszámozással együtt</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="164"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="159"/>
         <source>Text files</source>
         <translation type="unfinished">A file &quot;</translation>
     </message>
@@ -9166,7 +9141,7 @@ versszámozással együtt</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/cdisplay.cpp" line="168"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="163"/>
         <source>Save document ...</source>
         <translation type="unfinished">Aktuális dokumentum mentése</translation>
     </message>
@@ -9898,7 +9873,7 @@ versszámozással együtt</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="476"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="434"/>
         <source>Verb tense changed</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10723,11 +10698,6 @@ versszámokkal együtt</translation>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
@@ -10796,11 +10766,6 @@ versszámokkal együtt</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
-        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11706,6 +11671,59 @@ versszámokkal együtt</translation>
         <source>Parsed search range:</source>
         <translation type="obsolete">
             </translation>
+    </message>
+</context>
+<context>
+    <name>findTextDialog</name>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="13"/>
+        <source>Find Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="41"/>
+        <source>The text you want to search for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
+        <source>Seach with case sensitivity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
+        <source>Case &amp;sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
+        <source>Find the previous location of the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="95"/>
+        <source>&amp;Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="102"/>
+        <source>Find the next location of the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="105"/>
+        <source>&amp;Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="115"/>
+        <source>Close the dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="118"/>
+        <source>&amp;Close</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
