@@ -27,8 +27,10 @@
 #include <QStringList>
 #include <QDebug>
 #include <QMenu>
+#include <QAction>
+#include <QKeySequence>
 
-#include <kstandardaction.h>
+//#include <kstandardaction.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
 
@@ -99,12 +101,31 @@ void CDisplayWindow::setCaption( const QString&  ) {
 
 void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 	qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
-	a->addAction(KStandardAction::ZoomIn, "zoomIn", 0, 0);
-	a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
-	a->addAction(KStandardAction::Close, "closeWindow", 0, 0);
-	a->addAction(KStandardAction::SelectAll, "selectAll", 0, 0);
-	a->addAction(KStandardAction::Copy, "copySelectedText", 0, 0);
-	a->addAction(KStandardAction::Find, "findText", 0, 0);
+	
+	QAction* actn = new QAction(QIcon(), tr("Zoom in"), 0);
+	actn->setShortcut(QKeySequence::ZoomIn);
+	a->addAction("zoomIn", actn);
+	//a->addAction(KStandardAction::ZoomIn, "zoomIn", 0, 0);
+	actn = new QAction(QIcon(), tr("Zoom out"), 0);
+	actn->setShortcut(QKeySequence::ZoomOut);
+	a->addAction("zoomIn", actn);
+	//a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
+	actn = new QAction(QIcon(), tr("Close"), 0);
+	actn->setShortcut(QKeySequence::Close);
+	a->addAction("closeWindow", actn);
+	//a->addAction(KStandardAction::Close, "closeWindow", 0, 0);
+	actn = new QAction(QIcon(), tr("Select all"), 0);
+	actn->setShortcut(QKeySequence::SelectAll);
+	a->addAction("selectAll", actn);
+	//a->addAction(KStandardAction::SelectAll, "selectAll", 0, 0);
+	actn = new QAction(QIcon(), tr("Copy"), 0);
+	actn->setShortcut(QKeySequence::Copy);
+	a->addAction("copySelectedText", actn);
+	//a->addAction(KStandardAction::Copy, "copySelectedText", 0, 0);
+	actn = new QAction(QIcon(), tr("Find..."), 0);
+	actn->setShortcut(QKeySequence::Find);
+	a->addAction("findText", actn);
+	//a->addAction(KStandardAction::Find, "findText", 0, 0);
 
 	KToolBarPopupAction* action = new KToolBarPopupAction(
 				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
@@ -140,12 +161,52 @@ void CDisplayWindow::initActions()
 
 	CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
-	addAction(ac->addAction(KStandardAction::ZoomIn, "zoomIn", conn, SLOT(zoomIn())));
-	addAction(ac->addAction(KStandardAction::ZoomOut, "zoomOut", conn, SLOT(zoomOut())));
-	addAction(ac->addAction(KStandardAction::Close, "closeWindow", this, SLOT(close())));
-	addAction(ac->addAction(KStandardAction::SelectAll, "selectAll", conn, SLOT(selectAll())));
-	addAction(ac->addAction(KStandardAction::Copy, "copySelectedText", conn, SLOT(copySelection())));
-	addAction(ac->addAction(KStandardAction::Find, "findText", conn, SLOT(openFindTextDialog())));
+	QAction* actn = new QAction(QIcon(), tr("Zoom in"), ac);
+	actn->setShortcut(QKeySequence::ZoomIn);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomIn()));
+	ac->addAction("zoomIn", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::ZoomIn, "zoomIn", 0, 0);
+	actn = new QAction(QIcon(), tr("Zoom out"), ac);
+	actn->setShortcut(QKeySequence::ZoomOut);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomOut()));
+	ac->addAction("zoomIn", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
+	actn = new QAction(QIcon(), tr("Close"), ac);
+	actn->setShortcut(QKeySequence::Close);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(close()));
+	ac->addAction("closeWindow", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::Close, "closeWindow", 0, 0);
+	actn = new QAction(QIcon(), tr("Select all"), ac);
+	actn->setShortcut(QKeySequence::SelectAll);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(selectAll()));
+	ac->addAction("selectAll", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::SelectAll, "selectAll", 0, 0);
+	actn = new QAction(QIcon(), tr("Copy"), ac);
+	actn->setShortcut(QKeySequence::Copy);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(copySelection()));
+	ac->addAction("copySelectedText", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::Copy, "copySelectedText", 0, 0);
+	actn = new QAction(QIcon(), tr("Find..."), ac);
+	actn->setShortcut(QKeySequence::Find);
+	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(openFindTextDialog()));
+	ac->addAction("findText", actn);
+	addAction(actn);
+	//a->addAction(KStandardAction::Find, "findText", 0, 0);
+
+	
+
+
+// 	addAction(ac->addAction(KStandardAction::ZoomIn, "zoomIn", conn, SLOT(zoomIn())));
+// 	addAction(ac->addAction(KStandardAction::ZoomOut, "zoomOut", conn, SLOT(zoomOut())));
+// 	addAction(ac->addAction(KStandardAction::Close, "closeWindow", this, SLOT(close())));
+// 	addAction(ac->addAction(KStandardAction::SelectAll, "selectAll", conn, SLOT(selectAll())));
+// 	addAction(ac->addAction(KStandardAction::Copy, "copySelectedText", conn, SLOT(copySelection())));
+// 	addAction(ac->addAction(KStandardAction::Find, "findText", conn, SLOT(openFindTextDialog())));
 
 
 	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
