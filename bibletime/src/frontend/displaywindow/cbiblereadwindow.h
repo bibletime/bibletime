@@ -71,8 +71,8 @@ protected:
 	virtual bool eventFilter( QObject* o, QEvent* e);
 
 	struct {
-		KAction* selectAll;
-		KAction* findText;
+		QAction* selectAll;
+		QAction* findText;
 		KAction* findStrongs;
 
 		KActionMenu* copyMenu;
@@ -81,7 +81,7 @@ protected:
 			KAction* referenceTextOnly;
 			KAction* referenceAndText;
 			KAction* chapter;
-			KAction* selectedText;
+			QAction* selectedText;
 		}
 		copy;
 

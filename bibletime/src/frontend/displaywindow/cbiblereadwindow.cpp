@@ -186,10 +186,10 @@ void CBibleReadWindow::initActions() {
 	ac->addAction("previousVerse", kaction);
 
 
-	m_actions.selectAll = qobject_cast<KAction*>(ac->action("selectAll"));
+	m_actions.selectAll = qobject_cast<QAction*>(ac->action("selectAll"));
 	Q_ASSERT(m_actions.selectAll);
 
-	m_actions.findText = qobject_cast<KAction*>(ac->action("findText"));
+	m_actions.findText = qobject_cast<QAction*>(ac->action("findText"));
 	Q_ASSERT(m_actions.findText);
 
 	m_actions.findStrongs = new KAction(
@@ -218,7 +218,7 @@ void CBibleReadWindow::initActions() {
 	QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()), this, SLOT(copyDisplayedText()) );
 	ac->addAction("copyChapter", m_actions.copy.chapter);
 
-	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
+	m_actions.copy.selectedText = qobject_cast<QAction*>(ac->action("copySelectedText"));
 	Q_ASSERT(m_actions.copy.selectedText);
 
 	m_actions.save.referenceAndText = new KAction(tr("Reference with text"), ac );
