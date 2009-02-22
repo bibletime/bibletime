@@ -19,9 +19,9 @@
 //#include <qwidget.h>
 
 
-class KToggleAction;
+class QAction;
 class CSwordVerseKey;
-class KActionCollection;
+class BtActionCollection;
 
 /**
   *@author The BibleTime team
@@ -33,7 +33,7 @@ public:
 	/**
 	* Reimplementation.
 	*/
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	/**
@@ -63,7 +63,7 @@ protected:
 	virtual void initToolbars();
 
 private:
-	KToggleAction* m_syncButton;
+	QAction* m_syncButton;
 	CSwordVerseKey* verseKey();
 protected:
     virtual void setupPopupMenu();

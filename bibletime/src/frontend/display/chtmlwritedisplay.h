@@ -21,6 +21,7 @@ class QAction;
 class QFontComboBox;
 class BtFontSizeWidget;
 class BtColorWidget;
+class BtActionCollection;
 
 /** The WYSIWYG implementation of the write display interface.
   * @author The BibleTime team
@@ -42,7 +43,7 @@ public:
 	* Creates the necessary action objects and puts them on the toolbar.
 	* (CPlainWriteDisplay)
 	*/
-	virtual void setupToolbar(QToolBar * bar, KActionCollection * actionCollection);
+	virtual void setupToolbar(QToolBar * bar, BtActionCollection * actionCollection);
 
 protected:
 	friend class CDisplay;

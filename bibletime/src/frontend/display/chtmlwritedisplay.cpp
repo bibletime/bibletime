@@ -14,6 +14,7 @@
 #include "btfontsizewidget.h"
 #include "btcolorwidget.h"
 #include "frontend/displaywindow/cwritewindow.h"
+#include "frontend/displaywindow/btactioncollection.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
@@ -24,7 +25,7 @@
 #include <QMenu>
 #include <QToolBar>
 
-#include <kactioncollection.h>
+class BtActionCollection;
 
 CHTMLWriteDisplay::CHTMLWriteDisplay(CWriteWindow* parentWindow, QWidget* parent)
 : CPlainWriteDisplay(parentWindow,parent), m_fontFamilyChooser(0),
@@ -159,7 +160,7 @@ void CHTMLWriteDisplay::slotFontFamilyChoosen(const QFont& font)
 	setFontFamily(font.family());
 }
 
-void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, KActionCollection * actions) 
+void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) 
 {
 	//--------------------font chooser-------------------------
 	m_fontFamilyChooser = new QFontComboBox(this);

@@ -35,13 +35,6 @@
 #include "tests/bibletime_test.h"
 #endif
 
-#include <kcmdlineargs.h>
-#include <kcrash.h>
-#include <kaboutdata.h>
-
-#include <klocalizedstring.h> //TODO: tmp, remove
-#include <klocale.h>
-
 using namespace util::filesystem;
 
 bool showDebugMessages = false;
@@ -66,6 +59,8 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
 	}
 }
 
+// TODO - redo signal handler
+#if 0
 extern "C" {
 	static void setSignalHandler(void (*handler)(int));
 
@@ -116,6 +111,8 @@ extern "C" {
 		KCrash::setEmergencySaveFunction(crashHandler);
 	}
 }
+#endif
+
 
 int main(int argc, char* argv[]) {
 	qInstallMsgHandler( myMessageOutput );
@@ -127,12 +124,14 @@ int main(int argc, char* argv[]) {
 		return QTest::qExec(&testClass);
 	}
 #endif
-	
+
+#if 0	
 	//TODO: port to QT
  	static KCmdLineOptions options;
  	options.add("debug", ki18n("Enable debug messages"),0);
  	options.add("ignore-session", ki18n("Ignore the startup session that was saved when BibleTime was closed the last time."),0);
  	options.add("open-default-bible <key>", ki18n("Open the standard Bible with the given key. Use <random> to open at a random position."),0);
+#endif
 
 // 	KAboutData aboutData(
 // 		"bibletime",
@@ -236,6 +235,7 @@ int main(int argc, char* argv[]) {
 // 	QString dummy = I18N_NOOP("_: NAME OF TRANSLATORS\nYour names"); //translator's name
 // 	dummy = I18N_NOOP("_: EMAIL OF TRANSLATORS\nYour emails"); //translators eMail
 
+#if 0
 	KLocalizedString dummy; //TODO: remove, only dummy code here
 	KAboutData aboutData(
 		"bibletime",
@@ -251,9 +251,11 @@ int main(int argc, char* argv[]) {
 
 	KCmdLineArgs::init(argc, argv, &aboutData);
 	KCmdLineArgs::addCmdLineOptions( options );
+#endif
 
-	//BibleTimeApp app(argc, argv); //for QApplication
-	BibleTimeApp app;
+	BibleTimeApp app(argc, argv); //for QApplication
+	app.setApplicationName("bibletime");
+	app.setApplicationVersion(BT_VERSION);
 	
 	//first install QT's own translations
 	QTranslator qtTranslator;
@@ -264,6 +266,7 @@ int main(int argc, char* argv[]) {
 	BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DirectoryUtil::getLocaleDir().canonicalPath());
 	app.installTranslator(&BibleTimeTranslator);
 	
+#if 0
 	KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 	// A binary option (on / off)
 	if (args->isSet("debug")) {
@@ -276,16 +279,19 @@ int main(int argc, char* argv[]) {
 			app.setProperty(feature.toLatin1().data(), true);
 		}
 	}
+#endif
 	
 	// This is the QT4 version, will only work if main App is QApplication
 	// A binary option (on / off)
-// 	if (app.QCoreApplication::arguments().contains("--debug")) {
-// 		showDebugMessages = true;
-// 		app.setProperty("--debug", true);
-// 	} 
-// 	else {
-// 		app.setProperty("--debug", false);
-// 	}
+ 	if (app.QCoreApplication::arguments().contains("--debug")) 
+	{
+ 		showDebugMessages = true;
+ 		app.setProperty("--debug", true);
+ 	} 
+ 	else 
+	{
+ 		app.setProperty("--debug", false);
+ 	}
 
 // 	if (kapp->isSessionRestored()) {
 // 		//TODO: how to restore session with pure Qt?
@@ -306,7 +312,7 @@ int main(int argc, char* argv[]) {
 	//Migrate configuration data, if neccessary
 	util::MigrationUtil::checkMigration();
 
-	setSignalHandler(signalHandler);
+//	setSignalHandler(signalHandler);
 
 	bibletime_ptr = new BibleTime();
 

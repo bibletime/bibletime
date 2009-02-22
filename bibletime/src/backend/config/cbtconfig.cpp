@@ -300,7 +300,9 @@ QFont& CBTConfig::getDefault( const CLanguageMgr::Language* const)
 		return *m_defaultFont;
 	}
 
-	int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
+// TODO - make the font name and size a configuration option
+	//int fontSize = QWebSettings::globalSettings()->fontSize(QWebSettings::DefaultFontSize);
+    int fontSize =  12;
 	QString fontName = QWebSettings::globalSettings()->fontFamily(QWebSettings::StandardFont);
 
 	m_defaultFont = new QFont(fontName, fontSize); //TODO: there may be a mem leak here!

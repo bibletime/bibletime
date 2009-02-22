@@ -11,6 +11,8 @@
 
 #include "cbookreadwindow.h"
 #include "cbookreadwindow.moc"
+#include "bttoolbarpopupaction.h"
+#include "btactioncollection.h"
 
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
@@ -28,11 +30,7 @@
 #include <QSplitter>
 #include <QToolBar>
 #include <QMenu>
-
-#include <kaction.h>
-#include <ktoggleaction.h>
-#include <kactioncollection.h>
-#include <ktoolbarpopupaction.h>
+#include <QAction>
 
 using namespace Profile;
 
@@ -61,18 +59,19 @@ void CBookReadWindow::storeProfileSettings( CProfileWindow* profileWindow )
 void CBookReadWindow::initActions()
 {
 	CLexiconReadWindow::initActions();
-	KActionCollection* ac = actionCollection();
+	BtActionCollection* ac = actionCollection();
 	//cleanup, not a clean oo-solution
 	Q_ASSERT(ac->action("nextEntry"));
 	Q_ASSERT(ac->action("previousEntry"));
 	ac->action("nextEntry")->setEnabled(false);
 	ac->action("previousEntry")->setEnabled(false);
 
-	m_treeAction = new KToggleAction(
-			KIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
+	m_treeAction = new QAction(
+			QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
 			tr("Toggle tree view"),
 			ac
 			);
+	m_treeAction->setCheckable(true);
 	m_treeAction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
 	QObject::connect(m_treeAction, SIGNAL(triggered()), this, SLOT(treeToggled()) );
 	ac->addAction("toggleTree", m_treeAction);
@@ -80,29 +79,30 @@ void CBookReadWindow::initActions()
 //	CBTConfig::setupAccelSettings(CBTConfig::bookWindow, ac);
 }
 
-void CBookReadWindow::insertKeyboardActions( KActionCollection* const a )
+void CBookReadWindow::insertKeyboardActions( BtActionCollection* const a )
 {
-	KAction* kaction;
+	QAction* qaction;
 
-	kaction = new KToggleAction(
-			KIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
+	qaction = new QAction(
+			QIcon(CResMgr::displaywindows::bookWindow::toggleTree::icon),
 			tr("Toggle tree view"),
 			a
 			);
-	kaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
-	a->addAction("toggleTree", kaction);
+	qaction->setCheckable(true);
+	qaction->setShortcut(CResMgr::displaywindows::bookWindow::toggleTree::accel);
+	a->addAction("toggleTree", qaction);
 		
-		//  new KAction(tr("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
-	kaction = new KAction(tr("Copy entry with text"), a);
-	a->addAction("copyEntryWithText", kaction);
-	//  new KAction(tr("Copy selected text"), KShortcut(0), a, "copySelectedText");
-	kaction = new KAction(tr("Save entry as plain text"), a);
-	a->addAction("saveEntryAsPlainText", kaction);
-	kaction = new KAction(tr("Save entry as HTML"),a);
-	a->addAction("saveEntryAsHTML", kaction);
-	//   new KAction(tr("Print reference only"), KShortcut(0), a, "printReferenceOnly");
-	kaction = new KAction(tr("Print entry with text"), a);
-	a->addAction("printEntryWithText", kaction);
+		//  new QAction(tr("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
+	qaction = new QAction(tr("Copy entry with text"), a);
+	a->addAction("copyEntryWithText", qaction);
+	//  new QAction(tr("Copy selected text"), KShortcut(0), a, "copySelectedText");
+	qaction = new QAction(tr("Save entry as plain text"), a);
+	a->addAction("saveEntryAsPlainText", qaction);
+	qaction = new QAction(tr("Save entry as HTML"),a);
+	a->addAction("saveEntryAsHTML", qaction);
+	//   new QAction(tr("Print reference only"), KShortcut(0), a, "printReferenceOnly");
+	qaction = new QAction(tr("Print entry with text"), a);
+	a->addAction("printEntryWithText", qaction);
 
 }
 
@@ -161,7 +161,7 @@ void CBookReadWindow::initToolbars()
 
 	buttonsToolBar()->addWidget(displaySettingsButton());
 
-	KAction* action = qobject_cast<KAction*>(actionCollection()->action(
+	QAction* action = qobject_cast<QAction*>(actionCollection()->action(
 						  CResMgr::displaywindows::general::search::actionName ));
 	if (action) {
 		buttonsToolBar()->addAction(action);

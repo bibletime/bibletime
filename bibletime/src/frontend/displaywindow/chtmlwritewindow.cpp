@@ -11,6 +11,7 @@
 
 #include "chtmlwritewindow.h"
 #include "chtmlwritewindow.moc"
+#include "btactioncollection.h"
 
 //frontend includes
 #include "frontend/keychooser/ckeychooser.h"
@@ -27,11 +28,6 @@
 #include <QToolBar>
 #include <QMessageBox>
 #include <QAction>
-
-//KDE includes
-#include <kactioncollection.h>
-
-
 
 using namespace Profile;
 

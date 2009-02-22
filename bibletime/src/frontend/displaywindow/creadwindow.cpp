@@ -7,10 +7,9 @@
 *
 **********/
 
-
-
 //BibleTime includes
 #include "creadwindow.h"
+#include "btactioncollection.h"
 
 #include "frontend/display/bthtmlreaddisplay.h"
 typedef BtHtmlReadDisplay HTMLREADDISPLAY;
@@ -24,10 +23,6 @@ typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 #include "frontend/cmdiarea.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
-
-
-#include <kactioncollection.h>
-
 
 #include <QResizeEvent>
 #include <QMdiSubWindow>
@@ -180,7 +175,7 @@ void CReadWindow::applyProfileSettings(CProfileWindow * const settings) {
 	setUpdatesEnabled(true);
 }
 
-void CReadWindow::insertKeyboardActions( KActionCollection* const ) {}
+void CReadWindow::insertKeyboardActions( BtActionCollection* const ) {}
 
 /** No descriptions */
 void CReadWindow::copyDisplayedText() {

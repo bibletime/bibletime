@@ -153,6 +153,8 @@ SET(bibletime_SOURCES
 	src/frontend/display/btcolorwidget.cpp
 	
 	#display windows and their widgets
+	src/frontend/displaywindow/bttoolbarpopupaction.cpp
+	src/frontend/displaywindow/btactioncollection.cpp
 	src/frontend/displaywindow/cmodulechooserbutton.cpp
 	src/frontend/displaywindow/cmodulechooserbar.cpp
 	src/frontend/displaywindow/cbuttons.cpp
@@ -184,7 +186,4 @@ SET(bibletime_test_SOURCES
 	#frontend
 	src/tests/backend/config/cbtconfig_test.cpp
 )
-
-KDE4_ADD_UI_FILES(bibletime_SOURCES)
-KDE4_ADD_UI_FILES(bibletime_test_SOURCES)
 

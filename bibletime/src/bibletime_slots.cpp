@@ -41,11 +41,6 @@
 #include <QProcess>
 #include <QMdiSubWindow>
 
-//KDE includes
-#include <kbugreport.h>
-#include <kaboutapplicationdialog.h>
-#include <kaboutdata.h>
-
 using namespace Profile;
 
 // /* An action which stores a user defined pointer to a widget.

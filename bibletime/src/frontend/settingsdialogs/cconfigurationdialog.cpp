@@ -24,10 +24,7 @@
 #include <QPushButton>
 #include <QLayout>
 
-#include <kactioncollection.h>
-
-
-CConfigurationDialog::CConfigurationDialog(QWidget * parent, KActionCollection* actionCollection )
+CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
 	: BtConfigDialog(parent),
 	  m_actionCollection(actionCollection),
 	  m_displayPage(0),

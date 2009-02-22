@@ -16,7 +16,7 @@
 
 class CWriteDisplay;
 class QString;
-class KActionCollection;
+class BtActionCollection;
 
 /**The base class for all write-only display windows.
   *@author The BibleTime team
@@ -25,7 +25,7 @@ class KActionCollection;
 class CWriteWindow : public CDisplayWindow  {
 	Q_OBJECT
 public:
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CWriteWindow();

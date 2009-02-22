@@ -21,12 +21,12 @@
 
 class CHTMLWriteDisplay;
 
-class KAction;
 class QWidget;
 class QMenu;
 class QDragMoveEvent;
 class QDropEvent;
 class QDragEnterEvent;
+class BtActionCollection;
 
 /** The write display implementation for plain source code editing.
   * @author The BibleTime team
@@ -66,7 +66,7 @@ public:
 	/**
 	* Creates the necessary action objects and puts them on the toolbar (CWriteDisplay).
 	*/
-	virtual void setupToolbar(QToolBar*, KActionCollection*);
+	virtual void setupToolbar(QToolBar*, BtActionCollection*);
 
 protected:
 	friend class CDisplay;

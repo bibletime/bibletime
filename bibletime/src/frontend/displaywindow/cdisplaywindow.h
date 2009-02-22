@@ -35,7 +35,7 @@ class QCloseEvent;
 class QToolBar;
 class QCloseEvent;
 class QMenu;
-class KActionCollection;
+class BtActionCollection;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
@@ -53,7 +53,7 @@ public:
 	* Insert the keyboard accelerators of this window into the given KAccel object.
 	*/
 	//   static void insertKeyboardActions( KAccel* const accel );
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CMDIArea* mdi() const;
 	/**
@@ -165,7 +165,7 @@ public:
 		return false;
 	};
 
-	KActionCollection* actionCollection();
+	BtActionCollection* actionCollection();
 
 public slots:
 	/**
@@ -241,7 +241,7 @@ protected slots:
 
 
 private:
-	KActionCollection* m_actionCollection;
+	BtActionCollection* m_actionCollection;
 	CMDIArea* m_mdi;
 
 	//we may only cache the module names bacause after a backend relaod the pointers are invalid!

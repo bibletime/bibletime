@@ -15,7 +15,7 @@
 #include "cdisplay.h"
 
 class QToolBar;
-class KActionCollection;
+class BtActionCollection;
 
 
 /**The base class for all read/write-display classes.
@@ -45,7 +45,7 @@ public: // Public methods
 	/**
 	* Creates the necessary action objects and puts them on the toolbar.
 	*/
-	virtual void setupToolbar( QToolBar* bar, KActionCollection* actionCollection ) = 0;
+	virtual void setupToolbar( QToolBar* bar, BtActionCollection* actionCollection ) = 0;
 };
 
 #endif

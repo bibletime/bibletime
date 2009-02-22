@@ -30,7 +30,7 @@ CWriteWindow::CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
 CWriteWindow::~CWriteWindow() {}
 
 
-void CWriteWindow::insertKeyboardActions( KActionCollection* const ) {}
+void CWriteWindow::insertKeyboardActions( BtActionCollection* const ) {}
 
 void CWriteWindow::initConnections() {
 	Q_ASSERT(keyChooser());

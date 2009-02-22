@@ -17,7 +17,7 @@
 
 
 class QAction;
-class KActionCollection;
+class BtActionCollection;
 
 class QString;
 
@@ -63,7 +63,7 @@ protected: // Protected methods
 	/**
 	* Insert the keyboard accelerators of this window into the given KAccel object.
 	*/
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 private:
 	struct {

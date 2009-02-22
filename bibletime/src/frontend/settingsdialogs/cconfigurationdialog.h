@@ -13,11 +13,8 @@
 #ifndef CCONFIGURATIONDIALOG_H
 #define CCONFIGURATIONDIALOG_H
 
-//#include "util/cpointers.h"
-
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
-class KActionCollection;
 class QWidget;
 class QAbstractButton;
 
@@ -26,17 +23,18 @@ class CSwordSettingsPage;
 class CLanguageSettingsPage;
 class CAcceleratorSettingsPage;
 class QDialogButtonBox;
+class BtActionCollection;
 
 class CConfigurationDialog : public BtConfigDialog {
 	Q_OBJECT
 
 public:
-	CConfigurationDialog(QWidget *parent, KActionCollection* actionCollection);
+	CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
 	virtual ~CConfigurationDialog();
 protected slots:
 	void slotButtonClicked(QAbstractButton *);
 private:
-	KActionCollection* m_actionCollection;
+	BtActionCollection* m_actionCollection;
 	CDisplaySettingsPage* m_displayPage;
 	CSwordSettingsPage* m_swordPage;
 	CAcceleratorSettingsPage* m_acceleratorsPage;

@@ -12,9 +12,11 @@
 //BibleTime includes
 #include "clexiconreadwindow.h"
 #include "clexiconreadwindow.moc"
+#include "btactioncollection.h"
 
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
+#include "bttoolbarpopupaction.h"
 
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordldkey.h"
@@ -35,14 +37,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QFileDialog>
-
-
-#include <ktoolbar.h>
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <ktoolbarpopupaction.h>
-#include <kactionmenu.h>
-#include <kmenu.h>
+#include <QAction>
 
 CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
 	: CReadWindow(moduleList, parent)
@@ -54,28 +49,28 @@ CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDI
 
 CLexiconReadWindow::~CLexiconReadWindow() {}
 
-void CLexiconReadWindow::insertKeyboardActions( KActionCollection* const a )
+void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a )
 {
 	qDebug("CLexiconReadWindow::insertKeyboardActions");
-	KAction* kaction;
-	kaction = new KAction( tr("Next entry"), a);
+	QAction* kaction;
+	kaction = new QAction( tr("Next entry"), a);
 	kaction->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
 	a->addAction("nextEntry", kaction);
 
-	kaction = new KAction( tr("Previous entry"), a);
+	kaction = new QAction( tr("Previous entry"), a);
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	a->addAction("previousEntry", kaction);
 	
-	kaction = new KAction(tr("Copy reference only"), a);
+	kaction = new QAction(tr("Copy reference only"), a);
 	a->addAction("copyReferenceOnly", kaction);
 
-	kaction = new KAction(tr("Copy selected text"), a);
+	kaction = new QAction(tr("Copy selected text"), a);
 	a->addAction("copySelectedText", kaction);
 
-	kaction = new KAction(tr("Save entry as HTML"), a);
+	kaction = new QAction(tr("Save entry as HTML"), a);
 	a->addAction("saveHtml", kaction);
 
-	kaction = new KAction(tr("Print reference only"), a);
+	kaction = new QAction(tr("Print reference only"), a);
 	a->addAction("printReferenceOnly", kaction);
 }
 
@@ -83,42 +78,38 @@ void CLexiconReadWindow::initActions()
 {
 	qDebug("CLexiconReadWindow::initActions");
 
-	KActionCollection* ac = actionCollection();
+	BtActionCollection* ac = actionCollection();
 	CLexiconReadWindow::insertKeyboardActions(ac);
 	CReadWindow::initActions();
 
-	
-	m_actions.backInHistory = dynamic_cast<KToolBarPopupAction*>(
+	m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(
 		ac->action(CResMgr::displaywindows::general::backInHistory::actionName) );
 	Q_ASSERT(m_actions.backInHistory);
 
-	m_actions.forwardInHistory = dynamic_cast<KToolBarPopupAction*>(
+	m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(
 		 ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName) );
 	Q_ASSERT(m_actions.forwardInHistory);
 
+	QAction* kaction;
 
-	KAction* kaction;
-
-	kaction = new KAction(tr("Next entry"), ac );
+	kaction = new QAction(tr("Next entry"), ac );
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( nextEntry() ) );
 	ac->addAction("nextEntry", kaction);
 
-	kaction = new KAction(tr("Previous entry"), ac );
+	kaction = new QAction(tr("Previous entry"), ac );
 	kaction->setShortcut( CResMgr::displaywindows::lexiconWindow::previousEntry::accel);
 	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT( previousEntry() ) );
 	ac->addAction("previousEntry", kaction);
 
-
-	m_actions.selectAll = qobject_cast<KAction*>(ac->action("selectAll"));
+	m_actions.selectAll = qobject_cast<QAction*>(ac->action("selectAll"));
 	//TODO: Q_ASSERT(m_actions.selectAll);
 
-	m_actions.findText = qobject_cast<KAction*>(ac->action("findText"));
+	m_actions.findText = qobject_cast<QAction*>(ac->action("findText"));
 	//TODO: Q_ASSERT(m_actions.findText);
-	
 
-	m_actions.findStrongs = new KAction(
-		KIcon(CResMgr::displaywindows::general::findStrongs::icon),
+	m_actions.findStrongs = new QAction(
+		QIcon(CResMgr::displaywindows::general::findStrongs::icon),
 		tr("Strong's Search"),
 		ac
 		);
@@ -126,30 +117,30 @@ void CLexiconReadWindow::initActions()
 	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
 	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
 
-	m_actions.copy.reference = new KAction(tr("Reference only"), ac );
+	m_actions.copy.reference = new QAction(tr("Reference only"), ac );
 	QObject::connect(m_actions.copy.reference, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()) );
 	ac->addAction("copyReferenceOnly", m_actions.copy.reference);
 
-	m_actions.copy.entry = new KAction(tr("Entry with text"), ac );
+	m_actions.copy.entry = new QAction(tr("Entry with text"), ac );
 	QObject::connect(m_actions.copy.entry, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAll()) );
 	ac->addAction("copyEntryWithText", m_actions.copy.entry);
 
 	Q_ASSERT(ac->action("copySelectedText"));
-	m_actions.copy.selectedText = qobject_cast<KAction*>(ac->action("copySelectedText"));
+	m_actions.copy.selectedText = qobject_cast<QAction*>(ac->action("copySelectedText"));
 	
-	m_actions.save.entryAsPlain = new KAction(tr("Entry as plain text"), ac );
+	m_actions.save.entryAsPlain = new QAction(tr("Entry as plain text"), ac );
 	QObject::connect(m_actions.save.entryAsPlain, SIGNAL(triggered()), this, SLOT(saveAsPlain()) );
 	ac->addAction("saveEntryAsPlain", m_actions.save.entryAsPlain);
 
-	m_actions.save.entryAsHTML = new KAction(tr("Entry as HTML"), ac );
+	m_actions.save.entryAsHTML = new QAction(tr("Entry as HTML"), ac );
 	QObject::connect(m_actions.save.entryAsHTML, SIGNAL(triggered()), this, SLOT(saveAsHTML()));
 	ac->addAction("saveEntryAsHTML", m_actions.save.entryAsHTML);
 
-	m_actions.print.reference = new KAction(tr("Reference only"), ac);
+	m_actions.print.reference = new QAction(tr("Reference only"), ac);
 	QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()));
 	ac->addAction("printReferenceOnly", m_actions.print.reference);
 
-	m_actions.print.entry = new KAction(tr("Entry with text"), ac);
+	m_actions.print.entry = new QAction(tr("Entry with text"), ac);
 	QObject::connect(m_actions.print.entry, SIGNAL(triggered()), this, SLOT(printAll()));
 	ac->addAction("printEntryWithText", m_actions.print.entry);
 
@@ -168,23 +159,26 @@ void CLexiconReadWindow::initConnections()
 	connect(keyChooser()->history(), SIGNAL(historyChanged(bool, bool)), this, SLOT(slotUpdateHistoryButtons(bool, bool)));
 
 	//connect the history actions to the right slots
-	connect(
+	bool ok = connect(
 		m_actions.backInHistory->popupMenu(), SIGNAL(aboutToShow()),
 		this, SLOT(slotFillBackHistory())
 	);
-	connect(
+	Q_ASSERT(ok);
+	ok = connect(
 		m_actions.backInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
 		keyChooser()->history(), SLOT(move(QAction*))
 	);
-	connect(
+	Q_ASSERT(ok);
+	ok = connect(
 		m_actions.forwardInHistory->popupMenu(), SIGNAL(aboutToShow()),
 		this, SLOT(slotFillForwardHistory())
 	);
-	connect(
+	Q_ASSERT(ok);
+	ok = connect(
 		m_actions.forwardInHistory->popupMenu(), SIGNAL(triggered(QAction*)),
 		keyChooser()->history(), SLOT(move(QAction*))
 	);
-
+	Q_ASSERT(ok);
 
 }
 
@@ -213,13 +207,12 @@ void CLexiconReadWindow::initToolbars()
 	mainToolBar()->addAction(m_actions.forwardInHistory); //2nd button
 
 	//buttons toolbar
-	KAction* action = qobject_cast<KAction*>(actionCollection()->action(
+	QAction* action = qobject_cast<QAction*>(actionCollection()->action(
 		CResMgr::displaywindows::general::search::actionName));
 	Q_ASSERT( action );
 	if (action) {
 		buttonsToolBar()->addAction(action);
 	}
-
 	setDisplaySettingsButton( new CDisplaySettingsButton( &displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
 
 	//TODO: find the right place for the button
@@ -235,42 +228,37 @@ void CLexiconReadWindow::setupPopupMenu()
 	popup()->addAction(m_actions.selectAll);
 	popup()->addSeparator();
 
-	m_actions.copyMenu = new KActionMenu(KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::copyMenu::icon)), tr("Copy..."), actionCollection());
-	m_actions.copyMenu->setDelayed(false);
+	m_actions.copyMenu = new QMenu(tr("Copy..."), popup());
 
 	m_actions.copyMenu->addAction(m_actions.copy.reference);
 	m_actions.copyMenu->addAction(m_actions.copy.entry);
 	m_actions.copyMenu->addSeparator();
 	m_actions.copyMenu->addAction(m_actions.copy.selectedText);
-	popup()->addAction(m_actions.copyMenu);
+	popup()->addMenu(m_actions.copyMenu);
 
-	m_actions.saveMenu = new KActionMenu(
-			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::saveMenu::icon)),
+	m_actions.saveMenu = new QMenu(
 			tr("Save..."),
-			actionCollection()
+			popup()
 			);
-	m_actions.saveMenu->setDelayed(false);
 	m_actions.saveMenu->addAction(m_actions.save.entryAsPlain);
 	m_actions.saveMenu->addAction(m_actions.save.entryAsHTML);
 
 	// Save raw HTML action for debugging purposes
 	if (qApp->property("--debug").toBool()) {
-		KAction* debugAction = new KAction("Raw HTML", this);
+		QAction* debugAction = new QAction("Raw HTML", this);
 		QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
 		m_actions.saveMenu->addAction(debugAction);
 	} // end of Save Raw HTML
 
-	popup()->addAction(m_actions.saveMenu);
+	popup()->addMenu(m_actions.saveMenu);
 
-	m_actions.printMenu = new KActionMenu(
-			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::lexiconWindow::printMenu::icon)),
+	m_actions.printMenu = new QMenu(
 			tr("Print..."),
-			actionCollection()
+			popup()
 			);
-	m_actions.printMenu->setDelayed(false);
 	m_actions.printMenu->addAction(m_actions.print.reference);
 	m_actions.printMenu->addAction(m_actions.print.entry);
-	popup()->addAction(m_actions.printMenu);
+	popup()->addMenu(m_actions.printMenu);
 }
 
 /** Reimplemented. */

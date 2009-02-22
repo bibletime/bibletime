@@ -15,17 +15,15 @@
 //BibleTime includes
 #include "creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
-
-//KDE includes
-
+class BtToolBarPopupAction;
 
 class CSwordKey;
 class CSwordLDKey;
 
 class KToolBarPopupAction;
-class KActionCollection;
-class KAction;
-class KActionMenu;
+class BtActionCollection;
+class QAction;
+class QMenu;
 
 /**
   *@author The BibleTime team
@@ -48,7 +46,7 @@ public:
 	* Reimplementation.
 	*/
 	//   static void insertKeyboardActions( KAccel* a );
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 protected:
 	virtual void initActions();
@@ -60,33 +58,33 @@ protected:
 
 
 	struct ActionsStruct {
-		KToolBarPopupAction* backInHistory;
-		KToolBarPopupAction* forwardInHistory;
+		BtToolBarPopupAction* backInHistory;
+		BtToolBarPopupAction* forwardInHistory;
 
-		KAction* selectAll;
-		KAction* findText;
-		KAction* findStrongs;
+		QAction* selectAll;
+		QAction* findText;
+		QAction* findStrongs;
 
-		KActionMenu* copyMenu;
+		QMenu* copyMenu;
 		struct {
-			KAction* reference;
-			KAction* entry;
-			KAction* selectedText;
+			QAction* reference;
+			QAction* entry;
+			QAction* selectedText;
 		}
 		copy;
 
-		KActionMenu* saveMenu;
+		QMenu* saveMenu;
 		struct {
-			KAction* reference;
-			KAction* entryAsPlain;
-			KAction* entryAsHTML;
+			QAction* reference;
+			QAction* entryAsPlain;
+			QAction* entryAsHTML;
 		}
 		save;
 
-		KActionMenu* printMenu;
+		QMenu* printMenu;
 		struct {
-			KAction* reference;
-			KAction* entry;
+			QAction* reference;
+			QAction* entry;
 		}
 		print;
 	}

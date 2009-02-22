@@ -9,6 +9,7 @@
 
 #include "cplainwritewindow.h"
 #include "cplainwritewindow.moc"
+#include "btactioncollection.h"
 
 #include "frontend/display/cwritedisplay.h"
 
@@ -26,11 +27,6 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QAction>
-
-
-#include <kactioncollection.h>
-
-
 
 using namespace Profile;
 
@@ -184,5 +180,5 @@ bool CPlainWriteWindow::syncAllowed() const {
 void CPlainWriteWindow::initActions() {
 }
 
-void CPlainWriteWindow::insertKeyboardActions( KActionCollection* const ) {
+void CPlainWriteWindow::insertKeyboardActions( BtActionCollection* const ) {
 }

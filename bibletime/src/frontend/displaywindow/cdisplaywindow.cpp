@@ -8,6 +8,8 @@
 **********/
 
 #include "cdisplaywindow.h"
+#include "bttoolbarpopupaction.h"
+#include "btactioncollection.h"
 
 #include "cmodulechooserbar.h"
 #include "cbuttons.h"
@@ -27,12 +29,6 @@
 #include <QStringList>
 #include <QDebug>
 #include <QMenu>
-#include <QAction>
-#include <QKeySequence>
-
-//#include <kstandardaction.h>
-#include <kactioncollection.h>
-#include <ktoolbarpopupaction.h>
 
 using namespace Profile;
 
@@ -53,7 +49,7 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
 	qDebug("CDisplayWindow::CDisplayWindow");
 	setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
 	parent->addSubWindow(this);
-	m_actionCollection = new KActionCollection(this);
+	m_actionCollection = new BtActionCollection(this);
 	setModules(modules);
 
 	// Connect this to the backend module list changes
@@ -99,9 +95,9 @@ void CDisplayWindow::setCaption( const QString&  ) {
 	m_mdi->emitWindowCaptionChanged();
 }
 
-void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
+void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 	qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
-	
+
 	QAction* actn = new QAction(QIcon(), tr("Zoom in"), 0);
 	actn->setShortcut(QKeySequence::ZoomIn);
 	a->addAction("zoomIn", actn);
@@ -127,16 +123,16 @@ void CDisplayWindow::insertKeyboardActions( KActionCollection* a ) {
 	a->addAction("findText", actn);
 	//a->addAction(KStandardAction::Find, "findText", 0, 0);
 
-	KToolBarPopupAction* action = new KToolBarPopupAction(
-				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+	BtToolBarPopupAction* action = new BtToolBarPopupAction(
+				QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 				tr("Back in history"),
 				a
 				);
 	action->setShortcut(CResMgr::displaywindows::general::backInHistory::accel);
 	a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
-	action = new KToolBarPopupAction(
-				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+	action = new BtToolBarPopupAction(
+				QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
 				tr("Forward in history"),
 				a
 				);
@@ -148,10 +144,10 @@ void CDisplayWindow::initActions()
 {
 	qDebug("CDisplayWindow::initActions");
 
-	KActionCollection* ac = actionCollection();
+	BtActionCollection* ac = actionCollection();
 
-	KAction* kaction = new KAction(
-				KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
+	QAction* kaction = new QAction(
+				QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
 				tr("Open the search dialog with the works of this window"),
 				ac
 				);
@@ -170,7 +166,7 @@ void CDisplayWindow::initActions()
 	actn = new QAction(QIcon(), tr("Zoom out"), ac);
 	actn->setShortcut(QKeySequence::ZoomOut);
 	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomOut()));
-	ac->addAction("zoomIn", actn);
+	ac->addAction("zoomOut", actn);
 	addAction(actn);
 	//a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
 	actn = new QAction(QIcon(), tr("Close"), ac);
@@ -198,31 +194,22 @@ void CDisplayWindow::initActions()
 	addAction(actn);
 	//a->addAction(KStandardAction::Find, "findText", 0, 0);
 
-	
-
-
-// 	addAction(ac->addAction(KStandardAction::ZoomIn, "zoomIn", conn, SLOT(zoomIn())));
-// 	addAction(ac->addAction(KStandardAction::ZoomOut, "zoomOut", conn, SLOT(zoomOut())));
-// 	addAction(ac->addAction(KStandardAction::Close, "closeWindow", this, SLOT(close())));
-// 	addAction(ac->addAction(KStandardAction::SelectAll, "selectAll", conn, SLOT(selectAll())));
-// 	addAction(ac->addAction(KStandardAction::Copy, "copySelectedText", conn, SLOT(copySelection())));
-// 	addAction(ac->addAction(KStandardAction::Find, "findText", conn, SLOT(openFindTextDialog())));
-
-
-	KToolBarPopupAction* popupaction = new KToolBarPopupAction(
-			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+	BtToolBarPopupAction* popupaction = new BtToolBarPopupAction(
+			QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 			tr("Back in history"),
 			ac
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
+	bool ok = QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(back()));
+	Q_ASSERT(ok);
 	ac->addAction(CResMgr::displaywindows::general::backInHistory::actionName, popupaction);
 
-	popupaction = new KToolBarPopupAction(
-			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+	popupaction = new BtToolBarPopupAction(
+			QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
 			tr("Forward in history"),
 			ac
 			);
-	QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
+	ok = QObject::connect(popupaction, SIGNAL(triggered()), keyChooser()->history(), SLOT(fw()) );
+	Q_ASSERT(ok);
 	ac->addAction(CResMgr::displaywindows::general::forwardInHistory::actionName, popupaction);
 
 }
@@ -504,7 +491,7 @@ void CDisplayWindow::printAnchorWithText() {
 	m_displayWidget->connectionsProxy()->printAnchorWithText( m_displayOptions, m_filterOptions);
 }
 
-KActionCollection* CDisplayWindow::actionCollection()
+BtActionCollection* CDisplayWindow::actionCollection()
 {
 	return m_actionCollection;
 }

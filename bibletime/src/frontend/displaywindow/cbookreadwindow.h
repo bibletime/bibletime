@@ -1,9 +1,9 @@
 /*********
 *
-* This file is part of BibleTime's source code, http://www.bibletime.info/.
+* This file is part of BibleTime's BtActionCollection code, http://www.bibletime.info/.
 *
 * Copyright 1999-2008 by the BibleTime developers.
-* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+* The BibleTime BtActionCollection code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
@@ -16,9 +16,9 @@
 #include "clexiconreadwindow.h"
 
 
-class KToggleAction;
+class QAction;
 class CBookTreeChooser;
-
+class BtActionCollection;
 
 
 /**
@@ -27,7 +27,7 @@ class CBookTreeChooser;
 class CBookReadWindow : public CLexiconReadWindow  {
 	Q_OBJECT
 public:
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CBookReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	
@@ -56,7 +56,7 @@ protected:
 	virtual void modulesChanged();
 
 private:
-	KToggleAction* m_treeAction;
+	QAction* m_treeAction;
 	CBookTreeChooser* m_treeChooser;
 
 private slots: // Private slots

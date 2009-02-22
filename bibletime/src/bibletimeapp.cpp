@@ -14,8 +14,8 @@
 //KDE includes
 //#include <dcopclient.h> #TODO: USE DBUS INSTEAD OF DCOP
 
-// BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) { #for QApplication
-BibleTimeApp::BibleTimeApp() : KApplication() {
+BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) 
+{ 
 //	initDCOP();
 	CResMgr::init_tr();
 }

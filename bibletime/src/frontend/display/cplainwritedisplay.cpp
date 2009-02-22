@@ -7,15 +7,13 @@
 *
 **********/
 
-
 #include "cplainwritedisplay.h"
-
+#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 
 #include "backend/keys/cswordkey.h"
-
 
 #include <boost/scoped_ptr.hpp>
 
@@ -24,7 +22,6 @@
 #include <QDropEvent>
 #include <QDragMoveEvent>
 #include <QMenu>
-
 
 
 CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {
@@ -101,7 +98,7 @@ QMenu* CPlainWriteDisplay::createPopupMenu( const QPoint& /*pos*/ ) {
 //}
 
 /** Creates the necessary action objects and puts them on the toolbar. */
-void CPlainWriteDisplay::setupToolbar(QToolBar*, KActionCollection*) {}
+void CPlainWriteDisplay::setupToolbar(QToolBar*, BtActionCollection*) {}
 
 /** Reimplementation to insert the text of a dragged reference into the edit view. */
 void CPlainWriteDisplay::dragEnterEvent( QDragEnterEvent* e ) {

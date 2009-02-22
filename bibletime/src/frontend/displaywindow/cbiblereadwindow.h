@@ -21,9 +21,9 @@ class CTransliterationButton;
 class CSwordKey;
 class CSwordVerseKey;
 
-class KActionCollection;
-class KAction;
-class KActionMenu;
+class BtActionCollection;
+class QAction;
+class QMenu;
 
 class QObject;
 class QEvent;
@@ -50,7 +50,7 @@ public:
 	/**
 	* Reimplementation.
 	*/
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 protected:
 	virtual void initActions();
@@ -73,30 +73,30 @@ protected:
 	struct {
 		QAction* selectAll;
 		QAction* findText;
-		KAction* findStrongs;
+		QAction* findStrongs;
 
-		KActionMenu* copyMenu;
+		QMenu* copyMenu;
 		struct {
-			KAction* referenceOnly;
-			KAction* referenceTextOnly;
-			KAction* referenceAndText;
-			KAction* chapter;
+			QAction* referenceOnly;
+			QAction* referenceTextOnly;
+			QAction* referenceAndText;
+			QAction* chapter;
 			QAction* selectedText;
 		}
 		copy;
 
-		KActionMenu* saveMenu;
+		QMenu* saveMenu;
 		struct {
-			KAction* referenceAndText;
-			KAction* chapterAsPlain;
-			KAction* chapterAsHTML;
+			QAction* referenceAndText;
+			QAction* chapterAsPlain;
+			QAction* chapterAsHTML;
 		}
 		save;
 
-		KActionMenu* printMenu;
+		QMenu* printMenu;
 		struct {
-			KAction* reference;
-			KAction* chapter;
+			QAction* reference;
+			QAction* chapter;
 		}
 		print;
 	}

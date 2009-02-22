@@ -10,6 +10,7 @@
 //BibleTime includes
 #include "ccommentaryreadwindow.h"
 #include "ccommentaryreadwindow.moc"
+#include "btactioncollection.h"
 
 #include "frontend/profile/cprofilewindow.h"
 #include "backend/config/cbtconfig.h"
@@ -24,43 +25,41 @@
 #include "util/directoryutil.h"
 
 #include <QMenu>
-
-#include <kaction.h>
-#include <kactioncollection.h>
-#include <ktoggleaction.h>
-#include <ktoolbar.h>
+#include <QAction>
+#include <QIcon>
+#include <QToolBar>
 
 using namespace Profile;
 
 CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
 
-void CCommentaryReadWindow::insertKeyboardActions( KActionCollection* const a ) {
+void CCommentaryReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 
-	KAction* kaction;
+	QAction* qaction;
 
-	kaction = new KAction(tr("Next book"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-	a->addAction("nextBook", kaction);
+	qaction = new QAction(tr("Next book"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+	a->addAction("nextBook", qaction);
 
-	kaction = new KAction(tr("Previous book"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
-	a->addAction( "previousBook", kaction);
+	qaction = new QAction(tr("Previous book"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
+	a->addAction( "previousBook", qaction);
 
-	kaction = new KAction(tr("Next chapter"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-	a->addAction("nextChapter", kaction);
+	qaction = new QAction(tr("Next chapter"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+	a->addAction("nextChapter", qaction);
 
-	kaction = new KAction(tr("Previous chapter"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-	a->addAction("previousChapter", kaction);
+	qaction = new QAction(tr("Previous chapter"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+	a->addAction("previousChapter", qaction);
 
-	kaction = new KAction(tr("Next verse"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-	a->addAction("nextVerse", kaction);
+	qaction = new QAction(tr("Next verse"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+	a->addAction("nextVerse", qaction);
 
-	kaction = new KAction(tr("Previous verse"), a);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-	a->addAction("previousVerse", kaction);
+	qaction = new QAction(tr("Previous verse"), a);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+	a->addAction("previousVerse", qaction);
 
 }
 
@@ -79,8 +78,8 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 void CCommentaryReadWindow::initToolbars() {
 	CLexiconReadWindow::initToolbars();
 
-	m_syncButton = new KToggleAction(
-			KIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+	m_syncButton = new QAction(
+			QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
 			tr("Synchronize"),
 			actionCollection()
 			);
@@ -109,43 +108,43 @@ CSwordVerseKey* CCommentaryReadWindow::verseKey() {
 void CCommentaryReadWindow::initActions() {
 	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
 
-	KActionCollection* ac = actionCollection();
+	BtActionCollection* ac = actionCollection();
 
 	//cleanup, not a clean oo-solution
 	ac->action("nextEntry")->setEnabled(false);
 	ac->action("previousEntry")->setEnabled(false);
 
-	KAction* kaction;
+	QAction* qaction;
 
-	kaction = new KAction(tr("Next book"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
-	ac->addAction("nextBook", kaction);
+	qaction = new QAction(tr("Next book"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
+	ac->addAction("nextBook", qaction);
 
-	kaction = new KAction(tr("Previous book"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
-	ac->addAction("previousBook", kaction);
+	qaction = new QAction(tr("Previous book"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
+	ac->addAction("previousBook", qaction);
 
-	kaction = new KAction(tr("Next chapter"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
-	ac->addAction("nextChapter", kaction);
+	qaction = new QAction(tr("Next chapter"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
+	ac->addAction("nextChapter", qaction);
 
-	kaction = new KAction(tr("Previous chapter"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
-	ac->addAction("previousChapter", kaction);
+	qaction = new QAction(tr("Previous chapter"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
+	ac->addAction("previousChapter", qaction);
 
-	kaction = new KAction(tr("Next verse"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
-	ac->addAction("nextVerse", kaction);
+	qaction = new QAction(tr("Next verse"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
+	ac->addAction("nextVerse", qaction);
 
-	kaction = new KAction(tr("Previous verse"), ac);
-	kaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-	QObject::connect(kaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
-	ac->addAction("previousVerse", kaction);
+	qaction = new QAction(tr("Previous verse"), ac);
+	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
+	ac->addAction("previousVerse", qaction);
 
 //	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
 }

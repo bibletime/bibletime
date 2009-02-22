@@ -19,7 +19,7 @@
 #include "frontend/display/creaddisplay.h"
 
 
-class KActionCollection;
+class BtActionCollection;
 class QResizeEvent;
 
 
@@ -31,7 +31,7 @@ class CReadWindow : public CDisplayWindow  {
 	Q_OBJECT
 public:
 	//  static void insertKeyboardActions( KAccel* const a );
-	static void insertKeyboardActions( KActionCollection* const a );
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CReadWindow();

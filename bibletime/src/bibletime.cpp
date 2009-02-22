@@ -41,10 +41,6 @@
 #include <QCloseEvent>
 #include <QSplashScreen>
 
-//KDE includes
-#include <kcmdlineargs.h>
-
-
 using namespace Profile;
 
 BibleTime::BibleTime() :
@@ -254,34 +250,41 @@ void BibleTime::setPlainCaption(const QString& title) {
 
 /** Processes the commandline options given to BibleTime. */
 void BibleTime::processCommandline() {
-	//TODO: port to Qt when we remove KApplication
-	//QStringList args = qApp->QCoreApplication::arguments();
+	QStringList args = qApp->QCoreApplication::arguments();
 
+#if 0
 	KCmdLineArgs* args = KCmdLineArgs::parsedArgs();
 	if (!CBTConfig::get(CBTConfig::crashedTwoTimes) && !args->isSet("ignore-session")) { //restore workspace if it crashed only once
 		restoreWorkspace();
 	}
+#endif
 
-	//TODO: port to QT4
 // 	//open every time a module if the command line option was set.
-// 	if ( args.contains("--open-default-bible") && !CBTConfig::get(CBTConfig::crashedLastTime) && !CBTConfig::get(CBTConfig::crashedTwoTimes)) { //restore workspace if it crashed ony once
-// 		QString bibleKey = args->getOption("open-default-bible");
-// 		CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
-//
-// 		if (bibleKey == "<random>") {
-// 			CSwordVerseKey vk(0);
-// 			const int maxIndex = 32400;
-//
+ 	if ( args.contains("--open-default-bible") && !CBTConfig::get(CBTConfig::crashedLastTime) && !CBTConfig::get(CBTConfig::crashedTwoTimes)) { //restore workspace if it crashed ony once
+		int index = args.indexOf("--open-default-bible");
+		QString bibleKey;
+		if (index >= 0 && (index+1) < args.size())
+		{
+			bibleKey = args.at(index+1);
+		}
+ 		CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+
+ 		if (bibleKey == "<random>") {
+ 			CSwordVerseKey vk(0);
+ 			const int maxIndex = 32400;
+
 // 			KRandomSequence rs;
 // 			int newIndex = rs.getLong(maxIndex);
-// 			vk.setPosition(sword::TOP);
-// 			vk.Index(newIndex);
-// 			bibleKey = vk.key();
-// 		}
-// 		createReadDisplayWindow(bible, bibleKey);
-// 		//    if (isVisible())
-// 		m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
-// 	}
+// TODO fix random number generation
+			int newIndex = 7;
+
+ 			vk.setPosition(sword::TOP);
+ 			vk.Index(newIndex);
+ 			bibleKey = vk.key();
+ 		}
+ 		createReadDisplayWindow(bible, bibleKey);
+ 		m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
+ 	}
 }
 
 bool BibleTime::event(QEvent* e)
