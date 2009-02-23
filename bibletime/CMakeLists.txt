@@ -89,7 +89,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
-	QT4_AUTOMOC( ${bibletime_SOURCES ${bibletime_test_SOURCES} )
+	QT4_AUTOMOC( ${bibletime_SOURCES} ${bibletime_test_SOURCES} )
 	SET(CMAKE_BUILD_TYPE "Debug")
 	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES}
                              ${bibletime_test_SOURCES} ${bibletime_UIS_H})
