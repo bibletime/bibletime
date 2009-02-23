@@ -8,6 +8,7 @@
 **********/
 
 #include "chistorycombobox.h"
+#include "chistorycombobox.moc"
 #include <QString>
 #include <QCompleter>
 

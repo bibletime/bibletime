@@ -15,7 +15,7 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 # Find required packages
 #
 SET(QT_MIN_VERSION 4.4.0)
-SET(QT_USE_DBUS 1)
+SET(QT_USE_QTDBUS 1)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
 FIND_PACKAGE(Qt4 REQUIRED)
@@ -24,11 +24,6 @@ FIND_PACKAGE(Qt4 REQUIRED)
 #
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
-#
-# If you have problems with detecting KDE4, try uncommenting the following line
-#
-#SET(CMAKE_PREFIX_PATH /usr/lib/kde4)
-FIND_PACKAGE(KDE4 REQUIRED)
 FIND_PACKAGE(Boost REQUIRED)
 #
 #custom includes
@@ -57,8 +52,7 @@ INCLUDE_DIRECTORIES(
 	${QT_QTCORE_INCLUDE_DIR}
 	${QT_QTGUI_INCLUDE_DIR}
 	${QT_QTXML_INCLUDE_DIR}
-	${QT_INCLUDE_DIR}/QtDBus
-	${KDE4_INCLUDE_DIR}
+	${QT_QTDBUS_INCLUDE_DIR}
 	${CLUCENE_INCLUDE_DIR}			#CLucene headers
 	${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
 	${Boost_INCLUDE_DIRS}
@@ -66,35 +60,39 @@ INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_BINARY_DIR}		#for .h files generated from .ui
 	${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
 )
-#
-#This must come before the target definition!
-LINK_DIRECTORIES(
-	${KDE4_LIB_DIR}
-	${QT_LIBRARY_DIR}
-	${CLUCENE_LIBRARY_DIR}
-)
+
 
 # this will run uic on .ui files:
 QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
 
+#
+#This must come before the target definition!
+LINK_DIRECTORIES(
+	${QT_LIBRARY_DIR}
+	${CLUCENE_LIBRARY_DIR}
+)
+
 #Link to QtTest only in debug builds
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
-	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H})
+	# this will run moc on source files
+	QT4_AUTOMOC( ${bibletime_SOURCES} )
+	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions ${SWORD_CFLAGS}" #Enable exception handling
 	)
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
-		${KDE4_KDEUI_LIBS}
-		${KDE4_KDECORE_LIBS}
 		${QT_LIBRARIES}
 		${CLUCENE_LIBRARY}
 		${SWORD_LIBS}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
+	# this will run moc on source files
+	QT4_AUTOMOC( ${bibletime_SOURCES ${bibletime_test_SOURCES} )
 	SET(CMAKE_BUILD_TYPE "Debug")
-	KDE4_ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_test_SOURCES} ${bibletime_UIS_H})
+	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES}
+                             ${bibletime_test_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing
@@ -102,9 +100,8 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	SET(QT_USE_QTTEST 1)
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
-		${KDE4_KDEUI_LIBS}
-		${KDE4_KDECORE_LIBS}
 		${QT_LIBRARIES}
+		${QT_USE_FIL}
 		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
 		${SWORD_LIBS}
@@ -129,17 +126,15 @@ ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
 SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
 IF (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -pedantic -g") #-pedantic-errors
-#	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -Wno-return-type -Werror -O0 -g") #-pedantic-errors
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -g") 
 ELSE (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -pedantic -g")
+	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -g")
 ENDIF (NOT APPLE)
 
 
 ######################################################
 # Install files
 #
-# main binary - Mac specifics handled by the KDE4_ADD_EXECUTABLE
 IF (APPLE)
 	SET (BT_DESTINATION ".")
 	SET (BT_SHARE_PATH bibletime.app/Contents/)

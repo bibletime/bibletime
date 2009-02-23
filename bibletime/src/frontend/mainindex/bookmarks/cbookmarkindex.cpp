@@ -9,6 +9,7 @@
 
 //BibleTime includes
 #include "cbookmarkindex.h"
+#include "cbookmarkindex.moc"
 
 #include "btbookmarkitembase.h"
 #include "btbookmarkitem.h"

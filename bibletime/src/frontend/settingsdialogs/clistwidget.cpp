@@ -9,6 +9,7 @@
 
 #include "util/ctoolclass.h"
 #include "clistwidget.h"
+#include "clistwidget.moc"
 
 CListWidget::CListWidget(QWidget* parent)
  : QListWidget(parent)

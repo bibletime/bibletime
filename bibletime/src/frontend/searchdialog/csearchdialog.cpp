@@ -8,6 +8,7 @@
 **********/
 #include "config.h"
 #include "csearchdialog.h"
+#include "csearchdialog.moc"
 #include "btsearchoptionsarea.h"
 #include "btsearchresultarea.h"
 

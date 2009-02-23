@@ -8,6 +8,7 @@
 **********/
 
 #include "bttoolbarpopupaction.h"
+#include "bttoolbarpopupaction.moc"
 #include <QMenu>
 #include <QToolButton>
 #include <QAction>

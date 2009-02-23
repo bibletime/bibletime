@@ -8,6 +8,7 @@
 **********/
 
 #include "cmdiarea.h"
+#include "cmdiarea.moc"
 
 //QT includes
 #include <QTimer>

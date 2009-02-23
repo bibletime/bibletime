@@ -9,6 +9,7 @@
 
 #include "cswordbackend.h"
 
+#include "cswordbackend.moc"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/cbookdisplay.h"
 #include "backend/rendering/cchapterdisplay.h"

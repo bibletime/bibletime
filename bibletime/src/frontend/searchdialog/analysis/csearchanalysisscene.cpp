@@ -8,6 +8,7 @@
 **********/
 
 #include "csearchanalysisscene.h"
+#include "csearchanalysisscene.moc"
 #include "csearchanalysisitem.h"
 #include "csearchanalysislegenditem.h"
 

@@ -8,6 +8,7 @@
 **********/
 
 #include "btaboutmoduledialog.h"
+#include "btaboutmoduledialog.moc"
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include <QWidget>

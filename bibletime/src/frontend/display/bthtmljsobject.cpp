@@ -7,6 +7,7 @@
 *
 **********/
 #include "bthtmljsobject.h"
+#include "bthtmljsobject.moc"
 #include "bthtmlreaddisplay.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cdragdrop.h"

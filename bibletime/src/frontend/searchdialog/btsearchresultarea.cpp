@@ -8,6 +8,7 @@
 **********/
 
 #include "btsearchresultarea.h"
+#include "btsearchresultarea.moc"
 #include "cmoduleresultview.h"
 #include "csearchresultview.h"
 #include "csearchdialog.h"

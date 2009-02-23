@@ -8,6 +8,7 @@
 **********/
 
 #include "cdisplaywindow.h"
+#include "cdisplaywindow.moc"
 #include "bttoolbarpopupaction.h"
 #include "btactioncollection.h"
 

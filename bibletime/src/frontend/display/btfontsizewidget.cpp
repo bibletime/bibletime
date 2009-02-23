@@ -8,6 +8,7 @@
 **********/
 
 #include "btfontsizewidget.h"
+#include "btfontsizewidget.moc"
 #include <QFontDatabase>
 #include <QCompleter>
 

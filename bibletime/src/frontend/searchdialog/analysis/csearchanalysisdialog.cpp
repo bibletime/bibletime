@@ -8,6 +8,7 @@
 **********/
 
 #include "csearchanalysisdialog.h"
+#include "csearchanalysisdialog.moc"
 #include "csearchanalysisscene.h"
 #include "csearchanalysisview.h"
 
