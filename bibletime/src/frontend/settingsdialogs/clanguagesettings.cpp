@@ -95,7 +95,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 	else 
 	{ 	//a language like "German Abbrevs" might be the language to set
 		sword::SWLocale* locale =
-			sword::LocaleMgr::LocaleMgr::getSystemLocaleMgr()->getLocale( CBTConfig::get(CBTConfig::language).toLocal8Bit() );
+			sword::LocaleMgr::getSystemLocaleMgr()->getLocale( CBTConfig::get(CBTConfig::language).toLocal8Bit() );
 		if (locale) 
 		{
 			currentLanguageName = QString::fromLatin1(locale->getDescription());
