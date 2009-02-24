@@ -236,7 +236,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 			Q_ASSERT(key);
 			VerseKey* vk = dynamic_cast<VerseKey*>(key);
 
-			CTextRendering::KeyTreeItem* i = 0;
+			CTextRendering::KeyTreeItem* i = (CTextRendering::KeyTreeItem*)0; //explicit conversion for MS VS
 			if (vk && vk->isBoundSet()) { //render a range of keys
 				i = new CTextRendering::KeyTreeItem(
 						QString::fromUtf8(vk->LowerBound().getText()),
