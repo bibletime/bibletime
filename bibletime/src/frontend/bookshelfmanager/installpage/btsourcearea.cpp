@@ -20,7 +20,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btaboutmoduledialog.h"
 
-#include <sword/installmgr.h>
+#include <installmgr.h>
 
 #include <QString>
 #include <QWidget>
@@ -112,7 +112,7 @@ void BtSourceArea::initTreeFirstTime()
 {
 	if (!m_treeAlreadyInitialized) {
 		createModuleTree();
-		m_treeAlreadyInitialized = true; 
+		m_treeAlreadyInitialized = true;
 	}
 }
 

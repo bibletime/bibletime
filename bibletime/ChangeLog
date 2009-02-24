@@ -1,3 +1,6 @@
+2009-02-22 Gary
+	* Completed the port to QT. KDE is no longer required. (Hooray!)
+
 2009-02-07 Gary, Eeli, Martin
 	* several bugfixes
 	* releasing 1.7 final

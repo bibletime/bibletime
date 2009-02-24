@@ -15,7 +15,7 @@
 
 #include <QDialog>
 
-#include <sword/installmgr.h>
+#include <installmgr.h>
 
 class QLabel;
 class QComboBox;

@@ -14,7 +14,7 @@
 
 #include <boost/scoped_ptr.hpp>
 
-#include <sword/installmgr.h>
+#include <installmgr.h>
 
 #include <QWidget>
 #include <QMap>
