@@ -263,10 +263,21 @@ QIcon DirectoryUtil::getIcon(const QString& name)
 		iconCache.insert(plainName, ic);
 		return ic;
 	}
-	else
-	{
-		qWarning() << "Cannot find icon file" << iconFileName << ", using default icon.";
-		return QIcon(iconDir + "/default.svg");
+	else {
+		iconFileName = iconDir + "/" + plainName + ".png";
+		if (QFile(iconFileName).exists()) {
+			QIcon ic = QIcon(iconFileName);
+			iconCache.insert(plainName, ic);
+			return ic;
+		} else {
+			qWarning() << "Cannot find icon file" << iconFileName << ", using default icon.";
+			iconFileName = iconDir + "/" + "/default.svg";
+			if (QFile(iconFileName).exists()) {
+				return QIcon(iconDir + "/default.svg");
+			} else {
+				return QIcon(iconDir + "default.png");
+			}
+		}
 	}
 }
 
