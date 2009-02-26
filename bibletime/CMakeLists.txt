@@ -136,8 +136,8 @@ ENDIF (NOT APPLE)
 # Install files
 #
 IF (APPLE)
-	SET (BT_DESTINATION ".")
 	SET (BT_DESTINATION "bibletime.app/Contents/MacOS")
+	SET (BT_SHARE_PATH "bibletime.app/Contents/")
 ELSE (APPLE)
 	SET (BT_DESTINATION "bin/")
 	SET (BT_SHARE_PATH "")
