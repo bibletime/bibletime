@@ -236,9 +236,9 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 			Q_ASSERT(key);
 			VerseKey* vk = dynamic_cast<VerseKey*>(key);
 
-			CTextRendering::KeyTreeItem* i = (CTextRendering::KeyTreeItem*)0; //explicit conversion for MS VS
+			CTextRendering::KeyTreeItem* itm = (CTextRendering::KeyTreeItem*)0; //explicit conversion for MS VS
 			if (vk && vk->isBoundSet()) { //render a range of keys
-				i = new CTextRendering::KeyTreeItem(
+				itm = new CTextRendering::KeyTreeItem(
 						QString::fromUtf8(vk->LowerBound().getText()),
 						QString::fromUtf8(vk->UpperBound().getText()),
 						module,
@@ -246,7 +246,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 					);
 			}
 			else {
-				i = new CTextRendering::KeyTreeItem(
+				itm = new CTextRendering::KeyTreeItem(
 						QString::fromUtf8(key->getText()),
 						QString::fromUtf8(key->getText()),
 						module,
@@ -254,18 +254,18 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 					);
 			}
 
-			Q_ASSERT(i);
+			Q_ASSERT(itm);
 
-			tree.append( i );
+			tree.append( itm );
 		}
 	}
 	else if (module) {
-		CTextRendering::KeyTreeItem* i = new CTextRendering::KeyTreeItem(
+		CTextRendering::KeyTreeItem* itm = new CTextRendering::KeyTreeItem(
 												data.mid((pos == -1) ? 0 : pos+1),
 												module,
 												settings
 											);
-		tree.append( i );
+		tree.append( itm );
 	}
 
 	//  qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
