@@ -7,6 +7,8 @@
 *
 **********/
 
+#ifndef NO_DBUS
+
 #ifndef BIBLETIME_DBUS_ADAPTOR_H
 #define BIBLETIME_DBUS_ADAPTOR_H
 
@@ -15,7 +17,9 @@
 //Qt includes
 #include <QString>
 #include <QStringList>
+#ifndef NO_DBUS
 #include <QDBusAbstractAdaptor>
+#endif
 
 class BibleTimeDBusAdaptor : QDBusAbstractAdaptor
 {
@@ -102,3 +106,5 @@ public slots:
 };
 
 #endif
+
+#endif //NO_DBUS

@@ -7,6 +7,7 @@
 *
 **********/
 
+
 //BibleTime includes
 #include "bibletime.h"
 
@@ -205,4 +206,3 @@ QStringList BibleTime::getModulesOfType(const QString& type) {
 void BibleTime::reloadModules() {
 	slotSwordSetupChanged();
 }
-

@@ -7,6 +7,8 @@
 *
 **********/
 
+#ifndef NO_DBUS
+
 #include "bibletime_dbus_adaptor.h"
 #include "bibletime_dbus_adaptor.moc"
 
@@ -67,3 +69,4 @@ QStringList BibleTimeDBusAdaptor::getModulesOfType(const QString& type){
 	return m_bibletime->getModulesOfType(type);
 }
 
+#endif //NO_DBUS

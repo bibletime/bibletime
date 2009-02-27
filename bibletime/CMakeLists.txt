@@ -15,10 +15,16 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 # Find required packages
 #
 SET(QT_MIN_VERSION 4.4.0)
-SET(QT_USE_QTDBUS 1)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
 FIND_PACKAGE(Qt4 REQUIRED)
+IF (QT_QTDBUS_FOUND)
+	SET(QT_USE_QTDBUS 1)
+	MESSAGE("Using DBUS")
+ELSE (QT_QTDBUS_FOUND)
+	ADD_DEFINITIONS(-DNO_DBUS)
+	MESSAGE("No DBUS found")
+ENDIF(QT_QTDBUS_FOUND)
 #
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
 #
@@ -48,11 +54,6 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.cmake" "${CMAKE_CURRE
 # The actual build options
 #
 INCLUDE_DIRECTORIES(
-	${QT_INCLUDE_DIR}
-	${QT_QTCORE_INCLUDE_DIR}
-	${QT_QTGUI_INCLUDE_DIR}
-	${QT_QTXML_INCLUDE_DIR}
-	${QT_QTDBUS_INCLUDE_DIR}
 	${CLUCENE_INCLUDE_DIR}			#CLucene headers
 	${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
 	${Boost_INCLUDE_DIRS}
@@ -68,7 +69,6 @@ QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
 #
 #This must come before the target definition!
 LINK_DIRECTORIES(
-	${QT_LIBRARY_DIR}
 	${CLUCENE_LIBRARY_DIR}
 )
 
@@ -101,7 +101,6 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
 		${QT_LIBRARIES}
-		${QT_USE_FIL}
 		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
 		${SWORD_LIBS}
@@ -117,6 +116,7 @@ ENDIF (CMAKE_BUILD_TYPE STREQUAL "Release")
 IF(USE_QT_WEB_KIT)
 	SET_SOURCE_FILES_PROPERTIES( ${bibletime_SOURCES} COMPILE_FLAGS -DUSE_QTWEBKIT )
 ENDIF(USE_QT_WEB_KIT)
+
 
 ######################################################
 

@@ -28,7 +28,9 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QDebug>
+#ifndef NO_DBUS
 #include <QDBusConnection>
+#endif
 
 #ifdef BT_ENABLE_TESTING
 #include <QtTest/QtTest>
@@ -329,11 +331,12 @@ int main(int argc, char* argv[]) {
 	//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
 	bibletime_ptr->show();
 	bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
-	
+
+#ifndef NO_DBUS	
 	new BibleTimeDBusAdaptor(bibletime_ptr);
-	
     // connect to D-Bus and register as an object:
 	QDBusConnection::sessionBus().registerObject("/BibleTime", bibletime_ptr);
+#endif
 
 	const int ret = app.exec();
 
