@@ -306,14 +306,14 @@ void CSwordModuleInfo::buildIndex() {
 
 		//index the key
 		lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
-		//doc->add(*lucene::document::Field::UnIndexed(_T("key"), wcharBuffer));
-		doc->add(*(new lucene::document::Field(_T("key"), wcharBuffer, lucene::document::Field::STORE_YES | lucene::document::Field::INDEX_NO)));
+		//doc->add(*lucene::document::Field::UnIndexed((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer));
+		doc->add(*(new lucene::document::Field((const TCHAR*)_T("key"), wcharBuffer, lucene::document::Field::STORE_YES | lucene::document::Field::INDEX_NO)));
 		// index the main text
 		//at this point we have to make sure we disabled the strongs and the other options
 		//so the plain filters won't include the numbers somehow.
 		lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->StripText()), BT_MAX_LUCENE_FIELD_LENGTH);
-		//doc->add(*lucene::document::Field::UnStored(_T("content"), wcharBuffer));
-		doc->add(*(new lucene::document::Field(_T("content"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+		//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer));
+		doc->add(*(new lucene::document::Field((const TCHAR*)_T("content"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
 		textBuffer.resize(0); //clean up
 
 		// index attributes
@@ -324,8 +324,8 @@ void CSwordModuleInfo::buildIndex() {
 				attListI != m_module->getEntryAttributes()["Footnote"].end();
 				attListI++) {
 			lucene_utf8towcs(wcharBuffer, attListI->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
-			//doc->add(*lucene::document::Field::UnStored(_T("footnote"), wcharBuffer));
-			doc->add(*(new lucene::document::Field(_T("footnote"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+			//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("footnote"), wcharBuffer));
+			doc->add(*(new lucene::document::Field((const TCHAR*)_T("footnote"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
 		} // for attListI
 
 		// Headings
@@ -333,8 +333,8 @@ void CSwordModuleInfo::buildIndex() {
 				attValueI != m_module->getEntryAttributes()["Heading"]["Preverse"].end();
 				attValueI++) {
 			lucene_utf8towcs(wcharBuffer, attValueI->second, BT_MAX_LUCENE_FIELD_LENGTH);
-			//doc->add(*lucene::document::Field::UnStored(_T("heading"), wcharBuffer));
-			doc->add(*(new lucene::document::Field(_T("heading"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+			//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("heading"), wcharBuffer));
+			doc->add(*(new lucene::document::Field((const TCHAR*)_T("heading"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
 		} // for attValueI
 
 		// Strongs/Morphs
@@ -344,14 +344,14 @@ void CSwordModuleInfo::buildIndex() {
 			// for each attribute
 			if (attListI->second["LemmaClass"] == "strong") {
 				lucene_utf8towcs(wcharBuffer, attListI->second["Lemma"], BT_MAX_LUCENE_FIELD_LENGTH);
-				//doc->add(*lucene::document::Field::UnStored(_T("strong"), wcharBuffer));
-				doc->add(*(new lucene::document::Field(_T("strong"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("strong"), wcharBuffer));
+				doc->add(*(new lucene::document::Field((const TCHAR*)_T("strong"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
 				//qWarning("Adding strong %s", attListI->second["Lemma"].c_str());
 			}
 			if (attListI->second.find("Morph") != attListI->second.end()) {
 				lucene_utf8towcs(wcharBuffer, attListI->second["Morph"], BT_MAX_LUCENE_FIELD_LENGTH);
-				//doc->add(*lucene::document::Field::UnStored(_T("morph"), wcharBuffer));
-				doc->add(*(new lucene::document::Field(_T("morph"), wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("morph"), wcharBuffer));
+				doc->add(*(new lucene::document::Field((const TCHAR*)_T("morph"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
 			}
 		} // for attListI
 
@@ -427,7 +427,7 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
 		lucene::analysis::standard::StandardAnalyzer analyzer( stop_words );
 		lucene::search::IndexSearcher searcher(getModuleStandardIndexLocation().toAscii().constData());
 		lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
-		boost::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse(wcharBuffer, _T("content"), &analyzer) );
+		boost::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
 
 		boost::scoped_ptr<lucene::search::Hits> h( searcher.search(q.get(), lucene::search::Sort::INDEXORDER) );
 
@@ -440,7 +440,7 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
 
 		for (int i = 0; i < h->length(); ++i) {
 			doc = &h->doc(i);
-			lucene_wcstoutf8(utfBuffer, doc->get(_T("key")), BT_MAX_LUCENE_FIELD_LENGTH);
+			lucene_wcstoutf8(utfBuffer, (const wchar_t*)doc->get((const TCHAR*)_T("key")), BT_MAX_LUCENE_FIELD_LENGTH);
 
 			swKey->setText(utfBuffer);
 
