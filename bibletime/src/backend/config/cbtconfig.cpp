@@ -140,6 +140,7 @@ QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case searchDialogX:			return "searchDialogX";
 		case searchDialogY:			return "searchDialogY";
 		case searchType:			return "searchType";
+		case installPathIndex:		return "installPathIndex";
 	}
 	return QString::null;
 }
@@ -192,6 +193,7 @@ int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case searchDialogY:			return 200;
 		case searchType:			return Search::BtSearchOptionsArea::AndType;
 		case mainindexActiveTab:	return 0;
+		case installPathIndex:  	return 0;
 	}
 	return 0;
 }
