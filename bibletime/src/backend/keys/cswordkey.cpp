@@ -22,6 +22,7 @@
 #include <versekey.h>
 #include <treekey.h>
 #include <treekeyidx.h>
+#include <utilstr.h>
 
 //Qt
 #include <QRegExp>
@@ -73,7 +74,7 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 			/* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
 			i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-			if ( strcasecmp(m_module->module()->getKey()->getText(), keyBuffer)
+			if ( sword::stricmp(m_module->module()->getKey()->getText(), keyBuffer)
 					&& !strstr(m_module->module()->getKey()->getText(), keyBuffer)
 			   ) {
 				qDebug("return an empty key for %s", m_module->module()->getKey()->getText());

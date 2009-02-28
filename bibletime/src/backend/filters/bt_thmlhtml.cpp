@@ -21,6 +21,7 @@
 #include <swmodule.h>
 #include <utilxml.h>
 #include <versekey.h>
+#include <utilstr.h>
 
 //Qt includes
 #include <QString>
@@ -201,7 +202,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 		BT_UserData* myUserData = dynamic_cast<BT_UserData*>(userData);
 		sword::SWModule* myModule = const_cast<sword::SWModule*>(myUserData->module); //hack to be able to call stuff like Lang()
 
-		if ( tag.getName() && !strcasecmp(tag.getName(), "foreign") ) { // a text part in another language, we have to set the right font
+		if ( tag.getName() && !sword::stricmp(tag.getName(), "foreign") ) { // a text part in another language, we have to set the right font
 
 			if (tag.getAttribute("lang")) {
 				const char* abbrev = tag.getAttribute("lang");
@@ -212,15 +213,15 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 				buf.append("\">");
 			}
 		}
-		else if (tag.getName() && !strcasecmp(tag.getName(), "sync")) { //lemmas, morph codes or strongs
+		else if (tag.getName() && !sword::stricmp(tag.getName(), "sync")) { //lemmas, morph codes or strongs
 
-			if (tag.getAttribute("type") && (!strcasecmp(tag.getAttribute("type"), "morph") || !strcasecmp(tag.getAttribute("type"), "Strongs") || !strcasecmp(tag.getAttribute("type"), "lemma"))) { // Morph or Strong
+			if (tag.getAttribute("type") && (!sword::stricmp(tag.getAttribute("type"), "morph") || !sword::stricmp(tag.getAttribute("type"), "Strongs") || !sword::stricmp(tag.getAttribute("type"), "lemma"))) { // Morph or Strong
 				buf.append('<');
 				buf.append(token);
 				buf.append('>');
 			}
 		}
-		else if (tag.getName() && !strcasecmp(tag.getName(), "note")) { // <note> tag
+		else if (tag.getName() && !sword::stricmp(tag.getName(), "note")) { // <note> tag
 
 			if (!tag.isEndTag() && !tag.isEmpty()) {
 				//appending is faster than appendFormatted
@@ -241,7 +242,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 				myUserData->inFootnoteTag = false;
 			}
 		}
-		else if (tag.getName() && !strcasecmp(tag.getName(), "scripRef")) { // a scripRef
+		else if (tag.getName() && !sword::stricmp(tag.getName(), "scripRef")) { // a scripRef
 			//scrip refs which are embeded in footnotes may not be displayed!
 
 			if (!myUserData->inFootnoteTag) {
@@ -350,18 +351,18 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 				}
 			}
 		}
-		else if (tag.getName() && !strcasecmp(tag.getName(), "div")) {
+		else if (tag.getName() && !sword::stricmp(tag.getName(), "div")) {
 			if (tag.isEndTag()) {
 				buf.append("</div>");
 			}
-			else if ( tag.getAttribute("class") && !strcasecmp(tag.getAttribute("class"),"sechead") ) {
+			else if ( tag.getAttribute("class") && !sword::stricmp(tag.getAttribute("class"),"sechead") ) {
 				buf.append("<div class=\"sectiontitle\">");
 			}
-			else if (tag.getAttribute("class") && !strcasecmp(tag.getAttribute("class"), "title")) {
+			else if (tag.getAttribute("class") && !sword::stricmp(tag.getAttribute("class"), "title")) {
 				buf.append("<div class=\"booktitle\">");
 			}
 		}
-		else if (tag.getName() && !strcasecmp(tag.getName(), "img") && tag.getAttribute("src")) {
+		else if (tag.getName() && !sword::stricmp(tag.getName(), "img") && tag.getAttribute("src")) {
 			const char* value = tag.getAttribute("src");
 
 			if (value[0] == '/') {
