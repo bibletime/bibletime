@@ -22,10 +22,6 @@ class CSwordModuleInfo;
 #include <QObject>
 #include <QString>
 
-
-//System includes
-#include <pthread.h>
-
 //Sword includes
 #include <listkey.h>
 
