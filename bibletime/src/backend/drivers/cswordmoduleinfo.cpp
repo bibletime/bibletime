@@ -237,7 +237,7 @@ void CSwordModuleInfo::buildIndex() {
 
 	// do not use any stop words
 	const TCHAR* stop_words[]  = { NULL };
-	lucene::analysis::standard::StandardAnalyzer an( stop_words );
+	lucene::analysis::standard::StandardAnalyzer an( (const TCHAR**)stop_words );
 	QString index = getModuleStandardIndexLocation();
 
 	QDir dir("/");
