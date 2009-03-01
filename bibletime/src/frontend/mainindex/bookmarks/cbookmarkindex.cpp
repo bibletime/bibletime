@@ -145,20 +145,16 @@ QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, con
 void CBookmarkIndex::initConnections()
 {
 	//qDebug("CBookmarkIndex::initConnections");
-
-	// See also the bookshelf index.
-	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
-
-	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
-
-	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
+	bool ok;
+	ok = connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	Q_ASSERT(ok);
+	ok = connect(this, SIGNAL(customContextMenuRequested(const QPoint&)),
 			SLOT(contextMenu(const QPoint&)));
-	QObject::connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));
-
-	QObject::connect(this, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotItemChanged(QTreeWidgetItem*, int)) );
-
-	QObject::connect(this, SIGNAL(itemEntered(QTreeWidgetItem*, int)), this, SLOT(slotItemEntered(QTreeWidgetItem*, int)) );
+	Q_ASSERT(ok);
+	ok = connect(&m_magTimer, SIGNAL(timeout()), this, SLOT(magTimeout()));
+	Q_ASSERT(ok);
+	ok = connect(this, SIGNAL(itemEntered(QTreeWidgetItem*, int)), this, SLOT(slotItemEntered(QTreeWidgetItem*, int)) );
+	Q_ASSERT(ok);
 }
 
 

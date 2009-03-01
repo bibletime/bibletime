@@ -172,7 +172,7 @@ void CDisplayWindow::initActions()
 	//a->addAction(KStandardAction::ZoomOut, "zoomOut", 0, 0);
 	actn = new QAction(QIcon(), tr("Close"), ac);
 	actn->setShortcut(QKeySequence::Close);
-	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(close()));
+	QObject::connect(actn, SIGNAL(triggered()), this, SLOT(close()));
 	ac->addAction("closeWindow", actn);
 	addAction(actn);
 	//a->addAction(KStandardAction::Close, "closeWindow", 0, 0);

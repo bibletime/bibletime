@@ -247,27 +247,29 @@ QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, co
 /** Initialize the SIGNAL<->SLOT connections */
 void CBookshelfIndex::initConnections()
 {
-//	qDebug("CBookshelfIndex::initConnections");
-
 	//Connect this to the backend module list changes.
-	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
+	bool ok;
+	ok = connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(reloadSword(CSwordBackend::SetupChangedReason)));
+	Q_ASSERT(ok);
 	
-	QObject::connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	ok = connect(this, SIGNAL(itemActivated(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	Q_ASSERT(ok);
 
 	// Single/double click item activation is style dependend
-	if (style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) == 0) {
-		QObject::connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+	if (style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) == 0) 
+	{
+		ok = connect(this, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(slotExecuted(QTreeWidgetItem*)));
+		Q_ASSERT(ok);
 	}
-
-	QObject::connect(this, SIGNAL(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)),
-		SLOT(droppedItem(QDropEvent*, QTreeWidgetItem*, QTreeWidgetItem*)));
  	
-	QObject::connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(contextMenu(const QPoint&)));
-	QObject::connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
+	ok = connect(this, SIGNAL(customContextMenuRequested(const QPoint&)), SLOT(contextMenu(const QPoint&)));
+	Q_ASSERT(ok);
 
-	QObject::connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(slotModifySelection()));
+	ok = connect(&m_autoOpenTimer, SIGNAL(timeout()), this, SLOT(autoOpenTimeout()));
+	Q_ASSERT(ok);
 
-//	qDebug("CBookshelfIndex::initConnections");
+	ok = connect(this, SIGNAL(itemSelectionChanged()), this, SLOT(slotModifySelection()));
+	Q_ASSERT(ok);
 }
 
 void CBookshelfIndex::slotModifySelection()

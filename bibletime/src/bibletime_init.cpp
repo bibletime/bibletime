@@ -71,7 +71,8 @@ void BibleTime::initView()
 QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKeySequence accel, QString tooltip, const char* slot )
 {
 	action->setText(text);
-	action->setIcon(util::filesystem::DirectoryUtil::getIcon(icon));
+	if ( ! icon.isEmpty() )
+		action->setIcon(util::filesystem::DirectoryUtil::getIcon(icon));
 	action->setShortcut(accel);
 	if (tooltip != QString::null) action->setToolTip(tooltip);
 // 	actionCollection()->addAction(actionName, action);
