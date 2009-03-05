@@ -284,7 +284,7 @@ void BibleTime::processCommandline()
 	QStringList args = qApp->QCoreApplication::arguments();
 
 	if ( !CBTConfig::get(CBTConfig::crashedTwoTimes) && 
-		args.contains("--ignore-session") )
+		!args.contains("--ignore-session") )
 	{
 		restoreWorkspace();
 	}
