@@ -46,10 +46,11 @@
   <legalnotice>
     <para>&bibletime;-käsikirja on osa &bibletime;-ohjelmaa.</para>
   </legalnotice>
-  <date>2005-08</date>
+  <date>elokuu 2005</date>
   <releaseinfo>1.7</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the Sword framwork.</para>
+    <para>&bibletime; on tehokas Raamatun tutkimisen työkalu, joka perustuu 
+Sword-kehykseen.</para>
   </abstract>
   <keywordset>
     <keyword>KDE</keyword>

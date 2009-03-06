@@ -1,20 +1,20 @@
 <chapter id="hdbk-intro">
   <title>Johdanto</title>
   <sect1 id="hdbk-intro-about">
-    <title>About &bibletime;</title>
-    <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules) are easy to install and 
-manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
-the back-end functionality for &bibletime;, such as viewing Bible text, 
-searching etc. Sword is the flagship product of the <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+    <title>Tietoja &bibletime;:stä</title>
+    <para>&bibletime; on Raamattuohjelma erilaisten tekstien tuella ja 
+kielillä. Edelleen laaja joukko teoksia on helppo asentaa ja hallinnoida 
+moduuleina. Se on rakennettu <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>-kirjastoon, joka tarjoaa 
+toiminnallisuuden &bibletime;:lle, kuten Raamatun tekstin näyttämiseen, 
+etsintään, jne. Sword on <ulink url="http://www.crosswire.org">Crosswire 
+Bible Societyn</ulink> lippulaiva.</para>
 
-    <para>&bibletime; is designed to be used with works encoded in one of the formats 
-supported by the Sword project. Complete information on the supported 
-document formats can be found in the <ulink 
-url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
-section</ulink> of the Sword Project, Crosswire Bible Society.</para>
+    <para>&bibletime; on suunniteltu käyttämään Sword-projektin mallien mukaisia 
+teoksia. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät osoitteesta 
+Crosswire Bible Societyn Sword-projektin <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp">kehittäjien 
+osio</ulink>.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Saatavana olevat tehtävät</title>
@@ -35,18 +35,18 @@ the most advanced section in the library of the Sword project.</para>
         <varlistentry>
           <term>Kirjat</term>
           <listitem>
-            <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus: 
-The Complete Works"</para>
+            <para>Tarjollaolevat kirjat sisältävät teokset "Imitation of Christ", "Enuma 
+Elish", ja "Josephus: The Complete Works"</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Kommentaareja</term>
           <listitem>
-            <para>Commentaries available include classics like John Wesley's "Notes on the 
-Bible", Matthew Henry`s commentary and Luther's "Commentary on Galatians." 
-With the <emphasis>Personal</emphasis> commentary you can <link 
-linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to 
-sections of the Bible.</para>
+            <para>Saatavillaolevat kommentaarit sisältävät klassikkoja kutenJohn Wesleyn 
+"Notes on the Bible", Matthew Henryn kommentaarin ja Lutherin "Commentary on 
+Galatians." <emphasis>Omalla</emphasis> kommentaarilla voit <link 
+linkend="hdbk-op-parts-desk-write"> tallettaa omat persoonalliset 
+muistiinpanosi</link> Raamatun eri osioihin.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -57,7 +57,7 @@ sisältävät Daily Light Daily Pathilla, ja Losungenin.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Lexicons/Dictionaries</term>
+          <term>Sanakirjat</term>
           <listitem>
             <para>Lexicons available include: Robinson's Morphological Analysis Codes, 
 Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible 
@@ -70,15 +70,15 @@ Dictionary of the English Language 1913, Nave's Topical Bible.</para>
     </sect2>
     <sect2 id="hdbk-intro-motivation">
       <title>Motivaatiota</title>
-      <para>Our desire is to serve God, and to do our part to help others grow in their 
-relationship with Him. We have striven to make this a powerful, quality 
-program, and still make it simple and intuitive to operate. It is our desire 
-that God be praised, as He is the source of all good things.</para>
+      <para>Halumme on palvella Jumalaa ja teemme osamme auttaaksemme muita 
+Jumalasuhteen kasvussa. Yritämme päästä siihen tehokkaalla, laadukkaalla 
+ohjelmalla, ja vielä tehdä siitä yksinkertainen ja opastava käytössä. Meidän 
+halumme on, että Jumalaa ylistettäisiin, sillä hän on kaikkien hyvien 
+asioiden lähde.</para>
       <blockquote>
-        <attribution>James 1:17, NASB</attribution>
-        <para>Every good thing given and every perfect gift is from above, coming down 
-from the Father of lights, with whom there is no variation or shifting 
-shadow.</para>
+        <attribution>Jaak 1:17, NASB</attribution>
+        <para>Jokainen hyvä anti ja jokainen täydellinen lahja tulee ylhäältä, taivaan 
+tähtien Isältä, jonka luona ei mikään muutu, ei valo vaihdu varjoksi.</para>
       </blockquote>
       <para>Jumala siunatkoon sinua käyttäessäsi tätä ohjelmaa.</para>
     </sect2>
