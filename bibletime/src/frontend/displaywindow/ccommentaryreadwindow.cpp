@@ -83,6 +83,7 @@ void CCommentaryReadWindow::initToolbars() {
 			tr("Synchronize"),
 			actionCollection()
 			);
+	m_syncButton->setCheckable(true);
 	m_syncButton->setShortcut(CResMgr::displaywindows::commentaryWindow::syncWindow::accel);
 	m_syncButton->setToolTip(tr("Synchronize the displayed entry of this work with the active Bible window"));
 	actionCollection()->addAction(CResMgr::displaywindows::commentaryWindow::syncWindow::actionName, m_syncButton);
