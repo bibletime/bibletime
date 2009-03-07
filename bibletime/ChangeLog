@@ -1,3 +1,7 @@
+2009-03-07 Gary, Eeli, Greg, Martin
+	* many platform-compatibility enhancements
+	* release 2.0.alpha1
+
 2009-02-22 Gary
 	* Completed the port to QT. KDE is no longer required. (Hooray!)
 
