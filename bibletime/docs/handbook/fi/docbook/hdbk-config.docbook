@@ -1,0 +1,183 @@
+<chapter id="hdbk-config">
+  <title>&bibletime;:n asetukset</title>
+  <para>Tässä osiossa on yleiskuvaus, kuinka &bibletime;:n asetuksia 
+asetetaan. Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> 
+-kohdasta.</para>
+  <sect1 id="hdbk-config-bt">
+    <title>Aseta &bibletime; -ikkuna</title>
+    <para>&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi 
+mukaan. Pääset asetusikkunaan valitsemalla 
+<menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta 
+&bibletime;</guimenuitem>.</para>
+    <sect2 id="hdbk-config-bt-display">
+      <title>
+        <guimenu>Display</guimenu>
+      </title>
+      <para>Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista: 
+      <itemizedlist>
+        <listitem>
+          <para>Näytä aloituskuva</para>
+        </listitem>
+      </itemizedlist></para>
+      <para>Näyttömallit määrittelevät tekstin renderöinnin (värit, koko 
+jne.). Saatavana on erilaisia sisäänrakennettuja mallipohjia. Jos valitset 
+yhden sellaisen, näet esikatselukuvan oikealla paneelissa.</para>
+    </sect2>
+    <sect2 id="hdbk-config-bt-languages">
+      <title>
+        <guimenu>Languages</guimenu>
+      </title>
+      <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä 
+äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
+      <para>Oletuksena &bibletime; käyttää &kde;:n yleisiä näyttökirjasinta, jonka voi 
+asettaa  KDE:n Ohjauskeskuksessa. Voit korvata tarvittaessa tämän 
+kirjasimen. Jotkut kielet tarvitsevat erikoiskirjasimia näkyäkseen 
+oikein. Tässä ikkunassa voit määrittää omat kirjasimet kullekin kielelle.</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="ss_configfonts.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>Valintavaihtoehtoikkunan kirjasimet</phrase>
+        </textobject>
+        <caption>
+          <para>Valintaikkuna - Kirjasimet.</para>
+        </caption>
+      </mediaobject>
+      <para>&bibletime; osaa käyttää nyt kaikkia KDE/QT:n kirjasimia. Niin kauan kuin 
+olet kiinnostunut teoksista, jotka näkyvät oikein, tässä ei tarvitse tehdä 
+mitään. Jos näytöllä näkyy sarja kysymysmerkkejä (??????) tai tyhjiä 
+laatikoita, silloin tiedät, että KDE:n oletusnäytön kirjasin ei sisällä 
+kaikkia tämän teoksen käyttämiä merkkejä.</para>
+      <para>Korjataksesi tämän valitse tämän teoksen kieli alasvetovalikosta. Valitse 
+oma kirjasin valintaruutu. Nyt valitse kirjasin. Esimerkiksi monia kieliä 
+tarjoava kirjasin on Code2000. Jos mikään asennettu kirjasin ei pysty 
+näyttämään teosta, sinun tulee asentaa konelle &kde; lokalisointipaketti 
+sille kielelle.</para>
+      <sect3 id="hdbk-config-bt-addfont">
+        <title>Kirjasimien asennus</title>
+        <para>Tässä käsikirjassa ei ole kirjasimien asennuksen yksityiskohtaisia 
+ohjeita. &kde;:n <ulink url="help:/kcontrol/index.html">Ohjauskeskus</ulink> 
+sisältää erinomaisen ja helpon kirjasimien asennusmoduulin. Lue <ulink 
+url="help:/kcontrol/kcmfontinst/index.html"> sen 
+dokumentaatio</ulink>. Lisätietoja saadaksesi lue  <ulink 
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
+HOWTO</ulink>.</para>
+        <tip>
+          <para>Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on 
+nopeampi kuin suurilla kirjasimilla kuten <trademark class="registered"> 
+Bitstream Cyberbit</trademark> (noin 12Mb).</para>
+        </tip>
+      </sect3>
+      <sect3 id="hdbk-config-bt-ob-font">
+        <title>Kirjasimien hankinta</title>
+        <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Linux-distribuutiosi.</para>
+          </listitem>
+          <listitem>
+            <para>Distribuutiosi lokalisointipaketit.</para>
+          </listitem>
+          <listitem>
+            <para>Olemassaoleva <trademark class="registered">Microsoft Windows</trademark> 
+asennus samalla tietokoneella.</para>
+          </listitem>
+          <listitem>
+            <para>Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla.</para>
+          </listitem>
+          <listitem>
+            <para>Online kirjasinkokoelmat.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Unicode-kirjasimet tarjoavat enemmän merkkejä kuin muut kirjasimet, ja osa 
+niistä kirjasimista on saatavilla ilmaiseksi. Mikään saatavillaoleva 
+kirjasin ei sisällä kaikkia Unicode-standardin määrittelemiä merkkejä. Sinun 
+tulee siis käyttää eri kirjasimia eri kielille.</para>
+        <table id="hdbk-config-unicode-fonts-table">
+          <title>Unicode-kirjasimet</title>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>
+                  <ulink url="http://code2000.net/CODE2000.ZIP">
+                  Code2000</ulink>
+                </entry>
+                <entry>Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+                  SIL unicode fonts</ulink>
+                </entry>
+                <entry>Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://www.nongnu.org/freefont/">
+                  FreeFont</ulink>
+                </entry>
+                <entry>Uusi vapaa unicode-kirjasinaloite.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">
+                  Crosswire's font directory</ulink>
+                </entry>
+                <entry>Useita kirjasimia saatavana Crosswire Bible Society Ftp -palvelimella.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  Bitstream CyberBit</ulink>
+                </entry>
+                <entry>Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä 
+merkittävästi koon vuoksi.</entry>
+              </row>
+              <row>
+                <entry>Clearlyu</entry>
+                <entry>Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, 
+heprean ja Thai-kielen.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://fontforge.sourceforge.net/sfds/">
+                  Caslon, Monospace, Cupola, Caliban</ulink>
+                </entry>
+                <entry>Osittainen peittävyys, katso tietoja linkitetyltä sivulta.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>Netissä on hyviä Unicode-kirjasinluetteloja, kuten Christoph Singerin ( 
+<ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode 
+TrueType Fonts in the Internet</ulink>), tai Alan Woodin (<ulink 
+url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
+ranges and the Unicode fonts that support them</ulink>).</para>
+      </sect3>
+    </sect2>
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Monia Sword-taustaohjelman ominaisuuksia voidaan 
+räätälöidä&bibletime;-ohjelmassa. Nämä ominaisuudet on dokumentoitu oikealla 
+ikkunassa. Sinulla on mahdollisuus määritellä oletusteokset, joita 
+käytetään, jos yhtään teosta ei ole määritelty viitteenä. Esimerkki: 
+standardia Raamattua käytetään näyttämään Raamatun ristiviittauksien 
+sisältöjä. Kun siirrät hiiren niiden ylle, suurennuslasi näyttää viitattujen 
+jakeiden sisällön standardista Raamatusta, jonka olet määritellyt.</para>
+    </sect2>
+    <sect2 id="hdbk-config-bt-hotkeys">
+      <title>
+        <guimenu>HotKeys</guimenu>
+      </title>
+      <para>HotKeys are special key commands that can be used in the place of the menu 
+items and icons. A number of &bibletime;'s commands have predefined HotKeys 
+(see <link linkend="hdbk-reference-hotkeys">this section</link> for a 
+complete listing). Most of &bibletime;'s commands can be assigned HotKeys 
+here. This is very helpful to quickly access the functions that you need the 
+most.</para>
+    </sect2>
+  </sect1>
+</chapter>
