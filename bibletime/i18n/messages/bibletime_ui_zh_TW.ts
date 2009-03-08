@@ -5228,7 +5228,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="24"/>
+        <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5246,62 +5246,62 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">正在初始化功能表及工具列</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="85"/>
+        <location filename="../../src/bibletime_init.cpp" line="86"/>
         <source>&amp;File</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="86"/>
+        <location filename="../../src/bibletime_init.cpp" line="87"/>
         <source>&amp;View</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="87"/>
+        <location filename="../../src/bibletime_init.cpp" line="88"/>
         <source>&amp;Search</source>
         <translation>搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="88"/>
+        <location filename="../../src/bibletime_init.cpp" line="89"/>
         <source>&amp;Window</source>
         <translation>視窗(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="89"/>
+        <location filename="../../src/bibletime_init.cpp" line="90"/>
         <source>Se&amp;ttings</source>
         <translation>設定(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="90"/>
+        <location filename="../../src/bibletime_init.cpp" line="91"/>
         <source>&amp;Help</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="92"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>BibleTime</source>
         <translation>BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="99"/>
+        <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>Quit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="126"/>
+        <location filename="../../src/bibletime_init.cpp" line="127"/>
         <source>&amp;Show toolbar</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="136"/>
+        <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>&amp;Show bookshelf</source>
         <translation>顯示書架(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="147"/>
+        <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Show &amp;mag</source>
         <translation>顯示放大鏡(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="113"/>
+        <location filename="../../src/bibletime_init.cpp" line="114"/>
         <source>&amp;Fullscreen mode</source>
         <translation>全螢幕模式(&amp;F)</translation>
     </message>
@@ -5316,7 +5316,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">於標準聖經裡搜尋(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="177"/>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>&amp;Save session</source>
         <translation>儲存工作階段(&amp;S)</translation>
     </message>
@@ -5326,57 +5326,57 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">另存為新工作階段(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>&amp;Load session</source>
         <translation>載入工作階段(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="193"/>
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
         <source>&amp;Delete session</source>
         <translation>刪除工作階段(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="206"/>
+        <location filename="../../src/bibletime_init.cpp" line="207"/>
         <source>&amp;Arrangement mode</source>
         <translation>排列模式(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="213"/>
+        <location filename="../../src/bibletime_init.cpp" line="214"/>
         <source>&amp;Manual mode</source>
         <translation>手動模式(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="224"/>
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>自動垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="235"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>自動水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="246"/>
+        <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>Auto-&amp;cascade</source>
         <translation>自動重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>&amp;Cascade</source>
         <translation>重疊顯示(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>Tile &amp;vertically</source>
         <translation>垂直並排(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/bibletime_init.cpp" line="277"/>
         <source>Tile &amp;horizontally</source>
         <translation>水平並排(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <location filename="../../src/bibletime_init.cpp" line="287"/>
         <source>Cl&amp;ose all</source>
         <translation>關閉全部(&amp;O)</translation>
     </message>
@@ -5386,12 +5386,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">書架管理員(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="313"/>
+        <location filename="../../src/bibletime_init.cpp" line="314"/>
         <source>&amp;Handbook</source>
         <translation>手冊(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="324"/>
+        <location filename="../../src/bibletime_init.cpp" line="325"/>
         <source>&amp;Bible Study Howto</source>
         <translation>如何研經(&amp;B)</translation>
     </message>
@@ -5411,142 +5411,142 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">工作階段名稱:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="503"/>
+        <location filename="../../src/bibletime_slots.cpp" line="498"/>
         <source>Please enter a name for the new session.</source>
         <translation>請輸入新工作階段的名稱.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="102"/>
+        <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>Quit BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="139"/>
+        <location filename="../../src/bibletime_init.cpp" line="140"/>
         <source>Show or hide the bookshelf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <location filename="../../src/bibletime_init.cpp" line="151"/>
         <source>Show or hide the mag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="116"/>
+        <location filename="../../src/bibletime_init.cpp" line="117"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="159"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Search in &amp;open works...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="171"/>
+        <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Search in standard &amp;Bible...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="183"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Save as &amp;new session...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="186"/>
+        <location filename="../../src/bibletime_init.cpp" line="187"/>
         <source>Create and save a new session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="227"/>
+        <location filename="../../src/bibletime_init.cpp" line="228"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="238"/>
+        <location filename="../../src/bibletime_init.cpp" line="239"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="249"/>
+        <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>Automatically cascade the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="259"/>
+        <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Cascade the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="269"/>
+        <location filename="../../src/bibletime_init.cpp" line="270"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="279"/>
+        <location filename="../../src/bibletime_init.cpp" line="280"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="289"/>
+        <location filename="../../src/bibletime_init.cpp" line="290"/>
         <source>Close all open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>&amp;Configure BibleTime...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="299"/>
+        <location filename="../../src/bibletime_init.cpp" line="300"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="305"/>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="308"/>
+        <location filename="../../src/bibletime_init.cpp" line="309"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="316"/>
+        <location filename="../../src/bibletime_init.cpp" line="317"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="327"/>
+        <location filename="../../src/bibletime_init.cpp" line="328"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="162"/>
+        <location filename="../../src/bibletime_init.cpp" line="163"/>
         <source>Search in all works that are currently open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="174"/>
+        <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>Search in the standard Bible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="503"/>
+        <location filename="../../src/bibletime_slots.cpp" line="498"/>
         <source>New Session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="70"/>
+        <location filename="../../src/bibletime.cpp" line="71"/>
         <source>Initializing the Sword engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="72"/>
+        <location filename="../../src/bibletime.cpp" line="73"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="74"/>
+        <location filename="../../src/bibletime.cpp" line="75"/>
         <source>Initializing menu- and toolbars...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5866,7 +5866,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtBookDropdownChooserButton</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="71"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="70"/>
         <source>Select book</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5874,7 +5874,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtChapterDropdownChooserButton</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="95"/>
         <source>Select chapter</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6324,7 +6324,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>BtVerseDropdownChooserButton</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="120"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="119"/>
         <source>Select verse</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6370,52 +6370,52 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="158"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
         <source>Next book</source>
         <translation>下一卷</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="163"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="161"/>
         <source>Previous book</source>
         <translation>上一卷</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="168"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="166"/>
         <source>Next chapter</source>
         <translation>下一章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="173"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="171"/>
         <source>Previous chapter</source>
         <translation>上一章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="178"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="176"/>
         <source>Next verse</source>
         <translation>下一節</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="183"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="181"/>
         <source>Previous verse</source>
         <translation>上一節</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="124"/>
         <source>Copy chapter</source>
         <translation>複製本章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="130"/>
         <source>Save chapter as plain text</source>
         <translation>儲存本章為純文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="133"/>
         <source>Save chapter as HTML</source>
         <translation>儲存本章為 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Print chapter</source>
         <translation>列印本章</translation>
     </message>
@@ -6425,82 +6425,82 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">Strong&apos;s 搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="205"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="202"/>
         <source>Reference only</source>
         <translation>只限參照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="209"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="206"/>
         <source>Text of reference</source>
         <translation>參照經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="236"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="233"/>
         <source>Reference with text</source>
         <translation>經文連同參照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="240"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="237"/>
         <source>Chapter</source>
         <translation>本章</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="228"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="225"/>
         <source>Chapter as plain text</source>
         <translation>本章為純文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="232"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="229"/>
         <source>Chapter as HTML</source>
         <translation>本章為 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="263"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="260"/>
         <source>Bible window</source>
         <translation>聖經視窗</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="271"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="268"/>
         <source>Copy...</source>
         <translation>複製...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="283"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
         <source>Save...</source>
         <translation>儲存...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="296"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="291"/>
         <source>Print...</source>
         <translation>列印...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="393"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>複製本章至剪貼簿...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="393"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="387"/>
         <source>Copying</source>
         <translation>正在複製</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="432"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving chapter ...</source>
         <translation>正在儲存本章...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="432"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving</source>
         <translation>正在儲存</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="197"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="194"/>
         <source>Strong&apos;s search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="201"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="198"/>
         <source>Find all occurences of the Strong number currently under the mouse cursor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6508,7 +6508,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBookReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="89"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="88"/>
         <source>Toggle tree view</source>
         <translation>切換樹狀檢視</translation>
     </message>
@@ -6536,17 +6536,17 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBookmarkIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="101"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="102"/>
         <source>Bookmarks</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="103"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="104"/>
         <source>New folder</source>
         <translation>新資料夾</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="104"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Rename folder</source>
         <translation></translation>
     </message>
@@ -6576,67 +6576,67 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">移除已選項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="686"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="683"/>
         <source>Delete Items</source>
         <translation>刪除項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="686"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="683"/>
         <source>Do you really want to delete the selected items and child-items?</source>
         <translation>你真的想刪除已選項目及子項目嗎?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="797"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="794"/>
         <source>The work to which the bookmark points to is not installed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="106"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="107"/>
         <source>Change bookmark description...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="109"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="110"/>
         <source>Print bookmarks...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="111"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="112"/>
         <source>Remove selected items...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="107"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="108"/>
         <source>Import to folder...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="108"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="109"/>
         <source>Export from folder...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="403"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="400"/>
         <source>Can drop only bookmarks or one folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="408"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="405"/>
         <source>Can&apos;t drop folder into the folder itself or into its subfolder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="415"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="412"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="416"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="413"/>
         <source>Move</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="475"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="472"/>
         <source>Drag references from text views to this view</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6644,37 +6644,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CBookshelfIndex</name>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="85"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="86"/>
         <source>Bookshelf</source>
         <translation>書架</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="107"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="108"/>
         <source>Grouping</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="115"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="116"/>
         <source>Category/Language</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="124"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="125"/>
         <source>Category</source>
         <translation>類別</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="133"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="134"/>
         <source>Language/Category</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="142"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="143"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="188"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="189"/>
         <source>Edit</source>
         <translation></translation>
     </message>
@@ -6689,12 +6689,12 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="482"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="485"/>
         <source>Search</source>
         <translation>搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="515"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="518"/>
         <source>Search in</source>
         <translation></translation>
     </message>
@@ -6704,67 +6704,67 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">BibleTime - 解除鎖定著作</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="586"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="589"/>
         <source>Enter the unlock key for this work.</source>
         <translation>輸入此著作的解鎖鑰.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="211"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="212"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="217"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="218"/>
         <source>Unlock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="223"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="224"/>
         <source>About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="617"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="620"/>
         <source>Hide/Unhide Works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="618"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="621"/>
         <source>Select the works to be hidden.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="151"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
         <source>Works only</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="166"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="167"/>
         <source>Hide/unhide works...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="173"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="174"/>
         <source>Show hidden</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="195"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="196"/>
         <source>Plain text...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="201"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="202"/>
         <source>HTML...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="530"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="533"/>
         <source>Search in selected...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="585"/>
+        <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="588"/>
         <source>Unlock Work</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6812,7 +6812,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">評論視窗</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="84"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Synchronize</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6845,7 +6845,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">快速鍵</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="39"/>
+        <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="37"/>
         <source>Configure BibleTime</source>
         <translation type="unfinished">設定 BibleTime</translation>
     </message>
@@ -6853,22 +6853,22 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CDisplaySettingsButton</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="53"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="54"/>
         <source>Display settings: No options available</source>
         <translation>顯示設定: 沒有可用選項</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="57"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="58"/>
         <source>Display settings</source>
         <translation>顯示設定</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="41"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="42"/>
         <source>Display options</source>
         <translation>顯示選項</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="115"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="116"/>
         <source>Use linebreaks after each verse</source>
         <translation>每節後換行</translation>
     </message>
@@ -6878,47 +6878,47 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">顯示節數</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="120"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="121"/>
         <source>Show headings</source>
         <translation>顯示標題</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="124"/>
         <source>Highlight words of Jesus</source>
         <translation>重點標示耶穌的話語</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="126"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="127"/>
         <source>Show Hebrew vowel points</source>
         <translation>顯示希伯來文元音符號</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="130"/>
         <source>Show Hebrew cantillation marks</source>
         <translation>顯示希伯來文詠誦標記</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="133"/>
         <source>Show Greek accents</source>
         <translation>顯示希臘文變音符號</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="135"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="136"/>
         <source>Use alternative textual variant</source>
         <translation>使用替代文字變體</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="138"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="139"/>
         <source>Show scripture cross-references</source>
         <translation>顯示參照經文</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="141"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="142"/>
         <source>Show morph segmentation</source>
         <translation>顯示構詞學分割</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="118"/>
+        <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="119"/>
         <source>Show verse numbers</source>
         <translation type="unfinished">顯示節數</translation>
     </message>
@@ -7000,16 +7000,21 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Display</source>
         <translation type="unfinished">顯示</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="193"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="153"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="200"/>
         <source>Back in history</source>
         <translation>上一步</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="209"/>
         <source>Forward in history</source>
         <translation>下一步</translation>
     </message>
@@ -7019,25 +7024,55 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="152"/>
         <source>Open the search dialog with the works of this window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
+        <source>Zoom in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="167"/>
+        <source>Zoom out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="179"/>
+        <source>Select all</source>
+        <translation type="unfinished">全選</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="185"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="191"/>
+        <source>Find...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CFontChooser</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="99"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="100"/>
         <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="76"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="77"/>
         <source>Font name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="87"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="88"/>
         <source>Font style:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7055,67 +7090,67 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">選擇字型大小</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="197"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Bold</source>
         <translation>粗體</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="211"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="212"/>
         <source>Italic</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="223"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="224"/>
         <source>Underline</source>
         <translation>底線</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="232"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="233"/>
         <source>Left</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="248"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="249"/>
         <source>Center</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="254"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="255"/>
         <source>Right</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="277"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="278"/>
         <source>Select all</source>
         <translation>全選</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="282"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="283"/>
         <source>HTML editor window</source>
         <translation>HTML 編輯器視窗</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="167"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="168"/>
         <source>Font</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="176"/>
         <source>Font size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="182"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="183"/>
         <source>Font color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="237"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="238"/>
         <source>Align left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="259"/>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="260"/>
         <source>Align right</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7123,52 +7158,52 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CHTMLWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="67"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="63"/>
         <source>Sync with active Bible</source>
         <translation>與使用中聖經同步處理</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="82"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation>儲存文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="90"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="86"/>
         <source>Delete current entry</source>
         <translation>刪除目前項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="101"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="97"/>
         <source>Restore original text</source>
         <translation>還原原來文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="163"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="159"/>
         <source>Module not writable</source>
         <translation>不能寫入模組</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="165"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="161"/>
         <source>Module is not writable.</source>
         <translation>不能寫入模組.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="166"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="162"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>模組不可被編輯, 或你沒有寫入權限.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="68"/>
         <source>Synchronize (show the same verse) with the active Bible window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="94"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="90"/>
         <source>Delete current entry (no undo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="105"/>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="101"/>
         <source>Restore original text, new text will be lost</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7291,6 +7326,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Languages</source>
         <translation type="unfinished">語言</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="295"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CLexiconKeyChooser</name>
@@ -7318,87 +7358,87 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="102"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="95"/>
         <source>Next entry</source>
         <translation>下一項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="107"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="100"/>
         <source>Previous entry</source>
         <translation>上一項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="64"/>
         <source>Copy reference only</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="67"/>
         <source>Copy selected text</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="75"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="70"/>
         <source>Save entry as HTML</source>
         <translation>儲存項目為 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="78"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="73"/>
         <source>Print reference only</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="122"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="113"/>
         <source>Strong&apos;s Search</source>
         <translation>Strong&apos;s 搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="148"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="139"/>
         <source>Reference only</source>
         <translation>只限參照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="152"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="143"/>
         <source>Entry with text</source>
         <translation>項目文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="140"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>項目為純文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="135"/>
         <source>Entry as HTML</source>
         <translation>項目為 HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="231"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
         <source>Lexicon window</source>
         <translation>辭典視窗</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="238"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="231"/>
         <source>Copy...</source>
         <translation>複製...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="249"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="240"/>
         <source>Save...</source>
         <translation>儲存...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="267"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="256"/>
         <source>Print...</source>
         <translation>列印...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
         <source>Saving entry ...</source>
         <translation>正在儲存項目...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="340"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
         <source>Saving</source>
         <translation>正在儲存</translation>
     </message>
@@ -7516,52 +7556,52 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CPlainWriteWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="64"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="60"/>
         <source>Sync with active Bible</source>
         <translation>與使用中聖經同步處理</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="82"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation>儲存文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="90"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="86"/>
         <source>Delete current entry</source>
         <translation>刪除目前項目</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="103"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="99"/>
         <source>Restore original text</source>
         <translation>還原原來文字</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="145"/>
         <source>Module not writable</source>
         <translation>不能寫入模組</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="151"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="147"/>
         <source>Module is not writable.</source>
         <translation>不能寫入模組.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="153"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>模組不可被編輯, 或你沒有寫入權限.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="65"/>
         <source>Synchronize (show the same verse) with the active Bible window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="95"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="91"/>
         <source>Delete current entry (no undo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="108"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="104"/>
         <source>Restore original text, new text will be lost</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7569,122 +7609,122 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="741"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="746"/>
         <source>Version</source>
         <translation>版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="747"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
         <source>unknown</source>
         <translation>未知的</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="745"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
         <source>Markup</source>
         <translation>標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
         <source>Location</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="754"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
         <source>Category</source>
         <translation>類別</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
         <source>LCSH</source>
         <translation>LCSH</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
         <source>Writable</source>
         <translation>可寫入</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
         <source>no</source>
         <translation>否</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
         <source>Unlock key</source>
         <translation>解鎖鑰</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="792"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="797"/>
         <source>Features</source>
         <translation>特點</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="800"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>小心, 此著作包含異端或可疑的內容!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="803"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="808"/>
         <source>About</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="834"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
         <source>Distribution license</source>
         <translation>發行許可證</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="836"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
         <source>Distribution source</source>
         <translation>發行來源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="838"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
         <source>Distribution notes</source>
         <translation>發行備註</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="840"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
         <source>Text source</source>
         <translation>文字來源</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="842"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
         <source>Copyright notes</source>
         <translation>版權備註</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="844"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
         <source>Copyright holder</source>
         <translation>版權持有人</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="846"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
         <source>Copyright date</source>
         <translation>版權日期</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="848"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
         <source>Copyright contact name</source>
         <translation>版權連絡人姓名</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="850"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
         <source>Copyright contact address</source>
         <translation>版權連絡人地址</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
         <source>Copyright contact email</source>
         <translation>版權連絡人電子郵件</translation>
     </message>
@@ -7705,6 +7745,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="363"/>
         <source>Desk</source>
         <translation type="unfinished">桌面</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7796,47 +7841,47 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="46"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="47"/>
         <source>Mag</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="169"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="170"/>
         <source>Abbreviation</source>
         <translation>縮寫</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="273"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="274"/>
         <source>Cross references</source>
         <translation>參照</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="316"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="317"/>
         <source>Footnote</source>
         <translation>注釋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="343"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="344"/>
         <source>Strongs</source>
         <translation>Strongs</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="421"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="422"/>
         <source>Morphology</source>
         <translation>構詞學</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="444"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="445"/>
         <source>Word lookup</source>
         <translation>詞彙查詢</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="66"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8402,62 +8447,62 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>祖魯文</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
         <source>Footnotes</source>
         <translation>注釋</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
         <source>Strong&apos;s numbers</source>
         <translation>Strong&apos;s numbers</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
         <source>Headings</source>
         <translation>標題</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
         <source>Morphological tags</source>
         <translation>構詞學標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
         <source>Lemmas</source>
         <translation>詞形</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
         <source>Hebrew vowel points</source>
         <translation>希伯來文元音符號</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
         <source>Hebrew cantillation marks</source>
         <translation>希伯來文詠誦標記</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="439"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
         <source>Greek accents</source>
         <translation>希臘文變音符號</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="440"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
         <source>Red letter words</source>
         <translation>紅字版本</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="441"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
         <source>Textual variants</source>
         <translation>文字變體</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="442"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
         <source>Scripture cross-references</source>
         <translation>經文參照</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="443"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="444"/>
         <source>Morph segmentation</source>
         <translation>構詞學分割</translation>
     </message>
@@ -8477,42 +8522,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>遠端</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="258"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
         <source>Old testament</source>
         <translation>舊約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="259"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>摩西五經/律法書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
         <source>History</source>
         <translation>歷史書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
         <source>Prophets</source>
         <translation>先知書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
         <source>New testament</source>
         <translation>新約</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Gospels</source>
         <translation>四福音書</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="266"/>
         <source>Letters/Epistles</source>
         <translation>書信</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
         <source>Paul&apos;s Epistles</source>
         <translation>保羅書信</translation>
     </message>
@@ -8572,7 +8617,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation>請為已選書籤輸入新描述.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="590"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="587"/>
         <source>New folder</source>
         <translation>新資料夾</translation>
     </message>
@@ -9232,7 +9277,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="574"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="575"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9240,132 +9285,132 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="100"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
         <source>Search for:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="108"/>
         <source>&amp;Search</source>
         <translation type="unfinished">搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="110"/>
         <source>Start to search the text in the chosen works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="113"/>
         <source>Ch&amp;oose...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="115"/>
         <source>Choose works for the search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="118"/>
         <source>S&amp;etup...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="135"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>All of the words (AND is added between the words)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="139"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="150"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="151"/>
         <source>Scope:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="171"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="172"/>
         <source>The text you want to search for</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="175"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="176"/>
         <source>Works:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="268"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
         <source>Works to Search in</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="269"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="270"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="337"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="338"/>
         <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;輸入搜尋字詞, 以空格分開. 搜尋功能預設為顯示符合任何一個搜尋字詞的結果 (OR). 要搜尋所有字詞, 請用 AND 分開字詞.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="340"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="341"/>
         <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;你可以使用萬用字元: &apos;*&apos; 符合任何字串, 而 &apos;?&apos; 符合任何單一字元. 你可以使用括號組織搜尋字詞, 如 &apos;(耶穌 OR 聖靈) AND 神&apos;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="343"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="344"/>
         <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;要搜尋正文以外的文字, 輸入文字類型後加 &quot;:&quot;, 然後輸入搜尋字詞. 例如, 用 &apos;strong:H8077&apos; 以搜尋 Strong&apos;s number H8077.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="348"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="349"/>
         <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;可用的文字類型:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;搜尋標題&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;搜尋注釋&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;搜尋 Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;搜尋構詞學編碼&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="352"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="353"/>
         <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished">&lt;p&gt;BibleTime 使用 Lucene 搜尋引擎以進行搜尋. 該引擎擁有許多進階功能, 詳情請參閱: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="354"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="355"/>
         <source>Basic Search Syntax Introduction</source>
         <translation type="unfinished">基本搜尋語法介紹</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="360"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="361"/>
         <source>No search scope</source>
         <translation type="unfinished">沒有搜尋範圍</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="130"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
         <source>All words</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="132"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
         <source>Some words</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Free</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Some of the words (OR is added between the words)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Full lucene syntax</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="161"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="162"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9373,7 +9418,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::BtSearchResultArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="92"/>
+        <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="93"/>
         <source>Text of the selected search result item</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9532,37 +9577,37 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>Search::CSearchAnalysisScene</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="227"/>
         <source>Save Search Analysis</source>
         <translation>儲存搜尋分析</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="227"/>
         <source>HTML files (*.html;*.HTML;*.HTM;*.htm)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="244"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
         <source>BibleTime Search Analysis</source>
         <translation>BibleTime 搜尋分析</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="245"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="246"/>
         <source>Search text :</source>
         <translation>搜尋文字 :</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="247"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
         <source>Book</source>
         <translation>書卷</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="248"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
         <source>Total hits</source>
         <translation>總搜尋項數</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
+        <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
         <source>Created by</source>
         <translation>建立者</translation>
     </message>
@@ -9575,7 +9620,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">搜尋(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="110"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="111"/>
         <source>Missing indices</source>
         <translation>遺漏的索引</translation>
     </message>
@@ -9587,28 +9632,28 @@ This could take a long time. Proceed with indexing?</source>
 這可能花長時間. 要繼續建立索引嗎?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="80"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="81"/>
         <source>Search</source>
         <translation type="unfinished">搜尋</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="113"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="233"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="234"/>
         <source>&amp;Analyze results...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="234"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="235"/>
         <source>Show a graphical analyzis of the search result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="240"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9955,6 +10000,11 @@ This could take a long time. Proceed with indexing?</source>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
@@ -10016,6 +10066,11 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
