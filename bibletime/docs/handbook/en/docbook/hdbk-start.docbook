@@ -2,12 +2,11 @@
   <title>Starting &bibletime;</title>
   <sect1 id="hdbk-start">
     <title>How to start &bibletime;</title>
-    <sect2 id="hdbk-start-kde">
-      <title>Starting &bibletime; from KDE</title>
-      <para>&bibletime; is a &kde; program and is integrated
+    <sect2 id="hdbk-start">
+      <title>Starting &bibletime;</title>
+      <para>&bibletime; is an executable file that is integrated
       with the desktop. You can launch &bibletime; from
-      the Start Menu in the Applications group with this
-      icon: 
+      the Start Menu with this icon: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
@@ -26,11 +25,7 @@
       <para>&bibletime; can be used with other window managers such
       as Gnome, BlackBox, Fluxbox, OpenBox or Sawfish, providing the
       appropriate base libarires are already
-      installed on your computer. If your &kde; is installed in
-      /opt/kde, then the start-up command in a terminal would
-      be:</para>
-      <screen>export KDEDIR=/opt/kde #your KDE directory
-      bibletime</screen>
+      installed on your computer.</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
       <title>Startup customization</title>

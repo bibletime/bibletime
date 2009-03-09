@@ -34,8 +34,9 @@
       <para>Here you can specify which language should be used for the
       biblical booknames. Set this to your native language, if it is
       available, and you'll feel at home.</para>
-      <para>By default, &bibletime; uses the &kde; general
-      display font which can be specified in KDE's Control Center. You
+
+      <para>By default, &bibletime; uses the default system
+      display font. You
       can override this font if neccessary. Some languages require
       special fonts to be displayed correctly, and this dialog allows
       you to specify a custom font for each language.</para>
@@ -50,27 +51,23 @@
           <para>The Options dialog - Fonts.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; can now use all fonts supported by KDE/QT.
+      <para>&bibletime; can now use all supported fonts.
       As long as the works you are interested in display correctly
       nothing needs to be done here. If a work only displays as a
       series of question marks (??????) or empty boxes, then you know
-      that the standard KDE display font does not contain the
+      that the standard display font does not contain the
       characters used in this work.</para>
+
       <para>To correct this, choose this work's language from the drop
       down menu. Select the use custom font checkbox. Now select a
       font. For example, a font that supports many languages is
       Code2000. If no installed font can display the work you are
-      interested in, try installing the &kde; localization package
+      interested in, try installing the localization package
       for that language.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Installing fonts</title>
         <para>Detailed font installation instructions are outside the
-        scope of this handbook. &kde;'s 
-        <ulink url="help:/kcontrol/index.html"> KControl
-        Center</ulink> contains an excellent and easy to use font
-        installation module. Please read 
-        <ulink url="help:/kcontrol/kcmfontinst/index.html"> its
-        documentation</ulink>. For further information you might want
+        scope of this handbook. For further information you might want
         to refer to the 
         <ulink url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html">
         Unicode HOWTO</ulink>.</para>
@@ -86,7 +83,7 @@
         <para>Fonts can be obtained from a number of sources:</para>
         <itemizedlist>
           <listitem>
-            <para>Your Linux distribution.</para>
+            <para>Your *nix distribution.</para>
           </listitem>
           <listitem>
             <para>Your distribution's localization packages.</para>

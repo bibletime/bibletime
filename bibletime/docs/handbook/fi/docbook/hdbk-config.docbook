@@ -29,10 +29,11 @@ yhden sellaisen, näet esikatselukuvan oikealla paneelissa.</para>
       </title>
       <para>Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä 
 äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi.</para>
-      <para>Oletuksena &bibletime; käyttää &kde;:n yleisiä näyttökirjasinta, jonka voi 
-asettaa  KDE:n Ohjauskeskuksessa. Voit korvata tarvittaessa tämän 
-kirjasimen. Jotkut kielet tarvitsevat erikoiskirjasimia näkyäkseen 
-oikein. Tässä ikkunassa voit määrittää omat kirjasimet kullekin kielelle.</para>
+
+      <para>By default, &bibletime; uses the default system display font. You can 
+override this font if neccessary. Some languages require special fonts to be 
+displayed correctly, and this dialog allows you to specify a custom font for 
+each language.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="ss_configfonts.png" format="PNG" />
@@ -44,23 +45,21 @@ oikein. Tässä ikkunassa voit määrittää omat kirjasimet kullekin kielelle.<
           <para>Valintaikkuna - Kirjasimet.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; osaa käyttää nyt kaikkia KDE/QT:n kirjasimia. Niin kauan kuin 
-olet kiinnostunut teoksista, jotka näkyvät oikein, tässä ei tarvitse tehdä 
-mitään. Jos näytöllä näkyy sarja kysymysmerkkejä (??????) tai tyhjiä 
-laatikoita, silloin tiedät, että KDE:n oletusnäytön kirjasin ei sisällä 
-kaikkia tämän teoksen käyttämiä merkkejä.</para>
-      <para>Korjataksesi tämän valitse tämän teoksen kieli alasvetovalikosta. Valitse 
-oma kirjasin valintaruutu. Nyt valitse kirjasin. Esimerkiksi monia kieliä 
-tarjoava kirjasin on Code2000. Jos mikään asennettu kirjasin ei pysty 
-näyttämään teosta, sinun tulee asentaa konelle &kde; lokalisointipaketti 
-sille kielelle.</para>
+      <para>&bibletime; can now use all supported fonts.  As long as the works you are 
+interested in display correctly nothing needs to be done here. If a work 
+only displays as a series of question marks (??????) or empty boxes, then 
+you know that the standard display font does not contain the characters used 
+in this work.</para>
+
+      <para>To correct this, choose this work's language from the drop down menu. Select 
+the use custom font checkbox. Now select a font. For example, a font that 
+supports many languages is Code2000. If no installed font can display the 
+work you are interested in, try installing the localization package for that 
+language.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Kirjasimien asennus</title>
-        <para>Tässä käsikirjassa ei ole kirjasimien asennuksen yksityiskohtaisia 
-ohjeita. &kde;:n <ulink url="help:/kcontrol/index.html">Ohjauskeskus</ulink> 
-sisältää erinomaisen ja helpon kirjasimien asennusmoduulin. Lue <ulink 
-url="help:/kcontrol/kcmfontinst/index.html"> sen 
-dokumentaatio</ulink>. Lisätietoja saadaksesi lue  <ulink 
+        <para>Detailed font installation instructions are outside the scope of this 
+handbook. For further information you might want to refer to the <ulink 
 url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
 HOWTO</ulink>.</para>
         <tip>
@@ -74,7 +73,7 @@ Bitstream Cyberbit</trademark> (noin 12Mb).</para>
         <para>Kirjasimia voi hankkia lukuisasta joukosta lähteitä:</para>
         <itemizedlist>
           <listitem>
-            <para>Linux-distribuutiosi.</para>
+            <para>Your *nix distribution.</para>
           </listitem>
           <listitem>
             <para>Distribuutiosi lokalisointipaketit.</para>

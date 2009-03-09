@@ -2,11 +2,10 @@
   <title>&bibletime;n käynnistys</title>
   <sect1 id="hdbk-start">
     <title>Kuinka &bibletime; käynnistetään</title>
-    <sect2 id="hdbk-start-kde">
-      <title>&bibletime;n käynnistys KDE:stä</title>
-      <para>&bibletime; on &kde;-ohjelma ja se on integroitu työpöydän kanssa. Voit 
-käynnistää  &bibletime;n &kde; käynnistysalikosta tämän kuvakkeen 
-sovellusryhmässä: 
+    <sect2 id="hdbk-start">
+      <title>&bibletime;n käynnistys</title>
+      <para>&bibletime; is an executable file that is integrated with the desktop. You 
+can launch &bibletime; from the Start Menu with this icon: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
@@ -22,12 +21,9 @@ ja kirjoita:
     </sect2>
     <sect2 id="hdbk-start-otherwm">
       <title>Muut ikkunamanagerit</title>
-      <para>Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten 
-Gnomella, BlackBoxilla, Fluxboxilla, OpenBoxilla tai Sawfishillä 
-edellyttäen, että sopivat kirjastot on jo asennettu koneelle. Jos &kde; on 
-asennettu kansioon /opt/kde, käynnistyskomento terminaali-ikkunassa on:</para>
-      <screen>export KDEDIR=/opt/kde  #Sinun KDE-kansiosi
-      bibletime</screen>
+      <para>&bibletime; can be used with other window managers such as Gnome, BlackBox, 
+Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are 
+already installed on your computer.</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
       <title>Käynnistyksen säätäminen</title>

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-01-12 13:26-0500\n"
+"POT-Creation-Date: 2009-03-08 23:52-0400\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -80,13 +80,13 @@ msgstr ""
 "bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u "
 "voelt zich helemaal thuis."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:37
+#: docs/handbook/en/docbook/hdbk-config.docbook:38
 #, fuzzy
 msgid ""
-"By default, &bibletime; uses the &kde; general display font which can be "
-"specified in KDE's Control Center. You can override this font if neccessary. "
-"Some languages require special fonts to be displayed correctly, and this "
-"dialog allows you to specify a custom font for each language."
+"By default, &bibletime; uses the default system display font. You can "
+"override this font if neccessary. Some languages require special fonts to be "
+"displayed correctly, and this dialog allows you to specify a custom font for "
+"each language."
 msgstr ""
 "Standaard gebruikt &bibletime; het &kde; Algemene weergave lettertype, welke "
 "gespecificeerd kan worden in het &kcontrolcenter;. U kunt een ander "
@@ -94,23 +94,23 @@ msgstr ""
 "lettertypen om correct te worden weergegeven en deze dialoog staat u toe om "
 "voor elke taal een bepaald lettertype in te stellen."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:47
+#: docs/handbook/en/docbook/hdbk-config.docbook:48
 #, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
 msgstr "Opties Dialoog - lettertypen"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:50
+#: docs/handbook/en/docbook/hdbk-config.docbook:51
 msgid "The Options dialog - Fonts."
 msgstr "De Opties dialoog - Lettertypen"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:53
+#: docs/handbook/en/docbook/hdbk-config.docbook:54
 #, fuzzy
 msgid ""
-"&bibletime; can now use all fonts supported by KDE/QT.  As long as the works "
-"you are interested in display correctly nothing needs to be done here. If a "
-"work only displays as a series of question marks (??????) or empty boxes, "
-"then you know that the standard KDE display font does not contain the "
-"characters used in this work."
+"&bibletime; can now use all supported fonts.  As long as the works you are "
+"interested in display correctly nothing needs to be done here. If a work "
+"only displays as a series of question marks (??????) or empty boxes, then "
+"you know that the standard display font does not contain the characters used "
+"in this work."
 msgstr ""
 "&bibletime; kan nu alle lettertypen gebruiken die ondersteund worden door "
 "KDE/QT. Zolang alle modules waarin u ge&iuml;nteresseerd bent correct worden "
@@ -119,14 +119,14 @@ msgstr ""
 "weet u dat het standaard KDE lettertype niet de karakters bevat die in deze "
 "module worden gebruikt."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:59
+#: docs/handbook/en/docbook/hdbk-config.docbook:61
 #, fuzzy
 msgid ""
 "To correct this, choose this work's language from the drop down menu. Select "
 "the use custom font checkbox. Now select a font. For example, a font that "
 "supports many languages is Code2000. If no installed font can display the "
-"work you are interested in, try installing the &kde; localization package "
-"for that language."
+"work you are interested in, try installing the localization package for that "
+"language."
 msgstr ""
 "Om dit te corrigeren kiest u de taal van de module in de keuzelijst. Vink "
 "het keuzevakje aan om een aangepast lettertype te gebruiken. Selecteer nu "
@@ -135,20 +135,17 @@ msgstr ""
 "weergeven waarin u ge&iuml;nteresseerd bent, probeer dan om het &kde; "
 "lokalisatiepakket (localization package) voor die taal te installeren."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:66
+#: docs/handbook/en/docbook/hdbk-config.docbook:68
 msgid "Installing fonts"
 msgstr "Lettertypen installeren"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:67
+#: docs/handbook/en/docbook/hdbk-config.docbook:69
 #, fuzzy
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
-"handbook. &kde;'s <ulink url=\"help:/kcontrol/index.html\"> KControl Center</"
-"ulink> contains an excellent and easy to use font installation module. "
-"Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> its "
-"documentation</ulink>. For further information you might want to refer to "
-"the <ulink url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> "
-"Unicode HOWTO</ulink>."
+"handbook. For further information you might want to refer to the <ulink url="
+"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
+"ulink>."
 msgstr ""
 "Gedetailleerd instructies voor het installeren van lettertypen vallen buiten "
 "het doelbereik van dit handboek. &kde;'s <ulink url=\"help:/kcontrol/index."
@@ -159,7 +156,7 @@ msgstr ""
 "pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO.html#toc4\"> "
 "Unicode HOWTO</ulink> inzien."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:78
+#: docs/handbook/en/docbook/hdbk-config.docbook:75
 #, fuzzy
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
@@ -170,23 +167,24 @@ msgstr ""
 "zal &bibletime; sneller werken dan met een groot font, zoals <trademark "
 "class=\"registered\"> Bitstream Cyberbit</trademark> (ongeveer 12MB)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:85
+#: docs/handbook/en/docbook/hdbk-config.docbook:82
 msgid "Obtaining Fonts"
 msgstr "Lettertypen verkrijgen"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:86
+#: docs/handbook/en/docbook/hdbk-config.docbook:83
 msgid "Fonts can be obtained from a number of sources:"
 msgstr "Lettertypen kunnen worden verkregen uit een aantal bronnen:"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:89
-msgid "Your Linux distribution."
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
+#, fuzzy
+msgid "Your *nix distribution."
 msgstr "Uw Linux distributie."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:92
+#: docs/handbook/en/docbook/hdbk-config.docbook:89
 msgid "Your distribution's localization packages."
 msgstr "De lokalisatiepakketten (localization packages) in uw distributie."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:95
+#: docs/handbook/en/docbook/hdbk-config.docbook:92
 #, fuzzy
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</"
@@ -195,16 +193,16 @@ msgstr ""
 "Een bestaande <trademark class=\"registered\">Microsoft Windows</trademark> "
 "installatie op dezelfde computer."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:101
+#: docs/handbook/en/docbook/hdbk-config.docbook:98
 msgid "A font collection, such as are available from Adobe or Bitstream."
 msgstr ""
 "Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:105
+#: docs/handbook/en/docbook/hdbk-config.docbook:102
 msgid "Online font collections."
 msgstr "Online verzamelingen van lettertypen."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:108
+#: docs/handbook/en/docbook/hdbk-config.docbook:105
 #, fuzzy
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
@@ -218,33 +216,33 @@ msgstr ""
 "Unicode standaard, dus misschien moet u verschillende lettertypen gebruiken "
 "voor verschillende talen."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:114
+#: docs/handbook/en/docbook/hdbk-config.docbook:111
 msgid "Unicode Fonts"
 msgstr "Unicode lettertypen"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:122
+#: docs/handbook/en/docbook/hdbk-config.docbook:119
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr ""
 "Misschien het beste gratis Unicode lettertype, welke een groot aantal "
 "karakters ondersteunt."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:130
+#: docs/handbook/en/docbook/hdbk-config.docbook:127
 msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
 msgstr ""
 "Uitstekende Unicode lettertypen van het Summer Institute of Linguistics."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:138
+#: docs/handbook/en/docbook/hdbk-config.docbook:135
 msgid "A new free unicode font initiative."
 msgstr "Een nieuw initiatief voor gratis Unicode lettertypen."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:145
+#: docs/handbook/en/docbook/hdbk-config.docbook:142
 msgid "Several fonts available from the Crosswire Bible Society Ftp site."
 msgstr ""
 "Verscheidene lettertypen zijn beschikbaar op de ftp pagina van de Crosswire "
 "Bible Society."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:153
+#: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
@@ -252,23 +250,23 @@ msgstr ""
 "Dekt bijna het gehele bereik van Unicode, maar kan &bibletime; vertragen "
 "door zijn omvang."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:158
+#: docs/handbook/en/docbook/hdbk-config.docbook:155
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:159
+#: docs/handbook/en/docbook/hdbk-config.docbook:156
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
 "Is inbegrepen in sommige distributies. Bevat Europese, Griekse, Hebreeuwse "
 "en Thaise karakters."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:167
+#: docs/handbook/en/docbook/hdbk-config.docbook:164
 msgid "Partial coverage, see information on linked site."
 msgstr ""
 "Gedeeltelijk bereik van de Unicode standaard, zie voor meer informatie op de "
 "bijbehorende website."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:173
+#: docs/handbook/en/docbook/hdbk-config.docbook:170
 #, fuzzy
 msgid ""
 "There are good Unicode font lists on the net, as the one by Christoph Singer "
@@ -283,7 +281,7 @@ msgstr ""
 "Alan Wood (<ulink url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> "
 "Unicode character ranges and the Unicode fonts that support them</ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:187
+#: docs/handbook/en/docbook/hdbk-config.docbook:184
 msgid ""
 "Many features provided by the Sword backend can now be customized in "
 "&bibletime;. These features are documented right in the dialog. You also "
@@ -303,7 +301,7 @@ msgstr ""
 "van de verzen waarnaar verwezen wordt, zoals deze vermeld staan in de "
 "standaardbijbel."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:201
+#: docs/handbook/en/docbook/hdbk-config.docbook:198
 msgid ""
 "HotKeys are special key commands that can be used in the place of the menu "
 "items and icons. A number of &bibletime;'s commands have predefined HotKeys "
@@ -1707,6 +1705,7 @@ msgstr ""
 "uit."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
+#: docs/handbook/en/docbook/hdbk-start.docbook:6
 msgid "Starting &bibletime;"
 msgstr "&bibletime; opstarten"
 
@@ -1714,27 +1713,22 @@ msgstr "&bibletime; opstarten"
 msgid "How to start &bibletime;"
 msgstr "Hoe u &bibletime; opstart"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
-msgid "Starting &bibletime; from KDE"
-msgstr "&bibletime; opstarten vanuit KDE"
-
 #: docs/handbook/en/docbook/hdbk-start.docbook:7
 #, fuzzy
 msgid ""
-"&bibletime; is a &kde; program and is integrated with the desktop. You can "
-"launch &bibletime; from the Start Menu in the Applications group with this "
-"icon:"
+"&bibletime; is an executable file that is integrated with the desktop. You "
+"can launch &bibletime; from the Start Menu with this icon:"
 msgstr ""
 "&bibletime; is een &kde; programma en is ge&iuml;ntegreerd met het &kde; "
 "bureaublad. U kunt &bibletime; starten vanuit &kde; door in het Startmenu in "
 "de groep 'hulpmiddelen' te klikken op dit icoon:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:16
+#: docs/handbook/en/docbook/hdbk-start.docbook:15
 #, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "&bibletime; start icoon"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:19
+#: docs/handbook/en/docbook/hdbk-start.docbook:18
 #, fuzzy
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
@@ -1743,22 +1737,21 @@ msgstr ""
 "&bibletime; kan ook gestart worden via een opdrachtprompt in een terminal. "
 "Om &bibletime; te starten, opent u een terminal en typt u:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:22
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 #, no-wrap
 msgid "bibletime"
 msgstr "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
 msgid "Other window managers"
 msgstr "Andere window managers"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:26
+#: docs/handbook/en/docbook/hdbk-start.docbook:25
 #, fuzzy
 msgid ""
 "&bibletime; can be used with other window managers such as Gnome, BlackBox, "
 "Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are "
-"already installed on your computer. If your &kde; is installed in /opt/kde, "
-"then the start-up command in a terminal would be:"
+"already installed on your computer."
 msgstr ""
 "&bibletime; kan gebruikt worden in combinatie met andere window managers, "
 "zoals Gnome, BlackBox of Sawfish, op voorwaarde dat &kde; al ge&iuml;"
@@ -1766,28 +1759,19 @@ msgstr ""
 "dan zou u het volgende commando in een terminal kunnen geven om het "
 "programma te starten:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
-#, fuzzy, no-wrap
-msgid ""
-"export KDEDIR=/opt/kde #your KDE directory\n"
-"      bibletime"
-msgstr ""
-"export KDEDIR=/opt/kde  #uw KDE directory\n"
-"bibletime"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:36
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
 msgid "Startup customization"
 msgstr "Aanpassing van het opstarten"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:39
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 #, no-wrap
 msgid ""
 "bibletime --open-default-bible\n"
@@ -1795,26 +1779,26 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:40
+#: docs/handbook/en/docbook/hdbk-start.docbook:35
 msgid "To open at a given passage like John 3:16, use:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid "You can also use booknames in your current bookname language."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:47
+#: docs/handbook/en/docbook/hdbk-start.docbook:42
 msgid "Startup sequence"
 msgstr "Volgorde van opstartschermen"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:48
+#: docs/handbook/en/docbook/hdbk-start.docbook:43
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1822,7 +1806,7 @@ msgstr ""
 "Wanneer &bibletime; opstart kun je de volgende schermen zien, voordat het "
 "hoofdvenster van &bibletime; opent:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:57
+#: docs/handbook/en/docbook/hdbk-start.docbook:52
 #, fuzzy
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
@@ -1843,7 +1827,7 @@ msgstr ""
 "boek te installeren om de basisfuncties van &bibletime; snel onder de knie "
 "te krijgen."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:74
+#: docs/handbook/en/docbook/hdbk-start.docbook:69
 #, fuzzy
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
@@ -1903,13 +1887,24 @@ msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "1.7"
+msgid "2.0"
 msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:52
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the Sword framwork."
 msgstr "&bibletime; is een krachtig bijbelstudieprogramma voor &kde;"
+
+#~ msgid "Starting &bibletime; from KDE"
+#~ msgstr "&bibletime; opstarten vanuit KDE"
+
+#, fuzzy
+#~ msgid ""
+#~ "export KDEDIR=/opt/kde #your KDE directory\n"
+#~ "      bibletime"
+#~ msgstr ""
+#~ "export KDEDIR=/opt/kde  #uw KDE directory\n"
+#~ "bibletime"
 
 #, fuzzy
 #~ msgid ""

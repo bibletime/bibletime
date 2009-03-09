@@ -47,12 +47,11 @@
     <para>Het &bibletime; handboek is onderdeel van &bibletime;</para>
   </legalnotice>
   <date>2005-08</date>
-  <releaseinfo>1.7</releaseinfo>
+  <releaseinfo>2.0</releaseinfo>
   <abstract>
     <para>&bibletime; is a Bible study tool based on the Sword framwork.</para>
   </abstract>
   <keywordset>
-    <keyword>KDE</keyword>
     <keyword>QT4</keyword>
     <keyword>bibletime</keyword>
     <keyword>sword</keyword>

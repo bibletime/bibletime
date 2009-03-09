@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-01-12 13:26-0500\n"
+"POT-Creation-Date: 2009-03-08 23:52-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -62,7 +62,9 @@ msgstr "&bibletime;:n asetukset"
 msgid ""
 "In this section you find an overview to configure &bibletime;, which can be "
 "found under <guimenu>Settings</guimenu> in the main menu."
-msgstr "Tässä osiossa on yleiskuvaus, kuinka &bibletime;:n asetuksia asetetaan. Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> -kohdasta."
+msgstr ""
+"Tässä osiossa on yleiskuvaus, kuinka &bibletime;:n asetuksia asetetaan. "
+"Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> -kohdasta."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
 msgid "Configure BibleTime Dialog"
@@ -75,12 +77,15 @@ msgid ""
 "<menuchoice> <guimenu>Settings</guimenu> </menuchoice> "
 "<guimenuitem>Configure &bibletime;</guimenuitem>."
 msgstr ""
-"&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi mukaan. Pääset asetusikkunaan valitsemalla "
-"<menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta &bibletime;</guimenuitem>."
+"&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi "
+"mukaan. Pääset asetusikkunaan valitsemalla <menuchoice><guimenu>Asetukset</"
+"guimenu></menuchoice> <guimenuitem>Aseta &bibletime;</guimenuitem>."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:19
-msgid "The startup behavior can be customized. Select from the following options:"
-msgstr "Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista:"
+msgid ""
+"The startup behavior can be customized. Select from the following options:"
+msgstr ""
+"Käynnistyskäyttäytymistä voidaan säätää. Valitse seuraavista valinnoista:"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:23
 msgid "Show startup logo"
@@ -93,7 +98,8 @@ msgid ""
 "on the right pane."
 msgstr ""
 "Näyttömallit määrittelevät tekstin renderöinnin (värit, koko jne.). "
-"Saatavana on erilaisia sisäänrakennettuja mallipohjia. Jos valitset yhden sellaisen, näet esikatselukuvan oikealla paneelissa."
+"Saatavana on erilaisia sisäänrakennettuja mallipohjia. Jos valitset yhden "
+"sellaisen, näet esikatselukuvan oikealla paneelissa."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:34
 msgid ""
@@ -104,82 +110,104 @@ msgstr ""
 "Tässä voit määritellä, mitä kieltä käytetään kirjojen nimissä. Aseta tämä "
 "äidinkieleksesi, jos se on saatavilla. Silloin tunnet olosi kotoisaksi."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:37
+#: docs/handbook/en/docbook/hdbk-config.docbook:38
+#, fuzzy
 msgid ""
-"By default, &bibletime; uses the &kde; general display font which can be "
-"specified in KDE's Control Center. You can override this font if neccessary. "
-"Some languages require special fonts to be displayed correctly, and this "
-"dialog allows you to specify a custom font for each language."
-msgstr "Oletuksena &bibletime; käyttää &kde;:n yleisiä näyttökirjasinta, jonka voi asettaa  KDE:n Ohjauskeskuksessa. Voit korvata tarvittaessa tämän kirjasimen. Jotkut kielet tarvitsevat erikoiskirjasimia näkyäkseen oikein. Tässä ikkunassa voit määrittää omat kirjasimet kullekin kielelle."
+"By default, &bibletime; uses the default system display font. You can "
+"override this font if neccessary. Some languages require special fonts to be "
+"displayed correctly, and this dialog allows you to specify a custom font for "
+"each language."
+msgstr ""
+"Oletuksena &bibletime; käyttää &kde;:n yleisiä näyttökirjasinta, jonka voi "
+"asettaa  KDE:n Ohjauskeskuksessa. Voit korvata tarvittaessa tämän "
+"kirjasimen. Jotkut kielet tarvitsevat erikoiskirjasimia näkyäkseen oikein. "
+"Tässä ikkunassa voit määrittää omat kirjasimet kullekin kielelle."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:47
+#: docs/handbook/en/docbook/hdbk-config.docbook:48
 msgid "<phrase>Options Dialog - fonts</phrase>"
 msgstr "<phrase>Valintavaihtoehtoikkunan kirjasimet</phrase>"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:50
+#: docs/handbook/en/docbook/hdbk-config.docbook:51
 msgid "The Options dialog - Fonts."
 msgstr "Valintaikkuna - Kirjasimet."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:53
+#: docs/handbook/en/docbook/hdbk-config.docbook:54
+#, fuzzy
 msgid ""
-"&bibletime; can now use all fonts supported by KDE/QT.  As long as the works "
-"you are interested in display correctly nothing needs to be done here. If a "
-"work only displays as a series of question marks (??????) or empty boxes, "
-"then you know that the standard KDE display font does not contain the "
-"characters used in this work."
-msgstr "&bibletime; osaa käyttää nyt kaikkia KDE/QT:n kirjasimia. Niin kauan kuin olet kiinnostunut teoksista, jotka näkyvät oikein, tässä ei tarvitse tehdä mitään. Jos näytöllä näkyy sarja kysymysmerkkejä (??????) tai tyhjiä laatikoita, silloin tiedät, että KDE:n oletusnäytön kirjasin ei sisällä kaikkia tämän teoksen käyttämiä merkkejä."
+"&bibletime; can now use all supported fonts.  As long as the works you are "
+"interested in display correctly nothing needs to be done here. If a work "
+"only displays as a series of question marks (??????) or empty boxes, then "
+"you know that the standard display font does not contain the characters used "
+"in this work."
+msgstr ""
+"&bibletime; osaa käyttää nyt kaikkia KDE/QT:n kirjasimia. Niin kauan kuin "
+"olet kiinnostunut teoksista, jotka näkyvät oikein, tässä ei tarvitse tehdä "
+"mitään. Jos näytöllä näkyy sarja kysymysmerkkejä (??????) tai tyhjiä "
+"laatikoita, silloin tiedät, että KDE:n oletusnäytön kirjasin ei sisällä "
+"kaikkia tämän teoksen käyttämiä merkkejä."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:59
+#: docs/handbook/en/docbook/hdbk-config.docbook:61
+#, fuzzy
 msgid ""
 "To correct this, choose this work's language from the drop down menu. Select "
 "the use custom font checkbox. Now select a font. For example, a font that "
 "supports many languages is Code2000. If no installed font can display the "
-"work you are interested in, try installing the &kde; localization package "
-"for that language."
-msgstr "Korjataksesi tämän valitse tämän teoksen kieli alasvetovalikosta. Valitse oma kirjasin valintaruutu. Nyt valitse kirjasin. Esimerkiksi monia kieliä tarjoava kirjasin on Code2000. Jos mikään asennettu kirjasin ei pysty näyttämään teosta, sinun tulee asentaa konelle &kde; lokalisointipaketti sille kielelle."
+"work you are interested in, try installing the localization package for that "
+"language."
+msgstr ""
+"Korjataksesi tämän valitse tämän teoksen kieli alasvetovalikosta. Valitse "
+"oma kirjasin valintaruutu. Nyt valitse kirjasin. Esimerkiksi monia kieliä "
+"tarjoava kirjasin on Code2000. Jos mikään asennettu kirjasin ei pysty "
+"näyttämään teosta, sinun tulee asentaa konelle &kde; lokalisointipaketti "
+"sille kielelle."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:66
+#: docs/handbook/en/docbook/hdbk-config.docbook:68
 msgid "Installing fonts"
 msgstr "Kirjasimien asennus"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:67
+#: docs/handbook/en/docbook/hdbk-config.docbook:69
+#, fuzzy
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
-"handbook. &kde;'s <ulink url=\"help:/kcontrol/index.html\"> KControl Center</"
-"ulink> contains an excellent and easy to use font installation module. "
-"Please read <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> its "
-"documentation</ulink>. For further information you might want to refer to "
-"the <ulink url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> "
-"Unicode HOWTO</ulink>."
+"handbook. For further information you might want to refer to the <ulink url="
+"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
+"ulink>."
 msgstr ""
-"Tässä käsikirjassa ei ole kirjasimien asennuksen yksityiskohtaisia ohjeita. &kde;:n <ulink url=\"help:/kcontrol/index.html\">Ohjauskeskus</ulink> "
-"sisältää erinomaisen ja helpon kirjasimien asennusmoduulin. Lue <ulink url=\"help:/kcontrol/kcmfontinst/index.html\"> sen dokumentaatio</ulink>. Lisätietoja saadaksesi lue  <ulink url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> "
-"Unicode HOWTO</ulink>."
+"Tässä käsikirjassa ei ole kirjasimien asennuksen yksityiskohtaisia ohjeita. "
+"&kde;:n <ulink url=\"help:/kcontrol/index.html\">Ohjauskeskus</ulink> "
+"sisältää erinomaisen ja helpon kirjasimien asennusmoduulin. Lue <ulink url="
+"\"help:/kcontrol/kcmfontinst/index.html\"> sen dokumentaatio</ulink>. "
+"Lisätietoja saadaksesi lue  <ulink url=\"http://www.linux.org/docs/ldp/howto/"
+"Unicode-HOWTO-2.html\"> Unicode HOWTO</ulink>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:78
+#: docs/handbook/en/docbook/hdbk-config.docbook:75
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
 "faster than with a large font like <trademark class=\"registered\">Bitstream "
 "Cyberbit</trademark>(about 12Mb)."
-msgstr "Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on nopeampi kuin suurilla kirjasimilla kuten <trademark class=\"registered\"> Bitstream Cyberbit</trademark> (noin 12Mb)."
+msgstr ""
+"Jos käytät pientä kirjasinta kuten Clearlyu (noin 22kb), &bibletime; on "
+"nopeampi kuin suurilla kirjasimilla kuten <trademark class=\"registered\"> "
+"Bitstream Cyberbit</trademark> (noin 12Mb)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:85
+#: docs/handbook/en/docbook/hdbk-config.docbook:82
 msgid "Obtaining Fonts"
 msgstr "Kirjasimien hankinta"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:86
+#: docs/handbook/en/docbook/hdbk-config.docbook:83
 msgid "Fonts can be obtained from a number of sources:"
 msgstr "Kirjasimia voi hankkia lukuisasta joukosta lähteitä:"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:89
-msgid "Your Linux distribution."
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
+#, fuzzy
+msgid "Your *nix distribution."
 msgstr "Linux-distribuutiosi."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:92
+#: docs/handbook/en/docbook/hdbk-config.docbook:89
 msgid "Your distribution's localization packages."
 msgstr "Distribuutiosi lokalisointipaketit."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:95
+#: docs/handbook/en/docbook/hdbk-config.docbook:92
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</"
 "trademark>installation on the same computer."
@@ -187,45 +215,49 @@ msgstr ""
 "Olemassaoleva <trademark class=\"registered\">Microsoft Windows</trademark> "
 "asennus samalla tietokoneella."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:101
+#: docs/handbook/en/docbook/hdbk-config.docbook:98
 msgid "A font collection, such as are available from Adobe or Bitstream."
-msgstr "Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla."
+msgstr ""
+"Kirjasinkokoelma, sellainen kuin on saatavilla Adobella tai Bitstreamilla."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:105
+#: docs/handbook/en/docbook/hdbk-config.docbook:102
 msgid "Online font collections."
 msgstr "Online kirjasinkokoelmat."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:108
+#: docs/handbook/en/docbook/hdbk-config.docbook:105
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
 "fonts are available at no charge. None of available fonts includes all "
 "characters defined in the Unicode standard, so you may want to use different "
 "fonts for different languages."
 msgstr ""
-"Unicode-kirjasimet tarjoavat enemmän merkkejä kuin muut kirjasimet, ja osa niistä kirjasimista on saatavilla ilmaiseksi. Mikään "
-"saatavillaoleva kirjasin ei sisällä kaikkia Unicode-standardin määrittelemiä merkkejä. Sinun tulee siis käyttää eri kirjasimia eri kielille."
+"Unicode-kirjasimet tarjoavat enemmän merkkejä kuin muut kirjasimet, ja osa "
+"niistä kirjasimista on saatavilla ilmaiseksi. Mikään saatavillaoleva "
+"kirjasin ei sisällä kaikkia Unicode-standardin määrittelemiä merkkejä. Sinun "
+"tulee siis käyttää eri kirjasimia eri kielille."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:114
+#: docs/handbook/en/docbook/hdbk-config.docbook:111
 msgid "Unicode Fonts"
 msgstr "Unicode-kirjasimet"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:122
-msgid "Perhaps the best free Unicode font, covering a wide range of characters."
+#: docs/handbook/en/docbook/hdbk-config.docbook:119
+msgid ""
+"Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr "Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:130
+#: docs/handbook/en/docbook/hdbk-config.docbook:127
 msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
 msgstr "Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:138
+#: docs/handbook/en/docbook/hdbk-config.docbook:135
 msgid "A new free unicode font initiative."
 msgstr "Uusi vapaa unicode-kirjasinaloite."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:145
+#: docs/handbook/en/docbook/hdbk-config.docbook:142
 msgid "Several fonts available from the Crosswire Bible Society Ftp site."
 msgstr "Useita kirjasimia saatavana Crosswire Bible Society Ftp -palvelimella."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:153
+#: docs/handbook/en/docbook/hdbk-config.docbook:150
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
@@ -233,21 +265,21 @@ msgstr ""
 "Käsittää melkein koko Unicode-merkistön, mutta hidastuttaa &bibletime;ä "
 "merkittävästi koon vuoksi."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:158
+#: docs/handbook/en/docbook/hdbk-config.docbook:155
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:159
+#: docs/handbook/en/docbook/hdbk-config.docbook:156
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
 "Sisältyy muutamiin jakeludistribuutioihin. Sisältää euroopan, kreikan, "
 "heprean ja Thai-kielen."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:167
+#: docs/handbook/en/docbook/hdbk-config.docbook:164
 msgid "Partial coverage, see information on linked site."
 msgstr "Osittainen peittävyys, katso tietoja linkitetyltä sivulta."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:173
+#: docs/handbook/en/docbook/hdbk-config.docbook:170
 msgid ""
 "There are good Unicode font lists on the net, as the one by Christoph Singer "
 "( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
@@ -262,7 +294,7 @@ msgstr ""
 "ranges and the Unicode fonts that support them</ulink>)."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:187
+#: docs/handbook/en/docbook/hdbk-config.docbook:184
 msgid ""
 "Many features provided by the Sword backend can now be customized in "
 "&bibletime;. These features are documented right in the dialog. You also "
@@ -272,11 +304,16 @@ msgid ""
 "over then, the Mag will show the content of the verses referred to, "
 "according to the standard Bible you specified."
 msgstr ""
-"Monia Sword-taustaohjelman ominaisuuksia voidaan räätälöidä"
-"&bibletime;-ohjelmassa. Nämä ominaisuudet on dokumentoitu oikealla ikkunassa. Sinulla on mahdollisuus määritellä oletusteokset, joita käytetään, jos yhtään teosta ei ole määritelty viitteenä. Esimerkki: standardia Raamattua käytetään näyttämään Raamatun ristiviittauksien sisältöjä. Kun siirrät hiiren niiden ylle, suurennuslasi näyttää viitattujen jakeiden sisällön standardista Raamatusta, jonka olet määritellyt."
+"Monia Sword-taustaohjelman ominaisuuksia voidaan räätälöidä&bibletime;-"
+"ohjelmassa. Nämä ominaisuudet on dokumentoitu oikealla ikkunassa. Sinulla on "
+"mahdollisuus määritellä oletusteokset, joita käytetään, jos yhtään teosta ei "
+"ole määritelty viitteenä. Esimerkki: standardia Raamattua käytetään "
+"näyttämään Raamatun ristiviittauksien sisältöjä. Kun siirrät hiiren niiden "
+"ylle, suurennuslasi näyttää viitattujen jakeiden sisällön standardista "
+"Raamatusta, jonka olet määritellyt."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:201
+#: docs/handbook/en/docbook/hdbk-config.docbook:198
 msgid ""
 "HotKeys are special key commands that can be used in the place of the menu "
 "items and icons. A number of &bibletime;'s commands have predefined HotKeys "
@@ -304,9 +341,12 @@ msgid ""
 "flagship product of the <ulink url=\"http://www.crosswire.org\">Crosswire "
 "Bible Society</ulink>."
 msgstr ""
-"&bibletime; on Raamattuohjelma erilaisten tekstien tuella ja kielillä. Edelleen laaja joukko teoksia on helppo asentaa ja hallinnoida moduuleina. Se on rakennettu <ulink url="
-"\"http://www.crosswire.org/sword\">Sword</ulink>-kirjastoon, joka tarjoaa toiminnallisuuden &bibletime;:lle, kuten Raamatun tekstin näyttämiseen, etsintään, jne. Sword on <ulink url=\"http://www.crosswire.org\">Crosswire "
-"Bible Societyn</ulink> lippulaiva."
+"&bibletime; on Raamattuohjelma erilaisten tekstien tuella ja kielillä. "
+"Edelleen laaja joukko teoksia on helppo asentaa ja hallinnoida moduuleina. "
+"Se on rakennettu <ulink url=\"http://www.crosswire.org/sword\">Sword</ulink>-"
+"kirjastoon, joka tarjoaa toiminnallisuuden &bibletime;:lle, kuten Raamatun "
+"tekstin näyttämiseen, etsintään, jne. Sword on <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Societyn</ulink> lippulaiva."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:14
 msgid ""
@@ -315,7 +355,11 @@ msgid ""
 "document formats can be found in the <ulink url=\"http://www.crosswire.org/"
 "sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
 "Crosswire Bible Society."
-msgstr "&bibletime; on suunniteltu käyttämään Sword-projektin mallien mukaisia teoksia. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät osoitteesta Crosswire Bible Societyn Sword-projektin <ulink url=\"http://www.crosswire.org/sword/develop/index.jsp\">kehittäjien osio</ulink>."
+msgstr ""
+"&bibletime; on suunniteltu käyttämään Sword-projektin mallien mukaisia "
+"teoksia. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät osoitteesta "
+"Crosswire Bible Societyn Sword-projektin <ulink url=\"http://www.crosswire."
+"org/sword/develop/index.jsp\">kehittäjien osio</ulink>."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
 msgid "Available works"
@@ -352,7 +396,9 @@ msgstr "Kirjat"
 msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
-msgstr "Tarjollaolevat kirjat sisältävät teokset \"Imitation of Christ\", \"Enuma Elish\", ja \"Josephus: The Complete Works\""
+msgstr ""
+"Tarjollaolevat kirjat sisältävät teokset \"Imitation of Christ\", \"Enuma "
+"Elish\", ja \"Josephus: The Complete Works\""
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:47
 msgid "Commentaries"
@@ -367,8 +413,11 @@ msgid ""
 "\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
 msgstr ""
-"Saatavillaolevat kommentaarit sisältävät klassikkoja kutenJohn Wesleyn \"Notes on the Bible\", Matthew Henryn kommentaarin ja Lutherin \"Commentary on Galatians."
-"\" <emphasis>Omalla</emphasis> kommentaarilla voit <link linkend=\"hdbk-op-parts-desk-write\"> tallettaa omat persoonalliset muistiinpanosi</link> Raamatun eri osioihin."
+"Saatavillaolevat kommentaarit sisältävät klassikkoja kutenJohn Wesleyn "
+"\"Notes on the Bible\", Matthew Henryn kommentaarin ja Lutherin \"Commentary "
+"on Galatians.\" <emphasis>Omalla</emphasis> kommentaarilla voit <link "
+"linkend=\"hdbk-op-parts-desk-write\"> tallettaa omat persoonalliset "
+"muistiinpanosi</link> Raamatun eri osioihin."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:58
 msgid "Daily devotionals"
@@ -406,7 +455,12 @@ msgid ""
 "relationship with Him. We have striven to make this a powerful, quality "
 "program, and still make it simple and intuitive to operate. It is our desire "
 "that God be praised, as He is the source of all good things."
-msgstr "Halumme on palvella Jumalaa ja teemme osamme auttaaksemme muita Jumalasuhteen kasvussa. Yritämme päästä siihen tehokkaalla, laadukkaalla ohjelmalla, ja vielä tehdä siitä yksinkertainen ja opastava käytössä. Meidän halumme on, että Jumalaa ylistettäisiin, sillä hän on kaikkien hyvien asioiden lähde."
+msgstr ""
+"Halumme on palvella Jumalaa ja teemme osamme auttaaksemme muita "
+"Jumalasuhteen kasvussa. Yritämme päästä siihen tehokkaalla, laadukkaalla "
+"ohjelmalla, ja vielä tehdä siitä yksinkertainen ja opastava käytössä. Meidän "
+"halumme on, että Jumalaa ylistettäisiin, sillä hän on kaikkien hyvien "
+"asioiden lähde."
 
 # type: Content of: <chapter><sect1><sect2><blockquote><attribution>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:87
@@ -419,7 +473,9 @@ msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
 "shadow."
-msgstr "Jokainen hyvä anti ja jokainen täydellinen lahja tulee ylhäältä, taivaan tähtien Isältä, jonka luona ei mikään muutu, ei valo vaihdu varjoksi."
+msgstr ""
+"Jokainen hyvä anti ja jokainen täydellinen lahja tulee ylhäältä, taivaan "
+"tähtien Isältä, jonka luona ei mikään muutu, ei valo vaihdu varjoksi."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:92
 msgid "God bless you as you use this program."
@@ -452,7 +508,14 @@ msgid ""
 "for example, then the Mag will display the actual content of the footnote. "
 "The toolbar gives you quick access to important functions, and the Desk on "
 "the right side is where you do your real work."
-msgstr "Voit nähdä helposti sovelluksen eri osat. Vasemmalla puolella olevaa kirjahyllyä käytetään avoimille teoksille ja kirjanmerkkien hallintaan. Pieni \"Suurennuslasi\" -ikkuna kirjahyllyn alla käytetään näyttämään teoksiin sisällytettyjä lisätietoja. Kun viet hiiren esimerkiksi alaviite-merkin ylle, suurennuslasi näyttää viitteen varsinaisen sisällön. Työkalupalkki antaa sinulle toiminnot nopeasti käytettäväksi. Työpäytä oikealla puolella on paikka, jossa teet varsinaisen työn."
+msgstr ""
+"Voit nähdä helposti sovelluksen eri osat. Vasemmalla puolella olevaa "
+"kirjahyllyä käytetään avoimille teoksille ja kirjanmerkkien hallintaan. "
+"Pieni \"Suurennuslasi\" -ikkuna kirjahyllyn alla käytetään näyttämään "
+"teoksiin sisällytettyjä lisätietoja. Kun viet hiiren esimerkiksi alaviite-"
+"merkin ylle, suurennuslasi näyttää viitteen varsinaisen sisällön. "
+"Työkalupalkki antaa sinulle toiminnot nopeasti käytettäväksi. Työpäytä "
+"oikealla puolella on paikka, jossa teet varsinaisen työn."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:24
 msgid ""
@@ -492,7 +555,9 @@ msgid ""
 "reading. A read window will appear in the Desk area."
 msgstr ""
 "Avataksesi teoksen kirjahyllystä lukemista varten, napsauta "
-"yksinkertaisesti<mousebutton>vasenta hiiren nappia</mousebutton> halutussa kategoriassa (Raamatut, kommentaarit, sanakirjat, kirjat, hartauskirjat tai sanastot) näyttääksesi sen sisällön. Sitten napsauta yksinkertaisesti yhtä "
+"yksinkertaisesti<mousebutton>vasenta hiiren nappia</mousebutton> halutussa "
+"kategoriassa (Raamatut, kommentaarit, sanakirjat, kirjat, hartauskirjat tai "
+"sanastot) näyttääksesi sen sisällön. Sitten napsauta yksinkertaisesti yhtä "
 "teosta avataksesi sen lukemista varten. Lukuikkuna ilmestyy työpöydälle."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:46
@@ -576,7 +641,9 @@ msgstr ""
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton>on folders and "
 "bookmarks to change their names and descriptions."
-msgstr "Voit napsauttaa hiiren <mousebutton>oikealla</mousebutton> painikkeella kansioiden päällä ja kirjanmerkit muuttavat niiden nimiä ja kuvauksia."
+msgstr ""
+"Voit napsauttaa hiiren <mousebutton>oikealla</mousebutton> painikkeella "
+"kansioiden päällä ja kirjanmerkit muuttavat niiden nimiä ja kuvauksia."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:122
 msgid "The Mag(nifying glass)"
@@ -644,7 +711,10 @@ msgid ""
 "install a certain work from the library of the <ulink url=\"http://www."
 "crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
 "\"Personal commentary\"."
-msgstr "Voidaksesi tallentaa omia komenttejasi Ramaatun osiin, sinun tulee asentaa tietty teos  <ulink url=\"http://www.crosswire.org\">Crosswire Bible Societyn</ulink> sivuilta. Tämä teos on nimeltään \"Personal commentary\"."
+msgstr ""
+"Voidaksesi tallentaa omia komenttejasi Ramaatun osiin, sinun tulee asentaa "
+"tietty teos  <ulink url=\"http://www.crosswire.org\">Crosswire Bible "
+"Societyn</ulink> sivuilta. Tämä teos on nimeltään \"Personal commentary\"."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:176
@@ -672,7 +742,8 @@ msgstr ""
 msgid ""
 "Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
-msgstr "Vedä ja pudota toimii tässä. Pudota jakeen viite ja jakeen teksti lisätään."
+msgstr ""
+"Vedä ja pudota toimii tässä. Pudota jakeen viite ja jakeen teksti lisätään."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:207
@@ -720,7 +791,9 @@ msgstr ""
 msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
-msgstr "Kolmas mahdollisuus aloittaa hakuja on napsauttaa hiirellä hakusymbolia avoimessa lukuikkunassa."
+msgstr ""
+"Kolmas mahdollisuus aloittaa hakuja on napsauttaa hiirellä hakusymbolia "
+"avoimessa lukuikkunassa."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:242
 msgid "Search configuration"
@@ -768,7 +841,10 @@ msgid ""
 "Enter search terms separated by spaces. By default the search function will "
 "return results that match any of the search terms (OR). To search for all "
 "the terms separate the terms by AND."
-msgstr "Lisää hakusanat sananvälein eroteltuna. Oletuksena hakutoiminto palauttaa tuloksen, joka täsmää mihin tahansa sanaan (TAI). Etsiäksesi kaikkia hakusanoja, erottele hakusanat AND."
+msgstr ""
+"Lisää hakusanat sananvälein eroteltuna. Oletuksena hakutoiminto palauttaa "
+"tuloksen, joka täsmää mihin tahansa sanaan (TAI). Etsiäksesi kaikkia "
+"hakusanoja, erottele hakusanat AND."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:274
@@ -776,7 +852,10 @@ msgid ""
 "You can use wildcards: '*' matches any sequence of characters, while '?' "
 "matches any single character. The use of brackets allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
-msgstr "Voit käyttää jokerimerkkejä: '*' täsmää mihin tahansa merkkijonoon kun taas  '?' täsmää mihin tahansa yksittäiseen merkkiin. Sulkumerkit mahdollistavat hakusanojen ryhmittelyn. Esim. '(Jeesus OR henki) AND Jumala'."
+msgstr ""
+"Voit käyttää jokerimerkkejä: '*' täsmää mihin tahansa merkkijonoon kun taas  "
+"'?' täsmää mihin tahansa yksittäiseen merkkiin. Sulkumerkit mahdollistavat "
+"hakusanojen ryhmittelyn. Esim. '(Jeesus OR henki) AND Jumala'."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:278
@@ -843,7 +922,11 @@ msgid ""
 "many advanced features, and you can read more about it here: <ulink url="
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
 "java/docs/index.html</ulink>"
-msgstr "BibleTime käyttää Lucene-hakukonetta hakuihisi. Siinä on monta edistyksellistä ominaisuutta ja voit lukea niistä lisää osoitteessa: <ulink url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/index.html</ulink>"
+msgstr ""
+"BibleTime käyttää Lucene-hakukonetta hakuihisi. Siinä on monta "
+"edistyksellistä ominaisuutta ja voit lukea niistä lisää osoitteessa: <ulink "
+"url=\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache."
+"org/java/docs/index.html</ulink>"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "Search results"
@@ -865,14 +948,18 @@ msgstr ""
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
-msgstr "Vedä viite ja pudota se teoksen symboliin kirjahyllyssä avataksesi teoksen lukuikkunaan sen jakeen kohdalta."
+msgstr ""
+"Vedä viite ja pudota se teoksen symboliin kirjahyllyssä avataksesi teoksen "
+"lukuikkunaan sen jakeen kohdalta."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:334
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
-msgstr "Vedä viite ja pudota se avoimeen lukuikkunaan ja lukukohta hyppää sen jakeen kohdalle."
+msgstr ""
+"Vedä viite ja pudota se avoimeen lukuikkunaan ja lukukohta hyppää sen jakeen "
+"kohdalle."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:338
@@ -890,7 +977,10 @@ msgid ""
 "display. This gives a simple graphic analysis of the number of instances the "
 "search string was found in each book of the Bible, and you can also save the "
 "analysis."
-msgstr "Napsauta <guibutton>Hakuanalyysi</guibutton>avataksesi hakuanalyysinäytön. Tämä antaa yksinkertaisen graafisen analyysin kuinka monta kertaa hakusana löytyi kustakin kustakin Raamatun kirjasta ja voit tallettaa analyysin."
+msgstr ""
+"Napsauta <guibutton>Hakuanalyysi</guibutton>avataksesi hakuanalyysinäytön. "
+"Tämä antaa yksinkertaisen graafisen analyysin kuinka monta kertaa hakusana "
+"löytyi kustakin kustakin Raamatun kirjasta ja voit tallettaa analyysin."
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:349
@@ -931,7 +1021,11 @@ msgid ""
 "harddisk, but use them directly from the CD, then you can add the path to "
 "the CD as one of your bookshelf paths. When you start &bibletime;, it will "
 "show all works on the CD if it is present."
-msgstr "Jos sinulla on Sword-CD, mutta et halua asentaa kaikkia teoksia kovalevyllesi vaan käyttää niitä suoraan CD:ltä, voit lisätä polun CD:lle yhtenä kirjahyllyn polkuna. Kun aloitat &bibletime;-ohjelman, se näyttää sinulle kaikki CD:llä olevat teokset, jos CD on asemassa."
+msgstr ""
+"Jos sinulla on Sword-CD, mutta et halua asentaa kaikkia teoksia "
+"kovalevyllesi vaan käyttää niitä suoraan CD:ltä, voit lisätä polun CD:lle "
+"yhtenä kirjahyllyn polkuna. Kun aloitat &bibletime;-ohjelman, se näyttää "
+"sinulle kaikki CD:llä olevat teokset, jos CD on asemassa."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid "Install/update work(s)"
@@ -972,7 +1066,10 @@ msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
 "<guibutton>Remove works</guibutton>."
-msgstr "Tämä valmius mahdollistaa yhden tai useamman teoksen poiston kirjahyllystä lisätäksesi vapaata levytilan määrää. Yksinkertaisesti merkitse teokset ja napsauta <guibutton>Poista teokset</guibutton>."
+msgstr ""
+"Tämä valmius mahdollistaa yhden tai useamman teoksen poiston kirjahyllystä "
+"lisätäksesi vapaata levytilan määrää. Yksinkertaisesti merkitse teokset ja "
+"napsauta <guibutton>Poista teokset</guibutton>."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:414
 msgid "Search Indexes"
@@ -983,7 +1080,9 @@ msgstr "Etsii indeksejä"
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
-msgstr "Tämä mahdollistaa uusien hakuindeksien luonnin ja poistettujen teosten orvoiksi tulleet indeksitiedostostojen siivoamisen."
+msgstr ""
+"Tämä mahdollistaa uusien hakuindeksien luonnin ja poistettujen teosten "
+"orvoiksi tulleet indeksitiedostostojen siivoamisen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:424
 msgid "Exporting and Printing"
@@ -1044,7 +1143,9 @@ msgstr ""
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
-msgstr "<action>Vaihtaa työkalupalkin näkymisen.</action> Vaihda tätä asetusta asettaaksesi päätyökalupalkin näkyviin tai piilotetuksi."
+msgstr ""
+"<action>Vaihtaa työkalupalkin näkymisen.</action> Vaihda tätä asetusta "
+"asettaaksesi päätyökalupalkin näkyviin tai piilotetuksi."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:80
@@ -1052,26 +1153,35 @@ msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
-msgstr "<action>Vaihtaa kirjahyllyn näkymisen.</action> Vaihda tätä asetusta asettaaksesi kirjahyllyn näkyviin tai piilotetuksi. Tämä on kätevää, jos haluat lisää tilaa suurennuslasille."
+msgstr ""
+"<action>Vaihtaa kirjahyllyn näkymisen.</action> Vaihda tätä asetusta "
+"asettaaksesi kirjahyllyn näkyviin tai piilotetuksi. Tämä on kätevää, jos "
+"haluat lisää tilaa suurennuslasille."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:105
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
-msgstr "<action>Vaihtaa suurennuslasin näkymisen.</action> Vaihda tätä asetusta asettaaksesi suurennuslasin vasemmassa paneelissa näkyväksi tai piilotetuksi."
+msgstr ""
+"<action>Vaihtaa suurennuslasin näkymisen.</action> Vaihda tätä asetusta "
+"asettaaksesi suurennuslasin vasemmassa paneelissa näkyväksi tai piilotetuksi."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:135
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog."
-msgstr "<action>Avaa hakuikkunan vain oletusraamatusta hakemiseen</action>. Lisää teoksia voidaan lisätä hakuikkunassa."
+msgstr ""
+"<action>Avaa hakuikkunan vain oletusraamatusta hakemiseen</action>. Lisää "
+"teoksia voidaan lisätä hakuikkunassa."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:158
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. More "
 "works can be added in the Search Dialog."
-msgstr "<action>Avaa hakuikkunan kaikista avoinnaolevista teoksista</action>. Lisää teoksia voidaan lisätä hakuikkunassa."
+msgstr ""
+"<action>Avaa hakuikkunan kaikista avoinnaolevista teoksista</action>. Lisää "
+"teoksia voidaan lisätä hakuikkunassa."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:184
 msgid ""
@@ -1081,19 +1191,25 @@ msgid ""
 "new session."
 msgstr ""
 "<action>Tallettaa suoraan nykyisen istunnon</action>. Tämä avaa "
-"kontekstivalikon, jossa voit valita olemassaolevan istunnon talletettavaksi. Se korvaataan nykyisellä istunnollasi. Katso seuraavasta, miten istunnon voi tallettaa uudeksi istunnoksi."
+"kontekstivalikon, jossa voit valita olemassaolevan istunnon talletettavaksi. "
+"Se korvaataan nykyisellä istunnollasi. Katso seuraavasta, miten istunnon voi "
+"tallettaa uudeksi istunnoksi."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:209
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
-msgstr "<action>Tallettaa nykyisen istunnon uudella nimellä</action>. Tämä kysyy uutta nimeä istunnon talletukselle."
+msgstr ""
+"<action>Tallettaa nykyisen istunnon uudella nimellä</action>. Tämä kysyy "
+"uutta nimeä istunnon talletukselle."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:228
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
-msgstr "<action>Lataa olemassaolevan istunnon</action>. Tämä avaa kontekstivalikon, josta voit valita olemassaolevan istunnon ladattavaksi."
+msgstr ""
+"<action>Lataa olemassaolevan istunnon</action>. Tämä avaa kontekstivalikon, "
+"josta voit valita olemassaolevan istunnon ladattavaksi."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:247
 msgid ""
@@ -1254,7 +1370,8 @@ msgid ""
 "toggle manual window placement."
 msgstr ""
 "<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Sijoittelutila</"
-"guimenuitem> <guimenuitem>Manuaalinen</guimenuitem> </menuchoice> aseta ikkunoita manuaalisesti."
+"guimenuitem> <guimenuitem>Manuaalinen</guimenuitem> </menuchoice> aseta "
+"ikkunoita manuaalisesti."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:526
@@ -1264,8 +1381,9 @@ msgid ""
 "menuchoice> </link>equivalent; saves current layout as new session."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
-"<guimenu>Ikkuna</guimenu> <guimenuitem>Tallenna uutena istuntona</guimenuitem> </"
-"menuchoice> </link> tallentaa nykyisen asetelman uudeksi istunnoksi."
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Tallenna uutena istuntona</"
+"guimenuitem> </menuchoice> </link> tallentaa nykyisen asetelman uudeksi "
+"istunnoksi."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:540
@@ -1275,8 +1393,8 @@ msgid ""
 "</link>equivalent; closes all open windows."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
-"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </menuchoice> "
-"</link> sulkee kaikki avoimet ikkunat."
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
+"menuchoice> </link> sulkee kaikki avoimet ikkunat."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:552
 msgid "Zoom out. This decreases the font size of read windows."
@@ -1318,8 +1436,8 @@ msgid ""
 "link>equivalent; closes &bibletime;."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
-"<guimenu>Tiedosto</guimenu> <guimenuitem>Lopeta</guimenuitem> </menuchoice> </"
-"link> sulkee &bibletime;-sovelluksen."
+"<guimenu>Tiedosto</guimenu> <guimenuitem>Lopeta</guimenuitem> </menuchoice> "
+"</link> sulkee &bibletime;-sovelluksen."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:619
 msgid "Closes the current window."
@@ -1373,10 +1491,11 @@ msgid ""
 "link>equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
-"<guimenu>Näytä</guimenu> <guimenuitem>Näytä suurennuslasi</guimenuitem> </menuchoice> </"
-"link> näyttää/piilottaa suurennuslasin."
+"<guimenu>Näytä</guimenu> <guimenuitem>Näytä suurennuslasi</guimenuitem> </"
+"menuchoice> </link> näyttää/piilottaa suurennuslasin."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
+#: docs/handbook/en/docbook/hdbk-start.docbook:6
 msgid "Starting &bibletime;"
 msgstr "&bibletime;n käynnistys"
 
@@ -1384,24 +1503,21 @@ msgstr "&bibletime;n käynnistys"
 msgid "How to start &bibletime;"
 msgstr "Kuinka &bibletime; käynnistetään"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
-msgid "Starting &bibletime; from KDE"
-msgstr "&bibletime;n käynnistys KDE:stä"
-
 #: docs/handbook/en/docbook/hdbk-start.docbook:7
+#, fuzzy
 msgid ""
-"&bibletime; is a &kde; program and is integrated with the desktop. You can "
-"launch &bibletime; from the Start Menu in the Applications group with this "
-"icon:"
+"&bibletime; is an executable file that is integrated with the desktop. You "
+"can launch &bibletime; from the Start Menu with this icon:"
 msgstr ""
-"&bibletime; on &kde;-ohjelma ja se on integroitu työpöydän kanssa. "
-"Voit käynnistää  &bibletime;n &kde; käynnistysalikosta tämän kuvakkeen sovellusryhmässä:"
+"&bibletime; on &kde;-ohjelma ja se on integroitu työpöydän kanssa. Voit "
+"käynnistää  &bibletime;n &kde; käynnistysalikosta tämän kuvakkeen "
+"sovellusryhmässä:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:16
+#: docs/handbook/en/docbook/hdbk-start.docbook:15
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "<phrase>&bibletime; käynnistyskuvake</phrase>"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:19
+#: docs/handbook/en/docbook/hdbk-start.docbook:18
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
@@ -1409,47 +1525,42 @@ msgstr ""
 "&bibletime;-ohjelman voi käynnistää terminaali-ikkunan komentoriviltä. "
 "Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna ja kirjoita:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:22
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 #, no-wrap
 msgid "bibletime"
 msgstr "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
 msgid "Other window managers"
 msgstr "Muut ikkunamanagerit"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:26
+#: docs/handbook/en/docbook/hdbk-start.docbook:25
+#, fuzzy
 msgid ""
 "&bibletime; can be used with other window managers such as Gnome, BlackBox, "
 "Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are "
-"already installed on your computer. If your &kde; is installed in /opt/kde, "
-"then the start-up command in a terminal would be:"
+"already installed on your computer."
 msgstr ""
 "Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten "
-"Gnomella, BlackBoxilla, Fluxboxilla, OpenBoxilla tai Sawfishillä edellyttäen, että sopivat kirjastot on jo asennettu koneelle. Jos &kde; on asennettu kansioon /opt/kde, käynnistyskomento terminaali-ikkunassa on:"
+"Gnomella, BlackBoxilla, Fluxboxilla, OpenBoxilla tai Sawfishillä "
+"edellyttäen, että sopivat kirjastot on jo asennettu koneelle. Jos &kde; on "
+"asennettu kansioon /opt/kde, käynnistyskomento terminaali-ikkunassa on:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
-#, no-wrap
-msgid ""
-"export KDEDIR=/opt/kde #your KDE directory\n"
-"      bibletime"
-msgstr ""
-"export KDEDIR=/opt/kde  #Sinun KDE-kansiosi\n"
-"      bibletime"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:36
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
 msgid "Startup customization"
 msgstr "Käynnistyksen säätäminen"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
-msgstr "Voit avata (oletus)Raamatun satunnaisen jakeen kohdalta konsolissa  &bibletime;n komennolla:"
+msgstr ""
+"Voit avata (oletus)Raamatun satunnaisen jakeen kohdalta konsolissa  "
+"&bibletime;n komennolla:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:39
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 #, no-wrap
 msgid ""
 "bibletime --open-default-bible\n"
@@ -1459,26 +1570,26 @@ msgstr ""
 "      \"&lt;random&gt;\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:40
+#: docs/handbook/en/docbook/hdbk-start.docbook:35
 msgid "To open at a given passage like John 3:16, use:"
 msgstr "Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr "bibletime --open-default-bible \"Joh 3:16\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid "You can also use booknames in your current bookname language."
 msgstr "Voit käyttää kirjanniminä tämänhetkistä kielivalintaa."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:47
+#: docs/handbook/en/docbook/hdbk-start.docbook:42
 msgid "Startup sequence"
 msgstr "Käynnistyssarja"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:48
+#: docs/handbook/en/docbook/hdbk-start.docbook:43
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1487,7 +1598,7 @@ msgstr ""
 "pääikkuna avautuu:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:57
+#: docs/handbook/en/docbook/hdbk-start.docbook:52
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -1497,16 +1608,24 @@ msgid ""
 "Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
 "features quickly."
 msgstr ""
-"<action>Muokkaa kirjahyllyäsi.</action> Tällä ikkunalla voit muokata kirjahyllyäsi, lisätä tai poistaa teoksia järjestelmässäsi. Se näytetään vain, jos oletuskirjahyllyä ei löydy. Katso <link linkend=\"hdbk-op-"
-"bookshelfmanager\"> tämä osio</link> saadaksesi yksityiskohtiaisia lisätietoja. On kannattavaa aloittaa ohjelman käyttö asentamalla ainakin yksi Raamattu, kommentaari, sanasto ja yksi kirja saadakseen selville &bibletime;n perusominaisuudet nopeasti."
+"<action>Muokkaa kirjahyllyäsi.</action> Tällä ikkunalla voit muokata "
+"kirjahyllyäsi, lisätä tai poistaa teoksia järjestelmässäsi. Se näytetään "
+"vain, jos oletuskirjahyllyä ei löydy. Katso <link linkend=\"hdbk-op-"
+"bookshelfmanager\"> tämä osio</link> saadaksesi yksityiskohtiaisia "
+"lisätietoja. On kannattavaa aloittaa ohjelman käyttö asentamalla ainakin "
+"yksi Raamattu, kommentaari, sanasto ja yksi kirja saadakseen selville "
+"&bibletime;n perusominaisuudet nopeasti."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:74
+#: docs/handbook/en/docbook/hdbk-start.docbook:69
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
-msgstr "<action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä &bibletime;:stä sellaisen kuin haluat. Katso linkistä <link linkend=\"hdbk-config-bt\">yksityiskohtainen kuvaus</link> lisää tietoa tästä ikkunasta."
+msgstr ""
+"<action>Räätälöi &bibletime;n.</action>Tässä ikkunassa voit tehdä "
+"&bibletime;:stä sellaisen kuin haluat. Katso linkistä <link linkend=\"hdbk-"
+"config-bt\">yksityiskohtainen kuvaus</link> lisää tietoa tästä ikkunasta."
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
@@ -1557,10 +1676,25 @@ msgstr "elokuu 2005"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "1.7"
-msgstr "1.7"
+msgid "2.0"
+msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:52
 msgid "&bibletime; is a Bible study tool based on the Sword framwork."
-msgstr "&bibletime; on tehokas Raamatun tutkimisen työkalu, joka perustuu Sword-kehykseen."
+msgstr ""
+"&bibletime; on tehokas Raamatun tutkimisen työkalu, joka perustuu Sword-"
+"kehykseen."
 
+#~ msgid "Starting &bibletime; from KDE"
+#~ msgstr "&bibletime;n käynnistys KDE:stä"
+
+#~ msgid ""
+#~ "export KDEDIR=/opt/kde #your KDE directory\n"
+#~ "      bibletime"
+#~ msgstr ""
+#~ "export KDEDIR=/opt/kde  #Sinun KDE-kansiosi\n"
+#~ "      bibletime"
+
+# type: Content of: <book><bookinfo><releaseinfo>
+#~ msgid "1.7"
+#~ msgstr "1.7"
