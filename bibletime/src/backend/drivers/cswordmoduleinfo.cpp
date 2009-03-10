@@ -20,6 +20,7 @@
 
 #include "util/directoryutil.h"
 #include "util/cpointers.h"
+#include "util/exceptions.h"
 #include "backend/config/cbtconfig.h"
 
 
@@ -33,6 +34,8 @@
 #include <QByteArray>
 #include <QDebug>
 #include <QSettings>
+#include <QMessageBox>
+#include <QCoreApplication>
 
 //Sword includes
 #include <swbuf.h>
@@ -217,183 +220,192 @@ bool CSwordModuleInfo::hasIndex() {
 
 
 void CSwordModuleInfo::buildIndex() {
-	wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
-
-	//we don't want the linked entries indexed again
-	module()->setSkipConsecutiveLinks(true);
 
 	m_cancelIndexing = false;
 
-	//Without this we don't get strongs, lemmas, etc
-	backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
-	//make sure we reset all important filter options which influcence the plain filters.
-	backend()->setOption( CSwordModuleInfo::strongNumbers,  false );
-	backend()->setOption( CSwordModuleInfo::morphTags,  false );
-	backend()->setOption( CSwordModuleInfo::morphSegmentation,  false );
-	backend()->setOption( CSwordModuleInfo::footnotes,  false );
-	backend()->setOption( CSwordModuleInfo::headings,  false );
-	backend()->setOption( CSwordModuleInfo::scriptureReferences,  false );
-	backend()->setOption( CSwordModuleInfo::redLetterWords,  false );
+	try
+	{
+		//Without this we don't get strongs, lemmas, etc
+		backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
+		//make sure we reset all important filter options which influcence the plain filters.
+		backend()->setOption( CSwordModuleInfo::strongNumbers,  false );
+		backend()->setOption( CSwordModuleInfo::morphTags,  false );
+		backend()->setOption( CSwordModuleInfo::morphSegmentation,  false );
+		backend()->setOption( CSwordModuleInfo::footnotes,  false );
+		backend()->setOption( CSwordModuleInfo::headings,  false );
+		backend()->setOption( CSwordModuleInfo::scriptureReferences,  false );
+		backend()->setOption( CSwordModuleInfo::redLetterWords,  false );
 
-	// do not use any stop words
-	const TCHAR* stop_words[]  = { NULL };
-	lucene::analysis::standard::StandardAnalyzer an( (const TCHAR**)stop_words );
-	QString index = getModuleStandardIndexLocation();
+		// do not use any stop words
+		const TCHAR* stop_words[]  = { NULL };
+		lucene::analysis::standard::StandardAnalyzer an( (const TCHAR**)stop_words );
+		QString index = getModuleStandardIndexLocation();
 
-	QDir dir("/");
-	dir.mkpath( getGlobalBaseIndexLocation() );
-	dir.mkpath( getModuleBaseIndexLocation() );
-	dir.mkpath( getModuleStandardIndexLocation() );
+		QDir dir("/");
+		dir.mkpath( getGlobalBaseIndexLocation() );
+		dir.mkpath( getModuleBaseIndexLocation() );
+		dir.mkpath( getModuleStandardIndexLocation() );
 
-	if (lucene::index::IndexReader::indexExists(index.toAscii().constData())) {
-		if (lucene::index::IndexReader::isLocked(index.toAscii().constData()) ) {
-			lucene::index::IndexReader::unlock(index.toAscii().constData());
-		}
-	}
-
-	boost::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
-	writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
-	writer->setUseCompoundFile(true); //merge segments into a single file
-	writer->setMinMergeDocs(1000);
-
-	*m_module = sword::TOP;
-	unsigned long verseLowIndex = m_module->Index();
-	*m_module = sword::BOTTOM;
-	unsigned long verseHighIndex = m_module->Index();
-
-	//verseLowIndex is not 0 in all cases (i.e. NT-only modules)
-	unsigned long verseIndex = verseLowIndex + 1;
-	unsigned long verseSpan = verseHighIndex - verseLowIndex;
-
-	//Index() is not implemented properly for lexicons, so we use a
-	//workaround.
-	if (type() == CSwordModuleInfo::Lexicon){
-		verseIndex = 0;
-		verseLowIndex = 0;
-		verseSpan = ((CSwordLexiconModuleInfo*)this)->entries()->size();
-	}
-
-	emit indexingProgress(0);
-
-	sword::SWKey* key = m_module->getKey();
-	//VerseKey for bibles
-	sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key);
-
-	if (vk) {
-		// we have to be sure to insert the english key into the index, otherwise we'd be in trouble if the language changes
-		vk->setLocale("en_US");
-		//If we have a verse based module, we want to include the pre-chapter etc. headings in the search
-		vk->Headings(1);
-	}
-
-	//holds UTF-8 data and is faster than QString.
-	QByteArray textBuffer;
-
-	// we start with the first module entry, key is automatically updated
-	// because key is a pointer to the modules key
-	m_module->setSkipConsecutiveLinks(true);
-	for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
-
-		//If it is a sword-heading, store in buffer and index later in Verse X:1
-		if (vk) {
-			if (vk->Verse() == 0) {
-				textBuffer.append( m_module->StripText() );
-				continue;
+		if (lucene::index::IndexReader::indexExists(index.toAscii().constData())) {
+			if (lucene::index::IndexReader::isLocked(index.toAscii().constData()) ) {
+				lucene::index::IndexReader::unlock(index.toAscii().constData());
 			}
 		}
 
-		boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
+		boost::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
+		writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
+		writer->setUseCompoundFile(true); //merge segments into a single file
+		writer->setMinMergeDocs(1000);
 
-		//index the key
-		lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
-		//doc->add(*lucene::document::Field::UnIndexed((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer));
-		doc->add(*(new lucene::document::Field((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_YES | lucene::document::Field::INDEX_NO)));
-		// index the main text
-		//at this point we have to make sure we disabled the strongs and the other options
-		//so the plain filters won't include the numbers somehow.
-		lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->StripText()), BT_MAX_LUCENE_FIELD_LENGTH);
-		//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer));
-		doc->add(*(new lucene::document::Field((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
-		textBuffer.resize(0); //clean up
+		*m_module = sword::TOP;
+		unsigned long verseLowIndex = m_module->Index();
+		*m_module = sword::BOTTOM;
+		unsigned long verseHighIndex = m_module->Index();
 
-		// index attributes
-		sword::AttributeList::iterator attListI;
-		sword::AttributeValue::iterator attValueI;
-		// Footnotes
-		for (attListI = m_module->getEntryAttributes()["Footnote"].begin();
-				attListI != m_module->getEntryAttributes()["Footnote"].end();
-				attListI++) {
-			lucene_utf8towcs(wcharBuffer, attListI->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
-			//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("footnote"), wcharBuffer));
-			doc->add(*(new lucene::document::Field((const TCHAR*)_T("footnote"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
-		} // for attListI
+		//verseLowIndex is not 0 in all cases (i.e. NT-only modules)
+		unsigned long verseIndex = verseLowIndex + 1;
+		unsigned long verseSpan = verseHighIndex - verseLowIndex;
 
-		// Headings
-		for (attValueI = m_module->getEntryAttributes()["Heading"]["Preverse"].begin();
-				attValueI != m_module->getEntryAttributes()["Heading"]["Preverse"].end();
-				attValueI++) {
-			lucene_utf8towcs(wcharBuffer, attValueI->second, BT_MAX_LUCENE_FIELD_LENGTH);
-			//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("heading"), wcharBuffer));
-			doc->add(*(new lucene::document::Field((const TCHAR*)_T("heading"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
-		} // for attValueI
-
-		// Strongs/Morphs
-		for (attListI = m_module->getEntryAttributes()["Word"].begin();
-				attListI != m_module->getEntryAttributes()["Word"].end();
-				attListI++) {
-			// for each attribute
-			if (attListI->second["LemmaClass"] == "strong") {
-				lucene_utf8towcs(wcharBuffer, attListI->second["Lemma"], BT_MAX_LUCENE_FIELD_LENGTH);
-				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("strong"), wcharBuffer));
-				doc->add(*(new lucene::document::Field((const TCHAR*)_T("strong"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
-				//qWarning("Adding strong %s", attListI->second["Lemma"].c_str());
-			}
-			if (attListI->second.find("Morph") != attListI->second.end()) {
-				lucene_utf8towcs(wcharBuffer, attListI->second["Morph"], BT_MAX_LUCENE_FIELD_LENGTH);
-				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("morph"), wcharBuffer));
-				doc->add(*(new lucene::document::Field((const TCHAR*)_T("morph"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
-			}
-		} // for attListI
-
-		writer->addDocument(doc.get());
 		//Index() is not implemented properly for lexicons, so we use a
 		//workaround.
 		if (type() == CSwordModuleInfo::Lexicon){
-			verseIndex++;
-		}
-		else{
-			verseIndex = m_module->Index();
+			verseIndex = 0;
+			verseLowIndex = 0;
+			verseSpan = ((CSwordLexiconModuleInfo*)this)->entries()->size();
 		}
 
-		if (verseIndex % 200 == 0) {
-			int indexingProgressValue;
-			if (verseSpan == 0) { //prevent division by zero
-				//m_indexingProgress.setValue( QVariant(0) );
-				indexingProgressValue = 0;
-			} else {
-				//m_indexingProgress.setValue( QVariant((int)((100*(verseIndex-verseLowIndex))/(verseHighIndex-verseLowIndex))) );
-				indexingProgressValue = (int)((100*(verseIndex-verseLowIndex)) / (verseSpan));
+		emit indexingProgress(0);
+
+		sword::SWKey* key = m_module->getKey();
+		//VerseKey for bibles
+		sword::VerseKey* vk = dynamic_cast<sword::VerseKey*>(key);
+
+		if (vk) {
+			// we have to be sure to insert the english key into the index, otherwise we'd be in trouble if the language changes
+			vk->setLocale("en_US");
+			//If we have a verse based module, we want to include the pre-chapter etc. headings in the search
+			vk->Headings(1);
+		}
+
+		//holds UTF-8 data and is faster than QString.
+		QByteArray textBuffer;
+
+		// we start with the first module entry, key is automatically updated
+		// because key is a pointer to the modules key
+		m_module->setSkipConsecutiveLinks(true);
+
+		wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
+
+		for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
+
+			//If it is a sword-heading, store in buffer and index later in Verse X:1
+			if (vk) {
+				if (vk->Verse() == 0) {
+					textBuffer.append( m_module->StripText() );
+					continue;
+				}
 			}
-			//m_indexingProgress.activate();
-			emit indexingProgress(indexingProgressValue);
+
+			boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
+
+			//index the key
+			lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
+			//doc->add(*lucene::document::Field::UnIndexed((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer));
+			doc->add(*(new lucene::document::Field((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_YES | lucene::document::Field::INDEX_NO)));
+			// index the main text
+			//at this point we have to make sure we disabled the strongs and the other options
+			//so the plain filters won't include the numbers somehow.
+			lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->StripText()), BT_MAX_LUCENE_FIELD_LENGTH);
+			//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer));
+			doc->add(*(new lucene::document::Field((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+			textBuffer.resize(0); //clean up
+
+			// index attributes
+			sword::AttributeList::iterator attListI;
+			sword::AttributeValue::iterator attValueI;
+			// Footnotes
+			for (attListI = m_module->getEntryAttributes()["Footnote"].begin();
+					attListI != m_module->getEntryAttributes()["Footnote"].end();
+					attListI++) {
+				lucene_utf8towcs(wcharBuffer, attListI->second["body"], BT_MAX_LUCENE_FIELD_LENGTH);
+				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("footnote"), wcharBuffer));
+				doc->add(*(new lucene::document::Field((const TCHAR*)_T("footnote"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+			} // for attListI
+
+			// Headings
+			for (attValueI = m_module->getEntryAttributes()["Heading"]["Preverse"].begin();
+					attValueI != m_module->getEntryAttributes()["Heading"]["Preverse"].end();
+					attValueI++) {
+				lucene_utf8towcs(wcharBuffer, attValueI->second, BT_MAX_LUCENE_FIELD_LENGTH);
+				//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("heading"), wcharBuffer));
+				doc->add(*(new lucene::document::Field((const TCHAR*)_T("heading"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+			} // for attValueI
+
+			// Strongs/Morphs
+			for (attListI = m_module->getEntryAttributes()["Word"].begin();
+					attListI != m_module->getEntryAttributes()["Word"].end();
+					attListI++) {
+				// for each attribute
+				if (attListI->second["LemmaClass"] == "strong") {
+					lucene_utf8towcs(wcharBuffer, attListI->second["Lemma"], BT_MAX_LUCENE_FIELD_LENGTH);
+					//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("strong"), wcharBuffer));
+					doc->add(*(new lucene::document::Field((const TCHAR*)_T("strong"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+					//qWarning("Adding strong %s", attListI->second["Lemma"].c_str());
+				}
+				if (attListI->second.find("Morph") != attListI->second.end()) {
+					lucene_utf8towcs(wcharBuffer, attListI->second["Morph"], BT_MAX_LUCENE_FIELD_LENGTH);
+					//doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("morph"), wcharBuffer));
+					doc->add(*(new lucene::document::Field((const TCHAR*)_T("morph"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
+				}
+			} // for attListI
+
+			writer->addDocument(doc.get());
+			//Index() is not implemented properly for lexicons, so we use a
+			//workaround.
+			if (type() == CSwordModuleInfo::Lexicon){
+				verseIndex++;
+			}
+			else{
+				verseIndex = m_module->Index();
+			}
+
+			if (verseIndex % 200 == 0) {
+				int indexingProgressValue;
+				if (verseSpan == 0) { //prevent division by zero
+					//m_indexingProgress.setValue( QVariant(0) );
+					indexingProgressValue = 0;
+				} else {
+					//m_indexingProgress.setValue( QVariant((int)((100*(verseIndex-verseLowIndex))/(verseHighIndex-verseLowIndex))) );
+					indexingProgressValue = (int)((100*(verseIndex-verseLowIndex)) / (verseSpan));
+				}
+				//m_indexingProgress.activate();
+				emit indexingProgress(indexingProgressValue);
+			}
+		}
+
+		if (!m_cancelIndexing)
+		{
+			writer->optimize();
+		}
+		writer->close();
+
+		if (m_cancelIndexing){
+			deleteIndexForModule(name());
+			m_cancelIndexing = false;
+		}
+		else
+		{
+			QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
+			if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
+			module_config.setValue("index-version", INDEX_VERSION );
 		}
 	}
-
-	if (!m_cancelIndexing)
+	catch(...)
 	{
-		writer->optimize();
-	}
-	writer->close();
-
-	if (m_cancelIndexing){
+		qWarning("CLucene exception occurred while indexing");
+		QMessageBox::warning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
 		deleteIndexForModule(name());
 		m_cancelIndexing = false;
-	}
-	else
-	{
-		QSettings module_config(getModuleBaseIndexLocation() + QString("/bibletime-index.conf"), QSettings::IniFormat);
-		if (hasVersion()) module_config.setValue("module-version", config(CSwordModuleInfo::ModuleVersion) );
-		module_config.setValue("index-version", INDEX_VERSION );
 	}
 }
 
@@ -459,7 +471,8 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
 		}
 	}
 	catch (...) {
-		qWarning("CLucene exception");
+		qWarning("CLucene exception occurred");
+		QMessageBox::warning(0, QCoreApplication::tr("Search aborted"), QCoreApplication::tr("An internal error occurred while executing your search."));
 		return false;
 	}
 
