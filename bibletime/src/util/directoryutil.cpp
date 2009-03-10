@@ -104,6 +104,7 @@ void DirectoryUtil::copyRecursive(QString src, QString dest){
 
 static QDir cachedIconDir;
 static QDir cachedJavascriptDir;
+static QDir cachedLicenseDir;
 static QDir cachedPicsDir;
 static QDir cachedLocaleDir;
 static QDir cachedHandbookDir;
@@ -139,7 +140,14 @@ void DirectoryUtil::initDirectoryCache(void)
 	cachedJavascriptDir = wDir; 
 	if (!cachedJavascriptDir.cd("share/bibletime/javascript") || !cachedJavascriptDir.isReadable())
 	{
-		qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
+		qWarning() << "Cannot find javascript directory relative to" << QCoreApplication::applicationDirPath();
+		throw;
+	}
+
+	cachedLicenseDir = wDir; 
+	if (!cachedLicenseDir.cd("share/bibletime/license") || !cachedLicenseDir.isReadable())
+	{
+		qWarning() << "Cannot find license directory relative to" << QCoreApplication::applicationDirPath();
 		throw;
 	}
 
@@ -243,6 +251,12 @@ QDir DirectoryUtil::getJavascriptDir(void)
 { 
 	if (!dirCacheInitialized) initDirectoryCache();
 	return cachedJavascriptDir; 
+}
+
+QDir DirectoryUtil::getLicenseDir(void)
+{ 
+	if (!dirCacheInitialized) initDirectoryCache();
+	return cachedLicenseDir; 
 }
 
 QIcon DirectoryUtil::getIcon(const QString& name)

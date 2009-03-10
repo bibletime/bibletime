@@ -60,6 +60,9 @@ public:
 	/** Return the path to the javascript. */
 	static QDir getJavascriptDir(void);
 	
+	/** Return the path to the license. */
+	static QDir getLicenseDir(void);
+	
 	/** Returns an icon with the given name */
 	static QIcon getIcon(const QString& name);
 	

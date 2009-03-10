@@ -340,16 +340,14 @@ void BibleTime::initActions()
 // 		SLOT(reportBug()))
 // 	);
 // 	
-// 	helpMenu->addSeparator();
-// 
-// 	helpMenu->addAction(initAction(
-// 		new QAction(this),
-// 		tr("&About BibleTime"),
-// 		"",
-// 		QKeySequence(),
-// 		"",
-// 		SLOT(aboutApplication()))
-// 	);
+	helpMenu->addAction( initAction(
+		new QAction(this),
+		tr("&About BibleTime"),
+		"",
+		QKeySequence(),
+		"",
+		SLOT(slotOpenAboutDialog()))
+ 	);
 }
 
 /** Initializes the SIGNAL / SLOT connections */

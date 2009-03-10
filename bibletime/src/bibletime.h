@@ -315,7 +315,10 @@ protected slots:
 	* Called before quit.
 	*/
 	void slot_aboutToQuit();
-
+	/**
+	* Open the About Dialog
+	*/
+	void slotOpenAboutDialog();
 
 private:
 	QToolBar* m_mainToolBar;

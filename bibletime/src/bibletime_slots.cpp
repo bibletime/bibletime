@@ -29,6 +29,7 @@
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/htmldialogs/btaboutdialog.h"
 
 //QT includes
 #include <QClipboard>
@@ -373,6 +374,12 @@ void BibleTime::openOnlineHelp_Howto() {
 	args << util::filesystem::DirectoryUtil::getHowtoDir().canonicalPath() +"/index.html";
 	if (QProcess::startDetached("konqueror", args)) return;
 	if (QProcess::startDetached("firefox", args)) return;
+}
+
+void BibleTime::slotOpenAboutDialog()
+{
+	BtAboutDialog* dlg = new BtAboutDialog(this);
+	dlg->show();
 }
 
 /** Saves the current settings into the currently activated profile. */

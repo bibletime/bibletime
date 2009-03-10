@@ -158,6 +158,11 @@ FILE(GLOB INSTALL_ICONS_LIST "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/*.svg")
 INSTALL(FILES ${INSTALL_ICONS_LIST}
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
 )
+# icons - png, needed for About Dialog
+FILE(GLOB INSTALL_ICONS_LIST_PNG "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/bibletime.png")
+INSTALL(FILES ${INSTALL_ICONS_LIST_PNG}
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/icons/"
+)
 # display templates
 FILE(GLOB INSTALL_DISPLAY_TEMPLATES_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/display-templates/*.tmpl)
 INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
@@ -166,6 +171,10 @@ INSTALL(FILES ${INSTALL_DISPLAY_TEMPLATES_LIST}
 # javascript
 INSTALL(FILES "src/frontend/display/bthtml.js"
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/javascript/"
+)
+# license.html
+INSTALL(FILES "license.html"
+	DESTINATION "${BT_SHARE_PATH}share/bibletime/license/"
 )
 # splash screen
 INSTALL(FILES "pics/startuplogo.png"

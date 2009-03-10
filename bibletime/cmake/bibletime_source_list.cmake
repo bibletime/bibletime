@@ -169,6 +169,10 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/cbookreadwindow.cpp
 	src/frontend/displaywindow/cdisplaywindowfactory.cpp
 	
+	# web based tab dialogs
+	src/frontend/htmldialogs/btaboutdialog.cpp
+	src/frontend/htmldialogs/bttabhtmldialog.cpp
+
 	#toplevel files
 	src/bibletime_init.cpp
 	src/bibletime_slots.cpp
