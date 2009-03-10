@@ -173,7 +173,7 @@ INSTALL(FILES "src/frontend/display/bthtml.js"
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/javascript/"
 )
 # license.html
-INSTALL(FILES "license.html"
+INSTALL(FILES "docs/license.html"
 	DESTINATION "${BT_SHARE_PATH}share/bibletime/license/"
 )
 # splash screen
