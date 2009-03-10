@@ -76,7 +76,7 @@ void BtAboutDialog::init_qt_tab()
 	content += make_link("http://qtsoftware.com/company/model/","qtsoftware.com/company/model");
 	content += tr(" for an overview of Qt licensing.");
 	content += make_br() + make_br();
-	content += "Qt is a C++ toolkit for cross-platform application development.";
+	content += tr("Qt is a C++ toolkit for cross-platform application development.");
 	QString qt = make_html(make_head("") + make_body(content));
 	setHtml(qt);
 }
