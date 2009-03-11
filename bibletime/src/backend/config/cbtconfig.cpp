@@ -46,6 +46,7 @@ QString CBTConfig::getKey( const CBTConfig::strings ID) {
 		case displayStyle:			return "displayStyle";
 		case bookshelfCurrentItem:	return "bookshelfCurrentItem";
 	}
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -70,7 +71,7 @@ QString CBTConfig::getKey( const CBTConfig::modules ID) {
 		case standardHebrewMorphLexicon:	return "standardHebrewMorphLexicon";
 		case standardGreekMorphLexicon:		return "standardGreekMorphLexicon";
 	}
-
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -114,6 +115,7 @@ QString CBTConfig::getKey( const CBTConfig::bools ID) {
 
 		case bookshelfShowHidden:		return "bookshelfShowHidden";
 	}
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -142,6 +144,7 @@ QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case searchType:			return "searchType";
 		case installPathIndex:		return "installPathIndex";
 	}
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -205,7 +208,7 @@ QString CBTConfig::getKey( const CBTConfig::intLists ID) {
 		case searchMainSplitterSizes:	return "searchMainSplitterSizes";
 		case searchResultSplitterSizes:	return "searchResultSplitterSizes";
 	}
-
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -227,6 +230,7 @@ QString CBTConfig::getKey( const CBTConfig::stringLists ID) {
 		case bookshelfOpenGroups:	return QString("bookshelfOpenGroups");
 		case hiddenModules:			return QString("hiddenModules");
 	}
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -250,6 +254,7 @@ QString CBTConfig::getKey( const CBTConfig::stringMaps ID) {
 		case searchScopes:
 		return QString("SearchScopes");
 	};
+	Q_ASSERT(false);
 	return QString::null;
 }
 
@@ -291,6 +296,7 @@ CBTConfig::StringMap CBTConfig::getDefault( const CBTConfig::stringMaps ID) {
 
 
 QString CBTConfig::getKey( const CLanguageMgr::Language* const language ) {
+	Q_ASSERT(!language->name().isEmpty());
 	return language->name();
 }
 
@@ -377,6 +383,7 @@ CBTConfig::StringMap CBTConfig::get( const CBTConfig::stringMaps ID )
 			case searchScopes: { //make sure we return the scopes in the chosen language. saved keys are in english
 				sword::VerseKey vk;
 				foreach (QString key, keys) {
+					Q_ASSERT(!key.isEmpty());
 					sword::ListKey list = vk.ParseVerseList(getConfig()->value(key).toString().toUtf8(), "Genesis 1:1", true);
 					QString data;
 					for (int i = 0; i < list.Count(); ++i) {
@@ -661,6 +668,7 @@ CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 
 QString CBTConfig::getModuleEncryptionKey( const QString& module )
 {
+	Q_ASSERT(!module.isEmpty());
 	QString result;
 	getConfig()->beginGroup("Module keys");
 	result = getConfig()->value(module, QVariant(QString::null)).toString();
