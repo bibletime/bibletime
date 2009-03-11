@@ -199,10 +199,12 @@ void CLanguageSettingsPage::save()
 	for(QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) 
 	{
 		const CLanguageMgr::Language* const lang = languageMgr()->languageForTranslatedName(it.key());
-		if (!lang->isValid()) 
-		{ 	//we probably use a language, for which we have only the abbrev
-			CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
-			CBTConfig::set(&l, it.value());
+		if (!lang->isValid())
+		{ 	//we possibly use a language, for which we have only the abbrev
+			if (!lang->abbrev().isEmpty()) {
+				CLanguageMgr::Language l(it.key(), it.key(), it.key()); //create a temp language
+				CBTConfig::set(&l, it.value());
+			}
 		}
 		else 
 		{
