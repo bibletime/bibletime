@@ -11,6 +11,8 @@
 #include "btaboutdialog.h"
 #include "util/directoryutil.h"
 
+#include "sword/swversion.h"
+
 // Forwards
 static QString make_body(const QString& content);
 static QString make_bold(const QString& content);
@@ -26,10 +28,11 @@ static QString make_version();
 // Implements the Help > About dialog box
 
 BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags )
-	: BtTabHtmlDialog("About BibleTime", 3, parent, wflags)
+	: BtTabHtmlDialog("About BibleTime", 4, parent, wflags)
 {
 	resize(550,340);
 	init_lic_tab();
+	init_sword_tab();
 	init_qt_tab();
 	init_bt_tab();
 }
@@ -59,9 +62,28 @@ void BtAboutDialog::init_bt_tab()
 	setHtml(bibletime);
 }
 
-void BtAboutDialog::init_qt_tab()
+void BtAboutDialog::init_sword_tab()
 {
 	selectTab(1);
+	setTabText("Sword" );
+
+	QString version( sword::SWVersion::currentVersion.getText());
+	QString content = make_br() + make_br();
+	content += make_center(make_bold("Sword Version " + version));
+	content += make_br();
+
+	content += "BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society's free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.";
+	content += make_br() + make_br();
+	content += "The SWORD Project" + make_br();
+	content += make_link("http://www.crosswire.org/sword/index.jsp","www.crosswire.org/sword/index.jsp");
+
+	setHtml(content);
+
+}
+
+void BtAboutDialog::init_qt_tab()
+{
+	selectTab(2);
 	setTabText("Qt");
 	QString content;
 	content += make_br() + make_br();
@@ -71,23 +93,40 @@ void BtAboutDialog::init_qt_tab()
 	content += qVersion();
 	content += make_br() + make_br();
 	content += tr("Qt Open Source Edition is intended for the development of Open Source applications.");
+	content += tr("Qt is a C++ toolkit for cross-platform application development.");
 	content += make_br() + make_br();
 	content += tr("Please see ");
 	content += make_link("http://qtsoftware.com/company/model/","qtsoftware.com/company/model");
 	content += tr(" for an overview of Qt licensing.");
-	content += make_br() + make_br();
-	content += tr("Qt is a C++ toolkit for cross-platform application development.");
 	QString qt = make_html(make_head("") + make_body(content));
 	setHtml(qt);
 }
 
 void BtAboutDialog::init_lic_tab()
 {
-	selectTab(2);
+	selectTab(3);
 	setTabText(tr("License Agreement"));
-	QString lic = "file://" + util::filesystem::DirectoryUtil::getLicenseDir().path() + "/license.html";	
-	QUrl url(lic);		
-	setUrl(url);	
+
+	QByteArray text;
+	text += tr("BibleTime is released under the GPL licence.");
+	text += tr("You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.");
+	text += tr("You can give away or distribute the program if you also distribute the corresponding source code.");
+	text += "<br><br>";
+	text += tr("The complete legally binding license is below.");
+
+	QFile licFile(util::filesystem::DirectoryUtil::getLicenseDir().path() + "/license.html");
+	if (licFile.open(QFile::ReadOnly))
+	{
+		QByteArray html;
+		while (!licFile.atEnd())
+		{
+			QByteArray line = licFile.readLine();
+			html = html + line;
+		}
+		licFile.close();
+		html.replace("TRANSLATED TEXT", text);
+		setHtml(QString(html));
+	}
 }
 
 

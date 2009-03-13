@@ -1,3 +1,6 @@
+2009-03-12 Gary Holmlund
+    * New Help > About dialog with BibleTime, Sword, Qt, and License tabs.
+
 2009-03-10 Martin Gruner <mgruner@crosswire.org>
 	* Slightly improved clucene integration robustness with exception handling.
 
