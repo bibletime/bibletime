@@ -41,6 +41,7 @@
 #include <QApplication>
 #include <QProcess>
 #include <QMdiSubWindow>
+#include <QDesktopServices>
 
 using namespace Profile;
 
@@ -362,18 +363,16 @@ void BibleTime::slotSearchDefaultBible() {
  	Search::CSearchDialog::openDialog(module, QString::null);
 }
 
-void BibleTime::openOnlineHelp_Handbook() {
-	QStringList args;
-	args << util::filesystem::DirectoryUtil::getHandbookDir().canonicalPath() +"/index.html";
-	if (QProcess::startDetached("konqueror", args)) return;
-	if (QProcess::startDetached("firefox", args)) return;
+void BibleTime::openOnlineHelp_Handbook() 
+{
+	QString urlPath = "file://" + util::filesystem::DirectoryUtil::getHandbookDir().canonicalPath() +"/index.html";
+	QDesktopServices::openUrl(QUrl(urlPath));
 }
 
-void BibleTime::openOnlineHelp_Howto() {
-	QStringList args;
-	args << util::filesystem::DirectoryUtil::getHowtoDir().canonicalPath() +"/index.html";
-	if (QProcess::startDetached("konqueror", args)) return;
-	if (QProcess::startDetached("firefox", args)) return;
+void BibleTime::openOnlineHelp_Howto() 
+{
+	QString urlPath = "file://" + util::filesystem::DirectoryUtil::getHowtoDir().canonicalPath() +"/index.html";
+	QDesktopServices::openUrl(QUrl(urlPath));
 }
 
 void BibleTime::slotOpenAboutDialog()
