@@ -11,7 +11,7 @@
 #include "btaboutdialog.h"
 #include "util/directoryutil.h"
 
-#include "sword/swversion.h"
+#include "swversion.h"
 
 // Forwards
 static QString make_body(const QString& content);
