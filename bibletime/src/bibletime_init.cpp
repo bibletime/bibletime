@@ -329,17 +329,8 @@ void BibleTime::initActions()
 		SLOT( openOnlineHelp_Howto() ))
 	);
 	
-// 	helpMenu->addSeparator();
-// 
-// 	helpMenu->addAction(initAction(
-// 		new QAction(this),
-// 		tr("&Report a bug"),
-// 		"",
-// 		QKeySequence(),
-// 		"",
-// 		SLOT(reportBug()))
-// 	);
-// 	
+ 	helpMenu->addSeparator();
+
 	helpMenu->addAction( initAction(
 		new QAction(this),
 		tr("&About BibleTime"),
