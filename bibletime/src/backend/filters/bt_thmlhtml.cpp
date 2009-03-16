@@ -256,7 +256,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					else { // like "<scripRef>John 3:16</scripRef>"
 
 						CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
-						Q_ASSERT(mod);
+						//Q_ASSERT(mod); tested later
 						if (mod) {
 							CReferenceManager::ParseOptions options;
 							options.refBase = QString::fromUtf8(myUserData->key->getText()); //current module key
@@ -315,7 +315,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					Q_ASSERT(ref);
 
 					CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
-					Q_ASSERT(mod);
+					//Q_ASSERT(mod); tested later
 
 					CReferenceManager::ParseOptions options;
 					options.refBase = QString::fromUtf8(myUserData->key->getText());
