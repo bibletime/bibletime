@@ -559,7 +559,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData) {
 	QString ref( osisRef );
 	QString hrefRef( ref );
-	Q_ASSERT(!ref.isEmpty());
+	//Q_ASSERT(!ref.isEmpty()); checked later
 
 	if (!ref.isEmpty()) {
 		//find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
@@ -567,14 +567,14 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
 		// modulename is given, so we'll use that one
 
 		CSwordModuleInfo* mod = CPointers::backend()->findSwordModuleByPointer(myModule);
-		Q_ASSERT(mod);
+		//Q_ASSERT(mod); checked later
 		if (!mod || (mod->type() != CSwordModuleInfo::Bible
 				&& mod->type() != CSwordModuleInfo::Commentary)) {
 
 			mod = CBTConfig::get( CBTConfig::standardBible );
 		}
 
-		Q_ASSERT(mod);
+		// Q_ASSERT(mod); There's no necessarily a module or standard Bible
 
 		//if the osisRef like "GerLut:key" contains a module, use that
 		int pos = ref.indexOf(":");
@@ -588,23 +588,26 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
 			}
 		}
 
-		CReferenceManager::ParseOptions options;
-		options.refBase = QString::fromUtf8(myUserData->key->getText());
-		options.refDestinationModule = QString(mod->name());
-		options.sourceLanguage = QString(myModule->Lang());
-		options.destinationLanguage = QString("en");
+		if (mod) {
+			CReferenceManager::ParseOptions options;
+			options.refBase = QString::fromUtf8(myUserData->key->getText());
+			options.refDestinationModule = QString(mod->name());
+			options.sourceLanguage = QString(myModule->Lang());
+			options.destinationLanguage = QString("en");
 
-		buf.append("<a href=\"");
-		buf.append( //create the hyperlink with key and mod
-			CReferenceManager::encodeHyperlink(
-				mod->name(),
-				CReferenceManager::parseVerseReference(hrefRef, options),
-				CReferenceManager::typeFromModule(mod->type())
-			).toUtf8().constData()
-		);
-		buf.append("\" crossrefs=\"");
-		buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
-		buf.append("\">");
+			buf.append("<a href=\"");
+			buf.append( //create the hyperlink with key and mod
+				CReferenceManager::encodeHyperlink(
+					mod->name(),
+					CReferenceManager::parseVerseReference(hrefRef, options),
+					CReferenceManager::typeFromModule(mod->type())
+				).toUtf8().constData()
+			);
+			buf.append("\" crossrefs=\"");
+			buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
+			buf.append("\">");
+		}
+		// should we add something if there were no referenced module available?
 	}
 }
 
