@@ -1,0 +1,155 @@
+Index: src/backend/keys/cswordversekey.cpp
+===================================================================
+--- src/backend/keys/cswordversekey.cpp	(revision 872)
++++ src/backend/keys/cswordversekey.cpp	(working copy)
+@@ -83,19 +83,23 @@
+ 	if (!newBook.isEmpty()) {
+ 		bool finished = false;
+ 
++		sword::VerseKey* tmp = (sword::VerseKey*)this->clone();
+ 		for (int testament = min; testament <= max && !finished; ++testament) {
+ 			for (int book = 0; book < BMAX[testament] && !finished; ++book) {
+-				if ( !strcmp(newBook.toUtf8().constData(), books[testament][book].name ) ) {
++				tmp->Testament(testament+1);
++				tmp->Book(book+1);
++				if ( !strcmp(newBook.toUtf8().constData(), tmp->getBookName()) ) {
+ 					Testament(testament+1);
+ 					Book(book+1);
+ 					finished = true;
+ 				}
+ 			}
+ 		}
++		delete tmp;
+ 	}
+ 
+ 	if ( (Testament() >= min+1) && (Testament() <= max+1) && (Book() <= BMAX[min]) ) {
+-		return QString::fromUtf8( books[Testament()-1][Book()-1].name );
++		return QString::fromUtf8( getBookName() );
+ 	}
+ 
+ 	//return QString::fromUtf8( books[min][0].name ); //return the first book, i.e. Genesis
+Index: src/backend/drivers/cswordbiblemoduleinfo.cpp
+===================================================================
+--- src/backend/drivers/cswordbiblemoduleinfo.cpp	(revision 872)
++++ src/backend/drivers/cswordbiblemoduleinfo.cpp	(working copy)
+@@ -111,19 +111,24 @@
+ 			max = -1;
+ 		}
+ 
+-		staticKey.setLocale(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName());
++		sword::VerseKey *tmp = (sword::VerseKey*) m_module->CreateKey();
++		tmp->setLocale(sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName());
+ 
+ 		for (int i = min; i <= max; ++i) {
+-			for ( int j = 0; j < staticKey.BMAX[i]; ++j) {
++			tmp->Testament(i+1);
++			for ( int j = 0; j < tmp->BMAX[i]; ++j) {
+ 				//   if (backend()->useICU())
+ 				//       m_bookList->append( QString::fromUtf8(staticKey.books[i][j].name) );
+ 				//      else
+ 				//         m_bookList->append( QString::fromLocal8Bit(staticKey.books[i][j].name) );
+-				m_bookList->append( QString::fromUtf8(staticKey.books[i][j].name) );
++				//m_bookList->append( QString::fromUtf8(staticKey.books[i][j].name) );
++				tmp->Book(j+1);
++				m_bookList->append( QString::fromUtf8(tmp->getBookName()) );
+ 			}
+ 		}
+ 
+ 		m_cachedLocale = backend()->booknameLanguage();
++		delete tmp;
+ 	}
+ 
+ 	return m_bookList;
+@@ -133,12 +138,24 @@
+ unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
+ 	int result = 0;
+ 
+-	if ( (book >= 1) && book <= (unsigned int)staticKey.BMAX[0] && hasTestament(OldTestament)) {  //Is the book in the old testament?
+-		result = (staticKey.books[0][book-1].chapmax);
++	/*if ( (book >= 1) && book <= (unsigned int)staticKey.BMAX[0] && hasTestament(OldTestament)) {  //Is the book in the old testament?
++		VerseKey tmp = staticKey.clone();
++		staticKey.Book(book);
++		result = staticKey.getMaxChapter();
++		staticKey = tmp;
++		//result = (staticKey.books[0][book-1].chapmax);
+ 	}
+ 	else if ((book >= 1) && (book - staticKey.BMAX[0]) <= (unsigned int)staticKey.BMAX[1] && hasTestament(NewTestament) ) { //is the book in the new testament?
+-		result = (staticKey.books[1][book-1-staticKey.BMAX[0]].chapmax);
+-	}
++		VerseKey tmp = staticKey.clone();
++		staticKey.Book(book);
++		result = staticKey.getMaxChapter();
++		staticKey = tmp;
++		//result = (staticKey.books[1][book-1-staticKey.BMAX[0]].chapmax);
++	}*/
++	sword::VerseKey* tmp = (sword::VerseKey*) m_module->CreateKey();
++	tmp->Book(book);
++	result = tmp->getChapterMax();
++	delete tmp;
+ 
+ 	return result;
+ }
+@@ -152,7 +169,7 @@
+ unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
+ 	unsigned int result = 0;
+ 
+-	if (book>=1 && (book <= (unsigned int)staticKey.BMAX[0]) && hasTestament(OldTestament) ) { //Is the book in the old testament?
++	/*if (book>=1 && (book <= (unsigned int)staticKey.BMAX[0]) && hasTestament(OldTestament) ) { //Is the book in the old testament?
+ 
+ 		if (chapter <= chapterCount(book) ) //does the chapter exist?
+ 			result = (staticKey.books[0][book-1].versemax[chapter-1]);
+@@ -161,7 +178,12 @@
+ 
+ 		if (chapter <= chapterCount(book) ) //does the chapter exist?
+ 			result = staticKey.books[1][book-1-staticKey.BMAX[0]].versemax[chapter-1];
+-	}
++	}*/
++	sword::VerseKey* tmp = (sword::VerseKey*) m_module->CreateKey();
++	tmp->Book(book);
++	tmp->Chapter(chapter);
++	result = tmp->getVerseMax();
++	delete tmp;
+ 
+ 	return result;
+ }
+@@ -201,15 +223,18 @@
+ 		bookNumber = 0;
+ 	}
+ 
++	sword::VerseKey *tmp = (sword::VerseKey*) m_module->CreateKey();
+ 	for (int i = min; i <= max && !found; ++i) {
+ 		for ( int j = 0; j < staticKey.BMAX[i] && !found; ++j) {
+ 			++bookNumber;
+ 			//    if (book == QString::fromLocal8Bit( staticKey.books[i][j].name) )
+ 
+-			if (book == QString::fromUtf8( staticKey.books[i][j].name) )
++			tmp->Book(bookNumber);
++			if (book == QString::fromUtf8( tmp->getBookName()) )
+ 				found = true;
+ 		}
+ 	}
++	delete tmp;
+ 
+ 	return bookNumber;
+ }
+Index: src/backend/drivers/cswordmoduleinfo.h
+===================================================================
+--- src/backend/drivers/cswordmoduleinfo.h	(revision 872)
++++ src/backend/drivers/cswordmoduleinfo.h	(working copy)
+@@ -329,7 +329,6 @@
+ 	void indexingProgress(int);
+ 
+ private:
+-	sword::SWModule* m_module;
+ 	sword::ListKey m_searchResult;
+ 
+ 	mutable struct DataCache {
+@@ -351,6 +350,8 @@
+ 	bool m_hidden;
+ 
+ 	bool m_cancelIndexing;
++protected:
++	sword::SWModule* m_module;
+ };
+ 
+ inline CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
