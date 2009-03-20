@@ -1,3 +1,6 @@
+2009-03-07 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.alpha2
+
 2009-03-12 Gary Holmlund
     * Use default browser instead of just konqueror or firefox. This should work
       much better for non-linux platforms
