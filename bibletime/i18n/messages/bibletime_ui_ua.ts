@@ -5540,7 +5540,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="obsolete">Назва сесії:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="498"/>
+        <location filename="../../src/bibletime_slots.cpp" line="504"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">Будьласка зазначте назву нової сесії.</translation>
     </message>
@@ -5660,7 +5660,7 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="498"/>
+        <location filename="../../src/bibletime_slots.cpp" line="504"/>
         <source>New Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5677,6 +5677,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
     <message>
         <location filename="../../src/bibletime.cpp" line="75"/>
         <source>Initializing menu- and toolbars...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="336"/>
+        <source>&amp;About BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6025,6 +6030,79 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupmodulelistview.cpp" line="249"/>
         <source>Installed</source>
         <translation type="obsolete">Усі модулі:</translation>
+    </message>
+</context>
+<context>
+    <name>BtAboutDialog</name>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="53"/>
+        <source>BibleTime is an easy to use but powerful Bible study tool.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="55"/>
+        <source>We are looking for developers and translators.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
+        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="58"/>
+        <source>(c)1999-2009, The BibleTime Team</source>
+        <translation type="unfinished">(c)1999-2003, Команда BibleTime {1999-2009,?}</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <source>This program uses Qt Open Source Edition version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
+        <source>Qt is a C++ toolkit for cross-platform application development.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <source>Please see </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="100"/>
+        <source> for an overview of Qt licensing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="108"/>
+        <source>License Agreement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="111"/>
+        <source>BibleTime is released under the GPL licence.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="112"/>
+        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="113"/>
+        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="115"/>
+        <source>The complete legally binding license is below.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7182,6 +7260,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Display</source>
         <translation type="unfinished">Налаштування показу</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="193"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
@@ -7502,9 +7585,14 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="299"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
         <source>Languages</source>
         <translation type="unfinished">Мова</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7786,131 +7874,131 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
 <context>
     <name>CSwordModuleInfo</name>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="746"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
         <source>Version</source>
         <translation type="unfinished">Версія</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="752"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="765"/>
         <source>unknown</source>
         <translation type="unfinished">невідомо що</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="750"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="763"/>
         <source>Markup</source>
         <translation type="unfinished">Старт</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="755"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="768"/>
         <source>Location</source>
         <translation type="unfinished">Місцезнаходження</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="759"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="772"/>
         <source>Language</source>
         <translation type="unfinished">Мова</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="764"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="777"/>
         <source>Category</source>
         <translation type="unfinished">Розділ</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="769"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="782"/>
         <source>LCSH</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="773"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="786"/>
         <source>Writable</source>
         <translation type="unfinished">Може бути записаний</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>yes</source>
         <translation type="unfinished">так</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="774"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="787"/>
         <source>no</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="778"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="791"/>
         <source>Unlock key</source>
         <translation type="unfinished">Клавіша зняття блокування</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="797"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="810"/>
         <source>Features</source>
         <translation type="unfinished">Спеціальні можливості</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="805"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="818"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation type="unfinished">Будьте уважні! Цей модуль містить матеріали, що є спірними або мають відношення до культів!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="808"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="821"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="839"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="852"/>
         <source>Distribution license</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="841"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="854"/>
         <source>Distribution source</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="843"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="856"/>
         <source>Distribution notes</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="845"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="858"/>
         <source>Text source</source>
         <translation type="unfinished">Колір тексту</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="847"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="860"/>
         <source>Copyright notes</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="849"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="862"/>
         <source>Copyright holder</source>
         <translation type="unfinished">Праве поле</translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="864"/>
         <source>Copyright date</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="853"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="866"/>
         <source>Copyright contact name</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="855"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="868"/>
         <source>Copyright contact address</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="857"/>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="870"/>
         <source>Copyright contact email</source>
         <translation type="unfinished">
             </translation>
@@ -7933,6 +8021,11 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <source>Desk</source>
         <translation type="unfinished">
             </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
+        <source></source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8084,6 +8177,29 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <location filename="../../src/frontend/bookshelfmanager/manageindicesform.ui" line="61"/>
         <source>Module</source>
         <translation type="obsolete">Модуль</translation>
+    </message>
+</context>
+<context>
+    <name>QCoreApplication</name>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="406"/>
+        <source>Indexing aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="406"/>
+        <source>An internal error occurred while building the index.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="475"/>
+        <source>Search aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="475"/>
+        <source>An internal error occurred while executing your search.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8751,42 +8867,42 @@ Select it and copy it to the clipboard. Now insert the copied word in the search
         <translation type="unfinished">Змінити назву сесії</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="260"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
         <source>Old testament</source>
         <translation type="unfinished">Старий Заповіт</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="261"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="266"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Мойсей/П&apos;ятикнижжя/Тора</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="262"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
         <source>History</source>
         <translation type="unfinished">Історичні</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="263"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="268"/>
         <source>Prophets</source>
         <translation type="unfinished">Пророки</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="264"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="269"/>
         <source>New testament</source>
         <translation type="unfinished">Новий Заповіт</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="270"/>
         <source>Gospels</source>
         <translation type="unfinished">Євангелія</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="271"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Листи/Післання</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="272"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Послання Павла</translation>
     </message>
@@ -10251,6 +10367,11 @@ This could take a long time. Proceed with indexing?</source>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
@@ -10313,6 +10434,11 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
