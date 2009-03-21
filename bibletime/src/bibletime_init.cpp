@@ -23,8 +23,10 @@
 #include "frontend/cprinter.h"
 #include "backend/config/cbtconfig.h"
 #include "frontend/cinfodisplay.h"
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
+#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 
-//QT includes
+// Qt includes
 #include <QSplitter>
 #include <QPointer>
 #include <QLabel>
@@ -34,8 +36,9 @@
 #include <QToolBar>
 #include <QApplication>
 #include <QDebug>
+#include <QDockWidget>
 
-//Sword includes
+// Sword includes
 #include <swlog.h>
 
 using namespace InfoDisplay;
@@ -44,28 +47,32 @@ using namespace Profile;
 /**Initializes the view of this widget*/
 void BibleTime::initView()
 {
-	m_mainSplitter = new QSplitter(this);
-	m_mainSplitter->setChildrenCollapsible(false);
-	setCentralWidget(m_mainSplitter);
+	m_mdi = new CMDIArea(this);
+	setCentralWidget(m_mdi);
 
-	m_leftPaneSplitter = new QSplitter(Qt::Vertical, m_mainSplitter);
-	m_leftPaneSplitter->setChildrenCollapsible(false);
-	m_mainSplitter->addWidget(m_leftPaneSplitter);
+	m_dock0 = new QDockWidget(tr("Bookshelf"), this);
+	m_dock0->setObjectName("BookshelfDock");
+	m_bookshelfPage = new CBookshelfIndex(0);
+	m_dock0->setWidget(m_bookshelfPage);
+	addDockWidget(Qt::LeftDockWidgetArea, m_dock0);
 	
-	m_mainIndex = new CMainIndex(this);
-
-	m_infoDisplay = new CInfoDisplay(m_leftPaneSplitter);
-	m_leftPaneSplitter->addWidget(m_mainIndex);
-	m_leftPaneSplitter->addWidget(m_infoDisplay);
+	m_dock1 = new QDockWidget(tr("Bookmarks"), this);
+	m_dock1->setObjectName("BookmarksDock");
+	m_bookmarksPage = new CBookmarkIndex(0);
+	m_dock1->setWidget(m_bookmarksPage);
+	addDockWidget(Qt::LeftDockWidgetArea, m_dock1);
+	tabifyDockWidget(m_dock1, m_dock0);	
+	
+	m_dock2 = new QDockWidget(tr("Mag"), this);
+	m_dock2->setObjectName("MagDock");
+	m_infoDisplay = new CInfoDisplay(this);
+	m_infoDisplay->resize(150,150);
+	m_dock2->setWidget(m_infoDisplay);
+	addDockWidget(Qt::LeftDockWidgetArea, m_dock2);
+	
 	CPointers::setInfoDisplay(m_infoDisplay);
-
-	m_mdi = new CMDIArea(m_mainSplitter);
-	m_mainSplitter->addWidget(m_mdi);
-
 	m_mdi->setMinimumSize(100, 100);
 	m_mdi->setFocusPolicy(Qt::ClickFocus);
-
-//	m_helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), true, actionCollection());
 }
 
 QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKeySequence accel, QString tooltip, const char* slot )
@@ -91,6 +98,7 @@ void BibleTime::initActions()
 	QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
 	
 	m_mainToolBar = addToolBar(tr("BibleTime"));
+	m_mainToolBar->setObjectName("MainToolBar");
 	m_mainToolBar->setFloatable(false);
 	m_mainToolBar->setMovable(false);
 
@@ -130,29 +138,18 @@ void BibleTime::initActions()
 		"",
 		SLOT(slotToggleToolbar())));
 	
-	m_viewMainIndex_action = new QAction(this);
-	m_viewMainIndex_action->setCheckable(true);
-	viewMenu->addAction(initAction(
-		m_viewMainIndex_action,
-		tr("&Show bookshelf"),
-		CResMgr::mainMenu::view::showMainIndex::icon,
-		CResMgr::mainMenu::view::showMainIndex::accel,
-		tr("Show or hide the bookshelf"),
-		SLOT(slotToggleMainIndex())));
-	m_mainToolBar->addAction(m_viewMainIndex_action);
-
-	m_viewInfoDisplay_action = new QAction(this);
-	m_viewInfoDisplay_action->setCheckable(true);
-	viewMenu->addAction(initAction(
-		m_viewInfoDisplay_action,
-		tr("Show &mag"),
-		CResMgr::mainMenu::view::showInfoDisplay::icon,
-		CResMgr::mainMenu::view::showInfoDisplay::accel,
-		tr("Show or hide the mag"),
-		SLOT(slotToggleInfoDisplay())
-	));
-	m_mainToolBar->addAction(m_viewInfoDisplay_action);
-
+	QAction* action = m_dock0->toggleViewAction();
+	action->setText(tr("Show") + " " + action->text());
+	viewMenu->addAction(action);
+	
+	action = m_dock1->toggleViewAction();
+	action->setText(tr("Show") + " " + action->text());
+	viewMenu->addAction(action);
+	
+	action = m_dock2->toggleViewAction();
+	action->setText(tr("Show") + " " + action->text());
+	viewMenu->addAction(action);
+	
 	m_mainToolBar->addSeparator();
 
 	tmp = initAction(
@@ -355,13 +352,16 @@ void BibleTime::initConnections() {
 		qWarning() << "Main window: can't find window menu";
 	}
 
-	QObject::connect(m_mainIndex, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
-		this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>,const QString&))
-	);
-	QObject::connect(m_mainIndex, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
-		this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&))
-	);
-	//QObject::connect(m_mainIndex, SIGNAL(signalSwordSetupChanged()), this, SLOT(slotSwordSetupChanged()));
+	bool ok;
+	ok = connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+				 this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>,const QString&)));
+	Q_ASSERT(ok);
+	ok = connect(m_bookshelfPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
+				 this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>,const QString&)));
+	Q_ASSERT(ok);
+	ok = connect(m_bookshelfPage, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
+				 this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&)));
+	Q_ASSERT(ok);
 
 	connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }
@@ -440,6 +440,7 @@ void BibleTime::applyProfileSettings( CProfile* p ) {
 	//Then Main Window geometry
 	QMainWindow::resize( p->geometry().size() ); //Don't use QMainWindowInterface::resize
 	QMainWindow::move( p->geometry().topLeft() );//Don't use QMainWindowInterface::move
+	restoreState(p->getMainwindowState());
 	
 	const CMDIArea::MDIArrangementMode newArrangementMode = p->getMDIArrangementMode();
 	//make sure actions are updated by calling the slot functions
@@ -456,6 +457,7 @@ void BibleTime::storeProfileSettings( CProfile* p ) {
 	Q_ASSERT(p && m_windowFullscreen_action);
 	if (!p || !m_windowFullscreen_action) return;
 	
+	p->setMainwindowState(saveState());
 	p->setFullscreen( m_windowFullscreen_action->isChecked() );
 	p->setMaximized( this->QMainWindow::isMaximized() );
 

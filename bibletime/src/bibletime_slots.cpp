@@ -41,6 +41,7 @@
 #include <QApplication>
 #include <QProcess>
 #include <QMdiSubWindow>
+#include <QtGlobal>
 #include <QDesktopServices>
 
 using namespace Profile;
@@ -314,28 +315,6 @@ void BibleTime::slotToggleToolbar() {
 	}
 	else {
 		m_mainToolBar->hide();
-	}
-}
-
-/** Shows or hides the groupmanager. 
-*/
-void BibleTime::slotToggleMainIndex() {
-	//we use the parent widget because the main index is enclosed in a layout which adds the label at the top
-	if (m_viewMainIndex_action->isChecked()) {
-		m_mainIndex->show();
-	}
-	else {
-		m_mainIndex->hide();
-	}
-}
-
-/** Shows or hides the groupmanager. */
-void BibleTime::slotToggleInfoDisplay() {
-	if (m_viewInfoDisplay_action->isChecked()) {
-		m_infoDisplay->show();
-	}
-	else {
-		m_infoDisplay->hide();
 	}
 }
 

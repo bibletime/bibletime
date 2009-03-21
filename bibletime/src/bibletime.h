@@ -22,6 +22,9 @@ class CSwordModuleInfo;
 class CMDIArea;
 class CDisplayWindow;
 class CMainIndex;
+class CBookmarkIndex;
+class CBookshelfIndex;
+
 namespace InfoDisplay {
 	class CInfoDisplay;
 }
@@ -254,14 +257,6 @@ protected slots:
 	 */
 	void slotToggleToolbar();
 	/**
-	* Shows or hides the main index part
-	*/
-	void slotToggleMainIndex();
-	/**
-	* Shows or hides the info display part.
-	*/
-	void slotToggleInfoDisplay();
-	/**
 	* Saves to the profile with the menu id ID
 	*/
 	void saveProfile(QAction* action);
@@ -321,12 +316,13 @@ protected slots:
 	void slotOpenAboutDialog();
 
 private:
+	// docking widgets
+	QDockWidget* m_dock0;
+	QDockWidget* m_dock1;
+	QDockWidget* m_dock2;
 	QToolBar* m_mainToolBar;
-	/** VIEW menu actions */
+	// VIEW menu actions
 	QAction* m_viewToolbar_action;
-	QAction* m_viewMainIndex_action;
-	QAction* m_viewInfoDisplay_action;
-
  	QMenu* m_windowMenu;
 	/** WINDOW menu actions */
 	QAction* m_windowCascade_action;
@@ -354,17 +350,15 @@ private:
 	QList<CSwordModuleInfo*>* m_moduleList;
 
 	Profile::CProfile* m_currentProfile;
-	QSplitter* m_mainSplitter;
-	QSplitter* m_leftPaneSplitter;
 	CMDIArea* m_mdi;
 
 	Profile::CProfileMgr m_profileMgr;
-	//CSwordBackend* m_backend;
 
-	CMainIndex* m_mainIndex;
-
+	// docking windows
+	CBookmarkIndex* m_bookmarksPage;
+	CBookshelfIndex* m_bookshelfPage;
 	InfoDisplay::CInfoDisplay* m_infoDisplay;
-
+	
 protected: //DBUS interface implementation
 	void closeAllModuleWindows();
 	void syncAllBibles(const QString& key);

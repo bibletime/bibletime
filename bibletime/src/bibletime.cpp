@@ -48,14 +48,14 @@ using namespace Profile;
 
 BibleTime::BibleTime() :
 	QMainWindow(0),
+	m_dock0(0),
+	m_dock1(0),
+	m_dock2(0),
 	m_initialized(false),
 	m_moduleList(0),
 	m_currentProfile(0),
-	m_mainSplitter(0),
-	m_leftPaneSplitter(0),
 	m_mdi(0),
-	m_profileMgr(),
-	m_mainIndex(0)
+	m_profileMgr()
 {
 	QPixmap pm;
 	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) 
@@ -92,11 +92,6 @@ void BibleTime::saveSettings()
 	//accel()->writeSettings(CBTConfig::getConfig());
 
 	CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
-	CBTConfig::set(CBTConfig::mainindexActiveTab, m_mainIndex->currentIndex());
-	CBTConfig::set(CBTConfig::mainIndex, m_viewMainIndex_action->isChecked());
-	CBTConfig::set(CBTConfig::infoDisplay, m_viewInfoDisplay_action->isChecked());
-	CBTConfig::set(CBTConfig::mainSplitterSizes, m_mainSplitter->sizes());
-	CBTConfig::set(CBTConfig::leftPaneSplitterSizes, m_leftPaneSplitter->sizes());
 
 	// set the default to false
 	/* CBTConfig::set(CBTConfig::autoTileVertical, false);
@@ -123,21 +118,7 @@ void BibleTime::readSettings()
 
 	m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
 	slotToggleToolbar();
-
-	m_viewMainIndex_action->setChecked( CBTConfig::get(CBTConfig::mainIndex) );
-	slotToggleMainIndex();
-
-	m_mainIndex->setCurrentIndex(CBTConfig::get(CBTConfig::mainindexActiveTab));
-
-	m_viewInfoDisplay_action->setChecked( CBTConfig::get(CBTConfig::infoDisplay) );
-	slotToggleInfoDisplay();
-
-	//we don't want to set wrong sizes
-	if ( CBTConfig::get(CBTConfig::mainSplitterSizes).count() > 0 ) 
-	{
-		m_mainSplitter->setSizes(CBTConfig::get(CBTConfig::mainSplitterSizes));
-		m_leftPaneSplitter->setSizes(CBTConfig::get(CBTConfig::leftPaneSplitterSizes));
-	}
+	
 	if ( CBTConfig::get(CBTConfig::autoTileVertical) ) 
 	{
 		m_windowAutoTileVertical_action->setChecked( true );
@@ -183,7 +164,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modu
 	qApp->processEvents();
 	// Now all events, including mouse clicks for the displayWindow have been handled
 	// and we can let the user click the same module again
-	m_mainIndex->bookshelfIndex()->unfreezeModules(modules);
+	m_bookshelfPage->unfreezeModules(modules);
 	qApp->restoreOverrideCursor();
 	return displayWindow;
 }

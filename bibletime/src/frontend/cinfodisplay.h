@@ -21,6 +21,7 @@
 //class forward declarations
 class CReadDisplay;
 class QAction;
+class QSize;
 
 namespace InfoDisplay {
 
@@ -47,6 +48,7 @@ public:
 	void setInfo(const InfoType, const QString& data);
 	void setInfo(const ListInfoData&);
 	void clearInfo();
+	QSize sizeHint() const;
 
 protected:
 	const QString decodeAbbreviation( const QString& data );

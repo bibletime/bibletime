@@ -15,6 +15,7 @@
 
 //Qt includes
 #include <QList>
+#include <QByteArray>
 
 namespace Profile {
 
@@ -88,7 +89,14 @@ public:
 	* Returns mdi arrangement mode
 	*/
 	CMDIArea::MDIArrangementMode getMDIArrangementMode(void);
-
+	/**
+	* set mainwindow saveState - position of docking windows and toolbar
+	*/
+	void setMainwindowState(const QByteArray& state);
+	/**
+	 * Return mainwindow saveState - position of docking windows and toolbar
+	*/
+	QByteArray getMainwindowState();
 
 private:
 	/**
@@ -104,6 +112,7 @@ private:
 	bool m_maximized;
 	QRect m_geometry;
 	CMDIArea::MDIArrangementMode m_mdiArrangementMode;
+	QByteArray m_mainwindowState;
 };
 
 } //end of namespace Profile

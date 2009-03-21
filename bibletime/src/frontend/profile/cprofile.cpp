@@ -86,6 +86,11 @@ QList<CProfileWindow*> CProfile::load() {
 		}
 		if (!mainWindow.isNull()) { //was found
 			setFullscreen( (bool)mainWindow.attribute("fullscreen").toInt());
+			
+			QByteArray bstate;
+			bstate += mainWindow.attribute("state");
+			setMainwindowState(QByteArray::fromHex(bstate));
+			
 			QDomElement geometry_element = mainWindow.namedItem("GEOMETRY").toElement();
 			QRect rect;
 			if(!geometry_element.isNull()) {
@@ -217,6 +222,9 @@ bool CProfile::save(QList<CProfileWindow*> windows) {
 	{
 		QDomElement mainWindow = doc.createElement("MAINWINDOW");
 		mainWindow.setAttribute("fullscreen", fullscreen());
+		
+		QString sstate = QString(getMainwindowState().toHex());
+		mainWindow.setAttribute("state", sstate);
 
 		QDomElement geometry = doc.createElement("GEOMETRY");
 		mainWindow.appendChild(geometry);
@@ -411,6 +419,15 @@ CMDIArea::MDIArrangementMode CProfile::getMDIArrangementMode(void)
 	return m_mdiArrangementMode;
 }
 
+void CProfile::setMainwindowState(const QByteArray& state)
+{
+	m_mainwindowState = state;
+}
+
+QByteArray CProfile::getMainwindowState()
+{
+	return m_mainwindowState;
+}
 
 
 } //end of namespace Profile

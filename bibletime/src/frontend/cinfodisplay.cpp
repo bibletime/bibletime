@@ -7,7 +7,7 @@
 *
 **********/
 
-//BibleTime includes
+// BibleTime includes
 #include "cinfodisplay.h"
 #include "cinfodisplay.moc"
 
@@ -25,16 +25,17 @@
 
 #include <boost/scoped_ptr.hpp>
 
-//Sword includes
+// Sword includes
 #include <listkey.h>
 
-//Qt includes
+// Qt includes
 #include <QLayout>
 #include <QLabel>
 #include <QRegExp>
 #include <QVBoxLayout>
 #include <QAction>
 #include <QDebug>
+#include <QSize>
 
 using namespace Rendering;
 using namespace sword;
@@ -44,8 +45,7 @@ namespace InfoDisplay {
 CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent)
 {
 	QVBoxLayout* layout = new QVBoxLayout(this);
-	QLabel* headingLabel = new QLabel(tr("Mag"),this);
-	headingLabel->setMargin(3);
+	setSizePolicy(QSizePolicy::Preferred,QSizePolicy::Preferred);
 
 	m_htmlPart = CDisplay::createReadInstance(0, this);
 	m_htmlPart->setMouseTracking(false); //we don't want strong/lemma/note mouse infos
@@ -61,8 +61,6 @@ CInfoDisplay::CInfoDisplay(QWidget *parent) : QWidget(parent)
 		SLOT(lookupInfo(const QString&, const QString&))
 	);
 
-	headingLabel->setBuddy(m_htmlPart->view());
-	layout->addWidget(headingLabel);
 	layout->addWidget(m_htmlPart->view());
 	QString initialMagText = tr("<small>This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.</small>");
 	m_htmlPart->setText(initialMagText);
@@ -459,6 +457,11 @@ void CInfoDisplay::clearInfo() {
 	settings.pageCSS_ID = "infodisplay";
 
 	m_htmlPart->setText( tmgr->fillTemplate(CBTConfig::get(CBTConfig::displayStyle), QString::null, settings) );
+}
+
+QSize CInfoDisplay::sizeHint() const
+{
+	return QSize(100,150);
 }
 
 } //end of namespace InfoDisplay
