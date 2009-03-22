@@ -109,7 +109,7 @@ function getNodeAttributes(node)
 	{
 		for (i = 0; i < node.attributes.length; i++)
 		{
-			attribList = attribList + node.attributes[i].nodeName + '=' + node.attributes[i].nodeValue + '|';
+			attribList = attribList + node.attributes[i].nodeName + '=' + node.attributes[i].nodeValue + '||';
 		}
 	}
 	return attribList;

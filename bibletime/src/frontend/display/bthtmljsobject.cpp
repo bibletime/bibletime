@@ -134,7 +134,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x,
 void BtHtmlJsObject::timeOutEvent(const QString& attributes)
 {
 	CInfoDisplay::ListInfoData infoList;
-	QStringList attrList = attributes.split("|");
+	QStringList attrList = attributes.split("||");
 	for (int i=0; i<attrList.count(); i++)
 	{
 		QString attrPair = attrList[i];
