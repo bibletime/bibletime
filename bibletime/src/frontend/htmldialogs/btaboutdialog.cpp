@@ -28,12 +28,13 @@ static QString make_version();
 // Implements the Help > About dialog box
 
 BtAboutDialog::BtAboutDialog(QWidget *parent, Qt::WindowFlags wflags )
-	: BtTabHtmlDialog("About BibleTime", 4, parent, wflags)
+	: BtTabHtmlDialog("About BibleTime", 5, parent, wflags)
 {
 	resize(550,340);
 	init_lic_tab();
 	init_sword_tab();
 	init_qt_tab();
+	init_contributors_tab();
 	init_bt_tab();
 }
 
@@ -57,14 +58,71 @@ void BtAboutDialog::init_bt_tab()
 	content += make_br() + make_br();
 	content += tr("(c)1999-2009, The BibleTime Team");
 	content += make_br();
-	content += make_link("http://www.bibletime.info","http://www.bibletime.info");	
+	content += make_link("http://www.bibletime.info","http://www.bibletime.info");
 	QString bibletime = make_html(make_head("") + make_body(content));
 	setHtml(bibletime);
 }
 
-void BtAboutDialog::init_sword_tab()
+void BtAboutDialog::init_contributors_tab()
 {
 	selectTab(1);
+	setTabText(tr("Contributors"));
+	QString content;
+	content += make_bold(tr("The following people contributed to BibleTime:")) + make_br();
+	// sorted alphabetically (last name)
+	content += "<ul>";
+	content += "<li>Joachim Ansorg (" + tr("project founder, developer") + ")</li>";
+	content += "<li>David Blue (" + tr("designer") + ")</li>";
+	content += "<li>Tim Brodie (" + tr("developer") + ")</li>";
+	content += "<li>Timothy R. Butler (" + tr("designer") + ")</li>";
+	content += "<li>Jim Campbell (" + tr("developer") + ")</li>";
+	content += "<li>Lee Carpenter (" + tr("developer") + ")</li>";
+	content += "<li>Jeremy Erickson (" + tr("packager") + ")</li>";
+	content += "<li>Troy A. Griffitts (" + tr("creator of The Sword Project") + ")</li>";
+	content += "<li>Martin Gruner (" + tr("project manager, developer") + ")</li>";
+	content += "<li>Thomas Hagedorn (" + tr("domain sponsor") + ")</li>";
+	content += "<li>Bob Harman (" + tr("howto") + ")</li>";
+	content += "<li>Gary Holmlund (" + tr("developer") + ")</li>";
+	content += "<li>Nikolay Igotti (" + tr("developer") + ")</li>";
+	content += "<li>Eeli Kaikkonnen (" + tr("developer") + ")</li>";
+	content += "<li>Chris Kujawa (" + tr("developer") + ")</li>";
+	content += "<li>Mark Lybarger (" + tr("developer") + ")</li>";
+	content += "<li>Luke Mauldin (" + tr("developer") + ")</li>";
+	content += "<li>James Ots (" + tr("designer") + ")</li>";
+	content += "<li>Fred Saalbach (" + tr("documentation") + ")</li>";
+	content += "<li>Gary Sims (" + tr("developer") + ")</li>";
+	content += "<li>Wolfgang Stradner (" + tr("tester, usability expert") + ")</li>";
+	content += "<li>Thorsten Uhlmann (" + tr("developer") + ")</li>";
+	content += "<li>David White (" + tr("developer") + ")</li>";
+	content += "<li>Mark Zealey (" + tr("developer") + ")</li>";
+	content += "</ul>";
+
+	content += make_bold(tr("The following people translated BibleTime into their language:")) + make_br();
+	// sorted alphabetically (last name)
+	content += "<ul>";
+	content += "<li>Horatiu Alexe</li>";
+	content += "<li>Chun-shek Chan</li>";
+	content += "<li>Ilpo Kantonen</li>";
+	content += "<li>Pavel Laukko</li>";
+	content += "<li>Piotr Markiewicz</li>";
+	content += "<li>Gabriel P&eacute;rez</li>";
+	content += "<li>Igor Plisco</li>";
+	content += "<li>Igor Rykhlin</li>";
+	content += "<li>Vlad Savitsky</li>";
+	content += "<li>Johan van der Lingen</li>";
+	content += "<li>Jean Van Schaftingen</li>";
+	content += "<li>Dmitry Yurevich</li>";
+	content += "<li>Esteban Zeller</li>";
+	content += "</ul>";
+
+	QString contributors = make_html(make_head("") + make_body(content));
+	setHtml(contributors);
+}
+
+
+void BtAboutDialog::init_sword_tab()
+{
+	selectTab(2);
 	setTabText("Sword" );
 
 	QString version( sword::SWVersion::currentVersion.getText());
@@ -83,7 +141,7 @@ void BtAboutDialog::init_sword_tab()
 
 void BtAboutDialog::init_qt_tab()
 {
-	selectTab(2);
+	selectTab(3);
 	setTabText("Qt");
 	QString content;
 	content += make_br() + make_br();
@@ -104,7 +162,7 @@ void BtAboutDialog::init_qt_tab()
 
 void BtAboutDialog::init_lic_tab()
 {
-	selectTab(3);
+	selectTab(4);
 	setTabText(tr("License Agreement"));
 
 	QByteArray text;
@@ -130,9 +188,9 @@ void BtAboutDialog::init_lic_tab()
 }
 
 
-	
+
 // Helper functions
-		
+
 static QString make_center(const QString& content)
 {
 	return "<center>" + content + "</center>";
