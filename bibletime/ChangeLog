@@ -1,16 +1,19 @@
+2009-03-23 Martin Gruner <mgruner@crosswire.org>
+	* revived contributor data in about dialog
+
 2009-03-22 Thomas Abthorpe
     * Add Czech translation to the build
 
 2009-03-20 Gary Holmlund
-    * Use docking windows instead of splitters for the left side windows. The 
+    * Use docking windows instead of splitters for the left side windows. The
       docking windows can be moved by dragging from their title bar. They can
       be moved to the left, right, top, or bottom of the main window. They can
       be dropped above, below, or on top of other docking windows. If dropped
-      on top of another docking window, tabs are automatically created. They 
+      on top of another docking window, tabs are automatically created. They
       can be resized by dragging from their edges. The location of the docking
       windows can be saved by saving a session. The default session ensures that
       they look the same as the last session. Each docking window has a menu
-      under "View" to toggle its visibility. 
+      under "View" to toggle its visibility.
 
 2009-03-20 Martin Gruner <mgruner@crosswire.org>
 	* release 2.0.alpha2

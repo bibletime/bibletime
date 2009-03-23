@@ -71,6 +71,7 @@ void BtAboutDialog::init_contributors_tab()
 	content += make_bold(tr("The following people contributed to BibleTime:")) + make_br();
 	// sorted alphabetically (last name)
 	content += "<ul>";
+	content += "<li>Thomas Abthorpe (" + tr("documentation and translation manager") + ")</li>";
 	content += "<li>Joachim Ansorg (" + tr("project founder, developer") + ")</li>";
 	content += "<li>David Blue (" + tr("designer") + ")</li>";
 	content += "<li>Tim Brodie (" + tr("developer") + ")</li>";
