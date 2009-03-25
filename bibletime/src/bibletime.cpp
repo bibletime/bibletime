@@ -312,8 +312,5 @@ bool BibleTime::event(QEvent* e)
 
 void BibleTime::closeEvent(QCloseEvent* e) 
 {
-	//qDebug("Now we will call qApp->quit");
 	QMainWindow::closeEvent(e);
-	e->ignore();
-	qApp->quit();
 }
