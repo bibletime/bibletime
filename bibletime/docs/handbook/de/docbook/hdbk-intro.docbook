@@ -1,0 +1,83 @@
+<chapter id="hdbk-intro">
+  <title>Einleitung</title>
+  <sect1 id="hdbk-intro-about">
+    <title>About &bibletime;</title>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules) are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. Sword is the flagship product of the <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>&bibletime; is designed to be used with works encoded in one of the formats 
+supported by the Sword project. Complete information on the supported 
+document formats can be found in the <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
+section</ulink> of the Sword Project, Crosswire Bible Society.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Vorhandene Werke</title>
+      <para>Über 200 Dokumente in 50 Sprachen sind auf dem Webserver der <ulink 
+url="http://www.crosswire.org">Crosswire Bibelgesellschaft</ulink> 
+verfügbar. Dazu gehören: 
+      <variablelist>
+        <varlistentry>
+          <term>Bibeln</term>
+          <listitem>
+            <para>The full Bible text, with optional things like Strong's Numbers, headings 
+and/or footnotes in the text.  Bibles are available in many languages, and 
+include not only modern versions, but also ancient texts like the Codex 
+Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
+the most advanced section in the library of the Sword project.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bücher</term>
+          <listitem>
+            <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus: 
+The Complete Works"</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Kommentare</term>
+          <listitem>
+            <para>Commentaries available include classics like John Wesley's "Notes on the 
+Bible", Matthew Henry`s commentary and Luther's "Commentary on Galatians." 
+With the <emphasis>Personal</emphasis> commentary you can <link 
+linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to 
+sections of the Bible.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Andachtsbücher</term>
+          <listitem>
+            <para>Viele Leute schätzen diese kleinen, täglichen Abschnitte aus Gottes 
+Wort. Die vorhandene Werke enthalten "Daily Light" und die "Losungen".</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lexika / Wörterbücher</term>
+          <listitem>
+            <para>Zu den verfügbaren Wörterbüchern gehören: Strong's Hebrew Bible Dictionary, 
+Strong's Greek Bible Dictionary, Webster's Revised Unabridged Dictionary of 
+the English Language 1913, Nave's Topical Bible.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivation</title>
+      <para>Our desire is to serve God, and to do our part to help others grow in their 
+relationship with Him. We have striven to make this a powerful, quality 
+program, and still make it simple and intuitive to operate. It is our desire 
+that God be praised, as He is the source of all good things.</para>
+      <blockquote>
+        <attribution>Jakobus 1,17, Hoffnung für Alle</attribution>
+        <para>Alles, was Gott uns gibt, ist gut und vollkommen. Er, der Vater des Lichts, 
+ändert sich nicht; niemals wechseln bei ihm Licht und Finsternis.</para>
+      </blockquote>
+      <para>Gott segne Sie durch Benutzung dieses Programms.</para>
+    </sect2>
+  </sect1>
+</chapter>
