@@ -197,6 +197,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 							}
 						}
 						else { //no prefix given
+							val = attrib;
 							const bool skipFirst = ((val[0] == 'T') && ((val[1] == 'H') || (val[1] == 'H')));
 							attrValue.append( skipFirst ? val+1 : val );
 						}
