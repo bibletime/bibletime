@@ -1,3 +1,5 @@
+
+
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
@@ -79,7 +81,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
-			COMPILE_FLAGS "-fexceptions ${SWORD_CFLAGS}" #Enable exception handling
+			COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
 	)
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(bibletime
@@ -95,7 +97,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
                              ${bibletime_test_SOURCES} ${bibletime_UIS_H})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
-			COMPILE_FLAGS "-fexceptions -DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing
+			COMPILE_FLAGS "-DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing
 	)
 	SET(QT_USE_QTTEST 1)
 	INCLUDE(${QT_USE_FILE})
@@ -124,12 +126,13 @@ IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 	SET(CMAKE_INSTALL_PREFIX "install/") #install to ./build/install, allow override
 ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 
-SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2")
-IF (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -g")
-ELSE (NOT APPLE)
-	SET(CMAKE_CXX_FLAGS_DEBUG "-Wall -O0 -g")
-ENDIF (NOT APPLE)
+IF (MSVC)
+	SET(CMAKE_CXX_FLAGS_RELEASE "${SWORD_CFLAGS} -DNO_DBUS -DSWUSINGDLL -DBT_VERSION=\\\"${BT_VERSION}\\\" /MD  /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE ")
+	SET(CMAKE_CXX_FLAGS_DEBUG   "${SWORD_CFLAGS} -DNO_DBUS -DSWUSINGDLL -DBT_VERSION=\\\"${BT_VERSION}\\\" /MDd /Zc:wchar_t- /W1 /D_UNICODE /DUNICODE -DBT_ENABLE_TESTING /ZI")
+ELSE (MSVC)
+	SET(CMAKE_CXX_FLAGS_RELEASE "-W -O2 -fexceptions ${SWORD_CFLAGS} ")
+	SET(CMAKE_CXX_FLAGS_DEBUG   "-Wall -O0 -g -fexceptions ${SWORD_CFLAGS} -DBT_ENABLE_TESTING")
+ENDIF (MSVC)
 
 
 ######################################################
