@@ -24,7 +24,7 @@
       <title>Other window managers</title>
       <para>&bibletime; can be used with other window managers such
       as Gnome, BlackBox, Fluxbox, OpenBox or Sawfish, providing the
-      appropriate base libarires are already
+      appropriate base libraries are already
       installed on your computer.</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
