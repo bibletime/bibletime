@@ -18,7 +18,7 @@
       <para>&bibletime; can also be launched from a terminal
       command prompt. To launch &bibletime;, open a terminal window
       and type: 
-      <screen>bibletime</screen></para>
+      <screen>&bibletime;</screen></para>
     </sect2>
     <sect2 id="hdbk-start-otherwm">
       <title>Other window managers</title>

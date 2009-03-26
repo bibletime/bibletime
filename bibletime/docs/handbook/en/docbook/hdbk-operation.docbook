@@ -371,11 +371,11 @@
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Bookshelf path(s) setup</title>
       <para>Here you can specify where &bibletime; may store your
-      Bookshelf on the harddrive. You can even store it in multiple
+      Bookshelf on the hard drive. You can even store it in multiple
       directories. Default is "~/.sword/".</para>
       <tip>
         <para>If you have a sword CD, but do not want to install all
-        the works on the harddisk, but use them directly from the CD,
+        the works on the hard disk, but use them directly from the CD,
         then you can add the path to the CD as one of your bookshelf
         paths. When you start &bibletime;, it will show all works
         on the CD if it is present.</para>

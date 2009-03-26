@@ -37,7 +37,7 @@
 
       <para>By default, &bibletime; uses the default system
       display font. You
-      can override this font if neccessary. Some languages require
+      can override this font if necessary. Some languages require
       special fonts to be displayed correctly, and this dialog allows
       you to specify a custom font for each language.</para>
       <mediaobject>
@@ -124,7 +124,7 @@
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Excellent unicode fonts from the Summer
+                <entry>Excellent Unicode fonts from the Summer
                 Institute of Linguistics.</entry>
               </row>
               <row>
@@ -132,7 +132,7 @@
                   <ulink url="http://www.nongnu.org/freefont/">
                   FreeFont</ulink>
                 </entry>
-                <entry>A new free unicode font initiative.</entry>
+                <entry>A new free Unicode font initiative.</entry>
               </row>
               <row>
                 <entry>
@@ -186,7 +186,7 @@
       right in the dialog. You also have the possibility to specify
       standard works that should be used when no specific work is
       specified in a reference. An example: The standard Bible is used
-      to display the content of crossreferences in the Bible. When you
+      to display the content of cross references in the Bible. When you
       hover over then, the Mag will show the content of the verses
       referred to, according to the standard Bible you
       specified.</para>
