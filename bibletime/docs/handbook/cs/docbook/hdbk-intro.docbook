@@ -24,11 +24,11 @@ url="http://www.crosswire.org">Crosswire Bible Society</ulink>. To zahrnuje:
         <varlistentry>
           <term>Bible</term>
           <listitem>
-            <para>The full Bible text, with optional things like Strong's Numbers, headings 
-and/or footnotes in the text.  Bibles are available in many languages, and 
-include not only modern versions, but also ancient texts like the Codex 
-Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
-the most advanced section in the library of the Sword project.</para>
+            <para>Úplný text Bible, s volitelnými věcmi jako Strongova čísla, nadpisy, nebo 
+poznámky v textu. Bible jsou dostupné v mnoha jazycích, nejen v moderních 
+verzích, ale také ve starověkých jako Codex Leningradensis ( Kodex 
+Leningradský; "WLC", Hebrejsky), nebo Septuaginta ("LXX", Řecky). Toto je 
+nejmodernější sekce knihovny projektu Sword.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -70,14 +70,14 @@ the English Language 1913, Nave's Topical Bible.</para>
     <sect2 id="hdbk-intro-motivation">
       <title>Motivace</title>
       <para>Přejeme si sloužit Bohu a přispět svým dílem ostatním v růstu ve vztahu s 
-Ním. Máme chuť udržet tento výkonný a kvalitní program stále jednoduchým a 
-intuitivním. Naším přáním je chválit Boha jako zdroj všech dobrých věcí.</para>
+Ním. Chceme, aby byl tento výkonný a kvalitní program stále jednoduchý a 
+intuitivní. Přejeme si chválit Boha, neboť on je zdroj všeho dobrého.</para>
       <blockquote>
         <attribution>Jakubův 1:17</attribution>
         <para>Každý dobrý dar a každé dokonalé obdarování je shůry, sestupuje od Otce 
 nebeských světel. U něho není proměny ani střídání světla a stínu.</para>
       </blockquote>
-      <para>God bless you as you use this program.</para>
+      <para>Bůh vám žehnej při používání tohoto programu.</para>
     </sect2>
   </sect1>
 </chapter>
