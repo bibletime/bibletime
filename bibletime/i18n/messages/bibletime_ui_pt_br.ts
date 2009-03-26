@@ -5254,62 +5254,62 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="obsolete">Inicializando menus e barras de ferramentas</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="86"/>
+        <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="87"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="88"/>
+        <location filename="../../src/bibletime_init.cpp" line="95"/>
         <source>&amp;Search</source>
         <translation type="unfinished">&amp;Procurar</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="89"/>
+        <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>&amp;Window</source>
         <translation type="unfinished">&amp;Janela</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="90"/>
+        <location filename="../../src/bibletime_init.cpp" line="97"/>
         <source>Se&amp;ttings</source>
         <translation type="unfinished">Números de Strong</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="91"/>
+        <location filename="../../src/bibletime_init.cpp" line="98"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>BibleTime</source>
         <translation type="unfinished">BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="100"/>
+        <location filename="../../src/bibletime_init.cpp" line="108"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="127"/>
+        <location filename="../../src/bibletime_init.cpp" line="135"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>&amp;Show bookshelf</source>
-        <translation type="unfinished">&amp;Mostrar os livros</translation>
+        <translation type="obsolete">&amp;Mostrar os livros</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Show &amp;mag</source>
-        <translation type="unfinished">Mostar Títulos</translation>
+        <translation type="obsolete">Mostar Títulos</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="114"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>&amp;Fullscreen mode</source>
         <translation type="unfinished">&amp;Modo tela cheia</translation>
     </message>
@@ -5324,7 +5324,7 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="obsolete">Procurar na bíblia padrão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>&amp;Save session</source>
         <translation type="unfinished">&amp;Salvar sessão</translation>
     </message>
@@ -5334,57 +5334,57 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="obsolete">Salvar como nova sessão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>&amp;Load session</source>
         <translation type="unfinished">&amp;Carregar sessão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>&amp;Delete session</source>
         <translation type="unfinished">&amp;Apagar sessão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="207"/>
+        <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>&amp;Arrangement mode</source>
         <translation type="unfinished">Modalidade do arranjo</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="214"/>
+        <location filename="../../src/bibletime_init.cpp" line="211"/>
         <source>&amp;Manual mode</source>
         <translation type="unfinished">Modo manual</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="225"/>
+        <location filename="../../src/bibletime_init.cpp" line="222"/>
         <source>Auto-tile &amp;vertically</source>
         <translation type="unfinished">Titulo vertical automático</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation type="unfinished">Titulo horizontal automático</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
+        <location filename="../../src/bibletime_init.cpp" line="244"/>
         <source>Auto-&amp;cascade</source>
         <translation type="unfinished">Cascata automática</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="257"/>
+        <location filename="../../src/bibletime_init.cpp" line="254"/>
         <source>&amp;Cascade</source>
         <translation type="unfinished">&amp;Cascata</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>Tile &amp;vertically</source>
         <translation type="unfinished">Título &amp;vertical</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="277"/>
+        <location filename="../../src/bibletime_init.cpp" line="274"/>
         <source>Tile &amp;horizontally</source>
         <translation type="unfinished">Título &amp;horizontal</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="287"/>
+        <location filename="../../src/bibletime_init.cpp" line="284"/>
         <source>Cl&amp;ose all</source>
         <translation type="unfinished">Fechar tud&amp;o</translation>
     </message>
@@ -5394,12 +5394,12 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="obsolete">Gerente do livro</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="314"/>
+        <location filename="../../src/bibletime_init.cpp" line="311"/>
         <source>&amp;Handbook</source>
         <translation type="unfinished">&amp;Manual</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="325"/>
+        <location filename="../../src/bibletime_init.cpp" line="322"/>
         <source>&amp;Bible Study Howto</source>
         <translation type="unfinished">Estudo &amp;Bíblico HowTo</translation>
     </message>
@@ -5419,127 +5419,117 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="obsolete">Nome da sessão:</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="504"/>
+        <location filename="../../src/bibletime_slots.cpp" line="483"/>
         <source>Please enter a name for the new session.</source>
         <translation type="unfinished">Por favor digite um nome para a nova sessão</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="111"/>
         <source>Quit BibleTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="140"/>
-        <source>Show or hide the bookshelf</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="151"/>
-        <source>Show or hide the mag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime_init.cpp" line="117"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="160"/>
+        <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Search in &amp;open works...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="172"/>
+        <location filename="../../src/bibletime_init.cpp" line="169"/>
         <source>Search in standard &amp;Bible...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Save as &amp;new session...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Create and save a new session</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="228"/>
+        <location filename="../../src/bibletime_init.cpp" line="225"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="239"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="250"/>
+        <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>Automatically cascade the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="260"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Cascade the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="270"/>
+        <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="280"/>
+        <location filename="../../src/bibletime_init.cpp" line="277"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="290"/>
+        <location filename="../../src/bibletime_init.cpp" line="287"/>
         <source>Close all open windows</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="297"/>
+        <location filename="../../src/bibletime_init.cpp" line="294"/>
         <source>&amp;Configure BibleTime...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="300"/>
+        <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <location filename="../../src/bibletime_init.cpp" line="303"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="309"/>
+        <location filename="../../src/bibletime_init.cpp" line="306"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="317"/>
+        <location filename="../../src/bibletime_init.cpp" line="314"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="328"/>
+        <location filename="../../src/bibletime_init.cpp" line="325"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Search in all works that are currently open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Search in the standard Bible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="504"/>
+        <location filename="../../src/bibletime_slots.cpp" line="483"/>
         <source>New Session</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5559,8 +5549,28 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="336"/>
+        <location filename="../../src/bibletime_init.cpp" line="333"/>
         <source>&amp;About BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="53"/>
+        <source>Bookshelf</source>
+        <translation type="unfinished">Livros</translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="59"/>
+        <source>Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="66"/>
+        <source>Mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <source>Show</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5879,73 +5889,143 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
 <context>
     <name>BtAboutDialog</name>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="53"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="54"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
         <source>We are looking for developers and translators.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="57"/>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation type="unfinished">(c) 1999-2003, O Time do BibleTime {1999-2009,?}</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
         <source>This program uses Qt Open Source Edition version </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="154"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="155"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
         <source>Please see </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="100"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source> for an overview of Qt licensing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="108"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
         <source>License Agreement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="170"/>
         <source>BibleTime is released under the GPL licence.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="171"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="113"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>The complete legally binding license is below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="69"/>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="71"/>
+        <source>The following people contributed to BibleTime:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="74"/>
+        <source>documentation and translation manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
+        <source>project founder, developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <source>designer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <source>developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
+        <source>packager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
+        <source>creator of The Sword Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
+        <source>project manager, developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
+        <source>domain sponsor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
+        <source>howto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
+        <source>documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <source>tester, usability expert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="101"/>
+        <source>The following people translated BibleTime into their language:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7086,11 +7166,6 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <source>Display</source>
         <translation type="unfinished">Opções de Exibição</translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="193"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
@@ -7411,11 +7486,6 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
         <source>Languages</source>
         <translation type="unfinished">Idioma</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
-        <source></source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7832,11 +7902,6 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <source>Desk</source>
         <translation type="unfinished">Mesa</translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="359"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
@@ -7927,37 +7992,32 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="47"/>
-        <source>Mag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="170"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="168"/>
         <source>Abbreviation</source>
         <translation type="unfinished">Abreviação</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="274"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="272"/>
         <source>Cross references</source>
         <translation type="unfinished">Preferências</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="317"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="315"/>
         <source>Footnote</source>
         <translation type="unfinished">Notas de rodapé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="344"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Strongs</source>
         <translation type="unfinished">Números de Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="422"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="420"/>
         <source>Morphology</source>
         <translation type="unfinished">Marcações morfológicas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="445"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="443"/>
         <source>Word lookup</source>
         <translation type="unfinished">Olhar acima da palavra</translation>
     </message>
@@ -7967,7 +8027,7 @@ Selecione-a e copie para a área de transferência. Agora insira a palavra copia
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="67"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="65"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10130,11 +10190,6 @@ This could take a long time. Proceed with indexing?</source>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
-        <source></source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>TextFiltersTab</name>
@@ -10196,11 +10251,6 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
-        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
