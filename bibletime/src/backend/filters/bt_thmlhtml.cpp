@@ -319,13 +319,14 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
 					CReferenceManager::ParseOptions options;
 					options.refBase = QString::fromUtf8(myUserData->key->getText());
-					options.refDestinationModule = QString(mod->name());
+					
 					options.sourceLanguage = myModule->Lang();
 					options.destinationLanguage = QString("en");
 
 					const QString completeRef = CReferenceManager::parseVerseReference(QString::fromUtf8(ref), options);
 
 					if (mod) {
+						options.refDestinationModule = QString(mod->name());
 						buf.append("<span class=\"crossreference\">");
 						buf.append("<a href=\"");
 						buf.append(

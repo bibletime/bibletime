@@ -343,7 +343,7 @@ CReferenceManager::Type CReferenceManager::typeFromModule( const CSwordModuleInf
 const QString CReferenceManager::parseVerseReference( const QString& ref, const CReferenceManager::ParseOptions& options) {
 
 	CSwordModuleInfo* const mod = CPointers::backend()->findModuleByName(options.refDestinationModule);
-	Q_ASSERT(mod);
+	//Q_ASSERT(mod); tested later
 
 	if (!mod) {
 		//parsing of non-verse based references is not supported
