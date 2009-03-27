@@ -455,11 +455,14 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 			sword::SWBuf who = tag.getAttribute("who");
 			const char *lev = tag.getAttribute("level");
 			int level = (lev) ? atoi(lev) : 1;
+			const char* quoteMarker = tag.getAttribute("marker");
 
-			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
+			if ((!tag.isEndTag())) {
 				myUserData->quote.who = who;
-
-				if(osisQToTick) //alternate " and '
+				if (quoteMarker) {
+					buf.append(quoteMarker);
+				}
+				else if(osisQToTick) //alternate " and '
 					buf.append((level % 2) ? '\"' : '\'');
 
 				if (who == "Jesus") {
@@ -470,8 +473,10 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 				if (myUserData->quote.who == "Jesus") {
 					buf.append("</span>");
 				}
-
-				if (osisQToTick) { //alternate " and '
+				if (quoteMarker) {
+					buf.append(quoteMarker);
+				}
+				else if (osisQToTick) { //alternate " and '
 					buf.append((level % 2) ? '\"' : '\'');
 				}
 
