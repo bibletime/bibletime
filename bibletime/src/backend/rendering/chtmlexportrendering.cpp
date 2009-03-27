@@ -133,9 +133,7 @@ namespace Rendering {
 		key_renderedText = key->renderedText();
 
 		if (m_filterOptions.headings) {
-			sword::SWModule *module = (*mod_Itr)->module();
 			(*mod_Itr)->module()->RenderText();
-//			dumpEntryAttributes(module);
 			sword::AttributeValue::const_iterator it =
 				(*mod_Itr)->module()->getEntryAttributes()["Heading"]["Preverse"].begin();
 			const sword::AttributeValue::const_iterator end =
