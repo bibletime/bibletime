@@ -147,10 +147,10 @@ QString CToolClass::getIconNameForModule( CSwordModuleInfo* module_info ) {
 
 QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
 	QString br;
-	if (!heading.isEmpty()) {
-		br = QString::fromLatin1("<BR/>");
+	if (!heading.isEmpty() && !text.isEmpty()) {
+		br = QString::fromLatin1("<span style='white-space:pre'>  -  </span>");
 	}
-	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B>%2%3").arg(heading).arg(br).arg(text),parent );	
+	QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B>%2<small>%3</small>").arg(heading).arg(br).arg(text),parent );	
 	
 	label->setWordWrap(true);
 	label->setMargin(1);
