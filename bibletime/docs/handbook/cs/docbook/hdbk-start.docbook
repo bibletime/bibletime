@@ -16,7 +16,7 @@ prostředí. &bibletime; můžete spustit z menu Start touto ikonou:
       </mediaobject></para>
       <para>&bibletime; může být spuštěn také z příkazové řádky. Pro spuštění 
 &bibletime; otevřete okno terminálu a napište: 
-      <screen>bibletime</screen></para>
+      <screen>&bibletime;</screen></para>
     </sect2>
     <sect2 id="hdbk-start-otherwm">
       <title>Další správci oken</title>

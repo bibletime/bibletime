@@ -396,12 +396,11 @@ linkend="hdbk-reference-menus-settings-toolbars">tuto sekci</link>.</para>
   </sect1>
   <sect1 id="hdbk-reference-hotkeys">
     <title>Seznam horkých kláves</title>
-    <para>Toto je seznam všech horkých kláves a jejich souvisejícího popisu v 
-příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete 
-přesně vědět která z horkých kláves odpovídá té které položce menu, můžete 
-se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké 
-klávesy), nebo si prohlédněte <link linkend="hdbk-reference-menus">tuto 
-sekci</link>.</para>
+    <para>This is index of all hotkeys and their corresponding description in the 
+handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
+directly find out which hotkey a certain menu item has, you can either look 
+at the entry itself in &bibletime; (as it always shows the hotkey), or you 
+can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
     <informaltable>
       <tgroup cols="2">
         <colspec colname="hotkey" />

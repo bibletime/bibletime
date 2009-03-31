@@ -314,14 +314,14 @@ existing works from your Bookshelf. Access it by clicking <menuchoice>
 </menuchoice>in the main menu.</para>
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Kirjahyllyn polun/polkujen asetus</title>
-      <para>Tässä voit määritellä, minne &bibletime; tallettaa kirjahyllysi 
-levyllä. Voit tallentaa sen jopa useampiin kansioihin. Oletus on 
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive. You can even store it in multiple directories. Default is 
 "~/.sword/".</para>
       <tip>
-        <para>Jos sinulla on Sword-CD, mutta et halua asentaa kaikkia teoksia 
-kovalevyllesi vaan käyttää niitä suoraan CD:ltä, voit lisätä polun CD:lle 
-yhtenä kirjahyllyn polkuna. Kun aloitat &bibletime;-ohjelman, se näyttää 
-sinulle kaikki CD:llä olevat teokset, jos CD on asemassa.</para>
+        <para>If you have a sword CD, but do not want to install all the works on the hard 
+disk, but use them directly from the CD, then you can add the path to the CD 
+as one of your bookshelf paths. When you start &bibletime;, it will show all 
+works on the CD if it is present.</para>
       </tip>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">

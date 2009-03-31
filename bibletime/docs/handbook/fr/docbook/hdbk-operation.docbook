@@ -317,15 +317,14 @@ existing works from your Bookshelf. Access it by clicking <menuchoice>
 </menuchoice>in the main menu.</para>
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Configurer les chemins vers les bibliothèques</title>
-      <para>Vous pouvez désigner ici l'endroit où &bibletime; garde votre bibliothèque 
-sur le disque dur. Vous pouvez même la placer dnas plusieurs répertoires. Le 
-répertoire par défaut est "~/.sword/".</para>
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive. You can even store it in multiple directories. Default is 
+"~/.sword/".</para>
       <tip>
-        <para>Si vous avez un CD Sword, mais que vous ne voulez pas installer les modules 
-sur le disque mais plutôt les consulter directement sur le CD; vous pouvez 
-ajouter le chemin du CD dans vos chemins vers les bibliothèques. Quand vous 
-lancez &bibletime;, si le CD est présent, les modules qu'il contient 
-s'afficheront dans la bibliothèque.</para>
+        <para>If you have a sword CD, but do not want to install all the works on the hard 
+disk, but use them directly from the CD, then you can add the path to the CD 
+as one of your bookshelf paths. When you start &bibletime;, it will show all 
+works on the CD if it is present.</para>
       </tip>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">

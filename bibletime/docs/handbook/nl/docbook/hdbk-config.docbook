@@ -32,7 +32,7 @@ bijbelboeknamen. Stel dit op uw moedertaal als deze beschikbaar is en u
 voelt zich helemaal thuis.</para>
 
       <para>By default, &bibletime; uses the default system display font. You can 
-override this font if neccessary. Some languages require special fonts to be 
+override this font if necessary. Some languages require special fonts to be 
 displayed correctly, and this dialog allows you to specify a custom font for 
 each language.</para>
       <mediaobject>
@@ -111,14 +111,14 @@ karakters ondersteunt.</entry>
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Uitstekende Unicode lettertypen van het Summer Institute of Linguistics.</entry>
+                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/">
                   FreeFont</ulink>
                 </entry>
-                <entry>Een nieuw initiatief voor gratis Unicode lettertypen.</entry>
+                <entry>A new free Unicode font initiative.</entry>
               </row>
               <row>
                 <entry>
@@ -163,15 +163,13 @@ ranges and the Unicode fonts that support them</ulink>).</para>
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Vele functies die door de Sword backend aangeboden worden, kunnen nu 
-aangepast worden in &bibletime; Deze functies zijn rechts in de dialoog 
-gedocumenteerd. U heeft ook de mogelijkheid om standaardmodules op te geven 
-die gebruikt moeten worden wanneer niet een bepaalde module is 
-gespecificeerd in een verwijzing. Een voorbeeld: De standaardbijbel wordt 
-gebruikt om de inhoud van kruisverwijzingen in de bijbel weer te geven. Als 
-u daar met uw muis over heen gaat, zal het vergrootglas de inhoud laten zien 
-van de verzen waarnaar verwezen wordt, zoals deze vermeld staan in de 
-standaardbijbel.</para>
+      <para>Many features provided by the Sword backend can now be customized in 
+&bibletime;. These features are documented right in the dialog. You also 
+have the possibility to specify standard works that should be used when no 
+specific work is specified in a reference. An example: The standard Bible is 
+used to display the content of cross references in the Bible. When you hover 
+over then, the Mag will show the content of the verses referred to, 
+according to the standard Bible you specified.</para>
     </sect2>
     <sect2 id="hdbk-config-bt-hotkeys">
       <title>

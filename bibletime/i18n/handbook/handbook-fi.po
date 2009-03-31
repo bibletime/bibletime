@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-03-08 23:52-0400\n"
+"POT-Creation-Date: 2009-03-26 15:13-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -114,7 +114,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "By default, &bibletime; uses the default system display font. You can "
-"override this font if neccessary. Some languages require special fonts to be "
+"override this font if necessary. Some languages require special fonts to be "
 "displayed correctly, and this dialog allows you to specify a custom font for "
 "each language."
 msgstr ""
@@ -246,11 +246,13 @@ msgid ""
 msgstr "Ehkä paras ilmainen Unicode-kirjasin, käsittää laajan joukon merkkejä."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:127
-msgid "Excellent unicode fonts from the Summer Institute of Linguistics."
+#, fuzzy
+msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
 msgstr "Erinomainen lingvistiikan kesäinstituutin unicode-kirjasin."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:135
-msgid "A new free unicode font initiative."
+#, fuzzy
+msgid "A new free Unicode font initiative."
 msgstr "Uusi vapaa unicode-kirjasinaloite."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:142
@@ -295,12 +297,13 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:184
+#, fuzzy
 msgid ""
 "Many features provided by the Sword backend can now be customized in "
 "&bibletime;. These features are documented right in the dialog. You also "
 "have the possibility to specify standard works that should be used when no "
 "specific work is specified in a reference. An example: The standard Bible is "
-"used to display the content of crossreferences in the Bible. When you hover "
+"used to display the content of cross references in the Bible. When you hover "
 "over then, the Mag will show the content of the verses referred to, "
 "according to the standard Bible you specified."
 msgstr ""
@@ -406,9 +409,10 @@ msgstr "Kommentaareja"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:49
+#, fuzzy
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
-"Bible\", Matthew Henry`s commentary and Luther's \"Commentary on Galatians."
+"Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
 "\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
 "\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
@@ -440,7 +444,7 @@ msgstr "Sanakirjat"
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
 "Driver-Briggs Hebrew Lexicon and the International Standard Bible "
-"Encyclopedia. Dictionaries available include Strong's Hebrew Bible "
+"Encyclopaedia. Dictionaries available include Strong's Hebrew Bible "
 "Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
 "Dictionary of the English Language 1913, Nave's Topical Bible."
 msgstr ""
@@ -1006,21 +1010,23 @@ msgid "Bookshelf path(s) setup"
 msgstr "Kirjahyllyn polun/polkujen asetus"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:373
+#, fuzzy
 msgid ""
-"Here you can specify where &bibletime; may store your Bookshelf on the "
-"harddrive. You can even store it in multiple directories. Default is \"~/."
-"sword/\"."
+"Here you can specify where &bibletime; may store your Bookshelf on the hard "
+"drive. You can even store it in multiple directories. Default is \"~/.sword/"
+"\"."
 msgstr ""
 "Tässä voit määritellä, minne &bibletime; tallettaa kirjahyllysi levyllä. "
 "Voit tallentaa sen jopa useampiin kansioihin. Oletus on \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:377
+#, fuzzy
 msgid ""
-"If you have a sword CD, but do not want to install all the works on the "
-"harddisk, but use them directly from the CD, then you can add the path to "
-"the CD as one of your bookshelf paths. When you start &bibletime;, it will "
-"show all works on the CD if it is present."
+"If you have a sword CD, but do not want to install all the works on the hard "
+"disk, but use them directly from the CD, then you can add the path to the CD "
+"as one of your bookshelf paths. When you start &bibletime;, it will show all "
+"works on the CD if it is present."
 msgstr ""
 "Jos sinulla on Sword-CD, mutta et halua asentaa kaikkia teoksia "
 "kovalevyllesi vaan käyttää niitä suoraan CD:ltä, voit lisätä polun CD:lle "
@@ -1304,7 +1310,7 @@ msgid ""
 "This is index of all hotkeys and their corresponding description in the "
 "handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to "
 "directly find out which hotkey a certain menu item has, you can either look "
-"at the entry itelf in &bibletime; (as it always shows the hotkey), or you "
+"at the entry itself in &bibletime; (as it always shows the hotkey), or you "
 "can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
 msgstr ""
 
@@ -1526,8 +1532,8 @@ msgstr ""
 "Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna ja kirjoita:"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, no-wrap
-msgid "bibletime"
+#, fuzzy, no-wrap
+msgid "&bibletime;"
 msgstr "bibletime"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
@@ -1538,7 +1544,7 @@ msgstr "Muut ikkunamanagerit"
 #, fuzzy
 msgid ""
 "&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libarires are "
+"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
 "already installed on your computer."
 msgstr ""
 "Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten "

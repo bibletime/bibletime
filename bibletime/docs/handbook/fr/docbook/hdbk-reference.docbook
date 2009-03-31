@@ -401,7 +401,7 @@ section</link> for detailed instructions.</para>
     <para>This is index of all hotkeys and their corresponding description in the 
 handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
 directly find out which hotkey a certain menu item has, you can either look 
-at the entry itelf in &bibletime; (as it always shows the hotkey), or you 
+at the entry itself in &bibletime; (as it always shows the hotkey), or you 
 can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
     <informaltable>
       <tgroup cols="2">
