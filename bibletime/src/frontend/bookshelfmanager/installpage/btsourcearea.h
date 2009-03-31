@@ -54,6 +54,8 @@ public:
 	~BtSourceArea();
 
 	void initView();
+	/** Reimplemented from QWidget. */
+	virtual QSize sizeHint() const;
 	void initTreeFirstTime();
 	QTreeWidget* treeWidget();
 

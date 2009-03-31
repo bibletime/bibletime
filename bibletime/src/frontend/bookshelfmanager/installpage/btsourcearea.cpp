@@ -32,6 +32,7 @@
 #include <QPushButton>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QHeaderView>
 
 #include <QDebug>
 
@@ -60,28 +61,26 @@ void BtSourceArea::initView()
 {
 	qDebug("BtSourceArea::initView");
 	QVBoxLayout *mainLayout = new QVBoxLayout(this);
-	qDebug("void BtSourceArea::initView, refresh label");
-	QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
-	QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
-	m_refreshTimeLabel = new QLabel();
-	QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+	//QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
+	//QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
+	//m_refreshTimeLabel = new QLabel();
+	//QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-	refreshLabelLayout->addWidget(refreshLabel);
-	refreshLabelLayout->addWidget(m_refreshTimeLabel);
-	refreshLabelLayout->addItem(refreshLabelSpacer);
+	//refreshLabelLayout->addWidget(refreshLabel);
+	//refreshLabelLayout->addWidget(m_refreshTimeLabel);
+	//refreshLabelLayout->addItem(refreshLabelSpacer);
 	// TODO: or would it be better to integrate this information into the tooltip
 	// of the source tab?
 	//mainLayout->addLayout(refreshLabelLayout);
 
 	// source related button row
-	qDebug("void BtSourceWidget::createTabWidget() source buttons");
 	QHBoxLayout *sourceLayout = new QHBoxLayout();
 	m_refreshButton = new QPushButton(tr("Refresh..."));
 	m_refreshButton->setToolTip(tr("Refresh the list of works from this source"));
 	m_refreshButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
 	//m_refreshButton->setEnabled(false);
 	QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	m_editButton = new QPushButton(tr("Edit..."));
+	//m_editButton = new QPushButton(tr("Edit..."));
 	//m_editButton->setEnabled(false); // TODO after writing the edit widget
 	m_deleteButton = new QPushButton(tr("Delete..."));
 	m_deleteButton->setToolTip(tr("Delete this source"));
@@ -106,6 +105,11 @@ void BtSourceArea::initView()
 
 	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+}
+
+QSize BtSourceArea::sizeHint() const
+{
+	return QSize(100, m_refreshButton->height() + (m_view->header()->height() * 5));
 }
 
 void BtSourceArea::initTreeFirstTime()
