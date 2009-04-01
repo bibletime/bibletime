@@ -89,7 +89,6 @@ void BtSearchOptionsArea::initView()
 	QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 	this->setSizePolicy(sizePolicy);
 	hboxLayout = new QHBoxLayout(this);
-	hboxLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
 	searchGroupBox = new QGroupBox(this);
 
@@ -126,8 +125,9 @@ void BtSearchOptionsArea::initView()
 	// Added space looks nicer and enhances readability
 	typeSelectorLayout->getContentsMargins(&tsLeft, &tsTop, &tsRight, &tsBottom);
 	typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom + CToolClass::mWidth(this,1) );
-	typeSelectorLayout->setSpacing(typeSelectorLayout->spacing()+CToolClass::mWidth(this,1)/2);
+	typeSelectorLayout->setSpacing(typeSelectorLayout->spacing()+CToolClass::mWidth(this,1));
 	QHBoxLayout* fullButtonLayout = new QHBoxLayout();
+	fullButtonLayout->setSpacing(CToolClass::mWidth(this,1)/2);
 	m_typeAndButton = new QRadioButton(tr("All words"));
 	m_typeAndButton->setChecked(true);
 	m_typeOrButton = new QRadioButton(tr("Some words"));
@@ -145,7 +145,7 @@ void BtSearchOptionsArea::initView()
 	fullButtonLayout->addWidget(m_typeFreeButton);
 	fullButtonLayout->addWidget(m_helpLabel);
 	typeSelectorLayout->addLayout(fullButtonLayout);
-	gridLayout->addLayout(typeSelectorLayout, 1,1, 1,0, Qt::AlignLeft|Qt::AlignTop);
+	gridLayout->addLayout(typeSelectorLayout, 1,1, 1,-1, Qt::AlignLeft|Qt::AlignTop);
 
 	// ************* Label for search range/scope selector *************
 	m_searchScopeLabel = new QLabel(tr("Scope:"), searchGroupBox);
@@ -181,6 +181,10 @@ void BtSearchOptionsArea::initView()
 	gridLayout->addWidget(m_modulesCombo, 2, 1);
 
 	hboxLayout->addWidget(searchGroupBox);
+
+	// Set the minimum size before the widgets are populated with data.
+	// Otherwise we will get problems with sizing.
+	setMinimumSize(minimumSizeHint());
 
 	refreshRanges();
 	//set the initial focus

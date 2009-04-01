@@ -73,11 +73,8 @@ public:
 	*/
 	sword::ListKey searchScope();
 
-	QSize sizeHint() const { return baseSize(); }
-	QSize minimumSizeHint() const { return minimumSize(); }
     bool hasSearchScope();
 
-//	bool isAndSearchType();
 
 protected:
 	/**
