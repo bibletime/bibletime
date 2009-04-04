@@ -50,6 +50,8 @@ public:
 	*/
 	CSwordModuleInfo* activeModule();
 
+	virtual QSize sizeHint() {return m_size;}
+
 protected:
 	/**
 	* Initializes this widget.
@@ -125,6 +127,7 @@ private:
 	QMenu* m_popup;
 	
 	StrongsResultClass* strongsResults;
+	QSize m_size;
 };
 
 

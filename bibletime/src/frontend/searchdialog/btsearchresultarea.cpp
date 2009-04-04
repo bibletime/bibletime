@@ -58,7 +58,6 @@ void BtSearchResultArea::initView()
 	// maybe this is better in different kinds of displays?
 	int mWidth = CToolClass::mWidth(this, 1);
 	this->setMinimumSize(QSize(mWidth*40, mWidth*15));
-	this->setBaseSize(QSize(mWidth*50, mWidth*25));
 	mainLayout = new QVBoxLayout(this);
 	mainSplitter = new QSplitter(this);
 	mainSplitter->setOrientation(Qt::Horizontal);
@@ -500,7 +499,14 @@ void BtSearchResultArea::showAnalysis() {
 void BtSearchResultArea::loadDialogSettings()
 {
 	QList<int> mainSplitterSizes = CBTConfig::get(CBTConfig::searchMainSplitterSizes);
-	if (mainSplitterSizes.count() > 0) mainSplitter->setSizes(mainSplitterSizes);
+	if (mainSplitterSizes.count() > 0) {
+		mainSplitter->setSizes(mainSplitterSizes);
+	} else {
+		int w = this->size().width();
+		int w2 = m_moduleListBox->sizeHint().width();
+		mainSplitterSizes << w2 << w - w2;
+		mainSplitter->setSizes(mainSplitterSizes);
+	}
 	QList<int> resultSplitterSizes = CBTConfig::get(CBTConfig::searchResultSplitterSizes); 
 	if (resultSplitterSizes.count() > 0) resultListSplitter->setSizes(resultSplitterSizes);
 }

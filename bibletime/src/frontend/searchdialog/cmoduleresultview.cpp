@@ -26,7 +26,7 @@
 #include <QStringList>
 #include <QMenu>
 #include <QContextMenuEvent>
-
+#include <QHeaderView>
 
 namespace Search {
 
@@ -44,8 +44,7 @@ CModuleResultView::CModuleResultView(QWidget* parent)
 }
 
 CModuleResultView::~CModuleResultView()
-{
-}
+{}
 
 
 /** Initializes this widget. */
@@ -55,8 +54,11 @@ void CModuleResultView::initView()
 	setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
 	setHeaderLabels( QStringList(tr("Work")) << QString(tr("Hits")) );
 
+	setColumnWidth(0, CToolClass::mWidth(this, 8));
 	setColumnWidth(1, CToolClass::mWidth(this, 4));
-
+	QSize sz(CToolClass::mWidth(this, 13), CToolClass::mWidth(this, 5));
+	//setMinimumSize(sz);
+	m_size = sz;
 	//TODO: sorting
 	//setSorting(0, true);
 	//setSorting(1, true);
