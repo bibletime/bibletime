@@ -18,6 +18,7 @@
 #include "util/cpointers.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/config/cbtconfig.h"
+#include "frontend/htmldialogs/bttabhtmldialog.h"
 
 #include <QHBoxLayout>
 #include <QGroupBox>
@@ -356,7 +357,9 @@ void BtSearchOptionsArea::syntaxHelp() {
 			"<a href=\"http://lucene.apache.org/java/docs/queryparsersyntax.html\">"
 			"http://lucene.apache.org/java/docs/queryparsersyntax.html</a></p>");
 
-	QMessageBox::about( this, tr("Basic Search Syntax Introduction"), syntax);
+	BtTabHtmlDialog* dlg = new BtTabHtmlDialog(tr("Basic Search Syntax Introduction"), 0, this);
+	dlg->setHtml(syntax);
+	dlg->show();
 }
 
 void BtSearchOptionsArea::refreshRanges() {
