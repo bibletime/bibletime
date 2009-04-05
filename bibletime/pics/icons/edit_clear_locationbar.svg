@@ -554,15 +554,6 @@
          stdDeviation="1.0041831"
          id="feGaussianBlur3397" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath3405">
-      <path
-         sodipodi:nodetypes="cccscccccccc"
-         id="path3407"
-         d="M 185.5,28 C 184.50724,27.998369 183.54934,28.365936 182.8125,29.03125 L 142.8125,65.03125 C 141.97272,65.789734 141.49347,66.868398 141.49347,68 C 141.49347,69.131602 141.97272,70.210266 142.8125,70.96875 L 182.8125,106.96875 C 183.54934,107.63406 184.50724,108.00163 185.5,108 L 241.5,108 C 243.70905,107.99978 245.49978,106.20905 245.5,104 L 245.5,32 C 245.49978,29.790952 243.70905,28.000221 241.5,28 L 185.5,28 z"
-         style="fill:url(#linearGradient3409);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4;stroke-opacity:1" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient26907"
@@ -573,6 +564,15 @@
        y1="-16"
        x2="72"
        y2="64" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3405">
+      <path
+         sodipodi:nodetypes="cccscccccccc"
+         id="path3407"
+         d="M 185.5,28 C 184.50724,27.998369 183.54934,28.365936 182.8125,29.03125 L 142.8125,65.03125 C 141.97272,65.789734 141.49347,66.868398 141.49347,68 C 141.49347,69.131602 141.97272,70.210266 142.8125,70.96875 L 182.8125,106.96875 C 183.54934,107.63406 184.50724,108.00163 185.5,108 L 241.5,108 C 243.70905,107.99978 245.49978,106.20905 245.5,104 L 245.5,32 C 245.49978,29.790952 243.70905,28.000221 241.5,28 L 185.5,28 z"
+         style="fill:url(#linearGradient3409);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4;stroke-opacity:1" />
+    </clipPath>
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient3159"

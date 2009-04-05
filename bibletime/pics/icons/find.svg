@@ -551,14 +551,6 @@
          stdDeviation="0.87156593"
          id="feGaussianBlur5913" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath5917">
-      <path
-         id="path5919"
-         d="M 1054.4062,-343.21875 C 1051.7213,-343.25923 1049.0198,-342.55396 1046.6875,-341.21875 C 1043.3595,-339.31356 1041.5376,-335.63742 1040.2188,-331.875 C 1031.5672,-331.45053 1020.5439,-329.17333 1013,-316.15625 L 1003.3125,-295.21875 L 1003.4062,-295.21875 C 1003.3436,-295.11271 1003.2809,-295.01361 1003.2188,-294.90625 L 1061.7188,-265.84375 L 1075.8438,-265.84375 C 1083.6075,-265.84374 1088.3096,-273.98184 1089.2188,-281.71875 L 1089.25,-281.71875 L 1089.25,-281.90625 C 1089.2835,-282.21131 1089.291,-282.50939 1089.3125,-282.8125 L 1089.3438,-283.0625 C 1089.367,-283.44867 1089.4027,-283.83818 1089.4062,-284.21875 L 1090.75,-304.03125 C 1091.2971,-308.38183 1090.5296,-312.62325 1088.25,-314.90625 L 1063.8438,-339.3125 C 1061.2601,-341.89616 1057.8584,-343.1667 1054.4062,-343.21875 z "
-         style="fill:url(#linearGradient5921);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -569,6 +561,14 @@
        y1="-304.53207"
        x2="1380.5529"
        y2="-304.53207" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5917">
+      <path
+         id="path5919"
+         d="M 1054.4062,-343.21875 C 1051.7213,-343.25923 1049.0198,-342.55396 1046.6875,-341.21875 C 1043.3595,-339.31356 1041.5376,-335.63742 1040.2188,-331.875 C 1031.5672,-331.45053 1020.5439,-329.17333 1013,-316.15625 L 1003.3125,-295.21875 L 1003.4062,-295.21875 C 1003.3436,-295.11271 1003.2809,-295.01361 1003.2188,-294.90625 L 1061.7188,-265.84375 L 1075.8438,-265.84375 C 1083.6075,-265.84374 1088.3096,-273.98184 1089.2188,-281.71875 L 1089.25,-281.71875 L 1089.25,-281.90625 C 1089.2835,-282.21131 1089.291,-282.50939 1089.3125,-282.8125 L 1089.3438,-283.0625 C 1089.367,-283.44867 1089.4027,-283.83818 1089.4062,-284.21875 L 1090.75,-304.03125 C 1091.2971,-308.38183 1090.5296,-312.62325 1088.25,-314.90625 L 1063.8438,-339.3125 C 1061.2601,-341.89616 1057.8584,-343.1667 1054.4062,-343.21875 z "
+         style="fill:url(#linearGradient5921);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </clipPath>
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5925"
@@ -588,14 +588,6 @@
          stdDeviation="0.27275091"
          id="feGaussianBlur5979" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath5983">
-      <path
-         id="path5985"
-         d="M 1054.4062,-343.21875 C 1051.7213,-343.25923 1049.0198,-342.55396 1046.6875,-341.21875 C 1043.3595,-339.31356 1041.5376,-335.63742 1040.2188,-331.875 C 1031.5672,-331.45053 1020.5439,-329.17333 1013,-316.15625 L 1003.3125,-295.21875 L 1003.4062,-295.21875 C 1003.3436,-295.11271 1003.2809,-295.01361 1003.2188,-294.90625 L 1061.7188,-265.84375 L 1075.8438,-265.84375 C 1083.6075,-265.84374 1088.3096,-273.98184 1089.2188,-281.71875 L 1089.25,-281.71875 L 1089.25,-281.90625 C 1089.2835,-282.21131 1089.291,-282.50939 1089.3125,-282.8125 L 1089.3438,-283.0625 C 1089.367,-283.44867 1089.4027,-283.83818 1089.4062,-284.21875 L 1090.75,-304.03125 C 1091.2971,-308.38183 1090.5296,-312.62325 1088.25,-314.90625 L 1063.8438,-339.3125 C 1061.2601,-341.89616 1057.8584,-343.1667 1054.4062,-343.21875 z "
-         style="fill:url(#linearGradient5987);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -606,6 +598,14 @@
        y1="-304.53207"
        x2="1380.5529"
        y2="-304.53207" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5983">
+      <path
+         id="path5985"
+         d="M 1054.4062,-343.21875 C 1051.7213,-343.25923 1049.0198,-342.55396 1046.6875,-341.21875 C 1043.3595,-339.31356 1041.5376,-335.63742 1040.2188,-331.875 C 1031.5672,-331.45053 1020.5439,-329.17333 1013,-316.15625 L 1003.3125,-295.21875 L 1003.4062,-295.21875 C 1003.3436,-295.11271 1003.2809,-295.01361 1003.2188,-294.90625 L 1061.7188,-265.84375 L 1075.8438,-265.84375 C 1083.6075,-265.84374 1088.3096,-273.98184 1089.2188,-281.71875 L 1089.25,-281.71875 L 1089.25,-281.90625 C 1089.2835,-282.21131 1089.291,-282.50939 1089.3125,-282.8125 L 1089.3438,-283.0625 C 1089.367,-283.44867 1089.4027,-283.83818 1089.4062,-284.21875 L 1090.75,-304.03125 C 1091.2971,-308.38183 1090.5296,-312.62325 1088.25,-314.90625 L 1063.8438,-339.3125 C 1061.2601,-341.89616 1057.8584,-343.1667 1054.4062,-343.21875 z "
+         style="fill:url(#linearGradient5987);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5991"
@@ -623,14 +623,6 @@
          stdDeviation="1.0516022"
          id="feGaussianBlur6037" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath6050">
-      <path
-         style="fill:url(#linearGradient6054);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 926.54247,-604.18385 C 924.00493,-603.30564 921.70629,-601.72078 919.96966,-599.6698 C 917.49162,-596.74326 917.03363,-592.66606 917.07797,-588.67945 C 909.0906,-585.32798 899.50618,-579.42564 896.85741,-564.61555 L 894.89667,-541.629 L 894.98475,-541.66096 C 894.9621,-541.53993 894.93698,-541.42538 894.91524,-541.30327 L 959.82132,-533.94936 L 973.09837,-538.76971 C 980.396,-541.41916 982.03859,-550.67337 980.25288,-558.25609 L 980.28221,-558.26674 L 980.21822,-558.44298 C 980.14561,-558.74116 980.05093,-559.02391 979.9677,-559.31616 L 979.91181,-559.56183 C 979.80183,-559.93274 979.70246,-560.31105 979.57587,-560.66996 L 974.07772,-579.75167 C 973.10729,-584.02777 970.93842,-587.75265 968.01657,-589.12066 L 936.74657,-603.7328 C 933.43626,-605.27964 929.80519,-605.31303 926.54247,-604.18385 z "
-         id="path6052" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -641,6 +633,14 @@
        y1="-304.53207"
        x2="1380.5529"
        y2="-304.53207" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6050">
+      <path
+         style="fill:url(#linearGradient6054);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 926.54247,-604.18385 C 924.00493,-603.30564 921.70629,-601.72078 919.96966,-599.6698 C 917.49162,-596.74326 917.03363,-592.66606 917.07797,-588.67945 C 909.0906,-585.32798 899.50618,-579.42564 896.85741,-564.61555 L 894.89667,-541.629 L 894.98475,-541.66096 C 894.9621,-541.53993 894.93698,-541.42538 894.91524,-541.30327 L 959.82132,-533.94936 L 973.09837,-538.76971 C 980.396,-541.41916 982.03859,-550.67337 980.25288,-558.25609 L 980.28221,-558.26674 L 980.21822,-558.44298 C 980.14561,-558.74116 980.05093,-559.02391 979.9677,-559.31616 L 979.91181,-559.56183 C 979.80183,-559.93274 979.70246,-560.31105 979.57587,-560.66996 L 974.07772,-579.75167 C 973.10729,-584.02777 970.93842,-587.75265 968.01657,-589.12066 L 936.74657,-603.7328 C 933.43626,-605.27964 929.80519,-605.31303 926.54247,-604.18385 z "
+         id="path6052" />
+    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6060"
@@ -932,15 +932,6 @@
          stdDeviation="3.802569"
          id="feGaussianBlur6961" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath6965">
-      <path
-         sodipodi:nodetypes="ccccsscccsc"
-         id="path6967"
-         d="M 919.4932,-293.5 C 906.89178,-293.5 896.30988,-286.92718 891.86818,-277.5 L 884.71198,-263 L 882.80568,-258.71875 C 881.75578,-255.7011 881.24428,-252.48284 881.36818,-249.125 C 881.98698,-232.358 898.17438,-218.74999 917.4932,-218.75 C 935.888,-218.75 950.513,-231.09546 951.337,-246.75 L 951.3682,-247.5625 L 951.3682,-266.53125 C 951.3672,-266.56286 951.3694,-266.59337 951.3682,-266.625 C 950.8223,-281.46 936.5362,-293.50001 919.4932,-293.5 z "
-         style="opacity:1;fill:url(#linearGradient6969);fill-opacity:1;stroke:none;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -952,6 +943,15 @@
        y1="-271.96814"
        x2="1379.2245"
        y2="-258.91791" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6965">
+      <path
+         sodipodi:nodetypes="ccccsscccsc"
+         id="path6967"
+         d="M 919.4932,-293.5 C 906.89178,-293.5 896.30988,-286.92718 891.86818,-277.5 L 884.71198,-263 L 882.80568,-258.71875 C 881.75578,-255.7011 881.24428,-252.48284 881.36818,-249.125 C 881.98698,-232.358 898.17438,-218.74999 917.4932,-218.75 C 935.888,-218.75 950.513,-231.09546 951.337,-246.75 L 951.3682,-247.5625 L 951.3682,-266.53125 C 951.3672,-266.56286 951.3694,-266.59337 951.3682,-266.625 C 950.8223,-281.46 936.5362,-293.50001 919.4932,-293.5 z "
+         style="opacity:1;fill:url(#linearGradient6969);fill-opacity:1;stroke:none;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5991"
@@ -961,15 +961,6 @@
        x2="765.15649"
        y2="-688.52112"
        gradientUnits="userSpaceOnUse" />
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath7001">
-      <path
-         sodipodi:nodetypes="ccccsscccsc"
-         id="path7003"
-         d="M 774.76499,-708.82707 C 763.46068,-703.25856 756.87251,-692.68621 757.05383,-682.26663 L 757.04173,-666.09688 L 757.22351,-661.41393 C 757.61517,-658.24295 758.57845,-655.12992 760.17341,-652.17247 C 768.13778,-637.4048 788.67227,-632.35064 806.00254,-640.88755 C 822.5039,-649.01613 830.16809,-666.55355 823.98961,-680.96083 L 823.65856,-681.70349 L 815.27635,-698.71972 C 815.26149,-698.74763 815.24998,-698.77598 815.23492,-698.80382 C 808.1897,-711.87057 790.05369,-716.3583 774.76499,-708.82707 z "
-         style="opacity:1;fill:url(#linearGradient7005);fill-opacity:1;stroke:none;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -981,6 +972,15 @@
        y1="-271.96814"
        x2="1379.2245"
        y2="-258.91791" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7001">
+      <path
+         sodipodi:nodetypes="ccccsscccsc"
+         id="path7003"
+         d="M 774.76499,-708.82707 C 763.46068,-703.25856 756.87251,-692.68621 757.05383,-682.26663 L 757.04173,-666.09688 L 757.22351,-661.41393 C 757.61517,-658.24295 758.57845,-655.12992 760.17341,-652.17247 C 768.13778,-637.4048 788.67227,-632.35064 806.00254,-640.88755 C 822.5039,-649.01613 830.16809,-666.55355 823.98961,-680.96083 L 823.65856,-681.70349 L 815.27635,-698.71972 C 815.26149,-698.74763 815.24998,-698.77598 815.23492,-698.80382 C 808.1897,-711.87057 790.05369,-716.3583 774.76499,-708.82707 z "
+         style="opacity:1;fill:url(#linearGradient7005);fill-opacity:1;stroke:none;stroke-width:0.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </clipPath>
     <filter
        inkscape:collect="always"
        id="filter7023">
@@ -1001,14 +1001,6 @@
          stdDeviation="0.90989293"
          id="feGaussianBlur7258" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath7262">
-      <path
-         style="fill:url(#linearGradient7266);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 1054.7212,-342.29086 C 1052.0613,-342.3309 1049.385,-341.63329 1047.0744,-340.31257 C 1043.7774,-338.42805 1041.9724,-334.79181 1040.6659,-331.07022 C 1032.0948,-330.65036 1021.1742,-328.39787 1013.7005,-315.52207 L 1004.1032,-294.8118 L 1004.196,-294.8118 C 1004.134,-294.70691 1004.0719,-294.60888 1004.0103,-294.50269 L 1061.9658,-265.7556 L 1075.9593,-265.7556 C 1083.6507,-265.75559 1088.309,-273.80537 1089.2097,-281.45831 L 1089.2407,-281.45831 L 1089.2407,-281.64377 C 1089.2738,-281.94552 1089.2813,-282.24037 1089.3026,-282.54019 L 1089.3336,-282.78748 C 1089.3566,-283.16946 1089.3919,-283.55474 1089.3954,-283.93118 L 1090.7267,-303.52866 C 1091.2687,-307.83202 1090.5083,-312.02741 1088.25,-314.28563 L 1064.071,-338.427 C 1061.5113,-340.98262 1058.1413,-342.23938 1054.7212,-342.29086 z "
-         id="path7264" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5595"
@@ -1019,6 +1011,14 @@
        y1="-304.53207"
        x2="1395.5529"
        y2="-307.28207" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7262">
+      <path
+         style="fill:url(#linearGradient7266);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 1054.7212,-342.29086 C 1052.0613,-342.3309 1049.385,-341.63329 1047.0744,-340.31257 C 1043.7774,-338.42805 1041.9724,-334.79181 1040.6659,-331.07022 C 1032.0948,-330.65036 1021.1742,-328.39787 1013.7005,-315.52207 L 1004.1032,-294.8118 L 1004.196,-294.8118 C 1004.134,-294.70691 1004.0719,-294.60888 1004.0103,-294.50269 L 1061.9658,-265.7556 L 1075.9593,-265.7556 C 1083.6507,-265.75559 1088.309,-273.80537 1089.2097,-281.45831 L 1089.2407,-281.45831 L 1089.2407,-281.64377 C 1089.2738,-281.94552 1089.2813,-282.24037 1089.3026,-282.54019 L 1089.3336,-282.78748 C 1089.3566,-283.16946 1089.3919,-283.55474 1089.3954,-283.93118 L 1090.7267,-303.52866 C 1091.2687,-307.83202 1090.5083,-312.02741 1088.25,-314.28563 L 1064.071,-338.427 C 1061.5113,-340.98262 1058.1413,-342.23938 1054.7212,-342.29086 z "
+         id="path7264" />
+    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5811"
@@ -1232,6 +1232,17 @@
          stdDeviation="0.81845238"
          id="feGaussianBlur8004" />
     </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7488"
+       id="radialGradient9002"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.310521,0.1241025,-5.410353e-2,1.6889957,-487.03917,-8.4187541)"
+       cx="1524.2234"
+       cy="-260.47925"
+       fx="1521.5984"
+       fy="-250.7178"
+       r="24.75" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath8998">
@@ -1246,17 +1257,6 @@
          style="opacity:1;fill:url(#radialGradient9002);fill-opacity:1;stroke:none;stroke-width:0.4554573;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          sodipodi:type="arc" />
     </clipPath>
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient7488"
-       id="radialGradient9002"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.310521,0.1241025,-5.410353e-2,1.6889957,-487.03917,-8.4187541)"
-       cx="1524.2234"
-       cy="-260.47925"
-       fx="1521.5984"
-       fy="-250.7178"
-       r="24.75" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5991"
@@ -1334,15 +1334,6 @@
          stdDeviation="0.98542663"
          id="feGaussianBlur10255" />
     </filter>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath10259">
-      <path
-         style="fill:url(#linearGradient10263);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="M 1294.6024,-283.29295 C 1294.6024,-283.29295 1301.5821,-288.3192 1308.5577,-287.90861 C 1316.3385,-287.45064 1321.8154,-281.43831 1321.8154,-281.43831 L 1313.6083,-273.70253 C 1313.6083,-273.70253 1311.2385,-275.86511 1308.2986,-276.1646 C 1305.3585,-276.46409 1301.8484,-274.90048 1301.8484,-274.90048 L 1294.6024,-283.29295 z "
-         id="path10261"
-         sodipodi:nodetypes="csccscc" />
-    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient9182"
@@ -1354,6 +1345,15 @@
        y1="-287.56335"
        x2="1626.2708"
        y2="-275.46451" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath10259">
+      <path
+         style="fill:url(#linearGradient10263);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 1294.6024,-283.29295 C 1294.6024,-283.29295 1301.5821,-288.3192 1308.5577,-287.90861 C 1316.3385,-287.45064 1321.8154,-281.43831 1321.8154,-281.43831 L 1313.6083,-273.70253 C 1313.6083,-273.70253 1311.2385,-275.86511 1308.2986,-276.1646 C 1305.3585,-276.46409 1301.8484,-274.90048 1301.8484,-274.90048 L 1294.6024,-283.29295 z "
+         id="path10261"
+         sodipodi:nodetypes="csccscc" />
+    </clipPath>
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient5991"
