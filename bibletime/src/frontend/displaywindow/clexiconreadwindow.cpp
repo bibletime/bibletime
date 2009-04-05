@@ -109,7 +109,7 @@ void CLexiconReadWindow::initActions()
 	//TODO: Q_ASSERT(m_actions.findText);
 
 	m_actions.findStrongs = new QAction(
-		QIcon(CResMgr::displaywindows::general::findStrongs::icon),
+//		QIcon(CResMgr::displaywindows::general::findStrongs::icon),
 		tr("Strong's Search"),
 		ac
 		);
