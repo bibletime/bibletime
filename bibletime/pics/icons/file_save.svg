@@ -145,6 +145,16 @@
          id="stop3279" />
     </linearGradient>
     <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3317"
+       id="linearGradient3219"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.5599786,0,0,2.5827101,317.24891,-5063.043)"
+       x1="-98.926186"
+       y1="1892.9656"
+       x2="-98.926186"
+       y2="1897.0332" />
+    <linearGradient
        id="linearGradient3215">
       <stop
          style="stop-color:#8a8a8a;stop-opacity:1;"
@@ -306,16 +316,6 @@
          d="M 11.375,-167.68125 C 8.4215521,-167.68125 8,-167.31718 8,-164.3375 L 8,-163.55625 C 8,-166.53593 8.4215521,-166.86875 11.375,-166.86875 L 116.625,-166.86875 C 119.57845,-166.86875 120,-166.53593 120,-163.55625 L 120,-164.3375 C 120,-167.31718 119.57845,-167.68125 116.625,-167.68125 L 11.375,-167.68125 z"
          id="path3217" />
     </clipPath>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3317"
-       id="linearGradient3219"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(2.5599786,0,0,2.5827101,317.24891,-5063.043)"
-       x1="-98.926186"
-       y1="1892.9656"
-       x2="-98.926186"
-       y2="1897.0332" />
     <filter
        inkscape:collect="always"
        id="filter3371"
@@ -412,6 +412,16 @@
     </filter>
     <linearGradient
        inkscape:collect="always"
+       xlink:href="#linearGradient3215"
+       id="linearGradient25069"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-318.0812,-14.652496)"
+       x1="52"
+       y1="112"
+       x2="52"
+       y2="80" />
+    <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient3275"
        id="linearGradient3281"
        x1="68"
@@ -428,16 +438,6 @@
          d="M -283.36245,66.003757 C -284.5397,66.003757 -285.48745,66.951507 -285.48745,68.128757 L -285.48745,105.94751 L -230.0812,105.94751 L -230.0812,68.128757 C -230.0812,66.951507 -231.02895,66.003757 -232.2062,66.003757 L -283.36245,66.003757 z M -277.1437,69.347507 L -263.0187,69.347507 C -262.49915,69.347507 -262.0812,69.765457 -262.0812,70.285007 L -262.0812,96.410007 C -262.0812,96.929557 -262.49915,97.347507 -263.0187,97.347507 L -277.1437,97.347507 C -277.66325,97.347507 -278.0812,96.929557 -278.0812,96.410007 L -278.0812,70.285007 C -278.0812,69.76546 -277.66325,69.347507 -277.1437,69.347507 z"
          style="opacity:1;fill:url(#linearGradient25069);fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.15;stroke-opacity:1" />
     </clipPath>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3215"
-       id="linearGradient25069"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-318.0812,-14.652496)"
-       x1="52"
-       y1="112"
-       x2="52"
-       y2="80" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient17383"
