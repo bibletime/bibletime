@@ -13,6 +13,7 @@
 #include "crangechooserdialog.moc"
 
 #include "backend/config/cbtconfig.h"
+#include "util/dialogutil.h"
 
 //sword
 #include "versekey.h"
@@ -153,6 +154,7 @@ void CRangeChooserDialog::initView()
     m_buttonBox = new QDialogButtonBox(this);
     m_buttonBox->setOrientation(Qt::Horizontal);
     m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok|QDialogButtonBox::RestoreDefaults);
+	util::prepareDialogBox(m_buttonBox);
     vboxLayout->addWidget(m_buttonBox);
 
     rangeListLabel->setBuddy(m_rangeList);

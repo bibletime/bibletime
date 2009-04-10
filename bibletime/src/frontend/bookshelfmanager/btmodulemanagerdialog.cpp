@@ -15,6 +15,7 @@
 #include "indexpage/btindexpage.h"
 
 #include "util/cpointers.h"
+#include "util/dialogutil.h"
 #include "backend/managers/cswordbackend.h"
 
 #include <QDialogButtonBox>
@@ -54,6 +55,7 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	// Dialog button (Close)
 	QDialogButtonBox* bbox = new QDialogButtonBox(this);
 	bbox->addButton(QDialogButtonBox::Close);
+	util::prepareDialogBox(bbox);
 	addButtonBox(bbox);
 	connect(bbox, SIGNAL(rejected()), SLOT(close()));
 }

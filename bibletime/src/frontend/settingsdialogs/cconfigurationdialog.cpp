@@ -18,6 +18,7 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
+#include "util/dialogutil.h"
 
 #include <QWidget>
 #include <QDialogButtonBox>
@@ -62,6 +63,7 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
 	m_bbox->addButton(QDialogButtonBox::Ok);
 	m_bbox->addButton(QDialogButtonBox::Apply);
 	m_bbox->addButton(QDialogButtonBox::Cancel);
+	util::prepareDialogBox(m_bbox);
 	addButtonBox(m_bbox);
 	bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
 	Q_ASSERT(ok);

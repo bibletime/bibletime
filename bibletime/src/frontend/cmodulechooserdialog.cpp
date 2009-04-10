@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2007 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -17,6 +17,7 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
+#include "util/dialogutil.h"
 #include "util/directoryutil.h"
 #include "backend/config/cbtconfig.h"
 
@@ -84,7 +85,7 @@ void CModuleChooserDialog::initView()
 
 	m_buttonBox = new QDialogButtonBox(this);
 	m_buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-	//TODO: set the ok button text?
+	util::prepareDialogBox(m_buttonBox);
 	hboxLayout->addWidget(m_buttonBox);
 
 	vboxLayout->addLayout(hboxLayout);

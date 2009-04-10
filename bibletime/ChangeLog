@@ -1,3 +1,9 @@
+2009-04-09 Gary Holmlund
+    * Add translatable text for several dialogs
+      These words need transating:
+        Ok, Open, Save, Cancel, Close, Discard, Apply, Reset, Restore Defaults, 
+        Help, Save All, Yes, Yes To All, No, No To All
+
 2009-03-25 Martin Gruner <mgruner@crosswire.org>
 	* release 2.0.alpha3
 

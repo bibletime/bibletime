@@ -13,6 +13,7 @@
 #include "frontend/bookshelfmanager/instbackend.h"
 
 #include "util/ctoolclass.h"
+#include "util/dialogutil.h"
 #include "util/directoryutil.h"
 #include "util/cresmgr.h"
 
@@ -95,6 +96,7 @@ BtInstallPathDialog::BtInstallPathDialog()
 	QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
 	buttonBox->setOrientation(Qt::Horizontal);
 	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
+	util::prepareDialogBox(buttonBox);
 	mainLayout->addWidget(buttonBox);
 	connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
 	connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));

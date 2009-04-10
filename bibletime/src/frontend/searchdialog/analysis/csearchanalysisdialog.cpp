@@ -13,7 +13,7 @@
 #include "csearchanalysisview.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
-
+#include "util/dialogutil.h"
 
 #include <QDialog>
 #include <QAbstractButton>
@@ -60,7 +60,7 @@ void CSearchAnalysisDialog::initView()
 	m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
 	m_buttonBox->addButton(QDialogButtonBox::Save);
 	//tr("Save as HTML"), 
-
+	util::prepareDialogBox(m_buttonBox);
 	vboxLayout->addWidget(m_buttonBox);
 
 	bool ok = QObject::connect(m_buttonBox, SIGNAL(rejected()), this, SLOT(reject()));

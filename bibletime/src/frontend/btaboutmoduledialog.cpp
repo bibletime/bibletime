@@ -10,6 +10,7 @@
 #include "btaboutmoduledialog.h"
 #include "btaboutmoduledialog.moc"
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "util/dialogutil.h"
 
 #include <QWidget>
 #include <QDialog>
@@ -35,6 +36,7 @@ BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info
     QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
     buttonBox->setOrientation(Qt::Horizontal);
     buttonBox->setStandardButtons(QDialogButtonBox::Close);
+	util::prepareDialogBox(buttonBox);
     vboxLayout->addWidget(buttonBox);
 
 

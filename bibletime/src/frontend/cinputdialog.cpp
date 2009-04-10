@@ -12,6 +12,7 @@
 //own includes
 #include "cinputdialog.h"
 #include "cinputdialog.moc"
+#include "util/dialogutil.h"
 
 //Qt includes
 #include <QDialog>
@@ -24,8 +25,6 @@
 #include <QHBoxLayout>
 
 #include <QDebug>
-
-//KDE includes
 
 
 CInputDialog::CInputDialog
@@ -62,6 +61,7 @@ CInputDialog::CInputDialog
 	buttonBox = new QDialogButtonBox(this);
 	buttonBox->setOrientation(Qt::Horizontal);
 	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
+	util::prepareDialogBox(buttonBox);
 	hboxLayout->addWidget(buttonBox);
 
 	vboxLayout->addLayout(hboxLayout);

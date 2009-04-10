@@ -9,6 +9,7 @@
 
 #include "bttabhtmldialog.h"  // See this file for more documentation of BtTabHtmlDialog
 #include "bttabhtmldialog.moc"
+#include "util/dialogutil.h"
 #include "util/directoryutil.h"
 
 #include <QDialog>
@@ -50,9 +51,8 @@ BtTabHtmlDialog::BtTabHtmlDialog
 		}
 	}
 	
-	QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
-	buttonBox->setOrientation(Qt::Horizontal);
-	buttonBox->setStandardButtons(QDialogButtonBox::Close);
+	QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
+	util::prepareDialogBox(buttonBox);
 	vboxLayout->addWidget(buttonBox);
 
 	bool ok;

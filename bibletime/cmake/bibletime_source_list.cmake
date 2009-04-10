@@ -47,6 +47,7 @@ SET(bibletime_SOURCES
 	src/util/cresmgr.cpp
 	src/util/cpointers.cpp
 	src/util/ctoolclass.cpp
+	src/util/dialogutil.cpp
 	src/util/directoryutil.cpp
 	src/util/migrationutil.cpp
 	
