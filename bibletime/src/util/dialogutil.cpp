@@ -25,21 +25,36 @@ namespace util
 
 	void prepareDialogBox(QDialogButtonBox* box)
 	{
-		replaceText(box, QDialogButtonBox::Ok      , QPushButton::tr("Ok"        , "Dialog Button"));
+		//: Standard button
+		replaceText(box, QDialogButtonBox::Ok      , QPushButton::tr("OK"        , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Open    , QPushButton::tr("Open"      , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Save    , QPushButton::tr("Save"      , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Cancel  , QPushButton::tr("Cancel"    , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Close   , QPushButton::tr("Close"     , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Discard , QPushButton::tr("Discard"   , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Apply   , QPushButton::tr("Apply"     , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Reset   , QPushButton::tr("Reset"     , "Dialog Button"));
-		replaceText(box, QDialogButtonBox::RestoreDefaults, QPushButton::tr("Restore Defaults", "Dialog Button"));
+		//: Standard button
+		replaceText(box, QDialogButtonBox::RestoreDefaults, QPushButton::tr("Restore defaults", "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Help    , QPushButton::tr("Help"      , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::SaveAll , QPushButton::tr("Save All"  , "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::Yes     , QPushButton::tr("Yes"       , "Dialog Button"));
-		replaceText(box, QDialogButtonBox::YesToAll, QPushButton::tr("Yes To All", "Dialog Button"));
+		//: Standard button
+		replaceText(box, QDialogButtonBox::YesToAll, QPushButton::tr("Yes to all", "Dialog Button"));
+		//: Standard button
 		replaceText(box, QDialogButtonBox::No      , QPushButton::tr("No"        , "Dialog Button"));
-		replaceText(box, QDialogButtonBox::NoToAll , QPushButton::tr("No To All" , "Dialog Button"));
+		//: Standard button
+		replaceText(box, QDialogButtonBox::NoToAll , QPushButton::tr("No to all" , "Dialog Button"));
 	}
 
 }
