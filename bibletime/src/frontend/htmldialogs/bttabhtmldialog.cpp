@@ -16,8 +16,10 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWebView>
+#include <QMenu>
 #include <QTabWidget>
 #include <QDesktopServices>
+#include <QContextMenuEvent>
 
 BtTabHtmlDialog::BtTabHtmlDialog
 	(const QString& title, int tabs, QWidget *parent, Qt::WindowFlags wflags )
@@ -31,7 +33,7 @@ BtTabHtmlDialog::BtTabHtmlDialog
 	QVBoxLayout *vboxLayout = new QVBoxLayout(this);
 	if (tabs == 0)
 	{
-		m_webView = new QWebView(this);
+		m_webView = new BtWebView(this);
 		init_connections(m_webView);
 		vboxLayout->addWidget(m_webView);
 		m_webView->setHtml("Hi");
@@ -42,7 +44,7 @@ BtTabHtmlDialog::BtTabHtmlDialog
 		vboxLayout->addWidget(m_tabWidget);
 		for (int i=0; i<tabs; i++)
 		{
-			QWebView* webView = new QWebView(this);
+			QWebView* webView = new BtWebView(this);
 			init_connections(webView);
 			webView->setObjectName("View" + QString::number(i));
 			webView->setHtml(" ");
@@ -120,5 +122,20 @@ void BtTabHtmlDialog::setTabText(const QString& tabName)
 	Q_ASSERT(m_tabs != 0); // There are no tabs to name
 	int index = m_tabWidget->currentIndex();
 	m_tabWidget->setTabText(index,tabName);	
+}
+
+// ******************* BtWebView *******************
+
+BtWebView::BtWebView(QWidget* parent)
+	: QWebView(parent), m_popup(0)
+{
+	m_popup = new QMenu(this);
+	QAction* copyAction = pageAction(QWebPage::Copy);
+	m_popup->addAction(copyAction);
+}
+
+void BtWebView::contextMenuEvent(QContextMenuEvent* event)
+{
+	m_popup->exec(event->globalPos());
 }
 

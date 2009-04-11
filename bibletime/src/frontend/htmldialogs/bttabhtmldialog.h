@@ -13,9 +13,10 @@
 #include <QDialog>
 #include <QString>
 #include <QUrl>
+#include <QWebView>
 
 class QTabWidget;
-class QWebView;
+class QMenu;
 
 // This class creates a dialog with zero or more tabs. For zero tabs it is 
 // just a single QWebView inside the dialog. For 1 or more tabs, each tab
@@ -68,6 +69,19 @@ private:
 	QWebView*   m_webView;
 	QTabWidget* m_tabWidget;
 	int m_tabs;
+};
+
+
+class BtWebView : public QWebView
+{
+public:
+	BtWebView(QWidget* parent=0);
+
+protected:
+	void contextMenuEvent(QContextMenuEvent* event);
+
+private:
+	QMenu* m_popup;
 };
 
 #endif
