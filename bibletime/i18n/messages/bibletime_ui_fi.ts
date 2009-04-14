@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi_FI">
-<defaultcodec></defaultcodec>
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
@@ -79,7 +78,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="204"/>
         <source>&amp;Arrangement mode</source>
-        <translation>Sijoittelutila</translation>
+        <translation>&amp;Sijoittelutila</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="211"/>
@@ -89,17 +88,17 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="222"/>
         <source>Auto-tile &amp;vertically</source>
-        <translation>Pinoa p&amp;ystysuunnassa</translation>
+        <translation>Pinoa automaattisesti &amp;vierekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Auto-tile &amp;horizontally</source>
-        <translation>Pinoa &amp;vaakasuunnassa</translation>
+        <translation>Pinoa automaattisesti &amp;päällekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="244"/>
         <source>Auto-&amp;cascade</source>
-        <translation>Lomit&amp;a</translation>
+        <translation>Lomit&amp;a automaattisesti</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="254"/>
@@ -109,12 +108,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="264"/>
         <source>Tile &amp;vertically</source>
-        <translation>Pinoa &amp;pystysuunnassa</translation>
+        <translation>Pinoa &amp;vierekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="274"/>
         <source>Tile &amp;horizontally</source>
-        <translation>Pinoa &amp;vaakasuunnassa</translation>
+        <translation>Pinoa &amp;päällekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="284"/>
@@ -290,142 +289,142 @@
 <context>
     <name>BtAboutDialog</name>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="54"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
         <translation>BibleTime on helppokäyttöinen ja tehokas Raamatun opiskelun työkalu.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="58"/>
         <source>We are looking for developers and translators.</source>
         <translation>Haemme kehittäjiä ja kääntäjiä.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="57"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
         <translation>Jos haluat liittyä tiimiimme, lähetä säköpostia osoitteeseen info@bibletime.info.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="61"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c)1999-2009, BibleTime-tiimi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="153"/>
         <source>This program uses Qt Open Source Edition version </source>
         <translation>Tämä ohjelmista käyttää Qt:n Open Source Edition -versiota</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="154"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation>Qt:n Open Source Edition on tarkoitettu avoimen lähdekoodin ohjelmistojen kehitykseen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="155"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation>Qt on C++-kirjasto useilla eri käyttöjerjestelmillä toimivien sovellusten kehittämiseen.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source>Please see </source>
         <translation>Katso</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
         <source> for an overview of Qt licensing.</source>
         <translation>nähdäksesi Qt:n lisensointimahdollisuudet.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="169"/>
         <source>License Agreement</source>
         <translation>Lisenssisopimus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="170"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
         <source>BibleTime is released under the GPL licence.</source>
         <translation>BibleTime on julkaistu GPL-lisenssin alla.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Voit ladata ohjelman (mutta et levittää sitä edelleen) ja käyttää sitä henkilökohtaisessa, yksityisessä, julkisessa tai kaupallisessa käytössä ilman rajoituksia.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Voit jakaa ohjelmaa edelleen jos jaat myös vastaavan lähdekoodin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täydellinen, laillisesti sitova lisenssi on alla.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="69"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="71"/>
         <source>Contributors</source>
         <translation>Tekijät</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="71"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="73"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>Seuraavat henkilöt ovat osallistuneet BibleTimen tekemiseen:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="76"/>
         <source>documentation and translation manager</source>
         <translation>ohjeiden ja käännösten hallinta</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
         <source>project founder, developer</source>
         <translation>projektin perustaja, kehittäjä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
         <source>designer</source>
         <translation>suunnittelija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="100"/>
         <source>developer</source>
         <translation>kehittäjä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
         <source>packager</source>
         <translation>paketoija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
         <source>creator of The Sword Project</source>
         <translation>SWORD-projektin luoja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
         <source>project manager, developer</source>
         <translation>projektinhallinta, kehitys</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="86"/>
         <source>domain sponsor</source>
         <translation>internetosoitteen sponsori</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="87"/>
         <source>howto</source>
         <translation>raamatunlukuopas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
         <source>documentation</source>
         <translation>ohjeet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="97"/>
         <source>tester, usability expert</source>
         <translation>testaaja, käytettävyysasiantuntija</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="101"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="103"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>Seuraavat henkilöt ovat kääntäneet BibleTimen omalle kielelleen:</translation>
     </message>
