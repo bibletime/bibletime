@@ -7,8 +7,10 @@
 *
 **********/
 
-#include "config.h"
 #include "btaboutdialog.h"
+#include "btaboutdialog.moc"
+
+#include "config.h"
 #include "util/directoryutil.h"
 
 #include "swversion.h"
