@@ -139,7 +139,7 @@ void BtSearchOptionsArea::initView()
 	m_typeFreeButton->setToolTip(tr("Full lucene syntax"));
 
 	m_helpLabel = new QLabel(tr(" (<a href='syntax_help'>full syntax</a>)"));
-	m_helpLabel->setToolTip("Click the link to get help for search syntax");
+	m_helpLabel->setToolTip(tr("Click the link to get help for search syntax"));
 
 	typeSelectorLayout->addWidget(m_typeAndButton);
 	typeSelectorLayout->addWidget(m_typeOrButton);
