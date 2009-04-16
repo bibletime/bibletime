@@ -119,8 +119,24 @@ void CLanguageMgr::init() {
 	//if we've already inserted all items we do not proceed
 	if (m_langMap.count() > 0) return;
 
-	/*
-	* Chris explained in an eMail how language codes are build:
+	/*:
+	The string "Names of languages" doesn't actually need translation.
+	It is put here to help translators notice this help text.
+
+	The names of the languages should follow the conventions of your
+	language. Write the names with a capital first letter even if your language
+	uses non-capitalized language names (they look better with capital
+	first letter when they are listed).
+
+	To find the names of all languages from internet try searching for
+	"names of languages in language_x" but in your own language, e.g.
+	"kielten nimet suomeksi" in Finnish or "names of languages in english"
+	in English.
+
+	You can find the language codes and names by googling for the standards
+	mentioned below.
+
+	Chris explained in an eMail how language codes are build:
 	 
 	Preference order for locale codes are:
 	 
@@ -135,85 +151,131 @@ void CLanguageMgr::init() {
 	 
 	Some older modules maintain a former format for Ethnolgoue codes of
 	xx-???, including the AleWiesler module.
-	 
-	--Chris
-	 
 	*/
-
+	QObject::tr("Names of languages");
 	//  m_langList.append( new Language("aa", "Afar", QObject::tr("Afar")) );
 	//  m_langList.append( new Language("ab", "Abkhazian", QObject::tr("Abkhazian")) );
 	//  m_langList.append( new Language("ae", "Avestan", QObject::tr("Avestan")) );
+	//: Language name af
 	m_langList.append( new Language("af", "Afrikaans", QObject::tr("Afrikaans")) );
 	//  m_langList.append( new Language("am", "Amharic", QObject::tr("Amharic")) );
+	//: Language name ang
 	m_langList.append( new Language("ang", "English, Old (ca.450-1100)", QObject::tr("English, Old (ca.450-1100)")) );
+	//: Language name ar
 	m_langList.append( new Language("ar", "Arabic", QObject::tr("Arabic")) );
 	//  m_langList.append( new Language("as", "Assamese", QObject::tr("Assamese")) );
+	//: Language name az
 	m_langList.append( new Language("az", "Azerbaijani", QObject::tr("Azerbaijani")) );
 	//  m_langList.append( new Language("ba", "Bashkir", QObject::tr("Bashkir")) );
+	//: Language name bar
 	m_langList.append( new Language("bar", "Bavarian", QObject::tr("Bavarian")) );
+	//: Language name be
 	m_langList.append( new Language("be", "Belarusian", QObject::tr("Belarusian")) );
+	//: Language name bg
 	m_langList.append( new Language("bg", "Bulgarian", QObject::tr("Bulgarian")) );
 	//  m_langList.append( new Language("bh", "Bihari", QObject::tr("Bihari")) );
 	//  m_langList.append( new Language("bi", "Bislama", QObject::tr("Bislama")) );
 	//  m_langList.append( new Language("bn", "Bengali", QObject::tr("Bengali")) );
 	//  m_langList.append( new Language("bo", "Tibetan", QObject::tr("Tibetan")) );
+	//: Language name br
 	m_langList.append( new Language("br", "Breton", QObject::tr("Breton")) );
+	//: Language name bs
 	m_langList.append( new Language("bs", "Bosnian", QObject::tr("Bosnian")) );
+	//: Language name ca
 	m_langList.append( new Language("ca", "Catalan", QObject::tr("Catalan")) );
 	//  m_langList.append( new Language("ce", "Chechen", QObject::tr("Chechen")) );
+	//: Language name ceb
 	m_langList.append( new Language("ceb", "Cebuano", QObject::tr("Cebuano")) );
+	//: Language name ch
 	m_langList.append( new Language("ch", "Chamorro", QObject::tr("Chamorro")) );
 	//  m_langList.append( new Language("co", "Corsican", QObject::tr("Corsican")) );
+	//: Language name cop
 	m_langList.append( new Language("cop", "Coptic", QObject::tr("Coptic")) );
+	//: Language name cs
 	m_langList.append( new Language("cs", "Czech", QObject::tr("Czech")) );
+	//: Language name cu
 	m_langList.append( new Language("cu", "Church Slavic", QObject::tr("Church Slavic")) );
 	//  m_langList.append( new Language("cv", "Chuvash", QObject::tr("Chuvash")) );
+	//: Language name cy
 	m_langList.append( new Language("cy", "Welsh", QObject::tr("Welsh")) );
+	//: Language name da
 	m_langList.append( new Language("da", "Danish", QObject::tr("Danish")) );
+	//: Language name de
 	m_langList.append( new Language("de", "German", QObject::tr("German")) );
 	//  m_langList.append( new Language("dz", "Dzongkha", QObject::tr("Dzongkha")) );
+	//: Language name el
 	m_langList.append( new Language("el", "Greek, Modern (1453-)", QObject::tr("Greek, Modern (1453-)"), makeStringList("gre;ell")) );
+	//: Language name en
 	m_langList.append( new Language("en", "English", QObject::tr("English")) );
+	//: Language name en_US
 	m_langList.append( new Language("en_US","American English", QObject::tr("American English")) );
+	//: Language name enm
 	m_langList.append( new Language("enm", "English, Middle (1100-1500)", QObject::tr("English, Middle (1100-1500)")) );
+	//: Language name eo
 	m_langList.append( new Language("eo", "Esperanto", QObject::tr("Esperanto")) );
+	//: Language name es
 	m_langList.append( new Language("es", "Spanish", QObject::tr("Spanish")) );
+	//: Language name et
 	m_langList.append( new Language("et", "Estonian", QObject::tr("Estonian")) );
+	//: Language name eu
 	m_langList.append( new Language("eu", "Basque", QObject::tr("Basque")) );
+	//: Language name fa
 	m_langList.append( new Language("fa", "Persian", QObject::tr("Persian")) );
+	//: Language name fi
 	m_langList.append( new Language("fi", "Finnish", QObject::tr("Finnish")) );
 	//  m_langList.append( new Language("fj", "Fijian", QObject::tr("Fijian")) );
 	//  m_langList.append( new Language("fo", "Faroese", QObject::tr("Faroese")) );
+	//: Language name fr
 	m_langList.append( new Language("fr", "French", QObject::tr("French")) );
+	//: Language name fy
 	m_langList.append( new Language("fy", "Frisian", QObject::tr("Frisian")) );
+	//: Language name ga
 	m_langList.append( new Language("ga", "Irish", QObject::tr("Irish")) );
+	//: Language name gd
 	m_langList.append( new Language("gd", "Gaelic (Scots)", QObject::tr("Gaelic (Scots)")) );
 	//  m_langList.append( new Language("gl", "Gallegan", QObject::tr("Gallegan")) );
 	//  m_langList.append( new Language("gn", "Guarani", QObject::tr("Guarani")) );
 	//  m_langList.append( new Language("gn", "Gujarati", QObject::tr("Gujarati")) );
+	//: Language name got
 	m_langList.append( new Language("got", "Gothic", QObject::tr("Gothic")) );
+	//: Language name gv
 	m_langList.append( new Language("gv", "Manx", QObject::tr("Manx")) );
+	//: Language name grc
 	m_langList.append( new Language("grc", "Greek, Ancient (to 1453)", QObject::tr("Greek, Ancient (to 1453)")) );
+	//: Language name he
 	m_langList.append( new Language("he", "Hebrew", QObject::tr("Hebrew")) );
+	//: Language name hau
 	m_langList.append( new Language("hau", "Hausa", QObject::tr("Hausa")) );
+	//: Language name haw
 	m_langList.append( new Language("haw", "Hawaiian", QObject::tr("Hawaiian")) );
+	//: Language name hi
 	m_langList.append( new Language("hi", "Hindi", QObject::tr("Hindi")) );
 	//  m_langList.append( new Language("ho", "Hiri Motu", QObject::tr("Hiri Motu")) );
+	//: Language name hr
 	m_langList.append( new Language("hr", "Croatian", QObject::tr("Croatian")) );
+		//: Language name ht
 	m_langList.append( new Language("ht", "Haitian Creole", QObject::tr("Haitian Creole")) );
+	//: Language name hu
 	m_langList.append( new Language("hu", "Hungarian", QObject::tr("Hungarian")) );
+	//: Language name hy
 	m_langList.append( new Language("hy", "Armenian", QObject::tr("Armenian")) );
 	//  m_langList.append( new Language("hz", "Herero", QObject::tr("Herero")) );
 	//  m_langList.append( new Language("ia", "Interlingua", QObject::tr("Interlingua")) );
+	//: Language name id
 	m_langList.append( new Language("id", "Indonesian", QObject::tr("Indonesian")) );
 	//  m_langList.append( new Language("ie", "Interlingue", QObject::tr("Interlingue")) );
 	//  m_langList.append( new Language("ik", "Inupiaq", QObject::tr("Inupiaq")) );
+	//: Language name is
 	m_langList.append( new Language("is", "Icelandic", QObject::tr("Icelandic")) );
+	//: Language name it
 	m_langList.append( new Language("it", "Italian", QObject::tr("Italian")) );
 	//  m_langList.append( new Language("iu", "Inuktitut", QObject::tr("Inuktitut")) );
+	//: Language name ja
 	m_langList.append( new Language("ja", "Japanese", QObject::tr("Japanese")) );
+	//: Language name ka
 	m_langList.append( new Language("ka", "Georgian", QObject::tr("Georgian")) );
 	//  m_langList.append( new Language("x-E-KAB", "Kabyle", QObject::tr("Kabyle")) );
+	//: Language name kek
 	m_langList.append( new Language("kek", "Kekchi", QObject::tr("Kekchi")) );
 	//  m_langList.append( new Language("ki", "Kikuyu", QObject::tr("Kikuyu")) );
 	//  m_langList.append( new Language("kj", "Kuanyama", QObject::tr("Kuanyama")) );
@@ -221,39 +283,59 @@ void CLanguageMgr::init() {
 	//  m_langList.append( new Language("kl", "Kalaallisut", QObject::tr("Kalaallisut")) );
 	//  m_langList.append( new Language("km", "Khmer", QObject::tr("Khmer")) );
 	//  m_langList.append( new Language("kn", "Kannada", QObject::tr("Kannada")) );
+	//: Language name ko
 	m_langList.append( new Language("ko", "Korean", QObject::tr("Korean")) );
 	//  m_langList.append( new Language("ks", "Kashmiri", QObject::tr("Kashmiri")) );
+	//: Language name ku
 	m_langList.append( new Language("ku", "Kurdish", QObject::tr("Kurdish")) );
 	//  m_langList.append( new Language("kv", "Komi", QObject::tr("Komi")) );
 	//  m_langList.append( new Language("kw", "Cornish", QObject::tr("Cornish")) );
+	//: Language name ky
 	m_langList.append( new Language("ky", "Kirghiz", QObject::tr("Kirghiz")) );
+	//: Language name la
 	m_langList.append( new Language("la", "Latin", QObject::tr("Latin")) );
 	//  m_langList.append( new Language("lb", "Letzeburgesch", QObject::tr("Letzeburgesch")) );
+	//: Language name lmo
 	m_langList.append( new Language("lmo", "Lombard", QObject::tr("Lombard")) );
 	//  m_langList.append( new Language("ln", "Lingala", QObject::tr("Lingala")) );
 	//  m_langList.append( new Language("lo", "Lao", QObject::tr("Lao")) );
+	//: Language name lt
 	m_langList.append( new Language("lt", "Lithuanian", QObject::tr("Lithuanian")) );
+	//: Language name lv
 	m_langList.append( new Language("lv", "Latvian", QObject::tr("Latvian")) );
-	//  m_langList.append( new Language("mg", "Malagasy", QObject::tr("Malagasy")) );
+	//: Language name mg
+	m_langList.append( new Language("mg", "Malagasy", QObject::tr("Malagasy")) );
 	//  m_langList.append( new Language("mh", "Marshall", QObject::tr("Marshall")) );
+	//: Language name mi
 	m_langList.append( new Language("mi", "Maori", QObject::tr("Maori")) );
+	//: Language name mk
 	m_langList.append( new Language("mk", "Macedonian", QObject::tr("Macedonian")) );
 	//  m_langList.append( new Language("ml", "Malayalam", QObject::tr("Malayalam")) );
 	//  m_langList.append( new Language("mn", "Mongolian", QObject::tr("Mongolian")) );
 	//  m_langList.append( new Language("mo", "Moldavian", QObject::tr("Moldavian")) );
+	//: Language name mos
 	m_langList.append( new Language("mos", "More", QObject::tr("More")) );
 	//  m_langList.append( new Language("mr", "Marathi", QObject::tr("Marathi")) );
+	//: Language name ms
 	m_langList.append( new Language("ms", "Malay", QObject::tr("Malay")) );
+	//: Language name mt
 	m_langList.append( new Language("mt", "Maltese", QObject::tr("Maltese")) );
+	//: Language name my
 	m_langList.append( new Language("my", "Burmese", QObject::tr("Burmese")) );
 	//  m_langList.append( new Language("na", "Nauru", QObject::tr("Nauru")) );
-	//  m_langList.append( new Language("nb", "Norwegian Bokmål", QObject::tr("Norwegian Bokmål")) );
+	//: Language name nb
+	m_langList.append( new Language("nb", "Norwegian Bokm\xe5l", QObject::tr("Norwegian Bokm\xe5l")) );
 	//  m_langList.append( new Language("nd", "Ndebele, North", QObject::tr("Ndebele, North")) );
+	//: Language name nds
 	m_langList.append( new Language("nds", "Low German; Low Saxon", QObject::tr("Low German; Low Saxon")) );
+	//: Language name ne
 	m_langList.append( new Language("ne", "Nepali", QObject::tr("Nepali")) );
 	//  m_langList.append( new Language("ng", "Ndonga", QObject::tr("Ndonga")) );
+	//: Language name nl
 	m_langList.append( new Language("nl", "Dutch", QObject::tr("Dutch")) );
+	//: Language name nn
 	m_langList.append( new Language("nn", "Norwegian Nynorsk", QObject::tr("Norwegian Nynorsk")) );
+	//: Language name no
 	m_langList.append( new Language("no", "Norwegian", QObject::tr("Norwegian")) );
 	//  m_langList.append( new Language("nr", "Ndebele, South", QObject::tr("Ndebele, South")) );
 	//  m_langList.append( new Language("nv", "Navajo", QObject::tr("Navajo")) );
@@ -263,89 +345,131 @@ void CLanguageMgr::init() {
 	//  m_langList.append( new Language("or", "Oriya", QObject::tr("Oriya")) );
 	//  m_langList.append( new Language("os", "Ossetian; Ossetic", QObject::tr("Ossetian; Ossetic")) );
 	//  m_langList.append( new Language("pa", "Panjabi", QObject::tr("Panjabi")) );
+	//: Language name pap
 	m_langList.append( new Language("pap", "Papiamento", QObject::tr("Papiamento")) );
 	//  m_langList.append( new Language("pi", "Pali", QObject::tr("Pali")) );
+	//: Language name ppk
 	m_langList.append( new Language("ppk", "Uma", QObject::tr("Uma")) );
+	//: Language name pl
 	m_langList.append( new Language("pl", "Polish", QObject::tr("Polish")) );
+	//: Language name pot
 	m_langList.append( new Language("pot", "Potawatomi", QObject::tr("Potawatomi")) );
 	//  m_langList.append( new Language("ps", "Pushto", QObject::tr("Pushto")) );
+	//: Language name pt
 	m_langList.append( new Language("pt", "Portuguese", QObject::tr("Portuguese")) );
+	//: Language name pt_BR
 	m_langList.append( new Language("pt_BR", "Brasilian Portuguese", QObject::tr("Brasilian Portuguese")) );//added by ourself
 	//  m_langList.append( new Language("qu", "Quechua", QObject::tr("Quechua")) );
 	//  m_langList.append( new Language("rm", "Raeto-Romance", QObject::tr("Raeto-Romance")) );
 	//  m_langList.append( new Language("rn", "Rundi", QObject::tr("Rundi")) );
+	//: Language name ro
 	m_langList.append( new Language("ro", "Romanian", QObject::tr("Romanian")) );
+	//: Language name ru
 	m_langList.append( new Language("ru", "Russian", QObject::tr("Russian")) );
 	//  m_langList.append( new Language("rw", "Kinyarwanda", QObject::tr("Kinyarwanda")) );
 	//  m_langList.append( new Language("sa", "Sanskrit", QObject::tr("Sanskrit")) );
 	//  m_langList.append( new Language("sc", "Sardinian", QObject::tr("Sardinian")) );
+	//: Language name sco
 	m_langList.append( new Language("sco", "Scots", QObject::tr("Scots")) );
 	//  m_langList.append( new Language("sd", "Sindhi", QObject::tr("Sindhi")) );
 	//  m_langList.append( new Language("se", "Northern Sami", QObject::tr("Northern Sami")) );
 	//  m_langList.append( new Language("sg", "Sango", QObject::tr("Sango")) );
 	//  m_langList.append( new Language("si", "Sinhalese", QObject::tr("Sinhalese")) );
+	//: Language name sk
 	m_langList.append( new Language("sk", "Slovak", QObject::tr("Slovak")) );
+	//: Language name sl
 	m_langList.append( new Language("sl", "Slovenian", QObject::tr("Slovenian")) );
 	//  m_langList.append( new Language("sm", "Samoan", QObject::tr("Samoan")) );
 	//  m_langList.append( new Language("sn", "Shona", QObject::tr("Shona")) );
+	//: Language name so
 	m_langList.append( new Language("so", "Somali", QObject::tr("Somali")) );
+	//: Language name sq
 	m_langList.append( new Language("sq", "Albanian", QObject::tr("Albanian")) );
 	//  m_langList.append( new Language("sr", "Serbian", QObject::tr("Serbian")) );
+	//: Language name srn
 	m_langList.append( new Language("srn", "Sranan", QObject::tr("Sranan")) );
 	//  m_langList.append( new Language("ss", "Swati", QObject::tr("Swati")) );
 	//  m_langList.append( new Language("st", "Sotho, Southern", QObject::tr("Sotho, Southern")) );
 	//  m_langList.append( new Language("su", "Sundanese", QObject::tr("Sundanese")) );
+	//: Language name sv
 	m_langList.append( new Language("sv", "Swedish", QObject::tr("Swedish")) );
+	//: Language name sw
 	m_langList.append( new Language("sw", "Swahili", QObject::tr("Swahili")) );
+	//: Language name syr
 	m_langList.append( new Language("syr", "Syriac", QObject::tr("Syriac")) );
+	//: Language name ta
 	m_langList.append( new Language("ta", "Tamil", QObject::tr("Tamil")) );
 	//  m_langList.append( new Language("te", "Telugu", QObject::tr("Telugu")) );
 	//  m_langList.append( new Language("tg", "Tajik", QObject::tr("Tajik")) );
+	//: Language name th
 	m_langList.append( new Language("th", "Thai", QObject::tr("Thai")) );
 	//  m_langList.append( new Language("tk", "Turkmen", QObject::tr("Turkmen")) );
+	//: Language name tl
 	m_langList.append( new Language("tl", "Tagalog", QObject::tr("Tagalog")) );
+	//: Language name tlh
 	m_langList.append( new Language("tlh", "Klingon", QObject::tr("Klingon")) );
+	//: Language name tn
 	m_langList.append( new Language("tn", "Tswana", QObject::tr("Tswana")) );
+	//: Language name tr
 	m_langList.append( new Language("tr", "Turkish", QObject::tr("Turkish")) );
 	//  m_langList.append( new Language("ts", "Tsonga", QObject::tr("Tsonga")) );
 	//  m_langList.append( new Language("tt", "Tatar", QObject::tr("Tatar")) );
 	//  m_langList.append( new Language("tw", "Twi", QObject::tr("Twi")) );
+	//: Language name ty
 	m_langList.append( new Language("ty", "Tahitian", QObject::tr("Tahitian")) );
 	//  m_langList.append( new Language("ug", "Uighur", QObject::tr("Uighur")) );
+	//: Language name uk
 	m_langList.append( new Language("uk", "Ukrainian", QObject::tr("Ukrainian")) );
 	//  m_langList.append( new Language("ur", "Urdu", QObject::tr("Urdu")) );
+	//: Language name ury
+	m_langList.append( new Language("ury", "Orya", QObject::tr("Orya")) );
 	//  m_langList.append( new Language("uz", "Uzbek", QObject::tr("Uzbek")) );
+	//: Language name vi
 	m_langList.append( new Language("vi", "Vietnamese", QObject::tr("Vietnamese")) );
 	//  m_langList.append( new Language("vo", "Volapük", QObject::tr("Volapük")) );
 	//  m_langList.append( new Language("wo", "Wolof", QObject::tr("Wolof")) );
+	//: Language name xh
 	m_langList.append( new Language("xh", "Xhosa", QObject::tr("Xhosa")) );
+	//: Language name x-E-BAR
 	m_langList.append( new Language("x-E-BAR", "Bavarian", QObject::tr("Bavarian")) );
+	//: Language name x-E-DJE
 	m_langList.append( new Language("x-E-DJE", "Zarma", QObject::tr("Zarma")) );
+	//: Language name x-E-GSW
 	m_langList.append( new Language("x-E-GSW", "Alemannisch", QObject::tr("Alemannisch")) );
+	//: Language name x-E-HAT
 	m_langList.append( new Language("x-E-HAT", "Haitian Creole French", QObject::tr("Haitian Creole French")) );
-
-//UTF8 strings do not seem to work with lupdate at present, maybe try again later
-//	m_langList.append( new Language("x-E-ITZ", QString::fromUtf8("Itzá"), QObject::trUtf8("Itzá")) );
-	m_langList.append( new Language("x-E-ITZ", "Itza", QObject::tr("Itza")) );
-
+	//Itzá
+	//: Language name x-E-ITZ
+	m_langList.append( new Language("x-E-ITZ", "Itz\xe1", QObject::tr("Itz\xe1")) );
+	//: Language name x-E-JIV
 	m_langList.append( new Language("x-E-JIV", "Shuar", QObject::tr("Shuar")) );
-
-//UTF8 strings do not seem to work with lupdate at present, maybe try again later
-//	m_langList.append( new Language("x-E-KEK", QString::fromUtf8("Kekchí"), QObject::trUtf8("Kekchí")) );
-	m_langList.append( new Language("x-E-KEK", "Kekchi", QObject::tr("Kekchi")) );
-
+	//Kekchí
+	//: Language name x-E-KEK
+	m_langList.append( new Language("x-E-KEK", "Kekch\xed", QObject::tr("Kekch\xed")) );
+	//: Language name x-E-KAB
 	m_langList.append( new Language("x-E-KAB", "Kabyle", QObject::tr("Kabyle")) );
+	//: Language name x-E-LMO
 	m_langList.append( new Language("x-E-LMO", "Lombard", QObject::tr("Lombard")) );
+	//: Language name x-E-MKJ
 	m_langList.append( new Language("x-E-MKJ", "Macedonian", QObject::tr("Macedonian")) );
+	//: Language name x-E-PDG
 	m_langList.append( new Language("x-E-PDG", "Tok Pisin", QObject::tr("Tok Pisin")) );
+	//: Language name x-E-PPK
 	m_langList.append( new Language("x-E-PPK", "Uma", QObject::tr("Uma")) );
+	//: Language name x-E-RMY
 	m_langList.append( new Language("x-E-RMY", "Romani, Vlax", QObject::tr("Romani, Vlax")) );
+	//: Language name x-E-SAJ
 	m_langList.append( new Language("x-E-SAJ", "Sango", QObject::tr("Sango")) );
+	//: Language name x-E-SRN
 	m_langList.append( new Language("x-E-SRN", "Sranan", QObject::tr("Sranan")) );
+	//: Language name yi
 	m_langList.append( new Language("yi", "Yiddish", QObject::tr("Yiddish")) );
+	//: Language name yo
 	m_langList.append( new Language("yo", "Yoruba", QObject::tr("Yoryba")) );
 	//  m_langList.append( new Language("za", "Zhuang", QObject::tr("Zhuang")) );
+	//: Language name zh
 	m_langList.append( new Language("zh", "Chinese", QObject::tr("Chinese")) );
+	//: Language name zu
 	m_langList.append( new Language("zu", "Zulu", QObject::tr("Zulu")) );
 
 	foreach (Language* lang, m_langList) {
