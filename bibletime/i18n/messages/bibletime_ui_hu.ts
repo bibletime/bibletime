@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="hu_HU">
-<defaultcodec></defaultcodec>
+<!DOCTYPE TS>
+<TS version="2.0" language="hu_HU">
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
@@ -39,7 +39,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="98"/>
         <source>&amp;Help</source>
-        <translation>Segítség</translation>
+        <translation>&amp;Segítség</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="100"/>
@@ -59,7 +59,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>&amp;Fullscreen mode</source>
-        <translation>Teljes képernyő</translation>
+        <translation>&amp;Teljes képernyő</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
@@ -249,17 +249,17 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="71"/>
         <source>Initializing the Sword engine...</source>
-        <translation>A Sword indítása</translation>
+        <translation>A Sword indítása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="73"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>BibleTime falhasználói felület létrehozása</translation>
+        <translation>BibleTime falhasználói felület létrehozása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="75"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Menük és eszköztárak indítása</translation>
+        <translation>Menük és eszköztárak indítása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="333"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Show</source>
-        <translation>Mutat</translation>
+        <translation>Látható</translation>
     </message>
 </context>
 <context>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
         <source>This program uses Qt Open Source Edition version </source>
-        <translation>Ez a program a QT nyílt forrású kiadását használja.</translation>
+        <translation>Ez a program a QT nyílt forrású kiadását használja</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="154"/>
@@ -322,7 +322,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="155"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez</translation>
+        <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
@@ -1185,7 +1185,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="589"/>
         <source>Enter the unlock key for this work.</source>
-        <translation>Gépelje be a dokumentum feloldó kódját</translation>
+        <translation>Gépelje be a dokumentum feloldó kódját.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="212"/>
@@ -2077,7 +2077,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="363"/>
         <source>Desk</source>
-        <translation>Kapcsolat</translation>
+        <translation>Asztal</translation>
     </message>
 </context>
 <context>
