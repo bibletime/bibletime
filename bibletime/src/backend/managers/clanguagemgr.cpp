@@ -152,7 +152,7 @@ void CLanguageMgr::init() {
 	Some older modules maintain a former format for Ethnolgoue codes of
 	xx-???, including the AleWiesler module.
 	*/
-	QObject::tr("Names of languages");
+	QObject::tr("Names of languages", "No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :))");
 	//  m_langList.append( new Language("aa", "Afar", QObject::tr("Afar")) );
 	//  m_langList.append( new Language("ab", "Abkhazian", QObject::tr("Abkhazian")) );
 	//  m_langList.append( new Language("ae", "Avestan", QObject::tr("Avestan")) );
