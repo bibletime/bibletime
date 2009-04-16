@@ -276,7 +276,7 @@ void CLanguageMgr::init() {
 	m_langList.append( new Language("ka", "Georgian", QObject::tr("Georgian")) );
 	//  m_langList.append( new Language("x-E-KAB", "Kabyle", QObject::tr("Kabyle")) );
 	//: Language name kek
-	m_langList.append( new Language("kek", "Kekchi", QObject::tr("Kekchi")) );
+	m_langList.append( new Language("kek", "Kekch\xed", QObject::tr("Kekch\xed", "kek")) );
 	//  m_langList.append( new Language("ki", "Kikuyu", QObject::tr("Kikuyu")) );
 	//  m_langList.append( new Language("kj", "Kuanyama", QObject::tr("Kuanyama")) );
 	//  m_langList.append( new Language("kk", "Kazakh", QObject::tr("Kazakh")) );
@@ -444,8 +444,8 @@ void CLanguageMgr::init() {
 	//: Language name x-E-JIV
 	m_langList.append( new Language("x-E-JIV", "Shuar", QObject::tr("Shuar")) );
 	//Kekchí
-	//: Language name x-E-KEK
-	m_langList.append( new Language("x-E-KEK", "Kekch\xed", QObject::tr("Kekch\xed")) );
+	//: Language name x-E-KEK (same as kek)
+	m_langList.append( new Language("x-E-KEK", "Kekch\xed", QObject::tr("Kekch\xed", "x-E-KEK (same as kek)")) );
 	//: Language name x-E-KAB
 	m_langList.append( new Language("x-E-KAB", "Kabyle", QObject::tr("Kabyle")) );
 	//: Language name x-E-LMO
