@@ -190,6 +190,7 @@ QString CDisplaySettingsPage::iconName()
 }
 QString CDisplaySettingsPage::label()
 {
+	//: Empty string, don't translate
 	return tr("");
 }
 QString CDisplaySettingsPage::header()

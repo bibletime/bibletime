@@ -90,13 +90,20 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKey
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions()
 {
+	//:Main menu item
 	QMenu* fileMenu = menuBar()->addMenu(tr("&File"));
+	//:Main menu item
 	QMenu* viewMenu = menuBar()->addMenu(tr("&View"));
+	//:Main menu item
 	QMenu* searchMenu = menuBar()->addMenu(tr("&Search"));
+	//:Main menu item
 	m_windowMenu = menuBar()->addMenu(tr("&Window"));
+	//:Main menu item
 	QMenu* settingsMenu = menuBar()->addMenu(tr("Se&ttings"));
+	//:Main menu item
 	QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
 	
+	//:Name of the main toolbar
 	m_mainToolBar = addToolBar(tr("BibleTime"));
 	m_mainToolBar->setObjectName("MainToolBar");
 	m_mainToolBar->setFloatable(false);
@@ -137,17 +144,20 @@ void BibleTime::initActions()
 		QKeySequence(Qt::Key_F6),
 		"",
 		SLOT(slotToggleToolbar())));
+
+	//: E.g. "Show Bookshelf", "Show Mag" in View menu
+	QString showstr = tr("Show");
 	
 	QAction* action = m_dock0->toggleViewAction();
-	action->setText(tr("Show") + " " + action->text());
+	action->setText(showstr + " " + action->text());
 	viewMenu->addAction(action);
 	
 	action = m_dock1->toggleViewAction();
-	action->setText(tr("Show") + " " + action->text());
+	action->setText(showstr + " " + action->text());
 	viewMenu->addAction(action);
 	
 	action = m_dock2->toggleViewAction();
-	action->setText(tr("Show") + " " + action->text());
+	action->setText(showstr + " " + action->text());
 	viewMenu->addAction(action);
 	
 	m_mainToolBar->addSeparator();
@@ -217,6 +227,7 @@ void BibleTime::initActions()
 
 	m_windowAutoTileVertical_action = new QAction(this);
 	m_windowAutoTileVertical_action->setCheckable(true);
+	//: Vertical tiling means that windows are vertical, placed side by side
 	arrangementMenu->addAction(initAction(
 		m_windowAutoTileVertical_action,
 		tr("Auto-tile &vertically"),
@@ -230,6 +241,7 @@ void BibleTime::initActions()
 	m_windowAutoTileHorizontal_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowAutoTileHorizontal_action,
+		//: Horizontal tiling means that windows are horizontal, placed on top of each other
 		tr("Auto-tile &horizontally"),
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoTileHorizontal::accel,
@@ -241,6 +253,7 @@ void BibleTime::initActions()
 	m_windowAutoCascade_action->setCheckable(true);
 	arrangementMenu->addAction(initAction(
 		m_windowAutoCascade_action,
+		//: Cascading means that only one window is visible, others are behind that
 		tr("Auto-&cascade"),
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::icon,
 		CResMgr::mainMenu::window::arrangementMode::autoCascade::accel,
@@ -319,6 +332,7 @@ void BibleTime::initActions()
 
 	helpMenu->addAction(initAction(
 		new QAction(this),
+		//: "Howto" is a guide; if there's no natural translation for HowTo, translate it as Guide
 		tr("&Bible Study Howto"),
 		CResMgr::mainMenu::help::bibleStudyHowTo::icon,
 		CResMgr::mainMenu::help::bibleStudyHowTo::accel,

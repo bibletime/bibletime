@@ -117,7 +117,7 @@ void BtSearchOptionsArea::initView()
 
 	m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
 	m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::setupscope_icon));
-	m_chooseRangeButton->setToolTip("Configure predefined scopes for search");
+	m_chooseRangeButton->setToolTip(tr("Configure predefined scopes for search"));
 	gridLayout->addWidget(m_chooseRangeButton, 3, 2);
 
 	// ************* Search type (AND/OR) selector ***************************************

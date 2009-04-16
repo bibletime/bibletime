@@ -294,6 +294,7 @@ QString CLanguageSettingsPage::iconName()
 }
 QString CLanguageSettingsPage::label()
 {
+	//: Empty string, don't translate
 	return tr("");
 }
 QString CLanguageSettingsPage::header()

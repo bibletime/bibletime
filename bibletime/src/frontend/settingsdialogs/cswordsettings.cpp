@@ -356,6 +356,7 @@ QString CSwordSettingsPage::iconName()
 }
 QString CSwordSettingsPage::label()
 {
+	//: Empty string, don't translate
 	return tr("");
 }
 QString CSwordSettingsPage::header()
