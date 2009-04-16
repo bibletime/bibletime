@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi_FI">
+<defaultcodec></defaultcodec>
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
@@ -11,122 +12,122 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;File</source>
         <translation>&amp;Tiedosto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="94"/>
+        <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>&amp;View</source>
-        <translation>&amp;Näytä</translation>
+        <translation>&amp;Näkymä</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="95"/>
+        <location filename="../../src/bibletime_init.cpp" line="98"/>
         <source>&amp;Search</source>
         <translation>&amp;Etsi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="96"/>
+        <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>&amp;Window</source>
         <translation>&amp;Ikkuna</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="97"/>
+        <location filename="../../src/bibletime_init.cpp" line="102"/>
         <source>Se&amp;ttings</source>
         <translation>Ase&amp;tukset</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="98"/>
+        <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>&amp;Help</source>
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="100"/>
+        <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>BibleTime</source>
         <translation>BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="108"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Quit</source>
         <translation>Lopeta</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="135"/>
+        <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Näytä työkalupalkki</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="122"/>
+        <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>&amp;Fullscreen mode</source>
         <translation>Täysnäytt&amp;ötila</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>&amp;Save session</source>
         <translation>Tallenna i&amp;stunto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="188"/>
+        <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>&amp;Load session</source>
         <translation>&amp;Lataa istunto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="191"/>
+        <location filename="../../src/bibletime_init.cpp" line="201"/>
         <source>&amp;Delete session</source>
         <translation>&amp;Poista istunto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="204"/>
+        <location filename="../../src/bibletime_init.cpp" line="214"/>
         <source>&amp;Arrangement mode</source>
         <translation>&amp;Sijoittelutila</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="211"/>
+        <location filename="../../src/bibletime_init.cpp" line="221"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Manuaalinen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="222"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Auto-tile &amp;vertically</source>
         <translation>Pinoa automaattisesti &amp;vierekkäin</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="233"/>
+        <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Auto-tile &amp;horizontally</source>
         <translation>Pinoa automaattisesti &amp;päällekkäin</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Auto-&amp;cascade</source>
         <translation>Lomit&amp;a automaattisesti</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="254"/>
+        <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>&amp;Cascade</source>
         <translation>Lomit&amp;a</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="264"/>
+        <location filename="../../src/bibletime_init.cpp" line="277"/>
         <source>Tile &amp;vertically</source>
         <translation>Pinoa &amp;vierekkäin</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="274"/>
+        <location filename="../../src/bibletime_init.cpp" line="287"/>
         <source>Tile &amp;horizontally</source>
         <translation>Pinoa &amp;päällekkäin</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="284"/>
+        <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>Cl&amp;ose all</source>
         <translation>Sulje &amp;kaikki</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="311"/>
+        <location filename="../../src/bibletime_init.cpp" line="324"/>
         <source>&amp;Handbook</source>
         <translation>Käsikir&amp;ja</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="322"/>
+        <location filename="../../src/bibletime_init.cpp" line="336"/>
         <source>&amp;Bible Study Howto</source>
         <translation>&amp;Raamatuntutkimisopas</translation>
     </message>
@@ -136,107 +137,107 @@
         <translation>Anna nimi uudelle istunnolle.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="111"/>
+        <location filename="../../src/bibletime_init.cpp" line="118"/>
         <source>Quit BibleTime</source>
         <translation>Poistu BibleTime -ohjelmasta</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="125"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Vaihda pääikkuna koko ruudun kokoiseksi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="157"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Search in &amp;open works...</source>
         <translation>Etsi av&amp;oimesta teoksesta...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="169"/>
+        <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Etsi oletus&amp;raamatusta...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>Save as &amp;new session...</source>
         <translation>Talleta uudeksi istu&amp;nnoksi...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="184"/>
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
         <source>Create and save a new session</source>
         <translation>Luo ja talleta uusi istunto</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="225"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Järjestä avoimet ikkunat automaattisesti vaakasuoraan järjestykseen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="236"/>
+        <location filename="../../src/bibletime_init.cpp" line="248"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Järjestä avoimet ikkunat automaattisesti pystysuoraan järjestykseen</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="247"/>
+        <location filename="../../src/bibletime_init.cpp" line="260"/>
         <source>Automatically cascade the open windows</source>
         <translation>Lomita automaattisesti avoimet ikkunat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="257"/>
+        <location filename="../../src/bibletime_init.cpp" line="270"/>
         <source>Cascade the open windows</source>
         <translation>Lomita avoin ikkuna</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="267"/>
+        <location filename="../../src/bibletime_init.cpp" line="280"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Järjestä avoin ikkuna pystysuoraan</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="277"/>
+        <location filename="../../src/bibletime_init.cpp" line="290"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Järjestä avoin ikkuna vaakasuoraan</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="287"/>
+        <location filename="../../src/bibletime_init.cpp" line="300"/>
         <source>Close all open windows</source>
         <translation>Sulje kaikki avoimet ikkunat</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="294"/>
+        <location filename="../../src/bibletime_init.cpp" line="307"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTimen &amp;asetukset...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="297"/>
+        <location filename="../../src/bibletime_init.cpp" line="310"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Aseta Bibletimen asetukset</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="303"/>
+        <location filename="../../src/bibletime_init.cpp" line="316"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Kirjahyllyn &amp;hallinta...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <location filename="../../src/bibletime_init.cpp" line="319"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Määrittele kirjahyllyn asetukset ja asenna/päivitä/poista/indeksoi teoksia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="314"/>
+        <location filename="../../src/bibletime_init.cpp" line="327"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Avaa BibleTimen käsikirja</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="325"/>
+        <location filename="../../src/bibletime_init.cpp" line="339"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Avaa Raamatuntutkimisopas www-sivu BibleTime-ohjelman kanssa.&lt;BR/&gt;Tämä  on johdatus Raamatun tutkimiseen tehokkaalla tavalla.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="160"/>
+        <location filename="../../src/bibletime_init.cpp" line="170"/>
         <source>Search in all works that are currently open</source>
         <translation>Etsi kaikista nyt auki olevista teoksista</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="172"/>
+        <location filename="../../src/bibletime_init.cpp" line="182"/>
         <source>Search in the standard Bible</source>
         <translation>Hae oletusraamatusta</translation>
     </message>
@@ -261,7 +262,7 @@
         <translation>Alustetaan valikkot ja tyokalupalkit...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="333"/>
+        <location filename="../../src/bibletime_init.cpp" line="347"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;Tietoja BibleTimestä</translation>
     </message>
@@ -281,7 +282,7 @@
         <translation>Suurennuslasi</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="150"/>
+        <location filename="../../src/bibletime_init.cpp" line="149"/>
         <source>Show</source>
         <translation>Näytä</translation>
     </message>
@@ -1419,7 +1420,7 @@
         <translation>Näytä aloituslogo</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="197"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="198"/>
         <source>Display</source>
         <translation>Näyttö</translation>
     </message>
@@ -1695,7 +1696,7 @@
         <translation>Voit määritellä oman kirjasimen jokaiselle kielelle.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="302"/>
         <source>Languages</source>
         <translation>Kielet</translation>
     </message>
@@ -2064,7 +2065,7 @@
         <translation>Tekstisuotimet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="363"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="364"/>
         <source>Desk</source>
         <translation>Työpöytä</translation>
     </message>
@@ -3349,6 +3350,16 @@
         <source>Search Syntax Help</source>
         <translation>Haun syntaksin avuste</translation>
     </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
+        <source>Click the link to get help for search syntax</source>
+        <translation>Klikkaa linkkiä avataksesi haun syntaksin avusteen</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
+        <source>Configure predefined scopes for search</source>
+        <translation>Määrittele hakualueita hakua varten</translation>
+    </message>
 </context>
 <context>
     <name>Search::BtSearchResultArea</name>
@@ -3695,7 +3706,7 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="105"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation>Oletushartauskijasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
+        <translation>Oletushartauskirjasta näytetään päivittäinen Raamatun jae käynnistettäessä</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="111"/>
@@ -3720,7 +3731,7 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="131"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Heprealainen mofrologinen sanasto:</translation>
+        <translation>Heprealainen morfologinen sanasto:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="135"/>
