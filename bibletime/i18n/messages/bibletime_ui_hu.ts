@@ -312,52 +312,52 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
         <source>This program uses Qt Open Source Edition version </source>
-        <translation>Ez a program a QT nyílt forrású kiadását használja</translation>
+        <translation>Ez a program a QT következő nyílt forrású kiadását használja: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="154"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation>A QT nyílt forrású kiadás nyílt forrású alkalmazások fejlesztését teszi lehetővé.</translation>
+        <translation>A QT nyílt forrású kiadás nyílt forrású alkalmazások fejlesztését teszi lehetővé. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="155"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez.</translation>
+        <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
         <source>Please see </source>
-        <translation>Tekintse meg</translation>
+        <translation>Tekintse meg a </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source> for an overview of Qt licensing.</source>
-        <translation>a QT licensz áttekintését.</translation>
+        <translation> weboldalt.a QT licensz áttekintéséért. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
         <source>License Agreement</source>
-        <translation>Licenszegyezmény</translation>
+        <translation>Licenszegyezmény </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="170"/>
         <source>BibleTime is released under the GPL licence.</source>
-        <translation>A BibleTime GPL licensz alatt lett kiadva.</translation>
+        <translation>A BibleTime GPL licensz alatt lett kiadva. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="171"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation>Letöltheti és használhatja (de nem terjesztheti) a programot személyes, magán, nyilvános vagy üzleti célból korlátozások nélkül.</translation>
+        <translation>Letöltheti és használhatja (de nem terjesztheti) a programot személyes, magán, nyilvános vagy üzleti célból korlátozások nélkül. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation>Értékesítheti és terjesztheti a programot, ha a hozzá tartozó forráskódot is terjeszti.</translation>
+        <translation>Értékesítheti és terjesztheti a programot, ha a hozzá tartozó forráskódot is terjeszti. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>The complete legally binding license is below.</source>
-        <translation>A teljes jogilag kötelező licensz lentebb található.</translation>
+        <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="69"/>
