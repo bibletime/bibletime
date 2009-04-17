@@ -12,18 +12,6 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <source>BibleTime </source>
-        <translation type="obsolete">BibleTime </translation>
-    </message>
-    <message>
-        <source>Creating BibleTime&apos;s GUI</source>
-        <translation type="obsolete">Creez interfaţa BibleTime</translation>
-    </message>
-    <message>
-        <source>Initializing menu- and toolbars</source>
-        <translation type="obsolete">Iniţializez meniul- şi bara de unelte</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;File</source>
         <extracomment>Main menu item</extracomment>
@@ -71,21 +59,9 @@
         <translation>Ieşire</translation>
     </message>
     <message>
-        <source>Exit BibleTime</source>
-        <translation type="obsolete">Ieşi din BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Arată bara de unelte</translation>
-    </message>
-    <message>
-        <source>&amp;Show bookshelf</source>
-        <translation type="obsolete">Arată &amp;raftul de cărţi</translation>
-    </message>
-    <message>
-        <source>Show &amp;mag</source>
-        <translation type="obsolete">Arată fereastra &amp;MAG</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
@@ -93,21 +69,9 @@
         <translation>&amp;Mod ecran plin</translation>
     </message>
     <message>
-        <source>Search in &amp;open work(s)</source>
-        <translation type="obsolete">Caută în m&amp;odulul(e) deschis(e)</translation>
-    </message>
-    <message>
-        <source>Search in standard &amp;Bible</source>
-        <translation type="obsolete">Caută în &amp;Biblia standard</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>&amp;Save session</source>
         <translation>&amp;Salvează sesiunea</translation>
-    </message>
-    <message>
-        <source>Save as &amp;new session</source>
-        <translation type="obsolete">Salvează ca sesiune &amp;nouă</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="198"/>
@@ -168,14 +132,6 @@
         <translation>Închide t&amp;oate ferestrele</translation>
     </message>
     <message>
-        <source>&amp;Configure BibleTime</source>
-        <translation type="obsolete">&amp;Configurează BibleTime</translation>
-    </message>
-    <message>
-        <source>Bookshelf &amp;Manager</source>
-        <translation type="obsolete">Ad&amp;ministratorul raftului de cărţi</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="324"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Manual</translation>
@@ -185,18 +141,6 @@
         <source>&amp;Bible Study Howto</source>
         <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>&amp;Cum să studiezi Biblia</translation>
-    </message>
-    <message>
-        <source>Initializing Sword</source>
-        <translation type="obsolete">Iniţializez Sword</translation>
-    </message>
-    <message>
-        <source>Checking indices</source>
-        <translation type="obsolete">Verificare indici</translation>
-    </message>
-    <message>
-        <source>Session name:</source>
-        <translation type="obsolete">Numele sesiunii:</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="483"/>
@@ -353,318 +297,6 @@
         <source>Show</source>
         <extracomment>E.g. &quot;Show Bookshelf&quot;, &quot;Show Mag&quot; in View menu</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>BookshelfManager::CManageIndicesWidget</name>
-    <message>
-        <source>Manage module search indices</source>
-        <translation type="obsolete">Administrează modulele de indici pentru căutare</translation>
-    </message>
-    <message>
-        <source>You can use the list below to create and/or delete search indices for your installed works.</source>
-        <translation type="obsolete">Puteţi folosi lista de mai jos pentru a creea şi/sau şterge indici de căutare.</translation>
-    </message>
-    <message>
-        <source>Index size</source>
-        <translation type="obsolete">Mărime index</translation>
-    </message>
-    <message>
-        <source>KiB</source>
-        <translation type="obsolete">KiB</translation>
-    </message>
-    <message>
-        <source>Work</source>
-        <translation type="obsolete">Modul</translation>
-    </message>
-    <message>
-        <source>Works with indices</source>
-        <translation type="obsolete">Modul cu indici</translation>
-    </message>
-    <message>
-        <source>Works without indices</source>
-        <translation type="obsolete">Modul fără indici</translation>
-    </message>
-</context>
-<context>
-    <name>BookshelfManager::CSwordSetupDialog</name>
-    <message>
-        <source>Bookshelf path(s)</source>
-        <translation type="obsolete">Cale pentru raft de cărţi</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf path(s)</source>
-        <translation type="obsolete">Configurează calea către raftul de cărţi</translation>
-    </message>
-    <message>
-        <source>You can store your bookshelfs in one or more directories, which you can specify here.</source>
-        <translation type="obsolete">Poţi depozita rafturile tale de cărţi într-unul sau mai multe directoare ce pot fi specificate aici.</translation>
-    </message>
-    <message>
-        <source>Your bookshelf configuration file is: </source>
-        <translation type="obsolete">Fişierul de configurare al raftului tău cu cărţi este:</translation>
-    </message>
-    <message>
-        <source>Path to bookshelf</source>
-        <translation type="obsolete">Calea către raftul de cărţi</translation>
-    </message>
-    <message>
-        <source>Edit Entry</source>
-        <translation type="obsolete">Editează intrarea</translation>
-    </message>
-    <message>
-        <source>Add Entry</source>
-        <translation type="obsolete">Adaugă intrare</translation>
-    </message>
-    <message>
-        <source>Remove Entry</source>
-        <translation type="obsolete">Şterge intrare</translation>
-    </message>
-    <message>
-        <source>Install/Update works</source>
-        <translation type="obsolete">Instalează/Actualizează module</translation>
-    </message>
-    <message>
-        <source>Install/update works - Step 1</source>
-        <translation type="obsolete">Instalează/Actualizează module - Pasul 1</translation>
-    </message>
-    <message>
-        <source>Select library</source>
-        <translation type="obsolete">Selectează biblioteca</translation>
-    </message>
-    <message>
-        <source>Delete library</source>
-        <translation type="obsolete">Şterge bibliotecă</translation>
-    </message>
-    <message>
-        <source>Add library</source>
-        <translation type="obsolete">Adaugă bibliotecă</translation>
-    </message>
-    <message>
-        <source>Select bookshelf path</source>
-        <translation type="obsolete">Selectează calea către raftul cu cărţi</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="obsolete">Înapoi</translation>
-    </message>
-    <message>
-        <source>Connect to library</source>
-        <translation type="obsolete">Conectează-te cu biblioteca</translation>
-    </message>
-    <message>
-        <source>Remove works</source>
-        <translation type="obsolete">Şterge modulele</translation>
-    </message>
-    <message>
-        <source>Remove installed work(s)</source>
-        <translation type="obsolete">Şterge module instalate</translation>
-    </message>
-    <message>
-        <source>Select works to be uninstalled</source>
-        <translation type="obsolete">Selectează modulele pentru dezinstalare</translation>
-    </message>
-    <message>
-        <source>Remove selected work(s)</source>
-        <translation type="obsolete">Şterge modulele selectate</translation>
-    </message>
-    <message>
-        <source>Manage search indicies</source>
-        <translation type="obsolete">Salvez rezultatele căutării</translation>
-    </message>
-    <message>
-        <source>[Remote]</source>
-        <translation type="obsolete">[De pe Internet]</translation>
-    </message>
-    <message>
-        <source>[Local]</source>
-        <translation type="obsolete">[Locală]</translation>
-    </message>
-    <message>
-        <source>You selected the following work(s): </source>
-        <translation type="obsolete">Ai selectat următoarele module:</translation>
-    </message>
-    <message>
-        <source>Do you really want to remove them from your system?</source>
-        <translation type="obsolete">Eşti sigur ca vrei sa le ştergi din calculator?</translation>
-    </message>
-    <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmare</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="obsolete">Anulează</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Descarcă</translation>
-    </message>
-    <message>
-        <source>Install/update works - Step 2</source>
-        <translation type="obsolete">Instalează/Actualizează module - Pasul 2</translation>
-    </message>
-    <message>
-        <source>Please choose the works which should be installed and/or updated and click the install button.</source>
-        <translation type="obsolete">Te rog selectează modulele care ar trebui instalate/actualizate şi apoi apasă butonul de instalare.</translation>
-    </message>
-    <message>
-        <source>Install works</source>
-        <translation type="obsolete">Instalează module</translation>
-    </message>
-    <message>
-        <source>You selected the following works: </source>
-        <translation type="obsolete">Ai selectat următoarele module:</translation>
-    </message>
-    <message>
-        <source>Do you really want to install them on your system?</source>
-        <translation type="obsolete">Eşti sigur ca vrei sa le instalezi?</translation>
-    </message>
-    <message>
-        <source>Download of work(s)</source>
-        <translation type="obsolete">Descărcare module</translation>
-    </message>
-    <message>
-        <source>Choose directory</source>
-        <translation type="obsolete">Selectează directorul</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="obsolete">Acest director nu este inscriptibil, deci BibleTime nu poate instala modulele aici. Vrei sa foloseşti aceste director in locul precedentului?</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Atenţie</translation>
-    </message>
-    <message>
-        <source>Please choose a (local or remote) library and a bookshelf path to install the work(s) to. After that step click on the connect button.&lt;br/&gt;&lt;b&gt;WARNING: If you live in a persecuted country and do not wish to risk detection you should NOT use the remote installation feature!&lt;/b&gt;</source>
-        <translation type="obsolete">Te rog alege o bibliotecă (locală [de pe calculator] sau de pe Internet) şi un raft de carti pentru a instala modulele pe care le doreşti. După-aceea apasă pe butonul de conectare.&lt;br/&gt;&lt;b&gt;ATENŢIE: Dacă trăieşti într-o ţară unde creştinii sunt persecutaţi, nu folosi prin BibleTime vreo bibliotecă de pe Internet pentru a nu risca detectarea!&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>This dialog lets you remove installed works from your system. Choose the works and then click on the remove button.</source>
-        <translation type="obsolete">În aceasta fereastră poţi şterge module instalate pe calculatorul tău. Selectează modulele pe care vrei să le ştergi si apasă pe butonul de ştergere.</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="obsolete">Acest director nu este inscriptibil, deci BibleTime nu poate instala modulele aici. Vrei totuşi să-l adaugi la lista de rafturi de carţi?</translation>
-    </message>
-</context>
-<context>
-    <name>BookshelfManager::CSwordSetupInstallSourcesDialog</name>
-    <message>
-        <source>Caption</source>
-        <translation type="obsolete">Legendă</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="obsolete">Tip</translation>
-    </message>
-    <message>
-        <source>Server</source>
-        <translation type="obsolete">Server</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="obsolete">Cale</translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="obsolete">Ok</translation>
-    </message>
-    <message>
-        <source>Discard</source>
-        <translation type="obsolete">Aruncă</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Eroare</translation>
-    </message>
-    <message>
-        <source>Please provide a caption.</source>
-        <translation type="obsolete">Te rog să introduci o legendă</translation>
-    </message>
-    <message>
-        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Există deja o sursă cu această legendă.&lt;br&gt;Te rog introdu o legendă diferită.</translation>
-    </message>
-    <message>
-        <source>Please provide a server name.</source>
-        <translation type="obsolete">Te rog să introduci un nume pentru server.</translation>
-    </message>
-    <message>
-        <source>Please provide a valid, readable path.</source>
-        <translation type="obsolete">Te rog să precizezi o cale validă şi citeaţă.</translation>
-    </message>
-    <message>
-        <source>Please provide a path.</source>
-        <translation type="obsolete">Te rog să precizezi o cale.</translation>
-    </message>
-</context>
-<context>
-    <name>BookshelfManager::CSwordSetupModuleListView</name>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">Nume</translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="obsolete">Stare</translation>
-    </message>
-    <message>
-        <source>Installed version</source>
-        <translation type="obsolete">Versiune instalată</translation>
-    </message>
-    <message>
-        <source>Remote version</source>
-        <translation type="obsolete">Versiune disponibilă pe Internet</translation>
-    </message>
-    <message>
-        <source>Location</source>
-        <translation type="obsolete">Locaţie</translation>
-    </message>
-    <message>
-        <source>Bibles</source>
-        <translation type="obsolete">Biblii</translation>
-    </message>
-    <message>
-        <source>Commentaries</source>
-        <translation type="obsolete">Comentarii</translation>
-    </message>
-    <message>
-        <source>Lexicons</source>
-        <translation type="obsolete">Lexicoane</translation>
-    </message>
-    <message>
-        <source>Books</source>
-        <translation type="obsolete">Cărţi</translation>
-    </message>
-    <message>
-        <source>Daily Devotionals</source>
-        <translation type="obsolete">Devoţionale zilnice</translation>
-    </message>
-    <message>
-        <source>Glossaries</source>
-        <translation type="obsolete">Glosare</translation>
-    </message>
-    <message>
-        <source>Maps and Images</source>
-        <translation type="obsolete">Hărţi şi Imagini</translation>
-    </message>
-    <message>
-        <source>Cult/Unorthodox/Questionable</source>
-        <translation type="obsolete">Sectant/Neortodox/Îndoielnic</translation>
-    </message>
-    <message>
-        <source>New</source>
-        <translation type="obsolete">Nou</translation>
-    </message>
-    <message>
-        <source>Updated</source>
-        <translation type="obsolete">Actualizat</translation>
-    </message>
-    <message>
-        <source>Installed</source>
-        <translation type="obsolete">Versiune instalată</translation>
     </message>
 </context>
 <context>
@@ -920,18 +552,6 @@
 <context>
     <name>BtInstallPage</name>
     <message>
-        <source>Install Path:</source>
-        <translation type="obsolete">Locul de Instalare:</translation>
-    </message>
-    <message>
-        <source>Configure...</source>
-        <translation type="obsolete">Configurare...</translation>
-    </message>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Instalare</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="193"/>
         <source>Install/Update</source>
         <translation>Instalează/Actualizează</translation>
@@ -1006,10 +626,6 @@
         <translation type="unfinished">Selectează directorul</translation>
     </message>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmare</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="117"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation type="unfinished">Acest director nu este inscriptibil, deci BibleTime nu poate instala modulele aici. Vrei sa foloseşti aceste director in locul precedentului?</translation>
@@ -1078,10 +694,6 @@
         <translation>Opreşte-le pe toate</translation>
     </message>
     <message>
-        <source>Connecting...</source>
-        <translation type="obsolete">Se conectează...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="146"/>
         <source>Completed</source>
         <translation>Gata!</translation>
@@ -1114,10 +726,6 @@
 </context>
 <context>
     <name>BtModuleManagerDialog</name>
-    <message>
-        <source>BibleTime Bookshelf Manager</source>
-        <translation type="obsolete">BibleTime - Administratorul Rafturilor de Cărţi</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="39"/>
         <source>Bookshelf Manager</source>
@@ -1157,10 +765,6 @@
         <translation type="unfinished">Eşti sigur ca vrei sa le ştergi din calculator?</translation>
     </message>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmare</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
         <source>Remove...</source>
         <translation type="unfinished"></translation>
@@ -1187,22 +791,6 @@
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Description</source>
         <translation>Descriere:</translation>
-    </message>
-    <message>
-        <source>Last refreshed:</source>
-        <translation type="obsolete">Ultima oară reînnoit:</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation type="obsolete">Reînnoieşte</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation type="obsolete">Editează...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Şterge</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
@@ -1323,37 +911,6 @@
     </message>
 </context>
 <context>
-    <name>CAcceleratorSettingsPage</name>
-    <message>
-        <source>Choose type:</source>
-        <translation type="obsolete">Selectează felul:</translation>
-    </message>
-    <message>
-        <source>BibleTime</source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>All text windows</source>
-        <translation type="obsolete">Toate ferestrele cu text</translation>
-    </message>
-    <message>
-        <source>Bible windows</source>
-        <translation type="obsolete">Ferestrele Bibliei</translation>
-    </message>
-    <message>
-        <source>Commentary windows</source>
-        <translation type="obsolete">Ferestrele comentariilor</translation>
-    </message>
-    <message>
-        <source>Lexicon windows</source>
-        <translation type="obsolete">Ferestrele lexicoanelor</translation>
-    </message>
-    <message>
-        <source>Book windows</source>
-        <translation type="obsolete">Ferestrele cărţilor</translation>
-    </message>
-</context>
-<context>
     <name>CBibleReadWindow</name>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="92"/>
@@ -1410,10 +967,6 @@
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Print chapter</source>
         <translation>Tipăreşte capitolul</translation>
-    </message>
-    <message>
-        <source>Strong&apos;s Search</source>
-        <translation type="obsolete">Căutarea Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="202"/>
@@ -1529,10 +1082,6 @@
         <source>Print entry with text</source>
         <translation>Tipăreşte intrarea cu text</translation>
     </message>
-    <message>
-        <source>Book Window</source>
-        <translation type="obsolete">Fereastra cu cărţi</translation>
-    </message>
 </context>
 <context>
     <name>CBookmarkIndex</name>
@@ -1550,26 +1099,6 @@
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="105"/>
         <source>Rename folder</source>
         <translation>Redenumeşte directorul</translation>
-    </message>
-    <message>
-        <source>Change bookmark description</source>
-        <translation type="obsolete">Schimbă descrierea semnului de carte ...</translation>
-    </message>
-    <message>
-        <source>Import bookmarks</source>
-        <translation type="obsolete">Importă semne de carte</translation>
-    </message>
-    <message>
-        <source>Export bookmarks</source>
-        <translation type="obsolete">Exportă semne de carte</translation>
-    </message>
-    <message>
-        <source>Print bookmarks</source>
-        <translation type="obsolete">Tipăreşte semne de carte</translation>
-    </message>
-    <message>
-        <source>Remove selected item(s)</source>
-        <translation type="obsolete">Şterge referinţa selectată</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="683"/>
@@ -1670,21 +1199,9 @@
         <translation>Limbă</translation>
     </message>
     <message>
-        <source>Show Hidden</source>
-        <translation type="obsolete">Arată şi cele ascunse</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="189"/>
         <source>Edit</source>
         <translation>Editare</translation>
-    </message>
-    <message>
-        <source>Plain text</source>
-        <translation type="obsolete">Text</translation>
-    </message>
-    <message>
-        <source>HTML</source>
-        <translation type="obsolete">HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="485"/>
@@ -1695,14 +1212,6 @@
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="518"/>
         <source>Search in</source>
         <translation>Caută în</translation>
-    </message>
-    <message>
-        <source>Search in Selected</source>
-        <translation type="obsolete">Caută în cele selectate</translation>
-    </message>
-    <message>
-        <source>BibleTime - Unlock work</source>
-        <translation type="obsolete">BibleTime - Descuie modulul</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="589"/>
@@ -1725,10 +1234,6 @@
         <translation>Despre...</translation>
     </message>
     <message>
-        <source>Hide/Unhide Works...</source>
-        <translation type="obsolete">Ascunde/Arată Module...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="620"/>
         <source>Hide/Unhide Works</source>
         <translation>Ascunde/Arată Module</translation>
@@ -1737,10 +1242,6 @@
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="621"/>
         <source>Select the works to be hidden.</source>
         <translation>Selectează modulele pe care vrei să le ascunzi.</translation>
-    </message>
-    <message>
-        <source>Works Only</source>
-        <translation type="obsolete">Doar Module</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
@@ -1817,14 +1318,6 @@
         <translation>Versetul anterior</translation>
     </message>
     <message>
-        <source>Sync with active Bible</source>
-        <translation type="obsolete">Sincronizează cu Biblia activă</translation>
-    </message>
-    <message>
-        <source>Commentary window</source>
-        <translation type="obsolete">Ferestrele comentariilor</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Synchronize</source>
         <translation type="unfinished"></translation>
@@ -1837,22 +1330,6 @@
 </context>
 <context>
     <name>CConfigurationDialog</name>
-    <message>
-        <source>Display</source>
-        <translation type="obsolete">Afişează opţiunile</translation>
-    </message>
-    <message>
-        <source>Desk</source>
-        <translation type="obsolete">Birou</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Limbi</translation>
-    </message>
-    <message>
-        <source>HotKeys</source>
-        <translation type="obsolete">Taste de scurtături</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
         <source>Configure BibleTime</source>
@@ -1880,10 +1357,6 @@
         <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="116"/>
         <source>Use linebreaks after each verse</source>
         <translation>Afişează versetele pe rânduri noi</translation>
-    </message>
-    <message>
-        <source>Show versenumbers</source>
-        <translation type="obsolete">Arată numerele versetelor</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="121"/>
@@ -1934,17 +1407,9 @@
 <context>
     <name>CDisplaySettingsPage</name>
     <message>
-        <source>Show startuplogo</source>
-        <translation type="obsolete">Arată logo-ul programului la pornire</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="71"/>
         <source>Display templates</source>
         <translation>Afişează şabloanele</translation>
-    </message>
-    <message>
-        <source>Display templates define how text is displayed. Please choose a template you like.</source>
-        <translation type="obsolete">Şabloanele definesc felul cum textul este afişat. Alege te rog şablonul care-ţi place.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="82"/>
@@ -2027,10 +1492,6 @@
         <translation>Navighează înainte</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation type="obsolete">Caută</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="152"/>
         <source>Open the search dialog with the works of this window</source>
         <translation type="unfinished"></translation>
@@ -2092,14 +1553,6 @@
 </context>
 <context>
     <name>CHTMLWriteDisplay</name>
-    <message>
-        <source>Choose a font</source>
-        <translation type="obsolete">Selectează un font</translation>
-    </message>
-    <message>
-        <source>Choose a font size</source>
-        <translation type="obsolete">Selectează o mărime a fontului</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="193"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
@@ -2233,13 +1686,6 @@
     </message>
 </context>
 <context>
-    <name>CInstallModuleChooserDialog</name>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Instalare</translation>
-    </message>
-</context>
-<context>
     <name>CKeyReferenceWidget</name>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="93"/>
@@ -2280,33 +1726,9 @@
 <context>
     <name>CLanguageSettingsPage</name>
     <message>
-        <source>Specify a language for names of Bible books</source>
-        <translation type="obsolete">Specifică o limbă pentru numele cărţilor biblice</translation>
-    </message>
-    <message>
-        <source>Sword has a number of locales available which can be used to internationalize the   names of books of the Bible. You can specify which locale to use. If you want to   create a new locale, see http://www.crosswire.org/sword/develop for details.</source>
-        <translation type="obsolete">Sword are un număr de localizări disponibile care pot fi folosite pentru a internaţionaliza numele cărţilor Bibliei. Poţi specifica localizarea dorită. Dacă vrei să creezi o nouă localizare, vezi http://www.crosswire.org/sword/develop pentru detalii.</translation>
-    </message>
-    <message>
-        <source>Language for names of Bible books</source>
-        <translation type="obsolete">Limba pentru numele cărţilor biblice</translation>
-    </message>
-    <message>
-        <source>Select custom fonts per-language</source>
-        <translation type="obsolete">Selectează fonturi predefinite pentru fiecare limbă</translation>
-    </message>
-    <message>
-        <source>Here you find a list of all languages of the installed works.  You can specify a custom font for each language that needs a special font  to be displayed correctly.</source>
-        <translation type="obsolete">Aici găseşti o listă cu toate limbile modulelor instalate. Poţi specifica un font predefinit pentru fiecare limbă ce necesită un font specific pentru o afişare corectă a caracterelor.</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>Use custom font</source>
         <translation>Foloseşte fonturi predefinite</translation>
-    </message>
-    <message>
-        <source>The quick brown fox jumps over the lazy dog.</source>
-        <translation type="obsolete">Dumnezeu sa te binecuvanteze</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
@@ -2809,10 +2231,6 @@
 <context>
     <name>CWriteWindow</name>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmare</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="122"/>
         <source>Save text before closing?</source>
         <translation>Să salvez textul înainte de închidere?</translation>
@@ -2831,10 +2249,6 @@
 </context>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
-    <message>
-        <source>Mag</source>
-        <translation type="obsolete">MAG</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="168"/>
         <source>Abbreviation</source>
@@ -2875,37 +2289,6 @@
         <location filename="../../src/frontend/cinfodisplay.cpp" line="65"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Aceasta este zona MAG. Atunci când te duci cu mouse-ul deasupra unor link-uri sau alte obiecte ce conţin anumite date conţinutul acestora apare in această zonă. Pentru ca ceea ce este scris în MAG să rămână în zona respectivă, trebuie să te duci repede cu mouse-ul deasupra MAG-ului sau să ţii SHIFT apăsat.&lt;/small&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>ManageIndicesForm</name>
-    <message>
-        <source>Manage Indicies</source>
-        <translation type="obsolete">Administrează Indicii</translation>
-    </message>
-    <message>
-        <source>Automaticall&amp;y delete orphaned indices when BibleTime starts</source>
-        <translation type="obsolete">Când porneşte BibleTime, şterge automat indicii care nu mai sunt &amp;valabili.</translation>
-    </message>
-    <message>
-        <source>Alt+Y</source>
-        <translation type="obsolete">Alt+Y</translation>
-    </message>
-    <message>
-        <source>Module</source>
-        <translation type="obsolete">Modul</translation>
-    </message>
-    <message>
-        <source>Index Size</source>
-        <translation type="obsolete">Mărimea Indexului</translation>
-    </message>
-    <message>
-        <source>&amp;Create selected indices</source>
-        <translation type="obsolete">&amp;Creează indicii selectaţi</translation>
-    </message>
-    <message>
-        <source>De&amp;lete selected indices</source>
-        <translation type="obsolete">Şterge indicii se&amp;lectaţi</translation>
     </message>
 </context>
 <context>
@@ -2980,10 +2363,6 @@
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="258"/>
         <source>Books</source>
         <translation>Cărţi</translation>
-    </message>
-    <message>
-        <source>Alternative text</source>
-        <translation type="obsolete">Text alternativ</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="418"/>
@@ -3563,18 +2942,10 @@ Language name x-E-BAR</extracomment>
         <translation>Creolă Franceză Haitiană</translation>
     </message>
     <message>
-        <source>ItzÃ¡</source>
-        <translation type="obsolete">ItzÃ¡</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
         <source>Shuar</source>
         <extracomment>Language name x-E-JIV</extracomment>
         <translation>Jivaro</translation>
-    </message>
-    <message>
-        <source>KekchÃ­</source>
-        <translation type="obsolete">KekchÃ</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3818,14 +3189,6 @@ Language name x-E-SRN</extracomment>
         <translation>BibleTime - Fişierele semnelor de carte</translation>
     </message>
     <message>
-        <source>BibleTime - Export Bookmarks</source>
-        <translation type="obsolete">BibleTime - Exportă semne de carte</translation>
-    </message>
-    <message>
-        <source>BibleTime - Import bookmarks</source>
-        <translation type="obsolete">BibleTime - Importă semne de carte</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="159"/>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
         <source>unknown</source>
@@ -3846,334 +3209,6 @@ Language name x-E-SRN</extracomment>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="587"/>
         <source>New folder</source>
         <translation>Director nou</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Semne de carte</translation>
-    </message>
-    <message>
-        <source>Old bookmarks</source>
-        <translation type="obsolete">Semne de carte vechi</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Necunoscut</translation>
-    </message>
-    <message>
-        <source>Parsing Stong&apos;s Numbers</source>
-        <translation type="obsolete">Numere Strong</translation>
-    </message>
-    <message>
-        <source>Starting BibleTime</source>
-        <translation type="obsolete">Pornesc BibleTime</translation>
-    </message>
-    <message>
-        <source>Close BibleTime and save the settings.</source>
-        <translation type="obsolete">Închide BibleTime şi salvează configurările.</translation>
-    </message>
-    <message>
-        <source>Show or hide the bookshelf.</source>
-        <translation type="obsolete">Arată sau ascunde raftul cu cărţi.</translation>
-    </message>
-    <message>
-        <source>Toggle the main toolbar view.</source>
-        <translation type="obsolete">Activează bara de unelte.</translation>
-    </message>
-    <message>
-        <source>Open the search dialog to search in all works that are currently open.</source>
-        <translation type="obsolete">Deschide fereastra de căutare pentru a căuta în toate modulele deschise.</translation>
-    </message>
-    <message>
-        <source>Open the search dialog to search in the standard Bible.</source>
-        <translation type="obsolete">Deschide fereastra de căutare pentru a căuta în Biblia standard.</translation>
-    </message>
-    <message>
-        <source>Restore a saved BibleTime session.</source>
-        <translation type="obsolete">Restaurează o sesiune BibleTime salvată.</translation>
-    </message>
-    <message>
-        <source>Save current BibleTime session so that it can be reused later.</source>
-        <translation type="obsolete">Salvează sesiunea curentă pentru a putea fi refolosită ulterior.</translation>
-    </message>
-    <message>
-        <source>Create and save a new session.</source>
-        <translation type="obsolete">Crează şi salvează o sesiune nouă.</translation>
-    </message>
-    <message>
-        <source>Delete a BibleTime session.</source>
-        <translation type="obsolete">Şterge o sesiune BibleTime salvată anterior.</translation>
-    </message>
-    <message>
-        <source>Toggle fullscreen mode of the main window.</source>
-        <translation type="obsolete">Activează ecran plin pentru fereastra principală</translation>
-    </message>
-    <message>
-        <source>Vertically tile the open windows.</source>
-        <translation type="obsolete">Vizualizare automată verticală pentru ferestrele deschise.</translation>
-    </message>
-    <message>
-        <source>Horizontally tile the open windows.</source>
-        <translation type="obsolete">Vizualizare automată orizontală pentru ferestrele deschise.</translation>
-    </message>
-    <message>
-        <source>Cascade the open windows.</source>
-        <translation type="obsolete">Vizualizare suprapusă pentru ferestrele deschise.</translation>
-    </message>
-    <message>
-        <source>Choose the way that is used to arrange the windows.</source>
-        <translation type="obsolete">Alege felul în care vor fi afişate ferestrele.</translation>
-    </message>
-    <message>
-        <source>Automatically tile the open windows vertically.</source>
-        <translation type="obsolete">Vizualizare automată verticală a ferestrelor deschise.</translation>
-    </message>
-    <message>
-        <source>Automatically tile the open windows horizontally.</source>
-        <translation type="obsolete">Vizualizare automată orizontală a ferestrelor deschise.</translation>
-    </message>
-    <message>
-        <source>Automatically cascade the open windows.</source>
-        <translation type="obsolete">Vizualizare automată prin suprapunere pentru ferestrele deschise.</translation>
-    </message>
-    <message>
-        <source>Close all open windows.</source>
-        <translation type="obsolete">Închide toate ferestrele deschise.</translation>
-    </message>
-    <message>
-        <source>Open BibleTime&apos;s toolbar editor.</source>
-        <translation type="obsolete">Deschide editorul barei de unelte al BibleTime.</translation>
-    </message>
-    <message>
-        <source>Open the dialog to set most of BibleTime&apos;s preferences.</source>
-        <translation type="obsolete">Deschide fereastra de opţiuni BibleTime unde puteţi selecta cele mai multe preferinţe.</translation>
-    </message>
-    <message>
-        <source>Open the dialog to configure your bookshelf and install/update/remove works.</source>
-        <translation type="obsolete">Deschide fereastra de opţiuni pentru a configura raftul de cărţi sau pentru a instala/actualiza/şterge module.</translation>
-    </message>
-    <message>
-        <source>Send a bugreport to the developers of BibleTime.</source>
-        <translation type="obsolete">Raportează o eroare dezvoltatorilor BibleTime.</translation>
-    </message>
-    <message>
-        <source>Show detailed information about BibleTime.</source>
-        <translation type="obsolete">Arată informaţii detaliate despre BibleTime.</translation>
-    </message>
-    <message>
-        <source>Show detailed information about the KDE project.</source>
-        <translation type="obsolete">Arată informaţii detaliate despre proiectul KDE.</translation>
-    </message>
-    <message>
-        <source>Stop the active search.</source>
-        <translation type="obsolete">Opreşte căutarea curentă.</translation>
-    </message>
-    <message>
-        <source>The search text will be used exactly as entered.</source>
-        <translation type="obsolete">Textul de căutat va fi exact ca cel introdus.</translation>
-    </message>
-    <message>
-        <source>Treat the search string as a GNU regular expression. The BibleTime handbook contains an introduction to regular expressions.</source>
-        <translation type="obsolete">Textul de căutare este tratat ca expresie regulată GNU. Consultă manualul BibleTime pentru o explicaţie în legătură cu expresiile regulate.</translation>
-    </message>
-    <message>
-        <source>Choose a scope from the list. Select the first item to use no scope, the second one is to use each work&apos;s last search result as search scope. The others are user defined search scopes.</source>
-        <translation type="obsolete">Alege un domeniu din lista celor disponibile. Selectează prima referinţă pentru folosirea fără domeniu, a doua referinţă fiind pentru folosirea rezultatului căutării din fiecare modul ca domeniu de căutare.Celelalte sunt domenii predefinite ale utilizatorului.</translation>
-    </message>
-    <message>
-        <source>Select an item from the list to edit the search scope.</source>
-        <translation type="obsolete">Selectează o referinţă din listă pentru a edita domeniul de căutare.</translation>
-    </message>
-    <message>
-        <source>Change the name of the selected search scope.</source>
-        <translation type="obsolete">Schimbă numele domeniilor de căutare selectate.</translation>
-    </message>
-    <message>
-        <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="obsolete">Schimbă razele de acţiune ale domeniilor de căutare selectate. Aruncă o privire asupra domeniilor de căutare predefinite pentru a vedea cum sunt construite aceste raze de acţiune.</translation>
-    </message>
-    <message>
-        <source>Contains the search ranges which will be used for the search.</source>
-        <translation type="obsolete">Conţine razele de căutare care vor fi folosite de BibleTime.</translation>
-    </message>
-    <message>
-        <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation type="obsolete">Adaugă un nou domeniu de căutare. Mai întâi introdu un nume potrivit, apoi editează razele de căutare.</translation>
-    </message>
-    <message>
-        <source>The list of works chosen for the search.</source>
-        <translation type="obsolete">Lista modulelor selectate pentru căutare.</translation>
-    </message>
-    <message>
-        <source>This list contains the search result of the selected work.</source>
-        <translation type="obsolete">Lista conţine rezultatele căutării în modulele selectate.</translation>
-    </message>
-    <message>
-        <source>The text preview of the selected search result item.</source>
-        <translation type="obsolete">Previzualizare text pentru referinţele rezultate în urma căutării.</translation>
-    </message>
-    <message>
-        <source>Go back one item in the display history.</source>
-        <translation type="obsolete">Du-te înapoi o intrare în istoria afişărilor.</translation>
-    </message>
-    <message>
-        <source>Go forward one item in the display history.</source>
-        <translation type="obsolete">Du-te înainte o intrare în istoria afişărilor.</translation>
-    </message>
-    <message>
-        <source>Show all occurences of the Strong number currently under the mouse cursor.</source>
-        <translation type="obsolete">Arată toate instanţele</translation>
-    </message>
-    <message>
-        <source>This list contains the books which are available in this work.</source>
-        <translation type="obsolete">Această listă conţine cărţile disponibile în acest modul.</translation>
-    </message>
-    <message>
-        <source>Show the next book of this work.</source>
-        <translation type="obsolete">Arată cartea următoare a acestui modul.</translation>
-    </message>
-    <message>
-        <source>Show the previous book of this work.</source>
-        <translation type="obsolete">Arată cartea anterioară a acestui modul.</translation>
-    </message>
-    <message>
-        <source>This list contains the chapters which are available in the current book.</source>
-        <translation type="obsolete">Această listă conţine capitolele disponibile în cartea curentă.</translation>
-    </message>
-    <message>
-        <source>Show the next chapter of the work.</source>
-        <translation type="obsolete">Arată capitolul următor al modulului.</translation>
-    </message>
-    <message>
-        <source>Show the previous chapter of the work.</source>
-        <translation type="obsolete">Arată capitolul anterior al modulului.</translation>
-    </message>
-    <message>
-        <source>This list contains the verses which are available in the current chapter.</source>
-        <translation type="obsolete">Această listă conţine versetele care sunt diponibile în capitolul curent.</translation>
-    </message>
-    <message>
-        <source>In  Bible texts, the next verse will be highlighted. In commentaries, the next entry will be shown.</source>
-        <translation type="obsolete">Pentru textele Bibliei, versetul următor va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea următoare.</translation>
-    </message>
-    <message>
-        <source>In Bible texts, the previous verse will be highlighted. In commentaries, the previous entry will be shown.</source>
-        <translation type="obsolete">Pentru textele Bibliei, versetul anterior va fi subliniat.&lt;BR&gt;În comentarii va fi afişată intrarea anterioară.</translation>
-    </message>
-    <message>
-        <source>Synchronize the displayed entry of this work with the active Bible window.</source>
-        <translation type="obsolete">Sincronizează intrarea afişată din acest modul cu fereastra Bibliei active.</translation>
-    </message>
-    <message>
-        <source>This list contains the entries of the current work.</source>
-        <translation type="obsolete">Această listă conţine intrările modulului curent.</translation>
-    </message>
-    <message>
-        <source>The next entry of the work will be shown.</source>
-        <translation type="obsolete">Va fi afişată intrarea următoare a modulului.</translation>
-    </message>
-    <message>
-        <source>The previous entry of the work will be shown.</source>
-        <translation type="obsolete">Va fi afişată intrarea anterioară a modulului.</translation>
-    </message>
-    <message>
-        <source>Save the curent text into the work. The old text will be overwritten.</source>
-        <translation type="obsolete">Salvează textul curent în cadrul modulului. Vechiul text va fi pierdut.</translation>
-    </message>
-    <message>
-        <source>Deletes the current entry out of the work. The text will be lost.</source>
-        <translation type="obsolete">Şterge intrarea curentă din modul. Textul va fi pierdut.</translation>
-    </message>
-    <message>
-        <source>Toggle bold formatting of the selected text.</source>
-        <translation type="obsolete">Activează formatarea îngroşată a textului selectat.</translation>
-    </message>
-    <message>
-        <source>Toggle italic formatting of the selected text.</source>
-        <translation type="obsolete">Activează formatarea înclinată a textului selectat.</translation>
-    </message>
-    <message>
-        <source>Toggle underlined formatting of the selected text.</source>
-        <translation type="obsolete">Activează formatarea subliniat a textului selectat.</translation>
-    </message>
-    <message>
-        <source>The text will be aligned on the left side of the page.</source>
-        <translation type="obsolete">Textul va fi aliniat pe partea stângă a paginii.</translation>
-    </message>
-    <message>
-        <source>Centers the text horizontally.</source>
-        <translation type="obsolete">Centrează textul orizontal.</translation>
-    </message>
-    <message>
-        <source>Aligns the text on the right side of the page.</source>
-        <translation type="obsolete">Textul va fi aliniat pe partea dreaptă a paginii.</translation>
-    </message>
-    <message>
-        <source>Justifies the text on the page.</source>
-        <translation type="obsolete">Aliniere dreaptă a textului de pe pagină.</translation>
-    </message>
-    <message>
-        <source>Choose a new font for the selected text.</source>
-        <translation type="obsolete">Alege un font nou pentru textul selectat.</translation>
-    </message>
-    <message>
-        <source>Choose a new font size for the selected text.</source>
-        <translation type="obsolete">Alege o nouă mărime a fontului pentru textul selectat.</translation>
-    </message>
-    <message>
-        <source>Choose a new color for the selected text.</source>
-        <translation type="obsolete">Alege o culoare nouă pentru textul selectat.</translation>
-    </message>
-    <message>
-        <source>Activate this to see the BibleTime logo on startup.</source>
-        <translation type="obsolete">Activează aceasta pentru a vedea logo-ul BibleTime la pornire.</translation>
-    </message>
-    <message>
-        <source>Save the user&apos;s session when BibleTime is closed and restore it on the next startup.</source>
-        <translation type="obsolete">Salvează sesiunea utilizatorului la închiderea BibleTime şi restaureaz-o la următoarea pornire.</translation>
-    </message>
-    <message>
-        <source>The font selection below will apply to all texts in this language.</source>
-        <translation type="obsolete">Fontul selectat mai jos va fi aplicat tuturor textelor din această limbă.</translation>
-    </message>
-    <message>
-        <source>Contains the languages which can be used for the biblical booknames.</source>
-        <translation type="obsolete">Conţine limbile ce pot fi folosite pentru denumirile internaţionale ale cărţilor.</translation>
-    </message>
-    <message>
-        <source>The standard Bible is used when a hyperlink into a Bible is clicked.</source>
-        <translation type="obsolete">Biblia standard este folosită când o legătură din Biblie e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard commentary is used when a hyperlink into a commentary is clicked.</source>
-        <translation type="obsolete">Comentariu standard e folosit când o legătură din comentariu e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard lexicon is used when a hyperlink into a lexicon is clicked.</source>
-        <translation type="obsolete">Lexiconul standard e folosit când o hiperlegătură din lexicon e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard devotional will be used to display a short start up devotional.</source>
-        <translation type="obsolete">Devoţionalul standard va fi folosit pentru a afişa un mic devoţional de pornire.</translation>
-    </message>
-    <message>
-        <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked.</source>
-        <translation type="obsolete">Lexiconul ebraic standard e folosit când o hiperlegătură din lexiconul ebraic e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked.</source>
-        <translation type="obsolete">Lexiconul grecesc standard e folosit când o legătură din lexiconul grecesc e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked.</source>
-        <translation type="obsolete">Lexiconul morfologic standard pentru textele ebraice e folosit când o legătură a etichetelor morfologice din textul ebraic e apăsată.</translation>
-    </message>
-    <message>
-        <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked.</source>
-        <translation type="obsolete">Lexiconul morfologic standard pentru textele greceşti e folosit când o legătură a etichetelor morfologice din textul grecesc e apăsată.</translation>
-    </message>
-    <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmare</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="62"/>
@@ -4258,69 +3293,9 @@ Language name x-E-SRN</extracomment>
         <translation>O versiune nouă este disponibilă!</translation>
     </message>
     <message>
-        <source>Stop</source>
-        <translation type="obsolete">Opreşte</translation>
-    </message>
-    <message>
-        <source>Open BibleTime&apos;s handbook.</source>
-        <translation type="obsolete">Deschide manualul BibleTime-ului</translation>
-    </message>
-    <message>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">Deschide studiul CumSă, inclus cu BibleTime.&lt;BR&gt;Acest CumSă este o introducere despre cum să studiezi Sfânta Biblie într-un mod eficient.</translation>
-    </message>
-    <message>
-        <source>Start to search the text in each of the chosen works.</source>
-        <translation type="obsolete">Caută textul in fiecare dintre modulele alese.</translation>
-    </message>
-    <message>
-        <source>Choose works for the search.</source>
-        <translation type="obsolete">Selectează modulele în care trebuie căutat.</translation>
-    </message>
-    <message>
-        <source>The text you want to search for in the chosen works.</source>
-        <translation type="obsolete">Textul pe care vrei să-l cauţi în modulele selectate.</translation>
-    </message>
-    <message>
-        <source>Treat the search text as multiple words. The text must contain all of the words to match. The order of the words is unimportant.</source>
-        <translation type="obsolete">Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină toate cuvintele de căutat. Ordinea cuvintelor nu este importantă.</translation>
-    </message>
-    <message>
-        <source>Treat the search text as multiple words. The text must contain one or more of the words to match. The order is unimportant.</source>
-        <translation type="obsolete">Tratează textul de căutat ca mai multe.cuvinte. Textul trebuie să conţină unul sau mai multe cuvinte de căutat. Ordinea lor nu este importantă.</translation>
-    </message>
-    <message>
-        <source>Case sensitive distinguishes between upper and lowercase characters.</source>
-        <translation type="obsolete">Sensibil la majuscule = face diferenţa între litere mari (majuscule) si litere mici (normale).</translation>
-    </message>
-    <message>
-        <source>Deletes the selected search scope. If you cancel the dialog the settings won&apos;t be saved.</source>
-        <translation type="obsolete">Şterge întregul domeniu de căutare. Dacă anulezi, setările  nu vor fi salvate.</translation>
-    </message>
-    <message>
-        <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="obsolete">Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
-    </message>
-    <message>
-        <source>Open the search dialog with the works of this window.</source>
-        <translation type="obsolete">Deschide căutarea în modulele acestei ferestre.</translation>
-    </message>
-    <message>
-        <source>Loads the old text from the work into the edit area. The unsaved text will be lost.</source>
-        <translation type="obsolete">Încarcă vechiul text al modulului în zona de editare. Textul nesalvat se va pierde.</translation>
-    </message>
-    <message>
-        <source>Opens the search dialog to search in the works that are currently open.</source>
-        <translation type="obsolete">Deschide căutarea în modulele deschise în acest moment.</translation>
-    </message>
-    <message>
         <location filename="../../src/util/ctoolclass.cpp" line="258"/>
         <source>Installed version</source>
         <translation>Versiune instalată</translation>
-    </message>
-    <message>
-        <source>Open the printer dialog of BibleTime.</source>
-        <translation type="obsolete">Deschide fereastra de tipărire.</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
@@ -4376,26 +3351,6 @@ Language name x-E-SRN</extracomment>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="57"/>
         <source>Import bookmarks</source>
         <translation type="unfinished">Importă semne de carte</translation>
-    </message>
-    <message>
-        <source>Next entry</source>
-        <translation type="obsolete">Intrarea următoare</translation>
-    </message>
-    <message>
-        <source>Previous entry</source>
-        <translation type="obsolete">Intrarea anterioară</translation>
-    </message>
-    <message>
-        <source>Bold</source>
-        <translation type="obsolete">Ingroşat</translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <translation type="obsolete">Înclinat</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="obsolete">Subliniat</translation>
     </message>
     <message>
         <location filename="../../src/util/ctoolclass.cpp" line="60"/>
@@ -4517,74 +3472,6 @@ Language name x-E-SRN</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::BtSearchAdvOptionsArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
-        <source>Search for:</source>
-        <translation type="unfinished">Caută:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
-        <source>&amp;Search</source>
-        <translation type="unfinished">&amp;Caută</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
-        <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
-        <source>Multiword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
-        <source>Phrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
-        <source>Regexp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
-        <source>Multiple words or parts of words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
-        <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
-        <source>Full lucene syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
-        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
-        <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
-        <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
-        <source>Search Syntax Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
@@ -4650,30 +3537,6 @@ Language name x-E-SRN</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="275"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished">Selectează modulele în care să se caute:</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Introdu termenii pentru căutare, separaţi unul de altul prin spaţii. În mod implicit (default), funcţia de căutare returnează rezultatele ce se potrivesc cu oricare dintre termenii precizaţi (OR). Pentru ca funcţia de căutare să returneze doar rezultatele ce se potrivesc cu toţi termenii precizaţi, separă-i pe aceştia prin cuvântul AND.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Poţi folosi wildcard-uri: &apos;*&apos; înlocui orice secvenţă de caractere, în timp ce &apos;p&apos; inlocuieşte un singur caracter. Folosirea parantezelor te ajută sa grupezi termenii de căutare (de exemplu: ( Iisus OR suflet) AND Dumnezeu&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Pentru a căuta în alt text în afară de cel principal, tastează tipul textului urmat de &quot;:&quot;, iar după-aceea termenul de căutat. De exemplu, pentru a căuta numărul Strong H8077, scrie &apos;strong:H8077&apos;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Tipuri de text disponibile&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;titlul:&lt;/td&gt;&lt;td&gt;căutări titluri&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;notă de subsol&lt;/td&gt;&lt;td&gt;căutări note de subsol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;căutări numere Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfologie:&lt;/td&gt;&lt;td&gt;căutări coduri morfologice&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;BibleTime foloseşte motorul de căutare Lucene pentru a găsi termenii precizaţi de tine. Este foarte complex, având foarte multe funcţii avansate, despre care poţi afla mai mult aici: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Introducere în sintaxa căutarii simple.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="448"/>
@@ -4880,14 +3743,6 @@ Language name x-E-SRN</extracomment>
         <translation>Locuri de căutar&amp;e:</translation>
     </message>
     <message>
-        <source>&amp;Add new range</source>
-        <translation type="obsolete">&amp;Adaugă un nou loc de căutare:</translation>
-    </message>
-    <message>
-        <source>Delete current &amp;range</source>
-        <translation type="obsolete">Şte&amp;rge raza de acţiune a căutarii actuale</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="123"/>
         <source>&amp;Name:</source>
         <translation>&amp;Nume:</translation>
@@ -4999,10 +3854,6 @@ Language name x-E-SRN</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <source>&amp;Search</source>
-        <translation type="obsolete">&amp;Caută</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="111"/>
         <source>Missing indices</source>
         <translation>Indici lipsa</translation>
@@ -5032,76 +3883,6 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchOptionsArea</name>
-    <message>
-        <source>Search for:</source>
-        <translation type="obsolete">Caută:</translation>
-    </message>
-    <message>
-        <source>&amp;Help</source>
-        <translation type="obsolete">A&amp;jutor:</translation>
-    </message>
-    <message>
-        <source>Ch&amp;oose</source>
-        <translation type="obsolete">Ale&amp;ge:</translation>
-    </message>
-    <message>
-        <source>S&amp;etup</source>
-        <translation type="obsolete">Instalar&amp;e:</translation>
-    </message>
-    <message>
-        <source>Search scope:</source>
-        <translation type="obsolete">Domeniu de căutare:</translation>
-    </message>
-    <message>
-        <source>Searching in: </source>
-        <translation type="obsolete">Caut în:</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Introdu termenii pentru căutare, separaţi unul de altul prin spaţii. În mod implicit (default), funcţia de căutare returnează rezultatele ce se potrivesc cu oricare dintre termenii precizaţi (OR). Pentru ca funcţia de căutare să returneze doar rezultatele ce se potrivesc cu toţi termenii precizaţi, separă-i pe aceştia prin cuvântul AND.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Poţi folosi wildcard-uri: &apos;*&apos; înlocui orice secvenţă de caractere, în timp ce &apos;p&apos; inlocuieşte un singur caracter. Folosirea parantezelor te ajută sa grupezi termenii de căutare (de exemplu: ( Iisus OR suflet) AND Dumnezeu&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Pentru a căuta în alt text în afară de cel principal, tastează tipul textului urmat de &quot;:&quot;, iar după-aceea termenul de căutat. De exemplu, pentru a căuta numărul Strong H8077, scrie &apos;strong:H8077&apos;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Tipuri de text disponibile&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;titlul:&lt;/td&gt;&lt;td&gt;căutări titluri&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;notă de subsol&lt;/td&gt;&lt;td&gt;căutări note de subsol&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;căutări numere Strong&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morfologie:&lt;/td&gt;&lt;td&gt;căutări coduri morfologice&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;BibleTime foloseşte motorul de căutare Lucene pentru a găsi termenii precizaţi de tine. Este foarte complex, având foarte multe funcţii avansate, despre care poţi afla mai mult aici: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Introducere în sintaxa căutarii simple.</translation>
-    </message>
-    <message>
-        <source>No search scope</source>
-        <translation type="obsolete">Nici un domeniu de căutare</translation>
-    </message>
-    <message>
-        <source>Works to Search in</source>
-        <translation type="obsolete">Module în care să se caute:</translation>
-    </message>
-    <message>
-        <source>Select the works which should be searched.</source>
-        <translation type="obsolete">Selectează modulele în care să se caute:</translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchResultArea</name>
-    <message>
-        <source>&amp;Analyze search...</source>
-        <translation type="obsolete">&amp;Analizează căutarea...</translation>
     </message>
 </context>
 <context>
@@ -5182,45 +3963,9 @@ This could take a long time. Proceed with indexing?</source>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <source>Standard works</source>
-        <translation type="obsolete">Module standard</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="63"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
         <translation>Modulele standard sunt folosite când nici un modul nu este specificat,   de exemplu atunci când se accesează o legătură dintr-o Biblie sau Lexicon.</translation>
-    </message>
-    <message>
-        <source>Standard Bible</source>
-        <translation type="obsolete">Biblia standard</translation>
-    </message>
-    <message>
-        <source>Standard Commentary</source>
-        <translation type="obsolete">Comentariu standard</translation>
-    </message>
-    <message>
-        <source>Standard Lexicon</source>
-        <translation type="obsolete">Lexicon standard</translation>
-    </message>
-    <message>
-        <source>Standard Daily Devotional</source>
-        <translation type="obsolete">Devoţional zilnic standard</translation>
-    </message>
-    <message>
-        <source>Standard Hebrew Strong&apos;s Lexicon</source>
-        <translation type="obsolete">Lexiconul ebraic Strong standard</translation>
-    </message>
-    <message>
-        <source>Standard Greek Strong&apos;s Lexicon</source>
-        <translation type="obsolete">Lexiconul grecesc Strong standard</translation>
-    </message>
-    <message>
-        <source>Standard Hebrew Morphological Lexicon</source>
-        <translation type="obsolete">Lexicon morfologic ebraic standard</translation>
-    </message>
-    <message>
-        <source>Standard Greek Morphological Lexicon</source>
-        <translation type="obsolete">Lexicon morfologic grecesc standard</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="71"/>
@@ -5310,14 +4055,6 @@ This could take a long time. Proceed with indexing?</source>
 </context>
 <context>
     <name>TextFiltersTab</name>
-    <message>
-        <source>Text filters</source>
-        <translation type="obsolete">Filtre text</translation>
-    </message>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can change the filter settings in each display window, of course.</source>
-        <translation type="obsolete">Filtrele controlează înfăţişarea textului în cadrul ferestrelor. Aici poţi alege configurările standard pentru toate filtrele. Poţi schimba, de asemenea, configurările filtrelor din fiecare fereastră.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
         <source>Insert line break after each verse</source>

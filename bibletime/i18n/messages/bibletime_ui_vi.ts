@@ -12,18 +12,6 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <source>BibleTime </source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Creating BibleTime&apos;s GUI</source>
-        <translation type="obsolete">Tạo Ra Chương Trình BibleTime</translation>
-    </message>
-    <message>
-        <source>Initializing menu- and toolbars</source>
-        <translation type="obsolete">Khởi Chạy Thực Đơn và Thanh Công Cụ </translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;File</source>
         <extracomment>Main menu item</extracomment>
@@ -71,21 +59,9 @@
         <translation>Thoát</translation>
     </message>
     <message>
-        <source>Exit BibleTime</source>
-        <translation type="obsolete">Thoát BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>&amp;Show toolbar</source>
         <translation>Hiển Thị Thanh &amp;Cọng Cụ</translation>
-    </message>
-    <message>
-        <source>&amp;Show bookshelf</source>
-        <translation type="obsolete">Hiển Thị Kệ &amp;Sách</translation>
-    </message>
-    <message>
-        <source>Show &amp;mag</source>
-        <translation type="obsolete">Hiển Thị Cửa Sổ &amp;Năng Động</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
@@ -93,21 +69,9 @@
         <translation>Chế Độ Toàn &amp;Màn Hình</translation>
     </message>
     <message>
-        <source>Search in &amp;open work(s)</source>
-        <translation type="obsolete">Tìm &amp;kiếm trong sách hiện mở</translation>
-    </message>
-    <message>
-        <source>Search in standard &amp;Bible</source>
-        <translation type="obsolete">Tìm kiếm trong cuốn &amp;Kinh Thánh thông thường</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>&amp;Save session</source>
         <translation>&amp;Lưu buổi làm việc</translation>
-    </message>
-    <message>
-        <source>Save as &amp;new session</source>
-        <translation type="obsolete">&amp;Lưu như buổi làm việc &amp;mới</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="198"/>
@@ -168,14 +132,6 @@
         <translation>&amp;Đóng Tất Cả</translation>
     </message>
     <message>
-        <source>&amp;Configure BibleTime</source>
-        <translation type="obsolete">&amp;Cấu hình</translation>
-    </message>
-    <message>
-        <source>Bookshelf &amp;Manager</source>
-        <translation type="obsolete">&amp;Quản Lý Kệ Sách</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="324"/>
         <source>&amp;Handbook</source>
         <translation>Sách &amp;Hướng Dẫn</translation>
@@ -185,18 +141,6 @@
         <source>&amp;Bible Study Howto</source>
         <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>Cách Thức &amp;Nghiên Cứu Kinh Thánh</translation>
-    </message>
-    <message>
-        <source>Initializing Sword</source>
-        <translation type="obsolete">Khởi Chạy Sword</translation>
-    </message>
-    <message>
-        <source>Checking indices</source>
-        <translation type="obsolete">Kiểm Tra Các Chỉ Số</translation>
-    </message>
-    <message>
-        <source>Session name:</source>
-        <translation type="obsolete">Tên của Buổi Làm Việc:</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="483"/>
@@ -556,10 +500,6 @@
         <translation>Tạo ra bản liệt kê mới cho tác phẩm được chọn</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation type="obsolete">Tạo Ra</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="69"/>
         <source>Work</source>
         <translation>Tác Phẩm</translation>
@@ -612,18 +552,6 @@
 <context>
     <name>BtInstallPage</name>
     <message>
-        <source>Install Path:</source>
-        <translation type="obsolete">Đường dẫn cài đặt:</translation>
-    </message>
-    <message>
-        <source>Configure...</source>
-        <translation type="obsolete">Cấu hình...</translation>
-    </message>
-    <message>
-        <source>Install</source>
-        <translation type="obsolete">Cài Đặt</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="193"/>
         <source>Install/Update</source>
         <translation>Cài Đặt/Cập Nhật</translation>
@@ -672,10 +600,6 @@
         <translation>BibleTime và Thư Viện Gướm tìm mô đun từ(sp)(sp)tất cả các thư mục này. Nếu thư mục bị vứt ở đây nó vẫn tồn tại trong hệ thống với tất cả các tác phẩm trong nó. Thư mục &quot;.sword&quot; trong thư mục Nhà luôn luôn được dùng tự động và không thể bị vứt hoặc thêm.</translation>
     </message>
     <message>
-        <source>Configure install paths</source>
-        <translation type="obsolete">Cấu hình đường dẫn cài đặt</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="53"/>
         <source>Configuration file for the paths is: </source>
         <translation>Tập tin cấu hình cho các đường dẫn là: </translation>
@@ -700,10 +624,6 @@
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="126"/>
         <source>Choose directory</source>
         <translation>Chọn thư mục</translation>
-    </message>
-    <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Sự xác nhận</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="117"/>
@@ -807,10 +727,6 @@
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <source>BibleTime Bookshelf Manager</source>
-        <translation type="obsolete">Quản Lý Kệ Sách của BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="39"/>
         <source>Bookshelf Manager</source>
         <translation type="unfinished"></translation>
@@ -849,10 +765,6 @@
         <translation>Bạn có thực sự muốn vứt chúng từ hệ thống của bạn không?</translation>
     </message>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Sự xác nhận</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
         <source>Remove...</source>
         <translation type="unfinished"></translation>
@@ -879,22 +791,6 @@
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Description</source>
         <translation>Sự mô tả</translation>
-    </message>
-    <message>
-        <source>Last refreshed:</source>
-        <translation type="obsolete">Thời điểm được cập nhật:</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation type="obsolete">Cập nhật</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation type="obsolete">Sửa...</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Xoá</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
@@ -1015,37 +911,6 @@
     </message>
 </context>
 <context>
-    <name>CAcceleratorSettingsPage</name>
-    <message>
-        <source>Choose type:</source>
-        <translation type="obsolete">Chọn loại:</translation>
-    </message>
-    <message>
-        <source>BibleTime</source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>All text windows</source>
-        <translation type="obsolete">Tất cả các của sổ văn bản</translation>
-    </message>
-    <message>
-        <source>Bible windows</source>
-        <translation type="obsolete">Các cửa sổ Kinh Thánh</translation>
-    </message>
-    <message>
-        <source>Commentary windows</source>
-        <translation type="obsolete">Các cửa sổ Sách Giải Nghĩa</translation>
-    </message>
-    <message>
-        <source>Lexicon windows</source>
-        <translation type="obsolete">Các cửa sổ từ điển</translation>
-    </message>
-    <message>
-        <source>Book windows</source>
-        <translation type="obsolete">Các cửa sổ sách vỡ</translation>
-    </message>
-</context>
-<context>
     <name>CBibleReadWindow</name>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="92"/>
@@ -1102,10 +967,6 @@
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="138"/>
         <source>Print chapter</source>
         <translation>In chương</translation>
-    </message>
-    <message>
-        <source>Strong&apos;s Search</source>
-        <translation type="obsolete">Tìm kiếm theo số Strong</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="202"/>
@@ -1220,10 +1081,6 @@
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="104"/>
         <source>Print entry with text</source>
         <translation>In với văn bản</translation>
-    </message>
-    <message>
-        <source>Book Window</source>
-        <translation type="obsolete">Cửa Sổ Sách</translation>
     </message>
 </context>
 <context>
@@ -3339,10 +3196,6 @@ Language name x-E-SRN</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Đánh Dấu Trang Sách</translation>
-    </message>
-    <message>
         <location filename="../../src/util/ctoolclass.cpp" line="62"/>
         <source>The file already exists.</source>
         <translation type="unfinished"></translation>
@@ -3600,74 +3453,6 @@ Language name x-E-SRN</extracomment>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::BtSearchAdvOptionsArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
-        <source>Search for:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
-        <source>&amp;Search</source>
-        <translation type="unfinished">Tìm &amp;Kiếm</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
-        <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
-        <source>Multiword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
-        <source>Phrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
-        <source>Regexp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
-        <source>Multiple words or parts of words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
-        <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
-        <source>Full lucene syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
-        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
-        <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
-        <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
-        <source>Search Syntax Help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4054,10 +3839,6 @@ Language name x-E-SRN</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <source>&amp;Search</source>
-        <translation type="obsolete">Tìm &amp;Kiếm</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="111"/>
         <source>Missing indices</source>
         <translation type="unfinished"></translation>
@@ -4087,13 +3868,6 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchResultArea</name>
-    <message>
-        <source>&amp;Analyze search...</source>
-        <translation type="obsolete">&amp;Phân Tích Kết Quả Tìm Kiếm...</translation>
     </message>
 </context>
 <context>

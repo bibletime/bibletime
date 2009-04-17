@@ -12,14 +12,6 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <source>BibleTime </source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Initializing menu- and toolbars</source>
-        <translation type="obsolete">Iniciando menu y barras de herramientas</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;File</source>
         <extracomment>Main menu item</extracomment>
@@ -70,14 +62,6 @@
         <location filename="../../src/bibletime_init.cpp" line="142"/>
         <source>&amp;Show toolbar</source>
         <translation>Mostrar Barra de Herramientas</translation>
-    </message>
-    <message>
-        <source>&amp;Show bookshelf</source>
-        <translation type="obsolete">Mo&amp;strar Libreria</translation>
-    </message>
-    <message>
-        <source>Show &amp;mag</source>
-        <translation type="obsolete">Mostrar referencia</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
@@ -159,30 +143,14 @@
         <translation>Como estudiar la &amp;Biblia</translation>
     </message>
     <message>
-        <source>Initializing Sword</source>
-        <translation type="obsolete">Iniciando Sword</translation>
-    </message>
-    <message>
-        <source>Session name:</source>
-        <translation type="obsolete">Nombre de la sesión</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_slots.cpp" line="483"/>
         <source>Please enter a name for the new session.</source>
         <translation>Por favor, introduzca un nombre para la sesión nueva.</translation>
     </message>
     <message>
-        <source>Creating BibleTime&apos;s user interface</source>
-        <translation type="obsolete">Creando interfaz de usuario</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="118"/>
         <source>Quit BibleTime</source>
         <translation>Salir de BibleTime</translation>
-    </message>
-    <message>
-        <source>Show or hide the bookshelf</source>
-        <translation type="obsolete">Mostrar u ocultar libreria</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="132"/>
@@ -195,17 +163,9 @@
         <translation>Buscar en Abrir Trabajos</translation>
     </message>
     <message>
-        <source>Open the search dialog to search in all works that are currently open</source>
-        <translation type="obsolete">Abrir dialogo de busqueda para buscar en todos los trabajos abiertos</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Buscar en Biblia Estandar</translation>
-    </message>
-    <message>
-        <source>Open the search dialog to search in the standard Bible</source>
-        <translation type="obsolete">Abrir dialog de busqueda para buscar en biblia estandar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="191"/>
@@ -281,10 +241,6 @@
         <location filename="../../src/bibletime_init.cpp" line="339"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Abrir el \&quot;Como\&quot; del estudio biblico incluido en BibleTime. Este \&quot;Como\&quot; es una introduccion de como estudiar la Biblia eficientemente.</translation>
-    </message>
-    <message>
-        <source>Checking indexes</source>
-        <translation type="obsolete">Revisando Indices.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="170"/>
@@ -544,10 +500,6 @@
         <translation>Crear nuevos indices para el trabajo seleccionado</translation>
     </message>
     <message>
-        <source>Create</source>
-        <translation type="obsolete">Crear</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="69"/>
         <source>Work</source>
         <translation type="unfinished">Tomo</translation>
@@ -675,10 +627,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <translation>Escoger directorio</translation>
     </message>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmacion</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="117"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation>No se puede escribir en este directorio, asi que los trabajos no se pueden instalar aqui usando BibleTime. Quiere usar este directorio en vez del valor anterior?</translation>
@@ -780,10 +728,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <source>BibleTime Bookshelf Manager</source>
-        <translation type="obsolete">Manejador de libreria BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="39"/>
         <source>Bookshelf Manager</source>
         <translation type="unfinished"></translation>
@@ -822,10 +766,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <translation>Realmente desea eliminarlos de su sistema?</translation>
     </message>
     <message>
-        <source>Confirmation</source>
-        <translation type="obsolete">Confirmacion</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
         <source>Remove...</source>
         <translation>Eliminar...</translation>
@@ -852,14 +792,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="102"/>
         <source>Description</source>
         <translation>Descripcion</translation>
-    </message>
-    <message>
-        <source>Last refreshed:</source>
-        <translation type="obsolete">Ultima refrescada</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation type="obsolete">Editar...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
@@ -1190,14 +1122,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <translation>Cambiar descripcion del favorito...</translation>
     </message>
     <message>
-        <source>Import bookmarks...</source>
-        <translation type="obsolete">Importar favoritos</translation>
-    </message>
-    <message>
-        <source>Export bookmarks...</source>
-        <translation type="obsolete">Exportar favoritos</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="110"/>
         <source>Print bookmarks...</source>
         <translation>Imprimir favoritos</translation>
@@ -1395,10 +1319,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <translation>Verso anterior</translation>
     </message>
     <message>
-        <source>Commentary window</source>
-        <translation type="obsolete">Ventana del comentario</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="83"/>
         <source>Synchronize</source>
         <translation>Sincronizar</translation>
@@ -1411,18 +1331,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 </context>
 <context>
     <name>CConfigurationDialog</name>
-    <message>
-        <source>Display</source>
-        <translation type="obsolete">Opciones de pantalla</translation>
-    </message>
-    <message>
-        <source>Desk</source>
-        <translation type="obsolete">escritorio</translation>
-    </message>
-    <message>
-        <source>Languages</source>
-        <translation type="obsolete">Idioma</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="38"/>
         <source>Configure BibleTime</source>
@@ -1450,10 +1358,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="116"/>
         <source>Use linebreaks after each verse</source>
         <translation>Usar saltos de línea después de cada verso</translation>
-    </message>
-    <message>
-        <source>Show versenumbers</source>
-        <translation type="obsolete">Mostrar números de versos</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbuttons.cpp" line="121"/>
@@ -1503,10 +1407,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 </context>
 <context>
     <name>CDisplaySettingsPage</name>
-    <message>
-        <source>Show startuplogo</source>
-        <translation type="obsolete">Mostrar logotipo de inicio</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="71"/>
         <source>Display templates</source>
@@ -1654,14 +1554,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 </context>
 <context>
     <name>CHTMLWriteDisplay</name>
-    <message>
-        <source>Choose a font</source>
-        <translation type="obsolete">Elegir una fuente</translation>
-    </message>
-    <message>
-        <source>Choose a font size</source>
-        <translation type="obsolete">Eleja un tamaño de fuente</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="193"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
@@ -1835,17 +1727,9 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 <context>
     <name>CLanguageSettingsPage</name>
     <message>
-        <source>Language for names of Bible books</source>
-        <translation type="obsolete">Idioma para los nombres de los libros biblicos</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="163"/>
         <source>Use custom font</source>
         <translation>Usar fuente personal</translation>
-    </message>
-    <message>
-        <source>The quick brown fox jumps over the lazy dog.</source>
-        <translation type="obsolete">El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja. 123456789 ¿?¡!</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="51"/>
@@ -3328,26 +3212,6 @@ Language name x-E-SRN</extracomment>
         <translation>Nueva carpeta</translation>
     </message>
     <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Favoritos</translation>
-    </message>
-    <message>
-        <source>Old bookmarks</source>
-        <translation type="obsolete">Marcadores viejos</translation>
-    </message>
-    <message>
-        <source>Unknown</source>
-        <translation type="obsolete">Desconocido(a)</translation>
-    </message>
-    <message>
-        <source>Parsing Stong&apos;s Numbers</source>
-        <translation type="obsolete">Analizando Numeros fuertes</translation>
-    </message>
-    <message>
-        <source>Starting BibleTime</source>
-        <translation type="obsolete">Iniciando BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/util/ctoolclass.cpp" line="62"/>
         <source>The file already exists.</source>
         <translation>¡El archivo ya existe!</translation>
@@ -3490,22 +3354,6 @@ Language name x-E-SRN</extracomment>
         <translation type="unfinished">Importar marcadores</translation>
     </message>
     <message>
-        <source>Next entry</source>
-        <translation type="obsolete">Entrada siguiente</translation>
-    </message>
-    <message>
-        <source>Previous entry</source>
-        <translation type="obsolete">Entrada anterior</translation>
-    </message>
-    <message>
-        <source>Bold</source>
-        <translation type="obsolete">Negrilla</translation>
-    </message>
-    <message>
-        <source>Underline</source>
-        <translation type="obsolete">Subrayar</translation>
-    </message>
-    <message>
         <location filename="../../src/util/ctoolclass.cpp" line="60"/>
         <source>Overwrite File?</source>
         <translation type="unfinished"></translation>
@@ -3625,74 +3473,6 @@ Language name x-E-SRN</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::BtSearchAdvOptionsArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
-        <source>Search for:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
-        <source>&amp;Search</source>
-        <translation type="unfinished">&amp;Buscar</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
-        <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
-        <source>Multiword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
-        <source>Phrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
-        <source>Regexp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
-        <source>Multiple words or parts of words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
-        <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
-        <source>Full lucene syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
-        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
-        <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
-        <source>The text you want to search for</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
-        <source>Search Syntax Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
@@ -3758,30 +3538,6 @@ Language name x-E-SRN</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="275"/>
         <source>Select the works which should be searched.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Ingresa los terminos de busqueda separados por espacios. Por defecto la funcion de busqueda devolvera resultados que concuerden con cualquiera de los terminos (O). Para  buscar por todos los terminos juntos, separalos on un AND&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt; Puedes usar comodines: &apos;*&apos; para concordar cualquier secuencia de caracteres, mientras que &apos;?&apos; se usa para hacer coincidir un solo caracter. El uso de los parentesis te permite agrupar los terminos de busqueda, e.g. ( Jesus OR Espiritu) AND Dios.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Para buscar otro texto que no sea el principal, ingresa el tipo de exto seguido por &quot;:&quot;, y luego el termino a buscar. Por ejemplo, para buscar los numeros fuertes H80777, use &apos;strong:H80777&apos;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Tipos de texto disponibles:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Busca en las cabeceras&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Busca en los pie de pagina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Busca los numeros Fuertes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Busca en los codigos morfologicos&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;BibleTime usa el algoritmo de busqueda Lucene. Tiene muchas opciones avanzadas, y puedes leer mas hacerca de el en:&lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Introduccion a la sintaxis basica de busqueda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="448"/>
@@ -4099,10 +3855,6 @@ Language name x-E-SRN</extracomment>
 <context>
     <name>Search::CSearchDialog</name>
     <message>
-        <source>&amp;Search</source>
-        <translation type="obsolete">&amp;Buscar</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="111"/>
         <source>Missing indices</source>
         <translation>Indices perdidos</translation>
@@ -4132,37 +3884,6 @@ This could take a long time. Proceed with indexing?</source>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Search::CSearchOptionsArea</name>
-    <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Ingresa los terminos de busqueda separados por espacios. Por defecto la funcion de busqueda devolvera resultados que concuerden con cualquiera de los terminos (O). Para  buscar por todos los terminos juntos, separalos on un AND&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt; Puedes usar comodines: &apos;*&apos; para concordar cualquier secuencia de caracteres, mientras que &apos;?&apos; se usa para hacer coincidir un solo caracter. El uso de los parentesis te permite agrupar los terminos de busqueda, e.g. ( Jesus OR Espiritu) AND Dios.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Para buscar otro texto que no sea el principal, ingresa el tipo de exto seguido por &quot;:&quot;, y luego el termino a buscar. Por ejemplo, para buscar los numeros fuertes H80777, use &apos;strong:H80777&apos;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Tipos de texto disponibles:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Busca en las cabeceras&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Busca en los pie de pagina&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Busca los numeros Fuertes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Busca en los codigos morfologicos&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;BibleTime usa el algoritmo de busqueda Lucene. Tiene muchas opciones avanzadas, y puedes leer mas hacerca de el en:&lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Introduccion a la sintaxis basica de busqueda</translation>
-    </message>
-    <message>
-        <source>No search scope</source>
-        <translation type="obsolete">No hay un ámbito de búsqueda</translation>
     </message>
 </context>
 <context>
@@ -4242,10 +3963,6 @@ This could take a long time. Proceed with indexing?</source>
 </context>
 <context>
     <name>StandardWorksTab</name>
-    <message>
-        <source>Standard works</source>
-        <translation type="obsolete">Tomos Estándar</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="63"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
@@ -4339,14 +4056,6 @@ This could take a long time. Proceed with indexing?</source>
 </context>
 <context>
     <name>TextFiltersTab</name>
-    <message>
-        <source>Text filters</source>
-        <translation type="obsolete">Filtros de texto</translation>
-    </message>
-    <message>
-        <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can change the filter settings in each display window, of course.</source>
-        <translation type="obsolete">Los filtros controlan la aparencia del texto en las ventanas de vista.  Aquí usted se puede especificar los parámetros predeterminados para todos filtros. Se puede cambiar los parámetros de filtros en cada ventana de visto, por supuesto.</translation>
-    </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="299"/>
         <source>Insert line break after each verse</source>
