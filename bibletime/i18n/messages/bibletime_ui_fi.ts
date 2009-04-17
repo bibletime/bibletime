@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1" language="fi_FI">
+<!DOCTYPE TS>
+<TS version="2.0" language="fi_FI">
 <defaultcodec></defaultcodec>
 <context>
     <name>BTAboutModuleDialog</name>
@@ -14,36 +15,43 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;File</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Tiedosto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>&amp;View</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Näkymä</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="98"/>
         <source>&amp;Search</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Etsi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>&amp;Window</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Ikkuna</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="102"/>
         <source>Se&amp;ttings</source>
+        <extracomment>Main menu item</extracomment>
         <translation>Ase&amp;tukset</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="104"/>
         <source>&amp;Help</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Apua</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>BibleTime</source>
+        <extracomment>Name of the main toolbar</extracomment>
         <translation>BibleTime</translation>
     </message>
     <message>
@@ -89,16 +97,19 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Auto-tile &amp;vertically</source>
+        <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
         <translation>Pinoa automaattisesti &amp;vierekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Auto-tile &amp;horizontally</source>
+        <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
         <translation>Pinoa automaattisesti &amp;päällekkäin</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Auto-&amp;cascade</source>
+        <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
         <translation>Lomit&amp;a automaattisesti</translation>
     </message>
     <message>
@@ -129,6 +140,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="336"/>
         <source>&amp;Bible Study Howto</source>
+        <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>&amp;Raamatuntutkimisopas</translation>
     </message>
     <message>
@@ -284,6 +296,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="149"/>
         <source>Show</source>
+        <extracomment>E.g. &quot;Show Bookshelf&quot;, &quot;Show Mag&quot; in View menu</extracomment>
         <translation>Näytä</translation>
     </message>
 </context>
@@ -380,11 +393,25 @@
         <translation>projektin perustaja, kehittäjä</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="78"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="80"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
         <source>designer</source>
         <translation>suunnittelija</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="88"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="89"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="90"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="91"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="100"/>
         <source>developer</source>
         <translation>kehittäjä</translation>
@@ -504,6 +531,7 @@
         <translation>Indeksoimattomat teokset</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="133"/>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="140"/>
         <source>KiB</source>
         <translation>KiB</translation>
@@ -593,6 +621,7 @@
         <translation>Poista</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="108"/>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="126"/>
         <source>Choose directory</source>
         <translation>Valitse kansio</translation>
@@ -727,7 +756,7 @@
         <translation>Poista asennetut teokset. Valitse teokset ja napsauta Poista-painiketta.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="146"/>
+        <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="145"/>
         <source>You selected the following work(s): </source>
         <translation>Valitsit seuraavat teokset: </translation>
     </message>
@@ -823,6 +852,7 @@
         <translation>Yhdistetään...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="195"/>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="196"/>
         <source>Refreshing...</source>
         <translation>Virkistetään...</translation>
@@ -853,12 +883,12 @@
         <translation>Asenna/päivitä teokset?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="335"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="334"/>
         <source>Do you really want to install these works?</source>
         <translation>Haluatko todella asentaa nämä teokset?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="336"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Voit asentaa vain yhden version teoksesta samalla kerralla. Valitse vain yksi, jos teoksia on merkitty punaisella.</translation>
     </message>
@@ -884,31 +914,37 @@
 <context>
     <name>CBibleReadWindow</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="92"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="156"/>
         <source>Next book</source>
         <translation>Seuraava kirja</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="96"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="161"/>
         <source>Previous book</source>
         <translation>Edellinen kirja</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="100"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="166"/>
         <source>Next chapter</source>
         <translation>Seuraava luku</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="104"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="171"/>
         <source>Previous chapter</source>
         <translation>Edellinen luku</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="108"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="176"/>
         <source>Next verse</source>
         <translation>Seuraava jae</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="112"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="181"/>
         <source>Previous verse</source>
         <translation>Edellinen jae</translation>
@@ -944,11 +980,14 @@
         <translation>Viittauksen teksti</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="210"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="221"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="233"/>
         <source>Reference with text</source>
         <translation>Viittaus ja teksti</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="214"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="237"/>
         <source>Chapter</source>
         <translation>Luku</translation>
@@ -994,11 +1033,13 @@
         <translation>Kopioidaan</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving chapter ...</source>
         <translation>Tallennetaan lukua...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="408"/>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="426"/>
         <source>Saving</source>
         <translation>Tallennetaan</translation>
@@ -1017,6 +1058,7 @@
 <context>
     <name>CBookReadWindow</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="71"/>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="88"/>
         <source>Toggle tree view</source>
         <translation>Näytä/piilota puu</translation>
@@ -1241,31 +1283,37 @@
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="40"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="120"/>
         <source>Next book</source>
         <translation>Seuraava kirja</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="44"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="125"/>
         <source>Previous book</source>
         <translation>Edellinen kirja</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="48"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="130"/>
         <source>Next chapter</source>
         <translation>Seuraava luku</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="52"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="135"/>
         <source>Previous chapter</source>
         <translation>Edellinen luku</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="56"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="140"/>
         <source>Next verse</source>
         <translation>Seuraava jae</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="60"/>
         <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="145"/>
         <source>Previous verse</source>
         <translation>Edellinen jae</translation>
@@ -1405,7 +1453,7 @@
         <translation>Mutta joka totuuden tekee, se tulee valkeuteen, että hänen tekonsa tulisivat julki, sillä ne ovat Jumalassa tehdyt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="73"/>
+        <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="72"/>
         <source>Display templates define how text is displayed.</source>
         <translation>Tekstien näyttömallit määrittelevät miten teksti näytetään.</translation>
     </message>
@@ -1427,17 +1475,19 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cdisplaysettings.cpp" line="194"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>CDisplayWindow</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="129"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="200"/>
         <source>Back in history</source>
         <translation>Taaksepäin historiassa</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="209"/>
         <source>Forward in history</source>
         <translation>Eteenpäin historiassa</translation>
@@ -1448,31 +1498,37 @@
         <translation>Avaa etsi-ikkuna tämän ikkunan teoksilla</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="102"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="161"/>
         <source>Zoom in</source>
         <translation>Lähennä</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="106"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="167"/>
         <source>Zoom out</source>
         <translation>Loitonna</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="110"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="173"/>
         <source>Close</source>
         <translation>Sulje</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="114"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="179"/>
         <source>Select all</source>
         <translation>Valitse kaikki</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="118"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="185"/>
         <source>Copy</source>
         <translation>Kopioi</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="122"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="191"/>
         <source>Find...</source>
         <translation>Löydä...</translation>
@@ -1499,16 +1555,19 @@
 <context>
     <name>CHTMLWriteDisplay</name>
     <message>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="193"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="198"/>
         <source>Bold</source>
         <translation>Lihavoitu</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="206"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="212"/>
         <source>Italic</source>
         <translation>Kursivoitu</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="218"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="224"/>
         <source>Underline</source>
         <translation>Alleviivaus</translation>
@@ -1519,6 +1578,7 @@
         <translation>Vasen</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="244"/>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="249"/>
         <source>Center</source>
         <translation>Keski</translation>
@@ -1572,6 +1632,7 @@
         <translation>Synkronoi aktiivisen Raamatun kanssa</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="74"/>
         <location filename="../../src/frontend/displaywindow/chtmlwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation>Tallenna teksti</translation>
@@ -1638,7 +1699,7 @@
         <translation>Seuraava kirja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="98"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="97"/>
         <source>Previous book</source>
         <translation>Edellinen kirja</translation>
     </message>
@@ -1648,7 +1709,7 @@
         <translation>Seuraava luku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="102"/>
         <source>Previous chapter</source>
         <translation>Edellinen luku</translation>
     </message>
@@ -1658,7 +1719,7 @@
         <translation>Seuraava jae</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="107"/>
         <source>Previous verse</source>
         <translation>Edellinen jae</translation>
     </message>
@@ -1686,7 +1747,7 @@
         <translation>Allaoleva kirjasinvalinta tulee voimaan kaikille tämän kielen teksteille</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="48"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="47"/>
         <source>Select the language in which the Biblical book names are displayed.</source>
         <translation>Valitse kieli, jolla Raamatun kirjojen nimet näytetään.</translation>
     </message>
@@ -1696,7 +1757,7 @@
         <translation>Kirjasimet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="130"/>
+        <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="129"/>
         <source>You can specify a custom font for each language.</source>
         <translation>Voit määritellä oman kirjasimen jokaiselle kielelle.</translation>
     </message>
@@ -1708,7 +1769,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="298"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1729,7 +1790,7 @@
         <translation>Seuraava</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="56"/>
+        <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="55"/>
         <source>Previous entry</source>
         <translation>Edellinen</translation>
     </message>
@@ -1737,11 +1798,13 @@
 <context>
     <name>CLexiconReadWindow</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="56"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="95"/>
         <source>Next entry</source>
         <translation>Seuraava tietue</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="60"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="100"/>
         <source>Previous entry</source>
         <translation>Edellinen tietue</translation>
@@ -1772,11 +1835,13 @@
         <translation>Strongien haku</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="120"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="139"/>
         <source>Reference only</source>
         <translation>Pelkät viittaukset</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="124"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="143"/>
         <source>Entry with text</source>
         <translation>Tietue tekstillä</translation>
@@ -1812,11 +1877,13 @@
         <translation>Tulosta...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="297"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
         <source>Saving entry ...</source>
         <translation>Tallennetaan tietuetta ...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="297"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="328"/>
         <source>Saving</source>
         <translation>Tallennetaan</translation>
@@ -1838,16 +1905,19 @@
 <context>
     <name>CModuleChooserButton</name>
     <message>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="97"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="137"/>
         <source>NONE</source>
         <translation>Ei mikään</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="115"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="131"/>
         <source>Select a work</source>
         <translation>Valitse teos</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="118"/>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="134"/>
         <source>Select an additional work</source>
         <translation>Valitse lisäteos</translation>
@@ -1894,6 +1964,7 @@
         <translation>Synkronoi aktiivisen Raamatun kanssa</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="73"/>
         <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="78"/>
         <source>Save text</source>
         <translation>Tallenna teksti</translation>
@@ -1919,7 +1990,7 @@
         <translation>Teos ei ole kirjoitettava.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="149"/>
+        <location filename="../../src/frontend/displaywindow/cplainwritewindow.cpp" line="148"/>
         <source>Either the module may not be edited, or you do not have write permission.</source>
         <translation>Joko teos ei ole kirjoitettava tai sinulla ei ole kirjoitusoikeuksia siihen.</translation>
     </message>
@@ -1947,6 +2018,7 @@
         <translation>Versio</translation>
     </message>
     <message>
+        <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="760"/>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="765"/>
         <source>unknown</source>
         <translation>tuntematon</translation>
@@ -2082,7 +2154,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="360"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2118,6 +2190,10 @@
         <translation>Hylkää</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="113"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="120"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="127"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="131"/>
         <source>Error</source>
         <translation>Virhe</translation>
@@ -2166,6 +2242,7 @@
         <translation>Tallenna muutokset?</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="122"/>
         <location filename="../../src/frontend/displaywindow/cwritewindow.cpp" line="144"/>
         <source>Save Text?</source>
         <translation>Tallenna teksti?</translation>
@@ -2179,6 +2256,7 @@
         <translation>Lyhenne</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="179"/>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="272"/>
         <source>Cross references</source>
         <translation>Ristiviittaukset</translation>
@@ -2240,41 +2318,49 @@
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="137"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="257"/>
         <source>Commentaries</source>
         <translation>Kommentaarit</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="138"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="263"/>
         <source>Cults/Unorthodox</source>
         <translation>Kultit/Väärät opit</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="139"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="262"/>
         <source>Maps and Images</source>
         <translation>Kartat ja kuvat</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="140"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="261"/>
         <source>Daily Devotionals</source>
         <translation>Hartauskirjallisuus</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="141"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="259"/>
         <source>Lexicons and Dictionaries</source>
         <translation>Sanakirjat</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="142"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="256"/>
         <source>Bibles</source>
         <translation>Raamatut</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="143"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="260"/>
         <source>Glossaries</source>
         <translation>Sanastot</translation>
     </message>
     <message>
+        <location filename="../../src/backend/btmoduletreeitem.cpp" line="144"/>
         <location filename="../../src/backend/btmoduletreeitem.cpp" line="258"/>
         <source>Books</source>
         <translation>Kirjat</translation>
@@ -2285,502 +2371,507 @@
         <translation>Lisätty teksti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="146"/>
         <source>Afrikaans</source>
         <translation>Afrikaans</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="163"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="148"/>
         <source>English, Old (ca.450-1100)</source>
         <translation>Englanti, vanha (n. 450-1100)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="149"/>
         <source>Arabic</source>
         <translation>Arabia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="151"/>
         <source>Azerbaijani</source>
         <translation>Azerbaizani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
         <source>Belarusian</source>
         <translation>Valkovenäjä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
         <source>Bulgarian</source>
         <translation>Bulgaria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
         <source>Breton</source>
         <translation>Bretoni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
         <source>Bosnian</source>
         <translation>Bosnia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="185"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="162"/>
         <source>Catalan</source>
         <translation>Katalaani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
         <source>Cebuano</source>
         <translation>Cebuano</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
         <source>Chamorro</source>
         <translation>Chamorro</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="193"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
         <source>Coptic</source>
         <translation>Kopti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
         <source>Czech</source>
         <translation>Tsekki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
         <source>Church Slavic</source>
         <translation>Kirkkoslaavi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
         <source>Welsh</source>
         <translation>Wales</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
         <source>Danish</source>
         <translation>Tanska</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
         <source>German</source>
         <translation>Saksa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="207"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
         <source>Greek, Modern (1453-)</source>
         <translation>Kreikka, moderni (1453-)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>English</source>
         <translation>Englanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="177"/>
         <source>American English</source>
         <translation>Amerikanenglanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
         <source>English, Middle (1100-1500)</source>
         <translation>Englanti, keskiaikainen (1100-1500)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
         <source>Esperanto</source>
         <translation>Esperanto</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="180"/>
         <source>Spanish</source>
         <translation>Espanja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="219"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Estonian</source>
         <translation>Viro</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="221"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
         <source>Basque</source>
         <translation>Baski</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="223"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
         <source>Persian</source>
         <translation>Persia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="225"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
         <source>Finnish</source>
         <translation>Suomi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="187"/>
         <source>French</source>
         <translation>Ranska</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="231"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Frisian</source>
         <translation>Friisi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="233"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
         <source>Irish</source>
         <translation>Iiri</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
         <source>Gaelic (Scots)</source>
         <translation>Gaeli (skotti)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="240"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
         <source>Gothic</source>
         <translation>Gootti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="242"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
         <source>Manx</source>
         <translation>Manx</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Greek, Ancient (to 1453)</source>
         <translation>Kreikka, vanha (1453 asti)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
         <source>Hebrew</source>
         <translation>Heprea</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
         <source>Hausa</source>
         <translation>Hausa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="250"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
         <source>Hawaiian</source>
         <translation>Havaiji</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
         <source>Hindi</source>
         <translation>Hindi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
         <source>Croatian</source>
         <translation>Kroatia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="259"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>Hungarian</source>
         <translation>Unkari</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="261"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
         <source>Armenian</source>
         <translation>Armenia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="265"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="208"/>
         <source>Indonesian</source>
         <translation>Indonesia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>Icelandic</source>
         <translation>Islanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="271"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="212"/>
         <source>Italian</source>
         <translation>Italia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="274"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="214"/>
         <source>Japanese</source>
         <translation>Japani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="276"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
         <source>Georgian</source>
         <translation>Georgia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
         <source>Korean</source>
         <translation>Korea</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="290"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
         <source>Kurdish</source>
         <translation>Kurdi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
         <source>Kirghiz</source>
         <translation>Kirgiisi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="296"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="230"/>
         <source>Latin</source>
         <translation>Latina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="303"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
         <source>Lithuanian</source>
         <translation>Liettua</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="305"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="236"/>
         <source>Latvian</source>
         <translation>Latvia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
         <source>Maori</source>
         <translation>Maori</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="454"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="240"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
         <source>Macedonian</source>
         <translation>Makedonia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="317"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
         <source>More</source>
         <translation>More</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="320"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
         <source>Malay</source>
         <translation>Malaji</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="247"/>
         <source>Maltese</source>
         <translation>Malta</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Low German; Low Saxon</source>
         <translation>Alasaksa; alasaksi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
         <source>Nepali</source>
         <translation>Nepali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
         <source>Dutch</source>
         <translation>Hollanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="256"/>
         <source>Norwegian Nynorsk</source>
         <translation>Uusnorja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
         <source>Norwegian</source>
         <translation>Norja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
         <source>Papiamento</source>
         <translation>Papiamento</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="354"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
         <source>Polish</source>
         <translation>Puola</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
         <source>Portuguese</source>
         <translation>Portugali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="361"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="273"/>
         <source>Brasilian Portuguese</source>
         <translation>Brasilian portugali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="366"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
         <source>Romanian</source>
         <translation>Romania</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="368"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="278"/>
         <source>Russian</source>
         <translation>Venäjä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="282"/>
         <source>Scots</source>
         <translation>Skottienglanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="379"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
         <source>Slovak</source>
         <translation>Slovakki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="381"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="288"/>
         <source>Slovenian</source>
         <translation>Sloveeni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="385"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="291"/>
         <source>Somali</source>
         <translation>Somali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="387"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
         <source>Albanian</source>
         <translation>Albania</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="395"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
         <source>Swedish</source>
         <translation>Ruotsi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="397"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
         <source>Swahili</source>
         <translation>Suahili</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
         <source>Syriac</source>
         <translation>Syyria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="401"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
         <source>Tamil</source>
         <translation>Tamili</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
         <source>Thai</source>
         <translation>Thai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="408"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
         <source>Tagalog</source>
         <translation>Tagalog</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="412"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
         <source>Tswana</source>
         <translation>Tswana</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="414"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="309"/>
         <source>Turkish</source>
         <translation>Turkki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
         <source>Tahitian</source>
         <translation>Tahiti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
         <source>Ukrainian</source>
         <translation>Ukraina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="428"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
         <source>Vietnamese</source>
         <translation>Vietnam</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="432"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
         <source>Xhosa</source>
         <translation>Xhosa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="434"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="153"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
         <source>Bavarian</source>
         <translation>Bavaria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="436"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
         <source>Zarma</source>
         <translation>Zarma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="438"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
         <source>Alemannisch</source>
         <translation>Alemanni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="440"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
         <source>Haitian Creole French</source>
         <translation>Haitinkreoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
         <source>Shuar</source>
         <translation>Shuar</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
         <source>Kabyle</source>
         <translation>Kabyyli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="452"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="232"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
         <source>Lombard</source>
         <translation>Lombard</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="456"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
         <source>Tok Pisin</source>
         <translation>Tok-pisin</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="458"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="268"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
         <source>Uma</source>
         <translation>Uma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="460"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Romani, Vlax</source>
         <translation>Romani, vlax</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="462"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="343"/>
         <source>Sango</source>
         <translation>Sango</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="344"/>
         <source>Sranan</source>
         <translation>Sranan</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="466"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="345"/>
         <source>Yiddish</source>
         <translation>Jiddish</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="471"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="348"/>
         <source>Chinese</source>
         <translation>Kiina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="473"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
         <source>Zulu</source>
         <translation>Zulu</translation>
     </message>
@@ -2900,16 +2991,24 @@
         <translation>Paavalin kirjeet</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="473"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="156"/>
         <source>HTML files</source>
         <translation>HTML-tiedostot</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="473"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="475"/>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="477"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="156"/>
+        <location filename="../../src/frontend/display/cdisplay.cpp" line="159"/>
+        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="43"/>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="56"/>
         <source>All files</source>
         <translation>Kaikki tiedostot</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/cexportmanager.cpp" line="475"/>
         <location filename="../../src/frontend/display/cdisplay.cpp" line="159"/>
         <source>Text files</source>
         <translation>Tekstitiedostot</translation>
@@ -2930,11 +3029,13 @@
         <translation>Tulosta avaimet</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="43"/>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="56"/>
         <source>BibleTime bookmark files</source>
         <translation>BibleTimen kirjanmerkkitiedostot</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkitem.cpp" line="159"/>
         <location filename="../../src/frontend/profile/cprofile.cpp" line="24"/>
         <source>unknown</source>
         <translation>tuntematon</translation>
@@ -2950,6 +3051,7 @@
         <translation>Anna uusi kuvaus valitulle kirjanmerkille.</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="74"/>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="587"/>
         <source>New folder</source>
         <translation>Uusi kansio</translation>
@@ -2980,6 +3082,7 @@
         <translation>Tarkista oikeudet jne.</translation>
     </message>
     <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="192"/>
         <location filename="../../src/util/ctoolclass.cpp" line="241"/>
         <source>Take care, this work contains cult / questionable material!</source>
         <translation>Huomio, tämä teos sisältää kultti- / kyseenalaista materiaalia!</translation>
@@ -3000,6 +3103,7 @@
         <translation>ei annettu</translation>
     </message>
     <message>
+        <location filename="../../src/util/ctoolclass.cpp" line="204"/>
         <location filename="../../src/util/ctoolclass.cpp" line="254"/>
         <source>Version</source>
         <translation>Versio</translation>
@@ -3035,32 +3139,33 @@
         <translation>Päivitetty versio saatavilla!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
         <source>Haitian Creole</source>
         <translation>Haitinkreoli</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
         <source>Kekchi</source>
-        <translation type="obsolete">Kekchi</translation>
+        <translation type="unfinished">Kekchi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
         <source>Burmese</source>
         <translation>Burma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="356"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
         <source>Potawatomi</source>
         <translation>Potawatomi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="410"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
         <source>Klingon</source>
         <translation>Klingon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="468"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="346"/>
         <source>Yoryba</source>
         <translation>Joruba</translation>
     </message>
@@ -3072,7 +3177,7 @@
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
         <source>Itza</source>
-        <translation type="obsolete">Itza</translation>
+        <translation type="unfinished">Itza</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="435"/>
@@ -3110,41 +3215,34 @@
         <translation>Jäsennetään Strongin numeroita</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
         <source>Names of languages</source>
-        <translation>Ei käännetä</translation>
+        <translation type="obsolete">Ei käännetä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="279"/>
-        <source>Kekch&#xed;</source>
+        <source>Kekchí</source>
         <comment>kek</comment>
-        <translation>Kekchí</translation>
+        <translation type="obsolete">Kekchí</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
         <source>Malagasy</source>
-        <translation>Malagassi</translation>
+        <translation type="obsolete">Malagassi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
-        <source>Norwegian Bokm&#xe5;l</source>
-        <translation>Norja (bokmål)</translation>
+        <source>Norwegian Bokmål</source>
+        <translation type="obsolete">Norja (bokmål)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="425"/>
         <source>Orya</source>
-        <translation>Orya</translation>
+        <translation type="obsolete">Orya</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="443"/>
-        <source>Itz&#xe1;</source>
-        <translation>Itzá</translation>
+        <source>Itzá</source>
+        <translation type="obsolete">Itzá</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="448"/>
-        <source>Kekch&#xed;</source>
+        <source>Kekchí</source>
         <comment>x-E-KEK (same as kek)</comment>
-        <translation>Kekchí</translation>
+        <translation type="obsolete">Kekchí</translation>
     </message>
 </context>
 <context>
@@ -3153,159 +3251,141 @@
         <location filename="../../src/util/dialogutil.cpp" line="29"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="31"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Avaa</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="33"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Tallenna</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="35"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Peruuta</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="37"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Sulje</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="39"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Hylkää</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="41"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Käytä</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="43"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Resetoi</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="45"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Palauta oletukset</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="47"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Apua</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="49"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Tallenna kaikki</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="51"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Kyllä</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="53"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Kyllä kaikkiin</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="55"/>
         <source>No</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Ei</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="57"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
         <translation>Ei kaikkiin</translation>
     </message>
 </context>
 <context>
     <name>Search::BtSearchAdvOptionsArea</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
-        <translation type="unfinished">Etsi:</translation>
+        <translation type="obsolete">Etsi:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
         <source>&amp;Search</source>
-        <translation type="unfinished">&amp;Etsi</translation>
+        <translation type="obsolete">&amp;Etsi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished">Aloita haku valituista teoksista</translation>
+        <translation type="obsolete">Aloita haku valituista teoksista</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
-        <source>Multiword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
-        <source>Phrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
-        <source>Regexp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
-        <source>Multiple words or parts of words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished">Joitakin sanoja (sanojen väliin lisätään looginen TAI)</translation>
+        <translation type="obsolete">Joitakin sanoja (sanojen väliin lisätään looginen TAI)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
         <source>Full lucene syntax</source>
-        <translation type="unfinished">Lucenen koko syntaksi</translation>
+        <translation type="obsolete">Lucenen koko syntaksi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
-        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
         <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished">Klikkaa linkkiä avataksesi haun syntaksin avusteen</translation>
+        <translation type="obsolete">Klikkaa linkkiä avataksesi haun syntaksin avusteen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
         <source>The text you want to search for</source>
-        <translation type="unfinished">Haluamasi hakuteksti</translation>
+        <translation type="obsolete">Haluamasi hakuteksti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
         <source>Search Syntax Help</source>
-        <translation type="unfinished">Haun syntaksin avuste</translation>
+        <translation type="obsolete">Haun syntaksin avuste</translation>
     </message>
 </context>
 <context>
@@ -3411,57 +3491,60 @@
         <translation>Valitse hakualue (kirjat/luvut/jakeet).&lt;br /&gt;Käytettävissä Raamattuun tai kommentaareihin.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="359"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="356"/>
         <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
+        <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
         <translation>&lt;p&gt;Tämä avuste on pääasiassa &apos;Lucenen koko syntaksi&apos;-vaihtoehtoa varten. &apos;Kaikki sanat&apos;- ja &apos;Joitakin sanoja&apos;-vaihtoehdoilla on hieman rajoittuneempi syntaksi; &lt;a href=&apos;#wildcards&apos;&gt;jokerimerkit&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;tekstikentät&lt;/a&gt; ovat tuettuja niille. Jotkut muut syntaksin ominaisuudet saattavat tuottaa vääriä tuloksia &apos;Kaikki sanat&apos;- ja &apos;Joitakin sanoja&apos;-vaihtoehtojen kanssa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="368"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="361"/>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
         <translation>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Etsittävät sanat&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Ryhmittely ja järjestys&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Jokerimerkit (sanojen osat)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Tekstikentät (tekstin eri osat)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Muita syntaksin ominaisuuksia&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="373"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="371"/>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
+        <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
         <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Etsittävät sanat&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Hakusanat erotetaan välilyönneillä. &lt;strong&gt;AND&lt;/strong&gt; (ja, kaikki sanat), &lt;strong&gt;OR&lt;/strong&gt; (tai, jotkin sanoista) ja &lt;strong&gt;NOT&lt;/strong&gt; (ei, ei seuraavaa sanaa) voidaan lisätä sanojen väliin. Jos mitään ei lisätä, OR (tai) käytetään automaattisesti. &apos;&lt;strong&gt;+&lt;/strong&gt;sana&apos; tarkoittaa, että sanan pitää olla tuloksissa, &apos;&lt;strong&gt;-&lt;/strong&gt;sana&apos; tarkoittaa, että se ei saa olla tuloksissa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="385"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="376"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
         <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jeesus AND jumala&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on sekä &apos;Jeesus&apos; että &apos;Jumala&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Jeesus OR Jumala&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on joko &apos;Jeesus&apos; tai &apos;Jumala&apos; tai molemmat&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jeesus NOT jumala&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on &apos;Jeesus&apos; mutta ei &apos;Jumala&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jeesus -jumala&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on &apos;Jeesus&apos; mutta ei &apos;Jumala&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="390"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="387"/>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
         <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Ryhmittely ja järjestys&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Sanoja voi ryhmitellä &lt;strong&gt;sulkeilla&lt;/strong&gt;. Tarkka sanajärjestys voidaan määritellä &lt;strong&gt;lainausmerkeillä&lt;/strong&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="399"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="392"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on &apos;a&apos; ja &apos;b&apos;, sekä jakeet, joissa on &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;näin herra&quot;&lt;/td&gt;&lt;td&gt;Löytää esim. &apos;Näin Herra on käskenyt&apos;, mutta ei &apos;Näin sanoo Herra&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;näin sanoo herra&quot;&lt;/td&gt;&lt;td&gt;Löytää kaikki jakeet, joissa on &apos;Näin sanoo Herra&apos;, mutta ei esim. &apos;Sentähden sanoo Herra näin&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="403"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="401"/>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
         <translation>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Jokerimerkit (sanojen osat)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; vastaa 0, 1 tai useampaa mitä tahansa merkkiä, kun taas &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; vastaa mitä tahansa yhtä merkkiä. Jokerimerkkiä ei voi käyttää sanan alussa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="414"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="405"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Kaikki sanat, jotka alkavat a:lla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;alussa&apos;, &apos;Assyria&apos;,  &apos;abba&apos; jne.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;o?&lt;/td&gt;&lt;td&gt;&apos;on&apos;, &apos;oi&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;anna&apos;, &apos;aika&apos; jne.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="422"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="416"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Tekstikentät (tekstin eri osat)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Käytössä olevat tekstikentät:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Etsii otsikoista&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Etsii alaviitteistä&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Etsii Strongin numeroista&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Etsii morfologisista koodeista&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="430"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="424"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;Esimerkkejä:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jeesus&lt;/td&gt;&lt;td&gt;Löytää otsikot, joissa on  &apos;Jeesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jeesus AND footnote:sanoi&lt;/td&gt;&lt;td&gt;Löytää alaviitteet joissa on &apos;Jeesus&apos; ja &apos;sanoi&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on Strongin kreikan sana numero 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Löytää jakeet, joissa on morphologinen koodi &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="434"/>
+        <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="432"/>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
         <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Muita syntaksin ominaisuuksia&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime käyttää CLucene-hakukonetta. Lisätietoa löytyy &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucenen syntaksin nettisivulta&lt;/a&gt; (avautuu ulkoiseen selaimeen).&lt;/p&gt;</translation>
     </message>
@@ -3507,11 +3590,14 @@
         <translation>Kopioi...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="71"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="81"/>
         <source>Reference only</source>
         <translation>Pelkät viittaukset</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="74"/>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="84"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="91"/>
         <source>Reference with text</source>
         <translation>Viittaus tekstillä</translation>
@@ -3527,21 +3613,25 @@
         <translation>Tulosta...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="251"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="261"/>
         <source>Copy search result...</source>
         <translation>Kopioi hakutulos...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="251"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="261"/>
         <source>Copying search result</source>
         <translation>Kopioidaan hakutulosta</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="271"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="281"/>
         <source>Save search result...</source>
         <translation>Tallenna hakutulos...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="271"/>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="281"/>
         <source>Saving search result</source>
         <translation>Tallennetaan hakutulosta</translation>
@@ -3691,7 +3781,7 @@
         <translation>Etsi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="113"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="112"/>
         <source>One or more works need indexing before they can be searched.
 This could take a long time. Proceed with indexing?</source>
         <translation>Yksi tai useampi teos tulee indeksoida ennenkuin niitä voi käyttää haussa.
@@ -3726,11 +3816,14 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
         <translation>Kopioi...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="58"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="72"/>
         <source>Reference only</source>
         <translation>Pelkät viittaukset</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="62"/>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="76"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="84"/>
         <source>Reference with text</source>
         <translation>Viittaus tekstillä</translation>
@@ -3756,21 +3849,25 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
         <translation>Tulostetaan hakutulosta</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="188"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Save search result...</source>
         <translation>Tallenna hakutulos...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="188"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="206"/>
         <source>Saving search result</source>
         <translation>Tallennetaan hakutulosta</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="224"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copy search result...</source>
         <translation>Kopioi hakutulos...</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="224"/>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="242"/>
         <source>Copying search result</source>
         <translation>Kopioidaan hakutulosta</translation>
@@ -3784,7 +3881,7 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
 <context>
     <name>StandardWorksTab</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="64"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="63"/>
         <source>Standard works are used when no particular work is specified,   for example when a hyperlink into a Bible or lexicon was clicked .</source>
         <translation>Oletusteoksia käytetään kun mitään tiettyä teosta ei ole määritetty, esim. kun on painettu linkkiä Raamattuun tai sanakirjaan.</translation>
     </message>
@@ -3871,7 +3968,7 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3922,14 +4019,14 @@ Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
         <translation>Käytä tekstivariantteja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="291"/>
+        <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="288"/>
         <source>Filters control the appearance of text. Here you can specify default settings for all filters. You can override these settings in each display window.</source>
         <translation>Näyttösuotimet määrittelevät millä tavoin teksti näytetään. Tässä voit asettaa oletusasetukset kaikille suotimille. Voit kuitenkin ohittaa nämä ja määritellä erikseen jokaiselle ikkunalle omat asetukset.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="287"/>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
