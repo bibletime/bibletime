@@ -495,7 +495,11 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 		delete myconfig;
 		config = myconfig = 0;
 		// we need to call findConfig to make sure that augPaths are reloaded
+#ifdef SWORD_SYSCONF_CHANGED
+		findConfig(&configType, &prefixPath, &configPath, &augPaths, &sysConfig);
+#else
 		findConfig(&configType, &prefixPath, &configPath, &augPaths, sysconfig);
+#endif
 		// now re-read module configuration files
 		loadConfigDir(configPath);
 	}

@@ -35,6 +35,12 @@ BtInstallMgr::BtInstallMgr()
 { //use this class also as status reporter
 	qDebug("BtInstallMgr::BtInstallMgr");
 	this->setFTPPassive(true);
+#ifdef SWORD_INTERNET_WARNING
+	// We should use this getter/setter to show a dialog before
+	// the user opens network connection for the first time and
+	// get rid of the static warning.
+	setUserDisclaimerConfirmed(true);
+#endif
 }
 
 BtInstallMgr::~BtInstallMgr() {
