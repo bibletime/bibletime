@@ -2371,508 +2371,625 @@
         <translation>Lisätty teksti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="146"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
         <source>Afrikaans</source>
+        <extracomment>Language name af</extracomment>
         <translation>Afrikaans</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="148"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="163"/>
         <source>English, Old (ca.450-1100)</source>
+        <extracomment>Language name ang</extracomment>
         <translation>Englanti, vanha (n. 450-1100)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="149"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
         <source>Arabic</source>
+        <extracomment>Language name ar</extracomment>
         <translation>Arabia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="151"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
         <source>Azerbaijani</source>
+        <extracomment>Language name az</extracomment>
         <translation>Azerbaizani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="154"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
         <source>Belarusian</source>
+        <extracomment>Language name be</extracomment>
         <translation>Valkovenäjä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
         <source>Bulgarian</source>
+        <extracomment>Language name bg</extracomment>
         <translation>Bulgaria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="160"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
         <source>Breton</source>
+        <extracomment>Language name br</extracomment>
         <translation>Bretoni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="161"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
         <source>Bosnian</source>
+        <extracomment>Language name bs</extracomment>
         <translation>Bosnia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="162"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="185"/>
         <source>Catalan</source>
+        <extracomment>Language name ca</extracomment>
         <translation>Katalaani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
         <source>Cebuano</source>
+        <extracomment>Language name ceb</extracomment>
         <translation>Cebuano</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="165"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
         <source>Chamorro</source>
+        <extracomment>Language name ch</extracomment>
         <translation>Chamorro</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="193"/>
         <source>Coptic</source>
+        <extracomment>Language name cop</extracomment>
         <translation>Kopti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="168"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
         <source>Czech</source>
+        <extracomment>Language name cs</extracomment>
         <translation>Tsekki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
         <source>Church Slavic</source>
+        <extracomment>Language name cu</extracomment>
         <translation>Kirkkoslaavi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
         <source>Welsh</source>
+        <extracomment>Language name cy</extracomment>
         <translation>Wales</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="172"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
         <source>Danish</source>
+        <extracomment>Language name da</extracomment>
         <translation>Tanska</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="173"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>German</source>
+        <extracomment>Language name de</extracomment>
         <translation>Saksa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="175"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="207"/>
         <source>Greek, Modern (1453-)</source>
+        <extracomment>Language name el</extracomment>
         <translation>Kreikka, moderni (1453-)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
         <source>English</source>
+        <extracomment>Language name en</extracomment>
         <translation>Englanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="177"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>American English</source>
+        <extracomment>Language name en_US</extracomment>
         <translation>Amerikanenglanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="178"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
         <source>English, Middle (1100-1500)</source>
+        <extracomment>Language name enm</extracomment>
         <translation>Englanti, keskiaikainen (1100-1500)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="179"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
         <source>Esperanto</source>
+        <extracomment>Language name eo</extracomment>
         <translation>Esperanto</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="180"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
         <source>Spanish</source>
+        <extracomment>Language name es</extracomment>
         <translation>Espanja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="219"/>
         <source>Estonian</source>
+        <extracomment>Language name et</extracomment>
         <translation>Viro</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="182"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="221"/>
         <source>Basque</source>
+        <extracomment>Language name eu</extracomment>
         <translation>Baski</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="183"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="223"/>
         <source>Persian</source>
+        <extracomment>Language name fa</extracomment>
         <translation>Persia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="184"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="225"/>
         <source>Finnish</source>
+        <extracomment>Language name fi</extracomment>
         <translation>Suomi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="187"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
         <source>French</source>
+        <extracomment>Language name fr</extracomment>
         <translation>Ranska</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="188"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="231"/>
         <source>Frisian</source>
+        <extracomment>Language name fy</extracomment>
         <translation>Friisi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="189"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="233"/>
         <source>Irish</source>
+        <extracomment>Language name ga</extracomment>
         <translation>Iiri</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="190"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
         <source>Gaelic (Scots)</source>
+        <extracomment>Language name gd</extracomment>
         <translation>Gaeli (skotti)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="194"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="240"/>
         <source>Gothic</source>
+        <extracomment>Language name got</extracomment>
         <translation>Gootti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="195"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="242"/>
         <source>Manx</source>
+        <extracomment>Language name gv</extracomment>
         <translation>Manx</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
         <source>Greek, Ancient (to 1453)</source>
+        <extracomment>Language name grc</extracomment>
         <translation>Kreikka, vanha (1453 asti)</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="197"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
         <source>Hebrew</source>
+        <extracomment>Language name he</extracomment>
         <translation>Heprea</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
         <source>Hausa</source>
+        <extracomment>Language name hau</extracomment>
         <translation>Hausa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="199"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="250"/>
         <source>Hawaiian</source>
+        <extracomment>Language name haw</extracomment>
         <translation>Havaiji</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="200"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
         <source>Hindi</source>
+        <extracomment>Language name hi</extracomment>
         <translation>Hindi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
         <source>Croatian</source>
+        <extracomment>Language name hr</extracomment>
         <translation>Kroatia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="259"/>
         <source>Hungarian</source>
+        <extracomment>Language name hu</extracomment>
         <translation>Unkari</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="205"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="261"/>
         <source>Armenian</source>
+        <extracomment>Language name hy</extracomment>
         <translation>Armenia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="208"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="265"/>
         <source>Indonesian</source>
+        <extracomment>Language name id</extracomment>
         <translation>Indonesia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
         <source>Icelandic</source>
+        <extracomment>Language name is</extracomment>
         <translation>Islanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="212"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="271"/>
         <source>Italian</source>
+        <extracomment>Language name it</extracomment>
         <translation>Italia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="214"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="274"/>
         <source>Japanese</source>
+        <extracomment>Language name ja</extracomment>
         <translation>Japani</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="276"/>
         <source>Georgian</source>
+        <extracomment>Language name ka</extracomment>
         <translation>Georgia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="224"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
         <source>Korean</source>
+        <extracomment>Language name ko</extracomment>
         <translation>Korea</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="226"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="290"/>
         <source>Kurdish</source>
+        <extracomment>Language name ku</extracomment>
         <translation>Kurdi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="229"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
         <source>Kirghiz</source>
+        <extracomment>Language name ky</extracomment>
         <translation>Kirgiisi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="230"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="296"/>
         <source>Latin</source>
+        <extracomment>Language name la</extracomment>
         <translation>Latina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="235"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="303"/>
         <source>Lithuanian</source>
+        <extracomment>Language name lt</extracomment>
         <translation>Liettua</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="236"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="305"/>
         <source>Latvian</source>
+        <extracomment>Language name lv</extracomment>
         <translation>Latvia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="239"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
         <source>Maori</source>
+        <extracomment>Language name mi</extracomment>
         <translation>Maori</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="240"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="312"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="454"/>
         <source>Macedonian</source>
+        <extracomment>Language name mk
+----------
+Language name x-E-MKJ</extracomment>
         <translation>Makedonia</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="244"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="317"/>
         <source>More</source>
+        <extracomment>Language name mos</extracomment>
         <translation>More</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="246"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="320"/>
         <source>Malay</source>
+        <extracomment>Language name ms</extracomment>
         <translation>Malaji</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="247"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
         <source>Maltese</source>
+        <extracomment>Language name mt</extracomment>
         <translation>Malta</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="252"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
         <source>Low German; Low Saxon</source>
+        <extracomment>Language name nds</extracomment>
         <translation>Alasaksa; alasaksi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="253"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="332"/>
         <source>Nepali</source>
+        <extracomment>Language name ne</extracomment>
         <translation>Nepali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="255"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
         <source>Dutch</source>
+        <extracomment>Language name nl</extracomment>
         <translation>Hollanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="256"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
         <source>Norwegian Nynorsk</source>
+        <extracomment>Language name nn</extracomment>
         <translation>Uusnorja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
         <source>Norwegian</source>
+        <extracomment>Language name no</extracomment>
         <translation>Norja</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="266"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
         <source>Papiamento</source>
+        <extracomment>Language name pap</extracomment>
         <translation>Papiamento</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="269"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="354"/>
         <source>Polish</source>
+        <extracomment>Language name pl</extracomment>
         <translation>Puola</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
         <source>Portuguese</source>
+        <extracomment>Language name pt</extracomment>
         <translation>Portugali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="273"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="361"/>
         <source>Brasilian Portuguese</source>
+        <extracomment>Language name pt_BR</extracomment>
         <translation>Brasilian portugali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="277"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="366"/>
         <source>Romanian</source>
+        <extracomment>Language name ro</extracomment>
         <translation>Romania</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="278"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="368"/>
         <source>Russian</source>
+        <extracomment>Language name ru</extracomment>
         <translation>Venäjä</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="282"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
         <source>Scots</source>
+        <extracomment>Language name sco</extracomment>
         <translation>Skottienglanti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="379"/>
         <source>Slovak</source>
+        <extracomment>Language name sk</extracomment>
         <translation>Slovakki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="288"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="381"/>
         <source>Slovenian</source>
+        <extracomment>Language name sl</extracomment>
         <translation>Sloveeni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="291"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="385"/>
         <source>Somali</source>
+        <extracomment>Language name so</extracomment>
         <translation>Somali</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="292"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="387"/>
         <source>Albanian</source>
+        <extracomment>Language name sq</extracomment>
         <translation>Albania</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="298"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="395"/>
         <source>Swedish</source>
+        <extracomment>Language name sv</extracomment>
         <translation>Ruotsi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="397"/>
         <source>Swahili</source>
+        <extracomment>Language name sw</extracomment>
         <translation>Suahili</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="300"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="399"/>
         <source>Syriac</source>
+        <extracomment>Language name syr</extracomment>
         <translation>Syyria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="301"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="401"/>
         <source>Tamil</source>
+        <extracomment>Language name ta</extracomment>
         <translation>Tamili</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="304"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="405"/>
         <source>Thai</source>
+        <extracomment>Language name th</extracomment>
         <translation>Thai</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="306"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="408"/>
         <source>Tagalog</source>
+        <extracomment>Language name tl</extracomment>
         <translation>Tagalog</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="308"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="412"/>
         <source>Tswana</source>
+        <extracomment>Language name tn</extracomment>
         <translation>Tswana</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="309"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="414"/>
         <source>Turkish</source>
+        <extracomment>Language name tr</extracomment>
         <translation>Turkki</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="313"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
         <source>Tahitian</source>
+        <extracomment>Language name ty</extracomment>
         <translation>Tahiti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="315"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="422"/>
         <source>Ukrainian</source>
+        <extracomment>Language name uk</extracomment>
         <translation>Ukraina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="428"/>
         <source>Vietnamese</source>
+        <extracomment>Language name vi</extracomment>
         <translation>Vietnam</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="321"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="432"/>
         <source>Xhosa</source>
+        <extracomment>Language name xh</extracomment>
         <translation>Xhosa</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="153"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="322"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="171"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="434"/>
         <source>Bavarian</source>
+        <extracomment>Language name bar
+----------
+Language name x-E-BAR</extracomment>
         <translation>Bavaria</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="323"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="155"/>
+        <source>Names of languages</source>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :))</comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. Write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Chris explained in an eMail how language codes are build: ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- Ethnologue (http://www.ethnologue.org/) ------- We intend to always follow OSIS locale conventions, which state that Ethnologue codes will be encoded in the format x-E-??? where ??? represents the 3-letter Ethnologue code in capital letters (though capitalization really doesn&apos;t matter here). ------- Some older modules maintain a former format for Ethnolgoue codes of xx-???, including the AleWiesler module.</extracomment>
+        <translation type="unfinished">Ei käännetä</translation>
+    </message>
+    <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="436"/>
         <source>Zarma</source>
+        <extracomment>Language name x-E-DJE</extracomment>
         <translation>Zarma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="438"/>
         <source>Alemannisch</source>
+        <extracomment>Language name x-E-GSW</extracomment>
         <translation>Alemanni</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="325"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="440"/>
         <source>Haitian Creole French</source>
+        <extracomment>Language name x-E-HAT</extracomment>
         <translation>Haitinkreoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="331"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
         <source>Shuar</source>
+        <extracomment>Language name x-E-JIV</extracomment>
         <translation>Shuar</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="337"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
         <source>Kabyle</source>
+        <extracomment>Language name x-E-KAB</extracomment>
         <translation>Kabyyli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="232"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="338"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="299"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="452"/>
         <source>Lombard</source>
+        <extracomment>Language name lmo
+----------
+Language name x-E-LMO</extracomment>
         <translation>Lombard</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="340"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="456"/>
         <source>Tok Pisin</source>
+        <extracomment>Language name x-E-PDG</extracomment>
         <translation>Tok-pisin</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="268"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="341"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="352"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="458"/>
         <source>Uma</source>
+        <extracomment>Language name ppk
+----------
+Language name x-E-PPK</extracomment>
         <translation>Uma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="460"/>
         <source>Romani, Vlax</source>
+        <extracomment>Language name x-E-RMY</extracomment>
         <translation>Romani, vlax</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="343"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="462"/>
         <source>Sango</source>
+        <extracomment>Language name x-E-SAJ</extracomment>
         <translation>Sango</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="294"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="344"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="390"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
         <source>Sranan</source>
+        <extracomment>Language name srn
+----------
+Language name x-E-SRN</extracomment>
         <translation>Sranan</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="345"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="466"/>
         <source>Yiddish</source>
+        <extracomment>Language name yi</extracomment>
         <translation>Jiddish</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="348"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="471"/>
         <source>Chinese</source>
+        <extracomment>Language name zh</extracomment>
         <translation>Kiina</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="349"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="473"/>
         <source>Zulu</source>
+        <extracomment>Language name zu</extracomment>
         <translation>Zulu</translation>
     </message>
     <message>
@@ -3139,34 +3256,37 @@
         <translation>Päivitetty versio saatavilla!</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="203"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="257"/>
         <source>Haitian Creole</source>
+        <extracomment>Language name ht</extracomment>
         <translation>Haitinkreoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="335"/>
         <source>Kekchi</source>
-        <translation type="unfinished">Kekchi</translation>
+        <translation type="obsolete">Kekchi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="248"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
         <source>Burmese</source>
+        <extracomment>Language name my</extracomment>
         <translation>Burma</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="270"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="356"/>
         <source>Potawatomi</source>
+        <extracomment>Language name pot</extracomment>
         <translation>Potawatomi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="410"/>
         <source>Klingon</source>
+        <extracomment>Language name tlh</extracomment>
         <translation>Klingon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="346"/>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="468"/>
         <source>Yoryba</source>
+        <extracomment>Language name yo</extracomment>
         <translation>Joruba</translation>
     </message>
     <message>
@@ -3175,9 +3295,8 @@
         <translation>Asennettu versio</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="329"/>
         <source>Itza</source>
-        <translation type="unfinished">Itza</translation>
+        <translation type="obsolete">Itza</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="435"/>
@@ -3219,30 +3338,42 @@
         <translation type="obsolete">Ei käännetä</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="279"/>
         <source>Kekchí</source>
         <comment>kek</comment>
-        <translation type="obsolete">Kekchí</translation>
+        <extracomment>Language name kek</extracomment>
+        <translation type="unfinished">Kekchí</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
         <source>Malagasy</source>
-        <translation type="obsolete">Malagassi</translation>
+        <extracomment>Language name mg</extracomment>
+        <translation type="unfinished">Malagassi</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
         <source>Norwegian Bokmål</source>
-        <translation type="obsolete">Norja (bokmål)</translation>
+        <extracomment>Language name nb</extracomment>
+        <translation type="unfinished">Norja (bokmål)</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="425"/>
         <source>Orya</source>
-        <translation type="obsolete">Orya</translation>
+        <extracomment>Language name ury</extracomment>
+        <translation type="unfinished">Orya</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="443"/>
         <source>Itzá</source>
-        <translation type="obsolete">Itzá</translation>
+        <extracomment>Language name x-E-ITZ</extracomment>
+        <translation type="unfinished">Itzá</translation>
     </message>
     <message>
+        <location filename="../../src/backend/managers/clanguagemgr.cpp" line="448"/>
         <source>Kekchí</source>
         <comment>x-E-KEK (same as kek)</comment>
-        <translation type="obsolete">Kekchí</translation>
+        <extracomment>Language name x-E-KEK (same as kek)</extracomment>
+        <translation type="unfinished">Kekchí</translation>
     </message>
 </context>
 <context>
@@ -3356,36 +3487,69 @@
 <context>
     <name>Search::BtSearchAdvOptionsArea</name>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
         <source>Search for:</source>
-        <translation type="obsolete">Etsi:</translation>
+        <translation type="unfinished">Etsi:</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
         <source>&amp;Search</source>
-        <translation type="obsolete">&amp;Etsi</translation>
+        <translation type="unfinished">&amp;Etsi</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
         <source>Start to search the text in the chosen works</source>
-        <translation type="obsolete">Aloita haku valituista teoksista</translation>
+        <translation type="unfinished">Aloita haku valituista teoksista</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
+        <source>Multiword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
+        <source>Phrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
+        <source>Regexp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
+        <source>Multiple words or parts of words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation type="obsolete">Joitakin sanoja (sanojen väliin lisätään looginen TAI)</translation>
+        <translation type="unfinished">Joitakin sanoja (sanojen väliin lisätään looginen TAI)</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
         <source>Full lucene syntax</source>
-        <translation type="obsolete">Lucenen koko syntaksi</translation>
+        <translation type="unfinished">Lucenen koko syntaksi</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
+        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
         <source>Click the link to get help for search syntax</source>
-        <translation type="obsolete">Klikkaa linkkiä avataksesi haun syntaksin avusteen</translation>
+        <translation type="unfinished">Klikkaa linkkiä avataksesi haun syntaksin avusteen</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
         <source>The text you want to search for</source>
-        <translation type="obsolete">Haluamasi hakuteksti</translation>
+        <translation type="unfinished">Haluamasi hakuteksti</translation>
     </message>
     <message>
+        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
         <source>Search Syntax Help</source>
-        <translation type="obsolete">Haun syntaksin avuste</translation>
+        <translation type="unfinished">Haun syntaksin avuste</translation>
     </message>
 </context>
 <context>
