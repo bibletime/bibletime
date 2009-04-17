@@ -3419,7 +3419,7 @@
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="120"/>
         <source>Configure predefined scopes for search</source>
-        <translation type="unfinished"></translation>
+        <translation>Előre meghatározott keresési hatókörök beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
@@ -3444,7 +3444,7 @@
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="142"/>
         <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
+        <translation>A keresési kifejezésekhez segítségért kattintson a hivatkozásra </translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="163"/>
