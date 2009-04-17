@@ -122,33 +122,33 @@ void CLanguageMgr::init() {
 	/*:
 	The string "Names of languages" doesn't actually need translation.
 	It is put here to help translators notice this help text.
-
+	 ------- 
 	The names of the languages should follow the conventions of your
 	language. Write the names with a capital first letter even if your language
 	uses non-capitalized language names (they look better with capital
 	first letter when they are listed).
-
+	 ------- 
 	To find the names of all languages from internet try searching for
 	"names of languages in language_x" but in your own language, e.g.
 	"kielten nimet suomeksi" in Finnish or "names of languages in english"
 	in English.
-
+	 ------- 
 	You can find the language codes and names by googling for the standards
 	mentioned below.
-
+	 ------- 
 	Chris explained in an eMail how language codes are build:
-	 
+	  ------- 
 	Preference order for locale codes are:
-	 
-	ISO 639-1
-	ISO 639-2
+	  ------- 
+	ISO 639-1 ------- 
+	ISO 639-2 ------- 
 	Ethnologue (http://www.ethnologue.org/)
-	 
+	  ------- 
 	We intend to always follow OSIS locale conventions, which state that
 	Ethnologue codes will be encoded in the format x-E-??? where ???
 	represents the 3-letter Ethnologue code in capital letters (though
 	capitalization really doesn't matter here).
-	 
+	  ------- 
 	Some older modules maintain a former format for Ethnolgoue codes of
 	xx-???, including the AleWiesler module.
 	*/
