@@ -35,7 +35,7 @@
 #include <QHeaderView>
 
 #include <QDebug>
-
+#include <QTime>
 
 // ****************************************************************
 // ******** Installation source and module list widget ************
@@ -105,6 +105,7 @@ void BtSourceArea::initView()
 
 	connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
 	connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
+	connect(this, SIGNAL(signalCreateTree()), SLOT(slotCreateTree()), Qt::QueuedConnection);
 }
 
 QSize BtSourceArea::sizeHint() const
@@ -120,16 +121,31 @@ void BtSourceArea::initTreeFirstTime()
 	}
 }
 
-bool BtSourceArea::createModuleTree()
+void BtSourceArea::createModuleTree()
 {
 	qDebug("BtSourceArea::createModuleTree start");
+	// Start creating tree with a queued connection.
+	// This makes showing the dialog possible even before the tree is initialized.
+	emit signalCreateTree();
+}
+void BtSourceArea::slotCreateTree()
+{
+	qDebug()<<"BtSourceArea::slotCreateTree" << QTime::currentTime ();
+	//let the dialog become visible
+	QCoreApplication::processEvents();
+	// Creating the view and populating list may take time
+	QApplication::setOverrideCursor( QCursor(Qt::WaitCursor) );
+
+	// disconnect the signal so that we don't have to run functions for every module
+	// (note: what to do if we want to restore the item selection when rebuilding?
+	disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
+	m_view->clear();
 
 	// TODO: if the tree already exists for this source,
 	// maybe the selections should be preserved
 	m_checkedModules.clear();
 
 	sword::InstallSource is = instbackend::source(m_sourceName);
-
 	delete m_remoteBackend; // the old one can be deleted
 	m_remoteBackend = instbackend::backend(is);
 	Q_ASSERT(m_remoteBackend);
@@ -140,22 +156,14 @@ bool BtSourceArea::createModuleTree()
 	InstalledFilter alreadyInstalledFilter(m_sourceName);
 	QList<BTModuleTreeItem::Filter*> filterList;
 	filterList.append(&alreadyInstalledFilter);
-	qDebug("BtSourceArea::createModuleTree 1");
 	BTModuleTreeItem rootItem(filterList, BTModuleTreeItem::CatLangMod, &m_moduleList);
-	qDebug("BtSourceArea::createModuleTree 2");
-
-	m_view->clear();
-
-	// disconnect the signal so that we don't have to run functions for every module
-	// (note: what to do if we want to restore the item selection when rebuilding?
-	disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
 
 	addToTree(&rootItem, m_view->invisibleRootItem());
-
+	QCoreApplication::processEvents();
 	// receive signal when user checks modules
 	connect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
-	qDebug("BtSourceArea::createModuleTree end");
-	return true;
+	QApplication::restoreOverrideCursor();
+	qDebug()<< "BtSourceArea::createModuleTree end"<< QTime::currentTime ();
 }
 
 void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem)

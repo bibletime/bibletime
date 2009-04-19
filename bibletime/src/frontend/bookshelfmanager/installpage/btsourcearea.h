@@ -18,6 +18,7 @@
 
 #include <QWidget>
 #include <QMap>
+#include <QApplication>
 
 class QTreeWidget;
 class QTreeWidgetItem;
@@ -61,16 +62,17 @@ public:
 
 	QMap<QString, bool>* selectedModules();
 
-	/** Create a module tree for a tree widget */
-	bool createModuleTree();
-
 public slots:
 	void slotSwordSetupChanged();
+	/** Create a module tree for a tree widget */
+	void createModuleTree();
 
 signals:
 	void signalSelectionChanged(QString sourceName, int selectedCount);
+	void signalCreateTree();
 
 private slots:
+	void slotCreateTree();
 	void slotSelectionChanged(QTreeWidgetItem* item, int column);
 	void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
 private:
