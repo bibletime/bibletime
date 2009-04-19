@@ -124,7 +124,7 @@ void CLanguageMgr::init() {
 	It is put here to help translators notice this help text.
 	 ------- 
 	The names of the languages should follow the conventions of your
-	language. Write the names with a capital first letter even if your language
+	language. You can write the names with a capital first letter even if your language
 	uses non-capitalized language names (they look better with capital
 	first letter when they are listed).
 	 ------- 
@@ -136,23 +136,16 @@ void CLanguageMgr::init() {
 	You can find the language codes and names by googling for the standards
 	mentioned below.
 	 ------- 
-	Chris explained in an eMail how language codes are build:
-	  ------- 
 	Preference order for locale codes are:
 	  ------- 
 	ISO 639-1 ------- 
 	ISO 639-2 ------- 
-	Ethnologue (http://www.ethnologue.org/)
-	  ------- 
-	We intend to always follow OSIS locale conventions, which state that
-	Ethnologue codes will be encoded in the format x-E-??? where ???
-	represents the 3-letter Ethnologue code in capital letters (though
-	capitalization really doesn't matter here).
-	  ------- 
-	Some older modules maintain a former format for Ethnolgoue codes of
-	xx-???, including the AleWiesler module.
+	ISO 639-3
+	  -------
+	x-E-XXX form is deprecated and no modules in repositories use it. 
+	If you find a module with x-E-XXX language, update the module.
 	*/
-	QObject::tr("Names of languages", "No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :))");
+	QObject::tr("Names of languages", "No need to translate - see the longer comment (If there is no longer comment, it doesn't work yet :)) ------ ");
 	//  m_langList.append( new Language("aa", "Afar", QObject::tr("Afar")) );
 	//  m_langList.append( new Language("ab", "Abkhazian", QObject::tr("Abkhazian")) );
 	//  m_langList.append( new Language("ae", "Avestan", QObject::tr("Avestan")) );
