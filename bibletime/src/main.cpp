@@ -140,6 +140,8 @@ int main(int argc, char* argv[]) {
 	app.setApplicationName("bibletime");
 	app.setApplicationVersion(BT_VERSION);
 
+	// This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
+	QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 	//first install QT's own translations
 	QTranslator qtTranslator;
 	qtTranslator.load("qt_" + QLocale::system().name());
