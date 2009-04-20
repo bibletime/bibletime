@@ -81,7 +81,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="201"/>
         <source>&amp;Delete session</source>
-        <translation>Munkafolyamat törlése</translation>
+        <translation>&amp;Munkafolyamat törlése</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="214"/>
@@ -91,50 +91,50 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="221"/>
         <source>&amp;Manual mode</source>
-        <translation>Kézi elrendezés</translation>
+        <translation>&amp;Kézi elrendezés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>Auto-tile &amp;vertically</source>
         <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
-        <translation>Függőleges mozaik elrendezés</translation>
+        <translation>&amp;Függőleges mozaik elrendezés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>Auto-tile &amp;horizontally</source>
         <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
-        <translation>Vízszintes mozaik elrendezés</translation>
+        <translation>&amp;Vízszintes mozaik elrendezés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="257"/>
         <source>Auto-&amp;cascade</source>
         <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
-        <translation>Átlapoló elrendezés</translation>
+        <translation>Átla&amp;poló elrendezés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>&amp;Cascade</source>
-        <translation>Átlapolás</translation>
+        <translation>Átla&amp;polás</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="277"/>
         <source>Tile &amp;vertically</source>
-        <translation>Függőleges mozaik</translation>
+        <translation>&amp;Függőleges mozaik</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="287"/>
         <source>Tile &amp;horizontally</source>
-        <translation>Vízszintes mozaik</translation>
+        <translation>&amp;Vízszintes mozaik</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>Cl&amp;ose all</source>
-        <translation>Összes bezárása</translation>
+        <translation>Öss&amp;zes bezárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="324"/>
         <source>&amp;Handbook</source>
-        <translation>Kézikönyv</translation>
+        <translation>&amp;Kézikönyv</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="336"/>
@@ -165,12 +165,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation>Keresés az alapértelmezett &amp;Bibliában</translation>
+        <translation>Keresés az alapértelmezett &amp;Bibliában...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="191"/>
         <source>Save as &amp;new session...</source>
-        <translation>Me&amp;ntés új folyamatként</translation>
+        <translation>Me&amp;ntés új folyamatként...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="194"/>
@@ -215,7 +215,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="307"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation>Bibletime beállítása</translation>
+        <translation>Bibletime beá&amp;llítása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="310"/>
@@ -793,14 +793,6 @@
         <translation>Leírás</translation>
     </message>
     <message>
-        <source>Last refreshed:</source>
-        <translation type="obsolete">Utoljára frissítve:</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation type="obsolete">Szerkesztés...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Add...</source>
         <translation>Hozzáadás...</translation>
@@ -1249,7 +1241,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="621"/>
         <source>Select the works to be hidden.</source>
-        <translation>Válassza ki az elrejtendő dokumentumokat</translation>
+        <translation>Válassza ki az elrejtendő dokumentumokat.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="152"/>
@@ -2643,7 +2635,7 @@
         <source>Kekchí</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kekchi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="287"/>
@@ -2685,7 +2677,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
         <source>Malagasy</source>
         <extracomment>Language name mg</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Malagasy</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="310"/>
@@ -2724,7 +2716,7 @@ Language name x-E-MKJ</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="327"/>
         <source>Norwegian Bokmål</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norvég Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="330"/>
@@ -2886,7 +2878,7 @@ Language name x-E-MKJ</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="425"/>
         <source>Orya</source>
         <extracomment>Language name ury</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Orya</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="428"/>
@@ -2914,7 +2906,8 @@ Language name x-E-BAR</extracomment>
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :))</comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. Write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Chris explained in an eMail how language codes are build: ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- Ethnologue (http://www.ethnologue.org/) ------- We intend to always follow OSIS locale conventions, which state that Ethnologue codes will be encoded in the format x-E-??? where ??? represents the 3-letter Ethnologue code in capital letters (though capitalization really doesn&apos;t matter here). ------- Some older modules maintain a former format for Ethnolgoue codes of xx-???, including the AleWiesler module.</extracomment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Mégis lefordítottam :)</translatorcomment>
+        <translation>Nyelvek elnevezései</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="436"/>
@@ -2938,7 +2931,7 @@ Language name x-E-BAR</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="443"/>
         <source>Itzá</source>
         <extracomment>Language name x-E-ITZ</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itza</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="445"/>
@@ -2951,7 +2944,7 @@ Language name x-E-BAR</extracomment>
         <source>Kekchí</source>
         <comment>x-E-KEK (same as kek)</comment>
         <extracomment>Language name x-E-KEK (same as kek)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kekchi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="450"/>
@@ -3297,10 +3290,6 @@ Language name x-E-SRN</extracomment>
         <translation>Haiti Kreol</translation>
     </message>
     <message>
-        <source>Kekchi</source>
-        <translation type="obsolete">Kekchi</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="324"/>
         <source>Burmese</source>
         <extracomment>Language name my</extracomment>
@@ -3323,10 +3312,6 @@ Language name x-E-SRN</extracomment>
         <source>Yoryba</source>
         <extracomment>Language name yo</extracomment>
         <translation>Yoryba</translation>
-    </message>
-    <message>
-        <source>Itza</source>
-        <translation type="obsolete">Itza</translation>
     </message>
     <message>
         <location filename="../../src/backend/filters/bt_osishtml.cpp" line="435"/>
@@ -3473,74 +3458,6 @@ Language name x-E-SRN</extracomment>
     </message>
 </context>
 <context>
-    <name>Search::BtSearchAdvOptionsArea</name>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="99"/>
-        <source>Search for:</source>
-        <translation type="unfinished">Ezt keresse:</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="106"/>
-        <source>&amp;Search</source>
-        <translation type="unfinished">&amp;Keresés</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="108"/>
-        <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished">szöveg keresésének megkezdése a választott dokumentumban</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="121"/>
-        <source>Multiword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="123"/>
-        <source>Phrase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="124"/>
-        <source>Regexp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="126"/>
-        <source>Multiple words or parts of words</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="127"/>
-        <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished">Bármelyik szót (OR kifejezés a szavak közé lesz adva)</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="128"/>
-        <source>Full lucene syntax</source>
-        <translation type="unfinished">Teljes lucene kifejezés</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="130"/>
-        <source> (&lt;a href=&apos;syntax_help&apos;&gt;Help&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="131"/>
-        <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished">A keresési kifejezésekhez segítségért kattintson a hivatkozásra </translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="148"/>
-        <source>The text you want to search for</source>
-        <translation type="unfinished">A szöveg, amir keres</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/searchdialog/btsearchadvoptionsarea.cpp" line="222"/>
-        <source>Search Syntax Help</source>
-        <translation type="unfinished">Keresési kifejezések súgó</translation>
-    </message>
-</context>
-<context>
     <name>Search::BtSearchOptionsArea</name>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="101"/>
@@ -3606,30 +3523,6 @@ Language name x-E-SRN</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="275"/>
         <source>Select the works which should be searched.</source>
         <translation>Válassza ki a dokumentumokat, amelyekben keresni akar.</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Írja be a keresési kifejezéseket szóközökkel elválasztva. Alapértelmezetten a keresés eredménye bármelyik kifejezést tartalmazó elemek halmaza (VAGY). Ha az összes kifejezést tartalmazó találatokra kíváncsi, akkor a kifejezéseket AND (ÉS) utasítással válassza el.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Használhat helyettesítő karaktereket: &apos;*&apos; több betűt, míg a &apos;?&apos; csak egy betűt helyettesít. A zárójelek használata lehetővé teszi a keresési kifejezések csoportosítását pl. &apos;Jézus OR Szentlélek) AND Isten&apos;.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Ha más szöveget keresne, mint ami a fő szövegben van, használja a szöveg típusát, majd &quot;:&quot; majd a kifejezést. Például ha a Strong&apos;s számok közül keresné a H8077 előfordulásait, használja a &apos;strong:H8077&apos; kifejezést.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;Lehetséges szövegtípusok:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;headings:&lt;/td&gt;&lt;td&gt;fejlécekben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;lábjegyzetben keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Strong&apos;s számokra keres&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;morfológiai kódokra keres&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p&gt;A BibleTime a Lucene keresőmotorját használja a keresésekhez. Ez a motor több haladó lehetőséget is rejt, erről többet olvashat a: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html webcímen.&lt;/a&gt;&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Bevezetés az alap keresési kifejezésekhez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="448"/>
@@ -3976,7 +3869,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="241"/>
         <source>&amp;Close</source>
-        <translation>Bezárás</translation>
+        <translation>&amp;Bezárás</translation>
     </message>
 </context>
 <context>
@@ -4225,7 +4118,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="95"/>
         <source>&amp;Previous</source>
-        <translation>Előző</translation>
+        <translation>&amp;Előző</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="102"/>
@@ -4235,7 +4128,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="105"/>
         <source>&amp;Next</source>
-        <translation>Következő</translation>
+        <translation>&amp;Következő</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="115"/>
@@ -4245,7 +4138,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="118"/>
         <source>&amp;Close</source>
-        <translation>Bezárás</translation>
+        <translation>&amp;Bezárás</translation>
     </message>
 </context>
 </TS>
