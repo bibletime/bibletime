@@ -28,20 +28,19 @@
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
-		<year>2001-2008</year>
+		<year>2001-2009</year>
 		<holder>The team of &bibletime; (info@bibletime.info)</holder>
 	</copyright>
 	
 	<legalnotice>
 		<para>
-			This document was originally created by Mr. Bob Harman and is licensed under 
-the terms of the license <link 
-url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
-Attribution-Share Alike"</link>.
+			Tämän asiakirjan alkuperäinen kirjoittaja on Mr. Bob Harman ja se on 
+lisensioitu  <link url="http://creativecommons.org/licenses/by-sa/3.0/"> 
+"Creative Commons Attribution-Share Alike"</link> -lisenssillä.
 		</para>
 		<para>
-			Scripture quotes are from the New American Standard Bible unless otherwise 
-indicated.
+			Tekstien lainausmerkit ovat peräisin uudesta amerikkalaisesta 
+standardi-Raamatusta, jos ei muuta ole sanottu
 		</para>
 	</legalnotice>
 	
@@ -49,8 +48,8 @@ indicated.
 		<title>Abstrakti</title>
 		
 		<para>
-			<application>Raamatuntutkimisen HowTo</application> on opas Raamatun 
-tutkimiseen.
+			The <application>Biblestudy HowTo</application> is a guide for studying the 
+Bible.
 		</para>
 		<para>
 			It is the hope of the &bibletime; team that this HowTo will provoke the 

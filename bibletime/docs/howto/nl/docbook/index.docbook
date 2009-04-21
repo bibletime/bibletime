@@ -28,7 +28,7 @@
 	
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
-		<year>2001-2008</year>
+		<year>2001-2009</year>
 		<holder>The team of &bibletime; (info@bibletime.info)</holder>
 	</copyright>
 	
@@ -49,8 +49,8 @@ indicated.
 		<title>Overzicht</title>
 		
 		<para>
-			De <application>Bijbelstudie HowTo</application> is een gids bij het 
-bestuderen van de Bijbel.
+			The <application>Biblestudy HowTo</application> is a guide for studying the 
+Bible.
 		</para>
 		<para>
 			It is the hope of the &bibletime; team that this HowTo will provoke the 
