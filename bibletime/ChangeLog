@@ -1,7 +1,10 @@
+2009-04-21 Martin Gruner <mgruner@crosswire.org>
+	* Applied cmake patch from Greg Hellings with slight modifications
+
 2009-04-09 Gary Holmlund
     * Add translatable text for several dialogs
       These words need transating:
-        Ok, Open, Save, Cancel, Close, Discard, Apply, Reset, Restore Defaults, 
+        Ok, Open, Save, Cancel, Close, Discard, Apply, Reset, Restore Defaults,
         Help, Save All, Yes, Yes To All, No, No To All
 
 2009-03-25 Martin Gruner <mgruner@crosswire.org>

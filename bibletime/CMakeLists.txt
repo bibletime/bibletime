@@ -1,5 +1,3 @@
-
-
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
@@ -56,12 +54,12 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.cmake" "${CMAKE_CURRE
 # The actual build options
 #
 INCLUDE_DIRECTORIES(
+	${CMAKE_CURRENT_BINARY_DIR}		#for .h files generated from .ui
+	${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
 	${CLUCENE_INCLUDE_DIR}			#CLucene headers
 	${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
 	${Boost_INCLUDE_DIRS}
 	${SWORD_INCLUDE_DIR}
-	${CMAKE_CURRENT_BINARY_DIR}		#for .h files generated from .ui
-	${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
 )
 
 
