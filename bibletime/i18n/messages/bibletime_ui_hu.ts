@@ -290,7 +290,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="66"/>
         <source>Mag</source>
-        <translation>Mágnes</translation>
+        <translation>Nagyító</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="149"/>
@@ -2273,7 +2273,7 @@
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="65"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
-        <translation>&lt;small&gt;Ez a &quot;mágneses&quot; megtekintő terület. Ha az egeret elhúzza hivatkozások, vagy más adatot tartalmazó elemek fölött, azok tartalma megjelenik itt, kis késleltetéssel. Mozgassa az egeret ide  gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomvatartásával.&lt;/small&gt;</translation>
+        <translation>&lt;small&gt;Ez a &quot;Nagyító&quot; ablak. Ha az egeret elhúzza hivatkozások, vagy más adatot tartalmazó elemek fölött, azok tartalma kis késleltetéssel megjelenik itt. Mozgassa az egeret ide gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomvatartásával.&lt;/small&gt;</translation>
     </message>
 </context>
 <context>
@@ -2484,7 +2484,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
         <source>Esperanto</source>
         <extracomment>Language name eo</extracomment>
-        <translation></translation>
+        <translation>Eszperantó</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="217"/>
@@ -3829,7 +3829,7 @@ Language name x-E-SRN</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="249"/>
         <source>Total hits</source>
-        <translation></translation>
+        <translation>Összes találat</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="281"/>
@@ -4017,7 +4017,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="131"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation></translation>
+        <translation>Héber morfológiai lexikon</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="135"/>
@@ -4133,7 +4133,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="115"/>
         <source>Close the dialog</source>
-        <translation></translation>
+        <translation>Párbeszédablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="118"/>
