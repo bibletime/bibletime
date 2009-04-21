@@ -9,7 +9,6 @@
 
 //BT includes
 #include "cswordsetupinstallsourcesdialog.h"
-#include "cswordsetupinstallsourcesdialog.moc"
 
 #include "frontend/bookshelfmanager/instbackend.h"
 

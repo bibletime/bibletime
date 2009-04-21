@@ -8,7 +8,6 @@
 **********/
 
 #include "btactioncollection.h"
-#include "btactioncollection.moc"
 
 BtActionCollection::BtActionCollection(QObject* parent)
 	: QObject(parent)

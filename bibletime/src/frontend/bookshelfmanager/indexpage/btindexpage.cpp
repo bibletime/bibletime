@@ -8,7 +8,6 @@
 **********/
 
 #include "btindexpage.h"
-#include "btindexpage.moc"
 
 #include "frontend/cmoduleindexdialog.h"
 #include "backend/config/cbtconfig.h"

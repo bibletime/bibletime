@@ -8,7 +8,6 @@
 **********/
 
 #include "bttabhtmldialog.h"  // See this file for more documentation of BtTabHtmlDialog
-#include "bttabhtmldialog.moc"
 #include "util/dialogutil.h"
 #include "util/directoryutil.h"
 

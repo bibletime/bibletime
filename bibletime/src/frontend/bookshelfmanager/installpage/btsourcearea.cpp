@@ -8,7 +8,6 @@
 **********/
 
 #include "btsourcearea.h"
-#include "btsourcearea.moc"
 
 #include "frontend/bookshelfmanager/instbackend.h"
 

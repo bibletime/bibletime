@@ -8,7 +8,6 @@
 **********/
 
 #include "bthtmlfindtext.h"
-#include "bthtmlfindtext.moc"
 #include "bthtmlreaddisplay.h"
 #include "creaddisplay.h"
 #include "frontend/cmdiarea.h"

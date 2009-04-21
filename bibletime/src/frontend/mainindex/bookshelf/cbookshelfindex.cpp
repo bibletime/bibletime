@@ -8,7 +8,6 @@
 **********/
 
 #include "cbookshelfindex.h"
-#include "cbookshelfindex.moc"
 
 #include "btindexitem.h"
 #include "btindexmodule.h"

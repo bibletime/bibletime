@@ -7,7 +7,6 @@
 *
 **********/
 #include "cbookkeychooser.h"
-#include "cbookkeychooser.moc"
 
 #include "bthistory.h"
 

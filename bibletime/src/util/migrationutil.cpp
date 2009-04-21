@@ -8,7 +8,6 @@
 **********/
 
 #include "migrationutil.h"
-#include "config.h"
 #include "directoryutil.h"
 #include "backend/config/cbtconfig.h"
 

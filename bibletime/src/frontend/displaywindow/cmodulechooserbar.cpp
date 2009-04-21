@@ -8,7 +8,6 @@
 **********/
 
 #include "cmodulechooserbar.h"
-#include "cmodulechooserbar.moc"
 
 #include "cmodulechooserbutton.h"
 

@@ -10,7 +10,6 @@
 
 
 #include "cbookreadwindow.h"
-#include "cbookreadwindow.moc"
 #include "bttoolbarpopupaction.h"
 #include "btactioncollection.h"
 

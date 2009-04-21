@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "ccommentaryreadwindow.h"
-#include "ccommentaryreadwindow.moc"
 #include "btactioncollection.h"
 
 #include "frontend/profile/cprofilewindow.h"

@@ -8,7 +8,6 @@
 **********/
 
 #include "bthtmlreaddisplay.h"
-#include "bthtmlreaddisplay.moc"
 #include "bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/creadwindow.h"

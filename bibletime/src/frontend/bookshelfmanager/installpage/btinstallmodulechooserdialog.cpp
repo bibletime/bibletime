@@ -108,7 +108,6 @@
 **********/
 
 #include "btinstallmodulechooserdialog.h"
-#include "btinstallmodulechooserdialog.moc"
 
 #include "frontend/cmodulechooserdialog.h"
 #include "backend/drivers/cswordmoduleinfo.h"

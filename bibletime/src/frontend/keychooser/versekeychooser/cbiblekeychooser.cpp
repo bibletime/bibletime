@@ -8,7 +8,6 @@
 **********/
 
 #include "cbiblekeychooser.h"
-#include "cbiblekeychooser.moc"
 
 #include "../bthistory.h"
 #include "ckeyreferencewidget.h"

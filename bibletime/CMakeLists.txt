@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.4.0)
 
 #Version
-SET(BT_VERSION "2.0.alpha2")
+add_definitions(-DBT_VERSION=\\\"2.0.alpha2\\\")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
@@ -75,8 +75,8 @@ LINK_DIRECTORIES(
 #Link to QtTest only in debug builds
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
-	QT4_AUTOMOC( ${bibletime_SOURCES} )
-	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H})
+	QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
@@ -89,10 +89,11 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
-	QT4_AUTOMOC( ${bibletime_SOURCES} ${bibletime_test_SOURCES} )
+	QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
+	QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
 	SET(CMAKE_BUILD_TYPE "Debug")
 	ADD_EXECUTABLE(bibletime ${bibletime_SOURCES}
-                             ${bibletime_test_SOURCES} ${bibletime_UIS_H})
+                             ${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
 	SET_TARGET_PROPERTIES(bibletime
 		PROPERTIES
 			COMPILE_FLAGS "-DBT_ENABLE_TESTING ${SWORD_CFLAGS}" #Enable exception handling and Testing

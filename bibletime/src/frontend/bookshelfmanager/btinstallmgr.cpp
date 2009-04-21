@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "btinstallmgr.h"
-#include "btinstallmgr.moc"
 
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "backend/managers/cswordbackend.h"

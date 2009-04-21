@@ -8,7 +8,6 @@
 **********/
 
 #include "cconfigurationdialog.h"
-#include "cconfigurationdialog.moc"
 
 #include "cdisplaysettings.h"
 #include "cswordsettings.h"

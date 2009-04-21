@@ -8,7 +8,6 @@
 **********/
 
 #include "bibletime_test.h"
-#include "bibletime_test.moc"
 
 #include <QtTest/QtTest>
 

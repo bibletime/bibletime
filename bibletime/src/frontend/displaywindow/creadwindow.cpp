@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "creadwindow.h"
-#include "creadwindow.moc"
 #include "btactioncollection.h"
 
 #include "frontend/display/bthtmlreaddisplay.h"

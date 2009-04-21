@@ -8,7 +8,6 @@
 **********/
 
 #include "btinstallpathdialog.h"
-#include "btinstallpathdialog.moc"
 
 #include "frontend/bookshelfmanager/instbackend.h"
 

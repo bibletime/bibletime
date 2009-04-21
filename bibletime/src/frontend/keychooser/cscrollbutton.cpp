@@ -10,7 +10,6 @@
 
 
 #include "cscrollbutton.h"
-#include "cscrollbutton.moc"
 
 
 #include <stdlib.h>

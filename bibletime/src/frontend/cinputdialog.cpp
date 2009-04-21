@@ -11,7 +11,6 @@
 
 //own includes
 #include "cinputdialog.h"
-#include "cinputdialog.moc"
 #include "util/dialogutil.h"
 
 //Qt includes

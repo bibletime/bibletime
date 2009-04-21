@@ -10,7 +10,6 @@
 
 
 #include "chtmlwritewindow.h"
-#include "chtmlwritewindow.moc"
 #include "btactioncollection.h"
 
 //frontend includes

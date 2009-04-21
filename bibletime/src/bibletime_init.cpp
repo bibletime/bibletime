@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "bibletime.h"
-#include "config.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"

@@ -8,7 +8,6 @@
 **********/
 
 #include "cfontchooser.h"
-#include "cfontchooser.moc"
 #include "clistwidget.h"
 #include <QVBoxLayout>
 #include <QLabel>

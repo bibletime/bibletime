@@ -10,7 +10,6 @@
 //own includes
 #include "bibletimeapp.h"
 #include "bibletime.h"
-#include "config.h"
 #include "bibletime_dbus_adaptor.h"
 
 #include "util/cresmgr.h"

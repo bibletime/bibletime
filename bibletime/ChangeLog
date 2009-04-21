@@ -1,6 +1,8 @@
 2009-04-21 Martin Gruner <mgruner@crosswire.org>
 	* Applied cmake patch from Greg Hellings with slight modifications
 	* Applied translation patches from Jaak Ristioja
+	* Applied patch from Jaak Ristioja which makes generated config.h obsolete
+	* Applied patch from Jaak Ristioja which simplifies .moc file generation
 
 2009-04-09 Gary Holmlund
     * Add translatable text for several dialogs

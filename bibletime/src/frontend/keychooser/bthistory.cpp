@@ -11,7 +11,6 @@
 //
 
 #include "bthistory.h"
-#include "bthistory.moc"
 
 #include "backend/keys/cswordkey.h"
 

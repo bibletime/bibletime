@@ -10,7 +10,6 @@
 
 
 #include "clexiconkeychooser.h"
-#include "clexiconkeychooser.moc"
 
 #include "bthistory.h"
 #include "ckeychooserwidget.h"

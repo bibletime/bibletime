@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "cbuttons.h"
-#include "cbuttons.moc"
 
 #include "util/cresmgr.h"
 #include "util/cpointers.h"

@@ -9,7 +9,6 @@
 
 
 #include "btconfigdialog.h"
-#include "btconfigdialog.moc"
 
 #include "util/directoryutil.h"
 #include "util/ctoolclass.h"

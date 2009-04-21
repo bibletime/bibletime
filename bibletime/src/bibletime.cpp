@@ -6,9 +6,7 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "config.h"
 #include "bibletime.h"
-#include "bibletime.moc"
 
 #include "frontend/cmdiarea.h"
 #include "frontend/mainindex/cmainindex.h"

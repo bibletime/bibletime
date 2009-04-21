@@ -8,7 +8,6 @@
 **********/
 
 #include "btinstallprogressdialog.h"
-#include "btinstallprogressdialog.moc"
 
 #include "btinstallthread.h"
 

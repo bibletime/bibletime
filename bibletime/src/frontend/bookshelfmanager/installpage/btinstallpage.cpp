@@ -9,7 +9,6 @@
 
 
 #include "btinstallpage.h"
-#include "btinstallpage.moc"
 
 #include "btinstallpathdialog.h"
 #include "btinstallprogressdialog.h"

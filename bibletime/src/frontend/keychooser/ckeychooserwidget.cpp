@@ -10,7 +10,6 @@
 
 //BibleTime includes
 #include "ckeychooserwidget.h"
-#include "ckeychooserwidget.moc"
 
 #include "cscrollerwidgetset.h"
 

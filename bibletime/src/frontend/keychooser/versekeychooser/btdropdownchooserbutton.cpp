@@ -8,7 +8,6 @@
 **********/
 
 #include "btdropdownchooserbutton.h"
-#include "btdropdownchooserbutton.moc"
 #include "ckeyreferencewidget.h"
 #include "btversekeymenu.h"
 

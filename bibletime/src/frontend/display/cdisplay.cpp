@@ -8,7 +8,6 @@
 **********/
 
 #include "cdisplay.h"
-#include "cdisplay.moc"
 
 #include "bthtmlreaddisplay.h"
 typedef BtHtmlReadDisplay HTMLREADDISPLAY;

@@ -10,7 +10,6 @@
 
 
 #include "chtmlwritedisplay.h"
-#include "chtmlwritedisplay.moc"
 #include "btfontsizewidget.h"
 #include "btcolorwidget.h"
 #include "frontend/displaywindow/cwritewindow.h"

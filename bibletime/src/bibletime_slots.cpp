@@ -9,7 +9,6 @@
 
 //own includes
 #include "bibletime.h"
-#include "config.h"
 
 #include "backend/keys/cswordversekey.h"
 

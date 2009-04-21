@@ -8,7 +8,6 @@
 **********/
 
 #include "cprinter.h"
-#include "cprinter.moc"
 
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/keys/cswordversekey.h"

@@ -8,7 +8,6 @@
 **********/
 
 #include "btsourcewidget.h"
-#include "btsourcewidget.moc"
 
 #include "btinstallpage.h"
 #include "btsourcearea.h"

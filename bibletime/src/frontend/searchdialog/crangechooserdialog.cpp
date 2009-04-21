@@ -10,7 +10,6 @@
 
 
 #include "crangechooserdialog.h"
-#include "crangechooserdialog.moc"
 
 #include "backend/config/cbtconfig.h"
 #include "util/dialogutil.h"

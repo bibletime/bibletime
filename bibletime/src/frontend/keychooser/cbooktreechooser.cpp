@@ -7,7 +7,6 @@
 *
 **********/
 #include "cbooktreechooser.h"
-#include "cbooktreechooser.moc"
 
 #include "bthistory.h"
 

@@ -8,7 +8,6 @@
 **********/
 
 #include "csearchmodulechooserdialog.h"
-#include "csearchmodulechooserdialog.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"

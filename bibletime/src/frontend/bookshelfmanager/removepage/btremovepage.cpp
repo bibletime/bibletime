@@ -9,7 +9,6 @@
 
 
 #include "btremovepage.h"
-#include "btremovepage.moc"
 
 
 #include "backend/btmoduletreeitem.h"

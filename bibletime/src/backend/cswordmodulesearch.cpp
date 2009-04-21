@@ -10,7 +10,6 @@
 //BibleTime includes
 #include "cswordmodulesearch.h"
 
-#include "cswordmodulesearch.moc"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/config/cbtconfig.h"

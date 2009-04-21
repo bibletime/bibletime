@@ -10,7 +10,6 @@
 
 
 #include "cmoduleresultview.h"
-#include "cmoduleresultview.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 

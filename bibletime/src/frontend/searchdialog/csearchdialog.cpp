@@ -6,9 +6,7 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "config.h"
 #include "csearchdialog.h"
-#include "csearchdialog.moc"
 #include "btsearchoptionsarea.h"
 #include "btsearchresultarea.h"
 

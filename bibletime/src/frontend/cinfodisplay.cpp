@@ -9,7 +9,6 @@
 
 // BibleTime includes
 #include "cinfodisplay.h"
-#include "cinfodisplay.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"

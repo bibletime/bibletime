@@ -8,7 +8,6 @@
 **********/
 
 #include "cdisplaysettings.h"
-#include "cdisplaysettings.moc"
 
 #include "backend/config/cbtconfig.h"
 #include "backend/rendering/cdisplayrendering.h"

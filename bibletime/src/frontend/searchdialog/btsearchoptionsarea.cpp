@@ -8,7 +8,6 @@
 **********/
 
 #include "btsearchoptionsarea.h"
-#include "btsearchoptionsarea.moc"
 #include "csearchmodulechooserdialog.h"
 #include "crangechooserdialog.h"
 

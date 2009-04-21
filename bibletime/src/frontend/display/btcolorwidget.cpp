@@ -8,7 +8,6 @@
 **********/
 
 #include "btcolorwidget.h"
-#include "btcolorwidget.moc"
 #include <QPalette>
 #include <QColor>
 #include <QMouseEvent>

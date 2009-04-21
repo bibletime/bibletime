@@ -9,7 +9,6 @@
 
 //BibleTime includes
 #include "ckeyreferencewidget.h"
-#include "ckeyreferencewidget.moc"
 
 #include "../cscrollerwidgetset.h"
 #include "btdropdownchooserbutton.h"

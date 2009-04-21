@@ -10,7 +10,6 @@
 #ifndef NO_DBUS
 
 #include "bibletime_dbus_adaptor.h"
-#include "bibletime_dbus_adaptor.moc"
 
 BibleTimeDBusAdaptor::BibleTimeDBusAdaptor(BibleTime *bibletime_ptr) : 
 	QDBusAbstractAdaptor(bibletime_ptr),

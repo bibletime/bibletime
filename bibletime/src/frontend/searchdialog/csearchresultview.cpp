@@ -8,7 +8,6 @@
 **********/
 
 #include "csearchresultview.h"
-#include "csearchresultview.moc"
 
 #include "backend/keys/cswordversekey.h"
 

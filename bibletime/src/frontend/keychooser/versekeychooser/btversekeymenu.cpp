@@ -8,7 +8,6 @@
 **********/
 
 #include "btversekeymenu.h"
-#include "btversekeymenu.moc"
 
 #include <QMenu>
 #include <QTimerEvent>

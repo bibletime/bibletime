@@ -8,7 +8,6 @@
 **********/
 
 #include "cmoduleindexdialog.h"
-#include "cmoduleindexdialog.moc"
 
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"

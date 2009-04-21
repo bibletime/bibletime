@@ -8,7 +8,6 @@
 **********/
 
 #include "cmodulechooserdialog.h"
-#include "cmodulechooserdialog.moc"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"

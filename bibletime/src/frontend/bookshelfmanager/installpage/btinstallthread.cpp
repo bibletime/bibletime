@@ -8,7 +8,6 @@
 **********/
 
 #include "btinstallthread.h"
-#include "btinstallthread.moc"
 
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "frontend/bookshelfmanager/instbackend.h"

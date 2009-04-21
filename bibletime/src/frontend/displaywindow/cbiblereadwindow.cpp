@@ -10,7 +10,6 @@
 
 
 #include "cbiblereadwindow.h"
-#include "cbiblereadwindow.moc"
 #include "btactioncollection.h"
 
 #include "ccommentaryreadwindow.h"

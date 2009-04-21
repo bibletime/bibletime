@@ -8,7 +8,6 @@
 **********/
 
 #include "btmodulemanagerdialog.h"
-#include "btmodulemanagerdialog.moc"
 
 #include "installpage/btinstallpage.h"
 #include "removepage/btremovepage.h"

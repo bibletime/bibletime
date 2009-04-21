@@ -8,7 +8,6 @@
 **********/
 
 #include "cplainwritewindow.h"
-#include "cplainwritewindow.moc"
 #include "btactioncollection.h"
 
 #include "frontend/display/cwritedisplay.h"
