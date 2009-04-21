@@ -52,7 +52,7 @@ void CModuleResultView::initView()
 {
 	// see also csearchresultview.cpp
 	setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
-	setHeaderLabels( QStringList(tr("Work")) << QString(tr("Hits")) );
+	setHeaderLabels( QStringList(tr("Work")) << tr("Hits") );
 
 	setColumnWidth(0, CToolClass::mWidth(this, 8));
 	setColumnWidth(1, CToolClass::mWidth(this, 4));

@@ -104,7 +104,7 @@ void BibleTime::initActions()
 	QMenu* helpMenu = menuBar()->addMenu(tr("&Help"));
 	
 	//:Name of the main toolbar
-	m_mainToolBar = addToolBar(tr("BibleTime"));
+	m_mainToolBar = addToolBar(tr("Main Toolbar"));
 	m_mainToolBar->setObjectName("MainToolBar");
 	m_mainToolBar->setFloatable(false);
 	m_mainToolBar->setMovable(false);
@@ -112,7 +112,7 @@ void BibleTime::initActions()
 	QAction* tmp = new QAction(this);
 	initAction(
 		tmp,
-		tr("Quit"),
+		tr("&Quit"),
 		QString("exit.svg"),
 		QKeySequence(Qt::CTRL + Qt::Key_Q),
 		tr("Quit BibleTime"),
@@ -144,20 +144,17 @@ void BibleTime::initActions()
 		QKeySequence(Qt::Key_F6),
 		"",
 		SLOT(slotToggleToolbar())));
-
-	//: E.g. "Show Bookshelf", "Show Mag" in View menu
-	QString showstr = tr("Show");
 	
 	QAction* action = m_dock0->toggleViewAction();
-	action->setText(showstr + " " + action->text());
+	action->setText(tr("Show Bookshelf"));
 	viewMenu->addAction(action);
 	
 	action = m_dock1->toggleViewAction();
-	action->setText(showstr + " " + action->text());
+	action->setText(tr("Show Bookmarks"));
 	viewMenu->addAction(action);
 	
 	action = m_dock2->toggleViewAction();
-	action->setText(showstr + " " + action->text());
+	action->setText(tr("Show Mag"));
 	viewMenu->addAction(action);
 	
 	m_mainToolBar->addSeparator();
@@ -294,10 +291,10 @@ void BibleTime::initActions()
 	m_windowCloseAll_action = new QAction(this);
 	m_windowMenu->addAction(initAction(
 		m_windowCloseAll_action,
-		tr("Cl&ose all"),
+		tr("Cl&ose all windows"),
 		CResMgr::mainMenu::window::closeAll::icon,
 		CResMgr::mainMenu::window::closeAll::accel,
-		tr("Close all open windows"),
+		tr("Close all open windows inside BibleTime"),
 		0)
 	);
 	QObject::connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT( deleteAll() ) );

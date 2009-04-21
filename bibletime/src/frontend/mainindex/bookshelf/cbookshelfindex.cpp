@@ -515,7 +515,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 					BTIndexModule* modItem = dynamic_cast<BTIndexModule*>(btItem);
 					if (modItem) {
 						CSwordModuleInfo* info = modItem->moduleInfo();
-						action->setText(QString(tr("Search in")).append(QString(" ").append(info->name()).append("...")));
+						action->setText(tr("Search in %1...").arg(info->name()));
 					}
 				}
 				else {
@@ -530,7 +530,7 @@ void CBookshelfIndex::contextMenu(const QPoint& p) {
 		foreach (QAction* action, m_actionList) {
 			// Change the text of some menu items to reflect multiple selection
 			if ((IndexAction)action->property("indexActionType").toInt() == SearchModules ) {
-				action->setText( QString(tr("Search in selected...")) );
+				action->setText(tr("Search in selected..."));
 			}
 			// Enable items
 			foreach(QTreeWidgetItem* item, items) {

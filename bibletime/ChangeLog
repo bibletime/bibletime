@@ -1,5 +1,6 @@
 2009-04-21 Martin Gruner <mgruner@crosswire.org>
 	* Applied cmake patch from Greg Hellings with slight modifications
+	* Applied translation patches from Jaak Ristioja
 
 2009-04-09 Gary Holmlund
     * Add translatable text for several dialogs

@@ -54,7 +54,7 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
 			connect(info, SIGNAL(indexingFinished()), this, SLOT(slotFinished()));
 			connect(info, SIGNAL(indexingProgress(int)), this, SLOT(slotModuleProgress(int)) );
 			QString modname(info->name());
-			const QString labelText = tr("Creating index for work: ").append(modname);
+			const QString labelText = tr("Creating index for work: %1").arg(modname);
 			m_progress->setLabelText(labelText);
 			//todo: if we want to cancel indexing from
 			info->buildIndex(); //waits until this module is finished

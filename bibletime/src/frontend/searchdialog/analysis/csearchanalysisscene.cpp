@@ -224,7 +224,7 @@ unsigned int CSearchAnalysisScene::getCount( const QString book, CSwordModuleInf
 }
 
 void CSearchAnalysisScene::saveAsHTML() {
-	const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, QString(tr("HTML files (*.html;*.HTML;*.HTM;*.htm)")) );
+	const QString fileName = QFileDialog::getSaveFileName(0, tr("Save Search Analysis"), QString::null, tr("HTML files (*.html;*.HTML;*.HTM;*.htm)") );
 	if (fileName.isEmpty()) return;
 
 	int count = 0;
@@ -278,7 +278,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 	}
 
 	text += QString("<table>\n") + tableTitle + tableTotals + m_searchAnalysisHTML + QString("</table>\n");
-	text += QString("<center>") + tr("Created by") + QString(" <a href=\"http://www.bibletime.info/\">BibleTime</a></center>");
+	text += QString("<center>") + tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>" + QString("</center>"));
 	text += QString("</body></html>");
 
 	CToolClass::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
