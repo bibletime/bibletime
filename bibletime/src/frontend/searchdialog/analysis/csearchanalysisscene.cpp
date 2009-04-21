@@ -278,7 +278,7 @@ void CSearchAnalysisScene::saveAsHTML() {
 	}
 
 	text += QString("<table>\n") + tableTitle + tableTotals + m_searchAnalysisHTML + QString("</table>\n");
-	text += QString("<center>") + tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>" + QString("</center>"));
+	text += QString("<center>") + tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>") + QString("</center>");
 	text += QString("</body></html>");
 
 	CToolClass::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
