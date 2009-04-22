@@ -1,4 +1,7 @@
 2009-04-21 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.beta1
+
+2009-04-21 Martin Gruner <mgruner@crosswire.org>
 	* Applied cmake patch from Greg Hellings with slight modifications
 	* Applied translation patches from Jaak Ristioja
 	* Applied patch from Jaak Ristioja which makes generated config.h obsolete
