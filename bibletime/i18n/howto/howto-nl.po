@@ -109,7 +109,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: index\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-05-20 18:50+0200\n"
+"POT-Creation-Date: 2009-04-21 12:33-0400\n"
 "PO-Revision-Date: 2003-07-01 13:57+0200\n"
 "Last-Translator: Harry Vennik <htvennik@zonnet.nl>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -2038,6 +2038,7 @@ msgid "Abstract"
 msgstr "Overzicht"
 
 #: docs/howto/en/docbook/index.docbook:50
+#, fuzzy
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: full\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2008-05-20 18:50+0200\n"
+"POT-Creation-Date: 2009-04-21 12:33-0400\n"
 "PO-Revision-Date: 2005-11-23 06:46+0100\n"
 "Last-Translator: Delalande Cedric <lauryced@tiscali.fr>\n"
 "Language-Team: Français <fr@li.org>\n"
@@ -2088,6 +2088,7 @@ msgstr "Résumé"
 
 #
 #: docs/howto/en/docbook/index.docbook:50
+#, fuzzy
 msgid ""
 "The <application>Biblestudy HowTo</application> is a guide for studying the "
 "Bible."
