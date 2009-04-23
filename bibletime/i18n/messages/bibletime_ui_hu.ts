@@ -280,7 +280,7 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="71"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation>BibleTime falhasználói felület létrehozása...</translation>
+        <translation>BibleTime felhasználói felület létrehozása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="73"/>
@@ -331,10 +331,6 @@
         <translation>(c) 1999-2009, BibleTime csapat</translation>
     </message>
     <message>
-        <source>Sword Version </source>
-        <translation type="obsolete">Sword verzió: </translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára lett készítve. A SWORD Projekt a CrossWire Biblia Társaság szabad felhasználású szoftver projektje. A projekt szándéka, hogy keresztplatformos nyílt forrású eszközöket készítsen -- a GNU GPL hatálya alatt -- melyek lehetővé teszik a programozók és Bibliatársaságok számára, hogy új Biblia szoftvereket készítsenek, könnyebben, egyszerűbben.</translation>
@@ -343,10 +339,6 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>The SWORD Project</source>
         <translation>A SWORD Projekt</translation>
-    </message>
-    <message>
-        <source>This program uses Qt Open Source Edition version </source>
-        <translation type="obsolete">Ez a program a QT következő nyílt forrású kiadását használja: </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
@@ -367,14 +359,6 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="165"/>
         <source> for an overview of Qt licensing.</source>
         <translation> weboldalt.a QT licensz áttekintéséért. </translation>
-    </message>
-    <message>
-        <source>License Agreement</source>
-        <translation type="obsolete">Licenszegyezmény </translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL licence.</source>
-        <translation type="obsolete">A BibleTime GPL licensz alatt lett kiadva. </translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
@@ -483,27 +467,27 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="122"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Néhány név hiányozhat, kéjük küldjön emailt a bibletime-translations@lists.sourceforge.net -címre, amennyiben hibásan jeleztük, vagy kihagytuk.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="136"/>
         <source>SWORD library version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sword verzió: %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a program a QT következő nyílt forrású kiadását használja: %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licensz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
         <source>BibleTime is released under the GPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime GPL licensz alatt lett kiadva. </translation>
     </message>
 </context>
 <context>
