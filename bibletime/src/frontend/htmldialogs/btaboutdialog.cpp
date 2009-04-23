@@ -107,8 +107,10 @@ void BtAboutDialog::init_contributors_tab()
 	content += "<li>Ilpo Kantonen</li>";
 	content += "<li>Pavel Laukko</li>";
 	content += "<li>Piotr Markiewicz</li>";
+	content += "<li>G&eacute;za Nov&aacute;k</li>";
 	content += "<li>Gabriel P&eacute;rez</li>";
 	content += "<li>Igor Plisco</li>";
+	content += "<li>Jaak Ristioja</li>";
 	content += "<li>Igor Rykhlin</li>";
 	content += "<li>Vlad Savitsky</li>";
 	content += "<li>Johan van der Lingen</li>";
@@ -116,6 +118,8 @@ void BtAboutDialog::init_contributors_tab()
 	content += "<li>Dmitry Yurevich</li>";
 	content += "<li>Esteban Zeller</li>";
 	content += "</ul>";
+	content += make_br();
+	content += tr("Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.");
 
 	QString contributors = make_html(make_head("") + make_body(content));
 	setHtml(contributors);
