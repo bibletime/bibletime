@@ -35,10 +35,8 @@ BtInstallMgr::BtInstallMgr()
 	qDebug("BtInstallMgr::BtInstallMgr");
 	this->setFTPPassive(true);
 #ifdef SWORD_INTERNET_WARNING
-	// We should use this getter/setter to show a dialog before
-	// the user opens network connection for the first time and
-	// get rid of the static warning.
-	setUserDisclaimerConfirmed(true);
+	// this was in 1.6RC1, removed in RC2. To be removed from here soon - uncomment this and comment out the isUserDisclaimerConfirmed if you need to use RC1.
+	//setUserDisclaimerConfirmed(true);
 #endif
 }
 
@@ -46,6 +44,15 @@ BtInstallMgr::~BtInstallMgr() {
 	//doesn't really help because it only sets a flag
 	terminate(); //make sure to close the connection
 }
+
+#ifdef SWORD_INTERNET_WARNING
+bool BtInstallMgr::isUserDisclaimerConfirmed() const
+{
+	// TODO: Check from config if it's been confirmed with "don't show this anymore" checked.
+	// Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
+	return true;
+}
+#endif
 
 void BtInstallMgr::statusUpdate(double dltotal, double dlnow)
 {
