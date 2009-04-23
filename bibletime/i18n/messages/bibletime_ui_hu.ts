@@ -4,13 +4,9 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <source>Information About</source>
-        <translation type="obsolete">Általános információ</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Információk</translation>
     </message>
 </context>
 <context>
@@ -52,15 +48,6 @@
         <translation>&amp;Segítség</translation>
     </message>
     <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation type="obsolete">Kilépés</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>&amp;Show toolbar</source>
         <translation>E&amp;szköztár mutatása</translation>
@@ -74,27 +61,27 @@
         <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Main Toolbar</source>
         <extracomment>Name of the main toolbar</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Fő eszköztár</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="114"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kilépés</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Show Bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvespolc mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="152"/>
         <source>Show Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyvjelzők mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="156"/>
         <source>Show Mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Nagyító mutatása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="181"/>
@@ -157,16 +144,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="293"/>
         <source>Cl&amp;ose all windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Öss&amp;zes ablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="296"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">Öss&amp;zes bezárása</translation>
+        <translation>Az összes BibleTime ablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
@@ -243,10 +226,6 @@
         <location filename="../../src/bibletime_init.cpp" line="286"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>A megnyitott ablakok automatikus (egymás mellé rendezése) vízszintes elrendezése </translation>
-    </message>
-    <message>
-        <source>Close all open windows</source>
-        <translation type="obsolete">Összes nyitott ablak bezárása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="303"/>
@@ -328,11 +307,6 @@
         <source>Mag</source>
         <translation>Nagyító</translation>
     </message>
-    <message>
-        <source>Show</source>
-        <extracomment>E.g. &quot;Show Bookshelf&quot;, &quot;Show Mag&quot; in View menu</extracomment>
-        <translation type="obsolete">Látható</translation>
-    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -355,6 +329,21 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c) 1999-2009, BibleTime csapat</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="131"/>
+        <source>Sword Version </source>
+        <translation>Sword verzió: </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="134"/>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <translation>A BibleTime a SWORD Projekt használatára lett készítve. A SWORD Projekt a CrossWire Biblia Társaság szabad felhasználású szoftver projektje. A projekt szándéka, hogy keresztplatformos nyílt forrású eszközöket készítsen -- a GNU GPL hatálya alatt -- melyek lehetővé teszik a programozók és Bibliatársaságok számára, hogy új Biblia szoftvereket készítsenek, könnyebben, egyszerűbben.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="136"/>
+        <source>The SWORD Project</source>
+        <translation>A SWORD Projekt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
@@ -410,6 +399,11 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="69"/>
         <source>Contributors</source>
         <translation>Közreműködők</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="31"/>
+        <source>About BibleTime</source>
+        <translation>Információk a BibleTimeról</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="71"/>
@@ -1244,10 +1238,6 @@
         <translation>Keresés</translation>
     </message>
     <message>
-        <source>Search in</source>
-        <translation type="obsolete">Keresés itt:</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="588"/>
         <source>Enter the unlock key for this work.</source>
         <translation>Gépelje be a dokumentum feloldó kódját.</translation>
@@ -1305,7 +1295,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="517"/>
         <source>Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 -ben keresés...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="532"/>
@@ -1959,10 +1949,6 @@
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <source>Creating index for work: </source>
-        <translation type="obsolete">Index készítése:</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
         <source>Cancel</source>
         <translation>Mégsem</translation>
@@ -1975,7 +1961,7 @@
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="56"/>
         <source>Creating index for work: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 indexelése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="102"/>
@@ -2402,7 +2388,7 @@
         <source>Names of languages</source>
         <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
         <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
-        <translation type="unfinished">Nyelvek elnevezései</translation>
+        <translation>Nyelvek elnevezései</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="164"/>
@@ -2414,7 +2400,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="167"/>
         <source>Amuzgo, Guerrero</source>
         <extracomment>Language name amu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Amuzgo, Guerrero</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="169"/>
@@ -2438,7 +2424,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Dél-Azerbajdzsáni</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
@@ -2474,7 +2460,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="196"/>
         <source>Chinantec, Comaltepec</source>
         <extracomment>Language name cco</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Comaltepec</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="198"/>
@@ -2492,37 +2478,37 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="202"/>
         <source>Chontal, Highland Oaxaca</source>
         <extracomment>Language name chd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chontal, Oaxaca felföld</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="204"/>
         <source>Chinantec, Quiotepec</source>
         <extracomment>Language name chq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Quiotepec</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="206"/>
         <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Ozumacín</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="209"/>
         <source>Cakchiquel, Western</source>
         <extracomment>Language name ckw</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Cakchiquel, nyugati</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="211"/>
         <source>Chinantec, Lalana</source>
         <extracomment>Language name cnl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Lalana</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="213"/>
         <source>Chinantec, Tepetotutla</source>
         <extracomment>Language name cnt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Tepetotutla</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="215"/>
@@ -2540,19 +2526,19 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="219"/>
         <source>Chinantec, Sochiapan</source>
         <extracomment>Language name cso</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Sochiapan</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="221"/>
         <source>Chol, Tila</source>
         <extracomment>Language name cti</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chol, Tila</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="223"/>
         <source>Chatino, Western Highland</source>
         <extracomment>Language name ctp</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chatino, Nyugati Felföld</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="225"/>
@@ -2582,7 +2568,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="234"/>
         <source>Duruma</source>
         <extracomment>Language name dug</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Duruma</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="237"/>
@@ -2672,7 +2658,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="267"/>
         <source>Geez</source>
         <extracomment>Language name gez</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Geez</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="272"/>
@@ -2732,7 +2718,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="293"/>
         <source>Huave, San Mateo Del Mar</source>
         <extracomment>Language name huv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Huave, San Mateo Del Mar</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="295"/>
@@ -2762,13 +2748,13 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="307"/>
         <source>Itzu00e1</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itza&apos;</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="309"/>
         <source>Ixil, San Juan Cotzal</source>
         <extracomment>Language name ixl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ixil, San Juan Cotzal</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="312"/>
@@ -2780,25 +2766,19 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="314"/>
         <source>Jacalteco, Eastern</source>
         <extracomment>Language name jac</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Jacalteco, Kelet</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="316"/>
         <source>Javanese, Caribbean</source>
         <extracomment>Language name jvn</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Javanese, karibi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="318"/>
         <source>Georgian</source>
         <extracomment>Language name ka</extracomment>
         <translation>Grúz</translation>
-    </message>
-    <message>
-        <source>Kekchí</source>
-        <comment>kek</comment>
-        <extracomment>Language name kek</extracomment>
-        <translation type="obsolete">Kekchi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
@@ -2828,7 +2808,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="339"/>
         <source>Lacandon</source>
         <extracomment>Language name lac</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lacandon</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="346"/>
@@ -2858,13 +2838,13 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="355"/>
         <source>Mixe, Isthmus</source>
         <extracomment>Language name mir</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixe, Isthmus</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="357"/>
         <source>Mixtec, Coatzospan</source>
         <extracomment>Language name miz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Coatzospan</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="359"/>
@@ -2876,7 +2856,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="361"/>
         <source>Mixtec, Silacayoapan</source>
         <extracomment>Language name mks</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Silacayoapan</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="366"/>
@@ -2897,11 +2877,6 @@
         <translation>Máltai</translation>
     </message>
     <message>
-        <source>Norwegian Bokmål</source>
-        <extracomment>Language name nb</extracomment>
-        <translation type="obsolete">Norvég Bokmål</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="391"/>
         <source>Low German; Low Saxon</source>
         <extracomment>Language name nds</extracomment>
@@ -2917,13 +2892,13 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="395"/>
         <source>Nahuatl, Guerrero</source>
         <extracomment>Language name ngu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Guerrero</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="397"/>
         <source>Nahuatl, Northern Oaxaca</source>
         <extracomment>Language name nhy</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Észak Oaxaca</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="400"/>
@@ -2947,7 +2922,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="413"/>
         <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Otomi, Querétaro</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="416"/>
@@ -2965,7 +2940,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="427"/>
         <source>Persian (Dari)</source>
         <extracomment>Language name prs</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Perzsa (dari)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="431"/>
@@ -2983,7 +2958,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="436"/>
         <source>Quichu00e9, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>K&apos;iche&apos;</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="440"/>
@@ -3079,7 +3054,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="492"/>
         <source>Tektiteko</source>
         <extracomment>Language name ttc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tektiteko</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="495"/>
@@ -3091,7 +3066,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="497"/>
         <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="500"/>
@@ -3109,7 +3084,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="505"/>
         <source>Uspanteco</source>
         <extracomment>Language name usp</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Uspanteco</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="508"/>
@@ -3130,58 +3105,10 @@
         <translation>Bajor</translation>
     </message>
     <message>
-        <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :))</comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. Write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Chris explained in an eMail how language codes are build: ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- Ethnologue (http://www.ethnologue.org/) ------- We intend to always follow OSIS locale conventions, which state that Ethnologue codes will be encoded in the format x-E-??? where ??? represents the 3-letter Ethnologue code in capital letters (though capitalization really doesn&apos;t matter here). ------- Some older modules maintain a former format for Ethnolgoue codes of xx-???, including the AleWiesler module.</extracomment>
-        <translatorcomment>Mégis lefordítottam :)</translatorcomment>
-        <translation type="obsolete">Nyelvek elnevezései</translation>
-    </message>
-    <message>
-        <source>Zarma</source>
-        <extracomment>Language name x-E-DJE</extracomment>
-        <translation type="obsolete">Zarma</translation>
-    </message>
-    <message>
-        <source>Alemannisch</source>
-        <extracomment>Language name x-E-GSW</extracomment>
-        <translation type="obsolete">Alemanni</translation>
-    </message>
-    <message>
-        <source>Haitian Creole French</source>
-        <extracomment>Language name x-E-HAT</extracomment>
-        <translation type="obsolete">Haiti Kreol Francia</translation>
-    </message>
-    <message>
-        <source>Itzá</source>
-        <extracomment>Language name x-E-ITZ</extracomment>
-        <translation type="obsolete">Itza</translation>
-    </message>
-    <message>
-        <source>Shuar</source>
-        <extracomment>Language name x-E-JIV</extracomment>
-        <translation type="obsolete">Shuar</translation>
-    </message>
-    <message>
-        <source>Kekchí</source>
-        <comment>x-E-KEK (same as kek)</comment>
-        <extracomment>Language name x-E-KEK (same as kek)</extracomment>
-        <translation type="obsolete">Kekchi</translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <extracomment>Language name x-E-KAB</extracomment>
-        <translation type="obsolete">Kabil</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation>Lombard</translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <extracomment>Language name x-E-PDG</extracomment>
-        <translation type="obsolete">Tok Pisin</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
@@ -3191,16 +3118,6 @@
 ----------
 Language name ppk</extracomment>
         <translation>Uma</translation>
-    </message>
-    <message>
-        <source>Romani, Vlax</source>
-        <extracomment>Language name x-E-RMY</extracomment>
-        <translation type="obsolete">Roma, Vlax</translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <extracomment>Language name x-E-SAJ</extracomment>
-        <translation type="obsolete">Sango</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
@@ -3218,13 +3135,13 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="521"/>
         <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, San Juan Guelavía</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="523"/>
         <source>Zapotec, Mitla</source>
         <extracomment>Language name zaw</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Mitla</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="525"/>
@@ -3236,43 +3153,43 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="527"/>
         <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Amatlán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="529"/>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Zoogocho</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="531"/>
         <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yalálag</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="533"/>
         <source>Zapotec, Chichicapan</source>
         <extracomment>Language name zpv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Chichicapan</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="535"/>
         <source>Zapotec, Southern Rincon</source>
         <extracomment>Language name zsr</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Dél Rincon</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="537"/>
         <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Quioquitani-Quierí</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="539"/>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yatee</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="541"/>
@@ -3559,37 +3476,37 @@ Language name ppk</extracomment>
         <source>Kekchu00ed</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Kekchi</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>(Több nyelv)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="375"/>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Közép</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="377"/>
         <source>Mam, Todos Santos Cuchumatu00e1n</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Todos Santos Cuchumatán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="379"/>
         <source>Mixe, Juquila</source>
         <extracomment>Language name mxq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixe, Juquila</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="381"/>
         <source>Mixtec, Jamiltepec</source>
         <extracomment>Language name mxt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Jamiltepec</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="383"/>
@@ -3601,13 +3518,13 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="386"/>
         <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Norvég Bokmål</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="388"/>
         <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Michoacán</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="423"/>
@@ -3625,7 +3542,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="514"/>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <extracomment>Language name xtd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Diuxi-Tilantongo</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="518"/>
@@ -4154,11 +4071,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">Készítette:</translation>
+        <translation>Készítette: &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
