@@ -321,82 +321,78 @@
         <translation>Várjuk fejlesztők és fordítók jelentkezését.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="57"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="58"/>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
         <translation>Ha szeretne csatlakozni csapatunkhoz, küldjön egy emailt az info@bibletime.info címre.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="60"/>
         <source>(c)1999-2009, The BibleTime Team</source>
         <translation>(c) 1999-2009, BibleTime csapat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="131"/>
         <source>Sword Version </source>
-        <translation>Sword verzió: </translation>
+        <translation type="obsolete">Sword verzió: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="134"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára lett készítve. A SWORD Projekt a CrossWire Biblia Társaság szabad felhasználású szoftver projektje. A projekt szándéka, hogy keresztplatformos nyílt forrású eszközöket készítsen -- a GNU GPL hatálya alatt -- melyek lehetővé teszik a programozók és Bibliatársaságok számára, hogy új Biblia szoftvereket készítsenek, könnyebben, egyszerűbben.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>The SWORD Project</source>
         <translation>A SWORD Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="151"/>
         <source>This program uses Qt Open Source Edition version </source>
-        <translation>Ez a program a QT következő nyílt forrású kiadását használja: </translation>
+        <translation type="obsolete">Ez a program a QT következő nyílt forrású kiadását használja: </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="154"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation>A QT nyílt forrású kiadás nyílt forrású alkalmazások fejlesztését teszi lehetővé. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="155"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="163"/>
         <source>Please see </source>
         <translation>Tekintse meg a </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="165"/>
         <source> for an overview of Qt licensing.</source>
         <translation> weboldalt.a QT licensz áttekintéséért. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
         <source>License Agreement</source>
-        <translation>Licenszegyezmény </translation>
+        <translation type="obsolete">Licenszegyezmény </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="170"/>
         <source>BibleTime is released under the GPL licence.</source>
-        <translation>A BibleTime GPL licensz alatt lett kiadva. </translation>
+        <translation type="obsolete">A BibleTime GPL licensz alatt lett kiadva. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="171"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Letöltheti és használhatja (de nem terjesztheti) a programot személyes, magán, nyilvános vagy üzleti célból korlátozások nélkül. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Értékesítheti és terjesztheti a programot, ha a hozzá tartozó forráskódot is terjeszti. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
         <source>The complete legally binding license is below.</source>
         <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="69"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="70"/>
         <source>Contributors</source>
         <translation>Közreműködők</translation>
     </message>
@@ -406,83 +402,108 @@
         <translation>Információk a BibleTimeról</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="71"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="72"/>
         <source>The following people contributed to BibleTime:</source>
         <translation>A következő emberek működtek közre a BibleTime létrehozásában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="74"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
         <source>documentation and translation manager</source>
         <translation>dokumentációs és fordítási menedzser</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="76"/>
         <source>project founder, developer</source>
         <translation>projektalapító, fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="76"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="78"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
         <source>designer</source>
         <translation>tervező</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="79"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="78"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="80"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="86"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="87"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="88"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="89"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="90"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="91"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="92"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="97"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
         <source>developer</source>
         <translation>fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="81"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
         <source>packager</source>
         <translation>csomagkészítő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
         <source>creator of The Sword Project</source>
         <translation>a Sword Projekt alapítója</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
         <source>project manager, developer</source>
         <translation>projektmenedzser, fejlesztő</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
         <source>domain sponsor</source>
         <translation>domain szponzor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="86"/>
         <source>howto</source>
         <translation>hogyan</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
         <source>documentation</source>
         <translation>dokumentáció</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="95"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
         <source>tester, usability expert</source>
         <translation>tesztelő, használhatósági ellenőr</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="101"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="102"/>
         <source>The following people translated BibleTime into their language:</source>
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="122"/>
+        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="136"/>
+        <source>SWORD library version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
+        <source>This program uses Qt Open Source Edition version %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
+        <source>BibleTime is released under the GPL license.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
