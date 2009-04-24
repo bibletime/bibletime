@@ -2,13 +2,13 @@
   <title>Bevezetés</title>
   <sect1 id="hdbk-intro-about">
     <title>Mi a &bibletime;</title>
-    <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules are easy to install and 
-manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
-the back-end functionality for &bibletime;, such as viewing Bible text, 
-searching etc. Sword is the flagship product of the <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+    <para>A &bibletime; egy könnyen telepíthető és kezelhető Biblia tanulmányozó 
+eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg dokumentummal, 
+modullal. Ez a program a <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> keretrendszerre épül, 
+mely lehetővé teszi a szövegek megjelenítését, keresését stb. A Sword a 
+zászlóshajója a <ulink url="http://www.crosswire.org">Crosswire Biblia 
+Társaságnak</ulink>.</para>
 
     <para>A &bibletime; úgy lett tervezve, hogy képes legyen alkalmazni a Sword 
 projekt által értelmezhető formátumú dokumentumokat. Teljeskörű információt 
@@ -50,7 +50,7 @@ Biblia fejezeteihez.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
-          <term>Napi áhitatok</term>
+          <term>Napi áhítatok</term>
           <listitem>
             <para>Sok ember hálás ezekért a napi adagokért Isten igéjéből.</para>
           </listitem>
@@ -59,9 +59,9 @@ Biblia fejezeteihez.</para>
           <term>Lexikonok/szótárak</term>
           <listitem>
             <para>Itt találhatja például: Robinson Morfológiai Elemzési Kódok, 
-Brown-Driver-Briggs Héber Lexikon és a Nemzetközi Standard 
-BibliaEnciklopédia. Szótárak közül: Strong's Héber Bibliai Szótár, Strong's 
-Görög Bibliai Szótár...</para>
+Brown-Driver-Briggs Héber Lexikon és a Nemzetközi Standard Biblia 
+Enciklopédia. Szótárak közül: Strong's Héber Bibliai Szótár, Strong's Görög 
+Bibliai Szótár...</para>
           </listitem>
         </varlistentry>
       </variablelist></para>

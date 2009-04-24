@@ -46,25 +46,25 @@ ugyanannál a résznél, ahol éppen tart, egyszerűen megteheti. Csak kattintso
 a <mousebutton>bal egérgombbal</mousebutton> a versre, hivatkozásra (a 
 mutató kéz alakúra vált) és húzza a könyvespolcra. Vigye a kívánt 
 dokumentumra, az a kívánt helyen fog megnyílni. Ugyanígy húzhat egy 
-hivatkozást a nyitott dokumentumablakra, és az a kívánt hivatkozásra fog 
+hivatkozást a nyitott dokumentum ablakra, és az a kívánt hivatkozásra fog 
 ugrani.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Kiegészítő információk egy adott dokumentumról</title>
         <para>Amikor <mousebutton>jobb</mousebutton> egérgombbal rákattint egy dokumentum 
-szimbóumára, egy helyi menüt láthat olyan bejegyzésekkel, ami az adott 
-munkára érvényes. Az <guimenuitem>"Általános információk"</guimenuitem> egyg 
+szimbólumára, egy helyi menüt láthat olyan bejegyzésekkel, ami az adott 
+munkára érvényes. Az <guimenuitem>"Általános információk"</guimenuitem> egy 
 új ablakot nyit meg, a dokumentumra vonatkozó információkkal. A 
 <guimenuitem>"Feloldás"</guimenuitem> egy kis párbeszédablakot nyit meg, 
-ahol megadhatja a zárolt dokumentumok feloldókulcsát. A zárolt 
+ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt 
 dokumentumokról kiegészítő információt olvashat <ulink 
 url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> ezen az 
 oldalon</ulink>, a Crosswire Bibliai Társaság honlapján. </para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
-        <title>Keresás a dokumentumokban</title>
+        <title>Keresés a dokumentumokban</title>
         <para>Kereshet a dokumentumokban, ha a <mousebutton>jobb</mousebutton> egérgombbal 
 kattint a  dokumentum ikonjára, és kiválasztja a <guimenuitem>"Keresés 
 itt:"</guimenuitem> menüpontot. A &Shift; segítségével másik ikonokra 
@@ -111,11 +111,11 @@ részben látható. Tegyen egy próbát...</para>
 
     <sect2 id="hdbk-op-parts-desk">
       <title>A Munkaasztal</title>
-      <para>The Desk is where the real work with &bibletime; takes place. Here you can 
-open works from the Bookshelf, read them, <link 
-linkend="hdbk-op-search">search</link> in them, and even save your 
-annotations in the personal commentary module (see <link 
-linkend="hdbk-op-parts-desk-write">below</link>).</para>
+      <para>A munkaasztal a igazi munkaterülete a &bibletime; szoftvernek. Ide nyílnak 
+meg a dokumentumok a könyvespolcról, olvashatja azokat, <link 
+linkend="hdbk-op-search">kereshet</link> bennük, és saját megjegyzéseket 
+fűzhet és elmentheti azokat ( <link 
+linkend="hdbk-op-parts-desk-write">ahogyan az itt látható</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
         <title>Dokumentumok olvasása</title>
@@ -129,7 +129,7 @@ munkában.</para>
 
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Megnyitott ablakok elhelyezése</title>
-        <para>Természetesen egyszerre több dokumentum lehet megynitva a  munkaasztalon, 
+        <para>Természetesen egyszerre több dokumentum lehet megnyitva a  munkaasztalon, 
 ahol több lehetősége van azokat elrendezni. Vessen egy pillantást az 
 <guimenu>Ablak</guimenu> menüre a főmenüben. Látható, hogy az ablakok 
 elhelyezkedését ön kézzel is és a &bibletime; automatikusan is 
@@ -153,9 +153,8 @@ nyílik meg, ekkor nem tudja szerkeszteni. Szerkeszteni akkor tudja, ha
 <guimenuitem>HTML</guimenuitem>(alap wysiwyg szerkesztő).</para>
 
         <tip>
-          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is 
-deactivated, please check if you have write permission for the files of the 
-personal commentary.</para>
+          <para>Ha a <menuchoice> <guimenu>Dokumentum szerkesztése</guimenu> </menuchoice> 
+inaktív, lehetséges, hogy nincs írási joga a személyes kommentárhoz.</para>
         </tip>
 
         <tip>
@@ -166,7 +165,7 @@ dokumentumra, és a vers szövege beszúrásra kerül. </para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-search">
-    <title>Keresás a dokumentumokban</title>
+    <title>Keresés a dokumentumokban</title>
 
     <sect2 id="hdbk-op-search-intext">
       <title>Keresés egy megnyitott ablakban </title>
@@ -174,32 +173,32 @@ dokumentumra, és a vers szövege beszúrásra kerül. </para>
 olvasott fejezetben, úgy, ahogy bármely más programban is. Csak kattintson a 
 <mousebutton>jobb</mousebutton> egérgombbal, és válassza a 
 <guimenuitem>Keresés...</guimenuitem> opciót, vagy használhatja a <keycombo 
-action="simul">&Ctrl; <keycap>F</keycap></keycombo> billentyűkombinációt 
+action="simul">&Ctrl; <keycap>F</keycap></keycombo> billentyű kombinációt 
 is. </para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
       <title>Keresési párbeszédablak elérése </title>
-      <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton>mouse button on its symbol in the 
-<guimenu>Bookshelf</guimenu>and selecting <guimenuitem>Search in 
-work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
-work's names you can select more than one. Then follow the same procedure to 
-open the search dialog. You will be searching in all of these works at the 
-same time.</para>
+      <para>Keresést kezdeményezhet egy dokumentumban, hogy 
+<mousebutton>jobb</mousebutton>egérgombbal rákattint az ikonjára a 
+<guimenu>Könyvespolcon</guimenu>, és kiválasztja a <guimenuitem>Keresés a 
+dokumentum(ok)ban</guimenuitem> lehetőséget. A &Shift; vagy a &Ctrl; 
+nyomvatartásával egyszerre több dokumentumot is hozzáadhat a kereséshez, 
+hasonló módon, mint ha csak egy dokumentumban keresne. Ekkor az összes 
+kiválasztott munkában fog keresni egyszerre.</para>
 
-      <para>You can also access the search dialog by clicking on <menuchoice> 
-<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting 
-the appropriate entry.</para>
+      <para>Szintén elérhető a keresési funkció a főmenü <menuchoice> 
+<guimenu>Keresés</guimenu> </menuchoice> almenüjéből, ahol kiválaszthatja a 
+megfelelő bejegyzést.</para>
 
-      <para>A third possibility to start searches is to click on the search symbol in an 
-open read window.</para>
+      <para>A harmadik lehetőség a kereséshez a keresés ikonra kattintással érhető el 
+egy megnyitott olvasási ablakban.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
-      <title>Search configuration</title>
+      <title>A keresés testreszabása </title>
       <screenshot>
-        <screeninfo>Search Text Dialog Options Tab</screeninfo>
+        <screeninfo>Szöveg keresése ablak lehetőségei </screeninfo>
         <mediaobject>
           <imageobject>
             <imagedata fileref="ss_searchopts.png" format="PNG" />
@@ -207,93 +206,98 @@ open read window.</para>
         </mediaobject>
       </screenshot>
       <sect3 id="hdbk-op-search-config-works">
-        <title>Selecting works</title>
-        <para>At the top of the options tab you will find 
-<guibutton>Choose</guibutton>(works). If you would like to search in 
-multiple works, click on this button and you will be offered a menu where 
-you can select the works you want to search in.</para>
+        <title>Dokumentumok kiválasztása</title>
+        <para>A párbeszédablak felső részében található egy 
+<guibutton>Választás</guibutton> feliratú gomb. Ha egyszerre több 
+dokumentumban kíván keresni, kattintson erre a gombra, és a lehetőségekből 
+kiválaszthatja a keresésbe bevonandó munkákat.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
-        <title>Using Search Scopes</title>
-        <para>You can narrow the scope of your search to certain parts of the Bible by 
-selecting one of the predefined scopes from the list in <guimenu>Search 
-scope</guimenu>. You can define your own search ranges by clicking the 
-<guibutton>Setup ranges</guibutton>button.</para>
+        <title>Keresési hatókörök használata</title>
+        <para>Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben választ 
+egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön is 
+meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva.</para>
       </sect3>
       <sect3 id="hd-op-search-config-syntax">
-        <title>Basic Search Syntax Introduction</title>
-        <para>Enter search terms separated by spaces. By default the search function will 
-return results that match any of the search terms (OR). To search for all 
-the terms separate the terms by AND.</para>
-        <para>You can use wildcards: '*' matches any sequence of characters, while '?' 
-matches any single character. The use of brackets allows you to group your 
-search terms, e.g. '(Jesus OR spirit) AND God'.</para>
-        <para>To search text other than the main text, enter the text type followed by 
-':', and then the search term. For example, to search for the Strong's 
-number H8077, use 'strong:H8077'.</para>
-        <para>Available text types: 
+        <title> Az alapvető keresési kifejezések bemutatása</title>
+        <para>Gépelje be a keresett kifejezéseket szúközökkel 
+elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek 
+felsorolva, amelyekben bármelyik kifelyezés előfordul (OR - angolul a VAGY 
+kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
+megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
+kifejezések között.</para>
+        <para>Használhat helyettesítő karaktereket is: a '*' bármennyi betűt helyettesít, 
+míg a '?' csak egyet. Zárójelek használatával csoportosíthatja (mint 
+matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
+Isten'.</para>
+        <para>Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása 
+után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's 
+szám előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
+        <para>Lehetséges szövegtípusok: 
         <table id="hd-op-search-config-syntax-table">
-	  <title>Search Types</title>
+	  <title>Keresési típusok</title>
           <tgroup cols="2">
             <thead>
               <row>
-                <entry>Prefix</entry>
-                <entry>Meaning</entry>
+                <entry>Prefix (előtag)</entry>
+                <entry>Meaning (jelentés)</entry>
               </row>
             </thead>
             <tbody>
               <row>
-                <entry>heading:</entry>
-                <entry>searches headings</entry>
+                <entry>heading: (fejléc)</entry>
+                <entry>A fejlécekben keres</entry>
               </row>
               <row>
-                <entry>footnote:</entry>
-                <entry>searches footnotes</entry>
+                <entry>footnote: (lábjegyzet)</entry>
+                <entry>a lábjegyzetekben keres</entry>
               </row>
               <row>
                 <entry>strong:</entry>
-                <entry>searches Strong's Numbers</entry>
+                <entry>a Strong's számok előfordulásait keresi</entry>
               </row>
               <row>
-                <entry>morph:</entry>
-                <entry>searches morphology codes</entry>
+                <entry>morph: (alak)</entry>
+                <entry>alaktani kódokra keres</entry>
               </row>
             </tbody>
           </tgroup>
         </table></para>
-        <para>BibleTime uses the Lucene search engine to perform your searches. It has 
-many advanced features, and you can read more about it here: <ulink 
+        <para>A BibleTime a Lucene keresőmotorját alkalmazza, mely további fejlettebb 
+keresési lehetőséget ajánl. Többet megtudhat erről a <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
-http://lucene.apache.org/java/docs/index.html</ulink></para>
+http://lucene.apache.org/java/docs/index.html</ulink> webcímen.</para>
       </sect3>
     </sect2>
     <sect2 id="hdbk-op-search-results">
-      <title>Search results</title>
-      <para>Here you can see how many instances of the search string were found, sorted 
-by works. Clicking on a work with the <mousebutton>right</mousebutton>mouse 
-button allows you to copy, save, or print all verses that were found in a 
-certain work at once. This also works when you click on one or more of the 
-references to copy, save or print them. Clicking on a particular reference 
-opens that verse up in context in the preview window below.</para>
+      <title>Keresési találatok</title>
+      <para>Bemutatunk néhány példát a keresésre, munkánként 
+csoportosítva. <mousebutton>Jobb </mousebutton>egérgombbal a munkára 
+kattintva lehetősége nyílik menteni, másolni vagy kinyomtatni az összes 
+verset, amelyet talált a munkában akár egyszerre is. Ugyanígy működik az is, 
+ha csak egy, vagy több hivatkozást jelöl ki mentésre, másolásra, vagy 
+nyomtatásra. Egy hivatkozásra kattintva az előnézeti ablakban láthatóvá 
+válik a vers a szövegkörnyezetében.</para>
       <tip>
-        <para>Drag a reference and drop it on a work symbol on the Bookshelf to open the 
-work at that verse in a new read window.</para>
+        <para>Ragadjon meg egy hivatkozást, és ejtse a Könyvespolcon egy dokumentum 
+ikonjára, és a dokumentum megnyílik a hivatkozott versnél.</para>
       </tip>
       <tip>
-        <para>Drag a reference and drop it on an open read window, and it will jump to 
-that verse.</para>
+        <para>Ragadjon meg egy hivatkozást, és ejtse egy megnyitott ablakra, a dokumentum 
+a hivatkozott helyre ugrik.</para>
       </tip>
       <tip>
-        <para>Select references and drag them to the Bookshelf to create bookmarks.</para>
+        <para>Válasszon ki hivatkozásokat, és húzza a könyvespolcra könyvjelzők 
+készítéséhez.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
-        <title>Search result analysis</title>
-        <para>Click on <guibutton>Search analysis</guibutton>to open the search analysis 
-display. This gives a simple graphic analysis of the number of instances the 
-search string was found in each book of the Bible, and you can also save the 
-analysis.</para>
+        <title>Keresési találatok elemzése</title>
+        <para>Kattintson a <guibutton>Találatok elemzése</guibutton> gombra, hogy 
+megnyissa a találatokat elemző ablakot. Itt egy egyszerű grafikus elemzést 
+láthat a találatokról, találatok száma szerint a Biblia könyvei szerint. Ezt 
+az elemzést is el tudja menteni.</para>
         <screenshot>
-          <screeninfo>Search Analysis Dialog Box</screeninfo>
+          <screeninfo>Találatok elemzése ablak</screeninfo>
           <mediaobject>
             <imageobject>
               <imagedata fileref="ss_searchanal.png" format="PNG" />
@@ -304,52 +308,51 @@ analysis.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-bookshelfmanager">
-    <title>The <guimenuitem>Bookshelf Manager</guimenuitem></title>
-    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
-Bookshelf. You can install new works to your Bookshelf, and update or remove 
-existing works from your Bookshelf. Access it by clicking <menuchoice> 
-<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
-</menuchoice> in the main menu.</para>
+    <title>A <guimenuitem>Könyvespolc menedzser</guimenuitem></title>
+    <para>A <guimenuitem>Könyvespolc menedzser</guimenuitem> egy segédeszköz a 
+könyvespolcunk kezeléséhez. Ennek segítségével tud új dokumentumokat 
+telepíteni a könyvespolcra, frissíteni vagy akár törölni azokat. Megtalálja 
+a főmenü <menuchoice> <guimenu>Beállítások</guimenu> 
+<guimenuitem>Könyvespolc menedzser</guimenuitem> </menuchoice> almenüjében.</para>
     <sect2 id="hdbk-op-bookshelfmanager-path">
-      <title>Bookshelf path(s) setup</title>
-      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
-drive. You can even store it in multiple directories. Default is 
-"~/.sword/".</para>
+      <title>Telepítési útvonal(ak) beállítása</title>
+      <para>Itt adható meg, hogy a &bibletime; hol tárolhatja a "Könyvespolcát" a 
+merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a 
+".sword" mappa a saját mappájában.</para>
       <tip>
-        <para>If you have a sword CD, but do not want to install all the works on the hard 
-disk, but use them directly from the CD, then you can add the path to the CD 
-as one of your bookshelf paths. When you start &bibletime;, it will show all 
-works on the CD if it is present.</para>
+        <para>Ha rendelkezésére áll egy sword CD, és nem akarja azt feltelepíteni, 
+lehetősége van a CD elérési útját megadni, mintha "konyvespolc" lenne, ebben 
+az esetben a &bibletime; indításakor az összes dokumentum látható lesz, ha a 
+CD a gépben van.</para>
       </tip>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
-      <title>Install/update work(s)</title>
-      <para>With this facility, you can connect to a repository of works (called 
-"library"), and transfer one or more works to your local Bookshelf. These 
-libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online 
-repository of Sword modules, or another site offering Sword modules). You 
-can manage your libraries with <guibutton>Add library</guibutton> and 
-<guibutton>Delete library</guibutton>.</para>
-      <para>To begin the installation or update process, select a library you want to 
-connect to and a local Bookshelf path to install the work(s) to. Then click 
-on <guibutton>Connect to library</guibutton>. &bibletime; will scan the 
-contents of the library and present you with a list of works that you can 
-add to your Bookshelf, or that you already have installed but are available 
-in a new version in the library, and thus can be updated. Then you can mark 
-all works that you want to install or update, and click on 
-<guibutton>Install works</guibutton>. They will then be transferred to your 
-Bookshelf.</para>
+      <title>Dokumentum(ok) telepítése/frissítése</title>
+      <para>Evvel a lehetőséggel élve csatlakozhat egy dokumentum tárolóhelyhez 
+("könyvtárhoz"), és letölthet egy, vagy akár több munkát a saját helyi 
+könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. sword CD), vagy 
+távoliak is, mint a Crosswire online tárolóhelye. Egyszerűen kezelheti 
+ezeket a lelőhelyeket a <guibutton>Hozzáadás</guibutton> és a 
+<guibutton>Törlés</guibutton> gomb segítségével.</para>
+      <para>A telepítési vagy frissítési folyamat elkezdéséhez válassza ki a forrást, 
+melyhez csatlakozni kíván, és a helyi könyvespolcot, ahova telepíteni 
+szeretne. Ezek után kattintson a <guibutton> Frissítés...</guibutton> 
+gombra. A &bibletime; leellenőrzi a tároló tartalmát, és elkészít egy listát 
+a telepíthető, vagy a meglévő de frissíthető dokumentumokról. Már csak ki 
+kell jelölnie a telepítendőeket, majd <guibutton>Telepítés...</guibutton> és 
+a kívánt munkák a könyvespolcára kerülnek.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-remove">
-      <title>Remove work(s)</title>
-      <para>This facility allows you to delete one or more of the works from your 
-Bookshelf too free up disk space. Simply mark the items and click on 
-<guibutton>Remove works</guibutton>.</para>
+      <title>Dokumentum(ok) törlése</title>
+      <para>Ez a lehetőség biztosítja önnek, hogy a nem kívánt munkákat eltávolítsa, 
+lemezterületet szabadítson fel. Egyszerűen jelölje meg a törölni kívánt 
+eleme(ke)t a könyvespolcon, majd kattintson a 
+<guibutton>Törlés...</guibutton> gombra.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
-      <title>Search Indexes</title>
-      <para>This option allows you to create new search indexes and cleanup orphaned 
-index files for removed works.</para>
+      <title>Keresési indexek</title>
+      <para>Ez az opció teszi lehetővé, hogy új indexeket készítsen, vagy kitakarítsa a 
+törölt dokumentumok elárvult indexeit.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.
@@ -357,21 +360,19 @@ index files for removed works.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-op-output">
-    <title>Exporting and Printing</title>
-    <para>In many places, you can open a context menu by clicking with the 
-<mousebutton>right</mousebutton>mouse button. Depending on context, it will 
-allow you to <guimenuitem>Select</guimenuitem>, 
-<guimenuitem>Copy</guimenuitem> (to clipboard), 
-<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 
-text. This works for example in the read windows, when you click on the 
-normal text or the verse reference, or in the search result page when you 
-click on a work or one or more verse references. It is pretty 
-straightforward, so just try it out.</para>
+    <title>Exportálás és Nyomtatás</title>
+    <para>Több helyen van lehetősége helyi menüt nyitni a 
+<mousebutton>jobb</mousebutton> egérgombbal. Helyzettől függően lehetősége 
+van <guimenuitem>Kijelölni</guimenuitem>, <guimenuitem>Másolni</guimenuitem> 
+(a vágólapra), <guimenuitem>Menteni</guimenuitem> vagy 
+<guimenuitem>Nyomtatni</guimenuitem>. Ilyen menü nyílik meg például az 
+olvasási ablakban, vagy a keresési ablakban, mikor egy találatra 
+kattint. Tényleg ilyen egyszerű, csak próbálja ki.</para>
 
-    <para>Printing from &bibletime; is rather basic and is intended as a utility. If 
-you are composing a document or presentation containing text from 
-&bibletime; works, we suggest that you use one of the presentation or 
-editing tools on your system to format your document, rather than printing 
-from &bibletime; directly.</para>
+    <para>A &bibletime; nyomtatási képességei csak a legalapvetőbbek, és csak 
+segédeszköz jellegűek. Amennyiben ön szöveget szerkeszt, vagy prezentációt 
+készít, melyben &bibletime; szöveget szeretne elhelyezni, javasoljuk, hogy 
+erre külső, önnek megfelelő eszközt használjon, minthogy a &bibletime; 
+nyomtatási képességeire támaszkodjon közvetlenül.</para>
   </sect1>
 </chapter>

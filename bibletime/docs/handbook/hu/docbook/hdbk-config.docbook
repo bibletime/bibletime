@@ -15,7 +15,7 @@ beállítása</guimenuitem> menüpont kiválasztásával.</para>
       <para>A kezdeti megjelenés is beállítható, választhat az alábbi lehetőségek közül: 
       <itemizedlist>
         <listitem>
-          <para>Indítási logo mutatása</para>
+          <para>Indítási logó mutatása</para>
         </listitem>
       </itemizedlist></para>
       <para>A sablonok határozzák meg a szövegek megjelenítését (színek, méretek 
@@ -47,7 +47,7 @@ nyelvhez.</para>
       </mediaobject>
       <para>&bibletime; képes az összes támogatott betűkészletet használni. Ha a 
 dokumentum amit néz, tökéletesen megjelenik, nem kell tennie semmit, 
-ellenben ha a dokumentum egy sorozat kérdőjelet (????????), vagy üres 
+ellenben ha a dokumentum egy sorozat kérdőjelt (????????), vagy üres 
 négyzetet tartalmaz, akkor tudhatja, hogy az alapértelmezett betűkészlet nem 
 tartalmazza azokat a karaktereket, amelyek a helyes megjelenítéshez 
 szükségesek.</para>
@@ -60,15 +60,15 @@ képes helyesen megjeleníteni a kívánt dokumentumot, akkor próbálja meg
 telepíteni a kívánt nyelv nyelvi fájljait.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Betűkészlet telepítése</title>
-        <para>A kívánt betűkészlet telepítése tűlmutat ezen készikönyvnek a 
+        <para>A kívánt betűkészlet telepítése túlmutat ezen kézikönyvnek a 
 hatáskörén. További információkért keresse fel a <ulink 
-url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> UNICODE 
 HOWTO</ulink> weboldalt.</para>
         <tip>
           <para>Ha egy egyszerűbb, kisebb betűkészletet használ, mint a Clearlyu (kb. 22kb), 
 a &bibletime; gyorsabban fut, mint egy nagyobb, összetettebb betűkészletnél, 
 mint a <trademark class="registered">Bitstream 
-Cyberbit</trademark>(kb. 12Mb).</para>
+Cyberbit</trademark>(kb. 12MB).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
@@ -86,19 +86,19 @@ Cyberbit</trademark>(kb. 12Mb).</para>
 ugyanazon a számítógépen.</para>
           </listitem>
           <listitem>
-            <para>Betűkészletgyűjtemény, például Adobe vagy Bitstream.</para>
+            <para>Betűkészlet-gyűjtemény, például Adobe vagy Bitstream.</para>
           </listitem>
           <listitem>
-            <para>Online betűkészletgyűjtemények.</para>
+            <para>Online betűkészlet-gyűjtemények.</para>
           </listitem>
         </itemizedlist>
-        <para>Az Unicode betűkészletek többféle karaktert tartalmaznak, mint az egyéb 
+        <para>Az UNICODE betűkészletek többféle karaktert tartalmaznak, mint az egyéb 
 készletek, és néhány ilyen betűkészlet ingyenesen is elérhető. Egy 
-betűkészlet sem tartalmazza az összes karaktert, amit az Unicode szabvány 
+betűkészlet sem tartalmazza az összes karaktert, amit az UNICODE szabvány 
 meghatároz, ezért lehetséges, hogy nyelvenként különböző betűkészleteket 
 kell használnia.</para>
         <table id="hdbk-config-unicode-fonts-table">
-          <title>Unicode betűkészletek</title>
+          <title>UNICODE betűkészletek</title>
           <tgroup cols="2">
             <tbody>
               <row>
@@ -106,7 +106,7 @@ kell használnia.</para>
                   <ulink url="http://code2000.net/CODE2000.ZIP">
                   Code2000</ulink>
                 </entry>
-                <entry>Lehetséges, hogy a legjobb az ingyenes Unicode készlet, amely sokféle 
+                <entry>Lehetséges, hogy a legjobb az ingyenes UNICODE készlet, amely sokféle 
 karaktert tartalmaz.</entry>
               </row>
               <row>
@@ -114,7 +114,7 @@ karaktert tartalmaz.</entry>
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Kiváló Unicode készletek szerezhetőek be a Summer Institute of Linguistics 
+                <entry>Kiváló UNICODE készletek szerezhetőek be a Summer Institute of Linguistics 
 -tól.</entry>
               </row>
               <row>
@@ -122,7 +122,7 @@ karaktert tartalmaz.</entry>
                   <ulink url="http://www.nongnu.org/freefont/">
                   FreeFont</ulink>
                 </entry>
-                <entry>Egy új ingyenes Unicode készlet kezdeményezés.</entry>
+                <entry>Egy új ingyenes UNICODE készlet kezdeményezés.</entry>
               </row>
               <row>
                 <entry>
@@ -136,7 +136,7 @@ karaktert tartalmaz.</entry>
                   <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Tartalmazzák a teljes Unicode kódokat, de lelassítják a &bibletime; futását 
+                <entry>Tartalmazzák a teljes UNICODE kódokat, de lelassítják a &bibletime; futását 
 a méretük miatt.</entry>
               </row>
               <row>
@@ -154,12 +154,12 @@ héber és thai karaktereket.</entry>
             </tbody>
           </tgroup>
         </table>
-        <para>Jó Unicode betűkészlet listákat találhat a neten, as the one például egyet 
-Christoph Singer összeállításában ( <ulink 
+        <para>Jó UNICODE betűkészlet listákat találhat a neten, például egyet Christoph 
+Singer összeállításában ( <ulink 
 url="http://www.slovo.info/unifonts.htm">Többnyelvű Unicode TrueType 
 betűkészletek az Interneten</ulink>), vagy egy másik Alan Woodtól ( <ulink 
 url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter 
-összerevők és az Unicode készletek, amelyek tartalmazzák</ulink>).</para>
+összetevők és az Unicode készletek, amelyek tartalmazzák</ulink>).</para>
       </sect3>
     </sect2>
     <sect2 id="hdbk-config-bt-desk">

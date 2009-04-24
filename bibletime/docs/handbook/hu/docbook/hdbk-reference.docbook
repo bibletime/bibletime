@@ -1,13 +1,12 @@
 <chapter id="hdbk-reference">
-  <title>Reference</title>
+  <title>Tájékoztatás</title>
   <sect1 id="hdbk-reference-menus">
-    <title>Main menu reference</title>
-    <para>In this section you can find detailed descriptions of all entries in the 
-main menu of &bibletime;. They are ordered in just the way they appear in 
-&bibletime;, with all the sub-items listed under the major menu item they 
-belong to. You can also see the hotkey of each item;a complete listing of 
-all hotkeys can be found in <link linkend="hdbk-reference-hotkeys">this 
-section</link>.</para>
+    <title>Főmenü referenciája</title>
+    <para>Ebben a részben részletes leírást találhat a &bibletime; főmenüjének összes 
+bejegyzéséről, elérésük szerint csoportosítva, az összes 
+albejegyzéseikkel. Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk 
+tartoznak. Az elérhető gyorsbillentyűk teljes listáját <link 
+linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -32,8 +31,8 @@ section</link>.</para>
             </term>
             <listitem>
               <para>
-              <action>Closes BibleTime.</action> BibleTime will ask you if you want to 
-write unsaved changes to disk.</para>
+              <action>BibleTime bezárása</action>.  A BibleTime meg fogja kérdezni, hogy 
+elmentse -e a változtatásokat a lemezre.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -53,8 +52,8 @@ write unsaved changes to disk.</para>
           </term>
           <listitem>
             <para>
-            <action>Toggles Toolbar display.</action> Toggle this setting to turn the 
-main toolbar on or off.</para>
+            <action>Eszköztár megjelenítése. </action> Itt kapcsolhatja ki/be a fő 
+eszköztár megjelenítését.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
@@ -76,9 +75,8 @@ main toolbar on or off.</para>
           </term>
           <listitem>
             <para>
-            <action>Toggles display of the Bookshelf.</action> Toggle this setting to 
-turn the Bookshelf on the left pane on or off. This can be handy if you need 
-more space for the Mag.</para>
+            <action>Könyvespolc megjelenítése.</action> Itt kapcsolhatja ki/be a 
+Könyvespolc megjelenítését.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-view-showmag">
@@ -100,8 +98,8 @@ more space for the Mag.</para>
           </term>
           <listitem>
             <para>
-            <action>Toggles display of the Mag(nifying glass).</action> Toggle this 
-setting to turn the Mag on the left pane on or off.</para>
+            <action>Nagyító megjelenítése</action>. Itt kapcsolhatja ki/be a nagyító 
+(információs ablak) megjelenítését.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -129,8 +127,8 @@ setting to turn the Mag on the left pane on or off.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens the Search Dialog to search in the standard Bible 
-only</action>. More works can be added in the Search Dialog.</para>
+            <action>Keresés megnyitása az alapértelmezett Bibliában</action>. További 
+bibliák adhatók hozzá a párbeszédablakban.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-search-openworks">
@@ -151,8 +149,8 @@ only</action>. More works can be added in the Search Dialog.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens the Search Dialog to search in all open works</action>. More 
-works can be added in the Search Dialog.</para>
+            <action>Az összes megnyitott dokumentumban kereső ablakot nyit 
+meg</action>. További munkák adhatók a kereséshez a párbeszédablakban.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -176,10 +174,9 @@ works can be added in the Search Dialog.</para>
           </term>
           <listitem>
             <para>
-            <action>Directly saves the current session</action>. This will open a 
-context menu where you can select an existing session to save to. It will be 
-overwritten with your current session. See the next item on how to save to a 
-new session.</para>
+            <action>A jelenlegi munkafolyamatot menti</action>. Olyan helyi menüt nyit 
+meg, ahol meglévő folyamatként mentheti a jelenlegit. A következő elemből 
+tudhatja meg, hogyan kell menteni új folyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-savenewsession">
@@ -200,8 +197,8 @@ new session.</para>
           </term>
           <listitem>
             <para>
-            <action>Saves the current session under a new name</action>. This will ask 
-for a new name to save the session to.</para>
+            <action>A jelenlegi folyamatot új néven menti</action>. Megkérdezi a 
+folyamat nevét a mentéshez.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-loadsession">
@@ -218,8 +215,8 @@ for a new name to save the session to.</para>
           </term>
           <listitem>
             <para>
-            <action>Loads an existing session</action>. This will open a context menu 
-where you can select an existing session to load.</para>
+            <action>Előzőleg mentett folyamat betöltése</action>. Egy helyi menüt nyit 
+meg, ahol kiválaszthatja a betöltendő folyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-deletesession">
@@ -236,8 +233,8 @@ where you can select an existing session to load.</para>
           </term>
           <listitem>
             <para>
-            <action>Deletes an existing session</action>. This will open a context menu 
-where you can select an existing session that should be deleted.</para>
+            <action>Mentett folyamat törlése</action>. Olyan menüt nyit meg, ahol 
+kiválaszthatja a törlendő munkafolyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
@@ -255,10 +252,9 @@ where you can select an existing session that should be deleted.</para>
           </term>
           <listitem>
             <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
-opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatical modes, just try them out!).</para>
+            <action>Az ablakok elrendezését szabályozza</action>. A megnyíló menü 
+segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime; 
+állítsa be önnek. (Automatikus, csak próbálja ki!).</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-closeall">
@@ -279,7 +275,7 @@ for you (Automatical modes, just try them out!).</para>
           </term>
           <listitem>
             <para>
-            <action>Closes all open windows</action>.</para>
+            <action>Az összes ablakot bezárja</action></para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -303,10 +299,10 @@ for you (Automatical modes, just try them out!).</para>
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s main configuration dialog</action>. You can 
-configure all kinds of nice settings there to adapt &bibletime; to your 
-needs.  Please see <link linkend="hdbk-config-bt">this section</link> for 
-details.</para>
+            <action> Megnyitja a &bibletime; fő beállítási ablakát</action>. Itt 
+megtalál mindent, amire szüksége lehet, hogy a &bibletime; úgy viselkedjen, 
+ahogyan azt szeretné. Nézze meg a <link linkend="hdbk-config-bt">beállítások 
+részt</link> a részletekért.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-settings-bookshelf_manager">
