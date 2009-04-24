@@ -1,0 +1,85 @@
+<chapter id="hdbk-intro">
+  <title>Bevezetés</title>
+  <sect1 id="hdbk-intro-about">
+    <title>Mi a &bibletime;</title>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. Sword is the flagship product of the <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>A &bibletime; úgy lett tervezve, hogy képes legyen alkalmazni a Sword 
+projekt által értelmezhető formátumú dokumentumokat. Teljeskörű információt 
+a támogatott formátumokról a Sword projekt <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> fejlesztői 
+szekciójában</ulink> találhat.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Elérhető dokumentumok</title>
+      <para>Több, mint 200 dokumentum 50 nyelven érhető el a <ulink 
+url="http://www.crosswire.org">Crosswire Biblia Társaság</ulink> 
+honlapján. Ezek tartalmaznak: 
+      <variablelist>
+        <varlistentry>
+          <term>Bibliákat</term>
+          <listitem>
+            <para>A teljes Biblia szövegét, lehetséges kiegészítésekkel, mint Strong's számok, 
+fejlécek, lábjegyzetek a szövegekben. A Bibliák a legtöbb nyelven elérhetők, 
+és nem csak a modern verziókat találhatja meg. Ugyanígy fellelhetőek a 
+régies szövegváltozatok, mint a Leningrádi Kódex ("WLC", héber) és a 
+Septuaginta ("LXX", görög). Ez a legfejlettebb része a Sword projektnek.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Könyvek</term>
+          <listitem>
+            <para>Alábbi könyveket találhatjuk még "Imitation of Christ", "Enuma Elish", and 
+"Josephus: The Complete Works"</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Kommentárok</term>
+          <listitem>
+            <para>Az elérhető kommentárok tartalmazzák a klasszikus John Wesley "Notes on the 
+Bible", Matthew Henry'kommentárját és Luther "Commentary on Galatians." A 
+<emphasis>Saját</emphasis> kommentárokkal lehetősége van <link 
+linkend="hdbk-op-parts-desk-write"> rögzíteni saját megjegyzéseit</link> a 
+Biblia fejezeteihez.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Napi áhitatok</term>
+          <listitem>
+            <para>Sok ember hálás ezekért a napi adagokért Isten igéjéből.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lexikonok/szótárak</term>
+          <listitem>
+            <para>Itt találhatja például: Robinson Morfológiai Elemzési Kódok, 
+Brown-Driver-Briggs Héber Lexikon és a Nemzetközi Standard 
+BibliaEnciklopédia. Szótárak közül: Strong's Héber Bibliai Szótár, Strong's 
+Görög Bibliai Szótár...</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motiváció</title>
+      <para>Elhatározásunk, hogy szolgáljuk Istent, és megtegyünk mindent a részünkről, 
+hogy segítsünk másoknak növelni a kapcsolatukat Vele. Igyekszünk, hogy egy 
+minőségi, erőteljes programot készítsünk, ami egyszerű és kézenfekvően 
+használható. Vágyunk, hogy az Úr dicsőítve legyen, ahogyan Tőle származik 
+minden jó.</para>
+      <blockquote>
+        <attribution>Jakab 1:17, Károli</attribution>
+        <para>Minden jó adomány és minden tökéletes ajándék felülről való, és a 
+világosságok Atyjától száll alá, a kinél nincs változás, vagy változásnak 
+árnyéka.</para>
+      </blockquote>
+      <para>Az Úr áldása járja át miközben a programot használja.</para>
+    </sect2>
+  </sect1>
+</chapter>

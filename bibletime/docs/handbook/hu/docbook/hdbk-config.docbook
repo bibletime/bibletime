@@ -1,0 +1,190 @@
+<chapter id="hdbk-config">
+  <title> &bibletime; beállítása</title>
+  <para>Ebben a részben áttekintjük a bibletime; beállítását, amit a főmenü 
+<guimenu>Beállítások</guimenu> menüjében talál.</para>
+  <sect1 id="hdbk-config-bt">
+    <title>A BibleTime Beállítása párbeszédablak</title>
+    <para>A &bibletime; felhasználói felülete szükség szerint többféleképpen is 
+módosítható. A beállítási párbeszédablakot elérheti a <menuchoice> 
+<guimenu>Beállítások</guimenu> </menuchoice> <guimenuitem>&bibletime; 
+beállítása</guimenuitem> menüpont kiválasztásával.</para>
+    <sect2 id="hdbk-config-bt-display">
+      <title>
+        <guimenu>Display</guimenu>
+      </title>
+      <para>A kezdeti megjelenés is beállítható, választhat az alábbi lehetőségek közül: 
+      <itemizedlist>
+        <listitem>
+          <para>Indítási logo mutatása</para>
+        </listitem>
+      </itemizedlist></para>
+      <para>A sablonok határozzák meg a szövegek megjelenítését (színek, méretek 
+stb.). Többféle beépített sablon áll rendelkezésre. Amennyiben kiválaszt 
+egyet, láthatja az előnézeti képét a jobb oldalon.</para>
+    </sect2>
+    <sect2 id="hdbk-config-bt-languages">
+      <title>
+        <guimenu>Languages</guimenu>
+      </title>
+      <para>Itt állíthatja be a nyelvét Biblia könyvcímeinek. Válassza a saját nyelvét, 
+ha lehetséges, és otthonosabban fogja érezni magát.</para>
+
+      <para>Alapértelmezetten a &bibletime; az alapértelmezett rendszer szerinti 
+betűkészletet használja, amit ön felülbírálhat, ha szükséges. Néhány nyelv 
+speciális betűkészletet igényel a korrekt megjelenítéshez. Ez az ablak 
+lehetőséget nyújt önnek, hogy egyedi betűkészletet határozzon meg minden 
+nyelvhez.</para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="ss_configfonts.png" format="PNG" />
+        </imageobject>
+        <textobject>
+          <phrase>Beállítások - betűkészletek</phrase>
+        </textobject>
+        <caption>
+          <para>A betűkészletek beállítása.</para>
+        </caption>
+      </mediaobject>
+      <para>&bibletime; képes az összes támogatott betűkészletet használni. Ha a 
+dokumentum amit néz, tökéletesen megjelenik, nem kell tennie semmit, 
+ellenben ha a dokumentum egy sorozat kérdőjelet (????????), vagy üres 
+négyzetet tartalmaz, akkor tudhatja, hogy az alapértelmezett betűkészlet nem 
+tartalmazza azokat a karaktereket, amelyek a helyes megjelenítéshez 
+szükségesek.</para>
+
+      <para>Hogy kijavítsa, válassza ki a dokumentum nyelvét a legördülő 
+menüből. Kattintsa be az egyedi betűkészlet használata 
+jelölőnégyzetet. Például a Code2000 betűkészlet olyan karaktereket 
+tartalmaz, amit sok nyelv használ. Ha egyetlen telepített betűkészlet sem 
+képes helyesen megjeleníteni a kívánt dokumentumot, akkor próbálja meg 
+telepíteni a kívánt nyelv nyelvi fájljait.</para>
+      <sect3 id="hdbk-config-bt-addfont">
+        <title>Betűkészlet telepítése</title>
+        <para>A kívánt betűkészlet telepítése tűlmutat ezen készikönyvnek a 
+hatáskörén. További információkért keresse fel a <ulink 
+url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
+HOWTO</ulink> weboldalt.</para>
+        <tip>
+          <para>Ha egy egyszerűbb, kisebb betűkészletet használ, mint a Clearlyu (kb. 22kb), 
+a &bibletime; gyorsabban fut, mint egy nagyobb, összetettebb betűkészletnél, 
+mint a <trademark class="registered">Bitstream 
+Cyberbit</trademark>(kb. 12Mb).</para>
+        </tip>
+      </sect3>
+      <sect3 id="hdbk-config-bt-ob-font">
+        <title>Elérhető betűkészletek</title>
+        <para>A betűkészletek különféle forrásokból érhetőek el:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Az ön *nix disztribúciója.</para>
+          </listitem>
+          <listitem>
+            <para>Az ön disztribúciójának nyelvi fájljai.</para>
+          </listitem>
+          <listitem>
+            <para>Meglévő <trademark class="registered">Microsoft Windows</trademark>telepítés 
+ugyanazon a számítógépen.</para>
+          </listitem>
+          <listitem>
+            <para>Betűkészletgyűjtemény, például Adobe vagy Bitstream.</para>
+          </listitem>
+          <listitem>
+            <para>Online betűkészletgyűjtemények.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Az Unicode betűkészletek többféle karaktert tartalmaznak, mint az egyéb 
+készletek, és néhány ilyen betűkészlet ingyenesen is elérhető. Egy 
+betűkészlet sem tartalmazza az összes karaktert, amit az Unicode szabvány 
+meghatároz, ezért lehetséges, hogy nyelvenként különböző betűkészleteket 
+kell használnia.</para>
+        <table id="hdbk-config-unicode-fonts-table">
+          <title>Unicode betűkészletek</title>
+          <tgroup cols="2">
+            <tbody>
+              <row>
+                <entry>
+                  <ulink url="http://code2000.net/CODE2000.ZIP">
+                  Code2000</ulink>
+                </entry>
+                <entry>Lehetséges, hogy a legjobb az ingyenes Unicode készlet, amely sokféle 
+karaktert tartalmaz.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
+                  SIL unicode fonts</ulink>
+                </entry>
+                <entry>Kiváló Unicode készletek szerezhetőek be a Summer Institute of Linguistics 
+-tól.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://www.nongnu.org/freefont/">
+                  FreeFont</ulink>
+                </entry>
+                <entry>Egy új ingyenes Unicode készlet kezdeményezés.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">
+                  Crosswire's font directory</ulink>
+                </entry>
+                <entry>További betűkészletek elérhetőek a Crosswire Bible Society ftp oldaláról.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
+                  Bitstream CyberBit</ulink>
+                </entry>
+                <entry>Tartalmazzák a teljes Unicode kódokat, de lelassítják a &bibletime; futását 
+a méretük miatt.</entry>
+              </row>
+              <row>
+                <entry>Clearlyu</entry>
+                <entry>A legtöbb disztribúcióban megtalálható, tartalmazza az európai, a görög, 
+héber és thai karaktereket.</entry>
+              </row>
+              <row>
+                <entry>
+                  <ulink url="http://fontforge.sourceforge.net/sfds/">
+                  Caslon, Monospace, Cupola, Caliban</ulink>
+                </entry>
+                <entry>Részletes tartalmakért tekintse meg az információkat a hivatkozott honlapon.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+        <para>Jó Unicode betűkészlet listákat találhat a neten, as the one például egyet 
+Christoph Singer összeállításában ( <ulink 
+url="http://www.slovo.info/unifonts.htm">Többnyelvű Unicode TrueType 
+betűkészletek az Interneten</ulink>), vagy egy másik Alan Woodtól ( <ulink 
+url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter 
+összerevők és az Unicode készletek, amelyek tartalmazzák</ulink>).</para>
+      </sect3>
+    </sect2>
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Sok lehetőséget, melyet a Sword keretprogram biztosít, testre lehet szabni a 
+&bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a 
+párbeszédablakban. Szintén lehetőség van alapértelmezett dokumentumok 
+megadására, melyeket akkor használunk, ha nem konkrét dokumentum van 
+meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia van 
+megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott vers a 
+"Nagyító" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi például 
+egy King James fordítású Bibliában.</para>
+    </sect2>
+    <sect2 id="hdbk-config-bt-hotkeys">
+      <title>
+        <guimenu>HotKeys</guimenu>
+      </title>
+      <para>A gyorsbillentyűk speciális billentyűparancsok, melyeket a különböző 
+menüelemeknél és ikonoknál alkalmazhatunk. Számos &bibletime; parancshoz 
+tartozik gyorsbillentyű ( <link linkend="hdbk-reference-hotkeys">itt 
+található</link> a teljes lista). A legtöbb &bibletime; parancshoz itt 
+hozzárendelhet gyorsbillentyűt, ami nagyon hasznos a legtöbbet használt 
+funkciók eléréséhez.</para>
+    </sect2>
+  </sect1>
+</chapter>
