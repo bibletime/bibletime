@@ -114,7 +114,7 @@ try it out.</para>
       <title>Työpöytä</title>
       <para>The Desk is where the real work with &bibletime; takes place. Here you can 
 open works from the Bookshelf, read them, <link 
-linkend="hdbk-op-search">search</link>in them, and even save your 
+linkend="hdbk-op-search">search</link> in them, and even save your 
 annotations in the personal commentary module (see <link 
 linkend="hdbk-op-parts-desk-write">below</link>).</para>
 
@@ -156,7 +156,7 @@ text</guimenuitem>(source code editor) or
 <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
 
         <tip>
-          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice>is 
+          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is 
 deactivated, please check if you have write permission for the files of the 
 personal commentary.</para>
         </tip>
@@ -236,6 +236,7 @@ hakusanojen ryhmittelyn. Esim. '(Jeesus OR henki) AND Jumala'.</para>
 number H8077, use 'strong:H8077'.</para>
         <para>Saatavana olevat tekstityypit: 
         <table id="hd-op-search-config-syntax-table">
+	  <title>Search Types</title>
           <tgroup cols="2">
             <thead>
               <row>
@@ -311,7 +312,7 @@ tallettaa analyysin.</para>
 Bookshelf. You can install new works to your Bookshelf, and update or remove 
 existing works from your Bookshelf. Access it by clicking <menuchoice> 
 <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
-</menuchoice>in the main menu.</para>
+</menuchoice> in the main menu.</para>
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Kirjahyllyn polun/polkujen asetus</title>
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 

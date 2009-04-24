@@ -5,6 +5,7 @@
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY sword '<application>Sword</application>'>
   <!ENTITY kde '<application>KDE</application>'>
+  <!ENTITY qt '<application>Qt</application>'>
 
   <!ENTITY Shift 'Shift'>
   <!ENTITY Ctrl 'Ctrl'>

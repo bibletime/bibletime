@@ -291,30 +291,6 @@ for you (Automatical modes, just try them out!).</para>
         <guimenu>Settings</guimenu>
       </title>
       <variablelist>
-        <varlistentry id="hdbk-reference-menus-settings-toolbars">
-          <term>
-            <menuchoice>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_configuretoolbars.png"
-                  format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Settings</guimenu>
-              <guimenuitem>Configure toolbars</guimenuitem>
-            </menuchoice>
-          </term>
-          <listitem>
-            <para>
-            <action>Opens a dialog where you can customize &bibletime;'s 
-toolbar</action>. Just try it out, you can move around the toolbar buttons 
-and even add new ones.  Most of the entries available from the main menu can 
-be put on the toolbar as buttons. If you need a certain feature often, you 
-might want to put a button on the main menu, so that you can access it with 
-only one click. Please see <link linkend="hdbk-config-toolbar">this 
-section</link> for further information.</para>
-          </listitem>
-        </varlistentry>
         <varlistentry id="hdbk-reference-menus-settings-bibletime">
           <term>
             <menuchoice>
@@ -363,10 +339,82 @@ linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
         </varlistentry>
       </variablelist>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-help">
     <title>
       <guimenu>Help</guimenu>
-    </title>TODO: ADD</sect2>
+    </title>
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-help-bibletime">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F1</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="contents2.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Help</guimenu>
+              <guimenuitem>Handbook</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-bible_study_howto">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F2</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="contents2.png"
+                  format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Help</guimenu>
+              <guimenuitem>Bible Study Howto</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Opens a guide on how to study the Bible</action> It is the hope of 
+the &bibletime; team that this HowTo will provoke the readers to study the 
+scriptures to see what they say. This particular study guide has been chosen 
+as it takes care not to advocate any particular denominational doctrine. We 
+expect you to read and study the scriptures to understand what they say. If 
+you start with the attitude that you want to have the Lord sow his word in 
+your heart He will not disappoint you.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-about">
+          <term>
+            <menuchoice>
+	      <guimenu>Help</guimenu>
+	      <guimenuitem>About</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Opens a window about &bibletime; project information</action> 
+contains information about &bibletime; software version, project 
+contributors, &sword; software version, &qt; software version and the 
+license agreement.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
   </sect1>
   <sect1 id="hdbk-reference-toolbar">
     <title>Werkbalk verwijzingen</title>

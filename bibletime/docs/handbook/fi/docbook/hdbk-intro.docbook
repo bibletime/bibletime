@@ -2,13 +2,13 @@
   <title>Johdanto</title>
   <sect1 id="hdbk-intro-about">
     <title>Tietoja &bibletime;:stä</title>
-    <para>&bibletime; on Raamattuohjelma erilaisten tekstien tuella ja 
-kielillä. Edelleen laaja joukko teoksia on helppo asentaa ja hallinnoida 
-moduuleina. Se on rakennettu <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink>-kirjastoon, joka tarjoaa 
-toiminnallisuuden &bibletime;:lle, kuten Raamatun tekstin näyttämiseen, 
-etsintään, jne. Sword on <ulink url="http://www.crosswire.org">Crosswire 
-Bible Societyn</ulink> lippulaiva.</para>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. Sword is the flagship product of the <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
 
     <para>&bibletime; on suunniteltu käyttämään Sword-projektin mallien mukaisia 
 teoksia. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät osoitteesta 

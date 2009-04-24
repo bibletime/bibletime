@@ -3,7 +3,7 @@
   <sect1 id="hdbk-intro-about">
     <title>About &bibletime;</title>
     <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules) are easy to install and 
+and languages. Even large amounts of works modules are easy to install and 
 manage. It is built on the <ulink 
 url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
 the back-end functionality for &bibletime;, such as viewing Bible text, 

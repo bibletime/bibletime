@@ -108,11 +108,11 @@ samotném. Prostě to vyzkoušejte.</para>
 
     <sect2 id="hdbk-op-parts-desk">
       <title>Plocha</title>
-      <para>Plocha je místo, kde probíhá skutečná práce s &bibletime;. Zde můžete 
-otvírat díla z knihovny, číst je, <link 
-linkend="hdbk-op-search">vyhledávat</link> v nich a rovnou ukládat vaše 
-poznámky v modulu osobních komentářů (podívejte se <link 
-linkend="hdbk-op-parts-desk-write">níže</link>).</para>
+      <para>The Desk is where the real work with &bibletime; takes place. Here you can 
+open works from the Bookshelf, read them, <link 
+linkend="hdbk-op-search">search</link> in them, and even save your 
+annotations in the personal commentary module (see <link 
+linkend="hdbk-op-parts-desk-write">below</link>).</para>
 
       <sect3 id="hdbk-op-parts-desk-read">
         <title>Čtení děl</title>
@@ -150,9 +150,9 @@ zvolit <guimenu>Editovat toto dílo</guimenu> a potom také
 <guimenuitem>HTML</guimenuitem>(jednoduchý gui wysiwyg editor).</para>
 
         <tip>
-          <para>Pokud je položka <menuchoice> <guimenu>Upravit toto dílo</guimenu> 
-</menuchoice> neaktivní, prosím zkontrolujte zda máte oprávnění k zápisu do 
-souborů osobních komentářů.</para>
+          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is 
+deactivated, please check if you have write permission for the files of the 
+personal commentary.</para>
         </tip>
 
         <tip>
@@ -232,6 +232,7 @@ následovanou'dvojtečkou ':' a hledaným výrazem. Například pro vyhledáván
 Strongova čísla H8077 použijte 'strong:H8077'</para>
         <para>Dostupné předpony: 
         <table id="hd-op-search-config-syntax-table">
+	  <title>Search Types</title>
           <tgroup cols="2">
             <thead>
               <row>
@@ -301,10 +302,11 @@ vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených
   </sect1>
   <sect1 id="hdbk-op-bookshelfmanager">
     <title><guimenuitem>Správa knih</guimenuitem></title>
-    <para><guimenuitem>Správa knih</guimenuitem> nástroj pro správu knihovny. Můžete 
-do vaší knihovny nainstalovat nová díla, aktualizovat nebo odstranit ty 
-existující. Přístupná pod <menuchoice> <guimenu>Nastavení</guimenu> 
-<guimenuitem>Správa knih</guimenuitem> </menuchoice> v hlavním menu.</para>
+    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
+Bookshelf. You can install new works to your Bookshelf, and update or remove 
+existing works from your Bookshelf. Access it by clicking <menuchoice> 
+<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
+</menuchoice> in the main menu.</para>
     <sect2 id="hdbk-op-bookshelfmanager-path">
       <title>Nastavení cesty ke knihám</title>
       <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
