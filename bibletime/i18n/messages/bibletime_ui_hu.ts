@@ -86,7 +86,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>&amp;Save session</source>
-        <translation>Munkafolyamat mentés&amp;se</translation>
+        <translation>Munkafolyamat menté&amp;se</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="194"/>
@@ -160,7 +160,7 @@
         <location filename="../../src/bibletime_init.cpp" line="332"/>
         <source>&amp;Bible Study Howto</source>
         <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
-        <translation>&amp;Biblia tanulás &quot;hogyan&quot;</translation>
+        <translation>&amp;Biblia tanulmányozás &quot;hogyan&quot;</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="482"/>
