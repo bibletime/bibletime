@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-23 20:51-0400\n"
+"POT-Creation-Date: 2009-04-25 10:06-0400\n"
 "PO-Revision-Date: 2006-05-26 13:46WET\n"
 "Last-Translator: Jean Van Schaftingen <vanschaf@yahoo.fr>\n"
 "Language-Team: Français\n"
@@ -1876,7 +1876,7 @@ msgstr "Le manuel &bibletime; fait partie de &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "2005-08"
+msgid "2009-04"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
@@ -1886,7 +1886,7 @@ msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:53
 #, fuzzy
-msgid "&bibletime; is a Bible study tool based on the Sword framwork."
+msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr "&bibletime; est un outil puissant d'étude de la Bible pour &kde;."
 
 #, fuzzy

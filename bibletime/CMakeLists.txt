@@ -8,7 +8,7 @@ ADD_DEFINITIONS(-DBT_VERSION=\\\"2.0.beta1\\\")
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
-LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr nl)
+LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu nl)
 LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it ko nl pt-br ru)
 
 ######################################################
