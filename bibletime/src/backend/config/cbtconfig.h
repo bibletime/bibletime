@@ -67,7 +67,9 @@ public:
 		crashedLastTime,
 		crashedTwoTimes,
 
-		bookshelfShowHidden
+		bookshelfShowHidden,
+
+		allowNetworkConnection
 	};
 	enum ints {
 		footnotes,

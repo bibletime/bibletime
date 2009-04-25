@@ -114,9 +114,10 @@ QString CBTConfig::getKey( const CBTConfig::bools ID) {
 		case crashedTwoTimes:			return "crashedTwoTimes";
 
 		case bookshelfShowHidden:		return "bookshelfShowHidden";
+		case allowNetworkConnection:		return "allowNetworkConnection";
 	}
 	Q_ASSERT(false);
-	return QString::null;
+	return false;
 }
 
 QString CBTConfig::getKey( const CBTConfig::ints ID) {
@@ -169,6 +170,7 @@ bool CBTConfig::getDefault( const CBTConfig::bools ID) {
 		case crashedLastTime:		return false;
 		case crashedTwoTimes:		return false;
 		case bookshelfShowHidden:	return false;
+		case allowNetworkConnection:	return false;
 	}
 	return false;
 }
