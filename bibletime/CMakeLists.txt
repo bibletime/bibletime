@@ -108,7 +108,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	)
 	# Unit Tests
 	ADD_CUSTOM_TARGET(test
-		COMMAND "./bibletime --run-tests"
+		COMMAND ./bibletime --run-tests
 		WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
 		COMMENT "Running BibleTime Unit Tests"
 	)
