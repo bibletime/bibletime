@@ -182,10 +182,10 @@ is. </para>
       <para>Keresést kezdeményezhet egy dokumentumban, hogy 
 <mousebutton>jobb</mousebutton>egérgombbal rákattint az ikonjára a 
 <guimenu>Könyvespolcon</guimenu>, és kiválasztja a <guimenuitem>Keresés a 
-dokumentum(ok)ban</guimenuitem> lehetőséget. A &Shift; vagy a &Ctrl; 
-nyomvatartásával egyszerre több dokumentumot is hozzáadhat a kereséshez, 
-hasonló módon, mint ha csak egy dokumentumban keresne. Ekkor az összes 
-kiválasztott munkában fog keresni egyszerre.</para>
+dokumentum(ok)ban</guimenuitem> lehetőséget. A &Shift; vagy a &Ctrl; nyomva 
+tartásával egyszerre több dokumentumot is hozzáadhat a kereséshez, hasonló 
+módon, mint ha csak egy dokumentumban keresne. Ekkor az összes kiválasztott 
+munkában fog keresni egyszerre.</para>
 
       <para>Szintén elérhető a keresési funkció a főmenü <menuchoice> 
 <guimenu>Keresés</guimenu> </menuchoice> almenüjéből, ahol kiválaszthatja a 
@@ -220,9 +220,9 @@ meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva.
       </sect3>
       <sect3 id="hd-op-search-config-syntax">
         <title> Az alapvető keresési kifejezések bemutatása</title>
-        <para>Gépelje be a keresett kifejezéseket szúközökkel 
+        <para>Gépelje be a keresett kifejezéseket szóközökkel 
 elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek 
-felsorolva, amelyekben bármelyik kifelyezés előfordul (OR - angolul a VAGY 
+felsorolva, amelyekben bármelyik kifejezés előfordul (OR - angolul a VAGY 
 kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
 megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
 kifejezések között.</para>
@@ -239,8 +239,8 @@ szám előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
           <tgroup cols="2">
             <thead>
               <row>
-                <entry>Prefix (előtag)</entry>
-                <entry>Meaning (jelentés)</entry>
+                <entry>Előtag</entry>
+                <entry>Jelentés</entry>
               </row>
             </thead>
             <tbody>
@@ -320,8 +320,8 @@ a főmenü <menuchoice> <guimenu>Beállítások</guimenu>
 merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a 
 ".sword" mappa a saját mappájában.</para>
       <tip>
-        <para>Ha rendelkezésére áll egy sword CD, és nem akarja azt feltelepíteni, 
-lehetősége van a CD elérési útját megadni, mintha "konyvespolc" lenne, ebben 
+        <para>Ha rendelkezésére áll egy Sword CD, és nem akarja azt feltelepíteni, 
+lehetősége van a CD elérési útját megadni, mintha "könyvespolc" lenne, ebben 
 az esetben a &bibletime; indításakor az összes dokumentum látható lesz, ha a 
 CD a gépben van.</para>
       </tip>
@@ -330,7 +330,7 @@ CD a gépben van.</para>
       <title>Dokumentum(ok) telepítése/frissítése</title>
       <para>Evvel a lehetőséggel élve csatlakozhat egy dokumentum tárolóhelyhez 
 ("könyvtárhoz"), és letölthet egy, vagy akár több munkát a saját helyi 
-könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. sword CD), vagy 
+könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. Sword CD), vagy 
 távoliak is, mint a Crosswire online tárolóhelye. Egyszerűen kezelheti 
 ezeket a lelőhelyeket a <guibutton>Hozzáadás</guibutton> és a 
 <guibutton>Törlés</guibutton> gomb segítségével.</para>

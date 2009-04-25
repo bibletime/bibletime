@@ -19,7 +19,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; handbook</title>
+  <title>&bibletime; kézikönyv</title>
   <authorgroup>
     <author>
       <firstname>Fred</firstname>
@@ -42,15 +42,16 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>the &bibletime; team</holder>
+    <holder>a &bibletime; csapat</holder>
   </copyright>
   <legalnotice>
-    <para>The &bibletime; handbook is part of &bibletime;.</para>
+    <para>A &bibletime; kézikönyv a &bibletime; része</para>
   </legalnotice>
-  <date>2005-08</date>
+  <date>2005-09</date>
   <releaseinfo>2.0</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the Sword framwork.</para>
+    <para>&bibletime; egy Biblia tanulmányozó szoftver a Sword keretrendszerre 
+alapozva.</para>
   </abstract>
   <keywordset>
     <keyword>QT4</keyword>

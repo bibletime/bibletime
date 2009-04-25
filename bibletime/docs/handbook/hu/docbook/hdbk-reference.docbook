@@ -2,7 +2,7 @@
   <title>Tájékoztatás</title>
   <sect1 id="hdbk-reference-menus">
     <title>Főmenü referenciája</title>
-    <para>Ebben a részben részletes leírást találhat a &bibletime; főmenüjének összes 
+    <para>Ebben a részben részletes leírást találhat a &bibletime; fő menüjének összes 
 bejegyzéséről, elérésük szerint csoportosítva, az összes 
 albejegyzéseikkel. Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk 
 tartoznak. Az elérhető gyorsbillentyűk teljes listáját <link 
@@ -326,9 +326,9 @@ részt</link> a részletekért.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a dialog where you can change your Sword configuration and 
-manage your bookshelf</action>. Please see <link 
-linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
+            <action>Nyit egy ablakot, ahol megváltoztathatja a Sword beállításait, és 
+kezelheti a könyvespolcát</action>. Bővebb információért tekintse meg <link 
+linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -358,7 +358,8 @@ linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+            <action>Megnyitja a &bibletime; felhasználói kézikönyvét</action>. Épp ezt 
+olvassa.</para>
           </listitem>
         </varlistentry>
 
@@ -382,13 +383,14 @@ linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a guide on how to study the Bible</action> It is the hope of 
-the &bibletime; team that this HowTo will provoke the readers to study the 
-scriptures to see what they say. This particular study guide has been chosen 
-as it takes care not to advocate any particular denominational doctrine. We 
-expect you to read and study the scriptures to understand what they say. If 
-you start with the attitude that you want to have the Lord sow his word in 
-your heart He will not disappoint you.</para>
+            <action> Megnyit egy segédletet a Biblia tanulmányozásához</action>. A 
+&bibletime; csapat reménykedik benne, hogy ez a segédlet arra készteti 
+olvasóit, hogy tanulmányozzák az írásokat, hogy mit is mondanak. Ez a 
+különleges útmutató úgy lett összeállítva, hogy ne vegyen védelmébe 
+semmilyen egyéni felekezeti tanítást. Reméljük, hogy olvassa és 
+tanulmányozza az írásokat, hogy megértse, mit is mondanak. Ha úgy kezdi 
+tanulmányozni az írást, hogy azt kívánja, hogy az Úr vesse a szavát magként 
+a szívébe, Ő nem fog csalódást okozni.</para>
           </listitem>
         </varlistentry>
 
@@ -401,23 +403,22 @@ your heart He will not disappoint you.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a window about &bibletime; project information</action> 
-contains information about &bibletime; software version, project 
-contributors, &sword; software version, &qt; software version and the 
-license agreement.</para>
+            <action>Információs ablakot nyit meg a &bibletime; projektről</action>, 
+benne a &bibletime; verziójáról és a fejlesztőkről, a &sword; verziójáról, a 
+&qt; verziójáról és a felhasználási feltételekről.</para>
           </listitem>
         </varlistentry>
       </variablelist>
     </sect2>
   </sect1>
   <sect1 id="hdbk-reference-toolbar">
-    <title>Toolbar reference</title>
-    <para>Please review <link linkend="hdbk-reference-menus">the preceding 
-section</link> for an explanation of the buttons that you find on the 
-toolbar. You can also <action>move the cursor over a button and wait a few 
-seconds</action> to activate the button's tooltip with a short description.</para>
-    <para>You can adapt the toolbar to your needs. Please use the following entry in 
-the main menu: 
+    <title>Eszköztár leírás</title>
+    <para>Kérjük nézze meg az <link linkend="hdbk-reference-menus">előző részt</link> 
+az eszköztár gombjainak magyarázatához. Lehetősége van <action>az 
+egérmutatót a gomb fölé vinni</action>, és néhány másodpercen belül 
+megjelenik egy buborék súgó egy rövid leírással. </para>
+    <para>Szükségeinek megfelelően beállíthatja az eszköztárat, ehhez használja a 
+következő menüpontot: 
     <variablelist>
       <varlistentry>
         <term>
@@ -433,27 +434,30 @@ the main menu:
           </menuchoice>
         </term>
         <listitem>
-          <para>Configure toolbars</para>
+          <para>Eszköztárak testreszabása</para>
         </listitem>
       </varlistentry>
-    </variablelist>Please see <link linkend="hdbk-reference-menus-settings-toolbars">this 
-section</link> for detailed instructions.</para>
+    </variablelist>A részletes információkért <link 
+linkend="hdbk-reference-menus-settings-toolbars">tekintse meg ezt a 
+részt</link>.</para>
   </sect1>
   <sect1 id="hdbk-reference-hotkeys">
-    <title>HotKeys index</title>
-    <para>This is index of all hotkeys and their corresponding description in the 
-handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
-directly find out which hotkey a certain menu item has, you can either look 
-at the entry itself in &bibletime; (as it always shows the hotkey), or you 
-can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
+    <title>Gyorsbillentyűk</title>
+    <para>Ez az összes gyorsbillentyű leírásukkal együttes listája. A felsorolás 
+(többnyire) ABC sorrendnek megfelelő. Ha közvetlenül szeretné megtudni, 
+melyik kombináció tartozik egyes menükhöz, tekintse meg közvetlenül a 
+&bibletime; menüiben, (ahol jelezve vannak), vagy megkeresheti <link 
+linkend="hdbk-reference-menus">ebben a részben</link>. Ne feledje, hogy a 
+funkcióbillentűk kivételével (F1-F9) a billentyűk mellé a CTRL billentyű 
+lenyomása (olykor az ALT is) szükséges.</para>
     <informaltable>
       <tgroup cols="2">
         <colspec colname="hotkey" />
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Hotkey</entry>
-            <entry>Description</entry>
+            <entry>Gyorsbillentyű</entry>
+            <entry>Leírás</entry>
           </row>
         </thead>
         <tbody>
@@ -462,14 +466,14 @@ can look it up in <link linkend="hdbk-reference-menus">this section</link>.</par
               <keycombo action="simul">&Alt;
               <keycap>Left</keycap></keycombo>
             </entry>
-            <entry>Moves back in the history of read windows.</entry>
+            <entry>Visszalép az előzményekben az olvasó ablakban.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Alt;
               <keycap>Right</keycap></keycombo>
             </entry>
-            <entry>Moves forward in the history of read windows.</entry>
+            <entry>Előrelép az előzményekben.</entry>
           </row>
           <row>
             <entry>
@@ -477,10 +481,10 @@ can look it up in <link linkend="hdbk-reference-menus">this section</link>.</par
               <keycap>F</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> 
-</menuchoice> </link>equivalent; opens the search dialog to search in the 
-default bible.</entry>
+            <link 
+linkend="hdbk-reference-menus-search-defaultbible"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+az alapértelmezett Bibliában</guimenuitem></menuchoice></link> menüvel 
+egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.</entry>
           </row>
           <row>
             <entry>
@@ -488,9 +492,10 @@ default bible.</entry>
               <keycap>G</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> 
-</menuchoice>equivalent; toggle automatic window tiling.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Függőleges mozaik 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
+elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -498,9 +503,10 @@ mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem>
               <keycap>H</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> 
-</menuchoice>equivalent; toggle automatic window tiling.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Vízszintes mozaik 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
+elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -508,9 +514,10 @@ mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem>
               <keycap>J</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> 
-</menuchoice>equivalent; toggle automatic window cascading.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Átlapoló 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus átlapoló 
+elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -518,9 +525,9 @@ mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem>
               <keycap>M</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> 
-</menuchoice>equivalent; toggle manual window placement.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Kézi 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -528,9 +535,10 @@ mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem>
               <keycap>S</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> 
-</menuchoice> </link>equivalent; saves current layout as new session.</entry>
+            Megegyezik az <link 
+linkend="hdbk-reference-menus-window-savenewsession"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mentés 
+új folyamatként</guimenuitem></menuchoice></link> menüponttal, menti a 
+jelenlegi elrendezést új néven, új folyamatként.</entry>
           </row>
           <row>
             <entry>
@@ -538,44 +546,45 @@ mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem>
               <keycap>W</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> 
-</link>equivalent; closes all open windows.</entry>
+            Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>-</keycap></keycombo>
             </entry>
-            <entry>Zoom out. This decreases the font size of read windows.</entry>
+            <entry>Kicsinyít. Csökkenti az ablakban alkalmazott betű méretét.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>+</keycap></keycombo>
             </entry>
-            <entry>Zoom in. This increases the font size of read windows.</entry>
+            <entry>Nagyít. Növeli az ablakban alkalmazott betű méretét.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>A</keycap></keycombo>
             </entry>
-            <entry>Select all. This selects all text in read windows.</entry>
+            <entry>Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>C</keycap></keycombo>
             </entry>
-            <entry>Copy. This copies the selected text to the clipboard.</entry>
+            <entry>Másolás. A kijelölt szöveget a vágólapra másolja.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>F</keycap></keycombo>
             </entry>
-            <entry>Search. This lets you search within the text of a read window.</entry>
+            <entry>Keresés. Az ablakban lévő szövegben keres.</entry>
           </row>
           <row>
             <entry>
@@ -583,10 +592,10 @@ mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem>
               <keycap>O</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> 
-</menuchoice> </link>equivalent; opens the search dialog to search in all 
-currently opened works.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-search-openworks"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+a megnyitott dokumentum(ok)ban</guimenuitem></menuchoice></link> 
+menüponttal, keresési ablakot nyit a megnyitott munkákban való kereséshez.</entry>
           </row>
           <row>
             <entry>
@@ -594,16 +603,17 @@ currently opened works.</entry>
               <keycap>Q</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
-<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> 
-</link>equivalent; closes &bibletime;.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu> 
+<guimenuitem>Kilépés</guimenuitem> </menuchoice></link> ponttal, a 
+&bibletime; bezárása.</entry>
           </row>
           <row>
             <entry>
               <keycombo action="simul">&Ctrl;
               <keycap>W</keycap></keycombo>
             </entry>
-            <entry>Closes the current window.</entry>
+            <entry>Bezárja az aktuális ablakot.</entry>
           </row>
           <row>
             <entry>
@@ -612,8 +622,9 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> 
-</menuchoice>equivalent; opens the handbook.</entry>
+            Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> 
+Kézikönyv</guimenuitem></menuchoice> menüponttal, megnyitja ezt a 
+kézikönyvet.</entry>
           </row>
           <row>
             <entry>
@@ -622,8 +633,9 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
-Howto</guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto.</entry>
+            Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia 
+tanulmányozás "hogyan"</guimenuitem></menuchoice> menüponttal, megnyitja a 
+segédletet a Biblia tanulmányozásához.</entry>
           </row>
           <row>
             <entry>
@@ -632,10 +644,10 @@ Howto</guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto.</entry>
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
-<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf 
-Manager</guimenuitem> </menuchoice> </link>equivalent; opens the Bookshelf 
-Manager.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-settings-bookshelf_manager"><menuchoice><guimenu>Beállítások</guimenu> 
+<guimenuitem>Könyvespolc menedzser</guimenuitem></menuchoice></link> 
+menüponttal, megnyitja a Könyvespolc menedzsert.</entry>
           </row>
           <row>
             <entry>
@@ -644,9 +656,10 @@ Manager.</entry>
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> 
-</menuchoice> </link>equivalent; toggles display of the Bookshelf.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showbookshelf"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> 
+Könyvespolc mutatása</guimenuitem></menuchoice></link> menüponttal, 
+láthatóvá teszi a "könyvespolcot".</entry>
           </row>
           <row>
             <entry>
@@ -655,9 +668,10 @@ Manager.</entry>
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-view-showmag"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> 
-</link>equivalent; toggles display of the mag(nifying glass).</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showmag"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító 
+mutatása</guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a 
+nagyító (információs) ablakot.</entry>
           </row>
         </tbody>
       </tgroup>
