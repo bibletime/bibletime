@@ -31,6 +31,8 @@
 #include <QTabBar>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QHBoxLayout>
+#include <QLabel>
 
 // ****************************************************************
 // ******** Tab Widget that holds source widgets ******************
@@ -221,7 +223,7 @@ void BtSourceWidget::initSources()
 		instbackend::addSource(is);
 
 		sourceList = instbackend::sourceList();
-		Q_ASSERT( sourceList.count() > 0 );
+		//Q_ASSERT( sourceList.count() > 0 );
 	}
 	qDebug("void BtSourceWidget::initSources 1");
 	// Add the sources to the widget
@@ -236,6 +238,13 @@ void BtSourceWidget::initSources()
 	// It's important to choose something because the tree is not initialized until now
 	setCurrentIndex(0);
 	slotTabSelected(0); // setting the index wasn't enough if there were only 1 tab
+
+	if (sourceList.count() == 0) {
+		QHBoxLayout* l = new QHBoxLayout(this);
+		QLabel* message = new QLabel(QString("<i>") + tr("No sources were found in the SWORD configuration and BibleTime couldn't create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.") + QString("</i>"), this);
+		message->setWordWrap(true);
+		l->addWidget(message);
+	}
 }
 
 void BtSourceWidget::addSource(const QString& sourceName)
