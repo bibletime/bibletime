@@ -47,10 +47,10 @@
   <legalnotice>
     <para>Le manuel &bibletime; fait partie de &bibletime;.</para>
   </legalnotice>
-  <date>2005-08</date>
+  <date>2009-04</date>
   <releaseinfo>2.0</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the Sword framwork.</para>
+    <para>&bibletime; is a Bible study tool based on the Sword framework.</para>
   </abstract>
   <keywordset>
     <keyword>QT4</keyword>

@@ -352,7 +352,7 @@ linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="contents2.png" format="PNG" />
+                  <imagedata fileref="i_contents2.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
               <guimenuitem>Handbook</guimenuitem>
@@ -375,7 +375,7 @@ linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="contents2.png"
+                  <imagedata fileref="i_contents2.png"
                   format="PNG" />
                 </imageobject>
               </inlinemediaobject>Help</guimenu>
