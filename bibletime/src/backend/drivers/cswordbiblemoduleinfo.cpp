@@ -18,7 +18,7 @@
 //Sword
 #include <versekey.h>
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 
 CSwordBibleModuleInfo::CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
@@ -112,7 +112,7 @@ QStringList* CSwordBibleModuleInfo::books() {
 			max = -1;
 		}
 
-		boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+		QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 		(*key) = sword::TOP;
 
 		for (key->Testament(min+1); !key->Error() && (key->Testament()-1) <= max; key->Book(key->Book()+1)) {
@@ -129,7 +129,7 @@ QStringList* CSwordBibleModuleInfo::books() {
 unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
 	int result = 0;
 
-	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 	(*key) = sword::TOP;
 
 	// works for old and new versions
@@ -149,7 +149,7 @@ unsigned int CSwordBibleModuleInfo::chapterCount(const QString& book) {
 unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
 	unsigned int result = 0;
 
-	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 	(*key) = sword::TOP;
 
 	// works for old and new versions
@@ -174,7 +174,7 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 	//find out if we have ot and nt, only ot or only nt
 	initBounds();
 
-	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
+	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 	(*key) = sword::TOP;
 
 #ifdef SWORD_MULTIVERSE

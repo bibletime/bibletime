@@ -18,7 +18,6 @@
 #include "cdisplayrendering.h"
 
 #include "backend/config/cbtconfig.h"
-#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QApplication>
@@ -27,7 +26,7 @@
 using namespace Rendering;
 
 /** Returns the rendered text using the modules in the list and using the key parameter.
- * The displayoptions and filter options are used, too. 
+ * The displayoptions and filter options are used, too.
  */
 const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
 	CDisplayRendering render(displayOptions, filterOptions);
@@ -44,7 +43,7 @@ const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, cons
 		CSwordVerseKey k1(module);
 		k1.Headings(1);
 		k1.key(keyName);
-		
+
 		// don't print the key
 		CTextRendering::KeyTreeItem::Settings preverse_settings(false, CTextRendering::KeyTreeItem::Settings::NoKey);
 

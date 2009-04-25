@@ -12,8 +12,6 @@
 #include "util/cpointers.h"
 #include "backend/managers/cswordbackend.h"
 
-#include <boost/scoped_ptr.hpp>
-
 //Qt includes
 #include <QString>
 #include <QProgressDialog>

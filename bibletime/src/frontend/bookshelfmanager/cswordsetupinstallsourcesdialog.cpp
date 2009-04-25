@@ -12,7 +12,7 @@
 
 #include "frontend/bookshelfmanager/instbackend.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 //Qt includes
 #include <QLayout>
@@ -158,7 +158,7 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
 
-	boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
+	QSharedPointer<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
 	sword::InstallSource newSource(""); //empty, invalid Source
 
 	if (dlg->exec() == QDialog::Accepted) {

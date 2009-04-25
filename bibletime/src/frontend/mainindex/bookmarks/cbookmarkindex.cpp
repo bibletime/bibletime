@@ -29,7 +29,7 @@
 #include "util/directoryutil.h"
 #include "util/ctoolclass.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 //Qt includes
 #include <QInputDialog>
@@ -660,7 +660,7 @@ void CBookmarkIndex::printBookmarks() {
 		qWarning("Tried to print empty bookmark list.");
 		return;
 	}
-	boost::scoped_ptr<Printing::CPrinter> printer(
+	QSharedPointer<Printing::CPrinter> printer(
 		new Printing::CPrinter( this, CBTConfig::getDisplayOptionDefaults(), CBTConfig::getFilterOptionDefaults() )
 	);
 	printer->printKeyTree(tree);

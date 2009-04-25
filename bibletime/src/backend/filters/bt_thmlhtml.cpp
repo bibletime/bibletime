@@ -15,7 +15,6 @@
 
 #include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
-#include <boost/scoped_ptr.hpp>
 
 //Sword includes
 #include <swmodule.h>
@@ -319,7 +318,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
 					CReferenceManager::ParseOptions options;
 					options.refBase = QString::fromUtf8(myUserData->key->getText());
-					
+
 					options.sourceLanguage = myModule->Lang();
 					options.destinationLanguage = QString("en");
 

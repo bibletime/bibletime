@@ -23,7 +23,7 @@
 #include "frontend/cprinter.h"
 
 #include "util/ctoolclass.h"
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 //Qt includes
 #include <QClipboard>
@@ -73,7 +73,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -120,7 +120,7 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -168,7 +168,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format format, c
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -214,7 +214,7 @@ bool CExportManager::copyKey(CSwordKey* key, const Format format, const bool add
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -256,7 +256,7 @@ bool CExportManager::copyKeyList(sword::ListKey* list, CSwordModuleInfo* module,
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -292,7 +292,7 @@ bool CExportManager::copyKeyList(QList<CSwordKey*>& list, const Format format, c
 	filterOptions.textualVariants = false;
 
 	CHTMLExportRendering::Settings settings(addText);
-	boost::scoped_ptr<CTextRendering> render (
+	QSharedPointer<CTextRendering> render (
 		(format == HTML)
 		? new CHTMLExportRendering(settings, m_displayOptions, filterOptions)
 		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
@@ -342,7 +342,7 @@ bool CExportManager::printKeyList(sword::ListKey* list, CSwordModuleInfo* module
 		incProgress();
 	}
 
-	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 
 	if (!progressWasCancelled()) {
 		printer->printKeyTree(tree);
@@ -368,7 +368,7 @@ bool CExportManager::printKey( CSwordModuleInfo* module, const QString& startKey
 		tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
 	}
 
-	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 	printer->printKeyTree(tree);
 	return true;
 }
@@ -383,7 +383,7 @@ bool CExportManager::printKey( CSwordKey* key, CSwordBackend::DisplayOptions dis
 	CPrinter::KeyTree tree;
 	tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
 
-	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 	printer->printKeyTree(tree);
 	return true;
 }
@@ -434,7 +434,7 @@ bool CExportManager::printByHyperlink( const QString& hyperlink, CSwordBackend::
 		}
 	}
 
-	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 	printer->printKeyTree(tree);
 	return true;
 }
@@ -455,7 +455,7 @@ bool CExportManager::printKeyList(const QStringList& list,CSwordModuleInfo* modu
 		incProgress();
 	}
 
-	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
+	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 
 	if (!progressWasCancelled()) {
 		printer->printKeyTree(tree);

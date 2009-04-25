@@ -26,11 +26,6 @@
 
 #include "frontend/cexportmanager.h"
 
-#include <boost/scoped_ptr.hpp>
-
-//KDE includes
-
-
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :
 CDisplay(readWindow),
 m_activeAnchor(QString::null),

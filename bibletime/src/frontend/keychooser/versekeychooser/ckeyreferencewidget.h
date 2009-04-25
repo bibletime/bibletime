@@ -15,7 +15,7 @@
 
 #include <QWidget>
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 
 class CLexiconKeyChooser;
@@ -66,7 +66,7 @@ private:
 	friend class BtChapterDropdownChooserButton;
 	friend class BtVerseDropdownChooserButton;
 
-	boost::scoped_ptr<CSwordVerseKey> m_key;
+	QSharedPointer<CSwordVerseKey> m_key;
 
 	QLineEdit* m_textbox;
 

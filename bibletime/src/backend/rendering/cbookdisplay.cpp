@@ -13,8 +13,8 @@
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
 
-//Util
-#include <boost/scoped_ptr.hpp>
+// Qt
+#include <QSharedPointer>
 
 /** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
 const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
@@ -31,7 +31,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 	// the number of levels which should be display together, 1 means display no entries together
 	int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
 
-	boost::scoped_ptr<CSwordTreeKey> key (
+	QSharedPointer<CSwordTreeKey> key (
 		dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
 	);
 	key->key(keyName); //set the key to position we'd like to get
@@ -103,7 +103,7 @@ const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& mod
 	//const bool hasToplevelText = !key->strippedText().isEmpty();
 	key->firstChild(); //go to the first sibling on the same level
 
-	setupRenderTree(key.get(), &tree, keyName);
+	setupRenderTree(key.data(), &tree, keyName);
 
 	const QString renderedText = render.renderKeyTree(tree);
 

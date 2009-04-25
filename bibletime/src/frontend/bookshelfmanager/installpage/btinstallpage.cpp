@@ -32,9 +32,6 @@
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <boost/scoped_ptr.hpp>
-
-
 #include <QAction>
 #include <QApplication>
 #include <QWidget>

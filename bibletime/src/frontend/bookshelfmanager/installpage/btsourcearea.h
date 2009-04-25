@@ -12,7 +12,7 @@
 
 #include "backend/btmoduletreeitem.h"
 
-#include <boost/scoped_ptr.hpp>
+#include <QSharedPointer>
 
 #include <installmgr.h>
 
@@ -48,7 +48,7 @@ public:
 		InstalledFilter(QString sourceName);
 		bool filter(CSwordModuleInfo*);
 		sword::InstallSource m_source;
-		boost::scoped_ptr<CSwordBackend> m_swordBackend;
+		QSharedPointer<CSwordBackend> m_swordBackend;
 	};
 
 	BtSourceArea(const QString& sourceName);
