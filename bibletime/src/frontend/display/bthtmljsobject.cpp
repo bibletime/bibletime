@@ -14,7 +14,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/config/cbtconfig.h"
-#include <QSharedPointer>
+#include <boost/scoped_ptr.hpp>
 #include <QObject>
 
 using namespace InfoDisplay;
@@ -100,7 +100,7 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x,
 				//add real Bible text from module/key
 				if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) 
 				{
-					QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
+					boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 					key->key( keyName );
 					mimedata->setText(key->strippedText()); // This works across applications!
 				}

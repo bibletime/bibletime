@@ -16,7 +16,7 @@
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/managers/creferencemanager.h"
 
-#include <QSharedPointer>
+#include <boost/scoped_ptr.hpp>
 #include "util/ctoolclass.h"
 
 //Sword
@@ -34,7 +34,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const QString& key, CSwordModuleInfo co
 	m_key( key ),
 	m_childList(),
 	m_stopKey( QString::null ),
-	m_alternativeContent( QString::null )
+	m_alternativeContent( QString::null ) 
 {
 	m_moduleList.append( const_cast<CSwordModuleInfo*>(mod) ); //BAD CODE
 }
@@ -65,7 +65,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem()
 	m_key(QString::null),
 	m_childList(),
 	m_stopKey(QString::null),
-	m_alternativeContent(QString::null)
+	m_alternativeContent(QString::null) 
 {
 }
 
@@ -75,7 +75,7 @@ CTextRendering::KeyTreeItem::KeyTreeItem(const KeyTreeItem& i)
 	m_key( i.m_key ),
 	m_childList(),
 	m_stopKey( i.m_stopKey ),
-	m_alternativeContent( i.m_alternativeContent )
+	m_alternativeContent( i.m_alternativeContent ) 
 {
 	foreach(KeyTreeItem* item, (*i.childList())){
 		m_childList.append(new KeyTreeItem((*item))); //deep copy
@@ -113,7 +113,7 @@ m_alternativeContent( QString::null ) {
 				m_childList.append(
 					new KeyTreeItem(start.key(), module, KeyTreeItem::Settings(false, settings.keyRenderingFace))
 				);
-
+				
 
 				ok = start.next(CSwordVerseKey::UseVerse);
 			}
@@ -183,14 +183,14 @@ const QString CTextRendering::renderKeyTree( KeyTree& tree ) {
 	QString t;
 
 	//optimization for entries with the same key
-	QSharedPointer<CSwordKey> key(
+	boost::scoped_ptr<CSwordKey> key(
 		(modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
 	);
 
 	foreach (KeyTreeItem* c, tree) {
 		if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
 			key->key( c->key() );
-			t.append( renderEntry( *c, key.data()) );
+			t.append( renderEntry( *c, key.get()) );
 		}
 		else {
 			t.append( renderEntry( *c ) );
@@ -204,15 +204,15 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
 
 	CSwordModuleInfo* module = modules.first();
 	//qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
-
-	QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
+	
+	boost::scoped_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
 	lowerBound->key(start);
 
-	QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
+	boost::scoped_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
 	upperBound->key(stop);
 
-	sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
-	sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.data());
+	sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());
+	sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.get());
 
 	Q_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
 
@@ -223,10 +223,10 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
 		KeyTree tree;
 		KeyTreeItem::Settings settings = keySettings;
 
-		CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.data());
+		CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.get());
 		Q_ASSERT(vk_start);
 
-		CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.data());
+		CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.get());
 		Q_ASSERT(vk_stop);
 
 		bool ok = true;
@@ -236,7 +236,7 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
 
 			/*TODO: We need to take care of linked verses if we render one or (esp) more modules
 			If the verses 2,3,4,5 are linked to 1, it should be displayed as one entry with the caption 1-5 */
-
+			
 			if (vk_start->Chapter() == 0){ //range was 0:0-1:x, render 0:0 first and jump to 1:0
 				vk_start->Verse(0);
 				tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );

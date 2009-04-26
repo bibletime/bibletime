@@ -1,6 +1,5 @@
 2009-04-25 Martin Gruner <mgruner@crosswire.org>
 	* include bugfix from Fabio Correa: fix cmake syntax for "make test" generation
-	* remove boost dependency
 
 2009-04-24 Thomas Abthorpe
 	* Add Hungarian Handbook translation to the build

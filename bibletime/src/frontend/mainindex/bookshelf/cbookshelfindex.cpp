@@ -40,6 +40,8 @@
 #include <QDebug>
 #include <QMenu>
 
+#include <boost/scoped_ptr.hpp>
+
 
 
 CBookshelfIndex::CBookshelfIndex(QWidget *parent)

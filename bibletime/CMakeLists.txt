@@ -30,6 +30,7 @@ ENDIF(QT_QTDBUS_FOUND)
 #
 #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
 
+FIND_PACKAGE(Boost REQUIRED)
 #
 #custom includes
 #
@@ -57,6 +58,7 @@ INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_SOURCE_DIR}/src	# so that include paths like "frontend/..." work
 	${CLUCENE_INCLUDE_DIR}			#CLucene headers
 	${CLUCENE_LIBRARY_DIR}			#CLucene/clucene-config.h
+	${Boost_INCLUDE_DIRS}
 	${SWORD_INCLUDE_DIR}
 )
 

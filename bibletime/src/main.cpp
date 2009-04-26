@@ -22,6 +22,8 @@
 #include <stdio.h>
 #include <signal.h>
 
+#include <boost/scoped_ptr.hpp>
+
 #include <QLocale>
 #include <QTranslator>
 #include <QDebug>

@@ -16,7 +16,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 #include "util/cpointers.h"
-#include <QSharedPointer>
+#include <boost/scoped_ptr.hpp>
 
 #include <iostream>
 
@@ -55,7 +55,7 @@ namespace Rendering {
 	CHTMLExportRendering::~CHTMLExportRendering() {}
 
 	const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
-
+		
 		if (i.hasAlternativeContent()) {
 			QString ret = QString(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
 		ret.append(i.getAlternativeContent());
@@ -86,8 +86,8 @@ namespace Rendering {
 		return QString(""); //no module present for rendering
 	}
 
-	QSharedPointer<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
-	CSwordKey* key = k ? k : scoped_key.data();
+	boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
+	CSwordKey* key = k ? k : scoped_key.get();
 	Q_ASSERT(key);
 
 	CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);

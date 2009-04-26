@@ -33,7 +33,7 @@
 
 
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
+CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) : 
 	QWidget(parent),
 	m_key(new CSwordVerseKey(mod))
 {
@@ -70,7 +70,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	editorAndButtonsLayout->setContentsMargins(0,0,0,0);
 	dropdownButtonsLayout->setSpacing(0);
 	editorAndButtonsLayout->setSpacing(0);
-
+	
 	dropdownButtonsLayout->addWidget(m_bookDropdownButton, 2);
 	dropdownButtonsLayout->addWidget(m_chapterDropdownButton,1);
 	dropdownButtonsLayout->addWidget(m_verseDropdownButton,1);
@@ -143,7 +143,7 @@ void CKeyReferenceWidget::updateText()
 bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
 {
 	if (!key) return false;
-
+	
 	m_key->key(key->key());
 	updateText();
 	return true;
@@ -158,8 +158,8 @@ void CKeyReferenceWidget::slotReturnPressed()
 {
 	m_key->key(m_textbox->text());
 	updateText();
-
-	emit changed(m_key.data());
+	
+	emit changed(m_key.get());
 }
 
 /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
@@ -172,28 +172,28 @@ void CKeyReferenceWidget::slotUpdateLock()
 void CKeyReferenceWidget::slotUpdateUnlock()
 {
 	updatelock = false;
-	if (oldKey != m_key->key()) emit changed(m_key.data());
+	if (oldKey != m_key->key()) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotStepBook(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotStepChapter(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());	
 }
 
 void CKeyReferenceWidget::slotStepVerse(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());
 }
 
 
@@ -201,29 +201,29 @@ void CKeyReferenceWidget::slotChangeVerse(int n)
 {
 	if (m_key->Verse() != n) {
 		m_key->Verse( n );
-		setKey( m_key.data() );
+		setKey( m_key.get() );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotChangeChapter(int n)
 {
 	if (m_key->Chapter() != n) {
 		m_key->Chapter( n );
-		setKey( m_key.data() );
+		setKey( m_key.get() );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotChangeBook(QString bookname)
 {
 	if (m_key->book() != bookname) {
 		m_key->book( bookname );
-		setKey( m_key.data() );
+		setKey( m_key.get() );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.data());
+	if (!updatelock) emit changed(m_key.get());
 }
 
