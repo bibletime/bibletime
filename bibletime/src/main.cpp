@@ -25,6 +25,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QDebug>
+#include <QTextCodec>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
