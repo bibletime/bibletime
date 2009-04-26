@@ -38,8 +38,8 @@ BtHtmlReadDisplay::BtHtmlReadDisplay(CReadWindow* readWindow, QWidget* parentWid
 
 {
 	settings()->setAttribute(QWebSettings::JavascriptEnabled, true);
-//	m_view = new BtHtmlReadDisplayView(this, 0);
 	m_view = new BtHtmlReadDisplayView(this, parentWidget ? parentWidget : readWindow);
+	m_view->setAcceptDrops(true);
 	m_view->setPage(this);
 	setParent(m_view);
 	m_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -328,8 +328,8 @@ void BtHtmlReadDisplayView::dropEvent( QDropEvent* e )
 			if (btmimedata != 0)
 			{
 				BookmarkItem item = (qobject_cast<const BTMimeData*>(e->mimeData()))->bookmark();
-				e->acceptProposedAction();
 				m_display->connectionsProxy()->emitReferenceDropped(item.key());
+				e->acceptProposedAction();
 				return;
 			}
 		}
@@ -350,4 +350,15 @@ void BtHtmlReadDisplayView::dragEnterEvent( QDragEnterEvent* e )
 	e->ignore();
 }
 
+// Reimplementation from QWebView
+void BtHtmlReadDisplayView::dragMoveEvent( QDragMoveEvent* e ) 
+{
+	if (e->mimeData()->hasFormat("BibleTime/Bookmark")) 
+	{
+		e->acceptProposedAction();
+		return;
+	}
+	//don't accept the action!
+	e->ignore();
+}
 

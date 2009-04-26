@@ -112,6 +112,7 @@ private:
 	BtHtmlReadDisplay* m_display;
 	void dropEvent( QDropEvent* e );
 	void dragEnterEvent( QDragEnterEvent* e );
+	void dragMoveEvent( QDragMoveEvent* e );
 };
 
 #endif
