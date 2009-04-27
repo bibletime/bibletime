@@ -66,7 +66,7 @@ BibleTime::BibleTime() :
 	{
        splash.show();
 	}
-   splash.showMessage(splashHtml.arg(tr("Initializing the Sword engine...")), Qt::AlignCenter);
+   splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")), Qt::AlignCenter);
    initBackends();
    splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")), Qt::AlignCenter);
    initView();
