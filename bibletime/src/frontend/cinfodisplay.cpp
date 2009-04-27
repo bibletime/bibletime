@@ -87,7 +87,7 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
 	//  settings.langAbbrev = "";
 	QString content = mgr->fillTemplate(CBTConfig::get
 				(CBTConfig::displayStyle), key->renderedText(), settings);
-
+	m_htmlPart->setText(content);
 	//   qWarning("setting text:\n%s", content.latin1());
 }
 
