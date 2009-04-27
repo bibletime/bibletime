@@ -18,4 +18,4 @@ export QT_PLUGIN_PATH=$BT_BUNDLE/Contents/plugins
 
 cd $BT_BUNDLE/Contents/Resources/bin
 # Run BibleTime
-exec "bibletime"
+exec "BibleTime"
