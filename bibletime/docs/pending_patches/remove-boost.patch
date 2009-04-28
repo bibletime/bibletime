@@ -1,14 +1,3 @@
-Index: ChangeLog
-===================================================================
---- ChangeLog	(Revision 1214)
-+++ ChangeLog	(Revision 1215)
-@@ -1,5 +1,6 @@
- 2009-04-25 Martin Gruner <mgruner@crosswire.org>
- 	* include bugfix from Fabio Correa: fix cmake syntax for "make test" generation
-+	* remove boost dependency
- 
- 2009-04-21 Martin Gruner <mgruner@crosswire.org>
- 	* release 2.0.beta1
 Index: src/frontend/cmoduleindexdialog.cpp
 ===================================================================
 --- src/frontend/cmoduleindexdialog.cpp	(Revision 1214)
@@ -16,7 +5,7 @@ Index: src/frontend/cmoduleindexdialog.cpp
 @@ -12,8 +12,6 @@
  #include "util/cpointers.h"
  #include "backend/managers/cswordbackend.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 -
  //Qt includes
@@ -41,16 +30,16 @@ Index: src/frontend/cexportmanager.cpp
 +++ src/frontend/cexportmanager.cpp	(Revision 1215)
 @@ -23,7 +23,7 @@
  #include "frontend/cprinter.h"
- 
+
  #include "util/ctoolclass.h"
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  //Qt includes
  #include <QClipboard>
 @@ -73,7 +73,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -59,7 +48,7 @@ Index: src/frontend/cexportmanager.cpp
  		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
 @@ -120,7 +120,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -68,7 +57,7 @@ Index: src/frontend/cexportmanager.cpp
  		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
 @@ -168,7 +168,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -77,7 +66,7 @@ Index: src/frontend/cexportmanager.cpp
  		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
 @@ -214,7 +214,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -86,7 +75,7 @@ Index: src/frontend/cexportmanager.cpp
  		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
 @@ -256,7 +256,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -95,7 +84,7 @@ Index: src/frontend/cexportmanager.cpp
  		: new CPlainTextExportRendering(settings, m_displayOptions, filterOptions)
 @@ -292,7 +292,7 @@
  	filterOptions.textualVariants = false;
- 
+
  	CHTMLExportRendering::Settings settings(addText);
 -	boost::scoped_ptr<CTextRendering> render (
 +	QSharedPointer<CTextRendering> render (
@@ -105,16 +94,16 @@ Index: src/frontend/cexportmanager.cpp
 @@ -342,7 +342,7 @@
  		incProgress();
  	}
- 
+
 -	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 +	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
- 
+
  	if (!progressWasCancelled()) {
  		printer->printKeyTree(tree);
 @@ -368,7 +368,7 @@
  		tree.append( new CPrinter::KeyTreeItem(startKey, module, settings) );
  	}
- 
+
 -	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 +	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
  	printer->printKeyTree(tree);
@@ -123,7 +112,7 @@ Index: src/frontend/cexportmanager.cpp
 @@ -383,7 +383,7 @@
  	CPrinter::KeyTree tree;
  	tree.append( new CPrinter::KeyTreeItem(key->key(), key->module(), settings) );
- 
+
 -	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 +	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
  	printer->printKeyTree(tree);
@@ -132,7 +121,7 @@ Index: src/frontend/cexportmanager.cpp
 @@ -434,7 +434,7 @@
  		}
  	}
- 
+
 -	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 +	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
  	printer->printKeyTree(tree);
@@ -141,10 +130,10 @@ Index: src/frontend/cexportmanager.cpp
 @@ -455,7 +455,7 @@
  		incProgress();
  	}
- 
+
 -	boost::scoped_ptr<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
 +	QSharedPointer<CPrinter> printer(new CPrinter(0, displayOptions, filterOptions));
- 
+
  	if (!progressWasCancelled()) {
  		printer->printKeyTree(tree);
 Index: src/frontend/cinfodisplay.cpp
@@ -154,32 +143,32 @@ Index: src/frontend/cinfodisplay.cpp
 @@ -22,7 +22,7 @@
  #include "frontend/display/cdisplay.h"
  #include "frontend/display/creaddisplay.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  // Sword includes
  #include <listkey.h>
 @@ -78,7 +78,7 @@
  	if (!m)
  		return;
- 
+
 -	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(m) );
 +	QSharedPointer<CSwordKey> key( CSwordKey::createInstance(m) );
- 	key->key( key_text ); 
- 
+ 	key->key( key_text );
+
  	CDisplayTemplateMgr* mgr = CPointers::displayTemplateManager();
 @@ -295,7 +295,7 @@
  		return QString::null;
  	}
- 
+
 -	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +	QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
  	key->key(keyname);
  	key->renderedText(); //force entryAttributes
- 
+
 @@ -330,7 +330,7 @@
- 
+
  		QString text;
  		if (module) {
 -			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
@@ -193,13 +182,13 @@ Index: src/frontend/cinfodisplay.cpp
  		if (module) {
 -			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +			QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
- 
+
  			//skip H or G (language sign) if we have to skip it
  			const bool isOk = key->key( skipFirstChar ? value.mid(1) : value );
 @@ -432,7 +432,7 @@
  		return QString::null;
  	}
- 
+
 -	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +	QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
  	key->key( data );
@@ -210,9 +199,9 @@ Index: src/frontend/display/creaddisplay.cpp
 --- src/frontend/display/creaddisplay.cpp	(Revision 1214)
 +++ src/frontend/display/creaddisplay.cpp	(Revision 1215)
 @@ -26,11 +26,6 @@
- 
+
  #include "frontend/cexportmanager.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 -
 -//KDE includes
@@ -226,23 +215,23 @@ Index: src/frontend/display/cplainwritedisplay.cpp
 --- src/frontend/display/cplainwritedisplay.cpp	(Revision 1214)
 +++ src/frontend/display/cplainwritedisplay.cpp	(Revision 1215)
 @@ -15,7 +15,7 @@
- 
+
  #include "backend/keys/cswordkey.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  //Qt includes
  #include <QDragEnterEvent>
 @@ -141,7 +141,7 @@
  		for (it = items.begin(); it != items.end(); ++it) {
- 
+
  			CSwordModuleInfo* module = backend()->findModuleByName((*it).module());
 -			boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +			QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
  			key->key( (*it).key() );
  			QString moduleText = key->strippedText();
- 
+
 Index: src/frontend/display/bthtmlreaddisplay.cpp
 ===================================================================
 --- src/frontend/display/bthtmlreaddisplay.cpp	(Revision 1214)
@@ -255,24 +244,24 @@ Index: src/frontend/display/bthtmlreaddisplay.cpp
 +#include <QSharedPointer>
  #include <QString>
  #include <QMenu>
- 
+
 @@ -164,7 +164,7 @@
- 
- 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) 
+
+ 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName))
  			{
 -				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +				QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
  				key->key( keyName );
- 
+
  				return key->strippedText();
 @@ -181,7 +181,7 @@
- 
- 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) 
+
+ 			if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName))
  			{
 -				boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +				QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
  				key->key( keyName );
- 
+
  				//TODO: This is a BAD HACK, we have to fnd a better solution to manage the settings now
 Index: src/frontend/display/bthtmljsobject.cpp
 ===================================================================
@@ -285,11 +274,11 @@ Index: src/frontend/display/bthtmljsobject.cpp
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
  #include <QObject>
- 
+
  using namespace InfoDisplay;
 @@ -100,7 +100,7 @@
  				//add real Bible text from module/key
- 				if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) 
+ 				if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName))
  				{
 -					boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
 +					QSharedPointer<CSwordKey> key( CSwordKey::createInstance(module) );
@@ -301,14 +290,14 @@ Index: src/frontend/bookshelfmanager/installpage/btsourcearea.h
 --- src/frontend/bookshelfmanager/installpage/btsourcearea.h	(Revision 1214)
 +++ src/frontend/bookshelfmanager/installpage/btsourcearea.h	(Revision 1215)
 @@ -12,7 +12,7 @@
- 
+
  #include "backend/btmoduletreeitem.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  #include <installmgr.h>
- 
+
 @@ -48,7 +48,7 @@
  		InstalledFilter(QString sourceName);
  		bool filter(CSwordModuleInfo*);
@@ -316,7 +305,7 @@ Index: src/frontend/bookshelfmanager/installpage/btsourcearea.h
 -		boost::scoped_ptr<CSwordBackend> m_swordBackend;
 +		QSharedPointer<CSwordBackend> m_swordBackend;
  	};
- 
+
  	BtSourceArea(const QString& sourceName);
 Index: src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
 ===================================================================
@@ -325,7 +314,7 @@ Index: src/frontend/bookshelfmanager/installpage/btinstallpage.cpp
 @@ -32,9 +32,6 @@
  #include "util/cresmgr.h"
  #include "util/directoryutil.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 -
 -
@@ -337,21 +326,21 @@ Index: src/frontend/bookshelfmanager/installpage/btinstallthread.h
 --- src/frontend/bookshelfmanager/installpage/btinstallthread.h	(Revision 1214)
 +++ src/frontend/bookshelfmanager/installpage/btinstallthread.h	(Revision 1215)
 @@ -14,7 +14,7 @@
- 
+
  #include <QThread>
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  class BtInstallProgressDialog;
- 
+
 @@ -82,7 +82,7 @@
  	sword::InstallSource m_installSource;
  	//TODO: it would be best to get the backend from the bookshelf manager install page
  	// where it has already been created. Could fasten the progress dialog startup.
 -	boost::scoped_ptr<CSwordBackend> m_backendForSource;
 +	QSharedPointer<CSwordBackend> m_backendForSource;
- 
+
  signals:
  	/** Emitted when the install progress status is updated. */
 Index: src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
@@ -359,32 +348,32 @@ Index: src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp
 --- src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp	(Revision 1214)
 +++ src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp	(Revision 1215)
 @@ -12,7 +12,7 @@
- 
+
  #include "frontend/bookshelfmanager/instbackend.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  //Qt includes
  #include <QLayout>
 @@ -158,7 +158,7 @@
- 
+
  sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
- 
+
 -	boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
 +	QSharedPointer<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
  	sword::InstallSource newSource(""); //empty, invalid Source
- 
+
  	if (dlg->exec() == QDialog::Accepted) {
 Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 ===================================================================
 --- src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp	(Revision 1214)
 +++ src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp	(Revision 1215)
 @@ -33,7 +33,7 @@
- 
- 
- 
--CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) : 
+
+
+
+-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
 +CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
  	QWidget(parent),
  	m_key(new CSwordVerseKey(mod))
@@ -393,7 +382,7 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
  	editorAndButtonsLayout->setContentsMargins(0,0,0,0);
  	dropdownButtonsLayout->setSpacing(0);
  	editorAndButtonsLayout->setSpacing(0);
--	
+-
 +
  	dropdownButtonsLayout->addWidget(m_bookDropdownButton, 2);
  	dropdownButtonsLayout->addWidget(m_chapterDropdownButton,1);
@@ -402,7 +391,7 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
  bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
  {
  	if (!key) return false;
--	
+-
 +
  	m_key->key(key->key());
  	updateText();
@@ -411,12 +400,12 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
  {
  	m_key->key(m_textbox->text());
  	updateText();
--	
+-
 -	emit changed(m_key.get());
 +
 +	emit changed(m_key.data());
  }
- 
+
  /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
 @@ -172,28 +172,28 @@
  void CKeyReferenceWidget::slotUpdateUnlock()
@@ -425,7 +414,7 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (oldKey != m_key->key()) emit changed(m_key.get());
 +	if (oldKey != m_key->key()) emit changed(m_key.data());
  }
- 
+
  void CKeyReferenceWidget::slotStepBook(int n)
  {
  	n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
@@ -433,15 +422,15 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
+
  void CKeyReferenceWidget::slotStepChapter(int n)
  {
  	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
  	updateText();
--	if (!updatelock) emit changed(m_key.get());	
+-	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
+
  void CKeyReferenceWidget::slotStepVerse(int n)
  {
  	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
@@ -449,8 +438,8 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
- 
+
+
 @@ -201,29 +201,29 @@
  {
  	if (m_key->Verse() != n) {
@@ -462,7 +451,7 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
+
  void CKeyReferenceWidget::slotChangeChapter(int n)
  {
  	if (m_key->Chapter() != n) {
@@ -474,7 +463,7 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
+
  void CKeyReferenceWidget::slotChangeBook(QString bookname)
  {
  	if (m_key->book() != bookname) {
@@ -486,29 +475,29 @@ Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp
 -	if (!updatelock) emit changed(m_key.get());
 +	if (!updatelock) emit changed(m_key.data());
  }
- 
+
 Index: src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h
 ===================================================================
 --- src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h	(Revision 1214)
 +++ src/frontend/keychooser/versekeychooser/ckeyreferencewidget.h	(Revision 1215)
 @@ -15,7 +15,7 @@
- 
+
  #include <QWidget>
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
- 
+
+
  class CLexiconKeyChooser;
 @@ -66,7 +66,7 @@
  	friend class BtChapterDropdownChooserButton;
  	friend class BtVerseDropdownChooserButton;
- 
+
 -	boost::scoped_ptr<CSwordVerseKey> m_key;
 +	QSharedPointer<CSwordVerseKey> m_key;
- 
+
  	QLineEdit* m_textbox;
- 
+
 Index: src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
 ===================================================================
 --- src/frontend/mainindex/bookmarks/cbookmarkindex.cpp	(Revision 1214)
@@ -516,10 +505,10 @@ Index: src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
 @@ -29,7 +29,7 @@
  #include "util/directoryutil.h"
  #include "util/ctoolclass.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  //Qt includes
  #include <QInputDialog>
 @@ -660,7 +660,7 @@
@@ -536,26 +525,26 @@ Index: src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
 --- src/frontend/mainindex/bookmarks/btbookmarkitem.cpp	(Revision 1214)
 +++ src/frontend/mainindex/bookmarks/btbookmarkitem.cpp	(Revision 1215)
 @@ -21,7 +21,7 @@
- 
+
  #include <QDebug>
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
- 
+
+
  BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)
 @@ -101,14 +101,14 @@
  	CPointers::backend()->setFilterOptions(filterOptions);
- 
+
  	QString ret;
 -	boost::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
 +	QSharedPointer<CSwordKey> k( CSwordKey::createInstance(module()) );
  	k->key(this->key());
- 
+
  	const CLanguageMgr::Language* lang = module()->language();
  	CBTConfig::FontSettingsPair fontPair = CBTConfig::get
  											   (lang);
- 
+
 -	Q_ASSERT(k.get());
 +	Q_ASSERT(k.data());
  	if (fontPair.first) { //use a special font
@@ -568,10 +557,10 @@ Index: src/frontend/mainindex/bookshelf/cbookshelfindex.cpp
 @@ -40,10 +40,8 @@
  #include <QDebug>
  #include <QMenu>
- 
+
 -#include <boost/scoped_ptr.hpp>
- 
- 
+
+
 -
  CBookshelfIndex::CBookshelfIndex(QWidget *parent)
  	: QTreeWidget(parent),
@@ -583,7 +572,7 @@ Index: src/main.cpp
 @@ -22,8 +22,6 @@
  #include <stdio.h>
  #include <signal.h>
- 
+
 -#include <boost/scoped_ptr.hpp>
 -
  #include <QLocale>
@@ -594,22 +583,22 @@ Index: src/backend/filters/bt_thmlhtml.cpp
 --- src/backend/filters/bt_thmlhtml.cpp	(Revision 1214)
 +++ src/backend/filters/bt_thmlhtml.cpp	(Revision 1215)
 @@ -15,7 +15,6 @@
- 
+
  #include "backend/config/cbtconfig.h"
  #include "util/cpointers.h"
 -#include <boost/scoped_ptr.hpp>
- 
+
  //Sword includes
  #include <swmodule.h>
 @@ -319,7 +318,7 @@
- 
+
  					CReferenceManager::ParseOptions options;
  					options.refBase = QString::fromUtf8(myUserData->key->getText());
--					
+-
 +
  					options.sourceLanguage = myModule->Lang();
  					options.destinationLanguage = QString("en");
- 
+
 Index: src/backend/rendering/cbookdisplay.cpp
 ===================================================================
 --- src/backend/rendering/cbookdisplay.cpp	(Revision 1214)
@@ -617,18 +606,18 @@ Index: src/backend/rendering/cbookdisplay.cpp
 @@ -13,8 +13,8 @@
  #include "backend/drivers/cswordbookmoduleinfo.h"
  #include "backend/keys/cswordtreekey.h"
- 
+
 -//Util
 -#include <boost/scoped_ptr.hpp>
 +// Qt
 +#include <QSharedPointer>
- 
+
  /** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
  const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
 @@ -31,7 +31,7 @@
  	// the number of levels which should be display together, 1 means display no entries together
  	int displayLevel = book->config( CSwordModuleInfo::DisplayLevel ).toInt();
- 
+
 -	boost::scoped_ptr<CSwordTreeKey> key (
 +	QSharedPointer<CSwordTreeKey> key (
  		dynamic_cast<CSwordTreeKey*>( CSwordKey::createInstance(book) )
@@ -637,12 +626,12 @@ Index: src/backend/rendering/cbookdisplay.cpp
 @@ -103,7 +103,7 @@
  	//const bool hasToplevelText = !key->strippedText().isEmpty();
  	key->firstChild(); //go to the first sibling on the same level
- 
+
 -	setupRenderTree(key.get(), &tree, keyName);
 +	setupRenderTree(key.data(), &tree, keyName);
- 
+
  	const QString renderedText = render.renderKeyTree(tree);
- 
+
 Index: src/backend/rendering/ctextrendering.cpp
 ===================================================================
 --- src/backend/rendering/ctextrendering.cpp	(Revision 1214)
@@ -650,17 +639,17 @@ Index: src/backend/rendering/ctextrendering.cpp
 @@ -16,7 +16,7 @@
  #include "backend/managers/cdisplaytemplatemgr.h"
  #include "backend/managers/creferencemanager.h"
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
  #include "util/ctoolclass.h"
- 
+
  //Sword
 @@ -34,7 +34,7 @@
  	m_key( key ),
  	m_childList(),
  	m_stopKey( QString::null ),
--	m_alternativeContent( QString::null ) 
+-	m_alternativeContent( QString::null )
 +	m_alternativeContent( QString::null )
  {
  	m_moduleList.append( const_cast<CSwordModuleInfo*>(mod) ); //BAD CODE
@@ -669,16 +658,16 @@ Index: src/backend/rendering/ctextrendering.cpp
  	m_key(QString::null),
  	m_childList(),
  	m_stopKey(QString::null),
--	m_alternativeContent(QString::null) 
+-	m_alternativeContent(QString::null)
 +	m_alternativeContent(QString::null)
  {
  }
- 
+
 @@ -75,7 +75,7 @@
  	m_key( i.m_key ),
  	m_childList(),
  	m_stopKey( i.m_stopKey ),
--	m_alternativeContent( i.m_alternativeContent ) 
+-	m_alternativeContent( i.m_alternativeContent )
 +	m_alternativeContent( i.m_alternativeContent )
  {
  	foreach(KeyTreeItem* item, (*i.childList())){
@@ -687,21 +676,21 @@ Index: src/backend/rendering/ctextrendering.cpp
  				m_childList.append(
  					new KeyTreeItem(start.key(), module, KeyTreeItem::Settings(false, settings.keyRenderingFace))
  				);
--				
- 
+-
+
 +
  				ok = start.next(CSwordVerseKey::UseVerse);
  			}
  		}
 @@ -183,14 +183,14 @@
  	QString t;
- 
+
  	//optimization for entries with the same key
 -	boost::scoped_ptr<CSwordKey> key(
 +	QSharedPointer<CSwordKey> key(
  		(modules.count() == 1) ? CSwordKey::createInstance(modules.first()) : 0
  	);
- 
+
  	foreach (KeyTreeItem* c, tree) {
  		if (modules.count() == 1) { //this optimizes the rendering, only one key created for all items
  			key->key( c->key() );
@@ -711,44 +700,44 @@ Index: src/backend/rendering/ctextrendering.cpp
  		else {
  			t.append( renderEntry( *c ) );
 @@ -204,15 +204,15 @@
- 
+
  	CSwordModuleInfo* module = modules.first();
  	//qWarning( "renderKeyRange start %s stop %s \n", start.latin1(), stop.latin1() );
--	
+-
 -	boost::scoped_ptr<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
 +
 +	QSharedPointer<CSwordKey> lowerBound( CSwordKey::createInstance(module) );
  	lowerBound->key(start);
- 
+
 -	boost::scoped_ptr<CSwordKey> upperBound( CSwordKey::createInstance(module) );
 +	QSharedPointer<CSwordKey> upperBound( CSwordKey::createInstance(module) );
  	upperBound->key(stop);
- 
+
 -	sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.get());
 -	sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.get());
 +	sword::SWKey* sw_start = dynamic_cast<sword::SWKey*>(lowerBound.data());
 +	sword::SWKey* sw_stop = dynamic_cast<sword::SWKey*>(upperBound.data());
- 
+
  	Q_ASSERT((*sw_start == *sw_stop) || (*sw_start < *sw_stop));
- 
+
 @@ -223,10 +223,10 @@
  		KeyTree tree;
  		KeyTreeItem::Settings settings = keySettings;
- 
+
 -		CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.get());
 +		CSwordVerseKey* vk_start = dynamic_cast<CSwordVerseKey*>(lowerBound.data());
  		Q_ASSERT(vk_start);
- 
+
 -		CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.get());
 +		CSwordVerseKey* vk_stop = dynamic_cast<CSwordVerseKey*>(upperBound.data());
  		Q_ASSERT(vk_stop);
- 
+
  		bool ok = true;
 @@ -236,7 +236,7 @@
- 
+
  			/*TODO: We need to take care of linked verses if we render one or (esp) more modules
  			If the verses 2,3,4,5 are linked to 1, it should be displayed as one entry with the caption 1-5 */
--			
+-
 +
  			if (vk_start->Chapter() == 0){ //range was 0:0-1:x, render 0:0 first and jump to 1:0
  				vk_start->Verse(0);
@@ -759,18 +748,18 @@ Index: src/backend/rendering/chtmlexportrendering.cpp
 +++ src/backend/rendering/chtmlexportrendering.cpp	(Revision 1215)
 @@ -16,7 +16,7 @@
  #include "backend/drivers/cswordmoduleinfo.h"
- 
+
  #include "util/cpointers.h"
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  #include <iostream>
- 
+
 @@ -55,7 +55,7 @@
  	CHTMLExportRendering::~CHTMLExportRendering() {}
- 
+
  	const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey* k) {
--		
+-
 +
  		if (i.hasAlternativeContent()) {
  			QString ret = QString(i.settings().highlight ? "<div class=\"currententry\">" : "<div class=\"entry\">");
@@ -778,13 +767,13 @@ Index: src/backend/rendering/chtmlexportrendering.cpp
 @@ -86,8 +86,8 @@
  		return QString(""); //no module present for rendering
  	}
- 
+
 -	boost::scoped_ptr<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
 -	CSwordKey* key = k ? k : scoped_key.get();
 +	QSharedPointer<CSwordKey> scoped_key( !k ? CSwordKey::createInstance(modules.first()) : 0 );
 +	CSwordKey* key = k ? k : scoped_key.data();
  	Q_ASSERT(key);
- 
+
  	CSwordVerseKey* myVK = dynamic_cast<CSwordVerseKey*>(key);
 Index: src/backend/rendering/centrydisplay.cpp
 ===================================================================
@@ -792,17 +781,17 @@ Index: src/backend/rendering/centrydisplay.cpp
 +++ src/backend/rendering/centrydisplay.cpp	(Revision 1215)
 @@ -18,7 +18,6 @@
  #include "cdisplayrendering.h"
- 
+
  #include "backend/config/cbtconfig.h"
 -#include <boost/scoped_ptr.hpp>
- 
+
  //Qt includes
  #include <QApplication>
 @@ -27,7 +26,7 @@
  using namespace Rendering;
- 
+
  /** Returns the rendered text using the modules in the list and using the key parameter.
-- * The displayoptions and filter options are used, too. 
+- * The displayoptions and filter options are used, too.
 + * The displayoptions and filter options are used, too.
   */
  const QString CEntryDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {
@@ -811,32 +800,32 @@ Index: src/backend/rendering/centrydisplay.cpp
  		CSwordVerseKey k1(module);
  		k1.Headings(1);
  		k1.key(keyName);
--		
+-
 +
  		// don't print the key
  		CTextRendering::KeyTreeItem::Settings preverse_settings(false, CTextRendering::KeyTreeItem::Settings::NoKey);
- 
+
 Index: src/backend/rendering/cplaintextexportrendering.cpp
 ===================================================================
 --- src/backend/rendering/cplaintextexportrendering.cpp	(Revision 1214)
 +++ src/backend/rendering/cplaintextexportrendering.cpp	(Revision 1215)
 @@ -12,7 +12,7 @@
  #include "backend/keys/cswordkey.h"
- 
+
  //Util
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  namespace Rendering {
- 
+
 @@ -27,7 +27,7 @@
  	}
- 
+
  	QList<CSwordModuleInfo*> modules = i.modules();
 -	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
 +	QSharedPointer<CSwordKey> key( CSwordKey::createInstance(modules.first()) );
  	QString renderedText = QString(i.key()).append(":\n");
- 
+
  	QString entry;
 Index: src/backend/drivers/cswordbiblemoduleinfo.cpp
 ===================================================================
@@ -845,47 +834,47 @@ Index: src/backend/drivers/cswordbiblemoduleinfo.cpp
 @@ -18,7 +18,7 @@
  //Sword
  #include <versekey.h>
- 
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
- 
+
+
  CSwordBibleModuleInfo::CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
 @@ -112,7 +112,7 @@
  			max = -1;
  		}
- 
+
 -		boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 +		QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
  		(*key) = sword::TOP;
- 
+
  		for (key->Testament(min+1); !key->Error() && (key->Testament()-1) <= max; key->Book(key->Book()+1)) {
 @@ -129,7 +129,7 @@
  unsigned int CSwordBibleModuleInfo::chapterCount(const unsigned int book) {
  	int result = 0;
- 
+
 -	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 +	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
  	(*key) = sword::TOP;
- 
+
  	// works for old and new versions
 @@ -149,7 +149,7 @@
  unsigned int CSwordBibleModuleInfo::verseCount( const unsigned int book, const unsigned int chapter ) {
  	unsigned int result = 0;
- 
+
 -	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 +	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
  	(*key) = sword::TOP;
- 
+
  	// works for old and new versions
 @@ -174,7 +174,7 @@
  	//find out if we have ot and nt, only ot or only nt
  	initBounds();
- 
+
 -	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 +	QSharedPointer<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
  	(*key) = sword::TOP;
- 
+
  #ifdef SWORD_MULTIVERSE
 Index: src/backend/drivers/cswordmoduleinfo.cpp
 ===================================================================
@@ -893,17 +882,17 @@ Index: src/backend/drivers/cswordmoduleinfo.cpp
 +++ src/backend/drivers/cswordmoduleinfo.cpp	(Revision 1215)
 @@ -23,7 +23,7 @@
  #include "backend/config/cbtconfig.h"
- 
- 
+
+
 -#include <boost/scoped_ptr.hpp>
 +#include <QSharedPointer>
- 
+
  //Qt includes
  #include <QRegExp>
 @@ -251,7 +251,7 @@
  			}
  		}
- 
+
 -		boost::scoped_ptr<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
 +		QSharedPointer<lucene::index::IndexWriter> writer( new lucene::index::IndexWriter(index.toAscii().constData(), &an, true) ); //always create a new index
  		writer->setMaxFieldLength(BT_MAX_LUCENE_FIELD_LENGTH);
@@ -912,16 +901,16 @@ Index: src/backend/drivers/cswordmoduleinfo.cpp
 @@ -305,7 +305,7 @@
  				}
  			}
- 
+
 -			boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
 +			QSharedPointer<lucene::document::Document> doc(new lucene::document::Document());
- 
+
  			//index the key
  			lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
 @@ -358,7 +358,7 @@
  				}
  			} // for attListI
- 
+
 -			writer->addDocument(doc.get());
 +			writer->addDocument(doc.data());
  			//Index() is not implemented properly for lexicons, so we use a
@@ -929,14 +918,14 @@ Index: src/backend/drivers/cswordmoduleinfo.cpp
  			if (type() == CSwordModuleInfo::Lexicon){
 @@ -422,8 +422,8 @@
  	wchar_t wcharBuffer[BT_MAX_LUCENE_FIELD_LENGTH + 1];
- 
+
  	// work around Swords thread insafety for Bibles and Commentaries
 -	boost::scoped_ptr < CSwordKey > key(CSwordKey::createInstance(this));
 -	sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.get());
 +	QSharedPointer < CSwordKey > key(CSwordKey::createInstance(this));
 +	sword::SWKey* s = dynamic_cast < sword::SWKey * >(key.data());
  	QList<sword::VerseKey*> list;
- 
+
  	if (s) {
 @@ -438,15 +438,15 @@
  		lucene::analysis::standard::StandardAnalyzer analyzer( stop_words );
@@ -944,18 +933,18 @@ Index: src/backend/drivers/cswordmoduleinfo.cpp
  		lucene_utf8towcs(wcharBuffer, searchedText.toUtf8().constData(), BT_MAX_LUCENE_FIELD_LENGTH);
 -		boost::scoped_ptr<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
 +		QSharedPointer<lucene::search::Query> q( lucene::queryParser::QueryParser::parse((const TCHAR*)wcharBuffer, (const TCHAR*)_T("content"), &analyzer) );
- 
+
 -		boost::scoped_ptr<lucene::search::Hits> h( searcher.search(q.get(), lucene::search::Sort::INDEXORDER) );
 +		QSharedPointer<lucene::search::Hits> h( searcher.search(q.data(), lucene::search::Sort::INDEXORDER) );
- 
+
  		const bool useScope = (scope.Count() > 0);
  //		const bool isVerseModule = (type() == CSwordModuleInfo::Bible) || (type() == CSwordModuleInfo::Commentary);
- 
+
  		lucene::document::Document* doc = 0;
 -		boost::scoped_ptr<sword::SWKey> swKey( module()->CreateKey() );
 +		QSharedPointer<sword::SWKey> swKey( module()->CreateKey() );
- 
- 
+
+
  		for (int i = 0; i < h->length(); ++i) {
 Index: CMakeLists.txt
 ===================================================================
@@ -964,7 +953,7 @@ Index: CMakeLists.txt
 @@ -30,7 +30,6 @@
  #
  #SET(QT_DBUSXML2CPP_EXECUTABLE "/usr/bin/qdbusxml2cpp") #TEMP HACK?
- 
+
 -FIND_PACKAGE(Boost REQUIRED)
  #
  #custom includes
@@ -976,7 +965,7 @@ Index: CMakeLists.txt
 -	${Boost_INCLUDE_DIRS}
  	${SWORD_INCLUDE_DIR}
  )
- 
+
 Index: README
 ===================================================================
 --- README	(Revision 1214)
@@ -987,5 +976,5 @@ Index: README
  	-CLucene 0.9.16a+ (http://clucene.sf.net)
 -	-Boost header files (libboost-dev)
  	-cmake 2.4.0+ (http://cmake.org)
- 
+
  1.2 DEVELOPER-ONLY REQUIREMENTS
