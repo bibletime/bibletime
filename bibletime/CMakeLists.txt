@@ -302,7 +302,7 @@ IF(WIN32 AND NOT UNIX)
   SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
   # There is a bug in NSI that does not handle full unix paths properly. Make
   # sure there is at least one set of four (4) backlasshes.
-  
+
   # We need the libraries, and they're not pulled in automatically
   INCLUDE(${QT_USE_FILE})
   IF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -329,12 +329,12 @@ IF(WIN32 AND NOT UNIX)
 			"${QT_LIBRARY_DIR}/QtSvg4.dll"
 			DESTINATION "${BT_DESTINATION}")
   ENDIF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-  
+
   # This adds in the required Windows system libraries and libsword.dll
   INCLUDE(InstallRequiredSystemLibraries)
   STRING(REPLACE ".lib" ".dll" SWORD_DLL "${SWORD_LIBRARY}")
   INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
-  
+
   # Some options for the CPack system.  These should be pretty self-evident
   SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons\\\\bibletime.png")
   SET(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\bibletime.exe")
@@ -362,21 +362,21 @@ ELSEIF(APPLE)
             DESTINATION "${BT_DESTINATION}/../Library/Frameworks/")
   ENDFOREACH(QT_FRAME ${QT_FRAMEWORKS_USED})
   # Other libraries I need
-  INSTALL(FILES "${CLUCENE_LIBRARY}" "${CLUCENE_LIBRARY_DIR}/libclucene.0.0.0.dylib" "${CLUCENE_LIBRARY_DIR}/libclucene.0.dylib" "/opt/local/lib/libcurl.4.dylib" 
+  INSTALL(FILES "${CLUCENE_LIBRARY}" "${CLUCENE_LIBRARY_DIR}/libclucene.0.0.0.dylib" "${CLUCENE_LIBRARY_DIR}/libclucene.0.dylib" "/opt/local/lib/libcurl.4.dylib"
    	        "/opt/local/lib/libssl.0.9.8.dylib" "/opt/local/lib/libcrypto.0.9.8.dylib" "/opt/local/lib/libicui18n.40.dylib" "/opt/local/lib/libicui18n.40.0.dylib"
 		"/opt/local/lib/libicuuc.40.dylib" "/opt/local/lib/libicuuc.40.0.dylib" "/opt/local/lib/libicuio.40.dylib" "/opt/local/lib/libicuio.40.0.dylib"
 		"/opt/local/lib/libicudata.40.dylib" "/opt/local/lib/libicudata.40.0.dylib" "/opt/local/lib/libpng12.0.dylib"
           DESTINATION "${BT_DESTINATION}/../Library")
-    
+
   # Qt Plugins
   INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/../../plugins")
   # A file to execute that might get rid of the above mess
-  SET(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/src/util/bt_start.sh")
+  SET(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/bt_start.sh")
   SET(CPACK_BUNDLE_NAME "BibleTime")
   SET(CPACK_PACKAGE_FILE_NAME "BibleTime_Mac_Beta")
-  SET(CPACK_BUNDLE_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/src/util/Info.plist")
-  SET(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/BibleTime.icns")
-  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons/BibleTime.icns")
+  SET(CPACK_BUNDLE_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist")
+  SET(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")
+  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")
   SET(CPACK_GENERATOR "Bundle")
 ENDIF(WIN32 AND NOT UNIX)
 
