@@ -39,16 +39,52 @@ zapsat neuložené změny na disk.</para>
         </variablelist>
       </para>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-view">
       <title>
         <guimenu>View</guimenu>
       </title>
+
       <variablelist>
+        <varlistentry id="hdbk-reference-menus-view-fullscreenmode">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F5</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Fullscreen mode</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles full screen display.</action> Toggle this setting to 
+maximize the &bibletime; window.</para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showtoolbar">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
-              <guimenuitem>Show Toolbar</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F6</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_bibletime.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -57,6 +93,7 @@ zapsat neuložené změny na disk.</para>
 přejete zapnout nebo vypnout Hlavní nástrojovou lištu.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
@@ -68,10 +105,10 @@ přejete zapnout nebo vypnout Hlavní nástrojovou lištu.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_index.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Bookshelf</guimenuitem>
+              <guimenuitem>Show bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -81,6 +118,7 @@ nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud
 potřebujete více času pro časopis.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
@@ -92,10 +130,10 @@ potřebujete více času pro časopis.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_mag.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Mag</guimenuitem>
+              <guimenuitem>Show mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>

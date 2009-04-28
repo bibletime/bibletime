@@ -6,6 +6,11 @@
 bejegyzéséről, elérésük szerint csoportosítva, az összes 
 albejegyzéseikkel. Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk 
 tartoznak. Az elérhető gyorsbillentyűk teljes listáját <link 
+linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.Ebben a 
+részben részletes leírást találhat a &bibletime; fő menüjének összes 
+bejegyzéséről, elérésük szerint csoportosítva, az összes 
+albejegyzéseikkel. Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk 
+tartoznak. Az elérhető gyorsbillentyűk teljes listáját <link 
 linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
@@ -32,30 +37,70 @@ linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
             <listitem>
               <para>
               <action>BibleTime bezárása</action>.  A BibleTime meg fogja kérdezni, hogy 
-elmentse -e a változtatásokat a lemezre.</para>
+elmentse -e a változtatásokat a lemezre.<action>BibleTime 
+bezárása</action>.  A BibleTime meg fogja kérdezni, hogy elmentse -e a 
+változtatásokat a lemezre.</para>
             </listitem>
           </varlistentry>
         </variablelist>
       </para>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-view">
       <title>
         <guimenu>View</guimenu>
       </title>
+
       <variablelist>
+        <varlistentry id="hdbk-reference-menus-view-fullscreenmode">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F5</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Fullscreen mode</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles full screen display.</action> Toggle this setting to 
+maximize the &bibletime; window.</para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showtoolbar">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
-              <guimenuitem>Show Toolbar</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F6</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_bibletime.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Eszköztár megjelenítése. </action> Itt kapcsolhatja ki/be a fő 
-eszköztár megjelenítését.</para>
+eszköztár megjelenítését.<action>Eszköztár megjelenítése. </action> Itt 
+kapcsolhatja ki/be a fő eszköztár megjelenítését.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
@@ -67,18 +112,20 @@ eszköztár megjelenítését.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_index.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Bookshelf</guimenuitem>
+              <guimenuitem>Show bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Könyvespolc megjelenítése.</action> Itt kapcsolhatja ki/be a 
-Könyvespolc megjelenítését.</para>
+Könyvespolc megjelenítését.<action>Könyvespolc megjelenítése.</action> Itt 
+kapcsolhatja ki/be a Könyvespolc megjelenítését.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
@@ -90,16 +137,18 @@ Könyvespolc megjelenítését.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_mag.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Mag</guimenuitem>
+              <guimenuitem>Show mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
             <para>
             <action>Nagyító megjelenítése</action>. Itt kapcsolhatja ki/be a nagyító 
-(információs ablak) megjelenítését.</para>
+(információs ablak) megjelenítését.<action>Nagyító 
+megjelenítése</action>. Itt kapcsolhatja ki/be a nagyító (információs ablak) 
+megjelenítését.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -128,7 +177,9 @@ Könyvespolc megjelenítését.</para>
           <listitem>
             <para>
             <action>Keresés megnyitása az alapértelmezett Bibliában</action>. További 
-bibliák adhatók hozzá a párbeszédablakban.</para>
+bibliák adhatók hozzá a párbeszédablakban.<action>Keresés megnyitása az 
+alapértelmezett Bibliában</action>. További bibliák adhatók hozzá a 
+párbeszédablakban.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-search-openworks">
@@ -150,7 +201,9 @@ bibliák adhatók hozzá a párbeszédablakban.</para>
           <listitem>
             <para>
             <action>Az összes megnyitott dokumentumban kereső ablakot nyit 
-meg</action>. További munkák adhatók a kereséshez a párbeszédablakban.</para>
+meg</action>. További munkák adhatók a kereséshez a 
+párbeszédablakban.<action>Az összes megnyitott dokumentumban kereső ablakot 
+nyit meg</action>. További munkák adhatók a kereséshez a párbeszédablakban.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -176,7 +229,10 @@ meg</action>. További munkák adhatók a kereséshez a párbeszédablakban.</pa
             <para>
             <action>A jelenlegi munkafolyamatot menti</action>. Olyan helyi menüt nyit 
 meg, ahol meglévő folyamatként mentheti a jelenlegit. A következő elemből 
-tudhatja meg, hogyan kell menteni új folyamatot.</para>
+tudhatja meg, hogyan kell menteni új folyamatot.<action>A jelenlegi 
+munkafolyamatot menti</action>. Olyan helyi menüt nyit meg, ahol meglévő 
+folyamatként mentheti a jelenlegit. A következő elemből tudhatja meg, hogyan 
+kell menteni új folyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-savenewsession">
@@ -198,7 +254,8 @@ tudhatja meg, hogyan kell menteni új folyamatot.</para>
           <listitem>
             <para>
             <action>A jelenlegi folyamatot új néven menti</action>. Megkérdezi a 
-folyamat nevét a mentéshez.</para>
+folyamat nevét a mentéshez.<action>A jelenlegi folyamatot új néven 
+menti</action>. Megkérdezi a folyamat nevét a mentéshez.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-loadsession">
@@ -216,7 +273,9 @@ folyamat nevét a mentéshez.</para>
           <listitem>
             <para>
             <action>Előzőleg mentett folyamat betöltése</action>. Egy helyi menüt nyit 
-meg, ahol kiválaszthatja a betöltendő folyamatot.</para>
+meg, ahol kiválaszthatja a betöltendő folyamatot.<action>Előzőleg mentett 
+folyamat betöltése</action>. Egy helyi menüt nyit meg, ahol kiválaszthatja a 
+betöltendő folyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-deletesession">
@@ -234,7 +293,9 @@ meg, ahol kiválaszthatja a betöltendő folyamatot.</para>
           <listitem>
             <para>
             <action>Mentett folyamat törlése</action>. Olyan menüt nyit meg, ahol 
-kiválaszthatja a törlendő munkafolyamatot.</para>
+kiválaszthatja a törlendő munkafolyamatot.<action>Mentett folyamat 
+törlése</action>. Olyan menüt nyit meg, ahol kiválaszthatja a törlendő 
+munkafolyamatot.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
@@ -254,7 +315,10 @@ kiválaszthatja a törlendő munkafolyamatot.</para>
             <para>
             <action>Az ablakok elrendezését szabályozza</action>. A megnyíló menü 
 segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime; 
-állítsa be önnek. (Automatikus, csak próbálja ki!).</para>
+állítsa be önnek. (Automatikus, csak próbálja ki!).<action>Az ablakok 
+elrendezését szabályozza</action>. A megnyíló menü segítségével eldöntheti, 
+hogy az ablakokat ön rendezze, vagy a &bibletime; állítsa be 
+önnek. (Automatikus, csak próbálja ki!).</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-window-closeall">
@@ -302,7 +366,10 @@ segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime;
             <action> Megnyitja a &bibletime; fő beállítási ablakát</action>. Itt 
 megtalál mindent, amire szüksége lehet, hogy a &bibletime; úgy viselkedjen, 
 ahogyan azt szeretné. Nézze meg a <link linkend="hdbk-config-bt">beállítások 
-részt</link> a részletekért.</para>
+részt</link> a részletekért.<action> Megnyitja a &bibletime; fő beállítási 
+ablakát</action>. Itt megtalál mindent, amire szüksége lehet, hogy a 
+&bibletime; úgy viselkedjen, ahogyan azt szeretné. Nézze meg a <link 
+linkend="hdbk-config-bt">beállítások részt</link> a részletekért.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-settings-bookshelf_manager">
@@ -328,6 +395,9 @@ részt</link> a részletekért.</para>
             <para>
             <action>Nyit egy ablakot, ahol megváltoztathatja a Sword beállításait, és 
 kezelheti a könyvespolcát</action>. Bővebb információért tekintse meg <link 
+linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.<action>Nyit egy 
+ablakot, ahol megváltoztathatja a Sword beállításait, és kezelheti a 
+könyvespolcát</action>. Bővebb információért tekintse meg <link 
 linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
           </listitem>
         </varlistentry>
@@ -359,7 +429,8 @@ linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
           <listitem>
             <para>
             <action>Megnyitja a &bibletime; felhasználói kézikönyvét</action>. Épp ezt 
-olvassa.</para>
+olvassa.<action>Megnyitja a &bibletime; felhasználói 
+kézikönyvét</action>. Épp ezt olvassa.</para>
           </listitem>
         </varlistentry>
 
@@ -390,7 +461,14 @@ különleges útmutató úgy lett összeállítva, hogy ne vegyen védelmébe
 semmilyen egyéni felekezeti tanítást. Reméljük, hogy olvassa és 
 tanulmányozza az írásokat, hogy megértse, mit is mondanak. Ha úgy kezdi 
 tanulmányozni az írást, hogy azt kívánja, hogy az Úr vesse a szavát magként 
-a szívébe, Ő nem fog csalódást okozni.</para>
+a szívébe, Ő nem fog csalódást okozni.<action> Megnyit egy segédletet a 
+Biblia tanulmányozásához</action>. A &bibletime; csapat reménykedik benne, 
+hogy ez a segédlet arra készteti olvasóit, hogy tanulmányozzák az írásokat, 
+hogy mit is mondanak. Ez a különleges útmutató úgy lett összeállítva, hogy 
+ne vegyen védelmébe semmilyen egyéni felekezeti tanítást. Reméljük, hogy 
+olvassa és tanulmányozza az írásokat, hogy megértse, mit is mondanak. Ha úgy 
+kezdi tanulmányozni az írást, hogy azt kívánja, hogy az Úr vesse a szavát 
+magként a szívébe, Ő nem fog csalódást okozni.</para>
           </listitem>
         </varlistentry>
 
@@ -405,7 +483,10 @@ a szívébe, Ő nem fog csalódást okozni.</para>
             <para>
             <action>Információs ablakot nyit meg a &bibletime; projektről</action>, 
 benne a &bibletime; verziójáról és a fejlesztőkről, a &sword; verziójáról, a 
-&qt; verziójáról és a felhasználási feltételekről.</para>
+&qt; verziójáról és a felhasználási feltételekről.<action>Információs 
+ablakot nyit meg a &bibletime; projektről</action>, benne a &bibletime; 
+verziójáról és a fejlesztőkről, a &sword; verziójáról, a &qt; verziójáról és 
+a felhasználási feltételekről.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -416,9 +497,14 @@ benne a &bibletime; verziójáról és a fejlesztőkről, a &sword; verziójár�
     <para>Kérjük nézze meg az <link linkend="hdbk-reference-menus">előző részt</link> 
 az eszköztár gombjainak magyarázatához. Lehetősége van <action>az 
 egérmutatót a gomb fölé vinni</action>, és néhány másodpercen belül 
-megjelenik egy buborék súgó egy rövid leírással. </para>
+megjelenik egy buborék súgó egy rövid leírással. Kérjük nézze meg az <link 
+linkend="hdbk-reference-menus">előző részt</link> az eszköztár gombjainak 
+magyarázatához. Lehetősége van <action>az egérmutatót a gomb fölé 
+vinni</action>, és néhány másodpercen belül megjelenik egy buborék súgó egy 
+rövid leírással. </para>
     <para>Szükségeinek megfelelően beállíthatja az eszköztárat, ehhez használja a 
-következő menüpontot: 
+következő menüpontot:Szükségeinek megfelelően beállíthatja az eszköztárat, 
+ehhez használja a következő menüpontot: 
     <variablelist>
       <varlistentry>
         <term>
@@ -439,6 +525,8 @@ következő menüpontot:
       </varlistentry>
     </variablelist>A részletes információkért <link 
 linkend="hdbk-reference-menus-settings-toolbars">tekintse meg ezt a 
+részt</link>.A részletes információkért <link 
+linkend="hdbk-reference-menus-settings-toolbars">tekintse meg ezt a 
 részt</link>.</para>
   </sect1>
   <sect1 id="hdbk-reference-hotkeys">
@@ -447,6 +535,13 @@ részt</link>.</para>
 (többnyire) ABC sorrendnek megfelelő. Ha közvetlenül szeretné megtudni, 
 melyik kombináció tartozik egyes menükhöz, tekintse meg közvetlenül a 
 &bibletime; menüiben, (ahol jelezve vannak), vagy megkeresheti <link 
+linkend="hdbk-reference-menus">ebben a részben</link>. Ne feledje, hogy a 
+funkcióbillentűk kivételével (F1-F9) a billentyűk mellé a CTRL billentyű 
+lenyomása (olykor az ALT is) szükséges.Ez az összes gyorsbillentyű 
+leírásukkal együttes listája. A felsorolás (többnyire) ABC sorrendnek 
+megfelelő. Ha közvetlenül szeretné megtudni, melyik kombináció tartozik 
+egyes menükhöz, tekintse meg közvetlenül a &bibletime; menüiben, (ahol 
+jelezve vannak), vagy megkeresheti <link 
 linkend="hdbk-reference-menus">ebben a részben</link>. Ne feledje, hogy a 
 funkcióbillentűk kivételével (F1-F9) a billentyűk mellé a CTRL billentyű 
 lenyomása (olykor az ALT is) szükséges.</para>
@@ -484,6 +579,9 @@ lenyomása (olykor az ALT is) szükséges.</para>
             <link 
 linkend="hdbk-reference-menus-search-defaultbible"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
 az alapértelmezett Bibliában</guimenuitem></menuchoice></link> menüvel 
+egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.<link 
+linkend="hdbk-reference-menus-search-defaultbible"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+az alapértelmezett Bibliában</guimenuitem></menuchoice></link> menüvel 
 egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.</entry>
           </row>
           <row>
@@ -495,7 +593,10 @@ egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.</ent
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
 automatikus igazítása</guimenuitem><guimenuitem> Függőleges mozaik 
 elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
-elrendezést.</entry>
+elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> 
+<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> 
+Függőleges mozaik elrendezéssel</guimenuitem></menuchoice>, aktiválja az 
+automatikus mozaik elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -506,7 +607,10 @@ elrendezést.</entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
 automatikus igazítása</guimenuitem><guimenuitem> Vízszintes mozaik 
 elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
-elrendezést.</entry>
+elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> 
+<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> 
+Vízszintes mozaik elrendezéssel</guimenuitem></menuchoice>, aktiválja az 
+automatikus mozaik elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -517,7 +621,10 @@ elrendezést.</entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
 automatikus igazítása</guimenuitem><guimenuitem> Átlapoló 
 elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus átlapoló 
-elrendezést.</entry>
+elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> 
+<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> 
+Átlapoló elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus 
+átlapoló elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -527,6 +634,9 @@ elrendezést.</entry>
             <entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
 automatikus igazítása</guimenuitem><guimenuitem> Kézi 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  
+elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> 
+<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> Kézi 
 elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</entry>
           </row>
           <row>
@@ -538,6 +648,9 @@ elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</e
             Megegyezik az <link 
 linkend="hdbk-reference-menus-window-savenewsession"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mentés 
 új folyamatként</guimenuitem></menuchoice></link> menüponttal, menti a 
+jelenlegi elrendezést új néven, új folyamatként.Megegyezik az <link 
+linkend="hdbk-reference-menus-window-savenewsession"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mentés 
+új folyamatként</guimenuitem></menuchoice></link> menüponttal, menti a 
 jelenlegi elrendezést új néven, új folyamatként.</entry>
           </row>
           <row>
@@ -547,6 +660,9 @@ jelenlegi elrendezést új néven, új folyamatként.</entry>
             </entry>
             <entry>
             Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.Megegyezik az <link 
 linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
 Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
 összes nyitott ablakot.</entry>
@@ -570,7 +686,9 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
               <keycombo action="simul">&Ctrl;
               <keycap>A</keycap></keycombo>
             </entry>
-            <entry>Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban.</entry>
+            <entry>Összes kiválasztása. Az összes szöveget kiválasztja az aktuális 
+ablakban.Összes kiválasztása. Az összes szöveget kiválasztja az aktuális 
+ablakban.</entry>
           </row>
           <row>
             <entry>
@@ -595,6 +713,10 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
             Megegyezik a <link 
 linkend="hdbk-reference-menus-search-openworks"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
 a megnyitott dokumentum(ok)ban</guimenuitem></menuchoice></link> 
+menüponttal, keresési ablakot nyit a megnyitott munkákban való 
+kereséshez.Megegyezik a <link 
+linkend="hdbk-reference-menus-search-openworks"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+a megnyitott dokumentum(ok)ban</guimenuitem></menuchoice></link> 
 menüponttal, keresési ablakot nyit a megnyitott munkákban való kereséshez.</entry>
           </row>
           <row>
@@ -604,6 +726,9 @@ menüponttal, keresési ablakot nyit a megnyitott munkákban való kereséshez.<
             </entry>
             <entry>
             Megegyezik a <link 
+linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu> 
+<guimenuitem>Kilépés</guimenuitem> </menuchoice></link> ponttal, a 
+&bibletime; bezárása.Megegyezik a <link 
 linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu> 
 <guimenuitem>Kilépés</guimenuitem> </menuchoice></link> ponttal, a 
 &bibletime; bezárása.</entry>
@@ -624,6 +749,9 @@ linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu>
             <entry>
             Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> 
 Kézikönyv</guimenuitem></menuchoice> menüponttal, megnyitja ezt a 
+kézikönyvet.Megegyezik a 
+<menuchoice><guimenu>Segítség</guimenu><guimenuitem> 
+Kézikönyv</guimenuitem></menuchoice> menüponttal, megnyitja ezt a 
 kézikönyvet.</entry>
           </row>
           <row>
@@ -635,7 +763,10 @@ kézikönyvet.</entry>
             <entry>
             Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia 
 tanulmányozás "hogyan"</guimenuitem></menuchoice> menüponttal, megnyitja a 
-segédletet a Biblia tanulmányozásához.</entry>
+segédletet a Biblia tanulmányozásához.Megegyezik a 
+<menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia tanulmányozás 
+"hogyan"</guimenuitem></menuchoice> menüponttal, megnyitja a segédletet a 
+Biblia tanulmányozásához.</entry>
           </row>
           <row>
             <entry>
@@ -645,6 +776,9 @@ segédletet a Biblia tanulmányozásához.</entry>
             </entry>
             <entry>
             Megegyezik a <link 
+linkend="hdbk-reference-menus-settings-bookshelf_manager"><menuchoice><guimenu>Beállítások</guimenu> 
+<guimenuitem>Könyvespolc menedzser</guimenuitem></menuchoice></link> 
+menüponttal, megnyitja a Könyvespolc menedzsert.Megegyezik a <link 
 linkend="hdbk-reference-menus-settings-bookshelf_manager"><menuchoice><guimenu>Beállítások</guimenu> 
 <guimenuitem>Könyvespolc menedzser</guimenuitem></menuchoice></link> 
 menüponttal, megnyitja a Könyvespolc menedzsert.</entry>
@@ -659,6 +793,9 @@ menüponttal, megnyitja a Könyvespolc menedzsert.</entry>
             Megegyezik a <link 
 linkend="hdbk-reference-menus-view-showbookshelf"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> 
 Könyvespolc mutatása</guimenuitem></menuchoice></link> menüponttal, 
+láthatóvá teszi a "könyvespolcot".Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showbookshelf"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> 
+Könyvespolc mutatása</guimenuitem></menuchoice></link> menüponttal, 
 láthatóvá teszi a "könyvespolcot".</entry>
           </row>
           <row>
@@ -669,6 +806,9 @@ láthatóvá teszi a "könyvespolcot".</entry>
             </entry>
             <entry>
             Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showmag"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító 
+mutatása</guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a 
+nagyító (információs) ablakot.Megegyezik a <link 
 linkend="hdbk-reference-menus-view-showmag"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító 
 mutatása</guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a 
 nagyító (információs) ablakot.</entry>

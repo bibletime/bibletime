@@ -39,16 +39,52 @@ désirez enregistrer les modifications qui ne l'ont pas encore été.</para>
         </variablelist>
       </para>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-view">
       <title>
         <guimenu>View</guimenu>
       </title>
+
       <variablelist>
+        <varlistentry id="hdbk-reference-menus-view-fullscreenmode">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F5</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Fullscreen mode</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles full screen display.</action> Toggle this setting to 
+maximize the &bibletime; window.</para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showtoolbar">
           <term>
             <menuchoice>
-              <guimenu>View</guimenu>
-              <guimenuitem>Show Toolbar</guimenuitem>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F6</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_bibletime.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -57,6 +93,7 @@ désirez enregistrer les modifications qui ne l'ont pas encore été.</para>
 de faire apparaître ou disparaître la barre d'outil.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
@@ -68,10 +105,10 @@ de faire apparaître ou disparaître la barre d'outil.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_index.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Bookshelf</guimenuitem>
+              <guimenuitem>Show bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -82,6 +119,7 @@ gauche. Cela peut être utile si vous avez besoin de plus de place pour le
 zoom.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
@@ -93,10 +131,10 @@ zoom.</para>
               <guimenu>
               <inlinemediaobject>
                 <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
+                  <imagedata fileref="i_view_mag.png" format="PNG" />
                 </imageobject>
               </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show Mag</guimenuitem>
+              <guimenuitem>Show mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>

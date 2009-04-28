@@ -192,7 +192,8 @@ munkában fog keresni egyszerre.</para>
 megfelelő bejegyzést.</para>
 
       <para>A harmadik lehetőség a kereséshez a keresés ikonra kattintással érhető el 
-egy megnyitott olvasási ablakban.</para>
+egy megnyitott olvasási ablakban.A harmadik lehetőség a kereséshez a keresés 
+ikonra kattintással érhető el egy megnyitott olvasási ablakban.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-config">
@@ -210,13 +211,20 @@ egy megnyitott olvasási ablakban.</para>
         <para>A párbeszédablak felső részében található egy 
 <guibutton>Választás</guibutton> feliratú gomb. Ha egyszerre több 
 dokumentumban kíván keresni, kattintson erre a gombra, és a lehetőségekből 
-kiválaszthatja a keresésbe bevonandó munkákat.</para>
+kiválaszthatja a keresésbe bevonandó munkákat.A párbeszédablak felső 
+részében található egy <guibutton>Választás</guibutton> feliratú gomb. Ha 
+egyszerre több dokumentumban kíván keresni, kattintson erre a gombra, és a 
+lehetőségekből kiválaszthatja a keresésbe bevonandó munkákat.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
         <title>Keresési hatókörök használata</title>
         <para>Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben választ 
 egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön is 
-meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra kattintva.</para>
+meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra 
+kattintva.Szűkítheti a keresés hatókörét a Biblia egyes részeire, amennyiben 
+választ egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. Ön 
+is meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra 
+kattintva.</para>
       </sect3>
       <sect3 id="hd-op-search-config-syntax">
         <title> Az alapvető keresési kifejezések bemutatása</title>
@@ -225,14 +233,25 @@ elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek
 felsorolva, amelyekben bármelyik kifejezés előfordul (OR - angolul a VAGY 
 kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
 megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
+kifejezések között.Gépelje be a keresett kifejezéseket szóközökkel 
+elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek 
+felsorolva, amelyekben bármelyik kifejezés előfordul (OR - angolul a VAGY 
+kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
+megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
 kifejezések között.</para>
         <para>Használhat helyettesítő karaktereket is: a '*' bármennyi betűt helyettesít, 
 míg a '?' csak egyet. Zárójelek használatával csoportosíthatja (mint 
 matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
+Isten'.Használhat helyettesítő karaktereket is: a '*' bármennyi betűt 
+helyettesít, míg a '?' csak egyet. Zárójelek használatával csoportosíthatja 
+(mint matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
 Isten'.</para>
         <para>Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása 
 után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's 
-szám előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
+szám előfordulását keresi, így kell megadni: 'strong:H8077'. Ha a fő 
+szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása után ':', 
+és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's szám 
+előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
         <para>Lehetséges szövegtípusok: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Keresési típusok</title>
@@ -277,25 +296,38 @@ kattintva lehetősége nyílik menteni, másolni vagy kinyomtatni az összes
 verset, amelyet talált a munkában akár egyszerre is. Ugyanígy működik az is, 
 ha csak egy, vagy több hivatkozást jelöl ki mentésre, másolásra, vagy 
 nyomtatásra. Egy hivatkozásra kattintva az előnézeti ablakban láthatóvá 
+válik a vers a szövegkörnyezetében.Bemutatunk néhány példát a keresésre, 
+munkánként csoportosítva. <mousebutton>Jobb </mousebutton>egérgombbal a 
+munkára kattintva lehetősége nyílik menteni, másolni vagy kinyomtatni az 
+összes verset, amelyet talált a munkában akár egyszerre is. Ugyanígy működik 
+az is, ha csak egy, vagy több hivatkozást jelöl ki mentésre, másolásra, vagy 
+nyomtatásra. Egy hivatkozásra kattintva az előnézeti ablakban láthatóvá 
 válik a vers a szövegkörnyezetében.</para>
       <tip>
         <para>Ragadjon meg egy hivatkozást, és ejtse a Könyvespolcon egy dokumentum 
-ikonjára, és a dokumentum megnyílik a hivatkozott versnél.</para>
+ikonjára, és a dokumentum megnyílik a hivatkozott versnél.Ragadjon meg egy 
+hivatkozást, és ejtse a Könyvespolcon egy dokumentum ikonjára, és a 
+dokumentum megnyílik a hivatkozott versnél.</para>
       </tip>
       <tip>
         <para>Ragadjon meg egy hivatkozást, és ejtse egy megnyitott ablakra, a dokumentum 
-a hivatkozott helyre ugrik.</para>
+a hivatkozott helyre ugrik.Ragadjon meg egy hivatkozást, és ejtse egy 
+megnyitott ablakra, a dokumentum a hivatkozott helyre ugrik.</para>
       </tip>
       <tip>
         <para>Válasszon ki hivatkozásokat, és húzza a könyvespolcra könyvjelzők 
-készítéséhez.</para>
+készítéséhez.Válasszon ki hivatkozásokat, és húzza a könyvespolcra 
+könyvjelzők készítéséhez.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
         <title>Keresési találatok elemzése</title>
         <para>Kattintson a <guibutton>Találatok elemzése</guibutton> gombra, hogy 
 megnyissa a találatokat elemző ablakot. Itt egy egyszerű grafikus elemzést 
 láthat a találatokról, találatok száma szerint a Biblia könyvei szerint. Ezt 
-az elemzést is el tudja menteni.</para>
+az elemzést is el tudja menteni.Kattintson a <guibutton>Találatok 
+elemzése</guibutton> gombra, hogy megnyissa a találatokat elemző 
+ablakot. Itt egy egyszerű grafikus elemzést láthat a találatokról, találatok 
+száma szerint a Biblia könyvei szerint. Ezt az elemzést is el tudja menteni.</para>
         <screenshot>
           <screeninfo>Találatok elemzése ablak</screeninfo>
           <mediaobject>
@@ -318,12 +350,17 @@ a főmenü <menuchoice> <guimenu>Beállítások</guimenu>
       <title>Telepítési útvonal(ak) beállítása</title>
       <para>Itt adható meg, hogy a &bibletime; hol tárolhatja a "Könyvespolcát" a 
 merevlemezen. Megadhat egyszerre több könyvtárat is, de az alapértelmezett a 
-".sword" mappa a saját mappájában.</para>
+".sword" mappa a saját mappájában.Itt adható meg, hogy a &bibletime; hol 
+tárolhatja a "Könyvespolcát" a merevlemezen. Megadhat egyszerre több 
+könyvtárat is, de az alapértelmezett a ".sword" mappa a saját mappájában.</para>
       <tip>
         <para>Ha rendelkezésére áll egy Sword CD, és nem akarja azt feltelepíteni, 
 lehetősége van a CD elérési útját megadni, mintha "könyvespolc" lenne, ebben 
 az esetben a &bibletime; indításakor az összes dokumentum látható lesz, ha a 
-CD a gépben van.</para>
+CD a gépben van.Ha rendelkezésére áll egy Sword CD, és nem akarja azt 
+feltelepíteni, lehetősége van a CD elérési útját megadni, mintha 
+"könyvespolc" lenne, ebben az esetben a &bibletime; indításakor az összes 
+dokumentum látható lesz, ha a CD a gépben van.</para>
       </tip>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
@@ -340,19 +377,31 @@ szeretne. Ezek után kattintson a <guibutton> Frissítés...</guibutton>
 gombra. A &bibletime; leellenőrzi a tároló tartalmát, és elkészít egy listát 
 a telepíthető, vagy a meglévő de frissíthető dokumentumokról. Már csak ki 
 kell jelölnie a telepítendőeket, majd <guibutton>Telepítés...</guibutton> és 
-a kívánt munkák a könyvespolcára kerülnek.</para>
+a kívánt munkák a könyvespolcára kerülnek.A telepítési vagy frissítési 
+folyamat elkezdéséhez válassza ki a forrást, melyhez csatlakozni kíván, és a 
+helyi könyvespolcot, ahova telepíteni szeretne. Ezek után kattintson a 
+<guibutton> Frissítés...</guibutton> gombra. A &bibletime; leellenőrzi a 
+tároló tartalmát, és elkészít egy listát a telepíthető, vagy a meglévő de 
+frissíthető dokumentumokról. Már csak ki kell jelölnie a telepítendőeket, 
+majd <guibutton>Telepítés...</guibutton> és a kívánt munkák a könyvespolcára 
+kerülnek.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-remove">
       <title>Dokumentum(ok) törlése</title>
       <para>Ez a lehetőség biztosítja önnek, hogy a nem kívánt munkákat eltávolítsa, 
 lemezterületet szabadítson fel. Egyszerűen jelölje meg a törölni kívánt 
 eleme(ke)t a könyvespolcon, majd kattintson a 
-<guibutton>Törlés...</guibutton> gombra.</para>
+<guibutton>Törlés...</guibutton> gombra.Ez a lehetőség biztosítja önnek, 
+hogy a nem kívánt munkákat eltávolítsa, lemezterületet szabadítson 
+fel. Egyszerűen jelölje meg a törölni kívánt eleme(ke)t a könyvespolcon, 
+majd kattintson a <guibutton>Törlés...</guibutton> gombra.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
       <title>Keresési indexek</title>
       <para>Ez az opció teszi lehetővé, hogy új indexeket készítsen, vagy kitakarítsa a 
-törölt dokumentumok elárvult indexeit.</para>
+törölt dokumentumok elárvult indexeit.Ez az opció teszi lehetővé, hogy új 
+indexeket készítsen, vagy kitakarítsa a törölt dokumentumok elárvult 
+indexeit.</para>
       <tip>
 	If you are having problems with your search function, visit
 	this feature.
@@ -367,12 +416,24 @@ van <guimenuitem>Kijelölni</guimenuitem>, <guimenuitem>Másolni</guimenuitem>
 (a vágólapra), <guimenuitem>Menteni</guimenuitem> vagy 
 <guimenuitem>Nyomtatni</guimenuitem>. Ilyen menü nyílik meg például az 
 olvasási ablakban, vagy a keresési ablakban, mikor egy találatra 
+kattint. Tényleg ilyen egyszerű, csak próbálja ki.Több helyen van lehetősége 
+helyi menüt nyitni a <mousebutton>jobb</mousebutton> egérgombbal. Helyzettől 
+függően lehetősége van <guimenuitem>Kijelölni</guimenuitem>, 
+<guimenuitem>Másolni</guimenuitem> (a vágólapra), 
+<guimenuitem>Menteni</guimenuitem> vagy 
+<guimenuitem>Nyomtatni</guimenuitem>. Ilyen menü nyílik meg például az 
+olvasási ablakban, vagy a keresési ablakban, mikor egy találatra 
 kattint. Tényleg ilyen egyszerű, csak próbálja ki.</para>
 
     <para>A &bibletime; nyomtatási képességei csak a legalapvetőbbek, és csak 
 segédeszköz jellegűek. Amennyiben ön szöveget szerkeszt, vagy prezentációt 
 készít, melyben &bibletime; szöveget szeretne elhelyezni, javasoljuk, hogy 
 erre külső, önnek megfelelő eszközt használjon, minthogy a &bibletime; 
-nyomtatási képességeire támaszkodjon közvetlenül.</para>
+nyomtatási képességeire támaszkodjon közvetlenül.A &bibletime; nyomtatási 
+képességei csak a legalapvetőbbek, és csak segédeszköz jellegűek. Amennyiben 
+ön szöveget szerkeszt, vagy prezentációt készít, melyben &bibletime; 
+szöveget szeretne elhelyezni, javasoljuk, hogy erre külső, önnek megfelelő 
+eszközt használjon, minthogy a &bibletime; nyomtatási képességeire 
+támaszkodjon közvetlenül.</para>
   </sect1>
 </chapter>
