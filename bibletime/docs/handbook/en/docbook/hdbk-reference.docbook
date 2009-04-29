@@ -445,39 +445,7 @@
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Toolbar reference</title>
-    <para>Please review 
-    <link linkend="hdbk-reference-menus">the preceding
-    section</link> for an explanation of the buttons that you find on
-    the toolbar. You can also 
-    <action>move the cursor over a button and wait a few
-    seconds</action> to activate the button's tooltip with a short
-    description.</para>
-    <para>You can adapt the toolbar to your needs. Please use the
-    following entry in the main menu: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Configure toolbars</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>Please see 
-    <link linkend="hdbk-reference-menus-settings-toolbars">this
-    section</link> for detailed instructions.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>HotKeys index</title>
     <para>This is index of all hotkeys and their corresponding
