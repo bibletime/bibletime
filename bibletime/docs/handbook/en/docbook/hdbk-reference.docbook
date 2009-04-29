@@ -79,12 +79,7 @@
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -98,18 +93,8 @@
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -124,18 +109,8 @@
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
