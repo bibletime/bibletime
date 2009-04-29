@@ -78,12 +78,7 @@ maximize the &bibletime; window.</para>
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -97,18 +92,8 @@ de faire apparaître ou disparaître la barre d'outil.</para>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -123,18 +108,8 @@ zoom.</para>
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -453,35 +428,7 @@ license agreement.</para>
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Référence de la barre d'outils</title>
-    <para>Consultez la <link linkend="hdbk-reference-menus">référence des menus</link> 
-pour une explication des boutons de la barre d'outils. Vous pouvez aussi 
-<action>placer le pointeur sur un bouton et attendre quelques 
-seconde</action> pour afficher une courte description du bouton.</para>
-    <para>Vous pouvez adapter la barre d'outils à vos besoins, par le choix suivant 
-dans le menu principal: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Configurer les barres d'outils</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>Please see <link linkend="hdbk-reference-menus-settings-toolbars">this 
-section</link> for detailed instructions.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>Index des raccourcis</title>
     <para>This is index of all hotkeys and their corresponding description in the 

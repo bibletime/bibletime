@@ -78,12 +78,7 @@ maximize the &bibletime; window.</para>
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -97,18 +92,8 @@ asettaaksesi päätyökalupalkin näkyviin tai piilotetuksi.</para>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -122,18 +107,8 @@ haluat lisää tilaa suurennuslasille.</para>
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -453,35 +428,7 @@ license agreement.</para>
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Työkalupalkin viite</title>
-    <para>Please review <link linkend="hdbk-reference-menus">the preceding 
-section</link> for an explanation of the buttons that you find on the 
-toolbar. You can also <action>move the cursor over a button and wait a few 
-seconds</action> to activate the button's tooltip with a short description.</para>
-    <para>Voit mukauttaa työkalupalkin tarpeitasi vastaavaksi. Käytä seuraavaa kohtaa 
-päävalikossa: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Aseta työkalupalkit</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>Katso <link linkend="hdbk-reference-menus-settings-toolbars">tämä 
-osio</link> yksityiskohtaisten ohjeiden saamiseksi.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>Pikanäppäinten luettelo</title>
     <para>This is index of all hotkeys and their corresponding description in the 

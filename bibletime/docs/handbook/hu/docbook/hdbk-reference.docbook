@@ -84,12 +84,7 @@ maximize the &bibletime; window.</para>
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -104,18 +99,8 @@ kapcsolhatja ki/be a fő eszköztár megjelenítését.</para>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -129,18 +114,8 @@ kapcsolhatja ki/be a Könyvespolc megjelenítését.</para>
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -492,43 +467,7 @@ a felhasználási feltételekről.</para>
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Eszköztár leírás</title>
-    <para>Kérjük nézze meg az <link linkend="hdbk-reference-menus">előző részt</link> 
-az eszköztár gombjainak magyarázatához. Lehetősége van <action>az 
-egérmutatót a gomb fölé vinni</action>, és néhány másodpercen belül 
-megjelenik egy buborék súgó egy rövid leírással. Kérjük nézze meg az <link 
-linkend="hdbk-reference-menus">előző részt</link> az eszköztár gombjainak 
-magyarázatához. Lehetősége van <action>az egérmutatót a gomb fölé 
-vinni</action>, és néhány másodpercen belül megjelenik egy buborék súgó egy 
-rövid leírással. </para>
-    <para>Szükségeinek megfelelően beállíthatja az eszköztárat, ehhez használja a 
-következő menüpontot:Szükségeinek megfelelően beállíthatja az eszköztárat, 
-ehhez használja a következő menüpontot: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Eszköztárak testreszabása</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>A részletes információkért <link 
-linkend="hdbk-reference-menus-settings-toolbars">tekintse meg ezt a 
-részt</link>.A részletes információkért <link 
-linkend="hdbk-reference-menus-settings-toolbars">tekintse meg ezt a 
-részt</link>.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>Gyorsbillentyűk</title>
     <para>Ez az összes gyorsbillentyű leírásukkal együttes listája. A felsorolás 

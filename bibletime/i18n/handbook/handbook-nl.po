@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-28 18:53-0400\n"
+"POT-Creation-Date: 2009-04-28 22:11-0400\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -1319,7 +1319,7 @@ msgstr ""
 "<action>Schakelt de weergave van de Werkbalk in/uit.</action> Schakel deze "
 "instelling in/uit om de hoofdwerkbalk wel/niet weer te geven."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:93
+#: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
@@ -1327,7 +1327,7 @@ msgstr ""
 "<action>Schakelt de weergave van de Werkbalk in/uit.</action> Schakel deze "
 "instelling in/uit om de hoofdwerkbalk wel/niet weer te geven."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:117
+#: docs/handbook/en/docbook/hdbk-reference.docbook:102
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
@@ -1338,7 +1338,7 @@ msgstr ""
 "te geven. Dit kan handig zijn als u meer ruimte nodig heeft voor het "
 "vergrootglas."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:143
+#: docs/handbook/en/docbook/hdbk-reference.docbook:118
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
@@ -1347,7 +1347,7 @@ msgstr ""
 "deze instelling in/uit om het Vergrootglas in het linkerpaneel aan/uit te "
 "zetten."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:173
+#: docs/handbook/en/docbook/hdbk-reference.docbook:148
 #, fuzzy
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
@@ -1356,7 +1356,7 @@ msgstr ""
 "<action>Opent de Zoekdialoog om alleen in de standaardbijbel te zoeken</"
 "action>. Meer modules kunnen worden toegevoegd in de Zoekdialoog."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:196
+#: docs/handbook/en/docbook/hdbk-reference.docbook:171
 #, fuzzy
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. More "
@@ -1365,7 +1365,7 @@ msgstr ""
 "<action>Opent de Zoekdialoog om alle geopende modules te doorzoeken</"
 "action>. Meer modules kunnen worden toegevoegd in de Zoekdialoog."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:222
+#: docs/handbook/en/docbook/hdbk-reference.docbook:197
 #, fuzzy
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
@@ -1378,7 +1378,7 @@ msgstr ""
 "schrijven. Deze zal dus overschreven worden met de huidige sessie. Het "
 "volgende item gaat over hoe je een nieuwe sessie kunt opslaan."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:247
+#: docs/handbook/en/docbook/hdbk-reference.docbook:222
 #, fuzzy
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
@@ -1387,7 +1387,7 @@ msgstr ""
 "<action>Slaat de huidige sessie op onder een nieuwe naam</action>. Dit "
 "vraagt u om een nieuwe naam om de sessie onder te bewaren."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:266
+#: docs/handbook/en/docbook/hdbk-reference.docbook:241
 #, fuzzy
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
@@ -1396,7 +1396,7 @@ msgstr ""
 "<action>Laad een bestaande sessie</action>. Dit zal een context menu "
 "oproepen waarin u een bestaande sessie kunt selecteren om te laden."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:285
+#: docs/handbook/en/docbook/hdbk-reference.docbook:260
 #, fuzzy
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
@@ -1405,7 +1405,7 @@ msgstr ""
 "<action>Verwijderd een bestaande sessie</action>. Dit opent een context menu "
 "waarin u een bestaande sessie kunt selecteren om te verwijderen."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:305
+#: docs/handbook/en/docbook/hdbk-reference.docbook:280
 #, fuzzy
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
@@ -1418,11 +1418,11 @@ msgstr ""
 "rangschikking van de vensters wilt regelen (Handmatige modus) of dat u wilt "
 "dat &bibletime; dit voor u doet (Automatische modi, probeer ze gewoon uit!)."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:331
+#: docs/handbook/en/docbook/hdbk-reference.docbook:306
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Sluit alle geopende vensters</action>"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:355
+#: docs/handbook/en/docbook/hdbk-reference.docbook:330
 #, fuzzy
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
@@ -1435,7 +1435,7 @@ msgstr ""
 "aan uw behoeften. Kijk in <link linkend=\"hdbk-config-bt\">deze sectie</"
 "link> voor details."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:384
+#: docs/handbook/en/docbook/hdbk-reference.docbook:359
 #, fuzzy
 msgid ""
 "<action>Opens a dialog where you can change your Sword configuration and "
@@ -1447,12 +1447,12 @@ msgstr ""
 "bookshelfmanager\">deze sectie</link> voor details."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:417
+#: docs/handbook/en/docbook/hdbk-reference.docbook:392
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:442
+#: docs/handbook/en/docbook/hdbk-reference.docbook:417
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
@@ -1464,7 +1464,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:463
+#: docs/handbook/en/docbook/hdbk-reference.docbook:438
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
@@ -1472,48 +1472,11 @@ msgid ""
 "license agreement."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:474
-msgid "Toolbar reference"
-msgstr "Werkbalk verwijzingen"
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:475
-msgid ""
-"Please review <link linkend=\"hdbk-reference-menus\">the preceding section</"
-"link> for an explanation of the buttons that you find on the toolbar. You "
-"can also <action>move the cursor over a button and wait a few seconds</"
-"action> to activate the button's tooltip with a short description."
-msgstr ""
-"Bekijk <link linkend=\"hdbk-reference-menus\">de vorige sectie</link> voor "
-"een uitleg over de knoppen die u vindt op de werkbalk. U kunt ook <action>de "
-"muisaanwijzer over een knop bewegen en enkele seconden wachten</action> om "
-"de tooltip met een korte beschrijving van een knop op te roepen."
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:482
-msgid ""
-"You can adapt the toolbar to your needs. Please use the following entry in "
-"the main menu:"
-msgstr ""
-"U kunt de werkbalk aanpassen naar uw behoeften. Gebruik het volgende item in "
-"het hoofdmenu:"
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:499
-msgid "Configure toolbars"
-msgstr "Werkbalken configureren"
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:502
-#, fuzzy
-msgid ""
-"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-"section</link> for detailed instructions."
-msgstr ""
-"Zie <link linkend=\"hdbk-reference-menus-settings-toolbars\">deze sectie</"
-"link> voor meer informatie."
-
-#: docs/handbook/en/docbook/hdbk-reference.docbook:507
+#: docs/handbook/en/docbook/hdbk-reference.docbook:450
 msgid "HotKeys index"
 msgstr "Sneltoetsen index"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:508
+#: docs/handbook/en/docbook/hdbk-reference.docbook:451
 #, fuzzy
 msgid ""
 "This is index of all hotkeys and their corresponding description in the "
@@ -1529,23 +1492,23 @@ msgstr ""
 "zien), of u kunt het opzoeken in <link linkend=\"hdbk-reference-menus\">deze "
 "sectie</link>."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:521
+#: docs/handbook/en/docbook/hdbk-reference.docbook:464
 msgid "Hotkey"
 msgstr "Sneltoets"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:522
+#: docs/handbook/en/docbook/hdbk-reference.docbook:465
 msgid "Description"
 msgstr "Beschrijving"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:531
+#: docs/handbook/en/docbook/hdbk-reference.docbook:474
 msgid "Moves back in the history of read windows."
 msgstr "Gaat terug in de history van leesvensters"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:538
+#: docs/handbook/en/docbook/hdbk-reference.docbook:481
 msgid "Moves forward in the history of read windows."
 msgstr "Gaat vooruit in de history van leesvensters"
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:547
+#: docs/handbook/en/docbook/hdbk-reference.docbook:490
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
@@ -1558,7 +1521,7 @@ msgstr ""
 "guimenuitem></menuchoice></link> equivalent; opent de zoekdialoog om in de "
 "standaardbijbel te zoeken."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:561
+#: docs/handbook/en/docbook/hdbk-reference.docbook:504
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1570,7 +1533,7 @@ msgstr ""
 "menuchoice> equivalent; schakelt het automatisch stapelen van vensters in/"
 "uit."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:574
+#: docs/handbook/en/docbook/hdbk-reference.docbook:517
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1582,7 +1545,7 @@ msgstr ""
 "menuchoice> equivalent; Schakelt het automatisch stapelen van vensters in/"
 "uit."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:587
+#: docs/handbook/en/docbook/hdbk-reference.docbook:530
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1594,7 +1557,7 @@ msgstr ""
 "menuchoice> equivalent; Schakelt het automatisch trapsgewijs rangschikking "
 "van vensters in/uit."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:600
+#: docs/handbook/en/docbook/hdbk-reference.docbook:543
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
@@ -1605,7 +1568,7 @@ msgstr ""
 "guimenuitem> <guimenuitem>Handmatige modus</guimenuitem></menuchoice> "
 "equivalent; schakelt de handmatige plaatsing van vensters in/uit."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:613
+#: docs/handbook/en/docbook/hdbk-reference.docbook:556
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
@@ -1617,7 +1580,7 @@ msgstr ""
 "guimenuitem></menuchoice></link> equivalent; slaat de huidige lay-out op als "
 "nieuwe sessie."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:627
+#: docs/handbook/en/docbook/hdbk-reference.docbook:570
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
@@ -1628,27 +1591,27 @@ msgstr ""
 "<guimenu>Venster</guimenu> <guimenuitem>Alles sluiten</guimenuitem></"
 "menuchoice></link> equivalent; sluit alle geopende vensters."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:639
+#: docs/handbook/en/docbook/hdbk-reference.docbook:582
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Uitzoomen. Dit vermindert de lettergrootte van de leesvensters."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:647
+#: docs/handbook/en/docbook/hdbk-reference.docbook:590
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Inzoomen. Dit vergroot de lettergrootte van de leesvensters."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:655
+#: docs/handbook/en/docbook/hdbk-reference.docbook:598
 msgid "Select all. This selects all text in read windows."
 msgstr "Selecteer alles. Dit selecteert alle tekst in de leesvensters."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:663
+#: docs/handbook/en/docbook/hdbk-reference.docbook:606
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopie&euml;ren. Dit kopieert de geselecteerde tekst naar het klembord."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:671
+#: docs/handbook/en/docbook/hdbk-reference.docbook:614
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Zoeken. Dit laat u zoeken binnen de tekst van een leesvenster."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:680
+#: docs/handbook/en/docbook/hdbk-reference.docbook:623
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
@@ -1661,7 +1624,7 @@ msgstr ""
 "guimenuitem></menuchoice></link> equivalent; opent de zoekdialoog om te "
 "zoeken in alle modules die nu geopend zijn."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:694
+#: docs/handbook/en/docbook/hdbk-reference.docbook:637
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
@@ -1672,11 +1635,11 @@ msgstr ""
 "<guimenu>Bestand</guimenu> <guimenuitem>Afsluiten</guimenuitem></"
 "menuchoice></link> equivalent; sluit &bibletime; af."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:706
+#: docs/handbook/en/docbook/hdbk-reference.docbook:649
 msgid "Closes the current window."
 msgstr "Sluit het huidige venster."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:715
+#: docs/handbook/en/docbook/hdbk-reference.docbook:658
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
@@ -1685,7 +1648,7 @@ msgstr ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handboek</guimenuitem></"
 "menuchoice> equivalent; opent het handboek."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:727
+#: docs/handbook/en/docbook/hdbk-reference.docbook:670
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
@@ -1694,7 +1657,7 @@ msgstr ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Bijbelstudie Howto</"
 "guimenuitem></menuchoice> equivalent; opent de Bijbelstudie Howto."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:740
+#: docs/handbook/en/docbook/hdbk-reference.docbook:683
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
@@ -1706,7 +1669,7 @@ msgstr ""
 "Manager</guimenuitem></menuchoice></link> equivalent; opent de Boekenplank "
 "Manager."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:755
+#: docs/handbook/en/docbook/hdbk-reference.docbook:698
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
@@ -1718,7 +1681,7 @@ msgstr ""
 "menuchoice></link> equivalent; schakelt de weergave van de Boekenplank in/"
 "uit."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:770
+#: docs/handbook/en/docbook/hdbk-reference.docbook:713
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
@@ -1925,6 +1888,40 @@ msgstr ""
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr "&bibletime; is een krachtig bijbelstudieprogramma voor &kde;"
+
+#~ msgid "Toolbar reference"
+#~ msgstr "Werkbalk verwijzingen"
+
+#~ msgid ""
+#~ "Please review <link linkend=\"hdbk-reference-menus\">the preceding "
+#~ "section</link> for an explanation of the buttons that you find on the "
+#~ "toolbar. You can also <action>move the cursor over a button and wait a "
+#~ "few seconds</action> to activate the button's tooltip with a short "
+#~ "description."
+#~ msgstr ""
+#~ "Bekijk <link linkend=\"hdbk-reference-menus\">de vorige sectie</link> "
+#~ "voor een uitleg over de knoppen die u vindt op de werkbalk. U kunt ook "
+#~ "<action>de muisaanwijzer over een knop bewegen en enkele seconden "
+#~ "wachten</action> om de tooltip met een korte beschrijving van een knop op "
+#~ "te roepen."
+
+#~ msgid ""
+#~ "You can adapt the toolbar to your needs. Please use the following entry "
+#~ "in the main menu:"
+#~ msgstr ""
+#~ "U kunt de werkbalk aanpassen naar uw behoeften. Gebruik het volgende item "
+#~ "in het hoofdmenu:"
+
+#~ msgid "Configure toolbars"
+#~ msgstr "Werkbalken configureren"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+#~ "section</link> for detailed instructions."
+#~ msgstr ""
+#~ "Zie <link linkend=\"hdbk-reference-menus-settings-toolbars\">deze sectie</"
+#~ "link> voor meer informatie."
 
 #, fuzzy
 #~ msgid ""

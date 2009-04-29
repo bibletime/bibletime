@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
-"POT-Creation-Date: 2009-04-28 18:53-0400\n"
+"POT-Creation-Date: 2009-04-28 22:11-0400\n"
 "PO-Revision-Date: 2009-04-25 17:07+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -1429,7 +1429,7 @@ msgstr ""
 "kapcsolhatja ki/be a fő eszköztár megjelenítését."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:93
+#: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
@@ -1439,7 +1439,7 @@ msgstr ""
 "kapcsolhatja ki/be a fő eszköztár megjelenítését."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:117
+#: docs/handbook/en/docbook/hdbk-reference.docbook:102
 msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
@@ -1450,7 +1450,7 @@ msgstr ""
 "kapcsolhatja ki/be a Könyvespolc megjelenítését."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:143
+#: docs/handbook/en/docbook/hdbk-reference.docbook:118
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
@@ -1460,7 +1460,7 @@ msgstr ""
 "Itt kapcsolhatja ki/be a nagyító (információs ablak) megjelenítését."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:173
+#: docs/handbook/en/docbook/hdbk-reference.docbook:148
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog."
@@ -1471,7 +1471,7 @@ msgstr ""
 "párbeszédablakban."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:196
+#: docs/handbook/en/docbook/hdbk-reference.docbook:171
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. More "
 "works can be added in the Search Dialog."
@@ -1482,7 +1482,7 @@ msgstr ""
 "adhatók a kereséshez a párbeszédablakban."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:222
+#: docs/handbook/en/docbook/hdbk-reference.docbook:197
 msgid ""
 "<action>Directly saves the current session</action>. This will open a "
 "context menu where you can select an existing session to save to. It will be "
@@ -1497,7 +1497,7 @@ msgstr ""
 "kell menteni új folyamatot."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:247
+#: docs/handbook/en/docbook/hdbk-reference.docbook:222
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
@@ -1507,7 +1507,7 @@ msgstr ""
 "action>. Megkérdezi a folyamat nevét a mentéshez."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:266
+#: docs/handbook/en/docbook/hdbk-reference.docbook:241
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
@@ -1518,7 +1518,7 @@ msgstr ""
 "betöltendő folyamatot."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:285
+#: docs/handbook/en/docbook/hdbk-reference.docbook:260
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
@@ -1529,7 +1529,7 @@ msgstr ""
 "munkafolyamatot."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:305
+#: docs/handbook/en/docbook/hdbk-reference.docbook:280
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
@@ -1544,12 +1544,12 @@ msgstr ""
 "(Automatikus, csak próbálja ki!)."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:331
+#: docs/handbook/en/docbook/hdbk-reference.docbook:306
 msgid "<action>Closes all open windows</action>."
 msgstr "<action>Az összes ablakot bezárja</action>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:355
+#: docs/handbook/en/docbook/hdbk-reference.docbook:330
 msgid ""
 "<action>Opens &bibletime;'s main configuration dialog</action>. You can "
 "configure all kinds of nice settings there to adapt &bibletime; to your "
@@ -1565,7 +1565,7 @@ msgstr ""
 "linkend=\"hdbk-config-bt\">beállítások részt</link> a részletekért."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:384
+#: docs/handbook/en/docbook/hdbk-reference.docbook:359
 msgid ""
 "<action>Opens a dialog where you can change your Sword configuration and "
 "manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
@@ -1579,7 +1579,7 @@ msgstr ""
 "\"hdbk-op-bookshelfmanager\">ezt a fejezetet</link>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:417
+#: docs/handbook/en/docbook/hdbk-reference.docbook:392
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
 msgstr ""
 "<action>Megnyitja a &bibletime; felhasználói kézikönyvét</action>. Épp ezt "
@@ -1587,7 +1587,7 @@ msgstr ""
 "Épp ezt olvassa."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:442
+#: docs/handbook/en/docbook/hdbk-reference.docbook:417
 msgid ""
 "<action>Opens a guide on how to study the Bible</action> It is the hope of "
 "the &bibletime; team that this HowTo will provoke the readers to study the "
@@ -1614,7 +1614,7 @@ msgstr ""
 "magként a szívébe, Ő nem fog csalódást okozni."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:463
+#: docs/handbook/en/docbook/hdbk-reference.docbook:438
 msgid ""
 "<action>Opens a window about &bibletime; project information</action> "
 "contains information about &bibletime; software version, project "
@@ -1629,60 +1629,12 @@ msgstr ""
 "a felhasználási feltételekről."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:474
-msgid "Toolbar reference"
-msgstr "Eszköztár leírás"
-
-# type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:475
-msgid ""
-"Please review <link linkend=\"hdbk-reference-menus\">the preceding section</"
-"link> for an explanation of the buttons that you find on the toolbar. You "
-"can also <action>move the cursor over a button and wait a few seconds</"
-"action> to activate the button's tooltip with a short description."
-msgstr ""
-"Kérjük nézze meg az <link linkend=\"hdbk-reference-menus\">előző részt</"
-"link> az eszköztár gombjainak magyarázatához. Lehetősége van <action>az "
-"egérmutatót a gomb fölé vinni</action>, és néhány másodpercen belül "
-"megjelenik egy buborék súgó egy rövid leírással. Kérjük nézze meg az <link "
-"linkend=\"hdbk-reference-menus\">előző részt</link> az eszköztár gombjainak "
-"magyarázatához. Lehetősége van <action>az egérmutatót a gomb fölé vinni</"
-"action>, és néhány másodpercen belül megjelenik egy buborék súgó egy rövid "
-"leírással. "
-
-# type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:482
-msgid ""
-"You can adapt the toolbar to your needs. Please use the following entry in "
-"the main menu:"
-msgstr ""
-"Szükségeinek megfelelően beállíthatja az eszköztárat, ehhez használja a "
-"következő menüpontot:Szükségeinek megfelelően beállíthatja az eszköztárat, "
-"ehhez használja a következő menüpontot:"
-
-# type: Content of: <chapter><sect1><para><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:499
-msgid "Configure toolbars"
-msgstr "Eszköztárak testreszabása"
-
-# type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:502
-msgid ""
-"Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-"section</link> for detailed instructions."
-msgstr ""
-"A részletes információkért <link linkend=\"hdbk-reference-menus-settings-"
-"toolbars\">tekintse meg ezt a részt</link>.A részletes információkért <link "
-"linkend=\"hdbk-reference-menus-settings-toolbars\">tekintse meg ezt a részt</"
-"link>."
-
-# type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:507
+#: docs/handbook/en/docbook/hdbk-reference.docbook:450
 msgid "HotKeys index"
 msgstr "Gyorsbillentyűk"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:508
+#: docs/handbook/en/docbook/hdbk-reference.docbook:451
 msgid ""
 "This is index of all hotkeys and their corresponding description in the "
 "handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to "
@@ -1706,27 +1658,27 @@ msgstr ""
 "szükséges."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:521
+#: docs/handbook/en/docbook/hdbk-reference.docbook:464
 msgid "Hotkey"
 msgstr "Gyorsbillentyű"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:522
+#: docs/handbook/en/docbook/hdbk-reference.docbook:465
 msgid "Description"
 msgstr "Leírás"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:531
+#: docs/handbook/en/docbook/hdbk-reference.docbook:474
 msgid "Moves back in the history of read windows."
 msgstr "Visszalép az előzményekben az olvasó ablakban."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:538
+#: docs/handbook/en/docbook/hdbk-reference.docbook:481
 msgid "Moves forward in the history of read windows."
 msgstr "Előrelép az előzményekben."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:547
+#: docs/handbook/en/docbook/hdbk-reference.docbook:490
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
@@ -1743,7 +1695,7 @@ msgstr ""
 "Bibliában kereséshez."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:561
+#: docs/handbook/en/docbook/hdbk-reference.docbook:504
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </"
@@ -1758,7 +1710,7 @@ msgstr ""
 "automatikus mozaik elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:574
+#: docs/handbook/en/docbook/hdbk-reference.docbook:517
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </"
@@ -1773,7 +1725,7 @@ msgstr ""
 "automatikus mozaik elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:587
+#: docs/handbook/en/docbook/hdbk-reference.docbook:530
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </"
@@ -1787,7 +1739,7 @@ msgstr ""
 "guimenuitem></menuchoice>, aktiválja az automatikus átlapoló elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:600
+#: docs/handbook/en/docbook/hdbk-reference.docbook:543
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice>equivalent; "
@@ -1801,7 +1753,7 @@ msgstr ""
 "menuchoice>, aktiválja az kézi  elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:613
+#: docs/handbook/en/docbook/hdbk-reference.docbook:556
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
@@ -1816,7 +1768,7 @@ msgstr ""
 "link> menüponttal, menti a jelenlegi elrendezést új néven, új folyamatként."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:627
+#: docs/handbook/en/docbook/hdbk-reference.docbook:570
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
@@ -1831,34 +1783,34 @@ msgstr ""
 "ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:639
+#: docs/handbook/en/docbook/hdbk-reference.docbook:582
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Kicsinyít. Csökkenti az ablakban alkalmazott betű méretét."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:647
+#: docs/handbook/en/docbook/hdbk-reference.docbook:590
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Nagyít. Növeli az ablakban alkalmazott betű méretét."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:655
+#: docs/handbook/en/docbook/hdbk-reference.docbook:598
 msgid "Select all. This selects all text in read windows."
 msgstr ""
 "Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban."
 "Összes kiválasztása. Az összes szöveget kiválasztja az aktuális ablakban."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:663
+#: docs/handbook/en/docbook/hdbk-reference.docbook:606
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Másolás. A kijelölt szöveget a vágólapra másolja."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:671
+#: docs/handbook/en/docbook/hdbk-reference.docbook:614
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Keresés. Az ablakban lévő szövegben keres."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:680
+#: docs/handbook/en/docbook/hdbk-reference.docbook:623
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
@@ -1875,7 +1827,7 @@ msgstr ""
 "ablakot nyit a megnyitott munkákban való kereséshez."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:694
+#: docs/handbook/en/docbook/hdbk-reference.docbook:637
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
@@ -1889,12 +1841,12 @@ msgstr ""
 "&bibletime; bezárása."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:706
+#: docs/handbook/en/docbook/hdbk-reference.docbook:649
 msgid "Closes the current window."
 msgstr "Bezárja az aktuális ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:715
+#: docs/handbook/en/docbook/hdbk-reference.docbook:658
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice>equivalent; opens the handbook."
@@ -1905,7 +1857,7 @@ msgstr ""
 "guimenuitem></menuchoice> menüponttal, megnyitja ezt a kézikönyvet."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:727
+#: docs/handbook/en/docbook/hdbk-reference.docbook:670
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
 "guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto."
@@ -1918,7 +1870,7 @@ msgstr ""
 "Biblia tanulmányozásához."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:740
+#: docs/handbook/en/docbook/hdbk-reference.docbook:683
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
@@ -1933,7 +1885,7 @@ msgstr ""
 "menüponttal, megnyitja a Könyvespolc menedzsert."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:755
+#: docs/handbook/en/docbook/hdbk-reference.docbook:698
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
@@ -1948,7 +1900,7 @@ msgstr ""
 "láthatóvá teszi a \"könyvespolcot\"."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:770
+#: docs/handbook/en/docbook/hdbk-reference.docbook:713
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
@@ -2186,3 +2138,47 @@ msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
 "&bibletime; egy Biblia tanulmányozó szoftver a Sword keretrendszerre "
 "alapozva."
+
+# type: Content of: <chapter><sect1><title>
+#~ msgid "Toolbar reference"
+#~ msgstr "Eszköztár leírás"
+
+# type: Content of: <chapter><sect1><para>
+#~ msgid ""
+#~ "Please review <link linkend=\"hdbk-reference-menus\">the preceding "
+#~ "section</link> for an explanation of the buttons that you find on the "
+#~ "toolbar. You can also <action>move the cursor over a button and wait a "
+#~ "few seconds</action> to activate the button's tooltip with a short "
+#~ "description."
+#~ msgstr ""
+#~ "Kérjük nézze meg az <link linkend=\"hdbk-reference-menus\">előző részt</"
+#~ "link> az eszköztár gombjainak magyarázatához. Lehetősége van <action>az "
+#~ "egérmutatót a gomb fölé vinni</action>, és néhány másodpercen belül "
+#~ "megjelenik egy buborék súgó egy rövid leírással. Kérjük nézze meg az "
+#~ "<link linkend=\"hdbk-reference-menus\">előző részt</link> az eszköztár "
+#~ "gombjainak magyarázatához. Lehetősége van <action>az egérmutatót a gomb "
+#~ "fölé vinni</action>, és néhány másodpercen belül megjelenik egy buborék "
+#~ "súgó egy rövid leírással. "
+
+# type: Content of: <chapter><sect1><para>
+#~ msgid ""
+#~ "You can adapt the toolbar to your needs. Please use the following entry "
+#~ "in the main menu:"
+#~ msgstr ""
+#~ "Szükségeinek megfelelően beállíthatja az eszköztárat, ehhez használja a "
+#~ "következő menüpontot:Szükségeinek megfelelően beállíthatja az "
+#~ "eszköztárat, ehhez használja a következő menüpontot:"
+
+# type: Content of: <chapter><sect1><para><variablelist><varlistentry><listitem><para>
+#~ msgid "Configure toolbars"
+#~ msgstr "Eszköztárak testreszabása"
+
+# type: Content of: <chapter><sect1><para>
+#~ msgid ""
+#~ "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
+#~ "section</link> for detailed instructions."
+#~ msgstr ""
+#~ "A részletes információkért <link linkend=\"hdbk-reference-menus-settings-"
+#~ "toolbars\">tekintse meg ezt a részt</link>.A részletes információkért "
+#~ "<link linkend=\"hdbk-reference-menus-settings-toolbars\">tekintse meg ezt "
+#~ "a részt</link>."

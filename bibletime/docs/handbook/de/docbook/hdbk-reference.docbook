@@ -78,12 +78,7 @@ maximize the &bibletime; window.</para>
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -97,18 +92,8 @@ main toolbar on or off.</para>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -122,18 +107,8 @@ more space for the Mag.</para>
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -452,35 +427,7 @@ license agreement.</para>
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Toolbar reference</title>
-    <para>Please review <link linkend="hdbk-reference-menus">the preceding 
-section</link> for an explanation of the buttons that you find on the 
-toolbar. You can also <action>move the cursor over a button and wait a few 
-seconds</action> to activate the button's tooltip with a short description.</para>
-    <para>Sie können die Werkzeugleiste ihren Bedürfnissen anpassen. Bitte benutzen 
-Sie den folgenden Eintrag aus dem Hauptmenü: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Werkzeugleisten einrichten</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>Please see <link linkend="hdbk-reference-menus-settings-toolbars">this 
-section</link> for detailed instructions.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>HotKeys index</title>
     <para>This is index of all hotkeys and their corresponding description in the 

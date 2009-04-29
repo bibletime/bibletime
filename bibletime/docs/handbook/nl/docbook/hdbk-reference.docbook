@@ -78,12 +78,7 @@ maximize the &bibletime; window.</para>
                   <keycap>F6</keycap>
                 </keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_bibletime.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
+              <guimenu>View</guimenu>
               <guimenuitem>Show toolbar</guimenuitem>
             </menuchoice>
           </term>
@@ -97,18 +92,8 @@ instelling in/uit om de hoofdwerkbalk wel/niet weer te geven.</para>
         <varlistentry id="hdbk-reference-menus-view-showbookshelf">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F9</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_index.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show bookshelf</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -123,18 +108,8 @@ vergrootglas.</para>
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
-              <shortcut>
-                <keycombo action="simul">
-                  <keycap>F8</keycap>
-                </keycombo>
-              </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_view_mag.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>View</guimenu>
-              <guimenuitem>Show mag</guimenuitem>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
             </menuchoice>
           </term>
           <listitem>
@@ -454,35 +429,7 @@ license agreement.</para>
       </variablelist>
     </sect2>
   </sect1>
-  <sect1 id="hdbk-reference-toolbar">
-    <title>Werkbalk verwijzingen</title>
-    <para>Bekijk <link linkend="hdbk-reference-menus">de vorige sectie</link> voor een 
-uitleg over de knoppen die u vindt op de werkbalk. U kunt ook <action>de 
-muisaanwijzer over een knop bewegen en enkele seconden wachten</action> om 
-de tooltip met een korte beschrijving van een knop op te roepen.</para>
-    <para>U kunt de werkbalk aanpassen naar uw behoeften. Gebruik het volgende item in 
-het hoofdmenu: 
-    <variablelist>
-      <varlistentry>
-        <term>
-          <menuchoice>
-            <guimenu>
-            <inlinemediaobject>
-              <imageobject>
-                <imagedata fileref="i_configuretoolbars.png"
-                format="PNG" />
-              </imageobject>
-            </inlinemediaobject>Settings</guimenu>
-            <guimenuitem>Configure toolbars</guimenuitem>
-          </menuchoice>
-        </term>
-        <listitem>
-          <para>Werkbalken configureren</para>
-        </listitem>
-      </varlistentry>
-    </variablelist>Please see <link linkend="hdbk-reference-menus-settings-toolbars">this 
-section</link> for detailed instructions.</para>
-  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>Sneltoetsen index</title>
     <para>This is index of all hotkeys and their corresponding description in the 
