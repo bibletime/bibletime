@@ -291,7 +291,7 @@
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="69"/>
-        <source>Initializing the Sword engine...</source>
+        <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -877,78 +877,83 @@
 <context>
     <name>BtSourceWidget</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="87"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="89"/>
         <source>Delete Source?</source>
         <translation>Vrei să ştergi sursa?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="88"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="90"/>
         <source>Do you really want to delete this source?</source>
         <translation>Eşti sigur că vrei să ştergi sursa?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="124"/>
         <source>Cancel</source>
         <translation>Anulează</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="123"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="125"/>
         <source>Refreshing Source</source>
         <translation>Reînnoire sursă</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="145"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="147"/>
         <source>Connecting...</source>
         <translation>Se conectează</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="194"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="195"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="196"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="197"/>
         <source>Refreshing...</source>
         <translation>Reînnoire</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
+        <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
         <source>Remote:</source>
         <translation>De pe Internet:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="256"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="265"/>
         <source>Local:</source>
         <translation>Local:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="332"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="341"/>
         <source>Install/Update works?</source>
         <translation>Vrei să instalezi/actualizezi modulele?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="342"/>
         <source>Do you really want to install these works?</source>
         <translation>Eşti sigur că vrei să instalezi aceste module?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="335"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="344"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Doar un singur modul poate fi instalat deodată. Selectează doar un singur modul dacă sunt altele marcate cu roşu!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="269"/>
         <source>Not a directory!</source>
         <translation>Nu este director!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="263"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="272"/>
         <source>Not readable!</source>
         <translation>Nu se poate citi!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="324"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>Warning</source>
         <translation type="unfinished">Atenţie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="324"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3358,42 +3363,42 @@ Language name ppk</extracomment>
         <translation>De pe Internet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="265"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
         <source>Old testament</source>
         <translation>Vechiul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="266"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="268"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moise/Pentateuc/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="269"/>
         <source>History</source>
         <translation>Istorice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="270"/>
         <source>Prophets</source>
         <translation>Profeţi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="269"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="271"/>
         <source>New testament</source>
         <translation>Noul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="270"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="272"/>
         <source>Gospels</source>
         <translation>Evanghelii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="271"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="273"/>
         <source>Letters/Epistles</source>
         <translation>Scrisori/Epistole</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="272"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="274"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Epistolele lui Pavel</translation>
     </message>
