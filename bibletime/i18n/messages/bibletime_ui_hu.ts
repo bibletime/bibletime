@@ -160,7 +160,7 @@
         <location filename="../../src/bibletime_init.cpp" line="332"/>
         <source>&amp;Bible Study Howto</source>
         <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
-        <translation>&amp;Biblia tanulmányozás &quot;hogyan&quot;</translation>
+        <translation>Hogyan tanulmányozza a &amp;Bibliát</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="482"/>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="335"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>A Biblia tanulás &quot;hogyan&quot; megnyitása. &lt;BR&gt;Ez az útmutató bevezeti az eredményes Bibliatanulás módszerébe.</translation>
+        <translation>A &quot;Hogyan tanulmányozza a Bibliát&quot; megnyitása. &lt;BR&gt;Ez az útmutató bevezeti az hatékony Biblia tanulmányozás módszerébe.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="166"/>
@@ -274,8 +274,8 @@
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="69"/>
-        <source>Initializing the Sword engine...</source>
-        <translation>A Sword indítása...</translation>
+        <source>Initializing the SWORD engine...</source>
+        <translation>A SWORD indítása...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="71"/>
@@ -290,7 +290,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="343"/>
         <source>&amp;About BibleTime</source>
-        <translation>&amp;A BibleTimeról</translation>
+        <translation>&amp;Névjegy</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="52"/>
