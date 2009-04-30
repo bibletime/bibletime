@@ -4,9 +4,8 @@
     <title>Hogyan indítsuk a &bibletime; programot</title>
     <sect2 id="hdbk-start">
       <title>&bibletime; indítása</title>
-      <para>A &bibletime; egy végrehajtható fájl, amit a Start menüből indíthat, evvel 
-az ikonnal:A &bibletime; egy végrehajtható fájl, amit a Start menüből 
-indíthat, evvel az ikonnal: 
+      <para>&bibletime; is an executable file that is integrated with the desktop. You 
+can launch &bibletime; from the Start Menu with this icon: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
@@ -15,9 +14,8 @@ indíthat, evvel az ikonnal:
           <phrase>&bibletime; start icon</phrase>
         </textobject>
       </mediaobject></para>
-      <para>A &bibletime; természetesen indítható parancssorból is. Hogy megtegye írja 
-be egy terminál ablakba ezt:A &bibletime; természetesen indítható 
-parancssorból is. Hogy megtegye írja be egy terminál ablakba ezt: 
+      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
+&bibletime;, open a terminal window and type: 
       <screen>&bibletime;</screen></para>
     </sect2>
     <sect2 id="hdbk-start-otherwm">
@@ -31,14 +29,10 @@ hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
       <title>Egyéni indítások</title>
-      <para>Terminálból indítva lehetősége van arra, hogy véletlenszerű verssel induljon 
-a &bibletime;, melyet az alapértelmezett bibliából választ:Terminálból 
-indítva lehetősége van arra, hogy véletlenszerű verssel induljon a 
-&bibletime;, melyet az alapértelmezett bibliából választ: 
-      <screen>bibletime --open-default-bible "random"</screen>Ha egy meghatározott verssel szeretne kezdeni, mint a János 3:16, ezt 
-írja:Ha egy meghatározott verssel szeretne kezdeni, mint a János 3:16, ezt 
-írja: 
-      <screen>bibletime --open-default-bible "John 3:16"</screen>Megjelenítheti a könyvek (bibliai) neveit a saját nyelvén is.</para>
+      <para>From a terminal you can use &bibletime; to open a random verse in the 
+default bible: 
+      <screen>bibletime --open-default-bible "random"</screen>To open at a given passage like John 3:16, use: 
+      <screen>bibletime --open-default-bible "John 3:16"</screen>You can also use booknames in your current bookname language.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-startsequence">
