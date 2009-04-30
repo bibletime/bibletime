@@ -183,23 +183,21 @@ nyit meg</action>. További munkák adhatók a kereséshez a párbeszédablakban
         </varlistentry>
       </variablelist>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-window">
       <title>
         <guimenu>Window</guimenu>
       </title>
+
       <variablelist>
         <varlistentry id="hdbk-reference-menus-window-savesession">
           <term>
             <menuchoice>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
+              <guimenu> Window</guimenu>
               <guimenuitem>Save session</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
             <action>A jelenlegi munkafolyamatot menti</action>. Olyan helyi menüt nyit 
@@ -210,6 +208,7 @@ folyamatként mentheti a jelenlegit. A következő elemből tudhatja meg, hogyan
 kell menteni új folyamatot.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-savenewsession">
           <term>
             <menuchoice>
@@ -217,15 +216,11 @@ kell menteni új folyamatot.</para>
                 <keycombo action="simul">&Alt;&Ctrl;
                 <keycap>S</keycap></keycombo>
               </shortcut>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
-              <guimenuitem>Save as new Session</guimenuitem>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Save as new session</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
             <action>A jelenlegi folyamatot új néven menti</action>. Megkérdezi a 
@@ -233,18 +228,15 @@ folyamat nevét a mentéshez.<action>A jelenlegi folyamatot új néven
 menti</action>. Megkérdezi a folyamat nevét a mentéshez.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-loadsession">
           <term>
             <menuchoice>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
+              <guimenu>Window</guimenu>
               <guimenuitem>Load session</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
             <action>Előzőleg mentett folyamat betöltése</action>. Egy helyi menüt nyit 
@@ -253,18 +245,15 @@ folyamat betöltése</action>. Egy helyi menüt nyit meg, ahol kiválaszthatja a
 betöltendő folyamatot.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-deletesession">
           <term>
             <menuchoice>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_sidetree.png" format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
+              <guimenu>Window</guimenu>
               <guimenuitem>Delete session</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
             <action>Mentett folyamat törlése</action>. Olyan menüt nyit meg, ahol 
@@ -273,29 +262,97 @@ törlése</action>. Olyan menüt nyit meg, ahol kiválaszthatja a törlendő
 munkafolyamatot.</para>
           </listitem>
         </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
           <term>
             <menuchoice>
-              <guimenu>
-              <inlinemediaobject>
-                <imageobject>
-                  <imagedata fileref="i_cascade_auto.png"
-                  format="PNG" />
-                </imageobject>
-              </inlinemediaobject>Window</guimenu>
+              <guimenu>Window</guimenu>
               <guimenuitem>Arrangement mode</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
-            <action>Az ablakok elrendezését szabályozza</action>. A megnyíló menü 
-segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime; 
-állítsa be önnek. (Automatikus, csak próbálja ki!).<action>Az ablakok 
-elrendezését szabályozza</action>. A megnyíló menü segítségével eldöntheti, 
-hogy az ablakokat ön rendezze, vagy a &bibletime; állítsa be 
-önnek. (Automatikus, csak próbálja ki!).</para>
+            <action>Controls the basic window arrangement behaviour</action>. In the 
+opening context menu, you can either specify that you want to take care of 
+the window arrangement yourself (Manual mode) or have &bibletime; handle it 
+for you (Automatic modes, just try them out!).</para>
           </listitem>
         </varlistentry>
+
+        <!--- TODO add submen items here -->
+<varlistentry id="hdbk-reference-menus-window-cascade">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">&Ctrl;
+                <keycap>J</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_cascade.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Cascade</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Cascades all open windows</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-tilevertically">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">&Ctrl;
+                <keycap>G</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile_vert.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile vertically</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Automatically tiles all open windows vertically</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-tilehoizontally">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">&Ctrl;
+                <keycap>H</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile_horiz.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile horizontally</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Automatically tiles all open windows horizontally</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-window-closeall">
           <term>
             <menuchoice>
@@ -312,6 +369,7 @@ hogy az ablakokat ön rendezze, vagy a &bibletime; állítsa be
               <guimenuitem>Close all</guimenuitem>
             </menuchoice>
           </term>
+
           <listitem>
             <para>
             <action>Az összes ablakot bezárja</action></para>
@@ -319,6 +377,7 @@ hogy az ablakokat ön rendezze, vagy a &bibletime; állítsa be
         </varlistentry>
       </variablelist>
     </sect2>
+
     <sect2 id="hdbk-reference-menus-settings">
       <title>
         <guimenu>Settings</guimenu>
