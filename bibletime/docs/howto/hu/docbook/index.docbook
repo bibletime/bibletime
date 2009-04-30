@@ -11,7 +11,7 @@
 <book>
 
 <bookinfo>
-	<title>The Biblestudy HowTo</title>
+	<title>Hogyan tanulmányozza a Bibliát</title>
 	
 	<authorgroup>
 		<author>
@@ -29,28 +29,28 @@
 	<!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
 		<year>2001-2009</year>
-		<holder>The team of &bibletime; (info@bibletime.info)</holder>
+		<holder>A &bibletime; csapat (info@bibletime.info)</holder>
 	</copyright>
 	
 	<legalnotice>
 		<para>
-			This document was originally created by Mr. Bob Harman and is licensed under 
-the terms of the license <link 
-url="http://creativecommons.org/licenses/by-sa/3.0/"> "Creative Commons 
-Attribution-Share Alike"</link>.
+			Ezt a dokumentumot eredetileg Mr. Bob Harman készítette, és a <link 
+url="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons 
+Attribution-Share Alike"</link> felhasználási feltételei szerint 
+licenszelte. A magyar fordítást Novák Géza készítette.
 		</para>
 		<para>
-			Scripture quotes are from the New American Standard Bible unless otherwise 
-indicated.
+			Az idézetek a Károli Gáspár -féle Bibliából származnak, kivéve a külön 
+jelzettek.
 		</para>
 	</legalnotice>
 	
 	<abstract>
-		<title>Abstract</title>
+		<title>Vázlat</title>
 		
 		<para>
-			The <application>Biblestudy HowTo</application> is a guide for studying the 
-Bible.
+			A <application>Hogyan tanulmányozza a Bibliát</application> egy vezérfonal a 
+biblia tanulmányozásához
 		</para>
 		<para>
 			It is the hope of the &bibletime; team that this HowTo will provoke the 
