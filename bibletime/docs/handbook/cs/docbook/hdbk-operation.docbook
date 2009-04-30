@@ -167,13 +167,13 @@ text.</para>
 
     <sect2 id="hdbk-op-search-intext">
       <title>Vyhledávání textu v aktivním okně</title>
-      <para>Když chcete hledat slovo nebo frázi v otevřeném aktivním okně 
-(např. kapitolu bible, kterou čtete), je to stejné jako v jiných 
-programech. tuto funkci můžete vyvolat kliknutím 
-<mousebutton>pravým</mousebutton> tlačítkem myši a vyráním 
-<guimenuitem>Najít...</guimenuitem>, nebo použitím horké klávesy <keycombo 
-action="simul">&Ctrl; <keycap>F</keycap></keycombo>. Přečtěte si jak hledat 
-v celých dílech.</para>
+      <para>You can look for a word or phrase in the open read window (e.g. the chapter 
+of a bible that you're reading) just like you are used to from other 
+programs. This function can be reached either by clicking with the 
+<mousebutton>right</mousebutton>mouse button and selecting 
+<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
+you can search in entire works.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">

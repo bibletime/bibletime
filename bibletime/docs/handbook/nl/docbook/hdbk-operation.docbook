@@ -181,7 +181,7 @@ of a bible that you're reading) just like you are used to from other
 programs. This function can be reached either by clicking with the 
 <mousebutton>right</mousebutton>mouse button and selecting 
 <guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
-action="simul">&Ctrl; <keycap>F</keycap></keycombo>. Read on to learn how 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
 you can search in entire works.</para>
     </sect2>
 

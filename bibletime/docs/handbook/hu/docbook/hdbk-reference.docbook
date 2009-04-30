@@ -22,8 +22,8 @@ linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
             <term>
               <menuchoice>
                 <shortcut>
-                  <keycombo action="simul">&Ctrl;
-                  <keycap>Q</keycap></keycombo>
+                  <keycombo action="simul">
+                  <keycap>&Ctrl;Q</keycap></keycombo>
                 </shortcut>
                 <guimenu>
                 <inlinemediaobject>
@@ -137,8 +137,8 @@ megjelenítését.</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Alt;&Ctrl;
-                <keycap>F</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -161,8 +161,8 @@ párbeszédablakban.</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>O</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;O</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -213,8 +213,8 @@ kell menteni új folyamatot.</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Alt;&Ctrl;
-                <keycap>S</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
               </shortcut>
               <guimenu>Window</guimenu>
               <guimenuitem>Save as new session</guimenuitem>
@@ -285,8 +285,8 @@ for you (Automatic modes, just try them out!).</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>J</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;J</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -309,8 +309,8 @@ for you (Automatic modes, just try them out!).</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>G</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;G</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -333,8 +333,8 @@ for you (Automatic modes, just try them out!).</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Ctrl;
-                <keycap>H</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;H</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -357,8 +357,8 @@ for you (Automatic modes, just try them out!).</para>
           <term>
             <menuchoice>
               <shortcut>
-                <keycombo action="simul">&Alt;&Ctrl;
-                <keycap>W</keycap></keycombo>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
               </shortcut>
               <guimenu>
               <inlinemediaobject>
@@ -556,22 +556,22 @@ lenyomása (olykor az ALT is) szükséges.</para>
         <tbody>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;
-              <keycap>Left</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Alt;Left</keycap></keycombo>
             </entry>
             <entry>Visszalép az előzményekben az olvasó ablakban.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;
-              <keycap>Right</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Alt;Right</keycap></keycombo>
             </entry>
             <entry>Előrelép az előzményekben.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>F</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
             </entry>
             <entry>
             <link 
@@ -584,8 +584,8 @@ egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.</ent
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>G</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
@@ -598,8 +598,8 @@ automatikus mozaik elrendezést.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>H</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
@@ -612,8 +612,8 @@ automatikus mozaik elrendezést.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>J</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
@@ -626,8 +626,8 @@ elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>M</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
@@ -639,8 +639,8 @@ elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</e
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>S</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <link 
@@ -653,8 +653,8 @@ jelenlegi elrendezést új néven, új folyamatként.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Alt;&Ctrl;
-              <keycap>W</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik az <link 
@@ -667,22 +667,22 @@ linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guime
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>-</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;-</keycap></keycombo>
             </entry>
             <entry>Kicsinyít. Csökkenti az ablakban alkalmazott betű méretét.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>+</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+</keycap></keycombo>
             </entry>
             <entry>Nagyít. Növeli az ablakban alkalmazott betű méretét.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>A</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;A</keycap></keycombo>
             </entry>
             <entry>Összes kiválasztása. Az összes szöveget kiválasztja az aktuális 
 ablakban.Összes kiválasztása. Az összes szöveget kiválasztja az aktuális 
@@ -690,22 +690,22 @@ ablakban.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>C</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;C</keycap></keycombo>
             </entry>
             <entry>Másolás. A kijelölt szöveget a vágólapra másolja.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>F</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;F</keycap></keycombo>
             </entry>
             <entry>Keresés. Az ablakban lévő szövegben keres.</entry>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>O</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;O</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik a <link 
@@ -719,8 +719,8 @@ menüponttal, keresési ablakot nyit a megnyitott munkákban való kereséshez.<
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>Q</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;Q</keycap></keycombo>
             </entry>
             <entry>
             Megegyezik a <link 
@@ -733,8 +733,8 @@ linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu>
           </row>
           <row>
             <entry>
-              <keycombo action="simul">&Ctrl;
-              <keycap>W</keycap></keycombo>
+              <keycombo action="simul">
+              <keycap>&Ctrl;W</keycap></keycombo>
             </entry>
             <entry>Bezárja az aktuális ablakot.</entry>
           </row>
