@@ -260,8 +260,8 @@ Strongova čísla H8077 použijte 'strong:H8077'</para>
             </tbody>
           </tgroup>
         </table></para>
-        <para>BibleTime používá pro hledání vyhledávací engine Lucene, který má mnoho 
-pokročilých vlastností. Více si o něm můžete přečíst zde: <ulink 
+        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
+many advanced features, and you can read more about it here: <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
 http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>

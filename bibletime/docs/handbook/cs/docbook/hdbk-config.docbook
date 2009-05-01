@@ -3,7 +3,7 @@
   <para> V této sekci najdete úvod k nastavení &bibletime; které najdete pod volbou 
 <guimenu>Nastavení</guimenu> v hlavním menu.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Nastavení Dialogu BibleTime</title>
+    <title>Configure &bibletime; Dialog</title>
     <para>Uživatelské rozhraní programu &bibletime; může být uzpůsobeno mnoha směry v 
 závislosti na vašich potřebách. K dialogu nastavení můžete přistoupit 
 výběrem<menuchoice> <guimenu>Nastavení</guimenu> </menuchoice> 

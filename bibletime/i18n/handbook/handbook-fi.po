@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-04-30 15:17-0400\n"
+"POT-Creation-Date: 2009-04-30 23:51-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -67,7 +67,8 @@ msgstr ""
 "Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> -kohdasta."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
-msgid "Configure BibleTime Dialog"
+#, fuzzy
+msgid "Configure &bibletime; Dialog"
 msgstr "Aseta &bibletime; -ikkuna"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:8
@@ -927,8 +928,9 @@ msgstr "etsii mofologisia koodeja"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:312
+#, fuzzy
 msgid ""
-"BibleTime uses the Lucene search engine to perform your searches. It has "
+"&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
 "java/docs/index.html</ulink>"
@@ -1143,8 +1145,9 @@ msgid ""
 msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:36
+#, fuzzy
 msgid ""
-"<action>Closes BibleTime.</action> BibleTime will ask you if you want to "
+"<action>Closes &bibletime;.</action> BibleTime will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
 "<action>Sulkee BibleTime-ohjelman.</action> BibleTime kysyy sinulta, "
@@ -1346,57 +1349,72 @@ msgstr "Siirtyy lukuikkunan historiassa eteenpäin"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:551
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
-"</menuchoice> </link>equivalent; opens the search dialog to search in the "
+"</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Etsi</guimenu> <guimenuitem>Etsi avoimista teoksista</guimenuitem> "
+"</menuchoice> </link> avaa hakuikkunan kaikkiin nyt avattuihin teoksiin."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:565
+#: docs/handbook/en/docbook/hdbk-reference.docbook:567
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window tiling."
-msgstr ""
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:578
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window tiling."
-msgstr ""
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:591
-msgid ""
-"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window cascading."
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
 msgstr ""
 "<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Sijoittelutila</"
 "guimenuitem> <guimenuitem>Sarjoita automaattisesti</guimenuitem> </"
 "menuchoice> automaattinen ikkunoiden sarjoitus pois/päälle."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:604
+#: docs/handbook/en/docbook/hdbk-reference.docbook:581
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice>equivalent; "
-"toggle manual window placement."
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Sijoittelutila</"
+"guimenuitem> <guimenuitem>Sarjoita automaattisesti</guimenuitem> </"
+"menuchoice> automaattinen ikkunoiden sarjoitus pois/päälle."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:594
+#, fuzzy
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window cascading."
+msgstr ""
+"<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Sijoittelutila</"
+"guimenuitem> <guimenuitem>Sarjoita automaattisesti</guimenuitem> </"
+"menuchoice> automaattinen ikkunoiden sarjoitus pois/päälle."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:607
+#, fuzzy
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"equivalent; toggle manual window placement."
 msgstr ""
 "<menuchoice> <guimenu>Ikkuna</guimenu> <guimenuitem>Sijoittelutila</"
 "guimenuitem> <guimenuitem>Manuaalinen</guimenuitem> </menuchoice> aseta "
 "ikkunoita manuaalisesti."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:617
+#: docs/handbook/en/docbook/hdbk-reference.docbook:620
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
-"menuchoice> </link>equivalent; saves current layout as new session."
+"menuchoice> </link> equivalent; saves current layout as new session."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Ikkuna</guimenu> <guimenuitem>Tallenna uutena istuntona</"
@@ -1404,42 +1422,80 @@ msgstr ""
 "istunnoksi."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:631
+#: docs/handbook/en/docbook/hdbk-reference.docbook:634
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
-"</link>equivalent; closes all open windows."
+"</link> equivalent; closes all open windows."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
 "menuchoice> </link> sulkee kaikki avoimet ikkunat."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:643
+#: docs/handbook/en/docbook/hdbk-reference.docbook:646
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Loitonna. Tämä pienentää kirjasimen kokoa lukuikkunoissa."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:651
+#: docs/handbook/en/docbook/hdbk-reference.docbook:654
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Lähennä. Tämä suurentaa kirjasimen kokoa lukuikkunoissa."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:659
+#: docs/handbook/en/docbook/hdbk-reference.docbook:662
 msgid "Select all. This selects all text in read windows."
 msgstr "Valitse kaikki. Tämä valitsee kaikki tekstit lukuikkunassa."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:667
+#: docs/handbook/en/docbook/hdbk-reference.docbook:670
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopioi. Tämä kopioi valitun tekstin leikepöydälle."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:675
+#: docs/handbook/en/docbook/hdbk-reference.docbook:679
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Haku. Tämä etsii lukuikkunan tekstistä."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:684
+#: docs/handbook/en/docbook/hdbk-reference.docbook:690
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
+"menuchoice> </link> sulkee kaikki avoimet ikkunat."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:706
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
+"menuchoice> </link> sulkee kaikki avoimet ikkunat."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:722
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Ikkuna</guimenu> <guimenuitem>Sulje kaikki</guimenuitem> </"
+"menuchoice> </link> sulkee kaikki avoimet ikkunat."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:737
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
-"</menuchoice> </link>equivalent; opens the search dialog to search in all "
+"</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
@@ -1447,66 +1503,72 @@ msgstr ""
 "</menuchoice> </link> avaa hakuikkunan kaikkiin nyt avattuihin teoksiin."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:698
+#: docs/handbook/en/docbook/hdbk-reference.docbook:752
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
-"link>equivalent; closes &bibletime;."
+"link> equivalent; closes &bibletime;."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>Tiedosto</guimenu> <guimenuitem>Lopeta</guimenuitem> </menuchoice> "
 "</link> sulkee &bibletime;-sovelluksen."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:710
+#: docs/handbook/en/docbook/hdbk-reference.docbook:764
 msgid "Closes the current window."
 msgstr "Sulkee nykyisen ikkunan."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:719
+#: docs/handbook/en/docbook/hdbk-reference.docbook:773
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
-"menuchoice>equivalent; opens the handbook."
+"menuchoice> equivalent; opens the handbook."
 msgstr ""
 "<menuchoice> <guimenu>Ohje</guimenu> <guimenuitem>Käsikirja</guimenuitem> </"
 "menuchoice> avaa käsikirjan."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:731
+#: docs/handbook/en/docbook/hdbk-reference.docbook:785
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto."
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
 msgstr ""
 "<menuchoice> <guimenu>Ohje</guimenu> <guimenuitem>Raamatun tutkimisen Howto</"
 "guimenuitem> </menuchoice> avaa Raamatun tutkimisen Howto-ikkunan."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:744
+#: docs/handbook/en/docbook/hdbk-reference.docbook:798
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem> </menuchoice> </link>equivalent; opens the Bookshelf Manager."
+"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Asetukset</guimenu> <guimenuitem>Kirjahyllyn hallinta</"
 "guimenuitem> </menuchoice> </link> avaa kirjahyllyn hallintapaneelin."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:759
+#: docs/handbook/en/docbook/hdbk-reference.docbook:813
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
-"menuchoice> </link>equivalent; toggles display of the Bookshelf."
+"menuchoice> </link> equivalent; toggles display of the Bookshelf."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>Näytä</guimenu> <guimenuitem>Näytä kirjahylly</guimenuitem> </"
 "menuchoice> </link> näyttää/piilottaa kirjahyllyn."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:774
+#: docs/handbook/en/docbook/hdbk-reference.docbook:828
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
-"link>equivalent; toggles display of the mag(nifying glass)."
+"link> equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>Näytä</guimenu> <guimenuitem>Näytä suurennuslasi</guimenuitem> </"

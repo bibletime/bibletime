@@ -4,7 +4,7 @@
 asetetaan. Ohjelmassa tämä löytyy päävalikon <guimenu>Asetukset</guimenu> 
 -kohdasta.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Aseta &bibletime; -ikkuna</title>
+    <title>Configure &bibletime; Dialog</title>
     <para>&bibletime; käyttöliittymä voidaan muokata monella tavalla tarpeittesi 
 mukaan. Pääset asetusikkunaan valitsemalla 
 <menuchoice><guimenu>Asetukset</guimenu></menuchoice> <guimenuitem>Aseta 

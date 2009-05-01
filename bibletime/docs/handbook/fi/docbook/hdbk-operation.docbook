@@ -264,8 +264,8 @@ number H8077, use 'strong:H8077'.</para>
             </tbody>
           </tgroup>
         </table></para>
-        <para>BibleTime käyttää Lucene-hakukonetta hakuihisi. Siinä on monta 
-edistyksellistä ominaisuutta ja voit lukea niistä lisää osoitteessa: <ulink 
+        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
+many advanced features, and you can read more about it here: <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
 http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>

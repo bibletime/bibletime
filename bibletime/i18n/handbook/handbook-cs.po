@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
-"POT-Creation-Date: 2009-04-30 15:17-0400\n"
+"POT-Creation-Date: 2009-04-30 23:51-0400\n"
 "PO-Revision-Date: 2009-03-26 07:36+0100\n"
 "Last-Translator: Jan Bělohoubek <j.bel@atlas.cz>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -32,7 +32,8 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
-msgid "Configure BibleTime Dialog"
+#, fuzzy
+msgid "Configure &bibletime; Dialog"
 msgstr "Nastavení Dialogu BibleTime"
 
 # type: Content of: <chapter><sect1><para>
@@ -1065,8 +1066,9 @@ msgstr "hledá morfologické kódy"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:312
+#, fuzzy
 msgid ""
-"BibleTime uses the Lucene search engine to perform your searches. It has "
+"&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
 "java/docs/index.html</ulink>"
@@ -1336,8 +1338,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:36
+#, fuzzy
 msgid ""
-"<action>Closes BibleTime.</action> BibleTime will ask you if you want to "
+"<action>Closes &bibletime;.</action> BibleTime will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
 "<action>Zavře BibleTime.</action> BibleTime se vás zeptá, jestli si přejete "
@@ -1569,10 +1572,11 @@ msgstr "Posune vpřed v historii aktivního okna."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:551
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
-"</menuchoice> </link>equivalent; opens the search dialog to search in the "
+"</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
@@ -1581,102 +1585,145 @@ msgstr ""
 "ve výchozí bibli."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:565
+#: docs/handbook/en/docbook/hdbk-reference.docbook:567
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window tiling."
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
 msgstr ""
 "<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
 "guimenuitem> <guimenuitem>Automaticky dlaždice vertikálně</guimenuitem> </"
 "menuchoice> zapne automatické skládání oken."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:578
+#: docs/handbook/en/docbook/hdbk-reference.docbook:581
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window tiling."
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
 msgstr ""
 "<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
 "guimenuitem> <guimenuitem>Automaticky dlaždice horizontálně</guimenuitem> </"
 "menuchoice> zapne automatické skládání oken."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:591
+#: docs/handbook/en/docbook/hdbk-reference.docbook:594
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </"
-"menuchoice>equivalent; toggle automatic window cascading."
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window cascading."
 msgstr ""
 "<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
 "guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem> </menuchoice> "
 "zapne automatické skládání oken do kaskády."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:604
+#: docs/handbook/en/docbook/hdbk-reference.docbook:607
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
-"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice>equivalent; "
-"toggle manual window placement."
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"equivalent; toggle manual window placement."
 msgstr ""
 "<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
 "guimenuitem> <guimenuitem>Ruční mód</guimenuitem> </menuchoice> zapne "
 "manuální skládání oken."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:617
+#: docs/handbook/en/docbook/hdbk-reference.docbook:620
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
-"menuchoice> </link>equivalent; saves current layout as new session."
+"menuchoice> </link> equivalent; saves current layout as new session."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Okno</guimenu> <guimenuitem>Uložit jako novou relaci</guimenuitem> "
 "</menuchoice> </link>uloží aktuální náhled jako novou relaci."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:631
+#: docs/handbook/en/docbook/hdbk-reference.docbook:634
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
-"</link>equivalent; closes all open windows."
+"</link> equivalent; closes all open windows."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> "
 "</link>zavře všechna otevřená okna."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:643
+#: docs/handbook/en/docbook/hdbk-reference.docbook:646
 msgid "Zoom out. This decreases the font size of read windows."
 msgstr "Oddálit. Zmenší velikost písma v aktivním okně."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:651
+#: docs/handbook/en/docbook/hdbk-reference.docbook:654
 msgid "Zoom in. This increases the font size of read windows."
 msgstr "Přiblížit. Zvětší velikost písma v aktivním okně."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:659
+#: docs/handbook/en/docbook/hdbk-reference.docbook:662
 msgid "Select all. This selects all text in read windows."
 msgstr "Vybrat vše. Vybere všechen text v aktivním okně."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:667
+#: docs/handbook/en/docbook/hdbk-reference.docbook:670
 msgid "Copy. This copies the selected text to the clipboard."
 msgstr "Kopírovat. Zkopíruje vybraný text do schránky."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:675
+#: docs/handbook/en/docbook/hdbk-reference.docbook:679
 msgid "Search. This lets you search within the text of a read window."
 msgstr "Hledat. Vyhledává v textu aktivního okna"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:684
+#: docs/handbook/en/docbook/hdbk-reference.docbook:690
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> "
+"</link>zavře všechna otevřená okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:706
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> "
+"</link>zavře všechna otevřená okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:722
+#, fuzzy
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> "
+"</link>zavře všechna otevřená okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:737
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
-"</menuchoice> </link>equivalent; opens the search dialog to search in all "
+"</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
@@ -1685,67 +1732,73 @@ msgstr ""
 "otevřených dílech."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:698
+#: docs/handbook/en/docbook/hdbk-reference.docbook:752
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
-"link>equivalent; closes &bibletime;."
+"link> equivalent; closes &bibletime;."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>Soubor</guimenu> <guimenuitem>Ukončit</guimenuitem> </menuchoice> </"
 "link>ukončí &bibletime;."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:710
+#: docs/handbook/en/docbook/hdbk-reference.docbook:764
 msgid "Closes the current window."
 msgstr "Zavře aktuální okno."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:719
+#: docs/handbook/en/docbook/hdbk-reference.docbook:773
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
-"menuchoice>equivalent; opens the handbook."
+"menuchoice> equivalent; opens the handbook."
 msgstr ""
 "<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
 "</menuchoice>otevře příručku."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:731
+#: docs/handbook/en/docbook/hdbk-reference.docbook:785
+#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
-"guimenuitem> </menuchoice>equivalent; opens the BibleStudy Howto."
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
 msgstr ""
 "<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Návod, jak studovat "
 "Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:744
+#: docs/handbook/en/docbook/hdbk-reference.docbook:798
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
-"guimenuitem> </menuchoice> </link>equivalent; opens the Bookshelf Manager."
+"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Nastavení</guimenu> <guimenuitem>Správa knih</"
 "guimenuitem> </menuchoice> </link>otevře správce knih."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:759
+#: docs/handbook/en/docbook/hdbk-reference.docbook:813
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
-"menuchoice> </link>equivalent; toggles display of the Bookshelf."
+"menuchoice> </link> equivalent; toggles display of the Bookshelf."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit knihovnu</guimenuitem> </"
 "menuchoice> </link>zapne zobrazení knihovny."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-reference.docbook:774
+#: docs/handbook/en/docbook/hdbk-reference.docbook:828
+#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
-"link>equivalent; toggles display of the mag(nifying glass)."
+"link> equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit časopis</guimenuitem> </"

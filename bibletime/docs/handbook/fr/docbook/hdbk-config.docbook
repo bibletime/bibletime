@@ -3,7 +3,7 @@
   <para>In this section you find an overview to configure &bibletime;, which can be 
 found under <guimenu>Settings</guimenu> in the main menu.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Le Dialogue Configurer Bibletime</title>
+    <title>Configure &bibletime; Dialog</title>
     <para>The &bibletime; user interface can be customized in many ways depending on 
 your needs. You can access the configuration dialog by selecting 
 <menuchoice> <guimenu>Settings</guimenu> </menuchoice> 
