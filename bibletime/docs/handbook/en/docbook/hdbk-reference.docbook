@@ -33,7 +33,7 @@
             </term>
             <listitem>
               <para>
-              <action>Closes &bibletime;.</action> BibleTime will ask you
+              <action>Closes &bibletime;.</action> &bibletime; will ask you
               if you want to write unsaved changes to disk.</para>
             </listitem>
           </varlistentry>
