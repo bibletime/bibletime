@@ -273,10 +273,9 @@ munkafolyamatot.</para>
 
           <listitem>
             <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
-opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatic modes, just try them out!).</para>
+            <action>Az ablakok elrendezését szabályozza</action>. A megnyíló menü 
+segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime; 
+állítsa be önnek. (Automatikus, csak próbálja ki!).</para>
           </listitem>
         </varlistentry>
 
@@ -300,7 +299,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Cascades all open windows</action>.
+	      <action>Az összes ablakot átlapolja</action>
 	    </para>
           </listitem>
         </varlistentry>
@@ -324,7 +323,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Automatically tiles all open windows vertically</action>.
+	      <action>Az összes ablakot függőleges mozaik elrendezésre váltja</action>
 	    </para>
           </listitem>
         </varlistentry>
@@ -348,7 +347,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Automatically tiles all open windows horizontally</action>.
+	      <action>Az összes ablakot vízszintes mozaik elrendezésre váltja</action>
 	    </para>
           </listitem>
         </varlistentry>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "POT-Creation-Date: 2009-04-30 15:17-0400\n"
-"PO-Revision-Date: 2009-04-30 10:22+0200\n"
+"PO-Revision-Date: 2009-04-30 22:31+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,9 +97,8 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:48
-#, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
-msgstr "A betűkészletek beállítása"
+msgstr "<phrase>A betűkészletek beállítása</phrase>"
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:51
@@ -379,14 +378,13 @@ msgstr "Elérhető dokumentumok"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:23
-#, fuzzy
 msgid ""
 "Over 200 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
 msgstr ""
 "Több, mint 200 dokumentum 50 nyelven érhető el a <ulink url=\"http://www."
 "crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Ezek "
-"tartalmaznak:<placeholder0>"
+"tartalmaznak:"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:28
@@ -525,13 +523,12 @@ msgstr "A program áttekintése"
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
 msgid "This is what a typical &bibletime; session looks like:"
-msgstr ""
+msgstr "Így néz ki egy tipikus &bibletime; munkafolyamat:"
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:11
-#, fuzzy
 msgid "<phrase>The &bibletime; application window</phrase>"
-msgstr "A &bibletime; ablak részei "
+msgstr "<phrase>A &bibletime; ablak részei </phrase>"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:14
@@ -870,7 +867,6 @@ msgstr "Keresés egy megnyitott ablakban "
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:208
-#, fuzzy
 msgid ""
 "You can look for a word or phrase in the open read window (e.g. the chapter "
 "of a bible that you're reading) just like you are used to from other "
@@ -884,8 +880,8 @@ msgstr ""
 "olvasott fejezetben, úgy, ahogy bármely más programban is. Csak kattintson a "
 "<mousebutton>jobb</mousebutton> egérgombbal, és válassza a "
 "<guimenuitem>Keresés...</guimenuitem> opciót, vagy használhatja a <keycombo "
-"action=\"simul\">&Ctrl; <keycap>F</keycap></keycombo> billentyű kombinációt "
-"is. "
+"action=\"simul\">&Ctrl; <keycap>F</keycap></keycombo> billentyű kombinációt. "
+"Olvasson tovább, hogy megtudja, hogyan kereshet a teljes dokumentumokban is. "
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:220
@@ -1036,9 +1032,8 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:282
-#, fuzzy
 msgid "Available text types:"
-msgstr "Lehetséges szövegtípusok: <placeholder0>"
+msgstr "Lehetséges szövegtípusok: "
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:284
@@ -1535,7 +1530,6 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:265
-#, fuzzy
 msgid ""
 "<action>Controls the basic window arrangement behaviour</action>. In the "
 "opening context menu, you can either specify that you want to take care of "
@@ -1544,28 +1538,24 @@ msgid ""
 msgstr ""
 "<action>Az ablakok elrendezését szabályozza</action>. A megnyíló menü "
 "segítségével eldöntheti, hogy az ablakokat ön rendezze, vagy a &bibletime; "
-"állítsa be önnek. (Automatikus, csak próbálja ki!).<action>Az ablakok "
-"elrendezését szabályozza</action>. A megnyíló menü segítségével eldöntheti, "
-"hogy az ablakokat ön rendezze, vagy a &bibletime; állítsa be önnek. "
-"(Automatikus, csak próbálja ki!)."
+"állítsa be önnek. (Automatikus, csak próbálja ki!)."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:293
-#, fuzzy
 msgid "<action>Cascades all open windows</action>."
-msgstr "<action>Az összes ablakot bezárja</action>"
+msgstr "<action>Az összes ablakot átlapolja</action>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:317
-#, fuzzy
 msgid "<action>Automatically tiles all open windows vertically</action>."
-msgstr "<action>Az összes ablakot bezárja</action>"
+msgstr ""
+"<action>Az összes ablakot függőleges mozaik elrendezésre váltja</action>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:341
-#, fuzzy
 msgid "<action>Automatically tiles all open windows horizontally</action>."
-msgstr "<action>Az összes ablakot bezárja</action>"
+msgstr ""
+"<action>Az összes ablakot vízszintes mozaik elrendezésre váltja</action>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:366
@@ -1957,14 +1947,12 @@ msgid ""
 "can launch &bibletime; from the Start Menu with this icon:"
 msgstr ""
 "A &bibletime; egy végrehajtható fájl, amit a Start menüből indíthat, evvel "
-"az ikonnal:A &bibletime; egy végrehajtható fájl, amit a Start menüből "
-"indíthat, evvel az ikonnal: <placeholder0>"
+"az ikonnal:"
 
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
 #: docs/handbook/en/docbook/hdbk-start.docbook:15
-#, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
-msgstr "&bibletime; indítóikon"
+msgstr "<phrase>&bibletime; indítóikon</phrase>"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:18
@@ -1974,15 +1962,13 @@ msgid ""
 "&bibletime;, open a terminal window and type:"
 msgstr ""
 "A &bibletime; természetesen indítható parancssorból is. Hogy megtegye írja "
-"be egy terminál ablakba ezt:A &bibletime; természetesen indítható "
-"parancssorból is. Hogy megtegye írja be egy terminál ablakba ezt: "
-"<placeholder0>"
+"be egy terminál ablakba ezt:<placeholder0>"
 
-# type: Content of: <chapter><sect1><sect2><para><screen>
+# type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "&bibletime;"
-msgstr "&bibletime;"
+msgstr "Mi a &bibletime;"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
@@ -2014,6 +2000,8 @@ msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
+"Terminálból a &bibletime; indítható véletlenszerű verssel az alapértelmezett "
+"bibliából így:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:34
@@ -2026,7 +2014,7 @@ msgstr "bibletime --open-default-bible \"random\""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:35
 msgid "To open at a given passage like John 3:16, use:"
-msgstr ""
+msgstr "Hogy egy meghatározott verssel induljon, mint a Jn 3:16 :"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
@@ -2037,7 +2025,7 @@ msgstr "bibletime --open-default-bible \"John 3:16\""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid "You can also use booknames in your current bookname language."
-msgstr ""
+msgstr "Használhatja a könyvek neveit a saját nyelvén is."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:42
@@ -2136,19 +2124,18 @@ msgstr "&bibletime; kézikönyv"
 
 # type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
 msgid "the &bibletime; team"
-msgstr "&bibletime; kézikönyv"
+msgstr "a &bibletime; csapat"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:47
 msgid "The &bibletime; handbook is part of &bibletime;."
 msgstr "A &bibletime; kézikönyv a &bibletime; része"
 
-# type: Content of: <book><bookinfo><date>
+# type: Content of: <book><bookinfo>
 #: docs/handbook/en/docbook/index.docbook:50
 msgid "2009-04"
-msgstr ""
+msgstr "2009-04"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
@@ -2169,14 +2156,6 @@ msgstr ""
 # type: Content of: <chapter><sect1><title>
 #~ msgid "<guimenu>Languages</guimenu>"
 #~ msgstr "A <guimenuitem>Nyelvek</guimenuitem>"
-
-# type: Content of: <chapter><sect1><sect2><mediaobject>
-#~ msgid ""
-#~ "<imageobject> <imagedata fileref=\"ss_configfonts.png\" format=\"PNG\" /> "
-#~ "</imageobject>"
-#~ msgstr ""
-#~ "<imageobject> <imagedata fileref=\"ss_configfonts.png\" format=\"PNG\" /> "
-#~ "</imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #~ msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
@@ -2226,13 +2205,15 @@ msgstr ""
 #~ msgid "<guimenu>HotKeys</guimenu>"
 #~ msgstr "<guimenu>Gyorsbillentyűk</guimenu>"
 
-# type: Content of: <chapter><sect1><para><mediaobject>
+# type: Content of: <chapter><sect1><sect2><para>
 #~ msgid ""
-#~ "<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\" /> </"
-#~ "imageobject>"
+#~ "Over 200 documents in 50 languages are available from the <ulink url="
+#~ "\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These "
+#~ "include: <placeholder0>"
 #~ msgstr ""
-#~ "<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\" /> </"
-#~ "imageobject>"
+#~ "Több, mint 200 dokumentum 50 nyelven érhető el a <ulink url=\"http://www."
+#~ "crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Ezek "
+#~ "tartalmaznak:<placeholder0>"
 
 # type: Content of: <chapter><sect1><sect2><screenshot><mediaobject>
 #~ msgid ""
@@ -2245,6 +2226,10 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot>
 #~ msgid "<placeholder0> <placeholder1>"
 #~ msgstr "<placeholder0> <placeholder1>"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#~ msgid "Available text types: <placeholder0>"
+#~ msgstr "Lehetséges szövegtípusok: <placeholder0>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><mediaobject>
 #~ msgid ""
@@ -2520,101 +2505,6 @@ msgstr ""
 #~ "<menuchoice> <guimenu>Segítség</guimenu> <guimenuitem>Névjegy</"
 #~ "guimenuitem> </menuchoice>"
 
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt; <keycap>Left</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Alt; <keycap>Bal</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt; <keycap>Right</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Alt; <keycap>Jobb</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>F</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>F</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>G</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>G</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>H</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>H</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>J</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>J</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>M</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>M</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>S</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>S</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>W</keycap></keycombo>"
-#~ msgstr ""
-#~ "<keycombo action=\"simul\">&Alt;&Ctrl; <keycap>W</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>-</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>-</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>A</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>A</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>C</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>C</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>F</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>F</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>O</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>O</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>Q</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>Q</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\">&Ctrl; <keycap>W</keycap></keycombo>"
-#~ msgstr "<keycombo action=\"simul\">&Ctrl; <keycap>W</keycap></keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
-#~ msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
-#~ msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
-
 # type: Content of: <chapter><sect1><sect2><para><mediaobject>
 #~ msgid ""
 #~ "<imageobject> <imagedata fileref=\"i_bibletime.png\" format=\"PNG\" /> </"
@@ -2623,16 +2513,9 @@ msgstr ""
 #~ "<imageobject> <imagedata fileref=\"i_bibletime.png\" format=\"PNG\" /> </"
 #~ "imageobject>"
 
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid ""
-#~ "From a terminal you can use &bibletime; to open a random verse in the "
-#~ "default bible: <placeholder0>To open at a given passage like John 3:16, "
-#~ "use: <placeholder1>You can also use booknames in your current bookname "
-#~ "language."
-#~ msgstr ""
-#~ "Terminálablakból indítva a &bibletime; indulhat véletlenszerű verssel "
-#~ "így: <placeholder0> , egy konkrét verssel így: <placeholder1>. A "
-#~ "könyvneveket az ön beállításai szerinti neveken adhatja meg."
+# type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
+#~ msgid "&bibletime; start icon"
+#~ msgstr "&bibletime; indítóikon"
 
 # type: Content of: <chapter><sect1><title>
 #~ msgid "<interface>Bookshelf Manager</interface>"
@@ -2641,10 +2524,6 @@ msgstr ""
 # type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #~ msgid "<interface>Configure &bibletime; dialog</interface>"
 #~ msgstr "<interface> &bibletime; beállítási ablak </interface>"
-
-# type: Content of: <book><bookinfo><authorgroup><author><firstname>
-#~ msgid "Fred"
-#~ msgstr "Fred"
 
 # type: Content of: <book><bookinfo><authorgroup><author><surname>
 #~ msgid "Saalbach"
@@ -2681,27 +2560,3 @@ msgstr ""
 #~ msgstr ""
 #~ "<copyright> <year>1999-2009</year> <holder>a &bibletime; csapat</holder> "
 #~ "</copyright>"
-
-# type: Content of: <book><bookinfo>
-#~ msgid "<date>2009-04</date>"
-#~ msgstr "<date>2009-04</date>"
-
-# type: Content of: <book><bookinfo><keywordset><keyword>
-#~ msgid "QT4"
-#~ msgstr "QT4"
-
-# type: Content of: <chapter><sect1><sect2><para><screen>
-#~ msgid "bibletime"
-#~ msgstr "bibletime"
-
-# type: Content of: <book><bookinfo><keywordset><keyword>
-#~ msgid "sword"
-#~ msgstr "sword"
-
-# type: Content of: <book><bookinfo><keywordset><keyword>
-#~ msgid "crosswire"
-#~ msgstr "crosswire"
-
-# type: Content of: <book><bookinfo><keywordset><keyword>
-#~ msgid "help dialog"
-#~ msgstr "Segítség ablak"
