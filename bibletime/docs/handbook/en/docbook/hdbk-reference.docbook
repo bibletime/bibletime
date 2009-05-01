@@ -319,7 +319,7 @@
           </listitem>
         </varlistentry>
 
-        <varlistentry id="hdbk-reference-menus-window-tilehoizontally">
+        <varlistentry id="hdbk-reference-menus-window-tilehorizontally">
           <term>
             <menuchoice>
               <shortcut>
@@ -553,22 +553,25 @@
                 <guimenu>Search</guimenu>
                 <guimenuitem>Search in default bible</guimenuitem>
               </menuchoice>
-            </link>equivalent; opens the search dialog to search in the
+            </link> equivalent; opens the search dialog to search in the
             default bible.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
               <keycap>&Ctrl;&Alt;G</keycap></keycombo>
             </entry>
+
             <entry>
-            <menuchoice>
-              <guimenu>Window</guimenu>
-              <guimenuitem>Arrangement mode</guimenuitem>
-              <guimenuitem>Auto-tile vertically</guimenuitem>
-            </menuchoice>equivalent; toggle automatic window
-            tiling.</entry>
+	      <menuchoice>
+	        <guimenu>Window</guimenu>
+		  <guimenuitem>Arrangement mode</guimenuitem>
+		  <guimenuitem>Auto-tile vertically</guimenuitem>
+		</menuchoice> equivalent; toggle automatic window tiling.
+	    </entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -579,7 +582,7 @@
               <guimenu>Window</guimenu>
               <guimenuitem>Arrangement mode</guimenuitem>
               <guimenuitem>Auto-tile horizontally</guimenuitem>
-            </menuchoice>equivalent; toggle automatic window
+            </menuchoice> equivalent; toggle automatic window
             tiling.</entry>
           </row>
           <row>
@@ -592,7 +595,7 @@
               <guimenu>Window</guimenu>
               <guimenuitem>Arrangement mode</guimenuitem>
               <guimenuitem>Auto-cascade</guimenuitem>
-            </menuchoice>equivalent; toggle automatic window
+            </menuchoice> equivalent; toggle automatic window
             cascading.</entry>
           </row>
           <row>
@@ -605,7 +608,7 @@
               <guimenu>Window</guimenu>
               <guimenuitem>Arrangement mode</guimenuitem>
               <guimenuitem>Manual mode</guimenuitem>
-            </menuchoice>equivalent; toggle manual window
+            </menuchoice> equivalent; toggle manual window
             placement.</entry>
           </row>
           <row>
@@ -619,7 +622,7 @@
                 <guimenu>Window</guimenu>
                 <guimenuitem>Save as new session</guimenuitem>
               </menuchoice>
-            </link>equivalent; saves current layout as new
+            </link> equivalent; saves current layout as new
             session.</entry>
           </row>
           <row>
@@ -633,7 +636,7 @@
                 <guimenu>Window</guimenu>
                 <guimenuitem>Close all</guimenuitem>
               </menuchoice>
-            </link>equivalent; closes all open windows.</entry>
+            </link> equivalent; closes all open windows.</entry>
           </row>
           <row>
             <entry>
@@ -667,6 +670,7 @@
             <entry>Copy. This copies the selected text to the
             clipboard.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -675,6 +679,55 @@
             <entry>Search. This lets you search within the text of a
             read window.</entry>
           </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;G</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-tilevertically">
+		<menuchoice>
+		  <guimenu>Window</guimenu>
+		  <guimenuitem>Tile vertically</guimenuitem>
+		</menuchoice>
+	      </link> equivalent.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;H</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-tilehorizontally">
+		<menuchoice>
+		  <guimenu>Window</guimenu>
+		  <guimenuitem>Tile horizontally</guimenuitem>
+		</menuchoice>
+	      </link> equivalent.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;J</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-cascade">
+		<menuchoice>
+		  <guimenu>Window</guimenu>
+		  <guimenuitem>Cascade</guimenuitem>
+		</menuchoice>
+	      </link> windows equivalent.
+            </entry>
+          </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -686,9 +739,10 @@
                 <guimenu>Search</guimenu>
                 <guimenuitem>Search in open work(s)</guimenuitem>
               </menuchoice>
-            </link>equivalent; opens the search dialog to search in all
+            </link> equivalent; opens the search dialog to search in all
             currently opened works.</entry>
           </row>
+
           <row>
             <entry>
               <keycombo action="simul">
@@ -700,7 +754,7 @@
                 <guimenu>File</guimenu>
                 <guimenuitem>Quit</guimenuitem>
               </menuchoice>
-            </link>equivalent; closes &bibletime;.</entry>
+            </link> equivalent; closes &bibletime;.</entry>
           </row>
           <row>
             <entry>
@@ -719,7 +773,7 @@
             <menuchoice>
               <guimenu>Help</guimenu>
               <guimenuitem>Handbook</guimenuitem>
-            </menuchoice>equivalent; opens the handbook.</entry>
+            </menuchoice> equivalent; opens the handbook.</entry>
           </row>
           <row>
             <entry>
@@ -731,7 +785,7 @@
             <menuchoice>
               <guimenu>Help</guimenu>
               <guimenuitem>BibleStudy Howto</guimenuitem>
-            </menuchoice>equivalent; opens the BibleStudy
+            </menuchoice> equivalent; opens the BibleStudy
             Howto.</entry>
           </row>
           <row>
@@ -747,7 +801,7 @@
                 <guimenu>Settings</guimenu>
                 <guimenuitem>Bookshelf Manager</guimenuitem>
               </menuchoice>
-            </link>equivalent; opens the Bookshelf Manager.</entry>
+            </link> equivalent; opens the Bookshelf Manager.</entry>
           </row>
           <row>
             <entry>
@@ -761,7 +815,7 @@
                 <guimenu>View</guimenu>
                 <guimenuitem>Show Bookshelf</guimenuitem>
               </menuchoice>
-            </link>equivalent; toggles display of the
+            </link> equivalent; toggles display of the
             Bookshelf.</entry>
           </row>
           <row>
@@ -776,7 +830,7 @@
                 <guimenu>View</guimenu>
                 <guimenuitem>Show mag</guimenuitem>
               </menuchoice>
-            </link>equivalent; toggles display of the mag(nifying
+            </link> equivalent; toggles display of the mag(nifying
             glass).</entry>
           </row>
         </tbody>
