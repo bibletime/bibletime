@@ -32,8 +32,8 @@ sekci</link>.</para>
             </term>
             <listitem>
               <para>
-              <action>Closes &bibletime;.</action> &bibletime; will ask you if you want to 
-write unsaved changes to disk.</para>
+              <action>Zavře &bibletime;.</action> &bibletime; se vás zeptá, jestli si 
+přejete zapsat neuložené změny na disk.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -65,8 +65,8 @@ write unsaved changes to disk.</para>
           </term>
           <listitem>
             <para>
-            <action>Toggles full screen display.</action> Toggle this setting to 
-maximize the &bibletime; window.</para>
+            <action>Přepíná zobrazení přes celou obrazovku.</action> Aktivujte tuto 
+možnost pokud chcete maximalizovat okno &bibletime;.</para>
           </listitem>
         </varlistentry>
 
@@ -252,10 +252,10 @@ můžete vybrat existující sezení, které má být vymazáno.</para>
 
           <listitem>
             <para>
-            <action>Controls the basic window arrangement behaviour</action>. In the 
-opening context menu, you can either specify that you want to take care of 
-the window arrangement yourself (Manual mode) or have &bibletime; handle it 
-for you (Automatic modes, just try them out!).</para>
+            <action>Ovládá chování jednoduchého rozvržení oken</action>. V otevřeném 
+kontextovém menu můžete zvolit, že se chcete o rozvržení oken starat osobně 
+(Ruční mód) nebo použít připravené možnosti &bibletime; (Automatické módy, 
+tak je vyzkoušejte!)</para>
           </listitem>
         </varlistentry>
 
@@ -279,7 +279,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Cascades all open windows</action>.
+	      <action>Všechna otevřená okna do kaskády</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -303,7 +303,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Automatically tiles all open windows vertically</action>.
+	      <action>Automaticky dláždí všechna otevřená okna vertikálně</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -327,7 +327,7 @@ for you (Automatic modes, just try them out!).</para>
 
           <listitem>
             <para>
-	      <action>Automatically tiles all open windows horizontally</action>.
+	      <action>Automaticky dláždí všechna otevřená okna horizontálně.</action>.
 	    </para>
           </listitem>
         </varlistentry>
@@ -402,8 +402,8 @@ nastavit všechny vlastnosti &bibletime;, které potřebujete. Prosím navštivt
           </term>
           <listitem>
             <para>
-            <action>Otevře dialog kde můžete změnit vaše nastavení Sword a spraovat svou 
-knihovnu</action>. Další inormace naleznete v <link 
+            <action>Otevře dialog kde můžete změnit vaše nastavení Sword a spravovat 
+svou knihovnu</action>. Další inormace naleznete v <link 
 linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
           </listitem>
         </varlistentry>
@@ -434,7 +434,7 @@ linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens &bibletime;'s user guide</action> You are reading it now.</para>
+            <action>Otevře příručku &bibletime;</action>, kterou právě čtete.</para>
           </listitem>
         </varlistentry>
 
@@ -458,13 +458,12 @@ linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a guide on how to study the Bible</action> It is the hope of 
-the &bibletime; team that this HowTo will provoke the readers to study the 
-scriptures to see what they say. This particular study guide has been chosen 
-as it takes care not to advocate any particular denominational doctrine. We 
-expect you to read and study the scriptures to understand what they say. If 
-you start with the attitude that you want to have the Lord sow his word in 
-your heart He will not disappoint you.</para>
+            <action>Otevře průvodce jak studovat Bibli</action>. Přáním týmu &bibletime; 
+je, aby toto HowTo podnítilo čtenáře ke studiu posvátných textů, k tomu 
+dozvědět se co říkají. Tato příručka byla zvolena proto, že neobhajuje 
+doktrínu žádné konkrétní denominace. Očekáváme, že budete číst a studovat 
+Písma, abyste jim rozuměli. Když začnete s postojem, že chcete mít semeno 
+Páně v srdci, On vás nezklame.</para>
           </listitem>
         </varlistentry>
 
@@ -477,10 +476,9 @@ your heart He will not disappoint you.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a window about &bibletime; project information</action> 
-contains information about &bibletime; software version, project 
-contributors, &sword; software version, &qt; software version and the 
-license agreement.</para>
+            <action>Otevře okno s informacemi o projektu &bibletime;</action> obsahuje 
+informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi 
+&qt; a licenční ujednání.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -489,11 +487,12 @@ license agreement.</para>
 
   <sect1 id="hdbk-reference-hotkeys">
     <title>Seznam horkých kláves</title>
-    <para>This is index of all hotkeys and their corresponding description in the 
-handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
-directly find out which hotkey a certain menu item has, you can either look 
-at the entry itself in &bibletime; (as it always shows the hotkey), or you 
-can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
+    <para>Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v 
+příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete 
+přesně vědět která z horkých kláves odpovídá té které položce menu, můžete 
+se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké 
+klávesy), nebo si prohlédněte <link linkend="hdbk-reference-menus">tuto 
+sekci</link>.</para>
     <informaltable>
       <tgroup cols="2">
         <colspec colname="hotkey" />
@@ -526,9 +525,9 @@ can look it up in <link linkend="hdbk-reference-menus">this section</link>.</par
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> 
-</menuchoice> </link> equivalent; opens the search dialog to search in the 
-default bible.</entry>
+<guimenu>Hledat</guimenu> <guimenuitem>Hledat ve výchozí bibli</guimenuitem> 
+</menuchoice> </link>otevře vyhledávací dialog pro vyhledávání ve výchozí 
+bibli.</entry>
           </row>
 
           <row>
@@ -538,9 +537,9 @@ default bible.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> 
-</menuchoice> equivalent; toggle automatic window tiling.
+	      <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
+vertikálně</guimenuitem> </menuchoice> zapnout automatické skládání oken.
 	    </entry>
           </row>
 
@@ -550,9 +549,9 @@ mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem>
               <keycap>&Ctrl;&Alt;H</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> 
-</menuchoice> equivalent; toggle automatic window tiling.</entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
+horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.</entry>
           </row>
           <row>
             <entry>
@@ -560,9 +559,9 @@ mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem>
               <keycap>&Ctrl;&Alt;J</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window cascading.</entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem> 
+</menuchoice> zapne automatické skládání oken do kaskády.</entry>
           </row>
           <row>
             <entry>
@@ -570,9 +569,9 @@ equivalent; toggle automatic window cascading.</entry>
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> 
-equivalent; toggle manual window placement.</entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Ruční mód</guimenuitem> </menuchoice> 
+zapne manuální skládání oken.</entry>
           </row>
           <row>
             <entry>
@@ -581,8 +580,8 @@ equivalent; toggle manual window placement.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> 
-</menuchoice> </link> equivalent; saves current layout as new session.</entry>
+<guimenu>Okno</guimenu> <guimenuitem>Uložit jako novou relaci</guimenuitem> 
+</menuchoice> </link> uloží aktuální náhled jako novou relaci.</entry>
           </row>
           <row>
             <entry>
@@ -591,8 +590,8 @@ equivalent; toggle manual window placement.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> 
-</link> equivalent; closes all open windows.</entry>
+<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> 
+</link> zavře všechna otevřená okna.</entry>
           </row>
           <row>
             <entry>
@@ -638,9 +637,9 @@ equivalent; toggle manual window placement.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tilevertically"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> 
-</menuchoice> </link> equivalent.
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Dlaždice vertikálně</guimenuitem> 
+</menuchoice> </link>.
             </entry>
           </row>
 
@@ -651,9 +650,9 @@ equivalent; toggle manual window placement.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tilehorizontally"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> 
-</menuchoice> </link> equivalent.
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Dlaždice horizontálně</guimenuitem> 
+</menuchoice> </link>.
             </entry>
           </row>
 
@@ -664,9 +663,9 @@ equivalent; toggle manual window placement.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-cascade"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Kaskáda</guimenuitem> </menuchoice> 
+</link> obdoba oken.
             </entry>
           </row>
 
@@ -677,9 +676,9 @@ equivalent; toggle manual window placement.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> 
-</menuchoice> </link> equivalent; opens the search dialog to search in all 
-currently opened works.</entry>
+<guimenu>Hledat</guimenu> <guimenuitem>Hledat v otevřených 
+dílech</guimenuitem> </menuchoice> </link> otevře dialog pro vyhledávání ve 
+všech otevřených dílech.</entry>
           </row>
 
           <row>
@@ -689,8 +688,8 @@ currently opened works.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
-<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> 
-</link> equivalent; closes &bibletime;.</entry>
+<guimenu>Soubor</guimenu> <guimenuitem>Ukončit</guimenuitem> </menuchoice> 
+</link> ukončí &bibletime;.</entry>
           </row>
           <row>
             <entry>
@@ -706,8 +705,8 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> 
-</menuchoice> equivalent; opens the handbook.</entry>
+            <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> 
+</menuchoice> otevře příručku.</entry>
           </row>
           <row>
             <entry>
@@ -716,8 +715,8 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
-Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry>
+            <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Návod, jak studovat 
+Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli.</entry>
           </row>
           <row>
             <entry>
@@ -727,9 +726,8 @@ Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
-<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf 
-Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf 
-Manager.</entry>
+<menuchoice> <guimenu>Nastavení</guimenu> <guimenuitem>Správa 
+knih</guimenuitem> </menuchoice> </link>otevře správce knih.</entry>
           </row>
           <row>
             <entry>
@@ -739,8 +737,8 @@ Manager.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> 
-</menuchoice> </link> equivalent; toggles display of the Bookshelf.</entry>
+<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit knihovnu</guimenuitem> 
+</menuchoice> </link>zapne zobrazení knihovny.</entry>
           </row>
           <row>
             <entry>
@@ -750,8 +748,8 @@ Manager.</entry>
             </entry>
             <entry>
             <link linkend="hdbk-reference-menus-view-showmag"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> 
-</link> equivalent; toggles display of the mag(nifying glass).</entry>
+<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit časopis</guimenuitem> 
+</menuchoice> </link>zapne zobrazení okna časopisu.</entry>
           </row>
         </tbody>
       </tgroup>

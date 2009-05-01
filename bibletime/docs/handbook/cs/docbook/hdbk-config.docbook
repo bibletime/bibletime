@@ -3,10 +3,10 @@
   <para> V této sekci najdete úvod k nastavení &bibletime; které najdete pod volbou 
 <guimenu>Nastavení</guimenu> v hlavním menu.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
-    <para>Uživatelské rozhraní programu &bibletime; může být uzpůsobeno mnoha směry v 
-závislosti na vašich potřebách. K dialogu nastavení můžete přistoupit 
-výběrem<menuchoice> <guimenu>Nastavení</guimenu> </menuchoice> 
+    <title>Dialog Nastavení &bibletime;</title>
+    <para>Uživatelské rozhraní programu &bibletime; může být uzpůsobeno v mnoha 
+směrech, v závislosti na vašich potřebách. K dialogu nastavení můžete 
+přistoupit výběrem <menuchoice> <guimenu>Nastavení</guimenu> </menuchoice> 
 <guimenuitem>Natavit &bibletime;</guimenuitem>.</para>
     <sect2 id="hdbk-config-bt-display">
       <title>
@@ -29,10 +29,10 @@ náhled v pravém poli.</para>
       <para>Zde můžete zvolit jazyk, který bude použit pro jména biblických knih. Pokud 
 je dostupný, nastavte tuto možnost na váš jazyk, a budete se cítit doma.</para>
 
-      <para>By default, &bibletime; uses the default system display font. You can 
-override this font if necessary. Some languages require special fonts to be 
-displayed correctly, and this dialog allows you to specify a custom font for 
-each language.</para>
+      <para>V základním nastavení používá &bibletime; výchozí systémové písmo. Pokud je 
+to nezbytné, můžete to změnit. Některé jazyky vyžadují pro správné zobrazení 
+speciální písma, tento dialog vám umožní nastavit vlastní písmo pro každý 
+jazyk.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="ss_configfonts.png" format="PNG" />
@@ -52,7 +52,7 @@ víte, že standardní písmo neobsahuje znaky užité v tomto díle. </para>
       <para>K nápravě vyberte jazyk tohoto díla z rozbalovacího menu. Zaškrtněte použít 
 vlastní písmo. Nyní vyberte písmo. Například, písmo podporující mnoho znaků 
 je Code2000. Pokud žádné z nainstalovaných písem neumí zobrazit dílo o které 
-se zajímáte, zkuste nainstalovat lokalizační balíček pro teno jazyk.</para>
+se zajímáte, zkuste nainstalovat lokalizační balíček pro tento jazyk.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Instalace písem</title>
         <para>Detailní popis instalace písem přesahuje rozsah této příručky. Pro více 
@@ -106,14 +106,14 @@ pro různé jazyky.</para>
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+                <entry>Výborná písma Unicode od " Summer Institute of Linguistics".</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/">
                   FreeFont</ulink>
                 </entry>
-                <entry>A new free Unicode font initiative.</entry>
+                <entry>Nová svobodná iniciativa písma Unicode.</entry>
               </row>
               <row>
                 <entry>
@@ -139,7 +139,7 @@ závislosti na jejich velikosti.</entry>
                   <ulink url="http://fontforge.sourceforge.net/sfds/">
                   Caslon, Monospace, Cupola, Caliban</ulink>
                 </entry>
-                <entry>Částečně odpovídající, pro informacese podívejte na odkazovanou stránku.</entry>
+                <entry>Částečně odpovídající, pro informace se podívejte na odkazovanou stránku.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -155,13 +155,13 @@ a písma Unicode, která je podporují</ulink>).</para>
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the Sword backend can now be customized in 
-&bibletime;. These features are documented right in the dialog. You also 
-have the possibility to specify standard works that should be used when no 
-specific work is specified in a reference. An example: The standard Bible is 
-used to display the content of cross references in the Bible. When you hover 
-over then, the Mag will show the content of the verses referred to, 
-according to the standard Bible you specified.</para>
+      <para>Mnoho vlastností poskytovaných backendem Sword můžou být v &bibletime; 
+uzpůsobeny. Tyto vlastnosti jsou zdokumentovány v dialogu vpravo. Máte 
+možnost vybrat výchozí díla, která mají být použita, když není žádné dílo 
+vybráno odkazem. Například: výchozí Bible je použita k zobrazení obsahu 
+"křížových" biblických odkazů. Když najedete nad odkaz, časopis zobrazí 
+náhled obsahu veršů odkazujících na toto místo, ve výchozí Bibli kterou jste 
+zvolili.</para>
     </sect2>
     <sect2 id="hdbk-config-bt-hotkeys">
       <title>

@@ -42,7 +42,7 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>Tým &bibletime;</holder>
+    <holder>tým &bibletime;</holder>
   </copyright>
   <legalnotice>
     <para>Příručka &bibletime; je součástí &bibletime;.</para>
@@ -50,7 +50,7 @@
   <date>2009-04</date>
   <releaseinfo>2.0</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the Sword framework.</para>
+    <para>&bibletime; je nástroj pro studium Bible založený na frameworku Sword.</para>
   </abstract>
   <keywordset>
     <keyword>QT4</keyword>

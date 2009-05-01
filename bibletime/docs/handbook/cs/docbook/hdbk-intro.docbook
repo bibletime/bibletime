@@ -2,12 +2,12 @@
   <title>Úvod</title>
   <sect1 id="hdbk-intro-about">
     <title>O &bibletime;</title>
-    <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules are easy to install and 
-manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
-the back-end functionality for &bibletime;, such as viewing Bible text, 
-searching etc. Sword is the flagship product of the <ulink 
+    <para>&bibletime; je nástroj pro studium Bible s podporou pro různé texty a 
+jazyky. Také velké množství modulů děl, které je snadné nainstalovat a 
+spravovat. Je založen na knihovně <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>, která poskytuje 
+funkcionalitu pro &bibletime;, jako zobrazování biblických textů, 
+vyhledávání atd. Sword je vlajkovou lodí společnosti <ulink 
 url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
 
     <para>&bibletime; je navržen k použití s díly v jednom z formátů podporovaných 
@@ -34,18 +34,18 @@ nejmodernější sekce knihovny projektu Sword.</para>
         <varlistentry>
           <term>Knihy</term>
           <listitem>
-            <para>Dostupné knihy jsou "Imitation of Christ", "Enuma Elish", and "Josephus: The 
+            <para>Dostupné knihy jsou "Imitation of Christ", "Enuma Elish", a"Josephus: The 
 Complete Works"</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Komentáře</term>
           <listitem>
-            <para>Commentaries available include classics like John Wesley's "Notes on the 
-Bible", Matthew Henry's commentary and Luther's "Commentary on Galatians." 
-With the <emphasis>Personal</emphasis> commentary you can <link 
-linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to 
-sections of the Bible.</para>
+            <para>Dostupné komentáře zahrnují klasiku jako "Notes on the Bible" Johna 
+Wesleyho, komentáře Matthewa Henryho a Lutherův "Komentář ke galatským." 
+Pomocí <emphasis>Osobního</emphasis>komentáře můžete<link 
+linkend="hdbk-op-parts-desk-write"> nahrát osobní sešit poznámek</link> do 
+biblických sekcí.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -58,11 +58,11 @@ sections of the Bible.</para>
         <varlistentry>
           <term>Lexikony/slovníky</term>
           <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, 
-Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible 
-Encyclopaedia. Dictionaries available include Strong's Hebrew Bible 
-Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged 
-Dictionary of the English Language 1913, Nave's Topical Bible.</para>
+            <para>Dostupné lexikony zahrnují: Robinson's Morphological Analysis Codes, 
+Brown-Driver-Briggs Hebrew Lexicon a International Standard Bible 
+Encyclopedia. Dostupné slovníky zahrnují: Strong's Hebrew Bible Dictionary, 
+Strong's Greek Bible Dictionary, Webster's Revised Unabridged Dictionary of 
+the English Language 1913, Nave's Topical Bible.</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
