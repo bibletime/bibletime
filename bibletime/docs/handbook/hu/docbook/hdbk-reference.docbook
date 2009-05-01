@@ -36,8 +36,8 @@ linkend="hdbk-reference-hotkeys">ebben a részben</link> találja.</para>
             </term>
             <listitem>
               <para>
-              <action>Closes &bibletime;.</action> &bibletime; will ask you if you want to 
-write unsaved changes to disk.</para>
+              <action>&bibletime; bezárása</action>.  A &bibletime; meg fogja kérdezni, 
+hogy elmentse -e a változtatásokat a lemezre.</para>
             </listitem>
           </varlistentry>
         </variablelist>
@@ -571,10 +571,10 @@ lenyomása (olykor az ALT is) szükséges.</para>
               <keycap>&Ctrl;&Alt;F</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> 
-</menuchoice> </link> equivalent; opens the search dialog to search in the 
-default bible.</entry>
+            <link 
+linkend="hdbk-reference-menus-search-defaultbible"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+az alapértelmezett Bibliában</guimenuitem></menuchoice></link> menüvel 
+egyező; keresési ablakot nyit az alapértelmezett Bibliában kereséshez.</entry>
           </row>
 
           <row>
@@ -584,9 +584,10 @@ default bible.</entry>
             </entry>
 
             <entry>
-	      <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> 
-</menuchoice> equivalent; toggle automatic window tiling.
+	      Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Függőleges mozaik 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
+elrendezést.
 	    </entry>
           </row>
 
@@ -596,9 +597,10 @@ mode</guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem>
               <keycap>&Ctrl;&Alt;H</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> 
-</menuchoice> equivalent; toggle automatic window tiling.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Vízszintes mozaik 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik 
+elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -606,9 +608,10 @@ mode</guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem>
               <keycap>&Ctrl;&Alt;J</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> 
-equivalent; toggle automatic window cascading.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Átlapoló 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus átlapoló 
+elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -616,9 +619,9 @@ equivalent; toggle automatic window cascading.</entry>
               <keycap>&Ctrl;&Alt;M</keycap></keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
-mode</guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> 
-equivalent; toggle manual window placement.</entry>
+            Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok 
+automatikus igazítása</guimenuitem><guimenuitem> Kézi 
+elrendezéssel</guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.</entry>
           </row>
           <row>
             <entry>
@@ -626,9 +629,10 @@ equivalent; toggle manual window placement.</entry>
               <keycap>&Ctrl;&Alt;S</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> 
-</menuchoice> </link> equivalent; saves current layout as new session.</entry>
+            Megegyezik az <link 
+linkend="hdbk-reference-menus-window-savenewsession"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mentés 
+új folyamatként</guimenuitem></menuchoice></link> menüponttal, menti a 
+jelenlegi elrendezést új néven, új folyamatként.</entry>
           </row>
           <row>
             <entry>
@@ -636,9 +640,10 @@ equivalent; toggle manual window placement.</entry>
               <keycap>&Ctrl;&Alt;W</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> 
-</link> equivalent; closes all open windows.</entry>
+            Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.</entry>
           </row>
           <row>
             <entry>
@@ -686,9 +691,10 @@ ablakban.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tilevertically"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> 
-</menuchoice> </link> equivalent.
+	      Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.
             </entry>
           </row>
 
@@ -699,9 +705,10 @@ ablakban.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-tilehorizontally"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> 
-</menuchoice> </link> equivalent.
+	      Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.
             </entry>
           </row>
 
@@ -712,9 +719,10 @@ ablakban.</entry>
             </entry>
 
             <entry>
-	      <link linkend="hdbk-reference-menus-window-cascade"> <menuchoice> 
-<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> 
-</link> windows equivalent.
+	      Megegyezik az <link 
+linkend="hdbk-reference-menus-window-closeall"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> 
+Összes bezárása</guimenuitem></menuchoice></link> menüponttal, bezárja az 
+összes nyitott ablakot.
             </entry>
           </row>
 
@@ -724,10 +732,10 @@ ablakban.</entry>
               <keycap>&Ctrl;O</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
-<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> 
-</menuchoice> </link> equivalent; opens the search dialog to search in all 
-currently opened works.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-search-openworks"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés 
+a megnyitott dokumentum(ok)ban</guimenuitem></menuchoice></link> 
+menüponttal, keresési ablakot nyit a megnyitott munkákban való kereséshez.</entry>
           </row>
 
           <row>
@@ -736,9 +744,10 @@ currently opened works.</entry>
               <keycap>&Ctrl;Q</keycap></keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
-<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> 
-</link> equivalent; closes &bibletime;.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-file-quit"><menuchoice><guimenu>Fájl</guimenu> 
+<guimenuitem>Kilépés</guimenuitem> </menuchoice></link> ponttal, a 
+&bibletime; bezárása.</entry>
           </row>
           <row>
             <entry>
@@ -754,8 +763,9 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> 
-</menuchoice> equivalent; opens the handbook.</entry>
+            Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> 
+Kézikönyv</guimenuitem></menuchoice> menüponttal, megnyitja ezt a 
+kézikönyvet.</entry>
           </row>
           <row>
             <entry>
@@ -764,8 +774,9 @@ currently opened works.</entry>
               </keycombo>
             </entry>
             <entry>
-            <menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy 
-Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry>
+            Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia 
+tanulmányozás "hogyan"</guimenuitem></menuchoice> menüponttal, megnyitja a 
+segédletet a Biblia tanulmányozásához.</entry>
           </row>
           <row>
             <entry>
@@ -774,10 +785,10 @@ Howto</guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto.</entry
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
-<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf 
-Manager</guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf 
-Manager.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-settings-bookshelf_manager"><menuchoice><guimenu>Beállítások</guimenu> 
+<guimenuitem>Könyvespolc menedzser</guimenuitem></menuchoice></link> 
+menüponttal, megnyitja a Könyvespolc menedzsert.</entry>
           </row>
           <row>
             <entry>
@@ -786,9 +797,10 @@ Manager.</entry>
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> 
-</menuchoice> </link> equivalent; toggles display of the Bookshelf.</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showbookshelf"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> 
+Könyvespolc mutatása</guimenuitem></menuchoice></link> menüponttal, 
+láthatóvá teszi a "könyvespolcot".</entry>
           </row>
           <row>
             <entry>
@@ -797,9 +809,10 @@ Manager.</entry>
               </keycombo>
             </entry>
             <entry>
-            <link linkend="hdbk-reference-menus-view-showmag"> <menuchoice> 
-<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> 
-</link> equivalent; toggles display of the mag(nifying glass).</entry>
+            Megegyezik a <link 
+linkend="hdbk-reference-menus-view-showmag"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító 
+mutatása</guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a 
+nagyító (információs) ablakot.</entry>
           </row>
         </tbody>
       </tgroup>

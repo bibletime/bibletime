@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: howto-hu\n"
 "POT-Creation-Date: 2009-04-21 12:33-0400\n"
-"PO-Revision-Date: 2009-04-30 21:46+0200\n"
+"PO-Revision-Date: 2009-05-01 20:25+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1140,7 +1140,7 @@ msgid ""
 "The more precise we can be with the exact, original meaning of the words the "
 "better our interpretation will be.  Try to find the exact meaning of the key "
 "words by following these steps:"
-msgstr "Legprecizebbek akkor lehetünk, ha az egzakt eredeti jelentését vesszük a szavaknak. Próbálja meg a szavak eredeti jelentését megtalálni a következő lépések követésével:"
+msgstr "Legprecízebbek akkor lehetünk, ha az egzakt eredeti jelentését vesszük a szavaknak. Próbálja meg a szavak eredeti jelentését megtalálni a következő lépések követésével:"
 
 # type: Content of: <chapter><section><orderedlist><listitem><formalpara><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:20
@@ -1165,7 +1165,7 @@ msgid ""
 "isn't the English word good enough? <emphasis>Because more than one greek "
 "word may be translated into the same english word, and the greek words may "
 "have different shades of meaning.</emphasis>"
-msgstr "Hasonlítsa össze az Írást az Írással. Figyelje meg, hogy ugyanaz a görög vagy héber szó (nem a magyar fordítás) előfordulásai tisztázhatják, vagy új megvilágításba helyezhetik a meghatározást. Ugyanaz a szerző hogyan használta a szót máshol? Más szerzők? A hivatkozási segédletek adhatnak még értelmezési segítséget a szó használatában akár nem bibliai szövegekben is. Miért kell nekünk eredeti nyelven is megnéznünk, miért nem elég a magyar? <emphasis>Azért mert több görög szónak lehet ugyanaz a magyar fordítása, és a görög szavaknak lehetnek eltérő jelentésárnyalatai is.</emphasis>"
+msgstr "Hasonlítsa össze az Írást az Írással. Figyelje meg, hogy ugyanaz a görög vagy héber szó (nem a magyar fordítás) előfordulásai tisztázhatják, vagy új megvilágításba helyezhetik a meghatározást. Ugyanaz a szerző hogyan használta a szót máshol? Más szerzők? A hivatkozási segédletek adhatnak még értelmezési segítséget a szó használatában akár nem bibliai szövegekben is. Miért kell nekünk eredeti nyelven is megnéznünk, miért nem elég a magyar? <emphasis>Azért mert több görög szónak lehet ugyanaz a magyar fordítása, és a görög szavaknak lehetnek eltérő jelentésárnyalata is.</emphasis>"
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:37
@@ -1262,7 +1262,7 @@ msgstr "Jn. 12:3 Mária [...] megkené a Jézus lábait, és megtörlé annak l�
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:72
 msgid "Cross-references of chrio:"
-msgstr "Chrio kereszzthivatkozásai:"
+msgstr "Chrio kereszthivatkozásai:"
 
 # type: Content of: <chapter><section><section><itemizedlist><listitem><para><orderedlist><listitem><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:74
@@ -1322,12 +1322,12 @@ msgid ""
 "5 is saying that the elders should give the sick person medicine and pray "
 "for him in the name of the Lord.  Doesn't that express a beautiful balance "
 "of practical and spiritual in our God!"
-msgstr "Tahát a görög igeidő szerint is a megkenvén helyesebben fordítva talán \"már megkenve\" vagyis a sorrend szerint előbb megkenni, majd imádkozni \"az Úrnak nevében\" vagyis az ima történik az Úr nevében, nem a megkenetés. Gyakorlatiasan ez az ige azt mondja, a vének előbb adjanak orvosságot, majd imádkozzanak a betegért az Úr nevében.  Ugye milyen világos az egyensúlya a gyakorlatinak és a szelleminek a mi Urunkban! "
+msgstr "Tehát a görög igeidő szerint is a megkenvén helyesebben fordítva talán \"már megkenve\" vagyis a sorrend szerint előbb megkenni, majd imádkozni \"az Úrnak nevében\" vagyis az ima történik az Úr nevében, nem a megkenetés. Gyakorlatiasan ez az ige azt mondja, a vének előbb adjanak orvosságot, majd imádkozzanak a betegért az Úr nevében.  Ugye milyen világos az egyensúlya a gyakorlatinak és a szelleminek a mi Urunkban! "
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:103
 msgid "Rule 2 - Interpret within the biblical context"
-msgstr "2. szabály - értelmezés a bibliai szövegkörnyezetben"
+msgstr "2. szabály - értelmezés a bibliai szövegkörnyezetében"
 
 # type: Content of: <chapter><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:105
@@ -1360,7 +1360,7 @@ msgid ""
 "change of topic, it may be a clue that your interpretation has been "
 "derailed! The water is the amniotic fluid, \"born of water\" = natural "
 "birth."
-msgstr "Nem a vízkkeresztség kérdéséről beszél itt, ami nagy váltás lenne arról a témáról, amiről Jézus és Nikodémus beszél. tekintsünk el a hirtelen témaváltástól, mert ez jelezheti, hogy az értelmezés félresiklott! A víz a magzatvíz, \"születni víztől\" = természetes születés."
+msgstr "Nem a vízkeresztség kérdéséről beszél itt, ami nagy váltás lenne arról a témáról, amiről Jézus és Nikodémus beszél. tekintsünk el a hirtelen témaváltástól, mert ez jelezheti, hogy az értelmezés félresiklott! A víz a magzatvíz, \"születni víztől\" = természetes születés."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:117
@@ -1373,7 +1373,7 @@ msgid ""
 "1 Cor.14:34 <quote>Let the women keep silent in the churches</quote> has to "
 "be taken within the biblical context of 1 Cor.11:5 <quote>every woman [...] "
 "while praying or prophesying [...]</quote>"
-msgstr ""
+msgstr "1 Kor. 14:34 <quote> A ti asszonyaitok hallgassanak a gyülekezetekben,</quote> együtt vizsgálandó az 1 Kor. 11:5-tel <quote>Minden asszony pedig, [...] imádkozik avagy prófétál, [...]</quote>"
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:121
@@ -1392,7 +1392,7 @@ msgid ""
 "way for his hearers to respond to the gospel.  If baptism were the pathway "
 "to being born again, how could Paul write 1 Cor.1:17 <emphasis>\"For Christ "
 "did not send me to baptize, but to preach the gospel\"</emphasis>?"
-msgstr ""
+msgstr "ApCsel 2:38 <quote> Péter pedig monda nékik: &quot;Térjetek meg és keresztelkedjetek meg mindnyájan a Jézus Krisztusnak nevében a bűnöknek bocsánatjára; &quot;</quote>. Ez a rész a bemerítés/keresztelés általi újjászületésről szól? Ha ez az egyetlen igerész állna rendelkezésünkre, levonhatnánk ezt a következtetést.  Ám a tiszta tanítás fényében máshol az újjászületés Krisztusban való hit által történik meg, ahogy máskülönben megérthettük. Péter sürgetése a bemerítkezésre/keresztelésre egy mód arra tekintve, hogy a hallgatósága válaszoljon az örömhírre. Ha a bemerítés/keresztelés lenne az út az újjászületéshez, hogyan írhatta Pál az 1 Kor. 1:17 -ben<emphasis> Mert nem azért küldött engem a Krisztus, hogy kereszteljek, hanem hogy az evangyéliomot hirdessem</emphasis>?"
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:134
@@ -1406,7 +1406,7 @@ msgid ""
 "<quote>What did it mean to the original readers?</quote>; later we can ask, "
 "<quote>What does it mean to me?</quote>.  We have to take into account the "
 "historical and cultural background of the author and the recipients."
-msgstr ""
+msgstr "Először ne azt kérdezzük <quote> Mit jelent ez számomra</quote>, hanem <quote>Mit jelentett ez az eredeti olvasói számára?</quote> Csak ez után tegyük fel a kérdést: <quote>Mit jelent ez számomra?</quote> Be kell tekintenünk a szerző és hallgatósága történelmi és kulturális hátterébe."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:139
@@ -1421,7 +1421,7 @@ msgid ""
 "could Jesus die on Friday afternoon and rise Sunday morning yet \"be raised "
 "on the third day\" (Mt.16:21)? Exact meanings of \"three\" or \"days\" won't "
 "help explain the apparent contradiction."
-msgstr ""
+msgstr "<quote>Három nap és három éjjel</quote> (Mt. 12:40) vezethetett egyeseket a \"Szerdai keresztre feszítés elmélete\" kigondolására, pl. az Armstrong kultusz követőit. Hogyan halhatott meg Jézus péntek délután, és támadhatott fel vasárnap reggel, vagyis \"harmadnapon feltámadni\" (Mt. 16:21)? A \"három\" és \"nap\" szó szerint vétele nem segít a látható ellentmondás feloldásában."
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:144
@@ -1434,7 +1434,7 @@ msgid ""
 "p.m. = day 1.  Friday 6 p.m. to Saturday 6 p.m. = day 2.  Saturday 6 p.m. to "
 "Sunday 5 or so a.m. = day 3.  Interpreting within the cultural context keeps "
 "us out of trouble."
-msgstr ""
+msgstr "Szükségünk lesz egy kis történelmi csemegére: A zsidó nép bármely részét a napnak teljes napként számolták, úgy, mint ahogyan mi sem számolhatjuk a vizesvödröket részben. (ha hat és fél vödör vizünk van, mi is azt mondjuk, 7 vizesvödör van ott, igaz, egyik félig tele). Ugyanígy a zsidók a megkezdett napszakokat is teljes napként számolták, és a napok este 6-kor kezdődtek, és este 6-kor végződtek. Így péntek délután 3-6 : első nap. Péntek este 6 -tól szombat este 6 -ig : második nap, szombat este 6 -tól vasárnap reggel 5-ig a harmadik nap. A kulturális környezet megértése megkímélhet a bajoktól."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:151
@@ -1450,7 +1450,7 @@ msgid ""
 "dismemberment would happen to them if they didn't live up to their part of "
 "the contract.  But in this case only God goes thru, making it a unilateral "
 "covenant."
-msgstr ""
+msgstr "1 Móz. 15:7-21. Ábrahám idejében az állatok kettéhasítása, majd a részek között áthaladás megszokott módja volt a szövetségek megkötésének. Mindegyik fél átsétált a részek között zálogát adva, hogy ugyanez történjen vele is, ha nem a szövetség szerint él. Ám ebben az esetben csak az Úr sétált keresztül, így ez egyoldalú szövetség."
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:159
@@ -1462,7 +1462,7 @@ msgstr "4. szabály - értelmezés a szavak hétköznapi értelmében"
 msgid ""
 "Let literal language be literal and figurative language be figurative.  And "
 "watch out for idioms, which have special meanings."
-msgstr ""
+msgstr "A szó szerinti nyelvet szó szerint, a jelképes nyelvet jelképesként kell értelmezni. Figyelnünk kell a kifejezésekre, melyeknek speciális jelentésük is lehet."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:163
@@ -1472,7 +1472,7 @@ msgstr "4A példa"
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:164
 msgid "<quote>evil eye</quote> in Mt.6:23."
-msgstr ""
+msgstr "<quote>gonosz szem</quote> Mt. 6:23-ban"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:165
@@ -1480,7 +1480,7 @@ msgid ""
 "Rule 1, definition of \"evil\" and \"eye\" - no help here.  Rule 2, context: "
 "seems to confuse us even more.  It doesn't seem to fit with what goes before "
 "and after! This should tip us off that we aren't understanding it rightly!!"
-msgstr ""
+msgstr "1.szabály a \"gonosz\" és a \"szem\" jelentése nem segít most. 2. szabály, szövegkörnyezet: még jobban összezavar bennünket, nem illik sem az előtte lévő, sem a következő részekhez, ez  arra figyelmeztet, hogy nem helyesen értelmezünk!"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:168
@@ -1491,7 +1491,7 @@ msgid ""
 "because I am generous [lit. \"good\"]?</emphasis>\" We find that having an "
 "\"evil eye\" is a Hebrew idiom for being stingy or envious.  Now go back to "
 "Mt.6 and notice how this understanding ties in so perfectly to the context."
-msgstr ""
+msgstr "Amit itt láthatunk, az egy héber kifejezés, <quote>gonosz szem</quote>. Keressük meg, máshol hogyan használják ezt a kifejezést: Mt. 20:15 \"<emphasis>Avagy nem szabad-é nékem a magaméval azt tennem, amit akarok? avagy a te szemed azért gonosz, mert én jó vagyok?</emphasis>\" Itt azt láthatjuk, hogy ez a kifejezés a fukar és irigy. Menjünk vissza Mt. 6 -hoz, és jegyezzük meg, hogy ez az értelmezés hogyan kapcsolja össze a szöveget."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:174
@@ -1501,12 +1501,12 @@ msgstr "4B példa"
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:175
 msgid "Is.59:1 <quote>The Lord's hand is not short;</quote>"
-msgstr ""
+msgstr "Ésa. 59:1 <quote> Ímé, nem oly rövid az Úr keze,</quote>"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:176
 msgid "Deut.33:27 <quote>Underneath are the everlasting arms.</quote>"
-msgstr ""
+msgstr "5 Móz. 33:27 <quote>alant vannak örökkévaló karjai;</quote>"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:178
@@ -1522,7 +1522,7 @@ msgid ""
 "interpretation that you just proved God to be a man, you just proved that He "
 "is a bird</quote>.  The Mormons had to laugh as they realised the "
 "ridiculousness of their position."
-msgstr ""
+msgstr "A testrészekre hivatkozást az Utolsó Napok Szentjei használják arra, hogy bemutassák, hogy Isten egykoron olyan ember volt, mint mi vagyunk. Egyszer meggyőztek embereket, hogy menjenek és tanítsák azt, hogy Isten lehet belőlünk, mint Ő! Egy előadáson, amelyet ők tartottak, egy csoport Mormon elöljáró kihívta Walter Martint (a <emphasis>Kingdom of the Cults</emphasis> szerzője) egy hasonló versek listájával. Dr. Martin ekkor megkérte a Mormonokat, hogy csak egy verset olvassanak még hozzá: Zsolt. 91:4 <quote>Tollaival fedez be téged, és szárnyai alatt lészen oltalmad;</quote> W.M azt mondta ekkor: <quote>ugyanezen értelmezési szabályok alapján bebizonyítható, hogy Ő madár</quote>. A Mormonok nevetésben törtek ki, amint megértették az álláspontjuk nevetségességét."
 
 # type: Content of: <chapter><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:189
@@ -1552,7 +1552,7 @@ msgid ""
 "one point.  It's dangerous to get our doctrine from parables; they can be "
 "twisted to say all sorts of things.  We need to get our doctrine from clear "
 "scriptures that lay it out; then if a parable illustrates that, fine."
-msgstr ""
+msgstr "Néhány példázat allegória, például a magvető példázata allegória: a magok Isten igéi, a bozótok az aggódás, kapzsiság stb. Mégis a legtöbb példázat nem allegória, hanem egyszerűen csak olyan történet, ami illusztrálja a mondanivalót. Veszélyes lehet tanokat kidolgozni a példázatok alapján, összezavarhatnak. A tiszta írás alapján kell kidolgoznunk a véleményünket, ha egy példázat alátámasztja, az csak jó."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:198
@@ -1565,14 +1565,14 @@ msgid ""
 "The parable of the widow with the unrighteous judge in Lk.18:1-8. This story "
 "illustrates one lesson: boldness in prayer.  If we draw it into an allegory, "
 "what do we have?"
-msgstr ""
+msgstr "Az özvegyasszony és a hamis bíró példázata a Lk.18:1-8 szerint. Ez a történet egy dolgot tanít: merészségre az imában. Ha ezt allegóriaként tekintjük, mit kapunk?"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:201
 msgid ""
 "All sorts of violence happens to the meanings: God is reluctant to protect "
 "the rights of widows, prayer \"bothers\" Him, etc."
-msgstr ""
+msgstr "Egy sor durva dolog jön az értelmezésbe: Isten vonakodva védi az özvegyek jogait, az ima \"bosszantja\" Őt, stb."
 
 # type: Content of: <chapter><section><section><title>
 #: docs/howto/en/docbook/howto-interpretation.docbook:204
@@ -1584,7 +1584,7 @@ msgstr "5B példa"
 msgid ""
 "The parable of the unrighteous steward in Lk.16:1-9.  What is the point of "
 "the parable? Is it an allegory?"
-msgstr ""
+msgstr "A hűtlen sáfár példázata (Lk.16:1-9.), ez vajon allegória?"
 
 # type: Content of: <chapter><section><section><para>
 #: docs/howto/en/docbook/howto-interpretation.docbook:207
@@ -1592,7 +1592,7 @@ msgid ""
 "The steward is commended for only one thing, his shrewdness in using what he "
 "had to prepare for a time when he wouldn't have it.  But he is not commended "
 "for his unethical behavior in cheating his master."
-msgstr ""
+msgstr "A sáfárt egy dolog vezette: a ravaszsága, hogy mit tegyen akkor, amikor már nem lesz az. De nem tanácsolta a saját etikátlan magatartását, a gazdája becsapását."
 
 # type: Content of the bibletime entity
 #: docs/howto/en/docbook/index.docbook:3
@@ -1651,5 +1651,5 @@ msgid ""
 "denominational doctrine.  We recommend you to read and study the scriptures "
 "to understand what they say. If you start with the attitude that you want to "
 "have the Lord sow his word in your heart He will not disappoint you."
-msgstr ""
+msgstr "A &bibletime; csapat reménysége, hogy ez a \"hogyan\" provokálja olvasóit az írások tanulmányozására, hogy meglássák, mit is mondanak. Ez a különleges útmutató azért lett kiválasztva, mert vigyáz arra, hogy ne támogasson semmilyen egyedi felekezeti tanítást. Azt javasoljuk, olvassa és tanulmányozza az írásokat, hogy a mondandójukat megértse. Ha úgy kezd hozzá, hogy kívánja, hogy az Úr vesse szavát az ön szívébe, Ő nem fog csalódást okozni. "
 

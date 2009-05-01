@@ -283,10 +283,10 @@ előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
             </tbody>
           </tgroup>
         </table></para>
-        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
-many advanced features, and you can read more about it here: <ulink 
+        <para>A &bibletime; a Lucene keresőmotorját alkalmazza, mely további fejlettebb 
+keresési lehetőséget ajánl. Többet megtudhat erről a <ulink 
 url="http://lucene.apache.org/java/docs/index.html"> 
-http://lucene.apache.org/java/docs/index.html</ulink></para>
+http://lucene.apache.org/java/docs/index.html</ulink> webcímen.</para>
       </sect3>
     </sect2>
     <sect2 id="hdbk-op-search-results">

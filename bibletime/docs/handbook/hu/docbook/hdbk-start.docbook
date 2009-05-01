@@ -30,7 +30,8 @@ hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)</para>
     <sect2 id="hdbk-start-custom">
       <title>Egyéni indítások</title>
       <para>Terminálból a &bibletime; indítható véletlenszerű verssel az alapértelmezett 
-bibliából így: 
+bibliából így:Terminálból a &bibletime; indítható véletlenszerű verssel az 
+alapértelmezett bibliából így: 
       <screen>bibletime --open-default-bible "random"</screen>Hogy egy meghatározott verssel induljon, mint a Jn 3:16 : 
       <screen>bibletime --open-default-bible "John 3:16"</screen>Használhatja a könyvek neveit a saját nyelvén is.</para>
     </sect2>

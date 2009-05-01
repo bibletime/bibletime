@@ -3,7 +3,7 @@
   <para>Ebben a részben áttekintjük a bibletime; beállítását, amit a főmenü 
 <guimenu>Beállítások</guimenu> menüjében talál.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
+    <title>A &bibletime; Beállítása párbeszédablak</title>
     <para>A &bibletime; felhasználói felülete szükség szerint többféleképpen is 
 módosítható. A beállítási párbeszédablakot elérheti a <menuchoice> 
 <guimenu>Beállítások</guimenu> </menuchoice> <guimenuitem>&bibletime; 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "POT-Creation-Date: 2009-05-01 11:12-0400\n"
-"PO-Revision-Date: 2009-04-30 22:31+0200\n"
+"PO-Revision-Date: 2009-05-01 18:15+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,9 +32,8 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
-#, fuzzy
 msgid "Configure &bibletime; Dialog"
-msgstr "A BibleTime Beállítása párbeszédablak"
+msgstr "A &bibletime; Beállítása párbeszédablak"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:8
@@ -1093,14 +1092,13 @@ msgstr "alaktani kódokra keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:312
-#, fuzzy
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
 "java/docs/index.html</ulink>"
 msgstr ""
-"A BibleTime a Lucene keresőmotorját alkalmazza, mely további fejlettebb "
+"A &bibletime; a Lucene keresőmotorját alkalmazza, mely további fejlettebb "
 "keresési lehetőséget ajánl. Többet megtudhat erről a <ulink url=\"http://"
 "lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/java/docs/"
 "index.html</ulink> webcímen."
@@ -1412,15 +1410,12 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:36
-#, fuzzy
 msgid ""
 "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
-"<action>BibleTime bezárása</action>.  A BibleTime meg fogja kérdezni, hogy "
-"elmentse -e a változtatásokat a lemezre.<action>BibleTime bezárása</"
-"action>.  A BibleTime meg fogja kérdezni, hogy elmentse -e a változtatásokat "
-"a lemezre."
+"<action>&bibletime; bezárása</action>.  A &bibletime; meg fogja kérdezni, "
+"hogy elmentse -e a változtatásokat a lemezre."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:69
@@ -1696,7 +1691,6 @@ msgstr "Előrelép az előzményekben."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:551
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
@@ -1706,15 +1700,10 @@ msgstr ""
 "<link linkend=\"hdbk-reference-menus-search-defaultbible"
 "\"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés az "
 "alapértelmezett Bibliában</guimenuitem></menuchoice></link> menüvel egyező; "
-"keresési ablakot nyit az alapértelmezett Bibliában kereséshez.<link linkend="
-"\"hdbk-reference-menus-search-defaultbible\"><menuchoice><guimenu>Keresés</"
-"guimenu><guimenuitem>Keresés az alapértelmezett Bibliában</guimenuitem></"
-"menuchoice></link> menüvel egyező; keresési ablakot nyit az alapértelmezett "
-"Bibliában kereséshez."
+"keresési ablakot nyit az alapértelmezett Bibliában kereséshez."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:567
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
@@ -1723,14 +1712,10 @@ msgstr ""
 "Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
 "automatikus igazítása</guimenuitem><guimenuitem> Függőleges mozaik "
 "elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik "
-"elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> "
-"<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> "
-"Függőleges mozaik elrendezéssel</guimenuitem></menuchoice>, aktiválja az "
-"automatikus mozaik elrendezést."
+"elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:581
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
@@ -1739,14 +1724,10 @@ msgstr ""
 "Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
 "automatikus igazítása</guimenuitem><guimenuitem> Vízszintes mozaik "
 "elrendezéssel</guimenuitem></menuchoice>, aktiválja az automatikus mozaik "
-"elrendezést.Megegyezik az <menuchoice><guimenu>Ablak</guimenu> "
-"<guimenuitem>Ablakok automatikus igazítása</guimenuitem><guimenuitem> "
-"Vízszintes mozaik elrendezéssel</guimenuitem></menuchoice>, aktiválja az "
-"automatikus mozaik elrendezést."
+"elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:594
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
@@ -1755,13 +1736,9 @@ msgstr ""
 "Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
 "automatikus igazítása</guimenuitem><guimenuitem> Átlapoló elrendezéssel</"
 "guimenuitem></menuchoice>, aktiválja az automatikus átlapoló elrendezést."
-"Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
-"automatikus igazítása</guimenuitem><guimenuitem> Átlapoló elrendezéssel</"
-"guimenuitem></menuchoice>, aktiválja az automatikus átlapoló elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:607
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
@@ -1769,14 +1746,10 @@ msgid ""
 msgstr ""
 "Megegyezik az <menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok "
 "automatikus igazítása</guimenuitem><guimenuitem> Kézi elrendezéssel</"
-"guimenuitem></menuchoice>, aktiválja az kézi  elrendezést.Megegyezik az "
-"<menuchoice><guimenu>Ablak</guimenu> <guimenuitem>Ablakok automatikus "
-"igazítása</guimenuitem><guimenuitem> Kézi elrendezéssel</guimenuitem></"
-"menuchoice>, aktiválja az kézi  elrendezést."
+"guimenuitem></menuchoice>, aktiválja az kézi  elrendezést."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:620
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
@@ -1785,23 +1758,16 @@ msgstr ""
 "Megegyezik az <link linkend=\"hdbk-reference-menus-window-savenewsession"
 "\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem>Mentés új folyamatként</"
 "guimenuitem></menuchoice></link> menüponttal, menti a jelenlegi elrendezést "
-"új néven, új folyamatként.Megegyezik az <link linkend=\"hdbk-reference-menus-"
-"window-savenewsession\"><menuchoice><guimenu>Ablak</"
-"guimenu><guimenuitem>Mentés új folyamatként</guimenuitem></menuchoice></"
-"link> menüponttal, menti a jelenlegi elrendezést új néven, új folyamatként."
+"új néven, új folyamatként."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:634
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
 "</link> equivalent; closes all open windows."
 msgstr ""
 "Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
-"\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
-"guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
-"ablakot.Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
 "\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
 "guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
 "ablakot."
@@ -1835,7 +1801,6 @@ msgstr "Keresés. Az ablakban lévő szövegben keres."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
@@ -1844,14 +1809,10 @@ msgstr ""
 "Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
 "\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
 "guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
-"ablakot.Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
-"\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
-"guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
 "ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:706
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
@@ -1860,14 +1821,10 @@ msgstr ""
 "Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
 "\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
 "guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
-"ablakot.Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
-"\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
-"guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
 "ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:722
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
@@ -1876,14 +1833,10 @@ msgstr ""
 "Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
 "\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
 "guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
-"ablakot.Megegyezik az <link linkend=\"hdbk-reference-menus-window-closeall"
-"\"><menuchoice><guimenu>Ablak</guimenu><guimenuitem> Összes bezárása</"
-"guimenuitem></menuchoice></link> menüponttal, bezárja az összes nyitott "
 "ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:737
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
 "<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
@@ -1893,15 +1846,10 @@ msgstr ""
 "Megegyezik a <link linkend=\"hdbk-reference-menus-search-openworks"
 "\"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés a megnyitott "
 "dokumentum(ok)ban</guimenuitem></menuchoice></link> menüponttal, keresési "
-"ablakot nyit a megnyitott munkákban való kereséshez.Megegyezik a <link "
-"linkend=\"hdbk-reference-menus-search-openworks"
-"\"><menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés a megnyitott "
-"dokumentum(ok)ban</guimenuitem></menuchoice></link> menüponttal, keresési "
 "ablakot nyit a megnyitott munkákban való kereséshez."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:752
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
@@ -1909,10 +1857,7 @@ msgid ""
 msgstr ""
 "Megegyezik a <link linkend=\"hdbk-reference-menus-file-quit"
 "\"><menuchoice><guimenu>Fájl</guimenu> <guimenuitem>Kilépés</guimenuitem> </"
-"menuchoice></link> ponttal, a &bibletime; bezárása.Megegyezik a <link "
-"linkend=\"hdbk-reference-menus-file-quit\"><menuchoice><guimenu>Fájl</"
-"guimenu> <guimenuitem>Kilépés</guimenuitem> </menuchoice></link> ponttal, a "
-"&bibletime; bezárása."
+"menuchoice></link> ponttal, a &bibletime; bezárása."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:764
@@ -1921,33 +1866,25 @@ msgstr "Bezárja az aktuális ablakot."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:773
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
 msgstr ""
 "Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Kézikönyv</"
 "guimenuitem></menuchoice> menüponttal, megnyitja ezt a kézikönyvet."
-"Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Kézikönyv</"
-"guimenuitem></menuchoice> menüponttal, megnyitja ezt a kézikönyvet."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:785
-#, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
 msgstr ""
 "Megegyezik a <menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia "
 "tanulmányozás \"hogyan\"</guimenuitem></menuchoice> menüponttal, megnyitja a "
-"segédletet a Biblia tanulmányozásához.Megegyezik a "
-"<menuchoice><guimenu>Segítség</guimenu><guimenuitem> Biblia tanulmányozás "
-"\"hogyan\"</guimenuitem></menuchoice> menüponttal, megnyitja a segédletet a "
-"Biblia tanulmányozásához."
+"segédletet a Biblia tanulmányozásához."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:798
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
@@ -1956,14 +1893,10 @@ msgstr ""
 "Megegyezik a <link linkend=\"hdbk-reference-menus-settings-bookshelf_manager"
 "\"><menuchoice><guimenu>Beállítások</guimenu> <guimenuitem>Könyvespolc "
 "menedzser</guimenuitem></menuchoice></link> menüponttal, megnyitja a "
-"Könyvespolc menedzsert.Megegyezik a <link linkend=\"hdbk-reference-menus-"
-"settings-bookshelf_manager\"><menuchoice><guimenu>Beállítások</guimenu> "
-"<guimenuitem>Könyvespolc menedzser</guimenuitem></menuchoice></link> "
-"menüponttal, megnyitja a Könyvespolc menedzsert."
+"Könyvespolc menedzsert."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:813
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
@@ -1972,14 +1905,10 @@ msgstr ""
 "Megegyezik a <link linkend=\"hdbk-reference-menus-view-showbookshelf"
 "\"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> Könyvespolc mutatása</"
 "guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a "
-"\"könyvespolcot\".Megegyezik a <link linkend=\"hdbk-reference-menus-view-"
-"showbookshelf\"><menuchoice><guimenu>Nézet</guimenu><guimenuitem> "
-"Könyvespolc mutatása</guimenuitem></menuchoice></link> menüponttal, "
-"láthatóvá teszi a \"könyvespolcot\"."
+"\"könyvespolcot\"."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:828
-#, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
@@ -1987,9 +1916,6 @@ msgid ""
 msgstr ""
 "Megegyezik a <link linkend=\"hdbk-reference-menus-view-showmag"
 "\"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító mutatása</"
-"guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a nagyító "
-"(információs) ablakot.Megegyezik a <link linkend=\"hdbk-reference-menus-view-"
-"showmag\"><menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyító mutatása</"
 "guimenuitem></menuchoice></link> menüponttal, láthatóvá teszi a nagyító "
 "(információs) ablakot."
 
@@ -2031,9 +1957,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "&bibletime;"
-msgstr "Mi a &bibletime;"
+msgstr "&bibletime;"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
@@ -2066,7 +1992,8 @@ msgid ""
 "default bible:"
 msgstr ""
 "Terminálból a &bibletime; indítható véletlenszerű verssel az alapértelmezett "
-"bibliából így:"
+"bibliából így:Terminálból a &bibletime; indítható véletlenszerű verssel az "
+"alapértelmezett bibliából így:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:34
