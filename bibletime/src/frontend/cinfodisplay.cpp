@@ -77,18 +77,26 @@ void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) 
 	Q_ASSERT(m);
 	if (!m)
 		return;
-
 	boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(m) );
 	key->key( key_text ); 
 
 	CDisplayTemplateMgr* mgr = CPointers::displayTemplateManager();
 	CDisplayTemplateMgr::Settings settings;
 	settings.pageCSS_ID = "infodisplay";
-	//  settings.langAbbrev = "";
+
+    // lookup text and wrap in a "div" with language set to module language
+    QString lang = m->language()->abbrev();
+    QString renderedText = key->renderedText();
+    QString divText = "<div class=\"infodisplay\" lang=\"";
+        divText.append(lang);
+        divText.append("\">");
+        divText.append(renderedText);
+        divText.append("</div>");
+
 	QString content = mgr->fillTemplate(CBTConfig::get
-				(CBTConfig::displayStyle), key->renderedText(), settings);
+				(CBTConfig::displayStyle), divText, settings);
+
 	m_htmlPart->setText(content);
-	//   qWarning("setting text:\n%s", content.latin1());
 }
 
 void CInfoDisplay::setInfo(const InfoType type, const QString& data) {
@@ -337,7 +345,7 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 		//if the module could not be found just display an empty lemma info
 
 		ret.append(
-			QString("<div class=\"strongsinfo\"><h3>%1: %2</h3><p>%3</p></div>")
+			QString("<div class=\"strongsinfo\" lang=\"en\"><h3>%1: %2</h3><p>%3</p></div>")
 			.arg(tr("Strongs"))
 			.arg(*it)
 			.arg(text)
