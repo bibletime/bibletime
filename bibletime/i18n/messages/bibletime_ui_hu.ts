@@ -3744,7 +3744,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;teljes kifejezés&lt;/a&gt;</translation>
+        <translation> (&lt;a href=&apos;syntax_help&apos;&gt;teljes kifejezés&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="151"/>
@@ -3794,7 +3794,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="134"/>
         <source>Free</source>
-        <translation>szabad</translation>
+        <translation>Egyéni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
@@ -3867,7 +3867,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="423"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;Páldák:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jézus&lt;/td&gt;&lt;td&gt;Fejléceket talál &apos;Jézus&apos; kifejezéssel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:JézusAND footnote:mondta&lt;/td&gt;&lt;td&gt;találatai &apos;Jézus&apos; és &apos;mondta&apos; a lábjegyzetekben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Strong&apos;s görög 846 számú kifekjezést tartalmazó verseket hoz,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;a &apos;N-NSF&apos; morfológiai kódokat tartalmazó verseket találja meg&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;Példák:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jézus&lt;/td&gt;&lt;td&gt;Fejléceket talál &apos;Jézus&apos; kifejezéssel&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:JézusAND footnote:mondta&lt;/td&gt;&lt;td&gt;találatai &apos;Jézus&apos; és &apos;mondta&apos; a lábjegyzetekben&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Strong&apos;s görög 846 számú kifekjezést tartalmazó verseket hoz,&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;a &apos;N-NSF&apos; morfológiai kódokat tartalmazó verseket találja meg&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="431"/>
@@ -4051,7 +4051,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
         <source>Save Search Analysis</source>
-        <translation>Keresés elemzáésének mentése</translation>
+        <translation>Találatok elemzésének mentése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="226"/>
@@ -4264,7 +4264,7 @@ Az indexelés sokáig tarthat. Folytassuk az indexeléssel?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Héber morfológiai lexikon</translation>
+        <translation>Héber morfológiai lexikon:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="134"/>
