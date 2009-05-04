@@ -1,7 +1,7 @@
 README for BibleTime
 ====================
 
-BibleTime is a Bible study application based on KDE.
+BibleTime is a Bible study application based on Qt.
 
 1. INSTALLATION
 
@@ -15,6 +15,7 @@ BibleTime is a Bible study application based on KDE.
 1.2 DEVELOPER-ONLY REQUIREMENTS
 	-po4a
 	-xsltproc, docbook-xml, docbook-xsl
+	-gnome-doc-utils
 
 1.3 PROCEDURE
 
