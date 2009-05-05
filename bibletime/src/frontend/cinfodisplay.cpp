@@ -275,9 +275,13 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
 
 	//  qWarning("rendered the tree: %s", renderer.renderKeyTree(tree).latin1());
 	//spanns containing rtl text need dir=rtl on their parent tag to be aligned properly
-	return QString("<div class=\"crossrefinfo\"><h3>%1</h3><div class=\"para\" dir=\"%2\">%3</div></div>")
+    QString lang = "en";  // default english
+    if (module)
+        lang = module->language()->abbrev();
+	return QString("<div class=\"crossrefinfo\" lang=\"%1\"><h3>%2</h3><div class=\"para\" dir=\"%3\">%4</div></div>")
+            .arg(lang)
 			.arg(tr("Cross references"))
-	.arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
+	        .arg(module ? ((module->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr" : "rtl") : "")
 			.arg(renderer.renderKeyTree(tree));
 }
 
@@ -318,7 +322,8 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
 									: (const char*)text.toLatin1()
 								));
 
-	return QString("<div class=\"footnoteinfo\"><h3>%1</h3><p>%2</p></div>")
+	return QString("<div class=\"footnoteinfo\" lang=\"%1\"><h3>%2</h3><p>%3</p></div>")
+            .arg(module->language()->abbrev())
 			.arg(tr("Footnote"))
 			.arg(text);
 }
@@ -344,8 +349,12 @@ const QString CInfoDisplay::decodeStrongs( const QString& data ) {
 		}
 		//if the module could not be found just display an empty lemma info
 
+        QString lang = "en";  // default english
+        if(module)
+            lang = module->language()->abbrev();
 		ret.append(
-			QString("<div class=\"strongsinfo\" lang=\"en\"><h3>%1: %2</h3><p>%3</p></div>")
+			QString("<div class=\"strongsinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
+            .arg(lang)
 			.arg(tr("Strongs"))
 			.arg(*it)
 			.arg(text)
@@ -423,7 +432,11 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
 		}
 
 		//if the module wasn't found just display an empty morph info
-		ret.append( QString("<div class=\"morphinfo\"><h3>%1: %2</h3><p>%3</p></div>")
+        QString lang = "en";  // default to english
+        if (module)
+            lang = module->language()->abbrev();
+		ret.append( QString("<div class=\"morphinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
+                    .arg(lang)
 					.arg(tr("Morphology"))
 					.arg(value)
 					.arg(text)
@@ -446,7 +459,8 @@ const QString CInfoDisplay::getWordTranslation( const QString& data ) {
 		return QString::null;
 	}
 
-	QString ret = QString("<div class=\"translationinfo\"><h3>%1: %2</h3><p>%3</p></div>")
+	QString ret = QString("<div class=\"translationinfo\" lang=\"%1\"><h3>%2: %3</h3><p>%4</p></div>")
+                    .arg(module->language()->abbrev())
 					.arg(tr("Word lookup"))
 					.arg(data)
 					.arg(key->renderedText());
