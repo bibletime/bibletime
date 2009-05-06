@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="nn_NO">
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Informasjon om %1</translation>
     </message>
 </context>
 <context>
@@ -76,12 +76,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="148"/>
         <source>Show Bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis bokhylle</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="152"/>
         <source>Show Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis bokmerke</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="156"/>
@@ -304,12 +304,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="52"/>
         <source>Bookshelf</source>
-        <translation type="unfinished">Bokhylle</translation>
+        <translation>Bokhylle</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="58"/>
         <source>Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bokmerke</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="65"/>
@@ -382,7 +382,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="31"/>
         <source>About BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Om BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="72"/>
@@ -404,7 +404,7 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="79"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="93"/>
         <source>designer</source>
-        <translation type="unfinished"></translation>
+        <translation>designar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="78"/>
@@ -421,12 +421,12 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
         <source>developer</source>
-        <translation type="unfinished"></translation>
+        <translation>utviklar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
         <source>packager</source>
-        <translation type="unfinished"></translation>
+        <translation>pakkar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisens</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
@@ -504,7 +504,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="69"/>
         <source>Select book</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel bok</translation>
     </message>
 </context>
 <context>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="94"/>
         <source>Select chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel kapittel</translation>
     </message>
 </context>
 <context>
@@ -535,7 +535,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="57"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="61"/>
@@ -545,7 +545,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="68"/>
         <source>Work</source>
-        <translation type="unfinished">Verk</translation>
+        <translation>Verk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="68"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="132"/>
         <source>Install</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer</translation>
     </message>
 </context>
 <context>
@@ -598,7 +598,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="192"/>
         <source>Install/Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer/Oppdater</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="188"/>
@@ -623,7 +623,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="124"/>
         <source>Install...</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="125"/>
@@ -656,12 +656,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
         <source>Edit...</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediger...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="107"/>
@@ -677,7 +677,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="133"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Åtvaring</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="133"/>
@@ -730,7 +730,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="56"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="83"/>
@@ -740,17 +740,17 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="145"/>
         <source>Completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ferdig</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="152"/>
         <source>Cancelled</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbroten</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="66"/>
         <source>Waiting for turn...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventar på tur...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="225"/>
@@ -773,7 +773,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="38"/>
         <source>Bookshelf Manager</source>
-        <translation type="unfinished">Bokhyllehandsamar</translation>
+        <translation>Bokhyllehandsamar</translation>
     </message>
 </context>
 <context>
@@ -781,7 +781,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="51"/>
         <source>Work</source>
-        <translation type="unfinished">Verk</translation>
+        <translation>Verk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="51"/>
@@ -791,7 +791,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="78"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="70"/>
@@ -806,22 +806,22 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="147"/>
         <source>Do you really want to remove them from your system?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vil du verkeleg fjerne dei frå systemet ditt?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="56"/>
         <source>Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="57"/>
         <source>Remove the selected works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern dei valde verka</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="149"/>
         <source>Remove Works?</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern verk?</translation>
     </message>
 </context>
 <context>
@@ -829,7 +829,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="101"/>
         <source>Work</source>
-        <translation type="unfinished">Verk</translation>
+        <translation>Verk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="101"/>
@@ -859,12 +859,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="85"/>
         <source>Delete this source</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjern denne kjelda</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="89"/>
         <source>Add new source</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Legg til ei ny kjelde</translation>
     </message>
 </context>
 <context>
@@ -882,7 +882,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="124"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="125"/>
@@ -913,7 +913,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="265"/>
         <source>Local:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokal:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="341"/>
@@ -943,7 +943,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Åtvaring</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
@@ -956,7 +956,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="118"/>
         <source>Select verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Vel vers</translation>
     </message>
 </context>
 <context>
@@ -1202,12 +1202,12 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="411"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="412"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Flytt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="471"/>
@@ -1265,17 +1265,17 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="211"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>Søk...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="217"/>
         <source>Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lås opp...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="223"/>
         <source>About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Om...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="619"/>
@@ -1310,7 +1310,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="201"/>
         <source>HTML...</source>
-        <translation type="unfinished"></translation>
+        <translation>HTML...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="517"/>
@@ -1382,7 +1382,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="37"/>
         <source>Configure BibleTime</source>
-        <translation type="unfinished">Set opp BibleTime</translation>
+        <translation>Set opp BibleTime</translation>
     </message>
 </context>
 <context>
@@ -1561,25 +1561,25 @@
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="109"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="172"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="113"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="178"/>
         <source>Select all</source>
-        <translation type="unfinished">Vel alle</translation>
+        <translation>Vel alle</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="184"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="190"/>
         <source>Find...</source>
-        <translation type="unfinished"></translation>
+        <translation>Finn...</translation>
     </message>
 </context>
 <context>
@@ -1587,7 +1587,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="99"/>
         <source>Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Storleik:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="76"/>
@@ -1649,7 +1649,7 @@
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="167"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrifttype</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/chtmlwritedisplay.cpp" line="175"/>
@@ -1747,32 +1747,32 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
         <source>Next book</source>
-        <translation type="unfinished">Neste bok</translation>
+        <translation>Neste bok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
         <source>Previous book</source>
-        <translation type="unfinished">Førre bok</translation>
+        <translation>Førre bok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Next chapter</source>
-        <translation type="unfinished">Neste kapittel</translation>
+        <translation>Neste kapittel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Previous chapter</source>
-        <translation type="unfinished">Førre kapittel</translation>
+        <translation>Førre kapittel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
         <source>Next verse</source>
-        <translation type="unfinished">Neste vers</translation>
+        <translation>Neste vers</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Previous verse</source>
-        <translation type="unfinished">Førre vers</translation>
+        <translation>Førre vers</translation>
     </message>
 </context>
 <context>
@@ -1805,7 +1805,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="127"/>
         <source>Fonts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrifttypar</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="128"/>
@@ -1815,7 +1815,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="301"/>
         <source>Languages</source>
-        <translation type="unfinished">Språk</translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/clanguagesettings.cpp" line="297"/>
@@ -1984,7 +1984,7 @@
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="44"/>
@@ -2236,7 +2236,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="90"/>
         <source>Ok</source>
-        <translation type="unfinished">Ok</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="91"/>
@@ -2338,7 +2338,7 @@
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
@@ -2361,7 +2361,7 @@
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="474"/>
         <source>Search aborted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Søket vart avbrote</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="474"/>
@@ -3691,35 +3691,35 @@ Language name ppk</extracomment>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ok</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="31"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Opne</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="33"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lagre</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="35"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="37"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="39"/>
@@ -3754,7 +3754,7 @@ Language name ppk</extracomment>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Hjelp</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="49"/>
@@ -3768,7 +3768,7 @@ Language name ppk</extracomment>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ja</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="53"/>
@@ -3782,7 +3782,7 @@ Language name ppk</extracomment>
         <source>No</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nei</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="57"/>
@@ -3847,7 +3847,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="176"/>
         <source>Works:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verk:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="273"/>
@@ -4188,7 +4188,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="79"/>
         <source>Search</source>
-        <translation type="unfinished">Søk</translation>
+        <translation>Søk</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="110"/>
@@ -4298,7 +4298,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="70"/>
         <source>Bible:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibel:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="74"/>
@@ -4308,7 +4308,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="80"/>
         <source>Commentary:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="84"/>
@@ -4328,7 +4328,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="100"/>
         <source>Daily devotional:</source>
-        <translation type="unfinished"></translation>
+        <translation>Andaktsbok:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="104"/>
@@ -4444,7 +4444,7 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="13"/>
         <source>Find Text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Finn tekst</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="41"/>
