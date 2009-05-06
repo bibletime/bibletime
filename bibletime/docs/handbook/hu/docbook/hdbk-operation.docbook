@@ -2,13 +2,13 @@
   <title>A program működése</title>
   <sect1 id="hdbk-op-overview">
     <title>A program áttekintése</title>
-    <para>Így néz ki egy tipikus &bibletime; munkafolyamat: 
+    <para>This is what a typical &bibletime; session looks like: 
     <mediaobject>
       <imageobject>
         <imagedata fileref="ss_mainterms.png" format="PNG" />
       </imageobject>
       <textobject>
-        <phrase>A &bibletime; ablak részei </phrase>
+        <phrase>The &bibletime; application window</phrase>
       </textobject>
     </mediaobject>
     You can easily see the different parts of the application. The Bookshelf on 
@@ -26,8 +26,8 @@ Desk on the right side is where you do your real work.</para>
     <sect2 id="hdbk-op-parts-bookshelf">
       <title>A Könyvespolc</title>
       <para>A Könyvespolc felsorolja a telepített dokumentumokat kategóriánként és 
-nyelvenként. Itt találhatóak a "Könyvjelzők" kategória is, ahol tárolhatja 
-és elérheti a saját könyvjelzőit.</para>
+nyelvenként. Itt található a "Könyvjelzők" kategória is, ahol tárolhatja és 
+elérheti a saját könyvjelzőit.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-open">
         <title>Dokumentumok olvasása</title>
@@ -60,7 +60,7 @@ munkára érvényes. Az <guimenuitem>"Általános információk"</guimenuitem> e
 ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt 
 dokumentumokról kiegészítő információt olvashat <ulink 
 url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> ezen az 
-oldalon</ulink>, a Crosswire Bibliai Társaság honlapján. </para>
+oldalon</ulink>, a Crosswire Biblia Társaság honlapján. </para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
@@ -253,7 +253,7 @@ szám előfordulását keresi, így kell megadni: 'strong:H8077'. Ha a fő
 szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása után ':', 
 és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's szám 
 előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
-        <para>Lehetséges szövegtípusok:  
+        <para>Available text types: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Keresési típusok</title>
           <tgroup cols="2">

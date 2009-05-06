@@ -26,8 +26,8 @@ egyet, láthatja az előnézeti képét a jobb oldalon.</para>
       <title>
         <guimenu>Languages</guimenu>
       </title>
-      <para>Itt állíthatja be a nyelvét Biblia könyvcímeinek. Válassza a saját nyelvét, 
-ha lehetséges, és otthonosabban fogja érezni magát.</para>
+      <para>Itt állíthatja be a Biblia könyvcímeinek a nyelvét. Válassza a saját 
+nyelvét, ha lehetséges, és otthonosabban fogja érezni magát.</para>
 
       <para>Alapértelmezetten a &bibletime; az alapértelmezett rendszer szerinti 
 betűkészletet használja, amit ön felülbírálhat, ha szükséges. Néhány nyelv 
@@ -39,7 +39,7 @@ nyelvhez.</para>
           <imagedata fileref="ss_configfonts.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>A betűkészletek beállítása</phrase>
+          <phrase>Options Dialog - fonts</phrase>
         </textobject>
         <caption>
           <para>A betűkészletek beállítása.</para>
@@ -136,8 +136,8 @@ tartalmaz.</entry>
                   <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/">
                   Bitstream CyberBit</ulink>
                 </entry>
-                <entry>Tartalmazzák a teljes UNICODE kódokat, de lelassítják a &bibletime; futását 
-a méretük miatt.</entry>
+                <entry>Tartalmazzák a teljes UNICODE karaktereket, de lelassítják a &bibletime; 
+futását a méretük miatt.</entry>
               </row>
               <row>
                 <entry>Clearlyu</entry>
@@ -168,12 +168,12 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter
       </title>
       <para>Sok lehetőséget, melyet a Sword keretprogram biztosít, testre lehet szabni a 
 &bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a 
-párbeszédablakban. Szintén lehetőség van alapértelmezett dokumentumok 
-megadására, melyeket akkor használunk, ha nem konkrét dokumentum van 
-meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia van 
-megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott vers a 
-"Nagyító" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi például 
-egy King James fordítású Bibliában.</para>
+párbeszédablakban. Lehetőség van továbbá az alapértelmezett dokumentumok 
+meghatározására, melyeket akkor használunk, ha nem egy konkrét dokumentum 
+van meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia 
+van megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott 
+vers a "Nagyító" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi 
+például egy King James fordítású Bibliában.</para>
     </sect2>
     <sect2 id="hdbk-config-bt-hotkeys">
       <title>
@@ -182,9 +182,9 @@ egy King James fordítású Bibliában.</para>
       <para>A gyorsbillentyűk speciális billentyűparancsok, melyeket a különböző 
 menüelemeknél és ikonoknál alkalmazhatunk. Számos &bibletime; parancshoz 
 tartozik gyorsbillentyű ( <link linkend="hdbk-reference-hotkeys">itt 
-található</link> a teljes lista). A legtöbb &bibletime; parancshoz itt 
-hozzárendelhet gyorsbillentyűt, ami nagyon hasznos a legtöbbet használt 
-funkciók eléréséhez.</para>
+található</link> a teljes lista). A legtöbb &bibletime; parancs rendelkezik 
+gyorsbillentyűvel, ami nagyon hasznos a legtöbbet használt funkciók 
+eléréséhez.</para>
     </sect2>
   </sect1>
 </chapter>

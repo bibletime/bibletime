@@ -42,7 +42,7 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>a &bibletime; csapat</holder>
+    <holder>the &bibletime; team</holder>
   </copyright>
   <legalnotice>
     <para>A &bibletime; kézikönyv a &bibletime; része</para>
@@ -50,8 +50,8 @@
   <date>2009-04</date>
   <releaseinfo>2.0</releaseinfo>
   <abstract>
-    <para>&bibletime; egy Biblia tanulmányozó szoftver a Sword keretrendszerre 
-alapozva.</para>
+    <para>&bibletime; egy, a Sword keretrendszerre alapozott Biblia tanulmányozó 
+szoftver.</para>
   </abstract>
   <keywordset>
     <keyword>QT4</keyword>

@@ -11,7 +11,7 @@ can launch &bibletime; from the Start Menu with this icon:
           <imagedata fileref="i_bibletime.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>&bibletime; indítóikon</phrase>
+          <phrase>&bibletime; start icon</phrase>
         </textobject>
       </mediaobject></para>
       <para>&bibletime; can also be launched from a terminal command prompt. To launch 
@@ -21,27 +21,21 @@ can launch &bibletime; from the Start Menu with this icon:
     <sect2 id="hdbk-start-otherwm">
       <title>Más ablakkezelők (*nix rendszeren)</title>
       <para>A &bibletime; természetesen használható más ablakkezelőkkel is, mint Gnome, 
-BlackBox, XFce stb. alatt is, amennyiben a szükséges könyvtárakat telepíti 
-hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)A 
-&bibletime; természetesen használható más ablakkezelőkkel is, mint Gnome, 
-BlackBox, XFce stb. alatt is, amennyiben a szükséges könyvtárakat telepíti 
+BlackBox, XFce stb. alatt is, amennyiben a szükséges összetevőket telepíti 
 hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
       <title>Egyéni indítások</title>
-      <para>Terminálból a &bibletime; indítható véletlenszerű verssel az alapértelmezett 
-bibliából így:Terminálból a &bibletime; indítható véletlenszerű verssel az 
-alapértelmezett bibliából így:Terminálból a &bibletime; indítható 
-véletlenszerű verssel az alapértelmezett bibliából így: 
-      <screen>bibletime --open-default-bible "random"</screen>Hogy egy meghatározott verssel induljon, mint a Jn 3:16 : 
-      <screen>bibletime --open-default-bible "John 3:16"</screen>Használhatja a könyvek neveit a saját nyelvén is.</para>
+      <para>From a terminal you can use &bibletime; to open a random verse in the 
+default bible: 
+      <screen>bibletime --open-default-bible "random"</screen>To open at a given passage like John 3:16, use: 
+      <screen>bibletime --open-default-bible "John 3:16"</screen>You can also use booknames in your current bookname language.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-startsequence">
     <title>Indítási folyamat</title>
     <para>Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; ablak 
-betöltése előtt:Mikor a &bibletime; indul, a következő képet láthatja a fő 
-&bibletime; ablak betöltése előtt:</para>
+betöltése előtt:</para>
     <variablelist>
       <varlistentry>
         <term>

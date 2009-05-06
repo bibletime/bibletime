@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "POT-Creation-Date: 2009-05-01 11:12-0400\n"
-"PO-Revision-Date: 2009-05-02 19:00+0200\n"
+"PO-Revision-Date: 2009-05-05 20:37+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,8 +78,8 @@ msgid ""
 "booknames. Set this to your native language, if it is available, and you'll "
 "feel at home."
 msgstr ""
-"Itt állíthatja be a nyelvét Biblia könyvcímeinek. Válassza a saját nyelvét, "
-"ha lehetséges, és otthonosabban fogja érezni magát."
+"Itt állíthatja be a Biblia könyvcímeinek a nyelvét. Válassza a saját "
+"nyelvét, ha lehetséges, és otthonosabban fogja érezni magát."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:38
@@ -97,8 +97,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:48
+#, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
-msgstr "<phrase>A betűkészletek beállítása</phrase>"
+msgstr "A betűkészletek beállítása"
 
 # type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:51
@@ -255,8 +256,8 @@ msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
 msgstr ""
-"Tartalmazzák a teljes UNICODE kódokat, de lelassítják a &bibletime; futását "
-"a méretük miatt."
+"Tartalmazzák a teljes UNICODE karaktereket, de lelassítják a &bibletime; "
+"futását a méretük miatt."
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:155
@@ -305,12 +306,12 @@ msgid ""
 msgstr ""
 "Sok lehetőséget, melyet a Sword keretprogram biztosít, testre lehet szabni a "
 "&bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a "
-"párbeszédablakban. Szintén lehetőség van alapértelmezett dokumentumok "
-"megadására, melyeket akkor használunk, ha nem konkrét dokumentum van "
-"meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia van "
-"megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott vers a "
-"\"Nagyító\" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi például "
-"egy King James fordítású Bibliában."
+"párbeszédablakban. Lehetőség van továbbá az alapértelmezett dokumentumok "
+"meghatározására, melyeket akkor használunk, ha nem egy konkrét dokumentum "
+"van meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia "
+"van megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott "
+"vers a \"Nagyító\" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi "
+"például egy King James fordítású Bibliában."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:198
@@ -325,9 +326,9 @@ msgstr ""
 "A gyorsbillentyűk speciális billentyűparancsok, melyeket a különböző "
 "menüelemeknél és ikonoknál alkalmazhatunk. Számos &bibletime; parancshoz "
 "tartozik gyorsbillentyű ( <link linkend=\"hdbk-reference-hotkeys\">itt "
-"található</link> a teljes lista). A legtöbb &bibletime; parancshoz itt "
-"hozzárendelhet gyorsbillentyűt, ami nagyon hasznos a legtöbbet használt "
-"funkciók eléréséhez."
+"található</link> a teljes lista). A legtöbb &bibletime; parancs rendelkezik "
+"gyorsbillentyűvel, ami nagyon hasznos a legtöbbet használt funkciók "
+"eléréséhez."
 
 # type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
@@ -354,8 +355,8 @@ msgstr ""
 "eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg dokumentummal, "
 "modullal. Ez a program a <ulink url=\"http://www.crosswire.org/sword"
 "\">Sword</ulink> keretrendszerre épül, mely lehetővé teszi a szövegek "
-"megjelenítését, keresését stb. A Sword a zászlóshajója a <ulink url=\"http://"
-"www.crosswire.org\">Crosswire Biblia Társaságnak</ulink>."
+"megjelenítését, keresését stb. A Sword a <ulink url=\"http://www.crosswire."
+"org\">Crosswire Biblia Társaság</ulink> zászlóshajója."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:14
@@ -366,10 +367,10 @@ msgid ""
 "sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
 "Crosswire Bible Society."
 msgstr ""
-"A &bibletime; úgy lett tervezve, hogy képes legyen alkalmazni a Sword "
-"projekt által értelmezhető formátumú dokumentumokat. Teljeskörű információt "
-"a támogatott formátumokról a Sword projekt <ulink url=\"http://www.crosswire."
-"org/sword/develop/index.jsp\"> fejlesztői szekciójában</ulink> találhat."
+"A &bibletime; arra lett tervezve, hogy a Sword projekt által értelmezhető "
+"formátumú dokumentumokat alkalmazza. Teljeskörű információt a támogatott "
+"formátumokról a Sword projekt <ulink url=\"http://www.crosswire.org/sword/"
+"develop/index.jsp\"> fejlesztői szekciójában</ulink> találhat."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
@@ -378,13 +379,14 @@ msgstr "Elérhető dokumentumok"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:23
+#, fuzzy
 msgid ""
 "Over 200 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
 msgstr ""
 "Több, mint 200 dokumentum 50 nyelven érhető el a <ulink url=\"http://www."
-"crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Ezek "
-"tartalmaznak:"
+"crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Itt találhat:"
+"<placeholder0>"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:28
@@ -401,10 +403,11 @@ msgid ""
 "is the most advanced section in the library of the Sword project."
 msgstr ""
 "A teljes Biblia szövegét, lehetséges kiegészítésekkel, mint Strong's számok, "
-"fejlécek, lábjegyzetek a szövegekben. A Bibliák a legtöbb nyelven elérhetők, "
-"és nem csak a modern verziókat találhatja meg. Ugyanígy fellelhetőek a "
-"régies szövegváltozatok, mint a Leningrádi Kódex (\"WLC\", héber) és a "
-"Septuaginta (\"LXX\", görög). Ez a legfejlettebb része a Sword projektnek."
+"fejlécek, lábjegyzetek a szövegekben. A Bibliák különféle nyelveken "
+"elérhetők, és nemcsak a modern verziókat találhatja meg, hanem fellelhetőek "
+"a régies szövegváltozatok, mint a Westminster Leningrád Kódex (\"WLC\", "
+"héber) és a Septuaginta (\"LXX\", görög). Ez a legfejlettebb része a Sword "
+"projektnek."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:40
@@ -417,8 +420,8 @@ msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
 msgstr ""
-"Alábbi könyveket találhatjuk még \"Imitation of Christ\", \"Enuma Elish\", "
-"and \"Josephus: The Complete Works\""
+"Többek közt, ilyen ismert könyveket találhatjuk meg: \"Imitation of Christ"
+"\", \"Enuma Elish\", and \"Josephus: The Complete Works\""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:47
@@ -434,11 +437,11 @@ msgid ""
 "\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
 msgstr ""
-"Az elérhető kommentárok tartalmazzák a klasszikus John Wesley \"Notes on the "
-"Bible\", Matthew Henry'kommentárját és Luther \"Commentary on Galatians.\" A "
-"<emphasis>Saját</emphasis> kommentárokkal lehetősége van <link linkend="
-"\"hdbk-op-parts-desk-write\"> rögzíteni saját megjegyzéseit</link> a Biblia "
-"fejezeteihez."
+"Az elérhető kommentárok között található a klasszikus John Wesley \"Notes on "
+"the Bible\", Matthew Henry'kommentárja és Luther \"Commentary on Galatians."
+"\" A <emphasis>Saját</emphasis> kommentár modullal lehetősége van <link "
+"linkend=\"hdbk-op-parts-desk-write\"> rögzíteni saját megjegyzéseit</link> a "
+"Biblia fejezeteihez."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:58
@@ -466,14 +469,15 @@ msgid ""
 "Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
 "Dictionary of the English Language 1913, Nave's Topical Bible."
 msgstr ""
-"Itt találhatja például: Robinson Morfológiai Elemzési Kódok, Brown-Driver-"
-"Briggs Héber Lexikon és a Nemzetközi Standard Biblia Enciklopédia. Szótárak "
-"közül: Strong's Héber Bibliai Szótár, Strong's Görög Bibliai Szótár..."
+"Itt találhatja például: Robinson Morfológiai Elemzési Kódokat, Brown-Driver-"
+"Briggs Héber Lexikonát és a Nemzetközi Standard Biblia Enciklopédiát. "
+"Szótárak közül: Strong's Héber Bibliai Szótár, Strong's Görög Bibliai Szótár "
+"elérhető..."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:80
 msgid "Motivation"
-msgstr "Motiváció"
+msgstr "Motivációnk"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
@@ -508,7 +512,7 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:92
 msgid "God bless you as you use this program."
-msgstr "Az Úr áldása járja át miközben a programot használja."
+msgstr "Az Úr áldja önt, miközben a programot használja."
 
 # type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:2
@@ -523,12 +527,13 @@ msgstr "A program áttekintése"
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
 msgid "This is what a typical &bibletime; session looks like:"
-msgstr "Így néz ki egy tipikus &bibletime; munkafolyamat:"
+msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:11
+#, fuzzy
 msgid "<phrase>The &bibletime; application window</phrase>"
-msgstr "<phrase>A &bibletime; ablak részei </phrase>"
+msgstr "A &bibletime; alkalmazás ablak"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:14
@@ -576,7 +581,7 @@ msgid ""
 "access your own bookmarks."
 msgstr ""
 "A Könyvespolc felsorolja a telepített dokumentumokat kategóriánként és "
-"nyelvenként. Itt találhatóak a \"Könyvjelzők\" kategória is, ahol tárolhatja "
+"nyelvenként. Itt található a \"Könyvjelzők\" kategória is, ahol tárolhatja "
 "és elérheti a saját könyvjelzőit."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
@@ -651,7 +656,7 @@ msgstr ""
 "ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt "
 "dokumentumokról kiegészítő információt olvashat <ulink url=\"http://www."
 "crosswire.org/sword/modules/aboutlocked.jsp\"> ezen az oldalon</ulink>, a "
-"Crosswire Bibliai Társaság honlapján. "
+"Crosswire Biblia Társaság honlapján. "
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:78
@@ -1032,8 +1037,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:282
+#, fuzzy
 msgid "Available text types:"
-msgstr "Lehetséges szövegtípusok: "
+msgstr "Lehetséges szövegtípusok: <placeholder0>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:284
@@ -1942,8 +1948,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
 #: docs/handbook/en/docbook/hdbk-start.docbook:15
+#, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
-msgstr "<phrase>&bibletime; indítóikon</phrase>"
+msgstr "&bibletime; indítóikon"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:18
@@ -1952,8 +1959,8 @@ msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
 msgstr ""
-"A &bibletime; természetesen indítható parancssorból is. Hogy megtegye írja "
-"be egy terminál ablakba ezt:<placeholder0>"
+"A &bibletime; természetesen indítható parancssorból is. Indításhoz írja be "
+"egy terminál ablakba ezt:<placeholder0>"
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
@@ -1974,10 +1981,7 @@ msgid ""
 "already installed on your computer."
 msgstr ""
 "A &bibletime; természetesen használható más ablakkezelőkkel is, mint Gnome, "
-"BlackBox, XFce stb. alatt is, amennyiben a szükséges könyvtárakat telepíti "
-"hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)A "
-"&bibletime; természetesen használható más ablakkezelőkkel is, mint Gnome, "
-"BlackBox, XFce stb. alatt is, amennyiben a szükséges könyvtárakat telepíti "
+"BlackBox, XFce stb. alatt is, amennyiben a szükséges összetevőket telepíti "
 "hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)"
 
 # type: Content of: <chapter><sect1><sect2><title>
@@ -1991,10 +1995,6 @@ msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
-"Terminálból a &bibletime; indítható véletlenszerű verssel az alapértelmezett "
-"bibliából így:Terminálból a &bibletime; indítható véletlenszerű verssel az "
-"alapértelmezett bibliából így:Terminálból a &bibletime; indítható "
-"véletlenszerű verssel az alapértelmezett bibliából így:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:34
@@ -2007,7 +2007,7 @@ msgstr "bibletime --open-default-bible \"random\""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:35
 msgid "To open at a given passage like John 3:16, use:"
-msgstr "Hogy egy meghatározott verssel induljon, mint a Jn 3:16 :"
+msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
@@ -2018,7 +2018,7 @@ msgstr "bibletime --open-default-bible \"John 3:16\""
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid "You can also use booknames in your current bookname language."
-msgstr "Használhatja a könyvek neveit a saját nyelvén is."
+msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:42
@@ -2032,8 +2032,7 @@ msgid ""
 "&bibletime; window opens:"
 msgstr ""
 "Mikor a &bibletime; indul, a következő képet láthatja a fő &bibletime; ablak "
-"betöltése előtt:Mikor a &bibletime; indul, a következő képet láthatja a fő "
-"&bibletime; ablak betöltése előtt:"
+"betöltése előtt:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
@@ -2107,18 +2106,19 @@ msgstr "&bibletime; kézikönyv"
 
 # type: Content of: <book><bookinfo><title>
 #: docs/handbook/en/docbook/index.docbook:44
+#, fuzzy
 msgid "the &bibletime; team"
-msgstr "a &bibletime; csapat"
+msgstr "&bibletime; kézikönyv"
 
 # type: Content of: <book><bookinfo><legalnotice><para>
 #: docs/handbook/en/docbook/index.docbook:47
 msgid "The &bibletime; handbook is part of &bibletime;."
 msgstr "A &bibletime; kézikönyv a &bibletime; része"
 
-# type: Content of: <book><bookinfo>
+# type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
 msgid "2009-04"
-msgstr "2009-04"
+msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
@@ -2129,8 +2129,8 @@ msgstr "2.0"
 #: docs/handbook/en/docbook/index.docbook:53
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
-"&bibletime; egy Biblia tanulmányozó szoftver a Sword keretrendszerre "
-"alapozva."
+"&bibletime; egy, a Sword keretrendszerre alapozott Biblia tanulmányozó "
+"szoftver."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #~ msgid "<guimenu>Display</guimenu>"
@@ -2139,6 +2139,14 @@ msgstr ""
 # type: Content of: <chapter><sect1><title>
 #~ msgid "<guimenu>Languages</guimenu>"
 #~ msgstr "A <guimenuitem>Nyelvek</guimenuitem>"
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#~ msgid ""
+#~ "<imageobject> <imagedata fileref=\"ss_configfonts.png\" format=\"PNG\" /> "
+#~ "</imageobject>"
+#~ msgstr ""
+#~ "<imageobject> <imagedata fileref=\"ss_configfonts.png\" format=\"PNG\" /> "
+#~ "</imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #~ msgid "<ulink url=\"http://code2000.net/CODE2000.ZIP\"> Code2000</ulink>"
@@ -2188,15 +2196,13 @@ msgstr ""
 #~ msgid "<guimenu>HotKeys</guimenu>"
 #~ msgstr "<guimenu>Gyorsbillentyűk</guimenu>"
 
-# type: Content of: <chapter><sect1><sect2><para>
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #~ msgid ""
-#~ "Over 200 documents in 50 languages are available from the <ulink url="
-#~ "\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These "
-#~ "include: <placeholder0>"
+#~ "<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 #~ msgstr ""
-#~ "Több, mint 200 dokumentum 50 nyelven érhető el a <ulink url=\"http://www."
-#~ "crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Ezek "
-#~ "tartalmaznak:<placeholder0>"
+#~ "<imageobject> <imagedata fileref=\"ss_mainterms.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 
 # type: Content of: <chapter><sect1><sect2><screenshot><mediaobject>
 #~ msgid ""
@@ -2209,10 +2215,6 @@ msgstr ""
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot>
 #~ msgid "<placeholder0> <placeholder1>"
 #~ msgstr "<placeholder0> <placeholder1>"
-
-# type: Content of: <chapter><sect1><sect2><sect3><para>
-#~ msgid "Available text types: <placeholder0>"
-#~ msgstr "Lehetséges szövegtípusok: <placeholder0>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><mediaobject>
 #~ msgid ""
@@ -2236,11 +2238,11 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Ctrl; <keycap>Q</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;Q</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>File</guimenu> "
 #~ "<guimenuitem>Quit</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Ctrl; <keycap>Q</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;Q</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Fájl</guimenu> "
 #~ "<guimenuitem>Kilépés</guimenuitem> </menuchoice>"
 
@@ -2310,22 +2312,22 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>F</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;F</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Search</guimenu> "
 #~ "<guimenuitem>Search in standard bible</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>F</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;F</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Keresés</guimenu> "
-#~ "<guimenuitem>Keresés az alapértelmezett Bibliában</guimenuitem> </"
+#~ "<guimenuitem>Keresés az alpértelmezett Bibliában</guimenuitem> </"
 #~ "menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Ctrl; <keycap>O</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;O</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Search</guimenu> "
 #~ "<guimenuitem>Search in open work(s)</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Ctrl; <keycap>O</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;O</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Keresés</guimenu> "
 #~ "<guimenuitem>Keresés a megnyitott dokumentum(ok)ban</guimenuitem> </"
 #~ "menuchoice>"
@@ -2334,63 +2336,101 @@ msgstr ""
 #~ msgid "<guimenu>Window</guimenu>"
 #~ msgstr "<guimenu>Ablak</guimenu>"
 
-# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
-#~ msgid ""
-#~ "<imageobject> <imagedata fileref=\"i_sidetree.png\" format=\"PNG\" /> </"
-#~ "imageobject>"
-#~ msgstr ""
-#~ "<imageobject> <imagedata fileref=\"i_sidetree.png\" format=\"PNG\" /> </"
-#~ "imageobject>"
-
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #~ msgid ""
-#~ "<menuchoice> <guimenu> <placeholder0>Window</guimenu> <guimenuitem>Save "
-#~ "session</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <guimenu> Window</guimenu> <guimenuitem>Save session</"
+#~ "guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <guimenu> <placeholder0>Ablak</guimenu> "
-#~ "<guimenuitem>Munkafolyamat mentése</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <guimenu> Ablak</guimenu> <guimenuitem>Munkafolyamat "
+#~ "mentése</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>S</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;S</"
+#~ "keycap></keycombo> </shortcut> <guimenu>Window</guimenu> "
+#~ "<guimenuitem>Save as new session</guimenuitem> </menuchoice>"
+#~ msgstr ""
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;S</"
+#~ "keycap></keycombo> </shortcut> <guimenu>Ablak</guimenu> "
+#~ "<guimenuitem>Mentés új munkafolyamatként</guimenuitem> </menuchoice>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid ""
+#~ "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Load session</"
+#~ "guimenuitem> </menuchoice>"
+#~ msgstr ""
+#~ "<menuchoice> <guimenu>Ablak</guimenu> <guimenuitem>Munkafolyamat "
+#~ "betöltése</guimenuitem> </menuchoice>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid ""
+#~ "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Delete session</"
+#~ "guimenuitem> </menuchoice>"
+#~ msgstr ""
+#~ "<menuchoice> <guimenu>Ablak</guimenu> <guimenuitem>Munkafolyamat törlése</"
+#~ "guimenuitem> </menuchoice>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid ""
+#~ "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+#~ "guimenuitem> </menuchoice>"
+#~ msgstr ""
+#~ "<menuchoice> <guimenu>Ablak</guimenu> <guimenuitem>Ablakok igazítása</"
+#~ "guimenuitem> </menuchoice>"
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+#~ msgid ""
+#~ "<imageobject> <imagedata fileref=\"i_cascade.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
+#~ msgstr ""
+#~ "<imageobject> <imagedata fileref=\"i_cascade.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
+#~ msgid ""
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;J</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Window</guimenu> "
-#~ "<guimenuitem>Save as new Session</guimenuitem> </menuchoice>"
+#~ "<guimenuitem>Cascade</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>S</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;J</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Ablak</guimenu> "
-#~ "<guimenuitem>Mentés új folyamatként</guimenuitem> </menuchoice>"
+#~ "<guimenuitem>Átlapolt elrendezés</guimenuitem> </menuchoice>"
 
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #~ msgid ""
-#~ "<menuchoice> <guimenu> <placeholder0>Window</guimenu> <guimenuitem>Load "
-#~ "session</guimenuitem> </menuchoice>"
+#~ "<imageobject> <imagedata fileref=\"i_tile_vert.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 #~ msgstr ""
-#~ "<menuchoice> <guimenu> <placeholder0>Ablak</guimenu> "
-#~ "<guimenuitem>Munkafolyamat betöltése</guimenuitem> </menuchoice>"
+#~ "<imageobject> <imagedata fileref=\"i_tile_vert.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <guimenu> <placeholder0>Window</guimenu> <guimenuitem>Delete "
-#~ "session</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;G</"
+#~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Window</guimenu> "
+#~ "<guimenuitem>Tile vertically</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <guimenu> <placeholder0>Ablak</guimenu> "
-#~ "<guimenuitem>Munkafolyamat törlése</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;G</"
+#~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Ablak</guimenu> "
+#~ "<guimenuitem>Függőleges mozaik elrendezés</guimenuitem> </menuchoice>"
 
-# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #~ msgid ""
-#~ "<imageobject> <imagedata fileref=\"i_cascade_auto.png\" format=\"PNG\" /> "
-#~ "</imageobject>"
+#~ "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 #~ msgstr ""
-#~ "<imageobject> <imagedata fileref=\"i_cascade_auto.png\" format=\"PNG\" /> "
-#~ "</imageobject>"
+#~ "<imageobject> <imagedata fileref=\"i_tile_horiz.png\" format=\"PNG\" /> </"
+#~ "imageobject>"
 
-# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <guimenu> <placeholder0>Window</guimenu> "
-#~ "<guimenuitem>Arrangement mode</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;H</"
+#~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Window</guimenu> "
+#~ "<guimenuitem>Tile horizontally</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <guimenu> <placeholder0>Ablak</guimenu> <guimenuitem>Ablakok "
-#~ "igazítása</guimenuitem> </menuchoice>"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;H</"
+#~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Ablak</guimenu> "
+#~ "<guimenuitem>Vízszintes mozaik elrendezés</guimenuitem> </menuchoice>"
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term><menuchoice><guimenu><inlinemediaobject>
 #~ msgid ""
@@ -2402,11 +2442,11 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><term>
 #~ msgid ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>W</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;W</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Window</guimenu> "
 #~ "<guimenuitem>Close all</guimenuitem> </menuchoice>"
 #~ msgstr ""
-#~ "<menuchoice> <shortcut> <keycombo action=\"simul\">&Alt;&Ctrl; <keycap>W</"
+#~ "<menuchoice> <shortcut> <keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;W</"
 #~ "keycap></keycombo> </shortcut> <guimenu> <placeholder0>Ablak</guimenu> "
 #~ "<guimenuitem>Összes bezárása</guimenuitem> </menuchoice>"
 
@@ -2488,6 +2528,113 @@ msgstr ""
 #~ "<menuchoice> <guimenu>Segítség</guimenu> <guimenuitem>Névjegy</"
 #~ "guimenuitem> </menuchoice>"
 
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Alt;Left</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Alt;Left</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Alt;Right</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Alt;Right</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;F</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;F</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;G</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;G</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;H</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;H</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;J</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;J</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;M</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;M</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;S</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;S</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;W</keycap></keycombo>"
+#~ msgstr ""
+#~ "<keycombo action=\"simul\"> <keycap>&Ctrl;&Alt;W</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;-</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;-</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;+</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;+</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;A</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;A</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;C</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;C</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;G</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;G</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;H</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;H</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;J</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;J</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;O</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;O</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;Q</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;Q</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>&Ctrl;W</keycap></keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>&Ctrl;W</keycap></keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>F1</keycap> </keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>F2</keycap> </keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>F4</keycap> </keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>F8</keycap> </keycombo>"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#~ msgid "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
+#~ msgstr "<keycombo action=\"simul\"> <keycap>F9</keycap> </keycombo>"
+
 # type: Content of: <chapter><sect1><sect2><para><mediaobject>
 #~ msgid ""
 #~ "<imageobject> <imagedata fileref=\"i_bibletime.png\" format=\"PNG\" /> </"
@@ -2496,9 +2643,16 @@ msgstr ""
 #~ "<imageobject> <imagedata fileref=\"i_bibletime.png\" format=\"PNG\" /> </"
 #~ "imageobject>"
 
-# type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
-#~ msgid "&bibletime; start icon"
-#~ msgstr "&bibletime; indítóikon"
+# type: Content of: <chapter><sect1><sect2><para>
+#~ msgid ""
+#~ "From a terminal you can use &bibletime; to open a random verse in the "
+#~ "default bible: <placeholder0>To open at a given passage like John 3:16, "
+#~ "use: <placeholder1>You can also use booknames in your current bookname "
+#~ "language."
+#~ msgstr ""
+#~ "Ha szeretné, hogy a &bibletime; véletlenszerű verssel induljon, gépelje "
+#~ "be:<placeholder0> Ahhoz, hogy egy meghatározott verssel induljon ezt "
+#~ "gépelje be: <placeholder1> Használhatja a könyvek címeit saját nyelvén is."
 
 # type: Content of: <chapter><sect1><title>
 #~ msgid "<interface>Bookshelf Manager</interface>"
@@ -2507,6 +2661,10 @@ msgstr ""
 # type: Content of: <chapter><sect1><variablelist><varlistentry><term>
 #~ msgid "<interface>Configure &bibletime; dialog</interface>"
 #~ msgstr "<interface> &bibletime; beállítási ablak </interface>"
+
+# type: Content of: <book><bookinfo><authorgroup><author><firstname>
+#~ msgid "Fred"
+#~ msgstr "Fred"
 
 # type: Content of: <book><bookinfo><authorgroup><author><surname>
 #~ msgid "Saalbach"
@@ -2543,3 +2701,27 @@ msgstr ""
 #~ msgstr ""
 #~ "<copyright> <year>1999-2009</year> <holder>a &bibletime; csapat</holder> "
 #~ "</copyright>"
+
+# type: Content of: <book><bookinfo>
+#~ msgid "<date>2009-04</date>"
+#~ msgstr "<date>2009-04</date>"
+
+# type: Content of: <book><bookinfo><keywordset><keyword>
+#~ msgid "QT4"
+#~ msgstr "QT4"
+
+# type: Content of: <chapter><sect1><title>
+#~ msgid "bibletime"
+#~ msgstr "bibletime"
+
+# type: Content of: <book><bookinfo><keywordset><keyword>
+#~ msgid "sword"
+#~ msgstr "sword"
+
+# type: Content of: <book><bookinfo><keywordset><keyword>
+#~ msgid "crosswire"
+#~ msgstr "crosswire"
+
+# type: Content of: <book><bookinfo><keywordset><keyword>
+#~ msgid "help dialog"
+#~ msgstr "Segítség ablak"
