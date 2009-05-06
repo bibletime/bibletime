@@ -5,46 +5,56 @@
     <name>BTAboutModuleDialog</name>
     <message>
         <source>Information About</source>
-        <translation>Information über</translation>
+        <translation type="obsolete">Information über</translation>
+    </message>
+    <message>
+        <source>Information About %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BibleTime</name>
     <message>
         <source>BibleTime </source>
-        <translation>BibleTime</translation>
+        <translation type="obsolete">BibleTime</translation>
     </message>
     <message>
         <source>&amp;File</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Datei</translation>
     </message>
     <message>
         <source>&amp;View</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Ansicht</translation>
     </message>
     <message>
         <source>&amp;Search</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Suche</translation>
     </message>
     <message>
         <source>&amp;Window</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Fenster</translation>
     </message>
     <message>
         <source>Se&amp;ttings</source>
+        <extracomment>Main menu item</extracomment>
         <translation>Einstellungen</translation>
     </message>
     <message>
         <source>&amp;Help</source>
+        <extracomment>Main menu item</extracomment>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
         <source>BibleTime</source>
-        <translation>BibleTime</translation>
+        <translation type="obsolete">BibleTime</translation>
     </message>
     <message>
         <source>Quit</source>
-        <translation>Beenden</translation>
+        <translation type="obsolete">Beenden</translation>
     </message>
     <message>
         <source>&amp;Show toolbar</source>
@@ -52,11 +62,11 @@
     </message>
     <message>
         <source>&amp;Show bookshelf</source>
-        <translation>&amp;Zeigen Bücherregal</translation>
+        <translation type="obsolete">&amp;Zeigen Bücherregal</translation>
     </message>
     <message>
         <source>Show &amp;mag</source>
-        <translation>Z&amp;eige Lupe</translation>
+        <translation type="obsolete">Z&amp;eige Lupe</translation>
     </message>
     <message>
         <source>&amp;Fullscreen mode</source>
@@ -84,14 +94,17 @@
     </message>
     <message>
         <source>Auto-tile &amp;vertically</source>
+        <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
         <translation>Automatisches &amp;Vertikal-Kacheln</translation>
     </message>
     <message>
         <source>Auto-tile &amp;horizontally</source>
+        <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
         <translation>Automatisches &amp;Horizontal-Kacheln</translation>
     </message>
     <message>
         <source>Auto-&amp;cascade</source>
+        <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
         <translation>Automatisches &amp;Staffeln</translation>
     </message>
     <message>
@@ -108,7 +121,7 @@
     </message>
     <message>
         <source>Cl&amp;ose all</source>
-        <translation>A&amp;lle schließen</translation>
+        <translation type="obsolete">A&amp;lle schließen</translation>
     </message>
     <message>
         <source>&amp;Handbook</source>
@@ -116,6 +129,7 @@
     </message>
     <message>
         <source>&amp;Bible Study Howto</source>
+        <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>&amp;Anleitung zum Bibelstudium</translation>
     </message>
     <message>
@@ -128,11 +142,11 @@
     </message>
     <message>
         <source>Show or hide the bookshelf</source>
-        <translation>Das Bücherregal anzeigen oder verbergen</translation>
+        <translation type="obsolete">Das Bücherregal anzeigen oder verbergen</translation>
     </message>
     <message>
         <source>Show or hide the mag</source>
-        <translation>Die Lupe anzeigen oder verbergen</translation>
+        <translation type="obsolete">Die Lupe anzeigen oder verbergen</translation>
     </message>
     <message>
         <source>Toggle fullscreen mode of the main window</source>
@@ -180,7 +194,7 @@
     </message>
     <message>
         <source>Close all open windows</source>
-        <translation>Alle geöffneten Fenster schließen</translation>
+        <translation type="obsolete">Alle geöffneten Fenster schließen</translation>
     </message>
     <message>
         <source>&amp;Configure BibleTime...</source>
@@ -220,7 +234,7 @@
     </message>
     <message>
         <source>Initializing the Sword engine...</source>
-        <translation>Initialisierung der Sword-Engine...</translation>
+        <translation type="obsolete">Initialisierung der Sword-Engine...</translation>
     </message>
     <message>
         <source>Creating BibleTime&apos;s user interface...</source>
@@ -229,6 +243,190 @@
     <message>
         <source>Initializing menu- and toolbars...</source>
         <translation>Initialisieren der Menü- und Werkzeugleiste...</translation>
+    </message>
+    <message>
+        <source>Initializing the SWORD engine...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bookshelf</source>
+        <translation type="unfinished">Bücherregal</translation>
+    </message>
+    <message>
+        <source>Bookmarks</source>
+        <translation type="unfinished">Lesezeichen</translation>
+    </message>
+    <message>
+        <source>Mag</source>
+        <translation type="unfinished">Lupe</translation>
+    </message>
+    <message>
+        <source>Main Toolbar</source>
+        <extracomment>Name of the main toolbar</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Bookshelf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Bookmarks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Mag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cl&amp;ose all windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close all open windows inside BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtAboutDialog</name>
+    <message>
+        <source>About BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime is an easy to use but powerful Bible study tool.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We are looking for developers and translators.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(c)1999-2009, The BibleTime Team</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following people contributed to BibleTime:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>documentation and translation manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>project founder, developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>designer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>packager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>creator of The Sword Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>project manager, developer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>domain sponsor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>howto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>documentation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tester, usability expert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The following people translated BibleTime into their language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SWORD library version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The SWORD Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This program uses Qt Open Source Edition version %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Qt is a C++ toolkit for cross-platform application development.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please see </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> for an overview of Qt licensing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime is released under the GPL license.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The complete legally binding license is below.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -506,11 +704,11 @@
     </message>
     <message>
         <source>Last refreshed:</source>
-        <translation>Zuletzt aktualisiert:</translation>
+        <translation type="obsolete">Zuletzt aktualisiert:</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bearbeiten...</translation>
+        <translation type="obsolete">Bearbeiten...</translation>
     </message>
     <message>
         <source>Add...</source>
@@ -598,6 +796,10 @@
     <message>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>Das Zielverzeichnis ist nicht beschreibbar oder existiert nicht. Die Installation wird fehlschlagen, wenn dieser Umstand vorher nicht behoben wird.</translation>
+    </message>
+    <message>
+        <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -738,7 +940,7 @@
     </message>
     <message>
         <source>Book Window</source>
-        <translation>Buchfenster</translation>
+        <translation type="obsolete">Buchfenster</translation>
     </message>
 </context>
 <context>
@@ -844,7 +1046,7 @@
     </message>
     <message>
         <source>Search in</source>
-        <translation>Suche in</translation>
+        <translation type="obsolete">Suche in</translation>
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
@@ -898,6 +1100,10 @@
         <source>Unlock Work</source>
         <translation>Werk lösen</translation>
     </message>
+    <message>
+        <source>Search in %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CCommentaryReadWindow</name>
@@ -927,7 +1133,7 @@
     </message>
     <message>
         <source>Commentary window</source>
-        <translation>Kommentarfenster</translation>
+        <translation type="obsolete">Kommentarfenster</translation>
     </message>
     <message>
         <source>Synchronize</source>
@@ -1056,7 +1262,7 @@
     </message>
     <message>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1072,6 +1278,30 @@
     <message>
         <source>Open the search dialog with the works of this window</source>
         <translation>Das Suchfenster mit den Werken dieses Fensters öffnen</translation>
+    </message>
+    <message>
+        <source>Zoom in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Alle auswählen</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Kopiere</translation>
+    </message>
+    <message>
+        <source>Find...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1093,11 +1323,11 @@
     <name>CHTMLWriteDisplay</name>
     <message>
         <source>Choose a font</source>
-        <translation>Schriftart auswählen</translation>
+        <translation type="obsolete">Schriftart auswählen</translation>
     </message>
     <message>
         <source>Choose a font size</source>
-        <translation>Schriftgröße auswählen</translation>
+        <translation type="obsolete">Schriftgröße auswählen</translation>
     </message>
     <message>
         <source>Bold</source>
@@ -1269,7 +1499,7 @@
     </message>
     <message>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1396,7 +1626,7 @@
     <name>CModuleIndexDialog</name>
     <message>
         <source>Creating index for work: </source>
-        <translation>Erstelle Index für Werk:</translation>
+        <translation type="obsolete">Erstelle Index für Werk:</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1413,6 +1643,10 @@
     <message>
         <source>Indexing is cancelled because modules are removed.</source>
         <translation>Indizierung aufgrund entfernter Module abgebrochen.</translation>
+    </message>
+    <message>
+        <source>Creating index for work: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1573,7 +1807,7 @@
     </message>
     <message>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1650,7 +1884,7 @@
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
         <source>Mag</source>
-        <translation>Lupe</translation>
+        <translation type="obsolete">Lupe</translation>
     </message>
     <message>
         <source>Abbreviation</source>
@@ -1683,6 +1917,25 @@
     <message>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Das ist die Lupe. Bewegen Sie die Maus über Links oder andere Einträge, die zusätzliche Informationen enthalten, und die Inhalte werden mit kurzer Verzögerung im Lupenbereich erscheinen. Bewegen Sie die Maus zügig in den Lupenbereich oder frieren Sie den Lupenbereich durch Drücken und Halten von Shift ein, während Sie die Maus bewegen.&lt;/small&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>QCoreApplication</name>
+    <message>
+        <source>Indexing aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An internal error occurred while building the index.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search aborted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An internal error occurred while executing your search.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1725,402 +1978,496 @@
     </message>
     <message>
         <source>Afrikaans</source>
+        <extracomment>Language name af</extracomment>
         <translation>Afrikaans</translation>
     </message>
     <message>
         <source>English, Old (ca.450-1100)</source>
+        <extracomment>Language name ang</extracomment>
         <translation>Altenglisch (ca. 450-1100)</translation>
     </message>
     <message>
         <source>Arabic</source>
+        <extracomment>Language name ar</extracomment>
         <translation>Arabisch</translation>
     </message>
     <message>
         <source>Azerbaijani</source>
+        <extracomment>Language name az</extracomment>
         <translation>Aserbaidschanisch</translation>
     </message>
     <message>
         <source>Belarusian</source>
+        <extracomment>Language name be</extracomment>
         <translation>Weißrussisch</translation>
     </message>
     <message>
         <source>Bulgarian</source>
+        <extracomment>Language name bg</extracomment>
         <translation>Bulgarisch</translation>
     </message>
     <message>
         <source>Breton</source>
+        <extracomment>Language name br</extracomment>
         <translation>Bretonisch</translation>
     </message>
     <message>
         <source>Bosnian</source>
+        <extracomment>Language name bs</extracomment>
         <translation>Bosnisch</translation>
     </message>
     <message>
         <source>Catalan</source>
+        <extracomment>Language name ca</extracomment>
         <translation>Katalanisch</translation>
     </message>
     <message>
         <source>Cebuano</source>
+        <extracomment>Language name ceb</extracomment>
         <translation>Cebuano</translation>
     </message>
     <message>
         <source>Chamorro</source>
+        <extracomment>Language name ch</extracomment>
         <translation>Chamorro</translation>
     </message>
     <message>
         <source>Coptic</source>
+        <extracomment>Language name cop</extracomment>
         <translation>Koptisch</translation>
     </message>
     <message>
         <source>Czech</source>
+        <extracomment>Language name cs</extracomment>
         <translation>Tschechisch</translation>
     </message>
     <message>
         <source>Church Slavic</source>
+        <extracomment>Language name cu</extracomment>
         <translation>Kirchenslawisch</translation>
     </message>
     <message>
         <source>Welsh</source>
+        <extracomment>Language name cy</extracomment>
         <translation>Walisisch</translation>
     </message>
     <message>
         <source>Danish</source>
+        <extracomment>Language name da</extracomment>
         <translation>Dänisch</translation>
     </message>
     <message>
         <source>German</source>
+        <extracomment>Language name de</extracomment>
         <translation>Deutsch</translation>
     </message>
     <message>
         <source>Greek, Modern (1453-)</source>
+        <extracomment>Language name el</extracomment>
         <translation>Neugriechisch (ab 1453)</translation>
     </message>
     <message>
         <source>English</source>
+        <extracomment>Language name en</extracomment>
         <translation>Englisch</translation>
     </message>
     <message>
         <source>American English</source>
+        <extracomment>Language name en_US</extracomment>
         <translation>Amerikanisches Englisch</translation>
     </message>
     <message>
         <source>English, Middle (1100-1500)</source>
+        <extracomment>Language name enm</extracomment>
         <translation>Mittelenglisch (1100-1500)</translation>
     </message>
     <message>
         <source>Esperanto</source>
+        <extracomment>Language name eo</extracomment>
         <translation>Esperanto</translation>
     </message>
     <message>
         <source>Spanish</source>
+        <extracomment>Language name es</extracomment>
         <translation>Spanisch</translation>
     </message>
     <message>
         <source>Estonian</source>
+        <extracomment>Language name et</extracomment>
         <translation>Estnisch</translation>
     </message>
     <message>
         <source>Basque</source>
+        <extracomment>Language name eu</extracomment>
         <translation>Baskisch</translation>
     </message>
     <message>
         <source>Persian</source>
+        <extracomment>Language name fa</extracomment>
         <translation>Persisch</translation>
     </message>
     <message>
         <source>Finnish</source>
+        <extracomment>Language name fi</extracomment>
         <translation>Finnisch</translation>
     </message>
     <message>
         <source>French</source>
+        <extracomment>Language name fr</extracomment>
         <translation>Französisch</translation>
     </message>
     <message>
         <source>Frisian</source>
+        <extracomment>Language name fy</extracomment>
         <translation>Friesisch</translation>
     </message>
     <message>
         <source>Irish</source>
+        <extracomment>Language name ga</extracomment>
         <translation>Irisch</translation>
     </message>
     <message>
         <source>Gaelic (Scots)</source>
+        <extracomment>Language name gd</extracomment>
         <translation>Gälisch (Schottland)</translation>
     </message>
     <message>
         <source>Gothic</source>
+        <extracomment>Language name got</extracomment>
         <translation>Gothisch</translation>
     </message>
     <message>
         <source>Manx</source>
+        <extracomment>Language name gv</extracomment>
         <translation>Gälisch der Isle of Man</translation>
     </message>
     <message>
         <source>Greek, Ancient (to 1453)</source>
+        <extracomment>Language name grc</extracomment>
         <translation>Altgriechisch (bis 1453)</translation>
     </message>
     <message>
         <source>Hebrew</source>
+        <extracomment>Language name he</extracomment>
         <translation>Hebräisch</translation>
     </message>
     <message>
         <source>Hausa</source>
+        <extracomment>Language name hau</extracomment>
         <translation>Hausa</translation>
     </message>
     <message>
         <source>Hawaiian</source>
+        <extracomment>Language name haw</extracomment>
         <translation>Hawaiisch</translation>
     </message>
     <message>
         <source>Hindi</source>
+        <extracomment>Language name hi</extracomment>
         <translation>Hindi</translation>
     </message>
     <message>
         <source>Croatian</source>
+        <extracomment>Language name hr</extracomment>
         <translation>Kroatisch</translation>
     </message>
     <message>
         <source>Hungarian</source>
+        <extracomment>Language name hu</extracomment>
         <translation>Ungarisch</translation>
     </message>
     <message>
         <source>Armenian</source>
+        <extracomment>Language name hy</extracomment>
         <translation>Armenisch</translation>
     </message>
     <message>
         <source>Indonesian</source>
+        <extracomment>Language name id</extracomment>
         <translation>Indonesisch</translation>
     </message>
     <message>
         <source>Icelandic</source>
+        <extracomment>Language name is</extracomment>
         <translation>Isländisch</translation>
     </message>
     <message>
         <source>Italian</source>
+        <extracomment>Language name it</extracomment>
         <translation>Italienisch</translation>
     </message>
     <message>
         <source>Japanese</source>
+        <extracomment>Language name ja</extracomment>
         <translation>Japanisch</translation>
     </message>
     <message>
         <source>Georgian</source>
+        <extracomment>Language name ka</extracomment>
         <translation>Georgisch</translation>
     </message>
     <message>
         <source>Korean</source>
+        <extracomment>Language name ko</extracomment>
         <translation>Koreanisch</translation>
     </message>
     <message>
         <source>Kurdish</source>
+        <extracomment>Language name ku</extracomment>
         <translation>Kurdisch</translation>
     </message>
     <message>
         <source>Kirghiz</source>
+        <extracomment>Language name ky</extracomment>
         <translation>Kirgisisch</translation>
     </message>
     <message>
         <source>Latin</source>
+        <extracomment>Language name la</extracomment>
         <translation>Latein</translation>
     </message>
     <message>
         <source>Lithuanian</source>
+        <extracomment>Language name lt</extracomment>
         <translation>Litauisch</translation>
     </message>
     <message>
         <source>Latvian</source>
+        <extracomment>Language name lv</extracomment>
         <translation>Lettländisch</translation>
     </message>
     <message>
         <source>Maori</source>
+        <extracomment>Language name mi</extracomment>
         <translation>Maorisch</translation>
     </message>
     <message>
         <source>Macedonian</source>
+        <extracomment>Language name mk</extracomment>
         <translation>Makedonisch</translation>
     </message>
     <message>
         <source>More</source>
+        <extracomment>Language name mos</extracomment>
         <translation>Maorisch</translation>
     </message>
     <message>
         <source>Malay</source>
+        <extracomment>Language name ms</extracomment>
         <translation>Malaisch</translation>
     </message>
     <message>
         <source>Maltese</source>
+        <extracomment>Language name mt</extracomment>
         <translation>Maltesisch</translation>
     </message>
     <message>
         <source>Low German; Low Saxon</source>
+        <extracomment>Language name nds</extracomment>
         <translation>Plattdeutsch</translation>
     </message>
     <message>
         <source>Nepali</source>
+        <extracomment>Language name ne</extracomment>
         <translation>Nepalesisch</translation>
     </message>
     <message>
         <source>Dutch</source>
+        <extracomment>Language name nl</extracomment>
         <translation>Niederländisch</translation>
     </message>
     <message>
         <source>Norwegian Nynorsk</source>
+        <extracomment>Language name nn</extracomment>
         <translation>Neu-Norwegisch</translation>
     </message>
     <message>
         <source>Norwegian</source>
+        <extracomment>Language name no</extracomment>
         <translation>Norwegisch</translation>
     </message>
     <message>
         <source>Papiamento</source>
+        <extracomment>Language name pap</extracomment>
         <translation>Papiamento</translation>
     </message>
     <message>
         <source>Polish</source>
+        <extracomment>Language name pl</extracomment>
         <translation>Polnisch</translation>
     </message>
     <message>
         <source>Portuguese</source>
+        <extracomment>Language name pt</extracomment>
         <translation>Portugiesisch</translation>
     </message>
     <message>
         <source>Brasilian Portuguese</source>
+        <extracomment>Language name pt_BR</extracomment>
         <translation>Brasilianisches Portugiesisch</translation>
     </message>
     <message>
         <source>Romanian</source>
+        <extracomment>Language name ro</extracomment>
         <translation>Rumänisch</translation>
     </message>
     <message>
         <source>Russian</source>
+        <extracomment>Language name ru</extracomment>
         <translation>Russisch</translation>
     </message>
     <message>
         <source>Scots</source>
+        <extracomment>Language name sco</extracomment>
         <translation>Schottisch</translation>
     </message>
     <message>
         <source>Slovak</source>
+        <extracomment>Language name sk</extracomment>
         <translation>Slowakisch</translation>
     </message>
     <message>
         <source>Slovenian</source>
+        <extracomment>Language name sl</extracomment>
         <translation>Slowenisch</translation>
     </message>
     <message>
         <source>Somali</source>
+        <extracomment>Language name so</extracomment>
         <translation>Somalisch</translation>
     </message>
     <message>
         <source>Albanian</source>
+        <extracomment>Language name sq</extracomment>
         <translation>Albanisch</translation>
     </message>
     <message>
         <source>Swedish</source>
+        <extracomment>Language name sv</extracomment>
         <translation>Schwedisch</translation>
     </message>
     <message>
         <source>Swahili</source>
+        <extracomment>Language name sw</extracomment>
         <translation>Suaheli</translation>
     </message>
     <message>
         <source>Syriac</source>
+        <extracomment>Language name syr</extracomment>
         <translation>Syrisch</translation>
     </message>
     <message>
         <source>Tamil</source>
+        <extracomment>Language name ta</extracomment>
         <translation>Tamilisch</translation>
     </message>
     <message>
         <source>Thai</source>
+        <extracomment>Language name th</extracomment>
         <translation>Thailändisch</translation>
     </message>
     <message>
         <source>Tagalog</source>
+        <extracomment>Language name tl</extracomment>
         <translation>Tagalog</translation>
     </message>
     <message>
         <source>Tswana</source>
+        <extracomment>Language name tn</extracomment>
         <translation>Sezuan</translation>
     </message>
     <message>
         <source>Turkish</source>
+        <extracomment>Language name tr</extracomment>
         <translation>Türkisch</translation>
     </message>
     <message>
         <source>Tahitian</source>
+        <extracomment>Language name ty</extracomment>
         <translation>Tahitisch</translation>
     </message>
     <message>
         <source>Ukrainian</source>
+        <extracomment>Language name uk</extracomment>
         <translation>Ukrainisch</translation>
     </message>
     <message>
         <source>Vietnamese</source>
+        <extracomment>Language name vi</extracomment>
         <translation>Vietnamesisch</translation>
     </message>
     <message>
         <source>Xhosa</source>
+        <extracomment>Language name xh</extracomment>
         <translation>Xhosa</translation>
     </message>
     <message>
         <source>Bavarian</source>
+        <extracomment>Language name bar</extracomment>
         <translation>Bayrisch</translation>
     </message>
     <message>
         <source>Zarma</source>
-        <translation>Zarma</translation>
+        <translation type="obsolete">Zarma</translation>
     </message>
     <message>
         <source>Alemannisch</source>
-        <translation>Alemannisch</translation>
+        <translation type="obsolete">Alemannisch</translation>
     </message>
     <message>
         <source>Haitian Creole French</source>
-        <translation>Haitisch-kreolisches Französisch</translation>
+        <translation type="obsolete">Haitisch-kreolisches Französisch</translation>
     </message>
     <message>
         <source>Shuar</source>
-        <translation>Shuar</translation>
+        <translation type="obsolete">Shuar</translation>
     </message>
     <message>
         <source>Kabyle</source>
-        <translation>Kabyle</translation>
+        <translation type="obsolete">Kabyle</translation>
     </message>
     <message>
         <source>Lombard</source>
+        <extracomment>Language name lmo</extracomment>
         <translation>Lombardisch</translation>
     </message>
     <message>
         <source>Tok Pisin</source>
-        <translation>Tok Pisin</translation>
+        <translation type="obsolete">Tok Pisin</translation>
     </message>
     <message>
         <source>Uma</source>
+        <extracomment>Language name ppk
+----------
+Language name ppk</extracomment>
         <translation>Uma</translation>
     </message>
     <message>
         <source>Romani, Vlax</source>
-        <translation>Romani, Vlax</translation>
+        <translation type="obsolete">Romani, Vlax</translation>
     </message>
     <message>
         <source>Sango</source>
-        <translation>Sango</translation>
+        <translation type="obsolete">Sango</translation>
     </message>
     <message>
         <source>Sranan</source>
+        <extracomment>Language name srn</extracomment>
         <translation>Sranan</translation>
     </message>
     <message>
         <source>Yiddish</source>
+        <extracomment>Language name yi</extracomment>
         <translation>Yiddisch</translation>
     </message>
     <message>
         <source>Chinese</source>
+        <extracomment>Language name zh</extracomment>
         <translation>Chinesisch</translation>
     </message>
     <message>
         <source>Zulu</source>
+        <extracomment>Language name zu</extracomment>
         <translation>Zulu</translation>
     </message>
     <message>
@@ -2329,30 +2676,31 @@
     </message>
     <message>
         <source>Haitian Creole</source>
+        <extracomment>Language name ht</extracomment>
         <translation type="unfinished">Haitanisches Kreol</translation>
     </message>
     <message>
         <source>Kekchi</source>
-        <translation type="unfinished">Kekchi</translation>
+        <translation type="obsolete">Kekchi</translation>
     </message>
     <message>
         <source>Burmese</source>
+        <extracomment>Language name my</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Potawatomi</source>
+        <extracomment>Language name pot</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Klingon</source>
+        <extracomment>Language name tlh</extracomment>
         <translation>Klingonisch</translation>
     </message>
     <message>
         <source>Yoryba</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Itza</source>
+        <extracomment>Language name yo</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2382,6 +2730,361 @@
     <message>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation type="unfinished">Strong-Nummern verfolgen</translation>
+    </message>
+    <message>
+        <source>Names of languages</source>
+        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :)) ------ </comment>
+        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. You can write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- ISO 639-3 ------- x-E-XXX form is deprecated and no modules in repositories use it. If you find a module with x-E-XXX language, update the module.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Amuzgo, Guerrero</source>
+        <extracomment>Language name amu</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Azerbaijani, South</source>
+        <extracomment>Language name azb</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Comaltepec</source>
+        <extracomment>Language name cco</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chontal, Highland Oaxaca</source>
+        <extracomment>Language name chd</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Quiotepec</source>
+        <extracomment>Language name chq</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Ozumacu00edn</source>
+        <extracomment>Language name chz</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cakchiquel, Western</source>
+        <extracomment>Language name ckw</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Lalana</source>
+        <extracomment>Language name cnl</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Tepetotutla</source>
+        <extracomment>Language name cnt</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chinantec, Sochiapan</source>
+        <extracomment>Language name cso</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chol, Tila</source>
+        <extracomment>Language name cti</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chatino, Western Highland</source>
+        <extracomment>Language name ctp</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duruma</source>
+        <extracomment>Language name dug</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geez</source>
+        <extracomment>Language name gez</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Huave, San Mateo Del Mar</source>
+        <extracomment>Language name huv</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Itzu00e1</source>
+        <extracomment>Language name itz</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ixil, San Juan Cotzal</source>
+        <extracomment>Language name ixl</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jacalteco, Eastern</source>
+        <extracomment>Language name jac</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Javanese, Caribbean</source>
+        <extracomment>Language name jvn</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kekchu00ed</source>
+        <comment>kek</comment>
+        <extracomment>Language name kek</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lacandon</source>
+        <extracomment>Language name lac</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Malagasy</source>
+        <extracomment>Language name mg</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixe, Isthmus</source>
+        <extracomment>Language name mir</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixtec, Coatzospan</source>
+        <extracomment>Language name miz</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixtec, Silacayoapan</source>
+        <extracomment>Language name mks</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(Multiple languages)</source>
+        <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mam, Central</source>
+        <extracomment>Language name mvc</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mam, Todos Santos Cuchumatu00e1n</source>
+        <extracomment>Language name mvj</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixe, Juquila</source>
+        <extracomment>Language name mxq</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixtec, Jamiltepec</source>
+        <extracomment>Language name mxt</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Norwegian Bokmu00e5l</source>
+        <extracomment>Language name nb</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nahuatl, Michoacu00e1n</source>
+        <extracomment>Language name ncl</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nahuatl, Guerrero</source>
+        <extracomment>Language name ngu</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nahuatl, Northern Oaxaca</source>
+        <extracomment>Language name nhy</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Otomi, Queru00e9taro</source>
+        <extracomment>Language name otq</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persian (Dari)</source>
+        <extracomment>Language name prs</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quichu00e9, West Central</source>
+        <extracomment>Language name qut</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tektiteko</source>
+        <extracomment>Language name ttc</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tzotzil, Zinacantu00e1n</source>
+        <extracomment>Language name tzz</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orya</source>
+        <extracomment>Language name ury</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Uspanteco</source>
+        <extracomment>Language name usp</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mixtec, Diuxi-Tilantongo</source>
+        <extracomment>Language name xtd</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, San Juan Guelavu00eda</source>
+        <extracomment>Language name zab</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Mitla</source>
+        <extracomment>Language name zaw</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Amatlu00e1n</source>
+        <extracomment>Language name zpo</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Zoogocho</source>
+        <extracomment>Language name zpq</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Yalu00e1lag</source>
+        <extracomment>Language name zpu</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Chichicapan</source>
+        <extracomment>Language name zpv</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Southern Rincon</source>
+        <extracomment>Language name zsr</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Quioquitani-Quieru00ed</source>
+        <extracomment>Language name ztq</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zapotec, Yatee</source>
+        <extracomment>Language name zty</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QPushButton</name>
+    <message>
+        <source>OK</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished">Verwerfen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save All</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes to all</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No to all</source>
+        <comment>Dialog Button</comment>
+        <extracomment>Standard button</extracomment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2439,28 +3142,8 @@
         <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
     <message>
-        <source>&lt;p&gt;Enter search terms separated by spaces.  By default the search function will return results that match any of the search terms (OR). To search for all the terms separate the terms by AND.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;You can use wildcards: &apos;*&apos; matches any sequence of characters, while &apos;?&apos; matches any single character. The use of brackets allows you to group your search terms, e.g. &apos;(Jesus OR spirit) AND God&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;To search text other than the main text, enter the text type followed by &quot;:&quot;, and then the search term.  For example, to search for the Strong&apos;s number H8077, use &apos;strong:H8077&apos;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;Available text types:&lt;br&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;searches Strong&apos;s Numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;p&gt;BibleTime uses the Lucene search engine to perform your searches. It has many advanced features, and you can read more about it here: &lt;a href=&quot;http://lucene.apache.org/java/docs/queryparsersyntax.html&quot;&gt;http://lucene.apache.org/java/docs/queryparsersyntax.html&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Basic Search Syntax Introduction</source>
-        <translation>Grundlegende Einführung in die Suchsyntax</translation>
+        <translation type="obsolete">Grundlegende Einführung in die Suchsyntax</translation>
     </message>
     <message>
         <source>No search scope</source>
@@ -2488,6 +3171,65 @@
     </message>
     <message>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure predefined scopes for search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Click the link to get help for search syntax</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
+        <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
+        <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search Syntax Help</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2648,7 +3390,11 @@
     </message>
     <message>
         <source>Created by</source>
-        <translation>Erstellt mit</translation>
+        <translation type="obsolete">Erstellt mit</translation>
+    </message>
+    <message>
+        <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2807,7 +3553,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source></source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2854,7 +3600,50 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source></source>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>findTextDialog</name>
+    <message>
+        <source>Find Text</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text you want to search for</source>
+        <translation type="unfinished">Den zu suchenden Text</translation>
+    </message>
+    <message>
+        <source>Seach with case sensitivity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case &amp;sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find the previous location of the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find the next location of the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Close</source>
+        <translation type="unfinished">&amp;Schließen</translation>
     </message>
 </context>
 </TS>

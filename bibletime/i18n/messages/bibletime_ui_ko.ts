@@ -2323,33 +2323,33 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="167"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>Abbreviation</source>
         <translation type="unfinished">단축</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="178"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="271"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
         <source>Cross references</source>
         <translation type="unfinished">상호 참조</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="314"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
         <source>Footnote</source>
         <translation type="unfinished">각주</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="341"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
         <source>Strongs</source>
         <translation type="unfinished">스트롱 넘버</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="419"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
         <source>Morphology</source>
         <translation type="unfinished">형태학</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="442"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
         <source>Word lookup</source>
         <translation type="unfinished">단어 찾기</translation>
     </message>

@@ -2358,33 +2358,33 @@
         <translation>&lt;small&gt;See on infokuva, kus näidatakse peale lühikest viivitust infot mitmete teoste elementide (hüperlinkide jms) kohta, kui hiirekursoriga nende kohale satutakse. Liigutage hiirekursor kiiresti infokuva peale või hoidke all tõsteklahvi (&lt;i&gt;shift&lt;/i&gt;) hiirt liigutades.&lt;/small&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="167"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
         <source>Abbreviation</source>
         <translation>Lühend</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="178"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="271"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
         <source>Cross references</source>
         <translation>Ristviited</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="314"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
         <source>Footnote</source>
         <translation>Allmärkus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="341"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
         <source>Strongs</source>
         <translation>Strongi numbrid</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="419"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
         <source>Morphology</source>
         <translation>Morfoloogia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="442"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
         <source>Word lookup</source>
         <translation>Sõnaotsing</translation>
     </message>
