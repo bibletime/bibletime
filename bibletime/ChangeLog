@@ -1,3 +1,6 @@
+2009-05-08 Martin Gruner <mgruner@crosswire.org>
+	* Rewrote Sword library detection code for compiling in a hopefully platform-independent way
+
 2009-04-26 Gary Holmlund
 	* Change Mag window to use language specific font type and size.
 

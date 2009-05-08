@@ -70,6 +70,7 @@ QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
 #This must come before the target definition!
 LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
+	${SWORD_LIBRARY_DIR}
 )
 
 IF(APPLE)
@@ -91,7 +92,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
 		${QT_LIBRARIES}
 		${CLUCENE_LIBRARY}
-		${SWORD_LIBS}
+		${SWORD_LIBRARY}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
@@ -110,7 +111,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${QT_LIBRARIES}
 		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
-		${SWORD_LIBS}
+		${SWORD_LIBRARY}
 	)
 	# Unit Tests
 	ADD_CUSTOM_TARGET(test
