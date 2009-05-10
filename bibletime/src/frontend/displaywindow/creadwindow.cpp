@@ -126,8 +126,8 @@ void CReadWindow::storeProfileSettings(CProfileWindow * const settings) {
 	QRect rect;
 	rect.setX(parentWidget()->x());
 	rect.setY(parentWidget()->y());
-	rect.setWidth(width());
-	rect.setHeight(height());
+	rect.setWidth(parentWidget()->width());
+	rect.setHeight(parentWidget()->height());
 	settings->setGeometry(rect);
 
 	// settings->setScrollbarPositions( m_htmlWidget->view()->horizontalScrollBar()->value(), m_htmlWidget->view()->verticalScrollBar()->value() );
