@@ -63,6 +63,11 @@ QStringList* CSwordLexiconModuleInfo::entries() {
 			return m_entryList;
 		}
 
+		if ( name() == QString("EReo_en")) {
+			qWarning("Module EReo_en is buggy and will not be loaded.");
+			return m_entryList;
+		}
+
 		QString dir(util::filesystem::DirectoryUtil::getUserCacheDir().absolutePath());
 		QFile f1(
 			QString(dir)
