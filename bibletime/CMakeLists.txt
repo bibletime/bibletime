@@ -36,6 +36,10 @@ FIND_PACKAGE(Boost REQUIRED)
 #
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 FIND_PACKAGE(CLucene REQUIRED)
+
+# optional: Try to detect CURL and add it to the linker flags if found, maybe Sword needs it
+FIND_PACKAGE(CURL)
+
 FIND_PACKAGE(Sword REQUIRED)
 ######################################################
 
@@ -92,6 +96,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
 		${QT_LIBRARIES}
 		${CLUCENE_LIBRARY}
+		${CURL_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -111,6 +116,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${QT_LIBRARIES}
 		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
+		${CURL_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 	# Unit Tests
