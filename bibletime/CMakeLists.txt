@@ -100,6 +100,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${CLUCENE_LIBRARY}
 		${CURL_LIBRARIES} # optional, empty if not found
 		${ICU_LIBRARIES} # optional, empty if not found
+		${ICU_I18N_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -121,6 +122,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${CLUCENE_LIBRARY}
 		${CURL_LIBRARIES} # optional, empty if not found
 		${ICU_LIBRARIES} # optional, empty if not found
+		${ICU_I18N_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 	# Unit Tests
