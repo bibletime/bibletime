@@ -12,6 +12,7 @@
 
 //Sword includes
 #include <swbuf.h>
+#include <swmodule.h>
 #include <osishtmlhref.h>
 
 namespace Filters {
@@ -31,10 +32,12 @@ BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::OSI
 				noteType = Unknown;
 				swordFootnote = 1;
 				inCrossrefNote = false;
+				entryAttributes = module->getEntryAttributes();
 			}
 
 			unsigned short int swordFootnote;
 			bool inCrossrefNote;
+			sword::AttributeTypeList entryAttributes;
 
 			enum NoteType {
 				Unknown,

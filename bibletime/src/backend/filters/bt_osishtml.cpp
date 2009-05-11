@@ -262,7 +262,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					buf.append("<span class=\"crossreference\">");
 #ifdef SWORD_SIMPLERENDER
 					sword::SWBuf footnoteNumber = tag.getAttribute("swordFootnote");
-					sword::SWBuf footnoteBody = myModule->getEntryAttributes()["Footnote"][footnoteNumber]["body"];
+					sword::SWBuf footnoteBody = myUserData->entryAttributes["Footnote"][footnoteNumber]["body"];
 					buf += myModule->RenderText(footnoteBody);
 #endif
 				}
