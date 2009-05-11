@@ -1,5 +1,5 @@
 2009-05-11 Martin Gruner <mgruner@crosswire.org>
-	* Added detection of curl, which is optional, but may be required by Sword for linking
+	* Added detection of curl and icu, which is optional, but may be required by Sword for linking
 
 2009-05-08 Martin Gruner <mgruner@crosswire.org>
 	* Rewrote Sword library detection code for compiling in a hopefully platform-independent way

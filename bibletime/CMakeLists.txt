@@ -39,6 +39,8 @@ FIND_PACKAGE(CLucene REQUIRED)
 
 # optional: Try to detect CURL and add it to the linker flags if found, maybe Sword needs it
 FIND_PACKAGE(CURL)
+# optional: Try to detect ICU and add it to the linker flags if found, maybe Sword needs it
+FIND_PACKAGE(ICU)
 
 FIND_PACKAGE(Sword REQUIRED)
 ######################################################
@@ -97,6 +99,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${QT_LIBRARIES}
 		${CLUCENE_LIBRARY}
 		${CURL_LIBRARIES} # optional, empty if not found
+		${ICU_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -117,6 +120,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
 		${CURL_LIBRARIES} # optional, empty if not found
+		${ICU_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 	# Unit Tests
