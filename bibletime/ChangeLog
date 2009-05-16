@@ -1,3 +1,6 @@
+2009-05-16 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.beta3, hopefully the last beta
+
 2009-05-11 Martin Gruner <mgruner@crosswire.org>
 	* Added detection of curl and icu, which is optional, but may be required by Sword for linking
 
