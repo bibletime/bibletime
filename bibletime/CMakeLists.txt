@@ -41,6 +41,8 @@ FIND_PACKAGE(CLucene REQUIRED)
 FIND_PACKAGE(CURL)
 # optional: Try to detect ICU and add it to the linker flags if found, maybe Sword needs it
 FIND_PACKAGE(ICU)
+# optional: Try to detect ZLib and add it to the linker flags if found, maybe Sword needs it
+FIND_PACKAGE(ZLIB)
 
 FIND_PACKAGE(Sword REQUIRED)
 ######################################################
@@ -101,6 +103,7 @@ IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 		${CURL_LIBRARIES} # optional, empty if not found
 		${ICU_LIBRARIES} # optional, empty if not found
 		${ICU_I18N_LIBRARIES} # optional, empty if not found
+		${ZLIB_LIBRARIES} # optional, empty if not found
 		${SWORD_LIBRARY}
 	)
 ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
@@ -376,9 +379,10 @@ ELSEIF(APPLE)
   ENDFOREACH(QT_FRAME ${QT_FRAMEWORKS_USED})
   # Other libraries I need
   INSTALL(FILES "${CLUCENE_LIBRARY}" "${CLUCENE_LIBRARY_DIR}/libclucene.0.0.0.dylib" "${CLUCENE_LIBRARY_DIR}/libclucene.0.dylib" "/opt/local/lib/libcurl.4.dylib"
-   	        "/opt/local/lib/libssl.0.9.8.dylib" "/opt/local/lib/libcrypto.0.9.8.dylib" "/opt/local/lib/libicui18n.40.dylib" "/opt/local/lib/libicui18n.40.0.dylib"
-		"/opt/local/lib/libicuuc.40.dylib" "/opt/local/lib/libicuuc.40.0.dylib" "/opt/local/lib/libicuio.40.dylib" "/opt/local/lib/libicuio.40.0.dylib"
-		"/opt/local/lib/libicudata.40.dylib" "/opt/local/lib/libicudata.40.0.dylib" "/opt/local/lib/libpng12.0.dylib"
+   	        "/opt/local/lib/libssl.0.9.8.dylib" "/opt/local/lib/libcrypto.0.9.8.dylib" #"/opt/local/lib/libicui18n.40.dylib" "/opt/local/lib/libicui18n.40.0.dylib"
+		#"/opt/local/lib/libicuuc.40.dylib" "/opt/local/lib/libicuuc.40.0.dylib" "/opt/local/lib/libicuio.40.dylib" "/opt/local/lib/libicuio.40.0.dylib"
+		#"/opt/local/lib/libicudata.40.dylib" "/opt/local/lib/libicudata.40.0.dylib"
+		"/opt/local/lib/libpng12.0.dylib"
           DESTINATION "${BT_DESTINATION}/../Library")
 
   # Qt Plugins
