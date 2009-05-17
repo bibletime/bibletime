@@ -133,6 +133,9 @@ void BtHtmlJsObject::timeOutEvent(const QString& attributes)
     if (m_prev_attributes != attributes)
         return;
 
+	if ( ! m_display->view()->underMouse())
+		return;
+
     m_prev_attributes = "";
 	CInfoDisplay::ListInfoData infoList;
 	QStringList attrList = attributes.split("||");
