@@ -41,6 +41,7 @@ signals:
 private:
 	int m_int;
 	BtHtmlReadDisplay* m_display;
+    QString m_prev_attributes;
 
 	struct DNDData 
 	{

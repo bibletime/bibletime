@@ -78,14 +78,16 @@ void BtHtmlJsObject::mouseDownRight(const QString& url, const QString& lemma)
 		m_display->setLemma(lemma);
 }
 
-void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x, const int& y, const bool& shiftKey)
+// The mouse move event starts in the javascript function "mouseMoveHandler" in bthtml.js. It calls this function
+void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey)
 {
 	if(!m_dndData.isDragging && m_dndData.mousePressed) 
 	{
+        // If we have not started dragging, but the mouse button is down, create a the mime data
 		QPoint current(x,y);
 		if ((current - m_dndData.startPos).manhattanLength() > 4 /*qApp->startDragDistance()*/ ) 
 		{
-			QDrag* d = 0;
+			QDrag* drag = 0;
 			if (m_dndData.url.size() != 0 ) 
 			{
 				// create a new bookmark drag!
@@ -94,9 +96,9 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x,
 				CReferenceManager::Type type;
 				if ( !CReferenceManager::decodeHyperlink(m_dndData.url, moduleName, keyName, type) )
 					return;
-				d = new QDrag(m_display->view());
+				drag = new QDrag(m_display->view());
 				BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);
-				d->setMimeData(mimedata);
+				drag->setMimeData(mimedata);
 				//add real Bible text from module/key
 				if (CSwordModuleInfo* module = CPointers::backend()->findModuleByName(moduleName)) 
 				{
@@ -105,36 +107,33 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& /*attributes*/, const int& x,
 					mimedata->setText(key->strippedText()); // This works across applications!
 				}
 			}
-#if 0
-			else if ((m_dndData.dragType == DNDData::Text) && !m_dndData.selection.isEmpty()) {
-				d = new QDrag(KHTMLPart::view()->viewport());
-				BTMimeData* mimedata = new BTMimeData(m_dndData.selection);
-				d->setMimeData(mimedata);
-			}
-#endif
-			if (d) {
+			if (drag) 
+            {
 				m_dndData.isDragging = true;
 				m_dndData.mousePressed = false;
-
-				//first make a virtual mouse click to end the selection, if it's in progress
-//				QMouseEvent e(QEvent::MouseButtonRelease, QPoint(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
-//				QApplication::sendEvent(view()->viewport(), &e);
-				d->exec(Qt::CopyAction, Qt::CopyAction);
-
+				drag->exec(Qt::CopyAction, Qt::CopyAction);
 			}
 		}
 	}
 	else if (m_display->getMouseTracking() &&  !shiftKey) 
 	{
-		//no mouse button pressed and tracking enabled
-		// After some millisecs the new timer activates the Mag window update, see timerEvent()
-		// QObject has simple timer
-		emit startTimer(CBTConfig::get(CBTConfig::magDelay));
+		// no mouse button pressed and tracking enabled
+        // start timer that updates the mag window
+        // Sets timer in javascript. See bthtml.js startTimer()
+		emit startTimer(CBTConfig::get(CBTConfig::magDelay));  
+        m_prev_attributes = attributes;
+        // When the javascript timer interupts, the see timerEvent() in bthtml.js
+        // will call the timeOutEvent in this class
 	}
 }
 
+// called from javascript timerEvent() in bthtml.js
 void BtHtmlJsObject::timeOutEvent(const QString& attributes)
 {
+    if (m_prev_attributes != attributes)
+        return;
+
+    m_prev_attributes = "";
 	CInfoDisplay::ListInfoData infoList;
 	QStringList attrList = attributes.split("||");
 	for (int i=0; i<attrList.count(); i++)
@@ -167,7 +166,7 @@ void BtHtmlJsObject::timeOutEvent(const QString& attributes)
 			}
 		}
 	}
-	// Update the mag if there is new content
+	// Update the mag if valid attributes were found
 	if (!(infoList.isEmpty())) 
 	{
 		CPointers::infoDisplay()->setInfo(infoList);

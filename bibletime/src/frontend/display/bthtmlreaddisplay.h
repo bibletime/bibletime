@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef BTHTMLREADDISPLAY_H
 #define BTHTMLREADDISPLAY_H
 
@@ -17,7 +15,6 @@
 #include "creaddisplay.h"
 
 //Qt includes
-//Added by qt3to4:
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QTimerEvent>
@@ -41,7 +38,8 @@ class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
 public:
 	//reimplemented functions from CDisplay
 	// Returns the right text part in the specified format.
-	virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
+	virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, 
+                                const CDisplay::TextPart part = CDisplay::Document );
 
 	// Sets the new text for this display widget.
 	virtual void setText( const QString& newText );
@@ -87,8 +85,11 @@ protected:
 	QMap<NodeInfoType, QString> m_nodeInfo;
 	int m_magTimerId;
 
-// For debugging javascript
-//	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
+// For debugging javascript - setbreakpoint in this function to catch javascript error messages
+//#define DEBUG_JS
+#ifdef DEBUG_JS
+	void javaScriptConsoleMessage (const QString & message, int lineNumber, const QString & sourceID );
+#endif
 
 private:
 	void initJavascript();

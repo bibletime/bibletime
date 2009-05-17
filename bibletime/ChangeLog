@@ -1,3 +1,6 @@
+2009-05-16 Gary Holmlund
+        * Fix problem causing Mag window to update when it should not.
+
 2009-05-16 Martin Gruner <mgruner@crosswire.org>
 	* release 2.0.beta3, hopefully the last beta
 

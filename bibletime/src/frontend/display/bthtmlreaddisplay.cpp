@@ -213,10 +213,19 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 	return QString();
 }
 
+#include <QTextStream>
 // Puts html text and javascript into QWebView
 void BtHtmlReadDisplay::setText( const QString& newText ) 
 {
 	QString jsText = newText;
+
+     QFile file("out.txt");
+     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+         return;
+
+     QTextStream out(&file);
+     out <<  newText << "\n";
+
 	jsText.replace(body,jsBegin+javascript+jsEnd+body);
 
 	// Disconnect any previous connect and connect to slot that loads the javascript object
@@ -284,8 +293,8 @@ void BtHtmlReadDisplay::slotLoadFinished(bool)
 	emit completed();
 }
 
-// For debugging javascript
-#if 0
+// For debugging javascript - set breakpoint in this function to catch javascript error messages
+#if DEBUG_JS
 void BtHtmlReadDisplay::javaScriptConsoleMessage (const QString& message, int lineNumber, const QString& sourceID )
 {
 }
