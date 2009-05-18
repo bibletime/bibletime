@@ -133,9 +133,6 @@ void BtHtmlJsObject::timeOutEvent(const QString& attributes)
     if (m_prev_attributes != attributes)
         return;
 
-	if ( ! m_display->view()->underMouse())
-		return;
-
     m_prev_attributes = "";
 	CInfoDisplay::ListInfoData infoList;
 	QStringList attrList = attributes.split("||");
@@ -175,3 +172,11 @@ void BtHtmlJsObject::timeOutEvent(const QString& attributes)
 		CPointers::infoDisplay()->setInfo(infoList);
 	}
 }
+
+// clearing the previous attribute effectively stops any time out event 
+// that is in progress
+void BtHtmlJsObject::clearPrevAttribute()
+{
+    m_prev_attributes = "";
+}
+

@@ -28,13 +28,17 @@ class QScrollArea;
 class QWidget;
 class QString;
 class BtHtmlReadDisplay;
-
+class QEvent;
 
 /** The implementation for the HTML read display.
   * @author The BibleTime team
   */
-class BtHtmlReadDisplay : public QWebPage, public CReadDisplay {
+class BtHtmlReadDisplay : public QWebPage, public CReadDisplay 
+{
 	Q_OBJECT
+
+    friend class BtHtmlReadDisplayView;
+
 public:
 	//reimplemented functions from CDisplay
 	// Returns the right text part in the specified format.
@@ -108,6 +112,7 @@ protected:
 	void contextMenuEvent(QContextMenuEvent* event);
 	BtHtmlReadDisplayView(BtHtmlReadDisplay* display, QWidget* parent);
 	~BtHtmlReadDisplayView();
+    bool event(QEvent* e);
 
 private:
 	BtHtmlReadDisplay* m_display;

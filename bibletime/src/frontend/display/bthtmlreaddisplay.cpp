@@ -371,3 +371,12 @@ void BtHtmlReadDisplayView::dragMoveEvent( QDragMoveEvent* e )
 	e->ignore();
 }
 
+bool BtHtmlReadDisplayView::event(QEvent* e)
+{
+    // If the mouse leaves the widget clear the previous attribute
+    // in bthtmljsobject. This cancels any time out event that
+    // is in progress. 
+    if ( e->type() == QEvent::Leave )
+        m_display->m_jsObject->clearPrevAttribute();
+    return QWidget::event(e);
+}

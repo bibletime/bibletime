@@ -23,6 +23,7 @@ public:
 	~BtHtmlJsObject(){}
 	void moveToAnchor(const QString& anchor);
 	void setBodyEditable(bool editable);
+    void clearPrevAttribute();
 
 public slots: void mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey);
 	void mouseClick(const QString& url);
