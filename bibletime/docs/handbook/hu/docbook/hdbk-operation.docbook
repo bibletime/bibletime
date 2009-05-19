@@ -2,22 +2,22 @@
   <title>A program működése</title>
   <sect1 id="hdbk-op-overview">
     <title>A program áttekintése</title>
-    <para>This is what a typical &bibletime; session looks like: 
+    <para>Így néz ki egy tipikus &bibletime; munkafolyamat: 
     <mediaobject>
       <imageobject>
         <imagedata fileref="ss_mainterms.png" format="PNG" />
       </imageobject>
       <textobject>
-        <phrase>The &bibletime; application window</phrase>
+        <phrase>A &bibletime; alkalmazás ablak</phrase>
       </textobject>
     </mediaobject>
-    You can easily see the different parts of the application. The Bookshelf on 
-the left side is used to open works and to manage your bookmarks. The little 
-"Mag" window below the Bookshelf is used to display extra information that 
-is embedded in documents. When you move your mouse over a footnote marker, 
-for example, then the Mag will display the actual content of the 
-footnote. The toolbar gives you quick access to important functions, and the 
-Desk on the right side is where you do your real work.</para>
+    Könnyen felismerheti az alkalmazás különböző részeit. A Könyvespolc a bal 
+oldalon a dokumentumok és a könyvjelzők kezelésére használható. A kisebb 
+"Nagyító" ablak alatta a dokumentumokba ágyazott extra információt 
+mutatja. Amikor azt egérmutatót egy lábjegyzet jelzés fölé viszi, a 
+"Nagyító" megmutatja az aktuális lábjegyzet tartalmát. Az eszköztár gyors 
+elérést biztosít a különböző funkciókhoz, míg a jobb oldalon a munkaasztal a 
+megnyitott dokumentum helye.</para>
 
     <para>Most tekintsük át a részeket egyesével.</para>
   </sect1>
@@ -253,7 +253,7 @@ szám előfordulását keresi, így kell megadni: 'strong:H8077'. Ha a fő
 szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása után ':', 
 és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's szám 
 előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
-        <para>Available text types: 
+        <para>Lehetséges szövegtípusok:  
         <table id="hd-op-search-config-syntax-table">
 	  <title>Keresési típusok</title>
           <tgroup cols="2">
