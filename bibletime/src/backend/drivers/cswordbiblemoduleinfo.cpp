@@ -167,9 +167,6 @@ unsigned int CSwordBibleModuleInfo::verseCount( const QString& book, const unsig
 
 unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 	unsigned int bookNumber = 0;
-	bool found = false;
-	int min = 0;
-	int max = 1;
 
 	//find out if we have ot and nt, only ot or only nt
 	initBounds();
@@ -182,6 +179,9 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 
 	bookNumber = ((key->Testament() > 1) ? key->BMAX[0] : 0) + key->Book();
 #else
+	bool found = false;
+	int min = 0;
+	int max = 1;
 
 	if ((m_hasOT>0 && m_hasNT>0) || (m_hasOT == -1 && m_hasNT == -1)) {
 		min = 0;
