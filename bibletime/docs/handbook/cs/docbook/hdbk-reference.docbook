@@ -1,0 +1,758 @@
+<chapter id="hdbk-reference">
+  <title>Odkazy</title>
+  <sect1 id="hdbk-reference-menus">
+    <title>Odkazy Hlavního menu</title>
+    <para>V této sekci najdete detailní popis všech položek základního menu 
+&bibletime;. Jsou roztříděné stejně, jak se objevují v &bibletime;, včetně 
+podřízených položek zaznamenaných pod hlavní položkou menu ke které 
+náleží. Horké klávesy můžete vidět u každé položky; kompletní seznam všech 
+horkých kláves naleznete v <link linkend="hdbk-reference-hotkeys">této 
+sekci</link>.</para>
+    <sect2 id="hdbk-reference-menus-file">
+      <title>
+        <guimenu>File</guimenu>
+      </title>
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-menus-file-quit">
+            <term>
+              <menuchoice>
+                <shortcut>
+                  <keycombo action="simul">
+                  <keycap>&Ctrl;Q</keycap></keycombo>
+                </shortcut>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_exit.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject>File</guimenu>
+                <guimenuitem>Quit</guimenuitem>
+              </menuchoice>
+            </term>
+            <listitem>
+              <para>
+              <action>Zavře &bibletime;.</action> &bibletime; se vás zeptá, jestli si 
+přejete zapsat neuložené změny na disk.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect2>
+
+    <sect2 id="hdbk-reference-menus-view">
+      <title>
+        <guimenu>View</guimenu>
+      </title>
+
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-view-fullscreenmode">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F5</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_window_fullscreen.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>View</guimenu>
+              <guimenuitem>Fullscreen mode</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Přepíná zobrazení přes celou obrazovku.</action> Aktivujte tuto 
+možnost pokud chcete maximalizovat okno &bibletime;.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showtoolbar">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F6</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show toolbar</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Přepíná zobrazení nástrojů.</action> Aktivujte tuto možnost pokud si 
+přejete zapnout nebo vypnout Hlavní nástrojovou lištu.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showbookshelf">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookshelf</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Zapne zobrazení knihovny.</action> Zvolte tuto možnost pro zapnutí, 
+nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud 
+potřebujete více času pro časopis.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-view-showmag">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Mag</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Zapne zobrazení časopisu.</action> Zvolte tuto možnost pro zapnutí 
+nebo vypnutí zobrazení časopisu na levé straně.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+    <sect2 id="hdbk-reference-menus-search">
+      <title>
+        <guimenu>Search</guimenu>
+      </title>
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-search-defaultbible">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_find.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Search</guimenu>
+              <guimenuitem>Search in standard bible</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevírá dialog vyhledávání pouze pro vyhledávání ve výchozí 
+Bibli</action>. Do vyhledávacího dialogu mohou být přídána další díla.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="hdbk-reference-menus-search-openworks">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;O</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_find.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Search</guimenu>
+              <guimenuitem>Search in open work(s)</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevírá dialog vyhledávání ve všech dílech</action>. Do 
+vyhledávacího dialogu mohou být přídána další díla.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="hdbk-reference-menus-window">
+      <title>
+        <guimenu>Window</guimenu>
+      </title>
+
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-window-savesession">
+          <term>
+            <menuchoice>
+              <guimenu> Window</guimenu>
+              <guimenuitem>Save session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Ukládá aktuální sezení.</action>. Otevře kontextové menu, kde můžete 
+zvolit již uložené sezení, které bude přepsáno vaším aktuálním. Podívejte se 
+na další položku jak uložit nové sezení.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-savenewsession">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+              </shortcut>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Save as new session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Ukládá aktuální sezení pod novým jménem</action>. Zeptá se na jméno 
+pro uložení sezení.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-loadsession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Load session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Načte existující sezení</action>. Otevře kontextové menu, kde můžete 
+vybrat existující sezení a načíst ho.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-deletesession">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Delete session</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Vymaže existující sezení</action>. Otevře kontextové menu, kde 
+můžete vybrat existující sezení, které má být vymazáno.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-arrangement_mode">
+          <term>
+            <menuchoice>
+              <guimenu>Window</guimenu>
+              <guimenuitem>Arrangement mode</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Ovládá chování jednoduchého rozvržení oken</action>. V otevřeném 
+kontextovém menu můžete zvolit, že se chcete o rozvržení oken starat osobně 
+(Ruční mód) nebo použít připravené možnosti &bibletime; (Automatické módy, 
+tak je vyzkoušejte!)</para>
+          </listitem>
+        </varlistentry>
+
+        <!--- TODO add submen items here -->
+<varlistentry id="hdbk-reference-menus-window-cascade">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;J</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_cascade.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Cascade</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Všechna otevřená okna do kaskády</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-tilevertically">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;G</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile_vert.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile vertically</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Automaticky dláždí všechna otevřená okna vertikálně</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-tilehorizontally">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;H</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_tile_horiz.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Tile horizontally</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+	      <action>Automaticky dláždí všechna otevřená okna horizontálně.</action>.
+	    </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-window-closeall">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_fileclose.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Window</guimenu>
+              <guimenuitem>Close all</guimenuitem>
+            </menuchoice>
+          </term>
+
+          <listitem>
+            <para>
+            <action>Zavře všechna otevřená okna</action>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="hdbk-reference-menus-settings">
+      <title>
+        <guimenu>Settings</guimenu>
+      </title>
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-settings-bibletime">
+          <term>
+            <menuchoice>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_configure.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Settings</guimenu>
+              <guimenuitem>Configure &bibletime;</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevře hlavní konfigurační dialog &bibletime;</action>. Můžete 
+nastavit všechny vlastnosti &bibletime;, které potřebujete. Prosím navštivte 
+<link linkend="hdbk-config-bt">tuto sekci</link> pro více informací.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="hdbk-reference-menus-settings-bookshelf_manager">
+
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F4</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_configuresword.png"
+                  format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Settings</guimenu>
+              <guimenuitem>Bookshelf Manager</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevře dialog kde můžete změnit vaše nastavení Sword a spravovat 
+svou knihovnu</action>. Další inormace naleznete v <link 
+linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="hdbk-reference-menus-help">
+    <title>
+      <guimenu>Help</guimenu>
+    </title>
+      <variablelist>
+        <varlistentry id="hdbk-reference-menus-help-bibletime">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F1</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_contents2.png" format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Help</guimenu>
+              <guimenuitem>Handbook</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevře příručku &bibletime;</action>, kterou právě čtete.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-bible_study_howto">
+          <term>
+            <menuchoice>
+              <shortcut>
+                <keycombo action="simul">
+                  <keycap>F2</keycap>
+                </keycombo>
+              </shortcut>
+              <guimenu>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="i_contents2.png"
+                  format="PNG" />
+                </imageobject>
+              </inlinemediaobject>Help</guimenu>
+              <guimenuitem>Bible Study Howto</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevře průvodce jak studovat Bibli</action>. Přáním týmu &bibletime; 
+je, aby toto HowTo podnítilo čtenáře ke studiu posvátných textů, k tomu 
+dozvědět se co říkají. Tato příručka byla zvolena proto, že neobhajuje 
+doktrínu žádné konkrétní denominace. Očekáváme, že budete číst a studovat 
+Písma, abyste jim rozuměli. Když začnete s postojem, že chcete mít semeno 
+Páně v srdci, On vás nezklame.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry id="hdbk-reference-menus-help-about">
+          <term>
+            <menuchoice>
+	      <guimenu>Help</guimenu>
+	      <guimenuitem>About</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Otevře okno s informacemi o projektu &bibletime;</action> obsahuje 
+informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi 
+&qt; a licenční ujednání.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+  <sect1 id="hdbk-reference-hotkeys">
+    <title>Seznam horkých kláves</title>
+    <para>Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v 
+příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete 
+přesně vědět která z horkých kláves odpovídá té které položce menu, můžete 
+se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké 
+klávesy), nebo si prohlédněte <link linkend="hdbk-reference-menus">tuto 
+sekci</link>.</para>
+    <informaltable>
+      <tgroup cols="2">
+        <colspec colname="hotkey" />
+        <colspec colname="desc" />
+        <thead>
+          <row>
+            <entry>Klávesová zkratka</entry>
+            <entry>Popis</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Alt;Left</keycap></keycombo>
+            </entry>
+            <entry>Posune zpět v historii aktivního okna.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Alt;Right</keycap></keycombo>
+            </entry>
+            <entry>Posune vpřed v historii aktivního okna.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;F</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-search-defaultbible"> <menuchoice> 
+<guimenu>Hledat</guimenu> <guimenuitem>Hledat ve výchozí bibli</guimenuitem> 
+</menuchoice> </link>otevře vyhledávací dialog pro vyhledávání ve výchozí 
+bibli.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;G</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
+vertikálně</guimenuitem> </menuchoice> zapnout automatické skládání oken.
+	    </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;H</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky dlaždice 
+horizontálně</guimenuitem> </menuchoice> zapne automatické skládání oken.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;J</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem> 
+</menuchoice> zapne automatické skládání oken do kaskády.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;M</keycap></keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
+rozvržení</guimenuitem> <guimenuitem>Ruční mód</guimenuitem> </menuchoice> 
+zapne manuální skládání oken.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;S</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-window-savenewsession"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Uložit jako novou relaci</guimenuitem> 
+</menuchoice> </link> uloží aktuální náhled jako novou relaci.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;&Alt;W</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> 
+</link> zavře všechna otevřená okna.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;-</keycap></keycombo>
+            </entry>
+            <entry>Oddálit. Zmenší velikost písma v aktivním okně.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;+</keycap></keycombo>
+            </entry>
+            <entry>Přiblížit. Zvětší velikost písma v aktivním okně.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;A</keycap></keycombo>
+            </entry>
+            <entry>Vybrat vše. Vybere všechen text v aktivním okně.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;C</keycap></keycombo>
+            </entry>
+            <entry>Kopírovat. Zkopíruje vybraný text do schránky.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;F</keycap></keycombo>
+            </entry>
+            <entry>Hledat. Vyhledává v textu aktivního okna</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;G</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Dlaždice vertikálně</guimenuitem> 
+</menuchoice> </link>.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;H</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Dlaždice horizontálně</guimenuitem> 
+</menuchoice> </link>.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;J</keycap></keycombo>
+            </entry>
+
+            <entry>
+	      <link linkend="hdbk-reference-menus-window-closeall"> <menuchoice> 
+<guimenu>Okno</guimenu> <guimenuitem>Kaskáda</guimenuitem> </menuchoice> 
+</link> obdoba oken.
+            </entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;O</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-search-openworks"> <menuchoice> 
+<guimenu>Hledat</guimenu> <guimenuitem>Hledat v otevřených 
+dílech</guimenuitem> </menuchoice> </link> otevře dialog pro vyhledávání ve 
+všech otevřených dílech.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;Q</keycap></keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-file-quit"> <menuchoice> 
+<guimenu>Soubor</guimenu> <guimenuitem>Ukončit</guimenuitem> </menuchoice> 
+</link> ukončí &bibletime;.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;W</keycap></keycombo>
+            </entry>
+            <entry>Zavře aktuální okno.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>F1</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> 
+</menuchoice> otevře příručku.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>F2</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Návod, jak studovat 
+Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>F4</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-settings-bookshelf_manager"> 
+<menuchoice> <guimenu>Nastavení</guimenu> <guimenuitem>Správa 
+knih</guimenuitem> </menuchoice> </link>otevře správce knih.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>F8</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-view-showbookshelf"> <menuchoice> 
+<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit knihovnu</guimenuitem> 
+</menuchoice> </link>zapne zobrazení knihovny.</entry>
+          </row>
+          <row>
+            <entry>
+              <keycombo action="simul">
+                <keycap>F9</keycap>
+              </keycombo>
+            </entry>
+            <entry>
+            <link linkend="hdbk-reference-menus-view-showmag"> <menuchoice> 
+<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit časopis</guimenuitem> 
+</menuchoice> </link>zapne zobrazení okna časopisu.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+</chapter>

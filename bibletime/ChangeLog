@@ -1,0 +1,1101 @@
+2009-05-28 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0
+
+2009-05-20 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.rc1
+
+2009-05-16 Gary Holmlund
+        * Fix problem causing Mag window to update when it should not.
+
+2009-05-16 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.beta3, hopefully the last beta
+
+2009-05-11 Martin Gruner <mgruner@crosswire.org>
+	* Added detection of curl and icu, which is optional, but may be required by Sword for linking
+
+2009-05-08 Martin Gruner <mgruner@crosswire.org>
+	* Rewrote Sword library detection code for compiling in a hopefully platform-independent way
+
+2009-04-26 Gary Holmlund
+	* Change Mag window to use language specific font type and size.
+
+2009-04-29 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.beta2
+
+2009-04-26 Gary Holmlund
+	* Fix clicking of links in the Mag Window.
+
+2009-04-25 Gary Holmlund
+	* Fix drag/drop onto the display window.
+
+2009-04-25 Martin Gruner <mgruner@crosswire.org>
+	* include bugfix from Fabio Correa: fix cmake syntax for "make test" generation
+
+2009-04-24 Thomas Abthorpe
+	* Add Hungarian Handbook translation to the build
+
+2009-04-21 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.beta1
+
+2009-04-21 Martin Gruner <mgruner@crosswire.org>
+	* Applied cmake patch from Greg Hellings with slight modifications
+	* Applied translation patches from Jaak Ristioja
+	* Applied patch from Jaak Ristioja which makes generated config.h obsolete
+	* Applied patch from Jaak Ristioja which simplifies .moc file generation
+
+2009-04-09 Gary Holmlund
+    * Add translatable text for several dialogs
+      These words need transating:
+        Ok, Open, Save, Cancel, Close, Discard, Apply, Reset, Restore Defaults,
+        Help, Save All, Yes, Yes To All, No, No To All
+
+2009-03-25 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.alpha3
+
+2009-03-23 Martin Gruner <mgruner@crosswire.org>
+	* revived contributor data in about dialog
+
+2009-03-22 Thomas Abthorpe
+    * Add Czech translation to the build
+
+2009-03-20 Gary Holmlund
+    * Use docking windows instead of splitters for the left side windows. The
+      docking windows can be moved by dragging from their title bar. They can
+      be moved to the left, right, top, or bottom of the main window. They can
+      be dropped above, below, or on top of other docking windows. If dropped
+      on top of another docking window, tabs are automatically created. They
+      can be resized by dragging from their edges. The location of the docking
+      windows can be saved by saving a session. The default session ensures that
+      they look the same as the last session. Each docking window has a menu
+      under "View" to toggle its visibility.
+
+2009-03-20 Martin Gruner <mgruner@crosswire.org>
+	* release 2.0.alpha2
+
+2009-03-12 Gary Holmlund
+    * Use default browser instead of just konqueror or firefox. This should work
+      much better for non-linux platforms
+
+2009-03-12 Gary Holmlund
+    * New Help > About dialog with BibleTime, Sword, Qt, and License tabs.
+
+2009-03-10 Martin Gruner <mgruner@crosswire.org>
+	* Slightly improved clucene integration robustness with exception handling.
+
+2009-03-07 Gary, Eeli, Greg, Martin
+	* many platform-compatibility enhancements
+	* release 2.0.alpha1
+
+2009-02-22 Gary
+	* Completed the port to QT. KDE is no longer required. (Hooray!)
+
+2009-02-07 Gary, Eeli, Martin
+	* several bugfixes
+	* releasing 1.7 final
+
+2009-02-03 Gary, Eeli, Martin
+	* tons of bugfixes
+	* threading disabled in Bookshelf Manager because of non-threadsafe ftp library in Sword
+	* beginnings of port to QTWebKit by Gary (code disabled by default)
+	* release 1.7rc1
+
+2008-11-05 Martin Gruner <mgruner@crosswire.org>
+	* more const modifier fixes in various sources to improve standards conformity
+
+2008-09-12 Martin Gruner <mgruner@crosswire.org>
+	* Bugfixes to the cmake build framework (with MacOS contributions by Greg Hellings)
+	* const modifier fixes in various sources to improve standards conformity by Eeli
+
+2008-08-27 Martin Gruner <mgruner@crosswire.org>
+	* Released 1.7.beta1 for distributions to package
+	* several bugfixes
+
+2008-05 * MAJOR CHANGES FOR 1.7 *
+	* The code is in svn instead of cvs
+	* Port to KDE4/QT4, reduced KDE dependency to a minimum
+	* Command line options have changed (--help is out of date)
+	* Configuration files have been moved to ~/.bibletime/
+	* New build system: cmake
+	* i18n of UI strings is now handled by QT
+		* tr() function in the source code, .ts files for translations
+	* UI strings have been changed radically
+	* Massive code cleanups and internal refactoring
+		* New classes, rewritten and renamed classes, removed classes
+		* Better directory structure
+		* Cleaned up #includes
+	* New bookshelf manager
+	* New external communications interface DBUS (instead of DCOP)
+	* Bookshelf improvements
+		* Separation of works and bookmarks on two tabs
+		* Different work grouping types supported
+		* Hide/Unhide feature to select which modules should be displayed
+	* Corrections and enhancements to session management
+	* Search dialog now has a history for the modules to search in
+	* Bugfixes to backend filters and display templates
+	* Disabled features
+		* Key binding configuration (maybe this will re-appear in a later release)
+		* Search analysis (should re-appear soon)
+		* Startup tips (probably not coming back)
+		* Drag and Drop in the main window Bookshelf (should re-appear)
+		* "About" dialogs in Help menu ("About BibleTime" is probably needed back)
+	* Eeli Kaikkonen and Martin Gruner are responsible for most of the work
+		with the help of Jeremy Erickson and some other contributors,
+		Joachim Ansorg has retired from coding
+
+2007-11-01 Martin Gruner <mgruner@crosswire.org>
+	* Released 1.6.5 with several important bugfixes
+
+2007-04-18 Joachim Ansorg <info@bibletime.info>
+  * Released version 1.6.4
+
+2007-04-02 Joachim Ansorg <info@bibletime.info>
+  * Updated list of contributors
+
+2007-03-23 Joachim Ansorg <info@bibletime.info>
+  * Printing now uses the windows's display settings (verse-numbers)
+
+2007-03-22 Joachim Ansorg <info@bibletime.info>
+  * Applied a patch by Eeli Kaikkonen to have a delay before the mag content appears
+  * Added Eeli Kaikkonen to the list of contributors
+
+2007-03-22 Joachim Ansorg <info@bibletime.info>
+  * Fixed the osis filter to work with the new NETfree module
+
+2007-03-14 Joachim Ansorg <info@bibletime.info>
+  * Added our own thmlplain filter to fix a CLucene indexing bug
+
+2007-02-25 David Blue <thedeveloper@users.sourceforge.net>
+  * Added CSS to templates to display Lord in small-caps when tagged that
+  way in the module. Fixes Bug #1660413.
+
+2007-02-19 Joachim Ansorg <info@bibletime.ifno>
+  * Added Chunshek Chan to the contributors
+
+2007-02-03 Martin Gruner <mgruner@crosswire.org>
+  * more fixes to the make system
+  * released 1.6.3b
+
+2006-01-28 Joachim Ansorg <info@bibletime.info>
+  * fixes to the make system
+  * released 1.6.3a
+
+2007-01-27 Martin Gruner <mgruner@crosswire.org>
+  * fixed searching in unicode texts which I broke on 2006-12-05; please accept my apologies.
+  * released 1.6.3
+
+2007-01-27 Martin Gruner <mgruner@crosswire.org>
+  * fixed session loading code to handle main window properties correctly
+	* fixed hotkey configuration for books
+
+2007-01-14 Martin Gruner <mgruner@crosswire.org>
+  * another search fix, set max lucene field size to 1 MiB. BibleTime should not truncate long entries any more.
+
+2006-12-27 Joachim Ansorg <info@bibletime.info>
+  * Added Jeremy Erickson to the contributors
+  * Changed copyright to 1999-2007
+
+2006-12-26 Joachim Ansorg <info@bibletime.info>
+  * Fixed some Makefile.am issues
+  * Added some contributors to the about dialog
+
+2006-12-14 Martin Gruner <mgruner@crosswire.org>
+  * fixed handbook typo
+  * fixed required clucene version to 0.9.16
+
+2006-12-07 Martin Gruner <mgruner@crosswire.org>
+  * packaged BibleTime 1.6.2
+
+2006-12-07 Daniel Glassey <dglassey@crosswire.org>
+  * add --enable-howto to be able to disable building bible study howto
+    (required by Debian :/)
+
+2006-12-05 Martin Gruner <mgruner@crosswire.org>
+  * BibleTime will now index, search and display pre-chapter and pre-book
+  headings; small cleanups
+  * searching should work as expected now with regard to headings
+
+2006-12-02 Martin Gruner <mgruner@crosswire.org>
+  * allow automake 1.10
+
+2006-11-30 Joachim Ansorg <info@bibletime.info>
+  * Fix for missing text if GBF red letter words were used
+
+2006-11-27 Joachim Ansorg <info@bibletime.info>
+  * The tree state is restored if a change in the Sword setup forces a reload at runtime.
+
+2006-11-25 Martin Gruner <mgruner@crosswire.org>
+  * Fixed 2 tooltips which were swapped
+  * removed old leftover code that caused problems with --enable-final
+
+2006-11-24 Joachim Ansorg <info@bibletime.info>
+  * Updated contributors in the about dialog
+
+2006-11-01 Martin Gruner <mgruner@crosswire.org>
+  * Reverted Analyzer Change of 1.6.1 to use StandardAnalyzer again, but
+  without stop words. Whitespace Analyzer did not correctly strip punctuation,
+  so that hits were missing. Sorry. Search should work as expected now.
+  * Added ability to display Book and Chapter headings
+
+2006-10-25 Martin Gruner <mgruner@crosswire.org>
+  * Fixed crash on module uninstallation
+  * released BibleTime 1.6.1
+
+2006-10-21 Martin Gruner <mgruner@crosswire.org>
+  * Fixed KJV 2006 display, stripping NT transcription footnotes correctly
+  again
+  * Changed Search to use WhitespaceAnalyzer instead of StandardAnalyzer. Now
+  the default stop words of StandardAnalyzer are ignored.
+  * Fixed search result highlighting for queries with "*" - do not highlight
+  across word boundaries any more
+  * Fixed fullscreen toggeling
+
+2006-10-10 Martin Gruner <mgruner@crosswire.org>
+  * small clucene.m4 bugfix for nonstandard sword installations
+
+2006-09-22 Joachim Ansorg <info@bibletime.info>
+  * Release of BibleTime 1.6
+
+2006-09-12 Martin Gruner <mgruner@crosswire.org>
+  * Fixed personal commentary display bug
+
+2006-08-25 Martin Gruner <mgruner@crosswire.org>
+  * Changed location of bibletime.desktop to /usr/share/applications
+
+2006-08-23 Martin Gruner <mgruner@crosswire.org>
+  * released BibleTime 1.6rc1
+
+2006-08-21 Martin Gruner <mgruner@crosswire.org>
+  * Fixed Keychooser Hotkeys to cross testament boundary
+
+2006-08-20 Joachim Ansorg <info@bibletime.info>
+  * Fixed the shrinking to zero of the left mainwindow's left part
+  * Fixed crossrefs in the clucene index
+  * Improved the layout of the searchdialog options
+  * Modules which require a more recent Sword are not loaded
+
+2006-08-20 Martin Gruner <mgruner@crosswire.org>
+  * Added documentation for "Find text in read window"
+
+2006-08-07 Martin Gruner <mgruner@crosswire.org>
+  * verse keychooser bugfix and cleanups
+
+2006-08-01 David Blue <thedeveloper@users.sourceforge.net>
+  * Matched the High Contrast Template to the High Contrast Black Text
+    colours in kde
+
+2006-07-25 David Blue <thedeveloper@users.sourceforge.net>
+  * Fixed display of crossrefs in all templates
+
+2006-06-20 Martin Gruner <mgruner@crosswire.org>
+  * major patch to the printing system: printing works dynamically and
+  respects the display and filter settings, instead of loading the default
+  settings at program startup time
+  * Joachim, why does printing not work with headings and scriprefs and other
+  markup elements? Besides, it always shows verse numbers, even if they are
+  turned off
+  * Please test printing
+
+2006-06-17 Martin Gruner <mgruner@crosswire.org>
+  * Released BibleTime 1.6beta3
+
+2006-06-15 Martin Gruner <mgruner@crosswire.org>
+  * BibleTime now unlocks immediately
+  * The module icon reflects this immediately
+  * unlock status reflects correct/incorrect key now, instead of empty/set
+  (possibly false) key
+  * Sword config setting and text retrieval prevention from locked modules are
+  not implemented yet, not as important (and I dunno how to do it right now)
+  * fixed display profile bug with maximized state; you may need to delete old
+  sessions
+  * removed workaround code for lucene 0.9.10
+
+2006-06-09 Martin Gruner <mgruner@crosswire.org>
+  * patched clucene.m4 to support and require clucene 0.9.12
+
+2006-05-23 Martin Gruner <mgruner@crosswire.org>
+  * Applied more patches by Mark Zealey
+
+2006-05-22 Martin Gruner <mgruner@crosswire.org>
+  * Applied keychooser patch by Mark Zealey, BibleTime now uses an entirely
+  different and improved key chooser for Bibles and Commentaries.
+
+2006-05-18 Martin Gruner <mgruner@crosswire.org>
+  * First patch after a month!
+  * Fixed UI issue in Bookshelf Manager which ended up in wrong place after
+  cancelling index download
+
+2006-04-26 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.6beta2
+
+2006-04-19 Martin Gruner <mgruner@crosswire.org>
+  * Updated INSTALL.in
+
+2006-04-09 Joachim Ansorg <info@bibletime.info>
+  * Fixed popup menu in the commentary window
+
+2006-04-06 Martin Gruner <mgruner@crosswire.org>
+  * Fixed all delayed popup menus to show up immediately
+
+2006-03-30 Martin Gruner <mgruner@crosswire.org>
+  * Fixed "make messages" to include autogenerated .cpp and .h files (from .ui
+  files) by running "make" first before extracting the messages
+  * small enhancement to the crazy template
+
+2006-03-30 Joachim Ansorg <info@bibletime.info>
+  * Fix: Support robinson codes in the new KJV2006 module
+
+2006-03-25 Joachim Ansorg <info@bibletime.info>
+  * Support special x-p milestone in the new KJV2006 module.
+  * Support multiple lemmas and morphs per word in the KJV006 module
+  * Fix: OSIS filter fix for seg elements
+  * Fix: Display templates did not show headings in bold if a font was set for the module language
+
+2006-03-24 Gabriel Beddingfield <gabriel@teuton.org>
+  * Added isWritable() check (and error message) before saving in CPlainWriteWindow.
+
+2006-03-24 Martin Gruner <mgruner@crosswire.org>
+  * Added DCOP call reloadModules()
+
+2006-03-21 Martin Gruner <mgruner@crosswire.org>
+  * Fixed a ThML crossref parsing bug
+
+2006-03-18 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.6beta1
+
+2006-03-04 Martin Gruner <mgruner@crosswire.org>
+  * added an CSwordModule::unlockKeyIsValid() function
+
+2006-02-25  Joachim and Martin: BibleTime Bug Squashing Party I
+  * Disabled sorting for the "manage indices" columns
+  * Added "automatically delete orphaned indices when BibleTime starts" option
+  * Fixed display window toolbar problems, now there are 2 toolbars
+  * Added support for "n" attribute in footnotes
+  * Fixes to the display templates
+
+2006-02-22 Martin Gruner <mgruner@crosswire.org>
+  * Orphaned and defect indices are now automatically deleted
+
+2006-02-15 Joachim Ansorg <info@bibletime.info>
+  * Fix: Modules without indexes created an empty index directory.
+  * Fix: Module indexes are completely removed now
+
+2006-02-14 Martin Gruner <mgruner@crosswire.org>
+  * Extended index logic to allow for additional indexes per module in future
+
+2006-02-14 Joachim Ansorg <info@bibletime.info>
+  * Search window: The result count in the module list are sortable now
+  * The "Strong's search" items in the context menus of display windows are disabled now if there's no number to search for
+
+2006-02-10 Joachim Ansorg <info@bibletime.info>
+  * Several smaller fixes to the searchdialog gui
+  * Moved searchdialog classes into several namespaces (Search::*)
+  * Added the icon for the "Search Strong's Number" option
+  * Bumped version number to 1.5.95, i.e. a 1.6pre version
+  * Sometime the wrong text was shows for notes
+
+2006-02-01 Lee Carpenter <lcarpenter@users.sourceforge.net>
+  * Applied Jim Campbell's updates to the Strong's search feature.
+
+2006-01-26 Lee Carpenter <lcarpenter@users.sourceforge.net>
+  * Added an index size field to the 'Manage search indices' page.
+
+2006-01-22 Lee Carpenter <lcarpenter@users.sourceforge.net>
+  * Added a page to the Bookshelf Manager to add/delete search indices.
+
+2006-01-19 Lee Carpenter <lcarpenter@users.sourceforge.net>
+  * Applied Jim Campbell's patches to add Strong's highlighting in search results.
+
+2006-01-18 Lee Carpenter <lcarpenter@users.sourceforge.net>
+  * Converted search dialog to use Designer .ui templates for layout.
+
+2006-01-02 Martin Gruner <mgruner@crosswire.org>
+  * Search dialog UI cleanups
+  * Added index version tracking
+
+2005-12-30 Martin Gruner <mgruner@crosswire.org>
+  * Simplified Search Dialog, code cleanups
+  * Added index creation progress dialog
+
+2005-11-13 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.5.3
+  * Patch: Applied patches by Jeremy Erickson to compile with KDE 3.0-3.3.
+
+2005-11-09 Martin Gruner <mg.pub@gmx.net>
+  * Added support for OSIS tables
+
+2005-11-06 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Changed popup title in commentary windows to "Commentary window" instead of
+  	"Lexicon window"
+  * Patch: Applied patch by Jeremy Erickson to CMDIArea to compile with Qt 3.2
+
+2005-10-24 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Allow download of locked modules
+
+2005-10-16 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.5.2
+
+2005-10-15 Joachim Ansorg <info@bibletime.info>
+  * New feature: Remember open groups in the bookshelf on next startup
+  * New feature: Remember selected item of the bookshelf on next startup
+
+2005-10-11 Joachim Ansorg <info@bibletime.info>
+  * New feature: Added new method called getModulesOfType to our DCOP interface.
+
+2005-10-07 Joachim Ansorg <info@bibletime.info>
+  * New feature: The display windows now have a search dialog to search in the displayed text
+    (also activated by CTRL+F)
+  * Bugfix: Changed key accel of "Search open works" to CTRL + O,
+    because the standard action used CTRL + F, which we use in the new feature above.
+    Changed the settings in hdbk-reference as well.
+  * Bugfix: Hopefully the last fix for the parsing. We have to work around a Sword parsing problem.
+
+2005-10-05 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Enter in a keychooser did not change the display under special circuamstance
+  * Buffix: Newlines entered in the plain text editor were not displayed in the HTML editor or the read display window
+  * Bugfix: One more parsing fix
+
+2005-10-03 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Fix for bookshelf manager where the "Install works" button was always greyed out
+  * Bugfix: Another fix to reference parsing
+  * Feature: Refs in ThML modules (e.g. TSK) are now splitted if it doesn't alter content
+
+2005-10-01 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Fix for the key parsing where only a partial reference was given
+
+2005-09-25 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Crash on FedoraCore4 if the settings dialog has been closed
+
+2005-09-16 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: ThML modules like the ISV crashed BibleTime if the default Bible couldn't be found
+
+2005-09-12 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.5.1
+  * BibleTime-i18n package 1.5.1
+
+2005-09-10 Joachim Ansorg <info@bibletime.info>
+  * New feature: DCOP interface to control BibleTime. The available commands are avilable by calling "dcop bibletime BibleTimeInterface". To read the DCOP documentation please have a look at the file bibletime/bibletimeinterface.h
+  * Bugfix: The bookshelf manager didn't work with KDE systems which were configured to use a double click
+  * Bugfix: A trailing slash in the hostname prevented the bookshelf manager to connect to that remote host
+
+2005-08-24 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: More Drag&Drop fixes
+  * Bugfix: Some compilers complained about a missing namespace declaration in the backend code
+
+2005-08-24 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Copyright infos for a module is now displayed as correctly enocoded text
+  * Bugfix: Larger fontsize for the display styles "Default" and "Green"
+
+2005-08-18 Joachim Ansorg <info@bibletime.info>
+  * Bugfix: Bookmark drag&drop should work now
+
+2005-08-01 Joachim Ansorg <info@bibletime.info>
+  * New feature: Display templates can now be stored in $KDEDIR/share/apps/bibletime/display-templates/ and
+    $HOME/.kde/share/apps/bibletime/display-templates/
+
+2005-07-16 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.5
+  * Handbook update by Martin
+  * Hotkeys reviewed
+
+2005-06-17 Joachim Ansorg <info@bibletime.info>
+  * BibleTime 1.5rc2
+  * Most of the bugs reported for rc1 are fixed
+  * Major handbook update
+  * Display windows scroll now to the right position after they opened and
+    after a resize
+
+2005-06-10 Joachim Ansorg <info@bibletime.info>
+  * API doc updates (BibleTime.DoxyFile)
+  * Fixed code to compile with GCC 3.3.6, 3.4.4 and 4.0
+
+2005-06-06 Joachim Ansorg <info@bibletime.info>
+  * Added the missing "Delete session" menu item
+  * The sessions items are now disabled if no sub-menu items are present
+
+2005-05-29 Joachim Ansorg <jansorg@bibletime.info>
+  * Releases BibleTime 1.5rc1
+    -Tons of bugfixes, new features and improvements
+
+2004-07-17 Daniel Glassey <danglassey@ntlworld.com>
+  * Added English and German man files courtesy of Erik Schanze
+
+2004-07-16 Martin Gruner <mg.pub@gmx.net>
+  * Added invocation of KDE's graphical regular expression editor.
+    -invoke simply by selecting "regular expression" as search type.
+
+2004-01-29 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * BibleTime 1.4.1 release
+    -Bugfixes, especially in the Sword setup dialog part
+    -Changed default icons to crystalsvg
+    -Updated GUI translations
+
+2003-12-28 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * BibleTime 1.4 release
+    -New SwordSetup Dialog to setup Sword's configuration, to install modules from remote or local sources and to uninstall modules.
+    -Bugfixes
+
+2003-08-28 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Released BibleTime 1.3. Major changes are:
+    -Redesign of the main index; bookmarks are seperated into an own folder, modules are sorted by type and language;
+     better menu structure
+    -Better bookmark file format, bookmarks are saved now in XML. Old bookmarks can still be imported.
+    -Improved Drag&Drop to work with multiple items, e.g. twenty search result items
+    -Redesign of the search dialog; it's easier to use now and better to navigate
+    -Better support for GenBooks (Generic Books)
+    -Improved support for writing commentaries. There's a plain text editor and a WYSIWYG editor now.
+    -BibleTime 1.3 requires Sword 1.5.6 now
+    -Many, many bugs and memory leaks fixed
+    -Updates to all translations, including new languages
+  We're sorry for the long time it took to prepare the 1.3 release! We hope to improve release cycles with the next
+  releases.
+
+2003-03-10 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Fixed BibleTime to work in all places with the new SWBuffer class. Should be now more bug free.
+
+2003-02-28 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Released 1.3rc1 which uses a Sword snapshot. We're in message freeze now - translators can finally start.
+  * Fixed BT to use Sword's new filter stuff
+
+2003-01-19 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Fixed BT_BASICFILTER::ProcessRWPRefs, made simpled and more bug free
+
+2003-01-18 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Removed install instructions from CResMgr and the actions XML file
+  * Fixed missing insertion of KAction objects into our KAccel object
+
+2003-01-17 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Removed installation instructions, the webpage and README/INSTALL files are good enough
+
+2003-01-16 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Bugfixes:
+    -Loading of profiles switched of auto-cascading and auto-tiling
+    -Debugged CMDIArea, was old, buggy code. Should work now more robust.
+  * Code cleanups for CDisplayWindow
+
+2003-01-14 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Last fixes for beta4:
+    -Changes everything to use CResMgr instead of ugly #defined
+    -Added support for new Red letter words strip filter
+    -Everything is now in CResMgr
+    -Many small bugfixes
+
+2003-01-11 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Searchdialog search result page highlights searched text
+  * Default color of strongs and morph codes changed to Qt::darkBlue
+
+2003-01-07 Joachim Ansorg <junkmail@joachim.ansorgs.de>
+  * Major speed improvements for displaying lexicons together
+
+2003-01-04 Martin Gruner <mg.pub@gmx.net>
+  * Release 1.3beta3 release
+  * Changes in comparision with 1.2.x:
+    - New main index with better module grouping (using language and type), better bookmark format (XML),
+      import for old bookmarks from 1.2.2
+    - Drag&Drop works now with multiple items (e.g. 200 search result items)
+    - Many more changes we don't remember
+
+2002-06-02 Martin Gruner <mg.pub@gmx.net>
+	* Moved the english docs to bibletime/docs, and the pot file to bibletime/pot.
+	  Created a new package bibletime-i18n-de for German docs, with the folders docs/ and po/.
+	  Revised gen_am.sh file to suit the new arrangement, and it does at least run and create all the
+	  necessary Makefile.am files for English and German.
+
+2002-05-03  Martin <mg.pub@gmx.net>
+
+	* Ported to KDE3: BibleTime 1.2. No new features. Text rendering works much better now
+		(right-to-left), as well as font / charset handling -- thanks to Trolltech.
+
+2002-10-04 Martin Gruner
+	* Differences between 1.0 and 1.1:
+		- Improved interface:
+			o Better optionsdialog: Better structure, more powerful settings
+			o Better menu structure: The documentation is now accessible from the Help menu, ...
+			o Keyaccelerators for each display window type
+			o much more
+		- General Book Support (GBS): Books like "Josephus" are supported now.
+			Operations like bookmarking, printing, copying or saving work just like with
+			Bibles, commentaries or lexicons.
+		- Crossreference support
+			Crossreferences work now. For example you can click now on a strong number to open the
+			module for it which displayes the chosen number. The same for Bibles, morph tags etc.
+			Tooltips work for the links, too.
+		- Improved Unicode support
+			Unicode encoded modules are now supported in a better way. Choosing the font and
+			the displaying of the text works better. RTL support and better rendering is still
+			missing.
+		- Profile management. Profiles capture the current state of the working area
+			(opened display windows, scrollbar positions, set keys ...). Profiles can be loaded to
+			restore the old state and can be saved to store the current state for later. Automatically
+			restoring the windows after startup is possible, too.
+		- Better crash management. BibleTime tries now to save settings if a crash occured. Although we
+			implemented this, we don't know how to make BibleTime crash ;) It's just for your safety.
+		- Speed improvements. Printing is almost two times faster now. Searching in modules is also faster,
+			but this was improved in the Sword library by the Sword developers.
+		- Improved display windows. Independent display settings for each window (footnotes, strongs ...)
+		- Fullscreen mode of the main application window
+		- Improved commentary editor: Ask if the text should be saved if the window or BibleTime should be closed
+			if the changed text was not saved before.
+
+2001-11-24 Fred Saalbach <saalbach@sybercom.net>
+	* Moved documentation to bibletime-docs - includes .po files, handbook, etc.
+	* This will reduce the size of the main program and allow more flexibility
+	  for the creation of RPM's.
+	* Compile time for the main program will also be reduced.
+
+2001-09-22 Fred Saalbach <saalbach@sybercom.net>
+	* Fixed problem with sgml tag <graphic> by replacing it with the <InLineMediaObject> in the english handbook.
+	* This only is a problem with systems running kde 2 and document
+	* text descripter  "-//KDE//DTD DocBook V3.1-Based Variant V1.0//EN"
+	* kdb2html finishes without errors now.
+
+2001-08-30 Joachim Ansorg <jansorg@gmx.de>
+	* Added $(DESTDIR) to Makefile.am files
+	* Solved compilation errors
+
+2001-08-17 Joachim Ansorg <jansorg@gmx.de>
+	* Optimizations to CSwordBibleModuleInfo
+	* Fixed bug in CBibleKeyChooser
+	* New structure in the optionsdialog
+	* Key accelerators for each display window type
+	* Fullscreen button
+
+2001-07-28 Joachim Ansorg <jansorg@gmx.de>
+	* The new configure options are cached now (sword lib,includes, distribution name and version, RPM prefix and group)
+
+2001-07-27 Joachim Ansorg <jansorg@gmx.de>
+	* Added history box in the HTML dialog widget if history browsing is enabled
+
+2001-07-16 Joachim Ansorg <jansorg@gmx.de>
+	* Implemented better configure script. We have now options to link to a static Sword library!
+	* Added rudimentary support for version checking
+
+2001-06-20 Joachim Ansorg <jansorg@gmx.de>
+	* Release BibleTime 1.0!
+	We're really glad we got it out now! Enjoy!
+	Sorry for the large delay!
+
+2001-03-08 Joachim Ansorg <jansorg@gmx.de>
+	* Released BibleTime 1.0beta1.
+
+2001-02-17 Joachim Ansorg <jansorg@gmx.de>
+	* Added QTextEdit, QTextView, and QRichText classes from Qt3 (ported by David Faure)
+	* Removed the Qt2 classes QTextView, QTextBrowser and the class KTextEdit
+
+2001-02-13 Joachim Ansorg <jansorg@gmx.de>
+	* Changed the direction of the spin boxes
+		and of the scrollbutton in the presenters
+	* Updated QWorkspace to the one of Qt 2.2.4
+
+2001-02-07 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed bugs in the groupmanager, searchdialog and presenters
+
+2001-02-04 Joachim Ansorg <jansorg@gmx.de>
+	* Added new features:
+			RMB menus in the presenters and in the searchdialog
+
+2001-02-03 Joachim Ansorg <jansorg@gmx.de>
+	* Added Makefile system to create and install the handbook
+	* Fred added his really nice handbook in .docbook format
+	* Improved printing dialog: Now the styles are saved and restored correctly, needs some tweaking
+	*	Fixed some bugs in the printing system, removed the range specifiers of the printing dialog
+
+2001-02-02 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed some bug in CTipWindow
+	* Fixed some bugs in our copy of QTextView
+	* Fixed some bug in CStyleEditorDialog
+	* Fixed some bug in the printing system
+	* Improved CBiblePresenter and CPrinterDialog
+
+2001-01-30 Joachim Ansorg <jansorg@gmx.de>
+	* Updated ToDo
+
+2001-01-27 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed the graphical search analysis, it should now work 99%
+
+2001-01-21 Joachim Ansorg <jansorg@gmx.de>
+	* Improved the style editor
+
+2001-01-19 Joachim Ansorg <jansorg@gmx.de>
+	* Improved the search anaylsis a little bit
+
+2001-01-18 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed some bugs in the searchdialog
+	* The bug with indexed modules and first search is now fixed,
+	  it was an error in Sword
+	* Fixed some nasty bugs in the Sword backend
+	* Marking searched words in the key text for multiple words works now 100%
+	* The last book is now shown in the graphical search analysis
+
+2001-01-18 Joachim Ansorg <jansorg@gmx.de>
+	* Changed icon names and updated icon directories
+	* Included all icons we need
+	* Improved the BibleTime icons
+
+2001-01-01 Joachim Ansorg <jansorg@gmx.de>
+
+	A BLESSED NEW YEAR!
+
+	-Added the command line option --debug to enable debug messages
+2000-12-29 Joachim Ansorg <jansorg@gmx.de>
+	*Changed behaviour if a book, chapter or verse was changed in the Bible-keychooser
+
+
+2000-12-29 Joachim Ansorg <jansorg@gmx.de>
+	* Changed iconname so it will be found
+
+2000-12-26 Joachim Ansorg <jansorg@gmx.de>
+	* Improved printing support (correct handling of singals ...)
+
+2000-12-22 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed a bug in CGroupmanager: BibleTime does now start without installed modules!
+
+2000-12-19 Joachim Ansorg <jansorg@gmx.de>
+	* Some work on the oresenters and keychoosers
+	* Fixed a small bug in cprintitemlist.cpp
+
+2000-12-16 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed the crash in ctipwindow.cpp
+
+2000-12-08 Joachim Ansorg <jansorg@gmx.de>
+	* Fixed some printing bugs
+	* Added QWorkspace of Qt 2.2.2 to our sources, so everybody has the fixed QWorkspace version
+
+2000-12-05 Jochim Ansorg <jansorg@gmx.de>~
+	* Drag& Drop on presenters works again
+	* Finished "context sensitive" presenter refreshing
+
+2000-12-04 Jochim Ansorg <jansorg@gmx.de>
+	* Fixed this nasty "Default verse color" bug (was a wrong placed readEntry instead of readColorEntry in bibletime.cpp)
+	* Fixed unifont support, it works no with non-ISO-8859-1 languages and fonts
+
+2000-12-03 Jochim Ansorg <jansorg@gmx.de>
+	* Changed the latin1() calls of QString to (const char*) ... local8Bit()
+	* Changed QTextView a little bit: Do not set contents pos to 0,0 in QTexView::setText(), the result is a fester displaying of the texts
+	* Changed the optionsdialog to display the language name and not the abbrevation
+
+2000-11-28	Joachim Ansorg <jansorg@gmx.de>
+	*  You can now switch between different book translations on runtime!
+	* Improved "context sensitive" presenter refresh (e.g. if footnotes are enabled only presenters with modules having them will be refreshed)
+	* Fixed some memory leaks.
+
+2000-11-04	Joachim Ansorg <jansorg@gmx.de>
+	* Solved some bugs
+	* Updated ceditwidget.cpp so saving HTML is correct, loading is still incomplete
+	* Made te frontend a shared lib and moved sources which should be there into frontend
+		libfrontend is now called libbibletime_frontend.la.
+	* Made --enable-shared the default options (changed to configure.in.in)
+
+2000-10-30	Joachim Ansorg <jansorg@gmx.de>
+	* Added sources and headers of QTextView, QTextBrowser and QRichText
+	* Added signal wordHighlighted in QTextView
+
+2000-10-29	Joachim Ansorg <jansorg@gmx.de>
+	* Removed the toggle toolbar/footnotes/strongs bugs
+	* Removed the bug Troy found (deletion of the searchresult)
+
+2000-10-24	Joachim Ansorg <jansorg@gmx.de>
+	* Removed the old backend and introduced a new, better faster
+		backend with a new backend
+	* Fixed some GUI bugs (ported from 0.3)
+	* Fixed some backend bugs, removed CSwordVerseKey operators
+	* Added portuguese translation of 0.3's messages, but it's still
+		useable for 1.0CVS
+
+--Lots of time passed by
+
+2000-07-24 	Joachim Ansorg <jansorg@gmx.de>
+	*Released 0.3! A really long time! We hope you like it!
+
+---Changelog will be continued after final 0.3
+
+1999-12-30 	Joachim Ansorg <Jockel123@gmx.de>
+	*We should be now ready for 0.22 ;-)
+
+1999-12-26 	Joachim Ansorg <Jockel123@gmx.de>
+	*Removed the commented out #includes
+	*Updated AUTHORS file
+
+1999-12-25 	Joachim Ansorg <Jockel123@gmx.de>
+	*make now use of getFontList (in global.h) to get the fonts
+	*Added some ASSERT
+	*Check it objects are zero in fontmanagement dialog
+
+1999-12-24 	Joachim Ansorg <Jockel123@gmx.de>
+	*BibleTime 0.21 - I hope it's a nice Christmas present  ;-)
+
+1999-12-23 	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed some icons in CEditWidget to newer names
+
+1999-12-22 	Birger Langkjer <birger.langkjer@image.dk>
+	*Updated danish translation
+	*Added bibletime/optionsdialog/Makefile.in because this prevented me from compiling the first time.
+
+1999-12-21 	Joachim Ansorg <Jockel123@gmx.de>
+	*The searchresult tab is now disabled if the list is empty
+	*The moduletree-tabs are disable if the correspondig trees are empty
+
+1999-12-20 	Joachim Ansorg <Jockel123@gmx.de>
+	*The fontmanagement dialog is now grayed out if there's no entry in the list
+
+1999-12-20 	Birger Langkjer <birger.langkjer@image.dk>
+	*Updated danish translation
+
+1999-12-19 	Joachim Ansorg <Jockel123@gmx.de>
+	*Fontmanagementdialog uses now a XFonts list, not the list provided by KDE. This solves the problems on
+	systems without KFontManager
+	*Added files global.h and global.cpp which should contain global functions
+	*Fixed some typos in the german translation
+
+1999-12-18 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added Apply-Button in the optionsdialog
+
+1999-12-17 	Joachim Ansorg <Jockel123@gmx.de>
+	*Tried to fix the charset problem in ktipoftheday.cpp
+	*Updated AUTHORS list
+
+1999-12-16 	Joachim Ansorg <Jockel123@gmx.de>
+	*Updated Michal's Czech translation
+
+1999-12-15 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added Czech language file: Thanks to Michal Rovnan� <Michal.Rovnanik@seznam.cz>
+
+1999-12-12 	Joachim Ansorg <Jockel123@gmx.de>
+	*Removed function CNotesEditor::isTextSelected()
+	*Added possibility to select type of highlighting of text for the notes editor
+	*Added load and save of current highlighting type
+
+1999-12-04 	Joachim Ansorg <Jockel123@gmx.de>
+	*Convrted the bmp images to jpg
+	*Bibletime uses now kimgio everywhere
+	*Added danish translation
+
+1999-11-27 	Joachim Ansorg <Jockel123@gmx.de>
+	*Removed unused images
+	*BibleTime 0.2
+
+1999-11-26 	Joachim Ansorg <Jockel123@gmx.de>
+	*Finished the whole german handbook
+	*Removed the own filters (plainhtml, rwphtml and gbfhtml),use (newer) filters of SWORD version
+	*You can now select the entries in the bookmark-manager with the upper and lower keys and activate them with RETURN
+
+1999-11-25 	Joachim Ansorg <Jockel123@gmx.de>
+	*Updated ToDo and Readme
+	*Caption of mainwindow now contains the current chapter and verse
+
+1999-11-24 	Joachim Ansorg <Jockel123@gmx.de>
+	*Made some labels in the printer-optionsdialog bigger to fit french translation
+	*ResizeEvent in SearchScopeDialog
+
+1999-11-20 	Joachim Ansorg <Jockel123@gmx.de>
+  *Startuplogo is now a PNG, this makes the distribution smaller
+	*To make this work make use of kimgio
+
+1999-11-18 	Joachim Ansorg <Jockel123@gmx.de>
+	*Finished my part on german handbook
+
+1999-11-16 	Joachim Ansorg <Jockel123@gmx.de>
+	*Worked on translation of handbook to german
+	*Translated some tips in german tipdatabase
+
+1999-11-14 	Joachim Ansorg <Jockel123@gmx.de>
+	*The searchbuttons and the three radiobuttons are now resized
+
+1999-11-12 	Joachim Ansorg <Jockel123@gmx.de>
+	*Fixed Bug: Now you can paste into the loojupline
+
+1999-11-10 	Joachim Ansorg <Jockel123@gmx.de>
+	*Fixed bug in CDocBrowser on non KDE 1.1.2 systems
+
+1999-11-07 Joachim Ansorg <Jockel123@gmx.de>
+	*Tidied up kwrite - removed lots of commented code
+
+1999-11-03 	Joachim Ansorg <Jockel123@gmx.de>
+	*Updated authors list
+	*Thorsten added the new printer dialog - it works now
+
+1999-11-03 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added optimized paint function committed in the KDevelop mailing list by Vladimir Dvorak
+	 Thanks Vladimir!
+	*Readded the nl.po file - it was lost by some reason
+
+1999-11-01 	Joachim Ansorg <Jockel123@gmx.de>
+	*Updated handbook - Jeff's work is really great!
+	*You can now use more than 31 tips in a tipdatabase
+
+1999-10-23 	Joachim Ansorg <Jockel123@gmx.de>
+	*Renamed members in BibleTimeView: tTabView to treeTabView and sTabView to browserTabView
+	 We need this because sTabView and tTabView are confusing
+	*Changed CChartWidget to resize the different graphs to the height of the window
+	*Changed topPanner to leftPanner in BibleTimeView - this is a better name
+	*Updated API documentation
+	*Fixed BUG: Now the recentText part in BibleTimeView is saved correctly again
+	*Noticed that KDE 1.1.2 has the calcScrollBars bug solved, no we use only our own function in KDE version before 1.1.2
+
+1999-10-21 	Joachim Ansorg <Jockel123@gmx.de>
+	*Bugfix: Key acelelerators are now saved after changing and restored on new startup
+	*Updated API documentation
+	*Updated ktipofday.cpp and ktipofday.h from KDevelop to compile with GCC 2.95
+
+1999-10-19 	Joachim Ansorg <Jockel123@gmx.de>
+	*Fixed a bug in CDocBrowser: If you lookup some text, the module wasn't highlighted
+	*Added own submenu for the lookup part in CDocBrowser
+
+1999-10-18 	Joachim Ansorg <Jockel123@gmx.de>
+	*BibleTime needs now the upcoming SWORD 1.45
+
+1999-10-17 	Joachim Ansorg <Jockel123@gmx.de>
+	*Fixed bug: standard accelerators are now really disabled
+
+1999-10-16 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added Jeff to AUTHORS
+	*Updated german translation
+
+1999-10-15 	Joachim Ansorg <Jockel123@gmx.de>
+	*Solved a bug in the linkmanager: If you open the dialog and click OK the existing items were deleted
+	*Added a script to put all i18n() things into the translation template. It called make-messages.sh. It's on the topdir.
+	*Commented out the first lines of BibleTimeMgr to get BibleTime to compile without modifications of SWORD.
+	 Please uncomment these lines to make use of the PLAINFootnotes option filter. Make the declarations in the header
+	 file to protected on which the compiler complains about.
+
+1999-10-14 	Joachim Ansorg <Jockel123@gmx.de>
+	*Implemented context sensitive enabling and disabling of the edit menu entries
+	*Updated KWrite sourcen to the newest one shipped with KDevelop
+	*Added Class CKNewAccel - provides disabling and enabling of accels by reeourceentry like ID_FILE_PRINT
+
+1999-10-13 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added refreshing of the list in CDocBrowser
+	*BibleTime does not load an empty HTML file
+	 (e.g. when you load a file via a HREf module and the server is unknown -> KFM returns an empty file)
+	*Improved a little bit the internet support
+
+1999-10-12 	Joachim Ansorg <Jockel123@gmx.de>
+	*Implemented functions in linkmanager. Implemented the link management in CDocBrowser::showURL.
+	 Needs some work: We have to decide if the file is local or remote and downloda it first
+ 	 or we put a new option in the dialog.
+
+1999-10-10 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added new german index.sgml
+	*Updated icons. You can now recpgnize what the icons mean
+	*Added BibleTimeDoc::slotMoveToPreviousVerse() and BibleTimeDoc::slotMoveToNextVerse()
+	 Changed BibleTimeApp uses these functions to jump to the previous / next verse
+	 Added needed pixmaps and keyaccels
+
+1999-10-09 	Joachim Ansorg <Jockel123@gmx.de>
+	*Worked on the handbook
+	*Added Quickhelp for the widgets in the link management dialog.
+
+1999-10-08 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added some text to the handbook
+	*Removed the german index.sgml file, because it makes no senss.
+	 We will add this if the english one is ready to translate it into german.
+	*Cleaned up KListView::addChildItem()
+	*Finished dialog of the link manager, needs implementation of functions to work
+
+1999-10-05 	Joachim Ansorg <Jockel123@gmx.de>
+	*Added -lz to bibletime/Makefile.am to avoid compilation problems on RedHat 5.2 systems
+	*Added some needed icons and changed iconnames in the sourcecode
+	*Solved some spelling errors in the CBugReportDlg	and changed some kdevelop to bibletime in the class
+	*Now you can't print by pressing STRG+P if printing is disabled
+
+1999-10-03 	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed CForeignFontOptions: The fonts are now saved in function saveSettings(), not after changing the font
+	*Changed OptionsDialog:	The different options are displayed in a tree.
+	*Removed old OptionsDialog
+	*Created new subdirectory optionsdialog. We will need it for later development
+
+1999-10-01 	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed some QColor (QRGB ...) to (QColor) (QRGB ...) to solve compilation problems on Debian.
+
+1999-09-29	Joachim Ansorg <Jockel123@gmx.de>
+	*font auto-switching works now
+	*Changed the line to edit the fontname to a combobox
+
+1999-09-29	Joachim Ansorg <Jockel123@gmx.de>
+	*Implemented more features of font-auto-switching, needs still work
+
+1999-09-28	Joachim Ansorg <Jockel123@gmx.de>
+	*Implemented simple switching between fonts - will work on it
+	*Implemented signal BibleTimeDoc::sigSetBibleFont(const QString)
+	 Implemented slot BibleTimeView::slotSetBibleFont(const QString)
+	 These signal and the slot will be used in the near future for switching of fonts.
+	*Connected the signal and the slot in BibleTimeApp::initView
+
+1999-09-25	Joachim Ansorg <Jockel123@gmx.de>
+	*On print the printerdialog is shown before the QT-dilaog. But printing
+	 doesn't work at the moment.
+	 We have to implement the slot slotPrint() of CPrinterDialog to make it work.
+	*Changes in cnoteseditor.cpp the #define BUTTON_BAR_HEIGHT to an abosolut value.
+	 Solves a problem with the height of the editor.
+  *Updated the startuplogo. It's now much more nice as the previous version.
+  *Integrated the startuplogo in the aboutdialog. It's now displayed in the upper left corner of the box.
+  *The class KStartupLogo looks now for the size of the startuplogo and resize the widget in the right way if the size have changed.
+  *CDocBrowserColor: Made some hardcoded texts to i18n("")
+
+1999-09-19	Joachim Ansorg <Jockel123@gmx.de>
+	*Reorganized the icons:
+	 There are now two directories: pics and toolbar. pics contains the directory mini/
+	 which contains the mini icons. Mini icons are named with a trailing mini-.
+	 The directory toolbar contains the icons which are only used in the toolbar.
+	 This should be the new standard we use.
+
+1999-09-19	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed names and install paths of some icon
+	*Added some needed icons we forgot
+	*Added function BibleTimeApp::slotHelpContents(): calls the online help
+	*Solved: Changes of the key accelerators doesn't change the
+	 accels in the menus
+	*rendered Footnotes are now displayed in dark red, too
+  *Cleaned up DCocBrowser
+
+1999-09-18	Joachim Ansorg <Jockel123@gmx.de>
+	*Optimized a little bit the paintText function of CChartWidget
+
+1999-09-17	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed a little bit the GBFHTML filter:
+	 Anotations are now displayed in dark red
+	*Decided to use use the PLAINHTML filter as standard
+	 If no filter is specified in the .conf file of the module we use
+	 now the PLAINHTML filter. Perhaps we need to change this
+
+1999-09-16	Joachim Ansorg <Jockel123@gmx.de>
+	*Fixed this stupid bug related to the crash while searching the web bible
+
+1999-09-14	Joachim Ansorg <Jockel123@gmx.de>
+	*Change the GBFHTML filter a little bit
+	 It displays now the word explained in a footnote formatted as bold
+
+1999-09-14	Joachim Ansorg <Jockel123@gmx.de>
+	*Updated program version to 0.2
+
+1999-09-12	Joachim Ansorg <Jockel123@gmx.de>
+	*Added some tips to the tipdatabase
+	*Added class KStartupLogo to display a picture on startup
+
+1999-09-10	Joachim Ansorg <Jockel123@gmx.de>
+	*Rewrite of the Searchanalysis, it's now up to 63 times faster
+	*Text in the CChartWidget is now painted rotated (90)
+
+1999-09-05	Joachim Ansorg <Jockel123@gmx.de>
+	*Added analysis of searchresults -> needs still some work
+	*updated de.po translation errors
+	*updated homepage
+
+1999-09-04	Joachim Ansorg <Jockel123@gmx.de>
+	*created sub folders: gfx and printing
+	*Added CPrinterDialog of KHexedit 0.81 -> isn't used at the moment
+
+1999-09-02	Joachim Ansorg <Jockel123@gmx.de>
+	*Added classes for searchanalysis and a ChartWidget
+  *Updated configure.in - it checks now for headers and the SWORD lib in two steps
+
+1999-08-30	Joachim Ansorg <Jockel123@gmx.de>
+	*Changed and corrected some GUI errors
+
+1999-08-29	Joachim Ansorg <Jockel123@gmx.de>
+	*Decided to update this Changelog frequently
+	*Changed the notesEditor to a non-tabbar look
+	*New class CNotesEditor
+
+1999-08-27	Joachim Ansorg <Jockel123@gmx.de>
+	*First public release of BibleTime: Version 0.1
+
