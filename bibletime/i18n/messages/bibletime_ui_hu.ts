@@ -3310,7 +3310,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="272"/>
         <source>Gospels</source>
-        <translation>Evanéliumok</translation>
+        <translation>Evangéliumok</translation>
     </message>
     <message>
         <location filename="../../src/backend/config/cbtconfig.cpp" line="273"/>
