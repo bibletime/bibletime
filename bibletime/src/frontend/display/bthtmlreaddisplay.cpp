@@ -213,18 +213,10 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
 	return QString();
 }
 
-#include <QTextStream>
 // Puts html text and javascript into QWebView
 void BtHtmlReadDisplay::setText( const QString& newText ) 
 {
 	QString jsText = newText;
-
-     QFile file("out.txt");
-     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-         return;
-
-     QTextStream out(&file);
-     out <<  newText << "\n";
 
 	jsText.replace(body,jsBegin+javascript+jsEnd+body);
 
