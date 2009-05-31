@@ -20,6 +20,7 @@
 
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
+#include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -75,6 +76,7 @@ BibleTime::BibleTime() :
    initConnections();
    readSettings();
    setPlainCaption(QString());
+	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::mainWindow::icon) );
 }
 
 BibleTime::~BibleTime() 

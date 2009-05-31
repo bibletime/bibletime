@@ -20,6 +20,9 @@
 namespace CResMgr {
 	void init_tr();
 
+	namespace mainWindow {
+		extern const QString icon;
+	}
 	namespace modules {
 		namespace bible {
 			extern const QString icon_unlocked;
