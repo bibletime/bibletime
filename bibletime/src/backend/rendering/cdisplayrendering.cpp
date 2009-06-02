@@ -19,6 +19,7 @@
 //Qt
 #include <QString>
 #include <QRegExp>
+#include <QDebug>
 
 namespace Rendering {
 
@@ -80,8 +81,9 @@ namespace Rendering {
 			}
 		}
 
+
 		if (linkText.isEmpty()) {
-			return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" />");
+			return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\"></a>");
 		}
 		else {
 			return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
@@ -147,7 +149,7 @@ namespace Rendering {
 		CDisplayTemplateMgr::Settings settings;
 		settings.modules = modules;
 		settings.langAbbrev = ((modules.count() == 1) && lang->isValid()) ? lang->abbrev() : QString::null;
-		
+
 		if (modules.count() == 1)
 			settings.pageDirection = (modules.first()->textDirection() == CSwordModuleInfo::LeftToRight) ? "ltr"  : "rtl";
 		else
