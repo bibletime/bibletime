@@ -48,11 +48,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">바이블타임</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
@@ -155,10 +150,6 @@
         <location filename="../../src/bibletime_init.cpp" line="296"/>
         <source>Close all open windows inside BibleTime</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">창 모두 닫기</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
@@ -282,17 +273,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="69"/>
+        <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="71"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="73"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing menu- and toolbars...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4122,10 +4113,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">만든 사람</translation>
     </message>
 </context>
 <context>

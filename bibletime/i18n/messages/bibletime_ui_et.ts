@@ -4,10 +4,6 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <source>Information About</source>
-        <translation type="obsolete">Informatsioon:</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
         <translation>Informatsioon %1 kohta</translation>
@@ -50,15 +46,6 @@
         <source>&amp;Help</source>
         <extracomment>Main menu item</extracomment>
         <translation>&amp;Abi</translation>
-    </message>
-    <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation type="obsolete">Välju</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
@@ -165,10 +152,6 @@
         <translation>Sulge kõik BibleTime sees avatud aknad</translation>
     </message>
     <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">&amp;Sule kõik</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Käsiraamat</translation>
@@ -245,10 +228,6 @@
         <translation>Aseta avatud aknad horisontaalselt (üksteise kohale)</translation>
     </message>
     <message>
-        <source>Close all open windows</source>
-        <translation type="obsolete">Sulge kõik avatud aknad</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="303"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>&amp;Seadista BibleTime...</translation>
@@ -294,21 +273,17 @@
         <translation>Uus sessioon</translation>
     </message>
     <message>
-        <source>Initializing the Sword engine...</source>
-        <translation type="obsolete">Sword mootori käivitamine...</translation>
-    </message>
-    <message>
-        <location filename="../../src/bibletime.cpp" line="69"/>
+        <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="71"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>BibleTime&apos; kasutajaliidese käivitamine...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="73"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Menüü ja tööriistaribade käivitamine...</translation>
     </message>
@@ -331,11 +306,6 @@
         <location filename="../../src/bibletime_init.cpp" line="65"/>
         <source>Mag</source>
         <translation>Info</translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <extracomment>E.g. &quot;Show Bookshelf&quot;, &quot;Show Mag&quot; in View menu</extracomment>
-        <translation type="obsolete">Kuva</translation>
     </message>
 </context>
 <context>
@@ -361,10 +331,6 @@
         <translation>(c)1999-2009, BibleTime meeskond</translation>
     </message>
     <message>
-        <source>This program uses Qt Open Source Edition version </source>
-        <translation type="obsolete">Käesolev programm kasutab Qt Open Source Edition versiooni </translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation>Qt Open Source Edition on mõeldud avatud lähtekoodiga rakenduste arendamiseks.</translation>
@@ -383,14 +349,6 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="165"/>
         <source> for an overview of Qt licensing.</source>
         <translation> ülevaate saamiseks Qt litsenseerimisest.</translation>
-    </message>
-    <message>
-        <source>License Agreement</source>
-        <translation type="obsolete">Litsentsileping</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL licence.</source>
-        <translation type="obsolete">BibleTime on välja lastud GPL litsentsi all.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
@@ -1306,11 +1264,6 @@
         <translation>Otsi</translation>
     </message>
     <message>
-        <source>Search in</source>
-        <translatorcomment>Fuzzy; might be untranslatable as such prefix</translatorcomment>
-        <translation type="obsolete">Otsi teostest</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="588"/>
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">Sisestage võti selle teose avamiseks.</translation>
@@ -2023,10 +1976,6 @@
 </context>
 <context>
     <name>CModuleIndexDialog</name>
-    <message>
-        <source>Creating index for work: </source>
-        <translation type="obsolete">Teose indekseerimine: </translation>
-    </message>
     <message>
         <location filename="../../src/frontend/cmoduleindexdialog.cpp" line="42"/>
         <source>Cancel</source>
@@ -2961,11 +2910,6 @@
         <translation>malta</translation>
     </message>
     <message>
-        <source>Norwegian Bokmål</source>
-        <extracomment>Language name nb</extracomment>
-        <translation type="obsolete">norra bokmål</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="391"/>
         <source>Low German; Low Saxon</source>
         <extracomment>Language name nds</extracomment>
@@ -3194,26 +3138,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Names of languages</source>
-        <comment>No need to translate - see the longer comment (If there is no longer comment, it doesn&apos;t work yet :))</comment>
-        <extracomment>The string &quot;Names of languages&quot; doesn&apos;t actually need translation. It is put here to help translators notice this help text. ------- The names of the languages should follow the conventions of your language. Write the names with a capital first letter even if your language uses non-capitalized language names (they look better with capital first letter when they are listed). ------- To find the names of all languages from internet try searching for &quot;names of languages in language_x&quot; but in your own language, e.g. &quot;kielten nimet suomeksi&quot; in Finnish or &quot;names of languages in english&quot; in English. ------- You can find the language codes and names by googling for the standards mentioned below. ------- Chris explained in an eMail how language codes are build: ------- Preference order for locale codes are: ------- ISO 639-1 ------- ISO 639-2 ------- Ethnologue (http://www.ethnologue.org/) ------- We intend to always follow OSIS locale conventions, which state that Ethnologue codes will be encoded in the format x-E-??? where ??? represents the 3-letter Ethnologue code in capital letters (though capitalization really doesn&apos;t matter here). ------- Some older modules maintain a former format for Ethnolgoue codes of xx-???, including the AleWiesler module.</extracomment>
-        <translation type="obsolete">Keelte nimed</translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <extracomment>Language name x-E-KAB</extracomment>
-        <translation type="obsolete">kabiili</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <extracomment>Language name x-E-PDG</extracomment>
-        <translation type="obsolete">uusmelaneesia</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
@@ -3223,11 +3151,6 @@
 ----------
 Language name ppk</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <extracomment>Language name x-E-SAJ</extracomment>
-        <translation type="obsolete">sango</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>

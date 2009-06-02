@@ -4,10 +4,6 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <source>Information About</source>
-        <translation type="obsolete">Informacion Acerca de</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
         <translation type="unfinished"></translation>
@@ -50,15 +46,6 @@
         <source>&amp;Help</source>
         <extracomment>Main menu item</extracomment>
         <translation>Ayuda</translation>
-    </message>
-    <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation type="obsolete">Salir</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
@@ -165,10 +152,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">&amp;Cerrar todo</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Manual de referencia</translation>
@@ -245,10 +228,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close all open windows</source>
-        <translation type="obsolete">Cerrar todas las ventanas abiertas</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="303"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>Configurar BibleTime</translation>
@@ -294,17 +273,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="69"/>
+        <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="71"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="73"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing menu- and toolbars...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1268,10 +1247,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="484"/>
         <source>Search</source>
         <translation>Buscar</translation>
-    </message>
-    <message>
-        <source>Search in</source>
-        <translation type="obsolete">Buscar en</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="588"/>
@@ -3156,40 +3131,10 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
         <translation>Bávaro</translation>
     </message>
     <message>
-        <source>Zarma</source>
-        <extracomment>Language name x-E-DJE</extracomment>
-        <translation type="obsolete">Zarma</translation>
-    </message>
-    <message>
-        <source>Alemannisch</source>
-        <extracomment>Language name x-E-GSW</extracomment>
-        <translation type="obsolete">Alemanich</translation>
-    </message>
-    <message>
-        <source>Haitian Creole French</source>
-        <extracomment>Language name x-E-HAT</extracomment>
-        <translation type="obsolete">Francés Criollo de Haití</translation>
-    </message>
-    <message>
-        <source>Shuar</source>
-        <extracomment>Language name x-E-JIV</extracomment>
-        <translation type="obsolete">Shuar</translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <extracomment>Language name x-E-KAB</extracomment>
-        <translation type="obsolete">Kabile</translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation>Lombard</translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <extracomment>Language name x-E-PDG</extracomment>
-        <translation type="obsolete">Tok Pisin</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
@@ -3199,16 +3144,6 @@ Instalar.&lt;br/&gt;&lt;b&gt;Advertencia:&lt;/b&gt; Si usted vive en un pais de 
 ----------
 Language name ppk</extracomment>
         <translation>Uma</translation>
-    </message>
-    <message>
-        <source>Romani, Vlax</source>
-        <extracomment>Language name x-E-RMY</extracomment>
-        <translation type="obsolete">Romani, Vlax</translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <extracomment>Language name x-E-SAJ</extracomment>
-        <translation type="obsolete">Sango</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
@@ -4163,10 +4098,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">Creado por</translation>
     </message>
 </context>
 <context>

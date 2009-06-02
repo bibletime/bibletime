@@ -4,20 +4,12 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <source>Information About</source>
-        <translation type="obsolete">Information über</translation>
-    </message>
-    <message>
         <source>Information About %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>BibleTime</name>
-    <message>
-        <source>BibleTime </source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
     <message>
         <source>&amp;File</source>
         <extracomment>Main menu item</extracomment>
@@ -49,24 +41,8 @@
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <source>BibleTime</source>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation type="obsolete">Beenden</translation>
-    </message>
-    <message>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Werkzeugleiste anzeigen</translation>
-    </message>
-    <message>
-        <source>&amp;Show bookshelf</source>
-        <translation type="obsolete">&amp;Zeigen Bücherregal</translation>
-    </message>
-    <message>
-        <source>Show &amp;mag</source>
-        <translation type="obsolete">Z&amp;eige Lupe</translation>
     </message>
     <message>
         <source>&amp;Fullscreen mode</source>
@@ -120,10 +96,6 @@
         <translation>&amp;Horizontal kacheln</translation>
     </message>
     <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">A&amp;lle schließen</translation>
-    </message>
-    <message>
         <source>&amp;Handbook</source>
         <translation>&amp;Handbuch</translation>
     </message>
@@ -139,14 +111,6 @@
     <message>
         <source>Quit BibleTime</source>
         <translation>BibleTime verlassen</translation>
-    </message>
-    <message>
-        <source>Show or hide the bookshelf</source>
-        <translation type="obsolete">Das Bücherregal anzeigen oder verbergen</translation>
-    </message>
-    <message>
-        <source>Show or hide the mag</source>
-        <translation type="obsolete">Die Lupe anzeigen oder verbergen</translation>
     </message>
     <message>
         <source>Toggle fullscreen mode of the main window</source>
@@ -193,10 +157,6 @@
         <translation>Geöffnete Fenster horizontal (übereinander) anordnen)</translation>
     </message>
     <message>
-        <source>Close all open windows</source>
-        <translation type="obsolete">Alle geöffneten Fenster schließen</translation>
-    </message>
-    <message>
         <source>&amp;Configure BibleTime...</source>
         <translation>BibleTime &amp;konfigurieren</translation>
     </message>
@@ -231,10 +191,6 @@
     <message>
         <source>New Session</source>
         <translation>Neue Sitzung</translation>
-    </message>
-    <message>
-        <source>Initializing the Sword engine...</source>
-        <translation type="obsolete">Initialisierung der Sword-Engine...</translation>
     </message>
     <message>
         <source>Creating BibleTime&apos;s user interface...</source>
@@ -703,14 +659,6 @@
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <source>Last refreshed:</source>
-        <translation type="obsolete">Zuletzt aktualisiert:</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation type="obsolete">Bearbeiten...</translation>
-    </message>
-    <message>
         <source>Add...</source>
         <translation>Hinzufügen...</translation>
     </message>
@@ -938,10 +886,6 @@
         <source>Print entry with text</source>
         <translation>Drucke Eintrag mit Text</translation>
     </message>
-    <message>
-        <source>Book Window</source>
-        <translation type="obsolete">Buchfenster</translation>
-    </message>
 </context>
 <context>
     <name>CBookmarkIndex</name>
@@ -1045,10 +989,6 @@
         <translation>Suche</translation>
     </message>
     <message>
-        <source>Search in</source>
-        <translation type="obsolete">Suche in</translation>
-    </message>
-    <message>
         <source>Enter the unlock key for this work.</source>
         <translation>Geben Sie den Schlüssel für dieses Werke ein</translation>
     </message>
@@ -1130,10 +1070,6 @@
     <message>
         <source>Previous verse</source>
         <translation>Vorheriger Vers</translation>
-    </message>
-    <message>
-        <source>Commentary window</source>
-        <translation type="obsolete">Kommentarfenster</translation>
     </message>
     <message>
         <source>Synchronize</source>
@@ -1321,14 +1257,6 @@
 </context>
 <context>
     <name>CHTMLWriteDisplay</name>
-    <message>
-        <source>Choose a font</source>
-        <translation type="obsolete">Schriftart auswählen</translation>
-    </message>
-    <message>
-        <source>Choose a font size</source>
-        <translation type="obsolete">Schriftgröße auswählen</translation>
-    </message>
     <message>
         <source>Bold</source>
         <translation>Fett</translation>
@@ -1625,10 +1553,6 @@
 <context>
     <name>CModuleIndexDialog</name>
     <message>
-        <source>Creating index for work: </source>
-        <translation type="obsolete">Erstelle Index für Werk:</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -1882,10 +1806,6 @@
 </context>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
-    <message>
-        <source>Mag</source>
-        <translation type="obsolete">Lupe</translation>
-    </message>
     <message>
         <source>Abbreviation</source>
         <translation>Abkürzung</translation>
@@ -2407,33 +2327,9 @@
         <translation>Bayrisch</translation>
     </message>
     <message>
-        <source>Zarma</source>
-        <translation type="obsolete">Zarma</translation>
-    </message>
-    <message>
-        <source>Alemannisch</source>
-        <translation type="obsolete">Alemannisch</translation>
-    </message>
-    <message>
-        <source>Haitian Creole French</source>
-        <translation type="obsolete">Haitisch-kreolisches Französisch</translation>
-    </message>
-    <message>
-        <source>Shuar</source>
-        <translation type="obsolete">Shuar</translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <translation type="obsolete">Kabyle</translation>
-    </message>
-    <message>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation>Lombardisch</translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <translation type="obsolete">Tok Pisin</translation>
     </message>
     <message>
         <source>Uma</source>
@@ -2441,14 +2337,6 @@
 ----------
 Language name ppk</extracomment>
         <translation>Uma</translation>
-    </message>
-    <message>
-        <source>Romani, Vlax</source>
-        <translation type="obsolete">Romani, Vlax</translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <translation type="obsolete">Sango</translation>
     </message>
     <message>
         <source>Sranan</source>
@@ -2678,10 +2566,6 @@ Language name ppk</extracomment>
         <source>Haitian Creole</source>
         <extracomment>Language name ht</extracomment>
         <translation type="unfinished">Haitanisches Kreol</translation>
-    </message>
-    <message>
-        <source>Kekchi</source>
-        <translation type="obsolete">Kekchi</translation>
     </message>
     <message>
         <source>Burmese</source>
@@ -3142,10 +3026,6 @@ Language name ppk</extracomment>
         <translation>Wählen Sie die Werke aus, in denen gesucht werden soll.</translation>
     </message>
     <message>
-        <source>Basic Search Syntax Introduction</source>
-        <translation type="obsolete">Grundlegende Einführung in die Suchsyntax</translation>
-    </message>
-    <message>
         <source>No search scope</source>
         <translation>Kein Suchbereich</translation>
     </message>
@@ -3387,10 +3267,6 @@ Language name ppk</extracomment>
     <message>
         <source>Total hits</source>
         <translation>Gesamte Treffer</translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">Erstellt mit</translation>
     </message>
     <message>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>

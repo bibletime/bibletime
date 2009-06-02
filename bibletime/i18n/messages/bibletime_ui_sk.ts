@@ -48,11 +48,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">Zatvoriť BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
         <source>&amp;Show toolbar</source>
         <translation type="unfinished"></translation>
@@ -155,10 +150,6 @@
         <location filename="../../src/bibletime_init.cpp" line="296"/>
         <source>Close all open windows inside BibleTime</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">Všetko &amp;zatvoriť</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
@@ -282,17 +273,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="69"/>
+        <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="71"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="73"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing menu- and toolbars...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2825,13 +2816,6 @@
         <translation type="unfinished">Gruzínske</translation>
     </message>
     <message>
-        <source>Kekchí</source>
-        <comment>kek</comment>
-        <extracomment>Language name kek</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
         <source>Korean</source>
         <extracomment>Language name ko</extracomment>
@@ -3161,58 +3145,10 @@
         <translation type="unfinished">Bavorské</translation>
     </message>
     <message>
-        <source>Zarma</source>
-        <extracomment>Language name x-E-DJE</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Alemannisch</source>
-        <extracomment>Language name x-E-GSW</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Haitian Creole French</source>
-        <extracomment>Language name x-E-HAT</extracomment>
-        <translation type="obsolete">Haitsko-kreolsko francúzske</translation>
-    </message>
-    <message>
-        <source>Itzá</source>
-        <extracomment>Language name x-E-ITZ</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Shuar</source>
-        <extracomment>Language name x-E-JIV</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Kekchí</source>
-        <comment>x-E-KEK (same as kek)</comment>
-        <extracomment>Language name x-E-KEK (same as kek)</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <extracomment>Language name x-E-KAB</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation type="unfinished">Lombardské</translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <extracomment>Language name x-E-PDG</extracomment>
-        <translation type="obsolete">
-            </translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
@@ -3222,17 +3158,6 @@
 ----------
 Language name ppk</extracomment>
         <translation type="unfinished">
-            </translation>
-    </message>
-    <message>
-        <source>Romani, Vlax</source>
-        <extracomment>Language name x-E-RMY</extracomment>
-        <translation type="obsolete">Rómske, Vlax</translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <extracomment>Language name x-E-SAJ</extracomment>
-        <translation type="obsolete">
             </translation>
     </message>
     <message>
@@ -4190,10 +4115,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">Vytvoril</translation>
     </message>
 </context>
 <context>

@@ -4,10 +4,6 @@
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
-        <source>Information About</source>
-        <translation type="obsolete">Thông Tin Về...</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
         <translation type="unfinished"></translation>
@@ -50,15 +46,6 @@
         <source>&amp;Help</source>
         <extracomment>Main menu item</extracomment>
         <translation>&amp;Giúp Đỡ</translation>
-    </message>
-    <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">BibleTime</translation>
-    </message>
-    <message>
-        <source>Quit</source>
-        <translation type="obsolete">Thoát</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="141"/>
@@ -163,10 +150,6 @@
         <location filename="../../src/bibletime_init.cpp" line="296"/>
         <source>Close all open windows inside BibleTime</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">&amp;Đóng Tất Cả</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="320"/>
@@ -290,17 +273,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="69"/>
+        <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="71"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="73"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Initializing menu- and toolbars...</source>
         <translation type="unfinished"></translation>
     </message>
