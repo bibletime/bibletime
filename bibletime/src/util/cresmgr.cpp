@@ -13,6 +13,9 @@
 
 
 namespace CResMgr {
+	namespace mainWindow {
+		const QString icon = "bibletime.svg";
+	} // mainWindow
 	namespace modules {
 		namespace bible {
 			const QString icon_unlocked  = "bible.svg";
