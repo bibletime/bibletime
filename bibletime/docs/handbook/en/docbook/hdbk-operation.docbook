@@ -12,8 +12,9 @@
       </textobject>
     </mediaobject>
     You can easily see the different parts of the
-    application. The Bookshelf on the left side is used to open works
-    and to manage your bookmarks. The little "Mag" window below the
+    application. The top left window is used to open installed works
+    in the Bookshelf tab, and with the Bookmarks tab you can
+    manage your bookmarks. The little "Mag" window below the
     Bookshelf is used to display extra information that is embedded in
     documents. When you move your mouse over a footnote marker, for
     example, then the Mag will display the actual content of the
