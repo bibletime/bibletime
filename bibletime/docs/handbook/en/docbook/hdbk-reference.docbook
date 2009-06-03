@@ -106,6 +106,22 @@
           </listitem>
         </varlistentry>
 
+        <varlistentry id="hdbk-reference-menus-view-showbookmarks">
+          <term>
+            <menuchoice>
+              <guimenu>View</guimenu>
+              <guimenuitem>Show Bookmarks</guimenuitem>
+            </menuchoice>
+          </term>
+          <listitem>
+            <para>
+            <action>Toggles display of the Bookmarks.</action> Toggle
+            this setting to turn the Bookmarks on the left pane on or
+            off. This can be handy if you need more space for the
+            Mag.</para>
+          </listitem>
+        </varlistentry>
+
         <varlistentry id="hdbk-reference-menus-view-showmag">
           <term>
             <menuchoice>
@@ -147,7 +163,8 @@
             <para>
             <action>Opens the Search Dialog to search in the standard
             Bible only</action>. More works can be added in the Search
-            Dialog.</para>
+            Dialog. A more detailed search description can be found 
+	    <link linkend="hdbk-op-search">here</link>.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-search-openworks">
@@ -169,8 +186,9 @@
           <listitem>
             <para>
             <action>Opens the Search Dialog to search in all open
-            works</action>. More works can be added in the Search
-            Dialog.</para>
+            works</action>. Works can be added or removed in the Search
+            Dialog. A more detailed search description can be found 
+	    <link linkend="hdbk-op-search">here</link>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
