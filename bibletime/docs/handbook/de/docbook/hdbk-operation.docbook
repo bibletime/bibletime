@@ -11,13 +11,14 @@
         <phrase>The &bibletime; application window</phrase>
       </textobject>
     </mediaobject>
-    You can easily see the different parts of the application. The Bookshelf on 
-the left side is used to open works and to manage your bookmarks. The little 
-"Mag" window below the Bookshelf is used to display extra information that 
-is embedded in documents. When you move your mouse over a footnote marker, 
-for example, then the Mag will display the actual content of the 
-footnote. The toolbar gives you quick access to important functions, and the 
-Desk on the right side is where you do your real work.</para>
+    You can easily see the different parts of the application. The top left 
+window is used to open installed works in the Bookshelf tab, and with the 
+Bookmarks tab you can manage your bookmarks. The little "Mag" window below 
+the Bookshelf is used to display extra information that is embedded in 
+documents. When you move your mouse over a footnote marker, for example, 
+then the Mag will display the actual content of the footnote. The toolbar 
+gives you quick access to important functions, and the Desk on the right 
+side is where you do your real work.</para>
 
     <para>Wir fahren fort, indem wir nun die verschiedenen Teile der Anwendung einzeln 
 betrachten.</para>
@@ -43,7 +44,7 @@ zu öffnen klicken Sie auf dessen Symbol.</para>
 
         <para>If you are reading a certain work, and want to open another work at the 
 passage you are reading, you can use a shortcut. Simply click with the 
-<mousebutton>left mouse button</mousebutton>on the verse/passage reference 
+<mousebutton>left mouse button</mousebutton> on the verse/passage reference 
 (pointer changes to hand) and drag it to the Bookshelf. Drop it on the work 
 you want to open, and it will be opened for reading at the specified 
 location. You can also drag a verse reference into an existing read window, 
@@ -52,11 +53,11 @@ then it will jump to the specified location.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Weitere Informationen über Werke</title>
-        <para>If you click with the <mousebutton>right</mousebutton>mouse button on the 
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
 symbol of a work, you will see a menu with additional entries that are 
-relevant for this work.  <guimenuitem>"About this work"</guimenuitem>opens a 
-window with lots of interesting information about the selected work.  
-<guimenuitem>"Unlock this work"</guimenuitem>opens a small dialog for 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
 encrypted documents, where you can enter the unlock key to access the 
 work. For additional information on locked works, please see <ulink 
 url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
@@ -66,7 +67,7 @@ page</ulink> on the Crosswire Bible Society web site.</para>
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>In Werken suchen</title>
         <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton>mouse button on its symbol and selecting 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
 <guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
 clicking on other works you can select more than one. Then follow the same 
 procedure to open the search dialog. You will be searching in all of these 
@@ -82,19 +83,19 @@ can be found <link linkend="hdbk-op-search">here</link>.</para>
           <para>Hier funktioniert Drag&amp;Drop</para>
         </tip>
 
-	Click with the <mousebutton>right</mousebutton>mouse button on the bookmark 
+	Click with the <mousebutton>right</mousebutton> mouse button on the bookmark 
 category of the bookshelf and select <guimenuitem>"Create new 
 folder"</guimenuitem> to create a new bookmark subfolder. You can use normal 
 drag &amp; drop functions to drag verse references from read windows or 
 search results to the bookmark folder, and to rearrange bookmarks between 
 folders.</para>
         <para>You can also import bookmarks from other people or export bookmarks to share 
-them. To do this, open the <guimenu>context menu</guimenu>of the bookmark 
+them. To do this, open the <guimenu>context menu</guimenu> of the bookmark 
 folder as described above, and select <guimenuitem>"Export 
 bookmarks"</guimenuitem>. This will bring up a dialog box for you to save 
 the bookmark collection. You can import bookmarks in a similar way.</para>
 
-        <para>You can also click with the <mousebutton>right</mousebutton>on folders and 
+        <para>You can also click with the <mousebutton>right</mousebutton> on folders and 
 bookmarks to change their names and descriptions.</para>
       </sect3>
     </sect2>
@@ -131,7 +132,7 @@ know from your browser.</para>
         <title>Lese-Fenster Anordnung</title>
         <para>Of course, you can open multiple works at the same time.  There are several 
 possibilities for arranging the read windows on the desk. Please have a look 
-at the entry <guimenu>Window</guimenu>in the main menu. There you can see 
+at the entry <guimenu>Window</guimenu> in the main menu. There you can see 
 that you can either control the placement of the read windows completely 
 yourself, or have &bibletime; handle the placement automatically. To achieve 
 this, you have to select one of the automatic placement modes available at 
@@ -147,11 +148,11 @@ url="http://www.crosswire.org">Crosswire Bible Society</ulink>. This work is
 called "Personal commentary".</para>
 
         <para>If you open the personal commentary by clicking on its symbol in the 
-Bookshelf with a <mousebutton>left</mousebutton>mouse button, it opens in 
+Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in 
 read mode. You will not be able to edit it in this mode. Should you wish to 
 write annotations into the personal commentary, you have to open it with the 
-<mousebutton>right</mousebutton>mouse button and then select <guimenu>Edit 
-this work</guimenu>and then either <guimenuitem>Plain 
+<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit 
+this work</guimenu> and then either <guimenuitem>Plain 
 text</guimenuitem>(source code editor) or 
 <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
 
@@ -176,7 +177,7 @@ will be inserted.</para>
       <para>You can look for a word or phrase in the open read window (e.g. the chapter 
 of a bible that you're reading) just like you are used to from other 
 programs. This function can be reached either by clicking with the 
-<mousebutton>right</mousebutton>mouse button and selecting 
+<mousebutton>right</mousebutton> mouse button and selecting 
 <guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
 action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
 you can search in entire works.</para>
@@ -185,8 +186,8 @@ you can search in entire works.</para>
     <sect2 id="hdbk-op-search-access">
       <title>Auf den Suchdialog zugreifen</title>
       <para>You can search in a work by clicking with the 
-<mousebutton>right</mousebutton>mouse button on its symbol in the 
-<guimenu>Bookshelf</guimenu>and selecting <guimenuitem>Search in 
+<mousebutton>right</mousebutton> mouse button on its symbol in the 
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in 
 work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
 work's names you can select more than one. Then follow the same procedure to 
 open the search dialog. You will be searching in all of these works at the 
@@ -222,7 +223,7 @@ you can select the works you want to search in.</para>
         <para>You can narrow the scope of your search to certain parts of the Bible by 
 selecting one of the predefined scopes from the list in <guimenu>Search 
 scope</guimenu>. You can define your own search ranges by clicking the 
-<guibutton>Setup ranges</guibutton>button.</para>
+<guibutton>Setup ranges</guibutton> button.</para>
       </sect3>
       <sect3 id="hd-op-search-config-syntax">
         <title>Basic Search Syntax Introduction</title>
@@ -274,7 +275,7 @@ http://lucene.apache.org/java/docs/index.html</ulink></para>
     <sect2 id="hdbk-op-search-results">
       <title>Search results</title>
       <para>Here you can see how many instances of the search string were found, sorted 
-by works. Clicking on a work with the <mousebutton>right</mousebutton>mouse 
+by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse 
 button allows you to copy, save, or print all verses that were found in a 
 certain work at once. This also works when you click on one or more of the 
 references to copy, save or print them. Clicking on a particular reference 
@@ -292,7 +293,7 @@ that verse.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
         <title>Search result analysis</title>
-        <para>Click on <guibutton>Search analysis</guibutton>to open the search analysis 
+        <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis 
 display. This gives a simple graphic analysis of the number of instances the 
 search string was found in each book of the Bible, and you can also save the 
 analysis.</para>
@@ -363,7 +364,7 @@ index files for removed works.</para>
   <sect1 id="hdbk-op-output">
     <title>Exortieren und Drucken</title>
     <para>In many places, you can open a context menu by clicking with the 
-<mousebutton>right</mousebutton>mouse button. Depending on context, it will 
+<mousebutton>right</mousebutton> mouse button. Depending on context, it will 
 allow you to <guimenuitem>Select</guimenuitem>, 
 <guimenuitem>Copy</guimenuitem> (to clipboard), 
 <guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 

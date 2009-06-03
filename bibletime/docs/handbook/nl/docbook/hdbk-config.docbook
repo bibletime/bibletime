@@ -80,8 +80,8 @@ Cyberbit</trademark>(about 12Mb).</para>
             <para>De lokalisatiepakketten (localization packages) in uw distributie.</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft 
-Windows</trademark>installation on the same computer.</para>
+            <para>An existing <trademark class="registered">Microsoft Windows</trademark> 
+installation on the same computer.</para>
           </listitem>
           <listitem>
             <para>Een verzameling lettertypen, zoals beschikbaar is van Adobe of Bitstream.</para>
@@ -168,7 +168,7 @@ ranges and the Unicode fonts that support them</ulink>).</para>
 have the possibility to specify standard works that should be used when no 
 specific work is specified in a reference. An example: The standard Bible is 
 used to display the content of cross references in the Bible. When you hover 
-over then, the Mag will show the content of the verses referred to, 
+over them, the Mag will show the content of the verses referred to, 
 according to the standard Bible you specified.</para>
     </sect2>
     <sect2 id="hdbk-config-bt-hotkeys">

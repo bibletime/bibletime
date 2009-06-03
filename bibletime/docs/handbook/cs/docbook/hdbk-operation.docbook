@@ -11,12 +11,14 @@
         <phrase>Okno aplikace &bibletime;</phrase>
       </textobject>
     </mediaobject>
-    Můžete si jednoduše prohlédnout různé části aplikace. Knihovna na levé 
-straně se používá pro otevírání děl a správu vašich záložek. Malé okno 
-čaopisu pod knihovnou se používá pro zobrazení dalších informací vložených 
-do dokumentů. Když přemístíte myš například nad značku poznámky, časopis 
-zobrazí aktuální obsah poznámky. Panel nástrojů vám umožňuje rychlý přístup 
-k důležitým funkcím, na ploše vpravo skutečně pracujete.</para>
+    You can easily see the different parts of the application. The top left 
+window is used to open installed works in the Bookshelf tab, and with the 
+Bookmarks tab you can manage your bookmarks. The little "Mag" window below 
+the Bookshelf is used to display extra information that is embedded in 
+documents. When you move your mouse over a footnote marker, for example, 
+then the Mag will display the actual content of the footnote. The toolbar 
+gives you quick access to important functions, and the Desk on the right 
+side is where you do your real work.</para>
 
     <para>Nyní se podívejme na vzhled různých částí aplikace individuálně.</para>
   </sect1>
@@ -40,36 +42,37 @@ ploše.</para>
           <para>Chyť &amp; pust dílo</para>
         </tip>
 
-        <para>Pokud čtete nějaké dílo a chcete otevřít jiné dílo ve stejné pasáži, můžete 
-použít zkratku. jednoduše klikněte <mousebutton>levým tlačítkem 
-myši</mousebutton> na odkaz verše nebo kapitoly (kurzor se změní v ruku) a 
-přetáhněte ho do knihovny. Upusťte ho na dílo, které chcete otevřít ,a to 
-bude otevřeno na požadovaném místě. Můžete také přetánout odkaz verše na 
-existující okno, které se přesune na požadované umístění.</para>
+        <para>If you are reading a certain work, and want to open another work at the 
+passage you are reading, you can use a shortcut. Simply click with the 
+<mousebutton>left mouse button</mousebutton> on the verse/passage reference 
+(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work 
+you want to open, and it will be opened for reading at the specified 
+location. You can also drag a verse reference into an existing read window, 
+then it will jump to the specified location.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Další informace o dílech</title>
-        <para>Pokud kliknete <mousebutton>pravým tlačítkem myši</mousebutton> na symbol 
-díla, objeví se nabídka s dalšími možnostmi, které jsou relevantní pro toto 
-dílo. <guimenuitem>"O tomto díle"</guimenuitem>otevře okno s mnoha 
-zajímavými informacemi o zvoleném díle. <guimenuitem>"Odemknout toto 
-dílo"</guimenuitem> otevře malý dialog pro zabezpečené dokumenty, kde můžete 
-vložit přístupová kód k otevření díla. Pro další informace o zamčených 
-dílech se podívejte na <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> tuto 
-stránku</ulink> na webu Crosswire Bible Society.</para>
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
+page</ulink> on the Crosswire Bible Society web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
         <title>Vyhledávání v dílech</title>
-        <para>Vyhledávat v díle můžete kliknutím <mousebutton>pravým tlačítkem 
-myši</mousebutton> na jeho symbol a vybráním položky<guimenuitem>"Hledat v 
-díle(ch)"</guimenuitem>. Stiskem klávesy &Shift; a kliknutím na další díla 
-můžete vybrat více než jedno. Poté následuje stejný proces s otevřením 
-vyhledávacího dialogu. Budete vyhledávat ve všech těchto 
-dokumentech. Kompletní popis obsluhy vyhledávacích funkcí naleznete <link 
-linkend="hdbk-op-search">zde</link>.</para>
+        <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one. Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found <link linkend="hdbk-op-search">here</link>.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
@@ -80,20 +83,20 @@ linkend="hdbk-op-search">zde</link>.</para>
           <para>Chyť &amp; pust dílo</para>
         </tip>
 
-	Klikněte <mousebutton>pravým tlačítkem myši</mousebutton> na kategorii 
-záložek v knihovně a vyberte <guimenuitem>"Vytvořit novou 
-složku"</guimenuitem>, pokud chcete vytvořit novou podsložku záložek. Můžete 
-použít běžnou funkci "drag &amp; drop " k přetáhnutí odkazu verše z 
-otevřených oken, nebo výsledků vyhledávání do adresáře záložek, stejně jako 
-pro přesouvání záložek mezi složkami.</para>
-        <para>Můžete také importovat záložky od ostatních, nebo je exportovat a sdílet. K 
-tomu otevřete <guimenu>kontextové menu</guimenu> adresáře záložek jak bylo 
-popsáno předtím a vyberte <guimenuitem>"Exportovat 
-záložky"</guimenuitem>. To otevře dialog pro uložení vaší kolekce 
-záložek. Stejným způsobem můžete záložky importovat.</para>
+	Click with the <mousebutton>right</mousebutton> mouse button on the bookmark 
+category of the bookshelf and select <guimenuitem>"Create new 
+folder"</guimenuitem> to create a new bookmark subfolder. You can use normal 
+drag &amp; drop functions to drag verse references from read windows or 
+search results to the bookmark folder, and to rearrange bookmarks between 
+folders.</para>
+        <para>You can also import bookmarks from other people or export bookmarks to share 
+them. To do this, open the <guimenu>context menu</guimenu> of the bookmark 
+folder as described above, and select <guimenuitem>"Export 
+bookmarks"</guimenuitem>. This will bring up a dialog box for you to save 
+the bookmark collection. You can import bookmarks in a similar way.</para>
 
-        <para>Klikněte <mousebutton>pravým tlačítkem myši</mousebutton> na adresáře a 
-záložky, pokud chcete změnit jejich jméno nebo popis.</para>
+        <para>You can also click with the <mousebutton>right</mousebutton> on folders and 
+bookmarks to change their names and descriptions.</para>
       </sect3>
     </sect2>
 
@@ -125,14 +128,14 @@ historie jako ve vašem webovém prohlížeči.</para>
 
       <sect3 id="hdbk-op-parts-desk-placement">
         <title>Umístění aktivního okna</title>
-        <para>Samozřejmě můžete mít otevřeno více děl ve stejné době. Máte několik 
-možností jak umístit okna na ploše. Prosím podívejte se na položku 
-<guimenu>Okno</guimenu> v hlavním menu. Tam uvidíte, že umístění oken můžete 
-ovládat buď osobně, nebo zvolit automatické umístění &bibletime;. Toho 
-docílíte volbou jednoho z automatických módů umístění, které jsou přístupné 
-přes <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód 
-rozvržení</guimenuitem> </menuchoice>. Prostě to vyzkoušejte, je to snadné a 
-funguje to.</para>
+        <para>Of course, you can open multiple works at the same time.  There are several 
+possibilities for arranging the read windows on the desk. Please have a look 
+at the entry <guimenu>Window</guimenu> in the main menu. There you can see 
+that you can either control the placement of the read windows completely 
+yourself, or have &bibletime; handle the placement automatically. To achieve 
+this, you have to select one of the automatic placement modes available at 
+<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-desk-write">
@@ -141,13 +144,14 @@ funguje to.</para>
 dílo z knihovny  <ulink url="http://www.crosswire.org">Crosswire Bible 
 Society</ulink>, které se jmenuje "Personal commentary" ("Osobní komentář").</para>
 
-        <para>Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>  
-tlačítkem myši na jeho symbol v knihovně, otevře se pro čtení. V tomto módu 
-není možné komentář editovat. Pokud si přejete do něj zapsat poznámku, 
-musíte ho otevřít pomocí <mousebutton>pravého</mousebutton> tlačítka myši a 
-zvolit <guimenu>Editovat toto dílo</guimenu> a potom také 
-<guimenuitem>Prostý text</guimenuitem> (editor zdrojového kódu) nebo 
-<guimenuitem>HTML</guimenuitem>(jednoduchý gui wysiwyg editor).</para>
+        <para>If you open the personal commentary by clicking on its symbol in the 
+Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in 
+read mode. You will not be able to edit it in this mode. Should you wish to 
+write annotations into the personal commentary, you have to open it with the 
+<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit 
+this work</guimenu> and then either <guimenuitem>Plain 
+text</guimenuitem>(source code editor) or 
+<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
 
         <tip>
           <para>Pokud je položka <menuchoice> <guimenu>Upravit toto dílo</guimenu> 
@@ -167,23 +171,24 @@ text.</para>
 
     <sect2 id="hdbk-op-search-intext">
       <title>Vyhledávání textu v aktivním okně</title>
-      <para>Když chcete hledat slovo nebo frázi v otevřeném aktivním okně 
-(např. kapitolu bible, kterou čtete), je to stejné jako v jiných 
-programech. tuto funkci můžete vyvolat kliknutím 
-<mousebutton>pravým</mousebutton> tlačítkem myši a vybráním 
-<guimenuitem>Najít...</guimenuitem>, nebo použitím horké klávesy <keycombo 
-action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Přečtěte si jak hledat 
-v celých dílech.</para>
+      <para>You can look for a word or phrase in the open read window (e.g. the chapter 
+of a bible that you're reading) just like you are used to from other 
+programs. This function can be reached either by clicking with the 
+<mousebutton>right</mousebutton> mouse button and selecting 
+<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
+you can search in entire works.</para>
     </sect2>
 
     <sect2 id="hdbk-op-search-access">
       <title>Přístup k dialogu vyhledávání</title>
-      <para>V díle můžete hledat kliknutím <mousebutton>pravým</mousebutton> tlačítkem 
-myši na symbol v <guimenu>knihovně</guimenu> a vybráním <guimenuitem>Hledat 
-ve vybraných dílech</guimenuitem>. Přidržením &Shift; nebo &Ctrl; a 
-kliknutím na jména dalších děl můžete vybrat více než jedno dílo. Poté 
-následuje stejný postup otevření dialogu hledání. Budete hledat ve všech 
-těchto dílech najednou.</para>
+      <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol in the 
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in 
+work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
+work's names you can select more than one. Then follow the same procedure to 
+open the search dialog. You will be searching in all of these works at the 
+same time.</para>
 
       <para>Vyhledávací dialog spustíte kliknutím na <menuchoice> 
 <guimenu>Hledat</guimenu> </menuchoice> z hlavního menu a vybráním 
@@ -212,10 +217,10 @@ kterých chcete vyhledávat.</para>
       </sect3>
       <sect3 id="hd-op-search-config-scope">
         <title>Použití oblastí vyhledávání</title>
-        <para>Můžete použít rozsah hledání zvolením určitých částí Bible pomocí jedné z 
-definovaných oblastí v seznamu <guimenu>Rozsah hledání</guimenu> Můžete 
-definovat vlastní vyhledávací rozsahy kliknutím na tlačítko 
-<guibutton>Nastavit rozsah</guibutton>.></para>
+        <para>You can narrow the scope of your search to certain parts of the Bible by 
+selecting one of the predefined scopes from the list in <guimenu>Search 
+scope</guimenu>. You can define your own search ranges by clicking the 
+<guibutton>Setup ranges</guibutton> button.</para>
       </sect3>
       <sect3 id="hd-op-search-config-syntax">
         <title>Úvod do jednoduché vyhledávací syntaxe</title>
@@ -268,11 +273,12 @@ http://lucene.apache.org/java/docs/index.html</ulink></para>
     </sect2>
     <sect2 id="hdbk-op-search-results">
       <title>Výsledky hledání</title>
-      <para>Zde vidíte kolik případů hledaného řetězce bylo nalezeno, setříděno podle 
-děl. Kliknutí na dílo <mousebutton>pravým</mousebutton> tlačítkem myši vám 
-umožní kopírovat, uložit, nebo tisknout všechny verše které byli v daném 
-díle nalezeny. To při kliknutí na jeden nebo více odkazů. Kliknutí na určitý 
-odkaz otevře verš v jeho kontextu v okně náhledu.</para>
+      <para>Here you can see how many instances of the search string were found, sorted 
+by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse 
+button allows you to copy, save, or print all verses that were found in a 
+certain work at once. This also works when you click on one or more of the 
+references to copy, save or print them. Clicking on a particular reference 
+opens that verse up in context in the preview window below.</para>
       <tip>
         <para>Přetáhněte odkaz a upusťte ho na symbol díla v knihovně k otevření díla na 
 tomto verši v novém okně.</para>
@@ -286,9 +292,10 @@ požadovanou pozici.</para>
       </tip>
       <sect3 id="hdbk-op-search-analysis">
         <title>Analýza výsledků hledání</title>
-        <para>Klikněte na <guibutton>Analýza vahledávání</guibutton> pro zobrazení analýzy 
-vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených 
-řetězců v každé knize Bible, analýzu můžete uložit.</para>
+        <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis 
+display. This gives a simple graphic analysis of the number of instances the 
+search string was found in each book of the Bible, and you can also save the 
+analysis.</para>
         <screenshot>
           <screeninfo>Dialog analýzy vyhledávání</screeninfo>
           <mediaobject>
@@ -354,15 +361,15 @@ indexy smazaných děl.</para>
   </sect1>
   <sect1 id="hdbk-op-output">
     <title>Export a tisk</title>
-    <para>Na mnoha místech můžete vyvolat kontextové menu kliknutím 
-<mousebutton>pravým</mousebutton> tlačítkem myši. V závislosti na kontextu 
-je možné <guimenuitem>Vybrat</guimenuitem>, 
-<guimenuitem>Kopírovat</guimenuitem> (do schránky), 
-<guimenuitem>Uložit</guimenuitem> nebo 
-<guimenuitem>Tisknout</guimenuitem>. to funguje např. v aktivním okně když 
-kliknete na běžný text nebo na odkaz verše, nebo na stránce výsledků hledání 
-při kliknutí na dílo nebo na jeden či více odkazů veršů. Je to krásně 
-přímočaré, prostě to vyzkoušejte.</para>
+    <para>In many places, you can open a context menu by clicking with the 
+<mousebutton>right</mousebutton> mouse button. Depending on context, it will 
+allow you to <guimenuitem>Select</guimenuitem>, 
+<guimenuitem>Copy</guimenuitem> (to clipboard), 
+<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 
+text. This works for example in the read windows, when you click on the 
+normal text or the verse reference, or in the search result page when you 
+click on a work or one or more verse references. It is pretty 
+straightforward, so just try it out.</para>
 
     <para>Tisk z &bibletime; spíše základní a je zamýšlen jako pomůcka. Pokud 
 vytváříte dokument nebo prezentaci obsahující text děl z &bibletime;, 
