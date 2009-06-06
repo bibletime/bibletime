@@ -16,6 +16,7 @@
 #include "util/cpointers.h"
 #include "util/dialogutil.h"
 #include "backend/managers/cswordbackend.h"
+#include "backend/config/cbtconfig.h"
 
 #include <QDialogButtonBox>
 
@@ -57,10 +58,13 @@ BtModuleManagerDialog::BtModuleManagerDialog(QWidget* parent)
 	util::prepareDialogBox(bbox);
 	addButtonBox(bbox);
 	connect(bbox, SIGNAL(rejected()), SLOT(close()));
+
+	loadDialogSettings();
 }
 
 BtModuleManagerDialog::~BtModuleManagerDialog()
 {
+	saveDialogSettings();
 	m_staticModuleManagerDialog = 0;
 }
 
@@ -70,4 +74,16 @@ void BtModuleManagerDialog::closeEvent(QCloseEvent*)
 	qDebug("BtModuleManagerDialog::closeEvent");
 }
 
+void BtModuleManagerDialog::loadDialogSettings()
+{
+	resize(CBTConfig::get(CBTConfig::bookshelfWidth), CBTConfig::get(CBTConfig::bookshelfHeight));
+	move(CBTConfig::get(CBTConfig::bookshelfPosX), CBTConfig::get(CBTConfig::bookshelfPosY));
+}
 
+void BtModuleManagerDialog::saveDialogSettings()
+{
+	CBTConfig::set(CBTConfig::bookshelfWidth, size().width());
+	CBTConfig::set(CBTConfig::bookshelfHeight, size().height());
+	CBTConfig::set(CBTConfig::bookshelfPosX, x());
+	CBTConfig::set(CBTConfig::bookshelfPosY, y());
+}

@@ -144,6 +144,14 @@ QString CBTConfig::getKey( const CBTConfig::ints ID) {
 		case searchDialogY:			return "searchDialogY";
 		case searchType:			return "searchType";
 		case installPathIndex:		return "installPathIndex";
+		case bookshelfPosX:			return "bookshelfPosX";
+		case bookshelfPosY:			return "bookshelfPosY";
+		case bookshelfHeight:		return "bookshelfHeight";
+		case bookshelfWidth:		return "bookshelfWidth";
+		case configDialogPosX:		return "configDialogPosX";
+		case configDialogPosY:		return "configDialogPosY";
+		case configDialogHeight:	return "configDialogHeight";
+		case configDialogWidth:		return "configDialogWidth";
 	}
 	Q_ASSERT(false);
 	return QString::null;
@@ -199,6 +207,15 @@ int CBTConfig::getDefault( const CBTConfig::ints ID) {
 		case searchType:			return Search::BtSearchOptionsArea::AndType;
 		case mainindexActiveTab:	return 0;
 		case installPathIndex:  	return 0;
+		case bookshelfPosX:  		return 1;
+		case bookshelfPosY:  		return 1;
+		case bookshelfHeight:  		return 1;
+		case bookshelfWidth:  		return 1;
+		case configDialogPosX:  	return 1;
+		case configDialogPosY:  	return 1;
+		case configDialogHeight:	return 1;
+		case configDialogWidth: 	return 1;
+
 	}
 	return 0;
 }

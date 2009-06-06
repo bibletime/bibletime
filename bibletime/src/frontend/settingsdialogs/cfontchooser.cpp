@@ -41,7 +41,7 @@ WebViewerWidget::~WebViewerWidget()
 
 QSize WebViewerWidget::sizeHint () const
 {
-	return QSize(100,85);
+	return QSize(100,100);
 }
 // ************************
 
@@ -78,6 +78,7 @@ void CFontChooser::createFontAreaLayout()
 
 	m_fontListWidget = new CListWidget();
 	m_fontListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+	m_fontListWidget->setMinimumHeight(50);
 	fontLayout->addWidget(m_fontListWidget);
 
 	// style column
@@ -89,6 +90,7 @@ void CFontChooser::createFontAreaLayout()
 
 	m_styleListWidget = new CListWidget();
 	m_styleListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+	m_styleListWidget->setMinimumHeight(50);
 	m_styleListWidget->setCharWidth(12);
 	styleLayout->addWidget(m_styleListWidget);
 
@@ -101,6 +103,7 @@ void CFontChooser::createFontAreaLayout()
 
 	m_sizeListWidget = new CListWidget();
 	m_sizeListWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::MinimumExpanding);
+	m_sizeListWidget->setMinimumHeight(50);
 	m_sizeListWidget->setCharWidth(5);
 	sizeLayout->addWidget(m_sizeListWidget);
 
@@ -120,6 +123,8 @@ void CFontChooser::createTextAreaLayout()
 {
 	QWidget* webViewWidget = new WebViewerWidget(this);
 	QLayout* webViewLayout = new QVBoxLayout(webViewWidget);
+
+	webViewWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 	
 	m_webView = new QWebView(webViewWidget);
 	webViewLayout->addWidget(m_webView);
@@ -333,7 +338,7 @@ void CFontChooser::sizeChanged(QListWidgetItem* current, QListWidgetItem* /*prev
 
 QSize CFontChooser::sizeHint() const 
 {
-	return QSize(170,170);
+	return QSize(170,100);
 }
 
 void CFontChooser::styleChanged(QListWidgetItem* current, QListWidgetItem* /*previous*/)

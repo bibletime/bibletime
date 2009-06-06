@@ -30,10 +30,19 @@ public:
 
 	//void slotClose();
 protected:
-	/** Reimplementation from QWidget. */
+	/** Reimplementation from QWidget. */	
 	virtual void closeEvent(QCloseEvent* event);
+
 	/** Adds the pages and the button box. */
 	BtModuleManagerDialog(QWidget* parent);
+
+private:
+	// Load the settings from the resource file
+	void loadDialogSettings();
+
+	// Save the settings to the resource file
+	void saveDialogSettings();
+
 
 //signals:
 //	void swordSetupChanged();

@@ -67,10 +67,15 @@ CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection*
 	bool ok = connect(m_bbox, SIGNAL(clicked(QAbstractButton *)), SLOT(slotButtonClicked(QAbstractButton *)));
 	Q_ASSERT(ok);
 
+	loadDialogSettings();
+
 	slotChangePage(0);
 }
 
-CConfigurationDialog::~CConfigurationDialog() {}
+CConfigurationDialog::~CConfigurationDialog() 
+{
+	saveDialogSettings();
+}
 
 /** Called if any button was clicked*/
 void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
@@ -91,3 +96,16 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 		close();
 }
 
+void CConfigurationDialog::loadDialogSettings()
+{
+	resize(CBTConfig::get(CBTConfig::configDialogWidth), CBTConfig::get(CBTConfig::configDialogHeight));
+	move(CBTConfig::get(CBTConfig::configDialogPosX), CBTConfig::get(CBTConfig::configDialogPosY));
+}
+
+void CConfigurationDialog::saveDialogSettings()
+{
+	CBTConfig::set(CBTConfig::configDialogWidth, size().width());
+	CBTConfig::set(CBTConfig::configDialogHeight, size().height());
+	CBTConfig::set(CBTConfig::configDialogPosX, x());
+	CBTConfig::set(CBTConfig::configDialogPosY, y());
+}

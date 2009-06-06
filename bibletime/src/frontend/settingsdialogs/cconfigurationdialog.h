@@ -31,8 +31,10 @@ class CConfigurationDialog : public BtConfigDialog {
 public:
 	CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
 	virtual ~CConfigurationDialog();
+
 protected slots:
 	void slotButtonClicked(QAbstractButton *);
+
 private:
 	BtActionCollection* m_actionCollection;
 	CDisplaySettingsPage* m_displayPage;
@@ -40,6 +42,12 @@ private:
 	CAcceleratorSettingsPage* m_acceleratorsPage;
 	CLanguageSettingsPage* m_languagesPage;
 	QDialogButtonBox* m_bbox;
+
+	// Load the settings from the resource file
+	void loadDialogSettings();
+
+	// Save the settings to the resource file
+	void saveDialogSettings();
 
 signals:
 	void signalSettingsChanged();

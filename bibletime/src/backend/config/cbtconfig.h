@@ -96,7 +96,17 @@ public:
 		searchDialogY,
 		searchType,
 
-		installPathIndex
+		installPathIndex,
+
+		bookshelfPosX,
+		bookshelfPosY,
+		bookshelfHeight,
+		bookshelfWidth,
+
+		configDialogPosX,
+		configDialogPosY,
+		configDialogHeight,
+		configDialogWidth
 	};
 	enum intLists {
 		leftPaneSplitterSizes,
