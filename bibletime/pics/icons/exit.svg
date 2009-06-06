@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Generator: Adobe Illustrator 10.0.3, SVG Export Plug-In . SVG Version: 3.0.0 Build 77)  -->
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   overflow="visible"
+   enable-background="new 0 0 128 128"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xml="http://www.w3.org/XML/1998/namespace"
+   xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg1218"
+   sodipodi:version="0.32"
+   inkscape:version="0.40"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   sodipodi:docname="crsc-action-exit2.svgz"
+   sodipodi:docbase="/Users/wimer"><defs
+   id="defs1298">
+		
+		<linearGradient
+   id="XMLID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="63.9995"
+   y1="4.9961"
+   x2="63.9995"
+   y2="118.0005">
+			<stop
+   offset="0"
+   style="stop-color:#FF5454"
+   id="stop1226" />
+
+			<stop
+   offset="0.1944"
+   style="stop-color:#F94F4F"
+   id="stop1228" />
+
+			<stop
+   offset="0.4665"
+   style="stop-color:#E64242"
+   id="stop1230" />
+
+			<stop
+   offset="0.783"
+   style="stop-color:#C92D2D"
+   id="stop1232" />
+
+			<stop
+   offset="1"
+   style="stop-color:#B01C1C"
+   id="stop1234" />
+
+			<a:midPointStop
+   offset="0"
+   style="stop-color:#FF5454"
+   id="midPointStop1236" />
+
+			<a:midPointStop
+   offset="0.6348"
+   style="stop-color:#FF5454"
+   id="midPointStop1238" />
+
+			<a:midPointStop
+   offset="1"
+   style="stop-color:#B01C1C"
+   id="midPointStop1240" />
+
+		</linearGradient>
+
+		
+		<linearGradient
+   id="XMLID_2_"
+   gradientUnits="userSpaceOnUse"
+   x1="110.2324"
+   y1="110.7646"
+   x2="23.2307"
+   y2="22.762">
+			<stop
+   offset="0"
+   style="stop-color:#FF5454"
+   id="stop1247" />
+
+			<stop
+   offset="0.1944"
+   style="stop-color:#F94F4F"
+   id="stop1249" />
+
+			<stop
+   offset="0.4665"
+   style="stop-color:#E64242"
+   id="stop1251" />
+
+			<stop
+   offset="0.783"
+   style="stop-color:#C92D2D"
+   id="stop1253" />
+
+			<stop
+   offset="1"
+   style="stop-color:#B01C1C"
+   id="stop1255" />
+
+			<a:midPointStop
+   offset="0"
+   style="stop-color:#FF5454"
+   id="midPointStop1257" />
+
+			<a:midPointStop
+   offset="0.6348"
+   style="stop-color:#FF5454"
+   id="midPointStop1259" />
+
+			<a:midPointStop
+   offset="1"
+   style="stop-color:#B01C1C"
+   id="midPointStop1261" />
+
+		</linearGradient>
+
+		
+		<linearGradient
+   id="XMLID_3_"
+   gradientUnits="userSpaceOnUse"
+   x1="63.9976"
+   y1="14.0005"
+   x2="63.9976"
+   y2="63.0005">
+			<stop
+   offset="0.0000000"
+   style="stop-color:#ffffff;stop-opacity:1.0000000;"
+   id="stop1268" />
+
+			<stop
+   offset="1.0000000"
+   style="stop-color:#ffffff;stop-opacity:0.0000000;"
+   id="stop1270" />
+
+			<a:midPointStop
+   offset="0"
+   style="stop-color:#FFFFFF"
+   id="midPointStop1272" />
+
+			<a:midPointStop
+   offset="0.5"
+   style="stop-color:#FFFFFF"
+   id="midPointStop1274" />
+
+			<a:midPointStop
+   offset="1"
+   style="stop-color:#000000"
+   id="midPointStop1276" />
+
+		</linearGradient>
+
+		
+		
+		
+	</defs>
+<metadata
+   id="metadata1297">
+  <rdf:RDF
+     id="RDF1299">
+    <cc:Work
+       rdf:about=""
+       id="Work1300">
+      <dc:format
+         id="format1301">image/svg+xml</dc:format>
+      <dc:type
+         id="type1303"
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    </cc:Work>
+  </rdf:RDF>
+</metadata>
+<sodipodi:namedview
+   id="base"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageopacity="0.0"
+   inkscape:pageshadow="2"
+   inkscape:zoom="2.7551500"
+   inkscape:cx="61.463937"
+   inkscape:cy="48.770294"
+   inkscape:window-width="640"
+   inkscape:window-height="537"
+   inkscape:window-x="0"
+   inkscape:window-y="277"
+   inkscape:current-layer="svg1218" />
+
+	<path
+   fill="#750000"
+   d="M128,114c0,7.732-6.268,14-14,14H14c-7.732,0-14-6.268-14-14V14C0,6.268,6.268,0,14,0h100    c7.732,0,14,6.268,14,14V114z"
+   id="path1222"
+   style="fill:#750000;" />
+<path
+   fill="url(#XMLID_1_)"
+   d="M14,4C8.486,4,4,8.486,4,14v100c0,5.514,4.486,10,10,10h100c5.514,0,10-4.486,10-10V14    c0-5.514-4.486-10-10-10H14z"
+   id="path1243"
+   style="fill:url(#XMLID_1_);" />
+<path
+   fill="url(#XMLID_2_)"
+   d="M18.093,8.113c-5.514,0-9.999,4.484-9.999,9.997v91.778c0,5.512,4.485,9.996,9.999,9.996h91.808    c5.515,0,10-4.484,10-9.996V18.109c0-5.512-4.485-9.997-10-9.997H18.093z"
+   id="path1264"
+   style="fill:url(#XMLID_2_);" />
+<path
+   opacity="0.6"
+   fill="url(#XMLID_3_)"
+   a:adobe-blending-mode="screen"
+   d="M18.093,12.113c-3.308,0-5.999,2.69-5.999,5.997V35    c0,1.357,31.477,29.994,50.905,31c27.907,1.445,52.902-13.693,52.902-17V18.109c0-3.307-2.691-5.997-6-5.997H18.093z"
+   id="path1279"
+   style="opacity:0.60481928;fill:url(#XMLID_3_);" />
+<g
+   id="g1584">
+			<path
+   opacity="0.38"
+   enable-background="new    "
+   d="M66.924,18.141c-26.217,0-47.611,21.387-47.611,47.596     c0,26.21,21.394,47.597,47.611,47.597c26.219,0,47.645-21.387,47.645-47.597C114.568,39.528,93.143,18.141,66.924,18.141z      M66.924,30.911c19.308,0,34.87,15.527,34.87,34.827s-15.562,34.826-34.87,34.826c-19.305,0-34.837-15.526-34.837-34.826     S47.619,30.911,66.924,30.911z"
+   id="path1283" />
+
+			<path
+   id="path1586"
+   opacity="0.38"
+   enable-background="new    "
+   d="M66.935,43.827c-4.323,0-7.802,3.479-7.802,7.799v30.082     c0,4.319,3.479,7.798,7.802,7.798c4.321,0,7.801-3.479,7.801-7.798V51.625C74.735,47.305,71.256,43.827,66.935,43.827z" />
+
+		</g>
+<g
+   id="g1581">
+			<path
+   fill="#FFFFFF"
+   d="M63.984,16.5C37.836,16.5,16.5,37.845,16.5,64c0,26.157,21.336,47.5,47.484,47.5     c26.148,0,47.516-21.343,47.516-47.5C111.5,37.845,90.132,16.5,63.984,16.5z M63.984,29.245C83.238,29.245,98.76,44.739,98.76,64     c0,19.261-15.521,34.756-34.776,34.756C44.73,98.757,29.24,83.262,29.24,64C29.24,44.739,44.73,29.245,63.984,29.245z"
+   id="path1290" />
+
+			<path
+   id="rect1578"
+   fill="#FFFFFF"
+   d="M63.993,42.134c-4.31,0-7.78,3.471-7.78,7.783v30.021c0,4.312,3.47,7.783,7.78,7.783     c4.311,0,7.78-3.471,7.78-7.783V49.917C71.773,45.605,68.304,42.134,63.993,42.134z" />
+
+		</g>
+
+</svg>
