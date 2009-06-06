@@ -502,6 +502,292 @@ informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi
     </sect2>
   </sect1>
 
+  <sect1 id="hdbk-reference-works">
+    <title>Works reference</title>
+    <para>
+      In this section you can find descriptions of the icons associated with open 
+works.
+    </para> 
+
+    <sect2 id="hdbk-reference-works-list">
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-forward">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_forward.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Scrolls forward through history.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-back">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_back.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Scrolls back through history.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-selectbible">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_bible.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select an installed bible.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-selectbible-add">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_bible_add.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select an additional bible.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-search">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_find.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Search in selected works.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-displayconfig">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_displayconfig.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Display configuration.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-selectcommentary">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_commentary.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select an installed commentary.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-selectcommentary-add">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_commentary_add.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select additional commentary.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-synch">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_sync.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Synchronize displayed entry with active Bible window.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-book">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_book.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select a book.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-lexicon">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_lexicon.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select an installed glossary or devotional.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+
+      <para>
+        <variablelist>
+          <varlistentry id="hdbk-reference-works-list-lexicon-add">
+            <term>
+              <menuchoice>
+                <guimenu>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="i_lexicon_add.png" format="PNG" />
+                  </imageobject>
+                </inlinemediaobject></guimenu>
+              </menuchoice>
+            </term>
+
+            <listitem>
+              <para>
+		Select an additional glossary or devotional.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </para>
+    </sect2>
+  </sect1>
+
   <sect1 id="hdbk-reference-hotkeys">
     <title>Seznam horkých kláves</title>
     <para>Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v 
@@ -772,4 +1058,5 @@ knih</guimenuitem> </menuchoice> </link>otevře správce knih.</entry>
       </tgroup>
     </informaltable>
   </sect1>
+
 </chapter>
