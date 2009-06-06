@@ -1,9 +1,12 @@
-2009-06-02 Martin Gruner
+2009-06-06 Martin Gruner <mgruner@crosswire.org>
+	* Release 2.0.1
+
+2009-06-02 Martin Gruner <mgruner@crosswire.org>
 	* Fix bug #2799800: Display broken when verse numbers are turned off
 
 2009-05-30 Gary Holmlund
 	* Fix defect, the main window icon was missing - defect # 2798758
-	* Removed debug code writing a ~/out.txt file without warning
+	* Removed debug code writing a out.txt file in the current directory without warning
 
 2009-05-28 Martin Gruner <mgruner@crosswire.org>
 	* release 2.0
