@@ -110,6 +110,7 @@ void BtAboutDialog::init_contributors_tab()
 	content += "<li>G&eacute;za Nov&aacute;k</li>";
 	content += "<li>Gabriel P&eacute;rez</li>";
 	content += "<li>Igor Plisco</li>";
+	content += "<li>Zdenko Podobn&yacute;</li>";
 	content += "<li>Jaak Ristioja</li>";
 	content += "<li>Igor Rykhlin</li>";
 	content += "<li>Vlad Savitsky</li>";
