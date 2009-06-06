@@ -587,7 +587,17 @@
      y1="65.9345"
      x2="89.3999"
      y2="65.9345"
-     gradientUnits="userSpaceOnUse" /><clipPath
+     gradientUnits="userSpaceOnUse" />
+     <linearGradient
+     inkscape:collect="always"
+     xlink:href="#linearGradient3255"
+     id="linearGradient3269"
+     gradientUnits="userSpaceOnUse"
+     x1="328.3566"
+     y1="33.783997"
+     x2="326.53983"
+     y2="-88.117844" />
+     <clipPath
      clipPathUnits="userSpaceOnUse"
      id="clipPath3265"><path
        d="M 376.98182,-19.965229 A 56.032688,56.032688 0 1 1 264.91644,-19.965229 A 56.032688,56.032688 0 1 1 376.98182,-19.965229 z"
@@ -597,15 +607,9 @@
        sodipodi:cx="320.94913"
        id="path3267"
        style="opacity:1;fill:none;fill-opacity:1;stroke:url(#linearGradient3269);stroke-width:0.99363244;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:4.15;stroke-opacity:1;filter:url(#filter3251)"
-       sodipodi:type="arc" /></clipPath><linearGradient
-     inkscape:collect="always"
-     xlink:href="#linearGradient3255"
-     id="linearGradient3269"
-     gradientUnits="userSpaceOnUse"
-     x1="328.3566"
-     y1="33.783997"
-     x2="326.53983"
-     y2="-88.117844" /><linearGradient
+       sodipodi:type="arc" />
+     </clipPath>
+     <linearGradient
      inkscape:collect="always"
      xlink:href="#linearGradient3255"
      id="linearGradient3271"

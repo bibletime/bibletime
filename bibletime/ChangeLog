@@ -1,5 +1,6 @@
 2009-06-06 Gary Holmlund
         * Config and Bookshelf Manager dialogs will remember their last size and position
+        * Fix warning coming from document_magnifier.svg
 
 2009-06-06 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.0.1
