@@ -34,10 +34,6 @@ BtInstallMgr::BtInstallMgr()
 { //use this class also as status reporter
 	qDebug("BtInstallMgr::BtInstallMgr");
 	this->setFTPPassive(true);
-#ifdef SWORD_INTERNET_WARNING
-	// this was in 1.6RC1, removed in RC2. To be removed from here soon - uncomment this and comment out the isUserDisclaimerConfirmed if you need to use RC1.
-	//setUserDisclaimerConfirmed(true);
-#endif
 }
 
 BtInstallMgr::~BtInstallMgr() {
@@ -45,14 +41,12 @@ BtInstallMgr::~BtInstallMgr() {
 	terminate(); //make sure to close the connection
 }
 
-#ifdef SWORD_INTERNET_WARNING
 bool BtInstallMgr::isUserDisclaimerConfirmed() const
 {
 	// TODO: Check from config if it's been confirmed with "don't show this anymore" checked.
 	// Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
 	return true;
 }
-#endif
 
 void BtInstallMgr::statusUpdate(double dltotal, double dlnow)
 {

@@ -114,7 +114,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					const int countSplit1 = tag.getAttributePartCount("lemma", '|');
 					const int countSplit2 = tag.getAttributePartCount("lemma", ' '); //TODO: not allowed, remove soon
 					int count = 0;
-					
+
 					if (countSplit1 > countSplit2) { //| split char
 						splitChar = '|'; //TODO: not allowed, remove soon
 						count = countSplit1;
@@ -123,7 +123,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 						splitChar = ' ';
 						count = countSplit2;
 					}
-					
+
 					int i = (count > 1) ? 0 : -1;  // -1 for whole value cuz it's faster, but does the same thing as 0
 					attrValue = "";
 
@@ -155,7 +155,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					const int countSplit1 = tag.getAttributePartCount("morph", '|');
 					const int countSplit2 = tag.getAttributePartCount("morph", ' '); //TODO: not allowed, remove soon
 					int count = 0;
-					
+
 					if (countSplit1 > countSplit2) { //| split char
 						splitChar = '|';
 						count = countSplit1;
@@ -260,11 +260,9 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					     }*/
 
 					buf.append("<span class=\"crossreference\">");
-#ifdef SWORD_SIMPLERENDER
 					sword::SWBuf footnoteNumber = tag.getAttribute("swordFootnote");
 					sword::SWBuf footnoteBody = myUserData->entryAttributes["Footnote"][footnoteNumber]["body"];
 					buf += myModule->RenderText(footnoteBody);
-#endif
 				}
 
 				/* else if (type == "explanation") {
@@ -290,7 +288,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 					buf.append( QString::number(myUserData->swordFootnote++).toUtf8().constData() ); //inefficient
 
 					const sword::SWBuf n = tag.getAttribute("n");
-					
+
 					buf.append("\">");
 					buf.append( (n.length() > 0) ? n.c_str() : "*" );
 					buf.append("</span> ");
@@ -543,7 +541,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 			}
 			//qWarning(QString("handled <seg> token. result: %1").arg(buf.c_str()).latin1());
 		}
-		
+
 		//divine name, don't use simple tag replacing because it may have attributes
 		else if (!strcmp(tag.getName(), "divineName")) {
 			if (!tag.isEndTag()) {
@@ -553,7 +551,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 				buf.append("</span></span>");
 			}
 		}
-		
+
 		else { //all tokens handled by OSISHTMLHref will run through the filter now
 			return sword::OSISHTMLHREF::handleToken(buf, token, userData);
 		}

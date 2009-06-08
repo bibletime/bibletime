@@ -41,10 +41,8 @@ public:
 	*/
 	void slotRefreshCanceled();
 
-#ifdef SWORD_INTERNET_WARNING
 	/** Re-implemented from sword::InstallMgr. */
 	virtual bool isUserDisclaimerConfirmed() const;
-#endif
 
 protected:
 	/* Reimplementations of methods in StatusReporter */

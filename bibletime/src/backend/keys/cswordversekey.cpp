@@ -81,23 +81,7 @@ QString CSwordVerseKey::book( const QString& newBook ) {
 	}
 
 	if (!newBook.isEmpty()) {
-
-#ifdef SWORD_MULTIVERSE
 		setBookName(newBook.toUtf8().constData());
-#else
-
-		bool finished = false;
-
-		for (int testament = min; testament <= max && !finished; ++testament) {
-			for (int book = 0; book < BMAX[testament] && !finished; ++book) {
-				if ( !strcmp(newBook.toUtf8().constData(), books[testament][book].name ) ) {
-					Testament(testament+1);
-					Book(book+1);
-					finished = true;
-				}
-			}
-		}
-#endif
 	}
 
 	if ( (Testament() >= min+1) && (Testament() <= max+1) && (Book() <= BMAX[min]) ) {

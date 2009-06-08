@@ -174,45 +174,9 @@ unsigned int CSwordBibleModuleInfo::bookNumber(const QString &book) {
 	boost::scoped_ptr<sword::VerseKey> key((sword::VerseKey *)module()->CreateKey());
 	(*key) = sword::TOP;
 
-#ifdef SWORD_MULTIVERSE
 	key->setBookName(book.toUtf8().constData());
 
 	bookNumber = ((key->Testament() > 1) ? key->BMAX[0] : 0) + key->Book();
-#else
-	bool found = false;
-	int min = 0;
-	int max = 1;
-
-	if ((m_hasOT>0 && m_hasNT>0) || (m_hasOT == -1 && m_hasNT == -1)) {
-		min = 0;
-		max = 1;
-		bookNumber = 0;
-	}
-	else if (m_hasOT>0 && !m_hasNT) {
-		min = 0;
-		max = 0;
-		bookNumber = 0;
-	}
-	else if (!m_hasOT && m_hasNT>0) {
-		min = 1;
-		max = 1;
-		bookNumber = key->BMAX[0];
-	}
-	else if (!m_hasOT && !m_hasNT) {
-		min = 0;
-		max = -1; //no loop
-		bookNumber = 0;
-	}
-
-	for (int i = min; i <= max && !found; ++i) {
-		for ( int j = 0; j < key->BMAX[i] && !found; ++j) {
-			++bookNumber;
-
-			if (book == QString::fromUtf8( key->books[i][j].name) )
-				found = true;
-		}
-	}
-#endif
 
 	return bookNumber;
 }
