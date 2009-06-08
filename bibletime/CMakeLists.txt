@@ -379,9 +379,9 @@ ELSEIF(APPLE)
   ENDFOREACH(QT_FRAME ${QT_FRAMEWORKS_USED})
   # Other libraries I need
   INSTALL(FILES "${CLUCENE_LIBRARY}" "${CLUCENE_LIBRARY_DIR}/libclucene.0.0.0.dylib" "${CLUCENE_LIBRARY_DIR}/libclucene.0.dylib" "/opt/local/lib/libcurl.4.dylib"
-   	        "/opt/local/lib/libssl.0.9.8.dylib" "/opt/local/lib/libcrypto.0.9.8.dylib" #"/opt/local/lib/libicui18n.40.dylib" "/opt/local/lib/libicui18n.40.0.dylib"
-		#"/opt/local/lib/libicuuc.40.dylib" "/opt/local/lib/libicuuc.40.0.dylib" "/opt/local/lib/libicuio.40.dylib" "/opt/local/lib/libicuio.40.0.dylib"
-		#"/opt/local/lib/libicudata.40.dylib" "/opt/local/lib/libicudata.40.0.dylib"
+   	        "/opt/local/lib/libssl.0.9.8.dylib" "/opt/local/lib/libcrypto.0.9.8.dylib" "/opt/local/lib/libicui18n.40.dylib" "/opt/local/lib/libicui18n.40.0.dylib"
+		"/opt/local/lib/libicuuc.40.dylib" "/opt/local/lib/libicuuc.40.0.dylib" "/opt/local/lib/libicuio.40.dylib" "/opt/local/lib/libicuio.40.0.dylib"
+		"/opt/local/lib/libicudata.40.dylib" "/opt/local/lib/libicudata.40.0.dylib"
 		"/opt/local/lib/libpng12.0.dylib"
           DESTINATION "${BT_DESTINATION}/../Library")
 
