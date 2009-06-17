@@ -331,47 +331,47 @@
         <translation>(c) 1999-2009, BibleTime csapat</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="140"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>A BibleTime a SWORD Projekt használatára lett készítve. A SWORD Projekt a CrossWire Biblia Társaság szabad felhasználású szoftver projektje. A projekt szándéka, hogy keresztplatformos nyílt forrású eszközöket készítsen -- a GNU GPL hatálya alatt -- melyek lehetővé teszik a programozók és Bibliatársaságok számára, hogy új Biblia szoftvereket készítsenek, könnyebben, egyszerűbben.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
         <source>The SWORD Project</source>
         <translation>A SWORD Projekt</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation>A QT nyílt forrású kiadás nyílt forrású alkalmazások fejlesztését teszi lehetővé. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="162"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation>QT egy C++ eszköz keresztplatformos alkalmazásfejlesztéshez. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="163"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="164"/>
         <source>Please see </source>
         <translation>Tekintse meg a </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="165"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="166"/>
         <source> for an overview of Qt licensing.</source>
         <translation> weboldalt.a QT licensz áttekintéséért. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Letöltheti és használhatja (de nem terjesztheti) a programot személyes, magán, nyilvános vagy üzleti célból korlátozások nélkül. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Értékesítheti és terjesztheti a programot, ha a hozzá tartozó forráskódot is terjeszti. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
         <source>The complete legally binding license is below.</source>
         <translation>A teljes jogilag érvényes licensz lentebb található. </translation>
     </message>
@@ -465,27 +465,27 @@
         <translation>A következő emberek vettek részt a BibleTime fordításában:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="123"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Néhány név hiányozhat, kéjük küldjön emailt a bibletime-translations@lists.sourceforge.net -címre, amennyiben hibásan jeleztük, vagy kihagytuk.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="136"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="137"/>
         <source>SWORD library version %1</source>
         <translation>Sword verzió: %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
         <source>This program uses Qt Open Source Edition version %1.</source>
         <translation>Ez a program a QT következő nyílt forrású kiadását használja: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>License</source>
         <translation>Licensz</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>A BibleTime GPL licensz alatt lett kiadva. </translation>
     </message>
@@ -761,7 +761,7 @@
 <context>
     <name>BtModuleManagerDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="38"/>
+        <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="39"/>
         <source>Bookshelf Manager</source>
         <translation>Könyvespolc menedzser</translation>
     </message>
@@ -1570,7 +1570,7 @@
 <context>
     <name>CFontChooser</name>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="99"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="101"/>
         <source>Size:</source>
         <translation>Méret:</translation>
     </message>
@@ -1580,7 +1580,7 @@
         <translation>Betűtípus:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="87"/>
+        <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="88"/>
         <source>Font style:</source>
         <translation>Stílus:</translation>
     </message>
@@ -2389,7 +2389,7 @@
         <translation>Könyvek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="418"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="416"/>
         <source>Added text</source>
         <translation>Hozzáadott szövegek</translation>
     </message>
@@ -3283,42 +3283,42 @@ Language name ppk</extracomment>
         <translation>Távoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="267"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="284"/>
         <source>Old testament</source>
         <translation>Ószövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="268"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mózes/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="269"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
         <source>History</source>
         <translation>Előzmény</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="270"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
         <source>Prophets</source>
         <translation>Próféták</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="271"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
         <source>New testament</source>
         <translation>Újszövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="272"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
         <source>Gospels</source>
         <translation>Evangéliumok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="273"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
         <source>Letters/Epistles</source>
         <translation>Levelek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="274"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pál levelei</translation>
     </message>
@@ -3561,7 +3561,7 @@ Language name ppk</extracomment>
         <translation>Yoryba</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="435"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="433"/>
         <source>Verb tense changed</source>
         <translation>Igeidő változtatva</translation>
     </message>
