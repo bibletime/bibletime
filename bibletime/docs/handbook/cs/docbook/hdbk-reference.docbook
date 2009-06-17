@@ -113,9 +113,9 @@ potřebujete více času pro časopis.</para>
           </term>
           <listitem>
             <para>
-            <action>Toggles display of the Bookmarks.</action> Toggle this setting to 
-turn the Bookmarks on the left pane on or off. This can be handy if you need 
-more space for the Mag.</para>
+            <action>Zapne zobrazení knihovny.</action> Zvolte tuto možnost pro zapnutí, 
+nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud 
+potřebujete více místa pro časopis.</para>
           </listitem>
         </varlistentry>
 
@@ -157,9 +157,10 @@ nebo vypnutí zobrazení časopisu na levé straně.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens the Search Dialog to search in the standard Bible 
-only</action>. More works can be added in the Search Dialog. A more detailed 
-search description can be found <link linkend="hdbk-op-search">here</link>.</para>
+            <action>Otevírá dialog vyhledávání pouze pro vyhledávání ve výchozí 
+Bibli</action>. Do vyhledávacího dialogu mohou být přídána další 
+díla. Detailnější popis vyhledávání najdete <link 
+linkend="hdbk-op-search">zde</link>.</para>
           </listitem>
         </varlistentry>
         <varlistentry id="hdbk-reference-menus-search-openworks">
@@ -180,9 +181,10 @@ search description can be found <link linkend="hdbk-op-search">here</link>.</par
           </term>
           <listitem>
             <para>
-            <action>Opens the Search Dialog to search in all open works</action>. Works 
-can be added or removed in the Search Dialog. A more detailed search 
-description can be found <link linkend="hdbk-op-search">here</link>.</para>
+            <action>Otevírá dialog vyhledávání ve všech dílech</action>. Do 
+vyhledávacího dialogu mohou být přídána, či z něj odebrána, další 
+díla. Detailnější popis vyhledávání naleznete <link 
+linkend="hdbk-op-search">zde</link>.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -503,10 +505,9 @@ informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi
   </sect1>
 
   <sect1 id="hdbk-reference-works">
-    <title>Works reference</title>
+    <title>Odkazy</title>
     <para>
-      In this section you can find descriptions of the icons associated with open 
-works.
+      V této sekci najdete popis ikon přiřazených k otevřeným dílům.
     </para> 
 
     <sect2 id="hdbk-reference-works-list">
@@ -526,7 +527,7 @@ works.
 
             <listitem>
               <para>
-		Scrolls forward through history.
+		Posouvá vpřed historií.
               </para>
             </listitem>
           </varlistentry>
@@ -549,7 +550,7 @@ works.
 
             <listitem>
               <para>
-		Scrolls back through history.
+		Posouvá zpět historií.
               </para>
             </listitem>
           </varlistentry>
@@ -572,7 +573,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed bible.
+		Vyberte nainstalovanou bibli.
               </para>
             </listitem>
           </varlistentry>
@@ -595,7 +596,7 @@ works.
 
             <listitem>
               <para>
-		Select an additional bible.
+		Vyberte další bible.
               </para>
             </listitem>
           </varlistentry>
@@ -618,7 +619,7 @@ works.
 
             <listitem>
               <para>
-		Search in selected works.
+		Vyhledávání ve vybraných dílech
               </para>
             </listitem>
           </varlistentry>
@@ -641,7 +642,7 @@ works.
 
             <listitem>
               <para>
-		Display configuration.
+		Nastavení zobrazení
               </para>
             </listitem>
           </varlistentry>
@@ -664,7 +665,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed commentary.
+		Vyberte nainstalované komentáře.
               </para>
             </listitem>
           </varlistentry>
@@ -687,7 +688,7 @@ works.
 
             <listitem>
               <para>
-		Select additional commentary.
+		Vyberte další komentáře.
               </para>
             </listitem>
           </varlistentry>
@@ -710,7 +711,7 @@ works.
 
             <listitem>
               <para>
-		Synchronize displayed entry with active Bible window.
+		Synchronizovat zobrazený údaj s aktivním oknem Bible.
               </para>
             </listitem>
           </varlistentry>
@@ -733,7 +734,7 @@ works.
 
             <listitem>
               <para>
-		Select a book.
+		Vber knihu.
               </para>
             </listitem>
           </varlistentry>
@@ -756,7 +757,7 @@ works.
 
             <listitem>
               <para>
-		Select an installed glossary or devotional.
+		Vyberte nainstalovaný glosář nebo modlitbu.
               </para>
             </listitem>
           </varlistentry>
@@ -779,7 +780,7 @@ works.
 
             <listitem>
               <para>
-		Select an additional glossary or devotional.
+		Vyberte další glosář nebo modlitbu.
               </para>
             </listitem>
           </varlistentry>
