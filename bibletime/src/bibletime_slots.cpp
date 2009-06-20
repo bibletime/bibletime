@@ -77,6 +77,14 @@ void BibleTime::slotSettingsOptions() {
 	dlg->show();
 }
 
+/** Save the settings, used when no settings have been saved before **/
+void BibleTime::saveConfigSettings()
+{
+	CConfigurationDialog* dlg = new CConfigurationDialog(this, 0);
+	dlg->save();
+	delete dlg;
+}
+
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
 	qDebug("BibleTime::slotSettingsChanged");

@@ -77,6 +77,16 @@ CConfigurationDialog::~CConfigurationDialog()
 	saveDialogSettings();
 }
 
+/** Save the dialog settings **/
+void CConfigurationDialog::save()
+{
+//	m_acceleratorsPage->save();
+	m_languagesPage->save();
+	m_swordPage->save();
+	m_displayPage->save();
+	emit signalSettingsChanged( );
+}
+
 /** Called if any button was clicked*/
 void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 {
@@ -86,11 +96,7 @@ void CConfigurationDialog::slotButtonClicked(QAbstractButton* button)
 		return;
 	}
 
-//	m_acceleratorsPage->save();
-	m_languagesPage->save();
-	m_swordPage->save();
-	m_displayPage->save();
-	emit signalSettingsChanged( );
+	save();
 
 	if (button == static_cast<QAbstractButton*>(m_bbox->button(QDialogButtonBox::Ok)))
 		close();

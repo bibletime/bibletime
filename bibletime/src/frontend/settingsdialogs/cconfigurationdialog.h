@@ -31,6 +31,7 @@ class CConfigurationDialog : public BtConfigDialog {
 public:
 	CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
 	virtual ~CConfigurationDialog();
+	void save();
 
 protected slots:
 	void slotButtonClicked(QAbstractButton *);

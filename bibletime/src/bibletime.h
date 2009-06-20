@@ -152,6 +152,10 @@ public:
 	* Stores the settings of the mainwindow in the profile p
 	*/
 	void storeProfileSettings( Profile::CProfile* p );
+	/**
+	*  Save the configuration dialog settings, don't open dialog
+	*/
+	void saveConfigSettings();
 
 public slots:
 	/**

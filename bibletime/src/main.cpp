@@ -186,12 +186,10 @@ int main(int argc, char* argv[]) {
 	bibletime_ptr = new BibleTime();
 
 	// a new BibleTime version was installed (maybe a completely new installation)
-	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
-
+	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) 
+	{
 		CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
-		//TODO: unabled temporarily
-		//bibletime_ptr->slotSettingsOptions();
-		bibletime_ptr->slotSettingsOptions();
+		bibletime_ptr->saveConfigSettings();
 	}
 
 	// restore the workspace and process command line options
