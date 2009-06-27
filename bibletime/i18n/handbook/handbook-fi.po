@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-06-05 22:47-0400\n"
+"POT-Creation-Date: 2009-06-27 12:46-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -1851,12 +1851,12 @@ msgstr "&bibletime;-käsikirja on osa &bibletime;-ohjelmaa."
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
 #, fuzzy
-msgid "2009-04"
+msgid "2009-06"
 msgstr "elokuu 2005"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
-msgid "2.0"
+msgid "2.1"
 msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:53

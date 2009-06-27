@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
-"POT-Creation-Date: 2009-06-05 22:47-0400\n"
+"POT-Creation-Date: 2009-06-27 12:46-0400\n"
 "PO-Revision-Date: 2009-06-26 14:32-0300\n"
 "Last-Translator: \n"
 "Language-Team: Portugus do Brasil <kde-i18n-doc@kde.org>\n"
@@ -2089,12 +2089,14 @@ msgstr "O livro de mo do &bibletime;  parte do &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "2009-04"
+#, fuzzy
+msgid "2009-06"
 msgstr "2009-04"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
-msgid "2.0"
+#, fuzzy
+msgid "2.1"
 msgstr "2.0"
 
 # type: Content of: <book><bookinfo><abstract><para>

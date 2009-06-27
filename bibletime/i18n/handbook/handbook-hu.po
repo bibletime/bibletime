@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
-"POT-Creation-Date: 2009-06-05 22:47-0400\n"
+"POT-Creation-Date: 2009-06-27 12:46-0400\n"
 "PO-Revision-Date: 2009-05-19 18:51+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -2217,12 +2217,14 @@ msgstr "A &bibletime; kézikönyv a &bibletime; része"
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "2009-04"
+#, fuzzy
+msgid "2009-06"
 msgstr "2009-04"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
-msgid "2.0"
+#, fuzzy
+msgid "2.1"
 msgstr "2.0"
 
 # type: Content of: <book><bookinfo><abstract><para>
