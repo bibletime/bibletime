@@ -288,7 +288,7 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
-        <translation type="unfinished"></translation>
+        <translation>Spúšťanie systému SWORD...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="72"/>
@@ -398,7 +398,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="31"/>
         <source>About BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>O Bibletime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="72"/>
@@ -482,37 +482,37 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="124"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niektoré názvy môžu chýbať. Pošlite e-mail na bibletime-translations@lists.sourceforge.net, ak si všimnete chyba alebo niečo vynechané.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="138"/>
         <source>SWORD library version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzia  %1 knižnice SWORD</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime používa The SWORD Project. The SWORD Project je slobodný biblický softvér spoločnosti CrossWire Bible Society. Jeho cieľom je vytvoriť platformovo nezávislé nástroje s otvoreným zdrojovým kódom vydaným pod licenciou GNU General Public, ktorá umožňuje programátorom a biblickým spoločnostiam napísať nový biblický softvér rýchlejšie a jednoduchšie.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
         <source>The SWORD Project</source>
-        <translation type="unfinished"></translation>
+        <translation>The SWORD Project</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento program používa Qt Open Source Edition verziu %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="175"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencia</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>BibleTime is released under the GPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime je vydaný pod liceniou GPL.</translation>
     </message>
 </context>
 <context>
@@ -919,7 +919,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vo SWORD konfigurácií neboli nájdené zdroje a BibleTime nemôže vytvoriť štandardný zdroj. Skontrolujte svoju SWORD konfiguráciu a zabezpečte, aby bolo konfiguračná cesta mala práva na zápis. Potom znovu spustite Správcu knižnice.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
