@@ -1,17 +1,20 @@
+2009-06-28 Martin Gruner <mgruner@crosswire.org>
+	* Release 2.1.beta1
+
 2009-06-27 Thomas Abthorpe
 	* Add Brazilian Portuguese Handbook translation to the build
 
 2009-06-19 Gary Holmlund
 	* Config Dialog does not open for first time starting of BibleTime
-	
+
 2009-06-08 Martin Gruner <mgruner@crosswire.org>
 	* Require Sword 1.6.0, obsolete support code removed
 	* Require CMake 2.6.0
 	* Re-enabled -Werror for debug builds
 
 2009-06-06 Gary Holmlund
-        * Config and Bookshelf Manager dialogs will remember their last size and position
-        * Fix warning coming from document_magnifier.svg
+    * Config and Bookshelf Manager dialogs will remember their last size and position
+    * Fix warning coming from document_magnifier.svg
 
 2009-06-06 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.0.1
