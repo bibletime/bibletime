@@ -275,7 +275,7 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="70"/>
         <source>Initializing the SWORD engine...</source>
-        <translation type="unfinished"></translation>
+        <translation>SWORD mootori käivitamine...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="72"/>
@@ -477,7 +477,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="unfinished">Käesolev programm kasutab Qt Open Source Edition versiooni %1 raamistikku.</translation>
+        <translation>Käesolev programm kasutab Qt Open Source Edition raamistikku versioon %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="175"/>
@@ -589,7 +589,7 @@
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="188"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translatorcomment>&quot;remote&quot; -&gt; &quot;kaug-&quot; is fuzzy</translatorcomment>
-        <translation type="unfinished">Paigalda ja uuenda teoseid. Lisa kaug- ja kohalikke allikaid, värskenda neid, vali teosed paigaldamiseks/uuendamiseks ning vajuta Paigalda.&lt;br/&gt;&lt;b&gt;HOIATUS:&lt;/b&gt; Kui Te elate riigis, kus Teid võidakse taga kiusata, ning Te ei soovi riskeerida Teie avastamisega, ärge kasutage kaug-allikaid.</translation>
+        <translation>Paigalda ja uuenda teoseid. Lisa kaug- ja kohalikke allikaid, värskenda neid, vali teosed paigaldamiseks/uuendamiseks ning vajuta Paigalda.&lt;br/&gt;&lt;b&gt;HOIATUS:&lt;/b&gt; Kui Te elate riigis, kus Teid võidakse taga kiusata, ning Te ei soovi riskeerida Teie avastamisega, ärge kasutage kaug-allikaid.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="192"/>
@@ -703,7 +703,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="116"/>
         <source>Use Directory?</source>
-        <translation type="unfinished">Kasutada kataloogi?</translation>
+        <translation>Kasutada valitud kataloogi?</translation>
     </message>
 </context>
 <context>
@@ -894,7 +894,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>SWORD teegi seadistuses ei leitud ühtegi allikat, mistõttu ei saanud BibleTime valida vaikimisi allikat. Palun kontrollige SWORD&apos;i konfiguratsiooni ning et konfiguratsiooni asukoht oleks kirjutatav. Seejärel taaskäivitage raamaturiiuli haldamine.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
@@ -1016,7 +1016,7 @@
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="205"/>
         <source>Text of reference</source>
-        <translation type="unfinished">Viidatud tekst</translation>
+        <translation>Viidatud tekst</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="209"/>
@@ -1105,7 +1105,7 @@
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="95"/>
         <source>Copy entry with text</source>
-        <translation type="unfinished">Kopeeri kirje tekstiga</translation>
+        <translation>Kopeeri kirje tekstiga</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="98"/>
@@ -1120,7 +1120,7 @@
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="103"/>
         <source>Print entry with text</source>
-        <translation type="unfinished">Trüki kirje tekstiga</translation>
+        <translation>Trüki kirje tekstiga</translation>
     </message>
 </context>
 <context>
@@ -1203,7 +1203,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="471"/>
         <source>Drag references from text views to this view</source>
-        <translation type="unfinished">Lohistage viiteid tekstiakendest siia</translation>
+        <translation>Lohistage viiteid tekstiakendest siia</translation>
     </message>
 </context>
 <context>
@@ -1251,7 +1251,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="217"/>
         <source>Unlock...</source>
-        <translation type="unfinished">Võta lukust lahti...</translation>
+        <translation>Võta lukust lahti...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="223"/>
@@ -1266,7 +1266,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="588"/>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Sisestage võti selle teose avamiseks.</translation>
+        <translation>Sisestage võti selle teose avamiseks.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="619"/>
@@ -1316,7 +1316,7 @@
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="587"/>
         <source>Unlock Work</source>
-        <translation type="unfinished">Kaitstud teose avamine</translation>
+        <translation>Kaitstud teose avamine</translation>
     </message>
 </context>
 <context>
@@ -1737,7 +1737,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished">Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
+        <translation>Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
@@ -1823,7 +1823,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="53"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
-        <translation type="unfinished">Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
+        <translation>Elemendi valimiseks vajutage seda nuppu ja liigutage hiirekursorit üles või alla.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/keychooser/clexiconkeychooser.cpp" line="51"/>
@@ -1890,7 +1890,7 @@
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="123"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="142"/>
         <source>Entry with text</source>
-        <translation type="unfinished">Kirje tekstiga</translation>
+        <translation>Kirje tekstiga</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="130"/>
@@ -2457,7 +2457,7 @@
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="176"/>
         <source>Azerbaijani, South</source>
         <extracomment>Language name azb</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>lõuna-aserbaidžaani</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="181"/>
@@ -3381,8 +3381,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/display/creaddisplay.cpp" line="64"/>
         <source>Print keys</source>
-        <translation type="unfinished">
-            </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp" line="43"/>
@@ -3516,7 +3515,7 @@ Language name ppk</extracomment>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="373"/>
         <source>(Multiple languages)</source>
         <extracomment>Language name mul (meaning that the work has multiple languages)</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>(Mitmes keeles)</translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="375"/>
@@ -3733,7 +3732,8 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="100"/>
         <source>Search for:</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>&quot;Päring:&quot; is estonian for &quot;query&quot;</translatorcomment>
+        <translation>Päring:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
@@ -3743,32 +3743,32 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished"></translation>
+        <translation>Alusta otsingut valitud teostest</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
         <source>Ch&amp;oose...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Vali...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="114"/>
         <source>Choose works for the search</source>
-        <translation type="unfinished"></translation>
+        <translation>Vali teosed, millest otsida</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="117"/>
         <source>S&amp;etup...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Häälestus...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="136"/>
         <source>All of the words (AND is added between the words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsib kõiki sisestatud sõnu (justkui oleks täieliku otsingusüntaksi korral sõnade vahel AND)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="140"/>
         <source> (&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation type="unfinished"></translation>
+        <translation> (kasutab &lt;a href=&apos;syntax_help&apos;&gt;täielikku otsingusüntaksit&lt;/a&gt;)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="151"/>
@@ -3788,7 +3788,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="273"/>
         <source>Works to Search in</source>
-        <translation>Teosest, millest otsida</translation>
+        <translation>Teosed, millest otsida</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="274"/>
@@ -3798,7 +3798,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="447"/>
         <source>No search scope</source>
-        <translation type="unfinished">Otsinguulatus on määramata</translation>
+        <translation>Otsingu skoop on määramata</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="131"/>
@@ -3808,7 +3808,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="119"/>
         <source>Configure predefined scopes for search</source>
-        <translation>Halda eeldefineeritud otsinguulatusi</translation>
+        <translation>Halda otsingu skoope</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="133"/>
@@ -3823,7 +3823,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="137"/>
         <source>Some of the words (OR is added between the words)</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsib salme, kus esinevad vaid osad sisestatud sõnadest (justkui oleks täieliku otsingusüntaksi korral sõnade vahel OR)</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
@@ -3833,75 +3833,75 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
         <source>Click the link to get help for search syntax</source>
-        <translation type="unfinished"></translation>
+        <translation>Klikkige siia, et saada abi otsingusüntaksi kasutamiseks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="162"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige otsinguskoop (raamatud/peatükid/salmid mille hulgast otsida).&lt;br /&gt;Kehtib piiblite ja kommentaaride puhul.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="355"/>
         <source>&lt;p&gt;This help is mainly for &apos;Full syntax&apos; option. &apos;All words&apos; and &apos;Some words&apos; options have more limited syntax; &lt;a href=&apos;#wildcards&apos;&gt;wildcards&lt;/a&gt; and &lt;a href=&apos;#fields&apos;&gt;text fields&lt;/a&gt; are supported for them. Some other syntax features may give strange or wrong results with All words/Some words.&lt;/p&gt;</source>
         <extracomment>Don&apos;t translate words inside &lt;&gt; tags! Translate &apos;All words&apos; etc. indentically to the Search dialog options.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;See abitekst on põhiliselt mõeldud aitamaks kasutada täieliku otsingusüntaksit. Otsinguvalikute &quot;Kõik sõnad&quot; ja &quot;Mõned sõnad&quot; korral on kasutatav vaid piiratud süntaks, toetades vaid &lt;a href=&apos;#wildcards&apos;&gt;jokkereid&lt;/a&gt; ja &lt;a href=&apos;#fields&apos;&gt;tekstivälju&lt;/a&gt;. Teiste täieliku otsingusüntaksi konstruktsioonide kasutamine võib nendel juhtudel tagastada imelikke või valesid tulemusi.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="360"/>
         <source>&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p id=&apos;links&apos;&gt;&lt;A href=&apos;#allsome&apos;&gt;Otsitavad sõnad&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#grouping&apos;&gt;Grupeerimine ja järjekord&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#wildcards&apos;&gt;Jokkerid (osaliste sõnade korral)&lt;/A&gt;&lt;br /&gt;&lt;A href=&apos;#fields&apos;&gt;Tekstiväljad (teksti eri osad)&lt;/A&gt;&lt;br/&gt;&lt;A href=&apos;#lucene&apos;&gt;Teisi süntaksi võimalusi&lt;/A&gt;&lt;br/&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="370"/>
         <source>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Which words to find&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Search terms are separated by spaces. &lt;strong&gt;AND&lt;/strong&gt; (all words), &lt;strong&gt;OR&lt;/strong&gt; (some words) and &lt;strong&gt;NOT&lt;/strong&gt; (not the following word) can be added between the words. If none is added explicitly OR is used automatically. &apos;&lt;strong&gt;+&lt;/strong&gt;word&apos; means the word must be in the results, &apos;&lt;strong&gt;-&lt;/strong&gt;word&apos; means it must not be in the results.&lt;/p&gt;</source>
         <extracomment>Syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;allsome&apos;&gt;Otsitavad sõnad&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Otsinguterminid eraldatakse tühikutega. Terminite vahele võib sisestada märgendeid &lt;strong&gt;AND&lt;/strong&gt; (konjuktsioon, mõlemad terminid), &lt;strong&gt;OR&lt;/strong&gt; (disjunktsioon, üks terminitest) ja &lt;strong&gt;NOT&lt;/strong&gt; (negatsioon - mitte järgnevat terminit). Kui terminite vahel pole AND või OR terminit, eeldatakse automaatselt, et seal on OR. &apos;&lt;strong&gt;+&lt;/strong&gt;sõna&apos; tähendab, et sõna peab tulemuses esinema, &apos;&lt;strong&gt;-&lt;/strong&gt;sõna&apos; tähendab, et sõna ei tohi tulemustes esineda.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="375"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jesus AND god&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;Jesus&apos; and &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus OR god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; or &apos;God&apos; or both&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jesus NOT god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jesus -god&lt;/td&gt;&lt;td&gt;Finds verses with &apos;Jesus&apos; but with no &apos;God&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
         <extracomment>In examples words to be searched for may be translated, but syntax words (AND, OR...) must not be translated.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;jeesus AND jumal&lt;/td&gt;&lt;td&gt;Otsib salme, kus esinevad nii &apos;Jeesus&apos; kui ka &apos;Jumal&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jeesus OR jumal&lt;/td&gt;&lt;td&gt;Otsib salme, kus esineb &apos;Jeesus&apos; või &apos;Jumal&apos; või mõlemad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;jeesus NOT jumal&lt;/td&gt;&lt;td&gt;Otsib salme, kus esineb &apos;Jeesus&apos; kuid mitte &apos;Jumal&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;+jeesus -jumal&lt;/td&gt;&lt;td&gt;Otsib salme, kus esineb &apos;Jeesus&apos; kuid mitte &apos;Jumal&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="386"/>
         <source>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grouping and order&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Words can be grouped with &lt;strong&gt;parenthesis&lt;/strong&gt;. Strict word order can be defined with &lt;strong&gt;quotes&lt;/strong&gt;.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;grouping&apos;&gt;Grupeerimine ja järjekord&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Sõnasid saab grupeerida &lt;strong&gt;sulgudega&lt;/strong&gt;. Kindlat järjestust saab defineerida &lt;strong&gt;jutumärkidega&lt;/strong&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="391"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Finds verses with both &apos;a&apos; AND &apos;b&apos;, and verses with &apos;c&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says lord&quot;&lt;/td&gt;&lt;td&gt;Finds e.g. &apos;...Isaiah says, &quot;Lord...&apos; but not &apos;...says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;says the lord&quot;&lt;/td&gt;&lt;td&gt;Finds all verses with &apos;says the LORD&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;(a AND b) OR c&lt;/td&gt;&lt;td&gt;Leiab salmid, kus esinevad &quot;a&quot; ja &apos;b&quot;, ja salmid, kus esineb &quot;c&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;ütleb Jumal&quot;&lt;/td&gt;&lt;td&gt;Leiab salmi &quot;...päevil sünnib, ütleb Jumal, et &quot;..., kuid mitte &quot;..., ütleb Issand Jumal, ...&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&quot;ütleb Issand Jumal&quot;&lt;/td&gt;&lt;td&gt;Leiab kõik salmid, kus esineb &quot;ütleb Issand Jumal&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="400"/>
         <source>&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Wildcards (partial words)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; matches any sequence of 0 or more characters, while &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; matches any single character. A wildcard can not be used in the beginning of a word.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h1&gt;&lt;A name=&apos;wildcards&apos;&gt;Jokkerid (osaliste sõnade korral)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;&apos;&lt;strong&gt;*&lt;/strong&gt;&apos; tähistab 0 või enamat suvalist tähemärki, &apos;&lt;strong&gt;?&lt;/strong&gt;&apos; tähistab ühte suvalist tähemärki. Jokkereid ei saa kasutada sõnade alguses.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="404"/>
         <source>&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;All words beginning with &apos;a&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&apos;Assyria&apos;, &apos;aroma&apos;, &apos;abba&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a?&lt;/td&gt;&lt;td&gt;&apos;at&apos; and &apos;an&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a??a&lt;/td&gt;&lt;td&gt;&apos;abba&apos;, &apos;area&apos;, &apos;Asia&apos; etc.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;a*&lt;/td&gt;&lt;td&gt;Kõik A-ga algavad sõnad&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;a*a&lt;/td&gt;&lt;td&gt;&quot;aeda&quot;, &quot;taevad&quot; jne&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;al?&lt;/td&gt;&lt;td&gt;&quot;alt&quot;, &quot;all&quot;, &quot;ala&quot; jne&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;k??la&lt;/td&gt;&lt;td&gt;&quot;kulla&quot;, &quot;keela&quot; jne&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="415"/>
         <source>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Text fields (different parts of text)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Available text fields:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Searches headings&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Searches footnotes&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Searches Strong&apos;s numbers&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Searches morphology codes&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;fields&apos;&gt;Tekstiväljad (teksti eri osad)&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;Saadaval olevad tekstiväljad:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:&lt;/td&gt;&lt;td&gt;Otsib pealkirjadest&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:&lt;/td&gt;&lt;td&gt;Otsib allmärkuste hulgast&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:&lt;/td&gt;&lt;td&gt;Otsib Strongi numbrite hulgast&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&lt;/td&gt;&lt;td&gt;Otsib morfoloogiliste koodide hulgast&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="423"/>
         <source>&lt;p&gt;Examples:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jesus&lt;/td&gt;&lt;td&gt;Finds headings with &apos;Jesus&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jesus AND footnote:said&lt;/td&gt;&lt;td&gt;Finds footnotes with &apos;Jesus&apos; and &apos;said&apos;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Finds verses with Strong&apos;s Greek number 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Finds verses with morphology code &apos;N-NSF&apos;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Näited:&lt;br /&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;heading:Jeesus&lt;/td&gt;&lt;td&gt;Leiab pealkirjad, kus esineb nimi &quot;Jeesus&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;footnote:Jeesus AND footnote:ütles&lt;/td&gt;&lt;td&gt;Otsib allmärkusi, kus esineb nii &quot;Jeesus&quot; kui ka &quot;ütles&quot;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;strong:G846&lt;/td&gt;&lt;td&gt;Leiab salmid Strongi kreeka numbriga 846&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;morph:&quot;N-NSF&quot;&lt;/td&gt;&lt;td&gt;Leiab salmid morfoloogilise koodiga &quot;N-NSF&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="431"/>
         <source>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Other syntax features&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime uses the CLucene search engine. You can read more on the &lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene syntax web page&lt;/a&gt; (in external browser).&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;&lt;A name=&apos;lucene&apos;&gt;Teisi süntaksi võimalusi&lt;/A&gt;&lt;/h1&gt;&lt;p&gt;BibleTime kasutab CLucene otsingumootorit. Lisaks võite lugeda&lt;a href=&apos;http://lucene.apache.org/java/1_4_3/queryparsersyntax.html&apos;&gt;lucene süntaksi koduleheküljelt&lt;/a&gt; (välises veebilehitsejas).&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="439"/>
         <source>Search Syntax Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Lähemalt otsingusüntaksist</translation>
     </message>
 </context>
 <context>
@@ -3997,7 +3997,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="102"/>
         <source>S&amp;earch range:</source>
-        <translation type="unfinished">&amp;Eeldefineeritud otsinguulatused:</translation>
+        <translation>&amp;Defineeritud skoobid:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="122"/>
@@ -4007,67 +4007,67 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="130"/>
         <source>Edi&amp;t current range:</source>
-        <translation type="unfinished">&amp;Muuda valitud ulatust:</translation>
+        <translation>&amp;Muuda valitud skoopi:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="138"/>
         <source>Parsed search range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parsitud otsinguskoop:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="196"/>
         <source>New range</source>
-        <translation type="unfinished"></translation>
+        <translation>Uus skoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="273"/>
         <source>&lt;invalid name of search range&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Vigane skoobi nimi&gt;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="106"/>
         <source>Select a scope from the list to edit the search ranges</source>
-        <translation type="unfinished"></translation>
+        <translation>Skoobi ulatuse muutmiseks valige listist vastav skoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="110"/>
         <source>&amp;Add new scope</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lisa uus skoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="111"/>
         <source>Add a new search scope. First enter an appropriate name, then edit the search ranges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisa uus otsinguskoop. Esmalt sisestage vastav nimi, seejärel häälestage otsingu ulatused.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="113"/>
         <source>Delete current &amp;scope</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kustuta valitud skoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="114"/>
         <source>Delete the selected search scope</source>
-        <translation type="unfinished"></translation>
+        <translation>Kustuta valitud otsinguskoop</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="126"/>
         <source>Change the name of the selected search scope</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda valitud otsinguskoobi nimi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="134"/>
         <source>Change the search ranges of the selected search scope item. Have a look at the predefined search scopes to see how search ranges are constructed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuda valitud otsinguskoobi ulatusi. Otsingu ulatuste määramiseks palun uurige eeldefineeritud otsinguskoopide ulatusi.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="142"/>
         <source>The search ranges which will be used for the search, parsed to the canonical form</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsingu ulatused, mida lõpuks otsinguks kasutatakse, esitatuna kanoonilises süntaksis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/crangechooserdialog.cpp" line="96"/>
         <source>Setup Search Scopes</source>
-        <translation type="unfinished"></translation>
+        <translation>Otsinguskoopide häälestamine</translation>
     </message>
 </context>
 <context>
@@ -4215,7 +4215,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="45"/>
         <source>Search result of the selected work</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitud teostest otsimise tulemused</translation>
     </message>
 </context>
 <context>
@@ -4263,7 +4263,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="104"/>
         <source>The standard devotional will be used to display a short start up devotional</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud igapäevast harduskirjanduse teost kasutatakse sellest lühikeste lõikude kuvamiseks BibleTime käivitamisel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="110"/>
@@ -4273,7 +4273,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="114"/>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud heebreakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab heebreakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="120"/>
@@ -4283,7 +4283,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="124"/>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud kreekakeelset leksikoni kasutatakse, kui klikitakse hüperlingil, mis viitab kreekakeelsesse leksikoni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="130"/>
@@ -4293,7 +4293,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="134"/>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud heebreakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil heebreakeelses tekstis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="140"/>
@@ -4303,7 +4303,7 @@ See võib võtta kaua aega. Kas jätkata indekseerimisega?</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="144"/>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
-        <translation type="unfinished"></translation>
+        <translation>Eelistatud kreekakeelset morfoloogilist leksikoni kasutatakse, kui klikitakse morfoloogilise märgendi hüperlingil kreekakeelses tekstis</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cswordsettings.cpp" line="62"/>
