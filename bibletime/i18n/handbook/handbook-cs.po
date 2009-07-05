@@ -1,0 +1,2071 @@
+# translation of handbook-cs.po to
+# Bibletime Handbook translation
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the Bibetime package.
+#
+# Jan Bělohoubek <j.bel@atlas.cz>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: handbook-cs\n"
+"POT-Creation-Date: 2009-06-27 12:46-0400\n"
+"PO-Revision-Date: 2009-06-17 21:09+0200\n"
+"Last-Translator: Jan Bělohoubek <j.bel@atlas.cz>\n"
+"Language-Team:  <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:2
+msgid "Configuring &bibletime;"
+msgstr "Nastavení &bibletime; "
+
+# type: Content of: <chapter><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:3
+msgid ""
+"In this section you find an overview to configure &bibletime;, which can be "
+"found under <guimenu>Settings</guimenu> in the main menu."
+msgstr ""
+" V této sekci najdete úvod k nastavení &bibletime; které najdete pod volbou "
+"<guimenu>Nastavení</guimenu> v hlavním menu."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:7
+msgid "Configure &bibletime; Dialog"
+msgstr "Dialog Nastavení &bibletime;"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:8
+msgid ""
+"The &bibletime; user interface can be customized in many ways depending on "
+"your needs. You can access the configuration dialog by selecting "
+"<menuchoice> <guimenu>Settings</guimenu> </menuchoice> "
+"<guimenuitem>Configure &bibletime;</guimenuitem>."
+msgstr ""
+"Uživatelské rozhraní programu &bibletime; může být uzpůsobeno v mnoha "
+"směrech, v závislosti na vašich potřebách. K dialogu nastavení můžete "
+"přistoupit výběrem <menuchoice> <guimenu>Nastavení</guimenu> </menuchoice> "
+"<guimenuitem>Natavit &bibletime;</guimenuitem>."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:19
+msgid ""
+"The startup behavior can be customized. Select from the following options:"
+msgstr ""
+"Můžete uzpůsobit chování po spuštění. Vyberte z následujících možností:"
+
+# type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:23
+msgid "Show startup logo"
+msgstr "Zobrazovat uvítací obrazovku"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:26
+msgid ""
+"Display templates define the rendering of text (colors, size etc.). Various "
+"built-in templates are available. If you select one, you will see a preview "
+"on the right pane."
+msgstr ""
+"Šablony zobrazení určují způsob zobrazení textu (barvu, velikost atd.). "
+"Přímo dostupných je více šablon. Když jednu z nich zvolíte, objeví se náhled "
+"v pravém poli."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:34
+msgid ""
+"Here you can specify which language should be used for the biblical "
+"booknames. Set this to your native language, if it is available, and you'll "
+"feel at home."
+msgstr ""
+"Zde můžete zvolit jazyk, který bude použit pro jména biblických knih. Pokud "
+"je dostupný, nastavte tuto možnost na váš jazyk, a budete se cítit doma."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:38
+msgid ""
+"By default, &bibletime; uses the default system display font. You can "
+"override this font if necessary. Some languages require special fonts to be "
+"displayed correctly, and this dialog allows you to specify a custom font for "
+"each language."
+msgstr ""
+"V základním nastavení používá &bibletime; výchozí systémové písmo. Pokud je "
+"to nezbytné, můžete to změnit. Některé jazyky vyžadují pro správné zobrazení "
+"speciální písma, tento dialog vám umožní nastavit vlastní písmo pro každý "
+"jazyk."
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-config.docbook:48
+msgid "<phrase>Options Dialog - fonts</phrase>"
+msgstr "<phrase>Dialog nastavení - písma</phrase>"
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:51
+msgid "The Options dialog - Fonts."
+msgstr "Dialog nastavení - Písma"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:54
+msgid ""
+"&bibletime; can now use all supported fonts.  As long as the works you are "
+"interested in display correctly nothing needs to be done here. If a work "
+"only displays as a series of question marks (??????) or empty boxes, then "
+"you know that the standard display font does not contain the characters used "
+"in this work."
+msgstr ""
+"&bibletime; umí používat všechna podporovaná písma. Pokud jsou díla o které "
+"se zajímáte zobrazena správně, není potřeba zde nic měnit.Pokud se dílo "
+"zobrazuje jen jako řetězec otazníků (?????) nebo prázdných čtverců, pak "
+"víte, že standardní písmo neobsahuje znaky užité v tomto díle. "
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:61
+msgid ""
+"To correct this, choose this work's language from the drop down menu. Select "
+"the use custom font checkbox. Now select a font. For example, a font that "
+"supports many languages is Code2000. If no installed font can display the "
+"work you are interested in, try installing the localization package for that "
+"language."
+msgstr ""
+"K nápravě vyberte jazyk tohoto díla z rozbalovacího menu. Zaškrtněte použít "
+"vlastní písmo. Nyní vyberte písmo. Například, písmo podporující mnoho znaků "
+"je Code2000. Pokud žádné z nainstalovaných písem neumí zobrazit dílo o které "
+"se zajímáte, zkuste nainstalovat lokalizační balíček pro tento jazyk."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:68
+msgid "Installing fonts"
+msgstr "Instalace písem"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:69
+msgid ""
+"Detailed font installation instructions are outside the scope of this "
+"handbook. For further information you might want to refer to the <ulink url="
+"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
+"ulink>."
+msgstr ""
+"Detailní popis instalace písem přesahuje rozsah této příručky. Pro více "
+"informací můžete použít <ulink url=\"http://www.linux.org/docs/ldp/howto/"
+"Unicode-HOWTO-2.html\"> Unicode HOWTO</ulink>."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:75
+msgid ""
+"If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
+"faster than with a large font like <trademark class=\"registered\">Bitstream "
+"Cyberbit</trademark>(about 12Mb)."
+msgstr ""
+"Pokud používáte malé písmo jako například Clearlyu (asi 22kb), &bibletime; "
+"poběží rychleji nž s velkým písmem jako napriklad <trademark class="
+"\"registered\">Bitstream Cyberbit</trademark>(asi 12Mb)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:82
+msgid "Obtaining Fonts"
+msgstr "Získání písem"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:83
+msgid "Fonts can be obtained from a number of sources:"
+msgstr "Písma můžete získat z mnoha zdrojů:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
+msgid "Your *nix distribution."
+msgstr "Vaše *nixová distribuce."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:89
+msgid "Your distribution's localization packages."
+msgstr "Lokalizační balíčky vaší distribuce."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:92
+msgid ""
+"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
+"installation on the same computer."
+msgstr ""
+"Existující instalace <trademark class=\"registered\">Microsoft Windows</"
+"trademark> na stejném počítači."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:98
+msgid "A font collection, such as are available from Adobe or Bitstream."
+msgstr "Kolekce písem, jako jsou dostupné od Adobe nebo Bitstream."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:102
+msgid "Online font collections."
+msgstr "Online kolekce písem"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:105
+msgid ""
+"Unicode fonts support more characters than other fonts, and some of these "
+"fonts are available at no charge. None of available fonts includes all "
+"characters defined in the Unicode standard, so you may want to use different "
+"fonts for different languages."
+msgstr ""
+"Písma Unicode podporují více znaků než ostatní písma, některá z nich jsou "
+"dostupná zdarma.  Žádné z dostupných písem neobsahuje všechny znaky "
+"definované standardem Unicode, takže budete možná chtít použít různá písma "
+"pro různé jazyky."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:111
+msgid "Unicode Fonts"
+msgstr "Písma Unicode"
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:119
+msgid ""
+"Perhaps the best free Unicode font, covering a wide range of characters."
+msgstr "Možná nejlepší svobodné písmo Unicode, pokrývá široký výběr znaků."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:127
+msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
+msgstr "Výborná písma Unicode od \" Summer Institute of Linguistics\"."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:135
+msgid "A new free Unicode font initiative."
+msgstr "Nová svobodná iniciativa písma Unicode."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:142
+msgid "Several fonts available from the Crosswire Bible Society Ftp site."
+msgstr "Různá písma přístupná z ftp Crosswire Bible Society."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:150
+msgid ""
+"Covers almost the entire range of Unicode, but might slow &bibletime; down "
+"because of its size."
+msgstr ""
+"Pokrývají většinou celý výběr Unicode, ale mohou spomalit &bibletime; v "
+"závislosti na jejich velikosti."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:155
+msgid "Clearlyu"
+msgstr "Clearlyu"
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:156
+msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr ""
+"Obsaženo v mnoha distribucích. Obsahuje Evropské, Řecké, Hebrejské, Thajské."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:164
+msgid "Partial coverage, see information on linked site."
+msgstr ""
+"Částečně odpovídající, pro informace se podívejte na odkazovanou stránku."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:170
+msgid ""
+"There are good Unicode font lists on the net, as the one by Christoph Singer "
+"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink "
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+msgstr ""
+"Dobré seznamy písem Unicode na internetu, jako jedno od Christopha Singera"
+"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Vícejazyčná Unicode "
+"TrueType Fonts na internetu</ulink>), nebo jedno od Alana Wooda ( <ulink url="
+"\"http://www.alanwood.net/unicode/fontsbyrange.html\"> výběr znaků Unicode a "
+"písma Unicode, která je podporují</ulink>)."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:184
+msgid ""
+"Many features provided by the Sword backend can now be customized in "
+"&bibletime;. These features are documented right in the dialog. You also "
+"have the possibility to specify standard works that should be used when no "
+"specific work is specified in a reference. An example: The standard Bible is "
+"used to display the content of cross references in the Bible. When you hover "
+"over them, the Mag will show the content of the verses referred to, "
+"according to the standard Bible you specified."
+msgstr ""
+"Mnoho vlastností poskytovaných backendem Sword můžete nyní v &bibletime; "
+"nastavit. Tyto vlastnosti jsou zdokumentovány v dialogu vpravo. Máte možnost "
+"vybrat výchozí díla, která mají být použita, když není žádné dílo vybráno "
+"odkazem. Například: výchozí Bible je použita k zobrazení obsahu \"křížových"
+"\" biblických odkazů. Když najedete nad odkaz, časopis zobrazí náhled obsahu "
+"veršů odkazujících na toto místo, ve výchozí Bibli kterou jste zvolili."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:198
+msgid ""
+"HotKeys are special key commands that can be used in the place of the menu "
+"items and icons. A number of &bibletime;'s commands have predefined HotKeys "
+"(see <link linkend=\"hdbk-reference-hotkeys\">this section</link> for a "
+"complete listing). Most of &bibletime;'s commands can be assigned HotKeys "
+"here. This is very helpful to quickly access the functions that you need the "
+"most."
+msgstr ""
+"Horké klávesy jsou speciální klávesové příkazy, které můžete použít namísto "
+"položek v menu, nebo ikon. Mnoho příkazů v &bibletime; má definovány horké "
+"klávesy (kompletní seznam naleznete v <link linkend=\"hdbk-reference-hotkeys"
+"\">této sekci</link>). Většině příkazů &bibletime; zde může přiřadit horké "
+"klávesy. To je velmi užitečné pro rychlý přístup k funkcím, které nejvíce "
+"potřebujete."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:2
+msgid "Introduction"
+msgstr "Úvod"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:4
+msgid "About &bibletime;"
+msgstr "O &bibletime;"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:5
+msgid ""
+"&bibletime; is a Bible study tool with support for different types of texts "
+"and languages. Even large amounts of works modules are easy to install and "
+"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword"
+"\">Sword</ulink> library, which provides the back-end functionality for "
+"&bibletime;, such as viewing Bible text, searching etc. Sword is the "
+"flagship product of the <ulink url=\"http://www.crosswire.org\">Crosswire "
+"Bible Society</ulink>."
+msgstr ""
+"&bibletime; je nástroj pro studium Bible s podporou pro různé texty a "
+"jazyky. Také velké množství modulů děl, které je snadné nainstalovat a "
+"spravovat. Je založen na knihovně <ulink url=\"http://www.crosswire.org/sword"
+"\">Sword</ulink>, která poskytuje funkcionalitu pro &bibletime;, jako "
+"zobrazování biblických textů, vyhledávání atd. Sword je vlajkovou lodí "
+"společnosti <ulink url=\"http://www.crosswire.org\">Crosswire Bible Society</"
+"ulink>."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:14
+msgid ""
+"&bibletime; is designed to be used with works encoded in one of the formats "
+"supported by the Sword project. Complete information on the supported "
+"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
+"sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
+"Crosswire Bible Society."
+msgstr ""
+"&bibletime; je navržen k použití s díly v jednom z formátů podporovaných "
+"projektem Sword. Kompletní informace o podporovaných formátech dokumentů "
+"naleznete ve<ulink url=\"http://www.crosswire.org/sword/develop/index.jsp\"> "
+"vývojářské sekci</ulink> na stránkách projektu Sword, Crosswire Bible "
+"Society."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:22
+msgid "Available works"
+msgstr "Dostupná díla"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:23
+msgid ""
+"Over 200 documents in 50 languages are available from the <ulink url="
+"\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
+msgstr ""
+"Přes 200 dokumentů v 50 jazycích jsou dostupné ze stránek <ulink url="
+"\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. To zahrnuje:"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:28
+msgid "Bibles"
+msgstr "Bible"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:30
+msgid ""
+"The full Bible text, with optional things like Strong's Numbers, headings "
+"and/or footnotes in the text.  Bibles are available in many languages, and "
+"include not only modern versions, but also ancient texts like the Codex "
+"Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
+"is the most advanced section in the library of the Sword project."
+msgstr ""
+"Úplný text Bible, s volitelnými věcmi jako Strongova čísla, nadpisy, nebo "
+"poznámky v textu. Bible jsou dostupné v mnoha jazycích, nejen v moderních "
+"verzích, ale také ve starověkých jako Codex Leningradensis ( Kodex "
+"Leningradský; \"WLC\", Hebrejsky), nebo Septuaginta (\"LXX\", Řecky). Toto "
+"je nejmodernější sekce knihovny projektu Sword."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:40
+msgid "Books"
+msgstr "Knihy"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:42
+msgid ""
+"Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
+"\"Josephus: The Complete Works\""
+msgstr ""
+"Dostupné knihy jsou \"Imitation of Christ\", \"Enuma Elish\", a\"Josephus: "
+"The Complete Works\""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:47
+msgid "Commentaries"
+msgstr "Komentáře"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:49
+msgid ""
+"Commentaries available include classics like John Wesley's \"Notes on the "
+"Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
+"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
+"\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
+"sections of the Bible."
+msgstr ""
+"Dostupné komentáře zahrnují klasiku jako \"Notes on the Bible\" Johna "
+"Wesleyho, komentáře Matthewa Henryho a Lutherův \"Komentář ke galatským.\" "
+"Pomocí <emphasis>Osobního</emphasis>komentáře můžete<link linkend=\"hdbk-op-"
+"parts-desk-write\"> nahrát osobní sešit poznámek</link> do biblických sekcí."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:58
+msgid "Daily devotionals"
+msgstr "Denní zamyšlení"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:60
+msgid ""
+"Many people appreciate these daily portions from God's word. Available works "
+"include Daily Light on the Daily Path, and the Losungen."
+msgstr ""
+"Mnoho lidí oceňuje tyto denní porce Božího slova. Mezi dostupná díla patří "
+"\"Denní světlo na cestu\" a \"Losungen\"."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:66
+msgid "Lexicons/Dictionaries"
+msgstr "Lexikony/slovníky"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:68
+msgid ""
+"Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
+"Driver-Briggs Hebrew Lexicon and the International Standard Bible "
+"Encyclopaedia. Dictionaries available include Strong's Hebrew Bible "
+"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
+"Dictionary of the English Language 1913, Nave's Topical Bible."
+msgstr ""
+"Dostupné lexikony zahrnují: Robinson's Morphological Analysis Codes, Brown-"
+"Driver-Briggs Hebrew Lexicon a International Standard Bible Encyclopedia. "
+"Dostupné slovníky zahrnují: Strong's Hebrew Bible Dictionary, Strong's Greek "
+"Bible Dictionary, Webster's Revised Unabridged Dictionary of the English "
+"Language 1913, Nave's Topical Bible."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:80
+msgid "Motivation"
+msgstr "Motivace"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:81
+msgid ""
+"Our desire is to serve God, and to do our part to help others grow in their "
+"relationship with Him. We have striven to make this a powerful, quality "
+"program, and still make it simple and intuitive to operate. It is our desire "
+"that God be praised, as He is the source of all good things."
+msgstr ""
+"Přejeme si sloužit Bohu a přispět svým dílem ostatním v růstu ve vztahu s "
+"Ním. Chceme, aby byl tento výkonný a kvalitní program stále jednoduchý a "
+"intuitivní. Přejeme si chválit Boha, neboť on je zdroj všeho dobrého."
+
+# type: Content of: <chapter><sect1><sect2><blockquote><attribution>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:87
+msgid "James 1:17, NASB"
+msgstr "Jakubův 1:17"
+
+# type: Content of: <chapter><sect1><sect2><blockquote><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:88
+msgid ""
+"Every good thing given and every perfect gift is from above, coming down "
+"from the Father of lights, with whom there is no variation or shifting "
+"shadow."
+msgstr ""
+"Každý dobrý dar a každé dokonalé obdarování je shůry, sestupuje od Otce "
+"nebeských světel. U něho není proměny ani střídání světla a stínu."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:92
+msgid "God bless you as you use this program."
+msgstr "Bůh vám žehnej při používání tohoto programu."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:2
+msgid "Program operation"
+msgstr "Operace programu"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:4
+msgid "Program overview"
+msgstr "Náhled programu"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:5
+msgid "This is what a typical &bibletime; session looks like:"
+msgstr "Takto vypadá typická relace &bibletime;:"
+
+# type: Content of: <chapter><sect1><para><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:11
+msgid "<phrase>The &bibletime; application window</phrase>"
+msgstr "<phrase>Okno aplikace &bibletime;</phrase>"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:14
+msgid ""
+"You can easily see the different parts of the application. The top left "
+"window is used to open installed works in the Bookshelf tab, and with the "
+"Bookmarks tab you can manage your bookmarks. The little \"Mag\" window below "
+"the Bookshelf is used to display extra information that is embedded in "
+"documents. When you move your mouse over a footnote marker, for example, "
+"then the Mag will display the actual content of the footnote. The toolbar "
+"gives you quick access to important functions, and the Desk on the right "
+"side is where you do your real work."
+msgstr ""
+"Můžete si jednoduše prohlédnout různé části aplikace. Okno vlevo nahoře se "
+"používá k otevírání instalovaných děl v kartě knihovny, na kartě záložek "
+"můžete spravovat záložky. Malé okno \"časopisu\" pod knihovnou se používá "
+"pro zobrazení dalších informací vložených do dokumentů. Když přemístíte myš "
+"například nad značku poznámky, časopis zobrazí aktuální obsah poznámky. "
+"Panel nástrojů vám umožňuje rychlý přístup k důležitým funkcím. Plocha "
+"vpravo je místo kde skutečně pracujete."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:25
+msgid ""
+"Let us now proceed by looking at the different parts of the application "
+"individually."
+msgstr "Nyní se podívejme na vzhled různých částí aplikace individuálně."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:29
+msgid "Parts of the &bibletime; application window"
+msgstr "Části okna aplikace &bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:31
+msgid "The Bookshelf"
+msgstr "Knihovna"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:32
+msgid ""
+"The Bookshelf lists all installed works, sorted by category and language. It "
+"also has a category called \"Bookmarks\". This is where you can store and "
+"access your own bookmarks."
+msgstr ""
+"Knihovna obsahuje všechna nainstalovaná díla, setříděná podle kategorií a "
+"jazyků. Obsahuje také kategorii \"Záložky\" To je místo, kam můžete uložit "
+"své záložky a poté k nim přistupovat."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:37
+#: docs/handbook/en/docbook/hdbk-operation.docbook:142
+msgid "Reading works"
+msgstr "Čtení děl"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:38
+msgid ""
+"To open a work from the bookshelf for reading, simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the desired category "
+"(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
+"display its contents. Then just click on one of the works to open it for "
+"reading. A read window will appear in the Desk area."
+msgstr ""
+"Pro otevření díla z knihovny jednoduše klikněte <mousebutton>levým</"
+"mousebutton> tlačítkem myši na požadovanou kategorii (Bible, Komentáře, "
+"Lexikony, Knihy, Zamyšlení nebo Glosáře) pro zobrazení jejího obsahu. Poté "
+"klikněte na jedno z děl k jeho otevření pro čtení. Okno pro čtení díla se "
+"objeví na ploše."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:47
+#: docs/handbook/en/docbook/hdbk-operation.docbook:97
+msgid "Drag &amp; Drop Works Here"
+msgstr "Chyť &amp; pust dílo"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:50
+msgid ""
+"If you are reading a certain work, and want to open another work at the "
+"passage you are reading, you can use a shortcut. Simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the verse/passage reference "
+"(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work "
+"you want to open, and it will be opened for reading at the specified "
+"location. You can also drag a verse reference into an existing read window, "
+"then it will jump to the specified location."
+msgstr ""
+"Pokud čtete nějaké dílo a chcete otevřít stejnou pasáž v jiném díle, můžete "
+"použít zkratku. jednoduše klikněte <mousebutton>levým</mousebutton> "
+"tlačítkem myši na odkaz verše nebo kapitoly (kurzor se změní v ruku) a "
+"přetáhněte ho do knihovny. Upusťte ho na dílo, které chcete otevřít ,a to "
+"bude otevřeno na požadovaném místě. Můžete také přetáhnout odkaz verše na "
+"existující okno, které se přesune na požadované umístění."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:62
+msgid "Additional information about works"
+msgstr "Další informace o dílech"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:63
+msgid ""
+"If you click with the <mousebutton>right</mousebutton> mouse button on the "
+"symbol of a work, you will see a menu with additional entries that are "
+"relevant for this work.  <guimenuitem>\"About this work\"</guimenuitem> "
+"opens a window with lots of interesting information about the selected "
+"work.  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog "
+"for encrypted documents, where you can enter the unlock key to access the "
+"work. For additional information on locked works, please see <ulink url="
+"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
+"ulink> on the Crosswire Bible Society web site."
+msgstr ""
+"Pokud kliknete <mousebutton>pravým</mousebutton> tlačítkem myši na symbol "
+"díla, objeví se nabídka s dalšími možnostmi, které jsou relevantní pro toto "
+"dílo. <guimenuitem>\"O tomto díle\"</guimenuitem>otevře okno s mnoha "
+"zajímavými informacemi o zvoleném díle. <guimenuitem>\"Odemknout toto dílo"
+"\"</guimenuitem> otevře malý dialog pro zašifrované dokumenty, kde můžete "
+"vložit přístupový kód k otevření díla. Pro další informace o zamčených "
+"dílech se podívejte na <ulink url=\"http://www.crosswire.org/sword/modules/"
+"aboutlocked.jsp\"> tuto stránku</ulink> na webu Crosswire Bible Society."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:79
+#: docs/handbook/en/docbook/hdbk-operation.docbook:205
+msgid "Searching in works"
+msgstr "Vyhledávání v dílech"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:80
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
+"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
+"you can select more than one. Then follow the same procedure to open the "
+"search dialog. You will be searching in all of these documents. A complete "
+"description of the operation of the search features can be found <link "
+"linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"Vyhledávat v díle můžete kliknutím <mousebutton>pravým</mousebutton> "
+"tlačítkem myši na jeho symbol a vybráním položky<guimenuitem>\"Hledat v díle"
+"(ch)\"</guimenuitem>. Stiskem klávesy &Shift; a kliknutím na další díla "
+"můžete vybrat více než jedno. Poté následuje stejný proces s otevřením "
+"vyhledávacího dialogu. Budete vyhledávat ve všech těchto dokumentech. "
+"Kompletní popis obsluhy vyhledávacích funkcí naleznete <link linkend=\"hdbk-"
+"op-search\">zde</link>."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:93
+msgid "Working with bookmarks"
+msgstr "Práce se záložkami"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:100
+msgid ""
+"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
+"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
+"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
+"&amp; drop functions to drag verse references from read windows or search "
+"results to the bookmark folder, and to rearrange bookmarks between folders."
+msgstr ""
+"Klikněte <mousebutton>pravým</mousebutton>  tlačítkem myši na kategorii "
+"záložek v knihovně a vyberte <guimenuitem>\"Vytvořit novou složku\"</"
+"guimenuitem>, pokud chcete vytvořit novou podsložku záložek. Můžete použít "
+"běžnou funkci \"drag &amp; drop \" k přetáhnutí odkazu verše z otevřených "
+"oken, nebo výsledků vyhledávání do adresáře záložek, stejně tak pro "
+"přesouvání záložek mezi složkami."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:108
+msgid ""
+"You can also import bookmarks from other people or export bookmarks to share "
+"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
+"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
+"collection. You can import bookmarks in a similar way."
+msgstr ""
+"Můžete také importovat záložky od ostatních, nebo je exportovat a sdílet. K "
+"tomu otevřete <guimenu>kontextové menu</guimenu> adresáře záložek jak bylo "
+"popsáno předtím a vyberte <guimenuitem>\"Exportovat záložky\"</guimenuitem>. "
+"Toto otevře dialog pro uložení vaší kolekce záložek. Stejným způsobem můžete "
+"záložky importovat."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:116
+msgid ""
+"You can also click with the <mousebutton>right</mousebutton> on folders and "
+"bookmarks to change their names and descriptions."
+msgstr ""
+"Klikněte <mousebutton>pravým tlačítkem myši</mousebutton> na adresáře a "
+"záložky, pokud chcete změnit jejich jméno nebo popis."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:123
+msgid "The Mag(nifying glass)"
+msgstr "Časopis"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:125
+msgid ""
+"This little window in the lower left corner of the &bibletime; window is "
+"purely passive. Whenever your mouse cursor is located over some text with "
+"additional information (e.g., Strong's numbers), then this additional "
+"information will be displayed in the Mag, and not in the text itself. Just "
+"try it out."
+msgstr ""
+"Toto malé okno v levém spodním rohu okna &bibletime; pasivní. Kdykoli je váš "
+"kurzor umístěn nad nějakým textem s dalšími informacemi (např. Strongova "
+"čísla), potom budou tyto informace zobrazeny v okně časopisu, ne v textu "
+"samotném. Prostě to vyzkoušejte."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:134
+msgid "The Desk"
+msgstr "Plocha"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:135
+msgid ""
+"The Desk is where the real work with &bibletime; takes place. Here you can "
+"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
+"\">search</link> in them, and even save your annotations in the personal "
+"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
+"link>)."
+msgstr ""
+"Plocha je místo, kde probíhá skutečná práce s &bibletime;. Zde můžete "
+"otvírat díla z knihovny, číst je, <link linkend=\"hdbk-op-search\">hledat</"
+"link> v nich a rovnou ukládat vaše poznámky v modulu osobních komentářů "
+"(podívejte se <link linkend=\"hdbk-op-parts-desk-write\">dolů</link>)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:143
+msgid ""
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
+"link>, you can open works for reading simply by clicking on their symbol in "
+"the Bookshelf. A read window will open in the Desk's area. Every read window "
+"has a toolbar. There you can find tools to navigate in the work that this "
+"read window is connected to, as well as history buttons like the ones that "
+"you know from your browser."
+msgstr ""
+"Jak <link linkend=\"hdbk-op-parts-bookshelf-open\">už jsme viděli</link>, "
+"můžete jednoduše otevírat díla pro čtení kliknutím na jejich symbol v "
+"knihovně. Okno díla se otevře na ploše. Každé okno díla má nástrojovou "
+"lištu. Zde najdete nástroje k navigaci propojené s dílem, například tlačítka "
+"historie jako ve vašem webovém prohlížeči."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:154
+msgid "Read window placement"
+msgstr "Umístění aktivního okna"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:155
+msgid ""
+"Of course, you can open multiple works at the same time.  There are several "
+"possibilities for arranging the read windows on the desk. Please have a look "
+"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"that you can either control the placement of the read windows completely "
+"yourself, or have &bibletime; handle the placement automatically. To achieve "
+"this, you have to select one of the automatic placement modes available at "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
+msgstr ""
+"Samozřejmě můžete mít otevřeno více děl ve stejné době. Máte několik "
+"možností jak umístit okna na ploše. Prosím podívejte se na položku "
+"<guimenu>Okno</guimenu> v hlavním menu. Tam uvidíte, že umístění oken můžete "
+"ovládat buď osobně, nebo zvolit automatické umístění &bibletime;. Toho "
+"docílíte volbou jednoho z automatických módů umístění, které jsou přístupné "
+"přes <menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
+"guimenuitem> </menuchoice>. Prostě to vyzkoušejte, je to snadné a funguje to."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:170
+msgid "Editing your own commentary"
+msgstr "Úpravy vašich vlastních komentářů"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:171
+msgid ""
+"To be able to store your own comments about parts of the Bible, you have "
+"install a certain work from the library of the <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
+"\"Personal commentary\"."
+msgstr ""
+"Aby jste mohli ukládat vlastní komentáře částí Bible, musíte nainstalovat "
+"dílo z knihovny  <ulink url=\"http://www.crosswire.org\">Crosswire Bible "
+"Society</ulink>, které se jmenuje \"Personal commentary\" (\"Osobní komentář"
+"\")."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:177
+msgid ""
+"If you open the personal commentary by clicking on its symbol in the "
+"Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
+"read mode. You will not be able to edit it in this mode. Should you wish to "
+"write annotations into the personal commentary, you have to open it with the "
+"<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
+"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
+"(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
+"editor)."
+msgstr ""
+"Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>  "
+"tlačítkem myši na jeho symbol v knihovně, otevře se v módu pro čtení. V "
+"tomto módu není možné komentář editovat. Pokud si přejete do něj zapsat "
+"poznámku, musíte ho otevřít pomocí <mousebutton>pravého</mousebutton> "
+"tlačítka myši a zvolit <guimenu>Editovat toto dílo</guimenu> a potom také "
+"<guimenuitem>Prostý text</guimenuitem> (editor zdrojového kódu) nebo "
+"<guimenuitem>HTML</guimenuitem>(jednoduchý GUI WYSIWYG editor)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:190
+msgid ""
+"If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
+"deactivated, please check if you have write permission for the files of the "
+"personal commentary."
+msgstr ""
+"Pokud je položka <menuchoice> <guimenu>Upravit toto dílo</guimenu> </"
+"menuchoice> deaktivována, prosím zkontrolujte zda máte oprávnění k zápisu do "
+"souborů osobních komentářů."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:198
+msgid ""
+"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
+"will be inserted."
+msgstr ""
+"Přetáhněte &amp; upusťte díla zde. Pusťte odkaz verše a bude vložen jeho "
+"text."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:208
+msgid "Searching text in an open read window"
+msgstr "Vyhledávání textu v aktivním okně"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:209
+msgid ""
+"You can look for a word or phrase in the open read window (e.g. the chapter "
+"of a bible that you're reading) just like you are used to from other "
+"programs. This function can be reached either by clicking with the "
+"<mousebutton>right</mousebutton> mouse button and selecting "
+"<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
+"\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how you can "
+"search in entire works."
+msgstr ""
+"Když chcete hledat slovo nebo frázi v otevřeném aktivním okně (např. "
+"kapitolu bible, kterou čtete), je to stejné jako v jiných programech. Tuto "
+"funkci můžete vyvolat kliknutím <mousebutton>pravým</mousebutton> tlačítkem "
+"myši a zvolením <guimenuitem>Najít...</guimenuitem>, nebo použitím horké "
+"klávesy <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. "
+"Přečtěte si jak hledat v celých dílech."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:221
+msgid "Accessing the search dialog"
+msgstr "Přístup k dialogu vyhledávání"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:222
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
+"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
+"&Shift; or &Ctrl; and clicking on other work's names you can select more "
+"than one. Then follow the same procedure to open the search dialog. You will "
+"be searching in all of these works at the same time."
+msgstr ""
+"V díle můžete hledat kliknutím <mousebutton>pravým</mousebutton> tlačítkem "
+"myši na symbol v <guimenu>Knihovně</guimenu> a vybráním <guimenuitem>Hledat "
+"ve vybraných dílech</guimenuitem>. Přidržením &Shift; nebo &Ctrl; a "
+"kliknutím na jména dalších děl můžete vybrat více než jedno dílo. Poté "
+"následuje stejný postup otevření dialogu hledání. Budete hledat ve všech "
+"těchto dílech najednou."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:232
+msgid ""
+"You can also access the search dialog by clicking on <menuchoice> "
+"<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
+"the appropriate entry."
+msgstr ""
+"Vyhledávací dialog spustíte kliknutím na <menuchoice> <guimenu>Hledat</"
+"guimenu> </menuchoice> z hlavního menu a vybráním odpovídající položky."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:238
+msgid ""
+"A third possibility to start searches is to click on the search symbol in an "
+"open read window."
+msgstr ""
+"Třetí možnost jak spustit vyhledávání je kliknutím na symbol hledání v "
+"aktuálním okně."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:243
+msgid "Search configuration"
+msgstr "Nastavení vyhledávání"
+
+# type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:245
+msgid "Search Text Dialog Options Tab"
+msgstr "Nastavení dialogu hledání"
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:253
+msgid "Selecting works"
+msgstr "Výběr děl"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:254
+msgid ""
+"At the top of the options tab you will find <guibutton>Choose</guibutton>"
+"(works). If you would like to search in multiple works, click on this button "
+"and you will be offered a menu where you can select the works you want to "
+"search in."
+msgstr ""
+"Nahoře v okně nastavení vyhledávání najdete tlačítko <guibutton>Vybrat (nebo "
+"Choose)</guibutton> (díla). Pokud chcete vyhledávat ve více dílech, klikněte "
+"na toto tlačítko, poté vám bude nabídnuto menu s možností výběru děl ve "
+"kterých chcete vyhledávat."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:261
+msgid "Using Search Scopes"
+msgstr "Použití oblastí vyhledávání"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:262
+msgid ""
+"You can narrow the scope of your search to certain parts of the Bible by "
+"selecting one of the predefined scopes from the list in <guimenu>Search "
+"scope</guimenu>. You can define your own search ranges by clicking the "
+"<guibutton>Setup ranges</guibutton> button."
+msgstr ""
+"Můžete použít rozsah hledání zvolením určitých částí Bible pomocí jedné z "
+"definovaných oblastí v seznamu <guimenu>Rozsah hledání</guimenu> Můžete "
+"definovat vlastní vyhledávací rozsahy kliknutím na tlačítko "
+"<guibutton>Nastavit rozsah</guibutton>.>"
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:270
+msgid "Basic Search Syntax Introduction"
+msgstr "Úvod do jednoduché vyhledávací syntaxe"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:271
+msgid ""
+"Enter search terms separated by spaces. By default the search function will "
+"return results that match any of the search terms (OR). To search for all "
+"the terms separate the terms by AND."
+msgstr ""
+"Vložte výrazy a oddělte je mezerami. Při výchozím nastavení, vyhledávání "
+"vrátí výsledky, které odpovídají libovolnému z vyhledávaných výrazů (logická "
+"spojka NEBO). pro vyhledání všech výrazů oddělte jednotlivá slova spojkou "
+"AND."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:275
+msgid ""
+"You can use wildcards: '*' matches any sequence of characters, while '?' "
+"matches any single character. The use of brackets allows you to group your "
+"search terms, e.g. '(Jesus OR spirit) AND God'."
+msgstr ""
+"Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?' "
+"zastupující libovolný jeden znak. Použití závorek vám dovoluje seskupovat "
+"hledané výrazy, např. '(Ježíš OR duch) AND Bůh' --výsledky hledání budou "
+"obsahovat nejméně jedno ze slov v závorce, Ježíš nebo duch, a slovo Bůh."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:279
+msgid ""
+"To search text other than the main text, enter the text type followed by "
+"':', and then the search term. For example, to search for the Strong's "
+"number H8077, use 'strong:H8077'."
+msgstr ""
+"Pro vyhledávání jiného než hlavního textu vložte určitou předponu "
+"následovanou'dvojtečkou ':' a hledaným výrazem. Například pro vyhledávání "
+"Strongova čísla H8077 použijte 'strong:H8077'"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:283
+msgid "Available text types:"
+msgstr "Dostupné předpony:"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:285
+msgid "Search Types"
+msgstr "Typy vyhledávání"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:289
+msgid "Prefix"
+msgstr "Předpona"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:290
+msgid "Meaning"
+msgstr "Význam"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:295
+msgid "heading:"
+msgstr "heading:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:296
+msgid "searches headings"
+msgstr "hledá hlavičky"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:299
+msgid "footnote:"
+msgstr "footnote:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:300
+msgid "searches footnotes"
+msgstr "hledá poznámky"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:303
+msgid "strong:"
+msgstr "strong:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:304
+msgid "searches Strong's Numbers"
+msgstr "hledání Strongových čísel"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:307
+msgid "morph:"
+msgstr "morph:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:308
+msgid "searches morphology codes"
+msgstr "hledá morfologické kódy"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:313
+msgid ""
+"&bibletime; uses the Lucene search engine to perform your searches. It has "
+"many advanced features, and you can read more about it here: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
+"java/docs/index.html</ulink>"
+msgstr ""
+"&bibletime; používá pro hledání vyhledávací engine Lucene, který má mnoho "
+"pokročilých vlastností. Více si o něm můžete přečíst zde: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
+"java/docs/index.html</ulink>"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:321
+msgid "Search results"
+msgstr "Výsledky hledání"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:322
+msgid ""
+"Here you can see how many instances of the search string were found, sorted "
+"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
+"button allows you to copy, save, or print all verses that were found in a "
+"certain work at once. This also works when you click on one or more of the "
+"references to copy, save or print them. Clicking on a particular reference "
+"opens that verse up in context in the preview window below."
+msgstr ""
+"Zde vidíte kolik případů hledaného řetězce bylo nalezeno, setříděno podle "
+"děl. Kliknutí na dílo <mousebutton>pravým</mousebutton> tlačítkem myši vám "
+"umožní kopírovat, uložit, nebo tisknout všechny verše které byli v daném "
+"díle nalezeny. Kliknutím na jeden nebo více odkazů ke kopírování, uložení "
+"nebo tisku. Kliknutí na určitý odkaz otevře verš v jeho kontextu v okně "
+"náhledu."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:331
+msgid ""
+"Drag a reference and drop it on a work symbol on the Bookshelf to open the "
+"work at that verse in a new read window."
+msgstr ""
+"Přetáhněte odkaz a upusťte ho na symbol díla v knihovně k otevření díla na "
+"tomto verši v novém okně."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:336
+msgid ""
+"Drag a reference and drop it on an open read window, and it will jump to "
+"that verse."
+msgstr ""
+"Přetáhněte odkaz a upusťte ho na otevřené okno, které se přesune na "
+"požadovanou pozici."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:340
+msgid "Select references and drag them to the Bookshelf to create bookmarks."
+msgstr "K vytvoření záložek vyberte odkazy a přetáhněte je do knihovny."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:344
+msgid "Search result analysis"
+msgstr "Analýza výsledků hledání"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:345
+msgid ""
+"Click on <guibutton>Search analysis</guibutton> to open the search analysis "
+"display. This gives a simple graphic analysis of the number of instances the "
+"search string was found in each book of the Bible, and you can also save the "
+"analysis."
+msgstr ""
+"Klikněte na <guibutton>Analýza vahledávání</guibutton> pro zobrazení analýzy "
+"vyhledávání. Zobrazí jednoduchou grafickou analýzu množství nalezených "
+"řetězců v každé knize Bible, analýzu můžete uložit."
+
+# type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:351
+msgid "Search Analysis Dialog Box"
+msgstr "Dialog analýzy vyhledávání"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:362
+msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
+msgstr "<guimenuitem>Správa knih</guimenuitem>"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:364
+msgid ""
+"The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
+"Bookshelf. You can install new works to your Bookshelf, and update or remove "
+"existing works from your Bookshelf. Access it by clicking <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
+"menuchoice> in the main menu."
+msgstr ""
+"<guimenuitem>Správa knih</guimenuitem> je nástroj pro správu knihovny. "
+"Můžete do vaší knihovny nainstalovat nová díla, nebo aktualizovat či "
+"odstranit ty existující. Přístupná pod <menuchoice> <guimenu>Nastavení</"
+"guimenu> <guimenuitem>Správa knih</guimenuitem> </menuchoice> v hlavním menu."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:374
+msgid "Bookshelf path(s) setup"
+msgstr "Nastavení cesty ke knihám"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:375
+msgid ""
+"Here you can specify where &bibletime; may store your Bookshelf on the hard "
+"drive. You can even store it in multiple directories. Default is \"~/.sword/"
+"\"."
+msgstr ""
+"Zde lze nastavit, kam na disk má &bibletime; uložit knihovnu. Můžete použít "
+"mnoho adresářů. Výchozí je \"~/.sword/\"."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:379
+msgid ""
+"If you have a sword CD, but do not want to install all the works on the hard "
+"disk, but use them directly from the CD, then you can add the path to the CD "
+"as one of your bookshelf paths. When you start &bibletime;, it will show all "
+"works on the CD if it is present."
+msgstr ""
+"Pokud máte CD sword, ale nechcete všechna díla instalovat na disk, ale "
+"používat je přímo z CD, pak vložte cestu k CD jako jedno z umístění "
+"knihovny. Když zapnete &bibletime;, zobrazí se všechna díla, pokud je CD "
+"vloženo v mechanice."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:387
+msgid "Install/update work(s)"
+msgstr "Instalace/aktualizace děl"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:388
+msgid ""
+"With this facility, you can connect to a repository of works (called "
+"\"library\"), and transfer one or more works to your local Bookshelf. These "
+"libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online "
+"repository of Sword modules, or another site offering Sword modules). You "
+"can manage your libraries with <guibutton>Add library</guibutton> and "
+"<guibutton>Delete library</guibutton>."
+msgstr ""
+"Tímto nástrojem se můžete připojit k repositáři děl (je zvaný \"knihovna\", "
+"\"library\") a nahrát jedno nebo více děl do své lokální knihovny. Tyto "
+"knihovny mohou být lokální (např. Sword CD) nebo vzdálené (např. "
+"Crosswireonline repositář modulů Sword nebo jiné stránky nabízející moduly "
+"Sword). Své knihovny můžete spravovat pomocí <guibutton>Přidat knihovnu</"
+"guibutton> a <guibutton>Smazat knihovnu</guibutton>."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:396
+msgid ""
+"To begin the installation or update process, select a library you want to "
+"connect to and a local Bookshelf path to install the work(s) to. Then click "
+"on <guibutton>Connect to library</guibutton>. &bibletime; will scan the "
+"contents of the library and present you with a list of works that you can "
+"add to your Bookshelf, or that you already have installed but are available "
+"in a new version in the library, and thus can be updated. Then you can mark "
+"all works that you want to install or update, and click on "
+"<guibutton>Install works</guibutton>. They will then be transferred to your "
+"Bookshelf."
+msgstr ""
+"Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se "
+"chcete připojit a umístění lokální knihovny pro instalaci děl. Potom "
+"klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime; "
+"prověří obsah knihovny a předloží vám seznam děl, které můžete do své "
+"knihovny přidat, nebo děl, které jsou již nainstalované, ale jsou dostupné v "
+"novější verzi, a tak mohou být aktualizovány. Poté můžete označit všechna "
+"díla, která chcete nainstalovat nebo aktualizovat a kliknout na "
+"<guibutton>Instalovat díla</guibutton>. Ty budou poté nahrány do vaší "
+"knihovny."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:409
+msgid "Remove work(s)"
+msgstr "Odebrání děl"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:410
+msgid ""
+"This facility allows you to delete one or more of the works from your "
+"Bookshelf too free up disk space. Simply mark the items and click on "
+"<guibutton>Remove works</guibutton>."
+msgstr ""
+"Tato možnost dovoluje smazat jedno nebo více děl z vaší knihovny, což uvolní "
+"místo na disku. Jednoduše označte položky a klikněte na <guibutton>Odstranit "
+"díla</guibutton>."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:416
+msgid "Search Indexes"
+msgstr "Vyhledávací indexy"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:417
+msgid ""
+"This option allows you to create new search indexes and cleanup orphaned "
+"index files for removed works."
+msgstr ""
+"Tyto možnosti vám umožní vytvářet nové vyhledávací indexy a vymazat opuštěné "
+"indexy smazaných děl."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:426
+msgid "Exporting and Printing"
+msgstr "Export a tisk"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:427
+msgid ""
+"In many places, you can open a context menu by clicking with the "
+"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
+"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
+"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
+"Na mnoha místech můžete vyvolat kontextové menu kliknutím "
+"<mousebutton>pravým</mousebutton> tlačítkem myši. V závislosti na kontextu "
+"je možné <guimenuitem>Vybrat</guimenuitem>, <guimenuitem>Kopírovat</"
+"guimenuitem> (do schránky), <guimenuitem>Uložit</guimenuitem> nebo "
+"<guimenuitem>Tisknout</guimenuitem>. to funguje např. v aktivním okně když "
+"kliknete na běžný text nebo na odkaz verše, nebo na stránce výsledků hledání "
+"při kliknutí na dílo nebo na jeden či více odkazů veršů. Je to velmi "
+"přímočaré, prostě to vyzkoušejte."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:440
+msgid ""
+"Printing from &bibletime; is rather basic and is intended as a utility. If "
+"you are composing a document or presentation containing text from "
+"&bibletime; works, we suggest that you use one of the presentation or "
+"editing tools on your system to format your document, rather than printing "
+"from &bibletime; directly."
+msgstr ""
+"Tisk z &bibletime; spíše základní a je zamýšlen jako pomůcka. Pokud "
+"vytváříte dokument nebo prezentaci obsahující text děl z &bibletime;, "
+"doporučujeme formátovat dokument za použití systémových nástrojů pro tvorbu "
+"prezentací, nebo editaci textu, raději než tisknout přímo z &bibletime;."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:2
+msgid "Reference"
+msgstr "Odkazy"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:4
+msgid "Main menu reference"
+msgstr "Odkazy Hlavního menu"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:5
+msgid ""
+"In this section you can find detailed descriptions of all entries in the "
+"main menu of &bibletime;. They are ordered in just the way they appear in "
+"&bibletime;, with all the sub-items listed under the major menu item they "
+"belong to. You can also see the hotkey of each item;a complete listing of "
+"all hotkeys can be found in <link linkend=\"hdbk-reference-hotkeys\">this "
+"section</link>."
+msgstr ""
+"V této sekci najdete detailní popis všech položek základního menu "
+"&bibletime;. Jsou roztříděné stejně, jak se objevují v &bibletime;, včetně "
+"podřízených položek zaznamenaných pod hlavní položkou menu ke které náleží. "
+"Horké klávesy můžete vidět u každé položky; kompletní seznam všech horkých "
+"kláves naleznete v <link linkend=\"hdbk-reference-hotkeys\">této sekci</"
+"link>."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:36
+msgid ""
+"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
+"write unsaved changes to disk."
+msgstr ""
+"<action>Zavře &bibletime;.</action> &bibletime; se vás zeptá, jestli si "
+"přejete zapsat neuložené změny na disk."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:69
+msgid ""
+"<action>Toggles full screen display.</action> Toggle this setting to "
+"maximize the &bibletime; window."
+msgstr ""
+"<action>Přepíná zobrazení přes celou obrazovku.</action> Aktivujte tuto "
+"možnost pokud chcete maximalizovat okno &bibletime;."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:88
+msgid ""
+"<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+"main toolbar on or off."
+msgstr ""
+"<action>Přepíná zobrazení nástrojů.</action> Aktivujte tuto možnost pokud si "
+"přejete zapnout nebo vypnout Hlavní nástrojovou lištu."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:102
+msgid ""
+"<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
+"turn the Bookshelf on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>Zapne zobrazení knihovny.</action> Zvolte tuto možnost pro zapnutí, "
+"nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud "
+"potřebujete více času pro časopis."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:118
+msgid ""
+"<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
+"turn the Bookmarks on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>Zapne zobrazení knihovny.</action> Zvolte tuto možnost pro zapnutí, "
+"nebo vypnutí zobrazení knihovny vlevo. To může být praktické pokud "
+"potřebujete více místa pro časopis."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:134
+msgid ""
+"<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
+"setting to turn the Mag on the left pane on or off."
+msgstr ""
+"<action>Zapne zobrazení časopisu.</action> Zvolte tuto možnost pro zapnutí "
+"nebo vypnutí zobrazení časopisu na levé straně."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:164
+msgid ""
+"<action>Opens the Search Dialog to search in the standard Bible only</"
+"action>. More works can be added in the Search Dialog. A more detailed "
+"search description can be found <link linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"<action>Otevírá dialog vyhledávání pouze pro vyhledávání ve výchozí Bibli</"
+"action>. Do vyhledávacího dialogu mohou být přídána další díla. Detailnější "
+"popis vyhledávání najdete <link linkend=\"hdbk-op-search\">zde</link>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:188
+msgid ""
+"<action>Opens the Search Dialog to search in all open works</action>. Works "
+"can be added or removed in the Search Dialog. A more detailed search "
+"description can be found <link linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"<action>Otevírá dialog vyhledávání ve všech dílech</action>. Do "
+"vyhledávacího dialogu mohou být přídána, či z něj odebrána, další díla. "
+"Detailnější popis vyhledávání naleznete <link linkend=\"hdbk-op-search"
+"\">zde</link>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:213
+msgid ""
+"<action>Directly saves the current session</action>. This will open a "
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
+msgstr ""
+"<action>Ukládá aktuální sezení.</action>. Otevře kontextové menu, kde můžete "
+"zvolit již uložené sezení, které bude přepsáno vaším aktuálním. Podívejte se "
+"na další položku jak uložit nové sezení."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:235
+msgid ""
+"<action>Saves the current session under a new name</action>. This will ask "
+"for a new name to save the session to."
+msgstr ""
+"<action>Ukládá aktuální sezení pod novým jménem</action>. Zeptá se na jméno "
+"pro uložení sezení."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:251
+msgid ""
+"<action>Loads an existing session</action>. This will open a context menu "
+"where you can select an existing session to load."
+msgstr ""
+"<action>Načte existující sezení</action>. Otevře kontextové menu, kde můžete "
+"vybrat existující sezení a načíst ho."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:267
+msgid ""
+"<action>Deletes an existing session</action>. This will open a context menu "
+"where you can select an existing session that should be deleted."
+msgstr ""
+"<action>Vymaže existující sezení</action>. Otevře kontextové menu, kde "
+"můžete vybrat existující sezení, které má být vymazáno."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:283
+msgid ""
+"<action>Controls the basic window arrangement behaviour</action>. In the "
+"opening context menu, you can either specify that you want to take care of "
+"the window arrangement yourself (Manual mode) or have &bibletime; handle it "
+"for you (Automatic modes, just try them out!)."
+msgstr ""
+"<action>Ovládá chování jednoduchého rozvržení oken</action>. V otevřeném "
+"kontextovém menu můžete zvolit, že se chcete o rozvržení oken starat osobně "
+"(Ruční mód) nebo použít připravené možnosti &bibletime; (Automatické módy, "
+"tak je vyzkoušejte!)"
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:311
+msgid "<action>Cascades all open windows</action>."
+msgstr "<action>Všechna otevřená okna do kaskády</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:335
+msgid "<action>Automatically tiles all open windows vertically</action>."
+msgstr "<action>Automaticky dláždí všechna otevřená okna vertikálně</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:359
+msgid "<action>Automatically tiles all open windows horizontally</action>."
+msgstr ""
+"<action>Automaticky dláždí všechna otevřená okna horizontálně.</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:384
+msgid "<action>Closes all open windows</action>."
+msgstr "<action>Zavře všechna otevřená okna</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:409
+msgid ""
+"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
+"configure all kinds of nice settings there to adapt &bibletime; to your "
+"needs.  Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
+"details."
+msgstr ""
+"<action>Otevře hlavní konfigurační dialog &bibletime;</action>. Můžete "
+"nastavit všechny vlastnosti &bibletime;, které potřebujete. Prosím navštivte "
+"<link linkend=\"hdbk-config-bt\">tuto sekci</link> pro více informací."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:438
+msgid ""
+"<action>Opens a dialog where you can change your Sword configuration and "
+"manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\">this section</link> for details."
+msgstr ""
+"<action>Otevře dialog kde můžete změnit vaše nastavení Sword a spravovat "
+"svou knihovnu</action>. Další inormace naleznete v <link linkend=\"hdbk-op-"
+"bookshelfmanager\">této sekci</link>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:471
+msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
+msgstr "<action>Otevře příručku &bibletime;</action>, kterou právě čtete."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:496
+msgid ""
+"<action>Opens a guide on how to study the Bible</action> It is the hope of "
+"the &bibletime; team that this HowTo will provoke the readers to study the "
+"scriptures to see what they say. This particular study guide has been chosen "
+"as it takes care not to advocate any particular denominational doctrine. We "
+"expect you to read and study the scriptures to understand what they say. If "
+"you start with the attitude that you want to have the Lord sow his word in "
+"your heart He will not disappoint you."
+msgstr ""
+"<action>Otevře průvodce jak studovat Bibli</action>. Přáním týmu &bibletime; "
+"je, aby toto HowTo podnítilo čtenáře ke studiu posvátných textů, k tomu "
+"dozvědět se co říkají. Tato příručka byla zvolena proto, že neobhajuje "
+"doktrínu žádné konkrétní denominace. Očekáváme, že budete číst a studovat "
+"Písma, abyste jim rozuměli. Když začnete s postojem, že chcete mít semeno "
+"Páně v srdci, On vás nezklame."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:517
+msgid ""
+"<action>Opens a window about &bibletime; project information</action> "
+"contains information about &bibletime; software version, project "
+"contributors, &sword; software version, &qt; software version and the "
+"license agreement."
+msgstr ""
+"<action>Otevře okno s informacemi o projektu &bibletime;</action> obsahuje "
+"informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi "
+"&qt; a licenční ujednání."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:529
+msgid "Works reference"
+msgstr "Odkazy"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:531
+msgid ""
+"In this section you can find descriptions of the icons associated with open "
+"works."
+msgstr "V této sekci najdete popis ikon přiřazených k otevřeným dílům."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:552
+msgid "Scrolls forward through history."
+msgstr "Posouvá vpřed historií."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:575
+msgid "Scrolls back through history."
+msgstr "Posouvá zpět historií."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:598
+msgid "Select an installed bible."
+msgstr "Vyberte nainstalovanou bibli."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:621
+msgid "Select an additional bible."
+msgstr "Vyberte další bible."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:644
+msgid "Search in selected works."
+msgstr "Vyhledávání ve vybraných dílech"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:667
+msgid "Display configuration."
+msgstr "Nastavení zobrazení"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:690
+msgid "Select an installed commentary."
+msgstr "Vyberte nainstalované komentáře."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:713
+msgid "Select additional commentary."
+msgstr "Vyberte další komentáře."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:736
+msgid "Synchronize displayed entry with active Bible window."
+msgstr "Synchronizovat zobrazený údaj s aktivním oknem Bible."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:759
+msgid "Select a book."
+msgstr "Vber knihu."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:782
+msgid "Select an installed glossary or devotional."
+msgstr "Vyberte nainstalovaný glosář nebo modlitbu."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:805
+msgid "Select an additional glossary or devotional."
+msgstr "Vyberte další glosář nebo modlitbu."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:815
+msgid "HotKeys index"
+msgstr "Seznam horkých kláves"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:816
+msgid ""
+"This is index of all hotkeys and their corresponding description in the "
+"handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to "
+"directly find out which hotkey a certain menu item has, you can either look "
+"at the entry itself in &bibletime; (as it always shows the hotkey), or you "
+"can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
+msgstr ""
+"Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v "
+"příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete "
+"přesně vědět která z horkých kláves odpovídá té které položce menu, můžete "
+"se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké "
+"klávesy), nebo si prohlédněte <link linkend=\"hdbk-reference-menus\">tuto "
+"sekci</link>."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:829
+msgid "Hotkey"
+msgstr "Klávesová zkratka"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:830
+msgid "Description"
+msgstr "Popis"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:839
+msgid "Moves back in the history of read windows."
+msgstr "Posune zpět v historii aktivního okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:846
+msgid "Moves forward in the history of read windows."
+msgstr "Posune vpřed v historii aktivního okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:855
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
+"</menuchoice> </link> equivalent; opens the search dialog to search in the "
+"default bible."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Hledat</guimenu> <guimenuitem>Hledat ve výchozí bibli</guimenuitem> "
+"</menuchoice> </link>otevře vyhledávací dialog pro vyhledávání ve výchozí "
+"bibli."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:871
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
+"guimenuitem> <guimenuitem>Automaticky dlaždice vertikálně</guimenuitem> </"
+"menuchoice> zapnout automatické skládání oken."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:885
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
+"guimenuitem> <guimenuitem>Automaticky dlaždice horizontálně</guimenuitem> </"
+"menuchoice> zapne automatické skládání oken."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:898
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window cascading."
+msgstr ""
+"<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
+"guimenuitem> <guimenuitem>Automaticky kaskádovat</guimenuitem> </menuchoice> "
+"zapne automatické skládání oken do kaskády."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:911
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"equivalent; toggle manual window placement."
+msgstr ""
+"<menuchoice> <guimenu>Okno</guimenu> <guimenuitem>Mód rozvržení</"
+"guimenuitem> <guimenuitem>Ruční mód</guimenuitem> </menuchoice> zapne "
+"manuální skládání oken."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:924
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
+"menuchoice> </link> equivalent; saves current layout as new session."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Uložit jako novou relaci</guimenuitem> "
+"</menuchoice> </link> uloží aktuální náhled jako novou relaci."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:938
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
+"</link> equivalent; closes all open windows."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Zavřít vše</guimenuitem> </menuchoice> "
+"</link> zavře všechna otevřená okna."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:950
+msgid "Zoom out. This decreases the font size of read windows."
+msgstr "Oddálit. Zmenší velikost písma v aktivním okně."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:958
+msgid "Zoom in. This increases the font size of read windows."
+msgstr "Přiblížit. Zvětší velikost písma v aktivním okně."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:966
+msgid "Select all. This selects all text in read windows."
+msgstr "Vybrat vše. Vybere všechen text v aktivním okně."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:974
+msgid "Copy. This copies the selected text to the clipboard."
+msgstr "Kopírovat. Zkopíruje vybraný text do schránky."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:983
+msgid "Search. This lets you search within the text of a read window."
+msgstr "Hledat. Vyhledává v textu aktivního okna"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:994
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Dlaždice vertikálně</guimenuitem> </"
+"menuchoice> </link>."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1010
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Dlaždice horizontálně</guimenuitem> </"
+"menuchoice> </link>."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1026
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Okno</guimenu> <guimenuitem>Kaskáda</guimenuitem> </menuchoice> </"
+"link> obdoba oken."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1041
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
+"</menuchoice> </link> equivalent; opens the search dialog to search in all "
+"currently opened works."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Hledat</guimenu> <guimenuitem>Hledat v otevřených dílech</"
+"guimenuitem> </menuchoice> </link> otevře dialog pro vyhledávání ve všech "
+"otevřených dílech."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1056
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+"link> equivalent; closes &bibletime;."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Soubor</guimenu> <guimenuitem>Ukončit</guimenuitem> </menuchoice> </"
+"link> ukončí &bibletime;."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1068
+msgid "Closes the current window."
+msgstr "Zavře aktuální okno."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1077
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
+"menuchoice> equivalent; opens the handbook."
+msgstr ""
+"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Příručka</guimenuitem> "
+"</menuchoice> otevře příručku."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1089
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
+msgstr ""
+"<menuchoice> <guimenu>Nápověda</guimenu> <guimenuitem>Návod, jak studovat "
+"Bibli</guimenuitem> </menuchoice> otevře Návod, jak studovat Bibli."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1102
+msgid ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
+"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Nastavení</guimenu> <guimenuitem>Správa knih</"
+"guimenuitem> </menuchoice> </link>otevře správce knih."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1117
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
+"menuchoice> </link> equivalent; toggles display of the Bookshelf."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit knihovnu</guimenuitem> </"
+"menuchoice> </link>zapne zobrazení knihovny."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1132
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
+"link> equivalent; toggles display of the mag(nifying glass)."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>Pohled</guimenu> <guimenuitem>Zobrazit časopis</guimenuitem> </"
+"menuchoice> </link>zapne zobrazení okna časopisu."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:2
+#: docs/handbook/en/docbook/hdbk-start.docbook:6
+msgid "Starting &bibletime;"
+msgstr "Spuštění &bibletime;"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:4
+msgid "How to start &bibletime;"
+msgstr "Jak spustit &bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:7
+msgid ""
+"&bibletime; is an executable file that is integrated with the desktop. You "
+"can launch &bibletime; from the Start Menu with this icon:"
+msgstr ""
+"&bibletime; je spustitelný soubor integrovaný do pracovního prostředí. "
+"&bibletime; můžete spustit z menu Start touto ikonou:"
+
+# type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-start.docbook:15
+msgid "<phrase>&bibletime; start icon</phrase>"
+msgstr "<phrase>&bibletime; spouštěcí ikona</phrase>"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:18
+msgid ""
+"&bibletime; can also be launched from a terminal command prompt. To launch "
+"&bibletime;, open a terminal window and type:"
+msgstr ""
+"&bibletime; může být spuštěn také z příkazové řádky. Pro spuštění "
+"&bibletime; otevřete okno terminálu a napište:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
+#, no-wrap
+msgid "&bibletime;"
+msgstr "&bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
+msgid "Other window managers"
+msgstr "Další správci oken"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:25
+msgid ""
+"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
+"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
+"already installed on your computer."
+msgstr ""
+"&bibletime; může být používán také s dalšími okenními správci jako Gnome, "
+"BlackBox, Fluxbox, OpenBox nebo Sawfish, pokud jsou požadované knihovny "
+"nainstalovány na vašem počítači."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
+msgid "Startup customization"
+msgstr "Nastavení spuštění"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
+msgid ""
+"From a terminal you can use &bibletime; to open a random verse in the "
+"default bible:"
+msgstr ""
+"Z terminálu můžete použít &bibletime; k otevření příslušného verše ve "
+"výchozí bibli:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
+#, no-wrap
+msgid ""
+"bibletime --open-default-bible\n"
+"      \"&lt;random&gt;\""
+msgstr "bibletime --open-default-bible"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:35
+msgid "To open at a given passage like John 3:16, use:"
+msgstr "Pro otevření v dané pasáži, jako například Jan 3:16, použijte:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#, no-wrap
+msgid "bibletime --open-default-bible \"John 3:16\""
+msgstr "bibletime --open-default-bible \"Jan 3:16\""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:37
+msgid "You can also use booknames in your current bookname language."
+msgstr ""
+"Můžete použít jména knih ve svém aktuálním jazyce pro pojmenování knih."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:42
+msgid "Startup sequence"
+msgstr "Spouštěcí sekvence."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:43
+msgid ""
+"As &bibletime; launches you may see the following screens before the main "
+"&bibletime; window opens:"
+msgstr ""
+"Když se &bibletime; spouští, můžete vidět následující obrazovky předtím, než "
+"se otevře hlavní okno &bibletime;:"
+
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:52
+msgid ""
+"<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
+"Bookshelf, add or delete works from your system.  It will only be shown if "
+"no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\"> this section</link> for further details. If you start "
+"off with an empty Bookshelf, it will be helpful to install at least one "
+"Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
+"features quickly."
+msgstr ""
+"<action>Upravit vaši knihovnu.</action> Tento dialog vám umožní upravovat "
+"vaši knihovnu, přidávat nebo mazat díla ve vašem systému. Bude zobrazen "
+"pouze v případě, že nebude nalezena výchozí knihovna. Prosím podívejte se do "
+"<link linkend=\"hdbk-op-bookshelfmanager\">této sekce</link>, pokud se "
+"chcete dozvědět více. Pokud začínáte s prázdnou knihovnou, bude užitečné  "
+"nainstalovat alespoň jednu Bibli, Komentář, Lexikon a knihu, abyste se "
+"rychle seznámili se základními vlastnostmi &bibletime;."
+
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:69
+msgid ""
+"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
+"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
+"detailed description</link> of this dialog."
+msgstr ""
+"<action>Přizpůsobí &bibletime;.</action>Tento dialog vám dovolí přizpůsobit "
+"&bibletime; vašim potřebám. Prosím podívejte se na <link linkend=\"hdbk-"
+"config-bt\">detailní popis</link> tohoto dialogu."
+
+# type: Content of the bibletime entity
+#: docs/handbook/en/docbook/index.docbook:5
+msgid "<application>BibleTime</application>"
+msgstr "<application>BibleTime</application>"
+
+# type: Content of the sword entity
+#: docs/handbook/en/docbook/index.docbook:6
+msgid "<application>Sword</application>"
+msgstr "<application>Sword</application>"
+
+# type: Content of the kde entity
+#: docs/handbook/en/docbook/index.docbook:7
+msgid "<application>KDE</application>"
+msgstr "<application>KDE</application>"
+
+# type: Content of the kde entity
+#: docs/handbook/en/docbook/index.docbook:8
+msgid "<application>Qt</application>"
+msgstr "<application>Qt</application>"
+
+# type: Content of the Shift entity
+#: docs/handbook/en/docbook/index.docbook:10
+msgid "Shift"
+msgstr "Shift"
+
+# type: Content of the Ctrl entity
+#: docs/handbook/en/docbook/index.docbook:11
+msgid "Ctrl"
+msgstr "Ctrl"
+
+# type: Content of the Alt entity
+#: docs/handbook/en/docbook/index.docbook:12
+msgid "Alt"
+msgstr "Alt"
+
+# type: Content of: <book><bookinfo><title>
+#: docs/handbook/en/docbook/index.docbook:22
+msgid "The &bibletime; handbook"
+msgstr "Příručka &bibletime;"
+
+# type: Content of: <book><bookinfo><copyright><holder>
+#: docs/handbook/en/docbook/index.docbook:44
+msgid "the &bibletime; team"
+msgstr "tým &bibletime;"
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: docs/handbook/en/docbook/index.docbook:47
+msgid "The &bibletime; handbook is part of &bibletime;."
+msgstr "Příručka &bibletime; je součástí &bibletime;."
+
+# type: Content of: <book><bookinfo><date>
+#: docs/handbook/en/docbook/index.docbook:50
+#, fuzzy
+msgid "2009-06"
+msgstr "2009-04"
+
+# type: Content of: <book><bookinfo><releaseinfo>
+#: docs/handbook/en/docbook/index.docbook:51
+#, fuzzy
+msgid "2.1"
+msgstr "2.0"
+
+# type: Content of: <book><bookinfo><abstract><para>
+#: docs/handbook/en/docbook/index.docbook:53
+msgid "&bibletime; is a Bible study tool based on the Sword framework."
+msgstr "&bibletime; je nástroj pro studium Bible založený na frameworku Sword."

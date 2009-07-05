@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>#TITLE#</title>
+	<meta name="GENERATOR" content="BibleTime - www.bibletime.info" />
+	<meta name="AUTHOR" content="BibleTime - www.bibletime.info" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<style type="text/css">
+/* <![CDATA[ */
+* { 
+	background-color:inherit; /* To work around a KDE 3.2 bug / problem */
+}
+
+/* content wraps all of the displayed elements */
+#content { }
+/* The table contains the Bible verses, each verse on an own row, each Bible module in an own column */
+#content > table { }
+/* The heading contains the name of the module and may contain additional information like the display keys */
+#content > table th { }
+
+/* The a links are the normal HTML hyperlinks. Links without a class attribute are hyperlinks into the web */
+a { }
+a:hover { }
+
+/* An entry is the generic element used for all content items. 
+ In Bibles an entry contains a verse, in commentaries the comment to a verse range,
+ in lexicons an simple item and in book the text of an item with other .entry elements as childs.
+ 
+ If just one module is chosen, all entries are put together in one sourrounding table column. In this case the elements div and span may have the class "entry". If it's a div each entry should be on it's own line. span.entry should not add a linebreak.
+ 
+ If more than one module (Bibles) was chosen, the entry class applies to "td" elements, one column for a verse
+ */
+.entry { }
+#printer .entry { }
+/* Often needed to format BiDi text in the right way */
+.entry[dir=rtl] { }
+#printer .entry[dir=rtl] { }
+/* Special formatting for the block element entries */
+div.entry, td.entry { }
+
+td.currententry { }
+
+/* Currententry is chosen when the entry should be highlighted as the current entry chosen by the user
+ currententry may apply to span, div, td (just like .entry)
+ */
+.currententry {
+}
+.currententry[dir=rtl] {
+}
+div.currententry { }
+span.currententry { }
+
+/* You may use this to format the space between two columns */
+td.entry + td.entry { }
+
+/* Several additional settings for displaying Bible modules*/
+#bible div.currententry, #bible td.currententry { }
+#bible td.currententry { }
+
+/*Same for books!*/
+#book div.currententry, #book td.currententry { }
+#book .entryname + .entry { }
+/* To remove the gap between the entryname and the entry's content*/
+#book .entry > *, #book .currententry > * { }
+
+/* An entryname is embedded in an .entry tag and contains the name of the key, which belongs to the text of the .entry */
+.entryname { }
+.entry[dir=rtl] .entryname, .currententry[dir=rtl] .entryname { }
+.entryname a, #printer .entryname { }
+/*  As you can see #printer is used to format pages which are send to the printer. Printer pages should be clean and easy to read */
+#printer .entry  .entry, #printer .entry .sectiontitle , #printer .entry .booktitle { }
+
+/* Footnote formatting options */
+/* A footnote is displayed as an asterisk or another small character. You can set the colors, font-size, etc. for the footnote. */
+.footnote { }
+/* You may use this to add sourrounding brackets in Bible modules. To do this the content command of CSS */
+#bible .footnote:before { }
+#bible .footnote:after { }
+
+/* Crossreferences. The same as footnotes */
+.crossreference { }
+#bible .crossreference:before { }
+#bible .crossreference:after { }
+
+/*Keep in mind that for cross references it is not enough to
+*set only the cross reference colour, you must also set the
+*cross reference anchor marker with .crossreference a
+*This way both the non linked and linked text will show
+*as desired. Additionally, you can have seperate formatting
+*for linked and non linked text in the cross reference*/
+.crossreference a { }
+.crossreference a:hover { }
+
+/* Alternative reading as defined in the OSIS specs. The information about the alternative text is displayed in the info display. It's 
+often a good idea to format this the same as footnotes 
+The text which is the alternative of the displayed text is available in the attribute "alternative"
+so something like .alternative:before { content:"'"attr(alternative); } is possible
+*/
+.alternative {}
+.alternative:before { }
+.alternative:after { }
+
+/* An abbreviation. */
+.abbreviation { }
+
+/* A title within the text. This is the formatting which applies to a title of a section, as you can find them in Bibles */
+.sectiontitle { }
+#printer .sectiontitle { }
+/* You may want to format elements before section titles in a special way. */
+* + .sectiontitle { }
+
+/* The title of a book, e.g. "The gospel of Matthew" */
+.booktitle { }
+#printer .booktitle { }
+
+/* A foreign word */
+.foreign { }
+
+/* Words spoken by Jesus Christ */
+.jesuswords { }
+
+/* An introduction to a module, book or chapter */
+.introduction { }
+/* A quotation without a special speaker */
+.quotation { }
+/* Poetry formatting */
+.poetry { }
+/* Text displayed above. It's like the sup tag in HTML */
+.sup { }
+/* Sub text, the opposite of .sup */
+.sub { }
+/* Display the text inside as right aligned text */
+.right { }
+/* Display as centered text */
+.center { }
+
+/* Visual attributes to the text */
+.bold { }
+.illuminated { }
+.italic { }
+.line-through { }
+.normal { }
+.small-caps{ }
+.underline { }
+
+/* An inscription */
+.inscription { }
+
+.mentioned { }
+
+/* Special formatting rules for names, see the OSIS specs for detailed information */
+.name {}
+.name > .geographic { }
+.name > .holiday { }
+.name > .nonhuman { }
+.name > .person { }
+.name > .ritual { }
+.name > .divine { }
+
+/* Information added by the translator */
+.transchange {}
+.transchange > .added { }
+.transchange > .amplified {}
+.transchange > .changed { }
+.transchange > .deleted { }
+.transchange > .moved { }
+.transchange > .tenseChange { }
+
+/* Special text markup */
+/* Morph segmentation is a special feature for hebrew to markup the word divisions in the text */
+.morphSegmentation {}
+
+/* The formatting of all things displayed in the information window */
+#infodisplay { }
+
+/* The headings of a section, several sections may be displayed together at the same time */
+#infodisplay .footnoteinfo h3,
+#infodisplay .strongsinfo h3,
+#infodisplay .morphinfo h3,
+#infodisplay .translationinfo h3,
+#infodisplay .crossrefinfo h3 { }
+
+#infodisplay > p, #infodisplay * > p { /* We only format the first p child in a special way */ }
+
+/*Required for cross references*/
+#infodisplay .entry { }
+#infodisplay .entry .entry { /* No smaller font size for nested entries */ }
+#infodisplay .entryname { }
+#infodisplay .rangeheading {}
+
+#printer .rangeheading {}
+
+/* Here's the marker for the language specific fotn information. BibleTime replaces this by the CSS for the fonts */
+#LANG_CSS#
+
+/* ]]> */
+	</style>
+</head>
+
+<!--  The display type may be bible, book, printer -->
+<body id="#DISPLAYTYPE#">
+	<div id="content" lang="#LANG_ABBREV#" xml:lang="#LANG_ABBREV#">#CONTENT#</div></body>
+</html>
