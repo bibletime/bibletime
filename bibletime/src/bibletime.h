@@ -19,6 +19,7 @@ class CSwordModuleInfo;
 #include <QList>
 #include <QMainWindow>
 
+class BtActionClass;
 class CMDIArea;
 class CDisplayWindow;
 class CMainIndex;
@@ -182,6 +183,10 @@ public slots:
 	* Processes the commandline options given to BibleTime.
 	*/
 	void processCommandline();
+	/**
+	* Creates QAction's that have keyboard shortcuts
+	*/
+	static void insertKeyboardActions( BtActionCollection* const a );
 
 protected: // Protected methods
 	/**
@@ -207,11 +212,16 @@ protected: // Protected methods
 	/**
 	* Initializes one action object
 	*/
-	QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel, QString tooltip, const char* slot );
+	QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel, 
+		const QString& tooltip, const QString& actionName, const char* slot );
 	/**
 	* Refreshes all presenter supporting at least in of the features given as parameter.
 	*/
 	void refreshDisplayWindows();
+	/**
+	* Refresh main window accelerators 
+	*/
+	void refreshBibleTimeAccel();
 	/**
 	* Called before a window is closed
 	*/
@@ -338,6 +348,7 @@ private:
 	QAction* m_windowAutoTileVertical_action;
 	QAction* m_windowAutoTileHorizontal_action;
 	QAction* m_windowCloseAll_action;
+	BtActionCollection* m_actionCollection;
 
 	QMenu* m_windowSaveProfileMenu;
 	QAction* m_windowSaveToNewProfile_action;
@@ -362,6 +373,9 @@ private:
 	CBookmarkIndex* m_bookmarksPage;
 	CBookshelfIndex* m_bookshelfPage;
 	InfoDisplay::CInfoDisplay* m_infoDisplay;
+
+	// returns the BtActionCollection class
+	BtActionCollection* actionCollection();
 	
 protected: //DBUS interface implementation
 	void closeAllModuleWindows();

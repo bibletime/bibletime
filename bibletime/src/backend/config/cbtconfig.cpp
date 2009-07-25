@@ -17,6 +17,7 @@
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "frontend/displaywindow/btactioncollection.h"
 
 //Qt includes
 #include <QApplication>
@@ -585,104 +586,95 @@ CSwordBackend::FilterOptions CBTConfig::getFilterOptionDefaults()
 	return options;
 }
 
-//void CBTConfig::setupAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
-//{
-// 	qDebug("CBTConfig::setupAccelSettings");
-// 	QString groupName;
-// 	switch (type) {
-// 		case allWindows : {
-// 			groupName = "Displaywindow shortcuts";
-// 			break;
-// 		};
-// 		case writeWindow : {
-// 			groupName = "Writewindow shortcuts";
-// 			break;
-// 		};
-// 		case readWindow : {
-// 			groupName = "Readwindow shortcuts";
-// 			break;
-// 		};
-// 		case bookWindow : {
-// 			groupName = "Book shortcuts";
-// 			break;
-// 		};
-// 		case bibleWindow : {
-// 			groupName =  "Bible shortcuts";
-// 			break;
-// 		};
-// 		case commentaryWindow : {
-// 			groupName = "Commentary shortcuts";
-// 			break;
-// 		};
-// 		case lexiconWindow : {
-// 			groupName = "Lexicon shortcuts";
-// 			break;
-// 		};
-// 		case application : {
-// 			groupName = "Application shortcuts";
-// 			break;
-// 		};
-// 	};
-// 	qDebug() << groupName;
-// 	Q_ASSERT(CBTConfig::getConfig());
-// 	//buggy???
-// 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-// 	//KConfigGroup* cg;
-//
-// 	Q_ASSERT(cg);
-// 	Q_ASSERT(actionCollection);
-// 	//actionCollection->readSettings(cg);
-// 	actionCollection->setConfigGroup(groupName);
-//
-// 	actionCollection->readSettings();
-// 	qDebug("CBTConfig::setupAccelSettings end");
-//}
+void CBTConfig::setupAccelSettings(const CBTConfig::keys type, BtActionCollection* const actionCollection)
+{
+ 	qDebug("CBTConfig::setupAccelSettings");
+ 	QString groupName;
+ 	switch (type) {
+ 		case allWindows : {
+ 			groupName = "Displaywindow shortcuts";
+ 			break;
+ 		};
+ 		case writeWindow : {
+ 			groupName = "Writewindow shortcuts";
+ 			break;
+ 		};
+ 		case readWindow : {
+ 			groupName = "Readwindow shortcuts";
+ 			break;
+ 		};
+ 		case bookWindow : {
+ 			groupName = "Book shortcuts";
+ 			break;
+ 		};
+ 		case bibleWindow : {
+ 			groupName =  "Bible shortcuts";
+ 			break;
+ 		};
+ 		case commentaryWindow : {
+ 			groupName = "Commentary shortcuts";
+ 			break;
+ 		};
+ 		case lexiconWindow : {
+ 			groupName = "Lexicon shortcuts";
+ 			break;
+ 		};
+ 		case application : {
+ 			groupName = "Application shortcuts";
+ 			break;
+ 		};
+ 	};
+ 	qDebug() << groupName;
+ 	Q_ASSERT(CBTConfig::getConfig());
 
-//void CBTConfig::saveAccelSettings(const CBTConfig::keys /*type*/, KActionCollection* const /*actionCollection*/)
-//{
-// 	qDebug("CBTConfig::saveAccelSettings");
-// 	QString groupName;
-// 	switch (type) {
-// 		case allWindows : {
-// 			groupName = "Displaywindow shortcuts";
-// 			break;
-// 		};
-// 		case writeWindow : {
-// 			groupName = "Writewindow shortcuts";
-// 			break;
-// 		};
-// 		case readWindow : {
-// 			groupName = "Readwindow shortcuts";
-// 			break;
-// 		};
-// 		case bookWindow : {
-// 			groupName = "Book shortcuts";
-// 			break;
-// 		};
-// 		case bibleWindow : {
-// 			groupName =  "Bible shortcuts";
-// 			break;
-// 		};
-// 		case commentaryWindow : {
-// 			groupName = "Commentary shortcuts";
-// 			break;
-// 		};
-// 		case lexiconWindow : {
-// 			groupName = "Lexicon shortcuts";
-// 			break;
-// 		};
-// 		case application : {
-// 			groupName = "Application shortcuts";
-// 			break;
-// 		};
-// 	};
-//
-// // 	KConfigGroup* cg = &(CBTConfig::getConfig()->group(groupName));
-//
-// 	qDebug("NOT saving accelerators!");
-// 	//actionCollection->writeSettings(cg);
-// 	qDebug("CBTConfig::saveAccelSettings end");
-//}
+ 	actionCollection->setConfigGroup(groupName);
+ 	actionCollection->readSettings();
+ 	qDebug("CBTConfig::setupAccelSettings end");
+}
+
+void CBTConfig::saveAccelSettings(const CBTConfig::keys type, BtActionCollection* const actionCollection)
+{
+ 	qDebug("CBTConfig::saveAccelSettings");
+ 	QString groupName;
+ 	switch (type) {
+ 		case allWindows : {
+ 			groupName = "Displaywindow shortcuts";
+ 			break;
+ 		};
+ 		case writeWindow : {
+ 			groupName = "Writewindow shortcuts";
+ 			break;
+ 		};
+ 		case readWindow : {
+ 			groupName = "Readwindow shortcuts";
+ 			break;
+ 		};
+ 		case bookWindow : {
+ 			groupName = "Book shortcuts";
+ 			break;
+ 		};
+ 		case bibleWindow : {
+ 			groupName =  "Bible shortcuts";
+ 			break;
+ 		};
+ 		case commentaryWindow : {
+ 			groupName = "Commentary shortcuts";
+ 			break;
+ 		};
+ 		case lexiconWindow : {
+ 			groupName = "Lexicon shortcuts";
+ 			break;
+ 		};
+ 		case application : {
+ 			groupName = "Application shortcuts";
+ 			break;
+ 		};
+ 	};
+
+ 	actionCollection->setConfigGroup(groupName);
+ 	actionCollection->writeSettings();
+ 	qDebug("CBTConfig::saveAccelSettings end");
+}
 
 
 QString CBTConfig::getModuleEncryptionKey( const QString& module )

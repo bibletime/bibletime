@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -12,10 +12,8 @@
 
 //BibleTime includes
 #include "util/cpointers.h"
-
 class CSwordModuleInfo;
 #include "backend/managers/cswordbackend.h"
-
 #include "frontend/profile/cprofilewindow.h"
 
 //Qt includes
@@ -41,145 +39,117 @@ class BtActionCollection;
   * @author The BibleTime team
   */
 
-class CDisplayWindow : public QMainWindow, public CPointers  {
+class CDisplayWindow : public QMainWindow, public CPointers  
+{
 	Q_OBJECT
 public:
-	enum WriteWindowType {
+	enum WriteWindowType 
+	{
 		HTMLWindow = 1,
 		PlainTextWindow = 2
 	};
 
-	/**
-	* Insert the keyboard accelerators of this window into the given KAccel object.
-	*/
-	//   static void insertKeyboardActions( KAccel* const accel );
+	// Insert the keyboard accelerators of this window into the given KAccel object.
 	static void insertKeyboardActions( BtActionCollection* const a );
 
 	CMDIArea* mdi() const;
-	/**
-	* Returns the right window caption.
-	*/
+
+	// Returns the right window caption.
 	const QString windowCaption();
-	/**
-	* Returns the used modules as a QPtrList
-	*/
+
+	// Returns the used modules as a QPtrList
 	QList<CSwordModuleInfo*> modules();
-	/**
-	* Store the settings of this window in the given CProfileWindow object.
-	*/
+
+	// Store the settings of this window in the given CProfileWindow object.
 	virtual void storeProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
-	/**
-	* Store the settings of this window in the given profile window.
-	*/
+
+	// Store the settings of this window in the given profile window.
 	virtual void applyProfileSettings( Profile::CProfileWindow* profileWindow ) = 0;
-	/**
-	* Set the window caption.
-	*/
+
+	// Set the window caption.
 	virtual void setCaption( const QString& );
-	/**
-	* Sets the new filter options of this window.
-	*/
+
+	// Sets the new filter options of this window.
 	void setFilterOptions( CSwordBackend::FilterOptions& filterOptions );
-	/**
-	* Sets the new display options for this window.
-	*/
+
+	// Sets the new display options for this window.
 	void setDisplayOptions( const CSwordBackend::DisplayOptions& displayOptions );
-	/**
-	* Returns the display options used by this display window.
-	*/
+
+	// Returns the display options used by this display window.
 	CSwordBackend::DisplayOptions& displayOptions();
-	/**
-	* Returns the filter options used by this window.
-	*/
+
+	// Returns the filter options used by this window.
 	CSwordBackend::FilterOptions& filterOptions();
-	/**
-	* Set the ready status
-	*/
+
+	// Set the ready status
 	void setReady( const bool& ready );
-	/**
-	* Returns true if the widget is ready for use.
-	*/
+
+	// Returns true if the widget is ready for use.
 	bool isReady() const;
-	/**
-	* Returns true if the window may be closed.
-	*/
+
+	// Returns true if the window may be closed.
 	virtual bool queryClose();
-	/**
-	* Returns the keychooser widget of this display window.
-	*/
+
+	// Returns the keychooser widget of this display window.
 	CKeyChooser* keyChooser() const;
-	/**
-	* Sets the new sword key.
-	*/
+
+	// Sets the new sword key.
 	void setKey( CSwordKey* key );
-	/**
-	* Returns the key of this display window.
-	*/
+
+	// Returns the key of this display window.
 	CSwordKey* key() const;
-	/**
-	* Initialize the window. Call this method from the outside, because calling this in the constructor is not possible!
-	*/
+
+	// Initialize the window. Call this method from the outside, because calling this in the constructor is not possible!
 	virtual bool init();
-	/**
-	* Sets the main toolbar.
-	*/
+
+	// Sets the main toolbar.
 	void setMainToolBar( QToolBar* bar );
-	/**
-	* Sets the buttons toolbar.
-	*/
+
+	// Sets the buttons toolbar.
 	void setButtonsToolBar( QToolBar* bar );
-	/**
-	* Returns the main toolbar.
-	*/
+
+	// Returns the main toolbar.
 	QToolBar* mainToolBar() const;
-	/**
-	* Returns the buttons toolbar.
-	*/
+
+	// Returns the buttons toolbar.
 	QToolBar* buttonsToolBar() const;
-	/**
-	* Initialize the toolbars
-	*/
+
+	// Initialize the toolbars
 	virtual void initToolbars() = 0;
-	/**
-	* Returns the display settings button
-	*/
+
+	// Returns the display settings button
 	CDisplaySettingsButton* displaySettingsButton() const;
-	/**
-	* Sets the display settings button.
-	*/
+
+	// Sets the display settings button.
 	void setDisplaySettingsButton( CDisplaySettingsButton* button );
+
 	virtual void setupPopupMenu() = 0;
-	/**
-	* Returns the display widget used by this implementation of CDisplayWindow.
-	*/
+
+	// Returns the display widget used by this implementation of CDisplayWindow.
 	virtual CDisplay* displayWidget() const;
-	/**
-	* Sets the display widget used by this display window.
-	*/
+
+	// Sets the display widget used by this display window.
 	virtual void setDisplayWidget( CDisplay* newDisplay );
 
-	/** Returns whether syncs to the active window are allowed at this time for this display window
-	* @return boolean value whether sync is allowed
-	*/
-	virtual bool syncAllowed() const {
+	// Returns whether syncs to the active window are allowed at this time for this display window
+	// @return boolean value whether sync is allowed
+	virtual bool syncAllowed() const 
+	{
 		return false;
 	};
 
 	BtActionCollection* actionCollection();
 
 public slots:
-	/**
-	* Lookup the specified key in the given module. If the module is not chosen withing
-	* this display window create a new displaywindow with the right module in it.
-	*/
+
+	// Lookup the specified key in the given module. If the module is not chosen withing
+	// this display window create a new displaywindow with the right module in it.
 	virtual void lookupModKey( const QString& module, const QString& key );
-	/**
-	* Lookup the key in the chosen modules.
-	*/
+
+	// Lookup the key in the chosen modules.
 	virtual void lookupKey( const QString& key );
-	/**
-	* Refresh the settings of this window.
-	*/
+
+	// Refresh the settings of this window.
 	virtual void reload(CSwordBackend::SetupChangedReason reason);
 
 protected:
@@ -188,55 +158,48 @@ protected:
 
 	CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
 	virtual ~CDisplayWindow();
-	/**
-	* Initializes the intern keyboard actions.
-	*/
+
+	// Initializes the intern keyboard actions.
 	virtual void initActions();
-	/**
-	* Sets the keychooser widget for this display window.
-	*/
+
+	// Sets the keychooser widget for this display window.
 	void setKeyChooser( CKeyChooser* ck );
-	/**
-	* Returns the module chooser bar.
-	*/
+
+	// Returns the module chooser bar.
 	CModuleChooserBar* moduleChooserBar() const;
-	/**
-	* Lookup the given key.
-	*/
+
+	// Lookup the given key.
 	virtual void lookupSwordKey( CSwordKey* ) = 0;
-	/**
-	* Sets the module chooser bar.
-	*/
+
+	// Sets the module chooser bar.
 	void setModuleChooserBar( CModuleChooserBar* bar );
-	/**
-	* Sets the modules.
-	*/
+
+	// Sets the modules.
 	void setModules( const QList<CSwordModuleInfo*>& modules );
-	/**
-	* Initializes the signal / slot connections of this display window.
-	*/
+
+	// Initializes the signal / slot connections of this display window.
 	virtual void initConnections() = 0;
-	/**
-	* Initialize the view of this display window.
-	*/
+
+	// Initialize the view of this display window.
 	virtual void initView() = 0;
-	/**
-	* Returns the installed popup menu.
-	*/
+
+	// Returns the installed popup menu.
 	QMenu* popup();
+
 	virtual void closeEvent(QCloseEvent* e);
 
 protected slots:
 	virtual void modulesChanged();
-	/**
-	* Lookup the current key. Used to refresh the display.
-	*/
+
+	// Lookup the current key. Used to refresh the display.
 	void lookup();
+
 	virtual void updatePopupMenu();
 
 	void slotSearchInModules();
 
 	void printAll();
+
 	void printAnchorWithText();
 
 

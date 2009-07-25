@@ -2,11 +2,10 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-
 
 
 #ifndef CLEXICONREADWINDOW_H
@@ -16,11 +15,8 @@
 #include "creadwindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 class BtToolBarPopupAction;
-
 class CSwordKey;
 class CSwordLDKey;
-
-class KToolBarPopupAction;
 class BtActionCollection;
 class QAction;
 class QMenu;
@@ -47,6 +43,12 @@ public:
 	*/
 	//   static void insertKeyboardActions( KAccel* a );
 	static void insertKeyboardActions( BtActionCollection* const a );
+
+public slots:
+	/**
+	* Refreshes the content of this display window and the content of the keychooser.
+	*/
+	virtual void reload(CSwordBackend::SetupChangedReason reason);
 
 protected:
 	virtual void initActions();

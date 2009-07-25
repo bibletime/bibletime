@@ -69,9 +69,10 @@ using namespace Profile;
 // };
 
 /** Opens the optionsdialog of BibleTime. */
-void BibleTime::slotSettingsOptions() {
+void BibleTime::slotSettingsOptions() 
+{
 	qDebug("BibleTime::slotSettingsOptions");
-	CConfigurationDialog *dlg = new CConfigurationDialog(this, 0 /*actionCollection()*/);
+	CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
 	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
 	dlg->show();
@@ -86,12 +87,12 @@ void BibleTime::saveConfigSettings()
 }
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
-void BibleTime::slotSettingsChanged() {
+void BibleTime::slotSettingsChanged() 
+{
 	qDebug("BibleTime::slotSettingsChanged");
-	const QString language = CBTConfig::get
-								 (CBTConfig::language);
-	//m_backend->booknameLanguage(language);
+	const QString language = CBTConfig::get(CBTConfig::language);
 	CPointers::backend()->booknameLanguage(language);
+
 // TODO: update the bookmarks after Bible bookname language has been changed
 // 	QTreeWidgetItemIterator it(m_mainIndex);
 // 	while (*it) {
@@ -102,13 +103,15 @@ void BibleTime::slotSettingsChanged() {
 // 		++it;
 // 	}
 
+	refreshBibleTimeAccel();
 	refreshDisplayWindows();
 	refreshProfileMenus();
 	qDebug("BibleTime::slotSettingsChanged");
 }
 
 /** Opens the sword setup dialog of BibleTime. */
-void BibleTime::slotSwordSetupDialog() {
+void BibleTime::slotSwordSetupDialog() 
+{
 	//TODO: nonmodal dialog, memory management (one instance only!
 	//BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
 	BtModuleManagerDialog* dlg = BtModuleManagerDialog::getInstance(this);
@@ -123,7 +126,8 @@ void BibleTime::slotSwordSetupDialog() {
 }
 
 /** Is called when settings in the sword setup dialog were changed (ok or apply) */
-void BibleTime::slotSwordSetupChanged() {
+void BibleTime::slotSwordSetupChanged() 
+{
 	/*
 	  Refresh everything here what might have changed
 	  these are the mainindex, the searchdialog, the displaywindows
@@ -148,34 +152,41 @@ void BibleTime::slotSwordSetupChanged() {
 }
 
 /** Is called just before the window menu is ahown. */
-void BibleTime::slotWindowMenuAboutToShow() {
+void BibleTime::slotWindowMenuAboutToShow() 
+{
 	Q_ASSERT(m_windowMenu);
-	if (!m_windowMenu) {
+	if (!m_windowMenu) 
+	{
 		return;
 	}
 
-	if ( m_mdi->subWindowList().isEmpty() ) {
+	if ( m_mdi->subWindowList().isEmpty() ) 
+	{
 		m_windowCascade_action->setEnabled(false);
 		m_windowTileVertical_action->setEnabled(false);
 		m_windowTileHorizontal_action->setEnabled(false);
 		m_windowCloseAll_action->setEnabled(false);
 	}
-	else if (m_mdi->subWindowList().count() == 1) {
+	else if (m_mdi->subWindowList().count() == 1) 
+	{
 		m_windowTileVertical_action->setEnabled( false );
 		m_windowTileHorizontal_action->setEnabled( false );
 		m_windowCascade_action->setEnabled( false );
 		m_windowCloseAll_action->setEnabled( true );
 		//   m_windowMenu->insertSeparator();
 	}
-	else {
+	else 
+	{
 		slotUpdateWindowArrangementActions(0); //update the window tile/cascade states
 		m_windowCloseAll_action->setEnabled( true );
 	}
 	
 	QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
-	for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) {
+	for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) 
+	{
 		//(*it)->unplugAll(); //see kde porting doc
-		foreach (QWidget *w, (*it)->associatedWidgets() ) {
+		foreach (QWidget *w, (*it)->associatedWidgets() ) 
+		{
     		w->removeAction(*it);
 		}
 	}
@@ -205,7 +216,8 @@ void BibleTime::slotWindowMenuAboutToShow() {
 }
 
 /** This slot is connected with the windowAutoTile_action object */
-void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
+void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) 
+{
 	/* If a toggle action was clicked we see if it checked ot unchecked and
 	* enable/disable the simple cascade and tile options accordingly
 	*/
@@ -213,7 +225,8 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
 	m_windowTileHorizontal_action->setEnabled( m_windowManualMode_action->isChecked() );
 	m_windowCascade_action->setEnabled( m_windowManualMode_action->isChecked() );
 
-	if (clickedAction) {
+	if (clickedAction) 
+	{
 		m_windowManualMode_action->setEnabled(
 			m_windowManualMode_action != clickedAction
 			&& m_windowTileHorizontal_action != clickedAction
@@ -225,81 +238,97 @@ void BibleTime::slotUpdateWindowArrangementActions( QAction* clickedAction ) {
 		m_windowAutoCascade_action->setEnabled( m_windowAutoCascade_action != clickedAction );
 	}
 
-	if (clickedAction == m_windowManualMode_action) {
+	if (clickedAction == m_windowManualMode_action) 
+	{
 		m_windowAutoTileVertical_action->setChecked(false);
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 	}
-	else if (clickedAction == m_windowAutoTileVertical_action) {
+	else if (clickedAction == m_windowAutoTileVertical_action) 
+	{
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileVertical );
 	}
-	else if (clickedAction == m_windowAutoTileHorizontal_action) {
+	else if (clickedAction == m_windowAutoTileHorizontal_action) 
+	{
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileVertical_action->setChecked(false);
 		m_windowAutoCascade_action->setChecked(false);
 
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeTileHorizontal );
 	}
-	else if (clickedAction == m_windowAutoCascade_action) {
+	else if (clickedAction == m_windowAutoCascade_action) 
+	{
 		m_windowManualMode_action->setChecked(false);
 		m_windowAutoTileHorizontal_action->setChecked(false);
 		m_windowAutoTileVertical_action->setChecked(false);
 
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeCascade );
 	}
-	else if (clickedAction == m_windowCascade_action) {
+	else if (clickedAction == m_windowCascade_action) 
+	{
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myCascade();
 	}
-	else if (clickedAction == m_windowTileVertical_action) {
+	else if (clickedAction == m_windowTileVertical_action) 
+	{
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myTileVertical();
 	}
-	else if (clickedAction == m_windowTileHorizontal_action) {
+	else if (clickedAction == m_windowTileHorizontal_action) 
+	{
 		m_mdi->setMDIArrangementMode( CMDIArea::ArrangementModeManual );
 		m_mdi->myTileHorizontal();
 	}
 }
 
-void BibleTime::slotManualArrangementMode() {
+void BibleTime::slotManualArrangementMode() 
+{
 	slotUpdateWindowArrangementActions( m_windowManualMode_action );
 }
 
 /** This slot is connected with the windowAutoTile_action object */
-void BibleTime::slotAutoTileHorizontal() {
+void BibleTime::slotAutoTileHorizontal() 
+{
 	slotUpdateWindowArrangementActions( m_windowAutoTileHorizontal_action );
 }
 
 /** This slot is connected with the windowAutoTile_action object */
-void BibleTime::slotAutoTileVertical() {
+void BibleTime::slotAutoTileVertical() 
+{
 	slotUpdateWindowArrangementActions( m_windowAutoTileVertical_action );
 }
 
-void BibleTime::slotCascade() {
+void BibleTime::slotCascade() 
+{
 	slotUpdateWindowArrangementActions( m_windowCascade_action );
 }
 
-void BibleTime::slotTileVertical() {
+void BibleTime::slotTileVertical() 
+{
 	slotUpdateWindowArrangementActions( m_windowTileVertical_action );
 }
 
-void BibleTime::slotTileHorizontal() {
+void BibleTime::slotTileHorizontal() 
+{
 	slotUpdateWindowArrangementActions( m_windowTileHorizontal_action );
 }
 
 /** This slot is connected with the windowAutoCascade_action object */
-void BibleTime::slotAutoCascade() {
+void BibleTime::slotAutoCascade() 
+{
 	slotUpdateWindowArrangementActions( m_windowAutoCascade_action );
 }
 
-void BibleTime::slotWindowMenuActivated() {
-	if (!m_windowMenu) {
+void BibleTime::slotWindowMenuActivated() 
+{
+	if (!m_windowMenu) 
+	{
 		return;
 	}
 
@@ -315,22 +344,28 @@ void BibleTime::slotWindowMenuActivated() {
 }
 
 /** Shows/hides the toolbar */
-void BibleTime::slotToggleToolbar() {
+void BibleTime::slotToggleToolbar() 
+{
 	Q_ASSERT(m_mainToolBar);
-	if (m_viewToolbar_action->isChecked()) {
+	if (m_viewToolbar_action->isChecked()) 
+	{
 		m_mainToolBar->show();
 	}
-	else {
+	else 
+	{
 		m_mainToolBar->hide();
 	}
 }
 
-void BibleTime::slotSearchModules() {
+void BibleTime::slotSearchModules() 
+{
 	//get the modules of the open windows
 	QList<CSwordModuleInfo*> modules;
  
-	foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()){
-		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+	foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList())
+	{
+		if (CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget())) 
+		{
 			modules << w->modules();
 		}
 	}
@@ -340,10 +375,12 @@ void BibleTime::slotSearchModules() {
 /* Search default Bible slot
  * Call CSearchDialog::openDialog with only the default bible module
  */
-void BibleTime::slotSearchDefaultBible() {
+void BibleTime::slotSearchDefaultBible() 
+{
  	QList<CSwordModuleInfo*> module;
  	CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
- 	if (bible) {
+ 	if (bible) 
+	{
  		module.append(bible);
  	}
  	Search::CSearchDialog::openDialog(module, QString::null);
@@ -368,30 +405,36 @@ void BibleTime::slotOpenAboutDialog()
 }
 
 /** Saves the current settings into the currently activated profile. */
-void BibleTime::saveProfile(QAction* action) {
+void BibleTime::saveProfile(QAction* action) 
+{
 	m_mdi->setUpdatesEnabled(false);
 
 	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	Q_ASSERT(p);
-	if ( p ) {
+	if ( p ) 
+	{
 		saveProfile(p);
 	}
 
 	m_mdi->setUpdatesEnabled(true);
 }
 
-void BibleTime::saveProfile(CProfile* profile) {
-	if (!profile) {
+void BibleTime::saveProfile(CProfile* profile) 
+{
+	if (!profile) 
+	{
 		return;
 	}
 	//save mainwindow settings
 	storeProfileSettings(profile);
 
 	QList<CProfileWindow*> profileWindows;
-	foreach (QMdiSubWindow* w, m_mdi->subWindowList()) {
+	foreach (QMdiSubWindow* w, m_mdi->subWindowList()) 
+	{
 		CDisplayWindow* displayWindow = dynamic_cast<CDisplayWindow*>(w->widget());
-		if (!displayWindow) {
+		if (!displayWindow) 
+		{
 			continue;
 		}
 
@@ -407,18 +450,22 @@ void BibleTime::saveProfile(CProfile* profile) {
 	profileWindows.clear();
 }
 
-void BibleTime::loadProfile(QAction* action) {
+void BibleTime::loadProfile(QAction* action) 
+{
 	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
 	Q_ASSERT(p);
-	if ( p ) {
+	if ( p ) 
+	{
 		m_mdi->deleteAll();
 		loadProfile(p);
 	}
 }
 
-void BibleTime::loadProfile(CProfile* p) {
-	if (!p) return;
+void BibleTime::loadProfile(CProfile* p) 
+{
+	if (!p) 
+		return;
 
 	QList<CProfileWindow*> windows = p->load();
 
@@ -430,31 +477,39 @@ void BibleTime::loadProfile(CProfile* p) {
 	QWidget* focusWindow = 0;
 
 	//   for (CProfileWindow* w = windows.last(); w; w = windows.prev()) { //from the last one to make sure the order is right in the mdi area
-	foreach (CProfileWindow* w, windows) {
+	foreach (CProfileWindow* w, windows) 
+	{
 		const QString key = w->key();
 		QStringList usedModules = w->modules();
 
 		QList<CSwordModuleInfo*> modules;
-		for ( QStringList::Iterator it = usedModules.begin(); it != usedModules.end(); ++it ) {
-			if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(*it)) {
+		for ( QStringList::Iterator it = usedModules.begin(); it != usedModules.end(); ++it ) 
+		{
+			if (CSwordModuleInfo* m = CPointers::backend()->findModuleByName(*it)) 
+			{
 				modules.append(m);
 			}
 		}
-		if (!modules.count()) { //are the modules still installed? If not continue wih next session window
+		if (!modules.count()) 
+		{ //are the modules still installed? If not continue wih next session window
 			continue;
 		}
 
 		//is w->isWriteWindow is false we create a write window, otherwise a read window
 		CDisplayWindow* displayWindow = 0;
-		if (w->writeWindowType() > 0) { //create a write window
+		if (w->writeWindowType() > 0) 
+		{ //create a write window
 			displayWindow = createWriteDisplayWindow(modules.first(), key, CDisplayWindow::WriteWindowType(w->writeWindowType()) );
 		}
-		else { //create a read window
+		else 
+		{ //create a read window
 			displayWindow = createReadDisplayWindow(modules, key);
 		}
 
-		if (displayWindow) { //if a window was created initialize it.
-			if (w->hasFocus()) {
+		if (displayWindow) 
+		{ //if a window was created initialize it.
+			if (w->hasFocus()) 
+			{
 				focusWindow = displayWindow;
 			}
 
@@ -465,12 +520,14 @@ void BibleTime::loadProfile(CProfile* p) {
 	m_mdi->setUpdatesEnabled(true);
 	m_mdi->triggerWindowUpdate();
 
-	if (focusWindow) {
+	if (focusWindow) 
+	{
 		focusWindow->setFocus();
 	}
 }
 
-void BibleTime::deleteProfile(QAction* action) {
+void BibleTime::deleteProfile(QAction* action) 
+{
 	//HACK: work around the inserted & char by KPopupMenu
 	const QString profileName = action->text().remove("&");
 	CProfile* p = m_profileMgr.profile( profileName );
@@ -479,16 +536,20 @@ void BibleTime::deleteProfile(QAction* action) {
 	refreshProfileMenus();
 }
 
-void BibleTime::toggleFullscreen() {
+void BibleTime::toggleFullscreen() 
+{
 	m_windowFullscreen_action->isChecked() ? showFullScreen() : showNormal();
 	m_mdi->triggerWindowUpdate();
 }
 
 /** Saves current settings into a new profile. */
-void BibleTime::saveToNewProfile() {
+void BibleTime::saveToNewProfile() 
+{
 	bool ok = false;
-	const QString name = QInputDialog::getText(this, tr("New Session"), tr("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
-	if (ok && !name.isEmpty()) {
+	const QString name = QInputDialog::getText(this, tr("New Session"), 
+		tr("Please enter a name for the new session."), QLineEdit::Normal, QString::null, &ok);
+	if (ok && !name.isEmpty()) 
+	{
 		CProfile* profile = m_profileMgr.create(name);
 		saveProfile(profile);
 	}
@@ -496,7 +557,8 @@ void BibleTime::saveToNewProfile() {
 }
 
 /** Slot to refresh the save profile and load profile menus. */
-void BibleTime::refreshProfileMenus() {
+void BibleTime::refreshProfileMenus() 
+{
 	m_windowSaveProfileMenu->clear();
 	m_windowLoadProfileMenu->clear();
 	m_windowDeleteProfileMenu->clear();
@@ -510,7 +572,8 @@ void BibleTime::refreshProfileMenus() {
 	m_windowLoadProfileMenu->setEnabled(enableActions);
 	m_windowDeleteProfileMenu->setEnabled(enableActions);
 
-	foreach (CProfile* p, profiles) {
+	foreach (CProfile* p, profiles) 
+	{
 		m_windowSaveProfileMenu->addAction(p->name());
 		m_windowLoadProfileMenu->addAction(p->name());
 		m_windowDeleteProfileMenu->addAction(p->name());

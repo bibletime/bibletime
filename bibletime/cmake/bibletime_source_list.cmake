@@ -79,7 +79,9 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.cpp
 
 	#Settings dialog (configuration)
-#	src/frontend/settingsdialogs/cacceleratorsettings.cpp #DISABLED
+	src/frontend/settingsdialogs/btshortcutsdialog.cpp 
+	src/frontend/settingsdialogs/btshortcutseditor.cpp 
+	src/frontend/settingsdialogs/cacceleratorsettings.cpp 
 	src/frontend/settingsdialogs/cdisplaysettings.cpp
 	src/frontend/settingsdialogs/cswordsettings.cpp
 	src/frontend/settingsdialogs/clanguagesettings.cpp
@@ -238,7 +240,9 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/settingsdialogs/cswordsettings.h
 	src/frontend/settingsdialogs/clistwidget.h
 	src/frontend/settingsdialogs/cconfigurationdialog.h
-	#src/frontend/settingsdialogs/cacceleratorsettings.h.OFF
+	src/frontend/settingsdialogs/btshortcutsdialog.h
+	src/frontend/settingsdialogs/btshortcutseditor.h
+	src/frontend/settingsdialogs/cacceleratorsettings.h
 	src/frontend/settingsdialogs/cfontchooser.h
 	src/frontend/settingsdialogs/clanguagesettings.h
 	src/frontend/displaywindow/cbookreadwindow.h

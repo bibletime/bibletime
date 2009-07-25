@@ -11,6 +11,7 @@
 #include "frontend/cmdiarea.h"
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/mainindex/bookshelf/cbookshelfindex.h"
+#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
@@ -50,6 +51,7 @@ BibleTime::BibleTime() :
 	m_dock0(0),
 	m_dock1(0),
 	m_dock2(0),
+	m_actionCollection(0),
 	m_initialized(false),
 	m_moduleList(0),
 	m_currentProfile(0),
@@ -114,7 +116,7 @@ void BibleTime::readSettings()
 {
 	qDebug("******************BibleTime::readSettings******************************");
 	//  accel()->readSettings(CBTConfig::getConfig());
-// 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
+ 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
 
 	m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
 	slotToggleToolbar();
@@ -213,6 +215,12 @@ void BibleTime::refreshDisplayWindows()
 	}
 }
 
+/** Refresh main window accelerators */
+void::BibleTime::refreshBibleTimeAccel()
+{
+ 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
+}
+
 /** Called before quit. */
 void BibleTime::slot_aboutToQuit() 
 {
@@ -296,6 +304,11 @@ void BibleTime::processCommandline()
  		createReadDisplayWindow(bible, bibleKey);
  		m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
  	}
+}
+
+BtActionCollection* BibleTime::actionCollection()
+{
+	return m_actionCollection;
 }
 
 bool BibleTime::event(QEvent* e)

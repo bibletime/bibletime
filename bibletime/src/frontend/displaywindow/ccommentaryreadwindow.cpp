@@ -2,7 +2,7 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
@@ -10,15 +10,12 @@
 //BibleTime includes
 #include "ccommentaryreadwindow.h"
 #include "btactioncollection.h"
-
 #include "frontend/profile/cprofilewindow.h"
 #include "backend/config/cbtconfig.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
-
 #include "backend/keys/cswordversekey.h"
-
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
@@ -30,10 +27,12 @@
 
 using namespace Profile;
 
-CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) {}
+CCommentaryReadWindow::CCommentaryReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent) : CLexiconReadWindow(modules, parent) 
+{
+}
 
-void CCommentaryReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-
+void CCommentaryReadWindow::insertKeyboardActions(BtActionCollection* const a) 
+{
 	QAction* qaction;
 
 	qaction = new QAction(tr("Next book"), a);
@@ -59,22 +58,63 @@ void CCommentaryReadWindow::insertKeyboardActions( BtActionCollection* const a )
 	qaction = new QAction(tr("Previous verse"), a);
 	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	a->addAction("previousVerse", qaction);
-
 }
 
-void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) {
+void CCommentaryReadWindow::initActions() 
+{
+	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
+	BtActionCollection* ac = actionCollection();
+	insertKeyboardActions(ac);
+
+	//cleanup, not a clean oo-solution
+	ac->action("nextEntry")->setEnabled(false);
+	ac->action("previousEntry")->setEnabled(false);
+
+	QAction* qaction;
+
+	qaction = ac->action("nextBook");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
+	addAction(qaction);
+
+	qaction = ac->action("previousBook");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
+	addAction(qaction);
+
+	qaction = ac->action("nextChapter");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
+	addAction(qaction);
+
+	qaction = ac->action("previousChapter");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
+	addAction(qaction);
+
+	qaction = ac->action("nextVerse");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
+	addAction(qaction);
+
+	qaction = ac->action("previousVerse");
+	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
+	addAction(qaction);
+
+	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
+}
+
+void CCommentaryReadWindow::applyProfileSettings( CProfileWindow* profileWindow ) 
+{
 	CLexiconReadWindow::applyProfileSettings(profileWindow);
 	if (profileWindow->windowSettings()) {
 		m_syncButton->setChecked(true);
 	}
 }
 
-void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) {
+void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow ) 
+{
 	CLexiconReadWindow::storeProfileSettings(profileWindow);
 	profileWindow->setWindowSettings( m_syncButton->isChecked() );
 }
 
-void CCommentaryReadWindow::initToolbars() {
+void CCommentaryReadWindow::initToolbars() 
+{
 	CLexiconReadWindow::initToolbars();
 
 	m_syncButton = new QAction(
@@ -90,102 +130,69 @@ void CCommentaryReadWindow::initToolbars() {
 }
 
 /** Reimplementation to handle the keychooser refresh. */
-void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
+void CCommentaryReadWindow::reload(CSwordBackend::SetupChangedReason reason) 
+{
 	CLexiconReadWindow::reload(reason);
 
 	//refresh the book lists
 	verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
 	keyChooser()->refreshContent();
+
+	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
 }
 
 /** rapper around key() to return the right type of key. */
-CSwordVerseKey* CCommentaryReadWindow::verseKey() {
+CSwordVerseKey* CCommentaryReadWindow::verseKey() 
+{
 	CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
 	Q_ASSERT(k);
 	return k;
 }
 
-void CCommentaryReadWindow::initActions() {
-	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
-
-	BtActionCollection* ac = actionCollection();
-
-	//cleanup, not a clean oo-solution
-	ac->action("nextEntry")->setEnabled(false);
-	ac->action("previousEntry")->setEnabled(false);
-
-	QAction* qaction;
-
-	qaction = new QAction(tr("Next book"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
-	ac->addAction("nextBook", qaction);
-
-	qaction = new QAction(tr("Previous book"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
-	ac->addAction("previousBook", qaction);
-
-	qaction = new QAction(tr("Next chapter"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
-	ac->addAction("nextChapter", qaction);
-
-	qaction = new QAction(tr("Previous chapter"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
-	ac->addAction("previousChapter", qaction);
-
-	qaction = new QAction(tr("Next verse"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
-	ac->addAction("nextVerse", qaction);
-
-	qaction = new QAction(tr("Previous verse"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
-	ac->addAction("previousVerse", qaction);
-
-//	CBTConfig::setupAccelSettings(CBTConfig::commentaryWindow, actionCollection());
-}
-
 /** Moves to the next book. */
-void CCommentaryReadWindow::nextBook() {
+void CCommentaryReadWindow::nextBook() 
+{
 	if (verseKey()->next(CSwordVerseKey::UseBook))
 		keyChooser()->setKey(key());
 }
 
 /** Moves one book behind. */
-void CCommentaryReadWindow::previousBook() {
+void CCommentaryReadWindow::previousBook() 
+{
 	if (verseKey()->previous(CSwordVerseKey::UseBook))
 		keyChooser()->setKey(key());
 }
 
 /** Moves to the next book. */
-void CCommentaryReadWindow::nextChapter() {
+void CCommentaryReadWindow::nextChapter() 
+{
 	if (verseKey()->next(CSwordVerseKey::UseChapter))
 		keyChooser()->setKey(key());
 }
 
 /** Moves one book behind. */
-void CCommentaryReadWindow::previousChapter() {
+void CCommentaryReadWindow::previousChapter() 
+{
 	if (verseKey()->previous(CSwordVerseKey::UseChapter))
 		keyChooser()->setKey(key());
 }
 
 /** Moves to the next book. */
-void CCommentaryReadWindow::nextVerse() {
+void CCommentaryReadWindow::nextVerse() 
+{
 	if (verseKey()->next(CSwordVerseKey::UseVerse))
 		keyChooser()->setKey(key());
 }
 
 /** Moves one book behind. */
-void CCommentaryReadWindow::previousVerse() {
+void CCommentaryReadWindow::previousVerse() 
+{
 	if (verseKey()->previous(CSwordVerseKey::UseVerse))
 		keyChooser()->setKey(key());
 }
 
-bool CCommentaryReadWindow::syncAllowed() const {
+bool CCommentaryReadWindow::syncAllowed() const 
+{
 	return m_syncButton->isChecked();
 }
 
@@ -193,6 +200,7 @@ bool CCommentaryReadWindow::syncAllowed() const {
 /*!
     \fn CCommentaryReadWindow::setupPopupMenu()
  */
-void CCommentaryReadWindow::setupPopupMenu() {
+void CCommentaryReadWindow::setupPopupMenu() 
+{
 	CLexiconReadWindow::setupPopupMenu();
 }

@@ -20,6 +20,7 @@
 
 //Forward declarations
 class QSettings;
+class BtActionCollection;
 //class CLanguageMgr::Language;
 
 /**
@@ -168,8 +169,8 @@ public:
 	static CSwordBackend::FilterOptions getFilterOptionDefaults();
 	static CSwordBackend::DisplayOptions getDisplayOptionDefaults();
 
-//	static void setupAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
-//	static void saveAccelSettings(const CBTConfig::keys type, KActionCollection* const actionCollection);
+	static void setupAccelSettings(const CBTConfig::keys type, BtActionCollection* const actionCollection);
+	static void saveAccelSettings(const CBTConfig::keys type, BtActionCollection* const actionCollection);
 
 	static QString getModuleEncryptionKey( const QString& name );
 	static void setModuleEncryptionKey( const QString& name, const QString& key );
@@ -177,12 +178,11 @@ public:
 	/** Re-reads the config from disk */
 	static void syncConfig();
 
+	// Returns the config object
+	static QSettings* getConfig();
+
 private:
 	friend class BibleTimeTest;
-	/** The config object.
-	* @return A config object which is used currently, may be the global config or the session config
-	*/
-	static QSettings* getConfig();
 
 	static QString getKey( const CBTConfig::strings );
 	static QString getKey( const CBTConfig::modules );

@@ -40,17 +40,14 @@ public:
 	QString header();
 
 protected slots:
-	/**
-	* This slot is called when the "Use own font for language" button was clicked.
-	*/
+
+	// This slot is called when the "Use own font for language" button was clicked.
 	void useOwnFontClicked(bool);
-	/**
-	* Called when a new font in the fonts page was selected.
-	*/
+
+	// Called when a new font in the fonts page was selected.
 	void newDisplayWindowFontSelected(const QFont &);
-	/**
-	* Called when the combobox contents is changed
-	*/
+
+	// Called when the combobox contents is changed
 	void newDisplayWindowFontAreaSelected(const QString&);
 
 private:

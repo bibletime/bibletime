@@ -2,29 +2,24 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
 
-
 #include "cbiblereadwindow.h"
 #include "btactioncollection.h"
-
 #include "ccommentaryreadwindow.h"
 #include "cbuttons.h"
-
 #include "backend/keys/cswordversekey.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
-
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/cexportmanager.h"
 #include "backend/config/cbtconfig.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/display/creaddisplay.h"
 #include "frontend/keychooser/ckeychooser.h"
-
 #include "util/ctoolclass.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
@@ -50,32 +45,40 @@ CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea
 	qDebug("CBibleReadWindow::CBibleReadWindow");
 }
 
-CBibleReadWindow::~CBibleReadWindow() {}
+CBibleReadWindow::~CBibleReadWindow() 
+{
+}
 
-void CBibleReadWindow::applyProfileSettings( CProfileWindow* const settings ) {
+void CBibleReadWindow::applyProfileSettings( CProfileWindow* const settings ) 
+{
 	CLexiconReadWindow::applyProfileSettings(settings);
 
 	const int count = displaySettingsButton()->menuItemCount();
 	int result = settings->windowSettings();
-	for (int i = count-1; i>=1; i--) {
-		if (result-(int)pow((double)2,i-1)>= 0) { //2^i was added before, so item with index i is set
+	for (int i = count-1; i>=1; i--) 
+	{
+		if (result-(int)pow((double)2,i-1)>= 0) 
+		{ //2^i was added before, so item with index i is set
 			result -= (int)pow((double)2,i-1);
 			displaySettingsButton()->setItemStatus(i,true);
 		}
-		else {
+		else 
+		{
 			displaySettingsButton()->setItemStatus(i,false);
 		}
 	}
 	displaySettingsButton()->setChanged();
 }
 
-void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) {
+void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) 
+{
 	CLexiconReadWindow::storeProfileSettings(settings);
 
 	const int count = displaySettingsButton()->menuItemCount();
 	int result = 0;
 	//now check every item
-	for (int i = 1; i < count; i++) { //first item is a title
+	for (int i = 1; i < count; i++) 
+	{ //first item is a title
 		if (displaySettingsButton()->itemStatus(i)) //item is checked
 			result += (int)pow((double)2,i-1);//add 2^i (the i. digit in binary)
 	}
@@ -84,8 +87,8 @@ void CBibleReadWindow::storeProfileSettings( CProfileWindow* const settings ) {
 
 
 /** Reimplementation. */
-void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-
+void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) 
+{
 	QAction* qaction;
 
 	qaction = new QAction(tr("Next book"), a);
@@ -112,39 +115,47 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
 	a->addAction("previousVerse", qaction);
 	
-
 	//popup menu items
-	//  new KAction(tr("Select all"), KStdAccel::selectAll(), a, "selectAll");
-
-	//copy menu items
-	//  new KAction(tr("Copy reference only"), KShortcut(0), a, "copyReferenceOnly");
-	//  new KAction(tr("Text of reference"), KShortcut(0), a, "copyTextOfReference");
-	//   new KAction(tr("Reference with text"), KShortcut(0), a, "copyReferenceWithText");
 	qaction = new QAction(tr("Copy chapter"), a);
 	a->addAction("copyChapter", qaction);
-	//   new KAction(tr("Copy selected text"), KStdAccel::copy(), a, "copySelectedText");
 
-	//save menu
-	//   new KAction(tr("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
 	qaction = new QAction(tr("Save chapter as plain text"), a);
 	a->addAction("saveChapterAsPlainText", qaction);
 
 	qaction = new QAction(tr("Save chapter as HTML"), a);
 	a->addAction("saveChapterAsHTML", qaction);
-	//   new KAction(tr("Reference with text"), KShortcut(0), a, "saveReferenceWithText");
 
-	//print
 	qaction = new QAction(tr("Print chapter"), a);
 	qaction->setShortcut(QKeySequence::Print);
 	a->addAction("printChapter", qaction);
+
+//	qaction = new QAction( /* QIcon(CResMgr::displaywindows::general::findStrongs::icon), */ tr("Strong's search"), a);
+//	qaction->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
+//	qaction->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
+//	a->addAction(CResMgr::displaywindows::general::findStrongs::actionName, qaction);
+
+//	qaction = new QAction(tr("Reference only"), a );
+//	a->addAction("copyReferenceOnly", qaction);
+
+	qaction = new QAction(tr("Text of reference"), a);
+	a->addAction("copyTextOfReference", qaction);
+
+	qaction = new QAction(tr("Reference with text"), a);
+	a->addAction( "copyReferenceWithText", qaction);
+
+	qaction = new QAction(tr("Reference with text"), a);
+	a->addAction("saveReferenceWithText", qaction);
 }
 
-void CBibleReadWindow::initActions() {
+void CBibleReadWindow::initActions() 
+{
 	qDebug("CBibleReadWindow::initActions");
 
 	BtActionCollection* ac = actionCollection();
-	CBibleReadWindow::insertKeyboardActions(ac);
+
 	CLexiconReadWindow::initActions(); //make sure the predefined actions are available
+
+	CBibleReadWindow::insertKeyboardActions(ac);
 
 	//cleanup, not a clean oo-solution
 	ac->action("nextEntry")->setEnabled(false);
@@ -152,113 +163,103 @@ void CBibleReadWindow::initActions() {
 
 	QAction* qaction;
 
-	qaction = new QAction(tr("Next book"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextBook::accel);
+	qaction = m_actionCollection->action("nextBook");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextBook()) );
-	ac->addAction("nextBook", qaction);
+	addAction(qaction);
 
-	qaction = new QAction(tr("Previous book"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousBook::accel);
+	qaction = m_actionCollection->action("previousBook");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousBook()) );
-	ac->addAction("previousBook", qaction);
+	addAction(qaction);
 
-	qaction = new QAction(tr("Next chapter"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextChapter::accel);
+	qaction = m_actionCollection->action("nextChapter");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextChapter()) );
-	ac->addAction("nextChapter", qaction);
+	addAction(qaction);
 
-	qaction = new QAction(tr("Previous chapter"),ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousChapter::accel);
+	qaction = m_actionCollection->action("previousChapter");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousChapter()) );
-	ac->addAction("previousChapter", qaction);
+	addAction(qaction);
 
-	qaction = new QAction(tr("Next verse"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::nextVerse::accel);
+	qaction = m_actionCollection->action("nextVerse");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(nextVerse()) );
-	ac->addAction("nextVerse", qaction);
+	addAction(qaction);
 
-	qaction = new QAction(tr("Previous verse"), ac);
-	qaction->setShortcut(CResMgr::displaywindows::bibleWindow::previousVerse::accel);
+	qaction = m_actionCollection->action("previousVerse");
 	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(previousVerse()) );
-	ac->addAction("previousVerse", qaction);
+	addAction(qaction);
 
-	m_actions.selectAll = qobject_cast<QAction*>(ac->action("selectAll"));
+	m_actions.selectAll = ac->action("selectAll");
 	Q_ASSERT(m_actions.selectAll);
 
-	m_actions.findText = qobject_cast<QAction*>(ac->action("findText"));
+	m_actions.findText = ac->action("findText");
 	Q_ASSERT(m_actions.findText);
 
-	m_actions.findStrongs = new QAction(
-//		QIcon(CResMgr::displaywindows::general::findStrongs::icon),
-		tr("Strong's search"),
-		ac
-		);
-	m_actions.findStrongs->setShortcut(CResMgr::displaywindows::general::findStrongs::accel);
-	m_actions.findStrongs->setToolTip(tr("Find all occurences of the Strong number currently under the mouse cursor"));
-	QObject::connect(m_actions.findStrongs, SIGNAL(triggered()), this, SLOT(openSearchStrongsDialog()) );
-	ac->addAction(CResMgr::displaywindows::general::findStrongs::actionName, m_actions.findStrongs);
+	m_actions.findStrongs = m_actionCollection->action(CResMgr::displaywindows::general::findStrongs::actionName);
 
-	m_actions.copy.referenceOnly = new QAction(tr("Reference only"), ac );
-	QObject::connect(m_actions.copy.referenceOnly, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorOnly()));
-	ac->addAction("copyReferenceOnly", m_actions.copy.referenceOnly);
+	m_actions.copy.referenceOnly = m_actionCollection->action("copyReferenceOnly");
 
-	m_actions.copy.referenceTextOnly = new QAction(tr("Text of reference"), ac);
+	m_actions.copy.referenceTextOnly = m_actionCollection->action("copyTextOfReference");
 	QObject::connect(m_actions.copy.referenceTextOnly, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorTextOnly()) );
-	ac->addAction("copyTextOfReference", m_actions.copy.referenceTextOnly);
+	addAction(m_actions.copy.referenceTextOnly);
 
-	m_actions.copy.referenceAndText = new QAction(tr("Reference with text"), ac);
+	m_actions.copy.referenceAndText = m_actionCollection->action("copyReferenceWithText");
 	QObject::connect(m_actions.copy.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(copyAnchorWithText()) );
-	ac->addAction( "copyReferenceWithText", m_actions.copy.referenceAndText);
+	addAction(m_actions.copy.referenceAndText);
 
-	m_actions.copy.chapter = new QAction(tr("Chapter"), ac);
+	m_actions.copy.chapter = m_actionCollection->action("copyChapter");
 	QObject::connect(m_actions.copy.chapter, SIGNAL(triggered()), this, SLOT(copyDisplayedText()) );
-	ac->addAction("copyChapter", m_actions.copy.chapter);
+	addAction(m_actions.copy.chapter);
 
-	m_actions.copy.selectedText = qobject_cast<QAction*>(ac->action("copySelectedText"));
+	m_actions.copy.selectedText = ac->action("copySelectedText");
 	Q_ASSERT(m_actions.copy.selectedText);
 
-	m_actions.save.referenceAndText = new QAction(tr("Reference with text"), ac );
+	m_actions.save.referenceAndText = m_actionCollection->action("saveReferenceWithText");
 	QObject::connect(m_actions.save.referenceAndText, SIGNAL(triggered()), displayWidget()->connectionsProxy(), SLOT(saveAnchorWithText()) );
-	ac->addAction("saveReferenceWithText", m_actions.save.referenceAndText);
+	addAction(m_actions.copy.chapter);
 
-	m_actions.save.chapterAsPlain = new QAction(tr("Chapter as plain text"), ac);
+	m_actions.save.chapterAsPlain = m_actionCollection->action("saveChapterAsPlainText");
 	QObject::connect(m_actions.save.chapterAsPlain, SIGNAL(triggered()), this, SLOT(saveChapterPlain()) );
-	ac->addAction("saveChapterAsPlainText", m_actions.save.chapterAsPlain);
+	addAction(m_actions.save.referenceAndText);
 
-	m_actions.save.chapterAsHTML = new QAction(tr("Chapter as HTML"), ac);
+	m_actions.save.chapterAsHTML = m_actionCollection->action("saveChapterAsHTML");
 	QObject::connect(m_actions.save.chapterAsHTML, SIGNAL(triggered()), this, SLOT(saveChapterHTML()) );
-	ac->addAction("saveChapterAsHTML", m_actions.save.chapterAsHTML);
+	addAction(m_actions.save.chapterAsHTML);
 
-	m_actions.print.reference = new QAction(tr("Reference with text"), ac);
+	m_actions.print.reference = m_actionCollection->action("saveReferenceWithText");
 	QObject::connect(m_actions.print.reference, SIGNAL(triggered()), this, SLOT(printAnchorWithText()) );
-	ac->addAction("saveReferenceWithText", m_actions.print.reference);
+	addAction(m_actions.print.reference);
 
-	m_actions.print.chapter = new QAction(tr("Chapter"), ac);
+	m_actions.print.chapter = m_actionCollection->action("printChapter");
 	QObject::connect(m_actions.print.chapter, SIGNAL(triggered()), this, SLOT(printAll()) );
-	ac->addAction("printChapter", m_actions.print.chapter);
+	addAction(m_actions.print.chapter);
 
-//	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, ac);
+	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, ac);
 }
 
-void CBibleReadWindow::initConnections() {
+void CBibleReadWindow::initConnections() 
+{
 	CLexiconReadWindow::initConnections();
 }
 
-void CBibleReadWindow::initToolbars() {
+void CBibleReadWindow::initToolbars() 
+{
 	CLexiconReadWindow::initToolbars();
 }
 
-void CBibleReadWindow::initView() {
+void CBibleReadWindow::initView() 
+{
 	CLexiconReadWindow::initView();
 
-	parentWidget()->installEventFilter( this );
+	parentWidget()->installEventFilter(this);
 }
 
 /** Reimplementation. */
-void CBibleReadWindow::setupPopupMenu() {
+void CBibleReadWindow::setupPopupMenu() 
+{
 	popup()->setTitle(tr("Bible window"));
 	popup()->setIcon(CToolClass::getIconForModule(modules().first()) );
 	popup()->addAction(m_actions.findText);
+	QKeySequence ks = m_actions.findText->shortcut();
+	QString keys = ks.toString();
 	popup()->addAction(m_actions.findStrongs);
 	popup()->addAction(m_actions.selectAll);
 		
@@ -279,8 +280,10 @@ void CBibleReadWindow::setupPopupMenu() {
 	m_actions.saveMenu->addAction(m_actions.save.referenceAndText);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsPlain);
 	m_actions.saveMenu->addAction(m_actions.save.chapterAsHTML);
+
 	// Save raw HTML action for debugging purposes
-	if (qApp->property("--debug").toBool()) {
+	if (qApp->property("--debug").toBool()) 
+	{
 		QAction* debugAction = new QAction("Raw HTML", this);
 		QObject::connect(debugAction, SIGNAL(triggered()), this, SLOT(saveRawHTML()));
 		m_actions.saveMenu->addAction(debugAction);
@@ -294,22 +297,11 @@ void CBibleReadWindow::setupPopupMenu() {
 }
 
 /** Reimplemented. */
-void CBibleReadWindow::updatePopupMenu() {
+void CBibleReadWindow::updatePopupMenu() 
+{
 	qWarning("CBibleReadWindow::updatePopupMenu()");
 
-	//enable the action depending on the supported module features
-// 	bool hasStrongs = false;
-// 	QList<CSwordModuleInfo*> mods = modules();
-// 	for (QList<CSwordModuleInfo*>::iterator it = mods.begin(); it != mods.end(); ++it) {
-// 		if ( (*it)->has( CSwordModuleInfo::strongNumbers ) ) {
-// 			hasStrongs = true;
-// 			break;
-// 		}
-// 	}
-// 	
-// 	m_actions.findStrongs->setEnabled( hasStrongs );
 	m_actions.findStrongs->setEnabled( displayWidget()->getCurrentNodeInfo()[CDisplay::Lemma] != QString::null );
-
 	
 	m_actions.copy.referenceOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
 	m_actions.copy.referenceTextOnly->setEnabled( ((CReadDisplay*)displayWidget())->hasActiveAnchor() );
@@ -322,49 +314,61 @@ void CBibleReadWindow::updatePopupMenu() {
 }
 
 /** Moves to the next book. */
-void CBibleReadWindow::nextBook() {
-	if (verseKey()->next(CSwordVerseKey::UseBook)) {
+void CBibleReadWindow::nextBook() 
+{
+	if (verseKey()->next(CSwordVerseKey::UseBook)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** Moves one book behind. */
 void CBibleReadWindow::previousBook() {
-	if (verseKey()->previous(CSwordVerseKey::UseBook)) {
+	if (verseKey()->previous(CSwordVerseKey::UseBook)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** Moves to the next book. */
-void CBibleReadWindow::nextChapter() {
-	if (verseKey()->next(CSwordVerseKey::UseChapter)) {
+void CBibleReadWindow::nextChapter() 
+{
+	if (verseKey()->next(CSwordVerseKey::UseChapter)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** Moves one book behind. */
-void CBibleReadWindow::previousChapter() {
-	if (verseKey()->previous(CSwordVerseKey::UseChapter)) {
+void CBibleReadWindow::previousChapter() 
+{
+	if (verseKey()->previous(CSwordVerseKey::UseChapter)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** Moves to the next book. */
-void CBibleReadWindow::nextVerse() {
-	if (verseKey()->next(CSwordVerseKey::UseVerse)) {
+void CBibleReadWindow::nextVerse() 
+{
+	if (verseKey()->next(CSwordVerseKey::UseVerse)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** Moves one book behind. */
-void CBibleReadWindow::previousVerse() {
-	if (verseKey()->previous(CSwordVerseKey::UseVerse)) {
+void CBibleReadWindow::previousVerse() 
+{
+	if (verseKey()->previous(CSwordVerseKey::UseVerse)) 
+	{
 		keyChooser()->setKey(key());
 	}
 }
 
 /** rapper around key() to return the right type of key. */
-CSwordVerseKey* CBibleReadWindow::verseKey() {
+CSwordVerseKey* CBibleReadWindow::verseKey() 
+{
 	CSwordVerseKey* k = dynamic_cast<CSwordVerseKey*>(CDisplayWindow::key());
 	Q_ASSERT(k);
 	
@@ -372,7 +376,8 @@ CSwordVerseKey* CBibleReadWindow::verseKey() {
 }
 
 /** Copies the current chapter into the clipboard. */
-void CBibleReadWindow::copyDisplayedText() {
+void CBibleReadWindow::copyDisplayedText() 
+{
 	CSwordVerseKey dummy(*verseKey());
 	dummy.Verse(1);
 
@@ -388,7 +393,8 @@ void CBibleReadWindow::copyDisplayedText() {
 }
 
 /** Saves the chapter as valid HTML page. */
-void CBibleReadWindow::saveChapterHTML() {
+void CBibleReadWindow::saveChapterHTML() 
+{
 	//saves the complete chapter to disk
 	CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(modules().first());
 	Q_ASSERT(bible);
@@ -409,7 +415,8 @@ void CBibleReadWindow::saveChapterHTML() {
 }
 
 /** Saves the chapter as valid HTML page. */
-void CBibleReadWindow::saveChapterPlain() {
+void CBibleReadWindow::saveChapterPlain() 
+{
 	//saves the complete chapter to disk
 
 	CSwordVerseKey vk(*verseKey());
@@ -426,30 +433,32 @@ void CBibleReadWindow::saveChapterPlain() {
 	mgr.saveKey(&vk, CExportManager::Text, true);
 }
 
-void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) {
+void CBibleReadWindow::reload(CSwordBackend::SetupChangedReason reason) 
+{
 	CLexiconReadWindow::reload(reason);
 
-	if (m_modules.count() == 0) {
+	if (m_modules.count() == 0) 
+	{
 		close();
 		return;
 	}
 
 	//refresh the book lists
-// 	qDebug("lang is %s",backend()->booknameLanguage().latin1());
 	verseKey()->setLocale( backend()->booknameLanguage().toLatin1() );
 	keyChooser()->refreshContent();
 
-//	CBTConfig::setupAccelSettings(CBTConfig::readWindow, actionCollection()); //setup the predefined actions
-//	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());
+	CBTConfig::setupAccelSettings(CBTConfig::bibleWindow, actionCollection());
 }
 
 /** No descriptions */
-bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
+bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) 
+{
 	const bool ret = CLexiconReadWindow::eventFilter(o,e);
 
 	//   Q_ASSERT(o->inherits("CDisplayWindow"));
 	//   qWarning("class: %s", o->className());
-	if (e && (e->type() == QEvent::FocusIn)) { //sync other windows to this active
+	if (e && (e->type() == QEvent::FocusIn)) 
+	{ //sync other windows to this active
 
 		/* This is a hack to work around a KHTML problem (similair to the Drag&Drop problem we had):
 		* If new HTML content is loaded from inside a  kHTML event handler
@@ -465,13 +474,16 @@ bool CBibleReadWindow::eventFilter( QObject* o, QEvent* e) {
 	return ret;
 }
 
-void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) {
+void CBibleReadWindow::lookupSwordKey( CSwordKey* newKey ) 
+{
 	CLexiconReadWindow::lookupSwordKey(newKey);
 	syncWindows();
 }
 
-void CBibleReadWindow::syncWindows() {
-	foreach (QMdiSubWindow* subWindow, mdi()->subWindowList()) {
+void CBibleReadWindow::syncWindows() 
+{
+	foreach (QMdiSubWindow* subWindow, mdi()->subWindowList()) 
+	{
 		CDisplayWindow* w = dynamic_cast<CDisplayWindow*>(subWindow->widget());
 		if (w && w->syncAllowed()) {
 			w->lookupKey( key()->key() );

@@ -6,14 +6,18 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#ifndef BT_ACTION_COLLECTION_S
-#define BT_ACTION_COLLECTION_S
+#ifndef BT_ACTION_COLLECTION_H
+#define BT_ACTION_COLLECTION_H
+
+#include <QMap>
 
 #include <QObject>
-#include <QMap>
+#include <QList>
 
 class QString;
 class QAction;
+class QKeySequence;
+class BtActionItem;
 
 class BtActionCollection : public QObject
 {
@@ -21,12 +25,18 @@ class BtActionCollection : public QObject
 public:
 	BtActionCollection(QObject* parent);
 	~BtActionCollection();
-	void addAction(const QString& name, QAction* action);
-	void addAction(const QString &name, const QObject *receiver);
+	QAction* addAction(const QString& name, QAction* action);
+	QAction* addAction(const QString &name, const QObject *receiver, const char* member=0);
+	QList<QAction*> actions();
 	QAction* action(const QString& name);
+	void setConfigGroup(const QString &group);
+	void readSettings();
+	void writeSettings();
+	QKeySequence getDefaultShortcut(QAction* action);
 
 private:
-   QMap<QString, QAction*> m_actions;
+	QMap<QString, BtActionItem*> m_actions;
+	QString m_groupName;
 };
 
 #endif

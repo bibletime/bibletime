@@ -18,6 +18,7 @@
 BtToolBarPopupAction::BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent)
 	: QWidgetAction(parent), m_icon(icon), m_text(text)
 {
+	setText(text);
 	m_menu = new QMenu();
 }
 
