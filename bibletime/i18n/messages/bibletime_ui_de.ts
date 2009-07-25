@@ -12,32 +12,26 @@
     <name>BibleTime</name>
     <message>
         <source>&amp;File</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Datei</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Ansicht</translation>
     </message>
     <message>
         <source>&amp;Search</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Suche</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Fenster</translation>
     </message>
     <message>
         <source>Se&amp;ttings</source>
-        <extracomment>Main menu item</extracomment>
         <translation>Einstellungen</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
@@ -70,17 +64,14 @@
     </message>
     <message>
         <source>Auto-tile &amp;vertically</source>
-        <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
         <translation>Automatisches &amp;Vertikal-Kacheln</translation>
     </message>
     <message>
         <source>Auto-tile &amp;horizontally</source>
-        <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
         <translation>Automatisches &amp;Horizontal-Kacheln</translation>
     </message>
     <message>
         <source>Auto-&amp;cascade</source>
-        <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
         <translation>Automatisches &amp;Staffeln</translation>
     </message>
     <message>
@@ -101,7 +92,6 @@
     </message>
     <message>
         <source>&amp;Bible Study Howto</source>
-        <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>&amp;Anleitung zum Bibelstudium</translation>
     </message>
     <message>
@@ -218,7 +208,6 @@
     </message>
     <message>
         <source>Main Toolbar</source>
-        <extracomment>Name of the main toolbar</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -247,6 +236,14 @@
     </message>
     <message>
         <source>&amp;About BibleTime</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manually arrange the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information about the BibleTime program</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -649,6 +646,63 @@
     </message>
 </context>
 <context>
+    <name>BtShortcutsDialog</name>
+    <message>
+        <source>Configure shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtShortcutsEditor</name>
+    <message>
+        <source>Select to change key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action
+name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcut for selected action name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtSourceArea</name>
     <message>
         <source>Work</source>
@@ -758,6 +812,49 @@
     </message>
 </context>
 <context>
+    <name>CAcceleratorSettingsPage</name>
+    <message>
+        <source>Choose shortcut group:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bible windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commentary windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lexicon windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Book windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CBibleReadWindow</name>
     <message>
         <source>Next book</source>
@@ -801,7 +898,7 @@
     </message>
     <message>
         <source>Reference only</source>
-        <translation>Nur Referenzen</translation>
+        <translation type="obsolete">Nur Referenzen</translation>
     </message>
     <message>
         <source>Text of reference</source>
@@ -813,15 +910,15 @@
     </message>
     <message>
         <source>Chapter</source>
-        <translation>Kapitel</translation>
+        <translation type="obsolete">Kapitel</translation>
     </message>
     <message>
         <source>Chapter as plain text</source>
-        <translation>Kapitel als normaler Text</translation>
+        <translation type="obsolete">Kapitel als normaler Text</translation>
     </message>
     <message>
         <source>Chapter as HTML</source>
-        <translation>Kapitel als HTML</translation>
+        <translation type="obsolete">Kapitel als HTML</translation>
     </message>
     <message>
         <source>Bible window</source>
@@ -857,11 +954,11 @@
     </message>
     <message>
         <source>Strong&apos;s search</source>
-        <translation>Strong-Suche</translation>
+        <translation type="obsolete">Strong-Suche</translation>
     </message>
     <message>
         <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation>Alle Stellen der unterhalb des Maus-Zeigers auftretenden Strong-Nummer finden</translation>
+        <translation type="obsolete">Alle Stellen der unterhalb des Maus-Zeigers auftretenden Strong-Nummer finden</translation>
     </message>
 </context>
 <context>
@@ -872,19 +969,19 @@
     </message>
     <message>
         <source>Copy entry with text</source>
-        <translation>Kopiere Eintrag mit Text</translation>
+        <translation type="obsolete">Kopiere Eintrag mit Text</translation>
     </message>
     <message>
         <source>Save entry as plain text</source>
-        <translation>Sichere Eintrag als reinenText</translation>
+        <translation type="obsolete">Sichere Eintrag als reinenText</translation>
     </message>
     <message>
         <source>Save entry as HTML</source>
-        <translation>Sichere Eintrag als HTML</translation>
+        <translation type="obsolete">Sichere Eintrag als HTML</translation>
     </message>
     <message>
         <source>Print entry with text</source>
-        <translation>Drucke Eintrag mit Text</translation>
+        <translation type="obsolete">Drucke Eintrag mit Text</translation>
     </message>
 </context>
 <context>
@@ -1465,7 +1562,7 @@
     </message>
     <message>
         <source>Copy selected text</source>
-        <translation>Kopiere ausgewählten Text</translation>
+        <translation type="obsolete">Kopiere ausgewählten Text</translation>
     </message>
     <message>
         <source>Save entry as HTML</source>
@@ -1481,7 +1578,7 @@
     </message>
     <message>
         <source>Reference only</source>
-        <translation>Nur Referenzen</translation>
+        <translation type="obsolete">Nur Referenzen</translation>
     </message>
     <message>
         <source>Entry with text</source>
@@ -1493,7 +1590,7 @@
     </message>
     <message>
         <source>Entry as HTML</source>
-        <translation>Eintrag als HTML</translation>
+        <translation type="obsolete">Eintrag als HTML</translation>
     </message>
     <message>
         <source>Lexicon window</source>
@@ -2875,6 +2972,14 @@ Language name ppk</extracomment>
     <message>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This shortcut conflicts with the shortcut for the following actions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

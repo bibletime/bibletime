@@ -12,32 +12,26 @@
     <name>BibleTime</name>
     <message>
         <source>&amp;File</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Soubor</translation>
     </message>
     <message>
         <source>&amp;View</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Pohled</translation>
     </message>
     <message>
         <source>&amp;Search</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Hledat</translation>
     </message>
     <message>
         <source>&amp;Window</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Okno</translation>
     </message>
     <message>
         <source>Se&amp;ttings</source>
-        <extracomment>Main menu item</extracomment>
         <translation>Na&amp;stavení</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <extracomment>Main menu item</extracomment>
         <translation>Nápo&amp;věda</translation>
     </message>
     <message>
@@ -70,17 +64,14 @@
     </message>
     <message>
         <source>Auto-tile &amp;vertically</source>
-        <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
         <translation>Automaticky dlaždice &amp;vertikálně</translation>
     </message>
     <message>
         <source>Auto-tile &amp;horizontally</source>
-        <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
         <translation>Automaticky dlaždice &amp;horizontálně</translation>
     </message>
     <message>
         <source>Auto-&amp;cascade</source>
-        <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
         <translation>&amp;Automaticky kaskádovat</translation>
     </message>
     <message>
@@ -101,7 +92,6 @@
     </message>
     <message>
         <source>&amp;Bible Study Howto</source>
-        <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>Návod, jak studovat &amp;Bibli</translation>
     </message>
     <message>
@@ -206,7 +196,6 @@
     </message>
     <message>
         <source>Main Toolbar</source>
-        <extracomment>Name of the main toolbar</extracomment>
         <translation>Hlavní Panel nástrojů</translation>
     </message>
     <message>
@@ -248,6 +237,14 @@
     <message>
         <source>Mag</source>
         <translation>Časopis</translation>
+    </message>
+    <message>
+        <source>Manually arrange the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information about the BibleTime program</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -649,6 +646,63 @@
     </message>
 </context>
 <context>
+    <name>BtShortcutsDialog</name>
+    <message>
+        <source>Configure shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtShortcutsEditor</name>
+    <message>
+        <source>Select to change key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action
+name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcut for selected action name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtSourceArea</name>
     <message>
         <source>Work</source>
@@ -758,6 +812,49 @@
     </message>
 </context>
 <context>
+    <name>CAcceleratorSettingsPage</name>
+    <message>
+        <source>Choose shortcut group:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bible windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commentary windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lexicon windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Book windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>in the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CBibleReadWindow</name>
     <message>
         <source>Next book</source>
@@ -801,7 +898,7 @@
     </message>
     <message>
         <source>Reference only</source>
-        <translation>Pouze odkaz</translation>
+        <translation type="obsolete">Pouze odkaz</translation>
     </message>
     <message>
         <source>Text of reference</source>
@@ -813,15 +910,15 @@
     </message>
     <message>
         <source>Chapter</source>
-        <translation>Kapitolu</translation>
+        <translation type="obsolete">Kapitolu</translation>
     </message>
     <message>
         <source>Chapter as plain text</source>
-        <translation>Kapitolu jako obyčejný text</translation>
+        <translation type="obsolete">Kapitolu jako obyčejný text</translation>
     </message>
     <message>
         <source>Chapter as HTML</source>
-        <translation>Kapitolu jako HTML</translation>
+        <translation type="obsolete">Kapitolu jako HTML</translation>
     </message>
     <message>
         <source>Bible window</source>
@@ -857,11 +954,11 @@
     </message>
     <message>
         <source>Strong&apos;s search</source>
-        <translation>Hledat Strongova Čísla</translation>
+        <translation type="obsolete">Hledat Strongova Čísla</translation>
     </message>
     <message>
         <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation>Najít všechny výskyty Strongových čísel nacházející se pod kurzorem.</translation>
+        <translation type="obsolete">Najít všechny výskyty Strongových čísel nacházející se pod kurzorem.</translation>
     </message>
 </context>
 <context>
@@ -872,19 +969,19 @@
     </message>
     <message>
         <source>Copy entry with text</source>
-        <translation>Kopírovat záznam s textem</translation>
+        <translation type="obsolete">Kopírovat záznam s textem</translation>
     </message>
     <message>
         <source>Save entry as plain text</source>
-        <translation>Uložit záznam jako obyčejný text</translation>
+        <translation type="obsolete">Uložit záznam jako obyčejný text</translation>
     </message>
     <message>
         <source>Save entry as HTML</source>
-        <translation>Uložit záznam jako HTML</translation>
+        <translation type="obsolete">Uložit záznam jako HTML</translation>
     </message>
     <message>
         <source>Print entry with text</source>
-        <translation>Tisk záznamu s textem</translation>
+        <translation type="obsolete">Tisk záznamu s textem</translation>
     </message>
 </context>
 <context>
@@ -1465,7 +1562,7 @@
     </message>
     <message>
         <source>Copy selected text</source>
-        <translation>Kopírovat vybraný text</translation>
+        <translation type="obsolete">Kopírovat vybraný text</translation>
     </message>
     <message>
         <source>Save entry as HTML</source>
@@ -1481,7 +1578,7 @@
     </message>
     <message>
         <source>Reference only</source>
-        <translation>Pouze odkaz</translation>
+        <translation type="obsolete">Pouze odkaz</translation>
     </message>
     <message>
         <source>Entry with text</source>
@@ -1493,7 +1590,7 @@
     </message>
     <message>
         <source>Entry as HTML</source>
-        <translation>Záznam jako HTML</translation>
+        <translation type="obsolete">Záznam jako HTML</translation>
     </message>
     <message>
         <source>Lexicon window</source>
@@ -2875,6 +2972,14 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Parsing Strong&apos;s Numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This shortcut conflicts with the shortcut for the following actions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to clear the conflicting shortcuts and continue?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

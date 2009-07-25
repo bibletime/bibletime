@@ -12,39 +12,33 @@
 <context>
     <name>BibleTime</name>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="93"/>
+        <location filename="../../src/bibletime_init.cpp" line="233"/>
         <source>&amp;File</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Súbor</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="95"/>
+        <location filename="../../src/bibletime_init.cpp" line="234"/>
         <source>&amp;View</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Zobrazenie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="97"/>
+        <location filename="../../src/bibletime_init.cpp" line="235"/>
         <source>&amp;Search</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Hľadanie</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="99"/>
+        <location filename="../../src/bibletime_init.cpp" line="236"/>
         <source>&amp;Window</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Okno</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="101"/>
+        <location filename="../../src/bibletime_init.cpp" line="237"/>
         <source>Se&amp;ttings</source>
-        <extracomment>Main menu item</extracomment>
         <translation>Nas&amp;tavenia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="103"/>
+        <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>&amp;Help</source>
-        <extracomment>Main menu item</extracomment>
         <translation>&amp;Pomocník</translation>
     </message>
     <message>
@@ -53,106 +47,107 @@
         <translation type="obsolete">Zatvoriť BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="141"/>
+        <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Zobraziť panel nástrojov</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="128"/>
+        <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>&amp;Fullscreen mode</source>
         <translation>&amp;Celá obrazovka</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="106"/>
+        <location filename="../../src/bibletime_init.cpp" line="241"/>
         <source>Main Toolbar</source>
-        <extracomment>Name of the main toolbar</extracomment>
         <translation>Hlavný panel</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="114"/>
+        <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>&amp;Quit</source>
         <translation>&amp;Koniec</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="148"/>
+        <location filename="../../src/bibletime_init.cpp" line="220"/>
+        <source>Information about the BibleTime program</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="266"/>
         <source>Show Bookshelf</source>
         <translation>Zobraziť knižnicu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="152"/>
+        <location filename="../../src/bibletime_init.cpp" line="270"/>
         <source>Show Bookmarks</source>
         <translation>Zobraziť záložky</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="156"/>
+        <location filename="../../src/bibletime_init.cpp" line="274"/>
         <source>Show Mag</source>
         <translation>Zobraziť informačnú oblasť</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="181"/>
+        <location filename="../../src/bibletime_init.cpp" line="289"/>
         <source>&amp;Save session</source>
         <translation>&amp;Uložiť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="194"/>
+        <location filename="../../src/bibletime_init.cpp" line="297"/>
         <source>&amp;Load session</source>
         <translation>N&amp;ačítať reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="197"/>
+        <location filename="../../src/bibletime_init.cpp" line="300"/>
         <source>&amp;Delete session</source>
         <translation>O&amp;dstrániť reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="210"/>
+        <location filename="../../src/bibletime_init.cpp" line="313"/>
         <source>&amp;Arrangement mode</source>
         <translation>Režim &amp;usporiadania</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="217"/>
+        <location filename="../../src/bibletime_init.cpp" line="136"/>
         <source>&amp;Manual mode</source>
         <translation>&amp;Manuálny režim</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="229"/>
+        <location filename="../../src/bibletime_init.cpp" line="143"/>
         <source>Auto-tile &amp;vertically</source>
-        <extracomment>Vertical tiling means that windows are vertical, placed side by side</extracomment>
         <translation>Automaticky zarovnať &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="241"/>
+        <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Auto-tile &amp;horizontally</source>
-        <extracomment>Horizontal tiling means that windows are horizontal, placed on top of each other</extracomment>
         <translation>Automaticky zarovnať &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="253"/>
+        <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Auto-&amp;cascade</source>
-        <extracomment>Cascading means that only one window is visible, others are behind that</extracomment>
         <translation>&amp;Automaticky kaskádovať</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="263"/>
+        <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>&amp;Cascade</source>
         <translation>&amp;Kaskádovať</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="273"/>
+        <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Tile &amp;vertically</source>
         <translation>Zarovnať &amp;zvisle</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="283"/>
+        <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Tile &amp;horizontally</source>
         <translation>Zarovnať &amp;vodorovne</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="293"/>
+        <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>Cl&amp;ose all windows</source>
         <translation>Zatv&amp;oriť všetky okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="296"/>
+        <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Zatvoriť všetky okná v BibleTime</translation>
     </message>
@@ -161,123 +156,127 @@
         <translation type="obsolete">Všetko &amp;zatvoriť</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="320"/>
+        <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>&amp;Handbook</source>
         <translation>&amp;Príručka</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="332"/>
+        <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>&amp;Bible Study Howto</source>
-        <extracomment>&quot;Howto&quot; is a guide; if there&apos;s no natural translation for HowTo, translate it as Guide</extracomment>
         <translation>&amp;Biblické štúdium Ako (Howto)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="490"/>
+        <location filename="../../src/bibletime_slots.cpp" line="550"/>
         <source>Please enter a name for the new session.</source>
         <translation>Vložte prosím názov novej relácie.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="117"/>
+        <location filename="../../src/bibletime_init.cpp" line="99"/>
         <source>Quit BibleTime</source>
         <translation>Ukončiť BibleTime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="131"/>
+        <location filename="../../src/bibletime_init.cpp" line="106"/>
         <source>Toggle fullscreen mode of the main window</source>
         <translation>Prepnúť celoobrázkový režim hlavného okna</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="163"/>
+        <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Search in &amp;open works...</source>
         <translation>Hľadať v &amp;otvorených dielach...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="175"/>
+        <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>Search in standard &amp;Bible...</source>
         <translation>Hľadať v štandardnej &amp;Biblií...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="187"/>
+        <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Save as &amp;new session...</source>
         <translation>Uložiť &amp;novú reláciu...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="190"/>
+        <location filename="../../src/bibletime_init.cpp" line="132"/>
         <source>Create and save a new session</source>
         <translation>Vytvorí a uloží novú reláciu</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="232"/>
+        <location filename="../../src/bibletime_init.cpp" line="139"/>
+        <source>Manually arrange the open windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/bibletime_init.cpp" line="146"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
         <translation>Automaticky vertikálne zarovnáva otvorené okná (okraj vedľa okraju)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="244"/>
+        <location filename="../../src/bibletime_init.cpp" line="153"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
         <translation>Automaticky horizontálne zarovnáva otvorené okná (okraj vedľa okraju)</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="256"/>
+        <location filename="../../src/bibletime_init.cpp" line="160"/>
         <source>Automatically cascade the open windows</source>
         <translation>Automaticky kaskáduje otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="266"/>
+        <location filename="../../src/bibletime_init.cpp" line="167"/>
         <source>Cascade the open windows</source>
         <translation>Kaskádovať otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="276"/>
+        <location filename="../../src/bibletime_init.cpp" line="174"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
         <translation>Vertikálne uložiť (okraj vedľa okraju) otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="286"/>
+        <location filename="../../src/bibletime_init.cpp" line="181"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
         <translation>Horizontálne uložiť (okraj vedľa okraju) otvorené okná</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="303"/>
+        <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>&amp;Configure BibleTime...</source>
         <translation>Kon&amp;figurácia Bibletime...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="306"/>
+        <location filename="../../src/bibletime_init.cpp" line="194"/>
         <source>Set BibleTime&apos;s preferences</source>
         <translation>Upraviť BibleTime nastavenia</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="312"/>
+        <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>Bookshelf &amp;Manager...</source>
         <translation>Správca k&amp;nižnice...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="315"/>
+        <location filename="../../src/bibletime_init.cpp" line="201"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
         <translation>Konfigurácia vašej knižnice a inštalácia/aktualizácia/odstránenie/indexovanie diel</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="323"/>
+        <location filename="../../src/bibletime_init.cpp" line="208"/>
         <source>Open BibleTime&apos;s handbook</source>
         <translation>Otvoriť BibleTime príručku</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="335"/>
+        <location filename="../../src/bibletime_init.cpp" line="215"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation>Otvorí príručku k biblickému štúdiu, ktorá je súčasťou BibleTime.&lt;BR&gt; Táto príručka je úvodom k efektívnemu štúdiu Biblie.</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="166"/>
+        <location filename="../../src/bibletime_init.cpp" line="118"/>
         <source>Search in all works that are currently open</source>
         <translation>Hľadať vo všetkých dielach, ktoré sú otvorené</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="178"/>
+        <location filename="../../src/bibletime_init.cpp" line="125"/>
         <source>Search in the standard Bible</source>
         <translation>Hľadať v štandardnej biblií</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_slots.cpp" line="490"/>
+        <location filename="../../src/bibletime_slots.cpp" line="549"/>
         <source>New Session</source>
         <translation>Nová relácia</translation>
     </message>
@@ -286,37 +285,37 @@
         <translation type="obsolete">Inicializácia Sword systém...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="70"/>
+        <location filename="../../src/bibletime.cpp" line="72"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Spúšťanie systému SWORD...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="72"/>
+        <location filename="../../src/bibletime.cpp" line="74"/>
         <source>Creating BibleTime&apos;s user interface...</source>
         <translation>Vytváranie BibleTime rozhrania...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime.cpp" line="74"/>
+        <location filename="../../src/bibletime.cpp" line="76"/>
         <source>Initializing menu- and toolbars...</source>
         <translation>Inicializácia ponuky a panelov...</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="343"/>
+        <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>&amp;About BibleTime</source>
         <translation>&amp;O Bibletime</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="52"/>
+        <location filename="../../src/bibletime_init.cpp" line="53"/>
         <source>Bookshelf</source>
         <translation>Knižnica</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="58"/>
+        <location filename="../../src/bibletime_init.cpp" line="59"/>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
     </message>
     <message>
-        <location filename="../../src/bibletime_init.cpp" line="65"/>
+        <location filename="../../src/bibletime_init.cpp" line="66"/>
         <source>Mag</source>
         <translation>Informácie</translation>
     </message>
@@ -841,6 +840,76 @@
     </message>
 </context>
 <context>
+    <name>BtShortcutsDialog</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
+        <source>Configure shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
+        <source>First shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
+        <source>Second shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtShortcutsEditor</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
+        <source>Select to change key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
+        <source>Action
+name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
+        <source>First
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
+        <source>Second
+shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
+        <source>Shortcut for selected action name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="281"/>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="286"/>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
+        <source>Default key:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BtSourceArea</name>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="101"/>
@@ -976,176 +1045,210 @@
     </message>
 </context>
 <context>
+    <name>CAcceleratorSettingsPage</name>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="40"/>
+        <source>Choose shortcut group:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="52"/>
+        <source>Main Window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
+        <source>All text windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
+        <source>Bible windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
+        <source>Commentary windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
+        <source>Lexicon windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
+        <source>Book windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="189"/>
+        <source>in the</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="189"/>
+        <source>group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="277"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CBibleReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="91"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="155"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="94"/>
         <source>Next book</source>
         <translation>Ďalšia kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="95"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="160"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="98"/>
         <source>Previous book</source>
         <translation>Predchádzajúca kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="99"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="165"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="102"/>
         <source>Next chapter</source>
         <translation>Nasledujúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="103"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="170"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="106"/>
         <source>Previous chapter</source>
         <translation>Predchádzajúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="107"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="175"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="110"/>
         <source>Next verse</source>
         <translation>Nasledujúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="111"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="180"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="114"/>
         <source>Previous verse</source>
         <translation>Predchádzajúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="123"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="119"/>
         <source>Copy chapter</source>
         <translation>Kopírovať kapitolu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="122"/>
         <source>Save chapter as plain text</source>
         <translation>Uložiť kapitolu ako obyčajný text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="132"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="125"/>
         <source>Save chapter as HTML</source>
         <translation>Uložiť kapitolu ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="137"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="128"/>
         <source>Print chapter</source>
         <translation>Vytlačiť kapitolu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="201"/>
         <source>Reference only</source>
-        <translation>Iba odkazy</translation>
+        <translation type="obsolete">Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="205"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>Text odkazu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="209"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="220"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="232"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="143"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Odkaz s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="213"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="236"/>
         <source>Chapter</source>
-        <translation>Kapitolu</translation>
+        <translation type="obsolete">Kapitolu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="224"/>
         <source>Chapter as plain text</source>
-        <translation>Kapitolu ako obyčajný text</translation>
+        <translation type="obsolete">Kapitolu ako obyčajný text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="228"/>
         <source>Chapter as HTML</source>
-        <translation>Kapitolu ako HTML</translation>
+        <translation type="obsolete">Kapitolu ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="259"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
         <source>Bible window</source>
         <translation>Okno Biblie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="267"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="268"/>
         <source>Copy...</source>
         <translation>Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="278"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="279"/>
         <source>Save...</source>
         <translation>Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="290"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="293"/>
         <source>Print...</source>
         <translation>Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="386"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
         <source>Copy chapter to clipboard ...</source>
         <translation>Skopírovať kapitolu do schránky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="386"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="391"/>
         <source>Copying</source>
         <translation>Kopírovanie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="407"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="425"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="413"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="432"/>
         <source>Saving chapter ...</source>
         <translation>Ukladanie kapitoly...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="407"/>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="425"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="413"/>
+        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="432"/>
         <source>Saving</source>
         <translation>Ukladanie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="193"/>
         <source>Strong&apos;s search</source>
-        <translation>Vyhľadávanie strongového čísla</translation>
+        <translation type="obsolete">Vyhľadávanie strongového čísla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="197"/>
         <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation>Nájde všetky výskyty strongového čísla, ktoré sa aktuálne nachádza pod kurzorom</translation>
+        <translation type="obsolete">Nájde všetky výskyty strongového čísla, ktoré sa aktuálne nachádza pod kurzorom</translation>
     </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="70"/>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="87"/>
+        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Prepnutie stromového zobrazenia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="95"/>
         <source>Copy entry with text</source>
-        <translation>Kopíruj položku s textom</translation>
+        <translation type="obsolete">Kopíruj položku s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="98"/>
         <source>Save entry as plain text</source>
-        <translation>Kopíruj položku ako surový text</translation>
+        <translation type="obsolete">Kopíruj položku ako surový text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="100"/>
         <source>Save entry as HTML</source>
-        <translation>Uložiť položku ako HTML</translation>
+        <translation type="obsolete">Uložiť položku ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="103"/>
         <source>Print entry with text</source>
-        <translation>Tlačiť položku s textom</translation>
+        <translation type="obsolete">Tlačiť položku s textom</translation>
     </message>
 </context>
 <context>
@@ -1347,48 +1450,42 @@
 <context>
     <name>CCommentaryReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="39"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="119"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="38"/>
         <source>Next book</source>
         <translation>Ďalšia kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="43"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="124"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="42"/>
         <source>Previous book</source>
         <translation>Predchádzajúca kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="47"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="129"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="46"/>
         <source>Next chapter</source>
         <translation>Nasledujúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="51"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="134"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="50"/>
         <source>Previous chapter</source>
         <translation>Predchádzajúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="55"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="139"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="54"/>
         <source>Next verse</source>
         <translation>Nasledujúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="59"/>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="144"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="58"/>
         <source>Previous verse</source>
         <translation>Predchádzajúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="82"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="122"/>
         <source>Synchronize</source>
         <translation>Synchronizovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="87"/>
+        <location filename="../../src/frontend/displaywindow/ccommentaryreadwindow.cpp" line="127"/>
         <source>Synchronize the displayed entry of this work with the active Bible window</source>
         <translation>Synchronizovať zobrazenie položky tejto práce s aktívnym oknom biblie</translation>
     </message>
@@ -1545,55 +1642,47 @@
 <context>
     <name>CDisplayWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="199"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="134"/>
         <source>Back in history</source>
         <translation>Späť v histórii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="136"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="208"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="142"/>
         <source>Forward in history</source>
         <translation>Dopredu v histórii</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="151"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="159"/>
         <source>Open the search dialog with the works of this window</source>
         <translation>Otvoriť dialóg hľadania s dielom, ktoré je v tomto okne</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="101"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="160"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="108"/>
         <source>Zoom in</source>
         <translation>Zväčšiť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="105"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="166"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
         <source>Zoom out</source>
         <translation>Zmenšiť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="109"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="172"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="116"/>
         <source>Close</source>
         <translation>Zatvoriť</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="113"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="178"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="120"/>
         <source>Select all</source>
         <translation>Označiť všetko</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="117"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="184"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="124"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="121"/>
-        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="190"/>
+        <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="128"/>
         <source>Find...</source>
         <translation>Hľadať...</translation>
     </message>
@@ -1862,93 +1951,88 @@
 <context>
     <name>CLexiconReadWindow</name>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="55"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="94"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="51"/>
         <source>Next entry</source>
         <translation>Nasledujúca položka</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="59"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="99"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="55"/>
         <source>Previous entry</source>
         <translation>Predchádzajúca položka</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="63"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="59"/>
         <source>Copy reference only</source>
         <translation>Kopírovať iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="66"/>
         <source>Copy selected text</source>
-        <translation>Kopírovať označený text</translation>
+        <translation type="obsolete">Kopírovať označený text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="69"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
         <source>Save entry as HTML</source>
         <translation>Uložiť položku ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="72"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="65"/>
         <source>Print reference only</source>
         <translation>Tlačiť iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="112"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="77"/>
         <source>Strong&apos;s Search</source>
         <translation>Vyhľadávanie v strongových číslach</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="119"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="138"/>
         <source>Reference only</source>
-        <translation>Iba odkazy</translation>
+        <translation type="obsolete">Iba odkazy</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="123"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="142"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
         <translation>Položka s textom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="130"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="71"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="129"/>
         <source>Entry as plain text</source>
         <translation>Položka ako surový text</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="134"/>
         <source>Entry as HTML</source>
-        <translation>Položka ako HTML</translation>
+        <translation type="obsolete">Položka ako HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="223"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="222"/>
         <source>Lexicon window</source>
         <translation>Okno lexikónu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="230"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="229"/>
         <source>Copy...</source>
         <translation>Kopírovať...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="239"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="238"/>
         <source>Save...</source>
         <translation>Ulož...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="255"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="254"/>
         <source>Print...</source>
         <translation>Tlačiť...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="296"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="327"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="302"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="334"/>
         <source>Saving entry ...</source>
         <translation>Ukladanie položky...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="296"/>
-        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="327"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="302"/>
+        <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="334"/>
         <source>Saving</source>
         <translation>Ukladám</translation>
     </message>
@@ -3390,42 +3474,42 @@ Language name ppk</extracomment>
         <translation>Vzdialený</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="284"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
         <source>Old testament</source>
         <translation>Starý zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mojžišove knihy/Pentateuch/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
         <source>History</source>
         <translation>História</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
         <source>Prophets</source>
         <translation>Proroci</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
         <source>New testament</source>
         <translation>Nový zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
         <source>Gospels</source>
         <translation>Evanjeliá</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
         <source>Letters/Epistles</source>
         <translation>Listy/Epištoly</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pavlove epištoly</translation>
     </message>
@@ -3701,6 +3785,16 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="580"/>
         <source>Parsing Strong&apos;s Numbers</source>
         <translation>Spracovanie strongových čísel</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="149"/>
+        <source>This shortcut conflicts with the shortcut for the following actions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="156"/>
+        <source>Do you want to clear the conflicting shortcuts and continue?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
