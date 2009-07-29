@@ -37,7 +37,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget* /* parent */ )
 	QHBoxLayout* layoutForWindowTypeChooser = new QHBoxLayout();
 	mainLayout->addLayout(layoutForWindowTypeChooser);
 
-	QLabel* label = new QLabel(tr("Choose shortcut group:"), this);
+	QLabel* label = new QLabel(tr("Choose action group:"), this);
 	layoutForWindowTypeChooser->addWidget(label);
 
 	m_typeChooser = new QComboBox(this);
@@ -186,7 +186,7 @@ QString CAcceleratorSettingsPage::findConflictsWithKeys(const QString& keys, con
 		QString conflict = list.at(i)->findConflictWithKeys(keys);
 		if (!conflict.isEmpty())
 		{
-			QString conflictMsg = "\n   \"" + conflict + "\" " + tr("in the") + " \"" + getTitleForEditor(list.at(i)) + "\" " + tr("group");
+			QString conflictMsg(tr("\n   \"%1\" in the \"%2\" group").arg(conflict).arg(getTitleForEditor(list.at(i))));
 			conflicts.append(conflictMsg);
 		}
 	}
