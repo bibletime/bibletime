@@ -64,7 +64,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="220"/>
         <source>Information about the BibleTime program</source>
-        <translation type="unfinished"></translation>
+        <translation>Informatsioon BibleTime kohta</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="266"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="139"/>
         <source>Manually arrange the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Paiguta avatud aknad käsitsi</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="146"/>
@@ -819,17 +819,17 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
         <source>Configure shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Seadista kiirklahvid</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
         <source>First shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Esimene kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Second shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Teine kiirklahv</translation>
     </message>
 </context>
 <context>
@@ -838,50 +838,53 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige element klahvi muutmiseks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Tegevuse
+nimetus</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Esimene
+kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Teine
+kiirklahv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiirklahvid valitud tegevuse jaoks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Puudub</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="281"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaikimisi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="286"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohandatud</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
         <source>Default key:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaikimisi kiirklahv:</translation>
     </message>
 </context>
 <context>
@@ -1023,53 +1026,50 @@ shortcut</source>
     <name>CAcceleratorSettingsPage</name>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="40"/>
-        <source>Choose shortcut group:</source>
-        <translation type="unfinished"></translation>
+        <source>Choose action group:</source>
+        <translation>Valige tegevuste rühm:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="52"/>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Peaaken</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>All text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Kõik tekstiaknad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
         <source>Bible windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Piibliaknad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
         <source>Commentary windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentaaride aknad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
         <source>Lexicon windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Leksikonide aknad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
         <source>Book windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Raamatute aknad</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="189"/>
-        <source>in the</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="189"/>
-        <source>group</source>
-        <translation type="unfinished"></translation>
+        <source>
+   &quot;%1&quot; in the &quot;%2&quot; group</source>
+        <translation>
+   &quot;%1&quot; rühmas &quot;%2&quot;</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="277"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiirklahvid</translation>
     </message>
 </context>
 <context>
@@ -1125,10 +1125,6 @@ shortcut</source>
         <translation>Trüki peatükk</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Ainult viide</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>Viidatud tekst</translation>
@@ -1138,18 +1134,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Viide koos tekstiga</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Peatükk</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Peatükk tavalise tekstina</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Peatükk HTML&apos;ina</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1193,14 +1177,6 @@ shortcut</source>
         <source>Saving</source>
         <translation>Salvestamine</translation>
     </message>
-    <message>
-        <source>Strong&apos;s search</source>
-        <translation type="obsolete">Strongi numbrite otsing</translation>
-    </message>
-    <message>
-        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation type="obsolete">Leia kõik hiirekursori all oleva Strongi numbri esinemised</translation>
-    </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
@@ -1208,22 +1184,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Kuva sisukord</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Kopeeri kirje tekstiga</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Salvesta kirje tavalise tekstina</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Salvesta kirje HTML&apos;ina</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Trüki kirje tekstiga</translation>
     </message>
 </context>
 <context>
@@ -1948,10 +1908,6 @@ shortcut</source>
         <translation>Kopeeri ainult viide</translation>
     </message>
     <message>
-        <source>Copy selected text</source>
-        <translation type="obsolete">Kopeeri valitud tekst</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
         <source>Save entry as HTML</source>
         <translation>Salvesta kirje HTML&apos;ina</translation>
@@ -1967,10 +1923,6 @@ shortcut</source>
         <translation>Strongi numbrite otsing</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Ainult viide</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1981,10 +1933,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="129"/>
         <source>Entry as plain text</source>
         <translation>Kirje tavalise tekstina</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Kirje HTML&apos;ina</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="222"/>
@@ -3705,12 +3653,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="149"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation>See kiirklahv on vastuolus järgnevate tegevuste kiirklahvidega:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="156"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas tühistada vastuolulised kiirklahvide seadistused ja jätkata?</translation>
     </message>
 </context>
 <context>
