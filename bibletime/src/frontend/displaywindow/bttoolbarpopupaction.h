@@ -24,7 +24,12 @@ public:
 
 	BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent);
 	~BtToolBarPopupAction();	
+
+// return the QMenu object so a popup menu can be constructed
 	QMenu* popupMenu() const;
+
+// Function to catch the Shortcut event and emit the triggered signal
+	virtual bool event(QEvent* e);
 	
 signals:
 	void triggered();
@@ -33,6 +38,8 @@ protected:
 	QWidget* createWidget(QWidget* parent);
 
 private slots:
+
+// Slot to emit a triggered signal when the toolbar button is pressed
 	void buttonPressed();
 
 private:

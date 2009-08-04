@@ -11,6 +11,20 @@
 #include <QMenu>
 #include <QToolButton>
 #include <QAction>
+#include <QEvent>
+
+class BtToolButton : public QToolButton
+{
+public:
+	BtToolButton(QWidget* parent=0) : QToolButton(parent)
+	{
+	}
+private:
+	void nextCheckState()
+	{
+	}
+};
+
 
 // This class provides a toolbar widget that has a icon plus a right side down arrow
 // The icon is typically set to a back or forward arrow and the down arrow has a popup 
@@ -27,6 +41,7 @@ BtToolBarPopupAction::~BtToolBarPopupAction()
 	delete m_menu;
 }
 
+// return the QMenu object so a popup menu can be constructed
 QMenu* BtToolBarPopupAction::popupMenu() const
 {
 	return m_menu;
@@ -34,7 +49,7 @@ QMenu* BtToolBarPopupAction::popupMenu() const
 
 QWidget* BtToolBarPopupAction::createWidget(QWidget* parent)
 {
-	m_button = new QToolButton(parent);
+	m_button = new BtToolButton(parent);
 	setIcon(m_icon);
 	setToolTip(m_text);
 	m_button->setDefaultAction(this);
@@ -45,8 +60,19 @@ QWidget* BtToolBarPopupAction::createWidget(QWidget* parent)
 	return m_button;
 }
 
+// Slot to emit a triggered signal when the toolbar button is pressed
 void BtToolBarPopupAction::buttonPressed()
 {
 	emit triggered();
 }
 
+// Function to catch the Shortcut event and emit the triggered signal
+bool BtToolBarPopupAction::event(QEvent *event)
+{
+    if (event->type() == QEvent::Shortcut) 
+	{
+		emit triggered();
+		return true;
+	}
+	return QWidgetAction::event(event);
+}

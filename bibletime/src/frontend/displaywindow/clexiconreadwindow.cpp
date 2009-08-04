@@ -90,10 +90,12 @@ void CLexiconReadWindow::initActions()
 	m_actions.backInHistory = dynamic_cast<BtToolBarPopupAction*>(
 		ac->action(CResMgr::displaywindows::general::backInHistory::actionName) );
 	Q_ASSERT(m_actions.backInHistory);
+	addAction(m_actions.backInHistory);
 
 	m_actions.forwardInHistory = dynamic_cast<BtToolBarPopupAction*>(
 		 ac->action(CResMgr::displaywindows::general::forwardInHistory::actionName) );
 	Q_ASSERT(m_actions.forwardInHistory);
+	addAction(m_actions.forwardInHistory);
 
 	QAction* qaction;
 
@@ -344,7 +346,8 @@ void CLexiconReadWindow::slotFillBackHistory()
 
 	//TODO: take the history list and fill the menu
 	QListIterator<QAction*> it(keyChooser()->history()->getBackList());
-	while (it.hasNext()) {
+	while (it.hasNext()) 
+	{
 		menu->addAction(it.next());
 	}
 }
@@ -357,7 +360,8 @@ void CLexiconReadWindow::slotFillForwardHistory()
 	menu->clear();
 	//TODO: take the history list and fill the menu using addAction
 	QListIterator<QAction*> it(keyChooser()->history()->getFwList());
-	while (it.hasNext()) {
+	while (it.hasNext()) 
+	{
 		menu->addAction(it.next());
 	}
 }

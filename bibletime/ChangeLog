@@ -1,3 +1,6 @@
+2009-08-03 Gary Holmlund
+	* Fix the Forward/backward in history toolbar buttons to work with shortcuts
+
 2009-07-25 Gary Holmlund
 	* Add shortcut page to config settings dialog
 	* Rework of how actions are setup, many shortcuts had not been working
