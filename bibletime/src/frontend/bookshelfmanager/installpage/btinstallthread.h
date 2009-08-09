@@ -78,7 +78,7 @@ protected:
 	bool m_cancelled;
 	BtInstallMgr* m_iMgr;
 	//BtInstallMgr m_iMgr;
-    sword::InstallSource *m_installSource;
+    boost::scoped_ptr<sword::InstallSource> m_installSource;
 	//TODO: it would be best to get the backend from the bookshelf manager install page
 	// where it has already been created. Could fasten the progress dialog startup.
 	boost::scoped_ptr<CSwordBackend> m_backendForSource;

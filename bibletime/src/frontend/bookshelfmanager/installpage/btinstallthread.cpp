@@ -48,7 +48,7 @@ void BtInstallThread::run()
 
 	emit preparingInstall(m_module, m_source);
 
-    m_installSource = new sword::InstallSource(instbackend::source(m_source));
+    m_installSource.reset(new sword::InstallSource(instbackend::source(m_source)));
     m_backendForSource.reset(instbackend::backend(*m_installSource));
 
 	//make sure target/mods.d and target/modules exist
@@ -79,7 +79,7 @@ void BtInstallThread::run()
 
     if (instbackend::isRemote(*m_installSource)) {
 		qDebug() << "calling install";
-        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource);
+        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource.get());
 		if (status != 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
