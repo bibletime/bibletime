@@ -30,9 +30,7 @@ BtInstallThread::BtInstallThread(QObject* parent, QString moduleName, QString so
 	m_module(moduleName),
 	m_destination(destinationName),
 	m_source(sourceName),
-	m_cancelled(false),
-	m_installSource(instbackend::source(sourceName)),
-	m_backendForSource(instbackend::backend(m_installSource))
+    m_cancelled(false)
 {
 	m_iMgr = new BtInstallMgr();
 }
@@ -49,6 +47,9 @@ void BtInstallThread::run()
 
 
 	emit preparingInstall(m_module, m_source);
+
+    m_installSource = new sword::InstallSource(instbackend::source(m_source));
+    m_backendForSource.reset(instbackend::backend(*m_installSource));
 
 	//make sure target/mods.d and target/modules exist
 	//TODO: move this to some common precondition
@@ -76,9 +77,9 @@ void BtInstallThread::run()
 	// manager for the destination path
 	sword::SWMgr lMgr( m_destination.toLatin1() );
 
-	if (instbackend::isRemote(m_installSource)) {
+    if (instbackend::isRemote(*m_installSource)) {
 		qDebug() << "calling install";
-		int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), &m_installSource);
+        int status = m_iMgr->installModule(&lMgr, 0, m_module.toLatin1(), m_installSource);
 		if (status != 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
@@ -89,7 +90,7 @@ void BtInstallThread::run()
 	}
 	else { //local source
 		emit statusUpdated(m_module, 0);
-		int status = m_iMgr->installModule(&lMgr, m_installSource.directory.c_str(), m_module.toLatin1());
+        int status = m_iMgr->installModule(&lMgr, m_installSource->directory.c_str(), m_module.toLatin1());
 		if (status > 0) {
 			qWarning() << "Error with install: " << status << "module:" << m_module;
 		}
@@ -188,7 +189,7 @@ void BtInstallThread::removeTempFiles()
 	// take the absolute path of the InstallMgr)
 
 	//sword::InstallSource is = instbackend::source(m_source);
-	if (instbackend::isRemote(m_installSource)) {
+    if (instbackend::isRemote(*m_installSource)) {
 		// get the path for the module temp files
 		CSwordModuleInfo* mInfo = m_backendForSource->findModuleByName(m_module);
 		QString dataPath = mInfo->config(CSwordModuleInfo::AbsoluteDataPath);
