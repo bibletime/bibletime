@@ -131,7 +131,7 @@ public:
 	/**
 	 * destructor of BibleTime
 	 */
-	virtual ~BibleTime();
+    ~BibleTime();
 
 	/**
 	* Reads the settings from the configfile and sets the right properties.
@@ -178,7 +178,7 @@ public slots:
 	/**
 	* Sets the plain caption of the main window
 	*/
-	virtual void setPlainCaption( const QString& );
+    void setPlainCaption( const QString& );
 	/**
 	* Processes the commandline options given to BibleTime.
 	*/
