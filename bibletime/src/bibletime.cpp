@@ -46,9 +46,7 @@
 
 using namespace Profile;
 
-BibleTime::BibleTime() :
-    m_actionCollection(0)
-{
+BibleTime::BibleTime() {
 	QPixmap pm;
 	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) 
 	{

@@ -224,8 +224,7 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a )
 /** Initializes the action objects of the GUI */
 void BibleTime::initActions()
 {
-	if (m_actionCollection == 0)
-		m_actionCollection = new BtActionCollection(this);
+    m_actionCollection = new BtActionCollection(this);
 
 	insertKeyboardActions(m_actionCollection);
 
