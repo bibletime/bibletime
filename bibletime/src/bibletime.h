@@ -331,9 +331,9 @@ protected slots:
 
 private:
 	// docking widgets
-	QDockWidget* m_dock0;
-	QDockWidget* m_dock1;
-	QDockWidget* m_dock2;
+    QDockWidget* m_bookshelfDock;
+    QDockWidget* m_bookmarksDock;
+    QDockWidget* m_magDock;
 	QToolBar* m_mainToolBar;
 	// VIEW menu actions
 	QAction* m_viewToolbar_action;

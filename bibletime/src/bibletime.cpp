@@ -47,10 +47,7 @@
 using namespace Profile;
 
 BibleTime::BibleTime() :
-	QMainWindow(0),
-	m_dock0(0),
-	m_dock1(0),
-	m_dock2(0),
+    QMainWindow(0),
 	m_actionCollection(0),
 	m_initialized(false),
 	m_moduleList(0),

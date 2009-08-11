@@ -50,25 +50,25 @@ void BibleTime::initView()
 	m_mdi = new CMDIArea(this);
 	setCentralWidget(m_mdi);
 
-	m_dock0 = new QDockWidget(tr("Bookshelf"), this);
-	m_dock0->setObjectName("BookshelfDock");
+    m_bookshelfDock = new QDockWidget(tr("Bookshelf"), this);
+    m_bookshelfDock->setObjectName("BookshelfDock");
 	m_bookshelfPage = new CBookshelfIndex(0);
-	m_dock0->setWidget(m_bookshelfPage);
-	addDockWidget(Qt::LeftDockWidgetArea, m_dock0);
+    m_bookshelfDock->setWidget(m_bookshelfPage);
+    addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
 	
-	m_dock1 = new QDockWidget(tr("Bookmarks"), this);
-	m_dock1->setObjectName("BookmarksDock");
+    m_bookmarksDock = new QDockWidget(tr("Bookmarks"), this);
+    m_bookmarksDock->setObjectName("BookmarksDock");
 	m_bookmarksPage = new CBookmarkIndex(0);
-	m_dock1->setWidget(m_bookmarksPage);
-	addDockWidget(Qt::LeftDockWidgetArea, m_dock1);
-	tabifyDockWidget(m_dock1, m_dock0);	
+    m_bookmarksDock->setWidget(m_bookmarksPage);
+    addDockWidget(Qt::LeftDockWidgetArea, m_bookmarksDock);
+    tabifyDockWidget(m_bookmarksDock, m_bookshelfDock);
 	
-	m_dock2 = new QDockWidget(tr("Mag"), this);
-	m_dock2->setObjectName("MagDock");
+    m_magDock = new QDockWidget(tr("Mag"), this);
+    m_magDock->setObjectName("MagDock");
 	m_infoDisplay = new CInfoDisplay(this);
 	m_infoDisplay->resize(150,150);
-	m_dock2->setWidget(m_infoDisplay);
-	addDockWidget(Qt::LeftDockWidgetArea, m_dock2);
+    m_magDock->setWidget(m_infoDisplay);
+    addDockWidget(Qt::LeftDockWidgetArea, m_magDock);
 	
 	CPointers::setInfoDisplay(m_infoDisplay);
 	m_mdi->setMinimumSize(100, 100);
@@ -262,15 +262,15 @@ void BibleTime::initActions()
 	connect(m_viewToolbar_action, SIGNAL(triggered()), this, SLOT(slotToggleToolbar()) );
 
 	
-	QAction* action = m_dock0->toggleViewAction();
+    QAction* action = m_bookshelfDock->toggleViewAction();
 	action->setText(tr("Show Bookshelf"));
 	viewMenu->addAction(action);
 	
-	action = m_dock1->toggleViewAction();
+    action = m_bookmarksDock->toggleViewAction();
 	action->setText(tr("Show Bookmarks"));
 	viewMenu->addAction(action);
 	
-	action = m_dock2->toggleViewAction();
+    action = m_magDock->toggleViewAction();
 	action->setText(tr("Show Mag"));
 	viewMenu->addAction(action);
 	
