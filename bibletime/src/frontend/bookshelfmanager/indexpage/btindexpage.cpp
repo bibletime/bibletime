@@ -21,7 +21,6 @@
 #include "backend/managers/cswordbackend.h"
 
 //Qt includes
-#include <QString>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QTreeWidget>
