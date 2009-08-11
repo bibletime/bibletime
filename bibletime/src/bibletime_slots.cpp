@@ -181,19 +181,19 @@ void BibleTime::slotWindowMenuAboutToShow()
 		m_windowCloseAll_action->setEnabled( true );
 	}
 	
-	QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
-	for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it ) 
-	{
+	// QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
+    // for (QList<QAction*>::iterator it = m_windowOpenWindowsList.begin(); it != end; ++it )
+    // {
 		//(*it)->unplugAll(); //see kde porting doc
-		foreach (QWidget *w, (*it)->associatedWidgets() ) 
-		{
-    		w->removeAction(*it);
-		}
-	}
+        // foreach (QWidget *w, (*it)->associatedWidgets() )
+        // {
+        // 	w->removeAction(*it);
+        // }
+    // }
 
 	//m_windowOpenWindowsList.setAutoDelete(true);
-	qDeleteAll(m_windowOpenWindowsList);
-	m_windowOpenWindowsList.clear();
+    // qDeleteAll(m_windowOpenWindowsList);
+    // m_windowOpenWindowsList.clear();
 
 // 	if (!m_windowActionCollection) {
 // 		m_windowActionCollection = new KActionCollection(this, KComponentData());

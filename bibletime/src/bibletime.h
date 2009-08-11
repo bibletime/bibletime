@@ -326,10 +326,14 @@ protected slots:
 	void slotOpenAboutDialog();
 
 private:
-	// docking widgets
+    // Docking widgets and their respective content widgets:
     QDockWidget* m_bookshelfDock;
+        CBookshelfIndex* m_bookshelfPage;
     QDockWidget* m_bookmarksDock;
+        CBookmarkIndex* m_bookmarksPage;
     QDockWidget* m_magDock;
+        InfoDisplay::CInfoDisplay* m_infoDisplay;
+
 	QToolBar* m_mainToolBar;
 	// VIEW menu actions
 	QAction* m_viewToolbar_action;
@@ -337,8 +341,7 @@ private:
 	/** WINDOW menu actions */
 	QAction* m_windowCascade_action;
 	QAction* m_windowTileHorizontal_action;
-	QAction* m_windowTileVertical_action;
-	QMenu* m_windowArrangementModeMenu;
+    QAction* m_windowTileVertical_action;
 	QAction* m_windowManualMode_action;
 	QAction* m_windowAutoCascade_action;
 	QAction* m_windowAutoTileVertical_action;
@@ -352,16 +355,12 @@ private:
 	QMenu* m_windowDeleteProfileMenu;
 	QAction* m_windowFullscreen_action;
 
-	QList<QAction*> m_windowOpenWindowsList;
+    /// \todo remove?
+    // QList<QAction*> m_windowOpenWindowsList;
 
 	CMDIArea* m_mdi;
 
 	Profile::CProfileMgr m_profileMgr;
-
-	// docking windows
-	CBookmarkIndex* m_bookmarksPage;
-	CBookshelfIndex* m_bookshelfPage;
-	InfoDisplay::CInfoDisplay* m_infoDisplay;
 
 	// returns the BtActionCollection class
 	BtActionCollection* actionCollection();
