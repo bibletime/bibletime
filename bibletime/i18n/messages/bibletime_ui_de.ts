@@ -814,10 +814,6 @@ shortcut</source>
 <context>
     <name>CAcceleratorSettingsPage</name>
     <message>
-        <source>Choose shortcut group:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Main Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -842,15 +838,16 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>in the</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose action group:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+   &quot;%1&quot; in the &quot;%2&quot; group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
