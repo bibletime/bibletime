@@ -421,12 +421,7 @@ void BibleTime::initBackends()
 	CPointers::setBackend(backend);
 	const CSwordBackend::LoadError errorCode = CPointers::backend()->initModules(CSwordBackend::OtherChange);
 
-	m_moduleList = 0;
-	if ( errorCode == CSwordBackend::NoError ) { //no error
-		m_moduleList = &(CPointers::backend()->moduleList());
-	}
-	else {
-		m_moduleList = 0;
+	if (errorCode != CSwordBackend::NoError) {
 		//show error message that initBackend failed
 		//TODO:
 // 		switch (errorCode) {

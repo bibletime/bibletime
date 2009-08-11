@@ -354,12 +354,6 @@ private:
 
 	QList<QAction*> m_windowOpenWindowsList;
 
-	/**
-	* The list of installed SWORD modules
-	*/
-	QList<CSwordModuleInfo*>* m_moduleList;
-
-	Profile::CProfile* m_currentProfile;
 	CMDIArea* m_mdi;
 
 	Profile::CProfileMgr m_profileMgr;

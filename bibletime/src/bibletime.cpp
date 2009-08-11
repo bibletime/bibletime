@@ -47,11 +47,7 @@
 using namespace Profile;
 
 BibleTime::BibleTime() :
-    m_actionCollection(0),
-	m_moduleList(0),
-	m_currentProfile(0),
-	m_mdi(0),
-	m_profileMgr()
+    m_actionCollection(0)
 {
 	QPixmap pm;
 	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) 
