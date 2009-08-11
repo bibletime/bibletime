@@ -47,9 +47,7 @@
 using namespace Profile;
 
 BibleTime::BibleTime() :
-    QMainWindow(0),
-	m_actionCollection(0),
-	m_initialized(false),
+    m_actionCollection(0),
 	m_moduleList(0),
 	m_currentProfile(0),
 	m_mdi(0),
@@ -306,21 +304,4 @@ void BibleTime::processCommandline()
 BtActionCollection* BibleTime::actionCollection()
 {
 	return m_actionCollection;
-}
-
-bool BibleTime::event(QEvent* e)
-{
-// /*	if (e->type() == QEvent::Polish) {
-// 		qWarning("BibleTime::event type Polish");
-// 		m_initialized = true;
-// 	}*/
-	if (e->type() == QEvent::Close) 
-	{
-	}
-	return QMainWindow::event(e);
-}
-
-void BibleTime::closeEvent(QCloseEvent* e) 
-{
-	QMainWindow::closeEvent(e);
 }

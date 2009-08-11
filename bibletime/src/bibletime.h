@@ -227,10 +227,6 @@ protected: // Protected methods
 	*/
 	bool queryClose();
 
-	virtual bool event(QEvent*);
-
-	virtual void closeEvent(QCloseEvent* e);
-
 protected slots:
 	/**
 	 * Creates a new presenter in the MDI area according to the type of the module.
@@ -358,7 +354,6 @@ private:
 
 	QList<QAction*> m_windowOpenWindowsList;
 
-	bool m_initialized;
 	/**
 	* The list of installed SWORD modules
 	*/
