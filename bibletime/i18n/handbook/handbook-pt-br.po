@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
-"POT-Creation-Date: 2009-06-27 12:46-0400\n"
+"POT-Creation-Date: 2009-08-11 19:16-0400\n"
 "PO-Revision-Date: 2009-06-26 14:32-0300\n"
 "Last-Translator: \n"
 "Language-Team: Portugus do Brasil <kde-i18n-doc@kde.org>\n"
@@ -2096,7 +2096,7 @@ msgstr "2009-04"
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
 #, fuzzy
-msgid "2.1"
+msgid "2.2"
 msgstr "2.0"
 
 # type: Content of: <book><bookinfo><abstract><para>

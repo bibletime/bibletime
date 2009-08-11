@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
-"POT-Creation-Date: 2009-06-27 12:46-0400\n"
+"POT-Creation-Date: 2009-08-11 19:16-0400\n"
 "PO-Revision-Date: 2009-05-19 18:51+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -2224,7 +2224,7 @@ msgstr "2009-04"
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
 #, fuzzy
-msgid "2.1"
+msgid "2.2"
 msgstr "2.0"
 
 # type: Content of: <book><bookinfo><abstract><para>
