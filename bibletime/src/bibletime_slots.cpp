@@ -72,7 +72,7 @@ using namespace Profile;
 void BibleTime::slotSettingsOptions() 
 {
 	qDebug("BibleTime::slotSettingsOptions");
-	CConfigurationDialog *dlg = new CConfigurationDialog(this, actionCollection());
+    CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
 	QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
 	dlg->show();

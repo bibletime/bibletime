@@ -105,7 +105,7 @@ void BibleTime::readSettings()
 {
 	qDebug("******************BibleTime::readSettings******************************");
 	//  accel()->readSettings(CBTConfig::getConfig());
- 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
+    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 
 	m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
 	slotToggleToolbar();
@@ -207,7 +207,7 @@ void BibleTime::refreshDisplayWindows()
 /** Refresh main window accelerators */
 void::BibleTime::refreshBibleTimeAccel()
 {
- 	CBTConfig::setupAccelSettings(CBTConfig::application, actionCollection());
+    CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
 /** Called before quit. */
@@ -295,7 +295,3 @@ void BibleTime::processCommandline()
  	}
 }
 
-BtActionCollection* BibleTime::actionCollection()
-{
-	return m_actionCollection;
-}

@@ -362,9 +362,6 @@ private:
 
 	Profile::CProfileMgr m_profileMgr;
 
-	// returns the BtActionCollection class
-	BtActionCollection* actionCollection();
-	
 protected: //DBUS interface implementation
 	void closeAllModuleWindows();
 	void syncAllBibles(const QString& key);

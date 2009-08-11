@@ -83,7 +83,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon, QKey
 		action->setIcon(util::filesystem::DirectoryUtil::getIcon(icon));
 	action->setShortcut(accel);
 	if (tooltip != QString::null) action->setToolTip(tooltip);
- 	actionCollection()->addAction(actionName, action);
+    m_actionCollection->addAction(actionName, action);
 	if (slot) QObject::connect( action, SIGNAL(triggered()), this, slot );
 	return action;
 }
