@@ -40,7 +40,6 @@
 using namespace util::filesystem;
 
 bool showDebugMessages = false;
-BibleTime* bibletime_ptr = 0;
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
 	//we use this messagehandler to switch debugging off in final releases
@@ -183,29 +182,26 @@ int main(int argc, char* argv[]) {
 
 //	setSignalHandler(signalHandler);
 
-	bibletime_ptr = new BibleTime();
+    BibleTime bibleTime;
 
 	// a new BibleTime version was installed (maybe a completely new installation)
 	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) 
 	{
 		CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
-		bibletime_ptr->saveConfigSettings();
+        bibleTime.saveConfigSettings();
 	}
 
 	// restore the workspace and process command line options
 	//app.setMainWidget(bibletime_ptr); //no longer used in qt4 (QApplication)
-	bibletime_ptr->show();
-	bibletime_ptr->processCommandline(); //must be done after the bibletime window is visible
+    bibleTime.show();
+    bibleTime.processCommandline(); //must be done after the bibletime window is visible
 
 #ifndef NO_DBUS
-	new BibleTimeDBusAdaptor(bibletime_ptr);
+    new BibleTimeDBusAdaptor(&bibleTime);
     // connect to D-Bus and register as an object:
-	QDBusConnection::sessionBus().registerObject("/BibleTime", bibletime_ptr);
+    QDBusConnection::sessionBus().registerObject("/BibleTime", &bibleTime);
 #endif
 
-	const int ret = app.exec();
-
-	delete bibletime_ptr;
-	return ret;
+    return app.exec();
 }
 
