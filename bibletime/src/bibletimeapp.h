@@ -20,8 +20,8 @@
   */
 class BibleTimeApp : public QApplication, public CPointers {
 public:
-	BibleTimeApp( int & argc, char ** argv );
-	virtual ~BibleTimeApp();
+    BibleTimeApp(int &argc, char **argv);
+    ~BibleTimeApp();
 
 protected:
 //	void initDCOP();
