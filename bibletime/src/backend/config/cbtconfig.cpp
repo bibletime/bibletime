@@ -7,31 +7,25 @@
 *
 **********/
 
-//BibleTime includes
 #include "cbtconfig.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/btmoduletreeitem.h"
-#include "util/cpointers.h"
-#include "util/directoryutil.h"
-#include "frontend/searchdialog/btsearchoptionsarea.h"
-#include "frontend/displaywindow/btactioncollection.h"
-
 //Qt includes
-#include <QApplication>
-#include <QString>
-#include <QStringList>
-#include <QMap>
-#include <QList>
 #include <QDebug>
-#include <QSettings>
 #include <QLocale>
+#include <QSettings>
+#include <QVariant>
 #include <QWebSettings>
 
 //Sword includes
 #include <versekey.h> //for range configuration
+
+//BibleTime includes
+#include "backend/btmoduletreeitem.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "util/cpointers.h"
+#include "util/directoryutil.h"
 
 //init statics
 QFont* CBTConfig::m_defaultFont = 0;
