@@ -1,5 +1,15 @@
+2009-08-17 Jaak Ristioja
+	* Made the verse key chooser dropdown buttons appear on hover for better toolbar layout
+	* Fixed template display problems on dark color schemes.
+
+2009-08-15 Jaak Ristioja
+	* Fixed mouse cursor vanishing problem when using the verse key chooser scroll buttons
+
 2009-08-12 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.2.beta1
+
+2009-08-09 Jaak Ristioja
+	* Fixed install manager performance issue on installing many works at once
 
 2009-08-03 Gary Holmlund
 	* Fix the Forward/backward in history toolbar buttons to work with shortcuts
