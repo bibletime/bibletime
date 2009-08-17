@@ -16,6 +16,7 @@
 #include <QWidget>
 
 #include <boost/scoped_ptr.hpp>
+#include <QTimer>
 
 
 class CLexiconKeyChooser;
@@ -32,14 +33,20 @@ public:
 	* the constructor
 	*/
 	CKeyReferenceWidget(CSwordBibleModuleInfo *, CSwordVerseKey*, QWidget *parent=0, const char *name=0);
+	~CKeyReferenceWidget();
 	bool setKey(CSwordVerseKey* key);
 	QLineEdit* textbox();
 	void setModule(CSwordBibleModuleInfo *m = 0);
+	bool eventFilter(QObject *o, QEvent *e);
 
 signals:
 	void changed(CSwordVerseKey* key);
 
 protected:
+	void enterEvent(QEvent *event);
+	void leaveEvent(QEvent *event);
+	void resizeEvent(QResizeEvent *event);
+	void resetDropDownButtons();
 	void updateText();
 
 protected slots: // Protected slots
@@ -74,6 +81,8 @@ private:
 	CScrollerWidgetSet *m_chapterScroller;
 	CScrollerWidgetSet *m_verseScroller;
 
+	QWidget *m_dropDownButtons;
+	QTimer m_dropDownHoverTimer;
 	BtDropdownChooserButton* m_bookDropdownButton;
 	BtDropdownChooserButton* m_chapterDropdownButton;
 	BtDropdownChooserButton* m_verseDropdownButton;

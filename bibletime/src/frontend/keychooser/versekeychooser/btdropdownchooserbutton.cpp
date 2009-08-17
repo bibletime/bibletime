@@ -14,15 +14,15 @@
 #include <QWheelEvent>
 #include <QDebug>
 
-const unsigned int ARROW_HEIGHT = 12;
+const unsigned int ARROW_HEIGHT = 15;
 
 BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 	: QToolButton(),
 	m_ref(ref)
 {
 	setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-	
-	setAutoRaise(true);
+
+	setAutoRaise(false);
 	setArrowType(Qt::NoArrow);
 	setFixedHeight(ARROW_HEIGHT);
 	setFocusPolicy(Qt::NoFocus);

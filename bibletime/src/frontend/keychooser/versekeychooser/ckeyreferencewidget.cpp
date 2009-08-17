@@ -21,21 +21,23 @@
 #include "util/directoryutil.h"
 
 //Qt includes
+#include <QApplication>
+#include <QDebug>
+#include <QHBoxLayout>
+#include <QLineEdit>
+#include <QEvent>
+#include <QMouseEvent>
+#include <QPixmap>
 #include <QString>
 #include <QStringList>
-#include <QEvent>
-#include <QPixmap>
-#include <QApplication>
-#include <QHBoxLayout>
 #include <QToolButton>
-#include <QDebug>
-#include <QLineEdit>
 
 
 
 CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) : 
 	QWidget(parent),
-	m_key(new CSwordVerseKey(mod))
+	m_key(new CSwordVerseKey(mod)),
+	m_dropDownHoverTimer(this)
 {
 
 	updatelock = false;
@@ -52,7 +54,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_bookScroller = new CScrollerWidgetSet(this);
 
 	m_textbox = new QLineEdit( this );
-	m_textbox->setStyleSheet("QLineEdit{margin:0px;}");
+	m_textbox->setContentsMargins(0, 0, 0, 0);
 
 	setKey(key);	// The order of these two functions is important.
 	setModule();
@@ -60,34 +62,39 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_chapterScroller = new CScrollerWidgetSet(this);
 	m_verseScroller = new CScrollerWidgetSet(this);
 
-	m_bookDropdownButton = new BtBookDropdownChooserButton(this);
-	m_chapterDropdownButton = new BtChapterDropdownChooserButton(this);
-	m_verseDropdownButton = new BtVerseDropdownChooserButton(this);
-
-	QHBoxLayout* dropdownButtonsLayout = new QHBoxLayout();
-	QVBoxLayout* editorAndButtonsLayout = new QVBoxLayout();
-	dropdownButtonsLayout->setContentsMargins(0,0,0,0);
-	editorAndButtonsLayout->setContentsMargins(0,0,0,0);
-	dropdownButtonsLayout->setSpacing(0);
-	editorAndButtonsLayout->setSpacing(0);
-	
-	dropdownButtonsLayout->addWidget(m_bookDropdownButton, 2);
-	dropdownButtonsLayout->addWidget(m_chapterDropdownButton,1);
-	dropdownButtonsLayout->addWidget(m_verseDropdownButton,1);
-	editorAndButtonsLayout->addWidget(m_textbox);
-	editorAndButtonsLayout->addLayout(dropdownButtonsLayout);
-
 	QHBoxLayout* m_mainLayout = new QHBoxLayout( this );
 	m_mainLayout->setContentsMargins(0,0,0,0);
 	m_mainLayout->setSpacing(0);
 	m_mainLayout->addWidget(clearRef);
 	m_mainLayout->addWidget(m_bookScroller);
-	m_mainLayout->addLayout(editorAndButtonsLayout);
+	m_mainLayout->addWidget(m_textbox);
 	m_mainLayout->addWidget(m_chapterScroller);
 	m_mainLayout->addWidget(m_verseScroller);
 
 
 	setTabOrder(m_textbox, 0);
+	m_dropDownButtons = new QWidget(0);
+	m_dropDownButtons->setWindowFlags(Qt::Popup);
+	m_dropDownButtons->setAttribute(Qt::WA_WindowPropagation);
+	m_dropDownButtons->setCursor(Qt::ArrowCursor);
+	QHBoxLayout *dropDownButtonsLayout(new QHBoxLayout(m_dropDownButtons));
+	m_bookDropdownButton = new BtBookDropdownChooserButton(this);
+	dropDownButtonsLayout->addWidget(m_bookDropdownButton, 2);
+	m_chapterDropdownButton = new BtChapterDropdownChooserButton(this);
+	dropDownButtonsLayout->addWidget(m_chapterDropdownButton, 1);
+	m_verseDropdownButton = new BtVerseDropdownChooserButton(this);
+	dropDownButtonsLayout->addWidget(m_verseDropdownButton, 1);
+	dropDownButtonsLayout->setContentsMargins(0, 0, 0, 0);
+	dropDownButtonsLayout->setSpacing(0);
+	m_dropDownButtons->setLayout(dropDownButtonsLayout);
+	m_dropDownButtons->hide();
+
+	m_dropDownButtons->installEventFilter(this);
+
+	m_dropDownHoverTimer.setInterval(500);
+	m_dropDownHoverTimer.setSingleShot(true);
+	connect(&m_dropDownHoverTimer, SIGNAL(timeout()),
+			m_dropDownButtons, SLOT(hide()));
 
 	QString scrollButtonToolTip(tr("Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item."));
     m_bookScroller->setToolTips(
@@ -120,6 +127,10 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	connect(m_verseScroller, SIGNAL(scroller_released()), SLOT(slotUpdateUnlock()));
 }
 
+CKeyReferenceWidget::~CKeyReferenceWidget() {
+    delete m_dropDownButtons;
+}
+
 void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m)
 {
 	if (m) //can be null
@@ -127,6 +138,48 @@ void CKeyReferenceWidget::setModule(CSwordBibleModuleInfo *m)
 		m_module = m;
 		m_key->module(m);
 	}
+}
+
+bool CKeyReferenceWidget::eventFilter(QObject *o, QEvent *e) {
+    if (o != m_dropDownButtons) return false;
+    switch (e->type()) {
+        case QEvent::Enter:
+            m_dropDownHoverTimer.stop();
+            return true;
+        case QEvent::Leave:
+            m_dropDownHoverTimer.start();
+            return true;
+        default:
+            return false;
+    }
+}
+
+void CKeyReferenceWidget::enterEvent(QEvent *) {
+    m_dropDownHoverTimer.stop();
+
+    resetDropDownButtons();
+
+    m_dropDownButtons->raise();
+    m_dropDownButtons->show();
+}
+
+void CKeyReferenceWidget::leaveEvent(QEvent *) {
+    m_dropDownHoverTimer.start();
+}
+
+void CKeyReferenceWidget::resizeEvent(QResizeEvent *event) {
+    if (m_dropDownButtons->isVisible()) {
+        resetDropDownButtons();
+    }
+    QWidget::resizeEvent(event);
+}
+
+void CKeyReferenceWidget::resetDropDownButtons() {
+    m_dropDownButtons->setParent(window());
+    int h(m_dropDownButtons->layout()->minimumSize().height());
+    QPoint topLeft(mapTo(window(), QPoint(m_textbox->x(), height())));
+    m_dropDownButtons->setGeometry(topLeft.x(), topLeft.y(),
+                                   m_textbox->width(), h);
 }
 
 void CKeyReferenceWidget::slotClearRef( )
@@ -137,7 +190,14 @@ void CKeyReferenceWidget::slotClearRef( )
 
 void CKeyReferenceWidget::updateText()
 {
-	m_textbox->setText(m_key->key());
+    QString text(m_key->key());
+    m_textbox->setText(text);
+    QFontMetrics fm(m_textbox->font());
+    int nw(m_textbox->minimumSizeHint().width() + fm.width(text));
+    if (nw > m_textbox->minimumWidth()) {
+        m_textbox->setMinimumWidth(nw);
+        m_textbox->updateGeometry();
+    }
 }
 
 bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
