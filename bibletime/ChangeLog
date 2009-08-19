@@ -1,3 +1,6 @@
+2009-08-19 Martin Gruner <mgruner@crosswire.org>
+	* Release 2.2.rc1
+
 2009-08-17 Jaak Ristioja
 	* Made the verse key chooser dropdown buttons appear on hover for better toolbar layout
 	* Fixed template display problems on dark color schemes.
