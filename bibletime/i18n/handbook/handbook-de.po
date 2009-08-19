@@ -1,10 +1,12 @@
-# #-#-#-#-#  full.po (full)  #-#-#-#-#
+# translation of handbook-de.po to Deutsch
 # Joachim Ansorg, 2003.
 # Joachim Ansorg, 2004.
 # Martin Gruner <mg.pub@gmx.net>, 2004.
 # Joachim Ansorg <info@bibetime.info>, 2005.
 # Joachim Ansorg <info@bibletime.info>, 2005.
 # Martin Gruner <mg.pub@gmx.net>, 2004, 2005.
+# Roland Teschner <rolte@gmx.net>, 2009.
+# #-#-#-#-#  full.po (full)  #-#-#-#-#
 # translation of full.po to
 # #-#-#-#-#  de.po (de)  #-#-#-#-#
 # #-#-#-#-#  full.po (full)  #-#-#-#-#
@@ -18,17 +20,17 @@
 # translation of de.po to
 msgid ""
 msgstr ""
-"Project-Id-Version: de\n"
+"Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-08-11 19:16-0400\n"
-"PO-Revision-Date: 2005-12-22 23:58+0100\n"
-"Last-Translator: Joachim Ansorg <info@bibletime.info>\n"
-"Language-Team:  <de@li.org>\n"
+"PO-Revision-Date: 2009-08-18 22:23+0200\n"
+"Last-Translator: Roland Teschner <rolte@gmx.net>\n"
+"Language-Team: Deutsch <bibletime-translations@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
-"X-Generator: KBabel 1.11\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "#-#-#-#-#  de.po (de)  #-#-#-#-#\n"
 "#-#-#-#-#  full.po (full)  #-#-#-#-#\n"
@@ -46,15 +48,13 @@ msgstr "&bibletime; einrichten"
 msgid ""
 "In this section you find an overview to configure &bibletime;, which can be "
 "found under <guimenu>Settings</guimenu> in the main menu."
-msgstr ""
+msgstr "In diesem Abschnitt finden Sie eine Übersicht, wie &bibletime; zu konfigurieren ist. Sie können das Menü <guimenu>Einstellungen</guimenu> im Hauptmenü finden."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:7
-#, fuzzy
 msgid "Configure &bibletime; Dialog"
-msgstr "&bibletime; konfigurieren"
+msgstr "Dialog &bibletime; konfigurieren"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:8
-#, fuzzy
 msgid ""
 "The &bibletime; user interface can be customized in many ways depending on "
 "your needs. You can access the configuration dialog by selecting "
@@ -67,8 +67,7 @@ msgstr ""
 "<guimenuitem>&bibletime; einrichten</guimenuitem>. gelangen."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:19
-msgid ""
-"The startup behavior can be customized. Select from the following options:"
+msgid "The startup behavior can be customized. Select from the following options:"
 msgstr ""
 "Das Startverhalten kann angepasst werden. Wählen Sie aus den folgenden "
 "Optionen aus:"
@@ -78,15 +77,13 @@ msgid "Show startup logo"
 msgstr "Startlogo anzeigen"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:26
-#, fuzzy
 msgid ""
 "Display templates define the rendering of text (colors, size etc.). Various "
 "built-in templates are available. If you select one, you will see a preview "
 "on the right pane."
 msgstr ""
-"Anzeigenstile definieren das Aussehen des Textes (Farben, Größe, usw.). Es "
-"sind mehrere eingebaute Stile verfügbar. Nach Auswahl eines Stils wird im "
-"rechten Abschnitt eine Vorschau angezeigt,"
+"Anzeigenvorlagen definieren das Aussehen des Textes (Farben, Größe, usw.). Es "
+"sind mehrere eingebaute Vorlagen verfügbar. Nach Auswahl einer Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:34
 msgid ""
@@ -105,19 +102,17 @@ msgid ""
 "override this font if necessary. Some languages require special fonts to be "
 "displayed correctly, and this dialog allows you to specify a custom font for "
 "each language."
-msgstr ""
+msgstr "Standardmäßig verwendet &bibletime; die System-Standardschrift zur Anzeige. Sie können diese Schrift bei Bedarf aufheben. Einige Sprachen erfordern spezielle Schriftarten, um korrekt dargestellt werden zu können und dieser Dialog erlaubt Ihnen, spezielle Schriftarten für jede Sprache zu spezifizieren."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:48
-#, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
-msgstr "Optionendialog - Schriften"
+msgstr "<phrase>Optionendialog - Schriften</phrase>"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:51
 msgid "The Options dialog - Fonts."
 msgstr "Der Optionendialog - Schriften."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:54
-#, fuzzy
 msgid ""
 "&bibletime; can now use all supported fonts.  As long as the works you are "
 "interested in display correctly nothing needs to be done here. If a work "
@@ -125,36 +120,27 @@ msgid ""
 "you know that the standard display font does not contain the characters used "
 "in this work."
 msgstr ""
-"&bibletime; kann alle von KDE/Qt unterstützten Schriftarten benutzen. "
-"Solange die für sie relevanten Werke korrekt dargestellt werden muss nichts "
+"&bibletime; kann nun alle unterstützten Schriftarten benutzen. "
+"Solange die für sie relevanten Werke korrekt dargestellt werden, muss hier nichts "
 "unternommen werden. Wenn ein Werk jedoch nur als Folge von Fragezeichen "
-"(??????) oder leeren Kästchen dargestellt wird, dann wissen Sie nun, dass "
-"die Standard-Schriftart von KDE die in diesem Werk benutzten Zeichen nicht "
+"(??????) oder leeren Kästchen dargestellt wird, dann erkennen Sie, dass "
+"die Standard-Schriftart die in diesem Werk benutzten Zeichen nicht "
 "enthält."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:61
-#, fuzzy
 msgid ""
 "To correct this, choose this work's language from the drop down menu. Select "
 "the use custom font checkbox. Now select a font. For example, a font that "
 "supports many languages is Code2000. If no installed font can display the "
 "work you are interested in, try installing the localization package for that "
 "language."
-msgstr ""
-"Um dies zu korrigieren wählen Sie bitte die Sprache dieses Werkes aus der "
-"Box aus. Wählen Sie die &quot;Benutzerdefinierte Schriftart verwende&quot; "
-"Box aus und wählen Sie anschließend eine Schriftart aus. So ist zum Beispiel "
-"die Schriftart Code2000 eine, die viele verschiedene Sprachen unterstützt. "
-"Wenn keiner der installierten Schriftarten das für sie interessante Werk "
-"darstellen kann, so versuchen Sie bitte, das entsprechende &kde; Sprach-"
-"Lokalisierungspaket zu installieren."
+msgstr "Um dies zu korrigieren, wählen Sie bitte die Sprache dieses Werkes aus dem Aufklappmenü aus. Wählen Sie das Kontrollkästchen &quot;Benutzerdefinierte Schrift verwenden&quot; aus und wählen Sie anschließend eine Schriftart aus. So ist zum Beispiel die Schriftart Code2000 eine, die viele verschiedene Sprachen unterstützt. Wenn keiner der installierten Schriftarten das für sie interessante Werk darstellen kann, so versuchen Sie bitte, das entsprechende Lokalisierungspaket für diese Sprache zu installieren."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:68
 msgid "Installing fonts"
 msgstr "Schriftarten installieren"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:69
-#, fuzzy
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
 "handbook. For further information you might want to refer to the <ulink url="
@@ -162,16 +148,9 @@ msgid ""
 "ulink>."
 msgstr ""
 "Detaillierte Anweisungen zur Schriftarten-Installation gehen über den Umfang "
-"dieses Handbuches hinaus. &kde;s <ulink url=\"help:/kcontrol/index.html"
-"\">Kontrollzentrum</ulink> enthält ein exzellentes und einfach zu "
-"benutzendes Modul zur Installation von Schriftarten. Bitte lesen Sie <ulink "
-"url=\"help:/kcontrol/kcmfontinst/index.html\">dessen Dokumentation</ulink>. "
-"Für weitergehende Informationen könnten Sie auch das<ulink url=\"http://www."
-"ibiblio.org/pub/Linux/docs/HOWTO/other-formats/html_single/Unicode-HOWTO."
-"html#toc4\"> Unicode HOWTO</ulink> lesen."
+"dieses Handbuches hinaus. Für weitergehende Informationen können Sie auch das <ulink url=\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode-HOWTO</ulink> lesen."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:75
-#, fuzzy
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
 "faster than with a large font like <trademark class=\"registered\">Bitstream "
@@ -190,22 +169,20 @@ msgid "Fonts can be obtained from a number of sources:"
 msgstr "Schriftarten können von unterschiedlichen Quellen bezogen werden:"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:86
-#, fuzzy
 msgid "Your *nix distribution."
-msgstr "Ihre Linux-Distribution"
+msgstr "Ihre *nix-Distribution."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:89
 msgid "Your distribution's localization packages."
 msgstr "Die Sprachpakete ihrer Distribution."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:92
-#, fuzzy
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
 "installation on the same computer."
 msgstr ""
 "Eine bestehende <trademark class=\"registered\">Microsoft Windows</"
-"trademark> Installation auf dem gleichen Computer."
+"trademark>-Installation auf dem gleichen Computer."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:98
 msgid "A font collection, such as are available from Adobe or Bitstream."
@@ -218,7 +195,6 @@ msgid "Online font collections."
 msgstr "Sammlungen von Schriftarten im Internet."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:105
-#, fuzzy
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
 "fonts are available at no charge. None of available fonts includes all "
@@ -226,8 +202,8 @@ msgid ""
 "fonts for different languages."
 msgstr ""
 "Unicode Schriftarten unterstützen mehr Zeichen als andere, und einige dieser "
-"Schriftarten sind kostenlos erhältlich. Keine verfügbare Schriftart enthält "
-"alle Zeichen des Unicode Standards. Sie müssen also evtl. verschiedene "
+"Schriftarten sind kostenlos erhältlich. Keine der verfügbaren Schriftarten enthält "
+"alle Zeichen des Unicode-Standards. Sie müssen also evtl. verschiedene "
 "Schriftarten für verschiedene Sprachen benutzen."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:111
@@ -235,21 +211,18 @@ msgid "Unicode Fonts"
 msgstr "Unicode Schriftarten"
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:119
-msgid ""
-"Perhaps the best free Unicode font, covering a wide range of characters."
+msgid "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr ""
 "Vielleicht die beste Unicode-Schriftart, sie deckt einen großen "
 "Zeichenbereich ab."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:127
-#, fuzzy
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
-msgstr "Exzellente Schriftarten des Summer Institute of Linguistics."
+msgstr "Exzellente Unicode-Schriftarten des Summer Institute of Linguistics."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:135
-#, fuzzy
 msgid "A new free Unicode font initiative."
-msgstr "Eine neue Initiative für eine freie Unicode-Schriftart."
+msgstr "Eine neue Initiative für freie Unicode-Schriftarten."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:142
 msgid "Several fonts available from the Crosswire Bible Society Ftp site."
@@ -286,6 +259,10 @@ msgid ""
 "url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
 "ranges and the Unicode fonts that support them</ulink>)."
 msgstr ""
+"Es gibt gute Listen mit Unicode-Schriftarten im Netz, so z.B. eine von Christoph Singer (<ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), oder eine von Alan Wood (<ulink "
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:184
@@ -297,7 +274,7 @@ msgid ""
 "used to display the content of cross references in the Bible. When you hover "
 "over them, the Mag will show the content of the verses referred to, "
 "according to the standard Bible you specified."
-msgstr ""
+msgstr "Viele Funktionen, die vom Sword-Backend zur Verfügung gestellt werden, können nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften sind im rechten Dialog dokumentiert. Ihnen ist außerdem ermöglicht, Standardwerke zu definieren, wenn kein bestimmtes Werk in der Referenz spezifiziert ist. Zum Beispiel wird die Standard-Bibel zur Darstellung des Inhalts von Kreuzverweisen in der Bibel herangezogen. Wenn Sie über sie fahren, wird die Lupe den Versinhalt anzeigen, auf den Bezug genommen wird, gemäß der Standard-Bibel, die Sie spezifiziert haben."
 
 #: docs/handbook/en/docbook/hdbk-config.docbook:198
 msgid ""
@@ -321,12 +298,10 @@ msgid "Introduction"
 msgstr "Einleitung"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:4
-#, fuzzy
 msgid "About &bibletime;"
-msgstr "Über BibleTime"
+msgstr "Über &bibletime;"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:5
-#, fuzzy
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
@@ -336,16 +311,12 @@ msgid ""
 "flagship product of the <ulink url=\"http://www.crosswire.org\">Crosswire "
 "Bible Society</ulink>."
 msgstr ""
-"&bibletime; ist ein mächtiges Bibelstudien-Werkzeug, geschrieben für die "
-"&kde;Umgebung auf dem Linux Betriebssystem. Es basiert auf der <ulink url="
-"\"http://www.crosswire.org\">Sword</ulink> Bibliothek, welche die "
-"&bibletime; zugrundeliegende Funktionalität zur Verfügung stellt, zum "
-"Beispiel um Bibeltexte anzuschauen, darin zu suchen, usw. Sword ist das "
+"&bibletime; ist ein Bibelstudien-Werkzeug, das verschiedene Textarten und Sprachen unterstützt. Sogar große Anzahlen an Werk-Modulen können einfach installiert und verwaltet werden. Es basiert auf der <ulink url="
+"\"http://www.crosswire.org/sword\">Sword</ulink>-Bibliothek, welche die zugrundeliegende Backend-Funktionalität für &bibletime; zur Verfügung stellt, so zum Beispiel um Bibeltexte anzuschauen, darin zu suchen, usw. Sword ist das "
 "Hauptprodukt der <ulink url=\"http://www.crosswire.org\">Crosswire "
 "Bibelgesellschaft</ulink>."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:14
-#, fuzzy
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
 "supported by the Sword project. Complete information on the supported "
@@ -353,11 +324,10 @@ msgid ""
 "sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
 "Crosswire Bible Society."
 msgstr ""
-"&bibletime; wurde konzipiert, um mit Werken zu arbeiten, die in einem Format "
-"vorliegen, die vom Sword-Projekt unterstützt werden. Vollständige "
+"&bibletime; wurde konzipiert, um mit Werken zu arbeiten, die in einem der Formate vorliegen, die vom Sword-Projekt unterstützt werden. Vollständige "
 "Informationen über die unterstützten Dokumentenformate sind auf den <ulink "
 "url=\"http://www.crosswire.org/sword/develop/index.jsp\">Entwicklerseiten</"
-"ulink> des Sword Projektes Crosswire Bibelgesellschaft zu finden."
+"ulink> des Sword-Projektes der Crosswire Bibelgesellschaft zu finden."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
 msgid "Available works"
@@ -384,28 +354,25 @@ msgid ""
 "include not only modern versions, but also ancient texts like the Codex "
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
 "is the most advanced section in the library of the Sword project."
-msgstr ""
+msgstr "Der vollständie Bibeltext mit optionalen Dingen wie Strong-Nummern, Kopfzeilen und/oder Fußzeilen im Text. Bibeln sind in vielen verschiedenen Sprachen verfügbar und nicht nur auf moderne Versionen beschränkt, sondern umfassen auch altertümliche Texte wie den Codex Leningradensis (\"WLC\", hebräisch), und die Septuaginta (\"LXX\", griechisch). Dies ist der fortgeschrittenste Abschnitt in der Bibliothek des Sword-Projektes."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:40
 msgid "Books"
 msgstr "Bücher"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:42
-#, fuzzy
 msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
 "\"Josephus: The Complete Works\""
 msgstr ""
-"Die Sammlung vorhandener Bücher umfasst unter anderem &quot;Imitation of "
-"Christ&quot;, &quot;Enuma Elish&quot;, and &quot;Josephus: The Complete "
-"Works&quot;"
+"Zu den verfügbaren Büchern gehören \"Imitation of "
+"Christ\", \"Enuma Elish\" und \"Josephus: Die vollständigen Werke\""
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:47
 msgid "Commentaries"
 msgstr "Kommentare"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:49
-#, fuzzy
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
 "Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
@@ -413,10 +380,8 @@ msgid ""
 "\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
 "sections of the Bible."
 msgstr ""
-"Zu den verfügbaren Kommentaren gehören Klassiker wie John Wesleys Notes on "
-"the Bible und Luthers Commentary on Galatians. Mit dem "
-"<emphasis>Persönlichen</emphasis> commentary können Sie Ihre eigenen Notizen "
-"zu Bibelversen eingeben."
+"Zu den verfügbaren Kommentaren gehören Klassiker wie John Wesleys \"Notes on the Bible\", Matthew Henrys Kommentar und Luthers \"Kommentar über Galater\". \" Mit dem <emphasis>Persönlichen</emphasis> Kommentar sind Sie in der Lage <link linkend="
+"\"hdbk-op-parts-desk-write\">Ihre eigenen Notizen</link> über Bibelabschnitte zu erstellen."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:58
 msgid "Daily devotionals"
@@ -435,24 +400,19 @@ msgid "Lexicons/Dictionaries"
 msgstr "Lexika / Wörterbücher"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:68
-#, fuzzy
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
 "Driver-Briggs Hebrew Lexicon and the International Standard Bible "
 "Encyclopaedia. Dictionaries available include Strong's Hebrew Bible "
 "Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
 "Dictionary of the English Language 1913, Nave's Topical Bible."
-msgstr ""
-"Zu den verfügbaren Wörterbüchern gehören: Strong's Hebrew Bible Dictionary, "
-"Strong's Greek Bible Dictionary, Webster's Revised Unabridged Dictionary of "
-"the English Language 1913, Nave's Topical Bible."
+msgstr "Zu den verfügbaren Wörterbüchern gehören: Robinsons \"Morphological Analysis Codes\", Brown-Driver-Briggs Hebräisch-Lexikon und die Enzyklopädie der International Standard Bible. Zu den erhältlichen Wörterbüchern gehören u.a. Strongs \"Hebrew Bible Dictionary\", Strongs \"Greek Bible Dictionary\", Websters \"Revised Unabridged Dictionary of the English Language 1913\" und Naves \"Topical Bible\"."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:80
 msgid "Motivation"
 msgstr "Motivation"
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:81
-#, fuzzy
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
 "relationship with Him. We have striven to make this a powerful, quality "
@@ -461,9 +421,7 @@ msgid ""
 msgstr ""
 "Unser Verlangen ist es, Gott zu dienen und unseren Teil dazu beizutragen, "
 "dass andere in ihrer Beziehung mit IHM wachsen. Wir haben uns bemüht dies zu "
-"einem mächtigen und hochwertigen Programm zu machen, das jedoch gleichzeitig "
-"einfach und intuitiv zu bedienen ist. Wir möchten damit Gott ehren, da Er "
-"die Quelle aller guten Dinge ist."
+"einem mächtigen und hochwertigen Programm zu machen, das jedoch gleichzeitig einfach und intuitiv zu bedienen ist. Es ist unser Bedürfnis, dass Gott gepriesen wird, da Er die Quelle aller guten Dinge ist."
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:87
 msgid "James 1:17, NASB"
@@ -493,12 +451,11 @@ msgstr "Programmüberblick"
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:5
 msgid "This is what a typical &bibletime; session looks like:"
-msgstr ""
+msgstr "So sieht eine typische &bibletime;-Sitzung aus:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:11
-#, fuzzy
 msgid "<phrase>The &bibletime; application window</phrase>"
-msgstr "Elemente des &bibletime; Fensters"
+msgstr "<phrase>Das &bibletime;-Applikations-Fenster</phrase>"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:14
@@ -511,7 +468,7 @@ msgid ""
 "then the Mag will display the actual content of the footnote. The toolbar "
 "gives you quick access to important functions, and the Desk on the right "
 "side is where you do your real work."
-msgstr ""
+msgstr "Sie können leicht die verschiedenen Abschnitte des Applikations-Fensters erkennen. Das Fenster oben links erlaubt das Öffnen installierter Werke im Bücherregal-Reiter. Mit dem Lesezeichen-Reiter können Sie Ihre Lesezeichen verwalten. Das kleine \"Lupen\"-Fenster unterhalb des Bücherregals zeigt in Dokumenten eingebettete Extra-Informationen an. Wenn Sie beispielsweise Ihre Maus über Fußnoten-Markierungen bewegen, wird das Lupenfenster den tatsächlichen Inhalt der Fußnote anzeigen. Die Werkzeugleiste erlaubt Ihnen den schnellen Zugriff auf wichtige Funktionen und auf dem Pult auf der rechten Seite verrichten Sie Ihre eigentliche Arbeit."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:25
 msgid ""
@@ -572,14 +529,13 @@ msgid ""
 "you want to open, and it will be opened for reading at the specified "
 "location. You can also drag a verse reference into an existing read window, "
 "then it will jump to the specified location."
-msgstr ""
+msgstr "Wenn Sie ein bestimmtes Werk lesen und ein anderes Werk bezüglich des aktuellen Textabschnittes öffnen möchten, können Sie einen Kurzbefehl verwenden. Klicken Sie einfach mit der <mousebutton>linken Maustaste</mousebutton> auf den Vers-/Abschnitts-Verweis (der Zeiger wird zur Hand) und ziehen Sie ihn zum Bücherregal. Lassen Sie auf dem zu öffnenden Werk los und es wird zum Lesen an der spezifizierten Stelle geöffnet. Außerdem können Sie einen Versverweis in ein bereits existierendes Lesefenster ziehen, es wird dann zur gewünschten Stelle gesprungen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:62
 msgid "Additional information about works"
 msgstr "Weitere Informationen über Werke"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:63
-#, fuzzy
 msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
@@ -591,18 +547,9 @@ msgid ""
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
 "ulink> on the Crosswire Bible Society web site."
 msgstr ""
-"Zwei weitere Funktionen sind durch Klicken mit der <mousebutton>rechten</"
-"mousebutton> Maustaste auf den Modulnamen verfügbar. \"Ãber dieses Modul\" "
-"öffnet ein Fenster mit Informationen über Copyright und anderen wichtige "
-"Eigenschaften dieses Dokumentes. \"Dieses Modul entschlüsseln\" öffnet einen "
-"kleinen Dialog für verschlüsselte Dokumente. Dies erlaubt es den Besitzern "
-"des Schlüssels, diesen einzugeben, um das Modul zu entschlüssenl und damit "
-"lesbar zu machen. Die Crosswire Bible Society muss Module verschlüsseln, bis "
-"entweder der Copyrightinhaber die Erlaubnis für die Weitergabe des Moduls "
-"erteilt, oder der Text in Public Domain übergegangen ist (Verfallen des "
-"Copyrights). <ulink url=\"http://www.crosswire.org/sword/modules/aboutlocked."
-"jsp\">Lesen Sie die Informationen über verschlüsselte Module auf den Seiten "
-"der Crosswire Bible Society</ulink>."
+"Wenn Sie mit der <mousebutton>rechten Maustaste</mousbutton> auf das Symbol eines Werkes klicken, öffnet sich Ihnen ein Menü mit weiteren für das Werk relevanten Einträgen. <guimenuitem>\"Über...\"</guimenuitem> öffnet ein Fenster mit einer Vielzahl an interessanten Informationen über das gewählte Werk. <guimenuitem>\"Entschlüsseln...\"</guimenuitem> öffnet ein kleines Dialogfenster für verschlüsselte Dokumente, in dem Sie den Entschlüsselungs-Schlüssel für den Zugriff eingeben können. Für weitere Informationen über verschlüsselte Werke, lesen Sie bitte <ulink url="
+"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">diese Seite</"
+"ulink> auf der Website der Crosswire Bibelgesellschaft."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:79
 #: docs/handbook/en/docbook/hdbk-operation.docbook:205
@@ -610,7 +557,6 @@ msgid "Searching in works"
 msgstr "In Werken suchen"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:80
-#, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
@@ -619,15 +565,7 @@ msgid ""
 "search dialog. You will be searching in all of these documents. A complete "
 "description of the operation of the search features can be found <link "
 "linkend=\"hdbk-op-search\">here</link>."
-msgstr ""
-"Sie können in einem Modul suchen, indem Sie mit der <mousebutton>rechten</"
-"mousebutton> Maustaste auf den Modulnamen in der Liste der Module klicken "
-"und \"Ausgewählte Module durchsuchen...\" auswählen. Durch Drücken von "
-"Umschalt- und Klicken auf andere Module können Sie mehr als eins auswÃ€hlen. "
-"Befolgen Sie die gleiche Prozedur um die Module zu durchsuchen. Sie suchen "
-"dann in allen gewählten Dokumenten. Eine vollständige Beschreibung der "
-"Bedienung der Suchfunktionen kann <link linkend=\"hdbk-op-search\">hier</"
-"link> gefunden werden."
+msgstr "Sie können ein Werk durchsuchen, indem Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf sein Symbol klicken und <guimenuitem>\"Suche in...\"</guimenuitem> auswählen. Indem Sie &Shift; und auf andere Werke klicken, können Sie mehr als ein Werk auswählen. Dann folgen Sie demselben Ablauf, um ein Such-Dialogfenster zu öffnen. Sie werden so in jedem dieser Dokumente suchen. Eine vollständige Beschreibung der Sucheigenschaften können Sie <link linkend=\"hdbk-op-search\">hier</link> finden."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:93
 msgid "Working with bookmarks"
@@ -641,7 +579,7 @@ msgid ""
 "guimenuitem> to create a new bookmark subfolder. You can use normal drag "
 "&amp; drop functions to drag verse references from read windows or search "
 "results to the bookmark folder, and to rearrange bookmarks between folders."
-msgstr ""
+msgstr "Klicken Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf den Lesezeichen-Reiter im Bücherregal und wählen Sie <guimenuitem>\"Neuer Ordner\"</guimenuitem> aus, um ein neues Unterverzeichnis zu erstellen. Sie können normale Drag&amp;Drop-Funktionen nutzen, um Versverweise aus Lesefenstern oder Suchergebnissen zum Lesezeichen-Ordner zu ziehen und um Lesezeichen zwischen Verzeichnissen neu anzuordnen."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:108
@@ -651,16 +589,13 @@ msgid ""
 "folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
 "guimenuitem>. This will bring up a dialog box for you to save the bookmark "
 "collection. You can import bookmarks in a similar way."
-msgstr ""
+msgstr "Außerdem ist es Ihnen möglich, Lesezeichen anderer Personen zu importieren sowie eigene Lesezeichen zu exportieren, um sie mit anderen zu teilen. Um dies zu tun, öffnen Sie das <guimenuitem>Kontextmenü</guimenuitem> des Lesezeichen-Ordners wie oben beschrieben und wählen Sie <guimenuitem>\"Aus Verzeichnis exportieren...\"</guimenuitem>. Dies wird ein Dialogfenster öffnen, mit dem Sie die Lesezeichen-Sammlung abspeichern können. Das Importieren von Lesezeichen funktioniert in der gleichen Weise."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:116
-#, fuzzy
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton> on folders and "
 "bookmarks to change their names and descriptions."
-msgstr ""
-"Sie können mit dem <mousebutton>rechten</mousebutton> auf Ordner und "
-"Lesezeichen klicken, um die Namen und Beschreibungen zu ändern."
+msgstr "Auch können Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf Ordner und Lesezeichen klicken, um ihre Namen und Beschreibungen zu ändern."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:123
 msgid "The Mag(nifying glass)"
@@ -685,7 +620,6 @@ msgid "The Desk"
 msgstr "Die Arbeitsfläche"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:135
-#, fuzzy
 msgid ""
 "The Desk is where the real work with &bibletime; takes place. Here you can "
 "open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
@@ -693,11 +627,10 @@ msgid ""
 "commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
 "link>)."
 msgstr ""
-"Auf der Arbeitsfläche findet die tatsächliche Arbeit mit &bibletime; statt. "
+"Auf der Arbeitsfläche findet die eigentliche Arbeit mit &bibletime; statt. "
 "Hier können Sie Werke aus dem Bücherregal öffnen, sie lesen, darin <link "
 "linkend=\"hdbk-op-search\">suchen</link> und sogar ihre persönlichen "
-"Anmerkungen im persönlichen Kommentar speichern (siehe <link linkend=\"hdbk-"
-"op-parts-desk-write\">unten</link>)."
+"Anmerkungen im persönlichen Kommentar speichern (siehe <link linkend=\"hdbk-op-parts-desk-write\">unten</link>)."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:143
@@ -709,6 +642,8 @@ msgid ""
 "read window is connected to, as well as history buttons like the ones that "
 "you know from your browser."
 msgstr ""
+"Wie wir <link linkend=\"hdbk-op-parts-bookshelf-open\">bereits gesehen</"
+"link> haben, können Sie Werke zum Lesen leicht duch Klicken auf ihr Symbol im Bücherregal öffnen. Ein Lesefenster wird sich auf der Arbeitsfläche öffnen. Jedes Lesefenster hat seine eigene Werkzeugleiste. Dort finden Sie Werkzeuge, um innerhalb des Werkes, auf das sich das Lesefenster bezieht, zu navigieren. Außerdem finden sich dort Verlaufsknöpfe in der Art, wie Sie sie von Ihrem Browser her gewohnt sind."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:154
 msgid "Read window placement"
@@ -725,26 +660,23 @@ msgid ""
 "this, you have to select one of the automatic placement modes available at "
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> </menuchoice>. Just try it out, it's simple and works."
-msgstr ""
+msgstr "Selbstverständlich können Sie mehrere Werke gleichzeitig öffnen. Es gibt verschiedene Möglichkeiten, die Lesefenster auf der Arbeitsfläche anzuordnen. Schauen Sie sich ruhig mal das <guimenu>Fenster</guimenu>-Menü im Hauptmenü an. Dort sehen Sie, dass Sie entweder die Fensteranordnung vollständig selbst kontrollieren oder &bibletime; die automatische Anordnung überlassen können. Um letzteres zu erreichen, wählen Sie eines der verfügbaren automatischen Anordnungsarten in <menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</guimenuitem> </menuchoice> aus. Probieren Sie's einfach aus, es ist leicht und funktioniert."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:170
 msgid "Editing your own commentary"
 msgstr "Bearbeiten Sie ihren eigenen Kommentar"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:171
-#, fuzzy
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
 "install a certain work from the library of the <ulink url=\"http://www."
 "crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
 "\"Personal commentary\"."
 msgstr ""
-"Der persönliche Kommentar ist ein Sword Modul. Wenn Sie es nicht in der "
-"Hauptgruppe findenfinden, dann laden Sie es von der<ulink url=\"http://www."
-"crosswire.org\">Crosswire Bible Society</ulink> herunter."
+"Um Ihre eigenen Kommentare über Bibelabschnitte zu speichern, müssen Sie ein bestimmtes Werk von der Bibliothek der <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bibelgesellschaft</ulink> installieren. Dieses Werk heißt \"Persönlicher Kommentar\"."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:177
-#, fuzzy
 msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
 "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
@@ -754,37 +686,27 @@ msgid ""
 "this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
 "(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
 "editor)."
-msgstr ""
-"Wenn der perönliche Kommentar mit dem <mousebutton>linken</mousebutton> "
-"Mausknopf geöffnet wurde, wird er im nur-Lesen Modus geöffnet. Wenn Sie "
-"Einträge in den persönlichen Kommentar machen möchten, dann gibt ihnen ein "
-"Klick mit dem <mousebutton>rechten</mousebutton> Mausknopf auf den "
-"<menuchoice>persönlichen Kommentar</menuchoice> ihnen die Auswahl zwischen "
-"einem reinen Text- und einem HTML-Editor."
+msgstr "Wenn Sie den persönlichen Kommentar durch Klicken auf sein Symbol im Bücherregal mit der <mousebutton>linken Maustaste</mousebutton> öffnen, wird dieser im Nur-Lese-Modus geöffnet. Es wird Ihnen nicht möglich sein, ihn in diesem Modus zu editieren. Falls Sie Anmerkungen zu Ihrem persönlichen Kommentar hinzufügen möchten, müssen Sie diesen mit der <mousebutton>rechten Maustaste</mousebutton> öffnen und dann <guimenu>Bearbeiten</guimenu> und dann entweder <guimenuitem>Reintext</guimenuitem> (Quellcode-Editor) oder <guimenuitem>HTML</guimenuitem> (simpler WYSIWYG-GUI-Editor) auswählen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:190
-#, fuzzy
 msgid ""
 "If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
 "deactivated, please check if you have write permission for the files of the "
 "personal commentary."
-msgstr ""
-"Wenn der Editor die Einträge nicht abspeichert, überprüfen Sie bitte, ob Sie "
-"Schreibrechte für die Dateien des persönlichen Kommentars haben."
+msgstr "Falls <menuchoice> <guimenu>Bearbeiten</guimenu> </menuchoice> deaktiviert ist, überprüfen Sie, ob sie Schreibberechtigung für diese Dateien des persönlichen Kommentars besitzen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:198
-#, fuzzy
 msgid ""
 "Drag &amp; drop works here. Drop a verse reference and the text of the verse "
 "will be inserted."
 msgstr ""
-"Hier funktioniert Drag&amp;Drop. Lassen Sie hier einen Versverweis fallen um "
+"Hier funktioniert Drag&amp;Drop. Lassen Sie hier einen Versverweis fallen, um "
 "den Text des Verses einzufügen."
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:208
 msgid "Searching text in an open read window"
-msgstr ""
+msgstr "Nach Text in einem geöffneten Lesefenster suchen"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:209
@@ -796,14 +718,13 @@ msgid ""
 "<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
 "\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how you can "
 "search in entire works."
-msgstr ""
+msgstr "Sie können nach einem Wort oder Ausdruck im offenen Lesefenster (z.B. in dem Bibel-Kapitel, das Sie gerade lesen) suchen, ganz wie Sie es von anderen Programmen her gewohnt sind. Diese Funktion kann entweder durch Klicken mit der <mousebutton>rechten Maustaste</mousebutton> und Auswahl von <guimenuitem>Finden...</guimenuitem>, oder durch Anwenden des Kurzbefehls <keycombo action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo> erreicht werden. Lesen Sie weiter, um zu erfahren, wie Sie in ganzen Werken suchen können."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:221
 msgid "Accessing the search dialog"
 msgstr "Auf den Suchdialog zugreifen"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:222
-#, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
@@ -811,14 +732,7 @@ msgid ""
 "&Shift; or &Ctrl; and clicking on other work's names you can select more "
 "than one. Then follow the same procedure to open the search dialog. You will "
 "be searching in all of these works at the same time."
-msgstr ""
-"Sie können in einem Dokument suchen, indem Sie mit der <mousebutton>rechten</"
-"mousebutton> Maustaste auf den Dokumentennamen innerhalb der "
-"<guimenu>Hauptgruppe</guimenu> klicken und dann <guimenuitem>Durchsuche "
-"gewählte Module</guimenuitem> auswählen. Durch gleichzeitiges Drücken von "
-"Umschalt- oder Strg  und Auswählen von anderen Modulnamen können mehrer "
-"ausgewählt werden. Gehen Sie in der selben Art und Weise vor, um in allen "
-"gewählten Modulen zu suchen."
+msgstr "Sie können in einem Werk suchen, indem Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf das Symbol im <guimenu>Bücherregal</guimenu> klicken und <guimenuitem>Suche in...</guimenuitem> auswählen. Indem Sie &Shift; oder &Ctrl; gedrückt halten und auf Namen anderer Werke klicken, ist eine Auswahl mehrerer Werke möglich. Befolgen Sie denselben Ablauf, um den Suchdialog zu öffnen. Sie werden dann in jedem dieser Werke gleichzeitig suchen."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:232
@@ -826,49 +740,38 @@ msgid ""
 "You can also access the search dialog by clicking on <menuchoice> "
 "<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
 "the appropriate entry."
-msgstr ""
+msgstr "Sie erreichen den Suchdialog außerdem, indem Sie auf <menuchoice> <guimenu>Suche</guimenu> </menuchoice> im Hauptmenü klicken und den entsprechenden Eintrag auswählen."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:238
 msgid ""
 "A third possibility to start searches is to click on the search symbol in an "
 "open read window."
-msgstr ""
+msgstr "Eine dritte Möglichkeit, Suchen zu starten, ist, auf das Suchsymbol in einem offenen Lesefenster zu klicken."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:243
-#, fuzzy
 msgid "Search configuration"
-msgstr "Suchbereich-Einstellung"
+msgstr "Such-Konfiguration"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:245
 msgid "Search Text Dialog Options Tab"
 msgstr "Suchtext Einstellungen\t"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:253
-#, fuzzy
 msgid "Selecting works"
-msgstr "Einstellungen"
+msgstr "Werke auswählen"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:254
-#, fuzzy
 msgid ""
 "At the top of the options tab you will find <guibutton>Choose</guibutton>"
 "(works). If you would like to search in multiple works, click on this button "
 "and you will be offered a menu where you can select the works you want to "
 "search in."
-msgstr ""
-"Ganz oben im Abschnitt \"Einstellungen\" finden die den Knopf "
-"<guibutton>Module wählen</guibutton>, mit den bereits gewählten Modulen "
-"darunter. Wenn Sie weitere Module durchsuchen möchten, klicken Sie auf "
-"<guibutton>Module wählen</guibutton>, es öffnet sich ein Dialog mit allen "
-"durchsuchbaren Modulen. Wählen Sie Module mit einem Klick auf die Box aus, "
-"dann klicken Sie auf den Knopf <guibutton>Gewählte Module benutzen</"
-"guibutton>."
+msgstr "Oben im Optionen-Reiter finden Sie <guibutton>Auswählen...</guibutton>. Falls Sie in mehreren Werken suchen möchten, klicken Sie auf diesen Knopf und es wird sich Ihnen ein Menü auftun, in dem Sie die zu durchsuchenden Werke wählen können."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:261
-#, fuzzy
 msgid "Using Search Scopes"
-msgstr "Suchbereich-Einstellung"
+msgstr "Suchbereiche verwenden"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:262
@@ -877,12 +780,12 @@ msgid ""
 "selecting one of the predefined scopes from the list in <guimenu>Search "
 "scope</guimenu>. You can define your own search ranges by clicking the "
 "<guibutton>Setup ranges</guibutton> button."
-msgstr ""
+msgstr "Sie können nun den Suchbereich auf bestimmte Bibelabschnitte eingrenzen, indem Sie einen der vordefinierten Suchbereiche aus der Liste <guimenu>Bereich:</guimenu> auswählen. Desweiteren können Sie Ihre eigenen Suchbereiche festlegen, indem Sie auf <guibutton>Einrichten...</guibutton> klicken."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:270
 msgid "Basic Search Syntax Introduction"
-msgstr ""
+msgstr "Grundlegende Einführung in die Suchsyntax"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:271
@@ -890,7 +793,7 @@ msgid ""
 "Enter search terms separated by spaces. By default the search function will "
 "return results that match any of the search terms (OR). To search for all "
 "the terms separate the terms by AND."
-msgstr ""
+msgstr "Geben Sie Suchtermini getrennt von Leerzeichen ein. Standardmäßig wird die Suchfunktion Ergebnisse zurückliefern, die auf jeden der Suchtermini zutreffen (OR). Um nach allen Suchtermini zu suchen, trennen Sie sie mit AND."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:275
@@ -898,7 +801,7 @@ msgid ""
 "You can use wildcards: '*' matches any sequence of characters, while '?' "
 "matches any single character. The use of brackets allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
-msgstr ""
+msgstr "Sie können Platzhalter verwenden. '*' steht für jede Zeichensequenz, während '?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern erlaubt Ihnen das Gruppieren der Suchbegriffe, z.B. '(Jesus OR Geist) AND Gott'."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:279
@@ -906,67 +809,61 @@ msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term. For example, to search for the Strong's "
 "number H8077, use 'strong:H8077'."
-msgstr ""
+msgstr "Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt von einem ':' und dem Suchbegriff ein. Wollen Sie zum Beispiel nach der Strong-Nummer H8077 suchen, benutzen Sie 'strong:H8077'."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:283
-#, fuzzy
 msgid "Available text types:"
-msgstr "Vorhandene Werke"
+msgstr "Verfügbare Textarten:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:285
-#, fuzzy
 msgid "Search Types"
-msgstr "Suchen"
+msgstr "Sucharten"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:289
 msgid "Prefix"
-msgstr ""
+msgstr "Präfix"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:290
 msgid "Meaning"
-msgstr ""
+msgstr "Bedeutung"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:295
 msgid "heading:"
-msgstr ""
+msgstr "heading:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:296
-#, fuzzy
 msgid "searches headings"
-msgstr "Suchbereich-Einstellung"
+msgstr "durchsucht Kopfzeilen"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:299
 msgid "footnote:"
-msgstr ""
+msgstr "footnote:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:300
-#, fuzzy
 msgid "searches footnotes"
-msgstr "Suchbereich-Einstellung"
+msgstr "durchsucht Fußnoten"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:303
 msgid "strong:"
-msgstr ""
+msgstr "strong:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
-#, fuzzy
 msgid "searches Strong's Numbers"
-msgstr "Suchbereich-Einstellung"
+msgstr "durchsucht Strong-Nummern"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:307
 msgid "morph:"
-msgstr ""
+msgstr "morph:"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:308
-#, fuzzy
 msgid "searches morphology codes"
-msgstr "Suchbereich-Einstellung"
+msgstr "durchsucht Morphologie-Codes"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:313
@@ -976,11 +873,13 @@ msgid ""
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
 "java/docs/index.html</ulink>"
 msgstr ""
+"&bibletime; benutzt die Lucene Suchmaschine, um Suchen auszuführen. Sie hat viele erweiterte Funktionen, Sie können hier mehr über Sie lesen: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
+"java/docs/index.html</ulink>"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:321
-#, fuzzy
 msgid "Search results"
-msgstr "Der Suchergebnis-Abschnitt"
+msgstr "Suchergebnisse"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:322
@@ -991,47 +890,37 @@ msgid ""
 "certain work at once. This also works when you click on one or more of the "
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
-msgstr ""
+msgstr "Hier können Sie erkennen, wieviele Instanzen des Suchstrings gefunden wurden, nach Werken sortiert. Das Klicken mit der <mousebutton>rechten Maustaste</mousebutton> erlaubt Ihnen alle in einem bestimmten Werk gefundenen Verse auf einmal zu kopieren, zu speichern oder zu drucken. Dies funktioniert auch, wenn Sie auf einen oder mehrere der Verweise klicken, um sie zu kopieren, zu speichern oder zu drucken. Das Klicken auf einen bestimmten Verweis öffnet ihn mit Kontext unterhalb im Vorschaufenster."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:331
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
-msgstr ""
+msgstr "Ziehen Sie einen Versverweis zum Bücherregal und lassen Sie ihn auf einem Werkssymbol los, so öffnet sich das Werk an der Stelle in einem neuen Lesefenster, auf die der Verweis zeigt."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:336
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
-msgstr ""
+msgstr "Ziehen Sie einen Versverweis auf ein offenes Lesefenster und lassen Sie ihn dann los, wird zu dieser Stelle gesprungen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:340
-#, fuzzy
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
-msgstr ""
-"Wählen Sie eine Versnummer und ziehen Sie diese in die Hauptgruppe um "
-"Lesezeichen anzulegen,"
+msgstr "Wählen Sie Verweise und ziehen Sie sie zum Bücherregal, um Lesezeichen zu erstellen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:344
-#, fuzzy
 msgid "Search result analysis"
-msgstr "Dialogbox Suchergebnis"
+msgstr "Suchergebnisse analysieren"
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:345
-#, fuzzy
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
 "display. This gives a simple graphic analysis of the number of instances the "
 "search string was found in each book of the Bible, and you can also save the "
 "analysis."
-msgstr ""
-"<guibutton>Suchanalyse</guibutton> - Dies gibt eine grafische Ãbersicht über "
-"die Anzahl, die der Suchbegriff in jedem Buch gefunden wurde. Es können "
-"Suchergebnisse für alle durchsuchten Dokumente angezeigt werden. Sie haben "
-"die Â Möglichkeit die Analyse als HTML formatierte Liste auf Festplatte "
-"abzuspeichern."
+msgstr "Klicken Sie auf <guibutton>Ergebnisse analysieren...</guibutton>, um die Anzeige der Suchergebnis-Analyse zu öffnen. Sie zeigt eine einfache graphische Analyse des Auftretens in jedem Buch der Bibel. Auch können Sie die Analyse abspeichern."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:351
 msgid "Search Analysis Dialog Box"
@@ -1049,12 +938,11 @@ msgid ""
 "existing works from your Bookshelf. Access it by clicking <menuchoice> "
 "<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
 "menuchoice> in the main menu."
-msgstr ""
+msgstr "Die <guimenuitem>Bücherregal-Verwaltung</guimenuitem> ist ein Werkzeug, das Ihnen die Verwaltung des Bücherregals ermöglicht. Sie können neue Werke zu Ihrem Bücherregal hinzufügen oder existierende Werke aktualisieren oder Sie aus dem Bücherregal entfernen. Greifen Sie darauf zu, indem Sie auf <menuchoice> <guimenu>Einstellungen</guimenu> <guimenuitem>Bücherregal-Verwaltung</guimenuitem> </menuchoice> im Hauptmenü klicken."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:374
-#, fuzzy
 msgid "Bookshelf path(s) setup"
-msgstr "Bücherregal Verwalter"
+msgstr "Bücherregal-Pfade einrichten"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:375
@@ -1062,7 +950,7 @@ msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive. You can even store it in multiple directories. Default is \"~/.sword/"
 "\"."
-msgstr ""
+msgstr "Hier können Sie festlegen, wo &bibletime; Ihr Bücherregal auf der Festplatte abspeichern soll. Sie können es sogar in verschiedenen Verzeichnissen speichern. Die Voreinstellung ist \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:379
@@ -1071,12 +959,11 @@ msgid ""
 "disk, but use them directly from the CD, then you can add the path to the CD "
 "as one of your bookshelf paths. When you start &bibletime;, it will show all "
 "works on the CD if it is present."
-msgstr ""
+msgstr "Wenn Sie eine Sword-CD besitzen aber nicht alle Werke auf die Festplatte installieren wollen und sie direkt von der CD nutzen wollen, so können Sie den Pfad der CD als einen Ihrer Bücherregal-Pfade hinzufügen. Wenn Sie &bibletime; starten, wird es alle Werke auf der CD anzeigen, wenn sie eingelegt ist."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:387
-#, fuzzy
 msgid "Install/update work(s)"
-msgstr "Swords Installation"
+msgstr "Werke installieren/updaten"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:388
@@ -1087,7 +974,7 @@ msgid ""
 "repository of Sword modules, or another site offering Sword modules). You "
 "can manage your libraries with <guibutton>Add library</guibutton> and "
 "<guibutton>Delete library</guibutton>."
-msgstr ""
+msgstr "Mit dieser Einrichtung können Sie sich mit einer Quelle von Werken (genannt \"Bibliothek\") in Verbindung setzen und ein oder mehrere Werke zu Ihrem lokalen Bücherregal übertragen. Diese Bibliotheken können lokal sein (z.B. eine Sword-CD) oder entfernt-gelegen (z.B. Crosswires Online-Repository der Sword-Module, oder eine andere Site, die Sword-Module anbietet). Sie können Ihre Bibliotheken mit <guibutton>Hinzufügen...</guibutton> und <guibutton>Löschen...</guibutton> verwalten."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:396
@@ -1101,7 +988,7 @@ msgid ""
 "all works that you want to install or update, and click on "
 "<guibutton>Install works</guibutton>. They will then be transferred to your "
 "Bookshelf."
-msgstr ""
+msgstr "Um den Installations- oder Aktualisierungsvorgang zu starten, suchen Sie eine Bibliothek aus, mit der Sie sich verbinden wollen und einen lokalen Bücherregal-Pfad, wohin die Werke installiert werden sollen. Dann klicken Sie auf <guibutton>Auffrischen...</guibutton>. &bibletime; wird den Inhalt der Bibliothek scannen und Ihnen eine Liste mit Werken anzeigen, die Sie Ihrem Bücherregal hinzufügen können oder die Sie schon installiert haben, die aber in einer aktuelleren Version in der Bibliothek vorliegen und aktualisiert werden können. Sie können dann alle Werke, die Sie installieren oder aktualisieren wollen markieren und anschließend auf <guibutton>Installieren...</guibutton> klicken. Sie werden dann zu Ihrem Bücherregal übertragen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:409
 msgid "Remove work(s)"
@@ -1113,19 +1000,18 @@ msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
 "<guibutton>Remove works</guibutton>."
-msgstr ""
+msgstr "Diese Einrichtung erlaubt Ihnen, eines oder mehrere Werke aus Ihrem Bücherregal zu entfernen, um Plattenspeicherplatz zu gewinnen. Markieren Sei einfach die Posten und klicken Sie auf <guibutton>Entfernen...</guibutton>."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:416
-#, fuzzy
 msgid "Search Indexes"
-msgstr "Suchen"
+msgstr "Suchindizes"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:417
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
-msgstr ""
+msgstr "Diese Option erlaubt Ihnen, neue Suchindizes zu erstellen und verwaiste Suchindizes entfernter Werke aufzuräumen."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:426
 msgid "Exporting and Printing"
@@ -1142,10 +1028,9 @@ msgid ""
 "windows, when you click on the normal text or the verse reference, or in the "
 "search result page when you click on a work or one or more verse references. "
 "It is pretty straightforward, so just try it out."
-msgstr ""
+msgstr "An vielen Stellen können Sie ein Kontextmenü durch Klicken mit der <mousebutton>rechten Maustaste</mousebutton> öffnen. Abhängig vom Kontext wird es Ihnen ermöglichen, Text mit <guimenuitem>Auswählen</guimenuitem>, <guimenuitem>Kopieren</guimenuitem> (zur Zwischenablage), <guimenuitem>Speichern</guimenuitem> oder <guimenuitem>Drucken</guimenuitem> zu verarbeiten. Dies funktioniert beispielsweise in den Lesefenstern, wenn Sie auf normalen Text oder Versverweise klicken, oder auf der Suchergebnis-Seite, wenn Sie auf ein Werk oder einen oder mehrere Versreferenzen klicken. Es ist ziemlich unkompliziert, versuchen Sie's einfach mal."
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
-#, fuzzy
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -1153,19 +1038,17 @@ msgid ""
 "editing tools on your system to format your document, rather than printing "
 "from &bibletime; directly."
 msgstr ""
-"Das Drucken in &bibletime; ist relativ einfach und als Hilfsmittel gedacht. "
-"Wenn Sie ein Dokument oder eine Präsentation erstellen, die Text von "
-"&bibletime; Dokumenten enthält, dann kopieren Sie den Text doch über die "
-"Zwischenablage in Ihr bevorzugtes Programm."
+"Das Drucken in &bibletime; ist relativ primitiv und als Hilfsmittel gedacht. "
+"Wenn Sie ein Dokument oder eine Präsentation erstellen, die Text aus "
+"&bibletime;-Werken enthält, empfehlen wir Ihnen, eines der Programme für Präsentationen oder zum Editieren auf Ihrem System zu verwenden, um Ihr Dokument zu formatieren, anstatt von &bibletime; aus direkt zu drucken."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:2
 msgid "Reference"
 msgstr "Referenz"
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:4
-#, fuzzy
 msgid "Main menu reference"
-msgstr "Voreinstellungen"
+msgstr "Hauptmenü-Referenz"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:5
@@ -1176,15 +1059,14 @@ msgid ""
 "belong to. You can also see the hotkey of each item;a complete listing of "
 "all hotkeys can be found in <link linkend=\"hdbk-reference-hotkeys\">this "
 "section</link>."
-msgstr ""
+msgstr "In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Einträge im &bibletime;-Hauptmenü. Sie sind in der Reihenfolge angeordnet, wie Sie auch in &bibletime; auftauchen und zwar mit allen Untereinträgen unterhalb ihrer jeweiligen Obermenüs. Sie können auch alle Kurzbefehle der Einträge nachschauen, ein komplettes Verzeichnis der Kurzbefehle finden Sie in <link linkend=\"hdbk-reference-hotkeys\">diesem Abschnitt</link>."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:36
-#, fuzzy
 msgid ""
 "<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
 "write unsaved changes to disk."
 msgstr ""
-"<action>BibleTime schließen.</action> BibleTime wird Sie fragen, ob Sie "
+"<action>&bibletime; schließen.</action> &bibletime; wird Sie fragen, ob Sie "
 "ungesicherte Änderungen abspeichern möchten."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
@@ -1192,14 +1074,14 @@ msgstr ""
 msgid ""
 "<action>Toggles full screen display.</action> Toggle this setting to "
 "maximize the &bibletime; window."
-msgstr ""
+msgstr "<action>Auf Vollbild-Ansicht stellen.</action> Diese Einstellung maximiert das &bibletime;-Fenster."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:88
 msgid ""
 "<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
 "main toolbar on or off."
-msgstr ""
+msgstr "<action>Werkzeugleiste anzeigen.</action> Diese Funktion stellt die Ansicht der Haupt-Werkzeugleiste an oder aus."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:102
@@ -1207,7 +1089,7 @@ msgid ""
 "<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
 "turn the Bookshelf on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
-msgstr ""
+msgstr "<action>Bücherregal anzeigen.</action> Mit diesem Umschalter können Sie die Ansicht des Bücherregals auf dem linken Abschnitt an- oder ausschalten. Dies kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:118
@@ -1215,14 +1097,14 @@ msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
-msgstr ""
+msgstr "<action>Lesezeichen anzeigen.</action> Mit diesem Umschalter schalten Sie die Lesezeichen-Anzeige am linken Abschnitt an oder aus. Dies kann nützlich sein, wenn Sie mehr Platz für das Lupenfenster benötigen."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:134
 msgid ""
 "<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
 "setting to turn the Mag on the left pane on or off."
-msgstr ""
+msgstr "<action>Lupenfenster anzeigen.</action> Dieser Umschalter zeigt das Lupenfenster im linken Abschnitt oder verbirgt es."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:164
@@ -1230,7 +1112,7 @@ msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog. A more detailed "
 "search description can be found <link linkend=\"hdbk-op-search\">here</link>."
-msgstr ""
+msgstr "<action>In der Standard-Bibel suchen...</action>. Es können mehr Werke zum Suchdialog hinzugefügt werden. Eine ausführlichere Such-Beschreibung können Sie <link linkend=\"hdbk-op-search\">hier</link> finden."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:188
@@ -1238,7 +1120,7 @@ msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
 "can be added or removed in the Search Dialog. A more detailed search "
 "description can be found <link linkend=\"hdbk-op-search\">here</link>."
-msgstr ""
+msgstr "<action>In offenen Werken suchen...</action>. Werke können im Suchdialog hinzugefügt oder entfernt werden. Eine ausführlichere Such-Beschreibung können Sie <link linkend=\"hdbk-op-search\">hier</link> finden."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:213
@@ -1247,28 +1129,28 @@ msgid ""
 "context menu where you can select an existing session to save to. It will be "
 "overwritten with your current session. See the next item on how to save to a "
 "new session."
-msgstr ""
+msgstr "<action>Sitzung speichern</action>. Dies wird ein Kontextmenü öffnen, in dem Sie eine bereits existierende Sitzung als Ziel zur Abspeicherung auswählen können. Die aktuelle Sitzung wird diese überschreiben. Schauen Sie sich den nächsten Abschnitt an, wie Sie eine neue Sitzung anlegen und abspeichern können."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:235
 msgid ""
 "<action>Saves the current session under a new name</action>. This will ask "
 "for a new name to save the session to."
-msgstr ""
+msgstr "<action>Als neue Sitzung speichern</action>. Diese Funktion wird Sie nach einem neuen Namen für die zu speichernde Sitzung fragen."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:251
 msgid ""
 "<action>Loads an existing session</action>. This will open a context menu "
 "where you can select an existing session to load."
-msgstr ""
+msgstr "<action>Sitzung laden</action>. Hiermit wird ein Kontextmenü geöffnet, wo Sie eine existierende Sitzung zum Laden auswählen können."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:267
 msgid ""
 "<action>Deletes an existing session</action>. This will open a context menu "
 "where you can select an existing session that should be deleted."
-msgstr ""
+msgstr "<action>Sitzung löschen</action>. Hiermit öffnen Sie ein Kontextmenü, das Ihnen erlaubt, eine existierende Sitzung zum Löschen auszuwählen."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:283
@@ -1277,27 +1159,23 @@ msgid ""
 "opening context menu, you can either specify that you want to take care of "
 "the window arrangement yourself (Manual mode) or have &bibletime; handle it "
 "for you (Automatic modes, just try them out!)."
-msgstr ""
+msgstr "<action>Anordnungs-Art</action>. Im sich öffnenden Kontextmenü können Sie bestimmen, dass Sie entweder die Fensteranordnung selbst bestimmen möchten (manueller Modus), oder dass &bibletime; sich um die Fensteranordnung kümmern soll (automatische Modi, probieren Sie's einfach aus!)."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:311
-#, fuzzy
 msgid "<action>Cascades all open windows</action>."
-msgstr "Geöffnete Anzeigefenster staffeln"
+msgstr "<action>Geöffnete Fenster staffeln</action>."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:335
-#, fuzzy
 msgid "<action>Automatically tiles all open windows vertically</action>."
-msgstr "SchlieÃt alle geöffneten Anzeigefenster"
+msgstr "<action>Vertikal kacheln</action>."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:359
-#, fuzzy
 msgid "<action>Automatically tiles all open windows horizontally</action>."
-msgstr "SchlieÃt alle geöffneten Anzeigefenster"
+msgstr "<action>Horizontal kacheln</action>."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:384
-#, fuzzy
 msgid "<action>Closes all open windows</action>."
-msgstr "SchlieÃt alle geöffneten Anzeigefenster"
+msgstr "<action>Alle geöffneten Fenster schließen</action>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:409
@@ -1306,7 +1184,7 @@ msgid ""
 "configure all kinds of nice settings there to adapt &bibletime; to your "
 "needs.  Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
 "details."
-msgstr ""
+msgstr "<action>&bibletime; konfigurieren</action>. Dies öffnet den Hauptkonfigurations-Dialog von &bibletime;. Sie können hier alle möglichen Einstellungen von &bibletime; an Ihre Bedürfnisse anpassen. Bitte schauen Sie in <link linkend=\"hdbk-config-bt\">diesem Abschnitt</link> für Details nach."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:438
@@ -1314,12 +1192,12 @@ msgid ""
 "<action>Opens a dialog where you can change your Sword configuration and "
 "manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
 "bookshelfmanager\">this section</link> for details."
-msgstr ""
+msgstr "<action>Bücherregal-Verwaltung</action>. Hiermit wird ein Dialog zur Konfiguration und Verwaltung Ihres Bücherregals aufgerufen. Schauen Sie bitte in <link linkend=\"hdbk-op-bookshelfmanager\">diesem Abschnitt</link> für Details nach."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:471
 msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
-msgstr ""
+msgstr "<action>Handbuch</action>. Dies öffnet das Handbuch von &bibletime;. Sie lesen es gerade."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:496
@@ -1331,7 +1209,7 @@ msgid ""
 "expect you to read and study the scriptures to understand what they say. If "
 "you start with the attitude that you want to have the Lord sow his word in "
 "your heart He will not disappoint you."
-msgstr ""
+msgstr "<action>Anleitung zum Bibelstudium</action>. Dies öffnet eine Anleitung, wie man die Bibel studieren sollte. Es ist die Hoffnung des &bibletime;-Teams, dass dieses HowTo die Leser veranlasst, die Bibel zu lesen und nachzuschauen, was sie aussagt. Dieser Studienführer wurde ausgewählt, weil er sich davor hütet, eine bestimmte Lehrmeinung einer Denomination zu fördern. Wir hoffen, dass Sie die Bibel lesen und studieren, um zu verstehen, was sie aussagt. Wenn Sie mit der Einstellung herangehen, dass Sie wünschen, der HERR möge Sein Wort in Ihr Herz säen, wird Er sie nicht enttäuschen."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:517
@@ -1340,84 +1218,78 @@ msgid ""
 "contains information about &bibletime; software version, project "
 "contributors, &sword; software version, &qt; software version and the "
 "license agreement."
-msgstr ""
+msgstr "<action>Über &bibletime;</action>. Dies öffnet ein Fenster mit Projekt-Informationen über &bibletime; und enthält die &bibletime;-Version, Projekt-Beitragende, &sword;-Version, &qt;-Version und das Lizenzabkommen."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:529
-#, fuzzy
 msgid "Works reference"
-msgstr "Voreinstellungen"
+msgstr "Werksreferenz"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:531
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
-msgstr ""
+msgstr "In diesem Abschnitt finden Sie Beschreibungen der mit geöffneten Werken assoziierten Symbolzeichen."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:552
 msgid "Scrolls forward through history."
-msgstr ""
+msgstr "Blättert vorwärts im Verlauf."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:575
 msgid "Scrolls back through history."
-msgstr ""
+msgstr "Blättert rückwärts im Verlauf."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:598
 msgid "Select an installed bible."
-msgstr ""
+msgstr "Wählt eine installierte Bibel aus."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:621
 msgid "Select an additional bible."
-msgstr ""
+msgstr "Wählt eine zusätzliche Bibel aus."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:644
-#, fuzzy
 msgid "Search in selected works."
-msgstr "In Werken suchen"
+msgstr "In ausgewählten Werken suchen."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:667
-#, fuzzy
 msgid "Display configuration."
-msgstr "Suchbereich-Einstellung"
+msgstr "Konfiguration anzeigen."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
 msgid "Select an installed commentary."
-msgstr ""
+msgstr "Wählt ein installiertes Kommentar aus."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:713
-#, fuzzy
 msgid "Select additional commentary."
-msgstr "Bearbeiten Sie ihren eigenen Kommentar"
+msgstr "Wählt ein zusätzliches Kommentar aus."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:736
 msgid "Synchronize displayed entry with active Bible window."
-msgstr ""
+msgstr "Synchronisiert angezeigten Eintrag mit aktivem Bibelfenster."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:759
-#, fuzzy
 msgid "Select a book."
-msgstr "Einstellungen"
+msgstr "Wählt ein Buch aus."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:782
 msgid "Select an installed glossary or devotional."
-msgstr ""
+msgstr "Wählt ein installiertes Glossar oder eine installierte Andacht aus."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:805
 msgid "Select an additional glossary or devotional."
-msgstr ""
+msgstr "Wählt ein zusätzliches Glossar oder eine zusätzliche Andacht aus."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:815
-#, fuzzy
 msgid "HotKeys index"
-msgstr "Tastenkürzel"
+msgstr "Tastenkürzel-Verzeichnis"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:816
@@ -1427,26 +1299,23 @@ msgid ""
 "directly find out which hotkey a certain menu item has, you can either look "
 "at the entry itself in &bibletime; (as it always shows the hotkey), or you "
 "can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
-msgstr ""
+msgstr "Dies ist ein Verzeichnis aller Tastenkürzel und ihrer korrespondierenden Beschreibung im Handbuch. Die Tastenkürzel sind (grob) alphabetisch sortiert. Wenn Sie unmittelbar nachschauen möchten, welches Tastenkürzel eine bestimmte Menüfunktion hat, so können Sie entweder den Menüeintrag in &bibletime; ansehen (da grundsätzlich auch das entsprechende Tastenkürzel mit angezeigt wird) oder die Tastenkürzel in <link linkend=\"hdbk-reference-menus\">diesem Abschnitt</link> nachsehen."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:829
-#, fuzzy
 msgid "Hotkey"
 msgstr "Tastenkürzel"
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:830
-#, fuzzy
 msgid "Description"
-msgstr "Bestimmung"
+msgstr "Beschreibung"
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:839
-#, fuzzy
 msgid "Moves back in the history of read windows."
-msgstr "Bewegt in der Geschichte des Lese-Fensters weiter nach vorne."
+msgstr "Im Lesefenster-Verlauf zurückblättern."
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:846
 msgid "Moves forward in the history of read windows."
-msgstr "Bewegt in der Geschichte des Lese-Fensters weiter nach vorne."
+msgstr "Im Lesefenster-Verlauf vorwärtsblättern."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:855
@@ -1456,6 +1325,9 @@ msgid ""
 "</menuchoice> </link> equivalent; opens the search dialog to search in the "
 "default bible."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Suche</guimenu> <guimenuitem>In Standardbibel suchen...</guimenuitem> "
+"</menuchoice> </link> öffnet den Suchdialog, um in der Standardbibel zu suchen."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:871
@@ -1464,6 +1336,8 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
 msgstr ""
+"<menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</"
+"guimenuitem> <guimenuitem>Automatisches Vertikal-Kacheln</guimenuitem> </menuchoice> schaltet die automatische Fensteranordnung auf vertikalen Kachelmodus."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:885
@@ -1471,7 +1345,7 @@ msgid ""
 "<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
 "guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window tiling."
-msgstr ""
+msgstr "<menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</guimenuitem> <guimenuitem>Automatisches Horizontal-Kacheln</guimenuitem> </menuchoice> schaltet die automatische Fensteranordnung auf horizontalen Kachelmodus."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:898
@@ -1480,6 +1354,8 @@ msgid ""
 "guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
 "equivalent; toggle automatic window cascading."
 msgstr ""
+"<menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</"
+"guimenuitem> <guimenuitem>Automatisches Staffeln</guimenuitem> </menuchoice> schaltet die Fensteranordnung auf automatisches Staffeln."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:911
@@ -1488,6 +1364,8 @@ msgid ""
 "guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
 "equivalent; toggle manual window placement."
 msgstr ""
+"<menuchoice> <guimenu>Fenster</guimenu> <guimenuitem>Anordnungs-Art</"
+"guimenuitem> <guimenuitem>Manuell</guimenuitem> </menuchoice> schaltet die Fensteranordnung auf den manuellen Modus."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:924
@@ -1496,6 +1374,8 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
 "menuchoice> </link> equivalent; saves current layout as new session."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Fenster</guimenu> <guimenuitem>Als neue Sitzung speichern</guimenuitem> </menuchoice> </link> speichert die aktuelle Sitzung als neue Sitzung ab."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:938
@@ -1504,31 +1384,34 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
 "</link> equivalent; closes all open windows."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Fenster</guimenu> <guimenuitem>Alle Fenster schließen</guimenuitem> </menuchoice> "
+"</link> schließt alle geöffneten Fenster."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:950
 msgid "Zoom out. This decreases the font size of read windows."
-msgstr ""
+msgstr "Verkleinern. Dies verkleinert die Schriftgröße von Lesefenstern."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:958
 msgid "Zoom in. This increases the font size of read windows."
-msgstr ""
+msgstr "Vergrößern. Dies vergrößert die Schriftgröße von Lesefenstern."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:966
 msgid "Select all. This selects all text in read windows."
-msgstr ""
+msgstr "Alles auswählen. Dies wählt den gesamten Text in Lesefenstern aus."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:974
 msgid "Copy. This copies the selected text to the clipboard."
-msgstr ""
+msgstr "Kopieren. Dies kopiert ausgewählten Text in die Zwischenablage."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:983
 msgid "Search. This lets you search within the text of a read window."
-msgstr ""
+msgstr "Suchen. Diese Funktion erlaubt Ihnen innerhalb eines Lesefenster-Textes zu suchen."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:994
@@ -1537,6 +1420,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
 "menuchoice> </link> equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Fenster</guimenu> <guimenuitem>Vertikal kacheln</guimenuitem> </"
+"menuchoice> </link> setzt die Anordnungs-Art der Fenster auf vertikales Kacheln."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1010
@@ -1545,6 +1431,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
 "menuchoice> </link> equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Fenster</guimenu> <guimenuitem>Horizontal kacheln</guimenuitem> </"
+"menuchoice> </link> setzt die Anordnungs-Art der Fenster auf horizontales Kacheln."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1026
@@ -1553,6 +1442,9 @@ msgid ""
 "<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
 "link> windows equivalent."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Fenster</guimenu> <guimenuitem>Staffeln</guimenuitem> </menuchoice> </"
+"link> setzt den Staffelmodus für die Fensteranordnung."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1041
@@ -1562,6 +1454,9 @@ msgid ""
 "</menuchoice> </link> equivalent; opens the search dialog to search in all "
 "currently opened works."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Suche</guimenu> <guimenuitem>In offenen Werken suchen...</guimenuitem> "
+"</menuchoice> </link> öffnet den Suchdialog, um in allen gegenwärtig geöffneten Werken zu suchen."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1056
@@ -1570,11 +1465,13 @@ msgid ""
 "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
 "link> equivalent; closes &bibletime;."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Datei</guimenu> <guimenuitem>Beenden</guimenuitem> </menuchoice> </link> schließt &bibletime;."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1068
 msgid "Closes the current window."
-msgstr ""
+msgstr "Schließt das aktuelle Fenster."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1077
@@ -1582,13 +1479,15 @@ msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
 "menuchoice> equivalent; opens the handbook."
 msgstr ""
+"<menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Handbuch</guimenuitem> </"
+"menuchoice> öffnet das Handbuch."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1089
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
 "guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
-msgstr ""
+msgstr "<menuchoice> <guimenu>Hilfe</guimenu> <guimenuitem>Anleitung zum Bibelstudium</guimenuitem> </menuchoice> öffnet das Bibelstudium-HowTo."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1102
@@ -1597,6 +1496,9 @@ msgid ""
 "<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
 "guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Einstellungen</guimenu> <guimenuitem>Bücherregal-Verwaltung</"
+"guimenuitem> </menuchoice> </link> öffnet die Bücherregal-Verwaltung."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1117
@@ -1605,6 +1507,9 @@ msgid ""
 "<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
 "menuchoice> </link> equivalent; toggles display of the Bookshelf."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>Ansicht</guimenu> <guimenuitem>Bücherregal anzeigen</guimenuitem> </"
+"menuchoice> </link> aktiviert die Anzeige des Bücherregals."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1132
@@ -1613,6 +1518,9 @@ msgid ""
 "<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
 "link> equivalent; toggles display of the mag(nifying glass)."
 msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>Ansicht</guimenu> <guimenuitem>Lupenfenster anzeigen</guimenuitem> </menuchoice> </"
+"link> aktiviert die Anzeige des Lupenfensters."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
 #: docs/handbook/en/docbook/hdbk-start.docbook:6
@@ -1620,59 +1528,44 @@ msgid "Starting &bibletime;"
 msgstr " &bibletime; starten"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:4
-#, fuzzy
 msgid "How to start &bibletime;"
-msgstr "Das zum starten von &bibletime; benutzte Icon"
+msgstr "Wie &bibletime; zu starten ist"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:7
-#, fuzzy
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
 "can launch &bibletime; from the Start Menu with this icon:"
-msgstr ""
-"&bibletime; ist ein &kde; Programm und ist in den &kde; Arbeitsplatz "
-"integriert. Sie können &bibletime; vom Untermenü &quot;Anwendungen&quot;des "
-"&kde; <guimenu>Startmenü</guimenu> starten."
+msgstr "&bibletime; ist eine ausführbare Datei, die in Ihrem Desktop integriert ist. Sie können &bibletime; aus dem Startmenü mit folgendem Symbol starten:"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:15
-#, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
-msgstr "&bibletime;"
+msgstr "<phrase>&bibletime;-Start-Symbol</phrase>"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:18
-#, fuzzy
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
 msgstr ""
-"&bibletime; kann auch von der Kommandozeile eines Terminals aufgerugfen "
-"werden. Um &bibletime; zu starten, öffnen Sie ein Terminal (jedes beliebige "
-"Xterminal) und geben Sie <command>bibletime</command> ein."
+"&bibletime; kann auch von der Kommandozeile eines Terminals aufgerufen "
+"werden. Um &bibletime; zu starten, öffnen Sie ein Terminal-Fenster und geben Sie folgendes ein:"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "&bibletime;"
-msgstr "bibletime"
+msgstr "&bibletime;"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
-#, fuzzy
 msgid "Other window managers"
-msgstr "Andere Fenstermanager (kein &kde;)"
+msgstr "Andere Fenstermanager"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:25
-#, fuzzy
 msgid ""
 "&bibletime; can be used with other window managers such as Gnome, BlackBox, "
 "Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
 "already installed on your computer."
-msgstr ""
-"&bibletime; kann mit anderen Windowmanagern wie Gnome, BlackBox oder Sawfish "
-"verwendet werden, vorrausgesetzt, &kde; 3 ist installiert. Wenn Sie &kde; 3 "
-"mit Hilfe der &Linux-Mandrake; RPMS installier haben, dann in KDE in /opt "
-"installiert. Das Startkommando in einem Terminal lautet dann:"
+msgstr "&bibletime; kann mit anderen Fenstermanagern wie Gnome, BlackBox, FluxBox, OpenBox oder Sawfish verwendet werden, vorausgesetzt, dass die entsprechenden Basis-Bibliotheken bereits auf Ihrem Rechner installiert sind."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:31
-#, fuzzy
 msgid "Startup customization"
 msgstr "Konfiguration des Startverhaltens"
 
@@ -1681,7 +1574,7 @@ msgstr "Konfiguration des Startverhaltens"
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
-msgstr ""
+msgstr "Von einem Terminal aus können Sie &bibletime; folgendermaßen verwenden, um einen Zufallsvers aus der Standardbibel anzeigen zu lassen:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:34
@@ -1690,34 +1583,34 @@ msgid ""
 "bibletime --open-default-bible\n"
 "      \"&lt;random&gt;\""
 msgstr ""
+"bibletime --open-default-bible\n"
+"      \"&lt;random&gt;\""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:35
 msgid "To open at a given passage like John 3:16, use:"
-msgstr ""
+msgstr "Um einen bestimmten Vers wie z.B. Joh. 3,16 aufzuschlagen:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
-msgstr ""
+msgstr "bibletime --open-default-bible \"Joh 3:16\""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:37
 msgid "You can also use booknames in your current bookname language."
-msgstr ""
+msgstr "Sie können auch Buchnamen in Ihrer gegenwärtigen Buchnamen-Sprache benutzen."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:42
-#, fuzzy
 msgid "Startup sequence"
-msgstr "Startvorgang"
+msgstr "Start-Sequenz"
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:43
-#, fuzzy
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
-msgstr "Wenn &bibletime; startet, könnten Sie einige Meldungen sehen:"
+msgstr "Wenn &bibletime; startet, könnten Sie folgende Meldungen vor dem Erscheinen des Hauptfensters sehen:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:52
@@ -1730,6 +1623,8 @@ msgid ""
 "Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
 "features quickly."
 msgstr ""
+"<action>Ihr Bücherregal modifizieren.</action> Dieser Dialog erlaubt Ihnen, Ihr Bücherregal zu modifizieren, Werke zu Ihrem System hinzuzufügen oder vom System zu löschen. Er wird nur dann angezeigt, wenn kein Standard-Bücherregal gefunden werden kann. Bitte sehen Sie in <link linkend=\"hdbk-op-"
+"bookshelfmanager\">diesem Abschnitt</link> für weitere Details nach. Falls Sie &bibletime; mit einem leeren Bücherregal starten, ist es hilfreich, zumindest eine Bibel, ein Kommentar, ein Lexikon und ein Buch zu installieren, um rasch die grundlegenden Funktionseigenschaften von &bibletime; kennen zu lernen."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:69
@@ -1738,51 +1633,51 @@ msgid ""
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
 "detailed description</link> of this dialog."
 msgstr ""
+"<action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen "
+"&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link linkend=\"hdbk-config-bt\">die detaillierte Beschreibung</link> dieses Dialogs nach."
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:5
 msgid "<application>BibleTime</application>"
-msgstr ""
+msgstr "<application>BibleTime</application>"
 
 # type: Content of the sword entity
 #: docs/handbook/en/docbook/index.docbook:6
 msgid "<application>Sword</application>"
-msgstr ""
+msgstr "<application>Sword</application>"
 
 # type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:7
 msgid "<application>KDE</application>"
-msgstr ""
+msgstr "<application>KDE</application>"
 
 # type: Content of the qt entity
 #: docs/handbook/en/docbook/index.docbook:8
 msgid "<application>Qt</application>"
-msgstr ""
+msgstr "<application>Qt</application>"
 
 # type: Content of the Shift entity
 #: docs/handbook/en/docbook/index.docbook:10
 msgid "Shift"
-msgstr ""
+msgstr "Umschalt"
 
 # type: Content of the Ctrl entity
 #: docs/handbook/en/docbook/index.docbook:11
 msgid "Ctrl"
-msgstr ""
+msgstr "Strg"
 
 # type: Content of the Alt entity
 #: docs/handbook/en/docbook/index.docbook:12
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #: docs/handbook/en/docbook/index.docbook:22
-#, fuzzy
 msgid "The &bibletime; handbook"
 msgstr "Das &bibletime;-Handbuch"
 
 #: docs/handbook/en/docbook/index.docbook:44
-#, fuzzy
 msgid "the &bibletime; team"
-msgstr "Dem BibleTime Team beitreten"
+msgstr "Das &bibletime;-Team"
 
 #: docs/handbook/en/docbook/index.docbook:47
 msgid "The &bibletime; handbook is part of &bibletime;."
@@ -1791,881 +1686,14 @@ msgstr "Der &bibletime;-Hilfedialog ist ein Teil von &bibletime;."
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
 msgid "2009-06"
-msgstr ""
+msgstr "2009-06"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
 msgid "2.2"
-msgstr ""
+msgstr "2.2"
 
 #: docs/handbook/en/docbook/index.docbook:53
-#, fuzzy
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
-msgstr "Die Online Bibel ist ein mächtiges Bibelstudien Programm für Windows."
+msgstr "&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem Sword-System basiert."
 
-#~ msgid "Configure BibleTime Dialog"
-#~ msgstr "BibleTime-Konfigurationsdialog"
-
-#~ msgid ""
-#~ "You can adapt the toolbar to your needs. Please use the following entry "
-#~ "in the main menu:"
-#~ msgstr ""
-#~ "Sie können die Werkzeugleiste ihren Bedürfnissen anpassen. Bitte benutzen "
-#~ "Sie den folgenden Eintrag aus dem Hauptmenü:"
-
-#~ msgid "Configure toolbars"
-#~ msgstr "Werkzeugleisten einrichten"
-
-#, fuzzy
-#~ msgid ""
-#~ "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-#~ "section</link> for detailed instructions."
-#~ msgstr ""
-#~ "Bitte lesen Sie <link linkend=\"hdbk-reference-menus-settings-toolbars"
-#~ "\">diesen Abschnitt</link> für weitergehenden Informationen."
-
-#, fuzzy
-#~ msgid "Starting &bibletime; from KDE"
-#~ msgstr " &bibletime; starten"
-
-#, fuzzy
-#~ msgid ""
-#~ "export KDEDIR=/opt/kde #your KDE directory\n"
-#~ "      bibletime"
-#~ msgstr ""
-#~ "export KDEDIR=/opt/kde3\n"
-#~ "bibletime"
-
-#~ msgid ""
-#~ "In this section you find a description of the different possibilities to "
-#~ "configure &bibletime;: The <link linkend=\"hdbk-config-bt\">Configure "
-#~ "BibleTime Dialog </link> and the <link linkend=\"hdbk-config-toolbar"
-#~ "\">Configure Toolbars</link> dialog. Both can be accessed under "
-#~ "<guimenu>Settings</guimenu> in the main menu."
-#~ msgstr ""
-#~ "In diesem Abschnitt finden Sie eine Beschreibung der verschiedenen "
-#~ "Möglichkeiten &bibletime; einzurichten. Der Dialog <link linkend=\"hdbk-"
-#~ "config-bt\">BibleTime einrichten</link> und der <link linkend=\"hdbk-"
-#~ "config-toolbar\">Werkzeugleisten einrichten</link> Dialog. Auf beide kann "
-#~ "mittels <guimenu>Einstellungen</guimenu> im Hauptmenü zugegriffen werden."
-
-#~ msgid "Show tip of the day"
-#~ msgstr "Tipp des Tages anzeigen"
-
-#~ msgid "Configure Toolbars dialog"
-#~ msgstr "&quot;Werkzeugleiste einrichten&quot; Dialog"
-
-#, fuzzy
-#~ msgid ""
-#~ "You will see this dialog, which allows adding and removing buttons from "
-#~ "the main toolbar of &bibletime;. The order of the buttons can also be "
-#~ "changed."
-#~ msgstr ""
-#~ "Sie werden diesen Dialog sehen, der ihnen erlaubt Knöpfe von  &bibletime;"
-#~ "s Werkzeugleiste zu entfernen und auch wieder hinzuzufügen. Die "
-#~ "Reihenfolge kann ebenfalls verändert werden."
-
-#, fuzzy
-#~ msgid "<phrase>Toolbar configuration dialog</phrase>"
-#~ msgstr "Der Werkzeugleisten-Konfigurationsdialog."
-
-#~ msgid "The Toolbar configuration dialog."
-#~ msgstr "Der Werkzeugleisten-Konfigurationsdialog."
-
-#~ msgid ""
-#~ "Use the 4 buttons in the middle of the window to move buttons to the "
-#~ "toolbar, away from the toolbar or to sort them on the toolbar according "
-#~ "to your preference."
-#~ msgstr ""
-#~ "Benutzen Sie die vier Knöpfe in der Mitte des Fensters, um die Knöpfe auf "
-#~ "die Werkzeugleiste hin oder von ihr weg zu bewegen oder um die "
-#~ "Reihenfolge ihren Vorlieben anzupassen."
-
-#~ msgid ""
-#~ "Please see <link linkend=\"hdbk-reference-menus-settings-toolbars\">this "
-#~ "section</link> for further information."
-#~ msgstr ""
-#~ "Bitte lesen Sie <link linkend=\"hdbk-reference-menus-settings-toolbars"
-#~ "\">diesen Abschnitt</link> für weitergehenden Informationen."
-
-#, fuzzy
-#~ msgid "&language;"
-#~ msgstr "Sprachen"
-
-#~ msgid "Display"
-#~ msgstr "Anzeige"
-
-#~ msgid "Code2000"
-#~ msgstr "Code2000"
-
-#~ msgid "SIL unicode fonts"
-#~ msgstr "Unicode Schriftarten von SIL"
-
-#~ msgid "FreeFont"
-#~ msgstr "FreeFont"
-
-#~ msgid "Crosswire's font directory"
-#~ msgstr "Crosswires Schriften-Verzeichnis"
-
-#~ msgid "Bitstream CyberBit"
-#~ msgstr "Bitstream CyberBit"
-
-#~ msgid "Caslon, Monospace, Cupola, Caliban"
-#~ msgstr "Caslon, Monospace, Cupola, Caliban"
-
-#~ msgid "Desk"
-#~ msgstr "Schreibtisch"
-
-#~ msgid ""
-#~ "<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-#~ "\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
-#~ "inlinemediaobject>Settings </guimenu> <guimenuitem>Configure toolbars</"
-#~ "guimenuitem>"
-#~ msgstr ""
-#~ "<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-#~ "\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
-#~ "inlinemediaobject>Einstellungen </guimenu> <guimenuitem>Werkzeugleisten "
-#~ "einrichten</guimenuitem>"
-
-#~ msgid "Toolbar configuration dialog"
-#~ msgstr "Werkzeugleisten-Konfigurationsdialog"
-
-#~ msgid "Use the options tab to set up your search."
-#~ msgstr ""
-#~ "Benutzen Sie den Sucheinstellungen-Tabulator, um die Eigenschaften der "
-#~ "Suche einzustellen."
-
-#, fuzzy
-#~ msgid ""
-#~ "You can also define your own search ranges by clicking the "
-#~ "<guibutton>Setup ranges</guibutton> button."
-#~ msgstr ""
-#~ "Bereiche bearbeiten - Sie können durch Klick auf <guibutton>Suchbereiche "
-#~ "einstellen</guibutton> den oberen und unteren Suchgrenzen für die Suche "
-#~ "eingeben."
-
-#~ msgid "File"
-#~ msgstr "Datei"
-
-#~ msgid "View"
-#~ msgstr "Ansicht"
-
-#~ msgid "<guimenu>View</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
-#~ msgstr ""
-#~ "<guimenu>Ansicht</guimenu> <guimenuitem>Werkzeugleiste anzeigen</"
-#~ "guimenuitem>"
-
-#~ msgid "Search"
-#~ msgstr "Suchen"
-
-#, fuzzy
-#~ msgid ""
-#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>O</keycap></keycombo></"
-#~ "shortcut> <guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-#~ "\"i_find.png\" format=\"PNG\"/></imageobject></inlinemediaobject> Search</"
-#~ "guimenu> <guimenuitem>Search in open work(s)</guimenuitem>"
-#~ msgstr ""
-#~ "<guimenu> <inlinemediaobject><imageobject> <imagedata fileref="
-#~ "\"i_configuretoolbars.png\" format=\"PNG\"/></imageobject> </"
-#~ "inlinemediaobject>Einstellungen </guimenu> <guimenuitem>Werkzeugleisten "
-#~ "einrichten</guimenuitem>"
-
-#~ msgid "Window"
-#~ msgstr "Fenster"
-
-#~ msgid "Settings"
-#~ msgstr "Einstellungen"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-#, fuzzy
-#~ msgid "&help.menu.documentation;"
-#~ msgstr "Dokumentation"
-
-#~ msgid "&Alt;<keycap>Right</keycap>"
-#~ msgstr "&Alt;<keycap>Rechts</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>F</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>F</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>G</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>G</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>H</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>H</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>J</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>J</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>M</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>M</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>S</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>S</keycap>"
-
-#~ msgid "&Alt;&Ctrl;<keycap>W</keycap>"
-#~ msgstr "&Alt;&Ctrl;<keycap>W</keycap>"
-
-#~ msgid "&Ctrl;<keycap>-</keycap>"
-#~ msgstr "&Ctrl;<keycap>-</keycap>"
-
-#~ msgid "&Ctrl;<keycap>A</keycap>"
-#~ msgstr "&Ctrl;<keycap>A</keycap>"
-
-#~ msgid "&Ctrl;<keycap>C</keycap>"
-#~ msgstr "&Ctrl;<keycap>C</keycap>"
-
-#~ msgid "&Ctrl;<keycap>F</keycap>"
-#~ msgstr "&Ctrl;<keycap>F</keycap>"
-
-#~ msgid "&Ctrl;<keycap>J</keycap>"
-#~ msgstr "&Ctrl;<keycap>J</keycap>"
-
-#~ msgid "&Ctrl;<keycap>G</keycap>"
-#~ msgstr "&Ctrl;<keycap>G</keycap>"
-
-#~ msgid "&Ctrl;<keycap>H</keycap>"
-#~ msgstr "&Ctrl;<keycap>H</keycap>"
-
-#, fuzzy
-#~ msgid "&Ctrl;<keycap>O</keycap>"
-#~ msgstr "&Ctrl;<keycap>-</keycap>"
-
-#~ msgid "&Ctrl;<keycap>Q</keycap>"
-#~ msgstr "&Ctrl;<keycap>Q</keycap>"
-
-#~ msgid "&Ctrl;<keycap>W</keycap>"
-#~ msgstr "&Ctrl;<keycap>W</keycap>"
-
-#~ msgid "&Ctrl;<keycap>X</keycap>"
-#~ msgstr "&Ctrl;<keycap>X</keycap>"
-
-#~ msgid "&Ctrl;<keycap>Y</keycap>"
-#~ msgstr "&Ctrl;<keycap>Y</keycap>"
-
-#~ msgid "&Ctrl;<keycap>V</keycap>"
-#~ msgstr "&Ctrl;<keycap>V</keycap>"
-
-#~ msgid "&Ctrl;&Shift;<keycap>F</keycap>"
-#~ msgstr "&Ctrl;&Shift;<keycap>F</keycap>"
-
-#~ msgid "&Ctrl;&Shift;<keycap>X</keycap>"
-#~ msgstr "&Ctrl;&Shift;<keycap>X</keycap>"
-
-#~ msgid "&Ctrl;&Shift;<keycap>Y</keycap>"
-#~ msgstr "&Ctrl;&Shift;<keycap>Y</keycap>"
-
-#~ msgid "&Ctrl;&Shift;<keycap>V</keycap>"
-#~ msgstr "&Ctrl;&Shift;<keycap>V</keycap>"
-
-#~ msgid "<keycap>F1</keycap>"
-#~ msgstr "<keycap>F1</keycap>"
-
-#~ msgid "<keycap>F2</keycap>"
-#~ msgstr "<keycap>F2</keycap>"
-
-#~ msgid "<keycap>F3</keycap>"
-#~ msgstr "<keycap>F3</keycap>"
-
-#~ msgid "<keycap>F4</keycap>"
-#~ msgstr "<keycap>F4</keycap>"
-
-#~ msgid "<keycap>F8</keycap>"
-#~ msgstr "<keycap>F8</keycap>"
-
-#~ msgid "<keycap>F9</keycap>"
-#~ msgstr "<keycap>F9</keycap>"
-
-#, fuzzy
-#~ msgid "GCC Regular Expression Reference"
-#~ msgstr "Regeln für Suchabfragen mit GCC regulären Ausdrücken"
-
-#, fuzzy
-#~ msgid ""
-#~ "Regular expression searches provide a way to do simple or complex "
-#~ "searches for strings that match a pattern or set of patterns (branches) "
-#~ "separated by vertical bars \"|\". While a pattern can be built to look "
-#~ "for a word or phrase, a simple pattern that consists of a word does not "
-#~ "look for only that word but for any place where that word is found. A "
-#~ "search for \"right\" will return verses that contain the word \"right\", "
-#~ "but also \"<emphasis>right</emphasis>eous\", \"<emphasis>right</"
-#~ "emphasis>eousness\", \"un<emphasis>right</emphasis>eous\", "
-#~ "\"up<emphasis>right</emphasis>\" and even \"b<emphasis>right</emphasis>"
-#~ "\". A search for \"hall not\" is not a search for \"hall\" AND \"not\" "
-#~ "but for the string \"hall not\" with a space between the second \"l\" and "
-#~ "the \"n\". The search for \"hall not\" will find occurrences of "
-#~ "\"s<emphasis>hall not</emphasis>\"."
-#~ msgstr ""
-#~ "Eine Suche mit regulären Ausdrücken stellt eine Möglichkeit dar, einfache "
-#~ "oder komplexe Suchen nach Zeichenketten durchzuführen, die einem Muster "
-#~ "oder einer Menge von Mustern (Bereiche) entsprechen. Die einzelnen Muster "
-#~ "einer Menge werden durch den horizontalen Strich &quot;|&quot; getrennt. "
-#~ "WÃ€hrend es möglich ist, ein Muster zu bauen, dass nach einem Wort oder "
-#~ "einem Satz sucht, sucht ein einfaches aus einem einzelnen Wort "
-#~ "bestehendes Muster nicht nur nach diesem einen Wort, sondern auch nach "
-#~ "jeder Zeichenkette die das gesuchte Wort enthält. Eine Suche nach &quot;"
-#~ "gerecht&quot; wird Verse liefern, die das Wort &quot;gerecht&quot; "
-#~ "enthalten. Es werden jedoch auch Verse zurückgeliefert, die &quot;"
-#~ "<emphasis>Gerecht</emphasis>igkeit&quot;, &quot;Un<emphasis>gerecht</"
-#~ "emphasis>igkeit&quot; oder &quot;<emphasis>gerecht</emphasis>er&quot; "
-#~ "enthalten. Eine Suche nach &quot;hall not&quot; ist nicht eine Suche nach "
-#~ "&quot;hall&quot; UND &quot;not&quot;, sondern nach der Zeichenkette &quot;"
-#~ "hall not&quot; mit einem Leerzeichen zwischen dem zweiten &quot;l&quot; "
-#~ "und dem &quot;n&quot;. Die Suche nach &quot;hall not&quot; wird "
-#~ "Textstellen mit &quot;s<emphasis>hall not</emphasis>&quot; finden."
-
-#, fuzzy
-#~ msgid ""
-#~ "The power of Regular Expressions lies in the patterns (or templates) used "
-#~ "to define a search. A pattern consists of ordinary characters and some "
-#~ "special characters that are used and interpreted by a set of rules. "
-#~ "Special characters include .\\[^*$?+. Ordinary (or simple) characters are "
-#~ "any characters that are not special. The backslash, \"\\\", is used to "
-#~ "convert special characters to ordinary and ordinary characters to special."
-#~ msgstr ""
-#~ "Die Mächtigkeit der regulären Ausdrücke liegt in den Mustern (oder "
-#~ "Vorlagen) die benutzt werden, um die Suche zu definieren. Ein Muster "
-#~ "besteht aus normalen Zeichen und einigen besonderen Zeichen, die von "
-#~ "einer bestimmten Menge von Regeln interpretiert und benutzt werden. Die "
-#~ "besonderen Zeichen enthalten .\\[^*$?+. Normale (oder einfache) Zeichen, "
-#~ "sind alle die, die keine besonderen Zeichen sind. Der Backslash, &quot;"
-#~ "\\&quot;, wird benutzt um die besonderen Zeichen in normale und normale "
-#~ "in besondere Zeichen umzuwandeln."
-
-#, fuzzy
-#~ msgid ""
-#~ "Example: the pattern \"i. love\\.\" will find sentences that end with "
-#~ "\"h<emphasis>i</emphasis>s <emphasis>love.</emphasis>\" or \"<emphasis>i</"
-#~ "emphasis>n <emphasis>love.</emphasis>\" or \"<emphasis>i</emphasis>s "
-#~ "<emphasis>love.</emphasis>\". The first period in \"i. love\\.\" is a "
-#~ "special character that means \"allow any character in this position\". "
-#~ "The backslash in \"i. love\\.\" means that the period following it is not "
-#~ "to be considered a special character, but is an ordinary period."
-#~ msgstr ""
-#~ "Beispiel: das Muster &quot;<emphasis>i. love\\.</emphasis>&quot; wird "
-#~ "Sätze finden, die mit &quot;h<emphasis>i</emphasis>s <emphasis>love</"
-#~ "emphasis>&quot; oder &quot;<emphasis>i</emphasis>n <emphasis>love</"
-#~ "emphasis>&quot; oder &quot;<emphasis>i</emphasis>s <emphasis>love</"
-#~ "emphasis>&quot; enden, gefolgt von einem Punkt. Der erste Punkt in &quot;"
-#~ "i. love\\.&quot; ist ein spezielles Zeichen, das ein Platzhalter für ein "
-#~ "beliebiges Zeichen an dieser Stelle ist.Der Backslash in &quot;i. love\\."
-#~ "&quot; markiert den folgenden Punkt als normales Zeichen (der sonst ein "
-#~ "Sonderzeichen ist)."
-
-#~ msgid "Special characters"
-#~ msgstr "Besondere Zeichen"
-
-#, fuzzy
-#~ msgid ""
-#~ ". The period matches any character. See <link linkend=\"period\">details</"
-#~ "link>"
-#~ msgstr ""
-#~ ". Der Punkt passt auf jedes Zeichen. Siehe auch <link linkend=\"period\"> "
-#~ "Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "* The asterisk matches 0 or more characters of the preceding: set, "
-#~ "character or indicated character. See <link linkend=\"asterisk\">details</"
-#~ "link>"
-#~ msgstr ""
-#~ "* Der Stern findet 0 oder mehr Zeichen des vorhergehenden Sets, des "
-#~ "vorhergehenden Zeichens oder des vorhergehenden besonderern Zeichens. "
-#~ "Siehe auch <link linkend=\"asterisk\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "+ The plus sign matches 1 or more characters of the preceding: set, "
-#~ "character or indicated character. See <link linkend=\"plus\">details</"
-#~ "link>"
-#~ msgstr ""
-#~ "+ Das Pluszeichen findet 1 oder mehr Zeichen des vorhergehenden Sets, des "
-#~ "vorhergehenden Zeichens oder des vorhergehenden besonderern Zeichens. "
-#~ "Siehe auch <link linkend=\"plus\">Einzelheiten</link>."
-
-#, fuzzy
-#~ msgid ""
-#~ "? The question mark matches 0 or 1 character of the preceding: set, "
-#~ "character or indicated character. See <link linkend=\"question\">details</"
-#~ "link>"
-#~ msgstr ""
-#~ "? Das Fragezeichen passt auf 0 oder 1 Zeichen des vorhergehenden Sets, "
-#~ "Zeichens oder besonderern Zeichens. Siehe auch <link linkend=\"question"
-#~ "\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "[ ] Square brackets match any one of the characters specified inside [ ]. "
-#~ "See <link linkend=\"bracket\">details</link>"
-#~ msgstr ""
-#~ "[ ] Eckige Klammern finden ein Zeichens innerhalb der eckigen Klammern "
-#~ "[ ]. Siehe auch <link linkend=\"bracket\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "^ A caret as the first character inside [ ] means NOT. See <link linkend="
-#~ "\"caret\">details</link>"
-#~ msgstr ""
-#~ "^ Ein Hochzeichen als erstes Zeichen innerhalb von [ ] heiÃt NICHT. Siehe "
-#~ "auch <link linkend=\"caret\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "^ A caret beginning of a pattern anchors the beginning of a line. See "
-#~ "<link linkend=\"caret\">details</link>"
-#~ msgstr ""
-#~ "^ Ein Hochzeichen als Beginn eines Musters verankert an den Beginn der "
-#~ "Zeile. Siehe auch <link linkend=\"caret\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "$ A dollar at the end of a pattern anchors the end of a line. See <link "
-#~ "linkend=\"dollar\">details</link>"
-#~ msgstr ""
-#~ "$ Ein Dollarzeichen am Beginn eines Musters verankert an das Ende einer "
-#~ "Zeile. Siehe auch <link linkend=\"dollar\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "| A vertical bar means logical OR. See <link linkend=\"bar\">details</"
-#~ "link>"
-#~ msgstr ""
-#~ "| Ein vertikaler Strich hat die Bedeutung des logischen ODER. Siehe auch "
-#~ "<link linkend=\"bar\">Einzelheiten</link>"
-
-#~ msgid ""
-#~ "( ) Parentheses enclose expressions for grouping. <emphasis>Not supported!"
-#~ "</emphasis>"
-#~ msgstr ""
-#~ "( ) Runde Klammern gruppieren Ausdrücke. <emphasis>Wird nicht unterstützt!"
-#~ "</emphasis>"
-
-#, fuzzy
-#~ msgid ""
-#~ "\\ A backslash can be used prior to any special character to match that "
-#~ "character. See <link linkend=\"backslash\">details</link>"
-#~ msgstr ""
-#~ "\\ Ein Backslash kann vor jedem besonderem Zeichen benutzt werden, um "
-#~ "dieses Zeichen zu finden. Siehe auch <link linkend=\"backslash"
-#~ "\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid ""
-#~ "\\ A backslash can be used prior to an ordinary character to make it a "
-#~ "special character. See <link linkend=\"backslash\">details</link>"
-#~ msgstr ""
-#~ "\\ Ein Backslash kann vor jedem normalen Zeichen benutzt werden um es zu "
-#~ "einem besonderen Zeichen zu machen. Siehe auch <link linkend=\"backslash"
-#~ "\">Einzelheiten</link>"
-
-#, fuzzy
-#~ msgid "The period ."
-#~ msgstr "Der Punkt ."
-
-#, fuzzy
-#~ msgid ""
-#~ "The Period \".\" will match any single character even a space or other "
-#~ "non-alphabet character. <emphasis>s.t</emphasis> matches <emphasis>s</"
-#~ "emphasis>i<emphasis>t</emphasis>, <emphasis>s</emphasis>e<emphasis>t</"
-#~ "emphasis>,<emphasis> s</emphasis>o<emphasis>t</emphasis>, etc., which "
-#~ "could be located in <emphasis>s</emphasis>i<emphasis>t</emphasis>ting, "
-#~ "compas<emphasis>s</emphasis>e<emphasis>t</emphasis>h and <emphasis>s</"
-#~ "emphasis>o<emphasis>t</emphasis>tish <emphasis>b..t</emphasis> matches "
-#~ "<emphasis>b</emphasis>oo<emphasis>t</emphasis>, <emphasis>b</"
-#~ "emphasis>oa<emphasis>t</emphasis> and <emphasis>b</emphasis>ea<emphasis>t "
-#~ "foot.tool </emphasis>matches <emphasis>foot</emphasis>s<emphasis>tool </"
-#~ "emphasis>and <emphasis>foot tool</emphasis>."
-#~ msgstr ""
-#~ "Der Punkt &quot;.&quot; steht für jedes einzelne Zeichen, sogar für ein "
-#~ "Leerzeichen oder für ein Zeichen, dass nicht im Alphabet vorkommt. "
-#~ "<emphasis>s.t</emphasis> findet <emphasis>s</emphasis>i<emphasis>t</"
-#~ "emphasis>, <emphasis>s</emphasis>e<emphasis>t</emphasis>,<emphasis> s</"
-#~ "emphasis>o<emphasis>t</emphasis>, usw., welche in folgenden Zeichenketten "
-#~ "vorkommen können <emphasis>s</emphasis>i<emphasis>t</emphasis>ting, "
-#~ "compas<emphasis>s</emphasis>e<emphasis>t</emphasis>h and <emphasis>s</"
-#~ "emphasis>o<emphasis>t</emphasis>tish <emphasis>b..t</emphasis> findet "
-#~ "<emphasis>b</emphasis>oo<emphasis>t</emphasis>, <emphasis>b</"
-#~ "emphasis>oa<emphasis>t</emphasis> und <emphasis>b</emphasis>ea<emphasis>t "
-#~ "foot.tool </emphasis>findet <emphasis>foot</emphasis>s<emphasis>tool </"
-#~ "emphasis>und <emphasis>foot tool</emphasis>"
-
-#, fuzzy
-#~ msgid "The asterisk *"
-#~ msgstr "Das Sternchen *"
-
-#, fuzzy
-#~ msgid ""
-#~ "The asterisk matches zero or more characters of the preceding: set, "
-#~ "character or indicated character. Using a period asterisk combination \".*"
-#~ "\" is a common method to match any combination of characters. "
-#~ "<emphasis>be*n</emphasis> matches<emphasis> beeen, been, ben</emphasis>, "
-#~ "and <emphasis>bn</emphasis> which could locate Reu<emphasis>ben</"
-#~ "emphasis> and She<emphasis>bn</emphasis>a. <emphasis>G.*d</emphasis> "
-#~ "would match <emphasis>God, good, guard</emphasis> and even <emphasis>Gd</"
-#~ "emphasis>."
-#~ msgstr ""
-#~ "Das Sternchen findet null oder mehr Zeichen des vorhergehenden Sets, "
-#~ "Zeichens oder besonderen Zeichens. Die Benutzung einer Punkt Sternchen "
-#~ "Kombination &quot;.*&quot; nach einem häufig gefundenem Muster kann die "
-#~ "Suche sehr lange dauern lassen und das Programm eingefroren wirken "
-#~ "lassen. <emphasis>be*n</emphasis> findet<emphasis> beeen, been, ben</"
-#~ "emphasis>, und <emphasis>bn</emphasis> was z.B. &quot;Reu<emphasis>ben</"
-#~ "emphasis>&quot; und &quot;She<emphasis>bn</emphasis>a&quot; finden könnte."
-
-#, fuzzy
-#~ msgid "The plus sign +"
-#~ msgstr "Das Pluszeichen +"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Plus Sign matches one or more characters of the preceding: set, "
-#~ "character or indicated character. Using a period and plus sign "
-#~ "combination \".+\" is similar to \".*\" (see above), but the string has "
-#~ "to contain at least one string to match. <emphasis>be+n</emphasis> "
-#~ "matches <emphasis>beeen, been</emphasis> and <emphasis>ben</emphasis>, "
-#~ "but not <emphasis>bn</emphasis>."
-#~ msgstr ""
-#~ "Das Pluszeichen findet ein oder mehr Zeichen des vorhergehenden Sets, "
-#~ "Zeichens oder besonderen Zeichens. Die Benutzung einer Pluszeichen "
-#~ "Sternchen Kombination &quot;+*&quot; nach einem häufig gefundenem Muster "
-#~ "kann die Suche sehr lange dauern lassen und das Programm eingefroren "
-#~ "wirken lassen. &quot;<emphasis>be+n</emphasis>&quot; findet &quot;"
-#~ "<emphasis>beeen, been</emphasis>&quot; und &quot;<emphasis>ben</"
-#~ "emphasis>&quot;, jedoch nicht &quot;<emphasis>bn</emphasis>&quot;."
-
-#, fuzzy
-#~ msgid "The question mark ?"
-#~ msgstr "Das Fragezeichen ?"
-
-#~ msgid ""
-#~ "The Question Mark matches zero or one character of the preceding: set, "
-#~ "character or indicated character. <emphasis>be?n</emphasis> matches "
-#~ "<emphasis>ben</emphasis> and <emphasis>bn</emphasis> but not "
-#~ "<emphasis>been</emphasis>. <emphasis>trees?</emphasis> matches "
-#~ "<emphasis>trees</emphasis> or <emphasis>tree</emphasis>."
-#~ msgstr ""
-#~ "Das Fragezeichen findet 0 oder mehr Zeichen des vorhergehenden Sets, "
-#~ "Zeichens oder besonderen Zeichens. <emphasis>be?n</emphasis> findet "
-#~ "<emphasis>ben</emphasis> und <emphasis>bn</emphasis> jedoch nicht "
-#~ "<emphasis>been</emphasis>. <emphasis>trees?</emphasis> findet "
-#~ "<emphasis>trees</emphasis> oder <emphasis>tree</emphasis>."
-
-#, fuzzy
-#~ msgid "The square brackets [ ]"
-#~ msgstr "Die eckigen Klammern [ ]"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Square Brackets enclose a set of characters that can match. The "
-#~ "period, asterisk, plus sign and question mark are not special inside the "
-#~ "brackets. A minus sign can be used to indicate a range. If you want a "
-#~ "caret \"^\" to be part of the range do not place it first after the left "
-#~ "bracket or it will be a special character. To include a \"]\" in the set "
-#~ "make it the first (or second after a special \"^\") character in the set. "
-#~ "To include a minus sign in the set make it the first (or second after a "
-#~ "special \"^\") or last character in the set. <emphasis>s[eia]t</emphasis> "
-#~ "matches <emphasis>set</emphasis>, <emphasis>sit</emphasis>, and "
-#~ "<emphasis>sat</emphasis>, but not <emphasis>s</emphasis>o<emphasis>t</"
-#~ "emphasis>. <emphasis>s[eia]+t </emphasis>matches as above but also, "
-#~ "<emphasis>seat, seet, siet</emphasis>, etc. <emphasis>[a-d]</emphasis> "
-#~ "matches <emphasis>a, b, c,</emphasis> or <emphasis>d</emphasis>. "
-#~ "<emphasis>[A-Z]</emphasis> matches any uppercase letter. [.;:?!] "
-#~ "matches ., ;, :, ?, or ! but not a comma. [ ]^-] matches ] or ^ or -."
-#~ msgstr ""
-#~ "Die eckigen Klammern schlieÃen eine Menge von Zeichen ein, die Treffer "
-#~ "erzielen können. Die Zeichen Punkt, Sternchen, Pluszeichen und "
-#~ "Fragezeichen werden innerhalb der Klammern nicht als besondere Zeichen "
-#~ "behandelt. Ein Minuszeichen kann benutzt werden, um einen Bereich "
-#~ "anzugeben. Falls Sie möchten, dass ein Hochzeichen &quot;^&quot; Teil des "
-#~ "Bereiches wird plazieren Sie es nicht direkt hinter die linke Klammer, "
-#~ "oder es wird als besonderes Zeichen behandelt. Um den vertikalen Strich "
-#~ "&quot;|&quot; in die Menge aufzunehmen, machen Sie ihn zum ersten Zeichen "
-#~ "nach der linken eckigen Klammer (oder zweites nach dem besonderen Zeichen "
-#~ "&quot;^&quot;). Um ein Minuszeichen in die Menge aufzunehmen machen Sie "
-#~ "es zum ersten Zeichen nach der linken Klammer (oder zweites nach dem "
-#~ "besonderen Zeichen &quot;^&quot;) oder auch zum letzten Zeichen der "
-#~ "Menge. <emphasis>s[eia]t</emphasis> findet <emphasis>set</emphasis>, "
-#~ "<emphasis>sit</emphasis>, und <emphasis>sat</emphasis>, jedoch nicht "
-#~ "<emphasis>s</emphasis>o<emphasis>t</emphasis>. <emphasis>s[eia]+t </"
-#~ "emphasis>findet so wie oben und<emphasis>seat, seet, siet</emphasis>, "
-#~ "usw. <emphasis>[a-d]</emphasis> findet <emphasis>a, b, c,</emphasis> oder "
-#~ "<emphasis>d</emphasis>. <emphasis>[A-Z]</emphasis> findet jeden "
-#~ "GroÃbuchstaben. [.;:?!] findet ., ;, :, ?, oder ! jedoch kein Komma. [ ]"
-#~ "^-] findet ] oder ^ oder -"
-
-#, fuzzy
-#~ msgid "The caret first in square brackets [^xxx]"
-#~ msgstr "Das Hochzeichen zu Beginn in den eckigen Klammern [^xxx"
-
-#~ msgid ""
-#~ "If the Caret is the first character after the left bracket it means NOT. "
-#~ "<emphasis>s[^io]t</emphasis> matches <emphasis>set, sat</emphasis>, etc., "
-#~ "but not <emphasis>s</emphasis>i<emphasis>t</emphasis> and <emphasis>s</"
-#~ "emphasis>o<emphasis>t</emphasis>."
-#~ msgstr ""
-#~ "Wenn das Hochzeichen das erste Zeichen nach der linken Klammer ist, hat "
-#~ "es die Bedeutung von NICHT. <emphasis>s[^io]t</emphasis> findet "
-#~ "<emphasis>set, sat</emphasis>, usw., jedoch nicht <emphasis>s</"
-#~ "emphasis>i<emphasis>t</emphasis> und <emphasis>s</emphasis>o<emphasis>t</"
-#~ "emphasis>."
-
-#, fuzzy
-#~ msgid "The caret as start of line anchor ^xxx"
-#~ msgstr "Das Hochzeichen als Zeilenbeginn Anker ^xxx"
-
-#, fuzzy
-#~ msgid ""
-#~ "If the Caret is the first character in a pattern it anchors the pattern "
-#~ "to the start of a line. Any match must be at the beginning of a line. A "
-#~ "line here means a part of text delimited by the return character or the "
-#~ "end of the text. In Bibles, a \"line\" in this sense is often equivalent "
-#~ "to a single verse; the word-wrapping that is performed by &bibletime; "
-#~ "when the text is rendered on the screen does not affect the search "
-#~ "algorithm. <emphasis>^In the beginning</emphasis> matches lines that "
-#~ "start with \"<emphasis>In the beginning</emphasis>\"."
-#~ msgstr ""
-#~ "Wenn das Hochzeichen das erste Zeichen in einem Muster ist, verankert es "
-#~ "diese an den Beginn der Zeile. Jeder Treffer muss am Beginn der Zeile "
-#~ "liegen. Wegen ungefilterten Formatierungszeichen in einigen Texten "
-#~ "funktioniert diese Funktion nicht immer. Sie könnte es jedoch, wenn "
-#~ "einige Punkte nach dem Hochzeichen gesetzt werden, um die "
-#~ "Formatierungszeichen zu umgehen. <emphasis>^Am Anfang</emphasis> findet "
-#~ "Zeilen, die mit &quot;<emphasis>Amfang</emphasis>&quot;. beginnen "
-#~ "(Vielleicht müssen Sie &quot;<emphasis>^.....Am Anfang</emphasis>&quot; "
-#~ "benutzen)."
-
-#, fuzzy
-#~ msgid ""
-#~ "(Because of unfiltered formatting characters in some texts, this feature "
-#~ "does not always work correctly, but may if a few periods are placed after "
-#~ "the caret to account for the formatting characters. If that is the case "
-#~ "for you, you could try <emphasis>^..In the beginning</emphasis> instead.)"
-#~ msgstr ""
-#~ "Wenn das Hochzeichen das erste Zeichen in einem Muster ist, verankert es "
-#~ "diese an den Beginn der Zeile. Jeder Treffer muss am Beginn der Zeile "
-#~ "liegen. Wegen ungefilterten Formatierungszeichen in einigen Texten "
-#~ "funktioniert diese Funktion nicht immer. Sie könnte es jedoch, wenn "
-#~ "einige Punkte nach dem Hochzeichen gesetzt werden, um die "
-#~ "Formatierungszeichen zu umgehen. <emphasis>^Am Anfang</emphasis> findet "
-#~ "Zeilen, die mit &quot;<emphasis>Amfang</emphasis>&quot;. beginnen "
-#~ "(Vielleicht müssen Sie &quot;<emphasis>^.....Am Anfang</emphasis>&quot; "
-#~ "benutzen)."
-
-#, fuzzy
-#~ msgid "The dollar sign as end of line anchor xxx$"
-#~ msgstr "Das Dollarzeichen als Zeilenende Anker xxx$"
-
-#, fuzzy
-#~ msgid ""
-#~ "If the Dollar Sign is the last character in a pattern it anchors the "
-#~ "pattern to the end of a line. Any match must be at the end of a line. "
-#~ "<emphasis>Amen\\.$</emphasis> matches lines that end with "
-#~ "\"<emphasis>Amen.</emphasis>\""
-#~ msgstr ""
-#~ "Wenn das Dollarzeichen das letzte des Musters ist, verankert es das "
-#~ "Muster an das Ende der Zeile. Jeder Treffer muss am Ende der Zeile "
-#~ "stattfinden. Wegen ungefilterten Formatierungszeichen in einigen Texten "
-#~ "funktioniert diese Funktion nicht immer. Sie könnte es jedoch, wenn "
-#~ "einige Punkte vor das Dollarzeichen gesetzt werden, um die "
-#~ "Formatierungszeichen zu umgehen. <emphasis>Amen\\.$</emphasis> findet "
-#~ "Zeilen, die mit &quot;<emphasis>Amen.</emphasis>&quot; enden (Vielleicht "
-#~ "müssen Sie &quot;Amen\\....&quot;, &quot;Amen\\..........$&quot;, oder "
-#~ "sogar &quot;Amen\\....................$&quot; benutzen)"
-
-#, fuzzy
-#~ msgid "The vertical bar |"
-#~ msgstr "Der senkrechte Strich |"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Vertical Bar between patterns means OR. <emphasis>John|Peter</"
-#~ "emphasis> matches <emphasis>John</emphasis> or <emphasis>Peter. John ."
-#~ "*Peter|Peter .*John</emphasis> matches <emphasis>John</emphasis> ... "
-#~ "<emphasis>Peter</emphasis> or <emphasis>Peter</emphasis> ... "
-#~ "<emphasis>John</emphasis>. <emphasis>pain|suffering|sorrow</emphasis> "
-#~ "matches <emphasis>pain</emphasis>, or <emphasis>suffering</emphasis>, or "
-#~ "<emphasis>sorrow</emphasis>."
-#~ msgstr ""
-#~ "Der vertikale Strich zwischen Mustern bedeutet ODER. <emphasis>John|"
-#~ "Peter</emphasis> findet <emphasis>John</emphasis>. <emphasis>Peter. John ."
-#~ "*Peter|Peter .*John</emphasis> matches <emphasis>John</emphasis> ... "
-#~ "<emphasis>Peter</emphasis> oder <emphasis>Peter</emphasis> ... "
-#~ "<emphasis>John</emphasis>. (.* slows a search) <emphasis>pain|suffering|"
-#~ "sorrow</emphasis> findet<emphasis>pain</emphasis>, oder "
-#~ "<emphasis>suffering</emphasis>, oder <emphasis>sorrow</emphasis>."
-
-#, fuzzy
-#~ msgid "The parentheses ( )"
-#~ msgstr "Die runden Klammern ( )"
-
-#~ msgid "The use of Parentheses ( ) is not supported!"
-#~ msgstr "Die Benutzung der runden Klammern () wird nicht unterstützt."
-
-#, fuzzy
-#~ msgid "The backslash prior to a special character \\*"
-#~ msgstr "Der Backslash vor einem besonderen Zeichen \\*"
-
-#, fuzzy
-#~ msgid ""
-#~ "The Backslash prior to a special character indicates that the character "
-#~ "is not being used in its special meaning, but is just to match itself. "
-#~ "\"amen\\.\" matches <emphasis>amen.</emphasis> but not <emphasis>amen</"
-#~ "emphasis>t and will not locate firm<emphasis>amen</emphasis>t."
-#~ msgstr ""
-#~ "Der Backslash vor einem besonderen Zeichen bedeutet, dass das Zeichen "
-#~ "nicht in seiner besonderen Bedeutung behandelt werden soll, sondern dass "
-#~ "es das Zeichen selbst sein soll. &quot;<emphasis>amen\\.</emphasis>&quot; "
-#~ "findet &quot;<emphasis>amen.</emphasis>&quot;, jedoch nicht &quot;"
-#~ "<emphasis>amen</emphasis>t&quot; und es wird nicht &quot;"
-#~ "firm<emphasis>amen</emphasis>t&quot;."
-
-#, fuzzy
-#~ msgid "The backslash prior to an ordinary character \\s"
-#~ msgstr "Der Backslash vor einem normalen Zeichen \\s"
-
-#~ msgid ""
-#~ "The Backslash prior to an ordinary character indicates that the character "
-#~ "is not being used to match itself, but has special meaning."
-#~ msgstr ""
-#~ "Der Backslash vor einem normalen Zeichen bedeutet, dass dieses statt der "
-#~ "normalen Bedeutung eine besondere haben soll."
-
-#, fuzzy
-#~ msgid ""
-#~ "\\b if used outside [ ] means word boundary. If used inside [ ], it means "
-#~ "backspace. <emphasis>\\brighteous\\b</emphasis> matches "
-#~ "<emphasis>righteous</emphasis> but not un<emphasis>righteous</emphasis> "
-#~ "or <emphasis>righteous</emphasis>ness."
-#~ msgstr ""
-#~ "\\b ausÃerhalb von [ ] benutzt, bedeutet es Wortgrenze. Innerhalb von [ ] "
-#~ "hat die es die Bedeutung des Backspace. <emphasis>\\brighteous\\b</"
-#~ "emphasis> findet <emphasis>righteous</emphasis>, aber nicht "
-#~ "un<emphasis>righteous</emphasis> oder <emphasis>righteous</emphasis>ness"
-
-#~ msgid ""
-#~ "\\B means non-word boundary. <emphasis>\\Brighteous\\B</emphasis> matches "
-#~ "un<emphasis>righteous</emphasis>ness and un<emphasis>righteous</"
-#~ "emphasis>ly but not <emphasis>righteous</emphasis>, "
-#~ "un<emphasis>righteous</emphasis> or <emphasis> righteous</emphasis>ness."
-#~ msgstr ""
-#~ "\\B steht für keine Wortgrenze. <emphasis>\\Brighteous\\B</emphasis> "
-#~ "findet un<emphasis>righteous</emphasis>ness und un<emphasis>righteous</"
-#~ "emphasis>ly, jedoch nicht <emphasis>righteous</emphasis>, "
-#~ "un<emphasis>righteous</emphasis> oder <emphasis> righteous</emphasis>ness."
-
-#~ msgid "\\d means digit; same as [0-9]."
-#~ msgstr "\\d steht für Zahlen; das Gleiche wie [0-9]."
-
-#~ msgid "\\D means non-digit, same as [^0-9]."
-#~ msgstr "\\D steht für nicht-Zahlen; das Gleiche wie [^0-9]."
-
-#, fuzzy
-#~ msgid "\\s means whitespace character."
-#~ msgstr "\\s bedeutet Leerzeichen."
-
-#, fuzzy
-#~ msgid "\\S means no whitespace character."
-#~ msgstr "\\S steht für nicht-Leerzeichen."
-
-#~ msgid "\\w means alphanumeric; same as [a-zA-Z0-9_]."
-#~ msgstr "\\w bedeutet alphanumerisch; das Gleiche wie [a-zA-Z0-9_]."
-
-#~ msgid "\\W means not alphanumeric; same as [^a-zA-Z0-9_]."
-#~ msgstr "\\W bedeutet nicht-alphanumerisch; das Gleiche wie [^a-zA-Z0-9_]."
-
-#~ msgid "Tip of the Day"
-#~ msgstr "Tipp des Tages"
-
-#, fuzzy
-#~ msgid "<firstname>Fred</firstname> <surname>Saalbach</surname>"
-#~ msgstr "<firstname>Bob</firstname> <surname>Harman</surname>"
-
-#~ msgid "<firstname>Jeffrey</firstname> <surname>Hoyt</surname>"
-#~ msgstr "<firstname>Jeffrey</firstname> <surname>Hoyt</surname>"
-
-#, fuzzy
-#~ msgid "<firstname>Martin</firstname> <surname>Gruner</surname>"
-#~ msgstr "<firstname>Bob</firstname> <surname>Harman</surname>"
-
-#~ msgid "ROLES_OF_TRANSLATORS"
-#~ msgstr "<firstname>Joachim</firstname> <surname>Ansorg</surname>"
-
-#~ msgid "<keyword>KDE</keyword>"
-#~ msgstr "<keyword>KDE</keyword>"
-
-#~ msgid "sword"
-#~ msgstr "sword"
-
-#~ msgid "crosswire"
-#~ msgstr "crosswire"
-
-#~ msgid "help dialog"
-#~ msgstr "Hilfedialog"
-
-#~ msgid "Multiple words (AND)"
-#~ msgstr "Mehrere Worte (UND)"
-
-#, fuzzy
-#~ msgid ""
-#~ "If <guimenuitem>Multiple words (AND)</guimenuitem> is marked, the search "
-#~ "will locate all lines (or verses) that have all the words. The position "
-#~ "and order of the words does not matter. A search for &quot;prove "
-#~ "cause&quot; will find Gen. 21:25, &quot;And Abraham re<emphasis>prove</"
-#~ "emphasis>d Abimelech be <emphasis>cause</emphasis> of a well of water..."
-#~ "&quot; This is because a word that is part of another word is considered "
-#~ "found if a word containing it is found."
-#~ msgstr ""
-#~ "Wenn \"Mehrere Wörter (UND)\" ausgewählt ist, wird die Suche alle Verse "
-#~ "finden, die alle eingegebenen Worte enthalten. Die Position und "
-#~ "Reihenfolge der Worte spielt keine Rolle. Wenn alle Worte in einem Vers "
-#~ "enthalten sind, wird er in der Liste der gefundenen Verse angezeigt. Eine "
-#~ "Suche nach &quot;prove cause&quot; wird 1 Mose 21:25 finden, &quot;And "
-#~ "Abraham re<emphasis>prove</emphasis>d Abimelech be <emphasis>cause</"
-#~ "emphasis> of a well of water...&quot; Es reicht also sogar, wenn die "
-#~ "gesuchten Worte in den Worten des Verses enthalten sind."
-
-#~ msgid "Multiple words (OR)"
-#~ msgstr "Mehrere Worte (ODER)"
-
-#, fuzzy
-#~ msgid ""
-#~ "If <guimenuitem>Multiple words (OR)</guimenuitem> is marked, the search "
-#~ "will locate all lines (or verses) that have any of the words. A search "
-#~ "for &quot;prove cause&quot; will find Genesis 21:11, &quot;And the thing "
-#~ "was very grievous in Abraham's sight be<emphasis>cause </emphasis> of his "
-#~ "son.&quot;"
-#~ msgstr ""
-#~ "Wenn der Knopf \"Mehrere Wörter (ODER)\" ausgewählt wurde, dass findet "
-#~ "die Suche alle Zeilen (oder Verse) die eines der Wörter des Eingabefeldes "
-#~ "enthalten. Eine Suche nach &quot;cause&quot; findet 1. Mose 21:11 &quot;"
-#~ "And the thing was very grievous in Abraham's sight be<emphasis>cause </"
-#~ "emphasis> of his son.&quot;."
-
-#~ msgid "Exact"
-#~ msgstr "Genau"
-
-#, fuzzy
-#~ msgid ""
-#~ "If <guimenuitem>Exact</guimenuitem> is marked, the search will locate all "
-#~ "lines (or verses) that contain the very phrase that was entered in the "
-#~ "input field, including any spaces. A search for &quot;now how thou "
-#~ "ought&quot; will find 1 Timothy 3:1, &quot;...that thou mayest "
-#~ "k<emphasis>now how thou ought</emphasis>est to behave...&quot;"
-#~ msgstr ""
-#~ "Wenn Genaue Suche ausgewählt wurde, wird die Suche alle Zeilen (oder "
-#~ "Verse) finden, die genau den in der Eingabezeile eingegebenen Text unter "
-#~ "Einbezug aller Leerzeichen enthalten. Der gesuchte Satz muss nicht an "
-#~ "einer Wortgrenze starten. Eine Suche nach &quot;amt begehrt&quot; wird 1. "
-#~ "Thimotheus 3:1 finden: &quot;Das ist gewiÃlich wahr: So jemand ein "
-#~ "Bischofs<emphasis>amt begehrt</emphasis>, der begehrt ein köstlich Werk."
-#~ "&quot;"
-
-#~ msgid "Regular expression"
-#~ msgstr "Regulärer Audrück"
-
-#, fuzzy
-#~ msgid ""
-#~ "Use the <guimenuitem>Case sensitive</guimenuitem> box to switch case "
-#~ "sensite searching on or off."
-#~ msgstr "<guimenuitem>Kapitel</guimenuitem> - Das ganze Kapitel."
