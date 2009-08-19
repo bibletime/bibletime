@@ -1,20 +1,21 @@
 <chapter id="hdbk-intro">
   <title>Einleitung</title>
   <sect1 id="hdbk-intro-about">
-    <title>About &bibletime;</title>
-    <para>&bibletime; is a Bible study tool with support for different types of texts 
-and languages. Even large amounts of works modules are easy to install and 
-manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
-the back-end functionality for &bibletime;, such as viewing Bible text, 
-searching etc. Sword is the flagship product of the <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+    <title>Über &bibletime;</title>
+    <para>&bibletime; ist ein Bibelstudien-Werkzeug, das verschiedene Textarten und 
+Sprachen unterstützt. Sogar große Anzahlen an Werk-Modulen können einfach 
+installiert und verwaltet werden. Es basiert auf der <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>-Bibliothek, welche die 
+zugrundeliegende Backend-Funktionalität für &bibletime; zur Verfügung 
+stellt, so zum Beispiel um Bibeltexte anzuschauen, darin zu suchen, 
+usw. Sword ist das Hauptprodukt der <ulink 
+url="http://www.crosswire.org">Crosswire Bibelgesellschaft</ulink>.</para>
 
-    <para>&bibletime; is designed to be used with works encoded in one of the formats 
-supported by the Sword project. Complete information on the supported 
-document formats can be found in the <ulink 
-url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
-section</ulink> of the Sword Project, Crosswire Bible Society.</para>
+    <para>&bibletime; wurde konzipiert, um mit Werken zu arbeiten, die in einem der 
+Formate vorliegen, die vom Sword-Projekt unterstützt werden. Vollständige 
+Informationen über die unterstützten Dokumentenformate sind auf den <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp">Entwicklerseiten</ulink> 
+des Sword-Projektes der Crosswire Bibelgesellschaft zu finden.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Vorhandene Werke</title>
@@ -25,28 +26,29 @@ verfügbar. Dazu gehören:
         <varlistentry>
           <term>Bibeln</term>
           <listitem>
-            <para>The full Bible text, with optional things like Strong's Numbers, headings 
-and/or footnotes in the text.  Bibles are available in many languages, and 
-include not only modern versions, but also ancient texts like the Codex 
-Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
-the most advanced section in the library of the Sword project.</para>
+            <para>Der vollständie Bibeltext mit optionalen Dingen wie Strong-Nummern, 
+Kopfzeilen und/oder Fußzeilen im Text. Bibeln sind in vielen verschiedenen 
+Sprachen verfügbar und nicht nur auf moderne Versionen beschränkt, sondern 
+umfassen auch altertümliche Texte wie den Codex Leningradensis ("WLC", 
+hebräisch), und die Septuaginta ("LXX", griechisch). Dies ist der 
+fortgeschrittenste Abschnitt in der Bibliothek des Sword-Projektes.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Bücher</term>
           <listitem>
-            <para>Books available include "Imitation of Christ", "Enuma Elish", and "Josephus: 
-The Complete Works"</para>
+            <para>Zu den verfügbaren Büchern gehören "Imitation of Christ", "Enuma Elish" und 
+"Josephus: Die vollständigen Werke"</para>
           </listitem>
         </varlistentry>
         <varlistentry>
           <term>Kommentare</term>
           <listitem>
-            <para>Commentaries available include classics like John Wesley's "Notes on the 
-Bible", Matthew Henry's commentary and Luther's "Commentary on Galatians." 
-With the <emphasis>Personal</emphasis> commentary you can <link 
-linkend="hdbk-op-parts-desk-write"> record your own personal notes</link> to 
-sections of the Bible.</para>
+            <para>Zu den verfügbaren Kommentaren gehören Klassiker wie John Wesleys "Notes on 
+the Bible", Matthew Henrys Kommentar und Luthers "Kommentar über Galater". " 
+Mit dem <emphasis>Persönlichen</emphasis> Kommentar sind Sie in der Lage 
+<link linkend="hdbk-op-parts-desk-write">Ihre eigenen Notizen</link> über 
+Bibelabschnitte zu erstellen.</para>
           </listitem>
         </varlistentry>
         <varlistentry>
@@ -59,21 +61,23 @@ Wort. Die vorhandene Werke enthalten "Daily Light" und die "Losungen".</para>
         <varlistentry>
           <term>Lexika / Wörterbücher</term>
           <listitem>
-            <para>Lexicons available include: Robinson's Morphological Analysis Codes, 
-Brown-Driver-Briggs Hebrew Lexicon and the International Standard Bible 
-Encyclopaedia. Dictionaries available include Strong's Hebrew Bible 
-Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged 
-Dictionary of the English Language 1913, Nave's Topical Bible.</para>
+            <para>Zu den verfügbaren Wörterbüchern gehören: Robinsons "Morphological Analysis 
+Codes", Brown-Driver-Briggs Hebräisch-Lexikon und die Enzyklopädie der 
+International Standard Bible. Zu den erhältlichen Wörterbüchern gehören 
+u.a. Strongs "Hebrew Bible Dictionary", Strongs "Greek Bible Dictionary", 
+Websters "Revised Unabridged Dictionary of the English Language 1913" und 
+Naves "Topical Bible".</para>
           </listitem>
         </varlistentry>
       </variablelist></para>
     </sect2>
     <sect2 id="hdbk-intro-motivation">
       <title>Motivation</title>
-      <para>Our desire is to serve God, and to do our part to help others grow in their 
-relationship with Him. We have striven to make this a powerful, quality 
-program, and still make it simple and intuitive to operate. It is our desire 
-that God be praised, as He is the source of all good things.</para>
+      <para>Unser Verlangen ist es, Gott zu dienen und unseren Teil dazu beizutragen, 
+dass andere in ihrer Beziehung mit IHM wachsen. Wir haben uns bemüht dies zu 
+einem mächtigen und hochwertigen Programm zu machen, das jedoch gleichzeitig 
+einfach und intuitiv zu bedienen ist. Es ist unser Bedürfnis, dass Gott 
+gepriesen wird, da Er die Quelle aller guten Dinge ist.</para>
       <blockquote>
         <attribution>Jakobus 1,17, Hoffnung für Alle</attribution>
         <para>Alles, was Gott uns gibt, ist gut und vollkommen. Er, der Vater des Lichts, 

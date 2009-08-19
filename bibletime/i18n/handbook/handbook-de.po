@@ -547,7 +547,7 @@ msgid ""
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
 "ulink> on the Crosswire Bible Society web site."
 msgstr ""
-"Wenn Sie mit der <mousebutton>rechten Maustaste</mousbutton> auf das Symbol eines Werkes klicken, öffnet sich Ihnen ein Menü mit weiteren für das Werk relevanten Einträgen. <guimenuitem>\"Über...\"</guimenuitem> öffnet ein Fenster mit einer Vielzahl an interessanten Informationen über das gewählte Werk. <guimenuitem>\"Entschlüsseln...\"</guimenuitem> öffnet ein kleines Dialogfenster für verschlüsselte Dokumente, in dem Sie den Entschlüsselungs-Schlüssel für den Zugriff eingeben können. Für weitere Informationen über verschlüsselte Werke, lesen Sie bitte <ulink url="
+"Wenn Sie mit der <mousebutton>rechten Maustaste</mousebutton> auf das Symbol eines Werkes klicken, öffnet sich Ihnen ein Menü mit weiteren für das Werk relevanten Einträgen. <guimenuitem>\"Über...\"</guimenuitem> öffnet ein Fenster mit einer Vielzahl an interessanten Informationen über das gewählte Werk. <guimenuitem>\"Entschlüsseln...\"</guimenuitem> öffnet ein kleines Dialogfenster für verschlüsselte Dokumente, in dem Sie den Entschlüsselungs-Schlüssel für den Zugriff eingeben können. Für weitere Informationen über verschlüsselte Werke, lesen Sie bitte <ulink url="
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\">diese Seite</"
 "ulink> auf der Website der Crosswire Bibelgesellschaft."
 

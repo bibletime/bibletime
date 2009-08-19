@@ -1,13 +1,14 @@
 <chapter id="hdbk-config">
   <title>&bibletime; einrichten</title>
-  <para>In this section you find an overview to configure &bibletime;, which can be 
-found under <guimenu>Settings</guimenu> in the main menu.</para>
+  <para>In diesem Abschnitt finden Sie eine Übersicht, wie &bibletime; zu 
+konfigurieren ist. Sie können das Menü <guimenu>Einstellungen</guimenu> im 
+Hauptmenü finden.</para>
   <sect1 id="hdbk-config-bt">
-    <title>Configure &bibletime; Dialog</title>
-    <para>The &bibletime; user interface can be customized in many ways depending on 
-your needs. You can access the configuration dialog by selecting 
-<menuchoice> <guimenu>Settings</guimenu> </menuchoice> 
-<guimenuitem>Configure &bibletime;</guimenuitem>.</para>
+    <title>Dialog &bibletime; konfigurieren</title>
+    <para>Die &bibletime; Benutzeroberfläche kann auf vielfältige Art ihren Ansprüchen 
+angepasst werden. Sie können auf den Konfigurationsdialog über die Auswahl 
+von <menuchoice><guimenu>Einstellungen</guimenu></menuchoice> 
+<guimenuitem>&bibletime; einrichten</guimenuitem>. gelangen.</para>
     <sect2 id="hdbk-config-bt-display">
       <title>
         <guimenu>Display</guimenu>
@@ -19,9 +20,9 @@ Optionen aus:
           <para>Startlogo anzeigen</para>
         </listitem>
       </itemizedlist></para>
-      <para>Display templates define the rendering of text (colors, size etc.). Various 
-built-in templates are available. If you select one, you will see a preview 
-on the right pane.</para>
+      <para>Anzeigenvorlagen definieren das Aussehen des Textes (Farben, Größe, 
+usw.). Es sind mehrere eingebaute Vorlagen verfügbar. Nach Auswahl einer 
+Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,</para>
     </sect2>
     <sect2 id="hdbk-config-bt-languages">
       <title>
@@ -31,42 +32,46 @@ on the right pane.</para>
 verwendet werden soll. Stellen Sie (falls verfügbar) ihre Muttersprache ein, 
 und sie werden sich gleich zu Hause fühlen.</para>
 
-      <para>By default, &bibletime; uses the default system display font. You can 
-override this font if necessary. Some languages require special fonts to be 
-displayed correctly, and this dialog allows you to specify a custom font for 
-each language.</para>
+      <para>Standardmäßig verwendet &bibletime; die System-Standardschrift zur 
+Anzeige. Sie können diese Schrift bei Bedarf aufheben. Einige Sprachen 
+erfordern spezielle Schriftarten, um korrekt dargestellt werden zu können 
+und dieser Dialog erlaubt Ihnen, spezielle Schriftarten für jede Sprache zu 
+spezifizieren.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="ss_configfonts.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>Options Dialog - fonts</phrase>
+          <phrase>Optionendialog - Schriften</phrase>
         </textobject>
         <caption>
           <para>Der Optionendialog - Schriften.</para>
         </caption>
       </mediaobject>
-      <para>&bibletime; can now use all supported fonts.  As long as the works you are 
-interested in display correctly nothing needs to be done here. If a work 
-only displays as a series of question marks (??????) or empty boxes, then 
-you know that the standard display font does not contain the characters used 
-in this work.</para>
+      <para>&bibletime; kann nun alle unterstützten Schriftarten benutzen. Solange die 
+für sie relevanten Werke korrekt dargestellt werden, muss hier nichts 
+unternommen werden. Wenn ein Werk jedoch nur als Folge von Fragezeichen 
+(??????) oder leeren Kästchen dargestellt wird, dann erkennen Sie, dass die 
+Standard-Schriftart die in diesem Werk benutzten Zeichen nicht enthält.</para>
 
-      <para>To correct this, choose this work's language from the drop down menu. Select 
-the use custom font checkbox. Now select a font. For example, a font that 
-supports many languages is Code2000. If no installed font can display the 
-work you are interested in, try installing the localization package for that 
-language.</para>
+      <para>Um dies zu korrigieren, wählen Sie bitte die Sprache dieses Werkes aus dem 
+Aufklappmenü aus. Wählen Sie das Kontrollkästchen &quot;Benutzerdefinierte 
+Schrift verwenden&quot; aus und wählen Sie anschließend eine Schriftart 
+aus. So ist zum Beispiel die Schriftart Code2000 eine, die viele 
+verschiedene Sprachen unterstützt. Wenn keiner der installierten 
+Schriftarten das für sie interessante Werk darstellen kann, so versuchen Sie 
+bitte, das entsprechende Lokalisierungspaket für diese Sprache zu 
+installieren.</para>
       <sect3 id="hdbk-config-bt-addfont">
         <title>Schriftarten installieren</title>
-        <para>Detailed font installation instructions are outside the scope of this 
-handbook. For further information you might want to refer to the <ulink 
-url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> Unicode 
-HOWTO</ulink>.</para>
+        <para>Detaillierte Anweisungen zur Schriftarten-Installation gehen über den Umfang 
+dieses Handbuches hinaus. Für weitergehende Informationen können Sie auch 
+das <ulink url="http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html"> 
+Unicode-HOWTO</ulink> lesen.</para>
         <tip>
-          <para>If you use a small font like Clearlyu (about 22kb), &bibletime; will run 
-faster than with a large font like <trademark class="registered">Bitstream 
-Cyberbit</trademark>(about 12Mb).</para>
+          <para>Wenn Sie eine kleine Schriftart wie Clearlyu (etwa 22kb) verwenden, wird 
+&bibletime; schneller laufen als mit einer großen Schriftart wie <trademark 
+class="registered">Bitstream Cyberbit</trademark> (etwa 12MB).</para>
         </tip>
       </sect3>
       <sect3 id="hdbk-config-bt-ob-font">
@@ -74,14 +79,14 @@ Cyberbit</trademark>(about 12Mb).</para>
         <para>Schriftarten können von unterschiedlichen Quellen bezogen werden:</para>
         <itemizedlist>
           <listitem>
-            <para>Your *nix distribution.</para>
+            <para>Ihre *nix-Distribution.</para>
           </listitem>
           <listitem>
             <para>Die Sprachpakete ihrer Distribution.</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft Windows</trademark> 
-installation on the same computer.</para>
+            <para>Eine bestehende <trademark class="registered">Microsoft 
+Windows</trademark>-Installation auf dem gleichen Computer.</para>
           </listitem>
           <listitem>
             <para>Eine Sammlung von Schriftarten, wie sie z.B. von Adobe oder Bitstream 
@@ -91,10 +96,10 @@ erhältlich sind.</para>
             <para>Sammlungen von Schriftarten im Internet.</para>
           </listitem>
         </itemizedlist>
-        <para>Unicode fonts support more characters than other fonts, and some of these 
-fonts are available at no charge. None of available fonts includes all 
-characters defined in the Unicode standard, so you may want to use different 
-fonts for different languages.</para>
+        <para>Unicode Schriftarten unterstützen mehr Zeichen als andere, und einige dieser 
+Schriftarten sind kostenlos erhältlich. Keine der verfügbaren Schriftarten 
+enthält alle Zeichen des Unicode-Standards. Sie müssen also 
+evtl. verschiedene Schriftarten für verschiedene Sprachen benutzen.</para>
         <table id="hdbk-config-unicode-fonts-table">
           <title>Unicode Schriftarten</title>
           <tgroup cols="2">
@@ -112,14 +117,14 @@ Zeichenbereich ab.</entry>
                   <ulink url="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&amp;cat_id=FontDownloads">
                   SIL unicode fonts</ulink>
                 </entry>
-                <entry>Excellent Unicode fonts from the Summer Institute of Linguistics.</entry>
+                <entry>Exzellente Unicode-Schriftarten des Summer Institute of Linguistics.</entry>
               </row>
               <row>
                 <entry>
                   <ulink url="http://www.nongnu.org/freefont/">
                   FreeFont</ulink>
                 </entry>
-                <entry>A new free Unicode font initiative.</entry>
+                <entry>Eine neue Initiative für freie Unicode-Schriftarten.</entry>
               </row>
               <row>
                 <entry>
@@ -151,9 +156,10 @@ Hebräisch, Thai.</entry>
             </tbody>
           </tgroup>
         </table>
-        <para>There are good Unicode font lists on the net, as the one by Christoph Singer 
-( <ulink url="http://www.slovo.info/unifonts.htm">Multilingual Unicode 
-TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink 
+        <para>Es gibt gute Listen mit Unicode-Schriftarten im Netz, so z.B. eine von 
+Christoph Singer (<ulink 
+url="http://www.slovo.info/unifonts.htm">Multilingual Unicode TrueType Fonts 
+in the Internet</ulink>), oder eine von Alan Wood (<ulink 
 url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character 
 ranges and the Unicode fonts that support them</ulink>).</para>
       </sect3>
@@ -162,13 +168,14 @@ ranges and the Unicode fonts that support them</ulink>).</para>
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the Sword backend can now be customized in 
-&bibletime;. These features are documented right in the dialog. You also 
-have the possibility to specify standard works that should be used when no 
-specific work is specified in a reference. An example: The standard Bible is 
-used to display the content of cross references in the Bible. When you hover 
-over them, the Mag will show the content of the verses referred to, 
-according to the standard Bible you specified.</para>
+      <para>Viele Funktionen, die vom Sword-Backend zur Verfügung gestellt werden, 
+können nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften 
+sind im rechten Dialog dokumentiert. Ihnen ist außerdem ermöglicht, 
+Standardwerke zu definieren, wenn kein bestimmtes Werk in der Referenz 
+spezifiziert ist. Zum Beispiel wird die Standard-Bibel zur Darstellung des 
+Inhalts von Kreuzverweisen in der Bibel herangezogen. Wenn Sie über sie 
+fahren, wird die Lupe den Versinhalt anzeigen, auf den Bezug genommen wird, 
+gemäß der Standard-Bibel, die Sie spezifiziert haben.</para>
     </sect2>
     <sect2 id="hdbk-config-bt-hotkeys">
       <title>

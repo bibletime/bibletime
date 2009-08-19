@@ -7,8 +7,8 @@
   <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
 
-  <!ENTITY Shift 'Shift'>
-  <!ENTITY Ctrl 'Ctrl'>
+  <!ENTITY Shift 'Umschalt'>
+  <!ENTITY Ctrl 'Strg'>
   <!ENTITY Alt 'Alt'>
 
   <!ENTITY hdbkchap1 SYSTEM "hdbk-intro.docbook">
@@ -19,7 +19,7 @@
 ]>
 <book>
 <bookinfo>
-  <title>The &bibletime; handbook</title>
+  <title>Das &bibletime;-Handbuch</title>
   <authorgroup>
     <author>
       <firstname>Fred</firstname>
@@ -42,7 +42,7 @@
   <!-- TRANS:ROLES_OF_TRANSLATORS -->
 <copyright>
     <year>1999-2009</year>
-    <holder>the &bibletime; team</holder>
+    <holder>Das &bibletime;-Team</holder>
   </copyright>
   <legalnotice>
     <para>Der &bibletime;-Hilfedialog ist ein Teil von &bibletime;.</para>
@@ -50,7 +50,7 @@
   <date>2009-06</date>
   <releaseinfo>2.2</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the Sword framework.</para>
+    <para>&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem Sword-System basiert.</para>
   </abstract>
   <keywordset>
     <keyword>QT4</keyword>

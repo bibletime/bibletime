@@ -1,42 +1,44 @@
 <chapter id="hdbk-term">
   <title> &bibletime; starten</title>
   <sect1 id="hdbk-start">
-    <title>How to start &bibletime;</title>
+    <title>Wie &bibletime; zu starten ist</title>
     <sect2 id="hdbk-start">
       <title> &bibletime; starten</title>
-      <para>&bibletime; is an executable file that is integrated with the desktop. You 
-can launch &bibletime; from the Start Menu with this icon: 
+      <para>&bibletime; ist eine ausführbare Datei, die in Ihrem Desktop integriert 
+ist. Sie können &bibletime; aus dem Startmenü mit folgendem Symbol starten: 
       <mediaobject>
         <imageobject>
           <imagedata fileref="i_bibletime.png" format="PNG" />
         </imageobject>
         <textobject>
-          <phrase>&bibletime; start icon</phrase>
+          <phrase>&bibletime;-Start-Symbol</phrase>
         </textobject>
       </mediaobject></para>
-      <para>&bibletime; can also be launched from a terminal command prompt. To launch 
-&bibletime;, open a terminal window and type: 
+      <para>&bibletime; kann auch von der Kommandozeile eines Terminals aufgerufen 
+werden. Um &bibletime; zu starten, öffnen Sie ein Terminal-Fenster und geben 
+Sie folgendes ein: 
       <screen>&bibletime;</screen></para>
     </sect2>
     <sect2 id="hdbk-start-otherwm">
-      <title>Other window managers</title>
-      <para>&bibletime; can be used with other window managers such as Gnome, BlackBox, 
-Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are 
-already installed on your computer.</para>
+      <title>Andere Fenstermanager</title>
+      <para>&bibletime; kann mit anderen Fenstermanagern wie Gnome, BlackBox, FluxBox, 
+OpenBox oder Sawfish verwendet werden, vorausgesetzt, dass die 
+entsprechenden Basis-Bibliotheken bereits auf Ihrem Rechner installiert 
+sind.</para>
     </sect2>
     <sect2 id="hdbk-start-custom">
-      <title>Startup customization</title>
-      <para>From a terminal you can use &bibletime; to open a random verse in the 
-default bible: 
+      <title>Konfiguration des Startverhaltens</title>
+      <para>Von einem Terminal aus können Sie &bibletime; folgendermaßen verwenden, um 
+einen Zufallsvers aus der Standardbibel anzeigen zu lassen: 
       <screen>bibletime --open-default-bible
-      "&lt;random&gt;"</screen>To open at a given passage like John 3:16, use: 
-      <screen>bibletime --open-default-bible "John 3:16"</screen>You can also use booknames in your current bookname language.</para>
+      "&lt;random&gt;"</screen>Um einen bestimmten Vers wie z.B. Joh. 3,16 aufzuschlagen: 
+      <screen>bibletime --open-default-bible "Joh 3:16"</screen>Sie können auch Buchnamen in Ihrer gegenwärtigen Buchnamen-Sprache benutzen.</para>
     </sect2>
   </sect1>
   <sect1 id="hdbk-startsequence">
-    <title>Startup sequence</title>
-    <para>As &bibletime; launches you may see the following screens before the main 
-&bibletime; window opens:</para>
+    <title>Start-Sequenz</title>
+    <para>Wenn &bibletime; startet, könnten Sie folgende Meldungen vor dem Erscheinen 
+des Hauptfensters sehen:</para>
     <variablelist>
       <varlistentry>
         <term>
@@ -44,13 +46,15 @@ default bible:
         </term>
         <listitem>
           <para>
-          <action>Modifies your Bookshelf.</action> This dialog lets you modify your 
-Bookshelf, add or delete works from your system.  It will only be shown if 
-no default Bookshelf can be found.  Please see <link 
-linkend="hdbk-op-bookshelfmanager"> this section</link> for further 
-details. If you start off with an empty Bookshelf, it will be helpful to 
-install at least one Bible, Commentary, Lexicon and one Book to get to know 
-&bibletime;'s basic features quickly.</para>
+          <action>Ihr Bücherregal modifizieren.</action> Dieser Dialog erlaubt Ihnen, 
+Ihr Bücherregal zu modifizieren, Werke zu Ihrem System hinzuzufügen oder vom 
+System zu löschen. Er wird nur dann angezeigt, wenn kein 
+Standard-Bücherregal gefunden werden kann. Bitte sehen Sie in <link 
+linkend="hdbk-op-bookshelfmanager">diesem Abschnitt</link> für weitere 
+Details nach. Falls Sie &bibletime; mit einem leeren Bücherregal starten, 
+ist es hilfreich, zumindest eine Bibel, ein Kommentar, ein Lexikon und ein 
+Buch zu installieren, um rasch die grundlegenden Funktionseigenschaften von 
+&bibletime; kennen zu lernen.</para>
         </listitem>
       </varlistentry>
       <varlistentry>
@@ -59,9 +63,10 @@ install at least one Bible, Commentary, Lexicon and one Book to get to know
         </term>
         <listitem>
           <para>
-          <action>Customizes &bibletime;.</action>This dialog lets you adapt 
-&bibletime; to your needs. Please see <link linkend="hdbk-config-bt">the 
-detailed description</link> of this dialog.</para>
+          <action>&bibletime; anpassen.</action>Dieser Dialog erlaubt Ihnen 
+&bibletime; an Ihre Bedürfnisse anzupassen. Bitte schlagen Sie <link 
+linkend="hdbk-config-bt">die detaillierte Beschreibung</link> dieses Dialogs 
+nach.</para>
         </listitem>
       </varlistentry>
     </variablelist>
