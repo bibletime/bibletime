@@ -39,7 +39,7 @@
 
 using namespace util::filesystem;
 
-bool showDebugMessages = false;
+bool showDebugMessages;
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
 	//we use this messagehandler to switch debugging off in final releases
@@ -167,15 +167,8 @@ int main(int argc, char* argv[]) {
 
 	// This is the QT4 version, will only work if main App is QApplication
 	// A binary option (on / off)
- 	if (app.QCoreApplication::arguments().contains("--debug"))
-	{
- 		showDebugMessages = true;
- 		app.setProperty("--debug", true);
- 	}
- 	else
-	{
- 		app.setProperty("--debug", false);
- 	}
+    showDebugMessages = QCoreApplication::arguments().contains("--debug");
+    app.setProperty("--debug", showDebugMessages);
 
 	//Migrate configuration data, if neccessary
 	util::MigrationUtil::checkMigration();
