@@ -51,7 +51,7 @@ void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraph
 
 	//the outer rectangle
 	QPoint p1( (int)(rect().x()), (int)(rect().y()) );
-	QPoint p2( (int)(rect().x()+rect().width()), (int)(rect().y()) + rect().height() );
+	QPoint p2( (int)(rect().x() + rect().width() ), (int)(rect().y() + rect().height()));
 	QRect r(p1, p2);
 	r = r.normalized();
 	painter->drawRect(r);

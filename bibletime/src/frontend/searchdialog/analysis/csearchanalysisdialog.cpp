@@ -32,15 +32,15 @@ CSearchAnalysisDialog::CSearchAnalysisDialog( QList<CSwordModuleInfo*> modules, 
 	initView();
 	m_analysis->reset();
 	m_analysis->analyse(modules);
-	
+
 	// Set initial width based on the search data, but limit to the
 	// width of the desktop
-	int width = m_analysis->width()+DIALOG_BORDER;
+	int width = (int)( m_analysis->width()+DIALOG_BORDER );
 	int desktopWidth = QApplication::desktop()->screenGeometry(this).width();
 	if (width > desktopWidth)
 		width = desktopWidth;
 	resize(width, DIALOG_HEIGHT);
-	
+
 }
 
 /** Initializes this dialog. */
@@ -58,7 +58,7 @@ void CSearchAnalysisDialog::initView()
 	m_buttonBox->setOrientation(Qt::Horizontal);
 	m_buttonBox->setStandardButtons(QDialogButtonBox::Close);
 	m_buttonBox->addButton(QDialogButtonBox::Save);
-	//tr("Save as HTML"), 
+	//tr("Save as HTML"),
 	util::prepareDialogBox(m_buttonBox);
 	vboxLayout->addWidget(m_buttonBox);
 
