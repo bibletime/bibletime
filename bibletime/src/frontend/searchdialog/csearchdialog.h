@@ -117,7 +117,7 @@ protected slots:
 	*/
 	void initConnections();
 
-	void closeButtonPressed();
+    void closeButtonClicked();
 
 private:
 	QPushButton* m_analyseButton;

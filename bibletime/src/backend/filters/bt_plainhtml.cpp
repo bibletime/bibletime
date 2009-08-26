@@ -50,7 +50,7 @@ char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey* 
 			continue;
 		}
 		else if (*from == '{') { //footnote start
-			text += "<FONT COLOR=\"#80000\"><SMALL> (";
+            text += "<FONT COLOR=\"#800000\"><SMALL> ("; /// \bug Possible color conflict
 			continue;
 		}
 		else if (*from == '}') //footnote end

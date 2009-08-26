@@ -263,12 +263,12 @@ void CSearchDialog::showModulesSelector() {
 /** Initializes the signal slot connections */
 void CSearchDialog::initConnections() {
 	// Search button is clicked
-	bool ok = connect(m_searchOptionsArea->searchButton(), SIGNAL(pressed()),this, SLOT(startSearch()));
+    bool ok = connect(m_searchOptionsArea->searchButton(), SIGNAL(clicked()),this, SLOT(startSearch()));
 	Q_ASSERT(ok);
 	// Return/Enter is pressed in the search text field
 	ok = connect(m_searchOptionsArea, SIGNAL(sigStartSearch()), this, SLOT(startSearch()) );
 	Q_ASSERT(ok);
-	ok = connect(m_closeButton, SIGNAL(pressed()), this, SLOT(closeButtonPressed()));
+    ok = connect(m_closeButton, SIGNAL(clicked()), this, SLOT(closeButtonClicked()));
 	Q_ASSERT(ok);
 
 	connect(m_analyseButton, SIGNAL(clicked()), m_searchResultArea, SLOT(showAnalysis()));
@@ -281,7 +281,7 @@ void CSearchDialog::reset() {
 	m_searchResultArea->reset();
 }
 
-void CSearchDialog::closeButtonPressed() {
+void CSearchDialog::closeButtonClicked() {
 	// With Qt::WA_DeleteOnClose set, the dialog will be deleted now
 	m_staticDialog->close();
 }

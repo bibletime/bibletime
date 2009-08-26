@@ -195,7 +195,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 					//state: installable (no indicator)
 				//else: status: newly added, color yellow
 			} else { // the module is already installed
-				QBrush bg(QColor(255,153,153));
+                QBrush bg(QColor(255,153,153)); /// \bug Possible color conflict
 				widgetItem->setBackground(0, bg);
 				widgetItem->setBackground(1, bg);
 				installedV = QString(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
