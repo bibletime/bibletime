@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
 #Version
-ADD_DEFINITIONS(-DBT_VERSION="2.2.rc1")
+ADD_DEFINITIONS(-DBT_VERSION="2.2")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
@@ -307,7 +307,7 @@ SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows Beta")
 SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
 SET(CPACK_PACKAGE_VERSION_MAJOR "2")
 SET(CPACK_PACKAGE_VERSION_MINOR "2")
-SET(CPACK_PACKAGE_VERSION_PATCH "0rc1")
+SET(CPACK_PACKAGE_VERSION_PATCH "0")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "BibleTime")
 
 ######################################################

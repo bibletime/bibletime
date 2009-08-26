@@ -1,3 +1,7 @@
+2009-08-26 Martin Gruner <mgruner@crosswire.org>
+	* Add Patch by Kang Sun to avoid compiler warnings
+	* Release 2.2
+
 2009-08-19 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.2.rc1
 
