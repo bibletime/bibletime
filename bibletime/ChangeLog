@@ -1,3 +1,6 @@
+2009-08-27 Thomas Abthorpe <tabthorpe@FreeBSD.org>
+	* Link Danish Howto to the build
+
 2009-08-26 Martin Gruner <mgruner@crosswire.org>
 	* Add Patch by Kang Sun to avoid compiler warnings
 	* Release 2.2

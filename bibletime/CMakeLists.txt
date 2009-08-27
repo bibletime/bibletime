@@ -9,7 +9,7 @@ LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu nl pt-br)
-LIST(APPEND HOWTO_LOCALE_LANGS bg cs de fi fr it hu ko nl pt-br ru)
+LIST(APPEND HOWTO_LOCALE_LANGS bg cs da de fi fr it hu ko nl pt-br ru)
 
 ######################################################
 # Find required packages
