@@ -1133,11 +1133,6 @@ shortcut</source>
         <translation type="unfinished">Vis forrige kapittel</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation type="unfinished">Tekst i vers</translation>
@@ -1147,18 +1142,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation type="unfinished">Vers med tekst</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Kapittel</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Kapittel som ren tekst</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Kapittel som HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1210,22 +1193,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation type="unfinished">Gjeldende modul:</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Oppføring med tekst</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Oppføring som ren tekst</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Lagre som HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Oppføring med tekst</translation>
     </message>
 </context>
 <context>
@@ -1841,37 +1808,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation type="unfinished">Vis neste bok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation type="unfinished">Vis forrige bok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation type="unfinished">Vis neste kapittel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Vis forrige kapittel</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation type="unfinished">Tekst i vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation type="unfinished">Hopp til det forrige verset</translation>
     </message>
@@ -1980,11 +1947,6 @@ shortcut</source>
         <translation type="unfinished">Strongs nummer</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1995,10 +1957,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation type="unfinished">Oppføring som ren tekst</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Oppføring som HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2423,46 +2381,46 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation type="unfinished">Tekst i vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation type="unfinished">Fotnoter</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation type="unfinished">Strongs nummer</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3518,42 +3476,42 @@ Language name ppk</extracomment>
         <translation type="unfinished">Regulært utrykk</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation type="unfinished">Det Gamle Testamentet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Moses/Pentateuch/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation type="unfinished">Historie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation type="unfinished">Profeter</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation type="unfinished">Det Nye Testamentet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation type="unfinished">Evangeliene</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Brev/Epistlene</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Paulus&apos; brev</translation>
     </message>

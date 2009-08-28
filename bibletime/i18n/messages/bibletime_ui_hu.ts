@@ -1120,10 +1120,6 @@ shortcut</source>
         <translation>Fejezet nyomtatása</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Csak a hivatkozást</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>A hivatkozás szövege</translation>
@@ -1133,18 +1129,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Hivatkozást szöveggel</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Fejezet</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Fejezet egyszerű szövegként</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Fejezet HTML formátumban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1188,14 +1172,6 @@ shortcut</source>
         <source>Saving</source>
         <translation>Mentés</translation>
     </message>
-    <message>
-        <source>Strong&apos;s search</source>
-        <translation type="obsolete">Strong&apos;s keresés</translation>
-    </message>
-    <message>
-        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation type="obsolete">Az egérmutató alatti Strong szám összes előfordulásának mutatása</translation>
-    </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
@@ -1203,22 +1179,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Átváltás fa-nézetbe</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Bejegyzés másolása szöveggel</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Bejegyzés mentése egyszerű szövegként</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Bejegyzés mentése HTML formátumban</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Bejegyzés nyomtatása szöveggel</translation>
     </message>
 </context>
 <context>
@@ -1807,37 +1767,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Kersesztülgörgetés a lista elemein. Nyomja le a gombot, és mozgassa az egeret a tétel növeléséhez vagy csökkentéséhez.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation>Következő könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation>Előző könyv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation>Következő fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation>Előző fejezet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation>Következő vers</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation>Előző vers</translation>
     </message>
@@ -1926,10 +1886,6 @@ shortcut</source>
         <translation>Csak a hivatkozást másolja</translation>
     </message>
     <message>
-        <source>Copy selected text</source>
-        <translation type="obsolete">A kiválasztott szöveg másolása</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
         <source>Save entry as HTML</source>
         <translation>Bejegyzés mentése HTML formátumban</translation>
@@ -1945,10 +1901,6 @@ shortcut</source>
         <translation>Strong&apos;s keresés</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Csak a hivatkozást</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1959,10 +1911,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>Bejegyzés egyszerű szövegként</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Bejegyzés HTML formátumban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2354,43 +2302,43 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation>Rövidítés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation>Kereszthivatkozás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation>Lábjegyzet</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation>Strong számok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation>Morfológia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation>Szó keresés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation>Másolás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Ez a &quot;Nagyító&quot; ablak. Ha az egeret elhúzza hivatkozások, vagy más adatot tartalmazó elemek fölött, azok tartalma kis késleltetéssel megjelenik itt. Mozgassa az egeret ide gyorsan, vagy rögzítse a tartalmát a Shift gomb nyomvatartásával.&lt;/small&gt;</translation>
     </message>
@@ -3363,42 +3311,42 @@ Language name ppk</extracomment>
         <translation>Távoli</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation>Ószövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mózes/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation>Előzmény</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation>Próféták</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation>Újszövetség</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation>Evangéliumok</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation>Levelek</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pál levelei</translation>
     </message>

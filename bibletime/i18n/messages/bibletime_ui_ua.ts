@@ -1129,10 +1129,6 @@ shortcut</source>
         <translation type="unfinished">Попередній розділ</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Посилання тільки</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation type="unfinished">Текст посилання</translation>
@@ -1142,18 +1138,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation type="unfinished">Посилання та текст</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Розділ</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Розділ як звичайний текст</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Розділ як HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1204,22 +1188,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation type="unfinished">Вмикає дерево</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Запис та текст</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Запис як звичайний текст</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Запис як HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Запис та текст</translation>
     </message>
 </context>
 <context>
@@ -1825,37 +1793,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation type="unfinished">Наступна книга</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation type="unfinished">Попередня книга</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation type="unfinished">Наступний розділ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Попередній розділ</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation type="unfinished">Наступний вірш</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation type="unfinished">Попередній вірш</translation>
     </message>
@@ -1964,10 +1932,6 @@ shortcut</source>
         <translation type="unfinished">Номери Стронга</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Посилання тільки</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1978,10 +1942,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation type="unfinished">Запис як звичайний текст</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Запис як HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2398,44 +2358,44 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation type="unfinished">Вірменська</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation type="unfinished">Властивості </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation type="unfinished">Зноски</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation type="unfinished">Номери Стронга</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation type="unfinished">Морфологічні теги</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation type="unfinished">
             </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3437,42 +3397,42 @@ Language name ppk</extracomment>
         <translation type="unfinished">Змінити назву сесії</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation type="unfinished">Старий Заповіт</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation type="unfinished">Мойсей/П&apos;ятикнижжя/Тора</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation type="unfinished">Історичні</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation type="unfinished">Пророки</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation type="unfinished">Новий Заповіт</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation type="unfinished">Євангелія</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation type="unfinished">Листи/Післання</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation type="unfinished">Послання Павла</translation>
     </message>

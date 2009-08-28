@@ -1120,10 +1120,6 @@ shortcut</source>
         <translation>Tipăreşte capitolul</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Doar referinţele</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>Textul referinţei</translation>
@@ -1133,18 +1129,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Referinţă cu text</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Capitol</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Capitol ca text</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Capitol ca HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1195,22 +1179,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Afişează arborele...</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Copiază intrarea cu text</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Salvează intrarea ca text</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Salvează intrarea ca HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Tipăreşte intrarea cu text</translation>
     </message>
 </context>
 <context>
@@ -1804,37 +1772,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation type="unfinished">Uită-te prin toate intrările din listă. Apasă butonul stâng al mouse-ului şi mişcă mouse-ul pentru a duce respectivul obiect în sus sau în jos.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation type="unfinished">Cartea următoare</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation type="unfinished">Cartea anterioară</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation type="unfinished">Capitolul următor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation type="unfinished">Capitolul anterior</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation type="unfinished">Versetul următor</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation type="unfinished">Versetul anterior</translation>
     </message>
@@ -1928,10 +1896,6 @@ shortcut</source>
         <translation>Copiază doar referinţa</translation>
     </message>
     <message>
-        <source>Copy selected text</source>
-        <translation type="obsolete">Copiază textul selectat</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
         <source>Save entry as HTML</source>
         <translation>Salvează intrarea ca HTML</translation>
@@ -1947,10 +1911,6 @@ shortcut</source>
         <translation>Căutarea Strong</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Doar referinţele</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1961,10 +1921,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>Intrare ca text</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Intrare ca HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2361,43 +2317,43 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation>Abreviere</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation>Trimiteri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation>Note de subsol</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation>Numere Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation>Analiză morfologică</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation>Căutare cuvinte</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation>Copiază</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Aceasta este zona MAG. Atunci când te duci cu mouse-ul deasupra unor link-uri sau alte obiecte ce conţin anumite date conţinutul acestora apare in această zonă. Pentru ca ceea ce este scris în MAG să rămână în zona respectivă, trebuie să te duci repede cu mouse-ul deasupra MAG-ului sau să ţii SHIFT apăsat.&lt;/small&gt;</translation>
     </message>
@@ -3370,42 +3326,42 @@ Language name ppk</extracomment>
         <translation>De pe Internet</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation>Vechiul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moise/Pentateuc/Tora</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation>Istorice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation>Profeţi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation>Noul Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation>Evanghelii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation>Scrisori/Epistole</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Epistolele lui Pavel</translation>
     </message>

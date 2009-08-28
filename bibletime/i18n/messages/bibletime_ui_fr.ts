@@ -1120,10 +1120,6 @@ shortcut</source>
         <translation>Imprimer le chapitre</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Références seulement</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>Texte</translation>
@@ -1133,18 +1129,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Références avec le texte</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Chapitre</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Chapitre en tant que texte seul</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Chapitre en tant qu&apos;HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1188,14 +1172,6 @@ shortcut</source>
         <source>Saving</source>
         <translation>Enregistrement</translation>
     </message>
-    <message>
-        <source>Strong&apos;s search</source>
-        <translation type="obsolete">Recherche de Strong</translation>
-    </message>
-    <message>
-        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation type="obsolete">Rechercher toutes les occurences du numéro Strong actuellement sous le pointeur</translation>
-    </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
@@ -1203,22 +1179,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Activer/désactiver arborescence...</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Copier l&apos;entrée avec du texte</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Sauvegarder l&apos;entrée en tant que texte seul</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Sauvegarder l&apos;entrée en tant qu&apos;HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Imprimer l&apos;entrée avec du texte</translation>
     </message>
 </context>
 <context>
@@ -1812,37 +1772,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Défiler dans les entrées de la liste. Appuyez sur ce bouton et déplacer la souris pour avancer/reculer parmis les éléments.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation>Livre suivant</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation>Livre précédent</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation>Chapitre suivant</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation>Chapitre précédent</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation>Verset suivant</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation>Verset précédent</translation>
     </message>
@@ -1951,10 +1911,6 @@ shortcut</source>
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Références seulement</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1965,10 +1921,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>Entrée en tant que texte seul</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Entrée en tant qu&apos;HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2365,43 +2317,43 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation>Abréviation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation>Références croisées</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation>Notes de pied de page</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation>Numéros Strong</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation>Marques morphologiques</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation>Recherche</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation>Copier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3374,42 +3326,42 @@ Language name ppk</extracomment>
         <translation>Distant</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation>Ancien Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Moïse/Pentateuque/Torah</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation>Livres historiques</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation>Prophètes</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation>Nouveau Testament</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation>Évangiles</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation>Lettres/Épîtres</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Épîtres de Paul</translation>
     </message>

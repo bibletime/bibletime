@@ -894,28 +894,12 @@ shortcut</source>
         <translation>Tisk kapitoly</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Pouze odkaz</translation>
-    </message>
-    <message>
         <source>Text of reference</source>
         <translation>Text verše</translation>
     </message>
     <message>
         <source>Reference with text</source>
         <translation>Odkaz s textem</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Kapitolu</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Kapitolu jako obyčejný text</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Kapitolu jako HTML</translation>
     </message>
     <message>
         <source>Bible window</source>
@@ -949,36 +933,12 @@ shortcut</source>
         <source>Saving</source>
         <translation>Ukládám</translation>
     </message>
-    <message>
-        <source>Strong&apos;s search</source>
-        <translation type="obsolete">Hledat Strongova Čísla</translation>
-    </message>
-    <message>
-        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation type="obsolete">Najít všechny výskyty Strongových čísel nacházející se pod kurzorem.</translation>
-    </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
     <message>
         <source>Toggle tree view</source>
         <translation>Zobrazení stromu</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Kopírovat záznam s textem</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Uložit záznam jako obyčejný text</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Uložit záznam jako HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Tisk záznamu s textem</translation>
     </message>
 </context>
 <context>
@@ -1558,10 +1518,6 @@ shortcut</source>
         <translation>Kopírovat pouze odkaz</translation>
     </message>
     <message>
-        <source>Copy selected text</source>
-        <translation type="obsolete">Kopírovat vybraný text</translation>
-    </message>
-    <message>
         <source>Save entry as HTML</source>
         <translation>Uložit záznam jako HTML</translation>
     </message>
@@ -1574,20 +1530,12 @@ shortcut</source>
         <translation>Hledat Strongova čísla</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Pouze odkaz</translation>
-    </message>
-    <message>
         <source>Entry with text</source>
         <translation>Záznam s textem</translation>
     </message>
     <message>
         <source>Entry as plain text</source>
         <translation>Záznam jako obyčejný text</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Záznam jako HTML</translation>
     </message>
     <message>
         <source>Lexicon window</source>

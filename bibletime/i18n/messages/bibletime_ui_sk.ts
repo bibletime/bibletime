@@ -42,11 +42,6 @@
         <translation>&amp;Pomocník</translation>
     </message>
     <message>
-        <source>BibleTime</source>
-        <extracomment>Name of the main toolbar</extracomment>
-        <translation type="obsolete">Zatvoriť BibleTime</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="110"/>
         <source>&amp;Show toolbar</source>
         <translation>&amp;Zobraziť panel nástrojov</translation>
@@ -150,10 +145,6 @@
         <location filename="../../src/bibletime_init.cpp" line="188"/>
         <source>Close all open windows inside BibleTime</source>
         <translation>Zatvoriť všetky okná v BibleTime</translation>
-    </message>
-    <message>
-        <source>Cl&amp;ose all</source>
-        <translation type="obsolete">Všetko &amp;zatvoriť</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="205"/>
@@ -281,10 +272,6 @@
         <translation>Nová relácia</translation>
     </message>
     <message>
-        <source>Initializing the Sword engine...</source>
-        <translation type="obsolete">Inicializácia Sword systém...</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime.cpp" line="61"/>
         <source>Initializing the SWORD engine...</source>
         <translation>Spúšťanie systému SWORD...</translation>
@@ -343,10 +330,6 @@
         <translation>(c)1999-2009, BibleTime Tím</translation>
     </message>
     <message>
-        <source>This program uses Qt Open Source Edition version </source>
-        <translation type="obsolete">Tento program používa Open Source edíciu Qt </translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
         <translation>Open source edícia Qt je zameraná no vývoj Open Source aplikácií.</translation>
@@ -365,14 +348,6 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
         <source> for an overview of Qt licensing.</source>
         <translation> pre prehľad o Qt licencií.</translation>
-    </message>
-    <message>
-        <source>License Agreement</source>
-        <translation type="obsolete">Licenčná zmluva</translation>
-    </message>
-    <message>
-        <source>BibleTime is released under the GPL licence.</source>
-        <translation type="obsolete">Bibletime je vydané pod licenciou GPL.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
@@ -1146,10 +1121,6 @@ shortcut</source>
         <translation>Vytlačiť kapitolu</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Iba odkazy</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="140"/>
         <source>Text of reference</source>
         <translation>Text odkazu</translation>
@@ -1159,18 +1130,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="146"/>
         <source>Reference with text</source>
         <translation>Odkaz s textom</translation>
-    </message>
-    <message>
-        <source>Chapter</source>
-        <translation type="obsolete">Kapitolu</translation>
-    </message>
-    <message>
-        <source>Chapter as plain text</source>
-        <translation type="obsolete">Kapitolu ako obyčajný text</translation>
-    </message>
-    <message>
-        <source>Chapter as HTML</source>
-        <translation type="obsolete">Kapitolu ako HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cbiblereadwindow.cpp" line="258"/>
@@ -1214,14 +1173,6 @@ shortcut</source>
         <source>Saving</source>
         <translation>Ukladanie</translation>
     </message>
-    <message>
-        <source>Strong&apos;s search</source>
-        <translation type="obsolete">Vyhľadávanie strongového čísla</translation>
-    </message>
-    <message>
-        <source>Find all occurences of the Strong number currently under the mouse cursor</source>
-        <translation type="obsolete">Nájde všetky výskyty strongového čísla, ktoré sa aktuálne nachádza pod kurzorom</translation>
-    </message>
 </context>
 <context>
     <name>CBookReadWindow</name>
@@ -1229,22 +1180,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
         <translation>Prepnutie stromového zobrazenia</translation>
-    </message>
-    <message>
-        <source>Copy entry with text</source>
-        <translation type="obsolete">Kopíruj položku s textom</translation>
-    </message>
-    <message>
-        <source>Save entry as plain text</source>
-        <translation type="obsolete">Kopíruj položku ako surový text</translation>
-    </message>
-    <message>
-        <source>Save entry as HTML</source>
-        <translation type="obsolete">Uložiť položku ako HTML</translation>
-    </message>
-    <message>
-        <source>Print entry with text</source>
-        <translation type="obsolete">Tlačiť položku s textom</translation>
     </message>
 </context>
 <context>
@@ -1838,37 +1773,37 @@ shortcut</source>
 <context>
     <name>CKeyReferenceWidget</name>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="92"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
         <source>Scroll through the entries of the list. Press the button and move the mouse to increase or decrease the item.</source>
         <translation>Posúvanie cez položky v zozname. Stlačením tlačidla a pohybom myši presuniete položku hore alebo dole.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="94"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
         <source>Next book</source>
         <translation>Ďalšia kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="96"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="103"/>
         <source>Previous book</source>
         <translation>Predchádzajúca kniha</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="99"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
         <source>Next chapter</source>
         <translation>Nasledujúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="101"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="108"/>
         <source>Previous chapter</source>
         <translation>Predchádzajúca kapitola</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="104"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="111"/>
         <source>Next verse</source>
         <translation>Nasledujúci verš</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="106"/>
+        <location filename="../../src/frontend/keychooser/versekeychooser/ckeyreferencewidget.cpp" line="113"/>
         <source>Previous verse</source>
         <translation>Predchádzajúci verš</translation>
     </message>
@@ -1962,10 +1897,6 @@ shortcut</source>
         <translation>Kopírovať iba odkazy</translation>
     </message>
     <message>
-        <source>Copy selected text</source>
-        <translation type="obsolete">Kopírovať označený text</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="62"/>
         <source>Save entry as HTML</source>
         <translation>Uložiť položku ako HTML</translation>
@@ -1981,10 +1912,6 @@ shortcut</source>
         <translation>Vyhľadávanie v strongových číslach</translation>
     </message>
     <message>
-        <source>Reference only</source>
-        <translation type="obsolete">Iba odkazy</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="68"/>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="74"/>
         <source>Entry with text</source>
@@ -1995,10 +1922,6 @@ shortcut</source>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="131"/>
         <source>Entry as plain text</source>
         <translation>Položka ako surový text</translation>
-    </message>
-    <message>
-        <source>Entry as HTML</source>
-        <translation type="obsolete">Položka ako HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/clexiconreadwindow.cpp" line="224"/>
@@ -2395,43 +2318,43 @@ shortcut</source>
 <context>
     <name>InfoDisplay::CInfoDisplay</name>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="175"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="190"/>
         <source>Abbreviation</source>
         <translation>Skratka</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="186"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="283"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="201"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="298"/>
         <source>Cross references</source>
         <translation>Krížové referencie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="327"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="342"/>
         <source>Footnote</source>
         <translation>Poznámky pod čiarou</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="358"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="373"/>
         <source>Strongs</source>
         <translation>Strongové čísla</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="440"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="455"/>
         <source>Morphology</source>
         <translation>Morfologické príznaky</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="464"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="479"/>
         <source>Word lookup</source>
         <translation>Hľadanie slov</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="53"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="54"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="64"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="70"/>
         <source>&lt;small&gt;This is the Mag viewer area. Hover the mouse over links or other items which include some data and the contents appear in the Mag after a short delay. Move the mouse into Mag rapidly or lock the view by pressing and holding Shift while moving the mouse.&lt;/small&gt;</source>
         <translation>&lt;small&gt;Toto je informačná oblasť. Postavte sa s myšou nad odkaz alebo inú položku, ktorá obsahuje nejaké dáta, a jej obsah sa po chvíli zobrazí v informačnej oblasti. Rýchlym pohybom myši sa presuňte do informačnej oblasti, alebo uzamknite zobrazenie stlačením a držaním klávesy Shift pri pohybe myši.&lt;/small&gt;</translation>
     </message>
@@ -2912,13 +2835,6 @@ shortcut</source>
         <translation>Gruzínske</translation>
     </message>
     <message>
-        <source>Kekchí</source>
-        <comment>kek</comment>
-        <extracomment>Language name kek</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="328"/>
         <source>Korean</source>
         <extracomment>Language name ko</extracomment>
@@ -3243,58 +3159,10 @@ shortcut</source>
         <translation>Bavorské</translation>
     </message>
     <message>
-        <source>Zarma</source>
-        <extracomment>Language name x-E-DJE</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Alemannisch</source>
-        <extracomment>Language name x-E-GSW</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Haitian Creole French</source>
-        <extracomment>Language name x-E-HAT</extracomment>
-        <translation type="obsolete">Haitsko-kreolsko francúzske</translation>
-    </message>
-    <message>
-        <source>Itzá</source>
-        <extracomment>Language name x-E-ITZ</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Shuar</source>
-        <extracomment>Language name x-E-JIV</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Kekchí</source>
-        <comment>x-E-KEK (same as kek)</comment>
-        <extracomment>Language name x-E-KEK (same as kek)</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
-        <source>Kabyle</source>
-        <extracomment>Language name x-E-KAB</extracomment>
-        <translation type="obsolete">
-            </translation>
-    </message>
-    <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="342"/>
         <source>Lombard</source>
         <extracomment>Language name lmo</extracomment>
         <translation>Lombardské</translation>
-    </message>
-    <message>
-        <source>Tok Pisin</source>
-        <extracomment>Language name x-E-PDG</extracomment>
-        <translation type="obsolete">
-            </translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="419"/>
@@ -3304,17 +3172,6 @@ shortcut</source>
 ----------
 Language name ppk</extracomment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Romani, Vlax</source>
-        <extracomment>Language name x-E-RMY</extracomment>
-        <translation type="obsolete">Rómske, Vlax</translation>
-    </message>
-    <message>
-        <source>Sango</source>
-        <extracomment>Language name x-E-SAJ</extracomment>
-        <translation type="obsolete">
-            </translation>
     </message>
     <message>
         <location filename="../../src/backend/managers/clanguagemgr.cpp" line="464"/>
@@ -3470,42 +3327,42 @@ Language name ppk</extracomment>
         <translation>Vzdialený</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="285"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="303"/>
         <source>Old testament</source>
         <translation>Starý zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="286"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="304"/>
         <source>Moses/Pentateuch/Torah</source>
         <translation>Mojžišove knihy/Pentateuch/Tóra</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="287"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="305"/>
         <source>History</source>
         <translation>História</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="288"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="306"/>
         <source>Prophets</source>
         <translation>Proroci</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="289"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="307"/>
         <source>New testament</source>
         <translation>Nový zákon</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="290"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="308"/>
         <source>Gospels</source>
         <translation>Evanjeliá</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="291"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="309"/>
         <source>Letters/Epistles</source>
         <translation>Listy/Epištoly</translation>
     </message>
     <message>
-        <location filename="../../src/backend/config/cbtconfig.cpp" line="292"/>
+        <location filename="../../src/backend/config/cbtconfig.cpp" line="310"/>
         <source>Paul&apos;s Epistles</source>
         <translation>Pavlove epištoly</translation>
     </message>
@@ -4279,10 +4136,6 @@ Language name ppk</extracomment>
         <location filename="../../src/frontend/searchdialog/analysis/csearchanalysisscene.cpp" line="280"/>
         <source>Created by &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</source>
         <translation>Vytvoril &lt;a href=&quot;http://www.bibletime.info/&quot;&gt;BibleTime&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <source>Created by</source>
-        <translation type="obsolete">Vytvoril</translation>
     </message>
 </context>
 <context>
