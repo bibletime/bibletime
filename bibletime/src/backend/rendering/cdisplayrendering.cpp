@@ -99,8 +99,9 @@ namespace Rendering {
 
 	const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 		QString ret = key;
-		ret = ret.trimmed().remove(QRegExp("[^A-Za-z0-9]+"));
-		ret = ret.remove(QRegExp("^\\d+|"));
+		// Be careful not to remove non-ASCII characters, this causes problems
+		// with many languages.
+		ret = ret.trimmed().remove(QRegExp("\\s")).replace(QString(":"), QString("_"));
 
 		return ret;
 	}
