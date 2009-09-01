@@ -37,7 +37,7 @@ BtIndexPage::BtIndexPage()
 	QVBoxLayout *vboxLayout;
 	QHBoxLayout *hboxLayout;
     vboxLayout = new QVBoxLayout(this);
- 
+
 	m_autoDeleteOrphanedIndicesBox = new QCheckBox(this);
 	m_autoDeleteOrphanedIndicesBox->setToolTip(tr("If selected, those indexes which have no corresponding work will be deleted when BibleTime starts"));
 	m_autoDeleteOrphanedIndicesBox->setText(tr("Automatically delete orphaned indexes when BibleTime starts"));
@@ -106,15 +106,15 @@ QString BtIndexPage::header()
 /** Populates the module list with installed modules and orphaned indices */
 void BtIndexPage::populateModuleList() {
 	m_moduleList->clear();
-		
+
 	// populate installed modules
 	m_modsWithIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithIndices->setText(0, tr("Works with indexes"));
+	m_modsWithIndices->setText(0, tr("Indexed Works"));
 	m_modsWithIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithIndices->setExpanded(true);
 
 	m_modsWithoutIndices = new QTreeWidgetItem(m_moduleList);
-	m_modsWithoutIndices->setText(0, tr("Works without indexes"));
+	m_modsWithoutIndices->setText(0, tr("Unindexed Works"));
 	m_modsWithoutIndices->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsTristate);
 	m_modsWithoutIndices->setExpanded(true);
 
@@ -124,7 +124,7 @@ void BtIndexPage::populateModuleList() {
 	QList<CSwordModuleInfo*>::iterator end_it = modules.end();
 	for (QList<CSwordModuleInfo*>::iterator it = modules.begin(); it != end_it; ++it) {
 		QTreeWidgetItem* item = 0;
-		
+
 		if ((*it)->hasIndex()) {
 			item = new QTreeWidgetItem(m_modsWithIndices);
 			item->setText(0, (*it)->name());
@@ -169,7 +169,7 @@ void BtIndexPage::createIndices()
 void BtIndexPage::deleteIndices()
 {
 	bool indicesDeleted = false;
-	
+
 	for (int i = 0; i < m_modsWithIndices->childCount(); i++) {
 		if (m_modsWithIndices->child(i)->checkState(0) == Qt::Checked) {
 			CSwordModuleInfo* module = CPointers::backend()->findModuleByName(m_modsWithIndices->child(i)->text(0).toUtf8());
@@ -191,7 +191,7 @@ void BtIndexPage::deleteOrphanedIndices()
 	QDir dir(CSwordModuleInfo::getGlobalBaseIndexLocation());
 	dir.setFilter(QDir::Dirs);
 	CSwordModuleInfo* module;
-	
+
 	for (unsigned int i = 0; i < dir.count(); i++) {
 		if (dir[i] != "." && dir[i] != "..") {
 			if ( (module = CPointers::backend()->findModuleByName(dir[i])) ) { //mod exists
