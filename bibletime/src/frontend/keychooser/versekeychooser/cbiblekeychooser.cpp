@@ -40,6 +40,7 @@ CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *
 	layout->setDirection( QBoxLayout::LeftToRight );
 
 	w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
+	setFocusProxy(w_ref);
 	layout->addWidget(w_ref);
 
 	connect(w_ref,SIGNAL(changed(CSwordVerseKey *)),SLOT(refChanged(CSwordVerseKey *)));

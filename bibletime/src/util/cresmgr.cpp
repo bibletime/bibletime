@@ -233,7 +233,7 @@ namespace CResMgr {
 		namespace general {
 			namespace search {
 				const QString icon        = "find.svg";
-				const QKeySequence accel(Qt::CTRL + Qt::Key_L);
+				const QKeySequence accel(Qt::CTRL + Qt::Key_N);
 				const char* actionName    = "window_search_action";
 			}
 

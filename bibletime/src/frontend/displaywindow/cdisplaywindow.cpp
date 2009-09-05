@@ -129,6 +129,15 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a )
 	actn->setShortcut(QKeySequence::Find);
 	a->addAction("findText", actn);
 
+	actn = new QAction(QIcon(), tr("Change location"), 0);
+	actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
+	a->addAction("openLocation", actn);
+
+	actn = new QAction(QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
+	    tr("Search with works of this window"), 0);
+	actn->setShortcut(CResMgr::displaywindows::general::search::accel);
+	a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
+
 	BtToolBarPopupAction* action = new BtToolBarPopupAction(
 				QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
 				tr("Back in history"),
@@ -154,18 +163,16 @@ void CDisplayWindow::initActions()
 
 	CDisplayWindow::insertKeyboardActions(ac);
 
-	QAction* qaction = new QAction(
-				QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
-				tr("Open the search dialog with the works of this window"),
-				ac
-				);
-	qaction->setShortcut(CResMgr::displaywindows::general::search::accel);
-	QObject::connect(qaction, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
-	ac->addAction(CResMgr::displaywindows::general::search::actionName, qaction);
+	QAction* actn = ac->action(CResMgr::displaywindows::general::search::actionName);
+	QObject::connect(actn, SIGNAL(triggered()), this, SLOT(slotSearchInModules()));
 
 	CDisplayConnections* conn = displayWidget()->connectionsProxy();
 
-	QAction* actn = ac->action("zoomIn");
+	actn = ac->action("openLocation");
+	QObject::connect(actn, SIGNAL(triggered()), this, SLOT(setFocusKeyChooser()));
+	addAction(actn);
+
+	actn = ac->action("zoomIn");
 	QObject::connect(actn, SIGNAL(triggered()), conn, SLOT(zoomIn()));
 	addAction(actn);
 
@@ -536,3 +543,9 @@ BtActionCollection* CDisplayWindow::actionCollection()
 {
 	return m_actionCollection;
 }
+
+void CDisplayWindow::setFocusKeyChooser()
+{
+	keyChooser()->setFocus();
+}
+

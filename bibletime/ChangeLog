@@ -1,3 +1,10 @@
+2009-09-05 Gary Holmlund
+	* Added new feature called "Change location". It is a shortcut (Ctrl-L) that
+	  changes the focus to the toolbar field for the bible reference or book
+	  location. This is like the Ctrl-L feature of FireFox.
+	* Fixed the "Search with works of this window" shortcut so it appears in the
+	  shortcut editor. Moved its shortcut key from Ctrl-L to Ctrl-N
+
 2009-09-01 Martin Gruner <mgruner@crosswire.org>
 	* Fixed bug causing wrong behaviour on verse number click
 

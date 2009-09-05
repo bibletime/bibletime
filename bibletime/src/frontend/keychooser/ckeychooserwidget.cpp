@@ -200,6 +200,7 @@ void CKeyChooserWidget::init() {
 	m_mainLayout->addSpacing(0);
 
 	setTabOrder(m_comboBox, 0);
+	setFocusProxy(m_comboBox);
 
 	connect(m_scroller, SIGNAL(scroller_pressed()), SLOT(lock()));
 	connect(m_scroller, SIGNAL(scroller_released()), SLOT(unlock()));

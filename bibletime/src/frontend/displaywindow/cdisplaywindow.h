@@ -202,6 +202,7 @@ protected slots:
 
 	void printAnchorWithText();
 
+	void setFocusKeyChooser();
 
 private:
 	BtActionCollection* m_actionCollection;

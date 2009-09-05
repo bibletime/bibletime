@@ -54,6 +54,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 	m_bookScroller = new CScrollerWidgetSet(this);
 
 	m_textbox = new QLineEdit( this );
+	setFocusProxy(m_textbox);
 	m_textbox->setContentsMargins(0, 0, 0, 0);
 
 	setKey(key);	// The order of these two functions is important.

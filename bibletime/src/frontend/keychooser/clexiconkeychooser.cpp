@@ -42,6 +42,7 @@ CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordK
 	m_layout->setSizeConstraint(QLayout::SetNoConstraint);
 
 	m_widget = new CKeyChooserWidget(0, false, this);
+	setFocusProxy(m_widget);
 
 	//don't allow a too high width, try to keep as narrow as possible
 	//to aid users with smaller screen resolutions
