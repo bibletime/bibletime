@@ -435,20 +435,20 @@
         <translation>Vyhledávací rejstříky</translation>
     </message>
     <message>
-        <source>Works with indexes</source>
-        <translation>Indexovaná díla</translation>
-    </message>
-    <message>
-        <source>Works without indexes</source>
-        <translation>Neindexovaná díla</translation>
-    </message>
-    <message>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
         <source>Create...</source>
         <translation>Vytvořit...</translation>
+    </message>
+    <message>
+        <source>Indexed Works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unindexed Works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1266,10 +1266,6 @@ shortcut</source>
         <translation>Dopředu v historii</translation>
     </message>
     <message>
-        <source>Open the search dialog with the works of this window</source>
-        <translation>Otevřít dialog vyhledávání pro díla v tomto okně</translation>
-    </message>
-    <message>
         <source>Zoom in</source>
         <translation>Přiblížit</translation>
     </message>
@@ -1292,6 +1288,14 @@ shortcut</source>
     <message>
         <source>Find...</source>
         <translation>Najít...</translation>
+    </message>
+    <message>
+        <source>Change location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search with works of this window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

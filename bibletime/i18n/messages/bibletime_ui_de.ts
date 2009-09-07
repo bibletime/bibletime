@@ -435,20 +435,20 @@
         <translation>Suchindices</translation>
     </message>
     <message>
-        <source>Works with indexes</source>
-        <translation>Werke mit Indices</translation>
-    </message>
-    <message>
-        <source>Works without indexes</source>
-        <translation>Werke ohne indices</translation>
-    </message>
-    <message>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
         <source>Create...</source>
         <translation>Erstelle...</translation>
+    </message>
+    <message>
+        <source>Indexed Works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unindexed Works</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1266,10 +1266,6 @@ shortcut</source>
         <translation>Vorwärts im Verlauf</translation>
     </message>
     <message>
-        <source>Open the search dialog with the works of this window</source>
-        <translation>Das Suchfenster mit den Werken dieses Fensters öffnen</translation>
-    </message>
-    <message>
         <source>Zoom in</source>
         <translation>Vergrößern</translation>
     </message>
@@ -1292,6 +1288,14 @@ shortcut</source>
     <message>
         <source>Find...</source>
         <translation>Suchen...</translation>
+    </message>
+    <message>
+        <source>Change location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search with works of this window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
