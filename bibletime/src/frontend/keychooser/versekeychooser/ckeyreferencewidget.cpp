@@ -34,9 +34,9 @@
 
 
 
-CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) : 
+CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
 	QWidget(parent),
-	m_key(new CSwordVerseKey(mod)),
+	m_key(key),
 	m_dropDownHoverTimer(this)
 {
 
@@ -204,7 +204,7 @@ void CKeyReferenceWidget::updateText()
 bool CKeyReferenceWidget::setKey(CSwordVerseKey *key)
 {
 	if (!key) return false;
-	
+
 	m_key->key(key->key());
 	updateText();
 	return true;
@@ -219,7 +219,7 @@ void CKeyReferenceWidget::slotReturnPressed()
 {
 	m_key->key(m_textbox->text());
 	updateText();
-	
+
 	emit changed(m_key.get());
 }
 
@@ -247,7 +247,7 @@ void CKeyReferenceWidget::slotStepChapter(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
 	updateText();
-	if (!updatelock) emit changed(m_key.get());	
+	if (!updatelock) emit changed(m_key.get());
 }
 
 void CKeyReferenceWidget::slotStepVerse(int n)
