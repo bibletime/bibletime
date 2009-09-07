@@ -220,7 +220,7 @@ void CKeyReferenceWidget::slotReturnPressed()
 	m_key->key(m_textbox->text());
 	updateText();
 
-	emit changed(m_key.get());
+	emit changed(m_key);
 }
 
 /* Handlers for the various scroller widgetsets. Do we really want a verse scroller? */
@@ -233,28 +233,28 @@ void CKeyReferenceWidget::slotUpdateLock()
 void CKeyReferenceWidget::slotUpdateUnlock()
 {
 	updatelock = false;
-	if (oldKey != m_key->key()) emit changed(m_key.get());
+	if (oldKey != m_key->key()) emit changed(m_key);
 }
 
 void CKeyReferenceWidget::slotStepBook(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseBook ) : m_key->previous( CSwordVerseKey::UseBook );
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 
 void CKeyReferenceWidget::slotStepChapter(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseChapter ) : m_key->previous( CSwordVerseKey::UseChapter );
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 
 void CKeyReferenceWidget::slotStepVerse(int n)
 {
 	n > 0 ? m_key->next( CSwordVerseKey::UseVerse ) : m_key->previous( CSwordVerseKey::UseVerse );
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 
 
@@ -262,29 +262,29 @@ void CKeyReferenceWidget::slotChangeVerse(int n)
 {
 	if (m_key->Verse() != n) {
 		m_key->Verse( n );
-		setKey( m_key.get() );
+		setKey( m_key );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 
 void CKeyReferenceWidget::slotChangeChapter(int n)
 {
 	if (m_key->Chapter() != n) {
 		m_key->Chapter( n );
-		setKey( m_key.get() );
+		setKey( m_key );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 
 void CKeyReferenceWidget::slotChangeBook(QString bookname)
 {
 	if (m_key->book() != bookname) {
 		m_key->book( bookname );
-		setKey( m_key.get() );
+		setKey( m_key );
 	}
 	updateText();
-	if (!updatelock) emit changed(m_key.get());
+	if (!updatelock) emit changed(m_key);
 }
 

@@ -14,8 +14,6 @@
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 
 #include <QWidget>
-
-#include <boost/scoped_ptr.hpp>
 #include <QTimer>
 
 
@@ -73,7 +71,7 @@ private:
 	friend class BtChapterDropdownChooserButton;
 	friend class BtVerseDropdownChooserButton;
 
-	boost::scoped_ptr<CSwordVerseKey> m_key;
+	CSwordVerseKey *m_key;
 
 	QLineEdit* m_textbox;
 
