@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-08-11 19:16-0400\n"
+"POT-Creation-Date: 2009-09-08 15:47-0400\n"
 "PO-Revision-Date: 2006-05-26 13:46WET\n"
 "Last-Translator: Jean Van Schaftingen <vanschaf@yahoo.fr>\n"
 "Language-Team: Français\n"
@@ -1726,7 +1726,18 @@ msgstr ""
 "\"><menuchoice> <guimenu>Fenêtre</guimenu> <guimenuitem>Cascade</"
 "guimenuitem></menuchoice></link> equivalent; cascades all open windows."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1041
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1040
+msgid ""
+"Change location. Changes focus to the toolbar field for the selected work."
+msgstr ""
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1049
+msgid "Search with works of this window."
+msgstr ""
+
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1058
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
@@ -1740,7 +1751,7 @@ msgstr ""
 "dialogue de recherche pour effectuer une recherche à travers toutes les "
 "modules qui sont ouvertes."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1056
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1073
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
@@ -1751,11 +1762,11 @@ msgstr ""
 "<guimenu>Fichier</guimenu> <guimenuitem>Quitter</guimenuitem></menuchoice></"
 "link>, ferme l'application &bibletime;."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1068
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1085
 msgid "Closes the current window."
 msgstr "Ferme la fenêtre courante."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1077
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1094
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
@@ -1764,7 +1775,7 @@ msgstr ""
 "Équivalent à <menuchoice> <guimenu>Aide</guimenu> <guimenuitem>Manuel</"
 "guimenuitem></menuchoice>, ouvre le manuel."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1089
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1106
 #, fuzzy
 msgid ""
 "<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
@@ -1774,7 +1785,7 @@ msgstr ""
 "d'étude Biblique</guimenuitem></menuchoice>, ouvre le tutoriel d'étude "
 "biblique."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1102
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1119
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
@@ -1786,7 +1797,7 @@ msgstr ""
 "de bibliothèque</guimenuitem></menuchoice></link>, ouvre le gestionnaire de "
 "bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1117
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1134
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
@@ -1798,7 +1809,7 @@ msgstr ""
 "bibliothèque</guimenuitem></menuchoice></link>, affiche/masque la "
 "Bibliothèque."
 
-#: docs/handbook/en/docbook/hdbk-reference.docbook:1132
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1149
 #, fuzzy
 msgid ""
 "<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
@@ -1989,12 +2000,12 @@ msgstr "Le manuel &bibletime; fait partie de &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:50
-msgid "2009-06"
+msgid "2009-09"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:51
-msgid "2.2"
+msgid "2.3"
 msgstr ""
 
 #: docs/handbook/en/docbook/index.docbook:53

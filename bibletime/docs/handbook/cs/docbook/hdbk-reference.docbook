@@ -976,6 +976,22 @@ zapne manuální skládání oken.</entry>
           <row>
             <entry>
               <keycombo action="simul">
+              <keycap>&Ctrl;L</keycap></keycombo>
+            </entry>
+            <entry>Change location. Changes focus to the toolbar field for the selected work.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
+              <keycap>&Ctrl;N</keycap></keycombo>
+            </entry>
+            <entry>Search with works of this window.</entry>
+          </row>
+
+          <row>
+            <entry>
+              <keycombo action="simul">
               <keycap>&Ctrl;O</keycap></keycombo>
             </entry>
             <entry>
