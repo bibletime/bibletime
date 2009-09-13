@@ -31,7 +31,27 @@
 #include <QString>
 #include <QStringList>
 #include <QToolButton>
+#include <QFocusEvent>
 
+class BtLineEdit : public QLineEdit
+{
+public:
+	BtLineEdit(QWidget* parent)
+		: QLineEdit(parent)
+	{
+	}
+protected:
+	void focusInEvent(QFocusEvent* event)
+	{
+		Qt::FocusReason reason = event->reason();
+		if (reason == Qt::OtherFocusReason)
+		{
+			selectAll();
+		}
+
+		QWidget::focusInEvent(event);
+	}
+};
 
 
 CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
@@ -53,7 +73,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
 
 	m_bookScroller = new CScrollerWidgetSet(this);
 
-	m_textbox = new QLineEdit( this );
+	m_textbox = new BtLineEdit( this );
 	setFocusProxy(m_textbox);
 	m_textbox->setContentsMargins(0, 0, 0, 0);
 
