@@ -1,3 +1,7 @@
+2009-09-14 Martin Gruner <mgruner@crosswire.org>
+	* Fixed a nasty bug which prevented non-KJV-verses to be shown in modules with
+		differing versification systems
+		
 2009-09-07 Martin Gruner <mgruner@crosswire.org>
 	* Fixed a nasty bug causing a small memory leak and preventing the bookname
 		language from being updated instantly in the bible key choosers after

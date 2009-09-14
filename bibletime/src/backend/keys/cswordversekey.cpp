@@ -18,8 +18,13 @@
 #include <swmodule.h>
 #include <localemgr.h>
 
-CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) : CSwordKey(module) {
+CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
+	CSwordKey(module)
+{
 	if ( CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(module) ) {
+		// Copy important settings like versification system
+		copyFrom((sword::VerseKey*) bible->module()->getKey());
+
 		key( bible->lowerBound().key() );
 	}
 }
