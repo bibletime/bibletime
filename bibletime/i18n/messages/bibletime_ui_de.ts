@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="de_DE">
 <context>
     <name>BTAboutModuleDialog</name>
     <message>
@@ -444,11 +444,11 @@
     </message>
     <message>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke mit Index</translation>
     </message>
     <message>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke ohne Index</translation>
     </message>
 </context>
 <context>
@@ -584,7 +584,7 @@
     </message>
     <message>
         <source>Waiting for turn...</source>
-        <translation>Warte auf Runde...</translation>
+        <translation>Warte...</translation>
     </message>
     <message>
         <source>Preparing install...</source>
@@ -1291,11 +1291,11 @@ shortcut</source>
     </message>
     <message>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse ändern</translation>
     </message>
     <message>
         <source>Search with works of this window</source>
-        <translation type="unfinished"></translation>
+        <translation>In den Werken dieses Fensters suchen</translation>
     </message>
 </context>
 <context>
@@ -2621,7 +2621,7 @@ Language name ppk</extracomment>
     <message>
         <source>Potawatomi</source>
         <extracomment>Language name pot</extracomment>
-        <translation type="unfinished">Potawatomi</translation>
+        <translation>Potawatomi</translation>
     </message>
     <message>
         <source>Klingon</source>
@@ -2631,7 +2631,7 @@ Language name ppk</extracomment>
     <message>
         <source>Yoryba</source>
         <extracomment>Language name yo</extracomment>
-        <translation type="unfinished">Yoryba</translation>
+        <translation>Yoryba</translation>
     </message>
     <message>
         <source>Verb tense changed</source>
@@ -2670,7 +2670,7 @@ Language name ppk</extracomment>
     <message>
         <source>Amuzgo, Guerrero</source>
         <extracomment>Language name amu</extracomment>
-        <translation type="unfinished">Amuzgo, Guerrero</translation>
+        <translation>Amuzgo, Guerrero</translation>
     </message>
     <message>
         <source>Azerbaijani, South</source>
@@ -2680,12 +2680,12 @@ Language name ppk</extracomment>
     <message>
         <source>Chinantec, Comaltepec</source>
         <extracomment>Language name cco</extracomment>
-        <translation type="unfinished">Chinantec, Comaltepec</translation>
+        <translation>Chinantec, Comaltepec</translation>
     </message>
     <message>
         <source>Chontal, Highland Oaxaca</source>
         <extracomment>Language name chd</extracomment>
-        <translation type="unfinished">Chontal, Bergland Oaxaca</translation>
+        <translation>Chontal, Bergland Oaxaca</translation>
     </message>
     <message>
         <source>Chinantec, Quiotepec</source>
@@ -2695,62 +2695,62 @@ Language name ppk</extracomment>
     <message>
         <source>Chinantec, Ozumacu00edn</source>
         <extracomment>Language name chz</extracomment>
-        <translation type="unfinished">Chinantec, Ozumacu00edn</translation>
+        <translation>Chinantec, Ozumacu00edn</translation>
     </message>
     <message>
         <source>Cakchiquel, Western</source>
         <extracomment>Language name ckw</extracomment>
-        <translation type="unfinished">Cakchiquel, Westlich</translation>
+        <translation>Cakchiquel, Westlich</translation>
     </message>
     <message>
         <source>Chinantec, Lalana</source>
         <extracomment>Language name cnl</extracomment>
-        <translation type="unfinished">Chinantec, Lalana</translation>
+        <translation>Chinantec, Lalana</translation>
     </message>
     <message>
         <source>Chinantec, Tepetotutla</source>
         <extracomment>Language name cnt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Tepetotutla</translation>
     </message>
     <message>
         <source>Chinantec, Sochiapan</source>
         <extracomment>Language name cso</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chinantec, Sochiapan</translation>
     </message>
     <message>
         <source>Chol, Tila</source>
         <extracomment>Language name cti</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Chol, Tila</translation>
     </message>
     <message>
         <source>Chatino, Western Highland</source>
         <extracomment>Language name ctp</extracomment>
-        <translation type="unfinished">Chatino, Westliches Bergland</translation>
+        <translation>Chatino, Westliches Bergland</translation>
     </message>
     <message>
         <source>Duruma</source>
         <extracomment>Language name dug</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Duruma</translation>
     </message>
     <message>
         <source>Geez</source>
         <extracomment>Language name gez</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Geez</translation>
     </message>
     <message>
         <source>Huave, San Mateo Del Mar</source>
         <extracomment>Language name huv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Huave, San Mateo Del Mar</translation>
     </message>
     <message>
         <source>Itzu00e1</source>
         <extracomment>Language name itz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Itzu00e1</translation>
     </message>
     <message>
         <source>Ixil, San Juan Cotzal</source>
         <extracomment>Language name ixl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ixil, San Juan Cotzal</translation>
     </message>
     <message>
         <source>Jacalteco, Eastern</source>
@@ -2766,32 +2766,32 @@ Language name ppk</extracomment>
         <source>Kekchu00ed</source>
         <comment>kek</comment>
         <extracomment>Language name kek</extracomment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>Lacandon</source>
         <extracomment>Language name lac</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Lacandon</translation>
     </message>
     <message>
         <source>Malagasy</source>
         <extracomment>Language name mg</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Malagassisch</translation>
     </message>
     <message>
         <source>Mixe, Isthmus</source>
         <extracomment>Language name mir</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixe, Isthmus</translation>
     </message>
     <message>
         <source>Mixtec, Coatzospan</source>
         <extracomment>Language name miz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Coatzospan</translation>
     </message>
     <message>
         <source>Mixtec, Silacayoapan</source>
         <extracomment>Language name mks</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Silacayoapan</translation>
     </message>
     <message>
         <source>(Multiple languages)</source>
@@ -2801,37 +2801,37 @@ Language name ppk</extracomment>
     <message>
         <source>Mam, Central</source>
         <extracomment>Language name mvc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Zentral</translation>
     </message>
     <message>
         <source>Mam, Todos Santos Cuchumatu00e1n</source>
         <extracomment>Language name mvj</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mam, Todos Santos Cuchumatu00e1n</translation>
     </message>
     <message>
         <source>Mixe, Juquila</source>
         <extracomment>Language name mxq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixe, Juquila</translation>
     </message>
     <message>
         <source>Mixtec, Jamiltepec</source>
         <extracomment>Language name mxt</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Jamiltepec</translation>
     </message>
     <message>
         <source>Norwegian Bokmu00e5l</source>
         <extracomment>Language name nb</extracomment>
-        <translation type="unfinished">Norwegisch Bokmal</translation>
+        <translation>Norwegisch Bokmal</translation>
     </message>
     <message>
         <source>Nahuatl, Michoacu00e1n</source>
         <extracomment>Language name ncl</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Michoacu00e1n</translation>
     </message>
     <message>
         <source>Nahuatl, Guerrero</source>
         <extracomment>Language name ngu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Nahuatl, Guerrero</translation>
     </message>
     <message>
         <source>Nahuatl, Northern Oaxaca</source>
@@ -2841,7 +2841,7 @@ Language name ppk</extracomment>
     <message>
         <source>Otomi, Queru00e9taro</source>
         <extracomment>Language name otq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Otomi, Queru00e9taro</translation>
     </message>
     <message>
         <source>Persian (Dari)</source>
@@ -2851,62 +2851,62 @@ Language name ppk</extracomment>
     <message>
         <source>Quichu00e9, West Central</source>
         <extracomment>Language name qut</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Quichu00e9, West Central</translation>
     </message>
     <message>
         <source>Tektiteko</source>
         <extracomment>Language name ttc</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tektiteko</translation>
     </message>
     <message>
         <source>Tzotzil, Zinacantu00e1n</source>
         <extracomment>Language name tzz</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Tzotzil, Zinacantu00e1n</translation>
     </message>
     <message>
         <source>Orya</source>
         <extracomment>Language name ury</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Orya</translation>
     </message>
     <message>
         <source>Uspanteco</source>
         <extracomment>Language name usp</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Uspanteco</translation>
     </message>
     <message>
         <source>Mixtec, Diuxi-Tilantongo</source>
         <extracomment>Language name xtd</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Mixtec, Diuxi-Tilantongo</translation>
     </message>
     <message>
         <source>Zapotec, San Juan Guelavu00eda</source>
         <extracomment>Language name zab</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, San Juan Guelavu00eda</translation>
     </message>
     <message>
         <source>Zapotec, Mitla</source>
         <extracomment>Language name zaw</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Mitla</translation>
     </message>
     <message>
         <source>Zapotec, Amatlu00e1n</source>
         <extracomment>Language name zpo</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Amatlu00e1n</translation>
     </message>
     <message>
         <source>Zapotec, Zoogocho</source>
         <extracomment>Language name zpq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Zoogocho</translation>
     </message>
     <message>
         <source>Zapotec, Yalu00e1lag</source>
         <extracomment>Language name zpu</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yalu00e1lag</translation>
     </message>
     <message>
         <source>Zapotec, Chichicapan</source>
         <extracomment>Language name zpv</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Chichicapan</translation>
     </message>
     <message>
         <source>Zapotec, Southern Rincon</source>
@@ -2916,12 +2916,12 @@ Language name ppk</extracomment>
     <message>
         <source>Zapotec, Quioquitani-Quieru00ed</source>
         <extracomment>Language name ztq</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Quioquitani-Quieru00ed</translation>
     </message>
     <message>
         <source>Zapotec, Yatee</source>
         <extracomment>Language name zty</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Zapotec, Yatee</translation>
     </message>
     <message>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
