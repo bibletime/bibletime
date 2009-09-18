@@ -25,6 +25,7 @@ class CDisplayWindow;
 class CMainIndex;
 class CBookmarkIndex;
 class CBookshelfIndex;
+class BtBookshelfDockWidget;
 
 namespace InfoDisplay {
 	class CInfoDisplay;
@@ -232,8 +233,14 @@ protected slots:
 	 * Creates a new presenter in the MDI area according to the type of the module.
 	 */
 	CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
-	CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key);
+    CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
 	CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type);
+    CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
+    CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
+    void searchInModule(CSwordModuleInfo *module);
+    void moduleUnlock(CSwordModuleInfo *module);
+    void moduleAbout(CSwordModuleInfo *module);
+
 	/**
 	 * Is called when the window menu is about to show ;-)
 	 */
@@ -327,8 +334,7 @@ protected slots:
 
 private:
     // Docking widgets and their respective content widgets:
-    QDockWidget* m_bookshelfDock;
-        CBookshelfIndex* m_bookshelfPage;
+    BtBookshelfDockWidget* m_bookshelfDock;
     QDockWidget* m_bookmarksDock;
         CBookmarkIndex* m_bookmarksPage;
     QDockWidget* m_magDock;

@@ -8,6 +8,7 @@
 **********/
 #include "bibletime.h"
 
+#include "frontend/btaboutmoduledialog.h"
 #include "frontend/cmdiarea.h"
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/mainindex/bookshelf/cbookshelfindex.h"
@@ -17,6 +18,7 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/searchdialog/csearchdialog.h"
 #include "backend/config/cbtconfig.h"
 
 #include "util/ctoolclass.h"
@@ -33,6 +35,7 @@
 #include "backend/keys/cswordldkey.h"
 
 //Qt includes
+#include <QInputDialog>
 #include <QSplitter>
 #include <QDebug>
 #include <QAction>
@@ -155,7 +158,7 @@ CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modu
 	qApp->processEvents();
 	// Now all events, including mouse clicks for the displayWindow have been handled
 	// and we can let the user click the same module again
-	m_bookshelfPage->unfreezeModules(modules);
+    //m_bookshelfPage->unfreezeModules(modules);
 	qApp->restoreOverrideCursor();
 	return displayWindow;
 }
@@ -190,6 +193,53 @@ CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, co
 
 	qApp->restoreOverrideCursor();
 	return displayWindow;
+}
+
+CDisplayWindow* BibleTime::moduleEditPlain(CSwordModuleInfo *module) {
+    /// \todo Refactor this.
+    return createWriteDisplayWindow(module,
+                                    QString::null,
+                                    CDisplayWindow::PlainTextWindow);
+}
+
+CDisplayWindow* BibleTime::moduleEditHtml(CSwordModuleInfo *module) {
+    /// \todo Refactor this.
+    return createWriteDisplayWindow(module,
+                                    QString::null,
+                                    CDisplayWindow::HTMLWindow);
+}
+
+
+void BibleTime::searchInModule(CSwordModuleInfo *module) {
+    /// \todo Refactor this.
+    QList<CSwordModuleInfo *> modules;
+    modules.append(module);
+    Search::CSearchDialog::openDialog(modules, QString::null);
+}
+
+void BibleTime::moduleUnlock(CSwordModuleInfo *module) {
+    bool ok;
+    const QString unlockKey =
+        QInputDialog::getText(
+            this,
+            tr("Unlock Work"),
+            tr("Enter the unlock key for this work."),
+            QLineEdit::Normal,
+            module->config(CSwordModuleInfo::CipherKey),
+            &ok
+        );
+    if (ok) {
+        /// \todo Refactor. Unlock the module via a global modules model.
+        if (module->unlock(unlockKey)) {
+            CPointers::backend()->reloadModules(CSwordBackend::OtherChange);
+        }
+    }
+}
+
+void BibleTime::moduleAbout(CSwordModuleInfo *module) {
+    BTAboutModuleDialog *dialog(new BTAboutModuleDialog(this, module));
+    dialog->show();
+    dialog->raise();
 }
 
 /** Refreshes all presenters.*/

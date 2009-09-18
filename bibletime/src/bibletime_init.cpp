@@ -15,6 +15,7 @@
 #include "backend/managers/btstringmgr.h"
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/clanguagemgr.h"
+#include "frontend/btbookshelfdockwidget.h"
 #include "frontend/mainindex/cmainindex.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/profile/cprofilemgr.h"
@@ -50,10 +51,7 @@ void BibleTime::initView()
 	m_mdi = new CMDIArea(this);
 	setCentralWidget(m_mdi);
 
-    m_bookshelfDock = new QDockWidget(tr("Bookshelf"), this);
-    m_bookshelfDock->setObjectName("BookshelfDock");
-	m_bookshelfPage = new CBookshelfIndex(0);
-    m_bookshelfDock->setWidget(m_bookshelfPage);
+    m_bookshelfDock = new BtBookshelfDockWidget(this);
     addDockWidget(Qt::LeftDockWidgetArea, m_bookshelfDock);
 	
     m_bookmarksDock = new QDockWidget(tr("Bookmarks"), this);
@@ -396,12 +394,18 @@ void BibleTime::initConnections()
 	ok = connect(m_bookmarksPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
 				 this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>,const QString&)));
 	Q_ASSERT(ok);
-	ok = connect(m_bookshelfPage, SIGNAL(createReadDisplayWindow(QList<CSwordModuleInfo*>, const QString&)),
-				 this, SLOT(createReadDisplayWindow(QList<CSwordModuleInfo*>,const QString&)));
-	Q_ASSERT(ok);
-	ok = connect(m_bookshelfPage, SIGNAL(createWriteDisplayWindow(CSwordModuleInfo*, const QString&, const CDisplayWindow::WriteWindowType&)),
-				 this, SLOT(createWriteDisplayWindow(CSwordModuleInfo*,const QString&, const CDisplayWindow::WriteWindowType&)));
-	Q_ASSERT(ok);
+    connect(m_bookshelfDock, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)),
+            this, SLOT(createReadDisplayWindow(CSwordModuleInfo*)));
+    connect(m_bookshelfDock, SIGNAL(moduleSearchTriggered(CSwordModuleInfo*)),
+            this, SLOT(searchInModule(CSwordModuleInfo*)));
+    connect(m_bookshelfDock, SIGNAL(moduleEditPlainTriggered(CSwordModuleInfo*)),
+            this, SLOT(moduleEditPlain(CSwordModuleInfo*)));
+    connect(m_bookshelfDock, SIGNAL(moduleEditHtmlTriggered(CSwordModuleInfo*)),
+            this, SLOT(moduleEditHtml(CSwordModuleInfo*)));
+    connect(m_bookshelfDock, SIGNAL(moduleUnlockTriggered(CSwordModuleInfo*)),
+            this, SLOT(moduleUnlock(CSwordModuleInfo*)));
+    connect(m_bookshelfDock, SIGNAL(moduleAboutTriggered(CSwordModuleInfo*)),
+            this, SLOT(moduleAbout(CSwordModuleInfo*)));
 
 	connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }

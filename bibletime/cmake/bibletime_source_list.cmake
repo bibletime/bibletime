@@ -5,6 +5,16 @@ SET(bibletime_UIS
 )
 
 SET(bibletime_SOURCES
+	#backend bookshelf model:
+	src/backend/bookshelfmodel/btbookshelfmodel.cpp
+	src/backend/bookshelfmodel/btbookshelftreemodel.cpp
+	src/backend/bookshelfmodel/btselectedmodulesbookshelfproxymodel.cpp
+	src/backend/bookshelfmodel/categoryitem.cpp
+	src/backend/bookshelfmodel/distributionitem.cpp
+	src/backend/bookshelfmodel/item.cpp
+	src/backend/bookshelfmodel/languageitem.cpp
+	src/backend/bookshelfmodel/moduleitem.cpp
+	src/backend/bookshelfmodel/rootitem.cpp
 	#backend filters
 	src/backend/filters/bt_gbfhtml.cpp
 	src/backend/filters/bt_osishtml.cpp
@@ -52,6 +62,7 @@ SET(bibletime_SOURCES
 	src/util/migrationutil.cpp
 	
 	# frontend top level
+	src/frontend/btbookshelfdockwidget.cpp
 	src/frontend/cdragdrop.cpp
 	src/frontend/crossrefrendering.cpp
 	src/frontend/cprinter.cpp
@@ -64,6 +75,7 @@ SET(bibletime_SOURCES
 	src/frontend/cmodulechooserdialog.cpp
 
 	# Bookshelf/Bookmarks widget in main window
+	src/frontend/mainindex/btbookshelfview.cpp
 	src/frontend/mainindex/cmainindex.cpp
 	
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
@@ -188,11 +200,15 @@ SET(bibletime_SOURCES
 
 # mocable headers
 SET(bibletime_MOCABLE_HEADERS
+	src/backend/bookshelfmodel/btbookshelfmodel.h
+	src/backend/bookshelfmodel/btbookshelftreemodel.h
+	src/backend/bookshelfmodel/btselectedmodulesbookshelfproxymodel.h
 	src/backend/drivers/cswordmoduleinfo.h
 	src/backend/managers/cswordbackend.h
 	src/backend/cswordmodulesearch.h
 	src/bibletime.h
 	src/bibletime_dbus_adaptor.h
+	src/frontend/btbookshelfdockwidget.h
 	src/frontend/searchdialog/csearchmodulechooserdialog.h
 	src/frontend/searchdialog/crangechooserdialog.h
 	src/frontend/searchdialog/btsearchresultarea.h
@@ -206,6 +222,7 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/cdragdrop.h
 	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.h
 	src/frontend/mainindex/bookshelf/cbookshelfindex.h
+	src/frontend/mainindex/btbookshelfview.h
 	src/frontend/mainindex/cmainindex.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/cmdiarea.h
