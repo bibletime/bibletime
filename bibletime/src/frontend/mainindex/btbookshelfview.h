@@ -24,11 +24,13 @@ class BtBookshelfView: public QTreeView {
         virtual ~BtBookshelfView();
 
     signals:
-        void rightClicked();
-        void moduleRightClicked(CSwordModuleInfo *item);
+        void contextMenuActivated(QPoint pos);
+        void moduleContextMenuActivated(CSwordModuleInfo *item,
+                                        QPoint pos);
         void moduleActivated(CSwordModuleInfo *item);
 
     protected:
+        void keyPressEvent(QKeyEvent *event);
         void mousePressEvent(QMouseEvent *event);
         CSwordModuleInfo *getModule(const QModelIndex &index) const;
 

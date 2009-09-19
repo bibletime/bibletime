@@ -75,10 +75,11 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     connect(CPointers::backend(),
             SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
             this, SLOT(swordSetupChanged()));
-    connect(m_view, SIGNAL(rightClicked()),
-            this, SLOT(showContextMenu()));
-    connect(m_view, SIGNAL(moduleRightClicked(CSwordModuleInfo*)),
-            this, SLOT(showItemContextMenu(CSwordModuleInfo*)));
+    connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
+            this, SLOT(showContextMenu(QPoint)));
+    connect(m_view,
+            SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*,QPoint)),
+            this, SLOT(showItemContextMenu(CSwordModuleInfo*,QPoint)));
     connect(m_view, SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
 
@@ -205,8 +206,8 @@ void BtBookshelfDockWidget::swordSetupChanged() {
     m_bookshelfModel->addModules(added);
 }
 
-void BtBookshelfDockWidget::showContextMenu() {
-    m_contextMenu->popup(QCursor::pos());
+void BtBookshelfDockWidget::showContextMenu(QPoint pos) {
+    m_contextMenu->popup(pos);
 }
 
 void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
@@ -235,14 +236,16 @@ void BtBookshelfDockWidget::showHideEnabled(bool enable) {
     }
 }
 
-void BtBookshelfDockWidget::showItemContextMenu(CSwordModuleInfo *module) {
+void BtBookshelfDockWidget::showItemContextMenu(CSwordModuleInfo *module,
+                                                QPoint pos)
+{
     m_itemContextMenu->setProperty("BtModule", qVariantFromValue((void*) module));
     m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
     m_itemOpenAction->setEnabled(!module->isLocked());
     m_itemEditMenu->setEnabled(module->isWritable());
     m_itemUnlockAction->setEnabled(module->isLocked());
 
-    m_itemContextMenu->popup(QCursor::pos());
+    m_itemContextMenu->popup(pos);
 }
 
 void BtBookshelfDockWidget::itemActionTriggered(QAction *action) {

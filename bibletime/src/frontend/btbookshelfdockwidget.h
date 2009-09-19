@@ -47,10 +47,10 @@ class BtBookshelfDockWidget: public QDockWidget {
 
     protected slots:
         void swordSetupChanged();
-        void showContextMenu();
+        void showContextMenu(QPoint pos);
             void groupingActionTriggered(QAction *action);
             void showHideEnabled(bool enable);
-        void showItemContextMenu(CSwordModuleInfo *module);
+        void showItemContextMenu(CSwordModuleInfo *module, QPoint pos);
             void itemActionTriggered(QAction *action);
 
     protected:

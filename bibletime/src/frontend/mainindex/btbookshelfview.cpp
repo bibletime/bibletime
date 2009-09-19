@@ -32,6 +32,22 @@ BtBookshelfView::~BtBookshelfView() {
     // Intentionally empty
 }
 
+void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Menu) {
+        scrollTo(currentIndex());
+        CSwordModuleInfo *i(getModule(currentIndex()));
+        QRect itemRect(visualRect(currentIndex()));
+        QPoint p(viewport()->mapToGlobal(itemRect.bottomLeft()));
+        if (i == 0) {
+            emit contextMenuActivated(p);
+        } else {
+            emit moduleContextMenuActivated(i, p);
+        }
+    } else {
+        QTreeView::keyPressEvent(event);
+    }
+}
+
 void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
     if (event->buttons() == Qt::RightButton) {
         QModelIndex clickedItemIndex(indexAt(event->pos()));
@@ -40,9 +56,9 @@ void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
         }
         CSwordModuleInfo *i(getModule(clickedItemIndex));
         if (i == 0) {
-            emit rightClicked();
+            emit contextMenuActivated(mapToGlobal(event->pos()));
         } else {
-            emit moduleRightClicked(i);
+            emit moduleContextMenuActivated(i, mapToGlobal(event->pos()));
         }
     } else {
         QTreeView::mousePressEvent(event);
