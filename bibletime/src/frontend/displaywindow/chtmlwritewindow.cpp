@@ -42,6 +42,8 @@ void CHTMLWriteWindow::initView() {
 	setCentralWidget( displayWidget()->view() );
 
 	setMainToolBar( new QToolBar(this) );
+	mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	mainToolBar()->setFloatable(false);
 	addToolBar(mainToolBar());
 
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
@@ -104,6 +106,8 @@ void CHTMLWriteWindow::initToolbars() {
 
 	//html formatting toolbar
 	QToolBar* bar = new QToolBar(this);
+	bar->setAllowedAreas(Qt::TopToolBarArea);
+	bar->setFloatable(false);
 	((CWriteDisplay*)displayWidget())->setupToolbar( bar, actionCollection() );
 	addToolBar(bar);
 }

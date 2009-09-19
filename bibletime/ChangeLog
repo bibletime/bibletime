@@ -1,5 +1,6 @@
 2009-09-18 Gary Holmlund
-	* Fix bug id 2832540 -Personal note relocated
+	* Fix bug id 2807600 - Limit movability of toolbar components
+	* Fix bug id 2832540 - Personal note relocated
 
 2009-09-14 Martin Gruner <mgruner@crosswire.org>
 	* Fixed a nasty bug which prevented non-KJV-verses to be shown in modules with

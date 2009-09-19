@@ -100,6 +100,9 @@ void CBookReadWindow::initView()
 	QSplitter* splitter = new QSplitter(this);
 
 	setMainToolBar( new QToolBar(this) );
+	mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	mainToolBar()->setFloatable(false);
+
 	addToolBar(mainToolBar());
 
 	m_treeChooser = new CBookTreeChooser(modules(), key(), splitter);
@@ -112,6 +115,8 @@ void CBookReadWindow::initView()
 	addToolBar(moduleChooserBar());
 
 	setButtonsToolBar( new QToolBar(this) );
+	buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	buttonsToolBar()->setFloatable(false);
 	setDisplaySettingsButton( new CDisplaySettingsButton( &displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
 	addToolBar(buttonsToolBar());
 	m_treeChooser->hide();

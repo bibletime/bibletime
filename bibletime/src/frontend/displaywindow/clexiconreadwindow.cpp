@@ -187,6 +187,8 @@ void CLexiconReadWindow::initView()
 	qDebug("CLexiconReadWindow::initView");
 	setDisplayWidget( CDisplay::createReadInstance(this) );
 	setMainToolBar( new QToolBar(this) );
+	mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	mainToolBar()->setFloatable(false);
 	addToolBar(mainToolBar());
 	setKeyChooser( CKeyChooser::createInstance(modules(), key(), mainToolBar()) );
 	mainToolBar()->addWidget(keyChooser());
@@ -194,6 +196,8 @@ void CLexiconReadWindow::initView()
 	moduleChooserBar()->adjustSize();
 	addToolBar(moduleChooserBar());
 	setButtonsToolBar( new QToolBar(this) );
+	buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	buttonsToolBar()->setFloatable(false);
 	addToolBar(buttonsToolBar());
 	setWindowIcon(CToolClass::getIconForModule(modules().first()));
 	setCentralWidget( displayWidget()->view() );

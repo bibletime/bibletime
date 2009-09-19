@@ -22,6 +22,8 @@ CModuleChooserBar::CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSword
 	m_idCounter(0),
 	m_buttonLimit(-1) //-1 means no limit
 {
+	setAllowedAreas(Qt::TopToolBarArea);
+	setFloatable(false);
 	//insert buttons if useModules != 0
 	QList<CSwordModuleInfo*>::iterator end_it = useModules.end();
 	for (QList<CSwordModuleInfo*>::iterator it(useModules.begin()); it != end_it; ++it) {

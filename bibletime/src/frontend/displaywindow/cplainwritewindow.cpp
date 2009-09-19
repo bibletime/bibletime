@@ -45,6 +45,8 @@ void CPlainWriteWindow::initView() {
 	setCentralWidget( displayWidget()->view() );
 
 	setMainToolBar( new QToolBar(this) );
+	mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
+	mainToolBar()->setFloatable(false);
 	addToolBar(mainToolBar());
 	addToolBarBreak();
 
