@@ -47,6 +47,7 @@ class BtBookshelfModel: public QAbstractListModel {
         static QString categoryName(const CSwordModuleInfo::Category &category);
         static QString languageName(const CLanguageMgr::Language *language);
 
+        void clear();
         void addModule(CSwordModuleInfo * const module);
         void addModules(const QSet<CSwordModuleInfo *> &modules);
         void addModules(const QList<CSwordModuleInfo *> &modules);

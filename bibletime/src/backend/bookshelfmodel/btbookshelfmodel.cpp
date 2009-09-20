@@ -119,6 +119,12 @@ QString BtBookshelfModel::languageName(
     return language->translatedName();
 }
 
+void BtBookshelfModel::clear() {
+    beginRemoveRows(QModelIndex(), 0, m_data.size() - 1);
+    m_data.clear();
+    endRemoveRows();
+}
+
 void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     Q_ASSERT(module != 0);
 

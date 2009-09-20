@@ -14,7 +14,6 @@
 
 #include <QQueue>
 #include <QSet>
-#include <QStack>
 #include "backend/bookshelfmodel/categoryitem.h"
 #include "backend/bookshelfmodel/distributionitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
@@ -296,30 +295,33 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
     Item *i(m_modules.value(module, 0));
     if (i == 0) return;
 
-    // Set i to be the lowest empty item after remove:
+    // Set i to be the lowest item (including empty groups) to remove:
     Q_ASSERT(i->parent() != 0);
     while (i->parent() != m_rootItem && i->parent()->children().size() <= 1) {
         i = i->parent();
     }
+    Q_ASSERT(i != 0);
 
     // Calculate index of parent item:
-    QStack<int> indexes;
-    Item *j(i);
-    indexes.push(j->childIndex());
-    while (j->parent() != m_rootItem) {
-        Q_ASSERT(j->parent() != 0);
-        indexes.push(j->childIndex());
-    }
     QModelIndex parentIndex;
-    while (!indexes.empty()) {
-        parentIndex = index(indexes.pop(), 0, parentIndex);
+    {
+        QList<int> indexes;
+        for (Item *j(i->parent()); j != m_rootItem; j = j->parent()) {
+            Q_ASSERT(j != 0);
+            indexes.push_back(j->childIndex());
+        }
+        while (!indexes.isEmpty()) {
+            parentIndex = index(indexes.takeLast(), 0, parentIndex);
+        }
     }
 
     // Remove item:
     int index(i->childIndex());
     beginRemoveRows(parentIndex, index, index);
     i->parent()->deleteChildAt(index);
+    m_modules.remove(module);
     endRemoveRows();
+    resetParentCheckStates(parentIndex);
 }
 
 QModelIndex BtBookshelfTreeModel::getCategory(CSwordModuleInfo *module,
@@ -386,9 +388,11 @@ Item *BtBookshelfTreeModel::getItem(const QModelIndex &index)
 }
 
 void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
-    while (parentIndex.isValid()) {
+    for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent()) {
         Item *parentItem(static_cast<Item*>(parentIndex.internalPointer()));
         Q_ASSERT(parentItem != 0);
+
+        Qt::CheckState oldState(parentItem->checkState());
         bool haveCheckedChildren(false);
         bool haveUncheckedChildren(false);
         for (int i(0); i < parentItem->children().size(); i++) {
@@ -405,18 +409,22 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
                 if (haveCheckedChildren) break;
             }
         }
+
+        Qt::CheckState newState;
         if (haveCheckedChildren) {
             if (haveUncheckedChildren) {
-                parentItem->setCheckState(Qt::PartiallyChecked);
+                newState = Qt::PartiallyChecked;
             } else {
-                parentItem->setCheckState(Qt::Checked);
+                newState = Qt::Checked;
             }
         } else {
-            parentItem->setCheckState(Qt::Unchecked);
+            newState = Qt::Unchecked;
         }
+        if (newState == oldState) break;
+
+        parentItem->setCheckState(newState);
         emit dataChanged(parentIndex, parentIndex);
-        parentIndex = parentIndex.parent();
-    } // while (parentIndex.isValid())
+    } // for ( ; parentIndex.isValid(); parentIndex = parentIndex.parent())
 }
 
 void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
