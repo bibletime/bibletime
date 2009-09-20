@@ -19,7 +19,7 @@ class CSwordModuleInfo;
 class BtBookshelfView;
 class BtBookshelfModel;
 class BtBookshelfTreeModel;
-class BtSelectedModulesBookshelfProxyModel;
+class BtCheckStateFilterProxyModel;
 class QAction;
 class QActionGroup;
 class QMenu;
@@ -55,9 +55,9 @@ class BtBookshelfDockWidget: public QDockWidget {
 
     protected:
         // Models:
-        BtBookshelfModel                     *m_bookshelfModel;
-        BtBookshelfTreeModel                 *m_bookshelfTreeModel;
-        BtSelectedModulesBookshelfProxyModel *m_filterProxyModel;
+        BtBookshelfModel             *m_bookshelfModel;
+        BtBookshelfTreeModel         *m_bookshelfTreeModel;
+        BtCheckStateFilterProxyModel *m_filterProxyModel;
 
         // Widgets:
         QWidget *m_widget;

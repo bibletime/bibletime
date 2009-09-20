@@ -25,7 +25,7 @@ using namespace BookshelfModel;
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
     : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-      m_checkable(false), m_defaultSelected(false)
+      m_checkable(false), m_defaultChecked(false)
 {
     m_groupingOrder.push_back(GROUP_CATEGORY);
     m_groupingOrder.push_back(GROUP_LANGUAGE);
@@ -41,6 +41,10 @@ int BtBookshelfTreeModel::rowCount(const QModelIndex &parent) const {
 
 int BtBookshelfTreeModel::columnCount(const QModelIndex &parent) const {
     return 1;
+}
+
+bool BtBookshelfTreeModel::hasChildren(const QModelIndex &parent) const {
+    return !getItem(parent)->children().isEmpty();
 }
 
 QModelIndex BtBookshelfTreeModel::index(int row, int column,
@@ -60,10 +64,12 @@ QModelIndex BtBookshelfTreeModel::index(int row, int column,
 QModelIndex BtBookshelfTreeModel::parent(const QModelIndex &index) const {
     if (!index.isValid()) return QModelIndex();
 
-    Item *childItem(getItem(index));
+    Item *childItem(static_cast<Item*>(index.internalPointer()));
+    Q_ASSERT(childItem != 0);
     Item *parentItem(childItem->parent());
+    Q_ASSERT(parentItem != 0);
 
-    if (parentItem == m_rootItem || parentItem == 0) {
+    if (parentItem == m_rootItem) {
         return QModelIndex();
     }
     return createIndex(parentItem->childIndex(), 0, parentItem);
@@ -72,11 +78,12 @@ QModelIndex BtBookshelfTreeModel::parent(const QModelIndex &index) const {
 QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
     typedef util::filesystem::DirectoryUtil DU;
 
-    if (!index.isValid() || index.column() != 0 /*|| !index.parent().isValid()*/) {
+    if (!index.isValid() || index.column() != 0) {
         return QVariant();
     }
 
-    Item *i(getItem(index));
+    Item *i(static_cast<Item*>(index.internalPointer()));
+    Q_ASSERT(i != 0);
     switch (role) {
         case Qt::DisplayRole:
             return i->name();
@@ -84,7 +91,6 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
             if (!m_checkable) break;
         case BtBookshelfTreeModel::CheckStateRole:
             return i->checkState();
-            break;
         case Qt::DecorationRole:
             return i->icon();
         case BtBookshelfModel::ModulePointerRole:
@@ -111,31 +117,30 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
         bool ok;
         Qt::CheckState newState((Qt::CheckState) value.toInt(&ok));
         if (ok && newState != Qt::PartiallyChecked) {
-            Item *i(getItem(itemIndex));
-            if (i != 0) {
-                // Recursively (un)check all children:
-                QList<IP> q;
-                q.append(IP(i, itemIndex));
-                while (!q.isEmpty()) {
-                    const IP p(q.takeFirst());
-                    Item *item(p.first);
-                    item->setCheckState(newState);
-                    emit dataChanged(p.second, p.second);
-                    const QList<Item*> &children(item->children());
-                    for (int i(0); i < children.size(); i++) {
-                        q.append(IP(children.at(i), index(i, 0, p.second)));
-                    }
+            Item *i(static_cast<Item*>(itemIndex.internalPointer()));
+            Q_ASSERT(i != 0);
+            // Recursively (un)check all children:
+            QList<IP> q;
+            q.append(IP(i, itemIndex));
+            while (!q.isEmpty()) {
+                const IP p(q.takeFirst());
+                Item *item(p.first);
+                item->setCheckState(newState);
+                emit dataChanged(p.second, p.second);
+                const QList<Item*> &children(item->children());
+                for (int i(0); i < children.size(); i++) {
+                    q.append(IP(children.at(i), index(i, 0, p.second)));
                 }
+            }
 
-                // Change check state of the item itself
-                i->setCheckState(newState);
-                emit dataChanged(itemIndex, itemIndex);
+            // Change check state of the item itself
+            i->setCheckState(newState);
+            emit dataChanged(itemIndex, itemIndex);
 
-                // Recursively change parent check states.
-                resetParentCheckStates(itemIndex.parent());
+            // Recursively change parent check states.
+            resetParentCheckStates(itemIndex.parent());
 
-                return true;
-            } // if (i != 0)
+            return true;
         } // if (ok && newState != Qt::PartiallyChecked)
     } // if (role == Qt::CheckStateRole)
     return false;
@@ -145,9 +150,9 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex &index) const {
     if (!index.isValid()) return 0;
 
     Qt::ItemFlags f(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-    Item *i(getItem(index));
-    if (i == 0) return 0;
     if (m_checkable) {
+        Item *i(static_cast<Item*>(index.internalPointer()));
+        Q_ASSERT(i != 0);
         switch (i->type()) {
             case Item::ITEM_CATEGORY:
             case Item::ITEM_LANGUAGE:
@@ -174,6 +179,8 @@ QVariant BtBookshelfTreeModel::headerData(int section,
 }
 
 void BtBookshelfTreeModel::setSourceModel(BtBookshelfModel *sourceModel) {
+    if (m_sourceModel == sourceModel) return;
+
     if (m_sourceModel != 0) {
         disconnect(this, SLOT(moduleInserted(QModelIndex,int,int)));
         disconnect(this, SLOT(moduleRemoved(QModelIndex,int,int)));
@@ -196,7 +203,7 @@ void BtBookshelfTreeModel::setSourceModel(BtBookshelfModel *sourceModel) {
                 this,        SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
         const QList<CSwordModuleInfo *> &modules(sourceModel->modules());
         Q_FOREACH(CSwordModuleInfo *module, modules) {
-            addModule(module, m_defaultSelected);
+            addModule(module, m_defaultChecked);
         }
     }
 }
@@ -204,6 +211,7 @@ void BtBookshelfTreeModel::setSourceModel(BtBookshelfModel *sourceModel) {
 void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
     if (m_groupingOrder == groupingOrder) return;
     m_groupingOrder = groupingOrder;
+
     if (m_sourceModel != 0) {
         QSet<CSwordModuleInfo*> checked(checkedModules().toSet());
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
@@ -213,12 +221,7 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
         endRemoveRows();
         const QList<CSwordModuleInfo *> &modules(m_sourceModel->modules());
         Q_FOREACH(CSwordModuleInfo *module, modules) {
-            if (checked.contains(module)) {
-                addModule(module, true);
-                checked.remove(module);
-            } else {
-                addModule(module, false);
-            }
+            addModule(module, checked.contains(module));
         }
         /**
           \bug Calling reset() shouldn't be necessary here, but omitting it will
@@ -383,14 +386,13 @@ Item *BtBookshelfTreeModel::getItem(const QModelIndex &index)
 }
 
 void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
-    if (!parentIndex.isValid()) return;
-    for (;;) {
-        Item *i(getItem(parentIndex));
-        if (i == 0 || i->type() == Item::ITEM_ROOT) break;
+    while (parentIndex.isValid()) {
+        Item *parentItem(static_cast<Item*>(parentIndex.internalPointer()));
+        Q_ASSERT(parentItem != 0);
         bool haveCheckedChildren(false);
         bool haveUncheckedChildren(false);
-        Q_FOREACH(Item *child, i->children()) {
-            Qt::CheckState state(child->checkState());
+        for (int i(0); i < parentItem->children().size(); i++) {
+            Qt::CheckState state(parentItem->childAt(i)->checkState());
             if (state == Qt::PartiallyChecked) {
                 haveCheckedChildren = true;
                 haveUncheckedChildren = true;
@@ -405,16 +407,16 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
         }
         if (haveCheckedChildren) {
             if (haveUncheckedChildren) {
-                i->setCheckState(Qt::PartiallyChecked);
+                parentItem->setCheckState(Qt::PartiallyChecked);
             } else {
-                i->setCheckState(Qt::Checked);
+                parentItem->setCheckState(Qt::Checked);
             }
         } else {
-            i->setCheckState(Qt::Unchecked);
+            parentItem->setCheckState(Qt::Unchecked);
         }
         emit dataChanged(parentIndex, parentIndex);
         parentIndex = parentIndex.parent();
-    } // for (;;)
+    } // while (parentIndex.isValid())
 }
 
 void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
@@ -450,7 +452,7 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
         QVariant data(m_sourceModel->data(moduleIndex, PR));
         CSwordModuleInfo *module((CSwordModuleInfo *) (data.value<void*>()));
 
-        addModule(module, m_defaultSelected);
+        addModule(module, m_defaultChecked);
     }
 }
 

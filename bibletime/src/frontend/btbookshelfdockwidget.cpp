@@ -21,7 +21,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/bookshelfmodel/btselectedmodulesbookshelfproxymodel.h"
+#include "backend/bookshelfmodel/btcheckstatefilterproxymodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -41,7 +41,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
     m_bookshelfTreeModel->setDefaultChecked(true);
     m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
-    m_filterProxyModel = new BtSelectedModulesBookshelfProxyModel(this);
+    m_filterProxyModel = new BtCheckStateFilterProxyModel(this);
+    m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
 
     // Setup actions and menus:

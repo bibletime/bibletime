@@ -10,16 +10,16 @@
 *
 **********/
 
-#ifndef BTSELECTEDMODULESBOOKSHELFPROXYMODEL_H
-#define BTSELECTEDMODULESBOOKSHELFPROXYMODEL_H
+#ifndef BTCHECKSTATEFILTERPROXYMODEL_H
+#define BTCHECKSTATEFILTERPROXYMODEL_H
 
 #include <QSortFilterProxyModel>
 
-class BtSelectedModulesBookshelfProxyModel: public QSortFilterProxyModel {
+class BtCheckStateFilterProxyModel: public QSortFilterProxyModel {
     Q_OBJECT
     public:
-        BtSelectedModulesBookshelfProxyModel(QObject *parent = 0);
-        virtual ~BtSelectedModulesBookshelfProxyModel();
+        BtCheckStateFilterProxyModel(QObject *parent = 0);
+        virtual ~BtCheckStateFilterProxyModel();
 
         inline bool enabled() const { return m_enabled; }
         void setEnabled(bool enable);
@@ -30,12 +30,18 @@ class BtSelectedModulesBookshelfProxyModel: public QSortFilterProxyModel {
         inline bool showUnchecked() const { return m_showUnchecked; }
         void setShowUnchecked(bool show);
 
+        inline bool showPartiallyChecked() const {
+            return m_showPartiallyChecked;
+        }
+        void setShowPartiallyChecked(bool show);
+
         virtual bool filterAcceptsRow(int row, const QModelIndex &parent) const;
 
     protected:
         bool m_enabled;
         bool m_showChecked;
         bool m_showUnchecked;
+        bool m_showPartiallyChecked;
 };
 
 #endif // BTSELECTEDMODULESBOOKSHELFPROXYMODEL_H

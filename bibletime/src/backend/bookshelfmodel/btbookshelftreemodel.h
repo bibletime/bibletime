@@ -44,6 +44,8 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
         virtual int columnCount(const QModelIndex &parent = QModelIndex())
                 const;
+        virtual bool hasChildren(const QModelIndex &parent = QModelIndex())
+                const;
         virtual QModelIndex index(int row, int column,
                                   const QModelIndex &parent = QModelIndex())
                 const;
@@ -62,14 +64,15 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         }*/
 
         void setSourceModel(BtBookshelfModel *sourceModel);
+        inline BtBookshelfModel *sourceModel() const { return m_sourceModel; }
         void setGroupingOrder(const Grouping &groupingOrder);
         inline Grouping groupingOrder() const { return m_groupingOrder; }
         void setCheckable(bool checkable);
         inline bool checkable() const { return m_checkable; }
         inline void setDefaultChecked(bool defaultChecked) {
-            m_defaultSelected = defaultChecked;
+            m_defaultChecked = defaultChecked;
         }
-        inline bool defaultChecked() const { return m_defaultSelected; }
+        inline bool defaultChecked() const { return m_defaultChecked; }
 
         QList<CSwordModuleInfo*> checkedModules() const;
 
@@ -99,7 +102,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         ModuleItemMap         m_modules;
         Grouping              m_groupingOrder;
         bool                  m_checkable;
-        bool                  m_defaultSelected;
+        bool                  m_defaultChecked;
 };
 
 #endif // BTBOOKSHELFTREEMODEL_H
