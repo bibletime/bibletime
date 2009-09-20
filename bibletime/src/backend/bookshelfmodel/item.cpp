@@ -46,46 +46,6 @@ int Item::indexFor(Item *newItem) {
     }
 }
 
-CategoryItem *Item::getCategoryItem(CSwordModuleInfo *module,
-                                    int *index) const
-{
-    for (int i(0); i < m_children.size(); i++) {
-        Q_ASSERT(m_children.at(i)->type() == ITEM_CATEGORY);
-        CategoryItem *item(static_cast<CategoryItem*>(m_children.at(i)));
-        if (item->category() == module->category()) {
-            if (*index != 0) *index = i;
-            return item;
-        }
-    }
-    return 0;
-}
-
-DistributionItem *Item::getDistributionItem(CSwordModuleInfo *module, int *index) const {
-    for (int i(0); i < m_children.size(); i++) {
-        Q_ASSERT(m_children.at(i)->type() == ITEM_DISTRIBUTION);
-        DistributionItem *item(static_cast<DistributionItem*>(m_children.at(i)));
-        if (item->distribution() == module->config(CSwordModuleInfo::DistributionSource)) {
-            if (*index != 0) *index = i;
-            return item;
-        }
-    }
-    return 0;
-}
-
-LanguageItem *Item::getLanguageItem(CSwordModuleInfo *module,
-                                    int *index) const
-{
-    for (int i(0); i < m_children.size(); i++) {
-        Q_ASSERT(m_children.at(i)->type() == ITEM_LANGUAGE);
-        LanguageItem *item(static_cast<LanguageItem*>(m_children.at(i)));
-        if (item->language() == module->language()) {
-            if (*index != 0) *index = i;
-            return item;
-        }
-    }
-    return 0;
-}
-
 bool Item::operator<(const Item &other) const {
     if (m_type != other.type()) {
         return m_type < other.type();

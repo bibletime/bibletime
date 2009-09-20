@@ -15,17 +15,24 @@
 
 #include "backend/bookshelfmodel/item.h"
 
-class CSwordModuleInfo;
+#include "backend/drivers/cswordmoduleinfo.h"
 
 namespace BookshelfModel {
 
 class DistributionItem: public Item {
     public:
+        static const Item::Type GROUP_TYPE = Item::ITEM_DISTRIBUTION;
+
         DistributionItem(CSwordModuleInfo *module);
 
         inline QString distribution() const { return m_distribution; }
 
         inline QString name() const { return m_distribution; }
+
+        inline bool fitFor(CSwordModuleInfo *module) {
+            return module->config(CSwordModuleInfo::DistributionSource)
+                       == m_distribution;
+        }
 
     protected:
         QString m_distribution;

@@ -23,6 +23,8 @@ namespace BookshelfModel {
 
 class LanguageItem: public Item {
     public:
+        static const Item::Type GROUP_TYPE = Item::ITEM_LANGUAGE;
+
         LanguageItem(CSwordModuleInfo *module);
 
         inline const CLanguageMgr::Language *language() const { return m_language; }
@@ -33,6 +35,10 @@ class LanguageItem: public Item {
 
         inline QIcon icon() const {
             return util::filesystem::DirectoryUtil::getIcon("flag.svg");
+        }
+
+        inline bool fitFor(CSwordModuleInfo *module) {
+            return module->language() == m_language;
         }
 
     protected:

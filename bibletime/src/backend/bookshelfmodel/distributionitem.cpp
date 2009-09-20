@@ -12,8 +12,6 @@
 
 #include "backend/bookshelfmodel/distributionitem.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-
 namespace BookshelfModel {
 
 DistributionItem::DistributionItem(CSwordModuleInfo *module)

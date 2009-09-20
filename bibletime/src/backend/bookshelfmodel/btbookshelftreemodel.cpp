@@ -270,13 +270,13 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
         QModelIndex newIndex;
         switch (intermediateGrouping.front()) {
             case GROUP_DISTRIBUTION:
-                newIndex = getDistribution(module, parentIndex);
+                newIndex = getGroup<DistributionItem>(module, parentIndex);
                 break;
             case GROUP_CATEGORY:
-                newIndex = getCategory(module, parentIndex);
+                newIndex = getGroup<CategoryItem>(module, parentIndex);
                 break;
             case GROUP_LANGUAGE:
-                newIndex = getLanguage(module, parentIndex);
+                newIndex = getGroup<LanguageItem>(module, parentIndex);
                 break;
         }
         intermediateGrouping.pop_front();
@@ -325,57 +325,6 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
     m_modules.remove(module);
     endRemoveRows();
     resetParentCheckStates(parentIndex);
-}
-
-QModelIndex BtBookshelfTreeModel::getCategory(CSwordModuleInfo *module,
-                                          QModelIndex parentIndex)
-{
-    Item *parentItem(getItem(parentIndex));
-    int categoryIndex;
-    Item *categoryItem(parentItem->getCategoryItem(module, &categoryIndex));
-
-    if (categoryItem == 0) {
-        categoryItem = new CategoryItem(module);
-        categoryIndex = parentItem->indexFor(categoryItem);
-        beginInsertRows(parentIndex, categoryIndex, categoryIndex);
-        parentItem->insertChild(categoryIndex, categoryItem);
-        endInsertRows();
-    }
-    return index(categoryIndex, 0, parentIndex);
-}
-
-QModelIndex BtBookshelfTreeModel::getDistribution(CSwordModuleInfo *module,
-                                              QModelIndex parentIndex)
-{
-    Item *parentItem(getItem(parentIndex));
-    int distIndex;
-    Item *distItem(parentItem->getDistributionItem(module, &distIndex));
-
-    if (distItem == 0) {
-        distItem = new DistributionItem(module);
-        distIndex = parentItem->indexFor(distItem);
-        beginInsertRows(parentIndex, distIndex, distIndex);
-        parentItem->insertChild(distIndex, distItem);
-        endInsertRows();
-    }
-    return index(distIndex, 0, parentIndex);
-}
-
-QModelIndex BtBookshelfTreeModel::getLanguage(CSwordModuleInfo *module,
-                                          QModelIndex parentIndex)
-{
-    Item *parentItem(getItem(parentIndex));
-    int languageIndex;
-    Item *languageItem(parentItem->getLanguageItem(module, &languageIndex));
-
-    if (languageItem == 0) {
-        languageItem = new LanguageItem(module);
-        languageIndex = parentItem->indexFor(languageItem);
-        beginInsertRows(parentIndex, languageIndex, languageIndex);
-        parentItem->insertChild(languageIndex, languageItem);
-        endInsertRows();
-    }
-    return index(languageIndex, 0, parentIndex);
 }
 
 Item *BtBookshelfTreeModel::getItem(const QModelIndex &index)

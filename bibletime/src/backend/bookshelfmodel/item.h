@@ -99,12 +99,18 @@ class Item {
             delete m_children.takeAt(index);
         }
 
-        CategoryItem *getCategoryItem(CSwordModuleInfo *module,
-                                      int *index) const;
-        DistributionItem *getDistributionItem(CSwordModuleInfo *module,
-                                              int *index) const;
-        LanguageItem *getLanguageItem(CSwordModuleInfo *module,
-                                      int *index) const;
+        template <class T>
+        T *getGroupItem(CSwordModuleInfo *module, int *index) {
+            for (int i(0); i < m_children.size(); i++) {
+                Q_ASSERT(m_children.at(i)->type() == T::GROUP_TYPE);
+                T *item(static_cast<T*>(m_children.at(i)));
+                if (item->fitFor(module)) {
+                    if (*index != 0) *index = i;
+                    return item;
+                }
+            }
+            return 0;
+        }
 
         /**
           \brief Returns the visible name of the item.
@@ -127,6 +133,17 @@ class Item {
         */
         inline void setCheckState(const Qt::CheckState state) {
             m_checkState = state;
+        }
+
+        /**
+          \brief Returns whether this item is fit to contain the given module.
+          \param[in] module The module to check with.
+          \retval true If this item is a group and can contain the given module.
+          \retval false This item is not a group or a wrong group.
+        */
+        inline virtual bool fitFor(CSwordModuleInfo *module) {
+            Q_UNUSED(module);
+            return false;
         }
 
         /**

@@ -17,9 +17,9 @@
 
 #include <QMap>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
+#include "backend/bookshelfmodel/item.h"
 
 namespace BookshelfModel {
-    class Item;
     class ModuleItem;
 }
 class CSwordModuleInfo;
@@ -57,12 +57,6 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         virtual bool setData(const QModelIndex &index, const QVariant &value,
                              int role);
 
-        /*inline CSwordModuleInfo *module(const QModelIndex &index) const {
-            return (CSwordModuleInfo *)
-                data(index, BtBookshelfModel::ModulePointerRole)
-                    .value<void *>();
-        }*/
-
         void setSourceModel(BtBookshelfModel *sourceModel);
         inline BtBookshelfModel *sourceModel() const { return m_sourceModel; }
         void setGroupingOrder(const Grouping &groupingOrder);
@@ -81,14 +75,27 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void addModule(CSwordModuleInfo *module, QModelIndex parentIndex,
                        Grouping &intermediateGrouping, bool checked);
         void removeModule(CSwordModuleInfo *module);
-        QModelIndex getCategory(CSwordModuleInfo *module,
-                                QModelIndex parentIndex);
-        QModelIndex getDistribution(CSwordModuleInfo *module,
-                                    QModelIndex parentIndex);
-        QModelIndex getLanguage(CSwordModuleInfo *module,
-                                QModelIndex parentIndex);
+
         BookshelfModel::Item *getItem(const QModelIndex &index) const;
         void resetParentCheckStates(QModelIndex parentIndex);
+
+        template <class T>
+        QModelIndex getGroup(CSwordModuleInfo *module,
+                             QModelIndex parentIndex)
+        {
+            BookshelfModel::Item *parentItem(getItem(parentIndex));
+            int groupIndex;
+            T *groupItem(parentItem->getGroupItem<T>(module, &groupIndex));
+
+            if (groupItem == 0) {
+                groupItem = new T(module);
+                groupIndex = parentItem->indexFor(groupItem);
+                beginInsertRows(parentIndex, groupIndex, groupIndex);
+                parentItem->insertChild(groupIndex, groupItem);
+                endInsertRows();
+            }
+            return index(groupIndex, 0, parentIndex);
+        }
 
     protected slots:
         void moduleDataChanged(const QModelIndex &topLeft,

@@ -25,6 +25,8 @@ class CategoryItem: public Item {
     Q_DECLARE_TR_FUNCTIONS(CategoryItem);
 
     public:
+        static const Item::Type GROUP_TYPE = Item::ITEM_CATEGORY;
+
         CategoryItem(CSwordModuleInfo *module);
 
         inline const CSwordModuleInfo::Category &category() const {
@@ -37,6 +39,10 @@ class CategoryItem: public Item {
 
         inline QIcon icon() const {
             return BtBookshelfModel::categoryIcon(m_category);
+        }
+
+        inline bool fitFor(CSwordModuleInfo *module) {
+            return module->category() == m_category;
         }
 
     protected:
