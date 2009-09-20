@@ -128,23 +128,29 @@ void BtBookshelfModel::clear() {
 void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     Q_ASSERT(module != 0);
 
-    const int index(m_data.size());
+    if (m_data.contains(module)) return;
 
+    const int index(m_data.size());
     beginInsertRows(QModelIndex(), index, index);
     m_data.append(module);
     endInsertRows();
 }
 
 void BtBookshelfModel::addModules(const QList<CSwordModuleInfo *> &modules) {
-    Q_FOREACH(CSwordModuleInfo *module, modules) {
-        addModule(module);
-    }
+    addModules(modules.toSet());
 }
 
 void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
+    QList<CSwordModuleInfo *> newModules;
     Q_FOREACH(CSwordModuleInfo *module, modules) {
-        addModule(module);
+        if (!m_data.contains(module)) {
+            newModules.append(module);
+        }
     }
+    beginInsertRows(QModelIndex(), m_data.size(),
+                    m_data.size() + newModules.size() - 1);
+    m_data.append(newModules);
+    endInsertRows();
 }
 
 void BtBookshelfModel::removeModule(CSwordModuleInfo * const module) {
@@ -157,12 +163,11 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module) {
 }
 
 void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> &modules) {
-    Q_FOREACH(CSwordModuleInfo *module, modules) {
-        removeModule(module);
-    }
+    removeModules(modules.toSet());
 }
 
 void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> &modules) {
+    // This is inefficient, since signals are emitted for each removed module:
     Q_FOREACH(CSwordModuleInfo *module, modules) {
         removeModule(module);
     }

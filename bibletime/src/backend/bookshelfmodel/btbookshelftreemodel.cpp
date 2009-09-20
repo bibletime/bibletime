@@ -222,11 +222,6 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
         Q_FOREACH(CSwordModuleInfo *module, modules) {
             addModule(module, checked.contains(module));
         }
-        /**
-          \bug Calling reset() shouldn't be necessary here, but omitting it will
-               will break switching to a grouped layout.
-        */
-        reset();
     }
 }
 
@@ -255,6 +250,14 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
     if (m_modules.contains(module)) return;
     Grouping g(m_groupingOrder);
     addModule(module, QModelIndex(), g, checked);
+
+    /**
+      \bug Calling reset() shouldn't be necessary here, but omitting it will
+           will break things like switching to a grouped layout or installing
+           new modules. As a side effect, all attached views will also reset
+           themselves.
+    */
+    reset();
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
