@@ -153,6 +153,7 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex &index) const {
         Item *i(static_cast<Item*>(index.internalPointer()));
         Q_ASSERT(i != 0);
         switch (i->type()) {
+            case Item::ITEM_DISTRIBUTION:
             case Item::ITEM_CATEGORY:
             case Item::ITEM_LANGUAGE:
                 return f | Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
