@@ -195,10 +195,6 @@
         <translation>Initialisieren der SWORD-Engine...</translation>
     </message>
     <message>
-        <source>Bookshelf</source>
-        <translation>Bücherregal</translation>
-    </message>
-    <message>
         <source>Bookmarks</source>
         <translation>Lesezeichen</translation>
     </message>
@@ -245,6 +241,14 @@
     <message>
         <source>Information about the BibleTime program</source>
         <translation>Informationen über das BibleTime-Programm</translation>
+    </message>
+    <message>
+        <source>Unlock Work</source>
+        <translation type="unfinished">Werk lösen</translation>
+    </message>
+    <message>
+        <source>Enter the unlock key for this work.</source>
+        <translation type="unfinished">Geben Sie den Schlüssel für dieses Werke ein</translation>
     </message>
 </context>
 <context>
@@ -387,6 +391,123 @@
     <message>
         <source>Select book</source>
         <translation>Buch auswählen</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfDockWidget</name>
+    <message>
+        <source>Bookshelf</source>
+        <translation type="unfinished">Bücherregal</translation>
+    </message>
+    <message>
+        <source>Grouping</source>
+        <translation type="unfinished">Gruppierung</translation>
+    </message>
+    <message>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Sprache</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Sprache/Kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Sprache</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Plain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unlock...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Search in %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfModel</name>
+    <message>
+        <source>Module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bibles</source>
+        <translation type="unfinished">Bibeln</translation>
+    </message>
+    <message>
+        <source>Commentaries</source>
+        <translation type="unfinished">Kommentare</translation>
+    </message>
+    <message>
+        <source>Books</source>
+        <translation type="unfinished">Bücher</translation>
+    </message>
+    <message>
+        <source>Cults/Unorthodox</source>
+        <translation type="unfinished">Sekten/Unorthodox</translation>
+    </message>
+    <message>
+        <source>Maps and Images</source>
+        <translation type="unfinished">Karten und Bilder</translation>
+    </message>
+    <message>
+        <source>Daily Devotionals</source>
+        <translation type="unfinished">Andachtsbücher</translation>
+    </message>
+    <message>
+        <source>Lexicons and Dictionaries</source>
+        <translation type="unfinished">Lexika und Wörterbücher</translation>
+    </message>
+    <message>
+        <source>Glossaries</source>
+        <translation type="unfinished">Wörterbücher</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfTreeModel</name>
+    <message>
+        <source>Module</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

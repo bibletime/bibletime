@@ -227,10 +227,6 @@
         <translation>O &amp;aplikaci BibleTime</translation>
     </message>
     <message>
-        <source>Bookshelf</source>
-        <translation>Knihovna</translation>
-    </message>
-    <message>
         <source>Bookmarks</source>
         <translation>Záložky</translation>
     </message>
@@ -245,6 +241,14 @@
     <message>
         <source>Information about the BibleTime program</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock Work</source>
+        <translation type="unfinished">Odemknout dílo</translation>
+    </message>
+    <message>
+        <source>Enter the unlock key for this work.</source>
+        <translation type="unfinished">Vložte klíč k odemknutí modulu.</translation>
     </message>
 </context>
 <context>
@@ -387,6 +391,123 @@
     <message>
         <source>Select book</source>
         <translation>Vyberte knihu</translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfDockWidget</name>
+    <message>
+        <source>Bookshelf</source>
+        <translation type="unfinished">Knihovna</translation>
+    </message>
+    <message>
+        <source>Grouping</source>
+        <translation type="unfinished">Seskupování</translation>
+    </message>
+    <message>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Category/Language</source>
+        <translation type="unfinished">Kategorie/Jazyk</translation>
+    </message>
+    <message>
+        <source>Category</source>
+        <translation type="unfinished">Kategorie</translation>
+    </message>
+    <message>
+        <source>Language/Category</source>
+        <translation type="unfinished">Jazyk/kategorie</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>No grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/hide works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Plain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Unlock...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;About...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Search in %1...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfModel</name>
+    <message>
+        <source>Module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bibles</source>
+        <translation type="unfinished">Bible</translation>
+    </message>
+    <message>
+        <source>Commentaries</source>
+        <translation type="unfinished">Komentáře</translation>
+    </message>
+    <message>
+        <source>Books</source>
+        <translation type="unfinished">Knihy</translation>
+    </message>
+    <message>
+        <source>Cults/Unorthodox</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maps and Images</source>
+        <translation type="unfinished">Mapy a obrázky</translation>
+    </message>
+    <message>
+        <source>Daily Devotionals</source>
+        <translation type="unfinished">Ranní zamyšlení</translation>
+    </message>
+    <message>
+        <source>Lexicons and Dictionaries</source>
+        <translation type="unfinished">Lexikony a slovníky</translation>
+    </message>
+    <message>
+        <source>Glossaries</source>
+        <translation type="unfinished">Glosáře</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BtBookshelfTreeModel</name>
+    <message>
+        <source>Module</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
