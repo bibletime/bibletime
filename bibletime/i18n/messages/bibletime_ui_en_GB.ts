@@ -289,12 +289,12 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="225"/>
         <source>Unlock Work</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="226"/>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="217"/>
@@ -507,83 +507,83 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
         <source>Bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
         <source>Grouping</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
         <source>Category/Language</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
         <source>Language/Category</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
         <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
         <source>&amp;Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
         <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -591,52 +591,52 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="58"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="96"/>
         <source>Bibles</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="98"/>
         <source>Commentaries</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="100"/>
         <source>Books</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="102"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="104"/>
         <source>Maps and Images</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="106"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="108"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="110"/>
         <source>Glossaries</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="112"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -644,7 +644,7 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="131"/>
@@ -1764,12 +1764,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="132"/>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <source>Search with works of this window</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
