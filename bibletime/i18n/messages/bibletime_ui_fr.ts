@@ -6,7 +6,7 @@
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations sur %1</translation>
     </message>
 </context>
 <context>
@@ -54,32 +54,32 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="238"/>
         <source>Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Barre e&apos;outils principale</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="94"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Quitter</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>Information about the BibleTime program</source>
-        <translation type="unfinished"></translation>
+        <translation>Informations sur le programme BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="263"/>
         <source>Show Bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir la Bibliothèque</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="267"/>
         <source>Show Bookmarks</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficer les signets</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="271"/>
         <source>Show Mag</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficer Zoom</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="286"/>
@@ -139,12 +139,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="183"/>
         <source>Cl&amp;ose all windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermez toutes les fenêtres</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="186"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermez toutes les fenêtres ouvertes à l&apos;intérieur BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="203"/>
@@ -159,7 +159,7 @@
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="550"/>
         <source>Please enter a name for the new session.</source>
-        <translation>Veuillez entrer le nom du nouveau profil</translation>
+        <translation>Entrez un nom pour la nouvelle session.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="97"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>Manually arrange the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Manuellement arranger les fenêtres ouvertes</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="144"/>
@@ -274,42 +274,42 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="64"/>
         <source>Initializing the SWORD engine...</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;initialisation du moyen SWORD...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="66"/>
         <source>Creating BibleTime&apos;s user interface...</source>
-        <translation type="unfinished"></translation>
+        <translation>Création d&apos;interface utilisateur BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="68"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisation des menus et barres d&apos;outils...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="225"/>
         <source>Unlock Work</source>
-        <translation type="unfinished">Déverrouiller le module</translation>
+        <translation>Déverrouiller le module</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="226"/>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Entrez la clef pour déverrouiller ce module.</translation>
+        <translation>Entrez la clef pour déverrouiller ce module.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="217"/>
         <source>&amp;About BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;A propos de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="57"/>
         <source>Bookmarks</source>
-        <translation type="unfinished">Signets</translation>
+        <translation>Signets</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="64"/>
         <source>Mag</source>
-        <translation type="unfinished">Zoom</translation>
+        <translation>Zoom</translation>
     </message>
 </context>
 <context>
@@ -317,82 +317,82 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="54"/>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime est un outil facile à utiliser mais puissant outil d&apos;étude biblique.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="56"/>
         <source>We are looking for developers and translators.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nous recherchons des développeurs et des traducteurs.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="58"/>
         <source>If you would like to join our team, please send an email to info@bibletime.info.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si vous désirez vous joindre à notre équipe, s&apos;il vous plaît envoyez un courriel à info@bibletime.info.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="60"/>
         <source>(c)1999-2009, The BibleTime Team</source>
-        <translation type="unfinished">(c)1999-2005, L&apos;équipe de BibleTime {1999-2009,?}</translation>
+        <translation>(c)1999-2009, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="161"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt Open Source Edition est destiné au développement d&apos;applications Open Source.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="163"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt est une bibliothèque C++ boîte à outils pour le développement multi-plate-formes.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="165"/>
         <source>Please see </source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;il vous plaît voir</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="167"/>
         <source> for an overview of Qt licensing.</source>
-        <translation type="unfinished"></translation>
+        <translation> pour un aperçu de la licence Qt.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous pouvez télécharger et utiliser (mais ne pas distribuer) le programme des fins personnelles, privées, publiques ou commerciales sans restrictions.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="182"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous pouvez donner ou distribuer le programme si vous distribuez aussi le code source correspondant.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="186"/>
         <source>The complete legally binding license is below.</source>
-        <translation type="unfinished"></translation>
+        <translation>La licence complète juridiquement contraignant est ci-dessous.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="70"/>
         <source>Contributors</source>
-        <translation type="unfinished"></translation>
+        <translation>Contributeurs</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="31"/>
         <source>About BibleTime</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos de BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="72"/>
         <source>The following people contributed to BibleTime:</source>
-        <translation type="unfinished"></translation>
+        <translation>Les personnes suivantes ont contribué à BibleTime:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="75"/>
         <source>documentation and translation manager</source>
-        <translation type="unfinished"></translation>
+        <translation>documentation et gestionnaire de traduction</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="76"/>
         <source>project founder, developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Fondateur du projet, développeur</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="77"/>
@@ -416,7 +416,7 @@
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="98"/>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="99"/>
         <source>developer</source>
-        <translation type="unfinished"></translation>
+        <translation>développeur</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="82"/>
@@ -426,17 +426,17 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="83"/>
         <source>creator of The Sword Project</source>
-        <translation type="unfinished"></translation>
+        <translation>créateur du projet Sword</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="84"/>
         <source>project manager, developer</source>
-        <translation type="unfinished"></translation>
+        <translation>Gestionnaire de projet, développeur</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="85"/>
         <source>domain sponsor</source>
-        <translation type="unfinished"></translation>
+        <translation>Commanditaire de domaine</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="86"/>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="94"/>
         <source>documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>documentation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="96"/>
@@ -456,42 +456,42 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="102"/>
         <source>The following people translated BibleTime into their language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Les personnes suivantes bibletime traduit dans leur langue:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="124"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Certains noms de mai à manquer, s&apos;il vous plaît bibletime-translations@lists.sourceforge.net e-mail si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="138"/>
         <source>SWORD library version %1</source>
-        <translation type="unfinished"></translation>
+        <translation>SWORD version de la bibliothèque %1</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bibletime fait usage du projet SWORD. Le projet SWORD est le CrossWire Bible Society&apos;s Bible projet de logiciel libre. Son but est de créer des contre-outils à code source ouvert la plate-forme - couvert par la licence GNU General Public - qui permettent aux programmeurs et les sociétés bibliques pour écrire un nouveau logiciel Bible plus rapidement et facilement.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
         <source>The SWORD Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Le projet SWORD</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce programme utilise Qt Open Source Edition version %1.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="175"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>License</translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>BibleTime is released under the GPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime est distribué sous la licence GPL.</translation>
     </message>
 </context>
 <context>
@@ -499,7 +499,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="69"/>
         <source>Select book</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez livre</translation>
     </message>
 </context>
 <context>
@@ -507,58 +507,58 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
         <source>Bookshelf</source>
-        <translation type="unfinished">Bibliothèque</translation>
+        <translation>Bibliothèque</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
         <source>Grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Groupement</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Changer le groupement d&apos;éléments dans la bibliothèque.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
         <source>Category/Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Catégorie/Langue</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
         <source>Category</source>
-        <translation type="unfinished">Catégorie</translation>
+        <translation>Catégorie</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
         <source>Language/Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Catégorie/Langue</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
         <source>Language</source>
-        <translation type="unfinished">Langue</translation>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Le groupement ne</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
         <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher/Masquer les œuvres</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ouvert</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Modifi&amp;er</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
@@ -573,12 +573,12 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>déverro&amp;uiller...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;A propos de...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
@@ -591,52 +591,52 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="58"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Module</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="96"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibles</translation>
+        <translation>Bibles</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="98"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Commentaires</translation>
+        <translation>Commentaires</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="100"/>
         <source>Books</source>
-        <translation type="unfinished">Livres</translation>
+        <translation>Livres</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="102"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Sectes/Non-orthodoxes</translation>
+        <translation>Sectes/Non-orthodoxes</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="104"/>
         <source>Maps and Images</source>
-        <translation type="unfinished">Cartes et images</translation>
+        <translation>Cartes et images</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="106"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Lectures quotidiennes</translation>
+        <translation>Lectures quotidiennes</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="108"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Léxiques et dictionnaires</translation>
+        <translation>Léxiques et dictionnaires</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="110"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Glossaires</translation>
+        <translation>Glossaires</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="112"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Inconnu</translation>
     </message>
 </context>
 <context>
@@ -644,7 +644,7 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Module</translation>
     </message>
 </context>
 <context>
@@ -652,7 +652,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="94"/>
         <source>Select chapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le chapitre</translation>
     </message>
 </context>
 <context>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Répertorié œuvres</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Œuvres non indexées</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="131"/>
@@ -889,7 +889,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="66"/>
         <source>Waiting for turn...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Attendre son tour...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="225"/>
@@ -968,17 +968,17 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
         <source>Configure shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Configurer les raccourcis clavier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
         <source>First shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Premier raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Second shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deuxième raccourci</translation>
     </message>
 </context>
 <context>
@@ -987,50 +987,53 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sélectionnez de changer de clé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Action
+nom</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Premier
+raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Deuxième
+raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Raccourci pour nom de l&apos;action sélectionnée</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Rien</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="281"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Défaut</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="286"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
         <source>Default key:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Touche par défaut:</translation>
     </message>
 </context>
 <context>
@@ -1112,7 +1115,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aucune source ont été trouvés dans la configuration de SWORD et bibletime n&apos;a pas pu créer une source par défaut. Vérifiez la configuration de votre épée et que le chemin de configuration est accessible en écriture. Puis redémarrez le Gestionnaire de Bookshelf.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
@@ -1165,7 +1168,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="118"/>
         <source>Select verse</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez le verset</translation>
     </message>
 </context>
 <context>
