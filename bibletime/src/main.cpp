@@ -178,7 +178,7 @@ int main(int argc, char* argv[]) {
     BibleTime bibleTime;
 
 	// a new BibleTime version was installed (maybe a completely new installation)
-	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) 
+	if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION)
 	{
 		CBTConfig::set(CBTConfig::bibletimeVersion, BT_VERSION);
         bibleTime.saveConfigSettings();
@@ -192,6 +192,7 @@ int main(int argc, char* argv[]) {
 #ifndef NO_DBUS
     new BibleTimeDBusAdaptor(&bibleTime);
     // connect to D-Bus and register as an object:
+    QDBusConnection::sessionBus().registerService("info.bibletime.BibleTime");
     QDBusConnection::sessionBus().registerObject("/BibleTime", &bibleTime);
 #endif
 

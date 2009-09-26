@@ -1,3 +1,7 @@
+2009-09-26 Martin Gruner <mgruner@crosswire.org>
+	* Improved DBus interface for easier detection of BibleTime service
+		as requested by Teus Benshop.
+
 2009-09-25 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.3.beta1
 
