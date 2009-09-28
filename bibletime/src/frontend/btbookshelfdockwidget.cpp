@@ -15,6 +15,8 @@
 #include <QAction>
 #include <QActionGroup>
 #include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
 #include <QMenu>
 #include <QToolBar>
 #include <QToolButton>
@@ -22,6 +24,7 @@
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/bookshelfmodel/btcheckstatefilterproxymodel.h"
+#include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -44,6 +47,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_filterProxyModel = new BtCheckStateFilterProxyModel(this);
     m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
+    m_nameFilterProxyModel = new BtModuleNameFilterProxyModel(this);
+    m_nameFilterProxyModel->setSourceModel(m_filterProxyModel);
 
     // Setup actions and menus:
     initMenus();
@@ -53,6 +58,15 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     QVBoxLayout *layout(new QVBoxLayout);
     layout->setContentsMargins(0, 0, 0, 0);
         QHBoxLayout *toolBar(new QHBoxLayout);
+            m_nameFilterLabel = new QLabel(this);
+            toolBar->addWidget(m_nameFilterLabel);
+
+            m_nameFilterEdit = new QLineEdit(this);
+            m_nameFilterLabel->setBuddy(m_nameFilterEdit);
+            toolBar->addWidget(m_nameFilterEdit);
+            connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
+                    m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
+
             m_groupingButton = new QToolButton(this);
             m_groupingButton->setPopupMode(QToolButton::InstantPopup);
             m_groupingButton->setMenu(m_groupingMenu);
@@ -64,11 +78,10 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             m_showHideButton->setDefaultAction(m_showHideAction);
             m_showHideButton->setAutoRaise(true);
             toolBar->addWidget(m_showHideButton);
-            toolBar->addStretch(1);
         layout->addLayout(toolBar);
 
         m_view = new BtBookshelfView(this);
-        m_view->setModel(m_filterProxyModel);
+        m_view->setModel(m_nameFilterProxyModel);
         layout->addWidget(m_view);
     m_widget->setLayout(layout);
     setWidget(m_widget);
@@ -178,6 +191,7 @@ void BtBookshelfDockWidget::initMenus() {
 void BtBookshelfDockWidget::retranslateInterface() {
     setWindowTitle(tr("Bookshelf"));
 
+    m_nameFilterLabel->setText(tr("Fi&lter:"));
     m_groupingButton->setText(tr("Grouping"));
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
 

@@ -20,8 +20,11 @@ class BtBookshelfView;
 class BtBookshelfModel;
 class BtBookshelfTreeModel;
 class BtCheckStateFilterProxyModel;
+class BtModuleNameFilterProxyModel;
 class QAction;
 class QActionGroup;
+class QLabel;
+class QLineEdit;
 class QMenu;
 class QToolBar;
 class QToolButton;
@@ -58,10 +61,13 @@ class BtBookshelfDockWidget: public QDockWidget {
         BtBookshelfModel             *m_bookshelfModel;
         BtBookshelfTreeModel         *m_bookshelfTreeModel;
         BtCheckStateFilterProxyModel *m_filterProxyModel;
+        BtModuleNameFilterProxyModel *m_nameFilterProxyModel;
 
         // Widgets:
         QWidget *m_widget;
         BtBookshelfView *m_view;
+        QLabel          *m_nameFilterLabel;
+        QLineEdit       *m_nameFilterEdit;
         QToolButton     *m_groupingButton;
         QToolButton     *m_showHideButton;
 
