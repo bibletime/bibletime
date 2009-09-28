@@ -36,6 +36,7 @@ int Item::indexFor(Item *newItem) {
     int i(0);
     for (;;) {
         Item *nextItem(m_children.at(i));
+        Q_ASSERT(nextItem->type() == newItem->type());
         if (*newItem < *nextItem) {
             return i;
         }
