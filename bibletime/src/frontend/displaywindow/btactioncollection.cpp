@@ -15,6 +15,7 @@
 #include <QSettings>
 #include <QString>
 #include <QStringList>
+#include <QDebug>
 
 class BtActionItem : public QObject
 {
@@ -52,10 +53,10 @@ QList<QAction*> BtActionCollection::actions()
 
 QAction* BtActionCollection::action(const QString& name)
 {
-	Q_ASSERT(m_actions[name] != 0);
-	QAction* action = m_actions[name]->action;
-	Q_ASSERT(action != 0);
-	return action;
+	if (m_actions.contains(name))
+		return m_actions[name]->action;
+	qWarning() << "A QAction for a shortcut named" << name << "was requested but it is not defined.";
+	return (new QAction(this)); // dummy QAction*
 }
 
 QAction* BtActionCollection::addAction(const QString& name, QAction* action)
