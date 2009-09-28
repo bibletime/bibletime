@@ -105,7 +105,7 @@ class Item {
                 Q_ASSERT(m_children.at(i)->type() == T::GROUP_TYPE);
                 T *item(static_cast<T*>(m_children.at(i)));
                 if (item->fitFor(module)) {
-                    if (*index != 0) *index = i;
+                    if (index != 0) *index = i;
                     return item;
                 }
             }
