@@ -39,19 +39,43 @@ BtBookshelfView::~BtBookshelfView() {
     // Intentionally empty
 }
 
+CSwordModuleInfo *BtBookshelfView::getModule(const QModelIndex &index) const {
+    return (CSwordModuleInfo *) model()
+            ->data(index, BtBookshelfModel::ModulePointerRole).value<void*>();
+}
+
 void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
-    if (event->key() == Qt::Key_Menu) {
-        scrollTo(currentIndex());
-        CSwordModuleInfo *i(getModule(currentIndex()));
-        QRect itemRect(visualRect(currentIndex()));
-        QPoint p(viewport()->mapToGlobal(itemRect.bottomLeft()));
-        if (i == 0) {
-            emit contextMenuActivated(p);
-        } else {
-            emit moduleContextMenuActivated(i, p);
-        }
-    } else {
-        QTreeView::keyPressEvent(event);
+    switch (event->key()) {
+        case Qt::Key_Menu:
+            scrollTo(currentIndex());
+            {
+                CSwordModuleInfo *i(getModule(currentIndex()));
+                QRect itemRect(visualRect(currentIndex()));
+                QPoint p(viewport()->mapToGlobal(itemRect.bottomLeft()));
+                if (i == 0) {
+                    emit contextMenuActivated(p);
+                } else {
+                    emit moduleContextMenuActivated(i, p);
+                }
+            }
+            event->accept();
+            break;
+        case Qt::Key_Return:
+        case Qt::Key_Enter:
+            {
+                QModelIndex i(currentIndex());
+                CSwordModuleInfo *m(getModule(i));
+                if (m != 0) {
+                    emit moduleActivated(m);
+                } else {
+                    setExpanded(i, !isExpanded(i));
+                }
+            }
+            event->accept();
+            break;
+        default:
+            QTreeView::keyPressEvent(event);
+            break;
     }
 }
 
@@ -67,14 +91,10 @@ void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
         } else {
             emit moduleContextMenuActivated(i, mapToGlobal(event->pos()));
         }
+        event->accept();
     } else {
         QTreeView::mousePressEvent(event);
     }
-}
-
-CSwordModuleInfo *BtBookshelfView::getModule(const QModelIndex &index) const {
-    return (CSwordModuleInfo *) model()
-            ->data(index, BtBookshelfModel::ModulePointerRole).value<void*>();
 }
 
 void BtBookshelfView::slotItemActivated(const QModelIndex &index) {

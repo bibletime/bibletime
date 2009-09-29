@@ -14,7 +14,9 @@
 
 #include <QAction>
 #include <QActionGroup>
+#include <QApplication>
 #include <QHBoxLayout>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
@@ -62,6 +64,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             toolBar->addWidget(m_nameFilterLabel);
 
             m_nameFilterEdit = new QLineEdit(this);
+            m_nameFilterEdit->installEventFilter(this);
             m_nameFilterLabel->setBuddy(m_nameFilterEdit);
             toolBar->addWidget(m_nameFilterEdit);
 
@@ -89,8 +92,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             this, SLOT(swordSetupChanged()));
     connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
             m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
-    connect(m_nameFilterEdit, SIGNAL(returnPressed()),
-            m_view, SLOT(setFocus()));
     connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
             this, SLOT(showContextMenu(QPoint)));
     connect(m_view,
@@ -102,10 +103,23 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     retranslateInterface();
 }
 
-/*
-CSwordModuleInfo *BtBookshelfDockWidget::selectedModule() const {
-    return m_bookshelfTreeModel->module(m_view->currentIndex());
-} */
+bool BtBookshelfDockWidget::eventFilter(QObject *object, QEvent *event) {
+    Q_ASSERT(object == m_nameFilterEdit);
+    if (event->type() == QEvent::KeyPress) {
+        QKeyEvent *e = static_cast<QKeyEvent*>(event);
+        switch (e->key()) {
+            case Qt::Key_Up:
+            case Qt::Key_Down:
+            case Qt::Key_Enter:
+            case Qt::Key_Return:
+                QApplication::sendEvent(m_view, event);
+                return true;
+            default:
+                break;
+        }
+    }
+    return false;
+}
 
 void BtBookshelfDockWidget::initMenus() {
     typedef util::filesystem::DirectoryUtil DU;

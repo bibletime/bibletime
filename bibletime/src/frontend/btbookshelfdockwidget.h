@@ -34,8 +34,6 @@ class BtBookshelfDockWidget: public QDockWidget {
     public:
         BtBookshelfDockWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
 
-        // CSwordModuleInfo *selectedModule() const;
-
     signals:
         void moduleOpenTriggered(CSwordModuleInfo *module);
         void moduleSearchTriggered(CSwordModuleInfo *module);
@@ -45,6 +43,7 @@ class BtBookshelfDockWidget: public QDockWidget {
         void moduleAboutTriggered(CSwordModuleInfo *module);
 
     protected:
+        bool eventFilter(QObject *object, QEvent *event);
         void initMenus();
         void retranslateInterface();
 
