@@ -1,3 +1,6 @@
+2009-09-29 Jaak Ristioja <ristioja@gmail.com>
+	* Added a case-insensitive module filter to the bookshelf dock widget.
+
 2009-09-26 Martin Gruner <mgruner@crosswire.org>
 	* Improved DBus interface for easier detection of BibleTime service
 		as requested by Teus Benshop.
@@ -7,6 +10,12 @@
 
 2009-09-20 Thomas Abthorpe <tabthorpe@FreeBSD.org>
 	* Link Spanish Howto to the build
+
+2009-09-19 Jaak Ristioja <ristioja@gmail.com>
+	* Added a new bookshelf models implemented on top of the Qt Model/View
+		framework.
+	* Rewrote the bookshelf dock widget in the main window.
+
 
 2009-09-18 Gary Holmlund
 	* Fix bug id 2807600 - Limit movability of toolbar components
