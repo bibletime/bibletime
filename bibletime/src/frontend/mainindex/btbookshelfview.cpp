@@ -22,7 +22,14 @@ BtBookshelfView::BtBookshelfView(QWidget *parent)
     : QTreeView(parent)
 {
     header()->hide();
-    setRootIsDecorated(false);
+
+    /*
+      Uncommenting the following statement will hide the [+]expand/[-]collapse
+      controls in front of first-level items, which might not be desirable since
+      hiding them also means that one has to do a total of 2 clicks (double-
+      click)to expand or collapse top-level items:
+    */
+    // setRootIsDecorated(false);
 
     connect(this, SIGNAL(activated(QModelIndex)),
             this, SLOT(slotItemActivated(QModelIndex)));
