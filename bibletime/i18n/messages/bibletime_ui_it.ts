@@ -508,83 +508,88 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
         <source>Bookshelf</source>
         <translation type="unfinished">Libri</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
-        <source>Grouping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
-        <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
-        <source>Category/Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
-        <source>Category</source>
-        <translation type="unfinished">Capitolo</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
-        <source>Language/Category</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
-        <source>Language</source>
-        <translation type="unfinished">Lista delle lingue </translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
-        <source>No grouping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
-        <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
-        <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
-        <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
-        <source>&amp;Plain text</source>
+        <source>Fi&amp;lter:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
-        <source>&amp;HTML</source>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="198"/>
+        <source>Grouping</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="199"/>
+        <source>Category/Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="200"/>
+        <source>Category</source>
+        <translation type="unfinished">Capitolo</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="201"/>
+        <source>Language/Category</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
+        <source>Language</source>
+        <translation type="unfinished">Lista delle lingue </translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="203"/>
+        <source>No grouping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="204"/>
+        <source>Show/hide works</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="206"/>
+        <source>&amp;Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="208"/>
+        <source>&amp;Plain text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
+        <source>&amp;HTML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="210"/>
         <source>&amp;Unlock...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="211"/>
         <source>&amp;About...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="258"/>
         <source>&amp;Search in %1...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -645,7 +650,7 @@
 <context>
     <name>BtBookshelfTreeModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="174"/>
         <source>Module</source>
         <translation type="unfinished"></translation>
     </message>

@@ -459,6 +459,10 @@
         <source>&amp;Search in %1...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtBookshelfModel</name>

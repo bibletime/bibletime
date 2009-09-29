@@ -505,83 +505,88 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
         <source>Bookshelf</source>
         <translation>Könyvespolc</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
+        <source>Fi&amp;lter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="198"/>
         <source>Grouping</source>
         <translation>Csoportosítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>A könyvespolc eleminek újracsoportosítása.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="199"/>
         <source>Category/Language</source>
         <translation>Kategória/Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="200"/>
         <source>Category</source>
         <translation>Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="201"/>
         <source>Language/Category</source>
         <translation>Nyelv/Kategória</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
         <source>Language</source>
         <translation>Nyelv</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="203"/>
         <source>No grouping</source>
         <translation>Nincs csoportosítás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="204"/>
         <source>Show/hide works</source>
         <translation>Munkák megjelenítése/elrejtése</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="206"/>
         <source>&amp;Open</source>
         <translation>&amp;Megnyitás</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
         <source>&amp;Edit</source>
         <translation>Sz&amp;erkesztés</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="208"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Egyszerű szöveg</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="210"/>
         <source>&amp;Unlock...</source>
         <translation>&amp;Feloldás...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="211"/>
         <source>&amp;About...</source>
         <translation>&amp;Névlegy...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="258"/>
         <source>&amp;Search in %1...</source>
         <translation>%1 -ben &amp;keresés...</translation>
     </message>
@@ -642,7 +647,7 @@
 <context>
     <name>BtBookshelfTreeModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="174"/>
         <source>Module</source>
         <translation>Modul</translation>
     </message>
