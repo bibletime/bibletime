@@ -77,7 +77,6 @@ SET(bibletime_SOURCES
 
 	# Bookshelf/Bookmarks widget in main window
 	src/frontend/mainindex/btbookshelfview.cpp
-	src/frontend/mainindex/cmainindex.cpp
 	
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
@@ -225,7 +224,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.h
 	src/frontend/mainindex/bookshelf/cbookshelfindex.h
 	src/frontend/mainindex/btbookshelfview.h
-	src/frontend/mainindex/cmainindex.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/cmdiarea.h
 	src/frontend/cinfodisplay.h

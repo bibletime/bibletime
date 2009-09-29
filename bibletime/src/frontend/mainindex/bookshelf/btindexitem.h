@@ -15,7 +15,6 @@
 #include <QTreeWidgetItem>
 #include <QString>
 
-class CMainIndex;
 class QMimeData;
 class QAction;
 

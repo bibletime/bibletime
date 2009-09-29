@@ -10,7 +10,6 @@
 
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/mainindex/cmainindex.h"
 #include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"

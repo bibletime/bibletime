@@ -27,7 +27,6 @@ class CSwordModuleInfo;
 
 
 class CSearchDialog;
-class CMainIndex;
 class QWidget;
 class QDropEvent;
 class QDragMoveEvent;

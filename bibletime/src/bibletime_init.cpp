@@ -16,7 +16,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/managers/clanguagemgr.h"
 #include "frontend/btbookshelfdockwidget.h"
-#include "frontend/mainindex/cmainindex.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"

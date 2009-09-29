@@ -23,7 +23,6 @@
 #include "backend/config/cbtconfig.h"
 #include "frontend/cinputdialog.h"
 #include "frontend/cinfodisplay.h"
-#include "frontend/mainindex/cmainindex.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
