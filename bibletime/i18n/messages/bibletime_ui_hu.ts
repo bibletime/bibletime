@@ -64,7 +64,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="218"/>
         <source>Information about the BibleTime program</source>
-        <translation type="unfinished"></translation>
+        <translation>A BibleTime program</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="263"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="137"/>
         <source>Manually arrange the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Megnyitott ablakok kézi igazítása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="144"/>
@@ -289,12 +289,12 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="225"/>
         <source>Unlock Work</source>
-        <translation type="unfinished">Dokumentum feloldása</translation>
+        <translation>Dokumentum feloldása</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="226"/>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Gépelje be a dokumentum feloldó kódját.</translation>
+        <translation>Gépelje be a dokumentum feloldó kódját.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="217"/>
@@ -507,83 +507,83 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
         <source>Bookshelf</source>
-        <translation type="unfinished">Könyvespolc</translation>
+        <translation>Könyvespolc</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
         <source>Grouping</source>
-        <translation type="unfinished">Csoportosítás</translation>
+        <translation>Csoportosítás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>A könyvespolc eleminek újracsoportosítása.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategória/Nyelv</translation>
+        <translation>Kategória/Nyelv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
         <source>Category</source>
-        <translation type="unfinished">Kategória</translation>
+        <translation>Kategória</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
         <source>Language/Category</source>
-        <translation type="unfinished">Nyelv/Kategória</translation>
+        <translation>Nyelv/Kategória</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
         <source>Language</source>
-        <translation type="unfinished">Nyelv</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Nincs csoportosítás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
         <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation>Munkák megjelenítése/elrejtése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Megnyitás</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sz&amp;erkesztés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
         <source>&amp;Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Egyszerű szöveg</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
         <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Feloldás...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Névlegy...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 -ben &amp;keresés...</translation>
     </message>
 </context>
 <context>
@@ -591,52 +591,52 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="58"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="96"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibliák</translation>
+        <translation>Bibliák</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="98"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Kommentárok</translation>
+        <translation>Kommentárok</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="100"/>
         <source>Books</source>
-        <translation type="unfinished">Könyvek</translation>
+        <translation>Könyvek</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="102"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Kultikus/Unortodox</translation>
+        <translation>Kultikus/Unortodox</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="104"/>
         <source>Maps and Images</source>
-        <translation type="unfinished">Térképek és képek</translation>
+        <translation>Térképek és képek</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="106"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Napi áhitatok</translation>
+        <translation>Napi áhitatok</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="108"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Lexikonok és szótárak</translation>
+        <translation>Lexikonok és szótárak</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="110"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Szójegyzékek</translation>
+        <translation>Szójegyzékek</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="112"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéb</translation>
     </message>
 </context>
 <context>
@@ -644,7 +644,7 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul</translation>
     </message>
 </context>
 <context>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indexelt munkák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem indexelt minkák</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="131"/>
@@ -968,17 +968,17 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
         <source>Configure shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Billentyűkombinációk beállítása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
         <source>First shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Első kombináció</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Second shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Második kombinávió</translation>
     </message>
 </context>
 <context>
@@ -987,50 +987,50 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation>Válasszon a kulcscseréhez</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Akció megnevezése</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Első kombináció</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Második kombinávió</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation>KOmbináció a kiválasztott akcióhoz</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Semmi</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="281"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="286"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Egyéni</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
         <source>Default key:</source>
-        <translation type="unfinished"></translation>
+        <translation>Alapértelmezett kombináció</translation>
     </message>
 </context>
 <context>
@@ -1173,48 +1173,48 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="40"/>
         <source>Choose action group:</source>
-        <translation type="unfinished"></translation>
+        <translation>Válassza ki a hatóterületet:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="52"/>
         <source>Main Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Fő ablak</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="53"/>
         <source>All text windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Összes szövegablak</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
         <source>Bible windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblia ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
         <source>Commentary windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentár ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
         <source>Lexicon windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Lexikon ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
         <source>Book windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Könyv ablakok</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="189"/>
         <source>
    &quot;%1&quot; in the &quot;%2&quot; group</source>
-        <translation type="unfinished"></translation>
+        <translation>   &quot;%1&quot; a &quot;%2&quot; csoportban</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="277"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Billentyűkombinációk</translation>
     </message>
 </context>
 <context>
@@ -1759,12 +1759,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="132"/>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation>Hely változtatása</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
         <source>Search with works of this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Keresés ennek az ablaknak a dokumentumaiban</translation>
     </message>
 </context>
 <context>
@@ -3781,12 +3781,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="149"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ez a kombináció ütközik a következő akció kombinációjával:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="156"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Törli az ütköző kombinációkat és folytatja?</translation>
     </message>
 </context>
 <context>
@@ -3942,7 +3942,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="151"/>
         <source>Scope:</source>
-        <translation>Hatósugár:</translation>
+        <translation>Hatókör:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="172"/>
