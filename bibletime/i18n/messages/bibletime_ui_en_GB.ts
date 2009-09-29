@@ -6,7 +6,7 @@
     <message>
         <location filename="../../src/frontend/btaboutmoduledialog.cpp" line="25"/>
         <source>Information About %1</source>
-        <translation></translation>
+        <translation>Information About %1</translation>
     </message>
 </context>
 <context>
@@ -499,7 +499,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="69"/>
         <source>Select book</source>
-        <translation></translation>
+        <translation>Select book</translation>
     </message>
 </context>
 <context>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="94"/>
         <source>Select chapter</source>
-        <translation></translation>
+        <translation>Select chapter</translation>
     </message>
 </context>
 <context>
@@ -734,7 +734,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.cpp" line="132"/>
         <source>Install</source>
-        <translation></translation>
+        <translation>Install</translation>
     </message>
 </context>
 <context>
@@ -917,7 +917,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/btmodulemanagerdialog.cpp" line="39"/>
         <source>Bookshelf Manager</source>
-        <translation></translation>
+        <translation>Bookshelf Manager</translation>
     </message>
 </context>
 <context>
@@ -973,17 +973,17 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
         <source>Configure shortcuts</source>
-        <translation></translation>
+        <translation>Configure shortcuts</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
         <source>First shortcut</source>
-        <translation></translation>
+        <translation>First shortcut</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Second shortcut</source>
-        <translation></translation>
+        <translation>Second shortcut</translation>
     </message>
 </context>
 <context>
@@ -1170,7 +1170,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="118"/>
         <source>Select verse</source>
-        <translation></translation>
+        <translation>Select verse</translation>
     </message>
 </context>
 <context>
@@ -1333,7 +1333,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/displaywindow/cbookreadwindow.cpp" line="81"/>
         <source>Toggle tree view</source>
-        <translation></translation>
+        <translation>Toggle tree view</translation>
     </message>
 </context>
 <context>
@@ -1580,7 +1580,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cconfigurationdialog.cpp" line="37"/>
         <source>Configure BibleTime</source>
-        <translation></translation>
+        <translation>Configure BibleTime</translation>
     </message>
 </context>
 <context>
@@ -1926,7 +1926,7 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/cinputdialog.cpp" line="56"/>
         <source>Clear</source>
-        <translation></translation>
+        <translation>Clear</translation>
     </message>
 </context>
 <context>
@@ -4098,7 +4098,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchresultarea.cpp" line="91"/>
         <source>Text of the selected search result item</source>
-        <translation></translation>
+        <translation>Text of the selected search result item</translation>
     </message>
 </context>
 <context>
