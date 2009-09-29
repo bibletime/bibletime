@@ -64,8 +64,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             m_nameFilterEdit = new QLineEdit(this);
             m_nameFilterLabel->setBuddy(m_nameFilterEdit);
             toolBar->addWidget(m_nameFilterEdit);
-            connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
-                    m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
 
             m_groupingButton = new QToolButton(this);
             m_groupingButton->setPopupMode(QToolButton::InstantPopup);
@@ -89,6 +87,10 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     connect(CPointers::backend(),
             SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
             this, SLOT(swordSetupChanged()));
+    connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
+            m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
+    connect(m_nameFilterEdit, SIGNAL(returnPressed()),
+            m_view, SLOT(setFocus()));
     connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
             this, SLOT(showContextMenu(QPoint)));
     connect(m_view,
