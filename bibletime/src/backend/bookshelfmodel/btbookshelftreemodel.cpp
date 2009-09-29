@@ -148,17 +148,19 @@ bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
 Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex &index) const {
     if (!index.isValid()) return 0;
 
-    Qt::ItemFlags f(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
-    if (m_checkable) {
-        Item *i(static_cast<Item*>(index.internalPointer()));
-        Q_ASSERT(i != 0);
-        f |= Qt::ItemIsUserCheckable;
-        if (i->type() == Item::ITEM_MODULE) {
-            return f;
-        } else {
-            return f | Qt::ItemIsTristate;
+    Qt::ItemFlags f(Qt::ItemIsEnabled);
+    Item *i(static_cast<Item*>(index.internalPointer()));
+    Q_ASSERT(i != 0);
+
+    if (i->type() == Item::ITEM_MODULE) {
+        f |= Qt::ItemIsSelectable;
+        if (m_checkable) {
+            f |= Qt::ItemIsUserCheckable;
         }
+    } else if (m_checkable) {
+        f |= Qt::ItemIsUserCheckable | Qt::ItemIsTristate;
     }
+
     return f;
 }
 
