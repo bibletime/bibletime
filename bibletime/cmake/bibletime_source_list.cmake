@@ -15,7 +15,6 @@ SET(bibletime_SOURCES
 	src/backend/bookshelfmodel/item.cpp
 	src/backend/bookshelfmodel/languageitem.cpp
 	src/backend/bookshelfmodel/moduleitem.cpp
-	src/backend/bookshelfmodel/rootitem.cpp
 	#backend filters
 	src/backend/filters/bt_gbfhtml.cpp
 	src/backend/filters/bt_osishtml.cpp

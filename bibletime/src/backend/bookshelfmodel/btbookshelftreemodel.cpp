@@ -18,7 +18,6 @@
 #include "backend/bookshelfmodel/distributionitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
-#include "backend/bookshelfmodel/rootitem.h"
 
 using namespace BookshelfModel;
 

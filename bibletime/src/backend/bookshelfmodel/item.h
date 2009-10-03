@@ -22,10 +22,6 @@ class CSwordModuleInfo;
 
 namespace BookshelfModel {
 
-class CategoryItem;
-class DistributionItem;
-class LanguageItem;
-
 class Item {
     public:
         enum Type {
@@ -162,6 +158,11 @@ class Item {
         Item          *m_parent;
         QList<Item*>   m_children;
         Qt::CheckState m_checkState;
+};
+
+class RootItem: public Item {
+    public:
+        inline RootItem() : Item(Item::ITEM_ROOT) {}
 };
 
 } // Namespace BookshelfModel

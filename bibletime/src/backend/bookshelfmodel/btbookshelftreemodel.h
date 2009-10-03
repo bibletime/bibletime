@@ -26,7 +26,6 @@ class CSwordModuleInfo;
 
 class BtBookshelfTreeModel: public QAbstractItemModel {
     Q_OBJECT
-    friend class RootItem;
 
     typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
 
