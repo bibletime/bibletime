@@ -154,7 +154,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="210"/>
         <source>&amp;Bible Study Howto</source>
-        <translation>&amp;Bibel Studie.. Hvordan?</translation>
+        <translation>&amp;Bibelstudie vejledning</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="550"/>
@@ -199,12 +199,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="144"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér automatisk de åbne vinduer vertikalt</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="151"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér automatisk de åbne vinduer horisontalt</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="158"/>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="172"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér de åbne vinduer vertikalt</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="179"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortér de åbne vinduer horisontalt</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="190"/>
@@ -289,12 +289,12 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="225"/>
         <source>Unlock Work</source>
-        <translation type="unfinished">Lås værk op</translation>
+        <translation>Lås værk op</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="226"/>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Skriv registrerings nøglen til dette værk.</translation>
+        <translation>Indtast registrerings nøglen for dette værk.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="217"/>
@@ -505,90 +505,85 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="179"/>
         <source>Bookshelf</source>
-        <translation type="unfinished"></translation>
+        <translation>Boghylde</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="181"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="184"/>
+        <source>Grouping</source>
+        <translation>Gruppering</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="182"/>
+        <source>Change the grouping of items in the bookshelf.</source>
+        <translation>Ændr gruperingen af elementer i boghylden.</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="185"/>
+        <source>Category/Language</source>
+        <translation>Kategori/Sprog</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="186"/>
+        <source>Category</source>
+        <translation>Kategori</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="187"/>
+        <source>Language/Category</source>
+        <translation>Sprog/Kategori</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="188"/>
+        <source>Language</source>
+        <translation>Sprog</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="189"/>
+        <source>No grouping</source>
+        <translation>Ingen grupering</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="190"/>
+        <source>Show/hide works</source>
+        <translation>Vis/Skjul værker</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="192"/>
+        <source>&amp;Open</source>
+        <translation>&amp;Åben</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="193"/>
+        <source>&amp;Edit</source>
+        <translation>&amp;Redigér</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="194"/>
-        <source>Fi&amp;lter:</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;Plain text</source>
+        <translation>&amp;Ren tekst</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="195"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="198"/>
-        <source>Grouping</source>
-        <translation type="unfinished"></translation>
+        <source>&amp;HTML</source>
+        <translation>&amp;HTML</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="196"/>
-        <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="199"/>
-        <source>Category/Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="200"/>
-        <source>Category</source>
-        <translation type="unfinished">Kategori</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="201"/>
-        <source>Language/Category</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="202"/>
-        <source>Language</source>
-        <translation type="unfinished">Sprog</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="203"/>
-        <source>No grouping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="204"/>
-        <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="206"/>
-        <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="207"/>
-        <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="208"/>
-        <source>&amp;Plain text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="209"/>
-        <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="210"/>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Lås op...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="211"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="197"/>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Om...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="258"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="244"/>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Søg i %1...</translation>
     </message>
 </context>
 <context>
@@ -596,60 +591,60 @@
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="58"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="96"/>
         <source>Bibles</source>
-        <translation type="unfinished">Bibler</translation>
+        <translation>Bibeler</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="98"/>
         <source>Commentaries</source>
-        <translation type="unfinished">Kommentarer</translation>
+        <translation>Kommentarer</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="100"/>
         <source>Books</source>
-        <translation type="unfinished">Bøger</translation>
+        <translation>Bøger</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="102"/>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished"></translation>
+        <translation>Kult/uortodoks</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="104"/>
         <source>Maps and Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Kort og billeder</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="106"/>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Andagts-tekster</translation>
+        <translation>Andagts tekster</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="108"/>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished"></translation>
+        <translation>Leksika og ordbøger</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="110"/>
         <source>Glossaries</source>
-        <translation type="unfinished">Ordbøger</translation>
+        <translation>Ordforklaringer</translation>
     </message>
     <message>
         <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="112"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukendt</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfTreeModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="174"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelftreemodel.cpp" line="172"/>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Modul</translation>
     </message>
 </context>
 <context>
@@ -710,12 +705,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
         <source>Indexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Indekserede værker</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke-indekserede værker</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="131"/>
@@ -816,7 +811,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="116"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="unfinished">Denne mappe er ikke skrivbar, så værker kan ikke blive installeret her med BibleTime. Vil du bruge denne mappe i stedet for den forige værdi?</translation>
+        <translation>Denne mappe er ikke skrivbar, så værker kan ikke blive installeret her med BibleTime. Vil du bruge denne mappe i stedet for den forrige værdi?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="133"/>
@@ -826,7 +821,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="133"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="unfinished">Denne mappe er ikke skrivbar, så værker kan ikke blive installeret her med BibleTime. Vil du stadig tilføje den til listen over boghyldemapper?</translation>
+        <translation>Denne mappe er ikke skrivbar, så værker kan ikke blive installeret her med BibleTime. Vil du stadig tilføje den til listen over boghyldemapper?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="36"/>
@@ -992,13 +987,13 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Select to change key</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg for at ændre kombination</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Action
 name</source>
-        <translation type="unfinished"></translation>
+        <translation>Handling</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
@@ -1017,7 +1012,7 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished"></translation>
+        <translation>Genvej for den valgte handling</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
@@ -1037,7 +1032,7 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
         <source>Default key:</source>
-        <translation>Standartnøgle:</translation>
+        <translation>Standart kombination:</translation>
     </message>
 </context>
 <context>
@@ -1144,7 +1139,7 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="344"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
-        <translation type="unfinished">Der kan kun være installeret én version af et værk på samme tid. Vælg kun hvis der er punkter markeret med rød.</translation>
+        <translation>Der kan kun være installeret én version af et værk på samme tid. Vælg kun hvis der er punkter markeret med rød.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="269"/>
@@ -1164,7 +1159,7 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="333"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Destinationsmappen er ikke skrivbar eller eksisterer ikke. Installationen vil fejle med mindre dette er blevet ordnet.</translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1767,7 @@ genvej</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="132"/>
         <source>Change location</source>
-        <translation type="unfinished"></translation>
+        <translation>Ændr lokation</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="137"/>
@@ -3804,12 +3799,12 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="149"/>
         <source>This shortcut conflicts with the shortcut for the following actions:</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne genvej er i konflikt med genvejen for følgende handlinger:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="156"/>
         <source>Do you want to clear the conflicting shortcuts and continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ønsker du at fjerne den genvej der er konflikt med, og fortsætte?</translation>
     </message>
 </context>
 <context>
@@ -3995,12 +3990,12 @@ Nej til alle</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="273"/>
         <source>Works to Search in</source>
-        <translation type="unfinished"></translation>
+        <translation>Værker der skal søges i</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="274"/>
         <source>Select the works which should be searched.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vælg de værker som der skal søges i.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="447"/>
@@ -4035,7 +4030,7 @@ Nej til alle</translation>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="138"/>
         <source>Full lucene syntax</source>
-        <translation type="unfinished">Fuld lucene syntaks</translation>
+        <translation>Fuld lucene syntaks</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="141"/>
