@@ -175,7 +175,7 @@ QVariant BtBookshelfTreeModel::headerData(int section,
     return QVariant();
 }
 
-void BtBookshelfTreeModel::setSourceModel(BtBookshelfModel *sourceModel) {
+void BtBookshelfTreeModel::setSourceModel(QAbstractListModel *sourceModel) {
     if (m_sourceModel == sourceModel) return;
 
     if (m_sourceModel != 0) {
@@ -198,9 +198,28 @@ void BtBookshelfTreeModel::setSourceModel(BtBookshelfModel *sourceModel) {
                 this,        SLOT(moduleInserted(QModelIndex,int,int)));
         connect(sourceModel, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
                 this,        SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
-        const QList<CSwordModuleInfo *> &modules(sourceModel->modules());
-        Q_FOREACH(CSwordModuleInfo *module, modules) {
-            addModule(module, m_defaultChecked);
+
+        BtBookshelfModel *m(dynamic_cast<BtBookshelfModel*>(sourceModel));
+        if (m != 0) {
+            Q_FOREACH(CSwordModuleInfo *module, m->modules()) {
+                addModule(module, m_defaultChecked);
+            }
+        } else {
+            for (int i(0); i < sourceModel->rowCount(); i++) {
+                CSwordModuleInfo *module(
+                    static_cast<CSwordModuleInfo *>(
+                        sourceModel->data(
+                            sourceModel->index(i),
+                            BtBookshelfModel::ModulePointerRole
+                        ).value<void*>()
+                    )
+                );
+                Q_ASSERT(module != 0);
+                addModule(
+                    module,
+                    m_defaultChecked
+                );
+            }
         }
     }
 }
@@ -216,9 +235,25 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
         m_modules.clear();
         m_rootItem = new RootItem;
         endRemoveRows();
-        const QList<CSwordModuleInfo *> &modules(m_sourceModel->modules());
-        Q_FOREACH(CSwordModuleInfo *module, modules) {
-            addModule(module, checked.contains(module));
+
+        BtBookshelfModel *m(dynamic_cast<BtBookshelfModel*>(m_sourceModel));
+        if (m != 0) {
+            Q_FOREACH(CSwordModuleInfo *module, m->modules()) {
+                addModule(module, checked.contains(module));
+            }
+        } else {
+            for (int i(0); i < m_sourceModel->rowCount(); i++) {
+                CSwordModuleInfo *module(
+                    static_cast<CSwordModuleInfo *>(
+                        m_sourceModel->data(
+                            m_sourceModel->index(i),
+                            BtBookshelfModel::ModulePointerRole
+                        ).value<void*>()
+                    )
+                );
+                Q_ASSERT(module != 0);
+                addModule(module, checked.contains(module));
+            }
         }
     }
 }

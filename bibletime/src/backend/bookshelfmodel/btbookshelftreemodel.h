@@ -56,8 +56,8 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         virtual bool setData(const QModelIndex &index, const QVariant &value,
                              int role);
 
-        void setSourceModel(BtBookshelfModel *sourceModel);
-        inline BtBookshelfModel *sourceModel() const { return m_sourceModel; }
+        void setSourceModel(QAbstractListModel *sourceModel);
+        inline QAbstractListModel *sourceModel() const { return m_sourceModel; }
         void setGroupingOrder(const Grouping &groupingOrder);
         inline Grouping groupingOrder() const { return m_groupingOrder; }
         void setCheckable(bool checkable);
@@ -103,7 +103,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void moduleRemoved(const QModelIndex &parent, int start, int end);
 
     protected:
-        BtBookshelfModel     *m_sourceModel;
+        QAbstractListModel   *m_sourceModel;
         BookshelfModel::Item *m_rootItem;
         ModuleItemMap         m_modules;
         Grouping              m_groupingOrder;
