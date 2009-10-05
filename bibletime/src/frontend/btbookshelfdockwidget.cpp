@@ -255,6 +255,7 @@ void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
         g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
     }
     m_bookshelfTreeModel->setGroupingOrder(g);
+    m_view->setRootIsDecorated(!g.isEmpty());
 }
 
 void BtBookshelfDockWidget::showHideEnabled(bool enable) {
