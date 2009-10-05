@@ -167,10 +167,8 @@ QVariant BtBookshelfTreeModel::headerData(int section,
                                           Qt::Orientation orientation,
                                           int role) const
 {
-    if (orientation == Qt::Horizontal &&
-        section == 0 && role == Qt::DisplayRole)
-    {
-        return tr("Module");
+    if (orientation == Qt::Horizontal) {
+        return m_sourceModel->headerData(section, orientation, role);
     }
     return QVariant();
 }
