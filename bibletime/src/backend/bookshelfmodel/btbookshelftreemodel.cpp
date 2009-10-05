@@ -46,7 +46,7 @@ bool BtBookshelfTreeModel::hasChildren(const QModelIndex &parent) const {
 }
 
 QModelIndex BtBookshelfTreeModel::index(int row, int column,
-                                    const QModelIndex &parent) const
+                                        const QModelIndex &parent) const
 {
     if (!hasIndex(row, column, parent)) return QModelIndex();
 
@@ -306,8 +306,9 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
-                                 QModelIndex parentIndex,
-                                 Grouping &intermediateGrouping, bool checked)
+                                     QModelIndex parentIndex,
+                                     Grouping &intermediateGrouping,
+                                     bool checked)
 {
     Q_ASSERT(module != 0);
 
@@ -372,9 +373,7 @@ void BtBookshelfTreeModel::removeModule(CSwordModuleInfo *module) {
     resetParentCheckStates(parentIndex);
 }
 
-Item *BtBookshelfTreeModel::getItem(const QModelIndex &index)
-        const
-{
+Item *BtBookshelfTreeModel::getItem(const QModelIndex &index) const {
     if (index.isValid()) {
         Item *item(static_cast<Item*>(index.internalPointer()));
         Q_ASSERT(item != 0);
