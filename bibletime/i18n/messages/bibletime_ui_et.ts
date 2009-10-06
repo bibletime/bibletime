@@ -964,115 +964,93 @@
 <context>
     <name>BtSearchDialog</name>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="243"/>
         <source>Search</source>
         <comment>Search dialog title</comment>
-        <translation>Otsing</translation>
+        <translation type="obsolete">Otsing</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="252"/>
         <source>Search &amp;query:</source>
-        <translation>Otsingu &amp;päring:</translation>
+        <translation type="obsolete">Otsingu &amp;päring:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="253"/>
         <source>The text you want to search for</source>
-        <translation>Tekst, mida soovite otsida</translation>
+        <translation type="obsolete">Tekst, mida soovite otsida</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="254"/>
         <source>&amp;Search</source>
-        <translation>&amp;Otsi</translation>
+        <translation type="obsolete">&amp;Otsi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="255"/>
         <source>Start the search</source>
-        <translation>Alusta otsingut</translation>
+        <translation type="obsolete">Alusta otsingut</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="257"/>
         <source>Query &amp;type:</source>
-        <translation>Päringu &amp;tüüp:</translation>
+        <translation type="obsolete">Päringu &amp;tüüp:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="258"/>
         <source>&amp;All words</source>
-        <translation>&amp;Kõik sõnad</translation>
+        <translation type="obsolete">&amp;Kõik sõnad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="259"/>
         <source>Search for all of the words in the query</source>
-        <translation>Otsib kõiki päringu sõnu</translation>
+        <translation type="obsolete">Otsib kõiki päringu sõnu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="261"/>
         <source>S&amp;ome words</source>
-        <translation>&amp;Mõned sõnad</translation>
+        <translation type="obsolete">&amp;Mõned sõnad</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="262"/>
         <source>Search for any of the words in the query</source>
-        <translation>Otsib üksikuid päringu sõnu</translation>
+        <translation type="obsolete">Otsib üksikuid päringu sõnu</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="264"/>
         <source>&amp;Free</source>
-        <translation>&amp;Vaba</translation>
+        <translation type="obsolete">&amp;Vaba</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="265"/>
         <source>Use full Lucene search query syntax</source>
-        <translation>Kasutab täielikku Lucene otsingu päringu süntaksit</translation>
+        <translation type="obsolete">Kasutab täielikku Lucene otsingu päringu süntaksit</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="267"/>
         <source>(&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation>(&lt;a href=&apos;syntax_help&apos;&gt;täielik süntaks&lt;/a&gt;)</translation>
+        <translation type="obsolete">(&lt;a href=&apos;syntax_help&apos;&gt;täielik süntaks&lt;/a&gt;)</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="269"/>
         <source>Click the link to get help for search syntax</source>
-        <translation>Klikkige siia, et saada abi otsingusüntaksi kasutamiseks</translation>
+        <translation type="obsolete">Klikkige siia, et saada abi otsingusüntaksi kasutamiseks</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="272"/>
         <source>&amp;Works:</source>
-        <translation>&amp;Teosed:</translation>
+        <translation type="obsolete">&amp;Teosed:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="274"/>
         <source>C&amp;hoose...</source>
-        <translation>V&amp;ali...</translation>
+        <translation type="obsolete">V&amp;ali...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="275"/>
         <source>Choose works for the search</source>
-        <translation>Vali teosed, millest otsida</translation>
+        <translation type="obsolete">Vali teosed, millest otsida</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="277"/>
         <source>S&amp;cope:</source>
-        <translation>&amp;Skoop:</translation>
+        <translation type="obsolete">&amp;Skoop:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="278"/>
         <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation>Valige otsinguskoop (raamatud/peatükid/salmid mille hulgast otsida).&lt;br /&gt;Kehtib piiblite ja kommentaaride puhul.</translation>
+        <translation type="obsolete">Valige otsinguskoop (raamatud/peatükid/salmid mille hulgast otsida).&lt;br /&gt;Kehtib piiblite ja kommentaaride puhul.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="281"/>
         <source>S&amp;etup...</source>
-        <translation>&amp;Häälestus...</translation>
+        <translation type="obsolete">&amp;Häälestus...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="282"/>
         <source>Configure predefined scopes for search</source>
-        <translation>Halda otsingu skoope</translation>
+        <translation type="obsolete">Halda otsingu skoope</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/btsearchdialog.cpp" line="288"/>
         <source>Text of the selected search result item</source>
-        <translation>Valitud otsingutulemuse elemendi tekst</translation>
+        <translation type="obsolete">Valitud otsingutulemuse elemendi tekst</translation>
     </message>
 </context>
 <context>

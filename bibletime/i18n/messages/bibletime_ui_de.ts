@@ -508,13 +508,6 @@
     </message>
 </context>
 <context>
-    <name>BtBookshelfTreeModel</name>
-    <message>
-        <source>Module</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>BtChapterDropdownChooserButton</name>
     <message>
         <source>Select chapter</source>
@@ -1695,11 +1688,11 @@ shortcut</source>
     <name>CMainIndex</name>
     <message>
         <source>Bookshelf</source>
-        <translation>Bücherregal</translation>
+        <translation type="obsolete">Bücherregal</translation>
     </message>
     <message>
         <source>Bookmarks</source>
-        <translation>Lesezeichen</translation>
+        <translation type="obsolete">Lesezeichen</translation>
     </message>
 </context>
 <context>
