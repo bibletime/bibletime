@@ -321,9 +321,8 @@ IF(WIN32 AND NOT UNIX)
 
   # We need the libraries, and they're not pulled in automatically
   INCLUDE(${QT_USE_FILE})
-  IF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
-    SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
-    INSTALL(FILES
+  SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
+  INSTALL(FILES
 			"${QT_LIBRARY_DIR}/QtWebKitd4.dll"
 			"${QT_LIBRARY_DIR}/QtGuid4.dll"
 			"${QT_LIBRARY_DIR}/QtXmld4.dll"
@@ -333,18 +332,20 @@ IF(WIN32 AND NOT UNIX)
 			"${QT_LIBRARY_DIR}/phonond4.dll"
 			"${QT_LIBRARY_DIR}/QtSvgd4.dll"
 			DESTINATION "${BT_DESTINATION}"
-	)
-  ELSE(NOT CMAKE_BUILD_TYPE STREQAL "Release")
-    INSTALL(FILES
+			CONFIGURATIONS "Debug"
+  )
+  INSTALL(FILES
 			"${QT_LIBRARY_DIR}/QtWebKit4.dll"
 			"${QT_LIBRARY_DIR}/QtGui4.dll"
 			"${QT_LIBRARY_DIR}/QtXml4.dll"
+			"${QT_LIBRARY_DIR}/QtTest4.dll"
 			"${QT_LIBRARY_DIR}/QtNetwork4.dll"
 			"${QT_LIBRARY_DIR}/QtCore4.dll"
 			"${QT_LIBRARY_DIR}/phonon4.dll"
 			"${QT_LIBRARY_DIR}/QtSvg4.dll"
-			DESTINATION "${BT_DESTINATION}")
-  ENDIF(NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+			DESTINATION "${BT_DESTINATION}"
+			CONFIGURATIONS "Release"
+  )
 
   # Qt Plugins
   INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/plugins")
@@ -355,7 +356,7 @@ IF(WIN32 AND NOT UNIX)
   INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
 
   # Some options for the CPack system.  These should be pretty self-evident
-  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/pics/icons\\\\bibletime.png")
+  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")
   SET(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\bibletime.exe")
   SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} for Windows")
   SET(CPACK_NSIS_HELP_LINK "http:\\\\\\\\www.bibletime.info")
