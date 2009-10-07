@@ -26,8 +26,6 @@
 
 #include "frontend/cexportmanager.h"
 
-#include <boost/scoped_ptr.hpp>
-
 //KDE includes
 
 

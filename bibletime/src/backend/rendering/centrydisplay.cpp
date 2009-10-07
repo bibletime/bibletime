@@ -18,7 +18,6 @@
 #include "cdisplayrendering.h"
 
 #include "backend/config/cbtconfig.h"
-#include <boost/scoped_ptr.hpp>
 
 //Qt includes
 #include <QApplication>
