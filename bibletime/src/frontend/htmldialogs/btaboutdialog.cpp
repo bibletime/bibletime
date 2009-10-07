@@ -105,6 +105,7 @@ void BtAboutDialog::init_contributors_tab()
 	content += "<li>Horatiu Alexe</li>";
 	content += "<li>Jan B&ecarron;lohoubek</li>";
 	content += "<li>Chun-shek Chan</li>";
+	content += "<li>Rafael Fagundes</li>";
 	content += "<li>Ilpo Kantonen</li>";
 	content += "<li>Pavel Laukko</li>";
 	content += "<li>Piotr Markiewicz</li>";
@@ -115,6 +116,7 @@ void BtAboutDialog::init_contributors_tab()
 	content += "<li>Jaak Ristioja</li>";
 	content += "<li>Igor Rykhlin</li>";
 	content += "<li>Vlad Savitsky</li>";
+	content += "<li>Henrik Sonesson</li>";
 	content += "<li>Johan van der Lingen</li>";
 	content += "<li>Jean Van Schaftingen</li>";
 	content += "<li>Dmitry Yurevich</li>";
