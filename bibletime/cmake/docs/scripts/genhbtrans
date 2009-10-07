@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# This script can be used to generate the BibleTime Handbook translations
+# It requires the following packages to be installed on your system
+# po4a - http://po4a.alioth.debian.org/
+# xsltproc - http://xmlsoft.org/XSLT/
+# docbook-xml - http://www.oasis-open.org/docbook/
+# docbook-xsl - http://docbook.sourceforge.net/projects/xsl/
+#
+# Author: Thomas Abthorpe <tabthorpe@FreeBSD.org>
+# $LastChangedDate$
+#
+#set -x
+
+_xslfile="docs.xsl" # for our linux friends
+
+if test $OSTYPE = FreeBSD
+then
+  _xslfile="docs_freebsd.xsl"
+fi
+
+cd  ../../..
+
+HANDBOOK_LOCALE_LANGS=`cat cmake/docs/handbook_po4a.conf | grep po4a_langs | sed -e 's|^.*]||'`
+
+po4a -v --no-backups -k 0 cmake/docs/handbook_po4a.conf
+
+cd docs/handbook/en/html
+xsltproc ../../../../cmake/docs/${_xslfile} ../docbook/index.docbook
+
+for hblang in ${HANDBOOK_LOCALE_LANGS}
+do
+  cd ../../${hblang}/html/
+  xsltproc --stringparam l10n.gentext.default.language ${hblang} ../../../../cmake/docs/${_xslfile} ../docbook/index.docbook
+done
