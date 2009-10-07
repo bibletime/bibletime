@@ -583,7 +583,7 @@
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>&amp;About...</source>
-        <translation type="unfinished">&amp;A propos de...</translation>
+        <translation>&amp;A propos...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="275"/>
@@ -679,7 +679,7 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="56"/>
         <source>Delete</source>
-        <translation>Effacer</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="60"/>
@@ -709,12 +709,12 @@
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="112"/>
         <source>Indexed Works</source>
-        <translation type="unfinished">Répertorié œuvres</translation>
+        <translation>Répertorié œuvres</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="117"/>
         <source>Unindexed Works</source>
-        <translation type="unfinished">Œuvres non indexées</translation>
+        <translation>Œuvres non indexées</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/indexpage/btindexpage.cpp" line="131"/>
@@ -972,17 +972,17 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="26"/>
         <source>Configure shortcuts</source>
-        <translation type="unfinished">Configurer les raccourcis clavier</translation>
+        <translation>Configurer les raccourcis clavier</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="35"/>
         <source>First shortcut</source>
-        <translation type="unfinished">Premier raccourci</translation>
+        <translation>Premier raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="39"/>
         <source>Second shortcut</source>
-        <translation type="unfinished">Deuxième raccourci</translation>
+        <translation>Deuxième raccourci</translation>
     </message>
 </context>
 <context>
@@ -991,7 +991,7 @@
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="200"/>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="207"/>
         <source>Select to change key</source>
-        <translation type="unfinished">Sélectionnez de changer de clé</translation>
+        <translation>Sélectionnez de changer de clé</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
@@ -1004,20 +1004,20 @@ nom</translation>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>First
 shortcut</source>
-        <translation type="unfinished">Premier
+        <translation>Premier
 raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="226"/>
         <source>Second
 shortcut</source>
-        <translation type="unfinished">Deuxième
+        <translation>Deuxième
 raccourci</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="270"/>
         <source>Shortcut for selected action name</source>
-        <translation type="unfinished">Raccourci pour nom de l&apos;action sélectionnée</translation>
+        <translation>Raccourci pour nom de l&apos;action sélectionnée</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="276"/>
@@ -1037,7 +1037,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutseditor.cpp" line="301"/>
         <source>Default key:</source>
-        <translation type="unfinished">Touche par défaut:</translation>
+        <translation>Touche par défaut:</translation>
     </message>
 </context>
 <context>
@@ -1119,7 +1119,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="244"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
-        <translation type="unfinished">Aucune source ont été trouvés dans la configuration de SWORD et bibletime n&apos;a pas pu créer une source par défaut. Vérifiez la configuration de votre épée et que le chemin de configuration est accessible en écriture. Puis redémarrez le Gestionnaire de Bookshelf.</translation>
+        <translation>Aucune source ont été trouvés dans la configuration de SWORD et bibletime n&apos;a pas pu créer une source par défaut. Vérifiez la configuration de votre épée et que le chemin de configuration est accessible en écriture. Puis redémarrez le Gestionnaire de Bookshelf.</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="260"/>
@@ -1195,7 +1195,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="54"/>
         <source>Bible windows</source>
-        <translation type="unfinished">Fenêtre de Bible</translation>
+        <translation>Fenêtre de Bible</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="55"/>
@@ -1205,7 +1205,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="56"/>
         <source>Lexicon windows</source>
-        <translation type="unfinished">Fenêtre du lexique</translation>
+        <translation>Fenêtre du lexique</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="57"/>
@@ -1221,7 +1221,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cacceleratorsettings.cpp" line="277"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Raccourci</translation>
     </message>
 </context>
 <context>
@@ -1413,7 +1413,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="412"/>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Déplacement</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="471"/>
@@ -1456,7 +1456,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="188"/>
         <source>Edit</source>
-        <translation></translation>
+        <translation>Edition</translation>
     </message>
     <message>
         <location filename="../../src/frontend/mainindex/bookshelf/cbookshelfindex.cpp" line="484"/>
@@ -1741,7 +1741,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="108"/>
         <source>Zoom in</source>
-        <translation type="unfinished">Zoomer</translation>
+        <translation>Zoomer</translation>
     </message>
     <message>
         <location filename="../../src/frontend/displaywindow/cdisplaywindow.cpp" line="112"/>
@@ -1784,7 +1784,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="101"/>
         <source>Size:</source>
-        <translation>Taille:</translation>
+        <translation>Dimension:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="76"/>
@@ -1794,7 +1794,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/frontend/settingsdialogs/cfontchooser.cpp" line="88"/>
         <source>Font style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Style de police:</translation>
     </message>
 </context>
 <context>
@@ -2303,7 +2303,7 @@ raccourci</translation>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="820"/>
         <source>About</source>
-        <translation></translation>
+        <translation>A propos</translation>
     </message>
     <message>
         <location filename="../../src/backend/drivers/cswordmoduleinfo.cpp" line="851"/>
@@ -3812,21 +3812,21 @@ Language name ppk</extracomment>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation>Ok</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="31"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation>Ouvert</translation>
+        <translation>Ouvrir</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="33"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation>Sauvegarde</translation>
+        <translation>Enregistrer</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="35"/>
@@ -3875,7 +3875,7 @@ Language name ppk</extracomment>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation>Aide</translation>
+        <translation>?</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="49"/>
@@ -3889,7 +3889,7 @@ Language name ppk</extracomment>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <extracomment>Standard button</extracomment>
-        <translation>oui</translation>
+        <translation>Oui</translation>
     </message>
     <message>
         <location filename="../../src/util/dialogutil.cpp" line="53"/>
@@ -3918,7 +3918,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="100"/>
         <source>Search for:</source>
-        <translation type="unfinished">Rechercher:</translation>
+        <translation>Rechercher:</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="107"/>
@@ -3928,7 +3928,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="109"/>
         <source>Start to search the text in the chosen works</source>
-        <translation type="unfinished">Commencer à rechercher le texte dans les modules sélectionnés</translation>
+        <translation>Commencer à rechercher le texte dans les modules sélectionnés</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/btsearchoptionsarea.cpp" line="112"/>
@@ -4113,7 +4113,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="68"/>
         <source>Copy...</source>
-        <translation>Copie...</translation>
+        <translation>Copier...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="70"/>
@@ -4131,7 +4131,7 @@ Language name ppk</extracomment>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="78"/>
         <source>Save...</source>
-        <translation>Sauvegarde...</translation>
+        <translation>Enregistrer...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/cmoduleresultview.cpp" line="88"/>
@@ -4339,7 +4339,7 @@ Cette opération peut prendre du temps. Procéder à l&apos;indexation ?</transl
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="54"/>
         <source>Copy...</source>
-        <translation>Copie...</translation>
+        <translation>Copier...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/searchdialog/csearchresultview.cpp" line="57"/>
