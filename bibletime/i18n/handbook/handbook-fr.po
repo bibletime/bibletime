@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-06 15:23-0400\n"
+"POT-Creation-Date: 2009-10-08 00:06-0400\n"
 "PO-Revision-Date: 2006-05-26 13:46WET\n"
 "Last-Translator: Jean Van Schaftingen <vanschaf@yahoo.fr>\n"
 "Language-Team: Français\n"
@@ -44,17 +44,17 @@ msgstr ""
 "configuration en sélectionnant <menuchoice><guimenu>Settings</guimenu></"
 "menuchoice> <guimenuitem>Configurer &bibletime;</guimenuitem>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:19
+#: docs/handbook/en/docbook/hdbk-config.docbook:20
 msgid ""
 "The startup behavior can be customized. Select from the following options:"
 msgstr ""
 "Choisissez pour le comportement au démarrage parmi les options suivantes :"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:23
+#: docs/handbook/en/docbook/hdbk-config.docbook:24
 msgid "Show startup logo"
 msgstr "Afficher le logo de démarrage"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:26
+#: docs/handbook/en/docbook/hdbk-config.docbook:27
 #, fuzzy
 msgid ""
 "Display templates define the rendering of text (colors, size etc.). Various "
@@ -65,7 +65,28 @@ msgstr ""
 "couleurs, etc.). Plusieurs modèles prédéfinis sont disponibles. En en "
 "sélectionnant un, vous le prévisualiserez dans le panneau de gauche."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:34
+#: docs/handbook/en/docbook/hdbk-config.docbook:36
+#, fuzzy
+msgid ""
+"Many features provided by the Sword backend can now be customized in "
+"&bibletime;. These features are documented right in the dialog.  You also "
+"have the possibility to specify standard works that should be used when no "
+"specific work is specified in a reference.  An example: The standard Bible "
+"is used to display the content of cross references in the Bible.  When you "
+"hover over them, the Mag will show the content of the verses referred to, "
+"according to the standard Bible you specified.  With the use of text "
+"filters, you can control the appearance of the text."
+msgstr ""
+"De nombreuses fonctionnalités de Sword peuvent être configurées dans "
+"&bibletime;. Ces fonctionnalités sont documentées dans le dialogue. Ces "
+"fonctionnalités Vous pouvez aussi désigner les modules standard à utiliser "
+"quand aucune module spécifique n'est mentionnée dans la référence. Par "
+"exemple, la bible standard est utilisée pour afficher le contenu de "
+"références croisées dans la bible. Quand le pointeur de la souris passe au "
+"dessus d'une de celles-ci, vous verrez le contenu des versets auquel il est "
+"fait référence, d'après la bible standard que vous avez désignée."
+
+#: docs/handbook/en/docbook/hdbk-config.docbook:52
 msgid ""
 "Here you can specify which language should be used for the biblical "
 "booknames. Set this to your native language, if it is available, and you'll "
@@ -75,7 +96,7 @@ msgstr ""
 "Choisissez votre langue maternelle. Si elle est disponible vous vous "
 "sentirez chez vous."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:38
+#: docs/handbook/en/docbook/hdbk-config.docbook:56
 #, fuzzy
 msgid ""
 "By default, &bibletime; uses the default system display font. You can "
@@ -89,16 +110,16 @@ msgstr ""
 "spécifiques pour s'afficher correctement. Ce dialogue permet de désigner une "
 "police adaptée pour chaque langue."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:48
+#: docs/handbook/en/docbook/hdbk-config.docbook:66
 #, fuzzy
 msgid "<phrase>Options Dialog - fonts</phrase>"
 msgstr "Le dialogue Options - polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:51
+#: docs/handbook/en/docbook/hdbk-config.docbook:69
 msgid "The Options dialog - Fonts."
 msgstr "Le dialogue Options - polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:54
+#: docs/handbook/en/docbook/hdbk-config.docbook:72
 #, fuzzy
 msgid ""
 "&bibletime; can now use all supported fonts.  As long as the works you are "
@@ -114,7 +135,7 @@ msgstr ""
 "d'affichage standard de KDE ne contient pas les caractères utilisées dans "
 "cette oeuvre. "
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:61
+#: docs/handbook/en/docbook/hdbk-config.docbook:79
 #, fuzzy
 msgid ""
 "To correct this, choose this work's language from the drop down menu. Select "
@@ -130,11 +151,11 @@ msgstr ""
 "qui vous intéresse, essayez d'installer le paquetage de localisation de "
 "&kde;."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:68
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
 msgid "Installing fonts"
 msgstr "Installer des polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:69
+#: docs/handbook/en/docbook/hdbk-config.docbook:87
 #, fuzzy
 msgid ""
 "Detailed font installation instructions are outside the scope of this "
@@ -150,7 +171,7 @@ msgstr ""
 "technique est le <ulink url=\"http://www.ibiblio.org/pub/Linux/docs/HOWTO/"
 "other-formats/html_single/Unicode-HOWTO.html#toc4\"> Unicode HOWTO</ulink>."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:75
+#: docs/handbook/en/docbook/hdbk-config.docbook:93
 #, fuzzy
 msgid ""
 "If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
@@ -161,24 +182,24 @@ msgstr ""
 "tournera plus rapidement qu'avec une grande police comme <trademark class="
 "\"registered\"> Bitstream Cyberbit</trademark> (environ 12 Mo)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:82
+#: docs/handbook/en/docbook/hdbk-config.docbook:100
 msgid "Obtaining Fonts"
 msgstr "Obtenir des polices"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:83
+#: docs/handbook/en/docbook/hdbk-config.docbook:101
 msgid "Fonts can be obtained from a number of sources:"
 msgstr "Des polices peuvent être obtenues de plusieurs sources"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:86
+#: docs/handbook/en/docbook/hdbk-config.docbook:104
 #, fuzzy
 msgid "Your *nix distribution."
 msgstr "Votre distribution linux"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:89
+#: docs/handbook/en/docbook/hdbk-config.docbook:107
 msgid "Your distribution's localization packages."
 msgstr "Les paquetages de localisation de votre distribution"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:92
+#: docs/handbook/en/docbook/hdbk-config.docbook:110
 #, fuzzy
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
@@ -187,16 +208,16 @@ msgstr ""
 "Une installation existante de <trademark class=\"registered\">Microsoft "
 "Windows</trademark> sur le même ordinateur."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:98
+#: docs/handbook/en/docbook/hdbk-config.docbook:116
 msgid "A font collection, such as are available from Adobe or Bitstream."
 msgstr ""
 "Une collection de polices, comme celles disponibles chez Adobe ou Bitstream."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:102
+#: docs/handbook/en/docbook/hdbk-config.docbook:120
 msgid "Online font collections."
 msgstr "Des collections de polices disponibles en ligne."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:105
+#: docs/handbook/en/docbook/hdbk-config.docbook:123
 #, fuzzy
 msgid ""
 "Unicode fonts support more characters than other fonts, and some of these "
@@ -210,34 +231,34 @@ msgstr ""
 "sorte que vous pouvez avoir besoin d'utiliser des polices différentes pour "
 "des langues différentes."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:111
+#: docs/handbook/en/docbook/hdbk-config.docbook:129
 msgid "Unicode Fonts"
 msgstr "Polices Unicode "
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:119
+#: docs/handbook/en/docbook/hdbk-config.docbook:137
 msgid ""
 "Perhaps the best free Unicode font, covering a wide range of characters."
 msgstr ""
 "Peut-être bien la meilleure police Unicode gratuite, couvrant un large "
 "spectre de caractères."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:127
+#: docs/handbook/en/docbook/hdbk-config.docbook:145
 #, fuzzy
 msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
 msgstr "Excellentes polices Unicode du Summer Institute of Linguistics."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:135
+#: docs/handbook/en/docbook/hdbk-config.docbook:153
 #, fuzzy
 msgid "A new free Unicode font initiative."
 msgstr "Une nouvelle initiative de police Unicode gratuite."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:142
+#: docs/handbook/en/docbook/hdbk-config.docbook:160
 msgid "Several fonts available from the Crosswire Bible Society Ftp site."
 msgstr ""
 "Plusieurs polices sont disponibles sur le serveur ftp de la Crosswire Bible "
 "Society."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:150
+#: docs/handbook/en/docbook/hdbk-config.docbook:168
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
@@ -245,21 +266,21 @@ msgstr ""
 "Couvre presque tout le spectre d'Unicode, mais peut ralentir &bibletime; à "
 "cause de sa taille."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:155
+#: docs/handbook/en/docbook/hdbk-config.docbook:173
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:156
+#: docs/handbook/en/docbook/hdbk-config.docbook:174
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
 "Inclue dans certaines distributions. Comporte les alphabets latins, "
 "cyrilliques, grec, hébreu et thaï."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:164
+#: docs/handbook/en/docbook/hdbk-config.docbook:182
 msgid "Partial coverage, see information on linked site."
 msgstr "Couverture partielle, voir les informations sur le site en lien."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:170
+#: docs/handbook/en/docbook/hdbk-config.docbook:188
 #, fuzzy
 msgid ""
 "There are good Unicode font lists on the net, as the one by Christoph Singer "
@@ -274,34 +295,15 @@ msgstr ""
 "www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character ranges and "
 "the Unicode fonts that support them</ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:184
+#: docs/handbook/en/docbook/hdbk-config.docbook:203
 #, fuzzy
 msgid ""
-"Many features provided by the Sword backend can now be customized in "
-"&bibletime;. These features are documented right in the dialog. You also "
-"have the possibility to specify standard works that should be used when no "
-"specific work is specified in a reference. An example: The standard Bible is "
-"used to display the content of cross references in the Bible. When you hover "
-"over them, the Mag will show the content of the verses referred to, "
-"according to the standard Bible you specified."
-msgstr ""
-"De nombreuses fonctionnalités de Sword peuvent être configurées dans "
-"&bibletime;. Ces fonctionnalités sont documentées dans le dialogue. Ces "
-"fonctionnalités Vous pouvez aussi désigner les modules standard à utiliser "
-"quand aucune module spécifique n'est mentionnée dans la référence. Par "
-"exemple, la bible standard est utilisée pour afficher le contenu de "
-"références croisées dans la bible. Quand le pointeur de la souris passe au "
-"dessus d'une de celles-ci, vous verrez le contenu des versets auquel il est "
-"fait référence, d'après la bible standard que vous avez désignée."
-
-#: docs/handbook/en/docbook/hdbk-config.docbook:198
-msgid ""
-"HotKeys are special key commands that can be used in the place of the menu "
-"items and icons. A number of &bibletime;'s commands have predefined HotKeys "
-"(see <link linkend=\"hdbk-reference-hotkeys\">this section</link> for a "
-"complete listing). Most of &bibletime;'s commands can be assigned HotKeys "
-"here. This is very helpful to quickly access the functions that you need the "
-"most."
+"Shortcts (previously known as HotKeys) are special key commands that can be "
+"used in the place of the menu items and icons. A number of &bibletime;'s "
+"commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
+"shortcuts\">this section</link> for a complete listing). Most of "
+"&bibletime;'s commands can be assigned Shortcuts here. This is very helpful "
+"to quickly access the functions that you need the most."
 msgstr ""
 "Les Racourcis sont des commandes au clavier qui peuvent être utilisée à la "
 "place des menus et des icônes. Plusieurs commandes &bibletime; onts des "
@@ -841,9 +843,9 @@ msgid ""
 "of a bible that you're reading) just like you are used to from other "
 "programs. This function can be reached either by clicking with the "
 "<mousebutton>right</mousebutton> mouse button and selecting "
-"<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo action="
-"\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how you can "
-"search in entire works."
+"<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo "
+"action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
+"you can search in entire works."
 msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-operation.docbook:221
@@ -1261,13 +1263,14 @@ msgid "Main menu reference"
 msgstr "Référence du menu principal"
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:5
+#, fuzzy
 msgid ""
 "In this section you can find detailed descriptions of all entries in the "
 "main menu of &bibletime;. They are ordered in just the way they appear in "
 "&bibletime;, with all the sub-items listed under the major menu item they "
-"belong to. You can also see the hotkey of each item;a complete listing of "
-"all hotkeys can be found in <link linkend=\"hdbk-reference-hotkeys\">this "
-"section</link>."
+"belong to. You can also see the shortcut of each item;a complete listing of "
+"all shortcuts can be found in <link linkend=\"hdbk-reference-shortcuts"
+"\">this section</link>."
 msgstr ""
 "Dans cette section vous trouverez des descriptions détaillées de toutes les "
 "entrées du menu principal de &bibletime;. Ils sont classé dans l'ordre où "
@@ -1552,17 +1555,19 @@ msgid "Select an additional glossary or devotional."
 msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:815
-msgid "HotKeys index"
+#, fuzzy
+msgid "Shortcuts index"
 msgstr "Index des raccourcis"
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:816
 #, fuzzy
 msgid ""
-"This is index of all hotkeys and their corresponding description in the "
-"handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to "
-"directly find out which hotkey a certain menu item has, you can either look "
-"at the entry itself in &bibletime; (as it always shows the hotkey), or you "
-"can look it up in <link linkend=\"hdbk-reference-menus\">this section</link>."
+"This is index of all shortcuts and their corresponding description in the "
+"handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
+"directly find out which shortcuts a certain menu item has, you can either "
+"look at the entry itself in &bibletime; (as it always shows the shortcut), "
+"or you can look it up in <link linkend=\"hdbk-reference-menus\">this "
+"section</link>."
 msgstr ""
 "Ceci est un index des raccourcis par défaut et la description correspondante "
 "du manuel. Les raccourcis sont classés (grossièrement) dans l'ordre "
@@ -1571,9 +1576,10 @@ msgstr ""
 "toujours le raccourci) ou consulter <link linkend=\"hdbk-reference-menus"
 "\">la référence des menus</link>."
 
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:829
-msgid "Hotkey"
-msgstr "Raccourci"
+msgid "Shortcut"
+msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-reference.docbook:830
 msgid "Description"
@@ -2012,6 +2018,9 @@ msgstr ""
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr "&bibletime; est un outil puissant d'étude de la Bible pour &kde;."
+
+#~ msgid "Hotkey"
+#~ msgstr "Raccourci"
 
 #~ msgid "Configure BibleTime Dialog"
 #~ msgstr "Le Dialogue Configurer Bibletime"
