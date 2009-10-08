@@ -9,6 +9,7 @@ Hauptmenü finden.</para>
 angepasst werden. Sie können auf den Konfigurationsdialog über die Auswahl 
 von <menuchoice><guimenu>Einstellungen</guimenu></menuchoice> 
 <guimenuitem>&bibletime; einrichten</guimenuitem>. gelangen.</para>
+
     <sect2 id="hdbk-config-bt-display">
       <title>
         <guimenu>Display</guimenu>
@@ -24,6 +25,21 @@ Optionen aus:
 usw.). Es sind mehrere eingebaute Vorlagen verfügbar. Nach Auswahl einer 
 Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,</para>
     </sect2>
+
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Many features provided by the Sword backend can now be customized in 
+&bibletime;. These features are documented right in the dialog.  You also 
+have the possibility to specify standard works that should be used when no 
+specific work is specified in a reference.  An example: The standard Bible 
+is used to display the content of cross references in the Bible.  When you 
+hover over them, the Mag will show the content of the verses referred to, 
+according to the standard Bible you specified.  With the use of text 
+filters, you can control the appearance of the text.</para>
+    </sect2>
+
     <sect2 id="hdbk-config-bt-languages">
       <title>
         <guimenu>Languages</guimenu>
@@ -164,30 +180,18 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode character
 ranges and the Unicode fonts that support them</ulink>).</para>
       </sect3>
     </sect2>
-    <sect2 id="hdbk-config-bt-desk">
+
+    <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Shortcuts</guimenu>
       </title>
-      <para>Viele Funktionen, die vom Sword-Backend zur Verfügung gestellt werden, 
-können nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften 
-sind im rechten Dialog dokumentiert. Ihnen ist außerdem ermöglicht, 
-Standardwerke zu definieren, wenn kein bestimmtes Werk in der Referenz 
-spezifiziert ist. Zum Beispiel wird die Standard-Bibel zur Darstellung des 
-Inhalts von Kreuzverweisen in der Bibel herangezogen. Wenn Sie über sie 
-fahren, wird die Lupe den Versinhalt anzeigen, auf den Bezug genommen wird, 
-gemäß der Standard-Bibel, die Sie spezifiziert haben.</para>
-    </sect2>
-    <sect2 id="hdbk-config-bt-hotkeys">
-      <title>
-        <guimenu>HotKeys</guimenu>
-      </title>
-      <para>Tastenkürzel sind spezielle Tastenbefehle, die an Stelle der Menüeinträge 
-oder Symbole verwendet werden können. Eine Anzahl von &bibletime;s Befehlen 
-hat bereits vordefinierte Tastenkürzel (<link 
-linkend="hdbk-reference-hotkeys">dieser Abschnitt</link> enthält eine 
-komplette Auflistung. Den meisten Befehlen von &bibletime; kann hier ein 
-Tastenkürzel zugewiesen werden. Dies ist sehr hilfreich, um die oftbenutzten 
-Funktionen schnell zu erreichen.</para>
+      <para>Shortcts (previously known as HotKeys) are special key commands that can be 
+used in the place of the menu items and icons. A number of &bibletime;'s 
+commands have predefined Shortcuts (see <link 
+linkend="hdbk-reference-shortcuts">this section</link> for a complete 
+listing). Most of &bibletime;'s commands can be assigned Shortcuts 
+here. This is very helpful to quickly access the functions that you need the 
+most.</para>
     </sect2>
   </sect1>
 </chapter>

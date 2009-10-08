@@ -2,12 +2,12 @@
   <title>Référence</title>
   <sect1 id="hdbk-reference-menus">
     <title>Référence du menu principal</title>
-    <para>Dans cette section vous trouverez des descriptions détaillées de toutes les 
-entrées du menu principal de &bibletime;. Ils sont classé dans l'ordre où 
-ils apparaissent dans&bibletime;, avec les éléments de sous-menu juste 
-en-dessous des du menu principal auxquels ils appartiennent. Vous pouvez 
-aussi voir le raccourci de chaque élément. Vous pouvez aussi consulter <link 
-linkend="hdbk-reference-hotkeys">la liste complète des raccourcis</link>.</para>
+    <para>In this section you can find detailed descriptions of all entries in the 
+main menu of &bibletime;. They are ordered in just the way they appear in 
+&bibletime;, with all the sub-items listed under the major menu item they 
+belong to. You can also see the shortcut of each item;a complete listing of 
+all shortcuts can be found in <link linkend="hdbk-reference-shortcuts">this 
+section</link>.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -793,20 +793,21 @@ works.
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-reference-hotkeys">
-    <title>Index des raccourcis</title>
-    <para>This is index of all hotkeys and their corresponding description in the 
-handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
-directly find out which hotkey a certain menu item has, you can either look 
-at the entry itself in &bibletime; (as it always shows the hotkey), or you 
-can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
+  <sect1 id="hdbk-reference-shortcuts">
+    <title>Shortcuts index</title>
+    <para>This is index of all shortcuts and their corresponding description in the 
+handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
+directly find out which shortcuts a certain menu item has, you can either 
+look at the entry itself in &bibletime; (as it always shows the shortcut), 
+or you can look it up in <link linkend="hdbk-reference-menus">this 
+section</link>.</para>
     <informaltable>
       <tgroup cols="2">
-        <colspec colname="hotkey" />
+        <colspec colname="shortcut" />
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Raccourci</entry>
+            <entry>Shortcut</entry>
             <entry>Description</entry>
           </row>
         </thead>

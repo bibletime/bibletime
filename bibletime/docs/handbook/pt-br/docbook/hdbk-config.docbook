@@ -8,6 +8,7 @@ que pode ser encontrado em <guimenu>Configuraes</guimenu> no menu principal.</pa
 maneiras, dependendo das suas necessidades. Voc pode acessar o dilogo de 
 configurao selecionando <menuchoice><guimenu>Configuraes</guimenu> 
 </menuchoice> <guimenuitem>Configurar &bibletime;</guimenuitem>.</para>
+
     <sect2 id="hdbk-config-bt-display">
       <title>
         <guimenu>Display</guimenu>
@@ -23,6 +24,21 @@ opes:
 modelos internos disponveis. Se voc escolher um, ir ver uma pr-visualizao no 
 painel direito.</para>
     </sect2>
+
+    <sect2 id="hdbk-config-bt-desk">
+      <title>
+        <guimenu>Desk</guimenu>
+      </title>
+      <para>Many features provided by the Sword backend can now be customized in 
+&bibletime;. These features are documented right in the dialog.  You also 
+have the possibility to specify standard works that should be used when no 
+specific work is specified in a reference.  An example: The standard Bible 
+is used to display the content of cross references in the Bible.  When you 
+hover over them, the Mag will show the content of the verses referred to, 
+according to the standard Bible you specified.  With the use of text 
+filters, you can control the appearance of the text.</para>
+    </sect2>
+
     <sect2 id="hdbk-config-bt-languages">
       <title>
         <guimenu>Languages</guimenu>
@@ -156,29 +172,18 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html">Faixas de caracteres
 Unicode e fontes Unicodes que as suportam</ulink>).</para>
       </sect3>
     </sect2>
-    <sect2 id="hdbk-config-bt-desk">
+
+    <sect2 id="hdbk-config-bt-shortcuts">
       <title>
-        <guimenu>Desk</guimenu>
+        <guimenu>Shortcuts</guimenu>
       </title>
-      <para>Muitos recursos providos pelo backend do Sword podem agora ser 
-personalizados no &bibletime;. Esses recursos esto documentados no prprio 
-dilogo. Voc tambm tem a possibilidade de especificar obras padres que devem 
-ser usadas quando nenhuma obra em particular  especificada numa 
-referncia. Um exemplo: a Bblia padro  usada para mostrar o contedo de 
-referncias cruzadas na Bblia. Quando voc passar por cima delas, a lupa vai 
-mostrar o contedo dos vesculos referidos, de acordo com a Bblia padro que 
-voc especificou.</para>
-    </sect2>
-    <sect2 id="hdbk-config-bt-hotkeys">
-      <title>
-        <guimenu>HotKeys</guimenu>
-      </title>
-      <para>Teclas de atalho so comandos de tecla especiais que podem ser usados no 
-lugar de itens de menu e cones. Vrios comandos do &bibletime; tm teclas de 
-atalho pr-definidas (veja <link linkend="hdbk-reference-hotkeys">esta 
-seo</link> para uma listagem completa). A maior parte dos comandos do 
-&bibletime; pode ser associado a teclas de atalho aqui. Isso  muito til para 
-acessar rapidamente as funes que voc mais usa.</para>
+      <para>Shortcts (previously known as HotKeys) are special key commands that can be 
+used in the place of the menu items and icons. A number of &bibletime;'s 
+commands have predefined Shortcuts (see <link 
+linkend="hdbk-reference-shortcuts">this section</link> for a complete 
+listing). Most of &bibletime;'s commands can be assigned Shortcuts 
+here. This is very helpful to quickly access the functions that you need the 
+most.</para>
     </sect2>
   </sect1>
 </chapter>

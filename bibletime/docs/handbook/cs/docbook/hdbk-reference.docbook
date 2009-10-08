@@ -2,12 +2,12 @@
   <title>Odkazy</title>
   <sect1 id="hdbk-reference-menus">
     <title>Odkazy Hlavního menu</title>
-    <para>V této sekci najdete detailní popis všech položek základního menu 
-&bibletime;. Jsou roztříděné stejně, jak se objevují v &bibletime;, včetně 
-podřízených položek zaznamenaných pod hlavní položkou menu ke které 
-náleží. Horké klávesy můžete vidět u každé položky; kompletní seznam všech 
-horkých kláves naleznete v <link linkend="hdbk-reference-hotkeys">této 
-sekci</link>.</para>
+    <para>In this section you can find detailed descriptions of all entries in the 
+main menu of &bibletime;. They are ordered in just the way they appear in 
+&bibletime;, with all the sub-items listed under the major menu item they 
+belong to. You can also see the shortcut of each item;a complete listing of 
+all shortcuts can be found in <link linkend="hdbk-reference-shortcuts">this 
+section</link>.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -789,21 +789,21 @@ informace o verzi &bibletime;, přispěvatelích projektu, verzi &sword;, verzi
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-reference-hotkeys">
-    <title>Seznam horkých kláves</title>
-    <para>Toto je seznam všech horkých kláves a s nimi souvisejícího popisu v 
-příručce. Horké klávesy jsou setříděny (přibližně) abecedně. Pokud chcete 
-přesně vědět která z horkých kláves odpovídá té které položce menu, můžete 
-se podívat přímo do nabídek &bibletime; (vždy se zde zobrazují horké 
-klávesy), nebo si prohlédněte <link linkend="hdbk-reference-menus">tuto 
-sekci</link>.</para>
+  <sect1 id="hdbk-reference-shortcuts">
+    <title>Shortcuts index</title>
+    <para>This is index of all shortcuts and their corresponding description in the 
+handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
+directly find out which shortcuts a certain menu item has, you can either 
+look at the entry itself in &bibletime; (as it always shows the shortcut), 
+or you can look it up in <link linkend="hdbk-reference-menus">this 
+section</link>.</para>
     <informaltable>
       <tgroup cols="2">
-        <colspec colname="hotkey" />
+        <colspec colname="shortcut" />
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Klávesová zkratka</entry>
+            <entry>Shortcut</entry>
             <entry>Popis</entry>
           </row>
         </thead>

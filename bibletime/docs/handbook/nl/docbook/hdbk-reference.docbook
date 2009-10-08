@@ -2,12 +2,12 @@
   <title>Verwijzing</title>
   <sect1 id="hdbk-reference-menus">
     <title>Hoofdmenu verwijzing</title>
-    <para>In deze sectie kunt u gedetailleerde beschrijvingen vinden van alle items in 
-het hoofdmenu van &bibletime;. Ze zijn in precies dezelfde volgorde 
-gerangschikt als ze voorkomen in &bibletime;, met alle sub-items genoemd 
-onder het hoofd-item waartoe ze behoren. U kunt ook de sneltoets voor elk 
-item zien; een complete lijst van alle sneltoetsen kunt u vinden in <link 
-linkend="hdbk-reference-hotkeys">deze sectie</link>.</para>
+    <para>In this section you can find detailed descriptions of all entries in the 
+main menu of &bibletime;. They are ordered in just the way they appear in 
+&bibletime;, with all the sub-items listed under the major menu item they 
+belong to. You can also see the shortcut of each item;a complete listing of 
+all shortcuts can be found in <link linkend="hdbk-reference-shortcuts">this 
+section</link>.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -795,20 +795,21 @@ works.
     </sect2>
   </sect1>
 
-  <sect1 id="hdbk-reference-hotkeys">
-    <title>Sneltoetsen index</title>
-    <para>This is index of all hotkeys and their corresponding description in the 
-handbook. The hotkeys are sorted (roughly)  alphabetical. If you want to 
-directly find out which hotkey a certain menu item has, you can either look 
-at the entry itself in &bibletime; (as it always shows the hotkey), or you 
-can look it up in <link linkend="hdbk-reference-menus">this section</link>.</para>
+  <sect1 id="hdbk-reference-shortcuts">
+    <title>Shortcuts index</title>
+    <para>This is index of all shortcuts and their corresponding description in the 
+handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
+directly find out which shortcuts a certain menu item has, you can either 
+look at the entry itself in &bibletime; (as it always shows the shortcut), 
+or you can look it up in <link linkend="hdbk-reference-menus">this 
+section</link>.</para>
     <informaltable>
       <tgroup cols="2">
-        <colspec colname="hotkey" />
+        <colspec colname="shortcut" />
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Sneltoets</entry>
+            <entry>Shortcut</entry>
             <entry>Beschrijving</entry>
           </row>
         </thead>
