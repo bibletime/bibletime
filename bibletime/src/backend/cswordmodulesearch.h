@@ -72,7 +72,6 @@ public:
 	const sword::ListKey& searchScope() const;
 
 	void connectFinished( QObject * receiver, const char * member );
-	void searchFinished();
 
 	/**
 	* Returns true if all of the specified modules have indices already built.

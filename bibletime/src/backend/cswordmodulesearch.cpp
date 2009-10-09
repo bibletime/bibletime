@@ -103,12 +103,6 @@ void CSwordModuleSearch::connectFinished( QObject *receiver, const char *member 
 	QObject::connect(this, SIGNAL(finished()), receiver, member);
 }
 
-/** Should be called when the search finished. */
-void CSwordModuleSearch::searchFinished() {
-	//m_finishedSig.activate();
-	emit finished();
-}
-
 bool CSwordModuleSearch::modulesHaveIndices( const QList<CSwordModuleInfo*>& modules )
 {
 	bool hasIndices = true;
