@@ -24,8 +24,6 @@ ELSE(CMAKE_SYSTEM MATCHES "BSD")
 	SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl")
 ENDIF(CMAKE_SYSTEM MATCHES "BSD")
 
-MESSAGE(STATUS "XSL FILE TO BE USED: ${BT_DOCBOOK_XSL}")
-
 ######################################################
 # Update handbook
 ADD_CUSTOM_TARGET("handbook")
