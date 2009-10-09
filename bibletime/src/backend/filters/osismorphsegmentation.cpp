@@ -19,65 +19,65 @@ const sword::SWBuf Filters::OSISMorphSegmentation::choices[3] = {"Off", "On", ""
 const sword::StringList Filters::OSISMorphSegmentation::oValues(&choices[0], &choices[2]);
 
 Filters::OSISMorphSegmentation::OSISMorphSegmentation() : sword::SWOptionFilter(oName, oTip, &oValues) {
-		setOptionValue("Off");
-	}
+    setOptionValue("Off");
+}
 
 Filters::OSISMorphSegmentation::~OSISMorphSegmentation() {}
 
 char Filters::OSISMorphSegmentation::processText(sword::SWBuf &text, const sword::SWKey */*key*/, const sword::SWModule */*module*/) {
-	sword::SWBuf token;
-	bool intoken    = false;
-	bool hide       = false;
+    sword::SWBuf token;
+    bool intoken    = false;
+    bool hide       = false;
 
-	sword::SWBuf orig( text );
-	const char *from = orig.c_str();
+    sword::SWBuf orig( text );
+    const char *from = orig.c_str();
 
-	sword::XMLTag tag;
+    sword::XMLTag tag;
 
-	for (text = ""; *from; ++from) {
-		if (*from == '<') {
-			intoken = true;
-			token = "";
-			continue;
-		}
+    for (text = ""; *from; ++from) {
+        if (*from == '<') {
+            intoken = true;
+            token = "";
+            continue;
+        }
 
-		if (*from == '>') { // process tokens
-			intoken = false;
+        if (*from == '>') { // process tokens
+            intoken = false;
 
-			if (!strncmp(token.c_str(), "seg ", 4) || !strncmp(token.c_str(), "/seg", 4)) {
-				tag = token;
+            if (!strncmp(token.c_str(), "seg ", 4) || !strncmp(token.c_str(), "/seg", 4)) {
+                tag = token;
 
-				if (!tag.isEndTag() && tag.getAttribute("type") && !strcmp("morph", tag.getAttribute("type"))) {  //<seg type="morph"> start tag
-					hide = (option == 0); //only hide if option is Off
-				}
+                if (!tag.isEndTag() && tag.getAttribute("type") && !strcmp("morph", tag.getAttribute("type"))) {  //<seg type="morph"> start tag
+                    hide = (option == 0); //only hide if option is Off
+                }
 
-				if (hide) { //hides start and end tags as long as hide is set
+                if (hide) { //hides start and end tags as long as hide is set
 
-					if (tag.isEndTag()) { //</seg>
-						hide = false;
-					}
+                    if (tag.isEndTag()) { //</seg>
+                        hide = false;
+                    }
 
-					continue; //leave out the current token
-				}
-			} //end of seg tag handling
+                    continue; //leave out the current token
+                }
+            } //end of seg tag handling
 
-			text.append('<');
-			text.append(token);
-			text.append('>');
+            text.append('<');
+            text.append(token);
+            text.append('>');
 
-			//				hide = false; //not right, because there may be child tags in seg. Only /seg may disable the seg hiding.
+            //				hide = false; //not right, because there may be child tags in seg. Only /seg may disable the seg hiding.
 
-			continue;
-		} //end of intoken part
+            continue;
+        } //end of intoken part
 
-		if (intoken) { //copy token
-			token.append(*from);
-		}
-		else { //copy text which is not inside of a tag
-			text.append(*from);
-		}
-	}
+        if (intoken) { //copy token
+            token.append(*from);
+        }
+        else { //copy text which is not inside of a tag
+            text.append(*from);
+        }
+    }
 
-	return 0;
+    return 0;
 }
 

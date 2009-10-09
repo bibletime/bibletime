@@ -14,18 +14,17 @@
 
 namespace Search {
 
-class CHistoryComboBox : public QComboBox
-{
-	Q_OBJECT
-public:
-	CHistoryComboBox(QWidget* parent = 0);
-	~CHistoryComboBox();
-	void addToHistory(const QString& item);
-	QStringList historyItems() const;
+class CHistoryComboBox : public QComboBox {
+        Q_OBJECT
+    public:
+        CHistoryComboBox(QWidget* parent = 0);
+        ~CHistoryComboBox();
+        void addToHistory(const QString& item);
+        QStringList historyItems() const;
 
-protected: 
+    protected:
 
-private:
+    private:
 };
 
 } //end of namespace Search

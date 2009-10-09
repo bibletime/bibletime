@@ -18,7 +18,7 @@
 class CSwordModuleInfo;
 
 class BtBookshelfView: public QTreeView {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BtBookshelfView(QWidget *parent = 0);
         virtual ~BtBookshelfView();

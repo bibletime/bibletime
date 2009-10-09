@@ -15,8 +15,7 @@
 namespace BookshelfModel {
 
 DistributionItem::DistributionItem(CSwordModuleInfo *module)
-    : Item(ITEM_DISTRIBUTION)
-{
+        : Item(ITEM_DISTRIBUTION) {
     m_distribution = module->config(CSwordModuleInfo::DistributionSource);
 }
 

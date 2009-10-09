@@ -22,7 +22,7 @@
 namespace BookshelfModel {
 
 class CategoryItem: public Item {
-    Q_DECLARE_TR_FUNCTIONS(CategoryItem);
+        Q_DECLARE_TR_FUNCTIONS(CategoryItem);
 
     public:
         static const Item::Type GROUP_TYPE = Item::ITEM_CATEGORY;

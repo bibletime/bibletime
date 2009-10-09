@@ -27,26 +27,25 @@ class QTreeWidgetItem;
 * Confirmation dialog for installation. Lets the user
 * uncheck modules from the list.
 */
-class BtInstallModuleChooserDialog : public CModuleChooserDialog
-{
-	Q_OBJECT
+class BtInstallModuleChooserDialog : public CModuleChooserDialog {
+        Q_OBJECT
 
-public:
-	BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty);
+    public:
+        BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty);
 
-	void initModuleItem(QString name, QTreeWidgetItem* sourceItem);
-	void enableOk(bool enabled);
+        void initModuleItem(QString name, QTreeWidgetItem* sourceItem);
+        void enableOk(bool enabled);
 
-public slots:
-	void slotItemChecked(QTreeWidgetItem* item, int column);
+    public slots:
+        void slotItemChecked(QTreeWidgetItem* item, int column);
 
-protected:
-	virtual void initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*);
+    protected:
+        virtual void initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*);
 
-	QList<QTreeWidgetItem*> findModuleItemsByName(QString name);
-private:
-	QStringList m_nameList;
-	QMap<QString, bool> m_doubleCheckedModules;
+        QList<QTreeWidgetItem*> findModuleItemsByName(QString name);
+    private:
+        QStringList m_nameList;
+        QMap<QString, bool> m_doubleCheckedModules;
 
 };
 

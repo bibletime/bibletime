@@ -20,17 +20,17 @@ namespace Rendering {
  */
 
 class CDisplayRendering : public CHTMLExportRendering {
-public:
-	static const QString keyToHTMLAnchor(const QString& key);
+    public:
+        static const QString keyToHTMLAnchor(const QString& key);
 
-	CDisplayRendering(
-		CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
-		CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
-	);
+        CDisplayRendering(
+            CSwordBackend::DisplayOptions displayOptions = CBTConfig::getDisplayOptionDefaults(),
+            CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults()
+        );
 
-protected:
-	virtual const QString entryLink( const KeyTreeItem& item, CSwordModuleInfo* const module );
-	virtual const QString finishText( const QString&, KeyTree& tree );
+    protected:
+        virtual const QString entryLink( const KeyTreeItem& item, CSwordModuleInfo* const module );
+        virtual const QString finishText( const QString&, KeyTree& tree );
 };
 
 }

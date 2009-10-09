@@ -19,14 +19,13 @@ namespace Search {
 /**
 	@author The BibleTime team <info@bibletime.info>
 */
-class CSearchAnalysisLegendItem : public QGraphicsRectItem
-{
-public:
-	CSearchAnalysisLegendItem(QList<CSwordModuleInfo*>* list );
+class CSearchAnalysisLegendItem : public QGraphicsRectItem {
+    public:
+        CSearchAnalysisLegendItem(QList<CSwordModuleInfo*>* list );
 
-private:
-	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
-	QList<CSwordModuleInfo*>* m_moduleList;
+    private:
+        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+        QList<CSwordModuleInfo*>* m_moduleList;
 
 };
 

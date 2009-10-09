@@ -17,8 +17,7 @@
 #include "util/directoryutil.h"
 
 BtBookshelfModel::BtBookshelfModel(QObject *parent)
-    : QAbstractListModel(parent)
-{
+        : QAbstractListModel(parent) {
     // Intentionally empty
 }
 
@@ -50,19 +49,16 @@ QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
 }
 
 QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,
-                                      int role) const
-{
+                                      int role) const {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal &&
-        section == 0)
-    {
+            section == 0) {
         return tr("Module");
     }
 
     return QVariant();
 }
 
-QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category)
-{
+QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
     typedef util::filesystem::DirectoryUtil DU;
 
     switch (category) {
@@ -89,8 +85,7 @@ QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category)
 }
 
 QString BtBookshelfModel::categoryName(
-            const CSwordModuleInfo::Category &category)
-{
+    const CSwordModuleInfo::Category &category) {
     switch (category) {
         case CSwordModuleInfo::Bibles:
             return tr("Bibles");
@@ -114,8 +109,7 @@ QString BtBookshelfModel::categoryName(
 }
 
 QString BtBookshelfModel::languageName(
-        const CLanguageMgr::Language *language)
-{
+    const CLanguageMgr::Language *language) {
     return language->translatedName();
 }
 

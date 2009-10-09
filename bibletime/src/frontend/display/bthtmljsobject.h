@@ -14,48 +14,46 @@
 
 class BtHtmlReadDisplay;
 
-class BtHtmlJsObject: public QObject
-{
-	Q_OBJECT
+class BtHtmlJsObject: public QObject {
+        Q_OBJECT
 
-public:
-	BtHtmlJsObject(BtHtmlReadDisplay* display);
-	~BtHtmlJsObject(){}
-	void moveToAnchor(const QString& anchor);
-	void setBodyEditable(bool editable);
-    void clearPrevAttribute();
+    public:
+        BtHtmlJsObject(BtHtmlReadDisplay* display);
+        ~BtHtmlJsObject() {}
+        void moveToAnchor(const QString& anchor);
+        void setBodyEditable(bool editable);
+        void clearPrevAttribute();
 
-public slots: void mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey);
-	void mouseClick(const QString& url);
-	void mouseDownLeft(const QString& url, const int& X, const int& Y);
-	void mouseDownRight(const QString& url, const QString& lemma);
-	void timeOutEvent(const QString& attributes);
+    public slots:
+        void mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey);
+        void mouseClick(const QString& url);
+        void mouseDownLeft(const QString& url, const int& X, const int& Y);
+        void mouseDownRight(const QString& url, const QString& lemma);
+        void timeOutEvent(const QString& attributes);
 
-signals:
-	void startTimer(int time);
-	void mouseMoveAttribute(const QString& attrName, const QString& attrValue);
-	void gotoAnchor(const QString& anchor);
-	void selectAll();
-	void setDocumentEditable();
-	void setDocumentNotEditable();
+    signals:
+        void startTimer(int time);
+        void mouseMoveAttribute(const QString& attrName, const QString& attrValue);
+        void gotoAnchor(const QString& anchor);
+        void selectAll();
+        void setDocumentEditable();
+        void setDocumentNotEditable();
 
-private:
-	int m_int;
-	BtHtmlReadDisplay* m_display;
-    QString m_prev_attributes;
+    private:
+        int m_int;
+        BtHtmlReadDisplay* m_display;
+        QString m_prev_attributes;
 
-	struct DNDData 
-	{
-		bool mousePressed;
-		bool isDragging;
-		QPoint startPos;
-		QString url;
-		enum DragType 
-		{
-			Link,
-			Text
-		} dragType;
-	}		m_dndData;
+        struct DNDData {
+            bool mousePressed;
+            bool isDragging;
+            QPoint startPos;
+            QString url;
+            enum DragType {
+                Link,
+                Text
+            } dragType;
+        }		m_dndData;
 
 };
 

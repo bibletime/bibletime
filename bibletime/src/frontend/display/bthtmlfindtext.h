@@ -14,22 +14,21 @@
 class CMDIArea;
 class QWebView;
 
-class BtHtmlFindText : public QDialog
-{
-	Q_OBJECT
+class BtHtmlFindText : public QDialog {
+        Q_OBJECT
 
-public:
-	BtHtmlFindText(CMDIArea* mdiArea, QWidget *parent=0, Qt::WindowFlags f=0);
-	~BtHtmlFindText();
-public slots:
-	void findNext();
-	void findPrevious();
-	void doHide();
-private:
-	QWebView* getActiveWindowWebView();
-	Ui_findTextDialog ui;
-	CMDIArea* m_mdiArea;
+    public:
+        BtHtmlFindText(CMDIArea* mdiArea, QWidget *parent = 0, Qt::WindowFlags f = 0);
+        ~BtHtmlFindText();
+    public slots:
+        void findNext();
+        void findPrevious();
+        void doHide();
+    private:
+        QWebView* getActiveWindowWebView();
+        Ui_findTextDialog ui;
+        CMDIArea* m_mdiArea;
 };
 
 
-#endif 
+#endif

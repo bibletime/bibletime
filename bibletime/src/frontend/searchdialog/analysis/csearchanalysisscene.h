@@ -28,57 +28,57 @@ class CSearchAnalysisLegendItem;
 	@author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisScene : public QGraphicsScene {
-	Q_OBJECT
-public:
-    CSearchAnalysisScene(QObject* parent);
+        Q_OBJECT
+    public:
+        CSearchAnalysisScene(QObject* parent);
 
-    virtual ~CSearchAnalysisScene() {}
+        virtual ~CSearchAnalysisScene() {}
 
-	/**
-	* Starts the analysis of the search result.
-	* This should be called only once because
-	* QCanvas handles the updates automatically.
-	*/
-	void analyse(QList<CSwordModuleInfo*> modules);
-	/**
-	* This function returns a color for each module
-	* @return The color at position index in the list
-	*/
-	static QColor getColor(int index);
-	/**
-	* This function returns a pointer to the list of AnalysisItems
-	*/
-	QHash<QString, CSearchAnalysisItem*>* getSearchAnalysisItemList();
-	void reset();
-	/**
-	 * resize the height of the scene
-	 */
-	void resizeHeight(int height);
+        /**
+        * Starts the analysis of the search result.
+        * This should be called only once because
+        * QCanvas handles the updates automatically.
+        */
+        void analyse(QList<CSwordModuleInfo*> modules);
+        /**
+        * This function returns a color for each module
+        * @return The color at position index in the list
+        */
+        static QColor getColor(int index);
+        /**
+        * This function returns a pointer to the list of AnalysisItems
+        */
+        QHash<QString, CSearchAnalysisItem*>* getSearchAnalysisItemList();
+        void reset();
+        /**
+         * resize the height of the scene
+         */
+        void resizeHeight(int height);
 
-public slots:
-	void saveAsHTML();
+    public slots:
+        void saveAsHTML();
 
-protected slots: // Protected slots
-	/**
-	* No descriptions
-	*/
-	void slotResized();
+    protected slots: // Protected slots
+        /**
+        * No descriptions
+        */
+        void slotResized();
 
-protected:
-	void setModules(QList<CSwordModuleInfo*> modules);
+    protected:
+        void setModules(QList<CSwordModuleInfo*> modules);
 
-private:
-	/**
-	* Returns the count of the book in the module
-	*/
-	unsigned int getCount( const QString book, CSwordModuleInfo* module );
+    private:
+        /**
+        * Returns the count of the book in the module
+        */
+        unsigned int getCount( const QString book, CSwordModuleInfo* module );
 
-	QList<CSwordModuleInfo*> m_moduleList;
-	QHash<QString, CSearchAnalysisItem*> m_itemList;
-	QMap<CSwordModuleInfo*,unsigned int> m_lastPosList;
-	int m_maxCount;
-	double m_scaleFactor;
-	CSearchAnalysisLegendItem* m_legend;
+        QList<CSwordModuleInfo*> m_moduleList;
+        QHash<QString, CSearchAnalysisItem*> m_itemList;
+        QMap<CSwordModuleInfo*, unsigned int> m_lastPosList;
+        int m_maxCount;
+        double m_scaleFactor;
+        CSearchAnalysisLegendItem* m_legend;
 
 
 };

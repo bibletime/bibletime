@@ -33,53 +33,53 @@ class QHBoxLayout;
   * @author The BibleTime team
   */
 class CLexiconKeyChooser : public CKeyChooser  {
-	Q_OBJECT
-public:
-	/**
-	* The constructor
-	*
-	* you should not need to use this, use @ref CKeyChooser::createInstance instead
-	*/
-	CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
+        Q_OBJECT
+    public:
+        /**
+        * The constructor
+        *
+        * you should not need to use this, use @ref CKeyChooser::createInstance instead
+        */
+        CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
 
-public slots:
-	/**
-	* see @ref CKeyChooser::getKey
-	* @return Return the key object we use.
-	*/
-	virtual CSwordKey* key();
-	/**
-	* see @ref CKeyChooser::setKey
-	*/
-	virtual void setKey(CSwordKey* key);
-	/**
-	* used to react to changes in the @ref CKeyChooserWidget
-	*
-	* @param index not used
-	**/
-	virtual void activated(int index);
-	/**
-	* Reimplementation.
-	*/
-	virtual void refreshContent();
-	/**
-	* Sets the module and refreshes the combo boxes of this keychooser.
-	*/
-	virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true );
+    public slots:
+        /**
+        * see @ref CKeyChooser::getKey
+        * @return Return the key object we use.
+        */
+        virtual CSwordKey* key();
+        /**
+        * see @ref CKeyChooser::setKey
+        */
+        virtual void setKey(CSwordKey* key);
+        /**
+        * used to react to changes in the @ref CKeyChooserWidget
+        *
+        * @param index not used
+        **/
+        virtual void activated(int index);
+        /**
+        * Reimplementation.
+        */
+        virtual void refreshContent();
+        /**
+        * Sets the module and refreshes the combo boxes of this keychooser.
+        */
+        virtual void setModules( const QList<CSwordModuleInfo*>& modules, const bool refresh = true );
 
-protected:
-	CKeyChooserWidget *m_widget;
-	CSwordLDKey* m_key;
-	QList<CSwordLexiconModuleInfo*> m_modules;
-	QHBoxLayout *m_layout;
+    protected:
+        CKeyChooserWidget *m_widget;
+        CSwordLDKey* m_key;
+        QList<CSwordLexiconModuleInfo*> m_modules;
+        QHBoxLayout *m_layout;
 
-	virtual void adjustFont();
+        virtual void adjustFont();
 
-public slots: // Public slots
-	virtual void updateKey(CSwordKey* key);
+    public slots: // Public slots
+        virtual void updateKey(CSwordKey* key);
 
-protected slots:
-	virtual void setKey(QString& newKey);
+    protected slots:
+        virtual void setKey(QString& newKey);
 
 };
 

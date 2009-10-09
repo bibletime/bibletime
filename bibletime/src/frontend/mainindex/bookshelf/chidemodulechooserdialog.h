@@ -20,22 +20,21 @@ class BTModuleTreeItem;
 
 
 
-class CHideModuleChooserDialog : public CModuleChooserDialog
-{
-	Q_OBJECT
-public:
-	CHideModuleChooserDialog(QWidget* parent, QString title, QString label, QString currentModule);
-	~CHideModuleChooserDialog() {}
+class CHideModuleChooserDialog : public CModuleChooserDialog {
+        Q_OBJECT
+    public:
+        CHideModuleChooserDialog(QWidget* parent, QString title, QString label, QString currentModule);
+        ~CHideModuleChooserDialog() {}
 
-protected:
-	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
-protected slots:
-	void applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules);
-		
+    protected:
+        virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
+    protected slots:
+        void applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules);
 
-private:
-	QString m_currentModule;
-	QTreeWidgetItem* m_focusItem;
+
+    private:
+        QString m_currentModule;
+        QTreeWidgetItem* m_focusItem;
 };
 
 

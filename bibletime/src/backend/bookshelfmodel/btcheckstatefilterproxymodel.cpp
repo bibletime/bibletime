@@ -13,9 +13,8 @@
 #include "backend/bookshelfmodel/btcheckstatefilterproxymodel.h"
 
 BtCheckStateFilterProxyModel::BtCheckStateFilterProxyModel(QObject *parent)
-    : QSortFilterProxyModel(parent), m_enabled(true), m_showChecked(true),
-      m_showUnchecked(false), m_showPartiallyChecked(true)
-{
+        : QSortFilterProxyModel(parent), m_enabled(true), m_showChecked(true),
+        m_showUnchecked(false), m_showPartiallyChecked(true) {
     setFilterRole(Qt::CheckStateRole);
 }
 
@@ -48,8 +47,7 @@ void BtCheckStateFilterProxyModel::setShowPartiallyChecked(bool show) {
 }
 
 bool BtCheckStateFilterProxyModel::filterAcceptsRow(int row,
-        const QModelIndex &parent) const
-{
+        const QModelIndex &parent) const {
     typedef Qt::CheckState CS;
 
     if (!m_enabled) return true;
@@ -62,9 +60,11 @@ bool BtCheckStateFilterProxyModel::filterAcceptsRow(int row,
              state == Qt::PartiallyChecked);
     if (state == Qt::Unchecked) {
         return m_showUnchecked;
-    } else if (state == Qt::Checked) {
+    }
+    else if (state == Qt::Checked) {
         return m_showChecked;
-    } else {
+    }
+    else {
         return m_showPartiallyChecked;
     }
 }

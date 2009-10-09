@@ -26,51 +26,51 @@ class QWidget;
   * @author The BibleTime team
   */
 class CModuleChooserBar : public QToolBar  {
-	Q_OBJECT
-public:
-	/**
-	* Default constructor
-	*/
-	CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent=0);
-	/**
-	* Returns a list of selected modules.
-	*/
-	QList<CSwordModuleInfo*> getModuleList();
-	/**
-	* Sets the number of the maximum count of buttons.
-	*/
-	void setButtonLimit( const int limit);
-	/**
-	* Sets the modules which are chosen in this module chooser bar.
-	*/
-	void setModules( QList<CSwordModuleInfo*> modules );
+        Q_OBJECT
+    public:
+        /**
+        * Default constructor
+        */
+        CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSwordModuleInfo::ModuleType type,  QWidget *parent = 0);
+        /**
+        * Returns a list of selected modules.
+        */
+        QList<CSwordModuleInfo*> getModuleList();
+        /**
+        * Sets the number of the maximum count of buttons.
+        */
+        void setButtonLimit( const int limit);
+        /**
+        * Sets the modules which are chosen in this module chooser bar.
+        */
+        void setModules( QList<CSwordModuleInfo*> modules );
 
-signals:
-	void sigChanged();
+    signals:
+        void sigChanged();
 
-protected:
-	/**
-	 * Adds a button to the toolbar
-	 */
-	CModuleChooserButton* addButton( CSwordModuleInfo* const module );
+    protected:
+        /**
+         * Adds a button to the toolbar
+         */
+        CModuleChooserButton* addButton( CSwordModuleInfo* const module );
 
-protected slots: // Protected slots
-	/*
-	* This slot calls the addButton function above to add a button.
-	*/
-	void addButton();
-	/**
-	* Removes a button from the toolbar
-	*/
-	void removeButton( const int ID );
-	/** */
-	void updateMenuItems();
+    protected slots: // Protected slots
+        /*
+        * This slot calls the addButton function above to add a button.
+        */
+        void addButton();
+        /**
+        * Removes a button from the toolbar
+        */
+        void removeButton( const int ID );
+        /** */
+        void updateMenuItems();
 
-private:
-	CSwordModuleInfo::ModuleType m_moduleType;
-	int m_idCounter;
-	int m_buttonLimit;
-	QList<CModuleChooserButton*> m_buttonList;
+    private:
+        CSwordModuleInfo::ModuleType m_moduleType;
+        int m_idCounter;
+        int m_buttonLimit;
+        QList<CModuleChooserButton*> m_buttonList;
 
 };
 

@@ -14,23 +14,22 @@
 #include <QtTest/QtTest>
 
 
-void BibleTimeTest::frontend_cbtconfig_test() 
-{
-	QList<int> value1;
-	value1 << -1 << 0 << 1 << 993738;
-	QString value1String("-1,0,1,993738"); 
-	QList<int> emptyValue;
-	QString emptyValueString("");
+void BibleTimeTest::frontend_cbtconfig_test() {
+    QList<int> value1;
+    value1 << -1 << 0 << 1 << 993738;
+    QString value1String("-1,0,1,993738");
+    QList<int> emptyValue;
+    QString emptyValueString("");
 
-	//conversion checks int-string
-	QCOMPARE(CBTConfig::IntListToString(value1), value1String);
-	QCOMPARE(CBTConfig::IntListToString(emptyValue), emptyValueString);
+    //conversion checks int-string
+    QCOMPARE(CBTConfig::IntListToString(value1), value1String);
+    QCOMPARE(CBTConfig::IntListToString(emptyValue), emptyValueString);
 
-	//conversion checks string-int
-	QCOMPARE(CBTConfig::StringToIntList(value1String), value1);
-	QCOMPARE(CBTConfig::StringToIntList(emptyValueString), emptyValue);
-	
-	//roundtrip checks
-	QCOMPARE(CBTConfig::StringToIntList(CBTConfig::IntListToString(value1)), value1);
-	QCOMPARE(CBTConfig::StringToIntList(CBTConfig::IntListToString(emptyValue)), emptyValue);
+    //conversion checks string-int
+    QCOMPARE(CBTConfig::StringToIntList(value1String), value1);
+    QCOMPARE(CBTConfig::StringToIntList(emptyValueString), emptyValue);
+
+    //roundtrip checks
+    QCOMPARE(CBTConfig::StringToIntList(CBTConfig::IntListToString(value1)), value1);
+    QCOMPARE(CBTConfig::StringToIntList(CBTConfig::IntListToString(emptyValue)), emptyValue);
 }

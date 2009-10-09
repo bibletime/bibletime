@@ -26,77 +26,82 @@ class QDialogButtonBox;
 * The dialog will be destroyed after closing. Connect the modulesChanged() signal
 * to handle the selection before the dialog is destroyed.
 */
-class CModuleChooserDialog : public QDialog
-{
-	Q_OBJECT
-public:
-	
-	/**
-	* Use your own constructor to set extra members.
-	* Filters list is given to the module tree creator, see BTModuleTreeItem.
-	* For module list see BTModuleTreeItem constructor documentation.
-	* Call init() after the constructor, either in the end of your own constructor or from outside.
-	*/
-	CModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* allModules = 0);
-	
-	virtual ~CModuleChooserDialog() {}
-	
-	/** Call this after/from the constructor.*/
-	void init();
-	
-	/** Set the module tree grouping.
-	* Initially it's taken from the CBTConfig so it needs to be set only if that default is not adequate.
-	* This must be called before the tree is initialized, i.e. before init().
-	*/
-	void setGrouping(BTModuleTreeItem::Grouping grouping) {m_grouping = grouping;}
-	
-	/** Set the module tree filters. See setGrouping() for the calling convention and
-	* BTModuleTreeItem for the filters. By default the filters list is empty.
-	*/
-	void setFilters(QList<BTModuleTreeItem::Filter*> filters) {m_filters = filters;}
+class CModuleChooserDialog : public QDialog {
+        Q_OBJECT
+    public:
 
-	QTreeWidget* treeWidget() {return m_moduleChooser;}
+        /**
+        * Use your own constructor to set extra members.
+        * Filters list is given to the module tree creator, see BTModuleTreeItem.
+        * For module list see BTModuleTreeItem constructor documentation.
+        * Call init() after the constructor, either in the end of your own constructor or from outside.
+        */
+        CModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* allModules = 0);
 
-	QPushButton* okButton();
+        virtual ~CModuleChooserDialog() {}
 
-signals:
-	
-	/** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. The tree widget can be used through the pointer for more complicated actions. */
-	void modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*);
+        /** Call this after/from the constructor.*/
+        void init();
 
-protected:
+        /** Set the module tree grouping.
+        * Initially it's taken from the CBTConfig so it needs to be set only if that default is not adequate.
+        * This must be called before the tree is initialized, i.e. before init().
+        */
+        void setGrouping(BTModuleTreeItem::Grouping grouping) {
+            m_grouping = grouping;
+        }
 
-	/**
-	* Initialize one tree widget item.
-	* To be overridden. This is called for each QTreeWidgetItem when it is created.
-	* Here you can set for example the checked status of the item.
-	*/
-	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem) = 0;
-	
+        /** Set the module tree filters. See setGrouping() for the calling convention and
+        * BTModuleTreeItem for the filters. By default the filters list is empty.
+        */
+        void setFilters(QList<BTModuleTreeItem::Filter*> filters) {
+            m_filters = filters;
+        }
 
-	
-private slots:
-	
-	/** Emits the signal modulesChanged() with the list of the selected modules. */
-	void slotOk();
+        QTreeWidget* treeWidget() {
+            return m_moduleChooser;
+        }
 
-private:
-	/** Initialize the module tree.	*/
-	void initTree();
+        QPushButton* okButton();
 
-	/** Initializes the view of this dialog.*/
-	void initView();
+    signals:
 
-	/** Call this from initTree(). */
-	void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+        /** The signal is sent when the OK button is clicked. The list includes the selected (checked) modules. The tree widget can be used through the pointer for more complicated actions. */
+        void modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*);
 
-	QTreeWidget *m_moduleChooser;
-	QDialogButtonBox *m_buttonBox;
-	QString m_title;
-	QString m_labelText;
-	QList<BTModuleTreeItem::Filter*> m_filters;
-	BTModuleTreeItem::Grouping m_grouping;
-	QList<CSwordModuleInfo*> m_moduleList;
+    protected:
+
+        /**
+        * Initialize one tree widget item.
+        * To be overridden. This is called for each QTreeWidgetItem when it is created.
+        * Here you can set for example the checked status of the item.
+        */
+        virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem) = 0;
+
+
+
+    private slots:
+
+        /** Emits the signal modulesChanged() with the list of the selected modules. */
+        void slotOk();
+
+    private:
+        /** Initialize the module tree.	*/
+        void initTree();
+
+        /** Initializes the view of this dialog.*/
+        void initView();
+
+        /** Call this from initTree(). */
+        void createModuleTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+
+        QTreeWidget *m_moduleChooser;
+        QDialogButtonBox *m_buttonBox;
+        QString m_title;
+        QString m_labelText;
+        QList<BTModuleTreeItem::Filter*> m_filters;
+        BTModuleTreeItem::Grouping m_grouping;
+        QList<CSwordModuleInfo*> m_moduleList;
 };
 
 

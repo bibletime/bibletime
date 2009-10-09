@@ -13,29 +13,26 @@
 #include <QTreeWidgetItem>
 #include <QDropEvent>
 
-BtBookmarkItemBase::BtBookmarkItemBase()
-{}
+BtBookmarkItemBase::BtBookmarkItemBase() {}
 
 BtBookmarkItemBase::BtBookmarkItemBase(QTreeWidgetItem* parent)
-	: QTreeWidgetItem(parent)
-{}
+        : QTreeWidgetItem(parent) {}
 
-CBookmarkIndex* BtBookmarkItemBase::bookmarkWidget() const
-{
-	return dynamic_cast<CBookmarkIndex*>(treeWidget());
+CBookmarkIndex* BtBookmarkItemBase::bookmarkWidget() const {
+    return dynamic_cast<CBookmarkIndex*>(treeWidget());
 }
 
 // void BtBookmarkItemBase::dropped(QDropEvent* e)
 // {
-// 
+//
 // }
-// 
+//
 // void BtBookmarkItemBase::addPreviousSibling(BtBookmarkItemBase* item)
 // {
-// 
+//
 // }
-// 
+//
 // void BtBookmarkItemBase::addNextSibling(BtBookmarkItemBase* item)
 // {
-// 
+//
 // }

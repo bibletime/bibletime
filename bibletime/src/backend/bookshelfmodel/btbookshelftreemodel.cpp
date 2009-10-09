@@ -22,9 +22,8 @@
 using namespace BookshelfModel;
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
-    : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
-      m_checkable(false), m_defaultChecked(false)
-{
+        : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
+        m_checkable(false), m_defaultChecked(false) {
     m_groupingOrder.push_back(GROUP_CATEGORY);
     m_groupingOrder.push_back(GROUP_LANGUAGE);
 }
@@ -46,15 +45,15 @@ bool BtBookshelfTreeModel::hasChildren(const QModelIndex &parent) const {
 }
 
 QModelIndex BtBookshelfTreeModel::index(int row, int column,
-                                        const QModelIndex &parent) const
-{
+                                        const QModelIndex &parent) const {
     if (!hasIndex(row, column, parent)) return QModelIndex();
 
     Item *parentItem(getItem(parent));
     Item *childItem(parentItem->childAt(row));
     if (childItem != 0) {
         return createIndex(row, column, childItem);
-    } else {
+    }
+    else {
         return QModelIndex();
     }
 }
@@ -107,8 +106,7 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
 
 bool BtBookshelfTreeModel::setData(const QModelIndex &itemIndex,
                                    const QVariant &value,
-                                   int role)
-{
+                                   int role) {
     typedef QPair<Item *, QModelIndex> IP;
 
     if (role == Qt::CheckStateRole) {
@@ -164,9 +162,8 @@ Qt::ItemFlags BtBookshelfTreeModel::flags(const QModelIndex &index) const {
 }
 
 QVariant BtBookshelfTreeModel::headerData(int section,
-                                          Qt::Orientation orientation,
-                                          int role) const
-{
+        Qt::Orientation orientation,
+        int role) const {
     if (orientation == Qt::Horizontal) {
         return m_sourceModel->headerData(section, orientation, role);
     }
@@ -177,9 +174,9 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractListModel *sourceModel) {
     if (m_sourceModel == sourceModel) return;
 
     if (m_sourceModel != 0) {
-        disconnect(this, SLOT(moduleInserted(QModelIndex,int,int)));
-        disconnect(this, SLOT(moduleRemoved(QModelIndex,int,int)));
-        disconnect(this, SLOT(moduleDataChanged(QModelIndex,QModelIndex)));
+        disconnect(this, SLOT(moduleInserted(QModelIndex, int, int)));
+        disconnect(this, SLOT(moduleRemoved(QModelIndex, int, int)));
+        disconnect(this, SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         delete m_rootItem;
         m_modules.clear();
@@ -190,10 +187,10 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractListModel *sourceModel) {
     m_sourceModel = sourceModel;
 
     if (sourceModel != 0) {
-        connect(sourceModel, SIGNAL(rowsAboutToBeRemoved(QModelIndex,int,int)),
-                this,        SLOT(moduleRemoved(QModelIndex,int,int)));
-        connect(sourceModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
-                this,        SLOT(moduleInserted(QModelIndex,int,int)));
+        connect(sourceModel, SIGNAL(rowsAboutToBeRemoved(QModelIndex, int, int)),
+                this,        SLOT(moduleRemoved(QModelIndex, int, int)));
+        connect(sourceModel, SIGNAL(rowsInserted(QModelIndex, int, int)),
+                this,        SLOT(moduleInserted(QModelIndex, int, int)));
         connect(sourceModel, SIGNAL(dataChanged(QModelIndex, QModelIndex)),
                 this,        SLOT(moduleDataChanged(QModelIndex, QModelIndex)));
 
@@ -202,7 +199,8 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractListModel *sourceModel) {
             Q_FOREACH(CSwordModuleInfo *module, m->modules()) {
                 addModule(module, m_defaultChecked);
             }
-        } else {
+        }
+        else {
             for (int i(0); i < sourceModel->rowCount(); i++) {
                 CSwordModuleInfo *module(
                     static_cast<CSwordModuleInfo *>(
@@ -239,7 +237,8 @@ void BtBookshelfTreeModel::setGroupingOrder(const Grouping &groupingOrder) {
             Q_FOREACH(CSwordModuleInfo *module, m->modules()) {
                 addModule(module, checked.contains(module));
             }
-        } else {
+        }
+        else {
             for (int i(0); i < m_sourceModel->rowCount(); i++) {
                 CSwordModuleInfo *module(
                     static_cast<CSwordModuleInfo *>(
@@ -273,7 +272,8 @@ void BtBookshelfTreeModel::setCheckable(bool checkable) {
                     queue.append(childIndex);
                 }
             }
-        } while (!queue.isEmpty());
+        }
+        while (!queue.isEmpty());
     }
 }
 
@@ -306,8 +306,7 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
                                      QModelIndex parentIndex,
                                      Grouping &intermediateGrouping,
-                                     bool checked)
-{
+                                     bool checked) {
     Q_ASSERT(module != 0);
 
     if (!intermediateGrouping.empty()) {
@@ -325,7 +324,8 @@ void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module,
         }
         intermediateGrouping.pop_front();
         addModule(module, newIndex, intermediateGrouping, checked);
-    } else {
+    }
+    else {
         Item *parentItem(getItem(parentIndex));
         ModuleItem *newItem(new ModuleItem(module));
         newItem->setCheckState(checked ? Qt::Checked : Qt::Unchecked);
@@ -376,7 +376,8 @@ Item *BtBookshelfTreeModel::getItem(const QModelIndex &index) const {
         Item *item(static_cast<Item*>(index.internalPointer()));
         Q_ASSERT(item != 0);
         return item;
-    } else {
+    }
+    else {
         return m_rootItem;
     }
 }
@@ -395,10 +396,12 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
                 haveCheckedChildren = true;
                 haveUncheckedChildren = true;
                 break;
-            } else if (state == Qt::Checked) {
+            }
+            else if (state == Qt::Checked) {
                 haveCheckedChildren = true;
                 if (haveUncheckedChildren) break;
-            } else if (state == Qt::Unchecked) {
+            }
+            else if (state == Qt::Unchecked) {
                 haveUncheckedChildren = true;
                 if (haveCheckedChildren) break;
             }
@@ -408,10 +411,12 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
         if (haveCheckedChildren) {
             if (haveUncheckedChildren) {
                 newState = Qt::PartiallyChecked;
-            } else {
+            }
+            else {
                 newState = Qt::Checked;
             }
-        } else {
+        }
+        else {
             newState = Qt::Unchecked;
         }
         if (newState == oldState) break;
@@ -422,8 +427,7 @@ void BtBookshelfTreeModel::resetParentCheckStates(QModelIndex parentIndex) {
 }
 
 void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
-                                             const QModelIndex &bottomRight)
-{
+        const QModelIndex &bottomRight) {
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
 
@@ -444,8 +448,7 @@ void BtBookshelfTreeModel::moduleDataChanged(const QModelIndex &topLeft,
 }
 
 void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
-                                          int end)
-{
+        int end) {
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
 
@@ -459,8 +462,7 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
 }
 
 void BtBookshelfTreeModel::moduleRemoved(const QModelIndex &parent, int start,
-                                         int end)
-{
+        int end) {
     typedef BtBookshelfModel BM;
     static const BM::ModuleRole PR(BM::ModulePointerRole);
 

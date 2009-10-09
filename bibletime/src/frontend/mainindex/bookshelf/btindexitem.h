@@ -22,23 +22,26 @@ class QAction;
 /**
 @author The BibleTime team <info@bibletime.info>
 */
-class BTIndexItem : public QTreeWidgetItem
-{
-public:
-	/** Those menu actions which are item specific. */
+class BTIndexItem : public QTreeWidgetItem {
+    public:
+        /** Those menu actions which are item specific. */
 
-	BTIndexItem(QTreeWidgetItem* parent);
-    virtual ~BTIndexItem() {};
-	/**
-	* Enables the given action if it has the "indexActionType" property which this item supports.
-	* Handles only those actions which may or may not be supported, not those which
-	* are always supported by all items. If the action is not supported in the current state of the
-	* item this function does nothing.
-	*/
-    virtual bool enableAction(QAction*) const {return false;}
+        BTIndexItem(QTreeWidgetItem* parent);
+        virtual ~BTIndexItem() {};
+        /**
+        * Enables the given action if it has the "indexActionType" property which this item supports.
+        * Handles only those actions which may or may not be supported, not those which
+        * are always supported by all items. If the action is not supported in the current state of the
+        * item this function does nothing.
+        */
+        virtual bool enableAction(QAction*) const {
+            return false;
+        }
 
-	//TODO: d'n'd functions so that view can delegate d'n'd to items?
-	virtual bool acceptDrop(const QMimeData*) {return false;}
+        //TODO: d'n'd functions so that view can delegate d'n'd to items?
+        virtual bool acceptDrop(const QMimeData*) {
+            return false;
+        }
 };
 
 #endif

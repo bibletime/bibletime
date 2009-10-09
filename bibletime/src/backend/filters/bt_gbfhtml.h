@@ -20,35 +20,34 @@
 
 namespace Filters {
 
-	/** GBF to HTML filter,
-	* This filter converts GBF Text into HTML
-	*/
+/** GBF to HTML filter,
+* This filter converts GBF Text into HTML
+*/
 
-class BT_GBFHTML : public sword::GBFHTML/*, protected CFilterTool */
-	{
+class BT_GBFHTML : public sword::GBFHTML { /*, protected CFilterTool */
 
-protected:
+    protected:
 
-class BT_UserData : public sword::GBFHTML::MyUserData {
+        class BT_UserData : public sword::GBFHTML::MyUserData {
 
-public:
-BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::GBFHTML::MyUserData(module, key) {
-				swordFootnote = 1;
-				hasFootnotePreTag = false;
-			}
+            public:
+                BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::GBFHTML::MyUserData(module, key) {
+                    swordFootnote = 1;
+                    hasFootnotePreTag = false;
+                }
 
-			short unsigned int swordFootnote;
-		};
+                short unsigned int swordFootnote;
+        };
 
-		virtual sword::BasicFilterUserData *createUserData(const sword::SWModule* module, const sword::SWKey* key) {
-			return new BT_UserData(module, key);
-		}
+        virtual sword::BasicFilterUserData *createUserData(const sword::SWModule* module, const sword::SWKey* key) {
+            return new BT_UserData(module, key);
+        }
 
-public:
-		BT_GBFHTML();
-		virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
-		virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule * = 0);
-	};
+    public:
+        BT_GBFHTML();
+        virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
+        virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule * = 0);
+};
 
 }
 

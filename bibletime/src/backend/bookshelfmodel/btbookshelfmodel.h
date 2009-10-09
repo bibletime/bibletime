@@ -18,7 +18,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 class BtBookshelfModel: public QAbstractListModel {
-    Q_OBJECT
+        Q_OBJECT
     public:
         enum ModuleRole {
             ModuleNameRole = Qt::DisplayRole,
@@ -39,8 +39,8 @@ class BtBookshelfModel: public QAbstractListModel {
 
         inline CSwordModuleInfo *module(const QModelIndex &index) const {
             return (CSwordModuleInfo *)
-                data(index, BtBookshelfModel::ModulePointerRole)
-                    .value<void *>();
+                   data(index, BtBookshelfModel::ModulePointerRole)
+                   .value<void *>();
         }
 
         static QIcon categoryIcon(const CSwordModuleInfo::Category &category);

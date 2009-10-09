@@ -32,31 +32,30 @@ class QVBoxLayout;
 * Connect the button box signals. Use setAttribute(Qt::WA_DeleteOnClose) if you want
 * an auto-destroying window.
 */
-class BtConfigDialog : public QDialog
-{
-	Q_OBJECT
-public:
-	BtConfigDialog(QWidget* parent);
-	virtual ~BtConfigDialog();
-	
-	/** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
-	void addPage(BtConfigPage* pageWidget);
-	/** Adds a button box to the lower edge of the dialog. */
-	void addButtonBox(QDialogButtonBox* buttonBox);
-	
-	/** Returns the currently selected page. */
-	BtConfigPage* currentPage();
+class BtConfigDialog : public QDialog {
+        Q_OBJECT
+    public:
+        BtConfigDialog(QWidget* parent);
+        virtual ~BtConfigDialog();
 
-public slots:
-	/** Changes the current page using the given index number. */
-	void slotChangePage(int newIndex);
+        /** Adds a BtConfigPage to the paged widget stack. The new page will be the current page.*/
+        void addPage(BtConfigPage* pageWidget);
+        /** Adds a button box to the lower edge of the dialog. */
+        void addButtonBox(QDialogButtonBox* buttonBox);
 
-private:
-	QListWidget* m_contentsList;
-	QStackedWidget* m_pageWidget;
-	QVBoxLayout* m_pageLayout;
-	int m_maxItemWidth;
-	int m_previousPageIndex;
+        /** Returns the currently selected page. */
+        BtConfigPage* currentPage();
+
+    public slots:
+        /** Changes the current page using the given index number. */
+        void slotChangePage(int newIndex);
+
+    private:
+        QListWidget* m_contentsList;
+        QStackedWidget* m_pageWidget;
+        QVBoxLayout* m_pageLayout;
+        int m_maxItemWidth;
+        int m_previousPageIndex;
 };
 
 
@@ -64,24 +63,25 @@ private:
 /**
 * Base class for configuration dialog pages.
 */
-class BtConfigPage : public QWidget
-{
-	Q_OBJECT
-public:
-	BtConfigPage();
-	virtual ~BtConfigPage();
-	
-	/** Implement these to return the correct values.
-	* For example: header(){return tr("General");}
-	*/
-	virtual QString iconName() = 0;
-	virtual QString label() = 0;
-	virtual QString header() = 0;
-	BtConfigDialog* parentDialog() {return m_parentDialog;}
+class BtConfigPage : public QWidget {
+        Q_OBJECT
+    public:
+        BtConfigPage();
+        virtual ~BtConfigPage();
 
-private:
-	friend class BtConfigDialog;
-	BtConfigDialog* m_parentDialog;
+        /** Implement these to return the correct values.
+        * For example: header(){return tr("General");}
+        */
+        virtual QString iconName() = 0;
+        virtual QString label() = 0;
+        virtual QString header() = 0;
+        BtConfigDialog* parentDialog() {
+            return m_parentDialog;
+        }
+
+    private:
+        friend class BtConfigDialog;
+        BtConfigDialog* m_parentDialog;
 
 };
 

@@ -27,56 +27,60 @@ class CModuleChooserBar;
   * @author The BibleTime team
   */
 class CModuleChooserButton : public QToolButton, public CPointers  {
-	Q_OBJECT
-public:
+        Q_OBJECT
+    public:
 
-	/** Filter out modules of wrong type. See populateMenu() and BTModuleTreeItem. */
-	struct TypeFilter : public BTModuleTreeItem::Filter {
-		TypeFilter(CSwordModuleInfo::ModuleType t) {m_mType = t;}
-		bool filter(CSwordModuleInfo* mi) { return (mi->type() == m_mType); }
-		CSwordModuleInfo::ModuleType m_mType;
-	};
+        /** Filter out modules of wrong type. See populateMenu() and BTModuleTreeItem. */
+        struct TypeFilter : public BTModuleTreeItem::Filter {
+            TypeFilter(CSwordModuleInfo::ModuleType t) {
+                m_mType = t;
+            }
+            bool filter(CSwordModuleInfo* mi) {
+                return (mi->type() == m_mType);
+            }
+            CSwordModuleInfo::ModuleType m_mType;
+        };
 
-	CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent);
-	~CModuleChooserButton();
+        CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent);
+        ~CModuleChooserButton();
 
-	CSwordModuleInfo* module();
-	/**
-	* Returns the id used for this button.
-	*/
-	int getId() const;
-	void updateMenuItems();
+        CSwordModuleInfo* module();
+        /**
+        * Returns the id used for this button.
+        */
+        int getId() const;
+        void updateMenuItems();
 
-protected:
-	/** Populates the menu with language submenus and module items. */
-	void populateMenu();
-	/** Adds items to the menu recursively. */
-	void addItemToMenu(BTModuleTreeItem* item, QMenu* menu);
+    protected:
+        /** Populates the menu with language submenus and module items. */
+        void populateMenu();
+        /** Adds items to the menu recursively. */
+        void addItemToMenu(BTModuleTreeItem* item, QMenu* menu);
 
-private:
-	/**
-	* Returns the icon used for the current status.
-	*/
-	const QString iconName();
+    private:
+        /**
+        * Returns the icon used for the current status.
+        */
+        const QString iconName();
 
-	bool m_hasModule;
-	int m_id;
-	QAction* m_noneAction;
-	CSwordModuleInfo::ModuleType m_moduleType;
-	CSwordModuleInfo* m_module;
+        bool m_hasModule;
+        int m_id;
+        QAction* m_noneAction;
+        CSwordModuleInfo::ModuleType m_moduleType;
+        CSwordModuleInfo* m_module;
 
-	QMenu* m_popup;
-	QList<QMenu*> m_submenus;
+        QMenu* m_popup;
+        QList<QMenu*> m_submenus;
 
-	CModuleChooserBar* m_moduleChooserBar;
+        CModuleChooserBar* m_moduleChooserBar;
 
 
-private slots:
-	void moduleChosen(QAction* action );
+    private slots:
+        void moduleChosen(QAction* action );
 
-signals:
-	void sigRemoveButton(const int ID);
-	void sigAddButton();
-	void sigChanged();
+    signals:
+        void sigRemoveButton(const int ID);
+        void sigAddButton();
+        void sigChanged();
 };
 #endif

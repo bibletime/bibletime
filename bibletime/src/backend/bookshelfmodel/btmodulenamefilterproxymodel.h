@@ -16,12 +16,14 @@
 #include <QSortFilterProxyModel>
 
 class BtModuleNameFilterProxyModel: public QSortFilterProxyModel {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BtModuleNameFilterProxyModel(QObject *parent = 0);
         virtual ~BtModuleNameFilterProxyModel();
 
-        inline bool enabled() const { return m_enabled; }
+        inline bool enabled() const {
+            return m_enabled;
+        }
         void setEnabled(bool enable);
 
         virtual bool filterAcceptsRow(int row, const QModelIndex &parent) const;

@@ -18,11 +18,10 @@
 #include <QDialogButtonBox>
 
 BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info)
-	: QDialog(parent)
-{
-	//Set the flag to destroy when closed - otherwise eats memory
-	setAttribute(Qt::WA_DeleteOnClose);
-	setWindowTitle(tr("Information About %1").arg(info->name()));
+        : QDialog(parent) {
+    //Set the flag to destroy when closed - otherwise eats memory
+    setAttribute(Qt::WA_DeleteOnClose);
+    setWindowTitle(tr("Information About %1").arg(info->name()));
     resize(650, 400);
     QVBoxLayout* vboxLayout = new QVBoxLayout(this);
 
@@ -30,12 +29,12 @@ BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info
     textEdit->setReadOnly(true);
     textEdit->setTextInteractionFlags(Qt::TextSelectableByMouse);
     vboxLayout->addWidget(textEdit);
-	textEdit->setHtml(info->aboutText());
+    textEdit->setHtml(info->aboutText());
 
     QDialogButtonBox* buttonBox = new QDialogButtonBox(this);
     buttonBox->setOrientation(Qt::Horizontal);
     buttonBox->setStandardButtons(QDialogButtonBox::Close);
-	util::prepareDialogBox(buttonBox);
+    util::prepareDialogBox(buttonBox);
     vboxLayout->addWidget(buttonBox);
 
 

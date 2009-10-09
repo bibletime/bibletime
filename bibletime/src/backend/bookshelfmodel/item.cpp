@@ -19,8 +19,7 @@
 namespace BookshelfModel {
 
 Item::Item(Type type)
-    : m_type(type), m_parent(0), m_checkState(Qt::Unchecked)
-{
+        : m_type(type), m_parent(0), m_checkState(Qt::Unchecked) {
     // Intentionally empty
 }
 

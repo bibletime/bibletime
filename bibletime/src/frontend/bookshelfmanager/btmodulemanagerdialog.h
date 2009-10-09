@@ -18,30 +18,29 @@ class QWidget;
 /**
 * The Bookshelf Manager dialog. Includes pages for Install, Remove, Indexes.
 */
-class BtModuleManagerDialog : public BtConfigDialog
-{
-	Q_OBJECT
+class BtModuleManagerDialog : public BtConfigDialog {
+        Q_OBJECT
 
-public:
-	static BtModuleManagerDialog* getInstance(QWidget* parent);
-	
-	~BtModuleManagerDialog();
+    public:
+        static BtModuleManagerDialog* getInstance(QWidget* parent);
+
+        ~BtModuleManagerDialog();
 
 
-	//void slotClose();
-protected:
-	/** Reimplementation from QWidget. */	
-	virtual void closeEvent(QCloseEvent* event);
+        //void slotClose();
+    protected:
+        /** Reimplementation from QWidget. */
+        virtual void closeEvent(QCloseEvent* event);
 
-	/** Adds the pages and the button box. */
-	BtModuleManagerDialog(QWidget* parent);
+        /** Adds the pages and the button box. */
+        BtModuleManagerDialog(QWidget* parent);
 
-private:
-	// Load the settings from the resource file
-	void loadDialogSettings();
+    private:
+        // Load the settings from the resource file
+        void loadDialogSettings();
 
-	// Save the settings to the resource file
-	void saveDialogSettings();
+        // Save the settings to the resource file
+        void saveDialogSettings();
 
 
 //signals:

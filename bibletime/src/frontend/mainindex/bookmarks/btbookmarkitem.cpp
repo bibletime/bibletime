@@ -25,139 +25,127 @@
 
 
 BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)
-	:m_description(description),
-	m_moduleName(module ? module->name() : QString::null)
-{
-	if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
-		CSwordVerseKey vk(0);
-		vk.key(key);
-		vk.setLocale("en");
-		m_key = vk.key(); //the m_key member is always the english key!
-	}
-	else {
-		m_key = key;
-	};
+        : m_description(description),
+        m_moduleName(module ? module->name() : QString::null) {
+    if (((module && (module->type() == CSwordModuleInfo::Bible)) || (module->type() == CSwordModuleInfo::Commentary))  ) {
+        CSwordVerseKey vk(0);
+        vk.key(key);
+        vk.setLocale("en");
+        m_key = vk.key(); //the m_key member is always the english key!
+    }
+    else {
+        m_key = key;
+    };
 
-	update();
+    update();
 }
 
 BtBookmarkItem::BtBookmarkItem(QTreeWidgetItem* parent)
-	: BtBookmarkItemBase(parent)
-{}
+        : BtBookmarkItemBase(parent) {}
 
 BtBookmarkItem::BtBookmarkItem(const BtBookmarkItem& other)
-	: BtBookmarkItemBase(0),
-	m_key(other.m_key),
-	m_description(other.m_description),
-	m_moduleName(other.m_moduleName)
-{
-	update();
+        : BtBookmarkItemBase(0),
+        m_key(other.m_key),
+        m_description(other.m_description),
+        m_moduleName(other.m_moduleName) {
+    update();
 }
 
-CSwordModuleInfo* BtBookmarkItem::module()
-{
-	CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
-	return m;
+CSwordModuleInfo* BtBookmarkItem::module() {
+    CSwordModuleInfo* const m = CPointers::backend()->findModuleByName(m_moduleName);
+    return m;
 }
 
-QString BtBookmarkItem::key()
-{
-	const QString englishKeyName = englishKey();
-	if (!module()) {
-		return englishKeyName;
-	}
+QString BtBookmarkItem::key() {
+    const QString englishKeyName = englishKey();
+    if (!module()) {
+        return englishKeyName;
+    }
 
-	QString returnKeyName = englishKeyName;
-	if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
-		CSwordVerseKey vk(0);
-		vk.key(englishKeyName);
-		vk.setLocale(CPointers::backend()->booknameLanguage().toLatin1() );
+    QString returnKeyName = englishKeyName;
+    if ((module()->type() == CSwordModuleInfo::Bible) || (module()->type() == CSwordModuleInfo::Commentary)) {
+        CSwordVerseKey vk(0);
+        vk.key(englishKeyName);
+        vk.setLocale(CPointers::backend()->booknameLanguage().toLatin1() );
 
-		returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
-	}
+        returnKeyName = vk.key(); //the returned key is always in the currently set bookname language
+    }
 
-	return returnKeyName;
+    return returnKeyName;
 }
 
-const QString& BtBookmarkItem::description()
-{
-	return m_description;
+const QString& BtBookmarkItem::description() {
+    return m_description;
 }
 
-void BtBookmarkItem::setDescription(QString text)
-{
-	m_description = text;
+void BtBookmarkItem::setDescription(QString text) {
+    m_description = text;
 }
 
-QString BtBookmarkItem::toolTip()
-{
-	if (!module()) {
-		return QString::null;
-	}
+QString BtBookmarkItem::toolTip() {
+    if (!module()) {
+        return QString::null;
+    }
 
-	CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
-	filterOptions.footnotes = false;
-	filterOptions.scriptureReferences = false;
-	CPointers::backend()->setFilterOptions(filterOptions);
+    CSwordBackend::FilterOptions filterOptions = CBTConfig::getFilterOptionDefaults();
+    filterOptions.footnotes = false;
+    filterOptions.scriptureReferences = false;
+    CPointers::backend()->setFilterOptions(filterOptions);
 
-	QString ret;
-	boost::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
-	k->key(this->key());
+    QString ret;
+    boost::scoped_ptr<CSwordKey> k( CSwordKey::createInstance(module()) );
+    k->key(this->key());
 
-	const CLanguageMgr::Language* lang = module()->language();
-	CBTConfig::FontSettingsPair fontPair = CBTConfig::get
-											   (lang);
+    const CLanguageMgr::Language* lang = module()->language();
+    CBTConfig::FontSettingsPair fontPair = CBTConfig::get
+                                           (lang);
 
-	Q_ASSERT(k.get());
-	if (fontPair.first) { //use a special font
-		ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
-			  .arg(key())
-			  .arg(module()->name())
-			  .arg(description())
-			;
-	}
-	else {
-		ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
-			  .arg(key())
-			  .arg(module()->name())
-			  .arg(description())
-			;
-	}
+    Q_ASSERT(k.get());
+    if (fontPair.first) { //use a special font
+        ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
+              .arg(key())
+              .arg(module()->name())
+              .arg(description())
+              ;
+    }
+    else {
+        ret = QString::fromLatin1("<b>%1 (%2)</b><hr>%3")
+              .arg(key())
+              .arg(module()->name())
+              .arg(description())
+              ;
+    }
 
-	return ret;
+    return ret;
 }
 
-bool BtBookmarkItem::enableAction(MenuAction action)
-{
-	if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
-		return true;
+bool BtBookmarkItem::enableAction(MenuAction action) {
+    if (action == ChangeBookmark || (module() && (action == PrintBookmarks)) || action == DeleteEntries)
+        return true;
 
-	return false;
+    return false;
 }
 
-void BtBookmarkItem::rename()
-{
-	bool ok  = false;
-	const QString newDescription = CInputDialog::getText(QObject::tr("Change description ..."), QObject::tr("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
+void BtBookmarkItem::rename() {
+    bool ok  = false;
+    const QString newDescription = CInputDialog::getText(QObject::tr("Change description ..."), QObject::tr("Enter a new description for the chosen bookmark."), description(), &ok, treeWidget());
 
-	if (ok) {
-		m_description = newDescription;
-		update();
-	}
+    if (ok) {
+        m_description = newDescription;
+        update();
+    }
 }
 
-QString BtBookmarkItem::englishKey() const
-{
-	return m_key;
+QString BtBookmarkItem::englishKey() const {
+    return m_key;
 }
 
-void BtBookmarkItem::update()
-{
-	qDebug() << "BtBookmarkItem::update";
-	setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
+void BtBookmarkItem::update() {
+    qDebug() << "BtBookmarkItem::update";
+    setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
 
-	const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
-	setText(0, title);
-	setToolTip(0, toolTip());
+    const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
+    setText(0, title);
+    setToolTip(0, toolTip());
 }
 

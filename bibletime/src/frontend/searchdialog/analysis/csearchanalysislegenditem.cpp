@@ -40,44 +40,43 @@ const int LEGEND_WIDTH = 85;
 
 
 CSearchAnalysisLegendItem::CSearchAnalysisLegendItem(QList<CSwordModuleInfo*> *list )
-	: QGraphicsRectItem()
-{
-	m_moduleList = list;
+        : QGraphicsRectItem() {
+    m_moduleList = list;
 }
 
 /** Reimplementation. Draws the content of this item. */
 void CSearchAnalysisLegendItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
-	painter->save();
+    painter->save();
 
-	//the outer rectangle
-	QPoint p1( (int)(rect().x()), (int)(rect().y()) );
-	QPoint p2( (int)(rect().x() + rect().width() ), (int)(rect().y() + rect().height()));
-	QRect r(p1, p2);
-	r = r.normalized();
-	painter->drawRect(r);
+    //the outer rectangle
+    QPoint p1( (int)(rect().x()), (int)(rect().y()) );
+    QPoint p2( (int)(rect().x() + rect().width() ), (int)(rect().y() + rect().height()));
+    QRect r(p1, p2);
+    r = r.normalized();
+    painter->drawRect(r);
 
-	QFont f = painter->font();
-	f.setPointSize(ITEM_TEXT_SIZE);
-	painter->setFont(f);
+    QFont f = painter->font();
+    f.setPointSize(ITEM_TEXT_SIZE);
+    painter->setFont(f);
 
-	//   for (unsigned int index=0; index < m_moduleList->count(); index++){
-	int moduleIndex = 0;
-	QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
-	for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
-		// the module color indicators
-		QPoint p1( (int)(rect().x()) + LEGEND_INNER_BORDER, (int)(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
-		QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
-		QRect r(p1,p2);
-		painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
-		r = r.normalized();
-		painter->drawRect(r);
+    //   for (unsigned int index=0; index < m_moduleList->count(); index++){
+    int moduleIndex = 0;
+    QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
+    for (QList<CSwordModuleInfo*>::iterator it(m_moduleList->begin()); it != end_it; ++it) {
+        // the module color indicators
+        QPoint p1( (int)(rect().x()) + LEGEND_INNER_BORDER, (int)(rect().y()) + LEGEND_INNER_BORDER + moduleIndex*(LEGEND_DELTAY + ITEM_TEXT_SIZE) );
+        QPoint p2(p1.x() + ITEM_TEXT_SIZE, p1.y() + ITEM_TEXT_SIZE);
+        QRect r(p1, p2);
+        painter->fillRect(r, QBrush(CSearchAnalysisScene::getColor(moduleIndex)) );
+        r = r.normalized();
+        painter->drawRect(r);
 
-		QPoint p3( p2.x() + LEGEND_INNER_BORDER, p2.y() );
-		painter->drawText(p3, (*it)->name() );
+        QPoint p3( p2.x() + LEGEND_INNER_BORDER, p2.y() );
+        painter->drawText(p3, (*it)->name() );
 
-		++moduleIndex;
-	}
-	painter->restore();
+        ++moduleIndex;
+    }
+    painter->restore();
 }
 
 

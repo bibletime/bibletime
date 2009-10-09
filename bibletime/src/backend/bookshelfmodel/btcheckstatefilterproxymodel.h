@@ -16,18 +16,24 @@
 #include <QSortFilterProxyModel>
 
 class BtCheckStateFilterProxyModel: public QSortFilterProxyModel {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BtCheckStateFilterProxyModel(QObject *parent = 0);
         virtual ~BtCheckStateFilterProxyModel();
 
-        inline bool enabled() const { return m_enabled; }
+        inline bool enabled() const {
+            return m_enabled;
+        }
         void setEnabled(bool enable);
 
-        inline bool showChecked() const { return m_showChecked; }
+        inline bool showChecked() const {
+            return m_showChecked;
+        }
         void setShowChecked(bool show);
 
-        inline bool showUnchecked() const { return m_showUnchecked; }
+        inline bool showUnchecked() const {
+            return m_showUnchecked;
+        }
         void setShowUnchecked(bool show);
 
         inline bool showPartiallyChecked() const {

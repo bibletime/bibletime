@@ -26,61 +26,58 @@ class QCheckBox;
 class StandardWorksTab;
 class TextFiltersTab;
 
-class CSwordSettingsPage : public BtConfigPage
-{
-	Q_OBJECT
+class CSwordSettingsPage : public BtConfigPage {
+        Q_OBJECT
 
-public:
-	CSwordSettingsPage(QWidget* parent);
-	void save();
-	QString iconName();
-	QString label();
-	QString header();
+    public:
+        CSwordSettingsPage(QWidget* parent);
+        void save();
+        QString iconName();
+        QString label();
+        QString header();
 
-private:
-	StandardWorksTab* m_worksTab;
-	TextFiltersTab* m_filtersTab;
+    private:
+        StandardWorksTab* m_worksTab;
+        TextFiltersTab* m_filtersTab;
 };
 
 //Tab pages. To be used only in Sword settings page.
 
-class StandardWorksTab : public QWidget, CPointers
-{
-	Q_OBJECT
+class StandardWorksTab : public QWidget, CPointers {
+        Q_OBJECT
 
-public:
-	StandardWorksTab();
-	void save();
+    public:
+        StandardWorksTab();
+        void save();
 
-private:
-	QComboBox* m_standardBibleCombo;
-	QComboBox* m_standardCommentaryCombo;
-	QComboBox* m_standardLexiconCombo;
-	QComboBox* m_standardDailyDevotionalCombo;
-	QComboBox* m_standardHebrewStrongCombo;
-	QComboBox* m_standardGreekStrongCombo;
-	QComboBox* m_standardHebrewMorphCombo;
-	QComboBox* m_standardGreekMorphCombo;
+    private:
+        QComboBox* m_standardBibleCombo;
+        QComboBox* m_standardCommentaryCombo;
+        QComboBox* m_standardLexiconCombo;
+        QComboBox* m_standardDailyDevotionalCombo;
+        QComboBox* m_standardHebrewStrongCombo;
+        QComboBox* m_standardGreekStrongCombo;
+        QComboBox* m_standardHebrewMorphCombo;
+        QComboBox* m_standardGreekMorphCombo;
 };
 
-class TextFiltersTab : public QWidget
-{
-	Q_OBJECT
+class TextFiltersTab : public QWidget {
+        Q_OBJECT
 
-public:
-	TextFiltersTab();
-	void save();
+    public:
+        TextFiltersTab();
+        void save();
 
-private:
-	QCheckBox* m_lineBreaksCheck;
-	QCheckBox* m_verseNumbersCheck;
-	QCheckBox* m_headingsCheck;
-	QCheckBox* m_hebrewPointsCheck;
-	QCheckBox* m_hebrewCantillationCheck;
-	QCheckBox* m_morphSegmentationCheck;
-	QCheckBox* m_greekAccentsCheck;
-	QCheckBox* m_textualVariantsCheck;
-	QCheckBox* m_scriptureReferencesCheck;
+    private:
+        QCheckBox* m_lineBreaksCheck;
+        QCheckBox* m_verseNumbersCheck;
+        QCheckBox* m_headingsCheck;
+        QCheckBox* m_hebrewPointsCheck;
+        QCheckBox* m_hebrewCantillationCheck;
+        QCheckBox* m_morphSegmentationCheck;
+        QCheckBox* m_greekAccentsCheck;
+        QCheckBox* m_textualVariantsCheck;
+        QCheckBox* m_scriptureReferencesCheck;
 };
 
 #endif

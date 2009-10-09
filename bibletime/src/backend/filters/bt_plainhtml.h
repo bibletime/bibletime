@@ -19,15 +19,15 @@ class SWModule;
 
 namespace Filters {
 
-	/** Plain to HTML filter,
-	* This filter converts Plain Text into HTML
-	*/
-class BT_PLAINHTML : public sword::SWFilter{
-protected:
-		virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule * = 0);
-public:
-		BT_PLAINHTML();
-	};
+/** Plain to HTML filter,
+* This filter converts Plain Text into HTML
+*/
+class BT_PLAINHTML : public sword::SWFilter {
+    protected:
+        virtual char processText(sword::SWBuf& buf, const sword::SWKey*, const sword::SWModule * = 0);
+    public:
+        BT_PLAINHTML();
+};
 }
 
 #endif

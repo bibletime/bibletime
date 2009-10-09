@@ -24,22 +24,22 @@ class QLineEdit;
 
 
 class CSwordSetupInstallSourcesDialog : public QDialog  {
-		Q_OBJECT
+        Q_OBJECT
 
-public:
-		static sword::InstallSource getSource();
+    public:
+        static sword::InstallSource getSource();
 
-protected:
-		CSwordSetupInstallSourcesDialog();
+    protected:
+        CSwordSetupInstallSourcesDialog();
 
-protected slots:
-		void slotOk();
-		void slotProtocolChanged();
+    protected slots:
+        void slotOk();
+        void slotProtocolChanged();
 
-private:
-		QLabel    *m_serverLabel;
-		QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
-		QComboBox *m_protocolCombo;
+    private:
+        QLabel    *m_serverLabel;
+        QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
+        QComboBox *m_protocolCombo;
 };
 
 

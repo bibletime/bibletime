@@ -25,13 +25,17 @@ class DistributionItem: public Item {
 
         DistributionItem(CSwordModuleInfo *module);
 
-        inline QString distribution() const { return m_distribution; }
+        inline QString distribution() const {
+            return m_distribution;
+        }
 
-        inline QString name() const { return m_distribution; }
+        inline QString name() const {
+            return m_distribution;
+        }
 
         inline bool fitFor(CSwordModuleInfo *module) {
             return module->config(CSwordModuleInfo::DistributionSource)
-                       == m_distribution;
+                   == m_distribution;
         }
 
     protected:

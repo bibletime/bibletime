@@ -16,28 +16,27 @@ class QPushButton;
 class QTreeWidget;
 
 
-class BtInstallPathDialog : public QDialog
-{
-	Q_OBJECT
-public:
-	BtInstallPathDialog();
+class BtInstallPathDialog : public QDialog {
+        Q_OBJECT
+    public:
+        BtInstallPathDialog();
 
-public slots:
-	virtual void accept();
+    public slots:
+        virtual void accept();
 
-private slots:
-	void slotAddClicked();
-	void slotRemoveClicked();
-	void slotEditClicked();
+    private slots:
+        void slotAddClicked();
+        void slotRemoveClicked();
+        void slotEditClicked();
 
-private:
-	void writeSwordConfig();
+    private:
+        void writeSwordConfig();
 
-private:
-	QPushButton* m_editButton;
-	QPushButton* m_addButton;
-	QPushButton* m_removeButton;
-	QTreeWidget* m_swordPathListBox;
+    private:
+        QPushButton* m_editButton;
+        QPushButton* m_addButton;
+        QPushButton* m_removeButton;
+        QTreeWidget* m_swordPathListBox;
 
 };
 

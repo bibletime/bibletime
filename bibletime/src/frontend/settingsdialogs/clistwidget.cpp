@@ -11,20 +11,16 @@
 #include "clistwidget.h"
 
 CListWidget::CListWidget(QWidget* parent)
- : QListWidget(parent)
-{
+        : QListWidget(parent) {
 }
 
-CListWidget::~CListWidget() 
-{
+CListWidget::~CListWidget() {
 }
 
-QSize CListWidget::sizeHint () const
-{
-	return QSize(100,120);
+QSize CListWidget::sizeHint () const {
+    return QSize(100, 120);
 }
 
-void CListWidget::setCharWidth(int width)
-{
-	setMaximumWidth(CToolClass::mWidth(this, width));		
+void CListWidget::setCharWidth(int width) {
+    setMaximumWidth(CToolClass::mWidth(this, width));
 }

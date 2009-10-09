@@ -18,10 +18,10 @@
 class QTabWidget;
 class QMenu;
 
-// This class creates a dialog with zero or more tabs. For zero tabs it is 
+// This class creates a dialog with zero or more tabs. For zero tabs it is
 // just a single QWebView inside the dialog. For 1 or more tabs, each tab
 // contains a separate QWebView. Each QWebView can have either plain text or
-// html text. The class will automatically delete itself when closed. 
+// html text. The class will automatically delete itself when closed.
 // The class can either be directly called or subclassed. The dialog is not modal.
 
 // Typical direct usage:
@@ -44,44 +44,42 @@ class QMenu;
 // dlg->show();
 
 
-class BtTabHtmlDialog : public QDialog  
-{
-	Q_OBJECT
-public:
-	BtTabHtmlDialog(const QString& title, int numberTabs, QWidget *parent=0, Qt::WindowFlags wflags = Qt::Dialog);
-	~BtTabHtmlDialog();
-	void selectTab(int tab);
-	void setTabText(const QString& tabName);
+class BtTabHtmlDialog : public QDialog {
+        Q_OBJECT
+    public:
+        BtTabHtmlDialog(const QString& title, int numberTabs, QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        ~BtTabHtmlDialog();
+        void selectTab(int tab);
+        void setTabText(const QString& tabName);
 
 // See QWebView::setHtml()
-	void setHtml(const QString& html, const QUrl& baseUrl=QUrl());
+        void setHtml(const QString& html, const QUrl& baseUrl = QUrl());
 
 // See QWebView::setUrl()
-	void setUrl(const QUrl& url);
-	
-private slots:	
-	void linkClicked(const QUrl url);
+        void setUrl(const QUrl& url);
 
-private:
-	void init_connections(QWebView* webView);
-	QWebView* webView();
-	
-	QWebView*   m_webView;
-	QTabWidget* m_tabWidget;
-	int m_tabs;
+    private slots:
+        void linkClicked(const QUrl url);
+
+    private:
+        void init_connections(QWebView* webView);
+        QWebView* webView();
+
+        QWebView*   m_webView;
+        QTabWidget* m_tabWidget;
+        int m_tabs;
 };
 
 
-class BtWebView : public QWebView
-{
-public:
-	BtWebView(QWidget* parent=0);
+class BtWebView : public QWebView {
+    public:
+        BtWebView(QWidget* parent = 0);
 
-protected:
-	void contextMenuEvent(QContextMenuEvent* event);
+    protected:
+        void contextMenuEvent(QContextMenuEvent* event);
 
-private:
-	QMenu* m_popup;
+    private:
+        QMenu* m_popup;
 };
 
 #endif

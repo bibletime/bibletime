@@ -1,7 +1,7 @@
 //
 // C++ Interface: cmodulechooserdialog
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2007
@@ -24,19 +24,18 @@ class BTModuleTreeItem;
 
 namespace Search {
 
-class CSearchModuleChooserDialog : public CModuleChooserDialog
-{
-	Q_OBJECT
-public:
-	CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*> selectedModules);
-	~CSearchModuleChooserDialog();
+class CSearchModuleChooserDialog : public CModuleChooserDialog {
+        Q_OBJECT
+    public:
+        CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*> selectedModules);
+        ~CSearchModuleChooserDialog();
 
-protected: // Protected methods
-	virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
+    protected: // Protected methods
+        virtual void initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem);
 
-private:
-	QList<CSwordModuleInfo*> m_selectedModules;
-	BTModuleTreeItem::HiddenOff* m_hiddenFilter;
+    private:
+        QList<CSwordModuleInfo*> m_selectedModules;
+        BTModuleTreeItem::HiddenOff* m_hiddenFilter;
 };
 
 } //end of namespace Search

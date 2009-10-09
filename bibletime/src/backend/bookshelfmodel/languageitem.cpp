@@ -15,8 +15,7 @@
 namespace BookshelfModel {
 
 LanguageItem::LanguageItem(CSwordModuleInfo *module)
-    : Item(ITEM_LANGUAGE), m_language(module->language())
-{
+        : Item(ITEM_LANGUAGE), m_language(module->language()) {
     // Intentionally empty
 }
 

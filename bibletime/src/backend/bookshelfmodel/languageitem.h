@@ -27,7 +27,9 @@ class LanguageItem: public Item {
 
         LanguageItem(CSwordModuleInfo *module);
 
-        inline const CLanguageMgr::Language *language() const { return m_language; }
+        inline const CLanguageMgr::Language *language() const {
+            return m_language;
+        }
 
         inline QString name() const {
             return BtBookshelfModel::languageName(m_language);

@@ -1,7 +1,7 @@
 //
 // C++ Implementation: cdisplaywindowfactory
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2007
@@ -25,33 +25,31 @@
 #include "frontend/cmdiarea.h"
 
 
-CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
-{
-	qDebug("CDisplayWindowFactory::createReadInstance");
-	switch (modules.first()->type()) {
-		case CSwordModuleInfo::Bible:
-			return new CBibleReadWindow(modules, parent);
-		case CSwordModuleInfo::Commentary:
-			return new CCommentaryReadWindow(modules, parent);
-		case CSwordModuleInfo::Lexicon:
-			return new CLexiconReadWindow(modules, parent);
-		case CSwordModuleInfo::GenericBook:
-			return new CBookReadWindow(modules, parent);
-		default:
-			qWarning("unknown module type");
-		break;
-	}
-	return 0;
+CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent) {
+    qDebug("CDisplayWindowFactory::createReadInstance");
+    switch (modules.first()->type()) {
+        case CSwordModuleInfo::Bible:
+            return new CBibleReadWindow(modules, parent);
+        case CSwordModuleInfo::Commentary:
+            return new CCommentaryReadWindow(modules, parent);
+        case CSwordModuleInfo::Lexicon:
+            return new CLexiconReadWindow(modules, parent);
+        case CSwordModuleInfo::GenericBook:
+            return new CBookReadWindow(modules, parent);
+        default:
+            qWarning("unknown module type");
+            break;
+    }
+    return 0;
 }
 
 
-CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type)
-{
-	if (type == CDisplayWindow::HTMLWindow) {
-		return new CHTMLWriteWindow(modules, parent);
-	}
-	else {
-		return new CPlainWriteWindow(modules, parent);
-	}
-	return 0;
+CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {
+    if (type == CDisplayWindow::HTMLWindow) {
+        return new CHTMLWriteWindow(modules, parent);
+    }
+    else {
+        return new CPlainWriteWindow(modules, parent);
+    }
+    return 0;
 }

@@ -26,52 +26,53 @@ class QMenu;
   * @author The BibleTime team
   */
 class CDisplaySettingsButton : public QToolButton  {
-	Q_OBJECT
-public:
+        Q_OBJECT
+    public:
 
-	CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent=0);
-	void reset(const QList<CSwordModuleInfo*>& useModules);
-	/**
-	* Sets the item at position pos to the satet given as 2nd paramter.
-	*/
-	void setItemStatus( const int pos, const bool checked );
-	/**
-	* Returns the number of usable menu items in the setttings menu.
-	*/
-	int menuItemCount();
-	/**
-	* Returns the status of the item at position "index"
-	*/
-	bool itemStatus( const int index );
-	/**
-	* Sets the status to changed. The signal changed will be emitted.
-	*/
-	void setChanged();
+        CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *settings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent = 0);
+        void reset(const QList<CSwordModuleInfo*>& useModules);
+        /**
+        * Sets the item at position pos to the satet given as 2nd paramter.
+        */
+        void setItemStatus( const int pos, const bool checked );
+        /**
+        * Returns the number of usable menu items in the setttings menu.
+        */
+        int menuItemCount();
+        /**
+        * Returns the status of the item at position "index"
+        */
+        bool itemStatus( const int index );
+        /**
+        * Sets the status to changed. The signal changed will be emitted.
+        */
+        void setChanged();
 
-signals:
-	void sigChanged(void);
+    signals:
+        void sigChanged(void);
 
-protected slots:
-	void optionToggled(QAction* action);
+    protected slots:
+        void optionToggled(QAction* action);
 
-protected:
+    protected:
 
-	/** This enum marks the option types for a display. Used internally.*/
-	enum OptionType {Linebreak, Versenum, Headings, WordsofJ, Vowel, Cantillation, Accents,
-					Variant, Xref, Morphseg};
+        /** This enum marks the option types for a display. Used internally.*/
+        enum OptionType {Linebreak, Versenum, Headings, WordsofJ, Vowel, Cantillation, Accents,
+                         Variant, Xref, Morphseg
+                    };
 
-	CSwordBackend::FilterOptions*  m_moduleSettings;
-	CSwordBackend::DisplayOptions* m_displaySettings;
-	CSwordBackend::FilterOptions m_available;
-	QList<CSwordModuleInfo*> m_modules;
+        CSwordBackend::FilterOptions*  m_moduleSettings;
+        CSwordBackend::DisplayOptions* m_displaySettings;
+        CSwordBackend::FilterOptions m_available;
+        QList<CSwordModuleInfo*> m_modules;
 
-	QHash<QString, int> m_dict;
+        QHash<QString, int> m_dict;
 
-	QMenu* m_popup;
+        QMenu* m_popup;
 
-	int populateMenu();
-	bool isOptionAvailable( const CSwordModuleInfo::FilterTypes option);
-	int addMenuEntry( const QString name, OptionType type, const int* option, const bool available);
+        int populateMenu();
+        bool isOptionAvailable( const CSwordModuleInfo::FilterTypes option);
+        int addMenuEntry( const QString name, OptionType type, const int* option, const bool available);
 };
 
 #endif

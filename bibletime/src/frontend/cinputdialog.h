@@ -23,21 +23,21 @@ class QWidget;
   * @author The BibleTime team
   */
 class CInputDialog : public QDialog  {
-	Q_OBJECT
-public:
-	CInputDialog(const QString& caption, const QString& description, const QString& text, QWidget *parent=0, Qt::WindowFlags wflags = Qt::Dialog);
-	/**
-	* A static function to get some using CInputDialog.
-	*/
-	static const QString getText( const QString& caption, const QString& description, const QString& text = QString::null, bool* ok = 0, QWidget* parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
-	/**
-	* Returns the text entered at the moment.
-	*/
-	const QString text();
-	// ~CInputDialog();
+        Q_OBJECT
+    public:
+        CInputDialog(const QString& caption, const QString& description, const QString& text, QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        /**
+        * A static function to get some using CInputDialog.
+        */
+        static const QString getText( const QString& caption, const QString& description, const QString& text = QString::null, bool* ok = 0, QWidget* parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
+        /**
+        * Returns the text entered at the moment.
+        */
+        const QString text();
+        // ~CInputDialog();
 
-private:
-	QTextEdit* m_textEdit;
+    private:
+        QTextEdit* m_textEdit;
 };
 
 #endif

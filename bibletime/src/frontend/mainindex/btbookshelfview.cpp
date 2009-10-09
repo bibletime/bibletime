@@ -19,8 +19,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 
 BtBookshelfView::BtBookshelfView(QWidget *parent)
-    : QTreeView(parent)
-{
+        : QTreeView(parent) {
     header()->hide();
 
     /*
@@ -41,7 +40,7 @@ BtBookshelfView::~BtBookshelfView() {
 
 CSwordModuleInfo *BtBookshelfView::getModule(const QModelIndex &index) const {
     return (CSwordModuleInfo *) model()
-            ->data(index, BtBookshelfModel::ModulePointerRole).value<void*>();
+           ->data(index, BtBookshelfModel::ModulePointerRole).value<void*>();
 }
 
 void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
@@ -54,25 +53,26 @@ void BtBookshelfView::keyPressEvent(QKeyEvent *event) {
                 QPoint p(viewport()->mapToGlobal(itemRect.bottomLeft()));
                 if (i == 0) {
                     emit contextMenuActivated(p);
-                } else {
+                }
+                else {
                     emit moduleContextMenuActivated(i, p);
                 }
             }
             event->accept();
             break;
         case Qt::Key_Return:
-        case Qt::Key_Enter:
-            {
-                QModelIndex i(currentIndex());
-                CSwordModuleInfo *m(getModule(i));
-                if (m != 0) {
-                    emit moduleActivated(m);
-                } else {
-                    setExpanded(i, !isExpanded(i));
-                }
+        case Qt::Key_Enter: {
+            QModelIndex i(currentIndex());
+            CSwordModuleInfo *m(getModule(i));
+            if (m != 0) {
+                emit moduleActivated(m);
             }
-            event->accept();
-            break;
+            else {
+                setExpanded(i, !isExpanded(i));
+            }
+        }
+        event->accept();
+        break;
         default:
             QTreeView::keyPressEvent(event);
             break;
@@ -88,11 +88,13 @@ void BtBookshelfView::mousePressEvent(QMouseEvent *event) {
         CSwordModuleInfo *i(getModule(clickedItemIndex));
         if (i == 0) {
             emit contextMenuActivated(mapToGlobal(event->pos()));
-        } else {
+        }
+        else {
             emit moduleContextMenuActivated(i, mapToGlobal(event->pos()));
         }
         event->accept();
-    } else {
+    }
+    else {
         QTreeView::mousePressEvent(event);
     }
 }

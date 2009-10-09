@@ -19,12 +19,11 @@ class BTModuleTreeItem;
 /**
 	@author The BibleTime team <info@bibletime.info>
 */
-class BTIndexFolder : public BTIndexItem
-{
-public:
-    BTIndexFolder(BTModuleTreeItem* treeItem, QTreeWidgetItem* p);
+class BTIndexFolder : public BTIndexItem {
+    public:
+        BTIndexFolder(BTModuleTreeItem* treeItem, QTreeWidgetItem* p);
 
-    ~BTIndexFolder() {}
+        ~BTIndexFolder() {}
 };
 
 #endif
