@@ -19,7 +19,7 @@ then
   _xslfile="docs_freebsd.xsl"
 fi
 
-cd  ../../..
+cd  `dirname $0`/../../..
 
 HOWTO_LOCALE_LANGS=`cat cmake/docs/howto_po4a.conf | grep po4a_langs | sed -e 's|^.*]||'`
 

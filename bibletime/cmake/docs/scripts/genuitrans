@@ -4,8 +4,6 @@
 # translation. It requires the installation of Qt Linguist 4.x,
 # http://qt.nokia.com/doc/4.4/linguist-manual.html
 #
-# Run this script from this directory.
-#
 # Author: Thomas Abthorpe <tabthorpe@FreeBSD.org>
 # $LastChangedDate$
 #
@@ -23,7 +21,7 @@ then
    _lreleasecmd="lrelease-qt4"
 fi
 
-cd  ../../..
+cd  `dirname $0`/../../..
 
 for _uitsfile in ./i18n/messages/bibletime_ui*.ts
 do
