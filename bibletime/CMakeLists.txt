@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
 #Version
-ADD_DEFINITIONS(-DBT_VERSION="2.4-svn")
+ADD_DEFINITIONS(-DBT_VERSION="2.4.svn")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
@@ -51,7 +51,7 @@ FIND_PACKAGE(Sword REQUIRED)
 ######################################################
 # Define $bibletime_SOURCES
 #
-INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/bibletime_source_list.cmake")
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
 #
 # Generate config.h
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.cmake" "${CMAKE_CURRENT_BINARY_DIR}/config.h")
@@ -69,7 +69,6 @@ INCLUDE_DIRECTORIES(
 	${Boost_INCLUDE_DIRS}
 	${SWORD_INCLUDE_DIR}
 )
-
 
 # this will run uic on .ui files:
 QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
@@ -231,59 +230,10 @@ INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 )
 ######################################################
 
-
 ######################################################
-# Update source catalog files (this is the basis for the translator's work)
-# Invoke this with "make messages"
-#
-ADD_CUSTOM_TARGET("messages")
-FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
-	ADD_CUSTOM_TARGET("messages_${MESSAGE_LOCALE_LANG}"
-		COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui_${MESSAGE_LOCALE_LANG}.ts")
-	ADD_CUSTOM_TARGET("compile_messages_${MESSAGE_LOCALE_LANG}"
-		COMMAND lrelease "bibletime_ui_${MESSAGE_LOCALE_LANG}.ts" -qm "bibletime_ui_${MESSAGE_LOCALE_LANG}.qm"
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/")
-	ADD_DEPENDENCIES("compile_messages_${MESSAGE_LOCALE_LANG}" "messages_${MESSAGE_LOCALE_LANG}")
-	ADD_DEPENDENCIES("messages" "compile_messages_${MESSAGE_LOCALE_LANG}")
-ENDFOREACH(MESSAGE_LOCALE_LANG)
-# Template file for translators
-ADD_CUSTOM_TARGET("messages_default"
-	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui.ts")
-ADD_DEPENDENCIES(messages "messages_default")
+# define helper targets for documentation management
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDocumentation.cmake")
 ######################################################
-
-######################################################
-# Update handbook
-ADD_CUSTOM_TARGET("handbook")
-
-ADD_CUSTOM_TARGET("handbook_translations"
-	COMMAND po4a -v --no-backups -k 0 cmake/docs/handbook_po4a.conf
-	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
-
-FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
-	ADD_CUSTOM_TARGET("handbook_${HANDBOOK_LOCALE_LANG}"
-		COMMAND xsltproc --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl ../docbook/index.docbook
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
-	ADD_DEPENDENCIES("handbook_${HANDBOOK_LOCALE_LANG}" "handbook_translations")
-	ADD_DEPENDENCIES("handbook" "handbook_${HANDBOOK_LOCALE_LANG}")
-ENDFOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS})
-######################################################
-
-######################################################
-# Update howto
-ADD_CUSTOM_TARGET("howto")
-ADD_CUSTOM_TARGET("howto_translations"
-	COMMAND po4a -v --no-backups -k 0 cmake/docs/howto_po4a.conf
-	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
-ADD_DEPENDENCIES("howto" "howto_translations")
-
-FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
-	ADD_CUSTOM_TARGET("howto_${HOWTO_LOCALE_LANG}"
-		COMMAND xsltproc "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl" "../docbook/index.docbook"
-		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
-	ADD_DEPENDENCIES("howto_${HOWTO_LOCALE_LANG}" "howto_translations")
-	ADD_DEPENDENCIES("howto" "howto_${HOWTO_LOCALE_LANG}")
-ENDFOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS})
 
 ######################################################
 
@@ -300,138 +250,11 @@ ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/c
 
 ######################################################
 # Developer section
-
-FILE(GLOB_RECURSE ORIG_SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src" "*.cpp")
-FOREACH(FILE ${ORIG_SOURCE_FILES})
-	SET(REFORMAT_FILES "${REFORMAT_FILES} ${FILE}")
-ENDFOREACH(FILE ${ORIG_SOURCE_FILES})
-
-FILE(GLOB_RECURSE ORIG_SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src" "*.h")
-FOREACH(FILE ${ORIG_SOURCE_FILES})
-	SET(REFORMAT_FILES "${REFORMAT_FILES} ${FILE}")
-ENDFOREACH(FILE ${ORIG_SOURCE_FILES})
-
-SET(ASTYLE_OPTIONS "--indent=spaces=4 --brackets=attach --indent-classes --indent-switches --brackets=break-closing --pad=oper --suffix=none")
-
-ADD_CUSTOM_TARGET("reformat_codebase"
-	COMMAND echo astyle ${ASTYLE_OPTIONS} ${REFORMAT_FILES}
-)
-
-#
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTDeveloper.cmake")
 ######################################################
 
 ######################################################
-# This is the CPack section
-# Copied and modified from http://www.vtk.org/Wiki/CMake:Packaging_With_CPack
-
-SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows Beta")
-SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
-SET(CPACK_PACKAGE_VERSION_MAJOR "2")
-SET(CPACK_PACKAGE_VERSION_MINOR "3")
-SET(CPACK_PACKAGE_VERSION_PATCH "0")
-SET(CPACK_PACKAGE_INSTALL_DIRECTORY "BibleTime")
-
+# Cpack section
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTCpack.cmake")
 ######################################################
-# Windows segment
-######################################################
-IF(WIN32 AND NOT UNIX)
-  SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README")
-  SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-  # There is a bug in NSI that does not handle full unix paths properly. Make
-  # sure there is at least one set of four (4) backlasshes.
 
-  # We need the libraries, and they're not pulled in automatically
-  INCLUDE(${QT_USE_FILE})
-  SET(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
-  INSTALL(FILES
-			"${QT_LIBRARY_DIR}/QtWebKitd4.dll"
-			"${QT_LIBRARY_DIR}/QtGuid4.dll"
-			"${QT_LIBRARY_DIR}/QtXmld4.dll"
-			"${QT_LIBRARY_DIR}/QtTestd4.dll"
-			"${QT_LIBRARY_DIR}/QtNetworkd4.dll"
-			"${QT_LIBRARY_DIR}/QtCored4.dll"
-			"${QT_LIBRARY_DIR}/phonond4.dll"
-			"${QT_LIBRARY_DIR}/QtSvgd4.dll"
-			DESTINATION "${BT_DESTINATION}"
-			CONFIGURATIONS "Debug"
-  )
-  INSTALL(FILES
-			"${QT_LIBRARY_DIR}/QtWebKit4.dll"
-			"${QT_LIBRARY_DIR}/QtGui4.dll"
-			"${QT_LIBRARY_DIR}/QtXml4.dll"
-			"${QT_LIBRARY_DIR}/QtTest4.dll"
-			"${QT_LIBRARY_DIR}/QtNetwork4.dll"
-			"${QT_LIBRARY_DIR}/QtCore4.dll"
-			"${QT_LIBRARY_DIR}/phonon4.dll"
-			"${QT_LIBRARY_DIR}/QtSvg4.dll"
-			DESTINATION "${BT_DESTINATION}"
-			CONFIGURATIONS "Release"
-  )
-
-  # Qt Plugins
-  INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/plugins")
-
-  # This adds in the required Windows system libraries and libsword.dll
-  INCLUDE(InstallRequiredSystemLibraries)
-  STRING(REPLACE ".lib" ".dll" SWORD_DLL "${SWORD_LIBRARY}")
-  INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
-
-  # Some options for the CPack system.  These should be pretty self-evident
-  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\pics\\\\icons\\\\bibletime.png")
-  SET(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\bibletime.exe")
-  SET(CPACK_NSIS_DISPLAY_NAME "${CPACK_PACKAGE_INSTALL_DIRECTORY} for Windows")
-  SET(CPACK_NSIS_HELP_LINK "http:\\\\\\\\www.bibletime.info")
-  SET(CPACK_NSIS_URL_INFO_ABOUT "http:\\\\\\\\www.bibletime.info")
-  SET(CPACK_NSIS_CONTACT "bt-devel@crosswire.org")
-  SET(CPACK_NSIS_MODIFY_PATH OFF)
-  SET(CPACK_GENERATOR "NSIS")
-####################################
-#   Apple Segment
-####################################
-ELSEIF(APPLE)
-  INCLUDE(${QT_USE_FILE})
-  SET(QT_FRAMEWORKS_USED "QtWebKit"
-  			 "QtGui"
-			 "QtXml"
-			 "QtTest"
-			 "QtNetwork"
-			 "QtCore"
-			 "QtSvg")
-  FOREACH(QT_FRAME ${QT_FRAMEWORKS_USED})
-    INSTALL(DIRECTORY
-            "${QT_LIBRARY_DIR}/${QT_FRAME}.framework"
-            DESTINATION "${BT_DESTINATION}/../Library/Frameworks/")
-  ENDFOREACH(QT_FRAME ${QT_FRAMEWORKS_USED})
-  # Other libraries I need
-  INSTALL(FILES "${CLUCENE_LIBRARY}"
-	        "${CLUCENE_LIBRARY_DIR}/libclucene.0.0.0.dylib"
-		"${CLUCENE_LIBRARY_DIR}/libclucene.0.dylib"
-		"/opt/local/lib/libcurl.4.dylib"
-   	        "/opt/local/lib/libssl.0.9.8.dylib"
-	       	"/opt/local/lib/libcrypto.0.9.8.dylib"
-	       	"/opt/local/lib/libicui18n.40.dylib"
-	       	"/opt/local/lib/libicui18n.40.0.dylib"
-		"/opt/local/lib/libicuuc.40.dylib"
-	       	"/opt/local/lib/libicuuc.40.0.dylib"
-	       	"/opt/local/lib/libicuio.40.dylib"
-	       	"/opt/local/lib/libicuio.40.0.dylib"
-		"/opt/local/lib/libicudata.40.dylib"
-	       	"/opt/local/lib/libicudata.40.0.dylib"
-		"/opt/local/lib/libpng12.0.dylib"
-          DESTINATION "${BT_DESTINATION}/../Library")
-
-  # Qt Plugins
-  INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/../../plugins")
-  # A file to execute that might get rid of the above mess
-  SET(CPACK_BUNDLE_STARTUP_COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/bt_start.sh")
-  SET(CPACK_BUNDLE_NAME "BibleTime")
-  SET(CPACK_PACKAGE_FILE_NAME "BibleTime_Mac_Beta")
-  SET(CPACK_BUNDLE_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/Info.plist")
-  SET(CPACK_BUNDLE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")
-  SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/macos/BibleTime.icns")
-  SET(CPACK_GENERATOR "Bundle")
-ENDIF(WIN32 AND NOT UNIX)
-
-SET(CPACK_PACKAGE_EXECUTABLES "bibletime" "BibleTime")
-
-INCLUDE(CPack)

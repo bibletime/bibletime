@@ -1,3 +1,7 @@
+2009-10-09 Martin Gruner <mgruner@crosswire.org>
+	* Bug-a-thon
+	* Split CMakeLists.txt into pieces
+
 2009-10-06 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.3
 
