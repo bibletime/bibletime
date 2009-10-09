@@ -152,7 +152,13 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
 
     beginInsertRows(QModelIndex(), m_data.size(),
                     m_data.size() + newModules.size() - 1);
+#if QT_VERSION >= 0x040500
     m_data.append(newModules);
+#else
+    Q_FOREACH(CSwordModuleInfo *module, newModules) {
+        m_data.append(module);
+    }
+#endif
     endInsertRows();
 }
 
