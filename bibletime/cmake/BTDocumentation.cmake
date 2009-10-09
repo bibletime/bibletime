@@ -18,6 +18,14 @@ ADD_CUSTOM_TARGET("messages_default"
 ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
+IF(CMAKE_SYSTEM MATCHES "BSD")
+	SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs_freebsd.xsl")
+ELSE(CMAKE_SYSTEM MATCHES "BSD")
+	SET(BT_DOCBOOK_XSL "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl")
+ENDIF(CMAKE_SYSTEM MATCHES "BSD")
+
+MESSAGE(STATUS "XSL FILE TO BE USED: ${BT_DOCBOOK_XSL}")
+
 ######################################################
 # Update handbook
 ADD_CUSTOM_TARGET("handbook")
@@ -28,7 +36,7 @@ ADD_CUSTOM_TARGET("handbook_translations"
 
 FOREACH(HANDBOOK_LOCALE_LANG ${HANDBOOK_LOCALE_LANGS} "en")
 	ADD_CUSTOM_TARGET("handbook_${HANDBOOK_LOCALE_LANG}"
-		COMMAND xsltproc --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl ../docbook/index.docbook
+		COMMAND xsltproc --stringparam l10n.gentext.default.language ${HANDBOOK_LOCALE_LANG} ${BT_DOCBOOK_XSL} ../docbook/index.docbook
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/handbook/${HANDBOOK_LOCALE_LANG}/html/")
 	ADD_DEPENDENCIES("handbook_${HANDBOOK_LOCALE_LANG}" "handbook_translations")
 	ADD_DEPENDENCIES("handbook" "handbook_${HANDBOOK_LOCALE_LANG}")
@@ -43,9 +51,10 @@ ADD_CUSTOM_TARGET("howto_translations"
 	WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 ADD_DEPENDENCIES("howto" "howto_translations")
 
+
 FOREACH(HOWTO_LOCALE_LANG ${HOWTO_LOCALE_LANGS} "en")
 	ADD_CUSTOM_TARGET("howto_${HOWTO_LOCALE_LANG}"
-		COMMAND xsltproc "${CMAKE_CURRENT_SOURCE_DIR}/cmake/docs/docs.xsl" "../docbook/index.docbook"
+		COMMAND xsltproc --stringparam l10n.gentext.default.language ${HOWTO_LOCALE_LANG} ${BT_DOCBOOK_XSL} "../docbook/index.docbook"
 		WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/docs/howto/${HOWTO_LOCALE_LANG}/html/")
 	ADD_DEPENDENCIES("howto_${HOWTO_LOCALE_LANG}" "howto_translations")
 	ADD_DEPENDENCIES("howto" "howto_${HOWTO_LOCALE_LANG}")
