@@ -25,9 +25,10 @@ FOREACH(MESSAGE_LOCALE_LANG ${MESSAGE_LOCALE_LANGS})
 	ADD_DEPENDENCIES("compile_messages_${MESSAGE_LOCALE_LANG}" "messages_${MESSAGE_LOCALE_LANG}")
 	ADD_DEPENDENCIES("messages" "compile_messages_${MESSAGE_LOCALE_LANG}")
 ENDFOREACH(MESSAGE_LOCALE_LANG)
+
 # Template file for translators
 ADD_CUSTOM_TARGET("messages_default"
-	COMMAND lupdate "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui.ts")
+	COMMAND ${QT_LUPDATE_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/src" -ts "${CMAKE_CURRENT_SOURCE_DIR}/i18n/messages/bibletime_ui.ts")
 ADD_DEPENDENCIES(messages "messages_default")
 ######################################################
 
