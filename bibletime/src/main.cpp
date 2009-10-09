@@ -26,6 +26,7 @@
 #include <QTranslator>
 #include <QDebug>
 #include <QTextCodec>
+#include <QVariant>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
@@ -165,7 +166,7 @@ int main(int argc, char* argv[]) {
     // This is the QT4 version, will only work if main App is QApplication
     // A binary option (on / off)
     showDebugMessages = QCoreApplication::arguments().contains("--debug");
-    app.setProperty("--debug", showDebugMessages);
+    app.setProperty("--debug", QVariant(showDebugMessages));
 
     //Migrate configuration data, if neccessary
     util::MigrationUtil::checkMigration();
