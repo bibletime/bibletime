@@ -1,0 +1,83 @@
+<chapter id="hdbk-intro">
+  <title>Úvod</title>
+  <sect1 id="hdbk-intro-about">
+    <title>O &bibletime;</title>
+    <para>&bibletime; je nástroj pro studium Bible s podporou pro různé texty a 
+jazyky. Také velké množství modulů děl, které je snadné nainstalovat a 
+spravovat. Je založen na knihovně <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>, která poskytuje 
+funkcionalitu pro &bibletime;, jako zobrazování biblických textů, 
+vyhledávání atd. Sword je vlajkovou lodí společnosti <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>&bibletime; je navržen k použití s díly v jednom z formátů podporovaných 
+projektem Sword. Kompletní informace o podporovaných formátech dokumentů 
+naleznete ve<ulink url="http://www.crosswire.org/sword/develop/index.jsp"> 
+vývojářské sekci</ulink> na stránkách projektu Sword, Crosswire Bible 
+Society.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Dostupná díla</title>
+      <para>Přes 200 dokumentů v 50 jazycích jsou dostupné ze stránek <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>. To zahrnuje: 
+      <variablelist>
+        <varlistentry>
+          <term>Bible</term>
+          <listitem>
+            <para>Úplný text Bible, s volitelnými věcmi jako Strongova čísla, nadpisy, nebo 
+poznámky v textu. Bible jsou dostupné v mnoha jazycích, nejen v moderních 
+verzích, ale také ve starověkých jako Codex Leningradensis ( Kodex 
+Leningradský; "WLC", Hebrejsky), nebo Septuaginta ("LXX", Řecky). Toto je 
+nejmodernější sekce knihovny projektu Sword.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Knihy</term>
+          <listitem>
+            <para>Dostupné knihy jsou "Imitation of Christ", "Enuma Elish", a"Josephus: The 
+Complete Works"</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Komentáře</term>
+          <listitem>
+            <para>Dostupné komentáře zahrnují klasiku jako "Notes on the Bible" Johna 
+Wesleyho, komentáře Matthewa Henryho a Lutherův "Komentář ke galatským." 
+Pomocí <emphasis>Osobního</emphasis>komentáře můžete<link 
+linkend="hdbk-op-parts-desk-write"> nahrát osobní sešit poznámek</link> do 
+biblických sekcí.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Denní zamyšlení</term>
+          <listitem>
+            <para>Mnoho lidí oceňuje tyto denní porce Božího slova. Mezi dostupná díla patří 
+"Denní světlo na cestu" a "Losungen".</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lexikony/slovníky</term>
+          <listitem>
+            <para>Dostupné lexikony zahrnují: Robinson's Morphological Analysis Codes, 
+Brown-Driver-Briggs Hebrew Lexicon a International Standard Bible 
+Encyclopedia. Dostupné slovníky zahrnují: Strong's Hebrew Bible Dictionary, 
+Strong's Greek Bible Dictionary, Webster's Revised Unabridged Dictionary of 
+the English Language 1913, Nave's Topical Bible.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivace</title>
+      <para>Přejeme si sloužit Bohu a přispět svým dílem ostatním v růstu ve vztahu s 
+Ním. Chceme, aby byl tento výkonný a kvalitní program stále jednoduchý a 
+intuitivní. Přejeme si chválit Boha, neboť on je zdroj všeho dobrého.</para>
+      <blockquote>
+        <attribution>Jakubův 1:17</attribution>
+        <para>Každý dobrý dar a každé dokonalé obdarování je shůry, sestupuje od Otce 
+nebeských světel. U něho není proměny ani střídání světla a stínu.</para>
+      </blockquote>
+      <para>Bůh vám žehnej při používání tohoto programu.</para>
+    </sect2>
+  </sect1>
+</chapter>

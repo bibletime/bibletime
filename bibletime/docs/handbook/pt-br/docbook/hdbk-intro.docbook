@@ -1,0 +1,86 @@
+<chapter id="hdbk-intro">
+  <title>Introduo</title>
+  <sect1 id="hdbk-intro-about">
+    <title>Sobre &bibletime;</title>
+    <para>&bibletime;  uma ferramenta de estudo bblico com suporte para diferentes 
+tipos de textos e idiomas. Mesmo grandes quantidades de obras so simples de 
+instalar e gerenciar. Ele foi feito sobre a biblioteca <ulink 
+url="http://www.crosswire.org/sword">Sword</ulink>, que prov a 
+funcionalidade de back-end para o &bibletime;, tal como visualizar texto 
+bblico, pesquisar, etc. Sword  o carro-chefe da <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+
+    <para>&bibletime; foi desenhado para ser usado com obras codificadas em um dos 
+formatos suportados pelo projeto Sword. Informaes completas sobre os 
+formatos de documentos suportados podem ser encontradas na <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> seo 
+dedesenvolvimento</ulink> do Projeto Sword, Crosswire Bible Society.</para>
+
+    <sect2 id="hdbk-intro-works">
+      <title>Obras disponveis</title>
+      <para>Mais de 200 documentos em 50 idiomas esto disponveis da <ulink 
+url="http://www.crosswire.org">Crosswire Bible Society</ulink>. Esto 
+inclusos: 
+      <variablelist>
+        <varlistentry>
+          <term>Bblias</term>
+          <listitem>
+            <para>O texto completo da Bblia, com itens opcionais como os nmeros Strong, 
+cabealhos e/ou rodaps no texto. Bblias esto disponveis em muitos idiomas, e 
+incluem no somente verses modernas, mas tambm textos antigos como o Codex 
+Leningradensis ("WLC", hebraico), e a Septuaginta ("LXX", grego). Essa  a 
+seo mais avanada na biblioteca do projeto Sword.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Livros</term>
+          <listitem>
+            <para>Livros disponveis incluindo "Imitation of Christ", "Enuma Elish", e 
+"Josephus: The Complete Works" (em ingls)</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Comentrios</term>
+          <listitem>
+            <para>Comentrios disponveis incluindo clssicos como "Notas sobre a Bblia" de John 
+Wesley, o comentrio de Matthew Henry e o "Comentrio sobre Glatas" de 
+Lutero. Com o comentrio <emphasis>pessoal</emphasis> voc pode <link 
+linkend="hdbk-op-parts-desk-write"> gravar suas prprias notas pessoas</link> 
+nas sees da Bblia.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Devocionais dirios</term>
+          <listitem>
+            <para>Muitas pessoas apreciam essas pores dirias da palavra de Deus. Obras 
+disponveis incluem Daily Light on the Daily Path, e o Losungen (ingls).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lxicos/Dicionrios</term>
+          <listitem>
+            <para>Lxicos disponveis incluem: Cdigos de Anlise Morfolgicos de Robinson, Lxico 
+Hebraico de Brown-Driver-Briggs e a Enciclopdia da International Standard 
+Bible. Dicionrios disponveis incluem o Dicionrio Bblico Hebraico de Strong, 
+o Dicionrio Bblico Grego de Strong, Dicionrio Revisado da lngua Inglesa de 
+Webster 1913, Bblia em Tpicos de Nave.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist></para>
+    </sect2>
+    <sect2 id="hdbk-intro-motivation">
+      <title>Motivao</title>
+      <para>Nosso desejo  servir a Deus, e fazer nossa parte em ajudar outros a crescer 
+no seu relacionamento com Ele. Ns batalhamos para tornar isso um programa 
+poderoso e de qualidade, e ainda assim faz-lo simples e de operao 
+intuitiva.  nosso desejo que Deus seja louvado, pois ele  a origem de todas 
+as coisas boas.</para>
+      <blockquote>
+        <attribution>Tiago 1:17, ACF</attribution>
+        <para>Toda a boa ddiva e todo o dom perfeito vem do alto, descendo do Pai das 
+luzes, em quem no h mudana nem sombra de variao.</para>
+      </blockquote>
+      <para>Deus o abenoe enquanto usa esse programa.</para>
+    </sect2>
+  </sect1>
+</chapter>
