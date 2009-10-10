@@ -85,6 +85,7 @@ void CBookshelfIndex::initView() {
 }
 
 void CBookshelfIndex::initActions() {
+    namespace DU = util::filesystem::directoryutil;
 
     // Each action has a type attached to it as a dynamic property, see actionenum.h.
     // Menuitem and its subitems can have the same type.
@@ -99,7 +100,7 @@ void CBookshelfIndex::initActions() {
 
     // -------------------------Grouping --------------------------------------
     actionMenu = new QMenu(tr("Grouping"), this);
-    actionMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::grouping::icon));
+    actionMenu->setIcon(DU::getIcon(CResMgr::mainIndex::grouping::icon));
     actionMenu->setProperty("indexActionType", QVariant(Grouping));
 
     m_groupingGroup = new QActionGroup(this);
@@ -181,7 +182,7 @@ void CBookshelfIndex::initActions() {
 
     // -------------------------Edit module --------------------------------
     actionMenu = new QMenu(tr("Edit"), this);
-    actionMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::editModuleMenu::icon) );
+    actionMenu->setIcon(DU::getIcon(CResMgr::mainIndex::editModuleMenu::icon));
 //	actionMenu->setDelayed(false);
     actionMenu->setProperty("indexActionType", QVariant(EditModule));
     actionMenu->setProperty("singleItemAction", QVariant(true));
@@ -229,7 +230,9 @@ void CBookshelfIndex::initActions() {
 * than to modify all QAction constructors.
 */
 QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
+    namespace DU = util::filesystem::directoryutil;
+
+    QAction* action = new QAction(DU::getIcon(pix), text, parent);
     if (receiver && !QString(slot).isEmpty()) {
         QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     }

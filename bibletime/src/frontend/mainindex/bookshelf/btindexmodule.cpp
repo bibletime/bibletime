@@ -22,10 +22,13 @@
 
 
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)
-        : BTIndexItem(previous) {
+        : BTIndexItem(previous)
+{
+    namespace DU = util::filesystem::directoryutil;
+
     //qDebug("BTIndexModule::BTIndexModule");
     setText(0, treeItem->text()); //set text
-    setIcon(0, util::filesystem::DirectoryUtil::getIcon(treeItem->iconName()) );
+    setIcon(0, DU::getIcon(treeItem->iconName()));
     m_moduleInfo = treeItem->moduleInfo();
     setToolTip(0, CToolClass::moduleToolTip(moduleInfo()) );
 

@@ -80,6 +80,8 @@ QString BtInstallPage::selectedInstallPath() {
 }
 
 void BtInstallPage::initView() {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug("void BtInstallPage::initView() start");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
@@ -100,7 +102,7 @@ void BtInstallPage::initView() {
     //m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
     m_configurePathButton = new QToolButton(this);
     m_configurePathButton->setToolTip(tr("Configure paths where works are installed"));
-    m_configurePathButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
+    m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
     pathLayout->addItem(pathSpacer);
     pathLayout->addWidget(pathLabel);
@@ -119,7 +121,7 @@ void BtInstallPage::initView() {
     installButtonLayout->addItem(installButtonSpacer);
     m_installButton = new QPushButton(tr("Install..."), this);
     m_installButton->setToolTip(tr("Install or update selected works"));
-    m_installButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
+    m_installButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::install_icon));
     m_installButton->setEnabled(false);
     installButtonLayout->addWidget(m_installButton);
 

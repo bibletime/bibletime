@@ -21,9 +21,11 @@
 namespace Profile {
 
 CProfileMgr::CProfileMgr() : m_startupProfile(0) {
+    namespace DU = util::filesystem::directoryutil;
+
     //m_profiles.setAutoDelete(true);
 
-    m_profilePath = util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/";
+    m_profilePath = DU::getUserSessionsDir().absolutePath() + "/";
 
     QDir d( m_profilePath );
     QStringList files = d.entryList(QStringList("*.xml"));

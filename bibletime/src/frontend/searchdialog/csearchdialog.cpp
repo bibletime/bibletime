@@ -71,8 +71,11 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
-        m_searchResultArea(0), m_searchOptionsArea(0) {
-    setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon) );
+        m_searchResultArea(0), m_searchOptionsArea(0)
+{
+    namespace DU = util::filesystem::directoryutil;
+
+    setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
     setWindowTitle(tr("Search"));
     setAttribute(Qt::WA_DeleteOnClose);
     m_searcher.connectFinished( this, SLOT(searchFinished()));
@@ -205,6 +208,8 @@ void CSearchDialog::setSearchText( const QString searchText ) {
 
 /** Initializes this object. */
 void CSearchDialog::initView() {
+    namespace DU = util::filesystem::directoryutil;
+
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     setLayout(verticalLayout);
 
@@ -224,7 +229,7 @@ void CSearchDialog::initView() {
 
     m_closeButton = new QPushButton(this);
     m_closeButton->setText(tr("&Close"));
-    m_closeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::close_icon));
+    m_closeButton->setIcon(DU::getIcon(CResMgr::searchdialog::close_icon));
     horizontalLayout->addWidget(m_closeButton);
 
     verticalLayout->addLayout(horizontalLayout);

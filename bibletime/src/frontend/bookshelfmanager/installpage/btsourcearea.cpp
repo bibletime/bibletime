@@ -55,6 +55,8 @@ BtSourceArea::~BtSourceArea() {
 }
 
 void BtSourceArea::initView() {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug("BtSourceArea::initView");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     //QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
@@ -73,18 +75,18 @@ void BtSourceArea::initView() {
     QHBoxLayout *sourceLayout = new QHBoxLayout();
     m_refreshButton = new QPushButton(tr("Refresh..."));
     m_refreshButton->setToolTip(tr("Refresh the list of works from this source"));
-    m_refreshButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
+    m_refreshButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::refresh_icon));
     //m_refreshButton->setEnabled(false);
     QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     //m_editButton = new QPushButton(tr("Edit..."));
     //m_editButton->setEnabled(false); // TODO after writing the edit widget
     m_deleteButton = new QPushButton(tr("Delete..."));
     m_deleteButton->setToolTip(tr("Delete this source"));
-    m_deleteButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
+    m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
     //m_deleteButton->setEnabled(false);
     m_addButton = new QPushButton(tr("Add..."));
     m_addButton->setToolTip(tr("Add new source"));
-    m_addButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
+    m_addButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::add_icon));
 
     sourceLayout->addWidget(m_refreshButton);
     sourceLayout->addItem(sourceSpacer);

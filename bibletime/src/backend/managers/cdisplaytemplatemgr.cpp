@@ -146,12 +146,14 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 }
 
 void CDisplayTemplateMgr::loadTemplates() {
+    namespace DU = util::filesystem::directoryutil;
+
     QStringList files;
-    foreach (QString file, util::filesystem::DirectoryUtil::getDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
-        files += util::filesystem::DirectoryUtil::getDisplayTemplatesDir().canonicalPath() + "/" + file;
+    foreach (QString file, DU::getDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
+        files += DU::getDisplayTemplatesDir().canonicalPath() + "/" + file;
     }
-    foreach (QString file, util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
-        files += util::filesystem::DirectoryUtil::getUserDisplayTemplatesDir().canonicalPath() + "/" + file;
+    foreach (QString file, DU::getUserDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {
+        files += DU::getUserDisplayTemplatesDir().canonicalPath() + "/" + file;
     }
 
     foreach (QString file, files) {

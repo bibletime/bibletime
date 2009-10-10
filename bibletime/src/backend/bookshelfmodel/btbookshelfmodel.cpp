@@ -59,7 +59,7 @@ QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,
 }
 
 QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
-    typedef util::filesystem::DirectoryUtil DU;
+    namespace DU = util::filesystem::directoryutil;
 
     switch (category) {
         case CSwordModuleInfo::Bibles:

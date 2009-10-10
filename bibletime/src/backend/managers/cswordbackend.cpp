@@ -334,6 +334,8 @@ CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* con
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
 bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
+    namespace DU = util::filesystem::directoryutil;
+
     sword::SectionMap::iterator section;
     DIR *dir = opendir(configPath);
 
@@ -376,7 +378,7 @@ bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleC
 
     if (!foundConfig && configType != 2) { //search in $HOME/.sword/
 
-        QString myPath = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
+        QString myPath = DU::getUserHomeDir().absolutePath();
         myPath.append("/.sword/mods.d");
         dir = opendir(myPath.toUtf8().constData());
 
@@ -536,8 +538,10 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 }
 
 const QStringList CSwordBackend::swordDirList() {
+    namespace DU = util::filesystem::directoryutil;
+
     QSet<QString> ret;
-    const QString home = util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath();
+    const QString home = DU::getUserHomeDir().absolutePath();
 
     //return a list of used Sword dirs. Useful for the installer
     QString configPath = QString("%1/.sword/sword.conf").arg(home);

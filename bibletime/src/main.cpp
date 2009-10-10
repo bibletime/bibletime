@@ -36,8 +36,6 @@
 #include "tests/bibletime_test.h"
 #endif
 
-using namespace util::filesystem;
-
 bool showDebugMessages;
 
 void myMessageOutput( QtMsgType type, const char *msg ) {
@@ -115,6 +113,8 @@ extern "C" {
 
 
 int main(int argc, char* argv[]) {
+    namespace DU = util::filesystem::directoryutil;
+
     qInstallMsgHandler( myMessageOutput );
 
 #ifdef BT_ENABLE_TESTING
@@ -145,7 +145,7 @@ int main(int argc, char* argv[]) {
     app.installTranslator(&qtTranslator);
     //then our own
     QTranslator BibleTimeTranslator;
-    BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DirectoryUtil::getLocaleDir().canonicalPath());
+    BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DU::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
 
 #if 0

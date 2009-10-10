@@ -58,9 +58,11 @@ void CHTMLWriteWindow::initConnections() {
 }
 
 void CHTMLWriteWindow::initToolbars() {
+    namespace DU = util::filesystem::directoryutil;
+
     //setup the main toolbar
     m_actions.syncWindow = new QAction(
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+        DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
         tr("Sync with active Bible"),
         actionCollection()
     );
@@ -71,7 +73,7 @@ void CHTMLWriteWindow::initToolbars() {
     mainToolBar()->addAction(m_actions.syncWindow);
 
     m_actions.saveText = new QAction(
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
         tr("Save text"),
         actionCollection()
     );
@@ -83,7 +85,7 @@ void CHTMLWriteWindow::initToolbars() {
 
 
     m_actions.deleteEntry = new QAction(
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
         tr("Delete current entry"),
         actionCollection()
     );
@@ -94,7 +96,7 @@ void CHTMLWriteWindow::initToolbars() {
     mainToolBar()->addAction(m_actions.deleteEntry);
 
     m_actions.restoreText = new QAction(
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
         tr("Restore original text"),
         actionCollection()
     );

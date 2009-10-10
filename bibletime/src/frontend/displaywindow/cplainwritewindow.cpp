@@ -54,9 +54,11 @@ void CPlainWriteWindow::initView() {
 }
 
 void CPlainWriteWindow::initToolbars() {
+    namespace DU = util::filesystem::directoryutil;
+
     m_actions.syncWindow = new QAction(
         //KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
+        DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),
         tr("Sync with active Bible"),
         actionCollection()
     );
@@ -69,7 +71,7 @@ void CPlainWriteWindow::initToolbars() {
 
     m_actions.saveText = new QAction(
         //KIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::saveText::icon),
         tr("Save text"),
         actionCollection()
     );
@@ -82,7 +84,7 @@ void CPlainWriteWindow::initToolbars() {
 
     m_actions.deleteEntry = new QAction(
         //KIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::deleteEntry::icon),
         tr("Delete current entry"),
         actionCollection()
     );
@@ -95,7 +97,7 @@ void CPlainWriteWindow::initToolbars() {
 
     m_actions.restoreText = new QAction(
         //KIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
-        util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
+        DU::getIcon(CResMgr::displaywindows::writeWindow::restoreText::icon),
         tr("Restore original text"),
         actionCollection()
     );

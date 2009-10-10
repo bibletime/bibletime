@@ -92,7 +92,8 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
 /** Returns the icon used for the module given as aparameter. */
 QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
-    return util::filesystem::DirectoryUtil::getIcon(getIconNameForModule(module_info));
+    namespace DU = util::filesystem::directoryutil;
+    return DU::getIcon(getIconNameForModule(module_info));
 }
 
 /** Returns the name for the icon used for the module given as aparameter. */

@@ -36,7 +36,7 @@ class LanguageItem: public Item {
         }
 
         inline QIcon icon() const {
-            return util::filesystem::DirectoryUtil::getIcon("flag.svg");
+            return util::filesystem::directoryutil::getIcon("flag.svg");
         }
 
         inline bool fitFor(CSwordModuleInfo *module) {

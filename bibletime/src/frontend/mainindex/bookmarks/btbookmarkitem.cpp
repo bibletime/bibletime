@@ -141,8 +141,10 @@ QString BtBookmarkItem::englishKey() const {
 }
 
 void BtBookmarkItem::update() {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug() << "BtBookmarkItem::update";
-    setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::bookmark::icon));
+    setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));
 
     const QString title = QString::fromLatin1("%1 (%2)").arg(key()).arg(module() ? module()->name() : QObject::tr("unknown"));
     setText(0, title);

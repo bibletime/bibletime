@@ -153,6 +153,8 @@ QStringList targetList() {
 }
 
 bool setTargetList( const QStringList& targets ) {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug("backend::setTargetList");
     //saves a new Sword config using the provided target list
     //QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
@@ -185,7 +187,7 @@ bool setTargetList( const QStringList& targets ) {
     bool setDataPath = false;
     for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
         QString t = *it;
-        if (t.contains( util::filesystem::DirectoryUtil::getUserHomeDir().canonicalPath().append("/.sword") )) {
+        if (t.contains(DU::getUserHomeDir().canonicalPath().append("/.sword"))) {
             //we don't want $HOME/.sword in the config
             continue;
         }
@@ -239,13 +241,17 @@ void initPassiveFtpMode() {
     config.Save();
 }
 const QString swordConfigFilename() {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug("backend::swordConfigFilename");
-    qDebug() << util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
-    return util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
+    qDebug() << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
+    return DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
 }
 
 const QDir swordDir() {
-    return QDir(util::filesystem::DirectoryUtil::getUserHomeDir().absolutePath().append("/.sword/"));
+    namespace DU = util::filesystem::directoryutil;
+
+    return QDir(DU::getUserHomeDir().absolutePath().append("/.sword/"));
 }
 
 CSwordBackend* backend( const sword::InstallSource& is) {

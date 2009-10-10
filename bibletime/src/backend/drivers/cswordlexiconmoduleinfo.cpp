@@ -45,6 +45,8 @@ CSwordLexiconModuleInfo::~CSwordLexiconModuleInfo() {
 
 /** Returns the entries of the module. */
 QStringList* CSwordLexiconModuleInfo::entries() {
+    namespace DU = util::filesystem::directoryutil;
+
     if (!module()) {
         return 0;
     }
@@ -68,7 +70,7 @@ QStringList* CSwordLexiconModuleInfo::entries() {
             return m_entryList;
         }
 
-        QString dir(util::filesystem::DirectoryUtil::getUserCacheDir().absolutePath());
+        QString dir(DU::getUserCacheDir().absolutePath());
         QFile f1(
             QString(dir)
             .append("/")
@@ -141,7 +143,7 @@ QStringList* CSwordLexiconModuleInfo::entries() {
 
             if (m_entryList->count()) {
                 //create cache
-                QString dir = util::filesystem::DirectoryUtil::getUserCacheDir().absolutePath();
+                QString dir(DU::getUserCacheDir().absolutePath());
                 //QFile f2( QString::fromLatin1("%1/%2").arg(dir).arg( name() ) );
                 QFile f2( QString(dir).append("/").append(name()) );
 

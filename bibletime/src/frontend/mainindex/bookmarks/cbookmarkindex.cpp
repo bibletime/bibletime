@@ -131,7 +131,8 @@ void CBookmarkIndex::initView() {
 * than to modify all QAction constructors.
 */
 QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    QAction* action = new QAction(util::filesystem::DirectoryUtil::getIcon(pix), text, parent);
+    namespace DU = util::filesystem::directoryutil;
+    QAction* action = new QAction(DU::getIcon(pix), text, parent);
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;
 }
@@ -244,6 +245,8 @@ void CBookmarkIndex::dragLeaveEvent( QDragLeaveEvent* ) {
 
 
 void CBookmarkIndex::paintEvent(QPaintEvent* event) {
+    namespace DU = util::filesystem::directoryutil;
+
     static QPixmap pix;
     static int halfPixHeight;
     static bool arrowInitialized = false;
@@ -253,12 +256,12 @@ void CBookmarkIndex::paintEvent(QPaintEvent* event) {
         arrowInitialized = true;
         int arrowSize = CToolClass::mWidth(this, 1);
         QString fileName;
-        if (util::filesystem::DirectoryUtil::getIconDir().exists("pointing_arrow.svg")) {
-            fileName = util::filesystem::DirectoryUtil::getIconDir().filePath("pointing_arrow.svg");
+        if (DU::getIconDir().exists("pointing_arrow.svg")) {
+            fileName = DU::getIconDir().filePath("pointing_arrow.svg");
         }
         else {
-            if (util::filesystem::DirectoryUtil::getIconDir().exists("pointing_arrow.png")) {
-                fileName = util::filesystem::DirectoryUtil::getIconDir().filePath("pointing_arrow.png");
+            if (DU::getIconDir().exists("pointing_arrow.png")) {
+                fileName = DU::getIconDir().filePath("pointing_arrow.png");
             }
             else {
                 qWarning() << "Picture file pointing_arrow.svg or .png not found!";

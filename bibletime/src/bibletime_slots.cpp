@@ -350,12 +350,16 @@ void BibleTime::slotSearchDefaultBible() {
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-    QString urlPath = "file://" + util::filesystem::DirectoryUtil::getHandbookDir().canonicalPath() + "/index.html";
+    namespace DU = util::filesystem::directoryutil;
+
+    QString urlPath("file://" + DU::getHandbookDir().canonicalPath() + "/index.html");
     QDesktopServices::openUrl(QUrl(urlPath));
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-    QString urlPath = "file://" + util::filesystem::DirectoryUtil::getHowtoDir().canonicalPath() + "/index.html";
+    namespace DU = util::filesystem::directoryutil;
+
+    QString urlPath("file://" + DU::getHowtoDir().canonicalPath() + "/index.html");
     QDesktopServices::openUrl(QUrl(urlPath));
 }
 

@@ -49,8 +49,10 @@
 using namespace Profile;
 
 BibleTime::BibleTime() {
+    namespace DU = util::filesystem::directoryutil;
+
     QPixmap pm;
-    if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) {
+    if (!pm.load(DU::getPicsDir().canonicalPath().append( "/startuplogo.png"))) {
         qWarning("Can't load startuplogo! Check your installation.");
     }
     QSplashScreen splash(pm);
@@ -67,7 +69,7 @@ BibleTime::BibleTime() {
     initConnections();
     readSettings();
     setPlainCaption(QString());
-    setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::mainWindow::icon) );
+    setWindowIcon(DU::getIcon(CResMgr::mainWindow::icon));
 }
 
 BibleTime::~BibleTime() {

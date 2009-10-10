@@ -102,8 +102,10 @@ QTreeWidgetItem* BtBookmarkLoader::handleXmlElement(QDomElement& element, QTreeW
 
 
 QString BtBookmarkLoader::loadXmlFromFile(QString fileName) {
+    namespace DU = util::filesystem::directoryutil;
+
     if (fileName.isNull()) {
-        fileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+        fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
     }
     QFile file(fileName);
     if (!file.exists())
@@ -122,9 +124,11 @@ QString BtBookmarkLoader::loadXmlFromFile(QString fileName) {
 }
 
 void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString fileName, bool forceOverwrite) {
+    namespace DU = util::filesystem::directoryutil;
+
     Q_ASSERT(rootItem);
     if (fileName.isNull()) {
-        fileName = util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bookmarks.xml";
+        fileName = DU::getUserBaseDir().absolutePath() + "/bookmarks.xml";
     }
 
     QDomDocument doc("DOC");

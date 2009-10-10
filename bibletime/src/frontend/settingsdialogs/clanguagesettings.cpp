@@ -33,7 +33,9 @@
 #include <swlocale.h>
 
 CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
-        : BtConfigPage() {
+        : BtConfigPage()
+{
+    namespace DU = util::filesystem::directoryutil;
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
@@ -138,7 +140,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 
     for ( QMap<QString, CBTConfig::FontSettingsPair>::Iterator it = m_fontMap.begin(); it != m_fontMap.end(); ++it ) {
         if ( m_fontMap[it.key()].first ) { 	//show font icon
-            m_usageCombo->addItem(util::filesystem::DirectoryUtil::getIcon("fonts.svg"), it.key() );
+            m_usageCombo->addItem(DU::getIcon("fonts.svg"), it.key() );
         }
         else { 	//don't show icon for font
             m_usageCombo->addItem(it.key());
@@ -242,14 +244,16 @@ void CLanguageSettingsPage::newDisplayWindowFontAreaSelected(const QString& usag
 
 
 /** This slot is called when the "Use own font for language" bo was clicked. */
-void CLanguageSettingsPage::useOwnFontClicked( bool isOn ) {
+void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
+    namespace DU = util::filesystem::directoryutil;
+
     //belongs to fonts/languages
 
     m_fontChooser->setEnabled(isOn);
     m_fontMap[ m_usageCombo->currentText() ].first = isOn;
 
     if (isOn) { 	//show font icon
-        m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), util::filesystem::DirectoryUtil::getIcon("fonts.svg") );
+        m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), DU::getIcon("fonts.svg"));
     }
     else {   //don't show
         m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); //TODO: should this change icon to empty?

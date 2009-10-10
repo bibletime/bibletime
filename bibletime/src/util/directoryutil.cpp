@@ -9,113 +9,37 @@
 
 #include "directoryutil.h"
 
-//Qt includes
+#include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QFileInfoList>
-#include <QDebug>
-#include <QCoreApplication>
 #include <QLocale>
 
 namespace util {
-
 namespace filesystem {
+namespace directoryutil {
 
-void DirectoryUtil::removeRecursive(const QString dir) {
-    //Check for validity of argument
-    if (dir.isEmpty()) return;
-    QDir d(dir);
-    if (!d.exists()) return;
+namespace {
 
-    //remove all files in this dir
-    d.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks );
-    const QFileInfoList fileList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_file = fileList.begin(); it_file != fileList.end(); it_file++) {
-        d.remove( it_file->fileName() );
-    }
+QDir cachedIconDir;
+QDir cachedJavascriptDir;
+QDir cachedLicenseDir;
+QDir cachedPicsDir;
+QDir cachedLocaleDir;
+QDir cachedHandbookDir;
+QDir cachedHowtoDir;
+QDir cachedDisplayTemplatesDir;
+QDir cachedUserDisplayTemplatesDir;
+QDir cachedUserBaseDir;
+QDir cachedUserHomeDir;
+QDir cachedUserSessionsDir;
+QDir cachedUserCacheDir;
+QDir cachedUserIndexDir;
+bool dirCacheInitialized = false;
 
-    //remove all subdirs recursively
-    d.setFilter( QDir::Dirs | QDir::NoSymLinks );
-    const QFileInfoList dirList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_dir = dirList.begin(); it_dir != dirList.end(); it_dir++) {
-        if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
-            continue;
-        }
-        removeRecursive( it_dir->absoluteFilePath() );
-    }
-    d.rmdir(dir);
-}
-
-/** Returns the size of the directory including the size of all it's files and it's subdirs.
- */
-unsigned long DirectoryUtil::getDirSizeRecursive(const QString dir) {
-    //Check for validity of argument
-    QDir d(dir);
-    if (!d.exists()) return 0;
-
-    unsigned long size = 0;
-
-    //First get the size of all files int this folder
-    d.setFilter(QDir::Files);
-    const QFileInfoList infoList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); it++) {
-        size += it->size();
-    }
-
-    //Then add the sizes of all subdirectories
-    d.setFilter(QDir::Dirs);
-    const QFileInfoList dirInfoList = d.entryInfoList();
-    for (QFileInfoList::const_iterator it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); it_dir++) {
-        if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
-            continue;
-        }
-        size += getDirSizeRecursive( it_dir->absoluteFilePath() );
-    }
-    return size;
-}
-
-/**Recursively copies a directory, overwriting existing files*/
-void DirectoryUtil::copyRecursive(QString src, QString dest) {
-    QDir srcDir(src);
-    QDir destDir(dest);
-    //Copy files
-    QStringList files = srcDir.entryList(QDir::Files);
-    for (QStringList::iterator it = files.begin(); it != files.end(); ++it) {
-        QFile currFile(src + "/" + *it);
-        QString newFileLoc = dest + "/" + *it;
-        QFile newFile(newFileLoc);
-        newFile.remove();
-        currFile.copy(newFileLoc);
-    }
-    QStringList dirs = srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
-    for (QStringList::iterator it = dirs.begin(); it != dirs.end(); ++it) {
-        QString temp = *it;
-        if (!destDir.cd(*it)) {
-            destDir.mkdir(*it);
-        }
-        copyRecursive(src + "/" + *it, dest + "/" + *it);
-    }
-}
-
-static QDir cachedIconDir;
-static QDir cachedJavascriptDir;
-static QDir cachedLicenseDir;
-static QDir cachedPicsDir;
-static QDir cachedLocaleDir;
-static QDir cachedHandbookDir;
-static QDir cachedHowtoDir;
-static QDir cachedDisplayTemplatesDir;
-static QDir cachedUserDisplayTemplatesDir;
-static QDir cachedUserBaseDir;
-static QDir cachedUserHomeDir;
-static QDir cachedUserSessionsDir;
-static QDir cachedUserCacheDir;
-static QDir cachedUserIndexDir;
-
-static bool dirCacheInitialized = false;
-
-void DirectoryUtil::initDirectoryCache(void) {
+void initDirectoryCache() {
     QDir wDir( QCoreApplication::applicationDirPath() );
     wDir.makeAbsolute();
 
@@ -229,24 +153,101 @@ void DirectoryUtil::initDirectoryCache(void) {
     }
 
     dirCacheInitialized = true;
+} // void initDirectoryCache();
+} // anonymous namespace
+
+void removeRecursive(const QString &dir) {
+    //Check for validity of argument
+    if (dir.isEmpty()) return;
+    QDir d(dir);
+    if (!d.exists()) return;
+
+    //remove all files in this dir
+    d.setFilter( QDir::Files | QDir::Hidden | QDir::NoSymLinks );
+    const QFileInfoList fileList = d.entryInfoList();
+    for (QFileInfoList::const_iterator it_file = fileList.begin(); it_file != fileList.end(); it_file++) {
+        d.remove( it_file->fileName() );
+    }
+
+    //remove all subdirs recursively
+    d.setFilter( QDir::Dirs | QDir::NoSymLinks );
+    const QFileInfoList dirList = d.entryInfoList();
+    for (QFileInfoList::const_iterator it_dir = dirList.begin(); it_dir != dirList.end(); it_dir++) {
+        if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
+            continue;
+        }
+        removeRecursive( it_dir->absoluteFilePath() );
+    }
+    d.rmdir(dir);
 }
 
-QDir DirectoryUtil::getIconDir(void) {
+/** Returns the size of the directory including the size of all it's files and it's subdirs.
+ */
+unsigned long getDirSizeRecursive(const QString &dir) {
+    //Check for validity of argument
+    QDir d(dir);
+    if (!d.exists()) return 0;
+
+    unsigned long size = 0;
+
+    //First get the size of all files int this folder
+    d.setFilter(QDir::Files);
+    const QFileInfoList infoList = d.entryInfoList();
+    for (QFileInfoList::const_iterator it = infoList.begin(); it != infoList.end(); it++) {
+        size += it->size();
+    }
+
+    //Then add the sizes of all subdirectories
+    d.setFilter(QDir::Dirs);
+    const QFileInfoList dirInfoList = d.entryInfoList();
+    for (QFileInfoList::const_iterator it_dir = dirInfoList.begin(); it_dir != dirInfoList.end(); it_dir++) {
+        if ( !it_dir->isDir() || it_dir->fileName() == "." || it_dir->fileName() == ".." ) {
+            continue;
+        }
+        size += getDirSizeRecursive( it_dir->absoluteFilePath() );
+    }
+    return size;
+}
+
+/**Recursively copies a directory, overwriting existing files*/
+void copyRecursive(const QString &src, const QString &dest) {
+    QDir srcDir(src);
+    QDir destDir(dest);
+    //Copy files
+    QStringList files = srcDir.entryList(QDir::Files);
+    for (QStringList::iterator it = files.begin(); it != files.end(); ++it) {
+        QFile currFile(src + "/" + *it);
+        QString newFileLoc = dest + "/" + *it;
+        QFile newFile(newFileLoc);
+        newFile.remove();
+        currFile.copy(newFileLoc);
+    }
+    QStringList dirs = srcDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+    for (QStringList::iterator it = dirs.begin(); it != dirs.end(); ++it) {
+        QString temp = *it;
+        if (!destDir.cd(*it)) {
+            destDir.mkdir(*it);
+        }
+        copyRecursive(src + "/" + *it, dest + "/" + *it);
+    }
+}
+
+QDir getIconDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedIconDir;
 }
 
-QDir DirectoryUtil::getJavascriptDir(void) {
+QDir getJavascriptDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedJavascriptDir;
 }
 
-QDir DirectoryUtil::getLicenseDir(void) {
+QDir getLicenseDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedLicenseDir;
 }
 
-QIcon DirectoryUtil::getIcon(const QString& name) {
+QIcon getIcon(const QString &name) {
     static QMap<QString, QIcon> iconCache;
     //error if trying to use name directly...
     QString name2(name);
@@ -282,63 +283,61 @@ QIcon DirectoryUtil::getIcon(const QString& name) {
     }
 }
 
-QDir DirectoryUtil::getPicsDir(void) {
+QDir getPicsDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedPicsDir;
 }
 
-QDir DirectoryUtil::getLocaleDir(void) {
+QDir getLocaleDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedLocaleDir;
 }
 
-QDir DirectoryUtil::getHandbookDir(void) {
+QDir getHandbookDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedHandbookDir;
 }
 
-QDir DirectoryUtil::getHowtoDir(void) {
+QDir getHowtoDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedHowtoDir;
 }
 
-QDir DirectoryUtil::getDisplayTemplatesDir(void) {
+QDir getDisplayTemplatesDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedDisplayTemplatesDir;
 }
 
-QDir DirectoryUtil::getUserBaseDir(void) {
+QDir getUserBaseDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserBaseDir;
 }
 
-QDir DirectoryUtil::getUserHomeDir(void) {
+QDir getUserHomeDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserHomeDir;
 }
 
-QDir DirectoryUtil::getUserSessionsDir(void) {
+QDir getUserSessionsDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserSessionsDir;
 }
 
-QDir DirectoryUtil::getUserCacheDir(void) {
+QDir getUserCacheDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserCacheDir;
 }
 
-QDir DirectoryUtil::getUserIndexDir(void) {
+QDir getUserIndexDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserIndexDir;
 }
 
-QDir DirectoryUtil::getUserDisplayTemplatesDir(void) {
+QDir getUserDisplayTemplatesDir() {
     if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserDisplayTemplatesDir;
 }
 
-
-} //end of namespace util::filesystem
-
-} //end of namespace util
-
+} // namespace DirectoryUtil
+} // namespace filesystem
+} // namespace util

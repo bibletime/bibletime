@@ -800,7 +800,8 @@ void setModuleEncryptionKey(const QString &module, const QString &key) {
 }
 
 QSettings *getConfig() {
-    static QSettings config(util::filesystem::DirectoryUtil::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
+    namespace DU = util::filesystem::directoryutil;
+    static QSettings config(DU::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
     return &config;
 }
 

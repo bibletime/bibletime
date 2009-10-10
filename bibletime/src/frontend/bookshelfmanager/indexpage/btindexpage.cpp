@@ -31,7 +31,9 @@
 
 
 BtIndexPage::BtIndexPage()
-        : BtConfigPage() {
+        : BtConfigPage()
+{
+    namespace DU = util::filesystem::directoryutil;
 
     QVBoxLayout *vboxLayout;
     QHBoxLayout *hboxLayout;
@@ -72,8 +74,8 @@ BtIndexPage::BtIndexPage()
     m_autoDeleteOrphanedIndicesBox->setChecked( CBTConfig::get( CBTConfig::autoDeleteOrphanedIndices ) );
 
     // icons for our buttons
-    m_createButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
-    m_deleteButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
+    m_createButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::create_icon));
+    m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::indexpage::delete_icon));
 
     // connect our signals/slots
     connect(m_createButton, SIGNAL(clicked()), this, SLOT(createIndices()));

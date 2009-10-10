@@ -73,8 +73,6 @@ QModelIndex BtBookshelfTreeModel::parent(const QModelIndex &index) const {
 }
 
 QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
-    typedef util::filesystem::DirectoryUtil DU;
-
     if (!index.isValid() || index.column() != 0) {
         return QVariant();
     }

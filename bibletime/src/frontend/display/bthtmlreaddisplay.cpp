@@ -55,9 +55,11 @@ BtHtmlReadDisplay::~BtHtmlReadDisplay() {
 
 // Read javascript into memory once and create the c++ javascript object
 void BtHtmlReadDisplay::initJavascript() {
+    namespace DU = util::filesystem::directoryutil;
+
     // read bthtml.js javascript file once
     if (javascript.size() == 0) {
-        QString jsFile = util::filesystem::DirectoryUtil::getJavascriptDir().canonicalPath() + "/bthtml.js";
+        QString jsFile = DU::getJavascriptDir().canonicalPath() + "/bthtml.js";
         QFile file(jsFile);
         if (file.open(QFile::ReadOnly)) {
             while (!file.atEnd()) {

@@ -166,6 +166,8 @@ void BtAboutDialog::init_qt_tab() {
 }
 
 void BtAboutDialog::init_lic_tab() {
+    namespace DU = util::filesystem::directoryutil;
+
     selectTab(4);
     setTabText(tr("License"));
 
@@ -180,7 +182,7 @@ void BtAboutDialog::init_lic_tab() {
     //text += "<br><br>";
     text += tr("The complete legally binding license is below.");
 
-    QFile licFile(util::filesystem::DirectoryUtil::getLicenseDir().path() + "/license.html");
+    QFile licFile(DU::getLicenseDir().path() + "/license.html");
     if (licFile.open(QFile::ReadOnly)) {
         QByteArray html;
         while (!licFile.atEnd()) {
@@ -231,7 +233,9 @@ static QString make_version() {
 }
 
 static QString make_file_icon(const QString& icon) {
-    QString dir = "<img src=file://" + util::filesystem::DirectoryUtil::getIconDir().path();
+    namespace DU = util::filesystem::directoryutil;
+
+    QString dir("<img src=file://" + DU::getIconDir().path());
     return dir + "/" + icon + ".png >";
 }
 

@@ -46,6 +46,8 @@ CModuleResultView::~CModuleResultView() {}
 
 /** Initializes this widget. */
 void CModuleResultView::initView() {
+    namespace DU = util::filesystem::directoryutil;
+
     // see also csearchresultview.cpp
     setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
     setHeaderLabels( QStringList(tr("Work")) << tr("Hits") );
@@ -63,7 +65,7 @@ void CModuleResultView::initView() {
     m_popup = new QMenu(this);
 
     m_actions.copyMenu = new QMenu(tr("Copy..."), m_popup);
-    m_actions.copyMenu->setIcon(util::filesystem::DirectoryUtil::getIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
+    m_actions.copyMenu->setIcon(DU::getIcon( CResMgr::searchdialog::result::moduleList::copyMenu::icon) );
     m_actions.copy.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.copy.result, SIGNAL(triggered()), this, SLOT(copyResult()) );
     m_actions.copyMenu->addAction(m_actions.copy.result);
@@ -73,7 +75,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.copyMenu);
 
     m_actions.saveMenu = new QMenu(tr("Save..."), m_popup);
-    m_actions.saveMenu->setIcon(util::filesystem::DirectoryUtil::getIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
+    m_actions.saveMenu->setIcon(DU::getIcon( CResMgr::searchdialog::result::moduleList::saveMenu::icon) );
     m_actions.save.result = new QAction(tr("Reference only"), this);
     QObject::connect(m_actions.save.result, SIGNAL(triggered()), this, SLOT(saveResult()) );
     m_actions.saveMenu->addAction(m_actions.save.result);
@@ -83,7 +85,7 @@ void CModuleResultView::initView() {
     m_popup->addMenu(m_actions.saveMenu);
 
     m_actions.printMenu = new QMenu(tr("Print..."), m_popup);
-    m_actions.printMenu->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
+    m_actions.printMenu->setIcon(DU::getIcon(CResMgr::searchdialog::result::moduleList::printMenu::icon));
     m_actions.print.result = new QAction(tr("Reference with text"), this);
     QObject::connect(m_actions.print.result, SIGNAL(triggered()), this, SLOT(printResult()) );
     m_actions.printMenu->addAction(m_actions.print.result);

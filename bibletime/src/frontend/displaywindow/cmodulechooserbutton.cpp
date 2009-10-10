@@ -28,12 +28,15 @@
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
         : QToolButton(parent),
-        m_id(id), m_popup(0), m_moduleChooserBar(parent) {
+        m_id(id), m_popup(0), m_moduleChooserBar(parent)
+{
+    namespace DU = util::filesystem::directoryutil;
+
     m_moduleType = type;
     m_module = useModule;
     m_hasModule = (m_module) ? true : false;
 
-    setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
+    setIcon(DU::getIcon(iconName()));
     setPopupMode(QToolButton::InstantPopup);
 
     populateMenu();
@@ -81,6 +84,7 @@ int CModuleChooserButton::getId() const {
 
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( QAction* action ) {
+    namespace DU = util::filesystem::directoryutil;
 
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {
@@ -106,7 +110,7 @@ void CModuleChooserButton::moduleChosen( QAction* action ) {
         m_hasModule = true;
         m_module = module();
 
-        setIcon( util::filesystem::DirectoryUtil::getIcon(iconName()) );
+        setIcon(DU::getIcon(iconName()));
         emit sigChanged();
 
         if (m_module) {

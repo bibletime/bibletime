@@ -86,12 +86,14 @@ void BtBookmarkFolder::rename() {
 }
 
 void BtBookmarkFolder::update() {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug() << "BtBookmarkFolder::update()";
     BtBookmarkItemBase::update();
     if (isExpanded() && childCount())
-        setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::openedFolder::icon));
+        setIcon(0, DU::getIcon(CResMgr::mainIndex::openedFolder::icon));
     else
-        setIcon(0, util::filesystem::DirectoryUtil::getIcon(CResMgr::mainIndex::closedFolder::icon));
+        setIcon(0, DU::getIcon(CResMgr::mainIndex::closedFolder::icon));
 }
 
 bool BtBookmarkFolder::hasDescendant(QTreeWidgetItem* item) const {

@@ -83,6 +83,8 @@ void BtSearchOptionsArea::setSearchText(const QString& text) {
 }
 
 void BtSearchOptionsArea::initView() {
+    namespace DU = util::filesystem::directoryutil;
+
     QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     this->setSizePolicy(sizePolicy);
     hboxLayout = new QHBoxLayout(this);
@@ -102,17 +104,17 @@ void BtSearchOptionsArea::initView() {
 
     m_searchButton = new QPushButton(this);
     m_searchButton->setText(tr("&Search"));
-    m_searchButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::icon));
+    m_searchButton->setIcon(DU::getIcon(CResMgr::searchdialog::icon));
     m_searchButton->setToolTip(tr("Start to search the text in the chosen works"));
     gridLayout->addWidget(m_searchButton, 0, 2);
 
     m_chooseModulesButton = new QPushButton(tr("Ch&oose..."), searchGroupBox);
-    m_chooseModulesButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::chooseworks_icon));
+    m_chooseModulesButton->setIcon(DU::getIcon(CResMgr::searchdialog::chooseworks_icon));
     m_chooseModulesButton->setToolTip( tr("Choose works for the search"));
     gridLayout->addWidget(m_chooseModulesButton, 2, 2);
 
     m_chooseRangeButton = new QPushButton(tr("S&etup..."), searchGroupBox);
-    m_chooseRangeButton->setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::searchdialog::setupscope_icon));
+    m_chooseRangeButton->setIcon(DU::getIcon(CResMgr::searchdialog::setupscope_icon));
     m_chooseRangeButton->setToolTip(tr("Configure predefined scopes for search"));
     gridLayout->addWidget(m_chooseRangeButton, 3, 2);
 

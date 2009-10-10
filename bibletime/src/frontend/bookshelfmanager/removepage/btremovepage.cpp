@@ -38,7 +38,10 @@
 
 
 BtRemovePage::BtRemovePage()
-        : BtConfigPage() {
+        : BtConfigPage()
+{
+    namespace DU = util::filesystem::directoryutil;
+
     QGridLayout* layout = new QGridLayout(this);
     layout->setMargin(5);
 
@@ -54,7 +57,7 @@ BtRemovePage::BtRemovePage()
 
     m_removeButton = new QPushButton(tr("Remove..."), this);
     m_removeButton->setToolTip(tr("Remove the selected works"));
-    m_removeButton->setIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon) );
+    m_removeButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::removepage::remove_icon));
     m_removeButton->setEnabled(false);
     layout->addWidget(m_removeButton, 3, 1, Qt::AlignRight);
 

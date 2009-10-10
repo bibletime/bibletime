@@ -63,6 +63,8 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 BtConfigDialog::~BtConfigDialog() {}
 
 void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
+    namespace DU = util::filesystem::directoryutil;
+
     // this is a friend
     pageWidget->m_parentDialog = this;
 
@@ -76,7 +78,7 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
 
 
     QListWidgetItem* item = new QListWidgetItem(m_contentsList);
-    item->setIcon(util::filesystem::DirectoryUtil::getIcon(pageWidget->iconName()));
+    item->setIcon(DU::getIcon(pageWidget->iconName()));
     item->setText(pageWidget->header());
     item->setTextAlignment(Qt::AlignHCenter);
     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);

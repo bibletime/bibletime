@@ -27,9 +27,12 @@
 
 
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent )
-        : QToolButton(parent) {
+        : QToolButton(parent)
+{
+    namespace DU = util::filesystem::directoryutil;
+
     //  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
-    QToolButton::setIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::displaySettings::icon));
+    QToolButton::setIcon(DU::getIcon(CResMgr::displaywindows::displaySettings::icon));
 
     m_displaySettings = displaySettings;
     m_moduleSettings = moduleSettings;

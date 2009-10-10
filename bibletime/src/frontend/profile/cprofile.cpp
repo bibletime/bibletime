@@ -25,14 +25,17 @@ CProfile::CProfile( const QString& file, const QString& name )
         m_filename(file),
         m_fullscreen(false),
         m_geometry(10, 20, 640, 480),
-        m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) { //0 is not a valid enum entry, means "unknown"
+        m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) //0 is not a valid enum entry, means "unknown"
+{
+    namespace DU = util::filesystem::directoryutil;
+
     if (!m_filename.isEmpty() && name.isEmpty()) {
         loadBasics();
     }
     else if (m_filename.isEmpty() && !name.isEmpty()) {
         m_filename = name;
         m_filename.replace(QRegExp("\\s=#."), "_");
-        m_filename = util::filesystem::DirectoryUtil::getUserSessionsDir().absolutePath() + "/"  + m_filename + ".xml";
+        m_filename = DU::getUserSessionsDir().absolutePath() + "/"  + m_filename + ".xml";
         init(m_filename);
     }
     else {

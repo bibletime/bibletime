@@ -53,7 +53,9 @@ class BtLineEdit : public QLineEdit {
 CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
         QWidget(parent),
         m_key(key),
-        m_dropDownHoverTimer(this) {
+        m_dropDownHoverTimer(this)
+{
+    namespace DU = util::filesystem::directoryutil;
 
     updatelock = false;
     m_module = mod;
@@ -61,7 +63,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
     setFocusPolicy(Qt::WheelFocus);
 
     QToolButton* clearRef = new QToolButton(this);
-    clearRef->setIcon(util::filesystem::DirectoryUtil::getIcon("edit_clear_locationbar"));
+    clearRef->setIcon(DU::getIcon("edit_clear_locationbar"));
     clearRef->setAutoRaise(true);
     clearRef->setStyleSheet("QToolButton{margin:0px;}");
     connect(clearRef, SIGNAL(clicked()), SLOT(slotClearRef()) );

@@ -109,10 +109,12 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 }
 
 void CCommentaryReadWindow::initToolbars() {
+    namespace DU = util::filesystem::directoryutil;
+
     CLexiconReadWindow::initToolbars();
 
     m_syncButton = new QAction(
-        QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
+        QIcon(DU::getIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon)),
         tr("Synchronize"),
         actionCollection()
     );

@@ -93,6 +93,8 @@ void CDisplayWindow::setCaption( const QString&  ) {
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
+    namespace DU = util::filesystem::directoryutil;
+
     qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 
     QAction* actn = new QAction(QIcon(), tr("Zoom in"), 0);
@@ -123,13 +125,13 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
-    actn = new QAction(QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
+    actn = new QAction(QIcon(DU::getIcon(CResMgr::displaywindows::general::search::icon)),
                        tr("Search with works of this window"), 0);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 
     BtToolBarPopupAction* action = new BtToolBarPopupAction(
-        QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
+        QIcon(DU::getIcon(CResMgr::displaywindows::general::backInHistory::icon)),
         tr("Back in history"),
         a
     );
@@ -137,7 +139,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     a->addAction(CResMgr::displaywindows::general::backInHistory::actionName, action);
 
     action = new BtToolBarPopupAction(
-        QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
+        QIcon(DU::getIcon(CResMgr::displaywindows::general::forwardInHistory::icon)),
         tr("Forward in history"),
         a
     );

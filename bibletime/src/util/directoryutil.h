@@ -15,98 +15,87 @@
 #include <QIcon>
 
 namespace util {
-
 namespace filesystem {
 
 /**
  * Tools for working with directories.
  * @author The BibleTime team <info@bibletime.info>
 */
-class DirectoryUtil {
-    private:
-        DirectoryUtil() {};
-        ~DirectoryUtil() {};
+namespace directoryutil {
 
-    public:
-        /** Removes the given dir with all it's files and subdirs.
-         *
-         * TODO: Check if it's suitable for huge dir trees, as it holds a QDir object
-         * for each of it at the same time in the deepest recursion.
-         * For really deep dir tree this may lead to a stack overflow.
-         */
-        static void removeRecursive(const QString dir);
+/** Removes the given dir with all it's files and subdirs.
+ *
+ * \todo Check if it's suitable for huge dir trees, as it holds a QDir object
+ * for each of it at the same time in the deepest recursion.
+ * For really deep dir tree this may lead to a stack overflow.
+ */
+void removeRecursive(const QString &dir);
 
-        /** Returns the size of the directory including the size of all its files
-         * and its subdirs.
-         *
-         * TODO: Check if it's suitable for huge dir trees, as it holds a QDir object
-         * for each of it at the same time in the deepest recursion.
-         * For really deep dir tree this may lead to a stack overflow.
-         *
-         * @return The size of the dir in bytes
-         */
-        static unsigned long getDirSizeRecursive(const QString dir);
+/** Returns the size of the directory including the size of all its files
+ * and its subdirs.
+ *
+ * \todo Check if it's suitable for huge dir trees, as it holds a QDir object
+ * for each of it at the same time in the deepest recursion.
+ * For really deep dir tree this may lead to a stack overflow.
+ *
+ * @return The size of the dir in bytes
+ */
+unsigned long getDirSizeRecursive(const QString &dir);
 
-        /** Recursively copies one directory into another.  This WILL OVERWRITE
-         * any existing files of the same name, and WILL NOT handle symlinks.
-         *
-         * This probably won't need to be used for large directory structures.
-         */
-        static void copyRecursive(const QString src, const QString dest);
+/** Recursively copies one directory into another.  This WILL OVERWRITE
+ * any existing files of the same name, and WILL NOT handle symlinks.
+ *
+ * This probably won't need to be used for large directory structures.
+ */
+void copyRecursive(const QString &src, const QString &dest);
 
-        /** Return the path to the icons. */
-        static QDir getIconDir(void);
+/** Return the path to the icons. */
+QDir getIconDir();
 
-        /** Return the path to the javascript. */
-        static QDir getJavascriptDir(void);
+/** Return the path to the javascript. */
+QDir getJavascriptDir();
 
-        /** Return the path to the license. */
-        static QDir getLicenseDir(void);
+/** Return the path to the license. */
+QDir getLicenseDir();
 
-        /** Returns an icon with the given name */
-        static QIcon getIcon(const QString& name);
+/** Returns an icon with the given name */
+QIcon getIcon(const QString &name);
 
-        /** Return the path to the pictures. */
-        static QDir getPicsDir(void);
+/** Return the path to the pictures. */
+QDir getPicsDir();
 
-        /** Return the path to the translation files. */
-        static QDir getLocaleDir(void);
+/** Return the path to the translation files. */
+QDir getLocaleDir();
 
-        /** Return the path to the handbook files, either of the current locale or en as fallback. */
-        static QDir getHandbookDir(void);
+/** Return the path to the handbook files, either of the current locale or en as fallback. */
+QDir getHandbookDir();
 
-        /** Return the path to the bible study howto files, either of the current locale or en as fallback. */
-        static QDir getHowtoDir(void);
+/** Return the path to the bible study howto files, either of the current locale or en as fallback. */
+QDir getHowtoDir();
 
-        /** Return the path to the default display template files. */
-        static QDir getDisplayTemplatesDir(void);
+/** Return the path to the default display template files. */
+QDir getDisplayTemplatesDir();
 
-        /** Return the path to the user's home directory.*/
-        static QDir getUserHomeDir(void);
+/** Return the path to the user's home directory.*/
+QDir getUserHomeDir();
 
-        /** Return the path to the user's settings directory.*/
-        static QDir getUserBaseDir(void);
+/** Return the path to the user's settings directory.*/
+QDir getUserBaseDir();
 
-        /** Return the path to the user's sessions directory.*/
-        static QDir getUserSessionsDir(void);
+/** Return the path to the user's sessions directory.*/
+QDir getUserSessionsDir();
 
-        /** Return the path to the user's cache directory.*/
-        static QDir getUserCacheDir(void);
+/** Return the path to the user's cache directory.*/
+QDir getUserCacheDir();
 
-        /** Return the path to the user's indices directory.*/
-        static QDir getUserIndexDir(void);
+/** Return the path to the user's indices directory.*/
+QDir getUserIndexDir();
 
-        /** Return the path to the user's custom display templates directory.*/
-        static QDir getUserDisplayTemplatesDir(void);
+/** Return the path to the user's custom display templates directory.*/
+QDir getUserDisplayTemplatesDir();
 
-    private:
-        /** Will cache a few directories like icon directory */
-        static void initDirectoryCache(void);
-
-};
-
-} //namespace filesystem
-
-} //namespace directoryutil
+} // namespace DirectoryUtil
+} // namespace filesystem
+} // namespace util
 
 #endif
