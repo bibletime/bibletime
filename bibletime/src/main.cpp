@@ -18,9 +18,9 @@
 
 #include "backend/config/cbtconfig.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <signal.h>
+#include <cstdlib>
+#include <cstdio>
+#include <csignal>
 
 #include <QLocale>
 #include <QTranslator>
@@ -136,6 +136,11 @@ int main(int argc, char* argv[]) {
     BibleTimeApp app(argc, argv); //for QApplication
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
+
+    if (!DU::initDirectoryCache()) {
+        qFatal("Error initializing directory cache!");
+        return EXIT_FAILURE;
+    }
 
     // This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));

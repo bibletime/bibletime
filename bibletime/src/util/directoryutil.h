@@ -22,6 +22,12 @@ namespace util {
 */
 namespace directoryutil {
 
+/**
+  \brief Initializes the directory cache and returns whether it was successful.
+  \note When this function returns unsuccessfully, the program should exit.
+*/
+bool initDirectoryCache();
+
 /** Removes the given dir with all it's files and subdirs.
  *
  * \todo Check if it's suitable for huge dir trees, as it holds a QDir object

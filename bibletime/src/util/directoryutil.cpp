@@ -36,66 +36,67 @@ QDir cachedUserHomeDir;
 QDir cachedUserSessionsDir;
 QDir cachedUserCacheDir;
 QDir cachedUserIndexDir;
-bool dirCacheInitialized = false;
 
-void initDirectoryCache() {
-    QDir wDir( QCoreApplication::applicationDirPath() );
+} // anonymous namespace
+
+bool initDirectoryCache() {
+    QDir wDir(QCoreApplication::applicationDirPath());
     wDir.makeAbsolute();
 
-    if (!wDir.cdUp()) { //installation prefix
+    if (!wDir.cdUp()) { // Installation prefix
         qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
-    cachedIconDir = wDir; //icon dir
+    cachedIconDir = wDir; // Icon dir
     if (!cachedIconDir.cd("share/bibletime/icons") || !cachedIconDir.isReadable()) {
         qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
     cachedJavascriptDir = wDir;
     if (!cachedJavascriptDir.cd("share/bibletime/javascript") || !cachedJavascriptDir.isReadable()) {
         qWarning() << "Cannot find javascript directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
     cachedLicenseDir = wDir;
     if (!cachedLicenseDir.cd("share/bibletime/license") || !cachedLicenseDir.isReadable()) {
         qWarning() << "Cannot find license directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
     cachedPicsDir = wDir; //icon dir
     if (!cachedPicsDir.cd("share/bibletime/pics") || !cachedPicsDir.isReadable()) {
         qWarning() << "Cannot find icon directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
     cachedLocaleDir = wDir;
     if (!cachedLocaleDir.cd("share/bibletime/locale")) {
         qWarning() << "Cannot find locale directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
-    QString localeName = QLocale::system().name();
-    QString langCode = localeName.section('_', 0, 0);
+    QString localeName(QLocale::system().name());
+    QString langCode(localeName.section('_', 0, 0));
 
     cachedHandbookDir = wDir;
-    if (!cachedHandbookDir.cd(QString("share/bibletime/docs/handbook/") + localeName)) {
-        if (!cachedHandbookDir.cd(QString("share/bibletime/docs/handbook/") + langCode)) {
+    if (!cachedHandbookDir.cd("share/bibletime/docs/handbook/" + localeName)) {
+        if (!cachedHandbookDir.cd("share/bibletime/docs/handbook/" + langCode)) {
             if (!cachedHandbookDir.cd("share/bibletime/docs/handbook/en/")) {
                 qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
-                throw;
+                return false;
             }
         }
     }
 
     cachedHowtoDir = wDir;
-    if (!cachedHowtoDir.cd(QString("share/bibletime/docs/howto/") + localeName)) {
-        if (!cachedHowtoDir.cd(QString("share/bibletime/docs/howto/") + langCode)) {
+    if (!cachedHowtoDir.cd("share/bibletime/docs/howto/" + localeName)) {
+        if (!cachedHowtoDir.cd("share/bibletime/docs/howto/" + langCode)) {
             if (!cachedHowtoDir.cd("share/bibletime/docs/howto/en/")) {
                 qWarning() << "Cannot find handbook directory relative to" << QCoreApplication::applicationDirPath();
-                throw;
+                return false;
             }
         }
     }
@@ -103,57 +104,51 @@ void initDirectoryCache() {
     cachedDisplayTemplatesDir = wDir; //display templates dir
     if (!cachedDisplayTemplatesDir.cd("share/bibletime/display-templates/")) {
         qWarning() << "Cannot find display template directory relative to" << QCoreApplication::applicationDirPath();
-        throw;
+        return false;
     }
 
     cachedUserHomeDir = QDir::home();
 
     cachedUserBaseDir = QDir::home();
     if (!cachedUserBaseDir.cd(".bibletime")) {
-        bool success = cachedUserBaseDir.mkdir(".bibletime") && cachedUserBaseDir.cd(".bibletime");
-        if (!success) {
+        if (!cachedUserBaseDir.mkdir(".bibletime") || !cachedUserBaseDir.cd(".bibletime")) {
             qWarning() << "Could not create user setting directory.";
-            throw;
+            return false;
         }
     }
 
     cachedUserSessionsDir = cachedUserBaseDir;
     if (!cachedUserSessionsDir.cd("sessions")) {
-        bool success = cachedUserSessionsDir.mkdir("sessions") && cachedUserSessionsDir.cd("sessions");
-        if (!success) {
+        if (!cachedUserSessionsDir.mkdir("sessions") || !cachedUserSessionsDir.cd("sessions")) {
             qWarning() << "Could not create user sessions directory.";
-            throw;
+            return false;
         }
     }
 
     cachedUserCacheDir = cachedUserBaseDir;
     if (!cachedUserCacheDir.cd("cache")) {
-        bool success = cachedUserCacheDir.mkdir("cache") && cachedUserCacheDir.cd("cache");
-        if (!success) {
+        if (!cachedUserCacheDir.mkdir("cache") || !cachedUserCacheDir.cd("cache")) {
             qWarning() << "Could not create user cache directory.";
-            throw;
+            return false;
         }
     }
 
     cachedUserIndexDir = cachedUserBaseDir;
     if (!cachedUserIndexDir.cd("indices")) {
-        bool success = cachedUserIndexDir.mkdir("indices") && cachedUserIndexDir.cd("indices");
-        if (!success) {
+        if (!cachedUserIndexDir.mkdir("indices") || !cachedUserIndexDir.cd("indices")) {
             qWarning() << "Could not create user indices directory.";
         }
     }
 
     cachedUserDisplayTemplatesDir = cachedUserBaseDir;
     if (!cachedUserDisplayTemplatesDir.cd("display-templates")) {
-        bool success = cachedUserDisplayTemplatesDir.mkdir("display-templates") && cachedUserDisplayTemplatesDir.cd("display-templates");
-        if (!success) {
+        if (!cachedUserDisplayTemplatesDir.mkdir("display-templates") || !cachedUserDisplayTemplatesDir.cd("display-templates")) {
             qWarning() << "Could not create user display templates directory.";
         }
     }
 
-    dirCacheInitialized = true;
-} // void initDirectoryCache();
-} // anonymous namespace
+    return true;
+} // bool initDirectoryCache();
 
 void removeRecursive(const QString &dir) {
     //Check for validity of argument
@@ -232,17 +227,14 @@ void copyRecursive(const QString &src, const QString &dest) {
 }
 
 QDir getIconDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedIconDir;
 }
 
 QDir getJavascriptDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedJavascriptDir;
 }
 
 QDir getLicenseDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedLicenseDir;
 }
 
@@ -283,57 +275,46 @@ QIcon getIcon(const QString &name) {
 }
 
 QDir getPicsDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedPicsDir;
 }
 
 QDir getLocaleDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedLocaleDir;
 }
 
 QDir getHandbookDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedHandbookDir;
 }
 
 QDir getHowtoDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedHowtoDir;
 }
 
 QDir getDisplayTemplatesDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedDisplayTemplatesDir;
 }
 
 QDir getUserBaseDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserBaseDir;
 }
 
 QDir getUserHomeDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserHomeDir;
 }
 
 QDir getUserSessionsDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserSessionsDir;
 }
 
 QDir getUserCacheDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserCacheDir;
 }
 
 QDir getUserIndexDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserIndexDir;
 }
 
 QDir getUserDisplayTemplatesDir() {
-    if (!dirCacheInitialized) initDirectoryCache();
     return cachedUserDisplayTemplatesDir;
 }
 
