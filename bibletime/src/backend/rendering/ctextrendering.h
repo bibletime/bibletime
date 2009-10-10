@@ -10,15 +10,12 @@
 #ifndef CTEXTRENDERING_H
 #define CTEXTRENDERING_H
 
-//BT includes
-class CSwordModuleInfo;
-//#include "util/autoptrvector.h"
-
-//QT includes
-#include <QString>
 #include <QList>
+#include <QString>
+
 
 class CSwordKey;
+class CSwordModuleInfo;
 
 /**
  * CTextRendering is BibleTime's place where the actual rendering takes place.

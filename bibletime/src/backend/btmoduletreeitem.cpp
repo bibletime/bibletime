@@ -7,19 +7,16 @@
 *
 **********/
 
-#include "btmoduletreeitem.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/cpointers.h"
-#include "backend/managers/cswordbackend.h"
-#include "util/cresmgr.h"
-#include "util/ctoolclass.h"
-
-#include <QString>
-#include <QList>
+#include "backend/btmoduletreeitem.h"
 
 #include <QDebug>
-
+#include <QList>
+#include <QString>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
 
 //This ctor creates the root item and the tree.

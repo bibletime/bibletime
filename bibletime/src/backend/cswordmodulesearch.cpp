@@ -7,17 +7,16 @@
 *
 **********/
 
-//BibleTime includes
-#include "cswordmodulesearch.h"
+#include "backend/cswordmodulesearch.h"
 
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "backend/config/cbtconfig.h"
 
-//Sword includes
-#include <swmodule.h>
-#include <swkey.h>
+// Nasty Sword includes:
 #include <listkey.h>
+#include <swkey.h>
+#include <swmodule.h>
 
 
 CSwordModuleSearch* CSwordModuleSearch::searcher = 0;

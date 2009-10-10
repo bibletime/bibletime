@@ -7,24 +7,19 @@
 *
 **********/
 
-//BibleTime includes
-#include "bt_osishtml.h"
+#include "backend/filters/bt_osishtml.h"
+
+#include <QString>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "backend/managers/creferencemanager.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
-#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 
-//Sword
-#include <swmodule.h>
+// Nasty Sword includes:
 #include <swbuf.h>
+#include <swmodule.h>
 #include <utilxml.h>
-
-//Qt
-#include <QString>
-
-//KDE
 
 
 Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {

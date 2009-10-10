@@ -7,16 +7,16 @@
 *
 **********/
 
-#include "cswordldkey.h"
+#include "backend/keys/cswordldkey.h"
+
+#include <QTextCodec>
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 
-//Sword includes
+// Nasty Sword includes:
 #include <swmodule.h>
 #include <swld.h>
 #include <utilstr.h>
 
-//Qt includes
-#include <QTextCodec>
 
 CSwordLDKey::CSwordLDKey( CSwordModuleInfo* module ) {
     if ((m_module = dynamic_cast<CSwordLexiconModuleInfo*>(module))) {

@@ -7,19 +7,17 @@
 *
 **********/
 
-#include "cdisplayrendering.h"
+#include "backend/rendering/cdisplayrendering.h"
 
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/creferencemanager.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-
-#include "util/cpointers.h"
-
-//Qt
 #include <QString>
 #include <QRegExp>
 #include <QDebug>
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/creferencemanager.h"
+#include "util/cpointers.h"
+
 
 namespace Rendering {
 

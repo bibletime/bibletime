@@ -7,23 +7,19 @@
 *
 **********/
 
-#include "ctextrendering.h"
-
-//BibleTime
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/rendering/ctextrendering.h"
 
 #include <boost/scoped_ptr.hpp>
+#include <QRegExp>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/creferencemanager.h"
 #include "util/ctoolclass.h"
 
-//Sword
+// Nasty Sword includes:
 #include <swkey.h>
-
-//Qt
-#include <QRegExp>
 
 
 using namespace Rendering;

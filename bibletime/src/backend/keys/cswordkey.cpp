@@ -7,27 +7,25 @@
 *
 **********/
 
-#include "cswordkey.h"
+#include "backend/keys/cswordkey.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "cswordversekey.h"
-#include "cswordldkey.h"
-#include "cswordtreekey.h"
-
-#include "util/ctoolclass.h"
-
-//Sword
-#include <swmodule.h>
-#include <swkey.h>
-#include <versekey.h>
-#include <treekey.h>
-#include <treekeyidx.h>
-#include <utilstr.h>
-
-//Qt
 #include <QRegExp>
 #include <QString>
 #include <QTextCodec>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordldkey.h"
+#include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordversekey.h"
+#include "util/ctoolclass.h"
+
+// Nasty Sword includes:
+#include <swkey.h>
+#include <swmodule.h>
+#include <treekey.h>
+#include <treekeyidx.h>
+#include <utilstr.h>
+#include <versekey.h>
+
 
 CSwordKey::CSwordKey(CSwordModuleInfo* const module) : m_module(module) {}
 

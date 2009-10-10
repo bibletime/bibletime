@@ -10,10 +10,10 @@
 #ifndef BT_OSISHTML_H
 #define BT_OSISHTML_H
 
-//Sword includes
+// Nasty Sword includes:
+#include <osishtmlhref.h>
 #include <swbuf.h>
 #include <swmodule.h>
-#include <osishtmlhref.h>
 
 namespace Filters {
 

@@ -10,10 +10,11 @@
 #ifndef CSWORDGENBOOKMODULEINFO_H
 #define CSWORDGENBOOKMODULEINFO_H
 
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
-//Sword
+// Nasty Sword includes:
 #include <treekeyidx.h>
+
 
 /** Class for generic book support
   * @author The BibleTime team

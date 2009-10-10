@@ -12,16 +12,16 @@
 
 #include "backend/managers/clanguagemgr.h"
 
-//Qt
 #include <QString>
 #include <QList>
 
-//Sword
+// Nasty Sword includes:
 #include <listkey.h>
-#include <swsearchable.h>
-#include <swmodule.h>
-#include <swversion.h>
 #include <swdisp.h>
+#include <swmodule.h>
+#include <swsearchable.h>
+#include <swversion.h>
+
 
 class CSwordBackend;
 class CSwordKey;

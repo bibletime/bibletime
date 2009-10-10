@@ -7,7 +7,8 @@
 *
 **********/
 
-#include "bt_plainhtml.h"
+#include "backend/filters/bt_plainhtml.h"
+
 
 Filters::BT_PLAINHTML::BT_PLAINHTML() : sword::SWFilter() {
 }

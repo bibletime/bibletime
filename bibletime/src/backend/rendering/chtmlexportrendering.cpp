@@ -7,18 +7,17 @@
 *
 **********/
 
-#include "chtmlexportrendering.h"
+#include "backend/rendering/chtmlexportrendering.h"
 
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/clanguagemgr.h"
+#include <boost/scoped_ptr.hpp>
+#include <iostream>
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/clanguagemgr.h"
 #include "util/cpointers.h"
-#include <boost/scoped_ptr.hpp>
 
-#include <iostream>
 
 namespace {
 

@@ -10,9 +10,10 @@
 #ifndef BT_PLAINHTML_H
 #define BT_PLAINHTML_H
 
-//Sword includes
-#include <swfilter.h>
+// Nasty Sword includes:
 #include <swbuf.h>
+#include <swfilter.h>
+
 
 class SWKey;
 class SWModule;

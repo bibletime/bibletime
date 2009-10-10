@@ -10,7 +10,8 @@
 #ifndef RENDERINGCCHAPTERDISPLAY_H
 #define RENDERINGCCHAPTERDISPLAY_H
 
-#include "centrydisplay.h"
+#include "backend/rendering/centrydisplay.h"
+
 
 namespace Rendering {
 

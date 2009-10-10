@@ -10,11 +10,10 @@
 #ifndef CSWORDLEXICONMODULEINFO_H
 #define CSWORDLEXICONMODULEINFO_H
 
-//own includes
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 
-//Qt includes
 #include <QStringList>
+
 
 /**
  * The implementation of CModuleInfo for the Sword lexiccons and citionaries.

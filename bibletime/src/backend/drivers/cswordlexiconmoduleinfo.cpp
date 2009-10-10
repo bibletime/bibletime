@@ -7,19 +7,17 @@
 *
 **********/
 
-#include "cswordlexiconmoduleinfo.h"
-#include "util/directoryutil.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
 
-//Qt
+#include <algorithm>
 #include <QFile>
 #include <QDataStream>
 #include <QTextCodec>
+#include "util/directoryutil.h"
 
-//Sword
+// Nasty Sword includes:
 #include <swmodule.h>
 
-//STL includes
-#include <algorithm>
 
 //Change it once the format changed to make all systems rebuild their caches
 #define CACHE_FORMAT "2"

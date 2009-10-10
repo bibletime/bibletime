@@ -7,16 +7,16 @@
 *
 **********/
 
-#include "cswordversekey.h"
+#include "backend/keys/cswordversekey.h"
+
+#include <QStringList>
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordcommentarymoduleinfo.h"
 
-//Qt
-#include <QStringList>
-
-//Sword
+// Nasty Sword includes:
 #include <swmodule.h>
 #include <localemgr.h>
+
 
 CSwordVerseKey::CSwordVerseKey( CSwordModuleInfo* const module ) :
         CSwordKey(module) {

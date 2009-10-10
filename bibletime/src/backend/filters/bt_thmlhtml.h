@@ -10,9 +10,10 @@
 #ifndef BT_THMLHTML_H
 #define BT_THMLHTML_H
 
-//Sword
+// Nasty Sword includes:
 #include <swbuf.h>
 #include <thmlhtml.h>
+
 
 namespace Filters {
 

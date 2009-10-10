@@ -10,9 +10,10 @@
 *
 **********/
 
-#include "moduleitem.h"
+#include "backend/bookshelfmodel/moduleitem.h"
 
 #include "util/cresmgr.h"
+
 
 namespace BookshelfModel {
 

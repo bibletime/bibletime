@@ -10,10 +10,10 @@
 #ifndef RENDERINGCBOOKDISPLAY_H
 #define RENDERINGCBOOKDISPLAY_H
 
-#include "centrydisplay.h"
-#include "ctextrendering.h"
-//TODO: It would be sufficient to forward declare CTextRendering and CTextRendering::KeyTree
-//but I don't know how :(
+#include "backend/rendering/centrydisplay.h"
+
+#include "backend/rendering/ctextrendering.h"
+
 
 class CSwordTreeKey;
 

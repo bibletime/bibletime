@@ -10,11 +10,11 @@
 #ifndef BTSTRINGMGR_H
 #define BTSTRINGMGR_H
 
-//Sword includes
+#include <QString>
+
+// Nasty Sword includes:
 #include <stringmgr.h>
 
-//Qt includes
-#include <QString>
 
 /** Unicode string manager implementation.
  * This is the StringManager implementation which works with QString.

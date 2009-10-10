@@ -7,18 +7,15 @@
 *
 **********/
 
-//BibleTime includes
-#include "cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+
+#include <boost/scoped_ptr.hpp>
+#include <QFile>
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordversekey.h"
 
-//Qt
-#include <QFile>
-
-//Sword
+// Nasty Sword includes:
 #include <versekey.h>
-
-#include <boost/scoped_ptr.hpp>
 
 
 CSwordBibleModuleInfo::CSwordBibleModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )

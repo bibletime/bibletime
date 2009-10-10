@@ -7,17 +7,14 @@
 *
 **********/
 
-#include "creferencemanager.h"
-#include "backend/keys/cswordversekey.h"
+#include "backend/managers/creferencemanager.h"
 
+#include <algorithm>
+#include <QRegExp>
 #include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordversekey.h"
 #include "util/cpointers.h"
 
-//QT
-#include <QRegExp>
-
-//stl
-#include <algorithm>       // STL algorithms class library
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
 const QString CReferenceManager::encodeHyperlink( const QString moduleName, const QString key, const CReferenceManager::Type type) {

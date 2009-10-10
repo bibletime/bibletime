@@ -7,20 +7,19 @@
 *
 **********/
 
-#include "cdisplaytemplatemgr.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 
+#include <QDebug>
+#include <QFile>
+#include <QFileInfo>
+#include <QStringList>
+#include <QTextStream>
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-#include "backend/config/cbtconfig.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 
-//Qt
-#include <QStringList>
-#include <QFile>
-#include <QFileInfo>
-#include <QTextStream>
-#include <QDebug>
 
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
     loadTemplates();

@@ -7,12 +7,12 @@
 *
 **********/
 
-#include "cswordtreekey.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-
-#include <QTextCodec>
+#include "backend/keys/cswordtreekey.h"
 
 #include <QDebug>
+#include <QTextCodec>
+#include "backend/drivers/cswordbookmoduleinfo.h"
+
 
 CSwordTreeKey::CSwordTreeKey( const CSwordTreeKey& k ) : CSwordKey(k), TreeKeyIdx(k) {}
 

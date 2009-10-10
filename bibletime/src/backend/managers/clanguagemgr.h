@@ -10,16 +10,15 @@
 #ifndef CLANGUAGEMGR_H
 #define CLANGUAGEMGR_H
 
-//Qt includes
+#include <QHash>
+#include <QList>
 #include <QString>
 #include <QStringList>
-#include <QList>
-#include <QHash>
+
 
 /** Manages the languages of BibleTime and provides functions to work with them.
   * @author The BibleTime team
   */
-
 class CLanguageMgr {
 
     public:

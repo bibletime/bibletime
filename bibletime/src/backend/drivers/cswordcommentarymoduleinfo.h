@@ -10,8 +10,8 @@
 #ifndef CSWORDCOMMENTARYMODULEINFO_H
 #define CSWORDCOMMENTARYMODULEINFO_H
 
-//own includes
-#include "cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+
 
 /** Commentary module implementation.
  * This CSwordModule implementation provides access to Sword's commentary modules.

@@ -7,7 +7,8 @@
 *
 **********/
 
-#include "cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
+
 
 CSwordCommentaryModuleInfo::CSwordCommentaryModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend)
         : CSwordBibleModuleInfo(module, usedBackend) {}

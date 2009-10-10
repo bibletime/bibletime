@@ -10,16 +10,13 @@
 #ifndef CSWORDBACKEND_H
 #define CSWORDBACKEND_H
 
-//BibleTime includes
-#include "backend/drivers/cswordmoduleinfo.h"
-
-//Qt includes
-#include <QObject>
 #include <QMap>
+#include <QObject>
 #include <QString>
 #include <QStringList>
+#include "backend/drivers/cswordmoduleinfo.h"
 
-//Sword includes
+// Nasty Sword includes:
 #include <swmgr.h>
 #include <swbuf.h>
 #include <swmodule.h>
@@ -27,11 +24,10 @@
 #include <localemgr.h>
 #include <utilstr.h>
 
-//forward declarations
 namespace Rendering {
-class CEntryDisplay;
-class CChapterDisplay;
-class CBookDisplay;
+    class CEntryDisplay;
+    class CChapterDisplay;
+    class CBookDisplay;
 }
 
 /** The backend layer main class.
@@ -42,9 +38,8 @@ class CBookDisplay;
   * @author The BibleTime team
   * @version $Id: cswordbackend.h,v 1.58 2007/03/14 21:32:47 joachim Exp $
   */
-
 class CSwordBackend : public QObject, public sword::SWMgr {
-        Q_OBJECT
+    Q_OBJECT
     public:
 
         /** The reason for the sigSwordSetupChanged signal, i.e. why the module list has changed. */

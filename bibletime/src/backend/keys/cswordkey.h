@@ -10,8 +10,8 @@
 #ifndef CSWORDKEY_H
 #define CSWORDKEY_H
 
-//Qt
 #include <QString>
+
 
 class CSwordModuleInfo;
 class QTextCodec;

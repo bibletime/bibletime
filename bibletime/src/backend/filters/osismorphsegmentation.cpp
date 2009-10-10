@@ -6,10 +6,12 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "osismorphsegmentation.h"
 
-//Sword
+#include "backend/filters/osismorphsegmentation.h"
+
+// Nasty Sword includes:
 #include <utilxml.h>
+
 
 const char Filters::OSISMorphSegmentation::oName[] = "Morph segmentation";
 const char Filters::OSISMorphSegmentation::oTip[] = "Toggles morph segmentation On and Off if they exist";

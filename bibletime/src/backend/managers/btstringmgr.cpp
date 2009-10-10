@@ -7,7 +7,8 @@
 *
 **********/
 
-#include "btstringmgr.h"
+#include "backend/managers/btstringmgr.h"
+
 
 char* BTStringMgr::upperUTF8(char* text, unsigned int maxlen) const {
     const int max = (maxlen > 0) ? maxlen : strlen(text);

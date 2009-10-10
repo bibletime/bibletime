@@ -10,11 +10,11 @@
 #ifndef CSWORDBIBLEMODULEINFO_H
 #define CSWORDBIBLEMODULEINFO_H
 
-#include "cswordmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+
+#include <QStringList>
 #include "backend/keys/cswordversekey.h"
 
-//Qt
-#include <QStringList>
 
 /**
  * This is the CModuleInfo imlementation for Bible modules managed by Sword.

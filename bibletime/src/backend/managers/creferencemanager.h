@@ -10,18 +10,15 @@
 #ifndef CREFERENCEMANAGER_H
 #define CREFERENCEMANAGER_H
 
+#include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 
-//Qt includes
-#include <QString>
 
 /** Contains static functions to work with references used for Drag & Drop and for hyperlinks used in our
  * rendered HTML code.
  * @author The BibleTime team
  */
-
 class CReferenceManager {
-
     public:
         enum Type {
             Bible, /**< Bibles */

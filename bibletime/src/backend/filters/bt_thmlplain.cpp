@@ -13,7 +13,8 @@
  *		ASCII rendered symbols.
  */
 
-#include "bt_thmlplain.h"
+#include "backend/filters/bt_thmlplain.h"
+
 
 Filters::BT_ThMLPlain::BT_ThMLPlain() {
 }

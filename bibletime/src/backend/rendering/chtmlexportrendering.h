@@ -10,10 +10,11 @@
 #ifndef RENDERINGCHTMLEXPORTRENDERING_H
 #define RENDERINGCHTMLEXPORTRENDERING_H
 
-#include "backend/managers/cswordbackend.h"
-#include "ctextrendering.h"
+#include "backend/rendering/ctextrendering.h"
 
 #include "backend/config/cbtconfig.h"
+#include "backend/managers/cswordbackend.h"
+
 
 namespace Rendering {
 

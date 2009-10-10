@@ -7,21 +7,17 @@
 *
 **********/
 
+#include "backend/filters/bt_gbfhtml.h"
 
-
-//BibleTime includes
-#include "bt_gbfhtml.h"
-
+#include <QRegExp>
+#include <QString>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 
-//Sword includes
+// Nasty Sword includes:
 #include <utilxml.h>
 
-//Qt includes
-#include <QRegExp>
-#include <QString>
 
 Filters::BT_GBFHTML::BT_GBFHTML() : sword::GBFHTML() {
 

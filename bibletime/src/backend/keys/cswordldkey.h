@@ -10,14 +10,15 @@
 #ifndef CSWORDLDKEY_H
 #define CSWORDLDKEY_H
 
-#include "cswordkey.h"
-class CSwordModuleInfo;
+#include "backend/keys/cswordkey.h"
 
-//Qt
 #include <QString>
 
-//Sword includes
+// Nasty Sword includes:
 #include <swkey.h>
+
+
+class CSwordModuleInfo;
 
 /**
  * This class is the implementation of CSwordKey used for dictionaries and lexicons.

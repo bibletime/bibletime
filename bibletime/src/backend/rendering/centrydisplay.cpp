@@ -7,21 +7,18 @@
 *
 **********/
 
-//BibleTime includes
-#include "centrydisplay.h"
+#include "backend/rendering/centrydisplay.h"
 
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/managers/creferencemanager.h"
-#include "backend/managers/cdisplaytemplatemgr.h"
-#include "cdisplayrendering.h"
-
-#include "backend/config/cbtconfig.h"
-
-//Qt includes
 #include <QApplication>
 #include <QRegExp>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/keys/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/rendering/cdisplayrendering.h"
+
 
 using namespace Rendering;
 

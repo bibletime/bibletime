@@ -7,13 +7,14 @@
 *
 **********/
 
-//BibleTime includes
-#include "cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+
 #include "backend/keys/cswordtreekey.h"
 
-//Sword includes
-#include <treekeyidx.h>
+// Nasty Sword includes:
 #include <treekey.h>
+#include <treekeyidx.h>
+
 
 CSwordBookModuleInfo::CSwordBookModuleInfo( sword::SWModule* module, CSwordBackend* const usedBackend )
         : CSwordModuleInfo(module, usedBackend),

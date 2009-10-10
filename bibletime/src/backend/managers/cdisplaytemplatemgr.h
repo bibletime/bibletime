@@ -10,21 +10,18 @@
 #ifndef CDISPLAYTEMPLATEMGR_H
 #define CDISPLAYTEMPLATEMGR_H
 
-//BibleTime include
-class CSwordModuleInfo;
-
-//Qt includes
 #include <QMap>
 #include <QString>
 #include <QStringList>
+
+
+class CSwordModuleInfo;
 
 /**
  * Manages the display templates used in the filters and display classes.
  * @author The BibleTime team
 */
-
 class CDisplayTemplateMgr {
-
     public:
         /** Settings which are used to fill the content into the template.
         */

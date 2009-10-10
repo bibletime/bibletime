@@ -7,14 +7,13 @@
 *
 **********/
 
-//Backend
-#include "cbookdisplay.h"
-#include "cdisplayrendering.h"
+#include "backend/rendering/cbookdisplay.h"
+
+#include <boost/scoped_ptr.hpp>
 #include "backend/drivers/cswordbookmoduleinfo.h"
 #include "backend/keys/cswordtreekey.h"
+#include "backend/rendering/cdisplayrendering.h"
 
-//Util
-#include <boost/scoped_ptr.hpp>
 
 /** Returns the rendered text using the modules in the list and using the key parameter. The displayoptions and filter options are used, too. */
 const QString Rendering::CBookDisplay::text( const QList<CSwordModuleInfo*>& modules, const QString& keyName, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions ) {

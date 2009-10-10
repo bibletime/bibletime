@@ -10,7 +10,7 @@
 *
 **********/
 
-#include "languageitem.h"
+#include "backend/bookshelfmodel/languageitem.h"
 
 namespace BookshelfModel {
 

@@ -7,25 +7,23 @@
 *
 **********/
 
-#include "cbtconfig.h"
+#include "backend/config/cbtconfig.h"
 
-// Qt includes
 #include <QDebug>
 #include <QLocale>
 #include <QSettings>
 #include <QVariant>
 #include <QWebSettings>
-
-// Sword includes
-#include <versekey.h> // For range configuration
-
-// BibleTime includes
 #include "backend/btmoduletreeitem.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
+
+// Nasty Sword includes:
+#include <versekey.h> // For range configuration
+
 
 namespace CBTConfig {
 namespace {

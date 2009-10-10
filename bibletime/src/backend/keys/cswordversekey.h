@@ -10,14 +10,15 @@
 #ifndef CSWORDVERSEKEY_H
 #define CSWORDVERSEKEY_H
 
-#include "cswordkey.h"
-class CSwordModuleInfo;
+#include "backend/keys/cswordkey.h"
 
-//Qt
 #include <QString>
 
-//Sword
+// Nasty Sword includes:
 #include <versekey.h>
+
+
+class CSwordModuleInfo;
 
 /**
  * The CSwordKey implementation for verse based modules (Bibles and Commentaries)

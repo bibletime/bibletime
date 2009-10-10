@@ -7,43 +7,39 @@
 *
 **********/
 
-#include "cswordbackend.h"
-
-#include "backend/rendering/centrydisplay.h"
-#include "backend/rendering/cbookdisplay.h"
-#include "backend/rendering/cchapterdisplay.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/filters/bt_thmlhtml.h"
-#include "backend/filters/bt_thmlplain.h"
-#include "backend/filters/bt_osishtml.h"
-#include "backend/filters/bt_gbfhtml.h"
-#include "backend/filters/bt_plainhtml.h"
-#include "backend/filters/osismorphsegmentation.h"
-
-#include "backend/config/cbtconfig.h"
-
-#include "util/directoryutil.h"
+#include "backend/managers/cswordbackend.h"
 
 #include <dirent.h>
-
-//Qt
-#include <QString>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QSet>
-#include <QDebug>
+#include <QString>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/filters/bt_gbfhtml.h"
+#include "backend/filters/bt_osishtml.h"
+#include "backend/filters/bt_plainhtml.h"
+#include "backend/filters/bt_thmlhtml.h"
+#include "backend/filters/bt_thmlplain.h"
+#include "backend/filters/osismorphsegmentation.h"
+#include "backend/rendering/cbookdisplay.h"
+#include "backend/rendering/cchapterdisplay.h"
+#include "backend/rendering/centrydisplay.h"
+#include "util/directoryutil.h"
 
-//Sword
+// Nasty Sword includes:
+#include <encfiltmgr.h>
+#include <filemgr.h>
+#include <rtfhtml.h>
 #include <swdisp.h>
 #include <swfiltermgr.h>
-#include <encfiltmgr.h>
-#include <rtfhtml.h>
-#include <filemgr.h>
-#include <utilstr.h>
 #include <swfilter.h>
+#include <utilstr.h>
+
 
 using namespace Filters;
 using namespace Rendering;

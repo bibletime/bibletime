@@ -7,23 +7,18 @@
 *
 **********/
 
-
-
 #ifndef CSWORDMODULESEARCH_H
 #define CSWORDMODULESEARCH_H
 
-//BibleTime - backend
-class CSwordModuleInfo;
-
-//BibleTime - utils
-#include "util/cpointers.h"
-
-//Qt includes
 #include <QObject>
 #include <QString>
+#include "util/cpointers.h"
 
-//Sword includes
+// Nasty Sword includes:
 #include <listkey.h>
+
+
+class CSwordModuleInfo;
 
 /**
  * CSwordModuleSearch manages the search on Sword modules. It manages the thread(s)

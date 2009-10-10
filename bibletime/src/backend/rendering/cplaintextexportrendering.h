@@ -10,7 +10,8 @@
 #ifndef RENDERINGCPLAINTEXTEXPORTRENDERING_H
 #define RENDERINGCPLAINTEXTEXPORTRENDERING_H
 
-#include "chtmlexportrendering.h"
+#include "backend/rendering/chtmlexportrendering.h"
+
 
 namespace Rendering {
 

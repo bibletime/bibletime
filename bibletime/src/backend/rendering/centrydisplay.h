@@ -10,18 +10,14 @@
 #ifndef CENTRYDISPLAY_H
 #define CENTRYDISPLAY_H
 
-//BibleTime
-//#include "ctextrendering.h"
-class CSwordModuleInfo;
-#include "backend/managers/cswordbackend.h"
-
 #include "util/cpointers.h"
 
-//Sword
+#include <QString>
+#include "backend/managers/cswordbackend.h"
+
+// Nasty Sword includes:
 #include <swdisp.h>
 
-//Qt
-#include <QString>
 
 class CSwordModuleInfo;
 

@@ -10,11 +10,11 @@
 #ifndef CSWORDTREEKEYIDX_H
 #define CSWORDTREEKEYIDX_H
 
-//BibleTime
-#include "cswordkey.h"
+#include "backend/keys/cswordkey.h"
 
-//Sword
+// Nasty Sword includes:
 #include <treekeyidx.h>
+
 
 class CSwordModuleInfo;
 

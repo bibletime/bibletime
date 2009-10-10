@@ -7,48 +7,40 @@
 *
 **********/
 
-//BibleTime includes
-#include "cswordmoduleinfo.h"
-#include "cswordlexiconmoduleinfo.h"
-
-#include "backend/managers/cswordbackend.h"
-#include "backend/cswordmodulesearch.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/rendering/centrydisplay.h"
-#include "backend/managers/clanguagemgr.h"
-
-#include "util/directoryutil.h"
-#include "util/cpointers.h"
-#include "util/exceptions.h"
-#include "backend/config/cbtconfig.h"
-
+#include "backend/drivers/cswordmoduleinfo.h"
 
 #include <boost/scoped_ptr.hpp>
-
-//Qt includes
-#include <QRegExp>
+#include <CLucene.h>
+#include <CLucene/util/dirent.h>
+#include <CLucene/util/Misc.h>
+#include <CLucene/util/Reader.h>
+#include <QByteArray>
+#include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QList>
-#include <QByteArray>
-#include <QDebug>
-#include <QSettings>
 #include <QMessageBox>
-#include <QCoreApplication>
+#include <QRegExp>
+#include <QSettings>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "backend/rendering/centrydisplay.h"
+#include "backend/cswordmodulesearch.h"
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "util/exceptions.h"
 
-//Sword includes
-#include <swbuf.h>
-#include <swkey.h>
+// Nasty Sword includes:
 #include <listkey.h>
-#include <versekey.h>
+#include <swbuf.h>
 #include <swconfig.h>
+#include <swkey.h>
 #include <rtfhtml.h>
-
-//Lucence includes
-#include <CLucene.h>
-#include <CLucene/util/Reader.h>
-#include <CLucene/util/Misc.h>
-#include <CLucene/util/dirent.h>
+#include <versekey.h>
 
 
 //Increment this, if the index format changes

@@ -10,9 +10,8 @@
 #ifndef BTMODULETREEITEM_H
 #define BTMODULETREEITEM_H
 
-#include "backend/drivers/cswordmoduleinfo.h"
-
 #include <QString>
+#include "backend/drivers/cswordmoduleinfo.h"
 
 
 /**

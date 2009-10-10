@@ -7,12 +7,11 @@
 *
 **********/
 
-//Backend includes
-#include "cplaintextexportrendering.h"
+#include "backend/rendering/cplaintextexportrendering.h"
+
+#include <boost/scoped_ptr.hpp>
 #include "backend/keys/cswordkey.h"
 
-//Util
-#include <boost/scoped_ptr.hpp>
 
 namespace Rendering {
 

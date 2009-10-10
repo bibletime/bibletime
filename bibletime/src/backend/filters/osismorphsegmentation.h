@@ -10,8 +10,10 @@
 #ifndef OSISMORPHSEGMENTATION_H
 #define OSISMORPHSEGMENTATION_H
 
+// Nasty Sword includes:
 #include <swbuf.h>
 #include <swoptfilter.h>
+
 
 namespace Filters {
 

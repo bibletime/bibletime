@@ -7,24 +7,22 @@
 *
 **********/
 
-//BibleTime includes
-#include "bt_thmlhtml.h"
-#include "backend/managers/clanguagemgr.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/filters/bt_thmlhtml.h"
 
-#include "backend/config/cbtconfig.h"
-#include "util/cpointers.h"
-
-//Sword includes
-#include <swmodule.h>
-#include <utilxml.h>
-#include <versekey.h>
-#include <utilstr.h>
-
-//Qt includes
 #include <QString>
 #include <QRegExp>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/creferencemanager.h"
+#include "util/cpointers.h"
+
+// Nasty Sword includes:
+#include <swmodule.h>
+#include <utilstr.h>
+#include <utilxml.h>
+#include <versekey.h>
+
 
 Filters::BT_ThMLHTML::BT_ThMLHTML() {
     setEscapeStringCaseSensitive(true);

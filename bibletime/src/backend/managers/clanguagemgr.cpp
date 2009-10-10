@@ -7,14 +7,11 @@
 *
 **********/
 
-#include "clanguagemgr.h"
+#include "backend/managers/clanguagemgr.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "cswordbackend.h"
-
+#include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
-
-//KDE
 
 
 CLanguageMgr::Language::Language() {}
