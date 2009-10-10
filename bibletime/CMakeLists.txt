@@ -17,6 +17,7 @@ LIST(APPEND HOWTO_LOCALE_LANGS bg cs da de es fi fr it hu ko nl pt-br ru)
 SET(QT_MIN_VERSION 4.4.0)
 SET(QT_USE_QTXML 1)
 SET(QT_USE_QTWEBKIT 1)
+SET(QT_USE_QTMAIN 1)
 FIND_PACKAGE(Qt4 REQUIRED)
 IF (QT_QTDBUS_FOUND AND NOT APPLE)
 	SET(QT_USE_QTDBUS 1)
@@ -90,7 +91,11 @@ ENDIF(APPLE)
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
 	QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
-	ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
+	IF (MSVC)
+		ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
+	ELSE (MSVC)
+		ADD_EXECUTABLE(${EXECUTABLE_NAME}       ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
+	ENDIF (MSVC)
 #	SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
 #		PROPERTIES
 #			COMPILE_FLAGS "${SWORD_CFLAGS}" #Enable exception handling
@@ -110,8 +115,13 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
 	QT4_WRAP_CPP(bibletime_test_MOC_SOURCES ${bibletime_test_MOCABLE_HEADERS})
 	SET(CMAKE_BUILD_TYPE "Debug")
-	ADD_EXECUTABLE(${EXECUTABLE_NAME} ${bibletime_SOURCES}
-                             ${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
+	IF (MSVC)
+		ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_SOURCES}
+			${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
+	ELSE (MSVC)
+		ADD_EXECUTABLE(${EXECUTABLE_NAME}       ${bibletime_SOURCES}
+			${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
+	ENDIF (MSVC)
 	SET_TARGET_PROPERTIES(${EXECUTABLE_NAME}
 		PROPERTIES
 			COMPILE_FLAGS "-DBT_ENABLE_TESTING" #Enable exception handling and Testing
@@ -120,7 +130,6 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	INCLUDE(${QT_USE_FILE})
 	TARGET_LINK_LIBRARIES(${EXECUTABLE_NAME}
 		${QT_LIBRARIES}
-		${QT_LIBRARIES_DEBUG}
 		${CLUCENE_LIBRARY}
 		${CURL_LIBRARIES} # optional, empty if not found
 		${ICU_LIBRARIES} # optional, empty if not found
