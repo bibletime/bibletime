@@ -18,6 +18,7 @@ class CSwordModuleInfo;
 
 #include <QList>
 #include <QMainWindow>
+#include <QSignalMapper>
 
 class BtActionClass;
 class CMDIArea;
@@ -33,6 +34,7 @@ class QAction;
 class QMenu;
 class QToolBar;
 class QSplitter;
+class QSignalMapper;
 
 /**
   * @page backend The structure of the backend
@@ -244,6 +246,10 @@ class BibleTime : public QMainWindow {
          */
         void slotWindowMenuAboutToShow();
         /**
+         * Is called when the open windows menu is about to show ;-)
+         */
+        void slotOpenWindowsMenuAboutToShow();
+        /**
          * This slot is connected with the windowAutoTile_action object
          */
         void slotAutoTileVertical();
@@ -271,6 +277,10 @@ class BibleTime : public QMainWindow {
          * Shows/hides the toolbar
          */
         void slotToggleToolbar();
+        /**
+         * Used to set the active menu
+         */
+        void slotSetActiveSubWindow(QWidget* window);
         /**
         * Saves to the profile with the menu id ID
         */
@@ -342,6 +352,7 @@ class BibleTime : public QMainWindow {
         // VIEW menu actions
         QAction* m_viewToolbar_action;
         QMenu* m_windowMenu;
+        QMenu* m_openWindowsMenu;
         /** WINDOW menu actions */
         QAction* m_windowCascade_action;
         QAction* m_windowTileHorizontal_action;
@@ -350,6 +361,7 @@ class BibleTime : public QMainWindow {
         QAction* m_windowAutoCascade_action;
         QAction* m_windowAutoTileVertical_action;
         QAction* m_windowAutoTileHorizontal_action;
+        QAction* m_windowClose_action;
         QAction* m_windowCloseAll_action;
         BtActionCollection* m_actionCollection;
 
@@ -359,6 +371,10 @@ class BibleTime : public QMainWindow {
         QMenu* m_windowDeleteProfileMenu;
         QAction* m_windowFullscreen_action;
 
+        /**
+         * Signal mapper to map windows to menu items.
+         */
+        QSignalMapper* m_windowMapper;
         /// \todo remove?
         // QList<QAction*> m_windowOpenWindowsList;
 

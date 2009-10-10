@@ -165,6 +165,11 @@ extern const QString icon;
 extern const QKeySequence accel;
 extern const char* actionName;
 }
+namespace close {
+extern const QString icon;
+extern const QKeySequence accel;
+extern const char* actionName;
+}
 namespace closeAll {
 extern const QString icon;
 extern const QKeySequence accel;

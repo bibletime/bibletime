@@ -182,6 +182,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     a->addAction("tileHorizontally", action);
 
     action = new QAction(a);
+    action->setText(tr("Close &window"));
+    action->setIcon(DU::getIcon(CResMgr::mainMenu::window::close::icon));
+    action->setShortcut(QKeySequence(CResMgr::mainMenu::window::close::accel));
+    action->setToolTip(tr("Close the current open window"));
+    a->addAction("closeWindow", action);
+
+    action = new QAction(a);
     action->setText(tr("Cl&ose all windows"));
     action->setIcon(DU::getIcon(CResMgr::mainMenu::window::closeAll::icon));
     action->setShortcut(QKeySequence(CResMgr::mainMenu::window::closeAll::accel));
@@ -225,6 +232,13 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
 void BibleTime::initActions() {
     m_actionCollection = new BtActionCollection(this);
 
+    /**
+     * Create the window to signal mapper and connect it up.
+     */
+    m_windowMapper = new QSignalMapper(this);
+    connect(m_windowMapper, SIGNAL(mapped(QWidget*)),
+            this, SLOT(slotSetActiveSubWindow(QWidget*)));
+
     insertKeyboardActions(m_actionCollection);
 
     // Main menus
@@ -259,7 +273,6 @@ void BibleTime::initActions() {
     viewMenu->addAction(m_viewToolbar_action);
     connect(m_viewToolbar_action, SIGNAL(triggered()), this, SLOT(slotToggleToolbar()) );
 
-
     QAction* action = m_bookshelfDock->toggleViewAction();
     action->setText(tr("Show Bookshelf"));
     viewMenu->addAction(action);
@@ -284,29 +297,35 @@ void BibleTime::initActions() {
     searchMenu->addAction(tmp);
     connect(tmp, SIGNAL(triggered()), this, SLOT(slotSearchDefaultBible()) );
 
-    m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
-    m_windowMenu->addMenu(m_windowSaveProfileMenu);
+    /**
+     * Window Menu
+     */
+    m_openWindowsMenu = new QMenu(tr("O&pen Windows"));
+    m_windowMenu->addMenu(m_openWindowsMenu);
 
-    m_windowSaveToNewProfile_action = m_actionCollection->action("saveNewSession");
-    m_windowMenu->addAction(m_windowSaveToNewProfile_action);
-    connect(m_windowSaveToNewProfile_action, SIGNAL(triggered()), this, SLOT(saveToNewProfile()) );
+    m_windowClose_action = m_actionCollection->action("closeWindow");
+    m_windowMenu->addAction(m_windowClose_action);
+    connect(m_windowClose_action, SIGNAL(triggered()), m_mdi, SLOT(closeActiveSubWindow()));
 
-
-    m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
-    m_windowMenu->addMenu(m_windowLoadProfileMenu);
-
-    m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
-    m_windowMenu->addMenu(m_windowDeleteProfileMenu);
-
-    QObject::connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
-    QObject::connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
-    QObject::connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
-
-    refreshProfileMenus();
+    m_windowCloseAll_action = m_actionCollection->action("closeAllWindows");
+    m_windowMenu->addAction(m_windowCloseAll_action);
+    connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT(deleteAll()));
 
     m_windowMenu->addSeparator();
 
-//--------------------------Window arrangement actions---------------------------------------
+    // *** Window arrangement actions ***
+
+    m_windowCascade_action = m_actionCollection->action("cascade");
+    m_windowMenu->addAction(m_windowCascade_action);
+    connect(m_windowCascade_action, SIGNAL(triggered()), this, SLOT(slotCascade()) );
+
+    m_windowTileVertical_action = m_actionCollection->action("tileVertically");
+    m_windowMenu->addAction(m_windowTileVertical_action);
+    connect(m_windowTileVertical_action, SIGNAL(triggered()), this, SLOT(slotTileVertical()) );
+
+    m_windowTileHorizontal_action = m_actionCollection->action("tileHorizontally");
+    m_windowMenu->addAction(m_windowTileHorizontal_action);
+    connect(m_windowTileHorizontal_action, SIGNAL(triggered()), this, SLOT(slotTileHorizontal()) );
 
     QMenu* arrangementMenu = new QMenu(tr("&Arrangement mode"));
     m_windowMenu->addMenu(arrangementMenu);
@@ -333,22 +352,26 @@ void BibleTime::initActions() {
     arrangementMenu->addAction(m_windowAutoCascade_action);
     connect(m_windowAutoCascade_action, SIGNAL(triggered()), this, SLOT(slotAutoCascade()) );
 
-    m_windowCascade_action = m_actionCollection->action("cascade");
-    m_windowMenu->addAction(m_windowCascade_action);
-    connect(m_windowCascade_action, SIGNAL(triggered()), this, SLOT(slotCascade()) );
+    m_windowMenu->addSeparator();
 
-    m_windowTileVertical_action = m_actionCollection->action("tileVertically");
-    m_windowMenu->addAction(m_windowTileVertical_action);
-    connect(m_windowTileVertical_action, SIGNAL(triggered()), this, SLOT(slotTileVertical()) );
+    m_windowSaveProfileMenu = new QMenu(tr("&Save session"));
+    m_windowMenu->addMenu(m_windowSaveProfileMenu);
 
-    m_windowTileHorizontal_action = m_actionCollection->action("tileHorizontally");
-    m_windowMenu->addAction(m_windowTileHorizontal_action);
-    connect(m_windowTileHorizontal_action, SIGNAL(triggered()), this, SLOT(slotTileHorizontal()) );
+    m_windowSaveToNewProfile_action = m_actionCollection->action("saveNewSession");
+    m_windowMenu->addAction(m_windowSaveToNewProfile_action);
+    connect(m_windowSaveToNewProfile_action, SIGNAL(triggered()), this, SLOT(saveToNewProfile()) );
 
-    m_windowCloseAll_action = m_actionCollection->action("closeAllWindows");
-    m_windowMenu->addAction(m_windowCloseAll_action);
-    connect(m_windowCloseAll_action, SIGNAL(triggered()), m_mdi, SLOT(deleteAll()));
+    m_windowLoadProfileMenu = new QMenu(tr("&Load session"));
+    m_windowMenu->addMenu(m_windowLoadProfileMenu);
 
+    m_windowDeleteProfileMenu = new QMenu(tr("&Delete session"));
+    m_windowMenu->addMenu(m_windowDeleteProfileMenu);
+
+    QObject::connect(m_windowLoadProfileMenu, SIGNAL(triggered(QAction*)), SLOT(loadProfile(QAction*)));
+    QObject::connect(m_windowSaveProfileMenu, SIGNAL(triggered(QAction*)), SLOT(saveProfile(QAction*)));
+    QObject::connect(m_windowDeleteProfileMenu, SIGNAL(triggered(QAction*)), SLOT(deleteProfile(QAction*)));
+
+    refreshProfileMenus();
 
     tmp = m_actionCollection->action("setPreferences");
     settingsMenu->addAction(tmp);
@@ -388,6 +411,13 @@ void BibleTime::initConnections() {
     }
     else {
         qWarning() << "Main window: can't find window menu";
+    }
+
+    if (m_openWindowsMenu) {
+        QObject::connect(m_openWindowsMenu, SIGNAL(aboutToShow()), this, SLOT(slotOpenWindowsMenuAboutToShow()));
+    }
+    else {
+        qWarning() << "Main window: can't find open windows menu";
     }
 
     bool ok;

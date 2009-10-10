@@ -156,18 +156,24 @@ void BibleTime::slotWindowMenuAboutToShow() {
         m_windowCascade_action->setEnabled(false);
         m_windowTileVertical_action->setEnabled(false);
         m_windowTileHorizontal_action->setEnabled(false);
+        m_windowClose_action->setEnabled(false);
         m_windowCloseAll_action->setEnabled(false);
+        m_openWindowsMenu->setEnabled(false);
     }
     else if (m_mdi->subWindowList().count() == 1) {
-        m_windowTileVertical_action->setEnabled( false );
-        m_windowTileHorizontal_action->setEnabled( false );
-        m_windowCascade_action->setEnabled( false );
-        m_windowCloseAll_action->setEnabled( true );
+        m_windowTileVertical_action->setEnabled(false);
+        m_windowTileHorizontal_action->setEnabled(false);
+        m_windowCascade_action->setEnabled(false);
+        m_windowClose_action->setEnabled(true);
+        m_windowCloseAll_action->setEnabled(true);
+        m_openWindowsMenu->setEnabled(true);
         //   m_windowMenu->insertSeparator();
     }
     else {
         slotUpdateWindowArrangementActions(0); //update the window tile/cascade states
-        m_windowCloseAll_action->setEnabled( true );
+        m_windowClose_action->setEnabled(true);
+        m_windowCloseAll_action->setEnabled(true);
+        m_openWindowsMenu->setEnabled(true);
     }
 
     // QList<QAction*>::iterator end = m_windowOpenWindowsList.end();
@@ -202,6 +208,23 @@ void BibleTime::slotWindowMenuAboutToShow() {
 // 		action->setChecked( w == m_mdi->activeWindow() );
 // 		m_windowMenu->addAction(action);
 // 	}
+}
+
+/** Is called just before the open windows menu is ahown. */
+void BibleTime::slotOpenWindowsMenuAboutToShow() {
+    Q_ASSERT(m_openWindowsMenu);
+    if (!m_openWindowsMenu) {
+        return;
+    }
+    QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
+    m_openWindowsMenu->clear();
+    foreach (QMdiSubWindow *window, windows) {
+         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
+         openWindowAction->setCheckable(true);
+         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
+         connect(openWindowAction, SIGNAL(triggered()), m_windowMapper, SLOT(map()));
+         m_windowMapper->setMapping(openWindowAction, window);
+    }
 }
 
 /** This slot is connected with the windowAutoTile_action object */
@@ -323,6 +346,13 @@ void BibleTime::slotToggleToolbar() {
     else {
         m_mainToolBar->hide();
     }
+}
+
+/** Sets the active window. */
+void BibleTime::slotSetActiveSubWindow(QWidget* window) {
+    if (!window)
+        return;
+    m_mdi->setActiveSubWindow(dynamic_cast<QMdiSubWindow*>(window));
 }
 
 void BibleTime::slotSearchModules() {

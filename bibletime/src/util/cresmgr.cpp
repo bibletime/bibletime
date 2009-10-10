@@ -157,6 +157,11 @@ const QString icon        = "cascade.svg";
 const QKeySequence accel(Qt::CTRL + Qt::Key_J);
 const char* actionName    = "windowCascade_action";
 }
+namespace close {
+const QString icon        = "fileclose.svg";
+const QKeySequence accel(Qt::CTRL + Qt::Key_W);
+const char* actionName    = "windowClose_action";
+}
 namespace closeAll {
 const QString icon        = "fileclose.svg";
 const QKeySequence accel(Qt::CTRL + Qt::ALT + Qt::Key_W);

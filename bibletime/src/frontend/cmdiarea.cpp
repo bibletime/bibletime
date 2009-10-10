@@ -18,6 +18,8 @@
 
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
         m_mdiArrangementMode(ArrangementModeManual) {
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     setActivationOrder( CreationOrder ); //keep window order consistent
     connect(this, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(slotClientActivated(QMdiSubWindow*)));
 }
