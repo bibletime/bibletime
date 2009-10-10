@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "directoryutil.h"
+#include "util/directoryutil.h"
 
 #include <QCoreApplication>
 #include <QDebug>
@@ -16,6 +16,7 @@
 #include <QFileInfo>
 #include <QFileInfoList>
 #include <QLocale>
+
 
 namespace util {
 namespace directoryutil {

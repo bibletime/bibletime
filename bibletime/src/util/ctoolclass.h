@@ -6,13 +6,14 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
+
 #ifndef CTOOLCLASS_H
 #define CTOOLCLASS_H
 
-//Qt
-#include <QString>
 #include <QIcon>
+#include <QString>
 #include <QTextCodec>
+
 
 class CSwordModuleInfo;
 class QLabel;

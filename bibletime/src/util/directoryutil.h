@@ -10,9 +10,10 @@
 #ifndef UTIL_FILESDIRECTORYUTIL_H
 #define UTIL_FILESDIRECTORYUTIL_H
 
-#include <QString>
 #include <QDir>
 #include <QIcon>
+#include <QString>
+
 
 namespace util {
 

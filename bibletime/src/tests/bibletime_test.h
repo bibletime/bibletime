@@ -12,6 +12,7 @@
 
 #include <QObject>
 
+
 class BibleTimeTest: public QObject {
         Q_OBJECT
 

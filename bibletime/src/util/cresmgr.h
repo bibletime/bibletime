@@ -10,9 +10,9 @@
 #ifndef CRESMGR_H
 #define CRESMGR_H
 
-//Qt includes
-#include <QString>
 #include <QKeySequence>
+#include <QString>
+
 
 /** Provides static functions to easily access the Tooltip texts for all the frontend parts.
   * @author The BibleTime team

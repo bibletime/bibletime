@@ -7,24 +7,20 @@
 *
 **********/
 
-#include "ctoolclass.h"
+#include "util/ctoolclass.h"
 
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
-//Qt
-#include <QLabel>
+#include <QApplication>
 #include <QFile>
 #include <QFileDialog>
-#include <QTextStream>
-#include <QRegExp>
-#include <QWidget>
-#include <QApplication>
+#include <QLabel>
 #include <QMessageBox>
-
-//KDE includes
+#include <QRegExp>
+#include <QTextStream>
+#include <QWidget>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 
 /** Converts HTML text to plain text */

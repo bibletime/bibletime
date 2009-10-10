@@ -7,14 +7,16 @@
 *
 **********/
 
-#include "migrationutil.h"
-#include "directoryutil.h"
-#include "backend/config/cbtconfig.h"
-
-#include "swversion.h"
+#include "util/migrationutil.h"
 
 #include <QMessageBox>
 #include <QSettings>
+#include "backend/config/cbtconfig.h"
+#include "util/directoryutil.h"
+
+// Nasty Sword includes:
+#include "swversion.h"
+
 
 namespace util {
 

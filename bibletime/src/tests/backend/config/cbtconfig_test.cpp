@@ -9,9 +9,8 @@
 
 #include "tests/bibletime_test.h"
 
-#include "backend/config/cbtconfig.h"
-
 #include <QtTest/QtTest>
+#include "backend/config/cbtconfig.h"
 
 
 void BibleTimeTest::frontend_cbtconfig_test() {

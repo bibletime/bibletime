@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "cresmgr.h"
+#include "util/cresmgr.h"
 
 #include <QString>
 

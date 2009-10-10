@@ -10,9 +10,8 @@
 #ifndef CPOINTERS_H
 #define CPOINTERS_H
 
-//BibleTime includes
 #include "backend/managers/clanguagemgr.h"
-//#include "backend/cdisplaytemplatemgr.h"
+
 
 class CSwordBackend;
 class CLanguageMgr;
