@@ -24,7 +24,7 @@
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <math.h>
+#include <cmath>
 
 //Qt includes
 #include <QWidget>
