@@ -181,7 +181,7 @@ bool CSwordModuleInfo::unlockKeyIsValid() {
 }
 
 QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
-    return util::filesystem::directoryutil::getUserIndexDir().absolutePath();
+    return util::directoryutil::getUserIndexDir().absolutePath();
 }
 
 QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
@@ -406,11 +406,11 @@ void CSwordModuleInfo::buildIndex() {
 }
 
 void CSwordModuleInfo::deleteIndexForModule( QString name ) {
-    util::filesystem::directoryutil::removeRecursive( getGlobalBaseIndexLocation() + "/" + name );
+    util::directoryutil::removeRecursive( getGlobalBaseIndexLocation() + "/" + name );
 }
 
 unsigned long CSwordModuleInfo::indexSize() const {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
     return DU::getDirSizeRecursive( getModuleBaseIndexLocation() );
 }
 

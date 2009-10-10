@@ -85,7 +85,7 @@ void CBookshelfIndex::initView() {
 }
 
 void CBookshelfIndex::initActions() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     // Each action has a type attached to it as a dynamic property, see actionenum.h.
     // Menuitem and its subitems can have the same type.
@@ -230,7 +230,7 @@ void CBookshelfIndex::initActions() {
 * than to modify all QAction constructors.
 */
 QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QAction* action = new QAction(DU::getIcon(pix), text, parent);
     if (receiver && !QString(slot).isEmpty()) {

@@ -18,7 +18,6 @@
 #include <QLocale>
 
 namespace util {
-namespace filesystem {
 namespace directoryutil {
 
 namespace {
@@ -339,5 +338,4 @@ QDir getUserDisplayTemplatesDir() {
 }
 
 } // namespace DirectoryUtil
-} // namespace filesystem
 } // namespace util

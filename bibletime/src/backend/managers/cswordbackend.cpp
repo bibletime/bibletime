@@ -334,7 +334,7 @@ CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* con
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
 bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     sword::SectionMap::iterator section;
     DIR *dir = opendir(configPath);
@@ -538,7 +538,7 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 }
 
 const QStringList CSwordBackend::swordDirList() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QSet<QString> ret;
     const QString home = DU::getUserHomeDir().absolutePath();

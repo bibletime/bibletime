@@ -73,7 +73,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
         m_searchResultArea(0), m_searchOptionsArea(0)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
     setWindowTitle(tr("Search"));
@@ -208,7 +208,7 @@ void CSearchDialog::setSearchText( const QString searchText ) {
 
 /** Initializes this object. */
 void CSearchDialog::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     setLayout(verticalLayout);

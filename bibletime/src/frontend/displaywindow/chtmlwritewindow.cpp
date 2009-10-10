@@ -58,7 +58,7 @@ void CHTMLWriteWindow::initConnections() {
 }
 
 void CHTMLWriteWindow::initToolbars() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //setup the main toolbar
     m_actions.syncWindow = new QAction(

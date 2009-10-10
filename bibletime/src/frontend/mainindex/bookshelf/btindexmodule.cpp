@@ -24,7 +24,7 @@
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)
         : BTIndexItem(previous)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //qDebug("BTIndexModule::BTIndexModule");
     setText(0, treeItem->text()); //set text

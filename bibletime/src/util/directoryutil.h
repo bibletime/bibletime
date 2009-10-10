@@ -15,7 +15,6 @@
 #include <QIcon>
 
 namespace util {
-namespace filesystem {
 
 /**
  * Tools for working with directories.
@@ -95,7 +94,6 @@ QDir getUserIndexDir();
 QDir getUserDisplayTemplatesDir();
 
 } // namespace DirectoryUtil
-} // namespace filesystem
 } // namespace util
 
 #endif

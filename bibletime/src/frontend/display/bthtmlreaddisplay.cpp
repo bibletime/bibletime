@@ -55,7 +55,7 @@ BtHtmlReadDisplay::~BtHtmlReadDisplay() {
 
 // Read javascript into memory once and create the c++ javascript object
 void BtHtmlReadDisplay::initJavascript() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     // read bthtml.js javascript file once
     if (javascript.size() == 0) {

@@ -75,7 +75,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
                                QKeySequence accel, const QString& tooltip,
                                const QString& actionName, const char* slot)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     action->setText(text);
     if ( ! icon.isEmpty() )
@@ -90,7 +90,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
 // Creates QAction's for all actions that can have keyboard shortcuts
 // Used in creating the main window and by the configuration dialog for setting shortcuts
 void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QAction* action = new QAction(a);
     action->setText(tr("&Quit"));

@@ -166,7 +166,7 @@ void BtAboutDialog::init_qt_tab() {
 }
 
 void BtAboutDialog::init_lic_tab() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     selectTab(4);
     setTabText(tr("License"));
@@ -233,7 +233,7 @@ static QString make_version() {
 }
 
 static QString make_file_icon(const QString& icon) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QString dir("<img src=file://" + DU::getIconDir().path());
     return dir + "/" + icon + ".png >";

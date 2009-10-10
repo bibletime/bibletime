@@ -86,7 +86,7 @@ void BtBookmarkFolder::rename() {
 }
 
 void BtBookmarkFolder::update() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qDebug() << "BtBookmarkFolder::update()";
     BtBookmarkItemBase::update();

@@ -146,7 +146,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 }
 
 void CDisplayTemplateMgr::loadTemplates() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QStringList files;
     foreach (QString file, DU::getDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {

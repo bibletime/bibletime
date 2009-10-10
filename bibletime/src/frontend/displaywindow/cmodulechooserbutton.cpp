@@ -30,7 +30,7 @@ CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule, CSwordMo
         : QToolButton(parent),
         m_id(id), m_popup(0), m_moduleChooserBar(parent)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     m_moduleType = type;
     m_module = useModule;
@@ -84,7 +84,7 @@ int CModuleChooserButton::getId() const {
 
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( QAction* action ) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {

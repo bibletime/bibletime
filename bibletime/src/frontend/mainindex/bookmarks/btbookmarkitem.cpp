@@ -141,7 +141,7 @@ QString BtBookmarkItem::englishKey() const {
 }
 
 void BtBookmarkItem::update() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qDebug() << "BtBookmarkItem::update";
     setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));

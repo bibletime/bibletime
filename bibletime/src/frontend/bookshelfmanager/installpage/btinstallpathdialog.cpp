@@ -32,7 +32,7 @@
 #include <QDebug>
 
 BtInstallPathDialog::BtInstallPathDialog() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     setWindowTitle(tr("Bookshelf Paths"));
 

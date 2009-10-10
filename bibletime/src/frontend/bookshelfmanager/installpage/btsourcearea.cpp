@@ -55,7 +55,7 @@ BtSourceArea::~BtSourceArea() {
 }
 
 void BtSourceArea::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qDebug("BtSourceArea::initView");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

@@ -113,7 +113,7 @@ extern "C" {
 
 
 int main(int argc, char* argv[]) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qInstallMsgHandler( myMessageOutput );
 

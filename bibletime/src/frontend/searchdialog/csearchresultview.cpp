@@ -40,7 +40,7 @@ CSearchResultView::~CSearchResultView() {}
 
 /** Initializes the view of this widget. */
 void CSearchResultView::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     setToolTip(tr("Search result of the selected work"));
     setHeaderLabel(tr("Results"));

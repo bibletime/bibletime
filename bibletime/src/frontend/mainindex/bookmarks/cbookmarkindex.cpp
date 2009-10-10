@@ -131,7 +131,7 @@ void CBookmarkIndex::initView() {
 * than to modify all QAction constructors.
 */
 QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
     QAction* action = new QAction(DU::getIcon(pix), text, parent);
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;
@@ -245,7 +245,7 @@ void CBookmarkIndex::dragLeaveEvent( QDragLeaveEvent* ) {
 
 
 void CBookmarkIndex::paintEvent(QPaintEvent* event) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     static QPixmap pix;
     static int halfPixHeight;

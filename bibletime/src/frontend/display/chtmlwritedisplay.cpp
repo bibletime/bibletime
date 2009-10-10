@@ -137,7 +137,7 @@ void CHTMLWriteDisplay::slotFontFamilyChoosen(const QFont& font) {
 }
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //--------------------font chooser-------------------------
     m_fontFamilyChooser = new QFontComboBox(this);

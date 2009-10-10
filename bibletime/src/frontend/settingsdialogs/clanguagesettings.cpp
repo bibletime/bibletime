@@ -35,7 +35,7 @@
 CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
         : BtConfigPage()
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
@@ -245,7 +245,7 @@ void CLanguageSettingsPage::newDisplayWindowFontAreaSelected(const QString& usag
 
 /** This slot is called when the "Use own font for language" bo was clicked. */
 void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //belongs to fonts/languages
 

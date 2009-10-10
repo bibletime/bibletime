@@ -45,7 +45,7 @@ CSwordLexiconModuleInfo::~CSwordLexiconModuleInfo() {
 
 /** Returns the entries of the module. */
 QStringList* CSwordLexiconModuleInfo::entries() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     if (!module()) {
         return 0;

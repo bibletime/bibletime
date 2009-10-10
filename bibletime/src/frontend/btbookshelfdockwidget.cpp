@@ -121,7 +121,7 @@ bool BtBookshelfDockWidget::eventFilter(QObject *object, QEvent *event) {
 }
 
 void BtBookshelfDockWidget::initMenus() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
     namespace RM = CResMgr::mainIndex;
 
     m_contextMenu = new QMenu(this);

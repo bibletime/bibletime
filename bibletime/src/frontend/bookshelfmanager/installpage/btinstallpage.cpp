@@ -80,7 +80,7 @@ QString BtInstallPage::selectedInstallPath() {
 }
 
 void BtInstallPage::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qDebug("void BtInstallPage::initView() start");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

@@ -54,7 +54,7 @@ void CPlainWriteWindow::initView() {
 }
 
 void CPlainWriteWindow::initToolbars() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     m_actions.syncWindow = new QAction(
         //KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),

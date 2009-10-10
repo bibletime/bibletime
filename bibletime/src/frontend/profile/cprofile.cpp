@@ -27,7 +27,7 @@ CProfile::CProfile( const QString& file, const QString& name )
         m_geometry(10, 20, 640, 480),
         m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) //0 is not a valid enum entry, means "unknown"
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     if (!m_filename.isEmpty() && name.isEmpty()) {
         loadBasics();

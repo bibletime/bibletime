@@ -46,7 +46,7 @@ CModuleResultView::~CModuleResultView() {}
 
 /** Initializes this widget. */
 void CModuleResultView::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     // see also csearchresultview.cpp
     setToolTip(tr("Works chosen for the search and the number of the hits in each work"));

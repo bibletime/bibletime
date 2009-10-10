@@ -55,7 +55,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
         m_key(key),
         m_dropDownHoverTimer(this)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     updatelock = false;
     m_module = mod;

@@ -14,7 +14,7 @@
 BTIndexFolder::BTIndexFolder(BTModuleTreeItem* treeItem, QTreeWidgetItem* parent)
         : BTIndexItem(parent)
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     setText(0, treeItem->text());
     setIcon(0, DU::getIcon(treeItem->iconName()));

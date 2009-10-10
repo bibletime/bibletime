@@ -93,7 +93,7 @@ void CDisplayWindow::setCaption( const QString&  ) {
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 

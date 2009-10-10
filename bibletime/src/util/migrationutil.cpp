@@ -31,7 +31,7 @@ void MigrationUtil::checkMigration() {
 
 //Migration code for KDE 4 port, moves from old config dir to ~/.bibletime/
 void MigrationUtil::tryMigrationFromKDE3() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //List of potential old KDE directories to load data from.
     QStringList searchDirs;

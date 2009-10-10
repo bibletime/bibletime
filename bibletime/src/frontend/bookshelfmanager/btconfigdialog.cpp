@@ -63,7 +63,7 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 BtConfigDialog::~BtConfigDialog() {}
 
 void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     // this is a friend
     pageWidget->m_parentDialog = this;

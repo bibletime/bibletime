@@ -83,7 +83,7 @@ void BtSearchOptionsArea::setSearchText(const QString& text) {
 }
 
 void BtSearchOptionsArea::initView() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     this->setSizePolicy(sizePolicy);

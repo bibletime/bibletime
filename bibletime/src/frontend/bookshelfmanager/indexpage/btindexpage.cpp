@@ -33,7 +33,7 @@
 BtIndexPage::BtIndexPage()
         : BtConfigPage()
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QVBoxLayout *vboxLayout;
     QHBoxLayout *hboxLayout;

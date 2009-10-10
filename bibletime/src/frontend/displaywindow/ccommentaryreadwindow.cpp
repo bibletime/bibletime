@@ -109,7 +109,7 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 }
 
 void CCommentaryReadWindow::initToolbars() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     CLexiconReadWindow::initToolbars();
 

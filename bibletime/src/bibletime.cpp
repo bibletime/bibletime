@@ -49,7 +49,7 @@
 using namespace Profile;
 
 BibleTime::BibleTime() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QPixmap pm;
     if (!pm.load(DU::getPicsDir().canonicalPath().append( "/startuplogo.png"))) {

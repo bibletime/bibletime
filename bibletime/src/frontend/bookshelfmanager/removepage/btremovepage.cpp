@@ -40,7 +40,7 @@
 BtRemovePage::BtRemovePage()
         : BtConfigPage()
 {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QGridLayout* layout = new QGridLayout(this);
     layout->setMargin(5);

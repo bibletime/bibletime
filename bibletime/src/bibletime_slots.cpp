@@ -350,14 +350,14 @@ void BibleTime::slotSearchDefaultBible() {
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QString urlPath("file://" + DU::getHandbookDir().canonicalPath() + "/index.html");
     QDesktopServices::openUrl(QUrl(urlPath));
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     QString urlPath("file://" + DU::getHowtoDir().canonicalPath() + "/index.html");
     QDesktopServices::openUrl(QUrl(urlPath));

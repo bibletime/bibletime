@@ -21,7 +21,7 @@
 namespace Profile {
 
 CProfileMgr::CProfileMgr() : m_startupProfile(0) {
-    namespace DU = util::filesystem::directoryutil;
+    namespace DU = util::directoryutil;
 
     //m_profiles.setAutoDelete(true);
 
