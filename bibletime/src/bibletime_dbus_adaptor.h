@@ -14,12 +14,12 @@
 
 #include "bibletime.h"
 
-//Qt includes
-#include <QString>
-#include <QStringList>
 #ifndef NO_DBUS
 #include <QDBusAbstractAdaptor>
 #endif
+#include <QString>
+#include <QStringList>
+
 
 class BibleTimeDBusAdaptor : QDBusAbstractAdaptor {
         Q_OBJECT

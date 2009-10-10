@@ -10,34 +10,28 @@
 #ifndef CBOOKSHELFINDEX_H
 #define CBOOKSHELFINDEX_H
 
-//BibleTime includes
-#include "btindexitem.h"
-#include "backend/btmoduletreeitem.h"
-class CSwordModuleInfo;
-#include "frontend/displaywindow/cdisplaywindow.h"
+#include <QTreeWidget>
 
+#include <QList>
+#include <QTimer>
+#include <QTreeWidgetItem>
+#include "backend/btmoduletreeitem.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/mainindex/bookshelf/btindexitem.h"
 #include "util/cpointers.h"
 
-//Qt includes
-#include <QTimer>
-#include <QList>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
 
-
-
-class CSearchDialog;
-class QWidget;
-class QDropEvent;
-class QDragMoveEvent;
-class QDragLeaveEvent;
 class BTMimeData;
-class QMenu;
-class QActionGroup;
-class QMouseEvent;
 class BTModuleTreeItem;
-
-
+class CSearchDialog;
+class CSwordModuleInfo;
+class QActionGroup;
+class QDragLeaveEvent;
+class QDragMoveEvent;
+class QDropEvent;
+class QMenu;
+class QMouseEvent;
+class QWidget;
 
 /**
 * The widget which manages the modules. The modules are put into own,
@@ -45,8 +39,7 @@ class BTModuleTreeItem;
 * @author The BibleTime team
 */
 class CBookshelfIndex : public QTreeWidget {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CBookshelfIndex(QWidget *parent);
         virtual ~CBookshelfIndex();

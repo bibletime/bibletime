@@ -7,13 +7,12 @@
 *
 **********/
 
+#include "frontend/cdragdrop.h"
 
-#include "cdragdrop.h"
-
-#include <QString>
 #include <QByteArray>
-#include <QMimeData>
 #include <QList>
+#include <QMimeData>
+#include <QString>
 
 BTMimeData::BTMimeData() {}
 

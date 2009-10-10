@@ -7,32 +7,26 @@
 *
 **********/
 
-//BT includes
-#include "cswordsetupinstallsourcesdialog.h"
-
-#include "frontend/bookshelfmanager/instbackend.h"
+#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
 
 #include <boost/scoped_ptr.hpp>
-
-//Qt includes
-#include <QLayout>
-#include <QLabel>
 #include <QComboBox>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QMessageBox>
+#include <QDir>
 #include <QFileInfo>
+#include <QFileDialog>
 #include <QGridLayout>
 #include <QHBoxLayout>
+#include <QLabel>
+#include <QLayout>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QPushButton>
 #include <QVBoxLayout>
-#include <QFileDialog>
-#include <QDir>
-
+#include "frontend/bookshelfmanager/instbackend.h"
 
 
 const QString PROTO_FILE( QObject::tr("Local") ); //Local path
 const QString PROTO_FTP( QObject::tr("Remote") ); //Remote path
-
 
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
         : QDialog() {

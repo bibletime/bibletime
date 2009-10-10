@@ -1,33 +1,29 @@
-//
-// C++ Interface: cconfigurationdialog
-//
-// Description: BibleTime Configuration dialog.
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2009
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef CCONFIGURATIONDIALOG_H
 #define CCONFIGURATIONDIALOG_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
-class QWidget;
-class QAbstractButton;
 
-class CDisplaySettingsPage;
-class CSwordSettingsPage;
-class CLanguageSettingsPage;
-class CAcceleratorSettingsPage;
-class QDialogButtonBox;
 class BtActionCollection;
+class CAcceleratorSettingsPage;
+class CDisplaySettingsPage;
+class CLanguageSettingsPage;
+class CSwordSettingsPage;
+class QAbstractButton;
+class QDialogButtonBox;
+class QWidget;
 
 class CConfigurationDialog : public BtConfigDialog {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
         virtual ~CConfigurationDialog();

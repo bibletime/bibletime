@@ -7,24 +7,22 @@
 *
 **********/
 
-#include "btbookmarkloader.h"
+#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
 
-#include "btbookmarkitem.h"
-#include "btbookmarkfolder.h"
-
-#include "util/ctoolclass.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
-#include <QTreeWidgetItem>
+#include <QDebug>
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomDocument>
-#include <QTextStream>
 #include <QFile>
 #include <QIODevice>
 #include <QTextCodec>
+#include <QTextStream>
+#include <QTreeWidgetItem>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
+#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "util/ctoolclass.h"
 
-#include <QDebug>
 
 #define CURRENT_SYNTAX_VERSION 1
 

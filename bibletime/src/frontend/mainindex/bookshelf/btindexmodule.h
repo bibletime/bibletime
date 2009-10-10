@@ -10,16 +10,15 @@
 #ifndef BTINDEXMODULE_H
 #define BTINDEXMODULE_H
 
-#include "btindexitem.h"
+#include "frontend/mainindex/bookshelf/btindexitem.h"
 
 #include "util/ctoolclass.h"
 
+
 class BTModuleTreeItem;
 class CSwordModuleInfo;
-
 class QAction;
 class QMimeData;
-
 
 class BTIndexModule : public BTIndexItem {
     public:

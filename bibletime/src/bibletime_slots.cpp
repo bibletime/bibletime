@@ -7,40 +7,36 @@
 *
 **********/
 
-//own includes
 #include "bibletime.h"
 
+#include <QAction>
+#include <QApplication>
+#include <QClipboard>
+#include <QDesktopServices>
+#include <QInputDialog>
+#include <QList>
+#include <QMdiSubWindow>
+#include <QMenu>
+#include <QProcess>
+#include <QtGlobal>
+#include <QToolBar>
+#include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
-
-#include "util/ctoolclass.h"
-#include "util/directoryutil.h"
-
+#include "frontend/cinfodisplay.h"
+#include "frontend/cinputdialog.h"
 #include "frontend/cmdiarea.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/htmldialogs/btaboutdialog.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cinputdialog.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cbiblereadwindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
-#include "frontend/htmldialogs/btaboutdialog.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
+#include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
-//QT includes
-#include <QClipboard>
-#include <QInputDialog>
-#include <QList>
-#include <QAction>
-#include <QMenu>
-#include <QToolBar>
-#include <QApplication>
-#include <QProcess>
-#include <QMdiSubWindow>
-#include <QtGlobal>
-#include <QDesktopServices>
 
 using namespace Profile;
 

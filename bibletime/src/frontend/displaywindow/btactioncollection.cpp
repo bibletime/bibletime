@@ -7,15 +7,17 @@
 *
 **********/
 
-#include "util/directoryutil.h"
-#include "backend/config/cbtconfig.h"
-#include "btactioncollection.h"
+#include "frontend/displaywindow/btactioncollection.h"
+
 #include <QAction>
+#include <QDebug>
 #include <QKeySequence>
 #include <QSettings>
 #include <QString>
 #include <QStringList>
-#include <QDebug>
+#include "backend/config/cbtconfig.h"
+#include "util/directoryutil.h"
+
 
 class BtActionItem : public QObject {
     public:

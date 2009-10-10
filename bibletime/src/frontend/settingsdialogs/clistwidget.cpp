@@ -7,14 +7,18 @@
 *
 **********/
 
+#include "frontend/settingsdialogs/clistwidget.h"
+
 #include "util/ctoolclass.h"
-#include "clistwidget.h"
+
 
 CListWidget::CListWidget(QWidget* parent)
         : QListWidget(parent) {
+    // Intentionally empty
 }
 
 CListWidget::~CListWidget() {
+    // Intentionally empty
 }
 
 QSize CListWidget::sizeHint () const {

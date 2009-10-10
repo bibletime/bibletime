@@ -7,11 +7,13 @@
 *
 **********/
 
-#include "bttoolbarpopupaction.h"
-#include <QMenu>
-#include <QToolButton>
+#include "frontend/displaywindow/bttoolbarpopupaction.h"
+
 #include <QAction>
 #include <QEvent>
+#include <QMenu>
+#include <QToolButton>
+
 
 class BtToolButton : public QToolButton {
     public:

@@ -7,20 +7,17 @@
 *
 **********/
 
-#include "csearchanalysisscene.h"
-#include "csearchanalysisitem.h"
-#include "csearchanalysislegenditem.h"
+#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
 
-#include "frontend/searchdialog/csearchdialog.h"
-
-#include "backend/keys/cswordversekey.h"
-#include "util/ctoolclass.h"
-
-#include <QHashIterator>
-#include <QFileDialog>
-#include <QTextCodec>
 #include <QApplication>
-
+#include <QFileDialog>
+#include <QHashIterator>
+#include <QTextCodec>
+#include "backend/keys/cswordversekey.h"
+#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
+#include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "util/ctoolclass.h"
 
 
 namespace Search {

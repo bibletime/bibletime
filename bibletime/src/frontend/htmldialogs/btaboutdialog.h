@@ -10,14 +10,15 @@
 #ifndef BTABOUTDIALOG_H
 #define BTABOUTDIALOG_H
 
-#include "bttabhtmldialog.h"
+#include "frontend/htmldialogs/bttabhtmldialog.h"
+
 
 class BtAboutDialog : public BtTabHtmlDialog {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         BtAboutDialog(QWidget *parent = 0, Qt::WindowFlags wflags = Qt::Dialog);
         ~BtAboutDialog();
+
         void init_bt_tab();
         void init_contributors_tab();
         void init_sword_tab();

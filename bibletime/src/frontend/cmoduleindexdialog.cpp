@@ -7,17 +7,16 @@
 *
 **********/
 
-#include "cmoduleindexdialog.h"
+#include "frontend/cmoduleindexdialog.h"
 
-#include "util/cpointers.h"
-#include "backend/managers/cswordbackend.h"
-
-//Qt includes
-#include <QString>
-#include <QProgressDialog>
-#include <QDebug>
 #include <QApplication>
+#include <QDebug>
 #include <QMessageBox>
+#include <QProgressDialog>
+#include <QString>
+#include "backend/managers/cswordbackend.h"
+#include "util/cpointers.h"
+
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
     qDebug("CModuleIndexDialog::getInstance");

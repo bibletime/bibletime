@@ -1,35 +1,32 @@
-//
-// C++ Interface: clanguagesettings
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #ifndef CLANGUAGESETTINGS_H
 #define CLANGUAGESETTINGS_H
 
-
-#include "util/cpointers.h"
-#include "backend/config/cbtconfig.h"
 #include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "util/cpointers.h"
 
-#include <QWidget>
 #include <QMap>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
 
-class QComboBox;
-class QCheckBox;
+
 class CFontChooser;
-
+class QCheckBox;
+class QComboBox;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class CLanguageSettingsPage : public BtConfigPage, CPointers {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CLanguageSettingsPage(QWidget *parent);
         ~CLanguageSettingsPage();

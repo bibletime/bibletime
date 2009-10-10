@@ -12,7 +12,7 @@
 
 #include <QDialog>
 
-// forwards
+
 class QLabel;
 class QRadioButton;
 
@@ -20,7 +20,7 @@ class QRadioButton;
 // A dialog to allow the user to input a shortcut for a primary and alternate key
 
 class BtShortcutsDialog : public QDialog {
-        Q_OBJECT;
+    Q_OBJECT;
     public:
         BtShortcutsDialog(QWidget* parent);
 

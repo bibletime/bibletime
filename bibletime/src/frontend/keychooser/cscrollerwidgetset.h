@@ -7,20 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CSCROLLERWIDGETSET_H
 #define CSCROLLERWIDGETSET_H
-
 
 #include <QWidget>
 
 
-class QVBoxLayout;
-class QToolButton;
-class QString;
-
 class CScrollButton;
+class QString;
+class QToolButton;
+class QVBoxLayout;
 
 /**
  * This class implements the Scroller Widget-set, which
@@ -29,7 +25,7 @@ class CScrollButton;
   * @author The BibleTime team
   */
 class CScrollerWidgetSet : public QWidget {
-        Q_OBJECT
+    Q_OBJECT
     public:
         /**
         * the constructor

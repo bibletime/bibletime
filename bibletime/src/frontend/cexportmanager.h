@@ -10,16 +10,17 @@
 #ifndef CEXPORTMANAGER_H
 #define CEXPORTMANAGER_H
 
-#include "backend/config/cbtconfig.h"
-#include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 
-#include <QString>
 #include <QList>
+#include <QString>
+#include "backend/config/cbtconfig.h"
+#include "backend/managers/cswordbackend.h"
 
-class ListKey;
+
 class CSwordKey;
 class CSwordModuleInfo;
+class ListKey;
 class QProgressDialog;
 
 /** Contains the functions to export text to disk, clipboard or printer.

@@ -1,38 +1,32 @@
-//
-// C++ Interface: CFontChooser
-//
-// Description: BibleTime font chooser
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef CFONTCHOOSER_H
 #define CFONTCHOOSER_H
 
-// These following two defines allow chosing between using KDE and
-// Qt only for rendering the preview text
-
-
-#include <QWidget>
 #include <QFrame>
 
-class QString;
-class QFrame;
+#include <QWidget>
+
+
+class CListWidget;
 class QListWidget;
 class QListWidgetItem;
+class QString;
 class QVBoxLayout;
 class QWebView;
-class CListWidget;
 
 class CFontChooser : public QFrame {
         Q_OBJECT
 
     public:
-        CFontChooser(QWidget* parent = 0);
+        CFontChooser(QWidget *parent = 0);
         ~CFontChooser();
         void setFont(const QFont& font);
         void setSampleText(const QString& text);

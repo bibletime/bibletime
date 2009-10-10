@@ -7,20 +7,17 @@
 *
 **********/
 
-#include "cbiblekeychooser.h"
+#include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
 
-#include "../bthistory.h"
-#include "ckeyreferencewidget.h"
-#include "../cscrollbutton.h"
-
-#include "backend/keys/cswordversekey.h"
+#include <QDebug>
+#include <QHBoxLayout>
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-
+#include "backend/keys/cswordversekey.h"
+#include "frontend/keychooser/bthistory.h"
+#include "frontend/keychooser/cscrollbutton.h"
+#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
 #include "util/cresmgr.h"
-
-#include <QHBoxLayout>
-#include <QDebug>
 
 
 CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) :

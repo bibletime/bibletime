@@ -7,35 +7,27 @@
 *
 **********/
 
-
-
 #ifndef CBOOKTREECHOOSER_H
 #define CBOOKTREECHOOSER_H
 
+#include "frontend/keychooser/ckeychooser.h"
 
-/** The treechooser implementation for books.
-  * @author The BibleTime team
-  */
-//BibleTime includes
-#include "ckeychooser.h"
-#include "ckeychooserwidget.h"
+#include "frontend/keychooser/ckeychooserwidget.h"
 
-
-class CSwordKey;
-class CSwordBookModuleInfo;
-class CSwordTreeKey;
 
 namespace sword {
-class TreeKeyIdx;
+    class TreeKeyIdx;
 }
-
+class CSwordBookModuleInfo;
+class CSwordKey;
+class CSwordTreeKey;
 class QTreeWidget;
 class QTreeWidgetItem;
 
 /** The keychooser implementation for books.
   * @author The BibleTime team
   */
-class CBookTreeChooser : public CKeyChooser  {
+class CBookTreeChooser : public CKeyChooser {
         Q_OBJECT
     public:
         CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);

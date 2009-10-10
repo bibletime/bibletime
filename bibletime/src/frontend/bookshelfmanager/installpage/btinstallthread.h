@@ -10,11 +10,11 @@
 #ifndef BTINSTALLTHREAD_H
 #define BTINSTALLTHREAD_H
 
-#include "frontend/bookshelfmanager/btinstallmgr.h"
-
 #include <QThread>
 
 #include <boost/scoped_ptr.hpp>
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+
 
 class BtInstallProgressDialog;
 

@@ -7,13 +7,10 @@
 *
 **********/
 
-
-
 #ifndef CREADWINDOW_H
 #define CREADWINDOW_H
 
-//BibleTime includes
-#include "cdisplaywindow.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
@@ -22,13 +19,11 @@
 class BtActionCollection;
 class QResizeEvent;
 
-
 /** The base class for all read-only display windows.
   * @author The BibleTime team
   */
-
 class CReadWindow : public CDisplayWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         //  static void insertKeyboardActions( KAccel* const a );
         static void insertKeyboardActions( BtActionCollection* const a );

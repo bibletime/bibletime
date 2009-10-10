@@ -10,14 +10,12 @@
 #ifndef CMODULECHOOSERBAR_H
 #define CMODULECHOOSERBAR_H
 
-//BibleTime includes
-#include "backend/drivers/cswordmoduleinfo.h"
+#include <QToolBar>
 
+#include <QList>
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "util/cpointers.h"
 
-//Qt includes
-#include <QList>
-#include <QToolBar>
 
 class CModuleChooserButton;
 class QWidget;
@@ -26,7 +24,7 @@ class QWidget;
   * @author The BibleTime team
   */
 class CModuleChooserBar : public QToolBar  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         /**
         * Default constructor

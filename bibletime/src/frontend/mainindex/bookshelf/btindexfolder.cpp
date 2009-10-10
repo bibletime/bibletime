@@ -7,9 +7,11 @@
 *
 **********/
 
-#include "btindexfolder.h"
+#include "frontend/mainindex/bookshelf/btindexfolder.h"
+
 #include "backend/btmoduletreeitem.h"
 #include "util/directoryutil.h"
+
 
 BTIndexFolder::BTIndexFolder(BTModuleTreeItem* treeItem, QTreeWidgetItem* parent)
         : BTIndexItem(parent)

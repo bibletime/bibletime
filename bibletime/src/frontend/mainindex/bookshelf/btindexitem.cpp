@@ -7,12 +7,15 @@
 *
 **********/
 
-#include "btindexitem.h"
-#include "cbookshelfindex.h"
+#include "frontend/mainindex/bookshelf/btindexitem.h"
 
-#include <QTreeWidgetItem>
 #include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 
 
 BTIndexItem::BTIndexItem(QTreeWidgetItem* parent)
-        : QTreeWidgetItem(parent) {}
+        : QTreeWidgetItem(parent)
+{
+    // Intentionally empty
+}

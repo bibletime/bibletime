@@ -7,35 +7,31 @@
 *
 **********/
 
-
-#include "cbiblereadwindow.h"
-#include "btactioncollection.h"
-#include "ccommentaryreadwindow.h"
-#include "cbuttons.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "frontend/profile/cprofilewindow.h"
-#include "frontend/cexportmanager.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
 
 #include <cmath>
-
-//Qt includes
-#include <QWidget>
-#include <QTimer>
-#include <QEvent>
-#include <QApplication>
-#include <QMenu>
-#include <QMdiSubWindow>
 #include <QAction>
+#include <QApplication>
+#include <QEvent>
+#include <QMdiSubWindow>
 #include <QMenu>
-#include <QMenu>
+#include <QTimer>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "frontend/cexportmanager.h"
+#include "frontend/cmdiarea.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
+#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/keychooser/ckeychooser.h"
+#include "frontend/profile/cprofilewindow.h"
+#include "util/directoryutil.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+
 
 using namespace Profile;
 

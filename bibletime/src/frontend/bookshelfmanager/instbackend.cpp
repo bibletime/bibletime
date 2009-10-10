@@ -7,31 +7,26 @@
 *
 **********/
 
-#include "instbackend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
 
-#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include <functional>
+#include <map>
+#include <QDebug>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QMessageBox>
+#include <utility>
 #include "backend/managers/cswordbackend.h"
-
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 
-//Qt includes
-#include <QFile>
-#include <QFileInfo>
-#include <QDir>
-#include <QMessageBox>
-
-#include <QDebug>
-
-//Sword includes
+// Nasty Sword includes:
 #include <filemgr.h>
 #include <swconfig.h>
 #include <swbuf.h>
 
-//Stl includes
-#include <functional>
-#include <map>
-#include <utility>
 
 using namespace sword;
 

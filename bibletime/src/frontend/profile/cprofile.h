@@ -10,12 +10,11 @@
 #ifndef CPROFILE_H
 #define CPROFILE_H
 
-#include "cprofilewindow.h"
-#include "frontend/cmdiarea.h"
-
-//Qt includes
-#include <QList>
 #include <QByteArray>
+#include <QList>
+#include "frontend/cmdiarea.h"
+#include "frontend/profile/cprofilewindow.h"
+
 
 namespace Profile {
 

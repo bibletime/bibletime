@@ -7,31 +7,26 @@
 *
 **********/
 
-//BibleTime includes
-#include "ckeyreferencewidget.h"
+#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
 
-#include "../cscrollerwidgetset.h"
-#include "btdropdownchooserbutton.h"
-
-#include "backend/config/cbtconfig.h"
-
-#include "backend/keys/cswordversekey.h"
-
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-
-//Qt includes
 #include <QApplication>
 #include <QDebug>
+#include <QEvent>
+#include <QFocusEvent>
 #include <QHBoxLayout>
 #include <QLineEdit>
-#include <QEvent>
 #include <QMouseEvent>
 #include <QPixmap>
 #include <QString>
 #include <QStringList>
 #include <QToolButton>
-#include <QFocusEvent>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordversekey.h"
+#include "frontend/keychooser/cscrollerwidgetset.h"
+#include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
+#include "util/cresmgr.h"
+#include "util/directoryutil.h"
+
 
 class BtLineEdit : public QLineEdit {
     public:

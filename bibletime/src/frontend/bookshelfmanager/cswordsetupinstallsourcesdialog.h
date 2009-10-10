@@ -7,21 +7,20 @@
 *
 **********/
 
-
 #ifndef CSWORDSETUPINSTALLSOURCESDIALOG_H
 #define CSWORDSETUPINSTALLSOURCESDIALOG_H
 
-#include "frontend/bookshelfmanager/btinstallmgr.h"
-
 #include <QDialog>
 
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+
+// Nasty Sword includes:
 #include <installmgr.h>
 
-class QLabel;
+
 class QComboBox;
+class QLabel;
 class QLineEdit;
-
-
 
 class CSwordSetupInstallSourcesDialog : public QDialog  {
         Q_OBJECT

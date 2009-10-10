@@ -7,27 +7,22 @@
 *
 **********/
 
-#include "csearchresultview.h"
+#include "frontend/searchdialog/csearchresultview.h"
 
+#include <QContextMenuEvent>
+#include <QList>
+#include <QMenu>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QWidget>
 #include "backend/keys/cswordversekey.h"
-
 #include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <QWidget>
-#include <QMenu>
-#include <QList>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QContextMenuEvent>
-
-//KDE includes
-
 
 namespace Search {
-
 
 CSearchResultView::CSearchResultView(QWidget* parent)
         : QTreeWidget(parent),

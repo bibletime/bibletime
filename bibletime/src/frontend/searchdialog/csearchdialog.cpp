@@ -6,32 +6,30 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "csearchdialog.h"
-#include "btsearchoptionsarea.h"
-#include "btsearchresultarea.h"
 
+#include "frontend/searchdialog/csearchdialog.h"
+
+#include <QDebug>
+#include <QDialogButtonBox>
+#include <QLineEdit>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QSettings>
+#include <QSizePolicy>
+#include <QString>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
 #include "backend/cswordmodulesearch.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "backend/config/cbtconfig.h"
-
 #include "frontend/cmoduleindexdialog.h"
-
+#include "frontend/searchdialog/btsearchoptionsarea.h"
+#include "frontend/searchdialog/btsearchresultarea.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
-//Qt includes
-#include <QString>
-#include <QWidget>
-#include <QMessageBox>
-#include <QVBoxLayout>
-#include <QLineEdit>
-#include <QSettings>
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QSizePolicy>
-#include <QDebug>
 
 namespace Search {
 

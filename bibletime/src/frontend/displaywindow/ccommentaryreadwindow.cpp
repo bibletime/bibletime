@@ -7,23 +7,23 @@
 *
 **********/
 
-//BibleTime includes
-#include "ccommentaryreadwindow.h"
-#include "btactioncollection.h"
-#include "frontend/profile/cprofilewindow.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "backend/keys/cswordversekey.h"
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
 
-#include <QMenu>
 #include <QAction>
 #include <QIcon>
+#include <QMenu>
 #include <QToolBar>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordversekey.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/keychooser/ckeychooser.h"
+#include "frontend/profile/cprofilewindow.h"
+#include "util/directoryutil.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+
 
 using namespace Profile;
 

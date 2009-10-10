@@ -7,14 +7,15 @@
 *
 **********/
 
-#include "btshortcutsdialog.h"
+#include "frontend/settingsdialogs/btshortcutsdialog.h"
 
-#include <QVBoxLayout>
-#include <QGridLayout>
-#include <QRadioButton>
-#include <QLabel>
 #include <QDialogButtonBox>
+#include <QGridLayout>
 #include <QKeyEvent>
+#include <QLabel>
+#include <QRadioButton>
+#include <QVBoxLayout>
+
 
 // *************** BtShortcutsDialog ***************************************************************************
 // A dialog to allow the user to input a shortcut for a primary and alternate key

@@ -7,22 +7,19 @@
 *
 **********/
 
-
 #ifndef BTREMOVEPAGE_H
 #define BTREMOVEPAGE_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
+
+#include <QMultiMap>
+#include <QString>
 #include "backend/btmoduletreeitem.h"
 
-#include <QString>
-#include <QMultiMap>
-
-//class BTModuleTreeItem;
 
 class QTreeWidget;
 class QTreeWidgetItem;
 class QPushButton;
-
 
 class BtRemovePage : public BtConfigPage {
         Q_OBJECT

@@ -10,26 +10,26 @@
 #ifndef CKEYCHOOSERWIDGET_H
 #define CKEYCHOOSERWIDGET_H
 
+#include <QComboBox>
 
 #include <QString>
 #include <QStringList>
-#include <QComboBox>
 
+
+class CLexiconKeyChooser;
+class CScrollerWidgetSet;
 class QWheelEvent;
 class QHBoxLayout;
 class QWidget;
 class QObject;
 class QEvent;
 
-class CLexiconKeyChooser;
-class CScrollerWidgetSet;
-/*
-* We use this class to conrtol the focus move in the combobox
+/**
+* We use this class to control the focus move in the combobox
 * This class is used in the key chooser widgets
 */
 class CKCComboBox : public QComboBox {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CKCComboBox();
         /**

@@ -6,18 +6,20 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
+
 #ifndef BT_ACTION_COLLECTION_H
 #define BT_ACTION_COLLECTION_H
 
+#include <QObject>
+
+#include <QList>
 #include <QMap>
 
-#include <QObject>
-#include <QList>
 
-class QString;
+class BtActionItem;
 class QAction;
 class QKeySequence;
-class BtActionItem;
+class QString;
 
 class BtActionCollection : public QObject {
         Q_OBJECT

@@ -7,34 +7,29 @@
 *
 **********/
 
+#include "frontend/bookshelfmanager/removepage/btremovepage.h"
 
-#include "btremovepage.h"
-
-
+#include <QDebug>
+#include <QGridLayout>
+#include <QLabel>
+#include <QList>
+#include <QMessageBox>
+#include <QMultiMap>
+#include <QPushButton>
+#include <QString>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include "backend/btmoduletreeitem.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
 #include "util/directoryutil.h"
+#include "util/cpointers.h"
 #include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
+// Nasty Sword includes:
 #include <swmgr.h>
 #include <installmgr.h>
-
-#include <QString>
-#include <QGridLayout>
-#include <QLabel>
-#include <QPushButton>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QMessageBox>
-#include <QList>
-#include <QMultiMap>
-
-#include <QDebug>
-
 
 
 BtRemovePage::BtRemovePage()

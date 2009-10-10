@@ -7,29 +7,22 @@
 *
 **********/
 
-#include "cdisplay.h"
+#include "frontend/display/cdisplay.h"
 
-#include "bthtmlreaddisplay.h"
-typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-
-#include "cplainwritedisplay.h"
-#include "chtmlwritedisplay.h"
-
+#include <QApplication>
+#include <QClipboard>
+#include <QDebug>
+#include <QFileDialog>
+#include <QMenu>
+#include <QTimer>
 #include "backend/managers/creferencemanager.h"
-
+#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/display/chtmlwritedisplay.h"
+#include "frontend/display/cplainwritedisplay.h"
 #include "util/ctoolclass.h"
 
 
-//Qt includes
-#include <QClipboard>
-#include <QMenu>
-#include <QTimer>
-#include <QDebug>
-#include <QApplication>
-#include <QFileDialog>
-
-//KDE includes
-
+typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 
 CDisplayConnections::CDisplayConnections( CDisplay* display ) : m_display(display) {}
 

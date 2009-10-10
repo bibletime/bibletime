@@ -7,23 +7,18 @@
 *
 **********/
 
-
-
-//own includes
-#include "cinputdialog.h"
-#include "util/dialogutil.h"
-
-//Qt includes
-#include <QDialog>
-#include <QWidget>
-#include <QLabel>
-#include <QTextEdit>
-#include <QPushButton>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include "frontend/cinputdialog.h"
 
 #include <QDebug>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QTextEdit>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "util/dialogutil.h"
 
 
 CInputDialog::CInputDialog

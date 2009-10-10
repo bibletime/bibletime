@@ -7,17 +7,18 @@
 *
 **********/
 
-#include "cfontchooser.h"
-#include "clistwidget.h"
-#include <QVBoxLayout>
+#include "frontend/settingsdialogs/cfontchooser.h"
+
+#include <QWidget>
+#include <QFontDatabase>
+#include <QFrame>
 #include <QLabel>
 #include <QListWidget>
-#include <QFrame>
-#include <QFontDatabase>
 #include <QListWidgetItem>
+#include <QVBoxLayout>
 #include <QWebSettings>
-#include <QFrame>
 #include <QWebView>
+#include "frontend/settingsdialogs/clistwidget.h"
 
 
 // ***********************

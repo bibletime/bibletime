@@ -7,22 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CKEYCHOOSER_H
 #define CKEYCHOOSER_H
-
-
-class CSwordModuleInfo;
 
 #include <QWidget>
 
 
-class CSwordKey;
-class QAction;
-
 class BTHistory;
-
+class CSwordKey;
+class CSwordModuleInfo;
+class QAction;
 
 /**
  * The base class for the KeyChooser.
@@ -32,10 +26,8 @@ class BTHistory;
  *
   * @author The BibleTime team
   */
-
 class CKeyChooser : public QWidget {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
 
         /**

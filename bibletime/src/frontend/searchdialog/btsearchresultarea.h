@@ -10,26 +10,23 @@
 #ifndef BTSEARCHRESULTAREA_H
 #define BTSEARCHRESULTAREA_H
 
-
+#include <QList>
+#include <QSplitter>
+#include <QStringList>
+#include <QWidget>
 #include "backend/managers/cswordbackend.h"
 #include "backend/cswordmodulesearch.h"
 
-#include <QSplitter>
-#include <QList>
-#include <QStringList>
-#include <QWidget>
 
-//forward declarations
+namespace Search {
+    class CModuleResultView;
+    class CSearchResultView;
+}
 class CReadDisplay;
 class CSwordModuleInfo;
-namespace Search {
-class CModuleResultView;
-class CSearchResultView;
-}
-
+class QFrame;
 class QHBoxLayout;
 class QTreeWidget;
-class QFrame;
 
 namespace Search {
 

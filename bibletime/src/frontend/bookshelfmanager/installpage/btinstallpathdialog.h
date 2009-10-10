@@ -12,9 +12,9 @@
 
 #include <QDialog>
 
+
 class QPushButton;
 class QTreeWidget;
-
 
 class BtInstallPathDialog : public QDialog {
         Q_OBJECT

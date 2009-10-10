@@ -11,6 +11,7 @@
 
 #include "bibletime_dbus_adaptor.h"
 
+
 BibleTimeDBusAdaptor::BibleTimeDBusAdaptor(BibleTime *bibletime_ptr) :
         QDBusAbstractAdaptor(bibletime_ptr),
         m_bibletime(bibletime_ptr) {

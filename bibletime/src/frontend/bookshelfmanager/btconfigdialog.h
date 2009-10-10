@@ -10,14 +10,13 @@
 #ifndef BTCONFIGDIALOG_H
 #define BTCONFIGDIALOG_H
 
-
 #include <QDialog>
-#include <QWidget>
 
 #include <QDebug>
+#include <QWidget>
+
 
 class BtConfigPage;
-
 class QListWidgetItem;
 class QListWidget;
 class QStackedWidget;

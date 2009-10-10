@@ -10,7 +10,10 @@
 #ifndef BTHTMLFINDTEXT_H
 #define BTHTMLFINDTEXT_H
 
+/// \todo Qt Designer UI file!?
 #include "ui_bthtmlfindtext.h"
+
+
 class CMDIArea;
 class QWebView;
 

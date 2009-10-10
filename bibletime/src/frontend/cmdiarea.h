@@ -10,21 +10,22 @@
 #ifndef CMDIAREA_H
 #define CMDIAREA_H
 
-//Qt includes
 #include <QMdiArea>
+
 #include <QList>
+
 
 class CSwordModuleInfo;
 class QEvent;
-class QResizeEvent;
 class QMdiSubWindow;
+class QResizeEvent;
 
 /** The MDI widget we use in BibleTime.
  * Enhances QMdiArea.
  */
 class CMDIArea : public QMdiArea {
-        Q_OBJECT
-        Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
+    Q_OBJECT
+    Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
     public:
         /**

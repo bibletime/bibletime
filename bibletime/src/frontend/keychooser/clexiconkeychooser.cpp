@@ -7,25 +7,19 @@
 *
 **********/
 
+#include "frontend/keychooser/clexiconkeychooser.h"
 
-
-#include "clexiconkeychooser.h"
-
-#include "bthistory.h"
-#include "ckeychooserwidget.h"
-#include "cscrollbutton.h"
-
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/config/cbtconfig.h"
-#include "util/cresmgr.h"
-
-//STL headers
 #include <algorithm>
 #include <iterator>
 #include <map>
-
 #include <QHBoxLayout>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/keys/cswordldkey.h"
+#include "frontend/keychooser/bthistory.h"
+#include "frontend/keychooser/ckeychooserwidget.h"
+#include "frontend/keychooser/cscrollbutton.h"
+#include "util/cresmgr.h"
 
 
 CLexiconKeyChooser::CLexiconKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)

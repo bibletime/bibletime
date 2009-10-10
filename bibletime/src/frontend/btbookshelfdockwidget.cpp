@@ -35,6 +35,7 @@
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
+
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f) {
     setObjectName("BookshelfDock");

@@ -10,22 +10,20 @@
 #ifndef CKEYREFERENCEWIDGET_H
 #define CKEYREFERENCEWIDGET_H
 
-#include "../cscrollerwidgetset.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-
 #include <QWidget>
+
 #include <QTimer>
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "frontend/keychooser/cscrollerwidgetset.h"
 
 
+class BtDropdownChooserButton;
 class CLexiconKeyChooser;
 class CSwordVerseKey;
-class BtDropdownChooserButton;
-
 class QLineEdit;
 
-
 class CKeyReferenceWidget : public QWidget  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         /**
         * the constructor

@@ -7,11 +7,12 @@
 *
 **********/
 
-#include "btbookmarkitembase.h"
-#include "cbookmarkindex.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
 
-#include <QTreeWidgetItem>
 #include <QDropEvent>
+#include <QTreeWidgetItem>
+#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
+
 
 BtBookmarkItemBase::BtBookmarkItemBase() {}
 

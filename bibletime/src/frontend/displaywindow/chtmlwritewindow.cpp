@@ -7,26 +7,20 @@
 *
 **********/
 
+#include "frontend/displaywindow/chtmlwritewindow.h"
 
-
-#include "chtmlwritewindow.h"
-#include "btactioncollection.h"
-
-//frontend includes
+#include <QAction>
+#include <QMessageBox>
+#include <QToolBar>
+#include "backend/keys/cswordkey.h"
+#include "frontend/display/chtmlwritedisplay.h"
+#include "frontend/display/cwritedisplay.h"
+#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "frontend/display/cwritedisplay.h"
-#include "frontend/display/chtmlwritedisplay.h"
-
-#include "backend/keys/cswordkey.h"
-
-#include "util/cresmgr.h"
 #include "util/directoryutil.h"
+#include "util/cresmgr.h"
 
-//Qt includes
-#include <QToolBar>
-#include <QMessageBox>
-#include <QAction>
 
 using namespace Profile;
 

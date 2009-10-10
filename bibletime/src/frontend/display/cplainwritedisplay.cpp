@@ -7,21 +7,18 @@
 *
 **********/
 
-#include "cplainwritedisplay.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/cdragdrop.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/cwritewindow.h"
-
-#include "backend/keys/cswordkey.h"
+#include "frontend/display/cplainwritedisplay.h"
 
 #include <boost/scoped_ptr.hpp>
-
-//Qt includes
 #include <QDragEnterEvent>
-#include <QDropEvent>
 #include <QDragMoveEvent>
+#include <QDropEvent>
 #include <QMenu>
+#include "backend/keys/cswordkey.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
 
 CPlainWriteDisplay::CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent) : QTextEdit(parentWindow ? parentWindow : parent), CWriteDisplay(parentWindow) {

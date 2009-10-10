@@ -7,26 +7,26 @@
 *
 **********/
 
-
 #ifndef CLEXICONREADWINDOW_H
 #define CLEXICONREADWINDOW_H
 
-//BibleTime includes
-#include "creadwindow.h"
+#include "frontend/displaywindow/creadwindow.h"
+
 #include "frontend/keychooser/ckeychooser.h"
-class BtToolBarPopupAction;
-class CSwordKey;
-class CSwordLDKey;
+
+
 class BtActionCollection;
+class BtToolBarPopupAction;
+class CSwordLDKey;
+class CSwordKey;
 class QAction;
 class QMenu;
 
 /**
   *@author The BibleTime team
   */
-
 class CLexiconReadWindow : public CReadWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CLexiconReadWindow();

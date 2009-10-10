@@ -1,23 +1,20 @@
-//
-// C++ Interface: CListWidget
-//
-// Description: BibleTime font chooser
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef CLISTWIDGET_H
 #define CLISTWIDGET_H
 
 #include <QListWidget>
 
-class CListWidget : public QListWidget {
-        Q_OBJECT
 
+class CListWidget : public QListWidget {
+    Q_OBJECT
     public:
         CListWidget(QWidget* parent = 0);
         ~CListWidget();

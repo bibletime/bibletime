@@ -1,127 +1,24 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*********
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "btinstallmodulechooserdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
 
-#include "frontend/cmodulechooserdialog.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/btmoduletreeitem.h"
-
-#include <QString>
+#include <QBrush>
+#include <QDebug>
 #include <QList>
-#include <QWidget>
+#include <QPushButton>
 #include <QString>
 #include <QTreeWidgetItem>
-#include <QBrush>
-#include <QPushButton>
-
-#include <QDebug>
+#include <QWidget>
+#include "backend/btmoduletreeitem.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/cmodulechooserdialog.h"
 
 
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty)

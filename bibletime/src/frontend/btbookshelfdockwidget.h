@@ -15,6 +15,7 @@
 
 #include <QDockWidget>
 
+
 class CSwordModuleInfo;
 class BtBookshelfView;
 class BtBookshelfModel;

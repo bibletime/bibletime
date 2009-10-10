@@ -10,8 +10,8 @@
 #ifndef BTDROPDOWNCHOOSERBUTTON_H
 #define BTDROPDOWNCHOOSERBUTTON_H
 
-
 #include <QToolButton>
+
 
 class CKeyReferenceWidget;
 

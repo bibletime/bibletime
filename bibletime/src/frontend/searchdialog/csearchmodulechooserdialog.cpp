@@ -7,27 +7,26 @@
 *
 **********/
 
-#include "csearchmodulechooserdialog.h"
+#include "frontend/searchdialog/csearchmodulechooserdialog.h"
 
+#include <QButtonGroup>
+#include <QDebug>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QSpacerItem>
+#include <QStringList>
+#include <QTreeWidget>
+#include <QVBoxLayout>
+#include "backend/btmoduletreeitem.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "backend/btmoduletreeitem.h"
-
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
-#include <QDialog>
-#include <QButtonGroup>
-#include <QDialogButtonBox>
-#include <QHBoxLayout>
-#include <QSpacerItem>
-#include <QTreeWidget>
-#include <QVBoxLayout>
-#include <QStringList>
-#include <QDebug>
-#include <QHeaderView>
 
 namespace Search {
 

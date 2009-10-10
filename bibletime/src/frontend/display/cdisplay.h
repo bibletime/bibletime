@@ -7,27 +7,21 @@
 *
 **********/
 
-
-
 #ifndef CDISPLAY_H
 #define CDISPLAY_H
 
-//BibleTime includes
 #include "util/cpointers.h"
-#include "backend/managers/cswordbackend.h"
 
-//Qt includes
 #include <QMap>
+#include "backend/managers/cswordbackend.h"
 
 
 class CDisplayConnections;
-class CReadWindow;
-class CWriteWindow;
-
 class CDisplayWindow;
 class CReadDisplay;
+class CReadWindow;
 class CWriteDisplay;
-
+class CWriteWindow;
 class QMenu;
 
 /** The base class for all display widgets.

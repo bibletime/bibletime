@@ -7,21 +7,18 @@
 *
 **********/
 
-
-
 #ifndef CWRITEDISPLAY_H
 #define CWRITEDISPLAY_H
 
-#include "cdisplay.h"
+#include "frontend/display/cdisplay.h"
 
-class QToolBar;
+
 class BtActionCollection;
+class QToolBar;
 
-
-/**The base class for all read/write-display classes.
+/** The base class for all read/write-display classes.
   *@author The BibleTime team
   */
-
 class CWriteDisplay : public CDisplay  {
     protected:
         friend class CDisplay;

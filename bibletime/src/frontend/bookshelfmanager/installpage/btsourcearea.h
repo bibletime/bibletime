@@ -10,15 +10,16 @@
 #ifndef BTSOURCEAREA_H
 #define BTSOURCEAREA_H
 
-#include "backend/btmoduletreeitem.h"
+#include <QWidget>
 
 #include <boost/scoped_ptr.hpp>
+#include <QApplication>
+#include <QMap>
+#include "backend/btmoduletreeitem.h"
 
+// Nasty Sword includes:
 #include <installmgr.h>
 
-#include <QWidget>
-#include <QMap>
-#include <QApplication>
 
 class QTreeWidget;
 class QTreeWidgetItem;

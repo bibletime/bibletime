@@ -1,27 +1,23 @@
-//
-// C++ Implementation: cdisplaywindowfactory
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
-#include "cdisplaywindowfactory.h"
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-#include "creadwindow.h"
-#include "cbiblereadwindow.h"
-#include "ccommentaryreadwindow.h"
-#include "clexiconreadwindow.h"
-#include "cbookreadwindow.h"
-#include "cwritewindow.h"
-#include "cplainwritewindow.h"
-#include "chtmlwritewindow.h"
-
+#include "frontend/displaywindow/cdisplaywindowfactory.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "frontend/displaywindow/cbookreadwindow.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
+#include "frontend/displaywindow/chtmlwritewindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
+#include "frontend/displaywindow/creadwindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/cmdiarea.h"
 
 
@@ -42,7 +38,6 @@ CReadWindow* CDisplayWindowFactory::createReadInstance(QList<CSwordModuleInfo*> 
     }
     return 0;
 }
-
 
 CWriteWindow* CDisplayWindowFactory::createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type) {
     if (type == CDisplayWindow::HTMLWindow) {

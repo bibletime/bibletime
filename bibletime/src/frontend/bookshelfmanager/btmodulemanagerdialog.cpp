@@ -7,21 +7,19 @@
 *
 **********/
 
-#include "btmodulemanagerdialog.h"
-
-#include "installpage/btinstallpage.h"
-#include "removepage/btremovepage.h"
-#include "indexpage/btindexpage.h"
-
-#include "util/cpointers.h"
-#include "util/dialogutil.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/config/cbtconfig.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
 
 #include <QDialogButtonBox>
+#include "backend/config/cbtconfig.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/indexpage/btindexpage.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpage.h"
+#include "frontend/bookshelfmanager/removepage/btremovepage.h"
+#include "util/cpointers.h"
+#include "util/dialogutil.h"
 
 
-static BtModuleManagerDialog* m_staticModuleManagerDialog = 0;
+static BtModuleManagerDialog *m_staticModuleManagerDialog = 0;
 
 BtModuleManagerDialog* BtModuleManagerDialog::getInstance(QWidget* parent) {
     if (!m_staticModuleManagerDialog) {

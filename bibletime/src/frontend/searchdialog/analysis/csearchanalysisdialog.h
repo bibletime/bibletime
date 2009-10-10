@@ -10,12 +10,12 @@
 #ifndef SEARCHCSEARCHANALYSISDIALOG_H
 #define SEARCHCSEARCHANALYSISDIALOG_H
 
-
-class CSwordModuleInfo;
-
 #include <QDialog>
+
 #include <QObject>
 
+
+class CSwordModuleInfo;
 class QAbstractButton;
 class QDialogButtonBox;
 
@@ -24,14 +24,11 @@ namespace Search {
 class CSearchAnalysisView;
 class CSearchAnalysisScene;
 
-
-
 /**
 	@author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisDialog : public QDialog {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CSearchAnalysisDialog(QList<CSwordModuleInfo*> modules, QWidget* parentDialog);
         ~CSearchAnalysisDialog() {}

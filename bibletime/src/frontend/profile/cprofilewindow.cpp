@@ -7,17 +7,13 @@
 *
 **********/
 
+#include "frontend/profile/cprofilewindow.h"
 
-
-#include "cprofilewindow.h"
-
+#include <QRect>
+#include <QString>
+#include <QStringList>
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-
-
-#include <QString>
-#include <QRect>
-#include <QStringList>
 
 
 namespace Profile {

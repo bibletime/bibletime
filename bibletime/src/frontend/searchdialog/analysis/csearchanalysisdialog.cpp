@@ -7,19 +7,19 @@
 *
 **********/
 
-#include "csearchanalysisdialog.h"
-#include "csearchanalysisscene.h"
-#include "csearchanalysisview.h"
+#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/dialogutil.h"
-
-#include <QDialog>
 #include <QAbstractButton>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+#include "frontend/searchdialog/analysis/csearchanalysisview.h"
+#include "util/dialogutil.h"
+
 
 namespace Search {
 

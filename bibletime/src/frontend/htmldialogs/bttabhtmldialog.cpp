@@ -7,18 +7,19 @@
 *
 **********/
 
-#include "bttabhtmldialog.h"  // See this file for more documentation of BtTabHtmlDialog
+#include "frontend/htmldialogs/bttabhtmldialog.h"
+
+#include <QContextMenuEvent>
+#include <QDesktopServices>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QMenu>
+#include <QTabWidget>
+#include <QVBoxLayout>
+#include <QWebView>
 #include "util/dialogutil.h"
 #include "util/directoryutil.h"
 
-#include <QDialog>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <QWebView>
-#include <QMenu>
-#include <QTabWidget>
-#include <QDesktopServices>
-#include <QContextMenuEvent>
 
 BtTabHtmlDialog::BtTabHtmlDialog
 (const QString& title, int tabs, QWidget *parent, Qt::WindowFlags wflags )

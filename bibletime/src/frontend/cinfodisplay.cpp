@@ -7,34 +7,29 @@
 *
 **********/
 
-// BibleTime includes
-#include "cinfodisplay.h"
+#include "frontend/cinfodisplay.h"
 
+#include <boost/scoped_ptr.hpp>
+#include <QAction>
+#include <QDebug>
+#include <QLabel>
+#include <QLayout>
+#include <QRegExp>
+#include <QSize>
+#include <QVBoxLayout>
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/creferencemanager.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-
-#include "backend/config/cbtconfig.h"
 #include "frontend/crossrefrendering.h"
-
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 
-#include <boost/scoped_ptr.hpp>
-
-// Sword includes
+// Nasty Sword includes:
 #include <listkey.h>
 
-// Qt includes
-#include <QLayout>
-#include <QLabel>
-#include <QRegExp>
-#include <QVBoxLayout>
-#include <QAction>
-#include <QDebug>
-#include <QSize>
 
 using namespace Rendering;
 using namespace sword;

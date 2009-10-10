@@ -7,18 +7,16 @@
 *
 **********/
 
-#include "btindexmodule.h"
+#include "frontend/mainindex/bookshelf/btindexmodule.h"
 
-#include "backend/btmoduletreeitem.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/directoryutil.h"
-#include "frontend/cdragdrop.h"
-
+#include <QAction>
+#include <QDebug>
 #include <QIcon>
 #include <QString>
-#include <QDebug>
-#include <QAction>
-
+#include "backend/btmoduletreeitem.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/cdragdrop.h"
+#include "util/directoryutil.h"
 
 
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)

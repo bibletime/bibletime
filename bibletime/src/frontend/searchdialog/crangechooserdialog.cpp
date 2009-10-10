@@ -7,34 +7,28 @@
 *
 **********/
 
+#include "frontend/searchdialog/crangechooserdialog.h"
 
-
-#include "crangechooserdialog.h"
-
+#include <QDialogButtonBox>
+#include <QFrame>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QListWidget>
+#include <QListWidgetItem>
+#include <QPushButton>
+#include <QString>
+#include <QTextEdit>
+#include <QVBoxLayout>
 #include "backend/config/cbtconfig.h"
 #include "util/dialogutil.h"
 
-//sword
+// Nasty Sword includes:
 #include "versekey.h"
 #include "listkey.h"
 
 
-
-
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QString>
-#include <QLabel>
-#include <QPushButton>
-#include <QTextEdit>
-#include <QLineEdit>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QFrame>
-#include <QDialogButtonBox>
-
 namespace Search {
-
 
 /********** RangeItem ******************/
 CRangeChooserDialog::RangeItem::RangeItem(QListWidget* view, QListWidgetItem* /*afterThis*/, const QString caption, const QString range)

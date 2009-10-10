@@ -7,26 +7,26 @@
 *
 **********/
 
-#include "cacceleratorsettings.h"
+#include "frontend/settingsdialogs/cacceleratorsettings.h"
 
-#include "bibletime.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/displaywindow/cbiblereadwindow.h"
-#include "frontend/displaywindow/ccommentaryreadwindow.h"
-#include "frontend/displaywindow/clexiconreadwindow.h"
-#include "frontend/displaywindow/cbookreadwindow.h"
-#include "frontend/displaywindow/creadwindow.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "util/cresmgr.h"
-
-#include <QWidget>
 #include <QComboBox>
-#include <QStackedWidget>
 #include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QLabel>
 #include <QList>
 #include <QMessageBox>
+#include <QStackedWidget>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "bibletime.h"
+#include "backend/config/cbtconfig.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
+#include "frontend/displaywindow/cbookreadwindow.h"
+#include "frontend/displaywindow/ccommentaryreadwindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
+#include "frontend/displaywindow/creadwindow.h"
+#include "util/cresmgr.h"
+
 
 CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget* /* parent */ )
         : BtConfigPage() {

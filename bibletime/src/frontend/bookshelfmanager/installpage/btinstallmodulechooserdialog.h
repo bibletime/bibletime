@@ -12,16 +12,15 @@
 
 #include "frontend/cmodulechooserdialog.h"
 
+#include <QList>
+#include <QMap>
 #include <QObject>
 #include <QString>
-#include <QMap>
-#include <QList>
+
 
 class BTModuleTreeItem;
-
 class QWidget;
 class QTreeWidgetItem;
-
 
 /**
 * Confirmation dialog for installation. Lets the user

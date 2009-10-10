@@ -10,14 +10,15 @@
 #ifndef BTINDEXFOLDER_H
 #define BTINDEXFOLDER_H
 
-#include "btindexitem.h"
+#include "frontend/mainindex/bookshelf/btindexitem.h"
 
 #include <QString>
+
 
 class BTModuleTreeItem;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class BTIndexFolder : public BTIndexItem {
     public:

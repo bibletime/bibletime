@@ -7,22 +7,22 @@
 *
 **********/
 
-#ifndef CSRCOLLBUTTON_H
-#define CSRCOLLBUTTON_H
+#ifndef CSCROLLBUTTON_H
+#define CSCROLLBUTTON_H
 
 #include <QToolButton>
 
-class QMouseEvent;
-class QWidget;
+
 class QMouseEvent;
 class QWheelEvent;
+class QWidget;
 
 /**
 * This Class implements the direct chooser button used in the KeyChooser Widget.
 * \author The BibleTime team.
 */
 class CScrollButton: public QToolButton {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CScrollButton(QWidget *parent = 0);
         virtual ~CScrollButton();

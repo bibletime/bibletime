@@ -7,32 +7,30 @@
 *
 **********/
 
-#include "btsourcewidget.h"
+#include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
 
-#include "btinstallpage.h"
-#include "btsourcearea.h"
-#include "btinstallprogressdialog.h"
-#include "btinstallmodulechooserdialog.h"
-
-#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
-#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/btinstallmgr.h"
-#include "frontend/bookshelfmanager/instbackend.h"
-
-
-#include <QString>
-#include <QWidget>
-#include <QTabWidget>
+#include <QApplication>
+#include <QFileInfo>
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
-#include <QApplication>
-#include <QFileInfo>
+#include <QString>
 #include <QTabBar>
+#include <QTabWidget>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QHBoxLayout>
-#include <QLabel>
+#include <QWidget>
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallmodulechooserdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpage.h"
+#include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
+#include "frontend/bookshelfmanager/installpage/btsourcearea.h"
+#include "frontend/bookshelfmanager/instbackend.h"
+
 
 // ****************************************************************
 // ******** Tab Widget that holds source widgets ******************

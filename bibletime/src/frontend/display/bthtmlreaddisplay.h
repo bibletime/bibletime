@@ -10,18 +10,17 @@
 #ifndef BTHTMLREADDISPLAY_H
 #define BTHTMLREADDISPLAY_H
 
-//BibleTime includes
-#include "bthtmljsobject.h"
-#include "creaddisplay.h"
+#include "frontend/display/creaddisplay.h"
+#include <QWebPage>
 
-//Qt includes
 #include <QDragEnterEvent>
 #include <QDropEvent>
+#include <QPoint>
 #include <QTimerEvent>
 #include <QWebView>
-#include <QWebPage>
 #include <QWebFrame>
-#include <QPoint>
+#include "frontend/display/bthtmljsobject.h"
+
 
 class BtHtmlReadDisplayView;
 class QScrollArea;

@@ -7,21 +7,23 @@
 *
 **********/
 
-#include "bthtmlreaddisplay.h"
-#include "bthtmljsobject.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-#include "frontend/displaywindow/creadwindow.h"
+#include "frontend/display/bthtmlreaddisplay.h"
+
+#include <boost/scoped_ptr.hpp>
+#include <QMenu>
+#include <QString>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/managers/creferencemanager.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
-#include "backend/managers/creferencemanager.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/config/cbtconfig.h"
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
+#include "frontend/display/bthtmljsobject.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/displaywindow/creadwindow.h"
 #include "util/directoryutil.h"
-#include <boost/scoped_ptr.hpp>
-#include <QString>
-#include <QMenu>
+#include "util/cpointers.h"
+#include "util/ctoolclass.h"
+
 
 using namespace InfoDisplay;
 

@@ -7,28 +7,27 @@
 *
 **********/
 
-#include "btsearchoptionsarea.h"
-#include "csearchmodulechooserdialog.h"
-#include "crangechooserdialog.h"
+#include "frontend/searchdialog/btsearchoptionsarea.h"
 
-#include "util/directoryutil.h"
-#include "util/cresmgr.h"
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/htmldialogs/bttabhtmldialog.h"
-
-#include <QHBoxLayout>
-#include <QGroupBox>
-#include <QGridLayout>
-#include <QLabel>
-#include <QPushButton>
-#include <QRadioButton>
 #include <QDebug>
+#include <QEvent>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QLineEdit>
 #include <QMessageBox>
-#include <QEvent>
+#include <QPushButton>
+#include <QRadioButton>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/htmldialogs/bttabhtmldialog.h"
+#include "frontend/searchdialog/crangechooserdialog.h"
+#include "frontend/searchdialog/csearchmodulechooserdialog.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
 
 namespace Search {

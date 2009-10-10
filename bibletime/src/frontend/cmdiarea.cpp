@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "cmdiarea.h"
+#include "frontend/cmdiarea.h"
 
-//QT includes
-#include <QTimer>
-#include <QEvent>
-#include <QWindowStateChangeEvent>
-#include <QMdiSubWindow>
 #include <QDebug>
+#include <QEvent>
+#include <QMdiSubWindow>
+#include <QTimer>
+#include <QWindowStateChangeEvent>
+
 
 CMDIArea::CMDIArea(QWidget *parent) : QMdiArea(parent),
         m_mdiArrangementMode(ArrangementModeManual) {

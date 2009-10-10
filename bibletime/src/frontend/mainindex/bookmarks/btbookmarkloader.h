@@ -12,9 +12,9 @@
 
 #include "util/directoryutil.h"
 
-#include <QString>
-#include <QList>
 #include <QDomElement>
+#include <QList>
+#include <QString>
 
 
 class QTreeWidgetItem;

@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "csearchanalysislegenditem.h"
-#include "csearchanalysisscene.h"
+#include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-
+#include <QFont>
 #include <QPainter>
 #include <QPen>
-#include <QFont>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
+
 
 namespace Search {
 

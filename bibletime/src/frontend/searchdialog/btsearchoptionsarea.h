@@ -10,29 +10,27 @@
 #ifndef BTSEARCHOPTIONSAREA_H
 #define BTSEARCHOPTIONSAREA_H
 
-#include "chistorycombobox.h"
-
-#include "backend/keys/cswordversekey.h"
-
 #include <QWidget>
 
-class CSwordModuleInfo;
+#include "backend/keys/cswordversekey.h"
+#include "frontend/searchdialog/chistorycombobox.h"
 
-class QGroupBox;
+
+class CSwordModuleInfo;
+class QComboBox;
+class QEvent;
 class QGridLayout;
+class QGroupBox;
 class QHBoxLayout;
 class QLabel;
+class QObject;
 class QPushButton;
 class QRadioButton;
-class QComboBox;
-class QObject;
-class QEvent;
-
 
 namespace Search {
 
 class BtSearchOptionsArea : public QWidget {
-        Q_OBJECT
+    Q_OBJECT
     public:
 
         enum SearchType {AndType, OrType, FullType};

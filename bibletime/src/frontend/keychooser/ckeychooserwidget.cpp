@@ -7,20 +7,17 @@
 *
 **********/
 
+#include "frontend/keychooser/ckeychooserwidget.h"
 
-//BibleTime includes
-#include "ckeychooserwidget.h"
-
-#include "cscrollerwidgetset.h"
-
-//Qt includes
-#include <QString>
-#include <QWheelEvent>
+#include <QComboBox>
+#include <QDebug>
 #include <QFocusEvent>
 #include <QHBoxLayout>
-#include <QComboBox>
 #include <QLineEdit>
-#include <QDebug>
+#include <QString>
+#include <QWheelEvent>
+#include "frontend/keychooser/cscrollerwidgetset.h"
+
 
 class BtKeyLineEdit : public QLineEdit {
     public:

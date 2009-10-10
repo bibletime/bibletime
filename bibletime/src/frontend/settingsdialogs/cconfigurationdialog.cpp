@@ -7,23 +7,22 @@
 *
 **********/
 
-#include "cconfigurationdialog.h"
+#include "frontend/settingsdialogs/cconfigurationdialog.h"
 
-#include "cdisplaysettings.h"
-#include "cswordsettings.h"
-#include "clanguagesettings.h"
-#include "cacceleratorsettings.h"
-
+#include <QAbstractButton>
+#include <QDialogButtonBox>
+#include <QLayout>
+#include <QPushButton>
+#include <QWidget>
+#include "frontend/settingsdialogs/cacceleratorsettings.h"
+#include "frontend/settingsdialogs/cdisplaysettings.h"
+#include "frontend/settingsdialogs/clanguagesettings.h"
+#include "frontend/settingsdialogs/cswordsettings.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 #include "util/dialogutil.h"
 
-#include <QWidget>
-#include <QDialogButtonBox>
-#include <QAbstractButton>
-#include <QPushButton>
-#include <QLayout>
 
 CConfigurationDialog::CConfigurationDialog(QWidget * parent, BtActionCollection* actionCollection )
         : BtConfigDialog(parent),

@@ -7,9 +7,11 @@
 *
 **********/
 
-#include "btfontsizewidget.h"
-#include <QFontDatabase>
+#include "frontend/display/btfontsizewidget.h"
+
 #include <QCompleter>
+#include <QFontDatabase>
+
 
 BtFontSizeWidget::BtFontSizeWidget(QWidget* parent)
         : QComboBox(parent) {

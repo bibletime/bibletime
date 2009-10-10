@@ -7,22 +7,20 @@
 *
 **********/
 
+#include "frontend/display/chtmlwritedisplay.h"
 
-
-#include "chtmlwritedisplay.h"
-#include "btfontsizewidget.h"
-#include "btcolorwidget.h"
-#include "frontend/displaywindow/cwritewindow.h"
+#include <QFontComboBox>
+#include <QMenu>
+#include <QTextEdit>
+#include <QToolBar>
+#include <QToolTip>
+#include "frontend/display/btcolorwidget.h"
+#include "frontend/display/btfontsizewidget.h"
 #include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cwritewindow.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <QMenu>
-#include <QToolTip>
-#include <QTextEdit>
-#include <QFontComboBox>
-#include <QMenu>
-#include <QToolBar>
 
 class BtActionCollection;
 

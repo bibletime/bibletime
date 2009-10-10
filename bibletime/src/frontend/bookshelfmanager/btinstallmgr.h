@@ -10,18 +10,18 @@
 #ifndef NEWBTINSTALLMGR_H
 #define NEWBTINSTALLMGR_H
 
-//sword includes
-#include <installmgr.h>
-#include <ftptrans.h>
-
-//Qt includes
 #include <QObject>
+
 #include <QList>
 #include <QString>
 #include <QStringList>
 
-class CSwordBackend;
+// Nasty Sword includes:
+#include <installmgr.h>
+#include <ftptrans.h>
 
+
+class CSwordBackend;
 
 typedef QList<sword::InstallSource*> InstallSourceList;
 

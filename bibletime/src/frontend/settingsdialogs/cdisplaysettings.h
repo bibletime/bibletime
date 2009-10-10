@@ -7,7 +7,6 @@
 *
 **********/
 
-
 #ifndef CDISPLAYSETTINGS_H
 #define CDISPLAYSETTINGS_H
 
@@ -15,13 +14,13 @@
 
 #include <QWidget>
 
+
 class QCheckBox;
 class QComboBox;
 class QWebView;
 
 class CDisplaySettingsPage : public BtConfigPage {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CDisplaySettingsPage(QWidget* parent);
         void save();

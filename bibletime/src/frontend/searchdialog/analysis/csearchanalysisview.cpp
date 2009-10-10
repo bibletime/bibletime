@@ -7,12 +7,12 @@
 *
 **********/
 
-#include "csearchanalysisview.h"
-#include "csearchanalysisscene.h"
+#include "frontend/searchdialog/analysis/csearchanalysisview.h"
 
-#include <QWidget>
 #include <QGraphicsView>
 #include <QResizeEvent>
+#include <QWidget>
+#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
 
 
 namespace Search {

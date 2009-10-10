@@ -7,38 +7,33 @@
 *
 **********/
 
-#include "cbookshelfindex.h"
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 
-#include "btindexitem.h"
-#include "btindexmodule.h"
-#include "btindexfolder.h"
-#include "chidemodulechooserdialog.h"
-
-#include "backend/btmoduletreeitem.h"
-#include "backend/managers/creferencemanager.h"
-
-#include "frontend/searchdialog/csearchdialog.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/btaboutmoduledialog.h"
-#include "frontend/cprinter.h"
-#include "frontend/cdragdrop.h"
-
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-
-//Qt includes
+#include <QDebug>
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
-#include <QHeaderView> //for hiding the header
-#include <QTimer> // for delayed auto-opening of folders
+#include <QHeaderView>
+#include <QInputDialog>
 #include <QList>
+#include <QMenu>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QInputDialog> // for unlocking key
-#include <QDebug>
-#include <QMenu>
+#include "backend/config/cbtconfig.h"
+#include "backend/btmoduletreeitem.h"
+#include "backend/managers/creferencemanager.h"
+#include "frontend/btaboutmoduledialog.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/cinfodisplay.h"
+#include "frontend/cprinter.h"
+#include "frontend/mainindex/bookshelf/btindexfolder.h"
+#include "frontend/mainindex/bookshelf/btindexitem.h"
+#include "frontend/mainindex/bookshelf/btindexmodule.h"
+#include "frontend/mainindex/bookshelf/chidemodulechooserdialog.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
 
 CBookshelfIndex::CBookshelfIndex(QWidget *parent)

@@ -10,40 +10,35 @@
 #ifndef CBOOKMARKINDEX_H
 #define CBOOKMARKINDEX_H
 
-//BibleTime includes
-#include "btbookmarkitembase.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
 
-class CSwordModuleInfo;
-#include "frontend/displaywindow/cdisplaywindow.h"
-
-#include "util/cpointers.h"
-
-//Qt includes
-#include <QTimer>
-#include <QToolTip>
 #include <QList>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QToolTip>
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "util/cpointers.h"
 
-class CSearchDialog;
-class QWidget;
-class QDropEvent;
-class QDragMoveEvent;
-class QDragLeaveEvent;
+
 class BTMimeData;
-class QMenu;
+class CSearchDialog;
+class CSwordModuleInfo;
 class QAction;
-class QPaintEvent;
-
+class QDragLeaveEvent;
+class QDragMoveEvent;
+class QDropEvent;
+class QMenu;
 class QMouseEvent;
+class QPaintEvent;
+class QWidget;
 
 /**
 * The widget which manages all bookmarks.
 * @author The BibleTime team
 */
 class CBookmarkIndex : public QTreeWidget {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CBookmarkIndex(QWidget *parent);
         virtual ~CBookmarkIndex();

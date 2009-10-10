@@ -7,8 +7,6 @@
 *
 **********/
 
-
-
 #ifndef CDRAGDROP_H
 #define CDRAGDROP_H
 
@@ -26,7 +24,7 @@ class BookmarkItem {
         /** Returns the key */
         const QString& key() const {
             return m_key;
-        } ;
+        }
         /** Returns the module name */
         const QString& module() const {
             return m_moduleName;

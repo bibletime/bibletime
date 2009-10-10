@@ -7,26 +7,22 @@
 *
 **********/
 
-//BibleTime includes
-#include "btinstallmgr.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
 
-#include "frontend/bookshelfmanager/instbackend.h"
 #include "backend/managers/cswordbackend.h"
-
-//Qt includes
-#include <QObject>
+#include "frontend/bookshelfmanager/instbackend.h"
+#include <QDebug>
 #include <QList>
+#include <QObject>
 #include <QString>
 #include <QStringList>
 
-#include <QDebug>
-
-//sword includes
+// Nasty Sword includes:
 #include <installmgr.h>
 #include <ftptrans.h>
 
-using namespace sword;
 
+using namespace sword;
 
 BtInstallMgr::BtInstallMgr()
         : InstallMgr(instbackend::configPath().toLatin1(), this),

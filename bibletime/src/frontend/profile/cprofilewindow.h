@@ -7,19 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CPROFILEWINDOW_H
 #define CPROFILEWINDOW_H
 
-class CSwordModuleInfo;
+#include <QRect>
+#include <QString>
+#include <QStringList>
 #include "backend/managers/cswordbackend.h"
 
-//Qt includes
-#include <QString>
-#include <QRect>
-#include <QStringList>
-//#include <QList>
+
+class CSwordModuleInfo;
 
 namespace Profile {
 

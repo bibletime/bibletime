@@ -7,23 +7,21 @@
 *
 **********/
 
-
 #ifndef CCOMMENTARYREADWINDOW_H
 #define CCOMMENTARYREADWINDOW_H
 
-//BibleTime includes
-#include "cbiblereadwindow.h"
+#include "frontend/displaywindow/cbiblereadwindow.h"
 
-class QAction;
-class CSwordVerseKey;
+
 class BtActionCollection;
+class CSwordVerseKey;
+class QAction;
 
 /**
   *@author The BibleTime team
   */
-
 class CCommentaryReadWindow : public CLexiconReadWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         /**
         * Reimplementation.

@@ -1,20 +1,18 @@
-//
-// C++ Interface: BTHistory
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef BTHISTORY_H
 #define BTHISTORY_H
 
-#include <QList>
 #include <QObject>
+
+#include <QList>
 
 
 class CSwordKey;
@@ -22,11 +20,10 @@ class QAction;
 class QWidget;
 
 class BTHistory: public QObject {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         BTHistory(QWidget* parent);
-        ~BTHistory() {};
+        ~BTHistory() {}
 
         /**
         * Return a list of Actions behind the current point, the first of the history list will be the

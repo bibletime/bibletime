@@ -7,23 +7,24 @@
 *
 **********/
 
-#include "cbookreadwindow.h"
-#include "bttoolbarpopupaction.h"
-#include "btactioncollection.h"
-#include "cmodulechooserbar.h"
-#include "cbuttons.h"
-#include "backend/keys/cswordtreekey.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/keychooser/cbooktreechooser.h"
-#include "frontend/profile/cprofilewindow.h"
-#include "backend/config/cbtconfig.h"
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
+#include "frontend/displaywindow/cbookreadwindow.h"
 
+#include <QAction>
+#include <QMenu>
 #include <QSplitter>
 #include <QToolBar>
-#include <QMenu>
-#include <QAction>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordtreekey.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/displaywindow/bttoolbarpopupaction.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/keychooser/cbooktreechooser.h"
+#include "frontend/profile/cprofilewindow.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+
 
 using namespace Profile;
 

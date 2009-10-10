@@ -7,23 +7,16 @@
 *
 **********/
 
-//BibleTime includes
-#include "cbuttons.h"
+#include "frontend/displaywindow/cbuttons.h"
 
-#include "util/cresmgr.h"
-#include "util/cpointers.h"
-#include "util/directoryutil.h"
-
-//Qt includes
+#include <QHash>
+#include <QMenu>
 #include <QString>
 #include <QToolTip>
 #include <QToolButton>
-#include <QHash>
-#include <QMenu>
-
-//KDE includes
-
-
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
 
 
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent )

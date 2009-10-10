@@ -10,14 +10,14 @@
 #ifndef BTINDEXITEM_H
 #define BTINDEXITEM_H
 
-#include "actionenum.h"
-
 #include <QTreeWidgetItem>
+
 #include <QString>
+#include "frontend/mainindex/bookshelf/actionenum.h"
 
-class QMimeData;
+
 class QAction;
-
+class QMimeData;
 
 /**
 @author The BibleTime team <info@bibletime.info>

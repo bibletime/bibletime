@@ -7,22 +7,21 @@
 *
 **********/
 
-#include "btinstallthread.h"
+#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
 
+#include <QApplication>
+#include <QDebug>
+#include <QDir>
+#include <QString>
+#include <QThread>
+#include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/cpointers.h"
-#include "backend/managers/cswordbackend.h"
 
-#include <QApplication>
-#include <QString>
-#include <QThread>
-#include <QDir>
-
-#include <QDebug>
-
-// sword
+// Nasty Sword includes:
 #include <filemgr.h>
+
 
 BtInstallThread::BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName)
         : QThread(parent),

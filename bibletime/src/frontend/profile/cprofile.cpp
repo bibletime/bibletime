@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "cprofile.h"
-#include "util/directoryutil.h"
+#include "frontend/profile/cprofile.h"
 
-//Qt includes
+#include <QDomDocument>
 #include <QFile>
 #include <QString>
 #include <QTextStream>
-#include <QDomDocument>
+#include "util/directoryutil.h"
+
 
 #define CURRENT_SYNTAX_VERSION 3
 

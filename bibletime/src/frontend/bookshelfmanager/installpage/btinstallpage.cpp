@@ -7,55 +7,49 @@
 *
 **********/
 
-
-#include "btinstallpage.h"
-
-#include "btinstallpathdialog.h"
-#include "btinstallprogressdialog.h"
-#include "btsourcewidget.h"
-#include "btsourcearea.h"
-
-#include "frontend/bookshelfmanager/btinstallmgr.h"
-#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
-#include "frontend/bookshelfmanager/btconfigdialog.h"
-#include "frontend/bookshelfmanager/instbackend.h"
-#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
-
-#include "frontend/cmodulechooserdialog.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/config/cbtconfig.h"
-
-#include "util/cpointers.h"
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpage.h"
 
 #include <QAction>
 #include <QApplication>
-#include <QWidget>
 #include <QButtonGroup>
 #include <QComboBox>
 #include <QDialog>
+#include <QFileInfo>
 #include <QHBoxLayout>
+#include <QHeaderView>
 #include <QLabel>
+#include <QMessageBox>
+#include <QProgressBar>
+#include <QProgressDialog>
 #include <QPushButton>
-#include <QToolButton>
 #include <QSpacerItem>
-#include <QTabBar>
 #include <QStackedWidget>
+#include <QTabBar>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
+#include <QToolButton>
 #include <QVBoxLayout>
-#include <QFileInfo>
-#include <QMessageBox>
-#include <QProgressDialog>
-#include <QTimer>
-#include <QProgressBar>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "frontend/bookshelfmanager/btinstallmgr.h"
+#include "frontend/bookshelfmanager/btmodulemanagerdialog.h"
+#include "frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpathdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
+#include "frontend/bookshelfmanager/installpage/btsourcewidget.h"
+#include "frontend/bookshelfmanager/installpage/btsourcearea.h"
+#include "frontend/bookshelfmanager/instbackend.h"
+#include "frontend/cmodulechooserdialog.h"
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
-#include <QHeaderView>
-
+// Nasty Sword includes:
 #include <swversion.h>
 
 

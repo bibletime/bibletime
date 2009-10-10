@@ -10,11 +10,12 @@
 #ifndef CPRINTER_H
 #define CPRINTER_H
 
-#include "backend/managers/cswordbackend.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/config/cbtconfig.h"
-
 #include <QObject>
+#include "backend/rendering/cdisplayrendering.h"
+
+#include "backend/config/cbtconfig.h"
+#include "backend/managers/cswordbackend.h"
+
 
 class QWebPage;
 

@@ -10,26 +10,24 @@
 #ifndef CACCELERATORSETTINGS_H
 #define CACCELERATORSETTINGS_H
 
-#include "btshortcutseditor.h"
-
-#include "util/cpointers.h"
-//#include "backend/config/cbtconfig.h"
 #include "frontend/bookshelfmanager/btconfigdialog.h"
+#include "util/cpointers.h"
 
-#include <QWidget>
 #include <QPointer>
+#include <QWidget>
+#include "frontend/settingsdialogs/btshortcutseditor.h"
 
-class QComboBox;
-class QStackedWidget;
+
 class BtActionCollection;
 class BtShortcutsEditor;
+class QComboBox;
+class QStackedWidget;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class CAcceleratorSettingsPage : public BtConfigPage, CPointers {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CAcceleratorSettingsPage(QWidget *parent);
         ~CAcceleratorSettingsPage();

@@ -7,12 +7,13 @@
 *
 **********/
 
-#include "btdropdownchooserbutton.h"
-#include "ckeyreferencewidget.h"
-#include "btversekeymenu.h"
+#include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 
-#include <QWheelEvent>
 #include <QDebug>
+#include <QWheelEvent>
+#include "frontend/keychooser/versekeychooser/btversekeymenu.h"
+#include "frontend/keychooser/versekeychooser/ckeyreferencewidget.h"
+
 
 const unsigned int ARROW_HEIGHT = 15;
 

@@ -7,29 +7,27 @@
 *
 **********/
 
-#include "btinstallpathdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallpathdialog.h"
 
+#include <QDebug>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QDir>
+#include <QFileDialog>
+#include <QGridLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QMessageBox>
+#include <QPushButton>
+#include <QString>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
 #include "frontend/bookshelfmanager/instbackend.h"
-
-#include "util/ctoolclass.h"
 #include "util/dialogutil.h"
 #include "util/directoryutil.h"
 #include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
-#include <QString>
-#include <QDialog>
-#include <QDir>
-#include <QGridLayout>
-#include <QLabel>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QPushButton>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QHeaderView>
-#include <QDialogButtonBox>
-
-#include <QDebug>
 
 BtInstallPathDialog::BtInstallPathDialog() {
     namespace DU = util::directoryutil;

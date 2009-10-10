@@ -10,18 +10,18 @@
 #ifndef CHTMLWRITEDISPLAY_H
 #define CHTMLWRITEDISPLAY_H
 
-//BibleTime includes
-#include "cplainwritedisplay.h"
+#include "frontend/display/cplainwritedisplay.h"
 
+
+class BtActionCollection;
+class BtColorWidget;
+class BtFontSizeWidget;
 class CWriteWindow;
-class QMenu;
-class QWidget;
-class QToolBar;
 class QAction;
 class QFontComboBox;
-class BtFontSizeWidget;
-class BtColorWidget;
-class BtActionCollection;
+class QMenu;
+class QToolBar;
+class QWidget;
 
 /** The WYSIWYG implementation of the write display interface.
   * @author The BibleTime team

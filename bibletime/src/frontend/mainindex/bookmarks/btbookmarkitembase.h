@@ -10,18 +10,17 @@
 #ifndef BTBOOKMARKITEMBASE_H
 #define BTBOOKMARKITEMBASE_H
 
-
 #include <QTreeWidgetItem>
-#include <QString>
-#include <QMimeData>
+
 #include <QDropEvent>
+#include <QMimeData>
+#include <QString>
+
 
 class CBookmarkIndex;
 
-
 class BtBookmarkItemBase : public QTreeWidgetItem {
     public:
-
         enum MenuAction {
             NewFolder = 0,
             ChangeFolder,

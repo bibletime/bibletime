@@ -7,9 +7,11 @@
 *
 **********/
 
-#include "chistorycombobox.h"
-#include <QString>
+#include "frontend/searchdialog/chistorycombobox.h"
+
 #include <QCompleter>
+#include <QString>
+
 
 namespace Search {
 

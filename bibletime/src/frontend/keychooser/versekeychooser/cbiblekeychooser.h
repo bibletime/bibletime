@@ -7,16 +7,14 @@
 *
 **********/
 
-
-
 #ifndef CBIBLEKEYCHOOSER_H
 #define CBIBLEKEYCHOOSER_H
 
-
-#include "../ckeychooser.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "frontend/keychooser/ckeychooser.h"
 
 #include <QList>
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+
 
 class QWidget;
 

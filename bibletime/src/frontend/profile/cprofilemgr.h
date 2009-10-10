@@ -7,16 +7,13 @@
 *
 **********/
 
-
-
 #ifndef CPROFILEMGR_H
 #define CPROFILEMGR_H
 
-#include "cprofile.h"
-
-//Qt includes
-#include <QString>
 #include <QList>
+#include <QString>
+#include "frontend/profile/cprofile.h"
+
 
 namespace Profile {
 /** The manager for profiles.

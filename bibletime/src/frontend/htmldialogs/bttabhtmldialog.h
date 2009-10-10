@@ -11,9 +11,11 @@
 #define BTTABDIALOG_H
 
 #include <QDialog>
+
 #include <QString>
 #include <QUrl>
 #include <QWebView>
+
 
 class QTabWidget;
 class QMenu;

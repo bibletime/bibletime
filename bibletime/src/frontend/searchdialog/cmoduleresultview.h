@@ -7,36 +7,27 @@
 *
 **********/
 
-
-
 #ifndef CMODULERESULTSVIEW_H
 #define CMODULERESULTSVIEW_H
 
-//BibleTime includes
-#include "btsearchresultarea.h"
-
-//Qt includes
-#include <QLabel>
 #include <QTreeWidget>
 
+#include <QLabel>
+#include "frontend/searchdialog/btsearchresultarea.h"
 
-//forward declarations
+
 class CSwordModuleInfo;
-
-class QPoint;
-class QMenu;
 class QAction;
-class QStringList;
 class QContextMenuEvent;
-
+class QMenu;
+class QPoint;
+class QStringList;
 class StrongsResultClass;
-
 
 namespace Search {
 
-
 class CModuleResultView : public QTreeWidget {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CModuleResultView(QWidget* parent);
         ~CModuleResultView();

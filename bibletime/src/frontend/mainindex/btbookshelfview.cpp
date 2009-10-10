@@ -18,6 +18,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
+
 BtBookshelfView::BtBookshelfView(QWidget *parent)
         : QTreeView(parent) {
     header()->hide();

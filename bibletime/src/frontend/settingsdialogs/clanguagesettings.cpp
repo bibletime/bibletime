@@ -1,36 +1,30 @@
-//
-// C++ Implementation: clanguagesettings
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-#include "clanguagesettings.h"
+#include "frontend/settingsdialogs/clanguagesettings.h"
 
+#include <QCheckBox>
+#include <QComboBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "frontend/settingsdialogs/cfontchooser.h"
 #include "util/cpointers.h"
-#include "util/ctoolclass.h"
 #include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
-#include <QWidget>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QComboBox>
-#include <QCheckBox>
-#include <QLabel>
-
-
-#include "cfontchooser.h"
-
-
-//Sword includes
+// Nasty Sword includes:
 #include <localemgr.h>
 #include <swlocale.h>
+
 
 CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
         : BtConfigPage()

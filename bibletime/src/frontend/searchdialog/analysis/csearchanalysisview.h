@@ -11,7 +11,9 @@
 #define SEARCHCSEARCHANALYSISVIEW_H
 
 #include <QGraphicsView>
+
 #include <QSize>
+
 
 class QResizeEvent;
 

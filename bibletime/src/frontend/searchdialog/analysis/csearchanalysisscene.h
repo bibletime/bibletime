@@ -10,25 +10,25 @@
 #ifndef SEARCHCSEARCHANALYSISSCENE_H
 #define SEARCHCSEARCHANALYSISSCENE_H
 
-#include "csearchanalysisitem.h"
+#include <QGraphicsScene>
+
+#include <QColor>
+#include <QHash>
+#include <QMap>
+#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
+
 
 class CSwordModuleInfo;
-
-
-#include <QGraphicsScene>
-#include <QColor>
-#include <QMap>
-#include <QHash>
 
 namespace Search {
 
 class CSearchAnalysisLegendItem;
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisScene : public QGraphicsScene {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CSearchAnalysisScene(QObject* parent);
 
@@ -79,8 +79,6 @@ class CSearchAnalysisScene : public QGraphicsScene {
         int m_maxCount;
         double m_scaleFactor;
         CSearchAnalysisLegendItem* m_legend;
-
-
 };
 
 }

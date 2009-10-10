@@ -7,33 +7,24 @@
 *
 **********/
 
-
-
 #ifndef CBIBLEREADWINDOW_H
 #define CBIBLEREADWINDOW_H
 
-//BibleTime includes
-#include "clexiconreadwindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
 
-
-
-class CTransliterationButton;
-class CSwordKey;
-class CSwordVerseKey;
 
 class BtActionCollection;
+class CSwordKey;
+class CSwordVerseKey;
+class CTransliterationButton;
 class QAction;
-class QMenu;
-
-class QObject;
 class QEvent;
+class QMenu;
+class QObject;
 
-
-
-/**The read display window for Bibles.
+/** The read display window for Bibles.
   *@author The BibleTime team
   */
-
 class CBibleReadWindow : public CLexiconReadWindow  {
         Q_OBJECT
     public:

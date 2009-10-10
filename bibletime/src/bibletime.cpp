@@ -6,45 +6,42 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
+
 #include "bibletime.h"
 
+#include <cstdlib>
+#include <ctime>
+#include <QAction>
+#include <QApplication>
+#include <QCloseEvent>
+#include <QDebug>
+#include <QInputDialog>
+#include <QMdiSubWindow>
+#include <QSplashScreen>
+#include <QSplitter>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordldkey.h"
+#include "backend/keys/cswordversekey.h"
 #include "frontend/btaboutmoduledialog.h"
 #include "frontend/cmdiarea.h"
-#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/cdisplaywindowfactory.h"
 #include "frontend/displaywindow/creadwindow.h"
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "backend/config/cbtconfig.h"
-
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/keys/cswordldkey.h"
-
-//Qt includes
-#include <QInputDialog>
-#include <QSplitter>
-#include <QDebug>
-#include <QAction>
-#include <QApplication>
-#include <QMdiSubWindow>
-#include <QCloseEvent>
-#include <QSplashScreen>
-
-#include <cstdlib>
-#include <ctime>
 
 using namespace Profile;
 

@@ -10,15 +10,13 @@
 #ifndef CINFODISPLAY_H
 #define CINFODISPLAY_H
 
-//Backend
+#include <QWidget>
+
+#include <QList>
+#include <QPair>
 #include "backend/rendering/ctextrendering.h"
 
-//Qt includes
-#include <QWidget>
-#include <QPair>
-#include <QList>
 
-//class forward declarations
 class CReadDisplay;
 class QAction;
 class QSize;
@@ -26,7 +24,7 @@ class QSize;
 namespace InfoDisplay {
 
 class CInfoDisplay : public QWidget {
-        Q_OBJECT
+    Q_OBJECT
     public:
         enum InfoType {
             Abbreviation,

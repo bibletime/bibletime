@@ -8,17 +8,14 @@
 **********/
 
 
-#include "cwritewindow.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/keys/cswordversekey.h"
-
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/profile/cprofilewindow.h"
-#include "frontend/display/cwritedisplay.h"
-
+#include "frontend/displaywindow/cwritewindow.h"
 
 #include <QMessageBox>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordversekey.h"
+#include "frontend/display/cwritedisplay.h"
+#include "frontend/keychooser/ckeychooser.h"
+#include "frontend/profile/cprofilewindow.h"
 
 
 using namespace Profile;

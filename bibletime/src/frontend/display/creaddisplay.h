@@ -7,20 +7,18 @@
 *
 **********/
 
-
-
 #ifndef CREADDISPLAY_H
 #define CREADDISPLAY_H
 
-#include "cdisplay.h"
-#include "backend/managers/cswordbackend.h"
+#include "frontend/display/cdisplay.h"
 
 #include <QString>
+#include "backend/managers/cswordbackend.h"
 
-/**The base class for all read-only widgets like KHTMLView.
+
+/** The base class for all read-only widgets like KHTMLView.
   *@author The BibleTime team
   */
-
 class CReadDisplay :  public CDisplay {
     public:
         /**

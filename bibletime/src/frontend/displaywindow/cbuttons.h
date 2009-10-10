@@ -7,19 +7,16 @@
 *
 **********/
 
-
-
 #ifndef CBUTTONS_H
 #define CBUTTONS_H
 
-//BibleTime includes
-#include "backend/managers/cswordbackend.h"
-class CSwordModuleInfo;
-
-//QT includes
-#include <QHash>
 #include <QToolButton>
 
+#include <QHash>
+#include "backend/managers/cswordbackend.h"
+
+
+class CSwordModuleInfo;
 class QMenu;
 
 /** This class manages the display options of the selected modules.

@@ -10,24 +10,23 @@
 #ifndef CMODULECHOOSERBUTTON_H
 #define CMODULECHOOSERBUTTON_H
 
-//BibleTime includes
-class CSwordModuleInfo;
-#include "backend/btmoduletreeitem.h"
+#include <QToolButton>
 #include "util/cpointers.h"
 
-//Qt includes
-#include <QToolButton>
 #include <QList>
+#include "backend/btmoduletreeitem.h"
+
 
 class QMenu;
 class CModuleChooserBar;
+class CSwordModuleInfo;
 
 /** The CModuleChooserButton displays a list of submenus sorted by language which contain the possible modules
   * which can be displayed together with the first one.
   * @author The BibleTime team
   */
 class CModuleChooserButton : public QToolButton, public CPointers  {
-        Q_OBJECT
+    Q_OBJECT
     public:
 
         /** Filter out modules of wrong type. See populateMenu() and BTModuleTreeItem. */

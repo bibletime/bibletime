@@ -7,21 +7,18 @@
 *
 **********/
 
+#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
 
-#include "btbookmarkitem.h"
-#include "btbookmarkfolder.h"
-
+#include <boost/scoped_ptr.hpp>
+#include <QDebug>
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cinputdialog.h"
+#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
-#include "backend/config/cbtconfig.h"
-#include "util/cpointers.h"
-
-#include <QDebug>
-
-#include <boost/scoped_ptr.hpp>
 
 
 BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)

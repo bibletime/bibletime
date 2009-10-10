@@ -7,39 +7,38 @@
 *
 **********/
 
-//BibleTime includes
 #include "bibletime.h"
-#include "util/cpointers.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-#include "backend/managers/btstringmgr.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/managers/clanguagemgr.h"
-#include "frontend/btbookshelfdockwidget.h"
-#include "frontend/displaywindow/btactioncollection.h"
-#include "frontend/profile/cprofilemgr.h"
-#include "frontend/profile/cprofile.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/cprinter.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
-#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 
-// Qt includes
-#include <QSplitter>
-#include <QPointer>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QMenu>
-#include <QMenuBar>
-#include <QToolBar>
 #include <QApplication>
 #include <QDebug>
 #include <QDockWidget>
+#include <QLabel>
+#include <QMenu>
+#include <QMenuBar>
+#include <QPointer>
+#include <QSplitter>
+#include <QToolBar>
+#include <QVBoxLayout>
+#include "backend/config/cbtconfig.h"
+#include "backend/managers/btstringmgr.h"
+#include "backend/managers/clanguagemgr.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/btbookshelfdockwidget.h"
+#include "frontend/cinfodisplay.h"
+#include "frontend/cmdiarea.h"
+#include "frontend/cprinter.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
+#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
+#include "frontend/profile/cprofile.h"
+#include "frontend/profile/cprofilemgr.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/directoryutil.h"
 
-// Sword includes
+// Nasty Sword includes:
 #include <swlog.h>
+
 
 using namespace InfoDisplay;
 using namespace Profile;

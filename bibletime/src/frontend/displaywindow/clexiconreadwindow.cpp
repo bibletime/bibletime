@@ -7,30 +7,30 @@
 *
 **********/
 
-//BibleTime includes
-#include "clexiconreadwindow.h"
-#include "btactioncollection.h"
-#include "cmodulechooserbar.h"
-#include "cbuttons.h"
-#include "bttoolbarpopupaction.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordldkey.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cexportmanager.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "frontend/display/bthtmlreaddisplay.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/keychooser/bthistory.h"
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
 
-#include <QMenu>
+#include <QAction>
 #include <QApplication>
 #include <QFile>
 #include <QFileDialog>
-#include <QAction>
+#include <QMenu>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordldkey.h"
+#include "backend/keys/cswordkey.h"
+#include "frontend/cexportmanager.h"
+#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/bttoolbarpopupaction.h"
+#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/keychooser/bthistory.h"
+#include "frontend/keychooser/ckeychooser.h"
+#include "util/directoryutil.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+
 
 CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
         : CReadWindow(moduleList, parent) {

@@ -7,13 +7,13 @@
 *
 **********/
 
-#include "btversekeymenu.h"
-
-#include <QMenu>
-#include <QTimerEvent>
-#include <QMouseEvent>
+#include "frontend/keychooser/versekeychooser/btversekeymenu.h"
 
 #include <QDebug>
+#include <QMenu>
+#include <QMouseEvent>
+#include <QTimerEvent>
+
 
 BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
         : QMenu(parent),

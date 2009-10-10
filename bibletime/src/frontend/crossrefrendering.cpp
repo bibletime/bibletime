@@ -1,24 +1,21 @@
-//
-// C++ Implementation: crossrefrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004, 2007
-//
-// Copyright: See COPYING file that comes with this distribution
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-
-#include "crossrefrendering.h"
+#include "frontend/crossrefrendering.h"
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/creferencemanager.h"
 
+
 namespace InfoDisplay {
 
-/**
- */
 CrossRefRendering::CrossRefRendering( CSwordBackend::DisplayOptions displayOptions,
                                       CSwordBackend::FilterOptions filterOptions
                                     )

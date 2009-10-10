@@ -10,18 +10,16 @@
 #ifndef CHIDEMODULECHOOSERDIALOG_H
 #define CHIDEMODULECHOOSERDIALOG_H
 
-class CSwordModuleInfo;
 
 #include "frontend/cmodulechooserdialog.h"
 
-class QTreeWidgetItem;
 
 class BTModuleTreeItem;
-
-
+class CSwordModuleInfo;
+class QTreeWidgetItem;
 
 class CHideModuleChooserDialog : public CModuleChooserDialog {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CHideModuleChooserDialog(QWidget* parent, QString title, QString label, QString currentModule);
         ~CHideModuleChooserDialog() {}

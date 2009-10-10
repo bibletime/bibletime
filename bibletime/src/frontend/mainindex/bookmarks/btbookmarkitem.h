@@ -10,10 +10,10 @@
 #ifndef BTBOOKMARKITEM_H
 #define BTBOOKMARKITEM_H
 
-
-#include "btbookmarkitembase.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
 
 #include <QString>
+
 
 class BtBookmarkFolder;
 class CSwordModuleInfo;

@@ -7,28 +7,22 @@
 *
 **********/
 
+#include "frontend/searchdialog/cmoduleresultview.h"
 
-
-#include "cmoduleresultview.h"
-
+#include <QAction>
+#include <QContextMenuEvent>
+#include <QHeaderView>
+#include <QMenu>
+#include <QStringList>
+#include <QTreeWidget>
 #include "backend/drivers/cswordmoduleinfo.h"
-
 #include "frontend/cexportmanager.h"
-
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
-//Qt includes
-#include <QTreeWidget>
-#include <QAction>
-#include <QStringList>
-#include <QMenu>
-#include <QContextMenuEvent>
-#include <QHeaderView>
 
 namespace Search {
-
 
 /********************************************
 ************  ModuleResultList **************

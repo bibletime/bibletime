@@ -10,37 +10,32 @@
 #ifndef CDISPLAYWINDOW_H
 #define CDISPLAYWINDOW_H
 
-//BibleTime includes
+#include <QMainWindow>
 #include "util/cpointers.h"
-class CSwordModuleInfo;
+
+#include <QStringList>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/profile/cprofilewindow.h"
 
-//Qt includes
-#include <QStringList>
-#include <QMainWindow>
 
-//Forward declarations
-class CMDIArea;
-class CReadWindow;
-class CWriteWindow;
-class CDisplaySettingsButton;
+class BtActionCollection;
 class CDisplay;
+class CDisplaySettingsButton;
 class CKeyChooser;
+class CMDIArea;
 class CModuleChooserBar;
-class QCloseEvent;
-
-class QToolBar;
+class CReadWindow;
+class CSwordModuleInfo;
+class CWriteWindow;
 class QCloseEvent;
 class QMenu;
-class BtActionCollection;
+class QToolBar;
 
 /** The base class for all display windows of BibleTime.
   * @author The BibleTime team
   */
-
 class CDisplayWindow : public QMainWindow, public CPointers {
-        Q_OBJECT
+    Q_OBJECT
     public:
         enum WriteWindowType {
             HTMLWindow = 1,

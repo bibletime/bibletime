@@ -7,29 +7,28 @@
 *
 **********/
 
-#include "btsearchresultarea.h"
-#include "cmoduleresultview.h"
-#include "csearchresultview.h"
-#include "csearchdialog.h"
-#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
+#include "frontend/searchdialog/btsearchresultarea.h"
 
-#include "util/ctoolclass.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/display/creaddisplay.h"
-#include "backend/rendering/cdisplayrendering.h"
-#include "backend/keys/cswordversekey.h"
-
-#include <QWidget>
-#include <QStringList>
-#include <QVBoxLayout>
-#include <QSize>
-#include <QSplitter>
-#include <QFrame>
 #include <QApplication>
+#include <QDebug>
+#include <QFrame>
 #include <QProgressDialog>
 #include <QPushButton>
+#include <QSize>
+#include <QSplitter>
+#include <QStringList>
+#include <QVBoxLayout>
+#include <QWidget>
+#include "backend/keys/cswordversekey.h"
+#include "backend/rendering/cdisplayrendering.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/searchdialog/analysis/csearchanalysisdialog.h"
+#include "frontend/searchdialog/cmoduleresultview.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "frontend/searchdialog/csearchresultview.h"
+#include "util/ctoolclass.h"
 
-#include <QDebug>
 
 namespace Search {
 

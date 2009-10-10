@@ -7,28 +7,26 @@
 *
 **********/
 
-//BibleTime includes
-#include "creadwindow.h"
-#include "btactioncollection.h"
+#include "frontend/displaywindow/creadwindow.h"
 
-#include "frontend/display/bthtmlreaddisplay.h"
-typedef BtHtmlReadDisplay HTMLREADDISPLAY;
-
-#include "backend/rendering/centrydisplay.h"
-#include "backend/rendering/cdisplayrendering.h"
+#include <QDebug>
+#include <QMdiSubWindow>
+#include <QResizeEvent>
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-
+#include "backend/rendering/cdisplayrendering.h"
+#include "backend/rendering/centrydisplay.h"
 #include "frontend/cexportmanager.h"
 #include "frontend/cmdiarea.h"
+#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 
-#include <QResizeEvent>
-#include <QMdiSubWindow>
-#include <QDebug>
 
 using namespace Profile;
+
+typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),

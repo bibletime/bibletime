@@ -10,16 +10,15 @@
 #ifndef BTINSTALLPAGE_H
 #define BTINSTALLPAGE_H
 
-
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include <QString>
 
+// Nasty Sword includes:
 #include <installmgr.h>
 
 
 class BtSourceWidget;
-
 class QComboBox;
 class QPushButton;
 class QToolButton;

@@ -6,19 +6,18 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "cbookkeychooser.h"
 
-#include "bthistory.h"
+#include "frontend/keychooser/cbookkeychooser.h"
 
-#include "backend/keys/cswordtreekey.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/config/cbtconfig.h"
-
-//Qt includes
-#include <QWidget>
+#include <QDebug>
 #include <QHBoxLayout>
 #include <QList>
-#include <QDebug>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/keys/cswordtreekey.h"
+#include "frontend/keychooser/bthistory.h"
+
 
 QMap<QObject*, int> boxes;
 

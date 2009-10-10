@@ -7,25 +7,21 @@
 *
 **********/
 
-
-
 #ifndef CPLAINWRITEWINDOW_H
 #define CPLAINWRITEWINDOW_H
 
-//BibleTime includes
-#include "cwritewindow.h"
+#include "frontend/displaywindow/cwritewindow.h"
 
 
-class QAction;
 class BtActionCollection;
-
+class QAction;
 class QString;
 
 /** The write window class which offers a plain editor for source code editing.
   * @author The BibleTime team
   */
 class CPlainWriteWindow : public CWriteWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CPlainWriteWindow( QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CPlainWriteWindow();

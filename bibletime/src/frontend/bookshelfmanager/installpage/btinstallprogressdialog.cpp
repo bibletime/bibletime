@@ -7,26 +7,23 @@
 *
 **********/
 
-#include "btinstallprogressdialog.h"
+#include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 
-#include "btinstallthread.h"
-
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
-#include "backend/managers/cswordbackend.h"
-
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QDialog>
-#include <QHeaderView>
-#include <QProgressBar>
-#include <QPushButton>
-#include <QVBoxLayout>
 #include <QApplication>
 #include <QCloseEvent>
-#include <QMultiMap>
-
 #include <QDebug>
+#include <QDialog>
+#include <QHeaderView>
+#include <QMultiMap>
+#include <QProgressBar>
+#include <QPushButton>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QVBoxLayout>
+#include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/installpage/btinstallthread.h"
+#include "util/ctoolclass.h"
+#include "util/cpointers.h"
 
 
 BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination)

@@ -7,25 +7,22 @@
 *
 **********/
 
-#include "cplainwritewindow.h"
-#include "btactioncollection.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
 
+#include <QAction>
+#include <QDebug>
+#include <QMessageBox>
+#include <QRegExp>
+#include <QToolBar>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordkey.h"
 #include "frontend/display/cwritedisplay.h"
-
+#include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "backend/config/cbtconfig.h"
-
-#include "backend/keys/cswordkey.h"
-
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <QRegExp>
-#include <QToolBar>
-#include <QMessageBox>
-#include <QDebug>
-#include <QAction>
 
 using namespace Profile;
 

@@ -11,18 +11,15 @@
 #define BTINSTALLPROGRESSDIALOG_H
 
 #include <QDialog>
-#include <QString>
-#include <QMultiMap>
 
+#include <QMultiMap>
+#include <QString>
+
+
+class BtInstallThread;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-class BtInstallThread;
-
-
-/**
-
-*/
 class BtInstallProgressDialog : public QDialog {
         Q_OBJECT
     public:

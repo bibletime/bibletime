@@ -7,14 +7,14 @@
 *
 **********/
 
-#include "cmodulechooserbar.h"
+#include "frontend/displaywindow/cmodulechooserbar.h"
 
-#include "cmodulechooserbutton.h"
-
-#include <QList>
-#include <QDebug>
 #include <QAction>
+#include <QDebug>
+#include <QList>
 #include <QToolBar>
+#include "frontend/displaywindow/cmodulechooserbutton.h"
+
 
 CModuleChooserBar::CModuleChooserBar(QList<CSwordModuleInfo*> useModules, CSwordModuleInfo::ModuleType type, QWidget *parent)
         : QToolBar(parent),

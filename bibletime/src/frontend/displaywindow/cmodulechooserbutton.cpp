@@ -7,24 +7,20 @@
 *
 **********/
 
-#include "cmodulechooserbutton.h"
+#include "frontend/displaywindow/cmodulechooserbutton.h"
 
-#include "cmodulechooserbar.h"
-
-#include "backend/managers/cswordbackend.h"
-
+#include <QDebug>
+#include <QHash>
+#include <QMenu>
+#include <QString>
+#include <QToolButton>
+#include <QToolTip>
 #include "backend/config/cbtconfig.h"
-
+#include "backend/managers/cswordbackend.h"
+#include "frontend/displaywindow/cmodulechooserbar.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-//Qt includes
-#include <QString>
-#include <QToolTip>
-#include <QHash>
-#include <QToolButton>
-#include <QMenu>
-#include <QtDebug>
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
         : QToolButton(parent),

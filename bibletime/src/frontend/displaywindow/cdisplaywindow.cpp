@@ -7,27 +7,28 @@
 *
 **********/
 
-#include "cdisplaywindow.h"
-#include "bttoolbarpopupaction.h"
-#include "btactioncollection.h"
-#include "cmodulechooserbar.h"
-#include "cbuttons.h"
-#include "backend/keys/cswordkey.h"
-#include "frontend/keychooser/ckeychooser.h"
-#include "frontend/keychooser/bthistory.h"
-#include "frontend/display/cdisplay.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/profile/cprofilewindow.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/searchdialog/csearchdialog.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
-#include <QWidget>
 #include <QCloseEvent>
-#include <QStringList>
 #include <QDebug>
 #include <QMenu>
+#include <QStringList>
+#include <QWidget>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordkey.h"
+#include "frontend/cmdiarea.h"
+#include "frontend/display/cdisplay.h"
+#include "frontend/displaywindow/bttoolbarpopupaction.h"
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/displaywindow/cmodulechooserbar.h"
+#include "frontend/displaywindow/cbuttons.h"
+#include "frontend/keychooser/ckeychooser.h"
+#include "frontend/keychooser/bthistory.h"
+#include "frontend/profile/cprofilewindow.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "util/directoryutil.h"
+#include "util/cresmgr.h"
+
 
 using namespace Profile;
 

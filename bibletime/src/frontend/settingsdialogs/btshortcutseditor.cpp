@@ -7,22 +7,22 @@
 *
 **********/
 
-#include "btshortcutseditor.h"
-#include "btshortcutsdialog.h"
+#include "frontend/settingsdialogs/btshortcutseditor.h"
 
-#include "frontend/displaywindow/btactioncollection.h"
-
-#include <QTableWidget>
-#include <QTableWidgetItem>
-#include <QKeySequence>
-#include <QVBoxLayout>
-#include <QHeaderView>
 #include <QAction>
 #include <QGroupBox>
-#include <QRadioButton>
+#include <QHeaderView>
+#include <QKeySequence>
 #include <QLabel>
-#include <QSpacerItem>
 #include <QPushButton>
+#include <QRadioButton>
+#include <QSpacerItem>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+#include <QVBoxLayout>
+#include "frontend/displaywindow/btactioncollection.h"
+#include "frontend/settingsdialogs/btshortcutsdialog.h"
+
 
 // *************** BtShortcutsEditorItem *******************************************************************
 // BtShortcutsEditorItem is the widget for the first column of the BtShortcutsEditor

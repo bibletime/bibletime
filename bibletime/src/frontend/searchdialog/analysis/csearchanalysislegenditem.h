@@ -10,14 +10,15 @@
 #ifndef SEARCHCSEARCHANALYSISLEGENDITEM_H
 #define SEARCHCSEARCHANALYSISLEGENDITEM_H
 
-class CSwordModuleInfo;
-
 #include <QGraphicsRectItem>
+
+
+class CSwordModuleInfo;
 
 namespace Search {
 
 /**
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisLegendItem : public QGraphicsRectItem {
     public:

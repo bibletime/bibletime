@@ -10,35 +10,28 @@
 #ifndef CSEARCHDIALOG_H
 #define CSEARCHDIALOG_H
 
-//BibleTime includes
-#include "backend/managers/cswordbackend.h"
-#include "backend/cswordmodulesearch.h"
-
-#include "util/cpointers.h"
-
-//Qt includes
-#include <QString>
 #include <QDialog>
 
+#include <QString>
+#include "backend/cswordmodulesearch.h"
+#include "backend/managers/cswordbackend.h"
+#include "util/cpointers.h"
 
-//forward declarations
+
 namespace Search {
-class BtSearchResultArea;
-class BtSearchOptionsArea;
+    class BtSearchResultArea;
+    class BtSearchOptionsArea;
 }
-
-class QWidget;
 class QPushButton;
-
+class QWidget;
 
 namespace Search {
 
 /**
   *@author The BibleTime team
   */
-class CSearchDialog : public QDialog  {
-        Q_OBJECT
-
+class CSearchDialog : public QDialog {
+    Q_OBJECT
     public:
         static void openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
 

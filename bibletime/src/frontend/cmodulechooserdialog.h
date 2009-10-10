@@ -10,16 +10,15 @@
 #ifndef CMODULECHOOSERDIALOG_H
 #define CMODULECHOOSERDIALOG_H
 
-class CSwordModuleInfo;
-#include "backend/btmoduletreeitem.h"
-
 #include <QDialog>
+
+#include "backend/btmoduletreeitem.h"
 #include <QList>
 #include <QTreeWidget>
 
 
+class CSwordModuleInfo;
 class QDialogButtonBox;
-
 
 /**
 * Abstract dialog which lets the user select modules with checkboxes.
@@ -27,7 +26,7 @@ class QDialogButtonBox;
 * to handle the selection before the dialog is destroyed.
 */
 class CModuleChooserDialog : public QDialog {
-        Q_OBJECT
+    Q_OBJECT
     public:
 
         /**

@@ -7,16 +7,16 @@
 *
 **********/
 
-#include "cprinter.h"
+#include "frontend/cprinter.h"
 
-#include "backend/managers/cdisplaytemplatemgr.h"
+#include <QPrintDialog>
+#include <QPrinter>
+#include <QWebFrame>
+#include <QWebPage>
 #include "backend/keys/cswordversekey.h"
+#include "backend/managers/cdisplaytemplatemgr.h"
 #include "util/cpointers.h"
 
-#include <QWebPage>
-#include <QWebFrame>
-#include <QPrinter>
-#include <QPrintDialog>
 
 namespace Printing {
 

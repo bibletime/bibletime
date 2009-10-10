@@ -6,11 +6,14 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
+
 #ifndef BTHTMLJSOBJECT_H
 #define BTHTMLJSOBJECT_H
 
 #include <QObject>
+
 #include <QPoint>
+
 
 class BtHtmlReadDisplay;
 

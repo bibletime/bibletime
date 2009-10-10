@@ -12,6 +12,7 @@
 
 #include <QComboBox>
 
+
 namespace Search {
 
 class CHistoryComboBox : public QComboBox {

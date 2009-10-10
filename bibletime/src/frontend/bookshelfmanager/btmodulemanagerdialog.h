@@ -7,11 +7,11 @@
 *
 **********/
 
-
 #ifndef BTMODULEMANAGERDIALOG_H
 #define BTMODULEMANAGERDIALOG_H
 
-#include "btconfigdialog.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
+
 
 class QWidget;
 

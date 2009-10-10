@@ -7,26 +7,19 @@
 *
 **********/
 
+#include "frontend/display/creaddisplay.h"
 
-
-//BibleTime includes
-#include "creaddisplay.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
-#include "backend/keys/cswordversekey.h"
-#include "backend/keys/cswordtreekey.h"
 #include "backend/keys/cswordldkey.h"
-
+#include "backend/keys/cswordtreekey.h"
+#include "backend/keys/cswordversekey.h"
+#include "frontend/cexportmanager.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/creadwindow.h"
-
-#include "frontend/cexportmanager.h"
-
-//KDE includes
 
 
 CReadDisplay::CReadDisplay(CReadWindow* readWindow) :

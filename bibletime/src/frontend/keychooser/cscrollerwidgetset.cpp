@@ -7,16 +7,14 @@
 *
 **********/
 
+#include "frontend/keychooser/cscrollerwidgetset.h"
 
-//BibleTime includes
-#include "cscrollbutton.h"
-#include "cscrollerwidgetset.h"
-
-//Qt includes
 #include <QString>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QWheelEvent>
+#include "frontend/keychooser/cscrollbutton.h"
+
 
 const unsigned int WIDTH = 16;
 const unsigned int ARROW_HEIGHT = 12;

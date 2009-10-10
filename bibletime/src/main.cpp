@@ -7,34 +7,30 @@
 *
 **********/
 
-//own includes
-#include "bibletimeapp.h"
-#include "bibletime.h"
-#include "bibletime_dbus_adaptor.h"
-
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-#include "util/migrationutil.h"
-
-#include "backend/config/cbtconfig.h"
-
 #include <cstdlib>
 #include <cstdio>
 #include <csignal>
-
-#include <QLocale>
-#include <QTranslator>
-#include <QDebug>
-#include <QTextCodec>
-#include <QVariant>
 #ifndef NO_DBUS
 #include <QDBusConnection>
 #endif
+#include <QDebug>
+#include <QLocale>
+#include <QTextCodec>
+#include <QTranslator>
+#include <QVariant>
+#include "backend/config/cbtconfig.h"
+#include "bibletime.h"
+#include "bibletime_dbus_adaptor.h"
+#include "bibletimeapp.h"
+#include "util/cresmgr.h"
+#include "util/directoryutil.h"
+#include "util/migrationutil.h"
 
 #ifdef BT_ENABLE_TESTING
 #include <QtTest/QtTest>
 #include "tests/bibletime_test.h"
 #endif
+
 
 bool showDebugMessages;
 

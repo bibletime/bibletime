@@ -7,15 +7,12 @@
 *
 **********/
 
+#include "frontend/profile/cprofilemgr.h"
 
-
-#include "cprofilemgr.h"
-#include "util/directoryutil.h"
-
-//Qt includes
 #include <QDir>
 #include <QFile>
 #include <QList>
+#include "util/directoryutil.h"
 
 
 namespace Profile {

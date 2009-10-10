@@ -1,26 +1,24 @@
-//
-// C++ Interface: cdisplaywindowfactory
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #ifndef CDISPLAYWINDOWFACTORY_H
 #define CDISPLAYWINDOWFACTORY_H
 
-#include "cdisplaywindow.h"
-
-class CSwordModuleInfo;
+#include "frontend/displaywindow/cdisplaywindow.h"
 
 
-class CReadWindow;
-class CWriteWindow;
 class CMDIArea;
+class CReadWindow;
+class CSwordModuleInfo;
+class CWriteWindow;
 
+/// \todo Make CDisplayWindowFactory a namespace instead?
 class CDisplayWindowFactory {
     public:
         static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);

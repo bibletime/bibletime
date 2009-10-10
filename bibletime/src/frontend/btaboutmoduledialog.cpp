@@ -2,20 +2,20 @@
 *
 * This file is part of BibleTime's source code, http://www.bibletime.info/.
 *
-* Copyright 1999-2008 by the BibleTime developers.
+* Copyright 1999-2009 by the BibleTime developers.
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
 
-#include "btaboutmoduledialog.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "util/dialogutil.h"
-
-#include <QWidget>
 #include <QDialog>
+#include <QDialogButtonBox>
 #include <QTextEdit>
 #include <QVBoxLayout>
-#include <QDialogButtonBox>
+#include <QWidget>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/btaboutmoduledialog.h"
+#include "util/dialogutil.h"
+
 
 BTAboutModuleDialog::BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info)
         : QDialog(parent) {

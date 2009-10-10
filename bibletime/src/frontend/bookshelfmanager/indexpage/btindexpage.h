@@ -7,12 +7,12 @@
 *
 **********/
 
-
 #ifndef BTINDEXPAGE_H
 #define BTINDEXPAGE_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
 #include "backend/btmoduletreeitem.h"
+
 
 class QCheckBox;
 class QTreeWidget;

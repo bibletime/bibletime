@@ -10,20 +10,18 @@
 #ifndef CWRITEWINDOW_H
 #define CWRITEWINDOW_H
 
-//BibleTime includes
-#include "cdisplaywindow.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
 
 
+class BtActionCollection;
 class CWriteDisplay;
 class QString;
-class BtActionCollection;
 
-/**The base class for all write-only display windows.
+/** The base class for all write-only display windows.
   *@author The BibleTime team
   */
-
 class CWriteWindow : public CDisplayWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         static void insertKeyboardActions( BtActionCollection* const a );
 

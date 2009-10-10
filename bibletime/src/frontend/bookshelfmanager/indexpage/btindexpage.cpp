@@ -7,27 +7,23 @@
 *
 **********/
 
-#include "btindexpage.h"
+#include "frontend/bookshelfmanager/indexpage/btindexpage.h"
 
-#include "frontend/cmoduleindexdialog.h"
-#include "backend/config/cbtconfig.h"
-
-#include "util/ctoolclass.h"
-#include "util/cresmgr.h"
-#include "util/cpointers.h"
-#include "util/directoryutil.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/cswordbackend.h"
-
-//Qt includes
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
 #include <QCheckBox>
 #include <QDir>
+#include <QHBoxLayout>
 #include <QPushButton>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QVBoxLayout>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/cmoduleindexdialog.h"
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
 
 
 BtIndexPage::BtIndexPage()

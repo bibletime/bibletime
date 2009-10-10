@@ -7,22 +7,19 @@
 *
 **********/
 
-
-
 #ifndef CHTMLWRITEWINDOW_H
 #define CHTMLWRITEWINDOW_H
 
-//BibleTime includes
-#include "cplainwritewindow.h"
+#include "frontend/displaywindow/cplainwritewindow.h"
+
 
 class QAction;
-
 
 /** The WYSIWYG implementation of the editor.
   * @author The BibleTime team
   */
 class CHTMLWriteWindow : public CPlainWriteWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CHTMLWriteWindow();
@@ -38,7 +35,7 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
 
         virtual bool syncAllowed() const;
 
-    protected: // Protected methods
+    protected:
         /**
         * Initialize the state of this widget.
         */
@@ -47,7 +44,7 @@ class CHTMLWriteWindow : public CPlainWriteWindow  {
         virtual void initToolbars();
         virtual CDisplayWindow::WriteWindowType writeWindowType() {
             return CDisplayWindow::HTMLWindow;
-        };
+        }
 
     protected slots:
         /**

@@ -7,52 +7,44 @@
 *
 **********/
 
-//BibleTime includes
-#include "cbookmarkindex.h"
-
-#include "btbookmarkitembase.h"
-#include "btbookmarkitem.h"
-#include "btbookmarkfolder.h"
-#include "btbookmarkloader.h"
-
-#include "backend/managers/creferencemanager.h"
-#include "backend/drivers/cswordmoduleinfo.h"
-
-#include "frontend/searchdialog/csearchdialog.h"
-#include "backend/config/cbtconfig.h"
-#include "frontend/cinfodisplay.h"
-
-#include "frontend/cprinter.h"
-#include "frontend/cdragdrop.h"
-
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-#include "util/ctoolclass.h"
+#include "frontend/mainindex/bookmarks/cbookmarkindex.h"
 
 #include <boost/scoped_ptr.hpp>
-
-//Qt includes
-#include <QInputDialog>
+#include <QAction>
+#include <QApplication>
+#include <QCursor>
+#include <QDebug>
+#include <QDrag>
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QHeaderView>
-#include <QTimer>
-#include <QToolTip>
+#include <QInputDialog>
 #include <QList>
+#include <QMenu>
+#include <QMessageBox>
+#include <QMouseEvent>
+#include <QPainter>
+#include <QPaintEvent>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QCursor>
-#include <QMouseEvent>
-#include <QMessageBox>
-#include <QMenu>
-#include <QAction>
-#include <QPaintEvent>
-#include <QPainter>
-#include <QApplication>
-#include <QDrag>
+#include <QToolTip>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/managers/creferencemanager.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/cinfodisplay.h"
+#include "frontend/cprinter.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
+#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
+#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
+#include "frontend/searchdialog/csearchdialog.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+#include "util/directoryutil.h"
 
-#include <QDebug>
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
         : QTreeWidget(parent),

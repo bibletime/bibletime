@@ -9,16 +9,16 @@
 #ifndef BTSOURCEWIDGET_H
 #define BTSOURCEWIDGET_H
 
-class CSwordModuleInfo;
-
 #include <QTabWidget>
-#include <QString>
+
 #include <QMap>
+#include <QString>
+
 
 class BtInstallMgr;
 class BtInstallPage;
 class BtSourceArea;
-
+class CSwordModuleInfo;
 class QProgressDialog;
 class QTreeWidget;
 
@@ -28,7 +28,7 @@ class QTreeWidget;
 * applies the actions to the proper source(s).
 */
 class BtSourceWidget : public QTabWidget {
-        Q_OBJECT
+    Q_OBJECT
     public:
         friend class BtInstallPage;
 

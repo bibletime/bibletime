@@ -7,26 +7,20 @@
 *
 **********/
 
-
-
 #ifndef CPLAINWRITEDISPLAY_H
 #define CPLAINWRITEDISPLAY_H
 
-//Bibletime include files
-#include "cwritedisplay.h"
-
-//Qt includes
 #include <QTextEdit>
+#include "frontend/display/cwritedisplay.h"
 
 
+class BtActionCollection;
 class CHTMLWriteDisplay;
-
-class QWidget;
-class QMenu;
+class QDragEnterEvent;
 class QDragMoveEvent;
 class QDropEvent;
-class QDragEnterEvent;
-class BtActionCollection;
+class QMenu;
+class QWidget;
 
 /** The write display implementation for plain source code editing.
   * @author The BibleTime team

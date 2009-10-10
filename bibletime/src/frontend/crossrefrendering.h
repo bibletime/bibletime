@@ -1,19 +1,17 @@
-//
-// C++ Interface: crossrefrendering
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2004, 2007
-//
-// Copyright: See COPYING file that comes with this distribution
-
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef INFODISPLAYCROSSREFRENDERING_H
 #define INFODISPLAYCROSSREFRENDERING_H
 
-//Backend includes
 #include "backend/rendering/chtmlexportrendering.h"
+
 
 namespace InfoDisplay {
 

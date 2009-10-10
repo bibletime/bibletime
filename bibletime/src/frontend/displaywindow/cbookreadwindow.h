@@ -7,25 +7,21 @@
 *
 **********/
 
-
-
 #ifndef CBOOKREADWINDOW_H
 #define CBOOKREADWINDOW_H
 
-//BibleTime includes
-#include "clexiconreadwindow.h"
+#include "frontend/displaywindow/clexiconreadwindow.h"
 
 
-class QAction;
-class CBookTreeChooser;
 class BtActionCollection;
-
+class CBookTreeChooser;
+class QAction;
 
 /**
   * @author The BibleTime team
   */
 class CBookReadWindow : public CLexiconReadWindow  {
-        Q_OBJECT
+    Q_OBJECT
     public:
         static void insertKeyboardActions( BtActionCollection* const a );
 

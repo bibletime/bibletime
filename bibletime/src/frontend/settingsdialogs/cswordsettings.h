@@ -1,34 +1,27 @@
-//
-// C++ Interface: cswordsettings
-//
-// Description: Widgets for "Sword" ("Desk") settings of configuration dialog.
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef CSWORDSETTINGS_H
 #define CSWORDSETTINGS_H
 
 #include "frontend/bookshelfmanager/btconfigdialog.h"
-
 #include "util/cpointers.h"
+#include <QWidget>
 
-#include <QTabWidget>
 
-
-class QComboBox;
 class QCheckBox;
-
+class QComboBox;
 class StandardWorksTab;
 class TextFiltersTab;
 
 class CSwordSettingsPage : public BtConfigPage {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         CSwordSettingsPage(QWidget* parent);
         void save();
@@ -44,8 +37,7 @@ class CSwordSettingsPage : public BtConfigPage {
 //Tab pages. To be used only in Sword settings page.
 
 class StandardWorksTab : public QWidget, CPointers {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         StandardWorksTab();
         void save();
@@ -62,8 +54,7 @@ class StandardWorksTab : public QWidget, CPointers {
 };
 
 class TextFiltersTab : public QWidget {
-        Q_OBJECT
-
+    Q_OBJECT
     public:
         TextFiltersTab();
         void save();

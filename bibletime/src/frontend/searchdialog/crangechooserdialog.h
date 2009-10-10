@@ -7,28 +7,27 @@
 *
 **********/
 
-
-
 #ifndef CRANGECHOOSERDIALOG_H
 #define CRANGECHOOSERDIALOG_H
 
 #include <QDialog>
+
 #include <QListWidgetItem>
 
-class QListWidget;
-class QLineEdit;
-class QTextEdit;
-class QPushButton;
-class QDialogButtonBox;
 
+class QDialogButtonBox;
+class QLineEdit;
+class QListWidget;
+class QPushButton;
+class QTextEdit;
 
 namespace Search {
 
 class CRangeChooserDialog : public QDialog {
-        Q_OBJECT
+    Q_OBJECT
     public:
         CRangeChooserDialog(QWidget* parentDialog);
-        ~CRangeChooserDialog() {};
+        ~CRangeChooserDialog() {}
 
     protected: // Protected methods
         class RangeItem : public QListWidgetItem {

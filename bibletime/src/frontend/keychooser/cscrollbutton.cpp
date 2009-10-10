@@ -7,15 +7,16 @@
 *
 **********/
 
-#include "cscrollbutton.h"
+#include "frontend/keychooser/cscrollbutton.h"
 
 #include <cmath>
-#include <QEvent>
 #include <QApplication>
 #include <QCursor>
-#include <QPoint>
+#include <QEvent>
 #include <QMouseEvent>
+#include <QPoint>
 #include <QWheelEvent>
+
 
 CScrollButton::CScrollButton(QWidget *parent)
         : QToolButton(parent), m_isLocked(false) {

@@ -7,19 +7,7 @@
 *
 **********/
 
-#include "btsourcearea.h"
-
-#include "frontend/bookshelfmanager/instbackend.h"
-
-#include "util/ctoolclass.h"
-#include "util/cpointers.h"
-#include "util/cresmgr.h"
-#include "util/directoryutil.h"
-
-#include "backend/managers/cswordbackend.h"
-#include "frontend/btaboutmoduledialog.h"
-
-#include <installmgr.h>
+#include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 
 #include <QString>
 #include <QWidget>
@@ -32,9 +20,19 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QHeaderView>
-
 #include <QDebug>
 #include <QTime>
+#include "backend/managers/cswordbackend.h"
+#include "frontend/bookshelfmanager/instbackend.h"
+#include "frontend/btaboutmoduledialog.h"
+#include "util/directoryutil.h"
+#include "util/cpointers.h"
+#include "util/cresmgr.h"
+#include "util/ctoolclass.h"
+
+// Nasty Sword includes:
+#include <installmgr.h>
+
 
 // ****************************************************************
 // ******** Installation source and module list widget ************

@@ -7,23 +7,22 @@
 *
 **********/
 
-
-#include "btconfigdialog.h"
-
-#include "util/directoryutil.h"
-#include "util/ctoolclass.h"
+#include "frontend/bookshelfmanager/btconfigdialog.h"
 
 #include <QDialog>
-#include <QStackedWidget>
+#include <QDialogButtonBox>
+#include <QEvent>
+#include <QFrame>
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QListWidget>
 #include <QListView>
 #include <QListWidgetItem>
+#include <QStackedWidget>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QDialogButtonBox>
-#include <QFrame>
-#include <QEvent>
+#include "util/directoryutil.h"
+#include "util/ctoolclass.h"
+
 
 BtConfigDialog::BtConfigDialog(QWidget* parent)
         : QDialog(parent),

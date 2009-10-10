@@ -7,24 +7,20 @@
 *
 **********/
 
-
-
-#include "ckeychooser.h"
-
-#include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/drivers/cswordbiblemoduleinfo.h"
-#include "backend/drivers/cswordcommentarymoduleinfo.h"
-#include "backend/drivers/cswordlexiconmoduleinfo.h"
-
-#include "backend/keys/cswordkey.h"
-
-#include "bthistory.h"
-#include "clexiconkeychooser.h"
-#include "versekeychooser/cbiblekeychooser.h"
-#include "cbookkeychooser.h"
+#include "frontend/keychooser/ckeychooser.h"
 
 #include <QAction>
 #include <QDebug>
+#include "backend/drivers/cswordbiblemoduleinfo.h"
+#include "backend/drivers/cswordcommentarymoduleinfo.h"
+#include "backend/drivers/cswordlexiconmoduleinfo.h"
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/keys/cswordkey.h"
+#include "frontend/keychooser/bthistory.h"
+#include "frontend/keychooser/cbookkeychooser.h"
+#include "frontend/keychooser/clexiconkeychooser.h"
+#include "frontend/keychooser/versekeychooser/cbiblekeychooser.h"
+
 
 CKeyChooser::CKeyChooser(QList<CSwordModuleInfo*>, CSwordKey *, QWidget *parent)
         : QWidget(parent),

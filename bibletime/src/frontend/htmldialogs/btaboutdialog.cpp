@@ -7,11 +7,13 @@
 *
 **********/
 
-#include "btaboutdialog.h"
+#include "frontend/htmldialogs/btaboutdialog.h"
 
 #include "util/directoryutil.h"
 
-#include "swversion.h"
+// Nasty Sword includes:
+#include <swversion.h>
+
 
 // Forwards
 static QString make_body(const QString& content);

@@ -10,15 +10,15 @@
 #ifndef INSTBACKEND_H
 #define INSTBACKEND_H
 
+#include <QDir>
+#include <QString>
 #include "backend/managers/cswordbackend.h"
 
-class CSwordModuleInfo;
-
-#include <QString>
-#include <QDir>
-
+// Nasty Sword includes:
 #include <installmgr.h>
 
+
+class CSwordModuleInfo;
 
 namespace instbackend {
 

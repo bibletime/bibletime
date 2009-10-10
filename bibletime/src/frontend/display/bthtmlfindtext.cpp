@@ -7,12 +7,14 @@
 *
 **********/
 
-#include "bthtmlfindtext.h"
-#include "bthtmlreaddisplay.h"
-#include "creaddisplay.h"
-#include "frontend/cmdiarea.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/display/bthtmlfindtext.h"
+
 #include <QMdiSubWindow>
+#include "frontend/cmdiarea.h"
+#include "frontend/display/bthtmlreaddisplay.h"
+#include "frontend/display/creaddisplay.h"
+#include "frontend/displaywindow/cdisplaywindow.h"
+
 
 static BtHtmlFindText* dialog = 0;
 

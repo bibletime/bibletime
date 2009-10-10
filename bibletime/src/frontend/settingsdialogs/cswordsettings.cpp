@@ -1,34 +1,28 @@
-//
-// C++ Implementation: cswordsettings
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
-#include "cswordsettings.h"
+#include "frontend/settingsdialogs/cswordsettings.h"
 
+#include <QCheckBox>
+#include <QComboBox>
+#include <QGridLayout>
+#include <QLabel>
+#include <QList>
+#include <QString>
+#include <QStringList>
+#include <QTabWidget>
+#include <QVBoxLayout>
+#include <QWidget>
 #include "backend/config/cbtconfig.h"
-
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
-
-#include <QWidget>
-#include <QTabWidget>
-#include <QComboBox>
-#include <QCheckBox>
-#include <QString>
-#include <QGridLayout>
-#include <QVBoxLayout>
-#include <QList>
-#include <QStringList>
-#include <QLabel>
-
 
 
 CSwordSettingsPage::CSwordSettingsPage(QWidget* /*parent*/)

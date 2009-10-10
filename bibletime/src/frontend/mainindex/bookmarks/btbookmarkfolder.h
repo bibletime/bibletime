@@ -10,10 +10,10 @@
 #ifndef BTBOOKMARKFOLDER_H
 #define BTBOOKMARKFOLDER_H
 
-#include "btbookmarkitembase.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+
 
 #define CURRENT_SYNTAX_VERSION 1
-
 
 class BtBookmarkFolder : public BtBookmarkItemBase {
     public:

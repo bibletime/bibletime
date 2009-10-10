@@ -7,22 +7,18 @@
 *
 **********/
 
-
-
 #ifndef CLEXICONKEYCHOOSER_H
 #define CLEXICONKEYCHOOSER_H
 
-
-#include "ckeychooser.h"
-class CSwordModuleInfo;
+#include "frontend/keychooser/ckeychooser.h"
 
 
 class CKeyChooserWidget;
-class CSwordLexiconModuleInfo;
 class CSwordLDKey;
-
-class QWidget;
+class CSwordLexiconModuleInfo;
+class CSwordModuleInfo;
 class QHBoxLayout;
+class QWidget;
 
 /**
  * This class implements the KeyChooser for lexicons
@@ -32,8 +28,8 @@ class QHBoxLayout;
  *
   * @author The BibleTime team
   */
-class CLexiconKeyChooser : public CKeyChooser  {
-        Q_OBJECT
+class CLexiconKeyChooser : public CKeyChooser {
+    Q_OBJECT
     public:
         /**
         * The constructor

@@ -6,16 +6,19 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "bthtmljsobject.h"
-#include "bthtmlreaddisplay.h"
-#include "frontend/cinfodisplay.h"
-#include "frontend/cdragdrop.h"
-#include "backend/managers/creferencemanager.h"
-#include "backend/managers/cswordbackend.h"
-#include "backend/keys/cswordkey.h"
-#include "backend/config/cbtconfig.h"
+
+#include "frontend/display/bthtmljsobject.h"
+
 #include <boost/scoped_ptr.hpp>
 #include <QObject>
+#include "backend/config/cbtconfig.h"
+#include "backend/keys/cswordkey.h"
+#include "backend/managers/creferencemanager.h"
+#include "backend/managers/cswordbackend.h"
+#include "frontend/cdragdrop.h"
+#include "frontend/cinfodisplay.h"
+#include "frontend/display/bthtmlreaddisplay.h"
+
 
 using namespace InfoDisplay;
 

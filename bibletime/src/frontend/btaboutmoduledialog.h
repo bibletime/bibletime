@@ -12,16 +12,17 @@
 
 #include <QDialog>
 
+
 class CSwordModuleInfo;
 class QWidget;
 
 /**
-	Dialog to show the information about a module.
+    Dialog to show the information about a module.
 
-	@author The BibleTime team <info@bibletime.info>
+    @author The BibleTime team <info@bibletime.info>
 */
 class BTAboutModuleDialog : public QDialog {
-        Q_OBJECT
+    Q_OBJECT
     public:
         BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info);
 };

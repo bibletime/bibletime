@@ -6,21 +6,20 @@
 * The BibleTime source code is licensed under the GNU General Public License version 2.0.
 *
 **********/
-#include "cbooktreechooser.h"
 
-#include "bthistory.h"
+#include "frontend/keychooser/cbooktreechooser.h"
 
-#include "backend/keys/cswordtreekey.h"
-#include "backend/drivers/cswordbookmoduleinfo.h"
-#include "backend/config/cbtconfig.h"
-
+#include <QApplication>
+#include <QDebug>
 #include <QHBoxLayout>
+#include <QHeaderView>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
-#include <QHeaderView>
-#include <QApplication>
+#include "backend/config/cbtconfig.h"
+#include "backend/drivers/cswordbookmoduleinfo.h"
+#include "backend/keys/cswordtreekey.h"
+#include "frontend/keychooser/bthistory.h"
 
-#include <QDebug>
 
 CBookTreeChooser::CBookTreeChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent)
         : CKeyChooser(modules, key, parent),

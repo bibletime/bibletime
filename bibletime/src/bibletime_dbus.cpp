@@ -7,23 +7,19 @@
 *
 **********/
 
-
-//BibleTime includes
 #include "bibletime.h"
 
-#include "frontend/cmdiarea.h"
+#include <QDebug>
+#include <QList>
+#include <QMdiSubWindow>
 #include "backend/config/cbtconfig.h"
-
 #include "backend/keys/cswordversekey.h"
+#include "frontend/cmdiarea.h"
 
-//Sword includes
+// Nasty Sword includes:
 #include <versekey.h>
 #include <listkey.h>
 
-//QT
-#include <QList>
-#include <QDebug>
-#include <QMdiSubWindow>
 
 //helper function
 void BibleTime::syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key) {

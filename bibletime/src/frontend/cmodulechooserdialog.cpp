@@ -7,30 +7,28 @@
 *
 **********/
 
-#include "cmodulechooserdialog.h"
+#include "frontend/cmodulechooserdialog.h"
 
+#include <QButtonGroup>
+#include <QDebug>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
+#include <QHeaderView>
+#include <QLabel>
+#include <QSpacerItem>
+#include <QStringList>
+#include <QTreeWidget>
+#include <QVBoxLayout>
+#include "backend/btmoduletreeitem.h"
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
-#include "backend/btmoduletreeitem.h"
-
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/dialogutil.h"
 #include "util/directoryutil.h"
-#include "backend/config/cbtconfig.h"
-
-#include <QDialog>
-#include <QButtonGroup>
-#include <QDialogButtonBox>
-#include <QHBoxLayout>
-#include <QSpacerItem>
-#include <QTreeWidget>
-#include <QVBoxLayout>
-#include <QStringList>
-#include <QDebug>
-#include <QHeaderView>
-#include <QLabel>
 
 
 CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>*  allModules)

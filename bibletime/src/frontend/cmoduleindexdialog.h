@@ -1,24 +1,19 @@
-//
-// C++ Interface: cmoduleindexdialog
-//
-// Description:
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 2006-2007
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2009 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
+
 #ifndef CMODULEINDEXDIALOG_H
 #define CMODULEINDEXDIALOG_H
 
-class CSwordModuleInfo;
-
-//Qt includes
 #include <QObject>
 
-//forward declaration
-//class KProgressDialog;
+
+class CSwordModuleInfo;
 class QProgressDialog;
 
 /**
@@ -29,7 +24,7 @@ class QProgressDialog;
  * @author The BibleTime team <info@bibletime.info>
 */
 class CModuleIndexDialog : public QObject {
-        Q_OBJECT
+    Q_OBJECT
     public:
         /** Get the singleton instance.
          *

@@ -7,11 +7,13 @@
 *
 **********/
 
-#include "btcolorwidget.h"
-#include <QPalette>
+#include "frontend/display/btcolorwidget.h"
+
 #include <QColor>
-#include <QMouseEvent>
 #include <QColorDialog>
+#include <QMouseEvent>
+#include <QPalette>
+
 
 BtColorWidget::BtColorWidget(QWidget* parent)
         : QFrame(parent) {

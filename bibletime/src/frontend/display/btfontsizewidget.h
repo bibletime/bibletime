@@ -1,14 +1,11 @@
-//
-// C++ Interface: BtFontSizeWidget
-//
-// Description: A font combobox widget for the toolbar
-//
-//
-// Author: The BibleTime team <info@bibletime.info>, (C) 1999-2008
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/*********
+*
+* This file is part of BibleTime's source code, http://www.bibletime.info/.
+*
+* Copyright 1999-2008 by the BibleTime developers.
+* The BibleTime source code is licensed under the GNU General Public License version 2.0.
+*
+**********/
 
 #ifndef BTFONTSIZEWIDGET_H
 #define BTFONTSIZEWIDGET_H
@@ -17,7 +14,7 @@
 
 
 class BtFontSizeWidget : public QComboBox {
-        Q_OBJECT
+    Q_OBJECT
 
     public:
         BtFontSizeWidget(QWidget* parent = 0);

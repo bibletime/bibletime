@@ -7,18 +7,16 @@
 *
 **********/
 
+#include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
 
-#include "btbookmarkfolder.h"
-#include "btbookmarkitembase.h"
-#include "btbookmarkitem.h"
-#include "btbookmarkloader.h"
-
+#include <QDebug>
+#include <QFileDialog>
+#include "frontend/mainindex/bookmarks/btbookmarkitembase.h"
+#include "frontend/mainindex/bookmarks/btbookmarkitem.h"
+#include "frontend/mainindex/bookmarks/btbookmarkloader.h"
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-#include <QFileDialog>
-
-#include <QDebug>
 
 BtBookmarkFolder::BtBookmarkFolder(QTreeWidgetItem* parent, QString name)
         : BtBookmarkItemBase(parent) {

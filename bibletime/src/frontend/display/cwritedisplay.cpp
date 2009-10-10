@@ -7,15 +7,15 @@
 *
 **********/
 
-
-
-//BibleTime includes
-#include "cwritedisplay.h"
+#include "frontend/display/cwritedisplay.h"
 
 #include "frontend/displaywindow/cwritewindow.h"
 
 
-CWriteDisplay::CWriteDisplay( CWriteWindow* writeWindow ) : CDisplay(writeWindow) {}
+CWriteDisplay::CWriteDisplay( CWriteWindow* writeWindow ) : CDisplay(writeWindow) {
+    // Intentionally empty
+}
 
-CWriteDisplay::~CWriteDisplay() {}
-
+CWriteDisplay::~CWriteDisplay() {
+    // Intentionally empty
+}

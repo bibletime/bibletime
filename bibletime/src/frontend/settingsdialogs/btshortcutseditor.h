@@ -13,14 +13,14 @@
 
 #include <QWidget>
 
-// forwards
+
 class BtActionCollection;
 class BtShortcutsEditorItem;
 class BtShortcutsDialog;
+class QLabel;
 class QPushButton;
 class QRadioButton;
 class QTableWidget;
-class QLabel;
 
 // This class is the table in the center of the Shortcuts page of the config dialog
 class BtShortcutsEditor : public QWidget {

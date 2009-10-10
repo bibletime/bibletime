@@ -10,26 +10,25 @@
 #ifndef BIBLETIME_H
 #define BIBLETIME_H
 
-#include "frontend/profile/cprofilemgr.h"
-#include "frontend/profile/cprofile.h"
-#include "frontend/displaywindow/cdisplaywindow.h"
-
-class CSwordModuleInfo;
+#include <QMainWindow>
 
 #include <QList>
-#include <QMainWindow>
+#include "frontend/displaywindow/cdisplaywindow.h"
+#include "frontend/profile/cprofile.h"
+#include "frontend/profile/cprofilemgr.h"
 #include <QSignalMapper>
 
-class BtActionClass;
-class CMDIArea;
-class CDisplayWindow;
-class CBookmarkIndex;
-class CBookshelfIndex;
-class BtBookshelfDockWidget;
 
 namespace InfoDisplay {
-class CInfoDisplay;
+    class CInfoDisplay;
 }
+class BtActionClass;
+class BtBookshelfDockWidget;
+class CBookmarkIndex;
+class CBookshelfIndex;
+class CDisplayWindow;
+class CMDIArea;
+class CSwordModuleInfo;
 class QAction;
 class QMenu;
 class QToolBar;

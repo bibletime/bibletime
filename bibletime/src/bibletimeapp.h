@@ -10,10 +10,9 @@
 #ifndef BIBLETIMEAPP_H
 #define BIBLETIMEAPP_H
 
-//BibleTime
+#include <QApplication>
 #include "util/cpointers.h"
 
-#include <QApplication>
 
 /** The BibleTimeApp class is used to clean up all instances of the backend and to delete all created module objects.
   * @author The BibleTime team

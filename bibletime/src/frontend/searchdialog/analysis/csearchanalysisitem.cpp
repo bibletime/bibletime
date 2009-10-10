@@ -7,17 +7,16 @@
 *
 **********/
 
-#include "csearchanalysisitem.h"
-#include "csearchanalysisscene.h"
+#include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 
-#include "backend/drivers/cswordmoduleinfo.h"
-
+#include <QFont>
 #include <QGraphicsRectItem>
 #include <QPainter>
-#include <QFont>
 #include <QPen>
 #include <QPoint>
 #include <QRect>
+#include "backend/drivers/cswordmoduleinfo.h"
+#include "frontend/searchdialog/analysis/csearchanalysisscene.h"
 
 
 namespace Search {
