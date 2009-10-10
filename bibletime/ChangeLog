@@ -1,3 +1,8 @@
+2009-10-10 Martin Gruner <mgruner@crosswire.org>
+	* Fixed bug #2849728: Lucene Text Fields search not working. Search now
+	   correctly includes data from EntryAttributes as well as data from EntryAttributes
+	   of entries with verse == 0.
+
 2009-10-09 Jaak Ristioja <ristioja@gmail.com>
 	* Fixed compilation for Qt 4.4
 
