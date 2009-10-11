@@ -133,6 +133,11 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
+// On Windows, add a path for Qt plugins to be loaded from
+#ifdef Q_WS_WIN
+	app.addLibraryPath(app.applicationDirPath() + "/plugins");
+#endif
+
     if (!DU::initDirectoryCache()) {
         qFatal("Error initializing directory cache!");
         return EXIT_FAILURE;
