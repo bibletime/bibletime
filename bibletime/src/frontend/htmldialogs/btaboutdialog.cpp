@@ -153,16 +153,14 @@ void BtAboutDialog::init_qt_tab() {
     content += make_br() + make_br();
     content += make_center(make_bold("Qt"));
     content += make_br();
-    content += tr("This program uses Qt Open Source Edition version %1.").arg(qVersion());
-    //content += qVersion();
+    content += tr("This program uses Qt version %1.").arg(qVersion());
     content += make_br() + make_br();
-    content += tr("Qt Open Source Edition is intended for the development of Open Source applications.");
-    content += " ";
-    content += tr("Qt is a C++ toolkit for cross-platform application development.");
+    content += tr("Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.");
     content += make_br() + make_br();
-    content += tr("Please see ");
-    content += make_link("http://qtsoftware.com/company/model/", "qtsoftware.com/company/model");
-    content += tr(" for an overview of Qt licensing.");
+    content += make_link("http://qt.nokia.com/", "http://qt.nokia.com/");
+    //content += tr("Please see ");
+    //content += make_link("http://qtsoftware.com/company/model/", "qtsoftware.com/company/model");
+    //content += tr(" for an overview of Qt licensing.");
     QString qt = make_html(make_head("") + make_body(content));
     setHtml(qt);
 }
