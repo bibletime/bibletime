@@ -8,6 +8,7 @@
 **********/
 
 #include "frontend/settingsdialogs/btshortcutsdialog.h"
+#include "util/dialogutil.h"
 
 #include <QDialogButtonBox>
 #include <QGridLayout>
@@ -32,24 +33,31 @@ BtShortcutsDialog::BtShortcutsDialog(QWidget* parent)
     QGridLayout* gridLayout = new QGridLayout();
     vLayout->addLayout(gridLayout);
 
+    QString dialogTooltip = tr("Select first or second shortcut and type the shortcut with keyboard");
+
     m_primaryButton = new QRadioButton(tr("First shortcut"));
+    m_primaryButton->setToolTip(dialogTooltip);
     m_primaryButton->setChecked(true);
     gridLayout->addWidget(m_primaryButton, 0, 0);
 
     m_alternateButton = new QRadioButton(tr("Second shortcut"));
+    m_alternateButton->setToolTip(dialogTooltip);
     gridLayout->addWidget(m_alternateButton, 1, 0);
 
     m_primaryLabel = new QLabel();
+    m_primaryLabel->setToolTip(dialogTooltip);
     m_primaryLabel->setMinimumWidth(100);
     m_primaryLabel->setFrameShape(QFrame::Panel);
     gridLayout->addWidget(m_primaryLabel, 0, 1);
 
     m_alternateLabel = new QLabel();
+    m_alternateLabel->setToolTip(dialogTooltip);
     m_alternateLabel->setMinimumWidth(100);
     m_alternateLabel->setFrameShape(QFrame::Panel);
     gridLayout->addWidget(m_alternateLabel, 1, 1);
 
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    util::prepareDialogBox(buttons);
     vLayout->addWidget(buttons);
 
     connect(buttons, SIGNAL(accepted()), this, SLOT(accept()));
