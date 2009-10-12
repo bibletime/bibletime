@@ -15,12 +15,12 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-#include <QMessageBox>
 #include <utility>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "util/cpointers.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -174,7 +174,7 @@ bool setTargetList( const QStringList& targets ) {
     else {
         // There is no way to save to the file
         qWarning() << "The Sword config file is not writable!";
-        QMessageBox::warning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
+        util::showWarning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
         return false;
     }
     SWConfig conf(filename.toLocal8Bit());

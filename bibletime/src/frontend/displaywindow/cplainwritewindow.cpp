@@ -11,7 +11,6 @@
 
 #include <QAction>
 #include <QDebug>
-#include <QMessageBox>
 #include <QRegExp>
 #include <QToolBar>
 #include "backend/config/cbtconfig.h"
@@ -22,6 +21,7 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 
 using namespace Profile;
@@ -141,7 +141,7 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
         textChanged();
     }
     else {
-        QMessageBox::critical( this, tr("Module not writable"),
+        util::showCritical( this, tr("Module not writable"),
                                QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
                                .arg( tr("Module is not writable.") )
                                .arg( tr("Either the module may not be edited, or "

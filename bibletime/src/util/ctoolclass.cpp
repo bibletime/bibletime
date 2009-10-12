@@ -13,7 +13,6 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QLabel>
-#include <QMessageBox>
 #include <QRegExp>
 #include <QTextStream>
 #include <QWidget>
@@ -21,6 +20,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 
 /** Converts HTML text to plain text */
@@ -53,7 +53,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
     bool ret;
 
     if (saveFile.exists()) {
-        if (!forceOverwrite && QMessageBox::question(0, QObject::tr("Overwrite File?"),
+        if (!forceOverwrite && util::showQuestion(0, QObject::tr("Overwrite File?"),
                 QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
                 .arg( QObject::tr("The file already exists.") )
                 .arg( QObject::tr("Do you want to overwrite it?")),

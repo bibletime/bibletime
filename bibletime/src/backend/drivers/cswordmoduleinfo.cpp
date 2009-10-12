@@ -20,7 +20,6 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QList>
-#include <QMessageBox>
 #include <QRegExp>
 #include <QSettings>
 #include "backend/config/cbtconfig.h"
@@ -33,6 +32,7 @@
 #include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/exceptions.h"
+#include "util/dialogutil.h"
 
 // Sword includes:
 #include <listkey.h>
@@ -409,7 +409,7 @@ void CSwordModuleInfo::buildIndex() {
     }
     catch (...) {
         qWarning("CLucene exception occurred while indexing");
-        QMessageBox::warning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
+        util::showWarning(0, QCoreApplication::tr("Indexing aborted"), QCoreApplication::tr("An internal error occurred while building the index."));
         deleteIndexForModule(name());
         m_cancelIndexing = false;
     }
@@ -480,7 +480,7 @@ bool CSwordModuleInfo::searchIndexed(const QString& searchedText, sword::ListKey
     }
     catch (...) {
         qWarning("CLucene exception occurred");
-        QMessageBox::warning(0, QCoreApplication::tr("Search aborted"), QCoreApplication::tr("An internal error occurred while executing your search."));
+        util::showWarning(0, QCoreApplication::tr("Search aborted"), QCoreApplication::tr("An internal error occurred while executing your search."));
         return false;
     }
 

@@ -13,7 +13,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QList>
-#include <QMessageBox>
 #include <QMultiMap>
 #include <QPushButton>
 #include <QString>
@@ -23,6 +22,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -137,7 +137,7 @@ void BtRemovePage::slotRemoveModules() {
                             .append("\n\n")
                             .append(tr("Do you really want to remove them from your system?"));
 
-    if ((QMessageBox::question(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
+    if ((util::showQuestion(this, tr("Remove Works?"), message, QMessageBox::Yes | QMessageBox::No, QMessageBox::No) == QMessageBox::Yes)) {  //Yes was pressed.
 
         // Update the module list before really removing. Remember deleting the pointers later.
         QList<CSwordModuleInfo*> toBeDeleted = CPointers::backend()->takeModulesFromList(moduleNames);

@@ -22,7 +22,6 @@
 #include <QInputDialog>
 #include <QList>
 #include <QMenu>
-#include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
 #include <QPaintEvent>
@@ -44,6 +43,7 @@
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/directory.h"
+#include "util/dialogutil.h"
 
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
@@ -672,7 +672,7 @@ void CBookmarkIndex::deleteEntries(bool confirm) {
             }
         }
 
-        if (QMessageBox::question(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
+        if (util::showQuestion(this, tr("Delete Items"), tr("Do you really want to delete the selected items and child-items?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No ) != QMessageBox::Yes) {
             return;
         }
     }

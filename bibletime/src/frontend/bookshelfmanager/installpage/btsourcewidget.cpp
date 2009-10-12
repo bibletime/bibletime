@@ -13,7 +13,6 @@
 #include <QFileInfo>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QMessageBox>
 #include <QProgressDialog>
 #include <QPushButton>
 #include <QString>
@@ -30,6 +29,7 @@
 #include "frontend/bookshelfmanager/installpage/btinstallprogressdialog.h"
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 #include "frontend/bookshelfmanager/instbackend.h"
+#include "util/dialogutil.h"
 
 
 // ****************************************************************
@@ -78,7 +78,7 @@ void BtSourceWidget::slotEdit() {
 void BtSourceWidget::slotDelete() {
     qDebug("void BtSourceWidget::slotDelete() start");
     // ask for confirmation
-    int ret = QMessageBox::warning(this, tr("Delete Source?"),
+    int ret = util::showWarning(this, tr("Delete Source?"),
                                    tr("Do you really want to delete this source?"),
                                    QMessageBox::Yes | QMessageBox::No);
 
@@ -315,7 +315,7 @@ void BtSourceWidget::slotInstall() {
         canWrite = false;
     }
     if (!canWrite) {
-        const int result = QMessageBox::warning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore | QMessageBox::Cancel, QMessageBox::Cancel);
+        const int result = util::showWarning(this, tr("Warning"), tr("The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed."), QMessageBox::Ignore | QMessageBox::Cancel, QMessageBox::Cancel);
         if (result != QMessageBox::Ignore) {
             return;
         }

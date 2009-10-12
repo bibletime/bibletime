@@ -11,11 +11,11 @@
 
 #include <QApplication>
 #include <QDebug>
-#include <QMessageBox>
 #include <QProgressDialog>
 #include <QString>
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
+#include "util/dialogutil.h"
 
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
@@ -94,6 +94,6 @@ void CModuleIndexDialog::slotFinished( ) {
 // Modules may be removed
 void CModuleIndexDialog::slotSwordSetupChanged() {
     qDebug("CModuleIndexDialog::slotSwordSetupChanged, TODO: cancel if modules are removed");
-    QMessageBox::information(0, tr("Indexing Is Cancelled"), tr("Indexing is cancelled because modules are removed."));
+    util::showInformation(0, tr("Indexing Is Cancelled"), tr("Indexing is cancelled because modules are removed."));
     emit sigCancel();
 }

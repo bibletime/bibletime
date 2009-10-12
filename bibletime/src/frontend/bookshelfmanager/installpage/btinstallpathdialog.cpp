@@ -17,7 +17,6 @@
 #include <QGridLayout>
 #include <QHeaderView>
 #include <QLabel>
-#include <QMessageBox>
 #include <QPushButton>
 #include <QString>
 #include <QTreeWidget>
@@ -112,7 +111,7 @@ void BtInstallPathDialog::slotEditClicked() {
         if (dir.isReadable()) {
             const QFileInfo fi( dir.canonicalPath() );
             if (!fi.exists() || !fi.isWritable()) {
-                const int result = QMessageBox::warning(this, tr("Use Directory?"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+                const int result = util::showWarning(this, tr("Use Directory?"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
                 if (result != QMessageBox::Yes) return;
             }
             i->setText(0, dir.absolutePath()); // absolute, not canonical
@@ -129,7 +128,7 @@ void BtInstallPathDialog::slotAddClicked() {
     if (dir.isReadable()) {
         const QFileInfo fi( dir.canonicalPath() );
         if (!fi.exists() || !fi.isWritable()) {
-            const int result = QMessageBox::warning(this, tr("Warning"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            const int result = util::showWarning(this, tr("Warning"), tr("This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             if (result != QMessageBox::Yes) {
                 return;
             }
