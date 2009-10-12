@@ -1,7 +1,7 @@
 //
 // C++ Interface: cdisplaywindowfactory
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2007
@@ -21,14 +21,13 @@ class CReadWindow;
 class CWriteWindow;
 class CMDIArea;
 
-class CDisplayWindowFactory
-{
-public:
-	static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-	static CWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type = CDisplayWindow::HTMLWindow);
+class CDisplayWindowFactory {
+    public:
+        static CReadWindow* createReadInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        static CWriteWindow* createWriteInstance(QList<CSwordModuleInfo*> modules, CMDIArea* parent, const CDisplayWindow::WriteWindowType type = CDisplayWindow::HTMLWindow);
 
-private:
-	CDisplayWindowFactory();
+    private:
+        CDisplayWindowFactory();
 };
 
 #endif

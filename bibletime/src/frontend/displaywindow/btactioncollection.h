@@ -19,24 +19,23 @@ class QAction;
 class QKeySequence;
 class BtActionItem;
 
-class BtActionCollection : public QObject
-{
-   Q_OBJECT
-public:
-	BtActionCollection(QObject* parent);
-	~BtActionCollection();
-	QAction* addAction(const QString& name, QAction* action);
-	QAction* addAction(const QString &name, const QObject *receiver, const char* member=0);
-	QList<QAction*> actions();
-	QAction* action(const QString& name);
-	void setConfigGroup(const QString &group);
-	void readSettings();
-	void writeSettings();
-	QKeySequence getDefaultShortcut(QAction* action);
+class BtActionCollection : public QObject {
+        Q_OBJECT
+    public:
+        BtActionCollection(QObject* parent);
+        ~BtActionCollection();
+        QAction* addAction(const QString& name, QAction* action);
+        QAction* addAction(const QString &name, const QObject *receiver, const char* member = 0);
+        QList<QAction*> actions();
+        QAction* action(const QString& name);
+        void setConfigGroup(const QString &group);
+        void readSettings();
+        void writeSettings();
+        QKeySequence getDefaultShortcut(QAction* action);
 
-private:
-	QMap<QString, BtActionItem*> m_actions;
-	QString m_groupName;
+    private:
+        QMap<QString, BtActionItem*> m_actions;
+        QString m_groupName;
 };
 
 #endif

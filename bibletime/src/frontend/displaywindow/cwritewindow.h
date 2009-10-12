@@ -23,50 +23,50 @@ class BtActionCollection;
   */
 
 class CWriteWindow : public CDisplayWindow  {
-	Q_OBJECT
-public:
-	static void insertKeyboardActions( BtActionCollection* const a );
+        Q_OBJECT
+    public:
+        static void insertKeyboardActions( BtActionCollection* const a );
 
-	CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-	virtual ~CWriteWindow();
-	/**
-	* Store the settings of this window in the given CProfileWindow object.
-	*/
-	virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
-	/**
-	* Store the settings of this window in the given CProfileWindow object.
-	*/
-	virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
-	virtual void initConnections();
-	virtual void initActions();
+        CWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        virtual ~CWriteWindow();
+        /**
+        * Store the settings of this window in the given CProfileWindow object.
+        */
+        virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
+        /**
+        * Store the settings of this window in the given CProfileWindow object.
+        */
+        virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
+        virtual void initConnections();
+        virtual void initActions();
 
-public slots:
-	/**
-	* Look up the given key and display the text. In our case we offer to edit the text.
-	*/
-	virtual void lookupSwordKey( CSwordKey* key );
+    public slots:
+        /**
+        * Look up the given key and display the text. In our case we offer to edit the text.
+        */
+        virtual void lookupSwordKey( CSwordKey* key );
 
 
-protected: // Protected methods
-	/**
-	* Saves the given text as text of the given key. Use this function
-	* as backend in each write window implementation.
-	*/
-	void setDisplayWidget( CDisplay* display );
-	virtual CDisplayWindow::WriteWindowType writeWindowType() = 0;
-	virtual bool queryClose();
-	virtual void saveCurrentText( const QString& key ) = 0;
+    protected: // Protected methods
+        /**
+        * Saves the given text as text of the given key. Use this function
+        * as backend in each write window implementation.
+        */
+        void setDisplayWidget( CDisplay* display );
+        virtual CDisplayWindow::WriteWindowType writeWindowType() = 0;
+        virtual bool queryClose();
+        virtual void saveCurrentText( const QString& key ) = 0;
 
-protected slots:
-	/** Save text to the module
-	*/
-	void saveCurrentText();
-	/**
-	 */
-	virtual void beforeKeyChange(const QString&);
+    protected slots:
+        /** Save text to the module
+        */
+        void saveCurrentText();
+        /**
+         */
+        virtual void beforeKeyChange(const QString&);
 
-private:
-	CWriteDisplay* m_writeDisplay;
+    private:
+        CWriteDisplay* m_writeDisplay;
 };
 
 #endif

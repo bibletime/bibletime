@@ -28,52 +28,52 @@ class QResizeEvent;
   */
 
 class CReadWindow : public CDisplayWindow  {
-	Q_OBJECT
-public:
-	//  static void insertKeyboardActions( KAccel* const a );
-	static void insertKeyboardActions( BtActionCollection* const a );
+        Q_OBJECT
+    public:
+        //  static void insertKeyboardActions( KAccel* const a );
+        static void insertKeyboardActions( BtActionCollection* const a );
 
-	CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
-	virtual ~CReadWindow();
-	/**
-	* Store the settings of this window in the given CProfileWindow object.
-	*/
-	virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
-	/**
-	* Store the settings of this window in the given CProfileWindow object.
-	*/
-	virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
+        CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
+        virtual ~CReadWindow();
+        /**
+        * Store the settings of this window in the given CProfileWindow object.
+        */
+        virtual void storeProfileSettings(Profile::CProfileWindow * const settings);
+        /**
+        * Store the settings of this window in the given CProfileWindow object.
+        */
+        virtual void applyProfileSettings(Profile::CProfileWindow * const settings);
 
-protected: // Protected methods
-	/**
-	* Sets the display widget of this display window.
-	*/
-	virtual void setDisplayWidget( CDisplay* newDisplay );
-	/**
-	 */
-	virtual void resizeEvent(QResizeEvent* e);
+    protected: // Protected methods
+        /**
+        * Sets the display widget of this display window.
+        */
+        virtual void setDisplayWidget( CDisplay* newDisplay );
+        /**
+         */
+        virtual void resizeEvent(QResizeEvent* e);
 
-protected slots:
-	/**
-	* Load the text using the key
-	*/
-	virtual void lookupSwordKey( CSwordKey* );
-	/**
-	* Catch the signal when the KHTMLPart has finished the layout (anchors are not ready before that).
-	*/
-	virtual void slotMoveToAnchor();
+    protected slots:
+        /**
+        * Load the text using the key
+        */
+        virtual void lookupSwordKey( CSwordKey* );
+        /**
+        * Catch the signal when the KHTMLPart has finished the layout (anchors are not ready before that).
+        */
+        virtual void slotMoveToAnchor();
 
-	/**
-	* Update the status of the popup menu entries.
-	*/
-	virtual void copyDisplayedText();
-	/** Open the search dialog with the strong info of the last clicked word.
-	 * 
-	*/
-	void openSearchStrongsDialog();
+        /**
+        * Update the status of the popup menu entries.
+        */
+        virtual void copyDisplayedText();
+        /** Open the search dialog with the strong info of the last clicked word.
+         *
+        */
+        void openSearchStrongsDialog();
 
-private:
-	CReadDisplay* m_displayWidget;
+    private:
+        CReadDisplay* m_displayWidget;
 };
 
 #endif

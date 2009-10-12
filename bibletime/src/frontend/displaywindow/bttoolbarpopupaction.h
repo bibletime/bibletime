@@ -17,36 +17,35 @@ class QIcon;
 class QToolButton;
 
 // This class manages the toolbar display for going forward and backward in history.
-class BtToolBarPopupAction : public QWidgetAction  
-{
-	Q_OBJECT
-public:
+class BtToolBarPopupAction : public QWidgetAction {
+        Q_OBJECT
+    public:
 
-	BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent);
-	~BtToolBarPopupAction();	
+        BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent);
+        ~BtToolBarPopupAction();
 
 // return the QMenu object so a popup menu can be constructed
-	QMenu* popupMenu() const;
+        QMenu* popupMenu() const;
 
 // Function to catch the Shortcut event and emit the triggered signal
-	virtual bool event(QEvent* e);
-	
-signals:
-	void triggered();
+        virtual bool event(QEvent* e);
 
-protected:
-	QWidget* createWidget(QWidget* parent);
+    signals:
+        void triggered();
 
-private slots:
+    protected:
+        QWidget* createWidget(QWidget* parent);
+
+    private slots:
 
 // Slot to emit a triggered signal when the toolbar button is pressed
-	void buttonPressed();
+        void buttonPressed();
 
-private:
-	QMenu* m_menu;
-	QToolButton* m_button;
-	QIcon m_icon;
-	QString m_text;
+    private:
+        QMenu* m_menu;
+        QToolButton* m_button;
+        QIcon m_icon;
+        QString m_text;
 };
 
 #endif
