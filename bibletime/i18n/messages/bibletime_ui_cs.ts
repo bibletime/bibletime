@@ -250,6 +250,18 @@
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">Vložte klíč k odemknutí modulu.</translation>
     </message>
+    <message>
+        <source>Close &amp;window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the current open window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O&amp;pen Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -271,19 +283,19 @@
     </message>
     <message>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation>Qt Open Source Edition je určena k vývoji Open Source aplikací.</translation>
+        <translation type="obsolete">Qt Open Source Edition je určena k vývoji Open Source aplikací.</translation>
     </message>
     <message>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation>Qt je multiplatformní knihovna pro vývoj aplikací v C++.</translation>
+        <translation type="obsolete">Qt je multiplatformní knihovna pro vývoj aplikací v C++.</translation>
     </message>
     <message>
         <source>Please see </source>
-        <translation>Prosím podívejte se</translation>
+        <translation type="obsolete">Prosím podívejte se</translation>
     </message>
     <message>
         <source> for an overview of Qt licensing.</source>
-        <translation> na náhled QT licence.</translation>
+        <translation type="obsolete"> na náhled QT licence.</translation>
     </message>
     <message>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
@@ -375,7 +387,7 @@
     </message>
     <message>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation>Tento program používá Qt Open Source Edition verze %1</translation>
+        <translation type="obsolete">Tento program používá Qt Open Source Edition verze %1</translation>
     </message>
     <message>
         <source>License</source>
@@ -384,6 +396,14 @@
     <message>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime je uvolněna pod licencí GLP</translation>
+    </message>
+    <message>
+        <source>This program uses Qt version %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -775,6 +795,10 @@
     </message>
     <message>
         <source>Second shortcut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select first or second shortcut and type the shortcut with keyboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3055,91 +3079,76 @@ Language name ppk</extracomment>
     <message>
         <source>OK</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>OK</translation>
     </message>
     <message>
         <source>Open</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Otevřít</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Uložit</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Zpět</translation>
     </message>
     <message>
         <source>Close</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Zavřít</translation>
     </message>
     <message>
         <source>Discard</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Zahodit</translation>
     </message>
     <message>
         <source>Apply</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Aplikovat</translation>
     </message>
     <message>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Resetovat</translation>
     </message>
     <message>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Obnovit výchozí</translation>
     </message>
     <message>
         <source>Help</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Nápověda</translation>
     </message>
     <message>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Uložit vše</translation>
     </message>
     <message>
         <source>Yes</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ano</translation>
     </message>
     <message>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ano všem</translation>
     </message>
     <message>
         <source>No</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ne</translation>
     </message>
     <message>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ne všem</translation>
     </message>
 </context>

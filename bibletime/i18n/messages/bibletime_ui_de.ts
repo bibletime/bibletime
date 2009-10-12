@@ -250,6 +250,18 @@
         <source>Enter the unlock key for this work.</source>
         <translation type="unfinished">Geben Sie den Schlüssel für dieses Werke ein</translation>
     </message>
+    <message>
+        <source>Close &amp;window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the current open window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O&amp;pen Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BtAboutDialog</name>
@@ -347,23 +359,23 @@
     </message>
     <message>
         <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation>Dieses Programm nutzt die Qt Open Source Edition Version %1.</translation>
+        <translation type="obsolete">Dieses Programm nutzt die Qt Open Source Edition Version %1.</translation>
     </message>
     <message>
         <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation>Qt Open Source Edition ist zur Entwicklung von Open-Source-Applikationen gedacht.</translation>
+        <translation type="obsolete">Qt Open Source Edition ist zur Entwicklung von Open-Source-Applikationen gedacht.</translation>
     </message>
     <message>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation>Qt ist ein C++-Werkzeugsatz zur plattformübergreifenden Entwicklung von Applikationen.</translation>
+        <translation type="obsolete">Qt ist ein C++-Werkzeugsatz zur plattformübergreifenden Entwicklung von Applikationen.</translation>
     </message>
     <message>
         <source>Please see </source>
-        <translation>Bitte sehen Sie</translation>
+        <translation type="obsolete">Bitte sehen Sie</translation>
     </message>
     <message>
         <source> for an overview of Qt licensing.</source>
-        <translation>für eine Übersicht über die Qt-Lizensierung.</translation>
+        <translation type="obsolete">für eine Übersicht über die Qt-Lizensierung.</translation>
     </message>
     <message>
         <source>License</source>
@@ -384,6 +396,14 @@
     <message>
         <source>The complete legally binding license is below.</source>
         <translation>Die vollständige, rechtlich bindende Lizenz findet sich unten.</translation>
+    </message>
+    <message>
+        <source>This program uses Qt version %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -776,6 +796,10 @@
     <message>
         <source>Second shortcut</source>
         <translation>Zweiter Kurzbefehl</translation>
+    </message>
+    <message>
+        <source>Select first or second shortcut and type the shortcut with keyboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3055,91 +3079,76 @@ Language name ppk</extracomment>
     <message>
         <source>OK</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>OK</translation>
     </message>
     <message>
         <source>Open</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Öffnen</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Speichern</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Close</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Schließen</translation>
     </message>
     <message>
         <source>Discard</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Verwerfen</translation>
     </message>
     <message>
         <source>Apply</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Anwenden</translation>
     </message>
     <message>
         <source>Reset</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Zurücksetzen</translation>
     </message>
     <message>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Standard wiederherstellen</translation>
     </message>
     <message>
         <source>Help</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Hilfe</translation>
     </message>
     <message>
         <source>Save All</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Alles speichern</translation>
     </message>
     <message>
         <source>Yes</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ja</translation>
     </message>
     <message>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Ja zu allem</translation>
     </message>
     <message>
         <source>No</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Nein</translation>
     </message>
     <message>
         <source>No to all</source>
         <comment>Dialog Button</comment>
-        <extracomment>Standard button</extracomment>
         <translation>Nein zu allem</translation>
     </message>
 </context>
