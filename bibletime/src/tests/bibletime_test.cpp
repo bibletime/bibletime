@@ -11,9 +11,8 @@
 
 #include <QtTest/QtTest>
 
-void BibleTimeTest::dummyTest() 
-{ 
-	QCOMPARE(QString("Hello").toUpper(), QString("HELLO")); 
+void BibleTimeTest::dummyTest() {
+    QCOMPARE(QString("Hello").toUpper(), QString("HELLO"));
 }
 
 

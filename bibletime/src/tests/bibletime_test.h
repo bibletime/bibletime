@@ -12,16 +12,15 @@
 
 #include <QObject>
 
-class BibleTimeTest: public QObject
-{
-	Q_OBJECT
+class BibleTimeTest: public QObject {
+        Q_OBJECT
 
-private slots:
-	//frontend
-    void frontend_cbtconfig_test();
-    
-    //dummy test
-    void dummyTest();
+    private slots:
+        //frontend
+        void frontend_cbtconfig_test();
+
+        //dummy test
+        void dummyTest();
 };
 
 
