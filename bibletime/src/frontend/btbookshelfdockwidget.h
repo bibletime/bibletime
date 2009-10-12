@@ -30,7 +30,7 @@ class QToolBar;
 class QToolButton;
 
 class BtBookshelfDockWidget: public QDockWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BtBookshelfDockWidget(QWidget *parent = 0, Qt::WindowFlags f = 0);
 
@@ -50,10 +50,10 @@ class BtBookshelfDockWidget: public QDockWidget {
     protected slots:
         void swordSetupChanged();
         void showContextMenu(QPoint pos);
-            void groupingActionTriggered(QAction *action);
-            void showHideEnabled(bool enable);
+        void groupingActionTriggered(QAction *action);
+        void showHideEnabled(bool enable);
         void showItemContextMenu(CSwordModuleInfo *module, QPoint pos);
-            void itemActionTriggered(QAction *action);
+        void itemActionTriggered(QAction *action);
 
     protected:
         // Models:
@@ -72,23 +72,23 @@ class BtBookshelfDockWidget: public QDockWidget {
 
         // Popup menus:
         QMenu *m_contextMenu;
-            QMenu *m_groupingMenu;
-                QActionGroup *m_groupingActionGroup;
-                QAction *m_groupingCatLangAction;
-                QAction *m_groupingCatAction;
-                QAction *m_groupingLangCatAction;
-                QAction *m_groupingLangAction;
-                QAction *m_groupingNoneAction;
-            QAction *m_showHideAction;
+        QMenu *m_groupingMenu;
+        QActionGroup *m_groupingActionGroup;
+        QAction *m_groupingCatLangAction;
+        QAction *m_groupingCatAction;
+        QAction *m_groupingLangCatAction;
+        QAction *m_groupingLangAction;
+        QAction *m_groupingNoneAction;
+        QAction *m_showHideAction;
         QMenu *m_itemContextMenu;
-            QActionGroup *m_itemActionGroup;
-            QAction *m_itemOpenAction;
-            QAction *m_itemSearchAction;
-            QMenu   *m_itemEditMenu;
-                QAction *m_itemEditPlainAction;
-                QAction *m_itemEditHtmlAction;
-            QAction *m_itemUnlockAction;
-            QAction *m_itemAboutAction;
+        QActionGroup *m_itemActionGroup;
+        QAction *m_itemOpenAction;
+        QAction *m_itemSearchAction;
+        QMenu   *m_itemEditMenu;
+        QAction *m_itemEditPlainAction;
+        QAction *m_itemEditHtmlAction;
+        QAction *m_itemUnlockAction;
+        QAction *m_itemAboutAction;
 };
 
 #endif // BTBOOKSHELFDOCKWIDGET_H

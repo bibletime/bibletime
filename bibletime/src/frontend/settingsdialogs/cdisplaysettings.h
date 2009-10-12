@@ -19,25 +19,24 @@ class QCheckBox;
 class QComboBox;
 class QWebView;
 
-class CDisplaySettingsPage : public BtConfigPage
-{
-	Q_OBJECT
+class CDisplaySettingsPage : public BtConfigPage {
+        Q_OBJECT
 
-public:
-	CDisplaySettingsPage(QWidget* parent);
-	void save();
-	QString iconName();
-	QString label();
-	QString header();
+    public:
+        CDisplaySettingsPage(QWidget* parent);
+        void save();
+        QString iconName();
+        QString label();
+        QString header();
 
-protected slots:
-	/** Update the style preview widget. */
-	void updateStylePreview();
+    protected slots:
+        /** Update the style preview widget. */
+        void updateStylePreview();
 
-private:
-	QCheckBox* m_showLogoCheck;
-	QComboBox* m_styleChooserCombo;
-	QWebView* m_stylePreviewViewer;
+    private:
+        QCheckBox* m_showLogoCheck;
+        QComboBox* m_styleChooserCombo;
+        QWebView* m_stylePreviewViewer;
 };
 
 #endif

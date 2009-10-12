@@ -26,32 +26,32 @@ class QDialogButtonBox;
 class BtActionCollection;
 
 class CConfigurationDialog : public BtConfigDialog {
-	Q_OBJECT
+        Q_OBJECT
 
-public:
-	CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
-	virtual ~CConfigurationDialog();
-	void save();
+    public:
+        CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
+        virtual ~CConfigurationDialog();
+        void save();
 
-protected slots:
-	void slotButtonClicked(QAbstractButton *);
+    protected slots:
+        void slotButtonClicked(QAbstractButton *);
 
-private:
-	BtActionCollection* m_actionCollection;
-	CDisplaySettingsPage* m_displayPage;
-	CSwordSettingsPage* m_swordPage;
-	CAcceleratorSettingsPage* m_acceleratorsPage;
-	CLanguageSettingsPage* m_languagesPage;
-	QDialogButtonBox* m_bbox;
+    private:
+        BtActionCollection* m_actionCollection;
+        CDisplaySettingsPage* m_displayPage;
+        CSwordSettingsPage* m_swordPage;
+        CAcceleratorSettingsPage* m_acceleratorsPage;
+        CLanguageSettingsPage* m_languagesPage;
+        QDialogButtonBox* m_bbox;
 
-	// Load the settings from the resource file
-	void loadDialogSettings();
+        // Load the settings from the resource file
+        void loadDialogSettings();
 
-	// Save the settings to the resource file
-	void saveDialogSettings();
+        // Save the settings to the resource file
+        void saveDialogSettings();
 
-signals:
-	void signalSettingsChanged();
+    signals:
+        void signalSettingsChanged();
 };
 
 

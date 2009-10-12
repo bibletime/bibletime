@@ -27,69 +27,67 @@
 
 
 CInputDialog::CInputDialog
-	(const QString& caption, const QString& description, const QString& text, QWidget *parent, Qt::WindowFlags wflags )
-	: QDialog(parent, wflags)
-{
-	QVBoxLayout *vboxLayout;
-	QLabel *label;
-	QHBoxLayout *hboxLayout;
-	QPushButton *clearButton;
-	QSpacerItem *spacerItem;
-	QDialogButtonBox *buttonBox;
-	
-	setWindowTitle(caption);
+(const QString& caption, const QString& description, const QString& text, QWidget *parent, Qt::WindowFlags wflags )
+        : QDialog(parent, wflags) {
+    QVBoxLayout *vboxLayout;
+    QLabel *label;
+    QHBoxLayout *hboxLayout;
+    QPushButton *clearButton;
+    QSpacerItem *spacerItem;
+    QDialogButtonBox *buttonBox;
 
-	resize(400, 300);
-	vboxLayout = new QVBoxLayout(this);
-	label = new QLabel(description, this);
-	vboxLayout->addWidget(label);
+    setWindowTitle(caption);
 
-	m_textEdit = new QTextEdit(this);
-	vboxLayout->addWidget(m_textEdit);
-	m_textEdit->setWordWrapMode( QTextOption::WordWrap );
-	m_textEdit->setText(text);
-	if (!text.isEmpty())
-		m_textEdit->selectAll();
+    resize(400, 300);
+    vboxLayout = new QVBoxLayout(this);
+    label = new QLabel(description, this);
+    vboxLayout->addWidget(label);
 
-	hboxLayout = new QHBoxLayout();
-	clearButton = new QPushButton(this);
-	clearButton->setText(tr("Clear"));
-	hboxLayout->addWidget(clearButton);
-	spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-	hboxLayout->addItem(spacerItem);
-	buttonBox = new QDialogButtonBox(this);
-	buttonBox->setOrientation(Qt::Horizontal);
-	buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok);
-	util::prepareDialogBox(buttonBox);
-	hboxLayout->addWidget(buttonBox);
+    m_textEdit = new QTextEdit(this);
+    vboxLayout->addWidget(m_textEdit);
+    m_textEdit->setWordWrapMode( QTextOption::WordWrap );
+    m_textEdit->setText(text);
+    if (!text.isEmpty())
+        m_textEdit->selectAll();
 
-	vboxLayout->addLayout(hboxLayout);
+    hboxLayout = new QHBoxLayout();
+    clearButton = new QPushButton(this);
+    clearButton->setText(tr("Clear"));
+    hboxLayout->addWidget(clearButton);
+    spacerItem = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    hboxLayout->addItem(spacerItem);
+    buttonBox = new QDialogButtonBox(this);
+    buttonBox->setOrientation(Qt::Horizontal);
+    buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::NoButton | QDialogButtonBox::Ok);
+    util::prepareDialogBox(buttonBox);
+    hboxLayout->addWidget(buttonBox);
 
-	QObject::connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-	QObject::connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-	QObject::connect(clearButton, SIGNAL(clicked()), m_textEdit, SLOT(clear()));
+    vboxLayout->addLayout(hboxLayout);
 
-	m_textEdit->setFocus();
+    QObject::connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    QObject::connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    QObject::connect(clearButton, SIGNAL(clicked()), m_textEdit, SLOT(clear()));
+
+    m_textEdit->setFocus();
 }
 
 /** Returns the text entered at the moment. */
 const QString CInputDialog::text() {
-	return m_textEdit->toPlainText();
+    return m_textEdit->toPlainText();
 }
 
 /** A static function to get some using CInputDialog. */
 const QString CInputDialog::getText
-	( const QString& caption, const QString& description, const QString& text, bool* ok, QWidget* parent, Qt::WindowFlags wflags)
-{
-	CInputDialog* dlg = new CInputDialog(caption, description, text, parent, wflags);
+( const QString& caption, const QString& description, const QString& text, bool* ok, QWidget* parent, Qt::WindowFlags wflags) {
+    CInputDialog* dlg = new CInputDialog(caption, description, text, parent, wflags);
 
-	QString ret = QString::null;
-	*ok = (dlg->exec() == QDialog::Accepted)?true:false;
-	if (*ok) {
-		//qDebug() << "dialog was accepted, return text: " << dlg->text();
-		ret = dlg->text();
-	}
+    QString ret = QString::null;
+    *ok = (dlg->exec() == QDialog::Accepted) ? true : false;
+    if (*ok) {
+        //qDebug() << "dialog was accepted, return text: " << dlg->text();
+        ret = dlg->text();
+    }
 
-	delete dlg;
-	return ret;
+    delete dlg;
+    return ret;
 }

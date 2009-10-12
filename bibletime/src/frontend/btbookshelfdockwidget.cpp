@@ -36,8 +36,7 @@
 #include "util/directoryutil.h"
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
-    : QDockWidget(parent, f)
-{
+        : QDockWidget(parent, f) {
     setObjectName("BookshelfDock");
 
     // Setup models:
@@ -59,31 +58,31 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_widget = new QWidget(this);
     QVBoxLayout *layout(new QVBoxLayout);
     layout->setContentsMargins(0, 0, 0, 0);
-        QHBoxLayout *toolBar(new QHBoxLayout);
-            m_nameFilterLabel = new QLabel(this);
-            toolBar->addWidget(m_nameFilterLabel);
+    QHBoxLayout *toolBar(new QHBoxLayout);
+    m_nameFilterLabel = new QLabel(this);
+    toolBar->addWidget(m_nameFilterLabel);
 
-            m_nameFilterEdit = new QLineEdit(this);
-            m_nameFilterEdit->installEventFilter(this);
-            m_nameFilterLabel->setBuddy(m_nameFilterEdit);
-            toolBar->addWidget(m_nameFilterEdit);
+    m_nameFilterEdit = new QLineEdit(this);
+    m_nameFilterEdit->installEventFilter(this);
+    m_nameFilterLabel->setBuddy(m_nameFilterEdit);
+    toolBar->addWidget(m_nameFilterEdit);
 
-            m_groupingButton = new QToolButton(this);
-            m_groupingButton->setPopupMode(QToolButton::InstantPopup);
-            m_groupingButton->setMenu(m_groupingMenu);
-            m_groupingButton->setIcon(m_groupingMenu->icon());
-            m_groupingButton->setAutoRaise(true);
-            toolBar->addWidget(m_groupingButton);
+    m_groupingButton = new QToolButton(this);
+    m_groupingButton->setPopupMode(QToolButton::InstantPopup);
+    m_groupingButton->setMenu(m_groupingMenu);
+    m_groupingButton->setIcon(m_groupingMenu->icon());
+    m_groupingButton->setAutoRaise(true);
+    toolBar->addWidget(m_groupingButton);
 
-            m_showHideButton = new QToolButton(this);
-            m_showHideButton->setDefaultAction(m_showHideAction);
-            m_showHideButton->setAutoRaise(true);
-            toolBar->addWidget(m_showHideButton);
-        layout->addLayout(toolBar);
+    m_showHideButton = new QToolButton(this);
+    m_showHideButton->setDefaultAction(m_showHideAction);
+    m_showHideButton->setAutoRaise(true);
+    toolBar->addWidget(m_showHideButton);
+    layout->addLayout(toolBar);
 
-        m_view = new BtBookshelfView(this);
-        m_view->setModel(m_nameFilterProxyModel);
-        layout->addWidget(m_view);
+    m_view = new BtBookshelfView(this);
+    m_view->setModel(m_nameFilterProxyModel);
+    layout->addWidget(m_view);
     m_widget->setLayout(layout);
     setWidget(m_widget);
 
@@ -95,8 +94,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
             this, SLOT(showContextMenu(QPoint)));
     connect(m_view,
-            SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*,QPoint)),
-            this, SLOT(showItemContextMenu(CSwordModuleInfo*,QPoint)));
+            SIGNAL(moduleContextMenuActivated(CSwordModuleInfo*, QPoint)),
+            this, SLOT(showItemContextMenu(CSwordModuleInfo*, QPoint)));
     connect(m_view, SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
 
@@ -126,82 +125,82 @@ void BtBookshelfDockWidget::initMenus() {
     namespace RM = CResMgr::mainIndex;
 
     m_contextMenu = new QMenu(this);
-        m_groupingMenu = new QMenu(this);
-        m_contextMenu->addMenu(m_groupingMenu);
-        m_groupingMenu->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingActionGroup = new QActionGroup(this);
-            connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
-                    this, SLOT(groupingActionTriggered(QAction*)));
+    m_groupingMenu = new QMenu(this);
+    m_contextMenu->addMenu(m_groupingMenu);
+    m_groupingMenu->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingActionGroup = new QActionGroup(this);
+    connect(m_groupingActionGroup, SIGNAL(triggered(QAction*)),
+            this, SLOT(groupingActionTriggered(QAction*)));
 
-            m_groupingCatLangAction = new QAction(this);
-            m_groupingCatLangAction->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingCatLangAction->setChecked(true);
-            m_groupingActionGroup->addAction(m_groupingCatLangAction);
-            m_groupingMenu->addAction(m_groupingCatLangAction);
+    m_groupingCatLangAction = new QAction(this);
+    m_groupingCatLangAction->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingCatLangAction->setChecked(true);
+    m_groupingActionGroup->addAction(m_groupingCatLangAction);
+    m_groupingMenu->addAction(m_groupingCatLangAction);
 
-            m_groupingCatAction = new QAction(this);
-            m_groupingCatAction->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingActionGroup->addAction(m_groupingCatAction);
-            m_groupingMenu->addAction(m_groupingCatAction);
+    m_groupingCatAction = new QAction(this);
+    m_groupingCatAction->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingActionGroup->addAction(m_groupingCatAction);
+    m_groupingMenu->addAction(m_groupingCatAction);
 
-            m_groupingLangCatAction = new QAction(this);
-            m_groupingLangCatAction->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingActionGroup->addAction(m_groupingLangCatAction);
-            m_groupingMenu->addAction(m_groupingLangCatAction);
+    m_groupingLangCatAction = new QAction(this);
+    m_groupingLangCatAction->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingActionGroup->addAction(m_groupingLangCatAction);
+    m_groupingMenu->addAction(m_groupingLangCatAction);
 
-            m_groupingLangAction = new QAction(this);
-            m_groupingLangAction->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingActionGroup->addAction(m_groupingLangAction);
-            m_groupingMenu->addAction(m_groupingLangAction);
+    m_groupingLangAction = new QAction(this);
+    m_groupingLangAction->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingActionGroup->addAction(m_groupingLangAction);
+    m_groupingMenu->addAction(m_groupingLangAction);
 
-            m_groupingNoneAction = new QAction(this);
-            m_groupingNoneAction->setIcon(DU::getIcon(RM::grouping::icon));
-            m_groupingActionGroup->addAction(m_groupingNoneAction);
-            m_groupingMenu->addAction(m_groupingNoneAction);
+    m_groupingNoneAction = new QAction(this);
+    m_groupingNoneAction->setIcon(DU::getIcon(RM::grouping::icon));
+    m_groupingActionGroup->addAction(m_groupingNoneAction);
+    m_groupingMenu->addAction(m_groupingNoneAction);
 
-        m_showHideAction = new QAction(this);
-        m_showHideAction->setIcon(DU::getIcon(RM::search::icon));
-        m_showHideAction->setCheckable(true);
-        connect(m_showHideAction, SIGNAL(toggled(bool)),
-                this, SLOT(showHideEnabled(bool)));
-        m_contextMenu->addAction(m_showHideAction);
+    m_showHideAction = new QAction(this);
+    m_showHideAction->setIcon(DU::getIcon(RM::search::icon));
+    m_showHideAction->setCheckable(true);
+    connect(m_showHideAction, SIGNAL(toggled(bool)),
+            this, SLOT(showHideEnabled(bool)));
+    m_contextMenu->addAction(m_showHideAction);
 
     m_itemContextMenu = new QMenu(this);
-        m_itemActionGroup = new QActionGroup(this);
-        connect(m_itemActionGroup, SIGNAL(triggered(QAction*)),
-                this,              SLOT(itemActionTriggered(QAction*)));
+    m_itemActionGroup = new QActionGroup(this);
+    connect(m_itemActionGroup, SIGNAL(triggered(QAction*)),
+            this,              SLOT(itemActionTriggered(QAction*)));
 
-        m_itemOpenAction = new QAction(this);
-        m_itemActionGroup->addAction(m_itemOpenAction);
-        m_itemContextMenu->addAction(m_itemOpenAction);
+    m_itemOpenAction = new QAction(this);
+    m_itemActionGroup->addAction(m_itemOpenAction);
+    m_itemContextMenu->addAction(m_itemOpenAction);
 
-        m_itemSearchAction = new QAction(this);
-        m_itemSearchAction->setIcon(DU::getIcon(RM::search::icon));
-        m_itemActionGroup->addAction(m_itemSearchAction);
-        m_itemContextMenu->addAction(m_itemSearchAction);
+    m_itemSearchAction = new QAction(this);
+    m_itemSearchAction->setIcon(DU::getIcon(RM::search::icon));
+    m_itemActionGroup->addAction(m_itemSearchAction);
+    m_itemContextMenu->addAction(m_itemSearchAction);
 
-        m_itemEditMenu = new QMenu(this);
-        m_itemEditMenu->setIcon(DU::getIcon(RM::editModuleMenu::icon));
-        m_itemContextMenu->addMenu(m_itemEditMenu);
-            m_itemEditPlainAction = new QAction(this);
-            m_itemEditPlainAction->setIcon(DU::getIcon(RM::editModulePlain::icon));
-            m_itemActionGroup->addAction(m_itemEditPlainAction);
-            m_itemEditMenu->addAction(m_itemEditPlainAction);
+    m_itemEditMenu = new QMenu(this);
+    m_itemEditMenu->setIcon(DU::getIcon(RM::editModuleMenu::icon));
+    m_itemContextMenu->addMenu(m_itemEditMenu);
+    m_itemEditPlainAction = new QAction(this);
+    m_itemEditPlainAction->setIcon(DU::getIcon(RM::editModulePlain::icon));
+    m_itemActionGroup->addAction(m_itemEditPlainAction);
+    m_itemEditMenu->addAction(m_itemEditPlainAction);
 
-            m_itemEditHtmlAction = new QAction(this);
-            m_itemEditHtmlAction->setIcon(DU::getIcon(RM::editModuleHTML::icon));
-            m_itemActionGroup->addAction(m_itemEditHtmlAction);
-            m_itemEditMenu->addAction(m_itemEditHtmlAction);
+    m_itemEditHtmlAction = new QAction(this);
+    m_itemEditHtmlAction->setIcon(DU::getIcon(RM::editModuleHTML::icon));
+    m_itemActionGroup->addAction(m_itemEditHtmlAction);
+    m_itemEditMenu->addAction(m_itemEditHtmlAction);
 
-        m_itemUnlockAction = new QAction(this);
-        m_itemUnlockAction->setIcon(DU::getIcon(RM::unlockModule::icon));
-        m_itemActionGroup->addAction(m_itemUnlockAction);
-        m_itemContextMenu->addAction(m_itemUnlockAction);
+    m_itemUnlockAction = new QAction(this);
+    m_itemUnlockAction->setIcon(DU::getIcon(RM::unlockModule::icon));
+    m_itemActionGroup->addAction(m_itemUnlockAction);
+    m_itemContextMenu->addAction(m_itemUnlockAction);
 
-        m_itemAboutAction = new QAction(this);
-        m_itemAboutAction->setIcon(DU::getIcon(RM::aboutModule::icon));
-        m_itemActionGroup->addAction(m_itemAboutAction);
-        m_itemContextMenu->addAction(m_itemAboutAction);
+    m_itemAboutAction = new QAction(this);
+    m_itemAboutAction->setIcon(DU::getIcon(RM::aboutModule::icon));
+    m_itemActionGroup->addAction(m_itemAboutAction);
+    m_itemContextMenu->addAction(m_itemAboutAction);
 }
 
 void BtBookshelfDockWidget::retranslateInterface() {
@@ -212,17 +211,17 @@ void BtBookshelfDockWidget::retranslateInterface() {
     m_groupingButton->setToolTip(tr("Change the grouping of items in the bookshelf."));
 
     m_groupingMenu->setTitle(tr("Grouping"));
-        m_groupingCatLangAction->setText(tr("Category/Language"));
-        m_groupingCatAction->setText(tr("Category"));
-        m_groupingLangCatAction->setText(tr("Language/Category"));
-        m_groupingLangAction->setText(tr("Language"));
-        m_groupingNoneAction->setText(tr("No grouping"));
+    m_groupingCatLangAction->setText(tr("Category/Language"));
+    m_groupingCatAction->setText(tr("Category"));
+    m_groupingLangCatAction->setText(tr("Language/Category"));
+    m_groupingLangAction->setText(tr("Language"));
+    m_groupingNoneAction->setText(tr("No grouping"));
     m_showHideAction->setText(tr("Show/hide works"));
 
     m_itemOpenAction->setText(tr("&Open"));
     m_itemEditMenu->setTitle(tr("&Edit"));
-        m_itemEditPlainAction->setText(tr("&Plain text"));
-        m_itemEditHtmlAction->setText(tr("&HTML"));
+    m_itemEditPlainAction->setText(tr("&Plain text"));
+    m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
 }
@@ -245,12 +244,15 @@ void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
     BtBookshelfTreeModel::Grouping g;
     if (action == m_groupingCatAction) {
         g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
-    } else if (action == m_groupingCatLangAction) {
+    }
+    else if (action == m_groupingCatLangAction) {
         g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
         g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    } else if (action == m_groupingLangAction) {
+    }
+    else if (action == m_groupingLangAction) {
         g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
-    } else if (action == m_groupingLangCatAction) {
+    }
+    else if (action == m_groupingLangCatAction) {
         g.append(BtBookshelfTreeModel::GROUP_LANGUAGE);
         g.append(BtBookshelfTreeModel::GROUP_CATEGORY);
     }
@@ -262,15 +264,15 @@ void BtBookshelfDockWidget::showHideEnabled(bool enable) {
     if (enable) {
         m_bookshelfTreeModel->setCheckable(true);
         m_filterProxyModel->setEnabled(false);
-    } else {
+    }
+    else {
         m_filterProxyModel->setEnabled(true);
         m_bookshelfTreeModel->setCheckable(false);
     }
 }
 
 void BtBookshelfDockWidget::showItemContextMenu(CSwordModuleInfo *module,
-                                                QPoint pos)
-{
+        QPoint pos) {
     m_itemContextMenu->setProperty("BtModule", qVariantFromValue((void*) module));
     m_itemSearchAction->setText(tr("&Search in %1...").arg(module->name()));
     m_itemOpenAction->setEnabled(!module->isLocked());
@@ -286,15 +288,20 @@ void BtBookshelfDockWidget::itemActionTriggered(QAction *action) {
 
     if (action == m_itemOpenAction) {
         emit moduleOpenTriggered(module);
-    } else if (action == m_itemSearchAction) {
+    }
+    else if (action == m_itemSearchAction) {
         emit moduleSearchTriggered(module);
-    } else if (action == m_itemEditPlainAction) {
+    }
+    else if (action == m_itemEditPlainAction) {
         emit moduleEditPlainTriggered(module);
-    } else if (action == m_itemEditHtmlAction) {
+    }
+    else if (action == m_itemEditHtmlAction) {
         emit moduleEditHtmlTriggered(module);
-    } else if (action == m_itemUnlockAction) {
+    }
+    else if (action == m_itemUnlockAction) {
         emit moduleUnlockTriggered(module);
-    } else if (action == m_itemAboutAction) {
+    }
+    else if (action == m_itemAboutAction) {
         emit moduleAboutTriggered(module);
     }
 }

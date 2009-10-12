@@ -19,41 +19,40 @@ class QRadioButton;
 // *************** BtShortcutsDialog ***************************************************************************
 // A dialog to allow the user to input a shortcut for a primary and alternate key
 
-class BtShortcutsDialog : public QDialog
-{
-	Q_OBJECT;
-public:
-	BtShortcutsDialog(QWidget* parent);
+class BtShortcutsDialog : public QDialog {
+        Q_OBJECT;
+    public:
+        BtShortcutsDialog(QWidget* parent);
 
 
-	// get new first keys from dialog
-	QString getFirstKeys();
+        // get new first keys from dialog
+        QString getFirstKeys();
 
-	// set the initial value of the first keys
-	void setFirstKeys(const QString& keys);
-	
-	// get new second keys from dialog
-	QString getSecondKeys();
+        // set the initial value of the first keys
+        void setFirstKeys(const QString& keys);
 
-	// set the initial value of the second keys
-	void setSecondKeys(const QString& keys);
+        // get new second keys from dialog
+        QString getSecondKeys();
 
-	// change the First or Second shortcut in the dialog
-	void changeSelectedShortcut(const QString& keys);
+        // set the initial value of the second keys
+        void setSecondKeys(const QString& keys);
 
-signals:
-	// make a keyChangeRequest back to the application
-	void keyChangeRequest(const QString& keys);
+        // change the First or Second shortcut in the dialog
+        void changeSelectedShortcut(const QString& keys);
 
-protected:
-	// get key from users input, put into primary or alternate label for display to user
-	void keyReleaseEvent(QKeyEvent* event);
+    signals:
+        // make a keyChangeRequest back to the application
+        void keyChangeRequest(const QString& keys);
 
-private:
-	QLabel* m_primaryLabel;
-	QLabel* m_alternateLabel;
-	QRadioButton* m_primaryButton;
-	QRadioButton* m_alternateButton;
+    protected:
+        // get key from users input, put into primary or alternate label for display to user
+        void keyReleaseEvent(QKeyEvent* event);
+
+    private:
+        QLabel* m_primaryLabel;
+        QLabel* m_alternateLabel;
+        QRadioButton* m_primaryButton;
+        QRadioButton* m_alternateButton;
 };
 
 #endif

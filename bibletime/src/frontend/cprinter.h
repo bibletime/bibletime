@@ -18,26 +18,24 @@
 
 class QWebPage;
 
-namespace Printing 
-{
+namespace Printing {
 
-	 // The CPrinter class manages the print item queue and the printing of them to the printer.
+// The CPrinter class manages the print item queue and the printing of them to the printer.
 
-class CPrinter : public QObject, public Rendering::CDisplayRendering
-{
-	Q_OBJECT
-public:
-	CPrinter(QObject* parent, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
-	virtual ~CPrinter();
-	void printKeyTree( KeyTree& );
+class CPrinter : public QObject, public Rendering::CDisplayRendering {
+        Q_OBJECT
+    public:
+        CPrinter(QObject* parent, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
+        virtual ~CPrinter();
+        void printKeyTree( KeyTree& );
 
-protected:
-	virtual const QString entryLink(const KeyTreeItem& item, CSwordModuleInfo* const module);
-	virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
-	virtual const QString finishText(const QString& arg1, KeyTree& tree);
+    protected:
+        virtual const QString entryLink(const KeyTreeItem& item, CSwordModuleInfo* const module);
+        virtual const QString renderEntry( const KeyTreeItem&, CSwordKey* = 0 );
+        virtual const QString finishText(const QString& arg1, KeyTree& tree);
 
-private:
-	QWebPage* m_htmlPage;
+    private:
+        QWebPage* m_htmlPage;
 };
 
 } //namespace Printing

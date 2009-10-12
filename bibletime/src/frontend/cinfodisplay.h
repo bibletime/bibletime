@@ -26,44 +26,44 @@ class QSize;
 namespace InfoDisplay {
 
 class CInfoDisplay : public QWidget {
-	Q_OBJECT
-public:
-	enum InfoType {
-		Abbreviation,
-		CrossReference,
-		Footnote,
-		Lemma,
-		Morph,
-		WordTranslation,
-		WordGloss,
-		Text
-	};
+        Q_OBJECT
+    public:
+        enum InfoType {
+            Abbreviation,
+            CrossReference,
+            Footnote,
+            Lemma,
+            Morph,
+            WordTranslation,
+            WordGloss,
+            Text
+        };
 
-	typedef QPair<InfoType, QString> InfoData;
-	typedef QList<InfoData> ListInfoData;
+        typedef QPair<InfoType, QString> InfoData;
+        typedef QList<InfoData> ListInfoData;
 
-	CInfoDisplay(QWidget *parent = 0);
-	virtual ~CInfoDisplay();
+        CInfoDisplay(QWidget *parent = 0);
+        virtual ~CInfoDisplay();
 
-	void setInfo(const InfoType, const QString& data);
-	void setInfo(const ListInfoData&);
-	void clearInfo();
-	QSize sizeHint() const;
+        void setInfo(const InfoType, const QString& data);
+        void setInfo(const ListInfoData&);
+        void clearInfo();
+        QSize sizeHint() const;
 
-protected:
-	const QString decodeAbbreviation( const QString& data );
-	const QString decodeCrossReference( const QString& data );
-	const QString decodeFootnote( const QString& data );
-	const QString decodeStrongs( const QString& data );
-	const QString decodeMorph( const QString& data );
-	const QString getWordTranslation( const QString& data );
+    protected:
+        const QString decodeAbbreviation( const QString& data );
+        const QString decodeCrossReference( const QString& data );
+        const QString decodeFootnote( const QString& data );
+        const QString decodeStrongs( const QString& data );
+        const QString decodeMorph( const QString& data );
+        const QString getWordTranslation( const QString& data );
 
-protected slots:
-	void lookupInfo(const QString &, const QString &);
+    protected slots:
+        void lookupInfo(const QString &, const QString &);
 
-private:
-	CReadDisplay* m_htmlPart;
-	QAction* m_copyAction;
+    private:
+        CReadDisplay* m_htmlPart;
+        QAction* m_copyAction;
 };
 
 } //end of InfoDisplay namespace

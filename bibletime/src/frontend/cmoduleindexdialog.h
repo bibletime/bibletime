@@ -1,7 +1,7 @@
 //
 // C++ Interface: cmoduleindexdialog
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2006-2007
@@ -29,33 +29,33 @@ class QProgressDialog;
  * @author The BibleTime team <info@bibletime.info>
 */
 class CModuleIndexDialog : public QObject {
-	Q_OBJECT
-public:
-	/** Get the singleton instance.
-	 *
-	 */
-	static CModuleIndexDialog* getInstance();
+        Q_OBJECT
+    public:
+        /** Get the singleton instance.
+         *
+         */
+        static CModuleIndexDialog* getInstance();
 
-	/** Starts the actual indexing. It shows the dialog with progress information.
-	 */
-	void indexAllModules( const QList<CSwordModuleInfo*>& modules );
-	
-	/** Indexes all modules in the list which don't have an index yet.
-	 */
-	void indexUnindexedModules( const QList<CSwordModuleInfo*>& modules );
+        /** Starts the actual indexing. It shows the dialog with progress information.
+         */
+        void indexAllModules( const QList<CSwordModuleInfo*>& modules );
 
-signals:
-	/** Indexing is cancelled programmatically. */
-	void sigCancel();
+        /** Indexes all modules in the list which don't have an index yet.
+         */
+        void indexUnindexedModules( const QList<CSwordModuleInfo*>& modules );
 
-private:
-	QProgressDialog* m_progress;
-	int m_currentModuleIndex;
-	
-protected slots:
-    void slotModuleProgress( int percentage );
-	void slotFinished();
-	void slotSwordSetupChanged();
+    signals:
+        /** Indexing is cancelled programmatically. */
+        void sigCancel();
+
+    private:
+        QProgressDialog* m_progress;
+        int m_currentModuleIndex;
+
+    protected slots:
+        void slotModuleProgress( int percentage );
+        void slotFinished();
+        void slotSwordSetupChanged();
 };
 
 #endif

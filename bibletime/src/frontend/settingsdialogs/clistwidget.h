@@ -16,13 +16,13 @@
 #include <QListWidget>
 
 class CListWidget : public QListWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-public:
-	CListWidget(QWidget* parent = 0);
-	~CListWidget();
-	virtual QSize sizeHint () const;
-	void setCharWidth(int width);
+    public:
+        CListWidget(QWidget* parent = 0);
+        ~CListWidget();
+        virtual QSize sizeHint () const;
+        void setCharWidth(int width);
 };
 
 #endif

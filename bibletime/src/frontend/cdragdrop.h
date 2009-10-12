@@ -22,19 +22,25 @@
 * Can be created only through BTMimeData object.
 */
 class BookmarkItem {
-public:
-	/** Returns the key */
-	const QString& key() const {return m_key;} ;
-	/** Returns the module name */
-	const QString& module() const {return m_moduleName;} ;
-	/** Returns the bookmark description */
-	const QString& description() const {return m_description;};
-protected:
-	friend class BTMimeData;
-	BookmarkItem(QString, QString, QString);
-	QString m_moduleName; //the module which is used by this item
-	QString m_key; //the key of a bookmark
-	QString m_description; //the description of a bookmark
+    public:
+        /** Returns the key */
+        const QString& key() const {
+            return m_key;
+        } ;
+        /** Returns the module name */
+        const QString& module() const {
+            return m_moduleName;
+        } ;
+        /** Returns the bookmark description */
+        const QString& description() const {
+            return m_description;
+        };
+    protected:
+        friend class BTMimeData;
+        BookmarkItem(QString, QString, QString);
+        QString m_moduleName; //the module which is used by this item
+        QString m_key; //the key of a bookmark
+        QString m_description; //the description of a bookmark
 };
 
 
@@ -47,39 +53,41 @@ protected:
 * For further documentation see http://doc.trolltech.com/4.3/dnd.html
 */
 class BTMimeData : public QMimeData {
-	Q_OBJECT
-public:
+        Q_OBJECT
+    public:
 
-	/** Type for bookmark item list. Usage: BTMimeData::ItemList. */
-	typedef QList<BookmarkItem> ItemList;
-	
-	/** Creates a new empty BTMimeData. */
-	BTMimeData();
+        /** Type for bookmark item list. Usage: BTMimeData::ItemList. */
+        typedef QList<BookmarkItem> ItemList;
 
-	virtual ~BTMimeData();
+        /** Creates a new empty BTMimeData. */
+        BTMimeData();
 
-	/** Creates a new BTMimeData.
-	* Creates a new bookmark item and appends it to the list.
-	* MIME type "BibleTime/Bookmark" is added.
-	* Bookmarks can not be reached by data() method, use bookmark() or bookmarks() instead.
-	*/
-	BTMimeData(QString module, QString key, QString description);
-	/** Creates a new BTMimeData, setting the text MIME type (see QMimeData::setText()). */
-	BTMimeData(QString text);
-	
+        virtual ~BTMimeData();
 
-	/** Appends a new bookmark item into the list.
-	* Creates the item using the arguments.
-	* MIME type "BibleTime/Bookmark" is added.
-	*/
-	virtual void appendBookmark(QString module, QString key, QString description);
-	/** Returns the bookmarks list. */
-	virtual const ItemList& bookmarks() const {return m_bookmarkList;} ;
-	/** Returns the first bookmark item in the list. */
-	virtual const BookmarkItem& bookmark() const;
+        /** Creates a new BTMimeData.
+        * Creates a new bookmark item and appends it to the list.
+        * MIME type "BibleTime/Bookmark" is added.
+        * Bookmarks can not be reached by data() method, use bookmark() or bookmarks() instead.
+        */
+        BTMimeData(QString module, QString key, QString description);
+        /** Creates a new BTMimeData, setting the text MIME type (see QMimeData::setText()). */
+        BTMimeData(QString text);
 
-private:
-	ItemList m_bookmarkList;
+
+        /** Appends a new bookmark item into the list.
+        * Creates the item using the arguments.
+        * MIME type "BibleTime/Bookmark" is added.
+        */
+        virtual void appendBookmark(QString module, QString key, QString description);
+        /** Returns the bookmarks list. */
+        virtual const ItemList& bookmarks() const {
+            return m_bookmarkList;
+        } ;
+        /** Returns the first bookmark item in the list. */
+        virtual const BookmarkItem& bookmark() const;
+
+    private:
+        ItemList m_bookmarkList;
 };
 
 #endif
