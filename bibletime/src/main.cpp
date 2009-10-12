@@ -175,7 +175,7 @@ int main(int argc, char* argv[]) {
     app.setProperty("--debug", QVariant(showDebugMessages));
 
     //Migrate configuration data, if neccessary
-    util::MigrationUtil::checkMigration();
+    util::migration::checkMigration();
 
 //	setSignalHandler(signalHandler);
 

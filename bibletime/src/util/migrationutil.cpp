@@ -19,8 +19,9 @@
 
 
 namespace util {
+namespace migration {
 
-void MigrationUtil::checkMigration() {
+void checkMigration() {
     if (CBTConfig::get(CBTConfig::bibletimeVersion) != BT_VERSION) {
         sword::SWVersion lastVersion(CBTConfig::get(CBTConfig::bibletimeVersion).toUtf8());
         //lastVersion will be 0.0, if it was an old KDE install,
@@ -31,8 +32,8 @@ void MigrationUtil::checkMigration() {
     }
 }
 
-//Migration code for KDE 4 port, moves from old config dir to ~/.bibletime/
-void MigrationUtil::tryMigrationFromKDE3() {
+// Migration code for KDE 4 port, moves from old config dir to ~/.bibletime/
+void tryMigrationFromKDE3() {
     namespace DU = util::directoryutil;
 
     //List of potential old KDE directories to load data from.
@@ -87,5 +88,5 @@ void MigrationUtil::tryMigrationFromKDE3() {
     CBTConfig::syncConfig();
 }
 
-}
-
+} // namespace migration
+} // namespace util
