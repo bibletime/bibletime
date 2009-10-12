@@ -51,48 +51,47 @@ temporary files manually.
 * We use ftp connection and file resources; the connection can be ignored but the files
 * have to be cleaned up after termination.
 */
-class BtInstallThread : public QThread
-{
-	Q_OBJECT
-public:
-    BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName);
+class BtInstallThread : public QThread {
+        Q_OBJECT
+    public:
+        BtInstallThread(QObject* parent, QString moduleName, QString sourceName, QString destinationName);
 
-    ~BtInstallThread();
+        ~BtInstallThread();
 
-public slots:
-	void slotStopInstall();
-	void slotManagerStatusUpdated(int totalProgress, int fileProgress);
-	void slotDownloadStarted();
+    public slots:
+        void slotStopInstall();
+        void slotManagerStatusUpdated(int totalProgress, int fileProgress);
+        void slotDownloadStarted();
 
-public: // data member
-	bool done;
+    public: // data member
+        bool done;
 
-protected:
-	virtual void run();
-	void removeModule();
-	void removeTempFiles();
+    protected:
+        virtual void run();
+        void removeModule();
+        void removeTempFiles();
 
-	QString m_module;
-	QString m_destination;
-	QString m_source;
-	bool m_cancelled;
-	BtInstallMgr* m_iMgr;
-	//BtInstallMgr m_iMgr;
-    boost::scoped_ptr<sword::InstallSource> m_installSource;
-	//TODO: it would be best to get the backend from the bookshelf manager install page
-	// where it has already been created. Could fasten the progress dialog startup.
-	boost::scoped_ptr<CSwordBackend> m_backendForSource;
+        QString m_module;
+        QString m_destination;
+        QString m_source;
+        bool m_cancelled;
+        BtInstallMgr* m_iMgr;
+        //BtInstallMgr m_iMgr;
+        boost::scoped_ptr<sword::InstallSource> m_installSource;
+        //TODO: it would be best to get the backend from the bookshelf manager install page
+        // where it has already been created. Could fasten the progress dialog startup.
+        boost::scoped_ptr<CSwordBackend> m_backendForSource;
 
-signals:
-	/** Emitted when the install progress status is updated. */
-	void statusUpdated(QString module, int progressPercent);
-	/** Emitted when installing has been stopped/cancelled. */
-	void installStopped(QString module, QString source);
-	/** Emitted when installing is complete. */
-	void installCompleted(QString module, QString source, int errorStatus);
-	/** Emitted when the first file download has been started. */
-	void downloadStarted(QString module);
-	void preparingInstall(QString module, QString source);
+    signals:
+        /** Emitted when the install progress status is updated. */
+        void statusUpdated(QString module, int progressPercent);
+        /** Emitted when installing has been stopped/cancelled. */
+        void installStopped(QString module, QString source);
+        /** Emitted when installing is complete. */
+        void installCompleted(QString module, QString source, int errorStatus);
+        /** Emitted when the first file download has been started. */
+        void downloadStarted(QString module);
+        void preparingInstall(QString module, QString source);
 };
 
 #endif

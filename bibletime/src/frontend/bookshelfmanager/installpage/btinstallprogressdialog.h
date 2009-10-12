@@ -23,48 +23,47 @@ class BtInstallThread;
 /**
 
 */
-class BtInstallProgressDialog : public QDialog
-{
-	Q_OBJECT
-public:
-	BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination);
+class BtInstallProgressDialog : public QDialog {
+        Q_OBJECT
+    public:
+        BtInstallProgressDialog(QWidget* parent, QTreeWidget* selectedModulesTreeWidget, QString destination);
 
-	~BtInstallProgressDialog();
+        ~BtInstallProgressDialog();
 
-public slots:
-	void slotOneItemCompleted(QString module, QString source, int status);
-	void slotOneItemStopped(QString module, QString source);
-	void slotStopInstall();
-	void slotStatusUpdated(QString module, int status);
-	void slotDownloadStarted(QString module);
-	void slotInstallStarted(QString module, QString);
+    public slots:
+        void slotOneItemCompleted(QString module, QString source, int status);
+        void slotOneItemStopped(QString module, QString source);
+        void slotStopInstall();
+        void slotStatusUpdated(QString module, int status);
+        void slotDownloadStarted(QString module);
+        void slotInstallStarted(QString module, QString);
 
-protected:
-	/**
-	* Handles closing by the window close button, Cancel (Stop) All button, or completing
-	* the downloads.
-	*/
-	virtual void closeEvent(QCloseEvent* event);
+    protected:
+        /**
+        * Handles closing by the window close button, Cancel (Stop) All button, or completing
+        * the downloads.
+        */
+        virtual void closeEvent(QCloseEvent* event);
 
 //signals:
 //	void swordSetupChanged();
 
-private:
+    private:
 
-	//TODO: using maps is tedious and error prone. Find better solution for handling the modules
-	// and their states.
-	QMultiMap<QString, BtInstallThread*> m_waitingThreads;
-	QMultiMap<QString, BtInstallThread*> m_runningThreads;
-	QMap<QString, BtInstallThread*> m_threadsByModule;
-	//QList<BtInstallThread*> m_doneThreads;
+        //TODO: using maps is tedious and error prone. Find better solution for handling the modules
+        // and their states.
+        QMultiMap<QString, BtInstallThread*> m_waitingThreads;
+        QMultiMap<QString, BtInstallThread*> m_runningThreads;
+        QMap<QString, BtInstallThread*> m_threadsByModule;
+        //QList<BtInstallThread*> m_doneThreads;
 
-	QTreeWidget* m_statusWidget;
+        QTreeWidget* m_statusWidget;
 
-private:
-	QTreeWidgetItem* getItem(QString moduleName);
-	bool threadsDone();
-	void startThreads();
-	void oneItemStoppedOrCompleted(QString module, QString source, QString message);
+    private:
+        QTreeWidgetItem* getItem(QString moduleName);
+        bool threadsDone();
+        void startThreads();
+        void oneItemStoppedOrCompleted(QString module, QString source, QString message);
 };
 
 #endif

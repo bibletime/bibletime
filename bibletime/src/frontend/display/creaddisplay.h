@@ -22,52 +22,52 @@
   */
 
 class CReadDisplay :  public CDisplay {
-public:
-	/**
-	* Returns true if the display has an active anchor.
-	*/
-	bool hasActiveAnchor();
-	/**
-	* Returns the current active anchor.
-	*/
-	const QString& activeAnchor();
-	/**
-	* Moves the widget to the given anchor.
-	*/
-	virtual void moveToAnchor( const QString& ) = 0;
-	virtual void print(const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
+    public:
+        /**
+        * Returns true if the display has an active anchor.
+        */
+        bool hasActiveAnchor();
+        /**
+        * Returns the current active anchor.
+        */
+        const QString& activeAnchor();
+        /**
+        * Moves the widget to the given anchor.
+        */
+        virtual void moveToAnchor( const QString& ) = 0;
+        virtual void print(const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions);
 
-	void setMouseTracking(const bool trackingEnabled) {
-		m_useMouseTracking = trackingEnabled;
-	};
-	bool getMouseTracking() const {
-		return m_useMouseTracking;
-	};
+        void setMouseTracking(const bool trackingEnabled) {
+            m_useMouseTracking = trackingEnabled;
+        };
+        bool getMouseTracking() const {
+            return m_useMouseTracking;
+        };
 
-protected: // Protected methods
-	friend class BtHtmlReadDisplay;
-	friend class BtHtmlReadDisplayView;
-	friend class BtHtmlJsObject;
-	friend class CDisplay;
-	friend class CHTMLReadDisplay;
-	friend class CHTMLReadDisplayView;
+    protected: // Protected methods
+        friend class BtHtmlReadDisplay;
+        friend class BtHtmlReadDisplayView;
+        friend class BtHtmlJsObject;
+        friend class CDisplay;
+        friend class CHTMLReadDisplay;
+        friend class CHTMLReadDisplayView;
 
-	CReadDisplay( CReadWindow* readWindow );
-	~CReadDisplay();
+        CReadDisplay( CReadWindow* readWindow );
+        ~CReadDisplay();
 
-	/**
-	* Sets the current anchor to the parameter.
-	*/
-	void setActiveAnchor( const QString& );
+        /**
+        * Sets the current anchor to the parameter.
+        */
+        void setActiveAnchor( const QString& );
 
-private: // Public attributes
-	/**
-	* The member which hols the current anchor.
-	*/
+    private: // Public attributes
+        /**
+        * The member which hols the current anchor.
+        */
 
-	QString m_activeAnchor;
+        QString m_activeAnchor;
 
-	bool m_useMouseTracking;
+        bool m_useMouseTracking;
 };
 
 #endif

@@ -24,44 +24,43 @@ class QTreeWidgetItem;
 class QPushButton;
 
 
-class BtRemovePage : public BtConfigPage
-{
-	Q_OBJECT
+class BtRemovePage : public BtConfigPage {
+        Q_OBJECT
 
-public:
-	BtRemovePage();
+    public:
+        BtRemovePage();
 
-	~BtRemovePage(){}
+        ~BtRemovePage() {}
 
-	// BtConfigPage methods
-	QString header();
-	QString iconName();
-	QString label();
+        // BtConfigPage methods
+        QString header();
+        QString iconName();
+        QString label();
 
-	void populateModuleList();
+        void populateModuleList();
 
 //signals:
-	//void swordSetupChanged();
+        //void swordSetupChanged();
 
-public slots:
-	void slotSwordSetupChanged();
+    public slots:
+        void slotSwordSetupChanged();
 
-private slots:
+    private slots:
 
-	void slotRemoveModules();
-	/** Handles activating the Remove button. */
-	void slotSelectionChanged(QTreeWidgetItem* item, int column);
-	void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
+        void slotRemoveModules();
+        /** Handles activating the Remove button. */
+        void slotSelectionChanged(QTreeWidgetItem* item, int column);
+        void slotItemDoubleClicked(QTreeWidgetItem* item, int column);
 
-private: // methods
-	void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
+    private: // methods
+        void addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem);
 
-private: // data
-	QTreeWidget* m_view;
-	QPushButton* m_removeButton;
-	/** Map of module name and install path (absolute path from the moduleinfo config entry).*/
-	QList<CSwordModuleInfo*> m_selectedModules;
-	
+    private: // data
+        QTreeWidget* m_view;
+        QPushButton* m_removeButton;
+        /** Map of module name and install path (absolute path from the moduleinfo config entry).*/
+        QList<CSwordModuleInfo*> m_selectedModules;
+
 };
 
 #endif

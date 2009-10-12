@@ -23,64 +23,63 @@ class QTreeWidgetItem;
 * Manager.  It allows for creation and deletion of search indicies for each
 * installed module.  It also allows for deletion of orphaned indices.
 */
-class BtIndexPage : public BtConfigPage
-{
-	Q_OBJECT
-	
-public:
-	/**
-	* Constructor
-	*/
-	BtIndexPage();
+class BtIndexPage : public BtConfigPage {
+        Q_OBJECT
 
-	/** 
-	* Destructor
-	*/
-	~BtIndexPage();
+    public:
+        /**
+        * Constructor
+        */
+        BtIndexPage();
 
-	// BtConfigPage methods
-	QString header();
-	QString iconName();
-	QString label();
+        /**
+        * Destructor
+        */
+        ~BtIndexPage();
 
-public slots:
-	void slotSwordSetupChanged();
+        // BtConfigPage methods
+        QString header();
+        QString iconName();
+        QString label();
 
-protected:
+    public slots:
+        void slotSwordSetupChanged();
 
-	/**
-	* Populates the module list with installed modules and orphaned indices
-	*/
-	void populateModuleList();
+    protected:
+
+        /**
+        * Populates the module list with installed modules and orphaned indices
+        */
+        void populateModuleList();
 
 
-	
-public slots:
-	/**
-	* Creates indices for selected modules if no index currently exists
-	*/
-	void createIndices();
-	/**
-	* Deletes indices for selected modules
-	*/
-	void deleteIndices();
 
-public:
-	/**
-	* Deletes orphaned indices if the autoDeleteOrphanedIndices is true
-	* Always deletes indices of existing modules where hasIndex() returns false
-	*/
-	static void deleteOrphanedIndices();
+    public slots:
+        /**
+        * Creates indices for selected modules if no index currently exists
+        */
+        void createIndices();
+        /**
+        * Deletes indices for selected modules
+        */
+        void deleteIndices();
 
-private:
+    public:
+        /**
+        * Deletes orphaned indices if the autoDeleteOrphanedIndices is true
+        * Always deletes indices of existing modules where hasIndex() returns false
+        */
+        static void deleteOrphanedIndices();
 
-	QCheckBox *m_autoDeleteOrphanedIndicesBox;
-	QTreeWidget *m_moduleList;
-	QPushButton *m_deleteButton;
-	QPushButton *m_createButton;
+    private:
 
-	QTreeWidgetItem* m_modsWithIndices;
-	QTreeWidgetItem* m_modsWithoutIndices;
+        QCheckBox *m_autoDeleteOrphanedIndicesBox;
+        QTreeWidget *m_moduleList;
+        QPushButton *m_deleteButton;
+        QPushButton *m_createButton;
+
+        QTreeWidgetItem* m_modsWithIndices;
+        QTreeWidgetItem* m_modsWithoutIndices;
 };
 
 

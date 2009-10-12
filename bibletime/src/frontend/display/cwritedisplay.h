@@ -23,29 +23,29 @@ class BtActionCollection;
   */
 
 class CWriteDisplay : public CDisplay  {
-protected:
-	friend class CDisplay;
-	friend class CPlainWriteDisplay;
-	CWriteDisplay( CWriteWindow* writeWindow );
-	~CWriteDisplay();
+    protected:
+        friend class CDisplay;
+        friend class CPlainWriteDisplay;
+        CWriteDisplay( CWriteWindow* writeWindow );
+        ~CWriteDisplay();
 
-public: // Public methods
-	/**
-	* Sets the current modified status of the widget.
-	*/
-	virtual void setModified( const bool modified ) = 0;
-	/**
-	* Returns true if the current text was modified.
-	*/
-	virtual bool isModified() const = 0;
-	/**
-	* Returns the text of this edit widget.
-	*/
-	virtual const QString plainText() = 0;
-	/**
-	* Creates the necessary action objects and puts them on the toolbar.
-	*/
-	virtual void setupToolbar( QToolBar* bar, BtActionCollection* actionCollection ) = 0;
+    public: // Public methods
+        /**
+        * Sets the current modified status of the widget.
+        */
+        virtual void setModified( const bool modified ) = 0;
+        /**
+        * Returns true if the current text was modified.
+        */
+        virtual bool isModified() const = 0;
+        /**
+        * Returns the text of this edit widget.
+        */
+        virtual const QString plainText() = 0;
+        /**
+        * Creates the necessary action objects and puts them on the toolbar.
+        */
+        virtual void setupToolbar( QToolBar* bar, BtActionCollection* actionCollection ) = 0;
 };
 
 #endif

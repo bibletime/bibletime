@@ -12,40 +12,35 @@
 #include <QCompleter>
 
 BtFontSizeWidget::BtFontSizeWidget(QWidget* parent)
- : QComboBox(parent)
-{
-	setEditable(true);
-	completer()->setCompletionMode(QCompleter::PopupCompletion);
-		
-	QFontDatabase database;
-	const QList<int> sizes = database.standardSizes();
-	QStringList list;
-	for ( QList<int>::ConstIterator it = sizes.begin(); it != sizes.end(); ++it )
-		list.append( QString::number( *it ) );
-	addItems(list);
-	
-	bool ok = connect(this, SIGNAL(currentIndexChanged(const QString&)),
-					  this, SLOT(changed(const QString&)));
-	Q_ASSERT(ok);
+        : QComboBox(parent) {
+    setEditable(true);
+    completer()->setCompletionMode(QCompleter::PopupCompletion);
+
+    QFontDatabase database;
+    const QList<int> sizes = database.standardSizes();
+    QStringList list;
+    for ( QList<int>::ConstIterator it = sizes.begin(); it != sizes.end(); ++it )
+        list.append( QString::number( *it ) );
+    addItems(list);
+
+    bool ok = connect(this, SIGNAL(currentIndexChanged(const QString&)),
+                      this, SLOT(changed(const QString&)));
+    Q_ASSERT(ok);
 }
 
-BtFontSizeWidget::~BtFontSizeWidget() 
-{
+BtFontSizeWidget::~BtFontSizeWidget() {
 }
 
-void BtFontSizeWidget::changed(const QString& text)
-{
-	emit fontSizeChanged(text.toInt());
+void BtFontSizeWidget::changed(const QString& text) {
+    emit fontSizeChanged(text.toInt());
 }
 
-void BtFontSizeWidget::setFontSize(int size)
-{
-	int index = findText(QString::number(size));
-	if (index >= 0)
-		setCurrentIndex(index);
+void BtFontSizeWidget::setFontSize(int size) {
+    int index = findText(QString::number(size));
+    if (index >= 0)
+        setCurrentIndex(index);
 }
 
-int BtFontSizeWidget::fontSize() const
-{
-	return currentText().toInt();
+int BtFontSizeWidget::fontSize() const {
+    return currentText().toInt();
 }

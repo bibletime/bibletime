@@ -32,68 +32,68 @@ class BtActionCollection;
   * @author The BibleTime team
   */
 class CPlainWriteDisplay : public QTextEdit, public CWriteDisplay  {
-public:
-	/**
-	* Reimplementation.
-	*/
-	virtual void selectAll();
-	/**
-	* Sets the new text for this display widget.
-	*/
-	virtual void setText( const QString& newText );
-	/**
-	* Returns true if the display widget has a selection. Otherwise false.
-	*/
-	virtual bool hasSelection();
-	/**
-	* Returns the view of this display widget.
-	*/
-	virtual QWidget* view();
-	virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
-	virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
-	/**
-	* Reimplementation (CWriteDisplay).
-	*/
-	virtual bool isModified() const;
-	/**
-	* Sets the current status of the edit widget (CWriteDisplay).
-	*/
-	virtual void setModified( const bool modified );
-	/**
-	* Returns the text of this edit widget (CWriteDisplay).
-	*/
-	virtual const QString plainText();
-	/**
-	* Creates the necessary action objects and puts them on the toolbar (CWriteDisplay).
-	*/
-	virtual void setupToolbar(QToolBar*, BtActionCollection*);
+    public:
+        /**
+        * Reimplementation.
+        */
+        virtual void selectAll();
+        /**
+        * Sets the new text for this display widget.
+        */
+        virtual void setText( const QString& newText );
+        /**
+        * Returns true if the display widget has a selection. Otherwise false.
+        */
+        virtual bool hasSelection();
+        /**
+        * Returns the view of this display widget.
+        */
+        virtual QWidget* view();
+        virtual const QString text( const CDisplay::TextType format = CDisplay::HTMLText, const CDisplay::TextPart part = CDisplay::Document );
+        virtual void print( const CDisplay::TextPart, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions );
+        /**
+        * Reimplementation (CWriteDisplay).
+        */
+        virtual bool isModified() const;
+        /**
+        * Sets the current status of the edit widget (CWriteDisplay).
+        */
+        virtual void setModified( const bool modified );
+        /**
+        * Returns the text of this edit widget (CWriteDisplay).
+        */
+        virtual const QString plainText();
+        /**
+        * Creates the necessary action objects and puts them on the toolbar (CWriteDisplay).
+        */
+        virtual void setupToolbar(QToolBar*, BtActionCollection*);
 
-protected:
-	friend class CDisplay;
-	friend class CHTMLWriteDisplay;
+    protected:
+        friend class CDisplay;
+        friend class CHTMLWriteDisplay;
 
-	CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
-	virtual ~CPlainWriteDisplay();
-	/**
-	* Reimplementation from QTextEdit. Provides an popup menu for the given position.
-	*/
-	virtual QMenu* createPopupMenu( const QPoint& pos );
+        CPlainWriteDisplay(CWriteWindow* parentWindow, QWidget* parent);
+        virtual ~CPlainWriteDisplay();
+        /**
+        * Reimplementation from QTextEdit. Provides an popup menu for the given position.
+        */
+        virtual QMenu* createPopupMenu( const QPoint& pos );
 //	/**
 //	* Reimplementation from QTextEdit. Provides an popup menu.
 //	*/
 //	virtual QMenu* createPopupMenu();
-	/**
-	* Reimplementation from QTextEdit to manage drops of our drag and drop objects.
-	*/
-	virtual void dropEvent( QDropEvent* e );
-	/**
-	* Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
-	*/
-	virtual void dragEnterEvent( QDragEnterEvent* e );
-	/**
-	* Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
-	*/
-	virtual void dragMoveEvent( QDragMoveEvent* e );
+        /**
+        * Reimplementation from QTextEdit to manage drops of our drag and drop objects.
+        */
+        virtual void dropEvent( QDropEvent* e );
+        /**
+        * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
+        */
+        virtual void dragEnterEvent( QDragEnterEvent* e );
+        /**
+        * Reimplementation from QTextEdit to insert the text of a dragged reference into the edit view.
+        */
+        virtual void dragMoveEvent( QDragMoveEvent* e );
 
 };
 
