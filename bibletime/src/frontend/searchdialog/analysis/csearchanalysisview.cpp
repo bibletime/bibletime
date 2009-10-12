@@ -18,23 +18,22 @@
 namespace Search {
 
 CSearchAnalysisView::CSearchAnalysisView(CSearchAnalysisScene* scene, QWidget* parent)
- : QGraphicsView(scene, parent)
-{
-	setFocusPolicy(Qt::WheelFocus);
-	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	resize(sizeHint());
+        : QGraphicsView(scene, parent) {
+    setFocusPolicy(Qt::WheelFocus);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    resize(sizeHint());
 }
 
 
 /** Returns the sizeHint for this view */
 QSize CSearchAnalysisView::sizeHint() const {
-	return QGraphicsView::sizeHint();
+    return QGraphicsView::sizeHint();
 }
 
 /** No descriptions */
 void CSearchAnalysisView::resizeEvent( QResizeEvent* e) {
-	QGraphicsView::resizeEvent(e);
-	scene()->setSceneRect(0,0, scene()->sceneRect().width(), viewport()->height() );
+    QGraphicsView::resizeEvent(e);
+    scene()->setSceneRect(0, 0, scene()->sceneRect().width(), viewport()->height() );
 }
 
 

@@ -20,43 +20,42 @@ namespace Search {
 /**
 	@author The BibleTime team <info@bibletime.info>
 */
-class CSearchAnalysisItem : public QGraphicsRectItem
-{
-public:
+class CSearchAnalysisItem : public QGraphicsRectItem {
+    public:
 
-	CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules);
-    ~CSearchAnalysisItem();
-	/**
-	* Sets the resultcount of this item
-	*/
-	void setCountForModule( const int moduleIndex, const int count);
+        CSearchAnalysisItem(const int moduleCount, const QString& bookname, double *scaleFactor, QList<CSwordModuleInfo*>* modules);
+        ~CSearchAnalysisItem();
+        /**
+        * Sets the resultcount of this item
+        */
+        void setCountForModule( const int moduleIndex, const int count);
 
-	/**
-	* Returns the resultcount of this item
-	*/
-	int getCountForModule( const int moduleIndex);
-	/**
-	* Does one of the modules contain hits?
-	*/
-	bool hasHitsInAnyModule();
-	/**
-	* Returns the width of this item.
-	*/
-	virtual int width();
-	/**
-	* Returns the tooltip for this item.
-	*/
-	const QString getToolTip();
+        /**
+        * Returns the resultcount of this item
+        */
+        int getCountForModule( const int moduleIndex);
+        /**
+        * Does one of the modules contain hits?
+        */
+        bool hasHitsInAnyModule();
+        /**
+        * Returns the width of this item.
+        */
+        virtual int width();
+        /**
+        * Returns the tooltip for this item.
+        */
+        const QString getToolTip();
 
-private:
-	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
+    private:
+        virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*);
 
-	QList<CSwordModuleInfo*>* m_moduleList;
-	double *m_scaleFactor;
-	QString m_bookName;
-	int m_moduleCount;
-	QVector<int> m_resultCountArray;
-	QPixmap* m_bufferPixmap;
+        QList<CSwordModuleInfo*>* m_moduleList;
+        double *m_scaleFactor;
+        QString m_bookName;
+        int m_moduleCount;
+        QVector<int> m_resultCountArray;
+        QPixmap* m_bufferPixmap;
 
 };
 

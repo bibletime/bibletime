@@ -24,43 +24,43 @@ namespace Profile {
  * @author The BibleTime team
  */
 class CProfileMgr {
-public:
-	CProfileMgr();
-	~CProfileMgr();
+    public:
+        CProfileMgr();
+        ~CProfileMgr();
 
-	/** Creates a new profile with the name "name" (first parameter).
-	* @return The profile object
-	*/
-	CProfile* create( const QString name );
-	/**
-	* @return a list of available profiles
-	*/
-	const QList<CProfile*>& profiles();
-	/**
-	* Removes the profile from the list and from the directory containg the profile files.
-	*/
-	bool remove( CProfile* p );
-	/**
-	* Removes the profile from the list and from the directory containg the profile files.
-	*/
-	bool remove( const QString& );
-	/**
-	* Returns the profile with the desired name. If there's no such profile 0 is returned.
-	*/
-	CProfile* profile(const QString&);
-	/**
-	* Returns the startup profile if it exists, otherwise return 0.
-	*/
-	CProfile* startupProfile();
-	/**
-	* Refreshes the profiles available on disk. Use this function to update the list of profiles after another instance of CProfileMgr created a new profile.
-	*/
-	void refresh();
+        /** Creates a new profile with the name "name" (first parameter).
+        * @return The profile object
+        */
+        CProfile* create( const QString name );
+        /**
+        * @return a list of available profiles
+        */
+        const QList<CProfile*>& profiles();
+        /**
+        * Removes the profile from the list and from the directory containg the profile files.
+        */
+        bool remove( CProfile* p );
+        /**
+        * Removes the profile from the list and from the directory containg the profile files.
+        */
+        bool remove( const QString& );
+        /**
+        * Returns the profile with the desired name. If there's no such profile 0 is returned.
+        */
+        CProfile* profile(const QString&);
+        /**
+        * Returns the startup profile if it exists, otherwise return 0.
+        */
+        CProfile* startupProfile();
+        /**
+        * Refreshes the profiles available on disk. Use this function to update the list of profiles after another instance of CProfileMgr created a new profile.
+        */
+        void refresh();
 
-protected:
-	QList<CProfile*> m_profiles;
-	QString m_profilePath;
-	CProfile* m_startupProfile;
+    protected:
+        QList<CProfile*> m_profiles;
+        QString m_profilePath;
+        CProfile* m_startupProfile;
 };
 
 } //end of namespace Profile

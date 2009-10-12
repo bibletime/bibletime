@@ -23,8 +23,8 @@
 class CReadDisplay;
 class CSwordModuleInfo;
 namespace Search {
-	class CModuleResultView;
-	class CSearchResultView;
+class CModuleResultView;
+class CSearchResultView;
 }
 
 class QHBoxLayout;
@@ -47,28 +47,28 @@ namespace Search {
 *   To add a new verse to a strongs text result use addKeyName.
 */
 class StrongsResult {
-public:
-   StrongsResult();
-   StrongsResult(const QString& text, const QString &keyName);
+    public:
+        StrongsResult();
+        StrongsResult(const QString& text, const QString &keyName);
 
-	QString keyText() const;
-	int keyCount() const;
-	void addKeyName(const QString& keyName);
-	QStringList* getKeyList();
+        QString keyText() const;
+        int keyCount() const;
+        void addKeyName(const QString& keyName);
+        QStringList* getKeyList();
 
-	/* ????
-	bool operator==(const StrongsResult &l, const StrongsResult &r)
-		{ return (l.keyText() == r.keyText()); }
+        /* ????
+        bool operator==(const StrongsResult &l, const StrongsResult &r)
+        	{ return (l.keyText() == r.keyText()); }
 
-	bool operator<(const StrongsResult &l, const StrongsResult &r)
-		{ return (l->keyText() < r->keyText()); }
+        bool operator<(const StrongsResult &l, const StrongsResult &r)
+        	{ return (l->keyText() < r->keyText()); }
 
-	bool operator>(const StrongsResult &l, const StrongsResult &r)
-		{ return (l->keyText() > r->keyText()); }
-	*/
-private:
-	QString text;
-	QStringList keyNameList;
+        bool operator>(const StrongsResult &l, const StrongsResult &r)
+        	{ return (l->keyText() > r->keyText()); }
+        */
+    private:
+        QString text;
+        QStringList keyNameList;
 };
 
 typedef QList<StrongsResult> StrongsResultList;
@@ -88,112 +88,114 @@ typedef QList<StrongsResult> StrongsResultList;
 *   To add a new verse to a strongs text result use addKeyName.
 */
 class StrongsResultClass {
-public:
-	StrongsResultClass(CSwordModuleInfo* module, const QString& strongsNumber)
-		: srModule(module), lemmaText(strongsNumber)
-	{
-		initStrongsResults();
-	}
+    public:
+        StrongsResultClass(CSwordModuleInfo* module, const QString& strongsNumber)
+                : srModule(module), lemmaText(strongsNumber) {
+            initStrongsResults();
+        }
 
-	QString keyText(int index) const {
-		return srList[index].keyText();
-	}
-	int keyCount(int index) const {
-		return srList[index].keyCount();
-	}
-	QStringList* getKeyList(int index) {
-		return srList[index].getKeyList();
-	}
-	int Count() const {
-		return srList.count();
-	}
+        QString keyText(int index) const {
+            return srList[index].keyText();
+        }
+        int keyCount(int index) const {
+            return srList[index].keyCount();
+        }
+        QStringList* getKeyList(int index) {
+            return srList[index].getKeyList();
+        }
+        int Count() const {
+            return srList.count();
+        }
 
-private:
-	void initStrongsResults(void);
-	QString getStrongsNumberText(const QString& verseContent, int *startIndex);
+    private:
+        void initStrongsResults(void);
+        QString getStrongsNumberText(const QString& verseContent, int *startIndex);
 
-	StrongsResultList srList;
-	CSwordModuleInfo* srModule;
-	QString lemmaText;
+        StrongsResultList srList;
+        CSwordModuleInfo* srModule;
+        QString lemmaText;
 };
 
 
 /** The page of the search dialog which contains the search result part.
   * @author The BibleTime team
   */
-class BtSearchResultArea : public QWidget
-{
-	Q_OBJECT
-public:
-	BtSearchResultArea(QWidget *parent=0);
-	~BtSearchResultArea();
-	/**
-	* Sets the modules which contain the result of each.
-	*/
-	void setSearchResult(QList<CSwordModuleInfo*> modules);
-	
-	QSize sizeHint() const { return baseSize(); }
-	QSize minimumSizeHint() const { return minimumSize(); }
+class BtSearchResultArea : public QWidget {
+        Q_OBJECT
+    public:
+        BtSearchResultArea(QWidget *parent = 0);
+        ~BtSearchResultArea();
+        /**
+        * Sets the modules which contain the result of each.
+        */
+        void setSearchResult(QList<CSwordModuleInfo*> modules);
 
-public slots:
-	/**
-	* Resets the current list of modules and the displayed list of found entries.
-	*/
-	void reset();
+        QSize sizeHint() const {
+            return baseSize();
+        }
+        QSize minimumSizeHint() const {
+            return minimumSize();
+        }
 
-protected:
-	/**
-	* Initializes the view of this widget.
-	*/
-	void initView();
-	/**
-	* Initializes the signal slot conections of the child widgets
-	*/
-	void initConnections();
-	/**
-	* This function breakes the queryString into clucene tokens
-	*/	
-	QStringList QueryParser(const QString& queryString);
-	/**
-	* This function highlights the searched text in the content using the search type given by search flags
-	*/
-	QString highlightSearchedText(const QString& content, const QString& searchedText);
+    public slots:
+        /**
+        * Resets the current list of modules and the displayed list of found entries.
+        */
+        void reset();
 
-	/**
-	* Load the settings from the resource file
-	*/
-	void loadDialogSettings();
-	/**
-	* Save the settings to the resource file
-	*/
-	void saveDialogSettings();
+    protected:
+        /**
+        * Initializes the view of this widget.
+        */
+        void initView();
+        /**
+        * Initializes the signal slot conections of the child widgets
+        */
+        void initConnections();
+        /**
+        * This function breakes the queryString into clucene tokens
+        */
+        QStringList QueryParser(const QString& queryString);
+        /**
+        * This function highlights the searched text in the content using the search type given by search flags
+        */
+        QString highlightSearchedText(const QString& content, const QString& searchedText);
 
-protected slots:
-	/**
-	* Update the preview of the selected key.
-	*/
-	void updatePreview(const QString& key);
-	/**
-	 * Clear the preview of the selected key.
-	 */
-	void clearPreview();
-	/**
-	* Shows a dialog with the search analysis of the current search.
-	*/
-	void showAnalysis();
+        /**
+        * Load the settings from the resource file
+        */
+        void loadDialogSettings();
+        /**
+        * Save the settings to the resource file
+        */
+        void saveDialogSettings();
 
-private:
+    protected slots:
+        /**
+        * Update the preview of the selected key.
+        */
+        void updatePreview(const QString& key);
+        /**
+         * Clear the preview of the selected key.
+         */
+        void clearPreview();
+        /**
+        * Shows a dialog with the search analysis of the current search.
+        */
+        void showAnalysis();
 
-	CModuleResultView* m_moduleListBox;
-	CSearchResultView* m_resultListBox;
+    private:
 
-	QFrame *m_displayFrame;
-	CReadDisplay* m_previewDisplay;
+        CModuleResultView* m_moduleListBox;
+        CSearchResultView* m_resultListBox;
 
-	QList<CSwordModuleInfo*> m_modules;
+        QFrame *m_displayFrame;
+        CReadDisplay* m_previewDisplay;
 
-	QSplitter *mainSplitter;
-	QSplitter *resultListSplitter;
+        QList<CSwordModuleInfo*> m_modules;
+
+        QSplitter *mainSplitter;
+        QSplitter *resultListSplitter;
 };
 
 } //namespace Search

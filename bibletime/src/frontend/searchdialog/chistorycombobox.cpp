@@ -14,35 +14,30 @@
 namespace Search {
 
 CHistoryComboBox::CHistoryComboBox( QWidget* parent)
-	: QComboBox(parent)
-{
-	setEditable(true);
-	completer()->setCompletionMode(QCompleter::PopupCompletion);
+        : QComboBox(parent) {
+    setEditable(true);
+    completer()->setCompletionMode(QCompleter::PopupCompletion);
 }
 
-CHistoryComboBox::~CHistoryComboBox()
-{
+CHistoryComboBox::~CHistoryComboBox() {
 }
 
-void CHistoryComboBox::addToHistory(const QString& text)
-{
-	int index = findText(text);
-	if ( index >= 0)
-		removeItem(index);
-	insertItem(1, text);
-	setCurrentIndex(1);
+void CHistoryComboBox::addToHistory(const QString& text) {
+    int index = findText(text);
+    if ( index >= 0)
+        removeItem(index);
+    insertItem(1, text);
+    setCurrentIndex(1);
 }
 
-QStringList CHistoryComboBox::historyItems() const
-{
-	QStringList items;
-	for (int i=0; i<count(); i++)
-	{
-		QString text = itemText(i);
-		if (text.size() > 0)
-			items << text;
-	}
-	return items;
+QStringList CHistoryComboBox::historyItems() const {
+    QStringList items;
+    for (int i = 0; i < count(); i++) {
+        QString text = itemText(i);
+        if (text.size() > 0)
+            items << text;
+    }
+    return items;
 }
 } //end of namespace Search
 

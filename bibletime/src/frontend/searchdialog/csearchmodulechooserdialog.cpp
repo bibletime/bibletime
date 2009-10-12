@@ -32,30 +32,27 @@
 namespace Search {
 
 CSearchModuleChooserDialog::CSearchModuleChooserDialog( QWidget* parent, QString title, QString label,
-														QList<CSwordModuleInfo*> selectedModules)
-	: CModuleChooserDialog(parent, title, label),
-	m_selectedModules(selectedModules)
-{
-	m_hiddenFilter = new BTModuleTreeItem::HiddenOff();
-	QList<BTModuleTreeItem::Filter*> filters;
-	filters.append(m_hiddenFilter);
-	setFilters(filters);
-	init();
+        QList<CSwordModuleInfo*> selectedModules)
+        : CModuleChooserDialog(parent, title, label),
+        m_selectedModules(selectedModules) {
+    m_hiddenFilter = new BTModuleTreeItem::HiddenOff();
+    QList<BTModuleTreeItem::Filter*> filters;
+    filters.append(m_hiddenFilter);
+    setFilters(filters);
+    init();
 }
 
-CSearchModuleChooserDialog::~CSearchModuleChooserDialog()
-{
-	//see the ctor
-	delete m_hiddenFilter;
+CSearchModuleChooserDialog::~CSearchModuleChooserDialog() {
+    //see the ctor
+    delete m_hiddenFilter;
 }
 
-void CSearchModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem)
-{
-	widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-	if (m_selectedModules.contains(btItem->moduleInfo()))
-		widgetItem->setCheckState(0, Qt::Checked);
-	else
-		widgetItem->setCheckState(0, Qt::Unchecked);
+void CSearchModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem) {
+    widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
+    if (m_selectedModules.contains(btItem->moduleInfo()))
+        widgetItem->setCheckState(0, Qt::Checked);
+    else
+        widgetItem->setCheckState(0, Qt::Unchecked);
 }
 
 } //end of namespace Search
