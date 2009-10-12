@@ -53,7 +53,7 @@
 
 //Increment this, if the index format changes
 //Then indices on the user's systems will be rebuilt
-const unsigned int INDEX_VERSION = 6;
+const unsigned int INDEX_VERSION = 7;
 
 //Maximum index entry size, 1MiB for now
 //Lucene default is too small
@@ -217,6 +217,24 @@ bool CSwordModuleInfo::hasIndex() {
     return lucene::index::IndexReader::indexExists(getModuleStandardIndexLocation().toAscii().constData());
 }
 
+// HELPER Method: this dumps all current EntryAttributes of a module
+//#include <iostream>
+//void dumpEntryAttributes(sword::SWModule *module) {
+//	std::cout << "Attributes for key: " << module->getKeyText() << std::endl;
+//	sword::AttributeTypeList::iterator i1;
+//	sword::AttributeList::iterator i2;
+//	sword::AttributeValue::iterator i3;
+//	for (i1 = module->getEntryAttributes().begin(); i1 != module->getEntryAttributes().end(); i1++) {
+//		std::cout << "[ " << i1->first << " ]\n";
+//		for (i2 = i1->second.begin(); i2 != i1->second.end(); i2++) {
+//			std::cout << "\t[ " << i2->first << " ]\n";
+//			for (i3 = i2->second.begin(); i3 != i2->second.end(); i3++) {
+//				std::cout << "\t\t" << i3->first << " = " << i3->second << "\n";
+//			}
+//		}
+//	}
+//	std::cout << std::endl;
+//}
 
 void CSwordModuleInfo::buildIndex() {
 
@@ -226,11 +244,13 @@ void CSwordModuleInfo::buildIndex() {
         //Without this we don't get strongs, lemmas, etc
         backend()->setFilterOptions ( CBTConfig::getFilterOptionDefaults() );
         //make sure we reset all important filter options which influcence the plain filters.
-        backend()->setOption( CSwordModuleInfo::strongNumbers,  false );
-        backend()->setOption( CSwordModuleInfo::morphTags,  false );
+        // turn on these options, they are needed for the EntryAttributes population
+        backend()->setOption( CSwordModuleInfo::strongNumbers,  true );
+        backend()->setOption( CSwordModuleInfo::morphTags,  true );
+        backend()->setOption( CSwordModuleInfo::footnotes,  true );
+        backend()->setOption( CSwordModuleInfo::headings,  true );
+        // we don't want the following in the text, the do not carry searchable information
         backend()->setOption( CSwordModuleInfo::morphSegmentation,  false );
-        backend()->setOption( CSwordModuleInfo::footnotes,  false );
-        backend()->setOption( CSwordModuleInfo::headings,  false );
         backend()->setOption( CSwordModuleInfo::scriptureReferences,  false );
         backend()->setOption( CSwordModuleInfo::redLetterWords,  false );
 
@@ -296,25 +316,23 @@ void CSwordModuleInfo::buildIndex() {
 
         for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
 
-            //If it is a sword-heading, store in buffer and index later in Verse X:1
-            if (vk) {
-                if (vk->Verse() == 0) {
-                    textBuffer.append( m_module->StripText() );
-                    continue;
-                }
-            }
+        	// Also index Chapter 0 and Verse 0, because they might have information in the entry attributes
+        	// We used to just put their content into the textBuffer and continue to the next verse, but
+        	// with entry attributes this doesn't work any more.
+        	// Hits in the search dialog will show up as 1:1 (instead of 0)
 
             boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
 
             //index the key
             lucene_utf8towcs(wcharBuffer, key->getText(), BT_MAX_LUCENE_FIELD_LENGTH);
+
             //doc->add(*lucene::document::Field::UnIndexed((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer));
             doc->add(*(new lucene::document::Field((const TCHAR*)_T("key"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_YES | lucene::document::Field::INDEX_NO)));
+
             // index the main text
             //at this point we have to make sure we disabled the strongs and the other options
             //so the plain filters won't include the numbers somehow.
             lucene_utf8towcs(wcharBuffer, (const char*) textBuffer.append(m_module->StripText()), BT_MAX_LUCENE_FIELD_LENGTH);
-            //doc->add(*lucene::document::Field::UnStored((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer));
             doc->add(*(new lucene::document::Field((const TCHAR*)_T("content"), (const TCHAR*)wcharBuffer, lucene::document::Field::STORE_NO | lucene::document::Field::INDEX_TOKENIZED)));
             textBuffer.resize(0); //clean up
 
