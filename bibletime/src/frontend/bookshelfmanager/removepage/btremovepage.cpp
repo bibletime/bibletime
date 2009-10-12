@@ -27,7 +27,7 @@
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swmgr.h>
 #include <installmgr.h>
 

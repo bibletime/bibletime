@@ -12,7 +12,7 @@
 
 #include <QString>
 
-// Nasty Sword includes:
+// Sword includes:
 #include <stringmgr.h>
 
 

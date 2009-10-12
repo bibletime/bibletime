@@ -16,7 +16,7 @@
 #include <QString>
 #include <QStringList>
 
-// Nasty Sword includes:
+// Sword includes:
 #include <installmgr.h>
 #include <ftptrans.h>
 

@@ -15,7 +15,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <utilxml.h>
 
 

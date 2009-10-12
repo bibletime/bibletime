@@ -22,7 +22,7 @@
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <filemgr.h>
 #include <swconfig.h>
 #include <swbuf.h>

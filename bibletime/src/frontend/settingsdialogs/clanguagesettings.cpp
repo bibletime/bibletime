@@ -21,7 +21,7 @@
 #include "util/ctoolclass.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <localemgr.h>
 #include <swlocale.h>
 

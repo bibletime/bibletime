@@ -14,7 +14,7 @@
 #include <QString>
 #include "util/cpointers.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <listkey.h>
 
 

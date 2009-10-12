@@ -49,7 +49,7 @@
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swversion.h>
 
 

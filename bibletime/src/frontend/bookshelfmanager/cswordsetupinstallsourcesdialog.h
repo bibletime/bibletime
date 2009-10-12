@@ -14,7 +14,7 @@
 
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <installmgr.h>
 
 

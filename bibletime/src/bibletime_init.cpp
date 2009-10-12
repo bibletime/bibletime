@@ -36,7 +36,7 @@
 #include "util/cresmgr.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swlog.h>
 
 

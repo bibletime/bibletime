@@ -34,7 +34,7 @@
 #include "util/cpointers.h"
 #include "util/exceptions.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <listkey.h>
 #include <swbuf.h>
 #include <swconfig.h>

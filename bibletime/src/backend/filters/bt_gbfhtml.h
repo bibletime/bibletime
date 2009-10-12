@@ -10,7 +10,7 @@
 #ifndef BT_GBFHTML_H
 #define BT_GBFHTML_H
 
-// Nasty Sword includes:
+// Sword includes:
 #include <gbfhtml.h>
 
 

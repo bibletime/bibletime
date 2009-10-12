@@ -16,7 +16,7 @@
 #include "backend/managers/creferencemanager.h"
 #include "util/cpointers.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swbuf.h>
 #include <swmodule.h>
 #include <utilxml.h>

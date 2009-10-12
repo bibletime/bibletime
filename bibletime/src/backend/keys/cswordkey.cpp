@@ -18,7 +18,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "util/ctoolclass.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swkey.h>
 #include <swmodule.h>
 #include <treekey.h>

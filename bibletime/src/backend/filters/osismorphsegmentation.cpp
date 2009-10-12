@@ -9,7 +9,7 @@
 
 #include "backend/filters/osismorphsegmentation.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <utilxml.h>
 
 

@@ -14,7 +14,7 @@
 
 #include <QString>
 
-// Nasty Sword includes:
+// Sword includes:
 #include <versekey.h>
 
 

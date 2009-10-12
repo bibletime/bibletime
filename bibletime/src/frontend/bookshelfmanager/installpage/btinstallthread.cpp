@@ -19,7 +19,7 @@
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/cpointers.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <filemgr.h>
 
 

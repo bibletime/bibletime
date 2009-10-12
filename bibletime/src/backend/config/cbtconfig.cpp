@@ -21,7 +21,7 @@
 #include "util/cpointers.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <versekey.h> // For range configuration
 
 

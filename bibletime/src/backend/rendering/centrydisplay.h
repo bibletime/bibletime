@@ -15,7 +15,7 @@
 #include <QString>
 #include "backend/managers/cswordbackend.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swdisp.h>
 
 

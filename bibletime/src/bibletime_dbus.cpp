@@ -16,7 +16,7 @@
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cmdiarea.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <versekey.h>
 #include <listkey.h>
 

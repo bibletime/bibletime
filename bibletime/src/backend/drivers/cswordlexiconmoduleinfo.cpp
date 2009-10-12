@@ -15,7 +15,7 @@
 #include <QTextCodec>
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swmodule.h>
 
 

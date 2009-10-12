@@ -17,7 +17,7 @@
 #include <QMap>
 #include "backend/btmoduletreeitem.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <installmgr.h>
 
 

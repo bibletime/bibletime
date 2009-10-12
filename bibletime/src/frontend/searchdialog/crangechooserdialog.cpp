@@ -23,7 +23,7 @@
 #include "backend/config/cbtconfig.h"
 #include "util/dialogutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include "versekey.h"
 #include "listkey.h"
 

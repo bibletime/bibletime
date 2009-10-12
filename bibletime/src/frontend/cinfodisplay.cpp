@@ -27,7 +27,7 @@
 #include "frontend/display/cdisplay.h"
 #include "frontend/display/creaddisplay.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <listkey.h>
 
 

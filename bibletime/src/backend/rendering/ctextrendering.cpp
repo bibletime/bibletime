@@ -18,7 +18,7 @@
 #include "backend/managers/creferencemanager.h"
 #include "util/ctoolclass.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swkey.h>
 
 

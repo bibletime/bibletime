@@ -16,7 +16,7 @@
 #include <QStringList>
 #include "backend/drivers/cswordmoduleinfo.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swmgr.h>
 #include <swbuf.h>
 #include <swmodule.h>

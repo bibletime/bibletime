@@ -12,7 +12,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <treekeyidx.h>
 
 

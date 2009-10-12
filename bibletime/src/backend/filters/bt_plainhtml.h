@@ -10,7 +10,7 @@
 #ifndef BT_PLAINHTML_H
 #define BT_PLAINHTML_H
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swbuf.h>
 #include <swfilter.h>
 

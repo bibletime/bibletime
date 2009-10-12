@@ -10,7 +10,7 @@
 #ifndef BT_THMLHTML_H
 #define BT_THMLHTML_H
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swbuf.h>
 #include <thmlhtml.h>
 

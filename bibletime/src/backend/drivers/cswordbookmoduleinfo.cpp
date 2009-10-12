@@ -11,7 +11,7 @@
 
 #include "backend/keys/cswordtreekey.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <treekey.h>
 #include <treekeyidx.h>
 

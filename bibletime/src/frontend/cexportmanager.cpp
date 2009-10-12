@@ -27,7 +27,7 @@
 #include "frontend/cprinter.h"
 #include "util/ctoolclass.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swkey.h>
 #include <listkey.h>
 

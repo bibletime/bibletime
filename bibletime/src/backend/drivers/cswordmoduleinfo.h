@@ -15,7 +15,7 @@
 #include <QString>
 #include <QList>
 
-// Nasty Sword includes:
+// Sword includes:
 #include <listkey.h>
 #include <swdisp.h>
 #include <swmodule.h>

@@ -10,7 +10,7 @@
 #ifndef BT_THMLPLAIN_H
 #define BT_THMLPLAIN_H
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swbuf.h>
 #include <swfilter.h>
 

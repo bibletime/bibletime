@@ -14,7 +14,7 @@
 #include "backend/config/cbtconfig.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include "swversion.h"
 
 

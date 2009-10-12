@@ -12,7 +12,7 @@
 
 #include "backend/keys/cswordkey.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <treekeyidx.h>
 
 

@@ -31,7 +31,7 @@
 #include "backend/rendering/centrydisplay.h"
 #include "util/directoryutil.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <encfiltmgr.h>
 #include <filemgr.h>
 #include <rtfhtml.h>

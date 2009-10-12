@@ -12,7 +12,7 @@
 #include <QTextCodec>
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <swmodule.h>
 #include <swld.h>
 #include <utilstr.h>

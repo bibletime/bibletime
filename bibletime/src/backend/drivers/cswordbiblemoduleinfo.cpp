@@ -14,7 +14,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/keys/cswordversekey.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <versekey.h>
 
 

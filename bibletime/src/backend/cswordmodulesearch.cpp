@@ -13,7 +13,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 
-// Nasty Sword includes:
+// Sword includes:
 #include <listkey.h>
 #include <swkey.h>
 #include <swmodule.h>
