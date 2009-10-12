@@ -34,45 +34,45 @@ class CSwordBibleModuleInfo;
   */
 
 class CBibleKeyChooser : public CKeyChooser  {
-	Q_OBJECT
+        Q_OBJECT
 
-public:
-	/**
-	* the constructor
-	* you should not need to use this, use @ref CKeyChooser::createInstance instead
-	*/
-	CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key=0, QWidget *parent=0);
+    public:
+        /**
+        * the constructor
+        * you should not need to use this, use @ref CKeyChooser::createInstance instead
+        */
+        CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
 
-public slots:
-	/**
-	* see @ref CKeyChooser::getKey
-	*/
-	CSwordKey* key();
-	/**
-	* see @ref CKeyChooser::setKey
-	*/
-	virtual void setKey(CSwordKey *key);
-	/**
-	* Sets the module
-	*/
-	virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
-	/**
-	* used to react to changes
-	* @param index not used
-	*/
-	void refChanged(CSwordVerseKey *key);
+    public slots:
+        /**
+        * see @ref CKeyChooser::getKey
+        */
+        CSwordKey* key();
+        /**
+        * see @ref CKeyChooser::setKey
+        */
+        virtual void setKey(CSwordKey *key);
+        /**
+        * Sets the module
+        */
+        virtual void setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh = true);
+        /**
+        * used to react to changes
+        * @param index not used
+        */
+        void refChanged(CSwordVerseKey *key);
 
-	void updateKey(CSwordKey* key);
-	void adjustFont();
-	void refreshContent();
+        void updateKey(CSwordKey* key);
+        void adjustFont();
+        void refreshContent();
 
-protected slots:
-	virtual void setKey(QString& newKey);
+    protected slots:
+        virtual void setKey(QString& newKey);
 
-private:
-	CKeyReferenceWidget* w_ref;
-	QList<CSwordBibleModuleInfo*> m_modules;
-	CSwordVerseKey *m_key;
+    private:
+        CKeyReferenceWidget* w_ref;
+        QList<CSwordBibleModuleInfo*> m_modules;
+        CSwordVerseKey *m_key;
 };
 
 #endif

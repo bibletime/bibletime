@@ -12,8 +12,7 @@
 #include "util/directoryutil.h"
 
 BTIndexFolder::BTIndexFolder(BTModuleTreeItem* treeItem, QTreeWidgetItem* parent)
-	: BTIndexItem(parent)
-{
-	setText(0, treeItem->text());
-	setIcon(0, util::filesystem::DirectoryUtil::getIcon(treeItem->iconName()));
+        : BTIndexItem(parent) {
+    setText(0, treeItem->text());
+    setIcon(0, util::filesystem::DirectoryUtil::getIcon(treeItem->iconName()));
 }

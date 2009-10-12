@@ -22,7 +22,7 @@ class QWheelEvent;
 * \author The BibleTime team.
 */
 class CScrollButton: public QToolButton {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CScrollButton(QWidget *parent = 0);
         virtual ~CScrollButton();

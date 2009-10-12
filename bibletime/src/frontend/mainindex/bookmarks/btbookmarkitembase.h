@@ -19,43 +19,42 @@
 class CBookmarkIndex;
 
 
-class BtBookmarkItemBase : public QTreeWidgetItem
-{
-public:
+class BtBookmarkItemBase : public QTreeWidgetItem {
+    public:
 
-	enum MenuAction {
-		NewFolder = 0,
-		ChangeFolder,
+        enum MenuAction {
+            NewFolder = 0,
+            ChangeFolder,
 
-		ChangeBookmark,
-		ImportBookmarks,
-		ExportBookmarks,
-		PrintBookmarks,
+            ChangeBookmark,
+            ImportBookmarks,
+            ExportBookmarks,
+            PrintBookmarks,
 
-		DeleteEntries,
+            DeleteEntries,
 
-		ActionBegin = NewFolder,
-		ActionEnd = DeleteEntries
-	};
+            ActionBegin = NewFolder,
+            ActionEnd = DeleteEntries
+        };
 
-	/** Where to drop/create item(s): above, below or inside an item.*/
-	enum Location {Above, Below, Inside};
+        /** Where to drop/create item(s): above, below or inside an item.*/
+        enum Location {Above, Below, Inside};
 
-	BtBookmarkItemBase();
-	BtBookmarkItemBase(QTreeWidgetItem* parent);
-	virtual ~BtBookmarkItemBase() {}
+        BtBookmarkItemBase();
+        BtBookmarkItemBase(QTreeWidgetItem* parent);
+        virtual ~BtBookmarkItemBase() {}
 
-	virtual QString toolTip() = 0;
-	virtual CBookmarkIndex* bookmarkWidget() const;
+        virtual QString toolTip() = 0;
+        virtual CBookmarkIndex* bookmarkWidget() const;
 
-	/** Returns true if the given action should be enabled in the popup menu. */
-	virtual bool enableAction( MenuAction action ) = 0;
+        /** Returns true if the given action should be enabled in the popup menu. */
+        virtual bool enableAction( MenuAction action ) = 0;
 
-	/** Rename the item. */
-	virtual void rename() = 0;
+        /** Rename the item. */
+        virtual void rename() = 0;
 
-	/** Update the item (icon etc.) after creating or changing it. */
-	virtual void update() {}
+        /** Update the item (icon etc.) after creating or changing it. */
+        virtual void update() {}
 
 };
 

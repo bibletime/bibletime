@@ -31,40 +31,38 @@
 
 
 CHideModuleChooserDialog::CHideModuleChooserDialog( QWidget* parent, QString title, QString label, QString currentModule)
-	: CModuleChooserDialog(parent, title, label),
-	m_currentModule(currentModule),
-	m_focusItem(0)
-{
-	QObject::connect(this, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), this, SLOT(applyHiddenModules(QList<CSwordModuleInfo*>)));
-	init();
-	if (m_focusItem) {
-		treeWidget()->scrollToItem(m_focusItem);
-	}
+        : CModuleChooserDialog(parent, title, label),
+        m_currentModule(currentModule),
+        m_focusItem(0) {
+    QObject::connect(this, SIGNAL(modulesChanged(QList<CSwordModuleInfo*>, QTreeWidget*)), this, SLOT(applyHiddenModules(QList<CSwordModuleInfo*>)));
+    init();
+    if (m_focusItem) {
+        treeWidget()->scrollToItem(m_focusItem);
+    }
 }
 
 
-void CHideModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem)
-{
-	widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-	if (btItem->moduleInfo()->isHidden())
-		widgetItem->setCheckState(0, Qt::Checked);
-	else
-		widgetItem->setCheckState(0, Qt::Unchecked);
-	if (m_currentModule == widgetItem->text(0)) {
-		m_focusItem = widgetItem;
-	}
+void CHideModuleChooserDialog::initModuleItem(BTModuleTreeItem* btItem, QTreeWidgetItem* widgetItem) {
+    widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
+    if (btItem->moduleInfo()->isHidden())
+        widgetItem->setCheckState(0, Qt::Checked);
+    else
+        widgetItem->setCheckState(0, Qt::Unchecked);
+    if (m_currentModule == widgetItem->text(0)) {
+        m_focusItem = widgetItem;
+    }
 }
 
-void CHideModuleChooserDialog::applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules)
-{
-	qDebug("CHideModuleChooserDialog::applyHiddenModules");
-	QList<CSwordModuleInfo*> allModules = CPointers::backend()->moduleList();
-	foreach(CSwordModuleInfo* i, allModules) {
-		if (hiddenModules.contains(i)) {
-			i->setHidden(true);
-		} else {
-			i->setHidden(false);
-		}
+void CHideModuleChooserDialog::applyHiddenModules(QList<CSwordModuleInfo*> hiddenModules) {
+    qDebug("CHideModuleChooserDialog::applyHiddenModules");
+    QList<CSwordModuleInfo*> allModules = CPointers::backend()->moduleList();
+    foreach(CSwordModuleInfo* i, allModules) {
+        if (hiddenModules.contains(i)) {
+            i->setHidden(true);
+        }
+        else {
+            i->setHidden(false);
+        }
 
-	}
+    }
 }

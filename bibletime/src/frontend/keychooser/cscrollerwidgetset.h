@@ -29,47 +29,47 @@ class CScrollButton;
   * @author The BibleTime team
   */
 class CScrollerWidgetSet : public QWidget {
-	Q_OBJECT
-public:
-	/**
-	* the constructor
-	*/
-	CScrollerWidgetSet(QWidget *parent=0);
-	/**
-	* Sets the tooltips for the given entries using the parameters as text.
-	*/
-	void setToolTips( const QString nextEntry, const QString scrollButton, const QString previousEntry);
+        Q_OBJECT
+    public:
+        /**
+        * the constructor
+        */
+        CScrollerWidgetSet(QWidget *parent = 0);
+        /**
+        * Sets the tooltips for the given entries using the parameters as text.
+        */
+        void setToolTips( const QString nextEntry, const QString scrollButton, const QString previousEntry);
 
-signals:
-	/**
-	* is emitted to proceed to some other entry relative to the 
-	* current, indicated by the int value
-	*/
-	void change(int count);
+    signals:
+        /**
+        * is emitted to proceed to some other entry relative to the
+        * current, indicated by the int value
+        */
+        void change(int count);
 
-	/**
-	* These emit when the scroll button is pressed or released
-	*/
-	void scroller_pressed();
-	void scroller_released();
+        /**
+        * These emit when the scroll button is pressed or released
+        */
+        void scroller_pressed();
+        void scroller_released();
 
-protected:
+    protected:
 
-	virtual void wheelEvent( QWheelEvent* e );
+        virtual void wheelEvent( QWheelEvent* e );
 
-	QToolButton* btn_up;
-	QToolButton* btn_down;
-	CScrollButton* btn_fx;
+        QToolButton* btn_up;
+        QToolButton* btn_down;
+        CScrollButton* btn_fx;
 
-protected slots:
-	void slotLock();
-	void slotUnlock();
-	void slotUpClick();
-	void slotDownClick();
-	void slotScroller(int);
+    protected slots:
+        void slotLock();
+        void slotUnlock();
+        void slotUpClick();
+        void slotDownClick();
+        void slotScroller(int);
 
-private:
-	QVBoxLayout *m_layout;
+    private:
+        QVBoxLayout *m_layout;
 
 };
 

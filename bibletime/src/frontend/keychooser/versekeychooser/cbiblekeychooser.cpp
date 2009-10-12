@@ -23,87 +23,83 @@
 #include <QDebug>
 
 
-CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) : 
-	CKeyChooser(modules, key, parent),
-	m_key(dynamic_cast<CSwordVerseKey*>(key)) 
-{
-	w_ref = 0;
-	setModules(modules, false);
-	if (!m_modules.count()) {
-		qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
-		m_key = 0;
-		return;
-	}
-	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->setSpacing(0);
-	layout->setContentsMargins(0,0,0,0);
-	layout->setDirection( QBoxLayout::LeftToRight );
+CBibleKeyChooser::CBibleKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key, QWidget *parent) :
+        CKeyChooser(modules, key, parent),
+        m_key(dynamic_cast<CSwordVerseKey*>(key)) {
+    w_ref = 0;
+    setModules(modules, false);
+    if (!m_modules.count()) {
+        qWarning() << "CBibleKeyChooser: module is not a Bible or commentary!";
+        m_key = 0;
+        return;
+    }
+    QHBoxLayout* layout = new QHBoxLayout(this);
+    layout->setSpacing(0);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setDirection( QBoxLayout::LeftToRight );
 
-	w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
-	setFocusProxy(w_ref);
-	layout->addWidget(w_ref);
+    w_ref = new CKeyReferenceWidget(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()), m_key, this);
+    setFocusProxy(w_ref);
+    layout->addWidget(w_ref);
 
-	connect(w_ref,SIGNAL(changed(CSwordVerseKey *)),SLOT(refChanged(CSwordVerseKey *)));
+    connect(w_ref, SIGNAL(changed(CSwordVerseKey *)), SLOT(refChanged(CSwordVerseKey *)));
 
-	setKey(m_key); //set the key without changing it, setKey(key()) would change it
+    setKey(m_key); //set the key without changing it, setKey(key()) would change it
 
-	connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
+    connect(this, SIGNAL(keyChanged(CSwordKey*)), history(), SLOT(add(CSwordKey*)) );
 }
 
 CSwordKey* CBibleKeyChooser::key() {
-	return m_key;
+    return m_key;
 }
 
-void CBibleKeyChooser::setKey(CSwordKey* key)
-{
-	Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
-	if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
+void CBibleKeyChooser::setKey(CSwordKey* key) {
+    Q_ASSERT(dynamic_cast<CSwordVerseKey*>(key));
+    if (dynamic_cast<CSwordVerseKey*>(key) == 0) return;
 
-	emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
-	m_key = dynamic_cast<CSwordVerseKey*>(key);
-	w_ref->setKey(m_key);
-	emit keyChanged(m_key);
+    emit (beforeKeyChange(m_key->key())); //required to make direct setKey calls work from the outside
+    m_key = dynamic_cast<CSwordVerseKey*>(key);
+    w_ref->setKey(m_key);
+    emit keyChanged(m_key);
 }
 
-void CBibleKeyChooser::refChanged(CSwordVerseKey* key)
-{
-	Q_ASSERT(m_key);
-	Q_ASSERT(key);
+void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
+    Q_ASSERT(m_key);
+    Q_ASSERT(key);
 
-	if (!updatesEnabled()) return;
+    if (!updatesEnabled()) return;
 
-	setUpdatesEnabled(false);
-	if (m_key) emit beforeKeyChange(m_key->key());
-	m_key = key;
-	emit keyChanged(m_key);
+    setUpdatesEnabled(false);
+    if (m_key) emit beforeKeyChange(m_key->key());
+    m_key = key;
+    emit keyChanged(m_key);
 
-	setUpdatesEnabled(true);
+    setUpdatesEnabled(true);
 }
 
 void CBibleKeyChooser::setModules(const QList<CSwordModuleInfo*>& modules, const bool refresh) {
-	m_modules.clear();
+    m_modules.clear();
 
-	foreach (CSwordModuleInfo* mod, modules) {
-		if (mod->type() == CSwordModuleInfo::Bible || mod->type() == CSwordModuleInfo::Commentary) {
-			if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(mod)) m_modules.append(bible);
-		}
-	}
+    foreach (CSwordModuleInfo* mod, modules) {
+        if (mod->type() == CSwordModuleInfo::Bible || mod->type() == CSwordModuleInfo::Commentary) {
+            if (CSwordBibleModuleInfo* bible = dynamic_cast<CSwordBibleModuleInfo*>(mod)) m_modules.append(bible);
+        }
+    }
 
-	// First time this is called we havnt set up w_ref.
-	if (w_ref) w_ref->setModule(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()));
-	if (refresh) refreshContent();
+    // First time this is called we havnt set up w_ref.
+    if (w_ref) w_ref->setModule(dynamic_cast<CSwordBibleModuleInfo*>(m_modules.first()));
+    if (refresh) refreshContent();
 }
 
 void CBibleKeyChooser::refreshContent() {
-	setKey(m_key);
+    setKey(m_key);
 }
 
 void CBibleKeyChooser::updateKey(CSwordKey* /*key*/) {}
 
 void CBibleKeyChooser::adjustFont() {}
 
-void CBibleKeyChooser::setKey(QString& newKey)
-{
-	m_key->key(newKey);
-	setKey(m_key);
+void CBibleKeyChooser::setKey(QString& newKey) {
+    m_key->key(newKey);
+    setKey(m_key);
 }

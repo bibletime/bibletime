@@ -21,23 +21,22 @@ class QTimerEvent;
 * This is implemented mostly because it needs a delay which prevents unwanted actions after
 * the menu has been shown and mouse button is released over some item.
 */
-class BtVerseKeyMenu : public QMenu
-{
-	Q_OBJECT
-public:
-	BtVerseKeyMenu(QWidget* parent);
-	~BtVerseKeyMenu(){}
-protected:
-	virtual void mouseReleaseEvent(QMouseEvent* event);
-	/** Frees the mouse button release after the delay has elapsed.*/
-	virtual void timerEvent(QTimerEvent* event);
-private slots:
-	/** Starts the delay timer for the first mouse button release.*/
-	void startFirstClickDelayTimer();
+class BtVerseKeyMenu : public QMenu {
+        Q_OBJECT
+    public:
+        BtVerseKeyMenu(QWidget* parent);
+        ~BtVerseKeyMenu() {}
+    protected:
+        virtual void mouseReleaseEvent(QMouseEvent* event);
+        /** Frees the mouse button release after the delay has elapsed.*/
+        virtual void timerEvent(QTimerEvent* event);
+    private slots:
+        /** Starts the delay timer for the first mouse button release.*/
+        void startFirstClickDelayTimer();
 
-private:
-	int m_timerId;
-	bool m_firstClickLock;
+    private:
+        int m_timerId;
+        bool m_firstClickLock;
 };
 
 #endif

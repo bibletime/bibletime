@@ -18,8 +18,7 @@
 #include <QWheelEvent>
 
 CScrollButton::CScrollButton(QWidget *parent)
-    : QToolButton(parent), m_isLocked(false)
-{
+        : QToolButton(parent), m_isLocked(false) {
     setFocusPolicy(Qt::WheelFocus);
     setCursor(Qt::SplitVCursor);
 }
@@ -57,11 +56,14 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
             int avchange(vchange >= 0 ? vchange : -vchange);
             if (avchange < 10) {
                 avchange = (int) pow(avchange, 0.3);
-            } else if (avchange < 30) {
+            }
+            else if (avchange < 30) {
                 avchange = (int) pow(avchange, 0.6);
-            } else if (avchange < 40) {
+            }
+            else if (avchange < 40) {
                 avchange = (int) pow(avchange, 1.2);
-            } else {
+            }
+            else {
                 avchange = (int) pow(avchange, 2.0);
             }
 
@@ -69,7 +71,8 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
             if (avchange != 0) {
                 if (vchange > 0) {
                     emit change_requested(avchange);
-                } else if (vchange < 0) {
+                }
+                else if (vchange < 0) {
                     emit change_requested(-avchange);
                 }
             }
@@ -77,7 +80,8 @@ void CScrollButton::mouseMoveEvent(QMouseEvent *e) {
 
         // Move the mouse cursor to the center of this widget:
         QCursor::setPos(center);
-    } else {
+    }
+    else {
         QToolButton::mouseMoveEvent(e);
     }
 }

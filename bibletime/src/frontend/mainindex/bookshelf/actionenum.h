@@ -11,14 +11,14 @@
 #define ACTIONENUM_H
 
 enum IndexAction {
-	EditModule,
-	UnlockModule,
-	HideModules,
-	ShowAllModules,
-	SearchModules,
-	UpdateModules,
-	Grouping,
-	AboutModule
+    EditModule,
+    UnlockModule,
+    HideModules,
+    ShowAllModules,
+    SearchModules,
+    UpdateModules,
+    Grouping,
+    AboutModule
 };
 
 #endif

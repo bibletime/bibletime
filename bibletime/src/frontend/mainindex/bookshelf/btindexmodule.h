@@ -21,19 +21,18 @@ class QAction;
 class QMimeData;
 
 
-class BTIndexModule : public BTIndexItem
-{
-public:
-	BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous);
+class BTIndexModule : public BTIndexItem {
+    public:
+        BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous);
 
-	~BTIndexModule();
+        ~BTIndexModule();
 
-	virtual bool enableAction(QAction* action) const;
-	virtual bool acceptDrop(const QMimeData* data);
-	CSwordModuleInfo* moduleInfo() const;
+        virtual bool enableAction(QAction* action) const;
+        virtual bool acceptDrop(const QMimeData* data);
+        CSwordModuleInfo* moduleInfo() const;
 
-private:
-	CSwordModuleInfo* m_moduleInfo;
+    private:
+        CSwordModuleInfo* m_moduleInfo;
 };
 
 #endif
