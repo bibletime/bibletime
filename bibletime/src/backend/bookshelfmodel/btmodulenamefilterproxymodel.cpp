@@ -13,8 +13,7 @@
 #include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
 
 BtModuleNameFilterProxyModel::BtModuleNameFilterProxyModel(QObject *parent)
-    : QSortFilterProxyModel(parent), m_enabled(true)
-{
+        : QSortFilterProxyModel(parent), m_enabled(true) {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 
@@ -23,8 +22,7 @@ BtModuleNameFilterProxyModel::~BtModuleNameFilterProxyModel() {
 }
 
 bool BtModuleNameFilterProxyModel::filterAcceptsRow(int row,
-                                                    const QModelIndex &p) const
-{
+        const QModelIndex &p) const {
     if (!m_enabled) return true;
 
     const QAbstractItemModel *m(sourceModel());
@@ -34,7 +32,8 @@ bool BtModuleNameFilterProxyModel::filterAcceptsRow(int row,
     int numChildren(m->rowCount(itemIndex));
     if (numChildren == 0) {
         return QSortFilterProxyModel::filterAcceptsRow(row, p);
-    } else {
+    }
+    else {
         for (int i(0); i < numChildren; i++) {
             if (filterAcceptsRow(i, itemIndex)) return true;
         }

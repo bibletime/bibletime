@@ -15,8 +15,7 @@
 namespace BookshelfModel {
 
 CategoryItem::CategoryItem(CSwordModuleInfo *module)
-    : Item(ITEM_CATEGORY), m_category(module->category())
-{
+        : Item(ITEM_CATEGORY), m_category(module->category()) {
     // Intentionally empty
 }
 

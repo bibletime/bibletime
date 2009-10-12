@@ -49,59 +49,59 @@ class CSwordModuleInfo;
 
 class CSwordLDKey : public CSwordKey, public sword::SWKey {
 
-public:
-	/**
-	* Constructor of CSwordLDKey
-	*/
-	CSwordLDKey( CSwordModuleInfo* module );
-	/**
-	* Copy constructor for this key class.
-	*/
-	CSwordLDKey( const CSwordLDKey &k );
-	/**
-	* Copy constructor for this key class.
-	*/
-	CSwordLDKey( const sword::SWKey *k, CSwordModuleInfo* module);
-	/**
-	* Clones this object by copying the members.
-	*/
-	virtual CSwordLDKey* copy() const;
-	/**
-	* Uses the parameter to returns the next entry afer this key.
-	*/
-	CSwordLDKey* NextEntry( void );
-	/**
-	* Uses the parameter to returns the previous entry afer this key.
-	*/
-	CSwordLDKey* PreviousEntry( void );
-	/**
-	* Sets the module of this key.
-	*/
-	virtual CSwordModuleInfo* module( CSwordModuleInfo* const module = 0 );
-	/**
-	* Returns the current key as a QString
-	*/
-	virtual QString key() const;
-	/**
-	* Set the current key using unicode decoded QString.
-	*/
-	virtual bool key( const QString& newKey );
-	/**
-	* Set the current key from char*. To avoid encoding problems use key(QString) instead.
-	*/
-	virtual bool key( const char* );
+    public:
+        /**
+        * Constructor of CSwordLDKey
+        */
+        CSwordLDKey( CSwordModuleInfo* module );
+        /**
+        * Copy constructor for this key class.
+        */
+        CSwordLDKey( const CSwordLDKey &k );
+        /**
+        * Copy constructor for this key class.
+        */
+        CSwordLDKey( const sword::SWKey *k, CSwordModuleInfo* module);
+        /**
+        * Clones this object by copying the members.
+        */
+        virtual CSwordLDKey* copy() const;
+        /**
+        * Uses the parameter to returns the next entry afer this key.
+        */
+        CSwordLDKey* NextEntry( void );
+        /**
+        * Uses the parameter to returns the previous entry afer this key.
+        */
+        CSwordLDKey* PreviousEntry( void );
+        /**
+        * Sets the module of this key.
+        */
+        virtual CSwordModuleInfo* module( CSwordModuleInfo* const module = 0 );
+        /**
+        * Returns the current key as a QString
+        */
+        virtual QString key() const;
+        /**
+        * Set the current key using unicode decoded QString.
+        */
+        virtual bool key( const QString& newKey );
+        /**
+        * Set the current key from char*. To avoid encoding problems use key(QString) instead.
+        */
+        virtual bool key( const char* );
 
-protected:
-	/**
-	 * Returns the raw key appropriate for use directly with Sword.
-	 */
-	virtual const char* rawKey() const;
+    protected:
+        /**
+         * Returns the raw key appropriate for use directly with Sword.
+         */
+        virtual const char* rawKey() const;
 
-private:
-	/**
-	* Disable assignment operator
-	*/
-	CSwordLDKey& operator= (const CSwordLDKey& );
+    private:
+        /**
+        * Disable assignment operator
+        */
+        CSwordLDKey& operator= (const CSwordLDKey& );
 
 };
 

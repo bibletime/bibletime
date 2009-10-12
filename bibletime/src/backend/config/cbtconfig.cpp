@@ -37,10 +37,14 @@ FontCacheMap  m_fontCache;
 
 QString getKey(const strings ID) {
     switch (ID) {
-        case bibletimeVersion:     return "bibletimeVersion";
-        case language:             return "language";
-        case displayStyle:         return "displayStyle";
-        case bookshelfCurrentItem: return "bookshelfCurrentItem";
+        case bibletimeVersion:
+            return "bibletimeVersion";
+        case language:
+            return "language";
+        case displayStyle:
+            return "displayStyle";
+        case bookshelfCurrentItem:
+            return "bookshelfCurrentItem";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -48,14 +52,22 @@ QString getKey(const strings ID) {
 
 QString getKey(const modules ID) {
     switch (ID) {
-        case standardBible:                return "standardBible";
-        case standardCommentary:           return "standardCommentary";
-        case standardLexicon:              return "standardLexicon";
-        case standardDailyDevotional:      return "standardDailyDevotional";
-        case standardHebrewStrongsLexicon: return "standardHebrewLexicon";
-        case standardGreekStrongsLexicon:  return "standardGreekLexicon";
-        case standardHebrewMorphLexicon:   return "standardHebrewMorphLexicon";
-        case standardGreekMorphLexicon:    return "standardGreekMorphLexicon";
+        case standardBible:
+            return "standardBible";
+        case standardCommentary:
+            return "standardCommentary";
+        case standardLexicon:
+            return "standardLexicon";
+        case standardDailyDevotional:
+            return "standardDailyDevotional";
+        case standardHebrewStrongsLexicon:
+            return "standardHebrewLexicon";
+        case standardGreekStrongsLexicon:
+            return "standardGreekLexicon";
+        case standardHebrewMorphLexicon:
+            return "standardHebrewMorphLexicon";
+        case standardGreekMorphLexicon:
+            return "standardGreekMorphLexicon";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -63,27 +75,43 @@ QString getKey(const modules ID) {
 
 QString getKey(const bools ID) {
     switch (ID) {
-        case firstSearchDialog:     return "firstSearchDialog";
-        case readOldBookmarks:      return "readOldBookmarks";
+        case firstSearchDialog:
+            return "firstSearchDialog";
+        case readOldBookmarks:
+            return "readOldBookmarks";
 
-        case toolbar:               return "toolbar";
-        case mainIndex:             return "mainIndex";
-        case infoDisplay:           return "infoDisplay";
+        case toolbar:
+            return "toolbar";
+        case mainIndex:
+            return "mainIndex";
+        case infoDisplay:
+            return "infoDisplay";
 
-        case autoTileVertical:      return "autoTileVertical";
-        case autoTileHorizontal:    return "autoTileHorizontal";
-        case autoCascade:           return "autoCascade";
+        case autoTileVertical:
+            return "autoTileVertical";
+        case autoTileHorizontal:
+            return "autoTileHorizontal";
+        case autoCascade:
+            return "autoCascade";
 
-        case lineBreaks:            return "lineBreaks";
-        case verseNumbers:          return "verseNumbers";
+        case lineBreaks:
+            return "lineBreaks";
+        case verseNumbers:
+            return "verseNumbers";
 
-        case logo:                      return "logo";
-        case autoDeleteOrphanedIndices: return "autoDeleteOrphanedIndices";
-        case crashedLastTime:           return "crashedLastTime";
-        case crashedTwoTimes:           return "crashedTwoTimes";
+        case logo:
+            return "logo";
+        case autoDeleteOrphanedIndices:
+            return "autoDeleteOrphanedIndices";
+        case crashedLastTime:
+            return "crashedLastTime";
+        case crashedTwoTimes:
+            return "crashedTwoTimes";
 
-        case bookshelfShowHidden:       return "bookshelfShowHidden";
-        case allowNetworkConnection:    return "allowNetworkConnection";
+        case bookshelfShowHidden:
+            return "bookshelfShowHidden";
+        case allowNetworkConnection:
+            return "allowNetworkConnection";
     }
     Q_ASSERT(false);
     return false;
@@ -91,36 +119,66 @@ QString getKey(const bools ID) {
 
 QString getKey(const ints ID) {
     switch (ID) {
-        case footnotes:             return "footnotes";
-        case strongNumbers:         return "strongNumbers";
-        case headings:              return "headings";
-        case morphTags:             return "morphTags";
-        case lemmas:                return "lemmas";
-        case hebrewPoints:          return "hebrewPoints";
-        case hebrewCantillation:    return "hebrewCantillation";
-        case greekAccents:          return "greekAccents";
-        case textualVariants:       return "textualVariants";
-        case scriptureReferences:   return "scriptureReferences";
-        case morphSegmentation:     return "morphSegmentation";
-        case bookshelfContentsX:    return "bookshelfContentsX";
-        case bookshelfContentsY:    return "bookshelfContentsY";
-        case magDelay:              return "magDelay";
-        case bookshelfGrouping:     return "bookshelfGrouping";
-        case mainindexActiveTab:    return "mainindexActiveTab";
-        case searchDialogWidth:     return "searchDialogWidth";
-        case searchDialogHeight:    return "searchDialogHeight";
-        case searchDialogX:         return "searchDialogX";
-        case searchDialogY:         return "searchDialogY";
-        case searchType:            return "searchType";
-        case installPathIndex:      return "installPathIndex";
-        case bookshelfPosX:         return "bookshelfPosX";
-        case bookshelfPosY:         return "bookshelfPosY";
-        case bookshelfHeight:       return "bookshelfHeight";
-        case bookshelfWidth:        return "bookshelfWidth";
-        case configDialogPosX:      return "configDialogPosX";
-        case configDialogPosY:      return "configDialogPosY";
-        case configDialogHeight:    return "configDialogHeight";
-        case configDialogWidth:     return "configDialogWidth";
+        case footnotes:
+            return "footnotes";
+        case strongNumbers:
+            return "strongNumbers";
+        case headings:
+            return "headings";
+        case morphTags:
+            return "morphTags";
+        case lemmas:
+            return "lemmas";
+        case hebrewPoints:
+            return "hebrewPoints";
+        case hebrewCantillation:
+            return "hebrewCantillation";
+        case greekAccents:
+            return "greekAccents";
+        case textualVariants:
+            return "textualVariants";
+        case scriptureReferences:
+            return "scriptureReferences";
+        case morphSegmentation:
+            return "morphSegmentation";
+        case bookshelfContentsX:
+            return "bookshelfContentsX";
+        case bookshelfContentsY:
+            return "bookshelfContentsY";
+        case magDelay:
+            return "magDelay";
+        case bookshelfGrouping:
+            return "bookshelfGrouping";
+        case mainindexActiveTab:
+            return "mainindexActiveTab";
+        case searchDialogWidth:
+            return "searchDialogWidth";
+        case searchDialogHeight:
+            return "searchDialogHeight";
+        case searchDialogX:
+            return "searchDialogX";
+        case searchDialogY:
+            return "searchDialogY";
+        case searchType:
+            return "searchType";
+        case installPathIndex:
+            return "installPathIndex";
+        case bookshelfPosX:
+            return "bookshelfPosX";
+        case bookshelfPosY:
+            return "bookshelfPosY";
+        case bookshelfHeight:
+            return "bookshelfHeight";
+        case bookshelfWidth:
+            return "bookshelfWidth";
+        case configDialogPosX:
+            return "configDialogPosX";
+        case configDialogPosY:
+            return "configDialogPosY";
+        case configDialogHeight:
+            return "configDialogHeight";
+        case configDialogWidth:
+            return "configDialogWidth";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -128,10 +186,14 @@ QString getKey(const ints ID) {
 
 QString getKey(const intLists ID) {
     switch (ID) {
-        case leftPaneSplitterSizes:     return "leftPaneSplitterSizes";
-        case mainSplitterSizes:         return "mainSplitterSizes";
-        case searchMainSplitterSizes:   return "searchMainSplitterSizes";
-        case searchResultSplitterSizes: return "searchResultSplitterSizes";
+        case leftPaneSplitterSizes:
+            return "leftPaneSplitterSizes";
+        case mainSplitterSizes:
+            return "mainSplitterSizes";
+        case searchMainSplitterSizes:
+            return "searchMainSplitterSizes";
+        case searchResultSplitterSizes:
+            return "searchResultSplitterSizes";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -139,11 +201,16 @@ QString getKey(const intLists ID) {
 
 QString getKey(const stringLists ID) {
     switch (ID) {
-        case searchCompletionTexts: return "searchCompletionTexts";
-        case searchTexts:           return "searchTexts";
-        case searchModulesHistory:  return "searchModulesHistory";
-        case bookshelfOpenGroups:   return "bookshelfOpenGroups";
-        case hiddenModules:         return "hiddenModules";
+        case searchCompletionTexts:
+            return "searchCompletionTexts";
+        case searchTexts:
+            return "searchTexts";
+        case searchModulesHistory:
+            return "searchModulesHistory";
+        case bookshelfOpenGroups:
+            return "bookshelfOpenGroups";
+        case hiddenModules:
+            return "hiddenModules";
     }
     Q_ASSERT(false);
     return QString::null;
@@ -151,7 +218,8 @@ QString getKey(const stringLists ID) {
 
 QString getKey(const stringMaps ID) {
     switch (ID) {
-        case searchScopes: return "SearchScopes";
+        case searchScopes:
+            return "SearchScopes";
     };
     Q_ASSERT(false);
     return QString::null;
@@ -184,10 +252,14 @@ QList<int> StringToIntList(const QString intListString) {
 
 QString getDefault(const strings ID) {
     switch (ID) {
-        case bibletimeVersion:      return "0.0"; // main() will realize this and set the value to VERSION
-        case language:              return QLocale::system().name();
-        case displayStyle:          return CDisplayTemplateMgr::defaultTemplate();
-        case bookshelfCurrentItem:  return QString();
+        case bibletimeVersion:
+            return "0.0"; // main() will realize this and set the value to VERSION
+        case language:
+            return QLocale::system().name();
+        case displayStyle:
+            return CDisplayTemplateMgr::defaultTemplate();
+        case bookshelfCurrentItem:
+            return QString();
     }
     return QString::null;
 }
@@ -195,15 +267,23 @@ QString getDefault(const strings ID) {
 QString getDefault(const modules ID) {
     // CSwordBackend *b = CPointers::backend();
     switch (ID) {
-        case standardBible:             return "KJV";
-        case standardCommentary:        return "MHC";
-        case standardLexicon:           return "ISBE";
-        case standardDailyDevotional:   return ""; // No default
+        case standardBible:
+            return "KJV";
+        case standardCommentary:
+            return "MHC";
+        case standardLexicon:
+            return "ISBE";
+        case standardDailyDevotional:
+            return ""; // No default
 
-        case standardHebrewStrongsLexicon:  return "StrongsHebrew";
-        case standardGreekStrongsLexicon:   return "StrongsGreek";
-        case standardHebrewMorphLexicon:    return "StrongsHebrew";
-        case standardGreekMorphLexicon:     return "StrongsGreek";
+        case standardHebrewStrongsLexicon:
+            return "StrongsHebrew";
+        case standardGreekStrongsLexicon:
+            return "StrongsGreek";
+        case standardHebrewMorphLexicon:
+            return "StrongsHebrew";
+        case standardGreekMorphLexicon:
+            return "StrongsGreek";
     }
 
     return QString::null;
@@ -211,62 +291,108 @@ QString getDefault(const modules ID) {
 
 bool getDefault(const bools ID) {
     switch (ID) {
-        case firstSearchDialog:     return true;
-        case readOldBookmarks:      return false;
+        case firstSearchDialog:
+            return true;
+        case readOldBookmarks:
+            return false;
 
-        case toolbar:       return true;
-        case mainIndex:     return true;
-        case infoDisplay:   return true;
+        case toolbar:
+            return true;
+        case mainIndex:
+            return true;
+        case infoDisplay:
+            return true;
 
-        case autoTileVertical:      return true;
-        case autoTileHorizontal:    return false;
-        case autoCascade:           return false;
+        case autoTileVertical:
+            return true;
+        case autoTileHorizontal:
+            return false;
+        case autoCascade:
+            return false;
 
-        case lineBreaks:    return false;
-        case verseNumbers:  return true;
+        case lineBreaks:
+            return false;
+        case verseNumbers:
+            return true;
 
-        case logo:                      return true;
-        case autoDeleteOrphanedIndices: return true;
-        case crashedLastTime:           return false;
-        case crashedTwoTimes:           return false;
-        case bookshelfShowHidden:       return false;
-        case allowNetworkConnection:    return false;
+        case logo:
+            return true;
+        case autoDeleteOrphanedIndices:
+            return true;
+        case crashedLastTime:
+            return false;
+        case crashedTwoTimes:
+            return false;
+        case bookshelfShowHidden:
+            return false;
+        case allowNetworkConnection:
+            return false;
     }
     return false;
 }
 
 int getDefault(const ints ID) {
     switch (ID) {
-        case footnotes:             return int(true);
-        case strongNumbers:         return int(true);
-        case headings:              return int(true);
-        case morphTags:             return int(true);
-        case lemmas:                return int(true);
-        case hebrewPoints:          return int(true);
-        case hebrewCantillation:    return int(true);
-        case greekAccents:          return int(true);
-        case textualVariants:       return int(false);
-        case scriptureReferences:   return int(true);
-        case morphSegmentation:     return int(true);
-        case bookshelfContentsX:    return 0;
-        case bookshelfContentsY:    return 0;
-        case magDelay:              return 400;
-        case bookshelfGrouping:     return BTModuleTreeItem::CatLangMod;
-        case searchDialogWidth:     return 200;
-        case searchDialogHeight:    return 400;
-        case searchDialogX:         return 200;
-        case searchDialogY:         return 200;
-        case searchType:            return Search::BtSearchOptionsArea::AndType;
-        case mainindexActiveTab:    return 0;
-        case installPathIndex:      return 0;
-        case bookshelfPosX:         return 1;
-        case bookshelfPosY:         return 1;
-        case bookshelfHeight:       return 1;
-        case bookshelfWidth:        return 1;
-        case configDialogPosX:      return 1;
-        case configDialogPosY:      return 1;
-        case configDialogHeight:    return 1;
-        case configDialogWidth:     return 1;
+        case footnotes:
+            return int(true);
+        case strongNumbers:
+            return int(true);
+        case headings:
+            return int(true);
+        case morphTags:
+            return int(true);
+        case lemmas:
+            return int(true);
+        case hebrewPoints:
+            return int(true);
+        case hebrewCantillation:
+            return int(true);
+        case greekAccents:
+            return int(true);
+        case textualVariants:
+            return int(false);
+        case scriptureReferences:
+            return int(true);
+        case morphSegmentation:
+            return int(true);
+        case bookshelfContentsX:
+            return 0;
+        case bookshelfContentsY:
+            return 0;
+        case magDelay:
+            return 400;
+        case bookshelfGrouping:
+            return BTModuleTreeItem::CatLangMod;
+        case searchDialogWidth:
+            return 200;
+        case searchDialogHeight:
+            return 400;
+        case searchDialogX:
+            return 200;
+        case searchDialogY:
+            return 200;
+        case searchType:
+            return Search::BtSearchOptionsArea::AndType;
+        case mainindexActiveTab:
+            return 0;
+        case installPathIndex:
+            return 0;
+        case bookshelfPosX:
+            return 1;
+        case bookshelfPosY:
+            return 1;
+        case bookshelfHeight:
+            return 1;
+        case bookshelfWidth:
+            return 1;
+        case configDialogPosX:
+            return 1;
+        case configDialogPosY:
+            return 1;
+        case configDialogHeight:
+            return 1;
+        case configDialogWidth:
+            return 1;
     }
     return 0;
 }
@@ -288,10 +414,14 @@ QStringList getDefault(const stringLists ID) {
             list.append(QString::null);
             return list;
         }
-        case searchCompletionTexts: return QStringList();
-        case bookshelfOpenGroups:   return QStringList();
-        case hiddenModules:         return QStringList();
-        case searchModulesHistory:  return QStringList();
+        case searchCompletionTexts:
+            return QStringList();
+        case bookshelfOpenGroups:
+            return QStringList();
+        case hiddenModules:
+            return QStringList();
+        case searchModulesHistory:
+            return QStringList();
     }
     return QStringList();
 }
@@ -349,8 +479,8 @@ QString get(const strings ID) {
 CSwordModuleInfo *get(const modules ID) {
     getConfig()->beginGroup("modules");
     CSwordModuleInfo *result(CPointers::backend()->findModuleByName(
-                getConfig()->value(getKey(ID), getDefault(ID)).toString()
-            ));
+                                 getConfig()->value(getKey(ID), getDefault(ID)).toString()
+                             ));
     getConfig()->endGroup();
     return result;
 }
@@ -372,9 +502,9 @@ int get(const ints ID) {
 QList<int> get(const intLists ID) {
     getConfig()->beginGroup("intlists");
     QList<int> result(StringToIntList(
-                getConfig()->value(getKey(ID), IntListToString(getDefault(ID)))
-                    .toString()
-            ));
+                          getConfig()->value(getKey(ID), IntListToString(getDefault(ID)))
+                          .toString()
+                      ));
     getConfig()->endGroup();
     return result;
 }
@@ -382,8 +512,8 @@ QList<int> get(const intLists ID) {
 QStringList get(const stringLists ID) {
     getConfig()->beginGroup("stringlists");
     QStringList result(
-            getConfig()->value(getKey(ID), getDefault(ID)).toStringList()
-        );
+        getConfig()->value(getKey(ID), getDefault(ID)).toStringList()
+    );
     getConfig()->endGroup();
     return result;
 }
@@ -414,9 +544,11 @@ StringMap get(const stringMaps ID) {
                     map[key] = data; // Set the new data
                 }
             }
-            default: break;
+            default:
+                break;
         }
-    } else {
+    }
+    else {
         map = getDefault(ID);
     }
     getConfig()->endGroup();
@@ -438,7 +570,8 @@ FontSettingsPair get(const CLanguageMgr::Language * const language) {
     QFont font;
     if (settings.first) {
         font.fromString(getConfig()->value(getKey(language), getDefault(language)).toString());
-    } else {
+    }
+    else {
         font = getDefault(language);
     }
     settings.second = font;
@@ -539,8 +672,7 @@ void set(const stringMaps ID, const StringMap value) {
 }
 
 void set(const CLanguageMgr::Language * const language,
-         const FontSettingsPair& value)
-{
+         const FontSettingsPair& value) {
     getConfig()->beginGroup("fonts");
     getConfig()->setValue(getKey(language), value.second.toString());
     getConfig()->endGroup();
@@ -579,8 +711,7 @@ CSwordBackend::FilterOptions getFilterOptionDefaults() {
 }
 
 void setupAccelSettings(const keys type,
-                        BtActionCollection * const actionCollection)
-{
+                        BtActionCollection * const actionCollection) {
     qDebug("CBTConfig::setupAccelSettings begin");
     QString groupName;
     switch (type) {
@@ -618,8 +749,7 @@ void setupAccelSettings(const keys type,
 }
 
 void saveAccelSettings(const keys type,
-                       BtActionCollection * const actionCollection)
-{
+                       BtActionCollection * const actionCollection) {
     qDebug("CBTConfig::saveAccelSettings begin");
     QString groupName;
     switch (type) {

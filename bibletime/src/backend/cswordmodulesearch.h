@@ -34,65 +34,65 @@ class CSwordModuleInfo;
   */
 
 class CSwordModuleSearch: public QObject, CPointers  {
-	Q_OBJECT
+        Q_OBJECT
 
-public:
-	CSwordModuleSearch();
-	/**
-	* The destructor of this class. It cleans uop memory before it's deleted.
-	*/
-	virtual ~CSwordModuleSearch();
-	/**
-	* Sets the text which should be search in the modules.
-	*/
-	void setSearchedText( const QString& );
-	/**
-	* Starts the search for the search text.
-	*/
-	bool startSearch();
-	/**
-	* This function sets the modules which should be searched.
-	*/
-	void setModules( const QList<CSwordModuleInfo*>& );
-	/**
-	* Sets the search scope.
-	*/
-	void setSearchScope( const sword::ListKey& scope );
-	/**
-	* Sets the seaech scope back.
-	*/
-	void resetSearchScope();
-	/**
-	* @return "true" if in the last search the searcher found items, if no items were found return "false"
-	*/
-	bool foundItems() const;
-	/**
-	* Returns a copy of the used search scope.
-	*/
-	const sword::ListKey& searchScope() const;
+    public:
+        CSwordModuleSearch();
+        /**
+        * The destructor of this class. It cleans uop memory before it's deleted.
+        */
+        virtual ~CSwordModuleSearch();
+        /**
+        * Sets the text which should be search in the modules.
+        */
+        void setSearchedText( const QString& );
+        /**
+        * Starts the search for the search text.
+        */
+        bool startSearch();
+        /**
+        * This function sets the modules which should be searched.
+        */
+        void setModules( const QList<CSwordModuleInfo*>& );
+        /**
+        * Sets the search scope.
+        */
+        void setSearchScope( const sword::ListKey& scope );
+        /**
+        * Sets the seaech scope back.
+        */
+        void resetSearchScope();
+        /**
+        * @return "true" if in the last search the searcher found items, if no items were found return "false"
+        */
+        bool foundItems() const;
+        /**
+        * Returns a copy of the used search scope.
+        */
+        const sword::ListKey& searchScope() const;
 
-	void connectFinished( QObject * receiver, const char * member );
-	void searchFinished();
+        void connectFinished( QObject * receiver, const char * member );
+        void searchFinished();
 
-	/**
-	* Returns true if all of the specified modules have indices already built.
-	*/
-	bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
+        /**
+        * Returns true if all of the specified modules have indices already built.
+        */
+        bool modulesHaveIndices( const QList<CSwordModuleInfo*>& );
 
-protected:
-	QString m_searchedText;
-	sword::ListKey m_searchScope;
-	QList<CSwordModuleInfo*> m_moduleList;
+    protected:
+        QString m_searchedText;
+        sword::ListKey m_searchScope;
+        QList<CSwordModuleInfo*> m_moduleList;
 
-	int m_searchOptions;
+        int m_searchOptions;
 
-	bool m_foundItems;
+        bool m_foundItems;
 
-signals:
-	void finished();
+    signals:
+        void finished();
 
-private:
-	static CSwordModuleSearch* searcher;
+    private:
+        static CSwordModuleSearch* searcher;
 };
 
 #endif

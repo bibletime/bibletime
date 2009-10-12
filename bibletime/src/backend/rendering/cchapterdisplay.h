@@ -22,14 +22,14 @@ namespace Rendering {
 
 class CChapterDisplay : public CEntryDisplay {
 
-public: // Public methods
-	virtual ~CChapterDisplay() {}
+    public: // Public methods
+        virtual ~CChapterDisplay() {}
 
-	/**
-	* Returns the rendered text using the modules in the list and using the key parameter.
-	* The displayoptions and filter options are used, too.
-	*/
-	virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
+        /**
+        * Returns the rendered text using the modules in the list and using the key parameter.
+        * The displayoptions and filter options are used, too.
+        */
+        virtual const QString text( const QList<CSwordModuleInfo*>& modules, const QString& key, const CSwordBackend::DisplayOptions displayOptions, const CSwordBackend::FilterOptions filterOptions);
 };
 
 }

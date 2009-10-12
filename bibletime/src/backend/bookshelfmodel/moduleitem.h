@@ -24,9 +24,13 @@ class ModuleItem: public Item {
     public:
         ModuleItem(CSwordModuleInfo *module);
 
-        CSwordModuleInfo *moduleInfo() const { return m_moduleInfo; }
+        CSwordModuleInfo *moduleInfo() const {
+            return m_moduleInfo;
+        }
 
-        inline QString name() const { return m_moduleInfo->name(); }
+        inline QString name() const {
+            return m_moduleInfo->name();
+        }
 
         inline QIcon icon() const {
             return BtBookshelfModel::categoryIcon(m_moduleInfo->category());

@@ -17,8 +17,7 @@
 namespace BookshelfModel {
 
 ModuleItem::ModuleItem(CSwordModuleInfo *module)
-    : Item(ITEM_MODULE), m_moduleInfo(module)
-{
+        : Item(ITEM_MODULE), m_moduleInfo(module) {
     Q_ASSERT(module != 0);
 }
 

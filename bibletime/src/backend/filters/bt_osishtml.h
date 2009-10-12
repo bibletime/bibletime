@@ -17,53 +17,53 @@
 
 namespace Filters {
 
-	/** BibleTime's OSIS to HTMl filter.
-	* This filter works on OSIS tags and outputs HTML in the structure supported by BibleTime.
-	*/
+/** BibleTime's OSIS to HTMl filter.
+* This filter works on OSIS tags and outputs HTML in the structure supported by BibleTime.
+*/
 
 class BT_OSISHTML : public sword::OSISHTMLHREF {
 
-protected:
+    protected:
 
-class BT_UserData : public sword::OSISHTMLHREF::MyUserData {
+        class BT_UserData : public sword::OSISHTMLHREF::MyUserData {
 
-public:
-BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::OSISHTMLHREF::MyUserData(module, key) {
-				noteType = Unknown;
-				swordFootnote = 1;
-				inCrossrefNote = false;
-				entryAttributes = module->getEntryAttributes();
-			}
+            public:
+                BT_UserData(const sword::SWModule *module, const sword::SWKey *key) : sword::OSISHTMLHREF::MyUserData(module, key) {
+                    noteType = Unknown;
+                    swordFootnote = 1;
+                    inCrossrefNote = false;
+                    entryAttributes = module->getEntryAttributes();
+                }
 
-			unsigned short int swordFootnote;
-			bool inCrossrefNote;
-			sword::AttributeTypeList entryAttributes;
+                unsigned short int swordFootnote;
+                bool inCrossrefNote;
+                sword::AttributeTypeList entryAttributes;
 
-			enum NoteType {
-				Unknown,
-				Alternative,
-				CrossReference,
-				Footnote,
-				StrongsMarkup
-			} noteType;
+                enum NoteType {
+                    Unknown,
+                    Alternative,
+                    CrossReference,
+                    Footnote,
+                    StrongsMarkup
+                } noteType;
 
-			struct {
-				sword::SWBuf who;
-			}
+                struct {
+                    sword::SWBuf who;
+                }
 
-			quote;
-		};
+                quote;
+        };
 
-		virtual sword::BasicFilterUserData *createUserData(const sword::SWModule* module, const sword::SWKey* key) {
-			return new BT_UserData(module, key);
-		}
+        virtual sword::BasicFilterUserData *createUserData(const sword::SWModule* module, const sword::SWKey* key) {
+            return new BT_UserData(module, key);
+        }
 
-public:
-		BT_OSISHTML();
-		virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
-private:
-		void renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData);
-	};
+    public:
+        BT_OSISHTML();
+        virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
+    private:
+        void renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, BT_UserData *myUserData);
+};
 
 } //end of Filters namespace
 

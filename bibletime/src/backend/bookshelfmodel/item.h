@@ -38,18 +38,24 @@ class Item {
         /**
           \brief Returns the type of this item.
         */
-        inline Type type() const { return m_type; }
+        inline Type type() const {
+            return m_type;
+        }
 
         /**
           \brief Returns a pointer to the parent item of this item.
           \retval 0 if this item has no parent.
         */
-        inline Item *parent() const { return m_parent; }
+        inline Item *parent() const {
+            return m_parent;
+        }
 
         /**
           \brief Returns the list of child items of this node.
         */
-        inline const QList<Item*> &children() const { return m_children; }
+        inline const QList<Item*> &children() const {
+            return m_children;
+        }
 
         /**
           \brief Returns a pointer to the child item at the given index.
@@ -111,17 +117,23 @@ class Item {
         /**
           \brief Returns the visible name of the item.
         */
-        inline virtual QString name() const { return QString::null; }
+        inline virtual QString name() const {
+            return QString::null;
+        }
 
         /**
           \brief Returns the visible icon of the item.
         */
-        inline virtual QIcon icon() const { return QIcon(); }
+        inline virtual QIcon icon() const {
+            return QIcon();
+        }
 
         /**
           \brief Returns the check state of this item.
         */
-        inline const Qt::CheckState checkState() const { return m_checkState; }
+        inline const Qt::CheckState checkState() const {
+            return m_checkState;
+        }
 
         /**
           \brief Sets the check state of this item.

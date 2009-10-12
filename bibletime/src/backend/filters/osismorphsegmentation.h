@@ -19,16 +19,16 @@ namespace Filters {
  * @author Martin Gruner
  */
 class OSISMorphSegmentation : public sword::SWOptionFilter {
-	static const char oName[];
-	static const char oTip[];
-	static const sword::SWBuf choices[3];
-	static const sword::StringList oValues;
+        static const char oName[];
+        static const char oTip[];
+        static const sword::SWBuf choices[3];
+        static const sword::StringList oValues;
 
-public:
-	OSISMorphSegmentation();
-	virtual ~OSISMorphSegmentation();
+    public:
+        OSISMorphSegmentation();
+        virtual ~OSISMorphSegmentation();
 
-	virtual char processText(sword::SWBuf &text, const sword::SWKey *key = 0, const sword::SWModule *module = 0);
+        virtual char processText(sword::SWBuf &text, const sword::SWKey *key = 0, const sword::SWModule *module = 0);
 };
 
 }

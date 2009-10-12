@@ -20,14 +20,14 @@
 #include "backend/bookshelfmodel/item.h"
 
 namespace BookshelfModel {
-    class ModuleItem;
+class ModuleItem;
 }
 class CSwordModuleInfo;
 
 class BtBookshelfTreeModel: public QAbstractItemModel {
-    Q_OBJECT
+        Q_OBJECT
 
-    typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
+        typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
 
     public:
         enum ModuleRole {
@@ -42,12 +42,12 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
 
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
         virtual int columnCount(const QModelIndex &parent = QModelIndex())
-                const;
+        const;
         virtual bool hasChildren(const QModelIndex &parent = QModelIndex())
-                const;
+        const;
         virtual QModelIndex index(int row, int column,
                                   const QModelIndex &parent = QModelIndex())
-                const;
+        const;
         virtual QModelIndex parent(const QModelIndex &index) const;
         virtual QVariant data(const QModelIndex &index, int role) const;
         virtual Qt::ItemFlags flags(const QModelIndex &index) const;
@@ -57,15 +57,23 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
                              int role);
 
         void setSourceModel(QAbstractListModel *sourceModel);
-        inline QAbstractListModel *sourceModel() const { return m_sourceModel; }
+        inline QAbstractListModel *sourceModel() const {
+            return m_sourceModel;
+        }
         void setGroupingOrder(const Grouping &groupingOrder);
-        inline Grouping groupingOrder() const { return m_groupingOrder; }
+        inline Grouping groupingOrder() const {
+            return m_groupingOrder;
+        }
         void setCheckable(bool checkable);
-        inline bool checkable() const { return m_checkable; }
+        inline bool checkable() const {
+            return m_checkable;
+        }
         inline void setDefaultChecked(bool defaultChecked) {
             m_defaultChecked = defaultChecked;
         }
-        inline bool defaultChecked() const { return m_defaultChecked; }
+        inline bool defaultChecked() const {
+            return m_defaultChecked;
+        }
 
         QList<CSwordModuleInfo*> checkedModules() const;
 
@@ -80,8 +88,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
 
         template <class T>
         QModelIndex getGroup(CSwordModuleInfo *module,
-                             QModelIndex parentIndex)
-        {
+                             QModelIndex parentIndex) {
             BookshelfModel::Item *parentItem(getItem(parentIndex));
             int groupIndex;
             T *groupItem(parentItem->getGroupItem<T>(module, &groupIndex));
