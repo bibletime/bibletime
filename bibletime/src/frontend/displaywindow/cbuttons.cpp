@@ -14,7 +14,7 @@
 #include <QString>
 #include <QToolTip>
 #include <QToolButton>
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 
@@ -22,7 +22,7 @@
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent )
         : QToolButton(parent)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");
     QToolButton::setIcon(DU::getIcon(CResMgr::displaywindows::displaySettings::icon));

@@ -12,13 +12,13 @@
 #include <QDir>
 #include <QFile>
 #include <QList>
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 namespace Profile {
 
 CProfileMgr::CProfileMgr() : m_startupProfile(0) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //m_profiles.setAutoDelete(true);
 

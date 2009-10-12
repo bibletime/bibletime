@@ -19,7 +19,7 @@
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 namespace Search {
@@ -40,7 +40,7 @@ CModuleResultView::~CModuleResultView() {}
 
 /** Initializes this widget. */
 void CModuleResultView::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     // see also csearchresultview.cpp
     setToolTip(tr("Works chosen for the search and the number of the hits in each work"));

@@ -19,14 +19,14 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/displaywindow/cmodulechooserbar.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
         : QToolButton(parent),
         m_id(id), m_popup(0), m_moduleChooserBar(parent)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     m_moduleType = type;
     m_module = useModule;
@@ -80,7 +80,7 @@ int CModuleChooserButton::getId() const {
 
 /** Is called after a module was selected in the popup */
 void CModuleChooserButton::moduleChosen( QAction* action ) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QListIterator<QMenu*> it(m_submenus);
     while (it.hasNext()) {

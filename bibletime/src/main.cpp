@@ -23,7 +23,7 @@
 #include "bibletime_dbus_adaptor.h"
 #include "bibletimeapp.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/migrationutil.h"
 
 #ifdef BT_ENABLE_TESTING
@@ -109,7 +109,7 @@ extern "C" {
 
 
 int main(int argc, char* argv[]) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qInstallMsgHandler( myMessageOutput );
 

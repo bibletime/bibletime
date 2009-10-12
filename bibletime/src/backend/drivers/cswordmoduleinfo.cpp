@@ -30,7 +30,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/cswordmodulesearch.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/exceptions.h"
 
@@ -173,7 +173,7 @@ bool CSwordModuleInfo::unlockKeyIsValid() {
 }
 
 QString CSwordModuleInfo::getGlobalBaseIndexLocation() {
-    return util::directoryutil::getUserIndexDir().absolutePath();
+    return util::directory::getUserIndexDir().absolutePath();
 }
 
 QString CSwordModuleInfo::getModuleBaseIndexLocation() const {
@@ -416,11 +416,11 @@ void CSwordModuleInfo::buildIndex() {
 }
 
 void CSwordModuleInfo::deleteIndexForModule( QString name ) {
-    util::directoryutil::removeRecursive( getGlobalBaseIndexLocation() + "/" + name );
+    util::directory::removeRecursive( getGlobalBaseIndexLocation() + "/" + name );
 }
 
 unsigned long CSwordModuleInfo::indexSize() const {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
     return DU::getDirSizeRecursive( getModuleBaseIndexLocation() );
 }
 

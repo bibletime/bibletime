@@ -18,7 +18,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
 #include "util/cpointers.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CDisplayTemplateMgr::CDisplayTemplateMgr() {
@@ -145,7 +145,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 }
 
 void CDisplayTemplateMgr::loadTemplates() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QStringList files;
     foreach (QString file, DU::getDisplayTemplatesDir().entryList(QStringList("*.tmpl"))) {

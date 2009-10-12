@@ -19,7 +19,7 @@
 #include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 namespace Search {
@@ -35,7 +35,7 @@ CSearchResultView::~CSearchResultView() {}
 
 /** Initializes the view of this widget. */
 void CSearchResultView::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     setToolTip(tr("Search result of the selected work"));
     setHeaderLabel(tr("Results"));

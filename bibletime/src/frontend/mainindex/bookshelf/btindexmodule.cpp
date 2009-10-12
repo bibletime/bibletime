@@ -16,13 +16,13 @@
 #include "backend/btmoduletreeitem.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/cdragdrop.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)
         : BTIndexItem(previous)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //qDebug("BTIndexModule::BTIndexModule");
     setText(0, treeItem->text()); //set text

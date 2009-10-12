@@ -25,7 +25,7 @@
 #include "frontend/keychooser/cscrollerwidgetset.h"
 #include "frontend/keychooser/versekeychooser/btdropdownchooserbutton.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 class BtLineEdit : public QLineEdit {
@@ -50,7 +50,7 @@ CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVers
         m_key(key),
         m_dropDownHoverTimer(this)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     updatelock = false;
     m_module = mod;

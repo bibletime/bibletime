@@ -27,7 +27,7 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 namespace Search {
@@ -82,7 +82,7 @@ void BtSearchOptionsArea::setSearchText(const QString& text) {
 }
 
 void BtSearchOptionsArea::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     this->setSizePolicy(sizePolicy);

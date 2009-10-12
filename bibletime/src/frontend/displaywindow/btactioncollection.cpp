@@ -16,7 +16,7 @@
 #include <QString>
 #include <QStringList>
 #include "backend/config/cbtconfig.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 class BtActionItem : public QObject {

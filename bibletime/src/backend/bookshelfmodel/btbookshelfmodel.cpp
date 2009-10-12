@@ -14,7 +14,7 @@
 
 #include <QSet>
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 BtBookshelfModel::BtBookshelfModel(QObject *parent)
         : QAbstractListModel(parent) {
@@ -59,7 +59,7 @@ QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,
 }
 
 QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     switch (category) {
         case CSwordModuleInfo::Bibles:

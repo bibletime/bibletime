@@ -20,7 +20,7 @@
 #include <QListWidgetItem>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/ctoolclass.h"
 
 
@@ -62,7 +62,7 @@ BtConfigDialog::BtConfigDialog(QWidget* parent)
 BtConfigDialog::~BtConfigDialog() {}
 
 void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     // this is a friend
     pageWidget->m_parentDialog = this;

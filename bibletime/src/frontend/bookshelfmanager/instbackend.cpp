@@ -20,7 +20,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/btinstallmgr.h"
 #include "util/cpointers.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <filemgr.h>
@@ -148,7 +148,7 @@ QStringList targetList() {
 }
 
 bool setTargetList( const QStringList& targets ) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug("backend::setTargetList");
     //saves a new Sword config using the provided target list
@@ -236,7 +236,7 @@ void initPassiveFtpMode() {
     config.Save();
 }
 const QString swordConfigFilename() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug("backend::swordConfigFilename");
     qDebug() << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
@@ -244,7 +244,7 @@ const QString swordConfigFilename() {
 }
 
 const QDir swordDir() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     return QDir(DU::getUserHomeDir().absolutePath().append("/.sword/"));
 }

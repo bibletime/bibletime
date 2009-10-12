@@ -20,7 +20,7 @@
 #include "frontend/display/bthtmljsobject.h"
 #include "frontend/displaywindow/cdisplaywindow.h"
 #include "frontend/displaywindow/creadwindow.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/ctoolclass.h"
 
@@ -57,7 +57,7 @@ BtHtmlReadDisplay::~BtHtmlReadDisplay() {
 
 // Read javascript into memory once and create the c++ javascript object
 void BtHtmlReadDisplay::initJavascript() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     // read bthtml.js javascript file once
     if (javascript.size() == 0) {

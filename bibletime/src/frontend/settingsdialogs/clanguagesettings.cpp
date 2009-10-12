@@ -19,7 +19,7 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <localemgr.h>
@@ -29,7 +29,7 @@
 CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
         : BtConfigPage()
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
@@ -239,7 +239,7 @@ void CLanguageSettingsPage::newDisplayWindowFontAreaSelected(const QString& usag
 
 /** This slot is called when the "Use own font for language" bo was clicked. */
 void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //belongs to fonts/languages
 

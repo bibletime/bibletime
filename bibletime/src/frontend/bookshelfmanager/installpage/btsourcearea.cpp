@@ -25,7 +25,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "frontend/btaboutmoduledialog.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -53,7 +53,7 @@ BtSourceArea::~BtSourceArea() {
 }
 
 void BtSourceArea::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug("BtSourceArea::initView");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

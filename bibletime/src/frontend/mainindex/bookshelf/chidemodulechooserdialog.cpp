@@ -25,7 +25,7 @@
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CHideModuleChooserDialog::CHideModuleChooserDialog( QWidget* parent, QString title, QString label, QString currentModule)

@@ -24,13 +24,13 @@
 #include <QTreeWidgetItem>
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/dialogutil.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 
 
 BtInstallPathDialog::BtInstallPathDialog() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     setWindowTitle(tr("Bookshelf Paths"));
 

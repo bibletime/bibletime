@@ -40,13 +40,13 @@
 #include "util/ctoolclass.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 using namespace Profile;
 
 BibleTime::BibleTime() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QPixmap pm;
     if (!pm.load(DU::getPicsDir().canonicalPath().append( "/startuplogo.png"))) {

@@ -15,7 +15,7 @@
 #include "frontend/mainindex/bookmarks/btbookmarkitem.h"
 #include "frontend/mainindex/bookmarks/btbookmarkloader.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 BtBookmarkFolder::BtBookmarkFolder(QTreeWidgetItem* parent, QString name)
@@ -84,7 +84,7 @@ void BtBookmarkFolder::rename() {
 }
 
 void BtBookmarkFolder::update() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug() << "BtBookmarkFolder::update()";
     BtBookmarkItemBase::update();

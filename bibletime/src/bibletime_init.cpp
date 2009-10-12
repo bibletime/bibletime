@@ -34,7 +34,7 @@
 #include "frontend/profile/cprofilemgr.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <swlog.h>
@@ -74,7 +74,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
                                QKeySequence accel, const QString& tooltip,
                                const QString& actionName, const char* slot)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     action->setText(text);
     if ( ! icon.isEmpty() )
@@ -89,7 +89,7 @@ QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
 // Creates QAction's for all actions that can have keyboard shortcuts
 // Used in creating the main window and by the configuration dialog for setting shortcuts
 void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QAction* action = new QAction(a);
     action->setText(tr("&Quit"));

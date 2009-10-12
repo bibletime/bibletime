@@ -28,7 +28,7 @@
 #include "frontend/displaywindow/cbuttons.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 

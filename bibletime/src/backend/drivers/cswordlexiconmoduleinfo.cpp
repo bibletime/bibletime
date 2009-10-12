@@ -13,7 +13,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QTextCodec>
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <swmodule.h>
@@ -43,7 +43,7 @@ CSwordLexiconModuleInfo::~CSwordLexiconModuleInfo() {
 
 /** Returns the entries of the module. */
 QStringList* CSwordLexiconModuleInfo::entries() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     if (!module()) {
         return 0;

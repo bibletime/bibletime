@@ -18,7 +18,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 
 
@@ -52,7 +52,7 @@ void CHTMLWriteWindow::initConnections() {
 }
 
 void CHTMLWriteWindow::initToolbars() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //setup the main toolbar
     m_actions.syncWindow = new QAction(

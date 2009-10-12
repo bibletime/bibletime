@@ -28,7 +28,7 @@
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 #include "util/dialogutil.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CModuleChooserDialog::CModuleChooserDialog( QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>*  allModules)

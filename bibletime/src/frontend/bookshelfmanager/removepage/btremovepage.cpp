@@ -22,7 +22,7 @@
 #include "backend/btmoduletreeitem.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -35,7 +35,7 @@
 BtRemovePage::BtRemovePage()
         : BtConfigPage()
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QGridLayout* layout = new QGridLayout(this);
     layout->setMargin(5);

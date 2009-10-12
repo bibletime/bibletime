@@ -33,7 +33,7 @@
 #include "frontend/mainindex/bookshelf/chidemodulechooserdialog.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CBookshelfIndex::CBookshelfIndex(QWidget *parent)
@@ -80,7 +80,7 @@ void CBookshelfIndex::initView() {
 }
 
 void CBookshelfIndex::initActions() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     // Each action has a type attached to it as a dynamic property, see actionenum.h.
     // Menuitem and its subitems can have the same type.
@@ -225,7 +225,7 @@ void CBookshelfIndex::initActions() {
 * than to modify all QAction constructors.
 */
 QAction* CBookshelfIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QAction* action = new QAction(DU::getIcon(pix), text, parent);
     if (receiver && !QString(slot).isEmpty()) {

@@ -43,7 +43,7 @@
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 CBookmarkIndex::CBookmarkIndex(QWidget *parent)
@@ -123,7 +123,7 @@ void CBookmarkIndex::initView() {
 * than to modify all QAction constructors.
 */
 QAction* CBookmarkIndex::newQAction(const QString& text, const QString& pix, const int /*shortcut*/, const QObject* receiver, const char* slot, QObject* parent) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
     QAction* action = new QAction(DU::getIcon(pix), text, parent);
     QObject::connect(action, SIGNAL(triggered()), receiver, slot);
     return action;
@@ -237,7 +237,7 @@ void CBookmarkIndex::dragLeaveEvent( QDragLeaveEvent* ) {
 
 
 void CBookmarkIndex::paintEvent(QPaintEvent* event) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     static QPixmap pix;
     static int halfPixHeight;

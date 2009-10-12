@@ -12,7 +12,7 @@
 #include <QMessageBox>
 #include <QSettings>
 #include "backend/config/cbtconfig.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include "swversion.h"
@@ -34,7 +34,7 @@ void checkMigration() {
 
 // Migration code for KDE 4 port, moves from old config dir to ~/.bibletime/
 void tryMigrationFromKDE3() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //List of potential old KDE directories to load data from.
     QStringList searchDirs;

@@ -44,7 +44,7 @@
 #include "frontend/bookshelfmanager/installpage/btsourcearea.h"
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "frontend/cmodulechooserdialog.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -74,7 +74,7 @@ QString BtInstallPage::selectedInstallPath() {
 }
 
 void BtInstallPage::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug("void BtInstallPage::initView() start");
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

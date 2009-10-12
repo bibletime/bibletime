@@ -17,7 +17,7 @@
 
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 namespace BookshelfModel {
 
@@ -36,7 +36,7 @@ class LanguageItem: public Item {
         }
 
         inline QIcon icon() const {
-            return util::directoryutil::getIcon("flag.svg");
+            return util::directory::getIcon("flag.svg");
         }
 
         inline bool fitFor(CSwordModuleInfo *module) {

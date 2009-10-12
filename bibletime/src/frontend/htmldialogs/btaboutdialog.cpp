@@ -9,7 +9,7 @@
 
 #include "frontend/htmldialogs/btaboutdialog.h"
 
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <swversion.h>
@@ -166,7 +166,7 @@ void BtAboutDialog::init_qt_tab() {
 }
 
 void BtAboutDialog::init_lic_tab() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     selectTab(4);
     setTabText(tr("License"));
@@ -233,7 +233,7 @@ static QString make_version() {
 }
 
 static QString make_file_icon(const QString& icon) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QString dir("<img src=file://" + DU::getIconDir().path());
     return dir + "/" + icon + ".png >";

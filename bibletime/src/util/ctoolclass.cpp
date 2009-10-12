@@ -20,7 +20,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 /** Converts HTML text to plain text */
@@ -88,7 +88,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
 /** Returns the icon used for the module given as aparameter. */
 QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
     return DU::getIcon(getIconNameForModule(module_info));
 }
 

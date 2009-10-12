@@ -13,7 +13,7 @@
 #include <QFile>
 #include <QString>
 #include <QTextStream>
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 #define CURRENT_SYNTAX_VERSION 3
@@ -27,7 +27,7 @@ CProfile::CProfile( const QString& file, const QString& name )
         m_geometry(10, 20, 640, 480),
         m_mdiArrangementMode((CMDIArea::MDIArrangementMode)0) //0 is not a valid enum entry, means "unknown"
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     if (!m_filename.isEmpty() && name.isEmpty()) {
         loadBasics();

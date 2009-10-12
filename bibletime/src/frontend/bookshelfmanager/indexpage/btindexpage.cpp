@@ -20,7 +20,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/cmoduleindexdialog.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
@@ -29,7 +29,7 @@
 BtIndexPage::BtIndexPage()
         : BtConfigPage()
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QVBoxLayout *vboxLayout;
     QHBoxLayout *hboxLayout;

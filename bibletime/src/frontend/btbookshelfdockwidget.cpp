@@ -33,7 +33,7 @@
 #include "frontend/mainindex/btbookshelfview.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
@@ -122,7 +122,7 @@ bool BtBookshelfDockWidget::eventFilter(QObject *object, QEvent *event) {
 }
 
 void BtBookshelfDockWidget::initMenus() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
     namespace RM = CResMgr::mainIndex;
 
     m_contextMenu = new QMenu(this);

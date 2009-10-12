@@ -19,7 +19,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/displaywindow/cwritewindow.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 class BtActionCollection;
@@ -135,7 +135,7 @@ void CHTMLWriteDisplay::slotFontFamilyChoosen(const QFont& font) {
 }
 
 void CHTMLWriteDisplay::setupToolbar(QToolBar * bar, BtActionCollection * actions) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     //--------------------font chooser-------------------------
     m_fontFamilyChooser = new QFontComboBox(this);

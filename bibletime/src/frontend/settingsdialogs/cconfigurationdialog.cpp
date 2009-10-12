@@ -20,7 +20,7 @@
 #include "frontend/settingsdialogs/cswordsettings.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/dialogutil.h"
 
 

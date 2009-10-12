@@ -21,7 +21,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 using namespace Profile;
@@ -51,7 +51,7 @@ void CPlainWriteWindow::initView() {
 }
 
 void CPlainWriteWindow::initToolbars() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     m_actions.syncWindow = new QAction(
         //KIcon(CResMgr::displaywindows::commentaryWindow::syncWindow::icon),

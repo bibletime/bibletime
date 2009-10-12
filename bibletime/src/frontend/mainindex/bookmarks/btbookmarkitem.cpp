@@ -18,7 +18,7 @@
 #include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 BtBookmarkItem::BtBookmarkItem(CSwordModuleInfo* module, QString key, QString& description)
@@ -138,7 +138,7 @@ QString BtBookmarkItem::englishKey() const {
 }
 
 void BtBookmarkItem::update() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug() << "BtBookmarkItem::update";
     setIcon(0, DU::getIcon(CResMgr::mainIndex::bookmark::icon));

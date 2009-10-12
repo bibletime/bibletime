@@ -29,7 +29,7 @@
 #include "backend/rendering/cbookdisplay.h"
 #include "backend/rendering/cchapterdisplay.h"
 #include "backend/rendering/centrydisplay.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <encfiltmgr.h>
@@ -330,7 +330,7 @@ CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* con
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
 bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     sword::SectionMap::iterator section;
     DIR *dir = opendir(configPath);
@@ -534,7 +534,7 @@ void CSwordBackend::reloadModules(SetupChangedReason reason) {
 }
 
 const QStringList CSwordBackend::swordDirList() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QSet<QString> ret;
     const QString home = DU::getUserHomeDir().absolutePath();

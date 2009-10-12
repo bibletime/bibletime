@@ -20,7 +20,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/profile/cprofilewindow.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 
@@ -109,7 +109,7 @@ void CCommentaryReadWindow::storeProfileSettings( CProfileWindow* profileWindow 
 }
 
 void CCommentaryReadWindow::initToolbars() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     CLexiconReadWindow::initToolbars();
 

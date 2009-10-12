@@ -26,7 +26,7 @@
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 
 
@@ -94,7 +94,7 @@ void CDisplayWindow::setCaption( const QString&  ) {
 }
 
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 

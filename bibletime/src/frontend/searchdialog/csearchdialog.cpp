@@ -28,7 +28,7 @@
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 namespace Search {
@@ -71,7 +71,7 @@ CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
         m_searchResultArea(0), m_searchOptionsArea(0)
 {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
     setWindowTitle(tr("Search"));
@@ -206,7 +206,7 @@ void CSearchDialog::setSearchText( const QString searchText ) {
 
 /** Initializes this object. */
 void CSearchDialog::initView() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     setLayout(verticalLayout);

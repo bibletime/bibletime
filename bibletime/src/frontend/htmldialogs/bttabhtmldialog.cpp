@@ -18,7 +18,7 @@
 #include <QVBoxLayout>
 #include <QWebView>
 #include "util/dialogutil.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 
 BtTabHtmlDialog::BtTabHtmlDialog
@@ -92,7 +92,7 @@ QWebView* BtTabHtmlDialog::webView() {
 }
 
 void BtTabHtmlDialog::setHtml(const QString& html, const QUrl& baseUrl) {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
 
     QUrl url = baseUrl;
     if (url == QUrl()) {

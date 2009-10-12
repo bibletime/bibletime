@@ -27,7 +27,7 @@
 #include "frontend/displaywindow/cmodulechooserbar.h"
 #include "frontend/keychooser/bthistory.h"
 #include "frontend/keychooser/ckeychooser.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 #include "util/cresmgr.h"
 #include "util/ctoolclass.h"
 

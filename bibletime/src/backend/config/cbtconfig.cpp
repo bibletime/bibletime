@@ -19,7 +19,7 @@
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "util/cpointers.h"
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 // Sword includes:
 #include <versekey.h> // For range configuration
@@ -798,7 +798,7 @@ void setModuleEncryptionKey(const QString &module, const QString &key) {
 }
 
 QSettings *getConfig() {
-    namespace DU = util::directoryutil;
+    namespace DU = util::directory;
     static QSettings config(DU::getUserBaseDir().absolutePath() + "/bibletimerc", QSettings::IniFormat);
     return &config;
 }

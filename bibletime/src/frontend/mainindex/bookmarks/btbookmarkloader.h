@@ -10,7 +10,7 @@
 #ifndef BTBOOKMARKLOADER_H
 #define BTBOOKMARKLOADER_H
 
-#include "util/directoryutil.h"
+#include "util/directory.h"
 
 #include <QDomElement>
 #include <QList>
