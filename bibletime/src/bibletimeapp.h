@@ -19,11 +19,11 @@
   * @author The BibleTime team
   */
 class BibleTimeApp : public QApplication, public CPointers {
-public:
-    BibleTimeApp(int &argc, char **argv);
-    ~BibleTimeApp();
+    public:
+        BibleTimeApp(int &argc, char **argv);
+        ~BibleTimeApp();
 
-protected:
+    protected:
 //	void initDCOP();
 };
 

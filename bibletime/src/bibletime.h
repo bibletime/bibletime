@@ -27,7 +27,7 @@ class CBookshelfIndex;
 class BtBookshelfDockWidget;
 
 namespace InfoDisplay {
-	class CInfoDisplay;
+class CInfoDisplay;
 }
 class QAction;
 class QMenu;
@@ -118,271 +118,270 @@ class QSplitter;
  * saveSettings().
  * This is the general way of all BibleTime classes.
  */
-class BibleTime : public QMainWindow 
-{
-	friend class CMDIArea;
-	friend class BibleTimeDBusAdaptor;
-	Q_OBJECT
-public:
-	/**
-	 * construtor of BibleTime
-	 */
-	BibleTime();
-	/**
-	 * destructor of BibleTime
-	 */
-    ~BibleTime();
+class BibleTime : public QMainWindow {
+        friend class CMDIArea;
+        friend class BibleTimeDBusAdaptor;
+        Q_OBJECT
+    public:
+        /**
+         * construtor of BibleTime
+         */
+        BibleTime();
+        /**
+         * destructor of BibleTime
+         */
+        ~BibleTime();
 
-	/**
-	* Reads the settings from the configfile and sets the right properties.
-	*/
-	void readSettings();
-	/**
-	* Saves the settings of this class
-	*/
-	void saveSettings();
-	/**
-	* Restores the workspace if the flaf for this is set in the config.
-	*/
-	void restoreWorkspace();
-	/**
-	* Apply the settings given by the profile p
-	*/
-	void applyProfileSettings( Profile::CProfile* p );
-	/**
-	* Stores the settings of the mainwindow in the profile p
-	*/
-	void storeProfileSettings( Profile::CProfile* p );
-	/**
-	*  Save the configuration dialog settings, don't open dialog
-	*/
-	void saveConfigSettings();
+        /**
+        * Reads the settings from the configfile and sets the right properties.
+        */
+        void readSettings();
+        /**
+        * Saves the settings of this class
+        */
+        void saveSettings();
+        /**
+        * Restores the workspace if the flaf for this is set in the config.
+        */
+        void restoreWorkspace();
+        /**
+        * Apply the settings given by the profile p
+        */
+        void applyProfileSettings( Profile::CProfile* p );
+        /**
+        * Stores the settings of the mainwindow in the profile p
+        */
+        void storeProfileSettings( Profile::CProfile* p );
+        /**
+        *  Save the configuration dialog settings, don't open dialog
+        */
+        void saveConfigSettings();
 
-public slots:
-	/**
-	* Opens the optionsdialog of BibleTime.
-	*/
-	void slotSettingsOptions();
-	/**
-	* Opens the optionsdialog of BibleTime.
-	*/
-	void slotSwordSetupDialog();
-	/**
-	* Opens the handbook.
-	*/
-	void openOnlineHelp_Handbook();
-	/**
-	* Opens the bible study howto.
-	*/
-	void openOnlineHelp_Howto();
-	/**
-	* Sets the plain caption of the main window
-	*/
-    void setPlainCaption( const QString& );
-	/**
-	* Processes the commandline options given to BibleTime.
-	*/
-	void processCommandline();
-	/**
-	* Creates QAction's that have keyboard shortcuts
-	*/
-	static void insertKeyboardActions( BtActionCollection* const a );
+    public slots:
+        /**
+        * Opens the optionsdialog of BibleTime.
+        */
+        void slotSettingsOptions();
+        /**
+        * Opens the optionsdialog of BibleTime.
+        */
+        void slotSwordSetupDialog();
+        /**
+        * Opens the handbook.
+        */
+        void openOnlineHelp_Handbook();
+        /**
+        * Opens the bible study howto.
+        */
+        void openOnlineHelp_Howto();
+        /**
+        * Sets the plain caption of the main window
+        */
+        void setPlainCaption( const QString& );
+        /**
+        * Processes the commandline options given to BibleTime.
+        */
+        void processCommandline();
+        /**
+        * Creates QAction's that have keyboard shortcuts
+        */
+        static void insertKeyboardActions( BtActionCollection* const a );
 
-protected: // Protected methods
-	/**
-	* Initializes the view of this widget
-	*/
-	void initView();
-	/**
-	* Initializes the menubar of BibleTime.
-	*/
-	void initMenubar();
-	/**
-	* Initializes the SIGNAL / SLOT connections
-	*/
-	void initConnections();
-	/**
-	* Initializes the backend
-	*/
-	void initBackends();
-	/**
-	* Initializes the action objects of the GUI
-	*/
-	void initActions();
-	/**
-	* Initializes one action object
-	*/
-	QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel, 
-		const QString& tooltip, const QString& actionName, const char* slot );
-	/**
-	* Refreshes all presenter supporting at least in of the features given as parameter.
-	*/
-	void refreshDisplayWindows();
-	/**
-	* Refresh main window accelerators 
-	*/
-	void refreshBibleTimeAccel();
-	/**
-	* Called before a window is closed
-	*/
-	bool queryClose();
+    protected: // Protected methods
+        /**
+        * Initializes the view of this widget
+        */
+        void initView();
+        /**
+        * Initializes the menubar of BibleTime.
+        */
+        void initMenubar();
+        /**
+        * Initializes the SIGNAL / SLOT connections
+        */
+        void initConnections();
+        /**
+        * Initializes the backend
+        */
+        void initBackends();
+        /**
+        * Initializes the action objects of the GUI
+        */
+        void initActions();
+        /**
+        * Initializes one action object
+        */
+        QAction* initAction(QAction* action, QString text, QString icon, QKeySequence accel,
+                            const QString& tooltip, const QString& actionName, const char* slot );
+        /**
+        * Refreshes all presenter supporting at least in of the features given as parameter.
+        */
+        void refreshDisplayWindows();
+        /**
+        * Refresh main window accelerators
+        */
+        void refreshBibleTimeAccel();
+        /**
+        * Called before a window is closed
+        */
+        bool queryClose();
 
-protected slots:
-	/**
-	 * Creates a new presenter in the MDI area according to the type of the module.
-	 */
-	CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
-    CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
-	CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type);
-    CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
-    CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
-    void searchInModule(CSwordModuleInfo *module);
-    void moduleUnlock(CSwordModuleInfo *module);
-    void moduleAbout(CSwordModuleInfo *module);
+    protected slots:
+        /**
+         * Creates a new presenter in the MDI area according to the type of the module.
+         */
+        CDisplayWindow* createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key);
+        CDisplayWindow* createReadDisplayWindow(CSwordModuleInfo* module, const QString& key = QString::null);
+        CDisplayWindow* createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type);
+        CDisplayWindow* moduleEditPlain(CSwordModuleInfo *module);
+        CDisplayWindow* moduleEditHtml(CSwordModuleInfo *module);
+        void searchInModule(CSwordModuleInfo *module);
+        void moduleUnlock(CSwordModuleInfo *module);
+        void moduleAbout(CSwordModuleInfo *module);
 
-	/**
-	 * Is called when the window menu is about to show ;-)
-	 */
-	void slotWindowMenuAboutToShow();
-	/**
-	 * This slot is connected with the windowAutoTile_action object
-	 */
-	void slotAutoTileVertical();
-	/**
-	 * This slot is connected with the windowAutoTile_action object
-	 */
-	void slotAutoTileHorizontal();
-	/**
-	 * This slot is connected with the windowAutoCascade_action object
-	 */
-	void slotAutoCascade();
-	void slotUpdateWindowArrangementActions( QAction* );
+        /**
+         * Is called when the window menu is about to show ;-)
+         */
+        void slotWindowMenuAboutToShow();
+        /**
+         * This slot is connected with the windowAutoTile_action object
+         */
+        void slotAutoTileVertical();
+        /**
+         * This slot is connected with the windowAutoTile_action object
+         */
+        void slotAutoTileHorizontal();
+        /**
+         * This slot is connected with the windowAutoCascade_action object
+         */
+        void slotAutoCascade();
+        void slotUpdateWindowArrangementActions( QAction* );
 
-	void slotCascade();
-	void slotTileVertical();
-	void slotTileHorizontal();
+        void slotCascade();
+        void slotTileVertical();
+        void slotTileHorizontal();
 
-	void slotManualArrangementMode();
+        void slotManualArrangementMode();
 
-	/**
-	* Is called when a client was selected in the window menu
-	*/
-	void slotWindowMenuActivated();
-	/**
-	 * Shows/hides the toolbar
-	 */
-	void slotToggleToolbar();
-	/**
-	* Saves to the profile with the menu id ID
-	*/
-	void saveProfile(QAction* action);
-	/**
-	* Saves the current settings into the currently activatred profile.
-	*/
-	void saveProfile(Profile::CProfile* p);
-	/**
-	* Deletes the chosen session from the menu and from disk.
-	*/
-	void deleteProfile(QAction* action);
-	/**
-	* Loads the profile with the menu id ID
-	*/
-	void loadProfile(QAction* action);
-	/**
-	* Loads the profile with the menu ID id
-	*/
-	void loadProfile(Profile::CProfile* p);
-	/**
-	* Toggles between normal and fullscreen mode.
-	*/
-	void toggleFullscreen();
-	/**
-	* Is called when settings in the optionsdialog have been
-	* changed (ok or apply)
-	*/
-	void slotSettingsChanged();
-	/**
-	* Is called when settings in the sword setup dialog have been
-	* changed (ok or apply)
-	*/
-	void slotSwordSetupChanged();
-	/**
-	 * Called when search button is pressed
-	 **/
-	void slotSearchModules();
-	/**
-	 * Called for search default bible
-	 **/
-	void slotSearchDefaultBible();
-	/**
-	 Saves current settings into a new profile.
-	*/
-	void saveToNewProfile();
-	/**
-	* Slot to refresh the save profile and load profile menus.
-	*/
-	void refreshProfileMenus();
-	/**
-	* Called before quit.
-	*/
-	void slot_aboutToQuit();
-	/**
-	* Open the About Dialog
-	*/
-	void slotOpenAboutDialog();
+        /**
+        * Is called when a client was selected in the window menu
+        */
+        void slotWindowMenuActivated();
+        /**
+         * Shows/hides the toolbar
+         */
+        void slotToggleToolbar();
+        /**
+        * Saves to the profile with the menu id ID
+        */
+        void saveProfile(QAction* action);
+        /**
+        * Saves the current settings into the currently activatred profile.
+        */
+        void saveProfile(Profile::CProfile* p);
+        /**
+        * Deletes the chosen session from the menu and from disk.
+        */
+        void deleteProfile(QAction* action);
+        /**
+        * Loads the profile with the menu id ID
+        */
+        void loadProfile(QAction* action);
+        /**
+        * Loads the profile with the menu ID id
+        */
+        void loadProfile(Profile::CProfile* p);
+        /**
+        * Toggles between normal and fullscreen mode.
+        */
+        void toggleFullscreen();
+        /**
+        * Is called when settings in the optionsdialog have been
+        * changed (ok or apply)
+        */
+        void slotSettingsChanged();
+        /**
+        * Is called when settings in the sword setup dialog have been
+        * changed (ok or apply)
+        */
+        void slotSwordSetupChanged();
+        /**
+         * Called when search button is pressed
+         **/
+        void slotSearchModules();
+        /**
+         * Called for search default bible
+         **/
+        void slotSearchDefaultBible();
+        /**
+         Saves current settings into a new profile.
+        */
+        void saveToNewProfile();
+        /**
+        * Slot to refresh the save profile and load profile menus.
+        */
+        void refreshProfileMenus();
+        /**
+        * Called before quit.
+        */
+        void slot_aboutToQuit();
+        /**
+        * Open the About Dialog
+        */
+        void slotOpenAboutDialog();
 
-private:
-    // Docking widgets and their respective content widgets:
-    BtBookshelfDockWidget* m_bookshelfDock;
-    QDockWidget* m_bookmarksDock;
+    private:
+        // Docking widgets and their respective content widgets:
+        BtBookshelfDockWidget* m_bookshelfDock;
+        QDockWidget* m_bookmarksDock;
         CBookmarkIndex* m_bookmarksPage;
-    QDockWidget* m_magDock;
+        QDockWidget* m_magDock;
         InfoDisplay::CInfoDisplay* m_infoDisplay;
 
-	QToolBar* m_mainToolBar;
-	// VIEW menu actions
-	QAction* m_viewToolbar_action;
- 	QMenu* m_windowMenu;
-	/** WINDOW menu actions */
-	QAction* m_windowCascade_action;
-	QAction* m_windowTileHorizontal_action;
-    QAction* m_windowTileVertical_action;
-	QAction* m_windowManualMode_action;
-	QAction* m_windowAutoCascade_action;
-	QAction* m_windowAutoTileVertical_action;
-	QAction* m_windowAutoTileHorizontal_action;
-	QAction* m_windowCloseAll_action;
-	BtActionCollection* m_actionCollection;
+        QToolBar* m_mainToolBar;
+        // VIEW menu actions
+        QAction* m_viewToolbar_action;
+        QMenu* m_windowMenu;
+        /** WINDOW menu actions */
+        QAction* m_windowCascade_action;
+        QAction* m_windowTileHorizontal_action;
+        QAction* m_windowTileVertical_action;
+        QAction* m_windowManualMode_action;
+        QAction* m_windowAutoCascade_action;
+        QAction* m_windowAutoTileVertical_action;
+        QAction* m_windowAutoTileHorizontal_action;
+        QAction* m_windowCloseAll_action;
+        BtActionCollection* m_actionCollection;
 
-	QMenu* m_windowSaveProfileMenu;
-	QAction* m_windowSaveToNewProfile_action;
-	QMenu* m_windowLoadProfileMenu;
-	QMenu* m_windowDeleteProfileMenu;
-	QAction* m_windowFullscreen_action;
+        QMenu* m_windowSaveProfileMenu;
+        QAction* m_windowSaveToNewProfile_action;
+        QMenu* m_windowLoadProfileMenu;
+        QMenu* m_windowDeleteProfileMenu;
+        QAction* m_windowFullscreen_action;
 
-    /// \todo remove?
-    // QList<QAction*> m_windowOpenWindowsList;
+        /// \todo remove?
+        // QList<QAction*> m_windowOpenWindowsList;
 
-	CMDIArea* m_mdi;
+        CMDIArea* m_mdi;
 
-	Profile::CProfileMgr m_profileMgr;
+        Profile::CProfileMgr m_profileMgr;
 
-protected: //DBUS interface implementation
-	void closeAllModuleWindows();
-	void syncAllBibles(const QString& key);
-	void syncAllCommentaries(const QString& key);
-	void syncAllLexicons(const QString& key);
-	void syncAllVerseBasedModules(const QString& key);
-	void openWindow(const QString& moduleName, const QString& key);
-	void openDefaultBible(const QString& key);
-	QString getCurrentReference();
-	QStringList searchInModule(const QString& module, const QString& searchText);
-	QStringList searchInOpenModules(const QString& searchText);
-	QStringList searchInDefaultBible(const QString& searchText);
-	QStringList getModulesOfType(const QString& type);
-    void reloadModules();
-	//helper function
-	void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
+    protected: //DBUS interface implementation
+        void closeAllModuleWindows();
+        void syncAllBibles(const QString& key);
+        void syncAllCommentaries(const QString& key);
+        void syncAllLexicons(const QString& key);
+        void syncAllVerseBasedModules(const QString& key);
+        void openWindow(const QString& moduleName, const QString& key);
+        void openDefaultBible(const QString& key);
+        QString getCurrentReference();
+        QStringList searchInModule(const QString& module, const QString& searchText);
+        QStringList searchInOpenModules(const QString& searchText);
+        QStringList searchInDefaultBible(const QString& searchText);
+        QStringList getModulesOfType(const QString& type);
+        void reloadModules();
+        //helper function
+        void syncAllModulesByType(const CSwordModuleInfo::ModuleType type, const QString& key);
 };
 
 #endif

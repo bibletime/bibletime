@@ -49,149 +49,134 @@
 using namespace Profile;
 
 BibleTime::BibleTime() {
-	QPixmap pm;
-	if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) 
-	{
-		qWarning("Can't load startuplogo! Check your installation.");
-	}
-   QSplashScreen splash(pm);
-   QString splashHtml("<div style='background:transparent;color:white;font-weight:bold'>%1</div>");
-   if (CBTConfig::get(CBTConfig::logo)) 
-	{
-       splash.show();
-	}
-   splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")), Qt::AlignCenter);
-   initBackends();
-   splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")), Qt::AlignCenter);
-   initView();
-   splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")), Qt::AlignCenter);
-   initActions();
-   initConnections();
-   readSettings();
-   setPlainCaption(QString());
-	setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::mainWindow::icon) );
+    QPixmap pm;
+    if ( !pm.load( util::filesystem::DirectoryUtil::getPicsDir().canonicalPath().append( "/startuplogo.png")) ) {
+        qWarning("Can't load startuplogo! Check your installation.");
+    }
+    QSplashScreen splash(pm);
+    QString splashHtml("<div style='background:transparent;color:white;font-weight:bold'>%1</div>");
+    if (CBTConfig::get(CBTConfig::logo)) {
+        splash.show();
+    }
+    splash.showMessage(splashHtml.arg(tr("Initializing the SWORD engine...")), Qt::AlignCenter);
+    initBackends();
+    splash.showMessage(splashHtml.arg(tr("Creating BibleTime's user interface...")), Qt::AlignCenter);
+    initView();
+    splash.showMessage(splashHtml.arg(tr("Initializing menu- and toolbars...")), Qt::AlignCenter);
+    initActions();
+    initConnections();
+    readSettings();
+    setPlainCaption(QString());
+    setWindowIcon( util::filesystem::DirectoryUtil::getIcon(CResMgr::mainWindow::icon) );
 }
 
-BibleTime::~BibleTime() 
-{
-	//  delete m_dcopInterface;
-	// The backend is deleted by the BibleTimeApp instance
+BibleTime::~BibleTime() {
+    //  delete m_dcopInterface;
+    // The backend is deleted by the BibleTimeApp instance
 }
 
 /** Saves the properties of BibleTime to the application wide configfile  */
-void BibleTime::saveSettings() 
-{
-	//TODO: how to write settings?
-	//accel()->writeSettings(CBTConfig::getConfig());
+void BibleTime::saveSettings() {
+    //TODO: how to write settings?
+    //accel()->writeSettings(CBTConfig::getConfig());
 
-	CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
+    CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());
 
-	// set the default to false
-	/* CBTConfig::set(CBTConfig::autoTileVertical, false);
-	 CBTConfig::set(CBTConfig::autoTileHorizontal, false);
-	 CBTConfig::set(CBTConfig::autoCascade, false);
-	*/
-	CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
-	CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
-	CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
+    // set the default to false
+    /* CBTConfig::set(CBTConfig::autoTileVertical, false);
+     CBTConfig::set(CBTConfig::autoTileHorizontal, false);
+     CBTConfig::set(CBTConfig::autoCascade, false);
+    */
+    CBTConfig::set(CBTConfig::autoTileVertical, m_windowAutoTileVertical_action->isChecked());
+    CBTConfig::set(CBTConfig::autoTileHorizontal, m_windowAutoTileHorizontal_action->isChecked());
+    CBTConfig::set(CBTConfig::autoCascade, m_windowAutoCascade_action->isChecked());
 
-	CProfile* p = m_profileMgr.startupProfile();
-	if (p) 
-	{
-		saveProfile(p);
-	}
+    CProfile* p = m_profileMgr.startupProfile();
+    if (p) {
+        saveProfile(p);
+    }
 }
 
 /** Reads the settings from the configfile and sets the right properties. */
-void BibleTime::readSettings() 
-{
-	qDebug("******************BibleTime::readSettings******************************");
-	//  accel()->readSettings(CBTConfig::getConfig());
+void BibleTime::readSettings() {
+    qDebug("******************BibleTime::readSettings******************************");
+    //  accel()->readSettings(CBTConfig::getConfig());
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 
-	m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
-	slotToggleToolbar();
-	
-	if ( CBTConfig::get(CBTConfig::autoTileVertical) ) 
-	{
-		m_windowAutoTileVertical_action->setChecked( true );
-		m_windowManualMode_action->setChecked(false);
-		slotAutoTileVertical();
-	}
-	else if ( CBTConfig::get(CBTConfig::autoTileHorizontal) ) 
-	{
-		m_windowAutoTileHorizontal_action->setChecked( true );
-		m_windowManualMode_action->setChecked(false);
-		slotAutoTileHorizontal();
-	}
-	else if ( CBTConfig::get(CBTConfig::autoCascade) ) 
-	{
-		m_windowAutoCascade_action->setChecked(true);
-		m_windowManualMode_action->setChecked(false);
-		slotAutoCascade();
-	}
-	else 
-	{
-		m_windowManualMode_action->setChecked(true);
-		slotManualArrangementMode();
-	}
+    m_viewToolbar_action->setChecked( CBTConfig::get(CBTConfig::toolbar) );
+    slotToggleToolbar();
+
+    if ( CBTConfig::get(CBTConfig::autoTileVertical) ) {
+        m_windowAutoTileVertical_action->setChecked( true );
+        m_windowManualMode_action->setChecked(false);
+        slotAutoTileVertical();
+    }
+    else if ( CBTConfig::get(CBTConfig::autoTileHorizontal) ) {
+        m_windowAutoTileHorizontal_action->setChecked( true );
+        m_windowManualMode_action->setChecked(false);
+        slotAutoTileHorizontal();
+    }
+    else if ( CBTConfig::get(CBTConfig::autoCascade) ) {
+        m_windowAutoCascade_action->setChecked(true);
+        m_windowManualMode_action->setChecked(false);
+        slotAutoCascade();
+    }
+    else {
+        m_windowManualMode_action->setChecked(true);
+        slotManualArrangementMode();
+    }
 }
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
-CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) 
-{
-	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
-	qDebug("BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)");
-	CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
-	if ( displayWindow ) 
-	{
-		displayWindow->init();
-		if (m_mdi->subWindowList().count() == 0)
-			displayWindow->showMaximized();
-		else
-			displayWindow->show();
-		//   if (!key.isEmpty())
-		displayWindow->lookupKey(key);
-	}
-	// We have to process pending events here, otherwise displayWindow is not fully painted
-	qApp->processEvents();
-	// Now all events, including mouse clicks for the displayWindow have been handled
-	// and we can let the user click the same module again
+CDisplayWindow* BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key) {
+    qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
+    qDebug("BibleTime::createReadDisplayWindow(QList<CSwordModuleInfo*> modules, const QString& key)");
+    CDisplayWindow* displayWindow = CDisplayWindowFactory::createReadInstance(modules, m_mdi);
+    if ( displayWindow ) {
+        displayWindow->init();
+        if (m_mdi->subWindowList().count() == 0)
+            displayWindow->showMaximized();
+        else
+            displayWindow->show();
+        //   if (!key.isEmpty())
+        displayWindow->lookupKey(key);
+    }
+    // We have to process pending events here, otherwise displayWindow is not fully painted
+    qApp->processEvents();
+    // Now all events, including mouse clicks for the displayWindow have been handled
+    // and we can let the user click the same module again
     //m_bookshelfPage->unfreezeModules(modules);
-	qApp->restoreOverrideCursor();
-	return displayWindow;
+    qApp->restoreOverrideCursor();
+    return displayWindow;
 }
 
 
 /** Creates a new presenter in the MDI area according to the type of the module. */
-CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) 
-{
-	QList<CSwordModuleInfo*> list;
-	list.append(module);
+CDisplayWindow* BibleTime::createReadDisplayWindow(CSwordModuleInfo* module, const QString& key) {
+    QList<CSwordModuleInfo*> list;
+    list.append(module);
 
-	return createReadDisplayWindow(list, key);
+    return createReadDisplayWindow(list, key);
 }
 
-CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) 
-{
-	qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
+CDisplayWindow* BibleTime::createWriteDisplayWindow(CSwordModuleInfo* module, const QString& key, const CDisplayWindow::WriteWindowType& type) {
+    qApp->setOverrideCursor( QCursor(Qt::WaitCursor) );
 
-	QList<CSwordModuleInfo*> modules;
-	modules.append(module);
+    QList<CSwordModuleInfo*> modules;
+    modules.append(module);
 
-	CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
-	if ( displayWindow ) 
-	{
-		displayWindow->init();
-		if (m_mdi->subWindowList().count() == 0)
-			displayWindow->showMaximized();
-		else
-			displayWindow->show();
-		displayWindow->lookupKey(key);
-	}
+    CDisplayWindow* displayWindow = CDisplayWindowFactory::createWriteInstance(modules, m_mdi, type);
+    if ( displayWindow ) {
+        displayWindow->init();
+        if (m_mdi->subWindowList().count() == 0)
+            displayWindow->showMaximized();
+        else
+            displayWindow->show();
+        displayWindow->lookupKey(key);
+    }
 
-	qApp->restoreOverrideCursor();
-	return displayWindow;
+    qApp->restoreOverrideCursor();
+    return displayWindow;
 }
 
 CDisplayWindow* BibleTime::moduleEditPlain(CSwordModuleInfo *module) {
@@ -242,105 +227,88 @@ void BibleTime::moduleAbout(CSwordModuleInfo *module) {
 }
 
 /** Refreshes all presenters.*/
-void BibleTime::refreshDisplayWindows() 
-{
-	foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) 
-	{
-		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) 
-		{
-			window->reload(CSwordBackend::OtherChange);
-		}
-	}
+void BibleTime::refreshDisplayWindows() {
+    foreach (QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
+        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+            window->reload(CSwordBackend::OtherChange);
+        }
+    }
 }
 
 /** Refresh main window accelerators */
-void::BibleTime::refreshBibleTimeAccel()
-{
+void::BibleTime::refreshBibleTimeAccel() {
     CBTConfig::setupAccelSettings(CBTConfig::application, m_actionCollection);
 }
 
 /** Called before quit. */
-void BibleTime::slot_aboutToQuit() 
-{
-	saveSettings();
+void BibleTime::slot_aboutToQuit() {
+    saveSettings();
 }
 
 /** Called before a window is closed */
-bool BibleTime::queryClose() 
-{
-	qDebug("BibleTime::queryClose");
-	bool ret = true;
+bool BibleTime::queryClose() {
+    qDebug("BibleTime::queryClose");
+    bool ret = true;
 
-	foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList())
-	{
-		if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) 
-		{
-			ret = ret && window->queryClose();
-		}
-		qDebug() << "return value:" << ret;
-	}
-	qDebug() << "final return value:" << ret;
-	return ret;
+    foreach(QMdiSubWindow* subWindow, m_mdi->subWindowList()) {
+        if (CDisplayWindow* window = dynamic_cast<CDisplayWindow*>(subWindow->widget())) {
+            ret = ret && window->queryClose();
+        }
+        qDebug() << "return value:" << ret;
+    }
+    qDebug() << "final return value:" << ret;
+    return ret;
 }
 
 /** Restores the workspace if the flag for this is set in the config. */
-void BibleTime::restoreWorkspace() 
-{
-	if (CProfile* p = m_profileMgr.startupProfile()) 
-	{
-		loadProfile(p);
-	}
+void BibleTime::restoreWorkspace() {
+    if (CProfile* p = m_profileMgr.startupProfile()) {
+        loadProfile(p);
+    }
 }
 
 /** Sets the plain caption of the main window */
-void BibleTime::setPlainCaption(const QString& title) 
-{
-	QString suffix;
-	//Watch out, subtitles must be appended with the form " - [%s]", otherwise
-	//QMdiSubWindow will mess up when it is maximized
-	if (!title.isEmpty()) 
-	{
-		suffix = QString(" - [").append(title).append("]");
-	}
-	QMainWindow::setWindowTitle( QString("BibleTime ").append(BT_VERSION) + suffix );
+void BibleTime::setPlainCaption(const QString& title) {
+    QString suffix;
+    //Watch out, subtitles must be appended with the form " - [%s]", otherwise
+    //QMdiSubWindow will mess up when it is maximized
+    if (!title.isEmpty()) {
+        suffix = QString(" - [").append(title).append("]");
+    }
+    QMainWindow::setWindowTitle( QString("BibleTime ").append(BT_VERSION) + suffix );
 }
 
 /** Processes the commandline options given to BibleTime. */
-void BibleTime::processCommandline() 
-{
-	QStringList args = qApp->QCoreApplication::arguments();
+void BibleTime::processCommandline() {
+    QStringList args = qApp->QCoreApplication::arguments();
 
-	if ( !CBTConfig::get(CBTConfig::crashedTwoTimes) && 
-		!args.contains("--ignore-session") )
-	{
-		restoreWorkspace();
-	}
+    if ( !CBTConfig::get(CBTConfig::crashedTwoTimes) &&
+            !args.contains("--ignore-session") ) {
+        restoreWorkspace();
+    }
 
- 	if ( args.contains("--open-default-bible") && 
-		!CBTConfig::get(CBTConfig::crashedLastTime) && 
-		!CBTConfig::get(CBTConfig::crashedTwoTimes)) 
-	{ 
-		int index = args.indexOf("--open-default-bible");
-		QString bibleKey;
-		if (index >= 0 && (index+1) < args.size())
-		{
-			bibleKey = args.at(index+1);
-		}
- 		CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
- 		if (bibleKey == "random") 
-		{
- 			CSwordVerseKey vk(0);
- 			const int maxIndex = 31100;
-			time_t seconds;
-			seconds = time (NULL);
-			srand(seconds);
-			int newIndex = rand() % maxIndex;
- 			vk.setPosition(sword::TOP);
- 			vk.Index(newIndex);
- 			bibleKey = vk.key();
- 		}
- 		createReadDisplayWindow(bible, bibleKey);
- 		m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
- 	}
+    if ( args.contains("--open-default-bible") &&
+            !CBTConfig::get(CBTConfig::crashedLastTime) &&
+            !CBTConfig::get(CBTConfig::crashedTwoTimes)) {
+        int index = args.indexOf("--open-default-bible");
+        QString bibleKey;
+        if (index >= 0 && (index + 1) < args.size()) {
+            bibleKey = args.at(index + 1);
+        }
+        CSwordModuleInfo* bible = CBTConfig::get(CBTConfig::standardBible);
+        if (bibleKey == "random") {
+            CSwordVerseKey vk(0);
+            const int maxIndex = 31100;
+            time_t seconds;
+            seconds = time (NULL);
+            srand(seconds);
+            int newIndex = rand() % maxIndex;
+            vk.setPosition(sword::TOP);
+            vk.Index(newIndex);
+            bibleKey = vk.key();
+        }
+        createReadDisplayWindow(bible, bibleKey);
+        m_mdi->myTileVertical();//we are sure only one window is open, which should be displayed fullscreen in the working area
+    }
 }
 

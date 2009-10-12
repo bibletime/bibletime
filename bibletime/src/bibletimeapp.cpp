@@ -14,21 +14,20 @@
 //KDE includes
 //#include <dcopclient.h> #TODO: USE DBUS INSTEAD OF DCOP
 
-BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) 
-{ 
+BibleTimeApp::BibleTimeApp( int & argc, char ** argv ) : QApplication(argc, argv) {
 //	initDCOP();
-	CResMgr::init_tr();
+    CResMgr::init_tr();
 }
 
 BibleTimeApp::~BibleTimeApp() {
 
-	//we can set this safely now because we close now (hopyfully without crash)
-	CBTConfig::set(CBTConfig::crashedLastTime, false);
-	CBTConfig::set(CBTConfig::crashedTwoTimes, false);
+    //we can set this safely now because we close now (hopyfully without crash)
+    CBTConfig::set(CBTConfig::crashedLastTime, false);
+    CBTConfig::set(CBTConfig::crashedTwoTimes, false);
 
-	deleteDisplayTemplateMgr();
-	deleteLanguageMgr();
-	deleteBackend();
+    deleteDisplayTemplateMgr();
+    deleteLanguageMgr();
+    deleteBackend();
 }
 
 /*

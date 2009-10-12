@@ -10,29 +10,29 @@
 #ifndef UTIL_MIGRATIONUTIL_H
 #define UTIL_MIGRATIONUTIL_H
 
-namespace util{
+namespace util {
 
 /**
  * Tools for handling settings migration automatically.
  * @author The BibleTime team <info@bibletime.info>
  */
-class MigrationUtil{
-public:
-	/**
-	* Performs any and all applicable migration actions, if neccessary
-	*/
-	static void checkMigration();
-private:
-	MigrationUtil() {}; //hide
-	~MigrationUtil() {}; //hide
-	/*
-	 * Performs a migration from a KDE 3 version of BibleTime.  It supports all
-	 * KDE 3 versions of BibleTime, including versions older than 1.3.  Its
-	 * only alteration is to move files to the new location, and to rename the
-	 * sessions directory from pre-1.3 versions if necessary.  It does not
-	 * change any settings.
-	 */
-	static void tryMigrationFromKDE3();
+class MigrationUtil {
+    public:
+        /**
+        * Performs any and all applicable migration actions, if neccessary
+        */
+        static void checkMigration();
+    private:
+        MigrationUtil() {}; //hide
+        ~MigrationUtil() {}; //hide
+        /*
+         * Performs a migration from a KDE 3 version of BibleTime.  It supports all
+         * KDE 3 versions of BibleTime, including versions older than 1.3.  Its
+         * only alteration is to move files to the new location, and to rename the
+         * sessions directory from pre-1.3 versions if necessary.  It does not
+         * change any settings.
+         */
+        static void tryMigrationFromKDE3();
 };
 
 } //namespace util

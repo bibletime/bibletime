@@ -1,7 +1,7 @@
 //
 // C++ Interface: dialogutil
 //
-// Description: 
+// Description:
 //
 //
 // Author: The BibleTime team <info@bibletime.info>, (C) 2009
@@ -14,9 +14,8 @@
 
 class QDialogButtonBox;
 
-namespace util
-{
-	void prepareDialogBox(QDialogButtonBox* box);
+namespace util {
+void prepareDialogBox(QDialogButtonBox* box);
 }
 
 #endif
