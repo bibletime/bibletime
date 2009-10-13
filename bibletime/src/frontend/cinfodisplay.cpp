@@ -218,8 +218,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
     CTextRendering::KeyTree tree;
 
     //  const bool isBible = true;
-    CSwordModuleInfo* module = CBTConfig::get
-                               (CBTConfig::standardBible);
+    CSwordModuleInfo* module = CBTConfig::get(CBTConfig::standardBible);
 
     //a prefixed module gives the module to look into
     QRegExp re("^[^ ]+:");
@@ -234,8 +233,7 @@ const QString CInfoDisplay::decodeCrossReference( const QString& data ) {
         //     qWarning("found module %s", moduleName.latin1());
         module = CPointers::backend()->findModuleByName(moduleName);
         if (!module) {
-            module = CBTConfig::get
-                     (CBTConfig::standardBible);
+            module = CBTConfig::get(CBTConfig::standardBible);
         }
         //   Q_ASSERT(module);
     }
@@ -309,6 +307,17 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
         return QString::null;
     }
 
+    CSwordBackend::FilterOptions filterOpts;
+    filterOpts.headings    = false;
+    filterOpts.strongNumbers  = false;
+    filterOpts.morphTags    = false;
+    filterOpts.lemmas     = false;
+    filterOpts.footnotes   = true;
+    // turn scripRefs off, so that they do not show up as footnotes in the OSIS filter's EntryAttributes
+    filterOpts.scriptureReferences = false;
+
+    CPointers::backend()->setFilterOptions(filterOpts);
+
     const QString modulename = list.first();
     const QString swordFootnote = list.last();
 
@@ -324,7 +333,7 @@ const QString CInfoDisplay::decodeFootnote( const QString& data ) {
 
     boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
     key->key(keyname);
-    key->renderedText(); //force entryAttributes
+    key->renderedText(CSwordKey::ProcessEntryAttributesOnly); //force entryAttributes
 
     const char* note =
         module->module()->getEntryAttributes()

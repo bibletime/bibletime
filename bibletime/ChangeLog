@@ -1,3 +1,7 @@
+2009-10-13 Martin Gruner <mgruner@crosswire.org>
+    * Fixed nasty bug with incorrect footnote display in combination with
+       crossReferences in the same verse.
+
 2009-10-10 Martin Gruner <mgruner@crosswire.org>
     * Reformatted codebase like in TRUNK a few days ago to be able to apply patches.
     * Fixed bug #2849728: Lucene Text Fields search not working. Search now
