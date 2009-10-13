@@ -1,6 +1,7 @@
 2009-10-13 Jaak Ristioja <ristioja@gmail.com>
     * Backported bookshelf model category sorting fix.
     * Fixed a CSwordModuleInfo bug, which had unknown effects.
+    * Reimplemented saving of bookshelf model grouping state.
 
 2009-10-13 Martin Gruner <mgruner@crosswire.org>
     * Fixed nasty bug with incorrect footnote display in combination with

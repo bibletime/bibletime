@@ -16,6 +16,7 @@
 #include "util/directoryutil.h"
 #include "util/migrationutil.h"
 
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
 
 #include <stdlib.h>
@@ -60,60 +61,9 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
     }
 }
 
-// TODO - redo signal handler
-#if 0
-extern "C" {
-    static void setSignalHandler(void (*handler)(int));
-
-    // Crash recovery signal handler
-    static void signalHandler(int sigId) {
-        setSignalHandler(SIG_DFL);
-        fprintf(stderr, "*** BibleTime got signal %d (Exiting)\n", sigId);
-        // try to cleanup all windows
-        if (CBTConfig::get(CBTConfig::crashedLastTime)) {
-            //crashed this time and the execution before this one, probably a bug which occurs every time
-            CBTConfig::set(CBTConfig::crashedTwoTimes, true);
-        }
-        else {
-            //try to restore next time.
-            CBTConfig::set(CBTConfig::crashedLastTime, true);
-        }
-        if (bibletime_ptr) {
-            bibletime_ptr->saveSettings();
-            fprintf(stderr, "*** Saving seemed to be successful. If restoring does not work on next startup please use the option --ignore-session\n");
-        }
-        ::exit(-1); //exit BibleTime
-    }
-
-    // Crash recovery signal handler
-    static void crashHandler(int sigId) {
-        setSignalHandler(SIG_DFL);
-        fprintf(stderr, "*** BibleTime got signal %d (Crashing). Trying to save settings.\n", sigId);
-        if (CBTConfig::get(CBTConfig::crashedLastTime)) {
-            // crashed this time and the execution before this one,
-            // probably a bug which occurs every time
-            CBTConfig::set(CBTConfig::crashedTwoTimes, true);
-        }
-        else {
-            //try to restore next time.
-            CBTConfig::set(CBTConfig::crashedLastTime, true);
-        }
-        if (bibletime_ptr) {
-            bibletime_ptr->saveSettings();
-            fprintf(stderr, "*** Saving seemed to be successful. If restoring does not work on next startup please use the option --ignore-session\n");
-        }
-        // Return to DrKonqi.
-    }
-
-    static void setSignalHandler(void (*handler)(int)) {
-        signal(SIGKILL, handler);
-        signal(SIGTERM, handler);
-        signal(SIGHUP,  handler);
-        KCrash::setEmergencySaveFunction(crashHandler);
-    }
+void registerMetaTypes() {
+    qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
 }
-#endif
-
 
 int main(int argc, char* argv[]) {
     qInstallMsgHandler( myMessageOutput );
@@ -125,18 +75,11 @@ int main(int argc, char* argv[]) {
     }
 #endif
 
-#if 0
-    //TODO: port to QT
-    static KCmdLineOptions options;
-    options.add("debug", ki18n("Enable debug messages"), 0);
-    options.add("ignore-session", ki18n("Ignore the startup session that was saved when BibleTime was closed the last time."), 0);
-    options.add("open-default-bible <key>", ki18n("Open the standard Bible with the given key. Use <random> to open at a random position."), 0);
-#endif
-
-
     BibleTimeApp app(argc, argv); //for QApplication
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
+
+    registerMetaTypes();
 
     // This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
@@ -148,21 +91,6 @@ int main(int argc, char* argv[]) {
     QTranslator BibleTimeTranslator;
     BibleTimeTranslator.load( QString("bibletime_ui_").append(QLocale::system().name()), DirectoryUtil::getLocaleDir().canonicalPath());
     app.installTranslator(&BibleTimeTranslator);
-
-#if 0
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    // A binary option (on / off)
-    if (args->isSet("debug")) {
-        showDebugMessages = true;
-        app.setProperty("--debug", true);
-    }
-    if (!args->getOptionList("test").isEmpty()) {
-        QStringList testingFeatures = args->getOptionList("test");
-        foreach (QString feature, testingFeatures) {
-            app.setProperty(feature.toLatin1().data(), true);
-        }
-    }
-#endif
 
     // This is the QT4 version, will only work if main App is QApplication
     // A binary option (on / off)

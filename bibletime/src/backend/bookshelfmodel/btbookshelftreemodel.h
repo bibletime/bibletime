@@ -23,9 +23,11 @@ namespace BookshelfModel {
 class ModuleItem;
 }
 class CSwordModuleInfo;
+class QDataStream;
 
 class BtBookshelfTreeModel: public QAbstractItemModel {
         Q_OBJECT
+        Q_ENUMS(Group)
 
         typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
 
@@ -34,10 +36,11 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             CheckStateRole = BtBookshelfModel::UserRole,
             UserRole = BtBookshelfModel::UserRole + 100
         };
-        enum Group { GROUP_CATEGORY, GROUP_LANGUAGE, GROUP_DISTRIBUTION };
+        enum Group { GROUP_CATEGORY = 0, GROUP_LANGUAGE, GROUP_DISTRIBUTION };
         typedef QList<Group> Grouping;
 
         BtBookshelfTreeModel(QObject *parent = 0);
+        BtBookshelfTreeModel(const Grouping &grouping, QObject *parent = 0);
         virtual ~BtBookshelfTreeModel();
 
         virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -117,5 +120,10 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         bool                  m_checkable;
         bool                  m_defaultChecked;
 };
+
+QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o);
+QDataStream &operator>>(QDataStream &is, BtBookshelfTreeModel::Grouping &o);
+
+Q_DECLARE_METATYPE(BtBookshelfTreeModel::Grouping);
 
 #endif // BTBOOKSHELFTREEMODEL_H

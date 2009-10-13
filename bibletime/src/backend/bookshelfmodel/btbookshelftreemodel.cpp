@@ -28,6 +28,12 @@ BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)
     m_groupingOrder.push_back(GROUP_LANGUAGE);
 }
 
+BtBookshelfTreeModel::BtBookshelfTreeModel(const Grouping &g, QObject *parent)
+        : QAbstractItemModel(parent), m_sourceModel(0), m_rootItem(new RootItem),
+        m_groupingOrder(g), m_checkable(false), m_defaultChecked(false) {
+    // Intentionally empty
+}
+
 BtBookshelfTreeModel::~BtBookshelfTreeModel() {
     delete m_rootItem;
 }
@@ -473,4 +479,23 @@ void BtBookshelfTreeModel::moduleRemoved(const QModelIndex &parent, int start,
 
         removeModule(module);
     }
+}
+
+QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o) {
+    os << o.size();
+    Q_FOREACH(BtBookshelfTreeModel::Group g, o) {
+        os << (int) g;
+    }
+    return os;
+}
+
+QDataStream &operator>>(QDataStream &is, BtBookshelfTreeModel::Grouping &o) {
+    int s;
+    is >> s;
+    for (int i(0); i < s; i++) {
+        int g;
+        is >> g;
+        o.append((BtBookshelfTreeModel::Group) g);
+    }
+    return is;
 }
