@@ -225,34 +225,15 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                 if (type == "crossReference") { //note containing cross references
                     myUserData->inCrossrefNote = true;
                     myUserData->noteType = BT_UserData::CrossReference;
-                    myUserData->swordFootnote++; // cross refs count as notes, too
 
-                    /*     //get the refList value of the right entry attribute
-                         AttributeList notes = myModule->getEntryAttributes()["Footnote"];
-                         bool foundNote = false;
-
-                         SWBuf id( tag.getAttribute("osisID") );
-                         SWBuf refList;
-
-                         for (AttributeList::iterator list_it = notes.begin(); (list_it != notes.end()) && !foundNote; ++list_it ) {
-                          for (AttributeValue::iterator val_it = list_it->second.begin(); (val_it != list_it->second.end()) && !foundNote; ++val_it ) {
-                           if ((val_it->first == "osisID") && (val_it->second == id)) {
-                            foundNote = true; //this break the loop
-                            refList = list_it->second["refList"];
-                           }
-                          }
-                         }
-
-                         if (refList.length()) {
-                          buf.append(" <span class=\"crossreference\" crossrefs=\"");
-                          buf.append(refList.c_str());
-                          buf.append("\"> ");
-
-                               myUserData->noteType = BT_UserData::CrossReference;
-                         }
-                         else {
-                          myUserData->noteType = BT_UserData::Unknown;
-                         }*/
+                    /*
+                     * Do not count crossrefs as footnotes if they are displayed in the text. This will cause problems
+                     * with footnote numbering when crossrefs are turned on/off.
+                     * When accessing footnotes, crossrefs must be turned off in the filter so that they are not in the entry
+                     * attributes of Sword.
+                     *
+                     * //myUserData->swordFootnote++; // cross refs count as notes, too
+                     */
 
                     buf.append("<span class=\"crossreference\">");
                     sword::SWBuf footnoteNumber = tag.getAttribute("swordFootnote");

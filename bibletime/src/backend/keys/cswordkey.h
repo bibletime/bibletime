@@ -36,7 +36,8 @@ class CSwordKey {
     public:
         enum TextRenderType {
             Normal = 0,
-            HTMLEscaped
+            HTMLEscaped = 1,
+            ProcessEntryAttributesOnly = 2	// in this case, renderText() will not return text, but only cause EntryAttribute processing
         };
         /** Destructor.
         * Public, not protected like the constructor, because CSwordKey pointers may be deleted by all others.

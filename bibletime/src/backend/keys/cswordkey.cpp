@@ -37,10 +37,7 @@ QString CSwordKey::rawText() {
     if (!m_module) return QString::null;
 
     if (dynamic_cast<sword::SWKey*>(this)) {
-        char * buffer = new char[strlen(rawKey()) + 1];
-        strcpy(buffer, rawKey());
-        m_module->module()->getKey()->setText( buffer );
-        delete [] buffer;
+        m_module->module()->getKey()->setText( rawKey() );
     }
 
     if (key().isNull()) return QString::null;
@@ -50,41 +47,37 @@ QString CSwordKey::rawText() {
 
 QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
     Q_ASSERT(m_module);
-    if (!m_module) {
-        return QString::null;
-    }
 
     sword::SWKey* const k = dynamic_cast<sword::SWKey*>(this);
 
     if (k) {
-        char * keyBuffer = new char[strlen(rawKey()) + 1];
-        strcpy(keyBuffer, rawKey());
         sword::VerseKey* vk_mod = dynamic_cast<sword::VerseKey*>(m_module->module()->getKey());
 
         if (vk_mod) {
             vk_mod->Headings(1);
         }
 
-        m_module->module()->getKey()->setText( keyBuffer );
+        m_module->module()->getKey()->setText( rawKey() );
 
         if (m_module->type() == CSwordModuleInfo::Lexicon) {
             m_module->snap();
             /* In lexicons make sure that our key (e.g. 123) was successfully set to the module,
             i.e. the module key contains this key (e.g. 0123 contains 123) */
 
-            if ( sword::stricmp(m_module->module()->getKey()->getText(), keyBuffer)
-                    && !strstr(m_module->module()->getKey()->getText(), keyBuffer)
+            if ( sword::stricmp(m_module->module()->getKey()->getText(), rawKey())
+                    && !strstr(m_module->module()->getKey()->getText(), rawKey())
                ) {
                 qDebug("return an empty key for %s", m_module->module()->getKey()->getText());
                 return QString::null;
             }
         }
-        delete [] keyBuffer;
     }
 
     //Q_ASSERT(!key().isNull());
     if (!key().isNull()) { //we have valid text
-        QString text = QString::fromUtf8( m_module->module()->RenderText() );
+    	bool DoRender = (mode == ProcessEntryAttributesOnly) ? 0 : 1;
+        QString text = QString::fromUtf8( m_module->module()->RenderText(0, -1, DoRender) );
+        if (!DoRender) return QString::null;
 
         // This is yucky, but if we want strong lexicon refs we have to do it here.
         if (m_module->type() == CSwordModuleInfo::Lexicon) {
