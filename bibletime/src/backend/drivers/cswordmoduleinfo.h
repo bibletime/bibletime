@@ -125,7 +125,6 @@ class CSwordModuleInfo: public QObject {
             featureMax = HebrewParse
         };
         enum Category {
-            UnknownCategory = 0, /**< The category wasn't set or has an unknwon value */
             Bibles,
             Commentaries,
             Books,
@@ -133,7 +132,8 @@ class CSwordModuleInfo: public QObject {
             Glossary,
             DailyDevotional,
             Images,
-            Cult /**< The module is a cult / sect / questionable module */
+            Cult, /**< The module is a cult / sect / questionable module */
+            UnknownCategory /**< The category wasn't set or has an unknown value */
         };
 
         /**
