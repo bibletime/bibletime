@@ -45,6 +45,8 @@ class CategoryItem: public Item {
             return module->category() == m_category;
         }
 
+        bool operator<(const Item &other) const;
+
     protected:
         CSwordModuleInfo::Category m_category;
 };

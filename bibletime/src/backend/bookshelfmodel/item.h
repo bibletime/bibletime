@@ -157,7 +157,7 @@ class Item {
         /**
           \brief Comparsion operator used sorting child items.
         */
-        bool operator<(const Item &other) const;
+        virtual bool operator<(const Item &other) const;
 
     protected:
         inline void setParent(Item *parent) {

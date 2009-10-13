@@ -19,4 +19,11 @@ CategoryItem::CategoryItem(CSwordModuleInfo *module)
     // Intentionally empty
 }
 
+bool CategoryItem::operator<(const Item &other) const {
+    if (other.type() != ITEM_CATEGORY) {
+        return ITEM_CATEGORY < other.type();
+    }
+    return m_category < static_cast<const CategoryItem &>(other).m_category;
+}
+
 } // namespace BookshelfModel
