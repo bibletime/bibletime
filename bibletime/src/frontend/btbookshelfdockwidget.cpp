@@ -20,6 +20,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QMenu>
+#include <QSettings>
 #include <QToolBar>
 #include <QToolButton>
 #include <QVBoxLayout>
@@ -27,6 +28,7 @@
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/bookshelfmodel/btcheckstatefilterproxymodel.h"
 #include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
+#include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/btaboutmoduledialog.h"
@@ -38,14 +40,27 @@
 
 BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         : QDockWidget(parent, f) {
+    QSettings *settings(CBTConfig::getConfig());
+
     setObjectName("BookshelfDock");
 
     // Setup models:
     m_bookshelfModel = new BtBookshelfModel(this);
     m_bookshelfModel->addModules(CPointers::backend()->moduleList());
-    m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
+
+    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
+    {
+        QVariant v(settings->value("grouping"));
+        if (v.canConvert<BtBookshelfTreeModel::Grouping>()) {
+            m_bookshelfTreeModel = new BtBookshelfTreeModel(v.value<BtBookshelfTreeModel::Grouping>(), this);
+        } else {
+            m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
+        }
+    }
+    settings->endGroup();
     m_bookshelfTreeModel->setDefaultChecked(true);
     m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
+
     m_filterProxyModel = new BtCheckStateFilterProxyModel(this);
     m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
@@ -259,6 +274,11 @@ void BtBookshelfDockWidget::groupingActionTriggered(QAction *action) {
     }
     m_bookshelfTreeModel->setGroupingOrder(g);
     m_view->setRootIsDecorated(!g.isEmpty());
+
+    QSettings *settings(CBTConfig::getConfig());
+    settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
+    settings->setValue("grouping", QVariant::fromValue(g));
+    settings->endGroup();
 }
 
 void BtBookshelfDockWidget::showHideEnabled(bool enable) {

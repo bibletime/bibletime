@@ -18,6 +18,7 @@
 #include <QTextCodec>
 #include <QTranslator>
 #include <QVariant>
+#include "backend/bookshelfmodel/btbookshelftreemodel.h"
 #include "backend/config/cbtconfig.h"
 #include "bibletime.h"
 #include "bibletime_dbus_adaptor.h"
@@ -53,6 +54,10 @@ void myMessageOutput( QtMsgType type, const char *msg ) {
     }
 }
 
+void registerMetaTypes() {
+    qRegisterMetaTypeStreamOperators<BtBookshelfTreeModel::Grouping>("BtBookshelfTreeModel::Grouping");
+}
+
 /// \todo Reimplement signal handler which handles consecutive crashes.
 
 int main(int argc, char* argv[]) {
@@ -80,6 +85,8 @@ int main(int argc, char* argv[]) {
 #ifdef Q_WS_WIN
 	app.addLibraryPath(app.applicationDirPath() + "/plugins");
 #endif
+
+    registerMetaTypes();
 
     if (!DU::initDirectoryCache()) {
         qFatal("Error initializing directory cache!");
