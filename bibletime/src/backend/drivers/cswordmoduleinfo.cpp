@@ -579,7 +579,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryFrom: {
-            if (!category() == Glossary) {
+            if (category() != Glossary) {
                 return QString::null;
             };
 
@@ -589,7 +589,7 @@ QString CSwordModuleInfo::config(const CSwordModuleInfo::ConfigEntry entry) cons
         }
 
         case GlossaryTo: {
-            if (!category() == Glossary) {
+            if (category() != Glossary) {
                 return QString::null;
             };
 
