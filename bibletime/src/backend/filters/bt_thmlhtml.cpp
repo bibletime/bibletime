@@ -367,7 +367,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                 value++; //strip the first /
             }
 
-            buf.append("<img src=\"file:");
+            buf.append("<img src=\"file://");
             buf.append(myUserData->module->getConfigEntry("AbsoluteDataPath"));
             buf.append('/');
             buf.append(value);
