@@ -1,3 +1,6 @@
+2009-10-14 Martin Gruner <mgruner@crosswire.org>
+	* Release 2.3.2
+
 2009-10-13 Jaak Ristioja <ristioja@gmail.com>
     * Backported bookshelf model category sorting fix.
     * Fixed a CSwordModuleInfo bug, which had unknown effects.
