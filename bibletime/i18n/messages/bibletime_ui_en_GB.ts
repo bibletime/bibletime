@@ -84,7 +84,7 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="302"/>
         <source>O&amp;pen Windows</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="356"/>
@@ -234,12 +234,12 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="184"/>
         <source>Close &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="187"/>
         <source>Close the current open window</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="198"/>
@@ -476,12 +476,12 @@
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
         <source>This program uses Qt version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
@@ -970,7 +970,7 @@
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="36"/>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/frontend/settingsdialogs/btshortcutsdialog.cpp" line="38"/>
