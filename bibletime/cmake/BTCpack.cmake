@@ -1,10 +1,10 @@
 # This is the CPack section
 # Copied and modified from http://www.vtk.org/Wiki/CMake:Packaging_With_CPack
 
-SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows Beta")
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "BibleTime for Windows svn")
 SET(CPACK_PACKAGE_VENDOR "http://www.bibletime.info")
 SET(CPACK_PACKAGE_VERSION_MAJOR "2")
-SET(CPACK_PACKAGE_VERSION_MINOR "3")
+SET(CPACK_PACKAGE_VERSION_MINOR "4")
 SET(CPACK_PACKAGE_VERSION_PATCH "0")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "BibleTime")
 
@@ -48,8 +48,14 @@ IF(WIN32 AND NOT UNIX)
   # Qt Plugins
   INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/plugins")
 
-  # This adds in the required Windows system libraries and libsword.dll
-  INCLUDE(InstallRequiredSystemLibraries)
+  # This adds in the required Windows system libraries
+  INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
+  SET(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "
+      ExecWait \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe  /q:a\\\"
+      Delete   \\\"$INSTDIR\\\\bin\\\\vcredist_x86.exe\\\"
+  ")
+  
+  # add the libsword.dll
   STRING(REPLACE ".lib" ".dll" SWORD_DLL "${SWORD_LIBRARY}")
   INSTALL(FILES ${SWORD_DLL} DESTINATION ${BT_DESTINATION}) # This will also take effect in the regular install
 
