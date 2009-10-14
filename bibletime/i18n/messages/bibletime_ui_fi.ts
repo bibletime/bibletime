@@ -568,88 +568,88 @@
 <context>
     <name>BtBookshelfDockWidget</name>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="208"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
         <source>Bookshelf</source>
         <translation>Kirjahylly</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="210"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
         <source>Fi&amp;lter:</source>
         <translation>&amp;Suodata:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="211"/>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="214"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="226"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="229"/>
         <source>Grouping</source>
         <translation>Ryhmitä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="212"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
         <source>Change the grouping of items in the bookshelf.</source>
         <translation>Muuta teosten ryhmittelyä.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="215"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="230"/>
         <source>Category/Language</source>
         <translation>Kategoria/Kieli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="216"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="231"/>
         <source>Category</source>
         <translation>Kategoria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="217"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="232"/>
         <source>Language/Category</source>
         <translation>Kieli/Kategoria</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="218"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="233"/>
         <source>Language</source>
         <translation>Kieli</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="219"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="234"/>
         <source>No grouping</source>
         <translation>Ei ryhmittelyä</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="220"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="235"/>
         <source>Show/hide works</source>
         <translation>Piilota/näytä teoksia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="222"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="237"/>
         <source>&amp;Open</source>
         <translation>&amp;Avaa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="223"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="238"/>
         <source>&amp;Edit</source>
         <translation>&amp;Muokkaa</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="224"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="239"/>
         <source>&amp;Plain text</source>
         <translation>&amp;Pelkkä teksti</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="225"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="240"/>
         <source>&amp;HTML</source>
         <translation>&amp;HTML</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="226"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="241"/>
         <source>&amp;Unlock...</source>
         <translation>&amp;Avaa lukitus...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="227"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="242"/>
         <source>&amp;About...</source>
         <translation>&amp;Tietoja...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="278"/>
+        <location filename="../../src/frontend/btbookshelfdockwidget.cpp" line="298"/>
         <source>&amp;Search in %1...</source>
         <translation>&amp;Etsi teoksesta %1...</translation>
     </message>
@@ -833,83 +833,83 @@
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="42"/>
         <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
         <translation>Teoksia voi asentaa yhteen tai useampaan kansioon.  Kun olet luonut kansiot tähän, voit valita yhden niistä asennussivulla.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="44"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="43"/>
         <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
         <translation>BibleTime ja Sword-kirjasto etsivät teoksia kaikista näistä kansioista. Jos kansio on poistettu tässä, se on olemassa yhä järjestelmässä kaikkine teoksineen. Kansiota &quot;.sword&quot; kotikansiossasi käytetään aina automaattisesti, eikä sitä voi poistaa eikä lisätä. </translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="51"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="50"/>
         <source>Configuration file for the paths is: </source>
         <translation>Polkujen asetustiedosto on:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="70"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="69"/>
         <source>Add...</source>
         <translation>Lisää...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="76"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="75"/>
         <source>Edit...</source>
         <translation>Muokkaa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="81"/>
         <source>Remove</source>
         <translation>Poista</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="106"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="123"/>
         <source>Choose directory</source>
         <translation>Valitse kansio</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="114"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
         <translation>Sinulla ei ole oikeuksia kirjoittaa tähän kansioon. Teoksia ei siis voi asentaa tänne BibleTimellä. Haluatko käyttää tämän kansiota alkuperäisen sijasta?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="131"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="132"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="131"/>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
         <translation>Sinulla ei ole oikeuksia kirjoittaa tähän kansioon. Teoksia ei siis voi asentaa tänne BibleTimellä. Haluatko yhä lisätä sen kirjahyllyn kansioiden luetteloon?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="35"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
         <source>Bookshelf Paths</source>
         <translation>Kirjahyllyn polut</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="47"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="46"/>
         <source>Configure bookshelf paths</source>
         <translation>Aseta kirjahyllyn polkuja</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="71"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="70"/>
         <source>Add new path</source>
         <translation>Lisää uusi polku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="77"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="76"/>
         <source>Edit the selected path</source>
         <translation>Muokkaa valittua polkua</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="82"/>
         <source>Remove the selected path</source>
         <translation>Poista valittu polku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="114"/>
         <source>Use Directory?</source>
         <translation>Käytä kansiota?</translation>
     </message>
@@ -2448,71 +2448,71 @@ pikanäppäin</translation>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="41"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="40"/>
         <source>Caption</source>
         <translation>Otsikko</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="56"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="55"/>
         <source>Type</source>
         <translation>Tyyppi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="59"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="58"/>
         <source>Server</source>
         <translation>Palvelin</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="62"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="61"/>
         <source>Path</source>
         <translation>Polku</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="83"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="82"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="84"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="83"/>
         <source>Discard</source>
         <translation>Hylkää</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="97"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="105"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="112"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="119"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="123"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="104"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="97"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
         <source>Please provide a caption.</source>
         <translation>Määritä otsikko.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="106"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="105"/>
         <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
         <translation>Tälle otsikolle on jo määritetty lähde.&lt;br/&gt;Ole hyvä ja anna joku toinen otsikko.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="112"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
         <source>Please provide a server name.</source>
         <translation>Määritä palvelimen nimi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="119"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
         <source>Please provide a valid, readable path.</source>
         <translation>Määritä lukukelpoinen kelvollinen polku.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="123"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
         <source>Please provide a path.</source>
         <translation>Määritä polku.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="33"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
         <source>New  Installation Source</source>
         <translation>Uusi asennuslähde</translation>
     </message>
@@ -2545,27 +2545,27 @@ pikanäppäin</translation>
     </message>
     <message>
         <location filename="../../src/frontend/cinfodisplay.cpp" line="195"/>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="292"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="290"/>
         <source>Cross references</source>
         <translation>Ristiviittaukset</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="337"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="346"/>
         <source>Footnote</source>
         <translation>Alaviite</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="368"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="377"/>
         <source>Strongs</source>
         <translation>Strongin numerot</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="450"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="459"/>
         <source>Morphology</source>
         <translation>Morfologia</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/cinfodisplay.cpp" line="474"/>
+        <location filename="../../src/frontend/cinfodisplay.cpp" line="483"/>
         <source>Word lookup</source>
         <translation>Sanahaku</translation>
     </message>
@@ -2654,7 +2654,7 @@ pikanäppäin</translation>
         <translation>Kirjat</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="411"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="392"/>
         <source>Added text</source>
         <translation>Lisätty teksti</translation>
     </message>
@@ -3581,12 +3581,12 @@ Language name ppk</extracomment>
         <translation>Vie</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="28"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="27"/>
         <source>Local</source>
         <translation>Paikallinen</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="29"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="28"/>
         <source>Remote</source>
         <translation>Verkko</translation>
     </message>
@@ -3754,12 +3754,12 @@ Language name ppk</extracomment>
         <translation>Valinnat</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="54"/>
+        <location filename="../../src/util/migrationutil.cpp" line="55"/>
         <source>Settings Migration</source>
         <translation>Asetusten siirto</translation>
     </message>
     <message>
-        <location filename="../../src/util/migrationutil.cpp" line="55"/>
+        <location filename="../../src/util/migrationutil.cpp" line="56"/>
         <source>It appears you have a BibleTime configuration from KDE 3 stored in %1, and you have not migrated it to this version.  Would you like to import it?</source>
         <translation>Sinulla näyttää olevan BibleTimen vanhasta versiosta peräisin olevat asetukset talletettuna tiedostoon %1, ja että et ole siirtänyt niitä tähän versioon.  Haluatko tuoda asetukset nyt?</translation>
     </message>
@@ -3814,7 +3814,7 @@ Language name ppk</extracomment>
         <translation>Asennettu versio</translation>
     </message>
     <message>
-        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="428"/>
+        <location filename="../../src/backend/filters/bt_osishtml.cpp" line="409"/>
         <source>Verb tense changed</source>
         <translation>Verbin aikamuoto vaihdettu</translation>
     </message>
@@ -3874,91 +3874,91 @@ Language name ppk</extracomment>
 <context>
     <name>QPushButton</name>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="32"/>
+        <location filename="../../src/util/dialogutil.cpp" line="46"/>
         <source>OK</source>
         <comment>Dialog Button</comment>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="33"/>
+        <location filename="../../src/util/dialogutil.cpp" line="47"/>
         <source>Open</source>
         <comment>Dialog Button</comment>
         <translation>Avaa</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="34"/>
+        <location filename="../../src/util/dialogutil.cpp" line="48"/>
         <source>Save</source>
         <comment>Dialog Button</comment>
         <translation>Tallenna</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="35"/>
+        <location filename="../../src/util/dialogutil.cpp" line="49"/>
         <source>Cancel</source>
         <comment>Dialog Button</comment>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="36"/>
+        <location filename="../../src/util/dialogutil.cpp" line="50"/>
         <source>Close</source>
         <comment>Dialog Button</comment>
         <translation>Sulje</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="37"/>
+        <location filename="../../src/util/dialogutil.cpp" line="51"/>
         <source>Discard</source>
         <comment>Dialog Button</comment>
         <translation>Hylkää</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="38"/>
+        <location filename="../../src/util/dialogutil.cpp" line="52"/>
         <source>Apply</source>
         <comment>Dialog Button</comment>
         <translation>Käytä</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="39"/>
+        <location filename="../../src/util/dialogutil.cpp" line="53"/>
         <source>Reset</source>
         <comment>Dialog Button</comment>
         <translation>Resetoi</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="40"/>
+        <location filename="../../src/util/dialogutil.cpp" line="54"/>
         <source>Restore defaults</source>
         <comment>Dialog Button</comment>
         <translation>Palauta oletukset</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="41"/>
+        <location filename="../../src/util/dialogutil.cpp" line="55"/>
         <source>Help</source>
         <comment>Dialog Button</comment>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="42"/>
+        <location filename="../../src/util/dialogutil.cpp" line="56"/>
         <source>Save All</source>
         <comment>Dialog Button</comment>
         <translation>Tallenna kaikki</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="43"/>
+        <location filename="../../src/util/dialogutil.cpp" line="57"/>
         <source>Yes</source>
         <comment>Dialog Button</comment>
         <translation>Kyllä</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="44"/>
+        <location filename="../../src/util/dialogutil.cpp" line="58"/>
         <source>Yes to all</source>
         <comment>Dialog Button</comment>
         <translation>Kyllä kaikkiin</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="45"/>
+        <location filename="../../src/util/dialogutil.cpp" line="59"/>
         <source>No</source>
         <comment>Dialog Button</comment>
         <translation>Ei</translation>
     </message>
     <message>
-        <location filename="../../src/util/dialogutil.cpp" line="46"/>
+        <location filename="../../src/util/dialogutil.cpp" line="60"/>
         <source>No to all</source>
         <comment>Dialog Button</comment>
         <translation>Ei kaikkiin</translation>
@@ -4364,17 +4364,17 @@ This could take a long time. Proceed with indexing?</source>
 Tämä voi viedä pitkän ajan. Haluatko indeksoida?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="222"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="221"/>
         <source>&amp;Analyze results...</source>
         <translation>&amp;Analysoi tulokset...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="223"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="222"/>
         <source>Show a graphical analyzis of the search result</source>
         <translation>Näytä hakutulosten graafinen analyysi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="229"/>
+        <location filename="../../src/frontend/searchdialog/csearchdialog.cpp" line="228"/>
         <source>&amp;Close</source>
         <translation>&amp;Sulje</translation>
     </message>
