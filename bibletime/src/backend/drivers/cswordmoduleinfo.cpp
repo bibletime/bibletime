@@ -11,7 +11,6 @@
 
 #include <boost/scoped_ptr.hpp>
 #include <CLucene.h>
-#include <CLucene/util/dirent.h>
 #include <CLucene/util/Misc.h>
 #include <CLucene/util/Reader.h>
 #include <QByteArray>
@@ -834,23 +833,14 @@ QString CSwordModuleInfo::aboutText() const {
     ListConfigEntry entries;
 
     entries.append(DistributionLicense);
-
     entries.append(DistributionSource);
-
     entries.append(DistributionNotes);
-
     entries.append(TextSource);
-
     entries.append(CopyrightNotes);
-
     entries.append(CopyrightHolder);
-
     entries.append(CopyrightDate);
-
     entries.append(CopyrightContactName);
-
     entries.append(CopyrightContactAddress);
-
     entries.append(CopyrightContactEmail);
 
     typedef QMap<CSwordModuleInfo::ConfigEntry, QString> MapConfigEntry;
@@ -858,23 +848,14 @@ QString CSwordModuleInfo::aboutText() const {
     MapConfigEntry entryMap;
 
     entryMap[DistributionLicense] = tr("Distribution license");
-
     entryMap[DistributionSource] = tr("Distribution source");
-
     entryMap[DistributionNotes] = tr("Distribution notes");
-
     entryMap[TextSource] = tr("Text source");
-
     entryMap[CopyrightNotes] = tr("Copyright notes");
-
     entryMap[CopyrightHolder] = tr("Copyright holder");
-
     entryMap[CopyrightDate] = tr("Copyright date");
-
     entryMap[CopyrightContactName] = tr("Copyright contact name");
-
     entryMap[CopyrightContactAddress] = tr("Copyright contact address");
-
     entryMap[CopyrightContactEmail] = tr("Copyright contact email");
 
     text += ("<hr><table>");
@@ -889,7 +870,6 @@ QString CSwordModuleInfo::aboutText() const {
         }
 
     }
-
 
     text += "</table></font>";
 
