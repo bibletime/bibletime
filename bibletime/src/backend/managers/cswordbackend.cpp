@@ -9,7 +9,6 @@
 
 #include "backend/managers/cswordbackend.h"
 
-#include <dirent.h>
 #include <QDebug>
 #include <QDir>
 #include <QFileInfo>
@@ -330,32 +329,20 @@ CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* con
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */
 bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleConfig) {
-    namespace DU = util::directory;
 
     sword::SectionMap::iterator section;
-    DIR *dir = opendir(configPath);
-
-    struct dirent *ent;
-
+    QDir dir(QString::fromUtf8(configPath));
     bool foundConfig = false;
-    QString modFile;
 
-    if (dir) {    // find and update .conf file
-        rewinddir(dir);
+    QFileInfoList list = dir.entryInfoList();
+    if (dir.isReadable()) {
+		for (int i = 0; i < list.size(); ++i) {
+			QFileInfo fileInfo = list.at(i);
 
-        while ((ent = readdir(dir)) && !foundConfig) {
-            if ((strcmp(ent->d_name, ".")) && (strcmp(ent->d_name, ".."))) {
-                modFile = QString(configPath);
-                modFile.append("/");
-                modFile.append( QString::fromLocal8Bit(ent->d_name) );
-
-                moduleConfig = sword::SWConfig( modFile.toLocal8Bit().constData() );
-                section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-                foundConfig = ( section != moduleConfig.Sections.end() );
-            }
-        }
-
-        closedir(dir);
+			moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
+			section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
+			foundConfig = ( section != moduleConfig.Sections.end() );
+		}
     }
     else { //try to read mods.conf
         moduleConfig = sword::SWConfig("");//global config
@@ -374,26 +361,19 @@ bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleC
 
     if (!foundConfig && configType != 2) { //search in $HOME/.sword/
 
-        QString myPath = DU::getUserHomeDir().absolutePath();
+        QString myPath = util::directory::getUserHomeDir().absolutePath();
         myPath.append("/.sword/mods.d");
-        dir = opendir(myPath.toUtf8().constData());
+        dir.setPath(myPath);
 
-        if (dir) {
-            rewinddir(dir);
-
-            while ((ent = readdir(dir)) && !foundConfig) {
-                if ((strcmp(ent->d_name, ".")) && (strcmp(ent->d_name, ".."))) {
-                    modFile = myPath;
-                    modFile.append('/');
-                    modFile.append(ent->d_name);
-                    moduleConfig = sword::SWConfig( modFile.toLocal8Bit().constData() );
-                    section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-                    foundConfig = ( section != moduleConfig.Sections.end() );
-                }
-            }
-
-            closedir(dir);
-        }
+        QFileInfoList list = dir.entryInfoList();
+		if (dir.isReadable()) {
+			for (int i = 0; i < list.size(); ++i) {
+				QFileInfo fileInfo = list.at(i);
+				moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
+				section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
+				foundConfig = ( section != moduleConfig.Sections.end() );
+			}
+		}
     }
 
     return foundConfig;
