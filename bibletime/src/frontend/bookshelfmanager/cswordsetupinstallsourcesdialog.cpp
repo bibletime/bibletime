@@ -102,7 +102,7 @@ void CSwordSetupInstallSourcesDialog::slotOk() {
     sword::InstallSource is = instbackend::source(m_captionEdit->text());
     if ( (QString)is.caption.c_str() == m_captionEdit->text() ) { //source already exists
         util::showInformation( this, tr( "Error" ),
-                                  tr("A source with this caption already exists.<br>Please provide a different caption."));
+                               tr("A source with this caption already exists.<br>Please provide a different caption."));
         return;
     }
 

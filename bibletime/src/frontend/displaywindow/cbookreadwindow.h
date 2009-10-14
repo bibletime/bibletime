@@ -21,7 +21,7 @@ class QAction;
   * @author The BibleTime team
   */
 class CBookReadWindow : public CLexiconReadWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         static void insertKeyboardActions( BtActionCollection* const a );
 

@@ -27,8 +27,7 @@
 
 
 BtIndexPage::BtIndexPage()
-        : BtConfigPage()
-{
+        : BtConfigPage() {
     namespace DU = util::directory;
 
     QVBoxLayout *vboxLayout;

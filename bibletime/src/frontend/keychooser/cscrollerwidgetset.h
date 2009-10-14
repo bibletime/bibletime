@@ -25,7 +25,7 @@ class QVBoxLayout;
   * @author The BibleTime team
   */
 class CScrollerWidgetSet : public QWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /**
         * the constructor

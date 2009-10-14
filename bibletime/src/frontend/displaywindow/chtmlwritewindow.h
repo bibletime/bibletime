@@ -19,7 +19,7 @@ class QAction;
   * @author The BibleTime team
   */
 class CHTMLWriteWindow : public CPlainWriteWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CHTMLWriteWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CHTMLWriteWindow();

@@ -79,8 +79,8 @@ void BtSourceWidget::slotDelete() {
     qDebug("void BtSourceWidget::slotDelete() start");
     // ask for confirmation
     int ret = util::showWarning(this, tr("Delete Source?"),
-                                   tr("Do you really want to delete this source?"),
-                                   QMessageBox::Yes | QMessageBox::No);
+                                tr("Do you really want to delete this source?"),
+                                QMessageBox::Yes | QMessageBox::No);
 
     if (ret == QMessageBox::Yes) {
         instbackend::deleteSource(currentSourceName());

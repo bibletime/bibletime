@@ -28,7 +28,7 @@ class QTreeWidget;
 * applies the actions to the proper source(s).
 */
 class BtSourceWidget : public QTabWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         friend class BtInstallPage;
 

@@ -15,7 +15,6 @@
 
 
 BTIndexItem::BTIndexItem(QTreeWidgetItem* parent)
-        : QTreeWidgetItem(parent)
-{
+        : QTreeWidgetItem(parent) {
     // Intentionally empty
 }

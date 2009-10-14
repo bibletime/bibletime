@@ -20,7 +20,7 @@
 
 
 namespace InfoDisplay {
-    class CInfoDisplay;
+class CInfoDisplay;
 }
 class BtActionClass;
 class BtBookshelfDockWidget;

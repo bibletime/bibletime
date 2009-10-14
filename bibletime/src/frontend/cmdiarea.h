@@ -24,8 +24,8 @@ class QResizeEvent;
  * Enhances QMdiArea.
  */
 class CMDIArea : public QMdiArea {
-    Q_OBJECT
-    Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
+        Q_OBJECT
+        Q_PROPERTY(MDIArrangementMode m_mdiArrangementMode READ getMDIArrangementMode WRITE setMDIArrangementMode)
 
     public:
         /**

@@ -35,7 +35,7 @@ class QToolBar;
   * @author The BibleTime team
   */
 class CDisplayWindow : public QMainWindow, public CPointers {
-    Q_OBJECT
+        Q_OBJECT
     public:
         enum WriteWindowType {
             HTMLWindow = 1,

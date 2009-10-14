@@ -14,7 +14,7 @@
 
 
 class BtFontSizeWidget : public QComboBox {
-    Q_OBJECT
+        Q_OBJECT
 
     public:
         BtFontSizeWidget(QWidget* parent = 0);

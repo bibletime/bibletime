@@ -26,7 +26,7 @@ class QDialogButtonBox;
 * to handle the selection before the dialog is destroyed.
 */
 class CModuleChooserDialog : public QDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         /**

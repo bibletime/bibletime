@@ -29,7 +29,7 @@ class QWidget;
   * @author The BibleTime team
   */
 class CLexiconKeyChooser : public CKeyChooser {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /**
         * The constructor

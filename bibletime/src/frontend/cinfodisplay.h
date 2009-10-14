@@ -24,7 +24,7 @@ class QSize;
 namespace InfoDisplay {
 
 class CInfoDisplay : public QWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         enum InfoType {
             Abbreviation,

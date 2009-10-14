@@ -23,7 +23,7 @@ class QResizeEvent;
   * @author The BibleTime team
   */
 class CReadWindow : public CDisplayWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         //  static void insertKeyboardActions( KAccel* const a );
         static void insertKeyboardActions( BtActionCollection* const a );

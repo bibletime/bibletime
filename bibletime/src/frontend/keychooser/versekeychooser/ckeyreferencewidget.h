@@ -23,7 +23,7 @@ class CSwordVerseKey;
 class QLineEdit;
 
 class CKeyReferenceWidget : public QWidget  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /**
         * the constructor

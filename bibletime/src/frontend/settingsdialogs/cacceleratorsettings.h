@@ -27,7 +27,7 @@ class QStackedWidget;
     @author The BibleTime team <info@bibletime.info>
 */
 class CAcceleratorSettingsPage : public BtConfigPage, CPointers {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CAcceleratorSettingsPage(QWidget *parent);
         ~CAcceleratorSettingsPage();

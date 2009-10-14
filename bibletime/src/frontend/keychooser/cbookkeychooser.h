@@ -21,14 +21,14 @@ class CSwordKey;
 class CSwordTreeKey;
 
 namespace sword {
-    class TreeKeyIdx;
+class TreeKeyIdx;
 }
 
 /** The keychooser implementation for books.
   * @author The BibleTime team
   */
 class CBookKeyChooser : public CKeyChooser {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CBookKeyChooser(QList<CSwordModuleInfo*> modules, CSwordKey *key = 0, QWidget *parent = 0);
         ~CBookKeyChooser();

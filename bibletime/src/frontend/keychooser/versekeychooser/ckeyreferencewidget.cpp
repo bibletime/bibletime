@@ -48,8 +48,7 @@ class BtLineEdit : public QLineEdit {
 CKeyReferenceWidget::CKeyReferenceWidget( CSwordBibleModuleInfo *mod, CSwordVerseKey *key, QWidget *parent, const char* /*name*/) :
         QWidget(parent),
         m_key(key),
-        m_dropDownHoverTimer(this)
-{
+        m_dropDownHoverTimer(this) {
     namespace DU = util::directory;
 
     updatelock = false;

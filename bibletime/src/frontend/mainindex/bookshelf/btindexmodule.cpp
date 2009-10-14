@@ -20,8 +20,7 @@
 
 
 BTIndexModule::BTIndexModule(BTModuleTreeItem* treeItem, QTreeWidgetItem* previous)
-        : BTIndexItem(previous)
-{
+        : BTIndexItem(previous) {
     namespace DU = util::directory;
 
     //qDebug("BTIndexModule::BTIndexModule");

@@ -30,7 +30,7 @@ class QRadioButton;
 namespace Search {
 
 class BtSearchOptionsArea : public QWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         enum SearchType {AndType, OrType, FullType};

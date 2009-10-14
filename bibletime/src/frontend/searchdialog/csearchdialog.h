@@ -19,8 +19,8 @@
 
 
 namespace Search {
-    class BtSearchResultArea;
-    class BtSearchOptionsArea;
+class BtSearchResultArea;
+class BtSearchOptionsArea;
 }
 class QPushButton;
 class QWidget;
@@ -31,7 +31,7 @@ namespace Search {
   *@author The BibleTime team
   */
 class CSearchDialog : public QDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         static void openDialog(const QList<CSwordModuleInfo*> modules, const QString& searchText = QString::null, QWidget* parentDialog = 0);
 

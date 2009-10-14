@@ -21,7 +21,7 @@ class QAction;
   *@author The BibleTime team
   */
 class CCommentaryReadWindow : public CLexiconReadWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /**
         * Reimplementation.

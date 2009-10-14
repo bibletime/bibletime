@@ -75,7 +75,7 @@ QString CSwordKey::renderedText( const CSwordKey::TextRenderType mode ) {
 
     //Q_ASSERT(!key().isNull());
     if (!key().isNull()) { //we have valid text
-    	bool DoRender = (mode == ProcessEntryAttributesOnly) ? 0 : 1;
+        bool DoRender = (mode == ProcessEntryAttributesOnly) ? 0 : 1;
         QString text = QString::fromUtf8( m_module->module()->RenderText(0, -1, DoRender) );
         if (!DoRender) return QString::null;
 

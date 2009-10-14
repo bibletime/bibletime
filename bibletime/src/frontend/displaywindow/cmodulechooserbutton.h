@@ -26,7 +26,7 @@ class CSwordModuleInfo;
   * @author The BibleTime team
   */
 class CModuleChooserButton : public QToolButton, public CPointers  {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         /** Filter out modules of wrong type. See populateMenu() and BTModuleTreeItem. */

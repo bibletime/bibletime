@@ -26,7 +26,7 @@ class QMenu;
   *@author The BibleTime team
   */
 class CLexiconReadWindow : public CReadWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CLexiconReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CLexiconReadWindow();

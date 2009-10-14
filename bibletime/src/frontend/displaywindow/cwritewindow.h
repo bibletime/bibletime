@@ -21,7 +21,7 @@ class QString;
   *@author The BibleTime team
   */
 class CWriteWindow : public CDisplayWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         static void insertKeyboardActions( BtActionCollection* const a );
 

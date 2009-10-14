@@ -27,8 +27,7 @@
 
 
 CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
-        : BtConfigPage()
-{
+        : BtConfigPage() {
     namespace DU = util::directory;
 
     QVBoxLayout* layout = new QVBoxLayout(this);

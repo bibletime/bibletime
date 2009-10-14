@@ -16,7 +16,7 @@
 class QPaintEvent;
 
 class BtColorWidget : public QFrame {
-    Q_OBJECT
+        Q_OBJECT
 
     public:
         BtColorWidget(QWidget* parent = 0);

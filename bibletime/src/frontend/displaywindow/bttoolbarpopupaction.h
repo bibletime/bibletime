@@ -20,7 +20,7 @@ class QToolButton;
 
 // This class manages the toolbar display for going forward and backward in history.
 class BtToolBarPopupAction : public QWidgetAction {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         BtToolBarPopupAction(const QIcon& icon, const QString& text, QObject* parent);

@@ -38,7 +38,7 @@ class QWidget;
 * @author The BibleTime team
 */
 class CBookmarkIndex : public QTreeWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CBookmarkIndex(QWidget *parent);
         virtual ~CBookmarkIndex();

@@ -19,8 +19,8 @@
 
 
 namespace Search {
-    class CModuleResultView;
-    class CSearchResultView;
+class CModuleResultView;
+class CSearchResultView;
 }
 class CReadDisplay;
 class CSwordModuleInfo;

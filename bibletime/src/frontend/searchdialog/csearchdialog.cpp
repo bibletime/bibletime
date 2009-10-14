@@ -69,8 +69,7 @@ CSearchDialog* CSearchDialog::getSearchDialog() {
 
 CSearchDialog::CSearchDialog(QWidget *parent)
         : QDialog(parent), /*m_searchButton(0),*/ m_closeButton(0),
-        m_searchResultArea(0), m_searchOptionsArea(0)
-{
+        m_searchResultArea(0), m_searchOptionsArea(0) {
     namespace DU = util::directory;
 
     setWindowIcon(DU::getIcon(CResMgr::searchdialog::icon));
@@ -103,9 +102,9 @@ void CSearchDialog::startSearch() {
     // check that we have the indices we need for searching
     if (!m_searcher.modulesHaveIndices( modules() ) )	{
         int result = util::showQuestion(this, tr("Missing indices"),
-                                           tr("One or more works need indexing before they can be searched.\n"
-                                              "This could take a long time. Proceed with indexing?"),
-                                           QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+                                        tr("One or more works need indexing before they can be searched.\n"
+                                           "This could take a long time. Proceed with indexing?"),
+                                        QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
         // In SuSE 10.0 the result is the logical or of the button type, just like it is
         // inputed into the QMessageBox.
         if ( (result == (QMessageBox::Yes | QMessageBox::Default)) ||

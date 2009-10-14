@@ -27,7 +27,7 @@ class QAction;
   * @author The BibleTime team
   */
 class CKeyChooser : public QWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         /**

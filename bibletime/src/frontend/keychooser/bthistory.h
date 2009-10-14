@@ -20,7 +20,7 @@ class QAction;
 class QWidget;
 
 class BTHistory: public QObject {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BTHistory(QWidget* parent);
         ~BTHistory() {}

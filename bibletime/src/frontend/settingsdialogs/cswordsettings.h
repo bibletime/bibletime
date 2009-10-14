@@ -21,7 +21,7 @@ class StandardWorksTab;
 class TextFiltersTab;
 
 class CSwordSettingsPage : public BtConfigPage {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CSwordSettingsPage(QWidget* parent);
         void save();
@@ -37,7 +37,7 @@ class CSwordSettingsPage : public BtConfigPage {
 //Tab pages. To be used only in Sword settings page.
 
 class StandardWorksTab : public QWidget, CPointers {
-    Q_OBJECT
+        Q_OBJECT
     public:
         StandardWorksTab();
         void save();
@@ -54,7 +54,7 @@ class StandardWorksTab : public QWidget, CPointers {
 };
 
 class TextFiltersTab : public QWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         TextFiltersTab();
         void save();

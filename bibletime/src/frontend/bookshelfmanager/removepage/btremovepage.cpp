@@ -33,8 +33,7 @@
 
 
 BtRemovePage::BtRemovePage()
-        : BtConfigPage()
-{
+        : BtConfigPage() {
     namespace DU = util::directory;
 
     QGridLayout* layout = new QGridLayout(this);

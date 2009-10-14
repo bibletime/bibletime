@@ -215,11 +215,11 @@ void BibleTime::slotOpenWindowsMenuAboutToShow() {
     QList<QMdiSubWindow*> windows = m_mdi->usableWindowList();
     m_openWindowsMenu->clear();
     foreach (QMdiSubWindow *window, windows) {
-         QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
-         openWindowAction->setCheckable(true);
-         openWindowAction->setChecked(window == m_mdi->activeSubWindow());
-         connect(openWindowAction, SIGNAL(triggered()), m_windowMapper, SLOT(map()));
-         m_windowMapper->setMapping(openWindowAction, window);
+        QAction *openWindowAction = m_openWindowsMenu->addAction(window->windowTitle());
+        openWindowAction->setCheckable(true);
+        openWindowAction->setChecked(window == m_mdi->activeSubWindow());
+        connect(openWindowAction, SIGNAL(triggered()), m_windowMapper, SLOT(map()));
+        m_windowMapper->setMapping(openWindowAction, window);
     }
 }
 

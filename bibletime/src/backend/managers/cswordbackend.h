@@ -25,9 +25,9 @@
 #include <utilstr.h>
 
 namespace Rendering {
-    class CEntryDisplay;
-    class CChapterDisplay;
-    class CBookDisplay;
+class CEntryDisplay;
+class CChapterDisplay;
+class CBookDisplay;
 }
 
 /** The backend layer main class.
@@ -39,7 +39,7 @@ namespace Rendering {
   * @version $Id: cswordbackend.h,v 1.58 2007/03/14 21:32:47 joachim Exp $
   */
 class CSwordBackend : public QObject, public sword::SWMgr {
-    Q_OBJECT
+        Q_OBJECT
     public:
 
         /** The reason for the sigSwordSetupChanged signal, i.e. why the module list has changed. */

@@ -28,7 +28,7 @@ class CSearchAnalysisLegendItem;
     @author The BibleTime team <info@bibletime.info>
 */
 class CSearchAnalysisScene : public QGraphicsScene {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CSearchAnalysisScene(QObject* parent);
 

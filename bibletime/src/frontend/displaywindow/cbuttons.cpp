@@ -20,8 +20,7 @@
 
 
 CDisplaySettingsButton::CDisplaySettingsButton(CSwordBackend::DisplayOptions *displaySettings, CSwordBackend::FilterOptions *moduleSettings, const QList<CSwordModuleInfo*>& useModules, QWidget *parent )
-        : QToolButton(parent)
-{
+        : QToolButton(parent) {
     namespace DU = util::directory;
 
     //  qWarning("CDisplaySettingsButton::CDisplaySettingsButton");

@@ -21,7 +21,7 @@ class QString;
   * @author The BibleTime team
   */
 class CPlainWriteWindow : public CWriteWindow  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CPlainWriteWindow( QList<CSwordModuleInfo*> modules, CMDIArea* parent);
         virtual ~CPlainWriteWindow();

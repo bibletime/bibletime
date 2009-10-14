@@ -24,7 +24,7 @@ class QTextEdit;
 namespace Search {
 
 class CRangeChooserDialog : public QDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CRangeChooserDialog(QWidget* parentDialog);
         ~CRangeChooserDialog() {}

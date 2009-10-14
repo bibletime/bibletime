@@ -22,7 +22,7 @@ class QMenu;
 namespace Search {
 
 class CSearchResultView  : public QTreeWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CSearchResultView(QWidget* parent);
         virtual ~CSearchResultView();

@@ -26,7 +26,7 @@ class QComboBox;
     @author The BibleTime team <info@bibletime.info>
 */
 class CLanguageSettingsPage : public BtConfigPage, CPointers {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CLanguageSettingsPage(QWidget *parent);
         ~CLanguageSettingsPage();

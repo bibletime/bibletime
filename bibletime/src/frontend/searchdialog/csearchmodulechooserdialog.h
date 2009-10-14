@@ -20,7 +20,7 @@ class QTreeWidgetItem;
 namespace Search {
 
 class CSearchModuleChooserDialog : public CModuleChooserDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CSearchModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*> selectedModules);
         ~CSearchModuleChooserDialog();

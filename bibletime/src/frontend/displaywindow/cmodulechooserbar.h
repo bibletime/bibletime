@@ -24,7 +24,7 @@ class QWidget;
   * @author The BibleTime team
   */
 class CModuleChooserBar : public QToolBar  {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /**
         * Default constructor

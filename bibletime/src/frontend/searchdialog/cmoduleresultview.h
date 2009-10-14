@@ -27,7 +27,7 @@ class StrongsResultClass;
 namespace Search {
 
 class CModuleResultView : public QTreeWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CModuleResultView(QWidget* parent);
         ~CModuleResultView();

@@ -16,7 +16,7 @@
 
 
 namespace sword {
-    class TreeKeyIdx;
+class TreeKeyIdx;
 }
 class CSwordBookModuleInfo;
 class CSwordKey;

@@ -142,10 +142,10 @@ void CPlainWriteWindow::saveCurrentText( const QString& /*key*/ ) {
     }
     else {
         util::showCritical( this, tr("Module not writable"),
-                               QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
-                               .arg( tr("Module is not writable.") )
-                               .arg( tr("Either the module may not be edited, or "
-                                        "you do not have write permission.") ) );
+                            QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
+                            .arg( tr("Module is not writable.") )
+                            .arg( tr("Either the module may not be edited, or "
+                                     "you do not have write permission.") ) );
     }
 }
 

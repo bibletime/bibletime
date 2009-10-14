@@ -307,10 +307,10 @@ void CSwordModuleInfo::buildIndex() {
 
         for (*m_module = sword::TOP; !(m_module->Error()) && !m_cancelIndexing; (*m_module)++) {
 
-        	// Also index Chapter 0 and Verse 0, because they might have information in the entry attributes
-        	// We used to just put their content into the textBuffer and continue to the next verse, but
-        	// with entry attributes this doesn't work any more.
-        	// Hits in the search dialog will show up as 1:1 (instead of 0)
+            // Also index Chapter 0 and Verse 0, because they might have information in the entry attributes
+            // We used to just put their content into the textBuffer and continue to the next verse, but
+            // with entry attributes this doesn't work any more.
+            // Hits in the search dialog will show up as 1:1 (instead of 0)
 
             boost::scoped_ptr<lucene::document::Document> doc(new lucene::document::Document());
 

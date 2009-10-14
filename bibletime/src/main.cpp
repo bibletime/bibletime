@@ -83,7 +83,7 @@ int main(int argc, char* argv[]) {
 
 // On Windows, add a path for Qt plugins to be loaded from
 #ifdef Q_WS_WIN
-	app.addLibraryPath(app.applicationDirPath() + "/plugins");
+    app.addLibraryPath(app.applicationDirPath() + "/plugins");
 #endif
 
     registerMetaTypes();

@@ -72,8 +72,7 @@ void BibleTime::initView() {
 
 QAction* BibleTime::initAction(QAction* action, QString text, QString icon,
                                QKeySequence accel, const QString& tooltip,
-                               const QString& actionName, const char* slot)
-{
+                               const QString& actionName, const char* slot) {
     namespace DU = util::directory;
 
     action->setText(text);

@@ -24,8 +24,7 @@
 
 CModuleChooserButton::CModuleChooserButton(CSwordModuleInfo* useModule, CSwordModuleInfo::ModuleType type, const int id, CModuleChooserBar *parent)
         : QToolButton(parent),
-        m_id(id), m_popup(0), m_moduleChooserBar(parent)
-{
+        m_id(id), m_popup(0), m_moduleChooserBar(parent) {
     namespace DU = util::directory;
 
     m_moduleType = type;

@@ -39,7 +39,7 @@ class QWidget;
 * @author The BibleTime team
 */
 class CBookshelfIndex : public QTreeWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CBookshelfIndex(QWidget *parent);
         virtual ~CBookshelfIndex();

@@ -23,7 +23,7 @@ class QDialogButtonBox;
 class QWidget;
 
 class CConfigurationDialog : public BtConfigDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CConfigurationDialog(QWidget *parent, BtActionCollection* actionCollection);
         virtual ~CConfigurationDialog();

@@ -19,7 +19,7 @@ class CSwordModuleInfo;
 class QTreeWidgetItem;
 
 class CHideModuleChooserDialog : public CModuleChooserDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CHideModuleChooserDialog(QWidget* parent, QString title, QString label, QString currentModule);
         ~CHideModuleChooserDialog() {}

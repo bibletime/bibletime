@@ -14,7 +14,7 @@
 
 
 class CListWidget : public QListWidget {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CListWidget(QWidget* parent = 0);
         ~CListWidget();

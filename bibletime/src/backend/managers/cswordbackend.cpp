@@ -336,13 +336,13 @@ bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleC
 
     QFileInfoList list = dir.entryInfoList();
     if (dir.isReadable()) {
-		for (int i = 0; i < list.size(); ++i) {
-			QFileInfo fileInfo = list.at(i);
+        for (int i = 0; i < list.size(); ++i) {
+            QFileInfo fileInfo = list.at(i);
 
-			moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
-			section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-			foundConfig = ( section != moduleConfig.Sections.end() );
-		}
+            moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
+            section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
+            foundConfig = ( section != moduleConfig.Sections.end() );
+        }
     }
     else { //try to read mods.conf
         moduleConfig = sword::SWConfig("");//global config
@@ -366,14 +366,14 @@ bool CSwordBackend::moduleConfig(const QString& module, sword::SWConfig& moduleC
         dir.setPath(myPath);
 
         QFileInfoList list = dir.entryInfoList();
-		if (dir.isReadable()) {
-			for (int i = 0; i < list.size(); ++i) {
-				QFileInfo fileInfo = list.at(i);
-				moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
-				section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
-				foundConfig = ( section != moduleConfig.Sections.end() );
-			}
-		}
+        if (dir.isReadable()) {
+            for (int i = 0; i < list.size(); ++i) {
+                QFileInfo fileInfo = list.at(i);
+                moduleConfig = sword::SWConfig( fileInfo.absoluteFilePath().toLocal8Bit().constData() );
+                section = moduleConfig.Sections.find( module.toLocal8Bit().constData() );
+                foundConfig = ( section != moduleConfig.Sections.end() );
+            }
+        }
     }
 
     return foundConfig;

@@ -22,7 +22,7 @@ class QWidget;
     @author The BibleTime team <info@bibletime.info>
 */
 class BTAboutModuleDialog : public QDialog {
-    Q_OBJECT
+        Q_OBJECT
     public:
         BTAboutModuleDialog(QWidget* parent, CSwordModuleInfo* info);
 };

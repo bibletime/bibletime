@@ -53,7 +53,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         QVariant v(settings->value("grouping"));
         if (v.canConvert<BtBookshelfTreeModel::Grouping>()) {
             m_bookshelfTreeModel = new BtBookshelfTreeModel(v.value<BtBookshelfTreeModel::Grouping>(), this);
-        } else {
+        }
+        else {
             m_bookshelfTreeModel = new BtBookshelfTreeModel(this);
         }
     }

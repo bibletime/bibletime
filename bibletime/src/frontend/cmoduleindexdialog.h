@@ -24,7 +24,7 @@ class QProgressDialog;
  * @author The BibleTime team <info@bibletime.info>
 */
 class CModuleIndexDialog : public QObject {
-    Q_OBJECT
+        Q_OBJECT
     public:
         /** Get the singleton instance.
          *

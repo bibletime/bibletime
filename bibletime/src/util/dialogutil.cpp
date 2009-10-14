@@ -19,16 +19,14 @@ namespace util {
 namespace {
 
 void replaceText(QDialogButtonBox *box, QDialogButtonBox::StandardButton flag,
-                 const QString &text)
-{
+                 const QString &text) {
     QPushButton *button(box->button(flag));
     if (button != 0) {
         button->setText(text);
     }
 }
 
-QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon, QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton)
-{
+QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon, QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
     qDebug("BT message box warning/information/critical");
     QMessageBox messageBox(icon, title, text, QMessageBox::Ok, parent);
     //We need the button box to translate the strings (the idea of this whole function)
@@ -37,7 +35,7 @@ QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon, QWidget * pare
     messageBox.setStandardButtons(buttons);
     messageBox.setDefaultButton(defaultButton);
     prepareDialogBox(box);
-    return (QMessageBox::StandardButton)messageBox.exec(); 
+    return (QMessageBox::StandardButton)messageBox.exec();
 }
 
 } // anonymous namespace
@@ -60,24 +58,20 @@ void prepareDialogBox(QDialogButtonBox *box) {
     replaceText(box, QDialogButtonBox::NoToAll , QPushButton::tr("No to all" , "Dialog Button"));
 }
 
-QMessageBox::StandardButton showWarning(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton)
-{
-	return bt_messageBox(QMessageBox::Warning, parent, title, text, buttons, defaultButton);
+QMessageBox::StandardButton showWarning(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Warning, parent, title, text, buttons, defaultButton);
 }
 
-QMessageBox::StandardButton showInformation(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton)
-{
-	return bt_messageBox(QMessageBox::Information, parent, title, text, buttons, defaultButton);
+QMessageBox::StandardButton showInformation(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Information, parent, title, text, buttons, defaultButton);
 }
 
-QMessageBox::StandardButton showCritical(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton)
-{
-	return bt_messageBox(QMessageBox::Critical, parent, title, text, buttons, defaultButton);
+QMessageBox::StandardButton showCritical(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Critical, parent, title, text, buttons, defaultButton);
 }
 
-QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton)
-{
-	return bt_messageBox(QMessageBox::Question, parent, title, text, buttons, defaultButton);
+QMessageBox::StandardButton showQuestion(QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
+    return bt_messageBox(QMessageBox::Question, parent, title, text, buttons, defaultButton);
 }
 
 } // namespace util

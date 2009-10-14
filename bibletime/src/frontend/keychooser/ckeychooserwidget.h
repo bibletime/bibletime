@@ -29,7 +29,7 @@ class QEvent;
 * This class is used in the key chooser widgets
 */
 class CKCComboBox : public QComboBox {
-    Q_OBJECT
+        Q_OBJECT
     public:
         CKCComboBox();
         /**
