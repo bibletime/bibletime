@@ -1,0 +1,380 @@
+<chapter id="hdbk-op">
+  <title>Ohjelman toiminto</title>
+  <sect1 id="hdbk-op-overview">
+    <title>Yleiskatsaus ohjelmaan</title>
+    <para>Tyypillinen &bibletime;-istunto näyttää tällaiselta: 
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="ss_mainterms.png" format="PNG" />
+      </imageobject>
+      <textobject>
+        <phrase>The &bibletime;-sovelluksen ikkuna</phrase>
+      </textobject>
+    </mediaobject>
+    You can easily see the different parts of the application. The top left 
+window is used to open installed works in the Bookshelf tab, and with the 
+Bookmarks tab you can manage your bookmarks. The little "Mag" window below 
+the Bookshelf is used to display extra information that is embedded in 
+documents. When you move your mouse over a footnote marker, for example, 
+then the Mag will display the actual content of the footnote. The toolbar 
+gives you quick access to important functions, and the Desk on the right 
+side is where you do your real work.</para>
+
+    <para>Jatkakaamme katsomalla sovelluksen eri osia erikseen.</para>
+  </sect1>
+  <sect1 id="hdbk-op-parts">
+    <title>&bibletime;n osa sovellusikkuna</title>
+    <sect2 id="hdbk-op-parts-bookshelf">
+      <title>Kirjahylly</title>
+      <para>Kirjahyllyn kaikkien asennettujen teosten luettelo, lajiteltu 
+kategorioittain ja kielien mukaan. Se sisältää kategorian 
+"Kirjanmerkit". Sinne voit tallentaa ja hakea omia kirjanmerkkejäsi.</para>
+
+      <sect3 id="hdbk-op-parts-bookshelf-open">
+        <title>Lukutehtäviä</title>
+        <para>Avataksesi teoksen kirjahyllystä lukemista varten, napsauta 
+yksinkertaisesti<mousebutton>vasenta hiiren nappia</mousebutton> halutussa 
+kategoriassa (Raamatut, kommentaarit, sanakirjat, kirjat, hartauskirjat tai 
+sanastot) näyttääksesi sen sisällön. Sitten napsauta yksinkertaisesti yhtä 
+teosta avataksesi sen lukemista varten. Lukuikkuna ilmestyy työpöydälle.</para>
+
+        <tip>
+          <para>Raahaa &amp; pudota tehtävä tähän</para>
+        </tip>
+
+        <para>If you are reading a certain work, and want to open another work at the 
+passage you are reading, you can use a shortcut. Simply click with the 
+<mousebutton>left mouse button</mousebutton> on the verse/passage reference 
+(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work 
+you want to open, and it will be opened for reading at the specified 
+location. You can also drag a verse reference into an existing read window, 
+then it will jump to the specified location.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-metainfo">
+        <title>Tehtävien lisätiedot</title>
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
+page</ulink> on the Crosswire Bible Society web site.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-search">
+        <title>Etsintä teoksista</title>
+        <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol and selecting 
+<guimenuitem>"Search in work(s)"</guimenuitem>. By pressing &Shift; and 
+clicking on other works you can select more than one. Then follow the same 
+procedure to open the search dialog. You will be searching in all of these 
+documents. A complete description of the operation of the search features 
+can be found <link linkend="hdbk-op-search">here</link>.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-bookshelf-bookmarks">
+        <title>Kirjanmerkkityöskentely</title>
+        <para>
+
+        <tip>
+          <para>Raahaa &amp; pudota tehtävä tähän</para>
+        </tip>
+
+	Click with the <mousebutton>right</mousebutton> mouse button on the bookmark 
+category of the bookshelf and select <guimenuitem>"Create new 
+folder"</guimenuitem> to create a new bookmark subfolder. You can use normal 
+drag &amp; drop functions to drag verse references from read windows or 
+search results to the bookmark folder, and to rearrange bookmarks between 
+folders.</para>
+        <para>You can also import bookmarks from other people or export bookmarks to share 
+them. To do this, open the <guimenu>context menu</guimenu> of the bookmark 
+folder as described above, and select <guimenuitem>"Export 
+bookmarks"</guimenuitem>. This will bring up a dialog box for you to save 
+the bookmark collection. You can import bookmarks in a similar way.</para>
+
+        <para>You can also click with the <mousebutton>right</mousebutton> on folders and 
+bookmarks to change their names and descriptions.</para>
+      </sect3>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-mag">
+      <title>Suurennuslasi</title>
+
+      <para>This little window in the lower left corner of the &bibletime; window is 
+purely passive. Whenever your mouse cursor is located over some text with 
+additional information (e.g., Strong's numbers), then this additional 
+information will be displayed in the Mag, and not in the text itself. Just 
+try it out.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-parts-desk">
+      <title>Työpöytä</title>
+      <para>The Desk is where the real work with &bibletime; takes place. Here you can 
+open works from the Bookshelf, read them, <link 
+linkend="hdbk-op-search">search</link> in them, and even save your 
+annotations in the personal commentary module (see <link 
+linkend="hdbk-op-parts-desk-write">below</link>).</para>
+
+      <sect3 id="hdbk-op-parts-desk-read">
+        <title>Lukutehtäviä</title>
+        <para>As we have <link linkend="hdbk-op-parts-bookshelf-open">already seen</link>, 
+you can open works for reading simply by clicking on their symbol in the 
+Bookshelf. A read window will open in the Desk's area. Every read window has 
+a toolbar. There you can find tools to navigate in the work that this read 
+window is connected to, as well as history buttons like the ones that you 
+know from your browser.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-placement">
+        <title>Lukuikkunan sijoitus</title>
+        <para>Of course, you can open multiple works at the same time.  There are several 
+possibilities for arranging the read windows on the desk. Please have a look 
+at the entry <guimenu>Window</guimenu> in the main menu. There you can see 
+that you can either control the placement of the read windows completely 
+yourself, or have &bibletime; handle the placement automatically. To achieve 
+this, you have to select one of the automatic placement modes available at 
+<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement 
+mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
+      </sect3>
+
+      <sect3 id="hdbk-op-parts-desk-write">
+        <title>Muokkaa omaa kommentaariasi</title>
+        <para>Voidaksesi tallentaa omia komenttejasi Ramaatun osiin, sinun tulee asentaa 
+tietty teos  <ulink url="http://www.crosswire.org">Crosswire Bible 
+Societyn</ulink> sivuilta. Tämä teos on nimeltään "Personal commentary".</para>
+
+        <para>If you open the personal commentary by clicking on its symbol in the 
+Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in 
+read mode. You will not be able to edit it in this mode. Should you wish to 
+write annotations into the personal commentary, you have to open it with the 
+<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit 
+this work</guimenu> and then either <guimenuitem>Plain 
+text</guimenuitem>(source code editor) or 
+<guimenuitem>HTML</guimenuitem>(basic gui wysiwyg editor).</para>
+
+        <tip>
+          <para>If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is 
+deactivated, please check if you have write permission for the files of the 
+personal commentary.</para>
+        </tip>
+
+        <tip>
+          <para>Vedä ja pudota toimii tässä. Pudota jakeen viite ja jakeen teksti lisätään.</para>
+        </tip>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-search">
+    <title>Etsintä teoksista</title>
+
+    <sect2 id="hdbk-op-search-intext">
+      <title>Tekstin haku avoimessa lukuikkunassa</title>
+      <para>You can look for a word or phrase in the open read window (e.g. the chapter 
+of a bible that you're reading) just like you are used to from other 
+programs. This function can be reached either by clicking with the 
+<mousebutton>right</mousebutton> mouse button and selecting 
+<guimenuitem>Find...</guimenuitem>, or by using the hotkey <keycombo 
+action="simul"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how 
+you can search in entire works.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-access">
+      <title>Etsi-ikkunaan pääsy</title>
+      <para>You can search in a work by clicking with the 
+<mousebutton>right</mousebutton> mouse button on its symbol in the 
+<guimenu>Bookshelf</guimenu> and selecting <guimenuitem>Search in 
+work(s)</guimenuitem>. By holding &Shift; or &Ctrl; and clicking on other 
+work's names you can select more than one. Then follow the same procedure to 
+open the search dialog. You will be searching in all of these works at the 
+same time.</para>
+
+      <para>You can also access the search dialog by clicking on <menuchoice> 
+<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting 
+the appropriate entry.</para>
+
+      <para>Kolmas mahdollisuus aloittaa hakuja on napsauttaa hiirellä hakusymbolia 
+avoimessa lukuikkunassa.</para>
+    </sect2>
+
+    <sect2 id="hdbk-op-search-config">
+      <title>Etsinnän asetukset</title>
+      <screenshot>
+        <screeninfo>Hakuikkunan ominaisuuspalkki</screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="ss_searchopts.png" format="PNG" />
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+      <sect3 id="hdbk-op-search-config-works">
+        <title>Tehtävien valinta</title>
+        <para>At the top of the options tab you will find 
+<guibutton>Choose</guibutton>(works). If you would like to search in 
+multiple works, click on this button and you will be offered a menu where 
+you can select the works you want to search in.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-scope">
+        <title>Hakualueiden käyttäminen</title>
+        <para>You can narrow the scope of your search to certain parts of the Bible by 
+selecting one of the predefined scopes from the list in <guimenu>Search 
+scope</guimenu>. You can define your own search ranges by clicking the 
+<guibutton>Setup ranges</guibutton> button.</para>
+      </sect3>
+      <sect3 id="hd-op-search-config-syntax">
+        <title>Perushaun syntaksiohje</title>
+        <para>Lisää hakusanat sananvälein eroteltuna. Oletuksena hakutoiminto palauttaa 
+tuloksen, joka täsmää mihin tahansa sanaan (TAI). Etsiäksesi kaikkia 
+hakusanoja, erottele hakusanat AND.</para>
+        <para>Voit käyttää jokerimerkkejä: '*' täsmää mihin tahansa merkkijonoon kun taas  
+'?' täsmää mihin tahansa yksittäiseen merkkiin. Sulkumerkit mahdollistavat 
+hakusanojen ryhmittelyn. Esim. '(Jeesus OR henki) AND Jumala'.</para>
+        <para>To search text other than the main text, enter the text type followed by 
+':', and then the search term. For example, to search for the Strong's 
+number H8077, use 'strong:H8077'.</para>
+        <para>Saatavana olevat tekstityypit: 
+        <table id="hd-op-search-config-syntax-table">
+	  <title>Search Types</title>
+          <tgroup cols="2">
+            <thead>
+              <row>
+                <entry>Etuliite</entry>
+                <entry>Merkitys</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>otsikko:</entry>
+                <entry>etsii otsikoita</entry>
+              </row>
+              <row>
+                <entry>alaviite:</entry>
+                <entry>etsii alaviitteitä</entry>
+              </row>
+              <row>
+                <entry>vahvennos:</entry>
+                <entry>etsii Strongin numeroita</entry>
+              </row>
+              <row>
+                <entry>muoto:</entry>
+                <entry>etsii mofologisia koodeja</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table></para>
+        <para>&bibletime; uses the Lucene search engine to perform your searches. It has 
+many advanced features, and you can read more about it here: <ulink 
+url="http://lucene.apache.org/java/docs/index.html"> 
+http://lucene.apache.org/java/docs/index.html</ulink></para>
+      </sect3>
+    </sect2>
+    <sect2 id="hdbk-op-search-results">
+      <title>Etsinnän tulokset</title>
+      <para>Here you can see how many instances of the search string were found, sorted 
+by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse 
+button allows you to copy, save, or print all verses that were found in a 
+certain work at once. This also works when you click on one or more of the 
+references to copy, save or print them. Clicking on a particular reference 
+opens that verse up in context in the preview window below.</para>
+      <tip>
+        <para>Vedä viite ja pudota se teoksen symboliin kirjahyllyssä avataksesi teoksen 
+lukuikkunaan sen jakeen kohdalta.</para>
+      </tip>
+      <tip>
+        <para>Vedä viite ja pudota se avoimeen lukuikkunaan ja lukukohta hyppää sen jakeen 
+kohdalle.</para>
+      </tip>
+      <tip>
+        <para>Valitse viitteet ja vedä ne kirjahyllyyn luodaksesi kirjanmerkkejä.</para>
+      </tip>
+      <sect3 id="hdbk-op-search-analysis">
+        <title>Etsintätulosten analysointi</title>
+        <para>Click on <guibutton>Search analysis</guibutton> to open the search analysis 
+display. This gives a simple graphic analysis of the number of instances the 
+search string was found in each book of the Bible, and you can also save the 
+analysis.</para>
+        <screenshot>
+          <screeninfo>Hakuanalyysi-ikkuna</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="ss_searchanal.png" format="PNG" />
+            </imageobject>
+          </mediaobject>
+        </screenshot>
+      </sect3>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-bookshelfmanager">
+    <title><guimenuitem>Kirjahyllyn hallinta</guimenuitem></title>
+    <para>The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your 
+Bookshelf. You can install new works to your Bookshelf, and update or remove 
+existing works from your Bookshelf. Access it by clicking <menuchoice> 
+<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> 
+</menuchoice> in the main menu.</para>
+    <sect2 id="hdbk-op-bookshelfmanager-path">
+      <title>Kirjahyllyn polun/polkujen asetus</title>
+      <para>Here you can specify where &bibletime; may store your Bookshelf on the hard 
+drive. You can even store it in multiple directories. Default is 
+"~/.sword/".</para>
+      <tip>
+        <para>If you have a sword CD, but do not want to install all the works on the hard 
+disk, but use them directly from the CD, then you can add the path to the CD 
+as one of your bookshelf paths. When you start &bibletime;, it will show all 
+works on the CD if it is present.</para>
+      </tip>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-installupdate">
+      <title>Asenna/päivitä teos/teoksia</title>
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online 
+repository of Sword modules, or another site offering Sword modules). You 
+can manage your libraries with <guibutton>Add library</guibutton> and 
+<guibutton>Delete library</guibutton>.</para>
+      <para>To begin the installation or update process, select a library you want to 
+connect to and a local Bookshelf path to install the work(s) to. Then click 
+on <guibutton>Connect to library</guibutton>. &bibletime; will scan the 
+contents of the library and present you with a list of works that you can 
+add to your Bookshelf, or that you already have installed but are available 
+in a new version in the library, and thus can be updated. Then you can mark 
+all works that you want to install or update, and click on 
+<guibutton>Install works</guibutton>. They will then be transferred to your 
+Bookshelf.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-remove">
+      <title>Poista teos/teoksia</title>
+      <para>Tämä valmius mahdollistaa yhden tai useamman teoksen poiston kirjahyllystä 
+lisätäksesi vapaata levytilan määrää. Yksinkertaisesti merkitse teokset ja 
+napsauta <guibutton>Poista teokset</guibutton>.</para>
+    </sect2>
+    <sect2 id="hdbk-op-bookshelfmanager-searchindexes">
+      <title>Etsii indeksejä</title>
+      <para>Tämä mahdollistaa uusien hakuindeksien luonnin ja poistettujen teosten 
+orvoiksi tulleet indeksitiedostostojen siivoamisen.</para>
+      <tip>
+	If you are having problems with your search function, visit
+	this feature.
+      </tip>
+    </sect2>
+  </sect1>
+  <sect1 id="hdbk-op-output">
+    <title>Vienti ja tulostus</title>
+    <para>In many places, you can open a context menu by clicking with the 
+<mousebutton>right</mousebutton> mouse button. Depending on context, it will 
+allow you to <guimenuitem>Select</guimenuitem>, 
+<guimenuitem>Copy</guimenuitem> (to clipboard), 
+<guimenuitem>Save</guimenuitem> or <guimenuitem>Print</guimenuitem> 
+text. This works for example in the read windows, when you click on the 
+normal text or the verse reference, or in the search result page when you 
+click on a work or one or more verse references. It is pretty 
+straightforward, so just try it out.</para>
+
+    <para>Printing from &bibletime; is rather basic and is intended as a utility. If 
+you are composing a document or presentation containing text from 
+&bibletime; works, we suggest that you use one of the presentation or 
+editing tools on your system to format your document, rather than printing 
+from &bibletime; directly.</para>
+  </sect1>
+</chapter>
