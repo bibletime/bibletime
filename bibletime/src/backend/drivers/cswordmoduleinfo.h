@@ -257,7 +257,7 @@ class CSwordModuleInfo: public QObject {
         */
         virtual bool snap() {
             return false;
-        };
+        }
 
         bool has( const CSwordModuleInfo::Feature ) const;
         bool has( const CSwordModuleInfo::FilterTypes  ) const;
@@ -284,9 +284,9 @@ class CSwordModuleInfo: public QObject {
         /**
         * Returns true if this module is hidden (not to be shown with other modules in certain views).
         */
-        bool isHidden() const;
+        inline bool isHidden() const { return m_hidden; }
 
-        void setHidden(bool hidden);
+        void setHidden(bool hide);
 
         /**
         * Returns the category of this module. See CSwordModuleInfo::Category for possible values.
@@ -307,7 +307,7 @@ class CSwordModuleInfo: public QObject {
     public slots:
         inline void cancelIndexing() {
             m_cancelIndexing = true;
-        };
+        }
 
     protected:
         friend class CSwordBackend;
@@ -326,6 +326,7 @@ class CSwordModuleInfo: public QObject {
         QString getFormattedConfigEntry(const QString& name) const;
 
     signals:
+        void hiddenChanged(bool);
         void indexingFinished();
         void indexingProgress(int);
 

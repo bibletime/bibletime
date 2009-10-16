@@ -54,7 +54,6 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
     m_module = module;
     Q_ASSERT(module);
 
-    m_hidden = false;
     m_cancelIndexing = false;
     m_searchResult.ClearList();
     m_backend = usedBackend ? usedBackend : CPointers::backend();
@@ -63,6 +62,7 @@ CSwordModuleInfo::CSwordModuleInfo(sword::SWModule * module, CSwordBackend * con
     m_dataCache.category = UnknownCategory;
     m_dataCache.language = 0;
     m_dataCache.hasVersion = !QString((*m_backend->getConfig())[module->Name()]["Version"]).isEmpty();
+    m_hidden = CBTConfig::get(CBTConfig::hiddenModules).contains(name());
 
     if (backend()) {
         if (hasVersion() && (minimumSwordVersion() > sword::SWVersion::currentVersion)) {
@@ -919,24 +919,18 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString& name) const {
     return ret.isEmpty() ? QString::null : ret;
 }
 
-void CSwordModuleInfo::setHidden(bool hidden) {
-    //qDebug("CSwordModuleInfo::setHidden");
-    QStringList hiddenModules = CBTConfig::get(CBTConfig::hiddenModules);
-    if (hidden && !hiddenModules.contains(this->name())) {
-        hiddenModules.append(this->name());
-        CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
-    }
-    if (!hidden && hiddenModules.contains(this->name()) ) {
-        hiddenModules.removeAll(this->name());
-        CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
-    }
-}
+void CSwordModuleInfo::setHidden(bool hide) {
+    if (m_hidden == hide) return;
 
-bool CSwordModuleInfo::isHidden() const {
-    //qDebug("CSwordModuleInfo::isHidden");
-    QStringList hiddenModules = CBTConfig::get(CBTConfig::hiddenModules);
-    if (hiddenModules.contains(this->name())) {
-        return true;
+    m_hidden = hide;
+    QStringList hiddenModules(CBTConfig::get(CBTConfig::hiddenModules));
+    if (hide) {
+        Q_ASSERT(!hiddenModules.contains(name()));
+        hiddenModules.append(name());
+    } else {
+        Q_ASSERT(hiddenModules.contains(name()));
+        hiddenModules.removeOne(name());
     }
-    return false;
+    CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
+    emit hiddenChanged(hide);
 }
