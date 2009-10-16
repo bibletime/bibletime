@@ -1,7 +1,9 @@
 <chapter id="hdbk-term">
   <title>&bibletime;n käynnistys</title>
+
   <sect1 id="hdbk-start">
     <title>Kuinka &bibletime; käynnistetään</title>
+
     <sect2 id="hdbk-start">
       <title>&bibletime;n käynnistys</title>
       <para>&bibletime; is an executable file that is integrated with the desktop. You 
@@ -14,26 +16,24 @@ can launch &bibletime; from the Start Menu with this icon:
           <phrase>&bibletime; käynnistyskuvake</phrase>
         </textobject>
       </mediaobject></para>
+
       <para>&bibletime;-ohjelman voi käynnistää terminaali-ikkunan 
 komentoriviltä. Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna 
 ja kirjoita: 
-      <screen>&bibletime;</screen></para>
+      <screen>bibletime</screen></para>
     </sect2>
-    <sect2 id="hdbk-start-otherwm">
-      <title>Muut ikkunamanagerit</title>
-      <para>&bibletime; can be used with other window managers such as Gnome, BlackBox, 
-Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are 
-already installed on your computer.</para>
-    </sect2>
+
     <sect2 id="hdbk-start-custom">
       <title>Käynnistyksen säätäminen</title>
       <para>Voit avata (oletus)Raamatun satunnaisen jakeen kohdalta konsolissa  
-&bibletime;n komennolla: 
-      <screen>bibletime --open-default-bible
-      "&lt;random&gt;"</screen>Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä: 
-      <screen>bibletime --open-default-bible "Joh 3:16"</screen>Voit käyttää kirjanniminä tämänhetkistä kielivalintaa.</para>
+&bibletime;n komennolla:
+	<screen>bibletime --open-default-bible "&lt;random&gt;"</screen>
+	Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä:
+	<screen>bibletime --open-default-bible "Joh 3:16"</screen>
+	Voit käyttää kirjanniminä tämänhetkistä kielivalintaa.</para>
     </sect2>
   </sect1>
+
   <sect1 id="hdbk-startsequence">
     <title>Käynnistyssarja</title>
     <para>Kun &bibletime; käynnistyy, näet seuraavat ikkunat ennenkuin &bibletime;n 
