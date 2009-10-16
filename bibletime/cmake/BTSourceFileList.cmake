@@ -83,12 +83,6 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/bookmarks/btbookmarkitem.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp
 
-	src/frontend/mainindex/bookshelf/cbookshelfindex.cpp
-	src/frontend/mainindex/bookshelf/btindexitem.cpp
-	src/frontend/mainindex/bookshelf/btindexmodule.cpp
-	src/frontend/mainindex/bookshelf/btindexfolder.cpp
-	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.cpp
-
 	#Settings dialog (configuration)
 	src/frontend/settingsdialogs/btshortcutsdialog.cpp 
 	src/frontend/settingsdialogs/btshortcutseditor.cpp 
@@ -220,8 +214,6 @@ SET(bibletime_MOCABLE_HEADERS
 	src/frontend/searchdialog/csearchresultview.h
 	src/frontend/searchdialog/chistorycombobox.h
 	src/frontend/cdragdrop.h
-	src/frontend/mainindex/bookshelf/chidemodulechooserdialog.h
-	src/frontend/mainindex/bookshelf/cbookshelfindex.h
 	src/frontend/mainindex/btbookshelfview.h
 	src/frontend/mainindex/bookmarks/cbookmarkindex.h
 	src/frontend/cmdiarea.h

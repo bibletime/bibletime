@@ -25,7 +25,6 @@ class CInfoDisplay;
 class BtActionClass;
 class BtBookshelfDockWidget;
 class CBookmarkIndex;
-class CBookshelfIndex;
 class CDisplayWindow;
 class CMDIArea;
 class CSwordModuleInfo;

@@ -29,7 +29,6 @@
 #include "frontend/cprinter.h"
 #include "frontend/displaywindow/btactioncollection.h"
 #include "frontend/mainindex/bookmarks/cbookmarkindex.h"
-#include "frontend/mainindex/bookshelf/cbookshelfindex.h"
 #include "frontend/profile/cprofile.h"
 #include "frontend/profile/cprofilemgr.h"
 #include "util/cpointers.h"
