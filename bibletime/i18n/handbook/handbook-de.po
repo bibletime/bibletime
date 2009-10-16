@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-de\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-08 00:06-0400\n"
+"POT-Creation-Date: 2009-10-16 13:58-0400\n"
 "PO-Revision-Date: 2009-08-18 22:23+0200\n"
 "Last-Translator: Roland Teschner <rolte@gmx.net>\n"
 "Language-Team: Deutsch <bibletime-translations@lists.sourceforge.net>\n"
@@ -307,15 +307,15 @@ msgstr ""
 "\"> Unicode character ranges and the Unicode fonts that support them</"
 "ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:203
+#: docs/handbook/en/docbook/hdbk-config.docbook:204
 #, fuzzy
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
 "used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
 "shortcuts\">this section</link> for a complete listing). Most of "
-"&bibletime;'s commands can be assigned Shortcuts here. This is very helpful "
-"to quickly access the functions that you need the most."
+"&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
+"quickly access the functions that you need the most."
 msgstr ""
 "Tastenkürzel sind spezielle Tastenbefehle, die an Stelle der Menüeinträge "
 "oder Symbole verwendet werden können. Eine Anzahl von &bibletime;s Befehlen "
@@ -324,6 +324,13 @@ msgstr ""
 "meisten Befehlen von &bibletime; kann hier ein Tastenkürzel zugewiesen "
 "werden. Dies ist sehr hilfreich, um die oftbenutzten Funktionen schnell zu "
 "erreichen."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:217
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
+msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
 msgid "Introduction"
@@ -1864,15 +1871,15 @@ msgstr ""
 "</menuchoice> </link> aktiviert die Anzeige des Lupenfensters."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
+#: docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
 msgstr " &bibletime; starten"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:4
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
 msgstr "Wie &bibletime; zu starten ist"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:7
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
 "can launch &bibletime; from the Start Menu with this icon:"
@@ -1880,11 +1887,11 @@ msgstr ""
 "&bibletime; ist eine ausführbare Datei, die in Ihrem Desktop integriert ist. "
 "Sie können &bibletime; aus dem Startmenü mit folgendem Symbol starten:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:15
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "<phrase>&bibletime;-Start-Symbol</phrase>"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:18
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
@@ -1893,31 +1900,17 @@ msgstr ""
 "werden. Um &bibletime; zu starten, öffnen Sie ein Terminal-Fenster und geben "
 "Sie folgendes ein:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, no-wrap
-msgid "&bibletime;"
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
+#, fuzzy, no-wrap
+msgid "bibletime"
 msgstr "&bibletime;"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:24
-msgid "Other window managers"
-msgstr "Andere Fenstermanager"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
-msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
-"already installed on your computer."
-msgstr ""
-"&bibletime; kann mit anderen Fenstermanagern wie Gnome, BlackBox, FluxBox, "
-"OpenBox oder Sawfish verwendet werden, vorausgesetzt, dass die "
-"entsprechenden Basis-Bibliotheken bereits auf Ihrem Rechner installiert sind."
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
 msgstr "Konfiguration des Startverhaltens"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
@@ -1926,37 +1919,35 @@ msgstr ""
 "einen Zufallsvers aus der Standardbibel anzeigen zu lassen:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:34
-#, no-wrap
-msgid ""
-"bibletime --open-default-bible\n"
-"      \"&lt;random&gt;\""
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#, fuzzy, no-wrap
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
 msgstr ""
 "bibletime --open-default-bible\n"
 "      \"&lt;random&gt;\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:35
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid "To open at a given passage like John 3:16, use:"
 msgstr "Um einen bestimmten Vers wie z.B. Joh. 3,16 aufzuschlagen:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr "bibletime --open-default-bible \"Joh 3:16\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 msgid "You can also use booknames in your current bookname language."
 msgstr ""
 "Sie können auch Buchnamen in Ihrer gegenwärtigen Buchnamen-Sprache benutzen."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 msgid "Startup sequence"
 msgstr "Start-Sequenz"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:43
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1965,7 +1956,7 @@ msgstr ""
 "des Hauptfensters sehen:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:52
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -1986,7 +1977,7 @@ msgstr ""
 "&bibletime; kennen zu lernen."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:69
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
@@ -2059,6 +2050,19 @@ msgstr "2.2"
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
 "&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem Sword-System basiert."
+
+#~ msgid "Other window managers"
+#~ msgstr "Andere Fenstermanager"
+
+#~ msgid ""
+#~ "&bibletime; can be used with other window managers such as Gnome, "
+#~ "BlackBox, Fluxbox, OpenBox or Sawfish, providing the appropriate base "
+#~ "libraries are already installed on your computer."
+#~ msgstr ""
+#~ "&bibletime; kann mit anderen Fenstermanagern wie Gnome, BlackBox, "
+#~ "FluxBox, OpenBox oder Sawfish verwendet werden, vorausgesetzt, dass die "
+#~ "entsprechenden Basis-Bibliotheken bereits auf Ihrem Rechner installiert "
+#~ "sind."
 
 #~ msgid "Hotkey"
 #~ msgstr "Tastenkürzel"

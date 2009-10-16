@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
-"POT-Creation-Date: 2009-10-08 00:06-0400\n"
+"POT-Creation-Date: 2009-10-16 13:58-0400\n"
 "PO-Revision-Date: 2009-05-19 18:51+0200\n"
 "Last-Translator: howto.pot\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -316,15 +316,15 @@ msgstr ""
 "amelyek tartalmazzák</ulink>)."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:203
+#: docs/handbook/en/docbook/hdbk-config.docbook:204
 #, fuzzy
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
 "used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
 "shortcuts\">this section</link> for a complete listing). Most of "
-"&bibletime;'s commands can be assigned Shortcuts here. This is very helpful "
-"to quickly access the functions that you need the most."
+"&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
+"quickly access the functions that you need the most."
 msgstr ""
 "A gyorsbillentyűk speciális billentyűparancsok, melyeket a különböző "
 "menüelemeknél és ikonoknál alkalmazhatunk. Számos &bibletime; parancshoz "
@@ -332,6 +332,13 @@ msgstr ""
 "található</link> a teljes lista). A legtöbb &bibletime; parancs rendelkezik "
 "gyorsbillentyűvel, ami nagyon hasznos a legtöbbet használt funkciók "
 "eléréséhez."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:217
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
+msgstr ""
 
 # type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
@@ -2048,17 +2055,17 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
+#: docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
 msgstr "&bibletime; indítása"
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:4
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
 msgstr "Hogyan indítsuk a &bibletime; programot"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:7
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
 "can launch &bibletime; from the Start Menu with this icon:"
@@ -2067,12 +2074,12 @@ msgstr ""
 "az ikonnal:"
 
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
-#: docs/handbook/en/docbook/hdbk-start.docbook:15
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "<phrase>&bibletime; indítóikon</phrase>"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:18
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
@@ -2081,70 +2088,52 @@ msgstr ""
 "egy terminál ablakba ezt:"
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, no-wrap
-msgid "&bibletime;"
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
+#, fuzzy, no-wrap
+msgid "bibletime"
 msgstr "&bibletime;"
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:24
-msgid "Other window managers"
-msgstr "Más ablakkezelők (*nix rendszeren)"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
-msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
-"already installed on your computer."
-msgstr ""
-"A &bibletime; természetesen használható más ablakkezelőkkel is, mint Gnome, "
-"BlackBox, XFce stb. alatt is, amennyiben a szükséges összetevőket telepíti "
-"hozzá. (A legtöbb rendszer csomagkezelője automatikusan megteszi.)"
-
-# type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
 msgstr "Egyéni indítások"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr "Terminálból véletlenszerű verssel így indítható a &bibletime;:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:34
-#, no-wrap
-msgid ""
-"bibletime --open-default-bible\n"
-"      \"&lt;random&gt;\""
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#, fuzzy, no-wrap
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
 msgstr "bibletime --open-default-bible \"random\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:35
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid "To open at a given passage like John 3:16, use:"
 msgstr "Egy meghatározott verssel induláshoz, mint például a János 3:16 így:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr "bibletime --open-default-bible \"John 3:16\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 msgid "You can also use booknames in your current bookname language."
 msgstr "Használhatja a könyvek neveit saját nyelvén is."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 msgid "Startup sequence"
 msgstr "Indítási folyamat"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:43
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -2153,7 +2142,7 @@ msgstr ""
 "betöltése előtt:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:52
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -2172,7 +2161,7 @@ msgstr ""
 "telepítése, hogy gyorsan megismerje a &bibletime; alap lehetőségeit."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:69
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
@@ -2250,6 +2239,21 @@ msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
 "&bibletime; egy, a Sword keretrendszerre alapozott Biblia tanulmányozó "
 "szoftver."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#~ msgid "Other window managers"
+#~ msgstr "Más ablakkezelők (*nix rendszeren)"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#~ msgid ""
+#~ "&bibletime; can be used with other window managers such as Gnome, "
+#~ "BlackBox, Fluxbox, OpenBox or Sawfish, providing the appropriate base "
+#~ "libraries are already installed on your computer."
+#~ msgstr ""
+#~ "A &bibletime; természetesen használható más ablakkezelőkkel is, mint "
+#~ "Gnome, BlackBox, XFce stb. alatt is, amennyiben a szükséges összetevőket "
+#~ "telepíti hozzá. (A legtöbb rendszer csomagkezelője automatikusan "
+#~ "megteszi.)"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #~ msgid "Hotkey"

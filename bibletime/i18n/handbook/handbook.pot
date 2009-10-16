@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-10-08 00:06-0400\n"
+"POT-Creation-Date: 2009-10-16 13:58-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -245,15 +245,21 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:203
+#: docs/handbook/en/docbook/hdbk-config.docbook:204
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
 "used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see <link "
 "linkend=\"hdbk-reference-shortcuts\">this section</link> for a complete "
-"listing). Most of &bibletime;'s commands can be assigned Shortcuts "
-"here. This is very helpful to quickly access the functions that you need the "
-"most."
+"listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is "
+"very helpful to quickly access the functions that you need the most."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:217
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
 msgstr ""
 
 # type: Content of: <chapter><title>
@@ -1492,103 +1498,88 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:2 docs/handbook/en/docbook/hdbk-start.docbook:6
+#: docs/handbook/en/docbook/hdbk-start.docbook:2 docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
 msgstr ""
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:4
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:7
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
 "can launch &bibletime; from the Start Menu with this icon:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
-#: docs/handbook/en/docbook/hdbk-start.docbook:15
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:18
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:21
-#, no-wrap
-msgid "&bibletime;"
-msgstr ""
-
-# type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
-msgid "Other window managers"
-msgstr ""
-
-# type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
-msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
-"already installed on your computer."
+#, no-wrap
+msgid "bibletime"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:34
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
 #, no-wrap
-msgid ""
-"bibletime --open-default-bible\n"
-"      \"&lt;random&gt;\""
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:35
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid "To open at a given passage like John 3:16, use:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 msgid "You can also use booknames in your current bookname language."
 msgstr ""
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 msgid "Startup sequence"
 msgstr ""
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:43
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:52
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -1600,7 +1591,7 @@ msgid ""
 msgstr ""
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:69
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "

@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-fi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-08 00:06-0400\n"
+"POT-Creation-Date: 2009-10-16 13:58-0400\n"
 "PO-Revision-Date: 2009-03-06 16:56+0200\n"
 "Last-Translator: Ilpo Kantonen <ilpo@iki.fi>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -319,14 +319,21 @@ msgstr ""
 "ranges and the Unicode fonts that support them</ulink>)."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:203
+#: docs/handbook/en/docbook/hdbk-config.docbook:204
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
 "used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
 "shortcuts\">this section</link> for a complete listing). Most of "
-"&bibletime;'s commands can be assigned Shortcuts here. This is very helpful "
-"to quickly access the functions that you need the most."
+"&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
+"quickly access the functions that you need the most."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:217
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
 msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
@@ -1683,15 +1690,15 @@ msgstr ""
 "menuchoice> </link> näyttää/piilottaa suurennuslasin."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
+#: docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
 msgstr "&bibletime;n käynnistys"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:4
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
 msgstr "Kuinka &bibletime; käynnistetään"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:7
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
 #, fuzzy
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
@@ -1701,11 +1708,11 @@ msgstr ""
 "käynnistää  &bibletime;n &kde; käynnistysalikosta tämän kuvakkeen "
 "sovellusryhmässä:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:15
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "<phrase>&bibletime; käynnistyskuvake</phrase>"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:18
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
 "&bibletime;, open a terminal window and type:"
@@ -1713,33 +1720,17 @@ msgstr ""
 "&bibletime;-ohjelman voi käynnistää terminaali-ikkunan komentoriviltä. "
 "Käynnistääksesi &bibletime;-ohjelman, avaa terminaali-ikkuna ja kirjoita:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:21
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
 #, fuzzy, no-wrap
-msgid "&bibletime;"
+msgid "bibletime"
 msgstr "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:24
-msgid "Other window managers"
-msgstr "Muut ikkunamanagerit"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
-#, fuzzy
-msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
-"already installed on your computer."
-msgstr ""
-"Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten "
-"Gnomella, BlackBoxilla, Fluxboxilla, OpenBoxilla tai Sawfishillä "
-"edellyttäen, että sopivat kirjastot on jo asennettu koneelle. Jos &kde; on "
-"asennettu kansioon /opt/kde, käynnistyskomento terminaali-ikkunassa on:"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
 msgstr "Käynnistyksen säätäminen"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
@@ -1748,36 +1739,34 @@ msgstr ""
 "&bibletime;n komennolla:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:34
-#, no-wrap
-msgid ""
-"bibletime --open-default-bible\n"
-"      \"&lt;random&gt;\""
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#, fuzzy, no-wrap
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
 msgstr ""
 "bibletime --open-default-bible\n"
 "      \"&lt;random&gt;\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:35
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid "To open at a given passage like John 3:16, use:"
 msgstr "Avataksesi Raamatun annetusta tekstikohdasta kuten Joh 3:16 käytä:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr "bibletime --open-default-bible \"Joh 3:16\""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 msgid "You can also use booknames in your current bookname language."
 msgstr "Voit käyttää kirjanniminä tämänhetkistä kielivalintaa."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 msgid "Startup sequence"
 msgstr "Käynnistyssarja"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:43
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1786,7 +1775,7 @@ msgstr ""
 "pääikkuna avautuu:"
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:52
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
 "Bookshelf, add or delete works from your system.  It will only be shown if "
@@ -1805,7 +1794,7 @@ msgstr ""
 "&bibletime;n perusominaisuudet nopeasti."
 
 # type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:69
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
 "&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
@@ -1880,6 +1869,20 @@ msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
 "&bibletime; on tehokas Raamatun tutkimisen työkalu, joka perustuu Sword-"
 "kehykseen."
+
+#~ msgid "Other window managers"
+#~ msgstr "Muut ikkunamanagerit"
+
+#, fuzzy
+#~ msgid ""
+#~ "&bibletime; can be used with other window managers such as Gnome, "
+#~ "BlackBox, Fluxbox, OpenBox or Sawfish, providing the appropriate base "
+#~ "libraries are already installed on your computer."
+#~ msgstr ""
+#~ "Voit käyttää &bibletime;-ohjelmaa muilla ikkunointiohjelmilla kuten "
+#~ "Gnomella, BlackBoxilla, Fluxboxilla, OpenBoxilla tai Sawfishillä "
+#~ "edellyttäen, että sopivat kirjastot on jo asennettu koneelle. Jos &kde; "
+#~ "on asennettu kansioon /opt/kde, käynnistyskomento terminaali-ikkunassa on:"
 
 #~ msgid "Hotkey"
 #~ msgstr "Pikanäppäin"

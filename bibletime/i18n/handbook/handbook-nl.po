@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-08 00:06-0400\n"
+"POT-Creation-Date: 2009-10-16 13:58-0400\n"
 "PO-Revision-Date: 2006-12-07 11:35+0100\n"
 "Last-Translator: Martin Gruner <mg.pub@gmx.net>\n"
 "Language-Team: Deutsch\n"
@@ -306,15 +306,15 @@ msgstr ""
 "Alan Wood (<ulink url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> "
 "Unicode character ranges and the Unicode fonts that support them</ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:203
+#: docs/handbook/en/docbook/hdbk-config.docbook:204
 #, fuzzy
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
 "used in the place of the menu items and icons. A number of &bibletime;'s "
 "commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
 "shortcuts\">this section</link> for a complete listing). Most of "
-"&bibletime;'s commands can be assigned Shortcuts here. This is very helpful "
-"to quickly access the functions that you need the most."
+"&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
+"quickly access the functions that you need the most."
 msgstr ""
 "Sneltoetsen zijn speciale toetsencombinaties die gebruikt kunnen worden in "
 "plaats van menu items en iconen. Een aantal van &bibletime;'s commando's "
@@ -323,6 +323,13 @@ msgstr ""
 "&bibletime;'s commando's kunnen hier sneltoetsen worden toegewezen. Dit is "
 "erg handig om snel toegang te hebben tot de functies die u het meest nodig "
 "heeft."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:217
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
+msgstr ""
 
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
 msgid "Introduction"
@@ -1852,15 +1859,15 @@ msgstr ""
 "uit."
 
 #: docs/handbook/en/docbook/hdbk-start.docbook:2
-#: docs/handbook/en/docbook/hdbk-start.docbook:6
+#: docs/handbook/en/docbook/hdbk-start.docbook:8
 msgid "Starting &bibletime;"
 msgstr "&bibletime; opstarten"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:4
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
 msgid "How to start &bibletime;"
 msgstr "Hoe u &bibletime; opstart"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:7
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
 #, fuzzy
 msgid ""
 "&bibletime; is an executable file that is integrated with the desktop. You "
@@ -1870,12 +1877,12 @@ msgstr ""
 "bureaublad. U kunt &bibletime; starten vanuit &kde; door in het Startmenu in "
 "de groep 'hulpmiddelen' te klikken op dit icoon:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:15
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
 #, fuzzy
 msgid "<phrase>&bibletime; start icon</phrase>"
 msgstr "&bibletime; start icoon"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:18
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
 #, fuzzy
 msgid ""
 "&bibletime; can also be launched from a terminal command prompt. To launch "
@@ -1884,68 +1891,49 @@ msgstr ""
 "&bibletime; kan ook gestart worden via een opdrachtprompt in een terminal. "
 "Om &bibletime; te starten, opent u een terminal en typt u:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:21
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
 #, fuzzy, no-wrap
-msgid "&bibletime;"
+msgid "bibletime"
 msgstr "bibletime"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:24
-msgid "Other window managers"
-msgstr "Andere window managers"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:25
-#, fuzzy
-msgid ""
-"&bibletime; can be used with other window managers such as Gnome, BlackBox, "
-"Fluxbox, OpenBox or Sawfish, providing the appropriate base libraries are "
-"already installed on your computer."
-msgstr ""
-"&bibletime; kan gebruikt worden in combinatie met andere window managers, "
-"zoals Gnome, BlackBox of Sawfish, op voorwaarde dat &kde; al ge&iuml;"
-"nstalleerd is op uw computer. Als &kde; ge&iuml;nstalleerd is in /opt/kde, "
-"dan zou u het volgende commando in een terminal kunnen geven om het "
-"programma te starten:"
-
-#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
 msgid "Startup customization"
 msgstr "Aanpassing van het opstarten"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:32
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
 msgid ""
 "From a terminal you can use &bibletime; to open a random verse in the "
 "default bible:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:34
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
 #, no-wrap
-msgid ""
-"bibletime --open-default-bible\n"
-"      \"&lt;random&gt;\""
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:35
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
 msgid "To open at a given passage like John 3:16, use:"
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
 #, no-wrap
 msgid "bibletime --open-default-bible \"John 3:16\""
 msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-start.docbook:37
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
 msgid "You can also use booknames in your current bookname language."
 msgstr ""
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:42
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
 msgid "Startup sequence"
 msgstr "Volgorde van opstartschermen"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:43
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
 msgid ""
 "As &bibletime; launches you may see the following screens before the main "
 "&bibletime; window opens:"
@@ -1953,7 +1941,7 @@ msgstr ""
 "Wanneer &bibletime; opstart kun je de volgende schermen zien, voordat het "
 "hoofdvenster van &bibletime; opent:"
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:52
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
 #, fuzzy
 msgid ""
 "<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
@@ -1974,7 +1962,7 @@ msgstr ""
 "boek te installeren om de basisfuncties van &bibletime; snel onder de knie "
 "te krijgen."
 
-#: docs/handbook/en/docbook/hdbk-start.docbook:69
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
 #, fuzzy
 msgid ""
 "<action>Customizes &bibletime;.</action>This dialog lets you adapt "
@@ -2046,6 +2034,21 @@ msgstr ""
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr "&bibletime; is een krachtig bijbelstudieprogramma voor &kde;"
+
+#~ msgid "Other window managers"
+#~ msgstr "Andere window managers"
+
+#, fuzzy
+#~ msgid ""
+#~ "&bibletime; can be used with other window managers such as Gnome, "
+#~ "BlackBox, Fluxbox, OpenBox or Sawfish, providing the appropriate base "
+#~ "libraries are already installed on your computer."
+#~ msgstr ""
+#~ "&bibletime; kan gebruikt worden in combinatie met andere window managers, "
+#~ "zoals Gnome, BlackBox of Sawfish, op voorwaarde dat &kde; al ge&iuml;"
+#~ "nstalleerd is op uw computer. Als &kde; ge&iuml;nstalleerd is in /opt/"
+#~ "kde, dan zou u het volgende commando in een terminal kunnen geven om het "
+#~ "programma te starten:"
 
 #~ msgid "Hotkey"
 #~ msgstr "Sneltoets"
