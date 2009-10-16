@@ -53,15 +53,15 @@ ele vai para o local desejado.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Informao adicional sobre obras</title>
-        <para>Se voc clicar com o boto <mousebutton>direito</mousebutton> do mouse 
-nosmbolo de uma obra, voc ver um menu com opes adicionais relevantes para 
-essa obra. <guimenuitem>"Sobre essa obra"</guimenuitem> abre uma janela com 
-vrias informaes interessantes sobre a obra 
-selecionada. <guimenuitem>"Destravar essa obra"</guimenuitem> abre um 
-pequeno dilogo para documentos criptografados, onde voc pode colocar a chave 
-de liberao para acessar a obra. Para mais informaes sobre obras travadas, 
-veja <ulink url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> 
-essa pgina</ulink> no site da Crosswire Bible Society.</para>
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
+page</ulink> on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
@@ -141,10 +141,11 @@ um dos modos de posicionamento automtico disponveis em<menuchoice>
 
       <sect3 id="hdbk-op-parts-desk-write">
         <title>Editando seu prprio comentrio</title>
-        <para>Para poder armazenar seus prprios comentrios sobre partes da Bblia, voc 
-precisa instalar uma certa obra da biblioteca da <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>. Essa obra 
-chama-se "Comentrio pessoal".</para>
+
+        <para>To be able to store your own comments about parts of the Bible, you have 
+install a certain work from the library of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
+commentary".</para>
 
         <para>Se voc abrir o comentrio pessoal clicando no seu smbolo na Estante com o 
 boto <mousebutton>esquerdo</mousebutton> do mouse, ele abre em modo de 
@@ -329,12 +330,12 @@ para o CD como um dos caminhos da sua estante. Quando voc iniciar o
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Instalar/atualizar obra(s)</title>
-      <para>Com esse recurso, voc pode conectar a um repositrio de obras (chamado 
-"biblioteca"), e transferir uma ou mais obras para sua Estante local. Essas 
-bibliotecas podem ser locais (e.g. um CD do Sword), ou remota (e.g. o 
-repositrio online da Crosswire de mdulos Sword, ou outro site oferecendo 
-mdulos Sword). Voc pode gerenciar suas bibliotecas com <guibutton>Adicionar 
-biblioteca</guibutton> e <guibutton>Excluir biblioteca</guibutton>.</para>
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules). You can manage your libraries with <guibutton>Add 
+library</guibutton> and <guibutton>Delete library</guibutton>.</para>
       <para>Para comear o processo de instalao ou atualizao, selecione uma biblioteca  
 qual voc queira conectar e um caminho de Estante local para instalar a(s) 
 obra(s). Ento clique em <guibutton>Conectar  

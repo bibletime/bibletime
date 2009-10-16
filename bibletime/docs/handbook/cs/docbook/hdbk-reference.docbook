@@ -421,9 +421,9 @@ nastavit všechny vlastnosti &bibletime;, které potřebujete. Prosím navštivt
           </term>
           <listitem>
             <para>
-            <action>Otevře dialog kde můžete změnit vaše nastavení Sword a spravovat 
-svou knihovnu</action>. Další inormace naleznete v <link 
-linkend="hdbk-op-bookshelfmanager">této sekci</link>.</para>
+            <action>Opens a dialog where you can change your &sword; configuration and 
+manage your bookshelf</action>. Please see <link 
+linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </listitem>
         </varlistentry>
       </variablelist>

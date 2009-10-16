@@ -435,7 +435,7 @@
           </term>
           <listitem>
             <para>
-            <action>Opens a dialog where you can change your Sword
+            <action>Opens a dialog where you can change your &sword;
             configuration and manage your bookshelf</action>. Please
             see <link linkend="hdbk-op-bookshelfmanager">this
             section</link> for details.</para>

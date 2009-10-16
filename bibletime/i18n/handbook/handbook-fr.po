@@ -1,12 +1,12 @@
 # translation of handbook.po to Français
-# Copyright (C) 2006 Free Software Foundation, Inc.
+# Copyright (C) 2009 The BibleTime Team, http://www.bibletime.info
 # Jean Van Schaftingen <vanschaf@yahoo.fr>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: handbook\n"
-"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-16 13:58-0400\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2009-10-16 18:54-0400\n"
 "PO-Revision-Date: 2006-05-26 13:46WET\n"
 "Last-Translator: Jean Van Schaftingen <vanschaf@yahoo.fr>\n"
 "Language-Team: Français\n"
@@ -68,8 +68,8 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-config.docbook:36
 #, fuzzy
 msgid ""
-"Many features provided by the Sword backend can now be customized in "
-"&bibletime;. These features are documented right in the dialog.  You also "
+"Many features provided by the &sword; backend can now be customized in "
+"&bibletime;.  These features are documented right in the dialog.  You also "
 "have the possibility to specify standard works that should be used when no "
 "specific work is specified in a reference.  An example: The standard Bible "
 "is used to display the content of cross references in the Bible.  When you "
@@ -252,13 +252,14 @@ msgstr "Excellentes polices Unicode du Summer Institute of Linguistics."
 msgid "A new free Unicode font initiative."
 msgstr "Une nouvelle initiative de police Unicode gratuite."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:160
-msgid "Several fonts available from the Crosswire Bible Society Ftp site."
+#: docs/handbook/en/docbook/hdbk-config.docbook:161
+#, fuzzy
+msgid "Several fonts available from the &cbs; FTP site."
 msgstr ""
 "Plusieurs polices sont disponibles sur le serveur ftp de la Crosswire Bible "
 "Society."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:168
+#: docs/handbook/en/docbook/hdbk-config.docbook:169
 msgid ""
 "Covers almost the entire range of Unicode, but might slow &bibletime; down "
 "because of its size."
@@ -266,21 +267,21 @@ msgstr ""
 "Couvre presque tout le spectre d'Unicode, mais peut ralentir &bibletime; à "
 "cause de sa taille."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:173
+#: docs/handbook/en/docbook/hdbk-config.docbook:174
 msgid "Clearlyu"
 msgstr "Clearlyu"
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:174
+#: docs/handbook/en/docbook/hdbk-config.docbook:175
 msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
 msgstr ""
 "Inclue dans certaines distributions. Comporte les alphabets latins, "
 "cyrilliques, grec, hébreu et thaï."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:182
+#: docs/handbook/en/docbook/hdbk-config.docbook:183
 msgid "Partial coverage, see information on linked site."
 msgstr "Couverture partielle, voir les informations sur le site en lien."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:188
+#: docs/handbook/en/docbook/hdbk-config.docbook:189
 #, fuzzy
 msgid ""
 "There are good Unicode font lists on the net, as the one by Christoph Singer "
@@ -295,7 +296,7 @@ msgstr ""
 "www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character ranges and "
 "the Unicode fonts that support them</ulink>)."
 
-#: docs/handbook/en/docbook/hdbk-config.docbook:204
+#: docs/handbook/en/docbook/hdbk-config.docbook:205
 #, fuzzy
 msgid ""
 "Shortcts (previously known as HotKeys) are special key commands that can be "
@@ -313,7 +314,7 @@ msgstr ""
 "d'accéder rapidement aux fonctionnalités dont on a le plus besoin."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-config.docbook:217
+#: docs/handbook/en/docbook/hdbk-config.docbook:218
 msgid ""
 "In the preceding example, F2, Bible Study Howto has a secondary shortcut "
 "defined, CTRL+2."
@@ -328,16 +329,16 @@ msgstr "Introduction"
 msgid "About &bibletime;"
 msgstr "À propos de &bibletime;"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:5
+#: docs/handbook/en/docbook/hdbk-intro.docbook:6
 #, fuzzy
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
 "manage. It is built on the <ulink url=\"http://www.crosswire.org/sword"
-"\">Sword</ulink> library, which provides the back-end functionality for "
-"&bibletime;, such as viewing Bible text, searching etc. Sword is the "
-"flagship product of the <ulink url=\"http://www.crosswire.org\">Crosswire "
-"Bible Society</ulink>."
+"\">&sword;</ulink> library, which provides the back-end functionality for "
+"&bibletime;, such as viewing Bible text, searching etc. &sword; is the "
+"flagship product of the <ulink url=\"http://www.crosswire.org\">&cbs;</"
+"ulink>."
 msgstr ""
 "&bibletime; est un outil puissant d'étude de la Bible écrit pour "
 "l'environnement  &kde; environment sur le système d'exploitation Linux. Il "
@@ -350,10 +351,10 @@ msgstr ""
 #, fuzzy
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
-"supported by the Sword project. Complete information on the supported "
+"supported by the &sword; project. Complete information on the supported "
 "document formats can be found in the <ulink url=\"http://www.crosswire.org/"
-"sword/develop/index.jsp\"> developers section</ulink> of the Sword Project, "
-"Crosswire Bible Society."
+"sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
+"Project, &cbs;."
 msgstr ""
 "&bibletime; est conçu pour être utilisée avec des modules encodées dans l'un "
 "des formats compatibles avec le projet Sword. Des infomations complètes sur "
@@ -361,31 +362,32 @@ msgstr ""
 "crosswire.org/sword/develop/index.jsp\">section développement</ulink> du "
 "projet Sword de la Crosswire Bible Society."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:22
+#: docs/handbook/en/docbook/hdbk-intro.docbook:21
 msgid "Available works"
 msgstr "Œuvres disponibles"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:23
+#: docs/handbook/en/docbook/hdbk-intro.docbook:22
+#, fuzzy
 msgid ""
 "Over 200 documents in 50 languages are available from the <ulink url="
-"\"http://www.crosswire.org\">Crosswire Bible Society</ulink>. These include:"
+"\"http://www.crosswire.org\">&cbs;</ulink>.  These include:"
 msgstr ""
 "Plus de deux cents documents dans cinquante langues sont disponibles auprès "
 "de la <ulink url=\"http://www.crosswire.org\">Crosswire Bible Society</"
 "ulink>. Parmi ceux-ci:"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:28
+#: docs/handbook/en/docbook/hdbk-intro.docbook:27
 msgid "Bibles"
 msgstr "Bibles"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:30
+#: docs/handbook/en/docbook/hdbk-intro.docbook:29
 #, fuzzy
 msgid ""
 "The full Bible text, with optional things like Strong's Numbers, headings "
 "and/or footnotes in the text.  Bibles are available in many languages, and "
 "include not only modern versions, but also ancient texts like the Codex "
 "Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
-"is the most advanced section in the library of the Sword project."
+"is the most advanced section in the library of the &sword; project."
 msgstr ""
 "Le texte complet de la Bible, avec éventuellement les numéros Strong ou des "
 "notes de bas de pages. Les bibles sont disponibles dans de nombreuses "
@@ -394,11 +396,11 @@ msgstr ""
 "\", grec). C'est la section la plus développée de la bibliothèque du projet "
 "Sword."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:40
+#: docs/handbook/en/docbook/hdbk-intro.docbook:39
 msgid "Books"
 msgstr "Livres"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:42
+#: docs/handbook/en/docbook/hdbk-intro.docbook:41
 #, fuzzy
 msgid ""
 "Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
@@ -408,11 +410,11 @@ msgstr ""
 "&quot;Enuma Elish&quot;, et &quot;Les Œuvres complètes de Flavius "
 "Josèphe&quot;"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:47
+#: docs/handbook/en/docbook/hdbk-intro.docbook:46
 msgid "Commentaries"
 msgstr "Commentaires"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:49
+#: docs/handbook/en/docbook/hdbk-intro.docbook:48
 #, fuzzy
 msgid ""
 "Commentaries available include classics like John Wesley's \"Notes on the "
@@ -427,11 +429,11 @@ msgstr ""
 "<emphasis>personnel</emphasis> vous pouvez <link linkend=\"hdbk-op-parts-"
 "desk-write\">conserver vos propres notes</link> sur des passages de la Bible."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:58
+#: docs/handbook/en/docbook/hdbk-intro.docbook:57
 msgid "Daily devotionals"
 msgstr "Lectures quotidiennes"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:60
+#: docs/handbook/en/docbook/hdbk-intro.docbook:59
 msgid ""
 "Many people appreciate these daily portions from God's word. Available works "
 "include Daily Light on the Daily Path, and the Losungen."
@@ -440,11 +442,11 @@ msgstr ""
 "Dieu. Parmi les modules disponibles, Daily Light on the Daily Path, et les "
 "Losungen."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:66
+#: docs/handbook/en/docbook/hdbk-intro.docbook:65
 msgid "Lexicons/Dictionaries"
 msgstr "Lexiques et dictionnaires"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:68
+#: docs/handbook/en/docbook/hdbk-intro.docbook:67
 #, fuzzy
 msgid ""
 "Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
@@ -460,11 +462,11 @@ msgstr ""
 "\"Unabridged Dictionary of the English Language\" de Webster revu en 1913 et "
 "la \"Topical Bible\" de Nave."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:80
+#: docs/handbook/en/docbook/hdbk-intro.docbook:79
 msgid "Motivation"
 msgstr "Motivation"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:81
+#: docs/handbook/en/docbook/hdbk-intro.docbook:80
 #, fuzzy
 msgid ""
 "Our desire is to serve God, and to do our part to help others grow in their "
@@ -478,11 +480,11 @@ msgstr ""
 "intuitif d'emploi. Nous désirons que Dieu soit loué, comme il est la source "
 "de tout ce qui est bon."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:87
+#: docs/handbook/en/docbook/hdbk-intro.docbook:86
 msgid "James 1:17, NASB"
 msgstr "Jacques 1:17, TOB"
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:88
+#: docs/handbook/en/docbook/hdbk-intro.docbook:87
 msgid ""
 "Every good thing given and every perfect gift is from above, coming down "
 "from the Father of lights, with whom there is no variation or shifting "
@@ -491,7 +493,7 @@ msgstr ""
 "Tout don de valeur et tout cadeau parfait descendent d'en haut, du Père des "
 "lumières chez lequel il n'y a ni balancement ni ombre due au mouvement."
 
-#: docs/handbook/en/docbook/hdbk-intro.docbook:92
+#: docs/handbook/en/docbook/hdbk-intro.docbook:91
 msgid "God bless you as you use this program."
 msgstr "Dieu vous bénisse dans l'utilisation de ce programma"
 
@@ -620,7 +622,7 @@ msgid ""
 "for encrypted documents, where you can enter the unlock key to access the "
 "work. For additional information on locked works, please see <ulink url="
 "\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
-"ulink> on the Crosswire Bible Society web site."
+"ulink> on the &cbs; web site."
 msgstr ""
 "Si vous cliquez avec le <mousebutton>bouton droit de la souris</mousebutton> "
 "sur l'icône d'une module, un menu proposant des actions en rapport avec "
@@ -785,12 +787,12 @@ msgstr ""
 msgid "Editing your own commentary"
 msgstr "Éditer votre propre commentaire"
 
-#: docs/handbook/en/docbook/hdbk-operation.docbook:171
+#: docs/handbook/en/docbook/hdbk-operation.docbook:172
+#, fuzzy
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
 "install a certain work from the library of the <ulink url=\"http://www."
-"crosswire.org\">Crosswire Bible Society</ulink>. This work is called "
-"\"Personal commentary\"."
+"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
 msgstr ""
 "Pour conserver vos commentaires à propos de passage de la Bible, vous devez "
 "au préalable installer une module spécifique de la <ulink url=\"http://www."
@@ -1161,10 +1163,10 @@ msgstr "Installer/mettre à jour module"
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
-"libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online "
-"repository of Sword modules, or another site offering Sword modules). You "
-"can manage your libraries with <guibutton>Add library</guibutton> and "
-"<guibutton>Delete library</guibutton>."
+"libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
+"online repository of &sword; modules, or another site offering &sword; "
+"modules). You can manage your libraries with <guibutton>Add library</"
+"guibutton> and <guibutton>Delete library</guibutton>."
 msgstr ""
 "Avec cet utilitaire vous pouvez vous connecter à un dépôt d'modules (appelé "
 "\"bibliothèque\"), et transférer une ou plusieurs modules dans votre "
@@ -1454,7 +1456,7 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:438
 #, fuzzy
 msgid ""
-"<action>Opens a dialog where you can change your Sword configuration and "
+"<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
 "bookshelfmanager\">this section</link> for details."
 msgstr ""
@@ -1956,54 +1958,59 @@ msgstr ""
 msgid "<application>Sword</application>"
 msgstr ""
 
-# type: Content of the kde entity
+# type: Content of the cbs entity
 #: docs/handbook/en/docbook/index.docbook:7
+msgid "<application>Crosswire Bible Society</application>"
+msgstr ""
+
+# type: Content of the kde entity
+#: docs/handbook/en/docbook/index.docbook:8
 msgid "<application>KDE</application>"
 msgstr ""
 
 # type: Content of the qt entity
-#: docs/handbook/en/docbook/index.docbook:8
+#: docs/handbook/en/docbook/index.docbook:9
 msgid "<application>Qt</application>"
 msgstr ""
 
 # type: Content of the Shift entity
-#: docs/handbook/en/docbook/index.docbook:10
+#: docs/handbook/en/docbook/index.docbook:11
 msgid "Shift"
 msgstr ""
 
 # type: Content of the Ctrl entity
-#: docs/handbook/en/docbook/index.docbook:11
+#: docs/handbook/en/docbook/index.docbook:12
 msgid "Ctrl"
 msgstr ""
 
 # type: Content of the Alt entity
-#: docs/handbook/en/docbook/index.docbook:12
+#: docs/handbook/en/docbook/index.docbook:13
 msgid "Alt"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:22
+#: docs/handbook/en/docbook/index.docbook:23
 msgid "The &bibletime; handbook"
 msgstr "Le manuel de &bibletime;"
 
-#: docs/handbook/en/docbook/index.docbook:44
+#: docs/handbook/en/docbook/index.docbook:45
 msgid "the &bibletime; team"
 msgstr "l'équipe &bibletime;"
 
-#: docs/handbook/en/docbook/index.docbook:47
+#: docs/handbook/en/docbook/index.docbook:48
 msgid "The &bibletime; handbook is part of &bibletime;."
 msgstr "Le manuel &bibletime; fait partie de &bibletime;."
 
 # type: Content of: <book><bookinfo><date>
-#: docs/handbook/en/docbook/index.docbook:50
-msgid "2009-09"
+#: docs/handbook/en/docbook/index.docbook:51
+msgid "2009-10"
 msgstr ""
 
 # type: Content of: <book><bookinfo><releaseinfo>
-#: docs/handbook/en/docbook/index.docbook:51
+#: docs/handbook/en/docbook/index.docbook:52
 msgid "2.4"
 msgstr ""
 
-#: docs/handbook/en/docbook/index.docbook:53
+#: docs/handbook/en/docbook/index.docbook:54
 #, fuzzy
-msgid "&bibletime; is a Bible study tool based on the Sword framework."
+msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr "&bibletime; est un outil puissant d'étude de la Bible pour &kde;."

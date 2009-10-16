@@ -61,7 +61,7 @@ a window with lots of interesting information about the selected work.
 encrypted documents, where you can enter the unlock key to access the 
 work. For additional information on locked works, please see <ulink 
 url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
-page</ulink> on the Crosswire Bible Society web site.</para>
+page</ulink> on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
@@ -142,10 +142,11 @@ mode</guimenuitem> </menuchoice>. Just try it out, it's simple and works.</para>
 
       <sect3 id="hdbk-op-parts-desk-write">
         <title>Éditer votre propre commentaire</title>
-        <para>Pour conserver vos commentaires à propos de passage de la Bible, vous devez 
-au préalable installer une module spécifique de la <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>, appelé 
-"Commentaire personnel" ("Personal commentary").</para>
+
+        <para>To be able to store your own comments about parts of the Bible, you have 
+install a certain work from the library of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
+commentary".</para>
 
         <para>If you open the personal commentary by clicking on its symbol in the 
 Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in 
@@ -333,10 +334,10 @@ works on the CD if it is present.</para>
       <title>Installer/mettre à jour module</title>
       <para>With this facility, you can connect to a repository of works (called 
 "library"), and transfer one or more works to your local Bookshelf. These 
-libraries may be local (e.g. a Sword CD), or remote (e.g. Crosswire's online 
-repository of Sword modules, or another site offering Sword modules). You 
-can manage your libraries with <guibutton>Add library</guibutton> and 
-<guibutton>Delete library</guibutton>.</para>
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules). You can manage your libraries with <guibutton>Add 
+library</guibutton> and <guibutton>Delete library</guibutton>.</para>
       <para>Pour commencer une installation ou une mise à jour, choisissez la 
 bibliothèque à laquelle vous désirez vous connecter et une bibliothèque 
 locale où installer l'module. Cliquez ensuite sur <guibutton>Connecter à la 

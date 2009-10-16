@@ -51,15 +51,15 @@ existující okno, které se přesune na požadované umístění.</para>
 
       <sect3 id="hdbk-op-parts-bookshelf-metainfo">
         <title>Další informace o dílech</title>
-        <para>Pokud kliknete <mousebutton>pravým</mousebutton> tlačítkem myši na symbol 
-díla, objeví se nabídka s dalšími možnostmi, které jsou relevantní pro toto 
-dílo. <guimenuitem>"O tomto díle"</guimenuitem>otevře okno s mnoha 
-zajímavými informacemi o zvoleném díle. <guimenuitem>"Odemknout toto 
-dílo"</guimenuitem> otevře malý dialog pro zašifrované dokumenty, kde můžete 
-vložit přístupový kód k otevření díla. Pro další informace o zamčených 
-dílech se podívejte na <ulink 
-url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> tuto 
-stránku</ulink> na webu Crosswire Bible Society.</para>
+        <para>If you click with the <mousebutton>right</mousebutton> mouse button on the 
+symbol of a work, you will see a menu with additional entries that are 
+relevant for this work.  <guimenuitem>"About this work"</guimenuitem> opens 
+a window with lots of interesting information about the selected work.  
+<guimenuitem>"Unlock this work"</guimenuitem> opens a small dialog for 
+encrypted documents, where you can enter the unlock key to access the 
+work. For additional information on locked works, please see <ulink 
+url="http://www.crosswire.org/sword/modules/aboutlocked.jsp"> this 
+page</ulink> on the &cbs; web site.</para>
       </sect3>
 
       <sect3 id="hdbk-op-parts-bookshelf-search">
@@ -138,9 +138,11 @@ funguje to.</para>
 
       <sect3 id="hdbk-op-parts-desk-write">
         <title>Úpravy vašich vlastních komentářů</title>
-        <para>Aby jste mohli ukládat vlastní komentáře částí Bible, musíte nainstalovat 
-dílo z knihovny  <ulink url="http://www.crosswire.org">Crosswire Bible 
-Society</ulink>, které se jmenuje "Personal commentary" ("Osobní komentář").</para>
+
+        <para>To be able to store your own comments about parts of the Bible, you have 
+install a certain work from the library of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  This work is called "Personal 
+commentary".</para>
 
         <para>Pokud otevřete osobní komentář kliknutím <mousebutton>levým</mousebutton>  
 tlačítkem myši na jeho symbol v knihovně, otevře se v módu pro čtení. V 
@@ -322,12 +324,12 @@ vloženo v mechanice.</para>
     </sect2>
     <sect2 id="hdbk-op-bookshelfmanager-installupdate">
       <title>Instalace/aktualizace děl</title>
-      <para>Tímto nástrojem se můžete připojit k repositáři děl (je zvaný "knihovna", 
-"library") a nahrát jedno nebo více děl do své lokální knihovny. Tyto 
-knihovny mohou být lokální (např. Sword CD) nebo vzdálené 
-(např. Crosswireonline repositář modulů Sword nebo jiné stránky nabízející 
-moduly Sword). Své knihovny můžete spravovat pomocí <guibutton>Přidat 
-knihovnu</guibutton> a <guibutton>Smazat knihovnu</guibutton>.</para>
+      <para>With this facility, you can connect to a repository of works (called 
+"library"), and transfer one or more works to your local Bookshelf. These 
+libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's 
+online repository of &sword; modules, or another site offering &sword; 
+modules). You can manage your libraries with <guibutton>Add 
+library</guibutton> and <guibutton>Delete library</guibutton>.</para>
       <para>Pro zahájení procesu instalace nebo aktualizace vyberte knihovnu ke které se 
 chcete připojit a umístění lokální knihovny pro instalaci děl. Potom 
 klikněte na tlačítko <guibutton>Spojit s knihovnou</guibutton>. &bibletime; 

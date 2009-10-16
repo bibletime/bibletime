@@ -423,10 +423,9 @@ nach.</para>
           </term>
           <listitem>
             <para>
-            <action>Bücherregal-Verwaltung</action>. Hiermit wird ein Dialog zur 
-Konfiguration und Verwaltung Ihres Bücherregals aufgerufen. Schauen Sie 
-bitte in <link linkend="hdbk-op-bookshelfmanager">diesem Abschnitt</link> 
-für Details nach.</para>
+            <action>Opens a dialog where you can change your &sword; configuration and 
+manage your bookshelf</action>. Please see <link 
+linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </listitem>
         </varlistentry>
       </variablelist>

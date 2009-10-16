@@ -2,27 +2,26 @@
   <title>Introduction</title>
   <sect1 id="hdbk-intro-about">
     <title>About &bibletime;</title>
+
     <para>&bibletime; is a Bible study tool with support for
-    different types of texts and languages. Even large amounts of works
-    modules are easy to install and manage. It is built on the
-    <ulink url="http://www.crosswire.org/sword">Sword</ulink> library,
-    which provides the back-end functionality for &bibletime;, such
-    as viewing Bible text, searching etc. Sword is the flagship product
-    of the <ulink url="http://www.crosswire.org">Crosswire Bible
-    Society</ulink>.</para>
+      different types of texts and languages. Even large amounts of works
+      modules are easy to install and manage. It is built on the
+      <ulink url="http://www.crosswire.org/sword">&sword;</ulink> library,
+      which provides the back-end functionality for &bibletime;, such
+      as viewing Bible text, searching etc. &sword; is the flagship product
+      of the <ulink url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
     <para>&bibletime; is designed to be used with works encoded in
-    one of the formats supported by the Sword project. Complete
-    information on the supported document formats can be found in the 
-    <ulink url="http://www.crosswire.org/sword/develop/index.jsp"> 
-    developers section</ulink> of the Sword Project, Crosswire Bible
-    Society.</para>
+      one of the formats supported by the &sword; project. Complete
+      information on the supported document formats can be found in the 
+      <ulink url="http://www.crosswire.org/sword/develop/index.jsp"> 
+      developers section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Available works</title>
       <para>Over 200 documents in 50 languages are available from the 
-      <ulink url="http://www.crosswire.org">Crosswire Bible
-      Society</ulink>. These include: 
+      <ulink url="http://www.crosswire.org">&cbs;</ulink>.
+      These include:
       <variablelist>
         <varlistentry>
           <term>Bibles</term>
@@ -33,7 +32,7 @@
             only modern versions, but also ancient texts like the Codex
             Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX",
             Greek). This is the most advanced section in the library of
-            the Sword project.</para>
+            the &sword; project.</para>
           </listitem>
         </varlistentry>
         <varlistentry>

@@ -2,36 +2,34 @@
   <title>Einleitung</title>
   <sect1 id="hdbk-intro-about">
     <title>Über &bibletime;</title>
-    <para>&bibletime; ist ein Bibelstudien-Werkzeug, das verschiedene Textarten und 
-Sprachen unterstützt. Sogar große Anzahlen an Werk-Modulen können einfach 
-installiert und verwaltet werden. Es basiert auf der <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink>-Bibliothek, welche die 
-zugrundeliegende Backend-Funktionalität für &bibletime; zur Verfügung 
-stellt, so zum Beispiel um Bibeltexte anzuschauen, darin zu suchen, 
-usw. Sword ist das Hauptprodukt der <ulink 
-url="http://www.crosswire.org">Crosswire Bibelgesellschaft</ulink>.</para>
 
-    <para>&bibletime; wurde konzipiert, um mit Werken zu arbeiten, die in einem der 
-Formate vorliegen, die vom Sword-Projekt unterstützt werden. Vollständige 
-Informationen über die unterstützten Dokumentenformate sind auf den <ulink 
-url="http://www.crosswire.org/sword/develop/index.jsp">Entwicklerseiten</ulink> 
-des Sword-Projektes der Crosswire Bibelgesellschaft zu finden.</para>
+    <para>&bibletime; is a Bible study tool with support for different types of texts 
+and languages. Even large amounts of works modules are easy to install and 
+manage. It is built on the <ulink 
+url="http://www.crosswire.org/sword">&sword;</ulink> library, which provides 
+the back-end functionality for &bibletime;, such as viewing Bible text, 
+searching etc. &sword; is the flagship product of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.</para>
+
+    <para>&bibletime; is designed to be used with works encoded in one of the formats 
+supported by the &sword; project. Complete information on the supported 
+document formats can be found in the <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
+section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Vorhandene Werke</title>
-      <para>Über 200 Dokumente in 50 Sprachen sind auf dem Webserver der <ulink 
-url="http://www.crosswire.org">Crosswire Bibelgesellschaft</ulink> 
-verfügbar. Dazu gehören: 
+      <para>Over 200 documents in 50 languages are available from the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  These include:
       <variablelist>
         <varlistentry>
           <term>Bibeln</term>
           <listitem>
-            <para>Der vollständie Bibeltext mit optionalen Dingen wie Strong-Nummern, 
-Kopfzeilen und/oder Fußzeilen im Text. Bibeln sind in vielen verschiedenen 
-Sprachen verfügbar und nicht nur auf moderne Versionen beschränkt, sondern 
-umfassen auch altertümliche Texte wie den Codex Leningradensis ("WLC", 
-hebräisch), und die Septuaginta ("LXX", griechisch). Dies ist der 
-fortgeschrittenste Abschnitt in der Bibliothek des Sword-Projektes.</para>
+            <para>The full Bible text, with optional things like Strong's Numbers, headings 
+and/or footnotes in the text.  Bibles are available in many languages, and 
+include not only modern versions, but also ancient texts like the Codex 
+Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
+the most advanced section in the library of the &sword; project.</para>
           </listitem>
         </varlistentry>
         <varlistentry>

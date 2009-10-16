@@ -2,25 +2,25 @@
   <title>Johdanto</title>
   <sect1 id="hdbk-intro-about">
     <title>Tietoja &bibletime;:stä</title>
+
     <para>&bibletime; is a Bible study tool with support for different types of texts 
 and languages. Even large amounts of works modules are easy to install and 
 manage. It is built on the <ulink 
-url="http://www.crosswire.org/sword">Sword</ulink> library, which provides 
+url="http://www.crosswire.org/sword">&sword;</ulink> library, which provides 
 the back-end functionality for &bibletime;, such as viewing Bible text, 
-searching etc. Sword is the flagship product of the <ulink 
-url="http://www.crosswire.org">Crosswire Bible Society</ulink>.</para>
+searching etc. &sword; is the flagship product of the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.</para>
 
-    <para>&bibletime; on suunniteltu käyttämään Sword-projektin mallien mukaisia 
-teoksia. Tuettujen asiakirjamuotojen täydelliset tiedot löytyvät osoitteesta 
-Crosswire Bible Societyn Sword-projektin <ulink 
-url="http://www.crosswire.org/sword/develop/index.jsp">kehittäjien 
-osio</ulink>.</para>
+    <para>&bibletime; is designed to be used with works encoded in one of the formats 
+supported by the &sword; project. Complete information on the supported 
+document formats can be found in the <ulink 
+url="http://www.crosswire.org/sword/develop/index.jsp"> developers 
+section</ulink> of the &sword; Project, &cbs;.</para>
 
     <sect2 id="hdbk-intro-works">
       <title>Saatavana olevat tehtävät</title>
-      <para>Yli 200 asiakirjaa 50 kielellä ovat saatavana <ulink 
-url="http://www.crosswire.org">Crosswire Bible Societyn</ulink> 
-sivuilta. Nämä sisältävät: 
+      <para>Over 200 documents in 50 languages are available from the <ulink 
+url="http://www.crosswire.org">&cbs;</ulink>.  These include:
       <variablelist>
         <varlistentry>
           <term>Raamattuja</term>
@@ -29,7 +29,7 @@ sivuilta. Nämä sisältävät:
 and/or footnotes in the text.  Bibles are available in many languages, and 
 include not only modern versions, but also ancient texts like the Codex 
 Leningradensis ("WLC", Hebrew), and the Septuagint ("LXX", Greek). This is 
-the most advanced section in the library of the Sword project.</para>
+the most advanced section in the library of the &sword; project.</para>
           </listitem>
         </varlistentry>
         <varlistentry>

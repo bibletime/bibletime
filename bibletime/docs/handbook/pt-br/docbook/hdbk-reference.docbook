@@ -425,9 +425,9 @@ seo</link> para detalhes.</para>
           </term>
           <listitem>
             <para>
-            <action>Abre um dilogo onde voc pode mudar sua configurao do Sword e 
-gerenciar sua Estante</action>. Por favor veja <link 
-linkend="hdbk-op-bookshelfmanager">essa seo</link> para detalhes.</para>
+            <action>Opens a dialog where you can change your &sword; configuration and 
+manage your bookshelf</action>. Please see <link 
+linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </listitem>
         </varlistentry>
       </variablelist>

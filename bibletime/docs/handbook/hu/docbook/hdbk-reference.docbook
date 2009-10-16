@@ -433,12 +433,9 @@ linkend="hdbk-config-bt">beállítások részt</link> a részletekért.</para>
           </term>
           <listitem>
             <para>
-            <action>Nyit egy ablakot, ahol megváltoztathatja a Sword beállításait, és 
-kezelheti a könyvespolcát</action>. Bővebb információért tekintse meg <link 
-linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.<action>Nyit egy 
-ablakot, ahol megváltoztathatja a Sword beállításait, és kezelheti a 
-könyvespolcát</action>. Bővebb információért tekintse meg <link 
-linkend="hdbk-op-bookshelfmanager">ezt a fejezetet</link>.</para>
+            <action>Opens a dialog where you can change your &sword; configuration and 
+manage your bookshelf</action>. Please see <link 
+linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
           </listitem>
         </varlistentry>
       </variablelist>

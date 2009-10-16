@@ -33,8 +33,8 @@
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the Sword backend can now be
-	customized in &bibletime;. These features are documented
+      <para>Many features provided by the &sword; backend can now be
+	customized in &bibletime;.  These features are documented
 	right in the dialog.  You also have the possibility to specify
 	standard works that should be used when no specific work is
 	specified in a reference.  An example: The standard Bible is used
@@ -157,8 +157,9 @@
                   <ulink url="ftp://ftp.crosswire.org/pub/sword/iso/latest/FONTS">
                   Crosswire's font directory</ulink>
                 </entry>
-                <entry>Several fonts available from the Crosswire Bible
-                Society Ftp site.</entry>
+
+                <entry>Several fonts available from the &cbs;
+		  FTP site.</entry>
               </row>
               <row>
                 <entry>
