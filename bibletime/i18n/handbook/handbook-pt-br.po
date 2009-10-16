@@ -2112,21 +2112,3 @@ msgstr "2.0"
 msgid "&bibletime; is a Bible study tool based on the Sword framework."
 msgstr ""
 "&bibletime;  uma ferramenta de estudo da Bblia baseado no framework Sword."
-
-# type: Content of: <chapter><sect1><sect2><title>
-#~ msgid "Other window managers"
-#~ msgstr "Outros gerenciadores de janelas"
-
-# type: Content of: <chapter><sect1><sect2><para>
-#~ msgid ""
-#~ "&bibletime; can be used with other window managers such as Gnome, "
-#~ "BlackBox, Fluxbox, OpenBox or Sawfish, providing the appropriate base "
-#~ "libraries are already installed on your computer."
-#~ msgstr ""
-#~ "&bibletime; pode ser usado com outros gerenciadores de janelas como "
-#~ "Gnome, Blackbox, Fluxbox, OpenBox ou Sawfish, contanto que as bibliotecas "
-#~ "base apropriadas j estejam instaladas no seu computador."
-
-# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
-#~ msgid "Hotkey"
-#~ msgstr "Tecla de atalho"
