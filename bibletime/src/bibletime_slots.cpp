@@ -376,17 +376,13 @@ void BibleTime::slotSearchDefaultBible() {
 }
 
 void BibleTime::openOnlineHelp_Handbook() {
-    namespace DU = util::directory;
-
-    QString urlPath("file://" + DU::getHandbookDir().canonicalPath() + "/index.html");
-    QDesktopServices::openUrl(QUrl(urlPath));
+    QString filePath(util::directory::getHandbookDir().canonicalPath() + "/index.html");
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
 
 void BibleTime::openOnlineHelp_Howto() {
-    namespace DU = util::directory;
-
-    QString urlPath("file://" + DU::getHowtoDir().canonicalPath() + "/index.html");
-    QDesktopServices::openUrl(QUrl(urlPath));
+    QString filePath(util::directory::getHowtoDir().canonicalPath() + "/index.html");
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
 
 void BibleTime::slotOpenAboutDialog() {
