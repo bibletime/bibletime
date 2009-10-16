@@ -81,9 +81,17 @@ int main(int argc, char* argv[]) {
     app.setApplicationName("bibletime");
     app.setApplicationVersion(BT_VERSION);
 
-// On Windows, add a path for Qt plugins to be loaded from
 #ifdef Q_WS_WIN
+
+	// On Windows, add a path for Qt plugins to be loaded from
     app.addLibraryPath(app.applicationDirPath() + "/plugins");
+
+	// change directory to the application bin directory so that
+	// the sword.conf is found. It points to the sword/locales.d directory
+	QString binDir = app.applicationDirPath();
+	QDir dir;
+	dir.setCurrent(binDir);
+
 #endif
 
     registerMetaTypes();

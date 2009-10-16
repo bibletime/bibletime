@@ -237,6 +237,18 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/linux/bibletime.desk
 INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/bibletime.desktop"
 	DESTINATION "${BT_SHARE_PATH}share/applications/"
 )
+IF (MSVC)
+	# sword locale information
+	FILE(GLOB INSTALL_SWORD_LOCALE_LIST ${SWORD_INCLUDE_DIR}/../locales.d/*)
+	INSTALL(FILES ${INSTALL_SWORD_LOCALE_LIST}
+		DESTINATION "${BT_SHARE_PATH}share/sword/locales.d/"
+	)
+	# sword config file
+	FILE(GLOB INSTALL_SWORD_CONF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/sword/sword.conf)
+	INSTALL(FILES ${INSTALL_SWORD_CONF_FILE}
+		DESTINATION "${BT_DESTINATION}"
+	)
+ENDIF (MSVC)
 ######################################################
 
 ######################################################
