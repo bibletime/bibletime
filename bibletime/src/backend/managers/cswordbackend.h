@@ -237,6 +237,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             sword::SWFilter* plain;
             sword::SWFilter* thml;
             sword::SWFilter* osis;
+            sword::SWFilter* tei;
         }	m_filters;
 
         struct Displays {

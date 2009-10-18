@@ -21,6 +21,7 @@
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/filters/bt_gbfhtml.h"
 #include "backend/filters/bt_osishtml.h"
+#include "backend/filters/bt_teihtml.h"
 #include "backend/filters/bt_plainhtml.h"
 #include "backend/filters/bt_thmlhtml.h"
 #include "backend/filters/bt_thmlplain.h"
@@ -49,6 +50,7 @@ CSwordBackend::CSwordBackend()
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BT_OSISHTML();
+    m_filters.tei = new BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();
@@ -63,6 +65,7 @@ CSwordBackend::CSwordBackend(const QString& path, const bool augmentHome)
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
     m_filters.osis = new BT_OSISHTML();
+    m_filters.tei = new BT_TEIHTML();
 
     m_displays.entry = new CEntryDisplay();
     m_displays.chapter = new CChapterDisplay();
@@ -78,6 +81,7 @@ CSwordBackend::~CSwordBackend() {
     delete m_filters.plain;
     delete m_filters.thml;
     delete m_filters.osis;
+    delete m_filters.tei;
 
     delete m_displays.book;
     delete m_displays.chapter;
@@ -189,20 +193,24 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
     sourceformat = ((entry = section.find("SourceType")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
     moduleDriver = ((entry = section.find("ModDrv")) != section.end()) ? (*entry).second : (sword::SWBuf) "";
 
-    if (sourceformat == "GBF") {
-        module->AddRenderFilter(m_filters.gbf);
-        noDriver = false;
-    }
-    else if (sourceformat == "PLAIN") {
-        module->AddRenderFilter(m_filters.plain);
+    if (sourceformat == "OSIS") {
+        module->AddRenderFilter(m_filters.osis);
         noDriver = false;
     }
     else if (sourceformat == "ThML") {
         module->AddRenderFilter(m_filters.thml);
         noDriver = false;
     }
-    else if (sourceformat == "OSIS") {
-        module->AddRenderFilter(m_filters.osis);
+    else if (sourceformat == "TEI") {
+        module->AddRenderFilter(m_filters.tei);
+        noDriver = false;
+    }
+    else if (sourceformat == "GBF") {
+        module->AddRenderFilter(m_filters.gbf);
+        noDriver = false;
+    }
+    else if (sourceformat == "PLAIN") {
+        module->AddRenderFilter(m_filters.plain);
         noDriver = false;
     }
 

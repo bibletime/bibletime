@@ -18,6 +18,7 @@ SET(bibletime_SOURCES
 	#backend filters
 	src/backend/filters/bt_gbfhtml.cpp
 	src/backend/filters/bt_osishtml.cpp
+	src/backend/filters/bt_teihtml.cpp
 	src/backend/filters/bt_plainhtml.cpp
 	src/backend/filters/bt_thmlhtml.cpp
 	src/backend/filters/bt_thmlplain.cpp
@@ -60,7 +61,7 @@ SET(bibletime_SOURCES
 	src/util/dialogutil.cpp
 	src/util/directory.cpp
 	src/util/migrationutil.cpp
-	
+
 	# frontend top level
 	src/frontend/btbookshelfdockwidget.cpp
 	src/frontend/cdragdrop.cpp
@@ -76,7 +77,7 @@ SET(bibletime_SOURCES
 
 	# Bookshelf/Bookmarks widget in main window
 	src/frontend/mainindex/btbookshelfview.cpp
-	
+
 	src/frontend/mainindex/bookmarks/cbookmarkindex.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkloader.cpp
 	src/frontend/mainindex/bookmarks/btbookmarkitembase.cpp
@@ -84,9 +85,9 @@ SET(bibletime_SOURCES
 	src/frontend/mainindex/bookmarks/btbookmarkfolder.cpp
 
 	#Settings dialog (configuration)
-	src/frontend/settingsdialogs/btshortcutsdialog.cpp 
-	src/frontend/settingsdialogs/btshortcutseditor.cpp 
-	src/frontend/settingsdialogs/cacceleratorsettings.cpp 
+	src/frontend/settingsdialogs/btshortcutsdialog.cpp
+	src/frontend/settingsdialogs/btshortcutseditor.cpp
+	src/frontend/settingsdialogs/cacceleratorsettings.cpp
 	src/frontend/settingsdialogs/cdisplaysettings.cpp
 	src/frontend/settingsdialogs/cswordsettings.cpp
 	src/frontend/settingsdialogs/clanguagesettings.cpp
@@ -147,7 +148,7 @@ SET(bibletime_SOURCES
 	src/frontend/keychooser/versekeychooser/btversekeymenu.cpp
 
 	src/frontend/keychooser/bthistory.cpp
-	
+
 	#behaviour for display areas
     src/frontend/display/bthtmlfindtext.cpp
 	src/frontend/display/bthtmljsobject.cpp
@@ -159,7 +160,7 @@ SET(bibletime_SOURCES
 	src/frontend/display/chtmlwritedisplay.cpp
 	src/frontend/display/btfontsizewidget.cpp
 	src/frontend/display/btcolorwidget.cpp
-	
+
 	#display windows and their widgets
 	src/frontend/displaywindow/bttoolbarpopupaction.cpp
 	src/frontend/displaywindow/btactioncollection.cpp
@@ -176,7 +177,7 @@ SET(bibletime_SOURCES
 	src/frontend/displaywindow/ccommentaryreadwindow.cpp
 	src/frontend/displaywindow/cbookreadwindow.cpp
 	src/frontend/displaywindow/cdisplaywindowfactory.cpp
-	
+
 	# web based tab dialogs
 	src/frontend/htmldialogs/btaboutdialog.cpp
 	src/frontend/htmldialogs/bttabhtmldialog.cpp

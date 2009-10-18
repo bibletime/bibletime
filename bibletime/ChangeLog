@@ -1,3 +1,7 @@
+2009-10-18 Martin Gruner <mgruner@crosswire.org>
+	* Added first version of TEI -> HTML filter.
+	   BibleTime can now open TEI modules, though rendering has to be improved.
+
 2009-10-13 Jaak Ristioja <ristioja@gmail.com>
     * Fixed new bookshelf model category sorting.
     * Fixed a CSwordModuleInfo bug, which had unknown effects.
