@@ -1,6 +1,7 @@
 2009-10-19 Martin Gruner <mgruner@crosswire.org>
 	* Improved TEI filter (shows crossrefs correctly now).
 	* Fixed some text formatting settings in the display templates.
+	* Improved generated HTML a bit.
 
 2009-10-18 Martin Gruner <mgruner@crosswire.org>
 	* Added first version of TEI -> HTML filter.
