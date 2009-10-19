@@ -26,8 +26,8 @@ class CSwordModuleInfo;
  * CSwordLDKey is the implementation of CKey for Lexicons and dictionaries.
  * It provides a simple interface to set the current key,
  * to get the text for the key and functions to get the next and previous items
- * of the used module in comparision to the current key.<BR>
- * Here's an example how to use this class:<BR>
+ * of the used module in comparision to the current key.<br/>
+ * Here's an example how to use this class:<br/>
  * @code
  *  CSwordLexiconModuleInfo* m_module = backend()->findModuleByName("ISBE");
  *  CSwordLDKey ldKey(m_module);

@@ -177,9 +177,9 @@ void BtAboutDialog::init_lic_tab() {
     text += tr("You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.");
     text += " ";
     text += tr("You can give away or distribute the program if you also distribute the corresponding source code.");
-    text += "<br><br>";
+    text += "<br/><br/>";
     //text += tr("It is allowed to distribute software under GPL for a small fee, but it must be accompanied with the complete source code, and the fact that it is freely available with no cost must not be hidden.");
-    //text += "<br><br>";
+    //text += "<br/><br/>";
     text += tr("The complete legally binding license is below.");
 
     QFile licFile(DU::getLicenseDir().path() + "/license.html");
@@ -204,7 +204,7 @@ static QString make_center(const QString& content) {
 }
 
 static QString make_br() {
-    return "<br>";
+    return "<br/>";
 }
 
 static QString make_bold(const QString& content) {

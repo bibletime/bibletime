@@ -216,7 +216,7 @@ void BibleTime::insertKeyboardActions( BtActionCollection* const a ) {
     action->setText(tr("&Bible Study Howto"));
     action->setIcon(DU::getIcon(CResMgr::mainMenu::help::bibleStudyHowTo::icon));
     action->setShortcut(QKeySequence(CResMgr::mainMenu::help::bibleStudyHowTo::accel));
-    action->setToolTip(tr("Open the Bible study HowTo included with BibleTime.<BR>This HowTo is an introduction on how to study the Bible in an efficient way."));
+    action->setToolTip(tr("Open the Bible study HowTo included with BibleTime.<br/>This HowTo is an introduction on how to study the Bible in an efficient way."));
     a->addAction("bibleStudyHowto", action);
 
     action = new QAction(a);

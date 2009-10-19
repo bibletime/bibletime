@@ -43,7 +43,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     QString l2 = tr("BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. \".sword\" directory in your home directory is always used automatically and can't be removed or added.");
 
     QLabel* mainLabel = CToolClass::explanationLabel(this,
-                        tr("Configure bookshelf paths"), l1 + QString("<small><br><br>") + l2 + QString("</small>"));
+                        tr("Configure bookshelf paths"), l1 + QString("<small><br/><br/>") + l2 + QString("</small>"));
     mainLayout->addWidget(mainLabel);
 
     QString swordConfPath = instbackend::swordConfigFilename();

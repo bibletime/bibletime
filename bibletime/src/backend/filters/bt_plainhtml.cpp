@@ -33,7 +33,7 @@ char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey* 
             continue;
         }
         else if ((*from == '\n')) { // only one new line
-            text += "<BR>";
+            text += "<br/>";
             continue;
         }
         else if (*from == '<') {
@@ -49,15 +49,15 @@ char Filters::BT_PLAINHTML::processText(sword::SWBuf& text, const sword::SWKey* 
             continue;
         }
         else if (*from == '{') { //footnote start
-            text += "<FONT COLOR=\"#800000\"><SMALL> ("; /// \bug Possible color conflict
+            text += "<font color=\"#800000\"><small> ("; /// \bug Possible color conflict
             continue;
         }
         else if (*from == '}') { //footnote end
-            text += ") </SMALL></FONT>";
+            text += ") </small></font>";
             continue;
         }
         else if ((*from == ' ') && (count > 5000)) {
-            text += "<WBR>";
+            text += "<wbr/>";
             count = 0;
             continue;
         }

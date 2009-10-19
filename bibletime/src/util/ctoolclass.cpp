@@ -28,7 +28,7 @@ QString CToolClass::htmlToText(const QString& html) {
     QString newText = html;
     // convert some tags we need in code
     newText.replace( QRegExp(" "), "#SPACE#" );
-    newText.replace( QRegExp("<br/?>\\s*"), "<br/>\n" );
+    newText.replace( QRegExp("<br\\s*/?>\\s*"), "<br/>\n" );
     newText.replace( QRegExp("#SPACE#"), " " );
 
     QRegExp re("<.+>");
@@ -37,12 +37,12 @@ QString CToolClass::htmlToText(const QString& html) {
     return newText;
 }
 
-/** Converts text to HTML (\n to <BR>) */
+/** Converts text to HTML (\n to <br/>) */
 QString CToolClass::textToHTML(const QString& text) {
     QString newText = text;
-    newText.replace( QRegExp("<BR>\n"), "#NEWLINE#" );
-    newText.replace( QRegExp("\n"), "<BR>\n" );
-    newText.replace( QRegExp("#NEWLINE#"), "<BR>\n");
+    newText.replace( QRegExp("<br\\s*/?>\n"), "#NEWLINE#" );
+    newText.replace( QRegExp("\n"), "<br/>\n" );
+    newText.replace( QRegExp("#NEWLINE#"), "<br/>\n");
     return newText;
 }
 
@@ -54,7 +54,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
     if (saveFile.exists()) {
         if (!forceOverwrite && util::showQuestion(0, QObject::tr("Overwrite File?"),
-                QString::fromLatin1("<qt><B>%1</B><BR>%2</qt>")
+                QString::fromLatin1("<qt><b>%1</b><br/>%2</qt>")
                 .arg( QObject::tr("The file already exists.") )
                 .arg( QObject::tr("Do you want to overwrite it?")),
                 QMessageBox::Yes | QMessageBox::No,
@@ -76,7 +76,7 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
     }
     else {
         QMessageBox::critical(0, QObject::tr("Error"),
-                              QString::fromLatin1("<qt>%1<BR><B>%2</B></qt>")
+                              QString::fromLatin1("<qt>%1<br/><b>%2</b></qt>")
                               .arg( QObject::tr("The file couldn't be saved.") )
                               .arg( QObject::tr("Please check permissions etc.")));
         saveFile.close();
@@ -146,7 +146,7 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
     if (!heading.isEmpty() && !text.isEmpty()) {
         br = QString::fromLatin1("<span style='white-space:pre'>  -  </span>");
     }
-    QLabel* label = new QLabel( QString::fromLatin1("<B>%1</B>%2<small>%3</small>").arg(heading).arg(br).arg(text), parent );
+    QLabel* label = new QLabel( QString::fromLatin1("<b>%1</b>%2<small>%3</small>").arg(heading).arg(br).arg(text), parent );
 
     label->setWordWrap(true);
     label->setMargin(1);
@@ -185,19 +185,19 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
     QString text;
 
     text = QString("<b>%1</b> ").arg( module->name() )
-           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
+           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br/>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
 
     text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr>");
 
-    text += QObject::tr("Language") + QString(": %1<br>").arg( module->language()->translatedName() );
+    text += QObject::tr("Language") + QString(": %1<br/>").arg( module->language()->translatedName() );
 
     if (module->isEncrypted()) {
-        text += QObject::tr("Unlock key") + QString(": %1<br>")
+        text += QObject::tr("Unlock key") + QString(": %1<br/>")
                 .arg(!module->config(CSwordModuleInfo::CipherKey).isEmpty() ? module->config(CSwordModuleInfo::CipherKey) : QString("<font COLOR=\"red\">%1</font>").arg(QObject::tr("not set")));
     }
 
     if (module->hasVersion()) {
-        text += QObject::tr("Version") + QString(": %1<br>").arg( module->config(CSwordModuleInfo::ModuleVersion) );
+        text += QObject::tr("Version") + QString(": %1<br/>").arg( module->config(CSwordModuleInfo::ModuleVersion) );
     }
 
     QString options;
@@ -218,7 +218,7 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
         text += QObject::tr("Options") + QString::fromLatin1(": <small>") + options + QString("</small>");
     }
 
-    if (text.right(4) == QString::fromLatin1("<br>")) {
+    if (text.right(4) == QString::fromLatin1("<br/>")) {
         text = text.left(text.length() - 4);
     }
 
@@ -234,16 +234,16 @@ QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localV
     QString text;
 
     text = QString("<p style='white-space:pre'><b>%1</b> ").arg( module->name() )
-           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
+           + ((module->category() == CSwordModuleInfo::Cult) ? QString::fromLatin1("<small><b>%1</b></small><br/>").arg(QObject::tr("Take care, this work contains cult / questionable material!")) : QString::null);
 
     text += QString("<small>(") + module->config(CSwordModuleInfo::Description) + QString(")</small><hr/>");
 
     if (module->isEncrypted()) {
-        text += QObject::tr("Encrypted - needs unlock key") + QString("<br>");
+        text += QObject::tr("Encrypted - needs unlock key") + QString("<br/>");
     }
 
     if (!localVer.isEmpty()) {
-        text += QString("<b>") + QObject::tr("Updated version available!") + QString("</b><br>");
+        text += QString("<b>") + QObject::tr("Updated version available!") + QString("</b><br/>");
     }
 
     if (module->hasVersion()) {
@@ -253,12 +253,12 @@ QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localV
     if (!localVer.isEmpty()) {
         text += QString("  ") + QObject::tr("Installed version") + QString(": %1").arg(localVer);
     }
-    text += QString("<br>");
+    text += QString("<br/>");
 
     text += QString("<small>(") + QObject::tr("Double click for more information") + QString(")</small></p>");
 
 
-    if (text.right(4) == QString::fromLatin1("<br>")) {
+    if (text.right(4) == QString::fromLatin1("<br/>")) {
         text = text.left(text.length() - 4);
     }
 

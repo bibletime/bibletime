@@ -37,21 +37,18 @@ class CToolClass {
     public:
         /**
          * Converts HTML text to plain text.
-         * This function converts some HTML tags in text (e.g. <BR> to \n)
-         * @return The text withput HTML tags and with converted <BR> to \n
-         * @author Joachim Ansorg
+         * This function converts some HTML tags in text (e.g. <br/> to \n)
+         * @return The text withput HTML tags and with converted <br/> to \n
          */
         static QString htmlToText(const QString&);
         /**
-        * Converts text to HTML converting some text commands into HTML tags (e.g. \n to <BR>)
-        * @return The HTML formatted text we got after changing \n to <BR>
-        * @author Joachim Ansorg
+        * Converts text to HTML converting some text commands into HTML tags (e.g. \n to <br/>)
+        * @return The HTML formatted text we got after changing \n to <br/>
         */
         static QString textToHTML(const QString&);
         /**
         * Creates the file filename and put the text of parameter "text" into the file.
         * @return True if saving was sucessful, otherwise false
-        * @author Joachim Ansorg
         */
         static bool savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite = false, QTextCodec* fileCodec = QTextCodec::codecForLocale());
         /**

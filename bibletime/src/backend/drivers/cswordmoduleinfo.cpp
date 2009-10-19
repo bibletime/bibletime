@@ -824,7 +824,7 @@ QString CSwordModuleInfo::aboutText() const {
         text += QString("<br/><b>%1</b><br/><br/>")
                 .arg(tr("Take care, this work contains cult / questionable material!"));
 
-    text += QString("<b>%1:</b><br>%2</font>")
+    text += QString("<b>%1:</b><br/>%2</font>")
             .arg(tr("About"))
             .arg(config(AboutInformation));
 

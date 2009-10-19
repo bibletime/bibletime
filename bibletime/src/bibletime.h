@@ -73,7 +73,7 @@ class QSignalMapper;
   * The main index is implemented in the class CGroupManager, the items of the
   * main index are implemented in the class CGroupManagerItem.
   * Each CGroupManagerItem has a type() function which returns the type of
-  * the object (Module, Bookmark or Group).<BR>
+  * the object (Module, Bookmark or Group).<br/>
   * The display windows are all derived from the base class CPresenter.
   * The display windows which handle Sword modules are all derived from the
   * CSwordPresenter class.
@@ -81,14 +81,14 @@ class QSignalMapper;
   * Bibles, CCommentaryPresenter for commentaries and CLexiconPresenter for
   * lexicon and dictionaries.
   * CSwordPresenter provides the essential base functions which are
-  * reimplemented in the derived classes (for example CSwordPresenter::lookup).<BR>
+  * reimplemented in the derived classes (for example CSwordPresenter::lookup).<br/>
   * </p><p>
   * Another important part of the frontend are the keychoosers.
   * They provide an interface to choose a key of a module.
   * The interface for different module types is different.
   * The base class is CKeyChooser which is the factory for the derived classes.
   * Use the function CKeyChooser::createInstance to get the correct
-  * keychooser implementation for the desired module.<BR>
+  * keychooser implementation for the desired module.<br/>
   * </p>
   */
 
@@ -98,10 +98,10 @@ class QSignalMapper;
  * BibleTime is devided in two major parts, the backend and the frontend.
  * The backend is mainly a wrapper around Sword's classes to use Qt functionality
  * to allow easy access to it's functionality and to have it in a (more or less :)
- * object oriented structure.</p><BR>
+ * object oriented structure.</p><br/>
  * <p>
- *       -Introduction to the backend: @ref backend<BR>
- *       -Introduction to the frontend: @ref frontend.<BR>
+ *       -Introduction to the backend: @ref backend<br/>
+ *       -Introduction to the frontend: @ref frontend.<br/>
  * The main class of BibleTime is called @ref BibleTime, which is the main window
  * and initializes all important parts at startup. The text display windows
  * belong to the @ref frontend.
