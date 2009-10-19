@@ -31,9 +31,60 @@ bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, swor
     // manually process if it wasn't a simple substitution
 
     if (!substituteToken(buf, token)) {
+
+    	sword::XMLTag tag(token);
+
     	if (0) {
 
     	}
+		else if (!strcmp(tag.getName(), "ref")) {
+
+			if (!tag.isEndTag() && !tag.isEmpty()) {
+
+				renderReference(tag.getAttribute("osisRef"), buf, userData);
+
+			}
+			else if (tag.isEndTag()) {
+				buf.append("</a>");
+			}
+			else { // empty reference marker
+				// -- what should we do?  nothing for now.
+			}
+		}
+    	// <hi> highlighted text
+		else if (!strcmp(tag.getName(), "hi")) {
+			const sword::SWBuf type = tag.getAttribute("rend");
+
+			if ((!tag.isEndTag()) && (!tag.isEmpty())) {
+				if (type == "bold") {
+					buf.append("<span class=\"bold\">");
+				}
+				else if (type == "illuminated") {
+					buf.append("<span class=\"illuminated\">");
+				}
+				else if (type == "italic") {
+					buf.append("<span class=\"italic\">");
+				}
+				else if (type == "line-through") {
+					buf.append("<span class=\"line-through\">");
+				}
+				else if (type == "normal") {
+					buf.append("<span class=\"normal\">");
+				}
+				else if (type == "small-caps") {
+					buf.append("<span class=\"small-caps\">");
+				}
+				else if (type == "underline") {
+					buf.append("<span class=\"underline\">");
+				}
+				else {
+					buf.append("<span>"); //don't break markup, </span> is inserted later
+				}
+			}
+			else if (tag.isEndTag()) { //all hi replacements are html spans
+				buf.append("</span>");
+			}
+		}
         else { //all tokens handled by OSISHTMLHref will run through the filter now
             return sword::TEIHTMLHREF::handleToken(buf, token, userData);
         }
@@ -42,23 +93,16 @@ bool Filters::BT_TEIHTML::handleToken(sword::SWBuf &buf, const char *token, swor
     return false;
 }
 
-void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, sword::BasicFilterUserData *myUserData) {
+void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf, sword::BasicFilterUserData *myUserData) {
     QString ref( osisRef );
     QString hrefRef( ref );
-    //Q_ASSERT(!ref.isEmpty()); checked later
 
     if (!ref.isEmpty()) {
         //find out the mod, using the current module makes sense if it's a bible or commentary because the refs link into a bible by default.
         //If the osisRef is something like "ModuleID:key comes here" then the
         // modulename is given, so we'll use that one
 
-        CSwordModuleInfo* mod = CPointers::backend()->findSwordModuleByPointer(myModule);
-        //Q_ASSERT(mod); checked later
-        if (!mod || (mod->type() != CSwordModuleInfo::Bible
-                     && mod->type() != CSwordModuleInfo::Commentary)) {
-
-            mod = CBTConfig::get( CBTConfig::standardBible );
-        }
+        CSwordModuleInfo* mod = CBTConfig::get( CBTConfig::standardBible );
 
         // Q_ASSERT(mod); There's no necessarily a module or standard Bible
 
@@ -78,7 +122,7 @@ void Filters::BT_TEIHTML::renderReference(const char *osisRef, sword::SWBuf &buf
             CReferenceManager::ParseOptions options;
             options.refBase = QString::fromUtf8(myUserData->key->getText());
             options.refDestinationModule = QString(mod->name());
-            options.sourceLanguage = QString(myModule->Lang());
+            options.sourceLanguage = QString(mod->module()->Lang());
             options.destinationLanguage = QString("en");
 
             buf.append("<a href=\"");

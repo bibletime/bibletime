@@ -88,7 +88,7 @@ td.entry, td.currententry {
 	line-height:1.6em;
 	background-color:#D3E5FF;
 	/*border: thin solid black;*/
-	
+
 }
 
 table .currententry:nth-child(1) {
@@ -220,14 +220,25 @@ so something like .alternative:before { content:"'"attr(alternative); } is possi
 .bold {
    font-weight: bold;
 }
+
 .illuminated { }
+
 .italic {
    font-style: italic;
 }
-.line-through { }
+
+.line-through {
+    text-decoration: line-through;
+}
 .normal { }
-.small-caps{ }
-.underline { }
+
+.small-caps{
+   font-variant: small-caps;
+}
+
+.underline {
+    text-decoration: underline;
+}
 
 /* An inscription */
 .inscription { }

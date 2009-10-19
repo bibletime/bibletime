@@ -26,7 +26,7 @@ class BT_TEIHTML : public sword::TEIHTMLHREF {
         BT_TEIHTML();
         virtual bool handleToken(sword::SWBuf &buf, const char *token, sword::BasicFilterUserData *userData);
     private:
-        void renderReference(const char *osisRef, sword::SWBuf &buf, sword::SWModule *myModule, sword::BasicFilterUserData *myUserData);
+        void renderReference(const char *osisRef, sword::SWBuf &buf, sword::BasicFilterUserData *myUserData);
 };
 
 } //end of Filters namespace

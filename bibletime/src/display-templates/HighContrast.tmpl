@@ -6,11 +6,11 @@
 	<meta name="GENERATOR" content="BibleTime - www.bibletime.info" />
 	<meta name="AUTHOR" content="BibleTime - www.bibletime.info" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	
+
 	<style type="text/css">
 	/* <![CDATA[ */
 
-* { 
+* {
 	/* To work around a KDE 3.2 bug / problem */
 	/* background-color:white; #this seems to break*/
 }
@@ -30,7 +30,7 @@ body {
 }
 #content > table th {
 	padding: 0 0 2px 0;
-	text-align: center; 
+	text-align: center;
 	/*font-weight: bold;*/
 	font-size: 110%;
 	border-bottom: 1px solid #6B6B6B;
@@ -62,7 +62,7 @@ a:hover {
 	text-align: right;
 }
 div.entry, td.entry, td.currententry {
-	vertical-align:top;	
+	vertical-align:top;
 }
 
 /* Keep the values the same as in .entry (take the border into account!) */
@@ -79,12 +79,12 @@ div.entry, td.entry, td.currententry {
 div.currententry {
 }
 span.currententry {
-	
+
 }
 
 
 /*Space between the columns of modules displayed side by side*/
-td.entry + td.entry { 
+td.entry + td.entry {
 	margin-left: 5px;
 }
 
@@ -220,13 +220,15 @@ td.entry + td.entry {
 	font-style:italic;
 }
 .line-through {
+    text-decoration: line-through;
 }
 .normal {
 }
-.small-caps{
+.small-caps {
+   font-variant: small-caps;
 }
 .underline {
-	font-style:underline;
+	text-decoration: underline;
 }
 
 .inscription {
@@ -247,15 +249,15 @@ td.entry + td.entry {
    font-variant: small-caps;
 }
 
-.transchange { 
-	font-style:italic; 
+.transchange {
+	font-style:italic;
 }
 .transchange > .added {
 	background-color:inherit;
 }
-.transchange > .amplified {	
+.transchange > .amplified {
 }
-.transchange > .changed {	
+.transchange > .changed {
 }
 .transchange > .deleted {
 }
@@ -267,7 +269,7 @@ td.entry + td.entry {
 .morphSegmentation {
 	border: 1px solid grey;
 	margin-top: 1px; /* Don`t let the boxes touch here, between the lines */
-	margin-left: -1px; /* But here, for better reading of the text, 
+	margin-left: -1px; /* But here, for better reading of the text,
 											this will only occur within a word consisting of several segments.*/
 	margin-right: 0px;
 }
