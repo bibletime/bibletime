@@ -19,20 +19,6 @@ class CSwordModuleInfo;
 class QLabel;
 class QWidget;
 
-/**
- * Provides some useful functions which would be normally global.
- *
- * Some methods,that would be normaly global, but I hate global functions :-)
- * (the function locateHTML is from Sandy Meier (KDevelop))
- *
- * TODO: I think this could be implemented as a namespace:
- * namespace util { function()...}
- * And used:
- * #include "util/util.h"
- * util::function();
- * (comment by Eeli)
- *
- */
 namespace util {
 namespace tool {
 
