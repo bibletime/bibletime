@@ -7,7 +7,7 @@
 *
 **********/
 
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 #include <QApplication>
 #include <QFile>
@@ -24,7 +24,7 @@
 
 
 /** Converts HTML text to plain text */
-QString CToolClass::htmlToText(const QString& html) {
+QString util::tool::htmlToText(const QString& html) {
     QString newText = html;
     // convert some tags we need in code
     newText.replace( QRegExp(" "), "#SPACE#" );
@@ -38,7 +38,7 @@ QString CToolClass::htmlToText(const QString& html) {
 }
 
 /** Converts text to HTML (\n to <br/>) */
-QString CToolClass::textToHTML(const QString& text) {
+QString util::tool::textToHTML(const QString& text) {
     QString newText = text;
     newText.replace( QRegExp("<br\\s*/?>\n"), "#NEWLINE#" );
     newText.replace( QRegExp("\n"), "<br/>\n" );
@@ -48,7 +48,7 @@ QString CToolClass::textToHTML(const QString& text) {
 
 /** Creates the file filename and put text into the file.
  */
-bool CToolClass::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec* fileCodec) {
+bool util::tool::savePlainFile( const QString& filename, const QString& text, const bool& forceOverwrite, QTextCodec* fileCodec) {
     QFile saveFile(filename);
     bool ret;
 
@@ -87,14 +87,14 @@ bool CToolClass::savePlainFile( const QString& filename, const QString& text, co
 
 
 /** Returns the icon used for the module given as aparameter. */
-QIcon CToolClass::getIconForModule( CSwordModuleInfo* module_info ) {
+QIcon util::tool::getIconForModule( CSwordModuleInfo* module_info ) {
     namespace DU = util::directory;
     return DU::getIcon(getIconNameForModule(module_info));
 }
 
 /** Returns the name for the icon used for the module given as aparameter. */
-QString CToolClass::getIconNameForModule( CSwordModuleInfo* module_info ) {
-    //qDebug("CToolClass::getIconNameForModule");
+QString util::tool::getIconNameForModule( CSwordModuleInfo* module_info ) {
+    //qDebug("util::tool::getIconNameForModule");
     if (!module_info) return CResMgr::modules::book::icon_locked;
 
     if (module_info->category() == CSwordModuleInfo::Cult) {
@@ -141,7 +141,7 @@ QString CToolClass::getIconNameForModule( CSwordModuleInfo* module_info ) {
     return CResMgr::modules::book::icon_unlocked;
 }
 
-QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
+QLabel* util::tool::explanationLabel(QWidget* parent, const QString& heading, const QString& text ) {
     QString br;
     if (!heading.isEmpty() && !text.isEmpty()) {
         br = QString::fromLatin1("<span style='white-space:pre'>  -  </span>");
@@ -155,7 +155,7 @@ QLabel* CToolClass::explanationLabel(QWidget* parent, const QString& heading, co
 }
 
 /** No descriptions */
-bool CToolClass::inHTMLTag(int pos, QString & text) {
+bool util::tool::inHTMLTag(int pos, QString & text) {
     int i1 = text.lastIndexOf("<", pos);
     int i2 = text.lastIndexOf(">", pos);
     int i3 = text.indexOf(">", pos);
@@ -176,7 +176,7 @@ bool CToolClass::inHTMLTag(int pos, QString & text) {
     return false;
 }
 
-QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
+QString util::tool::moduleToolTip(CSwordModuleInfo* module) {
     Q_ASSERT(module);
     if (!module) {
         return QString::null;
@@ -225,7 +225,7 @@ QString CToolClass::moduleToolTip(CSwordModuleInfo* module) {
     return text;
 }
 
-QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localVer) {
+QString util::tool::remoteModuleToolTip(CSwordModuleInfo* module, QString localVer) {
     Q_ASSERT(module);
     if (!module) {
         return QString::null;
@@ -266,7 +266,7 @@ QString CToolClass::remoteModuleToolTip(CSwordModuleInfo* module, QString localV
 }
 
 
-int CToolClass::mWidth(const QWidget* widget, int m) {
+int util::tool::mWidth(const QWidget* widget, int m) {
     if (widget) {
         return widget->fontMetrics().width(QString().fill('M', m));
     }

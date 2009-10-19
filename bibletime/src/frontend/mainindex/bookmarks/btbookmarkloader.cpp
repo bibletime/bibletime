@@ -21,7 +21,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/mainindex/bookmarks/btbookmarkitem.h"
 #include "frontend/mainindex/bookmarks/btbookmarkfolder.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 #define CURRENT_SYNTAX_VERSION 1
@@ -141,7 +141,7 @@ void BtBookmarkLoader::saveTreeFromRootItem(QTreeWidgetItem* rootItem, QString f
     for (int i = 0; i < rootItem->childCount(); i++) {
         saveItem(rootItem->child(i), content);
     }
-    CToolClass::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
+    util::tool::savePlainFile(fileName, doc.toString(), forceOverwrite, QTextCodec::codecForName("UTF-8"));
 
 }
 

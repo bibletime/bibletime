@@ -16,7 +16,6 @@
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordtreekey.h"
 #include "backend/keys/cswordversekey.h"
-#include "util/ctoolclass.h"
 
 // Sword includes:
 #include <swkey.h>

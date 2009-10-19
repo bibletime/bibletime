@@ -22,7 +22,6 @@
 #include <QVBoxLayout>
 #include "backend/managers/cswordbackend.h"
 #include "frontend/bookshelfmanager/installpage/btinstallthread.h"
-#include "util/ctoolclass.h"
 #include "util/cpointers.h"
 
 
@@ -38,7 +37,7 @@ BtInstallProgressDialog::BtInstallProgressDialog(QWidget* parent, QTreeWidget* s
     m_statusWidget->header()->setStretchLastSection(false);
     m_statusWidget->header()->setResizeMode(1, QHeaderView::Stretch);
     m_statusWidget->header()->setMovable(false);
-    //m_statusWidget->setColumnWidth(1, CToolClass::mWidth(m_statusWidget, 2));
+    //m_statusWidget->setColumnWidth(1, util::tool::mWidth(m_statusWidget, 2));
 
     foreach (QTreeWidgetItem* sourceItem, selectedModulesTreeWidget->invisibleRootItem()->takeChildren()) {
         // create items and threads for modules under this source

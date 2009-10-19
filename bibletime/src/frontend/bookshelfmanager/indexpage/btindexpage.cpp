@@ -23,7 +23,7 @@
 #include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 BtIndexPage::BtIndexPage()
@@ -62,7 +62,7 @@ BtIndexPage::BtIndexPage()
     // configure the list view
     m_moduleList->setHeaderLabels( (QStringList(tr("Work")) << tr("Index size")) );
     m_moduleList->setRootIsDecorated(true);
-    m_moduleList->setColumnWidth(0, CToolClass::mWidth(m_moduleList, 20) );
+    m_moduleList->setColumnWidth(0, util::tool::mWidth(m_moduleList, 20) );
     //m_moduleList->setTextAlignment(1, Qt::AlignRight); see doc...
     m_moduleList->setSortingEnabled(false);
 

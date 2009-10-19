@@ -26,7 +26,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/dialogutil.h"
 #include "util/directory.h"
 
@@ -64,7 +64,7 @@ void CModuleChooserDialog::initView() {
 
     vboxLayout = new QVBoxLayout(this);
 
-    QLabel* label = CToolClass::explanationLabel(this, QString::null, m_labelText);
+    QLabel* label = util::tool::explanationLabel(this, QString::null, m_labelText);
     vboxLayout->addWidget(label);
 
     m_moduleChooser = new QTreeWidget(this);

@@ -26,7 +26,7 @@
 #include "frontend/searchdialog/csearchmodulechooserdialog.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/directory.h"
 
 
@@ -122,10 +122,10 @@ void BtSearchOptionsArea::initView() {
     int tsLeft, tsTop, tsRight, tsBottom;
     // Added space looks nicer and enhances readability
     typeSelectorLayout->getContentsMargins(&tsLeft, &tsTop, &tsRight, &tsBottom);
-    typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom + CToolClass::mWidth(this, 1) );
-    typeSelectorLayout->setSpacing(typeSelectorLayout->spacing() + CToolClass::mWidth(this, 1));
+    typeSelectorLayout->setContentsMargins(tsLeft, 0, tsRight, tsBottom + util::tool::mWidth(this, 1) );
+    typeSelectorLayout->setSpacing(typeSelectorLayout->spacing() + util::tool::mWidth(this, 1));
     QHBoxLayout* fullButtonLayout = new QHBoxLayout();
-    fullButtonLayout->setSpacing(CToolClass::mWidth(this, 1) / 2);
+    fullButtonLayout->setSpacing(util::tool::mWidth(this, 1) / 2);
     m_typeAndButton = new QRadioButton(tr("All words"));
     m_typeAndButton->setChecked(true);
     m_typeOrButton = new QRadioButton(tr("Some words"));

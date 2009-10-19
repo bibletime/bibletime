@@ -47,7 +47,6 @@
 #include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
 
 // Sword includes:
 #include <swversion.h>

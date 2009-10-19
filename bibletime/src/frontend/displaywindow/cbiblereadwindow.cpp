@@ -30,7 +30,7 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 using namespace Profile;
@@ -238,7 +238,7 @@ void CBibleReadWindow::initView() {
 /** Reimplementation. */
 void CBibleReadWindow::setupPopupMenu() {
     popup()->setTitle(tr("Bible window"));
-    popup()->setIcon(CToolClass::getIconForModule(modules().first()) );
+    popup()->setIcon(util::tool::getIconForModule(modules().first()) );
     popup()->addAction(m_actions.findText);
     QKeySequence ks = m_actions.findText->shortcut();
     QString keys = ks.toString();

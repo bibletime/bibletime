@@ -25,7 +25,7 @@
 #include "backend/rendering/chtmlexportrendering.h"
 #include "backend/rendering/cplaintextexportrendering.h"
 #include "frontend/cprinter.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 // Sword includes:
 #include <swkey.h>
@@ -87,7 +87,7 @@ bool CExportManager::saveKey(CSwordKey* key, const Format format, const bool add
     }
 
     if (!progressWasCancelled()) {
-        CToolClass::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
+        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
         closeProgressDialog();
         return true;
     }
@@ -135,7 +135,7 @@ bool CExportManager::saveKeyList(sword::ListKey* list, CSwordModuleInfo* module,
     const QString text = render->renderKeyTree(tree);
 
     if (!progressWasCancelled()) {
-        CToolClass::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
+        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
         closeProgressDialog();
         return true;
     }
@@ -182,7 +182,7 @@ bool CExportManager::saveKeyList(QList<CSwordKey*>& list, const Format format, c
     const QString text = render->renderKeyTree(tree);
 
     if (!progressWasCancelled()) {
-        CToolClass::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
+        util::tool::savePlainFile(filename, text, false, (format == HTML) ? QTextCodec::codecForName("UTF-8") : QTextCodec::codecForLocale() );
         closeProgressDialog();
         return true;
     }

@@ -22,8 +22,6 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
-
 
 using namespace Profile;
 

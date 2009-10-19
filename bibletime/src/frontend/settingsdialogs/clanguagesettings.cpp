@@ -18,7 +18,7 @@
 #include "frontend/settingsdialogs/cfontchooser.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/directory.h"
 
 // Sword includes:
@@ -34,7 +34,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 
     //Sword locales
     layout->addWidget(
-        CToolClass::explanationLabel(
+        util::tool::explanationLabel(
             this,
             tr(""),
             tr("Select the language in which the Biblical book names are displayed.")
@@ -107,7 +107,7 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
     //Font settings
 
     layout->addWidget(
-        CToolClass::explanationLabel(
+        util::tool::explanationLabel(
             this,
             tr("Fonts"),
             tr("You can specify a custom font for each language.")

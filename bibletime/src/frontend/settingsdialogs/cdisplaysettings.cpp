@@ -19,7 +19,7 @@
 #include "backend/rendering/cdisplayrendering.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 // ***********************
@@ -59,7 +59,7 @@ CDisplaySettingsPage::CDisplaySettingsPage(QWidget* /*parent*/)
     layout->addSpacing(20);
 
     layout->addWidget(
-        CToolClass::explanationLabel(
+        util::tool::explanationLabel(
             this,
             tr("Display templates"),
             tr("Display templates define how text is displayed.")

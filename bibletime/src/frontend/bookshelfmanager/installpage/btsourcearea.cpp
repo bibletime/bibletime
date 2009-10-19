@@ -28,7 +28,7 @@
 #include "util/directory.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 // Sword includes:
 #include <installmgr.h>
@@ -96,7 +96,7 @@ void BtSourceArea::initView() {
     // There are no views for the stack yet, see initSources
     m_view = new QTreeWidget(this);
     m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Description"));
-    m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
+    m_view->setColumnWidth(0, util::tool::mWidth(m_view, 20));
     mainLayout->addWidget(m_view);
 
     connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
@@ -206,7 +206,7 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
 
 
             QString descr(mInfo->config(CSwordModuleInfo::Description));
-            QString toolTipText = CToolClass::remoteModuleToolTip(mInfo, installedV);
+            QString toolTipText = util::tool::remoteModuleToolTip(mInfo, installedV);
 
             widgetItem->setText(1, descr);
             widgetItem->setToolTip(0, toolTipText);

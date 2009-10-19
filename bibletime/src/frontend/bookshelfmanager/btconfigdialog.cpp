@@ -21,7 +21,7 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include "util/directory.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 BtConfigDialog::BtConfigDialog(QWidget* parent)
@@ -68,7 +68,7 @@ void BtConfigDialog::addPage(BtConfigPage* pageWidget) {
     pageWidget->m_parentDialog = this;
 
     QVBoxLayout* containerLayout = new QVBoxLayout;
-    QLabel* headerLabel = CToolClass::explanationLabel(pageWidget, pageWidget->header(), pageWidget->label());
+    QLabel* headerLabel = util::tool::explanationLabel(pageWidget, pageWidget->header(), pageWidget->label());
     containerLayout->addWidget(headerLabel);
     containerLayout->addWidget(pageWidget);
     QWidget* containerWidget = new QWidget(m_pageWidget);

@@ -18,7 +18,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/directory.h"
 
 
@@ -46,9 +46,9 @@ void CModuleResultView::initView() {
     setToolTip(tr("Works chosen for the search and the number of the hits in each work"));
     setHeaderLabels( QStringList(tr("Work")) << tr("Hits") );
 
-    setColumnWidth(0, CToolClass::mWidth(this, 8));
-    setColumnWidth(1, CToolClass::mWidth(this, 4));
-    QSize sz(CToolClass::mWidth(this, 13), CToolClass::mWidth(this, 5));
+    setColumnWidth(0, util::tool::mWidth(this, 8));
+    setColumnWidth(1, util::tool::mWidth(this, 4));
+    QSize sz(util::tool::mWidth(this, 13), util::tool::mWidth(this, 5));
     //setMinimumSize(sz);
     m_size = sz;
     //TODO: sorting
@@ -119,7 +119,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
         item = new QTreeWidgetItem(this, QStringList((*it)->name()) << QString::number(result.Count()) );
         //TODO: item->setColumnSorting(1, util::CSortListViewItem::Number);
 
-        item->setIcon(0, CToolClass::getIconForModule(*it) );
+        item->setIcon(0, util::tool::getIconForModule(*it) );
         oldItem = item;
         //----------------------------------------------------------------------
         // we need to make a decision here.  Either don't show any Strong's

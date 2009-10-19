@@ -27,7 +27,7 @@
 #include "frontend/searchdialog/cmoduleresultview.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/searchdialog/csearchresultview.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 namespace Search {
@@ -51,7 +51,7 @@ void BtSearchResultArea::initView() {
 
     //Size is calculated from the font rather than set in pixels,
     // maybe this is better in different kinds of displays?
-    int mWidth = CToolClass::mWidth(this, 1);
+    int mWidth = util::tool::mWidth(this, 1);
     this->setMinimumSize(QSize(mWidth*40, mWidth*15));
     mainLayout = new QVBoxLayout(this);
     mainSplitter = new QSplitter(this);
@@ -452,7 +452,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
         //while ( (index = ret.find(findExp, index)) != -1 ) { //while we found the word
         while ( (index = findExp.indexIn(ret, index)) != -1 ) { //while we found the word
             matchLen = findExp.matchedLength();
-            if (!CToolClass::inHTMLTag(index, ret)) {
+            if (!util::tool::inHTMLTag(index, ret)) {
                 length = matchLen;
                 ret = ret.insert( index + length, rep2 );
                 ret = ret.insert( index, rep1 );

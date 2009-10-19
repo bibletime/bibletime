@@ -29,7 +29,7 @@
 #include "frontend/keychooser/ckeychooser.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
@@ -193,7 +193,7 @@ void CLexiconReadWindow::initView() {
     buttonsToolBar()->setAllowedAreas(Qt::TopToolBarArea);
     buttonsToolBar()->setFloatable(false);
     addToolBar(buttonsToolBar());
-    setWindowIcon(CToolClass::getIconForModule(modules().first()));
+    setWindowIcon(util::tool::getIconForModule(modules().first()));
     setCentralWidget( displayWidget()->view() );
 }
 
@@ -218,7 +218,7 @@ void CLexiconReadWindow::initToolbars() {
 
 void CLexiconReadWindow::setupPopupMenu() {
     popup()->setTitle(tr("Lexicon window"));
-    popup()->setIcon(CToolClass::getIconForModule(modules().first()));
+    popup()->setIcon(util::tool::getIconForModule(modules().first()));
     popup()->addAction(m_actions.findText);
     popup()->addAction(m_actions.findStrongs);
     popup()->addAction(m_actions.selectAll);

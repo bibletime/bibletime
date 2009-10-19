@@ -16,7 +16,7 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 //This ctor creates the root item and the tree.
@@ -111,7 +111,7 @@ QString BTModuleTreeItem::iconName() const {
         }
     }
     else if (m_type == Module) {
-        return CToolClass::getIconNameForModule(m_moduleInfo);
+        return util::tool::getIconNameForModule(m_moduleInfo);
     }
     else if (m_type == Language) {
         //TODO: don't hardcode here

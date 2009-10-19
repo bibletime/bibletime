@@ -21,7 +21,7 @@
 #include <QWidget>
 #include "backend/config/cbtconfig.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/cpointers.h"
 
 
@@ -48,7 +48,7 @@ StandardWorksTab::StandardWorksTab()
     gridLayout->setSizeConstraint(QLayout::SetMinimumSize);
 
     gridLayout->addWidget(
-        CToolClass::explanationLabel(
+        util::tool::explanationLabel(
             this,
             tr(""),
             tr("Standard works are used when no particular work is specified, \
@@ -257,7 +257,7 @@ StandardWorksTab::StandardWorksTab()
 TextFiltersTab::TextFiltersTab() {
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setMargin(5);
-    QWidget* eLabel = CToolClass::explanationLabel(
+    QWidget* eLabel = util::tool::explanationLabel(
                           this,
                           tr(""),
                           tr("Filters control the appearance of text. \

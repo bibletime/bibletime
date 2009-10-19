@@ -26,7 +26,6 @@
 #include "frontend/searchdialog/btsearchoptionsarea.h"
 #include "frontend/searchdialog/btsearchresultarea.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 

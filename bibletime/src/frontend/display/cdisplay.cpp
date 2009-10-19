@@ -19,7 +19,7 @@
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/display/chtmlwritedisplay.h"
 #include "frontend/display/cplainwritedisplay.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 typedef BtHtmlReadDisplay HTMLREADDISPLAY;
@@ -154,7 +154,7 @@ bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart p
     const QString filename = QFileDialog::getSaveFileName(0, QObject::tr("Save document ..."), "", filter);
 
     if (!filename.isEmpty()) {
-        CToolClass::savePlainFile(filename, content);
+        util::tool::savePlainFile(filename, content);
     }
     return true;
 }

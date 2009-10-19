@@ -23,7 +23,7 @@
 #include "frontend/keychooser/cbooktreechooser.h"
 #include "frontend/profile/cprofilewindow.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 using namespace Profile;
@@ -115,7 +115,7 @@ void CBookReadWindow::initView() {
     m_treeChooser->hide();
 
     setCentralWidget( splitter );
-    setWindowIcon(CToolClass::getIconForModule(modules().first()));
+    setWindowIcon(util::tool::getIconForModule(modules().first()));
 }
 
 void CBookReadWindow::initToolbars() {

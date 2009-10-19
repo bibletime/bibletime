@@ -17,7 +17,7 @@
 #include "frontend/searchdialog/analysis/csearchanalysisitem.h"
 #include "frontend/searchdialog/analysis/csearchanalysislegenditem.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 namespace Search {
@@ -275,7 +275,7 @@ void CSearchAnalysisScene::saveAsHTML() {
     text += QString("<center>") + tr("Created by <a href=\"http://www.bibletime.info/\">BibleTime</a>") + QString("</center>");
     text += QString("</body></html>");
 
-    CToolClass::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
+    util::tool::savePlainFile(fileName, text, false, QTextCodec::codecForName("UTF8"));
 }
 
 void CSearchAnalysisScene::resizeHeight(int height) {

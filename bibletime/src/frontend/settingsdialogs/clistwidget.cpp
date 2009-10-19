@@ -9,7 +9,7 @@
 
 #include "frontend/settingsdialogs/clistwidget.h"
 
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 CListWidget::CListWidget(QWidget* parent)
@@ -26,5 +26,5 @@ QSize CListWidget::sizeHint () const {
 }
 
 void CListWidget::setCharWidth(int width) {
-    setMaximumWidth(CToolClass::mWidth(this, width));
+    setMaximumWidth(util::tool::mWidth(this, width));
 }

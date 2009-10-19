@@ -41,7 +41,7 @@
 #include "frontend/mainindex/bookmarks/btbookmarkloader.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 #include "util/directory.h"
 #include "util/dialogutil.h"
 
@@ -246,7 +246,7 @@ void CBookmarkIndex::paintEvent(QPaintEvent* event) {
     // Initialize the static variables, including the arrow pixmap
     if (!arrowInitialized) {
         arrowInitialized = true;
-        int arrowSize = CToolClass::mWidth(this, 1);
+        int arrowSize = util::tool::mWidth(this, 1);
         QString fileName;
         if (DU::getIconDir().exists("pointing_arrow.svg")) {
             fileName = DU::getIconDir().filePath("pointing_arrow.svg");

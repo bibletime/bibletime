@@ -25,7 +25,7 @@
 #include "util/dialogutil.h"
 #include "util/directory.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 
 BtInstallPathDialog::BtInstallPathDialog() {
@@ -42,7 +42,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     QString l1 = tr("Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.");
     QString l2 = tr("BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. \".sword\" directory in your home directory is always used automatically and can't be removed or added.");
 
-    QLabel* mainLabel = CToolClass::explanationLabel(this,
+    QLabel* mainLabel = util::tool::explanationLabel(this,
                         tr("Configure bookshelf paths"), l1 + QString("<small><br/><br/>") + l2 + QString("</small>"));
     mainLayout->addWidget(mainLabel);
 

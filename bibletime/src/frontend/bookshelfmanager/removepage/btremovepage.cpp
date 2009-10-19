@@ -25,7 +25,7 @@
 #include "util/dialogutil.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
+#include "util/tool.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -45,7 +45,7 @@ BtRemovePage::BtRemovePage()
 
     m_view = new QTreeWidget(this);
     m_view->setHeaderLabels(QStringList() << tr("Work") << tr("Install path"));
-    m_view->setColumnWidth(0, CToolClass::mWidth(m_view, 20));
+    m_view->setColumnWidth(0, util::tool::mWidth(m_view, 20));
 
     layout->addWidget( m_view, 2, 0, 1, 2);
 
@@ -112,7 +112,7 @@ void BtRemovePage::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
             // (install path, is still available from some source)
 
             QString descr(mInfo->config(CSwordModuleInfo::AbsoluteDataPath));
-            QString toolTipText = CToolClass::moduleToolTip(mInfo);
+            QString toolTipText = util::tool::moduleToolTip(mInfo);
             widgetItem->setText(1, descr);
             widgetItem->setToolTip(0, toolTipText);
             widgetItem->setToolTip(1, descr);

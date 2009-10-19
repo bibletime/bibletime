@@ -34,7 +34,6 @@
 #include "frontend/profile/cprofilewindow.h"
 #include "frontend/searchdialog/csearchdialog.h"
 #include "frontend/settingsdialogs/cconfigurationdialog.h"
-#include "util/ctoolclass.h"
 #include "util/directory.h"
 
 

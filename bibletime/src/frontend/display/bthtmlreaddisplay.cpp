@@ -22,7 +22,6 @@
 #include "frontend/displaywindow/creadwindow.h"
 #include "util/directory.h"
 #include "util/cpointers.h"
-#include "util/ctoolclass.h"
 
 
 using namespace InfoDisplay;

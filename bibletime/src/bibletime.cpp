@@ -36,7 +36,6 @@
 #include "frontend/displaywindow/cwritewindow.h"
 #include "frontend/keychooser/ckeychooser.h"
 #include "frontend/searchdialog/csearchdialog.h"
-#include "util/ctoolclass.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
 #include "util/directory.h"

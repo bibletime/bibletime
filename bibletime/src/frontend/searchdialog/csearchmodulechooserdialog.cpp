@@ -24,7 +24,6 @@
 #include "backend/managers/cswordbackend.h"
 #include "util/cpointers.h"
 #include "util/cresmgr.h"
-#include "util/ctoolclass.h"
 #include "util/directory.h"
 
 
