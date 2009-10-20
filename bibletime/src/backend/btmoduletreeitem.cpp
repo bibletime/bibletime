@@ -65,7 +65,7 @@ BTModuleTreeItem::~BTModuleTreeItem() {
 }
 
 QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
-    //qDebug("BTModuleTreeItem::children");
+    //qDebug() << "BTModuleTreeItem::children";
     QList<BTModuleTreeItem*> childList;
     if (m_firstChild) {
         BTModuleTreeItem* child = m_firstChild;
@@ -123,7 +123,7 @@ QString BTModuleTreeItem::iconName() const {
 
 
 void BTModuleTreeItem::create_tree(QList<BTModuleTreeItem::Filter*>& filters, BTModuleTreeItem::Grouping grouping) {
-    qDebug("BTModuleTreeItem::create_tree");
+    qDebug() << "BTModuleTreeItem::create_tree";
     static bool map_initialized = false;
     static QMap<CSwordModuleInfo::Category, QString> CategoryNamesMap;
     if (!map_initialized) {
@@ -215,7 +215,7 @@ BTModuleTreeItem* BTModuleTreeItem::create_parent_item(
 }
 
 void BTModuleTreeItem::sort_children(BTModuleTreeItem* parent) {
-    //qDebug("BTModuleTreeItem::sort_children");
+    //qDebug() << "BTModuleTreeItem::sort_children";
 
     // sort each child recursively depth-first
     foreach(BTModuleTreeItem* item, parent->children()) {

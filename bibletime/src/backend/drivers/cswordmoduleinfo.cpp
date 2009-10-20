@@ -719,7 +719,7 @@ bool CSwordModuleInfo::deleteEntry(CSwordKey * const key) {
 
 /** Returns the category of this module. See CSwordModuleInfo::Category for possible values. */
 CSwordModuleInfo::Category CSwordModuleInfo::category() const {
-    //qDebug("CSwordModuleInfo::category");
+    //qDebug() << "CSwordModuleInfo::category";
     if (m_dataCache.category == CSwordModuleInfo::UnknownCategory) {
         const QString cat(m_module->getConfigEntry("Category"));
         //qDebug() << "the category was unknown, add a category "<< cat << "for module" << m_module->Name();

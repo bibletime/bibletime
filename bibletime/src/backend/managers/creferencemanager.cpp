@@ -11,6 +11,7 @@
 
 #include <algorithm>
 #include <QRegExp>
+#include <QDebug>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordversekey.h"
 #include "util/cpointers.h"
@@ -348,7 +349,7 @@ const QString CReferenceManager::parseVerseReference( const QString& ref, const 
     }
 
     if ((mod->type() != CSwordModuleInfo::Bible) && (mod->type() != CSwordModuleInfo::Commentary)) {
-        qDebug("CReferenceManager: Only verse based modules are supported as ref destination module");
+        qDebug() << "CReferenceManager: Only verse based modules are supported as ref destination module";
         return QString::null;
     }
 

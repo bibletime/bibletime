@@ -106,7 +106,7 @@ const QString CDisplayRendering::keyToHTMLAnchor(const QString& key) {
 
 const QString CDisplayRendering::finishText( const QString& oldText, KeyTree& tree ) {
     QList<CSwordModuleInfo*> modules = collectModules(&tree);
-    qDebug("CDisplayRendering::finishText");
+    qDebug() << "CDisplayRendering::finishText";
 
     //marking words is very slow, we have to find a better solution
 

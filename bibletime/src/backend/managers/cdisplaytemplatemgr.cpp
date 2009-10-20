@@ -67,7 +67,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
 
     if (moduleCount >= 2) {
         //create header for the modules
-        qDebug("There were more than 1 module, create headers");
+        qDebug() << "There were more than 1 module, create headers";
         QString header;
 
         QList<CSwordModuleInfo*>::iterator end_it = settings.modules.end();
@@ -91,7 +91,7 @@ const QString CDisplayTemplateMgr::fillTemplate( const QString& name, const QStr
     CLanguageMgr::LangMap langMap = CPointers::languageMgr()->availableLanguages();
 
     qDebug() << "langMap length:" << langMap.count();
-    qDebug("loop through langMap");
+    qDebug() << "loop through langMap";
     foreach(const CLanguageMgr::Language* lang, langMap) {
         //const CLanguageMgr::Language* lang = *it;
         //qDebug() << "foreach, lang: ";

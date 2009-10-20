@@ -710,7 +710,7 @@ CSwordBackend::FilterOptions getFilterOptionDefaults() {
 
 void setupAccelSettings(const keys type,
                         BtActionCollection * const actionCollection) {
-    qDebug("CBTConfig::setupAccelSettings begin");
+    qDebug() << "CBTConfig::setupAccelSettings begin";
     QString groupName;
     switch (type) {
         case allWindows:
@@ -743,12 +743,12 @@ void setupAccelSettings(const keys type,
 
     actionCollection->setConfigGroup(groupName);
     actionCollection->readSettings();
-    qDebug("CBTConfig::setupAccelSettings end");
+    qDebug() << "CBTConfig::setupAccelSettings end";
 }
 
 void saveAccelSettings(const keys type,
                        BtActionCollection * const actionCollection) {
-    qDebug("CBTConfig::saveAccelSettings begin");
+    qDebug() << "CBTConfig::saveAccelSettings begin";
     QString groupName;
     switch (type) {
         case allWindows:
@@ -779,7 +779,7 @@ void saveAccelSettings(const keys type,
 
     actionCollection->setConfigGroup(groupName);
     actionCollection->writeSettings();
-    qDebug("CBTConfig::saveAccelSettings end");
+    qDebug() << "CBTConfig::saveAccelSettings end";
 }
 
 
