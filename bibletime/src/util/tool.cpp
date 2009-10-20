@@ -94,7 +94,7 @@ QIcon util::tool::getIconForModule( CSwordModuleInfo* module_info ) {
 
 /** Returns the name for the icon used for the module given as aparameter. */
 QString util::tool::getIconNameForModule( CSwordModuleInfo* module_info ) {
-    //qDebug("util::tool::getIconNameForModule");
+    //qDebug() << "util::tool::getIconNameForModule";
     if (!module_info) return CResMgr::modules::book::icon_locked;
 
     if (module_info->category() == CSwordModuleInfo::Cult) {

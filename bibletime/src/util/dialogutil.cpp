@@ -27,7 +27,7 @@ void replaceText(QDialogButtonBox *box, QDialogButtonBox::StandardButton flag,
 }
 
 QMessageBox::StandardButton bt_messageBox(QMessageBox::Icon icon, QWidget * parent, const QString & title, const QString & text, QMessageBox::StandardButtons buttons, QMessageBox::StandardButton defaultButton) {
-    qDebug("BT message box warning/information/critical");
+    qDebug() << "BT message box warning/information/critical";
     QMessageBox messageBox(icon, title, text, QMessageBox::Ok, parent);
     //We need the button box to translate the strings (the idea of this whole function)
     QDialogButtonBox* box = dynamic_cast<QDialogButtonBox*>(messageBox.button(QMessageBox::Ok)->parent());
