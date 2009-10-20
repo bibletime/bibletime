@@ -188,7 +188,7 @@
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Otevřít Návod, jak studovat Bibli obsažený v BiblTime &lt;BR&gt; Tento návod je úvod k efektivnímu studiu Bible.</translation>
+        <translation type="obsolete">Otevřít Návod, jak studovat Bibli obsažený v BiblTime &lt;BR&gt; Tento návod je úvod k efektivnímu studiu Bible.</translation>
     </message>
     <message>
         <source>Search in all works that are currently open</source>
@@ -260,6 +260,10 @@
     </message>
     <message>
         <source>O&amp;pen Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1154,91 +1158,91 @@ shortcut</source>
     <name>CBookshelfIndex</name>
     <message>
         <source>Bookshelf</source>
-        <translation>Knihovna</translation>
+        <translation type="obsolete">Knihovna</translation>
     </message>
     <message>
         <source>Grouping</source>
-        <translation>Seskupování</translation>
+        <translation type="obsolete">Seskupování</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation>Kategorie/Jazyk</translation>
+        <translation type="obsolete">Kategorie/Jazyk</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation>Jazyk/kategorie</translation>
+        <translation type="obsolete">Jazyk/kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Upravit</translation>
+        <translation type="obsolete">Upravit</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Hledat</translation>
+        <translation type="obsolete">Hledat</translation>
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
-        <translation>Vložte klíč k odemknutí modulu.</translation>
+        <translation type="obsolete">Vložte klíč k odemknutí modulu.</translation>
     </message>
     <message>
         <source>Search...</source>
-        <translation>Hledat...</translation>
+        <translation type="obsolete">Hledat...</translation>
     </message>
     <message>
         <source>Unlock...</source>
-        <translation>Odemknout...</translation>
+        <translation type="obsolete">Odemknout...</translation>
     </message>
     <message>
         <source>About...</source>
-        <translation>O...</translation>
+        <translation type="obsolete">O...</translation>
     </message>
     <message>
         <source>Hide/Unhide Works</source>
-        <translation>Zkrýt/Ukázat díla</translation>
+        <translation type="obsolete">Zkrýt/Ukázat díla</translation>
     </message>
     <message>
         <source>Select the works to be hidden.</source>
-        <translation>Vyberte díla ke skrytí.</translation>
+        <translation type="obsolete">Vyberte díla ke skrytí.</translation>
     </message>
     <message>
         <source>Works only</source>
-        <translation>Pouze díla</translation>
+        <translation type="obsolete">Pouze díla</translation>
     </message>
     <message>
         <source>Hide/unhide works...</source>
-        <translation>Skrýt Ukázat díla...</translation>
+        <translation type="obsolete">Skrýt Ukázat díla...</translation>
     </message>
     <message>
         <source>Show hidden</source>
-        <translation>Ukázat skryté</translation>
+        <translation type="obsolete">Ukázat skryté</translation>
     </message>
     <message>
         <source>Plain text...</source>
-        <translation>Čistý text...</translation>
+        <translation type="obsolete">Čistý text...</translation>
     </message>
     <message>
         <source>HTML...</source>
-        <translation>HTML...</translation>
+        <translation type="obsolete">HTML...</translation>
     </message>
     <message>
         <source>Search in %1...</source>
-        <translation>Hledat v %1</translation>
+        <translation type="obsolete">Hledat v %1</translation>
     </message>
     <message>
         <source>Search in selected...</source>
-        <translation>Hledat ve vybraných...</translation>
+        <translation type="obsolete">Hledat ve vybraných...</translation>
     </message>
     <message>
         <source>Unlock Work</source>
-        <translation>Odemknout dílo</translation>
+        <translation type="obsolete">Odemknout dílo</translation>
     </message>
 </context>
 <context>
@@ -1958,7 +1962,7 @@ shortcut</source>
     </message>
     <message>
         <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation>Zdroj s tímto titulkem již existuje.&lt;br&gt;Prosím zadejte jiný titulek.</translation>
+        <translation type="obsolete">Zdroj s tímto titulkem již existuje.&lt;br&gt;Prosím zadejte jiný titulek.</translation>
     </message>
     <message>
         <source>Please provide a server name.</source>
@@ -1975,6 +1979,10 @@ shortcut</source>
     <message>
         <source>New  Installation Source</source>
         <translation>Nový instalační zdroj</translation>
+    </message>
+    <message>
+        <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

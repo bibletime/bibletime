@@ -168,7 +168,7 @@
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation>Öffne die Anleitung zum Bibelstudium, welche zu BibleTime gehört.&lt;br/&gt;Das ist eine Einführung in effizientes Bibelstudium.</translation>
+        <translation type="obsolete">Öffne die Anleitung zum Bibelstudium, welche zu BibleTime gehört.&lt;br/&gt;Das ist eine Einführung in effizientes Bibelstudium.</translation>
     </message>
     <message>
         <source>Search in all works that are currently open</source>
@@ -260,6 +260,10 @@
     </message>
     <message>
         <source>O&amp;pen Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1154,91 +1158,91 @@ shortcut</source>
     <name>CBookshelfIndex</name>
     <message>
         <source>Bookshelf</source>
-        <translation>Bücherregal</translation>
+        <translation type="obsolete">Bücherregal</translation>
     </message>
     <message>
         <source>Grouping</source>
-        <translation>Gruppierung</translation>
+        <translation type="obsolete">Gruppierung</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation>Kategorie/Sprache</translation>
+        <translation type="obsolete">Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation>Kategorie</translation>
+        <translation type="obsolete">Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation>Sprache/Kategorie</translation>
+        <translation type="obsolete">Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Sprache</translation>
+        <translation type="obsolete">Sprache</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Bearbeiten</translation>
+        <translation type="obsolete">Bearbeiten</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Suche</translation>
+        <translation type="obsolete">Suche</translation>
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
-        <translation>Geben Sie den Schlüssel für dieses Werke ein</translation>
+        <translation type="obsolete">Geben Sie den Schlüssel für dieses Werke ein</translation>
     </message>
     <message>
         <source>Search...</source>
-        <translation>Suche...</translation>
+        <translation type="obsolete">Suche...</translation>
     </message>
     <message>
         <source>Unlock...</source>
-        <translation>Entschlüsseln...</translation>
+        <translation type="obsolete">Entschlüsseln...</translation>
     </message>
     <message>
         <source>About...</source>
-        <translation>Über...</translation>
+        <translation type="obsolete">Über...</translation>
     </message>
     <message>
         <source>Hide/Unhide Works</source>
-        <translation>Werke verstecken/zeigen</translation>
+        <translation type="obsolete">Werke verstecken/zeigen</translation>
     </message>
     <message>
         <source>Select the works to be hidden.</source>
-        <translation>Wählen Sie Werke aus, die versteckt werden sollen.</translation>
+        <translation type="obsolete">Wählen Sie Werke aus, die versteckt werden sollen.</translation>
     </message>
     <message>
         <source>Works only</source>
-        <translation>Nur Werke</translation>
+        <translation type="obsolete">Nur Werke</translation>
     </message>
     <message>
         <source>Hide/unhide works...</source>
-        <translation>Werke sichtbar/unsichtbar machen...</translation>
+        <translation type="obsolete">Werke sichtbar/unsichtbar machen...</translation>
     </message>
     <message>
         <source>Show hidden</source>
-        <translation>Versteckte anzeigen</translation>
+        <translation type="obsolete">Versteckte anzeigen</translation>
     </message>
     <message>
         <source>Plain text...</source>
-        <translation>Reintext...</translation>
+        <translation type="obsolete">Reintext...</translation>
     </message>
     <message>
         <source>HTML...</source>
-        <translation>HTML...</translation>
+        <translation type="obsolete">HTML...</translation>
     </message>
     <message>
         <source>Search in selected...</source>
-        <translation>In ausgewählten suchen...</translation>
+        <translation type="obsolete">In ausgewählten suchen...</translation>
     </message>
     <message>
         <source>Unlock Work</source>
-        <translation>Werk lösen</translation>
+        <translation type="obsolete">Werk lösen</translation>
     </message>
     <message>
         <source>Search in %1...</source>
-        <translation>Suche in %1...</translation>
+        <translation type="obsolete">Suche in %1...</translation>
     </message>
 </context>
 <context>
@@ -1958,7 +1962,7 @@ shortcut</source>
     </message>
     <message>
         <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation>Eine Quelle mit diesem Titel existiert bereits.&lt;br&gt;Bitte geben Sie einen anderen Titel an.</translation>
+        <translation type="obsolete">Eine Quelle mit diesem Titel existiert bereits.&lt;br&gt;Bitte geben Sie einen anderen Titel an.</translation>
     </message>
     <message>
         <source>Please provide a server name.</source>
@@ -1975,6 +1979,10 @@ shortcut</source>
     <message>
         <source>New  Installation Source</source>
         <translation>Neue Installationsquelle</translation>
+    </message>
+    <message>
+        <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
