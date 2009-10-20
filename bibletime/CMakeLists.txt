@@ -244,7 +244,7 @@ IF (MSVC)
 		DESTINATION "${BT_SHARE_PATH}share/sword/locales.d/"
 	)
 	# sword config file
-	FILE(GLOB INSTALL_SWORD_CONF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/src/sword/sword.conf)
+	FILE(GLOB INSTALL_SWORD_CONF_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/platforms/windoze/sword/sword.conf)
 	INSTALL(FILES ${INSTALL_SWORD_CONF_FILE}
 		DESTINATION "${BT_DESTINATION}"
 	)
