@@ -1,3 +1,6 @@
+2009-10-20 Martin Gruner <mgruner@crosswire.org>
+	* Fixed bug: Apply display filters correctly when restoring profiles, like on startup.
+
 2009-10-19 Martin Gruner <mgruner@crosswire.org>
 	* Improved TEI filter (shows crossrefs correctly now).
 	* Fixed some text formatting settings in the display templates.
