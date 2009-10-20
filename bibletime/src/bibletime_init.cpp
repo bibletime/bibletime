@@ -439,7 +439,7 @@ void BibleTime::initConnections() {
 
 /** Initializes the backend */
 void BibleTime::initBackends() {
-    qDebug("BibleTime::initBackends");
+    qDebug() << "BibleTime::initBackends";
 
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(1);
@@ -457,7 +457,7 @@ void BibleTime::initBackends() {
 // 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
 // 			{
 // 				KStartupLogo::hideSplash();
-// 				qDebug("case CSwordBackend::NoSwordConfig");
+// 				qDebug() << "case CSwordBackend::NoSwordConfig";
 // 				BookshelfManager::CSwordSetupDialog dlg;
 // 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
 // 				dlg.exec();
@@ -467,7 +467,7 @@ void BibleTime::initBackends() {
 // 			case CSwordBackend::NoModules: //no modules installed, but config exists
 // 			{
 // 				KStartupLogo::hideSplash();
-// 				qDebug("case CSwordBackend::NoModules");
+// 				qDebug() << "case CSwordBackend::NoModules";
 // 				BookshelfManager::CSwordSetupDialog dlg;
 // 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Install );
 // 				dlg.exec();
@@ -477,7 +477,7 @@ void BibleTime::initBackends() {
 // 			default: //unknown error
 // 			{
 // 				KStartupLogo::hideSplash();
-// 				qDebug("unknown error");
+// 				qDebug() << "unknown error";
 // 				BookshelfManager::CSwordSetupDialog dlg;
 // 				dlg.showPart( BookshelfManager::CSwordSetupDialog::Sword );
 // 				dlg.exec();
@@ -495,7 +495,7 @@ void BibleTime::initBackends() {
 }
 
 void BibleTime::applyProfileSettings( CProfile* p ) {
-    qDebug("BibleTime::applyProfileSettings");
+    qDebug() << "BibleTime::applyProfileSettings";
     Q_ASSERT(p);
     if (!p) return;
 

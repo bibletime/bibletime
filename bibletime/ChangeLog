@@ -1,5 +1,6 @@
 2009-10-20 Martin Gruner <mgruner@crosswire.org>
 	* Fixed bug: Apply display filters correctly when restoring profiles, like on startup.
+	* Refactoring: switched qDebug("text") to more current qDebug() << "text".
 
 2009-10-19 Martin Gruner <mgruner@crosswire.org>
 	* Improved TEI filter (shows crossrefs correctly now).

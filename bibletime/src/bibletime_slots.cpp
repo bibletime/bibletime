@@ -64,7 +64,7 @@ using namespace Profile;
 
 /** Opens the optionsdialog of BibleTime. */
 void BibleTime::slotSettingsOptions() {
-    qDebug("BibleTime::slotSettingsOptions");
+    qDebug() << "BibleTime::slotSettingsOptions";
     CConfigurationDialog *dlg = new CConfigurationDialog(this, m_actionCollection);
     QObject::connect(dlg, SIGNAL(signalSettingsChanged()), this, SLOT(slotSettingsChanged()) );
 
@@ -80,7 +80,7 @@ void BibleTime::saveConfigSettings() {
 
 /** Is called when settings in the optionsdialog were changed (ok or apply) */
 void BibleTime::slotSettingsChanged() {
-    qDebug("BibleTime::slotSettingsChanged");
+    qDebug() << "BibleTime::slotSettingsChanged";
     const QString language = CBTConfig::get(CBTConfig::language);
     CPointers::backend()->booknameLanguage(language);
 
@@ -97,7 +97,7 @@ void BibleTime::slotSettingsChanged() {
     refreshBibleTimeAccel();
     refreshDisplayWindows();
     refreshProfileMenus();
-    qDebug("BibleTime::slotSettingsChanged");
+    qDebug() << "BibleTime::slotSettingsChanged";
 }
 
 /** Opens the sword setup dialog of BibleTime. */
