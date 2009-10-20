@@ -19,7 +19,7 @@ BtVerseKeyMenu::BtVerseKeyMenu(QWidget* parent)
         : QMenu(parent),
         m_timerId(0),
         m_firstClickLock(true) {
-    qDebug("BtVerseKeyMenu::BtVerseKeyMenu");
+    qDebug() << "BtVerseKeyMenu::BtVerseKeyMenu";
     QObject::connect(this, SIGNAL(aboutToShow()), this, SLOT(startFirstClickDelayTimer()));
 }
 

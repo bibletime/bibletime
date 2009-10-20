@@ -34,7 +34,7 @@ namespace instbackend {
 
 /** Adds the source described by Source to the backend. */
 bool addSource(sword::InstallSource& source) {
-    qDebug("backend::addSource");
+    qDebug() << "backend::addSource";
     SWConfig config(configFilename().toLatin1());
     if (!strcmp(source.type, "FTP")) {
         //make sure the path doesn't have a trailing slash, sword doesn't like it
@@ -53,7 +53,7 @@ bool addSource(sword::InstallSource& source) {
 
 /** Returns the Source struct. */
 sword::InstallSource source(QString name) {
-    qDebug("backend::source");
+    qDebug() << "backend::source";
     BtInstallMgr mgr;
     InstallSourceMap::iterator source = mgr.sources.find(name.toLatin1().data());
     if (source != mgr.sources.end()) {
@@ -88,7 +88,7 @@ sword::InstallSource source(QString name) {
 
 /** Deletes the source. */
 bool deleteSource(QString name) {
-    qDebug("backend::deleteSource");
+    qDebug() << "backend::deleteSource";
     sword::InstallSource is = source(name );
 
     SWConfig config(configFilename().toLatin1());
@@ -142,7 +142,7 @@ const QString configFilename() {
 }
 
 QStringList targetList() {
-    qDebug("backend::targetList");
+    qDebug() << "backend::targetList";
     QStringList names = CPointers::backend()->swordDirList();
     return names;
 }
@@ -150,7 +150,7 @@ QStringList targetList() {
 bool setTargetList( const QStringList& targets ) {
     namespace DU = util::directory;
 
-    qDebug("backend::setTargetList");
+    qDebug() << "backend::setTargetList";
     //saves a new Sword config using the provided target list
     //QString filename = KGlobal::dirs()->saveLocation("data", "bibletime/") + "sword.conf"; //default is to assume the real location isn't writable
     //QString filename = util::DirectoryUtil::getUserBaseDir().canonicalPath().append("/.sword/sword.conf");
@@ -199,7 +199,7 @@ bool setTargetList( const QStringList& targets ) {
 }
 
 QStringList sourceList() {
-    qDebug("backend::sourceList");
+    qDebug() << "backend::sourceList";
     BtInstallMgr mgr;
     Q_ASSERT(mgr.installConf);
 
@@ -230,7 +230,7 @@ QStringList sourceList() {
 
 
 void initPassiveFtpMode() {
-    qDebug("backend::initPassiveFtpMode");
+    qDebug() << "backend::initPassiveFtpMode";
     SWConfig config(configFilename().toLatin1());
     config["General"]["PassiveFTP"] = "true";
     config.Save();
@@ -238,7 +238,7 @@ void initPassiveFtpMode() {
 const QString swordConfigFilename() {
     namespace DU = util::directory;
 
-    qDebug("backend::swordConfigFilename");
+    qDebug() << "backend::swordConfigFilename";
     qDebug() << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
     return DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
 }
@@ -250,7 +250,7 @@ const QDir swordDir() {
 }
 
 CSwordBackend* backend( const sword::InstallSource& is) {
-    qDebug("backend::backend");
+    qDebug() << "backend::backend";
     CSwordBackend* ret = 0;
     if (isRemote(is)) {
         ret = new CSwordBackend( QString(is.localShadow.c_str()), false );

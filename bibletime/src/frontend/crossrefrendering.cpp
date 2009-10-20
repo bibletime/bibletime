@@ -22,7 +22,7 @@ CrossRefRendering::CrossRefRendering( CSwordBackend::DisplayOptions displayOptio
         : CHTMLExportRendering(Settings(), displayOptions, filterOptions) {}
 
 const QString CrossRefRendering::finishText( const QString& text, KeyTree& ) {
-    //   qDebug("CrossRefRendering::finishText");
+    //   qDebug() << "CrossRefRendering::finishText";
     return text;
 }
 

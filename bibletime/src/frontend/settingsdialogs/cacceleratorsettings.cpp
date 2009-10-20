@@ -128,7 +128,7 @@ CAcceleratorSettingsPage::CAcceleratorSettingsPage(QWidget* /* parent */ )
     slotKeyChooserTypeChanged(m_application.title);
 
     m_typeChooser->setFocus(Qt::MouseFocusReason);
-    qDebug("CAcceleratorSettingsPage::CAcceleratorSettingsPage end");
+    qDebug() << "CAcceleratorSettingsPage::CAcceleratorSettingsPage end";
 }
 
 CAcceleratorSettingsPage::~CAcceleratorSettingsPage() {

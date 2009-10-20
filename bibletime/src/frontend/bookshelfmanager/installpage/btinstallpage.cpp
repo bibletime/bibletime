@@ -58,13 +58,13 @@
 
 BtInstallPage::BtInstallPage()
         : BtConfigPage() {
-    qDebug("BtInstallPage::BtInstallPage() start");
+    qDebug() << "BtInstallPage::BtInstallPage() start";
     initView();
     initConnections();
 }
 
 void BtInstallPage::setInstallEnabled(bool b) {
-    qDebug("void BtInstallPage::setInstallEnabled(bool b) start");
+    qDebug() << "void BtInstallPage::setInstallEnabled(bool b) start";
     m_installButton->setEnabled(b);
 }
 
@@ -75,7 +75,7 @@ QString BtInstallPage::selectedInstallPath() {
 void BtInstallPage::initView() {
     namespace DU = util::directory;
 
-    qDebug("void BtInstallPage::initView() start");
+    qDebug() << "void BtInstallPage::initView() start";
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // installation path chooser
@@ -122,7 +122,7 @@ void BtInstallPage::initView() {
 }
 
 void BtInstallPage::initConnections() {
-    qDebug("void BtInstallPage::initConnections() start");
+    qDebug() << "void BtInstallPage::initConnections() start";
     QObject::connect(m_pathCombo, SIGNAL(activated(const QString&)), this , SLOT(slotPathChanged(const QString&)));
     QObject::connect(m_configurePathButton, SIGNAL(clicked()), this, SLOT(slotEditPaths()));
     QObject::connect(m_installButton, SIGNAL(clicked()), m_sourceWidget, SLOT(slotInstall()) );
@@ -132,7 +132,7 @@ void BtInstallPage::initConnections() {
 }
 
 void BtInstallPage::initPathCombo() {
-    qDebug("void BtInstallPage::initPathCombo() start");
+    qDebug() << "void BtInstallPage::initPathCombo() start";
     //populate the combo list
     m_pathCombo->clear();
 
@@ -153,7 +153,7 @@ void BtInstallPage::slotPathChanged(const QString& /*pathText*/) {
 }
 
 void BtInstallPage::slotEditPaths() {
-    qDebug("void BtInstallPage::slotEditPaths() start");
+    qDebug() << "void BtInstallPage::slotEditPaths() start";
 
     BtInstallPathDialog* dlg = new BtInstallPathDialog();
     int result = dlg->exec();

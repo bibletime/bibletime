@@ -92,7 +92,7 @@ void CModuleChooserDialog::initView() {
 
 
 void CModuleChooserDialog::initTree() {
-    //qDebug("CModuleChooserDialog::initTree");
+    //qDebug() << "CModuleChooserDialog::initTree";
 
     // See BTModuleTreeItem documentation.
     BTModuleTreeItem root(m_filters, m_grouping, &m_moduleList);
@@ -125,10 +125,10 @@ void CModuleChooserDialog::slotOk() {
     for ( ; *it; ++it ) {
         //add the module to list if the box is checked
         if ((*it)->checkState(0) == Qt::Checked) {
-            qDebug("was checked");
+            qDebug() << "was checked";
             for (QList<CSwordModuleInfo*>::iterator all_iter(m_moduleList.begin()); all_iter != m_moduleList.end(); ++all_iter) {
                 if ((*all_iter)->name() == (*it)->text(0)) {
-                    qDebug("append");
+                    qDebug() << "append";
                     mods.append(*all_iter);
                     break;
                 }

@@ -37,7 +37,7 @@ BtDropdownChooserButton::BtDropdownChooserButton(CKeyReferenceWidget* ref)
 
 
 void BtDropdownChooserButton::mousePressEvent(QMouseEvent* e) {
-    //qDebug("BtDropdownChooserButton::mousePressEvent");
+    //qDebug() << "BtDropdownChooserButton::mousePressEvent";
     //recreate the menu
     menu()->clear();
     this->newList();

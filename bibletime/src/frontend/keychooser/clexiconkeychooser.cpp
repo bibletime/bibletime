@@ -13,6 +13,7 @@
 #include <iterator>
 #include <map>
 #include <QHBoxLayout>
+#include <QDebug>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordlexiconmoduleinfo.h"
 #include "backend/keys/cswordldkey.h"
@@ -64,7 +65,7 @@ CSwordKey* CLexiconKeyChooser::key() {
 }
 
 void CLexiconKeyChooser::setKey(CSwordKey* key) {
-    qDebug("CLexiconKeyChooser::setKey");
+    qDebug() << "CLexiconKeyChooser::setKey";
 
     if (!(m_key = dynamic_cast<CSwordLDKey*>(key))) {
         return;

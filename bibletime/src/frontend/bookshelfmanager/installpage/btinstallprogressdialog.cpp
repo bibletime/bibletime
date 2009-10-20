@@ -121,7 +121,7 @@ void BtInstallProgressDialog::startThreads() {
         t->start();
     }
 
-    qDebug("BtInstallProgressDialog::startThreads end");
+    qDebug() << "BtInstallProgressDialog::startThreads end";
 }
 
 BtInstallProgressDialog::~BtInstallProgressDialog() {}
@@ -185,7 +185,7 @@ void BtInstallProgressDialog::oneItemStoppedOrCompleted(QString module, QString 
 }
 
 void BtInstallProgressDialog::slotStopInstall() {
-    qDebug("BtInstallProgressDialog::slotStopInstall");
+    qDebug() << "BtInstallProgressDialog::slotStopInstall";
 
     // Clear the waiting threads map, stop all running threads.
 
@@ -201,7 +201,7 @@ void BtInstallProgressDialog::slotStopInstall() {
 }
 
 void BtInstallProgressDialog::slotStatusUpdated(QString module, int status) {
-    //qDebug("BtInstallProgressDialog::slotStatusUpdated");
+    //qDebug() << "BtInstallProgressDialog::slotStatusUpdated";
     //qDebug() << "module:" << module << "status:" << status;
     // find the progress bar for this module and update the value
     QWidget* itemWidget = m_statusWidget->itemWidget(getItem(module) , 1);
@@ -230,7 +230,7 @@ QTreeWidgetItem* BtInstallProgressDialog::getItem(QString moduleName) {
 }
 
 void BtInstallProgressDialog::closeEvent(QCloseEvent* event) {
-    qDebug("BtInstallProgressDialog::closeEvent");
+    qDebug() << "BtInstallProgressDialog::closeEvent";
 
     if (event->spontaneous()) {
         event->ignore();

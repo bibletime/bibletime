@@ -15,6 +15,7 @@
 #include <QTreeWidget>
 #include <QTreeWidgetItem>
 #include <QWidget>
+#include <QDebug>
 #include "backend/keys/cswordversekey.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cexportmanager.h"
@@ -161,7 +162,7 @@ void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
 //TODO: another function?
 /** Reimplementation to show the popup menu. */
 void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
-    qDebug("CSearchResultView::showPopup");
+    qDebug() << "CSearchResultView::showPopup";
     m_popup->exec(event->globalPos());
 }
 

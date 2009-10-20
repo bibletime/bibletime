@@ -17,6 +17,8 @@
 #include <QMenu>
 #include <QTimer>
 #include <QWidget>
+#include <QDebug>
+
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
@@ -37,7 +39,7 @@ using namespace Profile;
 
 CBibleReadWindow::CBibleReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
         : CLexiconReadWindow(moduleList, parent) {
-    qDebug("CBibleReadWindow::CBibleReadWindow");
+    qDebug() << "CBibleReadWindow::CBibleReadWindow";
 }
 
 CBibleReadWindow::~CBibleReadWindow() {
@@ -135,7 +137,7 @@ void CBibleReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 }
 
 void CBibleReadWindow::initActions() {
-    qDebug("CBibleReadWindow::initActions");
+    qDebug() << "CBibleReadWindow::initActions";
 
     BtActionCollection* ac = actionCollection();
 

@@ -59,7 +59,7 @@ void CBookTreeChooser::setKey(CSwordKey* key) {
 
 /** Sets a new key to this keychooser. Inherited from ckeychooser. */
 void CBookTreeChooser::setKey(CSwordKey* newKey, const bool emitSignal) {
-    qDebug("CBookTreeChooser::setKey");
+    qDebug() << "CBookTreeChooser::setKey";
 
     if (m_key != newKey ) {
         m_key = dynamic_cast<CSwordTreeKey*>(newKey);
@@ -136,7 +136,7 @@ void CBookTreeChooser::refreshContent() {
 
 /** Slot for signal when item is selected by user. */
 void CBookTreeChooser::itemActivated( QTreeWidgetItem* item ) {
-    qDebug("CBookTreeChooser::itemActivated");
+    qDebug() << "CBookTreeChooser::itemActivated";
     //Sometimes Qt calls this function with a null pointer.
     if (item) {
         m_key->key(item->text(1));

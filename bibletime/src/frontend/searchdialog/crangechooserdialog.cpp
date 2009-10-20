@@ -179,7 +179,7 @@ void CRangeChooserDialog::initConnections() {
 
 /** Adds a new range to the list. */
 void CRangeChooserDialog::addNewRange() {
-    //qDebug("CRangeChooserDialog::addNewRange");
+    //qDebug() << "CRangeChooserDialog::addNewRange";
     //RangeItem* i = new RangeItem(m_rangeList, m_rangeList->lastItem(), tr("New range"));
     RangeItem* i = new RangeItem(m_rangeList, 0, tr("New range"));
     //use just setCurrentItem... m_rangeList->setSelected(i, true);
@@ -191,7 +191,7 @@ void CRangeChooserDialog::addNewRange() {
 
 /** No descriptions */
 void CRangeChooserDialog::editRange(QListWidgetItem* item) {
-    //qDebug("CRangeChooserDialog::editRange");
+    //qDebug() << "CRangeChooserDialog::editRange";
     RangeItem* const range = dynamic_cast<RangeItem*>(item);
 
     m_nameEdit->setEnabled( range ); //only if an item is selected enable the edit part
@@ -207,7 +207,7 @@ void CRangeChooserDialog::editRange(QListWidgetItem* item) {
 
 /** Parses the entered text and prints out the result in the list box below the edit area. */
 void CRangeChooserDialog::parseRange() {
-    //qDebug("CRangeChooserDialog::parseRange");
+    //qDebug() << "CRangeChooserDialog::parseRange";
     m_resultList->clear();
 
     //TODO: remove this hack:
@@ -226,7 +226,7 @@ void CRangeChooserDialog::parseRange() {
 
 /** No descriptions */
 void CRangeChooserDialog::rangeChanged() {
-    //qDebug("CRangeChooserDialog::rangeChanged");
+    //qDebug() << "CRangeChooserDialog::rangeChanged";
     if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
        ) {
         QString range( m_rangeEdit->toPlainText() );
@@ -239,7 +239,7 @@ void CRangeChooserDialog::rangeChanged() {
 
 /** No descriptions */
 void CRangeChooserDialog::nameChanged(const QString& newCaption) {
-    //qDebug("CRangeChooserDialog::nameChanged");
+    //qDebug() << "CRangeChooserDialog::nameChanged";
     m_rangeEdit->setEnabled(!newCaption.isEmpty());
     m_resultList->setEnabled(!newCaption.isEmpty());
     //m_resultList->header()->setEnabled(!newCaption.isEmpty());
@@ -265,7 +265,7 @@ void CRangeChooserDialog::nameChanged(const QString& newCaption) {
 
 /** Deletes the selected range. */
 void CRangeChooserDialog::deleteCurrentRange() {
-    //qDebug("CRangeChooserDialog::deleteCurrentRange");
+    //qDebug() << "CRangeChooserDialog::deleteCurrentRange";
     if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem()) ) {
         int row = m_rangeList->row(i);
         m_rangeList->takeItem(row);
@@ -290,7 +290,7 @@ void CRangeChooserDialog::slotOk() {
 }
 
 void CRangeChooserDialog::slotDefault() {
-    //qDebug("CRangeChooserDialog::slotDefault");
+    //qDebug() << "CRangeChooserDialog::slotDefault";
     m_rangeList->clear();
     CBTConfig::StringMap map = CBTConfig::getDefault(CBTConfig::searchScopes);
     CBTConfig::StringMap::Iterator it;

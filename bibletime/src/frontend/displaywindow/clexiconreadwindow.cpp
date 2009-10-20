@@ -14,6 +14,8 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QMenu>
+#include <QDebug>
+
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordldkey.h"
 #include "backend/keys/cswordkey.h"
@@ -34,7 +36,7 @@
 
 CLexiconReadWindow::CLexiconReadWindow(QList<CSwordModuleInfo*> moduleList, CMDIArea* parent)
         : CReadWindow(moduleList, parent) {
-    qDebug("CLexiconReadWindow::CLexiconReadWindow");
+    qDebug() << "CLexiconReadWindow::CLexiconReadWindow";
     moduleList.first();
     setKey( CSwordKey::createInstance(moduleList.first()) );
 }
@@ -43,7 +45,7 @@ CLexiconReadWindow::~CLexiconReadWindow() {
 }
 
 void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
-    qDebug("CLexiconReadWindow::insertKeyboardActions");
+    qDebug() << "CLexiconReadWindow::insertKeyboardActions";
     QAction* qaction;
     qaction = new QAction( tr("Next entry"), a);
     qaction->setShortcut(CResMgr::displaywindows::lexiconWindow::nextEntry::accel);
@@ -77,7 +79,7 @@ void CLexiconReadWindow::insertKeyboardActions( BtActionCollection* const a ) {
 }
 
 void CLexiconReadWindow::initActions() {
-    qDebug("CLexiconReadWindow::initActions");
+    qDebug() << "CLexiconReadWindow::initActions";
 
     BtActionCollection* ac = actionCollection();
     CReadWindow::initActions();
@@ -141,13 +143,13 @@ void CLexiconReadWindow::initActions() {
     addAction(m_actions.print.entry);
 
     // init with the user defined settings
-    qDebug("call CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac); and end CLexiconReadWindow::initActions");
+    qDebug() << "call CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac); and end CLexiconReadWindow::initActions";
     CBTConfig::setupAccelSettings(CBTConfig::lexiconWindow, ac);
 }
 
 /** No descriptions */
 void CLexiconReadWindow::initConnections() {
-    qDebug("CLexiconReadWindow::initConnections");
+    qDebug() << "CLexiconReadWindow::initConnections";
     Q_ASSERT(keyChooser());
 
     connect(keyChooser(), SIGNAL(keyChanged(CSwordKey*)), this, SLOT(lookupSwordKey(CSwordKey*)));
@@ -178,7 +180,7 @@ void CLexiconReadWindow::initConnections() {
 }
 
 void CLexiconReadWindow::initView() {
-    qDebug("CLexiconReadWindow::initView");
+    qDebug() << "CLexiconReadWindow::initView";
     setDisplayWidget( CDisplay::createReadInstance(this) );
     setMainToolBar( new QToolBar(this) );
     mainToolBar()->setAllowedAreas(Qt::TopToolBarArea);
@@ -298,14 +300,14 @@ void CLexiconReadWindow::saveAsHTML() {
 
 /** Saving the raw HTML for debugging purposes */
 void CLexiconReadWindow::saveRawHTML() {
-    //qDebug("CLexiconReadWindow::saveRawHTML");
+    //qDebug() << "CLexiconReadWindow::saveRawHTML";
     QString savefilename = QFileDialog::getSaveFileName();
     if (savefilename.isEmpty()) return;
     QFile file(savefilename);
     BtHtmlReadDisplay* disp = dynamic_cast<BtHtmlReadDisplay*>(displayWidget());
     if (disp) {
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-            qDebug("could not open file");
+            qDebug() << "could not open file";
             return;
         }
         QString source = disp->text();
@@ -315,7 +317,7 @@ void CLexiconReadWindow::saveRawHTML() {
         file.flush();
     }
     else {
-        qDebug("No htmlreaddisplay widget!");
+        qDebug() << "No htmlreaddisplay widget!";
     }
 
 }
@@ -327,7 +329,7 @@ void CLexiconReadWindow::saveAsPlain() {
 }
 
 void CLexiconReadWindow::slotFillBackHistory() {
-    qDebug("CLexiconReadWindow::slotFillBackHistory");
+    qDebug() << "CLexiconReadWindow::slotFillBackHistory";
 
     QMenu* menu = m_actions.backInHistory->popupMenu();
     menu->clear();
@@ -340,7 +342,7 @@ void CLexiconReadWindow::slotFillBackHistory() {
 }
 
 void CLexiconReadWindow::slotFillForwardHistory() {
-    qDebug("CLexiconReadWindow::slotFillForwardHistory");
+    qDebug() << "CLexiconReadWindow::slotFillForwardHistory";
 
     QMenu* menu = m_actions.forwardInHistory->popupMenu();
     menu->clear();
@@ -353,7 +355,7 @@ void CLexiconReadWindow::slotFillForwardHistory() {
 
 
 void CLexiconReadWindow::slotUpdateHistoryButtons(bool backEnabled, bool fwEnabled) {
-    qDebug("CLexiconReadWindow::slotUpdateHistoryButtons");
+    qDebug() << "CLexiconReadWindow::slotUpdateHistoryButtons";
     Q_ASSERT(m_actions.backInHistory);
     Q_ASSERT(keyChooser());
 

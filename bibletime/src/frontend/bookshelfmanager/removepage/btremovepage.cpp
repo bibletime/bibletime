@@ -86,7 +86,7 @@ void BtRemovePage::populateModuleList() {
 
     // receive signal when user checks modules
     connect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
-    qDebug("BtSourceArea::createModuleTree end");
+    qDebug() << "BtSourceArea::createModuleTree end";
 }
 
 void BtRemovePage::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem) {
@@ -178,12 +178,12 @@ void BtRemovePage::slotRemoveModules() {
 
 
 void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column) {
-    //qDebug("BtRemovePage::slotSelectionChanged");
+    //qDebug() << "BtRemovePage::slotSelectionChanged";
     // modify the internal list of checked modules
     // if() leaves groups away
     if (!item->childCount() && column == 0) {
         CSwordModuleInfo* mInfo = 0;
-        //qDebug("BtRemovePage::slotSelectionChanged");
+        //qDebug() << "BtRemovePage::slotSelectionChanged";
         foreach (CSwordModuleInfo* module, CPointers::backend()->moduleList()) {
             if (module->name() == item->text(0) && module->config(CSwordModuleInfo::AbsoluteDataPath) == item->text(1)) {
                 mInfo = module;

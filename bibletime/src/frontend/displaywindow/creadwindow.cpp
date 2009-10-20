@@ -31,7 +31,7 @@ typedef BtHtmlReadDisplay HTMLREADDISPLAY;
 CReadWindow::CReadWindow(QList<CSwordModuleInfo*> modules, CMDIArea* parent)
         : CDisplayWindow(modules, parent),
         m_displayWidget(0) {
-    qDebug("CReadWindow::CReadWindow");
+    qDebug() << "CReadWindow::CReadWindow";
     //   installEventFilter(this);
 }
 
@@ -112,7 +112,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
 }
 
 void CReadWindow::slotMoveToAnchor() {
-    qDebug("CReadWindow::slotMoveToAnchor");
+    qDebug() << "CReadWindow::slotMoveToAnchor";
     ((CReadDisplay*)displayWidget())->moveToAnchor( Rendering::CDisplayRendering::keyToHTMLAnchor(key()->key()) );
 }
 

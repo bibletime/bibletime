@@ -145,7 +145,7 @@ void BtInstallPathDialog::slotRemoveClicked() {
 }
 
 void BtInstallPathDialog::writeSwordConfig() {
-    qDebug("BtInstallPathDialog::writeSwordConfig");
+    qDebug() << "BtInstallPathDialog::writeSwordConfig";
     if (m_swordPathListBox->topLevelItemCount() >= 0) {
         QStringList targets;
         QTreeWidgetItemIterator it(m_swordPathListBox);

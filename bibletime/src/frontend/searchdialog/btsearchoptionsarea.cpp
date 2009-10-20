@@ -205,7 +205,7 @@ void BtSearchOptionsArea::initConnections() {
 
 /** Sets the modules used by the search. */
 void BtSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules ) {
-    qDebug("BtSearchOptionsArea::setModules");
+    qDebug() << "BtSearchOptionsArea::setModules";
     qDebug() << modules;
     QString t;
 
@@ -251,7 +251,7 @@ void BtSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules ) {
 
 // Catch activated signal of module selector combobox
 void BtSearchOptionsArea::moduleListTextSelected(int index) {
-    qDebug("BtSearchOptionsArea::moduleListTextSelected");
+    qDebug() << "BtSearchOptionsArea::moduleListTextSelected";
     //create the module list
     QString text = m_modulesCombo->itemText(index);
     qDebug() << text;
@@ -470,7 +470,7 @@ void BtSearchOptionsArea::addToHistory(const QString& text) {
 }
 
 void BtSearchOptionsArea::slotSearchTextEditReturnPressed() {
-    qDebug("BtSearchOptionsArea::slotSearchTextEditReturnPressed");
+    qDebug() << "BtSearchOptionsArea::slotSearchTextEditReturnPressed";
     m_searchTextCombo->addToHistory( m_searchTextCombo->currentText() );
     emit sigStartSearch();
 }
@@ -503,7 +503,7 @@ void BtSearchOptionsArea::slotValidateText(const QString& /*newText*/) {
 // 		}
 // 	}
 // 	else {
-// 		qDebug("AND/OR!");
+// 		qDebug() << "AND/OR!";
 // 		if (m_typeAndButton->isEnabled()) {
 // 			m_typeOrButton->setChecked(true);
 // 			m_typeOrButton->setEnabled(false);

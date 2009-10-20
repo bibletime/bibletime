@@ -55,7 +55,7 @@ BtSourceArea::~BtSourceArea() {
 void BtSourceArea::initView() {
     namespace DU = util::directory;
 
-    qDebug("BtSourceArea::initView");
+    qDebug() << "BtSourceArea::initView";
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     //QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
     //QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
@@ -116,7 +116,7 @@ void BtSourceArea::initTreeFirstTime() {
 }
 
 void BtSourceArea::createModuleTree() {
-    qDebug("BtSourceArea::createModuleTree start");
+    qDebug() << "BtSourceArea::createModuleTree start";
     // Start creating tree with a queued connection.
     // This makes showing the dialog possible even before the tree is initialized.
     emit signalCreateTree();
@@ -226,7 +226,7 @@ QMap<QString, bool>* BtSourceArea::selectedModules() {
 
 // when a module is checked/unchecked
 void BtSourceArea::slotSelectionChanged(QTreeWidgetItem* item, int column) {
-    //qDebug("BtSourceArea::slotSelectionChanged");
+    //qDebug() << "BtSourceArea::slotSelectionChanged";
     // modify the internal list of selected (actually checked) modules
     // if() leaves groups away
     if (!item->childCount() && column == 0) {
@@ -269,7 +269,7 @@ bool BtSourceArea::InstalledFilter::filter(CSwordModuleInfo* mInfo) {
     //qDebug() << "BtSourceArea::InstalledFilter::filter, module " << mInfo->name();
     CSwordModuleInfo* const installedModule = CPointers::backend()->findModuleByName(mInfo->name());
     if (installedModule) {
-        //qDebug("already installed, check if it's an update...");
+        //qDebug() << "already installed, check if it's an update...";
         const sword::SWVersion installedVersion(installedModule->config(CSwordModuleInfo::ModuleVersion).toLatin1());
         const sword::SWVersion newVersion(mInfo->config(CSwordModuleInfo::ModuleVersion).toLatin1());
         if (installedVersion >= newVersion) {

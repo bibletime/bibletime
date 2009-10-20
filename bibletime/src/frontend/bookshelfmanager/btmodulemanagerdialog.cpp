@@ -65,7 +65,7 @@ BtModuleManagerDialog::~BtModuleManagerDialog() {
 
 // The QWidget close() sends close event, so does closing by the window X button.
 void BtModuleManagerDialog::closeEvent(QCloseEvent*) {
-    qDebug("BtModuleManagerDialog::closeEvent");
+    qDebug() << "BtModuleManagerDialog::closeEvent";
 }
 
 void BtModuleManagerDialog::loadDialogSettings() {

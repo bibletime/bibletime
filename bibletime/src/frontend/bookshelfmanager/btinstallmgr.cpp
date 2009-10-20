@@ -27,7 +27,7 @@ using namespace sword;
 BtInstallMgr::BtInstallMgr()
         : InstallMgr(instbackend::configPath().toLatin1(), this),
         m_firstCallOfPreStatus(true) { //use this class also as status reporter
-    qDebug("BtInstallMgr::BtInstallMgr");
+    qDebug() << "BtInstallMgr::BtInstallMgr";
     this->setFTPPassive(true);
 }
 
@@ -43,7 +43,7 @@ bool BtInstallMgr::isUserDisclaimerConfirmed() const {
 }
 
 void BtInstallMgr::statusUpdate(double dltotal, double dlnow) {
-    //qDebug("BtInstallMgr::statusUpdate");
+    //qDebug() << "BtInstallMgr::statusUpdate";
     if (dlnow > dltotal)
         dlnow = dltotal;
 

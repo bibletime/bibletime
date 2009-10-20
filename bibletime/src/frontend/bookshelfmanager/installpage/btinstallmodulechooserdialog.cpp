@@ -23,7 +23,7 @@
 
 BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QString title, QString label, QList<CSwordModuleInfo*>* empty)
         : CModuleChooserDialog(parent, title, label, empty) {
-    qDebug("BtInstallModuleChooserDialog::BtInstallModuleChooserDialog start");
+    qDebug() << "BtInstallModuleChooserDialog::BtInstallModuleChooserDialog start";
     init();
     okButton()->setText(tr("Install"));
     m_nameList = QStringList();
@@ -58,16 +58,16 @@ void BtInstallModuleChooserDialog::initModuleItem(QString name, QTreeWidgetItem*
 
 void BtInstallModuleChooserDialog::slotItemChecked(QTreeWidgetItem* item, int column) {
     QString moduleName = item->text(0);
-    qDebug("BtInstallModuleChooserDialog::slotItemChecked start");
+    qDebug() << "BtInstallModuleChooserDialog::slotItemChecked start";
     // handle only non-toplevel items which has duplicates and where the first column was changed
     if (item->parent() && column == 0 && (findModuleItemsByName(moduleName).count() > 1))  {
         //prevent handling when the color is changed
         if (item->data(1, Qt::UserRole).toBool() == false) {
-            qDebug("was not updating");
+            qDebug() << "was not updating";
             item->setData(1, Qt::UserRole, true);
         }
         else {
-            qDebug("was updating");
+            qDebug() << "was updating";
             item->setData(1, Qt::UserRole, false);
             return;
         }

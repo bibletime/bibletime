@@ -14,6 +14,8 @@
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QMenu>
+#include <QDebug>
+
 #include "backend/keys/cswordkey.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/displaywindow/btactioncollection.h"
@@ -52,7 +54,7 @@ bool CPlainWriteDisplay::hasSelection() {
 }
 
 QWidget* CPlainWriteDisplay::view() {
-    qDebug("CPlainWriteDisplay::view()");
+    qDebug() << "CPlainWriteDisplay::view()";
     return this;
 }
 
@@ -125,11 +127,11 @@ void CPlainWriteDisplay::dragMoveEvent( QDragMoveEvent* e ) {
 
 /** Reimplementation to manage drops of our drag and drop objects. */
 void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
-    //qDebug("CPlainWriteDisplay::dropEvent");
+    //qDebug() << "CPlainWriteDisplay::dropEvent";
     const BTMimeData* mimedata = qobject_cast<const BTMimeData*>(e->mimeData());
 
     if ( mimedata && mimedata->hasFormat("BibleTime/Bookmark") ) {
-        //qDebug("format was bookmark");
+        //qDebug() << "format was bookmark";
         e->acceptProposedAction();
 
         BTMimeData::ItemList items = mimedata->bookmarks();
@@ -148,7 +150,7 @@ void CPlainWriteDisplay::dropEvent( QDropEvent* e ) {
         }
     }
     else if ( e->mimeData()->hasFormat("text/plain")) {
-        //qDebug("format was plain text");
+        //qDebug() << "format was plain text";
         e->acceptProposedAction();
         setTextCursor(cursorForPosition(e->pos()));
         textCursor().insertText( e->mimeData()->text() );

@@ -80,7 +80,7 @@ CInfoDisplay::~CInfoDisplay() {
 }
 
 void CInfoDisplay::lookupInfo(const QString &mod_name, const QString &key_text) {
-    qDebug("CInfoDisplay::lookup");
+    qDebug() << "CInfoDisplay::lookup";
     qDebug() <<  mod_name <<  key_text;
     CSwordModuleInfo* m = CPointers::backend()->findModuleByName(mod_name);
     Q_ASSERT(m);

@@ -134,12 +134,12 @@ void BtInstallThread::slotStopInstall() {
 }
 
 void BtInstallThread::slotManagerStatusUpdated(int totalProgress, int /*fileProgress*/) {
-    //qDebug("BtInstallThread::slotManagerStatusUpdated");
+    //qDebug() << "BtInstallThread::slotManagerStatusUpdated";
     emit statusUpdated(m_module, totalProgress);
 }
 
 void BtInstallThread::slotDownloadStarted() {
-    qDebug("BtInstallThread::slotDownloadStarted");
+    qDebug() << "BtInstallThread::slotDownloadStarted";
     emit downloadStarted(m_module);
 }
 
@@ -175,7 +175,7 @@ void BtInstallThread::removeModule() {
 }
 
 void BtInstallThread::removeTempFiles() {
-    qDebug("BtInstallThread::removeTempFiles start");
+    qDebug() << "BtInstallThread::removeTempFiles start";
 
     // (take the remote conf file for this module, take DataPath,
     // take the absolute path of the InstallMgr)

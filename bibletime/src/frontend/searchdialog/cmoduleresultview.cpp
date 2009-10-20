@@ -15,6 +15,8 @@
 #include <QMenu>
 #include <QStringList>
 #include <QTreeWidget>
+#include <QDebug>
+
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "frontend/cexportmanager.h"
 #include "util/cresmgr.h"
@@ -224,7 +226,7 @@ CSwordModuleInfo* CModuleResultView::activeModule() {
 
 /** Reimplementation from QWidget. */
 void CModuleResultView::contextMenuEvent( QContextMenuEvent * event ) {
-    qDebug("CModuleResultView::showPopup");
+    qDebug() << "CModuleResultView::showPopup";
     //make sure that all entries have the correct status
     m_popup->exec(event->globalPos());
 }

@@ -39,7 +39,7 @@
 BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
         : QTabWidget(parent),
         m_page(parent) {
-    qDebug("BtSourceWidget::BtSourceWidget start");
+    qDebug() << "BtSourceWidget::BtSourceWidget start";
     initSources();
 
     // TODO: choose the page from config
@@ -56,7 +56,7 @@ QString BtSourceWidget::currentSourceName() {
 }
 
 void BtSourceWidget::initSourceConnections() {
-    qDebug("void BtSourceWidget::initSourceConnections() start");
+    qDebug() << "void BtSourceWidget::initSourceConnections() start";
     if (area()) {
         connect(area()->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
         //connect(area()->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
@@ -64,11 +64,11 @@ void BtSourceWidget::initSourceConnections() {
         connect(area()->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
         connect(area(), SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
     }
-    qDebug("void BtSourceWidget::initSourceConnections() end");
+    qDebug() << "void BtSourceWidget::initSourceConnections() end";
 }
 
 void BtSourceWidget::slotEdit() {
-    qDebug("BtSourceWidget::slotEdit");
+    qDebug() << "BtSourceWidget::slotEdit";
     // open the source editor dialog
 
     // if the source was changed, init the sources
@@ -76,7 +76,7 @@ void BtSourceWidget::slotEdit() {
 }
 
 void BtSourceWidget::slotDelete() {
-    qDebug("void BtSourceWidget::slotDelete() start");
+    qDebug() << "void BtSourceWidget::slotDelete() start";
     // ask for confirmation
     int ret = util::showWarning(this, tr("Delete Source?"),
                                 tr("Do you really want to delete this source?"),
@@ -94,8 +94,8 @@ void BtSourceWidget::slotDelete() {
 }
 
 void BtSourceWidget::slotAdd() {
-    qDebug("void BtSourceWidget::slotAdd() start");
-    qDebug("open the old dialog, TODO: write new one");
+    qDebug() << "void BtSourceWidget::slotAdd() start";
+    qDebug() << "open the old dialog, TODO: write new one";
     sword::InstallSource newSource = CSwordSetupInstallSourcesDialog::getSource();
     if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
         instbackend::addSource(newSource);
@@ -105,7 +105,7 @@ void BtSourceWidget::slotAdd() {
 
 
 void BtSourceWidget::slotRefresh() {
-    qDebug("void BtSourceWidget::slotRefresh() start");
+    qDebug() << "void BtSourceWidget::slotRefresh() start";
     // (re)build the module cache for the source
 
     QString sourceName = currentSourceName();
@@ -121,12 +121,12 @@ void BtSourceWidget::slotRefresh() {
 
     // BACKEND CODE **********************************************************
     // would this be possible: instbackend::refreshSource( arguments );
-    qDebug("void BtSourceWidget::slotRefresh 1");
+    qDebug() << "void BtSourceWidget::slotRefresh 1";
     BtInstallMgr iMgr;
     m_currentInstallMgr = &iMgr; //for the progress dialog
     sword::InstallSource is = instbackend::source(sourceName);
     bool success = false;
-    qDebug("void BtSourceWidget::slotRefresh 2");
+    qDebug() << "void BtSourceWidget::slotRefresh 2";
     // connect this directly to the dialog setValue(int) if possible
     connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshCompleted(const int, const int)));
 
@@ -141,7 +141,7 @@ void BtSourceWidget::slotRefresh() {
         //qApp->processEvents();
         //m_progressDialog->repaint();
         //qApp->processEvents();
-        qDebug("void BtSourceWidget::slotRefresh 3");
+        qDebug() << "void BtSourceWidget::slotRefresh 3";
         bool successful = iMgr.refreshRemoteSource( &is );
         if (!successful ) { //make sure the sources were updated sucessfully
             success = true;
@@ -162,14 +162,14 @@ void BtSourceWidget::slotRefresh() {
 
     // rebuild the view tree and refresh the view
     if (success) {
-        qDebug("void BtSourceWidget::slotRefresh 4");
+        qDebug() << "void BtSourceWidget::slotRefresh 4";
         area()->createModuleTree();
     }
 }
 
 //TODO: try to move this to BtInstallMgr
 void BtSourceWidget::slotRefreshCanceled() {
-    qDebug("BtSourceWidget::slotRefreshCanceled");
+    qDebug() << "BtSourceWidget::slotRefreshCanceled";
     Q_ASSERT(m_currentInstallMgr);
     if (m_currentInstallMgr) {
         m_currentInstallMgr->terminate();
@@ -179,7 +179,7 @@ void BtSourceWidget::slotRefreshCanceled() {
 
 //TODO: try to move this to progress dialog
 void BtSourceWidget::slotRefreshCompleted(const int, const int current) {
-    qDebug("BtSourceWidget::slotRefreshCompleted");
+    qDebug() << "BtSourceWidget::slotRefreshCompleted";
     if (m_progressDialog) {
         if (m_progressDialog->labelText() != tr("Refreshing...")) {
             m_progressDialog->setLabelText(tr("Refreshing..."));
@@ -191,7 +191,7 @@ void BtSourceWidget::slotRefreshCompleted(const int, const int current) {
 
 // init the tabbar, setup the module tree for the current source
 void BtSourceWidget::initSources() {
-    qDebug("void BtSourceWidget::initSources() start");
+    qDebug() << "void BtSourceWidget::initSources() start";
 
     // ***** Use the backend to get the list of sources *****
     instbackend::initPassiveFtpMode();
@@ -212,7 +212,7 @@ void BtSourceWidget::initSources() {
         sourceList = instbackend::sourceList();
         //Q_ASSERT( sourceList.count() > 0 );
     }
-    qDebug("void BtSourceWidget::initSources 1");
+    qDebug() << "void BtSourceWidget::initSources 1";
     // Add the sources to the widget
     foreach (QString sourceName, sourceList) {
         addSource(sourceName);
@@ -220,7 +220,7 @@ void BtSourceWidget::initSources() {
     // connect this after the tabs have been created,
     // otherwise the signal is caught too early.
     QObject::connect(this, SIGNAL(currentChanged(int)), this, SLOT(slotTabSelected(int)));
-    qDebug("void BtSourceWidget::initSources end");
+    qDebug() << "void BtSourceWidget::initSources end";
     // TODO: select the current source from the config
     // It's important to choose something because the tree is not initialized until now
     setCurrentIndex(0);
@@ -235,7 +235,7 @@ void BtSourceWidget::initSources() {
 }
 
 void BtSourceWidget::addSource(const QString& sourceName) {
-    qDebug("void BtSourceWidget::addSource(const QString& sourceName) start");
+    qDebug() << "void BtSourceWidget::addSource(const QString& sourceName) start";
     // The source has already been added to the backend.
 
     QString type;
@@ -271,13 +271,13 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     setCurrentIndex(tabNumber);
     m_sourceNameList.append(sourceName);
     initSourceConnections();
-    qDebug("BtSourceWidget::addSource end");
+    qDebug() << "BtSourceWidget::addSource end";
 }
 
 //
 void BtSourceWidget::slotModuleSelectionChanged(QString sourceName, int selectedCount) {
     //TODO: editing sources should update the map also
-    qDebug("BtSourceWidget::slotModuleSelectionChanged start");
+    qDebug() << "BtSourceWidget::slotModuleSelectionChanged start";
 
     int overallCount = 0;
     m_selectedModulesCountMap.insert(sourceName, selectedCount);
@@ -300,7 +300,7 @@ void BtSourceWidget::slotTabSelected(int /*index*/) {
 }
 
 void BtSourceWidget::slotInstall() {
-    qDebug("void BtInstallPage::slotInstall start");
+    qDebug() << "void BtInstallPage::slotInstall start";
 
     // check that the destination path is writable, do nothing if not and user doesn't want to continue
     QDir dir = QDir(dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
@@ -376,11 +376,11 @@ void BtSourceWidget::slotInstallAccepted(QList<CSwordModuleInfo*> /*modules*/, Q
 
     BtInstallProgressDialog* dlg = new BtInstallProgressDialog(parentDialog, treeWidget, dynamic_cast<BtInstallPage*>(parent())->selectedInstallPath());
 
-    if (!parentDialog) qDebug("error, wrong parent!");
+    if (!parentDialog) qDebug() << "error, wrong parent!";
 
     m_page->setInstallEnabled(false);
     // the progress dialog is now modal, it can be made modeless later.
     dlg->exec();
 
-    qDebug("BtSourceWidget::slotInstallAccepted end");
+    qDebug() << "BtSourceWidget::slotInstallAccepted end";
 }

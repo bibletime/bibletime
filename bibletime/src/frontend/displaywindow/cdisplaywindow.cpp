@@ -45,7 +45,7 @@ CDisplayWindow::CDisplayWindow(QList<CSwordModuleInfo*> modules, CMDIArea *paren
         m_mainToolBar(0),
         m_popupMenu(0),
         m_displayWidget(0) {
-    qDebug("CDisplayWindow::CDisplayWindow");
+    qDebug() << "CDisplayWindow::CDisplayWindow";
     setAttribute(Qt::WA_DeleteOnClose); //we want to destroy this window when it is closed
     parent->addSubWindow(this);
     m_actionCollection = new BtActionCollection(this);
@@ -149,7 +149,7 @@ void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
 }
 
 void CDisplayWindow::initActions() {
-    qDebug("CDisplayWindow::initActions");
+    qDebug() << "CDisplayWindow::initActions";
 
     BtActionCollection* ac = actionCollection();
 
@@ -323,7 +323,7 @@ void CDisplayWindow::setModuleChooserBar( CModuleChooserBar* bar ) {
 
 /** Sets the modules. */
 void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
-    qDebug("CDisplayWindow::setModules");
+    qDebug() << "CDisplayWindow::setModules";
     m_modules.clear();
 
     foreach (CSwordModuleInfo* mod, newModules) {
@@ -333,7 +333,7 @@ void CDisplayWindow::setModules( const QList<CSwordModuleInfo*>& newModules ) {
 
 /** Initialize the window. Call this method from the outside, because calling this in the constructor is not possible! */
 bool CDisplayWindow::init() {
-    qDebug("CDisplayWindow::init");
+    qDebug() << "CDisplayWindow::init";
     initView();
     setMinimumSize( 100, 100 );
 

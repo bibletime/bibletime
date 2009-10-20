@@ -19,12 +19,12 @@
 
 
 CModuleIndexDialog* CModuleIndexDialog::getInstance() {
-    qDebug("CModuleIndexDialog::getInstance");
+    qDebug() << "CModuleIndexDialog::getInstance";
     static CModuleIndexDialog* instance = 0;
     if (instance == 0) {
         instance = new CModuleIndexDialog();
     }
-    qDebug("CModuleIndexDialog::getInstance end");
+    qDebug() << "CModuleIndexDialog::getInstance end";
     return instance;
 }
 
@@ -93,7 +93,7 @@ void CModuleIndexDialog::slotFinished( ) {
 
 // Modules may be removed
 void CModuleIndexDialog::slotSwordSetupChanged() {
-    qDebug("CModuleIndexDialog::slotSwordSetupChanged, TODO: cancel if modules are removed");
+    qDebug() << "CModuleIndexDialog::slotSwordSetupChanged, TODO: cancel if modules are removed";
     util::showInformation(0, tr("Indexing Is Cancelled"), tr("Indexing is cancelled because modules are removed."));
     emit sigCancel();
 }
