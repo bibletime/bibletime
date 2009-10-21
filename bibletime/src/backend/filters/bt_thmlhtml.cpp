@@ -11,6 +11,8 @@
 
 #include <QString>
 #include <QRegExp>
+#include <QUrl>
+#include <QTextCodec>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
@@ -367,10 +369,11 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                 value++; //strip the first /
             }
 
-            buf.append("<img src=\"file://");
-            buf.append(myUserData->module->getConfigEntry("AbsoluteDataPath"));
-            buf.append('/');
-            buf.append(value);
+            buf.append("<img src=\"");
+            QString absPath(QTextCodec::codecForLocale()->toUnicode(myUserData->module->getConfigEntry("AbsoluteDataPath")));
+            QString relPath(QString::fromUtf8(value));
+            QString url(QUrl::fromLocalFile(absPath.append('/').append(relPath)).toString());
+            buf.append(url.toUtf8().data());
             buf.append("\" />");
         }
         else { // let unknown token pass thru
