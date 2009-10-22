@@ -43,7 +43,8 @@ void BtInstallThread::run() {
 
 
     emit preparingInstall(m_module, m_source);
-
+    //This is 0 before set here - remember when using the value when cancelling
+    // the installation before this has been run
     m_installSource.reset(new sword::InstallSource(instbackend::source(m_source)));
     m_backendForSource.reset(instbackend::backend(*m_installSource));
 
@@ -121,15 +122,16 @@ void BtInstallThread::slotStopInstall() {
         }
         qDebug() << "BtInstallThread::slotStopInstall 3";
         // cleanup: remove the module, remove the temp files
-        if (true) {
+        // if installation has already started
+        if (m_installSource.get() != 0) {
             qDebug() << "BtInstallThread::slotStopInstall 4";
             // remove the installed module, just to be sure because mgr may
             // have been terminated when copying files
             removeModule();
             removeTempFiles();
             qDebug() << "BtInstallThread::slotStopInstall will emit installStopped...";
-            emit installStopped(m_module, m_source);
         }
+        emit installStopped(m_module, m_source);
     }
 }
 
