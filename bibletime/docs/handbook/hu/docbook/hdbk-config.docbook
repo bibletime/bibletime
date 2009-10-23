@@ -185,7 +185,7 @@ url="http://www.alanwood.net/unicode/fontsbyrange.html"> Unicode karakter
         <guimenu>Shortcuts</guimenu>
       </title>
 
-      <para>Shortcts (previously known as HotKeys) are special key commands that can be 
+      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
 used in the place of the menu items and icons. A number of &bibletime;'s 
 commands have predefined Shortcuts (see <link 
 linkend="hdbk-reference-shortcuts">this section</link> for a complete 
