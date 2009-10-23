@@ -139,7 +139,7 @@ void BtInstallPage::initPathCombo() {
     QStringList targets = instbackend::targetList();
     for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
         if ((*it).isEmpty()) continue;
-        m_pathCombo->addItem(*it);
+		m_pathCombo->addItem(util::directory::convertDirSeparators(*it));
     }
 
     // choose the current value from config but check whether we have so many items

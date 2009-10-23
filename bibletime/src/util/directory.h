@@ -55,6 +55,23 @@ unsigned long getDirSizeRecursive(const QString &dir);
  */
 void copyRecursive(const QString &src, const QString &dest);
 
+/** Convert directory path separators to those for each platform 
+ *  Windows = "\", Others = "/"
+ */
+QString convertDirSeparators(const QString& path);
+
+#ifdef Q_WS_WIN  // Windows only directories
+
+/** Return the path to the sword dir., Windows only 
+    C:\Program Files\BibleTime\share\sword
+ */
+QDir getApplicationSwordDir();
+
+/** Return the path to the %ALLUSERSPROFILE%\Sword directory */
+QDir getSharedSwordDir();
+
+#endif
+
 /** Return the path to the icons. */
 QDir getIconDir();
 
@@ -82,8 +99,20 @@ QDir getHowtoDir();
 /** Return the path to the default display template files. */
 QDir getDisplayTemplatesDir();
 
-/** Return the path to the user's home directory.*/
+/** Return the path to the user's home directory.
+    %APPDATA% on Windows
+	$HOME on linux */
 QDir getUserHomeDir();
+
+/** Return the path to the user's home .sword (or Sword) directory.
+    %APPDATA%\Sword on Windows
+	$HOME\.sword on linux */
+QDir getUserHomeSwordDir();
+
+/** Return the path to the user's home .sword (or Sword) mods.d directory.
+    %APPDATA%\Sword\mods.d on Windows
+	$HOME\.sword\mods.d on linux */
+QDir getUserHomeSwordModsDir();
 
 /** Return the path to the user's settings directory.*/
 QDir getUserBaseDir();

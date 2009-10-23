@@ -133,7 +133,8 @@ void BtInstallPathDialog::slotAddClicked() {
                 return;
             }
         }
-        new QTreeWidgetItem(m_swordPathListBox, QStringList(dir.canonicalPath()) );
+        new QTreeWidgetItem(m_swordPathListBox, QStringList(
+			util::directory::convertDirSeparators(dir.canonicalPath())) );
     }
 }
 

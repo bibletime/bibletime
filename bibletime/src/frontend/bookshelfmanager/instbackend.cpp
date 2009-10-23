@@ -130,10 +130,8 @@ bool isRemote(const sword::InstallSource& source) {
 }
 
 const QString configPath() {
-    const char *envhomedir  = getenv("HOME");
-    QString confPath = QString(envhomedir ? envhomedir : ".");
-    confPath.append("/.sword/InstallMgr");
-
+	QString confPath = util::directory::getUserHomeSwordDir().absolutePath();
+	confPath.append("/InstallMgr");
     return confPath;
 }
 
@@ -177,12 +175,27 @@ bool setTargetList( const QStringList& targets ) {
         util::showWarning(0, QObject::tr("Can't write file"), QObject::tr("The Sword config file can't be written!"));
         return false;
     }
+
+	filename = util::directory::convertDirSeparators(filename);
     SWConfig conf(filename.toLocal8Bit());
     conf.Sections.clear();
+
+#ifdef Q_WS_WIN
+	// On Windows, add the sword directory to the config file.
+	QString swordPath = DU::convertDirSeparators( DU::getApplicationSwordDir().absolutePath());
+	conf["Install"].insert( 
+		std::make_pair( SWBuf("LocalePath"), swordPath.toLocal8Bit().data() )
+	);
+#endif
+
     bool setDataPath = false;
     for (QStringList::const_iterator it = targets.begin(); it != targets.end(); ++it) {
-        QString t = *it;
+		QString t = DU::convertDirSeparators(*it);
+#ifdef Q_WS_WIN
+		if (t.contains(DU::convertDirSeparators(DU::getUserHomeDir().canonicalPath().append("\\Sword")))) {
+#else
         if (t.contains(DU::getUserHomeDir().canonicalPath().append("/.sword"))) {
+#endif
             //we don't want $HOME/.sword in the config
             continue;
         }
@@ -239,14 +252,24 @@ const QString swordConfigFilename() {
     namespace DU = util::directory;
 
     qDebug() << "backend::swordConfigFilename";
+#ifdef Q_WS_WIN
+    qDebug() << DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
+    return DU::getUserHomeDir().absolutePath().append("/Sword/sword.conf");
+//    return DU::getApplicationDir().absolutePath().append("/sword.conf");
+#else
     qDebug() << DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
     return DU::getUserHomeDir().absolutePath().append("/.sword/sword.conf");
+#endif
 }
 
 const QDir swordDir() {
     namespace DU = util::directory;
 
+#ifdef Q_WS_WIN
+    return QDir(DU::getUserHomeDir().absolutePath().append("/Sword/"));
+#else
     return QDir(DU::getUserHomeDir().absolutePath().append("/.sword/"));
+#endif
 }
 
 CSwordBackend* backend( const sword::InstallSource& is) {

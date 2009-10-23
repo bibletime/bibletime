@@ -437,9 +437,36 @@ void BibleTime::initConnections() {
     connect(qApp, SIGNAL(aboutToQuit()), this, SLOT(slot_aboutToQuit()));
 }
 
+void BibleTime::initSwordConfigFile() {
+// On Windows the sword.conf must be created before the initialization of sword
+// It will contain the LocalePath which is used for sword locales
+// It also contains a DataPath to the %ALLUSERSPROFILE%\Sword directory
+// If this is not done here, the sword locales.d won't be found
+#ifdef Q_WS_WIN
+    namespace DU = util::directory;
+	QString configFile = util::directory::getUserHomeSwordDir().filePath("sword.conf");
+	QFile file(configFile);
+	if (file.exists()) {
+		return;
+	}
+	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+		return;
+	}
+	QTextStream out(&file);
+	out << "\n";
+	out << "[Install]\n";
+	out << "DataPath="   << DU::convertDirSeparators( DU::getSharedSwordDir().absolutePath()) << "\n";
+	out << "LocalePath=" << DU::convertDirSeparators(DU::getApplicationSwordDir().absolutePath()) << "\n";
+	out << "\n";
+	file.close();
+#endif
+}
+
 /** Initializes the backend */
 void BibleTime::initBackends() {
     qDebug() << "BibleTime::initBackends";
+
+	initSwordConfigFile();
 
     sword::StringMgr::setSystemStringMgr( new BTStringMgr() );
     sword::SWLog::getSystemLog()->setLogLevel(1);

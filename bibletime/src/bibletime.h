@@ -189,6 +189,10 @@ class BibleTime : public QMainWindow {
 
     protected: // Protected methods
         /**
+        * Initializes the sword.conf in the $HOME\Sword directory
+        */
+		void initSwordConfigFile();
+        /**
         * Initializes the view of this widget
         */
         void initView();

@@ -34,10 +34,23 @@ QDir cachedDisplayTemplatesDir;
 QDir cachedUserDisplayTemplatesDir;
 QDir cachedUserBaseDir;
 QDir cachedUserHomeDir;
+QDir cachedUserHomeSwordDir;
+QDir cachedUserHomeSwordModsDir;
 QDir cachedUserSessionsDir;
 QDir cachedUserCacheDir;
 QDir cachedUserIndexDir;
+#ifdef Q_WS_WIN
+QDir cachedApplicationSwordDir; // Only Windows installs the sword directory which contains locales.d
+QDir cachedSharedSwordDir;
+#endif
 
+#ifdef Q_WS_WIN
+static const char* BIBLETIME = "Bibletime";
+static const char* SWORD_DIR = "Sword";
+#else
+static const char* BIBLETIME =".bibletime";
+static const char* SWORD_DIR = ".sword";
+#endif
 } // anonymous namespace
 
 bool initDirectoryCache() {
@@ -48,6 +61,27 @@ bool initDirectoryCache() {
         qWarning() << "Cannot cd up from directory " << QCoreApplication::applicationDirPath();
         return false;
     }
+
+#ifdef Q_WS_WIN
+
+    cachedApplicationSwordDir = wDir; // application sword dir for Windows only
+    if (!cachedApplicationSwordDir.cd("share/sword") || !cachedApplicationSwordDir.isReadable()) {
+        qWarning() << "Cannot find sword directory relative to" << QCoreApplication::applicationDirPath();
+        return false;
+    }
+
+	cachedSharedSwordDir = QDir(getenv("ALLUSERSPROFILE")); // sword dir for Windows only
+    if (!cachedSharedSwordDir.cd("Application Data")) {
+        qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data";
+        return false;
+	}
+    if (!cachedSharedSwordDir.cd(SWORD_DIR)) {
+        if (!cachedSharedSwordDir.mkdir(SWORD_DIR) || !cachedSharedSwordDir.cd(SWORD_DIR)) {
+			qWarning() << "Cannot find ALLUSERSPROFILE\\Application Data\\Sword";
+			return false;
+		}
+    }
+#endif
 
     cachedIconDir = wDir; // Icon dir
     if (!cachedIconDir.cd("share/bibletime/icons") || !cachedIconDir.isReadable()) {
@@ -108,12 +142,28 @@ bool initDirectoryCache() {
         return false;
     }
 
-    cachedUserHomeDir = QDir::home();
+    cachedUserHomeDir = QDir(getenv("HOME"));
 
-    cachedUserBaseDir = QDir::home();
-    if (!cachedUserBaseDir.cd(".bibletime")) {
-        if (!cachedUserBaseDir.mkdir(".bibletime") || !cachedUserBaseDir.cd(".bibletime")) {
+    cachedUserBaseDir = cachedUserHomeDir;
+    if (!cachedUserBaseDir.cd(BIBLETIME)) {
+        if (!cachedUserBaseDir.mkdir(BIBLETIME) || !cachedUserBaseDir.cd(BIBLETIME)) {
             qWarning() << "Could not create user setting directory.";
+            return false;
+        }
+    }
+
+    cachedUserHomeSwordDir = cachedUserHomeDir;
+    if (!cachedUserHomeSwordDir.cd(SWORD_DIR)) {
+        if (!cachedUserHomeSwordDir.mkdir(SWORD_DIR) || !cachedUserHomeSwordDir.cd(SWORD_DIR)) {
+            qWarning() << "Could not create user home " << SWORD_DIR << " directory.";
+            return false;
+        }
+    }
+
+    cachedUserHomeSwordModsDir = cachedUserHomeSwordDir;
+    if (!cachedUserHomeSwordModsDir.cd("mods.d")) {
+        if (!cachedUserHomeSwordModsDir.mkdir("mods.d") || !cachedUserHomeSwordModsDir.cd("mods.d")) {
+            qWarning() << "Could not create user home " << SWORD_DIR << " mods.d directory.";
             return false;
         }
     }
@@ -227,6 +277,28 @@ void copyRecursive(const QString &src, const QString &dest) {
     }
 }
 
+QString convertDirSeparators(const QString& path)
+{
+	QString result = path;
+#ifdef Q_WS_WIN
+	result.replace("/", "\\");
+#else
+	result.replace("\\", "/");
+#endif
+	return result;
+}
+
+#ifdef Q_WS_WIN
+QDir getApplicationSwordDir() {
+    return cachedApplicationSwordDir;
+}
+
+QDir getSharedSwordDir() {
+    return cachedSharedSwordDir;
+}
+
+#endif
+
 QDir getIconDir() {
     return cachedIconDir;
 }
@@ -301,6 +373,14 @@ QDir getUserBaseDir() {
 
 QDir getUserHomeDir() {
     return cachedUserHomeDir;
+}
+
+QDir getUserHomeSwordDir() {
+    return cachedUserHomeSwordDir;
+}
+
+QDir getUserHomeSwordModsDir() {
+    return cachedUserHomeSwordModsDir;
 }
 
 QDir getUserSessionsDir() {

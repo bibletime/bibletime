@@ -86,11 +86,9 @@ int main(int argc, char* argv[]) {
 	// On Windows, add a path for Qt plugins to be loaded from
     app.addLibraryPath(app.applicationDirPath() + "/plugins");
 
-	// change directory to the application bin directory so that
-	// the sword.conf is found. It points to the sword/locales.d directory
-	QString binDir = app.applicationDirPath();
-	QDir dir;
-	dir.setCurrent(binDir);
+	// Must set HOME var on Windows
+	QString homeDir(getenv("APPDATA"));
+	_putenv_s("HOME", qPrintable(homeDir));
 
 #endif
 
@@ -101,7 +99,15 @@ int main(int argc, char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    // This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
+#ifdef Q_WS_WIN
+	// change directory to the Sword or .sword directory in the $HOME dir so that
+	// the sword.conf is found. It points to the sword/locales.d directory
+	QString homeSwordDir = util::directory::getUserHomeDir().absolutePath();
+	QDir dir;
+	dir.setCurrent(homeSwordDir);
+#endif
+
+	// This is needed for languagemgr language names to work, they use \uxxxx escape sequences in string literals
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     //first install QT's own translations
     QTranslator qtTranslator;
