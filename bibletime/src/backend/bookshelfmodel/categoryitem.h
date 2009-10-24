@@ -41,7 +41,7 @@ class CategoryItem: public Item {
             return BtBookshelfModel::categoryIcon(m_category);
         }
 
-        inline bool fitFor(CSwordModuleInfo *module) {
+        inline bool fitFor(CSwordModuleInfo *module) const {
             return module->category() == m_category;
         }
 

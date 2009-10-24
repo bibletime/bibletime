@@ -39,7 +39,7 @@ class LanguageItem: public Item {
             return util::directory::getIcon("flag.svg");
         }
 
-        inline bool fitFor(CSwordModuleInfo *module) {
+        inline bool fitFor(CSwordModuleInfo *module) const {
             return module->language() == m_language;
         }
 

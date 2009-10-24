@@ -33,7 +33,7 @@ class DistributionItem: public Item {
             return m_distribution;
         }
 
-        inline bool fitFor(CSwordModuleInfo *module) {
+        inline bool fitFor(CSwordModuleInfo *module) const {
             return module->config(CSwordModuleInfo::DistributionSource)
                    == m_distribution;
         }
