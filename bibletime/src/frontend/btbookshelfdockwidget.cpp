@@ -60,7 +60,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_bookshelfTreeModel->setSourceModel(CPointers::backend()->model());
 
     m_filterProxyModel = new BtModuleHiddenFilterProxyModel(this);
-    // m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
     m_nameFilterProxyModel = new BtModuleNameFilterProxyModel(this);
     m_nameFilterProxyModel->setSourceModel(m_filterProxyModel);
