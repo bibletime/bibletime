@@ -36,6 +36,10 @@ class ModuleItem: public Item {
             return BtBookshelfModel::categoryIcon(m_moduleInfo->category());
         }
 
+        inline bool isHidden() const {
+            return m_moduleInfo->isHidden();
+        }
+
     protected:
         CSwordModuleInfo *m_moduleInfo;
 };

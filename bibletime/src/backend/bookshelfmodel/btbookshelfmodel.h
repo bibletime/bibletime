@@ -26,6 +26,7 @@ class BtBookshelfModel: public QAbstractListModel {
             ModulePointerRole  = Qt::UserRole,
             ModuleCategoryRole = Qt::UserRole + 1,
             ModuleLanguageRole = Qt::UserRole + 2,
+            ModuleHiddenRole = Qt::UserRole + 3,
             UserRole = Qt::UserRole + 100
         };
 
@@ -36,6 +37,8 @@ class BtBookshelfModel: public QAbstractListModel {
         virtual QVariant data(const QModelIndex &index, int role) const;
         virtual QVariant headerData(int section, Qt::Orientation orientation,
                                     int role = Qt::DisplayRole) const;
+        bool setData(const QModelIndex &index, const QVariant &value,
+                     int role = ModuleHiddenRole);
 
         inline CSwordModuleInfo *module(const QModelIndex &index) const {
             return (CSwordModuleInfo *)
@@ -59,6 +62,9 @@ class BtBookshelfModel: public QAbstractListModel {
         inline const QList<CSwordModuleInfo *> &modules() const {
             return m_data;
         }
+
+    protected slots:
+        void moduleHidden(bool hidden);
 
     protected:
         QList<CSwordModuleInfo *> m_data;

@@ -919,8 +919,8 @@ QString CSwordModuleInfo::getFormattedConfigEntry(const QString& name) const {
     return ret.isEmpty() ? QString::null : ret;
 }
 
-void CSwordModuleInfo::setHidden(bool hide) {
-    if (m_hidden == hide) return;
+bool CSwordModuleInfo::setHidden(bool hide) {
+    if (m_hidden == hide) return false;
 
     m_hidden = hide;
     QStringList hiddenModules(CBTConfig::get(CBTConfig::hiddenModules));
@@ -933,4 +933,5 @@ void CSwordModuleInfo::setHidden(bool hide) {
     }
     CBTConfig::set(CBTConfig::hiddenModules, hiddenModules);
     emit hiddenChanged(hide);
+    return true;
 }

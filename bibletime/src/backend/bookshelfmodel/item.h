@@ -71,9 +71,9 @@ class Item {
           \brief Returns the index of this item under its parent.
           \retval -1 if this item has no parent.
         */
-        inline int childIndex() {
+        inline int childIndex() const {
             if (m_parent == 0) return -1;
-            return m_parent->m_children.indexOf(this);
+            return m_parent->m_children.indexOf(const_cast<Item*>(this));
         }
 
         /**
@@ -158,6 +158,8 @@ class Item {
           \brief Comparsion operator used sorting child items.
         */
         virtual bool operator<(const Item &other) const;
+
+        virtual bool isHidden() const;
 
     protected:
         inline void setParent(Item *parent) {

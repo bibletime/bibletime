@@ -53,4 +53,12 @@ bool Item::operator<(const Item &other) const {
     return name().localeAwareCompare(other.name()) < 0;
 }
 
+bool Item::isHidden() const {
+    if (m_children.empty()) return true;
+    Q_FOREACH(Item *child, m_children) {
+        if (!child->isHidden()) return false;
+    }
+    return true;
+}
+
 } // namespace BookshelfModel

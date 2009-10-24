@@ -8,7 +8,8 @@ SET(bibletime_SOURCES
 	#backend bookshelf model:
 	src/backend/bookshelfmodel/btbookshelfmodel.cpp
 	src/backend/bookshelfmodel/btbookshelftreemodel.cpp
-	src/backend/bookshelfmodel/btcheckstatefilterproxymodel.cpp
+#	src/backend/bookshelfmodel/btcheckstatefilterproxymodel.cpp
+	src/backend/bookshelfmodel/btmodulehiddenfilterproxymodel.cpp
 	src/backend/bookshelfmodel/btmodulenamefilterproxymodel.cpp
 	src/backend/bookshelfmodel/categoryitem.cpp
 	src/backend/bookshelfmodel/distributionitem.cpp
@@ -196,7 +197,8 @@ SET(bibletime_SOURCES
 SET(bibletime_MOCABLE_HEADERS
 	src/backend/bookshelfmodel/btbookshelfmodel.h
 	src/backend/bookshelfmodel/btbookshelftreemodel.h
-	src/backend/bookshelfmodel/btcheckstatefilterproxymodel.h
+#	src/backend/bookshelfmodel/btcheckstatefilterproxymodel.h
+	src/backend/bookshelfmodel/btmodulehiddenfilterproxymodel.h
 	src/backend/bookshelfmodel/btmodulenamefilterproxymodel.h
 	src/backend/drivers/cswordmoduleinfo.h
 	src/backend/managers/cswordbackend.h

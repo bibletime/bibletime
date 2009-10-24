@@ -26,7 +26,7 @@
 #include <QVBoxLayout>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/btbookshelftreemodel.h"
-#include "backend/bookshelfmodel/btcheckstatefilterproxymodel.h"
+#include "backend/bookshelfmodel/btmodulehiddenfilterproxymodel.h"
 #include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
@@ -59,11 +59,11 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
         }
     }
     settings->endGroup();
-    m_bookshelfTreeModel->setDefaultChecked(true);
+    m_bookshelfTreeModel->setDefaultChecked(BtBookshelfTreeModel::MODULE_HIDDEN);
     m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
 
-    m_filterProxyModel = new BtCheckStateFilterProxyModel(this);
-    m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
+    m_filterProxyModel = new BtModuleHiddenFilterProxyModel(this);
+    // m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
     m_filterProxyModel->setSourceModel(m_bookshelfTreeModel);
     m_nameFilterProxyModel = new BtModuleNameFilterProxyModel(this);
     m_nameFilterProxyModel->setSourceModel(m_filterProxyModel);
@@ -115,6 +115,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
             this, SLOT(showItemContextMenu(CSwordModuleInfo*, QPoint)));
     connect(m_view, SIGNAL(moduleActivated(CSwordModuleInfo*)),
             this, SIGNAL(moduleOpenTriggered(CSwordModuleInfo*)));
+    connect(m_bookshelfTreeModel, SIGNAL(moduleChecked(CSwordModuleInfo*,bool)),
+            this, SLOT(moduleChecked(CSwordModuleInfo*,bool)));
 
     retranslateInterface();
 }
@@ -241,6 +243,10 @@ void BtBookshelfDockWidget::retranslateInterface() {
     m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
+}
+
+void BtBookshelfDockWidget::moduleChecked(CSwordModuleInfo *module, bool c) {
+    module->setHidden(!c);
 }
 
 void BtBookshelfDockWidget::swordSetupChanged() {

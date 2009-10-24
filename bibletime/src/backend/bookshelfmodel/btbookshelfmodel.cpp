@@ -43,6 +43,12 @@ QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
             return categoryIcon(m_data.at(row)->category());
         case ModulePointerRole:
             return qVariantFromValue((void*) m_data.at(row));
+        case ModuleCategoryRole:
+            return QVariant(); /// \todo Unimplemented
+        case ModuleLanguageRole:
+            return QVariant(); /// \todo Unimplemented
+        case ModuleHiddenRole:
+            return m_data.at(row)->isHidden();
         default:
             return QVariant();
     }
@@ -56,6 +62,23 @@ QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,
     }
 
     return QVariant();
+}
+
+bool BtBookshelfModel::setData(const QModelIndex &index, const QVariant &value,
+                               int role) {
+    int row(index.row());
+    if (role == ModuleHiddenRole && row >= 0 && row < m_data.size()
+        && index.column() == 0)
+    {
+        /*
+          Emitting dataChanged here is actually mandatory, but were not doing it
+          directly. Since we're connected to the module, changing its hidden
+          state will emit a signal we catch in moduleHidden(), which in turn is
+          what will actually emit dataChanged().
+        */
+        return m_data.at(row)->setHidden(value.toBool());
+    }
+    return false;
 }
 
 QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
@@ -127,6 +150,8 @@ void BtBookshelfModel::addModule(CSwordModuleInfo * const module) {
     const int index(m_data.size());
     beginInsertRows(QModelIndex(), index, index);
     m_data.append(module);
+    connect(module, SIGNAL(hiddenChanged(bool)),
+            this, SLOT(moduleHidden(bool)));
     endInsertRows();
 }
 
@@ -146,13 +171,11 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
 
     beginInsertRows(QModelIndex(), m_data.size(),
                     m_data.size() + newModules.size() - 1);
-#if QT_VERSION >= 0x040500
-    m_data.append(newModules);
-#else
     Q_FOREACH(CSwordModuleInfo *module, newModules) {
         m_data.append(module);
+        connect(module, SIGNAL(hiddenChanged(bool)),
+                this, SLOT(moduleHidden(bool)));
     }
-#endif
     endInsertRows();
 }
 
@@ -161,6 +184,8 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module) {
     if (index == -1) return;
 
     beginRemoveRows(QModelIndex(), index, index);
+    disconnect(module, SIGNAL(hiddenChanged(bool)),
+               this, SLOT(moduleHidden(bool)));
     m_data.removeAt(index);
     endRemoveRows();
 }
@@ -181,4 +206,14 @@ CSwordModuleInfo* BtBookshelfModel::getModule(const QString &name) const {
         if (module->name() == name) return module;
     }
     return 0;
+}
+
+void BtBookshelfModel::moduleHidden(bool) {
+    Q_ASSERT(qobject_cast<CSwordModuleInfo*>(sender()) != 0);
+
+    CSwordModuleInfo *module(static_cast<CSwordModuleInfo*>(sender()));
+    Q_ASSERT(m_data.count(module) == 1);
+
+    QModelIndex i(index(m_data.indexOf(module), 0));
+    emit dataChanged(i, i);
 }

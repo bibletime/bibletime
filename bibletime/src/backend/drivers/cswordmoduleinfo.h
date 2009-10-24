@@ -286,7 +286,12 @@ class CSwordModuleInfo: public QObject {
         */
         inline bool isHidden() const { return m_hidden; }
 
-        void setHidden(bool hide);
+        /**
+          Shows or hides the module.
+          \param hide Whether the module should be hidden.
+          \returns whether the hidden state was changed.
+        */
+        bool setHidden(bool hide);
 
         /**
         * Returns the category of this module. See CSwordModuleInfo::Category for possible values.

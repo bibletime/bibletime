@@ -37,6 +37,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
             UserRole = BtBookshelfModel::UserRole + 100
         };
         enum Group { GROUP_CATEGORY = 0, GROUP_LANGUAGE, GROUP_DISTRIBUTION };
+        enum CheckedBehavior { CHECKED, UNCHECKED, MODULE_HIDDEN };
         typedef QList<Group> Grouping;
 
         BtBookshelfTreeModel(QObject *parent = 0);
@@ -59,8 +60,8 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         virtual bool setData(const QModelIndex &index, const QVariant &value,
                              int role);
 
-        void setSourceModel(QAbstractListModel *sourceModel);
-        inline QAbstractListModel *sourceModel() const {
+        void setSourceModel(QAbstractItemModel *sourceModel);
+        inline QAbstractItemModel *sourceModel() const {
             return m_sourceModel;
         }
         void setGroupingOrder(const Grouping &groupingOrder);
@@ -71,10 +72,10 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         inline bool checkable() const {
             return m_checkable;
         }
-        inline void setDefaultChecked(bool defaultChecked) {
-            m_defaultChecked = defaultChecked;
+        inline void setDefaultChecked(CheckedBehavior b) {
+            m_defaultChecked = b;
         }
-        inline bool defaultChecked() const {
+        inline CheckedBehavior defaultChecked() const {
             return m_defaultChecked;
         }
 
@@ -87,6 +88,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void removeModule(CSwordModuleInfo *module);
 
         BookshelfModel::Item *getItem(const QModelIndex &index) const;
+        QModelIndex getIndex(const BookshelfModel::Item *item);
         void resetParentCheckStates(QModelIndex parentIndex);
 
         template <class T>
@@ -112,13 +114,16 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         void moduleInserted(const QModelIndex &parent, int start, int end);
         void moduleRemoved(const QModelIndex &parent, int start, int end);
 
+    signals:
+        void moduleChecked(CSwordModuleInfo *module, bool checked);
+
     protected:
-        QAbstractListModel   *m_sourceModel;
+        QAbstractItemModel   *m_sourceModel;
         BookshelfModel::Item *m_rootItem;
         ModuleItemMap         m_modules;
         Grouping              m_groupingOrder;
+        CheckedBehavior       m_defaultChecked;
         bool                  m_checkable;
-        bool                  m_defaultChecked;
 };
 
 QDataStream &operator<<(QDataStream &os, const BtBookshelfTreeModel::Grouping &o);
