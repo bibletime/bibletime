@@ -114,6 +114,8 @@ QString BtBookshelfModel::languageName(
 }
 
 void BtBookshelfModel::clear(bool destroy) {
+    if (m_data.size() <= 0) return;
+
     beginRemoveRows(QModelIndex(), 0, m_data.size() - 1);
     if (destroy) {
         qDeleteAll(m_data);
