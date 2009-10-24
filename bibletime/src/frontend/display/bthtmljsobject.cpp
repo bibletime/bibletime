@@ -72,6 +72,7 @@ void BtHtmlJsObject::mouseDownRight(const QString& url, const QString& lemma) {
 
 // The mouse move event starts in the javascript function "mouseMoveHandler" in bthtml.js. It calls this function
 void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, const int& y, const bool& shiftKey) {
+    /// \bug Valgrind reports uninitialized m_dndData or m_dndData member:
     if (!m_dndData.isDragging && m_dndData.mousePressed) {
         // If we have not started dragging, but the mouse button is down, create a the mime data
         QPoint current(x, y);

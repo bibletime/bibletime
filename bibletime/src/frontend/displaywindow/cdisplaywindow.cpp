@@ -95,36 +95,36 @@ void CDisplayWindow::setCaption( const QString&  ) {
 void CDisplayWindow::insertKeyboardActions( BtActionCollection* a ) {
     qDebug() << "CDisplayWindow::insertKeyboardActions: ac: " << a;
 
-    QAction* actn = new QAction(QIcon(), tr("Zoom in"), 0);
+    QAction* actn = new QAction(QIcon(), tr("Zoom in"), a);
     actn->setShortcut(QKeySequence::ZoomIn);
     a->addAction("zoomIn", actn);
 
-    actn = new QAction(QIcon(), tr("Zoom out"), 0);
+    actn = new QAction(QIcon(), tr("Zoom out"), a);
     actn->setShortcut(QKeySequence::ZoomOut);
     a->addAction("zoomOut", actn);
 
-    actn = new QAction(QIcon(), tr("Close"), 0);
+    actn = new QAction(QIcon(), tr("Close"), a);
     actn->setShortcut(QKeySequence::Close);
     a->addAction("closeWindow", actn);
 
-    actn = new QAction(QIcon(), tr("Select all"), 0);
+    actn = new QAction(QIcon(), tr("Select all"), a);
     actn->setShortcut(QKeySequence::SelectAll);
     a->addAction("selectAll", actn);
 
-    actn = new QAction(QIcon(), tr("Copy"), 0);
+    actn = new QAction(QIcon(), tr("Copy"), a);
     actn->setShortcut(QKeySequence::Copy);
     a->addAction("copySelectedText", actn);
 
-    actn = new QAction(QIcon(), tr("Find..."), 0);
+    actn = new QAction(QIcon(), tr("Find..."), a);
     actn->setShortcut(QKeySequence::Find);
     a->addAction("findText", actn);
 
-    actn = new QAction(QIcon(), tr("Change location"), 0);
+    actn = new QAction(QIcon(), tr("Change location"), a);
     actn->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_L));
     a->addAction("openLocation", actn);
 
     actn = new QAction(QIcon(util::filesystem::DirectoryUtil::getIcon(CResMgr::displaywindows::general::search::icon)),
-                       tr("Search with works of this window"), 0);
+                       tr("Search with works of this window"), a);
     actn->setShortcut(CResMgr::displaywindows::general::search::accel);
     a->addAction(CResMgr::displaywindows::general::search::actionName, actn);
 

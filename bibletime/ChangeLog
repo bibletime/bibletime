@@ -1,6 +1,7 @@
 2009-10-24 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash on module installation/uninstall.
     * Fixed the wrong icon for lexicons.
+    * Fixed some (not all) memory leaks.
 
 2009-10-14 Martin Gruner <mgruner@crosswire.org>
 	* Release 2.3.2
