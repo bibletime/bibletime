@@ -18,7 +18,6 @@
 
 class CSwordModuleInfo;
 class BtBookshelfView;
-class BtBookshelfModel;
 class BtBookshelfTreeModel;
 class BtModuleHiddenFilterProxyModel;
 class BtModuleNameFilterProxyModel;
@@ -50,7 +49,6 @@ class BtBookshelfDockWidget: public QDockWidget {
 
     protected slots:
         void moduleChecked(CSwordModuleInfo *module, bool checked);
-        void swordSetupChanged();
         void showContextMenu(QPoint pos);
         void groupingActionTriggered(QAction *action);
         void showHideEnabled(bool enable);
@@ -59,7 +57,6 @@ class BtBookshelfDockWidget: public QDockWidget {
 
     protected:
         // Models:
-        BtBookshelfModel               *m_bookshelfModel;
         BtBookshelfTreeModel           *m_bookshelfTreeModel;
         BtModuleHiddenFilterProxyModel *m_filterProxyModel;
         BtModuleNameFilterProxyModel   *m_nameFilterProxyModel;

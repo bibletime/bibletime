@@ -136,9 +136,13 @@ QString BtBookshelfModel::languageName(
     return language->translatedName();
 }
 
-void BtBookshelfModel::clear() {
+void BtBookshelfModel::clear(bool destroy) {
     beginRemoveRows(QModelIndex(), 0, m_data.size() - 1);
-    m_data.clear();
+    if (destroy) {
+        qDeleteAll(m_data);
+    } else {
+        m_data.clear();
+    }
     endRemoveRows();
 }
 
@@ -179,7 +183,9 @@ void BtBookshelfModel::addModules(const QSet<CSwordModuleInfo *> &modules) {
     endInsertRows();
 }
 
-void BtBookshelfModel::removeModule(CSwordModuleInfo * const module) {
+void BtBookshelfModel::removeModule(CSwordModuleInfo * const module,
+                                    bool destroy)
+{
     const int index(m_data.indexOf(module));
     if (index == -1) return;
 
@@ -188,16 +194,21 @@ void BtBookshelfModel::removeModule(CSwordModuleInfo * const module) {
                this, SLOT(moduleHidden(bool)));
     m_data.removeAt(index);
     endRemoveRows();
+    if (destroy) delete module;
 }
 
-void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> &modules) {
-    removeModules(modules.toSet());
+void BtBookshelfModel::removeModules(const QList<CSwordModuleInfo *> &modules,
+                                     bool destroy)
+{
+    removeModules(modules.toSet(), destroy);
 }
 
-void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> &modules) {
+void BtBookshelfModel::removeModules(const QSet<CSwordModuleInfo *> &modules,
+                                     bool destroy)
+{
     // This is inefficient, since signals are emitted for each removed module:
     Q_FOREACH(CSwordModuleInfo *module, modules) {
-        removeModule(module);
+        removeModule(module, destroy);
     }
 }
 

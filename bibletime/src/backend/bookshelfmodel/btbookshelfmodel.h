@@ -50,13 +50,16 @@ class BtBookshelfModel: public QAbstractListModel {
         static QString categoryName(const CSwordModuleInfo::Category &category);
         static QString languageName(const CLanguageMgr::Language *language);
 
-        void clear();
+        void clear(bool destroy = false);
         void addModule(CSwordModuleInfo * const module);
         void addModules(const QSet<CSwordModuleInfo *> &modules);
         void addModules(const QList<CSwordModuleInfo *> &modules);
-        void removeModule(CSwordModuleInfo * const module);
-        void removeModules(const QSet<CSwordModuleInfo *> &modules);
-        void removeModules(const QList<CSwordModuleInfo *> &modules);
+        void removeModule(CSwordModuleInfo * const module,
+                          bool destroy = false);
+        void removeModules(const QSet<CSwordModuleInfo *> &modules,
+                           bool destroy = false);
+        void removeModules(const QList<CSwordModuleInfo *> &modules,
+                           bool destroy = false);
 
         CSwordModuleInfo* getModule(const QString &name) const;
         inline const QList<CSwordModuleInfo *> &modules() const {

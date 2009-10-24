@@ -15,6 +15,7 @@
 #include <QString>
 #include <QStringList>
 #include "backend/drivers/cswordmoduleinfo.h"
+#include "backend/bookshelfmodel/btbookshelfmodel.h"
 
 // Sword includes:
 #include <swmgr.h>
@@ -101,27 +102,31 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         /**
         * The destrctor of this backend. This function shuts the modules down using @ref shutdownModules.
         */
-        virtual ~CSwordBackend();
+        ~CSwordBackend();
 
         /**
-        * This function returns the list of available modules managed by this backend.
-        * You have to call initModules() first;
+        * This function returns the list of available modules managed by this
+        * backend. You have to call initModules() first; This method is
+        * equivalent to model()->modules().
         *
         * @return The list of modules managed by this backend
         */
-        inline virtual QList<CSwordModuleInfo*>& moduleList();
+        inline const QList<CSwordModuleInfo*>& moduleList() const;
+
+        inline BtBookshelfModel *model();
+
         /**
         * Initializes the Sword modules.
         *
         * @return True if the initializiation was succesful, otherwise return false.
         */
-        virtual CSwordBackend::LoadError initModules(SetupChangedReason reason);
+        CSwordBackend::LoadError initModules(SetupChangedReason reason);
         /**
         * This function deinitializes the modules and deletes them.
         *
         * @return True if it was succesful, otherwise return false
         */
-        virtual bool shutdownModules();
+        bool shutdownModules();
         /**
         * Sets the given options enabled or disabled depending on the second parameter.
         *
@@ -141,7 +146,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * @param description The description of the desired module
         * @return pointer to the desired module; null if no module has the specified description
         */
-        virtual CSwordModuleInfo* findModuleByDescription(const QString& description);
+        CSwordModuleInfo* findModuleByDescription(const QString& description);
         /**
         * This function searches for a module with the specified description
         * @param description The description of the desired module
@@ -194,7 +199,7 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * Returns the version of the Sword library.
         * @return The version used by this backend
         */
-        inline virtual const sword::SWVersion Version();
+        inline const sword::SWVersion Version();
         /**
         * Reload all Sword modules.
         */
@@ -224,11 +229,11 @@ class CSwordBackend : public QObject, public sword::SWMgr {
         * Adds a render filter to the module.
         * This is used to apply our own render filters to our modules instead of the sword filters
         */
-        virtual void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
+        void AddRenderFilters(sword::SWModule *module, sword::ConfigEntMap &section);
         /**
         * Overrides Sword filters which appear to be buggy.
         */
-        virtual void filterInit();
+        void filterInit();
 
 		QStringList getSharedSwordConfigFiles();
 		QString getPrivateSwordConfigPath();
@@ -250,13 +255,17 @@ class CSwordBackend : public QObject, public sword::SWMgr {
             Rendering::CBookDisplay* book;
         }	m_displays;
 
-        QList<CSwordModuleInfo*> m_moduleList;
+        BtBookshelfModel m_dataModel;
         QMap<QString, QString> m_moduleDescriptionMap;
 };
 
 /**Returns The list of modules managed by this backend*/
-inline QList<CSwordModuleInfo*>& CSwordBackend::moduleList() {
-    return m_moduleList;
+inline const QList<CSwordModuleInfo*> &CSwordBackend::moduleList() const {
+    return m_dataModel.modules();
+}
+
+inline BtBookshelfModel *CSwordBackend::model() {
+    return &m_dataModel;
 }
 
 /** Returns our local config object to store the cipher keys etc. locally for each user. The values of the config are merged with the global config. */

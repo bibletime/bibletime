@@ -45,7 +45,9 @@ using namespace Filters;
 using namespace Rendering;
 
 CSwordBackend::CSwordBackend()
-        : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true) {
+        : sword::SWMgr(0, 0, false, new sword::EncodingFilterMgr( sword::ENC_UTF8 ), true),
+          m_dataModel(this)
+{
     m_filters.gbf = new BT_GBFHTML();
     m_filters.plain = new BT_PLAINHTML();
     m_filters.thml = new BT_ThMLHTML();
@@ -113,7 +115,7 @@ QList<CSwordModuleInfo*> CSwordBackend::takeModulesFromList(QStringList names) {
     foreach(QString name, names) {
         CSwordModuleInfo* mInfo = findModuleByName(name);
         if (mInfo) {
-            m_moduleList.removeAll(mInfo);
+            m_dataModel.removeModule(mInfo);
             ++numberOfRemoved;
             list.append(mInfo);
         }
@@ -129,7 +131,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
     LoadError ret = NoError;
 
     shutdownModules(); //remove previous modules
-    m_moduleList.clear();
+    m_dataModel.clear();
 
     sword::ModMap::iterator end = Modules.end();
     ret = LoadError( Load() );
@@ -159,7 +161,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
             //Append the new modules to our list, but only if it's supported
             //The constructor of CSwordModuleInfo prints a warning on stdout
             if (!newModule->hasVersion() || (newModule->minimumSwordVersion() <= sword::SWVersion::currentVersion)) {
-                m_moduleList.append( newModule );
+                m_dataModel.addModule(newModule);
             }
             else {
                 delete newModule;
@@ -167,7 +169,7 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         }
     }
 
-    foreach (CSwordModuleInfo* mod, m_moduleList) {
+    Q_FOREACH(CSwordModuleInfo* mod, m_dataModel.modules()) {
         m_moduleDescriptionMap.insert( mod->config(CSwordModuleInfo::Description), mod->name() );
         //unlock modules if keys are present
         if ( mod->isEncrypted() ) {
@@ -222,16 +224,7 @@ void CSwordBackend::AddRenderFilters(sword::SWModule *module, sword::ConfigEntMa
 
 /** This function deinitializes the modules and deletes them. */
 bool CSwordBackend::shutdownModules() {
-    QList<CSwordModuleInfo*>::iterator it = m_moduleList.begin();
-    QList<CSwordModuleInfo*>::iterator end = m_moduleList.end();
-
-    while (it != end) {
-        CSwordModuleInfo* current = (*it);
-        it = m_moduleList.erase(it);
-        delete current;
-    }
-
-    Q_ASSERT(m_moduleList.count() == 0);
+    m_dataModel.clear(true);
     //BT  mods are deleted now, delete Sword mods, too.
     DeleteMods();
 
@@ -297,7 +290,7 @@ void CSwordBackend::setFilterOptions( const CSwordBackend::FilterOptions options
 
 /** This function searches for a module with the specified description */
 CSwordModuleInfo* CSwordBackend::findModuleByDescription(const QString& description) {
-    foreach(CSwordModuleInfo* mod, m_moduleList) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
         if (mod->config(CSwordModuleInfo::Description) == description) return mod;
     }
     return 0;
@@ -313,21 +306,21 @@ const QString CSwordBackend::findModuleNameByDescription(const QString& descript
 
 /** This function searches for a module with the specified name */
 CSwordModuleInfo* CSwordBackend::findModuleByName(const QString& name) {
-    foreach(CSwordModuleInfo* mod, m_moduleList) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
         if (mod->name() == name) return mod;
     }
     return 0;
 }
 
 CSwordModuleInfo* CSwordBackend::findSwordModuleByPointer(const sword::SWModule* const swmodule) {
-    foreach(CSwordModuleInfo* mod, m_moduleList) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
         if (mod->module() == swmodule ) return mod;
     }
     return 0;
 }
 
 CSwordModuleInfo* CSwordBackend::findModuleByPointer(const CSwordModuleInfo* const module) {
-    foreach(CSwordModuleInfo* mod, m_moduleList) {
+    Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
         if (mod  == module) return mod;
     }
     return 0;
@@ -485,7 +478,7 @@ const QString CSwordBackend::booknameLanguage( const QString& language ) {
         //use what sword returns, language may be different
         QString newLocaleName( sword::LocaleMgr::getSystemLocaleMgr()->getDefaultLocaleName()  );
 
-        foreach(CSwordModuleInfo* mod, m_moduleList) {
+        Q_FOREACH (CSwordModuleInfo *mod, m_dataModel.modules()) {
             if ( (mod->type() == CSwordModuleInfo::Bible) || (mod->type() == CSwordModuleInfo::Commentary) ) {
                 //Create a new key, it will get the default bookname language
                 ((sword::VerseKey*)(mod->module()->getKey()))->setLocale( newLocaleName.toUtf8().constData() );

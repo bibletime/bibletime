@@ -97,6 +97,8 @@ QString BtIndexPage::header() {
 
 /** Populates the module list with installed modules and orphaned indices */
 void BtIndexPage::populateModuleList() {
+    typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
+
     m_moduleList->clear();
 
     // populate installed modules
@@ -112,9 +114,8 @@ void BtIndexPage::populateModuleList() {
 
 
 
-    QList<CSwordModuleInfo*>& modules = CPointers::backend()->moduleList();
-    QList<CSwordModuleInfo*>::iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::iterator it = modules.begin(); it != end_it; ++it) {
+    const QList<CSwordModuleInfo*> &modules(CPointers::backend()->moduleList());
+    for (MLCI it(modules.begin()); it != modules.end(); ++it) {
         QTreeWidgetItem* item = 0;
 
         if ((*it)->hasIndex()) {
