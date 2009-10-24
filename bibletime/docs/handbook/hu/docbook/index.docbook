@@ -4,7 +4,7 @@
 [
   <!ENTITY bibletime '<application>BibleTime</application>'>
   <!ENTITY sword '<application>Sword</application>'>
-  <!ENTITY cbs '<application>Crosswire Bible Society</application>'>
+  <!ENTITY cbs '<application>Crosswire  Bible Society</application>'>
   <!ENTITY kde '<application>KDE</application>'>
   <!ENTITY qt '<application>Qt</application>'>
 
@@ -51,7 +51,8 @@
   <date>2009-10</date>
   <releaseinfo>2.4</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the &sword; framework.</para>
+    <para>&bibletime; egy, a &sword; keretrendszerre alapozott Biblia tanulmányozó 
+szoftver.</para>
   </abstract>
   <keywordset>
     <keyword>Qt4</keyword>

@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
 "POT-Creation-Date: 2009-10-23 13:05-0400\n"
-"PO-Revision-Date: 2009-05-19 18:51+0200\n"
-"Last-Translator: howto.pot\n"
+"PO-Revision-Date: 2009-10-23 19:36+0100\n"
+"Last-Translator: Geza Novak <geza.novak@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -74,7 +74,6 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:36
-#, fuzzy
 msgid ""
 "Many features provided by the &sword; backend can now be customized in "
 "&bibletime;.  These features are documented right in the dialog.  You also "
@@ -85,8 +84,8 @@ msgid ""
 "according to the standard Bible you specified.  With the use of text "
 "filters, you can control the appearance of the text."
 msgstr ""
-"Sok lehetőséget, melyet a Sword keretprogram biztosít, testre lehet szabni a "
-"&bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a "
+"Sok lehetőséget, melyet a &sword; keretprogram biztosít, testre lehet szabni "
+"a &bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a "
 "párbeszédablakban. Lehetőség van továbbá az alapértelmezett dokumentumok "
 "meghatározására, melyeket akkor használunk, ha nem egy konkrét dokumentum "
 "van meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia "
@@ -210,7 +209,6 @@ msgstr "Az ön disztribúciójának nyelvi fájljai."
 
 # type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:110
-#, fuzzy
 msgid ""
 "An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
 "installation on the same computer."
@@ -269,10 +267,8 @@ msgstr "Egy új ingyenes UNICODE készlet kezdeményezés."
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:161
-#, fuzzy
 msgid "Several fonts available from the &cbs; FTP site."
-msgstr ""
-"További betűkészletek elérhetőek a Crosswire Bible Society ftp oldaláról."
+msgstr "További betűkészletek elérhetőek a &cbs; ftp oldaláról."
 
 # type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-config.docbook:169
@@ -328,12 +324,12 @@ msgid ""
 "&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
 "quickly access the functions that you need the most."
 msgstr ""
-"A gyorsbillentyűk speciális billentyűparancsok, melyeket a különböző "
-"menüelemeknél és ikonoknál alkalmazhatunk. Számos &bibletime; parancshoz "
-"tartozik gyorsbillentyű ( <link linkend=\"hdbk-reference-hotkeys\">itt "
-"található</link> a teljes lista). A legtöbb &bibletime; parancs rendelkezik "
-"gyorsbillentyűvel, ami nagyon hasznos a legtöbbet használt funkciók "
-"eléréséhez."
+"A billentyűkombinációk (előzőleg gyorsbillentyűk) speciális "
+"billentyűparancsok, melyeket a különböző menüelemeknél és ikonoknál "
+"alkalmazhatunk. Számos &bibletime; parancshoz tartozik billentyűkombináció "
+"( <link linkend=\"hdbk-reference-shortcuts\">itt található</link> a teljes "
+"lista). A legtöbb &bibletime; parancs rendelkezik billentyűkombinációval, "
+"ami nagyon hasznos a legtöbbet használt funkciók eléréséhez."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-config.docbook:218
@@ -341,6 +337,8 @@ msgid ""
 "In the preceding example, F2, Bible Study Howto has a secondary shortcut "
 "defined, CTRL+2."
 msgstr ""
+"Az előző példában látható, hogy az F2, a \"hogyan tanulmányozza a Bibliát\"-"
+"hoz tartozik egy második billentyűkombináció, a CTRL+2."
 
 # type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:2
@@ -354,7 +352,6 @@ msgstr "Mi a &bibletime;"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:6
-#, fuzzy
 msgid ""
 "&bibletime; is a Bible study tool with support for different types of texts "
 "and languages. Even large amounts of works modules are easy to install and "
@@ -365,15 +362,14 @@ msgid ""
 "ulink>."
 msgstr ""
 "A &bibletime; egy könnyen telepíthető és kezelhető Biblia tanulmányozó "
-"eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg dokumentummal, "
-"modullal. Ez a program a <ulink url=\"http://www.crosswire.org/sword"
-"\">Sword</ulink> keretrendszerre épül, mely lehetővé teszi a szövegek "
-"megjelenítését, keresését stb. A Sword a <ulink url=\"http://www.crosswire."
-"org\">Crosswire Biblia Társaság</ulink> zászlóshajója."
+"eszköz, különféle szövegtípussal, nyelvvel, továbbá rengeteg telepíthető "
+"dokumentummal, modullal. Ez a program a <ulink url=\"http://www.crosswire."
+"org/sword\">&sword;</ulink> keretrendszerre épül, mely lehetővé teszi a "
+"szövegek megjelenítését, keresését stb. A &sword; a <ulink url=\"http://www."
+"crosswire.org\">&cbs;</ulink> zászlóshajója."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:14
-#, fuzzy
 msgid ""
 "&bibletime; is designed to be used with works encoded in one of the formats "
 "supported by the &sword; project. Complete information on the supported "
@@ -381,9 +377,9 @@ msgid ""
 "sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
 "Project, &cbs;."
 msgstr ""
-"A &bibletime; arra lett tervezve, hogy a Sword projekt által értelmezhető "
+"A &bibletime; arra lett tervezve, hogy a &sword; projekt által értelmezhető "
 "formátumú dokumentumokat alkalmazza. Teljeskörű információt a támogatott "
-"formátumokról a Sword projekt <ulink url=\"http://www.crosswire.org/sword/"
+"formátumokról a &sword; projekt <ulink url=\"http://www.crosswire.org/sword/"
 "develop/index.jsp\"> fejlesztői szekciójában</ulink> találhat."
 
 # type: Content of: <chapter><sect1><sect2><title>
@@ -393,13 +389,12 @@ msgstr "Elérhető dokumentumok"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:22
-#, fuzzy
 msgid ""
 "Over 200 documents in 50 languages are available from the <ulink url="
 "\"http://www.crosswire.org\">&cbs;</ulink>.  These include:"
 msgstr ""
 "Több, mint 200 dokumentum 50 nyelven érhető el a <ulink url=\"http://www."
-"crosswire.org\">Crosswire Biblia Társaság</ulink> honlapján. Itt találhat:"
+"crosswire.org\">&cbs;</ulink> honlapján. Itt találhat:"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:27
@@ -408,7 +403,6 @@ msgstr "Bibliákat"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-intro.docbook:29
-#, fuzzy
 msgid ""
 "The full Bible text, with optional things like Strong's Numbers, headings "
 "and/or footnotes in the text.  Bibles are available in many languages, and "
@@ -420,7 +414,7 @@ msgstr ""
 "fejlécek, lábjegyzetek a szövegekben. A Bibliák különféle nyelveken "
 "elérhetők, és nemcsak a modern verziókat találhatja meg, hanem fellelhetőek "
 "a régies szövegváltozatok, mint a Westminster Leningrád Kódex (\"WLC\", "
-"héber) és a Septuaginta (\"LXX\", görög). Ez a legfejlettebb része a Sword "
+"héber) és a Septuaginta (\"LXX\", görög). Ez a legfejlettebb része a &sword; "
 "projektnek."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
@@ -550,7 +544,6 @@ msgstr "<phrase>A &bibletime; alkalmazás ablak</phrase>"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:14
-#, fuzzy
 msgid ""
 "You can easily see the different parts of the application. The top left "
 "window is used to open installed works in the Bookshelf tab, and with the "
@@ -626,7 +619,6 @@ msgstr "A Fogd &amp; Vidd működése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:50
-#, fuzzy
 msgid ""
 "If you are reading a certain work, and want to open another work at the "
 "passage you are reading, you can use a shortcut. Simply click with the "
@@ -651,7 +643,6 @@ msgstr "Kiegészítő információk egy adott dokumentumról"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:63
-#, fuzzy
 msgid ""
 "If you click with the <mousebutton>right</mousebutton> mouse button on the "
 "symbol of a work, you will see a menu with additional entries that are "
@@ -671,7 +662,7 @@ msgstr ""
 "ahol megadhatja a zárolt dokumentumok feloldó kulcsát. A zárolt "
 "dokumentumokról kiegészítő információt olvashat <ulink url=\"http://www."
 "crosswire.org/sword/modules/aboutlocked.jsp\"> ezen az oldalon</ulink>, a "
-"Crosswire Biblia Társaság honlapján. "
+"&cbs; honlapján. "
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:79
@@ -681,7 +672,6 @@ msgstr "Keresés a dokumentumokban"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:80
-#, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
@@ -705,7 +695,6 @@ msgstr "Munka a könyvjelzőkkel"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:100
-#, fuzzy
 msgid ""
 "Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
 "category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
@@ -717,12 +706,11 @@ msgstr ""
 "kategóriára, majd válassza az <guimenuitem>\"Új mappa létrehozása\"</"
 "guimenuitem> menüelemet egy új könyvjelző mappa létrehozásához. Használhatja "
 "egyszerűen a Fogd &amp; vidd technikát is, hogy verset húzzon a "
-"munkaasztalról, vagy a kereséséi eredményeket áthúzza a könyvjelzőkhöz, "
+"munkaasztalról, vagy a keresési eredményeket áthúzza a könyvjelzőkhöz, "
 "illetve, hogy újrarendezze a meglévő könyvjelzőit."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:108
-#, fuzzy
 msgid ""
 "You can also import bookmarks from other people or export bookmarks to share "
 "them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
@@ -739,7 +727,6 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:116
-#, fuzzy
 msgid ""
 "You can also click with the <mousebutton>right</mousebutton> on folders and "
 "bookmarks to change their names and descriptions."
@@ -810,7 +797,6 @@ msgstr "Megnyitott ablakok elhelyezése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:155
-#, fuzzy
 msgid ""
 "Of course, you can open multiple works at the same time.  There are several "
 "possibilities for arranging the read windows on the desk. Please have a look "
@@ -827,7 +813,7 @@ msgstr ""
 "elhelyezkedését ön kézzel is és a &bibletime; automatikusan is "
 "szabályozhatja. Ez utóbbi eléréséhez válassza az <menuchoice> <guimenu>Ablak "
 "menü</guimenu> <guimenuitem>Ablakok automatikus elrendezése</guimenuitem> </"
-"menuchoice> menüpontot."
+"menuchoice> menüpontot. Csak próbálja ki, egyszerű, és működik."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:170
@@ -836,19 +822,18 @@ msgstr "Saját kommentár szerkesztése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:172
-#, fuzzy
 msgid ""
 "To be able to store your own comments about parts of the Bible, you have "
 "install a certain work from the library of the <ulink url=\"http://www."
 "crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
 msgstr ""
 "Ahhoz, hogy a saját kommentárját a Biblia részeként tárolja, szükséges "
-"telepíteni a <ulink url=\"http://www.crosswire.org\">Crosswire Biblia "
-"Társaság</ulink> egyik modulját, a \"Személyes kommentárt\"."
+"telepíteni a <ulink url=\"http://www.crosswire.org\">&cbs;</ulink> egyik "
+"modulját, a \"Személyes kommentárt\" ezt az angol nyelvű dokumentumoknál "
+"találja Personal Commentary néven."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:177
-#, fuzzy
 msgid ""
 "If you open the personal commentary by clicking on its symbol in the "
 "Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
@@ -865,7 +850,7 @@ msgstr ""
 "mousebutton> egérgombbal kattint, és kiválasztja a <guimenu>Dokumentum "
 "szerkesztése </guimenu>pontot és az <guimenuitem>Egyszerű szöveg </"
 "guimenuitem>(forráskód szerkesztő) vagy <guimenuitem>HTML</guimenuitem>(alap "
-"wysiwyg szerkesztő)."
+"wysiwyg szerkesztő) lehetőséget."
 
 # type: Content of: <chapter><sect1><sect2><sect3><tip><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:190
@@ -893,7 +878,6 @@ msgstr "Keresés egy megnyitott ablakban "
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:209
-#, fuzzy
 msgid ""
 "You can look for a word or phrase in the open read window (e.g. the chapter "
 "of a bible that you're reading) just like you are used to from other "
@@ -917,7 +901,6 @@ msgstr "Keresési párbeszédablak elérése "
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:222
-#, fuzzy
 msgid ""
 "You can search in a work by clicking with the <mousebutton>right</"
 "mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
@@ -993,7 +976,6 @@ msgstr "Keresési hatókörök használata"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:262
-#, fuzzy
 msgid ""
 "You can narrow the scope of your search to certain parts of the Bible by "
 "selecting one of the predefined scopes from the list in <guimenu>Search "
@@ -1139,7 +1121,6 @@ msgstr "Keresési találatok"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:322
-#, fuzzy
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
 "by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
@@ -1148,12 +1129,6 @@ msgid ""
 "references to copy, save or print them. Clicking on a particular reference "
 "opens that verse up in context in the preview window below."
 msgstr ""
-"Bemutatunk néhány példát a keresésre, munkánként csoportosítva. "
-"<mousebutton>Jobb </mousebutton>egérgombbal a munkára kattintva lehetősége "
-"nyílik menteni, másolni vagy kinyomtatni az összes verset, amelyet talált a "
-"munkában akár egyszerre is. Ugyanígy működik az is, ha csak egy, vagy több "
-"hivatkozást jelöl ki mentésre, másolásra, vagy nyomtatásra. Egy hivatkozásra "
-"kattintva az előnézeti ablakban láthatóvá válik a vers a szövegkörnyezetében."
 "Bemutatunk néhány példát a keresésre, munkánként csoportosítva. "
 "<mousebutton>Jobb </mousebutton>egérgombbal a munkára kattintva lehetősége "
 "nyílik menteni, másolni vagy kinyomtatni az összes verset, amelyet talált a "
@@ -1197,7 +1172,6 @@ msgstr "Keresési találatok elemzése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:345
-#, fuzzy
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
 "display. This gives a simple graphic analysis of the number of instances the "
@@ -1207,10 +1181,7 @@ msgstr ""
 "Kattintson a <guibutton>Találatok elemzése</guibutton> gombra, hogy "
 "megnyissa a találatokat elemző ablakot. Itt egy egyszerű grafikus elemzést "
 "láthat a találatokról, találatok száma szerint a Biblia könyvei szerint. Ezt "
-"az elemzést is el tudja menteni.Kattintson a <guibutton>Találatok elemzése</"
-"guibutton> gombra, hogy megnyissa a találatokat elemző ablakot. Itt egy "
-"egyszerű grafikus elemzést láthat a találatokról, találatok száma szerint a "
-"Biblia könyvei szerint. Ezt az elemzést is el tudja menteni."
+"az elemzést is el tudja menteni."
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:351
@@ -1278,7 +1249,6 @@ msgstr "Dokumentum(ok) telepítése/frissítése"
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:388
-#, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1289,10 +1259,11 @@ msgid ""
 msgstr ""
 "Evvel a lehetőséggel élve csatlakozhat egy dokumentum tárolóhelyhez "
 "(\"könyvtárhoz\"), és letölthet egy, vagy akár több munkát a saját helyi "
-"könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. Sword CD), vagy "
-"távoliak is, mint a Crosswire online tárolóhelye. Egyszerűen kezelheti "
-"ezeket a lelőhelyeket a <guibutton>Hozzáadás</guibutton> és a "
-"<guibutton>Törlés</guibutton> gomb segítségével."
+"könyvespolcára. Ezek a könyvtárak lehetnek helyiek is (pl. &sword; CD), vagy "
+"távoliak is (pl. a Crosswire online &sword; tárolóhelye, vagy más oldalak, "
+"ahol &sword; modulok találhatók). Egyszerűen kezelheti ezeket a lelőhelyeket "
+"a <guibutton>Hozzáadás</guibutton> és a <guibutton>Törlés</guibutton> gomb "
+"segítségével."
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:396
@@ -1365,7 +1336,6 @@ msgstr "Exportálás és Nyomtatás"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:427
-#, fuzzy
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1382,13 +1352,7 @@ msgstr ""
 "vágólapra), <guimenuitem>Menteni</guimenuitem> vagy <guimenuitem>Nyomtatni</"
 "guimenuitem>. Ilyen menü nyílik meg például az olvasási ablakban, vagy a "
 "keresési ablakban, mikor egy találatra kattint. Tényleg ilyen egyszerű, csak "
-"próbálja ki.Több helyen van lehetősége helyi menüt nyitni a "
-"<mousebutton>jobb</mousebutton> egérgombbal. Helyzettől függően lehetősége "
-"van <guimenuitem>Kijelölni</guimenuitem>, <guimenuitem>Másolni</guimenuitem> "
-"(a vágólapra), <guimenuitem>Menteni</guimenuitem> vagy "
-"<guimenuitem>Nyomtatni</guimenuitem>. Ilyen menü nyílik meg például az "
-"olvasási ablakban, vagy a keresési ablakban, mikor egy találatra kattint. "
-"Tényleg ilyen egyszerű, csak próbálja ki."
+"próbálja ki."
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:440
@@ -1422,7 +1386,6 @@ msgstr "Főmenü referenciája"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:5
-#, fuzzy
 msgid ""
 "In this section you can find detailed descriptions of all entries in the "
 "main menu of &bibletime;. They are ordered in just the way they appear in "
@@ -1435,12 +1398,7 @@ msgstr ""
 "bejegyzéséről, elérésük szerint csoportosítva, az összes albejegyzéseikkel. "
 "Szintén ismertetjük a gyorsbillentyűket, melyek hozzájuk tartoznak. Az "
 "elérhető gyorsbillentyűk teljes listáját <link linkend=\"hdbk-reference-"
-"hotkeys\">ebben a részben</link> találja.Ebben a részben részletes leírást "
-"találhat a &bibletime; fő menüjének összes bejegyzéséről, elérésük szerint "
-"csoportosítva, az összes albejegyzéseikkel. Szintén ismertetjük a "
-"gyorsbillentyűket, melyek hozzájuk tartoznak. Az elérhető gyorsbillentyűk "
-"teljes listáját <link linkend=\"hdbk-reference-hotkeys\">ebben a részben</"
-"link> találja."
+"hotkeys\">ebben a részben</link> találja."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:36
@@ -1483,15 +1441,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:118
-#, fuzzy
 msgid ""
 "<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
 "turn the Bookmarks on the left pane on or off. This can be handy if you need "
 "more space for the Mag."
 msgstr ""
 "<action>Könyvespolc megjelenítése.</action> Itt kapcsolhatja ki/be a "
-"Könyvespolc megjelenítését.<action>Könyvespolc megjelenítése.</action> Itt "
-"kapcsolhatja ki/be a Könyvespolc megjelenítését."
+"Könyvespolc megjelenítését, ez kényelmes lehet, ha több helyre van szüksége "
+"a Nagyítóhoz."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:134
@@ -1505,29 +1462,25 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:164
-#, fuzzy
 msgid ""
 "<action>Opens the Search Dialog to search in the standard Bible only</"
 "action>. More works can be added in the Search Dialog. A more detailed "
 "search description can be found <link linkend=\"hdbk-op-search\">here</link>."
 msgstr ""
 "<action>Keresés megnyitása az alapértelmezett Bibliában</action>. További "
-"bibliák adhatók hozzá a párbeszédablakban.<action>Keresés megnyitása az "
-"alapértelmezett Bibliában</action>. További bibliák adhatók hozzá a "
-"párbeszédablakban."
+"bibliák adhatók hozzá a párbeszédablakban. További részletes leírást talál "
+"<link linkend=\"hdbk-op-search\">itt</link>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:188
-#, fuzzy
 msgid ""
 "<action>Opens the Search Dialog to search in all open works</action>. Works "
 "can be added or removed in the Search Dialog. A more detailed search "
 "description can be found <link linkend=\"hdbk-op-search\">here</link>."
 msgstr ""
 "<action>Az összes megnyitott dokumentumban kereső ablakot nyit meg</action>. "
-"További munkák adhatók a kereséshez a párbeszédablakban.<action>Az összes "
-"megnyitott dokumentumban kereső ablakot nyit meg</action>. További munkák "
-"adhatók a kereséshez a párbeszédablakban."
+"További munkák vehetők el, illetve adhatók a kereséshez a párbeszédablakban."
+"ovábbi részletes leírást talál <link linkend=\"hdbk-op-search\">itt</link>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:213
@@ -1628,18 +1581,14 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:438
-#, fuzzy
 msgid ""
 "<action>Opens a dialog where you can change your &sword; configuration and "
 "manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
 "bookshelfmanager\">this section</link> for details."
 msgstr ""
-"<action>Nyit egy ablakot, ahol megváltoztathatja a Sword beállításait, és "
+"<action>Nyit egy ablakot, ahol megváltoztathatja a &sword; beállításait, és "
 "kezelheti a könyvespolcát</action>. Bővebb információért tekintse meg <link "
-"linkend=\"hdbk-op-bookshelfmanager\">ezt a fejezetet</link>.<action>Nyit egy "
-"ablakot, ahol megváltoztathatja a Sword beállításait, és kezelheti a "
-"könyvespolcát</action>. Bővebb információért tekintse meg <link linkend="
-"\"hdbk-op-bookshelfmanager\">ezt a fejezetet</link>."
+"linkend=\"hdbk-op-bookshelfmanager\">ezt a fejezetet</link>."
 
 # type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:471
@@ -1693,90 +1642,83 @@ msgstr ""
 
 # type: Content of: <chapter><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:529
-#, fuzzy
 msgid "Works reference"
-msgstr "Tájékoztatás"
+msgstr "Hivatkozások"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:531
 msgid ""
 "In this section you can find descriptions of the icons associated with open "
 "works."
-msgstr ""
+msgstr "Ebben a részben a megynyitott munkák ikonjairól talál leírást."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:552
 msgid "Scrolls forward through history."
-msgstr ""
+msgstr "Előre görget az előzményekben."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:575
 msgid "Scrolls back through history."
-msgstr ""
+msgstr "Visszafelé görget az előzményekben."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:598
 msgid "Select an installed bible."
-msgstr ""
+msgstr "Telepített bibliát választ."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:621
 msgid "Select an additional bible."
-msgstr ""
+msgstr "Újabb Bibliát választ."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:644
-#, fuzzy
 msgid "Search in selected works."
-msgstr "Keresés a dokumentumokban"
+msgstr "Keresés a kiválasztott dokumentumokban"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:667
-#, fuzzy
 msgid "Display configuration."
-msgstr "A keresés testreszabása "
+msgstr "Testreszabás. "
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:690
 msgid "Select an installed commentary."
-msgstr ""
+msgstr "Telepített kommentárt választ."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:713
-#, fuzzy
 msgid "Select additional commentary."
-msgstr "Saját kommentár szerkesztése"
+msgstr "További kommentár kiválasztása."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:736
 msgid "Synchronize displayed entry with active Bible window."
-msgstr ""
+msgstr "A mutatott bejegyzést szinkronizálja az aktív Biblia ablakkal."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:759
-#, fuzzy
 msgid "Select a book."
 msgstr "Dokumentumok kiválasztása"
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:782
 msgid "Select an installed glossary or devotional."
-msgstr ""
+msgstr "Egy telepített magyarázatot vagy áhitatot választ."
 
 # type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:805
 msgid "Select an additional glossary or devotional."
-msgstr ""
+msgstr "Egy kiegészítő magyarázatot vagy áhitatot választ."
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:815
-#, fuzzy
 msgid "Shortcuts index"
-msgstr "Gyorsbillentyűk"
+msgstr "Billentyűkombinációk"
 
 # type: Content of: <chapter><sect1><para>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:816
-#, fuzzy
 msgid ""
 "This is index of all shortcuts and their corresponding description in the "
 "handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
@@ -1785,25 +1727,16 @@ msgid ""
 "or you can look it up in <link linkend=\"hdbk-reference-menus\">this "
 "section</link>."
 msgstr ""
-"Ez az összes gyorsbillentyű leírásukkal együttes listája. A felsorolás "
+"Ez az összes billentyűkombináció leírásukkal együttes listája. A felsorolás "
 "(többnyire) ABC sorrendnek megfelelő. Ha közvetlenül szeretné megtudni, "
 "melyik kombináció tartozik egyes menükhöz, tekintse meg közvetlenül a "
 "&bibletime; menüiben, (ahol jelezve vannak), vagy megkeresheti <link linkend="
-"\"hdbk-reference-menus\">ebben a részben</link>. Ne feledje, hogy a "
-"funkcióbillentűk kivételével (F1-F9) a billentyűk mellé a CTRL billentyű "
-"lenyomása (olykor az ALT is) szükséges.Ez az összes gyorsbillentyű "
-"leírásukkal együttes listája. A felsorolás (többnyire) ABC sorrendnek "
-"megfelelő. Ha közvetlenül szeretné megtudni, melyik kombináció tartozik "
-"egyes menükhöz, tekintse meg közvetlenül a &bibletime; menüiben, (ahol "
-"jelezve vannak), vagy megkeresheti <link linkend=\"hdbk-reference-menus"
-"\">ebben a részben</link>. Ne feledje, hogy a funkcióbillentűk kivételével "
-"(F1-F9) a billentyűk mellé a CTRL billentyű lenyomása (olykor az ALT is) "
-"szükséges."
+"\"hdbk-reference-menus\">ebben a részben</link>."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:829
 msgid "Shortcut"
-msgstr ""
+msgstr "Billentyűkombináció"
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:830
@@ -1970,12 +1903,12 @@ msgstr ""
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1040
 msgid ""
 "Change location. Changes focus to the toolbar field for the selected work."
-msgstr ""
+msgstr "Hely cseréje. A fókuszt a választott munka eszköztárára állítja."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1049
 msgid "Search with works of this window."
-msgstr ""
+msgstr "Keresés az ablak dokumentumaiban."
 
 # type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-reference.docbook:1058
@@ -2097,9 +2030,9 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:24
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "bibletime"
-msgstr "&bibletime;"
+msgstr "bibletime"
 
 # type: Content of: <chapter><sect1><sect2><title>
 #: docs/handbook/en/docbook/hdbk-start.docbook:28
@@ -2115,9 +2048,9 @@ msgstr "Terminálból véletlenszerű verssel így indítható a &bibletime;:"
 
 # type: Content of: <chapter><sect1><sect2><para><screen>
 #: docs/handbook/en/docbook/hdbk-start.docbook:31
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "bibletime --open-default-bible \"&lt;random&gt;\""
-msgstr "bibletime --open-default-bible \"random\""
+msgstr "bibletime --open-default-bible \"&lt;random&gt;\""
 
 # type: Content of: <chapter><sect1><sect2><para>
 #: docs/handbook/en/docbook/hdbk-start.docbook:32
@@ -2191,9 +2124,8 @@ msgstr "<application>Sword</application>"
 
 # type: Content of the bibletime entity
 #: docs/handbook/en/docbook/index.docbook:7
-#, fuzzy
 msgid "<application>Crosswire Bible Society</application>"
-msgstr "<application>BibleTime</application>"
+msgstr "<application>Crosswire  Bible Society</application>"
 
 # type: Content of the kde entity
 #: docs/handbook/en/docbook/index.docbook:8
@@ -2237,20 +2169,17 @@ msgstr "A &bibletime; kézikönyv a &bibletime; része"
 
 # type: Content of: <book><bookinfo><date>
 #: docs/handbook/en/docbook/index.docbook:51
-#, fuzzy
 msgid "2009-10"
-msgstr "2009-04"
+msgstr "2009-10"
 
 # type: Content of: <book><bookinfo><releaseinfo>
 #: docs/handbook/en/docbook/index.docbook:52
-#, fuzzy
 msgid "2.4"
-msgstr "2.0"
+msgstr "2.4"
 
 # type: Content of: <book><bookinfo><abstract><para>
 #: docs/handbook/en/docbook/index.docbook:54
-#, fuzzy
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr ""
-"&bibletime; egy, a Sword keretrendszerre alapozott Biblia tanulmányozó "
+"&bibletime; egy, a &sword; keretrendszerre alapozott Biblia tanulmányozó "
 "szoftver."

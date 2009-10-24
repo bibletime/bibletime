@@ -28,14 +28,14 @@ egyet, láthatja az előnézeti képét a jobb oldalon.</para>
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in 
-&bibletime;.  These features are documented right in the dialog.  You also 
-have the possibility to specify standard works that should be used when no 
-specific work is specified in a reference.  An example: The standard Bible 
-is used to display the content of cross references in the Bible.  When you 
-hover over them, the Mag will show the content of the verses referred to, 
-according to the standard Bible you specified.  With the use of text 
-filters, you can control the appearance of the text.</para>
+      <para>Sok lehetőséget, melyet a &sword; keretprogram biztosít, testre lehet szabni 
+a &bibletime; futtatása közben. Ezek a lehetőségek jelezve vannak a 
+párbeszédablakban. Lehetőség van továbbá az alapértelmezett dokumentumok 
+meghatározására, melyeket akkor használunk, ha nem egy konkrét dokumentum 
+van meghatározva egy hivatkozásban. Például: ha a Károli fordítású Biblia 
+van megadva alapértelmezett Bibliának, ebből fog megjelenni a hivatkozott 
+vers a "Nagyító" ablakban, ha ez egeret egy kereszthivatkozás fölé viszi 
+például egy King James fordítású Bibliában.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
@@ -98,8 +98,8 @@ Cyberbit</trademark>(kb. 12MB).</para>
             <para>Az ön disztribúciójának nyelvi fájljai.</para>
           </listitem>
           <listitem>
-            <para>An existing <trademark class="registered">Microsoft Windows</trademark> 
-installation on the same computer.</para>
+            <para>Meglévő <trademark class="registered">Microsoft Windows</trademark>telepítés 
+ugyanazon a számítógépen.</para>
           </listitem>
           <listitem>
             <para>Betűkészlet-gyűjtemény, például Adobe vagy Bitstream.</para>
@@ -146,7 +146,7 @@ tartalmaz.</entry>
                   Crosswire's font directory</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>További betűkészletek elérhetőek a &cbs; ftp oldaláról.</entry>
               </row>
               <row>
                 <entry>
@@ -196,8 +196,8 @@ very helpful to quickly access the functions that you need the most.</para>
 	<imagedata fileref="ss_shortcuts.png" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study Howto has a secondary shortcut 
-defined, CTRL+2.</para>
+      <para>Az előző példában látható, hogy az F2, a "hogyan tanulmányozza a 
+Bibliát"-hoz tartozik egy második billentyűkombináció, a CTRL+2.</para>
     </sect2>
   </sect1>
 </chapter>
