@@ -48,6 +48,7 @@ CSwordSettingsPage::CSwordSettingsPage(QWidget* /*parent*/)
 
 StandardWorksTab::StandardWorksTab()
         : QWidget(0) {
+    typedef QList<CSwordModuleInfo*>::const_iterator MLCI;
 
     // move: tabCtl->addTab(currentTab, tr("Standard works"));
     QGridLayout* gridLayout = new QGridLayout(this); //the last row is for stretching available space
@@ -148,10 +149,9 @@ StandardWorksTab::StandardWorksTab()
 
     //fill the comboboxes with the right modules
 
-    QList<CSwordModuleInfo*>& modules = backend()->moduleList();
+    const QList<CSwordModuleInfo*> &modules(backend()->moduleList());
     QString modDescript;
-    QList<CSwordModuleInfo*>::iterator end_it = modules.end();
-    for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
+    for (MLCI it(modules.begin()); it != modules.end(); it++) {
         modDescript = (*it)->config(CSwordModuleInfo::Description);
 
         switch ((*it)->type()) {

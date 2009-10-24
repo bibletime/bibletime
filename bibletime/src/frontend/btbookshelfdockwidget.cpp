@@ -44,9 +44,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     setObjectName("BookshelfDock");
 
     // Setup models:
-    m_bookshelfModel = new BtBookshelfModel(this);
-    m_bookshelfModel->addModules(CPointers::backend()->moduleList());
-
     settings->beginGroup("GUI/MainWindow/Docks/Bookshelf");
     {
         QVariant v(settings->value("grouping"));
@@ -58,7 +55,7 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     }
     settings->endGroup();
     m_bookshelfTreeModel->setDefaultChecked(true);
-    m_bookshelfTreeModel->setSourceModel(m_bookshelfModel);
+    m_bookshelfTreeModel->setSourceModel(CPointers::backend()->model());
 
     m_filterProxyModel = new BtCheckStateFilterProxyModel(this);
     m_filterProxyModel->setFilterRole(BtBookshelfTreeModel::CheckStateRole);
@@ -101,9 +98,6 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     m_widget->setLayout(layout);
     setWidget(m_widget);
 
-    connect(CPointers::backend(),
-            SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)),
-            this, SLOT(swordSetupChanged()));
     connect(m_nameFilterEdit, SIGNAL(textEdited(QString)),
             m_nameFilterProxyModel, SLOT(setFilterFixedString(QString)));
     connect(m_view, SIGNAL(contextMenuActivated(QPoint)),
@@ -239,16 +233,6 @@ void BtBookshelfDockWidget::retranslateInterface() {
     m_itemEditHtmlAction->setText(tr("&HTML"));
     m_itemUnlockAction->setText(tr("&Unlock..."));
     m_itemAboutAction->setText(tr("&About..."));
-}
-
-void BtBookshelfDockWidget::swordSetupChanged() {
-    QSet<CSwordModuleInfo*> added(CPointers::backend()->moduleList().toSet());
-    QSet<CSwordModuleInfo*> removed(m_bookshelfModel->modules().toSet());
-    QSet<CSwordModuleInfo*> t(removed);
-    removed.subtract(added);
-    added.subtract(t);
-    m_bookshelfModel->removeModules(removed);
-    m_bookshelfModel->addModules(added);
 }
 
 void BtBookshelfDockWidget::showContextMenu(QPoint pos) {
