@@ -33,6 +33,8 @@ BtInstallModuleChooserDialog::BtInstallModuleChooserDialog(QWidget* parent, QStr
 void BtInstallModuleChooserDialog::initModuleItem(BTModuleTreeItem*, QTreeWidgetItem*) {}
 
 void BtInstallModuleChooserDialog::initModuleItem(QString name, QTreeWidgetItem* sourceItem) {
+    /// \todo Use new bookshelf model instead
+    /// \bug Valgrind reports memory leak:
     QTreeWidgetItem* moduleItem = new QTreeWidgetItem(sourceItem);
     moduleItem->setText(0, name);
     moduleItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);

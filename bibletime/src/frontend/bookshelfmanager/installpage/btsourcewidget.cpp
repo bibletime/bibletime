@@ -343,6 +343,8 @@ void BtSourceWidget::slotInstall() {
         BtSourceArea* sArea = dynamic_cast<BtSourceArea*>(widget(tab));
         if (sArea && sArea->selectedModules()->count() > 0) {
             // there are selected modules in the source, create items for these
+            /// \todo Use new bookshelf model instead
+            /// \bug Valgrind reports memory leak:
             QTreeWidgetItem* sourceItem = new QTreeWidgetItem(rootItem);
             sourceItem->setText(0, m_sourceNameList.at(tab));
             sourceItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsTristate | Qt::ItemIsEnabled);

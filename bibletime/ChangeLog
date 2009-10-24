@@ -1,6 +1,7 @@
 2009-10-24 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash on module installation/uninstall.
     * Fixed the wrong icon for lexicons.
+    * Fixed some (not all) memory leaks.
     * Reimplemented showing locked icons for the bookshelf dock.
 
 2009-10-20 Martin Gruner <mgruner@crosswire.org>

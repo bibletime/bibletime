@@ -297,7 +297,7 @@ void BibleTime::initActions() {
     /**
      * Window Menu
      */
-    m_openWindowsMenu = new QMenu(tr("O&pen Windows"));
+    m_openWindowsMenu = new QMenu(tr("O&pen Windows"), m_windowMenu);
     m_windowMenu->addMenu(m_openWindowsMenu);
 
     m_windowClose_action = m_actionCollection->action("closeWindow");

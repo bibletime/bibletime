@@ -233,6 +233,7 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
                 vk_start->Chapter(1);
                 vk_start->Verse(0);
             }
+            /// \bug Valgrind reports memory leak with allocation:
             tree.append( new KeyTreeItem(vk_start->key(), modules, settings) );
             ok = vk_start->next(CSwordVerseKey::UseVerse);
         }
