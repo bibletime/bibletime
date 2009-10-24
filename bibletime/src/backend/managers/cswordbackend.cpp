@@ -167,8 +167,6 @@ CSwordBackend::LoadError CSwordBackend::initModules(SetupChangedReason reason) {
         }
     }
 
-    QList<CSwordModuleInfo*>::iterator end_it = m_moduleList.end();
-
     foreach (CSwordModuleInfo* mod, m_moduleList) {
         m_moduleDescriptionMap.insert( mod->config(CSwordModuleInfo::Description), mod->name() );
         //unlock modules if keys are present
