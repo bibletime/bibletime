@@ -184,9 +184,8 @@ void BtBookshelfModel::clear(bool destroy) {
     beginRemoveRows(QModelIndex(), 0, m_data.size() - 1);
     if (destroy) {
         qDeleteAll(m_data);
-    } else {
-        m_data.clear();
     }
+    m_data.clear();
     endRemoveRows();
 }
 
