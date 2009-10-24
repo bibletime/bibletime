@@ -47,7 +47,7 @@ namespace commentaries {
 const QString icon 			= "commentary.svg";
 }
 namespace lexicons {
-const QString icon 			= "dictionary.svg";
+const QString icon 			= "lexicon.svg";
 }
 namespace dailydevotional {
 const QString icon 			= "calendar.svg";
