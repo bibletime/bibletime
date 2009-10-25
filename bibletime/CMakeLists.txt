@@ -2,7 +2,7 @@ PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
 # get SVN revision
-STRING(REGEX REPLACE "[$]Revision: ([0-9]+) [$]" "\\1" SVN_REVISION "$Revision: 123 $")
+STRING(REGEX REPLACE "[$]Revision: ([0-9]+) [$]" "\\1" SVN_REVISION "$Revision$")
 
 #Version
 ADD_DEFINITIONS(-DBT_SVN_REVISION="${SVN_REVISION}")
