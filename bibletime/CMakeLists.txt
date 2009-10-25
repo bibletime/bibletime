@@ -87,12 +87,15 @@ ELSE(APPLE)
 	SET(EXECUTABLE_NAME "bibletime")
 ENDIF(APPLE)
 
+# For the Windows Application Icon
+SET (bibletime_RC  cmake/BTWinIcon.rc)
+
 #Link to QtTest only in debug builds
 IF (CMAKE_BUILD_TYPE STREQUAL "Release")
 	# this will run moc on source files
 	QT4_WRAP_CPP(bibletime_MOC_SOURCES ${bibletime_MOCABLE_HEADERS})
 	IF (MSVC)
-		ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
+		ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_RC})
 	ELSE (MSVC)
 		ADD_EXECUTABLE(${EXECUTABLE_NAME}       ${bibletime_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES})
 	ENDIF (MSVC)
@@ -117,7 +120,7 @@ ELSE (CMAKE_BUILD_TYPE STREQUAL "Release")
 	SET(CMAKE_BUILD_TYPE "Debug")
 	IF (MSVC)
 		ADD_EXECUTABLE(${EXECUTABLE_NAME} WIN32 ${bibletime_SOURCES}
-			${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
+			${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES} ${bibletime_RC})
 	ELSE (MSVC)
 		ADD_EXECUTABLE(${EXECUTABLE_NAME}       ${bibletime_SOURCES}
 			${bibletime_test_SOURCES} ${bibletime_UIS_H} ${bibletime_MOC_SOURCES} ${bibletime_test_MOC_SOURCES})
