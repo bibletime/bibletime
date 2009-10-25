@@ -1,8 +1,15 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
+# get SVN revision
+STRING(REGEX REPLACE "[$]Revision: ([0-9]+) [$]" "\\1" SVN_REVISION "$Revision: 123 $")
+
 #Version
-ADD_DEFINITIONS(-DBT_VERSION="2.4.svn")
+ADD_DEFINITIONS(-DBT_SVN_REVISION="${SVN_REVISION}")
+ADD_DEFINITIONS(-DBT_VERSION="2.3+svnr${SVN_REVISION}")
+#ADD_DEFINITIONS(-DBT_VERSION="2.4.beta1")
+
+MESSAGE(STATUS "Setting up build environment for BibleTime version 2.3+svnr${SVN_REVISION}")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
@@ -21,10 +28,10 @@ SET(QT_USE_QTMAIN 1)
 FIND_PACKAGE(Qt4 REQUIRED)
 IF (QT_QTDBUS_FOUND AND NOT APPLE)
 	SET(QT_USE_QTDBUS 1)
-	MESSAGE("Using DBUS")
+	MESSAGE(STATUS "Using DBUS")
 ELSE (QT_QTDBUS_FOUND AND NOT APPLE)
 	ADD_DEFINITIONS(-DNO_DBUS)
-	MESSAGE("No DBUS found")
+	MESSAGE(STATUS "No DBUS found")
 ENDIF(QT_QTDBUS_FOUND AND NOT APPLE)
 #
 # If cmake says that qdbusxml2cpp is missing, uncomment the following line
@@ -152,7 +159,7 @@ IF(USE_QT_WEB_KIT)
 ENDIF(USE_QT_WEB_KIT)
 
 SOURCE_GROUP( "Generated Files"
-	FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES} 
+	FILES ${bibletime_UIS} ${bibletime_MOC_SOURCES}
 )
 
 
