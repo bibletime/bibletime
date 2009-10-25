@@ -72,6 +72,8 @@ BtBookshelfDockWidget::BtBookshelfDockWidget(QWidget *parent, Qt::WindowFlags f)
     QVBoxLayout *layout(new QVBoxLayout);
     layout->setContentsMargins(0, 0, 0, 0);
     QHBoxLayout *toolBar(new QHBoxLayout);
+    // Add a small margin between the edge of the window and the label (looks better)
+    toolBar->setContentsMargins(3,0,0,0);
     m_nameFilterLabel = new QLabel(this);
     toolBar->addWidget(m_nameFilterLabel);
 
