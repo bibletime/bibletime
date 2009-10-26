@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-hu\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-25 22:52-0400\n"
+"POT-Creation-Date: 2009-10-26 14:28-0400\n"
 "PO-Revision-Date: 2009-10-23 19:36+0100\n"
 "Last-Translator: Geza Novak <geza.novak@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -1023,10 +1023,10 @@ msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:287
+#, fuzzy
 msgid ""
 "To search text other than the main text, enter the text type followed by "
-"':', and then the search term. For example, to search for the Strong's "
-"number H8077, use 'strong:H8077'."
+"':', and then the search term.  Refer to the table below for examples."
 msgstr ""
 "Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása "
 "után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's "
@@ -1036,24 +1036,29 @@ msgstr ""
 "előfordulását keresi, így kell megadni: 'strong:H8077'. "
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:292
+#: docs/handbook/en/docbook/hdbk-operation.docbook:291
 msgid "Available text types:"
 msgstr "Lehetséges szövegtípusok: "
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:294
+#: docs/handbook/en/docbook/hdbk-operation.docbook:293
 msgid "Search Types"
 msgstr "Keresési típusok"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:298
+#: docs/handbook/en/docbook/hdbk-operation.docbook:297
 msgid "Prefix"
 msgstr "Előtag"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:299
+#: docs/handbook/en/docbook/hdbk-operation.docbook:298
 msgid "Meaning"
 msgstr "Jelentés"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:299
+msgid "Example"
+msgstr ""
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:304
@@ -1066,42 +1071,75 @@ msgid "searches headings"
 msgstr "A fejlécekben keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:308
+#: docs/handbook/en/docbook/hdbk-operation.docbook:306
+#, fuzzy
+msgid "heading:Jesus"
+msgstr "heading: (fejléc)"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:309
 msgid "footnote:"
 msgstr "footnote: (lábjegyzet)"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:309
+#: docs/handbook/en/docbook/hdbk-operation.docbook:310
 msgid "searches footnotes"
 msgstr "a lábjegyzetekben keres"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:312
+#: docs/handbook/en/docbook/hdbk-operation.docbook:311
+#, fuzzy
+msgid "footnote:Moses"
+msgstr "footnote: (lábjegyzet)"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:314
 msgid "strong:"
 msgstr "strong:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:313
+#: docs/handbook/en/docbook/hdbk-operation.docbook:315
 msgid "searches Strong's Numbers"
 msgstr "a Strong's számok előfordulásait keresi"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
 #: docs/handbook/en/docbook/hdbk-operation.docbook:316
+#, fuzzy
+msgid "strong:G535"
+msgstr "strong:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:319
 msgid "morph:"
 msgstr "morph: (alak)"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:317
+#: docs/handbook/en/docbook/hdbk-operation.docbook:320
 msgid "searches morphology codes"
 msgstr "alaktani kódokra keres"
 
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:321
+#, fuzzy
+msgid "morph:N-GSM"
+msgstr "morph: (alak)"
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:328
+msgid ""
+"You can right click on an installed work and select <guimenu>About</guimenu> "
+"to find which of the above search criteria may work for you.  Not all works "
+"have the built in features for performing this type of search."
+msgstr ""
+
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:322
+#: docs/handbook/en/docbook/hdbk-operation.docbook:334
+#, fuzzy
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
 "\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
-"java/docs/index.html</ulink>"
+"java/docs/index.html</ulink>."
 msgstr ""
 "A &bibletime; a Lucene keresőmotorját alkalmazza, mely további fejlettebb "
 "keresési lehetőséget ajánl. Többet megtudhat erről a <ulink url=\"http://"
@@ -1109,12 +1147,12 @@ msgstr ""
 "index.html</ulink> webcímen."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:331
+#: docs/handbook/en/docbook/hdbk-operation.docbook:343
 msgid "Search results"
 msgstr "Keresési találatok"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:332
+#: docs/handbook/en/docbook/hdbk-operation.docbook:344
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
 "by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
@@ -1131,7 +1169,7 @@ msgstr ""
 "kattintva az előnézeti ablakban láthatóvá válik a vers a szövegkörnyezetében."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:341
+#: docs/handbook/en/docbook/hdbk-operation.docbook:353
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
@@ -1142,7 +1180,7 @@ msgstr ""
 "dokumentum megnyílik a hivatkozott versnél."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:346
+#: docs/handbook/en/docbook/hdbk-operation.docbook:358
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
@@ -1152,7 +1190,7 @@ msgstr ""
 "megnyitott ablakra, a dokumentum a hivatkozott helyre ugrik."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:350
+#: docs/handbook/en/docbook/hdbk-operation.docbook:362
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr ""
 "Válasszon ki hivatkozásokat, és húzza a könyvespolcra könyvjelzők "
@@ -1160,12 +1198,12 @@ msgstr ""
 "könyvjelzők készítéséhez."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:354
+#: docs/handbook/en/docbook/hdbk-operation.docbook:366
 msgid "Search result analysis"
 msgstr "Keresési találatok elemzése"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:355
+#: docs/handbook/en/docbook/hdbk-operation.docbook:367
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
 "display. This gives a simple graphic analysis of the number of instances the "
@@ -1178,17 +1216,17 @@ msgstr ""
 "az elemzést is el tudja menteni."
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:361
+#: docs/handbook/en/docbook/hdbk-operation.docbook:373
 msgid "Search Analysis Dialog Box"
 msgstr "Találatok elemzése ablak"
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:372
+#: docs/handbook/en/docbook/hdbk-operation.docbook:384
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "A <guimenuitem>Könyvespolc menedzser</guimenuitem>"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:374
+#: docs/handbook/en/docbook/hdbk-operation.docbook:386
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
@@ -1203,12 +1241,12 @@ msgstr ""
 "<guimenuitem>Könyvespolc menedzser</guimenuitem> </menuchoice> almenüjében."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:384
+#: docs/handbook/en/docbook/hdbk-operation.docbook:396
 msgid "Bookshelf path(s) setup"
 msgstr "Telepítési útvonal(ak) beállítása"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:385
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive. You can even store it in multiple directories. Default is \"~/.sword/"
@@ -1221,7 +1259,7 @@ msgstr ""
 "könyvtárat is, de az alapértelmezett a \".sword\" mappa a saját mappájában."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:389
+#: docs/handbook/en/docbook/hdbk-operation.docbook:401
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
 "disk, but use them directly from the CD, then you can add the path to the CD "
@@ -1237,12 +1275,12 @@ msgstr ""
 "dokumentum látható lesz, ha a CD a gépben van."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+#: docs/handbook/en/docbook/hdbk-operation.docbook:409
 msgid "Install/update work(s)"
 msgstr "Dokumentum(ok) telepítése/frissítése"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:398
+#: docs/handbook/en/docbook/hdbk-operation.docbook:410
 msgid ""
 "With this facility, you can connect to a repository of works (called "
 "\"library\"), and transfer one or more works to your local Bookshelf. These "
@@ -1260,7 +1298,7 @@ msgstr ""
 "segítségével."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:406
+#: docs/handbook/en/docbook/hdbk-operation.docbook:418
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1288,12 +1326,12 @@ msgstr ""
 "kerülnek."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:419
+#: docs/handbook/en/docbook/hdbk-operation.docbook:431
 msgid "Remove work(s)"
 msgstr "Dokumentum(ok) törlése"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:420
+#: docs/handbook/en/docbook/hdbk-operation.docbook:432
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1308,12 +1346,12 @@ msgstr ""
 "<guibutton>Törlés...</guibutton> gombra."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:426
+#: docs/handbook/en/docbook/hdbk-operation.docbook:438
 msgid "Search Indexes"
 msgstr "Keresési indexek"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:427
+#: docs/handbook/en/docbook/hdbk-operation.docbook:439
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1324,12 +1362,12 @@ msgstr ""
 "indexeit."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:436
+#: docs/handbook/en/docbook/hdbk-operation.docbook:448
 msgid "Exporting and Printing"
 msgstr "Exportálás és Nyomtatás"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:437
+#: docs/handbook/en/docbook/hdbk-operation.docbook:449
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1349,7 +1387,7 @@ msgstr ""
 "próbálja ki."
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:450
+#: docs/handbook/en/docbook/hdbk-operation.docbook:462
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
