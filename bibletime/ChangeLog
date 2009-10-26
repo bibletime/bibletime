@@ -1,5 +1,6 @@
 2009-10-26 Jaak Ristioja <ristioja@gmail.com>
     * Backported showing locked icons in the bookshelf dock.
+    * Backported lexicon category having wrong icon fix.
 
 2009-10-24 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash on module installation/uninstall.
