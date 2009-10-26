@@ -1,18 +1,25 @@
 PROJECT(bibletime CXX C)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
-# get SVN revision
-STRING(REGEX REPLACE "[$]Revision: ([0-9]+) [$]" "\\1" SVN_REVISION "$Revision$")
+SET(BT_WC_REVISION "0")
+IF (EXISTS ${PROJECT_SOURCE_DIR}/.svn)
+    # Probably a SVN workspace, determine revision level
+    FIND_PACKAGE(Subversion)
+    IF(Subversion_FOUND)
+        Subversion_WC_INFO(${PROJECT_SOURCE_DIR} BT)
+        MESSAGE(STATUS "Current revision is ${BT_WC_REVISION}")
+    ENDIF(Subversion_FOUND)
+ENDIF(EXISTS ${PROJECT_SOURCE_DIR}/.svn)
 
 #Version
 SET (BT_VERSION_MAJOR "2")
 SET (BT_VERSION_MINOR "3")
-SET (BT_REVISION "+svnr${SVN_REVISION}")
+SET (BT_REVISION "+svnr${BT_WC_REVISION}")
 #SET (BT_REVISION ".beta")
 ADD_DEFINITIONS(-DBT_SVN_REVISION="${SVN_REVISION}")
-ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION}")
+ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
 
-MESSAGE(STATUS "Setting up build environment for BibleTime version 2.3+svnr${SVN_REVISION}")
+MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
@@ -48,11 +55,9 @@ FIND_PACKAGE(Boost REQUIRED)
 SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 FIND_PACKAGE(CLucene REQUIRED)
 
-# optional: Try to detect CURL and add it to the linker flags if found, maybe Sword needs it
+# optional: Try to detect CURL, ICU and ZLib and add it to the linker flags if found, maybe Sword needs it
 FIND_PACKAGE(CURL)
-# optional: Try to detect ICU and add it to the linker flags if found, maybe Sword needs it
 FIND_PACKAGE(ICU)
-# optional: Try to detect ZLib and add it to the linker flags if found, maybe Sword needs it
 FIND_PACKAGE(ZLIB)
 
 FIND_PACKAGE(Sword REQUIRED)
@@ -61,11 +66,7 @@ FIND_PACKAGE(Sword REQUIRED)
 
 ######################################################
 # Define $bibletime_SOURCES
-#
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/BTSourceFileList.cmake")
-#
-# Generate config.h
-CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.h.cmake" "${CMAKE_CURRENT_BINARY_DIR}/config.h")
 ######################################################
 
 
@@ -84,17 +85,15 @@ INCLUDE_DIRECTORIES(
 # this will run uic on .ui files:
 QT4_WRAP_UI(bibletime_UIS_H ${bibletime_UIS})
 
-#
 #This must come before the target definition!
 LINK_DIRECTORIES(
 	${CLUCENE_LIBRARY_DIR}
 	${SWORD_LIBRARY_DIR}
 )
 
+SET(EXECUTABLE_NAME "bibletime")
 IF(APPLE)
 	SET(EXECUTABLE_NAME "BibleTime")
-ELSE(APPLE)
-	SET(EXECUTABLE_NAME "bibletime")
 ENDIF(APPLE)
 
 # For the Windows Application Icon
