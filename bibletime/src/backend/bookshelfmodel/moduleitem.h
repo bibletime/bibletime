@@ -33,7 +33,7 @@ class ModuleItem: public Item {
         }
 
         inline QIcon icon() const {
-            return BtBookshelfModel::categoryIcon(m_moduleInfo->category());
+            return BtBookshelfModel::moduleIcon(m_moduleInfo);
         }
 
     protected:

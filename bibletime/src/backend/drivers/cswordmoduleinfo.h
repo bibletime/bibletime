@@ -189,6 +189,7 @@ class CSwordModuleInfo: public QObject {
         /**
         * This function returns true if this module is locked (encrypted + correct cipher key),
         * otherwise return false.
+        * \todo Make CSwordModuleInfo::isLocked() const.
         * @return True if this module is locked, i.e. encrypted but without a key set
         */
         bool isLocked();

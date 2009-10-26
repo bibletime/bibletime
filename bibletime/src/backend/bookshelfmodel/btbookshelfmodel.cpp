@@ -40,7 +40,7 @@ QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
         case ModuleNameRole: // Qt::DisplayRole
             return m_data.at(row)->name();
         case ModuleIconRole: // Qt::DecorationRole
-            return categoryIcon(m_data.at(row)->category());
+            return moduleIcon(m_data.at(row));
         case ModulePointerRole:
             return qVariantFromValue((void*) m_data.at(row));
         default:
@@ -56,6 +56,48 @@ QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,
     }
 
     return QVariant();
+}
+
+QIcon BtBookshelfModel::moduleIcon(const CSwordModuleInfo *m) {
+    typedef util::filesystem::DirectoryUtil DU;
+
+    /// \todo Make CSwordModuleInfo::isLocked() const and remove const_cast:
+    CSwordModuleInfo *module(const_cast<CSwordModuleInfo*>(m));
+
+    CSwordModuleInfo::Category cat(module->category());
+    switch (cat) {
+        case CSwordModuleInfo::Bibles:
+            if (module->isLocked()) {
+                return DU::getIcon(CResMgr::modules::bible::icon_locked);
+            } else {
+                return DU::getIcon(CResMgr::modules::bible::icon_unlocked);
+            }
+        case CSwordModuleInfo::Commentaries:
+            if (module->isLocked()) {
+                return DU::getIcon(CResMgr::modules::commentary::icon_locked);
+            } else {
+                return DU::getIcon(CResMgr::modules::commentary::icon_unlocked);
+            }
+        case CSwordModuleInfo::Lexicons:
+            if (module->isLocked()) {
+                return DU::getIcon(CResMgr::modules::lexicon::icon_locked);
+            } else {
+                return DU::getIcon(CResMgr::modules::lexicon::icon_unlocked);
+            }
+        case CSwordModuleInfo::Books:
+            if (module->isLocked()) {
+                return DU::getIcon(CResMgr::modules::book::icon_locked);
+            } else {
+                return DU::getIcon(CResMgr::modules::book::icon_unlocked);
+            }
+        case CSwordModuleInfo::Cult:
+        case CSwordModuleInfo::Images:
+        case CSwordModuleInfo::DailyDevotional:
+        case CSwordModuleInfo::Glossary:
+        case CSwordModuleInfo::UnknownCategory:
+        default:
+            return categoryIcon(cat);
+    }
 }
 
 QIcon BtBookshelfModel::categoryIcon(const CSwordModuleInfo::Category &category) {
