@@ -225,18 +225,26 @@ selecionando um dos escopos pr-definidos da lista em <guimenu>Escopo de
 busca</guimenu>. Voc pode definir suas prprias faixas de busca clicando no 
 boto <guibutton>Configurar faixas</guibutton>.</para>
       </sect3>
+
       <sect3 id="hd-op-search-config-syntax">
         <title>Introduo  Sintaxe Bsica de Busca</title>
-        <para>Coloque os termos de busca separados por espaos. Por padro, a funo de busca 
-vai retornar resultados que coincidam com qualquer um dos termos de busca 
-(OR). Para buscar por todos os termos, separe-os por AND.</para>
-        <para>Voc pode usar caracteres curinga: '*' coincide com qualquer sequncia de 
-caracteres, enquanto '?' coincide com um nico caractere qualquer.  O uso de 
-parnteses permite agrupar termos de busca, por exemplo '(Jesus OR esprito) 
-AND Deus'.</para>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <guimenu>Some words</guimenu> button.  If you 
+want to perform a more complex search, select the <guimenu>Free</guimenu> 
+button.  You can see examples of searches by clicking on <guimenu>full 
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
         <para>Para buscar texto que no seja o texto principal, entre com o tipo de texto 
 seguido de ':', e ento o termo de busca. Por exemplo, para procurar pelo 
 nmero Strong H8077, use 'strong:H8077'.</para>
+
         <para>Tipos de texto disponveis: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Tipos de Busca</title>
@@ -272,6 +280,7 @@ tem muitos recursos avanados, e voc pode ler mais sobre ele aqui: <ulink
 url="http://lucene.apache.org/java/docs/index.html">http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
+
     <sect2 id="hdbk-op-search-results">
       <title>Resultados de busca</title>
       <para>Aqui voc pode ver quantas instncias do termo de busca foram encontradas, 

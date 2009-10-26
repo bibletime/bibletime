@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: handbook-cs\n"
 "Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
-"POT-Creation-Date: 2009-10-23 13:05-0400\n"
+"POT-Creation-Date: 2009-10-25 22:52-0400\n"
 "PO-Revision-Date: 2009-06-17 21:09+0200\n"
 "Last-Translator: Jan Bělohoubek <j.bel@atlas.cz>\n"
 "Language-Team:  <cs@li.org>\n"
@@ -972,27 +972,27 @@ msgstr ""
 "<guibutton>Nastavit rozsah</guibutton>.>"
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:270
+#: docs/handbook/en/docbook/hdbk-operation.docbook:271
 msgid "Basic Search Syntax Introduction"
 msgstr "Úvod do jednoduché vyhledávací syntaxe"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:271
+#: docs/handbook/en/docbook/hdbk-operation.docbook:273
 msgid ""
-"Enter search terms separated by spaces. By default the search function will "
-"return results that match any of the search terms (OR). To search for all "
-"the terms separate the terms by AND."
+"Enter the search phrase separated by spaces.  By default the search function "
+"will return results that match all the words.  If you want to find any of "
+"the words entered, select the <guimenu>Some words</guimenu> button.  If you "
+"want to perform a more complex search, select the <guimenu>Free</guimenu> "
+"button.  You can see examples of searches by clicking on <guimenu>full "
+"syntax</guimenu>."
 msgstr ""
-"Vložte výrazy a oddělte je mezerami. Při výchozím nastavení, vyhledávání "
-"vrátí výsledky, které odpovídají libovolnému z vyhledávaných výrazů (logická "
-"spojka NEBO). pro vyhledání všech výrazů oddělte jednotlivá slova spojkou "
-"AND."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:275
+#: docs/handbook/en/docbook/hdbk-operation.docbook:282
+#, fuzzy
 msgid ""
-"You can use wildcards: '*' matches any sequence of characters, while '?' "
-"matches any single character. The use of brackets allows you to group your "
+"You can use wildcards: '*' matches any number of characters, while '?' will "
+"match any single character. The use of brackets allows you to group your "
 "search terms, e.g. '(Jesus OR spirit) AND God'."
 msgstr ""
 "Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?' "
@@ -1001,7 +1001,7 @@ msgstr ""
 "obsahovat nejméně jedno ze slov v závorce, Ježíš nebo duch, a slovo Bůh."
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:279
+#: docs/handbook/en/docbook/hdbk-operation.docbook:287
 msgid ""
 "To search text other than the main text, enter the text type followed by "
 "':', and then the search term. For example, to search for the Strong's "
@@ -1012,67 +1012,67 @@ msgstr ""
 "Strongova čísla H8077 použijte 'strong:H8077'"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:283
+#: docs/handbook/en/docbook/hdbk-operation.docbook:292
 msgid "Available text types:"
 msgstr "Dostupné předpony:"
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:285
+#: docs/handbook/en/docbook/hdbk-operation.docbook:294
 msgid "Search Types"
 msgstr "Typy vyhledávání"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:289
+#: docs/handbook/en/docbook/hdbk-operation.docbook:298
 msgid "Prefix"
 msgstr "Předpona"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:290
+#: docs/handbook/en/docbook/hdbk-operation.docbook:299
 msgid "Meaning"
 msgstr "Význam"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:295
+#: docs/handbook/en/docbook/hdbk-operation.docbook:304
 msgid "heading:"
 msgstr "heading:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:296
+#: docs/handbook/en/docbook/hdbk-operation.docbook:305
 msgid "searches headings"
 msgstr "hledá hlavičky"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:299
+#: docs/handbook/en/docbook/hdbk-operation.docbook:308
 msgid "footnote:"
 msgstr "footnote:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:300
+#: docs/handbook/en/docbook/hdbk-operation.docbook:309
 msgid "searches footnotes"
 msgstr "hledá poznámky"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:303
+#: docs/handbook/en/docbook/hdbk-operation.docbook:312
 msgid "strong:"
 msgstr "strong:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:304
+#: docs/handbook/en/docbook/hdbk-operation.docbook:313
 msgid "searches Strong's Numbers"
 msgstr "hledání Strongových čísel"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:307
+#: docs/handbook/en/docbook/hdbk-operation.docbook:316
 msgid "morph:"
 msgstr "morph:"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:308
+#: docs/handbook/en/docbook/hdbk-operation.docbook:317
 msgid "searches morphology codes"
 msgstr "hledá morfologické kódy"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:313
+#: docs/handbook/en/docbook/hdbk-operation.docbook:322
 msgid ""
 "&bibletime; uses the Lucene search engine to perform your searches. It has "
 "many advanced features, and you can read more about it here: <ulink url="
@@ -1085,12 +1085,12 @@ msgstr ""
 "java/docs/index.html</ulink>"
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:321
+#: docs/handbook/en/docbook/hdbk-operation.docbook:331
 msgid "Search results"
 msgstr "Výsledky hledání"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:322
+#: docs/handbook/en/docbook/hdbk-operation.docbook:332
 msgid ""
 "Here you can see how many instances of the search string were found, sorted "
 "by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
@@ -1107,7 +1107,7 @@ msgstr ""
 "náhledu."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:331
+#: docs/handbook/en/docbook/hdbk-operation.docbook:341
 msgid ""
 "Drag a reference and drop it on a work symbol on the Bookshelf to open the "
 "work at that verse in a new read window."
@@ -1116,7 +1116,7 @@ msgstr ""
 "tomto verši v novém okně."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:336
+#: docs/handbook/en/docbook/hdbk-operation.docbook:346
 msgid ""
 "Drag a reference and drop it on an open read window, and it will jump to "
 "that verse."
@@ -1125,17 +1125,17 @@ msgstr ""
 "požadovanou pozici."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:340
+#: docs/handbook/en/docbook/hdbk-operation.docbook:350
 msgid "Select references and drag them to the Bookshelf to create bookmarks."
 msgstr "K vytvoření záložek vyberte odkazy a přetáhněte je do knihovny."
 
 # type: Content of: <chapter><sect1><sect2><sect3><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:344
+#: docs/handbook/en/docbook/hdbk-operation.docbook:354
 msgid "Search result analysis"
 msgstr "Analýza výsledků hledání"
 
 # type: Content of: <chapter><sect1><sect2><sect3><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:345
+#: docs/handbook/en/docbook/hdbk-operation.docbook:355
 msgid ""
 "Click on <guibutton>Search analysis</guibutton> to open the search analysis "
 "display. This gives a simple graphic analysis of the number of instances the "
@@ -1147,17 +1147,17 @@ msgstr ""
 "řetězců v každé knize Bible, analýzu můžete uložit."
 
 # type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:351
+#: docs/handbook/en/docbook/hdbk-operation.docbook:361
 msgid "Search Analysis Dialog Box"
 msgstr "Dialog analýzy vyhledávání"
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:362
+#: docs/handbook/en/docbook/hdbk-operation.docbook:372
 msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
 msgstr "<guimenuitem>Správa knih</guimenuitem>"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:364
+#: docs/handbook/en/docbook/hdbk-operation.docbook:374
 msgid ""
 "The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
 "Bookshelf. You can install new works to your Bookshelf, and update or remove "
@@ -1171,12 +1171,12 @@ msgstr ""
 "guimenu> <guimenuitem>Správa knih</guimenuitem> </menuchoice> v hlavním menu."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:374
+#: docs/handbook/en/docbook/hdbk-operation.docbook:384
 msgid "Bookshelf path(s) setup"
 msgstr "Nastavení cesty ke knihám"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:375
+#: docs/handbook/en/docbook/hdbk-operation.docbook:385
 msgid ""
 "Here you can specify where &bibletime; may store your Bookshelf on the hard "
 "drive. You can even store it in multiple directories. Default is \"~/.sword/"
@@ -1186,7 +1186,7 @@ msgstr ""
 "mnoho adresářů. Výchozí je \"~/.sword/\"."
 
 # type: Content of: <chapter><sect1><sect2><tip><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:379
+#: docs/handbook/en/docbook/hdbk-operation.docbook:389
 msgid ""
 "If you have a sword CD, but do not want to install all the works on the hard "
 "disk, but use them directly from the CD, then you can add the path to the CD "
@@ -1199,12 +1199,12 @@ msgstr ""
 "vloženo v mechanice."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:387
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
 msgid "Install/update work(s)"
 msgstr "Instalace/aktualizace děl"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:388
+#: docs/handbook/en/docbook/hdbk-operation.docbook:398
 #, fuzzy
 msgid ""
 "With this facility, you can connect to a repository of works (called "
@@ -1222,7 +1222,7 @@ msgstr ""
 "guibutton> a <guibutton>Smazat knihovnu</guibutton>."
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:396
+#: docs/handbook/en/docbook/hdbk-operation.docbook:406
 msgid ""
 "To begin the installation or update process, select a library you want to "
 "connect to and a local Bookshelf path to install the work(s) to. Then click "
@@ -1245,12 +1245,12 @@ msgstr ""
 "knihovny."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:409
+#: docs/handbook/en/docbook/hdbk-operation.docbook:419
 msgid "Remove work(s)"
 msgstr "Odebrání děl"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:410
+#: docs/handbook/en/docbook/hdbk-operation.docbook:420
 msgid ""
 "This facility allows you to delete one or more of the works from your "
 "Bookshelf too free up disk space. Simply mark the items and click on "
@@ -1261,12 +1261,12 @@ msgstr ""
 "díla</guibutton>."
 
 # type: Content of: <chapter><sect1><sect2><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:416
+#: docs/handbook/en/docbook/hdbk-operation.docbook:426
 msgid "Search Indexes"
 msgstr "Vyhledávací indexy"
 
 # type: Content of: <chapter><sect1><sect2><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:417
+#: docs/handbook/en/docbook/hdbk-operation.docbook:427
 msgid ""
 "This option allows you to create new search indexes and cleanup orphaned "
 "index files for removed works."
@@ -1275,12 +1275,12 @@ msgstr ""
 "indexy smazaných děl."
 
 # type: Content of: <chapter><sect1><title>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:426
+#: docs/handbook/en/docbook/hdbk-operation.docbook:436
 msgid "Exporting and Printing"
 msgstr "Export a tisk"
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:427
+#: docs/handbook/en/docbook/hdbk-operation.docbook:437
 msgid ""
 "In many places, you can open a context menu by clicking with the "
 "<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
@@ -1301,7 +1301,7 @@ msgstr ""
 "přímočaré, prostě to vyzkoušejte."
 
 # type: Content of: <chapter><sect1><para>
-#: docs/handbook/en/docbook/hdbk-operation.docbook:440
+#: docs/handbook/en/docbook/hdbk-operation.docbook:450
 msgid ""
 "Printing from &bibletime; is rather basic and is intended as a utility. If "
 "you are composing a document or presentation containing text from "
@@ -2093,3 +2093,14 @@ msgstr "2.0"
 #, fuzzy
 msgid "&bibletime; is a Bible study tool based on the &sword; framework."
 msgstr "&bibletime; je nástroj pro studium Bible založený na frameworku Sword."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#~ msgid ""
+#~ "Enter search terms separated by spaces. By default the search function "
+#~ "will return results that match any of the search terms (OR). To search "
+#~ "for all the terms separate the terms by AND."
+#~ msgstr ""
+#~ "Vložte výrazy a oddělte je mezerami. Při výchozím nastavení, vyhledávání "
+#~ "vrátí výsledky, které odpovídají libovolnému z vyhledávaných výrazů "
+#~ "(logická spojka NEBO). pro vyhledání všech výrazů oddělte jednotlivá "
+#~ "slova spojkou AND."

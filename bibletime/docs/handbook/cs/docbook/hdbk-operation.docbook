@@ -220,19 +220,26 @@ definovaných oblastí v seznamu <guimenu>Rozsah hledání</guimenu> Můžete
 definovat vlastní vyhledávací rozsahy kliknutím na tlačítko 
 <guibutton>Nastavit rozsah</guibutton>.></para>
       </sect3>
+
       <sect3 id="hd-op-search-config-syntax">
         <title>Úvod do jednoduché vyhledávací syntaxe</title>
-        <para>Vložte výrazy a oddělte je mezerami. Při výchozím nastavení, vyhledávání 
-vrátí výsledky, které odpovídají libovolnému z vyhledávaných výrazů (logická 
-spojka NEBO). pro vyhledání všech výrazů oddělte jednotlivá slova spojkou 
-AND.</para>
-        <para>Můžete využít znaky: '*' odpovídající libovolné posloupnosti znaků, '?' 
-zastupující libovolný jeden znak. Použití závorek vám dovoluje seskupovat 
-hledané výrazy, např. '(Ježíš OR duch) AND Bůh' --výsledky hledání budou 
-obsahovat nejméně jedno ze slov v závorce, Ježíš nebo duch, a slovo Bůh.</para>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <guimenu>Some words</guimenu> button.  If you 
+want to perform a more complex search, select the <guimenu>Free</guimenu> 
+button.  You can see examples of searches by clicking on <guimenu>full 
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
         <para>Pro vyhledávání jiného než hlavního textu vložte určitou předponu 
 následovanou'dvojtečkou ':' a hledaným výrazem. Například pro vyhledávání 
 Strongova čísla H8077 použijte 'strong:H8077'</para>
+
         <para>Dostupné předpony: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Typy vyhledávání</title>
@@ -269,6 +276,7 @@ url="http://lucene.apache.org/java/docs/index.html">
 http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
+
     <sect2 id="hdbk-op-search-results">
       <title>Výsledky hledání</title>
       <para>Zde vidíte kolik případů hledaného řetězce bylo nalezeno, setříděno podle 

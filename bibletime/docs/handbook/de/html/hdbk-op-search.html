@@ -18,12 +18,15 @@ auftun, in dem Sie die zu durchsuchenden Werke wählen können.</p></div><div clas
 indem Sie einen der vordefinierten Suchbereiche aus der Liste 
 <span class="guimenu">Bereich:</span> auswählen. Desweiteren können Sie Ihre eigenen 
 Suchbereiche festlegen, indem Sie auf <span class="guibutton">Einrichten...</span> 
-klicken.</p></div><div class="sect3" title="Grundlegende Einführung in die Suchsyntax"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-syntax"></a>Grundlegende Einführung in die Suchsyntax</h4></div></div></div><p>Geben Sie Suchtermini getrennt von Leerzeichen ein. Standardmäßig wird die 
-Suchfunktion Ergebnisse zurückliefern, die auf jeden der Suchtermini 
-zutreffen (OR). Um nach allen Suchtermini zu suchen, trennen Sie sie mit 
-AND.</p><p>Sie können Platzhalter verwenden. '*' steht für jede Zeichensequenz, während 
-'?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern erlaubt 
-Ihnen das Gruppieren der Suchbegriffe, z.B. '(Jesus OR Geist) AND Gott'.</p><p>Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
+klicken.</p></div><div class="sect3" title="Grundlegende Einführung in die Suchsyntax"><div class="titlepage"><div><div><h4 class="title"><a name="hd-op-search-config-syntax"></a>Grundlegende Einführung in die Suchsyntax</h4></div></div></div><p>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <span class="guimenu">Some words</span> button.  If you 
+want to perform a more complex search, select the <span class="guimenu">Free</span> 
+button.  You can see examples of searches by clicking on <span class="guimenu">full 
+syntax</span>.
+	  </p><p>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</p><p>Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
 von einem ':' und dem Suchbegriff ein. Wollen Sie zum Beispiel nach der 
 Strong-Nummer H8077 suchen, benutzen Sie 'strong:H8077'.</p><p>Verfügbare Textarten: 
         </p><div class="table"><a name="hd-op-search-config-syntax-table"></a><p class="title"><b>Tabelle 3.1. Sucharten</b></p><div class="table-contents"><table summary="Sucharten" border="1"><colgroup><col><col></colgroup><thead><tr><th>Präfix</th><th>Bedeutung</th></tr></thead><tbody><tr><td>heading:</td><td>durchsucht Kopfzeilen</td></tr><tr><td>footnote:</td><td>durchsucht Fußnoten</td></tr><tr><td>strong:</td><td>durchsucht Strong-Nummern</td></tr><tr><td>morph:</td><td>durchsucht Morphologie-Codes</td></tr></tbody></table></div></div><p><br class="table-break"></p><p><span class="application">BibleTime</span> benutzt die Lucene Suchmaschine, um Suchen auszuführen. Sie hat 

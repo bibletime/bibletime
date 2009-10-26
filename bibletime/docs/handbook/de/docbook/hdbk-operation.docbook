@@ -234,18 +234,26 @@ indem Sie einen der vordefinierten Suchbereiche aus der Liste
 Suchbereiche festlegen, indem Sie auf <guibutton>Einrichten...</guibutton> 
 klicken.</para>
       </sect3>
+
       <sect3 id="hd-op-search-config-syntax">
         <title>Grundlegende Einführung in die Suchsyntax</title>
-        <para>Geben Sie Suchtermini getrennt von Leerzeichen ein. Standardmäßig wird die 
-Suchfunktion Ergebnisse zurückliefern, die auf jeden der Suchtermini 
-zutreffen (OR). Um nach allen Suchtermini zu suchen, trennen Sie sie mit 
-AND.</para>
-        <para>Sie können Platzhalter verwenden. '*' steht für jede Zeichensequenz, während 
-'?' auf jedes einzelne Zeichen zutrifft. Das Benutzen von Klammern erlaubt 
-Ihnen das Gruppieren der Suchbegriffe, z.B. '(Jesus OR Geist) AND Gott'.</para>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <guimenu>Some words</guimenu> button.  If you 
+want to perform a more complex search, select the <guimenu>Free</guimenu> 
+button.  You can see examples of searches by clicking on <guimenu>full 
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
         <para>Um Text außerhalb des Haupttextes zu finden, geben Sie die Textart gefolgt 
 von einem ':' und dem Suchbegriff ein. Wollen Sie zum Beispiel nach der 
 Strong-Nummer H8077 suchen, benutzen Sie 'strong:H8077'.</para>
+
         <para>Verfügbare Textarten: 
         <table id="hd-op-search-config-syntax-table">
 	  <title>Sucharten</title>
@@ -282,6 +290,7 @@ url="http://lucene.apache.org/java/docs/index.html">
 http://lucene.apache.org/java/docs/index.html</ulink></para>
       </sect3>
     </sect2>
+
     <sect2 id="hdbk-op-search-results">
       <title>Suchergebnisse</title>
       <para>Hier können Sie erkennen, wieviele Instanzen des Suchstrings gefunden 

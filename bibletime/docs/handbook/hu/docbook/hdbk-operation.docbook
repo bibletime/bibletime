@@ -229,32 +229,29 @@ választ egyet a <guimenu>Hatósugár</guimenu> által felajánlott listából. 
 is meghatározhat hatókört a <guibutton>Telepítés</guibutton> gombra 
 kattintva.</para>
       </sect3>
+
       <sect3 id="hd-op-search-config-syntax">
         <title> Az alapvető keresési kifejezések bemutatása</title>
-        <para>Gépelje be a keresett kifejezéseket szóközökkel 
-elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek 
-felsorolva, amelyekben bármelyik kifejezés előfordul (OR - angolul a VAGY 
-kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
-megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
-kifejezések között.Gépelje be a keresett kifejezéseket szóközökkel 
-elválasztva. Alapértelmezetten a keresés eredményeként azok lesznek 
-felsorolva, amelyekben bármelyik kifejezés előfordul (OR - angolul a VAGY 
-kifejezés). Ha azokra a találatokra kíváncsi csak, melyben az összes 
-megadott kifejezés szerepel, használja az AND (angolul ÉS) utasítást a 
-kifejezések között.</para>
-        <para>Használhat helyettesítő karaktereket is: a '*' bármennyi betűt helyettesít, 
-míg a '?' csak egyet. Zárójelek használatával csoportosíthatja (mint 
-matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
-Isten'.Használhat helyettesítő karaktereket is: a '*' bármennyi betűt 
-helyettesít, míg a '?' csak egyet. Zárójelek használatával csoportosíthatja 
-(mint matematikában) a keresési kifejezéseket, például: '(Jézus OR lélek) ÉS 
-Isten'.</para>
+
+        <para>Enter the search phrase separated by spaces.  By default the search function 
+will return results that match all the words.  If you want to find any of 
+the words entered, select the <guimenu>Some words</guimenu> button.  If you 
+want to perform a more complex search, select the <guimenu>Free</guimenu> 
+button.  You can see examples of searches by clicking on <guimenu>full 
+syntax</guimenu>.
+	  </para>
+
+        <para>You can use wildcards: '*' matches any number of characters, while '?' will 
+match any single character. The use of brackets allows you to group your 
+search terms, e.g. '(Jesus OR spirit) AND God'.</para>
+
         <para>Ha a fő szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása 
 után ':', és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's 
 szám előfordulását keresi, így kell megadni: 'strong:H8077'. Ha a fő 
 szövegtől eltérő szövegrészt keres, akkor a szövegtípus megadása után ':', 
 és jöhet a keresési kifejezés. Például, ha a H8077-es Strong's szám 
 előfordulását keresi, így kell megadni: 'strong:H8077'. </para>
+
         <para>Lehetséges szövegtípusok:  
         <table id="hd-op-search-config-syntax-table">
 	  <title>Keresési típusok</title>
@@ -291,6 +288,7 @@ url="http://lucene.apache.org/java/docs/index.html">
 http://lucene.apache.org/java/docs/index.html</ulink> webcímen.</para>
       </sect3>
     </sect2>
+
     <sect2 id="hdbk-op-search-results">
       <title>Keresési találatok</title>
       <para>Bemutatunk néhány példát a keresésre, munkánként 
