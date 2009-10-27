@@ -13,10 +13,6 @@
 #include <QKeySequence>
 #include <QString>
 
-
-/** Provides static functions to easily access the Tooltip texts for all the frontend parts.
-  * @author The BibleTime team
-  */
 namespace CResMgr {
 void init_tr();
 
