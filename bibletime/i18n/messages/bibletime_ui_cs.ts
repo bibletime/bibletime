@@ -635,15 +635,15 @@
     <name>BtInstallPathDialog</name>
     <message>
         <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
-        <translation>Díla mohou být nainstalována v jednom nebo více adresářích. Po nastavení adresářů můžete vybrat jedno z nich na instalační stránce.</translation>
+        <translation type="obsolete">Díla mohou být nainstalována v jednom nebo více adresářích. Po nastavení adresářů můžete vybrat jedno z nich na instalační stránce.</translation>
     </message>
     <message>
         <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
-        <translation>BibleTime a knihovna Sword najde moduly ze všech těchto adresářů. Pokud knihovnu odeberete zde, v systému stále existuje se všemi díly v ní. Adresář \&quot;.sword\&quot; ve vašem domovském adresáři je vždy použit automaticky a nemůže být odebrán nebo přidán.</translation>
+        <translation type="obsolete">BibleTime a knihovna Sword najde moduly ze všech těchto adresářů. Pokud knihovnu odeberete zde, v systému stále existuje se všemi díly v ní. Adresář \&quot;.sword\&quot; ve vašem domovském adresáři je vždy použit automaticky a nemůže být odebrán nebo přidán.</translation>
     </message>
     <message>
         <source>Configuration file for the paths is: </source>
-        <translation>Konfigurační soubor pro umístění je:</translation>
+        <translation type="obsolete">Konfigurační soubor pro umístění je:</translation>
     </message>
     <message>
         <source>Add...</source>
@@ -659,43 +659,107 @@
     </message>
     <message>
         <source>Choose directory</source>
-        <translation>Vyberte adresář</translation>
+        <translation type="obsolete">Vyberte adresář</translation>
     </message>
     <message>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation>Do tohoto adresáře není možno zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Přejete si použít následující adresář místo předchozí hodnoty?</translation>
+        <translation type="obsolete">Do tohoto adresáře není možno zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Přejete si použít následující adresář místo předchozí hodnoty?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="obsolete">Varování</translation>
     </message>
     <message>
         <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation>Do tohoto adresáře není možné zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Stále si přejete ho přidat do seznamu adresářů pro knihovnu?</translation>
+        <translation type="obsolete">Do tohoto adresáře není možné zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Stále si přejete ho přidat do seznamu adresářů pro knihovnu?</translation>
     </message>
     <message>
         <source>Bookshelf Paths</source>
-        <translation>Umístění knihovny</translation>
+        <translation type="obsolete">Umístění knihovny</translation>
     </message>
     <message>
         <source>Configure bookshelf paths</source>
-        <translation>Nastavit umístění knihovny</translation>
+        <translation type="obsolete">Nastavit umístění knihovny</translation>
     </message>
     <message>
         <source>Add new path</source>
-        <translation>Přidat nové umístění</translation>
+        <translation type="obsolete">Přidat nové umístění</translation>
     </message>
     <message>
         <source>Edit the selected path</source>
-        <translation>Upravit vybrané umístění</translation>
+        <translation type="obsolete">Upravit vybrané umístění</translation>
     </message>
     <message>
         <source>Remove the selected path</source>
-        <translation>Odstranit vybrané umístění</translation>
+        <translation type="obsolete">Odstranit vybrané umístění</translation>
     </message>
     <message>
         <source>Use Directory?</source>
-        <translation>Použít adresář?</translation>
+        <translation type="obsolete">Použít adresář?</translation>
+    </message>
+    <message>
+        <source>Bookshelf Folders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure bookshelf folders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configuration file for the folders is: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folders where new works can be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Read-only folders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nonexisting folders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit the selected folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove the selected folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This default folder in your home directory can&apos;t be removed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose Folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Folder?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
