@@ -15,6 +15,7 @@
 
 #include <QSortFilterProxyModel>
 
+
 class BtModuleNameFilterProxyModel: public QSortFilterProxyModel {
         Q_OBJECT
     public:

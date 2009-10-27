@@ -16,6 +16,7 @@
 #include "backend/bookshelfmodel/distributionitem.h"
 #include "backend/bookshelfmodel/languageitem.h"
 
+
 namespace BookshelfModel {
 
 Item::Item(Type type)

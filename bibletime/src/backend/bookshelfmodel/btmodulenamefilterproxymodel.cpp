@@ -12,8 +12,12 @@
 
 #include "backend/bookshelfmodel/btmodulenamefilterproxymodel.h"
 
+#include "backend/bookshelfmodel/btbookshelfmodel.h"
+
+
 BtModuleNameFilterProxyModel::BtModuleNameFilterProxyModel(QObject *parent)
         : QSortFilterProxyModel(parent), m_enabled(true) {
+    setFilterRole(BtBookshelfModel::ModuleNameRole);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
 }
 
@@ -28,7 +32,7 @@ bool BtModuleNameFilterProxyModel::filterAcceptsRow(int row,
     const QAbstractItemModel *m(sourceModel());
     Q_ASSERT(m != 0);
 
-    QModelIndex itemIndex(m->index(row, 0, p));
+    QModelIndex itemIndex(m->index(row, filterKeyColumn(), p));
     int numChildren(m->rowCount(itemIndex));
     if (numChildren == 0) {
         return QSortFilterProxyModel::filterAcceptsRow(row, p);

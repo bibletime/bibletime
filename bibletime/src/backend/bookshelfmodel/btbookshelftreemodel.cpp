@@ -18,6 +18,7 @@
 #include "backend/bookshelfmodel/languageitem.h"
 #include "backend/bookshelfmodel/moduleitem.h"
 
+
 using namespace BookshelfModel;
 
 BtBookshelfTreeModel::BtBookshelfTreeModel(QObject *parent)

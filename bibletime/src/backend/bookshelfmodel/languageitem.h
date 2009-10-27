@@ -19,6 +19,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "util/directory.h"
 
+
 namespace BookshelfModel {
 
 class LanguageItem: public Item {

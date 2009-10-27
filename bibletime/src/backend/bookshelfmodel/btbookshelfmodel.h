@@ -17,6 +17,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
+
 class BtBookshelfModel: public QAbstractListModel {
         Q_OBJECT
     public:

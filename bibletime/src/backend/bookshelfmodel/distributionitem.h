@@ -17,6 +17,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 
+
 namespace BookshelfModel {
 
 class DistributionItem: public Item {

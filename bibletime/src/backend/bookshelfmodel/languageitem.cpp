@@ -12,6 +12,7 @@
 
 #include "backend/bookshelfmodel/languageitem.h"
 
+
 namespace BookshelfModel {
 
 LanguageItem::LanguageItem(CSwordModuleInfo *module)

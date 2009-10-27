@@ -19,6 +19,7 @@
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 
+
 namespace BookshelfModel {
 
 class CategoryItem: public Item {

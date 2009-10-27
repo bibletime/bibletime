@@ -19,6 +19,7 @@
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/item.h"
 
+
 namespace BookshelfModel {
 class ModuleItem;
 }

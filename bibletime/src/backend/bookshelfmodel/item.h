@@ -18,6 +18,7 @@
 #include <QString>
 #include <QtGlobal>
 
+
 class CSwordModuleInfo;
 
 namespace BookshelfModel {
