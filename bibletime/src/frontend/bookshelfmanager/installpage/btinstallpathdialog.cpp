@@ -60,7 +60,7 @@ BtInstallPathDialog::BtInstallPathDialog() {
     m_writableItem->setFlags(Qt::ItemIsEnabled);
     m_readableItem = new QTreeWidgetItem(m_swordPathListBox, QStringList(tr("Read-only folders")));;
     m_readableItem->setFlags(Qt::ItemIsEnabled);
-    m_nonexistingItem = new QTreeWidgetItem(m_swordPathListBox, QStringList(tr("Nonexisting folders")));;
+    m_nonexistingItem = new QTreeWidgetItem(m_swordPathListBox, QStringList(tr("Nonexistent folders")));;
     m_nonexistingItem->setFlags(Qt::ItemIsEnabled);
 
     QStringList targets = instbackend::targetList();
