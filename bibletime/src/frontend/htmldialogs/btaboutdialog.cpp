@@ -101,7 +101,7 @@ void BtAboutDialog::init_contributors_tab() {
     // sorted alphabetically (last name)
     content += "<ul>";
     content += "<li>Horatiu Alexe</li>";
-    content += "<li>Jan B&ecarron;lohoubek</li>";
+    content += "<li>Jan B&#x11B;lohoubek</li>";
     content += "<li>Chun-shek Chan</li>";
     content += "<li>Rafael Fagundes</li>";
     content += "<li>Ilpo Kantonen</li>";
