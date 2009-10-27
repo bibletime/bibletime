@@ -87,24 +87,24 @@ void BtInstallPage::initView() {
     int right;
     pathLayout->getContentsMargins(&left, &top, &right, &bottom);
     pathLayout->setContentsMargins(left, top + 7, right, bottom + 7 );
-    QSpacerItem *pathSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-    QLabel* pathLabel = new QLabel(tr("Install path:"));
+    QLabel* pathLabel = new QLabel(tr("Install folder:"));
     m_pathCombo = new QComboBox();
-    m_pathCombo->setToolTip(tr("The path where the new works will be installed"));
+    m_pathCombo->setMinimumContentsLength(20);
+    m_pathCombo->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
+    m_pathCombo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_pathCombo->setToolTip(tr("The folder where the new works will be installed"));
+    m_pathCombo->view()->setTextElideMode(Qt::ElideMiddle);
     initPathCombo(); // set the paths and the current path
-    //m_configurePathButton = new QPushButton(tr("Configure...")); //TODO: icon only?
     m_configurePathButton = new QToolButton(this);
-    m_configurePathButton->setToolTip(tr("Configure paths where works are installed"));
+    m_configurePathButton->setToolTip(tr("Configure folders where works are installed and found"));
     m_configurePathButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::path_icon));
 
-    pathLayout->addItem(pathSpacer);
     pathLayout->addWidget(pathLabel);
     pathLayout->addWidget(m_pathCombo);
     pathLayout->addWidget(m_configurePathButton);
     mainLayout->addLayout(pathLayout);
 
     // Source widget
-    //QTabWidget* m_sourcesTabWidget;
     m_sourceWidget = new BtSourceWidget(this);
     mainLayout->addWidget(m_sourceWidget);
     // Install button
@@ -138,7 +138,13 @@ void BtInstallPage::initPathCombo() {
 
     QStringList targets = instbackend::targetList();
     for (QStringList::iterator it = targets.begin(); it != targets.end(); ++it)  {
+        // Add the path only if it's writable
         if ((*it).isEmpty()) continue;
+        QDir dir(*it);
+        if (!dir.exists()) continue;
+        if (!dir.isReadable()) continue;
+        QFileInfo fi( dir.canonicalPath());
+        if (!fi.isWritable()) continue;
 		m_pathCombo->addItem(util::directory::convertDirSeparators(*it));
     }
 
