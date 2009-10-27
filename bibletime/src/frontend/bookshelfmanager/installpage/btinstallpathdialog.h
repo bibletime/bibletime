@@ -15,11 +15,13 @@
 
 class QPushButton;
 class QTreeWidget;
+class QTreeWidgetItem;
 
 class BtInstallPathDialog : public QDialog {
         Q_OBJECT
     public:
         BtInstallPathDialog();
+        ~BtInstallPathDialog();
 
     public slots:
         virtual void accept();
@@ -31,13 +33,17 @@ class BtInstallPathDialog : public QDialog {
 
     private:
         void writeSwordConfig();
+        void updateTopLevelItems();
+        void addPathToList(QString path);
 
     private:
         QPushButton* m_editButton;
         QPushButton* m_addButton;
         QPushButton* m_removeButton;
         QTreeWidget* m_swordPathListBox;
-
+        QTreeWidgetItem* m_writableItem;
+        QTreeWidgetItem* m_readableItem;
+        QTreeWidgetItem* m_nonexistingItem;
 };
 
 #endif
