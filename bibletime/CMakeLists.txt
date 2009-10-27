@@ -17,9 +17,9 @@ SET (BT_VERSION_MINOR "3")
 SET (BT_REVISION "+svnr${BT_WC_REVISION}")
 #SET (BT_REVISION ".beta")
 ADD_DEFINITIONS(-DBT_SVN_REVISION="${SVN_REVISION}")
-ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
+ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION}")
 
-MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
+MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION}")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
 LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
