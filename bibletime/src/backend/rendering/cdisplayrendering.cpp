@@ -15,7 +15,7 @@
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "util/cpointers.h"
 
 
@@ -86,8 +86,8 @@ const QString CDisplayRendering::entryLink( const KeyTreeItem& item, CSwordModul
     else {
         return QString("<a name=\"").append(keyToHTMLAnchor(item.key())).append("\" ")
                .append("href=\"")
-               .append(CReferenceManager::encodeHyperlink(
-                           module->name(), item.key(), CReferenceManager::typeFromModule(module->type()))
+               .append(ReferenceManager::encodeHyperlink(
+                           module->name(), item.key(), ReferenceManager::typeFromModule(module->type()))
                       )
                .append("\">").append(linkText).append("</a>\n");
     }

@@ -11,7 +11,7 @@
 
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordversekey.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 
 
 namespace InfoDisplay {
@@ -71,10 +71,10 @@ const QString CrossRefRendering::entryLink( const KeyTreeItem& item, CSwordModul
         //     qWarning("rendering");
         return QString("<a href=\"%1\">%2</a>")
                .arg(
-                   CReferenceManager::encodeHyperlink(
+                   ReferenceManager::encodeHyperlink(
                        module->name(),
                        item.key(),
-                       CReferenceManager::typeFromModule(module->type())
+                       ReferenceManager::typeFromModule(module->type())
                    )
                )
                .arg(linkText);

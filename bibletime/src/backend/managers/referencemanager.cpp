@@ -7,9 +7,10 @@
 *
 **********/
 
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 
 #include <algorithm>
+
 #include <QRegExp>
 #include <QDebug>
 #include "backend/config/cbtconfig.h"
@@ -18,7 +19,7 @@
 
 
 /** Returns a hyperlink used to be imbedded in the display windows. At the moment the format is sword://module/key */
-const QString CReferenceManager::encodeHyperlink( const QString moduleName, const QString key, const CReferenceManager::Type type) {
+const QString ReferenceManager::encodeHyperlink( const QString moduleName, const QString key, const ReferenceManager::Type type) {
     QString ret = QString::null;
 
     switch (type) {
@@ -109,7 +110,7 @@ const QString CReferenceManager::encodeHyperlink( const QString moduleName, cons
 }
 
 /** Decodes the given hyperlink to module and key. */
-bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& module, QString& key, CReferenceManager::Type& type ) {
+bool ReferenceManager::decodeHyperlink( const QString& hyperlink, QString& module, QString& key, ReferenceManager::Type& type ) {
     /**
     * We have to decide between three types of URLS: sword://Type/Module/Key, morph://Testament/key and strongs://Testament/Key
     */
@@ -128,19 +129,19 @@ bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modu
         ref = ref.mid(8);
 
         if (ref.left(5).toLower() == "bible") { //a bible hyperlink
-            type = CReferenceManager::Bible;
+            type = ReferenceManager::Bible;
             ref = ref.mid(6); //inclusive trailing slash
         }
         else if (ref.left(10).toLower() == "commentary") { // a Commentary hyperlink
-            type = CReferenceManager::Commentary;
+            type = ReferenceManager::Commentary;
             ref = ref.mid(11); //inclusive trailing slash
         }
         else if (ref.left(7).toLower() == "lexicon") { // a Lexicon hyperlink
-            type = CReferenceManager::Lexicon;
+            type = ReferenceManager::Lexicon;
             ref = ref.mid(8); //inclusive trailing slash
         }
         else if (ref.left(4).toLower() == "book") { // a Book hyperlink
-            type = CReferenceManager::GenericBook;
+            type = ReferenceManager::GenericBook;
             ref = ref.mid(5); //inclusive trailing slash
         }
 
@@ -202,11 +203,11 @@ bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modu
                 switch (preType) {
 
                     case IsMorph:
-                        type = CReferenceManager::MorphHebrew;
+                        type = ReferenceManager::MorphHebrew;
                         break;
 
                     case IsStrongs:
-                        type = CReferenceManager::StrongsHebrew;
+                        type = ReferenceManager::StrongsHebrew;
                         break;
                 }
             }
@@ -214,11 +215,11 @@ bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modu
                 switch (preType) {
 
                     case IsMorph:
-                        type = CReferenceManager::MorphGreek;
+                        type = ReferenceManager::MorphGreek;
                         break;
 
                     case IsStrongs:
-                        type = CReferenceManager::StrongsGreek;
+                        type = ReferenceManager::StrongsGreek;
                         break;
                 }
             }
@@ -236,12 +237,12 @@ bool CReferenceManager::decodeHyperlink( const QString& hyperlink, QString& modu
     return true;
 }
 
-const QString CReferenceManager::encodeReference(const QString &module, const QString &reference) {
+const QString ReferenceManager::encodeReference(const QString &module, const QString &reference) {
     //return QString("(%1)%2").arg(module).arg(reference);
     return QString("(").append(module).append(")").append(reference);
 }
 
-void CReferenceManager::decodeReference(QString &dragreference, QString &module, QString &reference) {
+void ReferenceManager::decodeReference(QString &dragreference, QString &module, QString &reference) {
     const int pos = dragreference.indexOf(")");
     const QString fallbackModule = dragreference.mid( 1, pos - 1);
     dragreference = dragreference.mid(pos + 1);
@@ -251,57 +252,57 @@ void CReferenceManager::decodeReference(QString &dragreference, QString &module,
 }
 
 /** Returns true if the parameter is a hyperlink. */
-bool CReferenceManager::isHyperlink( const QString& hyperlink ) {
+bool ReferenceManager::isHyperlink( const QString& hyperlink ) {
     return (    hyperlink.left(8)  == "sword://")
            || (hyperlink.left(10) == "strongs://")
            || (hyperlink.left(8)  == "morph://");
 }
 
 /** Returns the preferred module name for the given type. */
-const QString CReferenceManager::preferredModule( const CReferenceManager::Type type ) {
+const QString ReferenceManager::preferredModule( const ReferenceManager::Type type ) {
     QString moduleName = QString::null;
     CSwordModuleInfo* module = 0;
 
     switch (type) {
 
-        case CReferenceManager::Bible:
+        case ReferenceManager::Bible:
 
             module = CBTConfig::get
                      ( CBTConfig::standardBible );
 
             break;
 
-        case CReferenceManager::Commentary:
+        case ReferenceManager::Commentary:
             module = CBTConfig::get
                      ( CBTConfig::standardCommentary );
 
             break;
 
-        case CReferenceManager::Lexicon:
+        case ReferenceManager::Lexicon:
             module = CBTConfig::get
                      ( CBTConfig::standardLexicon );
 
             break;
 
-        case CReferenceManager::StrongsHebrew:
+        case ReferenceManager::StrongsHebrew:
             module = CBTConfig::get
                      ( CBTConfig::standardHebrewStrongsLexicon );
 
             break;
 
-        case CReferenceManager::StrongsGreek:
+        case ReferenceManager::StrongsGreek:
             module = CBTConfig::get
                      ( CBTConfig::standardGreekStrongsLexicon );
 
             break;
 
-        case CReferenceManager::MorphHebrew:
+        case ReferenceManager::MorphHebrew:
             module = CBTConfig::get
                      ( CBTConfig::standardHebrewMorphLexicon );
 
             break;
 
-        case CReferenceManager::MorphGreek:
+        case ReferenceManager::MorphGreek:
             module = CBTConfig::get
                      ( CBTConfig::standardGreekMorphLexicon );
 
@@ -317,28 +318,28 @@ const QString CReferenceManager::preferredModule( const CReferenceManager::Type 
 }
 
 /** No descriptions */
-CReferenceManager::Type CReferenceManager::typeFromModule( const CSwordModuleInfo::ModuleType type) {
+ReferenceManager::Type ReferenceManager::typeFromModule( const CSwordModuleInfo::ModuleType type) {
     switch (type) {
 
         case CSwordModuleInfo::Bible:
-            return CReferenceManager::Bible;
+            return ReferenceManager::Bible;
 
         case CSwordModuleInfo::Commentary:
-            return CReferenceManager::Commentary;
+            return ReferenceManager::Commentary;
 
         case CSwordModuleInfo::Lexicon:
-            return CReferenceManager::Lexicon;
+            return ReferenceManager::Lexicon;
 
         case CSwordModuleInfo::GenericBook:
-            return CReferenceManager::GenericBook;
+            return ReferenceManager::GenericBook;
 
         default:
-            return CReferenceManager::Unknown;
+            return ReferenceManager::Unknown;
     }
 }
 
 /** Parses the given verse references using the given language and the module.*/
-const QString CReferenceManager::parseVerseReference( const QString& ref, const CReferenceManager::ParseOptions& options) {
+const QString ReferenceManager::parseVerseReference( const QString& ref, const ReferenceManager::ParseOptions& options) {
 
     CSwordModuleInfo* const mod = CPointers::backend()->findModuleByName(options.refDestinationModule);
     //Q_ASSERT(mod); tested later

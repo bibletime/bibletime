@@ -13,7 +13,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "util/cpointers.h"
 
 // Sword includes:
@@ -569,7 +569,7 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
         }
 
         if (mod) {
-            CReferenceManager::ParseOptions options;
+            ReferenceManager::ParseOptions options;
             options.refBase = QString::fromUtf8(myUserData->key->getText());
             options.refDestinationModule = QString(mod->name());
             options.sourceLanguage = QString(myModule->Lang());
@@ -577,14 +577,14 @@ void Filters::BT_OSISHTML::renderReference(const char *osisRef, sword::SWBuf &bu
 
             buf.append("<a href=\"");
             buf.append( //create the hyperlink with key and mod
-                CReferenceManager::encodeHyperlink(
+                ReferenceManager::encodeHyperlink(
                     mod->name(),
-                    CReferenceManager::parseVerseReference(hrefRef, options),
-                    CReferenceManager::typeFromModule(mod->type())
+                    ReferenceManager::parseVerseReference(hrefRef, options),
+                    ReferenceManager::typeFromModule(mod->type())
                 ).toUtf8().constData()
             );
             buf.append("\" crossrefs=\"");
-            buf.append((const char*)CReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
+            buf.append((const char*)ReferenceManager::parseVerseReference(ref, options).toUtf8().constData()); //ref must contain the osisRef module marker if there was any
             buf.append("\">");
         }
         // should we add something if there were no referenced module available?

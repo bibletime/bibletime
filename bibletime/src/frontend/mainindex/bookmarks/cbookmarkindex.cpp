@@ -31,7 +31,7 @@
 #include <QToolTip>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/cprinter.h"

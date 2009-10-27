@@ -16,7 +16,7 @@
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/managers/clanguagemgr.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "util/cpointers.h"
 
 // Sword includes:
@@ -257,7 +257,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                         CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
                         //Q_ASSERT(mod); tested later
                         if (mod) {
-                            CReferenceManager::ParseOptions options;
+                            ReferenceManager::ParseOptions options;
                             options.refBase = QString::fromUtf8(myUserData->key->getText()); //current module key
                             options.refDestinationModule = QString(mod->name());
                             options.sourceLanguage = QString(myModule->Lang());
@@ -273,7 +273,7 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                                 if (! oldRef.isEmpty() ) {
                                     options.refBase = oldRef; //use the last ref as a base, e.g. Rom 1,2-3, when the next ref is only 3:3-10
                                 }
-                                const QString completeRef( CReferenceManager::parseVerseReference((*it), options) );
+                                const QString completeRef( ReferenceManager::parseVerseReference((*it), options) );
 
                                 oldRef = completeRef; //use the parsed result as the base for the next ref.
 
@@ -283,10 +283,10 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
 
                                 buf.append("<a href=\"");
                                 buf.append(
-                                    CReferenceManager::encodeHyperlink(
+                                    ReferenceManager::encodeHyperlink(
                                         mod->name(),
                                         completeRef,
-                                        CReferenceManager::typeFromModule(mod->type())
+                                        ReferenceManager::typeFromModule(mod->type())
                                     ).toUtf8().constData()
                                 );
 
@@ -316,23 +316,23 @@ bool Filters::BT_ThMLHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                     CSwordModuleInfo* mod = CBTConfig::get(CBTConfig::standardBible);
                     //Q_ASSERT(mod); tested later
 
-                    CReferenceManager::ParseOptions options;
+                    ReferenceManager::ParseOptions options;
                     options.refBase = QString::fromUtf8(myUserData->key->getText());
 
                     options.sourceLanguage = myModule->Lang();
                     options.destinationLanguage = QString("en");
 
-                    const QString completeRef = CReferenceManager::parseVerseReference(QString::fromUtf8(ref), options);
+                    const QString completeRef = ReferenceManager::parseVerseReference(QString::fromUtf8(ref), options);
 
                     if (mod) {
                         options.refDestinationModule = QString(mod->name());
                         buf.append("<span class=\"crossreference\">");
                         buf.append("<a href=\"");
                         buf.append(
-                            CReferenceManager::encodeHyperlink(
+                            ReferenceManager::encodeHyperlink(
                                 mod->name(),
                                 completeRef,
-                                CReferenceManager::typeFromModule(mod->type())
+                                ReferenceManager::typeFromModule(mod->type())
                             ).toUtf8().constData()
                         );
                         buf.append("\" crossrefs=\"");

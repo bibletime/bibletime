@@ -14,7 +14,7 @@
 #include <QString>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordkey.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
 #include "frontend/display/bthtmljsobject.h"
@@ -136,8 +136,8 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
         case AnchorOnly: {
             QString moduleName;
             QString keyName;
-            CReferenceManager::Type type;
-            CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             return keyName;
         }
@@ -145,8 +145,8 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
         case AnchorTextOnly: {
             QString moduleName;
             QString keyName;
-            CReferenceManager::Type type;
-            CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
                 boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
@@ -160,8 +160,8 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
         case AnchorWithText: {
             QString moduleName;
             QString keyName;
-            CReferenceManager::Type type;
-            CReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
+            ReferenceManager::Type type;
+            ReferenceManager::decodeHyperlink(activeAnchor(), moduleName, keyName, type);
 
             if (CSwordModuleInfo* module = backend()->findModuleByName(moduleName)) {
                 boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );

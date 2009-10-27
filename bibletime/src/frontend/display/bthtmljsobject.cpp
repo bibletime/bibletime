@@ -13,7 +13,7 @@
 #include <QObject>
 #include "backend/config/cbtconfig.h"
 #include "backend/keys/cswordkey.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "backend/managers/cswordbackend.h"
 #include "frontend/cdragdrop.h"
 #include "frontend/cinfodisplay.h"
@@ -52,14 +52,14 @@ void BtHtmlJsObject::mouseDownLeft(const QString& url, const int& x, const int& 
 
 void BtHtmlJsObject::mouseClick(const QString& url) {
     m_dndData.mousePressed = false;
-    if (!url.isEmpty() && CReferenceManager::isHyperlink(url)) {
+    if (!url.isEmpty() && ReferenceManager::isHyperlink(url)) {
         QString module;
         QString key;
-        CReferenceManager::Type type;
+        ReferenceManager::Type type;
 
-        CReferenceManager::decodeHyperlink(url, module, key, type);
+        ReferenceManager::decodeHyperlink(url, module, key, type);
         if (module.isEmpty()) {
-            module = CReferenceManager::preferredModule( type );
+            module = ReferenceManager::preferredModule( type );
         }
         m_display->connectionsProxy()->emitReferenceClicked(module, key);
     }
@@ -85,8 +85,8 @@ void BtHtmlJsObject::mouseMoveEvent(const QString& attributes, const int& x, con
                 // create a new bookmark drag!
                 QString moduleName = QString::null;
                 QString keyName = QString::null;
-                CReferenceManager::Type type;
-                if ( !CReferenceManager::decodeHyperlink(m_dndData.url, moduleName, keyName, type) )
+                ReferenceManager::Type type;
+                if ( !ReferenceManager::decodeHyperlink(m_dndData.url, moduleName, keyName, type) )
                     return;
                 drag = new QDrag(m_display->view());
                 BTMimeData* mimedata = new BTMimeData(moduleName, keyName, QString::null);

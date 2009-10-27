@@ -15,7 +15,7 @@
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 
 // Sword includes:
 #include <swkey.h>

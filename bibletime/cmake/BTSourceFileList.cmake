@@ -36,7 +36,7 @@ SET(bibletime_SOURCES
 	src/backend/managers/btstringmgr.cpp
 	src/backend/managers/cdisplaytemplatemgr.cpp
 	src/backend/managers/clanguagemgr.cpp
-	src/backend/managers/creferencemanager.cpp
+	src/backend/managers/referencemanager.cpp
 	src/backend/managers/cswordbackend.cpp
 	#backend module drivers
 	src/backend/drivers/cswordmoduleinfo.cpp

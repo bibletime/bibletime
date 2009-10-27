@@ -15,7 +15,7 @@
 #include <QFileDialog>
 #include <QMenu>
 #include <QTimer>
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "frontend/display/bthtmlreaddisplay.h"
 #include "frontend/display/chtmlwritedisplay.h"
 #include "frontend/display/cplainwritedisplay.h"
@@ -162,10 +162,10 @@ bool CDisplay::save( const CDisplay::TextType format, const CDisplay::TextPart p
 /** Emits the signal which used when a reference was clicked. */
 void CDisplay::emitReferenceClicked( const QString& reference ) {
     QString module, key;
-    CReferenceManager::Type type;
-    CReferenceManager::decodeHyperlink(reference, module, key, type);
+    ReferenceManager::Type type;
+    ReferenceManager::decodeHyperlink(reference, module, key, type);
     if (module.isEmpty()) {
-        module = CReferenceManager::preferredModule( type );
+        module = ReferenceManager::preferredModule( type );
     }
     m_connections->emitReferenceClicked(module, key);
 }
@@ -174,8 +174,8 @@ void CDisplay::emitReferenceClicked( const QString& reference ) {
 void CDisplay::emitReferenceDropped( const QString& reference ) {
     QString module;
     QString key;
-    CReferenceManager::Type type;
-    CReferenceManager::decodeHyperlink(reference, module, key, type);
+    ReferenceManager::Type type;
+    ReferenceManager::decodeHyperlink(reference, module, key, type);
     m_connections->emitReferenceDropped(key);
 }
 

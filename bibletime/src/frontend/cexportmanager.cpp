@@ -19,7 +19,7 @@
 #include "backend/drivers/cswordmoduleinfo.h"
 #include "backend/keys/cswordkey.h"
 #include "backend/keys/cswordversekey.h"
-#include "backend/managers/creferencemanager.h"
+#include "backend/managers/referencemanager.h"
 #include "backend/managers/cdisplaytemplatemgr.h"
 #include "backend/rendering/centrydisplay.h"
 #include "backend/rendering/chtmlexportrendering.h"
@@ -384,11 +384,11 @@ bool CExportManager::printKey( CSwordKey* key, CSwordBackend::DisplayOptions dis
 bool CExportManager::printByHyperlink( const QString& hyperlink, CSwordBackend::DisplayOptions displayOptions, CSwordBackend::FilterOptions filterOptions ) {
     QString moduleName;
     QString keyName;
-    CReferenceManager::Type type;
+    ReferenceManager::Type type;
 
-    CReferenceManager::decodeHyperlink(hyperlink, moduleName, keyName, type);
+    ReferenceManager::decodeHyperlink(hyperlink, moduleName, keyName, type);
     if (moduleName.isEmpty()) {
-        moduleName = CReferenceManager::preferredModule(type);
+        moduleName = ReferenceManager::preferredModule(type);
     }
 
     CPrinter::KeyTree tree;
