@@ -24,7 +24,10 @@ bool CategoryItem::operator<(const Item &other) const {
     if (other.type() != ITEM_CATEGORY) {
         return ITEM_CATEGORY < other.type();
     }
-    return m_category < static_cast<const CategoryItem &>(other).m_category;
+    const CategoryItem &o(static_cast<const CategoryItem &>(other));
+    if (m_category   == CSwordModuleInfo::UnknownCategory) return false;
+    if (o.m_category == CSwordModuleInfo::UnknownCategory) return true;
+    return m_category < o.m_category;
 }
 
 } // namespace BookshelfModel

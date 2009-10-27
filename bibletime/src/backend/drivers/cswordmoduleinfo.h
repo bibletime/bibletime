@@ -12,8 +12,9 @@
 
 #include "backend/managers/clanguagemgr.h"
 
-#include <QString>
 #include <QList>
+#include <QMetaType>
+#include <QString>
 
 // Sword includes:
 #include <listkey.h>
@@ -125,16 +126,19 @@ class CSwordModuleInfo: public QObject {
             featureMax = HebrewParse
         };
         enum Category {
-            Bibles,
-            Commentaries,
-            Books,
-            Lexicons,
-            Glossary,
-            DailyDevotional,
-            Images,
-            Cult, /**< The module is a cult / sect / questionable module */
-            UnknownCategory /**< The category wasn't set or has an unknown value */
+            UnknownCategory = 0x0,  /**< Unknown or unset category. */
+            NoCategory      = 0x0,
+            Bibles          = 0x01,
+            Commentaries    = 0x02,
+            Books           = 0x04,
+            Lexicons        = 0x08,
+            Glossary        = 0x10,
+            DailyDevotional = 0x20,
+            Images          = 0x40,
+            Cult            = 0x80, /**< Cult / sect / questionable module. */
+            AllCategories   = 0xff
         };
+        Q_DECLARE_FLAGS(Categories, Category);
 
         /**
         * Returns the base directory for search indices
@@ -360,6 +364,9 @@ class CSwordModuleInfo: public QObject {
 
         bool m_cancelIndexing;
 };
+
+Q_DECLARE_METATYPE(CSwordModuleInfo::Category);
+Q_DECLARE_OPERATORS_FOR_FLAGS(CSwordModuleInfo::Categories)
 
 inline CSwordModuleInfo::ModuleType CSwordModuleInfo::type() const {
     return CSwordModuleInfo::Unknown;

@@ -16,6 +16,7 @@
 #include "util/cresmgr.h"
 #include "util/directory.h"
 
+
 BtBookshelfModel::BtBookshelfModel(QObject *parent)
         : QAbstractListModel(parent) {
     // Intentionally empty
@@ -29,6 +30,25 @@ int BtBookshelfModel::rowCount(const QModelIndex &parent) const {
     return m_data.size();
 }
 
+QVariant BtBookshelfModel::data(CSwordModuleInfo *module, int role) const {
+    switch (role) {
+        case ModuleNameRole: // Qt::DisplayRole
+            return module->name();
+        case ModuleIconRole: // Qt::DecorationRole
+            return moduleIcon(module);
+        case ModulePointerRole:
+            return qVariantFromValue((void*) module);
+        case ModuleCategoryRole:
+            return QVariant::fromValue(module->category());
+        case ModuleLanguageRole:
+            return QVariant(); /// \todo Unimplemented
+        case ModuleHiddenRole:
+            return module->isHidden();
+        default:
+            return QVariant();
+    }
+}
+
 QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
     if (!index.isValid() || index.column() != 0 || index.parent().isValid()) {
         return QVariant();
@@ -36,22 +56,7 @@ QVariant BtBookshelfModel::data(const QModelIndex &index, int role) const {
     int row(index.row());
     if (row >= m_data.size()) return QVariant();
 
-    switch (role) {
-        case ModuleNameRole: // Qt::DisplayRole
-            return m_data.at(row)->name();
-        case ModuleIconRole: // Qt::DecorationRole
-            return moduleIcon(m_data.at(row));
-        case ModulePointerRole:
-            return qVariantFromValue((void*) m_data.at(row));
-        case ModuleCategoryRole:
-            return QVariant(); /// \todo Unimplemented
-        case ModuleLanguageRole:
-            return QVariant(); /// \todo Unimplemented
-        case ModuleHiddenRole:
-            return m_data.at(row)->isHidden();
-        default:
-            return QVariant();
-    }
+    return data(m_data.at(row), role);
 }
 
 QVariant BtBookshelfModel::headerData(int section, Qt::Orientation orientation,

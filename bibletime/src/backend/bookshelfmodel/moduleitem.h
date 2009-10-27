@@ -29,14 +29,6 @@ class ModuleItem: public Item {
             return m_moduleInfo;
         }
 
-        inline QString name() const {
-            return m_moduleInfo->name();
-        }
-
-        inline QIcon icon() const {
-            return BtBookshelfModel::moduleIcon(m_moduleInfo);
-        }
-
         inline bool isHidden() const {
             return m_moduleInfo->isHidden();
         }

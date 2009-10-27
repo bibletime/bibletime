@@ -88,13 +88,21 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
     Q_ASSERT(i != 0);
     switch (role) {
         case Qt::DisplayRole:
-            return i->name();
+            if (i->type() == Item::ITEM_MODULE) {
+                return parentData(static_cast<ModuleItem *>(i), role);
+            } else {
+                return i->name();
+            }
         case Qt::CheckStateRole:
             if (!m_checkable) break;
         case BtBookshelfTreeModel::CheckStateRole:
             return i->checkState();
         case Qt::DecorationRole:
-            return i->icon();
+            if (i->type() == Item::ITEM_MODULE) {
+                return parentData(static_cast<ModuleItem *>(i), role);
+            } else {
+                return i->icon();
+            }
         case BtBookshelfModel::ModulePointerRole:
             if (i->type() == Item::ITEM_MODULE) {
                 ModuleItem *mi(static_cast<ModuleItem *>(i));
@@ -104,6 +112,9 @@ QVariant BtBookshelfTreeModel::data(const QModelIndex &index, int role) const {
         case BtBookshelfModel::ModuleHiddenRole:
             return i->isHidden();
         default:
+            if (i->type() == Item::ITEM_MODULE) {
+                return parentData(static_cast<ModuleItem *>(i), role);
+            }
             break;
     }
     return QVariant();
@@ -195,6 +206,7 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
         beginRemoveRows(QModelIndex(), 0, m_rootItem->children().size() - 1);
         delete m_rootItem;
         m_modules.clear();
+        m_sourceIndexMap.clear();
         m_rootItem = new RootItem;
         endRemoveRows();
     }
@@ -226,6 +238,7 @@ void BtBookshelfTreeModel::setSourceModel(QAbstractItemModel *sourceModel) {
             } else {
                 checked = (m_defaultChecked == CHECKED);
             }
+            m_sourceIndexMap[module] = moduleIndex;
             addModule(module, checked);
         }
     }
@@ -298,6 +311,14 @@ QList<CSwordModuleInfo*> BtBookshelfTreeModel::checkedModules() const {
         }
     }
     return modules;
+}
+
+QVariant BtBookshelfTreeModel::parentData(BookshelfModel::ModuleItem *item,
+                                          int role) const
+{
+    CSwordModuleInfo* m(item->moduleInfo());
+    Q_ASSERT(m_sourceIndexMap.contains(m));
+    return m_sourceModel->data(m_sourceIndexMap.value(m), role);
 }
 
 void BtBookshelfTreeModel::addModule(CSwordModuleInfo *module, bool checked) {
@@ -491,6 +512,7 @@ void BtBookshelfTreeModel::moduleInserted(const QModelIndex &parent, int start,
         } else {
             checked = (m_defaultChecked == CHECKED);
         }
+        m_sourceIndexMap[module] = moduleIndex;
         addModule(module, checked);
     }
 }
@@ -506,6 +528,7 @@ void BtBookshelfTreeModel::moduleRemoved(const QModelIndex &parent, int start,
         CSwordModuleInfo *module((CSwordModuleInfo *) (data.value<void*>()));
 
         removeModule(module);
+        m_sourceIndexMap.remove(module);
     }
 }
 

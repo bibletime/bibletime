@@ -16,6 +16,7 @@
 #include <QAbstractItemModel>
 
 #include <QMap>
+#include <QPersistentModelIndex>
 #include "backend/bookshelfmodel/btbookshelfmodel.h"
 #include "backend/bookshelfmodel/item.h"
 
@@ -31,6 +32,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         Q_ENUMS(Group)
 
         typedef QMap<CSwordModuleInfo*, BookshelfModel::ModuleItem*> ModuleItemMap;
+        typedef QMap<CSwordModuleInfo*, QPersistentModelIndex> SourceIndexMap;
 
     public:
         enum ModuleRole {
@@ -83,6 +85,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         QList<CSwordModuleInfo*> checkedModules() const;
 
     protected:
+        QVariant parentData(BookshelfModel::ModuleItem *item, int role) const;
         void addModule(CSwordModuleInfo *module, bool checked);
         void addModule(CSwordModuleInfo *module, QModelIndex parentIndex,
                        Grouping &intermediateGrouping, bool checked);
@@ -122,6 +125,7 @@ class BtBookshelfTreeModel: public QAbstractItemModel {
         QAbstractItemModel   *m_sourceModel;
         BookshelfModel::Item *m_rootItem;
         ModuleItemMap         m_modules;
+        SourceIndexMap        m_sourceIndexMap;
         Grouping              m_groupingOrder;
         CheckedBehavior       m_defaultChecked;
         bool                  m_checkable;
