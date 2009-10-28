@@ -14,6 +14,7 @@
 #include <QFileInfo>
 #include <QSet>
 #include <QString>
+#include <QTextCodec>
 #include "backend/config/cbtconfig.h"
 #include "backend/drivers/cswordbiblemoduleinfo.h"
 #include "backend/drivers/cswordbookmoduleinfo.h"
@@ -576,13 +577,14 @@ const QStringList CSwordBackend::swordDirList() {
 
         //get all DataPath and AugmentPath entries from the config file and add them to the list
         sword::SWConfig conf( (*it).toUtf8().constData() );
-        swordDirSet << conf["Install"]["DataPath"].c_str();
+        swordDirSet << QDir((QTextCodec::codecForLocale()->toUnicode(conf["Install"]["DataPath"].c_str()))).absolutePath();
         sword::ConfigEntMap group = conf["Install"];
         sword::ConfigEntMap::iterator start = group.equal_range("AugmentPath").first;
         sword::ConfigEntMap::iterator end = group.equal_range("AugmentPath").second;
 
         for (sword::ConfigEntMap::const_iterator it = start; it != end; ++it) {
-            swordDirSet << QDir(it->second.c_str()).absolutePath(); //added augment path
+            QDir((QTextCodec::codecForLocale()->toUnicode(it->second.c_str()))).absolutePath();
+            swordDirSet << QDir((QTextCodec::codecForLocale()->toUnicode(it->second.c_str()))).absolutePath(); //added augment path
         }
     }
 
