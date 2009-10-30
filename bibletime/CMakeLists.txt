@@ -22,7 +22,7 @@ ADD_DEFINITIONS(-DBT_VERSION="${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISI
 MESSAGE(STATUS "Setting up build environment for BibleTime version ${BT_VERSION_MAJOR}.${BT_VERSION_MINOR}${BT_REVISION_PATCH}")
 
 #Non-English locales to be processed and installed for UI, handbook and howto
-LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv ua vi zh_CN zh_TW)
+LIST(APPEND MESSAGE_LOCALE_LANGS af bg cs da de en_GB es et fi fr hu it ko nl nn_NO no pl pt_br ro ru sk sv uk vi zh_CN zh_TW)
 #WARNING: If you modify HANDBOOK_LOCALE_LANGS or HOWTO_LOCALE_LANGS,
 #also modify the po4a conf files in cmake/docs/ to make sure all languages are processed.
 LIST(APPEND HANDBOOK_LOCALE_LANGS cs de fi fr hu nl pt-br)
