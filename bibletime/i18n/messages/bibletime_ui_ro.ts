@@ -598,52 +598,52 @@
 <context>
     <name>BtBookshelfModel</name>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="61"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="66"/>
         <source>Module</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="156"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="161"/>
         <source>Bibles</source>
         <translation type="unfinished">Biblii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="158"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="163"/>
         <source>Commentaries</source>
         <translation type="unfinished">Comentarii</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="160"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="165"/>
         <source>Books</source>
         <translation type="unfinished">Cărţi</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="162"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="167"/>
         <source>Cults/Unorthodox</source>
         <translation type="unfinished">Secte/Neortodoxe</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="164"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="169"/>
         <source>Maps and Images</source>
         <translation type="unfinished">Hărţi şi Imagini</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="166"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="171"/>
         <source>Daily Devotionals</source>
         <translation type="unfinished">Devoţionale zilnice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="168"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="173"/>
         <source>Lexicons and Dictionaries</source>
         <translation type="unfinished">Lexicoane şi Dicţionare</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="170"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="175"/>
         <source>Glossaries</source>
         <translation type="unfinished">Glosare</translation>
     </message>
     <message>
-        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="172"/>
+        <location filename="../../src/backend/bookshelfmodel/btbookshelfmodel.cpp" line="177"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -736,28 +736,28 @@
 <context>
     <name>BtInstallPage</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="176"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="182"/>
         <source>Install/Update</source>
         <translation>Instalează/Actualizează</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="173"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="179"/>
         <source>Install and update works. Add remote or local sources, refresh them, select the works to be installed/updated and click Install.&lt;br/&gt;&lt;b&gt;WARNING:&lt;/b&gt; If you live in a persecuted country and don&apos;t want to risk detection don&apos;t use remote sources.</source>
         <translation>Instalare şi Actualizare de module. Adaugă biblioteci (locale [de pe calculator] sau de pe Internet), reînnoieşte-le, selectează modulele pe care le doreşti să le instalezi sau să le reactualizezi şi după-aceea apasă pe butonul de instalare.&lt;br/&gt;&lt;b&gt;ATENŢIE: Dacă trăieşti într-o ţară unde creştinii sunt persecutaţi, nu folosi prin BibleTime vreo bibliotecă de pe Internet pentru a nu risca detectarea!&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="91"/>
-        <source>Install path:</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
+        <source>Install folder:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="93"/>
-        <source>The path where the new works will be installed</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="95"/>
+        <source>The folder where the new works will be installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="97"/>
-        <source>Configure paths where works are installed</source>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="99"/>
+        <source>Configure folders where works are installed and found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -810,7 +810,7 @@
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="63"/>
-        <source>Nonexisting folders</source>
+        <source>Nonexistent folders</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3392,62 +3392,62 @@ Language name ppk</extracomment>
         <translation>Zulu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="415"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="416"/>
         <source>Footnotes</source>
         <translation>Note de subsol</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="417"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="418"/>
         <source>Strong&apos;s numbers</source>
         <translation>Numere Strong</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="419"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="420"/>
         <source>Headings</source>
         <translation>Titluri</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="421"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="422"/>
         <source>Morphological tags</source>
         <translation>Etichete morfologice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="423"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="424"/>
         <source>Lemmas</source>
         <translation>Comentarii auxiliare</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="425"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="426"/>
         <source>Hebrew vowel points</source>
         <translation>Vocalizare ebraică</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="427"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="428"/>
         <source>Hebrew cantillation marks</source>
         <translation>Semne ebraice de intonaţie</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="429"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="430"/>
         <source>Greek accents</source>
         <translation>Accente greceşti</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="431"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="432"/>
         <source>Red letter words</source>
         <translation>Cuvinte colorate în roşu</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="433"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="434"/>
         <source>Textual variants</source>
         <translation>Variante textuale</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="435"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="436"/>
         <source>Scripture cross-references</source>
         <translation>Trimiteri biblice</translation>
     </message>
     <message>
-        <location filename="../../src/backend/managers/cswordbackend.cpp" line="437"/>
+        <location filename="../../src/backend/managers/cswordbackend.cpp" line="438"/>
         <source>Morph segmentation</source>
         <translation>Segmentare morfologică</translation>
     </message>

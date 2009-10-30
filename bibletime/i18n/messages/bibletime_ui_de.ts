@@ -612,15 +612,15 @@
     </message>
     <message>
         <source>Install path:</source>
-        <translation>Installationspfad</translation>
+        <translation type="obsolete">Installationspfad</translation>
     </message>
     <message>
         <source>The path where the new works will be installed</source>
-        <translation>Der Pfad, in den neue Werke installiert werden</translation>
+        <translation type="obsolete">Der Pfad, in den neue Werke installiert werden</translation>
     </message>
     <message>
         <source>Configure paths where works are installed</source>
-        <translation>Ziel-Installations-Pfade neuer Werke konfigurieren</translation>
+        <translation type="obsolete">Ziel-Installations-Pfade neuer Werke konfigurieren</translation>
     </message>
     <message>
         <source>Install...</source>
@@ -629,6 +629,18 @@
     <message>
         <source>Install or update selected works</source>
         <translation>Installation oder Aktualisierung ausgewählter Werke</translation>
+    </message>
+    <message>
+        <source>Install folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The folder where the new works will be installed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Configure folders where works are installed and found</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -726,10 +738,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Nonexisting folders</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add new folder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -759,6 +767,10 @@
     </message>
     <message>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nonexistent folders</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
