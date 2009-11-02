@@ -30,14 +30,15 @@ Vorlage wird im rechten Abschnitt eine Vorschau angezeigt,</para>
       <title>
         <guimenu>Desk</guimenu>
       </title>
-      <para>Many features provided by the &sword; backend can now be customized in 
-&bibletime;.  These features are documented right in the dialog.  You also 
-have the possibility to specify standard works that should be used when no 
-specific work is specified in a reference.  An example: The standard Bible 
-is used to display the content of cross references in the Bible.  When you 
-hover over them, the Mag will show the content of the verses referred to, 
-according to the standard Bible you specified.  With the use of text 
-filters, you can control the appearance of the text.</para>
+      <para>Viele Funktionen, die vom &sword;-Backend zur Verfügung gestellt werden, 
+können nun in &bibletime; konfiguriert werden. Diese Funktionseigenschaften 
+sind im rechten Dialog dokumentiert. Ihnen ist außerdem ermöglicht, 
+Standardwerke zu definieren, wenn kein bestimmtes Werk in der Referenz 
+spezifiziert ist. Zum Beispiel wird die Standard-Bibel zur Darstellung des 
+Inhalts von Kreuzverweisen in der Bibel herangezogen. Wenn Sie über sie 
+fahren, wird die Lupe den Versinhalt anzeigen, auf den Bezug genommen wird, 
+gemäß der Standard-Bibel, die Sie spezifiziert haben. Unter Mitverwendung 
+von Textfiltern, können Sie die Erscheinungsform des Textes bestimmen.</para>
     </sect2>
 
     <sect2 id="hdbk-config-bt-languages">
@@ -148,7 +149,7 @@ Zeichenbereich ab.</entry>
                   Crosswire's font directory</ulink>
                 </entry>
 
-                <entry>Several fonts available from the &cbs; FTP site.</entry>
+                <entry>Verschiedene Schriften sind auf der FTP-Site von &cbs; verfügbar.</entry>
               </row>
               <row>
                 <entry>
@@ -187,19 +188,20 @@ ranges and the Unicode fonts that support them</ulink>).</para>
         <guimenu>Shortcuts</guimenu>
       </title>
 
-      <para>Shortcuts (previously known as HotKeys) are special key commands that can be 
-used in the place of the menu items and icons. A number of &bibletime;'s 
-commands have predefined Shortcuts (see <link 
-linkend="hdbk-reference-shortcuts">this section</link> for a complete 
-listing). Most of &bibletime;'s commands can be assigned Shortcuts.  This is 
-very helpful to quickly access the functions that you need the most.</para>
+      <para>Tastenkürzel (ehemals HotKeys) sind spezielle Tastenbefehle, die an Stelle 
+der Menüeinträge oder Symbole verwendet werden können. Eine Anzahl von 
+&bibletime;s Befehlen hat bereits vordefinierte Tastenkürzel (<link 
+linkend="hdbk-reference-shortcuts">dieser Abschnitt</link> enthält eine 
+komplette Auflistung). Den meisten Befehlen von &bibletime; kann hier ein 
+Tastenkürzel zugewiesen werden. Dies ist sehr hilfreich, um die 
+meistbenutzten Funktionen schnell zu erreichen.</para>
 
       <imageobject>
 	<imagedata fileref="ss_shortcuts.png" format="PNG" />
       </imageobject>
 
-      <para>In the preceding example, F2, Bible Study Howto has a secondary shortcut 
-defined, CTRL+2.</para>
+      <para>Im vorherigen Beispiel, F2, wurde dem Bibelstudien-HowTo ein sekundäres 
+Tastenkürzel, CTRL+2, zugewiesen.</para>
     </sect2>
   </sect1>
 </chapter>

@@ -51,7 +51,8 @@
   <date>2009-10</date>
   <releaseinfo>2.4</releaseinfo>
   <abstract>
-    <para>&bibletime; is a Bible study tool based on the &sword; framework.</para>
+    <para>&bibletime; ist ein Bibelstudien-Werkzeug, das auf dem &sword;-System 
+basiert.</para>
   </abstract>
   <keywordset>
     <keyword>Qt4</keyword>

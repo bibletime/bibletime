@@ -2,12 +2,12 @@
   <title>Referenz</title>
   <sect1 id="hdbk-reference-menus">
     <title>Hauptmenü-Referenz</title>
-    <para>In this section you can find detailed descriptions of all entries in the 
-main menu of &bibletime;. They are ordered in just the way they appear in 
-&bibletime;, with all the sub-items listed under the major menu item they 
-belong to. You can also see the shortcut of each item;a complete listing of 
-all shortcuts can be found in <link linkend="hdbk-reference-shortcuts">this 
-section</link>.</para>
+    <para>In diesem Abschnitt finden Sie detaillierte Beschreibungen aller Einträge im 
+&bibletime;-Hauptmenü. Sie sind in der Reihenfolge angeordnet, wie Sie auch 
+in &bibletime; auftauchen und zwar mit allen Untereinträgen unterhalb ihrer 
+jeweiligen Obermenüs. Sie können auch alle Kurzbefehle der Einträge 
+nachschauen, ein komplettes Verzeichnis der Kurzbefehle finden Sie in <link 
+linkend="hdbk-reference-shortcuts">diesem Abschnitt</link>.</para>
     <sect2 id="hdbk-reference-menus-file">
       <title>
         <guimenu>File</guimenu>
@@ -423,9 +423,9 @@ nach.</para>
           </term>
           <listitem>
             <para>
-            <action>Opens a dialog where you can change your &sword; configuration and 
-manage your bookshelf</action>. Please see <link 
-linkend="hdbk-op-bookshelfmanager">this section</link> for details.</para>
+            <action>Hiermit wird ein Dialog, zur &sword;-Konfiguration und Konfiguration 
+Ihrer Bücherregal-Verwaltung aufgerufen</action>. Schauen Sie bitte in <link 
+linkend="hdbk-op-bookshelfmanager">diesem Abschnitt</link> für Details nach.</para>
           </listitem>
         </varlistentry>
       </variablelist>
@@ -797,20 +797,21 @@ assoziierten Symbolzeichen.
   </sect1>
 
   <sect1 id="hdbk-reference-shortcuts">
-    <title>Shortcuts index</title>
-    <para>This is index of all shortcuts and their corresponding description in the 
-handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to 
-directly find out which shortcuts a certain menu item has, you can either 
-look at the entry itself in &bibletime; (as it always shows the shortcut), 
-or you can look it up in <link linkend="hdbk-reference-menus">this 
-section</link>.</para>
+    <title>Tastenkürzel-Verzeichnis</title>
+    <para>Dies ist ein Verzeichnis aller Tastenkürzel und ihrer korrespondierenden 
+Beschreibung im Handbuch. Die Tastenkürzel sind (grob) alphabetisch 
+sortiert. Wenn Sie unmittelbar nachschauen möchten, welches Tastenkürzel 
+eine bestimmte Menüfunktion hat, so können Sie entweder den Menüeintrag in 
+&bibletime; ansehen (da grundsätzlich auch das entsprechende Tastenkürzel 
+mit angezeigt wird) oder die Tastenkürzel in <link 
+linkend="hdbk-reference-menus">diesem Abschnitt</link> nachsehen.</para>
     <informaltable>
       <tgroup cols="2">
         <colspec colname="shortcut" />
         <colspec colname="desc" />
         <thead>
           <row>
-            <entry>Shortcut</entry>
+            <entry>Tastenkürzel</entry>
             <entry>Beschreibung</entry>
           </row>
         </thead>
@@ -992,7 +993,7 @@ Kacheln.
               <keycombo action="simul">
               <keycap>&Ctrl;L</keycap></keycombo>
             </entry>
-            <entry>Change location. Changes focus to the toolbar field for the selected work.</entry>
+            <entry>Ort ändern. Wechselt den Fokus zur Werkzeugleiste des selektierten Werkes.</entry>
           </row>
 
           <row>
@@ -1000,7 +1001,7 @@ Kacheln.
               <keycombo action="simul">
               <keycap>&Ctrl;N</keycap></keycombo>
             </entry>
-            <entry>Search with works of this window.</entry>
+            <entry>Das Suchfenster mit den Werken dieses Fensters öffnen.</entry>
           </row>
 
           <row>
