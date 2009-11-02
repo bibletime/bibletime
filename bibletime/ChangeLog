@@ -1,3 +1,6 @@
+2009-11-1 Gary Holmlund
+	* Fix bug id 2890011 - Crash when making book/chapter/verse change
+
 2009-10-24 Jaak Ristioja <ristioja@gmail.com>
     * Fixed a crash on module installation/uninstall.
     * Fixed the wrong icon for lexicons.

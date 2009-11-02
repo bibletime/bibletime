@@ -67,9 +67,20 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
     if (!updatesEnabled()) return;
 
     setUpdatesEnabled(false);
-    if (m_key) emit beforeKeyChange(m_key->key());
-    m_key = key;
+    if (m_key) 
+		emit beforeKeyChange(m_key->key());
+
+	// Must copy, the "key" pointer may be deleted without this class knowing about that.
+	CSwordVerseKey* tmpKey = m_key;
+    m_key = dynamic_cast<CSwordVerseKey*>(key->copy());
     emit keyChanged(m_key);
+	
+	// TODO: Fix the following leak
+	// Because several widgets share the m_key pointer
+	// it is currently impossible to delete it here. Doing so
+	// will cause crashes in other classes such as the CKeyReferenceWidget.
+	// More investigation is needed to make this safe
+	// delete tmpKey;
 
     setUpdatesEnabled(true);
 }
