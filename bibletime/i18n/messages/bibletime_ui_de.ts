@@ -28,7 +28,7 @@
     </message>
     <message>
         <source>Se&amp;ttings</source>
-        <translation>Einstellungen</translation>
+        <translation>Eins&amp;tellungen</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -52,7 +52,7 @@
     </message>
     <message>
         <source>&amp;Delete session</source>
-        <translation>Sitzung löschen</translation>
+        <translation>Sitzung &amp;löschen</translation>
     </message>
     <message>
         <source>&amp;Arrangement mode</source>
@@ -116,7 +116,7 @@
     </message>
     <message>
         <source>Save as &amp;new session...</source>
-        <translation>Als &amp;neue Sitzung speichern</translation>
+        <translation>Als &amp;neue Sitzung speichern...</translation>
     </message>
     <message>
         <source>Create and save a new session</source>
@@ -148,7 +148,7 @@
     </message>
     <message>
         <source>&amp;Configure BibleTime...</source>
-        <translation>BibleTime &amp;konfigurieren</translation>
+        <translation>BibleTime &amp;konfigurieren...</translation>
     </message>
     <message>
         <source>Set BibleTime&apos;s preferences</source>
@@ -156,7 +156,7 @@
     </message>
     <message>
         <source>Bookshelf &amp;Manager...</source>
-        <translation>Bücherregal-&amp;Verwaltung</translation>
+        <translation>Bücherregal-&amp;Verwaltung...</translation>
     </message>
     <message>
         <source>Configure your bookshelf and install/update/remove/index works</source>
@@ -244,27 +244,27 @@
     </message>
     <message>
         <source>Unlock Work</source>
-        <translation type="unfinished">Werk lösen</translation>
+        <translation>Werk freischalten</translation>
     </message>
     <message>
         <source>Enter the unlock key for this work.</source>
-        <translation type="unfinished">Geben Sie den Schlüssel für dieses Werke ein</translation>
+        <translation>Geben Sie den Freischalt-Schlüssel für dieses Werk ein.</translation>
     </message>
     <message>
         <source>Close &amp;window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fenster schließen</translation>
     </message>
     <message>
         <source>Close the current open window</source>
-        <translation type="unfinished"></translation>
+        <translation>Das gegenwärtig geöffnete Fenster schließen</translation>
     </message>
     <message>
         <source>O&amp;pen Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Fenster ö&amp;ffnen</translation>
     </message>
     <message>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das mit BibleTime mitgelieferte Bibelstudien-HowTo öffnen. &lt;br/&gt;Dieses HowTo ist eine Einführung in effizientes Bibelstudium.</translation>
     </message>
 </context>
 <context>
@@ -275,7 +275,7 @@
     </message>
     <message>
         <source>BibleTime is an easy to use but powerful Bible study tool.</source>
-        <translation>BibleTime ist ein einfach zu bedienendes aber mächtiges Bibelstudien-Werkzeug</translation>
+        <translation>BibleTime ist ein einfach zu bedienendes aber mächtiges Bibelstudien-Werkzeug.</translation>
     </message>
     <message>
         <source>We are looking for developers and translators.</source>
@@ -403,11 +403,11 @@
     </message>
     <message>
         <source>This program uses Qt version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Programm nutzt Qt Version %1.</translation>
     </message>
     <message>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
-        <translation type="unfinished"></translation>
+        <translation>Qt ist ein plattformübergreifendes Applikations- und UI-Rahmensystem, das mit der C++-Sprache erstellt wurde. Es wurde unter der LGPL-Lizenz veröffentlicht.</translation>
     </message>
 </context>
 <context>
@@ -421,114 +421,114 @@
     <name>BtBookshelfDockWidget</name>
     <message>
         <source>Bookshelf</source>
-        <translation type="unfinished">Bücherregal</translation>
+        <translation>Bücherregal</translation>
     </message>
     <message>
         <source>Grouping</source>
-        <translation type="unfinished">Gruppierung</translation>
+        <translation>Gruppierung</translation>
     </message>
     <message>
         <source>Change the grouping of items in the bookshelf.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Anordnung von Einträgen im Bücherregal verändern.</translation>
     </message>
     <message>
         <source>Category/Language</source>
-        <translation type="unfinished">Kategorie/Sprache</translation>
+        <translation>Kategorie/Sprache</translation>
     </message>
     <message>
         <source>Category</source>
-        <translation type="unfinished">Kategorie</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Language/Category</source>
-        <translation type="unfinished">Sprache/Kategorie</translation>
+        <translation>Sprache/Kategorie</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Sprache</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>No grouping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungruppiert</translation>
     </message>
     <message>
         <source>Show/hide works</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke anzeigen/verstecken</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Ö&amp;ffnen</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bearbeiten</translation>
     </message>
     <message>
         <source>&amp;Plain text</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reintext</translation>
     </message>
     <message>
         <source>&amp;HTML</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;HTML</translation>
     </message>
     <message>
         <source>&amp;Unlock...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Freischalten...</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ü&amp;ber...</translation>
     </message>
     <message>
         <source>&amp;Search in %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>In %1 &amp;suchen...</translation>
     </message>
     <message>
         <source>Fi&amp;lter:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fi&amp;lter:</translation>
     </message>
 </context>
 <context>
     <name>BtBookshelfModel</name>
     <message>
         <source>Module</source>
-        <translation type="unfinished"></translation>
+        <translation>Module</translation>
     </message>
     <message>
         <source>Bibles</source>
-        <translation type="unfinished">Bibeln</translation>
+        <translation>Bibeln</translation>
     </message>
     <message>
         <source>Commentaries</source>
-        <translation type="unfinished">Kommentare</translation>
+        <translation>Kommentare</translation>
     </message>
     <message>
         <source>Books</source>
-        <translation type="unfinished">Bücher</translation>
+        <translation>Bücher</translation>
     </message>
     <message>
         <source>Cults/Unorthodox</source>
-        <translation type="unfinished">Sekten/Unorthodox</translation>
+        <translation>Sekten/Unorthodox</translation>
     </message>
     <message>
         <source>Maps and Images</source>
-        <translation type="unfinished">Karten und Bilder</translation>
+        <translation>Karten und Bilder</translation>
     </message>
     <message>
         <source>Daily Devotionals</source>
-        <translation type="unfinished">Andachtsbücher</translation>
+        <translation>Andachtsbücher</translation>
     </message>
     <message>
         <source>Lexicons and Dictionaries</source>
-        <translation type="unfinished">Lexika und Wörterbücher</translation>
+        <translation>Lexika und Wörterbücher</translation>
     </message>
     <message>
         <source>Glossaries</source>
-        <translation type="unfinished">Wörterbücher</translation>
+        <translation>Wörterbücher</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -570,7 +570,7 @@
     </message>
     <message>
         <source>Create new search indexes and delete created indexes for the installed works.</source>
-        <translation>Erstellung neuer Such-Indizes und Löschen erstellter Indizes für installierte Werke</translation>
+        <translation>Erstellung neuer Such-Indizes und Löschen erstellter Indizes für installierte Werke.</translation>
     </message>
     <message>
         <source>Search Indexes</source>
@@ -632,15 +632,15 @@
     </message>
     <message>
         <source>Install folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Installationsverzeichnis:</translation>
     </message>
     <message>
         <source>The folder where the new works will be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Verzeichnis in dem die neuen Werke installiert werden</translation>
     </message>
     <message>
         <source>Configure folders where works are installed and found</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurieren Sie Verzeichnisse in denen Werke installiert und gefunden werden</translation>
     </message>
 </context>
 <context>
@@ -711,67 +711,67 @@
     </message>
     <message>
         <source>Bookshelf Folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Bücherregal-Verzeichnisse</translation>
     </message>
     <message>
         <source>Works can be installed in one or more folders. After setting up folders here you can choose one of them in Install page.</source>
-        <translation type="unfinished"></translation>
+        <translation>Werke können in einem oder mehreren Ordnern installiert werden. Nach der Einrichtung von Ordnern können Sie hier einen von ihnen in der Installationsseite wählen.</translation>
     </message>
     <message>
         <source>BibleTime and the SWORD library find the works from  all of these folders. If a folder is removed here it still exists in the system with all the works in it.</source>
-        <translation type="unfinished"></translation>
+        <translation>BibleTime und die SWORD-Bibliothek finden die Werke in allen diesen Ordnern. Wenn ein Ordner hier entfernt wurde, existiert es weiterhin im System mit allen darin enthaltenen Werken.</translation>
     </message>
     <message>
         <source>Configure bookshelf folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Bücherregal-Ordner einrichten</translation>
     </message>
     <message>
         <source>Configuration file for the folders is: </source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurationsdatei für den Ordner ist:</translation>
     </message>
     <message>
         <source>Folders where new works can be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner in denen neue Werke installiert werden können</translation>
     </message>
     <message>
         <source>Read-only folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Nur-Lese-Ordner</translation>
     </message>
     <message>
         <source>Add new folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuen Ordner hinzufügen</translation>
     </message>
     <message>
         <source>Edit the selected folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählten Ordner editieren</translation>
     </message>
     <message>
         <source>Remove the selected folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausgewählten Ordner entfernen</translation>
     </message>
     <message>
         <source>This default folder in your home directory can&apos;t be removed</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Standard-Ordner in Ihrem Home-Verzeichnis kann nicht entfernt werden</translation>
     </message>
     <message>
         <source>Choose Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner auswählen</translation>
     </message>
     <message>
         <source>Use Folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner verwenden?</translation>
     </message>
     <message>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you want to use this folder instead of the previous value?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden können. Möchten Sie diesen Ordner anstelle des vorherigen Eintrags nutzen?</translation>
     </message>
     <message>
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieser Ordner ist nicht beschreibbar, sodass Werke hier nicht durch BibleTime installiert werden können. Möchten Sie ihn dennoch der Liste von Bücherregal-Ordnern hinzufügen?</translation>
     </message>
     <message>
         <source>Nonexistent folders</source>
-        <translation type="unfinished"></translation>
+        <translation>Nicht-existierender Ordner</translation>
     </message>
 </context>
 <context>
@@ -879,7 +879,7 @@
     </message>
     <message>
         <source>Select first or second shortcut and type the shortcut with keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie zwischen primärem oder sekundärem Tastenkürzel und geben Sie es mit der Tastatur ein</translation>
     </message>
 </context>
 <context>
@@ -921,7 +921,7 @@ shortcut</source>
     </message>
     <message>
         <source>Default key:</source>
-        <translation>Standard-Taste</translation>
+        <translation>Standard-Taste:</translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ shortcut</source>
     <name>CBookReadWindow</name>
     <message>
         <source>Toggle tree view</source>
-        <translation>Baumstruktur umschalten...</translation>
+        <translation>Baumstruktur umschalten</translation>
     </message>
 </context>
 <context>
@@ -1367,7 +1367,7 @@ shortcut</source>
     <name>CDisplaySettingsButton</name>
     <message>
         <source>Display settings: No options available</source>
-        <translation>Anzeigeeinstellungen. Keine Einstellungen verfügbar.</translation>
+        <translation>Anzeigeeinstellungen. Keine Einstellungen verfügbar</translation>
     </message>
     <message>
         <source>Display settings</source>
@@ -1430,15 +1430,15 @@ shortcut</source>
     </message>
     <message>
         <source>Style preview</source>
-        <translation>Stilvorschau:</translation>
+        <translation>Stilvorschau</translation>
     </message>
     <message>
         <source>For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.</source>
-        <translation>Denn Gott hat die Menschen so sehr geliebt, dass er seinen einzigen Sohn für sie hergab. Jeder, der an ihn glaubt, wird nicht zugrunde gehen, sondern das ewige Leben haben,</translation>
+        <translation>Denn Gott hat die Welt so geliebt, dass er seinen eingeborenen Sohn gab, damit jeder, der an ihn glaubt, nicht verloren gehe, sondern ewiges Leben habe.</translation>
     </message>
     <message>
         <source>For God didn&apos;t send his Son into the world to judge the world, but that the world should be saved through him.</source>
-        <translation>Gott hat nämlich seinen Sohn nicht zu den Menschen gesandt, um über sie Gericht zu halten, sondern um sie zu retten,</translation>
+        <translation>Denn Gott hat seinen Sohn nicht in die Welt gesandt, dass er die Welt richte, sondern dass die Welt durch ihn gerettet werde.</translation>
     </message>
     <message>
         <source>He who believes in him is not judged. He who doesn&apos;t believe has been judged already, because he has not believed in the name of the one and only Son of God.</source>
@@ -1679,7 +1679,7 @@ shortcut</source>
     </message>
     <message>
         <source>Language for names of Bible books:</source>
-        <translation>Sprache der Bibelbücher-Namen</translation>
+        <translation>Sprache der Bibelbücher-Namen:</translation>
     </message>
     <message>
         <source>The languages which can be used for the biblical booknames</source>
@@ -1861,11 +1861,11 @@ shortcut</source>
     </message>
     <message>
         <source>Module not writable</source>
-        <translation>Modul ist nicht schreibbar.</translation>
+        <translation>Modul ist nicht schreibbar</translation>
     </message>
     <message>
         <source>Module is not writable.</source>
-        <translation>Modul ist nicht schreibbar</translation>
+        <translation>Modul ist nicht schreibbar.</translation>
     </message>
     <message>
         <source>Either the module may not be edited, or you do not have write permission.</source>
@@ -2058,7 +2058,7 @@ shortcut</source>
     </message>
     <message>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Quelle mit dieser Überschrift existiert bereits. &lt;br/&gt;Bitte geben Sie eine andere Überschrift ein.</translation>
     </message>
 </context>
 <context>
@@ -3448,7 +3448,7 @@ Language name ppk</extracomment>
     <name>Search::CRangeChooserDialog</name>
     <message>
         <source>S&amp;earch range:</source>
-        <translation>Suchbereich:</translation>
+        <translation>Suchb&amp;ereich:</translation>
     </message>
     <message>
         <source>&amp;Name:</source>
@@ -3456,7 +3456,7 @@ Language name ppk</extracomment>
     </message>
     <message>
         <source>Edi&amp;t current range:</source>
-        <translation>Aktuellen Bereich &amp;bearbeiten</translation>
+        <translation>Aktuellen Bereich &amp;bearbeiten:</translation>
     </message>
     <message>
         <source>Parsed search range:</source>
@@ -3662,7 +3662,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Hebrew Strong&apos;s lexicon:</source>
-        <translation>Hebräisches Strong-Lexikon</translation>
+        <translation>Hebräisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Hebrew lexicon is used when a hyperlink into a Hebrew lexicon is clicked</source>
@@ -3670,7 +3670,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Greek Strong&apos;s lexicon:</source>
-        <translation>Griechisches Strong-Lexikon</translation>
+        <translation>Griechisches Strong-Lexikon:</translation>
     </message>
     <message>
         <source>The standard Greek lexicon is used when a hyperlink into a Greek lexicon is clicked</source>
@@ -3678,7 +3678,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Hebrew morphological lexicon:</source>
-        <translation>Hebräisches Morphologie-Lexikon</translation>
+        <translation>Hebräisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Hebrew texts is used when a hyperlink of a morphological tag in a Hebrew text is clicked</source>
@@ -3686,7 +3686,7 @@ Das kann eine Weile dauern. Mit der Indizierung fortfahren?</translation>
     </message>
     <message>
         <source>Greek morphological lexicon:</source>
-        <translation>Griechisches Morphologie-Lexikon</translation>
+        <translation>Griechisches Morphologie-Lexikon:</translation>
     </message>
     <message>
         <source>The standard morphological lexicon for Greek texts is used when a hyperlink of a morphological tag in a Greek text is clicked</source>
