@@ -103,6 +103,7 @@ void BtAboutDialog::init_contributors_tab() {
     content += "<li>Horatiu Alexe</li>";
     content += "<li>Jan B&#x11B;lohoubek</li>";
     content += "<li>Chun-shek Chan</li>";
+    content += "<li>Nouhoun Y. Diarra</li>";
     content += "<li>Rafael Fagundes</li>";
     content += "<li>Ilpo Kantonen</li>";
     content += "<li>Pavel Laukko</li>";
