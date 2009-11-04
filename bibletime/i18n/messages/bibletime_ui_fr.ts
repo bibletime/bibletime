@@ -370,17 +370,17 @@
         <translation type="obsolete"> pour un aperçu de la licence Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Vous pouvez télécharger et utiliser (mais ne pas distribuer) le programme des fins personnelles, privées, publiques ou commerciales sans restrictions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Vous pouvez donner ou distribuer le programme si vous distribuez aussi le code source correspondant.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="183"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licence complète juridiquement contraignant est ci-dessous.</translation>
     </message>
@@ -474,32 +474,32 @@
         <translation>Les personnes suivantes bibletime traduit dans leur langue:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="124"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="125"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Certains noms de mai à manquer, s&apos;il vous plaît bibletime-translations@lists.sourceforge.net e-mail si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="138"/>
         <source>SWORD library version %1</source>
         <translation>SWORD version de la bibliothèque %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="140"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>Bibletime fait usage du projet SWORD. Le projet SWORD est le CrossWire Bible Society&apos;s Bible projet de logiciel libre. Son but est de créer des contre-outils à code source ouvert la plate-forme - couvert par la licence GNU General Public - qui permettent aux programmeurs et les sociétés bibliques pour écrire un nouveau logiciel Bible plus rapidement et facilement.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
         <source>The SWORD Project</source>
         <translation>Le projet SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="156"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
         <source>This program uses Qt version %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -508,12 +508,12 @@
         <translation type="obsolete">Ce programme utilise Qt Open Source Edition version %1.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="172"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="175"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime est distribué sous la licence GPL.</translation>
     </message>
