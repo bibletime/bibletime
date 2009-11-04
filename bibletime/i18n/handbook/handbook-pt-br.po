@@ -1,0 +1,2179 @@
+# Copyright (C).
+# This file is distributed under the same license as the BibleTime package.
+#
+# , 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: handbook\n"
+"Report-Msgid-Bugs-To: bibletime-translations@lists.sourceforge.net\n"
+"POT-Creation-Date: 2009-10-26 14:28-0400\n"
+"PO-Revision-Date: 2009-06-26 14:32-0300\n"
+"Last-Translator: \n"
+"Language-Team: Portugus do Brasil <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODINGX-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 0.3\n"
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:2
+msgid "Configuring &bibletime;"
+msgstr "Configurando &bibletime;"
+
+# type: Content of: <chapter><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:3
+msgid ""
+"In this section you find an overview to configure &bibletime;, which can be "
+"found under <guimenu>Settings</guimenu> in the main menu."
+msgstr ""
+"Nessa seo voc vai encontrar uma viso geral de como configurar o &bibletime;, "
+"que pode ser encontrado em <guimenu>Configuraes</guimenu> no menu principal."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:7
+msgid "Configure &bibletime; Dialog"
+msgstr "Dilogo de configurao do &bibletime;"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:8
+msgid ""
+"The &bibletime; user interface can be customized in many ways depending on "
+"your needs. You can access the configuration dialog by selecting "
+"<menuchoice> <guimenu>Settings</guimenu> </menuchoice> "
+"<guimenuitem>Configure &bibletime;</guimenuitem>."
+msgstr ""
+"A interface de usurio do &bibletime; pode ser personalizada de vrias "
+"maneiras, dependendo das suas necessidades. Voc pode acessar o dilogo de "
+"configurao selecionando <menuchoice><guimenu>Configuraes</guimenu> </"
+"menuchoice> <guimenuitem>Configurar &bibletime;</guimenuitem>."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:20
+msgid ""
+"The startup behavior can be customized. Select from the following options:"
+msgstr ""
+"O comportamento de inicializao pode ser personalizado. Selecione uma dessas "
+"opes:"
+
+# type: Content of: <chapter><sect1><sect2><para><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:24
+msgid "Show startup logo"
+msgstr "Mostrar logo de inicializao"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:27
+msgid ""
+"Display templates define the rendering of text (colors, size etc.). Various "
+"built-in templates are available. If you select one, you will see a preview "
+"on the right pane."
+msgstr ""
+"Modelos de exibio definem o estilo do texto (cores, tamanho, etc.). H vrios "
+"modelos internos disponveis. Se voc escolher um, ir ver uma pr-visualizao no "
+"painel direito."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:36
+#, fuzzy
+msgid ""
+"Many features provided by the &sword; backend can now be customized in "
+"&bibletime;.  These features are documented right in the dialog.  You also "
+"have the possibility to specify standard works that should be used when no "
+"specific work is specified in a reference.  An example: The standard Bible "
+"is used to display the content of cross references in the Bible.  When you "
+"hover over them, the Mag will show the content of the verses referred to, "
+"according to the standard Bible you specified.  With the use of text "
+"filters, you can control the appearance of the text."
+msgstr ""
+"Muitos recursos providos pelo backend do Sword podem agora ser "
+"personalizados no &bibletime;. Esses recursos esto documentados no prprio "
+"dilogo. Voc tambm tem a possibilidade de especificar obras padres que devem "
+"ser usadas quando nenhuma obra em particular  especificada numa referncia. "
+"Um exemplo: a Bblia padro  usada para mostrar o contedo de referncias "
+"cruzadas na Bblia. Quando voc passar por cima delas, a lupa vai mostrar o "
+"contedo dos vesculos referidos, de acordo com a Bblia padro que voc "
+"especificou."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:52
+msgid ""
+"Here you can specify which language should be used for the biblical "
+"booknames. Set this to your native language, if it is available, and you'll "
+"feel at home."
+msgstr ""
+"Aqui voc pode especificar que idioma deve ser usado para os livros bblicos. "
+"Deixe-o no seu idioma nativo, se disponvel, e voc se sentir em casa."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:56
+msgid ""
+"By default, &bibletime; uses the default system display font. You can "
+"override this font if necessary. Some languages require special fonts to be "
+"displayed correctly, and this dialog allows you to specify a custom font for "
+"each language."
+msgstr ""
+"Por padro, &bibletime; usa a fonte padro do sistema. Voc pode sobrescrever "
+"essa fonte se necessrio. Alguns idiomas requerem fontes especiais para serem "
+"exibidos corretamente, e esse dilogo permite a voc especificar uma fonte "
+"personalizada para cada idioma."
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-config.docbook:66
+msgid "<phrase>Options Dialog - fonts</phrase>"
+msgstr "<phrase>Dilogo de Opes - fontes</phrase>"
+
+# type: Content of: <chapter><sect1><sect2><mediaobject><caption><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:69
+msgid "The Options dialog - Fonts."
+msgstr "O dilogo de Opes - Fontes."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:72
+msgid ""
+"&bibletime; can now use all supported fonts.  As long as the works you are "
+"interested in display correctly nothing needs to be done here. If a work "
+"only displays as a series of question marks (??????) or empty boxes, then "
+"you know that the standard display font does not contain the characters used "
+"in this work."
+msgstr ""
+"&bibletime; pode agora usar todas as fontes suportadas. Se as obras que voc "
+"deseja ver forem exibidas corretamente, nada precisa ser feito aqui. Se uma "
+"obra somente mostra uma srie de pontos de interrogao (??????) or caixas "
+"vazias, ento a fonte de exibio padro no contm os caracteres usados nessa "
+"obra."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:79
+msgid ""
+"To correct this, choose this work's language from the drop down menu. Select "
+"the use custom font checkbox. Now select a font. For example, a font that "
+"supports many languages is Code2000. If no installed font can display the "
+"work you are interested in, try installing the localization package for that "
+"language."
+msgstr ""
+"Para corrigir isso, escolha o idioma dessa obra no menu de seleo. Marque a "
+"caixa Usar fonte personalizada. Ento selecione uma fonte. Por exemplo, uma "
+"fonte que suporta muitos idiomas  Code2000. Se nenhuma fonte instalada pode "
+"exibir a obra em que voc est interessado, tente instalar o pacote de "
+"localizao para esse idioma."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:86
+msgid "Installing fonts"
+msgstr "Instalando fontes"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:87
+msgid ""
+"Detailed font installation instructions are outside the scope of this "
+"handbook. For further information you might want to refer to the <ulink url="
+"\"http://www.linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</"
+"ulink>."
+msgstr ""
+"Instrues detalhadas de instalao de fontes esto fora do escopo desse livro de "
+"mo. Para mais informaes, por favor verifique em <ulink url=\"http://www."
+"linux.org/docs/ldp/howto/Unicode-HOWTO-2.html\"> Unicode HOWTO</ulink>."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:93
+msgid ""
+"If you use a small font like Clearlyu (about 22kb), &bibletime; will run "
+"faster than with a large font like <trademark class=\"registered\">Bitstream "
+"Cyberbit</trademark>(about 12Mb)."
+msgstr ""
+"Se voc usar uma fonte pequena como Clearlyu (em torno de 22kb), &bibletime; "
+"ir rodar mais rpido do que com uma fonte como <trademark class=\"registered"
+"\">Bitstream Cyberbit</trademark> (em torno de 12Mb)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:100
+msgid "Obtaining Fonts"
+msgstr "Obtendo fontes"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:101
+msgid "Fonts can be obtained from a number of sources:"
+msgstr "Fontes podem ser obtidas de vrios lugares:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:104
+msgid "Your *nix distribution."
+msgstr "Sua distribuio *nix."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:107
+msgid "Your distribution's localization packages."
+msgstr "Pacotes de localizao da sua distribuio."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:110
+msgid ""
+"An existing <trademark class=\"registered\">Microsoft Windows</trademark> "
+"installation on the same computer."
+msgstr ""
+"Uma instalao existente do <trademark class=\"registered\">Microsoft Windows</"
+"trademark> no mesmo computador."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:116
+msgid "A font collection, such as are available from Adobe or Bitstream."
+msgstr "Uma coleo de fontes, tais como as disponveis da Adobe ou Bitstream."
+
+# type: Content of: <chapter><sect1><sect2><sect3><itemizedlist><listitem><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:120
+msgid "Online font collections."
+msgstr "Colees de fontes online."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:123
+msgid ""
+"Unicode fonts support more characters than other fonts, and some of these "
+"fonts are available at no charge. None of available fonts includes all "
+"characters defined in the Unicode standard, so you may want to use different "
+"fonts for different languages."
+msgstr ""
+"Fontes Unicode suportam mais caracteres que outras fontes, e algumas dessas "
+"fontes esto disponveis gratuitamente. Nenhuma da fontes disponveis incluem "
+"todos os caracteres definidos no padro Unicode, ento voc pode querer usar "
+"diferentes fontes para diferentes idiomas."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><title>
+#: docs/handbook/en/docbook/hdbk-config.docbook:129
+msgid "Unicode Fonts"
+msgstr "Fontes Unicode"
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:137
+msgid ""
+"Perhaps the best free Unicode font, covering a wide range of characters."
+msgstr ""
+"Talvez a melhor fonte Unicode gratuita, cobrindo uma vasta gama de "
+"caracteres."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:145
+msgid "Excellent Unicode fonts from the Summer Institute of Linguistics."
+msgstr "Excelentes fontes Unicode do Instituto de Lingustica Summer."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:153
+msgid "A new free Unicode font initiative."
+msgstr "Uma nova iniciativa de fonte Unicode gratuita."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:161
+#, fuzzy
+msgid "Several fonts available from the &cbs; FTP site."
+msgstr "Vrias fontes disponveis do site Ftp da Crosswire Bible Society."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:169
+msgid ""
+"Covers almost the entire range of Unicode, but might slow &bibletime; down "
+"because of its size."
+msgstr ""
+"Cobre quase toda a gama do Unicode, mas pode fazer o &bibletime; ficar lento "
+"por causa do seu tamanho."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:174
+msgid "Clearlyu"
+msgstr "Clearlyu"
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:175
+msgid "Included in some distributions. Contains European, Greek, Hebrew, Thai."
+msgstr ""
+"Includa em algumas distribuies. Contm Europeu, Grego, Hebreu e Tailands."
+
+# type: Content of: <chapter><sect1><sect2><sect3><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-config.docbook:183
+msgid "Partial coverage, see information on linked site."
+msgstr "Cobertura parcial, ver informaes no site linkado."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:189
+msgid ""
+"There are good Unicode font lists on the net, as the one by Christoph Singer "
+"( <ulink url=\"http://www.slovo.info/unifonts.htm\">Multilingual Unicode "
+"TrueType Fonts in the Internet</ulink>), or the one by Alan Wood ( <ulink "
+"url=\"http://www.alanwood.net/unicode/fontsbyrange.html\"> Unicode character "
+"ranges and the Unicode fonts that support them</ulink>)."
+msgstr ""
+"Existem boas listas de fontes Unicode na net, como a feita por Christoph "
+"Singer (<ulink url=\"http://www.slovo.info/unifonts.htm\">Fontes TrueType "
+"UnicodeMulti-idiomas na Internet</ulink>), ou a por Alan Wood (<ulink url="
+"\"http://www.alanwood.net/unicode/fontsbyrange.html\">Faixas de caracteres "
+"Unicode e fontes Unicodes que as suportam</ulink>)."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:205
+#, fuzzy
+msgid ""
+"Shortcuts (previously known as HotKeys) are special key commands that can be "
+"used in the place of the menu items and icons. A number of &bibletime;'s "
+"commands have predefined Shortcuts (see <link linkend=\"hdbk-reference-"
+"shortcuts\">this section</link> for a complete listing). Most of "
+"&bibletime;'s commands can be assigned Shortcuts.  This is very helpful to "
+"quickly access the functions that you need the most."
+msgstr ""
+"Teclas de atalho so comandos de tecla especiais que podem ser usados no "
+"lugar de itens de menu e cones. Vrios comandos do &bibletime; tm teclas de "
+"atalho pr-definidas (veja <link linkend=\"hdbk-reference-hotkeys\">esta seo</"
+"link> para uma listagem completa). A maior parte dos comandos do &bibletime; "
+"pode ser associado a teclas de atalho aqui. Isso  muito til para acessar "
+"rapidamente as funes que voc mais usa."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-config.docbook:218
+msgid ""
+"In the preceding example, F2, Bible Study Howto has a secondary shortcut "
+"defined, CTRL+2."
+msgstr ""
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:2
+msgid "Introduction"
+msgstr "Introduo"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:4
+msgid "About &bibletime;"
+msgstr "Sobre &bibletime;"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:6
+#, fuzzy
+msgid ""
+"&bibletime; is a Bible study tool with support for different types of texts "
+"and languages. Even large amounts of works modules are easy to install and "
+"manage. It is built on the <ulink url=\"http://www.crosswire.org/sword"
+"\">&sword;</ulink> library, which provides the back-end functionality for "
+"&bibletime;, such as viewing Bible text, searching etc. &sword; is the "
+"flagship product of the <ulink url=\"http://www.crosswire.org\">&cbs;</"
+"ulink>."
+msgstr ""
+"&bibletime;  uma ferramenta de estudo bblico com suporte para diferentes "
+"tipos de textos e idiomas. Mesmo grandes quantidades de obras so simples de "
+"instalar e gerenciar. Ele foi feito sobre a biblioteca <ulink url=\"http://"
+"www.crosswire.org/sword\">Sword</ulink>, que prov a funcionalidade de back-"
+"end para o &bibletime;, tal como visualizar texto bblico, pesquisar, etc. "
+"Sword  o carro-chefe da <ulink url=\"http://www.crosswire.org\">Crosswire "
+"Bible Society</ulink>."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:14
+#, fuzzy
+msgid ""
+"&bibletime; is designed to be used with works encoded in one of the formats "
+"supported by the &sword; project. Complete information on the supported "
+"document formats can be found in the <ulink url=\"http://www.crosswire.org/"
+"sword/develop/index.jsp\"> developers section</ulink> of the &sword; "
+"Project, &cbs;."
+msgstr ""
+"&bibletime; foi desenhado para ser usado com obras codificadas em um dos "
+"formatos suportados pelo projeto Sword. Informaes completas sobre os "
+"formatos de documentos suportados podem ser encontradas na <ulink url="
+"\"http://www.crosswire.org/sword/develop/index.jsp\"> seo dedesenvolvimento</"
+"ulink> do Projeto Sword, Crosswire Bible Society."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:21
+msgid "Available works"
+msgstr "Obras disponveis"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:22
+#, fuzzy
+msgid ""
+"Over 200 documents in 50 languages are available from the <ulink url="
+"\"http://www.crosswire.org\">&cbs;</ulink>.  These include:"
+msgstr ""
+"Mais de 200 documentos em 50 idiomas esto disponveis da <ulink url=\"http://"
+"www.crosswire.org\">Crosswire Bible Society</ulink>. Esto inclusos:"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:27
+msgid "Bibles"
+msgstr "Bblias"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:29
+#, fuzzy
+msgid ""
+"The full Bible text, with optional things like Strong's Numbers, headings "
+"and/or footnotes in the text.  Bibles are available in many languages, and "
+"include not only modern versions, but also ancient texts like the Codex "
+"Leningradensis (\"WLC\", Hebrew), and the Septuagint (\"LXX\", Greek). This "
+"is the most advanced section in the library of the &sword; project."
+msgstr ""
+"O texto completo da Bblia, com itens opcionais como os nmeros Strong, "
+"cabealhos e/ou rodaps no texto. Bblias esto disponveis em muitos idiomas, e "
+"incluem no somente verses modernas, mas tambm textos antigos como o Codex "
+"Leningradensis (\"WLC\", hebraico), e a Septuaginta (\"LXX\", grego). Essa  "
+"a seo mais avanada na biblioteca do projeto Sword."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:39
+msgid "Books"
+msgstr "Livros"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:41
+msgid ""
+"Books available include \"Imitation of Christ\", \"Enuma Elish\", and "
+"\"Josephus: The Complete Works\""
+msgstr ""
+"Livros disponveis incluindo \"Imitation of Christ\", \"Enuma Elish\", e "
+"\"Josephus: The Complete Works\" (em ingls)"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:46
+msgid "Commentaries"
+msgstr "Comentrios"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:48
+msgid ""
+"Commentaries available include classics like John Wesley's \"Notes on the "
+"Bible\", Matthew Henry's commentary and Luther's \"Commentary on Galatians."
+"\" With the <emphasis>Personal</emphasis> commentary you can <link linkend="
+"\"hdbk-op-parts-desk-write\"> record your own personal notes</link> to "
+"sections of the Bible."
+msgstr ""
+"Comentrios disponveis incluindo clssicos como \"Notas sobre a Bblia\" de "
+"John Wesley, o comentrio de Matthew Henry e o \"Comentrio sobre Glatas\" de "
+"Lutero. Com o comentrio <emphasis>pessoal</emphasis> voc pode <link linkend="
+"\"hdbk-op-parts-desk-write\"> gravar suas prprias notas pessoas</link> nas "
+"sees da Bblia."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:57
+msgid "Daily devotionals"
+msgstr "Devocionais dirios"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:59
+msgid ""
+"Many people appreciate these daily portions from God's word. Available works "
+"include Daily Light on the Daily Path, and the Losungen."
+msgstr ""
+"Muitas pessoas apreciam essas pores dirias da palavra de Deus. Obras "
+"disponveis incluem Daily Light on the Daily Path, e o Losungen (ingls)."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><term>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:65
+msgid "Lexicons/Dictionaries"
+msgstr "Lxicos/Dicionrios"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:67
+msgid ""
+"Lexicons available include: Robinson's Morphological Analysis Codes, Brown-"
+"Driver-Briggs Hebrew Lexicon and the International Standard Bible "
+"Encyclopaedia. Dictionaries available include Strong's Hebrew Bible "
+"Dictionary, Strong's Greek Bible Dictionary, Webster's Revised Unabridged "
+"Dictionary of the English Language 1913, Nave's Topical Bible."
+msgstr ""
+"Lxicos disponveis incluem: Cdigos de Anlise Morfolgicos de Robinson, Lxico "
+"Hebraico de Brown-Driver-Briggs e a Enciclopdia da International Standard "
+"Bible. Dicionrios disponveis incluem o Dicionrio Bblico Hebraico de Strong, "
+"o Dicionrio Bblico Grego de Strong, Dicionrio Revisado da lngua Inglesa de "
+"Webster 1913, Bblia em Tpicos de Nave."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:79
+msgid "Motivation"
+msgstr "Motivao"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:80
+msgid ""
+"Our desire is to serve God, and to do our part to help others grow in their "
+"relationship with Him. We have striven to make this a powerful, quality "
+"program, and still make it simple and intuitive to operate. It is our desire "
+"that God be praised, as He is the source of all good things."
+msgstr ""
+"Nosso desejo  servir a Deus, e fazer nossa parte em ajudar outros a crescer "
+"no seu relacionamento com Ele. Ns batalhamos para tornar isso um programa "
+"poderoso e de qualidade, e ainda assim faz-lo simples e de operao "
+"intuitiva.  nosso desejo que Deus seja louvado, pois ele  a origem de todas "
+"as coisas boas."
+
+# type: Content of: <chapter><sect1><sect2><blockquote><attribution>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:86
+msgid "James 1:17, NASB"
+msgstr "Tiago 1:17, ACF"
+
+# type: Content of: <chapter><sect1><sect2><blockquote><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:87
+msgid ""
+"Every good thing given and every perfect gift is from above, coming down "
+"from the Father of lights, with whom there is no variation or shifting "
+"shadow."
+msgstr ""
+"Toda a boa ddiva e todo o dom perfeito vem do alto, descendo do Pai das "
+"luzes, em quem no h mudana nem sombra de variao."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-intro.docbook:91
+msgid "God bless you as you use this program."
+msgstr "Deus o abenoe enquanto usa esse programa."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:2
+msgid "Program operation"
+msgstr "Operao do programa"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:4
+msgid "Program overview"
+msgstr "Viso geral do programa"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:5
+msgid "This is what a typical &bibletime; session looks like:"
+msgstr " assim que parece uma tpica sesso do &bibletime;:"
+
+# type: Content of: <chapter><sect1><para><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:11
+msgid "<phrase>The &bibletime; application window</phrase>"
+msgstr "<phrase>A janela de aplicao do &bibletime;</phrase>"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:14
+msgid ""
+"You can easily see the different parts of the application. The top left "
+"window is used to open installed works in the Bookshelf tab, and with the "
+"Bookmarks tab you can manage your bookmarks. The little \"Mag\" window below "
+"the Bookshelf is used to display extra information that is embedded in "
+"documents. When you move your mouse over a footnote marker, for example, "
+"then the Mag will display the actual content of the footnote. The toolbar "
+"gives you quick access to important functions, and the Desk on the right "
+"side is where you do your real work."
+msgstr ""
+"Voc pode facilmente ver diferentes partes da aplicao. A janela superior "
+"esquerda  usada para abrir obras instaladas na aba Estante de Livros, e com "
+"a aba Marcadores, voc pode gerenciar seus marcadores. A pequena janela \"Lupa"
+"\" embaixo da Estante de Livros  usada para mostrar informaes extras que "
+"esto incorporadas nos documentos. Quando voc move o cursor sobre um marcador "
+"de rodap, por exemplo, a Lupa vai mostrar o contedo real da nota de rodap. A "
+"barra de ferramentas lhe d acesso rpido a importantes funes, e a mesa no "
+"lado direito  onde voc faz seu trabalho de verdade."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:25
+msgid ""
+"Let us now proceed by looking at the different parts of the application "
+"individually."
+msgstr ""
+"Vamos agora proceder olhando diferentes partes da aplicao individualmente."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:29
+msgid "Parts of the &bibletime; application window"
+msgstr "Partes da janela de aplicao do &bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:31
+msgid "The Bookshelf"
+msgstr "A Estante de Livros"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:32
+msgid ""
+"The Bookshelf lists all installed works, sorted by category and language. It "
+"also has a category called \"Bookmarks\". This is where you can store and "
+"access your own bookmarks."
+msgstr ""
+"A Estante de Livros lista todas as obras instaladas, classificadas por "
+"categoria e idioma. Ela tambm tem uma categoria chamada \"Marcadores\". "
+"Aqui  onde voc pode armazenar e acessar seus prprios marcadores."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:37
+#: docs/handbook/en/docbook/hdbk-operation.docbook:142
+msgid "Reading works"
+msgstr "Lendo obras"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:38
+msgid ""
+"To open a work from the bookshelf for reading, simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the desired category "
+"(Bibles, Commentaries, Lexicons, Books, Devotionals or Glossaries) to "
+"display its contents. Then just click on one of the works to open it for "
+"reading. A read window will appear in the Desk area."
+msgstr ""
+"Para abrir uma obra da estante para leitura, simplesmente clique com o "
+"<mousebutton>boto esquerdo do mouse</mousebutton> na categoria desejada "
+"(Bblias, Comentrios, Lxicos, Livros, Devocionais ou Glossrios) para mostrar "
+"seu contedo. Ento clique em uma das obras para abri-la para leitura. Uma "
+"janela de leitura ir aparecer na rea da Mesa."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:47
+#: docs/handbook/en/docbook/hdbk-operation.docbook:97
+msgid "Drag &amp; Drop Works Here"
+msgstr "Arraste e solte obras aqui"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:50
+msgid ""
+"If you are reading a certain work, and want to open another work at the "
+"passage you are reading, you can use a shortcut. Simply click with the "
+"<mousebutton>left mouse button</mousebutton> on the verse/passage reference "
+"(pointer changes to hand) and drag it to the Bookshelf. Drop it on the work "
+"you want to open, and it will be opened for reading at the specified "
+"location. You can also drag a verse reference into an existing read window, "
+"then it will jump to the specified location."
+msgstr ""
+"Se voc est lendo uma certa obra, e quer abrir outra obra na passagem que est "
+"lendo, voc pode usar um atalho. Simplesmente clique com o <mousebutton>boto "
+"esquerdo do mouse</mousebutton> na referncia do versculo/passagem (o cursor "
+"muda para uma mo) e arraste-o para a Estante. Solte-o na obra que voc quer "
+"abrir, e ele ser aberto pra leitura no local especificado. Voc tambm pode "
+"arrastar uma referncia de versculo para uma janela de leitura j existente, e "
+"ele vai para o local desejado."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:62
+msgid "Additional information about works"
+msgstr "Informao adicional sobre obras"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:63
+#, fuzzy
+msgid ""
+"If you click with the <mousebutton>right</mousebutton> mouse button on the "
+"symbol of a work, you will see a menu with additional entries that are "
+"relevant for this work.  <guimenuitem>\"About this work\"</guimenuitem> "
+"opens a window with lots of interesting information about the selected "
+"work.  <guimenuitem>\"Unlock this work\"</guimenuitem> opens a small dialog "
+"for encrypted documents, where you can enter the unlock key to access the "
+"work. For additional information on locked works, please see <ulink url="
+"\"http://www.crosswire.org/sword/modules/aboutlocked.jsp\"> this page</"
+"ulink> on the &cbs; web site."
+msgstr ""
+"Se voc clicar com o boto <mousebutton>direito</mousebutton> do mouse "
+"nosmbolo de uma obra, voc ver um menu com opes adicionais relevantes para "
+"essa obra. <guimenuitem>\"Sobre essa obra\"</guimenuitem> abre uma janela "
+"com vrias informaes interessantes sobre a obra selecionada. <guimenuitem>"
+"\"Destravar essa obra\"</guimenuitem> abre um pequeno dilogo para documentos "
+"criptografados, onde voc pode colocar a chave de liberao para acessar a "
+"obra. Para mais informaes sobre obras travadas, veja <ulink url=\"http://www."
+"crosswire.org/sword/modules/aboutlocked.jsp\"> essa pgina</ulink> no site da "
+"Crosswire Bible Society."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:79
+#: docs/handbook/en/docbook/hdbk-operation.docbook:205
+msgid "Searching in works"
+msgstr "Buscando em obras"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:80
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol and selecting <guimenuitem>\"Search "
+"in work(s)\"</guimenuitem>. By pressing &Shift; and clicking on other works "
+"you can select more than one. Then follow the same procedure to open the "
+"search dialog. You will be searching in all of these documents. A complete "
+"description of the operation of the search features can be found <link "
+"linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"Voc pode buscar numa obra clicando com o boto <mousebutton>direito</"
+"mousebutton> do mouse no seu smbolo e selecionando <guimenuitem>\"Buscar em "
+"obra(s)\"</guimenuitem>. Pressionando &Shift; eclicando em outras obras, voc "
+"pode selecionar mais de uma. Ento siga o mesmo procedimento para abrir o "
+"dilogo de busca. Voc estar buscando em todos esses documentos. Uma descrio "
+"completa da operao e dos recursos de busca podem ser encontrados <link "
+"linkend=\"hdbk-op-search\">aqui</link>."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:93
+msgid "Working with bookmarks"
+msgstr "Trabalhando com marcadores"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:100
+msgid ""
+"Click with the <mousebutton>right</mousebutton> mouse button on the bookmark "
+"category of the bookshelf and select <guimenuitem>\"Create new folder\"</"
+"guimenuitem> to create a new bookmark subfolder. You can use normal drag "
+"&amp; drop functions to drag verse references from read windows or search "
+"results to the bookmark folder, and to rearrange bookmarks between folders."
+msgstr ""
+"Clique com o boto <mousebutton>direito</mousebutton> do mouse na categoria "
+"de marcadores da estante e selecione <guimenuitem>\"Criar nova pasta\"</"
+"guimenuitem> para criar uma nova subpasta de marcadores. Voc pode usar funes "
+"\"arrastar e soltar\" para arrastar referncias de versculos de janelas de "
+"leitura ou de resultados de buscas, e para rearranjar os marcadores entre "
+"pginas."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:108
+msgid ""
+"You can also import bookmarks from other people or export bookmarks to share "
+"them. To do this, open the <guimenu>context menu</guimenu> of the bookmark "
+"folder as described above, and select <guimenuitem>\"Export bookmarks\"</"
+"guimenuitem>. This will bring up a dialog box for you to save the bookmark "
+"collection. You can import bookmarks in a similar way."
+msgstr ""
+"Voc tambm pode importar marcadores de outras pessoas ou exportar marcadores "
+"para compartilh-los. Para fazer isso, abra o <guimenu>menu de contexto</"
+"guimenu> da pasta do marcador como descrito acima, e selecione <guimenuitem>"
+"\"Exportar marcadores\"</guimenuitem>. Isso ir trazer uma caixa de dilogo "
+"para voc salvar a coleo de marcadores. Voc pode importar marcadores de uma "
+"maneira similar."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:116
+msgid ""
+"You can also click with the <mousebutton>right</mousebutton> on folders and "
+"bookmarks to change their names and descriptions."
+msgstr ""
+"Voc tambm pode clicar com o boto <mousebutton>direito</mousebutton> em "
+"pastas e marcadores para mudar seus nomes e descries."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:123
+msgid "The Mag(nifying glass)"
+msgstr "A Lupa"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:125
+msgid ""
+"This little window in the lower left corner of the &bibletime; window is "
+"purely passive. Whenever your mouse cursor is located over some text with "
+"additional information (e.g., Strong's numbers), then this additional "
+"information will be displayed in the Mag, and not in the text itself. Just "
+"try it out."
+msgstr ""
+"Essa pequena janela no canto inferior esquerdo do &bibletime;  puramente "
+"passiva. Quando seu cursor do mouse est localizado sobre algum texto com "
+"informaes adicionais (ex. nmeros Strong), ento essa informao adicional  "
+"exibida na lupa, e no no texto em si. Experimente."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:134
+msgid "The Desk"
+msgstr "A Mesa"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:135
+msgid ""
+"The Desk is where the real work with &bibletime; takes place. Here you can "
+"open works from the Bookshelf, read them, <link linkend=\"hdbk-op-search"
+"\">search</link> in them, and even save your annotations in the personal "
+"commentary module (see <link linkend=\"hdbk-op-parts-desk-write\">below</"
+"link>)."
+msgstr ""
+"A Mesa  onde o trabalho real com &bibletime; acontece. Aqui voc pode abrir "
+"obras da Estante, l-las, <link linkend=\"hdbk-op-search\">procurar</link> "
+"nelas, e at salvar suas anotaes no mdulo de comentrios pessoais (veja <link "
+"linkend=\"hdbk-op-parts-desk-write\">abaixo</link>)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:143
+msgid ""
+"As we have <link linkend=\"hdbk-op-parts-bookshelf-open\">already seen</"
+"link>, you can open works for reading simply by clicking on their symbol in "
+"the Bookshelf. A read window will open in the Desk's area. Every read window "
+"has a toolbar. There you can find tools to navigate in the work that this "
+"read window is connected to, as well as history buttons like the ones that "
+"you know from your browser."
+msgstr ""
+"Como ns <link linkend=\"hdbk-op-parts-bookshelf-open\">j vimos</link>, voc "
+"pode abrir obras para simples leitura clicando sobre seu smbolo na Estante.  "
+"Uma janela de leitura ir abrir na rea da Mesa. Cada janela de leitura tem "
+"uma barra de ferramentas. Ali voc pode encontrar ferramentas para navegar na "
+"obra em que essa janela de leitura est conectada, assim como botes de "
+"histrico como os que voc conhece no seu navegador."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:154
+msgid "Read window placement"
+msgstr "Posicionamento da janela de leitura"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:155
+msgid ""
+"Of course, you can open multiple works at the same time.  There are several "
+"possibilities for arranging the read windows on the desk. Please have a look "
+"at the entry <guimenu>Window</guimenu> in the main menu. There you can see "
+"that you can either control the placement of the read windows completely "
+"yourself, or have &bibletime; handle the placement automatically. To achieve "
+"this, you have to select one of the automatic placement modes available at "
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> </menuchoice>. Just try it out, it's simple and works."
+msgstr ""
+" claro, voc pode abrir vrias obras ao mesmo tempo. H muitas possibilidades "
+"de posicionar as janelas de leitura na mesa. Por favor, veja o item "
+"<guimenu>Janela</guimenu> no menu principal. Ali voc pode ver que voc pode "
+"tanto controlar o posicionamento das janelas de leitura voc mesmo, ou fazer "
+"com que o &bibletime; faa isso por voc. Para fazer isso, voc deve selecionar "
+"um dos modos de posicionamento automtico disponveis em<menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento</guimenuitem> "
+"</menuchoice>. Experimente,  simples e funciona."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:170
+msgid "Editing your own commentary"
+msgstr "Editando seu prprio comentrio"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:172
+#, fuzzy
+msgid ""
+"To be able to store your own comments about parts of the Bible, you have "
+"install a certain work from the library of the <ulink url=\"http://www."
+"crosswire.org\">&cbs;</ulink>.  This work is called \"Personal commentary\"."
+msgstr ""
+"Para poder armazenar seus prprios comentrios sobre partes da Bblia, voc "
+"precisa instalar uma certa obra da biblioteca da <ulink url=\"http://www."
+"crosswire.org\">Crosswire Bible Society</ulink>. Essa obra chama-se "
+"\"Comentrio pessoal\"."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:177
+msgid ""
+"If you open the personal commentary by clicking on its symbol in the "
+"Bookshelf with a <mousebutton>left</mousebutton> mouse button, it opens in "
+"read mode. You will not be able to edit it in this mode. Should you wish to "
+"write annotations into the personal commentary, you have to open it with the "
+"<mousebutton>right</mousebutton> mouse button and then select <guimenu>Edit "
+"this work</guimenu> and then either <guimenuitem>Plain text</guimenuitem>"
+"(source code editor) or <guimenuitem>HTML</guimenuitem>(basic gui wysiwyg "
+"editor)."
+msgstr ""
+"Se voc abrir o comentrio pessoal clicando no seu smbolo na Estante com o "
+"boto <mousebutton>esquerdo</mousebutton> do mouse, ele abre em modo de "
+"leitura. Voc no poder edit-lo nesse modo. Se deseja escrever anotaes no "
+"comentrio pessoal, voc deve abri-lo com o boto <mousebutton>direito</"
+"mousebutton> do mouse e ento selecionar <guimenu>Editar essa obra</guimenu> "
+"e ento ou <guimenuitem>Texto simples</guimenuitem> (editor de cdigo fonte) "
+"ou <guimenuitem>HTML</guimenuitem> (editor gui wysiwyg bsico)."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:190
+msgid ""
+"If <menuchoice> <guimenu>Edit this work</guimenu> </menuchoice> is "
+"deactivated, please check if you have write permission for the files of the "
+"personal commentary."
+msgstr ""
+"Se <menuchoice> <guimenu>Editar essa obra</guimenu> </menuchoice> est "
+"desativado, por favor, verifique se voc tem permisses de escrita para os "
+"arquivos do comentrio pessoal."
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:198
+msgid ""
+"Drag &amp; drop works here. Drop a verse reference and the text of the verse "
+"will be inserted."
+msgstr ""
+"Arraste e solte obras aqui. Solte uma referncia de versculo e o texto do "
+"versculo ser inserido."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:208
+msgid "Searching text in an open read window"
+msgstr "Procurando texto em uma janela de leitura aberta"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:209
+#, fuzzy
+msgid ""
+"You can look for a word or phrase in the open read window (e.g. the chapter "
+"of a bible that you're reading) just like you are used to from other "
+"programs. This function can be reached either by clicking with the "
+"<mousebutton>right</mousebutton> mouse button and selecting "
+"<guimenuitem>Find...</guimenuitem>, or by using the shortcut <keycombo "
+"action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Read on to learn how "
+"you can search in entire works."
+msgstr ""
+"Voc pode procurar uma palavra ou frase na janela de leitura aberta (ex. o "
+"captulo da bblia que estiver lendo) da mesma maneira que est acostumado em "
+"outros programas. Isso pode ser feito clicando com o boto "
+"<mousebutton>direito</mousebutton> do mouse e selecionando "
+"<guimenuitem>Procurar...</guimenuitem>, ou usando a tecla de atalho<keycombo "
+"action=\"simul\"> <keycap>&Ctrl;F</keycap></keycombo>. Continue lendo para "
+"aprender como voc pode procura em obras inteiras."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:221
+msgid "Accessing the search dialog"
+msgstr "Acessando o dilogo de busca"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:222
+msgid ""
+"You can search in a work by clicking with the <mousebutton>right</"
+"mousebutton> mouse button on its symbol in the <guimenu>Bookshelf</guimenu> "
+"and selecting <guimenuitem>Search in work(s)</guimenuitem>. By holding "
+"&Shift; or &Ctrl; and clicking on other work's names you can select more "
+"than one. Then follow the same procedure to open the search dialog. You will "
+"be searching in all of these works at the same time."
+msgstr ""
+"Voc pode buscar numa obra clicando com o boto <mousebutton>direito</"
+"mousebutton> do mouse em seu smbolo na <guimenu>Estante</guimenu> e "
+"selecionando <guimenuitem>Buscar na(s)obra(s)</guimenuitem>. Segurando "
+"&Shift; ou &Ctrl; e clicando em outros nomes de obra, voc pode selecionar "
+"mais de uma. Ento siga os mesmos procedimentos para abrir o dilogo de busca. "
+"Voc estar buscando em todas essas obras ao mesmo tempo."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:232
+msgid ""
+"You can also access the search dialog by clicking on <menuchoice> "
+"<guimenu>Search</guimenu> </menuchoice> from the main menu, and selecting "
+"the appropriate entry."
+msgstr ""
+"Voc tambm pode acessar o dilogo de busca clicando em <menuchoice> "
+"<guimenu>Procurar</guimenu> </menuchoice> no menu principal, e selecionando "
+"a entrada apropriada."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:238
+msgid ""
+"A third possibility to start searches is to click on the search symbol in an "
+"open read window."
+msgstr ""
+"Uma terceira possibilidade para comear buscar  clicar no smbolo de busca "
+"numa janela de leitura aberta."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:243
+msgid "Search configuration"
+msgstr "Configurao de pesquisa"
+
+# type: Content of: <chapter><sect1><sect2><screenshot><screeninfo>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:245
+msgid "Search Text Dialog Options Tab"
+msgstr "Aba de Opes do dilogo de busca de texto"
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:253
+msgid "Selecting works"
+msgstr "Selecionando obras"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:254
+msgid ""
+"At the top of the options tab you will find <guibutton>Choose</guibutton>"
+"(works). If you would like to search in multiple works, click on this button "
+"and you will be offered a menu where you can select the works you want to "
+"search in."
+msgstr ""
+"No topo da aba de opes voc vai encontrar <guibutton>Escolher</guibutton> "
+"(obras). Se voc gostaria de buscar em vrias obras, clique nesse boto e ser "
+"oferecido um menu onde voc pode selecionar as obras nas quais deseja "
+"procurar."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:261
+msgid "Using Search Scopes"
+msgstr "Usando Escopos de Busca"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:262
+msgid ""
+"You can narrow the scope of your search to certain parts of the Bible by "
+"selecting one of the predefined scopes from the list in <guimenu>Search "
+"scope</guimenu>. You can define your own search ranges by clicking the "
+"<guibutton>Setup ranges</guibutton> button."
+msgstr ""
+"Voc pode restringir o escopo da sua busca a certas partes da Bblia "
+"selecionando um dos escopos pr-definidos da lista em <guimenu>Escopo de "
+"busca</guimenu>. Voc pode definir suas prprias faixas de busca clicando no "
+"boto <guibutton>Configurar faixas</guibutton>."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:271
+msgid "Basic Search Syntax Introduction"
+msgstr "Introduo  Sintaxe Bsica de Busca"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:273
+msgid ""
+"Enter the search phrase separated by spaces.  By default the search function "
+"will return results that match all the words.  If you want to find any of "
+"the words entered, select the <guimenu>Some words</guimenu> button.  If you "
+"want to perform a more complex search, select the <guimenu>Free</guimenu> "
+"button.  You can see examples of searches by clicking on <guimenu>full "
+"syntax</guimenu>."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:282
+#, fuzzy
+msgid ""
+"You can use wildcards: '*' matches any number of characters, while '?' will "
+"match any single character. The use of brackets allows you to group your "
+"search terms, e.g. '(Jesus OR spirit) AND God'."
+msgstr ""
+"Voc pode usar caracteres curinga: '*' coincide com qualquer sequncia de "
+"caracteres, enquanto '?' coincide com um nico caractere qualquer.  O uso de "
+"parnteses permite agrupar termos de busca, por exemplo '(Jesus OR esprito) "
+"AND Deus'."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:287
+#, fuzzy
+msgid ""
+"To search text other than the main text, enter the text type followed by "
+"':', and then the search term.  Refer to the table below for examples."
+msgstr ""
+"Para buscar texto que no seja o texto principal, entre com o tipo de texto "
+"seguido de ':', e ento o termo de busca. Por exemplo, para procurar pelo "
+"nmero Strong H8077, use 'strong:H8077'."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:291
+msgid "Available text types:"
+msgstr "Tipos de texto disponveis:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:293
+msgid "Search Types"
+msgstr "Tipos de Busca"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:297
+msgid "Prefix"
+msgstr "Prefixo"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:298
+msgid "Meaning"
+msgstr "Significado"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:299
+msgid "Example"
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:304
+msgid "heading:"
+msgstr "heading:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:305
+msgid "searches headings"
+msgstr "busca em cabealhos"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:306
+#, fuzzy
+msgid "heading:Jesus"
+msgstr "heading:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:309
+msgid "footnote:"
+msgstr "footnote:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:310
+msgid "searches footnotes"
+msgstr "busca em rodaps"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:311
+#, fuzzy
+msgid "footnote:Moses"
+msgstr "footnote:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:314
+msgid "strong:"
+msgstr "strong:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:315
+msgid "searches Strong's Numbers"
+msgstr "busca em Nmeros Strong"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:316
+#, fuzzy
+msgid "strong:G535"
+msgstr "strong:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:319
+msgid "morph:"
+msgstr "morph:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:320
+msgid "searches morphology codes"
+msgstr "busca em cdigos morfolgicos"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para><table><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:321
+#, fuzzy
+msgid "morph:N-GSM"
+msgstr "morph:"
+
+# type: Content of: <chapter><sect1><sect2><sect3><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:328
+msgid ""
+"You can right click on an installed work and select <guimenu>About</guimenu> "
+"to find which of the above search criteria may work for you.  Not all works "
+"have the built in features for performing this type of search."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:334
+#, fuzzy
+msgid ""
+"&bibletime; uses the Lucene search engine to perform your searches. It has "
+"many advanced features, and you can read more about it here: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\"> http://lucene.apache.org/"
+"java/docs/index.html</ulink>."
+msgstr ""
+"&bibletime; usa o mdulo de busca da Lucene para realizar suas buscas. Ele "
+"tem muitos recursos avanados, e voc pode ler mais sobre ele aqui: <ulink url="
+"\"http://lucene.apache.org/java/docs/index.html\">http://lucene.apache.org/"
+"java/docs/index.html</ulink>"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:343
+msgid "Search results"
+msgstr "Resultados de busca"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:344
+msgid ""
+"Here you can see how many instances of the search string were found, sorted "
+"by works. Clicking on a work with the <mousebutton>right</mousebutton> mouse "
+"button allows you to copy, save, or print all verses that were found in a "
+"certain work at once. This also works when you click on one or more of the "
+"references to copy, save or print them. Clicking on a particular reference "
+"opens that verse up in context in the preview window below."
+msgstr ""
+"Aqui voc pode ver quantas instncias do termo de busca foram encontradas, "
+"classificadas por obras. Clicando numa obra com o boto <mousebutton>direito</"
+"mousebutton> do mouse permite voc copiar, salvar ou imprimir todos os "
+"versculos encontrados numa obra de uma vez s. Isso tambm funciona quando voc "
+"clica em uma ou mais referncias para copiar, salvar ou imprimi-las. Clicando "
+"numa referncia em particular abre o versculo em contexto na janela de "
+"visualizao abaixo."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:353
+msgid ""
+"Drag a reference and drop it on a work symbol on the Bookshelf to open the "
+"work at that verse in a new read window."
+msgstr ""
+"Arraste uma referncia e solte-a no smbolo de uma obra na Estante para abrir "
+"a obra naquele versculo numa nova janela de leitura."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:358
+msgid ""
+"Drag a reference and drop it on an open read window, and it will jump to "
+"that verse."
+msgstr ""
+"Arraste uma referncia e solte-a numa janela de leitura aberta, e ela ir "
+"pular para aquele versculo."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:362
+msgid "Select references and drag them to the Bookshelf to create bookmarks."
+msgstr "Selecione referncias e arraste-as pela Estante para criar marcadores."
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:366
+msgid "Search result analysis"
+msgstr "Anlise do resultado de busca"
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:367
+msgid ""
+"Click on <guibutton>Search analysis</guibutton> to open the search analysis "
+"display. This gives a simple graphic analysis of the number of instances the "
+"search string was found in each book of the Bible, and you can also save the "
+"analysis."
+msgstr ""
+"Clique em <guibutton>Anlise de busca</guibutton> para abrir a anlise da "
+"busca. Isso d uma simples anlise grfica do nmero de instncias onde o termo "
+"de busca foi encontrado em cada livro da Bblia, e voc tambm pode salvar a "
+"anlise."
+
+# type: Content of: <chapter><sect1><sect2><sect3><screenshot><screeninfo>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:373
+msgid "Search Analysis Dialog Box"
+msgstr "Caixa de dilogo Anlise de Busca"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:384
+msgid "The <guimenuitem>Bookshelf Manager</guimenuitem>"
+msgstr "O <guimenuitem>Gerenciador da Estante</guimenuitem>"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:386
+msgid ""
+"The <guimenuitem>Bookshelf Manager</guimenuitem> is a tool to manage your "
+"Bookshelf. You can install new works to your Bookshelf, and update or remove "
+"existing works from your Bookshelf. Access it by clicking <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</guimenuitem> </"
+"menuchoice> in the main menu."
+msgstr ""
+"O <guimenuitem>Gerenciador da Estante</guimenuitem>  uma ferramenta para "
+"gerenciar sua Estante. Voc pode instalar novas obras em sua Estante, e "
+"atualizar ou remover obras existentes da sua Estante. Acesse-o clicando em "
+"<menuchoice> <guimenu>Configuraes</guimenu> <guimenuitem>Gerenciador da "
+"Estante</guimenuitem> </menuchoice> no menu principal."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:396
+msgid "Bookshelf path(s) setup"
+msgstr "Configurao do(s) caminho(s) da Estante"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:397
+msgid ""
+"Here you can specify where &bibletime; may store your Bookshelf on the hard "
+"drive. You can even store it in multiple directories. Default is \"~/.sword/"
+"\"."
+msgstr ""
+"Aqui voc pode especificar onde o &bibletime; pode armazenar sua Estante do "
+"disco rdigo. Voc pode at armazenar em mltiplos diretrios. O padro  \"~/."
+"sword/\"."
+
+# type: Content of: <chapter><sect1><sect2><tip><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:401
+msgid ""
+"If you have a sword CD, but do not want to install all the works on the hard "
+"disk, but use them directly from the CD, then you can add the path to the CD "
+"as one of your bookshelf paths. When you start &bibletime;, it will show all "
+"works on the CD if it is present."
+msgstr ""
+"Se voc tem um CD do Sword, mas no quer instalar todas as obras no disco "
+"rgido, e sim us-las diretamente do CD, ento voc pode adicionar o caminho "
+"para o CD como um dos caminhos da sua estante. Quando voc iniciar o "
+"&bibletime;, ele mostrar todas as obras no CD se estiver presente."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:409
+msgid "Install/update work(s)"
+msgstr "Instalar/atualizar obra(s)"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:410
+#, fuzzy
+msgid ""
+"With this facility, you can connect to a repository of works (called "
+"\"library\"), and transfer one or more works to your local Bookshelf. These "
+"libraries may be local (e.g. a &sword; CD), or remote (e.g. Crosswire's "
+"online repository of &sword; modules, or another site offering &sword; "
+"modules). You can manage your libraries with <guibutton>Add library</"
+"guibutton> and <guibutton>Delete library</guibutton>."
+msgstr ""
+"Com esse recurso, voc pode conectar a um repositrio de obras (chamado "
+"\"biblioteca\"), e transferir uma ou mais obras para sua Estante local. "
+"Essas bibliotecas podem ser locais (e.g. um CD do Sword), ou remota (e.g. o "
+"repositrio online da Crosswire de mdulos Sword, ou outro site oferecendo "
+"mdulos Sword). Voc pode gerenciar suas bibliotecas com <guibutton>Adicionar "
+"biblioteca</guibutton> e <guibutton>Excluir biblioteca</guibutton>."
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:418
+msgid ""
+"To begin the installation or update process, select a library you want to "
+"connect to and a local Bookshelf path to install the work(s) to. Then click "
+"on <guibutton>Connect to library</guibutton>. &bibletime; will scan the "
+"contents of the library and present you with a list of works that you can "
+"add to your Bookshelf, or that you already have installed but are available "
+"in a new version in the library, and thus can be updated. Then you can mark "
+"all works that you want to install or update, and click on "
+"<guibutton>Install works</guibutton>. They will then be transferred to your "
+"Bookshelf."
+msgstr ""
+"Para comear o processo de instalao ou atualizao, selecione uma biblioteca  "
+"qual voc queira conectar e um caminho de Estante local para instalar a(s) "
+"obra(s). Ento clique em <guibutton>Conectar  biblioteca</guibutton>. "
+"&bibletime; ir varrer o contedo da biblioteca e mostrar uma lista de obras "
+"que voc pode adicionar  sua Estante, ou que voc j tenha instalado, mas esto "
+"disponveis em uma nova verso na biblioteca, e assim podem ser atualizadas. "
+"Ento voc pode marcar todas as obras que quiser instalar ou atualizar, e "
+"clicar em<guibutton>Instalar obras</guibutton>. Elas sero ento transferidas "
+"para a sua Estante."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:431
+msgid "Remove work(s)"
+msgstr "Remover obra(s)"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:432
+msgid ""
+"This facility allows you to delete one or more of the works from your "
+"Bookshelf too free up disk space. Simply mark the items and click on "
+"<guibutton>Remove works</guibutton>."
+msgstr ""
+"Esse recurso permite a voc excluir uma ou mais obras da sua Estante para "
+"liberar espao em disco. Simplesmente marque os itens e clique em "
+"<guibutton>Remover obras</guibutton>."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:438
+msgid "Search Indexes"
+msgstr "ndices de pesquisa"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:439
+msgid ""
+"This option allows you to create new search indexes and cleanup orphaned "
+"index files for removed works."
+msgstr ""
+"Essa opo permite a voc criar novos ndices de pesquisa e limpar arquivos de "
+"ndice rfos de obras removidas."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:448
+msgid "Exporting and Printing"
+msgstr "Exportando e Imprimindo"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:449
+msgid ""
+"In many places, you can open a context menu by clicking with the "
+"<mousebutton>right</mousebutton> mouse button. Depending on context, it will "
+"allow you to <guimenuitem>Select</guimenuitem>, <guimenuitem>Copy</"
+"guimenuitem> (to clipboard), <guimenuitem>Save</guimenuitem> or "
+"<guimenuitem>Print</guimenuitem> text. This works for example in the read "
+"windows, when you click on the normal text or the verse reference, or in the "
+"search result page when you click on a work or one or more verse references. "
+"It is pretty straightforward, so just try it out."
+msgstr ""
+"Em muitos lugares, voc pode abrir um menu de contexto clicando com o boto "
+"<mousebutton>direito</mousebutton> do mouse. Dependendo do contexto, ele "
+"permitir a voc <guimenuitem>Selecionar</guimenuitem>, <guimenuitem>Copiar</"
+"guimenuitem> (para a rea de transferncia), <guimenuitem>Salvar</guimenuitem> "
+"ou <guimenuitem>Imprimir</guimenuitem> texto. Isso funciona por exemplo, em "
+"janelas de leitura, quando voc clica no texto normal ou na referncia de "
+"versculo, ou na pgina de resultado de pesquisa quando voc clica sobre uma "
+"obra ou uma ou mais referncias de versculo.  bem simples, experimente."
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-operation.docbook:462
+msgid ""
+"Printing from &bibletime; is rather basic and is intended as a utility. If "
+"you are composing a document or presentation containing text from "
+"&bibletime; works, we suggest that you use one of the presentation or "
+"editing tools on your system to format your document, rather than printing "
+"from &bibletime; directly."
+msgstr ""
+"A impresso no &bibletime;  bem bsica e includa somente como uma utilidade. "
+"Se voc est compondo um documento ou apresentao contendo texto das obras do "
+"&bibletime;, sugerimos que voc use uma das ferramentas de edio no seu "
+"sistema para formatar seu documento, ao invs de imprimir do &bibletime; "
+"diretamente."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:2
+msgid "Reference"
+msgstr "Referncia"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:4
+msgid "Main menu reference"
+msgstr "Referncia do menu principal"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:5
+#, fuzzy
+msgid ""
+"In this section you can find detailed descriptions of all entries in the "
+"main menu of &bibletime;. They are ordered in just the way they appear in "
+"&bibletime;, with all the sub-items listed under the major menu item they "
+"belong to. You can also see the shortcut of each item;a complete listing of "
+"all shortcuts can be found in <link linkend=\"hdbk-reference-shortcuts"
+"\">this section</link>."
+msgstr ""
+"Nessa seo voc pode encontrar descries detalhadas de todos os itens do menu "
+"principal do &bibletime;. Eles so apresentados na mesma ordem em que "
+"aparecem no &bibletime;, com todos os sub-itens listados sob o item ao qual "
+"eles pertencem. Voc tambm pode ver a tecla de atalho para cada item; uma "
+"listagem completa de todas as teclas de atalho pode ser encontrada <link "
+"linkend=\"hdbk-reference-hotkeys\">nessa seo</link>."
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:36
+msgid ""
+"<action>Closes &bibletime;.</action> &bibletime; will ask you if you want to "
+"write unsaved changes to disk."
+msgstr ""
+"<action>Fecha o &bibletime;.</action> &bibletime; ir perguntar se voc deseja "
+"salvar mudanas no-salvas para o disco."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:69
+msgid ""
+"<action>Toggles full screen display.</action> Toggle this setting to "
+"maximize the &bibletime; window."
+msgstr ""
+"<action>Alterna exibio em tela inteira.</action> Alterne essa chave para "
+"maximizar a janela do &bibletime;."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:88
+msgid ""
+"<action>Toggles Toolbar display.</action> Toggle this setting to turn the "
+"main toolbar on or off."
+msgstr ""
+"<action>Alterna exibio da barra de ferramentas.</action> Alterne essa chave "
+"para exibir ou ocultar a barra de ferramentas."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:102
+msgid ""
+"<action>Toggles display of the Bookshelf.</action> Toggle this setting to "
+"turn the Bookshelf on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>Alterna exibio da Estante.</action> Alterne essa chave para exibir "
+"ou ocultar a Estante no painel esquerdo. Isso pode ser til quando voc "
+"precisa de mais espao para a Lupa."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:118
+msgid ""
+"<action>Toggles display of the Bookmarks.</action> Toggle this setting to "
+"turn the Bookmarks on the left pane on or off. This can be handy if you need "
+"more space for the Mag."
+msgstr ""
+"<action>Alterna exibio dos Marcadores.</action> Alterne essa chave para "
+"exibir ou ocultar os Marcadores no painel esquerdo. Isso pode ser til quando "
+"voc precisa de mais espao para a Lupa."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:134
+msgid ""
+"<action>Toggles display of the Mag(nifying glass).</action> Toggle this "
+"setting to turn the Mag on the left pane on or off."
+msgstr ""
+"<action>Alterna exibio da Lupa.</action> Alterne essa chave para exibir ou "
+"ocultar a Lupa no painel esquerdo."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:164
+msgid ""
+"<action>Opens the Search Dialog to search in the standard Bible only</"
+"action>. More works can be added in the Search Dialog. A more detailed "
+"search description can be found <link linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"<action>Abre o Dilogo de Busca para procurar somente na Bblia padro</"
+"action>. Mais obras podem ser adicionadas no Dilogo de Busca. Uma descrio "
+"mais detalhada sobre busca pode ser encontrada <link linkend=\"hdbk-op-search"
+"\">aqui</link>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:188
+msgid ""
+"<action>Opens the Search Dialog to search in all open works</action>. Works "
+"can be added or removed in the Search Dialog. A more detailed search "
+"description can be found <link linkend=\"hdbk-op-search\">here</link>."
+msgstr ""
+"<action>Abre o Dilogo de Busca para procurar em todas as obras</action>. "
+"Obras podem ser adicionadas ou removidas no Dilogo de Busca. Uma descrio "
+"mais detalhada sobre busca pode ser encontrada <link linkend=\"hdbk-op-search"
+"\">aqui</link>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:213
+msgid ""
+"<action>Directly saves the current session</action>. This will open a "
+"context menu where you can select an existing session to save to. It will be "
+"overwritten with your current session. See the next item on how to save to a "
+"new session."
+msgstr ""
+"<action>Diretamente salva a sesso atual</action>. Essa ao ir abrir um menu "
+"de contexto onde voc pode selecionar uma sesso existente para salvar. Ela "
+"ser sobrescrita com sua sesso atual. Veja o prximo item sobre como salvar "
+"para uma nova sesso."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:235
+msgid ""
+"<action>Saves the current session under a new name</action>. This will ask "
+"for a new name to save the session to."
+msgstr ""
+"<action>Salva a sesso atual sob um novo nome</action>. Essa ao ir perguntar "
+"por um novo nome para salvar a sesso."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:251
+msgid ""
+"<action>Loads an existing session</action>. This will open a context menu "
+"where you can select an existing session to load."
+msgstr ""
+"<action>Carrega uma sesso existente</action>. Essa ao ir abrir um menu de "
+"contexto onde voc pode selecionar uma sesso existente para carregar."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:267
+msgid ""
+"<action>Deletes an existing session</action>. This will open a context menu "
+"where you can select an existing session that should be deleted."
+msgstr ""
+"<action>Exclui uma sesso existente</action>. Essa ao ir abrir um menu de "
+"contexto onde voc pode selecionar uma sesso existente para excluir."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:283
+msgid ""
+"<action>Controls the basic window arrangement behaviour</action>. In the "
+"opening context menu, you can either specify that you want to take care of "
+"the window arrangement yourself (Manual mode) or have &bibletime; handle it "
+"for you (Automatic modes, just try them out!)."
+msgstr ""
+"<action>Controla o comportamento de posicionamento das janelas</action>. No "
+"menu de contexto que se abre, voc pode especificar se quer cuidar do "
+"posicionamento voc mesmo (modo Manual) ou deixar que o &bibletime; cuide "
+"para voc (modos Automticos, experimente)."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:311
+msgid "<action>Cascades all open windows</action>."
+msgstr "<action>Organiza em cascata todas as janelas abertas</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:335
+msgid "<action>Automatically tiles all open windows vertically</action>."
+msgstr ""
+"<action>Automaticamente divide verticalmente todas as janelas abertas</"
+"action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:359
+msgid "<action>Automatically tiles all open windows horizontally</action>."
+msgstr ""
+"<action>Automaticamente divide horizontalmente todas as janelas abertas</"
+"action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:384
+msgid "<action>Closes all open windows</action>."
+msgstr "<action>Fecha todas as janelas abertas</action>."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:409
+msgid ""
+"<action>Opens &bibletime;'s main configuration dialog</action>. You can "
+"configure all kinds of nice settings there to adapt &bibletime; to your "
+"needs.  Please see <link linkend=\"hdbk-config-bt\">this section</link> for "
+"details."
+msgstr ""
+"<action>Abre o dilogo de configurao principal do &bibletime;</action>. Voc "
+"pode mudar todo tipo de configuraes legais aqui para adaptar o &bibletime;  "
+"sua necessidade. Por favor veja <link linkend=\"hdbk-config-bt\">essa seo</"
+"link> para detalhes."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:438
+#, fuzzy
+msgid ""
+"<action>Opens a dialog where you can change your &sword; configuration and "
+"manage your bookshelf</action>. Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\">this section</link> for details."
+msgstr ""
+"<action>Abre um dilogo onde voc pode mudar sua configurao do Sword e "
+"gerenciar sua Estante</action>. Por favor veja <link linkend=\"hdbk-op-"
+"bookshelfmanager\">essa seo</link> para detalhes."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:471
+msgid "<action>Opens &bibletime;'s user guide</action> You are reading it now."
+msgstr ""
+"<action>Abre o guia de usurio &bibletime;</action> que voc est lendo agora."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:496
+msgid ""
+"<action>Opens a guide on how to study the Bible</action> It is the hope of "
+"the &bibletime; team that this HowTo will provoke the readers to study the "
+"scriptures to see what they say. This particular study guide has been chosen "
+"as it takes care not to advocate any particular denominational doctrine. We "
+"expect you to read and study the scriptures to understand what they say. If "
+"you start with the attitude that you want to have the Lord sow his word in "
+"your heart He will not disappoint you."
+msgstr ""
+"<action>Abre um guia sobre como estudar a Bblia</action> A equipe do "
+"&bibletime; espera que esse HowTo ir incentivar os leitores a estudar as "
+"escrituras para ver o que elas dizem. Esse guia de estudo em particular foi "
+"escolhido por no advocar por nenhuma doutrina denominacional em particular. "
+"Ns esperamos que voc leia e estude as escrituras para entender o que elas "
+"dizem. Se voc comear com a inteno de que deseja que o Senhor semeie sua "
+"palavra em seu corao, Ele no ir desapont-lo."
+
+# type: Content of: <chapter><sect1><sect2><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:517
+msgid ""
+"<action>Opens a window about &bibletime; project information</action> "
+"contains information about &bibletime; software version, project "
+"contributors, &sword; software version, &qt; software version and the "
+"license agreement."
+msgstr ""
+"<action>Abre uma janela com informaes do projeto &bibletime;</action> contm "
+"informaes sobre a verso do software &bibletime;, contribuidores do projeto, "
+"verso do software &sword;, verso do software &qt; e o contrato de licena."
+
+# type: Content of: <chapter><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:529
+#, fuzzy
+msgid "Works reference"
+msgstr "Referncia"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:531
+msgid ""
+"In this section you can find descriptions of the icons associated with open "
+"works."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:552
+msgid "Scrolls forward through history."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:575
+msgid "Scrolls back through history."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:598
+msgid "Select an installed bible."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:621
+msgid "Select an additional bible."
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:644
+#, fuzzy
+msgid "Search in selected works."
+msgstr "Buscando em obras"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:667
+#, fuzzy
+msgid "Display configuration."
+msgstr "Configurao de pesquisa"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:690
+msgid "Select an installed commentary."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:713
+#, fuzzy
+msgid "Select additional commentary."
+msgstr "Editando seu prprio comentrio"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:736
+msgid "Synchronize displayed entry with active Bible window."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><sect3><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:759
+#, fuzzy
+msgid "Select a book."
+msgstr "Selecionando obras"
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:782
+msgid "Select an installed glossary or devotional."
+msgstr ""
+
+# type: Content of: <chapter><sect1><sect2><para><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:805
+msgid "Select an additional glossary or devotional."
+msgstr ""
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:815
+#, fuzzy
+msgid "Shortcuts index"
+msgstr "ndice de teclas de atalho"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:816
+#, fuzzy
+msgid ""
+"This is index of all shortcuts and their corresponding description in the "
+"handbook. The shortcuts are sorted (roughly)  alphabetical. If you want to "
+"directly find out which shortcuts a certain menu item has, you can either "
+"look at the entry itself in &bibletime; (as it always shows the shortcut), "
+"or you can look it up in <link linkend=\"hdbk-reference-menus\">this "
+"section</link>."
+msgstr ""
+"Esse  o ndice de todas as teclas de atalho e suas descries correspondentes "
+"no livro de mo. As teclas de atalho esto ordenadas (mais ou menos) "
+"alfabeticamente. Se voc deseja encontrar diretamente qual tecla de atalho um "
+"menu tem, voc pode olhar no item em si no &bibletime; (pois ele sempre "
+"mostra a tecla de atalho), ou voc pode olhar <link linkend=\"hdbk-reference-"
+"menus\">nessa seo</link>."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:829
+msgid "Shortcut"
+msgstr ""
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><thead><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:830
+msgid "Description"
+msgstr "Descrio"
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:839
+msgid "Moves back in the history of read windows."
+msgstr "Volta no histrico das janelas de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:846
+msgid "Moves forward in the history of read windows."
+msgstr "Avana no histrico das janelas de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:855
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in default bible</guimenuitem> "
+"</menuchoice> </link> equivalent; opens the search dialog to search in the "
+"default bible."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-defaultbible\"> <menuchoice> "
+"<guimenu>Procurar</guimenu> <guimenuitem>Procurar na bblia padro</"
+"guimenuitem> </menuchoice> </link> equivalente; abre o dilogo de busca para "
+"procurar na bblia padro."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:871
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile vertically</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento</"
+"guimenuitem> <guimenuitem>Auto-dividir verticalmente</guimenuitem> </"
+"menuchoice> equivalente; alterna diviso automtica de janelas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:885
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-tile horizontally</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window tiling."
+msgstr ""
+"<menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento</"
+"guimenuitem> <guimenuitem>Auto-dividir horizontalmente</guimenuitem> </"
+"menuchoice> equivalente; alterna diviso automtica de janelas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:898
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Auto-cascade</guimenuitem> </menuchoice> "
+"equivalent; toggle automatic window cascading."
+msgstr ""
+"<menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento </"
+"guimenuitem> <guimenuitem>Auto-cascata</guimenuitem> </menuchoice> "
+"equivalente; alterna cascateamento automtico de janelas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:911
+msgid ""
+"<menuchoice> <guimenu>Window</guimenu> <guimenuitem>Arrangement mode</"
+"guimenuitem> <guimenuitem>Manual mode</guimenuitem> </menuchoice> "
+"equivalent; toggle manual window placement."
+msgstr ""
+"<menuchoice> <guimenu>Janela</guimenu> <guimenuitem>Modo de posicionamento</"
+"guimenuitem> <guimenuitem>Modo manual</guimenuitem> </menuchoice> "
+"equivalente; alterna posicionamento manual das janelas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:924
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Save as new session</guimenuitem> </"
+"menuchoice> </link> equivalent; saves current layout as new session."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-savenewsession\"> <menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Salvar como nova sesso</guimenuitem> "
+"</menuchoice> </link> equivalente; salva layout atual como nova sesso."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:938
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Close all</guimenuitem> </menuchoice> "
+"</link> equivalent; closes all open windows."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-closeall\"> <menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Fechar tudo</guimenuitem> </"
+"menuchoice> </link> equivalente; fecha todas as janelas abertas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:950
+msgid "Zoom out. This decreases the font size of read windows."
+msgstr "Diminuir zoom. Diminui o tamanho da fonte das janelas de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:958
+msgid "Zoom in. This increases the font size of read windows."
+msgstr "Aumentar zoom. Aumenta o tamanho da fonte das janelas de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:966
+msgid "Select all. This selects all text in read windows."
+msgstr "Selecionar tudo. Seleciona todo o texto na janela de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:974
+msgid "Copy. This copies the selected text to the clipboard."
+msgstr "Copiar. Copia o texto selecionado para a rea de transferncia."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:983
+msgid "Search. This lets you search within the text of a read window."
+msgstr "Procurar. Permite a voc buscar no texto de uma janela de leitura."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:994
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile vertically</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilevertically\"> <menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Dividir verticalmente</guimenuitem> </"
+"menuchoice> </link> equivalente."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1010
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Tile horizontally</guimenuitem> </"
+"menuchoice> </link> equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-tilehorizontally\"> <menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Dividir horizontalmente</guimenuitem> "
+"</menuchoice> </link> equivalente."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1026
+msgid ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Window</guimenu> <guimenuitem>Cascade</guimenuitem> </menuchoice> </"
+"link> windows equivalent."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-window-cascade\"> <menuchoice> "
+"<guimenu>Janela</guimenu> <guimenuitem>Cascata</guimenuitem> </menuchoice> </"
+"link> equivalente a janelas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1040
+msgid ""
+"Change location. Changes focus to the toolbar field for the selected work."
+msgstr ""
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1049
+msgid "Search with works of this window."
+msgstr ""
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1058
+msgid ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Search</guimenu> <guimenuitem>Search in open work(s)</guimenuitem> "
+"</menuchoice> </link> equivalent; opens the search dialog to search in all "
+"currently opened works."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-search-openworks\"> <menuchoice> "
+"<guimenu>Procurar</guimenu> <guimenuitem>Procurar nas obras abertas</"
+"guimenuitem> </menuchoice> </link> equivalente; abre o dilogo de busca para "
+"procurar em todas as obras abertas."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1073
+msgid ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem> </menuchoice> </"
+"link> equivalent; closes &bibletime;."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-file-quit\"> <menuchoice> "
+"<guimenu>Arquivo</guimenu> <guimenuitem>Sair</guimenuitem> </menuchoice> </"
+"link> equivalente; fecha o &bibletime;."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1085
+msgid "Closes the current window."
+msgstr "Fecha a janela atual."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1094
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>Handbook</guimenuitem> </"
+"menuchoice> equivalent; opens the handbook."
+msgstr ""
+"<menuchoice> <guimenu>Ajuda</guimenu> <guimenuitem>Livro de mo</guimenuitem> "
+"</menuchoice> equivalente; abre o livro de mo."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1106
+msgid ""
+"<menuchoice> <guimenu>Help</guimenu> <guimenuitem>BibleStudy Howto</"
+"guimenuitem> </menuchoice> equivalent; opens the BibleStudy Howto."
+msgstr ""
+"<menuchoice> <guimenu>Ajuda</guimenu> <guimenuitem>BibleStudy Howto</"
+"guimenuitem> </menuchoice> equivalente; abre o Howto do Estudo Bblico."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1119
+msgid ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Bookshelf Manager</"
+"guimenuitem> </menuchoice> </link> equivalent; opens the Bookshelf Manager."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-settings-bookshelf_manager\"> "
+"<menuchoice> <guimenu>Configuraes</guimenu> <guimenuitem>Gerenciador da "
+"Estante</guimenuitem> </menuchoice> </link> equivalente; abre o Gerenciador "
+"da Estante."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1134
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show Bookshelf</guimenuitem> </"
+"menuchoice> </link> equivalent; toggles display of the Bookshelf."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showbookshelf\"> <menuchoice> "
+"<guimenu>Exibir</guimenu> <guimenuitem>Mostrar Estante</guimenuitem> </"
+"menuchoice> </link> equivalente; alterna exibio da Estante."
+
+# type: Content of: <chapter><sect1><informaltable><tgroup><tbody><row><entry>
+#: docs/handbook/en/docbook/hdbk-reference.docbook:1149
+msgid ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>View</guimenu> <guimenuitem>Show mag</guimenuitem> </menuchoice> </"
+"link> equivalent; toggles display of the mag(nifying glass)."
+msgstr ""
+"<link linkend=\"hdbk-reference-menus-view-showmag\"> <menuchoice> "
+"<guimenu>Exibir</guimenu> <guimenuitem>Mostrar lupa</guimenuitem> </"
+"menuchoice> </link> equivalente; alterna exibio da lupa."
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:2
+#: docs/handbook/en/docbook/hdbk-start.docbook:8
+msgid "Starting &bibletime;"
+msgstr "Iniciando &bibletime;"
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:5
+msgid "How to start &bibletime;"
+msgstr "Como iniciar o &bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:9
+msgid ""
+"&bibletime; is an executable file that is integrated with the desktop. You "
+"can launch &bibletime; from the Start Menu with this icon:"
+msgstr ""
+"&bibletime;  um arquivo executvel integrado ao desktop. Voc pode iniciaro "
+"&bibletime; do menu de incio com esse cone:"
+
+# type: Content of: <chapter><sect1><sect2><para><mediaobject><textobject>
+#: docs/handbook/en/docbook/hdbk-start.docbook:17
+msgid "<phrase>&bibletime; start icon</phrase>"
+msgstr "<phrase>cone do &bibletime;</phrase>"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:21
+msgid ""
+"&bibletime; can also be launched from a terminal command prompt. To launch "
+"&bibletime;, open a terminal window and type:"
+msgstr ""
+"&bibletime; pode ser iniciado de um terminal de prompt de comando. Para "
+"iniciar o &bibletime;, abra uma janela do terminal e digite:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:24
+#, fuzzy, no-wrap
+msgid "bibletime"
+msgstr "&bibletime;"
+
+# type: Content of: <chapter><sect1><sect2><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:28
+msgid "Startup customization"
+msgstr "Personalizao de incio"
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:29
+msgid ""
+"From a terminal you can use &bibletime; to open a random verse in the "
+"default bible:"
+msgstr ""
+"De um terminal voc pode usar o &bibletime; para abrir um versculo aleatrio "
+"na bblia padro:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:31
+#, fuzzy, no-wrap
+msgid "bibletime --open-default-bible \"&lt;random&gt;\""
+msgstr ""
+"bibletime --open-default-bible\n"
+"      \"&lt;random&gt;\""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:32
+msgid "To open at a given passage like John 3:16, use:"
+msgstr "Para abrir numa passagem como Joo 3:16, use:"
+
+# type: Content of: <chapter><sect1><sect2><para><screen>
+#: docs/handbook/en/docbook/hdbk-start.docbook:33
+#, no-wrap
+msgid "bibletime --open-default-bible \"John 3:16\""
+msgstr "bibletime --open-default-bible \"Joo 3:16\""
+
+# type: Content of: <chapter><sect1><sect2><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:34
+msgid "You can also use booknames in your current bookname language."
+msgstr "Voc tambm pode usar os nomes dos livros em seu idioma de nomes atual."
+
+# type: Content of: <chapter><sect1><title>
+#: docs/handbook/en/docbook/hdbk-start.docbook:39
+msgid "Startup sequence"
+msgstr "Sequncia de incio"
+
+# type: Content of: <chapter><sect1><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:40
+msgid ""
+"As &bibletime; launches you may see the following screens before the main "
+"&bibletime; window opens:"
+msgstr ""
+"Ao iniciar o &bibletime;, voc pode ver as seguintes telas antes da janela "
+"principal do &bibletime; abrir:"
+
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:49
+msgid ""
+"<action>Modifies your Bookshelf.</action> This dialog lets you modify your "
+"Bookshelf, add or delete works from your system.  It will only be shown if "
+"no default Bookshelf can be found.  Please see <link linkend=\"hdbk-op-"
+"bookshelfmanager\"> this section</link> for further details. If you start "
+"off with an empty Bookshelf, it will be helpful to install at least one "
+"Bible, Commentary, Lexicon and one Book to get to know &bibletime;'s basic "
+"features quickly."
+msgstr ""
+"<action>Modifica sua Estante.</action> Esse dilogo permite a voc modificar "
+"sua Estante, adicionar ou excluir obras do seu sistema. S ser exibido se "
+"nenhuma Estante padro for encontrada. Por favor veja <link linkend=\"hdbk-op-"
+"bookshelfmanager\"> essa seo</link> para mais detalhes. Se voc iniciar com "
+"uma Estante vazia, ser til para instalar pelo menos uma Bblia, Comentrio, "
+"Lxico e um Livro para conhecer os recursos bsicos do &bibletime; rapidamente."
+
+# type: Content of: <chapter><sect1><variablelist><varlistentry><listitem><para>
+#: docs/handbook/en/docbook/hdbk-start.docbook:66
+msgid ""
+"<action>Customizes &bibletime;.</action>This dialog lets you adapt "
+"&bibletime; to your needs. Please see <link linkend=\"hdbk-config-bt\">the "
+"detailed description</link> of this dialog."
+msgstr ""
+"<action>Customiza &bibletime;.</action> Esse dilogo permite adaptar "
+"o&bibletime; s suas necessidades. Veja <link linkend=\"hdbk-config-bt\">a "
+"descrio detalhada</link> desse dilogo."
+
+# type: Content of the bibletime entity
+#: docs/handbook/en/docbook/index.docbook:5
+msgid "<application>BibleTime</application>"
+msgstr "<application>BibleTime</application>"
+
+# type: Content of the sword entity
+#: docs/handbook/en/docbook/index.docbook:6
+msgid "<application>Sword</application>"
+msgstr "<application>Sword</application>"
+
+# type: Content of the bibletime entity
+#: docs/handbook/en/docbook/index.docbook:7
+#, fuzzy
+msgid "<application>Crosswire Bible Society</application>"
+msgstr "<application>BibleTime</application>"
+
+# type: Content of the kde entity
+#: docs/handbook/en/docbook/index.docbook:8
+msgid "<application>KDE</application>"
+msgstr "<application>KDE</application>"
+
+# type: Content of the qt entity
+#: docs/handbook/en/docbook/index.docbook:9
+msgid "<application>Qt</application>"
+msgstr "<application>Qt</application>"
+
+# type: Content of the Shift entity
+#: docs/handbook/en/docbook/index.docbook:11
+msgid "Shift"
+msgstr "Shift"
+
+# type: Content of the Ctrl entity
+#: docs/handbook/en/docbook/index.docbook:12
+msgid "Ctrl"
+msgstr "Ctrl"
+
+# type: Content of the Alt entity
+#: docs/handbook/en/docbook/index.docbook:13
+msgid "Alt"
+msgstr "Alt"
+
+# type: Content of: <book><bookinfo><title>
+#: docs/handbook/en/docbook/index.docbook:23
+msgid "The &bibletime; handbook"
+msgstr "O livro de mo do &bibletime;"
+
+# type: Content of: <book><bookinfo><copyright><holder>
+#: docs/handbook/en/docbook/index.docbook:45
+msgid "the &bibletime; team"
+msgstr "a equipe &bibletime;"
+
+# type: Content of: <book><bookinfo><legalnotice><para>
+#: docs/handbook/en/docbook/index.docbook:48
+msgid "The &bibletime; handbook is part of &bibletime;."
+msgstr "O livro de mo do &bibletime;  parte do &bibletime;."
+
+# type: Content of: <book><bookinfo><date>
+#: docs/handbook/en/docbook/index.docbook:51
+#, fuzzy
+msgid "2009-10"
+msgstr "2009-04"
+
+# type: Content of: <book><bookinfo><releaseinfo>
+#: docs/handbook/en/docbook/index.docbook:52
+#, fuzzy
+msgid "2.4"
+msgstr "2.0"
+
+# type: Content of: <book><bookinfo><abstract><para>
+#: docs/handbook/en/docbook/index.docbook:54
+#, fuzzy
+msgid "&bibletime; is a Bible study tool based on the &sword; framework."
+msgstr ""
+"&bibletime;  uma ferramenta de estudo da Bblia baseado no framework Sword."
+
+# type: Content of: <chapter><sect1><sect2><sect3><para>
+#~ msgid ""
+#~ "Enter search terms separated by spaces. By default the search function "
+#~ "will return results that match any of the search terms (OR). To search "
+#~ "for all the terms separate the terms by AND."
+#~ msgstr ""
+#~ "Coloque os termos de busca separados por espaos. Por padro, a funo de "
+#~ "busca vai retornar resultados que coincidam com qualquer um dos termos de "
+#~ "busca (OR). Para buscar por todos os termos, separe-os por AND."
