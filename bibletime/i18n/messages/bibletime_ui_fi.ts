@@ -288,7 +288,7 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="62"/>
         <source>Initializing menu- and toolbars...</source>
-        <translation>Alustetaan valikkot ja tyokalupalkit...</translation>
+        <translation>Alustetaan valikot ja työkalupalkit...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="206"/>
