@@ -46,7 +46,21 @@ IF(WIN32 AND NOT UNIX)
   )
 
   # Qt Plugins
-  INSTALL(DIRECTORY "${QT_PLUGINS_DIR}/iconengines" "${QT_PLUGINS_DIR}/imageformats" DESTINATION "${BT_DESTINATION}/plugins")
+  INSTALL(FILES 
+			"${QT_PLUGINS_DIR}/iconengines/qsvgicon4.dll" 
+			DESTINATION "${BT_DESTINATION}/plugins/iconengines"
+			CONFIGURATIONS "Release"
+  )
+  INSTALL(FILES 
+			"${QT_PLUGINS_DIR}/imageformats/qgif4.dll" 
+			"${QT_PLUGINS_DIR}/imageformats/qico4.dll" 
+			"${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll" 
+			"${QT_PLUGINS_DIR}/imageformats/qmng4.dll" 
+			"${QT_PLUGINS_DIR}/imageformats/qsvg4.dll" 
+			"${QT_PLUGINS_DIR}/imageformats/qtiff4.dll" 
+			DESTINATION "${BT_DESTINATION}/plugins/imageformats"
+			CONFIGURATIONS "Release"
+  )
 
   # This adds in the required Windows system libraries
   INSTALL(PROGRAMS ${MSVC_REDIST} DESTINATION bin)
