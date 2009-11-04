@@ -73,7 +73,7 @@ void CBibleKeyChooser::refChanged(CSwordVerseKey* key) {
 	// Must copy, the "key" pointer may be deleted without this class knowing about that.
 	CSwordVerseKey* tmpKey = m_key;
     m_key = dynamic_cast<CSwordVerseKey*>(key->copy());
-    emit keyChanged(m_key);
+    emit keyChanged(tmpKey);
 	
     /**
       \bug Memory leak. Because several widgets share the m_key pointer it is
