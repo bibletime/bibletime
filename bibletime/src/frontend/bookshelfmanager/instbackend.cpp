@@ -100,13 +100,33 @@ bool deleteSource(QString name) {
         : config["Sources"].equal_range("DIRSource");
 
     ConfigEntMap::iterator it = range.first;
+    SWBuf sourceConfigEntry = is.getConfEnt();
+    bool notFound = true;
     while (it != range.second) {
-        if (it->second == is.getConfEnt()) {
-            //    qWarning("found the source!");
+        //SWORD lib gave us a "nice" surprise: getConfEnt() adds uid, so old sources added by BT are not recognized here
+        if (it->second == sourceConfigEntry) {
             config["Sources"].erase(it);
+            notFound = false;
             break;
         }
         ++it;
+    }
+    if (notFound) {
+        qDebug() << "source was not found, try without uid";
+        //try again without uid
+        QString sce(sourceConfigEntry.c_str());
+        QStringList l = sce.split('|');
+        l.removeLast();
+        sce = l.join("|").append("|");
+        it = range.first;
+        while (it != range.second) {
+           qDebug() << it->second;
+            if (it->second == sce) {
+                config["Sources"].erase(it);
+                break;
+            }
+            ++it;
+        }
     }
 
     config.Save();
