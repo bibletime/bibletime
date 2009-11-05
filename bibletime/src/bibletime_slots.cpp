@@ -84,7 +84,7 @@ void BibleTime::slotSettingsChanged() {
     const QString language = CBTConfig::get(CBTConfig::language);
     CPointers::backend()->booknameLanguage(language);
 
-// TODO: update the bookmarks after Bible bookname language has been changed
+// \todo update the bookmarks after Bible bookname language has been changed
 // 	QTreeWidgetItemIterator it(m_mainIndex);
 // 	while (*it) {
 // 		CIndexItemBase* citem = dynamic_cast<CIndexItemBase*>(*it);
@@ -102,7 +102,7 @@ void BibleTime::slotSettingsChanged() {
 
 /** Opens the sword setup dialog of BibleTime. */
 void BibleTime::slotSwordSetupDialog() {
-    //TODO: nonmodal dialog, memory management (one instance only!
+    /// \todo nonmodal dialog, memory management (one instance only!
     //BtModuleManagerDialog *dlg = new BtModuleManagerDialog(this);
     BtModuleManagerDialog* dlg = BtModuleManagerDialog::getInstance(this);
     //disconnect first because it may be connected already
@@ -122,7 +122,7 @@ void BibleTime::slotSwordSetupChanged() {
       these are the mainindex, the searchdialog, the displaywindows
       But at first we have to reset the Sword backend to reload the modules
 
-    TODO: should bookshelf manager be updated?
+    \todo should bookshelf manager be updated?
     Should there be different signals/slots for visual changes,
     i.e. grouping/hiding?
 

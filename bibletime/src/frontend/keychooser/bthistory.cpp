@@ -32,7 +32,7 @@ void BTHistory::add(CSwordKey* newKey) {
         if (!newKey->key().isEmpty()) {
             m_historyList.insert(++m_index, new QAction(newKey->key(), this));
         }
-        // TODO: history limit?
+        // \todo history limit?
         sendChangedSignal();
     }
     Q_ASSERT(class_invariant());

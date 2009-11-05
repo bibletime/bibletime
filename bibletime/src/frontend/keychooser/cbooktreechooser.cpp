@@ -130,7 +130,7 @@ void CBookTreeChooser::refreshContent() {
 }
 
 
-//TODO: itemActivated is called too many times. As tested in GDB, the function
+/// \todo itemActivated is called too many times. As tested in GDB, the function
 //is called twice with the pointer to the correct book and twice with a null
 //pointer.
 

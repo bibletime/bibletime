@@ -78,7 +78,7 @@ class BtInstallThread : public QThread {
         BtInstallMgr* m_iMgr;
         //BtInstallMgr m_iMgr;
         boost::scoped_ptr<sword::InstallSource> m_installSource;
-        //TODO: it would be best to get the backend from the bookshelf manager install page
+        /// \todo it would be best to get the backend from the bookshelf manager install page
         // where it has already been created. Could fasten the progress dialog startup.
         boost::scoped_ptr<CSwordBackend> m_backendForSource;
 

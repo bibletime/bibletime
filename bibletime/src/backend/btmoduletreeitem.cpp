@@ -78,7 +78,7 @@ QList<BTModuleTreeItem*> BTModuleTreeItem::children() const {
     return childList;
 }
 
-//TODO
+/// \todo
 QString BTModuleTreeItem::iconName() const {
     if (m_type == Category) {
         switch ( m_category) {
@@ -114,7 +114,7 @@ QString BTModuleTreeItem::iconName() const {
         return util::tool::getIconNameForModule(m_moduleInfo);
     }
     else if (m_type == Language) {
-        //TODO: don't hardcode here
+        /// \todo don't hardcode here
         return "flag.svg";
     }
 

@@ -37,7 +37,7 @@ BtInstallMgr::~BtInstallMgr() {
 }
 
 bool BtInstallMgr::isUserDisclaimerConfirmed() const {
-    // TODO: Check from config if it's been confirmed with "don't show this anymore" checked.
+    // \todo Check from config if it's been confirmed with "don't show this anymore" checked.
     // Create a dialog with the message, checkbox and Continue/Cancel, Cancel as default.
     return true;
 }

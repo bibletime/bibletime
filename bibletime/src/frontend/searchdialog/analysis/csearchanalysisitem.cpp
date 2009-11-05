@@ -140,7 +140,7 @@ const QString CSearchAnalysisItem::getToolTip() {
     QString toolTipString = QString("<center><b>%1</b></center><hr/>").arg(m_bookName);
     toolTipString += "<table cellspacing=\"0\" cellpadding=\"3\" width=\"100%\" height=\"100%\" align=\"center\">";
 
-    //ToDo: Fix that loop
+    /// \todo Fix that loop
     int i = 0;
     QList<CSwordModuleInfo*>::iterator end_it = m_moduleList->end();
 

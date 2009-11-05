@@ -68,7 +68,8 @@ void BtSourceArea::initView() {
     //m_refreshButton->setEnabled(false);
     QSpacerItem *sourceSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
     //m_editButton = new QPushButton(tr("Edit..."));
-    //m_editButton->setEnabled(false); // TODO after writing the edit widget
+    /// \todo after writing the edit widget:
+    //m_editButton->setEnabled(false);
     m_deleteButton = new QPushButton(tr("Delete..."));
     m_deleteButton->setToolTip(tr("Delete this source"));
     m_deleteButton->setIcon(DU::getIcon(CResMgr::bookshelfmgr::installpage::delete_icon));
@@ -129,8 +130,7 @@ void BtSourceArea::slotCreateTree() {
     disconnect(m_view, SIGNAL(itemChanged(QTreeWidgetItem*, int)), this, SLOT(slotSelectionChanged(QTreeWidgetItem*, int)) );
     m_view->clear();
 
-    // TODO: if the tree already exists for this source,
-    // maybe the selections should be preserved
+    /// \todo if the tree already exists for this source, maybe the selections should be preserved
     m_checkedModules.clear();
 
     sword::InstallSource is = instbackend::source(m_sourceName);
@@ -177,11 +177,13 @@ void BtSourceArea::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
             QString installedV;
 
             if (!installedModule) {
-                // possible TODO: save the module list of a source before refreshing,
-                // compare after refreshing, mark the newly added modules
-                //if not newly added:
-                //state: installable (no indicator)
-                //else: status: newly added, color yellow
+                /**
+                \todo maybe? save the module list of a source before refreshing,
+                      compare after refreshing, mark the newly added modules if
+                      not newly added:
+                        state: installable (no indicator)
+                        else: status: newly added, color yellow
+                */
             } else { // the module is already installed
                 QBrush bg(QColor(255, 153, 153)); /// \bug Possible color conflict
                 widgetItem->setBackground(0, bg);

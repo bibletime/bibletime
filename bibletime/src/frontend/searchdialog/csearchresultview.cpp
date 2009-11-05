@@ -86,7 +86,7 @@ void CSearchResultView::initView() {
 void CSearchResultView::initConnections() {
     //  connect(this, SIGNAL(executed(QListViewItem*)),
     //   this, SLOT(executed(QListViewItem*)));
-    //TODO: are these right after porting?
+    /// \todo are these right after porting?
     //items: current, previous
     connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
             this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
@@ -143,12 +143,12 @@ void CSearchResultView::setupStrongsTree(CSwordModuleInfo* m, QStringList* vList
 
     setUpdatesEnabled(true);
 
-    //TODO:select the first item
+    /// \todo select the first item
     //setSelected(firstChild(), true);
     //executed(currentItem());
 }
 
-//TODO: is this still valid?
+/// \todo is this still valid?
 /** Is connected to the signal executed, which is emitted when a mew item was chosen. */
 void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
     if (current) {
@@ -159,7 +159,7 @@ void CSearchResultView::executed(QTreeWidgetItem* current, QTreeWidgetItem*) {
     }
 }
 
-//TODO: another function?
+/// \todo another function?
 /** Reimplementation to show the popup menu. */
 void CSearchResultView::contextMenuEvent(QContextMenuEvent* event) {
     qDebug() << "CSearchResultView::showPopup";
@@ -253,7 +253,7 @@ CSwordModuleInfo* CSearchResultView::module() {
     return m_module;
 }
 
-//TODO: port this to the new d'n'd
+/// \todo port this to the new d'n'd
 // Q3DragObject* CSearchResultView::dragObject() {
 // 	//return a valid DragObject to make DnD possible!
 //

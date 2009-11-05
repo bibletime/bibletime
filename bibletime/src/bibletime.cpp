@@ -74,7 +74,7 @@ BibleTime::~BibleTime() {
 
 /** Saves the properties of BibleTime to the application wide configfile  */
 void BibleTime::saveSettings() {
-    //TODO: how to write settings?
+    /// \todo how to write settings?
     //accel()->writeSettings(CBTConfig::getConfig());
 
     CBTConfig::set(CBTConfig::toolbar, m_viewToolbar_action->isChecked());

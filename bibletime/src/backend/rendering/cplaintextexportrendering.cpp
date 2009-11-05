@@ -37,7 +37,7 @@ const QString CPlainTextExportRendering::renderEntry( const KeyTreeItem& i, CSwo
         key->module(*it);
         key->key( i.key() );
 
-        //ToDo: Check this code
+        /// \todo Check this code
         entry.append(key->strippedText()).append("\n");
         renderedText.append( entry );
     }

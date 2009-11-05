@@ -56,7 +56,7 @@ void CModuleChooserDialog::init() {
 
 /** Initializes the view of this dialog */
 void CModuleChooserDialog::initView() {
-    //TODO: choose the button text?
+    /// \todo choose the button text?
 
     QVBoxLayout *vboxLayout;
     QHBoxLayout *hboxLayout;

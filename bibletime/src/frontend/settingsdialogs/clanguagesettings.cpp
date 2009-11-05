@@ -147,11 +147,11 @@ CLanguageSettingsPage::CLanguageSettingsPage(QWidget* /*parent*/)
 
     layout->addLayout(hLayout);
     hLayout->setContentsMargins(0, 0, 0, 0);
-    //#warning TODO: remember the last selected font and jump there.
+    /// \todo remember the last selected font and jump there.
 
     m_fontChooser = new CFontChooser(this);
 
-    //TODO: Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
+    /// \todo Eeli's wishlist: why not show something relevant here, like a Bible verse in chosen (not tr()'ed!) language?
     QString sampleText;
     sampleText.append("1 In the beginning God created the heaven and the earth.  ");
     sampleText.append("2 And the earth was without form, and void; and darkness was on the face of the deep.");
@@ -249,7 +249,7 @@ void CLanguageSettingsPage::useOwnFontClicked(bool isOn) {
         m_usageCombo->setItemIcon(m_usageCombo->currentIndex(), DU::getIcon("fonts.svg"));
     }
     else {   //don't show
-        m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); //TODO: should this change icon to empty?
+        m_usageCombo->setItemText(m_usageCombo->currentIndex(), m_usageCombo->currentText() ); /// \todo should this change icon to empty?
     }
 }
 

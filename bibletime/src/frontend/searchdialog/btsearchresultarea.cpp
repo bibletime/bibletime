@@ -346,7 +346,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     int length = searchedText.length();
 
     // Highlighting constants -
-    // TODO: We need to make the highlight color configurable.
+    // \todo We need to make the highlight color configurable.
     const QString rep1("<span style=\"background-color:#FFFF66;\">");
     const QString rep2("</span>");
     const unsigned int repLength = rep1.length() + rep1.length();
@@ -363,7 +363,7 @@ QString BtSearchResultArea::highlightSearchedText(const QString& content, const 
     QStringList list;
 
     // split the search string - some possibilities are "\\s|\\|", "\\s|\\+", or "\\s|\\|\\+"
-    // TODO: find all possible seperators
+    // \todo find all possible seperators
     QString regExp = "\\s";
     list = searchedText.split(QRegExp(regExp));
     foreach (QString newSearchText, list) {

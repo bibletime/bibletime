@@ -130,18 +130,18 @@ bool deleteSource(QString name) {
     }
 
     config.Save();
-    return true; //TODO: dummy
+    return true; /// \todo dummy
 }
 
 /** Refreshes the remote source module list. */
 bool refreshSource(QString /*name*/) {
     // not possible until manager and progressdialog work together
-    return true; //TODO: dummy
+    return true; /// \todo dummy
 }
 
 /** Returns the moduleinfo list for the source. Delete the pointer after using. IS THIS POSSIBLE?*/
 QList<CSwordModuleInfo*> moduleList(QString /*name*/) {
-    QList<CSwordModuleInfo*> list; //TODO: dummy
+    QList<CSwordModuleInfo*> list; /// \todo dummy
     return list;
 }
 

@@ -479,7 +479,7 @@ void BibleTime::initBackends() {
 
     if (errorCode != CSwordBackend::NoError) {
         //show error message that initBackend failed
-        //TODO:
+        /// \todo 
 // 		switch (errorCode) {
 // 			case CSwordBackend::NoSwordConfig: //mods.d or mods.conf missing
 // 			{
@@ -517,7 +517,7 @@ void BibleTime::initBackends() {
     // - delete all orphaned indexes (no module present) if autoDeleteOrphanedIndices is true
     // - delete all indices of modules where hasIndex() returns false
     //BookshelfManager::CManageIndicesWidget::deleteOrphanedIndices();
-    //TODO: //backend::deleteOrphanedIndices();
+    /// \todo //backend::deleteOrphanedIndices();
 
 }
 

@@ -53,7 +53,7 @@ void CModuleResultView::initView() {
     QSize sz(util::tool::mWidth(this, 13), util::tool::mWidth(this, 5));
     //setMinimumSize(sz);
     m_size = sz;
-    //TODO: sorting
+    /// \todo sorting
     //setSorting(0, true);
     //setSorting(1, true);
 
@@ -90,7 +90,7 @@ void CModuleResultView::initView() {
 
 /** Initializes the connections of this widget, */
 void CModuleResultView::initConnections() {
-    //TODO:
+    /// \todo 
     connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
             this, SLOT(executed(QTreeWidgetItem*, QTreeWidgetItem*)));
 }
@@ -98,7 +98,7 @@ void CModuleResultView::initConnections() {
 /** Setups the tree using the given list of modules. */
 void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QString& searchedText ) {
     clear();
-    //TODO: this class is for sorting
+    /// \todo this class is for sorting
     //util::CSortListViewItem* item = 0;
     //util::CSortListViewItem* oldItem = 0;
     QTreeWidgetItem* item = 0;
@@ -119,7 +119,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
         result = (*it)->searchResult();
 
         item = new QTreeWidgetItem(this, QStringList((*it)->name()) << QString::number(result.Count()) );
-        //TODO: item->setColumnSorting(1, util::CSortListViewItem::Number);
+        /// \todo item->setColumnSorting(1, util::CSortListViewItem::Number);
 
         item->setIcon(0, util::tool::getIconForModule(*it) );
         oldItem = item;
@@ -143,7 +143,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
 
             setupStrongsResults((*it), item, sNumber);
 
-            //TODO: item->setOpen(true);
+            /// \todo item->setOpen(true);
             strongsAvailable = true;
         }
     };
@@ -155,7 +155,7 @@ void CModuleResultView::setupTree( QList<CSwordModuleInfo*> modules, const QStri
 void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidgetItem* parent,
         const QString& sNumber) {
     QString lText;
-    //TODO:
+    /// \todo 
     //util::CSortListViewItem* item = 0;
     QTreeWidgetItem* item = 0;
 
@@ -165,12 +165,12 @@ void CModuleResultView::setupStrongsResults(CSwordModuleInfo* module, QTreeWidge
         lText = strongsResults->keyText(cnt);
 
         item = new QTreeWidgetItem(parent, QStringList(lText) << QString::number(strongsResults->keyCount(cnt)));
-        //TODO:
+        /// \todo 
         //item->setColumnSorting(1, util::CSortListViewItem::Number);
     }
 }
 
-//TODO:
+/// \todo 
 /** Is executed when an item was selected in the list. */
 void CModuleResultView::executed( QTreeWidgetItem* i, QTreeWidgetItem*) {
     QString itemText, lText;

@@ -90,7 +90,7 @@ void CReadWindow::lookupSwordKey( CSwordKey* newKey ) {
         key()->key(newKey->key());
     }
 
-    //next-TODO: how about options?
+    /// \todo next-TODO how about options?
     Q_ASSERT(modules().first()->getDisplay());
     CEntryDisplay* display = modules().first()->getDisplay();
     if (display) { //do we have a display object?

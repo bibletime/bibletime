@@ -129,7 +129,8 @@ BtInstallProgressDialog::~BtInstallProgressDialog() {}
 
 void BtInstallProgressDialog::slotOneItemCompleted(QString module, QString source, int status) {
     QString message;
-    //status comes from the sword installer. TODO: Additionally we should check that there are files really installed.
+    //status comes from the sword installer.
+    /// \todo Additionally we should check that there are files really installed.
     if (status != 0) {
         message = tr("Failed");
     }

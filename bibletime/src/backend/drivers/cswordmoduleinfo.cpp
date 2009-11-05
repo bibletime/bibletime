@@ -99,7 +99,7 @@ bool CSwordModuleInfo::unlock(const QString & unlockKey) {
 
     CBTConfig::setModuleEncryptionKey(name(), unlockKey);
     backend()->setCipherKey(m_module->Name(), unlockKey.toUtf8().constData());
-    //TODO: write to Sword config as well
+    /// \todo write to Sword config as well
 
     return true;
 }

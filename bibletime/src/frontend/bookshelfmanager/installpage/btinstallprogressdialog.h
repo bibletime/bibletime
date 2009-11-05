@@ -47,7 +47,7 @@ class BtInstallProgressDialog : public QDialog {
 
     private:
 
-        //TODO: using maps is tedious and error prone. Find better solution for handling the modules
+        /// \todo using maps is tedious and error prone. Find better solution for handling the modules
         // and their states.
         QMultiMap<QString, BtInstallThread*> m_waitingThreads;
         QMultiMap<QString, BtInstallThread*> m_runningThreads;

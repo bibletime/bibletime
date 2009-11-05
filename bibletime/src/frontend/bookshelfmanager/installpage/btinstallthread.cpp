@@ -49,7 +49,7 @@ void BtInstallThread::run() {
     m_backendForSource.reset(instbackend::backend(*m_installSource));
 
     //make sure target/mods.d and target/modules exist
-    //TODO: move this to some common precondition
+    /// \todo move this to some common precondition
     QDir dir(m_destination);
     if (!dir.exists()) {
         dir.mkdir(m_destination);
@@ -68,7 +68,7 @@ void BtInstallThread::run() {
     QObject::connect(m_iMgr, SIGNAL(downloadStarted()), this, SLOT(slotDownloadStarted()), Qt::QueuedConnection);
 
     //check whether it's an update. If yes, remove existing module first
-    //TODO: silently removing without undo if the user cancels the update is WRONG!!!
+    /// \todo silently removing without undo if the user cancels the update is WRONG!!!
     removeModule();
 
     // manager for the destination path

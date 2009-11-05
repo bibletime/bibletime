@@ -34,7 +34,7 @@ Filters::BT_OSISHTML::BT_OSISHTML() : sword::OSISHTMLHREF() {
 //	addTokenSubstitute("divineName", "<span class=\"name\"><span class=\"divine\">");
 //	addTokenSubstitute("/divineName", "</span></span>");
 
-    //TODO Move that down to the real tag handling, segs without the type morph would generate incorrect markup, as the end span is always inserted
+    /// \todo Move that down to the real tag handling, segs without the type morph would generate incorrect markup, as the end span is always inserted
 //	addTokenSubstitute("seg type=\"morph\"", "<span class=\"morphSegmentation\">");
 //	addTokenSubstitute("/seg", "</span>");
 
@@ -107,11 +107,11 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                 if ((attrib = tag.getAttribute("lemma"))) {
                     char splitChar = '|';
                     const int countSplit1 = tag.getAttributePartCount("lemma", '|');
-                    const int countSplit2 = tag.getAttributePartCount("lemma", ' '); //TODO: not allowed, remove soon
+                    const int countSplit2 = tag.getAttributePartCount("lemma", ' '); /// \todo not allowed, remove soon
                     int count = 0;
 
                     if (countSplit1 > countSplit2) { //| split char
-                        splitChar = '|'; //TODO: not allowed, remove soon
+                        splitChar = '|'; /// \todo not allowed, remove soon
                         count = countSplit1;
                     }
                     else {
@@ -148,7 +148,7 @@ bool Filters::BT_OSISHTML::handleToken(sword::SWBuf &buf, const char *token, swo
                 if ((attrib = tag.getAttribute("morph"))) {
                     char splitChar = '|';
                     const int countSplit1 = tag.getAttributePartCount("morph", '|');
-                    const int countSplit2 = tag.getAttributePartCount("morph", ' '); //TODO: not allowed, remove soon
+                    const int countSplit2 = tag.getAttributePartCount("morph", ' '); /// \todo not allowed, remove soon
                     int count = 0;
 
                     if (countSplit1 > countSplit2) { //| split char

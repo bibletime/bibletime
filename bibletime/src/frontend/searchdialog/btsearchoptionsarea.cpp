@@ -213,7 +213,7 @@ void BtSearchOptionsArea::setModules( QList<CSwordModuleInfo*> modules ) {
     QList<CSwordModuleInfo*>::iterator end_it = modules.end();
 
     for (QList<CSwordModuleInfo*>::iterator it(modules.begin()); it != end_it; ++it) {
-        //ToDo:  Check for containsRef compat
+        /// \todo Check for containsRef compat
         if (*it == 0) { //don't operate on null modules.
             continue;
         }
@@ -442,7 +442,7 @@ void BtSearchOptionsArea::refreshRanges() {
     //the first option is fixed, the others can be edited using the "Setup ranges" button.
     m_rangeChooserCombo->clear();
     m_rangeChooserCombo->insertItem(0, QString("[") + tr("No search scope") + QString("]"));
-    //TODO: what about this?
+    /// \todo what about this?
     //m_rangeChooserCombo->insertItem(tr("Last search result"));
 
     //insert the user-defined ranges

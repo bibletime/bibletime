@@ -101,7 +101,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 if (module->type() == CSwordModuleInfo::Lexicon ||
                         module->type() == CSwordModuleInfo::Commentary ||
                         module->type() == CSwordModuleInfo::GenericBook) {
-                    //TODO: This is a BAD HACK, we have to fnd a better solution to manage the settings now
+                    /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
                     CSwordBackend::FilterOptions filterOptions;
                     filterOptions.footnotes = false;
                     filterOptions.strongNumbers = false;
@@ -126,7 +126,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 return QString::null;
             }
             else if (format == HTMLText) {
-                //	TODO: It does not appear this is ever called
+                //	\todo It does not appear this is ever called
             }
             else { //plain text requested
                 return selectedText();
@@ -167,7 +167,7 @@ const QString BtHtmlReadDisplay::text( const CDisplay::TextType format, const CD
                 boost::scoped_ptr<CSwordKey> key( CSwordKey::createInstance(module) );
                 key->key( keyName );
 
-                //TODO: This is a BAD HACK, we have to fnd a better solution to manage the settings now
+                /// \todo This is a BAD HACK, we have to fnd a better solution to manage the settings now
                 CSwordBackend::FilterOptions filterOptions;
                 filterOptions.footnotes = false;
                 filterOptions.strongNumbers = false;

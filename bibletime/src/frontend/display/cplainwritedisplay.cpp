@@ -49,7 +49,7 @@ void CPlainWriteDisplay::setText( const QString& newText ) {
 }
 
 bool CPlainWriteDisplay::hasSelection() {
-    //TODO: test this
+    /// \todo test this
     return textCursor().hasSelection();
 }
 

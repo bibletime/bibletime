@@ -130,7 +130,7 @@ void CKeyChooserWidget::reset(const int count, int index, bool do_emit) {
     //	return;
 
     m_list.clear();
-    for (int i = 1; i <= count; i++) { //TODO: CHECK
+    for (int i = 1; i <= count; i++) { /// \todo CHECK
         m_list.append( QString::number(i) );
     }
 

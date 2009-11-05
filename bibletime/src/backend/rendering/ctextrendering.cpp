@@ -224,8 +224,11 @@ const QString CTextRendering::renderKeyRange( const QString& start, const QStrin
             //make sure the key given by highlightKey gets marked as current key
             settings.highlight = (!highlightKey.isEmpty() ? (vk_start->key() == highlightKey) : false);
 
-            /*TODO: We need to take care of linked verses if we render one or (esp) more modules
-            If the verses 2,3,4,5 are linked to 1, it should be displayed as one entry with the caption 1-5 */
+            /**
+                \todo We need to take care of linked verses if we render one or
+                      (esp) more modules. If the verses 2,3,4,5 are linked to 1,
+                      it should be displayed as one entry with the caption 1-5.
+            */
 
             if (vk_start->Chapter() == 0) { //range was 0:0-1:x, render 0:0 first and jump to 1:0
                 vk_start->Verse(0);

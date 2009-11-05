@@ -126,7 +126,7 @@ void BtSourceWidget::slotRefresh() {
     m_progressDialog->setWindowTitle(tr("Refreshing Source"));
     m_progressDialog->setMinimumDuration(0);
 
-    // TODO: get rid of the backend code, BtInstallMgr and progressdialog could handle this
+    /// \todo get rid of the backend code, BtInstallMgr and progressdialog could handle this
     //write method BtInstallMgr::slotRefreshCanceled()
     connect(m_progressDialog, SIGNAL(canceled()), SLOT(slotRefreshCanceled()));
 
@@ -174,7 +174,7 @@ void BtSourceWidget::slotRefresh() {
     }
 }
 
-//TODO: try to move this to BtInstallMgr
+/// \todo try to move this to BtInstallMgr
 void BtSourceWidget::slotRefreshCanceled() {
     qDebug() << "BtSourceWidget::slotRefreshCanceled";
     Q_ASSERT(m_currentInstallMgr);
@@ -184,7 +184,7 @@ void BtSourceWidget::slotRefreshCanceled() {
     qApp->processEvents();
 }
 
-//TODO: try to move this to progress dialog
+/// \todo try to move this to progress dialog
 void BtSourceWidget::slotRefreshCompleted(const int, const int current) {
     qDebug() << "BtSourceWidget::slotRefreshCompleted";
     if (m_progressDialog) {
@@ -242,7 +242,7 @@ void BtSourceWidget::initSources() {
     // otherwise the signal is caught too early.
     QObject::connect(this, SIGNAL(currentChanged(int)), this, SLOT(slotTabSelected(int)));
     qDebug() << "void BtSourceWidget::initSources end";
-    // TODO: select the current source from the config
+    /// \todo select the current source from the config
     // It's important to choose something because the tree is not initialized until now
     setCurrentIndex(0);
     slotTabSelected(0); // setting the index wasn't enough if there were only 1 tab
@@ -273,10 +273,10 @@ void BtSourceWidget::addSource(const QString& sourceName) {
         QFileInfo fi( is.directory.c_str() );
         path = is.directory.c_str();
         if (!(fi.isDir() )) {
-            path = path + QString(" ") + tr("Not a directory!"); //TODO: change this
+            path = path + QString(" ") + tr("Not a directory!"); /// \todo change this
         }
         if (!fi.isReadable()) {
-            path = path + QString(" ") + tr("Not readable!"); //TODO: change this
+            path = path + QString(" ") + tr("Not readable!"); /// \todo change this
         }
     }
 
@@ -284,7 +284,7 @@ void BtSourceWidget::addSource(const QString& sourceName) {
     BtSourceArea* area = new BtSourceArea(sourceName);
     int tabNumber = this->addTab(area, sourceName);
 
-    // TODO: add "remote/local", server, path etc.
+    /// \todo add "remote/local", server, path etc.
     QString toolTip(QString("<p style='white-space:pre'>") + sourceName + QString("<br/><b>") + type + QString("</b> ") + server + path + QString("</p>"));
     tabBar()->setTabToolTip(tabNumber, toolTip);
 
@@ -297,7 +297,7 @@ void BtSourceWidget::addSource(const QString& sourceName) {
 
 //
 void BtSourceWidget::slotModuleSelectionChanged(QString sourceName, int selectedCount) {
-    //TODO: editing sources should update the map also
+    /// \todo editing sources should update the map also
     qDebug() << "BtSourceWidget::slotModuleSelectionChanged start";
 
     int overallCount = 0;
@@ -392,7 +392,7 @@ void BtSourceWidget::slotStopInstall(QTreeWidget* /*treeWidget*/) {
 void BtSourceWidget::slotInstallAccepted(QList<CSwordModuleInfo*> /*modules*/, QTreeWidget* treeWidget) {
     qDebug() << "BtSourceWidget::slotInstallAccepted";
 
-    //TODO: first remove all modules which will be updated from the module list
+    /// \todo first remove all modules which will be updated from the module list
     // but what modules? all with the same real name? (there may be _n modules...)
 
     BtModuleManagerDialog* parentDialog = dynamic_cast<BtModuleManagerDialog*>(dynamic_cast<BtInstallPage*>(parent())->parentDialog());

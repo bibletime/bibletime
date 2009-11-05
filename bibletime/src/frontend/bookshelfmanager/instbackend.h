@@ -55,7 +55,7 @@ const QString configPath();
 const QString configFilename();
 
 /** Sets the passive mode for as default.
-* TODO: see if we can en/disable this per source.
+* \todo see if we can en/disable this per source.
 */
 void initPassiveFtpMode();
 

@@ -214,7 +214,7 @@ void CLexiconReadWindow::initToolbars() {
     }
     setDisplaySettingsButton( new CDisplaySettingsButton( &displayOptions(), &filterOptions(), modules(), buttonsToolBar()) );
 
-    //TODO: find the right place for the button
+    /// \todo find the right place for the button
     buttonsToolBar()->addWidget(displaySettingsButton());
 }
 
@@ -334,7 +334,7 @@ void CLexiconReadWindow::slotFillBackHistory() {
     QMenu* menu = m_actions.backInHistory->popupMenu();
     menu->clear();
 
-    //TODO: take the history list and fill the menu
+    /// \todo take the history list and fill the menu
     QListIterator<QAction*> it(keyChooser()->history()->getBackList());
     while (it.hasNext()) {
         menu->addAction(it.next());
@@ -346,7 +346,7 @@ void CLexiconReadWindow::slotFillForwardHistory() {
 
     QMenu* menu = m_actions.forwardInHistory->popupMenu();
     menu->clear();
-    //TODO: take the history list and fill the menu using addAction
+    /// \todo take the history list and fill the menu using addAction
     QListIterator<QAction*> it(keyChooser()->history()->getFwList());
     while (it.hasNext()) {
         menu->addAction(it.next());

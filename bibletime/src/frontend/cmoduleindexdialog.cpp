@@ -42,7 +42,7 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
         m_progress->raise();
 
         foreach (CSwordModuleInfo* info, modules) {
-            //TODO: how to cancel
+            /// \todo how to cancel
             //QObject::connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged()), this, SLOT(swordSetupChanged()));
             connect(this, SIGNAL(sigCancel()), info, SLOT(cancelIndexing()) );
             connect(m_progress, SIGNAL(canceled()), info, SLOT(cancelIndexing()));
@@ -51,7 +51,7 @@ void CModuleIndexDialog::indexAllModules( const QList<CSwordModuleInfo*>& module
             QString modname(info->name());
             const QString labelText = tr("Creating index for work: %1").arg(modname);
             m_progress->setLabelText(labelText);
-            //todo: if we want to cancel indexing from
+            /// \todo if we want to cancel indexing from
             info->buildIndex(); //waits until this module is finished
 
             m_currentModuleIndex++;
@@ -93,7 +93,7 @@ void CModuleIndexDialog::slotFinished( ) {
 
 // Modules may be removed
 void CModuleIndexDialog::slotSwordSetupChanged() {
-    qDebug() << "CModuleIndexDialog::slotSwordSetupChanged, TODO: cancel if modules are removed";
+    qDebug() << "CModuleIndexDialog::slotSwordSetupChanged"; /// \todo cancel if modules are removed
     util::showInformation(0, tr("Indexing Is Cancelled"), tr("Indexing is cancelled because modules are removed."));
     emit sigCancel();
 }

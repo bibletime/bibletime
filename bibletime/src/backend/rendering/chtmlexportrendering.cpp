@@ -140,7 +140,7 @@ const QString CHTMLExportRendering::renderEntry( const KeyTreeItem& i, CSwordKey
 
             for (; it != end; ++it) {
                 preverseHeading = QString::fromUtf8(it->second.c_str());
-                //TODO: Take care of the heading type!
+                /// \todo Take care of the heading type!
                 if (!preverseHeading.isEmpty()) {
                     entry.append("<div ")
                     .append(langAttr)

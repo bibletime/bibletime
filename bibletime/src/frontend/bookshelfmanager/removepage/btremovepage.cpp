@@ -108,7 +108,7 @@ void BtRemovePage::addToTree(BTModuleTreeItem* item, QTreeWidgetItem* widgetItem
             widgetItem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
             widgetItem->setCheckState(0, Qt::Unchecked);
 
-            //TODO: add the relevant information in to item or tooltip
+            /// \todo add the relevant information in to item or tooltip
             // (install path, is still available from some source)
 
             QString descr(mInfo->config(CSwordModuleInfo::AbsoluteDataPath));
@@ -210,7 +210,7 @@ void BtRemovePage::slotSelectionChanged(QTreeWidgetItem* item, int column) {
 }
 
 void BtRemovePage::slotItemDoubleClicked(QTreeWidgetItem* /*item*/, int /*column*/) {
-    // TODO: Open the About dialog.
+    // \todo Open the About dialog.
 }
 
 void BtRemovePage::slotSwordSetupChanged() {

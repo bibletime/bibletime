@@ -421,7 +421,7 @@ const QString CInfoDisplay::decodeMorph( const QString& data ) {
                         break;
                     default:
                         skipFirstChar = false;
-                        //TODO: we can't tell here if it's a greek or hebrew moprh code, that's a problem we have to solve
+                        /// \todo we can't tell here if it's a greek or hebrew moprh code, that's a problem we have to solve
                         //       module = CBTConfig::get(CBTConfig::standardGreekMorphLexicon);
                         break;
                 }

@@ -210,7 +210,7 @@ void CRangeChooserDialog::parseRange() {
     //qDebug() << "CRangeChooserDialog::parseRange";
     m_resultList->clear();
 
-    //TODO: remove this hack:
+    /// \todo remove this hack:
     //HACK: repair range to  work with Sword 1.5.6
     QString range( m_rangeEdit->toPlainText() );
     range.replace(QRegExp("\\s{0,}-\\s{0,}"), "-" );
@@ -230,7 +230,7 @@ void CRangeChooserDialog::rangeChanged() {
     if (RangeItem* i = dynamic_cast<RangeItem*>(m_rangeList->currentItem())
        ) {
         QString range( m_rangeEdit->toPlainText() );
-        //TODO: remove this hack:
+        /// \todo remove this hack:
         //HACK: repair range to work with Sword 1.5.6
         range.replace(QRegExp("\\s{0,}-\\s{0,}"), "-" );
         i->setRange(range);
