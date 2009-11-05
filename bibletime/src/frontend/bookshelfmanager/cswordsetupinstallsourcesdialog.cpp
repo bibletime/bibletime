@@ -22,6 +22,9 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
+#include <QProgressDialog>
+#include <QApplication>
+#include <QDebug>
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/dialogutil.h"
 
@@ -80,10 +83,10 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::Save, Qt::Horizontal, this);
     util::prepareDialogBox(buttonBox);
-    /// \todo QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
-    //getListButton->setToolTip(tr("Download a list list of sources from CrossWire server and add sources"));
-    //buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
-    //connect(getListButton, SIGNAL(clicked()), SLOT(getListFromServer()));
+    QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
+    getListButton->setToolTip(tr("Download a list list of sources from CrossWire server and add sources"));
+    buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
+    connect(getListButton, SIGNAL(clicked()), SLOT(slotGetListClicked()));
     mainLayout->addWidget(buttonBox);
     connect(buttonBox, SIGNAL(accepted()), SLOT(slotOk()));
     connect(buttonBox, SIGNAL(rejected()), SLOT(reject()));
@@ -150,6 +153,62 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 
 void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
     /// \todo show message "gets list, adds sources, OK/Cancel", accept() or continue
+    QString message("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?");
+    QMessageBox::StandardButton answer = util::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
+    if (answer == QMessageBox::No) {
+        return;
+    }
+    qDebug() << "Ok, create installmgr";
+    BtInstallMgr iMgr;
+
+    m_progressDialog = new QProgressDialog("", tr("Cancel"), 0 , 100, this);
+    m_progressDialog->setWindowTitle(tr("Downloading List"));
+    m_progressDialog->setMinimumDuration(0);
+    connect(m_progressDialog, SIGNAL(canceled()), SLOT(slotRefreshCanceled()));
+    m_currentInstallMgr = &iMgr; //for the progress dialog
+    // connect this directly to the dialog setValue(int) if possible
+    connect(&iMgr, SIGNAL(percentCompleted(const int, const int)), SLOT(slotRefreshProgress(const int, const int)));
+
+    m_progressDialog->show();
+    qApp->processEvents();
+    this->slotRefreshProgress(0, 0);
+    m_progressDialog->setLabelText(tr("Connecting..."));
+    m_progressDialog->setValue(0);
+    qApp->processEvents();
+    qWarning() << "Start downloading the list of sources";
+    int ret = iMgr.refreshRemoteSourceConfiguration();
+    bool success = false;
+    if ( !ret ) { //make sure the sources were updated sucessfully
+        qDebug() << "download succeeded";
+        success = true;
+        m_progressDialog->setValue(100); //make sure the dialog closes
+        m_remoteListAdded = true; 
+        accept();
+    }
+    else {
+        qWarning("InstallMgr: getting remote list returned an error.");
+        success = false;
+    }
+    delete m_progressDialog;
+    m_progressDialog = 0;
+}
+
+void CSwordSetupInstallSourcesDialog::slotRefreshProgress(const int, const int current) {
+    if (m_progressDialog) {
+        if (m_progressDialog->labelText() != tr("Refreshing...")) {
+            m_progressDialog->setLabelText(tr("Refreshing..."));
+        }
+        m_progressDialog->setValue(current);
+    }
+    qApp->processEvents();
+}
+
+void CSwordSetupInstallSourcesDialog::slotRefreshCanceled() {
+    Q_ASSERT(m_currentInstallMgr);
+    if (m_currentInstallMgr) {
+        m_currentInstallMgr->terminate();
+    }
+    qApp->processEvents();
 }
 
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {

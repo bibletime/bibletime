@@ -21,6 +21,7 @@
 class QComboBox;
 class QLabel;
 class QLineEdit;
+class QProgressDialog;
 
 class CSwordSetupInstallSourcesDialog : public QDialog  {
         Q_OBJECT
@@ -34,11 +35,15 @@ class CSwordSetupInstallSourcesDialog : public QDialog  {
         void slotOk();
         void slotProtocolChanged();
         void slotGetListClicked();
+        void slotRefreshCanceled();
+        void slotRefreshProgress(const int, const int current);
 
     private:
         QLabel    *m_serverLabel;
         QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
         QComboBox *m_protocolCombo;
+        QProgressDialog* m_progressDialog;
+        BtInstallMgr* m_currentInstallMgr;
         bool m_remoteListAdded;
 };
 

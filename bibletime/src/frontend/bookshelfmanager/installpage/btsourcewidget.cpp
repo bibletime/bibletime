@@ -94,23 +94,13 @@ void BtSourceWidget::slotAdd() {
     sword::InstallSource newSource(""); //empty, invalid Source
 
     if (dlg->exec() == QDialog::Accepted) {
-        if (dlg->wasRemoteListAdded()) {
-            // refresh the list of sources
-        }
-        else {
+        if (!dlg->wasRemoteListAdded()) {
             newSource = dlg->getSource();
+            if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
+                instbackend::addSource(newSource);
+            }
         }
-    }
-    //return newSource;
-
-    //qDebug() << "void BtSourceWidget::slotAdd() start";
-    //qDebug() << "open the old dialog, TODO: write new one";
-    //sword::InstallSource newSource(""); // and empty, invalid source
-    //CSwordSetupInstallSourcesDialog::getSource(&newSource);
-    if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
-        instbackend::addSource(newSource);
         initSources();
-        //addSource(QString(newSource.caption.c_str()));
     }
 }
 
