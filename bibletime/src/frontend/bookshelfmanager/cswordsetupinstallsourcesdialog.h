@@ -26,19 +26,20 @@ class CSwordSetupInstallSourcesDialog : public QDialog  {
         Q_OBJECT
 
     public:
-        static sword::InstallSource getSource();
-
-    protected:
+        sword::InstallSource getSource();
+        bool wasRemoteListAdded() {return m_remoteListAdded;}
         CSwordSetupInstallSourcesDialog();
 
     protected slots:
         void slotOk();
         void slotProtocolChanged();
+        void slotGetListClicked();
 
     private:
         QLabel    *m_serverLabel;
         QLineEdit *m_captionEdit, *m_serverEdit, *m_pathEdit;
         QComboBox *m_protocolCombo;
+        bool m_remoteListAdded;
 };
 
 

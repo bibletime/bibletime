@@ -46,13 +46,13 @@ class BtSourceWidget : public QTabWidget {
 
     private:
         void initSourceConnections();
-        /** Add tabs/views for each source. */
-        void initSources();
 
         /** Add one source to tabs/stack. */
         void addSource(const QString& sourceName);
 
     private slots:
+        /** Add tabs/views for each source. */
+        void initSources();
 
         void slotRefresh();
 
@@ -72,7 +72,8 @@ class BtSourceWidget : public QTabWidget {
         void slotTabSelected(int index);
         void slotInstallAccepted(QList<CSwordModuleInfo*> mi, QTreeWidget* treeWidget);
 
-
+    signals:
+        void sigInitSources();
 
     private:
         QStringList m_sourceNameList;

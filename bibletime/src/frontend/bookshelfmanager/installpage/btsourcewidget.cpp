@@ -32,17 +32,17 @@
 #include "util/dialogutil.h"
 
 
-// ****************************************************************
-// ******** Tab Widget that holds source widgets ******************
-// ****************************************************************
-
+/**
+* Tab Widget that holds source widgets
+*/
 BtSourceWidget::BtSourceWidget(BtInstallPage* parent)
         : QTabWidget(parent),
         m_page(parent) {
     qDebug() << "BtSourceWidget::BtSourceWidget start";
     initSources();
-
-    // TODO: choose the page from config
+    // send queued event because "Delete" is initiated from tab which should be deleted
+    connect(this, SIGNAL(sigInitSources()), SLOT(initSources()), Qt::QueuedConnection);
+    /// \todo choose the page from config
 
 }
 
@@ -60,7 +60,7 @@ void BtSourceWidget::initSourceConnections() {
     if (area()) {
         connect(area()->m_refreshButton, SIGNAL(clicked()), SLOT(slotRefresh()));
         //connect(area()->m_editButton, SIGNAL(clicked()), SLOT(slotEdit()));
-        connect(area()->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()));
+        connect(area()->m_deleteButton, SIGNAL(clicked()), SLOT(slotDelete()), Qt::QueuedConnection);
         connect(area()->m_addButton, SIGNAL(clicked()), SLOT(slotAdd()));
         connect(area(), SIGNAL(signalSelectionChanged(QString, int)), SLOT(slotModuleSelectionChanged(QString, int)) );
     }
@@ -69,7 +69,7 @@ void BtSourceWidget::initSourceConnections() {
 
 void BtSourceWidget::slotEdit() {
     qDebug() << "BtSourceWidget::slotEdit";
-    // open the source editor dialog
+    /// \todo open the source editor dialog
 
     // if the source was changed, init the sources
 
@@ -84,22 +84,33 @@ void BtSourceWidget::slotDelete() {
 
     if (ret == QMessageBox::Yes) {
         instbackend::deleteSource(currentSourceName());
-
-        // remove the UI elements
-        m_sourceNameList.removeAt(currentIndex());
-        QWidget* w = currentWidget();
-        removeTab(currentIndex());
-        delete w;
+        initSources();
     }
 }
 
 void BtSourceWidget::slotAdd() {
-    qDebug() << "void BtSourceWidget::slotAdd() start";
-    qDebug() << "open the old dialog, TODO: write new one";
-    sword::InstallSource newSource = CSwordSetupInstallSourcesDialog::getSource();
+
+    boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
+    sword::InstallSource newSource(""); //empty, invalid Source
+
+    if (dlg->exec() == QDialog::Accepted) {
+        if (dlg->wasRemoteListAdded()) {
+            // refresh the list of sources
+        }
+        else {
+            newSource = dlg->getSource();
+        }
+    }
+    //return newSource;
+
+    //qDebug() << "void BtSourceWidget::slotAdd() start";
+    //qDebug() << "open the old dialog, TODO: write new one";
+    //sword::InstallSource newSource(""); // and empty, invalid source
+    //CSwordSetupInstallSourcesDialog::getSource(&newSource);
     if ( !((QString)newSource.type.c_str()).isEmpty() ) { // we have a valid source to add
         instbackend::addSource(newSource);
-        addSource(QString(newSource.caption.c_str()));
+        initSources();
+        //addSource(QString(newSource.caption.c_str()));
     }
 }
 
@@ -137,10 +148,6 @@ void BtSourceWidget::slotRefresh() {
         m_progressDialog->setLabelText(tr("Connecting..."));
         m_progressDialog->setValue(0);
         qApp->processEvents();
-        //qApp->flush();
-        //qApp->processEvents();
-        //m_progressDialog->repaint();
-        //qApp->processEvents();
         qDebug() << "void BtSourceWidget::slotRefresh 3";
         bool successful = iMgr.refreshRemoteSource( &is );
         if (!successful ) { //make sure the sources were updated sucessfully
@@ -193,16 +200,30 @@ void BtSourceWidget::slotRefreshCompleted(const int, const int current) {
 void BtSourceWidget::initSources() {
     qDebug() << "void BtSourceWidget::initSources() start";
 
+    //first clear all sources
+    //int i = count();
+    for (int i = count()-1; i >= 0; i--) {
+        BtSourceArea* a = dynamic_cast<BtSourceArea*>(widget(i));
+        a->prepareRemove();
+    }
+    for (int i = count()-1; i >= 0; i--) {
+        qDebug() << "remove tab"<<tabText(i);
+        QWidget* w = widget(i);
+        removeTab(i);
+        delete w;
+        qDebug() << "deleted";
+    }
+    m_sourceNameList.clear();
+
     // ***** Use the backend to get the list of sources *****
     instbackend::initPassiveFtpMode();
     QStringList sourceList = instbackend::sourceList();
-
+    qDebug() << "got the source list from backend:" << sourceList;
     // Add a default entry, the Crosswire main repository
-    // TODO: this is easy for the user, but should the edit dialog
-    // open automatically?
     if (!sourceList.count()) {
+        /// \todo Open a dialog which asks whether to get list from server and add sources
         sword::InstallSource is("FTP");   //default return value
-        is.caption = "Crosswire";
+        is.caption = "CrossWire Bible Society";
         is.source = "ftp.crosswire.org";
         is.directory = "/pub/sword/raw";
         // passive ftp is not needed here, it's the default
@@ -235,7 +256,7 @@ void BtSourceWidget::initSources() {
 }
 
 void BtSourceWidget::addSource(const QString& sourceName) {
-    qDebug() << "void BtSourceWidget::addSource(const QString& sourceName) start";
+    qDebug() << "void BtSourceWidget::addSource(const QString& sourceName) start, with name" << sourceName;
     // The source has already been added to the backend.
 
     QString type;

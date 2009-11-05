@@ -21,6 +21,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QDialogButtonBox>
 #include "frontend/bookshelfmanager/instbackend.h"
 #include "util/dialogutil.h"
 
@@ -28,7 +29,8 @@ const QString PROTO_FILE( QObject::tr("Local") ); //Local path
 const QString PROTO_FTP( QObject::tr("Remote") ); //Remote path
 
 CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *parent*/)
-        : QDialog() {
+        : QDialog(),
+        m_remoteListAdded(false) {
     setWindowTitle(tr("New  Installation Source"));
 
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
@@ -41,7 +43,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     captionLayout->addWidget( label );
 
     m_captionEdit = new QLineEdit( this );
-    m_captionEdit->setText("Crosswire Bible Society");
+    m_captionEdit->setText("CrossWire Bible Society");
     captionLayout->addWidget( m_captionEdit );
 
     mainLayout->addSpacing( 10 );
@@ -76,20 +78,18 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
 
     mainLayout->addSpacing( 10 );
 
-    QHBoxLayout* buttonLayout = new QHBoxLayout( this );
-    mainLayout->addLayout(buttonLayout);
-    buttonLayout->addStretch();
-    QPushButton* okButton = new QPushButton( tr("Ok"), this);
-    QPushButton* discardButton = new QPushButton( tr("Discard"), this);
-    buttonLayout->addWidget( discardButton);
-    buttonLayout->addWidget( okButton);
-    buttonLayout->addStretch();
-
-    connect( okButton, SIGNAL( clicked() ), this, SLOT( slotOk() ) );
-    connect( discardButton, SIGNAL( clicked() ), this, SLOT( reject() ) );
+    QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::Save, Qt::Horizontal, this);
+    util::prepareDialogBox(buttonBox);
+    //TODO: QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
+    //getListButton->setToolTip(tr("Download a list list of sources from CrossWire server and add sources"));
+    //buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
+    //connect(getListButton, SIGNAL(clicked()), SLOT(getListFromServer()));
+    mainLayout->addWidget(buttonBox);
+    connect(buttonBox, SIGNAL(accepted()), SLOT(slotOk()));
+    connect(buttonBox, SIGNAL(rejected()), SLOT(reject()));
     connect( m_protocolCombo, SIGNAL( activated(int) ), this, SLOT( slotProtocolChanged() ) );
-
 }
+
 void CSwordSetupInstallSourcesDialog::slotOk() {
     //run a few tests to validate the input first
     if ( m_captionEdit->text().trimmed().isEmpty() ) { //no caption
@@ -148,28 +148,28 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 
 }
 
+void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
+    /// \todo show message "gets list, adds sources, OK/Cancel", accept() or continue
+}
+
 sword::InstallSource CSwordSetupInstallSourcesDialog::getSource() {
-
-    boost::scoped_ptr<CSwordSetupInstallSourcesDialog> dlg( new CSwordSetupInstallSourcesDialog() );
     sword::InstallSource newSource(""); //empty, invalid Source
-
-    if (dlg->exec() == QDialog::Accepted) {
-        if (dlg->m_protocolCombo->currentText() == PROTO_FTP) {
-            newSource.type = "FTP";
-            newSource.source = dlg->m_serverEdit->text().toUtf8();
-
-            //a message to the user would be nice, but we're in message freeze right now (1.5.1)
-            if (dlg->m_serverEdit->text().right(1) == "/") { //remove a trailing slash
-                newSource.source  = dlg->m_serverEdit->text().mid(0, dlg->m_serverEdit->text().length() - 1).toUtf8();
-            }
+    if (m_protocolCombo->currentText() == PROTO_FTP) {
+        newSource.type = "FTP";
+        newSource.source = m_serverEdit->text().toUtf8();
+        //a message to the user would be nice, but we're in message freeze right now (1.5.1)
+        if (m_serverEdit->text().right(1) == "/") { //remove a trailing slash
+            newSource.source  = m_serverEdit->text().mid(0, m_serverEdit->text().length() - 1).toUtf8();
         }
-        else {
-            newSource.type = "DIR";
-            newSource.source = "local";
-        }
-        newSource.caption = dlg->m_captionEdit->text().toUtf8();
-        newSource.directory = dlg->m_pathEdit->text().toUtf8();
     }
+    else {
+        newSource.type = "DIR";
+        newSource.source = "local";
+    }
+    newSource.caption = m_captionEdit->text().toUtf8();
+    newSource.directory = m_pathEdit->text().toUtf8();
+    newSource.uid = newSource.source;
+
     return newSource;
 }
 

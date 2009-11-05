@@ -43,12 +43,14 @@ BtSourceArea::BtSourceArea(const QString& sourceName)
         m_sourceName(sourceName),
         m_treeAlreadyInitialized(false),
         m_remoteBackend(0) { //important!
+    setObjectName(sourceName);
     m_checkedModules = QMap<QString, bool>();
     qDebug() << "BtSourceArea::BtSourceArea, " << m_sourceName;
     initView();
 }
 
 BtSourceArea::~BtSourceArea() {
+    qDebug() << "BtSourceArea::~BtSourceArea" << m_sourceName;
     delete m_remoteBackend;
 }
 
@@ -57,17 +59,6 @@ void BtSourceArea::initView() {
 
     qDebug() << "BtSourceArea::initView";
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    //QHBoxLayout *refreshLabelLayout = new QHBoxLayout();
-    //QLabel *refreshLabel = new QLabel(tr("Last refreshed:"));
-    //m_refreshTimeLabel = new QLabel();
-    //QSpacerItem *refreshLabelSpacer = new QSpacerItem(201, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-    //refreshLabelLayout->addWidget(refreshLabel);
-    //refreshLabelLayout->addWidget(m_refreshTimeLabel);
-    //refreshLabelLayout->addItem(refreshLabelSpacer);
-    // TODO: or would it be better to integrate this information into the tooltip
-    // of the source tab?
-    //mainLayout->addLayout(refreshLabelLayout);
 
     // source related button row
     QHBoxLayout *sourceLayout = new QHBoxLayout();
@@ -102,6 +93,11 @@ void BtSourceArea::initView() {
     connect(m_view, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(slotItemDoubleClicked(QTreeWidgetItem*, int)));
     connect(CPointers::backend(), SIGNAL(sigSwordSetupChanged(CSwordBackend::SetupChangedReason)), SLOT(slotSwordSetupChanged()));
     connect(this, SIGNAL(signalCreateTree()), SLOT(slotCreateTree()), Qt::QueuedConnection);
+}
+
+void BtSourceArea::prepareRemove() {
+    // don't create tree anymore, this will be removed
+    disconnect(this, SIGNAL(signalCreateTree()), this, SLOT(slotCreateTree()));
 }
 
 QSize BtSourceArea::sizeHint() const {

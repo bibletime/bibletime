@@ -55,6 +55,7 @@ class BtSourceArea : public QWidget {
         ~BtSourceArea();
 
         void initView();
+        void prepareRemove();
         /** Reimplemented from QWidget. */
         virtual QSize sizeHint() const;
         void initTreeFirstTime();
@@ -90,8 +91,6 @@ class BtSourceArea : public QWidget {
         QPushButton* m_editButton;
         QPushButton* m_deleteButton;
         QPushButton* m_addButton;
-
-
 };
 
 #endif
