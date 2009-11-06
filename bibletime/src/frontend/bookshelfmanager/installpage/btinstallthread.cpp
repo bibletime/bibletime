@@ -112,10 +112,10 @@ void BtInstallThread::slotStopInstall() {
         qDebug() << "BtInstallThread::slotStopInstall 2";
         //qApp->processEvents();
         // wait to terminate for some secs. We rather let the execution go on and cleaning up to fail than the app to freeze
-        int notRun = this->wait(200);
+        int notRun = this->wait(25000);
         if (notRun) {
             this->terminate();
-            this->wait(2);
+            this->wait(10000);
             qDebug() << "installthread (" << m_module << ") terminated, delete m_iMgr";
             delete m_iMgr; // this makes sure the ftp library will be cleaned up in the destroyer
             m_iMgr = 0;
