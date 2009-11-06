@@ -84,7 +84,7 @@ CSwordSetupInstallSourcesDialog::CSwordSetupInstallSourcesDialog(/*QWidget *pare
     QDialogButtonBox* buttonBox = new QDialogButtonBox(QDialogButtonBox::Cancel|QDialogButtonBox::Save, Qt::Horizontal, this);
     util::prepareDialogBox(buttonBox);
     QPushButton* getListButton = new QPushButton(tr("Get list..."), this);
-    getListButton->setToolTip(tr("Download a list list of sources from CrossWire server and add sources"));
+    getListButton->setToolTip(tr("Download a list of sources from CrossWire server and add sources"));
     buttonBox->addButton(getListButton, QDialogButtonBox::ActionRole);
     connect(getListButton, SIGNAL(clicked()), SLOT(slotGetListClicked()));
     mainLayout->addWidget(buttonBox);
