@@ -2284,7 +2284,7 @@ shortcut</source>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
-        <source>Download a list list of sources from CrossWire server and add sources</source>
+        <source>Download a list of sources from CrossWire server and add sources</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

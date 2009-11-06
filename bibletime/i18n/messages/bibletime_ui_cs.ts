@@ -1863,10 +1863,6 @@ shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download a list list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Get source list from remote server?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1885,6 +1881,10 @@ shortcut</source>
     <message>
         <source>Refreshing...</source>
         <translation type="unfinished">Obnovování...</translation>
+    </message>
+    <message>
+        <source>Download a list of sources from CrossWire server and add sources</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
