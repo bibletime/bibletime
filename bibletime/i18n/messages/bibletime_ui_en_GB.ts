@@ -14,277 +14,277 @@
     <message>
         <location filename="../../src/bibletime_init.cpp" line="242"/>
         <source>&amp;File</source>
-        <translation></translation>
+        <translation>&amp;File</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="243"/>
         <source>&amp;View</source>
-        <translation></translation>
+        <translation>&amp;View</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="244"/>
         <source>&amp;Search</source>
-        <translation></translation>
+        <translation>&amp;Search</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="245"/>
         <source>&amp;Window</source>
-        <translation></translation>
+        <translation>&amp;Window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="246"/>
         <source>Se&amp;ttings</source>
-        <translation></translation>
+        <translation>Se&amp;ttings</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="247"/>
         <source>&amp;Help</source>
-        <translation></translation>
+        <translation>&amp;Help</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="107"/>
         <source>&amp;Show toolbar</source>
-        <translation></translation>
+        <translation>&amp;Show toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="100"/>
         <source>&amp;Fullscreen mode</source>
-        <translation></translation>
+        <translation>&amp;Fullscreen mode</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="250"/>
         <source>Main Toolbar</source>
-        <translation></translation>
+        <translation>Main Toolbar</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="93"/>
         <source>&amp;Quit</source>
-        <translation></translation>
+        <translation>&amp;Quit</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="219"/>
         <source>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation></translation>
+        <translation>Open the Bible study HowTo included with BibleTime.&lt;br/&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="224"/>
         <source>Information about the BibleTime program</source>
-        <translation></translation>
+        <translation>Information about the BibleTime program</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="274"/>
         <source>Show Bookshelf</source>
-        <translation></translation>
+        <translation>Show Bookshelf</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="278"/>
         <source>Show Bookmarks</source>
-        <translation></translation>
+        <translation>Show Bookmarks</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="282"/>
         <source>Show Mag</source>
-        <translation></translation>
+        <translation>Show Mag</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="300"/>
         <source>O&amp;pen Windows</source>
-        <translation></translation>
+        <translation>O&amp;pen Windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="354"/>
         <source>&amp;Save session</source>
-        <translation></translation>
+        <translation>&amp;Save session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="361"/>
         <source>&amp;Load session</source>
-        <translation></translation>
+        <translation>&amp;Load session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="364"/>
         <source>&amp;Delete session</source>
-        <translation></translation>
+        <translation>&amp;Delete session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="327"/>
         <source>&amp;Arrangement mode</source>
-        <translation></translation>
+        <translation>&amp;Arrangement mode</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="133"/>
         <source>&amp;Manual mode</source>
-        <translation></translation>
+        <translation>&amp;Manual mode</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="140"/>
         <source>Auto-tile &amp;vertically</source>
-        <translation></translation>
+        <translation>Auto-tile &amp;vertically</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="147"/>
         <source>Auto-tile &amp;horizontally</source>
-        <translation></translation>
+        <translation>Auto-tile &amp;horizontally</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="154"/>
         <source>Auto-&amp;cascade</source>
-        <translation></translation>
+        <translation>Auto-&amp;cascade</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="161"/>
         <source>&amp;Cascade</source>
-        <translation></translation>
+        <translation>&amp;Cascade</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="168"/>
         <source>Tile &amp;vertically</source>
-        <translation></translation>
+        <translation>Tile &amp;vertically</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="175"/>
         <source>Tile &amp;horizontally</source>
-        <translation></translation>
+        <translation>Tile &amp;horizontally</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="189"/>
         <source>Cl&amp;ose all windows</source>
-        <translation></translation>
+        <translation>Cl&amp;ose all windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="192"/>
         <source>Close all open windows inside BibleTime</source>
-        <translation></translation>
+        <translation>Close all open windows inside BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="209"/>
         <source>&amp;Handbook</source>
-        <translation></translation>
+        <translation>&amp;Handbook</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="216"/>
         <source>&amp;Bible Study Howto</source>
-        <translation></translation>
+        <translation>&amp;Bible Study Howto</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="514"/>
         <source>Please enter a name for the new session.</source>
-        <translation></translation>
+        <translation>Please enter a name for the new session.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="96"/>
         <source>Quit BibleTime</source>
-        <translation></translation>
+        <translation>Quit BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="103"/>
         <source>Toggle fullscreen mode of the main window</source>
-        <translation></translation>
+        <translation>Toggle fullscreen mode of the main window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="112"/>
         <source>Search in &amp;open works...</source>
-        <translation></translation>
+        <translation>Search in &amp;open works...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="119"/>
         <source>Search in standard &amp;Bible...</source>
-        <translation></translation>
+        <translation>Search in standard &amp;Bible...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="126"/>
         <source>Save as &amp;new session...</source>
-        <translation></translation>
+        <translation>Save as &amp;new session...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="129"/>
         <source>Create and save a new session</source>
-        <translation></translation>
+        <translation>Create and save a new session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="136"/>
         <source>Manually arrange the open windows</source>
-        <translation></translation>
+        <translation>Manually arrange the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="143"/>
         <source>Automatically tile the open windows vertically (arrange side by side)</source>
-        <translation></translation>
+        <translation>Automatically tile the open windows vertically (arrange side by side)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="150"/>
         <source>Automatically tile the open windows horizontally (arrange on top of each other)</source>
-        <translation></translation>
+        <translation>Automatically tile the open windows horizontally (arrange on top of each other)</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="157"/>
         <source>Automatically cascade the open windows</source>
-        <translation></translation>
+        <translation>Automatically cascade the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="164"/>
         <source>Cascade the open windows</source>
-        <translation></translation>
+        <translation>Cascade the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="171"/>
         <source>Vertically tile (arrange side by side) the open windows</source>
-        <translation></translation>
+        <translation>Vertically tile (arrange side by side) the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="178"/>
         <source>Horizontally tile (arrange on top of each other) the open windows</source>
-        <translation></translation>
+        <translation>Horizontally tile (arrange on top of each other) the open windows</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="182"/>
         <source>Close &amp;window</source>
-        <translation></translation>
+        <translation>Close &amp;window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="185"/>
         <source>Close the current open window</source>
-        <translation></translation>
+        <translation>Close the current open window</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="196"/>
         <source>&amp;Configure BibleTime...</source>
-        <translation></translation>
+        <translation>&amp;Configure BibleTime...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="198"/>
         <source>Set BibleTime&apos;s preferences</source>
-        <translation></translation>
+        <translation>Set BibleTime&apos;s preferences</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="202"/>
         <source>Bookshelf &amp;Manager...</source>
-        <translation></translation>
+        <translation>Bookshelf &amp;Manager...</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="205"/>
         <source>Configure your bookshelf and install/update/remove/index works</source>
-        <translation></translation>
+        <translation>Configure your bookshelf and install/update/remove/index works</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="212"/>
         <source>Open BibleTime&apos;s handbook</source>
-        <translation></translation>
+        <translation>Open BibleTime&apos;s handbook</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Search in all works that are currently open</source>
-        <translation></translation>
+        <translation>Search in all works that are currently open</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="122"/>
         <source>Search in the standard Bible</source>
-        <translation></translation>
+        <translation>Search in the standard Bible</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_slots.cpp" line="513"/>
         <source>New Session</source>
-        <translation></translation>
+        <translation>New Session</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="58"/>
@@ -304,27 +304,27 @@
     <message>
         <location filename="../../src/bibletime.cpp" line="206"/>
         <source>Unlock Work</source>
-        <translation></translation>
+        <translation>Unlock Work</translation>
     </message>
     <message>
         <location filename="../../src/bibletime.cpp" line="207"/>
         <source>Enter the unlock key for this work.</source>
-        <translation></translation>
+        <translation>Enter the unlock key for this work.</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="223"/>
         <source>&amp;About BibleTime</source>
-        <translation></translation>
+        <translation>&amp;About BibleTime</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="53"/>
         <source>Bookmarks</source>
-        <translation></translation>
+        <translation>Bookmarks</translation>
     </message>
     <message>
         <location filename="../../src/bibletime_init.cpp" line="60"/>
         <source>Mag</source>
-        <translation></translation>
+        <translation>Mag</translation>
     </message>
 </context>
 <context>
@@ -2295,12 +2295,12 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
         <source>Get list...</source>
-        <translation type="unfinished"></translation>
+        <translation>Get list...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
         <source>Download a list of sources from CrossWire server and add sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Download a list of sources from CrossWire server and add sources</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
@@ -2339,28 +2339,28 @@ shortcut</source>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="157"/>
         <source>Get source list from remote server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Get source list from remote server?</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="165"/>
         <source>Downloading List</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloading List</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="175"/>
         <source>Connecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Connecting...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="199"/>
         <source>Refreshing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Refreshing...</translation>
     </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="37"/>
@@ -4460,52 +4460,52 @@ This could take a long time. Proceed with indexing?</source>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="13"/>
         <source>Find Text</source>
-        <translation></translation>
+        <translation>Find Text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="41"/>
         <source>The text you want to search for</source>
-        <translation></translation>
+        <translation>The text you want to search for</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="51"/>
         <source>Seach with case sensitivity</source>
-        <translation></translation>
+        <translation>Seach with case sensitivity</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="54"/>
         <source>Case &amp;sensitive</source>
-        <translation></translation>
+        <translation>Case &amp;sensitive</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="92"/>
         <source>Find the previous location of the text</source>
-        <translation></translation>
+        <translation>Find the previous location of the text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="95"/>
         <source>&amp;Previous</source>
-        <translation></translation>
+        <translation>&amp;Previous</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="102"/>
         <source>Find the next location of the text</source>
-        <translation></translation>
+        <translation>Find the next location of the text</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="105"/>
         <source>&amp;Next</source>
-        <translation></translation>
+        <translation>&amp;Next</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="115"/>
         <source>Close the dialog</source>
-        <translation></translation>
+        <translation>Close the dialogue</translation>
     </message>
     <message>
         <location filename="../../src/frontend/display/bthtmlfindtext.ui" line="118"/>
         <source>&amp;Close</source>
-        <translation></translation>
+        <translation>&amp;Close</translation>
     </message>
 </context>
 </TS>
