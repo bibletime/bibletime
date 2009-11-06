@@ -152,8 +152,7 @@ void CSwordSetupInstallSourcesDialog::slotProtocolChanged() {
 }
 
 void CSwordSetupInstallSourcesDialog::slotGetListClicked() {
-    /// \todo show message "gets list, adds sources, OK/Cancel", accept() or continue
-    QString message("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?");
+    QString message(tr("List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don't want to keep.\n\nDo you want to continue?"));
     QMessageBox::StandardButton answer = util::showQuestion(this, tr("Get source list from remote server?"), message, QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
     if (answer == QMessageBox::No) {
         return;
