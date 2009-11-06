@@ -272,10 +272,6 @@
         <translation>Ava BibleTime&apos; käsiraamat</translation>
     </message>
     <message>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">Ava BibleTime&apos;ga kaasas olev Piible uurimise õpetus.&lt;BR&gt;See õpetus on sissejuhatus Piibli efektiivseks õppimiseks.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Search in all works that are currently open</source>
         <translation>Otsi kõikidest hetkel avatud teostest</translation>
@@ -354,33 +350,17 @@
         <translation>(c)1999-2009, BibleTime meeskond</translation>
     </message>
     <message>
-        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation type="obsolete">Qt Open Source Edition on mõeldud avatud lähtekoodiga rakenduste arendamiseks.</translation>
-    </message>
-    <message>
-        <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation type="obsolete">Qt on hulk C++ tööriistu mitmetel tarkvaraplatvormidel töötavate rakenduste arendamiseks.</translation>
-    </message>
-    <message>
-        <source>Please see </source>
-        <translation type="obsolete">Palun vaadake </translation>
-    </message>
-    <message>
-        <source> for an overview of Qt licensing.</source>
-        <translation type="obsolete"> ülevaate saamiseks Qt litsenseerimisest.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Te võite programmi alla laadida ja kasutada (kuid mitte levitada) personaalsetel, privaatsetel, avalikel või kommertseesmärkidel ilma piiranguteta.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Te võite programmi edasi anda või levitada, kui Te sellega samuti programmi lähtekoodi levitate.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
         <source>The complete legally binding license is below.</source>
         <translation>Täielik juriidiliselt siduv litsents on toodud allpool.</translation>
     </message>
@@ -474,46 +454,42 @@
         <translation>Järgnevad inimesed tõlkisid BibleTime&apos; enda keelde:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="125"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="126"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Mõned nimed võivad puududa, palun saatke e-mail aadressile bibletime-translations@lists.sourceforge.net kui märkate vigu või puuduvaid nimesid.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
         <source>SWORD library version %1</source>
         <translation>SWORD teek, versioon %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>BibleTime kasutab SWORD projekti. Projekt SWORD on CrossWire Bible Society vaba piiblitarkvara projekt, mille eesmärk on luua mitmeplatvormilisi vaba tarkvara tööriistu - litsenseeritud GNU General Public Licence all --mis võimaldavad programmeerijatel ja piibliühingutel kirjutada uut piiblitarkvara kiiremini ja lihtsamalt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="144"/>
         <source>The SWORD Project</source>
         <translation>Projekt SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt version %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="obsolete">Käesolev programm kasutab Qt Open Source Edition raamistikku versioon %1.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>License</source>
         <translation>Litsents</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime on välja antud GPL litsentsi all.</translation>
     </message>
@@ -782,18 +758,6 @@
         <translation>Paigalda/uuenda</translation>
     </message>
     <message>
-        <source>Install path:</source>
-        <translation type="obsolete">Paigalduskoht:</translation>
-    </message>
-    <message>
-        <source>The path where the new works will be installed</source>
-        <translation type="obsolete">Asukoht, kuhu uued teosed paigaldatakse</translation>
-    </message>
-    <message>
-        <source>Configure paths where works are installed</source>
-        <translation type="obsolete">Seadista asukohad, kuhu uued teosed paigaldatakse</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="115"/>
         <source>Install...</source>
         <translation>Paigalda...</translation>
@@ -806,18 +770,6 @@
 </context>
 <context>
     <name>BtInstallPathDialog</name>
-    <message>
-        <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
-        <translation type="obsolete">Teoseid saab paigaldada ühte või mitmesse kataloogi. Pärast kataloogide seadistamist siin võite nende hulgast valida paigalduslehel.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
-        <translation type="obsolete">BibleTime ja Swordi teek leiavad üles moodulid kõikidest nendest kataloogidest. Kui kataloog siin eemaldatakse, jääb see siiski failisüsteemi alles koos kõikide sinna paigaldatud teostega. Kataloogi &quot;.sword&quot; Teie kodukaustas kasutatakse alati ning seda ei saa eemaldada ega lisada.</translation>
-    </message>
-    <message>
-        <source>Configuration file for the paths is: </source>
-        <translation type="obsolete">Konfiguratsioonifail nende asukohtade jaoks on: </translation>
-    </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
         <source>Bookshelf Folders</source>
@@ -915,46 +867,6 @@
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Choose directory</source>
-        <translation type="obsolete">Valige kataloog</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="obsolete">Valitud kataloogi ei saa faile kirjutada, mistõttu pole BibleTime&apos;l võimalik sinna teoseid paigaldada. Kas soovite sellest hoolimata kasutada valitud kataloogi eelneva asemel?</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Hoiatus</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="obsolete">Valitud kataloogi ei saa faile kirjutada, mistõttu pole BibleTime&apos;l võimalik sinna teoseid paigaldada. Kas soovite sellest hoolimata valitud kataloogi raamaturiiuli asukohtade hulka lisada?</translation>
-    </message>
-    <message>
-        <source>Bookshelf Paths</source>
-        <translation type="obsolete">Raamaturiiuli asukohad</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf paths</source>
-        <translation type="obsolete">Raamaturiiuli asukohtade määramine</translation>
-    </message>
-    <message>
-        <source>Add new path</source>
-        <translation type="obsolete">Lisa uus asukoht</translation>
-    </message>
-    <message>
-        <source>Edit the selected path</source>
-        <translation type="obsolete">Muuda valitud asukohta</translation>
-    </message>
-    <message>
-        <source>Remove the selected path</source>
-        <translation type="obsolete">Eemalda valitud asukoht</translation>
-    </message>
-    <message>
-        <source>Use Directory?</source>
-        <translation type="obsolete">Kasutada valitud kataloogi?</translation>
-    </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
@@ -979,12 +891,12 @@
         <translation>Peata kõik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="138"/>
         <source>Completed</source>
         <translation>Valmis</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="144"/>
         <source>Cancelled</source>
         <translation>Katkestatud</translation>
     </message>
@@ -994,7 +906,7 @@
         <translation>Ootel...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="213"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="214"/>
         <source>Preparing install...</source>
         <translation>Paigaldamiseks valmistumine...</translation>
     </message>
@@ -1004,7 +916,7 @@
         <translation>Paigalduse edenemine</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="134"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="135"/>
         <source>Failed</source>
         <translation>Ebaõnnestus</translation>
     </message>
@@ -1063,98 +975,6 @@
         <location filename="../../src/frontend/bookshelfmanager/removepage/btremovepage.cpp" line="139"/>
         <source>Remove Works?</source>
         <translation>Eemaldada teosed?</translation>
-    </message>
-</context>
-<context>
-    <name>BtSearchDialog</name>
-    <message>
-        <source>Search</source>
-        <comment>Search dialog title</comment>
-        <translation type="obsolete">Otsing</translation>
-    </message>
-    <message>
-        <source>Search &amp;query:</source>
-        <translation type="obsolete">Otsingu &amp;päring:</translation>
-    </message>
-    <message>
-        <source>The text you want to search for</source>
-        <translation type="obsolete">Tekst, mida soovite otsida</translation>
-    </message>
-    <message>
-        <source>&amp;Search</source>
-        <translation type="obsolete">&amp;Otsi</translation>
-    </message>
-    <message>
-        <source>Start the search</source>
-        <translation type="obsolete">Alusta otsingut</translation>
-    </message>
-    <message>
-        <source>Query &amp;type:</source>
-        <translation type="obsolete">Päringu &amp;tüüp:</translation>
-    </message>
-    <message>
-        <source>&amp;All words</source>
-        <translation type="obsolete">&amp;Kõik sõnad</translation>
-    </message>
-    <message>
-        <source>Search for all of the words in the query</source>
-        <translation type="obsolete">Otsib kõiki päringu sõnu</translation>
-    </message>
-    <message>
-        <source>S&amp;ome words</source>
-        <translation type="obsolete">&amp;Mõned sõnad</translation>
-    </message>
-    <message>
-        <source>Search for any of the words in the query</source>
-        <translation type="obsolete">Otsib üksikuid päringu sõnu</translation>
-    </message>
-    <message>
-        <source>&amp;Free</source>
-        <translation type="obsolete">&amp;Vaba</translation>
-    </message>
-    <message>
-        <source>Use full Lucene search query syntax</source>
-        <translation type="obsolete">Kasutab täielikku Lucene otsingu päringu süntaksit</translation>
-    </message>
-    <message>
-        <source>(&lt;a href=&apos;syntax_help&apos;&gt;full syntax&lt;/a&gt;)</source>
-        <translation type="obsolete">(&lt;a href=&apos;syntax_help&apos;&gt;täielik süntaks&lt;/a&gt;)</translation>
-    </message>
-    <message>
-        <source>Click the link to get help for search syntax</source>
-        <translation type="obsolete">Klikkige siia, et saada abi otsingusüntaksi kasutamiseks</translation>
-    </message>
-    <message>
-        <source>&amp;Works:</source>
-        <translation type="obsolete">&amp;Teosed:</translation>
-    </message>
-    <message>
-        <source>C&amp;hoose...</source>
-        <translation type="obsolete">V&amp;ali...</translation>
-    </message>
-    <message>
-        <source>Choose works for the search</source>
-        <translation type="obsolete">Vali teosed, millest otsida</translation>
-    </message>
-    <message>
-        <source>S&amp;cope:</source>
-        <translation type="obsolete">&amp;Skoop:</translation>
-    </message>
-    <message>
-        <source>Choose the scope (books/chapters/verses to search in).&lt;br /&gt;Applicable for Bibles and commentaries.</source>
-        <translation type="obsolete">Valige otsinguskoop (raamatud/peatükid/salmid mille hulgast otsida).&lt;br /&gt;Kehtib piiblite ja kommentaaride puhul.</translation>
-    </message>
-    <message>
-        <source>S&amp;etup...</source>
-        <translation type="obsolete">&amp;Häälestus...</translation>
-    </message>
-    <message>
-        <source>Configure predefined scopes for search</source>
-        <translation type="obsolete">Halda otsingu skoope</translation>
-    </message>
-    <message>
-        <source>Text of the selected search result item</source>
-        <translation type="obsolete">Valitud otsingutulemuse elemendi tekst</translation>
     </message>
 </context>
 <context>
@@ -1238,42 +1058,42 @@ kiirklahv</translation>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Work</source>
         <translation>Teos</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Description</source>
         <translation>Kirjeldus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="85"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
         <source>Add...</source>
         <translation>Lisa...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Refresh...</source>
         <translation>Värskenda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="75"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="66"/>
         <source>Refresh the list of works from this source</source>
         <translation>Värskenda teoste nimekiri sellest allikast</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
         <source>Delete...</source>
         <translation>Eemalda...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
         <source>Delete this source</source>
         <translation>Eemalda see allikas</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="78"/>
         <source>Add new source</source>
         <translation>Lisa uus allikas</translation>
     </message>
@@ -1291,73 +1111,73 @@ kiirklahv</translation>
         <translation>Kas soovite tõesti selle allika BibleTime&apos;st eemaldada?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="115"/>
         <source>Cancel</source>
         <translation>Tühista</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="116"/>
         <source>Refreshing Source</source>
         <translation>Värskendamine allikast</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="138"/>
         <source>Connecting...</source>
         <translation>Ühendumine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="184"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="185"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="181"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="182"/>
         <source>Refreshing...</source>
         <translation>Värskendamine...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="231"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="242"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation>SWORD teegi seadistuses ei leitud ühtegi allikat, mistõttu ei saanud BibleTime valida vaikimisi allikat. Palun kontrollige SWORD&apos;i konfiguratsiooni ning et konfiguratsiooni asukoht oleks kirjutatav. Seejärel taaskäivitage raamaturiiuli haldamine.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="246"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Remote:</source>
         <translation>Võrgusolev:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="262"/>
         <source>Local:</source>
         <translation>Kohalik:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="326"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Install/Update works?</source>
         <translation>Paigalda/uuenda teosed?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="327"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="338"/>
         <source>Do you really want to install these works?</source>
         <translation>Kas soovite tõesti need teosed paigaldada?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="340"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Igast teosest saab paigaldatud olla ainult üks versioon. Punaselt märgitud elementide puhul valige ainult üks.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="255"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
         <source>Not a directory!</source>
         <translation>Ei ole kataloog!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="258"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="269"/>
         <source>Not readable!</source>
         <translation>Pole loetav!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>Warning</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>Sihtkataloog pole kirjutatav või ei eksisteeri. Paigaldus ebaõnnestub kui seda probleemi eelnevalt ei lahendata.</translation>
     </message>
@@ -1615,97 +1435,6 @@ kiirklahv</translation>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="465"/>
         <source>Drag references from text views to this view</source>
         <translation>Lohistage viiteid tekstiakendest siia</translation>
-    </message>
-</context>
-<context>
-    <name>CBookshelfIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Raamaturiiul</translation>
-    </message>
-    <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Grupeerimine</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategooria/keel</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategooria</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Keel/kategooria</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Keel</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Redigeeri</translation>
-    </message>
-    <message>
-        <source>Search...</source>
-        <translation type="obsolete">Otsi...</translation>
-    </message>
-    <message>
-        <source>Unlock...</source>
-        <translation type="obsolete">Võta lukust lahti...</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="obsolete">Info...</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">Otsi</translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Sisestage võti selle teose avamiseks.</translation>
-    </message>
-    <message>
-        <source>Hide/Unhide Works</source>
-        <translation type="obsolete">Peida/näita teoseid</translation>
-    </message>
-    <message>
-        <source>Select the works to be hidden.</source>
-        <translation type="obsolete">Valige teosed, mis peita.</translation>
-    </message>
-    <message>
-        <source>Works only</source>
-        <translation type="obsolete">Ainult teosed</translation>
-    </message>
-    <message>
-        <source>Hide/unhide works...</source>
-        <translation type="obsolete">Peida/näita teoseid...</translation>
-    </message>
-    <message>
-        <source>Show hidden</source>
-        <translation type="obsolete">Näita peidetuid</translation>
-    </message>
-    <message>
-        <source>Plain text...</source>
-        <translation type="obsolete">Tavalist teksti...</translation>
-    </message>
-    <message>
-        <source>HTML...</source>
-        <translation type="obsolete">HTML&apos;i...</translation>
-    </message>
-    <message>
-        <source>Search in %1...</source>
-        <translation type="obsolete">Otsi teosest %1...</translation>
-    </message>
-    <message>
-        <source>Search in selected...</source>
-        <translation type="obsolete">Otsi valitute seast...</translation>
-    </message>
-    <message>
-        <source>Unlock Work</source>
-        <translation type="obsolete">Kaitstud teose avamine</translation>
     </message>
 </context>
 <context>
@@ -2556,75 +2285,97 @@ kiirklahv</translation>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="45"/>
         <source>Caption</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="60"/>
         <source>Type</source>
         <translation>Tüüp</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="63"/>
         <source>Server</source>
         <translation>Server</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="66"/>
         <source>Path</source>
         <translation>Asukoht</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="82"/>
-        <source>Ok</source>
-        <translation>Lisa</translation>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
+        <source>Get list...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="83"/>
-        <source>Discard</source>
-        <translation>Katkesta</translation>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
+        <source>Download a list list of sources from CrossWire server and add sources</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="104"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="157"/>
+        <source>Get source list from remote server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="165"/>
+        <source>Downloading List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="175"/>
+        <source>Connecting...</source>
+        <translation type="unfinished">Ühendumine...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="199"/>
+        <source>Refreshing...</source>
+        <translation type="unfinished">Värskendamine...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="107"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Error</source>
         <translation>Viga</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
         <source>Please provide a caption.</source>
         <translation>Palun sisestage ka allika nimetus.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Sellise nimetusega allikas juba eksisteerib.&lt;br&gt;Palun sisestage erinev nimetus.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
         <source>Please provide a server name.</source>
         <translation>Palun sisestage ka serveri nimi.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
         <source>Please provide a valid, readable path.</source>
         <translation>Palun sisestage kehtiv, lugemisõigustega asukoht.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Please provide a path.</source>
         <translation>Palun sisestage ka asukoht.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="37"/>
         <source>New  Installation Source</source>
         <translation>Uus paigalduse allikas</translation>
     </message>
@@ -3650,12 +3401,12 @@ Language name ppk</extracomment>
         <translation>Ekspordi</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="27"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="31"/>
         <source>Local</source>
         <translation>Kohalik</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="28"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
         <source>Remote</source>
         <translation>Võrgusolev</translation>
     </message>
@@ -3943,12 +3694,12 @@ Language name ppk</extracomment>
         <translation>Verbi ajavorm muutus</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
         <source>Can&apos;t write file</source>
         <translation>Ei saa faili kirjutada</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
         <source>The Sword config file can&apos;t be written!</source>
         <translation>Ei saa kirjutada Sword&apos;i konfiguratsioonifaili!</translation>
     </message>

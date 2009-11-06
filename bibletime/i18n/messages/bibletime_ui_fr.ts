@@ -272,10 +272,6 @@
         <translation>Ouvrir le manuel de BibleTime</translation>
     </message>
     <message>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">BibleTime comprend un &lt;B&gt;Tutoriel d&apos;étude biblique&lt;/B&gt; . &lt;BR&gt; Ce tutoriel est une introduction sur comment étudier la Bible de manière efficace.</translation>
-    </message>
-    <message>
         <location filename="../../src/bibletime_init.cpp" line="115"/>
         <source>Search in all works that are currently open</source>
         <translation>Recherche dans tous les modules actuellement ouverts</translation>
@@ -354,33 +350,17 @@
         <translation>(c)1999-2009, L&apos;équipe de BibleTime</translation>
     </message>
     <message>
-        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation type="obsolete">Qt Open Source Edition est destiné au développement d&apos;applications Open Source.</translation>
-    </message>
-    <message>
-        <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation type="obsolete">Qt est une bibliothèque C++ boîte à outils pour le développement multi-plate-formes.</translation>
-    </message>
-    <message>
-        <source>Please see </source>
-        <translation type="obsolete">S&apos;il vous plaît voir</translation>
-    </message>
-    <message>
-        <source> for an overview of Qt licensing.</source>
-        <translation type="obsolete"> pour un aperçu de la licence Qt.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="178"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="179"/>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Vous pouvez télécharger et utiliser (mais ne pas distribuer) le programme des fins personnelles, privées, publiques ou commerciales sans restrictions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="180"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="181"/>
         <source>You can give away or distribute the program if you also distribute the corresponding source code.</source>
         <translation>Vous pouvez donner ou distribuer le programme si vous distribuez aussi le code source correspondant.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="184"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="185"/>
         <source>The complete legally binding license is below.</source>
         <translation>La licence complète juridiquement contraignant est ci-dessous.</translation>
     </message>
@@ -474,46 +454,42 @@
         <translation>Les personnes suivantes bibletime traduit dans leur langue:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="125"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="126"/>
         <source>Some names may be missing, please email bibletime-translations@lists.sourceforge.net if you notice errors or omissions.</source>
         <translation>Certains noms de mai à manquer, s&apos;il vous plaît bibletime-translations@lists.sourceforge.net e-mail si vous constatez des erreurs ou des omissions.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="138"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="139"/>
         <source>SWORD library version %1</source>
         <translation>SWORD version de la bibliothèque %1</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="141"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="142"/>
         <source>BibleTime makes use of the SWORD Project. The SWORD Project is the CrossWire Bible Society&apos;s free Bible software project. Its purpose is to create cross-platform open-source tools-- covered by the GNU General Public License-- that allow programmers and Bible societies to write new Bible software more quickly and easily.</source>
         <translation>Bibletime fait usage du projet SWORD. Le projet SWORD est le CrossWire Bible Society&apos;s Bible projet de logiciel libre. Son but est de créer des contre-outils à code source ouvert la plate-forme - couvert par la licence GNU General Public - qui permettent aux programmeurs et les sociétés bibliques pour écrire un nouveau logiciel Bible plus rapidement et facilement.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="144"/>
         <source>The SWORD Project</source>
         <translation>Le projet SWORD</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="157"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="158"/>
         <source>This program uses Qt version %1.</source>
         <translation>Ce programme utiliise la version%1&apos;de Qt.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="159"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="160"/>
         <source>Qt is a cross-platform application and UI framework, created with C++ language. It has been released under the LGPL license.</source>
         <translation>Qt est une application multi-plateforme avec Interface-Graphique, développé avec le language de programmation C++. Elle est disponible sous la licence LGPL.</translation>
     </message>
     <message>
-        <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="obsolete">Ce programme utilise Qt Open Source Edition version %1.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="173"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="174"/>
         <source>License</source>
         <translation>License</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="176"/>
+        <location filename="../../src/frontend/htmldialogs/btaboutdialog.cpp" line="177"/>
         <source>BibleTime is released under the GPL license.</source>
         <translation>BibleTime est distribué sous la licence GPL.</translation>
     </message>
@@ -669,13 +645,6 @@
     </message>
 </context>
 <context>
-    <name>BtBookshelfTreeModel</name>
-    <message>
-        <source>Module</source>
-        <translation type="obsolete">Module</translation>
-    </message>
-</context>
-<context>
     <name>BtChapterDropdownChooserButton</name>
     <message>
         <location filename="../../src/frontend/keychooser/versekeychooser/btdropdownchooserbutton.cpp" line="88"/>
@@ -773,18 +742,6 @@
         <translation>Installer et mettre à jour les modules. Ajoutez des sources locales ou distantes, actualisez-les, choisissez les modules à installer/mettre à jour et cliquez sur Installer.&lt;br/&gt;&lt;b&gt;ATTENTION:&lt;/b&gt; Si vous habitez dans un pays persecutté et ne voulez pas prendre le risque d&apos;être détectés, n&apos;utilisez pas les sources distantes.</translation>
     </message>
     <message>
-        <source>Install path:</source>
-        <translation type="obsolete">Chemin d&apos;installation:</translation>
-    </message>
-    <message>
-        <source>The path where the new works will be installed</source>
-        <translation type="obsolete">Le chemin où les nouveaux modules seront installés</translation>
-    </message>
-    <message>
-        <source>Configure paths where works are installed</source>
-        <translation type="obsolete">Configure les chemins où les modules sont installés</translation>
-    </message>
-    <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpage.cpp" line="90"/>
         <source>Install folder:</source>
         <translation>Dossier d&apos;installation:</translation>
@@ -812,18 +769,6 @@
 </context>
 <context>
     <name>BtInstallPathDialog</name>
-    <message>
-        <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
-        <translation type="obsolete">Les modules peuvent être installés dans un ou plusieurs dossiers. Après avoir définis les dossier, vous pouvez en choisir un dans la page d&apos;Installation.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
-        <translation type="obsolete">BibleTime et la bibliothèque Sword trouvent les modules dans tous ces dossiers. Si le dossier est supprimé ici, il existe toujours avec tous les modules dans le système. Le dossier &quot;.sword&quot; dans votre dossier personnel est toujours utilisé automatiquement et ne peut être ni effacé ni ajouté.</translation>
-    </message>
-    <message>
-        <source>Configuration file for the paths is: </source>
-        <translation type="obsolete">Le fichier de configuration pour les chemins est : </translation>
-    </message>
     <message>
         <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallpathdialog.cpp" line="34"/>
         <source>Bookshelf Folders</source>
@@ -921,46 +866,6 @@
         <source>This folder is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf folders?</source>
         <translation>Ce dossier ne peut pas être modifié, par conséquent les modules ne peuvent pas y être installés en utilisant BibleTime. Voulez-vous l&apos;ajouter aux dossiers de bibliothèques ?</translation>
     </message>
-    <message>
-        <source>Choose directory</source>
-        <translation type="obsolete">Choisir un dossier</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="obsolete">Ce dossier n&apos;est pas accessible en écriture, les modules ne peuvent donc pas être installés là en utilisant BibleTime. Voulez-vous utiliser ce dossier à la place de la valeur précédente ?</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Mise en garde</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="obsolete">Ce dossier n&apos;est pas accessible en écriture, les modules ne peuvent donc pas être installés ici en utilisant BibleTime. Voulez-vous tout de même l&apos;ajouter à la liste des dossiers de bibliothèques ?</translation>
-    </message>
-    <message>
-        <source>Bookshelf Paths</source>
-        <translation type="obsolete">Dossiers bibliothèques</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf paths</source>
-        <translation type="obsolete">Configurer les dossier bibliothèques</translation>
-    </message>
-    <message>
-        <source>Add new path</source>
-        <translation type="obsolete">Ajouter un nouveau chemin</translation>
-    </message>
-    <message>
-        <source>Edit the selected path</source>
-        <translation type="obsolete">Modifier le chemin sélectionné</translation>
-    </message>
-    <message>
-        <source>Remove the selected path</source>
-        <translation type="obsolete">Supprimer le chemin sélectionné</translation>
-    </message>
-    <message>
-        <source>Use Directory?</source>
-        <translation type="obsolete">Utiliser Dossier ?</translation>
-    </message>
 </context>
 <context>
     <name>BtInstallProgressDialog</name>
@@ -985,12 +890,12 @@
         <translation>Arrêter tout</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="138"/>
         <source>Completed</source>
         <translation>Terminé</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="143"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="144"/>
         <source>Cancelled</source>
         <translation>Annulé</translation>
     </message>
@@ -1000,7 +905,7 @@
         <translation>Attendre son tour...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="213"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="214"/>
         <source>Preparing install...</source>
         <translation>Préparation à l&apos;installation...</translation>
     </message>
@@ -1010,7 +915,7 @@
         <translation>Avancement de l&apos;installation</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="134"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btinstallprogressdialog.cpp" line="135"/>
         <source>Failed</source>
         <translation>Échec</translation>
     </message>
@@ -1152,42 +1057,42 @@ raccourci</translation>
 <context>
     <name>BtSourceArea</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Work</source>
         <translation>Module</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="98"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="90"/>
         <source>Description</source>
         <translation>Déscription</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="85"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="77"/>
         <source>Add...</source>
         <translation>Ajouter...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="65"/>
         <source>Refresh...</source>
         <translation>Rafraîchir...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="75"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="66"/>
         <source>Refresh the list of works from this source</source>
         <translation>Rafraîchir la liste de modules à partir de cette source</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="81"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="73"/>
         <source>Delete...</source>
         <translation>Supprimer...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="82"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="74"/>
         <source>Delete this source</source>
         <translation>Supprimer cette source</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="86"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcearea.cpp" line="78"/>
         <source>Add new source</source>
         <translation>Ajouter une nouvelle source</translation>
     </message>
@@ -1205,73 +1110,73 @@ raccourci</translation>
         <translation>Voulez-vous vraiment supprimer cette source?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="115"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="115"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="116"/>
         <source>Refreshing Source</source>
         <translation>Rafraîchir la source</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="137"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="138"/>
         <source>Connecting...</source>
         <translation>Connection...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="184"/>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="185"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="181"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="182"/>
         <source>Refreshing...</source>
         <translation>Rafraîchissement...</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="231"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="242"/>
         <source>No sources were found in the SWORD configuration and BibleTime couldn&apos;t create a default source. Check your SWORD configuration and that the configuration path is writable. Then restart the Bookshelf Manager.</source>
         <translation>Aucune source ont été trouvés dans la configuration de SWORD et bibletime n&apos;a pas pu créer une source par défaut. Vérifiez la configuration de votre épée et que le chemin de configuration est accessible en écriture. Puis redémarrez le Gestionnaire de Bookshelf.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="246"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="257"/>
         <source>Remote:</source>
         <translation>Distant:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="251"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="262"/>
         <source>Local:</source>
         <translation>Local:</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="326"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="337"/>
         <source>Install/Update works?</source>
         <translation>Installation/MàJ de modules?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="327"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="338"/>
         <source>Do you really want to install these works?</source>
         <translation>Voulez-vous vraiment installer ces modules ?</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="340"/>
         <source>Only one version of a work can be installed at the same time. Select only one if there are items marked with red.</source>
         <translation>Seulement une version d&apos;un module peut-être installée à la fois. Ne sélectionner qu&apos;un seul des éléments marqués en rouge.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="255"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="266"/>
         <source>Not a directory!</source>
         <translation>Pas un dossier!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="258"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="269"/>
         <source>Not readable!</source>
         <translation>Pas lisible!</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>Warning</source>
         <translation>Mise en garde</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="318"/>
+        <location filename="../../src/frontend/bookshelfmanager/installpage/btsourcewidget.cpp" line="329"/>
         <source>The destination directory is not writable or does not exist. Installation will fail unless this has first been fixed.</source>
         <translation>Le dossier de destination n&apos;est pas accessible en écriture ou n&apos;existe pas. L&apos;installation va échouer à moins que cela ne soit fixé.</translation>
     </message>
@@ -1528,85 +1433,6 @@ raccourci</translation>
         <location filename="../../src/frontend/mainindex/bookmarks/cbookmarkindex.cpp" line="465"/>
         <source>Drag references from text views to this view</source>
         <translation>Glisser les références des vues textes vers cette vue</translation>
-    </message>
-</context>
-<context>
-    <name>CBookshelfIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Bibliothèque</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Catégorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Langue</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Edition</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">Rechercher</translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Entrez la clef pour déverrouiller ce module.</translation>
-    </message>
-    <message>
-        <source>Search...</source>
-        <translation type="obsolete">Rechercher...</translation>
-    </message>
-    <message>
-        <source>Unlock...</source>
-        <translation type="obsolete">Déverrouiller...</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="obsolete">À propos de...</translation>
-    </message>
-    <message>
-        <source>Hide/Unhide Works</source>
-        <translation type="obsolete">Masquer/Afficher les modules</translation>
-    </message>
-    <message>
-        <source>Select the works to be hidden.</source>
-        <translation type="obsolete">Sélectionner modules à masquer.</translation>
-    </message>
-    <message>
-        <source>Works only</source>
-        <translation type="obsolete">Modules uniquement</translation>
-    </message>
-    <message>
-        <source>Hide/unhide works...</source>
-        <translation type="obsolete">Masquer/Afficher les modules...</translation>
-    </message>
-    <message>
-        <source>Show hidden</source>
-        <translation type="obsolete">Afficher les éléments masqués</translation>
-    </message>
-    <message>
-        <source>Plain text...</source>
-        <translation type="obsolete">Texte seul...</translation>
-    </message>
-    <message>
-        <source>HTML...</source>
-        <translation type="obsolete">HTML...</translation>
-    </message>
-    <message>
-        <source>Search in %1...</source>
-        <translation type="obsolete">Rechercher dans %1...</translation>
-    </message>
-    <message>
-        <source>Search in selected...</source>
-        <translation type="obsolete">Rechercher dans l&apos;élément sélectionné...</translation>
-    </message>
-    <message>
-        <source>Unlock Work</source>
-        <translation type="obsolete">Déverrouiller le module</translation>
     </message>
 </context>
 <context>
@@ -2193,13 +2019,6 @@ raccourci</translation>
     </message>
 </context>
 <context>
-    <name>CMainIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Bibliothèque</translation>
-    </message>
-</context>
-<context>
     <name>CModuleChooserButton</name>
     <message>
         <location filename="../../src/frontend/displaywindow/cmodulechooserbutton.cpp" line="94"/>
@@ -2457,75 +2276,97 @@ raccourci</translation>
 <context>
     <name>CSwordSetupInstallSourcesDialog</name>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="40"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="45"/>
         <source>Caption</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="55"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="60"/>
         <source>Type</source>
         <translation>Type</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="58"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="63"/>
         <source>Server</source>
         <translation>Serveur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="61"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="66"/>
         <source>Path</source>
         <translation>Chemin</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="82"/>
-        <source>Ok</source>
-        <translation>Ok</translation>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="86"/>
+        <source>Get list...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="83"/>
-        <source>Discard</source>
-        <translation>Abandonner</translation>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="87"/>
+        <source>Download a list list of sources from CrossWire server and add sources</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="104"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="157"/>
+        <source>Get source list from remote server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="164"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuler</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="165"/>
+        <source>Downloading List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="175"/>
+        <source>Connecting...</source>
+        <translation type="unfinished">Connection...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="198"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="199"/>
+        <source>Refreshing...</source>
+        <translation type="unfinished">Rafraîchissement...</translation>
+    </message>
+    <message>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="107"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="96"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="99"/>
         <source>Please provide a caption.</source>
         <translation>Merci d&apos;inscrire un nom.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="105"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="108"/>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
         <translation>Une source avec cette légende est déjà utilisé, s&apos;il vous plait sélectionner une légende différente.</translation>
     </message>
     <message>
-        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Ce nom est déjà utilisé.&lt;br&gt;Veuillez en choisir un autre.</translation>
-    </message>
-    <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="111"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="114"/>
         <source>Please provide a server name.</source>
         <translation>Veuillez choisir un nom de serveur.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="118"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="121"/>
         <source>Please provide a valid, readable path.</source>
         <translation>Veuillez indiquer un chemin valide et accessible en lecture.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="122"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="125"/>
         <source>Please provide a path.</source>
         <translation>Veuillez indiquer un chemin d&apos;accès.</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="37"/>
         <source>New  Installation Source</source>
         <translation>Nouvelle source d&apos;installation</translation>
     </message>
@@ -3551,12 +3392,12 @@ Language name ppk</extracomment>
         <translation>Exporter</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="27"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="31"/>
         <source>Local</source>
         <translation>Local</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="28"/>
+        <location filename="../../src/frontend/bookshelfmanager/cswordsetupinstallsourcesdialog.cpp" line="32"/>
         <source>Remote</source>
         <translation>Distant</translation>
     </message>
@@ -3844,12 +3685,12 @@ Language name ppk</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
         <source>Can&apos;t write file</source>
         <translation>Impossible d&apos;écrire le fichier</translation>
     </message>
     <message>
-        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="175"/>
+        <location filename="../../src/frontend/bookshelfmanager/instbackend.cpp" line="195"/>
         <source>The Sword config file can&apos;t be written!</source>
         <translation>Le fichier de configuration Sword ne peut pas être écrit!</translation>
     </message>

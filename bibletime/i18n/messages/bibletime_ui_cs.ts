@@ -187,10 +187,6 @@
         <translation>Otevřít příručku BibleTime</translation>
     </message>
     <message>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">Otevřít Návod, jak studovat Bibli obsažený v BiblTime &lt;BR&gt; Tento návod je úvod k efektivnímu studiu Bible.</translation>
-    </message>
-    <message>
         <source>Search in all works that are currently open</source>
         <translation>Hledat ve všech právě otevřených dílech</translation>
     </message>
@@ -286,22 +282,6 @@
         <translation>(c)1999-2006, The BibleTime Team</translation>
     </message>
     <message>
-        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation type="obsolete">Qt Open Source Edition je určena k vývoji Open Source aplikací.</translation>
-    </message>
-    <message>
-        <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation type="obsolete">Qt je multiplatformní knihovna pro vývoj aplikací v C++.</translation>
-    </message>
-    <message>
-        <source>Please see </source>
-        <translation type="obsolete">Prosím podívejte se</translation>
-    </message>
-    <message>
-        <source> for an overview of Qt licensing.</source>
-        <translation type="obsolete"> na náhled QT licence.</translation>
-    </message>
-    <message>
         <source>You can download and use (but not distribute) the program for personal, private, public or commercial purposes without restrictions.</source>
         <translation>Program můžete stáhnout a užívat (ale ne distribuovat) pro osobní , soukromé, nebo komerční účely bez omezení.</translation>
     </message>
@@ -388,10 +368,6 @@
     <message>
         <source>The SWORD Project</source>
         <translation>Projekt SWORD</translation>
-    </message>
-    <message>
-        <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="obsolete">Tento program používá Qt Open Source Edition verze %1</translation>
     </message>
     <message>
         <source>License</source>
@@ -611,18 +587,6 @@
         <translation>Instalovat a aktualizovat díla. Přidejte vzdálené nebo lokální zdroje, obnovte je, vyberte díla k instalaci/aktualizaci a klikněte na Instalovat. &lt;br/&gt;&lt;b&gt;VAROVÁNÍ:&lt;/b&gt; Pokud žijete v nesvobodné zemi a nechcete riskovat odhalení, nepoužívejte vzdálené zdroje.</translation>
     </message>
     <message>
-        <source>Install path:</source>
-        <translation type="obsolete">Instalační cesta:</translation>
-    </message>
-    <message>
-        <source>The path where the new works will be installed</source>
-        <translation type="obsolete">Umístění, kam budou nová díla instalována</translation>
-    </message>
-    <message>
-        <source>Configure paths where works are installed</source>
-        <translation type="obsolete">Nastavit umístění kde jsou díla nainstalována</translation>
-    </message>
-    <message>
         <source>Install...</source>
         <translation>Instalovat...</translation>
     </message>
@@ -646,18 +610,6 @@
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
-        <translation type="obsolete">Díla mohou být nainstalována v jednom nebo více adresářích. Po nastavení adresářů můžete vybrat jedno z nich na instalační stránce.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
-        <translation type="obsolete">BibleTime a knihovna Sword najde moduly ze všech těchto adresářů. Pokud knihovnu odeberete zde, v systému stále existuje se všemi díly v ní. Adresář \&quot;.sword\&quot; ve vašem domovském adresáři je vždy použit automaticky a nemůže být odebrán nebo přidán.</translation>
-    </message>
-    <message>
-        <source>Configuration file for the paths is: </source>
-        <translation type="obsolete">Konfigurační soubor pro umístění je:</translation>
-    </message>
-    <message>
         <source>Add...</source>
         <translation>Přidat...</translation>
     </message>
@@ -668,46 +620,6 @@
     <message>
         <source>Remove</source>
         <translation>Odstranit</translation>
-    </message>
-    <message>
-        <source>Choose directory</source>
-        <translation type="obsolete">Vyberte adresář</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="obsolete">Do tohoto adresáře není možno zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Přejete si použít následující adresář místo předchozí hodnoty?</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Varování</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="obsolete">Do tohoto adresáře není možné zapisovat, takže zde pomocí BibleTime nemohou být nainstalována žádná díla. Stále si přejete ho přidat do seznamu adresářů pro knihovnu?</translation>
-    </message>
-    <message>
-        <source>Bookshelf Paths</source>
-        <translation type="obsolete">Umístění knihovny</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf paths</source>
-        <translation type="obsolete">Nastavit umístění knihovny</translation>
-    </message>
-    <message>
-        <source>Add new path</source>
-        <translation type="obsolete">Přidat nové umístění</translation>
-    </message>
-    <message>
-        <source>Edit the selected path</source>
-        <translation type="obsolete">Upravit vybrané umístění</translation>
-    </message>
-    <message>
-        <source>Remove the selected path</source>
-        <translation type="obsolete">Odstranit vybrané umístění</translation>
-    </message>
-    <message>
-        <source>Use Directory?</source>
-        <translation type="obsolete">Použít adresář?</translation>
     </message>
     <message>
         <source>Bookshelf Folders</source>
@@ -1231,97 +1143,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CBookshelfIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Knihovna</translation>
-    </message>
-    <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Seskupování</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategorie/Jazyk</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Jazyk/kategorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Jazyk</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Upravit</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">Hledat</translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Vložte klíč k odemknutí modulu.</translation>
-    </message>
-    <message>
-        <source>Search...</source>
-        <translation type="obsolete">Hledat...</translation>
-    </message>
-    <message>
-        <source>Unlock...</source>
-        <translation type="obsolete">Odemknout...</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="obsolete">O...</translation>
-    </message>
-    <message>
-        <source>Hide/Unhide Works</source>
-        <translation type="obsolete">Zkrýt/Ukázat díla</translation>
-    </message>
-    <message>
-        <source>Select the works to be hidden.</source>
-        <translation type="obsolete">Vyberte díla ke skrytí.</translation>
-    </message>
-    <message>
-        <source>Works only</source>
-        <translation type="obsolete">Pouze díla</translation>
-    </message>
-    <message>
-        <source>Hide/unhide works...</source>
-        <translation type="obsolete">Skrýt Ukázat díla...</translation>
-    </message>
-    <message>
-        <source>Show hidden</source>
-        <translation type="obsolete">Ukázat skryté</translation>
-    </message>
-    <message>
-        <source>Plain text...</source>
-        <translation type="obsolete">Čistý text...</translation>
-    </message>
-    <message>
-        <source>HTML...</source>
-        <translation type="obsolete">HTML...</translation>
-    </message>
-    <message>
-        <source>Search in %1...</source>
-        <translation type="obsolete">Hledat v %1</translation>
-    </message>
-    <message>
-        <source>Search in selected...</source>
-        <translation type="obsolete">Hledat ve vybraných...</translation>
-    </message>
-    <message>
-        <source>Unlock Work</source>
-        <translation type="obsolete">Odemknout dílo</translation>
-    </message>
-</context>
-<context>
     <name>CCommentaryReadWindow</name>
     <message>
         <source>Next book</source>
@@ -1789,17 +1610,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CMainIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Knihovna</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Záložky</translation>
-    </message>
-</context>
-<context>
     <name>CModuleChooserButton</name>
     <message>
         <source>NONE</source>
@@ -2021,24 +1831,12 @@ shortcut</source>
         <translation>Umístění</translation>
     </message>
     <message>
-        <source>Ok</source>
-        <translation>Ok</translation>
-    </message>
-    <message>
-        <source>Discard</source>
-        <translation>Zahodit</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
         <source>Please provide a caption.</source>
         <translation>Prosím zadejte titulek.</translation>
-    </message>
-    <message>
-        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Zdroj s tímto titulkem již existuje.&lt;br&gt;Prosím zadejte jiný titulek.</translation>
     </message>
     <message>
         <source>Please provide a server name.</source>
@@ -2059,6 +1857,34 @@ shortcut</source>
     <message>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get list...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download a list list of sources from CrossWire server and add sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get source list from remote server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloading List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Připojování...</translation>
+    </message>
+    <message>
+        <source>Refreshing...</source>
+        <translation type="unfinished">Obnovování...</translation>
     </message>
 </context>
 <context>

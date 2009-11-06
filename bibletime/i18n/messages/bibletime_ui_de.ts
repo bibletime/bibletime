@@ -167,10 +167,6 @@
         <translation>BibleTimes Handbuch öffnen</translation>
     </message>
     <message>
-        <source>Open the Bible study HowTo included with BibleTime.&lt;BR&gt;This HowTo is an introduction on how to study the Bible in an efficient way.</source>
-        <translation type="obsolete">Öffne die Anleitung zum Bibelstudium, welche zu BibleTime gehört.&lt;br/&gt;Das ist eine Einführung in effizientes Bibelstudium.</translation>
-    </message>
-    <message>
         <source>Search in all works that are currently open</source>
         <translation>In allen gegenwärtig geöffneten Werken suchen</translation>
     </message>
@@ -360,26 +356,6 @@
     <message>
         <source>The SWORD Project</source>
         <translation>Das SWORD-Projekt</translation>
-    </message>
-    <message>
-        <source>This program uses Qt Open Source Edition version %1.</source>
-        <translation type="obsolete">Dieses Programm nutzt die Qt Open Source Edition Version %1.</translation>
-    </message>
-    <message>
-        <source>Qt Open Source Edition is intended for the development of Open Source applications.</source>
-        <translation type="obsolete">Qt Open Source Edition ist zur Entwicklung von Open-Source-Applikationen gedacht.</translation>
-    </message>
-    <message>
-        <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation type="obsolete">Qt ist ein C++-Werkzeugsatz zur plattformübergreifenden Entwicklung von Applikationen.</translation>
-    </message>
-    <message>
-        <source>Please see </source>
-        <translation type="obsolete">Bitte sehen Sie</translation>
-    </message>
-    <message>
-        <source> for an overview of Qt licensing.</source>
-        <translation type="obsolete">für eine Übersicht über die Qt-Lizensierung.</translation>
     </message>
     <message>
         <source>License</source>
@@ -611,18 +587,6 @@
         <translation>Werke installieren und aktualisieren. Fügen Sie entfernte oder lokale Quellen hinzu, aktualisieren Sie diese, wählen Sie die Werke aus, die installiert/aktualisiert werden sollen und klicken Sie Installieren.&lt;br/&gt;&lt;b&gt;WARNUNG:&lt;/b&gt;Wenn Sie in einem Land mit religiöser Verfolgung leben und es nicht riskieren wollen, entdeckt zu werden, sollten Sie keine entfernten Quellen verwenden.</translation>
     </message>
     <message>
-        <source>Install path:</source>
-        <translation type="obsolete">Installationspfad</translation>
-    </message>
-    <message>
-        <source>The path where the new works will be installed</source>
-        <translation type="obsolete">Der Pfad, in den neue Werke installiert werden</translation>
-    </message>
-    <message>
-        <source>Configure paths where works are installed</source>
-        <translation type="obsolete">Ziel-Installations-Pfade neuer Werke konfigurieren</translation>
-    </message>
-    <message>
         <source>Install...</source>
         <translation>Installieren...</translation>
     </message>
@@ -646,18 +610,6 @@
 <context>
     <name>BtInstallPathDialog</name>
     <message>
-        <source>Works can be installed in one or more directories. After setting up directories here you can choose one of them in Install page.</source>
-        <translation type="obsolete">Werke können in einem oder mehreren Pfaden installiert werden. Nach dem Konfigurieren der Verzeichnisse, können Sie hier eines auf der Installations-Seite auswählen.</translation>
-    </message>
-    <message>
-        <source>BibleTime and the Sword library find the modules from  all of these directories. If the directory is removed here it still exists in the system with all the works in it. &quot;.sword&quot; directory in your home directory is always used automatically and can&apos;t be removed or added.</source>
-        <translation type="obsolete">BibleTime und die Sword-Bibliothek finden die Module aus jedem dieser Verzeichnisse. Falls das Verzeichnis entfernt worden ist, existiert es hier inklusive aller darin enthaltenen Werke fort. Das \&quot;.sword\&quot; Verzeichnis in Ihrem Home-Verzeichnis wird stets automatisch genutzt und kann nicht automatisch entfernt oder hinzugefügt werden.</translation>
-    </message>
-    <message>
-        <source>Configuration file for the paths is: </source>
-        <translation type="obsolete">Konfigurations-Datei für die Pfade ist:</translation>
-    </message>
-    <message>
         <source>Add...</source>
         <translation>Hinzufügen...</translation>
     </message>
@@ -668,46 +620,6 @@
     <message>
         <source>Remove</source>
         <translation>Entfernen</translation>
-    </message>
-    <message>
-        <source>Choose directory</source>
-        <translation type="obsolete">Verzeichnis auswählen</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you want to use this directory instead of the previous value?</source>
-        <translation type="obsolete">In dieses Verzeichnis kann nicht geschrieben werden, daher können hier keine Werke von BibleTime installiert werden. Möchten Sie dieses Verzeichnis statt der vorherigen Einstellung verwenden?</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="obsolete">Warnung</translation>
-    </message>
-    <message>
-        <source>This directory is not writable, so works can not be installed here using BibleTime. Do you still want to add it to the list of bookshelf directories?</source>
-        <translation type="obsolete">Dieses Verzeichnis ist nicht beschreibbar, sodass Werke durch BibleTime hier nicht installiert werden können. Möchten Sie es trotzdem in die Liste der Bücherregal-Verzeichnisse aufnehmen?</translation>
-    </message>
-    <message>
-        <source>Bookshelf Paths</source>
-        <translation type="obsolete">Bücherregal-Pfade</translation>
-    </message>
-    <message>
-        <source>Configure bookshelf paths</source>
-        <translation type="obsolete">Bücherregal-Pfade einrichten</translation>
-    </message>
-    <message>
-        <source>Add new path</source>
-        <translation type="obsolete">Neuen Pfad hinzufügen</translation>
-    </message>
-    <message>
-        <source>Edit the selected path</source>
-        <translation type="obsolete">Ausgewählten Pfad bearbeiten</translation>
-    </message>
-    <message>
-        <source>Remove the selected path</source>
-        <translation type="obsolete">Ausgewählten Pfad entfernen</translation>
-    </message>
-    <message>
-        <source>Use Directory?</source>
-        <translation type="obsolete">Verzeichnis nutzen?</translation>
     </message>
     <message>
         <source>Bookshelf Folders</source>
@@ -1231,97 +1143,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CBookshelfIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Bücherregal</translation>
-    </message>
-    <message>
-        <source>Grouping</source>
-        <translation type="obsolete">Gruppierung</translation>
-    </message>
-    <message>
-        <source>Category/Language</source>
-        <translation type="obsolete">Kategorie/Sprache</translation>
-    </message>
-    <message>
-        <source>Category</source>
-        <translation type="obsolete">Kategorie</translation>
-    </message>
-    <message>
-        <source>Language/Category</source>
-        <translation type="obsolete">Sprache/Kategorie</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Sprache</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Bearbeiten</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="obsolete">Suche</translation>
-    </message>
-    <message>
-        <source>Enter the unlock key for this work.</source>
-        <translation type="obsolete">Geben Sie den Schlüssel für dieses Werke ein</translation>
-    </message>
-    <message>
-        <source>Search...</source>
-        <translation type="obsolete">Suche...</translation>
-    </message>
-    <message>
-        <source>Unlock...</source>
-        <translation type="obsolete">Entschlüsseln...</translation>
-    </message>
-    <message>
-        <source>About...</source>
-        <translation type="obsolete">Über...</translation>
-    </message>
-    <message>
-        <source>Hide/Unhide Works</source>
-        <translation type="obsolete">Werke verstecken/zeigen</translation>
-    </message>
-    <message>
-        <source>Select the works to be hidden.</source>
-        <translation type="obsolete">Wählen Sie Werke aus, die versteckt werden sollen.</translation>
-    </message>
-    <message>
-        <source>Works only</source>
-        <translation type="obsolete">Nur Werke</translation>
-    </message>
-    <message>
-        <source>Hide/unhide works...</source>
-        <translation type="obsolete">Werke sichtbar/unsichtbar machen...</translation>
-    </message>
-    <message>
-        <source>Show hidden</source>
-        <translation type="obsolete">Versteckte anzeigen</translation>
-    </message>
-    <message>
-        <source>Plain text...</source>
-        <translation type="obsolete">Reintext...</translation>
-    </message>
-    <message>
-        <source>HTML...</source>
-        <translation type="obsolete">HTML...</translation>
-    </message>
-    <message>
-        <source>Search in selected...</source>
-        <translation type="obsolete">In ausgewählten suchen...</translation>
-    </message>
-    <message>
-        <source>Unlock Work</source>
-        <translation type="obsolete">Werk lösen</translation>
-    </message>
-    <message>
-        <source>Search in %1...</source>
-        <translation type="obsolete">Suche in %1...</translation>
-    </message>
-</context>
-<context>
     <name>CCommentaryReadWindow</name>
     <message>
         <source>Next book</source>
@@ -1789,17 +1610,6 @@ shortcut</source>
     </message>
 </context>
 <context>
-    <name>CMainIndex</name>
-    <message>
-        <source>Bookshelf</source>
-        <translation type="obsolete">Bücherregal</translation>
-    </message>
-    <message>
-        <source>Bookmarks</source>
-        <translation type="obsolete">Lesezeichen</translation>
-    </message>
-</context>
-<context>
     <name>CModuleChooserButton</name>
     <message>
         <source>NONE</source>
@@ -2021,24 +1831,12 @@ shortcut</source>
         <translation>Pfad</translation>
     </message>
     <message>
-        <source>Ok</source>
-        <translation>Ok</translation>
-    </message>
-    <message>
-        <source>Discard</source>
-        <translation>Verwerfen</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
         <source>Please provide a caption.</source>
         <translation>Bitte geben Sie eine Beschreibung an.</translation>
-    </message>
-    <message>
-        <source>A source with this caption already exists.&lt;br&gt;Please provide a different caption.</source>
-        <translation type="obsolete">Eine Quelle mit diesem Titel existiert bereits.&lt;br&gt;Bitte geben Sie einen anderen Titel an.</translation>
     </message>
     <message>
         <source>Please provide a server name.</source>
@@ -2059,6 +1857,34 @@ shortcut</source>
     <message>
         <source>A source with this caption already exists.&lt;br/&gt;Please provide a different caption.</source>
         <translation>Eine Quelle mit dieser Überschrift existiert bereits. &lt;br/&gt;Bitte geben Sie eine andere Überschrift ein.</translation>
+    </message>
+    <message>
+        <source>Get list...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download a list list of sources from CrossWire server and add sources</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Get source list from remote server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
+        <source>Downloading List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation type="unfinished">Verbinde...</translation>
+    </message>
+    <message>
+        <source>Refreshing...</source>
+        <translation type="unfinished">Aktualisiere...</translation>
     </message>
 </context>
 <context>
