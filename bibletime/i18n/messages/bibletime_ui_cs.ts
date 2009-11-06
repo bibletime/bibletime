@@ -1886,6 +1886,12 @@ shortcut</source>
         <source>Download a list of sources from CrossWire server and add sources</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>List of sources will be downloaded from a remote server. Sources will be added to the current list. New source will replace an old one if it has the same label. You can later remove the sources you don&apos;t want to keep.
+
+Do you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CWriteWindow</name>
